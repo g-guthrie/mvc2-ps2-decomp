@@ -22,6 +22,8 @@ def progress_measures(
     matched_code: int = 0,
     matched_functions: int = 0,
     complete_code: int = 0,
+    matched_data: int = 0,
+    complete_data: int = 0,
 ) -> dict:
     code_percent = matched_code * 100.0 / total_code if total_code else 0.0
     function_percent = (
@@ -31,10 +33,10 @@ def progress_measures(
     result = {
         "fuzzy_match_percent": code_percent,
         "matched_code_percent": code_percent,
-        "matched_data_percent": 0.0,
+        "matched_data_percent": matched_data * 100.0 / total_data if total_data else 0.0,
         "matched_functions_percent": function_percent,
         "complete_code_percent": complete_code_percent,
-        "complete_data_percent": 0.0,
+        "complete_data_percent": complete_data * 100.0 / total_data if total_data else 0.0,
         "total_units": total_units,
         "complete_units": 0,
     }
@@ -44,8 +46,8 @@ def progress_measures(
         result["complete_code"] = str(complete_code)
     if total_data:
         result["total_data"] = str(total_data)
-        result["matched_data"] = "0"
-        result["complete_data"] = "0"
+        result["matched_data"] = str(matched_data)
+        result["complete_data"] = str(complete_data)
     if total_functions:
         result["total_functions"] = total_functions
         result["matched_functions"] = matched_functions
@@ -81,7 +83,34 @@ def load_matches(path: Path) -> dict[str, dict]:
     return result
 
 
-def build_report(functions: list[dict], matches: dict[str, dict]) -> dict:
+def load_data_matches(units_path: Path, matches_path: Path) -> dict[str, dict]:
+    """Load source-owned data only when its catalog range is exact."""
+    units = {}
+    with units_path.open(newline="", encoding="utf-8") as stream:
+        for row in csv.DictReader(stream):
+            units[row["name"]] = (int(row["address"], 0), int(row["size"], 0))
+    result = {}
+    if not matches_path.is_file():
+        return result
+    with matches_path.open(newline="", encoding="utf-8") as stream:
+        for row in csv.DictReader(stream):
+            if row["status"] not in {"matching", "complete"}:
+                continue
+            expected = units.get(row["name"])
+            found = (int(row["address"], 0), int(row["size"], 0))
+            if expected != found:
+                raise SystemExit(f"data match range disagrees with catalog: {row['name']}")
+            result[row["name"]] = {
+                **row, "address": found[0], "size": found[1],
+                "complete": row["status"] == "complete",
+            }
+    return result
+
+
+def build_report(
+    functions: list[dict], matches: dict[str, dict], data_matches: dict[str, dict] | None = None
+) -> dict:
+    data_matches = data_matches or {}
     functions_by_name = {function["name"]: function for function in functions}
     for name, match in matches.items():
         function = functions_by_name.get(name)
@@ -140,20 +169,29 @@ def build_report(functions: list[dict], matches: dict[str, dict]) -> dict:
             },
         })
 
+    matched_data = sum(match["size"] for match in data_matches.values())
+    complete_data = sum(match["size"] for match in data_matches.values() if match["complete"])
     units.append({
         "name": "main/initialized_data",
-        "measures": progress_measures(total_data=DATA_SIZE, total_units=1),
+        "measures": progress_measures(
+            total_data=DATA_SIZE, total_units=1,
+            matched_data=matched_data, complete_data=complete_data,
+        ),
         "sections": [{
             "name": ".data",
             "size": str(DATA_SIZE),
-            "fuzzy_match_percent": 0.0,
+            "fuzzy_match_percent": matched_data * 100.0 / DATA_SIZE,
             "address": str(TEXT_SIZE),
             "metadata": {"virtual_address": str(BASE_ADDRESS + TEXT_SIZE)},
         }],
         "metadata": {
             "complete": False,
-            "source_path": "asm/main_data.s",
+            "source_path": "src/data" if data_matches else "asm/main_data.s",
             "progress_categories": ["main"],
+            "data_matches": [
+                {"name": match["name"], "source_path": match["source"]}
+                for match in sorted(data_matches.values(), key=lambda match: match["address"])
+            ],
         },
     })
 
@@ -167,6 +205,8 @@ def build_report(functions: list[dict], matches: dict[str, dict]) -> dict:
         complete_code=sum(
             match["size"] for match in matches.values() if match["complete"]
         ),
+        matched_data=matched_data,
+        complete_data=complete_data,
     )
     return {
         "version": 2,
@@ -197,12 +237,15 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--functions", type=Path, default=Path("config/functions.csv"))
     parser.add_argument("--matches", type=Path, default=Path("config/matches.csv"))
+    parser.add_argument("--data-units", type=Path, default=Path("config/data_units.csv"))
+    parser.add_argument("--data-matches", type=Path, default=Path("config/data_matches.csv"))
     parser.add_argument("--report", type=Path, default=Path("build-report/report.json"))
     parser.add_argument("--svg", type=Path, default=Path("assets/progress.svg"))
     args = parser.parse_args()
     functions = load_functions(args.functions)
     matches = load_matches(args.matches)
-    report = build_report(functions, matches)
+    data_matches = load_data_matches(args.data_units, args.data_matches)
+    report = build_report(functions, matches, data_matches)
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.svg.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
@@ -210,7 +253,8 @@ def main() -> None:
     args.svg.write_text(svg(len(functions), matched_bytes), encoding="utf-8")
     print(
         f"wrote {args.report}: {len(matches)}/{len(functions)} functions, "
-        f"{matched_bytes}/{TEXT_SIZE} matching code bytes"
+        f"{matched_bytes}/{TEXT_SIZE} matching code bytes, "
+        f"{sum(match['size'] for match in data_matches.values())}/{DATA_SIZE} matching data bytes"
     )
 
 

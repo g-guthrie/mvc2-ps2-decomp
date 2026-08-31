@@ -1,0 +1,10 @@
+name,address,size,source,status
+data_zero_004399D0,0x004399D0,0x1A20,src/data/data_zero_004399D0.c,complete
+gMvc2Dispatch_00445A20,0x00445A20,0x400,src/data/mvc2_dispatch_00445A20.c,complete
+data_zero_00465020,0x00465020,0x240,src/data/data_zero_00465020.c,complete
+data_zero_0047C620,0x0047C620,0xACC0,src/data/data_zero_0047C620.c,complete
+data_zero_00487340,0x00487340,0xFD0,src/data/data_zero_00487340.c,complete
+data_zero_00489814,0x00489814,0x4384,src/data/data_zero_00489814.c,complete
+data_zero_0048E320,0x0048E320,0x25B4,src/data/data_zero_0048E320.c,complete
+data_zero_004A6F80,0x004A6F80,0x100,src/data/data_zero_004A6F80.c,complete
+data_zero_004A7950,0x004A7950,0x1630,src/data/data_zero_004A7950.c,complete

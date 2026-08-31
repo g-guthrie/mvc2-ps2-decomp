@@ -4438,6 +4438,13 @@ func_001B45F0,0x001B45F0,0x38,src/negative_to_state2.c,complete
 func_001B5650,0x001B5650,0x38,src/negative_to_state2.c,complete
 func_001C9C90,0x001C9C90,0x38,src/negative_to_state2.c,complete
 func_003756E0,0x003756E0,0x38,src/negative_to_state2.c,complete
+func_001E0A30,0x001E0A30,0x14,src/three_byte_state.c,complete
+func_001E1570,0x001E1570,0x14,src/three_byte_state.c,complete
+func_001E1FC0,0x001E1FC0,0x14,src/three_byte_state.c,complete
+func_0038DE10,0x0038DE10,0x2C,src/mode_sync.c,complete
+func_0038E120,0x0038E120,0x2C,src/mode_sync.c,complete
+func_0039BFA0,0x0039BFA0,0x2C,src/mode_sync.c,complete
+func_0039C320,0x0039C320,0x2C,src/mode_sync.c,complete
 func_0019A010,0x0019A010,0x5C,src/allocator_callbacks.c,complete
 func_0019B750,0x0019B750,0x5C,src/allocator_callbacks.c,complete
 func_0019C1C0,0x0019C1C0,0x5C,src/allocator_callbacks.c,complete

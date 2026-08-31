@@ -36,6 +36,17 @@ class CompiledFunction:
     relocations: tuple[ExternalRelocation, ...]
 
 
+@dataclass(frozen=True)
+class DataUnit:
+    """A source-owned initialized-data range placed in the loaded image."""
+
+    name: str
+    address: int
+    size: int
+    section: str
+    source: str
+
+
 def load_matches(path: Path, base: int, image_size: int) -> list[tuple[str, int, int, str]]:
     with path.open(newline="", encoding="utf-8") as stream:
         rows = [
@@ -63,6 +74,29 @@ def load_matches(path: Path, base: int, image_size: int) -> list[tuple[str, int,
     if not matches:
         raise SystemExit("no matching functions found")
     return matches
+
+
+def load_data_units(path: Path, base: int, image_size: int) -> list[DataUnit]:
+    """Load exact compiled-data replacements without copying target bytes."""
+    if not path.is_file():
+        return []
+    units = []
+    with path.open(newline="", encoding="utf-8") as stream:
+        for row in csv.DictReader(stream):
+            name = row["name"]
+            section = row["section"]
+            if not NAME_RE.fullmatch(name) or not section.startswith("."):
+                raise SystemExit(f"invalid data unit: {name}")
+            address = int(row["address"], 0)
+            size = int(row["size"], 0)
+            if address < base or size <= 0 or address + size > base + image_size:
+                raise SystemExit(f"data unit outside loaded image: {name}")
+            source = row["source"]
+            if Path(source).is_absolute() or ".." in Path(source).parts:
+                raise SystemExit(f"data source must stay within the project: {source}")
+            units.append(DataUnit(name, address, size, section, source))
+    units.sort(key=lambda unit: unit.address)
+    return units
 
 
 def default_object_path(source: str, compiled_dir: Path) -> Path:
@@ -103,6 +137,61 @@ def load_symbols(path: Path) -> list[tuple[str, int]]:
         if match:
             symbols.append((match.group(1), int(match.group(2), 0)))
     return symbols
+
+
+def load_symbol_files(paths: list[Path]) -> list[tuple[str, int]]:
+    """Merge public symbol maps, rejecting conflicting symbolic addresses."""
+    values: dict[str, int] = {}
+    for path in paths:
+        if not path.is_file():
+            continue
+        for name, address in load_symbols(path):
+            previous = values.setdefault(name, address)
+            if previous != address:
+                raise SystemExit(f"conflicting address for {name}")
+    return sorted(values.items())
+
+
+def check_non_overlapping_units(
+    matches: list[tuple[str, int, int, str]], data_units: list[DataUnit]
+) -> None:
+    """Ensure every source replacement owns a disjoint retail interval."""
+    intervals = [
+        (address, address + size, name)
+        for name, address, size, _ in matches
+    ]
+    intervals.extend(
+        (unit.address, unit.address + unit.size, unit.name) for unit in data_units
+    )
+    intervals.sort()
+    for (_, end, name), (start, _, next_name) in zip(intervals, intervals[1:]):
+        if start < end:
+            raise SystemExit(f"overlapping source replacements: {name} and {next_name}")
+
+
+def verify_compiled_data_unit(unit: DataUnit, object_path: Path) -> None:
+    """Require one exact source symbol/section before passing the object to ld."""
+    with object_path.open("rb") as stream:
+        elf = ELFFile(stream)
+        symbol_table = elf.get_section_by_name(".symtab")
+        if symbol_table is None:
+            raise SystemExit(f"object has no symbol table: {object_path}")
+        symbols = {symbol.name: symbol for symbol in symbol_table.iter_symbols() if symbol.name}
+        symbol = symbols.get(unit.name)
+        if symbol is None or not isinstance(symbol["st_shndx"], int):
+            raise SystemExit(f"compiled data symbol missing: {unit.name} in {object_path}")
+        section = elf.get_section(symbol["st_shndx"])
+        if section.name != unit.section:
+            raise SystemExit(
+                f"compiled data section mismatch for {unit.name}: {section.name} != {unit.section}"
+            )
+        if symbol["st_value"] != 0 or symbol["st_size"] != unit.size:
+            raise SystemExit(
+                f"compiled data size mismatch for {unit.name}: "
+                f"0x{symbol['st_value']:x}/0x{symbol['st_size']:x} != 0x0/0x{unit.size:x}"
+            )
+        if section.data_size != unit.size:
+            raise SystemExit(f"compiled data section has extra bytes: {unit.name}")
 
 
 def extract_compiled_functions(
@@ -205,6 +294,11 @@ def main() -> None:
     parser.add_argument("--target", type=Path, default=Path("private/SLUS_204.86.rom"))
     parser.add_argument("--matches", type=Path, default=Path("config/matches.csv"))
     parser.add_argument("--symbols", type=Path, default=Path("config/symbol_addrs.txt"))
+    parser.add_argument(
+        "--data-symbols", type=Path, default=Path("config/data_symbol_addrs.txt"),
+        help="optional public addresses used by compiled data relocations",
+    )
+    parser.add_argument("--data-units", type=Path, default=Path("config/data_units.csv"))
     parser.add_argument("--compiled-object", action="append", default=[])
     parser.add_argument("--compiled-dir", type=Path, default=Path("build/matching"))
     parser.add_argument("--build", type=Path, default=Path("build/hybrid"))
@@ -217,9 +311,12 @@ def main() -> None:
     image_size = len(target)
     matches = load_matches(args.matches, args.base, image_size)
     compiled_objects = load_compiled_objects(args.compiled_object, matches, args.compiled_dir)
-    symbols = load_symbols(args.symbols)
+    data_units = load_data_units(args.data_units, args.base, image_size)
+    check_non_overlapping_units(matches, data_units)
+    symbols = load_symbol_files([args.symbols, args.data_symbols])
     addresses = dict(symbols)
     addresses.update({name: address for name, address, _, _ in matches})
+    addresses.update({unit.name: unit.address for unit in data_units})
     compiled_functions, synthetic_symbols = extract_compiled_functions(
         matches, compiled_objects, addresses
     )
@@ -236,8 +333,16 @@ def main() -> None:
     raw_lines = [".set noreorder", ""]
     compiled_lines = [".set noreorder", ""]
     link_inputs: list[str] = []
+    replacements = [
+        (address, size, name, "function", source)
+        for name, address, size, source in matches
+    ]
+    replacements.extend(
+        (unit.address, unit.size, unit.name, "data", unit.source) for unit in data_units
+    )
+    replacements.sort()
     cursor = 0
-    for index, (name, address, size, _) in enumerate(matches):
+    for index, (address, size, name, kind, source) in enumerate(replacements):
         start = address - args.base
         if start > cursor:
             section = f".raw.{index:04d}"
@@ -247,31 +352,41 @@ def main() -> None:
                 "",
             ])
             link_inputs.append(f"        {build.as_posix()}/raw_chunks.o({section})")
-        compiled_section = f".compiled.{name}"
-        function = compiled_functions[name]
-        body = function.body
-        words = [struct.unpack_from("<I", body, offset)[0] for offset in range(0, size, 4)]
-        compiled_lines.extend([
-            f'.section {compiled_section}, "ax", @progbits',
-            f".global {name}",
-            f".type {name}, @function",
-            f"{name}:",
-            *[f"    .word 0x{word:08X}" for word in words],
-            *[
-                f"    .reloc {name}+0x{relocation.offset:x}, {relocation.type_name}, "
-                f"{relocation.symbol_name}"
-                + (f"{relocation.addend:+#x}" if relocation.addend else "")
-                for relocation in function.relocations
-            ],
-            f".size {name}, . - {name}",
-            "",
-        ])
-        link_inputs.append(
-            f"        {build.as_posix()}/compiled_sections.o({compiled_section})"
-        )
+        if kind == "function":
+            compiled_section = f".compiled.{name}"
+            function = compiled_functions[name]
+            body = function.body
+            words = [struct.unpack_from("<I", body, offset)[0] for offset in range(0, size, 4)]
+            compiled_lines.extend([
+                f'.section {compiled_section}, "ax", @progbits',
+                f".global {name}",
+                f".type {name}, @function",
+                f"{name}:",
+                *[f"    .word 0x{word:08X}" for word in words],
+                *[
+                    f"    .reloc {name}+0x{relocation.offset:x}, {relocation.type_name}, "
+                    f"{relocation.symbol_name}"
+                    + (f"{relocation.addend:+#x}" if relocation.addend else "")
+                    for relocation in function.relocations
+                ],
+                f".size {name}, . - {name}",
+                "",
+            ])
+            link_inputs.append(
+                f"        {build.as_posix()}/compiled_sections.o({compiled_section})"
+            )
+        else:
+            unit = next(value for value in data_units if value.name == name)
+            object_path = default_object_path(source, args.compiled_dir)
+            if not object_path.is_file():
+                raise SystemExit(f"compiled data object missing for {source}: {object_path}")
+            verify_compiled_data_unit(unit, object_path)
+            link_inputs.append(f"        {object_path.as_posix()}({unit.section})")
         cursor = start + size
     if cursor < image_size:
-        section = f".raw.{len(matches):04d}"
+        # Data replacements increase the number of raw gaps too; use the full
+        # replacement count so this final section cannot alias an earlier gap.
+        section = f".raw.{len(replacements):04d}"
         raw_lines.extend([
             f'.section {section}, "ax", @progbits',
             f'.incbin "{target_text}", 0x{cursor:x}, 0x{image_size - cursor:x}',
@@ -281,7 +396,7 @@ def main() -> None:
     raw_asm.write_text("\n".join(raw_lines), encoding="utf-8")
     compiled_asm.write_text("\n".join(compiled_lines), encoding="utf-8")
 
-    compiled_names = {name for name, _, _, _ in matches}
+    compiled_names = {name for name, _, _, _ in matches} | {unit.name for unit in data_units}
     symbol_lines = [
         f"    {name} = 0x{address:08x};"
         for name, address in symbols
@@ -334,7 +449,10 @@ def main() -> None:
     relocation_summary = ", ".join(
         f"{name}={count}" for name, count in sorted(relocation_counts.items())
     ) or "none"
-    print(f"generated {len(matches)} isolated compiled-function sections")
+    print(
+        f"generated {len(matches)} isolated compiled-function sections and "
+        f"placed {len(data_units)} compiled-data sections"
+    )
     print(f"externalized relocations: {relocation_summary}")
 
 
