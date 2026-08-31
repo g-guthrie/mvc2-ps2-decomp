@@ -1,0 +1,11 @@
+/asm/
+/build/
+/build-report/
+/config/SLUS_204.86.ld
+/config/undefined_funcs_auto.txt
+/config/undefined_syms_auto.txt
+/private/
+/tools/bin/
+__pycache__/
+*.pyc
+.venv/

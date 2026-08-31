@@ -1,0 +1,32 @@
+name: Progress report
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test reporting tools
+        run: python -m unittest tools/test_*.py
+      - name: Generate objdiff v2 report
+        run: python tools/objdiff_report.py --report build-report/report.json --svg assets/progress.svg
+      - name: Check progress graphic
+        run: git diff --exit-code -- assets/progress.svg
+      - name: Upload decomp.dev report
+        uses: actions/upload-artifact@v4
+        with:
+          name: ps2_report
+          path: build-report/report.json
+          if-no-files-found: error
+

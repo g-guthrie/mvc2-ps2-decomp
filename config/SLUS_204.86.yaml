@@ -1,0 +1,42 @@
+name: Marvel vs. Capcom 2 (USA, SLUS-20486)
+sha1: a425c36425bbc1072114ea091ac4577c98c59a6a
+
+options:
+  basename: SLUS_204.86
+  target_path: private/SLUS_204.86.rom
+  elf_path: private/extracted/SLUS_204.86
+  base_path: ..
+  platform: ps2
+  compiler: MWCCPS2
+  gp_value: 0x004c7270
+
+  asm_path: asm
+  src_path: src
+  build_path: build
+  ld_script_path: config/SLUS_204.86.ld
+  ld_dependencies: true
+  create_asm_dependencies: true
+  find_file_boundaries: false
+  o_as_suffix: true
+
+  symbol_addrs_path:
+    - config/symbol_addrs.txt
+  undefined_funcs_auto_path: config/undefined_funcs_auto.txt
+  undefined_syms_auto_path: config/undefined_syms_auto.txt
+
+  section_order:
+    - .text
+    - .bss
+
+segments:
+  - name: main
+    type: code
+    start: 0x000000
+    vram: 0x00100000
+    bss_size: 0x171e00
+    subalign: null
+    subsegments:
+      - [0x000000, asm, main]
+      - { type: bss, vram: 0x004c2580, name: main_bss }
+  - [0x3c2580]
+
