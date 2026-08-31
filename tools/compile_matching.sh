@@ -161,6 +161,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/event_value_dispatch.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/event_value_dispatch.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/indirect68_family.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/indirect68_family.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -310,5 +313,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/event_value_dispatch.o" private/SLUS_204.86.rom \
     --source src/event_value_dispatch.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/indirect68_family.o" private/SLUS_204.86.rom \
+    --source src/indirect68_family.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh
