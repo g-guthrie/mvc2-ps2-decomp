@@ -101,6 +101,15 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/fpu_field_accessors.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/fpu_notify.c -c -lang c $MATCH_FLAGS -o "$BUILD/fpu_notify.o"
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/init_indirect_state.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/init_indirect_state.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/conditional_notifications.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/conditional_notifications.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/gp_small_accessors.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/gp_small_accessors.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -190,3 +199,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     --source src/fpu_field_accessors.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/fpu_notify.o" private/SLUS_204.86.rom --source src/fpu_notify.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/init_indirect_state.o" private/SLUS_204.86.rom \
+    --source src/init_indirect_state.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/conditional_notifications.o" private/SLUS_204.86.rom \
+    --source src/conditional_notifications.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/gp_small_accessors.o" private/SLUS_204.86.rom \
+    --source src/gp_small_accessors.c
