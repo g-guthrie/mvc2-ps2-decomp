@@ -22,11 +22,16 @@ compiler as `MW MIPS C Compiler (2.4.1.01)` / `PlayStation2`.
 | ELF SHA-256 | `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7` |
 | Loaded image | `0x00100000..0x004c2580` (`3,941,760` bytes) |
 | Loaded-image SHA-1 | `a425c36425bbc1072114ea091ac4577c98c59a6a` |
+| Conservative text | `0x00100000..0x00424200` (`3,293,696` bytes) |
+| Initialized data | `0x00424200..0x004c2580` (`648,064` bytes) |
 | BSS | `0x004c2580..0x00634380` (`0x171e00` bytes) |
 | Global pointer | `0x004c7270` |
 
 The project is at the assembly-baseline stage. Matching C begins at **0%**;
-assembly placeholders never count as decompiled source.
+assembly placeholders never count as decompiled source. The initial inventory
+contains **17,658 explicit-size function candidates** covering 96.92% of the
+conservative text span; the remaining text gaps and all initialized data remain
+separately visible in the progress report.
 
 ## Setup
 

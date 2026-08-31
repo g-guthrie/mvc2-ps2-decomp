@@ -1,0 +1,64 @@
+{
+  "target": "SLUS_204.86",
+  "platform": "PlayStation 2 / MIPS R5900",
+  "entry": "0x00100008",
+  "hashes": {
+    "elf_sha1": "dd8558a04891b0b1472ea1d8ae2bb84947ae8937",
+    "loaded_image_sha1": "a425c36425bbc1072114ea091ac4577c98c59a6a"
+  },
+  "program_headers": [
+    {
+      "type": 1,
+      "offset": 128,
+      "vaddr": 1048576,
+      "paddr": 1048576,
+      "filesz": 3941760,
+      "memsz": 5456768,
+      "flags": 7,
+      "align": 128
+    },
+    {
+      "type": 1,
+      "offset": 3941888,
+      "vaddr": 6505344,
+      "paddr": 6505344,
+      "filesz": 0,
+      "memsz": 0,
+      "flags": 6,
+      "align": 16
+    }
+  ],
+  "regions": [
+    {
+      "name": "conservative_text",
+      "start": "0x00100000",
+      "end": "0x00424200",
+      "size": 3293696
+    },
+    {
+      "name": "initialized_data_rodata_mixed",
+      "start": "0x00424200",
+      "end": "0x004C2580",
+      "size": 648064
+    },
+    {
+      "name": "bss",
+      "start": "0x004C2580",
+      "end": "0x00634380",
+      "size": 1515008
+    }
+  ],
+  "function_inventory": {
+    "count": 17658,
+    "bytes": 3192160,
+    "text_span_bytes": 3293696,
+    "coverage_of_text_span": 0.9691726255246386,
+    "gaps_count": 13239,
+    "gaps_bytes": 101536,
+    "method": "only spimdisasm functions having explicit size and wholly preceding first data label D_00424200"
+  },
+  "excluded": {
+    "range": "0x00424200-0x004C2580",
+    "reason": "mixed initialized data/rodata; later func_* labels are heuristic code guesses inside data and are unsafe for objdiff units"
+  }
+}
