@@ -53,6 +53,15 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/negative_incrementers.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/negative_incrementers.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/increment_on_negative.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/increment_on_negative.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/negative_notify.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/negative_notify.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/negative_notify_clear.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/negative_notify_clear.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -97,3 +106,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/negative_incrementers.o" private/SLUS_204.86.rom \
     --source src/negative_incrementers.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/increment_on_negative.o" private/SLUS_204.86.rom \
+    --source src/increment_on_negative.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/negative_notify.o" private/SLUS_204.86.rom \
+    --source src/negative_notify.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/negative_notify_clear.o" private/SLUS_204.86.rom \
+    --source src/negative_notify_clear.c
