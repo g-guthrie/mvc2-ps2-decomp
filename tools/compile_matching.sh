@@ -62,6 +62,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/negative_notify_clear.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/negative_notify_clear.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/conditional_state_dispatch.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/conditional_state_dispatch.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -115,3 +118,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/negative_notify_clear.o" private/SLUS_204.86.rom \
     --source src/negative_notify_clear.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/conditional_state_dispatch.o" private/SLUS_204.86.rom \
+    --source src/conditional_state_dispatch.c
