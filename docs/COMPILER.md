@@ -77,6 +77,12 @@ All four candidate compilers at O3 emit
 This is a 100% instruction-and-relocation match, though not a version
 discriminator.
 
+An additional generated leaf batch contributes 395 exact functions and 3,160
+bytes under MWCCPS2 3.0.3 with `-O3`: 247 empty stubs, 53 zero returns, 12
+immediate returns, 57 field getters, 20 field setters, and 6 byte zeroers.
+Every function is independently compared with the retail loaded image by
+`make match`.
+
 `0x00102C58` target words:
 
 ```text

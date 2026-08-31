@@ -26,9 +26,13 @@ def load_addresses(path: Path) -> dict[str, int]:
     return result
 
 
-def load_matches(path: Path) -> list[dict]:
+def load_matches(path: Path, source: str | None = None) -> list[dict]:
     with path.open(newline="", encoding="utf-8") as stream:
-        return [row for row in csv.DictReader(stream) if row["status"] == "matching"]
+        return [
+            row
+            for row in csv.DictReader(stream)
+            if row["status"] == "matching" and (source is None or row["source"] == source)
+        ]
 
 
 def patch_relocation(word: int, relocation_type: int, value: int) -> int:
@@ -43,9 +47,17 @@ def patch_relocation(word: int, relocation_type: int, value: int) -> int:
     raise SystemExit(f"unsupported MIPS relocation type {relocation_type}")
 
 
-def verify(object_path: Path, target_path: Path, matches_path: Path, symbols_path: Path) -> None:
+def verify(
+    object_path: Path,
+    target_path: Path,
+    matches_path: Path,
+    symbols_path: Path,
+    source: str | None = None,
+) -> None:
     addresses = load_addresses(symbols_path)
-    matches = load_matches(matches_path)
+    matches = load_matches(matches_path, source)
+    if not matches:
+        raise SystemExit("no matching functions selected")
     target = target_path.read_bytes()
 
     with object_path.open("rb") as stream:
@@ -112,8 +124,9 @@ def main() -> None:
     parser.add_argument("target", type=Path)
     parser.add_argument("--matches", type=Path, default=Path("config/matches.csv"))
     parser.add_argument("--symbols", type=Path, default=Path("config/symbol_addrs.txt"))
+    parser.add_argument("--source")
     args = parser.parse_args()
-    verify(args.object, args.target, args.matches, args.symbols)
+    verify(args.object, args.target, args.matches, args.symbols, args.source)
 
 
 if __name__ == "__main__":

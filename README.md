@@ -27,7 +27,7 @@ compiler as `MW MIPS C Compiler (2.4.1.01)` / `PlayStation2`.
 | BSS | `0x004c2580..0x00634380` (`0x171e00` bytes) |
 | Global pointer | `0x004c7270` |
 
-The project has **7 exact matching C functions (84 bytes)**. These functions
+The project has **402 exact matching C functions (3,244 bytes)**. These functions
 are compiler-and-relocation verified but are not yet placed by the hybrid
 linker, so completed/linked code remains zero. Assembly placeholders never
 count as decompiled source. The initial inventory

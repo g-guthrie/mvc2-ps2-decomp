@@ -24,8 +24,9 @@
 
 ## Exact C checkpoint
 
-`src/main.c` currently contains seven 12-byte global-address getters. All seven
-compile to exact instructions and HI16/LO16 relocations; `make match` resolves
-those relocations and compares 84/84 bytes successfully. They are reported as
-matched, while `complete_code` remains zero until C object placement is part of
-the exact hybrid link.
+`src/main.c` contains seven 12-byte global-address getters, and
+`src/simple_leaves.c` contains 395 exact stubs, constant returns, field
+getters/setters, and byte zeroers. `make match` verifies all 402 functions and
+3,244/3,244 bytes directly against retail, resolving HI16/LO16 relocations for
+the address getters. They are reported as matched, while `complete_code`
+remains zero until C object placement is part of the exact hybrid link.
