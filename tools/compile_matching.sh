@@ -128,6 +128,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/conditional_init_tail.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/conditional_init_tail.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/tail_recheck.c -c -lang c $MATCH_FLAGS -o "$BUILD/tail_recheck.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sequential_heads.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/sequential_heads.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -244,3 +249,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/conditional_init_tail.o" private/SLUS_204.86.rom \
     --source src/conditional_init_tail.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/tail_recheck.o" private/SLUS_204.86.rom --source src/tail_recheck.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/sequential_heads.o" private/SLUS_204.86.rom \
+    --source src/sequential_heads.c
