@@ -14,3 +14,4 @@ jtbl_004ACA80,0x004ACA80,0x164,src/data/jtbl_004ACA80.c,complete
 gIdentity3x3_00464EEC,0x00464EEC,0x24,src/data/identity_00464EEC.c,complete
 gMvc2ModeHandlerTable_004490C0,0x004490C0,0x160,src/data/mvc2_mode_handler_table_004490C0.c,complete
 gMvc2EventDispatch_0043CBB0,0x0043CBB0,0x34,src/data/mvc2_event_dispatch_0043CBB0.c,complete
+gMvc2ModeSelectDispatch_0043CCE0,0x0043CCE0,0x24,src/data/mvc2_mode_select_dispatch_0043CCE0.c,complete
