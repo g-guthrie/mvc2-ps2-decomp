@@ -110,6 +110,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/gp_small_accessors.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/gp_small_accessors.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fpu_state_updates.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/fpu_state_updates.o"
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/load_state_transition.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/load_state_transition.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -208,3 +214,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/gp_small_accessors.o" private/SLUS_204.86.rom \
     --source src/gp_small_accessors.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/fpu_state_updates.o" private/SLUS_204.86.rom \
+    --source src/fpu_state_updates.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/load_state_transition.o" private/SLUS_204.86.rom \
+    --source src/load_state_transition.c
