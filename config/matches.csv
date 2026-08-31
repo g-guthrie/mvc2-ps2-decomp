@@ -4445,6 +4445,15 @@ func_0038DE10,0x0038DE10,0x2C,src/mode_sync.c,complete
 func_0038E120,0x0038E120,0x2C,src/mode_sync.c,complete
 func_0039BFA0,0x0039BFA0,0x2C,src/mode_sync.c,complete
 func_0039C320,0x0039C320,0x2C,src/mode_sync.c,complete
+func_001CEC80,0x001CEC80,0x44,src/event_value_dispatch.c,complete
+func_001CECD0,0x001CECD0,0x44,src/event_value_dispatch.c,complete
+func_001CED20,0x001CED20,0x44,src/event_value_dispatch.c,complete
+func_001CED70,0x001CED70,0x44,src/event_value_dispatch.c,complete
+func_001CEDC0,0x001CEDC0,0x44,src/event_value_dispatch.c,complete
+func_001CEE10,0x001CEE10,0x44,src/event_value_dispatch.c,complete
+func_001CEE60,0x001CEE60,0x44,src/event_value_dispatch.c,complete
+func_001CEEB0,0x001CEEB0,0x44,src/event_value_dispatch.c,complete
+func_001CEF50,0x001CEF50,0x44,src/event_value_dispatch.c,complete
 func_001A78D0,0x001A78D0,0x54,src/event_callbacks84.c,complete
 func_001A7930,0x001A7930,0x54,src/event_callbacks84.c,complete
 func_001A8CF0,0x001A8CF0,0x54,src/event_callbacks84.c,complete
