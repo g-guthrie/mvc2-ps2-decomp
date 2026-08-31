@@ -155,6 +155,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/allocator_callbacks76.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/allocator_callbacks76.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/event_callbacks84.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/event_callbacks84.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -298,5 +301,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/allocator_callbacks76.o" private/SLUS_204.86.rom \
     --source src/allocator_callbacks76.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/event_callbacks84.o" private/SLUS_204.86.rom \
+    --source src/event_callbacks84.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh
