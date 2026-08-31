@@ -41,6 +41,18 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/preaction_dispatch_heads.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/preaction_dispatch_heads.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/success_initializers.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/success_initializers.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/physics_dispatchers.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/physics_dispatchers.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/physics_negative_handlers.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/physics_negative_handlers.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/negative_incrementers.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/negative_incrementers.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -73,3 +85,15 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/preaction_dispatch_heads.o" private/SLUS_204.86.rom \
     --source src/preaction_dispatch_heads.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/success_initializers.o" private/SLUS_204.86.rom \
+    --source src/success_initializers.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/physics_dispatchers.o" private/SLUS_204.86.rom \
+    --source src/physics_dispatchers.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/physics_negative_handlers.o" private/SLUS_204.86.rom \
+    --source src/physics_negative_handlers.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/negative_incrementers.o" private/SLUS_204.86.rom \
+    --source src/negative_incrementers.c

@@ -27,9 +27,9 @@ compiler as `MW MIPS C Compiler (2.4.1.01)` / `PlayStation2`.
 | BSS | `0x004c2580..0x00634380` (`0x171e00` bytes) |
 | Global pointer | `0x004c7270` |
 
-The project has **3,905 exact matching and linked C functions (113,908 bytes)**.
+The project has **4,082 exact matching and linked C functions (135,296 bytes)**.
 All are physically placed by the hybrid linker and covered by the exact
-full-image hash. This is 3.4584% of the conservative text span and exceeds
+full-image hash. This is 4.1077% of the conservative text span and exceeds
 decomp.dev's 0.5% public-visibility threshold. Assembly placeholders never
 count as decompiled source. The initial inventory
 contained 17,658 explicit-size function candidates. Splitting 2,077 oversized
@@ -71,8 +71,9 @@ make relink
 
 `make relink` reconstructs all 3,941,760 loaded bytes, links BSS at
 `0x004c2580`, and requires both SHA-1 and SHA-256 plus a byte-for-byte `cmp`.
-The GNU ELF container is only a build carrier; the loaded image is the exact
-acceptance target until Metrowerks linker-header fidelity is recovered.
+`make hybrid` also deterministically reconstructs the full retail ELF
+container—headers, program headers, section headers, `.comment`, `.reginfo`,
+and padding—and requires it to match `SLUS_204.86` byte-for-byte.
 
 ## Matching-C verification
 

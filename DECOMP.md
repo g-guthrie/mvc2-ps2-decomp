@@ -7,6 +7,8 @@
   compiler reproduces its instructions and relocations exactly.
 - Assembly placeholders and mechanically translated output count as zero.
 - Whole-image linkage and target-hash verification remain the final gate.
+- The deterministic ELF packer now reconstructs the complete retail
+  `SLUS_204.86` container byte-for-byte from the exact hybrid loaded image.
 - The current hybrid relink is byte-exact for the complete loaded image. Raw
   `.word` placeholders still count as zero matching source.
 - Progress separately reports the conservative 3,293,696-byte text span and
@@ -27,8 +29,8 @@
 The current sources contain exact address getters, simple/straight leaves,
 direct tails, absolute and GP-relative dispatchers, signed-result/reset/call
 handlers, and 2,077 verified dispatcher heads split from oversized assembly
-ranges. `make match` verifies all 3,905 functions and 113,908/113,908 bytes
+ranges. `make match` verifies all 4,082 functions and 135,296/135,296 bytes
 directly against retail, resolving HI16/LO16, R_MIPS_26, and GPREL16
-relocations. The exact hybrid link places all 3,905 compiled functions at their
-retail addresses, so all 113,908 bytes count as `complete_code`; the split
+relocations. The exact hybrid link places all 4,082 compiled functions at their
+retail addresses, so all 135,296 bytes count as `complete_code`; the split
 residual spans remain assembly and count as zero.
