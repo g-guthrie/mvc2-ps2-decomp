@@ -116,6 +116,18 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/load_state_transition.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/load_state_transition.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/direct_state_tail.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/direct_state_tail.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/bulk_copy_112.c -c -lang c -O3,p -sdatathreshold 0 \
+    -o "$BUILD/bulk_copy_112.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/conditional_engine_chains.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/conditional_engine_chains.o"
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/conditional_init_tail.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/conditional_init_tail.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -220,3 +232,15 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/load_state_transition.o" private/SLUS_204.86.rom \
     --source src/load_state_transition.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/direct_state_tail.o" private/SLUS_204.86.rom \
+    --source src/direct_state_tail.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/bulk_copy_112.o" private/SLUS_204.86.rom \
+    --source src/bulk_copy_112.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/conditional_engine_chains.o" private/SLUS_204.86.rom \
+    --source src/conditional_engine_chains.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/conditional_init_tail.o" private/SLUS_204.86.rom \
+    --source src/conditional_init_tail.c
