@@ -4226,3 +4226,14 @@ func_002DCEF0,0x002DCEF0,0x38,src/boolean_state_dispatch.c,complete
 func_0031BEE0,0x0031BEE0,0x38,src/boolean_state_dispatch.c,complete
 func_00329290,0x00329290,0x38,src/boolean_state_dispatch.c,complete
 func_00352950,0x00352950,0x38,src/boolean_state_dispatch.c,complete
+func_00157250,0x157250,0x34,src/fpu_pure_updates.c,complete
+func_001DC060,0x1dc060,0x44,src/fpu_pure_updates.c,complete
+func_0021C770,0x21c770,0x44,src/fpu_pure_updates.c,complete
+func_002A33E0,0x2a33e0,0x44,src/fpu_pure_updates.c,complete
+func_00322020,0x322020,0x44,src/fpu_pure_updates.c,complete
+func_0032D5F0,0x32d5f0,0x24,src/fpu_pure_updates.c,complete
+func_0032E610,0x32e610,0x34,src/fpu_pure_updates.c,complete
+func_0032E650,0x32e650,0x34,src/fpu_pure_updates.c,complete
+func_00372A50,0x372a50,0x44,src/fpu_pure_updates.c,complete
+func_003B54E0,0x3b54e0,0x44,src/fpu_pure_updates.c,complete
+func_003B9000,0x3b9000,0x44,src/fpu_pure_updates.c,complete

@@ -71,6 +71,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/boolean_state_dispatch.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/boolean_state_dispatch.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fpu_pure_updates.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/fpu_pure_updates.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -132,3 +135,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/boolean_state_dispatch.o" private/SLUS_204.86.rom \
     --source src/boolean_state_dispatch.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/fpu_pure_updates.o" private/SLUS_204.86.rom \
+    --source src/fpu_pure_updates.c
