@@ -4319,3 +4319,14 @@ func_002F2770,0x002F2770,0x20,src/nonzero_wrappers.c,complete
 func_002F7190,0x002F7190,0x20,src/nonzero_wrappers.c,complete
 func_002FC2E0,0x002FC2E0,0x20,src/nonzero_wrappers.c,complete
 func_00300B80,0x00300B80,0x20,src/nonzero_wrappers.c,complete
+func_001FBCF0,0x001FBCF0,0x98,src/fpu_notify.c,complete
+func_002021F0,0x002021F0,0x98,src/fpu_notify.c,complete
+func_0023BE60,0x0023BE60,0x98,src/fpu_notify.c,complete
+func_00245CA0,0x00245CA0,0x98,src/fpu_notify.c,complete
+func_0024C9C0,0x0024C9C0,0x98,src/fpu_notify.c,complete
+func_0026CC00,0x0026CC00,0x98,src/fpu_notify.c,complete
+func_00272990,0x00272990,0x98,src/fpu_notify.c,complete
+func_0028D030,0x0028D030,0x98,src/fpu_notify.c,complete
+func_00294380,0x00294380,0x98,src/fpu_notify.c,complete
+func_002B4BC0,0x002B4BC0,0x98,src/fpu_notify.c,complete
+func_002FB1C0,0x002FB1C0,0x98,src/fpu_notify.c,complete
