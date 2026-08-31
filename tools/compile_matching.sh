@@ -65,6 +65,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/conditional_state_dispatch.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/conditional_state_dispatch.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/flag_call_68.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/flag_call_68.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/boolean_state_dispatch.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/boolean_state_dispatch.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -121,3 +127,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/conditional_state_dispatch.o" private/SLUS_204.86.rom \
     --source src/conditional_state_dispatch.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/flag_call_68.o" private/SLUS_204.86.rom --source src/flag_call_68.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/boolean_state_dispatch.o" private/SLUS_204.86.rom \
+    --source src/boolean_state_dispatch.c

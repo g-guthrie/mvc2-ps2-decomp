@@ -106,3 +106,12 @@ void func_002FCDD0(u8 *p) { if (p[0x212] == 1) func_002FCF70(p); else func_002FC
 void func_00305A00(u8 *p) { if (p[0x212] == 1) func_00305B80(p); else func_00305A40(p); }
 void func_003098F0(u8 *p) { if (p[0x212] == 1) func_00309AA0(p); else func_00309930(p); }
 void func_003104D0(u8 *p) { if (p[0x212] == 1) func_00310660(p); else func_00310510(p); }
+
+extern void func_001843A0(u8 *);
+extern void func_00184540(u8 *);
+extern void func_0029B130(u8 *);
+
+void func_0029E3C0(u8 *p) { if (p[0x20D] == 2) func_00184540(p); else func_0029B130(p); }
+void func_002C1990(u8 *p) { if (p[0x20D] == 2) func_00184540(p); else func_001843A0(p); }
+void func_002F6450(u8 *p) { if (p[0x20D] == 2) func_00184540(p); else func_001843A0(p); }
+void func_0031AF50(u8 *p) { if (p[0x20D] == 2) func_00184540(p); else func_001843A0(p); }
