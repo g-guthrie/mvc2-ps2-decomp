@@ -17,6 +17,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Install report dependencies
+        run: python -m pip install pyelftools==0.32
       - name: Test reporting tools
         run: python -m unittest tools/test_*.py
       - name: Generate objdiff v2 report

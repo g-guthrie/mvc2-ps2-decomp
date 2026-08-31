@@ -25,9 +25,10 @@
 ## Exact C checkpoint
 
 The current sources contain exact address getters, simple/straight leaves,
-direct tails, absolute and GP-relative dispatchers, and 430 nontrivial
-signed-result handlers with real stack/control flow. `make match` verifies all
-1,713 functions and 40,300/40,300 bytes directly against retail, resolving
-HI16/LO16, R_MIPS_26, and GPREL16 relocations. The exact hybrid link places all
-1,713 compiled functions at their retail addresses, so all 40,300 bytes count
-as `complete_code`.
+direct tails, absolute and GP-relative dispatchers, signed-result/reset/call
+handlers, and 2,077 verified dispatcher heads split from oversized assembly
+ranges. `make match` verifies all 3,905 functions and 113,908/113,908 bytes
+directly against retail, resolving HI16/LO16, R_MIPS_26, and GPREL16
+relocations. The exact hybrid link places all 3,905 compiled functions at their
+retail addresses, so all 113,908 bytes count as `complete_code`; the split
+residual spans remain assembly and count as zero.

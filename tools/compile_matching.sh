@@ -25,6 +25,22 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/gp_dispatch.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/gp_dispatch.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sequential_calls.c -c -lang c $MATCH_FLAGS -o "$BUILD/sequential_calls.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/reset_on_negative.c -c -lang c $MATCH_FLAGS -o "$BUILD/reset_on_negative.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/composite_dispatch_heads.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/composite_dispatch_heads.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/composite_gp_dispatch_heads.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/composite_gp_dispatch_heads.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/argument_dispatch_heads.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/argument_dispatch_heads.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/preaction_dispatch_heads.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/preaction_dispatch_heads.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -41,3 +57,19 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     --source src/signed_result_handlers.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/gp_dispatch.o" private/SLUS_204.86.rom --source src/gp_dispatch.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/sequential_calls.o" private/SLUS_204.86.rom --source src/sequential_calls.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/reset_on_negative.o" private/SLUS_204.86.rom --source src/reset_on_negative.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/composite_dispatch_heads.o" private/SLUS_204.86.rom \
+    --source src/composite_dispatch_heads.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/composite_gp_dispatch_heads.o" private/SLUS_204.86.rom \
+    --source src/composite_gp_dispatch_heads.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/argument_dispatch_heads.o" private/SLUS_204.86.rom \
+    --source src/argument_dispatch_heads.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/preaction_dispatch_heads.o" private/SLUS_204.86.rom \
+    --source src/preaction_dispatch_heads.c

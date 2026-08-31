@@ -90,8 +90,10 @@ A second straight-line batch contributes 177 exact functions and 3,396 bytes:
 A relocation-aware tail batch adds 631 functions and 5,600 bytes; 54 indirect
 table dispatchers add 1,728 bytes with reviewed HI16/LO16 table relocations; 19
 GP-relative dispatchers add 532 bytes; and 430 signed-result handlers with real
-stack/control flow add 25,800 bytes. The cumulative checkpoint is 1,713
-functions and 40,300 bytes.
+stack/control flow add 25,800 bytes. Six further exact batches add sequential
+calls, reset-on-negative handlers, and 2,077 boundary-split dispatcher heads
+while retaining every residual assembly byte. The cumulative checkpoint is
+3,905 functions and 113,908 bytes.
 
 `0x00102C58` target words:
 

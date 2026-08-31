@@ -7,18 +7,33 @@ import argparse
 import csv
 import re
 import struct
+from collections import Counter
+from dataclasses import dataclass
 from pathlib import Path
 
 from elftools.elf.elffile import ELFFile
+from elftools.elf.enums import ENUM_RELOC_TYPE_MIPS
 
 
 SYMBOL_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(0x[0-9A-Fa-f]+)\s*;")
 NAME_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
-R_MIPS_32 = 2
-R_MIPS_26 = 4
-R_MIPS_HI16 = 5
-R_MIPS_LO16 = 6
-R_MIPS_GPREL16 = 7
+MIPS_RELOCATION_NAMES = {
+    value: name for name, value in ENUM_RELOC_TYPE_MIPS.items() if isinstance(value, int)
+}
+
+
+@dataclass(frozen=True)
+class ExternalRelocation:
+    offset: int
+    type_name: str
+    symbol_name: str
+    addend: int = 0
+
+
+@dataclass(frozen=True)
+class CompiledFunction:
+    body: bytes
+    relocations: tuple[ExternalRelocation, ...]
 
 
 def load_matches(path: Path, base: int, image_size: int) -> list[tuple[str, int, int, str]]:
@@ -50,7 +65,21 @@ def load_matches(path: Path, base: int, image_size: int) -> list[tuple[str, int,
     return matches
 
 
-def load_compiled_objects(values: list[str]) -> dict[str, Path]:
+def default_object_path(source: str, compiled_dir: Path) -> Path:
+    source_path = Path(source)
+    if source_path.is_absolute() or ".." in source_path.parts:
+        raise SystemExit(f"source path must stay within the project: {source}")
+    relative = source_path
+    if relative.parts and relative.parts[0] == "src":
+        relative = Path(*relative.parts[1:])
+    return compiled_dir / relative.with_suffix(".o")
+
+
+def load_compiled_objects(
+    values: list[str],
+    matches: list[tuple[str, int, int, str]],
+    compiled_dir: Path,
+) -> dict[str, Path]:
     result = {}
     for value in values:
         if "=" not in value:
@@ -59,6 +88,11 @@ def load_compiled_objects(values: list[str]) -> dict[str, Path]:
         if not source or not path:
             raise SystemExit("--compiled-object must be SOURCE=PATH")
         result[source] = Path(path)
+    for source in {source for _, _, _, source in matches}:
+        result.setdefault(source, default_object_path(source, compiled_dir))
+    for source, path in result.items():
+        if not path.is_file():
+            raise SystemExit(f"compiled object missing for {source}: {path}")
     return result
 
 
@@ -71,38 +105,17 @@ def load_symbols(path: Path) -> list[tuple[str, int]]:
     return symbols
 
 
-def patch_relocation(word: int, relocation_type: int, value: int, gp: int) -> int:
-    if relocation_type == R_MIPS_32:
-        return value & 0xFFFFFFFF
-    if relocation_type == R_MIPS_26:
-        return (word & 0xFC000000) | ((value >> 2) & 0x03FFFFFF)
-    if relocation_type == R_MIPS_HI16:
-        return (word & 0xFFFF0000) | (((value + 0x8000) >> 16) & 0xFFFF)
-    if relocation_type == R_MIPS_LO16:
-        return (word & 0xFFFF0000) | (value & 0xFFFF)
-    if relocation_type == R_MIPS_GPREL16:
-        displacement = value - gp
-        if not -0x8000 <= displacement <= 0x7FFF:
-            raise SystemExit(f"GP-relative displacement out of range: {displacement}")
-        return (word & 0xFFFF0000) | (displacement & 0xFFFF)
-    raise SystemExit(f"unsupported MIPS relocation type {relocation_type}")
-
-
 def extract_compiled_functions(
     matches: list[tuple[str, int, int, str]],
     compiled_objects: dict[str, Path],
     addresses: dict[str, int],
-    target: bytes,
-    base: int,
-) -> dict[str, bytes]:
-    gp = addresses.get("_gp")
-    if gp is None:
-        raise SystemExit("symbol map has no _gp value")
+) -> tuple[dict[str, CompiledFunction], dict[str, int]]:
     by_source: dict[str, list[tuple[str, int, int]]] = {}
     for name, address, size, source in matches:
         by_source.setdefault(source, []).append((name, address, size))
 
-    result: dict[str, bytes] = {}
+    result: dict[str, CompiledFunction] = {}
+    synthetic_symbols: dict[str, int] = {}
     for source, source_matches in by_source.items():
         object_path = compiled_objects.get(source)
         if object_path is None:
@@ -113,6 +126,18 @@ def extract_compiled_functions(
             if symbol_table is None:
                 raise SystemExit(f"object has no symbol table: {object_path}")
             symbols = {symbol.name: symbol for symbol in symbol_table.iter_symbols() if symbol.name}
+            section_bases: dict[int, int] = {}
+            for symbol in symbol_table.iter_symbols():
+                section_index = symbol["st_shndx"]
+                address = addresses.get(symbol.name)
+                if address is None or not isinstance(section_index, int):
+                    continue
+                candidate = address - symbol["st_value"]
+                previous = section_bases.setdefault(section_index, candidate)
+                if previous != candidate:
+                    raise SystemExit(
+                        f"inconsistent retail base for section {section_index} in {object_path}"
+                    )
             relocations_by_section: dict[int, list] = {}
             for section in elf.iter_sections():
                 if section.header.sh_type in {"SHT_REL", "SHT_RELA"}:
@@ -132,43 +157,47 @@ def extract_compiled_functions(
                     raise SystemExit(
                         f"compiled size mismatch for {name}: 0x{size:x} != 0x{expected_size:x}"
                     )
-                compiled = bytearray(section.data()[start : start + size])
+                compiled = bytes(section.data()[start : start + size])
                 if len(compiled) != size:
                     raise SystemExit(f"truncated compiled section for {name}")
 
+                external_relocations: list[ExternalRelocation] = []
                 for relocation in relocations_by_section.get(section_index, []):
                     offset = relocation["r_offset"]
                     if not (start <= offset < start + size):
                         continue
                     relocation_symbol = symbol_table.get_symbol(relocation["r_info_sym"])
-                    value = addresses.get(relocation_symbol.name)
-                    if value is None:
-                        raise SystemExit(
-                            f"no target address for relocation {relocation_symbol.name} in {name}"
-                        )
                     local_offset = offset - start
                     if local_offset + 4 > size:
                         raise SystemExit(f"relocation outside function body: {name}")
-                    word = struct.unpack_from("<I", compiled, local_offset)[0]
-                    patched = patch_relocation(
-                        word, relocation["r_info_type"], value, gp
-                    )
-                    struct.pack_into("<I", compiled, local_offset, patched)
+                    relocation_type = relocation["r_info_type"]
+                    type_name = MIPS_RELOCATION_NAMES.get(relocation_type)
+                    if type_name is None:
+                        raise SystemExit(
+                            f"unknown MIPS relocation type {relocation_type} in {name}"
+                        )
 
-                target_start = address - base
-                expected = target[target_start : target_start + size]
-                if bytes(compiled) != expected:
-                    mismatch = next(
-                        index
-                        for index, (left, right) in enumerate(zip(compiled, expected))
-                        if left != right
+                    symbol_name = relocation_symbol.name
+                    if symbol_name not in addresses:
+                        target_section = relocation_symbol["st_shndx"]
+                        if not isinstance(target_section, int) or target_section not in section_bases:
+                            raise SystemExit(
+                                f"no retail address for relocation symbol {symbol_name!r} in {name}"
+                            )
+                        value = section_bases[target_section] + relocation_symbol["st_value"]
+                        object_token = re.sub(r"[^A-Za-z0-9_]", "_", object_path.stem)
+                        symbol_name = (
+                            f"__mw_{object_token}_s{target_section}_v{relocation_symbol['st_value']:x}"
+                        )
+                        synthetic_symbols[symbol_name] = value
+
+                    addend = relocation["r_addend"] if relocation.is_RELA() else 0
+                    external_relocations.append(
+                        ExternalRelocation(local_offset, type_name, symbol_name, addend)
                     )
-                    raise SystemExit(
-                        f"compiled mismatch for {name} at +0x{mismatch:x}: "
-                        f"{compiled[mismatch]:02x} != {expected[mismatch]:02x}"
-                    )
-                result[name] = bytes(compiled)
-    return result
+
+                result[name] = CompiledFunction(compiled, tuple(external_relocations))
+    return result, synthetic_symbols
 
 
 def main() -> None:
@@ -176,7 +205,8 @@ def main() -> None:
     parser.add_argument("--target", type=Path, default=Path("private/SLUS_204.86.rom"))
     parser.add_argument("--matches", type=Path, default=Path("config/matches.csv"))
     parser.add_argument("--symbols", type=Path, default=Path("config/symbol_addrs.txt"))
-    parser.add_argument("--compiled-object", action="append", required=True)
+    parser.add_argument("--compiled-object", action="append", default=[])
+    parser.add_argument("--compiled-dir", type=Path, default=Path("build/matching"))
     parser.add_argument("--build", type=Path, default=Path("build/hybrid"))
     parser.add_argument("--base", type=lambda value: int(value, 0), default=0x00100000)
     parser.add_argument("--bss-address", type=lambda value: int(value, 0), default=0x004C2580)
@@ -186,12 +216,12 @@ def main() -> None:
     target = args.target.read_bytes()
     image_size = len(target)
     matches = load_matches(args.matches, args.base, image_size)
-    compiled_objects = load_compiled_objects(args.compiled_object)
+    compiled_objects = load_compiled_objects(args.compiled_object, matches, args.compiled_dir)
     symbols = load_symbols(args.symbols)
     addresses = dict(symbols)
     addresses.update({name: address for name, address, _, _ in matches})
-    compiled_functions = extract_compiled_functions(
-        matches, compiled_objects, addresses, target, args.base
+    compiled_functions, synthetic_symbols = extract_compiled_functions(
+        matches, compiled_objects, addresses
     )
     build = args.build
     build.mkdir(parents=True, exist_ok=True)
@@ -218,7 +248,8 @@ def main() -> None:
             ])
             link_inputs.append(f"        {build.as_posix()}/raw_chunks.o({section})")
         compiled_section = f".compiled.{name}"
-        body = compiled_functions[name]
+        function = compiled_functions[name]
+        body = function.body
         words = [struct.unpack_from("<I", body, offset)[0] for offset in range(0, size, 4)]
         compiled_lines.extend([
             f'.section {compiled_section}, "ax", @progbits',
@@ -226,6 +257,12 @@ def main() -> None:
             f".type {name}, @function",
             f"{name}:",
             *[f"    .word 0x{word:08X}" for word in words],
+            *[
+                f"    .reloc {name}+0x{relocation.offset:x}, {relocation.type_name}, "
+                f"{relocation.symbol_name}"
+                + (f"{relocation.addend:+#x}" if relocation.addend else "")
+                for relocation in function.relocations
+            ],
             f".size {name}, . - {name}",
             "",
         ])
@@ -250,6 +287,10 @@ def main() -> None:
         for name, address in symbols
         if name not in compiled_names
     ]
+    symbol_lines.extend(
+        f"    {name} = 0x{address:08x};"
+        for name, address in sorted(synthetic_symbols.items())
+    )
     ld_lines = [
         "OUTPUT_ARCH(mips)",
         "ENTRY(_start)",
@@ -285,7 +326,16 @@ def main() -> None:
         "",
     ]
     linker_script.write_text("\n".join(ld_lines), encoding="utf-8")
+    relocation_counts = Counter(
+        relocation.type_name
+        for function in compiled_functions.values()
+        for relocation in function.relocations
+    )
+    relocation_summary = ", ".join(
+        f"{name}={count}" for name, count in sorted(relocation_counts.items())
+    ) or "none"
     print(f"generated {len(matches)} isolated compiled-function sections")
+    print(f"externalized relocations: {relocation_summary}")
 
 
 if __name__ == "__main__":

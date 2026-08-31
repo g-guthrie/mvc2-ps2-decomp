@@ -21,13 +21,7 @@ mkdir -p "$BUILD"
 
 "$PYTHON" tools/generate_hybrid_relink.py \
     --target "$TARGET" \
-    --compiled-object src/main.c=build/matching/main.o \
-    --compiled-object src/simple_leaves.c=build/matching/simple_leaves.o \
-    --compiled-object src/straight_leaves.c=build/matching/straight_leaves.o \
-    --compiled-object src/tail_leaves.c=build/matching/tail_leaves.o \
-    --compiled-object src/indirect_dispatch.c=build/matching/indirect_dispatch.o \
-    --compiled-object src/signed_result_handlers.c=build/matching/signed_result_handlers.o \
-    --compiled-object src/gp_dispatch.c=build/matching/gp_dispatch.o \
+    --compiled-dir build/matching \
     --build "$BUILD" \
     --bss-object "$BUILD/main_bss.o"
 

@@ -27,14 +27,15 @@ compiler as `MW MIPS C Compiler (2.4.1.01)` / `PlayStation2`.
 | BSS | `0x004c2580..0x00634380` (`0x171e00` bytes) |
 | Global pointer | `0x004c7270` |
 
-The project has **1,713 exact matching and linked C functions (40,300 bytes)**.
+The project has **3,905 exact matching and linked C functions (113,908 bytes)**.
 All are physically placed by the hybrid linker and covered by the exact
-full-image hash. This is 1.2236% of the conservative text span and exceeds
+full-image hash. This is 3.4584% of the conservative text span and exceeds
 decomp.dev's 0.5% public-visibility threshold. Assembly placeholders never
 count as decompiled source. The initial inventory
-contains **17,658 explicit-size function candidates** covering 96.92% of the
-conservative text span; the remaining text gaps and all initialized data remain
-separately visible in the progress report.
+contained 17,658 explicit-size function candidates. Splitting 2,077 oversized
+dispatcher entries into exact C heads plus retained assembly residuals produces
+a current denominator of **19,735 units**. No residual bytes were dropped; text
+gaps and initialized data remain separately visible in the progress report.
 
 Compiler-in-the-loop evidence currently identifies
 `mwcps2-3.0.3-020716` as the strongest product-build candidate with an `-O3`
