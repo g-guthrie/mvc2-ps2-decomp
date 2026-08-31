@@ -30,10 +30,10 @@
 The current sources contain exact address getters, simple/straight leaves,
 direct tails, absolute and GP-relative dispatchers, signed-result/reset/call
 handlers, and 2,077 verified dispatcher heads split from oversized assembly
-ranges. `make match` verifies all 4,828 functions and 202,324/202,324 bytes
+ranges. `make match` verifies all 4,849 functions and 204,760/204,760 bytes
 directly against retail, resolving HI16/LO16, R_MIPS_26, and GPREL16
-relocations. The exact hybrid link places all 4,828 compiled functions at their
-retail addresses, so all 202,324 bytes count as `complete_code`; 89,432 bytes
+relocations. The exact hybrid link places all 4,849 compiled functions at their
+retail addresses, so all 204,760 bytes count as `complete_code`; 89,432 bytes
 of source-owned initialized data (eight typed-as-zero regions and one symbolic
 dispatch table) count as complete data. The split
 residual spans remain assembly and count as zero.

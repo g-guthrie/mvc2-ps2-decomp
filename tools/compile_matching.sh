@@ -149,6 +149,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/three_byte_state.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/mode_sync.c -c -lang c $MATCH_FLAGS -o "$BUILD/mode_sync.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/allocator_callbacks116.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/allocator_callbacks116.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -286,5 +289,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     --source src/three_byte_state.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/mode_sync.o" private/SLUS_204.86.rom --source src/mode_sync.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/allocator_callbacks116.o" private/SLUS_204.86.rom \
+    --source src/allocator_callbacks116.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh
