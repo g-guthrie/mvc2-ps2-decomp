@@ -133,6 +133,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/sequential_heads.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/sequential_heads.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/three_checks.c -c -lang c $MATCH_FLAGS -o "$BUILD/three_checks.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/clear_increment_20.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/clear_increment_20.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/negative_to_state2.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/negative_to_state2.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -254,3 +262,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/sequential_heads.o" private/SLUS_204.86.rom \
     --source src/sequential_heads.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/three_checks.o" private/SLUS_204.86.rom --source src/three_checks.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/clear_increment_20.o" private/SLUS_204.86.rom \
+    --source src/clear_increment_20.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/negative_to_state2.o" private/SLUS_204.86.rom \
+    --source src/negative_to_state2.c
