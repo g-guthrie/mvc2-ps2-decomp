@@ -13,3 +13,4 @@ gMvc2ActionDispatch_004BA540,0x004BA540,0x20,.rodata,src/data/mvc2_action_dispat
 jtbl_004ACA80,0x004ACA80,0x164,.rodata,src/data/jtbl_004ACA80.c,parser_character_dispatch
 gIdentity3x3_00464EEC,0x00464EEC,0x24,.rodata,src/data/identity_00464EEC.c,identity_matrix_f32
 gMvc2ModeHandlerTable_004490C0,0x004490C0,0x160,.rodata,src/data/mvc2_mode_handler_table_004490C0.c,mode_handler_dispatch
+gMvc2EventDispatch_0043CBB0,0x0043CBB0,0x34,.rodata,src/data/mvc2_event_dispatch_0043CBB0.c,event_callback_dispatch

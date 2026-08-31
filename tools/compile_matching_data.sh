@@ -16,6 +16,7 @@ mkdir -p "$BUILD/data"
     src/data/mvc2_action_dispatch_004BA540.c \
     src/data/jtbl_004ACA80.c \
     src/data/mvc2_mode_handler_table_004490C0.c \
+    src/data/mvc2_event_dispatch_0043CBB0.c \
     config/data_symbol_addrs.txt
 
 for source in src/data/data_zero_*.c; do
@@ -41,3 +42,4 @@ compile_table src/data/mvc2_action_dispatch_004BA540.c gMvc2ActionDispatch_004BA
 compile_table src/data/jtbl_004ACA80.c jtbl_004ACA80
 compile_table src/data/identity_00464EEC.c gIdentity3x3_00464EEC
 compile_table src/data/mvc2_mode_handler_table_004490C0.c gMvc2ModeHandlerTable_004490C0
+compile_table src/data/mvc2_event_dispatch_0043CBB0.c gMvc2EventDispatch_0043CBB0
