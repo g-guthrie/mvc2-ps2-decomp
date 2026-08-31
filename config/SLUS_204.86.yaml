@@ -39,4 +39,3 @@ segments:
       - [0x000000, asm, main]
       - { type: bss, vram: 0x004c2580, name: main_bss }
   - [0x3c2580]
-

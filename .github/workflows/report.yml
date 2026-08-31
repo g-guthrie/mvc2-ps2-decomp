@@ -29,4 +29,3 @@ jobs:
           name: ps2_report
           path: build-report/report.json
           if-no-files-found: error
-

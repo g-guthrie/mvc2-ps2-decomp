@@ -64,4 +64,3 @@ repository.
 No disc image, executable, extracted asset, generated retail assembly, Sony SDK,
 or proprietary Metrowerks binary is distributed. This research project is not
 affiliated with Capcom, Marvel, Sony, or their licensors.
-

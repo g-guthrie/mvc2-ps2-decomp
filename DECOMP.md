@@ -17,4 +17,3 @@
 - The original translation-unit map and code/data boundaries were stripped.
 - The disc includes multiple IOP modules; this initial project reports only the
   main Emotion Engine executable.
-
