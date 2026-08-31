@@ -16,8 +16,9 @@
 
 ## Current unknowns
 
-- The exact CodeWarrior product build corresponding to the embedded component
-  string `MW MIPS C Compiler (2.4.1.01)` still needs compiler-in-the-loop tests.
+- The embedded component string is `MW MIPS C Compiler (2.4.1.01)`, but current
+  compiler-in-the-loop evidence supports a mixed MWCCPS2 3.0/3.0.3 corpus; each
+  unit records and verifies the compiler version that exactly reproduces it.
 - The original translation-unit map was stripped; the current function
   inventory is an explicit-size spimdisasm baseline, not recovered source-file
   ownership.
@@ -29,8 +30,8 @@
 The current sources contain exact address getters, simple/straight leaves,
 direct tails, absolute and GP-relative dispatchers, signed-result/reset/call
 handlers, and 2,077 verified dispatcher heads split from oversized assembly
-ranges. `make match` verifies all 4,238 functions and 145,540/145,540 bytes
+ranges. `make match` verifies all 4,297 functions and 148,924/148,924 bytes
 directly against retail, resolving HI16/LO16, R_MIPS_26, and GPREL16
-relocations. The exact hybrid link places all 4,238 compiled functions at their
-retail addresses, so all 145,540 bytes count as `complete_code`; the split
+relocations. The exact hybrid link places all 4,297 compiled functions at their
+retail addresses, so all 148,924 bytes count as `complete_code`; the split
 residual spans remain assembly and count as zero.

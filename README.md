@@ -27,9 +27,9 @@ compiler as `MW MIPS C Compiler (2.4.1.01)` / `PlayStation2`.
 | BSS | `0x004c2580..0x00634380` (`0x171e00` bytes) |
 | Global pointer | `0x004c7270` |
 
-The project has **4,238 exact matching and linked C functions (145,540 bytes)**.
+The project has **4,297 exact matching and linked C functions (148,924 bytes)**.
 All are physically placed by the hybrid linker and covered by the exact
-full-image hash. This is 4.4187% of the conservative text span and exceeds
+full-image hash. This is 4.5215% of the conservative text span and exceeds
 decomp.dev's 0.5% public-visibility threshold. Assembly placeholders never
 count as decompiled source. The initial inventory
 contained 17,658 explicit-size function candidates. Splitting 2,077 oversized
@@ -82,11 +82,15 @@ After placing private `wibo` and `mwcps2.exe` binaries outside Git:
 ```sh
 WIBO=/private/path/wibo-macos \
 MWCCPS2=/private/path/mwccps2.exe \
+MWCCPS2_30=/private/path/mwcps2-3.0-011126/mwccps2.exe \
 make match PYTHON=.venv/bin/python
 ```
 
 The verifier applies MIPS HI16/LO16/26/32 relocations using the reviewed target
 symbols before comparing every function directly with the retail loaded image.
+Most units use MWCCPS2 3.0.3; the explicitly documented `state_return_family`
+unit is compiled with 3.0-011126 because that compiler is the only tested one
+that reproduces its target scheduling exactly.
 
 `make hybrid` then replaces all matched retail windows with the actual compiled
 Metrowerks function sections and requires exact symbol placement plus the full

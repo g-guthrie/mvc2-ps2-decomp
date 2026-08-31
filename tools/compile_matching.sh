@@ -3,6 +3,7 @@ set -eu
 
 : "${WIBO:?set WIBO to the private wibo executable}"
 : "${MWCCPS2:?set MWCCPS2 to the private mwccps2.exe}"
+: "${MWCCPS2_30:?set MWCCPS2_30 to private mwccps2-3.0-011126/mwccps2.exe}"
 
 PYTHON=${PYTHON:-python3}
 MATCH_FLAGS=${MATCH_FLAGS:--O3 -sdatathreshold 0}
@@ -74,6 +75,15 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/fpu_pure_updates.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/fpu_pure_updates.o"
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/state_return_family.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/state_return_family.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/ordered_initializers.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/ordered_initializers.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/duplicate_family.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/duplicate_family.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -138,3 +148,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/fpu_pure_updates.o" private/SLUS_204.86.rom \
     --source src/fpu_pure_updates.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/state_return_family.o" private/SLUS_204.86.rom \
+    --source src/state_return_family.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/ordered_initializers.o" private/SLUS_204.86.rom \
+    --source src/ordered_initializers.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/duplicate_family.o" private/SLUS_204.86.rom \
+    --source src/duplicate_family.c
