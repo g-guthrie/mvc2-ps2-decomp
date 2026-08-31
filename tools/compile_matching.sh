@@ -84,6 +84,21 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/duplicate_family.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/duplicate_family.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/float_division_clear.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/float_division_clear.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/counter_steps.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/counter_steps.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/two_pass_wrappers.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/two_pass_wrappers.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nonzero_wrappers.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/nonzero_wrappers.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fpu_field_accessors.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/fpu_field_accessors.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -157,3 +172,17 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/duplicate_family.o" private/SLUS_204.86.rom \
     --source src/duplicate_family.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/float_division_clear.o" private/SLUS_204.86.rom \
+    --source src/float_division_clear.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/counter_steps.o" private/SLUS_204.86.rom --source src/counter_steps.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/two_pass_wrappers.o" private/SLUS_204.86.rom \
+    --source src/two_pass_wrappers.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/nonzero_wrappers.o" private/SLUS_204.86.rom \
+    --source src/nonzero_wrappers.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/fpu_field_accessors.o" private/SLUS_204.86.rom \
+    --source src/fpu_field_accessors.c
