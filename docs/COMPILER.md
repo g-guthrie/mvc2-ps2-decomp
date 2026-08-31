@@ -83,6 +83,16 @@ immediate returns, 57 field getters, 20 field setters, and 6 byte zeroers.
 Every function is independently compared with the retail loaded image by
 `make match`.
 
+A second straight-line batch contributes 177 exact functions and 3,396 bytes:
+153 byte-counter increment/clear-field leaves, 12 byte-counter increments, and
+12 paired-word stores.
+
+A relocation-aware tail batch adds 631 functions and 5,600 bytes; 54 indirect
+table dispatchers add 1,728 bytes with reviewed HI16/LO16 table relocations; 19
+GP-relative dispatchers add 532 bytes; and 430 signed-result handlers with real
+stack/control flow add 25,800 bytes. The cumulative checkpoint is 1,713
+functions and 40,300 bytes.
+
 `0x00102C58` target words:
 
 ```text

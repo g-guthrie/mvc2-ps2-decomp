@@ -27,9 +27,10 @@ compiler as `MW MIPS C Compiler (2.4.1.01)` / `PlayStation2`.
 | BSS | `0x004c2580..0x00634380` (`0x171e00` bytes) |
 | Global pointer | `0x004c7270` |
 
-The project has **402 exact matching C functions (3,244 bytes)**. These functions
-are compiler-and-relocation verified but are not yet placed by the hybrid
-linker, so completed/linked code remains zero. Assembly placeholders never
+The project has **1,713 exact matching and linked C functions (40,300 bytes)**.
+All are physically placed by the hybrid linker and covered by the exact
+full-image hash. This is 1.2236% of the conservative text span and exceeds
+decomp.dev's 0.5% public-visibility threshold. Assembly placeholders never
 count as decompiled source. The initial inventory
 contains **17,658 explicit-size function candidates** covering 96.92% of the
 conservative text span; the remaining text gaps and all initialized data remain
@@ -84,6 +85,10 @@ make match PYTHON=.venv/bin/python
 
 The verifier applies MIPS HI16/LO16/26/32 relocations using the reviewed target
 symbols before comparing every function directly with the retail loaded image.
+
+`make hybrid` then replaces all matched retail windows with the actual compiled
+Metrowerks function sections and requires exact symbol placement plus the full
+loaded-image hashes and byte comparison.
 
 ## Progress reporting
 

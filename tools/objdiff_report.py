@@ -21,17 +21,19 @@ def progress_measures(
     total_units: int = 0,
     matched_code: int = 0,
     matched_functions: int = 0,
+    complete_code: int = 0,
 ) -> dict:
     code_percent = matched_code * 100.0 / total_code if total_code else 0.0
     function_percent = (
         matched_functions * 100.0 / total_functions if total_functions else 0.0
     )
+    complete_code_percent = complete_code * 100.0 / total_code if total_code else 0.0
     result = {
         "fuzzy_match_percent": code_percent,
         "matched_code_percent": code_percent,
         "matched_data_percent": 0.0,
         "matched_functions_percent": function_percent,
-        "complete_code_percent": 0.0,
+        "complete_code_percent": complete_code_percent,
         "complete_data_percent": 0.0,
         "total_units": total_units,
         "complete_units": 0,
@@ -39,7 +41,7 @@ def progress_measures(
     if total_code:
         result["total_code"] = str(total_code)
         result["matched_code"] = str(matched_code)
-        result["complete_code"] = "0"
+        result["complete_code"] = str(complete_code)
     if total_data:
         result["total_data"] = str(total_data)
         result["matched_data"] = "0"
@@ -68,12 +70,13 @@ def load_matches(path: Path) -> dict[str, dict]:
     result = {}
     with path.open(newline="", encoding="utf-8") as stream:
         for row in csv.DictReader(stream):
-            if row["status"] != "matching":
+            if row["status"] not in {"matching", "complete"}:
                 continue
             result[row["name"]] = {
                 "address": int(row["address"], 0),
                 "size": int(row["size"], 0),
                 "source": row["source"],
+                "complete": row["status"] == "complete",
             }
     return result
 
@@ -99,6 +102,11 @@ def build_report(functions: list[dict], matches: dict[str, dict]) -> dict:
         chunk_functions = sorted(chunks[index], key=lambda item: item["address"])
         chunk_matches = [function for function in chunk_functions if function["name"] in matches]
         matched_bytes = sum(function["size"] for function in chunk_matches)
+        complete_bytes = sum(
+            function["size"]
+            for function in chunk_matches
+            if matches[function["name"]]["complete"]
+        )
         units.append({
             "name": f"main/text_{start:06x}",
             "measures": progress_measures(
@@ -107,6 +115,7 @@ def build_report(functions: list[dict], matches: dict[str, dict]) -> dict:
                 total_units=1,
                 matched_code=matched_bytes,
                 matched_functions=len(chunk_matches),
+                complete_code=complete_bytes,
             ),
             "sections": [{
                 "name": ".text",
@@ -155,6 +164,9 @@ def build_report(functions: list[dict], matches: dict[str, dict]) -> dict:
         total_units=len(units),
         matched_code=sum(match["size"] for match in matches.values()),
         matched_functions=len(matches),
+        complete_code=sum(
+            match["size"] for match in matches.values() if match["complete"]
+        ),
     )
     return {
         "version": 2,

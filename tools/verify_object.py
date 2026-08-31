@@ -14,6 +14,7 @@ R_MIPS_32 = 2
 R_MIPS_26 = 4
 R_MIPS_HI16 = 5
 R_MIPS_LO16 = 6
+R_MIPS_GPREL16 = 7
 
 
 def load_addresses(path: Path) -> dict[str, int]:
@@ -31,11 +32,12 @@ def load_matches(path: Path, source: str | None = None) -> list[dict]:
         return [
             row
             for row in csv.DictReader(stream)
-            if row["status"] == "matching" and (source is None or row["source"] == source)
+            if row["status"] in {"matching", "complete"}
+            and (source is None or row["source"] == source)
         ]
 
 
-def patch_relocation(word: int, relocation_type: int, value: int) -> int:
+def patch_relocation(word: int, relocation_type: int, value: int, gp: int) -> int:
     if relocation_type == R_MIPS_32:
         return value & 0xFFFFFFFF
     if relocation_type == R_MIPS_26:
@@ -44,6 +46,11 @@ def patch_relocation(word: int, relocation_type: int, value: int) -> int:
         return (word & 0xFFFF0000) | (((value + 0x8000) >> 16) & 0xFFFF)
     if relocation_type == R_MIPS_LO16:
         return (word & 0xFFFF0000) | (value & 0xFFFF)
+    if relocation_type == R_MIPS_GPREL16:
+        displacement = value - gp
+        if not -0x8000 <= displacement <= 0x7FFF:
+            raise SystemExit(f"GP-relative displacement out of range: {displacement}")
+        return (word & 0xFFFF0000) | (displacement & 0xFFFF)
     raise SystemExit(f"unsupported MIPS relocation type {relocation_type}")
 
 
@@ -55,6 +62,9 @@ def verify(
     source: str | None = None,
 ) -> None:
     addresses = load_addresses(symbols_path)
+    gp = addresses.get("_gp")
+    if gp is None:
+        raise SystemExit("symbol map has no _gp value")
     matches = load_matches(matches_path, source)
     if not matches:
         raise SystemExit("no matching functions selected")
@@ -102,7 +112,9 @@ def verify(
                     )
                 local_offset = offset - start
                 word = struct.unpack_from("<I", compiled, local_offset)[0]
-                patched = patch_relocation(word, relocation["r_info_type"], relocation_value)
+                patched = patch_relocation(
+                    word, relocation["r_info_type"], relocation_value, gp
+                )
                 struct.pack_into("<I", compiled, local_offset, patched)
 
             target_offset = address - BASE_ADDRESS
