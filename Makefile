@@ -3,7 +3,7 @@ BIN ?=
 CUE ?=
 CONFIG := config/SLUS_204.86.yaml
 
-.PHONY: setup split report test clean
+.PHONY: setup split relink match report test clean
 
 setup:
 	@test -n "$(BIN)" || { echo "BIN is required" >&2; exit 2; }
@@ -12,6 +12,12 @@ setup:
 
 split:
 	$(PYTHON) -m splat split $(CONFIG)
+
+relink:
+	PYTHON="$(PYTHON)" tools/relink_baseline.sh
+
+match:
+	PYTHON="$(PYTHON)" tools/compile_matching.sh
 
 report:
 	$(PYTHON) tools/objdiff_report.py --report build-report/report.json --svg assets/progress.svg

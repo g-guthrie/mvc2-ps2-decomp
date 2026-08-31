@@ -26,7 +26,6 @@ options:
 
   section_order:
     - .text
-    - .data
     - .bss
 
 segments:
@@ -38,6 +37,5 @@ segments:
     subalign: null
     subsegments:
       - [0x000000, asm, main]
-      - [0x324200, data, main_data]
       - { type: bss, vram: 0x004c2580, name: main_bss }
   - [0x3c2580]

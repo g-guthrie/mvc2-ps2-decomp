@@ -7,6 +7,8 @@
   compiler reproduces its instructions and relocations exactly.
 - Assembly placeholders and mechanically translated output count as zero.
 - Whole-image linkage and target-hash verification remain the final gate.
+- The current hybrid relink is byte-exact for the complete loaded image. Raw
+  `.word` placeholders still count as zero matching source.
 - Progress separately reports the conservative 3,293,696-byte text span and
   648,064-byte initialized-data span. Neither gaps nor mixed data count as C.
 
@@ -19,3 +21,11 @@
   ownership.
 - The disc includes multiple IOP modules; this initial project reports only the
   main Emotion Engine executable.
+
+## Exact C checkpoint
+
+`src/main.c` currently contains seven 12-byte global-address getters. All seven
+compile to exact instructions and HI16/LO16 relocations; `make match` resolves
+those relocations and compares 84/84 bytes successfully. They are reported as
+matched, while `complete_code` remains zero until C object placement is part of
+the exact hybrid link.

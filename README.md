@@ -27,11 +27,18 @@ compiler as `MW MIPS C Compiler (2.4.1.01)` / `PlayStation2`.
 | BSS | `0x004c2580..0x00634380` (`0x171e00` bytes) |
 | Global pointer | `0x004c7270` |
 
-The project is at the assembly-baseline stage. Matching C begins at **0%**;
-assembly placeholders never count as decompiled source. The initial inventory
+The project has **7 exact matching C functions (84 bytes)**. These functions
+are compiler-and-relocation verified but are not yet placed by the hybrid
+linker, so completed/linked code remains zero. Assembly placeholders never
+count as decompiled source. The initial inventory
 contains **17,658 explicit-size function candidates** covering 96.92% of the
 conservative text span; the remaining text gaps and all initialized data remain
 separately visible in the progress report.
+
+Compiler-in-the-loop evidence currently identifies
+`mwcps2-3.0.3-020716` as the strongest product-build candidate with an `-O3`
+baseline. See [docs/COMPILER.md](docs/COMPILER.md); the exact getter matches do
+not yet discriminate `-O3` from `-O4,p` or prove the retail small-data threshold.
 
 ## Setup
 
@@ -47,6 +54,36 @@ make split
 
 `bchunk` and `7z` must be installed for `make setup`. All extracted game data,
 generated assembly, and build output remain ignored.
+
+## Exact hybrid relink baseline
+
+The stripped retail image mixes instructions and initialized data inside one
+RWX segment. Until every code/data boundary is represented semantically, the
+baseline rawifies Splat's reviewed per-word payload comments before assembling.
+This prevents GNU assembler pseudo-op expansion from changing retail bytes.
+
+```sh
+make split
+make relink
+```
+
+`make relink` reconstructs all 3,941,760 loaded bytes, links BSS at
+`0x004c2580`, and requires both SHA-1 and SHA-256 plus a byte-for-byte `cmp`.
+The GNU ELF container is only a build carrier; the loaded image is the exact
+acceptance target until Metrowerks linker-header fidelity is recovered.
+
+## Matching-C verification
+
+After placing private `wibo` and `mwcps2.exe` binaries outside Git:
+
+```sh
+WIBO=/private/path/wibo-macos \
+MWCCPS2=/private/path/mwccps2.exe \
+make match PYTHON=.venv/bin/python
+```
+
+The verifier applies MIPS HI16/LO16/26/32 relocations using the reviewed target
+symbols before comparing every function directly with the retail loaded image.
 
 ## Progress reporting
 

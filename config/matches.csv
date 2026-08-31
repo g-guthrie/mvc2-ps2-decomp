@@ -1,0 +1,8 @@
+name,address,size,source,status
+func_00100468,0x00100468,0xC,src/main.c,matching
+func_00105F48,0x00105F48,0xC,src/main.c,matching
+func_0011C960,0x0011C960,0xC,src/main.c,matching
+func_00406430,0x00406430,0xC,src/main.c,matching
+func_0040AED8,0x0040AED8,0xC,src/main.c,matching
+func_0040CB20,0x0040CB20,0xC,src/main.c,matching
+func_0040CB90,0x0040CB90,0xC,src/main.c,matching
