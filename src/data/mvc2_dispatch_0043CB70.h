@@ -1,0 +1,11 @@
+typedef void (*Mvc2DispatchHandler)(void);
+extern void func_001254F0(void);
+extern void func_001258A0(void);
+extern void func_00125940(void);
+extern void func_001259C0(void);
+extern void func_00125A80(void);
+extern void func_00125C20(void);
+extern void func_00125E70(void);
+extern void func_00125EF0(void);
+extern void func_00125F80(void);
+extern void func_00126000(void);

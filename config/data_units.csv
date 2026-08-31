@@ -8,3 +8,6 @@ data_zero_00489814,0x00489814,0x4384,.data,src/data/data_zero_00489814.c,zero_in
 data_zero_0048E320,0x0048E320,0x25B4,.data,src/data/data_zero_0048E320.c,zero_initialized_untyped
 data_zero_004A6F80,0x004A6F80,0x100,.data,src/data/data_zero_004A6F80.c,zero_initialized_untyped
 data_zero_004A7950,0x004A7950,0x1630,.data,src/data/data_zero_004A7950.c,zero_initialized_untyped
+gMvc2Dispatch_0043CB70,0x0043CB70,0x34,.rodata,src/data/mvc2_dispatch_0043CB70.c,dispatch_table
+gMvc2ActionDispatch_004BA540,0x004BA540,0x20,.rodata,src/data/mvc2_action_dispatch_004BA540.c,code_pointer_vector
+jtbl_004ACA80,0x004ACA80,0x164,.rodata,src/data/jtbl_004ACA80.c,parser_character_dispatch

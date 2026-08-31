@@ -54,11 +54,12 @@ class DataIntegrationTest(unittest.TestCase):
             ROOT / "config/data_units.csv", ROOT / "config/data_matches.csv"
         )
         report = build_report([], {}, matches)
-        self.assertEqual(report["measures"]["matched_data"], str(0x15D58))
-        self.assertEqual(report["measures"]["complete_data"], str(0x15D58))
+        expected = sum(match["size"] for match in matches.values())
+        self.assertEqual(report["measures"]["matched_data"], str(expected))
+        self.assertEqual(report["measures"]["complete_data"], str(expected))
         self.assertEqual(
             report["units"][-1]["sections"][0]["fuzzy_match_percent"],
-            0x15D58 * 100.0 / DATA_SIZE,
+            expected * 100.0 / DATA_SIZE,
         )
 
 

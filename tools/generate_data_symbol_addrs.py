@@ -18,10 +18,16 @@ def extract_symbols(source: Path) -> list[tuple[str, int]]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("source", type=Path)
+    parser.add_argument("sources", type=Path, nargs="+")
     parser.add_argument("output", type=Path)
     args = parser.parse_args()
-    symbols = extract_symbols(args.source)
+    merged = {}
+    for source in args.sources:
+        for name, address in extract_symbols(source):
+            previous = merged.setdefault(name, address)
+            if previous != address:
+                raise SystemExit(f"inconsistent symbolic address for {name}")
+    symbols = sorted(merged.items())
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(
         "".join(f"{name} = 0x{address:08X};\n" for name, address in symbols),

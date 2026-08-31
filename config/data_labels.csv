@@ -1,2 +1,4 @@
 name,address,kind,containing_function,containing_start,containing_end,offset,consumer,occurrences,provenance
 lbl_00163F90,0x00163F90,code_interior,func_00163F40,0x00163F40,0x00163FB0,0x50,gMvc2Dispatch_00445A20,27,functions.csv explicit code range; private disassembly confirms an executable branch destination
+lbl_003DFF48,0x003DFF48,code_interior,func_003DF850,0x003DF850,0x003DFF7C,0x6F8,gMvc2ActionDispatch_004BA540,4,private disassembly xref: selector dispatch at 0x003DFF3C
+lbl_003DFF60,0x003DFF60,code_interior,func_003DF850,0x003DF850,0x003DFF7C,0x710,gMvc2ActionDispatch_004BA540,4,private disassembly xref: selector dispatch at 0x003DFF3C
