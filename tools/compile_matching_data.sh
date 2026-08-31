@@ -38,3 +38,4 @@ compile_table src/data/mvc2_dispatch_00445A20.c gMvc2Dispatch_00445A20
 compile_table src/data/mvc2_dispatch_0043CB70.c gMvc2Dispatch_0043CB70
 compile_table src/data/mvc2_action_dispatch_004BA540.c gMvc2ActionDispatch_004BA540
 compile_table src/data/jtbl_004ACA80.c jtbl_004ACA80
+compile_table src/data/identity_00464EEC.c gIdentity3x3_00464EEC

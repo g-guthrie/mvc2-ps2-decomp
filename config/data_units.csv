@@ -11,3 +11,4 @@ data_zero_004A7950,0x004A7950,0x1630,.data,src/data/data_zero_004A7950.c,zero_in
 gMvc2Dispatch_0043CB70,0x0043CB70,0x34,.rodata,src/data/mvc2_dispatch_0043CB70.c,dispatch_table
 gMvc2ActionDispatch_004BA540,0x004BA540,0x20,.rodata,src/data/mvc2_action_dispatch_004BA540.c,code_pointer_vector
 jtbl_004ACA80,0x004ACA80,0x164,.rodata,src/data/jtbl_004ACA80.c,parser_character_dispatch
+gIdentity3x3_00464EEC,0x00464EEC,0x24,.rodata,src/data/identity_00464EEC.c,identity_matrix_f32
