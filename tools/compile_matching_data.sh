@@ -64,3 +64,5 @@ compile_table src/data/jtbl_004BAC00.c jtbl_004BAC00
 compile_table src/data/jtbl_004BAC20.c jtbl_004BAC20
 compile_table src/data/resource_handlers.c D_00444520
 compile_table src/data/geometry_handlers.c D_00476C10
+compile_table src/data/jtbl_004C2518.c jtbl_004C2518
+compile_table src/data/jtbl_004C2520.c jtbl_004C2520

@@ -32,3 +32,5 @@ jtbl_004BAC00,0x004BAC00,0x18,src/data/jtbl_004BAC00.c,complete
 jtbl_004BAC20,0x004BAC20,0x18,src/data/jtbl_004BAC20.c,complete
 D_00444520,0x00444520,0x240,src/data/resource_handlers.c,complete
 D_00476C10,0x00476C10,0x1A0,src/data/geometry_handlers.c,complete
+jtbl_004C2518,0x004C2518,0x08,src/data/jtbl_004C2518.c,complete
+jtbl_004C2520,0x004C2520,0x08,src/data/jtbl_004C2520.c,complete
