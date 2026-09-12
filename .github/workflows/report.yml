@@ -25,6 +25,12 @@ jobs:
         run: python tools/objdiff_report.py --report build-report/report.json --svg assets/progress.svg
       - name: Check progress graphic
         run: git diff --exit-code -- assets/progress.svg
+      - name: Validate report with objdiff parser
+        run: |
+          curl --fail --location --retry 3 https://github.com/encounter/objdiff/releases/download/v3.8.1/objdiff-cli-linux-x86_64 -o "$RUNNER_TEMP/objdiff-cli"
+          echo "c8290281e82114bcc1a06ff73061110d3902a177822e750337de2537188e358f  $RUNNER_TEMP/objdiff-cli" | sha256sum --check
+          chmod +x "$RUNNER_TEMP/objdiff-cli"
+          "$RUNNER_TEMP/objdiff-cli" report changes build-report/report.json build-report/report.json -o "$RUNNER_TEMP/report-validation.json"
       - name: Upload decomp.dev report
         uses: actions/upload-artifact@v4
         with:

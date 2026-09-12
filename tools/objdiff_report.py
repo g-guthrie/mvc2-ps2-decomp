@@ -120,15 +120,31 @@ def build_report(
             raise SystemExit(f"matched function range disagrees with inventory: {name}")
 
     chunks = defaultdict(list)
+    source_functions = defaultdict(list)
     for function in functions:
         chunks[(function["address"] - BASE_ADDRESS) // CHUNK_SIZE].append(function)
+        if function["name"] in matches:
+            source_functions[matches[function["name"]]["source"]].append(function)
 
     units = []
     text_chunk_count = (TEXT_SIZE + CHUNK_SIZE - 1) // CHUNK_SIZE
     for index in range(text_chunk_count):
         start = index * CHUNK_SIZE
         size = min(CHUNK_SIZE, TEXT_SIZE - start)
-        chunk_functions = sorted(chunks[index], key=lambda item: item["address"])
+        # Matched source units receive their own tiles. Deduct their exact
+        # intersections from each address chunk so totals include every byte once.
+        chunk_begin = BASE_ADDRESS + start
+        chunk_end = chunk_begin + size
+        size -= sum(
+            max(0, min(chunk_end, m["address"] + m["size"]) - max(chunk_begin, m["address"]))
+            for m in matches.values()
+        )
+        chunk_functions = sorted(
+            (f for f in chunks[index] if f["name"] not in matches),
+            key=lambda item: item["address"],
+        )
+        if not size:
+            continue
         chunk_matches = [function for function in chunk_functions if function["name"] in matches]
         matched_bytes = sum(function["size"] for function in chunk_matches)
         complete_bytes = sum(
@@ -169,6 +185,27 @@ def build_report(
             },
         })
 
+    for source, recovered in sorted(source_functions.items()):
+        size = sum(f["size"] for f in recovered)
+        complete_bytes = sum(f["size"] for f in recovered if matches[f["name"]]["complete"])
+        units.append({
+            "name": source,
+            "measures": progress_measures(
+                total_code=size, total_functions=len(recovered), total_units=1,
+                matched_code=size, matched_functions=len(recovered),
+                complete_code=complete_bytes,
+            ),
+            "functions": [{
+                "name": f["name"], "size": str(f["size"]),
+                "fuzzy_match_percent": 100.0,
+                "metadata": {"virtual_address": str(f["address"])},
+            } for f in sorted(recovered, key=lambda f: f["address"])],
+            "metadata": {
+                "complete": complete_bytes == size,
+                "source_path": source, "progress_categories": ["main"],
+            },
+        })
+
     matched_data = sum(match["size"] for match in data_matches.values())
     complete_data = sum(match["size"] for match in data_matches.values() if match["complete"])
     units.append({
@@ -188,10 +225,6 @@ def build_report(
             "complete": False,
             "source_path": "src/data" if data_matches else "asm/main_data.s",
             "progress_categories": ["main"],
-            "data_matches": [
-                {"name": match["name"], "source_path": match["source"]}
-                for match in sorted(data_matches.values(), key=lambda match: match["address"])
-            ],
         },
     })
 

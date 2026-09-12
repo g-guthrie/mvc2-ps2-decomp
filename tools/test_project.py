@@ -4,6 +4,20 @@ from tools.objdiff_report import DATA_SIZE, TEXT_SIZE, build_report
 
 
 class ProjectTest(unittest.TestCase):
+    def test_source_tiles_preserve_totals_across_chunk_boundary(self):
+        result = build_report(
+            [{"name": "crossing", "address": 0x10FFFC, "size": 8}],
+            {"crossing": {"address": 0x10FFFC, "size": 8,
+                          "source": "src/crossing.c", "complete": True}},
+        )
+        units = result["units"]
+        self.assertEqual(sum(int(u["measures"].get("total_code", 0)) for u in units), TEXT_SIZE)
+        self.assertEqual(sum(u["measures"].get("total_functions", 0) for u in units), 1)
+        tile = next(u for u in units if u["name"] == "src/crossing.c")
+        self.assertEqual(tile["measures"]["fuzzy_match_percent"], 100)
+        self.assertTrue(tile["metadata"]["complete"])
+        self.assertNotIn("data_matches", units[-1]["metadata"])
+
     def test_report_is_objdiff_v2_and_conservative(self):
         result = build_report(
             [{"name": "func_00100008", "address": 0x00100008, "size": 8}],
