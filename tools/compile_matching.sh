@@ -164,6 +164,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/indirect68_family.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/indirect68_family.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/tail12.c -c -lang c $MATCH_FLAGS -o "$BUILD/tail12.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -316,5 +318,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/indirect68_family.o" private/SLUS_204.86.rom \
     --source src/indirect68_family.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/tail12.o" private/SLUS_204.86.rom --source src/tail12.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

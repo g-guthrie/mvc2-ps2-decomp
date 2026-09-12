@@ -8,7 +8,7 @@ import re
 from pathlib import Path
 
 
-SYMBOL_RE = re.compile(r"\b(?:func|lbl)_([0-9A-Fa-f]{8})\b")
+SYMBOL_RE = re.compile(r"\b(?:func|lbl|gMvc2|jtbl)[A-Za-z0-9_]*_([0-9A-Fa-f]{8})\b")
 
 
 def extract_symbols(source: Path) -> list[tuple[str, int]]:
