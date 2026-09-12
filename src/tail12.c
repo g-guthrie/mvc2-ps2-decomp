@@ -1,0 +1,22 @@
+typedef unsigned char u8;
+extern void func_00178F20(int, void *);
+#define T(n) void n(void *p) { func_00178F20(*(int *)((u8 *)p + 0x1dc), p); }
+T(func_00202FA0)
+T(func_002101F0)
+T(func_0022C770)
+T(func_00232E80)
+T(func_0026AC40)
+T(func_0027AA90)
+T(func_0028D660)
+T(func_00294970)
+T(func_002A5B10)
+T(func_002AB740)
+T(func_002B7FB0)
+T(func_002C4E80)
+T(func_002CBB40)
+T(func_002D8CD0)
+T(func_002DC1D0)
+T(func_002E3C00)
+T(func_002FBBD0)
+T(func_00316A60)
+T(func_0031AF90)

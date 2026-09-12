@@ -19,6 +19,7 @@ mkdir -p "$BUILD/data"
     src/data/mvc2_event_dispatch_0043CBB0.c \
     src/data/mvc2_mode_select_dispatch_0043CCE0.c \
     src/data/mvc2_stage_handler_table_00448D00.c \
+    src/data/mvc2_allocator_bins_0043B708.c \
     config/data_symbol_addrs.txt
 
 for source in src/data/data_zero_*.c; do
@@ -47,3 +48,19 @@ compile_table src/data/mvc2_mode_handler_table_004490C0.c gMvc2ModeHandlerTable_
 compile_table src/data/mvc2_event_dispatch_0043CBB0.c gMvc2EventDispatch_0043CBB0
 compile_table src/data/mvc2_mode_select_dispatch_0043CCE0.c gMvc2ModeSelectDispatch_0043CCE0
 compile_table src/data/mvc2_stage_handler_table_00448D00.c gMvc2StageHandlerTable_00448D00
+compile_table src/data/mvc2_allocator_bins_0043B708.c gMvc2AllocatorBins_0043B708
+compile_table src/data/jtbl_004BA560.c jtbl_004BA560
+compile_table src/data/jtbl_004BA6D0.c jtbl_004BA6D0
+compile_table src/data/jtbl_004BA6F0.c jtbl_004BA6F0
+compile_table src/data/jtbl_004AABC0.c jtbl_004AABC0
+compile_table src/data/jtbl_004AADD0.c jtbl_004AADD0
+compile_table src/data/jtbl_004AB000.c jtbl_004AB000
+compile_table src/data/jtbl_004AB130.c jtbl_004AB130
+compile_table src/data/jtbl_004A6CD0.c jtbl_004A6CD0
+compile_table src/data/jtbl_004A6D20.c jtbl_004A6D20
+compile_table src/data/jtbl_004A6D30.c jtbl_004A6D30
+compile_table src/data/jtbl_004A6D40.c jtbl_004A6D40
+compile_table src/data/jtbl_004BAC00.c jtbl_004BAC00
+compile_table src/data/jtbl_004BAC20.c jtbl_004BAC20
+compile_table src/data/resource_handlers.c D_00444520
+compile_table src/data/geometry_handlers.c D_00476C10
