@@ -48,28 +48,104 @@ typedef struct T898 {
 
 
 /* ---- func_00122840 ---- */
+extern s32 D_004F1CF4;
+extern s32 D_004F1CF0;
+void func_00122840(s32 a0) {
+    D_004F1CF4 = a0;
+    D_004F1CF0 = 0;
+}
 
 /* ---- func_00122860 ---- */
+extern s32 D_004F1CF8;
+void func_00122860(s32 a0, s32 a1) {
+    D_004F1CF4 = a0;
+    D_004F1CF8 = a1;
+    D_004F1CF0 = 2;
+}
 
 /* ---- func_00123760 ---- */
+extern u8 D_004F1F48;
+extern u8 D_004F1F49;
+extern u8 D_004F1F47;
+extern u8 D_004F2034;
+extern u8 D_004F2035;
+extern u8 D_004F2036;
+extern u8 D_004F2037;
+void func_00123760(u8 a0) {
+    D_004F1F48 = a0;
+    D_004F1F49 = 0;
+    D_004F1F47 = 1;
+    D_004F2034 = 0;
+    D_004F2035 = 0;
+    D_004F2036 = 0;
+    D_004F2037 = 0;
+}
 
 /* ---- func_00126000 ---- */
+extern s32 D_004F1FEC;
+extern s32 D_004F1FF8;
+extern s32 D_004C9F50;
+extern s32 D_004C9F40;
+extern s32 D_004F1F4C;
+extern s32 D_004F1F94;
+void func_00126000(void) {
+    D_004F1FEC = 0;
+    D_004F1FF8 = 0;
+    D_004C9F50 = 0;
+    D_004C9F40 = 0;
+    D_004F1F4C = 0;
+    D_004F1F94 = 0;
+}
 
 /* ---- func_00126040 ---- */
+extern s32 D_004F1FF0;
+extern s32 D_004F1FFC;
+extern s32 D_004C9F54;
+extern s32 D_004C9F44;
+extern s32 D_004F1F50;
+extern s32 D_004F1F98;
+void func_00126040(void) {
+    D_004F1FF0 = 0x42BE0000;
+    D_004F1FFC = 0x42BE0000;
+    D_004C9F54 = 0x42BE0000;
+    D_004C9F44 = 0x42BE0000;
+    D_004F1F50 = 0x42BE0000;
+    D_004F1F98 = 0x42BE0000;
+}
 
 /* ---- func_00127970 ---- */
+extern u8 D_004AD070[];
+u8 func_00127970(u8 a0) {
+    return D_004AD070[a0];
+}
 
 /* ---- func_00129060 ---- */
+extern s32 D_0043CC90[];
+void func_00129060(s32 a0, s32 a1) {
+    D_0043CC90[a0] = a1;
+}
 
 /* ---- func_00129110 ---- */
 typedef struct S129110 {
     u16 f0;
     u8 pad[18];
 } S129110;
+extern S129110 D_004F4484[];
+s32 func_00129110(u16 a0) {
+    return (D_004F4484[a0].f0 & 64) != 0;
+}
 
 /* ---- func_0012AC70 ---- */
+extern s32 D_0043CC70[];
+void func_0012AC70(s32 a0, s32 a1) {
+    D_0043CC70[a0] = a1;
+}
 
 /* ---- func_0012F6F0 ---- */
+extern s8 D_0043DD00[];
+s32 func_0012F6F0(s32 a0) {
+    return D_0043DD00[a0];
+}
 
 /* ---- func_00132F70 ---- */
 typedef struct GameState {
@@ -84,6 +160,11 @@ typedef struct GameState {
 /* ---- func_00137F90 ---- */
 
 /* ---- func_0013A2A0 ---- */
+extern u8 D_00583B90[];
+void func_0013A2A0(u8 *a0) {
+    a0[4]++;
+    D_00583B90[a0[32]] = 2;
+}
 
 /* ---- func_0013BCE0 ---- */
 typedef struct Inner1BCE0 {
@@ -98,6 +179,7 @@ typedef struct Outer1BCE0 {
 } Outer1BCE0;
 
 /* ---- func_0014C0E0 ---- */
+extern u8 D_0014C0D0;
 typedef struct S14C0E0 {
     char pad[4];
     u8 f4, f5, f6;
@@ -106,12 +188,23 @@ typedef struct S14C0E0 {
     char pad3[32];
     float f52;
 } S14C0E0;
+void func_0014C0E0(S14C0E0 *a0, float t4) {
+    a0->f52 = t4;
+    a0->f16 = &D_0014C0D0;
+    a0->f4 = 0;
+    a0->f5 = 0;
+    a0->f6 = 0;
+}
 
 /* ---- func_0014C390 ---- */
 typedef struct InnerP390 {
     char pad[6];
     u8 f6;
 } InnerP390;
+extern InnerP390 *D_004CAE80[][20];
+s32 func_0014C390(s32 a0, s32 a1) {
+    return !D_004CAE80[a0][a1]->f6;
+}
 
 /* ---- func_00161370 ---- */
 typedef struct Sx316 {
@@ -161,20 +254,55 @@ void func_0016CA10(SFloat *a0) {
 }
 
 /* ---- func_0016CDF0 ---- */
+extern float D_004F1D14, D_004F1D10, D_004F1D0C;
+void func_0016CDF0(float t4) {
+    D_004F1D14 = t4;
+    D_004F1D10 = t4;
+    D_004F1D0C = t4;
+}
 
 /* ---- func_0016CE60 ---- */
+extern s32 D_004F1CB4, D_004F1CB8, D_004F1CBC, D_004F1CB0;
+void func_0016CE60(void) {
+    D_004F1CB4 = 1;
+    D_004F1CB8 = 16;
+    D_004F1CBC = 0x00FFFFFF;
+}
 
 /* ---- func_0016CED0 ---- */
+void func_0016CED0(void) {
+    D_004F1CB4 = 0;
+    D_004F1CBC = 0;
+    D_004F1CB8 = 120;
+}
 
 /* ---- func_0016CEF0 ---- */
+void func_0016CEF0(void) {
+    D_004F1CB4 = 0;
+    D_004F1CBC = 0;
+    D_004F1CB8 = 30;
+}
 
 /* ---- func_0016CF10 ---- */
+void func_0016CF10(void) {
+    D_004F1CBC = 0;
+    D_004F1CB4 = 8;
+    D_004F1CB8 = 185;
+}
 
 /* ---- func_0016CF80 ---- */
 
 /* ---- func_0016CFB0 ---- */
+void func_0016CFB0(void) {
+    D_004F1CB8 = D_004F1CB8 - 1;
+    D_004F1CB0 = D_004F1CB8 & 1;
+}
 
 /* ---- func_0016CFE0 ---- */
+void func_0016CFE0(void) {
+    D_004F1CB8 = D_004F1CB8 - 1;
+    D_004F1CB0 = (D_004F1CB8 >> 1) & 1;
+}
 
 /* ---- func_0016D010 ---- */
 
