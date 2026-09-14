@@ -39,6 +39,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/tail_call_leaves3.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/tail_call_leaves3.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/tail_call_leaves4.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/tail_call_leaves4.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/setter_leaves.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/setter_leaves.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -249,6 +252,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/tail_call_leaves3.o" private/SLUS_204.86.rom \
     --source src/tail_call_leaves3.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/tail_call_leaves4.o" private/SLUS_204.86.rom \
+    --source src/tail_call_leaves4.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/setter_leaves.o" private/SLUS_204.86.rom \
     --source src/setter_leaves.c
