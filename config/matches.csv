@@ -5163,3 +5163,9 @@ func_0027F6E0,0x0027F6E0,0xC,src/tail_call_leaves9.c,complete
 func_00282540,0x00282540,0x18,src/tail_call_leaves9.c,complete
 func_002886D0,0x002886D0,0xC,src/tail_call_leaves9.c,complete
 func_00276230,0x00276230,0x18,src/tail_call_leaves9.c,complete
+func_0028C5F0,0x0028C5F0,0x24,src/tail_call_leaves10.c,complete
+func_00293960,0x00293960,0x24,src/tail_call_leaves10.c,complete
+func_00290210,0x00290210,0xC,src/tail_call_leaves10.c,complete
+func_00298AE0,0x00298AE0,0x28,src/tail_call_leaves10.c,complete
+func_00299780,0x00299780,0x28,src/tail_call_leaves10.c,complete
+func_0029B130,0x0029B130,0x14,src/tail_call_leaves10.c,complete
