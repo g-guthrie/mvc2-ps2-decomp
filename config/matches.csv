@@ -5063,3 +5063,14 @@ func_003DBB90,0x003DBB90,0x34,src/leaf_batch_b.c,complete
 func_003DBBD0,0x003DBBD0,0x20,src/leaf_batch_c.c,complete
 func_003DD2B0,0x003DD2B0,0x2C,src/leaf_batch_c.c,complete
 func_003DDB60,0x003DDB60,0x10,src/leaf_batch_c.c,complete
+func_00174150,0x00174150,0x14,src/gp_leaf_batch.c,complete
+func_001841C0,0x001841C0,0x14,src/gp_leaf_batch.c,complete
+func_001E7F20,0x001E7F20,0x14,src/gp_leaf_batch.c,complete
+func_0032A8E0,0x0032A8E0,0x20,src/gp_leaf_batch.c,complete
+func_0032BED0,0x0032BED0,0x14,src/gp_leaf_batch.c,complete
+func_0032BFD0,0x0032BFD0,0x20,src/gp_leaf_batch.c,complete
+func_00367F60,0x00367F60,0x18,src/gp_leaf_batch.c,complete
+func_003D6B30,0x003D6B30,0x2C,src/gp_leaf_batch.c,complete
+func_003D72F0,0x003D72F0,0x10,src/gp_leaf_batch.c,complete
+func_003D7300,0x003D7300,0x10,src/gp_leaf_batch.c,complete
+func_003D7630,0x003D7630,0xC,src/gp_leaf_batch.c,complete
