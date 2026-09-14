@@ -5156,3 +5156,10 @@ func_00230260,0x00230260,0xC,src/tail_call_leaves8.c,complete
 func_00232460,0x00232460,0xC,src/tail_call_leaves8.c,complete
 func_00267E20,0x00267E20,0x18,src/tail_call_leaves8.c,complete
 func_00269D10,0x00269D10,0x18,src/tail_call_leaves8.c,complete
+func_0026CA90,0x0026CA90,0xC,src/tail_call_leaves9.c,complete
+func_0026CAA0,0x0026CAA0,0xC,src/tail_call_leaves9.c,complete
+func_00272AD0,0x00272AD0,0xC,src/tail_call_leaves9.c,complete
+func_0027F6E0,0x0027F6E0,0xC,src/tail_call_leaves9.c,complete
+func_00282540,0x00282540,0x18,src/tail_call_leaves9.c,complete
+func_002886D0,0x002886D0,0xC,src/tail_call_leaves9.c,complete
+func_00276230,0x00276230,0x18,src/tail_call_leaves9.c,complete
