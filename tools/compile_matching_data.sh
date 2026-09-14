@@ -97,3 +97,7 @@ compile_table src/data/jtbl_004C0420.c jtbl_004C0420
 compile_table src/data/jtbl_004C0428.c jtbl_004C0428
 compile_table src/data/jtbl_004C0430.c jtbl_004C0430
 compile_table src/data/jtbl_004C0480.c jtbl_004C0480
+compile_table src/data/jtbl_004C0490.c jtbl_004C0490
+compile_table src/data/jtbl_004C0498.c jtbl_004C0498
+compile_table src/data/jtbl_004C04A8.c jtbl_004C04A8
+compile_table src/data/jtbl_004C04B0.c jtbl_004C04B0

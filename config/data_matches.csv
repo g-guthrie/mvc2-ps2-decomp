@@ -65,3 +65,7 @@ jtbl_004C0420,0x004C0420,0x08,src/data/jtbl_004C0420.c,complete
 jtbl_004C0428,0x004C0428,0x08,src/data/jtbl_004C0428.c,complete
 jtbl_004C0430,0x004C0430,0x08,src/data/jtbl_004C0430.c,complete
 jtbl_004C0480,0x004C0480,0x08,src/data/jtbl_004C0480.c,complete
+jtbl_004C0490,0x004C0490,0x08,src/data/jtbl_004C0490.c,complete
+jtbl_004C0498,0x004C0498,0x08,src/data/jtbl_004C0498.c,complete
+jtbl_004C04A8,0x004C04A8,0x08,src/data/jtbl_004C04A8.c,complete
+jtbl_004C04B0,0x004C04B0,0x08,src/data/jtbl_004C04B0.c,complete
