@@ -1,6 +1,5 @@
 name,address,size,source,status
 func_00409238,0x00409238,0x14,src/field_store_leaves.c,complete
-func_00409238,0x00409238,0x14,src/field_store_leaves.c,complete
 func_004007E0,0x004007E0,0x10,src/global_counter_leaves.c,complete
 func_00401B68,0x00401B68,0x10,src/global_counter_leaves.c,complete
 func_00408DA0,0x00408DA0,0x10,src/global_counter_leaves.c,complete
