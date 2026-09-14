@@ -21,6 +21,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/field_store_leaves.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/field_store_leaves.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/gp_accessors.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/gp_accessors.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/straight_leaves.c -c -lang c $MATCH_FLAGS -o "$BUILD/straight_leaves.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/tail_leaves.c -c -lang c $MATCH_FLAGS -o "$BUILD/tail_leaves.o"
@@ -183,6 +186,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/field_store_leaves.o" private/SLUS_204.86.rom \
     --source src/field_store_leaves.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/gp_accessors.o" private/SLUS_204.86.rom \
+    --source src/gp_accessors.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/straight_leaves.o" private/SLUS_204.86.rom --source src/straight_leaves.c
 "$PYTHON" tools/verify_object.py \
