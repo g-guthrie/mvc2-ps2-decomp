@@ -66,3 +66,16 @@ compile_table src/data/resource_handlers.c D_00444520
 compile_table src/data/geometry_handlers.c D_00476C10
 compile_table src/data/jtbl_004C2518.c jtbl_004C2518
 compile_table src/data/jtbl_004C2520.c jtbl_004C2520
+compile_table src/data/jtbl_004C0120.c jtbl_004C0120
+compile_table src/data/jtbl_004C0138.c jtbl_004C0138
+compile_table src/data/jtbl_004C0140.c jtbl_004C0140
+compile_table src/data/jtbl_004C0148.c jtbl_004C0148
+compile_table src/data/jtbl_004C0150.c jtbl_004C0150
+compile_table src/data/jtbl_004C0158.c jtbl_004C0158
+compile_table src/data/jtbl_004C0160.c jtbl_004C0160
+compile_table src/data/jtbl_004C0168.c jtbl_004C0168
+compile_table src/data/jtbl_004C0170.c jtbl_004C0170
+compile_table src/data/jtbl_004C0178.c jtbl_004C0178
+compile_table src/data/jtbl_004C0180.c jtbl_004C0180
+compile_table src/data/jtbl_004C0188.c jtbl_004C0188
+compile_table src/data/jtbl_004C0190.c jtbl_004C0190

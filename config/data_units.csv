@@ -34,3 +34,16 @@ D_00444520,0x00444520,0x240,.rodata,src/data/resource_handlers.c,handler_vector
 D_00476C10,0x00476C10,0x1A0,.rodata,src/data/geometry_handlers.c,geometry_handler_table
 jtbl_004C2518,0x004C2518,0x08,.rodata,src/data/jtbl_004C2518.c,jump_table
 jtbl_004C2520,0x004C2520,0x08,.rodata,src/data/jtbl_004C2520.c,jump_table
+jtbl_004C0120,0x004C0120,0x08,.rodata,src/data/jtbl_004C0120.c,jump_table
+jtbl_004C0138,0x004C0138,0x08,.rodata,src/data/jtbl_004C0138.c,jump_table
+jtbl_004C0140,0x004C0140,0x08,.rodata,src/data/jtbl_004C0140.c,jump_table
+jtbl_004C0148,0x004C0148,0x08,.rodata,src/data/jtbl_004C0148.c,jump_table
+jtbl_004C0150,0x004C0150,0x08,.rodata,src/data/jtbl_004C0150.c,jump_table
+jtbl_004C0158,0x004C0158,0x08,.rodata,src/data/jtbl_004C0158.c,jump_table
+jtbl_004C0160,0x004C0160,0x08,.rodata,src/data/jtbl_004C0160.c,jump_table
+jtbl_004C0168,0x004C0168,0x08,.rodata,src/data/jtbl_004C0168.c,jump_table
+jtbl_004C0170,0x004C0170,0x08,.rodata,src/data/jtbl_004C0170.c,jump_table
+jtbl_004C0178,0x004C0178,0x08,.rodata,src/data/jtbl_004C0178.c,jump_table
+jtbl_004C0180,0x004C0180,0x08,.rodata,src/data/jtbl_004C0180.c,jump_table
+jtbl_004C0188,0x004C0188,0x08,.rodata,src/data/jtbl_004C0188.c,jump_table
+jtbl_004C0190,0x004C0190,0x08,.rodata,src/data/jtbl_004C0190.c,jump_table
