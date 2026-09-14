@@ -1,4 +1,8 @@
 name,address,size,source,status
+func_001B59A0,0x001B59A0,0xC,src/byte_setter_leaves.c,complete
+func_001CE470,0x001CE470,0xC,src/byte_setter_leaves.c,complete
+func_00329490,0x00329490,0xC,src/byte_setter_leaves.c,complete
+func_0032BEC0,0x0032BEC0,0xC,src/byte_setter_leaves.c,complete
 func_0022C5C0,0x0022C5C0,0xC,src/setter_leaves.c,complete
 func_003DF7A0,0x003DF7A0,0x10,src/setter_leaves.c,complete
 func_003ED2D0,0x003ED2D0,0x10,src/setter_leaves.c,complete

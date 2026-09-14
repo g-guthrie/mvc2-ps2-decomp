@@ -27,6 +27,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/setter_leaves.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/setter_leaves.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/byte_setter_leaves.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/byte_setter_leaves.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/straight_leaves.c -c -lang c $MATCH_FLAGS -o "$BUILD/straight_leaves.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/tail_leaves.c -c -lang c $MATCH_FLAGS -o "$BUILD/tail_leaves.o"
@@ -195,6 +198,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/setter_leaves.o" private/SLUS_204.86.rom \
     --source src/setter_leaves.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/byte_setter_leaves.o" private/SLUS_204.86.rom \
+    --source src/byte_setter_leaves.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/straight_leaves.o" private/SLUS_204.86.rom --source src/straight_leaves.c
 "$PYTHON" tools/verify_object.py \
