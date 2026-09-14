@@ -1,4 +1,5 @@
 name,address,size,source,status
+func_004000D0,0x004000D0,0x8,src/simple_leaves.c,complete
 func_00100468,0x00100468,0xC,src/main.c,complete
 func_001044C8,0x001044C8,0x8,src/simple_leaves.c,complete
 func_001044D0,0x001044D0,0x8,src/simple_leaves.c,complete

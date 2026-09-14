@@ -5,6 +5,8 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 
+s32 func_004000D0(s32 a0) { return a0 + 0x58; }
+
 s32 func_001044C8(void) { return -1; }
 
 s32 func_001044D0(void) { return -1; }
