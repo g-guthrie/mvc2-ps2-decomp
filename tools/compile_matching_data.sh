@@ -10,16 +10,10 @@ BUILD=${BUILD:-build/matching}
 TARGET=${TARGET:-private/SLUS_204.86.rom}
 mkdir -p "$BUILD/data"
 
+# Every compiled data unit must contribute its symbols, or relocation targets
+# in units added later resolve to nothing and verification aborts.
 "$PYTHON" tools/generate_data_symbol_addrs.py \
-    src/data/mvc2_dispatch_00445A20.c \
-    src/data/mvc2_dispatch_0043CB70.c \
-    src/data/mvc2_action_dispatch_004BA540.c \
-    src/data/jtbl_004ACA80.c \
-    src/data/mvc2_mode_handler_table_004490C0.c \
-    src/data/mvc2_event_dispatch_0043CBB0.c \
-    src/data/mvc2_mode_select_dispatch_0043CCE0.c \
-    src/data/mvc2_stage_handler_table_00448D00.c \
-    src/data/mvc2_allocator_bins_0043B708.c \
+    src/data/*.c \
     config/data_symbol_addrs.txt
 
 for source in src/data/data_zero_*.c; do
