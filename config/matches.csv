@@ -5074,3 +5074,9 @@ func_003D6B30,0x003D6B30,0x2C,src/gp_leaf_batch.c,complete
 func_003D72F0,0x003D72F0,0x10,src/gp_leaf_batch.c,complete
 func_003D7300,0x003D7300,0x10,src/gp_leaf_batch.c,complete
 func_003D7630,0x003D7630,0xC,src/gp_leaf_batch.c,complete
+func_00131980,0x00131980,0xC,src/gp_leaf_batch2.c,complete
+func_00131960,0x00131960,0x18,src/gp_leaf_batch2.c,complete
+func_003ED2E0,0x003ED2E0,0x18,src/gp_leaf_batch2.c,complete
+func_004000E0,0x004000E0,0x14,src/gp_leaf_batch2.c,complete
+func_004044D0,0x004044D0,0xC,src/gp_leaf_batch2.c,complete
+func_00416AC0,0x00416AC0,0x18,src/gp_leaf_batch2.c,complete
