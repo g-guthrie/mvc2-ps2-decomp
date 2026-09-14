@@ -5020,3 +5020,11 @@ func_003F0A40,0x003F0A40,0x18,src/struct_field_leaves.c,complete
 func_004043B0,0x004043B0,0x10,src/struct_field_leaves.c,complete
 func_00400BC8,0x00400BC8,0xC,src/struct_field_leaves.c,complete
 func_00400C18,0x00400C18,0xC,src/struct_field_leaves.c,complete
+func_003299D0,0x003299D0,0xC,src/global_accessors.c,complete
+func_003299E0,0x003299E0,0xC,src/global_accessors.c,complete
+func_003D90D0,0x003D90D0,0xC,src/global_accessors.c,complete
+func_003E00B0,0x003E00B0,0xC,src/global_accessors.c,complete
+func_003E00C0,0x003E00C0,0xC,src/global_accessors.c,complete
+func_003ED2C0,0x003ED2C0,0xC,src/global_accessors.c,complete
+func_00131540,0x00131540,0x10,src/global_accessors.c,complete
+func_00126770,0x00126770,0x10,src/global_accessors.c,complete
