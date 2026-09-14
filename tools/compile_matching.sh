@@ -18,6 +18,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/global_counter_leaves.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/global_counter_leaves.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/field_store_leaves.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/field_store_leaves.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/straight_leaves.c -c -lang c $MATCH_FLAGS -o "$BUILD/straight_leaves.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/tail_leaves.c -c -lang c $MATCH_FLAGS -o "$BUILD/tail_leaves.o"
@@ -177,6 +180,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/global_counter_leaves.o" private/SLUS_204.86.rom \
     --source src/global_counter_leaves.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/field_store_leaves.o" private/SLUS_204.86.rom \
+    --source src/field_store_leaves.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/straight_leaves.o" private/SLUS_204.86.rom --source src/straight_leaves.c
 "$PYTHON" tools/verify_object.py \
