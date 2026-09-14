@@ -1,4 +1,7 @@
 name,address,size,source,status
+func_0022C5C0,0x0022C5C0,0xC,src/setter_leaves.c,complete
+func_003DF7A0,0x003DF7A0,0x10,src/setter_leaves.c,complete
+func_003ED2D0,0x003ED2D0,0x10,src/setter_leaves.c,complete
 func_003D7120,0x003D7120,0x10,src/gp_accessors.c,complete
 func_003FE5B0,0x003FE5B0,0xC,src/gp_accessors.c,complete
 func_00409238,0x00409238,0x14,src/field_store_leaves.c,complete
