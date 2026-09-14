@@ -5100,3 +5100,8 @@ func_0016CF10,0x0016CF10,0x24,src/leaf_batch_a.c,complete
 func_0016CFB0,0x0016CFB0,0x2C,src/leaf_batch_a.c,complete
 func_0016CFE0,0x0016CFE0,0x30,src/leaf_batch_a.c,complete
 func_001734D0,0x001734D0,0x14,src/leaf_batch_a.c,complete
+func_0016E950,0x0016E950,0xC,src/tail_call_leaves.c,complete
+func_00180DC0,0x00180DC0,0x10,src/tail_call_leaves.c,complete
+func_001846B0,0x001846B0,0x14,src/tail_call_leaves.c,complete
+func_001612D0,0x001612D0,0x14,src/tail_call_leaves.c,complete
+func_00185060,0x00185060,0x18,src/tail_call_leaves.c,complete
