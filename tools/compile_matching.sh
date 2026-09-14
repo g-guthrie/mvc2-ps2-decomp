@@ -45,6 +45,15 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/field_block_leaves.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/field_block_leaves.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/leaf_batch_a.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/leaf_batch_a.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/leaf_batch_b.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/leaf_batch_b.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/leaf_batch_c.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/leaf_batch_c.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/straight_leaves.c -c -lang c $MATCH_FLAGS -o "$BUILD/straight_leaves.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/tail_leaves.c -c -lang c $MATCH_FLAGS -o "$BUILD/tail_leaves.o"
@@ -231,6 +240,15 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/field_block_leaves.o" private/SLUS_204.86.rom \
     --source src/field_block_leaves.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/leaf_batch_a.o" private/SLUS_204.86.rom \
+    --source src/leaf_batch_a.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/leaf_batch_b.o" private/SLUS_204.86.rom \
+    --source src/leaf_batch_b.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/leaf_batch_c.o" private/SLUS_204.86.rom \
+    --source src/leaf_batch_c.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/straight_leaves.o" private/SLUS_204.86.rom --source src/straight_leaves.c
 "$PYTHON" tools/verify_object.py \
