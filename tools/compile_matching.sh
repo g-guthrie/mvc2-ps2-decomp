@@ -27,6 +27,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/gp_leaf_batch.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/gp_leaf_batch.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/gp_leaf_batch2.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/gp_leaf_batch2.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/setter_leaves.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/setter_leaves.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -225,6 +228,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/gp_leaf_batch.o" private/SLUS_204.86.rom \
     --source src/gp_leaf_batch.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/gp_leaf_batch2.o" private/SLUS_204.86.rom \
+    --source src/gp_leaf_batch2.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/setter_leaves.o" private/SLUS_204.86.rom \
     --source src/setter_leaves.c
