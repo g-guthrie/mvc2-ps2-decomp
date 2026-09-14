@@ -89,3 +89,11 @@ compile_table src/data/jtbl_004C0390.c jtbl_004C0390
 compile_table src/data/jtbl_004C0398.c jtbl_004C0398
 compile_table src/data/jtbl_004C03A0.c jtbl_004C03A0
 compile_table src/data/jtbl_004C03A8.c jtbl_004C03A8
+compile_table src/data/jtbl_004C03F8.c jtbl_004C03F8
+compile_table src/data/jtbl_004C0400.c jtbl_004C0400
+compile_table src/data/jtbl_004C0410.c jtbl_004C0410
+compile_table src/data/jtbl_004C0418.c jtbl_004C0418
+compile_table src/data/jtbl_004C0420.c jtbl_004C0420
+compile_table src/data/jtbl_004C0428.c jtbl_004C0428
+compile_table src/data/jtbl_004C0430.c jtbl_004C0430
+compile_table src/data/jtbl_004C0480.c jtbl_004C0480
