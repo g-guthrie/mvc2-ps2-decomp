@@ -5028,3 +5028,13 @@ func_003E00C0,0x003E00C0,0xC,src/global_accessors.c,complete
 func_003ED2C0,0x003ED2C0,0xC,src/global_accessors.c,complete
 func_00131540,0x00131540,0x10,src/global_accessors.c,complete
 func_00126770,0x00126770,0x10,src/global_accessors.c,complete
+func_002FFB00,0x002FFB00,0x24,src/field_block_leaves.c,complete
+func_001398D0,0x001398D0,0x28,src/field_block_leaves.c,complete
+func_00353650,0x00353650,0x18,src/field_block_leaves.c,complete
+func_00353670,0x00353670,0x1C,src/field_block_leaves.c,complete
+func_0034A680,0x0034A680,0x20,src/field_block_leaves.c,complete
+func_0030C470,0x0030C470,0x24,src/field_block_leaves.c,complete
+func_002F8D80,0x002F8D80,0x28,src/field_block_leaves.c,complete
+func_003AEE70,0x003AEE70,0x14,src/field_block_leaves.c,complete
+func_002D3D00,0x002D3D00,0x10,src/field_block_leaves.c,complete
+func_001740A0,0x001740A0,0x20,src/field_block_leaves.c,complete
