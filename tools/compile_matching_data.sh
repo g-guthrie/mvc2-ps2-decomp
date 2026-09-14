@@ -87,3 +87,5 @@ compile_table src/data/jtbl_004C0380.c jtbl_004C0380
 compile_table src/data/jtbl_004C0388.c jtbl_004C0388
 compile_table src/data/jtbl_004C0390.c jtbl_004C0390
 compile_table src/data/jtbl_004C0398.c jtbl_004C0398
+compile_table src/data/jtbl_004C03A0.c jtbl_004C03A0
+compile_table src/data/jtbl_004C03A8.c jtbl_004C03A8

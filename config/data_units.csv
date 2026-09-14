@@ -55,3 +55,5 @@ jtbl_004C0380,0x004C0380,0x08,.rodata,src/data/jtbl_004C0380.c,jump_table
 jtbl_004C0388,0x004C0388,0x08,.rodata,src/data/jtbl_004C0388.c,jump_table
 jtbl_004C0390,0x004C0390,0x08,.rodata,src/data/jtbl_004C0390.c,jump_table
 jtbl_004C0398,0x004C0398,0x08,.rodata,src/data/jtbl_004C0398.c,jump_table
+jtbl_004C03A0,0x004C03A0,0x08,.rodata,src/data/jtbl_004C03A0.c,jump_table
+jtbl_004C03A8,0x004C03A8,0x08,.rodata,src/data/jtbl_004C03A8.c,jump_table
