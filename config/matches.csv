@@ -5143,3 +5143,10 @@ func_001FE9D0,0x001FE9D0,0x14,src/tail_call_leaves6.c,complete
 func_00202EB0,0x00202EB0,0x18,src/tail_call_leaves6.c,complete
 func_0020AB10,0x0020AB10,0xC,src/tail_call_leaves6.c,complete
 func_00203340,0x00203340,0x14,src/tail_call_leaves6.c,complete
+func_00212230,0x00212230,0xC,src/tail_call_leaves7.c,complete
+func_0021C0E0,0x0021C0E0,0x10,src/tail_call_leaves7.c,complete
+func_00220F50,0x00220F50,0x20,src/tail_call_leaves7.c,complete
+func_002215B0,0x002215B0,0x24,src/tail_call_leaves7.c,complete
+func_002220B0,0x002220B0,0x18,src/tail_call_leaves7.c,complete
+func_0022B7C0,0x0022B7C0,0xC,src/tail_call_leaves7.c,complete
+func_0022C690,0x0022C690,0x1C,src/tail_call_leaves7.c,complete
