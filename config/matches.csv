@@ -5113,3 +5113,10 @@ func_0019A920,0x0019A920,0x14,src/tail_call_leaves2.c,complete
 func_0019DAE0,0x0019DAE0,0x14,src/tail_call_leaves2.c,complete
 func_0019E2C0,0x0019E2C0,0x14,src/tail_call_leaves2.c,complete
 func_001A89F0,0x001A89F0,0x18,src/tail_call_leaves2.c,complete
+func_0018DDC0,0x0018DDC0,0xC,src/tail_call_leaves3.c,complete
+func_0018E0A0,0x0018E0A0,0xC,src/tail_call_leaves3.c,complete
+func_00199DC0,0x00199DC0,0x10,src/tail_call_leaves3.c,complete
+func_001BD130,0x001BD130,0x10,src/tail_call_leaves3.c,complete
+func_001C4C10,0x001C4C10,0x18,src/tail_call_leaves3.c,complete
+func_001C4DA0,0x001C4DA0,0x10,src/tail_call_leaves3.c,complete
+func_001870A0,0x001870A0,0x20,src/tail_call_leaves3.c,complete
