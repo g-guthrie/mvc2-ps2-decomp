@@ -325,6 +325,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/round3_3.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/round3_3.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_tiny_leaves.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/grok_tiny_leaves.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_dup_clusters.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/grok_dup_clusters.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -638,5 +644,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/round3_3.o" private/SLUS_204.86.rom \
     --source src/round3_3.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_tiny_leaves.o" private/SLUS_204.86.rom \
+    --source src/grok_tiny_leaves.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_dup_clusters.o" private/SLUS_204.86.rom \
+    --source src/grok_dup_clusters.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh
