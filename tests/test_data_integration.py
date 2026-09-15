@@ -18,6 +18,8 @@ class DataIntegrationTest(unittest.TestCase):
         zeroes = [unit for unit in units if unit.name.startswith("data_zero_")]
         self.assertEqual(len(zeroes), 397)
         self.assertEqual(sum(unit.size for unit in zeroes), 0x22A76)
+        self.assertEqual(len(zeroes), 398)
+        self.assertEqual(sum(unit.size for unit in zeroes), 0x22BEE)
         dispatch = [unit for unit in units if unit.name == "gMvc2Dispatch_00445A20"]
         self.assertEqual([(unit.address, unit.size, unit.section) for unit in dispatch], [(0x445A20, 0x400, ".rodata")])
 
