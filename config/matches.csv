@@ -7033,3 +7033,14 @@ func_003872E0,0x003872E0,0x50,src/grok_w5_0038.c,complete
 func_00389710,0x00389710,0x50,src/grok_w5_0038.c,complete
 func_00389870,0x00389870,0x50,src/grok_w5_0038.c,complete
 func_00389120,0x00389120,0x4C,src/grok_w5_0038.c,complete
+func_00152960,0x00152960,0x28,src/grok_w5_gp.c,complete
+func_002C31F0,0x002C31F0,0x10,src/grok_w5_gp.c,complete
+func_0032BFF0,0x0032BFF0,0x4C,src/grok_w5_gp.c,complete
+func_0032C750,0x0032C750,0x2C,src/grok_w5_gp.c,complete
+func_0032CFE0,0x0032CFE0,0x34,src/grok_w5_gp.c,complete
+func_003D2500,0x003D2500,0x1C,src/grok_w5_gp.c,complete
+func_003D70D0,0x003D70D0,0x44,src/grok_w5_gp.c,complete
+func_003D7130,0x003D7130,0x48,src/grok_w5_gp.c,complete
+func_003D8F60,0x003D8F60,0x30,src/grok_w5_gp.c,complete
+func_003EBA10,0x003EBA10,0x30,src/grok_w5_gp.c,complete
+func_0041CB30,0x0041CB30,0x2C,src/grok_w5_gp.c,complete
