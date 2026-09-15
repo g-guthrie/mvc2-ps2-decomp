@@ -6109,3 +6109,17 @@ func_0035BE30,0x0035BE30,0x3c,src/grok_size40.c,complete
 func_0016CA30,0x0016CA30,0x38,src/grok_size40.c,complete
 func_0016CA70,0x0016CA70,0x38,src/grok_size40.c,complete
 func_001BD9D0,0x001BD9D0,0x38,src/grok_size40.c,complete
+func_00100240,0x00100240,0x20,src/grok_r2_0010.c,complete
+func_00100260,0x00100260,0x24,src/grok_r2_0010.c,complete
+func_00100290,0x00100290,0x20,src/grok_r2_0010.c,complete
+func_001002B0,0x001002B0,0x24,src/grok_r2_0010.c,complete
+func_0013BCE0,0x0013BCE0,0x18,src/grok_r2_0010.c,complete
+func_001045B8,0x001045B8,0x28,src/grok_r2_0010.c,complete
+residual_001391D0,0x001391D0,0x10,src/grok_r2_0010.c,complete
+residual_00138920,0x00138920,0x14,src/grok_r2_0010.c,complete
+func_0012A2F0,0x0012A2F0,0x2c,src/grok_r2_0010.c,complete
+func_001331A0,0x001331A0,0x34,src/grok_r2_0010.c,complete
+func_0013AF60,0x0013AF60,0x2c,src/grok_r2_0010.c,complete
+func_001230F0,0x001230F0,0x30,src/grok_r2_0010.c,complete
+func_00106210,0x00106210,0x18,src/grok_r2_0010_30.c,complete
+func_00106228,0x00106228,0x18,src/grok_r2_0010_30.c,complete
