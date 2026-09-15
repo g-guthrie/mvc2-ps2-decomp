@@ -7870,3 +7870,5 @@ func_001BDA10,0x001BDA10,0x44,src/dupcluster_001BDA10.c,complete
 func_00278F50,0x00278F50,0x44,src/dupcluster_00278F50.c,complete
 func_00298FC0,0x00298FC0,0x4C,src/dupcluster_00298FC0.c,complete
 func_002CEC40,0x002CEC40,0x4C,src/dupcluster_00298FC0.c,complete
+func_00184110,0x00184110,0x40,src/dupcluster_00184110.c,complete
+func_001A9650,0x001A9650,0x48,src/dupcluster_001A9650.c,complete
