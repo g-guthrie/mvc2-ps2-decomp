@@ -3,7 +3,7 @@ BIN ?=
 CUE ?=
 CONFIG := config/SLUS_204.86.yaml
 
-.PHONY: setup split relink match hybrid pack-elf report test clean
+.PHONY: setup split relink match hybrid pack-elf report test validate clean
 
 setup:
 	@test -n "$(BIN)" || { echo "BIN is required" >&2; exit 2; }
@@ -31,6 +31,9 @@ report:
 
 test:
 	$(PYTHON) -m unittest tools/test_*.py
+
+validate:
+	$(PYTHON) tools/validate_config.py
 
 clean:
 	rm -rf asm build build-report
