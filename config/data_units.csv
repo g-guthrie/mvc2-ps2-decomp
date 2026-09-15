@@ -258,3 +258,4 @@ jtbl_004C1790,0x004C1790,0x08,.rodata,src/data/jtbl_004C1790.c,jump_table
 jtbl_004C1798,0x004C1798,0x08,.rodata,src/data/jtbl_004C1798.c,jump_table
 jtbl_004C17A0,0x004C17A0,0x08,.rodata,src/data/jtbl_004C17A0.c,jump_table
 jtbl_004C17A8,0x004C17A8,0x08,.rodata,src/data/jtbl_004C17A8.c,jump_table
+data_zero_004C2540,0x004C2540,0x40,.data,src/data/data_zero_004C2540.c,zero_initialized_untyped
