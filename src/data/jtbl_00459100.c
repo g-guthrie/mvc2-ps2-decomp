@@ -1,0 +1,22 @@
+/* Source-safe reconstruction of the compiler jump table. */
+const unsigned int jtbl_00459100[19] = {
+    (unsigned int)0x002B52A0,
+    (unsigned int)0x002B5320,
+    (unsigned int)0x002B53C0,
+    (unsigned int)0x002B5520,
+    (unsigned int)0x002B5590,
+    (unsigned int)0x002B5610,
+    (unsigned int)0x002B56E0,
+    (unsigned int)0x002B5820,
+    (unsigned int)0x002B5890,
+    (unsigned int)0x002B5950,
+    (unsigned int)0x002B5A00,
+    (unsigned int)0x002B5A60,
+    (unsigned int)0x002B5AD0,
+    (unsigned int)0x002B5BB0,
+    (unsigned int)0x002B5C60,
+    (unsigned int)0x002B5D10,
+    (unsigned int)0x002B5D90,
+    (unsigned int)0x002B5DF0,
+    (unsigned int)0x002B5E70,
+};
