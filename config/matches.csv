@@ -7408,3 +7408,5 @@ func_003CECA0,0x003CECA0,0x30,src/grok_w3_003c.c,complete
 func_003CF790,0x003CF790,0x30,src/grok_w3_003c.c,complete
 func_003CF890,0x003CF890,0x30,src/grok_w3_003c.c,complete
 func_003D0820,0x003D0820,0x30,src/grok_w3_003c.c,complete
+func_00414C30,0x00414C30,0x34,src/grok_w3_003e.c,complete
+func_00417950,0x00417950,0x30,src/grok_w3_003e.c,complete
