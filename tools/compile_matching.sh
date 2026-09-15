@@ -302,6 +302,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/agentD_clusters.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/agentD_clusters.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_r1_0028.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/grok_r1_0028.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/pair_flag_clusters.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/pair_flag_clusters.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -623,6 +626,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/agentD_clusters.o" private/SLUS_204.86.rom \
     --source src/agentD_clusters.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_r1_0028.o" private/SLUS_204.86.rom \
+    --source src/grok_r1_0028.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/pair_flag_clusters.o" private/SLUS_204.86.rom \
     --source src/pair_flag_clusters.c
