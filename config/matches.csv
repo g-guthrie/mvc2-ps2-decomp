@@ -5216,3 +5216,10 @@ func_003556C0,0x003556C0,0x10,src/tail_call_leaves17.c,complete
 func_00359220,0x00359220,0x18,src/tail_call_leaves17.c,complete
 func_00372B30,0x00372B30,0x14,src/tail_call_leaves17.c,complete
 func_00374E10,0x00374E10,0x1C,src/tail_call_leaves17.c,complete
+func_0037D920,0x0037D920,0x8,src/tail_call_leaves18.c,complete
+func_003928B0,0x003928B0,0x10,src/tail_call_leaves18.c,complete
+func_00394760,0x00394760,0x10,src/tail_call_leaves18.c,complete
+func_00395160,0x00395160,0x18,src/tail_call_leaves18.c,complete
+func_00395870,0x00395870,0x18,src/tail_call_leaves18.c,complete
+func_00390630,0x00390630,0x20,src/tail_call_leaves18.c,complete
+func_0038F2D0,0x0038F2D0,0x24,src/tail_call_leaves18.c,complete
