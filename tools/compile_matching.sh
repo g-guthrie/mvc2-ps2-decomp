@@ -304,6 +304,15 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/pair_flag_clusters.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/pair_flag_clusters.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/round2_pairs1.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/round2_pairs1.o"
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/round2_small.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/round2_small.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/round2_hard.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/round2_hard.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -596,5 +605,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/pair_flag_clusters.o" private/SLUS_204.86.rom \
     --source src/pair_flag_clusters.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/round2_pairs1.o" private/SLUS_204.86.rom \
+    --source src/round2_pairs1.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/round2_small.o" private/SLUS_204.86.rom \
+    --source src/round2_small.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/round2_hard.o" private/SLUS_204.86.rom \
+    --source src/round2_hard.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

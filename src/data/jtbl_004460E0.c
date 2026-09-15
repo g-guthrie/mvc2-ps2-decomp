@@ -1,0 +1,18 @@
+const unsigned int jtbl_004460E0[16] = {
+    (unsigned int)0x00445ee0,
+    (unsigned int)0x00445fe0,
+    (unsigned int)0x00445f00,
+    (unsigned int)0x00446000,
+    (unsigned int)0x00445f20,
+    (unsigned int)0x00446020,
+    (unsigned int)0x00445f40,
+    (unsigned int)0x00446040,
+    (unsigned int)0x00445f60,
+    (unsigned int)0x00446060,
+    (unsigned int)0x00445f80,
+    (unsigned int)0x00446080,
+    (unsigned int)0x00445fa0,
+    (unsigned int)0x004460a0,
+    (unsigned int)0x00445fc0,
+    (unsigned int)0x004460c0,
+};
