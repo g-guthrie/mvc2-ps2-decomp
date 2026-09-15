@@ -298,6 +298,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r1_0018.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r1_0018.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r1_001.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r1_001.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -354,6 +355,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0014.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w3_0014.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_size40.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_size40.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -371,6 +373,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_med_leaves.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_med_leaves.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r2_003c.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r2_003c.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -382,6 +385,9 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/round4_3.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/round4_3.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_round4_2fix.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/grok_round4_2fix.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_dup_clusters.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_dup_clusters.o"
@@ -399,12 +405,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/grok_r1_0038.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r2_0028.c -c -lang c $MATCH_FLAGS \
-    -o "$BUILD/grok_size60.o"
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/grok_r2_0028.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_size60.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/grok_size60.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r3_0028.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r3_0028.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r1_0030.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r1_0030.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -419,14 +427,16 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r2_0038.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r2_0038.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r2_0034.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/grok_r2_0034.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_dispatch_r2.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_dispatch_r2.o"
-    -o "$BUILD/grok_r2_0028.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_fpu_r2.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_fpu_r2.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r2_0020.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r2_0020.o"
 
@@ -727,6 +737,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_r2_0024.o" private/SLUS_204.86.rom \
     --source src/grok_r2_0024.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_r2_0028.o" private/SLUS_204.86.rom \
     --source src/grok_r2_0028.c
 "$PYTHON" tools/verify_object.py \
@@ -765,6 +776,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_0014.o" private/SLUS_204.86.rom \
     --source src/grok_w3_0014.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_size40.o" private/SLUS_204.86.rom \
     --source src/grok_size40.c
 "$PYTHON" tools/verify_object.py \
@@ -774,13 +786,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/grok_tail_r2.o" private/SLUS_204.86.rom \
     --source src/grok_tail_r2.c
 "$PYTHON" tools/verify_object.py \
-    "$BUILD/grok_med_leaves.o" private/SLUS_204.86.rom \
-    --source src/grok_med_leaves.c
-"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_size54.o" private/SLUS_204.86.rom \
     --source src/grok_size54.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_r2_003c.o" private/SLUS_204.86.rom \
     --source src/grok_r2_003c.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_0012.o" private/SLUS_204.86.rom \
     --source src/grok_w3_0012.c
 "$PYTHON" tools/verify_object.py \
@@ -792,6 +803,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/round4_3.o" private/SLUS_204.86.rom \
     --source src/round4_3.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_round4_2fix.o" private/SLUS_204.86.rom \
+    --source src/grok_round4_2fix.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_dup_clusters.o" private/SLUS_204.86.rom \
     --source src/grok_dup_clusters.c
@@ -810,15 +824,19 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_r1_0038.o" private/SLUS_204.86.rom \
     --source src/grok_r1_0038.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_r1_0030.o" private/SLUS_204.86.rom \
     --source src/grok_r1_0030.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_r2_0030.o" private/SLUS_204.86.rom \
     --source src/grok_r2_0030.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_r1_001.o" private/SLUS_204.86.rom \
     --source src/grok_r1_001.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_r1_001gp.o" private/SLUS_204.86.rom \
     --source src/grok_r1_001gp.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_r2_0010.o" private/SLUS_204.86.rom \
     --source src/grok_r2_0010.c
 "$PYTHON" tools/verify_object.py \
@@ -836,11 +854,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_r1_0040.o" private/SLUS_204.86.rom \
     --source src/grok_r1_0040.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_r2_0034.o" private/SLUS_204.86.rom \
     --source src/grok_r2_0034.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_dispatch_r2.o" private/SLUS_204.86.rom \
     --source src/grok_dispatch_r2.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_size60.o" private/SLUS_204.86.rom \
     --source src/grok_size60.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_fpu_r2.o" private/SLUS_204.86.rom \
