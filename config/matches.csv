@@ -7341,3 +7341,14 @@ func_00300CB0,0x00300CB0,0x84,src/state_pair_dispatch.c,complete
 func_00305520,0x00305520,0x84,src/state_pair_dispatch.c,complete
 residual_003093C0,0x003093C0,0x84,src/state_pair_dispatch.c,complete
 func_0030FFA0,0x0030FFA0,0x84,src/state_pair_dispatch.c,complete
+func_002165F0,0x002165F0,0x80,src/state_pair_zero_dispatch.c,complete
+func_00233C10,0x00233C10,0x80,src/state_pair_zero_dispatch.c,complete
+func_0023F660,0x0023F660,0x80,src/state_pair_zero_dispatch.c,complete
+func_002DCA50,0x002DCA50,0x80,src/state_pair_zero_dispatch.c,complete
+func_0031B9E0,0x0031B9E0,0x80,src/state_pair_zero_dispatch.c,complete
+func_00278B40,0x00278B40,0x58,src/nibble_state_dispatch.c,complete
+func_0027B490,0x0027B490,0x58,src/nibble_state_dispatch.c,complete
+func_002AC960,0x002AC960,0x58,src/nibble_state_dispatch.c,complete
+func_002EE730,0x002EE730,0x58,src/nibble_state_dispatch.c,complete
+func_00317700,0x00317700,0x58,src/nibble_state_dispatch.c,complete
+func_00322CF0,0x00322CF0,0x58,src/nibble_state_dispatch.c,complete
