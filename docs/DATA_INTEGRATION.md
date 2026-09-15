@@ -6,8 +6,8 @@ after each unit passes a private-ROM verifier.
 
 Included units:
 
-- eight all-zero initialized C ranges (88,408 bytes total); and
-- `gMvc2Dispatch_00445A20`, a 0x400-byte symbolic table of code labels.
+- nine all-zero initialized C ranges (88,472 bytes total); and
+- symbolic dispatch/jump tables reconstructed as compiled C.
 
 The 12 unaligned zero ranges from `zero_initialized_regions.csv` are
 intentionally absent: they presently require assembly `.space` placement and
@@ -35,7 +35,7 @@ must not receive C/data completion credit.
    loaded-image and retail-ELF comparisons remain the final exactness gate.
 6. Replace `tools/objdiff_report.py` with the supplied version. It grants data
    credit only for `data_matches.csv` rows whose catalog ranges are exact. The
-   included post-gate records total 88,408 zero bytes and 1,024 dispatch bytes.
+   included post-gate records total 88,472 zero bytes plus dispatch and jump tables.
    Do not credit any assembly-only zero range.
 
 ## Tests
