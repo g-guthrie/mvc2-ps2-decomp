@@ -7410,3 +7410,4 @@ func_003CF890,0x003CF890,0x30,src/grok_w3_003c.c,complete
 func_003D0820,0x003D0820,0x30,src/grok_w3_003c.c,complete
 func_00414C30,0x00414C30,0x34,src/grok_w3_003e.c,complete
 func_00417950,0x00417950,0x30,src/grok_w3_003e.c,complete
+residual_00272FF0,0x00272FF0,0x40,src/grok_w3_neg.c,complete
