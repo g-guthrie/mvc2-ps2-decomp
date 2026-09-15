@@ -1,0 +1,4 @@
+typedef unsigned int u32;
+u32 data_u32_00459A1C[7] = {
+    0x00000000u, 0xC1200000u, 0x3F555555u, 0xC1555555u, 0x3F555555u, 0xC1855555u, 0x3F555555u, 
+};

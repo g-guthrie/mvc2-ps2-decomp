@@ -1,4 +1,4 @@
 typedef unsigned int u32;
-u32 data_u32_004BECE0[8] = {
-    0xFFFF0000u, 0xFFFFFFFFu, 0xFFFFFFFFu, 0xFFFFFFFFu, 0xFFFF0001u, 0xFFFFFFFFu, 0xFFFFFFFFu, 0xFFFFFFFFu, 
+u32 data_u32_004BECE0[1] = {
+    0xFFFF0000u, 
 };

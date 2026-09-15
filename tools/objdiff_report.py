@@ -13,6 +13,25 @@ DATA_SIZE = 0x9E380
 CHUNK_SIZE = 0x10000
 
 
+def unique_covered_bytes(intervals: list[tuple[int, int]], lo: int, hi: int) -> int:
+    """Union of [start, start+size) clipped to [lo, hi). Overlaps count once."""
+    clipped = []
+    for start, size in intervals:
+        a = max(start, lo)
+        b = min(start + size, hi)
+        if b > a:
+            clipped.append((a, b))
+    clipped.sort()
+    covered = 0
+    cur = lo
+    for a, b in clipped:
+        if b <= cur:
+            continue
+        covered += b - max(a, cur)
+        cur = max(cur, b)
+    return covered
+
+
 def progress_measures(
     *,
     total_code: int = 0,
@@ -24,7 +43,16 @@ def progress_measures(
     complete_code: int = 0,
     matched_data: int = 0,
     complete_data: int = 0,
+    complete_units: int = 0,
 ) -> dict:
+    # objdiff: matched_* = decompiled/matching source; complete_* = linked
+    # (hybrid-placed matching C). Percents must never exceed 100.
+    if total_code:
+        matched_code = min(matched_code, total_code)
+        complete_code = min(complete_code, matched_code, total_code)
+    if total_data:
+        matched_data = min(matched_data, total_data)
+        complete_data = min(complete_data, matched_data, total_data)
     code_percent = matched_code * 100.0 / total_code if total_code else 0.0
     function_percent = (
         matched_functions * 100.0 / total_functions if total_functions else 0.0
@@ -38,7 +66,7 @@ def progress_measures(
         "complete_code_percent": complete_code_percent,
         "complete_data_percent": complete_data * 100.0 / total_data if total_data else 0.0,
         "total_units": total_units,
-        "complete_units": 0,
+        "complete_units": complete_units,
     }
     if total_code:
         result["total_code"] = str(total_code)
@@ -104,6 +132,12 @@ def load_data_matches(units_path: Path, matches_path: Path) -> dict[str, dict]:
                 **row, "address": found[0], "size": found[1],
                 "complete": row["status"] == "complete",
             }
+    ordered = sorted(result.values(), key=lambda item: item["address"])
+    for prev, cur in zip(ordered, ordered[1:]):
+        if cur["address"] < prev["address"] + prev["size"]:
+            raise SystemExit(
+                f"overlapping data units {prev['name']} and {cur['name']}"
+            )
     return result
 
 
@@ -206,8 +240,15 @@ def build_report(
             },
         })
 
-    matched_data = sum(match["size"] for match in data_matches.values())
-    complete_data = sum(match["size"] for match in data_matches.values() if match["complete"])
+    data_lo = BASE_ADDRESS + TEXT_SIZE
+    data_hi = data_lo + DATA_SIZE
+    data_intervals = [(match["address"], match["size"]) for match in data_matches.values()]
+    matched_data = unique_covered_bytes(data_intervals, data_lo, data_hi)
+    complete_data = unique_covered_bytes(
+        [(match["address"], match["size"]) for match in data_matches.values() if match["complete"]],
+        data_lo,
+        data_hi,
+    )
     units.append({
         "name": "main/initialized_data",
         "measures": progress_measures(
@@ -228,18 +269,30 @@ def build_report(
         },
     })
 
+    complete_units = sum(1 for unit in units if unit["metadata"].get("complete"))
     aggregate = progress_measures(
         total_code=TEXT_SIZE,
         total_data=DATA_SIZE,
         total_functions=len(functions),
         total_units=len(units),
-        matched_code=sum(match["size"] for match in matches.values()),
+        matched_code=unique_covered_bytes(
+            [(match["address"], match["size"]) for match in matches.values()],
+            BASE_ADDRESS,
+            BASE_ADDRESS + TEXT_SIZE,
+        ),
         matched_functions=len(matches),
-        complete_code=sum(
-            match["size"] for match in matches.values() if match["complete"]
+        complete_code=unique_covered_bytes(
+            [
+                (match["address"], match["size"])
+                for match in matches.values()
+                if match["complete"]
+            ],
+            BASE_ADDRESS,
+            BASE_ADDRESS + TEXT_SIZE,
         ),
         matched_data=matched_data,
         complete_data=complete_data,
+        complete_units=complete_units,
     )
     return {
         "version": 2,
@@ -282,12 +335,14 @@ def main() -> None:
     args.report.parent.mkdir(parents=True, exist_ok=True)
     args.svg.parent.mkdir(parents=True, exist_ok=True)
     args.report.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
-    matched_bytes = sum(match["size"] for match in matches.values())
+    matched_bytes = int(report["measures"]["matched_code"])
     args.svg.write_text(svg(len(functions), matched_bytes), encoding="utf-8")
     print(
         f"wrote {args.report}: {len(matches)}/{len(functions)} functions, "
-        f"{matched_bytes}/{TEXT_SIZE} matching code bytes, "
-        f"{sum(match['size'] for match in data_matches.values())}/{DATA_SIZE} matching data bytes"
+        f"{report['measures']['matched_code']}/{TEXT_SIZE} matching code bytes, "
+        f"{report['measures']['matched_data']}/{DATA_SIZE} matching data bytes, "
+        f"linked code {report['measures']['complete_code_percent']:.4f}% "
+        f"linked data {report['measures']['complete_data_percent']:.4f}%"
     )
 
 

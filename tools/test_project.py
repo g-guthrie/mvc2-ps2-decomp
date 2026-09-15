@@ -36,6 +36,44 @@ class ProjectTest(unittest.TestCase):
         self.assertEqual(result["measures"]["complete_code"], "8")
         self.assertEqual(result["units"][0]["metadata"]["progress_categories"], ["main"])
 
+    def test_overlapping_data_units_are_rejected(self):
+        from pathlib import Path
+        import tempfile
+        from tools.objdiff_report import load_data_matches
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "units.csv").write_text(
+                "name,address,size\n"
+                "a,0x00424200,0x20\n"
+                "b,0x00424210,0x20\n",
+                encoding="utf-8",
+            )
+            (root / "matches.csv").write_text(
+                "name,address,size,source,status\n"
+                "a,0x00424200,0x20,src/a.c,complete\n"
+                "b,0x00424210,0x20,src/b.c,complete\n",
+                encoding="utf-8",
+            )
+            with self.assertRaises(SystemExit):
+                load_data_matches(root / "units.csv", root / "matches.csv")
+
+    def test_linked_data_percent_never_exceeds_span(self):
+        from tools.objdiff_report import unique_covered_bytes, DATA_SIZE, BASE_ADDRESS, TEXT_SIZE
+
+        data_lo = BASE_ADDRESS + TEXT_SIZE
+        covered = unique_covered_bytes(
+            [(data_lo, DATA_SIZE), (data_lo + 16, 32)],
+            data_lo,
+            data_lo + DATA_SIZE,
+        )
+        self.assertEqual(covered, DATA_SIZE)
+        result = build_report([], {}, {
+            "a": {"address": data_lo, "size": DATA_SIZE, "source": "src/a.c", "complete": True},
+        })
+        self.assertLessEqual(float(result["measures"]["complete_data_percent"]), 100.0)
+        self.assertEqual(result["measures"]["complete_data"], str(DATA_SIZE))
+
 
 if __name__ == "__main__":
     unittest.main()
