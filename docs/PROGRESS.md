@@ -28,7 +28,9 @@ Conservative spans (do not change without rewriting the report):
 
 ## Adding a data unit
 
-Keep the new range disjoint from every existing `data_units.csv` row. If it sits inside a fill, punch the fill first (shrink/split the `data_u32_*` / `data_zero_*` unit) instead of stacking. Then run:
+Do **not** punch or split fills to create extra catalog rows. A raw `u32`/`zero`/`0xFF` dump or numeric jump table is `progress=placeholder` and gets **zero** matching/linked data credit even if hybrid-placed. Only promote `progress=reconstructed` after recovering the object's structure, symbols, and references.
+
+Keep catalog ranges disjoint enough for the linker; do not restack the same bytes as a second credited unit. Then run:
 
 ```sh
 PYTHONPATH=. python3 -m tools.validate_progress_catalog
