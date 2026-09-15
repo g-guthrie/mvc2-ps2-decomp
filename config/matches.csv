@@ -7767,3 +7767,5 @@ func_00364410,0x00364410,0x5C,src/grok_w7_0036.c,complete
 func_00375040,0x00375040,0x54,src/grok_w7_0036.c,complete
 func_003754E0,0x003754E0,0x54,src/grok_w7_0036.c,complete
 func_00375AB0,0x00375AB0,0x54,src/grok_w7_0036.c,complete
+func_0025DC40,0x0025DC40,0xB0,src/grok_w7_phys2.c,complete
+func_0025DED0,0x0025DED0,0xB0,src/grok_w7_phys2.c,complete
