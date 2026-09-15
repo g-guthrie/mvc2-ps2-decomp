@@ -125,6 +125,8 @@ def load_data_matches(units_path: Path, matches_path: Path) -> dict[str, dict]:
         for row in csv.DictReader(stream):
             if row["status"] not in {"matching", "complete"}:
                 continue
+            if row.get("progress") not in {"reconstructed", "placeholder"}:
+                raise SystemExit(f"data progress classification missing or invalid: {row['name']}")
             expected = units.get(row["name"])
             found = (int(row["address"], 0), int(row["size"], 0))
             if expected != found:
@@ -247,25 +249,40 @@ def build_report(
     }
     validate_data_catalog(units_by_name, data_matches)
     matched_data, complete_data = data_progress(data_matches)
-    units.append({
-        "name": "main/initialized_data",
-        "measures": progress_measures(
-            total_data=DATA_SIZE, total_units=1,
-            matched_data=matched_data, complete_data=complete_data,
-        ),
-        "sections": [{
-            "name": ".data",
-            "size": str(DATA_SIZE),
-            "fuzzy_match_percent": matched_data * 100.0 / DATA_SIZE,
-            "address": str(TEXT_SIZE),
-            "metadata": {"virtual_address": str(BASE_ADDRESS + TEXT_SIZE)},
-        }],
-        "metadata": {
-            "complete": False,
-            "source_path": "src/data" if data_matches else "asm/main_data.s",
-            "progress_categories": ["main"],
-        },
-    })
+    # Like conventional objdiff reports, expose individual source objects.
+    data_sources = defaultdict(dict)
+    for name, row in data_matches.items():
+        data_sources[row["source"]][name] = row
+    for source, rows in sorted(data_sources.items()):
+        size = sum(row["size"] for row in rows.values())
+        matched, complete = data_progress(rows)
+        units.append({
+            "name": "main/" + str(Path(source).with_suffix("")).removeprefix("src/"),
+            "measures": progress_measures(
+                total_data=size, total_units=1, matched_data=matched,
+                complete_data=complete, complete_units=int(complete == size),
+            ),
+            "sections": [{
+                "name": name, "size": str(row["size"]),
+                "fuzzy_match_percent": (
+                    100.0 if row.get("progress") == "reconstructed" else 0.0
+                ),
+                "metadata": {"virtual_address": str(row["address"])},
+            } for name, row in sorted(rows.items())],
+            "metadata": {
+                "complete": complete == size, "source_path": source,
+                "progress_categories": ["main"],
+            },
+        })
+    residual = DATA_SIZE - sum(row["size"] for row in data_matches.values())
+    if residual:
+        units.append({
+            "name": "main/initialized_data_remaining",
+            "measures": progress_measures(total_data=residual, total_units=1),
+            "metadata": {
+                "complete": False, "progress_categories": ["main"],
+            },
+        })
 
     complete_units = sum(1 for unit in units if unit["metadata"].get("complete"))
     aggregate = progress_measures(

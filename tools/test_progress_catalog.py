@@ -36,8 +36,8 @@ class ProgressCatalogTest(unittest.TestCase):
             {"name": "b", "address": 0x00100008, "size": 16},
         ]
         matches = {
-            "a": {"address": 0x00100000, "size": 16, "complete": True},
-            "b": {"address": 0x00100008, "size": 16, "complete": True},
+            "a": {"address": 0x00100000, "size": 16, "complete": True, "progress": "reconstructed"},
+            "b": {"address": 0x00100008, "size": 16, "complete": True, "progress": "reconstructed"},
         }
         with self.assertRaises(SystemExit):
             validate_code_catalog(functions, matches)
@@ -45,26 +45,26 @@ class ProgressCatalogTest(unittest.TestCase):
     def test_data_overlap_is_rejected(self):
         units = {"a": (DATA_BEGIN, 32), "b": (DATA_BEGIN + 16, 32)}
         matches = {
-            "a": {"address": DATA_BEGIN, "size": 32, "complete": True},
-            "b": {"address": DATA_BEGIN + 16, "size": 32, "complete": True},
+            "a": {"address": DATA_BEGIN, "size": 32, "complete": True, "progress": "reconstructed"},
+            "b": {"address": DATA_BEGIN + 16, "size": 32, "complete": True, "progress": "reconstructed"},
         }
         with self.assertRaises(SystemExit):
             validate_data_catalog(units, matches)
 
     def test_complete_cannot_exceed_matched(self):
         matches = {
-            "a": {"address": DATA_BEGIN, "size": 16, "complete": True},
+            "a": {"address": DATA_BEGIN, "size": 16, "complete": True, "progress": "reconstructed"},
         }
         matched, complete = data_progress(matches)
         self.assertEqual(matched, complete)
         with self.assertRaises(SystemExit):
             data_progress(
-                {"a": {"address": DATA_BEGIN, "size": DATA_SIZE + 4, "complete": True}}
+                {"a": {"address": DATA_BEGIN, "size": DATA_SIZE + 4, "complete": True, "progress": "reconstructed"}}
             )
 
     def test_linked_code_is_at_most_text_span(self):
         matches = {
-            "a": {"address": 0x00100000, "size": 8, "complete": True},
+            "a": {"address": 0x00100000, "size": 8, "complete": True, "progress": "reconstructed"},
         }
         matched, complete = code_progress(matches)
         self.assertEqual(matched, 8)

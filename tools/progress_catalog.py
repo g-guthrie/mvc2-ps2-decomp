@@ -154,6 +154,12 @@ def code_progress(matches: dict[str, dict]) -> tuple[int, int]:
 def data_progress(matches: dict[str, dict]) -> tuple[int, int]:
     for name, match in matches.items():
         require_span(name, match["address"], match["size"], DATA_BEGIN, DATA_END, "data")
+    # Placeholder replacements still participate in all catalog validation.
+    # Their byte identity alone does not establish source reconstruction.
+    matches = {
+        name: match for name, match in matches.items()
+        if match.get("progress") == "reconstructed"
+    }
     matched = unique_covered_bytes(
         [(match["address"], match["size"]) for match in matches.values()],
         DATA_BEGIN,

@@ -6,7 +6,7 @@ objdiff v2 field meanings, as decomp.dev displays them:
 |---|---|---|
 | decompiled | `matched_code_percent` | Exact matching C vs retail `.text` |
 | fully linked | `complete_code_percent` | That matching C is **placed by the hybrid linker** |
-| data bar | `matched_data_percent` / `complete_data_percent` | Exact matching initialized data in `0x00424200..0x004C2580` |
+| data bar | `matched_data_percent` / `complete_data_percent` | Completed-source initialized data in `0x00424200..0x004C2580` |
 
 `complete_*` is **not** “the packed ELF SHA-matches retail.” Hybrid copies unmatched bytes from the dump, so the image can hash 100% while linked C is still ~10%.
 
@@ -34,3 +34,41 @@ Keep the new range disjoint from every existing `data_units.csv` row. If it sits
 PYTHONPATH=. python3 -m tools.validate_progress_catalog
 PYTHONPATH=. python3 -m tools.objdiff_report --svg assets/progress.svg
 ```
+
+## Data completion and report structure
+
+Reports expose one unit per data source file, with `source_path`, per-unit
+measures and `metadata.complete`, plus an uncredited residual unit. The sum
+of unit data sizes remains 648,064 bytes. This follows the source-object report
+structure used by [Metroid Prime](https://github.com/PrimeDecomp/prime/blob/main/configure.py),
+[Melee](https://github.com/doldecomp/melee/blob/master/tools/project.py), and
+[Twilight Princess](https://github.com/zeldaret/tp/blob/main/tools/project.py).
+Objdiff's complete flag means a completed linked source object; it is not a
+universal measure of semantic understanding.
+
+MVC2 uses a hybrid linker and has no recovered original translation-unit map.
+Its per-file data units are current source ownership, not claimed original
+object boundaries. A raw binary replacement expressed in C remains placeholder
+work even though the hybrid image physically links it.
+
+`config/data_matches.csv` explicitly classifies each range with `progress`:
+
+- `placeholder`: raw integer arrays, untyped zero/fill runs, and numeric-address
+  jump/pointer tables. These earn neither matching nor completed data credit.
+- `reconstructed`: recovered structures, symbolic dispatch/handler tables, and
+  identified typed objects. Exact matching earns matching credit; `status=complete`
+  additionally earns linked credit. This is a project completion policy, not an
+  objdiff rule that all projects must use.
+
+Both classes remain in the build catalog and all address, overlap, span, and
+source-existence checks. Missing/unknown classifications fail report generation.
+Do not promote a placeholder merely by changing its name or expressing the same
+bytes with another scalar type. Recover the object's boundaries, representation
+and references; verify its compiled bytes and hybrid placement before promotion.
+The public reporting job validates catalog declarations; it does not rebuild the
+private retail image or independently prove those declarations.
+
+At this correction, 12 reconstructed ranges contribute 4,200 / 648,064 data bytes
+(0.648096%). Another 628,674 catalogued bytes are placeholders; 15,190 bytes remain
+outside the replacement catalog. The former 97.656096% counted both classes.
+Code progress is unaffected.
