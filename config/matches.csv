@@ -7866,3 +7866,5 @@ func_001519E0,0x001519E0,0x3C,src/dupcluster_001519E0.c,complete
 func_003ABFE0,0x003ABFE0,0x3C,src/dupcluster_003ABFE0.c,complete
 func_001863F0,0x001863F0,0x44,src/dupcluster_001863F0.c,complete
 func_001822B0,0x001822B0,0x44,src/dupcluster_001822B0.c,complete
+func_001BDA10,0x001BDA10,0x44,src/dupcluster_001BDA10.c,complete
+func_00278F50,0x00278F50,0x44,src/dupcluster_00278F50.c,complete
