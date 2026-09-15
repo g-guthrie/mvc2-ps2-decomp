@@ -6593,3 +6593,10 @@ func_0026F400,0x0026F400,0x58,src/grok_w3_sz58.c,complete
 func_002A76A0,0x002A76A0,0x58,src/grok_w3_sz58.c,complete
 func_00321230,0x00321230,0x58,src/grok_w3_sz58.c,complete
 func_00321300,0x00321300,0x58,src/grok_w3_sz58.c,complete
+func_003DE590,0x003DE590,0x2C,src/grok_w3_fpu.c,complete
+func_00361900,0x00361900,0x38,src/grok_w3_fpu.c,complete
+func_002BD610,0x002BD610,0x2C,src/grok_w3_fpu.c,complete
+func_00374CD0,0x00374CD0,0x40,src/grok_w3_fpu.c,complete
+func_0037BD80,0x0037BD80,0x28,src/grok_w3_fpu.c,complete
+func_00336A00,0x00336A00,0x40,src/grok_w3_fpu.c,complete
+func_001A8CB0,0x001A8CB0,0x34,src/grok_w3_fpu.c,complete
