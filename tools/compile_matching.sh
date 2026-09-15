@@ -292,6 +292,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/agentA_clusters.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/agentA_clusters.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_r1_0018.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/grok_r1_0018.o"
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/agentB_clusters.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/agentB_clusters.o"
@@ -638,5 +641,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/round3_3.o" private/SLUS_204.86.rom \
     --source src/round3_3.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_r1_0018.o" private/SLUS_204.86.rom \
+    --source src/grok_r1_0018.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh
