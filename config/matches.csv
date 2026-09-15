@@ -7648,3 +7648,13 @@ func_0022BF60,0x0022BF60,0x44,src/grok_w7_0022.c,complete
 func_0023E120,0x0023E120,0x54,src/grok_w7_0022.c,complete
 func_00417F60,0x00417F60,0x3C,src/grok_w7_003e.c,complete
 func_00418B50,0x00418B50,0x30,src/grok_w7_003e.c,complete
+func_00226530,0x00226530,0x78,src/grok_w7_sz78.c,complete
+func_0027D160,0x0027D160,0x78,src/grok_w7_sz78.c,complete
+func_0029B280,0x0029B280,0x78,src/grok_w7_sz78.c,complete
+func_002D1490,0x002D1490,0x78,src/grok_w7_sz78.c,complete
+func_002D1510,0x002D1510,0x78,src/grok_w7_sz78.c,complete
+func_002F2160,0x002F2160,0x78,src/grok_w7_sz78.c,complete
+func_001ED6E0,0x001ED6E0,0x78,src/grok_w7_sz78.c,complete
+func_0024E030,0x0024E030,0x78,src/grok_w7_sz78.c,complete
+func_0026F4A0,0x0026F4A0,0x78,src/grok_w7_sz78.c,complete
+func_002A12D0,0x002A12D0,0x78,src/grok_w7_sz78.c,complete
