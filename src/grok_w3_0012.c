@@ -10,6 +10,11 @@ extern s16 D_004C2790;
 extern s16 D_004C278C;
 extern s16 D_004C2788;
 extern s16 D_004C2784;
+typedef signed short s16;
+typedef signed int s32;
+
+extern u8 D_00583B90[];
+extern void (*D_004C25DC)(void);
 extern u8 *D_004C2840;
 extern void func_00139380(u8 *);
 extern void func_001396E0(u8 *);
