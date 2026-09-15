@@ -6036,3 +6036,15 @@ func_0034CF30,0x0034CF30,0x28,src/grok_fpu_r2.c,complete
 func_0034B040,0x0034B040,0x24,src/grok_fpu_r2.c,complete
 func_002ADC20,0x002ADC20,0x4C,src/grok_fpu_r2.c,complete
 func_00132F70,0x00132F70,0x34,src/grok_fpu_r2.c,complete
+func_001E2130,0x001E2130,0x20,src/grok_w3_001e.c,complete
+func_001E3210,0x001E3210,0x28,src/grok_w3_001e.c,complete
+func_001E3240,0x001E3240,0x28,src/grok_w3_001e.c,complete
+func_001E31D0,0x001E31D0,0x34,src/grok_w3_001e.c,complete
+func_001E3C00,0x001E3C00,0x34,src/grok_w3_001e.c,complete
+func_001E3BB0,0x001E3BB0,0x44,src/grok_w3_001e.c,complete
+func_001E7470,0x001E7470,0x4C,src/grok_w3_001e.c,complete
+func_001E3270,0x001E3270,0x48,src/grok_w3_001e.c,complete
+func_001E3320,0x001E3320,0x48,src/grok_w3_001e.c,complete
+func_001FD3F0,0x001FD3F0,0x3C,src/grok_w3_001e.c,complete
+func_001E7430,0x001E7430,0x38,src/grok_w3_001e.c,complete
+func_001E4260,0x001E4260,0x3C,src/grok_w3_001e.c,complete
