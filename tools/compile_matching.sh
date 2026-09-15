@@ -286,6 +286,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/signed_flag_clusters.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/signed_flag_clusters.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/signed_dispatch_clusters.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/signed_dispatch_clusters.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -560,5 +563,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/signed_flag_clusters.o" private/SLUS_204.86.rom \
     --source src/signed_flag_clusters.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/signed_dispatch_clusters.o" private/SLUS_204.86.rom \
+    --source src/signed_dispatch_clusters.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh
