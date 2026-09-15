@@ -1,0 +1,2 @@
+typedef unsigned int u32;
+u32 data_u32_004AC768[5] = { 0x02020202u, 0x02020202u, 0x02020202u, 0x02020202u, 0x02020202u };
