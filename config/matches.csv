@@ -7646,3 +7646,5 @@ func_0022C820,0x0022C820,0x44,src/grok_w7_0022.c,complete
 func_0022C870,0x0022C870,0x44,src/grok_w7_0022.c,complete
 func_0022BF60,0x0022BF60,0x44,src/grok_w7_0022.c,complete
 func_0023E120,0x0023E120,0x54,src/grok_w7_0022.c,complete
+func_00417F60,0x00417F60,0x3C,src/grok_w7_003e.c,complete
+func_00418B50,0x00418B50,0x30,src/grok_w7_003e.c,complete
