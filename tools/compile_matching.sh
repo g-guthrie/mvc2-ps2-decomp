@@ -473,14 +473,16 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0020.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_0020.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0026.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_0026.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_002e.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_002e.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0030.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_0030.o"
-    src/grok_w3_0010.c -c -lang c $MATCH_FLAGS \
-    -o "$BUILD/grok_w3_0010.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0038.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w3_0038.o"
 
@@ -846,9 +848,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/grok_w3_0012.o" private/SLUS_204.86.rom \
     --source src/grok_w3_0012.c
 "$PYTHON" tools/verify_object.py \
-    "$BUILD/grok_w3_0012.o" private/SLUS_204.86.rom \
-    --source src/grok_w3_0012.c
-"$PYTHON" tools/verify_object.py \
     "$BUILD/round4_0.o" private/SLUS_204.86.rom \
     --source src/round4_0.c
 "$PYTHON" tools/verify_object.py \
@@ -923,26 +922,37 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_r2_0020.o" private/SLUS_204.86.rom \
     --source src/grok_r2_0020.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_001c.o" private/SLUS_204.86.rom \
     --source src/grok_w3_001c.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_0016.o" private/SLUS_204.86.rom \
     --source src/grok_w3_0016.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_0022.o" private/SLUS_204.86.rom \
     --source src/grok_w3_0022.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_001a.o" private/SLUS_204.86.rom \
     --source src/grok_w3_001a.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_002c.o" private/SLUS_204.86.rom \
     --source src/grok_w3_002c.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_001e.o" private/SLUS_204.86.rom \
     --source src/grok_w3_001e.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_0020.o" private/SLUS_204.86.rom \
     --source src/grok_w3_0020.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_0026.o" private/SLUS_204.86.rom \
     --source src/grok_w3_0026.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_002e.o" private/SLUS_204.86.rom \
     --source src/grok_w3_002e.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_0030.o" private/SLUS_204.86.rom \
     --source src/grok_w3_0030.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_0038.o" private/SLUS_204.86.rom \
     --source src/grok_w3_0038.c
 
