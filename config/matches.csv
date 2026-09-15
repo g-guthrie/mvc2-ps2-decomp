@@ -6337,3 +6337,4 @@ func_00151270,0x00151270,0x2C,src/grok_w3_0014.c,complete
 func_001536C0,0x001536C0,0x48,src/grok_w3_0014.c,complete
 func_0014A4E0,0x0014A4E0,0x44,src/grok_w3_0014.c,complete
 func_00151780,0x00151780,0x40,src/grok_w3_0014.c,complete
+func_001CB180,0x001CB180,0x20,src/grok_tiny2.c,complete
