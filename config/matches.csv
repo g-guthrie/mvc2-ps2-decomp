@@ -7096,3 +7096,8 @@ func_003C15B0,0x003C15B0,0x40,src/grok_w5_003c.c,complete
 func_003C3D60,0x003C3D60,0x40,src/grok_w5_003c.c,complete
 func_003D7770,0x003D7770,0x48,src/grok_w5_003c.c,complete
 func_003DB980,0x003DB980,0x28,src/grok_w5_003c.c,complete
+func_00173F90,0x00173F90,0x54,src/grok_w5_sz54.c,complete
+func_00182BD0,0x00182BD0,0x54,src/grok_w5_sz54.c,complete
+func_0015EDB0,0x0015EDB0,0x54,src/grok_w5_sz54.c,complete
+func_002F8DE0,0x002F8DE0,0x54,src/grok_w5_sz54.c,complete
+func_00189730,0x00189730,0x54,src/grok_w5_sz54.c,complete
