@@ -5223,3 +5223,6 @@ func_00395160,0x00395160,0x18,src/tail_call_leaves18.c,complete
 func_00395870,0x00395870,0x18,src/tail_call_leaves18.c,complete
 func_00390630,0x00390630,0x20,src/tail_call_leaves18.c,complete
 func_0038F2D0,0x0038F2D0,0x24,src/tail_call_leaves18.c,complete
+func_003A58E0,0x003A58E0,0x18,src/tail_call_leaves19.c,complete
+func_003B1A50,0x003B1A50,0x18,src/tail_call_leaves19.c,complete
+func_003B3860,0x003B3860,0x10,src/tail_call_leaves19.c,complete
