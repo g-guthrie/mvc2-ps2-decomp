@@ -1,0 +1,4 @@
+typedef unsigned int u32;
+u32 data_u32_0045DB20[8] = {
+    0x0031D260u, 0x0031D2B0u, 0x0031D520u, 0x00000000u, 0x0031D2D0u, 0x0031D380u, 0x0031D470u, 0x00000000u, 
+};
