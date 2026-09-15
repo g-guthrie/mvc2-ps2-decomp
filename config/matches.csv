@@ -6515,3 +6515,13 @@ func_0041B6C0,0x0041B6C0,0x50,src/grok_w3_0041.c,complete
 func_0041C2C0,0x0041C2C0,0x30,src/grok_w3_0041.c,complete
 func_0041CA00,0x0041CA00,0x3c,src/grok_w3_0041.c,complete
 func_00419F70,0x00419F70,0x44,src/grok_w3_0041.c,complete
+func_001E2130,0x001E2130,0x20,src/grok_w5_001e.c,complete
+func_001E7F40,0x001E7F40,0x1C,src/grok_w5_001e.c,complete
+func_001E3210,0x001E3210,0x28,src/grok_w5_001e.c,complete
+func_001E3240,0x001E3240,0x28,src/grok_w5_001e.c,complete
+func_001E31D0,0x001E31D0,0x34,src/grok_w5_001e.c,complete
+func_001E3C00,0x001E3C00,0x34,src/grok_w5_001e.c,complete
+func_001E7430,0x001E7430,0x38,src/grok_w5_001e.c,complete
+func_001E4260,0x001E4260,0x3C,src/grok_w5_001e.c,complete
+func_001E3BB0,0x001E3BB0,0x44,src/grok_w5_001e.c,complete
+func_001E76D0,0x001E76D0,0x44,src/grok_w5_001e.c,complete
