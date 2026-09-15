@@ -1558,3 +1558,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_002c.o" private/SLUS_204.86.rom \
     --source src/grok_w7_002c.c
+    src/grok_w7_evt.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/grok_w7_evt.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_evt.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_evt.c
