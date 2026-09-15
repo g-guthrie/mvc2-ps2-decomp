@@ -6083,3 +6083,5 @@ func_003088B0,0x003088B0,0x58,src/grok_size60.c,complete
 func_00308910,0x00308910,0x58,src/grok_size60.c,complete
 func_00320D90,0x00320D90,0x58,src/grok_size60.c,complete
 func_00320DF0,0x00320DF0,0x58,src/grok_size60.c,complete
+residual_0029F450,0x0029F450,0x20,src/grok_dispatch_r2.c,complete
+residual_002FA000,0x002FA000,0x1C,src/grok_dispatch_r2.c,complete
