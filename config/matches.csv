@@ -7280,3 +7280,8 @@ residual_003B2900,0x003B2900,0x20,src/grok_w5_disp.c,complete
 residual_003B2FE0,0x003B2FE0,0x20,src/grok_w5_disp.c,complete
 residual_003B8760,0x003B8760,0x20,src/grok_w5_disp.c,complete
 residual_003B9C20,0x003B9C20,0x20,src/grok_w5_disp.c,complete
+func_00173F90,0x00173F90,0x54,src/grok_w5_sz54.c,complete
+func_00182BD0,0x00182BD0,0x54,src/grok_w5_sz54.c,complete
+func_0015EDB0,0x0015EDB0,0x54,src/grok_w5_sz54.c,complete
+func_002F8DE0,0x002F8DE0,0x54,src/grok_w5_sz54.c,complete
+func_00189730,0x00189730,0x54,src/grok_w5_sz54.c,complete
