@@ -1,0 +1,4 @@
+typedef unsigned int u32;
+#define V 0x00600060u
+u32 data_u32_004459C0[4] = { V, V, V, V };
+#undef V
