@@ -13,6 +13,9 @@
   `.word` placeholders still count as zero matching source.
 - Progress separately reports the conservative 3,293,696-byte text span and
   648,064-byte initialized-data span. Neither gaps nor mixed data count as C.
+  decomp.dev "decompiled" is `matched_*`; "fully linked" is `complete_*`
+  (hybrid-placed matching C). Overlapping catalog ranges are a hard error.
+  See docs/PROGRESS.md.
 
 ## Current unknowns
 

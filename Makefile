@@ -3,7 +3,7 @@ BIN ?=
 CUE ?=
 CONFIG := config/SLUS_204.86.yaml
 
-.PHONY: setup split relink match hybrid pack-elf report test clean
+.PHONY: setup split relink match hybrid pack-elf progress-check report test clean
 
 setup:
 	@test -n "$(BIN)" || { echo "BIN is required" >&2; exit 2; }
@@ -26,11 +26,14 @@ hybrid: match
 pack-elf:
 	PYTHON="$(PYTHON)" tools/pack_hybrid_elf.sh
 
-report:
-	$(PYTHON) tools/objdiff_report.py --report build-report/report.json --svg assets/progress.svg
+progress-check:
+	PYTHONPATH=. $(PYTHON) -m tools.validate_progress_catalog
+
+report: progress-check
+	PYTHONPATH=. $(PYTHON) -m tools.objdiff_report --report build-report/report.json --svg assets/progress.svg
 
 test:
-	$(PYTHON) -m unittest tools/test_*.py
+	PYTHONPATH=. $(PYTHON) -m unittest tools.test_project tools.test_progress_catalog tools.test_hybrid_relink tools.test_pack_retail_elf
 
 clean:
 	rm -rf asm build build-report

@@ -1,5 +1,4 @@
 name,address,size,source,status
-data_zero_004241A0,0x004241A0,0x60,src/data/data_zero_004241A0.c,complete
 data_u32_00424200,0x00424200,0x2000,src/data/data_u32_00424200.c,complete
 data_u32_00426200,0x00426200,0x2000,src/data/data_u32_00426200.c,complete
 data_u32_00428200,0x00428200,0x2000,src/data/data_u32_00428200.c,complete

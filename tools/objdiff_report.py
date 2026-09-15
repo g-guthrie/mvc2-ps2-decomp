@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Generate an objdiff-v2 report from the conservative PS2 layout inventory."""
+"""Generate an objdiff-v2 report from the conservative PS2 layout inventory.
+
+matched_* is decompiled. complete_* is linked (hybrid-placed matching C).
+Catalog overlap is a hard error; percents are unique coverage / span.
+"""
 
 import argparse
 import csv
@@ -7,29 +11,20 @@ import json
 from collections import defaultdict
 from pathlib import Path
 
-BASE_ADDRESS = 0x00100000
-TEXT_SIZE = 0x324200
-DATA_SIZE = 0x9E380
+from tools.progress_catalog import (
+    BASE_ADDRESS,
+    DATA_BEGIN,
+    DATA_END,
+    DATA_SIZE,
+    TEXT_END,
+    TEXT_SIZE,
+    code_progress,
+    data_progress,
+    validate_code_catalog,
+    validate_data_catalog,
+)
+
 CHUNK_SIZE = 0x10000
-
-
-def unique_covered_bytes(intervals: list[tuple[int, int]], lo: int, hi: int) -> int:
-    """Union of [start, start+size) clipped to [lo, hi). Overlaps count once."""
-    clipped = []
-    for start, size in intervals:
-        a = max(start, lo)
-        b = min(start + size, hi)
-        if b > a:
-            clipped.append((a, b))
-    clipped.sort()
-    covered = 0
-    cur = lo
-    for a, b in clipped:
-        if b <= cur:
-            continue
-        covered += b - max(a, cur)
-        cur = max(cur, b)
-    return covered
 
 
 def progress_measures(
@@ -45,14 +40,14 @@ def progress_measures(
     complete_data: int = 0,
     complete_units: int = 0,
 ) -> dict:
-    # objdiff: matched_* = decompiled/matching source; complete_* = linked
-    # (hybrid-placed matching C). Percents must never exceed 100.
-    if total_code:
-        matched_code = min(matched_code, total_code)
-        complete_code = min(complete_code, matched_code, total_code)
-    if total_data:
-        matched_data = min(matched_data, total_data)
-        complete_data = min(complete_data, matched_data, total_data)
+    if total_code and matched_code > total_code:
+        raise SystemExit("matched_code exceeds total_code")
+    if total_code and complete_code > matched_code:
+        raise SystemExit("complete_code exceeds matched_code")
+    if total_data and matched_data > total_data:
+        raise SystemExit("matched_data exceeds total_data")
+    if total_data and complete_data > matched_data:
+        raise SystemExit("complete_data exceeds matched_data")
     code_percent = matched_code * 100.0 / total_code if total_code else 0.0
     function_percent = (
         matched_functions * 100.0 / total_functions if total_functions else 0.0
@@ -108,6 +103,12 @@ def load_matches(path: Path) -> dict[str, dict]:
                 "source": row["source"],
                 "complete": row["status"] == "complete",
             }
+    from tools.progress_catalog import require_disjoint
+
+    require_disjoint(
+        [(row["address"], row["size"], name) for name, row in result.items()],
+        "code matches",
+    )
     return result
 
 
@@ -240,15 +241,12 @@ def build_report(
             },
         })
 
-    data_lo = BASE_ADDRESS + TEXT_SIZE
-    data_hi = data_lo + DATA_SIZE
-    data_intervals = [(match["address"], match["size"]) for match in data_matches.values()]
-    matched_data = unique_covered_bytes(data_intervals, data_lo, data_hi)
-    complete_data = unique_covered_bytes(
-        [(match["address"], match["size"]) for match in data_matches.values() if match["complete"]],
-        data_lo,
-        data_hi,
-    )
+    validate_code_catalog(functions, matches)
+    units_by_name = {
+        name: (row["address"], row["size"]) for name, row in data_matches.items()
+    }
+    validate_data_catalog(units_by_name, data_matches)
+    matched_data, complete_data = data_progress(data_matches)
     units.append({
         "name": "main/initialized_data",
         "measures": progress_measures(
@@ -275,21 +273,9 @@ def build_report(
         total_data=DATA_SIZE,
         total_functions=len(functions),
         total_units=len(units),
-        matched_code=unique_covered_bytes(
-            [(match["address"], match["size"]) for match in matches.values()],
-            BASE_ADDRESS,
-            BASE_ADDRESS + TEXT_SIZE,
-        ),
+        matched_code=code_progress(matches)[0],
         matched_functions=len(matches),
-        complete_code=unique_covered_bytes(
-            [
-                (match["address"], match["size"])
-                for match in matches.values()
-                if match["complete"]
-            ],
-            BASE_ADDRESS,
-            BASE_ADDRESS + TEXT_SIZE,
-        ),
+        complete_code=code_progress(matches)[1],
         matched_data=matched_data,
         complete_data=complete_data,
         complete_units=complete_units,

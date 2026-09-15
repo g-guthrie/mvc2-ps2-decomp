@@ -1,5 +1,4 @@
 name,address,size,section,source,kind
-data_zero_004241A0,0x004241A0,0x60,.data,src/data/data_zero_004241A0.c,zero_initialized_untyped
 data_u32_00424200,0x00424200,0x2000,.data,src/data/data_u32_00424200.c,initialized_u32_table
 data_u32_00426200,0x00426200,0x2000,.data,src/data/data_u32_00426200.c,initialized_u32_table
 data_u32_00428200,0x00428200,0x2000,.data,src/data/data_u32_00428200.c,initialized_u32_table

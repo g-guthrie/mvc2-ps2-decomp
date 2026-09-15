@@ -59,7 +59,8 @@ class ProjectTest(unittest.TestCase):
                 load_data_matches(root / "units.csv", root / "matches.csv")
 
     def test_linked_data_percent_never_exceeds_span(self):
-        from tools.objdiff_report import unique_covered_bytes, DATA_SIZE, BASE_ADDRESS, TEXT_SIZE
+        from tools.objdiff_report import DATA_SIZE, BASE_ADDRESS, TEXT_SIZE
+        from tools.progress_catalog import unique_covered_bytes
 
         data_lo = BASE_ADDRESS + TEXT_SIZE
         covered = unique_covered_bytes(
