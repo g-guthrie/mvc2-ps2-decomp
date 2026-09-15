@@ -6232,3 +6232,5 @@ func_002FDAC0,0x002FDAC0,0x4c,src/grok_r2_002c.c,complete
 func_002FDEF0,0x002FDEF0,0x50,src/grok_r2_002c.c,complete
 func_002ECD60,0x002ECD60,0x38,src/grok_r2_002c.c,complete
 func_002EF860,0x002EF860,0x44,src/grok_r2_002c.c,complete
+residual_0029F450,0x0029F450,0x20,src/grok_dispatch_r2.c,complete
+residual_002FA000,0x002FA000,0x1C,src/grok_dispatch_r2.c,complete
