@@ -5226,3 +5226,13 @@ func_0038F2D0,0x0038F2D0,0x24,src/tail_call_leaves18.c,complete
 func_003A58E0,0x003A58E0,0x18,src/tail_call_leaves19.c,complete
 func_003B1A50,0x003B1A50,0x18,src/tail_call_leaves19.c,complete
 func_003B3860,0x003B3860,0x10,src/tail_call_leaves19.c,complete
+func_003BD7F0,0x003BD7F0,0xC,src/tail_call_leaves20.c,complete
+func_003BE5E0,0x003BE5E0,0xC,src/tail_call_leaves20.c,complete
+func_003C0550,0x003C0550,0xC,src/tail_call_leaves20.c,complete
+func_003C6500,0x003C6500,0x14,src/tail_call_leaves20.c,complete
+func_003C6520,0x003C6520,0x14,src/tail_call_leaves20.c,complete
+func_003C8650,0x003C8650,0x10,src/tail_call_leaves20.c,complete
+func_003D6B60,0x003D6B60,0xC,src/tail_call_leaves20.c,complete
+func_00420970,0x00420970,0xC,src/tail_call_leaves20.c,complete
+func_003EF980,0x003EF980,0x14,src/tail_call_leaves20.c,complete
+func_003F5070,0x003F5070,0xC,src/tail_call_leaves20.c,complete
