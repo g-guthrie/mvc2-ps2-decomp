@@ -331,6 +331,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_tiny_leaves.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_tiny_leaves.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_size40.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/grok_size40.o"
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/round4_0.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/round4_0.o"
@@ -656,6 +659,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_tiny_leaves.o" private/SLUS_204.86.rom \
     --source src/grok_tiny_leaves.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_size40.o" private/SLUS_204.86.rom \
+    --source src/grok_size40.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/round4_0.o" private/SLUS_204.86.rom \
     --source src/round4_0.c
