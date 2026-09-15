@@ -1738,6 +1738,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/dupcluster_00278F50.o" private/SLUS_204.86.rom \
     --source src/dupcluster_00278F50.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/dupcluster_00298FC0.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/dupcluster_00298FC0.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/dupcluster_00298FC0.o" private/SLUS_204.86.rom \
+    --source src/dupcluster_00298FC0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w7_phys2.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w7_phys2.o"
 "$PYTHON" tools/verify_object.py \
