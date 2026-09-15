@@ -623,6 +623,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/grok_w3_003e.o"
     src/grok_w3_gp.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w3_gp.o"
+    src/grok_w3_sz0c.c -c -lang c -O2 -sdatathreshold 8 \
+    -o "$BUILD/grok_w3_sz0c.o"
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_003a.c -c -lang c $MATCH_FLAGS \
@@ -1181,6 +1183,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     --source src/grok_w3_003e.c
     "$BUILD/grok_w3_gp.o" private/SLUS_204.86.rom \
     --source src/grok_w3_gp.c
+    "$BUILD/grok_w3_sz0c.o" private/SLUS_204.86.rom \
+    --source src/grok_w3_sz0c.c
 
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
