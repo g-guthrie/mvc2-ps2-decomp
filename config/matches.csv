@@ -6312,3 +6312,13 @@ func_003C7C10,0x003C7C10,0x48,src/grok_r2_003c.c,complete
 func_003C57E0,0x003C57E0,0x54,src/grok_r2_003c.c,complete
 func_003CC880,0x003CC880,0x4C,src/grok_r2_003c.c,complete
 func_003F5C00,0x003F5C00,0x28,src/grok_r2_003c.c,complete
+residual_00139560,0x00139560,0x2C,src/grok_w3_0012.c,complete
+func_0013A320,0x0013A320,0x2C,src/grok_w3_0012.c,complete
+func_0013B380,0x0013B380,0x30,src/grok_w3_0012.c,complete
+residual_0013A410,0x0013A410,0x28,src/grok_w3_0012.c,complete
+func_00138940,0x00138940,0x38,src/grok_w3_0012.c,complete
+func_001396A0,0x001396A0,0x34,src/grok_w3_0012.c,complete
+func_0012ACD0,0x0012ACD0,0x28,src/grok_w3_0012.c,complete
+func_00138A20,0x00138A20,0x38,src/grok_w3_0012.c,complete
+func_00122770,0x00122770,0x30,src/grok_w3_0012.c,complete
+func_00133720,0x00133720,0x38,src/grok_w3_0012.c,complete
