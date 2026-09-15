@@ -7352,3 +7352,9 @@ func_002AC960,0x002AC960,0x58,src/nibble_state_dispatch.c,complete
 func_002EE730,0x002EE730,0x58,src/nibble_state_dispatch.c,complete
 func_00317700,0x00317700,0x58,src/nibble_state_dispatch.c,complete
 func_00322CF0,0x00322CF0,0x58,src/nibble_state_dispatch.c,complete
+func_00194C30,0x00194C30,0x64,src/grok_w3_0019.c,complete
+func_00194CA0,0x00194CA0,0x64,src/grok_w3_0019.c,complete
+func_00198100,0x00198100,0x68,src/grok_w3_0019.c,complete
+func_001906C0,0x001906C0,0x44,src/grok_w3_0019.c,complete
+func_00193DA0,0x00193DA0,0x68,src/grok_w3_0019.c,complete
+func_001956E0,0x001956E0,0x68,src/grok_w3_0019.c,complete
