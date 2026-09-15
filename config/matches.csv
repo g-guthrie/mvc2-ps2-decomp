@@ -7488,3 +7488,7 @@ func_0023C700,0x0023C700,0x84,src/grok_w6_pairs.c,complete
 func_0023D1F0,0x0023D1F0,0x84,src/grok_w6_pairs.c,complete
 func_003A6A80,0x003A6A80,0x70,src/grok_w6_pairs.c,complete
 func_003B2B50,0x003B2B50,0x70,src/grok_w6_pairs.c,complete
+func_0015A610,0x0015A610,0x78,src/physics_timer_inc.c,complete
+func_001C5AD0,0x001C5AD0,0x78,src/physics_timer_inc.c,complete
+func_001C5F40,0x001C5F40,0x78,src/physics_timer_inc.c,complete
+func_002BEF60,0x002BEF60,0x78,src/physics_timer_inc.c,complete

@@ -765,6 +765,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/physics_floor_clamp.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/physics_floor_clamp.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/physics_timer_inc.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/physics_timer_inc.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/state_pair_dispatch.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/state_pair_dispatch.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -1503,6 +1506,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/physics_floor_clamp.o" private/SLUS_204.86.rom \
     --source src/physics_floor_clamp.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/physics_timer_inc.o" private/SLUS_204.86.rom \
+    --source src/physics_timer_inc.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/state_pair_dispatch.o" private/SLUS_204.86.rom \
     --source src/state_pair_dispatch.c
