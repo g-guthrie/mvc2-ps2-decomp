@@ -6527,3 +6527,14 @@ func_0026FEB0,0x0026FEB0,0x5C,src/grok_w3_0026.c,complete
 func_00275790,0x00275790,0x5C,src/grok_w3_0026.c,complete
 func_0027C880,0x0027C880,0x58,src/grok_w3_0026.c,complete
 func_0027ECE0,0x0027ECE0,0x58,src/grok_w3_0026.c,complete
+func_002E5BA0,0x002E5BA0,0x4C,src/grok_w3_002e.c,complete
+func_002E8540,0x002E8540,0x20,src/grok_w3_002e.c,complete
+func_002E85F0,0x002E85F0,0x50,src/grok_w3_002e.c,complete
+func_002E99F0,0x002E99F0,0x4C,src/grok_w3_002e.c,complete
+func_002EA570,0x002EA570,0x50,src/grok_w3_002e.c,complete
+func_002EB330,0x002EB330,0x44,src/grok_w3_002e.c,complete
+func_002EF1C0,0x002EF1C0,0x20,src/grok_w3_002e.c,complete
+func_002F5170,0x002F5170,0x48,src/grok_w3_002e.c,complete
+func_002FB9F0,0x002FB9F0,0x4C,src/grok_w3_002e.c,complete
+func_002FC850,0x002FC850,0x40,src/grok_w3_002e.c,complete
+func_002FFF10,0x002FFF10,0x4C,src/grok_w3_002e.c,complete
