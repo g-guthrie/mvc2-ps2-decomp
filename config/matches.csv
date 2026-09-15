@@ -6799,3 +6799,13 @@ func_0012DA00,0x0012DA00,0x40,src/grok_w5_0012.c,complete
 func_0012DBA0,0x0012DBA0,0x40,src/grok_w5_0012.c,complete
 func_0012EF50,0x0012EF50,0x2C,src/grok_w5_0012.c,complete
 func_0012EF80,0x0012EF80,0x2C,src/grok_w5_0012.c,complete
+func_0014E770,0x0014E770,0x3C,src/grok_w5_0014.c,complete
+func_0014D630,0x0014D630,0x40,src/grok_w5_0014.c,complete
+func_0014A380,0x0014A380,0x44,src/grok_w5_0014.c,complete
+func_00149A70,0x00149A70,0x48,src/grok_w5_0014.c,complete
+func_00146B80,0x00146B80,0x4C,src/grok_w5_0014.c,complete
+func_00148F80,0x00148F80,0x4C,src/grok_w5_0014.c,complete
+func_0014C710,0x0014C710,0x4C,src/grok_w5_0014.c,complete
+func_00144460,0x00144460,0x54,src/grok_w5_0014.c,complete
+func_001410D0,0x001410D0,0x58,src/grok_w5_0014.c,complete
+func_00144EF0,0x00144EF0,0x58,src/grok_w5_0014.c,complete
