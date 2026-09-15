@@ -7033,3 +7033,5 @@ func_003872E0,0x003872E0,0x50,src/grok_w5_0038.c,complete
 func_00389710,0x00389710,0x50,src/grok_w5_0038.c,complete
 func_00389870,0x00389870,0x50,src/grok_w5_0038.c,complete
 func_00389120,0x00389120,0x4C,src/grok_w5_0038.c,complete
+func_00134790,0x00134790,0x3C,src/grok_w5_fpu.c,complete
+func_003A4E50,0x003A4E50,0x40,src/grok_w5_fpu.c,complete
