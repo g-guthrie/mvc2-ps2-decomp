@@ -5237,3 +5237,11 @@ func_00420970,0x00420970,0xC,src/tail_call_leaves20.c,complete
 func_003EF980,0x003EF980,0x14,src/tail_call_leaves20.c,complete
 func_003F5070,0x003F5070,0xC,src/tail_call_leaves20.c,complete
 func_003A37F0,0x003A37F0,0x20,src/tail_call_leaves21.c,complete
+func_001F9490,0x001F9490,0x24,src/small_cluster_leaves.c,complete
+func_001FED30,0x001FED30,0x24,src/small_cluster_leaves.c,complete
+func_002C25A0,0x002C25A0,0x24,src/small_cluster_leaves.c,complete
+func_002F3DE0,0x002F3DE0,0x24,src/small_cluster_leaves.c,complete
+func_00318500,0x00318500,0x24,src/small_cluster_leaves.c,complete
+func_00247790,0x00247790,0x24,src/small_cluster_leaves.c,complete
+func_002EC560,0x002EC560,0x24,src/small_cluster_leaves.c,complete
+func_00303950,0x00303950,0x24,src/small_cluster_leaves.c,complete
