@@ -6663,3 +6663,7 @@ func_0025D550,0x0025D550,0x6C,src/grok_w3_sz68.c,complete
 func_0025D740,0x0025D740,0x6C,src/grok_w3_sz68.c,complete
 func_002B3A40,0x002B3A40,0x6C,src/grok_w3_sz68.c,complete
 func_002B3AB0,0x002B3AB0,0x6C,src/grok_w3_sz68.c,complete
+func_00140BF0,0x00140BF0,0x80,src/grok_w4_sz80.c,complete
+func_00165B80,0x00165B80,0x80,src/grok_w4_sz80.c,complete
+func_00165CD0,0x00165CD0,0x80,src/grok_w4_sz80.c,complete
+func_00140D40,0x00140D40,0x80,src/grok_w4_sz80.c,complete
