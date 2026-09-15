@@ -325,6 +325,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/round3_3.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/round3_3.o"
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/round4_0.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/round4_0.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/round4_3.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/round4_3.o"
 
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
@@ -638,5 +644,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/round3_3.o" private/SLUS_204.86.rom \
     --source src/round3_3.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/round4_0.o" private/SLUS_204.86.rom \
+    --source src/round4_0.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/round4_3.o" private/SLUS_204.86.rom \
+    --source src/round4_3.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

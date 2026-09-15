@@ -5655,3 +5655,17 @@ func_001B2720,0x001B2720,0x60,src/round3_3.c,complete
 func_001B27E0,0x001B27E0,0x60,src/round3_3.c,complete
 func_00258A90,0x00258A90,0x5c,src/round3_3.c,complete
 func_00258B30,0x00258B30,0x5c,src/round3_3.c,complete
+func_00286A20,0x00286A20,0x6C,src/round4_0.c,complete
+func_0028E2E0,0x0028E2E0,0x6C,src/round4_0.c,complete
+func_001ADAE0,0x001ADAE0,0x3C,src/round4_3.c,complete
+func_001ADE30,0x001ADE30,0x3C,src/round4_3.c,complete
+func_001AE310,0x001AE310,0x3C,src/round4_3.c,complete
+func_001AE4E0,0x001AE4E0,0x3C,src/round4_3.c,complete
+func_001AF0F0,0x001AF0F0,0x3C,src/round4_3.c,complete
+func_001AF290,0x001AF290,0x3C,src/round4_3.c,complete
+func_001CC6D0,0x001CC6D0,0x3C,src/round4_3.c,complete
+func_001CC860,0x001CC860,0x3C,src/round4_3.c,complete
+func_001F8920,0x001F8920,0x94,src/round4_3.c,complete
+func_0027A810,0x0027A810,0x94,src/round4_3.c,complete
+func_00217700,0x00217700,0x74,src/round4_3.c,complete
+func_0031CBB0,0x0031CBB0,0x74,src/round4_3.c,complete
