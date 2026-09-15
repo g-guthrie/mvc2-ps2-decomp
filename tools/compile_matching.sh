@@ -1506,3 +1506,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w6_disp.o" private/SLUS_204.86.rom \
     --source src/grok_w6_disp.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w6_0030.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/grok_w6_0030.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w6_0030.o" private/SLUS_204.86.rom \
+    --source src/grok_w6_0030.c
