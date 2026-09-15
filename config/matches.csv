@@ -7743,3 +7743,17 @@ func_002981C0,0x002981C0,0xB0,src/grok_w7_0028.c,complete
 func_0029E550,0x0029E550,0xC8,src/grok_w7_0028.c,complete
 func_0028C690,0x0028C690,0x5C,src/grok_w7_0028.c,complete
 func_0028C620,0x0028C620,0x64,src/grok_w7_0028.c,complete
+func_00156E80,0x00156E80,0x5C,src/grok_w7_evt3.c,complete
+func_00157830,0x00157830,0x5C,src/grok_w7_evt3.c,complete
+func_00158220,0x00158220,0x5C,src/grok_w7_evt3.c,complete
+func_001DB320,0x001DB320,0x6C,src/grok_w7_evt3.c,complete
+func_0033D580,0x0033D580,0x70,src/grok_w7_evt3.c,complete
+func_0034A140,0x0034A140,0x70,src/grok_w7_evt3.c,complete
+func_001D45D0,0x001D45D0,0x74,src/grok_w7_evt3.c,complete
+func_00373A90,0x00373A90,0x74,src/grok_w7_evt3.c,complete
+func_0019A070,0x0019A070,0x78,src/grok_w7_evt3.c,complete
+func_0019A440,0x0019A440,0x78,src/grok_w7_evt3.c,complete
+func_003A15E0,0x003A15E0,0x78,src/grok_w7_evt3.c,complete
+func_003A1DB0,0x003A1DB0,0x78,src/grok_w7_evt3.c,complete
+func_00372BE0,0x00372BE0,0x78,src/grok_w7_evt3.c,complete
+func_0039FD10,0x0039FD10,0x78,src/grok_w7_evt3.c,complete
