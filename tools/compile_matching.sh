@@ -30,6 +30,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/gp_leaf_batch2.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/gp_leaf_batch2.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_gp_r2.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_gp_r2.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -107,6 +108,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/byte_setter_pairs.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/byte_setter_pairs.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_set.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_set.o"
@@ -299,11 +301,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/agentA_clusters.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/agentA_clusters.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r1_0018.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r1_0018.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r1_001.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r1_001.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r1_001gp.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_r1_001gp.o"
@@ -317,37 +322,49 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/agentD_clusters.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/agentD_clusters.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r1_0028.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r1_0028.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_002a.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_002a.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0027.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_0027.o"
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_sz54.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_sz54.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_sz0c.c -c -lang c -O2 -sdatathreshold 8 \
     -o "$BUILD/grok_w3_sz0c.o"
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_sz68.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_sz68.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0034.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_0034.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0039.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w3_0039.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0029.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_0029.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_neg.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_neg.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r2_0024.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r2_0024.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0024.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_0024.o"
@@ -376,50 +393,66 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/round3_3.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/round3_3.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_tiny_leaves.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_tiny_leaves.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_tiny2.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_tiny2.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r2_0014.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r2_0014.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0014.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w3_0014.o"
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0015.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w3_0015.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_size40.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_size40.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_size54.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_size54.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w4_sz54.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w4_sz54.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_001f.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_001f.o"
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_sz58.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_sz58.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r1_0040.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_r1_0040.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r2_002c.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_r2_002c.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_tail_r2.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_tail_r2.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_med_leaves.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_med_leaves.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r2_003c.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r2_003c.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0012.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w3_0012.o"
@@ -430,213 +463,289 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/round4_3.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/round4_3.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_round4_2fix.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_round4_2fix.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_dup_clusters.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_dup_clusters.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r1_0020.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r1_0020.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r2_0018.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r2_0018.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0018.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_0018.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0019.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_0019.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r2_001c.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r2_001c.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r1_0038.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r1_0038.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r2_0028.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r2_0028.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_size60.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_size60.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r3_0028.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r3_0028.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r1_0030.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r1_0030.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r2_0030.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_r2_0030.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r2_0010.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r2_0010.o"
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r2_0010_30.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r2_0010_30.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r2_0038.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r2_0038.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r2_0034.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_r2_0034.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_dispatch_r2.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_dispatch_r2.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_fpu_r2.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_fpu_r2.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0011.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_0011.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_fpu.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_fpu.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r2_0020.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r2_0020.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_001c.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_001c.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_001d.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_001d.o"
     -o "$BUILD/grok_r2_0034.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0016.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_0016.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0017.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_0017.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0022.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_0022.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_001a.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_001a.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_002c.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w3_002c.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_001e.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w3_001e.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0020.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_0020.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0026.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_0026.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_002e.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_002e.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0030.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_0030.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0031.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_0031.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0038.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w3_0038.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_pairs.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_pairs.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w4_szc0.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w4_szc0.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0035.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_0035.o"
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_sz68.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_sz68.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_0041.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_0041.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0015.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_0015.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0019.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_0019.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_001a.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_001a.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_001e.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_001e.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0012.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_0012.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0014.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_0014.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0016.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_0016.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0018.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_0018.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_001b.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_001b.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_001c.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_001c.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0017.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_0017.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0024.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_0024.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_sz54.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_sz54.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0020.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_0020.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0022.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_0022.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_002c.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_002c.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0030.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_0030.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_002a.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_002a.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_002e.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_002e.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0038.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_0038.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_003a.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_003a.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0026.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_0026.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0034.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_0034.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0028.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_0028.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_sz40.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_sz40.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_szc0.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_szc0.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_003c.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_003c.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_003e.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_003e.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_gp.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w3_gp.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_sz0c.c -c -lang c -O2 -sdatathreshold 8 \
     -o "$BUILD/grok_w3_sz0c.o"
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_sz54.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_sz54.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_tail.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_tail.o"
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_003a.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_003a.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w4_sz80.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w4_sz80.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_sz80.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_sz80.o"
@@ -973,6 +1082,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_0029.o" private/SLUS_204.86.rom \
     --source src/grok_w3_0029.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_neg.o" private/SLUS_204.86.rom \
     --source src/grok_w3_neg.c
 "$PYTHON" tools/verify_object.py \
@@ -981,6 +1091,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_0024.o" private/SLUS_204.86.rom \
     --source src/grok_w3_0024.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_r2_0028.o" private/SLUS_204.86.rom \
     --source src/grok_r2_0028.c
 "$PYTHON" tools/verify_object.py \
@@ -1043,6 +1154,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_sz58.o" private/SLUS_204.86.rom \
     --source src/grok_w3_sz58.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_r2_003c.o" private/SLUS_204.86.rom \
     --source src/grok_r2_003c.c
 "$PYTHON" tools/verify_object.py \
@@ -1180,28 +1292,37 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w4_szc0.o" private/SLUS_204.86.rom \
     --source src/grok_w4_szc0.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_0035.o" private/SLUS_204.86.rom \
     --source src/grok_w3_0035.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_003c.o" private/SLUS_204.86.rom \
     --source src/grok_w3_003c.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_003e.o" private/SLUS_204.86.rom \
     --source src/grok_w3_003e.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_gp.o" private/SLUS_204.86.rom \
     --source src/grok_w3_gp.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_sz0c.o" private/SLUS_204.86.rom \
     --source src/grok_w3_sz0c.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_sz54.o" private/SLUS_204.86.rom \
     --source src/grok_w3_sz54.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_tail.o" private/SLUS_204.86.rom \
     --source src/grok_w3_tail.c
 
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_003f.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_003f.o"
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_003f.o" private/SLUS_204.86.rom \
     --source src/grok_w3_003f.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_sz68.o" private/SLUS_204.86.rom \
     --source src/grok_w3_sz68.c
 "$PYTHON" tools/verify_object.py \
@@ -1210,25 +1331,34 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_0015.o" private/SLUS_204.86.rom \
     --source src/grok_w5_0015.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_0019.o" private/SLUS_204.86.rom \
     --source src/grok_w5_0019.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_001a.o" private/SLUS_204.86.rom \
     --source src/grok_w5_001a.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_001e.o" private/SLUS_204.86.rom \
     --source src/grok_w5_001e.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_0012.o" private/SLUS_204.86.rom \
     --source src/grok_w5_0012.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_0014.o" private/SLUS_204.86.rom \
     --source src/grok_w5_0014.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_0016.o" private/SLUS_204.86.rom \
     --source src/grok_w5_0016.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_0018.o" private/SLUS_204.86.rom \
     --source src/grok_w5_0018.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_001b.o" private/SLUS_204.86.rom \
     --source src/grok_w5_001b.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_001c.o" private/SLUS_204.86.rom \
     --source src/grok_w5_001c.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_0017.o" private/SLUS_204.86.rom \
     --source src/grok_w5_0017.c
 "$PYTHON" tools/verify_object.py \
@@ -1237,6 +1367,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_sz54.o" private/SLUS_204.86.rom \
     --source src/grok_w5_sz54.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_0020.o" private/SLUS_204.86.rom \
     --source src/grok_w5_0020.c
 "$PYTHON" tools/verify_object.py \
@@ -1248,6 +1379,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_002a.o" private/SLUS_204.86.rom \
     --source src/grok_w5_002a.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_002e.o" private/SLUS_204.86.rom \
     --source src/grok_w5_002e.c
 "$PYTHON" tools/verify_object.py \
@@ -1265,14 +1397,17 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_0028.o" private/SLUS_204.86.rom \
     --source src/grok_w5_0028.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_sz40.o" private/SLUS_204.86.rom \
     --source src/grok_w5_sz40.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_sz80.o" private/SLUS_204.86.rom \
     --source src/grok_w5_sz80.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_szc0.o" private/SLUS_204.86.rom \
     --source src/grok_w5_szc0.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_neg.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_neg.o"
@@ -1285,11 +1420,13 @@ PYTHON="$PYTHON" tools/compile_matching_data.sh
     --source src/grok_w3_003a.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0013.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_0013.o"
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_0013.o" private/SLUS_204.86.rom \
     --source src/grok_w5_0013.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0022.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_0022.o"
@@ -1298,22 +1435,26 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     --source src/grok_w5_0022.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_003c.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_003c.o"
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_003c.o" private/SLUS_204.86.rom \
     --source src/grok_w5_003c.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0032.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_0032.o"
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_0032.o" private/SLUS_204.86.rom \
     --source src/grok_w5_0032.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_gp.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_gp.o"
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_gp.o" private/SLUS_204.86.rom \
     --source src/grok_w5_gp.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_disp.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_disp.o"
@@ -1322,12 +1463,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     --source src/grok_w5_disp.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_003e.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_003e.o"
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_003e.o" private/SLUS_204.86.rom \
     --source src/grok_w5_003e.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_fpu.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_fpu.o"
 "$PYTHON" tools/verify_object.py \
