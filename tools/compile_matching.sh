@@ -1262,3 +1262,9 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_fpu.o" private/SLUS_204.86.rom \
     --source src/grok_w5_fpu.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w6_neg.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/grok_w6_neg.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w6_neg.o" private/SLUS_204.86.rom \
+    --source src/grok_w6_neg.c
