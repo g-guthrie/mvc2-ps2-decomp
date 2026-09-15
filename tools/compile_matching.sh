@@ -1488,3 +1488,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/nibble_state_dispatch.o" private/SLUS_204.86.rom \
     --source src/nibble_state_dispatch.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w6_0018.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/grok_w6_0018.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w6_0018.o" private/SLUS_204.86.rom \
+    --source src/grok_w6_0018.c
