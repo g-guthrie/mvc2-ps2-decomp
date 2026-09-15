@@ -7293,3 +7293,7 @@ func_003E0C40,0x003E0C40,0x34,src/grok_w5_003e.c,complete
 func_003E0C80,0x003E0C80,0x30,src/grok_w5_003e.c,complete
 func_00134790,0x00134790,0x3C,src/grok_w5_fpu.c,complete
 func_003A4E50,0x003A4E50,0x40,src/grok_w5_fpu.c,complete
+func_00308A70,0x00308A70,0x40,src/grok_w6_0030.c,complete
+func_00316C40,0x00316C40,0x40,src/grok_w6_0030.c,complete
+func_00317700,0x00317700,0x58,src/grok_w6_0030.c,complete
+func_0031C8F0,0x0031C8F0,0x50,src/grok_w6_0030.c,complete
