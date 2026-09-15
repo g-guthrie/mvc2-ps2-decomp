@@ -613,6 +613,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/float_clamp.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/float_clamp.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_pair_dispatch.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/state_pair_dispatch.o"
 "$PYTHON" tools/verify_object.py \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
 "$PYTHON" tools/verify_object.py \
@@ -1268,3 +1271,6 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/float_clamp.o" private/SLUS_204.86.rom \
     --source src/float_clamp.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/state_pair_dispatch.o" private/SLUS_204.86.rom \
+    --source src/state_pair_dispatch.c
