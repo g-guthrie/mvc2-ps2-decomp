@@ -12,6 +12,7 @@ func_003981B0,0x003981B0,0x10,src/byte_setter_pairs.c,complete
 func_003CAB00,0x003CAB00,0x10,src/byte_setter_pairs.c,complete
 func_001AC330,0x001AC330,0x18,src/byte_setter_pairs.c,complete
 func_001C39C0,0x001C39C0,0x18,src/byte_setter_pairs.c,complete
+residual_00327F90,0x00327F90,0x18,src/grok_w3_set.c,complete
 func_0022C5C0,0x0022C5C0,0xC,src/setter_leaves.c,complete
 func_003DF7A0,0x003DF7A0,0x10,src/setter_leaves.c,complete
 func_003ED2D0,0x003ED2D0,0x10,src/setter_leaves.c,complete

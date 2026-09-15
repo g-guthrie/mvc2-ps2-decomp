@@ -108,6 +108,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/byte_setter_pairs.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/byte_setter_pairs.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w3_set.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/grok_w3_set.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/pointer_field_setters.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/pointer_field_setters.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -739,6 +742,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/byte_setter_pairs.o" private/SLUS_204.86.rom \
     --source src/byte_setter_pairs.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w3_set.o" private/SLUS_204.86.rom \
+    --source src/grok_w3_set.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/pointer_field_setters.o" private/SLUS_204.86.rom \
     --source src/pointer_field_setters.c
