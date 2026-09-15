@@ -329,6 +329,9 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/grok_w3_sz68.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_sz68.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w3_0034.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/grok_w3_0034.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_r2_0024.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_r2_0024.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -506,6 +509,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w4_szc0.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w4_szc0.o"
+    src/grok_w3_0035.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/grok_w3_0035.o"
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/grok_w3_sz68.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/grok_w3_sz68.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w3_0041.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/grok_w3_0041.o"
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_003a.c -c -lang c $MATCH_FLAGS \
@@ -819,6 +830,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w3_sz68.o" private/SLUS_204.86.rom \
     --source src/grok_w3_sz68.c
+    "$BUILD/grok_w3_0034.o" private/SLUS_204.86.rom \
+    --source src/grok_w3_0034.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_r2_0024.o" private/SLUS_204.86.rom \
     --source src/grok_r2_0024.c
@@ -1006,6 +1019,21 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w4_szc0.o" private/SLUS_204.86.rom \
     --source src/grok_w4_szc0.c
+    "$BUILD/grok_w3_0035.o" private/SLUS_204.86.rom \
+    --source src/grok_w3_0035.c
+
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w3_003f.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/grok_w3_003f.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w3_003f.o" private/SLUS_204.86.rom \
+    --source src/grok_w3_003f.c
+    "$BUILD/grok_w3_sz68.o" private/SLUS_204.86.rom \
+    --source src/grok_w3_sz68.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w3_0041.o" private/SLUS_204.86.rom \
+    --source src/grok_w3_0041.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh
 "$PYTHON" tools/verify_object.py \
