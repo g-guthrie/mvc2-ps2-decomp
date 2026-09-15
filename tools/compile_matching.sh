@@ -473,6 +473,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_fpu_r2.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_fpu_r2.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w5_0011.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/grok_w5_0011.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_fpu.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w3_fpu.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
