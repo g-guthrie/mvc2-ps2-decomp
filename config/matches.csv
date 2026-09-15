@@ -7679,3 +7679,13 @@ func_0021A430,0x0021A430,0xB0,src/grok_w7_phys.c,complete
 func_0031F8E0,0x0031F8E0,0xB0,src/grok_w7_phys.c,complete
 func_0021AF30,0x0021AF30,0xB0,src/grok_w7_phys.c,complete
 func_003203E0,0x003203E0,0xB0,src/grok_w7_phys.c,complete
+func_003608F0,0x003608F0,0x5C,src/grok_w7_0036.c,complete
+func_00362CA0,0x00362CA0,0x64,src/grok_w7_0036.c,complete
+func_00363150,0x00363150,0x64,src/grok_w7_0036.c,complete
+func_00364D80,0x00364D80,0x68,src/grok_w7_0036.c,complete
+func_00365CF0,0x00365CF0,0x6C,src/grok_w7_0036.c,complete
+func_003622F0,0x003622F0,0x5C,src/grok_w7_0036.c,complete
+func_00364410,0x00364410,0x5C,src/grok_w7_0036.c,complete
+func_00375040,0x00375040,0x54,src/grok_w7_0036.c,complete
+func_003754E0,0x003754E0,0x54,src/grok_w7_0036.c,complete
+func_00375AB0,0x00375AB0,0x54,src/grok_w7_0036.c,complete
