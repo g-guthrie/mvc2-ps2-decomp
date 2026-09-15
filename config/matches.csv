@@ -6023,3 +6023,16 @@ func_00296C90,0x00296C90,0x48,src/grok_r2_0028.c,complete
 func_002A0710,0x002A0710,0x4c,src/grok_r2_0028.c,complete
 func_002A2E30,0x002A2E30,0x44,src/grok_r2_0028.c,complete
 func_002B48B0,0x002B48B0,0x58,src/grok_r2_0028.c,complete
+func_0032D110,0x0032D110,0x20,src/grok_fpu_r2.c,complete
+func_0032D130,0x0032D130,0x20,src/grok_fpu_r2.c,complete
+func_0032D150,0x0032D150,0x20,src/grok_fpu_r2.c,complete
+func_0032D170,0x0032D170,0x38,src/grok_fpu_r2.c,complete
+func_0032D1B0,0x0032D1B0,0x38,src/grok_fpu_r2.c,complete
+func_0032D1F0,0x0032D1F0,0x38,src/grok_fpu_r2.c,complete
+func_0032D350,0x0032D350,0x34,src/grok_fpu_r2.c,complete
+func_00389920,0x00389920,0x24,src/grok_fpu_r2.c,complete
+func_00396EC0,0x00396EC0,0x34,src/grok_fpu_r2.c,complete
+func_0034CF30,0x0034CF30,0x28,src/grok_fpu_r2.c,complete
+func_0034B040,0x0034B040,0x24,src/grok_fpu_r2.c,complete
+func_002ADC20,0x002ADC20,0x4C,src/grok_fpu_r2.c,complete
+func_00132F70,0x00132F70,0x34,src/grok_fpu_r2.c,complete
