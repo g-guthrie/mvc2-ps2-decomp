@@ -80,3 +80,23 @@ void func_00161820(u8 *p) {
         p[35] = 0;
     }
 }
+
+void func_0028ADA0(u8 *p, u8 *q)
+{
+    if (--*(signed short *)(p + 28) == 0) {
+        q[24]++;
+        *(signed short *)(p + 28) = 10;
+    }
+    F(p, 52) += F(p, 92);
+    F(p, 92) += F(p, 104);
+}
+
+void func_00292110(u8 *p, u8 *q)
+{
+    if (--*(signed short *)(p + 28) == 0) {
+        q[24]++;
+        *(signed short *)(p + 28) = 10;
+    }
+    F(p, 52) += F(p, 92);
+    F(p, 92) += F(p, 104);
+}
