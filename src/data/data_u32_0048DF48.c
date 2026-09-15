@@ -1,0 +1,2 @@
+typedef unsigned int u32;
+u32 data_u32_0048DF48[5] = { 0x00000010u, 0x00000010u, 0x00000010u, 0x00000010u, 0x00000010u };
