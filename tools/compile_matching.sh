@@ -529,6 +529,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0015.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w5_0015.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w5_0012.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/grok_w5_0012.o"
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w3_003a.c -c -lang c $MATCH_FLAGS \
@@ -1059,6 +1062,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_0015.o" private/SLUS_204.86.rom \
     --source src/grok_w5_0015.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w5_0012.o" private/SLUS_204.86.rom \
+    --source src/grok_w5_0012.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh
 "$PYTHON" tools/verify_object.py \
