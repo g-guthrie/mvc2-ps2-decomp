@@ -6790,3 +6790,12 @@ func_001A9B00,0x001A9B00,0x68,src/grok_w5_001a.c,complete
 func_001A96A0,0x001A96A0,0x5C,src/grok_w5_001a.c,complete
 func_001E7F40,0x001E7F40,0x1C,src/grok_w5_001e.c,complete
 func_001E76D0,0x001E76D0,0x44,src/grok_w5_001e.c,complete
+func_00129870,0x00129870,0x20,src/grok_w5_0012.c,complete
+func_0012CB50,0x0012CB50,0x40,src/grok_w5_0012.c,complete
+func_0012D2B0,0x0012D2B0,0x44,src/grok_w5_0012.c,complete
+func_0012D4A0,0x0012D4A0,0x50,src/grok_w5_0012.c,complete
+func_0012D670,0x0012D670,0x3C,src/grok_w5_0012.c,complete
+func_0012DA00,0x0012DA00,0x40,src/grok_w5_0012.c,complete
+func_0012DBA0,0x0012DBA0,0x40,src/grok_w5_0012.c,complete
+func_0012EF50,0x0012EF50,0x2C,src/grok_w5_0012.c,complete
+func_0012EF80,0x0012EF80,0x2C,src/grok_w5_0012.c,complete
