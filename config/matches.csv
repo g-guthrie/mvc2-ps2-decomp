@@ -6244,3 +6244,7 @@ func_00132F70,0x00132F70,0x34,src/grok_fpu_r2.c,complete
 func_00128380,0x00128380,0x34,src/grok_gp_r2.c,complete
 func_001422E0,0x001422E0,0x38,src/grok_gp_r2.c,complete
 func_003D92D0,0x003D92D0,0x20,src/grok_gp_r2.c,complete
+func_00329890,0x00329890,0x14,src/grok_tail_r2.c,complete
+func_001CCF40,0x001CCF40,0x1C,src/grok_tail_r2.c,complete
+func_00191F20,0x00191F20,0x24,src/grok_tail_r2.c,complete
+func_00413D30,0x00413D30,0x14,src/grok_tail_r2.c,complete
