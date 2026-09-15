@@ -7842,3 +7842,9 @@ func_002FC920,0x002FC920,0x84,src/grok_w6_disp.c,complete
 func_00300CB0,0x00300CB0,0x84,src/grok_w6_disp.c,complete
 func_00305520,0x00305520,0x84,src/grok_w6_disp.c,complete
 func_0030FFA0,0x0030FFA0,0x84,src/grok_w6_disp.c,complete
+func_00192120,0x00192120,0x70,src/dupclones_sdt8.c,complete
+func_00192270,0x00192270,0x70,src/dupclones_sdt8.c,complete
+func_0021B470,0x0021B470,0x5C,src/dupclones_sdt8.c,complete
+func_0021B9E0,0x0021B9E0,0x68,src/dupclones_sdt8.c,complete
+func_002EBB00,0x002EBB00,0x50,src/dupclones_std.c,complete
+func_00301A00,0x00301A00,0x60,src/dupclones_std.c,complete

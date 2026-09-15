@@ -1594,6 +1594,18 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/grok_w7_0026.o" private/SLUS_204.86.rom \
     --source src/grok_w7_0026.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/dupclones_sdt8.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/dupclones_sdt8.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/dupclones_sdt8.o" private/SLUS_204.86.rom \
+    --source src/dupclones_sdt8.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/dupclones_std.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/dupclones_std.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/dupclones_std.o" private/SLUS_204.86.rom \
+    --source src/dupclones_std.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w7_001e.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w7_001e.o"
 "$PYTHON" tools/verify_object.py \
