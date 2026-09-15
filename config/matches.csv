@@ -7492,3 +7492,11 @@ func_0015A610,0x0015A610,0x78,src/physics_timer_inc.c,complete
 func_001C5AD0,0x001C5AD0,0x78,src/physics_timer_inc.c,complete
 func_001C5F40,0x001C5F40,0x78,src/physics_timer_inc.c,complete
 func_002BEF60,0x002BEF60,0x78,src/physics_timer_inc.c,complete
+func_001A3780,0x001A3780,0x68,src/grok_w7_001a.c,complete
+func_001A3950,0x001A3950,0x70,src/grok_w7_001a.c,complete
+func_001AB550,0x001AB550,0x50,src/grok_w7_001a.c,complete
+func_001B0970,0x001B0970,0x64,src/grok_w7_001a.c,complete
+func_001B0D60,0x001B0D60,0x70,src/grok_w7_001a.c,complete
+func_001B0DE0,0x001B0DE0,0x70,src/grok_w7_001a.c,complete
+func_001B0E60,0x001B0E60,0x70,src/grok_w7_001a.c,complete
+func_001BE640,0x001BE640,0x50,src/grok_w7_001a.c,complete
