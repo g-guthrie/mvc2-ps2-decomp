@@ -97,6 +97,8 @@ def load_matches(path: Path) -> dict[str, dict]:
         for row in csv.DictReader(stream):
             if row["status"] not in {"matching", "complete"}:
                 continue
+            if row["name"] in result:
+                raise SystemExit(f"duplicate code match: {row['name']}")
             result[row["name"]] = {
                 "address": int(row["address"], 0),
                 "size": int(row["size"], 0),
@@ -117,6 +119,8 @@ def load_data_matches(units_path: Path, matches_path: Path) -> dict[str, dict]:
     units = {}
     with units_path.open(newline="", encoding="utf-8") as stream:
         for row in csv.DictReader(stream):
+            if row["name"] in units:
+                raise SystemExit(f"duplicate data unit: {row['name']}")
             units[row["name"]] = (int(row["address"], 0), int(row["size"], 0))
     result = {}
     if not matches_path.is_file():
@@ -125,6 +129,8 @@ def load_data_matches(units_path: Path, matches_path: Path) -> dict[str, dict]:
         for row in csv.DictReader(stream):
             if row["status"] not in {"matching", "complete"}:
                 continue
+            if row["name"] in result:
+                raise SystemExit(f"duplicate data match: {row['name']}")
             if row.get("progress") not in {"reconstructed", "placeholder"}:
                 raise SystemExit(f"data progress classification missing or invalid: {row['name']}")
             expected = units.get(row["name"])

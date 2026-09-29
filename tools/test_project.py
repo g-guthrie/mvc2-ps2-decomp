@@ -4,6 +4,49 @@ from tools.objdiff_report import DATA_SIZE, TEXT_SIZE, build_report
 
 
 class ProjectTest(unittest.TestCase):
+    def test_duplicate_match_ownership_is_rejected(self):
+        from pathlib import Path
+        import tempfile
+        from tools.objdiff_report import load_matches
+
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "matches.csv"
+            path.write_text(
+                "name,address,size,source,status\n"
+                "func_00100008,0x00100008,0x8,src/first.c,complete\n"
+                "func_00100008,0x00100008,0x8,src/second.c,complete\n",
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(SystemExit, "duplicate code match"):
+                load_matches(path)
+
+    def test_duplicate_data_ownership_is_rejected(self):
+        from pathlib import Path
+        import tempfile
+        from tools.objdiff_report import load_data_matches
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            units = root / "units.csv"
+            matches = root / "matches.csv"
+            units.write_text(
+                "name,address,size\na,0x00424200,0x8\n", encoding="utf-8"
+            )
+            matches.write_text(
+                "name,address,size,source,status,progress\n"
+                "a,0x00424200,0x8,src/a.c,complete,reconstructed\n"
+                "a,0x00424200,0x8,src/b.c,complete,reconstructed\n",
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(SystemExit, "duplicate data match"):
+                load_data_matches(units, matches)
+            units.write_text(
+                "name,address,size\na,0x00424200,0x8\na,0x00424200,0x8\n",
+                encoding="utf-8",
+            )
+            with self.assertRaisesRegex(SystemExit, "duplicate data unit"):
+                load_data_matches(units, matches)
+
     def test_source_tiles_preserve_totals_across_chunk_boundary(self):
         result = build_report(
             [{"name": "crossing", "address": 0x10FFFC, "size": 8}],
