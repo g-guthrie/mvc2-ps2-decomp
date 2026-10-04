@@ -119,3 +119,19 @@ and MWCCPS2 3.0 scheduling, and five airborne frame updates. All comparisons
 include their relocated calls and symbolic data references. Current credited
 code is 450,856 / 3,293,696 bytes (13.688452%); the five-point push
 threshold remains 575,849 bytes.
+
+Four shared animation-record routines add 880 bytes: record progression,
+stream initialization, encoded command dispatch, and indexed frame selection.
+The recovered 20-byte record format preserves zero-duration traversal and
+relative jumps. A larger angle-conversion family remains a private, uncredited
+candidate because its divisor construction still differs from retail. Current
+credited code is 451,736 / 3,293,696 bytes (13.715170%); the five-point
+push threshold remains 575,849 bytes.
+
+Shared animation record progression, initialization, command dispatch, and
+indexed selection add four functions / 880 bytes. Two more bounded keyframe
+scale handlers add 208 bytes. All six have exact compiler and hybrid-placement
+proof. The larger angle-conversion family remains a private, uncredited
+candidate because fifteen divisor-construction instruction words differ.
+Current credited code is 451,944 / 3,293,696 bytes (13.721485%); the five-point
+push threshold remains 575,849 bytes.

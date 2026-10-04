@@ -122,3 +122,20 @@ The sixteen handlers in `src/deferred_move_setup.c` match with MWCCPS2
 instruction for the recovered selection/reset sequence. Each handler keeps
 retail's initialization only for selector values 0, 1, and 2; no defensive
 default assignments have been inserted into the matching source.
+
+## Animation record management
+
+All four functions in `src/animation_frames.c` match with MWCCPS2 3.0.3
+and `-O3 -Op -sdatathreshold 0`. The indexed seek needs the speed preference
+to reproduce its final sprite-selection scheduling; the other three routines
+remain exact with the same flags. The five-word record copy uses four float
+word transfers followed by the final word, preserving packed control bytes.
+
+## Shared animation records and strict bounds
+
+The four animation record routines use MWCCPS2 3.0.3 with
+`-O3 -Op -sdatathreshold 0`; the speed preference reproduces indexed seek
+scheduling while retaining all other exact matches in the unit.
+The two additional scale handlers use strict `index > last_frame` checks.
+Equivalent `index >= frame_count` checks use a different comparison scratch
+register and do not match their retail instruction encoding.

@@ -7982,3 +7982,9 @@ func_001F8BA0,0x001F8BA0,0x128,src/air_step.c,complete
 func_00223F40,0x00223F40,0x128,src/air_step.c,complete
 func_002968C0,0x002968C0,0x128,src/air_step.c,complete
 func_002CD190,0x002CD190,0x128,src/air_step.c,complete
+func_00175700,0x00175700,0xD8,src/animation_frames.c,complete
+func_001757E0,0x001757E0,0x124,src/animation_frames.c,complete
+func_001E3370,0x001E3370,0x5C,src/animation_frames.c,complete
+func_00175910,0x00175910,0x118,src/animation_frames.c,complete
+func_00154BF0,0x00154BF0,0x68,src/frame_scale_updates.c,complete
+func_00154CF0,0x00154CF0,0x68,src/frame_scale_updates.c,complete

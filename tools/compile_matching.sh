@@ -1792,3 +1792,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/air_step.o" private/SLUS_204.86.rom \
     --source src/air_step.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/animation_frames.c -c -lang c -O3 -Op -sdatathreshold 0 \
+    -o "$BUILD/animation_frames.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/animation_frames.o" private/SLUS_204.86.rom \
+    --source src/animation_frames.c
