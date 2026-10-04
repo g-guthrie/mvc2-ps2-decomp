@@ -1743,3 +1743,17 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_0040.o" private/SLUS_204.86.rom \
     --source src/grok_w7_0040.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/frame_scale_updates.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/frame_scale_updates.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/frame_scale_updates.o" private/SLUS_204.86.rom \
+    --source src/frame_scale_updates.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/object_pool.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/object_pool.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/object_pool.o" private/SLUS_204.86.rom \
+    --source src/object_pool.c

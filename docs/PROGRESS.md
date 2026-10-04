@@ -86,3 +86,9 @@ at `0x0026ECA0` adds 12 bytes of exact C.
 The corrected starting checkpoint is 411,164 / 3,293,696 code bytes
 (12.483357%). Push after each additional five percentage points of verified,
 hybrid-linked C: first at 575,849 code bytes (at least 17.483357%).
+
+The next recovered batch contributes nine functions / 1,152 bytes: two bounded
+frame-scale callers, their typed keyframe interpolator, and six object-pool
+allocation, release, and insertion routines. The existing allocator wrapper
+retains its original source owner. Total credited C is now 412,328 bytes
+(12.518695%); the five-point push threshold remains 575,849 bytes.

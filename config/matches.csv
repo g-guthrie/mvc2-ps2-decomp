@@ -7813,3 +7813,12 @@ func_002CEC40,0x002CEC40,0x4C,src/dupcluster_00298FC0.c,placeholder
 func_00184110,0x00184110,0x40,src/dupcluster_00184110.c,placeholder
 func_001A9650,0x001A9650,0x48,src/dupcluster_001A9650.c,placeholder
 residual_0026ECA0,0x0026ECA0,0xC,src/tail12.c,complete
+func_00156830,0x00156830,0x68,src/frame_scale_updates.c,complete
+func_00159A90,0x00159A90,0x68,src/frame_scale_updates.c,complete
+func_00154710,0x00154710,0x74,src/frame_scale_updates.c,complete
+func_003DA780,0x003DA780,0xE0,src/object_pool.c,complete
+func_003DAA40,0x003DAA40,0xEC,src/object_pool.c,complete
+func_003DA860,0x003DA860,0x60,src/object_pool.c,complete
+func_003DA8C0,0x003DA8C0,0x70,src/object_pool.c,complete
+func_003DA930,0x003DA930,0x50,src/object_pool.c,complete
+func_003DA980,0x003DA980,0x50,src/object_pool.c,complete
