@@ -106,3 +106,11 @@ orders the middle pair as `srl; sw`. It is 3/5 exact by instruction position
 (60%) and is not counted as matching C.
 
 Private scratch artifacts include locally downloaded compiler binaries and must never be copied into this public repository.
+
+## Object-list loop scheduling
+
+`src/object_pool.c` uses MWCCPS2 3.0.3 with `-O3 -Op -sdatathreshold 8`.
+The `-Op` speed preference reproduces the otherwise missing loop-exit nop
+in `func_003DA9D0`; ordinary `-O3` emits 100 bytes rather than the retail
+104. All seven functions in the unit match with the selected flags, including
+the six previously recovered allocation, release, and insertion routines.

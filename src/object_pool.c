@@ -114,3 +114,17 @@ void func_003DA980(Object *at,Object *object,int kind) {
   at->next=object;
  }
 }
+
+/* Update and queue active objects while traversing the current kind list. */
+extern void func_00174F40(Object *);
+extern void func_003DAB30(Object *);
+void func_003DA9D0(int kind) {
+ Object *object=D_004D3690[(u8)kind];
+ while (object != 0) {
+  if (object->active) {
+   func_00174F40(object);
+   func_003DAB30(object);
+  }
+  object=object->next;
+ }
+}

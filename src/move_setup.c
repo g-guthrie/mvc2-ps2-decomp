@@ -293,6 +293,34 @@ extern int D_004C1514;
 extern int D_004C1518;
 extern int D_004C151C;
 
+extern int D_004BFF34;
+extern int D_004BFF38;
+extern int D_004BFF3C;
+extern int D_004C0688;
+extern int D_004C068C;
+extern int D_004C0690;
+extern int D_004C0694;
+extern int D_004C0698;
+extern int D_004C069C;
+extern int D_004C0CC0;
+extern int D_004C0CC4;
+extern int D_004C0CC8;
+extern int D_004C0CCC;
+extern int D_004C0CD0;
+extern int D_004C0CD4;
+extern int D_004C0F30;
+extern int D_004C0F34;
+extern int D_004C0F38;
+extern int D_004C0F3C;
+extern int D_004C0F40;
+extern int D_004C0F44;
+extern int D_004C1134;
+extern int D_004C1138;
+extern int D_004C113C;
+extern int D_004C1474;
+extern int D_004C1478;
+extern int D_004C147C;
+
 static inline void reset_move_counters(u8 *p,u8 command, int mode) {
  /* Retain the command write performed again by the retail reset sequence. */
  *(volatile u8 *)(p+0x1b5)=command;
@@ -468,3 +496,45 @@ THIRD_STATE_SETUP(func_002F2AA0, 3, D_004C1294, 4, D_004C1298, 5, D_004C129C, 8)
 THIRD_STATE_SETUP(func_002F7850, 3, D_004C1344, 4, D_004C1348, 5, D_004C134C, 8)
 THIRD_STATE_SETUP(func_002FCB90, 3, D_004C13D0, 4, D_004C13D4, 5, D_004C13D8, 8)
 THIRD_STATE_SETUP(func_00305890, 9, D_004C1514, 10, D_004C1518, 11, D_004C151C, 10)
+
+/* These handlers install the third state before its animation callback. */
+#define FINAL_ANIMATION_SETUP(name,command0,table0,command1,table1,command2,table2,mode) \
+void name(u8 *p) { \
+ switch(p[0x1fc]) { \
+ case 0: \
+  p[0x168]=0; \
+  p[0x1b5]=command0; \
+  func_001E3710(p,20); \
+  *(int **)(p+0x408)=&table0; \
+  p[0x1bb]=0; \
+  break; \
+ case 1: \
+  p[0x168]=1; \
+  p[0x1b5]=command1; \
+  func_001E3710(p,21); \
+  *(int **)(p+0x408)=&table1; \
+  p[0x1bb]=1; \
+  break; \
+ case 2: \
+  p[0x168]=2; \
+  p[0x1b5]=command2; \
+  *(int **)(p+0x408)=&table2; \
+  p[0x1bb]=2; \
+  func_001E3710(p,22); \
+  break; \
+ } \
+ reset_move_counters(p,p[0x1b5],mode); \
+}
+
+FINAL_ANIMATION_SETUP(func_0021DA40, 9, D_004BFF34, 10, D_004BFF38, 11, D_004BFF3C, 10)
+FINAL_ANIMATION_SETUP(func_0026B8B0, 6, D_004C0688, 7, D_004C068C, 8, D_004C0690, 9)
+FINAL_ANIMATION_SETUP(func_0026B9B0, 3, D_004C0694, 4, D_004C0698, 5, D_004C069C, 8)
+FINAL_ANIMATION_SETUP(func_0026BAB0, 9, D_004C0694, 10, D_004C0698, 11, D_004C069C, 10)
+FINAL_ANIMATION_SETUP(func_002B32E0, 6, D_004C0CC0, 7, D_004C0CC4, 8, D_004C0CC8, 9)
+FINAL_ANIMATION_SETUP(func_002B33E0, 3, D_004C0CCC, 4, D_004C0CD0, 5, D_004C0CD4, 8)
+FINAL_ANIMATION_SETUP(func_002B34E0, 9, D_004C0CCC, 10, D_004C0CD0, 11, D_004C0CD4, 10)
+FINAL_ANIMATION_SETUP(func_002D1D40, 6, D_004C0F30, 7, D_004C0F34, 8, D_004C0F38, 9)
+FINAL_ANIMATION_SETUP(func_002D1E40, 3, D_004C0F3C, 4, D_004C0F40, 5, D_004C0F44, 8)
+FINAL_ANIMATION_SETUP(func_002D1F40, 9, D_004C0F3C, 10, D_004C0F40, 11, D_004C0F44, 10)
+FINAL_ANIMATION_SETUP(func_002E9780, 3, D_004C1134, 4, D_004C1138, 5, D_004C113C, 8)
+FINAL_ANIMATION_SETUP(func_00300F40, 3, D_004C1474, 4, D_004C1478, 5, D_004C147C, 8)

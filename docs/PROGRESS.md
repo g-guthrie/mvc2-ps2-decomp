@@ -100,3 +100,15 @@ and (where present) the conditional nibble-counter decrement. The repeated
 command write in retail is retained as an explicit volatile byte write. No
 assembly or raw instruction words are used. Total credited C is now
 433,632 / 3,293,696 bytes (13.165514%). The push threshold is unchanged.
+
+The next batch adds 56 functions / 10,592 bytes: twelve move handlers with
+late third-state animation, twenty ground-reset callbacks, twenty-three
+facing-dependent motion callbacks, and an active-object traversal. The twenty
+ground-reset entries follow four-byte nop padding and are 16-byte aligned;
+each is independently referenced by an initialized-data callback table. Their
+164-byte C bodies replace the residual code, while all twenty padding words
+remain uncredited. The twenty-three motion entries are also callback-referenced
+aligned prologues and replace their complete 184-byte residual ranges.
+No range bytes were dropped. Splitting the twenty padding/code ranges raises
+the inventory to 19,862 units. Current credited code is 444,224 / 3,293,696
+bytes (13.487098%); the push threshold remains 575,849 bytes.

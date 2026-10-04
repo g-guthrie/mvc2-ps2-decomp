@@ -1752,7 +1752,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     --source src/frame_scale_updates.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/object_pool.c -c -lang c -O3 -sdatathreshold 8 \
+    src/object_pool.c -c -lang c -O3 -Op -sdatathreshold 8 \
     -o "$BUILD/object_pool.o"
 "$PYTHON" tools/verify_object.py \
     "$BUILD/object_pool.o" private/SLUS_204.86.rom \
@@ -1764,3 +1764,17 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/move_setup.o" private/SLUS_204.86.rom \
     --source src/move_setup.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/ground_reset.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/ground_reset.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/ground_reset.o" private/SLUS_204.86.rom \
+    --source src/ground_reset.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/motion_start.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/motion_start.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/motion_start.o" private/SLUS_204.86.rom \
+    --source src/motion_start.c
