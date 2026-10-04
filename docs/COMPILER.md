@@ -114,3 +114,11 @@ The `-Op` speed preference reproduces the otherwise missing loop-exit nop
 in `func_003DA9D0`; ordinary `-O3` emits 100 bytes rather than the retail
 104. All seven functions in the unit match with the selected flags, including
 the six previously recovered allocation, release, and insertion routines.
+
+## Deferred animation setup
+
+The sixteen handlers in `src/deferred_move_setup.c` match with MWCCPS2
+3.0-011126 and `-O3 -sdatathreshold 8`. MWCCPS2 3.0.3 emits an additional
+instruction for the recovered selection/reset sequence. Each handler keeps
+retail's initialization only for selector values 0, 1, and 2; no defensive
+default assignments have been inserted into the matching source.

@@ -321,6 +321,9 @@ extern int D_004C1474;
 extern int D_004C1478;
 extern int D_004C147C;
 
+extern int D_004C03B0;
+extern int D_004C03B4;
+extern int D_004C03B8;
 static inline void reset_move_counters(u8 *p,u8 command, int mode) {
  /* Retain the command write performed again by the retail reset sequence. */
  *(volatile u8 *)(p+0x1b5)=command;
@@ -538,3 +541,11 @@ FINAL_ANIMATION_SETUP(func_002D1E40, 3, D_004C0F3C, 4, D_004C0F40, 5, D_004C0F44
 FINAL_ANIMATION_SETUP(func_002D1F40, 9, D_004C0F3C, 10, D_004C0F40, 11, D_004C0F44, 10)
 FINAL_ANIMATION_SETUP(func_002E9780, 3, D_004C1134, 4, D_004C1138, 5, D_004C113C, 8)
 FINAL_ANIMATION_SETUP(func_00300F40, 3, D_004C1474, 4, D_004C1478, 5, D_004C147C, 8)
+
+/* The first three command states use the same reset behavior. */
+MOVE_SETUP(func_00208DD0, func_001E3710, 0, 20, D_004BFDC8, func_001E3210, 1, 30, D_004BFDCC, func_001E3210, 2, 30, D_004BFDD0, 7)
+MOVE_SETUP(func_00248A20, func_001E3710, 0, 20, D_004C03B0, func_001E3710, 1, 21, D_004C03B4, func_001E3710, 2, 22, D_004C03B8, 7)
+MOVE_SETUP(func_0024E300, func_001E3710, 0, 20, D_004C0438, func_001E3710, 1, 21, D_004C043C, func_001E3710, 2, 22, D_004C0440, 7)
+MOVE_SETUP(func_0025CC70, func_001E3710, 0, 20, D_004C0590, func_001E3710, 1, 21, D_004C0594, func_001E3710, 2, 26, D_004C0598, 7)
+MOVE_SETUP(func_0028E680, func_001E3710, 0, 20, D_004C09B8, func_001E3710, 1, 21, D_004C09BC, func_001E3710, 2, 22, D_004C09C0, 7)
+MOVE_SETUP(func_002CC510, func_001E3710, 0, 20, D_004C0EB8, func_001E3710, 1, 21, D_004C0EBC, func_001E3710, 2, 22, D_004C0EC0, 7)

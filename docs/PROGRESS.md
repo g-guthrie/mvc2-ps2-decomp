@@ -112,3 +112,10 @@ aligned prologues and replace their complete 184-byte residual ranges.
 No range bytes were dropped. Splitting the twenty padding/code ranges raises
 the inventory to 19,862 units. Current credited code is 444,224 / 3,293,696
 bytes (13.487098%); the push threshold remains 575,849 bytes.
+
+The next batch adds 27 functions / 6,632 bytes: six move setup handlers
+reusing the existing state machine, sixteen handlers with deferred animation
+and MWCCPS2 3.0 scheduling, and five airborne frame updates. All comparisons
+include their relocated calls and symbolic data references. Current credited
+code is 450,856 / 3,293,696 bytes (13.688452%); the five-point push
+threshold remains 575,849 bytes.

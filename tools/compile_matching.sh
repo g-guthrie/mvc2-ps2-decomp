@@ -1778,3 +1778,17 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/motion_start.o" private/SLUS_204.86.rom \
     --source src/motion_start.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/deferred_move_setup.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/deferred_move_setup.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/deferred_move_setup.o" private/SLUS_204.86.rom \
+    --source src/deferred_move_setup.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/air_step.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/air_step.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/air_step.o" private/SLUS_204.86.rom \
+    --source src/air_step.c
