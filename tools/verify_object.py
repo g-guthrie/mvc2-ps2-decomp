@@ -32,7 +32,7 @@ def load_matches(path: Path, source: str | None = None) -> list[dict]:
         return [
             row
             for row in csv.DictReader(stream)
-            if row["status"] in {"matching", "complete"}
+            if row["status"] in {"matching", "complete", "placeholder"}
             and (source is None or row["source"] == source)
         ]
 

@@ -74,3 +74,15 @@ At this correction, 12 reconstructed ranges contribute 4,200 / 648,064 data byte
 (0.648096%). Another 628,674 catalogued bytes are placeholders; 15,190 bytes remain
 outside the replacement catalog. The former 97.656096% counted both classes.
 Code progress is unaffected.
+
+## Continuing checkpoint (2026-10-04)
+
+Nineteen inline-assembly/raw-word replacements (1,508 bytes) are now
+`status=placeholder`. They remain compiler-verified and hybrid-linked, but earn
+zero matching C credit. Kernel syscall wrappers remain credited source because
+the syscall instruction requires inline assembly. A recovered dispatcher tail
+at `0x0026ECA0` adds 12 bytes of exact C.
+
+The corrected starting checkpoint is 411,164 / 3,293,696 code bytes
+(12.483357%). Push after each additional five percentage points of verified,
+hybrid-linked C: first at 575,849 code bytes (at least 17.483357%).

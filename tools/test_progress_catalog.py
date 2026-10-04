@@ -1,4 +1,8 @@
 import unittest
+import tempfile
+from pathlib import Path
+
+from tools.objdiff_report import load_matches
 
 from tools.progress_catalog import (
     DATA_BEGIN,
@@ -14,6 +18,18 @@ from tools.progress_catalog import (
 
 
 class ProgressCatalogTest(unittest.TestCase):
+    def test_assembly_placeholder_gets_no_code_credit(self):
+        with tempfile.TemporaryDirectory() as directory:
+            catalog = Path(directory) / "matches.csv"
+            catalog.write_text(
+                "name,address,size,source,status\n"
+                "c,0x00100000,0x10,src/c.c,complete\n"
+                "assembly,0x00100010,0x20,src/assembly.c,placeholder\n"
+            )
+            matches = load_matches(catalog)
+            self.assertEqual(set(matches), {"c"})
+            self.assertEqual(code_progress(matches), (16, 16))
+
     def test_unique_coverage_dedups_overlap(self):
         lo = DATA_BEGIN
         covered = unique_covered_bytes(

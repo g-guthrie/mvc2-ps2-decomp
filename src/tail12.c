@@ -20,3 +20,6 @@ T(func_002E3C00)
 T(func_002FBBD0)
 T(func_00316A60)
 T(func_0031AF90)
+
+/* Tail of the state dispatcher beginning at 0x0026EC7C. */
+T(residual_0026ECA0)

@@ -52,7 +52,7 @@ def load_matches(path: Path, base: int, image_size: int) -> list[tuple[str, int,
         rows = [
             row
             for row in csv.DictReader(stream)
-            if row["status"] in {"matching", "complete"}
+            if row["status"] in {"matching", "complete", "placeholder"}
         ]
     matches = []
     for row in rows:
