@@ -1799,3 +1799,24 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/animation_frames.o" private/SLUS_204.86.rom \
     --source src/animation_frames.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/accepted_transitions.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/accepted_transitions.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/accepted_transitions.o" private/SLUS_204.86.rom \
+    --source src/accepted_transitions.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/priority_dispatch.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/priority_dispatch.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/priority_dispatch.o" private/SLUS_204.86.rom \
+    --source src/priority_dispatch.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/dependent_spawns.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/dependent_spawns.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/dependent_spawns.o" private/SLUS_204.86.rom \
+    --source src/dependent_spawns.c

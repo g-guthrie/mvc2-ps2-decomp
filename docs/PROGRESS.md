@@ -135,3 +135,9 @@ proof. The larger angle-conversion family remains a private, uncredited
 candidate because fifteen divisor-construction instruction words differ.
 Current credited code is 451,944 / 3,293,696 bytes (13.721485%); the five-point
 push threshold remains 575,849 bytes.
+
+The final published batch adds 33 functions / 3,528 bytes: eleven accepted
+transition handlers, thirteen priority dispatchers, and nine dependent-object
+creation handlers. Their compiled instructions, relocations, and complete
+hybrid placement match retail. Credited code is 455,472 / 3,293,696 bytes
+(13.828599%). Work is paused after the user-requested GitHub checkpoint.
