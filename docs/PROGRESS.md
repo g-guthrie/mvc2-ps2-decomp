@@ -92,3 +92,11 @@ frame-scale callers, their typed keyframe interpolator, and six object-pool
 allocation, release, and insertion routines. The existing allocator wrapper
 retains its original source owner. Total credited C is now 412,328 bytes
 (12.518695%); the five-point push threshold remains 575,849 bytes.
+
+The strength-selecting move-setup batch adds 77 compiler-matched functions /
+21,304 bytes in three shared C state-machine families. Each handler preserves
+its animation calls, symbolic data choice, timer and per-player counter reset,
+and (where present) the conditional nibble-counter decrement. The repeated
+command write in retail is retained as an explicit volatile byte write. No
+assembly or raw instruction words are used. Total credited C is now
+433,632 / 3,293,696 bytes (13.165514%). The push threshold is unchanged.

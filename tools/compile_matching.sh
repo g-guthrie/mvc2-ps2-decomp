@@ -1757,3 +1757,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/object_pool.o" private/SLUS_204.86.rom \
     --source src/object_pool.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/move_setup.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/move_setup.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/move_setup.o" private/SLUS_204.86.rom \
+    --source src/move_setup.c
