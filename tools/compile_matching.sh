@@ -1636,12 +1636,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/dupcluster_gate96b.o" private/SLUS_204.86.rom \
     --source src/dupcluster_gate96b.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/dupcluster_gate101.c -c -lang c $MATCH_FLAGS \
-    -o "$BUILD/dupcluster_gate101.o"
-"$PYTHON" tools/verify_object.py \
-    "$BUILD/dupcluster_gate101.o" private/SLUS_204.86.rom \
-    --source src/dupcluster_gate101.c
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/dupcluster_0013C730.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/dupcluster_0013C730.o"
 "$PYTHON" tools/verify_object.py \
@@ -1666,18 +1660,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/dupcluster_00191F50.o" private/SLUS_204.86.rom \
     --source src/dupcluster_00191F50.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/dupcluster_0013C9A0.c -c -lang c $MATCH_FLAGS \
-    -o "$BUILD/dupcluster_0013C9A0.o"
-"$PYTHON" tools/verify_object.py \
-    "$BUILD/dupcluster_0013C9A0.o" private/SLUS_204.86.rom \
-    --source src/dupcluster_0013C9A0.c
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/dupcluster_00316940.c -c -lang c $MATCH_FLAGS \
-    -o "$BUILD/dupcluster_00316940.o"
-"$PYTHON" tools/verify_object.py \
-    "$BUILD/dupcluster_00316940.o" private/SLUS_204.86.rom \
-    --source src/dupcluster_00316940.c
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/dupcluster_001519E0.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/dupcluster_001519E0.o"
 "$PYTHON" tools/verify_object.py \
@@ -1696,29 +1678,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/dupcluster_001863F0.o" private/SLUS_204.86.rom \
     --source src/dupcluster_001863F0.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/dupcluster_001822B0.c -c -lang c $MATCH_FLAGS \
-    -o "$BUILD/dupcluster_001822B0.o"
-"$PYTHON" tools/verify_object.py \
-    "$BUILD/dupcluster_001822B0.o" private/SLUS_204.86.rom \
-    --source src/dupcluster_001822B0.c
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/dupcluster_001BDA10.c -c -lang c $MATCH_FLAGS \
-    -o "$BUILD/dupcluster_001BDA10.o"
-"$PYTHON" tools/verify_object.py \
-    "$BUILD/dupcluster_001BDA10.o" private/SLUS_204.86.rom \
-    --source src/dupcluster_001BDA10.c
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/dupcluster_00278F50.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/dupcluster_00278F50.o"
 "$PYTHON" tools/verify_object.py \
     "$BUILD/dupcluster_00278F50.o" private/SLUS_204.86.rom \
     --source src/dupcluster_00278F50.c
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/dupcluster_00298FC0.c -c -lang c $MATCH_FLAGS \
-    -o "$BUILD/dupcluster_00298FC0.o"
-"$PYTHON" tools/verify_object.py \
-    "$BUILD/dupcluster_00298FC0.o" private/SLUS_204.86.rom \
-    --source src/dupcluster_00298FC0.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/dupcluster_00184110.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/dupcluster_00184110.o"
@@ -1921,84 +1885,18 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/float_callbacks.c -c -lang c -O4 -Op -sdatathreshold 0 -o "$BUILD/float_callbacks.o"
 "$PYTHON" tools/verify_object.py "$BUILD/float_callbacks.o" private/SLUS_204.86.rom --source src/float_callbacks.c
 
-# Fixed-scale effect callbacks: state variants, follow-up calls, and choices.
-for unit in effect_state_callbacks effect_followup_callbacks; do
-    MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-        "src/$unit.c" -c -lang c -O4 -Op -sdatathreshold 0 -o "$BUILD/$unit.o"
-    "$PYTHON" tools/verify_object.py "$BUILD/$unit.o" private/SLUS_204.86.rom \
-        --source "src/$unit.c"
-done
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/effect_choice_callbacks.c -c -lang c -O4 -Op -sdatathreshold 8 \
-    -o "$BUILD/effect_choice_callbacks.o"
-"$PYTHON" tools/verify_object.py "$BUILD/effect_choice_callbacks.o" private/SLUS_204.86.rom \
-    --source src/effect_choice_callbacks.c
-
-# Input-state gates and animation position callbacks.
-for unit in height_input_gates ground_input_gates mode_input_gates animation_position_callbacks ground_transition_gates elevated_mode_input_gates animation_numbered_effects wrapped_degree_phases; do
-    MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-        "src/$unit.c" -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/$unit.o"
-    "$PYTHON" tools/verify_object.py "$BUILD/$unit.o" private/SLUS_204.86.rom \
-        --source "src/$unit.c"
-done
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/ordered_input_checks.c -c -lang c -O3 -sdatathreshold 0 \
-    -o "$BUILD/ordered_input_checks.o"
-"$PYTHON" tools/verify_object.py "$BUILD/ordered_input_checks.o" private/SLUS_204.86.rom \
-    --source src/ordered_input_checks.c
-
-# Scale integration, relative-record walks, and animation state handlers.
-for unit in uniform_scale_steps animation_spawn_positions relative_record_walks relative_scale_interpolation; do
-    MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-        "src/$unit.c" -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/$unit.o"
-    "$PYTHON" tools/verify_object.py "$BUILD/$unit.o" private/SLUS_204.86.rom \
-        --source "src/$unit.c"
-done
-for unit in owner_state_dispatch indexed_scale_steps three_axis_key_steps animation_nibble_dispatch filtered_interaction_dispatch indexed_child_parameters timed_child_parameters stance_restore_transitions completed_owner_dispatch owner_depth_dispatch airborne_landing_steps vertical_landing_animations planar_motion_resets mode_motion_updates table_transition_input_gates interaction_stance_resets pending_phase_events descending_event_contacts airborne_event_motion; do
-    MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-        "src/$unit.c" -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/$unit.o"
-    "$PYTHON" tools/verify_object.py "$BUILD/$unit.o" private/SLUS_204.86.rom \
-        --source "src/$unit.c"
-done
-MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/conditional_animation_updates.c -c -lang c -O3 -sdatathreshold 0 \
-    -o "$BUILD/conditional_animation_updates.o"
-"$PYTHON" tools/verify_object.py "$BUILD/conditional_animation_updates.o" private/SLUS_204.86.rom \
-    --source src/conditional_animation_updates.c
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/clamped_state_dispatch.c -c -lang c -O3 -sdatathreshold 0 \
-    -o "$BUILD/clamped_state_dispatch.o"
-"$PYTHON" tools/verify_object.py "$BUILD/clamped_state_dispatch.o" private/SLUS_204.86.rom \
-    --source src/clamped_state_dispatch.c
+    src/height_limits.c -c -lang c -O4 -Op -sdatathreshold 0 -o "$BUILD/height_limits.o"
+"$PYTHON" tools/verify_object.py "$BUILD/height_limits.o" private/SLUS_204.86.rom --source src/height_limits.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/effect_fade_states.c -c -lang c -O4 -Op -sdatathreshold 0 \
-    -o "$BUILD/effect_fade_states.o"
-"$PYTHON" tools/verify_object.py "$BUILD/effect_fade_states.o" private/SLUS_204.86.rom \
-    --source src/effect_fade_states.c
-
-MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/accepted_transition_resets.c -c -lang c -O3 -sdatathreshold 0 \
-    -o "$BUILD/accepted_transition_resets.o"
-"$PYTHON" tools/verify_object.py "$BUILD/accepted_transition_resets.o" private/SLUS_204.86.rom \
-    --source src/accepted_transition_resets.c
+    src/fade_step.c -c -lang c -O4 -Op -sdatathreshold 0 -o "$BUILD/fade_step.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fade_step.o" private/SLUS_204.86.rom --source src/fade_step.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/animation_displacement_events.c -c -lang c -O4 -Op -sdatathreshold 0 \
-    -o "$BUILD/animation_displacement_events.o"
-"$PYTHON" tools/verify_object.py "$BUILD/animation_displacement_events.o" private/SLUS_204.86.rom \
-    --source src/animation_displacement_events.c
+    src/float_state_limits.c -c -lang c -O4 -Op -sdatathreshold 0 -o "$BUILD/float_state_limits.o"
+"$PYTHON" tools/verify_object.py "$BUILD/float_state_limits.o" private/SLUS_204.86.rom --source src/float_state_limits.c
 
-for unit in live_owner_stance_resets accepted_interaction_latches owner_threshold_latches latched_interaction_stances unoccupied_interaction_stances; do
-    MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-        "src/$unit.c" -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/$unit.o"
-    "$PYTHON" tools/verify_object.py "$BUILD/$unit.o" private/SLUS_204.86.rom \
-        --source "src/$unit.c"
-done
-
-for unit in global_phase_events global_phase_animation_steps; do
-    MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-        "src/$unit.c" -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/$unit.o"
-    "$PYTHON" tools/verify_object.py "$BUILD/$unit.o" private/SLUS_204.86.rom \
-        --source "src/$unit.c"
-done
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/float_motion_transitions.c -c -lang c -O4 -Op -sdatathreshold 0 -o "$BUILD/float_motion_transitions.o"
+"$PYTHON" tools/verify_object.py "$BUILD/float_motion_transitions.o" private/SLUS_204.86.rom --source src/float_motion_transitions.c
