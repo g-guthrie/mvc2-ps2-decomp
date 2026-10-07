@@ -1,6 +1,7 @@
 /* The inhibit mask occupies ordinary BSS beyond the GP small-data range. */
 typedef unsigned char u8;
-typedef void (*Callback)(u8 *,u8 *);
+#include "mvc2_side_inhibit_callbacks.h"
+typedef Mvc2SideInhibitCallback Callback;
 extern u8 D_004D18A6 __attribute__((section(".bss")));
 extern Callback D_004BF7C8[2];
 extern Callback D_004BF7D0[2];

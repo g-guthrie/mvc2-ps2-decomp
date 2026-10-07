@@ -2034,7 +2034,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py "$BUILD/owner_stance_state_dispatch.o" private/SLUS_204.86.rom --source src/owner_stance_state_dispatch.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/side_inhibit_state_dispatch.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/side_inhibit_state_dispatch.o"
+    src/side_inhibit_state_dispatch.c -c -lang c -O3 -sdatathreshold 8 -i src/data -o "$BUILD/side_inhibit_state_dispatch.o"
 "$PYTHON" tools/verify_object.py "$BUILD/side_inhibit_state_dispatch.o" private/SLUS_204.86.rom --source src/side_inhibit_state_dispatch.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \

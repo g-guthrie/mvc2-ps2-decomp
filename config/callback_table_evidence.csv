@@ -1381,3 +1381,6 @@ jtbl_0045E2C0,0x0045E2C0,0xC,src/global_phase_frame_hooks.c,func_0032BF70,void(v
 jtbl_004C1EC4,0x004C1EC4,0x8,src/owner_stance_state_dispatch.c,func_003A5A80,"void(u8 *,u8 *)"
 jtbl_004C1FB4,0x004C1FB4,0x8,src/owner_stance_state_dispatch.c,func_003B1BF0,"void(u8 *,u8 *)"
 jtbl_004C20E0,0x004C20E0,0x8,src/owner_stance_state_dispatch.c,func_003C0C60,"void(u8 *,u8 *)"
+jtbl_004BF7C8,0x004BF7C8,0x8,src/side_inhibit_state_dispatch.c,func_001A84F0,"void(u8 *,u8 *)"
+jtbl_004BF7D0,0x004BF7D0,0x8,src/side_inhibit_state_dispatch.c,func_001A8670,"void(u8 *,u8 *)"
+jtbl_004BF7D8,0x004BF7D8,0x8,src/side_inhibit_state_dispatch.c,func_001A8840,"void(u8 *,u8 *)"
