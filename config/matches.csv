@@ -8579,3 +8579,7 @@ func_00214B00,0x00214B00,0x60,src/fixed_launch_effect_initializers.c,complete
 func_00214B60,0x00214B60,0x60,src/fixed_launch_effect_initializers.c,complete
 func_00214BC0,0x00214BC0,0x60,src/fixed_launch_effect_initializers.c,complete
 func_00214CB0,0x00214CB0,0x60,src/fixed_launch_effect_initializers.c,complete
+func_0038DDA0,0x0038DDA0,0x64,src/owner_substate_animation_entry.c,complete
+func_0038E0B0,0x0038E0B0,0x64,src/owner_substate_animation_entry.c,complete
+func_0039BF30,0x0039BF30,0x64,src/owner_substate_animation_entry.c,complete
+func_0039C2B0,0x0039C2B0,0x64,src/owner_substate_animation_entry.c,complete
