@@ -8106,3 +8106,7 @@ func_003804B0,0x003804B0,0x5C,src/parent_state_dispatch.c,complete
 func_00389C20,0x00389C20,0x5C,src/parent_state_dispatch.c,complete
 func_0038D660,0x0038D660,0x5C,src/parent_state_dispatch.c,complete
 func_0041A170,0x0041A170,0x5C,src/parent_state_dispatch.c,complete
+func_001ECF90,0x001ECF90,0x48,src/pending_commands.c,complete
+func_00296FB0,0x00296FB0,0x48,src/pending_commands.c,complete
+func_00299010,0x00299010,0x48,src/pending_commands.c,complete
+func_002CFA20,0x002CFA20,0x48,src/pending_commands.c,complete

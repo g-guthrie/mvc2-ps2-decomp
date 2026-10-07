@@ -175,3 +175,7 @@ the gates use 3.0-011126 with small data 0. Credited code is
 Five parent-state dispatch routines add 460 exact C bytes on MWCCPS2
 3.0.3 with -O3 -sdatathreshold 0. Credited code is 466,144 / 3,293,696
 bytes (14.152612%); next push remains 620,157 bytes.
+
+Four pending animation-command consumers add 288 exact C bytes on
+MWCCPS2 3.0.3 with -O3 -sdatathreshold 8. Credited code is
+466,432 / 3,293,696 bytes (14.161356%).
