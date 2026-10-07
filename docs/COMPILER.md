@@ -218,3 +218,5 @@ Owner-generation callback tables share `mvc2_owner_generation_callbacks.h` with 
 `owner_substate_animation_entry` uses MWCC 3.0.3 `-O3 -sdatathreshold 0`. Keeping the owner and embedded substate pointers explicit reproduces the retail callee-saved registers and the substate-address calculation in the animation call's delay slot. All four native routines and the linked image match.
 
 `positioned_timed_effect_spawns` uses MWCC 3.0.3 `-O3 -sdatathreshold 8`. The context pointer receives its retail GP-relative relocation; typed three-float position copies reproduce the grouped FPU loads/stores. All three native routines and the linked image match.
+
+`positioned_unit_scale_spawns` uses MWCC 3.0.3 `-O3 -sdatathreshold 8`. Typed three-float position copies and shared unit scale reproduce the retail loads, stores, and GP-relative context access. All three native routines and the linked image match.
