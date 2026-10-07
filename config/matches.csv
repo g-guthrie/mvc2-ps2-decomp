@@ -7801,7 +7801,7 @@ func_00177CE0,0x00177CE0,0x6C,src/dupcluster_00177CE0.c,placeholder
 func_00178DA0,0x00178DA0,0x6C,src/dupcluster_00178DA0.c,placeholder
 func_00191F50,0x00191F50,0x34,src/dupcluster_00191F50.c,placeholder
 func_0013C9A0,0x0013C9A0,0x44,src/dupcluster_0013C9A0.c,placeholder
-func_00316940,0x00316940,0x34,src/dupcluster_00316940.c,placeholder
+func_00316940,0x00316940,0x34,src/height_limits.c,complete
 func_001519E0,0x001519E0,0x3C,src/dupcluster_001519E0.c,complete
 func_003ABFE0,0x003ABFE0,0x3C,src/dupcluster_003ABFE0.c,placeholder
 func_001863F0,0x001863F0,0x44,src/dupcluster_001863F0.c,placeholder

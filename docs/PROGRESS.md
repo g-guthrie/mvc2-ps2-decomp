@@ -244,3 +244,10 @@ Twenty-six floating-parameter effect callbacks add 832 exact C bytes with
 MWCCPS2 3.0.3 -O4 -Op -sdatathreshold 0. These flags materialize the
 retail immediate constants instead of literal-pool loads. Current credited
 code is 475,852 / 3,293,696 bytes (14.447356%).
+
+The upper-height limit at 0x00316940 is now native C instead of an
+uncredited assembly placeholder. MWCCPS2 3.0.3 -O4 -Op small-data 0
+reproduces all 52 bytes, including the strict upper-limit comparison.
+Credited code is 475,904 / 3,293,696 bytes (14.448935%).
+The last published checkpoint was 475,852 bytes; the next five-point push
+is at 640,537 credited bytes (19.4474%).
