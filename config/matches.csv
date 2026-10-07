@@ -8140,3 +8140,9 @@ func_003C26D0,0x003C26D0,0xD4,src/follow_layers.c,complete
 func_003C2A70,0x003C2A70,0xD4,src/follow_layers.c,complete
 func_003C2E30,0x003C2E30,0xD4,src/follow_layers.c,complete
 func_003C35B0,0x003C35B0,0xD4,src/follow_layers.c,complete
+func_0017D710,0x0017D710,0x130,src/shared_state_updates.c,complete
+func_0017DD90,0x0017DD90,0x130,src/shared_state_updates.c,complete
+func_0017ED50,0x0017ED50,0x130,src/shared_state_updates.c,complete
+func_0017F4B0,0x0017F4B0,0x130,src/shared_state_updates.c,complete
+func_0017F930,0x0017F930,0x130,src/shared_state_updates.c,complete
+func_0017FDE0,0x0017FDE0,0x130,src/shared_state_updates.c,complete

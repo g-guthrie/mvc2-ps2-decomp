@@ -198,3 +198,9 @@ Each uses its own eight-byte callback pair from the existing placeholder
 table catalog, enabling the retail GP-relative address. The layer sum is
 clamped to 0..7 after dispatch. Credited code is 471,156 / 3,293,696 bytes
 (14.304781%); no data credit is added.
+
+Six shared actor-state update handlers add 1,824 exact C bytes on
+MWCCPS2 3.0-011126 with -O3 -sdatathreshold 0. Each reproduces the
+pending-state resolution, global flags, conditional transition, and signed
+animation result. Credited code is 472,980 / 3,293,696 bytes
+(14.360160%).
