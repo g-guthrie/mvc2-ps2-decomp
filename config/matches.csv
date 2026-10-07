@@ -8534,3 +8534,10 @@ func_003C0C60,0x003C0C60,0x54,src/owner_stance_state_dispatch.c,complete
 func_001A84F0,0x001A84F0,0x54,src/side_inhibit_state_dispatch.c,complete
 func_001A8670,0x001A8670,0x54,src/side_inhibit_state_dispatch.c,complete
 func_001A8840,0x001A8840,0x54,src/side_inhibit_state_dispatch.c,complete
+func_00194000,0x00194000,0x70,src/inhibit_owner_phase_gates.c,complete
+func_001A9870,0x001A9870,0x84,src/inhibit_owner_phase_gates.c,complete
+func_001C1F60,0x001C1F60,0x84,src/inhibit_owner_phase_gates.c,complete
+func_0016CE10,0x0016CE10,0x48,src/inhibit_state_controls.c,complete
+func_00183A70,0x00183A70,0x54,src/inhibit_state_controls.c,complete
+func_003A69B0,0x003A69B0,0xC4,src/inhibit_owner_motion_sync.c,complete
+func_003B2A80,0x003B2A80,0xC4,src/inhibit_owner_motion_sync.c,complete
