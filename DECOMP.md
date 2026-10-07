@@ -1,8 +1,10 @@
 # Decompilation rules
 
 - Target only the NTSC-U PS2 executable `SLUS_204.86` documented in the README.
-- Keep original game binaries, assets, generated assembly, SDK files, and
-  proprietary compiler tools out of Git.
+- At the owner's explicit request, the checksum-pinned executable/compiler
+  build bundle is included under `build-inputs/` on public main. Extracted
+  working inputs remain under ignored `private/`. Keep other game assets,
+  generated assembly, and SDK files out of Git.
 - A function counts as matching C only after the selected Metrowerks PS2
   compiler reproduces its instructions and relocations exactly.
 - Assembly placeholders and mechanically translated output count as zero.
