@@ -8541,3 +8541,4 @@ func_0016CE10,0x0016CE10,0x48,src/inhibit_state_controls.c,complete
 func_00183A70,0x00183A70,0x54,src/inhibit_state_controls.c,complete
 func_003A69B0,0x003A69B0,0xC4,src/inhibit_owner_motion_sync.c,complete
 func_003B2A80,0x003B2A80,0xC4,src/inhibit_owner_motion_sync.c,complete
+func_001793B0,0x001793B0,0xC4,src/inhibit_character_state_dispatch.c,complete

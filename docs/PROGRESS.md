@@ -308,3 +308,5 @@ Recovered three side-inhibit callback dispatchers (252 native C bytes), preservi
 Recovered five native inhibit-state routines (532 bytes): three owner-phase gates, the slowdown selector, and the side-mask initializer. All function bytes and relocations, the linked image, and the packed ELF match exactly. Totals: 8,532 functions and 524,144 linked C bytes; reconstructed data remains 42,328 bytes across 1,415 units.
 
 Recovered two native owner-motion synchronizers (392 bytes), retaining side-mask inhibition, owner-state fallback, signed facing copies, and motion-gated callback dispatch. All code objects, full linked image, and packed ELF match exactly. Totals: 8,534 functions and 524,536 linked C bytes; reconstructed data remains 42,328 bytes across 1,415 units.
+
+Recovered the native character-state dispatcher at 0x001793B0 (196 bytes), including preset character flags, shared-mask inhibition, side-bit gating, and its activity fallback. The object, linked image, and packed ELF match exactly. Totals: 8,535 functions and 524,732 linked C bytes; reconstructed data remains 42,328 bytes across 1,415 units.

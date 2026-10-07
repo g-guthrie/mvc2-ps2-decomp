@@ -200,3 +200,5 @@ The native replacement in `dupcluster_001863F0` uses MWCC 3.0.3 `-O4 -Op -sdatat
 `inhibit_owner_phase_gates` uses MWCC 3.0.3 `-O3 -sdatathreshold 0`. Direct references to the global mask let common-subexpression elimination preserve the retail register allocation; a separate cached byte local did not match. `inhibit_state_controls` adds `-Op` to materialize the slowdown factors. Casting the shifted side bit to a byte before merging it reproduces the mask initializer. All five native routines and the linked image match.
 
 `inhibit_owner_motion_sync` uses MWCC 3.0.3 `-O3 -sdatathreshold 8`, with the same explicit ordinary-BSS mask placement as the side dispatchers. Separate early-return and owner-active branches reproduce the retail epilogues; signed byte copies preserve facing and motion flags. Both native routines and the linked image match.
+
+`inhibit_character_state_dispatch` uses MWCC 3.0.3 `-O3 -sdatathreshold 8`, with the side mask declared in ordinary BSS. A cached byte mask retains the retail byte truncation before the side-bit test; the explicit fallback return preserves the shared epilogue. The complete native routine and linked image match.
