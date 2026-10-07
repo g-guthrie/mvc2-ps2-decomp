@@ -1,25 +1,47 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_00458C10[22] = {
-    (unsigned int)0x002AC6B0,
-    (unsigned int)0x002AC960,
-    (unsigned int)0x002AC830,
-    (unsigned int)0x002AC6B0,
-    (unsigned int)0x002ACD00,
-    (unsigned int)0x002ACD40,
-    (unsigned int)0x002ACEA0,
-    (unsigned int)0x002ACF70,
-    (unsigned int)0x002AD060,
-    (unsigned int)0x002AD110,
-    (unsigned int)0x002AD1F0,
-    (unsigned int)0x002AD320,
-    (unsigned int)0x002AD410,
-    (unsigned int)0x002AD4C0,
-    (unsigned int)0x002AD520,
-    (unsigned int)0x002AD5E0,
-    (unsigned int)0x002AD660,
-    (unsigned int)0x002AD6B0,
-    (unsigned int)0x002AD6F0,
-    (unsigned int)0x002AD520,
-    (unsigned int)0x002AD5E0,
-    (unsigned int)0x002AD660,
+/* Typed callback entries recovered from the exact dispatch callers. */
+/* Consumer: src/composite_dispatch_heads.c (jtbl_00458C10). */
+#include "mvc2_state_callbacks.h"
+
+extern void func_002AC6B0(u8 *);
+extern void func_002AC830(u8 *);
+extern void func_002AC960(u8 *);
+extern void func_002ACD00(u8 *);
+extern void func_002ACD40(u8 *);
+extern void func_002ACEA0(u8 *);
+extern void func_002ACF70(u8 *);
+extern void func_002AD060(u8 *);
+extern void func_002AD110(u8 *);
+extern void func_002AD1F0(u8 *);
+extern void func_002AD320(u8 *);
+extern void func_002AD410(u8 *);
+extern void func_002AD4C0(u8 *);
+extern void func_002AD520(u8 *);
+extern void func_002AD5E0(u8 *);
+extern void func_002AD660(u8 *);
+extern void func_002AD6B0(u8 *);
+extern void func_002AD6F0(u8 *);
+
+const Mvc2StateCallback jtbl_00458C10[22] = {
+    func_002AC6B0,
+    func_002AC960,
+    func_002AC830,
+    func_002AC6B0,
+    func_002ACD00,
+    func_002ACD40,
+    func_002ACEA0,
+    func_002ACF70,
+    func_002AD060,
+    func_002AD110,
+    func_002AD1F0,
+    func_002AD320,
+    func_002AD410,
+    func_002AD4C0,
+    func_002AD520,
+    func_002AD5E0,
+    func_002AD660,
+    func_002AD6B0,
+    func_002AD6F0,
+    func_002AD520,
+    func_002AD5E0,
+    func_002AD660,
 };

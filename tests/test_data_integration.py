@@ -13,11 +13,11 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 class DataIntegrationTest(unittest.TestCase):
-    def test_catalog_contains_only_the_c_zero_units_and_dispatch(self):
+    def test_catalog_preserves_zero_units_and_dispatch(self):
         units = load_data_units(ROOT / "config/data_units.csv", 0x00100000, 0x3C2580)
         zeroes = [unit for unit in units if unit.name.startswith("data_zero_")]
-        self.assertEqual(len(zeroes), 398)
-        self.assertEqual(sum(unit.size for unit in zeroes), 142038)
+        self.assertEqual(len(zeroes), 397)
+        self.assertEqual(sum(unit.size for unit in zeroes), 141942)
         dispatch = [unit for unit in units if unit.name == "gMvc2Dispatch_00445A20"]
         self.assertEqual([(unit.address, unit.size, unit.section) for unit in dispatch], [(0x445A20, 0x400, ".rodata")])
 
@@ -54,13 +54,16 @@ class DataIntegrationTest(unittest.TestCase):
             ROOT / "config/data_units.csv", ROOT / "config/data_matches.csv"
         )
         report = build_report([], {}, matches)
-        expected = sum(match["size"] for match in matches.values())
-        self.assertEqual(report["measures"]["matched_data"], str(expected))
-        self.assertEqual(report["measures"]["complete_data"], str(expected))
+        # Physically linked raw data remains uncredited by the progress policy.
+        self.assertEqual(report["measures"]["matched_data"], "41940")
+        self.assertEqual(report["measures"]["complete_data"], "41940")
+        self.assertEqual(report["measures"]["total_data"], str(DATA_SIZE))
+        self.assertGreater(sum(match["size"] for match in matches.values()), 41940)
         self.assertEqual(
-            report["units"][-1]["sections"][0]["fuzzy_match_percent"],
-            expected * 100.0 / DATA_SIZE,
+            sum(int(unit["measures"].get("complete_data", 0)) for unit in report["units"]),
+            41940,
         )
+
 
 
 if __name__ == "__main__":

@@ -1,1 +1,11 @@
-const unsigned int jtbl_004C1420[2] = { 0x002FD680, 0x002FD700 };
+/* Typed callback entries recovered from the exact dispatch callers. */
+/* Consumer: src/composite_gp_dispatch_heads.c (jtbl_004C1420). */
+#include "mvc2_state_callbacks.h"
+
+extern void func_002FD680(u8 *);
+extern void func_002FD700(u8 *);
+
+const Mvc2StateCallback jtbl_004C1420[2] = {
+    func_002FD680,
+    func_002FD700,
+};

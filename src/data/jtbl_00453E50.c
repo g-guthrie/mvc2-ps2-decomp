@@ -1,30 +1,53 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_00453E50[27] = {
-    (unsigned int)0x0025CBE0,
-    (unsigned int)0x0025D050,
-    (unsigned int)0x0025D0B0,
-    (unsigned int)0x0025CB50,
-    (unsigned int)0x0025D480,
-    (unsigned int)0x0025D7F0,
-    (unsigned int)0x0025D7B0,
-    (unsigned int)0x0025D3B0,
-    (unsigned int)0x0025DAC0,
-    (unsigned int)0x0025DB70,
-    (unsigned int)0x0025DC40,
-    (unsigned int)0x0025DCF0,
-    (unsigned int)0x0025DD50,
-    (unsigned int)0x0025DE00,
-    (unsigned int)0x0025DED0,
-    (unsigned int)0x0025DF80,
-    (unsigned int)0x0025E220,
-    (unsigned int)0x0025E180,
-    (unsigned int)0x0025E220,
-    (unsigned int)0x0025E180,
-    (unsigned int)0x0025E180,
-    (unsigned int)0x0025E220,
-    (unsigned int)0x0025E220,
-    (unsigned int)0x0025E220,
-    (unsigned int)0x0025E290,
-    (unsigned int)0x0025E290,
-    (unsigned int)0x0025E290,
+/* Typed callback entries recovered from the exact dispatch callers. */
+/* Consumer: src/composite_dispatch_heads.c (jtbl_00453E50). */
+#include "mvc2_state_callbacks.h"
+
+extern void func_0025CB50(u8 *);
+extern void func_0025CBE0(u8 *);
+extern void func_0025D050(u8 *);
+extern void func_0025D0B0(u8 *);
+extern void func_0025D3B0(u8 *);
+extern void func_0025D480(u8 *);
+extern void func_0025D7B0(u8 *);
+extern void func_0025D7F0(u8 *);
+extern void func_0025DAC0(u8 *);
+extern void func_0025DB70(u8 *);
+extern void func_0025DC40(u8 *);
+extern void func_0025DCF0(u8 *);
+extern void func_0025DD50(u8 *);
+extern void func_0025DE00(u8 *);
+extern void func_0025DED0(u8 *);
+extern void func_0025DF80(u8 *);
+extern void func_0025E180(u8 *);
+extern void func_0025E220(u8 *);
+extern void func_0025E290(u8 *);
+
+const Mvc2StateCallback jtbl_00453E50[27] = {
+    func_0025CBE0,
+    func_0025D050,
+    func_0025D0B0,
+    func_0025CB50,
+    func_0025D480,
+    func_0025D7F0,
+    func_0025D7B0,
+    func_0025D3B0,
+    func_0025DAC0,
+    func_0025DB70,
+    func_0025DC40,
+    func_0025DCF0,
+    func_0025DD50,
+    func_0025DE00,
+    func_0025DED0,
+    func_0025DF80,
+    func_0025E220,
+    func_0025E180,
+    func_0025E220,
+    func_0025E180,
+    func_0025E180,
+    func_0025E220,
+    func_0025E220,
+    func_0025E220,
+    func_0025E290,
+    func_0025E290,
+    func_0025E290,
 };

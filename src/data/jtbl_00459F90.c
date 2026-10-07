@@ -1,8 +1,17 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_00459F90[5] = {
-    (unsigned int)0x002CA6B0,
-    (unsigned int)0x002CA720,
-    (unsigned int)0x002CA7E0,
-    (unsigned int)0x002CA8F0,
-    (unsigned int)0x002CAC50,
+/* Typed callback entries recovered from the exact dispatch callers. */
+/* Consumer: src/argument_dispatch_heads.c (jtbl_00459F90). */
+#include "mvc2_state_callbacks.h"
+
+extern void func_002CA6B0(u8 *, void *);
+extern void func_002CA720(u8 *, void *);
+extern void func_002CA7E0(u8 *, void *);
+extern void func_002CA8F0(u8 *, void *);
+extern void func_002CAC50(u8 *, void *);
+
+const Mvc2OwnerStateCallback jtbl_00459F90[5] = {
+    func_002CA6B0,
+    func_002CA720,
+    func_002CA7E0,
+    func_002CA8F0,
+    func_002CAC50,
 };

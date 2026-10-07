@@ -1,6 +1,13 @@
-/* Source-safe reconstruction of initialized table. */
-const unsigned int jtbl_0045DC38[3] = {
-    (unsigned int)0x0031FA10,
-    (unsigned int)0x0031FAF0,
-    (unsigned int)0x0031FBA0,
+/* Typed callback entries recovered from the exact dispatch callers. */
+/* Consumer: src/grok_w5_disp.c (jtbl_0045DC38). */
+#include "mvc2_state_callbacks.h"
+
+extern void func_0031FA10(u8 *);
+extern void func_0031FAF0(u8 *);
+extern void func_0031FBA0(u8 *);
+
+const Mvc2StateCallback jtbl_0045DC38[3] = {
+    func_0031FA10,
+    func_0031FAF0,
+    func_0031FBA0,
 };

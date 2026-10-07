@@ -54,6 +54,42 @@ def patch_relocation(word: int, relocation_type: int, value: int, gp: int) -> in
     raise SystemExit(f"unsupported MIPS relocation type {relocation_type}")
 
 
+def relocate_bytes(body: bytes, relocations: list[tuple], gp: int) -> bytes:
+    """Resolve REL instruction addends, pairing HI16 with its following LO16."""
+    compiled = bytearray(body)
+    pending_high = {}
+    for offset, kind, value, name, explicit_addend in relocations:
+        if offset < 0 or offset + 4 > len(compiled):
+            raise SystemExit(f"relocation outside function: {name} at {offset}")
+        word = struct.unpack_from("<I", compiled, offset)[0]
+        if explicit_addend is not None:
+            addend = explicit_addend
+        elif kind == R_MIPS_HI16:
+            pending_high.setdefault(name, []).append((offset, word, value))
+            continue
+        elif kind in {R_MIPS_LO16, R_MIPS_GPREL16}:
+            low = word & 0xFFFF
+            addend = low - 0x10000 if low & 0x8000 else low
+            if kind == R_MIPS_LO16:
+                for high_offset, high_word, high_value in pending_high.pop(name, []):
+                    full_addend = ((high_word & 0xFFFF) << 16) + addend
+                    patched = patch_relocation(
+                        high_word, R_MIPS_HI16, high_value + full_addend, gp
+                    )
+                    struct.pack_into("<I", compiled, high_offset, patched)
+        elif kind == R_MIPS_26:
+            addend = (word & 0x03FFFFFF) << 2
+        elif kind == R_MIPS_32:
+            addend = word
+        else:
+            raise SystemExit(f"unsupported MIPS relocation type {kind}")
+        patched = patch_relocation(word, kind, value + addend, gp)
+        struct.pack_into("<I", compiled, offset, patched)
+    if pending_high:
+        raise SystemExit(f"HI16 relocation without LO16: {', '.join(pending_high)}")
+    return bytes(compiled)
+
+
 def verify(
     object_path: Path,
     target_path: Path,
@@ -98,7 +134,8 @@ def verify(
             size = symbol["st_size"] or expected_size
             if size != expected_size:
                 raise SystemExit(f"compiled size mismatch for {name}: {size} != {expected_size}")
-            compiled = bytearray(section.data()[start : start + size])
+            compiled = section.data()[start : start + size]
+            function_relocations = []
 
             for relocation in relocations_by_section.get(section_index, []):
                 offset = relocation["r_offset"]
@@ -111,11 +148,13 @@ def verify(
                         f"no target address for relocation {relocation_symbol.name} in {name}"
                     )
                 local_offset = offset - start
-                word = struct.unpack_from("<I", compiled, local_offset)[0]
-                patched = patch_relocation(
-                    word, relocation["r_info_type"], relocation_value, gp
-                )
-                struct.pack_into("<I", compiled, local_offset, patched)
+                function_relocations.append((
+                    local_offset, relocation["r_info_type"], relocation_value,
+                    relocation_symbol.name,
+                    relocation["r_addend"] if relocation.is_RELA() else None,
+                ))
+
+            compiled = relocate_bytes(compiled, function_relocations, gp)
 
             target_offset = address - BASE_ADDRESS
             expected = target[target_offset : target_offset + size]

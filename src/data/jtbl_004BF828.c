@@ -1,14 +1,29 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_004BF828[11] = {
-    (unsigned int)0x001AD450,
-    (unsigned int)0x001AD530,
-    (unsigned int)0x001AD7E0,
-    (unsigned int)0x001AD8B0,
-    (unsigned int)0x001B09E0,
-    (unsigned int)0x001B0B20,
-    (unsigned int)0x001B0B80,
-    (unsigned int)0x001B0C50,
-    (unsigned int)0x001B0CF0,
-    (unsigned int)0x001B0DD0,
-    (unsigned int)0x001B0E50,
+/* Typed callback entries recovered from the exact dispatch callers. */
+/* Consumer: src/composite_gp_dispatch_heads.c (jtbl_004BF828). */
+#include "mvc2_state_callbacks.h"
+
+extern void func_001AD450(u8 *);
+extern void func_001AD530(u8 *);
+extern void func_001AD7E0(u8 *);
+extern void func_001AD8B0(u8 *);
+extern void func_001B09E0(u8 *);
+extern void func_001B0B20(u8 *);
+extern void func_001B0B80(u8 *);
+extern void func_001B0C50(u8 *);
+extern void func_001B0CF0(u8 *);
+extern void func_001B0DD0(u8 *);
+extern void func_001B0E50(u8 *);
+
+const Mvc2StateCallback jtbl_004BF828[11] = {
+    func_001AD450,
+    func_001AD530,
+    func_001AD7E0,
+    func_001AD8B0,
+    func_001B09E0,
+    func_001B0B20,
+    func_001B0B80,
+    func_001B0C50,
+    func_001B0CF0,
+    func_001B0DD0,
+    func_001B0E50,
 };
