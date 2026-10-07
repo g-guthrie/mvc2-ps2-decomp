@@ -196,3 +196,7 @@ The native replacement in `dupcluster_001863F0` uses MWCC 3.0.3 `-O4 -Op -sdatat
 `owner_animation_selector_sync` uses MWCC 3.0.3 `-O3 -sdatathreshold 0`. `global_phase_frame_hooks` and `owner_stance_state_dispatch` use `-O3 -sdatathreshold 8 -i src/data`, sharing explicit no-argument phase and two-argument owner callback contracts with their reconstructed tables. All nine native functions, the six typed tables, and the linked image match.
 
 `side_inhibit_state_dispatch` uses MWCC 3.0.3 `-O3 -sdatathreshold 8`. The byte inhibit mask is explicitly declared in its actual `.bss` section with `__attribute__((section(".bss")))`, keeping absolute address relocations while the two-entry callback arrays remain GP-relative. All three native dispatchers and the linked image match exactly.
+
+`inhibit_owner_phase_gates` uses MWCC 3.0.3 `-O3 -sdatathreshold 0`. Direct references to the global mask let common-subexpression elimination preserve the retail register allocation; a separate cached byte local did not match. `inhibit_state_controls` adds `-Op` to materialize the slowdown factors. Casting the shifted side bit to a byte before merging it reproduces the mask initializer. All five native routines and the linked image match.
+
+`inhibit_owner_motion_sync` uses MWCC 3.0.3 `-O3 -sdatathreshold 8`, with the same explicit ordinary-BSS mask placement as the side dispatchers. Separate early-return and owner-active branches reproduce the retail epilogues; signed byte copies preserve facing and motion flags. Both native routines and the linked image match.
