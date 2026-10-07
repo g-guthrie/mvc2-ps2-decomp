@@ -223,3 +223,7 @@ Six parent-state block copies add 1,296 exact C bytes. Their shared
 49-word copy helper takes count before destination/source, reproducing retail
 register allocation with MWCCPS2 3.0-011126 -O3 -Op and small data 0.
 Credited code is 474,672 / 3,293,696 bytes (14.411530%).
+
+A clamped global counter and table-driven state-completion routine add
+160 exact C bytes on MWCCPS2 3.0.3 with -O3 -sdatathreshold 0.
+Credited code is 474,832 / 3,293,696 bytes (14.416388%).

@@ -8159,3 +8159,5 @@ func_0039C3F0,0x0039C3F0,0xD8,src/parent_state_copy.c,complete
 func_003B9220,0x003B9220,0xD8,src/parent_state_copy.c,complete
 func_003BA140,0x003BA140,0xD8,src/parent_state_copy.c,complete
 func_003BD840,0x003BD840,0xD8,src/parent_state_copy.c,complete
+func_00131340,0x00131340,0x50,src/counter_state_controls.c,complete
+func_001395D0,0x001395D0,0x50,src/counter_state_controls.c,complete
