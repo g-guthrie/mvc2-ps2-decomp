@@ -8531,3 +8531,6 @@ func_0032BF70,0x0032BF70,0x5C,src/global_phase_frame_hooks.c,complete
 func_003A5A80,0x003A5A80,0x54,src/owner_stance_state_dispatch.c,complete
 func_003B1BF0,0x003B1BF0,0x54,src/owner_stance_state_dispatch.c,complete
 func_003C0C60,0x003C0C60,0x54,src/owner_stance_state_dispatch.c,complete
+func_001A84F0,0x001A84F0,0x54,src/side_inhibit_state_dispatch.c,complete
+func_001A8670,0x001A8670,0x54,src/side_inhibit_state_dispatch.c,complete
+func_001A8840,0x001A8840,0x54,src/side_inhibit_state_dispatch.c,complete
