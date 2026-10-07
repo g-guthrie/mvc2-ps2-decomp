@@ -8091,3 +8091,13 @@ func_002E92E0,0x002E92E0,0x5C,src/record_flags.c,complete
 func_00300BA0,0x00300BA0,0x5C,src/record_flags.c,complete
 func_003052D0,0x003052D0,0x5C,src/record_flags.c,complete
 func_00309200,0x00309200,0x5C,src/record_flags.c,complete
+func_001EB470,0x001EB470,0x50,src/command_reset.c,complete
+func_001EB830,0x001EB830,0x50,src/command_reset.c,complete
+func_002975D0,0x002975D0,0x50,src/command_reset.c,complete
+func_002979A0,0x002979A0,0x50,src/command_reset.c,complete
+func_002CDEB0,0x002CDEB0,0x50,src/command_reset.c,complete
+func_002CE330,0x002CE330,0x50,src/command_reset.c,complete
+func_002264D0,0x002264D0,0x58,src/state_first_gates.c,complete
+func_002D9570,0x002D9570,0x58,src/state_first_gates.c,complete
+func_002EE040,0x002EE040,0x58,src/state_first_gates.c,complete
+func_0030CB20,0x0030CB20,0x58,src/state_first_gates.c,complete

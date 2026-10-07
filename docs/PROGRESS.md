@@ -166,3 +166,8 @@ Seven accepted-record flag handlers add 644 exact C bytes; together with
 the enabled one-shot batch, fifteen functions add 2,084 bytes. The flag
 handlers preserve the enabled-record test and success-only flag write.
 Credited code is 464,852 / 3,293,696 bytes (14.113385%).
+
+Six positive-animation command resets and four state-first command gates
+add 832 exact C bytes. The resets use MWCCPS2 3.0.3 with small data 8;
+the gates use 3.0-011126 with small data 0. Credited code is
+465,684 / 3,293,696 bytes (14.138645%).
