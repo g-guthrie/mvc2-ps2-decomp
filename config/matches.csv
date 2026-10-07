@@ -8153,3 +8153,9 @@ func_0027B770,0x0027B770,0x44,src/init_continue.c,complete
 func_0013FCB0,0x0013FCB0,0x2C,src/small_state_controls.c,complete
 func_00192E00,0x00192E00,0x28,src/small_state_controls.c,complete
 func_00162610,0x00162610,0x28,src/pair_table_copy.c,complete
+func_00345BD0,0x00345BD0,0xD8,src/parent_state_copy.c,complete
+func_0038E1F0,0x0038E1F0,0xD8,src/parent_state_copy.c,complete
+func_0039C3F0,0x0039C3F0,0xD8,src/parent_state_copy.c,complete
+func_003B9220,0x003B9220,0xD8,src/parent_state_copy.c,complete
+func_003BA140,0x003BA140,0xD8,src/parent_state_copy.c,complete
+func_003BD840,0x003BD840,0xD8,src/parent_state_copy.c,complete
