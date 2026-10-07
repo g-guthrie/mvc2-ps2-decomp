@@ -2088,3 +2088,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_substate_animation_entry.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/owner_substate_animation_entry.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_substate_animation_entry.o" private/SLUS_204.86.rom --source src/owner_substate_animation_entry.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/positioned_timed_effect_spawns.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/positioned_timed_effect_spawns.o"
+"$PYTHON" tools/verify_object.py "$BUILD/positioned_timed_effect_spawns.o" private/SLUS_204.86.rom --source src/positioned_timed_effect_spawns.c
