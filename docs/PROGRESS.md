@@ -209,3 +209,7 @@ Four callback-referenced initialization/continuation entries add 272 exact
 C bytes. Their four preceding nop words remain uncredited, and all original
 range bytes remain represented. Inventory is 19,885 units; credited code is
 473,252 / 3,293,696 bytes (14.368418%).
+
+A periodic visibility toggle and state-pointer dispatcher add 84 exact C
+bytes. Both match MWCCPS2 3.0.3 -O3 with small-data threshold 8.
+Credited code is 473,336 / 3,293,696 bytes (14.370968%).
