@@ -156,3 +156,13 @@ Thirty record-enabled transitions and fourteen one-shot transitions add
 -O3 -sdatathreshold 0. Each preserves its table, buffer offset, state and
 branch behavior. Credited code is 462,768 / 3,293,696 bytes
 (14.050113%); next push remains 620,157 bytes.
+
+Eight enabled-record one-shot handlers add 1,440 exact C bytes on
+MWCCPS2 3.0-011126 with -O3 -sdatathreshold 0. Credited code is now
+464,208 / 3,293,696 bytes (14.093833%); next push remains
+620,157 bytes.
+
+Seven accepted-record flag handlers add 644 exact C bytes; together with
+the enabled one-shot batch, fifteen functions add 2,084 bytes. The flag
+handlers preserve the enabled-record test and success-only flag write.
+Credited code is 464,852 / 3,293,696 bytes (14.113385%).
