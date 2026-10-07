@@ -188,3 +188,5 @@ A one-case switch preserves the retail entry control flow.
 `owner_generation_child_spawns`, `animation_first_floor_commits`, and `owner_two_parameter_spawns` use MWCC 3.0.3 `-O3 -sdatathreshold 0`. `preset_effect_followup_spawns` uses `-O3 -sdatathreshold 8`; assigning the spawn result inside the condition emits the retail return-register check and argument-register copy in its branch delay slot. All thirteen native functions and the linked image match.
 
 `countdown_position_restores` uses MWCC 3.0.3 `-O3 -sdatathreshold 8`; `owner_phase_countdown_gates` uses `-O3 -sdatathreshold 0`. Short countdown expressions preserve the retail truncation and sign-extension sequences; typed two-argument callbacks retain the owner parameter. All six native functions and the linked image match.
+
+The native replacement in `dupcluster_003ABFE0` uses MWCC 3.0.3 `-O4 -Op -sdatathreshold 0`. Computing the opponent height address through unsigned address arithmetic preserves the retail branch-delay member-pointer calculation; ordinary byte-pointer arithmetic folded it into the store offset and did not match. The complete function and linked image match.

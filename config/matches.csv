@@ -7802,7 +7802,6 @@ func_00178DA0,0x00178DA0,0x6C,src/dupcluster_00178DA0.c,placeholder
 func_0013C9A0,0x0013C9A0,0x44,src/float_motion_transitions.c,complete
 func_00316940,0x00316940,0x34,src/height_limits.c,complete
 func_001519E0,0x001519E0,0x3C,src/dupcluster_001519E0.c,complete
-func_003ABFE0,0x003ABFE0,0x3C,src/dupcluster_003ABFE0.c,placeholder
 func_001863F0,0x001863F0,0x44,src/dupcluster_001863F0.c,placeholder
 func_001822B0,0x001822B0,0x44,src/float_state_limits.c,complete
 func_001BDA10,0x001BDA10,0x44,src/float_state_limits.c,complete
@@ -8522,3 +8521,4 @@ func_00394420,0x00394420,0xB4,src/countdown_position_restores.c,complete
 func_00328D30,0x00328D30,0x94,src/owner_phase_countdown_gates.c,complete
 func_00328F80,0x00328F80,0x94,src/owner_phase_countdown_gates.c,complete
 func_003295D0,0x003295D0,0x94,src/owner_phase_countdown_gates.c,complete
+func_003ABFE0,0x003ABFE0,0x3C,src/dupcluster_003ABFE0.c,complete
