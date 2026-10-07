@@ -262,3 +262,10 @@ now use native C rather than uncredited assembly placeholders. Both match
 MWCCPS2 3.0.3 -O4 -Op small-data 0, adding 136 credited bytes and removing
 the obsolete assembly source/build entries. Current code is 476,120 /
 3,293,696 bytes (14.455493%).
+
+Four motion/fade transitions now use exact native C instead of uncredited
+assembly placeholders: velocity-zero state advance, clamped fade completion,
+and two velocity-sign-change acceleration updates. MWCCPS2 3.0.3 -O4 -Op
+small-data 0 matches all 324 bytes. Obsolete assembly sources/build entries
+are removed. Credited code is 476,444 / 3,293,696 bytes
+(14.465330%).

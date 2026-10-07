@@ -7795,12 +7795,12 @@ func_002B5D90,0x002B5D90,0x60,src/dupcluster_gate96.c,complete
 func_0023E0B0,0x0023E0B0,0x68,src/dupcluster_gate92c.c,placeholder
 func_00229040,0x00229040,0x5C,src/dupcluster_gate92.c,placeholder
 func_003CD5A0,0x003CD5A0,0x60,src/dupcluster_gate96b.c,placeholder
-func_001C4C30,0x001C4C30,0x68,src/dupcluster_gate101.c,placeholder
+func_001C4C30,0x001C4C30,0x68,src/float_motion_transitions.c,complete
 func_0013C730,0x0013C730,0x68,src/dupcluster_0013C730.c,placeholder
 func_00177CE0,0x00177CE0,0x6C,src/dupcluster_00177CE0.c,placeholder
 func_00178DA0,0x00178DA0,0x6C,src/dupcluster_00178DA0.c,placeholder
 func_00191F50,0x00191F50,0x34,src/dupcluster_00191F50.c,placeholder
-func_0013C9A0,0x0013C9A0,0x44,src/dupcluster_0013C9A0.c,placeholder
+func_0013C9A0,0x0013C9A0,0x44,src/float_motion_transitions.c,complete
 func_00316940,0x00316940,0x34,src/height_limits.c,complete
 func_001519E0,0x001519E0,0x3C,src/dupcluster_001519E0.c,complete
 func_003ABFE0,0x003ABFE0,0x3C,src/dupcluster_003ABFE0.c,placeholder
@@ -7808,8 +7808,8 @@ func_001863F0,0x001863F0,0x44,src/dupcluster_001863F0.c,placeholder
 func_001822B0,0x001822B0,0x44,src/float_state_limits.c,complete
 func_001BDA10,0x001BDA10,0x44,src/float_state_limits.c,complete
 func_00278F50,0x00278F50,0x44,src/dupcluster_00278F50.c,placeholder
-func_00298FC0,0x00298FC0,0x4C,src/dupcluster_00298FC0.c,placeholder
-func_002CEC40,0x002CEC40,0x4C,src/dupcluster_00298FC0.c,placeholder
+func_00298FC0,0x00298FC0,0x4C,src/float_motion_transitions.c,complete
+func_002CEC40,0x002CEC40,0x4C,src/float_motion_transitions.c,complete
 func_00184110,0x00184110,0x40,src/dupcluster_00184110.c,placeholder
 func_001A9650,0x001A9650,0x48,src/dupcluster_001A9650.c,placeholder
 residual_0026ECA0,0x0026ECA0,0xC,src/tail12.c,complete
