@@ -168,3 +168,5 @@ litodp, dpmul, dpdiv, dpadd, and dptoul at their cataloged retail addresses.
 A local double temporary preserves conversion before constant materialization;
 -O3 -Op compiles the degree-to-fixed-turn formula and signed modulo exactly.
 A one-case switch preserves the retail entry control flow.
+
+`mode_stance_move_setup` and `child_owner_stance_dispatch` use MWCC 3.0.3 `-O3 -sdatathreshold 8`. `live_interaction_stance_gates`, `free_slot_interaction_commits`, `selected_target_interactions`, and `live_target_selection` use MWCC 3.0 `-O3 -sdatathreshold 0`. Nested final guards preserve the selector's shared zero-return branch; each variant preserves its original byte-store order.

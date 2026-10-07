@@ -274,3 +274,7 @@ Merged upstream through 52f5c0d: all eight additional native functions
 match locally. Three typed launch-record initializers add another 624
 exact C bytes on MWCCPS2 3.0.3 -O3 -sdatathreshold 8. Combined code is
 507,660 bytes across 8,410 functions; full image and retail ELF match.
+
+Recovered three mode/stance move-setup routines (912 bytes), compiled with MWCC 3.0.3 `-O3 -sdatathreshold 8`. All three objects and the full linked image and retail ELF match exactly. Credited total: 508,572 bytes across 8,413 functions; decompilation remains active.
+
+Recovered 16 further native routines (2,328 bytes): live stance gates, free-slot interaction commits, selected-target callers and their selector, and child/owner stance dispatch. Reconstructed the 68-byte grouped symbolic callback table at 0x004C1C98. Individual objects and full image/retail ELF match. Totals: 8,429 functions, 510,900 linked C bytes, and 42,008 reconstructed data bytes. The 100% goal remains active.

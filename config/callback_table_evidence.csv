@@ -1371,3 +1371,4 @@ jtbl_004C1FC8,0x004C1FC8,0x2c,src/argument_dispatch_heads.c,jtbl_004C1FC8,"void(
 jtbl_004C2048,0x004C2048,0x8,src/composite_gp_dispatch_heads.c,jtbl_004C2048,void(u8 *)
 jtbl_004C2518,0x004C2518,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C2518,void(u8 *)
 jtbl_004C2520,0x004C2520,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C2520,void(u8 *)
+jtbl_004C1C98,0x004C1C98,0x44,src/child_owner_stance_dispatch.c,func_0036F920,void(u8 *)
