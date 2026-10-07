@@ -194,3 +194,5 @@ The native replacement in `dupcluster_003ABFE0` uses MWCC 3.0.3 `-O4 -Op -sdatat
 The native replacement in `dupcluster_001863F0` uses MWCC 3.0.3 `-O4 -Op -sdatathreshold 0`. Testing the acceleration as a float truth value rather than explicitly comparing it against zero recovers the retail float-register allocation without changing zero or unordered-value behavior. The complete native function and linked image match.
 
 `owner_animation_selector_sync` uses MWCC 3.0.3 `-O3 -sdatathreshold 0`. `global_phase_frame_hooks` and `owner_stance_state_dispatch` use `-O3 -sdatathreshold 8 -i src/data`, sharing explicit no-argument phase and two-argument owner callback contracts with their reconstructed tables. All nine native functions, the six typed tables, and the linked image match.
+
+`side_inhibit_state_dispatch` uses MWCC 3.0.3 `-O3 -sdatathreshold 8`. The byte inhibit mask is explicitly declared in its actual `.bss` section with `__attribute__((section(".bss")))`, keeping absolute address relocations while the two-entry callback arrays remain GP-relative. All three native dispatchers and the linked image match exactly.
