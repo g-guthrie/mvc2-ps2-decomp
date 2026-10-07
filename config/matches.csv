@@ -8162,3 +8162,6 @@ func_003BD840,0x003BD840,0xD8,src/parent_state_copy.c,complete
 func_00131340,0x00131340,0x50,src/counter_state_controls.c,complete
 func_001395D0,0x001395D0,0x50,src/counter_state_controls.c,complete
 func_0013B140,0x0013B140,0x60,src/menu_drift.c,complete
+func_00172D10,0x00172D10,0x20,src/signed_state_dispatch.c,complete
+func_00172D30,0x00172D30,0x10,src/signed_state_dispatch.c,complete
+func_001B3240,0x001B3240,0x2C,src/timed_flag_callback.c,complete

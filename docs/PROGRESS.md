@@ -232,3 +232,10 @@ The callback-referenced mode-exit/drift entry at 0x0013B140 adds 96
 exact C bytes. Its pointer reference at 0x004402E8 and aligned entry justify
 replacing the entire residual range without changing its extent. Credited
 code is 474,928 / 3,293,696 bytes (14.419303%).
+
+A signed-state dispatcher, its increment handler, and a timed animation-flag
+callback add 92 exact C bytes. The dispatcher range splits at the handler
+entry referenced by 0x00446B98. The timed callback is referenced by
+0x004BF8B8; its preceding padding word stays uncredited. Inventory is
+19,887 units; credited code is 475,020 / 3,293,696 bytes
+(14.422096%).
