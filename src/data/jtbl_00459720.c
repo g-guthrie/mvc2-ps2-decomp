@@ -1,12 +1,25 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_00459720[9] = {
-    (unsigned int)0x002BF040,
-    (unsigned int)0x002BF110,
-    (unsigned int)0x002BF1D0,
-    (unsigned int)0x002BF1E0,
-    (unsigned int)0x002BF320,
-    (unsigned int)0x002BF330,
-    (unsigned int)0x002BF340,
-    (unsigned int)0x002BF400,
-    (unsigned int)0x002BF410,
+/* Typed callback entries recovered from the exact dispatch callers. */
+/* Consumer: src/composite_dispatch_heads.c (jtbl_00459720). */
+#include "mvc2_state_callbacks.h"
+
+extern void func_002BF040(u8 *);
+extern void func_002BF110(u8 *);
+extern void func_002BF1D0(u8 *);
+extern void func_002BF1E0(u8 *);
+extern void func_002BF320(u8 *);
+extern void func_002BF330(u8 *);
+extern void func_002BF340(u8 *);
+extern void func_002BF400(u8 *);
+extern void func_002BF410(u8 *);
+
+const Mvc2StateCallback jtbl_00459720[9] = {
+    func_002BF040,
+    func_002BF110,
+    func_002BF1D0,
+    func_002BF1E0,
+    func_002BF320,
+    func_002BF330,
+    func_002BF340,
+    func_002BF400,
+    func_002BF410,
 };

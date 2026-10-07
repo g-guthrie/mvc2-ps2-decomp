@@ -1,1 +1,11 @@
-const unsigned int jtbl_004C0490[2] = { 0x00250110, 0x00250210 };
+/* Typed callback entries recovered from the exact dispatch callers. */
+/* Consumer: src/argument_dispatch_heads.c (jtbl_004C0490). */
+#include "mvc2_state_callbacks.h"
+
+extern void func_00250110(u8 *, void *);
+extern void func_00250210(u8 *, void *);
+
+const Mvc2OwnerStateCallback jtbl_004C0490[2] = {
+    func_00250110,
+    func_00250210,
+};

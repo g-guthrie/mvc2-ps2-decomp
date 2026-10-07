@@ -1,29 +1,55 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_0044BBD0[26] = {
-    (unsigned int)0x001AF560,
-    (unsigned int)0x001AF770,
-    (unsigned int)0x001AFC90,
-    (unsigned int)0x001AFCA0,
-    (unsigned int)0x001AF860,
-    (unsigned int)0x001AF9B0,
-    (unsigned int)0x001AFC90,
-    (unsigned int)0x001AFCA0,
-    (unsigned int)0x001AFA70,
-    (unsigned int)0x001AFBE0,
-    (unsigned int)0x001AFC90,
-    (unsigned int)0x001AFCA0,
-    (unsigned int)0x001AFD30,
-    (unsigned int)0x001B0910,
-    (unsigned int)0x001B0F10,
-    (unsigned int)0x001B0F30,
-    (unsigned int)0x001AFD50,
-    (unsigned int)0x001AFE30,
-    (unsigned int)0x001AFF40,
-    (unsigned int)0x001B0060,
-    (unsigned int)0x001B0190,
-    (unsigned int)0x001B02C0,
-    (unsigned int)0x001B03B0,
-    (unsigned int)0x001B0510,
-    (unsigned int)0x001B0690,
-    (unsigned int)0x001B07F0,
+/* Typed callback entries recovered from the exact dispatch callers. */
+/* Consumer: src/composite_dispatch_heads.c (jtbl_0044BBD0). */
+#include "mvc2_state_callbacks.h"
+
+extern void func_001AF560(u8 *);
+extern void func_001AF770(u8 *);
+extern void func_001AF860(u8 *);
+extern void func_001AF9B0(u8 *);
+extern void func_001AFA70(u8 *);
+extern void func_001AFBE0(u8 *);
+extern void func_001AFC90(u8 *);
+extern void func_001AFCA0(u8 *);
+extern void func_001AFD30(u8 *);
+extern void func_001AFD50(u8 *);
+extern void func_001AFE30(u8 *);
+extern void func_001AFF40(u8 *);
+extern void func_001B0060(u8 *);
+extern void func_001B0190(u8 *);
+extern void func_001B02C0(u8 *);
+extern void func_001B03B0(u8 *);
+extern void func_001B0510(u8 *);
+extern void func_001B0690(u8 *);
+extern void func_001B07F0(u8 *);
+extern void func_001B0910(u8 *);
+extern void func_001B0F10(u8 *);
+extern void func_001B0F30(u8 *);
+
+const Mvc2StateCallback jtbl_0044BBD0[26] = {
+    func_001AF560,
+    func_001AF770,
+    func_001AFC90,
+    func_001AFCA0,
+    func_001AF860,
+    func_001AF9B0,
+    func_001AFC90,
+    func_001AFCA0,
+    func_001AFA70,
+    func_001AFBE0,
+    func_001AFC90,
+    func_001AFCA0,
+    func_001AFD30,
+    func_001B0910,
+    func_001B0F10,
+    func_001B0F30,
+    func_001AFD50,
+    func_001AFE30,
+    func_001AFF40,
+    func_001B0060,
+    func_001B0190,
+    func_001B02C0,
+    func_001B03B0,
+    func_001B0510,
+    func_001B0690,
+    func_001B07F0,
 };

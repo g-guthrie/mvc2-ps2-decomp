@@ -1,31 +1,58 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_004744E0[28] = {
-    (unsigned int)0x003BA3B0,
-    (unsigned int)0x003BAB20,
-    (unsigned int)0x003BAF30,
-    (unsigned int)0x003BB450,
-    (unsigned int)0x003BB9F0,
-    (unsigned int)0x003BBF20,
-    (unsigned int)0x003BC2A0,
-    (unsigned int)0x003BC3A0,
-    (unsigned int)0x003BC5B0,
-    (unsigned int)0x003BC6F0,
-    (unsigned int)0x003BC820,
-    (unsigned int)0x003BCAE0,
-    (unsigned int)0x003BA3D0,
-    (unsigned int)0x003BA480,
-    (unsigned int)0x003BA9C0,
-    (unsigned int)0x003BD830,
-    (unsigned int)0x003BAB40,
-    (unsigned int)0x003BABF0,
-    (unsigned int)0x003BA9C0,
-    (unsigned int)0x003BD830,
-    (unsigned int)0x003BAF50,
-    (unsigned int)0x003BB000,
-    (unsigned int)0x003BA9C0,
-    (unsigned int)0x003BD830,
-    (unsigned int)0x003BB470,
-    (unsigned int)0x003BB530,
-    (unsigned int)0x003BB930,
-    (unsigned int)0x003BD830,
+/* Typed callback entries recovered from the exact dispatch callers. */
+/* Consumer: src/grok_w3_003a.c (jtbl_004744E0). */
+#include "mvc2_state_callbacks.h"
+
+extern void func_003BA3B0(u8 *);
+extern void func_003BA3D0(u8 *);
+extern void func_003BA480(u8 *);
+extern void func_003BA9C0(u8 *);
+extern void func_003BAB20(u8 *);
+extern void func_003BAB40(u8 *);
+extern void func_003BABF0(u8 *);
+extern void func_003BAF30(u8 *);
+extern void func_003BAF50(u8 *);
+extern void func_003BB000(u8 *);
+extern void func_003BB450(u8 *);
+extern void func_003BB470(u8 *);
+extern void func_003BB530(u8 *);
+extern void func_003BB930(u8 *);
+extern void func_003BB9F0(u8 *);
+extern void func_003BBF20(u8 *);
+extern void func_003BC2A0(u8 *);
+extern void func_003BC3A0(u8 *);
+extern void func_003BC5B0(u8 *);
+extern void func_003BC6F0(u8 *);
+extern void func_003BC820(u8 *);
+extern void func_003BCAE0(u8 *);
+extern void func_003BD830(u8 *);
+
+const Mvc2StateCallback jtbl_004744E0[28] = {
+    func_003BA3B0,
+    func_003BAB20,
+    func_003BAF30,
+    func_003BB450,
+    func_003BB9F0,
+    func_003BBF20,
+    func_003BC2A0,
+    func_003BC3A0,
+    func_003BC5B0,
+    func_003BC6F0,
+    func_003BC820,
+    func_003BCAE0,
+    func_003BA3D0,
+    func_003BA480,
+    func_003BA9C0,
+    func_003BD830,
+    func_003BAB40,
+    func_003BABF0,
+    func_003BA9C0,
+    func_003BD830,
+    func_003BAF50,
+    func_003BB000,
+    func_003BA9C0,
+    func_003BD830,
+    func_003BB470,
+    func_003BB530,
+    func_003BB930,
+    func_003BD830,
 };

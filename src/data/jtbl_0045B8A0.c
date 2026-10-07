@@ -1,6 +1,13 @@
-/* Source-safe reconstruction of initialized table. */
-const unsigned int jtbl_0045B8A0[3] = {
-    (unsigned int)0x002EF010,
-    (unsigned int)0x002EF090,
-    (unsigned int)0x002EF160,
+/* Typed callback entries recovered from the exact dispatch callers. */
+/* Consumer: src/composite_dispatch_heads.c (jtbl_0045B8A0). */
+#include "mvc2_state_callbacks.h"
+
+extern void func_002EF010(u8 *);
+extern void func_002EF090(u8 *);
+extern void func_002EF160(u8 *);
+
+const Mvc2StateCallback jtbl_0045B8A0[3] = {
+    func_002EF010,
+    func_002EF090,
+    func_002EF160,
 };

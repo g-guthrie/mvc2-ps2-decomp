@@ -244,3 +244,48 @@ Twenty-six floating-parameter effect callbacks add 832 exact C bytes with
 MWCCPS2 3.0.3 -O4 -Op -sdatathreshold 0. These flags materialize the
 retail immediate constants instead of literal-pool loads. Current credited
 code is 475,852 / 3,293,696 bytes (14.447356%).
+
+Eighteen fixed-scale effect callbacks add 1,280 exact linked C bytes. Nine
+state callbacks set a variant from the signed shared state, four dispatch
+an effect before a numbered follow-up call, and five preserve threshold or
+mode-dependent branches. All compile with MWCCPS2 3.0.3 `-O4 -Op`; state and
+follow-up units use small-data threshold 0, and choice callbacks use 8.
+The complete hybrid loaded image and reconstructed retail ELF both match
+byte-for-byte. Credited code is 477,132 / 3,293,696 bytes (14.486219%),
+across 8,191 matching linked functions. Data credit remains 4,200 bytes;
+assembly and raw data placeholders remain uncredited.
+
+A further 92 functions add 13,952 exact linked C bytes: input gates,
+animation placement, scale interpolation, relative record walking, and
+state dispatch. Credited code is 491,084 bytes across 8,283 functions
+(14.909816%). MIPS REL relocation verification now preserves implicit
+addends and paired HI16/LO16 carries; dedicated regression cases cover these.
+
+Typed scale keys and callback tables add reconstructed data. The 1,370
+additional symbolic callback tables have direct-call evidence from verified
+C callers recorded in config/callback_table_evidence.csv. Every object
+resolves to the original retail bytes, and the full loaded image and retail
+ELF match byte-for-byte. Reconstructed data totals 41,748 bytes across
+1,391 units (6.441956%); raw numeric tables remain uncredited.
+
+Thirteen animation-input, owner-filtered interaction, and relative-scale
+interpolation functions add 2,492 exact linked C bytes. All use MWCCPS2
+3.0.3 -O3 -sdatathreshold 0; the interpolation uses -Op. Full image and
+ELF verification pass. Code totals 493,576 bytes across 8,296 functions.
+
+Twelve indexed child setup/timer, grounded transition, and stance-restore
+functions add 1,476 exact linked C bytes. MWCCPS2 3.0.3 -O3 with small-data
+threshold 0 matches; grounded gates also use -Op. Full loaded image and
+retail ELF match. Code totals 495,052 bytes across 8,308 functions.
+
+Additional motion, animation event, interaction, owner-threshold, and shared
+phase handlers bring exact linked code to 505,928 bytes across 8,396
+functions (15.360495%). The common interaction return scheduling
+requires MWCCPS2 3.0-011126 for the selected reset/latch families. Three
+child scale arrays have recovered [2][8] variant/key dimensions, bringing
+reconstructed data to 41,940 bytes across 1,394 units. The complete
+loaded image and retail ELF remain byte-for-byte identical.
+
+Three wrapped degree phase callbacks add 516 exact linked C bytes, bringing
+code to 506,444 bytes across 8,399 functions. Compiler-generated software
+double helper relocations and the full retail image/ELF are verified.

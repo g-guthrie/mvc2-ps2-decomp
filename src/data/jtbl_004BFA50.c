@@ -1,11 +1,23 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_004BFA50[8] = {
-    (unsigned int)0x001CDF30,
-    (unsigned int)0x001CE030,
-    (unsigned int)0x001CE070,
-    (unsigned int)0x001CE1E0,
-    (unsigned int)0x001CE330,
-    (unsigned int)0x001CE470,
-    (unsigned int)0x001CE530,
-    (unsigned int)0x001CE790,
+/* Typed callback entries recovered from the exact dispatch callers. */
+/* Consumer: src/grok_w5_disp.c (jtbl_004BFA50). */
+#include "mvc2_state_callbacks.h"
+
+extern void func_001CDF30(u8 *);
+extern void func_001CE030(u8 *);
+extern void func_001CE070(u8 *);
+extern void func_001CE1E0(u8 *);
+extern void func_001CE330(u8 *);
+extern void func_001CE470(u8 *);
+extern void func_001CE530(u8 *);
+extern void func_001CE790(u8 *);
+
+const Mvc2StateCallback jtbl_004BFA50[8] = {
+    func_001CDF30,
+    func_001CE030,
+    func_001CE070,
+    func_001CE1E0,
+    func_001CE330,
+    func_001CE470,
+    func_001CE530,
+    func_001CE790,
 };

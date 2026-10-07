@@ -145,3 +145,26 @@ register and do not match their retail instruction encoding.
 `src/float_callbacks.c` uses MWCCPS2 3.0.3 with `-O4 -Op -sdatathreshold 0`.
 All 26 wrappers match their immediate floating constants, data addresses,
 integer arguments, and tail calls. `-O3` instead emits literal-pool loads.
+
+Eighteen effect callbacks in `effect_state_callbacks.c`,
+`effect_followup_callbacks.c`, and `effect_choice_callbacks.c` reproduce
+1,280 retail bytes with MWCCPS2 3.0.3 and `-O4 -Op`. The state and follow-up
+units use `-sdatathreshold 0`; the choice unit uses threshold 8 for the
+GP-relative threshold counter. The state callbacks copy the signed shared
+state plus 17 into an effect variant byte before dispatch. Choice callbacks
+preserve both branches, including the callback whose branches use the same
+effect object, to reproduce the retail control flow exactly.
+
+The new input gates, relative record walks, interpolation, and animation
+position families use MWCCPS2 3.0.3 -O3 -Op with small-data threshold 0.
+Other recovered motion and owner-state handlers use -O3; constant fade
+and displacement handlers use -O4 -Op. The conditional animation updates,
+accepted interaction resets, and owner-latch families require 3.0-011126
+-O3 for their return scheduling. Shared phase globals use threshold 8.
+The build script records each source's verified choice.
+
+Three wrapped degree phases establish the software double helpers fptodp,
+litodp, dpmul, dpdiv, dpadd, and dptoul at their cataloged retail addresses.
+A local double temporary preserves conversion before constant materialization;
+-O3 -Op compiles the degree-to-fixed-turn formula and signed modulo exactly.
+A one-case switch preserves the retail entry control flow.
