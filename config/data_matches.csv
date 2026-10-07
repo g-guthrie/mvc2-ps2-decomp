@@ -720,11 +720,11 @@ data_f32_one_00444C04,0x00444C04,0x10,src/data/data_f32_one_00444C04.c,complete,
 data_u32_00444C14,0x00444C14,0x30,src/data/data_u32_00444C14.c,complete,placeholder
 data_f32_one_00444C44,0x00444C44,0x14,src/data/data_f32_one_00444C44.c,complete,placeholder
 data_u32_00444C58,0x00444C58,0x8,src/data/data_u32_00444C58.c,complete,placeholder
-data_f32_one_00444C60,0x00444C60,0xC,src/data/data_f32_one_00444C60.c,complete,placeholder
+data_f32_one_00444C60,0x00444C60,0xC,src/data/data_f32_one_00444C60.c,complete,reconstructed
 data_u32_00444C6C,0x00444C6C,0xA4,src/data/data_u32_00444C6C.c,complete,placeholder
-data_f32_one_00444D10,0x00444D10,0xC,src/data/data_f32_one_00444D10.c,complete,placeholder
+data_f32_one_00444D10,0x00444D10,0xC,src/data/data_f32_one_00444D10.c,complete,reconstructed
 data_u32_00444D1C,0x00444D1C,0x4,src/data/data_u32_00444D1C.c,complete,placeholder
-data_f32_one_00444D20,0x00444D20,0xC,src/data/data_f32_one_00444D20.c,complete,placeholder
+data_f32_one_00444D20,0x00444D20,0xC,src/data/data_f32_one_00444D20.c,complete,reconstructed
 data_u32_00444D2C,0x00444D2C,0x4,src/data/data_u32_00444D2C.c,complete,placeholder
 gMvc2AxisScaleCurves_00444D30,0x00444D30,0x120,src/data/axis_scale_curves_00444D30.c,complete,reconstructed
 data_u32_00444E50,0x00444E50,0x88,src/data/data_u32_00444E50.c,complete,placeholder
@@ -5071,7 +5071,10 @@ data_u32_004BF378,0x004BF378,0x8,src/data/data_u32_004BF378.c,complete,placehold
 jtbl_004BF388,0x004BF388,0x10,src/data/jtbl_004BF388.c,complete,reconstructed
 data_u32_004BF3A0,0x004BF3A0,0x58,src/data/data_u32_004BF3A0.c,complete,placeholder
 jtbl_004BF3F8,0x004BF3F8,0x8,src/data/jtbl_004BF3F8.c,complete,reconstructed
-data_u32_004BF400,0x004BF400,0x50,src/data/data_u32_004BF400.c,complete,placeholder
+data_u32_004BF400,0x004BF400,0x38,src/data/data_u32_004BF400.c,complete,placeholder
+gMvc2EffectAngles_004BF438,0x004BF438,0x8,src/data/gMvc2EffectAngles_004BF438.c,complete,reconstructed
+gMvc2EffectAngles_004BF440,0x004BF440,0x8,src/data/gMvc2EffectAngles_004BF440.c,complete,reconstructed
+data_u32_004BF448,0x004BF448,0x8,src/data/data_u32_004BF448.c,complete,placeholder
 jtbl_004BF450,0x004BF450,0x30,src/data/jtbl_004BF450.c,complete,reconstructed
 data_u32_004BF480,0x004BF480,0x28,src/data/data_u32_004BF480.c,complete,placeholder
 jtbl_004BF4A8,0x004BF4A8,0x8,src/data/jtbl_004BF4A8.c,complete,placeholder

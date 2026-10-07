@@ -720,11 +720,11 @@ data_f32_one_00444C04,0x00444C04,0x10,.data,src/data/data_f32_one_00444C04.c,fil
 data_u32_00444C14,0x00444C14,0x30,.data,src/data/data_u32_00444C14.c,initialized_u32_table
 data_f32_one_00444C44,0x00444C44,0x14,.data,src/data/data_f32_one_00444C44.c,filled_f32_one
 data_u32_00444C58,0x00444C58,0x8,.data,src/data/data_u32_00444C58.c,initialized_u32_table
-data_f32_one_00444C60,0x00444C60,0xC,.data,src/data/data_f32_one_00444C60.c,filled_f32_one
+data_f32_one_00444C60,0x00444C60,0xC,.data,src/data/data_f32_one_00444C60.c,typed_effect_scale_vector
 data_u32_00444C6C,0x00444C6C,0xA4,.data,src/data/data_u32_00444C6C.c,initialized_u32_table
-data_f32_one_00444D10,0x00444D10,0xC,.data,src/data/data_f32_one_00444D10.c,filled_f32_one
+data_f32_one_00444D10,0x00444D10,0xC,.data,src/data/data_f32_one_00444D10.c,typed_effect_scale_vector
 data_u32_00444D1C,0x00444D1C,0x4,.data,src/data/data_u32_00444D1C.c,initialized_u32_table
-data_f32_one_00444D20,0x00444D20,0xC,.data,src/data/data_f32_one_00444D20.c,filled_f32_one
+data_f32_one_00444D20,0x00444D20,0xC,.data,src/data/data_f32_one_00444D20.c,typed_effect_scale_vector
 data_u32_00444D2C,0x00444D2C,0x4,.data,src/data/data_u32_00444D2C.c,initialized_u32_table
 gMvc2AxisScaleCurves_00444D30,0x00444D30,0x120,.data,src/data/axis_scale_curves_00444D30.c,axis_scale_keyframe_curves
 data_u32_00444E50,0x00444E50,0x88,.data,src/data/data_u32_00444E50.c,initialized_u32_table
@@ -5071,7 +5071,10 @@ data_u32_004BF378,0x004BF378,0x8,.data,src/data/data_u32_004BF378.c,initialized_
 jtbl_004BF388,0x004BF388,0x10,.rodata,src/data/jtbl_004BF388.c,typed_state_callback_table
 data_u32_004BF3A0,0x004BF3A0,0x58,.data,src/data/data_u32_004BF3A0.c,initialized_u32_table
 jtbl_004BF3F8,0x004BF3F8,0x8,.rodata,src/data/jtbl_004BF3F8.c,typed_state_callback_table
-data_u32_004BF400,0x004BF400,0x50,.data,src/data/data_u32_004BF400.c,initialized_u32_table
+data_u32_004BF400,0x004BF400,0x38,.data,src/data/data_u32_004BF400.c,initialized_u32_table
+gMvc2EffectAngles_004BF438,0x004BF438,0x8,.data,src/data/gMvc2EffectAngles_004BF438.c,typed_effect_angle_table
+gMvc2EffectAngles_004BF440,0x004BF440,0x8,.data,src/data/gMvc2EffectAngles_004BF440.c,typed_effect_angle_table
+data_u32_004BF448,0x004BF448,0x8,.data,src/data/data_u32_004BF448.c,initialized_u32_table
 jtbl_004BF450,0x004BF450,0x30,.rodata,src/data/jtbl_004BF450.c,typed_state_callback_table
 data_u32_004BF480,0x004BF480,0x28,.data,src/data/data_u32_004BF480.c,initialized_u32_table
 jtbl_004BF4A8,0x004BF4A8,0x8,.rodata,src/data/jtbl_004BF4A8.c,jump_table
