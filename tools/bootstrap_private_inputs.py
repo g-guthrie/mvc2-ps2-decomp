@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Install authenticated private inputs and export a portable matching-build environment."""
+"""Install bundled build inputs and export a portable matching-build environment."""
 import argparse
 import hashlib
 import os
@@ -11,9 +11,7 @@ import subprocess
 import tarfile
 import tempfile
 
-INPUT_REPO = "g-guthrie/mvc2-ps2-build-inputs"
-INPUT_TAG = "build-inputs-v1"
-INPUT_ASSET = "mvc2-ps2-private-inputs.tar.gz"
+INPUT_ASSET = "mvc2-ps2-build-inputs.tar.gz"
 EXPECTED_ARCHIVE_SHA256 = "585273a539688311c7c70833468527cd2ae82e5f1476c521233b3a361d611582"
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -91,17 +89,12 @@ def configure():
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--archive", type=Path, help="use an already downloaded authenticated bundle")
+    parser.add_argument("--archive", type=Path, help="use a different local copy of the pinned bundle")
     args = parser.parse_args()
     if args.archive:
         install(args.archive.resolve())
     else:
-        with tempfile.TemporaryDirectory(prefix="mvc2-download-") as directory:
-            subprocess.run(
-                ["gh", "release", "download", INPUT_TAG, "--repo", INPUT_REPO,
-                 "--pattern", INPUT_ASSET, "--dir", directory], check=True,
-            )
-            install(Path(directory) / INPUT_ASSET)
+        install(ROOT / "build-inputs" / INPUT_ASSET)
     configure()
 
 

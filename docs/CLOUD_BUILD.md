@@ -1,13 +1,13 @@
 # Cloud matching-build setup
 
-The source repository is public. Retail data and proprietary compiler binaries
-are supplied through an authenticated release in the private companion repository
-[g-guthrie/mvc2-ps2-build-inputs](https://github.com/g-guthrie/mvc2-ps2-build-inputs).
-They remain outside the source repository's Git history.
+The required build-input bundle is committed on public `main` at
+[build-inputs/mvc2-ps2-build-inputs.tar.gz](../build-inputs/mvc2-ps2-build-inputs.tar.gz).
+Clone or pull the source repo; no private companion repository or authenticated
+asset download is needed.
 
 ## Inputs supplied
 
-The pinned `build-inputs-v1` release contains:
+The checksum-pinned bundle contains:
 
 - `private/SLUS_204.86.rom`: the exact 3,941,760-byte loaded image.
 - `private/extracted/SLUS_204.86`: a deterministic reconstruction of the complete
@@ -26,16 +26,13 @@ binary on a Linux x86-64 executor.
 
 ## Linux x86-64 cloud executor
 
-Use Python 3.11.8 or later and a GitHub identity authorized to read the private
-companion repository. Cloud identities scoped only to the public source repo
-must also be granted access to the private input repo. A download authorization
-failure does not mean the inputs are absent locally.
+Use Python 3.11.8 or later.
 
 On a Debian/Ubuntu executor, install the build dependencies if absent:
 
 ```sh
 sudo apt-get update
-sudo apt-get install -y python3-venv binutils-mipsel-linux-gnu libc6-i386 gh
+sudo apt-get install -y python3-venv binutils-mipsel-linux-gnu libc6-i386
 ```
 
 From the source checkout:
@@ -49,12 +46,11 @@ python3 -m venv .venv
 make split hybrid test report PYTHON="$PYTHON"
 ```
 
-The bootstrap uses `gh release download` against the private release; it never
-requires writing a token into the source tree or exposing one in a command.
-If an authenticated bundle is already attached to the executor, import it with:
+The bootstrap reads the bundle from the checkout, verifies it, and exports
+paths for the current executor. A local copy can also be selected explicitly:
 
 ```sh
-.venv/bin/python tools/bootstrap_private_inputs.py --archive /path/to/mvc2-ps2-private-inputs.tar.gz
+.venv/bin/python tools/bootstrap_private_inputs.py --archive /path/to/mvc2-ps2-build-inputs.tar.gz
 . private/build.env
 ```
 

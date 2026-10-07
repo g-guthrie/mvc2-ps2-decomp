@@ -61,8 +61,9 @@ generated assembly, and build output remain ignored.
 
 ## Cloud executors
 
-Private build inputs are now available from an authenticated companion release.
-See [docs/CLOUD_BUILD.md](docs/CLOUD_BUILD.md) for Linux dependencies and access.
+Build inputs are included on public `main` in
+[build-inputs/mvc2-ps2-build-inputs.tar.gz](build-inputs/mvc2-ps2-build-inputs.tar.gz).
+See [docs/CLOUD_BUILD.md](docs/CLOUD_BUILD.md) for Linux dependencies.
 After creating `.venv` and installing `requirements.txt`:
 
 ```sh
@@ -71,10 +72,9 @@ After creating `.venv` and installing `requirements.txt`:
 make split hybrid test report PYTHON="$PYTHON"
 ```
 
-The bootstrap downloads and verifies the retail image and both Metrowerks
-compilers, selects a host-compatible Wibo, smoke-tests compilation, and supplies
-the required tool paths. The cloud GitHub identity needs read access to the
-private `g-guthrie/mvc2-ps2-build-inputs` repository.
+The bootstrap verifies the bundled retail image and both Metrowerks compilers,
+selects a host-compatible Wibo, smoke-tests compilation, and supplies the tool
+paths. No private repository access or GitHub authentication is required.
 
 ## Exact hybrid relink baseline
 
@@ -133,6 +133,7 @@ repository.
 
 ## Legal
 
-No disc image, executable, extracted asset, generated retail assembly, Sony SDK,
-or proprietary Metrowerks binary is distributed. This research project is not
+The repository includes owner-supplied executable and compiler build inputs
+for reproducibility. Disc images, other extracted game assets, generated retail
+assembly, and Sony SDK files are excluded. This research project is not
 affiliated with Capcom, Marvel, Sony, or their licensors.
