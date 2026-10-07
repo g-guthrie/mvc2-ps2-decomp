@@ -8503,3 +8503,16 @@ func_00247AD0,0x00247AD0,0x98,src/stance_flip_launch_effects.c,complete
 func_00247B70,0x00247B70,0x98,src/stance_flip_launch_effects.c,complete
 func_00247C10,0x00247C10,0x98,src/stance_flip_launch_effects.c,complete
 func_002FF580,0x002FF580,0x98,src/stance_flip_launch_effects.c,complete
+func_003A0530,0x003A0530,0x6C,src/owner_generation_child_spawns.c,complete
+func_003CD090,0x003CD090,0x6C,src/owner_generation_child_spawns.c,complete
+func_003CD6B0,0x003CD6B0,0x6C,src/owner_generation_child_spawns.c,complete
+func_003384F0,0x003384F0,0x7C,src/preset_effect_followup_spawns.c,complete
+func_00338BF0,0x00338BF0,0x7C,src/preset_effect_followup_spawns.c,complete
+func_00339AC0,0x00339AC0,0x7C,src/preset_effect_followup_spawns.c,complete
+func_0020F880,0x0020F880,0xAC,src/animation_first_floor_commits.c,complete
+func_002A4F50,0x002A4F50,0xAC,src/animation_first_floor_commits.c,complete
+func_002BB310,0x002BB310,0xAC,src/animation_first_floor_commits.c,complete
+func_002E7FB0,0x002E7FB0,0xAC,src/animation_first_floor_commits.c,complete
+func_00198620,0x00198620,0x6C,src/owner_two_parameter_spawns.c,complete
+func_001C9420,0x001C9420,0x6C,src/owner_two_parameter_spawns.c,complete
+func_0034BFB0,0x0034BFB0,0x6C,src/owner_two_parameter_spawns.c,complete
