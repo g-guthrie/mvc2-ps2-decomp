@@ -1375,3 +1375,9 @@ jtbl_004C1C98,0x004C1C98,0x44,src/child_owner_stance_dispatch.c,func_0036F920,vo
 jtbl_004C2058,0x004C2058,0x38,src/contact_effect_dispatch.c,func_003BA480,void(u8 *)
 jtbl_004C2058,0x004C2058,0x38,src/contact_effect_dispatch.c,func_003BABF0,void(u8 *)
 jtbl_004C2058,0x004C2058,0x38,src/contact_effect_dispatch.c,func_003BB000,void(u8 *)
+jtbl_0045E260,0x0045E260,0xC,src/global_phase_frame_hooks.c,func_0032A1B0,void(void)
+jtbl_0045E270,0x0045E270,0xC,src/global_phase_frame_hooks.c,func_0032A510,void(void)
+jtbl_0045E2C0,0x0045E2C0,0xC,src/global_phase_frame_hooks.c,func_0032BF70,void(void)
+jtbl_004C1EC4,0x004C1EC4,0x8,src/owner_stance_state_dispatch.c,func_003A5A80,"void(u8 *,u8 *)"
+jtbl_004C1FB4,0x004C1FB4,0x8,src/owner_stance_state_dispatch.c,func_003B1BF0,"void(u8 *,u8 *)"
+jtbl_004C20E0,0x004C20E0,0x8,src/owner_stance_state_dispatch.c,func_003C0C60,"void(u8 *,u8 *)"

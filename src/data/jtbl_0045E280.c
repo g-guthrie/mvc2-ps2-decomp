@@ -1,24 +1,2 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_0045E280[21] = {
-    (unsigned int)0x0032AA40,
-    (unsigned int)0x0032ACD0,
-    (unsigned int)0x0032AD90,
-    (unsigned int)0x0032ADC0,
-    (unsigned int)0x0032AF40,
-    (unsigned int)0x0032AF50,
-    (unsigned int)0x0032AF60,
-    (unsigned int)0x0032B800,
-    (unsigned int)0x0032BB70,
-    (unsigned int)0x0032BDF0,
-    (unsigned int)0x0032BEC0,
-    (unsigned int)0x0032BED0,
-    (unsigned int)0x0032AFB0,
-    (unsigned int)0x0032B000,
-    (unsigned int)0x0032B3D0,
-    (unsigned int)0x0032B690,
-    (unsigned int)0x0032BFD0,
-    (unsigned int)0x0032BFF0,
-    (unsigned int)0x0032C040,
-    (unsigned int)0x0032C090,
-    (unsigned int)0x0032C140,
-};
+/* Retained unverified pointers; no reconstructed-data credit. */
+const unsigned int jtbl_0045E280[16] = {0x0032AA40,0x0032ACD0,0x0032AD90,0x0032ADC0,0x0032AF40,0x0032AF50,0x0032AF60,0x0032B800,0x0032BB70,0x0032BDF0,0x0032BEC0,0x0032BED0,0x0032AFB0,0x0032B000,0x0032B3D0,0x0032B690};
