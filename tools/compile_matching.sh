@@ -2052,3 +2052,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/inhibit_character_state_dispatch.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/inhibit_character_state_dispatch.o"
 "$PYTHON" tools/verify_object.py "$BUILD/inhibit_character_state_dispatch.o" private/SLUS_204.86.rom --source src/inhibit_character_state_dispatch.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/linked_child_list_destroy.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/linked_child_list_destroy.o"
+"$PYTHON" tools/verify_object.py "$BUILD/linked_child_list_destroy.o" private/SLUS_204.86.rom --source src/linked_child_list_destroy.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fixed_entry_updates.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/fixed_entry_updates.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fixed_entry_updates.o" private/SLUS_204.86.rom --source src/fixed_entry_updates.c
