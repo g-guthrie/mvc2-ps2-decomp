@@ -179,3 +179,10 @@ bytes (14.152612%); next push remains 620,157 bytes.
 Four pending animation-command consumers add 288 exact C bytes on
 MWCCPS2 3.0.3 with -O3 -sdatathreshold 8. Credited code is
 466,432 / 3,293,696 bytes (14.161356%).
+
+Twelve callback-referenced animation entries add 528 exact C bytes: four
+initialization/progression callbacks and eight activation tails. Every entry
+follows an uncredited four-byte nop and is 16-byte aligned. Splitting the
+padding from their exact C bodies preserves all bytes and raises the inventory
+to 19,874 units. Credited code is 466,960 / 3,293,696 bytes
+(14.177386%).

@@ -8110,3 +8110,15 @@ func_001ECF90,0x001ECF90,0x48,src/pending_commands.c,complete
 func_00296FB0,0x00296FB0,0x48,src/pending_commands.c,complete
 func_00299010,0x00299010,0x48,src/pending_commands.c,complete
 func_002CFA20,0x002CFA20,0x48,src/pending_commands.c,complete
+func_0023BC80,0x0023BC80,0x44,src/frame_callbacks.c,complete
+func_00245A80,0x00245A80,0x44,src/frame_callbacks.c,complete
+func_003029C0,0x003029C0,0x44,src/frame_callbacks.c,complete
+func_00312640,0x00312640,0x44,src/frame_callbacks.c,complete
+func_001EAD30,0x001EAD30,0x20,src/frame_activation.c,complete
+func_001F91F0,0x001F91F0,0x20,src/frame_activation.c,complete
+func_00283150,0x00283150,0x20,src/frame_activation.c,complete
+func_00296DE0,0x00296DE0,0x20,src/frame_activation.c,complete
+func_002A2A20,0x002A2A20,0x20,src/frame_activation.c,complete
+func_002A8CC0,0x002A8CC0,0x20,src/frame_activation.c,complete
+func_002C2200,0x002C2200,0x20,src/frame_activation.c,complete
+func_002CD740,0x002CD740,0x20,src/frame_activation.c,complete
