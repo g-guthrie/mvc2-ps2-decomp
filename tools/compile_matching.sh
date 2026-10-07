@@ -1978,7 +1978,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py "$BUILD/signed_axis_mode_updates.o" private/SLUS_204.86.rom --source src/signed_axis_mode_updates.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/owner_generation_dispatch.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/owner_generation_dispatch.o"
+    src/owner_generation_dispatch.c -c -lang c -O3 -sdatathreshold 0 -i src/data -o "$BUILD/owner_generation_dispatch.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_generation_dispatch.o" private/SLUS_204.86.rom --source src/owner_generation_dispatch.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -2068,3 +2068,19 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/indexed_owner_child_spawns.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/indexed_owner_child_spawns.o"
 "$PYTHON" tools/verify_object.py "$BUILD/indexed_owner_child_spawns.o" private/SLUS_204.86.rom --source src/indexed_owner_child_spawns.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_facing_animation_gate.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/owner_facing_animation_gate.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_facing_animation_gate.o" private/SLUS_204.86.rom --source src/owner_facing_animation_gate.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_state_snapshot.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/owner_state_snapshot.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_state_snapshot.o" private/SLUS_204.86.rom --source src/owner_state_snapshot.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_generation_parameter_spawns.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/owner_generation_parameter_spawns.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_generation_parameter_spawns.o" private/SLUS_204.86.rom --source src/owner_generation_parameter_spawns.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fixed_launch_effect_initializers.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/fixed_launch_effect_initializers.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fixed_launch_effect_initializers.o" private/SLUS_204.86.rom --source src/fixed_launch_effect_initializers.c

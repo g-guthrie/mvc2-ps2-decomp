@@ -1,33 +1,6 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_00475F90[30] = {
-    (unsigned int)0x003C50E0,
-    (unsigned int)0x003C52B0,
-    (unsigned int)0x003C80A0,
-    (unsigned int)0x003C80B0,
-    (unsigned int)0x003C5370,
-    (unsigned int)0x003C5420,
-    (unsigned int)0x003C80A0,
-    (unsigned int)0x003C80B0,
-    (unsigned int)0x003C55A0,
-    (unsigned int)0x003C5840,
-    (unsigned int)0x003C80A0,
-    (unsigned int)0x003C80B0,
-    (unsigned int)0x003C5BF0,
-    (unsigned int)0x003C5DD0,
-    (unsigned int)0x003C80A0,
-    (unsigned int)0x003C80B0,
-    (unsigned int)0x003C5FF0,
-    (unsigned int)0x003C61D0,
-    (unsigned int)0x003C80A0,
-    (unsigned int)0x003C80B0,
-    (unsigned int)0x003C61F0,
-    (unsigned int)0x003C62C0,
-    (unsigned int)0x003C6340,
-    (unsigned int)0x003C63C0,
-    (unsigned int)0x003C6430,
-    (unsigned int)0x003C64C0,
-    (unsigned int)0x003C6500,
-    (unsigned int)0x003C6520,
-    (unsigned int)0x003C6540,
-    (unsigned int)0x003C6430,
-};
+#include "mvc2_owner_generation_callbacks.h"
+extern void func_003C50E0(unsigned char *,unsigned char *);
+extern void func_003C52B0(unsigned char *,unsigned char *);
+extern void func_003C80A0(unsigned char *,unsigned char *);
+extern void func_003C80B0(unsigned char *,unsigned char *);
+Mvc2OwnerGenerationCallback jtbl_00475F90[4] = {func_003C50E0,func_003C52B0,func_003C80A0,func_003C80B0};

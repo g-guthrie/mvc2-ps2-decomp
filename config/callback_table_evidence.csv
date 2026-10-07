@@ -1384,3 +1384,6 @@ jtbl_004C20E0,0x004C20E0,0x8,src/owner_stance_state_dispatch.c,func_003C0C60,"vo
 jtbl_004BF7C8,0x004BF7C8,0x8,src/side_inhibit_state_dispatch.c,func_001A84F0,"void(u8 *,u8 *)"
 jtbl_004BF7D0,0x004BF7D0,0x8,src/side_inhibit_state_dispatch.c,func_001A8670,"void(u8 *,u8 *)"
 jtbl_004BF7D8,0x004BF7D8,0x8,src/side_inhibit_state_dispatch.c,func_001A8840,"void(u8 *,u8 *)"
+jtbl_00475F60,0x00475F60,0x10,src/owner_generation_dispatch.c,func_003C4CD0,"void(u8 *,u8 *)"
+jtbl_00475F90,0x00475F90,0x10,src/owner_generation_dispatch.c,func_003C5080,"void(u8 *,u8 *)"
+jtbl_00475FA0,0x00475FA0,0x10,src/owner_generation_dispatch.c,func_003C5310,"void(u8 *,u8 *)"

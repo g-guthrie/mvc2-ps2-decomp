@@ -8570,3 +8570,12 @@ func_00193430,0x00193430,0x7C,src/indexed_owner_child_spawns.c,complete
 func_00194A20,0x00194A20,0x7C,src/indexed_owner_child_spawns.c,complete
 func_001CEA60,0x001CEA60,0x7C,src/indexed_owner_child_spawns.c,complete
 func_001E1620,0x001E1620,0x7C,src/indexed_owner_child_spawns.c,complete
+func_003C52B0,0x003C52B0,0x5C,src/owner_facing_animation_gate.c,complete
+func_003C5370,0x003C5370,0xA8,src/owner_state_snapshot.c,complete
+func_0019A3D0,0x0019A3D0,0x64,src/owner_generation_parameter_spawns.c,complete
+func_001BFCA0,0x001BFCA0,0x64,src/owner_generation_parameter_spawns.c,complete
+func_003778A0,0x003778A0,0x64,src/owner_generation_parameter_spawns.c,complete
+func_00214B00,0x00214B00,0x60,src/fixed_launch_effect_initializers.c,complete
+func_00214B60,0x00214B60,0x60,src/fixed_launch_effect_initializers.c,complete
+func_00214BC0,0x00214BC0,0x60,src/fixed_launch_effect_initializers.c,complete
+func_00214CB0,0x00214CB0,0x60,src/fixed_launch_effect_initializers.c,complete
