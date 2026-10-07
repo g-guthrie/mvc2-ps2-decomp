@@ -1,6 +1,7 @@
 /* Validate owner generation before dispatching the paired state callback. */
 typedef unsigned char u8;
-typedef void (*OwnerState)(u8 *,u8 *);
+#include "mvc2_owner_generation_callbacks.h"
+typedef Mvc2OwnerGenerationCallback OwnerState;
 extern void func_003DAA40(u8 *);
 extern OwnerState D_00475F60[4];
 void func_003C4CD0(u8 *p,u8 *owner) {
