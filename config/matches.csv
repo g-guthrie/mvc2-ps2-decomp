@@ -8482,3 +8482,9 @@ func_00158BD0,0x00158BD0,0x9C,src/preset_vector_effect_spawns.c,complete
 func_0032FE30,0x0032FE30,0x74,src/preset_position_effect_spawns.c,complete
 func_00338100,0x00338100,0x74,src/preset_position_effect_spawns.c,complete
 func_0033A420,0x0033A420,0x74,src/preset_position_effect_spawns.c,complete
+func_0032D230,0x0032D230,0x5C,src/signed_axis_mode_updates.c,complete
+func_0032D290,0x0032D290,0x5C,src/signed_axis_mode_updates.c,complete
+func_0032D2F0,0x0032D2F0,0x5C,src/signed_axis_mode_updates.c,complete
+func_003C4CD0,0x003C4CD0,0x54,src/owner_generation_dispatch.c,complete
+func_003C5080,0x003C5080,0x54,src/owner_generation_dispatch.c,complete
+func_003C5310,0x003C5310,0x54,src/owner_generation_dispatch.c,complete
