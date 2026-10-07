@@ -170,3 +170,7 @@ A local double temporary preserves conversion before constant materialization;
 A one-case switch preserves the retail entry control flow.
 
 `mode_stance_move_setup` and `child_owner_stance_dispatch` use MWCC 3.0.3 `-O3 -sdatathreshold 8`. `live_interaction_stance_gates`, `free_slot_interaction_commits`, `selected_target_interactions`, and `live_target_selection` use MWCC 3.0 `-O3 -sdatathreshold 0`. Nested final guards preserve the selector's shared zero-return branch; each variant preserves its original byte-store order.
+
+`linked_parameter_child_spawns` and `owner_angle_child_spawns` use MWCC 3.0.3 `-O3 -sdatathreshold 0`; `uniform_key_motion_steps` adds `-Op`. Use the strict greater-than frame bound to retain the retail AT-register comparison, and preserve each variant's copied byte/angle offsets.
+
+`live_interaction_phase_commits` uses MWCC 3.0 `-O3 -sdatathreshold 0`; `planar_floor_motion` uses MWCC 3.0.3 with those flags; `directional_target_gates` adds `-Op`. `contact_effect_dispatch` uses MWCC 3.0.3 `-O3 -sdatathreshold 32` to preserve GP addressing for the actual six/four/four-entry callback arrays. Nested direction/stance guards share the retail zero-return path.

@@ -731,7 +731,17 @@ data_u32_00444E50,0x00444E50,0x88,src/data/data_u32_00444E50.c,complete,placehol
 data_f32_one_00444ED8,0x00444ED8,0xC,src/data/data_f32_one_00444ED8.c,complete,placeholder
 data_u32_00444EE4,0x00444EE4,0x10C,src/data/data_u32_00444EE4.c,complete,placeholder
 jtbl_00444FF0,0x00444FF0,0x10,src/data/jtbl_00444FF0.c,complete,reconstructed
-data_u32_00445000,0x00445000,0x220,src/data/data_u32_00445000.c,complete,placeholder
+gScaleKeys_00445000,0x00445000,0x10,src/data/scale_keys_00445000.c,complete,reconstructed
+gScaleKeys_00445010,0x00445010,0x10,src/data/scale_keys_00445010.c,complete,reconstructed
+gScaleKeys_00445020,0x00445020,0x10,src/data/scale_keys_00445020.c,complete,reconstructed
+gScaleKeys_00445030,0x00445030,0x18,src/data/scale_keys_00445030.c,complete,reconstructed
+data_u32_00445048,0x00445048,0x8,src/data/data_u32_00445048.c,complete,placeholder
+gScaleKeys_00445050,0x00445050,0x10,src/data/scale_keys_00445050.c,complete,reconstructed
+gScaleKeys_00445060,0x00445060,0x18,src/data/scale_keys_00445060.c,complete,reconstructed
+data_u32_00445078,0x00445078,0x8,src/data/data_u32_00445078.c,complete,placeholder
+gScaleKeys_00445080,0x00445080,0x10,src/data/scale_keys_00445080.c,complete,reconstructed
+gScaleKeys_00445090,0x00445090,0x18,src/data/scale_keys_00445090.c,complete,reconstructed
+data_u32_004450A8,0x004450A8,0x178,src/data/data_u32_004450A8.c,complete,placeholder
 D_00445220,0x00445220,0x18,src/data/D_00445220.c,complete,placeholder
 data_u32_00445238,0x00445238,0x38,src/data/data_u32_00445238.c,complete,placeholder
 data_f32_one_00445270,0x00445270,0x18,src/data/data_f32_one_00445270.c,complete,placeholder
@@ -5558,7 +5568,7 @@ data_u32_004C2000,0x004C2000,0x10,src/data/data_u32_004C2000.c,complete,placehol
 jtbl_004C2018,0x004C2018,0x28,src/data/jtbl_004C2018.c,complete,placeholder
 data_u32_004C2040,0x004C2040,0x8,src/data/data_u32_004C2040.c,complete,placeholder
 jtbl_004C2048,0x004C2048,0x8,src/data/jtbl_004C2048.c,complete,reconstructed
-jtbl_004C2058,0x004C2058,0x38,src/data/jtbl_004C2058.c,complete,placeholder
+jtbl_004C2058,0x004C2058,0x38,src/data/jtbl_004C2058.c,complete,reconstructed
 jtbl_004C2098,0x004C2098,0x10,src/data/jtbl_004C2098.c,complete,placeholder
 jtbl_004C20B8,0x004C20B8,0x10,src/data/jtbl_004C20B8.c,complete,placeholder
 data_u32_004C20D0,0x004C20D0,0x18,src/data/data_u32_004C20D0.c,complete,placeholder

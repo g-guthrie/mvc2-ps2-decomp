@@ -1372,3 +1372,6 @@ jtbl_004C2048,0x004C2048,0x8,src/composite_gp_dispatch_heads.c,jtbl_004C2048,voi
 jtbl_004C2518,0x004C2518,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C2518,void(u8 *)
 jtbl_004C2520,0x004C2520,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C2520,void(u8 *)
 jtbl_004C1C98,0x004C1C98,0x44,src/child_owner_stance_dispatch.c,func_0036F920,void(u8 *)
+jtbl_004C2058,0x004C2058,0x38,src/contact_effect_dispatch.c,func_003BA480,void(u8 *)
+jtbl_004C2058,0x004C2058,0x38,src/contact_effect_dispatch.c,func_003BABF0,void(u8 *)
+jtbl_004C2058,0x004C2058,0x38,src/contact_effect_dispatch.c,func_003BB000,void(u8 *)
