@@ -2064,3 +2064,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/entry_group_updates.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/entry_group_updates.o"
 "$PYTHON" tools/verify_object.py "$BUILD/entry_group_updates.o" private/SLUS_204.86.rom --source src/entry_group_updates.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/indexed_owner_child_spawns.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/indexed_owner_child_spawns.o"
+"$PYTHON" tools/verify_object.py "$BUILD/indexed_owner_child_spawns.o" private/SLUS_204.86.rom --source src/indexed_owner_child_spawns.c
