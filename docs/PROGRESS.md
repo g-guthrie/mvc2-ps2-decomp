@@ -245,47 +245,32 @@ MWCCPS2 3.0.3 -O4 -Op -sdatathreshold 0. These flags materialize the
 retail immediate constants instead of literal-pool loads. Current credited
 code is 475,852 / 3,293,696 bytes (14.447356%).
 
-Eighteen fixed-scale effect callbacks add 1,280 exact linked C bytes. Nine
-state callbacks set a variant from the signed shared state, four dispatch
-an effect before a numbered follow-up call, and five preserve threshold or
-mode-dependent branches. All compile with MWCCPS2 3.0.3 `-O4 -Op`; state and
-follow-up units use small-data threshold 0, and choice callbacks use 8.
-The complete hybrid loaded image and reconstructed retail ELF both match
-byte-for-byte. Credited code is 477,132 / 3,293,696 bytes (14.486219%),
-across 8,191 matching linked functions. Data credit remains 4,200 bytes;
-assembly and raw data placeholders remain uncredited.
+The upper-height limit at 0x00316940 is now native C instead of an
+uncredited assembly placeholder. MWCCPS2 3.0.3 -O4 -Op small-data 0
+reproduces all 52 bytes, including the strict upper-limit comparison.
+Credited code is 475,904 / 3,293,696 bytes (14.448935%).
+The last published checkpoint was 475,852 bytes; the next five-point push
+is at 640,537 credited bytes (19.4474%).
 
-A further 92 functions add 13,952 exact linked C bytes: input gates,
-animation placement, scale interpolation, relative record walking, and
-state dispatch. Credited code is 491,084 bytes across 8,283 functions
-(14.909816%). MIPS REL relocation verification now preserves implicit
-addends and paired HI16/LO16 carries; dedicated regression cases cover these.
+The active fade-step handler at 0x001356A0 adds 80 exact C bytes on
+MWCCPS2 3.0.3 -O4 -Op small-data 0. It preserves the immediate decrement,
+inclusive zero comparison, field store, and release call. Credited code is
+475,984 / 3,293,696 bytes (14.451364%).
 
-Typed scale keys and callback tables add reconstructed data. The 1,370
-additional symbolic callback tables have direct-call evidence from verified
-C callers recorded in config/callback_table_evidence.csv. Every object
-resolves to the original retail bytes, and the full loaded image and retail
-ELF match byte-for-byte. Reconstructed data totals 41,748 bytes across
-1,391 units (6.441956%); raw numeric tables remain uncredited.
+Cooldown expiry at 0x001BDA10 and negative-velocity clamping at 0x001822B0
+now use native C rather than uncredited assembly placeholders. Both match
+MWCCPS2 3.0.3 -O4 -Op small-data 0, adding 136 credited bytes and removing
+the obsolete assembly source/build entries. Current code is 476,120 /
+3,293,696 bytes (14.455493%).
 
-Thirteen animation-input, owner-filtered interaction, and relative-scale
-interpolation functions add 2,492 exact linked C bytes. All use MWCCPS2
-3.0.3 -O3 -sdatathreshold 0; the interpolation uses -Op. Full image and
-ELF verification pass. Code totals 493,576 bytes across 8,296 functions.
+Four motion/fade transitions now use exact native C instead of uncredited
+assembly placeholders: velocity-zero state advance, clamped fade completion,
+and two velocity-sign-change acceleration updates. MWCCPS2 3.0.3 -O4 -Op
+small-data 0 matches all 324 bytes. Obsolete assembly sources/build entries
+are removed. Credited code is 476,444 / 3,293,696 bytes
+(14.465330%).
 
-Twelve indexed child setup/timer, grounded transition, and stance-restore
-functions add 1,476 exact linked C bytes. MWCCPS2 3.0.3 -O3 with small-data
-threshold 0 matches; grounded gates also use -Op. Full loaded image and
-retail ELF match. Code totals 495,052 bytes across 8,308 functions.
-
-Additional motion, animation event, interaction, owner-threshold, and shared
-phase handlers bring exact linked code to 505,928 bytes across 8,396
-functions (15.360495%). The common interaction return scheduling
-requires MWCCPS2 3.0-011126 for the selected reset/latch families. Three
-child scale arrays have recovered [2][8] variant/key dimensions, bringing
-reconstructed data to 41,940 bytes across 1,394 units. The complete
-loaded image and retail ELF remain byte-for-byte identical.
-
-Three wrapped degree phase callbacks add 516 exact linked C bytes, bringing
-code to 506,444 bytes across 8,399 functions. Compiler-generated software
-double helper relocations and the full retail image/ELF are verified.
+Merged upstream through 52f5c0d: all eight additional native functions
+match locally. Three typed launch-record initializers add another 624
+exact C bytes on MWCCPS2 3.0.3 -O3 -sdatathreshold 8. Combined code is
+507,660 bytes across 8,410 functions; full image and retail ELF match.
