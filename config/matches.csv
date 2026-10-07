@@ -7799,7 +7799,6 @@ func_001C4C30,0x001C4C30,0x68,src/float_motion_transitions.c,complete
 func_0013C730,0x0013C730,0x68,src/dupcluster_0013C730.c,placeholder
 func_00177CE0,0x00177CE0,0x6C,src/dupcluster_00177CE0.c,placeholder
 func_00178DA0,0x00178DA0,0x6C,src/dupcluster_00178DA0.c,placeholder
-func_00191F50,0x00191F50,0x34,src/dupcluster_00191F50.c,placeholder
 func_0013C9A0,0x0013C9A0,0x44,src/float_motion_transitions.c,complete
 func_00316940,0x00316940,0x34,src/height_limits.c,complete
 func_001519E0,0x001519E0,0x3C,src/dupcluster_001519E0.c,complete
@@ -7807,7 +7806,6 @@ func_003ABFE0,0x003ABFE0,0x3C,src/dupcluster_003ABFE0.c,placeholder
 func_001863F0,0x001863F0,0x44,src/dupcluster_001863F0.c,placeholder
 func_001822B0,0x001822B0,0x44,src/float_state_limits.c,complete
 func_001BDA10,0x001BDA10,0x44,src/float_state_limits.c,complete
-func_00278F50,0x00278F50,0x44,src/dupcluster_00278F50.c,placeholder
 func_00298FC0,0x00298FC0,0x4C,src/float_motion_transitions.c,complete
 func_002CEC40,0x002CEC40,0x4C,src/float_motion_transitions.c,complete
 func_00184110,0x00184110,0x40,src/dupcluster_00184110.c,placeholder
@@ -8464,3 +8462,12 @@ func_003152F0,0x003152F0,0x70,src/directional_target_gates.c,complete
 func_003BA480,0x003BA480,0x74,src/contact_effect_dispatch.c,complete
 func_003BABF0,0x003BABF0,0x74,src/contact_effect_dispatch.c,complete
 func_003BB000,0x003BB000,0x74,src/contact_effect_dispatch.c,complete
+func_002868E0,0x002868E0,0x9C,src/unoccupied_stance_mode_commits.c,complete
+func_00286980,0x00286980,0x9C,src/unoccupied_stance_mode_commits.c,complete
+func_0028E1A0,0x0028E1A0,0x9C,src/unoccupied_stance_mode_commits.c,complete
+func_0028E240,0x0028E240,0x9C,src/unoccupied_stance_mode_commits.c,complete
+func_001B8090,0x001B8090,0x84,src/owner_stance_animation_waits.c,complete
+func_00379190,0x00379190,0x84,src/owner_stance_animation_waits.c,complete
+func_00379220,0x00379220,0x84,src/owner_stance_animation_waits.c,complete
+func_00278F50,0x00278F50,0x44,src/dupcluster_00278F50.c,complete
+func_00191F50,0x00191F50,0x34,src/dupcluster_00191F50.c,complete

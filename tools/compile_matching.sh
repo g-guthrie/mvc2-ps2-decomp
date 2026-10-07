@@ -1653,8 +1653,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/dupcluster_00178DA0.o" private/SLUS_204.86.rom \
     --source src/dupcluster_00178DA0.c
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/dupcluster_00191F50.c -c -lang c $MATCH_FLAGS \
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/dupcluster_00191F50.c -c -lang c -O4 -Op -sdatathreshold 0 \
     -o "$BUILD/dupcluster_00191F50.o"
 "$PYTHON" tools/verify_object.py \
     "$BUILD/dupcluster_00191F50.o" private/SLUS_204.86.rom \
@@ -1678,7 +1678,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/dupcluster_001863F0.o" private/SLUS_204.86.rom \
     --source src/dupcluster_001863F0.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/dupcluster_00278F50.c -c -lang c $MATCH_FLAGS \
+    src/dupcluster_00278F50.c -c -lang c -O4 -Op -sdatathreshold 0 \
     -o "$BUILD/dupcluster_00278F50.o"
 "$PYTHON" tools/verify_object.py \
     "$BUILD/dupcluster_00278F50.o" private/SLUS_204.86.rom \
@@ -1952,3 +1952,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/contact_effect_dispatch.c -c -lang c -O3 -sdatathreshold 32 -o "$BUILD/contact_effect_dispatch.o"
 "$PYTHON" tools/verify_object.py "$BUILD/contact_effect_dispatch.o" private/SLUS_204.86.rom --source src/contact_effect_dispatch.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/unoccupied_stance_mode_commits.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/unoccupied_stance_mode_commits.o"
+"$PYTHON" tools/verify_object.py "$BUILD/unoccupied_stance_mode_commits.o" private/SLUS_204.86.rom --source src/unoccupied_stance_mode_commits.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_stance_animation_waits.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/owner_stance_animation_waits.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_stance_animation_waits.o" private/SLUS_204.86.rom --source src/owner_stance_animation_waits.c
