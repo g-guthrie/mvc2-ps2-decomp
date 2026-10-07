@@ -204,3 +204,8 @@ MWCCPS2 3.0-011126 with -O3 -sdatathreshold 0. Each reproduces the
 pending-state resolution, global flags, conditional transition, and signed
 animation result. Credited code is 472,980 / 3,293,696 bytes
 (14.360160%).
+
+Four callback-referenced initialization/continuation entries add 272 exact
+C bytes. Their four preceding nop words remain uncredited, and all original
+range bytes remain represented. Inventory is 19,885 units; credited code is
+473,252 / 3,293,696 bytes (14.368418%).

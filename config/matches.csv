@@ -8146,3 +8146,7 @@ func_0017ED50,0x0017ED50,0x130,src/shared_state_updates.c,complete
 func_0017F4B0,0x0017F4B0,0x130,src/shared_state_updates.c,complete
 func_0017F930,0x0017F930,0x130,src/shared_state_updates.c,complete
 func_0017FDE0,0x0017FDE0,0x130,src/shared_state_updates.c,complete
+func_0024A7C0,0x0024A7C0,0x44,src/init_continue.c,complete
+func_00258BB0,0x00258BB0,0x44,src/init_continue.c,complete
+func_0025E0D0,0x0025E0D0,0x44,src/init_continue.c,complete
+func_0027B770,0x0027B770,0x44,src/init_continue.c,complete
