@@ -251,3 +251,8 @@ reproduces all 52 bytes, including the strict upper-limit comparison.
 Credited code is 475,904 / 3,293,696 bytes (14.448935%).
 The last published checkpoint was 475,852 bytes; the next five-point push
 is at 640,537 credited bytes (19.4474%).
+
+The active fade-step handler at 0x001356A0 adds 80 exact C bytes on
+MWCCPS2 3.0.3 -O4 -Op small-data 0. It preserves the immediate decrement,
+inclusive zero comparison, field store, and release call. Credited code is
+475,984 / 3,293,696 bytes (14.451364%).
