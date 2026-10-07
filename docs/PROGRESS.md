@@ -256,3 +256,9 @@ The active fade-step handler at 0x001356A0 adds 80 exact C bytes on
 MWCCPS2 3.0.3 -O4 -Op small-data 0. It preserves the immediate decrement,
 inclusive zero comparison, field store, and release call. Credited code is
 475,984 / 3,293,696 bytes (14.451364%).
+
+Cooldown expiry at 0x001BDA10 and negative-velocity clamping at 0x001822B0
+now use native C rather than uncredited assembly placeholders. Both match
+MWCCPS2 3.0.3 -O4 -Op small-data 0, adding 136 credited bytes and removing
+the obsolete assembly source/build entries. Current code is 476,120 /
+3,293,696 bytes (14.455493%).
