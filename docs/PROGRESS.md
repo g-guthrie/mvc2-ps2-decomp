@@ -150,3 +150,9 @@ Ten command-predicate state transitions add 920 exact C bytes on MWCCPS2
 3.0-011126 with -O3 -sdatathreshold 0. Each preserves its predicate, state,
 mode, and counter-clear ordering. Credited code is 456,456 / 3,293,696 bytes
 (13.858474%); the next push threshold remains 620,157 bytes.
+
+Thirty record-enabled transitions and fourteen one-shot transitions add
+6,312 exact C bytes. Both units match on MWCCPS2 3.0-011126 with
+-O3 -sdatathreshold 0. Each preserves its table, buffer offset, state and
+branch behavior. Credited code is 462,768 / 3,293,696 bytes
+(14.050113%); next push remains 620,157 bytes.
