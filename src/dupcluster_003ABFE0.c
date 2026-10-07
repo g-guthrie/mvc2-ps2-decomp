@@ -1,23 +1,13 @@
+/* Clamp the linked opponent height before the owner follow-up. */
 typedef unsigned char u8;
-
 extern void func_003AC020(u8 *);
-
-void func_003ABFE0(u8 *a0) {
-    asm {
-        lw v1, 0x18(a0)
-        lui v0, 0x3F0B
-        ori v0, v0, 0x4924
-        mtc1 v0, f0
-        lw v0, 0x1DC(v1)
-        lwc1 f2, 0x38(v1)
-        lwc1 f1, 0x38(v0)
-        add.s f0, f0, f2
-        .word 0x46000836
-        nop
-        .word 0x45010002
-        addiu v1, v0, 0x38
-        .word 0xe4620000
-        .word 0x00000000
-    }
-    func_003AC020(a0);
+void func_003ABFE0(u8 *p) {
+ u8 *owner=*(u8 **)(p+0x18);
+ u8 *other=*(u8 **)(owner+0x1dc);
+ unsigned int other_height;
+ float owner_y=*(float *)(owner+0x38);
+ float other_y=*(float *)(other+0x38);
+ other_height=(unsigned int)other+0x38;
+ if (!(other_y<=0.54408478736877441406f+owner_y)) *(float *)other_height=owner_y;
+ func_003AC020(p);
 }

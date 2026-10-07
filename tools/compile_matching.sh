@@ -1666,7 +1666,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/dupcluster_001519E0.o" private/SLUS_204.86.rom \
     --source src/dupcluster_001519E0.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/dupcluster_003ABFE0.c -c -lang c $MATCH_FLAGS \
+    src/dupcluster_003ABFE0.c -c -lang c -O4 -Op -sdatathreshold 0 \
     -o "$BUILD/dupcluster_003ABFE0.o"
 "$PYTHON" tools/verify_object.py \
     "$BUILD/dupcluster_003ABFE0.o" private/SLUS_204.86.rom \
