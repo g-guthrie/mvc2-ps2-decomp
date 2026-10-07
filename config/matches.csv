@@ -8471,3 +8471,14 @@ func_00379190,0x00379190,0x84,src/owner_stance_animation_waits.c,complete
 func_00379220,0x00379220,0x84,src/owner_stance_animation_waits.c,complete
 func_00278F50,0x00278F50,0x44,src/dupcluster_00278F50.c,complete
 func_00191F50,0x00191F50,0x34,src/dupcluster_00191F50.c,complete
+func_0015D370,0x0015D370,0xA8,src/elevated_position_effect_spawns.c,complete
+func_0015D4C0,0x0015D4C0,0xA8,src/elevated_position_effect_spawns.c,complete
+func_0015D570,0x0015D570,0xA8,src/elevated_position_effect_spawns.c,complete
+func_00156D70,0x00156D70,0x9C,src/preset_vector_effect_spawns.c,complete
+func_00158470,0x00158470,0x9C,src/preset_vector_effect_spawns.c,complete
+func_00158710,0x00158710,0x9C,src/preset_vector_effect_spawns.c,complete
+func_001589A0,0x001589A0,0x9C,src/preset_vector_effect_spawns.c,complete
+func_00158BD0,0x00158BD0,0x9C,src/preset_vector_effect_spawns.c,complete
+func_0032FE30,0x0032FE30,0x74,src/preset_position_effect_spawns.c,complete
+func_00338100,0x00338100,0x74,src/preset_position_effect_spawns.c,complete
+func_0033A420,0x0033A420,0x74,src/preset_position_effect_spawns.c,complete
