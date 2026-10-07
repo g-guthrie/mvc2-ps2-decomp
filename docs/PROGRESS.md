@@ -171,3 +171,7 @@ Six positive-animation command resets and four state-first command gates
 add 832 exact C bytes. The resets use MWCCPS2 3.0.3 with small data 8;
 the gates use 3.0-011126 with small data 0. Credited code is
 465,684 / 3,293,696 bytes (14.138645%).
+
+Five parent-state dispatch routines add 460 exact C bytes on MWCCPS2
+3.0.3 with -O3 -sdatathreshold 0. Credited code is 466,144 / 3,293,696
+bytes (14.152612%); next push remains 620,157 bytes.

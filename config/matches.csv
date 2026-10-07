@@ -8101,3 +8101,8 @@ func_002264D0,0x002264D0,0x58,src/state_first_gates.c,complete
 func_002D9570,0x002D9570,0x58,src/state_first_gates.c,complete
 func_002EE040,0x002EE040,0x58,src/state_first_gates.c,complete
 func_0030CB20,0x0030CB20,0x58,src/state_first_gates.c,complete
+func_0037ECD0,0x0037ECD0,0x5C,src/parent_state_dispatch.c,complete
+func_003804B0,0x003804B0,0x5C,src/parent_state_dispatch.c,complete
+func_00389C20,0x00389C20,0x5C,src/parent_state_dispatch.c,complete
+func_0038D660,0x0038D660,0x5C,src/parent_state_dispatch.c,complete
+func_0041A170,0x0041A170,0x5C,src/parent_state_dispatch.c,complete
