@@ -176,3 +176,7 @@ A one-case switch preserves the retail entry control flow.
 `live_interaction_phase_commits` uses MWCC 3.0 `-O3 -sdatathreshold 0`; `planar_floor_motion` uses MWCC 3.0.3 with those flags; `directional_target_gates` adds `-Op`. `contact_effect_dispatch` uses MWCC 3.0.3 `-O3 -sdatathreshold 32` to preserve GP addressing for the actual six/four/four-entry callback arrays. Nested direction/stance guards share the retail zero-return path.
 
 `unoccupied_stance_mode_commits` uses MWCC 3.0 `-O3 -sdatathreshold 0`; `owner_stance_animation_waits` uses MWCC 3.0.3 with those flags. The native height clamp formerly in `dupcluster_00191F50` uses a typed partial layout with MWCC 3.0 `-O4 -Op -sdatathreshold 0`; the native fade increment formerly in `dupcluster_00278F50` uses MWCC 3.0.3 with those flags. Both replace assembly placeholders and are now credited only after exact linked-image verification.
+
+`elevated_position_effect_spawns` uses MWCC 3.0.3 `-O3 -Op -sdatathreshold 8`. A typed three-float position copy recovers the retail load/store sequence; `-Op` materializes the height constant directly. All three complete native functions and the linked retail image match.
+
+`preset_vector_effect_spawns` and `preset_position_effect_spawns` use MWCC 3.0.3 `-O3 -sdatathreshold 8`. Typed three-float aggregate copies reproduce the retail grouped loads and stores without guessed register constraints. All eight native functions and the linked image match.
