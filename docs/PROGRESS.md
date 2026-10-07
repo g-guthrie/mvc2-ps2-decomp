@@ -213,3 +213,8 @@ range bytes remain represented. Inventory is 19,885 units; credited code is
 A periodic visibility toggle and state-pointer dispatcher add 84 exact C
 bytes. Both match MWCCPS2 3.0.3 -O3 with small-data threshold 8.
 Credited code is 473,336 / 3,293,696 bytes (14.370968%).
+
+The signed-index pair-table copy adds 40 exact C bytes on MWCCPS2
+3.0.3 with -O3 -sdatathreshold 0. Its table-pointer declaration and explicit
+Y-before-X loads reproduce retail registers and floating load/store order.
+Credited code is 473,376 / 3,293,696 bytes (14.372182%).
