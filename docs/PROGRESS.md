@@ -186,3 +186,9 @@ follows an uncredited four-byte nop and is 16-byte aligned. Splitting the
 padding from their exact C bodies preserves all bytes and raises the inventory
 to 19,874 units. Credited code is 466,960 / 3,293,696 bytes
 (14.177386%).
+
+Five airborne handlers with post-animation command setup and seven
+rotation initializers add 2,924 exact C bytes. The initializers have aligned
+callback-table entries following uncredited four-byte padding; every original
+range remains fully represented. Inventory is 19,881 units and credited code
+is 469,884 / 3,293,696 bytes (14.266162%).

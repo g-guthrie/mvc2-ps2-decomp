@@ -8122,3 +8122,15 @@ func_002A2A20,0x002A2A20,0x20,src/frame_activation.c,complete
 func_002A8CC0,0x002A8CC0,0x20,src/frame_activation.c,complete
 func_002C2200,0x002C2200,0x20,src/frame_activation.c,complete
 func_002CD740,0x002CD740,0x20,src/frame_activation.c,complete
+func_00209BF0,0x00209BF0,0x120,src/air_late_setup.c,complete
+func_00282C20,0x00282C20,0x120,src/air_late_setup.c,complete
+func_002A2330,0x002A2330,0x120,src/air_late_setup.c,complete
+func_002A8740,0x002A8740,0x120,src/air_late_setup.c,complete
+func_002B3DA0,0x002B3DA0,0x120,src/air_late_setup.c,complete
+func_003381A0,0x003381A0,0xD4,src/angle_initializers.c,complete
+func_00338590,0x00338590,0xD4,src/angle_initializers.c,complete
+func_00338A50,0x00338A50,0xD4,src/angle_initializers.c,complete
+func_00338C90,0x00338C90,0xD4,src/angle_initializers.c,complete
+func_00339150,0x00339150,0xD4,src/angle_initializers.c,complete
+func_00339920,0x00339920,0xD4,src/angle_initializers.c,complete
+func_00339B60,0x00339B60,0xD4,src/angle_initializers.c,complete
