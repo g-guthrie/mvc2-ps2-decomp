@@ -141,3 +141,7 @@ transition handlers, thirteen priority dispatchers, and nine dependent-object
 creation handlers. Their compiled instructions, relocations, and complete
 hybrid placement match retail. Credited code is 455,472 / 3,293,696 bytes
 (13.828599%). Work is paused after the user-requested GitHub checkpoint.
+
+Resumed checkpoint: system selector `func_0010C480` adds 64 exact C bytes.
+Credited code is 455,536 / 3,293,696 bytes (13.830542%). The last published
+checkpoint was 455,472 bytes; the next five-point push is at 620,157 bytes.

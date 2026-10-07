@@ -8021,3 +8021,4 @@ func_0015C9D0,0x0015C9D0,0x84,src/dependent_spawns.c,complete
 func_0015CAF0,0x0015CAF0,0x84,src/dependent_spawns.c,complete
 func_0015CC10,0x0015CC10,0x84,src/dependent_spawns.c,complete
 func_0015CD30,0x0015CD30,0x84,src/dependent_spawns.c,complete
+func_0010C480,0x0010C480,0x40,src/system_select.c,complete

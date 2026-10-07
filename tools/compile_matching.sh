@@ -1820,3 +1820,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/dependent_spawns.o" private/SLUS_204.86.rom \
     --source src/dependent_spawns.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/system_select.c -c -lang c $MATCH_FLAGS -o "$BUILD/system_select.o"
+"$PYTHON" tools/verify_object.py "$BUILD/system_select.o" private/SLUS_204.86.rom --source src/system_select.c
