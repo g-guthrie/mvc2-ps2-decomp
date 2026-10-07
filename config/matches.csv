@@ -8563,3 +8563,6 @@ func_003420F0,0x003420F0,0x40,src/fixed_entry_updates.c,complete
 func_00344700,0x00344700,0x40,src/fixed_entry_updates.c,complete
 func_00345080,0x00345080,0x40,src/fixed_entry_updates.c,complete
 func_00345380,0x00345380,0x40,src/fixed_entry_updates.c,complete
+func_00154120,0x00154120,0x64,src/entry_group_updates.c,complete
+func_00154390,0x00154390,0x64,src/entry_group_updates.c,complete
+func_001599F0,0x001599F0,0x4C,src/entry_group_updates.c,complete
