@@ -27,10 +27,10 @@ compiler as `MW MIPS C Compiler (2.4.1.01)` / `PlayStation2`.
 | BSS | `0x004c2580..0x00634380` (`0x171e00` bytes) |
 | Global pointer | `0x004c7270` |
 
-The project has **8,147 exact matching and linked source functions (475,020 bytes)**
+The project has **8,173 exact matching and linked source functions (475,852 bytes)**
 and **4,200 bytes of reconstructed initialized data**.
 All are physically placed by the hybrid linker and covered by the exact
-full-image hash. This is 14.422% of the conservative text span; the data
+full-image hash. This is 14.447% of the conservative text span; the data
 checkpoint is 0.648% of initialized data and exceeds
 decomp.dev's 0.5% public-visibility threshold. Assembly placeholders never
 count as decompiled source. The initial inventory
@@ -58,6 +58,23 @@ make split
 
 `bchunk` and `7z` must be installed for `make setup`. All extracted game data,
 generated assembly, and build output remain ignored.
+
+## Cloud executors
+
+Private build inputs are now available from an authenticated companion release.
+See [docs/CLOUD_BUILD.md](docs/CLOUD_BUILD.md) for Linux dependencies and access.
+After creating `.venv` and installing `requirements.txt`:
+
+```sh
+.venv/bin/python tools/bootstrap_private_inputs.py
+. private/build.env
+make split hybrid test report PYTHON="$PYTHON"
+```
+
+The bootstrap downloads and verifies the retail image and both Metrowerks
+compilers, selects a host-compatible Wibo, smoke-tests compilation, and supplies
+the required tool paths. The cloud GitHub identity needs read access to the
+private `g-guthrie/mvc2-ps2-build-inputs` repository.
 
 ## Exact hybrid relink baseline
 

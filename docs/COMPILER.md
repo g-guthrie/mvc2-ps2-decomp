@@ -139,3 +139,9 @@ scheduling while retaining all other exact matches in the unit.
 The two additional scale handlers use strict `index > last_frame` checks.
 Equivalent `index >= frame_count` checks use a different comparison scratch
 register and do not match their retail instruction encoding.
+
+## Floating callback constants
+
+`src/float_callbacks.c` uses MWCCPS2 3.0.3 with `-O4 -Op -sdatathreshold 0`.
+All 26 wrappers match their immediate floating constants, data addresses,
+integer arguments, and tail calls. `-O3` instead emits literal-pool loads.

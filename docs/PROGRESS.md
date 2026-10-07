@@ -239,3 +239,8 @@ entry referenced by 0x00446B98. The timed callback is referenced by
 0x004BF8B8; its preceding padding word stays uncredited. Inventory is
 19,887 units; credited code is 475,020 / 3,293,696 bytes
 (14.422096%).
+
+Twenty-six floating-parameter effect callbacks add 832 exact C bytes with
+MWCCPS2 3.0.3 -O4 -Op -sdatathreshold 0. These flags materialize the
+retail immediate constants instead of literal-pool loads. Current credited
+code is 475,852 / 3,293,696 bytes (14.447356%).
