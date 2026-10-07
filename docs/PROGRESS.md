@@ -227,3 +227,8 @@ Credited code is 474,672 / 3,293,696 bytes (14.411530%).
 A clamped global counter and table-driven state-completion routine add
 160 exact C bytes on MWCCPS2 3.0.3 with -O3 -sdatathreshold 0.
 Credited code is 474,832 / 3,293,696 bytes (14.416388%).
+
+The callback-referenced mode-exit/drift entry at 0x0013B140 adds 96
+exact C bytes. Its pointer reference at 0x004402E8 and aligned entry justify
+replacing the entire residual range without changing its extent. Credited
+code is 474,928 / 3,293,696 bytes (14.419303%).
