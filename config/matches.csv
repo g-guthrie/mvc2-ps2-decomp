@@ -8191,3 +8191,4 @@ func_00421E30,0x00421E30,0x20,src/float_callbacks.c,complete
 func_00421E50,0x00421E50,0x20,src/float_callbacks.c,complete
 func_00421EF0,0x00421EF0,0x20,src/float_callbacks.c,complete
 func_00421F10,0x00421F10,0x20,src/float_callbacks.c,complete
+func_001356A0,0x001356A0,0x50,src/fade_step.c,complete
