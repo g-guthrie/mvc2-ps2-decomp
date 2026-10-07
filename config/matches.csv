@@ -8022,3 +8022,13 @@ func_0015CAF0,0x0015CAF0,0x84,src/dependent_spawns.c,complete
 func_0015CC10,0x0015CC10,0x84,src/dependent_spawns.c,complete
 func_0015CD30,0x0015CD30,0x84,src/dependent_spawns.c,complete
 func_0010C480,0x0010C480,0x40,src/system_select.c,complete
+func_001EE500,0x001EE500,0x5C,src/command_gates.c,complete
+func_001FC680,0x001FC680,0x5C,src/command_gates.c,complete
+func_0022CE20,0x0022CE20,0x5C,src/command_gates.c,complete
+func_00233910,0x00233910,0x5C,src/command_gates.c,complete
+func_0023F3B0,0x0023F3B0,0x5C,src/command_gates.c,complete
+func_002AB9F0,0x002AB9F0,0x5C,src/command_gates.c,complete
+func_002D6440,0x002D6440,0x5C,src/command_gates.c,complete
+func_002E1370,0x002E1370,0x5C,src/command_gates.c,complete
+func_00305270,0x00305270,0x5C,src/command_gates.c,complete
+func_00317330,0x00317330,0x5C,src/command_gates.c,complete

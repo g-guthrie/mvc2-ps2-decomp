@@ -145,3 +145,8 @@ hybrid placement match retail. Credited code is 455,472 / 3,293,696 bytes
 Resumed checkpoint: system selector `func_0010C480` adds 64 exact C bytes.
 Credited code is 455,536 / 3,293,696 bytes (13.830542%). The last published
 checkpoint was 455,472 bytes; the next five-point push is at 620,157 bytes.
+
+Ten command-predicate state transitions add 920 exact C bytes on MWCCPS2
+3.0-011126 with -O3 -sdatathreshold 0. Each preserves its predicate, state,
+mode, and counter-clear ordering. Credited code is 456,456 / 3,293,696 bytes
+(13.858474%); the next push threshold remains 620,157 bytes.
