@@ -8522,3 +8522,12 @@ func_00328F80,0x00328F80,0x94,src/owner_phase_countdown_gates.c,complete
 func_003295D0,0x003295D0,0x94,src/owner_phase_countdown_gates.c,complete
 func_003ABFE0,0x003ABFE0,0x3C,src/dupcluster_003ABFE0.c,complete
 func_001863F0,0x001863F0,0x44,src/dupcluster_001863F0.c,complete
+func_00192B50,0x00192B50,0x78,src/owner_animation_selector_sync.c,complete
+func_001C8620,0x001C8620,0x78,src/owner_animation_selector_sync.c,complete
+func_001CF850,0x001CF850,0x78,src/owner_animation_selector_sync.c,complete
+func_0032A1B0,0x0032A1B0,0x5C,src/global_phase_frame_hooks.c,complete
+func_0032A510,0x0032A510,0x5C,src/global_phase_frame_hooks.c,complete
+func_0032BF70,0x0032BF70,0x5C,src/global_phase_frame_hooks.c,complete
+func_003A5A80,0x003A5A80,0x54,src/owner_stance_state_dispatch.c,complete
+func_003B1BF0,0x003B1BF0,0x54,src/owner_stance_state_dispatch.c,complete
+func_003C0C60,0x003C0C60,0x54,src/owner_stance_state_dispatch.c,complete

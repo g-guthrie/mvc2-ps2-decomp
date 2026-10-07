@@ -55,13 +55,13 @@ class DataIntegrationTest(unittest.TestCase):
         )
         report = build_report([], {}, matches)
         # Physically linked raw data remains uncredited by the progress policy.
-        self.assertEqual(report["measures"]["matched_data"], "42268")
-        self.assertEqual(report["measures"]["complete_data"], "42268")
+        self.assertEqual(report["measures"]["matched_data"], "42328")
+        self.assertEqual(report["measures"]["complete_data"], "42328")
         self.assertEqual(report["measures"]["total_data"], str(DATA_SIZE))
-        self.assertGreater(sum(match["size"] for match in matches.values()), 42268)
+        self.assertGreater(sum(match["size"] for match in matches.values()), 42328)
         self.assertEqual(
             sum(int(unit["measures"].get("complete_data", 0)) for unit in report["units"]),
-            42268,
+            42328,
         )
 
 
