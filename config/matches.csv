@@ -8516,3 +8516,9 @@ func_002E7FB0,0x002E7FB0,0xAC,src/animation_first_floor_commits.c,complete
 func_00198620,0x00198620,0x6C,src/owner_two_parameter_spawns.c,complete
 func_001C9420,0x001C9420,0x6C,src/owner_two_parameter_spawns.c,complete
 func_0034BFB0,0x0034BFB0,0x6C,src/owner_two_parameter_spawns.c,complete
+func_00393740,0x00393740,0xB4,src/countdown_position_restores.c,complete
+func_00393DA0,0x00393DA0,0xB4,src/countdown_position_restores.c,complete
+func_00394420,0x00394420,0xB4,src/countdown_position_restores.c,complete
+func_00328D30,0x00328D30,0x94,src/owner_phase_countdown_gates.c,complete
+func_00328F80,0x00328F80,0x94,src/owner_phase_countdown_gates.c,complete
+func_003295D0,0x003295D0,0x94,src/owner_phase_countdown_gates.c,complete
