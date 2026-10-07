@@ -216,3 +216,5 @@ The side-inhibit callback tables share `mvc2_side_inhibit_callbacks.h` with `sid
 Owner-generation callback tables share `mvc2_owner_generation_callbacks.h` with `owner_generation_dispatch`, which now adds `-i src/data`. Their four-entry two-argument contracts are supported by the exact native dispatchers and owner-consuming callback bodies. All data relocations, consumers, and linked bytes match.
 
 `owner_substate_animation_entry` uses MWCC 3.0.3 `-O3 -sdatathreshold 0`. Keeping the owner and embedded substate pointers explicit reproduces the retail callee-saved registers and the substate-address calculation in the animation call's delay slot. All four native routines and the linked image match.
+
+`positioned_timed_effect_spawns` uses MWCC 3.0.3 `-O3 -sdatathreshold 8`. The context pointer receives its retail GP-relative relocation; typed three-float position copies reproduce the grouped FPU loads/stores. All three native routines and the linked image match.

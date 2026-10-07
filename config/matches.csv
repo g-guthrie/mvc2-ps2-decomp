@@ -8583,3 +8583,6 @@ func_0038DDA0,0x0038DDA0,0x64,src/owner_substate_animation_entry.c,complete
 func_0038E0B0,0x0038E0B0,0x64,src/owner_substate_animation_entry.c,complete
 func_0039BF30,0x0039BF30,0x64,src/owner_substate_animation_entry.c,complete
 func_0039C2B0,0x0039C2B0,0x64,src/owner_substate_animation_entry.c,complete
+func_00163310,0x00163310,0x94,src/positioned_timed_effect_spawns.c,complete
+func_00163480,0x00163480,0x94,src/positioned_timed_effect_spawns.c,complete
+func_001635F0,0x001635F0,0x94,src/positioned_timed_effect_spawns.c,complete
