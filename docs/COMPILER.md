@@ -180,3 +180,5 @@ A one-case switch preserves the retail entry control flow.
 `elevated_position_effect_spawns` uses MWCC 3.0.3 `-O3 -Op -sdatathreshold 8`. A typed three-float position copy recovers the retail load/store sequence; `-Op` materializes the height constant directly. All three complete native functions and the linked retail image match.
 
 `preset_vector_effect_spawns` and `preset_position_effect_spawns` use MWCC 3.0.3 `-O3 -sdatathreshold 8`. Typed three-float aggregate copies reproduce the retail grouped loads and stores without guessed register constraints. All eight native functions and the linked image match.
+
+`signed_axis_mode_updates` and `owner_generation_dispatch` use MWCC 3.0.3 `-O3 -sdatathreshold 0`. Two explicit switch cases recover the retail axis-mode comparisons; typed two-argument callbacks preserve the owner argument during generation checks. All six native functions and the linked image match.
