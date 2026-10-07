@@ -192,3 +192,9 @@ rotation initializers add 2,924 exact C bytes. The initializers have aligned
 callback-table entries following uncredited four-byte padding; every original
 range remains fully represented. Inventory is 19,881 units and credited code
 is 469,884 / 3,293,696 bytes (14.266162%).
+
+Six parent-animation layer-following handlers add 1,272 exact C bytes.
+Each uses its own eight-byte callback pair from the existing placeholder
+table catalog, enabling the retail GP-relative address. The layer sum is
+clamped to 0..7 after dispatch. Credited code is 471,156 / 3,293,696 bytes
+(14.304781%); no data credit is added.

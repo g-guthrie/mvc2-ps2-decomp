@@ -8134,3 +8134,9 @@ func_00338C90,0x00338C90,0xD4,src/angle_initializers.c,complete
 func_00339150,0x00339150,0xD4,src/angle_initializers.c,complete
 func_00339920,0x00339920,0xD4,src/angle_initializers.c,complete
 func_00339B60,0x00339B60,0xD4,src/angle_initializers.c,complete
+func_003C1BD0,0x003C1BD0,0xD4,src/follow_layers.c,complete
+func_003C2260,0x003C2260,0xD4,src/follow_layers.c,complete
+func_003C26D0,0x003C26D0,0xD4,src/follow_layers.c,complete
+func_003C2A70,0x003C2A70,0xD4,src/follow_layers.c,complete
+func_003C2E30,0x003C2E30,0xD4,src/follow_layers.c,complete
+func_003C35B0,0x003C35B0,0xD4,src/follow_layers.c,complete
