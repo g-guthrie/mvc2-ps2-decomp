@@ -8566,3 +8566,7 @@ func_00345380,0x00345380,0x40,src/fixed_entry_updates.c,complete
 func_00154120,0x00154120,0x64,src/entry_group_updates.c,complete
 func_00154390,0x00154390,0x64,src/entry_group_updates.c,complete
 func_001599F0,0x001599F0,0x4C,src/entry_group_updates.c,complete
+func_00193430,0x00193430,0x7C,src/indexed_owner_child_spawns.c,complete
+func_00194A20,0x00194A20,0x7C,src/indexed_owner_child_spawns.c,complete
+func_001CEA60,0x001CEA60,0x7C,src/indexed_owner_child_spawns.c,complete
+func_001E1620,0x001E1620,0x7C,src/indexed_owner_child_spawns.c,complete
