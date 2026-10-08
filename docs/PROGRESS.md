@@ -1308,3 +1308,31 @@ bytes (17.1901%); reconstructed data is 70,369 bytes
 (10.8583%) across 2,283 units. GitHub main remains b1b061f9 at
 529,332 code bytes, so the next scheduled code push remains21.0711%.
 Full source decompilation remains incomplete.
+
+
+### SDK seek helpers, record actions, and symbolic data ownership
+
+Recovered the native 96-byte reentrant seek helper and 100-byte file callback
+with consistent wide offset/result contracts and the signed 32-bit position cache.
+EE GCC 2.96 plus SNAS verifies both whole units. They use separate source files
+so calls retain named relocations under the existing verifier convention.
+Added two record-action handlers, six motion/floor handlers, and two isolated
+recovery handlers totaling 1,640 bytes; all affected units verify exactly.
+
+Corrected the alarm callback contracts against the SDK and native helper:
+GetThreadId takes no argument, alarm common data is opaque, and the wakeup
+helper receives its signed thread ID. Both existing whole units remain exact.
+
+Reconstructed 36 bytes of buffer/resource state and symbolic pointers. The
+source-owned target at 0x4C2428 now uses a real relocation. The 0x70000000
+memcpy destination is the scratchpad pointer, while the unclassified queue
+word at 0x4C2440 stays placeholder. The symbol generator now recognizes data
+owners without dropping suffixed legacy labels; its regression passes.
+
+All 34 project tests pass. Every changed data object was compiled and privately
+verified; the hybrid image and packed executable match retail. Code is 568,024
+bytes (17.2458%); reconstructed data is 70,405 bytes
+(10.8639%) across 2,292 units. Full source decompilation remains incomplete.
+
+SDK references: [kernel contracts and ExitHandler](https://github.com/ps2dev/ps2sdk/blob/master/ee/kernel/include/kernel.h),
+[scratchpad packet buffer](https://github.com/ps2dev/ps2sdk/blob/master/ee/packet/src/packet.c).

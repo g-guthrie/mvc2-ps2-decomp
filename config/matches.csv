@@ -8936,8 +8936,8 @@ func_002FE790,0x002FE790,0x118,src/grok_w7_phys2.c,complete
 func_00239400,0x00239400,0xEC,src/grok_w7_phys2.c,complete
 func_00242C60,0x00242C60,0xEC,src/grok_w7_phys2.c,complete
 func_00420310,0x00420310,0x2C,src/initialize_mode5_subsystem_00420310.c,complete
-func_0011C9B8,0x0011C9B8,0x60,src/sdk_reentrant_seek_0011C9B8.c,matching
-func_0011FAB0,0x0011FAB0,0x64,src/sdk_file_seek_0011FAB0.c,matching
+func_0011C9B8,0x0011C9B8,0x60,src/sdk_reentrant_seek_0011C9B8.c,complete
+func_0011FAB0,0x0011FAB0,0x64,src/sdk_file_seek_0011FAB0.c,complete
 func_0028D810,0x0028D810,0xA0,src/grok_w7_record_actions.c,complete
 func_00294B20,0x00294B20,0xA0,src/grok_w7_record_actions.c,complete
 func_002EAF20,0x002EAF20,0x84,src/grok_w7_phys2.c,complete
