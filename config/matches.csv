@@ -8589,3 +8589,6 @@ func_001635F0,0x001635F0,0x94,src/positioned_timed_effect_spawns.c,complete
 func_00157BF0,0x00157BF0,0x98,src/positioned_unit_scale_spawns.c,complete
 func_00157E60,0x00157E60,0x98,src/positioned_unit_scale_spawns.c,complete
 func_001580D0,0x001580D0,0x98,src/positioned_unit_scale_spawns.c,complete
+func_001537B0,0x001537B0,0x14,src/luna_a_small_wrappers.c,complete
+func_00169BC0,0x00169BC0,0x14,src/luna_a_small_wrappers.c,complete
+func_0016F4B0,0x0016F4B0,0x14,src/luna_a_small_wrappers.c,complete
