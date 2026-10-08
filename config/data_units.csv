@@ -7026,7 +7026,7 @@ data_zero_004C24FC,0x004C24FC,0x4,.data,src/data/data_zero_004C24FC.c,zero_initi
 data_raw_004C2500,0x004C2500,0x4,.data,src/data/data_raw_004C2500.c,initialized_byte_array
 data_u32_004C2504,0x004C2504,0x4,.data,src/data/data_u32_004C2504.c,uint32_scalar
 data_u32_004C2508,0x004C2508,0x4,.data,src/data/data_u32_004C2508.c,uint32_scalar
-data_u32_004C250C,0x004C250C,0x4,.data,src/data/data_u32_004C250C.c,uint32_scalar
+data_ptr_004C250C,0x004C250C,0x4,.data,src/data/data_ptr_004C250C.c,pointer_scalar
 jtbl_004C2518,0x004C2518,0x08,.rodata,src/data/jtbl_004C2518.c,typed_state_callback_table
 jtbl_004C2520,0x004C2520,0x08,.rodata,src/data/jtbl_004C2520.c,typed_state_callback_table
 data_u32_004C2530,0x004C2530,0x8,.data,src/data/data_u32_004C2530.c,initialized_u32_table
