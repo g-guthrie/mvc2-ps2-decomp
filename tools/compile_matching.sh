@@ -2237,3 +2237,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$SNCC1" "$BUILD/indexed_runtime_accessors.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/indexed_runtime_accessors.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/indexed_runtime_accessors.o" "$BUILD/indexed_runtime_accessors.s"
 "$PYTHON" tools/verify_object.py "$BUILD/indexed_runtime_accessors.o" private/SLUS_204.86.rom --source src/indexed_runtime_accessors.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/luna_a_record_adjustment.c -c -lang c -O4 -Op -sdatathreshold 0 \
+    -o "$BUILD/luna_a_record_adjustment.o"
+"$PYTHON" tools/verify_object.py "$BUILD/luna_a_record_adjustment.o" private/SLUS_204.86.rom --source src/luna_a_record_adjustment.c

@@ -8619,3 +8619,4 @@ func_00404CA8,0x00404CA8,0x10,src/indexed_runtime_accessors.c,matching
 func_004052F8,0x004052F8,0x10,src/indexed_runtime_accessors.c,matching
 func_00405308,0x00405308,0x10,src/indexed_runtime_accessors.c,matching
 func_0040EE98,0x0040EE98,0x10,src/indexed_runtime_accessors.c,matching
+func_0019EDD0,0x0019EDD0,0x30,src/luna_a_record_adjustment.c,complete
