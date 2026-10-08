@@ -86,6 +86,7 @@ void func_002FE370(u8 *p)
     }
     if (p[525] == 2) {
         func_00175700(p);
+        /* Retail c.lt.s(floor, position) skips the clamp only on ordered less-than. */
         if (*(f32 *)(p + 1072) < *(f32 *)(p + 56)) goto floor_done;
         *vz = 0.0f;
         *az = 0.0f;
@@ -114,6 +115,7 @@ void func_002FE790(u8 *p)
     }
     if (p[525] == 2) {
         func_00175700(p);
+        /* Retail c.lt.s(floor, position) skips the clamp only on ordered less-than. */
         if (*(f32 *)(p + 1072) < *(f32 *)(p + 56)) goto floor_done;
         *vz = 0.0f;
         *az = 0.0f;
@@ -123,5 +125,60 @@ void func_002FE790(u8 *p)
     floor_done: ;
     } else if ((s8)func_00175700(p) < 0) {
         func_001843A0(p);
+    }
+}
+
+extern void func_00184540(u8 *);
+extern void func_001865B0(u8 *);
+
+void func_00239400(u8 *p)
+{
+    f32 *vx = (f32 *)(p + 92);
+    f32 *vz = (f32 *)(p + 96);
+    f32 *ax = (f32 *)(p + 104);
+    f32 *az = (f32 *)(p + 108);
+    *(f32 *)(p + 52) += *(f32 *)(p + 92);
+    *(f32 *)(p + 92) += *(f32 *)(p + 104);
+    *(f32 *)(p + 56) += *(f32 *)(p + 96);
+    *(f32 *)(p + 96) += *(f32 *)(p + 108);
+    if ((s8)func_00175700(p) < 0) {
+        func_00184540(p);
+        return;
+    }
+    /* Retail c.lt.s(position, floor) skips the reset when unordered. */
+    if (*(f32 *)(p + 56) < *(f32 *)(p + 1072)) {
+        *(f32 *)(p + 56) = *(f32 *)(p + 1072);
+        p[525] = 0;
+        *vx = 0.0f;
+        *vz = 0.0f;
+        *ax = 0.0f;
+        *az = 0.0f;
+        func_001865B0(p);
+    }
+}
+
+void func_00242C60(u8 *p)
+{
+    f32 *vx = (f32 *)(p + 92);
+    f32 *vz = (f32 *)(p + 96);
+    f32 *ax = (f32 *)(p + 104);
+    f32 *az = (f32 *)(p + 108);
+    *(f32 *)(p + 52) += *(f32 *)(p + 92);
+    *(f32 *)(p + 92) += *(f32 *)(p + 104);
+    *(f32 *)(p + 56) += *(f32 *)(p + 96);
+    *(f32 *)(p + 96) += *(f32 *)(p + 108);
+    if ((s8)func_00175700(p) < 0) {
+        func_00184540(p);
+        return;
+    }
+    /* Retail c.lt.s(position, floor) skips the reset when unordered. */
+    if (*(f32 *)(p + 56) < *(f32 *)(p + 1072)) {
+        *(f32 *)(p + 56) = *(f32 *)(p + 1072);
+        p[525] = 0;
+        *vx = 0.0f;
+        *vz = 0.0f;
+        *ax = 0.0f;
+        *az = 0.0f;
+        func_001865B0(p);
     }
 }
