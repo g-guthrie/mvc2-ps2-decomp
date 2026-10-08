@@ -506,3 +506,18 @@ void func_0024CAC0(u8 *p) {
     func_0024CB40(p);
 }
 
+extern void func_0028CEC0(u8 *);
+void func_0028CE40(u8 *p) {
+    p[7]++;
+    func_00185490(p);
+    func_00175C00(p, 0);
+    I(p, 92) = 0;
+    I(p, 96) = 0;
+    I(p, 104) = 0;
+    I(p, 108) = 0;
+    *(f32 *)(p + 56) = *(f32 *)(p + 1072);
+    func_001757E0(p, 21, 12);
+    func_00183D10(p);
+    func_0028CEC0(p);
+}
+
