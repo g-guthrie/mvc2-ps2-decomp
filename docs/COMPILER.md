@@ -243,10 +243,12 @@ SN units use `-ffunction-sections` to retain independent section ownership in
 the hybrid linker. This leaves the verified function instructions unchanged.
 ## SN Systems GCC runtime accessors
 
-Six runtime-global accessors at `0x0040A2A8`, `0x0040A2B8`, `0x0040A2E8`,
-`0x0040CBA0`, `0x0040CBB0`, and `0x0040CBC0` match with SN Systems GCC 2.95.2
-`-O2 -G0` and its assembler `-G0`. Their non-volatile global accesses place
-the store or load in the `jr` delay slot. Volatile declarations prevent this
-scheduling and do not match. The target addresses are `D_00489018`,
-`D_0048831C`, `D_004895D0`, and `D_004895D4`; all six relocated objects
+Nine runtime-global accessors at `0x0040A2A8`, `0x0040A2B8`, `0x0040A2E8`,
+`0x0040CBA0`, `0x0040CBB0`, `0x0040CBC0`, `0x003FD8E0`, `0x00408608`, and
+`0x00408618` match with SN Systems GCC 2.95.2 `-O2 -G0` and its assembler
+`-G0`. Their non-volatile global accesses place the store or load in the `jr`
+delay slot. The signed-byte accessor at `0x00408608` requires a signed global
+type. Volatile declarations prevent this scheduling and do not match. The
+target addresses are `D_00489018`, `D_0048831C`, `D_004895D0`, `D_004895D4`,
+`D_0047B580`, `D_004872F1`, and `D_00487324`; all nine relocated objects
 compare byte-for-byte with retail.

@@ -8611,3 +8611,6 @@ func_0040A2E8,0x0040A2E8,0xC,src/runtime_state_slots.c,matching
 func_0040CBA0,0x0040CBA0,0xC,src/runtime_state_slots.c,matching
 func_0040CBB0,0x0040CBB0,0xC,src/runtime_state_slots.c,matching
 func_0040CBC0,0x0040CBC0,0xC,src/runtime_state_slots.c,matching
+func_003FD8E0,0x003FD8E0,0xC,src/runtime_state_slots.c,matching
+func_00408608,0x00408608,0xC,src/runtime_state_slots.c,matching
+func_00408618,0x00408618,0xC,src/runtime_state_slots.c,matching
