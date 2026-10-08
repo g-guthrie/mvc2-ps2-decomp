@@ -8608,3 +8608,6 @@ func_0040A2F8,0x0040A2F8,0x14,src/runtime_shift.c,matching
 func_0040A2A8,0x0040A2A8,0xC,src/runtime_state_slots.c,matching
 func_0040A2B8,0x0040A2B8,0xC,src/runtime_state_slots.c,matching
 func_0040A2E8,0x0040A2E8,0xC,src/runtime_state_slots.c,matching
+func_0040CBA0,0x0040CBA0,0xC,src/runtime_state_slots.c,matching
+func_0040CBB0,0x0040CBB0,0xC,src/runtime_state_slots.c,matching
+func_0040CBC0,0x0040CBC0,0xC,src/runtime_state_slots.c,matching
