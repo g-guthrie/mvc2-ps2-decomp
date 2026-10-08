@@ -12823,7 +12823,7 @@ func_002F3CC0,0x002F3CC0,0x60,0x002F3D20,code,verified-exact-c-callback
 func_002F3D20,0x002F3D20,0x8,0x002F3D28,code,spimdisasm-explicit-size-before-first-data
 func_002F3D30,0x002F3D30,0x18,0x002F3D48,code,spimdisasm-explicit-size-before-first-data
 func_002F3D50,0x002F3D50,0x8,0x002F3D58,code,spimdisasm-explicit-size-before-first-data
-func_002F3D60,0x002F3D60,0x5C,0x002F3DBC,code,spimdisasm-explicit-size-before-first-data
+func_002F3D60,0x002F3D60,0x5C,0x002F3DBC,code,verified-exact-c-callback
 func_002F3DC0,0x002F3DC0,0x20,0x002F3DE0,code,spimdisasm-explicit-size-before-first-data
 func_002F3DE0,0x002F3DE0,0x24,0x002F3E04,code,spimdisasm-explicit-size-before-first-data
 func_002F3E10,0x002F3E10,0x20,0x002F3E30,code,matching-c-head-split

@@ -351,3 +351,17 @@ void func_002F3CC0(u8 *p)
     }
 }
 
+
+void func_002F3D60(u8 *p)
+{
+    func_00175700(p);
+    if ((signed char)p[337] != 0) {
+        p[337] = 0;
+        func_003AD480(p, 9, 0);
+    }
+    if (p[347] != 0) {
+        p[347] = 0;
+        func_003AD480(p, 9, 1);
+    }
+}
+
