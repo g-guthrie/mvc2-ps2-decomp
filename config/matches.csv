@@ -8861,3 +8861,4 @@ func_002BB5A0,0x002BB5A0,0x80,src/motion_speed_transition.c,complete
 func_002CD500,0x002CD500,0x78,src/positioned_motion_constants.c,complete
 func_00423650,0x00423650,0x6C,src/append_clear_00423650.c,matching
 func_002D7700,0x002D7700,0xA0,src/motion_speed_transition.c,complete
+func_002BC080,0x002BC080,0xA0,src/motion_speed_transition.c,complete
