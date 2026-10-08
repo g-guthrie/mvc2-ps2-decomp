@@ -2246,3 +2246,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/luna_a_status_checks.c -c -lang c -O3 -sdatathreshold 0 \
     -o "$BUILD/luna_a_status_checks.o"
 "$PYTHON" tools/verify_object.py "$BUILD/luna_a_status_checks.o" private/SLUS_204.86.rom --source src/luna_a_status_checks.c
+
+"$WIBO" "$SNCPP" -P src/small_runtime_initializers.c "$BUILD/small_runtime_initializers.i"
+"$WIBO" "$SNCC1" "$BUILD/small_runtime_initializers.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/small_runtime_initializers.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/small_runtime_initializers.o" "$BUILD/small_runtime_initializers.s"
+"$PYTHON" tools/verify_object.py "$BUILD/small_runtime_initializers.o" private/SLUS_204.86.rom --source src/small_runtime_initializers.c
