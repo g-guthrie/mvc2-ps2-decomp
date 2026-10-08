@@ -2607,3 +2607,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/backend_lifecycle_handlers_00420840.o"
 "$PYTHON" tools/verify_object.py "$BUILD/backend_lifecycle_handlers_00420840.o" \
     private/SLUS_204.86.rom --source src/backend_lifecycle_handlers_00420840.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_backend_00420720.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/initialize_backend_00420720.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_backend_00420720.o" \
+    private/SLUS_204.86.rom --source src/initialize_backend_00420720.c
