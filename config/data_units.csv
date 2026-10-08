@@ -6339,7 +6339,12 @@ gSvmExecuteCallbackInvalidId_004BEBE0,0x004BEBE0,0x25,.data,src/data/gSvmExecute
 data_u8_004BEC05,0x004BEC05,0x3,.data,src/data/data_u8_004BEC05.c,initialized_byte_array
 gSvmExecuteCallbackInvalidType_004BEC08,0x004BEC08,0x29,.data,src/data/gSvmExecuteCallbackInvalidType_004BEC08.c,nul_terminated_message
 data_zero_004BEC31,0x004BEC31,0xF,.data,src/data/data_zero_004BEC31.c,zero_initialized_untyped
-data_u32_004BEC40,0x004BEC40,0x90,.data,src/data/data_u32_004BEC40.c,initialized_u32_table
+gSscacheAllocationError_004BEC40,0x004BEC40,0x22,.data,src/data/gSscacheAllocationError_004BEC40.c,nul_terminated_message
+data_raw_004BEC62,0x004BEC62,0xE,.data,src/data/data_raw_004BEC62.c,initialized_byte_array
+gTextureAllocationError_004BEC70,0x004BEC70,0x22,.data,src/data/gTextureAllocationError_004BEC70.c,nul_terminated_message
+data_raw_004BEC92,0x004BEC92,0xE,.data,src/data/data_raw_004BEC92.c,initialized_byte_array
+gPaletteAllocationError_004BECA0,0x004BECA0,0x22,.data,src/data/gPaletteAllocationError_004BECA0.c,nul_terminated_message
+data_raw_004BECC2,0x004BECC2,0xE,.data,src/data/data_raw_004BECC2.c,initialized_byte_array
 data_ff_004BECD0,0x004BECD0,0x10,.data,src/data/data_ff_004BECD0.c,filled_u32_ones
 data_u32_004BECE0,0x004BECE0,0x4,.data,src/data/data_u32_004BECE0.c,initialized_u32_table
 data_ff_004BECE4,0x004BECE4,0xC,.data,src/data/data_ff_004BECE4.c,filled_u32_ones
