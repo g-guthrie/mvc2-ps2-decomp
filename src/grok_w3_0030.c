@@ -58,7 +58,7 @@ void func_00301BF0(u8 *p) {
     }
 }
 
-void residual_00301CF0(u8 *p) {
+void func_00301CF0(u8 *p) {
     if (func_00175700(p) < 0)
         func_00184540(p);
     else if (*(s8 *)(p + 0x151))

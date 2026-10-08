@@ -6581,7 +6581,7 @@ func_002FC850,0x002FC850,0x40,src/grok_w3_002e.c,complete
 func_002FFF10,0x002FFF10,0x4C,src/grok_w3_002e.c,complete
 func_003011B0,0x003011B0,0x4C,src/grok_w3_0030.c,complete
 func_00301BF0,0x00301BF0,0x50,src/grok_w3_0030.c,complete
-residual_00301CF0,0x00301CF0,0x54,src/grok_w3_0030.c,complete
+func_00301CF0,0x00301CF0,0x54,src/grok_w3_0030.c,complete
 func_00302D80,0x00302D80,0x54,src/grok_w3_0030.c,complete
 func_00303140,0x00303140,0x44,src/grok_w3_0030.c,complete
 func_00303340,0x00303340,0x50,src/grok_w3_0030.c,complete
