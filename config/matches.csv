@@ -8809,3 +8809,4 @@ func_002B4150,0x002B4150,0x9C,src/positioned_motion_constants.c,complete
 func_00245490,0x00245490,0x98,src/positioned_motion_constants.c,complete
 func_002452E0,0x002452E0,0xA0,src/positioned_motion_constants.c,complete
 func_0022E230,0x0022E230,0x7C,src/positioned_motion_constants.c,complete
+func_002E5930,0x002E5930,0x70,src/positioned_motion_constants.c,complete

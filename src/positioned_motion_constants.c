@@ -353,3 +353,18 @@ void func_002B4150(u8 *p)
         func_002B41F0(p);
     }
 }
+
+void func_002E5930(u8 *p)
+{
+    func_00175700(p);
+    if (*(signed char *)(p + 337)) {
+        p[6]++;
+        *(short *)(p + 28) = 30;
+        *(float *)(p + 92) = -10.0f;
+        *(float *)(p + 104) = 0.0f;
+        if (p[486] != 0)
+            *(float *)(p + 92) = -*(float *)(p + 92);
+        *(float *)(p + 96) = 0.0f;
+        *(float *)(p + 108) = 0.0f;
+    }
+}
