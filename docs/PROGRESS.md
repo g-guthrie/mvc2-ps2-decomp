@@ -933,3 +933,20 @@ Catalog validation, full hybrid linkage, and packed retail ELF hashes
 pass. C remains 554,152 bytes (16.8246%); reconstructed data is
 61,716 / 648,064 bytes (9.5231%). Native C palette-consumer drafts
 remain uncredited because full compiler matching is not yet achieved.
+
+## 2026-10-08 nested callback context ABI and menu labels
+
+Recovered func_002FE8D0 (144 bytes) and the complete 40-byte dispatch
+head func_002FF2A0. Retail tracing proves the outer head computes
+context = object+696 and passes it through the C1C0/C170 dispatch path.
+Six affected tables, their heads, and reconstructed members now declare
+that second pointer consistently; unused contexts are explicit parameters.
+All six changed code units and ten data owners independently byte-verify.
+The new typed outer callback table adds 28 reconstructed data bytes;
+two menu labels add 34 bytes with payload-plus-NUL credit only.
+Added the missing O4/Op/sdata0 runner recipe for all 13 already-credited
+animation-position callbacks. The other credited sources are covered by
+existing direct recipes or compiler loops. All 33 tests, catalog
+validation, full hybrid linkage, and packed retail ELF hashes pass.
+Totals: 8,851 linked C routines, 554,336 code bytes (16.8302%), and
+61,778 data bytes (9.5327%) across 2,053 reconstructed units.
