@@ -338,3 +338,16 @@ void func_002A6400(u8 *p) {
         }
     }
 }
+
+extern void func_001E3210(u8 *, int);
+extern void func_002F0C50(u8 *);
+void func_002F0BE0(u8 *p) {
+    p[6]++;
+    p[525] = 0;
+    *(f32 *)(p + 56) = *(f32 *)(p + 1072);
+    *(s16 *)(p + 28) = 32;
+    func_001757E0(p, 21, 40);
+    func_001E3210(p, 21);
+    func_00183D10(p);
+    func_002F0C50(p);
+}
