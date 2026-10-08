@@ -9,6 +9,8 @@ set -eu
 : "${SNCC1:?set SNCC1 to SN GCC 2.95.2 cc1.exe}"
 : "${SNAS:?set SNAS to the matching SN ee-as.exe}"
 
+: "${EE96CC1:?set EE96CC1 to EE GCC 2.96 cc1}"
+
 PYTHON=${PYTHON:-python3}
 MATCH_FLAGS=${MATCH_FLAGS:--O3 -sdatathreshold 0}
 SNCPP=${SNCPP:-private/toolchain/compilers/sn-gcc-2.95.2/cpp.exe}
@@ -2260,3 +2262,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$SNCC1" "$BUILD/indexed_pointer_accessors.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/indexed_pointer_accessors.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/indexed_pointer_accessors.o" "$BUILD/indexed_pointer_accessors.s"
 "$PYTHON" tools/verify_object.py "$BUILD/indexed_pointer_accessors.o" private/SLUS_204.86.rom --source src/indexed_pointer_accessors.c
+
+"$WIBO" "$SNCPP" -P src/ee_math_wrappers.c "$BUILD/ee_math_wrappers.i"
+"$PYTHON" tools/compile_ee96.py "$BUILD/ee_math_wrappers.i" "$BUILD/ee_math_wrappers.s"
+"${AS:-mipsel-linux-gnu-as}" -EL -march=r5900 -mabi=eabi -G0 -o "$BUILD/ee_math_wrappers.o" "$BUILD/ee_math_wrappers.s"
+"$PYTHON" tools/verify_object.py "$BUILD/ee_math_wrappers.o" private/SLUS_204.86.rom --source src/ee_math_wrappers.c

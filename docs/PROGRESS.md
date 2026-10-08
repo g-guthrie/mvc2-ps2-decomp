@@ -395,3 +395,13 @@ data remains 42,400 / 648,064 bytes.
 Separately, Linux EE GCC 2.96-ee-001003-1 reproduces seven early math wrappers
 (140 bytes) with -O2 -G0 -ffunction-sections. Those private probes remain
 uncredited until the reproducible compiler recipe and linkage are integrated.
+
+## 2026-10-08 EE runtime compiler integration
+
+Integrated seven native math wrappers (140 bytes) with EE GCC
+2.96-ee-001003-1 -O2 -G0 -ffunction-sections. The reproducible runner and
+checksum-pinned compiler are included in the build inputs. Both native Linux
+and Mac VM runner paths pass relocation-aware comparisons for every wrapper.
+Bootstrap smoke tests, catalog validation, full loaded-image linkage, and
+packed retail ELF identity pass. Totals: 8,659 linked C routines and
+534,312 / 3,293,696 bytes; reconstructed data is unchanged.

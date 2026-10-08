@@ -12,7 +12,7 @@ import tarfile
 import tempfile
 
 INPUT_ASSET = "mvc2-ps2-build-inputs.tar.gz"
-EXPECTED_ARCHIVE_SHA256 = "fe723399b112f73c6aa232c3550ae76fc5926e341615bee746c81d42f758fdb3"
+EXPECTED_ARCHIVE_SHA256 = "198c1f5aa71680ed7599373baa0cd8ded9d6f170b6395f08b0dc37b427dbb4fb"
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -66,6 +66,7 @@ def configure():
         "WIBO": str(toolchain / runner),
         "MWCCPS2": str(toolchain / "compilers/mwcps2-3.0.3-020716/mwccps2.exe"),
         "MWCCPS2_30": str(toolchain / "compilers/mwcps2-3.0-011126/mwccps2.exe"),
+        "EE96CC1": str(toolchain / "compilers/ee-gcc2.96/cc1"),
         "SNCPP": str(toolchain / "compilers/sn-gcc-2.95.2/cpp.exe"),
         "SNCC1": str(toolchain / "compilers/sn-gcc-2.95.2/cc1.exe"),
         "SNAS": str(toolchain / "compilers/sn-gcc-2.95.2/ee-as.exe"),
@@ -91,9 +92,16 @@ def configure():
         subprocess.run([values["WIBO"], values["SNAS"], "-G0", "-o", str(output), str(assembly)], check=True)
         if output.read_bytes()[:4] != b"\x7fELF":
             raise SystemExit("SN compiler smoke output is not ELF")
+        os.chmod(values["EE96CC1"], 0o755)
+        assembly = Path(directory) / "ee96-smoke.s"
+        subprocess.run([values["PYTHON"], str(ROOT / "tools/compile_ee96.py"), str(preprocessed), str(assembly)], env={**os.environ, "EE96CC1": values["EE96CC1"]}, check=True)
+        output = Path(directory) / "ee96-smoke.o"
+        subprocess.run(["mipsel-linux-gnu-as", "-EL", "-march=r5900", "-mabi=eabi", "-G0", "-o", str(output), str(assembly)], check=True)
+        if output.read_bytes()[:4] != b"\x7fELF":
+            raise SystemExit("EE GCC smoke output is not ELF")
     environment = ROOT / "private/build.env"
     environment.write_text("".join(f"export {key}={shlex.quote(value)}\n" for key, value in values.items()))
-    print("both Metrowerks compilers and SN GCC compiler smoke tests passed")
+    print("Metrowerks, SN GCC, and EE GCC compiler smoke tests passed")
     print("Run: . private/build.env")
     print("Then: make split hybrid test report PYTHON=\"$PYTHON\"")
 

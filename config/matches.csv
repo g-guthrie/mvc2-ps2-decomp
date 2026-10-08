@@ -8655,3 +8655,10 @@ func_0040EF88,0x0040EF88,0x14,src/indexed_pointer_accessors.c,complete
 func_0040FCE8,0x0040FCE8,0x18,src/indexed_pointer_accessors.c,complete
 func_004052C0,0x004052C0,0x18,src/small_runtime_initializers.c,complete
 func_004044B0,0x004044B0,0x18,src/small_runtime_initializers.c,complete
+func_001173A0,0x001173A0,0x14,src/ee_math_wrappers.c,complete
+func_001173B8,0x001173B8,0x14,src/ee_math_wrappers.c,complete
+func_001173D0,0x001173D0,0x14,src/ee_math_wrappers.c,complete
+func_001173E8,0x001173E8,0x14,src/ee_math_wrappers.c,complete
+func_00117400,0x00117400,0x14,src/ee_math_wrappers.c,complete
+func_00117418,0x00117418,0x14,src/ee_math_wrappers.c,complete
+func_00117430,0x00117430,0x14,src/ee_math_wrappers.c,complete

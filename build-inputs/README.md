@@ -1,7 +1,7 @@
 # Bundled build inputs
 
 `mvc2-ps2-build-inputs.tar.gz` supplies the loaded retail image, exact retail ELF,
-MWCCPS2 3.0.3 and 3.0-011126 with support DLLs, SN GCC 2.95.2 compiler/preprocessor/assembler, Linux/macOS Wibo 1.2.0, and a
+MWCCPS2 3.0.3 and 3.0-011126 with support DLLs, SN GCC 2.95.2 compiler/preprocessor/assembler, Linux EE GCC 2.96, Linux/macOS Wibo 1.2.0, and a
 SHA-256 manifest. It contains no account credentials or access tokens.
 
 From the repository root:

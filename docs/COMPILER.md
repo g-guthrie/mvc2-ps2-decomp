@@ -285,10 +285,13 @@ The compiler emits the retail 64-bit saves and tail jumps, while SN 2.95.2,
 SN 2.95.3, and the Sony 2.9 probe emit longer call/return sequences.
 GNU R5900 assembly plus relocation-aware comparisons verify all 140 bytes.
 The native wrappers forward three double and four float signatures; callees'
-register use confirms the argument widths. These are private candidate proofs,
-not catalog credit or proof of every nearby runtime function's compiler.
+register use confirms the argument widths. The seven wrappers are now source-owned and linked. This does not prove
+every nearby runtime function's compiler.
 
 Archive: [ee-gcc2.96.tar.xz](https://github.com/decompme/compilers/releases/download/compilers/ee-gcc2.96.tar.xz)
 SHA-256: `0590d2ca9da8f5903889d66761220d14b47a8d14ba987ca53db84a1650a1fd0a`. A separate x86-64 Colima profile `mvc2-probes` runs the
 32-bit Linux executable on the Mac, with guest `libc6-i386`; the existing
-default Docker profile remains stopped. Production build integration is pending.
+default Docker context is unchanged. `compile_ee96.py` now provides both native Linux and Mac VM build paths; both
+paths reproduce all seven wrapper objects exactly. Bootstrap supplies the
+pinned compiler, exports `EE96CC1`, and smoke-tests the compiler/assembler
+pipeline.

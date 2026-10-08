@@ -27,7 +27,7 @@ compiler as `MW MIPS C Compiler (2.4.1.01)` / `PlayStation2`.
 | BSS | `0x004c2580..0x00634380` (`0x171e00` bytes) |
 | Global pointer | `0x004c7270` |
 
-The project has **8,652 exact matching and linked source functions (534,172 bytes)**
+The project has **8,659 exact matching and linked source functions (534,312 bytes)**
 and **42,400 bytes of reconstructed initialized data**.
 All are physically placed by the hybrid linker and covered by the exact
 full-image hash. This is 16.071% of the conservative text span; the data
@@ -64,7 +64,8 @@ generated assembly, and build output remain ignored.
 Build inputs are included on public `main` in
 [build-inputs/mvc2-ps2-build-inputs.tar.gz](build-inputs/mvc2-ps2-build-inputs.tar.gz).
 See [docs/CLOUD_BUILD.md](docs/CLOUD_BUILD.md) for Linux dependencies.
-After creating `.venv` and installing `requirements.txt`:
+After creating `.venv` and installing `requirements.txt`, prepare the Mac EE GCC
+runner or Linux dependencies described in [docs/CLOUD_BUILD.md](docs/CLOUD_BUILD.md):
 
 ```sh
 .venv/bin/python tools/bootstrap_private_inputs.py
@@ -72,7 +73,7 @@ After creating `.venv` and installing `requirements.txt`:
 make split hybrid test report PYTHON="$PYTHON"
 ```
 
-The bootstrap verifies the bundled retail image, both Metrowerks compilers, and SN GCC 2.95.2,
+The bootstrap verifies the bundled retail image, both Metrowerks compilers, SN GCC 2.95.2, and EE GCC 2.96,
 selects a host-compatible Wibo, smoke-tests compilation, and supplies the tool
 paths. No private repository access or GitHub authentication is required.
 
