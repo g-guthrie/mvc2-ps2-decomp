@@ -5568,9 +5568,12 @@ data_u32_004BA3C0,0x004BA3C0,0x10,src/data/data_u32_004BA3C0.c,complete,placehol
 data_zero_004BA3D0,0x004BA3D0,0x10,src/data/data_zero_004BA3D0.c,complete,placeholder
 data_u32_004BA3E0,0x004BA3E0,0x10,src/data/data_u32_004BA3E0.c,complete,placeholder
 data_zero_004BA3F0,0x004BA3F0,0x10,src/data/data_zero_004BA3F0.c,complete,placeholder
-data_u32_004BA400,0x004BA400,0x90,src/data/data_u32_004BA400.c,complete,placeholder
-data_zero_004BA490,0x004BA490,0x10,src/data/data_zero_004BA490.c,complete,placeholder
-data_u8_004BA4A0,0x004BA4A0,0x50,src/data/data_u8_004BA4A0.c,complete,placeholder
+gGraphicsInitRecord0_004BA400,0x004BA400,0x2C,src/data/gGraphicsInitRecord0_004BA400.c,complete,reconstructed
+gGraphicsInitRecord1_004BA42C,0x004BA42C,0x2C,src/data/gGraphicsInitRecord1_004BA42C.c,complete,reconstructed
+gGraphicsInitRecord2_004BA458,0x004BA458,0x2C,src/data/gGraphicsInitRecord2_004BA458.c,complete,reconstructed
+gGraphicsInitRecord3_004BA484,0x004BA484,0x2C,src/data/gGraphicsInitRecord3_004BA484.c,complete,reconstructed
+gGraphicsInitRecord4_004BA4B0,0x004BA4B0,0x2C,src/data/gGraphicsInitRecord4_004BA4B0.c,complete,reconstructed
+data_raw_004BA4DC,0x004BA4DC,0x14,src/data/data_raw_004BA4DC.c,complete,placeholder
 gModuleLoadFailureFormat_004BA4F0,0x004BA4F0,0x16,src/data/gModuleLoadFailureFormat_004BA4F0.c,complete,reconstructed
 data_raw_004BA506,0x004BA506,0x2,src/data/data_raw_004BA506.c,complete,placeholder
 gCdromPathPrefix_004BA508,0x004BA508,0x8,src/data/gCdromPathPrefix_004BA508.c,complete,reconstructed
