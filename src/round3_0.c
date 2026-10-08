@@ -554,3 +554,15 @@ void func_002B5590(u8 *p) {
     p[525] = 2;
 }
 
+extern s32 func_00174170(u8 *);
+extern void func_001D2C00(u8 *, int);
+void func_002DDA80(u8 *p) {
+    p[32] = (func_00174170(p) & 1) + 1;
+    p[316] = 1;
+    func_001757E0(p, 18, (u8)(p[32] - 1));
+    {
+        u8 count = p[32];
+        if (count == 2) func_001D2C00(p, 2);
+    }
+}
+
