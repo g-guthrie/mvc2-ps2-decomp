@@ -442,3 +442,22 @@ comparisons; full hybrid and packed retail ELF hashes match exactly.
 Totals: 8,697 linked C routines and 536,372 / 3,293,696 bytes. Data remains
 42,400 / 648,064 bytes. The 204-byte restoring-square-root C probe matches
 size but differs in scheduling/register allocation, so remains uncredited.
+
+## 2026-10-08 motion, initializer, and matrix checkpoint
+
+Added fourteen native routines (2,824 bytes), including a 304-byte motion
+update, three particle initializers totaling 588 bytes, a 900-byte 4x4
+row-by-column matrix multiply, and supporting state/callback routines.
+Every affected complete source unit passes independent compiler and relocation
+checks. Full hybrid loaded-image and packed retail ELF hashes pass. Totals:
+8,711 linked C routines and 539,196 / 3,293,696 bytes. Reconstructed data
+remains 42,400 / 648,064 bytes.
+
+Rechecked boundary evidence using virtual_address - 0x00100000, after a worker
+found a header-offset error in an exploratory scan. Fixed pointer words,
+direct calls/jumps, and nearby HI/LO address loads show no references to the
+discarded interior entries 0x00303030, 0x002C5C58, 0x002C2824, and 0x002C2C2C.
+The actual entries have expected table/call references; e.g. 0x00303000 at
+0x0045CA04 and 0x00302FE4, 0x002C27A0 at 0x004C0DFC, and 0x002C2C40 at
+0x00459B30. Compiler-exact complete spans and these references support the
+existing boundary corrections.
