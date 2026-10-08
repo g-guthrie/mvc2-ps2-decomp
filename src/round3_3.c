@@ -19,6 +19,7 @@ extern void func_001757E0(u8 *, int, int);
 extern int func_001864A0(u8 *);
 extern void func_00183D50(u8 *);
 extern void func_0022C5D0(u8 *);
+extern void func_0029B130(u8 *);
 extern void func_001E7F60(u8 *);
 extern void func_001AFCB0(u8 *, int);
 extern u8 D_004D18A6;
@@ -72,6 +73,17 @@ void func_002276A0(u8 *p) {
     if ((s8)p[337] == 0) {
         PHYS
     }
+}
+void func_0029F5E0(u8 *p) {
+    if ((s8)func_00175700(p) < 0) {
+        func_0029B130(p);
+        return;
+    }
+    if ((s8)p[337] != 0)
+        F(p, 52) += F(p, 92);
+    F(p, 92) += F(p, 104);
+    F(p, 56) += F(p, 96);
+    F(p, 96) += F(p, 108);
 }
 void func_00227890(u8 *p) {
     if ((s8)func_00175700(p) < 0) {
