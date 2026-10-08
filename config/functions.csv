@@ -9159,7 +9159,7 @@ residual_00274EF0,0x00274EF0,0xB4,0x00274FA4,assembly_residual,verified-boundary
 func_00274FB0,0x00274FB0,0xAC,0x0027505C,code,spimdisasm-explicit-size-before-first-data
 func_00275060,0x00275060,0xA0,0x00275100,code,spimdisasm-explicit-size-before-first-data
 func_00275100,0x00275100,0x20,0x00275120,code,matching-c-head-split
-residual_00275120,0x00275120,0x7C,0x0027519C,assembly_residual,verified-boundary-after-matching-head
+func_00275120,0x00275120,0x7C,0x0027519C,code,typed-callback-table-entry
 func_002751A0,0x002751A0,0xD0,0x00275270,code,spimdisasm-explicit-size-before-first-data
 func_00275270,0x00275270,0xBC,0x0027532C,code,spimdisasm-explicit-size-before-first-data
 func_00275330,0x00275330,0x1C,0x0027534C,code,matching-c-head-split
