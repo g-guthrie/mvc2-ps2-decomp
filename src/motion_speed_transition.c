@@ -128,3 +128,21 @@ void func_002BB5A0(u8 *p)
     command = p[439] != 0 ? 32 : 14;
     func_001757E0(p, 21, (u8)command);
 }
+
+void func_002D7700(u8 *p)
+{
+    u8 angle;
+    p[6]++;
+    p[701] = 0;
+    *(float *)(p + 56) = *(float *)(p + 1072);
+    func_00185490(p);
+    p[437] = 56;
+    p[434] = *(unsigned short *)(p + 448) = 0;
+    *(int *)(p + 472) = 0;
+    ((s16 *)(D_004C2794 + 124))[p[2]]++;
+    func_00175C00(p, 0);
+    func_00183D10(p);
+    p[525] = 0;
+    angle = (u8)(p[439] << 1);
+    func_001757E0(p, 21, angle);
+}
