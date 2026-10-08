@@ -4728,7 +4728,9 @@ jtbl_004B7550,0x004B7550,0x1c,.rodata,src/data/jtbl_004B7550.c,jump_table
 data_u32_004B7570,0x004B7570,0x80,.data,src/data/data_u32_004B7570.c,initialized_u32_table
 jtbl_004B75F0,0x004B75F0,0x18,.rodata,src/data/jtbl_004B75F0.c,jump_table
 jtbl_004B7610,0x004B7610,0x20,.rodata,src/data/jtbl_004B7610.c,jump_table
-data_u32_004B7630,0x004B7630,0x298,.data,src/data/data_u32_004B7630.c,initialized_u32_table
+data_u32_004B7630,0x004B7630,0x288,.data,src/data/data_u32_004B7630.c,initialized_u32_table
+data_f32_004B78B8,0x004B78B8,0xC,.data,src/data/data_f32_004B78B8.c,indexed_f32_values
+data_u32_004B78C4,0x004B78C4,0x4,.data,src/data/data_u32_004B78C4.c,initialized_u32_table
 gMvc2RelativeScaleFactors_004B78C8,0x004B78C8,0x8,.data,src/data/relative_scale_factors_004B78C8.c,relative_scale_factors
 gMvc2ScaleRecords_004B78D0,0x004B78D0,0xC0,.data,src/data/relative_records_004B78D0.c,relative_scale_records
 gMvc2RelativeScaleFactors_004B7990,0x004B7990,0x10,.data,src/data/relative_scale_factors_004B7990.c,relative_scale_factors
