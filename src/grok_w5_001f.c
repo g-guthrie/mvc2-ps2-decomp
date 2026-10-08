@@ -206,6 +206,32 @@ void func_001FBEF0(u8 *p)
     func_00186A60(p, 21);
 }
 
+void func_0027AB60(u8 *p)
+{
+    s8 v;
+    p[5] = 0; p[7] = 0; p[6] = 0;
+    v = *(s8 *)(p + 1245);
+    switch (v) {
+    case 0: p[509] = 0; p[439] = 1; break;
+    case 1: p[509] = 0; p[439] = 1; break;
+    case 2: p[509] = 0; p[439] = 1; break;
+    }
+    func_00186A60(p, 21);
+}
+
+void func_0027ABD0(u8 *p)
+{
+    s8 v;
+    p[5] = 0; p[7] = 0; p[6] = 0;
+    v = *(s8 *)(p + 1245);
+    switch (v) {
+    case 0: p[509] = 0; p[439] = 1; break;
+    case 1: p[509] = 0; p[439] = 1; break;
+    case 2: p[509] = 0; p[439] = 1; break;
+    }
+    func_00186A60(p, 21);
+}
+
 void func_001FBF60(u8 *p)
 {
     s8 v;
@@ -240,5 +266,4 @@ void func_001F8770(u8 *p)
     if (func_001864A0(p))
         func_001865B0(p);
 }
-
 
