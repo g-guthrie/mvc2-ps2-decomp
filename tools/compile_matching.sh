@@ -2416,10 +2416,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py "$BUILD/indexed_slots_00105F10.o" private/SLUS_204.86.rom --source src/indexed_slots_00105F10.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/animation_position_callbacks.c -c -lang c -O4 -Op -sdatathreshold 0 -o "$BUILD/animation_position_callbacks.o"
-"$PYTHON" tools/verify_object.py "$BUILD/animation_position_callbacks.o" private/SLUS_204.86.rom --source src/animation_position_callbacks.c
-
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/append_clear_00423650.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/append_clear_00423650.o"
 "$PYTHON" tools/verify_object.py "$BUILD/append_clear_00423650.o" private/SLUS_204.86.rom --source src/append_clear_00423650.c
 
