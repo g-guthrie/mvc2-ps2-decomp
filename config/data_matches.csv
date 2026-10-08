@@ -5048,7 +5048,13 @@ data_u8_004B7063,0x004B7063,0xD,src/data/data_u8_004B7063.c,complete,placeholder
 jtbl_004B7070,0x004B7070,0x80,src/data/jtbl_004B7070.c,complete,placeholder
 data_u32_004B70F0,0x004B70F0,0x10,src/data/data_u32_004B70F0.c,complete,placeholder
 jtbl_004B7100,0x004B7100,0x18,src/data/jtbl_004B7100.c,complete,placeholder
-data_u32_004B7120,0x004B7120,0x20,src/data/data_u32_004B7120.c,complete,placeholder
+data_raw_004B7120,0x004B7120,0x10,src/data/data_raw_004B7120.c,complete,placeholder
+data_u8_004B7130,0x004B7130,0x1,src/data/data_u8_004B7130.c,complete,reconstructed
+data_raw_004B7131,0x004B7131,0x1,src/data/data_raw_004B7131.c,complete,placeholder
+data_u8_004B7132,0x004B7132,0x1,src/data/data_u8_004B7132.c,complete,reconstructed
+data_raw_004B7133,0x004B7133,0x1,src/data/data_raw_004B7133.c,complete,placeholder
+data_u8_004B7134,0x004B7134,0x1,src/data/data_u8_004B7134.c,complete,reconstructed
+data_raw_004B7135,0x004B7135,0xB,src/data/data_raw_004B7135.c,complete,placeholder
 data_f32_004B7140,0x004B7140,0x30,src/data/data_f32_004B7140.c,complete,reconstructed
 data_u8_004B7170,0x004B7170,0x10,src/data/data_u8_004B7170.c,complete,reconstructed
 data_u8_004B7180,0x004B7180,0x1,src/data/data_u8_004B7180.c,complete,reconstructed
@@ -5131,7 +5137,9 @@ data_u32_004B74A0,0x004B74A0,0x30,src/data/data_u32_004B74A0.c,complete,placehol
 jtbl_004B74D0,0x004B74D0,0x2c,src/data/jtbl_004B74D0.c,complete,placeholder
 data_u32_004B7500,0x004B7500,0x50,src/data/data_u32_004B7500.c,complete,placeholder
 jtbl_004B7550,0x004B7550,0x1c,src/data/jtbl_004B7550.c,complete,placeholder
-data_u32_004B7570,0x004B7570,0x80,src/data/data_u32_004B7570.c,complete,placeholder
+data_raw_004B7570,0x004B7570,0x3A,src/data/data_raw_004B7570.c,complete,placeholder
+data_u8_004B75AA,0x004B75AA,0x1,src/data/data_u8_004B75AA.c,complete,reconstructed
+data_raw_004B75AB,0x004B75AB,0x45,src/data/data_raw_004B75AB.c,complete,placeholder
 jtbl_004B75F0,0x004B75F0,0x18,src/data/jtbl_004B75F0.c,complete,placeholder
 jtbl_004B7610,0x004B7610,0x20,src/data/jtbl_004B7610.c,complete,placeholder
 data_u8_004B7630,0x004B7630,0x12,src/data/data_u8_004B7630.c,complete,reconstructed
