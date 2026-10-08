@@ -856,3 +856,17 @@ The remaining 440 bytes stay raw. Both changed data owners byte-match.
 Catalog validation, full hybrid linkage, and packed retail ELF hashes
 pass. Totals: 8,844 linked C routines, 553,896 code bytes (16.8169%),
 and 59,052 data bytes (9.1121%) across 1,974 reconstructed units.
+
+## 2026-10-08 indexed slots and ADXT diagnostics
+
+Recovered native C getter/setter functions 00105F10 and 00105F28,
+totaling 52 bytes. Their whole source unit matches with SN GCC 2.95.2
+-O2 -G0 -ffunction-sections; the normal runner recipe is included.
+Renamed an already-exact preaction tail callback with no extra credit;
+its whole source object verifies. Recovered 45 ADXT diagnostic strings
+and the consumed 0.85 double scalar, adding 1,952 data bytes. String
+owners end at NUL; all 42 raw gaps remain placeholders. Every one of
+the 88 changed data owners independently byte-verifies. Catalog
+validation, full hybrid linkage, and packed retail ELF hashes pass.
+Totals: 8,846 linked C routines, 553,948 code bytes (16.8184%), and
+61,004 data bytes (9.4133%) across 2,020 reconstructed units.
