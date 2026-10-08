@@ -4457,7 +4457,7 @@ residual_002F7E30,0x002F7E30,0x2C,src/sequential_heads.c,complete
 func_002FD0D0,0x002FD0D0,0x2C,src/sequential_heads.c,complete
 func_003015C0,0x003015C0,0x2C,src/sequential_heads.c,complete
 func_00305CE0,0x00305CE0,0x2C,src/sequential_heads.c,complete
-residual_00310850,0x00310850,0x2C,src/sequential_heads.c,complete
+func_00310850,0x00310850,0x2C,src/sequential_heads.c,complete
 residual_0031C1B0,0x0031C1B0,0x2C,src/sequential_heads.c,complete
 func_001ED680,0x001ED680,0x58,src/three_checks.c,complete
 func_001F7900,0x001F7900,0x58,src/three_checks.c,complete

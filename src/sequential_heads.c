@@ -37,5 +37,5 @@ extern void func_002F7E60(u8 *); void residual_002F7E30(u8 *p) { func_00183D90(p
 extern void func_002FD100(u8 *); void func_002FD0D0(u8 *p) { func_00183D90(p); func_002FD100(p); }
 extern void func_003015F0(u8 *); void func_003015C0(u8 *p) { func_00183D90(p); func_003015F0(p); }
 extern void func_00305D10(u8 *); void func_00305CE0(u8 *p) { func_00183D90(p); func_00305D10(p); }
-extern void func_00310880(u8 *); void residual_00310850(u8 *p) { func_00183D90(p); func_00310880(p); }
+extern void func_00310880(u8 *); void func_00310850(u8 *p) { func_00183D90(p); func_00310880(p); }
 extern void func_0031C1E0(u8 *); void residual_0031C1B0(u8 *p) { func_00183D90(p); func_0031C1E0(p); }
