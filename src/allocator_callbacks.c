@@ -12,6 +12,7 @@ typedef struct CallbackEntry {
     u8 mode_padding[5];
     u16 value;
 } CallbackEntry;
+extern void func_001757E0(u8 *, int, int);
 extern CallbackEntry *func_003DA750(int, int, int);
 extern void func_0019A0F0(void);
 extern void func_0019B7B0(void);
@@ -262,4 +263,11 @@ void func_003996C0(void *arg, u8 mode) {
         entry->mode = mode;
         entry->value = 0x2600;
     }
+}
+
+void func_00270710(u8 *p) {
+    p[6]++;
+    p[316] = 1;
+    func_001757E0(p, 18, 0);
+    func_001B7660(p, 0);
 }
