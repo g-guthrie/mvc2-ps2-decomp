@@ -8854,3 +8854,4 @@ func_00105EE0,0x00105EE0,0x1C,src/indexed_slots_00105F10.c,complete
 func_00105020,0x00105020,0x24,src/indexed_slots_00105F10.c,complete
 func_002FE8D0,0x002FE8D0,0x90,src/positioned_motion_constants.c,complete
 func_002FF2A0,0x002FF2A0,0x28,src/composite_dispatch_heads.c,complete
+func_002F5D50,0x002F5D50,0x8C,src/motion_speed_transition.c,complete
