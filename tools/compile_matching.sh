@@ -5,6 +5,10 @@ set -eu
 : "${MWCCPS2:?set MWCCPS2 to the private mwccps2.exe}"
 : "${MWCCPS2_30:?set MWCCPS2_30 to private mwccps2-3.0-011126/mwccps2.exe}"
 
+: "${SNCPP:?set SNCPP to SN GCC 2.95.2 cpp.exe}"
+: "${SNCC1:?set SNCC1 to SN GCC 2.95.2 cc1.exe}"
+: "${SNAS:?set SNAS to the matching SN ee-as.exe}"
+
 PYTHON=${PYTHON:-python3}
 MATCH_FLAGS=${MATCH_FLAGS:--O3 -sdatathreshold 0}
 SNCPP=${SNCPP:-private/toolchain/compilers/sn-gcc-2.95.2/cpp.exe}
@@ -2116,9 +2120,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/transition_sequence_recoveries.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/transition_sequence_recoveries.o"
 "$PYTHON" tools/verify_object.py "$BUILD/transition_sequence_recoveries.o" private/SLUS_204.86.rom --source src/transition_sequence_recoveries.c
 
-: "${SNCPP:?set SNCPP to SN GCC 2.95.2 cpp.exe}"
-: "${SNCC1:?set SNCC1 to SN GCC 2.95.2 cc1.exe}"
-: "${SNAS:?set SNAS to the matching SN ee-as.exe}"
 "$WIBO" "$SNCPP" -P src/sn_runtime_leaves.c "$BUILD/sn_runtime_leaves.i"
 "$WIBO" "$SNCC1" "$BUILD/sn_runtime_leaves.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sn_runtime_leaves.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sn_runtime_leaves.o" "$BUILD/sn_runtime_leaves.s"

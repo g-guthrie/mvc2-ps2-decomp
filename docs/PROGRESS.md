@@ -349,3 +349,15 @@ C functions and 530,360 / 3,293,696 C bytes; reconstructed data remains
 42,400 / 648,064 bytes. Assembly placeholders and raw-data fills retain zero
 source credit. Further agent batches remain separate until independently
 verified and linked.
+
+## 2026-10-08 continued team integration
+
+Added 19 independently verified native routines (776 bytes): fourteen SN
+runtime global/indexed accessors, a merged state-reference check, a directional
+motion transition, a GP tail wrapper, a record-position adjustment, and a
+300-byte conditional callback chain. The state-reference check's interior
+0x002C5C58 boundary was removed after complete span and entry-reference proof.
+All affected source units verify exactly, including all 40 functions in the
+conditional-chain unit. The complete loaded image and packed retail ELF retain
+byte-identical target hashes. Catalog totals are 8,618 linked C routines and
+531,136 / 3,293,696 bytes. Reconstructed data remains 42,400 / 648,064 bytes.
