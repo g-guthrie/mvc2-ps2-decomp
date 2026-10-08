@@ -8704,3 +8704,4 @@ func_0016CE90,0x0016CE90,0x3C,src/luna_a_global_defaults.c,complete
 func_0016D260,0x0016D260,0x3C,src/luna_a_conditional_callbacks.c,complete
 func_0016F7D0,0x0016F7D0,0x3C,src/luna_a_callback_setup.c,complete
 func_002C27A0,0x002C27A0,0x8C,src/grok_w5_0038.c,complete
+func_00277F90,0x00277F90,0x64,src/grok_w7_002e2.c,complete

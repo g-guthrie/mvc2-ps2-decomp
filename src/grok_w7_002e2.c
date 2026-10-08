@@ -99,6 +99,30 @@ void func_00242790(u8 *p)
     func_00186A60(p, 21);
 }
 
+void func_00277F90(u8 *p)
+{
+    s8 v;
+    p[5] = 0;
+    p[7] = 0;
+    p[6] = 0;
+    v = (s8)p[1245];
+    switch (v) {
+    case 0:
+        p[509] = 4;
+        p[439] = 0;
+        break;
+    case 1:
+        p[509] = 3;
+        p[439] = 1;
+        break;
+    case 2:
+        p[509] = 6;
+        p[439] = 0;
+        break;
+    }
+    func_00186A60(p, 21);
+}
+
 void func_002E02A0(u8 *p)
 {
     s8 v;
