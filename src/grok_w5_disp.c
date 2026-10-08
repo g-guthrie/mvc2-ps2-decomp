@@ -337,3 +337,17 @@ void func_002F3C70(u8 *p)
         jtbl_0045BB80[p[7]](p);
 }
 
+
+extern int func_00175700(u8 *);
+extern void func_003AD480(u8 *, int, int);
+void func_002F3CC0(u8 *p)
+{
+    func_00175700(p);
+    if ((signed char)p[337] != 0) {
+        p[337] = 0;
+        p[7]++;
+        func_003AD480(p, 7, 0);
+        func_003AD480(p, 7, 1);
+    }
+}
+

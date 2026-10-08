@@ -12819,7 +12819,7 @@ func_002F3BF0,0x002F3BF0,0xC,0x002F3BFC,code,spimdisasm-explicit-size-before-fir
 func_002F3C00,0x002F3C00,0xC,0x002F3C0C,code,spimdisasm-explicit-size-before-first-data
 func_002F3C10,0x002F3C10,0x5C,0x002F3C6C,code,spimdisasm-explicit-size-before-first-data
 func_002F3C70,0x002F3C70,0x50,0x002F3CC0,code,verified-exact-c-callback
-func_002F3CC0,0x002F3CC0,0x60,0x002F3D20,code,spimdisasm-explicit-size-before-first-data
+func_002F3CC0,0x002F3CC0,0x60,0x002F3D20,code,verified-exact-c-callback
 func_002F3D20,0x002F3D20,0x8,0x002F3D28,code,spimdisasm-explicit-size-before-first-data
 func_002F3D30,0x002F3D30,0x18,0x002F3D48,code,spimdisasm-explicit-size-before-first-data
 func_002F3D50,0x002F3D50,0x8,0x002F3D58,code,spimdisasm-explicit-size-before-first-data

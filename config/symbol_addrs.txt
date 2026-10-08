@@ -2483,6 +2483,7 @@ func_003A9B50 = 0x003a9b50;
 func_003A9FC0 = 0x003a9fc0;
 func_003AA4D0 = 0x003aa4d0;
 func_003AA8D0 = 0x003aa8d0;
+func_003AD480 = 0x003ad480;
 func_003AD6E0 = 0x003ad6e0;
 func_003ADC70 = 0x003adc70;
 func_003AE000 = 0x003ae000;
