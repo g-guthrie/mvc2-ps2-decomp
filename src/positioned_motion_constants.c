@@ -960,6 +960,24 @@ void func_00261C50(u8 *p)
     func_001757E0(p, 15, 0);
 }
 
+void func_002A8440(u8 *p)
+{
+    float speed;
+    func_00175700(p);
+    if (*(signed char *)(p + 337)) {
+        p[7]++;
+        *(signed char *)(p + 337) = 0;
+        if (p[486] != 0)
+            speed = 5.0f;
+        else
+            speed = -5.0f;
+        *(float *)(p + 92) = speed;
+        *(int *)(p + 104) = 0;
+        *(int *)(p + 96) = 0x41092492;
+        *(int *)(p + 108) = 0xBF809249;
+    }
+}
+
 void func_0022E000(u8 *p)
 {
     float x, y;

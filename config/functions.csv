@@ -10700,7 +10700,7 @@ func_002A8270,0x002A8270,0x6C,0x002A82DC,code,spimdisasm-explicit-size-before-fi
 func_002A82E0,0x002A82E0,0x6C,0x002A834C,code,spimdisasm-explicit-size-before-first-data
 func_002A8350,0x002A8350,0xC8,0x002A8418,code,spimdisasm-explicit-size-before-first-data
 func_002A8420,0x002A8420,0x20,0x002A8440,code,matching-c-head-split
-residual_002A8440,0x002A8440,0x80,0x002A84C0,assembly_residual,verified-boundary-after-matching-head
+func_002A8440,0x002A8440,0x80,0x002A84C0,code,typed-callback-table-entry
 func_002A84C0,0x002A84C0,0x74,0x002A8534,code,spimdisasm-explicit-size-before-first-data
 func_002A8540,0x002A8540,0x3C,0x002A857C,code,spimdisasm-explicit-size-before-first-data
 func_002A8580,0x002A8580,0x1C,0x002A859C,code,spimdisasm-explicit-size-before-first-data
