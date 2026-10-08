@@ -8850,3 +8850,4 @@ func_002E5F00,0x002E5F00,0x98,src/motion_speed_transition.c,complete
 func_00105F10,0x00105F10,0x18,src/indexed_slots_00105F10.c,complete
 func_00105F28,0x00105F28,0x1C,src/indexed_slots_00105F10.c,complete
 func_002D3270,0x002D3270,0x8C,src/motion_speed_transition.c,complete
+func_00105EE0,0x00105EE0,0x1C,src/indexed_slots_00105F10.c,complete

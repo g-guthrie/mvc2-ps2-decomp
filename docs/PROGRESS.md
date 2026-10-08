@@ -883,3 +883,16 @@ Every changed data owner independently byte-verifies. Catalog
 validation, full hybrid linkage, and packed retail ELF hashes pass.
 Totals: 8,847 linked C routines, 554,088 code bytes (16.8227%), and
 61,186 data bytes (9.4414%) across 2,025 reconstructed units.
+
+## 2026-10-08 indexed record store and boot strings
+
+Added the complete 28-byte native C record-indexed word store
+func_00105EE0 to the existing indexed-slot source unit. All three
+functions in that unit byte-verify with SN GCC 2.95.2 -O2 -G0
+-ffunction-sections. Recovered ten directly consumed module/config
+and texture-diagnostic strings, adding 324 initialized-data bytes.
+Every string owner ends at NUL; all ten intervening gaps stay raw.
+All 20 changed data owners independently compile and byte-match.
+Catalog validation, full hybrid linkage, and packed retail ELF hashes
+pass. Totals: 8,848 linked C routines, 554,116 code bytes (16.8235%),
+and 61,510 data bytes (9.4913%) across 2,035 reconstructed units.
