@@ -1,4 +1,8 @@
 typedef signed char s8;
+typedef unsigned char u8;
+typedef void (*StateCallback)(u8 *);
+
+extern StateCallback jtbl_00459A10[];
 
 extern int func_00175670();
 extern int func_00175700();
@@ -579,6 +583,17 @@ void func_002C1390(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); 
 void func_002C13D0(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
 void func_002C1410(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
+
+void func_002C1470(u8 *p) {
+    if (p[6] == 0) {
+        if ((s8)func_00175700(p) >= 0) goto done;
+        func_001843A0(p);
+        return;
+    }
+    jtbl_00459A10[p[7]](p);
+done:
+    return;
+}
 
 void func_002C15F0(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 

@@ -8789,3 +8789,4 @@ func_004149D0,0x004149D0,0x68,src/vector_frame_store_004149D0.c,complete
 func_00414A40,0x00414A40,0x58,src/vector_frame_reset_00414A40.c,complete
 func_0030D860,0x0030D860,0x40,src/grok_w3_0030.c,complete
 func_00251610,0x00251610,0x70,src/reset_on_negative.c,complete
+func_002C1470,0x002C1470,0x70,src/signed_result_handlers.c,complete
