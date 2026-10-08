@@ -2477,3 +2477,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/reentrant_heap_0011F858.i" "$BUILD/reentrant_heap_0011F858.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/reentrant_heap_0011F858.o" "$BUILD/reentrant_heap_0011F858.s"
 "$PYTHON" tools/verify_object.py "$BUILD/reentrant_heap_0011F858.o" private/SLUS_204.86.rom --source src/reentrant_heap_0011F858.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/initialize_packet_runtime_00422DB0.c -c -lang c -O3 \
+    -sdatathreshold 8 -o "$BUILD/initialize_packet_runtime_00422DB0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_packet_runtime_00422DB0.o" \
+    private/SLUS_204.86.rom --source src/initialize_packet_runtime_00422DB0.c
