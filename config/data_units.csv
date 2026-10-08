@@ -852,10 +852,7 @@ jtbl_00446380,0x00446380,0x1c,.rodata,src/data/jtbl_00446380.c,typed_state_callb
 jtbl_004463A0,0x004463A0,0x1c,.rodata,src/data/jtbl_004463A0.c,typed_state_callback_table
 data_u32_004463C0,0x004463C0,0x4,.data,src/data/data_u32_004463C0.c,initialized_u32_table
 data_f32_004463C4,0x004463C4,0xC,.data,src/data/data_f32_004463C4.c,float_vector3
-data_f32_one_004463D0,0x004463D0,0x8,.data,src/data/data_f32_one_004463D0.c,filled_f32_one
-data_f32_004463D8,0x004463D8,0x4,.data,src/data/data_f32_004463D8.c,float_scalar
-data_u8_004463DC,0x004463DC,0x4,.data,src/data/data_u8_004463DC.c,initialized_byte_array
-data_f32_one_004463E0,0x004463E0,0x8,.data,src/data/data_f32_one_004463E0.c,filled_f32_one
+data_f32_004463D0,0x004463D0,0x18,.data,src/data/data_f32_004463D0.c,mutable_float_array
 data_u32_004463E8,0x004463E8,0x18,.data,src/data/data_u32_004463E8.c,initialized_u32_table
 data_zero_00446400,0x00446400,0x10,.data,src/data/data_zero_00446400.c,zero_initialized_untyped
 jtbl_00446410,0x00446410,0x44,.rodata,src/data/jtbl_00446410.c,jump_table
