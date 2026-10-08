@@ -844,3 +844,15 @@ bytes; all remaining gaps stay placeholders. Every changed data owner
 byte-verifies. All 33 tests, catalog validation, full hybrid linkage, and
 packed retail ELF hashes pass. Totals: 8,843 linked C routines,
 553,744 code bytes (16.8122%), and 59,028 data bytes (9.1084%).
+
+## 2026-10-08 GP-backed callback and six-ID map
+
+Added the complete 152-byte native C callback func_002E5F00. The
+entire motion-speed-transition source unit verifies with MWCCPS2 3.0.3
+-O4 -Op -sdatathreshold 8. Recovered six bounded u32 IDs from B6A30,
+adding 24 data bytes: the consumer reads full words using selectors
+resolved to the current or earlier iteration of an outer 0..5 loop.
+The remaining 440 bytes stay raw. Both changed data owners byte-match.
+Catalog validation, full hybrid linkage, and packed retail ELF hashes
+pass. Totals: 8,844 linked C routines, 553,896 code bytes (16.8169%),
+and 59,052 data bytes (9.1121%) across 1,974 reconstructed units.
