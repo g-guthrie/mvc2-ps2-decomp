@@ -2255,3 +2255,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/luna_a_signed_offset.c -c -lang c -O4 -Op -sdatathreshold 0 \
     -o "$BUILD/luna_a_signed_offset.o"
 "$PYTHON" tools/verify_object.py "$BUILD/luna_a_signed_offset.o" private/SLUS_204.86.rom --source src/luna_a_signed_offset.c
+
+"$WIBO" "$SNCPP" -P src/indexed_pointer_accessors.c "$BUILD/indexed_pointer_accessors.i"
+"$WIBO" "$SNCC1" "$BUILD/indexed_pointer_accessors.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/indexed_pointer_accessors.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/indexed_pointer_accessors.o" "$BUILD/indexed_pointer_accessors.s"
+"$PYTHON" tools/verify_object.py "$BUILD/indexed_pointer_accessors.o" private/SLUS_204.86.rom --source src/indexed_pointer_accessors.c

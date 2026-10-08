@@ -243,9 +243,9 @@ SN units use `-ffunction-sections` to retain independent section ownership in
 the hybrid linker. This leaves the verified function instructions unchanged.
 ## SN Systems GCC runtime accessors
 
-Ten runtime-global accessors at `0x0040A2A8`, `0x0040A2B8`, `0x0040A2E8`,
+Twelve runtime-global accessors at `0x0040A2A8`, `0x0040A2B8`, `0x0040A2E8`,
 `0x0040CBA0`, `0x0040CBB0`, `0x0040CBC0`, `0x003FD8E0`, `0x00408608`, and
-`0x00408618`, and `0x00408790` match with SN Systems GCC 2.95.2
+`0x00408618`, `0x00408790`, `0x0040B3A0`, and `0x00409AC8` match with SN Systems GCC 2.95.2
 `-O2 -G0 -ffunction-sections`
 and its assembler `-G0`. Separate function sections keep the scattered
 retail entries independently placeable in the hybrid link. Their non-volatile
@@ -253,7 +253,8 @@ global accesses place the store or load in the `jr`
 delay slot. The signed-byte accessor at `0x00408608` requires a signed global
 type. Volatile declarations prevent this scheduling and do not match. The
 target addresses are `D_00489018`, `D_0048831C`, `D_004895D0`, `D_004895D4`,
-`D_0047B580`, `D_004872F1`, `D_00487324`, and `D_004872F2`; all ten relocated objects
+`D_0047B580`, `D_004872F1`, `D_00487324`, `D_004872F2`, `D_004891AC`, and
+`D_004891B0`, `D_00488314`, and `D_00488318`; all twelve relocated objects
 compare byte-for-byte with retail.
 
 Five indexed-field accessors at `0x003FF5F0`, `0x00404CA8`, `0x004052F8`,
@@ -268,3 +269,8 @@ Four small runtime update routines at `0x00400B98`, `0x00400BB8`,
 outputs and returns 1; the second writes two fields and returns 1; the third
 scales an input into the fifth word; the last clears a word and sets a byte.
 Each relocated object matches the retail bytes.
+
+Two indexed pointer-table readers at `0x0040EF70` and `0x0040EF88` return
+adjacent fields from the selected object. `0x0040FCE8` writes a field selected
+by a combined pair of indices. All three match with SN Systems GCC 2.95.2
+`-O2 -G0 -ffunction-sections` and pass full relocated-byte comparison.
