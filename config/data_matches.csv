@@ -6050,9 +6050,11 @@ data_ff_004BED00,0x004BED00,0x10,src/data/data_ff_004BED00.c,complete,placeholde
 data_u32_004BED10,0x004BED10,0x4,src/data/data_u32_004BED10.c,complete,placeholder
 data_ff_004BED14,0x004BED14,0xC,src/data/data_ff_004BED14.c,complete,placeholder
 data_ff_004BED20,0x004BED20,0x30,src/data/data_ff_004BED20.c,complete,placeholder
-data_u32_004BED50,0x004BED50,0x50,src/data/data_u32_004BED50.c,complete,placeholder
-data_zero_004BEDA0,0x004BEDA0,0x10,src/data/data_zero_004BEDA0.c,complete,placeholder
-data_u8_004BEDB0,0x004BEDB0,0x68,src/data/data_u8_004BEDB0.c,complete,placeholder
+data_u8_004BED50,0x004BED50,0x30,src/data/data_u8_004BED50.c,complete,placeholder
+data_u32_004BED80,0x004BED80,0x18,src/data/data_u32_004BED80.c,complete,reconstructed
+data_u8_004BED98,0x004BED98,0x8,src/data/data_u8_004BED98.c,complete,placeholder
+data_u32_004BEDA0,0x004BEDA0,0x18,src/data/data_u32_004BEDA0.c,complete,reconstructed
+data_u8_004BEDB8,0x004BEDB8,0x60,src/data/data_u8_004BEDB8.c,complete,placeholder
 gHstStringFormat_004BEE18,0x004BEE18,0x3,src/data/gHstStringFormat_004BEE18.c,complete,reconstructed
 data_u8_004BEE1B,0x004BEE1B,0x5,src/data/data_u8_004BEE1B.c,complete,placeholder
 gHstPfsPathFormat_004BEE20,0x004BEE20,0xC,src/data/gHstPfsPathFormat_004BEE20.c,complete,reconstructed
