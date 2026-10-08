@@ -5415,7 +5415,13 @@ data_u32_004BA770,0x004BA770,0xB0,.data,src/data/data_u32_004BA770.c,initialized
 data_zero_004BA820,0x004BA820,0x10,.data,src/data/data_zero_004BA820.c,zero_initialized_untyped
 data_u32_004BA830,0x004BA830,0xE0,.data,src/data/data_u32_004BA830.c,initialized_u32_table
 data_zero_004BA910,0x004BA910,0x10,.data,src/data/data_zero_004BA910.c,zero_initialized_untyped
-data_u8_004BA920,0x004BA920,0x250,.data,src/data/data_u8_004BA920.c,initialized_byte_array
+gFlCreatePaletteAllocationError_004BA920,0x004BA920,0x40,.data,src/data/gFlCreatePaletteAllocationError_004BA920.c,nul_terminated_message
+gFlCreatePaletteDepthError_004BA960,0x004BA960,0x37,.data,src/data/gFlCreatePaletteDepthError_004BA960.c,nul_terminated_message
+data_u8_004BA997,0x004BA997,0x9,.data,src/data/data_u8_004BA997.c,initialized_byte_array
+gFlCreatePaletteFullError_004BA9A0,0x004BA9A0,0x28,.data,src/data/gFlCreatePaletteFullError_004BA9A0.c,nul_terminated_message
+data_u8_004BA9C8,0x004BA9C8,0x8,.data,src/data/data_u8_004BA9C8.c,initialized_byte_array
+gFlReloadTextureError_004BA9D0,0x004BA9D0,0x24,.data,src/data/gFlReloadTextureError_004BA9D0.c,nul_terminated_message
+data_u8_004BA9F4,0x004BA9F4,0x17C,.data,src/data/data_u8_004BA9F4.c,initialized_byte_array
 gAdxRnaDebugOutputFilename_004BAB70,0x004BAB70,0xB,.data,src/data/gAdxRnaDebugOutputFilename_004BAB70.c,nul_terminated_message
 data_u8_004BAB7B,0x004BAB7B,0x5,.data,src/data/data_u8_004BAB7B.c,initialized_byte_array
 gAdxRnaDebugOutputHeader_004BAB80,0x004BAB80,0x1F,.data,src/data/gAdxRnaDebugOutputHeader_004BAB80.c,nul_terminated_message
