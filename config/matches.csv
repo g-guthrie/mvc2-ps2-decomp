@@ -31,6 +31,7 @@ func_0023F050,0x0023F050,0xEC,src/conditional_engine_chains.c,complete
 func_00282320,0x00282320,0xC4,src/physics_dispatchers.c,complete
 func_002253C0,0x002253C0,0x64,src/grok_w7_001e.c,complete
 func_002CBC10,0x002CBC10,0x64,src/grok_w6_002a.c,complete
+func_002CBC80,0x002CBC80,0x64,src/grok_w6_002a.c,complete
 func_00232F50,0x00232F50,0x68,src/grok_w3_0031.c,complete
 func_00232FC0,0x00232FC0,0x68,src/grok_w3_0031.c,complete
 func_002D8E10,0x002D8E10,0x68,src/stance_restore_transitions.c,complete
