@@ -4386,7 +4386,9 @@ data_zero_00479E00,0x00479E00,0x2810,.data,src/data/data_zero_00479E00.c,zero_in
 data_u32_0047C610,0x0047C610,0x10,.data,src/data/data_u32_0047C610.c,initialized_u32_table
 data_zero_0047C620,0x0047C620,0xACC0,.data,src/data/data_zero_0047C620.c,zero_initialized_untyped
 data_u32_004872E0,0x004872E0,0x10,.data,src/data/data_u32_004872E0.c,initialized_u32_table
-data_zero_004872F0,0x004872F0,0x30,.data,src/data/data_zero_004872F0.c,zero_initialized_untyped
+data_raw_004872F0,0x004872F0,0x1,.data,src/data/data_raw_004872F0.c,initialized_byte_array
+gSystemModeSelector_004872F1,0x004872F1,0x1,.data,src/data/gSystemModeSelector_004872F1.c,signed_selector_byte
+data_raw_004872F2,0x004872F2,0x2E,.data,src/data/data_raw_004872F2.c,initialized_byte_array
 data_u32_00487320,0x00487320,0x20,.data,src/data/data_u32_00487320.c,initialized_u32_table
 data_zero_00487340,0x00487340,0xFD0,.data,src/data/data_zero_00487340.c,zero_initialized_untyped
 data_u32_00488310,0x00488310,0x18,.data,src/data/data_u32_00488310.c,initialized_u32_table

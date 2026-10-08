@@ -4386,7 +4386,9 @@ data_zero_00479E00,0x00479E00,0x2810,src/data/data_zero_00479E00.c,complete,plac
 data_u32_0047C610,0x0047C610,0x10,src/data/data_u32_0047C610.c,complete,placeholder
 data_zero_0047C620,0x0047C620,0xACC0,src/data/data_zero_0047C620.c,complete,placeholder
 data_u32_004872E0,0x004872E0,0x10,src/data/data_u32_004872E0.c,complete,placeholder
-data_zero_004872F0,0x004872F0,0x30,src/data/data_zero_004872F0.c,complete,placeholder
+data_raw_004872F0,0x004872F0,0x1,src/data/data_raw_004872F0.c,complete,placeholder
+gSystemModeSelector_004872F1,0x004872F1,0x1,src/data/gSystemModeSelector_004872F1.c,complete,reconstructed
+data_raw_004872F2,0x004872F2,0x2E,src/data/data_raw_004872F2.c,complete,placeholder
 data_u32_00487320,0x00487320,0x20,src/data/data_u32_00487320.c,complete,placeholder
 data_zero_00487340,0x00487340,0xFD0,src/data/data_zero_00487340.c,complete,placeholder
 data_u32_00488310,0x00488310,0x18,src/data/data_u32_00488310.c,complete,placeholder
