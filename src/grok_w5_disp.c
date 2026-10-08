@@ -152,7 +152,7 @@ void residual_0021AA10(u8 *p) { jtbl_004BFF10[p[7]](p); }
 
 void residual_0021F0F0(u8 *p) { jtbl_004BFF70[p[6]](p); }
 
-void residual_00224740(u8 *p) { jtbl_004BFFF8[p[6]](p); }
+void func_00224740(u8 *p) { jtbl_004BFFF8[p[6]](p); }
 
 void residual_0022EC70(u8 *p) { jtbl_004C0120[p[6]](p); }
 
@@ -164,83 +164,83 @@ void residual_0023C8A0(u8 *p) { jtbl_004C0278[p[6]](p); }
 
 void residual_0023D390(u8 *p) { jtbl_004C02A0[p[6]](p); }
 
-void residual_00240830(u8 *p) { jtbl_004529F0[p[6]](p); }
+void func_00240830(u8 *p) { jtbl_004529F0[p[6]](p); }
 
-void residual_00242020(u8 *p) { jtbl_00452A78[p[7]](p); }
+void func_00242020(u8 *p) { jtbl_00452A78[p[7]](p); }
 
-void residual_00245120(u8 *p) { jtbl_00452C80[p[6]](p); }
+void func_00245120(u8 *p) { jtbl_00452C80[p[6]](p); }
 
 void residual_00245A60(u8 *p) { jtbl_004C0360[p[6]](p); }
 
-void residual_0024B020(u8 *p) { jtbl_004C0410[p[6]](p); }
+void func_0024B020(u8 *p) { jtbl_004C0410[p[6]](p); }
 
-void residual_002591A0(u8 *p) { jtbl_004537F0[p[6]](p); }
+void func_002591A0(u8 *p) { jtbl_004537F0[p[6]](p); }
 
-void residual_0026CD20(u8 *p) { jtbl_00454678[p[6]](p); }
+void func_0026CD20(u8 *p) { jtbl_00454678[p[6]](p); }
 
-void residual_00279070(u8 *p) { jtbl_00454E60[p[7]](p); }
+void func_00279070(u8 *p) { jtbl_00454E60[p[7]](p); }
 
-void residual_00279290(u8 *p) { jtbl_00454E90[p[6]](p); }
+void func_00279290(u8 *p) { jtbl_00454E90[p[6]](p); }
 
-void residual_0027B7E0(u8 *p) { jtbl_004C0830[p[7]](p); }
+void func_0027B7E0(u8 *p) { jtbl_004C0830[p[7]](p); }
 
-void residual_0027BD70(u8 *p) { jtbl_00455090[p[6]](p); }
+void func_0027BD70(u8 *p) { jtbl_00455090[p[6]](p); }
 
-void residual_002833B0(u8 *p) { jtbl_004C08F8[p[6]](p); }
+void func_002833B0(u8 *p) { jtbl_004C08F8[p[6]](p); }
 
-void residual_00289000(u8 *p) { jtbl_00456868[p[6]](p); }
+void func_00289000(u8 *p) { jtbl_00456868[p[6]](p); }
 
 void func_0028A770(u8 *a0, u8 *p) { jtbl_00456960[p[24]](a0); }
 
 void func_0028AC20(u8 *a0, u8 *p) { jtbl_004569C0[p[24]](a0); }
 
-void residual_0028BB80(u8 *p) { jtbl_00456A70[p[7]](p); }
+void func_0028BB80(u8 *p) { jtbl_00456A70[p[7]](p); }
 
-void residual_0028BE90(u8 *p) { jtbl_00456AA0[p[7]](p); }
+void func_0028BE90(u8 *p) { jtbl_00456AA0[p[7]](p); }
 
-void residual_0028F850(u8 *p) { jtbl_004576D0[p[7]](p); }
+void func_0028F850(u8 *p) { jtbl_004576D0[p[7]](p); }
 
-void residual_00290A70(u8 *p) { jtbl_004C0A38[p[6]](p); }
+void func_00290A70(u8 *p) { jtbl_004C0A38[p[6]](p); }
 
 void func_00291AE0(u8 *a0, u8 *p) { jtbl_00457890[p[24]](a0); }
 
 void func_00291F90(u8 *a0, u8 *p) { jtbl_004578F0[p[24]](a0); }
 
-void residual_00292EF0(u8 *p) { jtbl_004579A0[p[7]](p); }
+void func_00292EF0(u8 *p) { jtbl_004579A0[p[7]](p); }
 
-void residual_00293200(u8 *p) { jtbl_004579D0[p[7]](p); }
+void func_00293200(u8 *p) { jtbl_004579D0[p[7]](p); }
 
-void residual_0029D670(u8 *p) { jtbl_004581E0[p[6]](p); }
+void func_0029D670(u8 *p) { jtbl_004581E0[p[6]](p); }
 
-void residual_002A2CE0(u8 *p) { jtbl_004C0BA8[p[6]](p); }
+void func_002A2CE0(u8 *p) { jtbl_004C0BA8[p[6]](p); }
 
-void residual_002A8F70(u8 *p) { jtbl_004588A0[p[6]](p); }
+void func_002A8F70(u8 *p) { jtbl_004588A0[p[6]](p); }
 
-void residual_002AE8D0(u8 *p) { jtbl_00458D10[p[6]](p); }
+void func_002AE8D0(u8 *p) { jtbl_00458D10[p[6]](p); }
 
-void residual_002B4CE0(u8 *p) { jtbl_004590C8[p[6]](p); }
+void func_002B4CE0(u8 *p) { jtbl_004590C8[p[6]](p); }
 
-void residual_002BA0D0(u8 *p) { jtbl_00459410[p[6]](p); }
+void func_002BA0D0(u8 *p) { jtbl_00459410[p[6]](p); }
 
-void residual_002C7A70(u8 *p) { jtbl_004C0E78[p[6]](p); }
+void func_002C7A70(u8 *p) { jtbl_004C0E78[p[6]](p); }
 
 void residual_002D76E0(u8 *p) { jtbl_0045A7A0[p[6]](p); }
 
-void residual_002DDE50(u8 *p) { jtbl_0045ACF8[p[6]](p); }
+void func_002DDE50(u8 *p) { jtbl_0045ACF8[p[6]](p); }
 
-void residual_002DE940(u8 *p) { jtbl_0045AD40[p[7]](p); }
+void func_002DE940(u8 *p) { jtbl_0045AD40[p[7]](p); }
 
-void residual_002DF390(u8 *p) { jtbl_0045AD80[p[7]](p); }
+void func_002DF390(u8 *p) { jtbl_0045AD80[p[7]](p); }
 
-void residual_002E5EE0(u8 *p) { jtbl_0045B270[p[6]](p); }
+void func_002E5EE0(u8 *p) { jtbl_0045B270[p[6]](p); }
 
-void residual_002EA9F0(u8 *p) { jtbl_004C1178[p[6]](p); }
+void func_002EA9F0(u8 *p) { jtbl_004C1178[p[6]](p); }
 
 void residual_002FB0E0(u8 *p) { jtbl_0045BF88[p[6]](p); }
 
-void residual_00302070(u8 *p) { jtbl_004C14B8[p[6]](p); }
+void func_00302070(u8 *p) { jtbl_004C14B8[p[6]](p); }
 
-void residual_0030DDD0(u8 *p) { jtbl_0045D1D0[p[6]](p); }
+void func_0030DDD0(u8 *p) { jtbl_0045D1D0[p[6]](p); }
 
 void residual_00311A70(u8 *p) { jtbl_0045D3C0[p[6]](p); }
 
