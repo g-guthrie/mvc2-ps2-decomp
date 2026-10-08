@@ -830,8 +830,9 @@ jtbl_0045BFD0,0x0045BFD0,0xC,src/composite_dispatch_heads.c,jtbl_0045BFD0,void(u
 jtbl_0045C0C0,0x0045C0C0,0x2c,src/preaction_dispatch_heads.c,jtbl_0045C0C0,void(u8 *)
 jtbl_0045C0F0,0x0045C0F0,0xC,src/composite_dispatch_heads.c,jtbl_0045C0F0,void(u8 *)
 jtbl_0045C118,0x0045C118,0xC,src/composite_dispatch_heads.c,jtbl_0045C118,void(u8 *)
-jtbl_0045C170,0x0045C170,0x2c,src/composite_dispatch_heads.c,jtbl_0045C170,void(u8 *)
-jtbl_0045C1A0,0x0045C1A0,0x14,src/composite_dispatch_heads.c,jtbl_0045C1A0,void(u8 *)
+jtbl_0045C170,0x0045C170,0x2c,src/composite_dispatch_heads.c,jtbl_0045C170,"void(u8 *, void *)"
+jtbl_0045C1A0,0x0045C1A0,0x14,src/composite_dispatch_heads.c,jtbl_0045C1A0,"void(u8 *, void *)"
+jtbl_0045C1C0,0x0045C1C0,0x1c,src/composite_dispatch_heads.c,jtbl_0045C1C0,"void(u8 *, void *)"
 jtbl_0045C1E0,0x0045C1E0,0x24,src/composite_dispatch_heads.c,jtbl_0045C1E0,void(u8 *)
 jtbl_0045C210,0x0045C210,0x1c,src/argument_dispatch_heads.c,jtbl_0045C210,"void(u8 *, void *)"
 jtbl_0045C230,0x0045C230,0xC,src/argument_dispatch_heads.c,jtbl_0045C230,"void(u8 *, void *)"
@@ -1318,9 +1319,9 @@ jtbl_004C13B0,0x004C13B0,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C13B0,vo
 jtbl_004C13B8,0x004C13B8,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C13B8,void(u8 *)
 jtbl_004C1420,0x004C1420,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C1420,void(u8 *)
 jtbl_004C1428,0x004C1428,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C1428,void(u8 *)
-jtbl_004C1430,0x004C1430,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C1430,void(u8 *)
-jtbl_004C1438,0x004C1438,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C1438,void(u8 *)
-jtbl_004C1440,0x004C1440,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C1440,void(u8 *)
+jtbl_004C1430,0x004C1430,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C1430,"void(u8 *, void *)"
+jtbl_004C1438,0x004C1438,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C1438,"void(u8 *, void *)"
+jtbl_004C1440,0x004C1440,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C1440,"void(u8 *, void *)"
 jtbl_004C14B0,0x004C14B0,0x08,src/gp_dispatch.c,jtbl_004C14B0,void(u8 *)
 jtbl_004C14B8,0x004C14B8,0x08,src/grok_w5_disp.c,jtbl_004C14B8,void(u8 *)
 jtbl_004C14C0,0x004C14C0,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C14C0,void(u8 *)

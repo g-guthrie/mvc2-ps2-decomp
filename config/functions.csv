@@ -13158,7 +13158,10 @@ func_002FF180,0x002FF180,0x1C,0x002FF19C,code,matching-c-head-split
 residual_002FF19C,0x002FF19C,0xA4,0x002FF240,assembly_residual,verified-boundary-after-matching-head
 func_002FF240,0x002FF240,0x3C,0x002FF27C,code,spimdisasm-explicit-size-before-first-data
 func_002FF280,0x002FF280,0x1C,0x002FF29C,code,matching-c-head-split
-residual_002FF29C,0x002FF29C,0xD4,0x002FF370,assembly_residual,verified-boundary-after-matching-head
+residual_002FF29C,0x002FF29C,0x4,0x002FF2A0,assembly_residual,padding-before-callback-referenced-function
+func_002FF2A0,0x002FF2A0,0x28,0x002FF2C8,code,context-dispatch-table-head
+residual_002FF2C8,0x002FF2C8,0x8,0x002FF2D0,assembly_residual,alignment-before-function-entry
+residual_002FF2D0,0x002FF2D0,0xA0,0x002FF370,assembly_residual,verified-boundary-after-dispatch-head
 func_002FF370,0x002FF370,0x70,0x002FF3E0,code,spimdisasm-explicit-size-before-first-data
 func_002FF3E0,0x002FF3E0,0x8,0x002FF3E8,code,spimdisasm-explicit-size-before-first-data
 func_002FF3F0,0x002FF3F0,0x20,0x002FF410,code,matching-c-head-split

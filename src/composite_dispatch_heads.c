@@ -1,6 +1,7 @@
 typedef unsigned char u8;
 typedef unsigned int u32;
 typedef void (*DispatchFn)(u8 *);
+typedef void (*ContextDispatchFn)(u8 *, void *);
 
 extern void func_00239870(u8 *);
 
@@ -974,10 +975,11 @@ extern DispatchFn jtbl_0045C0D0[];
 extern DispatchFn jtbl_0045C0E0[];
 extern DispatchFn jtbl_0045C0F0[];
 extern DispatchFn jtbl_0045C118[];
-extern DispatchFn jtbl_0045C170[];
-extern DispatchFn jtbl_0045C180[];
-extern DispatchFn jtbl_0045C190[];
-extern DispatchFn jtbl_0045C1A0[];
+extern ContextDispatchFn jtbl_0045C1C0[];
+extern ContextDispatchFn jtbl_0045C170[];
+extern ContextDispatchFn jtbl_0045C180[];
+extern ContextDispatchFn jtbl_0045C190[];
+extern ContextDispatchFn jtbl_0045C1A0[];
 extern DispatchFn jtbl_0045C1E0[];
 extern DispatchFn jtbl_0045C8E0[];
 extern DispatchFn jtbl_0045C8F0[];
@@ -3291,15 +3293,21 @@ void func_002FD980(u8 *p) { jtbl_0045C0F0[p[6]](p); }
 
 void func_002FDF40(u8 *p) { jtbl_0045C118[p[6]](p); }
 
-void func_002FE490(u8 *p) { jtbl_0045C170[p[6]](p); }
+void func_002FE490(u8 *p, void *context) { jtbl_0045C170[p[6]](p, context); }
 
-void func_002FE8B0(u8 *p) { jtbl_0045C180[p[6]](p); }
+void func_002FE8B0(u8 *p, void *context) { jtbl_0045C180[p[6]](p, context); }
 
-void func_002FEA50(u8 *p) { jtbl_0045C190[p[6]](p); }
+void func_002FEA50(u8 *p, void *context) { jtbl_0045C190[p[6]](p, context); }
 
-void func_002FEF40(u8 *p) { jtbl_0045C1A0[p[6]](p); }
+void func_002FEF40(u8 *p, void *context) { jtbl_0045C1A0[p[6]](p, context); }
 
 void func_002FF3F0(u8 *p) { jtbl_0045C1E0[p[525]](p); }
+
+void func_002FF2A0(u8 *p)
+{
+    p[537] = 0;
+    jtbl_0045C1C0[p[509]](p, p + 696);
+}
 
 void func_00300C80(u8 *p) { jtbl_0045C8E0[p[531]](p); }
 

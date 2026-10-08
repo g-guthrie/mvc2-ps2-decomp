@@ -786,11 +786,11 @@ void func_002FD510(void *p) { if ((s8)func_00175700(p) < 0) { func_00184540(p); 
 
 void func_002FD940(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
-void func_002FEF00(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
+void func_002FEF00(u8 *p, void *unused) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
-void func_002FEFE0(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
+void func_002FEFE0(u8 *p, void *unused) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
-void func_002FF240(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
+void func_002FF240(u8 *p, void *unused) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
 void func_002FFE00(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 

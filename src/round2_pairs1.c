@@ -102,7 +102,7 @@ void func_0028FDE0(u8 *p) {
     }
 }
 
-void func_002FEA00(u8 *p) {
+void func_002FEA00(u8 *p, void *unused) {
     func_00175700(p);
     if (--*(s16 *)(p + 28) == 0)
         func_001843A0(p);

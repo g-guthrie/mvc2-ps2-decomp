@@ -1,5 +1,6 @@
 typedef unsigned char u8;
 typedef void (*DispatchFn)(u8 *);
+typedef void (*ContextDispatchFn)(u8 *, void *);
 
 extern DispatchFn jtbl_004BF360[2];
 extern DispatchFn jtbl_004BF370[2];
@@ -271,9 +272,9 @@ extern DispatchFn jtbl_004C13B8[2];
 extern DispatchFn jtbl_004C13C0[2];
 extern DispatchFn jtbl_004C1420[2];
 extern DispatchFn jtbl_004C1428[2];
-extern DispatchFn jtbl_004C1430[2];
-extern DispatchFn jtbl_004C1438[2];
-extern DispatchFn jtbl_004C1440[2];
+extern ContextDispatchFn jtbl_004C1430[2];
+extern ContextDispatchFn jtbl_004C1438[2];
+extern ContextDispatchFn jtbl_004C1440[2];
 extern DispatchFn jtbl_004C14C0[2];
 extern DispatchFn jtbl_004C14D0[2];
 extern DispatchFn jtbl_004C14D8[2];
@@ -918,11 +919,11 @@ void func_002FD660(u8 *p) { jtbl_004C1420[p[6]](p); }
 
 void func_002FDBA0(u8 *p) { jtbl_004C1428[p[6]](p); }
 
-void func_002FF020(u8 *p) { jtbl_004C1430[p[6]](p); }
+void func_002FF020(u8 *p, void *context) { jtbl_004C1430[p[6]](p, context); }
 
-void func_002FF180(u8 *p) { jtbl_004C1438[p[6]](p); }
+void func_002FF180(u8 *p, void *context) { jtbl_004C1438[p[6]](p, context); }
 
-void func_002FF280(u8 *p) { jtbl_004C1440[p[6]](p); }
+void func_002FF280(u8 *p, void *context) { jtbl_004C1440[p[6]](p, context); }
 
 void func_003029A0(u8 *p) { jtbl_004C14C0[p[6]](p); }
 
