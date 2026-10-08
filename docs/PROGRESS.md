@@ -631,3 +631,12 @@ Catalog validation, full hybrid linkage, and packed retail ELF hashes pass.
 Totals: 8,811 linked C routines, 548,812 / 3,293,696 code bytes (16.6625%),
 and 54,190 / 648,064 data bytes (8.3618%) across 1,855 reconstructed units.
 The remaining retail spans remain uncredited placeholders.
+
+## 2026-10-08 effect-state pair data
+
+Recovered sixteen consumed two-float state pairs, adding 128 initialized
+data bytes. Fixed swc1 destinations establish the field types and bounds;
+intervening gaps and suffixes stay raw placeholders. All 32 changed data
+owners compile and match retail bytes. Catalog validation, full hybrid
+linkage, and packed retail ELF hashes pass. Code remains 548,812 bytes
+(16.6625%); reconstructed data is 54,318 / 648,064 bytes (8.3816%).
