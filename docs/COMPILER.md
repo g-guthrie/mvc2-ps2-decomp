@@ -323,3 +323,8 @@ the GP-relative callback state, so the thunks take no arguments and preserve
 the returned `s32` callback status. `0x00402818` forwards an `s32 (*)(void *)`
 callback and its context pointer to the callback-state installer, as confirmed
 by its caller and the target's indirect-call sequence.
+
+Two no-argument cleanup thunks at `0x00400130` and `0x003FECA8` also match
+under EE GCC 2.96. Their target bodies only update global runtime state and
+call helpers using global data; neither consumes the caller's argument
+registers. The first is directly invoked as a cleanup step.
