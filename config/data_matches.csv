@@ -701,7 +701,9 @@ data_f32_one_00444970,0x00444970,0x18,src/data/data_f32_one_00444970.c,complete,
 data_u32_00444988,0x00444988,0xC,src/data/data_u32_00444988.c,complete,placeholder
 data_u32_00444994,0x00444994,0x4,src/data/data_u32_00444994.c,complete,placeholder
 data_f32_one_00444998,0x00444998,0xC,src/data/data_f32_one_00444998.c,complete,placeholder
-data_u32_004449A4,0x004449A4,0xBC,src/data/data_u32_004449A4.c,complete,placeholder
+data_u32_004449A4,0x004449A4,0xC,src/data/data_u32_004449A4.c,complete,placeholder
+gMvc2ScaleKeys_004449B0,0x004449B0,0x10,src/data/scale_keys_004449B0.c,complete,reconstructed
+gMvc2ScaleKeys_004449C0,0x004449C0,0xA0,src/data/scale_keys_004449C0.c,complete,reconstructed
 data_f32_one_00444A60,0x00444A60,0x10,src/data/data_f32_one_00444A60.c,complete,placeholder
 data_u32_00444A70,0x00444A70,0x8,src/data/data_u32_00444A70.c,complete,placeholder
 data_u32_00444A78,0x00444A78,0xC,src/data/data_u32_00444A78.c,complete,placeholder
@@ -725,7 +727,8 @@ data_u32_00444D1C,0x00444D1C,0x4,src/data/data_u32_00444D1C.c,complete,placehold
 data_f32_one_00444D20,0x00444D20,0xC,src/data/data_f32_one_00444D20.c,complete,reconstructed
 data_u32_00444D2C,0x00444D2C,0x4,src/data/data_u32_00444D2C.c,complete,placeholder
 gMvc2AxisScaleCurves_00444D30,0x00444D30,0x120,src/data/axis_scale_curves_00444D30.c,complete,reconstructed
-data_u32_00444E50,0x00444E50,0x88,src/data/data_u32_00444E50.c,complete,placeholder
+data_u32_00444E50,0x00444E50,0x20,src/data/data_u32_00444E50.c,complete,placeholder
+gMvc2ScaleKeys_00444E70,0x00444E70,0x68,src/data/scale_keys_00444E70.c,complete,reconstructed
 data_f32_one_00444ED8,0x00444ED8,0xC,src/data/data_f32_one_00444ED8.c,complete,placeholder
 data_u32_00444EE4,0x00444EE4,0x10C,src/data/data_u32_00444EE4.c,complete,placeholder
 jtbl_00444FF0,0x00444FF0,0x10,src/data/jtbl_00444FF0.c,complete,reconstructed

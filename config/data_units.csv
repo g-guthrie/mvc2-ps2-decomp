@@ -701,7 +701,9 @@ data_f32_one_00444970,0x00444970,0x18,.data,src/data/data_f32_one_00444970.c,fil
 data_u32_00444988,0x00444988,0xC,.data,src/data/data_u32_00444988.c,filled_u32_constant
 data_u32_00444994,0x00444994,0x4,.data,src/data/data_u32_00444994.c,initialized_u32_table
 data_f32_one_00444998,0x00444998,0xC,.data,src/data/data_f32_one_00444998.c,filled_f32_one
-data_u32_004449A4,0x004449A4,0xBC,.data,src/data/data_u32_004449A4.c,initialized_u32_table
+data_u32_004449A4,0x004449A4,0xC,.data,src/data/data_u32_004449A4.c,initialized_u32_table
+gMvc2ScaleKeys_004449B0,0x004449B0,0x10,.data,src/data/scale_keys_004449B0.c,scale_key_pair
+gMvc2ScaleKeys_004449C0,0x004449C0,0xA0,.data,src/data/scale_keys_004449C0.c,scale_key_table
 data_f32_one_00444A60,0x00444A60,0x10,.data,src/data/data_f32_one_00444A60.c,filled_f32_one
 data_u32_00444A70,0x00444A70,0x8,.data,src/data/data_u32_00444A70.c,initialized_u32_table
 data_u32_00444A78,0x00444A78,0xC,.data,src/data/data_u32_00444A78.c,filled_u32_constant
@@ -725,7 +727,8 @@ data_u32_00444D1C,0x00444D1C,0x4,.data,src/data/data_u32_00444D1C.c,initialized_
 data_f32_one_00444D20,0x00444D20,0xC,.data,src/data/data_f32_one_00444D20.c,typed_effect_scale_vector
 data_u32_00444D2C,0x00444D2C,0x4,.data,src/data/data_u32_00444D2C.c,initialized_u32_table
 gMvc2AxisScaleCurves_00444D30,0x00444D30,0x120,.data,src/data/axis_scale_curves_00444D30.c,axis_scale_keyframe_curves
-data_u32_00444E50,0x00444E50,0x88,.data,src/data/data_u32_00444E50.c,initialized_u32_table
+data_u32_00444E50,0x00444E50,0x20,.data,src/data/data_u32_00444E50.c,initialized_u32_table
+gMvc2ScaleKeys_00444E70,0x00444E70,0x68,.data,src/data/scale_keys_00444E70.c,scale_key_table
 data_f32_one_00444ED8,0x00444ED8,0xC,.data,src/data/data_f32_one_00444ED8.c,filled_f32_one
 data_u32_00444EE4,0x00444EE4,0x10C,.data,src/data/data_u32_00444EE4.c,initialized_u32_table
 jtbl_00444FF0,0x00444FF0,0x10,.rodata,src/data/jtbl_00444FF0.c,typed_state_callback_table
