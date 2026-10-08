@@ -8799,3 +8799,4 @@ func_002579F0,0x002579F0,0x80,src/signed_result_handlers.c,complete
 func_00287C30,0x00287C30,0x90,src/positioned_motion_constants.c,complete
 func_00287E40,0x00287E40,0x80,src/positioned_motion_constants.c,complete
 func_0028F3D0,0x0028F3D0,0x80,src/positioned_motion_constants.c,complete
+func_0028F5D0,0x0028F5D0,0x88,src/positioned_motion_constants.c,complete
