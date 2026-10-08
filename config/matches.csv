@@ -8760,3 +8760,4 @@ func_00402C08,0x00402C08,0x14,src/ee96_string_chain.c,complete
 func_003FCF70,0x003FCF70,0x14,src/ee96_validation_thunk.c,complete
 func_002EB2A0,0x002EB2A0,0x58,src/state_return_family.c,complete
 func_00302930,0x00302930,0x58,src/state_return_family.c,complete
+func_00277920,0x00277920,0x70,src/state_return_family.c,complete

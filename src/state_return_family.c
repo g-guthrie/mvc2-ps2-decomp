@@ -20,6 +20,7 @@ extern int func_00189310(u8 *, u8 *, u8 *);
 extern int func_00189EE0(u8 *, u8 *, u8 *);
 extern int func_00174170(u8 *);
 extern void func_001757E0(u8 *, int, int);
+extern int func_001E7FD0(u8 *);
 
 int func_001ED760(u8 *p) {
     int condition;
@@ -98,6 +99,25 @@ void func_00302930(u8 *p) {
     else p[360] = 1;
     func_001757E0(p, 19, p[360]);
     p[6]++;
+}
+
+int func_00277920(u8 *p) {
+    u8 count;
+    int result;
+    count = ((*(unsigned short *)(p + 526) & 0x0C00) >> 10);
+    p[34] = count;
+    if (count != 0) {
+        if (p[530] == 1) {
+            if (p[439] == 1) {
+                result = func_001E7FD0(p);
+                if (result != 0) {
+                    p[523] = 0;
+                    return result;
+                }
+            }
+        }
+    }
+    return 0;
 }
 
 int func_00233B00(u8 *p) {

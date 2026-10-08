@@ -202,7 +202,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/fpu_pure_updates.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/fpu_pure_updates.o"
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/state_return_family.c -c -lang c $MATCH_FLAGS \
+    src/state_return_family.c -c -lang c -O4 -sdatathreshold 0 \
     -o "$BUILD/state_return_family.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/ordered_initializers.c -c -lang c $MATCH_FLAGS \
