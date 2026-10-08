@@ -2405,3 +2405,7 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/mmio_exchange_0010289
 "$WIBO" "$SNCC1" "$BUILD/float_copy_001037B8.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/float_copy_001037B8.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/float_copy_001037B8.o" "$BUILD/float_copy_001037B8.s"
 "$PYTHON" tools/verify_object.py "$BUILD/float_copy_001037B8.o" private/SLUS_204.86.rom --source src/float_copy_001037B8.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/mode_flags_0041DE10.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/mode_flags_0041DE10.o"
+"$PYTHON" tools/verify_object.py "$BUILD/mode_flags_0041DE10.o" private/SLUS_204.86.rom --source src/mode_flags_0041DE10.c

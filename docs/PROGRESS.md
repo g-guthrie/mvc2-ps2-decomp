@@ -831,3 +831,16 @@ placeholders. All 84 changed data owners independently compile and
 byte-match retail. Catalog validation, full hybrid linkage, and packed
 retail ELF hashes pass. Totals: 8,841 linked C routines, 553,340 code
 bytes (16.8000%), and 58,940 data bytes (9.0948%) across 1,970 units.
+
+## 2026-10-08 mode flags, state initialization, and bounded decode data
+
+Recovered complete native C functions 0041DE10 (268 bytes; MWCCPS2
+3.0.3 O3/sdata8, with normal runner recipe) and 002F03F0 (136 bytes;
+full motion-speed-transition O4/Op/sdata8 unit). Both source units verify
+exactly. Recovered a 16-entry signed-nibble lookup bounded by &0xF,
+an eight-byte double consumed by the double-multiply helper, and a
+4x4 byte swizzle map with selectors masked to &3. These add 88 data
+bytes; all remaining gaps stay placeholders. Every changed data owner
+byte-verifies. All 33 tests, catalog validation, full hybrid linkage, and
+packed retail ELF hashes pass. Totals: 8,843 linked C routines,
+553,744 code bytes (16.8122%), and 59,028 data bytes (9.1084%).
