@@ -4939,9 +4939,11 @@ data_u32_004B424C,0x004B424C,0x14,.data,src/data/data_u32_004B424C.c,initialized
 data_f32_one_004B4260,0x004B4260,0x1C,.data,src/data/data_f32_one_004B4260.c,filled_f32_one
 data_u32_004B4280,0x004B4280,0x10,.data,src/data/data_u32_004B4280.c,initialized_u32_table
 data_f32_one_004B4290,0x004B4290,0x10,.data,src/data/data_f32_one_004B4290.c,filled_f32_one
-data_u32_004B42A0,0x004B42A0,0x5C0,.data,src/data/data_u32_004B42A0.c,initialized_u32_table
-data_u32_004B4860,0x004B4860,0xC,.data,src/data/data_u32_004B4860.c,filled_u32_constant
-data_u32_004B486C,0x004B486C,0x44,.data,src/data/data_u32_004B486C.c,initialized_u32_table
+data_raw_004B42A0,0x004B42A0,0x10,.data,src/data/data_raw_004B42A0.c,initialized_byte_array
+gCreditsScriptBytes_004B42B0,0x004B42B0,0x5CF,.data,src/data/gCreditsScriptBytes_004B42B0.c,bounded_text_bytecode
+data_raw_004B487F,0x004B487F,0x1,.data,src/data/data_raw_004B487F.c,initialized_byte_array
+gCreditsThanksText_004B4880,0x004B4880,0x16,.data,src/data/gCreditsThanksText_004B4880.c,nul_terminated_message
+data_raw_004B4896,0x004B4896,0x1A,.data,src/data/data_raw_004B4896.c,initialized_byte_array
 jtbl_004B48B0,0x004B48B0,0x34,.rodata,src/data/jtbl_004B48B0.c,jump_table
 data_u32_004B48F0,0x004B48F0,0xA00,.data,src/data/data_u32_004B48F0.c,initialized_u32_table
 data_f32_004B52F0,0x004B52F0,0x10,.data,src/data/data_f32_004B52F0.c,indexed_f32_values
