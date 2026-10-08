@@ -532,3 +532,14 @@ verification. Catalog validation, full hybrid loaded image, and packed retail
 ELF hashes pass. Totals: 8,773 linked C routines and
 543,980 / 3,293,696 code bytes. Integrated reconstructed data remains
 52,381 / 648,064 bytes; later worker batches are pending consolidation.
+
+## 2026-10-08 referenced status text and indexed floats
+
+Added 607 reconstructed data bytes: referenced paths, serial/status formats,
+UI labels and icon/resource names, parser-supported file-mode strings, the
+sound-driver version message, and a bounded three-row/four-column float table
+read by the movement routine. Payload/NUL bytes are credited; all string
+alignment and unknown neighboring data remain placeholders. Every changed
+data owner passes independent compiler/byte verification. Catalog validation,
+full hybrid, and packed retail ELF hashes pass. Data is now
+52,988 / 648,064 bytes; C remains 543,980 / 3,293,696 bytes.
