@@ -2471,3 +2471,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/tagged_counter_record_00420BA0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/tagged_counter_record_00420BA0.o" \
     private/SLUS_204.86.rom --source src/tagged_counter_record_00420BA0.c
+
+# EE GCC layout with the original SN assembler's R5900 pseudo-instruction encoding.
+"$WIBO" "$SNCPP" -P src/reentrant_heap_0011F858.c "$BUILD/reentrant_heap_0011F858.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/reentrant_heap_0011F858.i" "$BUILD/reentrant_heap_0011F858.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/reentrant_heap_0011F858.o" "$BUILD/reentrant_heap_0011F858.s"
+"$PYTHON" tools/verify_object.py "$BUILD/reentrant_heap_0011F858.o" private/SLUS_204.86.rom --source src/reentrant_heap_0011F858.c
