@@ -512,3 +512,38 @@ void func_0026C560(u8 *p)
         *(short *)(p + 28) = 16;
     }
 }
+
+void func_002EF010(u8 *p)
+{
+    float speed;
+    func_00175700(p);
+    if (!*(signed char *)(p + 337)) {
+        p[6]++;
+        speed = 13.333333f;
+        if (p[486] != 0)
+            speed = -speed;
+        *(float *)(p + 92) = speed;
+        *(float *)(p + 96) = 8.571428298950195f;
+        *(float *)(p + 104) = 0.0f;
+        *(float *)(p + 108) = -0.8035714030265808f;
+    }
+}
+
+void func_002EAB70(u8 *p)
+{
+    float speed;
+    func_00175700(p);
+    if (!*(signed char *)(p + 337)) {
+        p[6]++;
+        *(volatile int *)(p + 92) = 0;
+        *(volatile int *)(p + 96) = 0;
+        *(volatile int *)(p + 104) = 0;
+        *(volatile int *)(p + 108) = 0;
+        if (p[486] != 0)
+            speed = 13.333333f;
+        else
+            speed = -13.333333f;
+        *(float *)(p + 92) = speed;
+        *(short *)(p + 28) = 20;
+    }
+}
