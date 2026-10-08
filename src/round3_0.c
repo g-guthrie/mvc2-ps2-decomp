@@ -351,3 +351,18 @@ void func_002F0BE0(u8 *p) {
     func_00183D10(p);
     func_002F0C50(p);
 }
+
+extern void func_001266A0(u8 *, int, int);
+void func_002A66F0(u8 *p) {
+    func_00175700(p);
+    if (*(s8 *)(p + 337)) {
+        u8 *q;
+        p[6]++;
+        p[337] = 0;
+        q = *(u8 **)(p + 476);
+        *(u8 **)(q + 456) = p;
+        q[522] = 1;
+        q[437] = 36;
+        func_001266A0(p, 0, 0);
+    }
+}
