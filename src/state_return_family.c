@@ -101,6 +101,13 @@ void func_00302930(u8 *p) {
     p[6]++;
 }
 
+void func_0023BBF0(u8 *p) {
+    if ((func_00174170(p) & 1) == 0) p[360] = 0;
+    else p[360] = 1;
+    func_001757E0(p, 19, p[360]);
+    p[6]++;
+}
+
 int func_00277920(u8 *p) {
     u8 count;
     int result;
