@@ -5611,7 +5611,8 @@ data_u32_004C1ECC,0x004C1ECC,0x4,.data,src/data/data_u32_004C1ECC.c,initialized_
 jtbl_004C1ED8,0x004C1ED8,0x38,.rodata,src/data/jtbl_004C1ED8.c,typed_state_callback_table
 data_u32_004C1F10,0x004C1F10,0x30,.data,src/data/data_u32_004C1F10.c,initialized_u32_table
 jtbl_004C1F40,0x004C1F40,0x8,.rodata,src/data/jtbl_004C1F40.c,typed_state_callback_table
-data_u32_004C1F48,0x004C1F48,0x50,.data,src/data/data_u32_004C1F48.c,initialized_u32_table
+data_u32_004C1F48,0x004C1F48,0x8,.data,src/data/data_u32_004C1F48.c,initialized_u32_table
+gMvc2StateShortValues_004C1F50,0x004C1F50,0x48,.data,src/data/state_short_values_004C1F50.c,indexed_s16_state_values
 jtbl_004C1F98,0x004C1F98,0x8,.rodata,src/data/jtbl_004C1F98.c,jump_table
 data_u32_004C1FA0,0x004C1FA0,0x14,.data,src/data/data_u32_004C1FA0.c,initialized_u32_table
 jtbl_004C1FB4,0x004C1FB4,0x8,.rodata,src/data/jtbl_004C1FB4.c,typed_owner_stance_callback_table
