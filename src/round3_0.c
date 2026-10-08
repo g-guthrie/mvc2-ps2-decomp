@@ -536,3 +536,12 @@ void func_00294190(u8 *p) {
     func_00294210(p);
 }
 
+void func_002B52A0(u8 *p) {
+    p[6]++;
+    func_00185490(p);
+    func_00183D10(p);
+    func_0018C4B0(p, 13);
+    if (p[439] == 0) func_001757E0(p, 21, 6);
+    else func_001757E0(p, 21, 8);
+}
+
