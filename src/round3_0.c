@@ -367,6 +367,15 @@ void func_002E6950(u8 *p) {
     func_001757E0(p, 21, 12);
 }
 
+extern void func_00176160(u8 *, int, int, int);
+void func_002F39C0(u8 *p) {
+    p[6]++;
+    p[316] = 1;
+    func_00176160(p, 0, p[37] * 4, 1);
+    func_00176160(p, 1, 24, 1);
+    func_001757E0(p, 18, 0);
+}
+
 extern void func_001266A0(u8 *, int, int);
 void func_002A66F0(u8 *p) {
     func_00175700(p);
