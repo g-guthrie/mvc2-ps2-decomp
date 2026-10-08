@@ -11,20 +11,20 @@ extern char D_004BF1A0[];
 extern void func_00422CC0(void);
 extern s32 func_00422D20(volatile u8 *buffer, u32 tag);
 extern s32 func_00103DE0(void *request);
-extern int func_0011EB60(const char *format, ...);
+extern s32 func_0011EB60(const char *format, ...);
 
 typedef struct {
-    u32 word0;
-    u32 word1;
-    u32 word2;
-    u32 word3;
-    u32 word4;
-    u32 word5;
-} RuntimeRequest;
+    u32 reserved0;
+    u32 maxCount;
+    u32 initialCount;
+    u32 reserved3;
+    u32 reserved4;
+    u32 option;
+} SemaParam;
 
 s32 func_00422DB0(void)
 {
-    RuntimeRequest request;
+    SemaParam request;
     s32 status;
 
     if (D_004C2BB4 != 0)
@@ -38,9 +38,9 @@ s32 func_00422DB0(void)
     if (status < 0)
         return -1;
 
-    request.word2 = 1;
-    request.word1 = 1;
-    request.word5 = 0;
+    request.initialCount = 1;
+    request.maxCount = 1;
+    request.option = 0;
 
     if (D_004C2538 < 0) {
         status = func_00103DE0(&request);
