@@ -390,3 +390,11 @@ void func_002A66F0(u8 *p) {
         func_001266A0(p, 0, 0);
     }
 }
+extern void func_00290290(u8 *);
+void func_00290240(u8 *p) {
+    p[7]++;
+    func_00175C00(p, 0);
+    func_001757E0(p, 19, 7);
+    func_00290290(p);
+}
+
