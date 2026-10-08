@@ -607,6 +607,27 @@ void func_002E1FE0(u8 *p)
     }
 }
 
+void func_0023B670(u8 *p)
+{
+    float x, y;
+    func_00175700(p);
+    if (!*(signed char *)(p + 337)) {
+        p[6]++;
+        *(float *)(p + 96) = 2.142857f;
+        *(float *)(p + 108) = -0.2678571343421936f;
+        if (p[486] != 0)
+            x = 13.333333f;
+        else
+            x = -13.333333f;
+        *(float *)(p + 92) = x;
+        if (p[486] != 0)
+            y = -0.46875f;
+        else
+            y = 0.46875f;
+        *(float *)(p + 104) = y;
+    }
+}
+
 void func_0022E000(u8 *p)
 {
     float x, y;
