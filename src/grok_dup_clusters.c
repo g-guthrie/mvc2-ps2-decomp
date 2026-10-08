@@ -102,6 +102,24 @@ void func_002694E0(u8 *p) {
     }
 }
 
+void func_002F6010(u8 *p)
+{
+    int *x = (int *)(p + 92);
+    int *y = (int *)(p + 96);
+    int *z = (int *)(p + 104);
+    int *w = (int *)(p + 108);
+    PHYS
+    func_00175700(p);
+    if ((s8)p[337] != 0) {
+        p[6]++;
+        *x = 0;
+        *y = 0;
+        *z = 0;
+        *w = 0;
+        *(unsigned int *)(p + 108) = 0xBF4DB6DB;
+    }
+}
+
 void func_00359310(u8 *p, u8 *q) {
     p[5]++;
     *(u16 *)(q + 8) = 0xFFFF;
