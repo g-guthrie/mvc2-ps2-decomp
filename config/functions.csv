@@ -12100,7 +12100,7 @@ func_002DB4E0,0x002DB4E0,0xA8,0x002DB588,code,spimdisasm-explicit-size-before-fi
 func_002DB590,0x002DB590,0x6C,0x002DB5FC,code,spimdisasm-explicit-size-before-first-data
 func_002DB600,0x002DB600,0x1B8,0x002DB7B8,code,spimdisasm-explicit-size-before-first-data
 func_002DB7C0,0x002DB7C0,0x8,0x002DB7C8,code,spimdisasm-explicit-size-before-first-data
-func_002DB7D0,0x002DB7D0,0x68,0x002DB838,code,spimdisasm-explicit-size-before-first-data
+func_002DB7D0,0x002DB7D0,0x68,0x002DB838,code,typed-callback-table-entry
 func_002DB840,0x002DB840,0x8,0x002DB848,code,spimdisasm-explicit-size-before-first-data
 func_002DB850,0x002DB850,0x8,0x002DB858,code,spimdisasm-explicit-size-before-first-data
 func_002DB860,0x002DB860,0x20,0x002DB880,code,matching-c-head-split

@@ -9,6 +9,7 @@ extern void func_00224330(u8 *);
 extern void func_001D0F90(u8 *, int, int);
 extern void func_001E3210(u8 *, int);
 extern void func_001757E0(u8 *, int, int);
+extern void func_002DC1B0(u8 *);
 extern u8 D_004D18A0;
 extern void func_002DD930(u8 *);
 
@@ -719,6 +720,18 @@ void func_002EEEE0(u8 *p)
         *(int *)(p + 96) = 0;
         *(int *)(p + 108) = 0;
     }
+}
+
+void func_002DB7D0(u8 *p)
+{
+    if (p[6] == 0) {
+        p[6]++;
+        p[525] = 0;
+        func_001757E0(p, 20, 3);
+        return;
+    }
+    if ((signed char)func_00175700(p) < 0)
+        func_002DC1B0(p);
 }
 
 void func_0022E000(u8 *p)
