@@ -5,8 +5,11 @@
   build bundle is included under `build-inputs/` on public main. Extracted
   working inputs remain under ignored `private/`. Keep other game assets,
   generated assembly, and SDK files out of Git.
-- A function counts as matching C only after the selected Metrowerks PS2
-  compiler reproduces its instructions and relocations exactly.
+- A function counts as matching C only after its verified compiler and
+  assembler recipe reproduces its whole instructions and relocations exactly.
+- Required CPU operations (syscalls, barriers, interrupt control) may use short
+  inline assembly blocks. Algorithmic control flow and memory operations must
+  be reconstructed in C; instruction-stream lifts remain uncredited.
 - Assembly placeholders and mechanically translated output count as zero.
 - Whole-image linkage and target-hash verification remain the final gate.
 - The deterministic ELF packer now reconstructs the complete retail
