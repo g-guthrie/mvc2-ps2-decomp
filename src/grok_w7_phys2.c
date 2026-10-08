@@ -182,3 +182,29 @@ void func_00242C60(u8 *p)
         func_001865B0(p);
     }
 }
+
+void func_002EAF20(u8 *p)
+{
+    func_00175700(p);
+    *(f32 *)(p + 56) += *(f32 *)(p + 96);
+    *(f32 *)(p + 96) += *(f32 *)(p + 108);
+    /* Retail c.lt.s(floor, position) exits only on ordered less-than. */
+    if (*(f32 *)(p + 1072) < *(f32 *)(p + 56)) return;
+    p[6]++;
+    *(f32 *)(p + 56) = *(f32 *)(p + 1072);
+    *(unsigned int *)(p + 96) = 0xC0892492;
+    *(short *)(p + 28) = 8;
+}
+
+void func_003025A0(u8 *p)
+{
+    func_00175700(p);
+    *(f32 *)(p + 56) += *(f32 *)(p + 96);
+    *(f32 *)(p + 96) += *(f32 *)(p + 108);
+    /* Retail c.lt.s(floor, position) exits only on ordered less-than. */
+    if (*(f32 *)(p + 1072) < *(f32 *)(p + 56)) return;
+    p[6]++;
+    *(f32 *)(p + 56) = *(f32 *)(p + 1072);
+    *(unsigned int *)(p + 96) = 0xC0892492;
+    *(short *)(p + 28) = 8;
+}
