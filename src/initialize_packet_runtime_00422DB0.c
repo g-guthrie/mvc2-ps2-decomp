@@ -6,12 +6,12 @@ extern volatile u8 D_00630000[0x4380];
 extern volatile s32 D_004C2538;
 extern volatile s32 D_004C253C;
 extern volatile s32 D_004C2BB4;
-extern volatile u8 D_004BF1A0[];
+extern char D_004BF1A0[];
 
 extern void func_00422CC0(void);
 extern s32 func_00422D20(volatile u8 *buffer, u32 tag);
 extern s32 func_00103DE0(void *request);
-extern void func_0011EB60(void *registration, s32 kind, s32 flags);
+extern int func_0011EB60(const char *format, ...);
 
 typedef struct {
     u32 word0;
@@ -56,6 +56,6 @@ s32 func_00422DB0(void)
     }
 
     D_004C2BB4 = 1;
-    func_0011EB60((void *)D_004BF1A0, 2, 0);
+    func_0011EB60(D_004BF1A0, 2, 0);
     return 0;
 }

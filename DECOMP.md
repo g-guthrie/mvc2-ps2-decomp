@@ -36,10 +36,10 @@
 The current sources contain exact address getters, simple/straight leaves,
 direct tails, absolute and GP-relative dispatchers, signed-result/reset/call
 handlers, and 2,077 verified dispatcher heads split from oversized assembly
-ranges. `make match` verifies all 8,915 credited functions and 562,760/562,760 bytes
+ranges. `make match` verifies all 8,924 credited functions and 564,788/564,788 bytes
 directly against retail, resolving HI16/LO16, R_MIPS_26, and GPREL16
 relocations. The exact hybrid link places compiled functions at their
-retail addresses, so all 562,760 bytes count as `complete_code`. Data progress credits 68,935 bytes across 2,215 reconstructed
+retail addresses, so all 564,788 bytes count as `complete_code`. Data progress credits 70,049 bytes across 2,219 reconstructed
 source units. Raw arrays, untyped fills, and numeric-address tables remain
 uncredited placeholders even when physically included by the hybrid linker.
 See [progress rules](docs/PROGRESS.md) for the catalog policy. The split

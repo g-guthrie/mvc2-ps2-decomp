@@ -1245,3 +1245,23 @@ showed a next-frame read beyond its proposed extent.
 The hybrid loaded image and packed retail executable match their references.
 Code is 562,760 bytes (17.0860%); reconstructed data is 68,935 bytes
 (10.6371%) across 2,215 units. Full source decompilation remains incomplete.
+
+
+### Initialized motion states, driver startup, and sprite table extents
+
+Added eight motion handlers totaling 1,792 bytes and the 236-byte packet
+runtime initializer. All affected whole translation units compile and
+relocation-verify exactly. The initializer uses MWCC3.0-011126 O3/sdata8;
+its final version message uses the verified variadic printf contract.
+
+Audited the sprite interpolator and reconstructed 42 rows of three floats
+for both motion and rotation. Current row40 reads look-ahead row41 before
+the stored index wraps. Six animation codes are also reconstructed.
+The pair-table caller scans selectors0..58 and skips24..26, so only the
+two consumed pair ranges count; the six skipped bytes remain placeholders.
+Every changed data owner was freshly compiled and private-byte verified.
+
+The hybrid image and packed executable match retail. Code is 564,788 bytes
+(17.1475%); reconstructed data is 70,049 bytes
+(10.8090%) across 2,219 units. Full source decompilation remains
+incomplete. The next scheduled code push remains21.0711%.
