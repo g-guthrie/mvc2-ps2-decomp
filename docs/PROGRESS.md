@@ -1030,3 +1030,14 @@ motion_speed_transition. Catalog validation, full hybrid linkage, and
 packed retail ELF hashes pass. Totals: 8,876 linked C routines and
 557,504 code bytes (16.9264%). Reconstructed initialized data remains
 65,071 bytes (10.0408%); full decompilation remains incomplete.
+
+## 2026-10-08 exact float callback batch
+
+Added four complete native C callbacks totaling 612 bytes, using exact
+retail float values and the established MWCCPS2 3.0.3 O4/Op recipe.
+The animation helper retains its supported int return signature, and
+caller narrowing is explicit where required. All three affected source
+units independently byte-verify. Catalog validation, full hybrid linkage,
+and packed retail ELF hashes pass. Totals: 8,880 linked C routines and
+558,116 code bytes (16.9450%). Reconstructed data remains 65,071 bytes
+(10.0408%); full decompilation remains incomplete.
