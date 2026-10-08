@@ -1286,3 +1286,25 @@ The hybrid image and packed executable match retail. Code is 565,076 bytes
 (10.8509%) across 2,271 units. A private 100-byte SDK output
 callback probe is byte-exact but remains uncredited until its helper
 return contract is resolved. Full source decompilation remains incomplete.
+
+
+### Floor handlers, release callback, and renderer controls
+
+Recovered four complete friction/floor handlers totaling 1,032 bytes,
+a 44-byte subsystem initializer, and the 36-byte packet release callback.
+The floor handlers retain the retail comparison direction explicitly, including
+the unordered fallthrough. All affected whole source units compile and verify
+exactly. The release callback forwards its token in C and uses the required
+CPU barrier/interrupt-enable operations. Like the existing syscall exception,
+these hardware operations require inline assembly; algorithmic instruction
+streams and assembly placeholders remain uncredited.
+
+Reconstructed 48 bytes of signed API handles and consumed renderer selectors,
+limits, counters, and flags. Every changed owner was freshly compiled and
+private-byte verified; the unconsumed magic words remain placeholders.
+
+The hybrid loaded image and packed executable match retail. Code is 566,188
+bytes (17.1901%); reconstructed data is 70,369 bytes
+(10.8583%) across 2,283 units. GitHub main remains b1b061f9 at
+529,332 code bytes, so the next scheduled code push remains21.0711%.
+Full source decompilation remains incomplete.

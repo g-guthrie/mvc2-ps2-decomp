@@ -8930,9 +8930,9 @@ func_00301F60,0x00301F60,0xE0,src/motion_speed_transition.c,complete
 func_00422D20,0x00422D20,0x8C,src/poll_packet_buffer_00422D20.c,complete
 func_00422C20,0x00422C20,0x50,src/register_packet_wait_00422C20.c,complete
 func_00422C70,0x00422C70,0x44,src/refresh_packet_handle_00422C70.c,complete
-func_00422BF0,0x00422BF0,0x24,src/release_packet_callback_00422BF0.c,matching
+func_00422BF0,0x00422BF0,0x24,src/release_packet_callback_00422BF0.c,complete
 func_002FE370,0x002FE370,0x118,src/grok_w7_phys2.c,complete
 func_002FE790,0x002FE790,0x118,src/grok_w7_phys2.c,complete
 func_00239400,0x00239400,0xEC,src/grok_w7_phys2.c,complete
 func_00242C60,0x00242C60,0xEC,src/grok_w7_phys2.c,complete
-func_00420310,0x00420310,0x2C,src/initialize_mode5_subsystem_00420310.c,matching
+func_00420310,0x00420310,0x2C,src/initialize_mode5_subsystem_00420310.c,complete
