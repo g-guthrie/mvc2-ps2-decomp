@@ -3,7 +3,7 @@ typedef unsigned int u32;
 typedef signed short s16;
 typedef float f32;
 
-extern void func_001757E0(u8 *, int, int);
+extern void func_001757E0(u8 *, int, u8);
 extern void func_00185490(u8 *);
 extern void func_00183D10(u8 *);
 extern u8 *D_004C2794;
@@ -110,4 +110,21 @@ void func_002B6E10(u8 *p)
     *(int *)(p + 96) = 0;
     *(int *)(p + 104) = 0;
     *(int *)(p + 108) = 0;
+}
+
+void func_002BB5A0(u8 *p)
+{
+    int command;
+    p[6]++;
+    func_00185490(p);
+    *(float *)(p + 56) = *(float *)(p + 1072);
+    p[525] = 0;
+    *(int *)(p + 92) = 0;
+    *(int *)(p + 96) = 0;
+    *(int *)(p + 104) = 0;
+    *(int *)(p + 108) = 0;
+    func_0018C4B0(p, 10);
+    func_00183D10(p);
+    command = p[439] != 0 ? 32 : 14;
+    func_001757E0(p, 21, (u8)command);
 }

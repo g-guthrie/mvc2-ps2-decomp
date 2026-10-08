@@ -8857,3 +8857,4 @@ func_002FF2A0,0x002FF2A0,0x28,src/composite_dispatch_heads.c,complete
 func_002F5D50,0x002F5D50,0x8C,src/motion_speed_transition.c,complete
 func_0030DA30,0x0030DA30,0x54,src/positioned_motion_constants.c,complete
 func_002B6E10,0x002B6E10,0x8C,src/motion_speed_transition.c,complete
+func_002BB5A0,0x002BB5A0,0x80,src/motion_speed_transition.c,complete
