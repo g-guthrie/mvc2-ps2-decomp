@@ -8604,7 +8604,6 @@ func_0011B370,0x0011B370,0xC,src/sn_runtime_leaves.c,complete
 func_00119D88,0x00119D88,0x14,src/sn_runtime_leaves.c,complete
 func_0040A2F8,0x0040A2F8,0x14,src/runtime_shift.c,complete
 func_0011F5C0,0x0011F5C0,0x18,src/sn_runtime_leaves.c,complete
-func_0040A2F8,0x0040A2F8,0x14,src/runtime_shift.c,matching
 func_0040A2A8,0x0040A2A8,0xC,src/runtime_state_slots.c,matching
 func_0040A2B8,0x0040A2B8,0xC,src/runtime_state_slots.c,matching
 func_0040A2E8,0x0040A2E8,0xC,src/runtime_state_slots.c,matching
