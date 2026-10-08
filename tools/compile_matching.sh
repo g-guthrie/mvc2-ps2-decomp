@@ -2631,3 +2631,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/clear_backend_tables_00420230.o"
 "$PYTHON" tools/verify_object.py "$BUILD/clear_backend_tables_00420230.o" \
     private/SLUS_204.86.rom --source src/clear_backend_tables_00420230.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_dma_context_00420980.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/initialize_dma_context_00420980.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_dma_context_00420980.o" \
+    private/SLUS_204.86.rom --source src/initialize_dma_context_00420980.c

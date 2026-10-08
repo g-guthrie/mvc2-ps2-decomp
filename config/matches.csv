@@ -8963,3 +8963,4 @@ func_00420720,0x00420720,0x9C,src/initialize_backend_00420720.c,complete
 func_004204C0,0x004204C0,0x9C,src/initialize_backend_004204C0.c,complete
 func_00420340,0x00420340,0xB4,src/initialize_runtime_storage_00420340.c,complete
 func_00420230,0x00420230,0xD8,src/clear_backend_tables_00420230.c,complete
+func_00420980,0x00420980,0x64,src/initialize_dma_context_00420980.c,complete
