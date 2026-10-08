@@ -1602,6 +1602,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_0028.o" private/SLUS_204.86.rom \
     --source src/grok_w7_0028.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/grok_w7_record_actions.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/grok_w7_record_actions.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_record_actions.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_record_actions.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w7_evt3.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w7_evt3.o"
