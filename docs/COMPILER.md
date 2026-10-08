@@ -338,3 +338,7 @@ routine and returns its nonzero result, supporting a string-pointer argument.
 The EE96 thunk at `0x003FEF90` forwards two signed integer coordinates to the
 runtime validator at `0x0040DB10`. Its range checks and global state writes
 support the `s32, s32` signature; the relocated jump matches retail.
+
+The EE96 string chain at `0x003FFEF8` and `0x00402C08` forwards a `const
+char *` to `0x003F8240` and preserves its `s32` result. That target passes the
+string to the native aligned byte/word length routine.

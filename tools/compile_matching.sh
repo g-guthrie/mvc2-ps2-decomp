@@ -2357,3 +2357,8 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/ee96_string_thunk.i" 
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/ee96_validation_thunk.i" "$BUILD/ee96_validation_thunk.s"
 "${AS:-mipsel-linux-gnu-as}" -EL -march=r5900 -mabi=eabi -G0 -o "$BUILD/ee96_validation_thunk.o" "$BUILD/ee96_validation_thunk.s"
 "$PYTHON" tools/verify_object.py "$BUILD/ee96_validation_thunk.o" private/SLUS_204.86.rom --source src/ee96_validation_thunk.c
+
+"$WIBO" "$SNCPP" -P src/ee96_string_chain.c "$BUILD/ee96_string_chain.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/ee96_string_chain.i" "$BUILD/ee96_string_chain.s"
+"${AS:-mipsel-linux-gnu-as}" -EL -march=r5900 -mabi=eabi -G0 -o "$BUILD/ee96_string_chain.o" "$BUILD/ee96_string_chain.s"
+"$PYTHON" tools/verify_object.py "$BUILD/ee96_string_chain.o" private/SLUS_204.86.rom --source src/ee96_string_chain.c
