@@ -2536,3 +2536,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/grok_w7_grounded_velocity_reset.o" private/SLUS_204.86.rom \
     --source src/grok_w7_grounded_velocity_reset.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_stalled_floor_recovery.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/grok_w7_stalled_floor_recovery.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_stalled_floor_recovery.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_stalled_floor_recovery.c
+
