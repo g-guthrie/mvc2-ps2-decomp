@@ -229,3 +229,24 @@ void func_0024F4D0(u8 *p)
     *(float *)(p + 104) = y;
     *(short *)(p + 28) = 4;
 }
+
+void func_002A8A80(u8 *p)
+{
+    float x, y;
+    func_00175700(p);
+    if (!*(signed char *)(p + 337)) {
+        p[6]++;
+        if (p[486] != 0)
+            x = -15.833333f;
+        else
+            x = 15.833333f;
+        *(float *)(p + 92) = x;
+        if (p[486] != 0)
+            y = 0.625f;
+        else
+            y = -0.625f;
+        *(float *)(p + 104) = y;
+        *(float *)(p + 96) = 5.0f;
+        *(float *)(p + 108) = -0.8333333f;
+    }
+}
