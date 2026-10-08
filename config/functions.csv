@@ -12902,7 +12902,7 @@ func_002F6120,0x002F6120,0xD8,0x002F61F8,code,spimdisasm-explicit-size-before-fi
 func_002F6200,0x002F6200,0x6C,0x002F626C,code,spimdisasm-explicit-size-before-first-data
 func_002F6270,0x002F6270,0x7C,0x002F62EC,code,verified-exact-c-callback
 func_002F62F0,0x002F62F0,0x7C,0x002F636C,code,verified-exact-c-callback
-func_002F6370,0x002F6370,0xA4,0x002F6414,code,spimdisasm-explicit-size-before-first-data
+func_002F6370,0x002F6370,0xA4,0x002F6414,code,verified-exact-c-callback
 func_002F6420,0x002F6420,0x2C,0x002F644C,code,matching-c-head-split
 residual_002F644C,0x002F644C,0x0,0x002F644C,assembly_residual,verified-boundary-after-matching-head
 func_002F6450,0x002F6450,0x3C,0x002F648C,code,spimdisasm-explicit-size-before-first-data

@@ -8901,3 +8901,4 @@ func_002F4BB0,0x002F4BB0,0x80,src/argument_dispatch_heads.c,complete
 func_00420B00,0x00420B00,0x24,src/tagged_record_value_00420B00.c,complete
 func_002F6270,0x002F6270,0x7C,src/fixed_launch_effect_initializers.c,complete
 func_002F62F0,0x002F62F0,0x7C,src/fixed_launch_effect_initializers.c,complete
+func_002F6370,0x002F6370,0xA4,src/fixed_launch_effect_initializers.c,complete

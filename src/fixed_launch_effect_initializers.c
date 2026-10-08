@@ -53,3 +53,19 @@ void func_002F62F0(u8 *p)
     func_0015D010(p, position);
     func_001757E0(p, 15, 2);
 }
+
+void func_002F6370(u8 *p)
+{
+    PlanarOffset position;
+    func_001266A0(p, 5, 5);
+    *(unsigned int *)(p + 96) = 0x41092492;
+    *(unsigned int *)(p + 108) = 0xBF4DB6DB;
+    if (p[528] != 0) {
+        *(float *)(p + 92) /= 2.0f;
+        *(float *)(p + 104) /= 2.0f;
+    }
+    position[0] = -106.66666412353515625f;
+    position[1] = 171.428558349609375f;
+    func_0015D010(p, position);
+    func_001757E0(p, 15, 3);
+}
