@@ -543,3 +543,15 @@ alignment and unknown neighboring data remain placeholders. Every changed
 data owner passes independent compiler/byte verification. Catalog validation,
 full hybrid, and packed retail ELF hashes pass. Data is now
 52,988 / 648,064 bytes; C remains 543,980 / 3,293,696 bytes.
+
+## 2026-10-08 boundary callbacks and vector cache family
+
+Added eleven native routines (1,340 bytes): indexed boundary resets, chained
+motion, velocity stance and signed-angle callbacks, a zero-motion wrapper,
+and the vector-cache comparison/store/reset family (264/104/88 bytes).
+Recorded the distinct MWCCPS2 3.0 comparison recipe and 3.0.3 store/reset
+recipes in the build runner. The canonical rename of an existing verified
+0x00230320 callback adds no byte credit. All affected complete source units
+verify exactly; catalog, full hybrid, and packed retail ELF hashes pass.
+Totals: 8,784 linked C routines and 545,320 / 3,293,696 bytes. Integrated
+data remains 52,988 / 648,064 bytes.

@@ -2362,3 +2362,13 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/ee96_validation_thunk
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/ee96_string_chain.i" "$BUILD/ee96_string_chain.s"
 "${AS:-mipsel-linux-gnu-as}" -EL -march=r5900 -mabi=eabi -G0 -o "$BUILD/ee96_string_chain.o" "$BUILD/ee96_string_chain.s"
 "$PYTHON" tools/verify_object.py "$BUILD/ee96_string_chain.o" private/SLUS_204.86.rom --source src/ee96_string_chain.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/vector_frame_compare_004148C0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/vector_frame_compare_004148C0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/vector_frame_compare_004148C0.o" private/SLUS_204.86.rom --source src/vector_frame_compare_004148C0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/vector_frame_store_004149D0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/vector_frame_store_004149D0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/vector_frame_store_004149D0.o" private/SLUS_204.86.rom --source src/vector_frame_store_004149D0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/vector_frame_reset_00414A40.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/vector_frame_reset_00414A40.o"
+"$PYTHON" tools/verify_object.py "$BUILD/vector_frame_reset_00414A40.o" private/SLUS_204.86.rom --source src/vector_frame_reset_00414A40.c
