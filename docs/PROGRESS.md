@@ -999,3 +999,14 @@ All 46 changed owners independently compile and byte-match retail.
 Catalog validation, full hybrid linkage, and packed retail ELF hashes
 pass. Code remains 556,212 bytes (16.8872%); reconstructed data is
 63,672 / 648,064 bytes (9.8250%) across 2,123 units.
+
+## 2026-10-08 bounded scoreboard prefix and additional diagnostics
+
+Recovered only the three consumed WIN prefix characters; the remaining
+S and NUL stay raw because the reader stops at index2. Added fourteen
+directly consumed miscellaneous strings and two BMP diagnostics, with
+exact payload-plus-NUL ownership and all gaps preserved. Together this
+adds375 reconstructed data bytes. All42 changed owners independently
+compile and byte-match retail. Catalog validation, full hybrid linkage,
+and packed retail ELF hashes pass. Code remains556,212 bytes(16.8872%);
+reconstructed data is64,047/648,064 bytes(9.8828%) across2,140 units.
