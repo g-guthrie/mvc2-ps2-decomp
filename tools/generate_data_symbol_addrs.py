@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate source-derived linker labels for encoded MVC2 code addresses."""
+"""Generate source-derived linker labels for code and data addresses."""
 
 from __future__ import annotations
 
@@ -8,7 +8,9 @@ import re
 from pathlib import Path
 
 
-SYMBOL_RE = re.compile(r"\b(?:func|lbl|gMvc2|jtbl)[A-Za-z0-9_]*_([0-9A-Fa-f]{8})\b")
+SYMBOL_RE = re.compile(
+    r"\b(?:(?:func|lbl|gMvc2|jtbl)[A-Za-z0-9_]*|data_[A-Za-z0-9_]*)_([0-9A-Fa-f]{8})\b"
+)
 
 
 def extract_symbols(source: Path) -> list[tuple[str, int]]:

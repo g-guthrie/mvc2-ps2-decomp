@@ -6990,7 +6990,7 @@ data_ptr_004C2430,0x004C2430,0x4,src/data/data_ptr_004C2430.c,complete,reconstru
 data_u32_004C2434,0x004C2434,0x4,src/data/data_u32_004C2434.c,complete,placeholder
 data_u32_004C2438,0x004C2438,0x4,src/data/data_u32_004C2438.c,complete,reconstructed
 data_u32_004C243C,0x004C243C,0x4,src/data/data_u32_004C243C.c,complete,placeholder
-data_u32_004C2440,0x004C2440,0x4,src/data/data_u32_004C2440.c,complete,reconstructed
+data_raw_004C2440,0x004C2440,0x4,src/data/data_raw_004C2440.c,complete,placeholder
 data_u32_004C2444,0x004C2444,0x4,src/data/data_u32_004C2444.c,complete,placeholder
 data_u32_004C2448,0x004C2448,0x4,src/data/data_u32_004C2448.c,complete,reconstructed
 data_u32_004C244C,0x004C244C,0x4,src/data/data_u32_004C244C.c,complete,reconstructed

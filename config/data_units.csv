@@ -6990,7 +6990,7 @@ data_ptr_004C2430,0x004C2430,0x4,.data,src/data/data_ptr_004C2430.c,pointer_scal
 data_u32_004C2434,0x004C2434,0x4,.data,src/data/data_u32_004C2434.c,initialized_u32_table
 data_u32_004C2438,0x004C2438,0x4,.data,src/data/data_u32_004C2438.c,uint32_scalar
 data_u32_004C243C,0x004C243C,0x4,.data,src/data/data_u32_004C243C.c,initialized_u32_table
-data_u32_004C2440,0x004C2440,0x4,.data,src/data/data_u32_004C2440.c,uint32_scalar
+data_raw_004C2440,0x004C2440,0x4,.data,src/data/data_raw_004C2440.c,initialized_byte_array
 data_u32_004C2444,0x004C2444,0x4,.data,src/data/data_u32_004C2444.c,initialized_u32_table
 data_u32_004C2448,0x004C2448,0x4,.data,src/data/data_u32_004C2448.c,uint32_scalar
 data_u32_004C244C,0x004C244C,0x4,.data,src/data/data_u32_004C244C.c,uint32_scalar
