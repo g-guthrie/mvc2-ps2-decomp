@@ -1026,8 +1026,9 @@ data_u32_0044A2AC,0x0044A2AC,0x4,src/data/data_u32_0044A2AC.c,complete,placehold
 jtbl_0044A2B0,0x0044A2B0,0xC,src/data/jtbl_0044A2B0.c,complete,placeholder
 data_u32_0044A2BC,0x0044A2BC,0x44,src/data/data_u32_0044A2BC.c,complete,placeholder
 data_zero_0044A300,0x0044A300,0x10,src/data/data_zero_0044A300.c,complete,placeholder
-data_u32_0044A310,0x0044A310,0x20,src/data/data_u32_0044A310.c,complete,placeholder
-jtbl_0044A330,0x0044A330,0x3c,src/data/jtbl_0044A330.c,complete,placeholder
+gMvc2StateShortValues_0044A310,0x0044A310,0x20,src/data/state_short_values_0044A310.c,complete,reconstructed
+gMvc2StateShortValues_0044A330,0x0044A330,0x20,src/data/state_short_values_0044A330.c,complete,reconstructed
+jtbl_0044A350,0x0044A350,0x1C,src/data/jtbl_0044A350.c,complete,placeholder
 jtbl_0044A370,0x0044A370,0xC,src/data/jtbl_0044A370.c,complete,reconstructed
 data_u32_0044A37C,0x0044A37C,0x24,src/data/data_u32_0044A37C.c,complete,placeholder
 jtbl_0044A3A0,0x0044A3A0,0x1c,src/data/jtbl_0044A3A0.c,complete,reconstructed
