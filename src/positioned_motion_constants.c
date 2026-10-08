@@ -844,6 +844,44 @@ void func_002CD500(u8 *p)
     *(short *)(p + 28) = 20;
 }
 
+void func_003021F0(u8 *p)
+{
+    float speed;
+    func_00175700(p);
+    if (!*(signed char *)(p + 337)) {
+        p[6]++;
+        *(int *)(p + 92) = 0;
+        *(int *)(p + 96) = 0;
+        *(int *)(p + 104) = 0;
+        *(int *)(p + 108) = 0;
+        if (p[486] != 0)
+            speed = 13.33333301544189453125f;
+        else
+            speed = -13.33333301544189453125f;
+        *(float *)(p + 92) = speed;
+        *(short *)(p + 28) = 20;
+    }
+}
+
+void func_003023C0(u8 *p)
+{
+    float speed;
+    func_00175700(p);
+    if (!*(signed char *)(p + 337)) {
+        p[6]++;
+        *(int *)(p + 92) = 0;
+        *(int *)(p + 96) = 0;
+        *(int *)(p + 104) = 0;
+        *(int *)(p + 108) = 0;
+        if (p[486] != 0)
+            speed = -13.33333301544189453125f;
+        else
+            speed = 13.33333301544189453125f;
+        *(float *)(p + 92) = speed;
+        *(short *)(p + 28) = 20;
+    }
+}
+
 void func_0022E000(u8 *p)
 {
     float x, y;

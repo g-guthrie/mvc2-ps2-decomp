@@ -8869,3 +8869,5 @@ func_00423930,0x00423930,0x54,src/queue_state_transition_00423930.c,complete
 func_00423240,0x00423240,0x80,src/append_type29_00423240.c,complete
 func_004235D0,0x004235D0,0x80,src/append_tag_004235D0.c,complete
 func_004231D0,0x004231D0,0x6C,src/append_type28_004231D0.c,complete
+func_003021F0,0x003021F0,0x80,src/positioned_motion_constants.c,complete
+func_003023C0,0x003023C0,0x80,src/positioned_motion_constants.c,complete
