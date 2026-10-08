@@ -8599,3 +8599,4 @@ func_00169BC0,0x00169BC0,0x14,src/luna_a_small_wrappers.c,complete
 func_0016F4B0,0x0016F4B0,0x14,src/luna_a_small_wrappers.c,complete
 func_0011B370,0x0011B370,0xC,src/sn_runtime_leaves.c,matching
 func_00119D88,0x00119D88,0x14,src/sn_runtime_leaves.c,matching
+func_0040A2F8,0x0040A2F8,0x14,src/runtime_shift.c,matching

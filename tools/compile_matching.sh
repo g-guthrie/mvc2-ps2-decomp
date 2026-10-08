@@ -2120,3 +2120,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$SNCC1" "$BUILD/sn_runtime_leaves.i" -O2 -G0 -quiet -o "$BUILD/sn_runtime_leaves.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sn_runtime_leaves.o" "$BUILD/sn_runtime_leaves.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sn_runtime_leaves.o" private/SLUS_204.86.rom --source src/sn_runtime_leaves.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/runtime_shift.c -c -lang c -O2 -sdatathreshold 0 -o "$BUILD/runtime_shift.o"
+"$PYTHON" tools/verify_object.py "$BUILD/runtime_shift.o" private/SLUS_204.86.rom --source src/runtime_shift.c
