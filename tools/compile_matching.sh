@@ -2571,3 +2571,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/grok_w7_velocity_interaction_dispatch.o" private/SLUS_204.86.rom \
     --source src/grok_w7_velocity_interaction_dispatch.c
 
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/finalize_transfer_buffer_00421270.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/finalize_transfer_buffer_00421270.o"
+"$PYTHON" tools/verify_object.py "$BUILD/finalize_transfer_buffer_00421270.o" \
+    private/SLUS_204.86.rom --source src/finalize_transfer_buffer_00421270.c

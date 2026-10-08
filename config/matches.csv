@@ -8952,3 +8952,4 @@ func_002E6AB0,0x002E6AB0,0x88,src/grok_w7_stationary_floor_acceleration.c,comple
 func_002E6EC0,0x002E6EC0,0x104,src/grok_w7_inhibit_resume_handler.c,complete
 func_002E5B10,0x002E5B10,0x6C,src/grok_w7_stationary_motion_check.c,complete
 func_002E5410,0x002E5410,0x78,src/grok_w7_velocity_interaction_dispatch.c,complete
+func_00421270,0x00421270,0x5C,src/finalize_transfer_buffer_00421270.c,complete
