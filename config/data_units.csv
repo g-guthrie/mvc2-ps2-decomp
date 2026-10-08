@@ -105,7 +105,8 @@ data_u32_0043CC04,0x0043CC04,0x4,.data,src/data/data_u32_0043CC04.c,initialized_
 jtbl_0043CC08,0x0043CC08,0xC,.rodata,src/data/jtbl_0043CC08.c,jump_table
 data_u32_0043CC14,0x0043CC14,0xC,.data,src/data/data_u32_0043CC14.c,initialized_u32_table
 jtbl_0043CC20,0x0043CC20,0x10,.rodata,src/data/jtbl_0043CC20.c,jump_table
-data_u32_0043CC30,0x0043CC30,0x2C,.data,src/data/data_u32_0043CC30.c,initialized_u32_table
+gMvc2FlagMaskShorts_0043CC30,0x0043CC30,0x10,.data,src/data/gMvc2FlagMaskShorts_0043CC30.c,indexed_s16_mask_values
+data_u8_0043CC40,0x0043CC40,0x1C,.data,src/data/data_u8_0043CC40.c,initialized_byte_array
 data_f32_one_0043CC5C,0x0043CC5C,0x8,.data,src/data/data_f32_one_0043CC5C.c,filled_f32_one
 data_u32_0043CC64,0x0043CC64,0x14,.data,src/data/data_u32_0043CC64.c,initialized_u32_table
 jtbl_0043CC78,0x0043CC78,0xC,.rodata,src/data/jtbl_0043CC78.c,jump_table

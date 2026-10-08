@@ -105,7 +105,8 @@ data_u32_0043CC04,0x0043CC04,0x4,src/data/data_u32_0043CC04.c,complete,placehold
 jtbl_0043CC08,0x0043CC08,0xC,src/data/jtbl_0043CC08.c,complete,placeholder
 data_u32_0043CC14,0x0043CC14,0xC,src/data/data_u32_0043CC14.c,complete,placeholder
 jtbl_0043CC20,0x0043CC20,0x10,src/data/jtbl_0043CC20.c,complete,placeholder
-data_u32_0043CC30,0x0043CC30,0x2C,src/data/data_u32_0043CC30.c,complete,placeholder
+gMvc2FlagMaskShorts_0043CC30,0x0043CC30,0x10,src/data/gMvc2FlagMaskShorts_0043CC30.c,complete,reconstructed
+data_u8_0043CC40,0x0043CC40,0x1C,src/data/data_u8_0043CC40.c,complete,placeholder
 data_f32_one_0043CC5C,0x0043CC5C,0x8,src/data/data_f32_one_0043CC5C.c,complete,placeholder
 data_u32_0043CC64,0x0043CC64,0x14,src/data/data_u32_0043CC64.c,complete,placeholder
 jtbl_0043CC78,0x0043CC78,0xC,src/data/jtbl_0043CC78.c,complete,placeholder
