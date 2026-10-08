@@ -20,6 +20,12 @@ extern void func_00182380(u8 *);
 extern void func_00183D90(u8 *);
 extern void func_001843A0(u8 *);
 extern void func_00184540(u8 *);
+extern void func_00185490(u8 *);
+extern void func_0018C4B0(u8 *, int);
+extern void func_00183D10(u8 *);
+extern void func_002DC1B0(u8 *);
+extern void func_0039F3F0(u8 *);
+extern u8 *D_004C2794;
 extern void func_00186A60(u8 *, int);
 
 extern void func_001D9D80(u8 *, int, int);
@@ -234,4 +240,47 @@ void func_00318230(u8 *p)
     func_00175C00(p, 0);
 }
 
+void func_002DA6C0(u8 *p)
+{
+    if (p[6] == 0) {
+        p[6]++;
+        func_00185490(p);
+        func_0018C4B0(p, 5);
+        func_001757E0(p, 21, p[439]);
+        p[437] = 48;
+        p[434] = *(unsigned short *)(p + 448) = 0;
+        *(int *)(p + 472) = 0;
+        ((short *)(D_004C2794 + 124))[p[2]]++;
+        if (p[525] != 2) {
+            p[525] = 0;
+            func_00183D10(p);
+            *(int *)(p + 92) = 0;
+            *(int *)(p + 96) = 0;
+            *(int *)(p + 104) = 0;
+            *(int *)(p + 108) = 0;
+        } else {
+            *(float *)(p + 92) /= 16.0f;
+            *(float *)(p + 96) /= 8.0f;
+            *(float *)(p + 108) /= 64.0f;
+            *(int *)(p + 104) = 0;
+        }
+    }
+    *(float *)(p + 52) += *(float *)(p + 92);
+    *(float *)(p + 92) += *(float *)(p + 104);
+    *(float *)(p + 56) += *(float *)(p + 96);
+    *(float *)(p + 96) += *(float *)(p + 108);
+    if (*(float *)(p + 56) < *(float *)(p + 1072))
+        *(float *)(p + 56) = *(float *)(p + 1072);
+    if ((s8)func_00175700(p) < 0) {
+        if (p[525] == 2)
+            func_00184540(p);
+        else
+            func_002DC1B0(p);
+    } else if (*(s8 *)(p + 337)) {
+        *(s8 *)(p + 337) = 0;
+        func_0039F3F0(p);
+        p[655] = 0;
+        p[654] = 16;
+    }
+}
 

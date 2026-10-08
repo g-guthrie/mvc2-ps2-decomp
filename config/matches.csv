@@ -8836,3 +8836,4 @@ func_002DD890,0x002DD890,0x94,src/positioned_motion_constants.c,complete
 func_002EEEE0,0x002EEEE0,0x6C,src/positioned_motion_constants.c,complete
 func_00102580,0x00102580,0x28,src/bounded_lookup_00102580.c,complete
 func_00102860,0x00102860,0x38,src/copy_record_00102860.c,complete
+func_002DA6C0,0x002DA6C0,0x1BC,src/grok_w5_0030.c,complete
