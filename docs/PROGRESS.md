@@ -1020,3 +1020,13 @@ The raw prefix stays uncredited. All five changed data owners compile
 and byte-match retail. Catalog validation, full hybrid linkage, and
 packed retail ELF hashes pass. Code remains 556,212 bytes (16.8872%);
 reconstructed data is 65,071 / 648,064 bytes (10.0408%) across 2,144 units.
+
+## 2026-10-08 consolidated motion callback batch
+
+Added ten complete native C callbacks totaling 1,292 bytes. Both full
+source units independently byte-verify with MWCCPS2 3.0.3 -O4 -Op,
+using sdata0 for positioned_motion_constants and sdata8 for
+motion_speed_transition. Catalog validation, full hybrid linkage, and
+packed retail ELF hashes pass. Totals: 8,876 linked C routines and
+557,504 code bytes (16.9264%). Reconstructed initialized data remains
+65,071 bytes (10.0408%); full decompilation remains incomplete.
