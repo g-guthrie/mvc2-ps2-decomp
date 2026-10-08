@@ -6,6 +6,10 @@ extern void func_0022E2B0(u8 *);
 extern int func_00175700(u8 *);
 extern void func_00224120(u8 *);
 extern void func_00224330(u8 *);
+extern void func_001D0F90(u8 *, int, int);
+extern void func_001E3210(u8 *, int);
+extern void func_001757E0(u8 *, int, int);
+extern u8 D_004D18A0;
 
 void func_00243330(u8 *p)
 {
@@ -625,6 +629,41 @@ void func_0023B670(u8 *p)
         else
             y = 0.46875f;
         *(float *)(p + 104) = y;
+    }
+}
+
+void func_002DA1D0(u8 *p)
+{
+    float speed;
+    func_00175700(p);
+    if (!*(signed char *)(p + 337)) {
+        p[6]++;
+        *(short *)(p + 28) = 16;
+        speed = 17.5f;
+        if (p[486] != 0)
+            speed = -speed;
+        *(float *)(p + 92) = speed;
+        *(int *)(p + 104) = 0;
+        *(int *)(p + 96) = 0;
+        *(int *)(p + 108) = 0;
+        func_001D0F90(p, 1, 1);
+        func_001E3210(p, 33);
+    }
+}
+
+void func_002DA360(u8 *p)
+{
+    float speed;
+    if (D_004D18A0 >= 2) {
+        p[6]++;
+        p[316] = 1;
+        *(float *)(p + 100) = *(float *)(p + 52);
+        *(float *)(p + 56) = *(float *)(p + 1072) - 21.42857f;
+        speed = 106.666664f;
+        if (p[2] != 0)
+            speed = -speed;
+        *(float *)(p + 52) = *(float *)(p + 52) - speed;
+        func_001757E0(p, 18, 0);
     }
 }
 
