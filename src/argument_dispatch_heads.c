@@ -613,7 +613,7 @@ void func_002ED790(u8 *p) { jtbl_0045B6C0[p[523] & 63](p); }
 
 void func_002F4CA0(u8 *p) { jtbl_0045BC60[p[6]](p, p + 696); }
 
-void func_002F4BB0(u8 *p, u8 *context)
+void func_002F4BB0(u8 *p, void *context)
 {
     if ((signed char)func_00175700(p) < 0) {
         func_00126400();

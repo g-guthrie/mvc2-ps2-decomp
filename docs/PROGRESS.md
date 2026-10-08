@@ -1120,3 +1120,12 @@ All ten affected or supporting complete source units were freshly
 compiled under their recorded recipes and byte-verified. Catalog
 validation, full hybrid linkage, and packed retail ELF hashes pass.
 Coverage remains 16.9904% code and 10.0748% initialized data.
+
+## 2026-10-08 owner-context transition callback
+
+Added the complete 128-byte native C callback 002F4BB0. Its second
+parameter uses the dispatcher-compatible void-pointer context contract;
+the full argument-dispatch source unit byte-verifies under the existing
+MWCCPS2 O3/sdata8 recipe. Catalog validation, full hybrid linkage, and
+packed retail ELF hashes pass. Totals: 8,895 linked C routines and
+559,740 code bytes (16.9943%). Data remains 65,291 bytes (10.0748%).
