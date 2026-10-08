@@ -72,7 +72,7 @@ After creating `.venv` and installing `requirements.txt`:
 make split hybrid test report PYTHON="$PYTHON"
 ```
 
-The bootstrap verifies the bundled retail image and both Metrowerks compilers,
+The bootstrap verifies the bundled retail image, both Metrowerks compilers, and SN GCC 2.95.2,
 selects a host-compatible Wibo, smoke-tests compilation, and supplies the tool
 paths. No private repository access or GitHub authentication is required.
 

@@ -8597,3 +8597,5 @@ func_001580D0,0x001580D0,0x98,src/positioned_unit_scale_spawns.c,complete
 func_001537B0,0x001537B0,0x14,src/luna_a_small_wrappers.c,complete
 func_00169BC0,0x00169BC0,0x14,src/luna_a_small_wrappers.c,complete
 func_0016F4B0,0x0016F4B0,0x14,src/luna_a_small_wrappers.c,complete
+func_0011B370,0x0011B370,0xC,src/sn_runtime_leaves.c,matching
+func_00119D88,0x00119D88,0x14,src/sn_runtime_leaves.c,matching

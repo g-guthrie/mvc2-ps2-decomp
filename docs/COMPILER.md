@@ -220,3 +220,21 @@ Owner-generation callback tables share `mvc2_owner_generation_callbacks.h` with 
 `positioned_timed_effect_spawns` uses MWCC 3.0.3 `-O3 -sdatathreshold 8`. The context pointer receives its retail GP-relative relocation; typed three-float position copies reproduce the grouped FPU loads/stores. All three native routines and the linked image match.
 
 `positioned_unit_scale_spawns` uses MWCC 3.0.3 `-O3 -sdatathreshold 8`. Typed three-float position copies and shared unit scale reproduce the retail loads, stores, and GP-relative context access. All three native routines and the linked image match.
+
+## SN runtime compiler identification
+
+The early runtime accessor at `0x0011B370` and signed absolute-value routine
+at `0x00119D88` both reproduce exactly with SN GCC 2.95.2 (SN BUILD v2.73a),
+`-O2 -G0`, using its original assembler with `-G0`. Metrowerks 2.4, 3.0, and
+3.0.3 accessor probes selected `$at` instead of retail `$v1`; SN selects `$v1`
+and reproduces the complete relocated accessor. This proves those two units'
+compiler recipe, not the compiler identity of every nearby function.
+
+The compiler, preprocessor, and assembler come from
+[the archived toolchain](https://github.com/AngheloAlf/SN-Systems-ProDG_for_PS2_2.0/tree/f0146c8107a8ed5cf7d5bac1ae2db29151947adb),
+paths `usr/local/sce/ee/gcc/lib/gcc-lib/ee/2.95.2/{cpp,cc1}.exe` and
+`usr/local/sce/ee/gcc/bin/ee-as.exe`. The owner-authorized public input bundle
+now includes these three files with pinned hashes. Bootstrap smoke-tests the
+preprocessor/compiler/assembler chain and exports `SNCPP`, `SNCC1`, `SNAS`.
+Use the preprocessor before invoking `cc1`; direct `cc1` input must already be
+preprocessed, including removal of C comments.

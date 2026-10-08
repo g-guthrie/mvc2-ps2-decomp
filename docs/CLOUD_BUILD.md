@@ -14,12 +14,13 @@ The checksum-pinned bundle contains:
   retail ELF, with SHA-256
   `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 - MWCCPS2 `mwcps2-3.0.3-020716` and `mwcps2-3.0-011126`, including their DLLs.
+- SN GCC 2.95.2 compiler, preprocessor, and assembler for the early runtime.
 - Wibo 1.2.0 for Linux x86-64 and macOS, from the official
   [decompals/wibo release](https://github.com/decompals/wibo/releases/tag/1.2.0).
 - A SHA-256 manifest for every supplied file.
 
 The bootstrap pins the archive SHA-256, checks all file digests, preserves any
-existing input whose content differs, and smoke-tests both compilers. It writes
+existing input whose content differs, and smoke-tests both Metrowerks compilers and the SN compiler pipeline. It writes
 absolute tool paths to the ignored `private/build.env` for the current checkout.
 A Mac `wibo` executable cannot run in Linux; the bootstrap selects the Linux
 binary on a Linux x86-64 executor.
