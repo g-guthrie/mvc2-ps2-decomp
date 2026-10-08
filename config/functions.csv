@@ -7654,7 +7654,7 @@ func_002403C0,0x002403C0,0x1C,0x002403DC,code,matching-c-head-split
 residual_002403DC,0x002403DC,0x88,0x00240464,assembly_residual,verified-boundary-after-matching-head
 func_00240470,0x00240470,0xA4,0x00240514,code,spimdisasm-explicit-size-before-first-data
 func_00240520,0x00240520,0x20,0x00240540,code,matching-c-head-split
-residual_00240540,0x00240540,0x5C,0x0024059C,assembly_residual,verified-boundary-after-matching-head
+func_00240540,0x00240540,0x5C,0x0024059C,code,typed-callback-table-entry
 func_002405A0,0x002405A0,0x7C,0x0024061C,code,spimdisasm-explicit-size-before-first-data
 func_00240620,0x00240620,0x44,0x00240664,code,spimdisasm-explicit-size-before-first-data
 func_00240670,0x00240670,0x78,0x002406E8,code,spimdisasm-explicit-size-before-first-data
