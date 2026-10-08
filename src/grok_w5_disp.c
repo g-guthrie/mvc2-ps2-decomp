@@ -156,7 +156,7 @@ void residual_00224740(u8 *p) { jtbl_004BFFF8[p[6]](p); }
 
 void residual_0022EC70(u8 *p) { jtbl_004C0120[p[6]](p); }
 
-void residual_00230320(u8 *p) { jtbl_00451F50[p[7]](p); }
+void func_00230320(u8 *p) { jtbl_00451F50[p[7]](p); }
 
 void residual_002355D0(u8 *p) { jtbl_00452308[p[6]](p); }
 
