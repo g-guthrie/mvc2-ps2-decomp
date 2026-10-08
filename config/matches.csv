@@ -8762,3 +8762,4 @@ func_002EB2A0,0x002EB2A0,0x58,src/state_return_family.c,complete
 func_00302930,0x00302930,0x58,src/state_return_family.c,complete
 func_00277920,0x00277920,0x70,src/state_return_family.c,complete
 func_00257760,0x00257760,0x6C,src/round3_0.c,complete
+func_0024CAC0,0x0024CAC0,0x74,src/round3_0.c,complete
