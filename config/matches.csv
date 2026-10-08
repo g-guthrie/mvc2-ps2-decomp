@@ -8864,3 +8864,4 @@ func_002D7700,0x002D7700,0xA0,src/motion_speed_transition.c,complete
 func_002BC080,0x002BC080,0xA0,src/motion_speed_transition.c,complete
 func_004236C0,0x004236C0,0x84,src/append_bool_004236C0.c,matching
 func_004239D0,0x004239D0,0xCC,src/append_flags_004239D0.c,matching
+func_00423990,0x00423990,0x34,src/validate_queue_state_00423990.c,matching
