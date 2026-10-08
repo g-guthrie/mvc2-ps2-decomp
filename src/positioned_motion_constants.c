@@ -2,6 +2,7 @@ typedef unsigned char u8;
 
 extern void func_00243360(u8 *);
 extern void func_002405A0(u8 *);
+extern void func_0022E2B0(u8 *);
 extern int func_00175700(u8 *);
 extern void func_00224120(u8 *);
 extern void func_00224330(u8 *);
@@ -289,6 +290,27 @@ void func_002452E0(u8 *p)
             *(float *)(p + 104) = -*(float *)(p + 104);
         }
     }
+}
+
+void func_0022E230(u8 *p)
+{
+    float x, y;
+    p[6]++;
+    *(volatile int *)(p + 92) = 0;
+    *(volatile int *)(p + 96) = 0;
+    *(volatile int *)(p + 104) = 0;
+    *(volatile int *)(p + 108) = 0;
+    if (p[486] != 0)
+        x = -13.333333f;
+    else
+        x = 13.333333f;
+    *(float *)(p + 92) = x;
+    if (p[486] != 0)
+        y = -0.104166664f;
+    else
+        y = 0.104166664f;
+    *(float *)(p + 104) = y;
+    func_0022E2B0(p);
 }
 
 void func_002B3EE0(u8 *p)
