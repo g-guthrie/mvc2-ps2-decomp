@@ -2483,3 +2483,9 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     -sdatathreshold 8 -o "$BUILD/initialize_packet_runtime_00422DB0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_packet_runtime_00422DB0.o" \
     private/SLUS_204.86.rom --source src/initialize_packet_runtime_00422DB0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/poll_packet_buffer_00422D20.c -c -lang c -O3 -Op \
+    -sdatathreshold 8 -o "$BUILD/poll_packet_buffer_00422D20.o"
+"$PYTHON" tools/verify_object.py "$BUILD/poll_packet_buffer_00422D20.o" \
+    private/SLUS_204.86.rom --source src/poll_packet_buffer_00422D20.c
