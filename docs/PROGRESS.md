@@ -361,3 +361,14 @@ All affected source units verify exactly, including all 40 functions in the
 conditional-chain unit. The complete loaded image and packed retail ELF retain
 byte-identical target hashes. Catalog totals are 8,618 linked C routines and
 531,136 / 3,293,696 bytes. Reconstructed data remains 42,400 / 648,064 bytes.
+
+## 2026-10-08 callback and runtime checkpoint
+
+Added 14 native routines (1,816 bytes): five conditional-engine chains, two
+status predicates/fallbacks, a conditional physics dispatcher, an alternate
+physics response initializer, and five compact SN runtime initialization
+helpers. All affected complete source units pass compiler/relocation checks;
+full-image linkage and packed retail ELF hashes match exactly. The math-wrapper
+compiler probes still differ and remain outside the credited catalog. Totals:
+8,632 exact linked C routines and 532,952 / 3,293,696 bytes. Reconstructed data
+remains 42,400 / 648,064 bytes.

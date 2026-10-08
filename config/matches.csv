@@ -8630,8 +8630,8 @@ func_0040EE98,0x0040EE98,0x10,src/indexed_runtime_accessors.c,complete
 func_0019EDD0,0x0019EDD0,0x30,src/luna_a_record_adjustment.c,complete
 func_00131720,0x00131720,0x2C,src/luna_a_status_checks.c,complete
 func_001317B0,0x001317B0,0x34,src/luna_a_status_checks.c,complete
-func_00408790,0x00408790,0x10,src/runtime_state_slots.c,matching
-func_00400CE8,0x00400CE8,0xC,src/small_runtime_initializers.c,matching
-func_00400B98,0x00400B98,0x18,src/small_runtime_initializers.c,matching
-func_00400BB8,0x00400BB8,0x10,src/small_runtime_initializers.c,matching
-func_00408EC8,0x00408EC8,0x10,src/small_runtime_initializers.c,matching
+func_00408790,0x00408790,0x10,src/runtime_state_slots.c,complete
+func_00400CE8,0x00400CE8,0xC,src/small_runtime_initializers.c,complete
+func_00400B98,0x00400B98,0x18,src/small_runtime_initializers.c,complete
+func_00400BB8,0x00400BB8,0x10,src/small_runtime_initializers.c,complete
+func_00408EC8,0x00408EC8,0x10,src/small_runtime_initializers.c,complete
