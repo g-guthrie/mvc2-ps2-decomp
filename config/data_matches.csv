@@ -5634,8 +5634,11 @@ data_u8_004BAC40,0x004BAC40,0x8,src/data/data_u8_004BAC40.c,complete,placeholder
 gAdxRnaOutputMode_004BAC48,0x004BAC48,0x3,src/data/gAdxRnaOutputMode_004BAC48.c,complete,reconstructed
 data_u8_004BAC4B,0x004BAC4B,0x5,src/data/data_u8_004BAC4B.c,complete,placeholder
 gAdxRnaAppendMode_004BAC50,0x004BAC50,0x4,src/data/gAdxRnaAppendMode_004BAC50.c,complete,reconstructed
-data_u8_004BAC54,0x004BAC54,0x8C,src/data/data_u8_004BAC54.c,complete,placeholder
-data_zero_004BACE0,0x004BACE0,0x10,src/data/data_zero_004BACE0.c,complete,placeholder
+data_raw_004BAC54,0x004BAC54,0xC,src/data/data_raw_004BAC54.c,complete,placeholder
+gBmpModelComponentMessage_004BAC60,0x004BAC60,0x42,src/data/gBmpModelComponentMessage_004BAC60.c,complete,reconstructed
+data_raw_004BACA2,0x004BACA2,0xE,src/data/data_raw_004BACA2.c,complete,placeholder
+gBmpInvalidImageMessage_004BACB0,0x004BACB0,0x31,src/data/gBmpInvalidImageMessage_004BACB0.c,complete,reconstructed
+data_raw_004BACE1,0x004BACE1,0xF,src/data/data_raw_004BACE1.c,complete,placeholder
 gPlBmp24BitOnlyError_004BACF0,0x004BACF0,0x37,src/data/gPlBmp24BitOnlyError_004BACF0.c,complete,reconstructed
 data_u8_004BAD27,0x004BAD27,0x9,src/data/data_u8_004BAD27.c,complete,placeholder
 gAdxDiagnostic_004BAD30,0x004BAD30,0x34,src/data/gAdxDiagnostic_004BAD30.c,complete,reconstructed
