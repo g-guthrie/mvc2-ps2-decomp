@@ -2577,3 +2577,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/finalize_transfer_buffer_00421270.o"
 "$PYTHON" tools/verify_object.py "$BUILD/finalize_transfer_buffer_00421270.o" \
     private/SLUS_204.86.rom --source src/finalize_transfer_buffer_00421270.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/select_transfer_backend_00420920.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/select_transfer_backend_00420920.o"
+"$PYTHON" tools/verify_object.py "$BUILD/select_transfer_backend_00420920.o" \
+    private/SLUS_204.86.rom --source src/select_transfer_backend_00420920.c
