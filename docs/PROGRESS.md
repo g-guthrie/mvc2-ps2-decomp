@@ -1070,3 +1070,14 @@ unit was freshly compiled using its existing direct or loop-based recipe;
 all 1,785 source-selected functions byte-verify exactly. All 33 tests,
 catalog validation, full hybrid linkage, and packed retail ELF hashes
 pass. Coverage remains 16.9647% code and 10.0408% data.
+
+## 2026-10-08 graphics initialization records
+
+Recovered five bounded 44-byte graphics initialization records, adding
+220 data bytes. Packed u32 storage supports both the observed full-word
+mask reads and the documented signed-halfword-pair view; no conflicting
+s16-only representation remains. The trailing 20 bytes stay raw. All six
+changed owners independently compile and byte-match. Catalog validation,
+full hybrid linkage, and packed retail ELF hashes pass. Code remains
+558,764 bytes (16.9647%); reconstructed data is 65,291 bytes (10.0748%)
+across 2,149 units.
