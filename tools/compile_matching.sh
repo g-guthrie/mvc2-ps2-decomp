@@ -2287,3 +2287,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/luna_a_state_sync.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/luna_a_state_sync.o"
 "$PYTHON" tools/verify_object.py "$BUILD/luna_a_state_sync.o" private/SLUS_204.86.rom --source src/luna_a_state_sync.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/luna_a_effect_initializer.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/luna_a_effect_initializer.o"
+"$PYTHON" tools/verify_object.py "$BUILD/luna_a_effect_initializer.o" private/SLUS_204.86.rom --source src/luna_a_effect_initializer.c

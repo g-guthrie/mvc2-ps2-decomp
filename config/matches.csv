@@ -8676,3 +8676,4 @@ func_001C4D60,0x001C4D60,0x40,src/luna_a_object_threshold.c,complete
 func_0016A210,0x0016A210,0x40,src/luna_a_mask_lookup.c,complete
 func_00190540,0x00190540,0x3C,src/luna_a_state_sync.c,complete
 func_0040C070,0x0040C070,0x18,src/small_runtime_initializers.c,matching
+func_001BEDB0,0x001BEDB0,0x28,src/luna_a_effect_initializer.c,complete
