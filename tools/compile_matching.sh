@@ -2595,3 +2595,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/update_backend_timeout_004205F0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/update_backend_timeout_004205F0.o" \
     private/SLUS_204.86.rom --source src/update_backend_timeout_004205F0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/reset_backend_state_00420660.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/reset_backend_state_00420660.o"
+"$PYTHON" tools/verify_object.py "$BUILD/reset_backend_state_00420660.o" \
+    private/SLUS_204.86.rom --source src/reset_backend_state_00420660.c
