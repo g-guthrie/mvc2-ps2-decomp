@@ -330,3 +330,7 @@ Three cleanup thunks at `0x00400130`, `0x003FECA8`, and `0x003FEBF8` also match
 under EE GCC 2.96. Their target bodies only update global runtime state and
 call helpers using global data; neither consumes the caller's argument
 registers. The first is directly invoked as a cleanup step.
+
+`func_00400EA8(const char *)` is an EE96 tail thunk to `func_0040ADC8`.
+The target passes the input alongside a static string to a byte/word compare
+routine and returns its nonzero result, supporting a string-pointer argument.
