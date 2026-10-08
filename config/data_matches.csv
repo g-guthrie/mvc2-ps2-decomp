@@ -4070,7 +4070,9 @@ data_u32_00474660,0x00474660,0x30,src/data/data_u32_00474660.c,complete,placehol
 jtbl_00474690,0x00474690,0x30,src/data/jtbl_00474690.c,complete,reconstructed
 data_u32_004746C0,0x004746C0,0x104,src/data/data_u32_004746C0.c,complete,placeholder
 data_u32_004747C4,0x004747C4,0x14,src/data/data_u32_004747C4.c,complete,placeholder
-data_u32_004747D8,0x004747D8,0x12E4,src/data/data_u32_004747D8.c,complete,placeholder
+data_u32_004747D8,0x004747D8,0x12DC,src/data/data_u32_004747D8.c,complete,placeholder
+short_values_00475AB4,0x00475AB4,0x4,src/data/short_values_00475AB4.c,complete,reconstructed
+data_u8_00475AB8,0x00475AB8,0x4,src/data/data_u8_00475AB8.c,complete,placeholder
 jtbl_00475ABC,0x00475ABC,0x8,src/data/jtbl_00475ABC.c,complete,placeholder
 data_u32_00475AC4,0x00475AC4,0xC,src/data/data_u32_00475AC4.c,complete,placeholder
 jtbl_00475AD0,0x00475AD0,0x34,src/data/jtbl_00475AD0.c,complete,reconstructed
