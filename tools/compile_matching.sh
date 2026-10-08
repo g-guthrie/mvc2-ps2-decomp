@@ -2457,3 +2457,9 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     -o "$BUILD/init_packet_queue_00422CC0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/init_packet_queue_00422CC0.o" \
     private/SLUS_204.86.rom --source src/init_packet_queue_00422CC0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/tagged_record_value_00420B00.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/tagged_record_value_00420B00.o"
+"$PYTHON" tools/verify_object.py "$BUILD/tagged_record_value_00420B00.o" \
+    private/SLUS_204.86.rom --source src/tagged_record_value_00420B00.c
