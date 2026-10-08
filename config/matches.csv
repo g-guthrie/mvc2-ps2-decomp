@@ -8915,3 +8915,5 @@ func_0024B1F0,0x0024B1F0,0xF4,src/grok_w5_0024.c,complete
 func_0024B6C0,0x0024B6C0,0xF4,src/grok_w5_0024.c,complete
 func_0025FF50,0x0025FF50,0xC8,src/grok_w7_phys.c,complete
 func_00261600,0x00261600,0xC8,src/grok_w7_phys.c,complete
+func_00273320,0x00273320,0xB8,src/grok_w7_phys.c,complete
+func_002A62D0,0x002A62D0,0xB8,src/grok_w7_phys.c,complete
