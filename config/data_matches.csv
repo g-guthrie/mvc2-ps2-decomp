@@ -663,9 +663,11 @@ jtbl_00443AB0,0x00443AB0,0x1c,src/data/jtbl_00443AB0.c,complete,reconstructed
 jtbl_00443AD0,0x00443AD0,0x20,src/data/jtbl_00443AD0.c,complete,reconstructed
 data_u8_00443AF0,0x00443AF0,0xC0,src/data/data_u8_00443AF0.c,complete,placeholder
 data_f32_00443BB0,0x00443BB0,0x4,src/data/data_f32_00443BB0.c,complete,reconstructed
-data_u8_00443BB4,0x00443BB4,0xC,src/data/data_u8_00443BB4.c,complete,placeholder
+data_f32_00443BB4,0x00443BB4,0x4,src/data/data_f32_00443BB4.c,complete,reconstructed
+data_u8_00443BB8,0x00443BB8,0x8,src/data/data_u8_00443BB8.c,complete,placeholder
 data_f32_00443BC0,0x00443BC0,0x4,src/data/data_f32_00443BC0.c,complete,reconstructed
-data_u8_00443BC4,0x00443BC4,0x1C,src/data/data_u8_00443BC4.c,complete,placeholder
+data_f32_00443BC4,0x00443BC4,0x4,src/data/data_f32_00443BC4.c,complete,reconstructed
+data_u8_00443BC8,0x00443BC8,0x18,src/data/data_u8_00443BC8.c,complete,placeholder
 data_u32_00443BF0,0x00443BF0,0x8,src/data/data_u32_00443BF0.c,complete,placeholder
 data_f32_one_00443BF8,0x00443BF8,0xC,src/data/data_f32_one_00443BF8.c,complete,placeholder
 data_u32_00443C04,0x00443C04,0xC,src/data/data_u32_00443C04.c,complete,placeholder

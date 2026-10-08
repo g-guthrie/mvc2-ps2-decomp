@@ -663,9 +663,11 @@ jtbl_00443AB0,0x00443AB0,0x1c,.rodata,src/data/jtbl_00443AB0.c,typed_state_callb
 jtbl_00443AD0,0x00443AD0,0x20,.rodata,src/data/jtbl_00443AD0.c,typed_state_callback_table
 data_u8_00443AF0,0x00443AF0,0xC0,.data,src/data/data_u8_00443AF0.c,initialized_byte_array
 data_f32_00443BB0,0x00443BB0,0x4,.data,src/data/data_f32_00443BB0.c,initialized_f32
-data_u8_00443BB4,0x00443BB4,0xC,.data,src/data/data_u8_00443BB4.c,initialized_byte_array
+data_f32_00443BB4,0x00443BB4,0x4,.data,src/data/data_f32_00443BB4.c,float_scalar
+data_u8_00443BB8,0x00443BB8,0x8,.data,src/data/data_u8_00443BB8.c,initialized_byte_array
 data_f32_00443BC0,0x00443BC0,0x4,.data,src/data/data_f32_00443BC0.c,initialized_f32
-data_u8_00443BC4,0x00443BC4,0x1C,.data,src/data/data_u8_00443BC4.c,initialized_byte_array
+data_f32_00443BC4,0x00443BC4,0x4,.data,src/data/data_f32_00443BC4.c,float_scalar
+data_u8_00443BC8,0x00443BC8,0x18,.data,src/data/data_u8_00443BC8.c,initialized_byte_array
 data_u32_00443BF0,0x00443BF0,0x8,.data,src/data/data_u32_00443BF0.c,initialized_u32_table
 data_f32_one_00443BF8,0x00443BF8,0xC,.data,src/data/data_f32_one_00443BF8.c,filled_f32_one
 data_u32_00443C04,0x00443C04,0xC,.data,src/data/data_u32_00443C04.c,initialized_u32_table
