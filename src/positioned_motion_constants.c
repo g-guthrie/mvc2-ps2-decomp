@@ -187,6 +187,38 @@ void func_002F86A0(u8 *p)
     }
 }
 
+void func_002D2890(u8 *p)
+{
+    func_00175700(p);
+    if (!*(signed char *)(p + 337)) {
+        p[6]++;
+        *(float *)(p + 96) = 6.428571f;
+        *(float *)(p + 108) = -0.53571427f;
+        *(float *)(p + 92) = -15.833333f;
+        *(float *)(p + 104) = 0.3125f;
+        if (p[486] != 0) {
+            *(float *)(p + 92) = -*(float *)(p + 92);
+            *(float *)(p + 104) = -*(float *)(p + 104);
+        }
+    }
+}
+
+void func_002D2A40(u8 *p)
+{
+    func_00175700(p);
+    if (!*(signed char *)(p + 337)) {
+        p[6]++;
+        *(float *)(p + 96) = 6.428571f;
+        *(float *)(p + 108) = -0.53571427f;
+        *(float *)(p + 92) = 15.833333f;
+        *(float *)(p + 104) = -0.3125f;
+        if (p[486] != 0) {
+            *(float *)(p + 92) = -*(float *)(p + 92);
+            *(float *)(p + 104) = -*(float *)(p + 104);
+        }
+    }
+}
+
 void func_0024F1B0(u8 *p)
 {
     float x, y;
