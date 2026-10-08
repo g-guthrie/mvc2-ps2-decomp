@@ -17,6 +17,8 @@ extern void func_00175C00(u8 *, int);
 extern void func_002FE960(u8 *, void *);
 extern void func_0030DA90(u8 *);
 extern void func_002751A0(u8 *);
+extern void func_0015D010(u8 *, float *);
+extern void func_0018C6E0(u8 *);
 extern void func_003067F0(u8 *);
 extern void func_00176160(u8 *, int, int, int);
 extern void func_00183920(u8 *, float *);
@@ -941,6 +943,21 @@ void func_00306790(u8 *p)
         speed = 16.6666660308837890625f;
     *(float *)(p + 92) = speed;
     func_003067F0(p);
+}
+
+void func_00261C50(u8 *p)
+{
+    float args[2] __attribute__((aligned(16)));
+    if ((*(unsigned short *)(p + 526) & 0x400) != 0) {
+        *(signed char *)(p + 486) ^= 1;
+        *(short *)(p + 320) ^= 1;
+    }
+    p[436] = 10;
+    args[0] = -83.3333282470703125f;
+    args[1] = 158.5714263916015625f;
+    func_0015D010(p, args);
+    func_0018C6E0(p);
+    func_001757E0(p, 15, 0);
 }
 
 void func_0022E000(u8 *p)
