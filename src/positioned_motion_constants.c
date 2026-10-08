@@ -10,6 +10,7 @@ extern void func_001D0F90(u8 *, int, int);
 extern void func_001E3210(u8 *, int);
 extern void func_001757E0(u8 *, int, int);
 extern u8 D_004D18A0;
+extern void func_002DD930(u8 *);
 
 void func_00243330(u8 *p)
 {
@@ -664,6 +665,42 @@ void func_002DA360(u8 *p)
             speed = -speed;
         *(float *)(p + 52) = *(float *)(p + 52) - speed;
         func_001757E0(p, 18, 0);
+    }
+}
+
+void func_002DD680(u8 *p)
+{
+    func_00175700(p);
+    if (!*(signed char *)(p + 337)) {
+        p[6]++;
+        *(int *)(p + 92) = 0;
+        *(int *)(p + 96) = 0;
+        *(int *)(p + 104) = 0;
+        *(int *)(p + 108) = 0;
+        *(short *)(p + 28) = 34;
+        *(float *)(p + 92) = -15.833333f;
+        *(int *)(p + 104) = 0;
+        if (p[486] != 0) {
+            *(float *)(p + 92) = -*(float *)(p + 92);
+            *(float *)(p + 104) = -*(float *)(p + 104);
+        }
+    }
+}
+
+void func_002DD890(u8 *p)
+{
+    func_00175700(p);
+    if (!*(signed char *)(p + 337)) {
+        p[6]++;
+        *(float *)(p + 92) = 15.833333f;
+        *(float *)(p + 104) = -0.3125f;
+        *(float *)(p + 96) = 6.428571f;
+        *(float *)(p + 108) = -0.53571427f;
+        if (p[486] != 0) {
+            *(float *)(p + 92) = -*(float *)(p + 92);
+            *(float *)(p + 104) = -*(float *)(p + 104);
+        }
+        func_002DD930(p);
     }
 }
 

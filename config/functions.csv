@@ -12161,11 +12161,11 @@ func_002DD4C0,0x002DD4C0,0x3C,0x002DD4FC,code,spimdisasm-explicit-size-before-fi
 func_002DD500,0x002DD500,0x3C,0x002DD53C,code,spimdisasm-explicit-size-before-first-data
 func_002DD540,0x002DD540,0x118,0x002DD658,code,spimdisasm-explicit-size-before-first-data
 func_002DD660,0x002DD660,0x20,0x002DD680,code,matching-c-head-split
-residual_002DD680,0x002DD680,0x88,0x002DD708,assembly_residual,verified-boundary-after-matching-head
+func_002DD680,0x002DD680,0x88,0x002DD708,code,typed-callback-table-entry
 func_002DD710,0x002DD710,0xE0,0x002DD7F0,code,spimdisasm-explicit-size-before-first-data
 func_002DD7F0,0x002DD7F0,0x7C,0x002DD86C,code,spimdisasm-explicit-size-before-first-data
 func_002DD870,0x002DD870,0x20,0x002DD890,code,matching-c-head-split
-residual_002DD890,0x002DD890,0x94,0x002DD924,assembly_residual,verified-boundary-after-matching-head
+func_002DD890,0x002DD890,0x94,0x002DD924,code,typed-callback-table-entry
 func_002DD930,0x002DD930,0xE4,0x002DDA14,code,spimdisasm-explicit-size-before-first-data
 func_002DDA20,0x002DDA20,0x3C,0x002DDA5C,code,spimdisasm-explicit-size-before-first-data
 func_002DDA60,0x002DDA60,0x20,0x002DDA80,code,matching-c-head-split

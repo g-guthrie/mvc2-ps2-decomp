@@ -8831,3 +8831,5 @@ func_0023B670,0x0023B670,0xA4,src/positioned_motion_constants.c,complete
 func_002DA1D0,0x002DA1D0,0x88,src/positioned_motion_constants.c,complete
 func_002DA360,0x002DA360,0x90,src/positioned_motion_constants.c,complete
 func_00102520,0x00102520,0x28,src/address_remap_00102520.c,complete
+func_002DD680,0x002DD680,0x88,src/positioned_motion_constants.c,complete
+func_002DD890,0x002DD890,0x94,src/positioned_motion_constants.c,complete
