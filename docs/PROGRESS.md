@@ -658,3 +658,15 @@ The complete positioned-motion unit compiles with MWCCPS2 3.0.3
 full hybrid loaded-image linkage, and packed retail ELF hashes pass.
 Totals: 8,814 linked C routines and 549,192 / 3,293,696 bytes (16.6740%).
 Reconstructed initialized data remains 54,382 / 648,064 bytes (8.3915%).
+
+## 2026-10-08 TIM2 writer and vector callback families
+
+Recovered the complete 504-byte TIM2 header writer at 00416290 with
+MWCCPS2 3.0-011126 -O3 -sdatathreshold 0. Its normal compiler recipe is
+now part of compile_matching.sh. Also recovered four table-backed native
+C direction/vector callbacks totaling 524 bytes; the full positioned-motion
+unit verifies with MWCCPS2 3.0.3 -O4 -Op -sdatathreshold 0.
+All 33 tests, catalog validation, full hybrid loaded-image linkage, and
+packed retail ELF hashes pass. Totals: 8,819 linked C routines and
+550,220 / 3,293,696 code bytes (16.7052%). Reconstructed initialized
+data remains 54,382 / 648,064 bytes (8.3915%).
