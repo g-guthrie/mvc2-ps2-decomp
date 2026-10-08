@@ -2108,3 +2108,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/animation_state_transfers.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/animation_state_transfers.o"
 "$PYTHON" tools/verify_object.py "$BUILD/animation_state_transfers.o" private/SLUS_204.86.rom --source src/animation_state_transfers.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/transition_sequence_recoveries.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/transition_sequence_recoveries.o"
+"$PYTHON" tools/verify_object.py "$BUILD/transition_sequence_recoveries.o" private/SLUS_204.86.rom --source src/transition_sequence_recoveries.c

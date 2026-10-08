@@ -17,6 +17,8 @@ func_0022C5C0,0x0022C5C0,0xC,src/setter_leaves.c,complete
 func_00220080,0x00220080,0x8C,src/negative_short_transition.c,complete
 func_002F4360,0x002F4360,0x28,src/animation_state_transfers.c,complete
 func_002F4A20,0x002F4A20,0x28,src/animation_state_transfers.c,complete
+func_002CDD00,0x002CDD00,0x64,src/transition_sequence_recoveries.c,complete
+func_002DD450,0x002DD450,0x6C,src/transition_sequence_recoveries.c,complete
 func_003DF7A0,0x003DF7A0,0x10,src/setter_leaves.c,complete
 func_003ED2D0,0x003ED2D0,0x10,src/setter_leaves.c,complete
 func_003D7120,0x003D7120,0x10,src/gp_accessors.c,complete
