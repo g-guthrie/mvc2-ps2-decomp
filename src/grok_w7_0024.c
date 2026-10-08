@@ -32,6 +32,21 @@ void func_0024FF50(u8 *p, u8 *q)
     }
 }
 
+void func_0024FB90(u8 *p, u8 *q)
+{
+    func_00175700(p);
+    if (*(s8 *)(p + 337)) {
+        p[6]++;
+        q[3] = 0;
+        if (!func_00364EC0(p, 0))
+            func_001843A0(p);
+        else {
+            p[655] = 0;
+            p[654] = 16;
+        }
+    }
+}
+
 void func_0024AB20(u8 *p)
 {
     p[826] = 255;
