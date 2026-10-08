@@ -5046,7 +5046,9 @@ data_u32_004B6EE8,0x004B6EE8,0x6C,.data,src/data/data_u32_004B6EE8.c,initialized
 data_u32_004B6F54,0x004B6F54,0xC,.data,src/data/data_u32_004B6F54.c,filled_u32_constant
 data_u8_004B6F60,0x004B6F60,0x50,.data,src/data/data_u8_004B6F60.c,initialized_byte_array
 gWinsWord_004B6FB0,0x004B6FB0,0x4,.data,src/data/gWinsWord_004B6FB0.c,fixed_char_array
-data_u8_004B6FB4,0x004B6FB4,0xBC,.data,src/data/data_u8_004B6FB4.c,initialized_byte_array
+data_u8_004B6FB4,0x004B6FB4,0xAC,.data,src/data/data_u8_004B6FB4.c,initialized_byte_array
+gScoreboardWinWord_004B7060,0x004B7060,0x5,.data,src/data/gScoreboardWinWord_004B7060.c,nul_terminated_message
+data_u8_004B7065,0x004B7065,0xB,.data,src/data/data_u8_004B7065.c,initialized_byte_array
 jtbl_004B7070,0x004B7070,0x80,.rodata,src/data/jtbl_004B7070.c,jump_table
 data_u32_004B70F0,0x004B70F0,0x10,.data,src/data/data_u32_004B70F0.c,initialized_u32_table
 jtbl_004B7100,0x004B7100,0x18,.rodata,src/data/jtbl_004B7100.c,jump_table
