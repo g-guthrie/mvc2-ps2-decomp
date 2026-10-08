@@ -806,3 +806,16 @@ MWCCPS2 3.0.3 O3/sdata0 data recipe. Catalog validation, full hybrid
 linkage, and packed retail ELF hashes pass. Code remains 552,792 bytes
 (16.7833%); reconstructed data is 56,809 / 648,064 bytes (8.7660%)
 across 1,920 units.
+
+## 2026-10-08 motion reset and lifetime callbacks; loader messages
+
+Added two complete native C callbacks totaling 436 bytes: 002DB880
+under the established grok_w5_0030 O3/sdata8 recipe, and 002DB130 under
+the full positioned-motion O4/Op recipe. Both entire source units verify.
+Recovered four texture diagnostics and one BMP diagnostic, totaling
+250 initialized-data bytes. Credit includes each consumed string payload
+plus NUL only; intervening raw bytes and suffixes remain placeholders.
+Every changed data owner byte-verifies, and superseded byte-array
+sources are removed. Catalog validation, full hybrid linkage, and packed
+retail ELF hashes pass. Totals: 8,840 linked C routines, 553,228 code
+bytes (16.7966%), and 57,059 data bytes (8.8045%) across 1,925 units.
