@@ -7368,7 +7368,7 @@ func_002B3160,0x002B3160,0x84,src/state_pair_dispatch.c,complete
 func_002B8B00,0x002B8B00,0x84,src/state_pair_dispatch.c,complete
 func_002C06A0,0x002C06A0,0x84,src/state_pair_dispatch.c,complete
 func_002C5E10,0x002C5E10,0x84,src/state_pair_dispatch.c,complete
-residual_002CC480,0x002CC480,0x84,src/state_pair_dispatch.c,complete
+func_002CC480,0x002CC480,0x84,src/state_pair_dispatch.c,complete
 func_002D1BC0,0x002D1BC0,0x84,src/state_pair_dispatch.c,complete
 func_002E9450,0x002E9450,0x84,src/state_pair_dispatch.c,complete
 func_002F2830,0x002F2830,0x84,src/state_pair_dispatch.c,complete

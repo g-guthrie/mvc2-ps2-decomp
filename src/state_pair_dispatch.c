@@ -483,7 +483,7 @@ void func_002C5E10(u8 *p) {
         else func_002C5EA0(p);
     }
 }
-void residual_002CC480(u8 *p) {
+void func_002CC480(u8 *p) {
     func_001861B0(p);
     if (p[530] == 1) {
         if (p[525] == 1) func_002CC840(p);
