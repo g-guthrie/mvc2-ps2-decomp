@@ -685,3 +685,12 @@ without gaps; the prefix and suffix remain placeholders. All changed
 data owners byte-match retail. Catalog validation, full hybrid linkage,
 and packed retail ELF hashes pass. Totals: 8,824 linked C routines,
 550,992 code bytes (16.7287%), and 54,630 data bytes (8.4297%).
+
+## 2026-10-08 paired angle callback
+
+Added the complete 164-byte native C callback func_0023B670. Its
+positioned-motion source unit verifies under MWCCPS2 3.0.3 -O4 -Op
+-sdatathreshold 0. Catalog validation, full hybrid loaded-image linkage,
+and packed retail ELF hashes pass. Linked C is 551,156 / 3,293,696
+bytes (16.7337%) across 8,825 functions; reconstructed data remains
+54,630 / 648,064 bytes (8.4297%).
