@@ -896,3 +896,15 @@ All 20 changed data owners independently compile and byte-match.
 Catalog validation, full hybrid linkage, and packed retail ELF hashes
 pass. Totals: 8,848 linked C routines, 554,116 code bytes (16.8235%),
 and 61,510 data bytes (9.4913%) across 2,035 reconstructed units.
+
+## 2026-10-08 state header initialization and fixed label
+
+Added the complete 36-byte native C state-header initializer
+func_00105020 to the existing SN-compiled source unit. All four functions
+in that unit byte-verify with SN GCC 2.95.2 -O2 -G0 -ffunction-sections.
+Recovered only four fixed WINS character bytes, consumed individually
+by a proven 0..3 loop; neighboring labels and padding stay raw. All
+three changed data owners independently byte-match. Catalog validation,
+full hybrid linkage, and packed retail ELF hashes pass. Totals:
+8,849 linked C routines, 554,152 code bytes (16.8246%), and 61,514
+data bytes (9.4920%) across 2,036 reconstructed units.
