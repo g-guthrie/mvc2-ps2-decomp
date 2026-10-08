@@ -303,3 +303,15 @@ Six additional EE96 wrappers have supported signatures: five argument-free
 `ee96_scalar_thunks.c` uses the existing EE96 runner and GNU assembler recipe.
 The generic argument-free wrapper experiment remains uncredited; wrappers
 with unknown signatures need caller/callee argument evidence before adoption.
+Six scalar tail thunks at `0x003FD9A8`, `0x00400ED8`, `0x00400EC0`,
+`0x00405100`, `0x00405118`, and `0x0040D568` match with EE GCC 2.96
+`-O2 -G0` and GNU as `-EL -march=r5900 -mabi=eabi -G0`. Their targets are
+scalar getters, counter updates, or the value-taking state setter at
+`0x0040A2C8`; return and argument types follow those target contracts. All
+function sections and jump relocations compare exactly with retail.
+
+Six no-argument constant-selection thunks at `0x003FE4F8`, `0x003FE510`,
+`0x003FE528`, `0x003FE540`, `0x003FE558`, and `0x003FEAD0` also match with
+EE GCC 2.96 and the same assembler flags. Their targets replace `a0` with a
+fixed selector before calling the shared state handler; that handler reads
+`a0`, ignores the other argument registers, and returns an `s32` status.

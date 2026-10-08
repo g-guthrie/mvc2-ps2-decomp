@@ -8687,3 +8687,9 @@ func_00405118,0x00405118,0x14,src/ee96_scalar_thunks.c,matching
 func_0040D568,0x0040D568,0x14,src/ee96_scalar_thunks.c,matching
 func_003FD9A8,0x003FD9A8,0x14,src/ee96_scalar_thunks.c,matching
 func_00400EC0,0x00400EC0,0x14,src/ee96_scalar_thunks.c,matching
+func_003FE4F8,0x003FE4F8,0x14,src/ee96_constant_thunks.c,matching
+func_003FE510,0x003FE510,0x14,src/ee96_constant_thunks.c,matching
+func_003FE528,0x003FE528,0x14,src/ee96_constant_thunks.c,matching
+func_003FE540,0x003FE540,0x14,src/ee96_constant_thunks.c,matching
+func_003FE558,0x003FE558,0x14,src/ee96_constant_thunks.c,matching
+func_003FEAD0,0x003FEAD0,0x14,src/ee96_constant_thunks.c,matching
