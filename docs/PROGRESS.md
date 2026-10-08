@@ -976,3 +976,16 @@ byte-match retail. Catalog validation, full hybrid linkage, and packed
 retail ELF hashes pass. Code remains 555,376 bytes (16.8618%);
 reconstructed data is 63,066 / 648,064 bytes (9.7314%) across 2,098
 units. Decompilation and full source linkage remain incomplete.
+
+## 2026-10-08 packet writer and queue-state batch
+
+Recovered seven complete native C packet/queue functions totaling
+836 bytes. Their recorded MWCCPS2 3.0.3 O3 recipes use sdata0 or
+sdata8 as appropriate and are now in the normal runner. The queue
+validator explicitly forwards its two caller-provided arguments, and
+all region aliases use the actual BSS extent. Fixed a missing signed
+cursor typedef before canonical compilation. Every complete source
+unit independently byte-verifies; all 33 tests, catalog validation, full
+hybrid linkage, and packed retail ELF hashes pass. Totals: 8,866
+linked C routines and 556,212 code bytes (16.8872%). Reconstructed
+data remains 63,066 bytes (9.7314%); full decompilation is incomplete.

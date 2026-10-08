@@ -8862,10 +8862,10 @@ func_002CD500,0x002CD500,0x78,src/positioned_motion_constants.c,complete
 func_00423650,0x00423650,0x6C,src/append_clear_00423650.c,complete
 func_002D7700,0x002D7700,0xA0,src/motion_speed_transition.c,complete
 func_002BC080,0x002BC080,0xA0,src/motion_speed_transition.c,complete
-func_004236C0,0x004236C0,0x84,src/append_bool_004236C0.c,matching
-func_004239D0,0x004239D0,0xCC,src/append_flags_004239D0.c,matching
-func_00423990,0x00423990,0x34,src/validate_queue_state_00423990.c,matching
-func_00423930,0x00423930,0x54,src/queue_state_transition_00423930.c,matching
-func_00423240,0x00423240,0x80,src/append_type29_00423240.c,matching
-func_004235D0,0x004235D0,0x80,src/append_tag_004235D0.c,matching
-func_004231D0,0x004231D0,0x6C,src/append_type28_004231D0.c,matching
+func_004236C0,0x004236C0,0x84,src/append_bool_004236C0.c,complete
+func_004239D0,0x004239D0,0xCC,src/append_flags_004239D0.c,complete
+func_00423990,0x00423990,0x34,src/validate_queue_state_00423990.c,complete
+func_00423930,0x00423930,0x54,src/queue_state_transition_00423930.c,complete
+func_00423240,0x00423240,0x80,src/append_type29_00423240.c,complete
+func_004235D0,0x004235D0,0x80,src/append_tag_004235D0.c,complete
+func_004231D0,0x004231D0,0x6C,src/append_type28_004231D0.c,complete

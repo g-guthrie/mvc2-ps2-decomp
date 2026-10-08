@@ -2422,3 +2422,31 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/append_clear_00423650.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/append_clear_00423650.o"
 "$PYTHON" tools/verify_object.py "$BUILD/append_clear_00423650.o" private/SLUS_204.86.rom --source src/append_clear_00423650.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/append_bool_004236C0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/append_bool_004236C0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/append_bool_004236C0.o" private/SLUS_204.86.rom --source src/append_bool_004236C0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/append_flags_004239D0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/append_flags_004239D0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/append_flags_004239D0.o" private/SLUS_204.86.rom --source src/append_flags_004239D0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/validate_queue_state_00423990.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/validate_queue_state_00423990.o"
+"$PYTHON" tools/verify_object.py "$BUILD/validate_queue_state_00423990.o" private/SLUS_204.86.rom --source src/validate_queue_state_00423990.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/queue_state_transition_00423930.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/queue_state_transition_00423930.o"
+"$PYTHON" tools/verify_object.py "$BUILD/queue_state_transition_00423930.o" private/SLUS_204.86.rom --source src/queue_state_transition_00423930.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/append_type29_00423240.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/append_type29_00423240.o"
+"$PYTHON" tools/verify_object.py "$BUILD/append_type29_00423240.o" private/SLUS_204.86.rom --source src/append_type29_00423240.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/append_tag_004235D0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/append_tag_004235D0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/append_tag_004235D0.o" private/SLUS_204.86.rom --source src/append_tag_004235D0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/append_type28_004231D0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/append_type28_004231D0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/append_type28_004231D0.o" private/SLUS_204.86.rom --source src/append_type28_004231D0.c

@@ -1,7 +1,7 @@
 typedef unsigned char u8;
 typedef unsigned int u32;
 typedef signed int s32;
-extern volatile u8 D_00630000[0x4000];
+extern volatile u8 D_00630000[0x4380];
 #define CURSOR (*(volatile s32 *)(D_00630000 + 0x3e20))
 int func_004236C0(int enabled)
 {
