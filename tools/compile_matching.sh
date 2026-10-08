@@ -2267,3 +2267,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/compile_ee96.py "$BUILD/ee_math_wrappers.i" "$BUILD/ee_math_wrappers.s"
 "${AS:-mipsel-linux-gnu-as}" -EL -march=r5900 -mabi=eabi -G0 -o "$BUILD/ee_math_wrappers.o" "$BUILD/ee_math_wrappers.s"
 "$PYTHON" tools/verify_object.py "$BUILD/ee_math_wrappers.o" private/SLUS_204.86.rom --source src/ee_math_wrappers.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/luna_a_compare_positions.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/luna_a_compare_positions.o"
+"$PYTHON" tools/verify_object.py "$BUILD/luna_a_compare_positions.o" private/SLUS_204.86.rom --source src/luna_a_compare_positions.c

@@ -8662,3 +8662,4 @@ func_001173E8,0x001173E8,0x14,src/ee_math_wrappers.c,complete
 func_00117400,0x00117400,0x14,src/ee_math_wrappers.c,complete
 func_00117418,0x00117418,0x14,src/ee_math_wrappers.c,complete
 func_00117430,0x00117430,0x14,src/ee_math_wrappers.c,complete
+func_001CB0A0,0x001CB0A0,0x30,src/luna_a_compare_positions.c,complete
