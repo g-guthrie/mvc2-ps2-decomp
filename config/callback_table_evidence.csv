@@ -819,6 +819,7 @@ jtbl_0045BCD0,0x0045BCD0,0xC,src/composite_dispatch_heads.c,jtbl_0045BCD0,void(u
 jtbl_0045BE80,0x0045BE80,0xC,src/composite_dispatch_heads.c,jtbl_0045BE80,void(u8 *)
 jtbl_0045BE90,0x0045BE90,0x14,src/composite_dispatch_heads.c,jtbl_0045BE90,void(u8 *)
 jtbl_0045BED0,0x0045BED0,0x38,src/argument_dispatch_heads.c,jtbl_0045BED0,"void(u8 *, void *)"
+jtbl_0045BF20,0x0045BF20,0xC,src/composite_dispatch_heads.c,jtbl_0045BF20,"void(u8 *, void *)"
 jtbl_0045BF30,0x0045BF30,0xC,src/composite_dispatch_heads.c,jtbl_0045BF30,void(u8 *)
 jtbl_0045BF40,0x0045BF40,0xC,src/composite_dispatch_heads.c,jtbl_0045BF40,void(u8 *)
 jtbl_0045BF50,0x0045BF50,0xC,src/composite_dispatch_heads.c,jtbl_0045BF50,void(u8 *)
