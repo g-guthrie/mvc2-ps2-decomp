@@ -617,7 +617,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0017.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_0017.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/grok_w5_0024.c -c -lang c $MATCH_FLAGS \
+    src/grok_w5_0024.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_0024.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_sz54.c -c -lang c $MATCH_FLAGS \

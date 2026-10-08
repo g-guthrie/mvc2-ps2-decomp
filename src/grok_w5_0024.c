@@ -29,6 +29,8 @@ extern void func_001A7930(u8 *, int);
 extern void func_00367F90(u8 *, int, int);
 extern void func_001AD170(u8 *, int, int);
 extern void func_001266A0(u8 *, int, int);
+extern void func_0024BA20(u8 *);
+extern unsigned int jtbl_004C0408[2];
 
 void func_002482C0(u8 *p)
 {
@@ -242,3 +244,37 @@ void func_00252960(u8 *p)
 }
 
 
+
+
+void func_0024B1F0(u8 *p)
+{
+    func_00175700(p);
+    (*(volatile f32 *)(p + 52)) += (*(volatile f32 *)(p + 92));
+    (*(volatile f32 *)(p + 92)) += (*(volatile f32 *)(p + 104));
+    if ((S(p, 320) == 0 && (*(volatile f32 *)(p + 92)) <= -20.0f) ||
+        (S(p, 320) != 0 && (*(volatile f32 *)(p + 92)) >= 20.0f)) {
+        p[7]++;
+        S(p, 28) = *(s16 *)((u8 *)jtbl_004C0408 + (p[6] << 2) + (p[439] << 1));
+        if ((*(volatile s16 *)(p + 320)) == 0) (*(volatile f32 *)(p + 92)) = -20.0f;
+        else (*(volatile f32 *)(p + 92)) = 20.0f;
+        (*(volatile f32 *)(p + 104)) = 0.0f;
+    }
+    func_0024BA20(p);
+}
+
+
+void func_0024B6C0(u8 *p)
+{
+    func_00175700(p);
+    (*(volatile f32 *)(p + 52)) += (*(volatile f32 *)(p + 92));
+    (*(volatile f32 *)(p + 92)) += (*(volatile f32 *)(p + 104));
+    if ((S(p, 320) == 0 && (*(volatile f32 *)(p + 92)) <= -20.0f) ||
+        (S(p, 320) != 0 && (*(volatile f32 *)(p + 92)) >= 20.0f)) {
+        p[7]++;
+        S(p, 28) = *(s16 *)((u8 *)jtbl_004C0408 + (p[6] << 2) + (p[439] << 1));
+        if ((*(volatile s16 *)(p + 320)) == 0) (*(volatile f32 *)(p + 92)) = -20.0f;
+        else (*(volatile f32 *)(p + 92)) = 20.0f;
+        (*(volatile f32 *)(p + 104)) = 0.0f;
+    }
+    func_0024BA20(p);
+}
