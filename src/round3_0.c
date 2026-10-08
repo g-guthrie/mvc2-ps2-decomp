@@ -588,3 +588,33 @@ void func_0024A320(u8 *p) {
     }
 }
 
+extern void func_002FEFE0(u8 *, void *);
+extern void func_00303EC0(u8 *, void *);
+void func_002FEF60(u8 *p, void *q) {
+    p[6]++;
+    func_00185490(p);
+    func_00175C00(p, 0);
+    I(p, 92) = 0;
+    I(p, 96) = 0;
+    I(p, 104) = 0;
+    I(p, 108) = 0;
+    p[525] = 0;
+    *(f32 *)(p + 56) = *(f32 *)(p + 1072);
+    func_001757E0(p, 20, 2);
+    func_002FEFE0(p, q);
+}
+
+void func_00303E40(u8 *p, void *q) {
+    p[6]++;
+    func_00185490(p);
+    func_00175C00(p, 0);
+    I(p, 92) = 0;
+    I(p, 96) = 0;
+    I(p, 104) = 0;
+    I(p, 108) = 0;
+    p[525] = 0;
+    *(f32 *)(p + 56) = *(f32 *)(p + 1072);
+    func_001757E0(p, 20, 3);
+    func_00303EC0(p, q);
+}
+

@@ -8770,4 +8770,6 @@ func_002B5590,0x002B5590,0x74,src/round3_0.c,complete
 func_002DDA80,0x002DDA80,0x68,src/round3_0.c,complete
 func_00249F30,0x00249F30,0x68,src/round3_0.c,complete
 func_0024A320,0x0024A320,0x80,src/round3_0.c,complete
+func_002FEF60,0x002FEF60,0x80,src/round3_0.c,complete
+func_00303E40,0x00303E40,0x80,src/round3_0.c,complete
 func_002C3640,0x002C3640,0x74,src/grok_w7_002c.c,complete
