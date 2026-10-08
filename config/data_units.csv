@@ -6980,7 +6980,10 @@ data_f32_004C2400,0x004C2400,0x4,.data,src/data/data_f32_004C2400.c,float_scalar
 data_u32_004C2404,0x004C2404,0x4,.data,src/data/data_u32_004C2404.c,uint32_scalar
 data_u32_004C2408,0x004C2408,0x4,.data,src/data/data_u32_004C2408.c,uint32_scalar
 data_u32_004C240C,0x004C240C,0x4,.data,src/data/data_u32_004C240C.c,uint32_scalar
-data_u32_004C2410,0x004C2410,0x40,.data,src/data/data_u32_004C2410.c,initialized_u32_table
+data_u32_004C2410,0x004C2410,0x4,.data,src/data/data_u32_004C2410.c,uint32_scalar
+data_raw_004C2414,0x004C2414,0x4,.data,src/data/data_raw_004C2414.c,initialized_byte_array
+data_u32_004C2418,0x004C2418,0x4,.data,src/data/data_u32_004C2418.c,uint32_scalar
+data_u32_004C241C,0x004C241C,0x34,.data,src/data/data_u32_004C241C.c,initialized_u32_table
 data_u32_004C2450,0x004C2450,0x4,.data,src/data/data_u32_004C2450.c,uint32_scalar
 data_u32_004C2454,0x004C2454,0x4,.data,src/data/data_u32_004C2454.c,uint32_scalar
 data_u32_004C2458,0x004C2458,0x4,.data,src/data/data_u32_004C2458.c,uint32_scalar

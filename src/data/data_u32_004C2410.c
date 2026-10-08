@@ -1,5 +1,2 @@
-typedef unsigned int u32;
-u32 data_u32_004C2410[16] = {
-    0x00000000u, 0x004BC848u, 0x00000000u, 0x00000000u, 0x00000000u, 0x00000000u, 0x43296328u, 0x00004952u, 
-    0x004C2428u, 0x004BD778u, 0x00000000u, 0x004BD8D8u, 0x7D000000u, 0x00000000u, 0x00000001u, 0x00000000u, 
-};
+/* func_004044D0 sets this fixed 32-bit state word to one. */
+unsigned int data_u32_004C2410[1] = { 0u };

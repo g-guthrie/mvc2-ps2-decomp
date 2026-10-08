@@ -6980,7 +6980,10 @@ data_f32_004C2400,0x004C2400,0x4,src/data/data_f32_004C2400.c,complete,reconstru
 data_u32_004C2404,0x004C2404,0x4,src/data/data_u32_004C2404.c,complete,reconstructed
 data_u32_004C2408,0x004C2408,0x4,src/data/data_u32_004C2408.c,complete,reconstructed
 data_u32_004C240C,0x004C240C,0x4,src/data/data_u32_004C240C.c,complete,reconstructed
-data_u32_004C2410,0x004C2410,0x40,src/data/data_u32_004C2410.c,complete,placeholder
+data_u32_004C2410,0x004C2410,0x4,src/data/data_u32_004C2410.c,complete,reconstructed
+data_raw_004C2414,0x004C2414,0x4,src/data/data_raw_004C2414.c,complete,placeholder
+data_u32_004C2418,0x004C2418,0x4,src/data/data_u32_004C2418.c,complete,reconstructed
+data_u32_004C241C,0x004C241C,0x34,src/data/data_u32_004C241C.c,complete,placeholder
 data_u32_004C2450,0x004C2450,0x4,src/data/data_u32_004C2450.c,complete,reconstructed
 data_u32_004C2454,0x004C2454,0x4,src/data/data_u32_004C2454.c,complete,reconstructed
 data_u32_004C2458,0x004C2458,0x4,src/data/data_u32_004C2458.c,complete,reconstructed
