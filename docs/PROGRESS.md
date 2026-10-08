@@ -619,3 +619,15 @@ relink, and packed retail ELF hashes pass. Linked C coverage is now
 548,196 / 3,293,696 bytes (16.6438%), across 8,806 functions.
 Initialized reconstructed data remains 53,950 / 648,064 bytes.
 Unmatched retail spans remain placeholders; full decompilation is incomplete.
+
+## 2026-10-08 callback and consumed-float consolidation
+
+Added five exact native C callbacks totaling 616 bytes, with complete
+positioned-motion and round3_0 source-unit compiler verification. Added
+240 reconstructed initialized-data bytes from concrete floating-point
+loads/stores and bounded vector fields. All 78 changed data owners and
+the consolidated mutable animation float array byte-match retail.
+Catalog validation, full hybrid linkage, and packed retail ELF hashes pass.
+Totals: 8,811 linked C routines, 548,812 / 3,293,696 code bytes (16.6625%),
+and 54,190 / 648,064 data bytes (8.3618%) across 1,855 reconstructed units.
+The remaining retail spans remain uncredited placeholders.
