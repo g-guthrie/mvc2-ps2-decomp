@@ -609,3 +609,13 @@ zero regions stay placeholders. Every changed data owner independently
 compiles and byte-matches retail. Catalog validation, full hybrid loaded
 image, and packed retail ELF hashes pass. Data is now
 53,950 / 648,064 bytes; C stays 546,996 / 3,293,696 bytes.
+
+## 2026-10-08 motion callback checkpoint
+
+Added eight exact native C motion callbacks totaling 1,200 bytes. The full
+positioned-motion source unit verifies with MWCCPS2 3.0.3 -O4 -Op
+-sdatathreshold 0. Catalog validation, the complete hybrid loaded-image
+relink, and packed retail ELF hashes pass. Linked C coverage is now
+548,196 / 3,293,696 bytes (16.6438%), across 8,806 functions.
+Initialized reconstructed data remains 53,950 / 648,064 bytes.
+Unmatched retail spans remain placeholders; full decompilation is incomplete.
