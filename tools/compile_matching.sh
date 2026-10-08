@@ -2100,3 +2100,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/luna_a_small_wrappers.c -c -lang c -O3 -sdatathreshold 0 \
     -o "$BUILD/luna_a_small_wrappers.o"
 "$PYTHON" tools/verify_object.py "$BUILD/luna_a_small_wrappers.o" private/SLUS_204.86.rom --source src/luna_a_small_wrappers.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/negative_short_transition.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/negative_short_transition.o"
+"$PYTHON" tools/verify_object.py "$BUILD/negative_short_transition.o" private/SLUS_204.86.rom --source src/negative_short_transition.c
