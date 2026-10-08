@@ -10000,7 +10000,7 @@ func_00290080,0x00290080,0x1C,0x0029009C,code,matching-c-head-split
 residual_0029009C,0x0029009C,0x50,0x002900EC,assembly_residual,verified-boundary-after-matching-head
 func_002900F0,0x002900F0,0x8,0x002900F8,code,spimdisasm-explicit-size-before-first-data
 func_00290100,0x00290100,0x20,0x00290120,code,matching-c-head-split
-residual_00290120,0x00290120,0x60,0x00290180,assembly_residual,verified-boundary-after-matching-head
+func_00290120,0x00290120,0x60,0x00290180,code,typed-callback-table-entry
 func_00290180,0x00290180,0x48,0x002901C8,code,spimdisasm-explicit-size-before-first-data
 func_002901D0,0x002901D0,0x3C,0x0029020C,code,spimdisasm-explicit-size-before-first-data
 func_00290210,0x00290210,0xC,0x0029021C,code,spimdisasm-explicit-size-before-first-data

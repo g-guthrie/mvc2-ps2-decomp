@@ -316,3 +316,13 @@ void func_0028FE50(u8 *p) {
     func_001C57B0(p, 13);
     func_001757E0(p, 0, 0);
 }
+
+extern void func_00290180(u8 *);
+void func_00290120(u8 *p) {
+    p[7]++;
+    *(s16 *)(p + 28) = 1;
+    func_00175C00(p, 0);
+    func_001C57B0(p, 6);
+    func_001757E0(p, 0, 0);
+    func_00290180(p);
+}
