@@ -5049,7 +5049,7 @@ data_u32_004BED50,0x004BED50,0x50,.data,src/data/data_u32_004BED50.c,initialized
 data_zero_004BEDA0,0x004BEDA0,0x10,.data,src/data/data_zero_004BEDA0.c,zero_initialized_untyped
 data_u32_004BEDB0,0x004BEDB0,0x90,.data,src/data/data_u32_004BEDB0.c,initialized_u32_table
 jtbl_004BEE40,0x004BEE40,0x18,.rodata,src/data/jtbl_004BEE40.c,jump_table
-data_u32_004BEE60,0x004BEE60,0xE0,.data,src/data/data_u32_004BEE60.c,initialized_u32_table
+gMvc2BootResources_004BEE60,0x004BEE60,0xE0,.data,src/data/boot_resources_004BEE60.c,boot_module_string_bundle
 jtbl_004BEF40,0x004BEF40,0x58,.rodata,src/data/jtbl_004BEF40.c,jump_table
 data_u32_004BEFA0,0x004BEFA0,0xA0,.data,src/data/data_u32_004BEFA0.c,initialized_u32_table
 jtbl_004BF040,0x004BF040,0x1c,.rodata,src/data/jtbl_004BF040.c,jump_table
