@@ -7,7 +7,7 @@ void func_0020A680(u8 *p) { if (func_00175700(p) < 0) p[5]++; }
 void func_0020A8D0(u8 *p) { if (func_00175700(p) < 0) p[5]++; }
 void func_0021EF50(u8 *p) { if (func_00175700(p) < 0) p[5]++; }
 void func_0022E6C0(u8 *p) { if (func_00175700(p) < 0) p[5]++; }
-void residual_0022EA60(u8 *p) { if (func_00175700(p) < 0) p[5]++; }
+void func_0022EA60(u8 *p) { if (func_00175700(p) < 0) p[5]++; }
 void func_0023BBB0(u8 *p) { if (func_00175700(p) < 0) p[5]++; }
 void func_0024A760(u8 *p) { if (func_00175700(p) < 0) p[5]++; }
 void func_00264820(u8 *p) { if (func_00175700(p) < 0) p[5]++; }

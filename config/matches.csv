@@ -4152,7 +4152,7 @@ func_0020A680,0x0020A680,0x40,src/increment_on_negative.c,complete
 func_0020A8D0,0x0020A8D0,0x40,src/increment_on_negative.c,complete
 func_0021EF50,0x0021EF50,0x40,src/increment_on_negative.c,complete
 func_0022E6C0,0x0022E6C0,0x40,src/increment_on_negative.c,complete
-residual_0022EA60,0x0022EA60,0x40,src/increment_on_negative.c,complete
+func_0022EA60,0x0022EA60,0x40,src/increment_on_negative.c,complete
 func_0023BBB0,0x0023BBB0,0x40,src/increment_on_negative.c,complete
 func_0024A760,0x0024A760,0x40,src/increment_on_negative.c,complete
 func_00264820,0x00264820,0x40,src/increment_on_negative.c,complete
