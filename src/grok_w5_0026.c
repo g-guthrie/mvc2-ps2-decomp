@@ -33,6 +33,7 @@ extern DispatchFn jtbl_00454C60[];
 extern DispatchFn jtbl_00454CB0[];
 extern DispatchFn jtbl_004553D0[];
 extern DispatchFn jtbl_00454210[];
+extern DispatchFn jtbl_00452CD0[];
 extern void (*jtbl_00454340[])(u8 *, u8 *);
 
 void func_00260020(u8 *p)
@@ -233,6 +234,16 @@ void func_00264860(u8 *p)
     }
 }
 
+void func_00245B70(u8 *p)
+{
+    if (func_003D92F0(p)) {
+        func_00175C00(p, 0);
+        func_001843A0(p);
+    } else {
+        jtbl_00452CD0[p[0x20]](p);
+    }
+}
+
 void func_00266EB0(u8 *p)
 {
     p[0x40C] = 2;
@@ -278,5 +289,4 @@ void func_00269100(u8 *p)
         func_001B3E30(p, 5, 0);
     }
 }
-
 
