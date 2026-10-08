@@ -989,3 +989,13 @@ unit independently byte-verifies; all 33 tests, catalog validation, full
 hybrid linkage, and packed retail ELF hashes pass. Totals: 8,866
 linked C routines and 556,212 code bytes (16.8872%). Reconstructed
 data remains 63,066 bytes (9.7314%); full decompilation is incomplete.
+
+## 2026-10-08 disc and memory-card diagnostics
+
+Recovered 25 directly consumed CD/DVD/Memory Card diagnostic and
+format strings, adding 606 initialized-data bytes. Only exact payloads
+plus NUL count; all 21 raw gaps and binary suffixes remain placeholders.
+All 46 changed owners independently compile and byte-match retail.
+Catalog validation, full hybrid linkage, and packed retail ELF hashes
+pass. Code remains 556,212 bytes (16.8872%); reconstructed data is
+63,672 / 648,064 bytes (9.8250%) across 2,123 units.
