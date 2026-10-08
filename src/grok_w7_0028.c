@@ -1,12 +1,19 @@
 typedef unsigned char u8;
 typedef signed char s8;
 typedef signed short s16;
+typedef unsigned short u16;
+
 typedef signed int s32;
 typedef float f32;
 
 extern int func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_001C8CE0(u8 *, int);
+extern void func_001861B0(u8 *);
+extern void func_0018C4B0(u8 *, int);
+extern void func_00183D90(u8 *);
+extern void func_001863F0(u8 *);
+extern u8 *D_004C2794;
 extern s32 func_003D92F0(u8 *);
 extern void func_001843A0(u8 *);
 extern void func_0028D810(u8 *, u8 *);
@@ -141,4 +148,62 @@ void func_0028C620(u8 *p)
         func_001E3210(p, 0x2D);
         func_001C09A0(p, 0x1A);
     }
+}
+
+
+void func_00287AF0(u8 *p)
+{
+    unsigned int offset;
+    if (p[6] == 0) {
+        func_001861B0(p);
+        p[6]++;
+        p[437] = 22;
+        p[525] = 0;
+        func_001757E0(p, 20, 3);
+        *(volatile u8 *)(p + 437) = *(volatile u8 *)(p + 437);
+        p[434] = *(u16 *)(p + 448) = 0;
+        *(s32 *)(p + 472) = 0;
+        offset = p[2] * 2;
+        offset += (unsigned int)D_004C2794;
+        ++*(s16 *)(offset + 124);
+        func_0018C4B0(p, 5);
+    }
+    if (p[531] == 3)
+        func_00183D90(p);
+    *(f32 *)(p + 52) += *(f32 *)(p + 92);
+    *(f32 *)(p + 92) += *(f32 *)(p + 104);
+    *(f32 *)(p + 56) += *(f32 *)(p + 96);
+    *(f32 *)(p + 96) += *(f32 *)(p + 108);
+    func_001863F0(p);
+    if ((s8)func_00175700(p) < 0)
+        func_001843A0(p);
+}
+
+
+void func_0028F290(u8 *p)
+{
+    unsigned int offset;
+    if (p[6] == 0) {
+        func_001861B0(p);
+        p[6]++;
+        p[437] = 22;
+        p[525] = 0;
+        func_001757E0(p, 20, 3);
+        *(volatile u8 *)(p + 437) = *(volatile u8 *)(p + 437);
+        p[434] = *(u16 *)(p + 448) = 0;
+        *(s32 *)(p + 472) = 0;
+        offset = p[2] * 2;
+        offset += (unsigned int)D_004C2794;
+        ++*(s16 *)(offset + 124);
+        func_0018C4B0(p, 5);
+    }
+    if (p[531] == 3)
+        func_00183D90(p);
+    *(f32 *)(p + 52) += *(f32 *)(p + 92);
+    *(f32 *)(p + 92) += *(f32 *)(p + 104);
+    *(f32 *)(p + 56) += *(f32 *)(p + 96);
+    *(f32 *)(p + 96) += *(f32 *)(p + 108);
+    func_001863F0(p);
+    if ((s8)func_00175700(p) < 0)
+        func_001843A0(p);
 }
