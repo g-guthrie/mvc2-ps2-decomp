@@ -1636,7 +1636,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/dupcluster_gate96b.o" private/SLUS_204.86.rom \
     --source src/dupcluster_gate96b.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/dupcluster_0013C730.c -c -lang c $MATCH_FLAGS \
+    src/dupcluster_0013C730.c -c -lang c -O4 -Op -sdatathreshold 0 \
     -o "$BUILD/dupcluster_0013C730.o"
 "$PYTHON" tools/verify_object.py \
     "$BUILD/dupcluster_0013C730.o" private/SLUS_204.86.rom \
@@ -1683,12 +1683,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/dupcluster_00278F50.o" private/SLUS_204.86.rom \
     --source src/dupcluster_00278F50.c
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/dupcluster_0013C730.c -c -lang c -O4 -Op -sdatathreshold 0 \
-    -o "$BUILD/dupcluster_0013C730.o"
-"$PYTHON" tools/verify_object.py \
-    "$BUILD/dupcluster_0013C730.o" private/SLUS_204.86.rom \
-    --source src/dupcluster_0013C730.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/dupcluster_00184110.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/dupcluster_00184110.o"
