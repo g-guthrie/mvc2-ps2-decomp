@@ -4778,7 +4778,9 @@ jtbl_004B11E0,0x004B11E0,0x40,src/data/jtbl_004B11E0.c,complete,placeholder
 gSpriteMotionBytePairs_004B1220,0x004B1220,0x36,src/data/gSpriteMotionBytePairs_004B1220.c,complete,reconstructed
 data_raw_004B1256,0x004B1256,0x42,src/data/data_raw_004B1256.c,complete,placeholder
 gSpriteAnimationFrameCodes_004B1298,0x004B1298,0x6,src/data/gSpriteAnimationFrameCodes_004B1298.c,complete,reconstructed
-data_raw_004B129E,0x004B129E,0x202,src/data/data_raw_004B129E.c,complete,placeholder
+data_raw_004B129E,0x004B129E,0x2,src/data/data_raw_004B129E.c,complete,placeholder
+gSpriteMotionVectors_004B12A0,0x004B12A0,0x1EC,src/data/gSpriteMotionVectors_004B12A0.c,complete,reconstructed
+data_raw_004B148C,0x004B148C,0x14,src/data/data_raw_004B148C.c,complete,placeholder
 data_f32_004B14A0,0x004B14A0,0xC,src/data/data_f32_004B14A0.c,complete,reconstructed
 data_zero_004B14AC,0x004B14AC,0x34,src/data/data_zero_004B14AC.c,complete,placeholder
 data_u32_004B14E0,0x004B14E0,0x400,src/data/data_u32_004B14E0.c,complete,placeholder
