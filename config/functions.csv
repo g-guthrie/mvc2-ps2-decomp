@@ -11103,7 +11103,7 @@ residual_002B7070,0x002B7070,0xAC,0x002B711C,assembly_residual,verified-boundary
 func_002B7120,0x002B7120,0xBC,0x002B71DC,code,spimdisasm-explicit-size-before-first-data
 func_002B71E0,0x002B71E0,0xD4,0x002B72B4,code,spimdisasm-explicit-size-before-first-data
 func_002B72C0,0x002B72C0,0x20,0x002B72E0,code,matching-c-head-split
-residual_002B72E0,0x002B72E0,0x78,0x002B7358,assembly_residual,verified-boundary-after-matching-head
+func_002B72E0,0x002B72E0,0x78,0x002B7358,code,typed-callback-table-entry
 func_002B7360,0x002B7360,0xD8,0x002B7438,code,spimdisasm-explicit-size-before-first-data
 func_002B7440,0x002B7440,0x1C,0x002B745C,code,matching-c-head-split
 residual_002B745C,0x002B745C,0x11C,0x002B7578,assembly_residual,verified-boundary-after-matching-head
