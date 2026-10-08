@@ -649,3 +649,12 @@ source unit and all 17 changed data owners verify against retail. Catalog
 validation, full hybrid linkage, and packed retail ELF hashes pass.
 Totals: 8,812 linked C routines and 548,944 code bytes (16.6665%);
 reconstructed data is 54,382 / 648,064 bytes (8.3915%).
+
+## 2026-10-08 signed speed callbacks
+
+Added func_0027D8D0 and func_0026C560, totaling 248 exact native C bytes.
+The complete positioned-motion unit compiles with MWCCPS2 3.0.3
+-O4 -Op -sdatathreshold 0 and byte-matches retail. Catalog validation,
+full hybrid loaded-image linkage, and packed retail ELF hashes pass.
+Totals: 8,814 linked C routines and 549,192 / 3,293,696 bytes (16.6740%).
+Reconstructed initialized data remains 54,382 / 648,064 bytes (8.3915%).
