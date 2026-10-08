@@ -94,7 +94,13 @@ def load_functions(path: Path) -> list[dict]:
 def load_matches(path: Path) -> dict[str, dict]:
     result = {}
     with path.open(newline="", encoding="utf-8") as stream:
-        for row in csv.DictReader(stream):
+        reader = csv.DictReader(stream)
+        for row in reader:
+            if None in row or any(
+                not row.get(key)
+                for key in ("name", "address", "size", "source", "status")
+            ):
+                raise SystemExit(f"malformed code match row: {path}:{reader.line_num}")
             if row["status"] not in {"matching", "complete"}:
                 continue
             if row["name"] in result:

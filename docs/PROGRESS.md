@@ -417,3 +417,16 @@ entry from merge context was excluded because its source change and proof were
 not part of the integrated batch. Unverified 0x002958C0 remains uncredited.
 Totals: 8,674 exact linked C routines and 535,532 / 3,293,696 bytes;
 reconstructed data is unchanged at 42,400 / 648,064 bytes.
+
+## 2026-10-08 countdown and catalog validation
+
+Added two native routines (232 bytes): a four-field motion countdown and
+a conditional selector initializer. All affected source units verify exactly;
+full hybrid and retail ELF hashes pass. Totals: 8,676 linked C routines and
+535,764 / 3,293,696 bytes, with data unchanged.
+
+An actual merge-conflict catalog exposed silent omission of malformed CSV
+rows. Both compiler and report loaders now reject missing/extra fields before
+status filtering. The regression test covers conflict markers and broken
+CSV rows through both loaders; all 33 tests pass. Valid assembly placeholders
+still remain uncredited.

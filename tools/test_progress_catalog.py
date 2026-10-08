@@ -3,6 +3,7 @@ import tempfile
 from pathlib import Path
 
 from tools.objdiff_report import load_matches
+from tools.verify_object import load_matches as load_compiler_matches
 
 from tools.progress_catalog import (
     DATA_BEGIN,
@@ -29,6 +30,20 @@ class ProgressCatalogTest(unittest.TestCase):
             matches = load_matches(catalog)
             self.assertEqual(set(matches), {"c"})
             self.assertEqual(code_progress(matches), (16, 16))
+
+    def test_malformed_code_rows_are_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            catalog = Path(directory) / "matches.csv"
+            for row in (
+                "<<<<<<< HEAD\n", "=======\n", ">>>>>>> branch\n",
+                "f,0x00100000,0x10,src/f.c\n",
+                "f,0x00100000,0x10,src/f.c,complete,extra\n",
+            ):
+                catalog.write_text("name,address,size,source,status\n" + row)
+                for loader in (load_matches, load_compiler_matches):
+                    with self.subTest(row=row, loader=loader.__module__):
+                        with self.assertRaisesRegex(SystemExit, "malformed code match row"):
+                            loader(catalog)
 
     def test_unique_coverage_dedups_overlap(self):
         lo = DATA_BEGIN

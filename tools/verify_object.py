@@ -29,12 +29,19 @@ def load_addresses(path: Path) -> dict[str, int]:
 
 def load_matches(path: Path, source: str | None = None) -> list[dict]:
     with path.open(newline="", encoding="utf-8") as stream:
-        return [
-            row
-            for row in csv.DictReader(stream)
-            if row["status"] in {"matching", "complete", "placeholder"}
-            and (source is None or row["source"] == source)
-        ]
+        reader = csv.DictReader(stream)
+        result = []
+        for row in reader:
+            if None in row or any(
+                not row.get(key)
+                for key in ("name", "address", "size", "source", "status")
+            ):
+                raise SystemExit(f"malformed code match row: {path}:{reader.line_num}")
+            if row["status"] in {"matching", "complete", "placeholder"} and (
+                source is None or row["source"] == source
+            ):
+                result.append(row)
+        return result
 
 
 def patch_relocation(word: int, relocation_type: int, value: int, gp: int) -> int:
