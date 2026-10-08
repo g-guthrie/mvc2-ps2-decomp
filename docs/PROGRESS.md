@@ -1060,3 +1060,13 @@ and excluded unrelated stale-branch context. Catalog validation, full
 hybrid linkage, and packed retail ELF hashes pass. Totals: 8,888 linked
 C routines and 558,764 code bytes (16.9647%). Data remains 65,071 bytes
 (10.0408%); full decompilation remains incomplete.
+
+## 2026-10-08 shared animation-helper interface audit
+
+Aligned legacy caller declarations in 116 source files with the canonical
+int func_001757E0(u8 *, int, int) interface. This restores consistent
+return and argument contracts without adding byte credit. Every changed
+unit was freshly compiled using its existing direct or loop-based recipe;
+all 1,785 source-selected functions byte-verify exactly. All 33 tests,
+catalog validation, full hybrid linkage, and packed retail ELF hashes
+pass. Coverage remains 16.9647% code and 10.0408% data.
