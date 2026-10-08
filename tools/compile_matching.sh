@@ -2513,3 +2513,13 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/release_packet_callback_00422BF0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/release_packet_callback_00422BF0.o" \
     private/SLUS_204.86.rom --source src/release_packet_callback_00422BF0.c
+
+"$WIBO" "$SNCPP" -P src/sdk_reentrant_seek_0011C9B8.c "$BUILD/sdk_reentrant_seek_0011C9B8.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_reentrant_seek_0011C9B8.i" "$BUILD/sdk_reentrant_seek_0011C9B8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_reentrant_seek_0011C9B8.o" "$BUILD/sdk_reentrant_seek_0011C9B8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sdk_reentrant_seek_0011C9B8.o" private/SLUS_204.86.rom --source src/sdk_reentrant_seek_0011C9B8.c
+
+"$WIBO" "$SNCPP" -P src/sdk_file_seek_0011FAB0.c "$BUILD/sdk_file_seek_0011FAB0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_file_seek_0011FAB0.i" "$BUILD/sdk_file_seek_0011FAB0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_file_seek_0011FAB0.o" "$BUILD/sdk_file_seek_0011FAB0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sdk_file_seek_0011FAB0.o" private/SLUS_204.86.rom --source src/sdk_file_seek_0011FAB0.c
