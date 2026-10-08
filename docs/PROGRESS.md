@@ -1174,3 +1174,13 @@ unbounded lookup region stays explicitly placeholder-owned. All24
 changed owners compile and byte-match. Catalog validation, full hybrid
 linkage, and packed retail ELF hashes pass. Code remains560,704 bytes
 (17.0236%); data is65,311 bytes(10.0779%) across2,158 reconstructed units.
+
+## 2026-10-08 texture allocation diagnostics
+
+Recovered seven directly consumed texture diagnostics, adding 456
+initialized-data bytes. Exact payloads plus NUL are credited, including
+terminators crossing old owner boundaries; all gaps remain placeholders.
+All thirteen split owners independently compile and byte-match. Catalog
+validation, full hybrid linkage, and packed retail ELF hashes pass.
+Code remains560,704 bytes(17.0236%); reconstructed data is65,767 bytes
+(10.1482%) across2,165 units.
