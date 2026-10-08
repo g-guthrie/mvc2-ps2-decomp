@@ -2395,3 +2395,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$SNCC1" "$BUILD/copy_record_00102860.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/copy_record_00102860.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/copy_record_00102860.o" "$BUILD/copy_record_00102860.s"
 "$PYTHON" tools/verify_object.py "$BUILD/copy_record_00102860.o" private/SLUS_204.86.rom --source src/copy_record_00102860.c
+
+"$WIBO" "$SNCPP" -P src/mmio_exchange_00102898.c "$BUILD/mmio_exchange_00102898.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/mmio_exchange_00102898.i" "$BUILD/mmio_exchange_00102898.s"
+"${AS:-mipsel-linux-gnu-as}" -EL -march=r5900 -mabi=eabi -G0 -o "$BUILD/mmio_exchange_00102898.o" "$BUILD/mmio_exchange_00102898.s"
+"$PYTHON" tools/verify_object.py "$BUILD/mmio_exchange_00102898.o" private/SLUS_204.86.rom --source src/mmio_exchange_00102898.c

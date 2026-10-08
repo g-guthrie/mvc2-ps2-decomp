@@ -8839,3 +8839,4 @@ func_00102860,0x00102860,0x38,src/copy_record_00102860.c,complete
 func_002DA6C0,0x002DA6C0,0x1BC,src/grok_w5_0030.c,complete
 func_002DA8A0,0x002DA8A0,0xE8,src/grok_w5_0030.c,complete
 func_002DB7D0,0x002DB7D0,0x68,src/positioned_motion_constants.c,complete
+func_00102898,0x00102898,0x14,src/mmio_exchange_00102898.c,complete

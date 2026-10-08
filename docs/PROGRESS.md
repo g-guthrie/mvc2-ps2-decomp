@@ -766,3 +766,15 @@ source unit byte-verifies. Catalog validation, full hybrid linkage, and
 packed retail ELF hashes pass. Totals: 8,834 linked C routines and
 552,408 / 3,293,696 bytes (16.7717%); reconstructed data remains
 54,746 / 648,064 bytes (8.4476%).
+
+## 2026-10-08 MMIO exchange and dispatch targets
+
+Recovered the complete 20-byte MMIO exchange func_00102898 as native C
+with volatile load/store semantics. EE GCC 2.96 -O2 -G0
+-ffunction-sections matches exactly, and its normal runner recipe is
+included. Added func_002DA8A0 (232 bytes) under the established
+grok_w5_0030 O3/sdata8 recipe and func_002DB7D0 (104 bytes) under the
+full positioned-motion O4/Op recipe. All changed source units byte-verify.
+Catalog validation, full hybrid linkage, and packed retail ELF hashes
+pass. Totals: 8,837 linked C routines and 552,764 / 3,293,696 bytes
+(16.7825%); reconstructed data remains 54,746 bytes (8.4476%).
