@@ -2564,3 +2564,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/grok_w7_stationary_motion_check.o" private/SLUS_204.86.rom \
     --source src/grok_w7_stationary_motion_check.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_velocity_interaction_dispatch.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_velocity_interaction_dispatch.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_velocity_interaction_dispatch.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_velocity_interaction_dispatch.c
+
