@@ -588,6 +588,18 @@ void func_0024A320(u8 *p) {
     }
 }
 
+void func_002D5910(u8 *p) {
+    func_00175700(p);
+    if (*(s8 *)(p + 337)) {
+        p[6]++;
+        I(p, 96) = 0x41092492;
+        I(p, 108) = 0xBF892492;
+        if (p[486] != 0) I(p, 92) = 0x40D55555;
+        else I(p, 92) = 0xC0D55555;
+        I(p, 104) = 0;
+    }
+}
+
 extern s32 func_003B40B0(u8 *, int);
 extern void func_00185960(u8 *, s32);
 void func_00308570(u8 *p, void *unused) {
