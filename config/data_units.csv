@@ -4776,7 +4776,9 @@ gUiDecimal2Format_004B1158,0x004B1158,0x5,.data,src/data/gUiDecimal2Format_004B1
 data_u8_004B115D,0x004B115D,0x83,.data,src/data/data_u8_004B115D.c,initialized_byte_array
 jtbl_004B11E0,0x004B11E0,0x40,.rodata,src/data/jtbl_004B11E0.c,jump_table
 gSpriteMotionBytePairs_004B1220,0x004B1220,0x36,.data,src/data/gSpriteMotionBytePairs_004B1220.c,bounded_u8_pair_table
-data_raw_004B1256,0x004B1256,0x24A,.data,src/data/data_raw_004B1256.c,initialized_byte_array
+data_raw_004B1256,0x004B1256,0x42,.data,src/data/data_raw_004B1256.c,initialized_byte_array
+gSpriteAnimationFrameCodes_004B1298,0x004B1298,0x6,.data,src/data/gSpriteAnimationFrameCodes_004B1298.c,bounded_byte_lookup_table
+data_raw_004B129E,0x004B129E,0x202,.data,src/data/data_raw_004B129E.c,initialized_byte_array
 data_f32_004B14A0,0x004B14A0,0xC,.data,src/data/data_f32_004B14A0.c,float_zero
 data_zero_004B14AC,0x004B14AC,0x34,.data,src/data/data_zero_004B14AC.c,zero_initialized_untyped
 data_u32_004B14E0,0x004B14E0,0x400,.data,src/data/data_u32_004B14E0.c,initialized_u32_table
