@@ -2124,3 +2124,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/runtime_shift.c -c -lang c -O2 -sdatathreshold 0 -o "$BUILD/runtime_shift.o"
 "$PYTHON" tools/verify_object.py "$BUILD/runtime_shift.o" private/SLUS_204.86.rom --source src/runtime_shift.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/conditional_mode_transition.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/conditional_mode_transition.o"
+"$PYTHON" tools/verify_object.py "$BUILD/conditional_mode_transition.o" private/SLUS_204.86.rom --source src/conditional_mode_transition.c
