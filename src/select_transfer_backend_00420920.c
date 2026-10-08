@@ -1,6 +1,7 @@
 typedef signed char s8;
 typedef unsigned char u8;
 typedef unsigned int u32;
+typedef signed int s32;
 
 struct TransferBackendState
 {
@@ -9,8 +10,8 @@ struct TransferBackendState
 };
 
 extern struct TransferBackendState *D_004C2840;
-extern void (*jtbl_004A6F70[4])(void);
-extern void func_003D7310(void (*callback)(void));
+extern const u32 jtbl_004A6F70[4];
+extern void func_003D7310(s32 callbackAddress);
 extern void func_00152960(void);
 
 void func_00420920(void)
@@ -18,6 +19,6 @@ void func_00420920(void)
     s8 selectedBackend;
 
     selectedBackend = D_004C2840->selectedBackend;
-    jtbl_004A6F70[selectedBackend]();
-    func_003D7310(func_00152960);
+    ((void (*)(void))jtbl_004A6F70[selectedBackend])();
+    func_003D7310((s32)func_00152960);
 }
