@@ -27,11 +27,11 @@ compiler as `MW MIPS C Compiler (2.4.1.01)` / `PlayStation2`.
 | BSS | `0x004c2580..0x00634380` (`0x171e00` bytes) |
 | Global pointer | `0x004c7270` |
 
-The project has **8,840 exact matching and linked source functions (553,228 bytes)**
-and **57,059 bytes of reconstructed initialized data**.
+The project has **8,841 exact matching and linked source functions (553,340 bytes)**
+and **58,940 bytes of reconstructed initialized data**.
 All are physically placed by the hybrid linker and covered by the exact
-full-image hash. This is 16.7966% of the conservative text span; the data
-checkpoint is 8.8045% of initialized data and exceeds
+full-image hash. This is 16.8000% of the conservative text span; the data
+checkpoint is 9.0948% of initialized data and exceeds
 decomp.dev's 0.5% public-visibility threshold. Assembly placeholders never
 count as decompiled source. The initial inventory
 contained 17,658 explicit-size function candidates. Splitting 2,077 oversized

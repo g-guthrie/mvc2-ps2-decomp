@@ -819,3 +819,15 @@ Every changed data owner byte-verifies, and superseded byte-array
 sources are removed. Catalog validation, full hybrid linkage, and packed
 retail ELF hashes pass. Totals: 8,840 linked C routines, 553,228 code
 bytes (16.7966%), and 57,059 data bytes (8.8045%) across 1,925 units.
+
+## 2026-10-08 timed callback and ADX diagnostics
+
+Added the complete 112-byte native C callback func_002DB920; the entire
+positioned-motion source unit byte-verifies under its O4/Op/sdata0 recipe.
+Recovered 45 directly consumed diagnostic/signature payloads from the
+audio/BMP string pool, adding 1,881 initialized-data bytes. Each char
+owner ends at its NUL terminator; all 39 intervening raw gaps remain
+placeholders. All 84 changed data owners independently compile and
+byte-match retail. Catalog validation, full hybrid linkage, and packed
+retail ELF hashes pass. Totals: 8,841 linked C routines, 553,340 code
+bytes (16.8000%), and 58,940 data bytes (9.0948%) across 1,970 units.
