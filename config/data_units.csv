@@ -5568,11 +5568,11 @@ data_u32_004BA3C0,0x004BA3C0,0x10,.data,src/data/data_u32_004BA3C0.c,initialized
 data_zero_004BA3D0,0x004BA3D0,0x10,.data,src/data/data_zero_004BA3D0.c,zero_initialized_untyped
 data_u32_004BA3E0,0x004BA3E0,0x10,.data,src/data/data_u32_004BA3E0.c,initialized_u32_table
 data_zero_004BA3F0,0x004BA3F0,0x10,.data,src/data/data_zero_004BA3F0.c,zero_initialized_untyped
-gGraphicsInitRecord0_004BA400,0x004BA400,0x2C,.data,src/data/gGraphicsInitRecord0_004BA400.c,initialized_s16_table
-gGraphicsInitRecord1_004BA42C,0x004BA42C,0x2C,.data,src/data/gGraphicsInitRecord1_004BA42C.c,initialized_s16_table
-gGraphicsInitRecord2_004BA458,0x004BA458,0x2C,.data,src/data/gGraphicsInitRecord2_004BA458.c,initialized_s16_table
-gGraphicsInitRecord3_004BA484,0x004BA484,0x2C,.data,src/data/gGraphicsInitRecord3_004BA484.c,initialized_s16_table
-gGraphicsInitRecord4_004BA4B0,0x004BA4B0,0x2C,.data,src/data/gGraphicsInitRecord4_004BA4B0.c,initialized_s16_table
+gGraphicsInitRecord0_004BA400,0x004BA400,0x2C,.data,src/data/gGraphicsInitRecord0_004BA400.c,initialized_u32_table
+gGraphicsInitRecord1_004BA42C,0x004BA42C,0x2C,.data,src/data/gGraphicsInitRecord1_004BA42C.c,initialized_u32_table
+gGraphicsInitRecord2_004BA458,0x004BA458,0x2C,.data,src/data/gGraphicsInitRecord2_004BA458.c,initialized_u32_table
+gGraphicsInitRecord3_004BA484,0x004BA484,0x2C,.data,src/data/gGraphicsInitRecord3_004BA484.c,initialized_u32_table
+gGraphicsInitRecord4_004BA4B0,0x004BA4B0,0x2C,.data,src/data/gGraphicsInitRecord4_004BA4B0.c,initialized_u32_table
 data_raw_004BA4DC,0x004BA4DC,0x14,.data,src/data/data_raw_004BA4DC.c,initialized_byte_array
 gModuleLoadFailureFormat_004BA4F0,0x004BA4F0,0x16,.data,src/data/gModuleLoadFailureFormat_004BA4F0.c,printf_format_string
 data_raw_004BA506,0x004BA506,0x2,.data,src/data/data_raw_004BA506.c,initialized_byte_array

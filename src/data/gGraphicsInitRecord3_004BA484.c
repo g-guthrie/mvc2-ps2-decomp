@@ -1,5 +1,5 @@
-/* 0..4 are passed by func_003DAD60; func_003DAE10 copies 11 pairs of signed halfwords. */
-typedef signed short s16;
-s16 gGraphicsInitRecord3_004BA484[22] = {
-    0, 32, 0, 64, 0, 128, 0, 0, 0, 0, 0, 0, 0, 0, 256, 2, 1284, 6, 2312, 10, 0, 0
+/* DAE10 copies 11 halfword pairs; DB8E0 reads words at BA430..BA48F as masks. */
+typedef unsigned int u32;
+u32 gGraphicsInitRecord3_004BA484[11] = {
+    0x00200000u, 0x00400000u, 0x00800000u, 0x00000000u, 0x00000000u, 0x00000000u, 0x00000000u, 0x00020100u, 0x00060504u, 0x000A0908u, 0x00000000u
 };
