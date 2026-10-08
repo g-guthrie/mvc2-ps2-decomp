@@ -15,7 +15,7 @@ extern u8 D_004C2768;
 extern u8 D_004C276C;
 extern u8 D_004C2770;
 extern u8 D_004C2774;
-extern u32 D_004C2778;
+extern u8 D_004C2778[5];
 extern u8 D_004C2780;
 extern const char *D_004C2534;
 
@@ -30,7 +30,7 @@ void func_00420340(void)
     D_004C2750 = 0;
     func_0011D8F8(D_004CFF20, 0, 1280);
     func_0011D8F8(D_004CE120, 0, 7680);
-    func_0011D8F8(&D_004C2778, 0, 5);
+    func_0011D8F8(D_004C2778, 0, 5);
     D_004C275C = -1;
     D_004C276C = 1;
     D_004C2774 = 0;
