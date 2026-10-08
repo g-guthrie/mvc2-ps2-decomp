@@ -293,3 +293,26 @@ void func_002F5AA0(u8 *p)
     }
 }
 
+
+extern void func_001830D0(u8 *, float *, int);
+extern void func_003A9F30(u8 *);
+void func_002F3EE0(u8 *p)
+{
+    float position[3];
+    p[828] = 5;
+    p[1036] = 2;
+    p[828] = 5;
+    p[1029] = p[617] == 6 ? 2 : 0;
+    func_00175700(p);
+    if ((signed char)p[337] != 0) {
+        p[1028] = 0;
+        p[1029] = 0;
+        p[6]++;
+        position[0] = 0.0f;
+        position[1] = 171.42855834960938f;
+        position[2] = 0.0f;
+        func_001830D0(p, position, 1);
+        func_003A9F30(p);
+    }
+}
+

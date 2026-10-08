@@ -8895,3 +8895,4 @@ func_002F3F90,0x002F3F90,0x7C,src/motion_speed_transition.c,complete
 func_002F5BA0,0x002F5BA0,0x90,src/motion_speed_transition.c,complete
 func_002F5C30,0x002F5C30,0x90,src/motion_speed_transition.c,complete
 func_002F5AA0,0x002F5AA0,0xF8,src/motion_speed_transition.c,complete
+func_002F3EE0,0x002F3EE0,0xA4,src/motion_speed_transition.c,complete
