@@ -266,3 +266,30 @@ void func_002F5C30(u8 *p)
         func_001843A0(p);
 }
 
+
+extern void func_003AD480(u8 *, int, int);
+void func_002F5AA0(u8 *p)
+{
+    if (p[6] == 0) {
+        p[6]++;
+        p[437] = 60;
+        p[434] = *(unsigned short *)(p + 448) = 0;
+        *(u32 *)(p + 472) = 0;
+        ((s16 *)(D_004C2794 + 124))[p[2]]++;
+        func_001757E0(p, 21, 61);
+        *(s16 *)(p + 28) = -1;
+        func_003AD480(p, 1, 1);
+    }
+    if (p[7] == 0) {
+        func_00175700(p);
+        if (*(s16 *)(p + 28) == 0) {
+            p[7]++;
+            func_001757E0(p, 21, 62);
+        } else {
+            --*(s16 *)(p + 28);
+        }
+    } else if ((signed char)func_00175700(p) < 0) {
+        func_001843A0(p);
+    }
+}
+
