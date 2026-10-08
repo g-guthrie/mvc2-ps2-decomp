@@ -317,3 +317,11 @@ void residual_003B2FE0(u8 *p) { jtbl_00473DC0[p[4]](p); }
 void residual_003B8760(u8 *p) { jtbl_00474310[p[5]](p); }
 
 void residual_003B9C20(u8 *p) { jtbl_004744C0[p[5]](p); }
+
+void func_002F1E10(u8 *p)
+{
+    if ((p[523] & 0x3F) != 0 ||
+        (signed char)(*(u8 **)(p + 476))[337] > 0)
+        func_00178F20(*(u8 **)(p + 476), p);
+}
+

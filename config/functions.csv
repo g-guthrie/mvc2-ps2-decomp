@@ -12757,7 +12757,7 @@ func_002F1CD0,0x002F1CD0,0x94,0x002F1D64,code,spimdisasm-explicit-size-before-fi
 func_002F1D70,0x002F1D70,0x1C,0x002F1D8C,code,spimdisasm-explicit-size-before-first-data
 func_002F1D90,0x002F1D90,0x54,0x002F1DE4,code,spimdisasm-explicit-size-before-first-data
 func_002F1DF0,0x002F1DF0,0x14,0x002F1E04,code,spimdisasm-explicit-size-before-first-data
-func_002F1E10,0x002F1E10,0x3C,0x002F1E4C,code,spimdisasm-explicit-size-before-first-data
+func_002F1E10,0x002F1E10,0x3C,0x002F1E4C,code,verified-exact-c-callback
 func_002F1E50,0x002F1E50,0x44,0x002F1E94,code,spimdisasm-explicit-size-before-first-data
 func_002F1EA0,0x002F1EA0,0x44,0x002F1EE4,code,spimdisasm-explicit-size-before-first-data
 func_002F1EF0,0x002F1EF0,0x44,0x002F1F34,code,spimdisasm-explicit-size-before-first-data
