@@ -2459,3 +2459,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/tagged_record_value_00420B00.o"
 "$PYTHON" tools/verify_object.py "$BUILD/tagged_record_value_00420B00.o" \
     private/SLUS_204.86.rom --source src/tagged_record_value_00420B00.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nonzero_float_flag_00417770.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/nonzero_float_flag_00417770.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nonzero_float_flag_00417770.o" \
+    private/SLUS_204.86.rom --source src/nonzero_float_flag_00417770.c
