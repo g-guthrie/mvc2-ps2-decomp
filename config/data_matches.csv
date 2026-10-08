@@ -709,11 +709,9 @@ data_u32_00444A84,0x00444A84,0x4,src/data/data_u32_00444A84.c,complete,placehold
 data_f32_one_00444A88,0x00444A88,0xC,src/data/data_f32_one_00444A88.c,complete,placeholder
 data_u32_00444A94,0x00444A94,0xC,src/data/data_u32_00444A94.c,complete,placeholder
 jtbl_00444AA0,0x00444AA0,0x2c,src/data/jtbl_00444AA0.c,complete,reconstructed
-data_u32_00444AD0,0x00444AD0,0x30,src/data/data_u32_00444AD0.c,complete,placeholder
-data_u32_00444B00,0x00444B00,0xC,src/data/data_u32_00444B00.c,complete,placeholder
-data_u32_00444B0C,0x00444B0C,0xC,src/data/data_u32_00444B0C.c,complete,placeholder
-data_u32_00444B18,0x00444B18,0xC,src/data/data_u32_00444B18.c,complete,placeholder
-data_u32_00444B24,0x00444B24,0x5C,src/data/data_u32_00444B24.c,complete,placeholder
+data_u32_00444AD0,0x00444AD0,0x20,src/data/data_u32_00444AD0.c,complete,placeholder
+gMvc2ParticleScaleVectors_00444AF0,0x00444AF0,0x48,src/data/particle_scale_vectors_00444AF0.c,complete,reconstructed
+data_u32_00444B38,0x00444B38,0x48,src/data/data_u32_00444B38.c,complete,placeholder
 jtbl_00444B80,0x00444B80,0x1c,src/data/jtbl_00444B80.c,complete,reconstructed
 data_u32_00444BA0,0x00444BA0,0x64,src/data/data_u32_00444BA0.c,complete,placeholder
 data_f32_one_00444C04,0x00444C04,0x10,src/data/data_f32_one_00444C04.c,complete,placeholder
