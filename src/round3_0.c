@@ -54,6 +54,12 @@ void func_0029D150(u8 *p) {
     if (--S(p, 28) < 0) func_001843A0(p);
 }
 
+void func_002F85F0(u8 *p) {
+    PHYS
+    func_00175700(p);
+    if (--S(p, 28) == 0) func_001843A0(p);
+}
+
 void func_002F36B0(u8 *p) {
     PHYS
     func_00175700(p);
@@ -231,4 +237,3 @@ void func_00349AA0(u8 *p) {
         p[316] = 0;
     }
 }
-
