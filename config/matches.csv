@@ -8845,3 +8845,4 @@ func_002DB880,0x002DB880,0x98,src/grok_w5_0030.c,complete
 func_002DB130,0x002DB130,0x11C,src/positioned_motion_constants.c,complete
 func_002DB920,0x002DB920,0x70,src/positioned_motion_constants.c,complete
 func_002F03F0,0x002F03F0,0x88,src/motion_speed_transition.c,complete
+func_0041DE10,0x0041DE10,0x10C,src/mode_flags_0041DE10.c,matching
