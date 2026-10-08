@@ -1010,3 +1010,13 @@ adds375 reconstructed data bytes. All42 changed owners independently
 compile and byte-match retail. Catalog validation, full hybrid linkage,
 and packed retail ELF hashes pass. Code remains556,212 bytes(16.8872%);
 reconstructed data is64,047/648,064 bytes(9.8828%) across2,140 units.
+
+## 2026-10-08 bounded leading-byte lookup tables
+
+Recovered four 256-entry byte lookup tables, adding 1,024 data bytes.
+Their divide/normalize consumers choose shifts of 0, 8, 16, or 24
+after unsigned thresholds, so each lookup index is bounded to 0..255.
+The raw prefix stays uncredited. All five changed data owners compile
+and byte-match retail. Catalog validation, full hybrid linkage, and
+packed retail ELF hashes pass. Code remains 556,212 bytes (16.8872%);
+reconstructed data is 65,071 / 648,064 bytes (10.0408%) across 2,144 units.
