@@ -480,3 +480,13 @@ Every changed data owner was independently compiled and compared against
 retail. Generated data-symbol addresses, catalog validation, full hybrid link,
 and packed retail ELF hashes pass. Totals: 8,722 linked C routines,
 539,764 / 3,293,696 C bytes, and 45,020 / 648,064 reconstructed data bytes.
+
+## 2026-10-08 continued state callback checkpoint
+
+Added twenty native routines (1,892 bytes) for state/event initialization,
+input helpers, boundary resets, movement ramps, inhibit gates, and conditional
+updates. Entire affected source units pass independent compiler/relocation
+checks. Catalog validation, full loaded-image linkage, and packed retail ELF
+hashes pass. Totals: 8,742 linked C routines and 541,656 / 3,293,696 bytes.
+Reconstructed data remains 45,020 / 648,064 bytes at this integrated checkpoint;
+newer worker data batches remain pending independent integration.
