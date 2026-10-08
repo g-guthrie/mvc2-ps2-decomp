@@ -27,7 +27,7 @@ compiler as `MW MIPS C Compiler (2.4.1.01)` / `PlayStation2`.
 | BSS | `0x004c2580..0x00634380` (`0x171e00` bytes) |
 | Global pointer | `0x004c7270` |
 
-The project has **8,909 exact matching and linked source functions (561,008 bytes)**
+The project has **8,905 exact matching and linked source functions (561,008 bytes)**
 and **65,959 bytes of reconstructed initialized data**.
 All are physically placed by the hybrid linker and covered by the exact
 full-image hash. This is 17.0328% of the conservative text span; the data
