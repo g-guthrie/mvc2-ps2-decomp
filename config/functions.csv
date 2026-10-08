@@ -9100,7 +9100,7 @@ residual_00272E6C,0x00272E6C,0x64,0x00272ED0,assembly_residual,verified-boundary
 func_00272ED0,0x00272ED0,0x78,0x00272F48,code,spimdisasm-explicit-size-before-first-data
 func_00272F50,0x00272F50,0x74,0x00272FC4,code,spimdisasm-explicit-size-before-first-data
 func_00272FD0,0x00272FD0,0x20,0x00272FF0,code,matching-c-head-split
-residual_00272FF0,0x00272FF0,0x40,0x00273030,assembly_residual,verified-boundary-after-matching-head
+func_00272FF0,0x00272FF0,0x40,0x00273030,code,typed-callback-table-entry
 func_00273030,0x00273030,0x78,0x002730A8,code,spimdisasm-explicit-size-before-first-data
 func_002730B0,0x002730B0,0x84,0x00273134,code,spimdisasm-explicit-size-before-first-data
 func_00273140,0x00273140,0x20,0x00273160,code,matching-c-head-split

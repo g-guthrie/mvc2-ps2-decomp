@@ -116,7 +116,7 @@ void func_0038FFF0(u8 *p) {
     }
 }
 
-void residual_00272FF0(u8 *p) {
+void func_00272FF0(u8 *p) {
     func_00175700(p);
     if ((s8)p[337] != 0) {
         p[6]++;
