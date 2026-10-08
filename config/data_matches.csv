@@ -4610,7 +4610,10 @@ data_u8_004AAFD5,0x004AAFD5,0x3,src/data/data_u8_004AAFD5.c,complete,placeholder
 gPs2SystemText_004AAFD8,0x004AAFD8,0x5,src/data/gPs2SystemText_004AAFD8.c,complete,reconstructed
 data_u8_004AAFDD,0x004AAFDD,0x3,src/data/data_u8_004AAFDD.c,complete,placeholder
 gPs2SystemText_004AAFE0,0x004AAFE0,0x4,src/data/gPs2SystemText_004AAFE0.c,complete,reconstructed
-data_u8_004AAFE4,0x004AAFE4,0x1C,src/data/data_u8_004AAFE4.c,complete,placeholder
+data_raw_004AAFE4,0x004AAFE4,0x4,src/data/data_raw_004AAFE4.c,complete,placeholder
+gConversionFactorTenthA_004AAFE8,0x004AAFE8,0x8,src/data/gConversionFactorTenthA_004AAFE8.c,complete,reconstructed
+gConversionFactorTenthB_004AAFF0,0x004AAFF0,0x8,src/data/gConversionFactorTenthB_004AAFF0.c,complete,reconstructed
+gConversionFactorMillion_004AAFF8,0x004AAFF8,0x8,src/data/gConversionFactorMillion_004AAFF8.c,complete,reconstructed
 jtbl_004AB000,0x004AB000,0x124,src/data/jtbl_004AB000.c,complete,placeholder
 jtbl_004AB130,0x004AB130,0x64,src/data/jtbl_004AB130.c,complete,placeholder
 data_u8_004AB1A0,0x004AB1A0,0x8,src/data/data_u8_004AB1A0.c,complete,placeholder

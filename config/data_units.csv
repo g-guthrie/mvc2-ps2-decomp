@@ -4610,7 +4610,10 @@ data_u8_004AAFD5,0x004AAFD5,0x3,.data,src/data/data_u8_004AAFD5.c,initialized_by
 gPs2SystemText_004AAFD8,0x004AAFD8,0x5,.data,src/data/gPs2SystemText_004AAFD8.c,printf_format_string
 data_u8_004AAFDD,0x004AAFDD,0x3,.data,src/data/data_u8_004AAFDD.c,initialized_byte_array
 gPs2SystemText_004AAFE0,0x004AAFE0,0x4,.data,src/data/gPs2SystemText_004AAFE0.c,printf_format_string
-data_u8_004AAFE4,0x004AAFE4,0x1C,.data,src/data/data_u8_004AAFE4.c,initialized_byte_array
+data_raw_004AAFE4,0x004AAFE4,0x4,.data,src/data/data_raw_004AAFE4.c,initialized_byte_array
+gConversionFactorTenthA_004AAFE8,0x004AAFE8,0x8,.data,src/data/gConversionFactorTenthA_004AAFE8.c,float64_scalar
+gConversionFactorTenthB_004AAFF0,0x004AAFF0,0x8,.data,src/data/gConversionFactorTenthB_004AAFF0.c,float64_scalar
+gConversionFactorMillion_004AAFF8,0x004AAFF8,0x8,.data,src/data/gConversionFactorMillion_004AAFF8.c,float64_scalar
 jtbl_004AB000,0x004AB000,0x124,.rodata,src/data/jtbl_004AB000.c,jump_table
 jtbl_004AB130,0x004AB130,0x64,.rodata,src/data/jtbl_004AB130.c,jump_table
 data_u8_004AB1A0,0x004AB1A0,0x8,.data,src/data/data_u8_004AB1A0.c,initialized_byte_array
