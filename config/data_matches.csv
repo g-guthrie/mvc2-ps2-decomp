@@ -5431,7 +5431,7 @@ gAdxRnaInternalError_004BB618,0x004BB618,0x2E,src/data/gAdxRnaInternalError_004B
 data_u8_004BB646,0x004BB646,0x4A,src/data/data_u8_004BB646.c,complete,placeholder
 data_zero_004BB690,0x004BB690,0x30,src/data/data_zero_004BB690.c,complete,placeholder
 data_u32_004BB6C0,0x004BB6C0,0x10,src/data/data_u32_004BB6C0.c,complete,placeholder
-data_u8_004BBA90,0x004BBA90,0x3F8,src/data/data_u8_004BBA90.c,complete,placeholder
+data_s32_004BBA88,0x004BBA88,0x400,src/data/data_s32_004BBA88.c,complete,reconstructed
 gAdxRnaStatUnsupported_004BBE88,0x004BBE88,0x21,src/data/gAdxRnaStatUnsupported_004BBE88.c,complete,reconstructed
 data_u8_004BBEA9,0x004BBEA9,0x9F,src/data/data_u8_004BBEA9.c,complete,placeholder
 gAdxRnaTempCountsFormat_004BBF48,0x004BBF48,0x1F,src/data/gAdxRnaTempCountsFormat_004BBF48.c,complete,reconstructed
