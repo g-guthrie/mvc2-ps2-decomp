@@ -2330,3 +2330,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/luna_a_secondary_particle_initializer.c -c -lang c -O3 -sdatathreshold 0 \
     -o "$BUILD/luna_a_secondary_particle_initializer.o"
 "$PYTHON" tools/verify_object.py "$BUILD/luna_a_secondary_particle_initializer.o" private/SLUS_204.86.rom --source src/luna_a_secondary_particle_initializer.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/luna_a_basic_particle_initializer.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/luna_a_basic_particle_initializer.o"
+"$PYTHON" tools/verify_object.py "$BUILD/luna_a_basic_particle_initializer.o" private/SLUS_204.86.rom --source src/luna_a_basic_particle_initializer.c
