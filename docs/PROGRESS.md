@@ -965,3 +965,14 @@ Every affected region-view unit verifies again. Catalog validation, full
 hybrid linkage, and packed retail ELF hashes pass. Totals: 8,859 linked
 C routines and 555,376 code bytes (16.8618%); reconstructed initialized
 data remains 61,778 bytes (9.5327%).
+
+## 2026-10-08 SDK diagnostic and format strings
+
+Recovered 45 directly consumed SDK diagnostic, format, path, and token
+strings, adding 1,288 initialized-data bytes. Each owner ends at its
+actual NUL terminator; all 43 intervening raw gaps/constants remain
+placeholders. All 88 changed data owners independently compile and
+byte-match retail. Catalog validation, full hybrid linkage, and packed
+retail ELF hashes pass. Code remains 555,376 bytes (16.8618%);
+reconstructed data is 63,066 / 648,064 bytes (9.7314%) across 2,098
+units. Decompilation and full source linkage remain incomplete.
