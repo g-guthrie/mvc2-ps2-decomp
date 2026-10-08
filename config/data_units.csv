@@ -4664,7 +4664,14 @@ data_zero_004B8010,0x004B8010,0x22,.data,src/data/data_zero_004B8010.c,zero_init
 data_zero_004B8040,0x004B8040,0x20,.data,src/data/data_zero_004B8040.c,zero_initialized_untyped
 data_u32_004B8060,0x004B8060,0x30,.data,src/data/data_u32_004B8060.c,initialized_u32_table
 data_zero_004B8090,0x004B8090,0x10,.data,src/data/data_zero_004B8090.c,zero_initialized_untyped
-gMvc2AngleVectorBank_004B80A0,0x004B80A0,0x120,.data,src/data/angle_effect_vector_bank_004B80A0.c,angle_effect_vector_bank
+gMvc2AngleVectorPair_004B80A0,0x004B80A0,0x18,.data,src/data/angle_effect_vector_pair_004B80A0.c,angle_vector_pair
+data_u32_004B80B8,0x004B80B8,0x18,.data,src/data/data_u32_004B80B8.c,initialized_u32_table
+gMvc2AngleVectorPair_004B80D0,0x004B80D0,0x18,.data,src/data/angle_effect_vector_pair_004B80D0.c,angle_vector_pair
+data_u32_004B80E8,0x004B80E8,0x18,.data,src/data/data_u32_004B80E8.c,initialized_u32_table
+gMvc2AngleVectorPair_004B8100,0x004B8100,0x18,.data,src/data/angle_effect_vector_pair_004B8100.c,angle_vector_pair
+data_u32_004B8118,0x004B8118,0x18,.data,src/data/data_u32_004B8118.c,initialized_u32_table
+gMvc2AngleVectorPair_004B8130,0x004B8130,0x18,.data,src/data/angle_effect_vector_pair_004B8130.c,angle_vector_pair
+data_u32_004B8148,0x004B8148,0x78,.data,src/data/data_u32_004B8148.c,initialized_u32_table
 data_zero_004B81C0,0x004B81C0,0x10,.data,src/data/data_zero_004B81C0.c,zero_initialized_untyped
 data_u32_004B81D0,0x004B81D0,0xB0,.data,src/data/data_u32_004B81D0.c,initialized_u32_table
 data_f32_one_004B8280,0x004B8280,0xC,.data,src/data/data_f32_one_004B8280.c,filled_f32_one
