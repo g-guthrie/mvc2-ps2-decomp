@@ -2589,3 +2589,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/select_transfer_backend_004206D0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/select_transfer_backend_004206D0.o" \
     private/SLUS_204.86.rom --source src/select_transfer_backend_004206D0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/update_backend_timeout_004205F0.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/update_backend_timeout_004205F0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/update_backend_timeout_004205F0.o" \
+    private/SLUS_204.86.rom --source src/update_backend_timeout_004205F0.c
