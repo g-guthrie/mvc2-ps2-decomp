@@ -27,6 +27,7 @@ func_00226120,0x00226120,0x11C,src/conditional_engine_chains.c,complete
 func_002F2040,0x002F2040,0x11C,src/conditional_engine_chains.c,complete
 func_00233320,0x00233320,0x10C,src/conditional_engine_chains.c,complete
 func_00281210,0x00281210,0x10C,src/conditional_engine_chains.c,complete
+func_0023F050,0x0023F050,0xEC,src/conditional_engine_chains.c,complete
 func_003DF7A0,0x003DF7A0,0x10,src/setter_leaves.c,complete
 func_003ED2D0,0x003ED2D0,0x10,src/setter_leaves.c,complete
 func_003D7120,0x003D7120,0x10,src/gp_accessors.c,complete
