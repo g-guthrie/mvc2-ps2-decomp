@@ -792,3 +792,17 @@ canonical verification. The changed data object byte-matches retail.
 Catalog validation, full hybrid linkage, and packed retail ELF hashes
 pass. Totals: 8,838 linked C routines, 552,792 code bytes (16.7833%),
 and 55,770 reconstructed data bytes (8.6056%) across 1,918 units.
+
+## 2026-10-08 paired audio lookup and stage format
+
+Recovered the second bounded 256-entry float lookup at BB688, adding
+1,024 initialized-data bytes. The same compressed-input byte indices
+prove 0..255; lwc1 results feed float multiplication. Its complete
+0x400-byte source owner replaces the old split zero/raw placeholders,
+while the preceding raw prefix remains uncredited. Also recovered only
+the 15-byte stage debug format payload plus NUL, preserving its raw
+prefix and suffix. Every changed owner byte-verifies with the normal
+MWCCPS2 3.0.3 O3/sdata0 data recipe. Catalog validation, full hybrid
+linkage, and packed retail ELF hashes pass. Code remains 552,792 bytes
+(16.7833%); reconstructed data is 56,809 / 648,064 bytes (8.7660%)
+across 1,920 units.
