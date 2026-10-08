@@ -640,3 +640,12 @@ intervening gaps and suffixes stay raw placeholders. All 32 changed data
 owners compile and match retail bytes. Catalog validation, full hybrid
 linkage, and packed retail ELF hashes pass. Code remains 548,812 bytes
 (16.6625%); reconstructed data is 54,318 / 648,064 bytes (8.3816%).
+
+## 2026-10-08 velocity and animation-state checkpoint
+
+Added the exact 132-byte callback func_00270330 and eight consumed
+two-float animation-state pairs (64 bytes). The entire positioned-motion
+source unit and all 17 changed data owners verify against retail. Catalog
+validation, full hybrid linkage, and packed retail ELF hashes pass.
+Totals: 8,812 linked C routines and 548,944 code bytes (16.6665%);
+reconstructed data is 54,382 / 648,064 bytes (8.3915%).
