@@ -4775,8 +4775,10 @@ data_u8_004B1154,0x004B1154,0x4,src/data/data_u8_004B1154.c,complete,placeholder
 gUiDecimal2Format_004B1158,0x004B1158,0x5,src/data/gUiDecimal2Format_004B1158.c,complete,reconstructed
 data_u8_004B115D,0x004B115D,0x83,src/data/data_u8_004B115D.c,complete,placeholder
 jtbl_004B11E0,0x004B11E0,0x40,src/data/jtbl_004B11E0.c,complete,placeholder
-gSpriteMotionBytePairs_004B1220,0x004B1220,0x36,src/data/gSpriteMotionBytePairs_004B1220.c,complete,placeholder
-data_raw_004B1256,0x004B1256,0x42,src/data/data_raw_004B1256.c,complete,placeholder
+gSpriteMotionBytePairs_004B1220,0x004B1220,0x30,src/data/gSpriteMotionBytePairs_004B1220.c,complete,reconstructed
+data_zero_004B1250,0x004B1250,0x6,src/data/data_zero_004B1250.c,complete,placeholder
+gSpriteMotionBytePairs_004B1256,0x004B1256,0x40,src/data/gSpriteMotionBytePairs_004B1256.c,complete,reconstructed
+data_raw_004B1296,0x004B1296,0x2,src/data/data_raw_004B1296.c,complete,placeholder
 gSpriteAnimationFrameCodes_004B1298,0x004B1298,0x6,src/data/gSpriteAnimationFrameCodes_004B1298.c,complete,reconstructed
 data_raw_004B129E,0x004B129E,0x2,src/data/data_raw_004B129E.c,complete,placeholder
 gSpriteMotionVectors_004B12A0,0x004B12A0,0x1F8,src/data/gSpriteMotionVectors_004B12A0.c,complete,reconstructed
