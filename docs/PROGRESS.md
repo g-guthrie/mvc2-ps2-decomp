@@ -405,3 +405,15 @@ and Mac VM runner paths pass relocation-aware comparisons for every wrapper.
 Bootstrap smoke tests, catalog validation, full loaded-image linkage, and
 packed retail ELF identity pass. Totals: 8,659 linked C routines and
 534,312 / 3,293,696 bytes; reconstructed data is unchanged.
+
+## 2026-10-08 state and callback integration
+
+Added fifteen native routines (1,220 bytes): six comparison/flag/mask/state
+helpers, eight initializer/countdown/reference/physics/callback routines, and
+a signed-byte normalizer. Every affected complete source unit passes exact
+compiler and relocation comparisons. Catalog validation, full loaded-image
+linkage, and packed retail ELF hashes pass. An unrelated 0x002CEC90 catalog
+entry from merge context was excluded because its source change and proof were
+not part of the integrated batch. Unverified 0x002958C0 remains uncredited.
+Totals: 8,674 exact linked C routines and 535,532 / 3,293,696 bytes;
+reconstructed data is unchanged at 42,400 / 648,064 bytes.
