@@ -1184,3 +1184,24 @@ All thirteen split owners independently compile and byte-match. Catalog
 validation, full hybrid linkage, and packed retail ELF hashes pass.
 Code remains560,704 bytes(17.0236%); reconstructed data is65,767 bytes
 (10.1482%) across2,165 units.
+
+
+### Animation result audit and runtime records
+
+Corrected the canonical int return declaration across 100 whole translation units,
+with explicit signed-byte narrowing where retail requires it. All 100 units
+compile and verify exactly using the canonical compiler recipes. Three callers
+that rely on helper-specific register preservation remain unresolved.
+
+Added the 200-byte physics collision callback, 36-byte nonzero float flag setter,
+and 68-byte tagged counter writer. Their compiled objects pass exact relocation
+verification, and the hybrid image and packed executable match retail. Removed
+a redundant callback build recipe after verifying its existing loop recipe.
+
+Decimal and allocator data owners were individually compiled and byte-verified.
+The unused powers-of-five entry stays placeholder-owned; the unbounded negative
+exponent factor loop remains uncredited pending a domain proof. Corrected the
+stale alignment-owner extent before accepting the split.
+
+Code is 561,008 bytes (17.0328%); reconstructed data is 65,959 bytes
+(10.1779%) across 2,172 units. Full source decompilation remains incomplete.

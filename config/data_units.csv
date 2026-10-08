@@ -4719,7 +4719,8 @@ data_raw_004AC848,0x004AC848,0x8,.data,src/data/data_raw_004AC848.c,initialized_
 jtbl_004AC850,0x004AC850,0x18,.rodata,src/data/jtbl_004AC850.c,jump_table
 jtbl_004AC870,0x004AC870,0x28,.rodata,src/data/jtbl_004AC870.c,jump_table
 data_raw_004AC8A0,0x004AC8A0,0x14,.data,src/data/data_raw_004AC8A0.c,initialized_byte_array
-gPowerOfFiveFactors_004AC8B4,0x004AC8B4,0x10,.data,src/data/gPowerOfFiveFactors_004AC8B4.c,bounded_u32_lookup_table
+data_raw_004AC8B4,0x004AC8B4,0x4,.data,src/data/data_raw_004AC8B4.c,initialized_byte_array
+gPowerOfFiveFactors_004AC8B8,0x004AC8B8,0xC,.data,src/data/gPowerOfFiveFactors_004AC8B8.c,bounded_u32_lookup_table
 data_raw_004AC8C4,0x004AC8C4,0x4,.data,src/data/data_raw_004AC8C4.c,initialized_byte_array
 gDecimalPowersOfTen_004AC8C8,0x004AC8C8,0x80,.data,src/data/gDecimalPowersOfTen_004AC8C8.c,bounded_float64_table
 data_raw_004AC948,0x004AC948,0x48,.data,src/data/data_raw_004AC948.c,initialized_byte_array
