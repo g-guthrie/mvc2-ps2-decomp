@@ -231,6 +231,20 @@ void func_002F88B0(u8 *p)
     func_001D8A30(p, (u8)0, (u8)1);
 }
 
+void func_00258630(u8 *p)
+{
+    if (*(signed char *)(p + 0x151)) {
+        p[6]++;
+        p[0x151] = 0;
+        *(unsigned int *)(p + 92) = 0;
+        *(unsigned int *)(p + 96) = 0;
+        *(unsigned int *)(p + 104) = 0;
+        *(unsigned int *)(p + 108) = 0;
+        *(float *)(p + 92) = p[486] ? -15.833333015441895f : 15.833333015441895f;
+    }
+    func_00175700(p);
+}
+
 void func_002D2890(u8 *p)
 {
     func_00175700(p);
