@@ -31,6 +31,15 @@ extern int func_002F2570(u8 *);
 extern int func_002F24E0(u8 *);
 extern int func_002F26A0(u8 *);
 extern int func_002F2710(u8 *);
+extern int func_00233880(u8 *);
+extern int func_00233640(u8 *);
+extern int func_002336B0(u8 *);
+extern int func_002337E0(u8 *);
+extern int func_00233430(u8 *);
+extern int func_002334A0(u8 *);
+extern int func_00233560(u8 *);
+extern int func_00233910(u8 *);
+extern int func_00233970(u8 *);
 extern int func_00188110(u8 *);
 extern int func_00188690(u8 *);
 extern int func_00188C70(u8 *);
@@ -511,6 +520,26 @@ void func_002F2040(u8 *p)
     if (func_002F26A0(p)) return;
     if (func_00187E00(p, p + 920)) return;
     if (func_002F2710(p)) return;
+    func_00187BB0(p);
+    func_00188330(p);
+}
+
+void func_00233320(u8 *p)
+{
+    if (func_00188690(p)) return;
+    if (func_00188ED0(p)) return;
+    if (func_00188C70(p)) return;
+    if (func_00189130(p)) return;
+    if (func_00233880(p)) return;
+    if (func_00233640(p)) return;
+    if (func_002336B0(p)) return;
+    if (func_002337E0(p)) return;
+    if (func_00233430(p)) return;
+    if (func_002334A0(p)) return;
+    if (func_00233560(p)) return;
+    if (func_00233910(p)) return;
+    if (func_00233970(p)) return;
+    if (func_00187E00(p, p + 984)) return;
     func_00187BB0(p);
     func_00188330(p);
 }
