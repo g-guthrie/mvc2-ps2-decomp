@@ -908,3 +908,15 @@ three changed data owners independently byte-match. Catalog validation,
 full hybrid linkage, and packed retail ELF hashes pass. Totals:
 8,849 linked C routines, 554,152 code bytes (16.8246%), and 61,514
 data bytes (9.4920%) across 2,036 reconstructed units.
+
+## 2026-10-08 bounded variants and battle labels
+
+Recovered a 4x6 byte effect-type variant matrix (24 bytes). Its reader
+masks the row selector with 3, scales by six, and reads each of six
+column bases. Recovered five formatter-consumed battle labels/formats
+(59 bytes), including only their exact payloads plus NUL. All remaining
+mixed-table bytes and string gaps stay placeholders. Every one of the
+12 changed data owners independently byte-verifies. Catalog validation,
+full hybrid linkage, and packed retail ELF hashes pass. Code remains
+554,152 bytes (16.8246%); reconstructed data is 61,597 / 648,064 bytes
+(9.5048%) across 2,042 units.
