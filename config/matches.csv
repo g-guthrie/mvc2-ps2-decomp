@@ -44,6 +44,7 @@ func_002D8E10,0x002D8E10,0x68,src/stance_restore_transitions.c,complete
 func_002F85F0,0x002F85F0,0x88,src/round3_0.c,complete
 func_00308DD0,0x00308DD0,0x78,src/round2_small.c,complete
 func_0029F5E0,0x0029F5E0,0x90,src/round3_3.c,complete
+func_002E4420,0x002E4420,0x64,src/grok_w3_0019.c,complete
 func_00245B70,0x00245B70,0x64,src/grok_w5_0026.c,complete
 func_0023F410,0x0023F410,0x70,src/round2_small.c,complete
 func_003DF7A0,0x003DF7A0,0x10,src/setter_leaves.c,complete

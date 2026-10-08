@@ -15,6 +15,11 @@ extern void func_00197660(u8 *, u8 *);
 extern void func_00197760(u8 *, u8 *);
 extern void func_001977A0(u8 *, u8 *);
 extern void func_001977E0(u8 *, u8 *);
+extern void func_002E4490(u8 *, u8 *);
+extern void func_002E44B0(u8 *, u8 *);
+extern void func_002E45D0(u8 *, u8 *);
+extern void func_002E4690(u8 *, u8 *);
+extern void func_002E4710(u8 *, u8 *);
 extern void func_00175670();
 extern void func_001975C0(u8 *, u8 *);
 extern s8 func_00175700(u8 *);
@@ -75,6 +80,15 @@ void func_00194CA0(u8 *p, u8 *q) {
     func_00197660(p, q);
     func_001977A0(p, q);
     func_001977E0(p, q);
+}
+
+void func_002E4420(u8 *p) {
+    u8 *q = p + 696;
+    func_002E4490(p, q);
+    func_002E44B0(p, q);
+    func_002E45D0(p, q);
+    func_002E4690(p, q);
+    func_002E4710(p, q);
 }
 
 void func_00195690(u8 *p, u8 *q) {
