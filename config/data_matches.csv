@@ -4509,7 +4509,8 @@ gUiDecimal2Format_004B1158,0x004B1158,0x5,src/data/gUiDecimal2Format_004B1158.c,
 data_u8_004B115D,0x004B115D,0x83,src/data/data_u8_004B115D.c,complete,placeholder
 jtbl_004B11E0,0x004B11E0,0x40,src/data/jtbl_004B11E0.c,complete,placeholder
 data_u32_004B1220,0x004B1220,0x280,src/data/data_u32_004B1220.c,complete,placeholder
-data_zero_004B14A0,0x004B14A0,0x40,src/data/data_zero_004B14A0.c,complete,placeholder
+data_f32_004B14A0,0x004B14A0,0x4,src/data/data_f32_004B14A0.c,complete,reconstructed
+data_zero_004B14A4,0x004B14A4,0x3C,src/data/data_zero_004B14A4.c,complete,placeholder
 data_u32_004B14E0,0x004B14E0,0x400,src/data/data_u32_004B14E0.c,complete,placeholder
 data_f32_one_004B18E0,0x004B18E0,0xC,src/data/data_f32_one_004B18E0.c,complete,placeholder
 data_u32_004B18EC,0x004B18EC,0x4,src/data/data_u32_004B18EC.c,complete,placeholder
