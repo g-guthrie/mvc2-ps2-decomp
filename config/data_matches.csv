@@ -697,7 +697,9 @@ data_f32_one_004440D0,0x004440D0,0x14,src/data/data_f32_one_004440D0.c,complete,
 data_u8_004440F0,0x004440F0,0x1E0,src/data/data_u8_004440F0.c,complete,placeholder
 data_f32_004442D0,0x004442D0,0xC,src/data/data_f32_004442D0.c,complete,reconstructed
 data_u8_004442DC,0x004442DC,0x34,src/data/data_u8_004442DC.c,complete,placeholder
-data_u32_00444310,0x00444310,0xC,src/data/data_u32_00444310.c,complete,placeholder
+data_u8_00444310,0x00444310,0x4,src/data/data_u8_00444310.c,complete,placeholder
+data_f32_00444314,0x00444314,0x4,src/data/data_f32_00444314.c,complete,reconstructed
+data_u8_00444318,0x00444318,0x4,src/data/data_u8_00444318.c,complete,placeholder
 data_u32_0044431C,0x0044431C,0x8C,src/data/data_u32_0044431C.c,complete,placeholder
 data_f32_one_004443A8,0x004443A8,0xC,src/data/data_f32_one_004443A8.c,complete,placeholder
 data_u32_004443B4,0x004443B4,0x4,src/data/data_u32_004443B4.c,complete,placeholder
@@ -847,7 +849,8 @@ jtbl_004463A0,0x004463A0,0x1c,src/data/jtbl_004463A0.c,complete,reconstructed
 data_u32_004463C0,0x004463C0,0x4,src/data/data_u32_004463C0.c,complete,placeholder
 data_f32_004463C4,0x004463C4,0xC,src/data/data_f32_004463C4.c,complete,reconstructed
 data_f32_one_004463D0,0x004463D0,0x8,src/data/data_f32_one_004463D0.c,complete,placeholder
-data_u32_004463D8,0x004463D8,0x8,src/data/data_u32_004463D8.c,complete,placeholder
+data_f32_004463D8,0x004463D8,0x4,src/data/data_f32_004463D8.c,complete,reconstructed
+data_u8_004463DC,0x004463DC,0x4,src/data/data_u8_004463DC.c,complete,placeholder
 data_f32_one_004463E0,0x004463E0,0x8,src/data/data_f32_one_004463E0.c,complete,reconstructed
 data_u32_004463E8,0x004463E8,0x18,src/data/data_u32_004463E8.c,complete,placeholder
 data_zero_00446400,0x00446400,0x10,src/data/data_zero_00446400.c,complete,placeholder
