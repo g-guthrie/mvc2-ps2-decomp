@@ -2501,3 +2501,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/refresh_packet_handle_00422C70.o"
 "$PYTHON" tools/verify_object.py "$BUILD/refresh_packet_handle_00422C70.o" \
     private/SLUS_204.86.rom --source src/refresh_packet_handle_00422C70.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/release_packet_callback_00422BF0.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/release_packet_callback_00422BF0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/release_packet_callback_00422BF0.o" \
+    private/SLUS_204.86.rom --source src/release_packet_callback_00422BF0.c
