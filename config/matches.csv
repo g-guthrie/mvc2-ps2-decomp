@@ -30,6 +30,7 @@ func_00281210,0x00281210,0x10C,src/conditional_engine_chains.c,complete
 func_0023F050,0x0023F050,0xEC,src/conditional_engine_chains.c,complete
 func_00282320,0x00282320,0xC4,src/physics_dispatchers.c,complete
 func_002253C0,0x002253C0,0x64,src/grok_w7_001e.c,complete
+func_002CBC10,0x002CBC10,0x64,src/grok_w6_002a.c,complete
 func_003DF7A0,0x003DF7A0,0x10,src/setter_leaves.c,complete
 func_003ED2D0,0x003ED2D0,0x10,src/setter_leaves.c,complete
 func_003D7120,0x003D7120,0x10,src/gp_accessors.c,complete
