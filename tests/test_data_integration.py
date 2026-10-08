@@ -37,6 +37,16 @@ class DataIntegrationTest(unittest.TestCase):
         self.assertEqual(symbols["lbl_00163F90"], 0x00163F90)
         self.assertEqual(symbols["func_00168810"], 0x00168810)
         self.assertGreaterEqual(len(symbols), 112)
+        jump_table_symbols = dict(extract_symbols(ROOT / "src/data/jtbl_004C2518.c"))
+        self.assertEqual(jump_table_symbols["jtbl_004C2518"], 0x004C2518)
+        global_symbols = dict(extract_symbols(ROOT / "src/data/data_ptr_004C2534.c"))
+        self.assertEqual(global_symbols["gMvc2BootNumberString_004BF0C8"], 0x004BF0C8)
+
+    def test_address_suffixed_global_data_label_becomes_linker_entry(self):
+        symbols = dict(
+            extract_symbols(ROOT / "src/data/gButtonConfigDebugLabel_004B8F38.c")
+        )
+        self.assertEqual(symbols["gButtonConfigDebugLabel_004B8F38"], 0x004B8F38)
 
     def test_replacements_reject_overlap(self):
         unit = DataUnit("data_a", 0x00100004, 8, ".data", "src/data_a.c")
