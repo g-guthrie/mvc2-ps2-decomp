@@ -8842,3 +8842,4 @@ func_002DB7D0,0x002DB7D0,0x68,src/positioned_motion_constants.c,complete
 func_00102898,0x00102898,0x14,src/mmio_exchange_00102898.c,complete
 func_001037B8,0x001037B8,0x1C,src/float_copy_001037B8.c,complete
 func_002DB880,0x002DB880,0x98,src/grok_w5_0030.c,complete
+func_002DB130,0x002DB130,0x11C,src/positioned_motion_constants.c,complete

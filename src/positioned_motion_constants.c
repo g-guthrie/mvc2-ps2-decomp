@@ -10,6 +10,9 @@ extern void func_001D0F90(u8 *, int, int);
 extern void func_001E3210(u8 *, int);
 extern void func_001757E0(u8 *, int, int);
 extern void func_002DC1B0(u8 *);
+extern void func_00185490(u8 *);
+extern void func_00183D10(u8 *);
+extern void func_00184540(u8 *);
 extern u8 D_004D18A0;
 extern void func_002DD930(u8 *);
 
@@ -732,6 +735,41 @@ void func_002DB7D0(u8 *p)
     }
     if ((signed char)func_00175700(p) < 0)
         func_002DC1B0(p);
+}
+
+void func_002DB130(u8 *p)
+{
+    signed short timer;
+    if (p[6] == 0) {
+        p[6]++;
+        func_00185490(p);
+        if (p[525] != 2)
+            func_00183D10(p);
+        p[533] = 1;
+        p[528] = 0;
+        p[525] = 2;
+        p[528] = 0;
+        p[488] = 0;
+        p[489] = 0;
+        *(int *)(p + 712) = 900;
+        *(short *)(p + 28) = 36;
+        *(int *)(p + 92) = 0;
+        *(int *)(p + 104) = 0;
+        *(float *)(p + 96) = 12.857142f;
+        *(float *)(p + 108) = -0.2678571343421936f;
+        func_001757E0(p, 26, 0);
+        return;
+    }
+    *(float *)(p + 52) += *(float *)(p + 92);
+    *(float *)(p + 92) += *(float *)(p + 104);
+    *(float *)(p + 56) += *(float *)(p + 96);
+    *(float *)(p + 96) += *(float *)(p + 108);
+    func_00175700(p);
+    timer = *(short *)(p + 28);
+    timer--;
+    *(short *)(p + 28) = timer;
+    if (timer < 0)
+        func_00184540(p);
 }
 
 void func_0022E000(u8 *p)
