@@ -8310,7 +8310,7 @@ func_002577D0,0x002577D0,0x13C,0x0025790C,code,spimdisasm-explicit-size-before-f
 func_00257910,0x00257910,0x80,0x00257990,code,spimdisasm-explicit-size-before-first-data
 func_00257990,0x00257990,0x3C,0x002579CC,code,spimdisasm-explicit-size-before-first-data
 func_002579D0,0x002579D0,0x20,0x002579F0,code,matching-c-head-split
-residual_002579F0,0x002579F0,0x80,0x00257A70,assembly_residual,verified-boundary-after-matching-head
+func_002579F0,0x002579F0,0x80,0x00257A70,code,typed-callback-table-entry
 func_00257A70,0x00257A70,0x148,0x00257BB8,code,spimdisasm-explicit-size-before-first-data
 func_00257BC0,0x00257BC0,0xF4,0x00257CB4,code,spimdisasm-explicit-size-before-first-data
 func_00257CC0,0x00257CC0,0x9C,0x00257D5C,code,spimdisasm-explicit-size-before-first-data

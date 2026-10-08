@@ -328,6 +328,19 @@ void func_002574E0(void *p) { if ((s8)func_00175700(p) < 0) { func_00184540(p); 
 
 void func_00257990(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
+void func_002579F0(u8 *p) {
+    s8 state;
+    if ((s8)func_00175700(p) < 0)
+        func_001843A0(p);
+    state = *(s8 *)(p + 434);
+    if ((state & 1) == 0 && state != 0 &&
+        !*(((u8 *)(*(unsigned int *)(p + 452))) + 1061)) {
+        p[7]++;
+        p[521] = 2;
+        *(short *)(p + 28) = 10;
+    }
+}
+
 void func_00257DF0(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
 void func_00258030(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
