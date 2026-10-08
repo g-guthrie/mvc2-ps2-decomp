@@ -8718,3 +8718,5 @@ func_00243330,0x00243330,0x30,src/positioned_motion_constants.c,complete
 func_00239A70,0x00239A70,0x18,src/tail_call_leaves20.c,complete
 func_00274710,0x00274710,0x18,src/tail_call_leaves20.c,complete
 func_002431F0,0x002431F0,0x20,src/tail_call_leaves20.c,complete
+func_0028BA70,0x0028BA70,0x38,src/grok_w3_0017.c,complete
+func_00292DE0,0x00292DE0,0x38,src/grok_w3_0017.c,complete
