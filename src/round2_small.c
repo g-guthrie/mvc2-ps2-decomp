@@ -5,8 +5,10 @@ typedef unsigned int u32;
 typedef signed int s32;
 
 extern int func_00189150(u8 *);
+extern int func_00189310(u8 *, u8 *, u8 *);
 extern int func_001891F0(u8 *, int);
 extern void func_00186A60(u8 *, int);
+extern u8 D_0045CD40[];
 extern s8 func_00175700(u8 *);
 extern void func_00175C00(u8 *, int);
 extern void func_001843A0(u8 *);
@@ -34,6 +36,13 @@ int func_0023F410(u8 *p) {
     if (!func_00189150(p)) return 0;
     if (!*(s8 *)U32(p, 1056)) return 0;
     p[5] = 0; p[6] = 0; p[7] = 0; p[509] = 7;
+    func_00186A60(p, 29);
+    return 1;
+}
+int func_00308DD0(u8 *p) {
+    if (!func_00189310(p, D_0045CD40, p + 888)) return 0;
+    if (!*(s8 *)U32(p, 1056)) return 0;
+    p[5] = 0; p[7] = 0; p[6] = 0; p[509] = 0;
     func_00186A60(p, 29);
     return 1;
 }
