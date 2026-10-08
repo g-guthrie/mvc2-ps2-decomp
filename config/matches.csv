@@ -8725,6 +8725,7 @@ func_0023B8D0,0x0023B8D0,0x48,src/round3_0.c,complete
 func_0023BA80,0x0023BA80,0x60,src/round3_0.c,complete
 func_002EA670,0x002EA670,0x60,src/grok_w7_evt.c,complete
 func_002FD9A0,0x002FD9A0,0x54,src/round3_0.c,complete
+func_0024A0F0,0x0024A0F0,0x54,src/round3_0.c,complete
 func_002D3E50,0x002D3E50,0x3C,src/command_reset.c,complete
 func_002D46B0,0x002D46B0,0x3C,src/command_reset.c,complete
 func_002CE920,0x002CE920,0x64,src/round3_0.c,complete
