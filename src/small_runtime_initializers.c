@@ -33,3 +33,8 @@ void func_004052C0(u8 *p) {
 void func_004044B0(s32 *p) {
     if (p[3] == 3) p[3] = 0;
 }
+
+s32 func_0040C070(s32 value) {
+    s32 byte = (s32)((u32)value << 24) >> 24;
+    return (byte ^ 0x5C) ? byte : 47;
+}

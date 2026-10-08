@@ -263,12 +263,14 @@ Five indexed-field accessors at `0x003FF5F0`, `0x00404CA8`, `0x004052F8`,
 `a1` express the 32-bit address addition in index-first order; the others use
 byte-pointer arithmetic. Each complete object matches its retail bytes.
 
-Six small runtime update routines at `0x00400B98`, `0x00400BB8`,
-`0x00400CE8`, `0x00408EC8`, `0x004052C0`, and `0x004044B0` match with SN Systems GCC 2.95.2
+Seven compact runtime helpers at `0x00400B98`, `0x00400BB8`,
+`0x00400CE8`, `0x00408EC8`, `0x004052C0`, `0x004044B0`, and `0x0040C070` match with SN Systems GCC 2.95.2
 `-O2 -G0 -ffunction-sections`. The first copies two word fields to caller
 outputs and returns 1; the second writes two fields and returns 1; the third
 scales an input into the fifth word; the reset helpers clear fields and set
 their state bytes, and one conditionally clears its word field when it equals 3.
+The signed-byte normalizer returns the sign-extended byte, except it maps
+`0x5C` to 47.
 Each relocated object matches the retail bytes.
 
 Two indexed pointer-table readers at `0x0040EF70` and `0x0040EF88` return
