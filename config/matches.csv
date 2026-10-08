@@ -8721,5 +8721,6 @@ func_002431F0,0x002431F0,0x20,src/tail_call_leaves20.c,complete
 func_0028BA70,0x0028BA70,0x38,src/grok_w3_0017.c,complete
 func_00292DE0,0x00292DE0,0x38,src/grok_w3_0017.c,complete
 func_00307BF0,0x00307BF0,0x28,src/tail_call_leaves20.c,complete
+func_0023B8D0,0x0023B8D0,0x48,src/round3_0.c,complete
 func_002D3E50,0x002D3E50,0x3C,src/command_reset.c,complete
 func_002D46B0,0x002D46B0,0x3C,src/command_reset.c,complete
