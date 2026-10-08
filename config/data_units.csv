@@ -4790,7 +4790,9 @@ data_u32_004B5300,0x004B5300,0x80,.data,src/data/data_u32_004B5300.c,initialized
 data_zero_004B5380,0x004B5380,0x10,.data,src/data/data_zero_004B5380.c,zero_initialized_untyped
 jtbl_004B5390,0x004B5390,0x98,.rodata,src/data/jtbl_004B5390.c,jump_table
 gEffectTypeVariantMap_004B5430,0x004B5430,0x18,.data,src/data/gEffectTypeVariantMap_004B5430.c,bounded_byte_matrix
-data_u8_004B5448,0x004B5448,0x1E8,.data,src/data/data_u8_004B5448.c,initialized_byte_array
+data_u8_004B5448,0x004B5448,0x1A8,.data,src/data/data_u8_004B5448.c,initialized_byte_array
+gPaletteColorVariants_004B55F0,0x004B55F0,0x3C,.data,src/data/gPaletteColorVariants_004B55F0.c,bounded_byte_records
+data_u8_004B562C,0x004B562C,0x4,.data,src/data/data_u8_004B562C.c,initialized_byte_array
 gNoChallengerLabel_004B5630,0x004B5630,0xE,.data,src/data/gNoChallengerLabel_004B5630.c,debug_label
 data_u8_004B563E,0x004B563E,0x2,.data,src/data/data_u8_004B563E.c,initialized_byte_array
 gPressStartLabel_004B5640,0x004B5640,0x13,.data,src/data/gPressStartLabel_004B5640.c,debug_label
