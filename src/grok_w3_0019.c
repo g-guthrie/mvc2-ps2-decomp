@@ -22,7 +22,7 @@ extern void func_002E4690(u8 *, u8 *);
 extern void func_002E4710(u8 *, u8 *);
 extern void func_00175670();
 extern void func_001975C0(u8 *, u8 *);
-extern s8 func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern void func_0019C470(u8 *);
 extern void func_00195630(u8 *, u8 *);
 typedef struct {
@@ -99,7 +99,7 @@ void func_00195690(u8 *p, u8 *q) {
 }
 
 void func_0019C420(u8 *p) {
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         p[4]++;
         func_0019C470(p);
     }

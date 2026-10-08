@@ -31,7 +31,7 @@ typedef struct {
 } EventEntry;
 
 extern s8 func_00175670(u8 *);
-extern s8 func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern void func_001754A0(u8 *, s32, s32);
 extern int func_001757E0(u8 *, int, int);
 extern void func_001AFC90(u8 *);
@@ -123,7 +123,7 @@ void func_001AEBC0(u8 *p) {
 }
 
 void func_001AA0D0(u8 *p) {
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         I(p, 0xd0) = p[6];
         I(p, 0xd4) = p[7];
         p[6] = 2;
@@ -132,7 +132,7 @@ void func_001AA0D0(u8 *p) {
 }
 
 void func_001AB110(u8 *p) {
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         I(p, 0xd0) = p[6];
         I(p, 0xd4) = p[7];
         p[6] = 1;

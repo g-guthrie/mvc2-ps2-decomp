@@ -3,7 +3,7 @@ typedef unsigned char u8;
 extern int func_001757E0(u8 *, int, int);
 extern void func_00179160();
 extern void func_00185640();
-extern void func_00175700();
+extern int func_00175700(u8 *);
 
 void func_0026CA90(u8 *p) { func_001757E0(p, 19, 2); }
 

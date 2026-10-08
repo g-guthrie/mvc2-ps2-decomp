@@ -1,10 +1,11 @@
+typedef unsigned char u8;
 extern void func_0015FAA0();
 extern void func_0015FDF0();
 extern void func_0015FEB0();
 extern void func_00160C80();
 extern void func_00160D10();
 extern void func_00160DB0();
-extern void func_00175700();
+extern int func_00175700(u8 *);
 extern void func_001821D0();
 extern void func_00182380();
 extern void func_00183D90();

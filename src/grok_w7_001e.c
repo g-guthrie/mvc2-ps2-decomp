@@ -3,7 +3,7 @@ typedef signed char s8;
 typedef signed short s16;
 typedef signed int s32;
 
-extern s8 func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_001820A0(u8 *);
 extern void func_00182300(u8 *);
@@ -33,7 +33,7 @@ void func_001E3C40(u8 *p)
 
 void func_001EAF70(u8 *p)
 {
-    if ((s32)func_00175700(p) < 0)
+    if ((s8)func_00175700(p) < 0)
         func_001843A0(p);
     else if (*(s8 *)(p + 337)) {
         p[337] = 0;
@@ -53,7 +53,7 @@ void func_001EB2D0(u8 *p, u8 *q)
 
 void func_001EC200(u8 *p)
 {
-    if ((s32)func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         if (p[525] != 2)
             func_001843A0(p);
         else
@@ -78,7 +78,7 @@ void func_001EC7E0(u8 *p)
     if (p[6] == 0) {
         p[6]++;
         func_001757E0(p, 20, 6);
-    } else if ((s32)func_00175700(p) < 0)
+    } else if ((s8)func_00175700(p) < 0)
         func_001843A0(p);
 }
 
@@ -87,7 +87,7 @@ void func_002253C0(u8 *p)
     if (p[6] == 0) {
         p[6]++;
         func_001757E0(p, 20, 7);
-    } else if ((s32)func_00175700(p) < 0) {
+    } else if ((s8)func_00175700(p) < 0) {
         func_001843A0(p);
     }
 }
@@ -97,14 +97,14 @@ void func_002CF630(u8 *p)
     if (p[6] == 0) {
         p[6]++;
         func_001757E0(p, 20, 4);
-    } else if ((s32)func_00175700(p) < 0) {
+    } else if ((s8)func_00175700(p) < 0) {
         func_001843A0(p);
     }
 }
 
 void func_001EF620(u8 *p)
 {
-    if ((s32)func_00175700(p) < 0)
+    if ((s8)func_00175700(p) < 0)
         func_001843A0(p);
     else if (p[508] == 2 && p[347]) {
         func_001E3710(p, 22);
@@ -114,7 +114,7 @@ void func_001EF620(u8 *p)
 
 void func_001EF7A0(u8 *p)
 {
-    if ((s32)func_00175700(p) < 0)
+    if ((s8)func_00175700(p) < 0)
         func_001843A0(p);
     if (p[508] == 2 && p[347]) {
         func_001E3710(p, 22);
@@ -141,7 +141,7 @@ void func_001EF970(u8 *p)
 
 void func_001EFA00(u8 *p)
 {
-    if ((s32)func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         *(s16 *)(p + 320) ^= 1;
         func_001843A0(p);
     } else if (*(s8 *)(p + 337)) {
@@ -165,7 +165,7 @@ void func_001FA5E0(u8 *p)
     p[1036] = 2;
     p[828] = 5;
     p[521] = 2;
-    if ((s32)func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         func_001757E0(p, 22, 9);
         p[6]++;
     } else if (*(s8 *)(p + 337)) {

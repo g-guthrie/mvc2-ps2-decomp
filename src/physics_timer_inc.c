@@ -2,7 +2,7 @@ typedef unsigned char u8;
 typedef float f32;
 typedef signed short s16;
 
-extern void func_00175700(u8 *);
+extern int func_00175700(u8 *);
 
 void func_0015A610(u8 *p) {
     *(f32 *)(p + 52) += *(f32 *)(p + 92);

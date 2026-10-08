@@ -3,7 +3,7 @@ typedef unsigned char u8;
 typedef unsigned short u16;
 typedef signed char s8;
 
-extern s8 func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern void func_00184540(u8 *);
 
 typedef struct Event {
@@ -367,7 +367,7 @@ void func_003B38F0(u8 *arg, u8 first, u8 second) {
 }
 
 void func_002EA670(u8 *p) {
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         func_00184540(p);
     } else if (*(s8 *)(p + 337)) {
         p[337] = 0;

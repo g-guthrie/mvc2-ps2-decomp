@@ -1,12 +1,13 @@
 /* On a signed animation result, reset; otherwise consume its position flag. */
 typedef unsigned char u8;
-extern signed char func_00175700(u8 *);
+typedef signed char s8;
+extern int func_00175700(u8 *);
 extern void func_001843A0(u8 *);
 extern void func_00183920(u8 *, float *);
 
 #define ANIMATION_POSITION(name, x, y) \
 void name(u8 *p) { \
-    if (func_00175700(p) < 0) func_001843A0(p); \
+    if ((s8)func_00175700(p) < 0) func_001843A0(p); \
     else if (*(signed char *)(p + 0x151)) { \
         float position[4]; \
         p[0x151] = 0; \
@@ -30,7 +31,7 @@ ANIMATION_POSITION(func_002912D0, 35.00000000000000000000f, 102.8571395874023437
 ANIMATION_POSITION(func_002B1920, -45.00000000000000000000f, 137.14285278320312500000f)
 void func_002FF100(u8 *p, void *unused)
 {
-    if (func_00175700(p) < 0)
+    if ((s8)func_00175700(p) < 0)
         func_001843A0(p);
     else if (*(signed char *)(p + 0x151)) {
         float position[4];

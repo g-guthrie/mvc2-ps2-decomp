@@ -5,7 +5,7 @@ typedef signed int s32;
 typedef unsigned int u32;
 typedef float f32;
 
-extern s8 func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_001843A0(u8 *);
 extern void func_00184540(u8 *);
@@ -59,7 +59,7 @@ void func_00301BF0(u8 *p) {
 }
 
 void func_00301CF0(u8 *p) {
-    if (func_00175700(p) < 0)
+    if ((s8)func_00175700(p) < 0)
         func_00184540(p);
     else if (*(s8 *)(p + 0x151))
         p[0x151] = 0;
@@ -85,7 +85,7 @@ void func_00303140(u8 *p) {
 }
 
 void func_00303340(u8 *p) {
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         p[6]++;
         func_001757E0(p, 0x15, 8);
     }
@@ -99,7 +99,7 @@ s32 func_00305390(u8 *p) {
 
 void func_00307250(u8 *p, u8 *q) {
     q[10] = 3;
-    if (func_00175700(p) < 0)
+    if ((s8)func_00175700(p) < 0)
         func_001843A0(p);
 }
 
@@ -112,7 +112,7 @@ void func_003085F0(u8 *p) {
 }
 
 void func_00308680(u8 *p) {
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         func_001266A0(p, 0, 0);
         func_001843A0(p);
     }
@@ -127,7 +127,7 @@ void func_00308770(u8 *p) {
 }
 
 void func_00308800(u8 *p) {
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         func_001266A0(p, 0, 0);
         func_00184540(p);
     }
@@ -170,21 +170,21 @@ void func_0030B3A0(u8 *p) {
 
 void func_0030C030(u8 *p) {
     func_0030C120(p);
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         p[6]++;
         func_001757E0(p, 0xF, 1);
     }
 }
 
 void func_0030C240(u8 *p) {
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         p[6]++;
         func_001757E0(p, 0xF, 3);
     }
 }
 
 void func_0030C3A0(u8 *p) {
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         p[6]++;
         func_001757E0(p, 0xF, 5);
     }

@@ -2,7 +2,7 @@ typedef unsigned char u8;
 typedef signed int s32;
 typedef float f32;
 
-extern s32 func_00175700(u8 *);
+extern int func_00175700(u8 *);
 
 s32 func_002B5D90(u8 *a0)
 {

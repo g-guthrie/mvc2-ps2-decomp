@@ -14,7 +14,7 @@ typedef float f32;
     F(p, 56) += F(p, 96); \
     F(p, 96) += F(p, 108);
 
-extern s8 func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern int func_00174240(u8 *);
 extern int func_001864A0(u8 *);
 extern int func_001757E0(u8 *, int, int);
@@ -81,11 +81,11 @@ void func_001ABF50(u8 *p, u8 *q) {
 }
 
 void func_001C3970(u8 *p, u8 *q) {
-    if (func_00175700(p) < 0)
+    if ((s8)func_00175700(p) < 0)
         func_001C3A80(p, q);
 }
 void func_0039FC20(u8 *p, u8 *q) {
-    if (func_00175700(p) < 0)
+    if ((s8)func_00175700(p) < 0)
         func_0039FC70(p, q);
 }
 
@@ -156,7 +156,7 @@ void func_0029F9A0(u8 *p) {
 }
 
 void func_002C35D0(u8 *p) {
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         p[1037] = 0;
         p[1036] = 0;
         p[827] = 0;
@@ -316,13 +316,13 @@ void func_00291DC0(u8 *p, u8 *q) {
 }
 
 void func_003253F0(u8 *p) {
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         p[316] = 1;
         func_003266E0(p);
     }
 }
 void func_003668A0(u8 *p) {
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         p[5] = 9;
         func_003670B0(p);
     }

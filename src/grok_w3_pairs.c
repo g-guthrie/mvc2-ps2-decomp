@@ -11,7 +11,7 @@ typedef float f32;
     F(p, 56) += F(p, 96); \
     F(p, 96) += F(p, 108);
 
-extern s8 func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern int func_00174470(u8 *, ...);
 extern void func_0035DE40(u8 *, u8 *);
 extern void func_003CAB00(u8 *, u8 *);

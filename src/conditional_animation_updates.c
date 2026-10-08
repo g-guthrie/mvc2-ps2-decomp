@@ -1,7 +1,8 @@
 /* Resolve the signed pending action before advancing the normal animation. */
 typedef unsigned char u8;
+typedef signed char s8;
 extern int func_00169CE0(u8 *, int, int);
-extern signed char func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern void func_00186CE0(u8 *, int);
 
 #define CONDITIONAL_ANIMATION_UPDATE(name) \
@@ -17,7 +18,7 @@ void name(u8 *p) { \
             p[0x1e7] = 0; func_00186CE0(p, 17); return; \
         } \
     } \
-    if (func_00175700(p) < 0) func_00186CE0(p, 23); \
+    if ((s8)func_00175700(p) < 0) func_00186CE0(p, 23); \
 }
 
 CONDITIONAL_ANIMATION_UPDATE(func_00176CF0)

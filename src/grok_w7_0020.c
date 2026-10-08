@@ -8,7 +8,7 @@ typedef signed int s32;
 #define I(p, o) (*(s32 *)((u8 *)(p) + (o)))
 
 extern u8 D_004D18A0;
-extern s32 func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern void func_001843A0(u8 *);
 extern void func_001820A0(u8 *);
 extern s32 func_001864A0(u8 *);

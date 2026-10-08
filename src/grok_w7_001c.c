@@ -23,7 +23,7 @@ typedef struct {
 
 extern s32 func_00174470(u8 *);
 extern s32 func_001745B0(u8 *);
-extern s8 func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_001C48E0(void);
 extern void func_001C0A70(void);
@@ -168,7 +168,7 @@ void func_001C0A00(u8 *p, s32 a1, u8 mode)
 
 void func_001C82C0(u8 *p)
 {
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         p[7]++;
         S(p, 28) = 16;
         S(p, 320) ^= 1;

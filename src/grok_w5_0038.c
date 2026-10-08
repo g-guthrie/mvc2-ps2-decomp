@@ -18,7 +18,7 @@ typedef struct Event {
     u8 field32;
 } Event;
 
-extern s32 func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_001843A0(u8 *);
 extern void func_00184540(u8 *);

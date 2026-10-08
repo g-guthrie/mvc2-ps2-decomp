@@ -43,7 +43,7 @@ extern void func_001712A0();
 extern void func_001719E0();
 extern void func_00174A40();
 extern void func_00175670();
-extern void func_00175700();
+extern int func_00175700(u8 *);
 extern void func_001765C0();
 extern void func_00178F20();
 extern void func_00179160();
@@ -285,7 +285,7 @@ void func_00197520(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00197560(a0, a1, a2, 
 
 void func_00197550(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
-void func_00198090(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00198090(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_001980F0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
@@ -347,7 +347,7 @@ void func_001A00D0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, 
 
 void func_001A1320(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
-void func_001A3940(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_001A3940(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_001A3A00(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40(p, a1, a2, a3); }
 
@@ -367,7 +367,7 @@ void func_001A70A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, 
 
 void func_001A72B0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175670(a0, a1, a2, a3); }
 
-void func_001A7810(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_001A7810(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_001A78C0(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40(p, a1, a2, a3); }
 
@@ -379,11 +379,11 @@ void func_001A9610(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175670(a0, a1, a2, 
 
 void func_001A9640(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
-void func_001AB600(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_001AB600(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_001AC350(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
-void func_001ACB10(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_001ACB10(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_001ACB40(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
@@ -485,7 +485,7 @@ void func_001C1620(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, 
 
 void func_001C1BB0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
-void func_001C32E0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_001C32E0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_001C39E0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
@@ -495,11 +495,11 @@ void func_001C50A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, 
 
 void func_001C57A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
-void func_001C6A20(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_001C6A20(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_001C74A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_001C74A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_001C7AD0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_001C7AD0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_001C84C0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
@@ -643,29 +643,29 @@ void func_001EF420(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001EEE30(a0, a1, a2, 
 
 void func_001F01F0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001843A0(a0, a1, a2, a3); }
 
-void func_001F02D0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_001F02D0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_001F0320(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_001F0320(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_001F0370(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_001F0370(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_001F93B0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_001F93B0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_001F93C0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_001F93C0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_001FD3C0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001FCF30(a0, a1, a2, a3); }
 
-void func_00202ED0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00202ED0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_00204D40(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00204D40(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_0020ADC0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_0020ADC0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_0020ADD0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_0020ADD0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_0020ADE0(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_00175700(p, a1, a2, a3); }
+void func_0020ADE0(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_00175700(p); }
 
-void func_0020ADF0(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_00175700(p, a1, a2, a3); }
+void func_0020ADF0(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_00175700(p); }
 
 void func_00219250(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00219260(a0, a1, a2, a3); }
 
@@ -709,23 +709,23 @@ void func_00232E70(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001843A0(a0, a1, a2, 
 
 void func_00233B60(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00233B70(a0, a0 + (696), a2, a3); }
 
-void func_002355A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002355A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_0023BC50(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_0023BC50(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_00243E50(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00243E60(a0, a1, a2, a3); }
 
-void func_00245A20(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00245A20(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_00245A30(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00245A30(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_0024A900(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_0024A900(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_0024AED0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_0024AED0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_0024F990(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_0024F990(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_0024FA30(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_0024FA30(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_00252930(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00251F20(a0, a1, a2, a3); }
 
@@ -737,27 +737,27 @@ void func_002552F0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00255310(a0, a1, a2, 
 
 void func_00255300(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00255310(a0, a1, a2, a3); }
 
-void func_00258CF0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00258CF0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_00258D90(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00258D90(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_00258E90(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00258E90(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_00258F90(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00258F90(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_00259090(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00259090(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_0025E210(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_0025E210(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_0025E280(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_0025E280(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_00264A10(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00264A10(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_0026CB10(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_0026CB10(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_00270A40(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00270A40(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_00275940(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00275940(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_00278D30(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001843A0(a0, a1, a2, a3); }
 
@@ -773,45 +773,45 @@ void func_00280330(s32 a0, s32 a1, s32 a2, s32 a3) {  func_002803A0(a0, 0, a2, a
 
 void func_00280340(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00280330(a0, a1, a2, a3); }
 
-void func_002832E0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002832E0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_002884A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002884A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_00288860(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00288860(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_00288A70(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00288A70(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_00288BB0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00288BB0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_00288D10(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00288D10(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_00288DC0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00288DC0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_002900F0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002900F0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_00290550(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00290550(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_002906B0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002906B0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_002907F0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002907F0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_00290890(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00290890(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_00290930(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00290930(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_0029F670(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001843A0(a0, a1, a2, a3); }
 
 void func_0029F680(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001843A0(a0, a1, a2, a3); }
 
-void func_002A2C00(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002A2C00(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_002A2C60(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002A2C60(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_002A8E50(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002A8E50(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_002B4AD0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002B4AD0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_002B9EB0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002B9EB0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_002BB570(s32 a0, s32 a1, s32 a2, s32 a3) {  func_002BA540(a0, a1, a2, a3); }
 
@@ -827,45 +827,45 @@ void func_002BF400(s32 a0, s32 a1, s32 a2, s32 a3) {  func_002BEF60(a0, a1, a2, 
 
 void func_002BF410(s32 a0, s32 a1, s32 a2, s32 a3) {  func_002BEFE0(a0, a1, a2, a3); }
 
-void func_002C24C0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002C24C0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_002C7780(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002C7780(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_002C7790(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002C7790(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_002D3200(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002D3200(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_002E93A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_002E93B0(a0, a1, a2, a3); }
 
-void func_002EA9C0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002EA9C0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_002EB300(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002EB300(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_002EEFE0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_002F1DF0(a0, a1, a2, a3); }
 
-void func_002F3D20(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002F3D20(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_002F3D50(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002F3D50(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_002F4190(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002F4190(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_002F4460(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002F4460(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_002F4B20(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002F4B20(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_002FDB90(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_002FDB90(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_00300C00(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00300C10(a0, a1, a2, a3); }
 
-void func_00302040(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00302040(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_00302990(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00302990(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_0030AA40(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_0030AA40(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_0030B0C0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00184540(a0, a1, a2, a3); }
 
-void func_0030D550(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_0030D550(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_0030FE60(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0030FE70(a0, a1, a2, a3); }
 
@@ -1139,7 +1139,7 @@ void func_00388670(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, 
 
 void func_003891C0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
-void func_00389760(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00389760(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_00389910(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
@@ -1177,7 +1177,7 @@ void func_00394770(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, 
 
 void func_003958A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
-void func_00396690(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700(a0, a1, a2, a3); }
+void func_00396690(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_00396C70(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 

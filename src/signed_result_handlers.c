@@ -5,7 +5,7 @@ typedef void (*StateCallback)(u8 *);
 extern StateCallback jtbl_00459A10[];
 
 extern int func_00175670();
-extern int func_00175700();
+extern int func_00175700(u8 *);
 extern int func_001843A0();
 extern int func_00184540();
 extern int func_001846B0();

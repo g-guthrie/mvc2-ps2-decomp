@@ -7,7 +7,7 @@ typedef float f32;
 #define F(p, o) (*(f32 *)((u8 *)(p) + (o)))
 #define S(p, o) (*(s16 *)((u8 *)(p) + (o)))
 
-extern s8 func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_001A8CF0(u8 *, int);
 extern void func_001266A0(u8 *, int, int);

@@ -1,6 +1,6 @@
 /* Update animation and planar motion, then commit the floor-contact phase. */
 typedef unsigned char u8;
-extern void func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern void func_00183d50(u8 *);
 extern int func_001757E0(u8 *, int, int);
 void func_0020F880(u8 *p) {

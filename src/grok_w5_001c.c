@@ -32,7 +32,7 @@ typedef struct EventState {
     EventValueSource *value_source;
 } EventState;
 
-extern s8 func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern s8 func_00175670(u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_001754A0(u8 *, s32, s32);
@@ -196,7 +196,7 @@ void func_001C4890(s32 a0, u8 mode) {
 }
 
 void func_001C7A80(u8 *p, u8 *q) {
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         p[7]++;
         S(q, 28) = 0;
     }
@@ -230,7 +230,7 @@ void func_001CA840(u8 *p) {
 }
 
 void func_001CF5F0(u8 *p) {
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         p[5]++;
         func_001757E0(p, 21, 42);
     }

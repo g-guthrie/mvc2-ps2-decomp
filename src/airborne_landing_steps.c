@@ -1,6 +1,6 @@
 /* Advance airborne motion, clamp a landing, and defer consumed animation events. */
 typedef unsigned char u8;
-extern void func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern void func_00183D50(u8 *);
 extern void func_001EAFD0(u8 *);
 void func_001EB3B0(u8 *p) {

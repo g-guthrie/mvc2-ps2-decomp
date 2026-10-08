@@ -1,6 +1,7 @@
 /* Consume signed animation displacement and advance an animation event. */
 typedef unsigned char u8;
-extern void func_00185490(u8 *), func_00175700(u8 *);
+extern void func_00185490(u8 *);
+extern int func_00175700(u8 *);
 extern void func_00298390(u8 *);
 void func_002984B0(u8 *p) {
     func_00185490(p); func_00298390(p); p[0x209] = 2; func_00175700(p);

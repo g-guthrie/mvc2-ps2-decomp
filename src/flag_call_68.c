@@ -1,5 +1,5 @@
 typedef unsigned char u8;
-extern void func_00175700();
+extern int func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
 
 void func_001F93D0(u8 *p) { if (p[6] == 0) { p[6] += 1; func_001757E0(p, 19, 5); } else func_00175700(p); }

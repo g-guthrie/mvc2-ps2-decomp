@@ -5,7 +5,7 @@ typedef unsigned short u16;
 typedef signed int s32;
 
 extern s8 func_00175670(u8 *);
-extern s8 func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern void func_001754A0(u8 *, s32, s32);
 extern int func_001757E0(u8 *, int, int);
 extern u8 *func_003DA750(s32, s32, s32);
@@ -112,7 +112,7 @@ void residual_001A9920(u8 *p) {
 }
 
 void func_001A9B00(u8 *p, u8 *q) {
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         *(s32 *)(p + 0xd0) = p[6];
         *(s32 *)(p + 0xd4) = p[7];
         p[6] = 11;

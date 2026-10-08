@@ -5,7 +5,7 @@ typedef signed int s32;
 typedef float f32;
 typedef void (*DispatchFn)(u8 *);
 
-extern s32 func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern void func_00173650(u8 *);
 extern void func_00173590(u8 *);
 extern void func_001734F0(u8 *);

@@ -26,7 +26,7 @@ extern u8 D_0044DDA0[];
 extern u8 D_0044DAC0[];
 extern int func_001757E0(u8 *, int, int);
 extern void func_001C5110(u8 *);
-extern s8 func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern void func_001E3240(u8 *, s32);
 extern void func_001CB5A0(u8 *, s32, s32);
 extern void func_001CB5D0(u8 *);
@@ -53,7 +53,7 @@ void func_001D6CD0(u8 *p, u8 *q) {
 }
 
 void func_001C4760(u8 *p) {
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         p[6] = 1;
         p[7] = 0;
     }
@@ -147,7 +147,7 @@ void func_001CF440(u8 *p) {
 }
 
 void func_001C25B0(u8 *p) {
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         p[214] = p[6];
         p[215] = p[7];
         p[6] = 2;

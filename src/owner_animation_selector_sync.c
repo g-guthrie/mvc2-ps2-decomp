@@ -1,6 +1,6 @@
 /* Synchronize a child animation with the signed owner animation selector. */
 typedef unsigned char u8;
-extern void func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
 void func_00192B50(u8 *p) {
  u8 *owner=*(u8 **)(p+0x18);

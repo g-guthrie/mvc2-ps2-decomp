@@ -1,6 +1,6 @@
 /* Configure the animation effect and consume its spawn-position flag. */
 typedef unsigned char u8;
-extern signed char func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern void func_001830D0(u8 *, float *, int);
 
 #define ANIMATION_SPAWN_POSITION(name, x, y) \
