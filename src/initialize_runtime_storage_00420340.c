@@ -7,7 +7,7 @@ typedef unsigned long long u64;
 extern u8 D_004CFF20[];
 extern u8 D_004CE120[];
 extern u8 D_004D0420[];
-extern u64 D_004C2748;
+extern char D_004C2748;
 extern u8 D_004C2750;
 extern s32 D_004C275C;
 extern u8 D_004C2764;
@@ -17,12 +17,12 @@ extern u8 D_004C2770;
 extern u8 D_004C2774;
 extern u32 D_004C2778;
 extern u8 D_004C2780;
-extern u32 D_004C2534;
+extern const char *D_004C2534;
 
 extern void func_00420230(void);
 extern void func_00420150(void);
-extern void func_0011D8F8(void *destination, s32 value, u32 size);
-extern void func_0011FE88(void *destination, u32 source);
+extern void *func_0011D8F8(void *destination, s32 value, u32 size);
+extern char *func_0011FE88(char *destination, const char *source);
 
 void func_00420340(void)
 {

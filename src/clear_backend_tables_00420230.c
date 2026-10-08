@@ -10,13 +10,13 @@ extern u8 D_004D0F60[];
 extern u8 D_004D0FA0[];
 extern u8 D_004D0FE0[];
 extern u8 D_004D0FEA[];
-extern u32 D_004C2BA0;
+extern char D_004C2BA0;
 extern volatile u8 D_004D106A[];
 extern volatile u8 D_004D106B[];
-extern u8 D_004BF130[];
+extern const char D_004BF130[];
 
-extern void func_0011D8F8(void *destination, s32 value, u32 size);
-extern void func_0011F938(void *destination, void *source, s32 mode);
+extern void *func_0011D8F8(void *destination, s32 value, u32 size);
+extern s32 func_0011F938(char *destination, const char *format, ...);
 
 void func_00420230(void)
 {
