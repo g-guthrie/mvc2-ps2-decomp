@@ -5434,7 +5434,9 @@ data_u8_004BAC4B,0x004BAC4B,0x5,.data,src/data/data_u8_004BAC4B.c,initialized_by
 gAdxRnaAppendMode_004BAC50,0x004BAC50,0x4,.data,src/data/gAdxRnaAppendMode_004BAC50.c,stdio_open_mode
 data_u8_004BAC54,0x004BAC54,0x8C,.data,src/data/data_u8_004BAC54.c,initialized_byte_array
 data_zero_004BACE0,0x004BACE0,0x10,.data,src/data/data_zero_004BACE0.c,zero_initialized_untyped
-data_u8_004BACF0,0x004BACF0,0x928,.data,src/data/data_u8_004BACF0.c,initialized_byte_array
+gPlBmp24BitOnlyError_004BACF0,0x004BACF0,0x37,.data,src/data/gPlBmp24BitOnlyError_004BACF0.c,nul_terminated_message
+data_u8_004BAD27,0x004BAD27,0x9,.data,src/data/data_u8_004BAD27.c,initialized_byte_array
+data_u8_004BAD30,0x004BAD30,0x8E8,.data,src/data/data_u8_004BAD30.c,initialized_byte_array
 gAdxRnaInternalError_004BB618,0x004BB618,0x2E,.data,src/data/gAdxRnaInternalError_004BB618.c,nul_terminated_message
 data_u8_004BB646,0x004BB646,0x42,.data,src/data/data_u8_004BB646.c,initialized_byte_array
 data_f32_004BB688,0x004BB688,0x400,.data,src/data/data_f32_004BB688.c,indexed_f32_lookup

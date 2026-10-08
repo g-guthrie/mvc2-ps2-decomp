@@ -5434,7 +5434,9 @@ data_u8_004BAC4B,0x004BAC4B,0x5,src/data/data_u8_004BAC4B.c,complete,placeholder
 gAdxRnaAppendMode_004BAC50,0x004BAC50,0x4,src/data/gAdxRnaAppendMode_004BAC50.c,complete,reconstructed
 data_u8_004BAC54,0x004BAC54,0x8C,src/data/data_u8_004BAC54.c,complete,placeholder
 data_zero_004BACE0,0x004BACE0,0x10,src/data/data_zero_004BACE0.c,complete,placeholder
-data_u8_004BACF0,0x004BACF0,0x928,src/data/data_u8_004BACF0.c,complete,placeholder
+gPlBmp24BitOnlyError_004BACF0,0x004BACF0,0x37,src/data/gPlBmp24BitOnlyError_004BACF0.c,complete,reconstructed
+data_u8_004BAD27,0x004BAD27,0x9,src/data/data_u8_004BAD27.c,complete,placeholder
+data_u8_004BAD30,0x004BAD30,0x8E8,src/data/data_u8_004BAD30.c,complete,placeholder
 gAdxRnaInternalError_004BB618,0x004BB618,0x2E,src/data/gAdxRnaInternalError_004BB618.c,complete,reconstructed
 data_u8_004BB646,0x004BB646,0x42,src/data/data_u8_004BB646.c,complete,placeholder
 data_f32_004BB688,0x004BB688,0x400,src/data/data_f32_004BB688.c,complete,reconstructed
