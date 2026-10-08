@@ -8889,7 +8889,7 @@ func_0026C2C0,0x0026C2C0,0x3C,0x0026C2FC,code,spimdisasm-explicit-size-before-fi
 func_0026C300,0x0026C300,0xD0,0x0026C3D0,code,spimdisasm-explicit-size-before-first-data
 func_0026C3D0,0x0026C3D0,0x170,0x0026C540,code,spimdisasm-explicit-size-before-first-data
 func_0026C540,0x0026C540,0x20,0x0026C560,code,matching-c-head-split
-residual_0026C560,0x0026C560,0x80,0x0026C5E0,assembly_residual,verified-boundary-after-matching-head
+func_0026C560,0x0026C560,0x80,0x0026C5E0,code,typed-callback-table-entry
 func_0026C5E0,0x0026C5E0,0xA8,0x0026C688,code,spimdisasm-explicit-size-before-first-data
 func_0026C690,0x0026C690,0x84,0x0026C714,code,spimdisasm-explicit-size-before-first-data
 func_0026C720,0x0026C720,0x20,0x0026C740,code,matching-c-head-split
