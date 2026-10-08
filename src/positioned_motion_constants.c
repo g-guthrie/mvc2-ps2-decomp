@@ -271,6 +271,26 @@ void func_00245490(u8 *p)
     }
 }
 
+void func_002452E0(u8 *p)
+{
+    func_00175700(p);
+    if (!*(signed char *)(p + 337)) {
+        p[6]++;
+        *(volatile int *)(p + 92) = 0;
+        *(volatile int *)(p + 96) = 0;
+        *(volatile int *)(p + 104) = 0;
+        *(volatile int *)(p + 108) = 0;
+        *(float *)(p + 92) = -16.666666f;
+        *(float *)(p + 104) = 0.2604166567325592f;
+        *(float *)(p + 96) = 6.428571f;
+        *(float *)(p + 108) = -0.53571427f;
+        if (p[486] != 0) {
+            *(float *)(p + 92) = -*(float *)(p + 92);
+            *(float *)(p + 104) = -*(float *)(p + 104);
+        }
+    }
+}
+
 void func_002B3EE0(u8 *p)
 {
     func_00175700(p);

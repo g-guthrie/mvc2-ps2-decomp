@@ -7793,7 +7793,7 @@ func_00245100,0x00245100,0x20,0x00245120,code,matching-c-head-split
 func_00245120,0x00245120,0x20,0x00245140,code,typed-callback-table-entry
 residual_00245140,0x00245140,0x180,0x002452C0,assembly_residual,verified-boundary-after-matching-head
 func_002452C0,0x002452C0,0x20,0x002452E0,code,matching-c-head-split
-residual_002452E0,0x002452E0,0xA0,0x00245380,assembly_residual,verified-boundary-after-matching-head
+func_002452E0,0x002452E0,0xA0,0x00245380,code,typed-callback-table-entry
 func_00245380,0x00245380,0xAC,0x0024542C,code,spimdisasm-explicit-size-before-first-data
 func_00245430,0x00245430,0x3C,0x0024546C,code,spimdisasm-explicit-size-before-first-data
 func_00245470,0x00245470,0x20,0x00245490,code,matching-c-head-split
