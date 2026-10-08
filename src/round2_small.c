@@ -30,6 +30,13 @@ int func_00233970(u8 *p) {
     func_00186A60(p, 29);
     return 1;
 }
+int func_0023F410(u8 *p) {
+    if (!func_00189150(p)) return 0;
+    if (!*(s8 *)U32(p, 1056)) return 0;
+    p[5] = 0; p[6] = 0; p[7] = 0; p[509] = 7;
+    func_00186A60(p, 29);
+    return 1;
+}
 int func_002DC820(u8 *p) {
     if (!func_00189150(p)) return 0;
     if (!*(s8 *)U32(p, 1056)) return 0;
