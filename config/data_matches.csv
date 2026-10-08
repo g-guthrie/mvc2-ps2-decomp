@@ -140,7 +140,7 @@ data_f32_one_0043E06C,0x0043E06C,0x8,src/data/data_f32_one_0043E06C.c,complete,p
 data_u32_0043E074,0x0043E074,0xB0,src/data/data_u32_0043E074.c,complete,placeholder
 data_u32_0043E124,0x0043E124,0xC,src/data/data_u32_0043E124.c,complete,placeholder
 data_f32_one_0043E130,0x0043E130,0x14,src/data/data_f32_one_0043E130.c,complete,placeholder
-data_u32_0043E144,0x0043E144,0xC,src/data/data_u32_0043E144.c,complete,placeholder
+data_f32_0043E144,0x0043E144,0xC,src/data/data_f32_0043E144.c,complete,reconstructed
 data_f32_one_0043E150,0x0043E150,0x8,src/data/data_f32_one_0043E150.c,complete,placeholder
 data_u32_0043E158,0x0043E158,0x8,src/data/data_u32_0043E158.c,complete,placeholder
 data_f32_one_0043E160,0x0043E160,0xC,src/data/data_f32_one_0043E160.c,complete,placeholder
@@ -165,7 +165,7 @@ data_u32_0043E238,0x0043E238,0xC0,src/data/data_u32_0043E238.c,complete,placehol
 data_f32_one_0043E2F8,0x0043E2F8,0xC,src/data/data_f32_one_0043E2F8.c,complete,placeholder
 data_u32_0043E304,0x0043E304,0xC,src/data/data_u32_0043E304.c,complete,placeholder
 data_f32_one_0043E310,0x0043E310,0x14,src/data/data_f32_one_0043E310.c,complete,placeholder
-data_u32_0043E324,0x0043E324,0xC,src/data/data_u32_0043E324.c,complete,placeholder
+data_f32_0043E324,0x0043E324,0xC,src/data/data_f32_0043E324.c,complete,reconstructed
 data_u32_0043E330,0x0043E330,0x54,src/data/data_u32_0043E330.c,complete,placeholder
 data_f32_one_0043E384,0x0043E384,0x8,src/data/data_f32_one_0043E384.c,complete,placeholder
 data_u32_0043E38C,0x0043E38C,0x24,src/data/data_u32_0043E38C.c,complete,placeholder
