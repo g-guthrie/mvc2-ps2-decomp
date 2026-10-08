@@ -231,6 +231,26 @@ void func_002F88B0(u8 *p)
     func_001D8A30(p, (u8)0, (u8)1);
 }
 
+void func_00234C20(u8 *p)
+{
+    float delta;
+    p[316] = 0;
+    if (D_004D18A0 == 2) {
+        p[6]++;
+        p[7] = 0;
+        p[316] = 1;
+        *(short *)(p + 28) = 0;
+        *(short *)(p + 30) = 3;
+        delta = 71.66666412353516f;
+        if (!p[486])
+            delta = -delta;
+        *(float *)(p + 52) += delta;
+        *(unsigned int *)(p + 96) = 0xC1452492;
+        *(unsigned int *)(p + 108) = 0x3E892492;
+        func_001757E0(p, 18, 0);
+    }
+}
+
 void func_00258630(u8 *p)
 {
     if (*(signed char *)(p + 0x151)) {
