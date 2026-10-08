@@ -950,3 +950,18 @@ existing direct recipes or compiler loops. All 33 tests, catalog
 validation, full hybrid linkage, and packed retail ELF hashes pass.
 Totals: 8,851 linked C routines, 554,336 code bytes (16.8302%), and
 61,778 data bytes (9.5327%) across 2,053 reconstructed units.
+
+## 2026-10-08 packet marker and motion callback batch
+
+Recovered the complete 108-byte packet queue marker writer 00423650
+with MWCCPS2 3.0.3 O3/sdata8 and added its normal runner recipe. Seven
+additional typed motion callbacks add 932 exact native C bytes under
+the existing full-unit O4/Op recipes. The shared 001757E0 helper retains
+its int third parameter; an observed byte truncation is explicit at the
+caller. All three source units independently byte-verify. The three
+D_00630000 views now extend to the actual BSS end at 00634380, covering
+all queue slots; this type-extent correction preserves exact code bytes.
+Every affected region-view unit verifies again. Catalog validation, full
+hybrid linkage, and packed retail ELF hashes pass. Totals: 8,859 linked
+C routines and 555,376 code bytes (16.8618%); reconstructed initialized
+data remains 61,778 bytes (9.5327%).

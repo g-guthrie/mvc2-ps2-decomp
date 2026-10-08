@@ -1,6 +1,6 @@
 typedef unsigned char u8;
 typedef unsigned int u32;
-extern volatile u8 D_00630000[0x4000];
+extern volatile u8 D_00630000[0x4380];
 extern volatile u8 D_004D0000[0x2000];
 extern volatile int D_004C2B78;
 extern volatile int D_004C2B7C;

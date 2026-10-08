@@ -1,6 +1,6 @@
 typedef unsigned int u32;
 typedef unsigned char u8;
-extern volatile u8 D_00630000[0x4000];
+extern volatile u8 D_00630000[0x4380];
 extern volatile u8 D_00634100[512];
 #define CURSOR (*(volatile u32 *)(D_00630000 + 0x3e18))
 int func_00423AA0(const u32 *words)
