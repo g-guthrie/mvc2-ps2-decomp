@@ -11042,7 +11042,7 @@ func_002B5320,0x002B5320,0x9C,0x002B53BC,code,spimdisasm-explicit-size-before-fi
 func_002B53C0,0x002B53C0,0x160,0x002B5520,code,spimdisasm-explicit-size-before-first-data
 func_002B5520,0x002B5520,0x4C,0x002B556C,code,spimdisasm-explicit-size-before-first-data
 func_002B5570,0x002B5570,0x20,0x002B5590,code,matching-c-head-split
-residual_002B5590,0x002B5590,0x74,0x002B5604,assembly_residual,verified-boundary-after-matching-head
+func_002B5590,0x002B5590,0x74,0x002B5604,code,typed-callback-table-entry
 func_002B5610,0x002B5610,0xD0,0x002B56E0,code,spimdisasm-explicit-size-before-first-data
 func_002B56E0,0x002B56E0,0x134,0x002B5814,code,spimdisasm-explicit-size-before-first-data
 func_002B5820,0x002B5820,0x4C,0x002B586C,code,spimdisasm-explicit-size-before-first-data

@@ -545,3 +545,12 @@ void func_002B52A0(u8 *p) {
     else func_001757E0(p, 21, 8);
 }
 
+void func_002B5590(u8 *p) {
+    p[6]++;
+    func_00185490(p);
+    func_0018C4B0(p, 13);
+    if (p[439] == 0) func_001757E0(p, 21, 44);
+    else func_001757E0(p, 21, 45);
+    p[525] = 2;
+}
+
