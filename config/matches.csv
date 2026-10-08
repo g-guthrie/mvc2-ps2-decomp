@@ -8927,6 +8927,6 @@ func_0028F290,0x0028F290,0x118,src/grok_w7_0028.c,complete
 func_00422DB0,0x00422DB0,0xEC,src/initialize_packet_runtime_00422DB0.c,complete
 func_002EA8E0,0x002EA8E0,0xE0,src/motion_speed_transition.c,complete
 func_00301F60,0x00301F60,0xE0,src/motion_speed_transition.c,complete
-func_00422D20,0x00422D20,0x8C,src/poll_packet_buffer_00422D20.c,matching
-func_00422C20,0x00422C20,0x50,src/register_packet_wait_00422C20.c,matching
-func_00422C70,0x00422C70,0x44,src/refresh_packet_handle_00422C70.c,matching
+func_00422D20,0x00422D20,0x8C,src/poll_packet_buffer_00422D20.c,complete
+func_00422C20,0x00422C20,0x50,src/register_packet_wait_00422C20.c,complete
+func_00422C70,0x00422C70,0x44,src/refresh_packet_handle_00422C70.c,complete

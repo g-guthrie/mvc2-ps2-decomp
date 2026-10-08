@@ -1265,3 +1265,24 @@ The hybrid image and packed executable match retail. Code is 564,788 bytes
 (17.1475%); reconstructed data is 70,049 bytes
 (10.8090%) across 2,219 units. Full source decompilation remains
 incomplete. The next scheduled code push remains21.0711%.
+
+
+### Packet polling, waiting, and consumed service state
+
+Recovered the 140-byte bounded packet poller, 80-byte wait helper, and
+68-byte queue handle refresh wrapper. All three whole functions and the
+existing initializer compile and relocation-verify exactly with their
+canonical source recipes. The initializer now names the SDK semaphore
+request fields from their native consumers.
+
+Reconstructed 208 bytes of directly consumed service state, 52 bytes of
+allocation state, and 12 bytes of memory-pool fields. All resulting owners
+were freshly compiled and privately verified. The service-state split
+retains the entire original208-byte span without gaps; the other splits
+keep unconsumed words explicitly placeholder-owned.
+
+The hybrid image and packed executable match retail. Code is 565,076 bytes
+(17.1563%); reconstructed data is 70,321 bytes
+(10.8509%) across 2,271 units. A private 100-byte SDK output
+callback probe is byte-exact but remains uncredited until its helper
+return contract is resolved. Full source decompilation remains incomplete.
