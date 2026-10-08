@@ -8757,3 +8757,4 @@ func_00400EA8,0x00400EA8,0x14,src/ee96_string_thunk.c,matching
 func_003FEF90,0x003FEF90,0x14,src/ee96_validation_thunk.c,matching
 func_003FFEF8,0x003FFEF8,0x14,src/ee96_string_chain.c,matching
 func_00402C08,0x00402C08,0x14,src/ee96_string_chain.c,matching
+func_003FCF70,0x003FCF70,0x14,src/ee96_validation_thunk.c,matching
