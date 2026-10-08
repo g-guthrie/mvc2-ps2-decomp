@@ -676,6 +676,20 @@ void func_002FEF60(u8 *p, void *q) {
     func_002FEFE0(p, q);
 }
 
+extern void func_00238B70(u8 *, void *), func_0035BEB0(u8 *);
+void func_002367A0(u8 *p, void *q) {
+    func_00175700(p);
+    if (p[347]) {
+        p[7]++;
+        p[347] = 0;
+        p[655] = 1;
+        p[654] = 16;
+        func_0018C4B0(p, 5);
+        func_00238B70(p, q);
+        func_0035BEB0(p);
+    }
+}
+
 void func_00303E40(u8 *p, void *q) {
     p[6]++;
     func_00185490(p);
