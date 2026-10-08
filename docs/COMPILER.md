@@ -225,7 +225,7 @@ Owner-generation callback tables share `mvc2_owner_generation_callbacks.h` with 
 
 The early runtime accessor at `0x0011B370` and signed absolute-value routine
 at `0x00119D88` both reproduce exactly with SN GCC 2.95.2 (SN BUILD v2.73a),
-`-O2 -G0`, using its original assembler with `-G0`. Metrowerks 2.4, 3.0, and
+`-O2 -G0 -ffunction-sections`, using its original assembler with `-G0`. Metrowerks 2.4, 3.0, and
 3.0.3 accessor probes selected `$at` instead of retail `$v1`; SN selects `$v1`
 and reproduces the complete relocated accessor. This proves those two units'
 compiler recipe, not the compiler identity of every nearby function.
@@ -238,3 +238,6 @@ now includes these three files with pinned hashes. Bootstrap smoke-tests the
 preprocessor/compiler/assembler chain and exports `SNCPP`, `SNCC1`, `SNAS`.
 Use the preprocessor before invoking `cc1`; direct `cc1` input must already be
 preprocessed, including removal of C comments.
+
+SN units use `-ffunction-sections` to retain independent section ownership in
+the hybrid linker. This leaves the verified function instructions unchanged.

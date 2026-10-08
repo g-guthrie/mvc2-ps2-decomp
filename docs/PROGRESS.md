@@ -326,3 +326,26 @@ Recovered four native owner-substate animation entries (400 bytes). The child ad
 Recovered three native timed-effect spawners (444 bytes), including typed callback setup, context reference, three-float position copies, encoded angles, and cleared motion fields. All complete objects, full linked image, and packed ELF match exactly. Totals: 8,579 functions and 528,876 linked C bytes; reconstructed data remains 42,400 bytes across 1,421 units.
 
 Recovered three native unit-scale positioned effect spawners (456 bytes), preserving typed callbacks, context access, three-float position copies, unit scale, and cleared motion fields. All function bytes and relocations, full linked image, and packed retail ELF match exactly. Totals: 8,582 functions and 529,332 linked C bytes; reconstructed data remains 42,400 bytes across 1,421 units.
+
+## 2026-10-08 Luna medium team integration
+
+Recovered 17 additional native C routines (1,028 bytes): small wrappers,
+countdown transitions, animation state transfers, floating predicates and
+position bounds, a timer update, packed-field extraction, and SN runtime
+leaves. A callback's false interior boundary at 0x00303030 was removed after
+complete compiler span and entry-reference verification.
+
+Restored 48 omitted compiler recipes from a628e5d and the 624-byte launch-record
+family recipe. Every restored object verifies against retail; these repairs
+restore reproducible linkage of existing credit and do not add credit.
+SN GCC 2.95.2 -O2 -G0 -ffunction-sections proves three early runtime leaves;
+the owner-authorized public build bundle now includes its pinned compiler,
+preprocessor, and assembler. Bootstrap and compiler-pipeline smoke tests pass.
+
+All code objects and all 5,608 compiled data objects passed direct verification.
+The full hybrid loaded image and packed 3,942,320-byte retail ELF match target
+hashes. All 32 tests and catalog validation pass. Totals are 8,599 exact linked
+C functions and 530,360 / 3,293,696 C bytes; reconstructed data remains
+42,400 / 648,064 bytes. Assembly placeholders and raw-data fills retain zero
+source credit. Further agent batches remain separate until independently
+verified and linked.
