@@ -3027,7 +3027,9 @@ jtbl_0045E2C0,0x0045E2C0,0xC,src/data/jtbl_0045E2C0.c,complete,reconstructed
 jtbl_0045E2CC,0x0045E2CC,0x8,src/data/jtbl_0045E2CC.c,complete,placeholder
 jtbl_0045E2E0,0x0045E2E0,0x28,src/data/jtbl_0045E2E0.c,complete,placeholder
 jtbl_0045E310,0x0045E310,0x24,src/data/jtbl_0045E310.c,complete,placeholder
-data_u32_0045E340,0x0045E340,0x538,src/data/data_u32_0045E340.c,complete,placeholder
+data_u32_0045E340,0x0045E340,0x148,src/data/data_u32_0045E340.c,complete,placeholder
+gMvc2PresetEffectPosition_0045E488,0x0045E488,0xC,src/data/preset_position_0045E488.c,complete,reconstructed
+data_u32_0045E494,0x0045E494,0x3E4,src/data/data_u32_0045E494.c,complete,placeholder
 jtbl_0045E878,0x0045E878,0xC,src/data/jtbl_0045E878.c,complete,reconstructed
 data_u32_0045E884,0x0045E884,0x4,src/data/data_u32_0045E884.c,complete,placeholder
 jtbl_0045E888,0x0045E888,0xC,src/data/jtbl_0045E888.c,complete,reconstructed

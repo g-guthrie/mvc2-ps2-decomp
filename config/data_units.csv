@@ -3027,7 +3027,9 @@ jtbl_0045E2C0,0x0045E2C0,0xC,.rodata,src/data/jtbl_0045E2C0.c,typed_phase_callba
 jtbl_0045E2CC,0x0045E2CC,0x8,.rodata,src/data/jtbl_0045E2CC.c,jump_table
 jtbl_0045E2E0,0x0045E2E0,0x28,.rodata,src/data/jtbl_0045E2E0.c,jump_table
 jtbl_0045E310,0x0045E310,0x24,.rodata,src/data/jtbl_0045E310.c,jump_table
-data_u32_0045E340,0x0045E340,0x538,.data,src/data/data_u32_0045E340.c,initialized_u32_table
+data_u32_0045E340,0x0045E340,0x148,.data,src/data/data_u32_0045E340.c,initialized_u32_table
+gMvc2PresetEffectPosition_0045E488,0x0045E488,0xC,.data,src/data/preset_position_0045E488.c,preset_effect_position
+data_u32_0045E494,0x0045E494,0x3E4,.data,src/data/data_u32_0045E494.c,initialized_u32_table
 jtbl_0045E878,0x0045E878,0xC,.rodata,src/data/jtbl_0045E878.c,typed_state_callback_table
 data_u32_0045E884,0x0045E884,0x4,.data,src/data/data_u32_0045E884.c,initialized_u32_table
 jtbl_0045E888,0x0045E888,0xC,.rodata,src/data/jtbl_0045E888.c,typed_state_callback_table
