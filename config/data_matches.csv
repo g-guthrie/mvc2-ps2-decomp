@@ -5047,8 +5047,8 @@ data_u32_004B6F54,0x004B6F54,0xC,src/data/data_u32_004B6F54.c,complete,placehold
 data_u8_004B6F60,0x004B6F60,0x50,src/data/data_u8_004B6F60.c,complete,placeholder
 gWinsWord_004B6FB0,0x004B6FB0,0x4,src/data/gWinsWord_004B6FB0.c,complete,reconstructed
 data_u8_004B6FB4,0x004B6FB4,0xAC,src/data/data_u8_004B6FB4.c,complete,placeholder
-gScoreboardWinWord_004B7060,0x004B7060,0x5,src/data/gScoreboardWinWord_004B7060.c,complete,reconstructed
-data_u8_004B7065,0x004B7065,0xB,src/data/data_u8_004B7065.c,complete,placeholder
+gScoreboardWinPrefix_004B7060,0x004B7060,0x3,src/data/gScoreboardWinPrefix_004B7060.c,complete,reconstructed
+data_u8_004B7063,0x004B7063,0xD,src/data/data_u8_004B7063.c,complete,placeholder
 jtbl_004B7070,0x004B7070,0x80,src/data/jtbl_004B7070.c,complete,placeholder
 data_u32_004B70F0,0x004B70F0,0x10,src/data/data_u32_004B70F0.c,complete,placeholder
 jtbl_004B7100,0x004B7100,0x18,src/data/jtbl_004B7100.c,complete,placeholder
