@@ -31,6 +31,17 @@ extern int func_002F2570(u8 *);
 extern int func_002F24E0(u8 *);
 extern int func_002F26A0(u8 *);
 extern int func_002F2710(u8 *);
+extern int func_0025C760(u8 *);
+extern int func_0025C6C0(u8 *);
+extern int func_0025C7D0(u8 *);
+extern int func_0025C620(u8 *);
+extern int func_0025C570(u8 *);
+extern int func_0025C4F0(u8 *);
+extern int func_0025C3B0(u8 *);
+extern int func_0025C450(u8 *);
+extern int func_0025C8C0(u8 *);
+extern int func_0025C860(u8 *);
+extern int func_001891F0(u8 *, int);
 extern int func_00233880(u8 *);
 extern int func_00233640(u8 *);
 extern int func_002336B0(u8 *);
@@ -599,3 +610,26 @@ void func_0023F050(u8 *p)
 }
 void func_0031B330(u8 *p) { if (func_00188690(p)) return; if (func_00188ED0(p)) return; if (func_00188C70(p)) return; if (func_00189130(p)) return; if (func_0031B670(p)) return; if (func_0031B700(p)) return; if (func_0031B410(p)) return; if (func_0031B600(p)) return; if (func_0031B480(p)) return; if (func_0031B800(p)) return; if (func_0031B790(p)) return;func_00187BB0(p); func_00188330(p); }
 void func_003222A0(u8 *p) { if (func_00188690(p)) return; if (func_00188ED0(p)) return; if (func_00188C70(p)) return; if (func_00189130(p)) return; if (func_003225B0(p)) return; if (func_00322650(p)) return; if (func_00322750(p)) return; if (func_003223A0(p)) return; if (func_003224C0(p)) return; if (func_00322440(p)) return; if (func_00322530(p)) return; if (func_003227C0(p)) return; if (func_003226E0(p)) return;func_00187BB0(p); func_00188330(p); }
+
+void func_0025C290(u8 *p)
+{
+    if (func_00188690(p)) return;
+    if (func_00188ED0(p)) return;
+    if (func_00188C70(p)) return;
+    if (func_00189130(p)) return;
+    if (func_0025C760(p)) return;
+    if (func_0025C6C0(p)) return;
+    if (func_0025C7D0(p)) return;
+    if (func_0025C620(p)) return;
+    if (func_0025C570(p)) return;
+    if (func_0025C4F0(p)) return;
+    if (func_0025C3B0(p)) return;
+    if (func_0025C450(p)) return;
+    if (func_0025C8C0(p)) return;
+    if (func_001891F0(p, 11)) {
+        func_0025C860(p);
+        return;
+    }
+    func_00187BB0(p);
+    func_00188330(p);
+}
