@@ -597,3 +597,15 @@ with its recorded O3 recipe. Catalog validation, full hybrid loaded-image
 linkage, and packed retail ELF hashes pass. Totals: 8,798 linked C routines
 and 546,996 / 3,293,696 bytes. Integrated data remains
 53,504 / 648,064 bytes; later worker batches are pending consolidation.
+
+## 2026-10-08 bounded renderer profiles and key data
+
+Added 446 reconstructed initialized-data bytes: directly consumed profile
+float triples/selectors/short defaults, renderer vector rows, bounded
+frame-selected vectors, interpolation key pairs, indexed scalar offsets,
+zero/vector defaults, and timing constants. Only observed ranges and fields
+are typed; all unconsumed profile bytes, skipped table fields, and neighboring
+zero regions stay placeholders. Every changed data owner independently
+compiles and byte-matches retail. Catalog validation, full hybrid loaded
+image, and packed retail ELF hashes pass. Data is now
+53,950 / 648,064 bytes; C stays 546,996 / 3,293,696 bytes.
