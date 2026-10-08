@@ -2291,3 +2291,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/luna_a_effect_initializer.c -c -lang c -O3 -sdatathreshold 0 \
     -o "$BUILD/luna_a_effect_initializer.o"
 "$PYTHON" tools/verify_object.py "$BUILD/luna_a_effect_initializer.o" private/SLUS_204.86.rom --source src/luna_a_effect_initializer.c
+
+"$WIBO" "$SNCPP" -P src/ee96_scalar_thunks.c "$BUILD/ee96_scalar_thunks.i"
+"$PYTHON" tools/compile_ee96.py "$BUILD/ee96_scalar_thunks.i" "$BUILD/ee96_scalar_thunks.s"
+"${AS:-mipsel-linux-gnu-as}" -EL -march=r5900 -mabi=eabi -G0 -o "$BUILD/ee96_scalar_thunks.o" "$BUILD/ee96_scalar_thunks.s"
+"$PYTHON" tools/verify_object.py "$BUILD/ee96_scalar_thunks.o" private/SLUS_204.86.rom --source src/ee96_scalar_thunks.c

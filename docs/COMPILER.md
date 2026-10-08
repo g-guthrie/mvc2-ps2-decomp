@@ -297,3 +297,9 @@ default Docker context is unchanged. `compile_ee96.py` now provides both native 
 paths reproduce all seven wrapper objects exactly. Bootstrap supplies the
 pinned compiler, exports `EE96CC1`, and smoke-tests the compiler/assembler
 pipeline.
+
+Six additional EE96 wrappers have supported signatures: five argument-free
+32-bit scalar getter/counter forwards and one unsigned state setter.
+`ee96_scalar_thunks.c` uses the existing EE96 runner and GNU assembler recipe.
+The generic argument-free wrapper experiment remains uncredited; wrappers
+with unknown signatures need caller/callee argument evidence before adoption.
