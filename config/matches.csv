@@ -8701,3 +8701,4 @@ func_004086B8,0x004086B8,0x14,src/ee96_callback_thunks.c,complete
 func_00410F68,0x00410F68,0x14,src/ee96_callback_thunks.c,complete
 func_002C2C10,0x002C2C10,0x28,src/composite_dispatch_heads.c,complete
 func_0016CE90,0x0016CE90,0x3C,src/luna_a_global_defaults.c,complete
+func_0016D260,0x0016D260,0x3C,src/luna_a_conditional_callbacks.c,complete

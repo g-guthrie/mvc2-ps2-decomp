@@ -2310,3 +2310,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/luna_a_global_defaults.c -c -lang c -O3 -sdatathreshold 0 \
     -o "$BUILD/luna_a_global_defaults.o"
 "$PYTHON" tools/verify_object.py "$BUILD/luna_a_global_defaults.o" private/SLUS_204.86.rom --source src/luna_a_global_defaults.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/luna_a_conditional_callbacks.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/luna_a_conditional_callbacks.o"
+"$PYTHON" tools/verify_object.py "$BUILD/luna_a_conditional_callbacks.o" private/SLUS_204.86.rom --source src/luna_a_conditional_callbacks.c
