@@ -920,3 +920,16 @@ mixed-table bytes and string gaps stay placeholders. Every one of the
 full hybrid linkage, and packed retail ELF hashes pass. Code remains
 554,152 bytes (16.8246%); reconstructed data is 61,597 / 648,064 bytes
 (9.5048%) across 2,042 units.
+
+## 2026-10-08 palette tuples and result labels
+
+Recovered a bounded 20x3 byte palette tuple table (60 bytes), whose
+reader computes index*3 and whose caller scans indices <20. Recovered
+seven directly formatter-consumed result labels/formats (59 bytes),
+including exact payloads plus NUL only. All remaining table bytes,
+neighboring constants, and eight label gaps stay raw placeholders.
+All 18 changed data owners independently compile and byte-match.
+Catalog validation, full hybrid linkage, and packed retail ELF hashes
+pass. C remains 554,152 bytes (16.8246%); reconstructed data is
+61,716 / 648,064 bytes (9.5231%). Native C palette-consumer drafts
+remain uncredited because full compiler matching is not yet achieved.
