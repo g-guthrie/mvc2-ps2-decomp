@@ -522,3 +522,13 @@ placeholder. Every one of the 250 changed data owners was independently
 compiled and compared against retail. Catalog validation, full hybrid loaded
 image, and packed retail ELF hashes pass. Reconstructed data is now
 52,381 / 648,064 bytes; linked C remains 543,216 / 3,293,696 bytes.
+
+## 2026-10-08 owner and attachment callback checkpoint
+
+Added six native routines (764 bytes): a vertical-angle mode callback, paired
+owner boundary callbacks, paired attachment dispatchers, and a chained minor
+action. The complete merged source unit passes independent relocated-byte
+verification. Catalog validation, full hybrid loaded image, and packed retail
+ELF hashes pass. Totals: 8,773 linked C routines and
+543,980 / 3,293,696 code bytes. Integrated reconstructed data remains
+52,381 / 648,064 bytes; later worker batches are pending consolidation.
