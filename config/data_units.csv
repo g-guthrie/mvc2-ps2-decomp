@@ -5530,7 +5530,13 @@ data_u8_004BB646,0x004BB646,0x42,.data,src/data/data_u8_004BB646.c,initialized_b
 data_f32_004BB688,0x004BB688,0x400,.data,src/data/data_f32_004BB688.c,indexed_f32_lookup
 data_f32_004BBA88,0x004BBA88,0x400,.data,src/data/data_f32_004BBA88.c,indexed_f32_lookup
 gAdxRnaStatUnsupported_004BBE88,0x004BBE88,0x21,.data,src/data/gAdxRnaStatUnsupported_004BBE88.c,nul_terminated_message
-data_u8_004BBEA9,0x004BBEA9,0x9F,.data,src/data/data_u8_004BBEA9.c,initialized_byte_array
+data_u8_004BBEA9,0x004BBEA9,0x7,.data,src/data/data_u8_004BBEA9.c,initialized_byte_array
+gAdxStmOpenFnameRangeError_004BBEB0,0x004BBEB0,0x2B,.data,src/data/gAdxStmOpenFnameRangeError_004BBEB0.c,nul_terminated_message
+data_u8_004BBEDB,0x004BBEDB,0x5,.data,src/data/data_u8_004BBEDB.c,initialized_byte_array
+gAdxStmOpenFnameRangeExError_004BBEE0,0x004BBEE0,0x31,.data,src/data/gAdxStmOpenFnameRangeExError_004BBEE0.c,nul_terminated_message
+data_u8_004BBF11,0x004BBF11,0x7,.data,src/data/data_u8_004BBF11.c,initialized_byte_array
+gAdxStmOpenFnameExError_004BBF18,0x004BBF18,0x2A,.data,src/data/gAdxStmOpenFnameExError_004BBF18.c,nul_terminated_message
+data_u8_004BBF42,0x004BBF42,0x6,.data,src/data/data_u8_004BBF42.c,initialized_byte_array
 gAdxRnaTempCountsFormat_004BBF48,0x004BBF48,0x1F,.data,src/data/gAdxRnaTempCountsFormat_004BBF48.c,printf_format_string
 data_u8_004BBF67,0x004BBF67,0x1,.data,src/data/data_u8_004BBF67.c,initialized_byte_array
 gAdxRnaIopTempCountsFormat_004BBF68,0x004BBF68,0x1F,.data,src/data/gAdxRnaIopTempCountsFormat_004BBF68.c,printf_format_string

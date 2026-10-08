@@ -5530,7 +5530,13 @@ data_u8_004BB646,0x004BB646,0x42,src/data/data_u8_004BB646.c,complete,placeholde
 data_f32_004BB688,0x004BB688,0x400,src/data/data_f32_004BB688.c,complete,reconstructed
 data_f32_004BBA88,0x004BBA88,0x400,src/data/data_f32_004BBA88.c,complete,reconstructed
 gAdxRnaStatUnsupported_004BBE88,0x004BBE88,0x21,src/data/gAdxRnaStatUnsupported_004BBE88.c,complete,reconstructed
-data_u8_004BBEA9,0x004BBEA9,0x9F,src/data/data_u8_004BBEA9.c,complete,placeholder
+data_u8_004BBEA9,0x004BBEA9,0x7,src/data/data_u8_004BBEA9.c,complete,placeholder
+gAdxStmOpenFnameRangeError_004BBEB0,0x004BBEB0,0x2B,src/data/gAdxStmOpenFnameRangeError_004BBEB0.c,complete,reconstructed
+data_u8_004BBEDB,0x004BBEDB,0x5,src/data/data_u8_004BBEDB.c,complete,placeholder
+gAdxStmOpenFnameRangeExError_004BBEE0,0x004BBEE0,0x31,src/data/gAdxStmOpenFnameRangeExError_004BBEE0.c,complete,reconstructed
+data_u8_004BBF11,0x004BBF11,0x7,src/data/data_u8_004BBF11.c,complete,placeholder
+gAdxStmOpenFnameExError_004BBF18,0x004BBF18,0x2A,src/data/gAdxStmOpenFnameExError_004BBF18.c,complete,reconstructed
+data_u8_004BBF42,0x004BBF42,0x6,src/data/data_u8_004BBF42.c,complete,placeholder
 gAdxRnaTempCountsFormat_004BBF48,0x004BBF48,0x1F,src/data/gAdxRnaTempCountsFormat_004BBF48.c,complete,reconstructed
 data_u8_004BBF67,0x004BBF67,0x1,src/data/data_u8_004BBF67.c,complete,placeholder
 gAdxRnaIopTempCountsFormat_004BBF68,0x004BBF68,0x1F,src/data/gAdxRnaIopTempCountsFormat_004BBF68.c,complete,reconstructed
