@@ -8752,3 +8752,4 @@ func_003FECA8,0x003FECA8,0x14,src/ee96_cleanup_thunks.c,matching
 func_00401628,0x00401628,0x14,src/ee96_cleanup_thunks.c,matching
 func_003FEAB8,0x003FEAB8,0x14,src/ee96_callback_thunks.c,matching
 func_003FEBF8,0x003FEBF8,0x14,src/ee96_cleanup_thunks.c,matching
+func_003FE5C0,0x003FE5C0,0x14,src/ee96_callback_thunks.c,matching
