@@ -1111,3 +1111,12 @@ code units and three table owners independently byte-verify. All 33
 tests, catalog validation, full hybrid linkage, and packed retail ELF
 hashes pass. These interface corrections add no credit; coverage remains
 16.9904% code and 10.0748% data.
+
+## 2026-10-08 exact callback inventory cleanup
+
+Corrected naming/classification for 34 already-matched callback entries.
+These were existing verified C spans, so no new byte credit is claimed.
+All ten affected or supporting complete source units were freshly
+compiled under their recorded recipes and byte-verified. Catalog
+validation, full hybrid linkage, and packed retail ELF hashes pass.
+Coverage remains 16.9904% code and 10.0748% initialized data.
