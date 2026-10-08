@@ -694,3 +694,16 @@ positioned-motion source unit verifies under MWCCPS2 3.0.3 -O4 -Op
 and packed retail ELF hashes pass. Linked C is 551,156 / 3,293,696
 bytes (16.7337%) across 8,825 functions; reconstructed data remains
 54,630 / 648,064 bytes (8.4297%).
+
+## 2026-10-08 address remapping and signed callback checkpoint
+
+Added the complete 40-byte address remapping leaf func_00102520.
+SN GCC 2.95.2 -O2 -G0 -ffunction-sections produces its exact native C
+object; the recipe is now in the normal compiler runner. Four additional
+state-gated callbacks add 564 exact C bytes under the recorded full-unit
+MWCCPS2 O4/Op recipe. Recovered two bounded stage mapping payloads
+(count byte plus 17 mapping bytes each), totaling 36 data bytes; alignment
+and neighboring fields stay placeholders. All changed data owners verify.
+Catalog validation, full hybrid linkage, and packed retail ELF hashes pass.
+Totals: 8,830 linked C routines, 551,760 code bytes (16.7520%), and
+54,666 reconstructed data bytes (8.4353%) across 1,882 units.
