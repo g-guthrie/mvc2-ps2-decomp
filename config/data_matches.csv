@@ -5428,9 +5428,8 @@ data_u8_004BAC54,0x004BAC54,0x8C,src/data/data_u8_004BAC54.c,complete,placeholde
 data_zero_004BACE0,0x004BACE0,0x10,src/data/data_zero_004BACE0.c,complete,placeholder
 data_u8_004BACF0,0x004BACF0,0x928,src/data/data_u8_004BACF0.c,complete,placeholder
 gAdxRnaInternalError_004BB618,0x004BB618,0x2E,src/data/gAdxRnaInternalError_004BB618.c,complete,reconstructed
-data_u8_004BB646,0x004BB646,0x4A,src/data/data_u8_004BB646.c,complete,placeholder
-data_zero_004BB690,0x004BB690,0x30,src/data/data_zero_004BB690.c,complete,placeholder
-data_u32_004BB6C0,0x004BB6C0,0x10,src/data/data_u32_004BB6C0.c,complete,placeholder
+data_u8_004BB646,0x004BB646,0x42,src/data/data_u8_004BB646.c,complete,placeholder
+data_f32_004BB688,0x004BB688,0x400,src/data/data_f32_004BB688.c,complete,reconstructed
 data_f32_004BBA88,0x004BBA88,0x400,src/data/data_f32_004BBA88.c,complete,reconstructed
 gAdxRnaStatUnsupported_004BBE88,0x004BBE88,0x21,src/data/gAdxRnaStatUnsupported_004BBE88.c,complete,reconstructed
 data_u8_004BBEA9,0x004BBEA9,0x9F,src/data/data_u8_004BBEA9.c,complete,placeholder
