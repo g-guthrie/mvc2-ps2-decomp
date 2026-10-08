@@ -17,6 +17,7 @@ extern void func_00175C00(u8 *, int);
 extern void func_002FE960(u8 *, void *);
 extern void func_0030DA90(u8 *);
 extern void func_002751A0(u8 *);
+extern void func_003067F0(u8 *);
 extern void func_00176160(u8 *, int, int, int);
 extern void func_00183920(u8 *, float *);
 extern u8 D_004D18A0;
@@ -923,6 +924,23 @@ void func_00275120(u8 *p)
     *(float *)(p + 92) = speed;
     *(short *)(p + 28) = 8;
     func_002751A0(p);
+}
+
+void func_00306790(u8 *p)
+{
+    float speed;
+    *(int *)(p + 92) = 0;
+    *(int *)(p + 96) = 0;
+    *(int *)(p + 104) = 0;
+    *(int *)(p + 108) = 0;
+    p[6]++;
+    *(short *)(p + 28) = 20;
+    if (p[486] != 0)
+        speed = -16.6666660308837890625f;
+    else
+        speed = 16.6666660308837890625f;
+    *(float *)(p + 92) = speed;
+    func_003067F0(p);
 }
 
 void func_0022E000(u8 *p)
