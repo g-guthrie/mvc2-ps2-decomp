@@ -1041,3 +1041,12 @@ units independently byte-verify. Catalog validation, full hybrid linkage,
 and packed retail ELF hashes pass. Totals: 8,880 linked C routines and
 558,116 code bytes (16.9450%). Reconstructed data remains 65,071 bytes
 (10.0408%); full decompilation remains incomplete.
+
+## 2026-10-08 packet queue initializer
+
+Recovered the complete 84-byte native C queue initializer 00422CC0.
+MWCCPS2 3.0-011126 O3/sdata0 with supported padloop pragma matches
+the retail loop exactly, and its normal compiler recipe is included.
+Whole-function verification, catalog validation, full hybrid linkage,
+and packed retail ELF hashes pass. Totals: 8,881 linked C routines and
+558,200 code bytes (16.9475%). Data remains 65,071 bytes (10.0408%).
