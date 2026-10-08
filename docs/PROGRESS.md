@@ -1129,3 +1129,13 @@ the full argument-dispatch source unit byte-verifies under the existing
 MWCCPS2 O3/sdata8 recipe. Catalog validation, full hybrid linkage, and
 packed retail ELF hashes pass. Totals: 8,895 linked C routines and
 559,740 code bytes (16.9943%). Data remains 65,291 bytes (10.0748%).
+
+## 2026-10-08 tagged record value writer
+
+Recovered the complete 36-byte native C function 00420B00. Its caller
+supplies the record pointer; observed fields are an output pointer at
+offset0 and signed halfword at0x1C. The original O3/sdata8 compiler
+recipe is included. Whole-function verification, catalog validation,
+full hybrid linkage, and packed retail ELF hashes pass. Totals:
+8,896 linked C routines and 559,776 code bytes (16.9954%). Data remains
+65,291 bytes (10.0748%); full decompilation remains incomplete.
