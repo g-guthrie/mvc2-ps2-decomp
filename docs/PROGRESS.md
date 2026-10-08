@@ -382,3 +382,16 @@ pass direct compiler verification; loaded-image linkage and packed retail ELF
 remain byte-identical. Totals: 8,639 linked C routines and
 533,648 / 3,293,696 bytes, with reconstructed data unchanged at
 42,400 / 648,064 bytes.
+
+## 2026-10-08 runtime field checkpoint
+
+Added thirteen native C routines (524 bytes): a state action callback, three
+packed-field conversions, two global-pair setters, three pointer-table/indexed
+field routines, two initializer variants, and two conditional state helpers.
+All affected units verify exactly; full hybrid and packed ELF hashes pass.
+Totals: 8,652 linked C routines and 534,172 / 3,293,696 bytes; reconstructed
+data remains 42,400 / 648,064 bytes.
+
+Separately, Linux EE GCC 2.96-ee-001003-1 reproduces seven early math wrappers
+(140 bytes) with -O2 -G0 -ffunction-sections. Those private probes remain
+uncredited until the reproducible compiler recipe and linkage are integrated.
