@@ -8641,3 +8641,4 @@ func_00400CE8,0x00400CE8,0xC,src/small_runtime_initializers.c,complete
 func_00400B98,0x00400B98,0x18,src/small_runtime_initializers.c,complete
 func_00400BB8,0x00400BB8,0x10,src/small_runtime_initializers.c,complete
 func_00408EC8,0x00408EC8,0x10,src/small_runtime_initializers.c,complete
+func_001CB150,0x001CB150,0x30,src/luna_a_signed_offset.c,complete
