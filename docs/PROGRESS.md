@@ -1100,3 +1100,14 @@ source unit byte-verifies with the existing O3/sdata0 recipe. Catalog
 validation, full hybrid linkage, and packed retail ELF hashes pass.
 Totals: 8,894 linked C routines, 559,612 code bytes (16.9904%), and
 65,291 reconstructed data bytes (10.0748%).
+
+## 2026-10-08 callback argument-contract follow-up
+
+Corrected fourteen wrappers to the one-pointer contract proven by
+their actual target, removing unsupported unused forwarded arguments.
+Preserved owner context through the second nested dispatch chain and
+aligned the reconstructed handler with its table signature. Five full
+code units and three table owners independently byte-verify. All 33
+tests, catalog validation, full hybrid linkage, and packed retail ELF
+hashes pass. These interface corrections add no credit; coverage remains
+16.9904% code and 10.0748% data.
