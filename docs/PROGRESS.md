@@ -1156,3 +1156,11 @@ motion-speed source unit byte-verifies under its recorded O4/Op/sdata8
 recipe. Catalog validation, full hybrid linkage, and packed retail ELF
 hashes pass. Totals: 8,900 linked C routines and 560,316 code bytes
 (17.0118%). Data remains 65,291 bytes (10.0748%).
+
+## 2026-10-08 child-state propagation callbacks
+
+Added two complete native C callbacks totaling 388 bytes. The full
+argument-dispatch source unit independently byte-verifies under its
+recorded O3/sdata8 recipe. Catalog validation, full hybrid linkage, and
+packed retail ELF hashes pass. Totals: 8,902 linked C routines and
+560,704 code bytes (17.0236%). Data remains 65,291 bytes (10.0748%).
