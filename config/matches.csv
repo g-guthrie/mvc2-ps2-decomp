@@ -8665,3 +8665,4 @@ func_00117430,0x00117430,0x14,src/ee_math_wrappers.c,complete
 func_001CB0A0,0x001CB0A0,0x30,src/luna_a_compare_positions.c,complete
 func_00172D40,0x00172D40,0x40,src/luna_a_global_flag_guard.c,complete
 func_001C4D60,0x001C4D60,0x40,src/luna_a_object_threshold.c,complete
+func_0016A210,0x0016A210,0x40,src/luna_a_mask_lookup.c,complete

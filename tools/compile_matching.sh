@@ -2279,3 +2279,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/luna_a_object_threshold.c -c -lang c -O3 -sdatathreshold 0 \
     -o "$BUILD/luna_a_object_threshold.o"
 "$PYTHON" tools/verify_object.py "$BUILD/luna_a_object_threshold.o" private/SLUS_204.86.rom --source src/luna_a_object_threshold.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/luna_a_mask_lookup.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/luna_a_mask_lookup.o"
+"$PYTHON" tools/verify_object.py "$BUILD/luna_a_mask_lookup.o" private/SLUS_204.86.rom --source src/luna_a_mask_lookup.c
