@@ -4631,7 +4631,9 @@ gPs2SystemText_004AB2D8,0x004AB2D8,0x28,src/data/gPs2SystemText_004AB2D8.c,compl
 gPs2SystemText_004AB300,0x004AB300,0x30,src/data/gPs2SystemText_004AB300.c,complete,reconstructed
 gPs2SystemText_004AB330,0x004AB330,0x2B,src/data/gPs2SystemText_004AB330.c,complete,reconstructed
 data_u8_004AB35B,0x004AB35B,0x25,src/data/data_u8_004AB35B.c,complete,placeholder
-data_zero_004AB380,0x004AB380,0x10,src/data/data_zero_004AB380.c,complete,placeholder
+data_raw_004AB380,0x004AB380,0x8,src/data/data_raw_004AB380.c,complete,placeholder
+gDefaultEmptyPathByte_004AB388,0x004AB388,0x1,src/data/gDefaultEmptyPathByte_004AB388.c,complete,reconstructed
+data_raw_004AB389,0x004AB389,0x7,src/data/data_raw_004AB389.c,complete,placeholder
 data_u8_004AB390,0x004AB390,0x30,src/data/data_u8_004AB390.c,complete,placeholder
 gCdDvdDiagnostic_004AB3C0,0x004AB3C0,0x25,src/data/gCdDvdDiagnostic_004AB3C0.c,complete,reconstructed
 data_u8_004AB3E5,0x004AB3E5,0x3,src/data/data_u8_004AB3E5.c,complete,placeholder

@@ -4631,7 +4631,9 @@ gPs2SystemText_004AB2D8,0x004AB2D8,0x28,.data,src/data/gPs2SystemText_004AB2D8.c
 gPs2SystemText_004AB300,0x004AB300,0x30,.data,src/data/gPs2SystemText_004AB300.c,printf_format_string
 gPs2SystemText_004AB330,0x004AB330,0x2B,.data,src/data/gPs2SystemText_004AB330.c,printf_format_string
 data_u8_004AB35B,0x004AB35B,0x25,.data,src/data/data_u8_004AB35B.c,initialized_byte_array
-data_zero_004AB380,0x004AB380,0x10,.data,src/data/data_zero_004AB380.c,zero_initialized_untyped
+data_raw_004AB380,0x004AB380,0x8,.data,src/data/data_raw_004AB380.c,initialized_byte_array
+gDefaultEmptyPathByte_004AB388,0x004AB388,0x1,.data,src/data/gDefaultEmptyPathByte_004AB388.c,indexed_byte_id
+data_raw_004AB389,0x004AB389,0x7,.data,src/data/data_raw_004AB389.c,initialized_byte_array
 data_u8_004AB390,0x004AB390,0x30,.data,src/data/data_u8_004AB390.c,initialized_byte_array
 gCdDvdDiagnostic_004AB3C0,0x004AB3C0,0x25,.data,src/data/gCdDvdDiagnostic_004AB3C0.c,printf_format_string
 data_u8_004AB3E5,0x004AB3E5,0x3,.data,src/data/data_u8_004AB3E5.c,initialized_byte_array
