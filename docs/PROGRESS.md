@@ -586,3 +586,14 @@ halfwords remain placeholders. Every changed data owner independently compiles
 and byte-matches retail. Catalog validation, full hybrid, and packed retail
 ELF hashes pass. Data totals 53,504 / 648,064 bytes; C stays
 545,608 / 3,293,696 bytes.
+
+## 2026-10-08 signed motion-vector callback checkpoint
+
+Added eleven native callbacks (1,388 bytes): signed velocity/vector setup,
+conditional state advance, motion resets, and a signed-result active-object
+gate. The full motion source unit verifies with MWCCPS2 3.0.3
+-O4 -Op -sdatathreshold 0; the signed-result source unit also verifies exactly
+with its recorded O3 recipe. Catalog validation, full hybrid loaded-image
+linkage, and packed retail ELF hashes pass. Totals: 8,798 linked C routines
+and 546,996 / 3,293,696 bytes. Integrated data remains
+53,504 / 648,064 bytes; later worker batches are pending consolidation.
