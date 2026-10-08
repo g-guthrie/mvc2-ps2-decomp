@@ -1164,3 +1164,13 @@ argument-dispatch source unit independently byte-verifies under its
 recorded O3/sdata8 recipe. Catalog validation, full hybrid linkage, and
 packed retail ELF hashes pass. Totals: 8,902 linked C routines and
 560,704 code bytes (17.0236%). Data remains 65,291 bytes (10.0748%).
+
+## 2026-10-08 direct transform and selector scalars
+
+Recovered a directly consumed three-float transform vector and eight
+individually accessed byte fields, adding 20 initialized-data bytes.
+Only the observed scalar widths count; every neighboring gap and
+unbounded lookup region stays explicitly placeholder-owned. All24
+changed owners compile and byte-match. Catalog validation, full hybrid
+linkage, and packed retail ELF hashes pass. Code remains560,704 bytes
+(17.0236%); data is65,311 bytes(10.0779%) across2,158 reconstructed units.
