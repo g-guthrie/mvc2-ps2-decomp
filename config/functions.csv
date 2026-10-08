@@ -9012,7 +9012,7 @@ func_00270160,0x00270160,0x3C,0x0027019C,code,spimdisasm-explicit-size-before-fi
 func_002701A0,0x002701A0,0x3C,0x002701DC,code,spimdisasm-explicit-size-before-first-data
 func_002701E0,0x002701E0,0x128,0x00270308,code,spimdisasm-explicit-size-before-first-data
 func_00270310,0x00270310,0x20,0x00270330,code,matching-c-head-split
-residual_00270330,0x00270330,0x84,0x002703B4,assembly_residual,verified-boundary-after-matching-head
+func_00270330,0x00270330,0x84,0x002703B4,code,typed-callback-table-entry
 func_002703C0,0x002703C0,0xBC,0x0027047C,code,spimdisasm-explicit-size-before-first-data
 func_00270480,0x00270480,0x7C,0x002704FC,code,spimdisasm-explicit-size-before-first-data
 func_00270500,0x00270500,0x20,0x00270520,code,matching-c-head-split

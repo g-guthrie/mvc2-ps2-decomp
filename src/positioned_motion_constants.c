@@ -423,3 +423,23 @@ void func_00282FD0(u8 *p)
         *(float *)(p + 92) = speed;
     }
 }
+
+void func_00270330(u8 *p)
+{
+    float speed;
+    func_00175700(p);
+    if (!*(signed char *)(p + 337)) {
+        p[6]++;
+        *(volatile int *)(p + 92) = 0;
+        *(volatile int *)(p + 96) = 0;
+        *(volatile int *)(p + 104) = 0;
+        *(volatile int *)(p + 108) = 0;
+        if (p[486] != 0)
+            speed = 16.666666f;
+        else
+            speed = -16.666666f;
+        *(float *)(p + 92) = speed;
+        *(float *)(p + 104) = 0.0f;
+        *(short *)(p + 30) = 20;
+    }
+}
