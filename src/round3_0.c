@@ -352,6 +352,21 @@ void func_002F0BE0(u8 *p) {
     func_002F0C50(p);
 }
 
+extern void func_0018C4B0(u8 *, int);
+void func_002E6950(u8 *p) {
+    p[6]++;
+    *(f32 *)(p + 56) = *(f32 *)(p + 1072);
+    p[525] = 0;
+    I(p, 92) = 0;
+    I(p, 96) = 0;
+    I(p, 104) = 0;
+    I(p, 108) = 0;
+    func_0018C4B0(p, 5);
+    func_00185490(p);
+    func_00183D10(p);
+    func_001757E0(p, 21, 12);
+}
+
 extern void func_001266A0(u8 *, int, int);
 void func_002A66F0(u8 *p) {
     func_00175700(p);
