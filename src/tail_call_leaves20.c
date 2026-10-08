@@ -10,6 +10,7 @@ extern void func_0011D8F8();
 extern void func_003DCDC0();
 extern void func_003F5270();
 extern void func_00239A90(u8 *);
+extern void func_00274730(u8 *);
 
 void func_003BD7F0(void *p, u8 *unused) { func_00175C00(*(void **)((u8 *)p + 208), 1); }
 
@@ -36,4 +37,12 @@ void func_00239A70(u8 *p) {
     *(s32 *)(p + 92) = 0;
     *(s32 *)(p + 104) = 0;
     func_00239A90(p);
+}
+
+void func_00274710(u8 *p) {
+    p[7] = 1;
+    *(s32 *)(p + 720) = 0;
+    *(s32 *)(p + 724) = 0;
+    *(s16 *)(p + 28) = 0;
+    func_00274730(p);
 }
