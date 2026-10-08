@@ -2385,3 +2385,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$SNCC1" "$BUILD/address_remap_00102520.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/address_remap_00102520.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/address_remap_00102520.o" "$BUILD/address_remap_00102520.s"
 "$PYTHON" tools/verify_object.py "$BUILD/address_remap_00102520.o" private/SLUS_204.86.rom --source src/address_remap_00102520.c
+
+"$WIBO" "$SNCPP" -P src/bounded_lookup_00102580.c "$BUILD/bounded_lookup_00102580.i"
+"$WIBO" "$SNCC1" "$BUILD/bounded_lookup_00102580.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/bounded_lookup_00102580.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/bounded_lookup_00102580.o" "$BUILD/bounded_lookup_00102580.s"
+"$PYTHON" tools/verify_object.py "$BUILD/bounded_lookup_00102580.o" private/SLUS_204.86.rom --source src/bounded_lookup_00102580.c

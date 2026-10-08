@@ -718,3 +718,18 @@ verifies with MWCCPS2 3.0.3 -O4 -Op -sdatathreshold 0. Catalog validation,
 full hybrid linkage, and packed retail ELF hashes pass. Totals:
 8,831 linked C routines and 551,868 / 3,293,696 bytes (16.7553%);
 reconstructed data remains 54,666 / 648,064 bytes (8.4353%).
+
+## 2026-10-08 bounded lookup and UI byte fields
+
+Recovered the complete 40-byte bounded lookup func_00102580 with SN GCC
+2.95.2 -O2 -G0 -ffunction-sections; its recipe is in the normal runner.
+Renamed three already-exact motion table entries from residual symbols
+to their function names and corrected manifest classifications, with no
+additional byte credit; the entire changed source object verifies.
+Recovered only sixteen consumed byte fields from the UI ID table.
+The selector mask bounds indices to 0..15 and the reader uses lbu at
+stride four; all 48 upper bytes remain placeholders. This supersedes
+the unintegrated u32-table proposal. All 33 changed data owners verify.
+Catalog validation, full hybrid linkage, and packed retail ELF hashes
+pass. Totals: 8,832 linked C routines, 551,908 code bytes (16.7565%),
+and 54,682 reconstructed data bytes (8.4377%) across 1,898 units.
