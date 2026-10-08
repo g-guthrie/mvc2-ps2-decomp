@@ -325,3 +325,15 @@ void func_002F1E10(u8 *p)
         func_00178F20(*(u8 **)(p + 476), p);
 }
 
+
+extern int func_00175700(u8 *);
+extern DispatchFn jtbl_0045BB80[];
+
+void func_002F3C70(u8 *p)
+{
+    if (*(short *)(p + 28) == 0)
+        func_00175700(p);
+    else
+        jtbl_0045BB80[p[7]](p);
+}
+
