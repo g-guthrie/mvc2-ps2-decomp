@@ -8730,3 +8730,4 @@ func_002D46B0,0x002D46B0,0x3C,src/command_reset.c,complete
 func_002CE920,0x002CE920,0x64,src/round3_0.c,complete
 func_00270710,0x00270710,0x4C,src/allocator_callbacks.c,complete
 func_002884D0,0x002884D0,0x4C,src/round3_0.c,complete
+func_002E6E60,0x002E6E60,0x54,src/round3_0.c,complete
