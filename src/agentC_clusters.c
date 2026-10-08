@@ -71,6 +71,23 @@ void func_001ED9A0(u8 *p) { INIT_ED930 }
 void func_002D0FD0(u8 *p) { INIT_ED930 }
 void func_002D1040(u8 *p) { INIT_ED930 }
 
+#define INIT_26AD20 \
+    { \
+        s8 v; \
+        p[5] = 0; \
+        p[7] = 0; \
+        p[6] = 0; \
+        v = *(s8 *)(p + 1245); \
+        switch (v) { \
+        case 0: p[509] = 9; p[439] = 0; break; \
+        case 1: p[509] = 0; p[439] = 1; break; \
+        case 2: p[509] = 2; p[439] = 1; break; \
+        } \
+        func_00186A60(p, 21); \
+    }
+
+void func_0026AD20(u8 *p) { INIT_26AD20 }
+
 #define INIT_2734F0 \
     { \
         s8 v; \
