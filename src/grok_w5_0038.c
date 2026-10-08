@@ -20,6 +20,9 @@ typedef struct Event {
 
 extern s32 func_00175700(u8 *);
 extern void func_001757E0(u8 *, s32, s32);
+extern void func_001843A0(u8 *);
+extern void func_00184540(u8 *);
+extern u8 *D_004C28D8;
 extern Event *func_003DA750(s32, s32, s32);
 extern void func_003DAA40(u8 *);
 extern void func_00399BA0(u8 *);
@@ -287,6 +290,25 @@ void func_003981D0(void *arg)
     if (e != 0) {
         e->callback = func_00398220;
         e->arg = arg;
+    }
+}
+
+void func_002C27A0(u8 *p)
+{
+    if ((s8)func_00175700(p) < 0) {
+        if (p[525] != 2) {
+            func_001843A0(p);
+            return;
+        }
+        *(s32 *)(p + 96) = 0;
+        *(s32 *)(p + 108) = 0;
+        func_00184540(p);
+        return;
+    }
+    if ((s8)p[337] != 0) {
+        p[337] = 0;
+        D_004C28D8[3] = 0;
+        func_003981D0(p);
     }
 }
 

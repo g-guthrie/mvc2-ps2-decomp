@@ -11413,8 +11413,7 @@ func_002C2570,0x002C2570,0x28,0x002C2598,code,spimdisasm-explicit-size-before-fi
 func_002C25A0,0x002C25A0,0x24,0x002C25C4,code,spimdisasm-explicit-size-before-first-data
 func_002C25D0,0x002C25D0,0xC0,0x002C2690,code,spimdisasm-explicit-size-before-first-data
 func_002C2690,0x002C2690,0x108,0x002C2798,code,spimdisasm-explicit-size-before-first-data
-func_002C27A0,0x002C27A0,0x84,0x002C2824,code,spimdisasm-explicit-size-before-first-data
-func_002C2824,0x002C2824,0x8,0x002C282C,code,spimdisasm-explicit-size-before-first-data
+func_002C27A0,0x002C27A0,0x8C,0x002C282C,code,compiler-and-table-verified-span
 func_002C2830,0x002C2830,0x20,0x002C2850,code,matching-c-head-split
 residual_002C2850,0x002C2850,0xE8,0x002C2938,assembly_residual,verified-boundary-after-matching-head
 func_002C2940,0x002C2940,0x40,0x002C2980,code,spimdisasm-explicit-size-before-first-data
