@@ -4469,8 +4469,7 @@ data_u32_004B3C1C,0x004B3C1C,0xC,src/data/data_u32_004B3C1C.c,complete,placehold
 data_u32_004B3C28,0x004B3C28,0x1C,src/data/data_u32_004B3C28.c,complete,placeholder
 data_u32_004B3C44,0x004B3C44,0xC,src/data/data_u32_004B3C44.c,complete,placeholder
 data_f32_one_004B3C50,0x004B3C50,0x40,src/data/data_f32_one_004B3C50.c,complete,reconstructed
-data_u32_004B3C90,0x004B3C90,0x4,src/data/data_u32_004B3C90.c,complete,placeholder
-data_u32_004B3C94,0x004B3C94,0xC,src/data/data_u32_004B3C94.c,complete,placeholder
+gMvc2ChildLifeTable_004B3C90,0x004B3C90,0x20,src/data/child_life_table_004B3C90.c,complete,reconstructed
 data_u32_004B3CB0,0x004B3CB0,0x24,src/data/data_u32_004B3CB0.c,complete,placeholder
 data_u32_004B3CD4,0x004B3CD4,0xC,src/data/data_u32_004B3CD4.c,complete,placeholder
 data_u32_004B3CE0,0x004B3CE0,0x1C,src/data/data_u32_004B3CE0.c,complete,placeholder
@@ -4478,8 +4477,7 @@ data_u32_004B3CFC,0x004B3CFC,0xC,src/data/data_u32_004B3CFC.c,complete,placehold
 data_u32_004B3D08,0x004B3D08,0x1C,src/data/data_u32_004B3D08.c,complete,placeholder
 data_u32_004B3D24,0x004B3D24,0xC,src/data/data_u32_004B3D24.c,complete,placeholder
 data_f32_one_004B3D30,0x004B3D30,0x40,src/data/data_f32_one_004B3D30.c,complete,reconstructed
-data_u32_004B3D70,0x004B3D70,0x4,src/data/data_u32_004B3D70.c,complete,placeholder
-data_u32_004B3D74,0x004B3D74,0xC,src/data/data_u32_004B3D74.c,complete,placeholder
+gMvc2ChildLifeTable_004B3D70,0x004B3D70,0x20,src/data/child_life_table_004B3D70.c,complete,reconstructed
 data_u32_004B3D90,0x004B3D90,0x10,src/data/data_u32_004B3D90.c,complete,placeholder
 jtbl_004B3DA0,0x004B3DA0,0x18,src/data/jtbl_004B3DA0.c,complete,placeholder
 data_u32_004B3DC0,0x004B3DC0,0x4,src/data/data_u32_004B3DC0.c,complete,placeholder
@@ -4491,8 +4489,7 @@ data_u32_004B3E3C,0x004B3E3C,0xC,src/data/data_u32_004B3E3C.c,complete,placehold
 data_u32_004B3E48,0x004B3E48,0x1C,src/data/data_u32_004B3E48.c,complete,placeholder
 data_u32_004B3E64,0x004B3E64,0xC,src/data/data_u32_004B3E64.c,complete,placeholder
 data_f32_one_004B3E70,0x004B3E70,0x40,src/data/data_f32_one_004B3E70.c,complete,reconstructed
-data_u32_004B3EB0,0x004B3EB0,0x4,src/data/data_u32_004B3EB0.c,complete,placeholder
-data_u32_004B3EB4,0x004B3EB4,0xC,src/data/data_u32_004B3EB4.c,complete,placeholder
+gMvc2ChildLifeTable_004B3EB0,0x004B3EB0,0x20,src/data/child_life_table_004B3EB0.c,complete,reconstructed
 data_u32_004B3ED0,0x004B3ED0,0x24,src/data/data_u32_004B3ED0.c,complete,placeholder
 data_f32_one_004B3EF4,0x004B3EF4,0xC,src/data/data_f32_one_004B3EF4.c,complete,placeholder
 data_u32_004B3F00,0x004B3F00,0x24,src/data/data_u32_004B3F00.c,complete,placeholder

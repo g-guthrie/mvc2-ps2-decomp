@@ -4469,8 +4469,7 @@ data_u32_004B3C1C,0x004B3C1C,0xC,.data,src/data/data_u32_004B3C1C.c,filled_u32_c
 data_u32_004B3C28,0x004B3C28,0x1C,.data,src/data/data_u32_004B3C28.c,initialized_u32_table
 data_u32_004B3C44,0x004B3C44,0xC,.data,src/data/data_u32_004B3C44.c,filled_u32_constant
 data_f32_one_004B3C50,0x004B3C50,0x40,.data,src/data/data_f32_one_004B3C50.c,typed_child_scale_table
-data_u32_004B3C90,0x004B3C90,0x4,.data,src/data/data_u32_004B3C90.c,initialized_u32_table
-data_u32_004B3C94,0x004B3C94,0xC,.data,src/data/data_u32_004B3C94.c,filled_u32_constant
+gMvc2ChildLifeTable_004B3C90,0x004B3C90,0x20,.data,src/data/child_life_table_004B3C90.c,child_lifetime_table
 data_u32_004B3CB0,0x004B3CB0,0x24,.data,src/data/data_u32_004B3CB0.c,initialized_u32_table
 data_u32_004B3CD4,0x004B3CD4,0xC,.data,src/data/data_u32_004B3CD4.c,filled_u32_constant
 data_u32_004B3CE0,0x004B3CE0,0x1C,.data,src/data/data_u32_004B3CE0.c,initialized_u32_table
@@ -4478,8 +4477,7 @@ data_u32_004B3CFC,0x004B3CFC,0xC,.data,src/data/data_u32_004B3CFC.c,filled_u32_c
 data_u32_004B3D08,0x004B3D08,0x1C,.data,src/data/data_u32_004B3D08.c,initialized_u32_table
 data_u32_004B3D24,0x004B3D24,0xC,.data,src/data/data_u32_004B3D24.c,filled_u32_constant
 data_f32_one_004B3D30,0x004B3D30,0x40,.data,src/data/data_f32_one_004B3D30.c,typed_child_scale_table
-data_u32_004B3D70,0x004B3D70,0x4,.data,src/data/data_u32_004B3D70.c,initialized_u32_table
-data_u32_004B3D74,0x004B3D74,0xC,.data,src/data/data_u32_004B3D74.c,filled_u32_constant
+gMvc2ChildLifeTable_004B3D70,0x004B3D70,0x20,.data,src/data/child_life_table_004B3D70.c,child_lifetime_table
 data_u32_004B3D90,0x004B3D90,0x10,.data,src/data/data_u32_004B3D90.c,initialized_u32_table
 jtbl_004B3DA0,0x004B3DA0,0x18,.rodata,src/data/jtbl_004B3DA0.c,jump_table
 data_u32_004B3DC0,0x004B3DC0,0x4,.data,src/data/data_u32_004B3DC0.c,initialized_u32_table
@@ -4491,8 +4489,7 @@ data_u32_004B3E3C,0x004B3E3C,0xC,.data,src/data/data_u32_004B3E3C.c,filled_u32_c
 data_u32_004B3E48,0x004B3E48,0x1C,.data,src/data/data_u32_004B3E48.c,initialized_u32_table
 data_u32_004B3E64,0x004B3E64,0xC,.data,src/data/data_u32_004B3E64.c,filled_u32_constant
 data_f32_one_004B3E70,0x004B3E70,0x40,.data,src/data/data_f32_one_004B3E70.c,typed_child_scale_table
-data_u32_004B3EB0,0x004B3EB0,0x4,.data,src/data/data_u32_004B3EB0.c,initialized_u32_table
-data_u32_004B3EB4,0x004B3EB4,0xC,.data,src/data/data_u32_004B3EB4.c,filled_u32_constant
+gMvc2ChildLifeTable_004B3EB0,0x004B3EB0,0x20,.data,src/data/child_life_table_004B3EB0.c,child_lifetime_table
 data_u32_004B3ED0,0x004B3ED0,0x24,.data,src/data/data_u32_004B3ED0.c,initialized_u32_table
 data_f32_one_004B3EF4,0x004B3EF4,0xC,.data,src/data/data_f32_one_004B3EF4.c,filled_f32_one
 data_u32_004B3F00,0x004B3F00,0x24,.data,src/data/data_u32_004B3F00.c,initialized_u32_table
