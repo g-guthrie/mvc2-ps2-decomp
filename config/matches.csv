@@ -8890,3 +8890,4 @@ func_002F1E10,0x002F1E10,0x3C,src/grok_w5_disp.c,complete
 func_002F3C70,0x002F3C70,0x50,src/grok_w5_disp.c,complete
 func_002F3CC0,0x002F3CC0,0x60,src/grok_w5_disp.c,complete
 func_002F3D60,0x002F3D60,0x5C,src/grok_w5_disp.c,complete
+func_002F5CC0,0x002F5CC0,0x70,src/motion_speed_transition.c,complete

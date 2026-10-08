@@ -200,3 +200,20 @@ void func_002F1060(u8 *p)
     ((s16 *)(D_004C2794 + 124))[p[2]]++;
     func_001757E0(p, 20, 6);
 }
+
+extern int func_00175700(u8 *);
+extern void func_001843A0(u8 *);
+void func_002F5CC0(u8 *p)
+{
+    if (p[6] == 0) {
+        p[6]++;
+        func_001757E0(p, 21, 56);
+        *(u32 *)(p + 92) = 0;
+        *(u32 *)(p + 96) = 0;
+        *(u32 *)(p + 104) = 0;
+        *(u32 *)(p + 108) = 0;
+    } else if ((signed char)func_00175700(p) < 0) {
+        func_001843A0(p);
+    }
+}
+
