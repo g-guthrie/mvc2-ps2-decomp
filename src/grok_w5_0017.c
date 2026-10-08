@@ -26,7 +26,7 @@ extern void func_00176AB0(u8 *);
 extern s32 func_00175700(u8 *);
 extern void func_00186CE0(u8 *, s32);
 extern void func_00172320(s32);
-extern void func_001757E0(u8 *, s32, s32);
+extern int func_001757E0(u8 *, int, int);
 
 #define F(p, o) (*(f32 *)((u8 *)(p) + (o)))
 #define I(p, o) (*(s32 *)((u8 *)(p) + (o)))

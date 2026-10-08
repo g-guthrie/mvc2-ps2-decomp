@@ -6,7 +6,7 @@ extern void func_0019A000(u8 *);
 extern void func_001AFCA0(u8 *);
 extern void func_001754A0(s8 *, int, int);
 extern void func_003DAA40(u8 *);
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
 extern void func_001A8A10(u8 *);
 
 void func_00199FF0(u8 *p) { p[4] = 3; p[316] = 0; func_0019A000(p); }

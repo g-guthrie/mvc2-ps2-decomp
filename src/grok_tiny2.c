@@ -6,7 +6,7 @@ extern s32 func_00119AB8(void);
 extern void func_00423750(void);
 extern void func_00184540(u8 *);
 extern void func_001CB5A0(u8 *, s32, s32);
-extern void func_001757E0(u8 *, s32, s32);
+extern int func_001757E0(u8 *, int, int);
 extern void func_00178F20(u8 *, u8 *);
 extern u8 D_0044DAC0[];
 extern u8 D_0044DDA0[];

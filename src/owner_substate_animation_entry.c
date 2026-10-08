@@ -1,5 +1,5 @@
 typedef unsigned char u8;
-extern void func_001757E0(u8 *,int,int);
+extern int func_001757E0(u8 *, int, int);
 void func_0038DDA0(u8 *p) {
  u8 *owner=*(u8 **)(p+0x18);
  u8 *record=owner+0x2b8;

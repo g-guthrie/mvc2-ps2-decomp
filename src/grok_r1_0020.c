@@ -9,7 +9,7 @@ typedef signed int s32;
 #define H(p, o) (*(u16 *)((u8 *)(p) + (o)))
 
 extern int func_00175700(u8 *);
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
 extern void func_00178F20(u8 *, u8 *);
 extern void func_001843A0(u8 *);
 extern void func_00184540(u8 *);

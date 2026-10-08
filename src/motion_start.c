@@ -3,7 +3,7 @@ typedef unsigned char u8;
 typedef unsigned short u16;
 typedef union FloatWord { float value; unsigned int bits; } FloatWord;
 extern void func_00175C00(u8 *,int);
-extern void func_001757E0(u8 *,int,int);
+extern int func_001757E0(u8 *, int, int);
 extern u8 *D_004C2794;
 
 #define MOTION_START(name,y_velocity,command,effect) \

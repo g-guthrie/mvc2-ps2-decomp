@@ -13,7 +13,7 @@ void func_001B8090(u8 *p) {
  }
 }
 
-extern void func_001757E0(u8 *,int,int);
+extern int func_001757E0(u8 *, int, int);
 extern signed char func_00175700(u8 *);
 extern void func_003793F0(u8 *);
 void func_00379190(u8 *p) {

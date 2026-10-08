@@ -13,7 +13,7 @@ extern void func_0015B200(u8 *, u8 *, int, int);
 extern void func_001E3710(u8 *, int);
 extern void func_00152550(u8 *, int);
 extern void func_001E3210(u8 *, int);
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
 
 void func_001C24C0(u8 *p, u8 *q) { func_00175700(p); if (--*(s16 *)(p + 30) == 0) func_001C3A80(p, q); }
 void func_001C26C0(u8 *p, u8 *q) { func_00175700(p); if (--*(s16 *)(p + 30) == 0) func_001C3A80(p, q); }

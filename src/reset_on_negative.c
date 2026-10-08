@@ -6,7 +6,7 @@ extern int func_00175700();
 extern int func_001843A0();
 extern int func_00184540();
 extern void func_00185490(u8 *);
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
 
 void func_00192530(u8 *p) { if ((s8)func_00175700(p) < 0) { *(s32 *)(p + 92) = 0; *(s32 *)(p + 96) = 0; *(s32 *)(p + 104) = 0; *(s32 *)(p + 108) = 0; func_00184540(p); } }
 

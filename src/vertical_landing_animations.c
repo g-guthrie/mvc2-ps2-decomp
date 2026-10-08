@@ -1,7 +1,7 @@
 /* Integrate vertical motion and select the landing animation on contact. */
 typedef unsigned char u8;
 extern void func_00175700(u8 *), func_00183D50(u8 *);
-extern void func_001757E0(u8 *,int,int);
+extern int func_001757E0(u8 *, int, int);
 void func_0023C790(u8 *p) {
     float *velocity, *acceleration;
     float delta;

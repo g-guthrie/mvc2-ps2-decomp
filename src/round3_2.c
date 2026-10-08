@@ -19,7 +19,7 @@ typedef float f32;
     F(p, 92) += F(p, 104);
 
 extern int func_00175700(u8 *);
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
 extern int func_001864A0(u8 *);
 extern void func_001843A0(u8 *);
 extern void func_00186A20(u8 *);

@@ -3,7 +3,7 @@ typedef signed int s32;
 
 extern void func_001E3D20();
 extern void func_001E3710();
-extern void func_001757E0();
+extern int func_001757E0(u8 *, int, int);
 extern void func_001843A0();
 
 void func_001E3CC0(int x) { func_001E3D20(5, x & 255, 8, -1); }

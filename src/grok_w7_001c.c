@@ -24,7 +24,7 @@ typedef struct {
 extern s32 func_00174470(u8 *);
 extern s32 func_001745B0(u8 *);
 extern s8 func_00175700(u8 *);
-extern void func_001757E0(u8 *, s32, s32);
+extern int func_001757E0(u8 *, int, int);
 extern void func_001C48E0(void);
 extern void func_001C0A70(void);
 extern Entry *func_003DA750(s32, s32, s32);

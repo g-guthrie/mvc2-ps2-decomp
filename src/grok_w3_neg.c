@@ -2,7 +2,7 @@ typedef unsigned char u8;
 typedef signed char s8;
 
 extern int func_00175700(u8 *);
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
 
 void func_00177B40(u8 *p) {
     if ((s8)func_00175700(p) < 0) {

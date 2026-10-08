@@ -24,7 +24,7 @@ typedef struct {
 
 extern u8 D_0044DDA0[];
 extern u8 D_0044DAC0[];
-extern void func_001757E0(u8 *, s32, s32);
+extern int func_001757E0(u8 *, int, int);
 extern void func_001C5110(u8 *);
 extern s8 func_00175700(u8 *);
 extern void func_001E3240(u8 *, s32);

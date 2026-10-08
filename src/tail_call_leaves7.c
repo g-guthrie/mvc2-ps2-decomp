@@ -7,7 +7,7 @@ extern void func_00179160();
 extern void func_00184540();
 extern void func_001E3210();
 extern void func_001266A0();
-extern void func_001757E0();
+extern int func_001757E0(u8 *, int, int);
 extern void func_0011D8F8();
 
 void func_00212230(u8 *p) { p[700] = 255; func_00175700(p); }

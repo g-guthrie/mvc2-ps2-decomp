@@ -2,7 +2,7 @@
 typedef unsigned char u8;
 typedef struct LaunchRecord { short vx,vy,x,y; u8 animation,event; } LaunchRecord;
 extern u8 *D_004C2794;
-extern void func_001757E0(u8 *,int,int);
+extern int func_001757E0(u8 *, int, int);
 void func_00345CB0(u8 *p,u8 *owner,LaunchRecord *record) {
     int mirrored; float vx,x; unsigned int counter;
     *(float *)(p+0x34)=*(float *)(owner+0x34);

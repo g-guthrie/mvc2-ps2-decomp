@@ -1,7 +1,8 @@
 /* Select a mode/stance move, reset its command, and consume one request nibble. */
 typedef unsigned char u8;
 extern u8 *D_004C2794;
-extern void func_001757E0(u8 *,int,int), func_001E3710(u8 *,int);
+extern int func_001757E0(u8 *, int, int);
+extern void func_001E3710(u8 *,int);
 extern u8 D_00458A00[], D_00458A20[];
 void func_002AC830(u8 *p) {
     short offset = p[0x1fc]*4 + p[0x212]*12;

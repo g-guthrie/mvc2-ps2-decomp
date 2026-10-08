@@ -1,7 +1,7 @@
 typedef unsigned char u8;
 extern int func_00175700();
 extern int func_001864A0();
-extern void func_001757E0();
+extern int func_001757E0(u8 *, int, int);
 extern void func_00183D50();
 #define UPDATE(name) void name(u8 *p) { \
     func_00175700(p); \

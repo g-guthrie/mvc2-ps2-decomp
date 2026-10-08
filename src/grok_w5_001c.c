@@ -34,7 +34,7 @@ typedef struct EventState {
 
 extern s8 func_00175700(u8 *);
 extern s8 func_00175670(u8 *);
-extern void func_001757E0(u8 *, s32, s32);
+extern int func_001757E0(u8 *, int, int);
 extern void func_001754A0(u8 *, s32, s32);
 extern void func_001CF6F0(u8 *);
 extern void func_001C4830(u8 *, s32);

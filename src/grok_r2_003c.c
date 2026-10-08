@@ -22,7 +22,7 @@ extern s16 D_0062C500[];
 extern s16 D_0062C502[];
 extern s16 D_0062C504[];
 
-extern void func_001757E0(u8 *, s32, s32);
+extern int func_001757E0(u8 *, int, int);
 extern void func_003C5780(u8 *);
 extern void func_003F59C0(u8 *, void *);
 extern s32 func_00175700(u8 *);

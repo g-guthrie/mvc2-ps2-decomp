@@ -18,7 +18,7 @@ extern void func_00328EC0(u8 *);
 extern void func_00329510(u8 *);
 extern void func_00329810(u8 *);
 extern int func_00174170(u8 *);
-extern void func_001757E0(u8 *, s32, s32);
+extern int func_001757E0(u8 *, int, int);
 extern u8 *D_004C2840;
 extern u8 D_00583B90[];
 extern s8 D_00583BC7[];

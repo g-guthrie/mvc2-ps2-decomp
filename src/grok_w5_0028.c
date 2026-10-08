@@ -10,7 +10,7 @@ typedef unsigned int u32;
 extern void func_00178F20();
 extern void func_0011D8F8();
 extern s32 func_00175700();
-extern void func_001757E0();
+extern int func_001757E0(u8 *, int, int);
 extern void func_00175C00();
 extern void func_00184540();
 extern s32 func_00176160();

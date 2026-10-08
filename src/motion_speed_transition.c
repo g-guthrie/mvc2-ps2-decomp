@@ -3,7 +3,7 @@ typedef unsigned int u32;
 typedef signed short s16;
 typedef float f32;
 
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
 extern void func_00185490(u8 *);
 extern void func_00183D10(u8 *);
 extern u8 *D_004C2794;

@@ -6,7 +6,7 @@ extern int func_001891F0(u8 *, int);
 extern void func_00182C30(u8 *, int);
 extern void func_00182DB0(u8 *, int);
 extern void func_001266A0(u8 *, int, int);
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
 
 #define INIT_2A0A70 \
     { \

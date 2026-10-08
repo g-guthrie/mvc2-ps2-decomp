@@ -12,7 +12,7 @@ extern void func_001734F0(u8 *);
 extern void func_0018CEA0(u8 *);
 extern void func_00178DA0(u8 *);
 extern void func_00186CE0(u8 *, s32);
-extern void func_001757E0(u8 *, s32, s32);
+extern int func_001757E0(u8 *, int, int);
 extern void func_0018F320(u8 *);
 extern void func_001E3A10(u8 *);
 extern void func_00158C70(u8 *, s32);
