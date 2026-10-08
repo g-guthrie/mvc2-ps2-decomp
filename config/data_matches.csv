@@ -4653,7 +4653,16 @@ jtbl_004B7550,0x004B7550,0x1c,src/data/jtbl_004B7550.c,complete,placeholder
 data_u32_004B7570,0x004B7570,0x80,src/data/data_u32_004B7570.c,complete,placeholder
 jtbl_004B75F0,0x004B75F0,0x18,src/data/jtbl_004B75F0.c,complete,placeholder
 jtbl_004B7610,0x004B7610,0x20,src/data/jtbl_004B7610.c,complete,placeholder
-data_u32_004B7630,0x004B7630,0x850,src/data/data_u32_004B7630.c,complete,placeholder
+data_u32_004B7630,0x004B7630,0x298,src/data/data_u32_004B7630.c,complete,placeholder
+gMvc2RelativeScaleFactors_004B78C8,0x004B78C8,0x8,src/data/relative_scale_factors_004B78C8.c,complete,reconstructed
+gMvc2ScaleRecords_004B78D0,0x004B78D0,0xC0,src/data/relative_records_004B78D0.c,complete,reconstructed
+gMvc2RelativeScaleFactors_004B7990,0x004B7990,0x10,src/data/relative_scale_factors_004B7990.c,complete,reconstructed
+gMvc2ScaleRecords_004B79A0,0x004B79A0,0xC0,src/data/relative_records_004B79A0.c,complete,reconstructed
+gMvc2RelativeScaleFactors_004B7A60,0x004B7A60,0x8,src/data/relative_scale_factors_004B7A60.c,complete,reconstructed
+data_u32_004B7A68,0x004B7A68,0x8,src/data/data_u32_004B7A68.c,complete,placeholder
+gMvc2ScaleRecords_004B7A70,0x004B7A70,0xD0,src/data/relative_records_004B7A70.c,complete,reconstructed
+gMvc2RelativeRecords_004B7B40,0x004B7B40,0xE0,src/data/relative_records_004B7B40.c,complete,reconstructed
+gMvc2RelativeRecords_004B7C20,0x004B7C20,0x260,src/data/relative_records_004B7C20.c,complete,reconstructed
 data_zero_004B7E80,0x004B7E80,0x20,src/data/data_zero_004B7E80.c,complete,placeholder
 data_u32_004B7EA0,0x004B7EA0,0x44,src/data/data_u32_004B7EA0.c,complete,placeholder
 jtbl_004B7EE4,0x004B7EE4,0x10,src/data/jtbl_004B7EE4.c,complete,placeholder
