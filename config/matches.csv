@@ -8653,3 +8653,5 @@ func_00409AC8,0x00409AC8,0x14,src/runtime_state_slots.c,matching
 func_0040EF70,0x0040EF70,0x14,src/indexed_pointer_accessors.c,matching
 func_0040EF88,0x0040EF88,0x14,src/indexed_pointer_accessors.c,matching
 func_0040FCE8,0x0040FCE8,0x18,src/indexed_pointer_accessors.c,matching
+func_004052C0,0x004052C0,0x18,src/small_runtime_initializers.c,matching
+func_004044B0,0x004044B0,0x18,src/small_runtime_initializers.c,matching
