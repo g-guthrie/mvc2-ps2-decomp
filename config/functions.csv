@@ -12393,7 +12393,7 @@ residual_002E5CDC,0x002E5CDC,0xC8,0x002E5DA4,assembly_residual,verified-boundary
 func_002E5DB0,0x002E5DB0,0x110,0x002E5EC0,code,spimdisasm-explicit-size-before-first-data
 func_002E5EC0,0x002E5EC0,0x20,0x002E5EE0,code,matching-c-head-split
 func_002E5EE0,0x002E5EE0,0x20,0x002E5F00,code,typed-callback-table-entry
-residual_002E5F00,0x002E5F00,0x98,0x002E5F98,assembly_residual,verified-boundary-after-matching-head
+func_002E5F00,0x002E5F00,0x98,0x002E5F98,code,typed-callback-table-entry
 func_002E5FA0,0x002E5FA0,0x20,0x002E5FC0,code,matching-c-head-split
 residual_002E5FC0,0x002E5FC0,0x78,0x002E6038,assembly_residual,verified-boundary-after-matching-head
 func_002E6040,0x002E6040,0x8C,0x002E60CC,code,spimdisasm-explicit-size-before-first-data
