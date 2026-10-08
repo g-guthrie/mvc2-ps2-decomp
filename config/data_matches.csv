@@ -706,9 +706,9 @@ gMvc2ScaleKeys_004449B0,0x004449B0,0x10,src/data/scale_keys_004449B0.c,complete,
 gMvc2ScaleKeys_004449C0,0x004449C0,0xA0,src/data/scale_keys_004449C0.c,complete,reconstructed
 data_f32_one_00444A60,0x00444A60,0x10,src/data/data_f32_one_00444A60.c,complete,placeholder
 data_u32_00444A70,0x00444A70,0x8,src/data/data_u32_00444A70.c,complete,placeholder
-data_u32_00444A78,0x00444A78,0xC,src/data/data_u32_00444A78.c,complete,placeholder
+gMvc2ParticleScaleVector_00444A78,0x00444A78,0xC,src/data/particle_scale_vector_00444A78.c,complete,reconstructed
 data_u32_00444A84,0x00444A84,0x4,src/data/data_u32_00444A84.c,complete,placeholder
-data_f32_one_00444A88,0x00444A88,0xC,src/data/data_f32_one_00444A88.c,complete,placeholder
+gMvc2UnitScaleVector_00444A88,0x00444A88,0xC,src/data/unit_scale_vector_00444A88.c,complete,reconstructed
 data_u32_00444A94,0x00444A94,0xC,src/data/data_u32_00444A94.c,complete,placeholder
 jtbl_00444AA0,0x00444AA0,0x2c,src/data/jtbl_00444AA0.c,complete,reconstructed
 data_u32_00444AD0,0x00444AD0,0x20,src/data/data_u32_00444AD0.c,complete,placeholder
