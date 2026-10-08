@@ -1139,3 +1139,12 @@ recipe is included. Whole-function verification, catalog validation,
 full hybrid linkage, and packed retail ELF hashes pass. Totals:
 8,896 linked C routines and 559,776 code bytes (16.9954%). Data remains
 65,291 bytes (10.0748%); full decompilation remains incomplete.
+
+## 2026-10-08 launch initializer callback batch
+
+Added three complete native C callbacks totaling 412 bytes. The full
+fixed-launch source unit independently byte-verifies with its recorded
+MWCCPS2 O3/Op/sdata0 recipe. Catalog validation, full hybrid linkage,
+and packed retail ELF hashes pass. Totals: 8,899 linked C routines and
+560,188 code bytes (17.0079%). Data remains 65,291 bytes (10.0748%).
+The next scheduled publication threshold remains 21.0711% code.
