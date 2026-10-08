@@ -12960,7 +12960,7 @@ residual_002F8470,0x002F8470,0xA4,0x002F8514,assembly_residual,verified-boundary
 func_002F8520,0x002F8520,0xD0,0x002F85F0,code,spimdisasm-explicit-size-before-first-data
 func_002F85F0,0x002F85F0,0x88,0x002F8678,code,spimdisasm-explicit-size-before-first-data
 func_002F8680,0x002F8680,0x20,0x002F86A0,code,matching-c-head-split
-residual_002F86A0,0x002F86A0,0x9C,0x002F873C,assembly_residual,verified-boundary-after-matching-head
+func_002F86A0,0x002F86A0,0x9C,0x002F873C,code,typed-callback-table-entry
 func_002F8740,0x002F8740,0xD0,0x002F8810,code,spimdisasm-explicit-size-before-first-data
 func_002F8810,0x002F8810,0x7C,0x002F888C,code,spimdisasm-explicit-size-before-first-data
 func_002F8890,0x002F8890,0x20,0x002F88B0,code,matching-c-head-split
