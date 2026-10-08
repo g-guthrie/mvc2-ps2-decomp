@@ -34,6 +34,7 @@ func_002CF630,0x002CF630,0x64,src/grok_w7_001e.c,complete
 func_0027AB60,0x0027AB60,0x64,src/grok_w5_001f.c,complete
 func_0027ABD0,0x0027ABD0,0x64,src/grok_w5_001f.c,complete
 func_002EBFF0,0x002EBFF0,0x5C,src/grok_w7_0028.c,complete
+func_0025C120,0x0025C120,0x68,src/stance_restore_transitions.c,complete
 func_002CBC10,0x002CBC10,0x64,src/grok_w6_002a.c,complete
 func_002CBC80,0x002CBC80,0x64,src/grok_w6_002a.c,complete
 func_00232F50,0x00232F50,0x68,src/grok_w3_0031.c,complete
