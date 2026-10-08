@@ -147,5 +147,30 @@ class ProjectTest(unittest.TestCase):
         self.assertEqual(result["measures"]["complete_data"], str(DATA_SIZE))
 
 
+    def test_data_owner_symbols_preserve_suffixed_legacy_labels(self):
+        from pathlib import Path
+        import tempfile
+        from tools.generate_data_symbol_addrs import extract_symbols
+
+        with tempfile.TemporaryDirectory() as tmp:
+            source = Path(tmp) / "pointer.c"
+            source.write_text(
+                "extern unsigned int data_u32_004C2424[];\n"
+                "void *data_ptr_004C2430 = &data_u32_004C2424[1];\n"
+                "extern char gMvc2Scratchpad_70000000[];\n"
+                "extern char jtblTyped_00464100[];\n"
+                "extern void func_00163F40(void);\n"
+                "int ordinary;\n",
+                encoding="utf-8",
+            )
+            self.assertEqual(dict(extract_symbols(source)), {
+                "data_u32_004C2424": 0x004C2424,
+                "data_ptr_004C2430": 0x004C2430,
+                "gMvc2Scratchpad_70000000": 0x70000000,
+                "jtblTyped_00464100": 0x00464100,
+                "func_00163F40": 0x00163F40,
+            })
+
+
 if __name__ == "__main__":
     unittest.main()
