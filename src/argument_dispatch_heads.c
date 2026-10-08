@@ -6,6 +6,7 @@ extern int func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_00126400(void);
 extern void func_00184540(u8 *);
+extern void func_001E3A40(u8 *);
 extern void func_002F6450(u8 *);
 
 extern DispatchFn2 jtbl_0044ABD0[];
@@ -649,6 +650,29 @@ void func_002F6490(u8 *p)
         *(unsigned int *)(*(u8 **)(p + 476) + 456) = (unsigned int)p;
         p[347] = 0;
         func_00126400();
+    }
+}
+
+void func_002F6560(u8 *p)
+{
+    if ((signed char)func_00175700(p) < 0) {
+        func_002F6450(p);
+        return;
+    }
+    if ((signed char)p[337] != 0) {
+        p[337] = 0;
+        if (p[34] & 1) {
+            *(short *)(p + 320) ^= 1;
+            p[486] = (signed char)*(short *)(p + 320);
+        }
+    }
+    if (p[347] != 0) {
+        (*(u8 **)(p + 476))[522] = 11;
+        (*(u8 **)(p + 476))[437] = p[347];
+        *(unsigned int *)(*(u8 **)(p + 476) + 456) = (unsigned int)p;
+        p[347] = 0;
+        func_00126400();
+        func_001E3A40(*(u8 **)(p + 476));
     }
 }
 
