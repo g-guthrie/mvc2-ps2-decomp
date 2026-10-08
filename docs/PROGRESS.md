@@ -565,3 +565,13 @@ and ranges; unsupported neighbors remain raw placeholders. Every changed
 data owner passes independent compiler and byte comparison. Catalog validation,
 full hybrid loaded image, and packed retail ELF hashes pass. Reconstructed
 data is 53,336 / 648,064 bytes; linked C stays 545,320 / 3,293,696 bytes.
+
+## 2026-10-08 signed callbacks and canonical entry labels
+
+Added three native callbacks (288 bytes): signed motion setup, negative-result
+reset logic, and a table-backed signed-result dispatcher. Corrected canonical
+code names for 91 already verified callback wrappers in dispatch, tail, and
+sequential families; those renames add no bytes. Entire affected source units
+pass independent relocated-byte verification. Catalog validation, full hybrid
+loaded-image linkage, and packed retail ELF hashes pass. Totals: 8,787 linked
+C routines and 545,608 / 3,293,696 bytes. Data stays 53,336 / 648,064 bytes.
