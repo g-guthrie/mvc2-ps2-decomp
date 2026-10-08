@@ -2637,3 +2637,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/initialize_dma_context_00420980.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_dma_context_00420980.o" \
     private/SLUS_204.86.rom --source src/initialize_dma_context_00420980.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_negative_action_completions.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/grok_w7_negative_action_completions.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_negative_action_completions.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_negative_action_completions.c
+

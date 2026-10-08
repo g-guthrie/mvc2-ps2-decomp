@@ -8964,3 +8964,5 @@ func_004204C0,0x004204C0,0x9C,src/initialize_backend_004204C0.c,complete
 func_00420340,0x00420340,0xB4,src/initialize_runtime_storage_00420340.c,complete
 func_00420230,0x00420230,0xD8,src/clear_backend_tables_00420230.c,complete
 func_00420980,0x00420980,0x64,src/initialize_dma_context_00420980.c,complete
+func_002E5BF0,0x002E5BF0,0x64,src/grok_w7_negative_action_completions.c,complete
+func_002E5C60,0x002E5C60,0x5C,src/grok_w7_negative_action_completions.c,complete
