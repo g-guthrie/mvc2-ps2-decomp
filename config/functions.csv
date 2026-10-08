@@ -12105,7 +12105,7 @@ func_002DB840,0x002DB840,0x8,0x002DB848,code,spimdisasm-explicit-size-before-fir
 func_002DB850,0x002DB850,0x8,0x002DB858,code,spimdisasm-explicit-size-before-first-data
 func_002DB860,0x002DB860,0x20,0x002DB880,code,matching-c-head-split
 func_002DB880,0x002DB880,0x98,0x002DB918,code,typed-callback-table-entry
-func_002DB920,0x002DB920,0x70,0x002DB990,code,spimdisasm-explicit-size-before-first-data
+func_002DB920,0x002DB920,0x70,0x002DB990,code,typed-callback-table-entry
 func_002DB990,0x002DB990,0x3C,0x002DB9CC,code,spimdisasm-explicit-size-before-first-data
 func_002DB9D0,0x002DB9D0,0x180,0x002DBB50,code,spimdisasm-explicit-size-before-first-data
 func_002DBB50,0x002DBB50,0x20,0x002DBB70,code,matching-c-head-split

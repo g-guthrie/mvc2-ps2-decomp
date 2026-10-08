@@ -13,6 +13,8 @@ extern void func_002DC1B0(u8 *);
 extern void func_00185490(u8 *);
 extern void func_00183D10(u8 *);
 extern void func_00184540(u8 *);
+extern void func_00176160(u8 *, int, int, int);
+extern void func_00183920(u8 *, float *);
 extern u8 D_004D18A0;
 extern void func_002DD930(u8 *);
 
@@ -770,6 +772,19 @@ void func_002DB130(u8 *p)
     *(short *)(p + 28) = timer;
     if (timer < 0)
         func_00184540(p);
+}
+
+void func_002DB920(u8 *p)
+{
+    float args[2] __attribute__((aligned(16)));
+    func_00175700(p);
+    if (*(signed char *)(p + 337)) {
+        p[6]++;
+        func_00176160(p, 2, 10, 1);
+        args[0] = 5.0f;
+        args[1] = 158.571426f;
+        func_00183920(p, args);
+    }
 }
 
 void func_0022E000(u8 *p)
