@@ -656,7 +656,8 @@ data_u32_00443BF0,0x00443BF0,0x8,.data,src/data/data_u32_00443BF0.c,initialized_
 data_f32_one_00443BF8,0x00443BF8,0xC,.data,src/data/data_f32_one_00443BF8.c,filled_f32_one
 data_u32_00443C04,0x00443C04,0xC,.data,src/data/data_u32_00443C04.c,initialized_u32_table
 data_f32_one_00443C10,0x00443C10,0x10,.data,src/data/data_f32_one_00443C10.c,filled_f32_one
-data_u32_00443C20,0x00443C20,0x10,.data,src/data/data_u32_00443C20.c,initialized_u32_table
+data_f32_00443C20,0x00443C20,0xC,.data,src/data/data_f32_00443C20.c,float_vector3
+data_u8_00443C2C,0x00443C2C,0x4,.data,src/data/data_u8_00443C2C.c,initialized_byte_array
 jtbl_00443C30,0x00443C30,0xC,.rodata,src/data/jtbl_00443C30.c,typed_state_callback_table
 data_u32_00443C3C,0x00443C3C,0x4,.data,src/data/data_u32_00443C3C.c,initialized_u32_table
 data_f32_one_00443C40,0x00443C40,0x10,.data,src/data/data_f32_one_00443C40.c,filled_f32_one
