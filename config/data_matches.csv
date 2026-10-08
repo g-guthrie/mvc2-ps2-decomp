@@ -4086,7 +4086,7 @@ data_u32_00476240,0x00476240,0x70,src/data/data_u32_00476240.c,complete,placehol
 jtbl_004762B0,0x004762B0,0x1c,src/data/jtbl_004762B0.c,complete,placeholder
 data_u32_004762D0,0x004762D0,0x10,src/data/data_u32_004762D0.c,complete,placeholder
 data_zero_004762E0,0x004762E0,0x10,src/data/data_zero_004762E0.c,complete,placeholder
-data_u32_004762F0,0x004762F0,0x70,src/data/data_u32_004762F0.c,complete,placeholder
+gMvc2PositionOffsets_004762F0,0x004762F0,0x70,src/data/position_offsets_004762F0.c,complete,reconstructed
 data_zero_00476360,0x00476360,0x20,src/data/data_zero_00476360.c,complete,placeholder
 data_u32_00476380,0x00476380,0x1B0,src/data/data_u32_00476380.c,complete,placeholder
 jtbl_00476530,0x00476530,0x10,src/data/jtbl_00476530.c,complete,reconstructed
