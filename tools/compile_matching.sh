@@ -2644,3 +2644,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/grok_w7_negative_action_completions.o" private/SLUS_204.86.rom \
     --source src/grok_w7_negative_action_completions.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_wait_frame_motion.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_wait_frame_motion.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_wait_frame_motion.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_wait_frame_motion.c
+
