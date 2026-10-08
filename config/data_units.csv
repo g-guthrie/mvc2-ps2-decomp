@@ -6887,7 +6887,9 @@ jtbl_004C1D20,0x004C1D20,0x28,.rodata,src/data/jtbl_004C1D20.c,typed_state_callb
 jtbl_004C1D50,0x004C1D50,0x8,.rodata,src/data/jtbl_004C1D50.c,jump_table
 data_u32_004C1D58,0x004C1D58,0x8,.data,src/data/data_u32_004C1D58.c,initialized_u32_table
 jtbl_004C1D68,0x004C1D68,0x10,.rodata,src/data/jtbl_004C1D68.c,typed_state_callback_table
-jtbl_004C1D7C,0x004C1D7C,0x4c,.rodata,src/data/jtbl_004C1D7C.c,jump_table
+data_s16_004C1D7C,0x004C1D7C,0x2,.rodata,src/data/data_s16_004C1D7C.c,signed_s16_scalar
+data_s16_004C1D7E,0x004C1D7E,0x2,.rodata,src/data/data_s16_004C1D7E.c,signed_s16_scalar
+data_raw_004C1D80,0x004C1D80,0x48,.rodata,src/data/data_raw_004C1D80.c,initialized_byte_array
 jtbl_004C1DD8,0x004C1DD8,0x28,.rodata,src/data/jtbl_004C1DD8.c,typed_state_callback_table
 data_u32_004C1E00,0x004C1E00,0x8,.data,src/data/data_u32_004C1E00.c,initialized_u32_table
 jtbl_004C1E08,0x004C1E08,0x8,.rodata,src/data/jtbl_004C1E08.c,typed_state_callback_table
