@@ -2225,6 +2225,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py "$BUILD/motion_speed_transition.o" private/SLUS_204.86.rom --source src/motion_speed_transition.c
 
 "$WIBO" "$SNCPP" -P src/runtime_state_slots.c "$BUILD/runtime_state_slots.i"
-"$WIBO" "$SNCC1" "$BUILD/runtime_state_slots.i" -O2 -G0 -quiet -o "$BUILD/runtime_state_slots.s"
+"$WIBO" "$SNCC1" "$BUILD/runtime_state_slots.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/runtime_state_slots.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/runtime_state_slots.o" "$BUILD/runtime_state_slots.s"
 "$PYTHON" tools/verify_object.py "$BUILD/runtime_state_slots.o" private/SLUS_204.86.rom --source src/runtime_state_slots.c

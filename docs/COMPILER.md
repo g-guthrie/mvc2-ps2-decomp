@@ -245,8 +245,10 @@ the hybrid linker. This leaves the verified function instructions unchanged.
 
 Nine runtime-global accessors at `0x0040A2A8`, `0x0040A2B8`, `0x0040A2E8`,
 `0x0040CBA0`, `0x0040CBB0`, `0x0040CBC0`, `0x003FD8E0`, `0x00408608`, and
-`0x00408618` match with SN Systems GCC 2.95.2 `-O2 -G0` and its assembler
-`-G0`. Their non-volatile global accesses place the store or load in the `jr`
+`0x00408618` match with SN Systems GCC 2.95.2 `-O2 -G0 -ffunction-sections`
+and its assembler `-G0`. Separate function sections keep the scattered
+retail entries independently placeable in the hybrid link. Their non-volatile
+global accesses place the store or load in the `jr`
 delay slot. The signed-byte accessor at `0x00408608` requires a signed global
 type. Volatile declarations prevent this scheduling and do not match. The
 target addresses are `D_00489018`, `D_0048831C`, `D_004895D0`, `D_004895D4`,
