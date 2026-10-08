@@ -5093,7 +5093,11 @@ gAdxRnaDebugOutputHeader_004BAB80,0x004BAB80,0x1F,.data,src/data/gAdxRnaDebugOut
 data_u8_004BAB9F,0x004BAB9F,0x61,.data,src/data/data_u8_004BAB9F.c,initialized_byte_array
 jtbl_004BAC00,0x004BAC00,0x18,.rodata,src/data/jtbl_004BAC00.c,jump_table
 jtbl_004BAC20,0x004BAC20,0x18,.rodata,src/data/jtbl_004BAC20.c,jump_table
-data_u32_004BAC40,0x004BAC40,0xA0,.data,src/data/data_u32_004BAC40.c,initialized_u32_table
+data_u8_004BAC40,0x004BAC40,0x8,.data,src/data/data_u8_004BAC40.c,initialized_byte_array
+gAdxRnaOutputMode_004BAC48,0x004BAC48,0x3,.data,src/data/gAdxRnaOutputMode_004BAC48.c,stdio_open_mode
+data_u8_004BAC4B,0x004BAC4B,0x5,.data,src/data/data_u8_004BAC4B.c,initialized_byte_array
+gAdxRnaAppendMode_004BAC50,0x004BAC50,0x4,.data,src/data/gAdxRnaAppendMode_004BAC50.c,stdio_open_mode
+data_u8_004BAC54,0x004BAC54,0x8C,.data,src/data/data_u8_004BAC54.c,initialized_byte_array
 data_zero_004BACE0,0x004BACE0,0x10,.data,src/data/data_zero_004BACE0.c,zero_initialized_untyped
 data_u8_004BACF0,0x004BACF0,0x928,.data,src/data/data_u8_004BACF0.c,initialized_byte_array
 gAdxRnaInternalError_004BB618,0x004BB618,0x2E,.data,src/data/gAdxRnaInternalError_004BB618.c,nul_terminated_message
