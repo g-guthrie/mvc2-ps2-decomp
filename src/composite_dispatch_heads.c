@@ -1,5 +1,8 @@
 typedef unsigned char u8;
+typedef unsigned int u32;
 typedef void (*DispatchFn)(u8 *);
+
+extern void func_00239870(u8 *);
 
 extern DispatchFn jtbl_0043E930[];
 extern DispatchFn jtbl_0043E940[];
@@ -2252,6 +2255,15 @@ void func_002381C0(u8 *p) { jtbl_004523E0[p[6]](p); }
 void func_00238FB0(u8 *p) { jtbl_00452400[p[6]](p); }
 
 void func_00239830(u8 *p) { jtbl_00452468[p[6]](p); }
+
+void func_00239850(u8 *p) {
+    p[6]++;
+    *(u32 *)(p + 92) = 0;
+    *(u32 *)(p + 96) = 0;
+    *(u32 *)(p + 104) = 0;
+    *(u32 *)(p + 108) = 0;
+    func_00239870(p);
+}
 
 void func_00239A50(u8 *p) { jtbl_00452478[p[6]](p); }
 

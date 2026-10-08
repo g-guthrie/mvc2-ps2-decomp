@@ -1362,6 +1362,7 @@ func_002395C0,0x002395C0,0x24,src/argument_dispatch_heads.c,complete
 func_002396F0,0x002396F0,0x8,src/simple_leaves.c,complete
 func_00239700,0x00239700,0x2c,src/preaction_dispatch_heads.c,complete
 func_00239830,0x00239830,0x20,src/composite_dispatch_heads.c,complete
+func_00239850,0x00239850,0x20,src/composite_dispatch_heads.c,complete
 func_00239A50,0x00239A50,0x20,src/composite_dispatch_heads.c,complete
 func_00239C70,0x00239C70,0x8,src/simple_leaves.c,complete
 func_0023A5B0,0x0023A5B0,0x20,src/composite_dispatch_heads.c,complete
