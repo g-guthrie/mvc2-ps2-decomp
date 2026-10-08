@@ -4522,9 +4522,8 @@ data_u32_004B41E0,0x004B41E0,0x18,.data,src/data/data_u32_004B41E0.c,initialized
 data_f32_one_004B41F8,0x004B41F8,0x8,.data,src/data/data_f32_one_004B41F8.c,filled_f32_one
 data_f32_one_004B4200,0x004B4200,0x18,.data,src/data/data_f32_one_004B4200.c,filled_f32_one
 data_zero_004B4220,0x004B4220,0x10,.data,src/data/data_zero_004B4220.c,zero_initialized_untyped
-data_u32_004B4230,0x004B4230,0x8,.data,src/data/data_u32_004B4230.c,initialized_u32_table
-data_f32_one_004B4238,0x004B4238,0x8,.data,src/data/data_f32_one_004B4238.c,filled_f32_one
-data_u32_004B4240,0x004B4240,0x20,.data,src/data/data_u32_004B4240.c,initialized_u32_table
+gMvc2IndexedScaleSteps_004B4230,0x004B4230,0x1C,.data,src/data/indexed_scale_table_004B4230.c,indexed_scale_step_table
+data_u32_004B424C,0x004B424C,0x14,.data,src/data/data_u32_004B424C.c,initialized_u32_table
 data_f32_one_004B4260,0x004B4260,0x1C,.data,src/data/data_f32_one_004B4260.c,filled_f32_one
 data_u32_004B4280,0x004B4280,0x10,.data,src/data/data_u32_004B4280.c,initialized_u32_table
 data_f32_one_004B4290,0x004B4290,0x10,.data,src/data/data_f32_one_004B4290.c,filled_f32_one

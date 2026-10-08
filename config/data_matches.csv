@@ -4522,9 +4522,8 @@ data_u32_004B41E0,0x004B41E0,0x18,src/data/data_u32_004B41E0.c,complete,placehol
 data_f32_one_004B41F8,0x004B41F8,0x8,src/data/data_f32_one_004B41F8.c,complete,placeholder
 data_f32_one_004B4200,0x004B4200,0x18,src/data/data_f32_one_004B4200.c,complete,placeholder
 data_zero_004B4220,0x004B4220,0x10,src/data/data_zero_004B4220.c,complete,placeholder
-data_u32_004B4230,0x004B4230,0x8,src/data/data_u32_004B4230.c,complete,placeholder
-data_f32_one_004B4238,0x004B4238,0x8,src/data/data_f32_one_004B4238.c,complete,placeholder
-data_u32_004B4240,0x004B4240,0x20,src/data/data_u32_004B4240.c,complete,placeholder
+gMvc2IndexedScaleSteps_004B4230,0x004B4230,0x1C,src/data/indexed_scale_table_004B4230.c,complete,reconstructed
+data_u32_004B424C,0x004B424C,0x14,src/data/data_u32_004B424C.c,complete,placeholder
 data_f32_one_004B4260,0x004B4260,0x1C,src/data/data_f32_one_004B4260.c,complete,placeholder
 data_u32_004B4280,0x004B4280,0x10,src/data/data_u32_004B4280.c,complete,placeholder
 data_f32_one_004B4290,0x004B4290,0x10,src/data/data_f32_one_004B4290.c,complete,placeholder
