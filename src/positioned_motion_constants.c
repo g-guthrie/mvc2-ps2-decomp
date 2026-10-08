@@ -8,7 +8,8 @@ extern void func_00224120(u8 *);
 extern void func_00224330(u8 *);
 extern void func_001D0F90(u8 *, int, int);
 extern void func_001E3210(u8 *, int);
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
+extern void func_001D8A30(u8 *, u8, u8);
 extern void func_002DC1B0(u8 *);
 extern void func_00185490(u8 *);
 extern void func_00183D10(u8 *);
@@ -203,6 +204,31 @@ void func_002F86A0(u8 *p)
         *(float *)(p + 96) = 6.428571f;
         *(float *)(p + 108) = -0.53571427f;
     }
+}
+
+void func_002F88B0(u8 *p)
+{
+    float horizontalDelta;
+    if (D_004D18A0 < 2) {
+        p[316] = 0;
+        return;
+    }
+    p[6]++;
+    p[316] = 1;
+    if (*(short *)(p + 320) != 0)
+        horizontalDelta = -13.333333015441895f;
+    else
+        horizontalDelta = 13.333333015441895f;
+    *(float *)(p + 52) -= horizontalDelta;
+    *(float *)(p + 56) -= 188.57142639160156f;
+    *(unsigned int *)(p + 92) = 0;
+    *(unsigned int *)(p + 104) = 0;
+    *(unsigned int *)(p + 96) = 0x404DB6DB;
+    *(unsigned int *)(p + 108) = 0x3D4DB6DB;
+    func_001757E0(p, 18, 0);
+    func_001E3210(p, 32);
+    func_001D8A30(p, (u8)0, (u8)0);
+    func_001D8A30(p, (u8)0, (u8)1);
 }
 
 void func_002D2890(u8 *p)
