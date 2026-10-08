@@ -555,3 +555,13 @@ recipes in the build runner. The canonical rename of an existing verified
 verify exactly; catalog, full hybrid, and packed retail ELF hashes pass.
 Totals: 8,784 linked C routines and 545,320 / 3,293,696 bytes. Integrated
 data remains 52,988 / 648,064 bytes.
+
+## 2026-10-08 flag masks and consumed float-vector data
+
+Added 348 reconstructed initialized-data bytes: eight short masks and bounded
+scalar/pair/triple float spans used by movement, interpolation, animation,
+and startup routines. C/assembly reads establish the specific field widths
+and ranges; unsupported neighbors remain raw placeholders. Every changed
+data owner passes independent compiler and byte comparison. Catalog validation,
+full hybrid loaded image, and packed retail ELF hashes pass. Reconstructed
+data is 53,336 / 648,064 bytes; linked C stays 545,320 / 3,293,696 bytes.
