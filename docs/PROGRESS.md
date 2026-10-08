@@ -461,3 +461,22 @@ The actual entries have expected table/call references; e.g. 0x00303000 at
 0x0045CA04 and 0x00302FE4, 0x002C27A0 at 0x004C0DFC, and 0x002C2C40 at
 0x00459B30. Compiler-exact complete spans and these references support the
 existing boundary corrections.
+
+## 2026-10-08 callback and initialized-data checkpoint
+
+Added eleven native callbacks (568 bytes), covering table-verified tail entries,
+view-angle results, command resets, and motion setup. All affected complete
+source units verify exactly.
+
+Added 2,620 reconstructed initialized-data bytes across consumer-backed vector
+pairs/presets, scale arrays and records, relative streams, signed-short value
+tables, position offsets, and boot string payloads. Unsupported prefixes,
+suffixes, inter-pair gaps, and string alignment remain placeholder. The proposed
+288-byte vector bank was reduced to its four consumed 24-byte pairs; the
+224-byte boot pool credits only 184 payload/NUL bytes. These corrected catalogs
+were integrated before reporting progress.
+
+Every changed data owner was independently compiled and compared against
+retail. Generated data-symbol addresses, catalog validation, full hybrid link,
+and packed retail ELF hashes pass. Totals: 8,722 linked C routines,
+539,764 / 3,293,696 C bytes, and 45,020 / 648,064 reconstructed data bytes.
