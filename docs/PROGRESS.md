@@ -1090,3 +1090,13 @@ MWCCPS2 3.0.3 -O4 -Op -sdatathreshold 8. Catalog validation, full
 hybrid linkage, and packed retail ELF hashes pass. Totals: 8,893 linked
 C routines and 559,588 code bytes (16.9897%). Reconstructed data remains
 65,291 bytes (10.0748%); full decompilation remains incomplete.
+
+## 2026-10-08 referenced callback entry boundary
+
+Recovered the complete 24-byte callback 002350D0 from a previously
+oversized residual span. The preceding four-byte alignment padding
+is tracked separately and receives no C credit. Its whole dispatcher
+source unit byte-verifies with the existing O3/sdata0 recipe. Catalog
+validation, full hybrid linkage, and packed retail ELF hashes pass.
+Totals: 8,894 linked C routines, 559,612 code bytes (16.9904%), and
+65,291 reconstructed data bytes (10.0748%).
