@@ -8776,3 +8776,5 @@ func_00308570,0x00308570,0x80,src/round3_0.c,complete
 func_003086F0,0x003086F0,0x80,src/round3_0.c,complete
 func_00258DC0,0x00258DC0,0x7C,src/round3_0.c,complete
 func_002C3640,0x002C3640,0x74,src/grok_w7_002c.c,complete
+func_00279090,0x00279090,0x6C,src/round3_0.c,complete
+func_0027B8E0,0x0027B8E0,0x6C,src/round3_0.c,complete
