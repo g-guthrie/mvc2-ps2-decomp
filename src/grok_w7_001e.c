@@ -92,6 +92,16 @@ void func_002253C0(u8 *p)
     }
 }
 
+void func_002CF630(u8 *p)
+{
+    if (p[6] == 0) {
+        p[6]++;
+        func_001757E0(p, 20, 4);
+    } else if ((s32)func_00175700(p) < 0) {
+        func_001843A0(p);
+    }
+}
+
 void func_001EF620(u8 *p)
 {
     if ((s32)func_00175700(p) < 0)
