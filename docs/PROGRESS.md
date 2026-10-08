@@ -743,3 +743,15 @@ unaligned doubleword pairs and final word copy. SN GCC 2.95.2 -O2 -G0
 included. Catalog validation, full hybrid linkage, and packed retail ELF
 hashes pass. Totals: 8,833 linked C routines, 551,964 code bytes
 (16.7582%), and 54,682 reconstructed data bytes (8.4377%).
+
+## 2026-10-08 bounded UI byte maps
+
+Recovered three 16-byte UI maps and sixteen low-byte fields from a
+four-byte-stride ID table, adding 64 initialized-data bytes. The setup
+paths use func_00220260, whose 0x3C00 bitfield decode returns 0..15;
+one caller additionally masks the stored selector with 0xF. Padding
+remains raw, and B71E0 stays uncredited because its different selector
+range is unknown. All 36 changed data owners byte-verify. All 33 tests,
+catalog validation, full hybrid linkage, and packed retail ELF hashes
+pass. C remains 551,964 bytes (16.7582%); reconstructed data is
+54,746 / 648,064 bytes (8.4476%).
