@@ -2619,3 +2619,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/initialize_backend_004204C0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_backend_004204C0.o" \
     private/SLUS_204.86.rom --source src/initialize_backend_004204C0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_runtime_storage_00420340.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/initialize_runtime_storage_00420340.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_runtime_storage_00420340.o" \
+    private/SLUS_204.86.rom --source src/initialize_runtime_storage_00420340.c
