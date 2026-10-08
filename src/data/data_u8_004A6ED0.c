@@ -1,0 +1,2 @@
+typedef unsigned char u8;
+u8 data_u8_004A6ED0[4] = { 0x00, 0x00, 0x00, 0x00 };
