@@ -1148,3 +1148,11 @@ MWCCPS2 O3/Op/sdata0 recipe. Catalog validation, full hybrid linkage,
 and packed retail ELF hashes pass. Totals: 8,899 linked C routines and
 560,188 code bytes (17.0079%). Data remains 65,291 bytes (10.0748%).
 The next scheduled publication threshold remains 21.0711% code.
+
+## 2026-10-08 fixed-speed transition callback
+
+Added the complete 128-byte native C callback 002F5F50. The full
+motion-speed source unit byte-verifies under its recorded O4/Op/sdata8
+recipe. Catalog validation, full hybrid linkage, and packed retail ELF
+hashes pass. Totals: 8,900 linked C routines and 560,316 code bytes
+(17.0118%). Data remains 65,291 bytes (10.0748%).
