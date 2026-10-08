@@ -316,15 +316,16 @@ EE GCC 2.96 and the same assembler flags. Their targets replace `a0` with a
 fixed selector before calling the shared state handler; that handler reads
 `a0`, ignores the other argument registers, and returns an `s32` status.
 
-Seven EE GCC callback thunks at `0x003FE9B0`, `0x003FECF8`, `0x003FE9C8`,
-`0x003FED10`, `0x004086B8`, `0x00410F68`, and `0x00402818` also match with `-O2 -G0` and
+Eight EE GCC callback thunks at `0x003FE9B0`, `0x003FECF8`, `0x003FE9C8`,
+`0x003FED10`, `0x004086B8`, `0x00410F68`, `0x00402818`, and `0x003FEAB8` also match with `-O2 -G0` and
 the same assembler flags. The callback dispatchers load their argument from
 the GP-relative callback state, so the thunks take no arguments and preserve
 the returned `s32` callback status. `0x00402818` forwards an `s32 (*)(void *)`
 callback and its context pointer to the callback-state installer, as confirmed
-by its caller and the target's indirect-call sequence.
+by its caller and the target's indirect-call sequence. `0x003FEAB8` forwards an
+opaque context pointer to a handler that passes it to a registered callback.
 
-Two no-argument cleanup thunks at `0x00400130` and `0x003FECA8` also match
+Three cleanup thunks at `0x00400130`, `0x003FECA8`, and `0x003FEBF8` also match
 under EE GCC 2.96. Their target bodies only update global runtime state and
 call helpers using global data; neither consumes the caller's argument
 registers. The first is directly invoked as a cleanup step.
