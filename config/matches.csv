@@ -8826,3 +8826,4 @@ func_00423AA0,0x00423AA0,0xD0,src/append_words_00423AA0.c,matching
 func_002EAD40,0x002EAD40,0x80,src/positioned_motion_constants.c,complete
 func_002E1E30,0x002E1E30,0x80,src/positioned_motion_constants.c,complete
 func_002E1FE0,0x002E1FE0,0x88,src/positioned_motion_constants.c,complete
+func_0022E000,0x0022E000,0xAC,src/positioned_motion_constants.c,complete
