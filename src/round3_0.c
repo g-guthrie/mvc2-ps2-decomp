@@ -650,3 +650,19 @@ void func_00303E40(u8 *p, void *q) {
     func_00303EC0(p, q);
 }
 
+
+extern void func_001AFCB0(u8 *, int);
+void func_00258DC0(u8 *p) {
+    p[7]++;
+    func_00175C00(p, 0);
+    I(p, 92) = 0;
+    I(p, 96) = 0;
+    I(p, 104) = 0;
+    I(p, 108) = 0;
+    *(f32 *)(p + 56) = *(f32 *)(p + 1072);
+    p[528] = 0;
+    p[525] = 0;
+    func_001AFCB0(p, 9);
+    func_001AFCB0(p, 6);
+    func_001757E0(p, 19, 4);
+}
