@@ -12682,7 +12682,7 @@ func_002EED40,0x002EED40,0x2C,0x002EED6C,code,spimdisasm-explicit-size-before-fi
 func_002EED70,0x002EED70,0x20,0x002EED90,code,matching-c-head-split
 residual_002EED90,0x002EED90,0x124,0x002EEEB4,assembly_residual,verified-boundary-after-matching-head
 func_002EEEC0,0x002EEEC0,0x20,0x002EEEE0,code,matching-c-head-split
-residual_002EEEE0,0x002EEEE0,0x6C,0x002EEF4C,assembly_residual,verified-boundary-after-matching-head
+func_002EEEE0,0x002EEEE0,0x6C,0x002EEF4C,code,typed-callback-table-entry
 func_002EEF50,0x002EEF50,0x8C,0x002EEFDC,code,spimdisasm-explicit-size-before-first-data
 func_002EEFE0,0x002EEFE0,0x8,0x002EEFE8,code,spimdisasm-explicit-size-before-first-data
 func_002EEFF0,0x002EEFF0,0x20,0x002EF010,code,matching-c-head-split

@@ -704,6 +704,23 @@ void func_002DD890(u8 *p)
     }
 }
 
+void func_002EEEE0(u8 *p)
+{
+    float speed;
+    func_00175700(p);
+    if (!*(signed char *)(p + 337)) {
+        p[6]++;
+        *(short *)(p + 28) = 32;
+        speed = -10.0f;
+        if (p[486] != 0)
+            speed = -speed;
+        *(float *)(p + 92) = speed;
+        *(int *)(p + 104) = 0;
+        *(int *)(p + 96) = 0;
+        *(int *)(p + 108) = 0;
+    }
+}
+
 void func_0022E000(u8 *p)
 {
     float x, y;
