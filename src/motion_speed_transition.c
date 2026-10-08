@@ -316,3 +316,18 @@ void func_002F3EE0(u8 *p)
     }
 }
 
+
+extern void func_002F5FD0(u8 *);
+void func_002F5F50(u8 *p)
+{
+    p[6]++;
+    *(u32 *)(p + 96) = 0x40892492;
+    *(u32 *)(p + 108) = 0xBECDB6DB;
+    *(u32 *)(p + 92) = 0x41555555;
+    *(u32 *)(p + 104) = 0;
+    if (*(s16 *)(p + 320) == 0)
+        *(float *)(p + 92) = -*(float *)(p + 92);
+    func_001757E0(p, 2, 4);
+    func_002F5FD0(p);
+}
+
