@@ -4388,7 +4388,15 @@ data_zero_00479200,0x00479200,0xBF0,src/data/data_zero_00479200.c,complete,place
 data_u32_00479DF0,0x00479DF0,0x10,src/data/data_u32_00479DF0.c,complete,placeholder
 data_zero_00479E00,0x00479E00,0x2810,src/data/data_zero_00479E00.c,complete,placeholder
 data_u32_0047C610,0x0047C610,0x10,src/data/data_u32_0047C610.c,complete,placeholder
-data_zero_0047C620,0x0047C620,0xACC0,src/data/data_zero_0047C620.c,complete,placeholder
+data_zero_0047C620,0x0047C620,0xAC0,src/data/data_zero_0047C620.c,complete,placeholder
+gIoDescriptorWord0_0047D0E0,0x0047D0E0,0x4,src/data/gIoDescriptorWord0_0047D0E0.c,complete,reconstructed
+gIoDescriptorWord1_0047D0E4,0x0047D0E4,0x4,src/data/gIoDescriptorWord1_0047D0E4.c,complete,reconstructed
+data_raw_0047D0E8,0x0047D0E8,0x4,src/data/data_raw_0047D0E8.c,complete,placeholder
+gIoDescriptorWord3_0047D0EC,0x0047D0EC,0x4,src/data/gIoDescriptorWord3_0047D0EC.c,complete,reconstructed
+gIoDescriptorWord4_0047D0F0,0x0047D0F0,0x4,src/data/gIoDescriptorWord4_0047D0F0.c,complete,reconstructed
+gIoDescriptorWord5_0047D0F4,0x0047D0F4,0x4,src/data/gIoDescriptorWord5_0047D0F4.c,complete,reconstructed
+data_raw_0047D0F8,0x0047D0F8,0x4,src/data/data_raw_0047D0F8.c,complete,placeholder
+data_raw_0047D0FC,0x0047D0FC,0xA1E4,src/data/data_raw_0047D0FC.c,complete,placeholder
 data_u32_004872E0,0x004872E0,0x10,src/data/data_u32_004872E0.c,complete,placeholder
 data_raw_004872F0,0x004872F0,0x1,src/data/data_raw_004872F0.c,complete,placeholder
 gSystemModeSelector_004872F1,0x004872F1,0x1,src/data/gSystemModeSelector_004872F1.c,complete,reconstructed
