@@ -2400,3 +2400,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/mmio_exchange_00102898.i" "$BUILD/mmio_exchange_00102898.s"
 "${AS:-mipsel-linux-gnu-as}" -EL -march=r5900 -mabi=eabi -G0 -o "$BUILD/mmio_exchange_00102898.o" "$BUILD/mmio_exchange_00102898.s"
 "$PYTHON" tools/verify_object.py "$BUILD/mmio_exchange_00102898.o" private/SLUS_204.86.rom --source src/mmio_exchange_00102898.c
+
+"$WIBO" "$SNCPP" -P src/float_copy_001037B8.c "$BUILD/float_copy_001037B8.i"
+"$WIBO" "$SNCC1" "$BUILD/float_copy_001037B8.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/float_copy_001037B8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/float_copy_001037B8.o" "$BUILD/float_copy_001037B8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/float_copy_001037B8.o" private/SLUS_204.86.rom --source src/float_copy_001037B8.c

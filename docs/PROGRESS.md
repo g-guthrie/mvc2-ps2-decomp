@@ -778,3 +778,17 @@ full positioned-motion O4/Op recipe. All changed source units byte-verify.
 Catalog validation, full hybrid linkage, and packed retail ELF hashes
 pass. Totals: 8,837 linked C routines and 552,764 / 3,293,696 bytes
 (16.7825%); reconstructed data remains 54,746 bytes (8.4476%).
+
+## 2026-10-08 three-float copy and audio lookup
+
+Recovered the complete 28-byte three-float copy func_001037B8 with
+SN GCC 2.95.2 -O2 -G0 -ffunction-sections and added its runner recipe.
+Renamed an already-exact dispatcher callback without additional credit.
+Recovered the bounded 256-entry float lookup at BBA88 (1,024 bytes).
+The compressed-input lbu bounds indices to 0..255; table values load
+through lwc1 and feed mul.s. The nearby cvt.s.w converts an independent
+block scale, so the initial s32 proposal was corrected to float before
+canonical verification. The changed data object byte-matches retail.
+Catalog validation, full hybrid linkage, and packed retail ELF hashes
+pass. Totals: 8,838 linked C routines, 552,792 code bytes (16.7833%),
+and 55,770 reconstructed data bytes (8.6056%) across 1,918 units.
