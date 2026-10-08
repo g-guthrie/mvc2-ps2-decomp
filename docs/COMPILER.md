@@ -254,3 +254,9 @@ type. Volatile declarations prevent this scheduling and do not match. The
 target addresses are `D_00489018`, `D_0048831C`, `D_004895D0`, `D_004895D4`,
 `D_0047B580`, `D_004872F1`, and `D_00487324`; all nine relocated objects
 compare byte-for-byte with retail.
+
+Five indexed-field accessors at `0x003FF5F0`, `0x00404CA8`, `0x004052F8`,
+`0x00405308`, and `0x0040EE98` also match with SN Systems GCC 2.95.2
+`-O2 -G0 -ffunction-sections`. The two routines that keep the scaled index in
+`a1` express the 32-bit address addition in index-first order; the others use
+byte-pointer arithmetic. Each complete object matches its retail bytes.

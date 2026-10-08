@@ -8614,3 +8614,8 @@ func_003FD8E0,0x003FD8E0,0xC,src/runtime_state_slots.c,matching
 func_00408608,0x00408608,0xC,src/runtime_state_slots.c,matching
 func_00408618,0x00408618,0xC,src/runtime_state_slots.c,matching
 func_00170140,0x00170140,0x1C,src/luna_a_gp_tail.c,complete
+func_003FF5F0,0x003FF5F0,0x10,src/indexed_runtime_accessors.c,matching
+func_00404CA8,0x00404CA8,0x10,src/indexed_runtime_accessors.c,matching
+func_004052F8,0x004052F8,0x10,src/indexed_runtime_accessors.c,matching
+func_00405308,0x00405308,0x10,src/indexed_runtime_accessors.c,matching
+func_0040EE98,0x0040EE98,0x10,src/indexed_runtime_accessors.c,matching
