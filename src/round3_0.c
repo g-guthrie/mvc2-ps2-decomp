@@ -620,6 +620,34 @@ void func_003086F0(u8 *p, void *unused) {
     }
 }
 
+void func_002B6600(u8 *p) {
+    p[6]++;
+    func_00185490(p);
+    func_0018C4B0(p, 32);
+    p[525] = 0;
+    I(p, 92) = 0;
+    I(p, 96) = 0;
+    I(p, 104) = 0;
+    I(p, 108) = 0;
+    if (*(s16 *)(p + 320) != 0) *(s32 *)(p + 92) = 0x40555555;
+    else *(s32 *)(p + 92) = 0xC0555555;
+    func_001757E0(p, 21, 17);
+}
+
+void func_002B67C0(u8 *p) {
+    p[6]++;
+    func_00185490(p);
+    func_0018C4B0(p, 32);
+    p[525] = 0;
+    I(p, 92) = 0;
+    I(p, 96) = 0;
+    I(p, 104) = 0;
+    I(p, 108) = 0;
+    if (*(s16 *)(p + 320) != 0) *(s32 *)(p + 92) = 0xC0555555;
+    else *(s32 *)(p + 92) = 0x40555555;
+    func_001757E0(p, 21, 18);
+}
+
 extern void func_002FEFE0(u8 *, void *);
 extern void func_00303EC0(u8 *, void *);
 void func_002FEF60(u8 *p, void *q) {
