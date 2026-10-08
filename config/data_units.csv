@@ -5142,7 +5142,10 @@ data_u32_004B8E90,0x004B8E90,0x30,.data,src/data/data_u32_004B8E90.c,initialized
 data_zero_004B8EC0,0x004B8EC0,0x10,.data,src/data/data_zero_004B8EC0.c,zero_initialized_untyped
 data_u32_004B8ED0,0x004B8ED0,0x10,.data,src/data/data_u32_004B8ED0.c,initialized_u32_table
 data_zero_004B8EE0,0x004B8EE0,0x30,.data,src/data/data_zero_004B8EE0.c,zero_initialized_untyped
-data_u32_004B8F10,0x004B8F10,0x120,.data,src/data/data_u32_004B8F10.c,initialized_u32_table
+gPressStartDebugLabel_004B8F10,0x004B8F10,0x13,.data,src/data/gPressStartDebugLabel_004B8F10.c,nul_terminated_message
+data_u8_004B8F23,0x004B8F23,0x15,.data,src/data/data_u8_004B8F23.c,initialized_byte_array
+gButtonConfigDebugLabel_004B8F38,0x004B8F38,0xF,.data,src/data/gButtonConfigDebugLabel_004B8F38.c,nul_terminated_message
+data_u8_004B8F47,0x004B8F47,0xE9,.data,src/data/data_u8_004B8F47.c,initialized_byte_array
 data_zero_004B9030,0x004B9030,0x10,.data,src/data/data_zero_004B9030.c,zero_initialized_untyped
 data_u32_004B9040,0x004B9040,0x10,.data,src/data/data_u32_004B9040.c,initialized_u32_table
 data_zero_004B9050,0x004B9050,0x10,.data,src/data/data_zero_004B9050.c,zero_initialized_untyped
