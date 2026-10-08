@@ -5587,7 +5587,8 @@ jtbl_004BF060,0x004BF060,0x1c,src/data/jtbl_004BF060.c,complete,placeholder
 jtbl_004BF080,0x004BF080,0x28,src/data/jtbl_004BF080.c,complete,placeholder
 jtbl_004BF0B0,0x004BF0B0,0x18,src/data/jtbl_004BF0B0.c,complete,placeholder
 jtbl_004BF160,0x004BF160,0x34,src/data/jtbl_004BF160.c,complete,placeholder
-data_u32_004BF1A0,0x004BF1A0,0x40,src/data/data_u32_004BF1A0.c,complete,placeholder
+gTamsoftSoundDriverConnectedFormat_004BF1A0,0x004BF1A0,0x3B,src/data/gTamsoftSoundDriverConnectedFormat_004BF1A0.c,complete,reconstructed
+data_u8_004BF1DB,0x004BF1DB,0x5,src/data/data_u8_004BF1DB.c,complete,placeholder
 data_zero_004BF1E0,0x004BF1E0,0x20,src/data/data_zero_004BF1E0.c,complete,placeholder
 data_u32_004BF200,0x004BF200,0x10,src/data/data_u32_004BF200.c,complete,placeholder
 data_zero_004BF210,0x004BF210,0x70,src/data/data_zero_004BF210.c,complete,placeholder
