@@ -1,5 +1,2 @@
-typedef unsigned int u32;
-u32 data_u32_004C23A0[16] = {
-    0x00000000u, 0x00000010u, 0x00000010u, 0x00000018u, 0xFFFFFFFFu, 0x00000000u, 0x00564443u, 0x00000000u, 
-    0x00545348u, 0x00000000u, 0x00000000u, 0x00000000u, 0x00000001u, 0x00000000u, 0x00000000u, 0x00000000u, 
-};
+/* func_004001BC reads this fixed 32-bit record selector and scales it by 64. */
+unsigned int data_u32_004C23A0[1] = { 0u };
