@@ -4662,8 +4662,12 @@ jtbl_004B7F20,0x004B7F20,0x8,src/data/jtbl_004B7F20.c,complete,placeholder
 data_u32_004B7F28,0x004B7F28,0xE8,src/data/data_u32_004B7F28.c,complete,placeholder
 data_zero_004B8010,0x004B8010,0x22,src/data/data_zero_004B8010.c,complete,placeholder
 data_zero_004B8040,0x004B8040,0x20,src/data/data_zero_004B8040.c,complete,placeholder
-data_u32_004B8060,0x004B8060,0x30,src/data/data_u32_004B8060.c,complete,placeholder
-data_zero_004B8090,0x004B8090,0x10,src/data/data_zero_004B8090.c,complete,placeholder
+gMvc2PresetPosition_004B8060,0x004B8060,0xC,src/data/preset_position_004B8060.c,complete,reconstructed
+data_u32_004B806C,0x004B806C,0x4,src/data/data_u32_004B806C.c,complete,placeholder
+gMvc2PresetPosition_004B8070,0x004B8070,0xC,src/data/preset_position_004B8070.c,complete,reconstructed
+data_u32_004B807C,0x004B807C,0x4,src/data/data_u32_004B807C.c,complete,placeholder
+gMvc2AngleVectorPair_004B8080,0x004B8080,0x18,src/data/angle_effect_vector_pair_004B8080.c,complete,reconstructed
+data_zero_004B8098,0x004B8098,0x8,src/data/data_zero_004B8098.c,complete,placeholder
 gMvc2AngleVectorPair_004B80A0,0x004B80A0,0x18,src/data/angle_effect_vector_pair_004B80A0.c,complete,reconstructed
 data_u32_004B80B8,0x004B80B8,0x18,src/data/data_u32_004B80B8.c,complete,placeholder
 gMvc2AngleVectorPair_004B80D0,0x004B80D0,0x18,src/data/angle_effect_vector_pair_004B80D0.c,complete,reconstructed
