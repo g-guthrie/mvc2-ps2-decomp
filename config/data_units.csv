@@ -3072,7 +3072,9 @@ data_u32_0045EA20,0x0045EA20,0xC,.data,src/data/data_u32_0045EA20.c,filled_u32_c
 data_u32_0045EA2C,0x0045EA2C,0xB4,.data,src/data/data_u32_0045EA2C.c,initialized_u32_table
 data_u32_0045EB00,0x0045EB00,0x4,.data,src/data/data_u32_0045EB00.c,initialized_u32_table
 data_u32_0045EB04,0x0045EB04,0x14,.data,src/data/data_u32_0045EB04.c,filled_u32_constant
-data_u32_0045EB18,0x0045EB18,0x78,.data,src/data/data_u32_0045EB18.c,initialized_u32_table
+data_u32_0045EB18,0x0045EB18,0x30,.data,src/data/data_u32_0045EB18.c,initialized_u32_table
+data_f32_0045EB48,0x0045EB48,0xC,.data,src/data/data_f32_0045EB48.c,float_vector3
+data_u32_0045EB54,0x0045EB54,0x3C,.data,src/data/data_u32_0045EB54.c,initialized_u32_table
 data_f32_one_0045EB90,0x0045EB90,0x8,.data,src/data/data_f32_one_0045EB90.c,filled_f32_one
 data_u32_0045EB98,0x0045EB98,0x1C,.data,src/data/data_u32_0045EB98.c,initialized_u32_table
 data_f32_one_0045EBB4,0x0045EBB4,0x8,.data,src/data/data_f32_one_0045EBB4.c,filled_f32_one
