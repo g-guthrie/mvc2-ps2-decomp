@@ -1050,3 +1050,13 @@ the retail loop exactly, and its normal compiler recipe is included.
 Whole-function verification, catalog validation, full hybrid linkage,
 and packed retail ELF hashes pass. Totals: 8,881 linked C routines and
 558,200 code bytes (16.9475%). Data remains 65,071 bytes (10.0408%).
+
+## 2026-10-08 motion selector and state callbacks
+
+Added seven complete native C callbacks totaling 564 bytes. The three
+complete affected source units byte-verify under their recorded O3/sdata8
+or O4/Op recipes. Additive merge resolution preserved canonical source
+and excluded unrelated stale-branch context. Catalog validation, full
+hybrid linkage, and packed retail ELF hashes pass. Totals: 8,888 linked
+C routines and 558,764 code bytes (16.9647%). Data remains 65,071 bytes
+(10.0408%); full decompilation remains incomplete.
