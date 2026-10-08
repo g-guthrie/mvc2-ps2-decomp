@@ -398,3 +398,13 @@ void func_00290240(u8 *p) {
     func_00290290(p);
 }
 
+extern void func_00383B80(u8 *, int, int);
+void func_00282490(u8 *p) {
+    func_00175700(p);
+    if (*(s8 *)(p + 337)) {
+        p[7]++;
+        *(s16 *)(p + 28) = 240;
+        func_00383B80(p, 6, 0);
+    }
+}
+
