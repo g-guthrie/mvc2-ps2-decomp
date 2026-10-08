@@ -430,3 +430,15 @@ rows. Both compiler and report loaders now reject missing/extra fields before
 status filtering. The regression test covers conflict markers and broken
 CSV rows through both loaders; all 33 tests pass. Valid assembly placeholders
 still remain uncredited.
+
+## 2026-10-08 typed EE thunk and dispatch checkpoint
+
+Added twenty-one native routines (608 bytes): eighteen EE96 wrappers with
+caller/callee-supported argument and return contracts, two selector
+initializers, and a complete state dispatcher. Corrected the dispatch boundary
+to include its full 40-byte body and identified the next callback at 0x002C2C40
+after the 8-byte gap. Entire affected source units pass relocated compiler
+comparisons; full hybrid and packed retail ELF hashes match exactly.
+Totals: 8,697 linked C routines and 536,372 / 3,293,696 bytes. Data remains
+42,400 / 648,064 bytes. The 204-byte restoring-square-root C probe matches
+size but differs in scheduling/register allocation, so remains uncredited.
