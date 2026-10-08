@@ -175,6 +175,14 @@ void func_0027EC60(u8 *p)
     *(int *)(p + 108) = 0;
 }
 
+void func_00231D70(u8 *p)
+{
+    p[437] = (u8)((signed char)p[336] + 81);
+    p[434] = *(unsigned short *)(p + 448) = 0;
+    *(u32 *)(p + 472) = 0;
+    ((s16 *)(D_004C2794 + 124))[p[2]]++;
+}
+
 void func_002F1060(u8 *p)
 {
     p[6]++;

@@ -1094,3 +1094,18 @@ void func_0022E000(u8 *p)
         *(float *)(p + 104) = y;
     }
 }
+
+void func_002304C0(u8 *p)
+{
+    float x = 18.333332061767578125f;
+    float y = -0.833333313465118408203125f;
+    if (*(short *)(p + 320) == 0) {
+        x = -x;
+        y = -y;
+    }
+    *(float *)(p + 92) = x;
+    *(float *)(p + 104) = y;
+    *(unsigned int *)(p + 96) = 0;
+    *(unsigned int *)(p + 108) = 0;
+}
+

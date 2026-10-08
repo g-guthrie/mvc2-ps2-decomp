@@ -8884,3 +8884,5 @@ func_00258630,0x00258630,0x60,src/positioned_motion_constants.c,complete
 func_00234C20,0x00234C20,0x9C,src/positioned_motion_constants.c,complete
 func_00227560,0x00227560,0x74,src/positioned_motion_constants.c,complete
 func_00422CC0,0x00422CC0,0x54,src/init_packet_queue_00422CC0.c,complete
+func_002304C0,0x002304C0,0x40,src/positioned_motion_constants.c,complete
+func_00231D70,0x00231D70,0x3C,src/motion_speed_transition.c,complete
