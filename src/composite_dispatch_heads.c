@@ -3,6 +3,8 @@ typedef unsigned int u32;
 typedef void (*DispatchFn)(u8 *);
 typedef void (*ContextDispatchFn)(u8 *, void *);
 
+extern int func_001757E0(u8 *, int, int);
+
 extern void func_00239870(u8 *);
 
 extern DispatchFn jtbl_0043E930[];
@@ -2237,6 +2239,8 @@ void func_00234790(u8 *p) { jtbl_00452280[p[6]](p); }
 void func_002349A0(u8 *p) { jtbl_00452290[p[6]](p); }
 
 void func_00234B60(u8 *p) { jtbl_004522A0[p[32]](p); }
+
+void func_002350D0(u8 *p) { p[6]++; func_001757E0(p, 18, 4); }
 
 void func_00234C00(u8 *p) { jtbl_004522B0[p[6]](p); }
 
