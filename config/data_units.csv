@@ -5440,7 +5440,10 @@ gAdxDiagnostic_004BAD30,0x004BAD30,0x34,.data,src/data/gAdxDiagnostic_004BAD30.c
 data_u8_004BAD64,0x004BAD64,0x4,.data,src/data/data_u8_004BAD64.c,initialized_byte_array
 gAdxDiagnostic_004BAD68,0x004BAD68,0x20,.data,src/data/gAdxDiagnostic_004BAD68.c,nul_terminated_message
 gAdxDiagnostic_004BAD88,0x004BAD88,0x23,.data,src/data/gAdxDiagnostic_004BAD88.c,nul_terminated_message
-data_u8_004BADAB,0x004BADAB,0x85,.data,src/data/data_u8_004BADAB.c,initialized_byte_array
+data_u8_004BADAB,0x004BADAB,0x5,.data,src/data/data_u8_004BADAB.c,initialized_byte_array
+gAdxTwoPiDouble_004BADB0,0x004BADB0,0x8,.data,src/data/gAdxTwoPiDouble_004BADB0.c,double_constant
+gAdxSignedNibbleTable_004BADB8,0x004BADB8,0x40,.data,src/data/gAdxSignedNibbleTable_004BADB8.c,bounded_s32_lookup
+data_u8_004BADF8,0x004BADF8,0x38,.data,src/data/data_u8_004BADF8.c,initialized_byte_array
 gAdxDiagnostic_004BAE30,0x004BAE30,0x37,.data,src/data/gAdxDiagnostic_004BAE30.c,nul_terminated_message
 data_u8_004BAE67,0x004BAE67,0x1,.data,src/data/data_u8_004BAE67.c,initialized_byte_array
 gAdxDiagnostic_004BAE68,0x004BAE68,0x2A,.data,src/data/gAdxDiagnostic_004BAE68.c,nul_terminated_message

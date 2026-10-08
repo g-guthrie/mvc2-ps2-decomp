@@ -5440,7 +5440,10 @@ gAdxDiagnostic_004BAD30,0x004BAD30,0x34,src/data/gAdxDiagnostic_004BAD30.c,compl
 data_u8_004BAD64,0x004BAD64,0x4,src/data/data_u8_004BAD64.c,complete,placeholder
 gAdxDiagnostic_004BAD68,0x004BAD68,0x20,src/data/gAdxDiagnostic_004BAD68.c,complete,reconstructed
 gAdxDiagnostic_004BAD88,0x004BAD88,0x23,src/data/gAdxDiagnostic_004BAD88.c,complete,reconstructed
-data_u8_004BADAB,0x004BADAB,0x85,src/data/data_u8_004BADAB.c,complete,placeholder
+data_u8_004BADAB,0x004BADAB,0x5,src/data/data_u8_004BADAB.c,complete,placeholder
+gAdxTwoPiDouble_004BADB0,0x004BADB0,0x8,src/data/gAdxTwoPiDouble_004BADB0.c,complete,reconstructed
+gAdxSignedNibbleTable_004BADB8,0x004BADB8,0x40,src/data/gAdxSignedNibbleTable_004BADB8.c,complete,reconstructed
+data_u8_004BADF8,0x004BADF8,0x38,src/data/data_u8_004BADF8.c,complete,placeholder
 gAdxDiagnostic_004BAE30,0x004BAE30,0x37,src/data/gAdxDiagnostic_004BAE30.c,complete,reconstructed
 data_u8_004BAE67,0x004BAE67,0x1,src/data/data_u8_004BAE67.c,complete,placeholder
 gAdxDiagnostic_004BAE68,0x004BAE68,0x2A,src/data/gAdxDiagnostic_004BAE68.c,complete,reconstructed
