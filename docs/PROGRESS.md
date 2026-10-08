@@ -490,3 +490,14 @@ checks. Catalog validation, full loaded-image linkage, and packed retail ELF
 hashes pass. Totals: 8,742 linked C routines and 541,656 / 3,293,696 bytes.
 Reconstructed data remains 45,020 / 648,064 bytes at this integrated checkpoint;
 newer worker data batches remain pending independent integration.
+
+## 2026-10-08 typed runtime and diagnostic string checkpoint
+
+Added thirteen EE96 wrappers (260 bytes) with supported scalar, callback,
+context, cleanup, string, and validation signatures. Their entire source
+units pass relocated-byte comparisons. Added 3,230 referenced startup and
+diagnostic string payload/NUL bytes; unsupported fragments, binary records,
+and every alignment gap remain placeholder. All 176 changed data owners
+were independently compiled and byte-verified. Full hybrid and packed retail
+ELF hashes pass. Totals: 8,755 linked C routines and 541,916 / 3,293,696 code
+bytes; reconstructed data is 48,250 / 648,064 bytes.
