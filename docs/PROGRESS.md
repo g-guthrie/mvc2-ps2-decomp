@@ -575,3 +575,14 @@ sequential families; those renames add no bytes. Entire affected source units
 pass independent relocated-byte verification. Catalog validation, full hybrid
 loaded-image linkage, and packed retail ELF hashes pass. Totals: 8,787 linked
 C routines and 545,608 / 3,293,696 bytes. Data stays 53,336 / 648,064 bytes.
+
+## 2026-10-08 bounded transition and state-default data
+
+Added 168 reconstructed initialized-data bytes: directly loaded transition
+float vectors/scalars, threshold constants, runtime float state values,
+position/state-default shorts, and bounded indexed short values. For the
+index*4 short tables only the LH-consumed halfwords are typed; the other
+halfwords remain placeholders. Every changed data owner independently compiles
+and byte-matches retail. Catalog validation, full hybrid, and packed retail
+ELF hashes pass. Data totals 53,504 / 648,064 bytes; C stays
+545,608 / 3,293,696 bytes.
