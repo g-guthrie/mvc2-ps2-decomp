@@ -8717,3 +8717,4 @@ func_003F3C40,0x003F3C40,0x384,src/matrix_multiply_003F3C40.c,complete
 func_00243330,0x00243330,0x30,src/positioned_motion_constants.c,complete
 func_00239A70,0x00239A70,0x18,src/tail_call_leaves20.c,complete
 func_00274710,0x00274710,0x18,src/tail_call_leaves20.c,complete
+func_002431F0,0x002431F0,0x20,src/tail_call_leaves20.c,complete
