@@ -945,6 +945,21 @@ void func_00306790(u8 *p)
     func_003067F0(p);
 }
 
+void func_0026E970(u8 *p)
+{
+    float args[2] __attribute__((aligned(16)));
+    p[436] = 10;
+    if (((p[34] << 10) & 0x800) == 0) {
+        *(short *)(p + 320) ^= 1;
+        p[486] ^= 1;
+    }
+    func_0018C6E0(p);
+    func_001757E0(p, 15, 0);
+    args[0] = -83.3333282470703125f;
+    args[1] = 158.5714263916015625f;
+    func_0015D010(p, args);
+}
+
 void func_00261C50(u8 *p)
 {
     float args[2] __attribute__((aligned(16)));
