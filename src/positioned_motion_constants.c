@@ -15,6 +15,7 @@ extern void func_00183D10(u8 *);
 extern void func_00184540(u8 *);
 extern void func_00175C00(u8 *, int);
 extern void func_002FE960(u8 *, void *);
+extern void func_0030DA90(u8 *);
 extern void func_00176160(u8 *, int, int, int);
 extern void func_00183920(u8 *, float *);
 extern u8 D_004D18A0;
@@ -804,6 +805,24 @@ void func_002FE8D0(u8 *p, void *context)
     func_001757E0(p, 22, 3);
     *(short *)(p + 28) = 60;
     func_002FE960(p, context);
+}
+
+void func_0030DA30(u8 *p)
+{
+    float x, y;
+    p[6]++;
+    *(short *)(p + 28) = 16;
+    x = -13.33333301544189453125f;
+    y = 0.4166666567325592f;
+    if (p[486] == 0) {
+        x = -x;
+        y = -y;
+    }
+    *(float *)(p + 92) = x;
+    *(float *)(p + 104) = y;
+    *(int *)(p + 96) = 0;
+    *(int *)(p + 108) = 0;
+    func_0030DA90(p);
 }
 
 void func_0022E000(u8 *p)
