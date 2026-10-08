@@ -8715,3 +8715,4 @@ func_00155960,0x00155960,0xE8,src/luna_a_secondary_particle_initializer.c,comple
 func_00155A50,0x00155A50,0x58,src/luna_a_basic_particle_initializer.c,complete
 func_003F3C40,0x003F3C40,0x384,src/matrix_multiply_003F3C40.c,complete
 func_00243330,0x00243330,0x30,src/positioned_motion_constants.c,complete
+func_00239A70,0x00239A70,0x18,src/tail_call_leaves20.c,complete

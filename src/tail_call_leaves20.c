@@ -9,6 +9,7 @@ extern void func_003C88C0(u8 *);
 extern void func_0011D8F8();
 extern void func_003DCDC0();
 extern void func_003F5270();
+extern void func_00239A90(u8 *);
 
 void func_003BD7F0(void *p, u8 *unused) { func_00175C00(*(void **)((u8 *)p + 208), 1); }
 
@@ -29,3 +30,10 @@ void func_00420970(void *p) { func_0011D8F8(p, 0, 32); }
 void func_003EF980(s32 a, s32 b, s32 c) { func_003DCDC0(b, c, a); }
 
 void func_003F5070(void *p) { func_003F5270(p, 0, 0); }
+
+void func_00239A70(u8 *p) {
+    p[6]++;
+    *(s32 *)(p + 92) = 0;
+    *(s32 *)(p + 104) = 0;
+    func_00239A90(p);
+}
