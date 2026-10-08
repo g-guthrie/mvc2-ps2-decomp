@@ -8822,7 +8822,7 @@ func_002D2A40,0x002D2A40,0x8C,src/positioned_motion_constants.c,complete
 func_00416290,0x00416290,0x1F8,src/tim2_header_writer_00416290.c,complete
 func_002EF010,0x002EF010,0x74,src/positioned_motion_constants.c,complete
 func_002EAB70,0x002EAB70,0x80,src/positioned_motion_constants.c,complete
-func_00423AA0,0x00423AA0,0xD0,src/append_words_00423AA0.c,matching
+func_00423AA0,0x00423AA0,0xD0,src/append_words_00423AA0.c,complete
 func_002EAD40,0x002EAD40,0x80,src/positioned_motion_constants.c,complete
 func_002E1E30,0x002E1E30,0x80,src/positioned_motion_constants.c,complete
 func_002E1FE0,0x002E1FE0,0x88,src/positioned_motion_constants.c,complete

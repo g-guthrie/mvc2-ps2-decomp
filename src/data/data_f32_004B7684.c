@@ -1,4 +1,4 @@
-/* The reader advances through 28-byte records. Initialization and update logic bound its index to 1, 3, 5, and 7, covering this float span. */
+/* The reader advances through 28-byte records. Initialization and update logic bound its index to 1 through 7, covering this float span. */
 typedef float f32;
 f32 data_f32_004B7684[62] = {
     7000.0f, -8000.0f, -7000.0f, 0.0f, -220.0f, 0.0f,

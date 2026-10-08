@@ -670,3 +670,18 @@ All 33 tests, catalog validation, full hybrid loaded-image linkage, and
 packed retail ELF hashes pass. Totals: 8,819 linked C routines and
 550,220 / 3,293,696 code bytes (16.7052%). Reconstructed initialized
 data remains 54,382 / 648,064 bytes (8.3915%).
+
+## 2026-10-08 append-words writer and bounded animation records
+
+Added the complete 208-byte append-words buffer writer at 00423AA0,
+verified with MWCCPS2 3.0.3 -O3 -sdatathreshold 8 and included in the
+normal compiler runner. Four additional table-backed motion callbacks
+add 564 exact C bytes; the entire source unit verifies with O4/Op.
+Recovered 248 initialized-data bytes from a 28-byte-stride float table.
+The initializer sets index 1, the updater stores index+1, and its
+termination check prevents reading index 8: actual read indices are
+1 through 7. Their consumed field-address union supports all 62 words
+without gaps; the prefix and suffix remain placeholders. All changed
+data owners byte-match retail. Catalog validation, full hybrid linkage,
+and packed retail ELF hashes pass. Totals: 8,824 linked C routines,
+550,992 code bytes (16.7287%), and 54,630 data bytes (8.4297%).

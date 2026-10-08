@@ -2376,3 +2376,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/tim2_header_writer_00416290.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/tim2_header_writer_00416290.o"
 "$PYTHON" tools/verify_object.py "$BUILD/tim2_header_writer_00416290.o" private/SLUS_204.86.rom --source src/tim2_header_writer_00416290.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/append_words_00423AA0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/append_words_00423AA0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/append_words_00423AA0.o" private/SLUS_204.86.rom --source src/append_words_00423AA0.c
