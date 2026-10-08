@@ -334,3 +334,7 @@ registers. The first is directly invoked as a cleanup step.
 `func_00400EA8(const char *)` is an EE96 tail thunk to `func_0040ADC8`.
 The target passes the input alongside a static string to a byte/word compare
 routine and returns its nonzero result, supporting a string-pointer argument.
+
+The EE96 thunk at `0x003FEF90` forwards two signed integer coordinates to the
+runtime validator at `0x0040DB10`. Its range checks and global state writes
+support the `s32, s32` signature; the relocated jump matches retail.
