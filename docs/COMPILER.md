@@ -315,3 +315,9 @@ Six no-argument constant-selection thunks at `0x003FE4F8`, `0x003FE510`,
 EE GCC 2.96 and the same assembler flags. Their targets replace `a0` with a
 fixed selector before calling the shared state handler; that handler reads
 `a0`, ignores the other argument registers, and returns an `s32` status.
+
+Six EE GCC callback thunks at `0x003FE9B0`, `0x003FECF8`, `0x003FE9C8`,
+`0x003FED10`, `0x004086B8`, and `0x00410F68` also match with `-O2 -G0` and
+the same assembler flags. The callback dispatchers load their argument from
+the GP-relative callback state, so the thunks take no arguments and preserve
+the returned `s32` callback status.
