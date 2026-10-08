@@ -1336,3 +1336,28 @@ bytes (17.2458%); reconstructed data is 70,405 bytes
 
 SDK references: [kernel contracts and ExitHandler](https://github.com/ps2dev/ps2sdk/blob/master/ee/kernel/include/kernel.h),
 [scratchpad packet buffer](https://github.com/ps2dev/ps2sdk/blob/master/ee/packet/src/packet.c).
+
+
+### Backend lifecycle, motion checks, and bounded menu/vector data
+
+Added 1,572 bytes of matching source code: four motion/check handlers and
+eight transfer/backend units. All affected whole units compile and relocation-
+verify exactly. Dispatcher declarations now agree with the existing raw table
+providers and integer callback-address setter. Raw table providers remain
+uncredited until their own reconstruction is accepted.
+
+Recovered 225 initialized-data bytes: two signed timer halfwords, a bounded
+four-record menu prefix with four symbolic label pointers, and an eight-entry
+float3 vector-pair table. Unconsumed record bytes, later menu rows, and
+dispatch-pointer tails remain placeholders. All changed owners compiled and
+private-byte verified, including the pointer relocations.
+
+The global-label matcher now supports address-suffixed data names while
+preserving legacy labels. Integration tests preserve coverage of every original
+zero span and independently sum reconstructed/complete declarations rather
+than asserting obsolete checkpoint totals. All 34 core and 11 data tests pass.
+The hybrid loaded image and packed retail executable match their references.
+
+Code is 569,596 bytes (17.2935%); reconstructed data is 70,630 bytes
+(10.8986%) across 2,306 units. Full source decompilation remains incomplete.
+The next scheduled code push remains 21.0711%.

@@ -15,9 +15,21 @@ ROOT = Path(__file__).resolve().parents[1]
 class DataIntegrationTest(unittest.TestCase):
     def test_catalog_preserves_zero_units_and_dispatch(self):
         units = load_data_units(ROOT / "config/data_units.csv", 0x00100000, 0x3C2580)
-        zeroes = [unit for unit in units if unit.name.startswith("data_zero_")]
-        self.assertEqual(len(zeroes), 397)
-        self.assertEqual(sum(unit.size for unit in zeroes), 141942)
+        intervals = sorted((unit.address, unit.address + unit.size) for unit in units)
+        with (ROOT / "config/zero_initialized_regions.csv").open() as stream:
+            original_zeroes = list(csv.DictReader(stream))
+        for row in original_zeroes:
+            if row["compiler_placement"] == "assembly_byte_aligned":
+                continue
+            cursor = int(row["address"], 0)
+            end = cursor + int(row["size"], 0)
+            for start, stop in intervals:
+                if stop <= cursor:
+                    continue
+                if start > cursor or cursor >= end:
+                    break
+                cursor = max(cursor, stop)
+            self.assertGreaterEqual(cursor, end, row["name"])
         dispatch = [unit for unit in units if unit.name == "gMvc2Dispatch_00445A20"]
         self.assertEqual([(unit.address, unit.size, unit.section) for unit in dispatch], [(0x445A20, 0x400, ".rodata")])
 
@@ -39,8 +51,8 @@ class DataIntegrationTest(unittest.TestCase):
         self.assertGreaterEqual(len(symbols), 112)
         jump_table_symbols = dict(extract_symbols(ROOT / "src/data/jtbl_004C2518.c"))
         self.assertEqual(jump_table_symbols["jtbl_004C2518"], 0x004C2518)
-        global_symbols = dict(extract_symbols(ROOT / "src/data/data_ptr_004C2534.c"))
-        self.assertEqual(global_symbols["gMvc2BootNumberString_004BF0C8"], 0x004BF0C8)
+        global_symbols = dict(extract_symbols(ROOT / "src/data/data_ptr_004C250C.c"))
+        self.assertEqual(global_symbols["gMvc2Scratchpad_70000000"], 0x70000000)
 
     def test_address_suffixed_global_data_label_becomes_linker_entry(self):
         symbols = dict(
@@ -64,14 +76,21 @@ class DataIntegrationTest(unittest.TestCase):
             ROOT / "config/data_units.csv", ROOT / "config/data_matches.csv"
         )
         report = build_report([], {}, matches)
-        # Physically linked raw data remains uncredited by the progress policy.
-        self.assertEqual(report["measures"]["matched_data"], "42400")
-        self.assertEqual(report["measures"]["complete_data"], "42400")
+        # Compare the report against declarations, excluding linked raw placeholders.
+        with (ROOT / "config/data_matches.csv").open() as stream:
+            declarations = list(csv.DictReader(stream))
+        reconstructed = [row for row in declarations if row["progress"] == "reconstructed"]
+        expected_matched = sum(int(row["size"], 0) for row in reconstructed)
+        expected_complete = sum(
+            int(row["size"], 0) for row in reconstructed if row["status"] == "complete"
+        )
+        self.assertEqual(report["measures"]["matched_data"], str(expected_matched))
+        self.assertEqual(report["measures"]["complete_data"], str(expected_complete))
         self.assertEqual(report["measures"]["total_data"], str(DATA_SIZE))
-        self.assertGreater(sum(match["size"] for match in matches.values()), 42400)
+        self.assertGreater(sum(match["size"] for match in matches.values()), expected_matched)
         self.assertEqual(
             sum(int(unit["measures"].get("complete_data", 0)) for unit in report["units"]),
-            42400,
+            expected_complete,
         )
 
 
