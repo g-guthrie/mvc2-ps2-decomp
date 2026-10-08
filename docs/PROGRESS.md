@@ -1081,3 +1081,12 @@ changed owners independently compile and byte-match. Catalog validation,
 full hybrid linkage, and packed retail ELF hashes pass. Code remains
 558,764 bytes (16.9647%); reconstructed data is 65,291 bytes (10.0748%)
 across 2,149 units.
+
+## 2026-10-08 state-transition callback batch
+
+Added five complete native C callbacks totaling 824 bytes. The full
+motion-speed-transition source unit independently byte-verifies with
+MWCCPS2 3.0.3 -O4 -Op -sdatathreshold 8. Catalog validation, full
+hybrid linkage, and packed retail ELF hashes pass. Totals: 8,893 linked
+C routines and 559,588 code bytes (16.9897%). Reconstructed data remains
+65,291 bytes (10.0748%); full decompilation remains incomplete.
