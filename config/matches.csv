@@ -8713,3 +8713,4 @@ func_0019F950,0x0019F950,0x130,src/luna_a_motion_update.c,complete
 func_00155850,0x00155850,0x10C,src/luna_a_particle_initializer.c,complete
 func_00155960,0x00155960,0xE8,src/luna_a_secondary_particle_initializer.c,complete
 func_00155A50,0x00155A50,0x58,src/luna_a_basic_particle_initializer.c,complete
+func_003F3C40,0x003F3C40,0x384,src/matrix_multiply_003F3C40.c,matching
