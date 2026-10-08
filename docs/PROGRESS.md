@@ -755,3 +755,14 @@ range is unknown. All 36 changed data owners byte-verify. All 33 tests,
 catalog validation, full hybrid linkage, and packed retail ELF hashes
 pass. C remains 551,964 bytes (16.7582%); reconstructed data is
 54,746 / 648,064 bytes (8.4476%).
+
+## 2026-10-08 large motion dispatch callback
+
+Recovered the complete 444-byte native C func_002DA6C0. Its state
+initialization, GP-relative counter update, vector integration, clamp,
+and signed callback transitions compile exactly with MWCCPS2 3.0.3
+-O3 -sdatathreshold 8 in the established grok_w5_0030 unit. The whole
+source unit byte-verifies. Catalog validation, full hybrid linkage, and
+packed retail ELF hashes pass. Totals: 8,834 linked C routines and
+552,408 / 3,293,696 bytes (16.7717%); reconstructed data remains
+54,746 / 648,064 bytes (8.4476%).
