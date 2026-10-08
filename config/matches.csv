@@ -8699,3 +8699,4 @@ func_003FE9C8,0x003FE9C8,0x14,src/ee96_callback_thunks.c,matching
 func_003FED10,0x003FED10,0x14,src/ee96_callback_thunks.c,matching
 func_004086B8,0x004086B8,0x14,src/ee96_callback_thunks.c,matching
 func_00410F68,0x00410F68,0x14,src/ee96_callback_thunks.c,matching
+func_002C2C10,0x002C2C10,0x28,src/composite_dispatch_heads.c,complete

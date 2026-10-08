@@ -2304,5 +2304,5 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/ee96_constant_thunks.
 
 "$WIBO" "$SNCPP" -P src/ee96_callback_thunks.c "$BUILD/ee96_callback_thunks.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/ee96_callback_thunks.i" "$BUILD/ee96_callback_thunks.s"
-"$GNUAS" -EL -march=r5900 -mabi=eabi -G0 -o "$BUILD/ee96_callback_thunks.o" "$BUILD/ee96_callback_thunks.s"
+"${AS:-mipsel-linux-gnu-as}" -EL -march=r5900 -mabi=eabi -G0 -o "$BUILD/ee96_callback_thunks.o" "$BUILD/ee96_callback_thunks.s"
 "$PYTHON" tools/verify_object.py "$BUILD/ee96_callback_thunks.o" private/SLUS_204.86.rom --source src/ee96_callback_thunks.c

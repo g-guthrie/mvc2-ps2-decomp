@@ -819,6 +819,7 @@ extern DispatchFn jtbl_00459A78[];
 extern DispatchFn jtbl_00459AA8[];
 extern DispatchFn jtbl_00459B00[];
 extern DispatchFn jtbl_00459B20[];
+extern DispatchFn jtbl_00459B30[];
 extern DispatchFn jtbl_00459B40[];
 extern DispatchFn jtbl_00459B90[];
 extern DispatchFn jtbl_00459BC0[];
@@ -2973,6 +2974,8 @@ void func_002C22F0(u8 *p) { jtbl_00459AA8[p[6]](p); }
 void func_002C2830(u8 *p) { jtbl_00459B00[p[6]](p); }
 
 void func_002C2A40(u8 *p) { jtbl_00459B20[p[6]](p); }
+/* This dispatch starts at callback entry four in jtbl_00459B20. */
+void func_002C2C10(u8 *p) { p[824] = 3; jtbl_00459B30[p[6]](p); }
 
 void func_002C2F00(u8 *p) { jtbl_00459B40[p[6]](p); }
 
