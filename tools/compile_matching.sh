@@ -2491,6 +2491,12 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     private/SLUS_204.86.rom --source src/poll_packet_buffer_00422D20.c
 
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/initialize_mode5_subsystem_00420310.c -c -lang c -O3 \
+    -sdatathreshold 8 -o "$BUILD/initialize_mode5_subsystem_00420310.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_mode5_subsystem_00420310.o" \
+    private/SLUS_204.86.rom --source src/initialize_mode5_subsystem_00420310.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/register_packet_wait_00422C20.c -c -lang c -O3 \
     -sdatathreshold 8 -o "$BUILD/register_packet_wait_00422C20.o"
 "$PYTHON" tools/verify_object.py "$BUILD/register_packet_wait_00422C20.o" \
