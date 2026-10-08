@@ -7806,7 +7806,7 @@ func_001822B0,0x001822B0,0x44,src/float_state_limits.c,complete
 func_001BDA10,0x001BDA10,0x44,src/float_state_limits.c,complete
 func_00298FC0,0x00298FC0,0x4C,src/float_motion_transitions.c,complete
 func_002CEC40,0x002CEC40,0x4C,src/float_motion_transitions.c,complete
-func_00184110,0x00184110,0x40,src/dupcluster_00184110.c,placeholder
+func_00184110,0x00184110,0x40,src/dupcluster_00184110.c,complete
 func_001A9650,0x001A9650,0x48,src/dupcluster_001A9650.c,placeholder
 residual_0026ECA0,0x0026ECA0,0xC,src/tail12.c,complete
 func_00156830,0x00156830,0x68,src/frame_scale_updates.c,complete

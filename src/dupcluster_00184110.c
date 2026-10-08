@@ -1,24 +1,27 @@
 typedef unsigned char u8;
-typedef signed int s32;
 
-s32 func_00184110(u8 *a0) {
-    asm {
-        .word 0x8c820220
-        .word 0xc4800034
-        .word 0xc4410034
-        .word 0x46000841
-        .word 0x46016034
-        .word 0x00000000
-        .word 0x45010007
-        .word 0x24020001
-        .word 0x46006007
-        .word 0x46010036
-        .word 0x00000000
-        .word 0x45010002
-        .word 0x0000102d
-        .word 0x24020001
-        .word 0x00000000
-        jr ra
-        nop
-    }
+typedef struct {
+    u8 pad[0x34];
+    float value;
+} Value;
+
+typedef struct {
+    u8 pad[0x34];
+    float value;
+    u8 pad2[0x220 - 0x38];
+    Value *child;
+} Owner;
+
+int func_00184110(Owner *owner, float limit) {
+    float difference = owner->child->value - owner->value;
+
+    if (limit < difference)
+        goto one;
+    if (-limit <= difference)
+        goto zero;
+
+one:
+    return 1;
+zero:
+    return 0;
 }
