@@ -268,3 +268,26 @@ void func_002B3EE0(u8 *p)
         }
     }
 }
+
+void func_002B4150(u8 *p)
+{
+    float x, y;
+    func_00175700(p);
+    if (!*(signed char *)(p + 337)) {
+        p[6]++;
+        *(short *)(p + 28) = 16;
+        *(int *)(p + 96) = 0;
+        *(int *)(p + 108) = 0;
+        if (p[486] != 0)
+            x = -12.5f;
+        else
+            x = 12.5f;
+        *(float *)(p + 92) = x;
+        if (p[486] != 0)
+            y = 0.3125f;
+        else
+            y = -0.3125f;
+        *(float *)(p + 104) = y;
+        func_002B41F0(p);
+    }
+}
