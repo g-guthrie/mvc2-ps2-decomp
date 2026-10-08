@@ -4691,9 +4691,7 @@ data_raw_004AC2B0,0x004AC2B0,0x38,src/data/data_raw_004AC2B0.c,complete,placehol
 gLeadingByteIndexTable0_004AC2E8,0x004AC2E8,0x100,src/data/gLeadingByteIndexTable0_004AC2E8.c,complete,reconstructed
 gLeadingByteIndexTable1_004AC3E8,0x004AC3E8,0x100,src/data/gLeadingByteIndexTable1_004AC3E8.c,complete,reconstructed
 gLeadingByteIndexTable2_004AC4E8,0x004AC4E8,0x100,src/data/gLeadingByteIndexTable2_004AC4E8.c,complete,reconstructed
-data_u32_004AC5F0,0x004AC5F0,0x8,src/data/data_u32_004AC5F0.c,complete,placeholder
-data_u32_004AC5F8,0x004AC5F8,0x10,src/data/data_u32_004AC5F8.c,complete,placeholder
-data_u32_004AC608,0x004AC608,0x8,src/data/data_u32_004AC608.c,complete,placeholder
+gLeadingByteIndexTable3_004AC5E8,0x004AC5E8,0x100,src/data/gLeadingByteIndexTable3_004AC5E8.c,complete,reconstructed
 data_zero_004AC6F0,0x004AC6F0,0x10,src/data/data_zero_004AC6F0.c,complete,placeholder
 data_u32_004AC700,0x004AC700,0x10,src/data/data_u32_004AC700.c,complete,placeholder
 data_u32_004AC720,0x004AC720,0x4,src/data/data_u32_004AC720.c,complete,placeholder
