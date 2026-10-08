@@ -1205,3 +1205,22 @@ stale alignment-owner extent before accepting the split.
 
 Code is 561,008 bytes (17.0328%); reconstructed data is 65,959 bytes
 (10.1779%) across 2,172 units. Full source decompilation remains incomplete.
+
+
+### Motion floor updates, math constants, and rendered text
+
+Added two 160-byte floor handlers, an 88-byte animation state setter, and
+two 244-byte directional motion updates. Both changed translation units
+verify completely; the directional unit needs sdata8 for its GP-relative table.
+
+Recovered 24 bytes of directly loaded conversion doubles, 32 bytes of
+descriptor headers, 472 bytes of directly loaded math constants, 895 bytes
+of legal notice strings, and 1,509 bytes of credits text and controls.
+Every changed owner compiled and privately verified. Renderer loops prove
+the legal string extents and credits stop byte; padding remains uncredited.
+The credits initializer now uses readable text with explicit control escapes.
+
+All 33 project tests pass. The hybrid loaded image and packed retail executable
+match their reference hashes. Code is 561,904 bytes (17.0600%); reconstructed
+data is 68,891 bytes (10.6303%) across 2,204 units. Full source decompilation
+and linkage remain incomplete; unmatched spans still come from retail bytes.
