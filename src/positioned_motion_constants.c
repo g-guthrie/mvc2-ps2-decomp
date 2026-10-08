@@ -547,3 +547,62 @@ void func_002EAB70(u8 *p)
         *(short *)(p + 28) = 20;
     }
 }
+
+void func_002EAD40(u8 *p)
+{
+    float speed;
+    func_00175700(p);
+    if (!*(signed char *)(p + 337)) {
+        p[6]++;
+        *(volatile int *)(p + 92) = 0;
+        *(volatile int *)(p + 96) = 0;
+        *(volatile int *)(p + 104) = 0;
+        *(volatile int *)(p + 108) = 0;
+        if (p[486] != 0)
+            speed = -13.333333f;
+        else
+            speed = 13.333333f;
+        *(float *)(p + 92) = speed;
+        *(short *)(p + 28) = 20;
+    }
+}
+
+void func_002E1E30(u8 *p)
+{
+    float speed;
+    func_00175700(p);
+    if (!*(signed char *)(p + 337)) {
+        p[6]++;
+        *(volatile int *)(p + 92) = 0;
+        *(volatile int *)(p + 96) = 0;
+        *(volatile int *)(p + 104) = 0;
+        *(volatile int *)(p + 108) = 0;
+        if (p[486] != 0)
+            speed = 20.0f;
+        else
+            speed = -20.0f;
+        *(float *)(p + 92) = speed;
+        *(short *)(p + 30) = 4;
+        *(short *)(p + 28) = 24;
+    }
+}
+
+void func_002E1FE0(u8 *p)
+{
+    float speed;
+    func_00175700(p);
+    if (!*(signed char *)(p + 337)) {
+        p[6]++;
+        *(volatile int *)(p + 92) = 0;
+        *(volatile int *)(p + 96) = 0;
+        *(volatile int *)(p + 104) = 0;
+        *(volatile int *)(p + 108) = 0;
+        if (p[486] != 0)
+            speed = -21.666666f;
+        else
+            speed = 21.666666f;
+        *(float *)(p + 92) = speed;
+        *(short *)(p + 30) = 4;
+        *(short *)(p + 28) = 24;
+    }
+}
