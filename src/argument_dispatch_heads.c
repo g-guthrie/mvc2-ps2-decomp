@@ -2,6 +2,11 @@ typedef unsigned char u8;
 typedef void (*DispatchFn1)(u8 *);
 typedef void (*DispatchFn2)(u8 *, void *);
 
+extern int func_00175700(u8 *);
+extern int func_001757E0(u8 *, int, int);
+extern void func_00126400(void);
+extern void func_00184540(u8 *);
+
 extern DispatchFn2 jtbl_0044ABD0[];
 extern DispatchFn2 jtbl_0044ABE0[];
 extern DispatchFn2 jtbl_0044ABF0[];
@@ -607,6 +612,19 @@ void func_002ED5A0(u8 *p) { jtbl_004C11B8[p[6]](p, p + 696); }
 void func_002ED790(u8 *p) { jtbl_0045B6C0[p[523] & 63](p); }
 
 void func_002F4CA0(u8 *p) { jtbl_0045BC60[p[6]](p, p + 696); }
+
+void func_002F4BB0(u8 *p, u8 *context)
+{
+    if ((signed char)func_00175700(p) < 0) {
+        func_00126400();
+        *(unsigned int *)(p + 108) = 0xBF4DB6DB;
+        if (*(unsigned short *)context < 10) {
+            p[486] ^= 1;
+            *(short *)(p + 320) = p[486];
+        }
+        func_00184540(p);
+    }
+}
 
 void func_002F51C0(u8 *p) { jtbl_0045BC90[p[6]](p, p + 696); }
 
