@@ -436,3 +436,16 @@ void func_002775E0(u8 *p) {
     func_00277650(p);
 }
 
+extern s32 func_00417A40(u8 *);
+extern void func_0022EA40(u8 *), func_0022EC50(u8 *);
+void func_0022E650(u8 *p) {
+    p[6]++;
+    p[7] = 0;
+    p[316] = 1;
+    if (func_00417A40(p) & 1) func_0022EA40(p);
+    else {
+        p[6]++;
+        func_0022EC50(p);
+    }
+}
+
