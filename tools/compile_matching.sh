@@ -2213,3 +2213,6 @@ done
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/launch_record_initializers.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/launch_record_initializers.o"
 "$PYTHON" tools/verify_object.py "$BUILD/launch_record_initializers.o" private/SLUS_204.86.rom --source src/launch_record_initializers.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/state_reference_check.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/state_reference_check.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_reference_check.o" private/SLUS_204.86.rom --source src/state_reference_check.c

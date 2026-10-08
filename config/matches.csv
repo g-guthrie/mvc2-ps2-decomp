@@ -20,6 +20,7 @@ func_002F4A20,0x002F4A20,0x28,src/animation_state_transfers.c,complete
 func_002CDD00,0x002CDD00,0x64,src/transition_sequence_recoveries.c,complete
 func_002DD450,0x002DD450,0x6C,src/transition_sequence_recoveries.c,complete
 func_00303000,0x00303000,0x5C,src/conditional_mode_transition.c,complete
+func_002C5C30,0x002C5C30,0x60,src/state_reference_check.c,complete
 func_003DF7A0,0x003DF7A0,0x10,src/setter_leaves.c,complete
 func_003ED2D0,0x003ED2D0,0x10,src/setter_leaves.c,complete
 func_003D7120,0x003D7120,0x10,src/gp_accessors.c,complete
