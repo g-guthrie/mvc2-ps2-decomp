@@ -2450,3 +2450,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/append_type28_004231D0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/append_type28_004231D0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/append_type28_004231D0.o" private/SLUS_204.86.rom --source src/append_type28_004231D0.c
+
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/init_packet_queue_00422CC0.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/init_packet_queue_00422CC0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/init_packet_queue_00422CC0.o" \
+    private/SLUS_204.86.rom --source src/init_packet_queue_00422CC0.c
