@@ -8957,3 +8957,5 @@ func_00420920,0x00420920,0x44,src/select_transfer_backend_00420920.c,complete
 func_004206D0,0x004206D0,0x44,src/select_transfer_backend_004206D0.c,complete
 func_004205F0,0x004205F0,0x64,src/update_backend_timeout_004205F0.c,complete
 func_00420660,0x00420660,0x68,src/reset_backend_state_00420660.c,complete
+func_00420840,0x00420840,0x64,src/backend_lifecycle_handlers_00420840.c,complete
+func_004208B0,0x004208B0,0x68,src/backend_lifecycle_handlers_00420840.c,complete
