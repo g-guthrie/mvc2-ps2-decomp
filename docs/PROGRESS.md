@@ -733,3 +733,13 @@ the unintegrated u32-table proposal. All 33 changed data owners verify.
 Catalog validation, full hybrid linkage, and packed retail ELF hashes
 pass. Totals: 8,832 linked C routines, 551,908 code bytes (16.7565%),
 and 54,682 reconstructed data bytes (8.4377%) across 1,898 units.
+
+## 2026-10-08 record copy leaf
+
+Recovered the complete 56-byte native C record-copy function 00102860.
+A naturally four-byte-aligned 20-byte record reproduces the observed
+unaligned doubleword pairs and final word copy. SN GCC 2.95.2 -O2 -G0
+-ffunction-sections byte-verifies exactly; its normal runner recipe is
+included. Catalog validation, full hybrid linkage, and packed retail ELF
+hashes pass. Totals: 8,833 linked C routines, 551,964 code bytes
+(16.7582%), and 54,682 reconstructed data bytes (8.4377%).
