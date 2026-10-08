@@ -22,6 +22,7 @@ func_002DD450,0x002DD450,0x6C,src/transition_sequence_recoveries.c,complete
 func_00303000,0x00303000,0x5C,src/conditional_mode_transition.c,complete
 func_002C5C30,0x002C5C30,0x60,src/state_reference_check.c,complete
 func_002AD6F0,0x002AD6F0,0x74,src/motion_speed_transition.c,complete
+func_002621F0,0x002621F0,0x12C,src/conditional_engine_chains.c,complete
 func_003DF7A0,0x003DF7A0,0x10,src/setter_leaves.c,complete
 func_003ED2D0,0x003ED2D0,0x10,src/setter_leaves.c,complete
 func_003D7120,0x003D7120,0x10,src/gp_accessors.c,complete

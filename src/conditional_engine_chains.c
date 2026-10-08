@@ -1,4 +1,16 @@
 typedef unsigned char u8;
+extern int func_00262600(u8 *);
+extern int func_00262770(u8 *);
+extern int func_00262830(u8 *);
+extern int func_002624A0(u8 *);
+extern int func_00262320(u8 *);
+extern int func_002623E0(u8 *);
+extern int func_00262550(u8 *);
+extern int func_002626C0(u8 *);
+extern int func_00262910(u8 *);
+extern int func_002629C0(u8 *);
+extern int func_00262A20(u8 *);
+extern int func_00187E00(u8 *, u8 *);
 extern int func_00188110(u8 *);
 extern int func_00188690(u8 *);
 extern int func_00188C70(u8 *);
@@ -418,5 +430,27 @@ void func_00304BA0(u8 *p) { if (func_00188690(p)) return; if (func_00188ED0(p)) 
 void func_0030C6F0(u8 *p) { if (func_00188690(p)) return; if (func_00188ED0(p)) return; if (func_00188C70(p)) return; if (func_00189130(p)) return; if (func_0030C9A0(p)) return; if (func_0030C920(p)) return; if (func_0030CA20(p)) return; if (func_0030CAA0(p)) return; if (func_0030C7E0(p)) return; if (func_0030C8B0(p)) return; if (func_0030CB20(p)) return; if (func_0030CB80(p)) return;func_00187BB0(p); func_00188330(p); }
 void func_0030F850(u8 *p) { if (func_00188690(p)) return; if (func_00188ED0(p)) return; if (func_00188C70(p)) return; if (func_00189130(p)) return; if (func_0030FA20(p)) return; if (func_0030FAA0(p)) return; if (func_0030FB20(p)) return; if (func_0030F940(p)) return; if (func_0030F9B0(p)) return; if (func_0030FBA0(p)) return; if (func_0030FC10(p)) return; if (func_0030FC70(p)) return;func_00187BB0(p); func_00188330(p); }
 void func_00316D30(u8 *p) { if (func_00188690(p)) return; if (func_00188ED0(p)) return; if (func_00188C70(p)) return; if (func_00189130(p)) return; if (func_00317070(p)) return; if (func_00317000(p)) return; if (func_00316E40(p)) return; if (func_003171B0(p)) return; if (func_00317110(p)) return; if (func_00316EE0(p)) return; if (func_00316F50(p)) return; if (func_00317250(p)) return; if (func_003172C0(p)) return; if (func_00317330(p)) return;func_00187BB0(p); func_00188330(p); }
+
+void func_002621F0(u8 *p)
+{
+    if (func_00188690(p)) return;
+    if (func_00188ED0(p)) return;
+    if (func_00188C70(p)) return;
+    if (func_00189130(p)) return;
+    if (func_00262600(p)) return;
+    if (func_00262770(p)) return;
+    if (func_00262830(p)) return;
+    if (func_002624A0(p)) return;
+    if (func_00262320(p)) return;
+    if (func_002623E0(p)) return;
+    if (func_00262550(p)) return;
+    if (func_002626C0(p)) return;
+    if (func_00262910(p)) return;
+    if (func_002629C0(p)) return;
+    if (func_00262A20(p)) return;
+    if (func_00187E00(p, p + 944)) return;
+    func_00187BB0(p);
+    func_00188330(p);
+}
 void func_0031B330(u8 *p) { if (func_00188690(p)) return; if (func_00188ED0(p)) return; if (func_00188C70(p)) return; if (func_00189130(p)) return; if (func_0031B670(p)) return; if (func_0031B700(p)) return; if (func_0031B410(p)) return; if (func_0031B600(p)) return; if (func_0031B480(p)) return; if (func_0031B800(p)) return; if (func_0031B790(p)) return;func_00187BB0(p); func_00188330(p); }
 void func_003222A0(u8 *p) { if (func_00188690(p)) return; if (func_00188ED0(p)) return; if (func_00188C70(p)) return; if (func_00189130(p)) return; if (func_003225B0(p)) return; if (func_00322650(p)) return; if (func_00322750(p)) return; if (func_003223A0(p)) return; if (func_003224C0(p)) return; if (func_00322440(p)) return; if (func_00322530(p)) return; if (func_003227C0(p)) return; if (func_003226E0(p)) return;func_00187BB0(p); func_00188330(p); }
