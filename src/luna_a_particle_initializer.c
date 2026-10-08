@@ -1,0 +1,31 @@
+typedef unsigned char u8;
+typedef unsigned short u16;
+typedef unsigned int u32;
+typedef float f32;
+typedef struct { u8 pad[0x13C]; u8 initialized; } Object;
+typedef struct { f32 x, y, z; } Vec;
+extern Vec D_00444A78;
+extern u32 D_00444AD0[];
+extern f32 D_00444AF0[];
+extern f32 D_00444AF4[];
+extern f32 D_00444AF8[];
+extern volatile u32 D_004C283C __attribute__((section(".sdata")));
+void func_00155850(Object *p) {
+    f32 scale = 0.1f;
+    p->initialized = 1;
+    *(u32 *)((u8 *)p + 0xD0) = 0x41F;
+    *(u16 *)((u8 *)p + 0xCC) = (p->pad[0x21] & 1) + 0x58;
+    *(u32 *)((u8 *)p + 0x84) = D_004C283C;
+    *(f32 *)((u8 *)p + 0x78) = 1.0f;
+    *(u32 *)((u8 *)p + 0x7C) = 0;
+    *(u32 *)((u8 *)p + 0x80) = 0;
+    *(Vec *)((u8 *)p + 0x50) = D_00444A78;
+    *(u32 *)((u8 *)p + 0x48) = 0;
+    *(u32 *)((u8 *)p + 0x44) = 0;
+    *(u32 *)((u8 *)p + 0x40) = 0;
+    *(u32 *)((u8 *)p + 0x5C) = D_00444AD0[p->pad[0x21]];
+    *(u16 *)((u8 *)p + 0x1C) = 0;
+    *(f32 *)((u8 *)p + 0x68) = scale * D_00444AF0[p->pad[0x21] * 3];
+    *(f32 *)((u8 *)p + 0x6C) = scale * D_00444AF4[p->pad[0x21] * 3];
+    *(f32 *)((u8 *)p + 0x70) = scale * D_00444AF8[p->pad[0x21] * 3];
+}

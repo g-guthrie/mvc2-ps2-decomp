@@ -8710,3 +8710,4 @@ func_002F0EB0,0x002F0EB0,0x64,src/round3_2.c,complete
 func_0024FB90,0x0024FB90,0x7C,src/grok_w7_0024.c,complete
 func_0025C290,0x0025C290,0x11C,src/conditional_engine_chains.c,complete
 func_0019F950,0x0019F950,0x130,src/luna_a_motion_update.c,complete
+func_00155850,0x00155850,0x10C,src/luna_a_particle_initializer.c,complete
