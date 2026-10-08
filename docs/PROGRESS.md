@@ -372,3 +372,13 @@ full-image linkage and packed retail ELF hashes match exactly. The math-wrapper
 compiler probes still differ and remain outside the credited catalog. Totals:
 8,632 exact linked C routines and 532,952 / 3,293,696 bytes. Reconstructed data
 remains 42,400 / 648,064 bytes.
+
+## 2026-10-08 initializer and dispatch checkpoint
+
+Added seven native routines (696 bytes): three selector/initializer variants,
+a stance-restore transition, a zero-count motion completion handler, a callback
+dispatcher, and a direction-dependent float offset. All affected source units
+pass direct compiler verification; loaded-image linkage and packed retail ELF
+remain byte-identical. Totals: 8,639 linked C routines and
+533,648 / 3,293,696 bytes, with reconstructed data unchanged at
+42,400 / 648,064 bytes.
