@@ -241,3 +241,11 @@ preprocessed, including removal of C comments.
 
 SN units use `-ffunction-sections` to retain independent section ownership in
 the hybrid linker. This leaves the verified function instructions unchanged.
+## SN Systems GCC runtime accessors
+
+Three runtime-global accessors at `0x0040A2A8`, `0x0040A2B8`, and
+`0x0040A2E8` match with SN Systems GCC 2.95.2 `-O2 -G0` and its assembler
+`-G0`. Their non-volatile global accesses place the store or load in the `jr`
+delay slot. Volatile declarations prevent this scheduling and do not match.
+The target addresses are `D_00489018` and `D_0048831C`; all three relocated
+objects compare byte-for-byte with retail.

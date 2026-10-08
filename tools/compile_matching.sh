@@ -7,6 +7,9 @@ set -eu
 
 PYTHON=${PYTHON:-python3}
 MATCH_FLAGS=${MATCH_FLAGS:--O3 -sdatathreshold 0}
+SNCPP=${SNCPP:-private/toolchain/compilers/sn-gcc-2.95.2/cpp.exe}
+SNCC1=${SNCC1:-private/toolchain/compilers/sn-gcc-2.95.2/cc1.exe}
+SNAS=${SNAS:-private/toolchain/compilers/sn-gcc-2.95.2/ee-as.exe}
 BUILD=build/matching
 mkdir -p "$BUILD"
 
@@ -2220,3 +2223,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/motion_speed_transition.c -c -lang c -O4 -Op -sdatathreshold 8 -o "$BUILD/motion_speed_transition.o"
 "$PYTHON" tools/verify_object.py "$BUILD/motion_speed_transition.o" private/SLUS_204.86.rom --source src/motion_speed_transition.c
+
+"$WIBO" "$SNCPP" -P src/runtime_state_slots.c "$BUILD/runtime_state_slots.i"
+"$WIBO" "$SNCC1" "$BUILD/runtime_state_slots.i" -O2 -G0 -quiet -o "$BUILD/runtime_state_slots.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/runtime_state_slots.o" "$BUILD/runtime_state_slots.s"
+"$PYTHON" tools/verify_object.py "$BUILD/runtime_state_slots.o" private/SLUS_204.86.rom --source src/runtime_state_slots.c

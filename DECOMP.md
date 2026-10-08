@@ -21,9 +21,9 @@
 
 ## Current unknowns
 
-- The embedded component string is `MW MIPS C Compiler (2.4.1.01)`, but current
-  compiler-in-the-loop evidence supports a mixed MWCCPS2 3.0/3.0.3 corpus; each
-  unit records and verifies the compiler version that exactly reproduces it.
+- The embedded component string is `MW MIPS C Compiler (2.4.1.01)`. Exact
+  compiler-in-the-loop evidence now includes MWCCPS2 3.0/3.0.3 and SN Systems
+  GCC 2.95.2; each source unit records and verifies its own compiler and flags.
 - The original translation-unit map was stripped; the current function
   inventory is an explicit-size spimdisasm baseline, not recovered source-file
   ownership.
