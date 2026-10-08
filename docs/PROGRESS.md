@@ -870,3 +870,16 @@ the 88 changed data owners independently byte-verifies. Catalog
 validation, full hybrid linkage, and packed retail ELF hashes pass.
 Totals: 8,846 linked C routines, 553,948 code bytes (16.8184%), and
 61,004 data bytes (9.4133%) across 2,020 reconstructed units.
+
+## 2026-10-08 signed-speed callback and device format maps
+
+Added the complete 140-byte native C callback func_002D3270, verified
+with the whole motion-speed-transition O4/Op/sdata8 source unit.
+Recovered three stream-open diagnostics (134 bytes) and two six-entry
+u32 device-format maps (48 bytes). Each diagnostic owner ends at NUL;
+the map readers check the byte selector <6 before loading full words.
+All remaining gaps and the neighboring unbounded table stay raw.
+Every changed data owner independently byte-verifies. Catalog
+validation, full hybrid linkage, and packed retail ELF hashes pass.
+Totals: 8,847 linked C routines, 554,088 code bytes (16.8227%), and
+61,186 data bytes (9.4414%) across 2,025 reconstructed units.
