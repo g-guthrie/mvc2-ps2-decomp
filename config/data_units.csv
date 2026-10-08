@@ -5184,7 +5184,8 @@ data_u32_004B80E8,0x004B80E8,0x18,.data,src/data/data_u32_004B80E8.c,initialized
 gMvc2AngleVectorPair_004B8100,0x004B8100,0x18,.data,src/data/angle_effect_vector_pair_004B8100.c,angle_vector_pair
 data_u32_004B8118,0x004B8118,0x18,.data,src/data/data_u32_004B8118.c,initialized_u32_table
 gMvc2AngleVectorPair_004B8130,0x004B8130,0x18,.data,src/data/angle_effect_vector_pair_004B8130.c,angle_vector_pair
-data_u8_004B8148,0x004B8148,0x14,.data,src/data/data_u8_004B8148.c,initialized_byte_array
+gIntroTransformVector_004B8148,0x004B8148,0xC,.data,src/data/gIntroTransformVector_004B8148.c,float_vector3
+data_raw_004B8154,0x004B8154,0x8,.data,src/data/data_raw_004B8154.c,initialized_byte_array
 data_f32_004B815C,0x004B815C,0x4,.data,src/data/data_f32_004B815C.c,float_scalar
 data_u8_004B8160,0x004B8160,0x1C,.data,src/data/data_u8_004B8160.c,initialized_byte_array
 data_f32_004B817C,0x004B817C,0x4,.data,src/data/data_f32_004B817C.c,float_scalar
