@@ -707,3 +707,14 @@ and neighboring fields stay placeholders. All changed data owners verify.
 Catalog validation, full hybrid linkage, and packed retail ELF hashes pass.
 Totals: 8,830 linked C routines, 551,760 code bytes (16.7520%), and
 54,666 reconstructed data bytes (8.4353%) across 1,882 units.
+
+## 2026-10-08 callback classification and signed movement
+
+Corrected five already-exact callback manifest rows from assembly
+residual to code; these receive no additional credit. The entire
+duplicate-family object independently byte-verifies. Added the complete
+108-byte native C func_002EEEE0; the full positioned-motion source unit
+verifies with MWCCPS2 3.0.3 -O4 -Op -sdatathreshold 0. Catalog validation,
+full hybrid linkage, and packed retail ELF hashes pass. Totals:
+8,831 linked C routines and 551,868 / 3,293,696 bytes (16.7553%);
+reconstructed data remains 54,666 / 648,064 bytes (8.4353%).
