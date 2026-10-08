@@ -5060,7 +5060,8 @@ data_zero_004BDA10,0x004BDA10,0x10,src/data/data_zero_004BDA10.c,complete,placeh
 jtbl_004BDA20,0x004BDA20,0x28,src/data/jtbl_004BDA20.c,complete,placeholder
 data_u32_004BDA50,0x004BDA50,0x3B0,src/data/data_u32_004BDA50.c,complete,placeholder
 jtbl_004BDE00,0x004BDE00,0x28,src/data/jtbl_004BDE00.c,complete,placeholder
-data_u8_004BDE30,0x004BDE30,0x28,src/data/data_u8_004BDE30.c,complete,placeholder
+gHtciGetFileSizeNullFilename_004BDE28,0x004BDE28,0x29,src/data/gHtciGetFileSizeNullFilename_004BDE28.c,complete,reconstructed
+data_u8_004BDE51,0x004BDE51,0x7,src/data/data_u8_004BDE51.c,complete,placeholder
 gHtciOpenFailedPathFormat_004BDE58,0x004BDE58,0x1C,src/data/gHtciOpenFailedPathFormat_004BDE58.c,complete,reconstructed
 data_u8_004BDE74,0x004BDE74,0x4,src/data/data_u8_004BDE74.c,complete,placeholder
 gHtciOpenFileSizeFailure_004BDE78,0x004BDE78,0x28,src/data/gHtciOpenFileSizeFailure_004BDE78.c,complete,reconstructed

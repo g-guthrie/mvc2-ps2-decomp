@@ -5060,7 +5060,8 @@ data_zero_004BDA10,0x004BDA10,0x10,.data,src/data/data_zero_004BDA10.c,zero_init
 jtbl_004BDA20,0x004BDA20,0x28,.rodata,src/data/jtbl_004BDA20.c,jump_table
 data_u32_004BDA50,0x004BDA50,0x3B0,.data,src/data/data_u32_004BDA50.c,initialized_u32_table
 jtbl_004BDE00,0x004BDE00,0x28,.rodata,src/data/jtbl_004BDE00.c,jump_table
-data_u8_004BDE30,0x004BDE30,0x28,.data,src/data/data_u8_004BDE30.c,initialized_byte_array
+gHtciGetFileSizeNullFilename_004BDE28,0x004BDE28,0x29,.data,src/data/gHtciGetFileSizeNullFilename_004BDE28.c,nul_terminated_message
+data_u8_004BDE51,0x004BDE51,0x7,.data,src/data/data_u8_004BDE51.c,initialized_byte_array
 gHtciOpenFailedPathFormat_004BDE58,0x004BDE58,0x1C,.data,src/data/gHtciOpenFailedPathFormat_004BDE58.c,printf_format_string
 data_u8_004BDE74,0x004BDE74,0x4,.data,src/data/data_u8_004BDE74.c,initialized_byte_array
 gHtciOpenFileSizeFailure_004BDE78,0x004BDE78,0x28,.data,src/data/gHtciOpenFileSizeFailure_004BDE78.c,nul_terminated_message
