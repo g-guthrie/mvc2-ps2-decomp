@@ -274,3 +274,18 @@ void func_002FD9A0(u8 *p) {
     I(p, 108) = 0xBF092492;
     func_001757E0(p, 18, 0);
 }
+
+extern void func_00185490(u8 *);
+extern void func_002CE990(u8 *);
+void func_002CE920(u8 *p) {
+    p[6]++;
+    func_00185490(p);
+    p[525] = 0;
+    *(f32 *)(p + 56) = *(f32 *)(p + 1072);
+    I(p, 92) = 0;
+    I(p, 96) = 0;
+    I(p, 104) = 0;
+    I(p, 108) = 0;
+    func_001757E0(p, 2, 0);
+    func_002CE990(p);
+}
