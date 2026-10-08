@@ -1224,3 +1224,24 @@ All 33 project tests pass. The hybrid loaded image and packed retail executable
 match their reference hashes. Code is 561,904 bytes (17.0600%); reconstructed
 data is 68,891 bytes (10.6303%) across 2,204 units. Full source decompilation
 and linkage remain incomplete; unmatched spans still come from retail bytes.
+
+
+### Event motion handlers and reentrant heap wrapper
+
+Added four complete motion handlers totaling 768 bytes. Every function in
+the changed unit remains exact with its canonical MWCC3.0.3 recipe.
+Recovered the 88-byte reentrant SDK heap helper: it clears the SDK error,
+requests heap growth, and copies a nonzero failure error into the caller field.
+EE GCC2.96 plus the original SN assembler reproduces the full native unit;
+the GNU assembler encodes its register moves differently. No generated
+assembly or object bytes were patched. The build runner includes the proven recipe.
+
+Typed 44 bytes of consumed counters, callbacks, allocation pointer, and renderer
+state. Every changed owner was compiled and privately verified; residual
+bytes remain explicit placeholders. Removed three superseded placeholder
+sources from these splits. A queued vector table was held after the consumer
+showed a next-frame read beyond its proposed extent.
+
+The hybrid loaded image and packed retail executable match their references.
+Code is 562,760 bytes (17.0860%); reconstructed data is 68,935 bytes
+(10.6371%) across 2,215 units. Full source decompilation remains incomplete.

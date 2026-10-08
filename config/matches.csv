@@ -8917,4 +8917,4 @@ func_0025FF50,0x0025FF50,0xC8,src/grok_w7_phys.c,complete
 func_00261600,0x00261600,0xC8,src/grok_w7_phys.c,complete
 func_00273320,0x00273320,0xB8,src/grok_w7_phys.c,complete
 func_002A62D0,0x002A62D0,0xB8,src/grok_w7_phys.c,complete
-func_0011F858,0x0011F858,0x58,src/reentrant_heap_0011F858.c,matching
+func_0011F858,0x0011F858,0x58,src/reentrant_heap_0011F858.c,complete
