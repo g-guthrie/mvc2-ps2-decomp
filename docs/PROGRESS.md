@@ -501,3 +501,14 @@ and every alignment gap remain placeholder. All 176 changed data owners
 were independently compiled and byte-verified. Full hybrid and packed retail
 ELF hashes pass. Totals: 8,755 linked C routines and 541,916 / 3,293,696 code
 bytes; reconstructed data is 48,250 / 648,064 bytes.
+
+## 2026-10-08 selector and reset callback checkpoint
+
+Added twelve native routines (1,300 bytes), including parity-selected modes,
+a callback-return gate, split compiler/source inventory registration, position
+resets, selector updates, and latched vertical motion. Entire affected source
+units pass independent relocated-byte verification. The state-return family
+uses its proven MWCCPS2 3.0 -O4 recipe. Catalog validation, full hybrid, and
+packed retail ELF hashes pass. Totals: 8,767 linked C routines and
+543,216 / 3,293,696 code bytes. Data remains 48,250 / 648,064 at this
+integrated checkpoint; later worker data is pending verification/linkage.
