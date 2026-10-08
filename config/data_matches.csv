@@ -4500,7 +4500,11 @@ data_u32_004AB1A0,0x004AB1A0,0x1E0,src/data/data_u32_004AB1A0.c,complete,placeho
 data_zero_004AB380,0x004AB380,0x10,src/data/data_zero_004AB380.c,complete,placeholder
 data_u8_004AB390,0x004AB390,0x7E4,src/data/data_u8_004AB390.c,complete,placeholder
 data_f32_004ABB74,0x004ABB74,0x8,src/data/data_f32_004ABB74.c,complete,reconstructed
-data_u8_004ABB7C,0x004ABB7C,0x77C,src/data/data_u8_004ABB7C.c,complete,placeholder
+data_u8_004ABB7C,0x004ABB7C,0x520,src/data/data_u8_004ABB7C.c,complete,placeholder
+data_f32_004AC29C,0x004AC29C,0x4,src/data/data_f32_004AC29C.c,complete,reconstructed
+data_u8_004AC2A0,0x004AC2A0,0xC,src/data/data_u8_004AC2A0.c,complete,placeholder
+data_f32_004AC2AC,0x004AC2AC,0x4,src/data/data_f32_004AC2AC.c,complete,reconstructed
+data_u8_004AC2B0,0x004AC2B0,0x48,src/data/data_u8_004AC2B0.c,complete,placeholder
 data_u32_004AC2F8,0x004AC2F8,0x10,src/data/data_u32_004AC2F8.c,complete,placeholder
 data_u32_004AC308,0x004AC308,0x8,src/data/data_u32_004AC308.c,complete,placeholder
 data_u32_004AC3F0,0x004AC3F0,0x8,src/data/data_u32_004AC3F0.c,complete,placeholder
