@@ -2550,3 +2550,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/grok_w7_stationary_floor_acceleration.o" private/SLUS_204.86.rom \
     --source src/grok_w7_stationary_floor_acceleration.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_inhibit_resume_handler.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/grok_w7_inhibit_resume_handler.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_inhibit_resume_handler.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_inhibit_resume_handler.c
+
