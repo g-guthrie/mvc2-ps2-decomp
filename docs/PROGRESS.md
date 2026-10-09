@@ -2098,3 +2098,14 @@ uses the reporter’s native variable-argument interface. Catalog: 584,596
 linked matching code bytes (17.7489%), 9,087 functions; data remains
 79,612 bytes (12.2846%). Native object, catalog validation, and both
 full-image hashes pass.
+
+
+### Graphics alignment and context-control callbacks
+
+Four exact functions add 436 code bytes. Context helper signatures now
+agree with their explicit two-argument caller; the latch ignores the
+provided context. The callback gate reads its existing raw integer table
+and converts the chosen address at the call site, keeping that table
+uncredited data. Catalog: 585,032 linked matching code bytes (17.7622%),
+9,091 functions; data remains 79,612 bytes (12.2846%). All affected whole
+sources, catalog validation, and both full-image hashes pass.

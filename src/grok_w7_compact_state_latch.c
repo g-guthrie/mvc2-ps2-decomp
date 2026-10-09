@@ -3,7 +3,7 @@ typedef signed char s8;
 extern u8 D_004F1F45;
 extern u8 D_004F1F46;
 
-void func_002FC890(u8 *p)
+void func_002FC890(u8 *p, void *context)
 {
     u8 *state;
 
