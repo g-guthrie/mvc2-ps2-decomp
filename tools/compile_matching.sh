@@ -3150,3 +3150,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/transform_runtime_view_point_003DE680.o"
 "$PYTHON" tools/verify_object.py "$BUILD/transform_runtime_view_point_003DE680.o" \
     private/SLUS_204.86.rom --source src/transform_runtime_view_point_003DE680.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_runtime_graphics_matrix_003F38A0.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/initialize_runtime_graphics_matrix_003F38A0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_runtime_graphics_matrix_003F38A0.o" \
+    private/SLUS_204.86.rom --source src/initialize_runtime_graphics_matrix_003F38A0.c
