@@ -2763,6 +2763,16 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
 "$PYTHON" tools/verify_object.py "$BUILD/process_active_runtime_entries_00400AF8.o" \
     private/SLUS_204.86.rom --source src/process_active_runtime_entries_00400AF8.c
 
+"$WIBO" "$SNCPP" -P src/zero_runtime_object_00400308.c \
+    "$BUILD/zero_runtime_object_00400308.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/zero_runtime_object_00400308.i" \
+    "$BUILD/zero_runtime_object_00400308.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/zero_runtime_object_00400308.o" \
+    "$BUILD/zero_runtime_object_00400308.s"
+"$PYTHON" tools/verify_object.py "$BUILD/zero_runtime_object_00400308.o" \
+    private/SLUS_204.86.rom --source src/zero_runtime_object_00400308.c
+
 "$WIBO" "$SNCPP" -P src/prepare_archive_and_pack_00410688.c \
     "$BUILD/prepare_archive_and_pack_00410688.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
