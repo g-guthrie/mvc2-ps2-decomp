@@ -4,6 +4,7 @@ typedef signed short s16;
 typedef signed int s32;
 typedef unsigned int u32;
 typedef float f32;
+typedef union { u32 bits; f32 value; } FloatBits;
 
 extern int func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
@@ -153,10 +154,10 @@ void func_0022EB50(u8 *p)
         return;
     }
     p[7]++;
-    *(u32 *)(p + 0x5c) = 0;
-    *(u32 *)(p + 0x68) = 0;
-    *(u32 *)(p + 0x60) = 0x41632492;
-    *(u32 *)(p + 0x6c) = 0xBF092492;
+    *(f32 *)(p + 0x5c) = 0.0f;
+    *(f32 *)(p + 0x68) = 0.0f;
+    ((FloatBits *)(p + 0x60))->bits = 0x41632492;
+    ((FloatBits *)(p + 0x6c))->bits = 0xBF092492;
     func_001757E0(p, 18, 1);
 }
 

@@ -2893,3 +2893,14 @@ preserves native low-word doubling without signed overflow; the dispatcher
 still verifies exactly. Both whole objects, catalog, full hybrid linkage and
 packed retail ELF identity pass. Catalog: 604,856 code bytes (18.3641%),
 9,246 functions; data remains84,686 bytes (13.0675%).
+
+## Timer wrappers, bounce transition and target callback
+
+Integrated four whole exact handlers (84,84,120,92 bytes) and corrected their
+caller return declarations. Known motion fields use float zeros and the
+existing FloatBits constant convention. All ten affected complete source files
+verify with their registered recipes, including older MWCC for round2_small.
+Catalog, full hybrid linkage and packed retail ELF identity pass. Catalog:
+605,236 code bytes (18.3756%), 9,250 functions; data84,686 bytes (13.0675%).
+Separate vector-base and JAL-delay-slot reviews rejected unsupported pending
+credit before integration.
