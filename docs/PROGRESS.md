@@ -1773,3 +1773,12 @@ list. The source records the native next pointer, class index, and context
 list offset. Catalog: 579,040 linked matching code bytes (17.5803%),
 9,041 functions. Data remains 74,673 bytes (11.5225%). The native object,
 catalog validation, and both full-image hashes pass.
+
+
+### Directional acceleration restart
+
+The 192-byte actor restart handler now matches within the complete
+29-function motion source. Catalog: 579,232 linked matching code bytes
+(17.5861%), 9,042 functions. Four catalog placeholders remain excluded
+from credit. Data stays 74,673 bytes (11.5225%). Whole-source verification,
+catalog validation, and both full-image hashes pass.
