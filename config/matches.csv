@@ -9204,3 +9204,4 @@ func_00303390,0x00303390,0xA4,src/grok_w7_timered_phase_increment.c,complete
 func_00301760,0x00301760,0x78,src/grok_w7_timered_single_flag_callback.c,complete
 func_003071C0,0x003071C0,0x88,src/grok_w7_gate_timer_reset.c,complete
 func_003073A0,0x003073A0,0x7C,src/grok_w7_timed_sequence_fanout.c,complete
+func_00307540,0x00307540,0x7C,src/grok_w7_context_position_refresh.c,complete

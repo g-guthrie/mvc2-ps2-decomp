@@ -3864,3 +3864,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_timed_sequence_fanout.o" private/SLUS_204.86.rom \
     --source src/grok_w7_timed_sequence_fanout.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_context_position_refresh.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_context_position_refresh.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_context_position_refresh.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_context_position_refresh.c
