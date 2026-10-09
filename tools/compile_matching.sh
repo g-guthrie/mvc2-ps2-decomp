@@ -3445,3 +3445,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_timered_position_finalizer.o" private/SLUS_204.86.rom \
     --source src/grok_w7_timered_position_finalizer.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_motion_threshold_resume.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_motion_threshold_resume.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_motion_threshold_resume.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_motion_threshold_resume.c
