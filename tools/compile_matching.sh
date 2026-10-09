@@ -2661,3 +2661,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/grok_w7_nonzero_state_launch.o" private/SLUS_204.86.rom \
     --source src/grok_w7_nonzero_state_launch.c
 
+    src/grok_w7_negative_floor_rebound.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_negative_floor_rebound.o"
+    "$BUILD/grok_w7_negative_floor_rebound.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_negative_floor_rebound.c
+
