@@ -3127,3 +3127,9 @@ at 0x00472854 remains uncredited: its consumer advances the pointer before
 allocation, but decrements the record count only on success. Whole-object
 verification passes. Code reaches 609,080 bytes (18.4923%), 9,280 functions;
 data remains 151,986 bytes (23.4523%).
+
+## Timed state callback
+
+Recovered the complete 196-byte callback at 0x002C1670. All registered
+functions in its source object verify exactly. Code reaches 609,276 bytes
+(18.4982%), 9,281 functions; data remains 151,986 bytes (23.4523%).
