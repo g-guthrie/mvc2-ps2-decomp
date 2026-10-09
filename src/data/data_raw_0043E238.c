@@ -1,0 +1,3 @@
+typedef unsigned char u8;
+/* Two leading words have no proven typed consumer. */
+u8 data_raw_0043E238[0x8] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x60, 0x3F };
