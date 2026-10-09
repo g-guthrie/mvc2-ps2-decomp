@@ -2246,6 +2246,16 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/luna_a_gp_tail.o"
 "$PYTHON" tools/verify_object.py "$BUILD/luna_a_gp_tail.o" private/SLUS_204.86.rom --source src/luna_a_gp_tail.c
 
+"$WIBO" "$SNCPP" -P src/set_runtime_option_fields_0040ADF0.c \
+    "$BUILD/set_runtime_option_fields_0040ADF0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/set_runtime_option_fields_0040ADF0.i" \
+    "$BUILD/set_runtime_option_fields_0040ADF0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/set_runtime_option_fields_0040ADF0.o" \
+    "$BUILD/set_runtime_option_fields_0040ADF0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/set_runtime_option_fields_0040ADF0.o" \
+    private/SLUS_204.86.rom --source src/set_runtime_option_fields_0040ADF0.c
+
 "$WIBO" "$SNCPP" -P src/indexed_runtime_accessors.c "$BUILD/indexed_runtime_accessors.i"
 "$WIBO" "$SNCC1" "$BUILD/indexed_runtime_accessors.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/indexed_runtime_accessors.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/indexed_runtime_accessors.o" "$BUILD/indexed_runtime_accessors.s"
