@@ -9054,3 +9054,4 @@ func_004173C0,0x004173C0,0x80,src/compose_runtime_matrix_translation_004173C0.c,
 func_00300C10,0x00300C10,0x64,src/grok_w7_gated_countdown_callback.c,complete
 func_0011DED8,0x0011DED8,0x38,src/sdk_initialize_single_word_0011DED8.c,complete
 func_00420560,0x00420560,0x84,src/initialize_runtime_menu_notice_00420560.c,complete
+func_002F5070,0x002F5070,0x5C,src/grok_w7_indexed_transition_setup.c,complete
