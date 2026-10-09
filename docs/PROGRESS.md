@@ -2590,3 +2590,12 @@ Confirmed the native random recurrence and its seeded cycle independently:
 the five random-selected byte banks. The deterministic delta table at 446D40
 has unproven input-field domains, so its sixteen bytes are held placeholders.
 Data credit is 83,806 bytes (12.9317%), 2,866 reconstructed units.
+
+## Owner allocation callback checkpoint
+
+Recovered the complete 188-byte owner allocation callback and corrected the
+allocation helper to return its entry pointer. The new callback checks that
+result; the existing timer action intentionally ignores it. All affected whole
+objects verify exactly, including the twenty-one-function allocator source.
+Catalog: 602,272 code bytes (18.2856%), 9,211 functions. Data remains 83,806
+bytes (12.9317%). Full relink and packed retail ELF identity pass.
