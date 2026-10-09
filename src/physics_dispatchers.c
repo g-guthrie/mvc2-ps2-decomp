@@ -1,5 +1,8 @@
 typedef unsigned char u8;
 typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
+typedef unsigned int u32;
 
 extern void func_00282610(u8 *);
 extern void func_00282680(u8 *);
@@ -7,6 +10,8 @@ extern void func_002825A0(u8 *);
 extern void func_002823F0(u8 *);
 extern int func_00175700(u8 *);
 extern void func_001843A0(u8 *);
+extern void func_0030F650(u8 *);
+extern u8 *D_004C2794 __attribute__((section(".sdata")));
 
 extern void func_001863F0();
 extern void func_001EA110();
@@ -254,6 +259,21 @@ void func_003061E0(u8 *p)
         if ((s8)func_00175700(p) < 0)
             func_001843A0(p);
         break;
+    }
+}
+
+void func_0030D640(u8 *p)
+{
+    if ((s8)func_00175700(p) < 0) {
+        func_0030F650(p);
+        return;
+    }
+    if ((s8)p[0x151] != 0) {
+        *(u8 **)(p + 0x334) = 0;
+        p[0x1B5] = 25;
+        p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+        *(u32 *)(p + 0x1D8) = 0;
+        ((s16 *)(D_004C2794 + 0x7C))[p[2]]++;
     }
 }
 
