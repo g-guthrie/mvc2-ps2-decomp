@@ -1755,3 +1755,12 @@ The callee uses signed 64-bit limits, a text pointer, an end-pointer output,
 and a base argument. Catalog: 578,996 linked matching code bytes
 (17.5789%), 9,040 functions; data remains 74,669 bytes (11.5219%).
 The native object, catalog validation, and both full-image hashes pass.
+
+
+### Mutable sentinel word
+
+Only the consumed first word at 0x4399C0 receives reconstructed credit;
+three trailing words remain raw. Native load/store sites are documented.
+Catalog: 578,996 linked code bytes (17.5789%), 74,673 reconstructed data
+bytes (11.5225%). Both split data objects, catalog validation, and both
+full-image hashes pass. The uppercase routine probe remains uncredited.
