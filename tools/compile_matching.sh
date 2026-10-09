@@ -3107,3 +3107,8 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_write_character_0
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_buffered_character_0011B9F8.i" "$BUILD/sdk_buffered_character_0011B9F8.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_buffered_character_0011B9F8.o" "$BUILD/sdk_buffered_character_0011B9F8.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sdk_buffered_character_0011B9F8.o" private/SLUS_204.86.rom --source src/sdk_buffered_character_0011B9F8.c
+
+"$WIBO" "$SNCPP" -P src/sdk_write_string_0011BA90.c "$BUILD/sdk_write_string_0011BA90.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_write_string_0011BA90.i" "$BUILD/sdk_write_string_0011BA90.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_write_string_0011BA90.o" "$BUILD/sdk_write_string_0011BA90.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sdk_write_string_0011BA90.o" private/SLUS_204.86.rom --source src/sdk_write_string_0011BA90.c

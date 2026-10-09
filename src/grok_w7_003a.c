@@ -60,7 +60,7 @@ void func_003A8B10(u8 *p)
     }
 }
 
-void func_003AA280(u8 *p)
+void *func_003AA280(u8 *p)
 {
     Event *e = func_003DA750(0, 1, 0);
     if (e != 0) {
@@ -71,6 +71,7 @@ void func_003AA280(u8 *p)
         e->field38 = 0x3001;
         ((u8 *)e)[0xbe] = p[0x1fd];
     }
+    return e;
 }
 
 void func_003B69D0(u8 *p, u8 q)

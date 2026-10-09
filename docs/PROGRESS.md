@@ -1990,3 +1990,13 @@ now verifies four functions, retaining the corrected byte-table provider
 declaration. Catalog: 581,832 linked matching code bytes (17.6650%),
 9,063 functions; data remains 79,356 bytes (12.2451%). Whole-source
 verification, catalog validation, and both full-image hashes pass.
+
+
+### SDK string output and event-gated actor setup
+
+Two exact functions add 188 code bytes: the SDK string-output wrapper
+and actor initializer. The event factory now explicitly returns its native
+allocated pointer, matching the caller that tests allocation success.
+All affected whole sources retain exact bytes. Catalog: 582,020 linked
+matching code bytes (17.6707%), 9,065 functions; data remains 79,356 bytes
+(12.2451%). Catalog validation and both full-image hashes pass.

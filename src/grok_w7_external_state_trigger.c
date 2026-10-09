@@ -4,7 +4,7 @@ typedef signed char s8;
 extern int func_00175700(u8 *);
 extern void func_00186A20(u8 *);
 extern void func_003AE8B0(u8 *);
-extern int func_003AA280(u8 *);
+extern void *func_003AA280(u8 *);
 extern void func_001E3210(u8 *, int);
 void func_002F4E00(u8 *p, void *q)
 {
