@@ -3884,3 +3884,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_target_flag_query.o" private/SLUS_204.86.rom \
     --source src/grok_w7_target_flag_query.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_context_motion_state_reset.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_context_motion_state_reset.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_context_motion_state_reset.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_context_motion_state_reset.c
