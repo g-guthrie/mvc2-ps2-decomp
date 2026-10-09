@@ -2573,3 +2573,12 @@ point motion and signed timer behavior are preserved. The entire shared object
 verifies all 31 credited functions after the addition. Catalog: 601,948 code
 bytes (18.2758%), 9,209 functions. Data remains 83,806 bytes (12.9317%).
 Full hybrid relink and packed ELF identity match retail.
+
+## Owner timer and palette selector checkpoint
+
+The 136-byte owner-context timer reset matches in full with its two-argument
+callback contract. Reconstructed sixteen even-address palette selector bytes;
+interleaved and prefix bytes remain raw placeholders. Changed objects, catalog
+validation, full relink and packed retail ELF identity pass. Catalog: 602,084
+code bytes (18.2799%), 9,210 functions, and 83,822 data bytes (12.9342%) across
+2,867 reconstructed source units. Additional producer-domain audits continue.
