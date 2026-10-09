@@ -3276,3 +3276,9 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     -o "$BUILD/get_format_word_by_index_003F1410.o"
 "$PYTHON" tools/verify_object.py "$BUILD/get_format_word_by_index_003F1410.o" \
     private/SLUS_204.86.rom --source src/get_format_word_by_index_003F1410.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/random_state_step.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/random_state_step.o"
+"$PYTHON" tools/verify_object.py "$BUILD/random_state_step.o" \
+    private/SLUS_204.86.rom --source src/random_state_step.c
