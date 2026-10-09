@@ -2666,3 +2666,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/grok_w7_negative_floor_rebound.o" private/SLUS_204.86.rom \
     --source src/grok_w7_negative_floor_rebound.c
 
+
+    src/initialize_effect_parameters_00420400.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/initialize_effect_parameters_00420400.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_effect_parameters_00420400.o" \
+    private/SLUS_204.86.rom --source src/initialize_effect_parameters_00420400.c
