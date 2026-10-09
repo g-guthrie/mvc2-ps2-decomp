@@ -304,8 +304,7 @@ data_u32_0043EAF0,0x0043EAF0,0x50,src/data/data_u32_0043EAF0.c,complete,placehol
 jtbl_0043EB40,0x0043EB40,0x10,src/data/jtbl_0043EB40.c,complete,reconstructed
 data_u32_0043EB50,0x0043EB50,0x220,src/data/data_u32_0043EB50.c,complete,placeholder
 jtbl_0043ED70,0x0043ED70,0x40,src/data/jtbl_0043ED70.c,complete,placeholder
-data_u32_0043EDB0,0x0043EDB0,0x20,src/data/data_u32_0043EDB0.c,complete,placeholder
-data_zero_0043EDD0,0x0043EDD0,0x20,src/data/data_zero_0043EDD0.c,complete,placeholder
+data_f32_0043EDB0,0x0043EDB0,0x40,src/data/data_f32_0043EDB0.c,complete,reconstructed
 data_u8_0043EDF0,0x0043EDF0,0x10,src/data/data_u8_0043EDF0.c,complete,reconstructed
 jtbl_0043EE00,0x0043EE00,0x20,src/data/jtbl_0043EE00.c,complete,reconstructed
 data_u32_0043EE20,0x0043EE20,0x320,src/data/data_u32_0043EE20.c,complete,placeholder
