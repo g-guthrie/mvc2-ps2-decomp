@@ -9280,3 +9280,4 @@ func_0041AA10,0x0041AA10,0x78,src/update_runtime_animation_state_0041AA10.c,comp
 func_004207C0,0x004207C0,0x7C,src/initialize_backend_notice_004207C0.c,complete
 func_002E77B0,0x002E77B0,0x9C,src/grok_w7_velocity_interaction_dispatch.c,complete
 func_0027C340,0x0027C340,0xAC,src/grok_r1_0020.c,complete
+func_00175B40,0x00175B40,0xC0,src/copy_animation_records_00175B40.c,complete

@@ -4275,3 +4275,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/initialize_backend_notice_004207C0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_backend_notice_004207C0.o" \
     private/SLUS_204.86.rom --source src/initialize_backend_notice_004207C0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/copy_animation_records_00175B40.c -c -lang c -O3 -Op -sdatathreshold 0 \
+    -o "$BUILD/copy_animation_records_00175B40.o"
+"$PYTHON" tools/verify_object.py "$BUILD/copy_animation_records_00175B40.o" \
+    private/SLUS_204.86.rom --source src/copy_animation_records_00175B40.c
