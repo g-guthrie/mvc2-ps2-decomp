@@ -9118,3 +9118,4 @@ func_00174170,0x00174170,0x48,src/random_state_step.c,complete
 func_003F13A0,0x003F13A0,0x3C,src/get_format_table_count_003F13A0.c,complete
 func_001741D0,0x001741D0,0x64,src/project_point_to_xy.c,complete
 func_0030F180,0x0030F180,0x94,src/grok_w7_gated_motion_advancement.c,complete
+func_0030E5A0,0x0030E5A0,0xB4,src/grok_w7_timed_position_setup.c,complete

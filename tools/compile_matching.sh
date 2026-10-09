@@ -3301,3 +3301,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_gated_motion_advancement.o" private/SLUS_204.86.rom \
     --source src/grok_w7_gated_motion_advancement.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_timed_position_setup.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_timed_position_setup.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_timed_position_setup.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_timed_position_setup.c
