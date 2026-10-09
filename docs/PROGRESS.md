@@ -2846,3 +2846,13 @@ address and uses the canonical variadic formatter contract. The dispatcher
 accepts the mutable entry it forwards to its callee. Both whole EE96/SNAS
 objects, catalog, full hybrid linkage and packed retail ELF pass. Catalog:
 604,444 code bytes (18.3515%), 9,239 functions; data84,314 bytes (13.0101%).
+
+## Runtime reset and six-slot vector banks
+
+Recovered the complete 64-byte signed-state record reset and two72-byte
+effect-vector banks. Actor setup creates bounded side/slot fields, and slot
+swaps preserve the0..5 selector domain; all three components are loaded as
+floats. Header and interstitial bytes remain raw. Changed objects, catalog,
+full hybrid linkage and packed retail ELF identity pass. Catalog: 604,508 code
+bytes (18.3535%), 9,240 functions; data84,458 bytes (13.0324%), 2,890
+reconstructed source units.
