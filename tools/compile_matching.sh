@@ -2875,3 +2875,13 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 \
     "$BUILD/manage_runtime_reference_00411B98.s"
 "$PYTHON" tools/verify_object.py "$BUILD/manage_runtime_reference_00411B98.o" \
     private/SLUS_204.86.rom --source src/manage_runtime_reference_00411B98.c
+
+"$WIBO" "$SNCPP" -P src/initialize_runtime_service_00411B28.c \
+    "$BUILD/initialize_runtime_service_00411B28.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 \
+    "$BUILD/initialize_runtime_service_00411B28.i" \
+    "$BUILD/initialize_runtime_service_00411B28.s"
+"$WIBO" "$SNAS" -G8 -o "$BUILD/initialize_runtime_service_00411B28.o" \
+    "$BUILD/initialize_runtime_service_00411B28.s"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_runtime_service_00411B28.o" \
+    private/SLUS_204.86.rom --source src/initialize_runtime_service_00411B28.c

@@ -9009,3 +9009,4 @@ func_00411AD0,0x00411AD0,0x18,src/runtime_mode_wrappers_00411A18.c,complete
 func_00411AE8,0x00411AE8,0x18,src/runtime_mode_wrappers_00411A18.c,complete
 func_00411B98,0x00411B98,0x30,src/manage_runtime_reference_00411B98.c,complete
 func_00411BC8,0x00411BC8,0x44,src/manage_runtime_reference_00411B98.c,complete
+func_00411B28,0x00411B28,0x70,src/initialize_runtime_service_00411B28.c,complete

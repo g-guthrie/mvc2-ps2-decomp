@@ -1,0 +1,28 @@
+typedef unsigned char u8;
+typedef unsigned int u32;
+typedef signed int s32;
+
+extern u8 D_00496708[16];
+extern u8 D_00496728[28];
+extern u8 D_004C2B10[8];
+extern u8 D_004C2B18[8];
+extern void *func_0011D8F8(void *destination, s32 value, u32 size);
+
+void func_00411B28(void)
+{
+    u32 *entry;
+    s32 count;
+
+    func_0011D8F8(D_00496728, 0, 28);
+    func_0011D8F8(D_004C2B10, 0, 8);
+    func_0011D8F8(D_004C2B18, 0, 8);
+
+    entry = (u32 *)D_00496708;
+    count = 3;
+    do
+    {
+        count--;
+        *entry = 0;
+        entry++;
+    } while (count >= 0);
+}
