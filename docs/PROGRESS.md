@@ -1361,3 +1361,22 @@ The hybrid loaded image and packed retail executable match their references.
 Code is 569,596 bytes (17.2935%); reconstructed data is 70,630 bytes
 (10.8986%) across 2,306 units. Full source decompilation remains incomplete.
 The next scheduled code push remains 21.0711%.
+
+
+### Runtime storage, DMA context, and bounded UI scale values
+
+Added 812 matching code bytes across two storage/backend initializers,
+the DMA context initializer, and three motion/frame-completion handlers.
+The string operations now use the native strcpy and variadic sprintf
+contracts; character buffers and the five-byte clear have correct C extents.
+All changed whole units compile and relocation-verify exactly.
+
+Recovered the 64-byte, sixteen-entry float scale lookup. Its consumer masks
+the selector with0xF before scaling by four and loading a float. The complete
+compiled owner matches retail; mixed pointer tables and unbounded selectors
+remain uncredited.
+
+The hybrid loaded image and packed executable match retail. Code is 570,408
+bytes (17.3182%); reconstructed data is 70,694 bytes
+(10.9085%) across 2,307 units. Full source decompilation remains incomplete;
+the next scheduled code push remains 21.0711%.
