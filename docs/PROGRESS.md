@@ -2483,3 +2483,13 @@ The TIM2-derived lookup now credits only rows0..4 and10 (48 bytes), with
 other rows raw. Catalog: 598,832 code bytes (18.1812%), 9,182 functions,
 83,143 data bytes (12.8294%). All changed objects, 45 tests, catalog,
 script syntax, and both full-image hashes pass.
+
+
+### Actor handoffs and pointer accessors
+
+Five complete handlers add 972 exact code bytes. The indexed accessors
+and handoff fields now read/write actual pointers, with their complete
+source objects still exact. The dispatcher’s interior callback address
+uses an incomplete array alias without claiming a new table extent.
+Catalog: 599,804 code bytes (18.2107%), 9,187 functions, 83,143 data
+bytes (12.8294%). Changed whole objects, catalog, and both image hashes pass.

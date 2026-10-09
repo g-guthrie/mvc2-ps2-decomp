@@ -40,7 +40,7 @@ void func_0030F450(u8 *p)
     *(s8 *)(p + 0x151) = 0;
 
     target = *(u8 **)(p + 0x1DC);
-    *(u32 *)(target + 0x1C8) = (u32)p;
+    *(u8 **)(target + 0x1C8) = p;
     target[0x20A] = 2;
     target[0x20D] = 2;
     target[0x1E6] = p[0x1E6] ^ 1;

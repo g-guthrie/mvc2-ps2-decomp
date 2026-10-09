@@ -43,7 +43,7 @@ void func_0030F560(u8 *p)
             u32 padding[2];
         } local;
 
-        *(u32 *)(target + 0x1C8) = (u32)p;
+        *(u8 **)(target + 0x1C8) = p;
         target[0x20A] = 1;
         target[0x1E6] = p[0x1E6] ^ 1;
         target[0x1B5] = 33;
