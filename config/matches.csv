@@ -8987,8 +8987,8 @@ func_0011FB18,0x0011FB18,0x1C,src/sdk_file_close_0011FB18.c,complete
 func_00119E80,0x00119E80,0x58,src/sdk_reentrant_close_00119E80.c,complete
 func_004103D8,0x004103D8,0x8C,src/query_runtime_value_004103D8.c,complete
 func_002E6040,0x002E6040,0x8C,src/grok_w7_substate_gated_increment.c,complete
-func_004105D8,0x004105D8,0xAC,src/hash_runtime_text_004105D8.c,complete
 func_0011B768,0x0011B768,0x1C,src/sdk_cleanup_context_0011B768.c,complete
 func_0011B788,0x0011B788,0x1C,src/sdk_cleanup_default_0011B788.c,complete
 func_00410BD8,0x00410BD8,0x3C,src/release_runtime_reference_00410BD8.c,complete
 func_0011C838,0x0011C838,0x94,src/sdk_file_walk_0011C838.c,complete
+func_004105D8,0x004105D8,0xAC,src/decode_hex_length_004105D8.c,complete

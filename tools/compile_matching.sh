@@ -2776,14 +2776,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/grok_w7_substate_gated_increment.o" private/SLUS_204.86.rom \
     --source src/grok_w7_substate_gated_increment.c
 
-"$WIBO" "$SNCPP" -P src/hash_runtime_text_004105D8.c \
-    "$BUILD/hash_runtime_text_004105D8.i"
+"$WIBO" "$SNCPP" -P src/decode_hex_length_004105D8.c \
+    "$BUILD/decode_hex_length_004105D8.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
-    "$BUILD/hash_runtime_text_004105D8.i" "$BUILD/hash_runtime_text_004105D8.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/hash_runtime_text_004105D8.o" \
-    "$BUILD/hash_runtime_text_004105D8.s"
-"$PYTHON" tools/verify_object.py "$BUILD/hash_runtime_text_004105D8.o" \
-    private/SLUS_204.86.rom --source src/hash_runtime_text_004105D8.c
+    "$BUILD/decode_hex_length_004105D8.i" "$BUILD/decode_hex_length_004105D8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/decode_hex_length_004105D8.o" \
+    "$BUILD/decode_hex_length_004105D8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/decode_hex_length_004105D8.o" \
+    private/SLUS_204.86.rom --source src/decode_hex_length_004105D8.c
 
 "$WIBO" "$SNCPP" -P src/sdk_cleanup_context_0011B768.c "$BUILD/sdk_cleanup_context_0011B768.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_cleanup_context_0011B768.i" "$BUILD/sdk_cleanup_context_0011B768.s"
