@@ -1734,3 +1734,15 @@ The 188-byte ground-clamp handler matches as part of its complete
 (17.5767%), 9,038 functions. Data stays 74,613 bytes (11.5132%).
 Changed code, catalog validation, and both full-image hashes pass.
 The palette-byte patch is held for correction of its selector pair order.
+
+
+### Corrected palette reachability and default SDK record
+
+Palette reachability follows the native second-byte times eight plus
+first-byte expression. Only 56 reachable bytes receive reconstructed
+credit; gaps and the unread tail remain raw. The 28-byte SDK wrapper
+passes the default context to the static-record getter, whose declaration
+now records that ignored argument. Both source objects are exact.
+Catalog: 578,952 linked matching code bytes (17.5776%), 9,039 functions;
+74,669 reconstructed data bytes (11.5219%). Changed objects and both
+full-image hash gates pass.

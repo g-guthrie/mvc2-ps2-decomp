@@ -9041,3 +9041,4 @@ func_002D1330,0x002D1330,0x154,src/grok_w7_conditional_phase_chain.c,complete
 func_002D0630,0x002D0630,0xA8,src/fixed_launch_effect_initializers.c,complete
 func_002E1EB0,0x002E1EB0,0xC8,src/motion_speed_transition.c,complete
 func_002E0B80,0x002E0B80,0xBC,src/motion_speed_transition.c,complete
+func_0011C998,0x0011C998,0x1C,src/sdk_default_static_record_0011C998.c,complete

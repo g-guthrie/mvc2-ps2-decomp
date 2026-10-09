@@ -2998,3 +2998,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_allocate_file_glue_0011B5F8.i" "$BUILD/sdk_allocate_file_glue_0011B5F8.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_allocate_file_glue_0011B5F8.o" "$BUILD/sdk_allocate_file_glue_0011B5F8.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sdk_allocate_file_glue_0011B5F8.o" private/SLUS_204.86.rom --source src/sdk_allocate_file_glue_0011B5F8.c
+
+"$WIBO" "$SNCPP" -P src/sdk_default_static_record_0011C998.c "$BUILD/sdk_default_static_record_0011C998.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_default_static_record_0011C998.i" "$BUILD/sdk_default_static_record_0011C998.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_default_static_record_0011C998.o" "$BUILD/sdk_default_static_record_0011C998.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sdk_default_static_record_0011C998.o" private/SLUS_204.86.rom --source src/sdk_default_static_record_0011C998.c
