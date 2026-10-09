@@ -2673,3 +2673,12 @@ three-argument destination-pointer API in tail_call_leaves, leaves7, leaves13,
 leaves20 and grok_w5_0028. Every complete source object verifies exactly. Full
 hybrid linkage and packed retail ELF identity pass. This interface correction
 adds no coverage credit; code remains 602,756 bytes (18.3003%).
+
+## Runtime option setter checkpoint
+
+Recovered the complete 32-byte four-argument option setter with EE96/SNAS.
+Native registration callers pass three record words for byte truncation and a
+fourth word for the selector, including explicit zero arguments on null paths.
+Whole object, catalog, full hybrid linkage and packed retail ELF identity pass.
+Catalog: 602,788 code bytes (18.3013%), 9,215 functions; data remains 83,806
+bytes (12.9317%).
