@@ -4269,3 +4269,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/update_runtime_animation_state_0041AA10.o"
 "$PYTHON" tools/verify_object.py "$BUILD/update_runtime_animation_state_0041AA10.o" \
     private/SLUS_204.86.rom --source src/update_runtime_animation_state_0041AA10.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_backend_notice_004207C0.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/initialize_backend_notice_004207C0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_backend_notice_004207C0.o" \
+    private/SLUS_204.86.rom --source src/initialize_backend_notice_004207C0.c
