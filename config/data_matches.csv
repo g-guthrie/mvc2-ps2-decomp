@@ -4988,7 +4988,8 @@ gSpriteMotionVectors_004B12A0,0x004B12A0,0x1F8,src/data/gSpriteMotionVectors_004
 data_raw_004B1498,0x004B1498,0x8,src/data/data_raw_004B1498.c,complete,placeholder
 gSpriteRotationVectors_004B14A0,0x004B14A0,0x1F8,src/data/gSpriteRotationVectors_004B14A0.c,complete,reconstructed
 data_zero_004B1698,0x004B1698,0x8,src/data/data_zero_004B1698.c,complete,placeholder
-data_u32_004B16A0,0x004B16A0,0x240,src/data/data_u32_004B16A0.c,complete,placeholder
+data_f32pair_004B16A0,0x004B16A0,0x90,src/data/data_f32pair_004B16A0.c,complete,reconstructed
+data_u32_004B1730,0x004B1730,0x1B0,src/data/data_u32_004B1730.c,complete,placeholder
 data_f32_one_004B18E0,0x004B18E0,0xC,src/data/data_f32_one_004B18E0.c,complete,placeholder
 data_u32_004B18EC,0x004B18EC,0x4,src/data/data_u32_004B18EC.c,complete,placeholder
 data_f32_one_004B18F0,0x004B18F0,0xC,src/data/data_f32_one_004B18F0.c,complete,placeholder
