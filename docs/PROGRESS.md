@@ -2555,3 +2555,12 @@ Removed 144 bytes of reconstructed data credit: the waveform callback lifetime
 does not yet prove a full 128-index cycle, and the hex formatter caller does not
 establish all sixteen input nibbles. Their exact typed sources remain held
 placeholders. Data: 83,806 bytes (12.9317%), 2,851 reconstructed source units.
+
+## Negative flag callback checkpoint
+
+Recovered the 112-byte negative flag reset and its 128-byte masked sibling,
+with callback signatures grounded by the native tables and dispatchers. The
+shared object verifies both complete spans. Catalog: 601,780 code bytes
+(18.2707%), 9,208 functions; data remains 83,806 bytes (12.9317%).
+All 34 project tests, assembly splitting, catalog validation and full retail
+link/packed ELF identity pass.
