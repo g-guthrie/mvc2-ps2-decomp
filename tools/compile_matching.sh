@@ -2952,6 +2952,17 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
     "$BUILD/clear_runtime_record_payload_0040B6E0.o" \
     private/SLUS_204.86.rom --source src/clear_runtime_record_payload_0040B6E0.c
 
+"$WIBO" "$SNCPP" -P src/log_unimplemented_runtime_service_0040EF48.c \
+    "$BUILD/log_unimplemented_runtime_service_0040EF48.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/log_unimplemented_runtime_service_0040EF48.i" \
+    "$BUILD/log_unimplemented_runtime_service_0040EF48.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/log_unimplemented_runtime_service_0040EF48.o" \
+    "$BUILD/log_unimplemented_runtime_service_0040EF48.s"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/log_unimplemented_runtime_service_0040EF48.o" \
+    private/SLUS_204.86.rom --source src/log_unimplemented_runtime_service_0040EF48.c
+
 "$WIBO" "$SNCPP" -P src/read_versioned_runtime_state_00401F38.c \
     "$BUILD/read_versioned_runtime_state_00401F38.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
