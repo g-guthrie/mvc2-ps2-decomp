@@ -2420,3 +2420,14 @@ independent native range checks. The signed 00472E70 bank’s source comment
 now names its actual 003A6E40/003A7110 consumers and exact LH sites.
 Catalog: 595,588 code bytes (18.0827%), 81,890 data bytes (12.6361%).
 All changed data objects, relocations, catalog, and both image hashes pass.
+
+
+### CA40/CA70 owner-context contract
+
+The native outer dispatcher supplies p+0x2B8 through CA70 into CA40.
+Both tables and the C dispatcher now use the proven two-argument callback
+contract. The complete 228-byte context handler matches, and CA70 adds
+40 reconstructed pointer bytes. The context’s byte state and actor float
+zero stores have explicit types. Catalog: 595,816 code bytes (18.0896%),
+9,157 functions, 81,930 data bytes (12.6423%). Both full caller objects,
+the isolated handler, table relocations, catalog, and both image hashes pass.
