@@ -2886,6 +2886,17 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
     "$BUILD/dispatch_runtime_record_fields_00404360.o" \
     private/SLUS_204.86.rom --source src/dispatch_runtime_record_fields_00404360.c
 
+"$WIBO" "$SNCPP" -P src/copy_runtime_record_halfwords_00404388.c \
+    "$BUILD/copy_runtime_record_halfwords_00404388.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/copy_runtime_record_halfwords_00404388.i" \
+    "$BUILD/copy_runtime_record_halfwords_00404388.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/copy_runtime_record_halfwords_00404388.o" \
+    "$BUILD/copy_runtime_record_halfwords_00404388.s"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/copy_runtime_record_halfwords_00404388.o" \
+    private/SLUS_204.86.rom --source src/copy_runtime_record_halfwords_00404388.c
+
 "$WIBO" "$SNCPP" -P src/clear_runtime_service_table_00404240.c \
     "$BUILD/clear_runtime_service_table_00404240.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \

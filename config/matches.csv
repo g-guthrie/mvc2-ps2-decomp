@@ -9231,3 +9231,4 @@ func_0040A218,0x0040A218,0x38,src/read_runtime_record_mode_0040A218.c,complete
 func_00404408,0x00404408,0x30,src/initialize_runtime_descriptor_00404408.c,complete
 func_00404360,0x00404360,0x24,src/dispatch_runtime_record_fields_00404360.c,complete
 func_00404240,0x00404240,0x24,src/clear_runtime_service_table_00404240.c,complete
+func_00404388,0x00404388,0x24,src/copy_runtime_record_halfwords_00404388.c,complete
