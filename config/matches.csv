@@ -9050,3 +9050,4 @@ func_002B6920,0x002B6920,0xA4,src/grok_w7_signed_flag_spawn_position.c,complete
 func_00417E30,0x00417E30,0x78,src/transform_runtime_point_00417E30.c,complete
 func_0011DA88,0x0011DA88,0xA4,src/sdk_allocate_size_class_node_0011DA88.c,complete
 func_002F3A30,0x002F3A30,0x64,src/grok_w7_global_gate_callbacks.c,complete
+func_004173C0,0x004173C0,0x80,src/compose_runtime_matrix_translation_004173C0.c,complete
