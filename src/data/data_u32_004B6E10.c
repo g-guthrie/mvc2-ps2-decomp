@@ -1,13 +1,6 @@
-/* Held uncredited pending caller-value proof for the extracted nibbles. */
 typedef unsigned int u32;
-/* func_001E6670 takes selectors from a 4-bit nibble (srl 28, andi 0xF at 0x001E6768-74, 0x001E6800-0C, and 0x001E6880-84). It indexes this bank with selector*8 and loads both words in each selected pair at 0x001E6794-A4 and 0x001E682C-3C; the final pair uses both column bases at 0x001E6890-9C and 0x001E68A0-AC. All 16 pairs are in range. */
-u32 data_u32_004B6E10[32] = {
-    0x00000020u, 0x00000000u, 0x00000030u, 0x00000000u,
-    0x00000040u, 0x00000000u, 0x00000050u, 0x00000000u,
-    0x000000A0u, 0x00000010u, 0x000000B0u, 0x00000010u,
-    0x000000C0u, 0x00000010u, 0x000000D0u, 0x00000010u,
-    0x000000E0u, 0x00000010u, 0x00000000u, 0x00000020u,
-    0x000000C0u, 0x00000060u, 0x00000000u, 0x00000000u,
-    0x00000020u, 0x00000030u, 0x00000040u, 0x00000050u,
-    0x000010A0u, 0x000010B0u, 0x000010C0u, 0x000010D0u,
+/* Native caller func_001E6D80 builds E6670's first argument from the TIM2 PSM byte: func_004166B0 maps codes through D_004BED80 (0,16,24,32,4,8) at 0x004166B0-EC; func_001E6B00 stores that value shifted right 3 at 0x001E6B48-54; the caller loads it at 0x001E73BC and calls func_001E6670 at 0x001E73D8. It is therefore 0..4. E6670's fixed three-entry first pass extracts selectors from this value shifted left 20; the first zero nibble selects fallback row10, the second selects row0, and the third selects row0..4 (0x001E673C-40, 0x001E6768-74, 0x001E67B0-7C). Both words of each selected pair are loaded at 0x001E679C/A4. */
+u32 data_u32_004B6E10[10] = {
+    0x00000020u, 0x00000000u, 0x00000030u, 0x00000000u, 0x00000040u, 0x00000000u, 0x00000050u, 0x00000000u,
+    0x000000A0u, 0x00000010u,
 };
