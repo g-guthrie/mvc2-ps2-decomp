@@ -3191,3 +3191,10 @@ Recovered exactly 12 bytes at 0x004B192C. Native func_0013E0F0 constructs
 a fixed base and loads offsets 0, 4 and 8 as floats. The remaining eight
 zero bytes stay untyped. Both changed data objects verify exactly. Data
 reaches 151,998 bytes (23.4542%); code remains 610,496 bytes (18.5353%).
+
+## Mode event initializer
+
+Recovered the complete 84-byte initializer at 0x001382F0, preserving
+allocation failure, mode byte, timers and callback setup. Whole-object
+verification passes. Code reaches 610,580 bytes (18.5378%), 9,289 functions;
+data remains 151,998 bytes (23.4542%).

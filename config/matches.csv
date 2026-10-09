@@ -9291,3 +9291,4 @@ func_00411978,0x00411978,0x9C,src/dispatch_runtime_callback_00411978.c,complete
 func_002E4690,0x002E4690,0x7C,src/grok_w3_0019.c,complete
 func_00141250,0x00141250,0x70,src/create_scene_anchor_00141250.c,complete
 func_0014A220,0x0014A220,0x70,src/create_owner_overlay_0014A220.c,complete
+func_001382F0,0x001382F0,0x54,src/create_mode_event_001382F0.c,complete
