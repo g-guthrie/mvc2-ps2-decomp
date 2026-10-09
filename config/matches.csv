@@ -9130,3 +9130,4 @@ func_0030B500,0x0030B500,0xB4,src/grok_w7_timed_three_axis_reset.c,complete
 func_00174030,0x00174030,0x64,src/status_flag_updates.c,complete
 func_00173470,0x00173470,0x60,src/status_flag_updates.c,complete
 func_0030B7B0,0x0030B7B0,0xA0,src/grok_w7_signed_update_position.c,complete
+func_00173590,0x00173590,0x70,src/randomized_object_state.c,complete

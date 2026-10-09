@@ -13,7 +13,7 @@ extern void func_00117328();
 extern void func_001173E8();
 extern void func_00117418();
 extern void func_0011F5C0();
-extern void func_0011F5D8();
+extern int func_0011F5D8(void);
 extern void func_00127140();
 extern void func_00127590();
 extern void func_001283C0();
@@ -1401,7 +1401,7 @@ void func_003F5080(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003F5440(a0, 0, a2, a
 
 void func_00413DE0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_004121B0(a0, a1, a2, a3); }
 
-void func_00417A40(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0011F5D8(a0, a1, a2, a3); }
+int func_00417A40(void) { return func_0011F5D8(); }
 
 void func_00417FA0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0011F5C0(a0, a1, a2, a3); }
 
