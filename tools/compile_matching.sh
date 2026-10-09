@@ -3473,3 +3473,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_countdown_motion_restart.o" private/SLUS_204.86.rom \
     --source src/grok_w7_countdown_motion_restart.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_fixed_phase_entry.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_fixed_phase_entry.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_fixed_phase_entry.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_fixed_phase_entry.c
