@@ -2625,3 +2625,11 @@ the workspace fills. Ordinary counter globals suffice for an exact match;
 unnecessary volatile qualifiers were removed. Whole object, catalog and full
 retail link/packed ELF identity pass. Catalog: 602,656 code bytes (18.2973%),
 9,213 functions. Data remains 83,806 bytes (12.9317%).
+
+## Expanded workspace reset interface correction
+
+Removed an unnecessary volatile qualifier from the ordinary workspace counter
+and corrected the memory-fill helper declaration to return its destination
+pointer. The caller ignores that pointer. The complete 24-byte reset remains
+exact; full hybrid linkage and packed retail ELF identity pass. Code credit
+remains 602,656 bytes (18.2973%).
