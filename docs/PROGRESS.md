@@ -2189,3 +2189,14 @@ the native signed flag gate and orientation-dependent negation. Catalog:
 587,272 linked matching code bytes (17.8302%), 9,101 functions; data
 remains 79,780 bytes (12.3105%). Whole-source verification, catalog
 validation, and both full-image hashes pass.
+
+
+### Corrected SDK registration and selected label mappings
+
+Registration credit is limited to 40 consumed bytes: IDs, symbolic code
+addresses, and the loop’s first words. Its unused second words and kernel
+address remain raw. The fixed 21-row label bank and 23 proved map bytes
+add 107 bytes; other banks also select G, which remains pending. Catalog:
+587,272 linked matching code bytes (17.8302%), 79,927 reconstructed data
+bytes (12.3332%). All affected data objects, catalog validation, and both
+full-image hashes pass.
