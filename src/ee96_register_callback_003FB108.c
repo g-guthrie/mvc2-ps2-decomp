@@ -1,6 +1,6 @@
 typedef signed int s32;
-/* func_003FB128 invokes a registered callback with (context, buffer); it ignores V0. */
-typedef void (*Callback)(void *context, void *buffer);
+/* func_003FB128 passes its text buffer as the callback argument; V0 is ignored. */
+typedef void (*Callback)(void *context, void *argument);
 
 extern Callback D_004C22A0;
 extern void *D_004C22A4;
