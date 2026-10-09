@@ -9034,3 +9034,4 @@ func_004171E0,0x004171E0,0x18,src/reset_selected_runtime_transform_004171E0.c,co
 func_00416A70,0x00416A70,0x28,src/zero_runtime_word_00416A70.c,complete
 func_00418C70,0x00418C70,0x48,src/initialize_runtime_services_00418C70.c,complete
 func_00418AA0,0x00418AA0,0x6C,src/dispatch_runtime_mode_result_00418AA0.c,complete
+func_002D0590,0x002D0590,0x94,src/fixed_launch_effect_initializers.c,complete
