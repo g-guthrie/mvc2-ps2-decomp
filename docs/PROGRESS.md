@@ -3228,3 +3228,10 @@ retain the native 0.8 representation through typed bit access, and the
 existing empty callback interface is preserved. Whole-object verification
 passes. Code reaches 610,928 bytes (18.5484%), 9,293 functions; data remains
 151,998 bytes (23.4542%).
+
+## Third unit scale event initializer
+
+Recovered the complete 96-byte initializer at 0x0015C560 in the existing
+unit-scale source object. All three functions remain exact. Code reaches
+611,024 bytes (18.5513%), 9,294 functions; data remains 151,998 bytes
+(23.4542%).
