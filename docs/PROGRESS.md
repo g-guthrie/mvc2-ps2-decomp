@@ -2510,3 +2510,13 @@ The typed callback/context setter, two message adapters, and scalar-state
 clamp add 116 exact code bytes. Their actual native interfaces are recorded
 in source. Catalog: 599,920 code bytes (18.2142%), 9,191 functions,
 83,647 data bytes (12.9072%). Whole object, catalog, and full-image checks pass.
+
+
+### Message dispatcher reserved-argument contract
+
+The 44-byte indirect dispatcher matches. Its native wrapper explicitly
+passes the context-slot address, message pointer, and zero reserved word;
+the callback uses the stored context and the same message/reserved tuple.
+Setter and adapter types share that verified contract. Catalog: 599,964
+code bytes (18.2155%), 9,192 functions, 83,647 data bytes (12.9072%).
+All four affected functions, catalog, and both full-image hashes pass.
