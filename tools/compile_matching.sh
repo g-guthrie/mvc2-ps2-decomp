@@ -3587,3 +3587,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_context_result_transition.o" private/SLUS_204.86.rom \
     --source src/grok_w7_context_result_transition.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_motion_limit_callback.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_motion_limit_callback.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_motion_limit_callback.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_motion_limit_callback.c

@@ -9169,3 +9169,4 @@ func_00303A50,0x00303A50,0xE4,src/grok_w7_owner_context_float_setup.c,complete
 func_003F0DF0,0x003F0DF0,0x6C,src/grok_r1_0038.c,complete
 func_0030FE70,0x0030FE70,0xF4,src/grok_w7_activation_validator.c,complete
 func_00306D20,0x00306D20,0x94,src/grok_w7_context_result_transition.c,complete
+func_00306E80,0x00306E80,0x9C,src/grok_w7_motion_limit_callback.c,complete
