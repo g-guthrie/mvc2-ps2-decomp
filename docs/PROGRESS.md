@@ -1380,3 +1380,17 @@ The hybrid loaded image and packed executable match retail. Code is 570,408
 bytes (17.3182%); reconstructed data is 70,694 bytes
 (10.9085%) across 2,307 units. Full source decompilation remains incomplete;
 the next scheduled code push remains 21.0711%.
+
+
+### Verified motion, chain counters, and typed data checkpoint
+
+Six whole functions add 832 exact linked code bytes: three motion handlers,
+two runtime linked-list counters, and the effect-parameter initializer. The
+effect provider is now a typed structure, avoiding incompatible float pointer
+access. Bounded animation records and menu strings add reconstructed data;
+unproven selectors and string-bank gaps remain raw and uncredited.
+
+The catalog reports 571,240 code bytes (17.3434%) and 70,818 reconstructed
+data bytes (10.9276%) across 2,312 data owners. Targeted object checks and
+all 45 tests pass. The hybrid loaded image and packed executable also match
+retail hashes. Full source decompilation and linkage remain incomplete.

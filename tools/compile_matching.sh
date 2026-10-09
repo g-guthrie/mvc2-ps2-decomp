@@ -2651,26 +2651,38 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/grok_w7_wait_frame_motion.o" private/SLUS_204.86.rom \
     --source src/grok_w7_wait_frame_motion.c
 
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w7_zero_frame_velocity_setup.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w7_zero_frame_velocity_setup.o"
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_zero_frame_velocity_setup.o" private/SLUS_204.86.rom \
     --source src/grok_w7_zero_frame_velocity_setup.c
 
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w7_nonzero_state_launch.c -c -lang c -O3 -sdatathreshold 0 \
     -o "$BUILD/grok_w7_nonzero_state_launch.o"
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_nonzero_state_launch.o" private/SLUS_204.86.rom \
     --source src/grok_w7_nonzero_state_launch.c
 
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w7_negative_floor_rebound.c -c -lang c -O3 -sdatathreshold 0 \
     -o "$BUILD/grok_w7_negative_floor_rebound.o"
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_negative_floor_rebound.o" private/SLUS_204.86.rom \
     --source src/grok_w7_negative_floor_rebound.c
 
 
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/initialize_effect_parameters_00420400.c -c -lang c -O3 -sdatathreshold 0 \
     -o "$BUILD/initialize_effect_parameters_00420400.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_effect_parameters_00420400.o" \
     private/SLUS_204.86.rom --source src/initialize_effect_parameters_00420400.c
+
 
 "$WIBO" "$SNCPP" -P src/count_runtime_chains_00410468.c \
     "$BUILD/count_runtime_chains_00410468.i"
