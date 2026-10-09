@@ -8985,3 +8985,4 @@ func_004106E8,0x004106E8,0x34,src/derive_archive_segment_004106E8.c,complete
 func_0011F6A0,0x0011F6A0,0x34,src/sdk_file_flush_0011F6A0.c,complete
 func_0011FB18,0x0011FB18,0x1C,src/sdk_file_close_0011FB18.c,complete
 func_00119E80,0x00119E80,0x58,src/sdk_reentrant_close_00119E80.c,complete
+func_004103D8,0x004103D8,0x8C,src/query_runtime_value_004103D8.c,complete
