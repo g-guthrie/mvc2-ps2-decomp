@@ -3726,3 +3726,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_float_toggle_launch.o" private/SLUS_204.86.rom \
     --source src/grok_w7_float_toggle_launch.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_timed_state_transition.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_timed_state_transition.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_timed_state_transition.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_timed_state_transition.c
