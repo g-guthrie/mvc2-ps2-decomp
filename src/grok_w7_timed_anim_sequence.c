@@ -1,6 +1,6 @@
 typedef unsigned char u8;
 typedef signed short s16;
-extern int func_003B5A40(u8 *);
+extern int func_003B5A40(u8 *, int);
 extern void func_001E3210(u8 *, int);
 extern int func_001757E0(u8 *, int, int);
 void func_00307AD0(u8 *p, void *context)
@@ -13,7 +13,7 @@ void func_00307AD0(u8 *p, void *context)
     *(s16 *)(p + 0x1C) = timer;
     if (timer != 0)
         return;
-    if (func_003B5A40(p) != 0) {
+    if (func_003B5A40(p, 2) != 0) {
         func_001E3210(p, 47);
         timer = *(s16 *)(p + 0x1E);
         timer--;
