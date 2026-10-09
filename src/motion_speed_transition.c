@@ -1,5 +1,6 @@
 typedef signed char s8;
 typedef unsigned char u8;
+typedef unsigned short u16;
 typedef unsigned int u32;
 typedef signed short s16;
 typedef float f32;
@@ -545,4 +546,32 @@ void func_002B6530(u8 *p)
     }
     if (func_001864A0(p))
         func_00184540(p);
+}
+
+void func_0030D8A0(u8 *p)
+{
+    s16 timer;
+    f32 velocity;
+
+    *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
+    *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
+    *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
+    *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
+
+    if ((s8)func_00175700(p) < 0) {
+        timer = --*(s16 *)(p + 0x1C);
+        if (timer > 0) {
+            if (*(s8 *)(p + 0x539) != 0)
+                return;
+            if ((*(u16 *)(p + 0x35E) & 0x800) != 0)
+                return;
+        }
+        p[6]++;
+        velocity = 0.833333313465118408203125f;
+        if (p[0x1E6] == 0)
+            velocity = -velocity;
+        *(f32 *)(p + 0x5C) = velocity;
+        *(f32 *)(p + 0x68) = 0.0f;
+        func_001757E0(p, 2, 2);
+    }
 }

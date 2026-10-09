@@ -9225,3 +9225,4 @@ func_0040CA70,0x0040CA70,0x30,src/set_runtime_status_mode_0040CA70.c,complete
 func_00400B58,0x00400B58,0x40,src/write_runtime_remaining_size_00400B58.c,complete
 func_003061E0,0x003061E0,0x98,src/physics_dispatchers.c,complete
 func_0030D640,0x0030D640,0x88,src/physics_dispatchers.c,complete
+func_0030D8A0,0x0030D8A0,0xEC,src/motion_speed_transition.c,complete
