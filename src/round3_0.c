@@ -749,7 +749,21 @@ void func_00258DC0(u8 *p) {
     func_001AFCB0(p, 6);
     func_001757E0(p, 19, 4);
 }
-extern void func_00279100(u8 *), func_0027B950(u8 *);
+extern void func_00279100(u8 *);
+extern void func_001BF350(void *, u8);
+extern void func_0027B9B0(u8 *);
+
+void func_0027B950(u8 *p)
+{
+    if ((s8)func_00175700(p) < 0) {
+        p[7]++;
+        p[316] = 0;
+        *(s16 *)(p + 28) = 10;
+        func_001BF350(p, 0);
+        func_0027B9B0(p);
+    }
+}
+
 void func_00279090(u8 *p) {
     p[7]++;
     func_00175C00(p, 0);
