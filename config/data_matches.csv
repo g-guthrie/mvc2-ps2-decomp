@@ -4961,8 +4961,8 @@ data_u8_004AADCE,0x004AADCE,0x2,src/data/data_u8_004AADCE.c,complete,placeholder
 jtbl_004AADD0,0x004AADD0,0xEC,src/data/jtbl_004AADD0.c,complete,placeholder
 gPs2SystemText_004AAEC0,0x004AAEC0,0x16,src/data/gPs2SystemText_004AAEC0.c,complete,reconstructed
 data_u8_004AAED6,0x004AAED6,0x2,src/data/data_u8_004AAED6.c,complete,placeholder
-data_u32_004AAED8,0x004AAED8,0x14,src/data/data_u32_004AAED8.c,complete,placeholder
-data_u8_004AAEEC,0x004AAEEC,0x44,src/data/data_u8_004AAEEC.c,complete,placeholder
+data_u32_004AAED8,0x004AAED8,0x28,src/data/data_u32_004AAED8.c,complete,reconstructed
+data_raw_004AAF00,0x004AAF00,0x30,src/data/data_raw_004AAF00.c,complete,placeholder
 gPs2SystemText_004AAF30,0x004AAF30,0x22,src/data/gPs2SystemText_004AAF30.c,complete,reconstructed
 data_u8_004AAF52,0x004AAF52,0x6,src/data/data_u8_004AAF52.c,complete,placeholder
 gPs2SystemText_004AAF58,0x004AAF58,0x25,src/data/gPs2SystemText_004AAF58.c,complete,reconstructed
