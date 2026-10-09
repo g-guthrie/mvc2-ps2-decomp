@@ -3184,3 +3184,10 @@ preserves allocation failure and the exact -0.1f depth representation,
 and connects the owner context. Whole-object verification passes. Code
 reaches 610,496 bytes (18.5353%), 9,288 functions; data remains 151,986 bytes
 (23.4523%).
+
+## Fixed zero-float vector
+
+Recovered exactly 12 bytes at 0x004B192C. Native func_0013E0F0 constructs
+a fixed base and loads offsets 0, 4 and 8 as floats. The remaining eight
+zero bytes stay untyped. Both changed data objects verify exactly. Data
+reaches 151,998 bytes (23.4542%); code remains 610,496 bytes (18.5353%).
