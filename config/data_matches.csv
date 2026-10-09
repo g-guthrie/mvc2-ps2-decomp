@@ -5339,9 +5339,15 @@ data_raw_004B8E7D,0x004B8E7D,0x17,src/data/data_raw_004B8E7D.c,complete,placehol
 gLegalNoticeSegment20_004B8E94,0x004B8E94,0x29,src/data/gLegalNoticeSegment20_004B8E94.c,complete,reconstructed
 data_raw_004B8EBD,0x004B8EBD,0x53,src/data/data_raw_004B8EBD.c,complete,placeholder
 gPressStartDebugLabel_004B8F10,0x004B8F10,0x13,src/data/gPressStartDebugLabel_004B8F10.c,complete,reconstructed
-data_u8_004B8F23,0x004B8F23,0x15,src/data/data_u8_004B8F23.c,complete,placeholder
+data_raw_004B8F23,0x004B8F23,0x5,src/data/data_raw_004B8F23.c,complete,placeholder
+gContinueDebugLabel_004B8F28,0x004B8F28,0x9,src/data/gContinueDebugLabel_004B8F28.c,complete,reconstructed
+data_zero_004B8F31,0x004B8F31,0x7,src/data/data_zero_004B8F31.c,complete,placeholder
 gButtonConfigDebugLabel_004B8F38,0x004B8F38,0xF,src/data/gButtonConfigDebugLabel_004B8F38.c,complete,reconstructed
-data_u8_004B8F47,0x004B8F47,0xE9,src/data/data_u8_004B8F47.c,complete,placeholder
+data_raw_004B8F47,0x004B8F47,0x1,src/data/data_raw_004B8F47.c,complete,placeholder
+gCommandListDebugLabel_004B8F48,0x004B8F48,0xD,src/data/gCommandListDebugLabel_004B8F48.c,complete,reconstructed
+data_zero_004B8F55,0x004B8F55,0x3,src/data/data_zero_004B8F55.c,complete,placeholder
+gModeMenuDebugLabel_004B8F58,0x004B8F58,0xA,src/data/gModeMenuDebugLabel_004B8F58.c,complete,reconstructed
+data_raw_004B8F62,0x004B8F62,0xCE,src/data/data_raw_004B8F62.c,complete,placeholder
 data_zero_004B9030,0x004B9030,0x10,src/data/data_zero_004B9030.c,complete,placeholder
 data_u32_004B9040,0x004B9040,0x10,src/data/data_u32_004B9040.c,complete,placeholder
 data_zero_004B9050,0x004B9050,0x10,src/data/data_zero_004B9050.c,complete,placeholder

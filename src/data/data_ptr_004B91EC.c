@@ -1,3 +1,3 @@
-/* func_003D3E90 passes record offset 4 to func_003D7350; target is within source-owned label bytes. */
-extern unsigned char data_u8_004B8F47[];
-unsigned char *data_ptr_004B91EC[1] = { &data_u8_004B8F47[0x11] };
+/* Bounded row 3 of D_004B91D0 passes this message through func_003D7350. */
+extern char gModeMenuDebugLabel_004B8F58[];
+char *data_ptr_004B91EC[1] = { gModeMenuDebugLabel_004B8F58 };
