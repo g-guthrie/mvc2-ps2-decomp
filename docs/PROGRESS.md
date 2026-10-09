@@ -2244,3 +2244,12 @@ The complete 140-byte handler preserves both random-state reads and uses
 the allocator helper’s pointer return and canonical no-argument random API.
 Catalog: 588,344 exact code bytes (17.8627%), 9,108 functions; data remains
 80,029 bytes (12.3489%). Whole-object and full-image checks pass.
+
+
+### Renderer variants
+
+Three observed signed selector fields and four float pairs add 38 data
+bytes. Call sites restrict the selector fields to 0/1/2; the float-pair
+consumer maps its byte selector to 0..3, including the default case.
+Catalog: 588,344 exact code bytes (17.8627%), 80,067 reconstructed
+data bytes (12.3548%). Changed objects, catalog, and both image hashes pass.
