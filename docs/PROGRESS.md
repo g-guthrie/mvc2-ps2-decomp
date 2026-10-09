@@ -1658,3 +1658,16 @@ Catalog: 576,352 exact linked code bytes (17.4986%), 9,020 functions. Data
 stays 73,557 bytes (11.3503%). All changed code objects, the complete hybrid
 loaded image, and the packed executable match retail. Larger motion-table
 and additional bounded-data candidates remain queued for consumer review.
+
+
+### Reviewed actor, runtime, and bounded data batch
+
+Ten whole-function exact matches add 1,224 code bytes. Bounded motion vectors,
+spawn vectors, lookup entries, and consumed formatting strings add 736 data
+bytes; unread stride padding and unconsumed string terminators remain raw.
+Startup selector and normalized mode assignments prove all twelve motion rows.
+
+Catalog: 577,576 exact linked code bytes (17.5358%), 9,030 functions;
+74,293 reconstructed data bytes (11.4638%). All changed native objects,
+45 tests, catalog validation, full hybrid image, and packed retail ELF pass.
+The next requested five-point code publication threshold remains 694,017 bytes.
