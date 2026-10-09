@@ -2729,3 +2729,14 @@ all registered functions exactly with their established compiler recipes. The
 305690 candidate remains uncredited and ordinary pointer-typed. Catalog:
 603,560 code bytes (18.3247%), 9,223 functions; data 83,806 bytes (12.9317%).
 Full hybrid linkage and packed retail ELF identity pass.
+
+## Reviewed frame tables and vector integration
+
+Integrated 436 bytes of reconstructed data, including the group-9 22-frame
+scalar table, group-8 sixteen-frame timing curve, fixed-selector vectors and
+the twelve explicitly selected event vectors. Ordinary float literals verify
+exactly. Copied D440B0/D440D0 lanes with unproven selectors stay raw; only
+their directly loaded fifth float words receive credit. All changed data
+objects, eleven data tests, catalog, full linkage and packed retail ELF pass.
+Catalog: 603,560 code bytes (18.3247%), 84,242 data bytes (12.9990%),
+2,883 reconstructed data source units.
