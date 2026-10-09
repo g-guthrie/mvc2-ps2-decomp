@@ -2699,3 +2699,15 @@ assembly step because GNUAS was unset. Added the established AS/default
 assembler fallback for GNUAS and resumed at that failed step using the completed
 objects. Shell syntax and all 34 project tests pass. Remaining whole-object
 checks and full-image validation continue; no new coverage is claimed.
+
+## Full registered source rebuild verification
+
+The complete registered rebuild, resumed at the legacy assembler step after
+repairing its missing default, now passes all source-object checks. All 7,865
+data units verify exactly. The hybrid places 9,219 isolated compiled-function
+sections and 7,865 compiled-data sections. The loaded image (3,941,760 bytes)
+and packed ELF (3,942,320 bytes) match retail hashes in full. Catalog remains
+602,788 credited code bytes (18.3013%), 9,215 credited functions, and 83,806
+reconstructed data bytes (12.9317%). Four placed source functions remain
+uncredited; linked image identity does not grant source reconstruction credit.
+Queued worker recoveries will be integrated after this verified checkpoint.
