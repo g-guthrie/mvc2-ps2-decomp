@@ -837,7 +837,8 @@ data_f32_00443C20,0x00443C20,0xC,src/data/data_f32_00443C20.c,complete,reconstru
 data_u8_00443C2C,0x00443C2C,0x4,src/data/data_u8_00443C2C.c,complete,placeholder
 jtbl_00443C30,0x00443C30,0xC,src/data/jtbl_00443C30.c,complete,reconstructed
 data_u32_00443C3C,0x00443C3C,0x4,src/data/data_u32_00443C3C.c,complete,placeholder
-data_f32_one_00443C40,0x00443C40,0x10,src/data/data_f32_one_00443C40.c,complete,placeholder
+data_f32_00443C40,0x00443C40,0xC,src/data/data_f32_00443C40.c,complete,reconstructed
+data_raw_00443C4C,0x00443C4C,0x4,src/data/data_raw_00443C4C.c,complete,placeholder
 data_u32_00443C50,0x00443C50,0xC,src/data/data_u32_00443C50.c,complete,placeholder
 data_f32_one_00443C5C,0x00443C5C,0x10,src/data/data_f32_one_00443C5C.c,complete,placeholder
 data_u32_00443C6C,0x00443C6C,0x4,src/data/data_u32_00443C6C.c,complete,placeholder
