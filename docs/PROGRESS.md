@@ -2200,3 +2200,12 @@ add 107 bytes; other banks also select G, which remains pending. Catalog:
 587,272 linked matching code bytes (17.8302%), 79,927 reconstructed data
 bytes (12.3332%). All affected data objects, catalog validation, and both
 full-image hashes pass.
+
+
+### Timed reset family
+
+Three complete timed-reset handlers add 448 exact code bytes, preserving
+the signed countdown, float-word representations, and native callback
+order. Catalog: 587,720 linked matching code bytes (17.8438%), 9,104
+functions; data remains 79,927 bytes (12.3332%). All three whole source
+objects, catalog validation, and both full-image hashes pass.
