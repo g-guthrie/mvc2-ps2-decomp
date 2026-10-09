@@ -2055,3 +2055,13 @@ Catalog: 583,700 linked matching code bytes (17.7217%), 9,080 functions;
 79,612 reconstructed data bytes (12.2846%). All affected whole source
 objects and 104 data objects, catalog validation, and both full-image
 hashes pass.
+
+
+### Multi-branch actor mode initializer
+
+The 272-byte actor initializer matches within its seven-function reset
+source. Catalog: 583,972 linked matching code bytes (17.7300%), 9,081
+functions; data remains 79,612 bytes (12.2846%). Whole-source proof,
+catalog validation, and both full-image hashes pass. The quad-builder
+candidate remains uncredited: its initially proposed extra float
+parameters are not supported by the native caller/callee contract.
