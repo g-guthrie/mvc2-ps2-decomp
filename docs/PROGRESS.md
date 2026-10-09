@@ -2649,3 +2649,11 @@ unsigned byte-count contract of func_0011D8F8. Removed an unused conflicting
 declaration from round2_pairs1. Both whole source objects verify exactly;
 full hybrid linkage and packed retail ELF identity pass. Code remains
 602,756 bytes (18.3003%); no additional percentage credit is claimed.
+
+## Object-pool memory fill contract correction
+
+Corrected the memory-fill declaration in the object pool and two initialization
+callbacks to preserve the helper destination-pointer return and unsigned byte
+count. All seven pool functions and both initialization callbacks remain exact
+in their complete source objects. Full retail hybrid linkage and packed ELF
+identity pass; credited code remains 602,756 bytes (18.3003%).

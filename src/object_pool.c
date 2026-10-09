@@ -16,7 +16,7 @@ extern Object *D_004C27A8;
 extern Object *D_004C27AC;
 extern short D_004D3460[];
 extern void (*D_00477850[])(void *,Object *,int);
-extern void func_0011D8F8(void *,int,int);
+extern void *func_0011D8F8(void *, int, unsigned int);
 Object *func_003DA780(void *owner,int kind,int initialize);
 Object *func_003DA780(void *owner,int kind,int initialize) {
  Object *object;
