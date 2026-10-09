@@ -2218,3 +2218,12 @@ arguments, preserving the signed result gate and independent flag clears.
 Catalog: 587,916 linked matching code bytes (17.8497%), 9,105 functions;
 data remains 79,927 bytes (12.3332%). Whole-source verification, catalog
 validation, and both full-image hashes pass.
+
+
+### Velocity update and format payload copy
+
+Two whole functions add 288 verified C bytes. The payload helper uses the
+canonical signed format-entry declaration and copies the declared word count.
+Catalog: 588,204 exact code bytes (17.8585%), 9,107 functions, and
+80,015 reconstructed data bytes (12.3468%). Both whole objects, catalog
+validation, and full loaded-image and packed-ELF hashes pass.
