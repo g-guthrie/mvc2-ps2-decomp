@@ -9043,3 +9043,4 @@ func_002E1EB0,0x002E1EB0,0xC8,src/motion_speed_transition.c,complete
 func_002E0B80,0x002E0B80,0xBC,src/motion_speed_transition.c,complete
 func_0011C998,0x0011C998,0x1C,src/sdk_default_static_record_0011C998.c,complete
 func_00120838,0x00120838,0x2C,src/sdk_parse_integer64_00120838.c,complete
+func_0011DB30,0x0011DB30,0x2C,src/sdk_return_size_class_node_0011DB30.c,complete

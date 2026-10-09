@@ -1764,3 +1764,12 @@ three trailing words remain raw. Native load/store sites are documented.
 Catalog: 578,996 linked code bytes (17.5789%), 74,673 reconstructed data
 bytes (11.5225%). Both split data objects, catalog validation, and both
 full-image hashes pass. The uppercase routine probe remains uncredited.
+
+
+### Size-class free-list insertion
+
+The 44-byte SDK routine returns a non-null node to its size-class free
+list. The source records the native next pointer, class index, and context
+list offset. Catalog: 579,040 linked matching code bytes (17.5803%),
+9,041 functions. Data remains 74,673 bytes (11.5225%). The native object,
+catalog validation, and both full-image hashes pass.
