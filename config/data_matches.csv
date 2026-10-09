@@ -4662,7 +4662,7 @@ jtbl_00476650,0x00476650,0x10,src/data/jtbl_00476650.c,complete,reconstructed
 data_u32_00476660,0x00476660,0x20,src/data/data_u32_00476660.c,complete,placeholder
 jtbl_00476680,0x00476680,0x30,src/data/jtbl_00476680.c,complete,reconstructed
 data_u32_004766B0,0x004766B0,0x50,src/data/data_u32_004766B0.c,complete,placeholder
-data_f32_one_00476700,0x00476700,0xC,src/data/data_f32_one_00476700.c,complete,placeholder
+data_f32_one_00476700,0x00476700,0xC,src/data/data_f32_one_00476700.c,complete,reconstructed
 data_u32_0047670C,0x0047670C,0x4,src/data/data_u32_0047670C.c,complete,placeholder
 data_f32_one_00476710,0x00476710,0x8,src/data/data_f32_one_00476710.c,complete,placeholder
 data_u32_00476718,0x00476718,0x4,src/data/data_u32_00476718.c,complete,placeholder
@@ -4718,12 +4718,12 @@ data_raw_00476A30,0x00476A30,0x51,src/data/data_raw_00476A30.c,complete,placehol
 gPresetVectorSelector_00476A81,0x00476A81,0x1,src/data/gPresetVectorSelector_00476A81.c,complete,reconstructed
 data_raw_00476A82,0x00476A82,0x2,src/data/data_raw_00476A82.c,complete,placeholder
 data_f32_00476A84,0x00476A84,0xC,src/data/data_f32_00476A84.c,complete,reconstructed
-data_f32_one_00476A90,0x00476A90,0x10,src/data/data_f32_one_00476A90.c,complete,placeholder
+data_f32_one_00476A90,0x00476A90,0x10,src/data/data_f32_one_00476A90.c,complete,reconstructed
 data_u32_00476AA0,0x00476AA0,0xB0,src/data/data_u32_00476AA0.c,complete,placeholder
-data_f32_one_00476B50,0x00476B50,0xC,src/data/data_f32_one_00476B50.c,complete,placeholder
+data_f32_one_00476B50,0x00476B50,0xC,src/data/data_f32_one_00476B50.c,complete,reconstructed
 data_u32_00476B5C,0x00476B5C,0x4,src/data/data_u32_00476B5C.c,complete,placeholder
-data_f32_one_00476B60,0x00476B60,0x14,src/data/data_f32_one_00476B60.c,complete,placeholder
-data_u32_00476B74,0x00476B74,0xC,src/data/data_u32_00476B74.c,complete,placeholder
+data_f32_one_00476B60,0x00476B60,0x14,src/data/data_f32_one_00476B60.c,complete,reconstructed
+data_f32_00476B74,0x00476B74,0xC,src/data/data_f32_00476B74.c,complete,reconstructed
 data_u32_00476B80,0x00476B80,0x90,src/data/data_u32_00476B80.c,complete,placeholder
 D_00476C10,0x00476C10,0x1A0,src/data/geometry_handlers.c,complete,reconstructed
 jtbl_00476DB0,0x00476DB0,0x44,src/data/jtbl_00476DB0.c,complete,placeholder

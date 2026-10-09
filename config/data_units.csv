@@ -4723,7 +4723,7 @@ data_u32_00476AA0,0x00476AA0,0xB0,.data,src/data/data_u32_00476AA0.c,initialized
 data_f32_one_00476B50,0x00476B50,0xC,.data,src/data/data_f32_one_00476B50.c,filled_f32_one
 data_u32_00476B5C,0x00476B5C,0x4,.data,src/data/data_u32_00476B5C.c,initialized_u32_table
 data_f32_one_00476B60,0x00476B60,0x14,.data,src/data/data_f32_one_00476B60.c,filled_f32_one
-data_u32_00476B74,0x00476B74,0xC,.data,src/data/data_u32_00476B74.c,filled_u32_constant
+data_f32_00476B74,0x00476B74,0xC,.data,src/data/data_f32_00476B74.c,initialized_f32_values
 data_u32_00476B80,0x00476B80,0x90,.data,src/data/data_u32_00476B80.c,initialized_u32_table
 D_00476C10,0x00476C10,0x1A0,.rodata,src/data/geometry_handlers.c,geometry_handler_table
 jtbl_00476DB0,0x00476DB0,0x44,.rodata,src/data/jtbl_00476DB0.c,jump_table
