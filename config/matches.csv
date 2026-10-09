@@ -9140,3 +9140,4 @@ func_0030BEB0,0x0030BEB0,0xDC,src/grok_w7_mirrored_float_state_setup.c,complete
 func_0030BD10,0x0030BD10,0xB4,src/grok_w7_mirrored_timer_entry_setup.c,complete
 func_0030BDD0,0x0030BDD0,0xDC,src/grok_w7_mirrored_float_reset_transition.c,complete
 func_0030C090,0x0030C090,0x90,src/grok_w7_owner_context_timer_dispatch.c,complete
+func_0030CDE0,0x0030CDE0,0xA8,src/grok_w7_timered_state_decay_gate.c,complete
