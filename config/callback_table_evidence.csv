@@ -853,7 +853,7 @@ jtbl_0045C9C8,0x0045C9C8,0xC,src/composite_dispatch_heads.c,jtbl_0045C9C8,void(u
 jtbl_0045C9E0,0x0045C9E0,0x14,src/composite_dispatch_heads.c,jtbl_0045C9E0,void(u8 *)
 jtbl_0045CA00,0x0045CA00,0x14,src/indirect_dispatch.c,jtbl_0045CA00,void(u8 *)
 jtbl_0045CA20,0x0045CA20,0x14,src/composite_dispatch_heads.c,jtbl_0045CA20,void(u8 *)
-jtbl_0045CA40,0x0045CA40,0x24,src/composite_dispatch_heads.c,jtbl_0045CA40,void(u8 *)
+jtbl_0045CA40,0x0045CA40,0x24,src/composite_dispatch_heads.c,func_00303E20,void(u8 *, void *)
 jtbl_0045CAA0,0x0045CAA0,0x1c,src/composite_dispatch_heads.c,jtbl_0045CAA0,void(u8 *)
 jtbl_0045CAC0,0x0045CAC0,0xC,src/preaction_dispatch_heads.c,jtbl_0045CAC0,void(u8 *)
 jtbl_0045CAD0,0x0045CAD0,0xC,src/argument_dispatch_heads.c,jtbl_0045CAD0,void(u8 *)
@@ -1389,3 +1389,4 @@ jtbl_004BF7D8,0x004BF7D8,0x8,src/side_inhibit_state_dispatch.c,func_001A8840,"vo
 jtbl_00475F60,0x00475F60,0x10,src/owner_generation_dispatch.c,func_003C4CD0,"void(u8 *,u8 *)"
 jtbl_00475F90,0x00475F90,0x10,src/owner_generation_dispatch.c,func_003C5080,"void(u8 *,u8 *)"
 jtbl_00475FA0,0x00475FA0,0x10,src/owner_generation_dispatch.c,func_003C5310,"void(u8 *,u8 *)"
+jtbl_0045CA70,0x0045CA70,0x28,config/functions.csv,residual_0030422C,void(u8 *, void *)

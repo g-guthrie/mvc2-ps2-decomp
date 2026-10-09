@@ -816,11 +816,11 @@ void func_00302ED0(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); 
 
 void func_003034A0(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
-void func_00303DE0(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
+void func_00303DE0(u8 *p, void *context) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
 void func_00303EC0(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
-void func_003040B0(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
+void func_003040B0(u8 *p, void *context) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
 void func_00306400(void *p) { if ((s8)func_00175700(p) < 0) { func_00184540(p); } }
 
