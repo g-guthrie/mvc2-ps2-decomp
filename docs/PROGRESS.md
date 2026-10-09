@@ -3220,3 +3220,11 @@ Recovered the complete 92-byte constructor at 0x0015C3F0 alongside the
 related 0x0015C130 function. Both functions in the shared source object
 verify exactly. Code reaches 610,860 bytes (18.5463%), 9,292 functions;
 data remains 151,998 bytes (23.4542%).
+
+## Runtime fade state reset
+
+Recovered the complete 68-byte reset at 0x0041D5F0. Float state fields
+retain the native 0.8 representation through typed bit access, and the
+existing empty callback interface is preserved. Whole-object verification
+passes. Code reaches 610,928 bytes (18.5484%), 9,293 functions; data remains
+151,998 bytes (23.4542%).

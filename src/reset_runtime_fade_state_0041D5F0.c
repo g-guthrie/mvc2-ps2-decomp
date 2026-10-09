@@ -1,5 +1,6 @@
 typedef unsigned char u8;
 typedef unsigned int u32;
+typedef union {float value;u32 bits;} FloatBits;
 
 extern u8 *D_006338CC;
 extern void func_0041D6C0(void);
@@ -11,8 +12,8 @@ void func_0041D5F0(u8 *state)
 
     state[5] = 0;
     state[0x13C] = 0;
-    *(u32 *)(D_006338CC + 0x80) = scaleBits;
-    *(u32 *)(D_006338CC + 0x7C) = scaleBits;
-    *(u32 *)(D_006338CC + 0x78) = scaleBits;
+    ((FloatBits *)(D_006338CC + 0x80))->bits = scaleBits;
+    ((FloatBits *)(D_006338CC + 0x7C))->bits = scaleBits;
+    ((FloatBits *)(D_006338CC + 0x78))->bits = scaleBits;
     *(void (**)(void))(state + 0x10) = func_0041D6C0;
 }
