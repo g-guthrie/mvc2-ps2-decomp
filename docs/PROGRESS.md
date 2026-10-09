@@ -2807,3 +2807,13 @@ for negative signed inputs while preserving the native low-word/sign-extension
 result; both whole functions remain exact under EE96/SNAS. Catalog, full
 hybrid linkage and packed retail ELF pass. Catalog: 603,948 code bytes
 (18.3365%), 9,232 functions; data remains 84,290 bytes (13.0064%).
+
+## Animation data pointer selector recovery
+
+Recovered the complete 268-byte pointer selector at175A30, consumed by native
+175C00. Ordinary C preserves the actor-kind branches, phase offsets and signed
+variant addressing. MWCCPS2 3.0-011126 O3 reproduces the full span; newer MWCC
+profiles emitted an extra instruction and remain unsuitable for this unit.
+Registered object, catalog, full hybrid linkage and packed retail ELF pass.
+Catalog: 604,216 code bytes (18.3446%), 9,233 functions; data 84,290 bytes
+(13.0064%). No assembly or forced volatile constraints were used.

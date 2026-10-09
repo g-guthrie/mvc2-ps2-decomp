@@ -9235,3 +9235,4 @@ func_00404388,0x00404388,0x24,src/copy_runtime_record_halfwords_00404388.c,compl
 func_0040D178,0x0040D178,0x30,src/read_runtime_record_field_0040D178.c,complete
 func_0040A310,0x0040A310,0x24,src/read_scaled_runtime_fields_0040A310.c,complete
 func_0040A350,0x0040A350,0x24,src/read_scaled_runtime_fields_0040A310.c,complete
+func_00175A30,0x00175A30,0x10C,src/animation_data_selector_00175A30.c,complete

@@ -4078,3 +4078,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_context_timer_flag_position.o" private/SLUS_204.86.rom \
     --source src/grok_w7_context_timer_flag_position.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/animation_data_selector_00175A30.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/animation_data_selector_00175A30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/animation_data_selector_00175A30.o" \
+    private/SLUS_204.86.rom --source src/animation_data_selector_00175A30.c
