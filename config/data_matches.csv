@@ -4828,7 +4828,7 @@ data_raw_00478540,0x00478540,0x200,src/data/data_raw_00478540.c,complete,placeho
 data_raw_00478740,0x00478740,0x200,src/data/data_raw_00478740.c,complete,placeholder
 D_00478940,0x00478940,0x10,src/data/D_00478940.c,complete,reconstructed
 data_u32_00478950,0x00478950,0x200,src/data/data_u32_00478950.c,complete,placeholder
-D_00478B50,0x00478B50,0x10,src/data/D_00478B50.c,complete,placeholder
+D_00478B50,0x00478B50,0x10,src/data/D_00478B50.c,complete,reconstructed
 data_u32_00478B60,0x00478B60,0x320,src/data/data_u32_00478B60.c,complete,placeholder
 data_zero_00478E80,0x00478E80,0x170,src/data/data_zero_00478E80.c,complete,placeholder
 data_u32_00478FF0,0x00478FF0,0x1F0,src/data/data_u32_00478FF0.c,complete,placeholder
