@@ -2711,3 +2711,12 @@ and packed ELF (3,942,320 bytes) match retail hashes in full. Catalog remains
 reconstructed data bytes (12.9317%). Four placed source functions remain
 uncredited; linked image identity does not grant source reconstruction credit.
 Queued worker recoveries will be integrated after this verified checkpoint.
+
+## Queued runtime integration checkpoint
+
+Integrated five exact runtime functions: two typed message dispatchers, a
+record-release wrapper, a mode setter and a remaining-size output helper.
+Their whole EE96/SNAS objects verify exactly; the twelve-function state-slot
+source also remains exact with callback/context pointer types. Catalog:
+603,036 code bytes (18.3088%), 9,220 functions; data 83,806 bytes (12.9317%).
+Full hybrid relink and packed retail ELF identity pass.
