@@ -5565,7 +5565,9 @@ data_u32_004B8464,0x004B8464,0x30,.data,src/data/data_u32_004B8464.c,initialized
 data_u32_004B8494,0x004B8494,0x14,.data,src/data/data_u32_004B8494.c,filled_u32_constant
 data_u32_004B84A8,0x004B84A8,0x38,.data,src/data/data_u32_004B84A8.c,initialized_u32_table
 jtbl_004B84E0,0x004B84E0,0x18,.rodata,src/data/jtbl_004B84E0.c,jump_table
-data_u8_004B8500,0x004B8500,0x98,.data,src/data/data_u8_004B8500.c,initialized_byte_array
+data_raw_004B8500,0x004B8500,0x78,.data,src/data/data_raw_004B8500.c,initialized_byte_array
+gSystemLabel_004B8578,0x004B8578,0x4,.data,src/data/gSystemLabel_004B8578.c,nul_terminated_message
+data_raw_004B857C,0x004B857C,0x1C,.data,src/data/data_raw_004B857C.c,initialized_byte_array
 gBootPathConcatFormat_004B8598,0x004B8598,0x5,.data,src/data/gBootPathConcatFormat_004B8598.c,printf_format_string
 data_u8_004B859D,0x004B859D,0x3,.data,src/data/data_u8_004B859D.c,initialized_byte_array
 gBootDiscSerial_004B85A0,0x004B85A0,0xD,.data,src/data/gBootDiscSerial_004B85A0.c,nul_terminated_message
