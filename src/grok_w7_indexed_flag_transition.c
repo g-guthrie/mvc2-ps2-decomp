@@ -60,3 +60,15 @@ void func_002F4B30(u8 *p, void *q)
     p[6]++;
     func_002F4BB0(p, q);
 }
+
+void func_002F4C30(u8 *p, void *q)
+{
+    if ((*(u16 *)(p + 0x35e) & 0x3c00) != 0) {
+        u16 flags = *(u16 *)(p + 0x362);
+        if ((flags & 0x300) != 0)
+            func_002F4A50(p, q, 0);
+        else if ((flags & 0x60) != 0)
+            func_002F4A50(p, q, 1);
+    }
+    func_00175700(p);
+}
