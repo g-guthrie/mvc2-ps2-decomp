@@ -1178,7 +1178,12 @@ D_004469C0,0x004469C0,0x1C,.rodata,src/data/D_004469C0.c,pointer_table
 data_raw_004469DC,0x004469DC,0x4,.data,src/data/data_raw_004469DC.c,initialized_byte_array
 data_s16_004469E0,0x004469E0,0x2,.data,src/data/data_s16_004469E0.c,bounded_signed_threshold
 data_raw_004469E2,0x004469E2,0x4E,.data,src/data/data_raw_004469E2.c,initialized_byte_array
-D_00446A60,0x00446A60,0x1C,.rodata,src/data/D_00446A60.c,pointer_table
+data_raw_00446A30,0x00446A30,0x10,.data,src/data/data_raw_00446A30.c,initialized_byte_array
+data_raw_00446A40,0x00446A40,0x1,.data,src/data/data_raw_00446A40.c,initialized_byte_array
+data_u8_00446A41,0x00446A41,0x1F,.data,src/data/data_u8_00446A41.c,bounded_byte_lookup
+data_raw_00446A60,0x00446A60,0x4,.rodata,src/data/data_raw_00446A60.c,initialized_byte_array
+D_00446A64,0x00446A64,0x4,.rodata,src/data/D_00446A64.c,bounded_pointer_table
+data_raw_00446A68,0x00446A68,0x14,.rodata,src/data/data_raw_00446A68.c,initialized_byte_array
 data_u32_00446A7C,0x00446A7C,0x4,.data,src/data/data_u32_00446A7C.c,initialized_u32_table
 jtbl_00446A80,0x00446A80,0x1c,.rodata,src/data/jtbl_00446A80.c,jump_table
 jtbl_00446AA0,0x00446AA0,0x10,.rodata,src/data/jtbl_00446AA0.c,jump_table
