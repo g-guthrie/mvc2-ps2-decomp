@@ -1958,3 +1958,15 @@ updates, the signed low-byte animation result, and secondary-object state
 dispatch. Catalog: 581,252 linked matching code bytes (17.6474%), 9,059
 functions; data remains 75,112 bytes (11.5902%). Whole-source proof,
 catalog validation, and both full-image hashes pass.
+
+
+### Buffered character output and complete bounded point paths
+
+The 152-byte buffered-output routine matches with the native byte
+read-back and common return paths. Object zero-initialization and the
+48-transition termination state prove 49 vec3 frames per point path and
+49 timing words. The seven paths and timing table add 4,228 reconstructed
+bytes beyond the previously credited first vectors; gaps and tail stay raw.
+Catalog: 581,404 linked matching code bytes (17.6520%), 9,060 functions;
+79,340 reconstructed data bytes (12.2426%). All affected objects, 45 tests,
+catalog validation, and both full-image hashes pass.
