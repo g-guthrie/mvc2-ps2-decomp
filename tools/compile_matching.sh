@@ -4299,3 +4299,13 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     -o "$BUILD/initialize_motion_event_stream_0039ED60.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_motion_event_stream_0039ED60.o" \
     private/SLUS_204.86.rom --source src/initialize_motion_event_stream_0039ED60.c
+
+"$WIBO" "$SNCPP" -P src/dispatch_runtime_callback_00411978.c \
+    "$BUILD/dispatch_runtime_callback_00411978.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/dispatch_runtime_callback_00411978.i" \
+    "$BUILD/dispatch_runtime_callback_00411978.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/dispatch_runtime_callback_00411978.o" \
+    "$BUILD/dispatch_runtime_callback_00411978.s"
+"$PYTHON" tools/verify_object.py "$BUILD/dispatch_runtime_callback_00411978.o" \
+    private/SLUS_204.86.rom --source src/dispatch_runtime_callback_00411978.c
