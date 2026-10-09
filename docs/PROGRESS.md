@@ -1470,3 +1470,22 @@ without instruction or object patches.
 Catalog:572,232 exact linked code bytes (17.3736%),8,978 functions; data remains
 71,436 bytes (11.0230%). The targeted units, complete hybrid loaded image, and
 packed executable all match retail.
+
+
+### File close, flush, and archive segment checkpoint
+
+The flag-gated flush0011F6A0 (52 bytes), file close callback0011FB18 (28 bytes),
+and reentrant close helper00119E80 (88 bytes) now compile exactly. The close
+stub declaration accepts its native descriptor argument. The seek stub now
+uses the wide return/offset signature already proven by its consumers. All
+credited functions in the affected simple-leaves source still verify.
+
+Archive segment derivation004106E8 adds52 bytes: it writes data+16 and the
+computed value from data+8 to an ordinary output structure. The unsupported
+volatile qualifier from its worker draft was removed before root credit.
+
+Catalog:572,452 linked matching code bytes (17.3802%),8,982 functions. Data
+remains71,436 bytes (11.0230%).
+
+The targeted functions, affected simple-leaves unit, complete hybrid image,
+and packed executable all verify exactly.

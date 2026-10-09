@@ -2744,3 +2744,18 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
     "$BUILD/derive_archive_segment_004106E8.s"
 "$PYTHON" tools/verify_object.py "$BUILD/derive_archive_segment_004106E8.o" \
     private/SLUS_204.86.rom --source src/derive_archive_segment_004106E8.c
+
+"$WIBO" "$SNCPP" -P src/sdk_file_flush_0011F6A0.c "$BUILD/sdk_file_flush_0011F6A0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_file_flush_0011F6A0.i" "$BUILD/sdk_file_flush_0011F6A0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_file_flush_0011F6A0.o" "$BUILD/sdk_file_flush_0011F6A0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sdk_file_flush_0011F6A0.o" private/SLUS_204.86.rom --source src/sdk_file_flush_0011F6A0.c
+
+"$WIBO" "$SNCPP" -P src/sdk_file_close_0011FB18.c "$BUILD/sdk_file_close_0011FB18.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_file_close_0011FB18.i" "$BUILD/sdk_file_close_0011FB18.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_file_close_0011FB18.o" "$BUILD/sdk_file_close_0011FB18.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sdk_file_close_0011FB18.o" private/SLUS_204.86.rom --source src/sdk_file_close_0011FB18.c
+
+"$WIBO" "$SNCPP" -P src/sdk_reentrant_close_00119E80.c "$BUILD/sdk_reentrant_close_00119E80.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_reentrant_close_00119E80.i" "$BUILD/sdk_reentrant_close_00119E80.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_reentrant_close_00119E80.o" "$BUILD/sdk_reentrant_close_00119E80.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sdk_reentrant_close_00119E80.o" private/SLUS_204.86.rom --source src/sdk_reentrant_close_00119E80.c

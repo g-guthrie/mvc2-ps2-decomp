@@ -7,11 +7,11 @@ typedef signed int s32;
 
 s32 func_004000D0(s32 a0) { return a0 + 0x58; }
 
-s32 func_001044C8(void) { return -1; }
+s32 func_001044C8(s32 descriptor) { return -1; }
 
 s32 func_001044D0(void) { return -1; }
 
-s32 func_001044D8(void) { return -1; }
+long long func_001044D8(s32 descriptor, long long offset, s32 origin) { return -1; }
 
 s32 func_00104590(void) { return 1; }
 
