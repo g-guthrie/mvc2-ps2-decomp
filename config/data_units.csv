@@ -897,7 +897,8 @@ data_u32_00444AD0,0x00444AD0,0x20,.data,src/data/data_u32_00444AD0.c,initialized
 gMvc2ParticleScaleVectors_00444AF0,0x00444AF0,0x48,.data,src/data/particle_scale_vectors_00444AF0.c,particle_scale_vector_bank
 data_u32_00444B38,0x00444B38,0x48,.data,src/data/data_u32_00444B38.c,initialized_u32_table
 jtbl_00444B80,0x00444B80,0x1c,.rodata,src/data/jtbl_00444B80.c,typed_state_callback_table
-data_u32_00444BA0,0x00444BA0,0x10,.data,src/data/data_u32_00444BA0.c,initialized_u32_table
+data_f32_00444BA0,0x00444BA0,0xC,.data,src/data/data_f32_00444BA0.c,initialized_f32_values
+data_raw_00444BAC,0x00444BAC,0x4,.data,src/data/data_raw_00444BAC.c,initialized_byte_array
 gMvc2ScaleKeys_00444BB0,0x00444BB0,0x10,.data,src/data/scale_keys_00444BB0.c,scale_key_pair
 data_u32_00444BC0,0x00444BC0,0x44,.data,src/data/data_u32_00444BC0.c,initialized_u32_table
 data_f32_one_00444C04,0x00444C04,0x10,.data,src/data/data_f32_one_00444C04.c,filled_f32_one
