@@ -2764,6 +2764,16 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_file_read_0011F9C
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_file_read_0011F9C8.o" "$BUILD/sdk_file_read_0011F9C8.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sdk_file_read_0011F9C8.o" private/SLUS_204.86.rom --source src/sdk_file_read_0011F9C8.c
 
+"$WIBO" "$SNCPP" -P src/write_runtime_remaining_size_00400B58.c \
+    "$BUILD/write_runtime_remaining_size_00400B58.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/write_runtime_remaining_size_00400B58.i" \
+    "$BUILD/write_runtime_remaining_size_00400B58.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/write_runtime_remaining_size_00400B58.o" \
+    "$BUILD/write_runtime_remaining_size_00400B58.s"
+"$PYTHON" tools/verify_object.py "$BUILD/write_runtime_remaining_size_00400B58.o" \
+    private/SLUS_204.86.rom --source src/write_runtime_remaining_size_00400B58.c
+
 "$WIBO" "$SNCPP" -P src/adjust_runtime_object_offset_00400658.c \
     "$BUILD/adjust_runtime_object_offset_00400658.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
