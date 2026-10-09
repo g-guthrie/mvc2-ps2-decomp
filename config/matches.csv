@@ -9106,3 +9106,4 @@ func_00309AA0,0x00309AA0,0x154,src/move_setup.c,complete
 func_00301ED0,0x00301ED0,0x8C,src/grok_w7_constant_vector_reset.c,complete
 func_00302630,0x00302630,0x9C,src/grok_w7_timered_vertical_reset.c,complete
 func_00302800,0x00302800,0x8C,src/grok_w7_timered_two_float_reset.c,complete
+func_00302760,0x00302760,0x98,src/grok_w7_timered_secondary_reset.c,complete
