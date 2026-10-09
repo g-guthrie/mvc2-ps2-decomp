@@ -2,7 +2,11 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 extern u8 *D_004C2794;
+extern const unsigned int jtbl_004C1580[2] __attribute__((section(".sdata")));
+extern unsigned int data_ff_004C158C[2] __attribute__((section(".sdata")));
 extern int func_001757E0(u8 *, int, int);
+extern void func_00176160(u8 *, int, int, int);
+extern void func_003092C0(u8 *);
 extern int D_004BFB04;
 extern int D_004BFB08;
 extern int D_004BFB0C;
@@ -541,6 +545,35 @@ FINAL_ANIMATION_SETUP(func_002D1E40, 3, D_004C0F3C, 4, D_004C0F40, 5, D_004C0F44
 FINAL_ANIMATION_SETUP(func_002D1F40, 9, D_004C0F3C, 10, D_004C0F40, 11, D_004C0F44, 10)
 FINAL_ANIMATION_SETUP(func_002E9780, 3, D_004C1134, 4, D_004C1138, 5, D_004C113C, 8)
 FINAL_ANIMATION_SETUP(func_00300F40, 3, D_004C1474, 4, D_004C1478, 5, D_004C147C, 8)
+
+void func_00309450(u8 *p) {
+ switch (p[0x1fc]) {
+ case 0:
+  p[0x168] = 0;
+  p[0x1b5] = 0;
+  func_001E3710(p, 20);
+  *(const unsigned int **)(p + 0x408) = &jtbl_004C1580[2];
+  p[0x1bb] = 0;
+  break;
+ case 1:
+  p[0x168] = 1;
+  p[0x1b5] = 1;
+  func_001E3710(p, 21);
+  *(const unsigned int **)(p + 0x408) = &data_ff_004C158C[0];
+  p[0x1bb] = 1;
+  func_00176160(p, 1, 18, 1);
+  break;
+ case 2:
+  p[0x168] = 2;
+  p[0x1b5] = 2;
+  func_001E3710(p, 22);
+  *(const unsigned int **)(p + 0x408) = &data_ff_004C158C[1];
+  p[0x1bb] = 2;
+  func_003092C0(p);
+  break;
+ }
+ reset_move_counters(p, p[0x1b5], 7);
+}
 
 void func_00301040(u8 *p) {
  switch (p[0x1fc]) {
