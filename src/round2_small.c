@@ -13,7 +13,7 @@ extern int func_00175700(u8 *);
 extern void func_00175C00(u8 *, int);
 extern void func_001843A0(u8 *);
 extern int func_0028D8B0(u8 *);
-extern void func_00294BC0(u8 *);
+extern int func_00294BC0(u8 *);
 
 #define U32(p, o) (*(u32 *)((u8 *)(p) + (o)))
 #define S32(p, o) (*(s32 *)((u8 *)(p) + (o)))

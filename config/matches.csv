@@ -7353,6 +7353,7 @@ func_0028D8B0,0x0028D8B0,0x54,src/float_clamp.c,complete
 func_00292380,0x00292380,0xA0,src/float_clamp.c,complete
 func_00292C90,0x00292C90,0xA0,src/float_clamp.c,complete
 func_00293F30,0x00293F30,0xA0,src/float_clamp.c,complete
+func_00294BC0,0x00294BC0,0x54,src/float_clamp.c,complete
 residual_001E9730,0x001E9730,0x84,src/state_pair_dispatch.c,complete
 func_001EEE30,0x001EEE30,0x84,src/state_pair_dispatch.c,complete
 func_001F7AD0,0x001F7AD0,0x84,src/state_pair_dispatch.c,complete
