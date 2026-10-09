@@ -17,3 +17,19 @@ void func_003035D0(u8 *p)
         func_003B1EF0(p, 0, 1);
     }
 }
+
+void func_00303720(u8 *p)
+{
+    s8 flags;
+
+    if ((s8)func_00175700(p) < 0) {
+        func_00184540(p);
+        return;
+    }
+    flags = *(s8 *)(p + 0x151);
+    if ((flags & 1) != 0) {
+        *(s8 *)(p + 0x151) = flags & (s8)~1;
+        func_003B1EF0(p, 0, 0);
+        func_003B1EF0(p, 0, 1);
+    }
+}
