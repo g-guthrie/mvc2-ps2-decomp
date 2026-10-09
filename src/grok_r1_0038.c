@@ -31,6 +31,9 @@ extern void func_0040EF48();
 extern void func_00416A50();
 s32 func_003F0A20(s32 *p, s32 i, s32 *out);
 extern s32 func_0010D5C0(s32, s32, u32);
+typedef float Matrix[4][4];
+extern void func_003F3C40(Matrix, Matrix, Matrix);
+extern void func_003F3FD0(void *, void *);
 
 extern u8 D_0038A680[];
 extern u8 D_004D18D3;
@@ -170,4 +173,15 @@ void func_003ED820(s32 a0, s32 a1, FormatDescriptor *descriptor)
         descriptor->output[2] = a0;
         descriptor->output[3] = a1;
     }
+}
+
+s32 func_003F1650(u8 *node, Matrix parent)
+{
+    func_003F3C40((float (*)[4])(node + 148), (float (*)[4])(node + 84), parent);
+    func_003F3FD0(node + 212, node + 148);
+    if (*(u32 *)(node + 16) != 0)
+        func_003F1650(*(u8 **)(node + 16), (float (*)[4])(node + 148));
+    if (*(u32 *)(node + 12) != 0)
+        func_003F1650(*(u8 **)(node + 12), parent);
+    return 1;
 }
