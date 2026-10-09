@@ -900,7 +900,9 @@ jtbl_00444B80,0x00444B80,0x1c,src/data/jtbl_00444B80.c,complete,reconstructed
 data_f32_00444BA0,0x00444BA0,0xC,src/data/data_f32_00444BA0.c,complete,reconstructed
 data_raw_00444BAC,0x00444BAC,0x4,src/data/data_raw_00444BAC.c,complete,placeholder
 gMvc2ScaleKeys_00444BB0,0x00444BB0,0x10,src/data/scale_keys_00444BB0.c,complete,reconstructed
-data_u32_00444BC0,0x00444BC0,0x44,src/data/data_u32_00444BC0.c,complete,placeholder
+data_curve_00444BC0,0x00444BC0,0x10,src/data/data_curve_00444BC0.c,complete,reconstructed
+data_curve_00444BD0,0x00444BD0,0x10,src/data/data_curve_00444BD0.c,complete,reconstructed
+data_raw_00444BE0,0x00444BE0,0x24,src/data/data_raw_00444BE0.c,complete,placeholder
 data_f32_one_00444C04,0x00444C04,0x10,src/data/data_f32_one_00444C04.c,complete,placeholder
 data_u32_00444C14,0x00444C14,0x30,src/data/data_u32_00444C14.c,complete,placeholder
 data_f32_one_00444C44,0x00444C44,0x14,src/data/data_f32_one_00444C44.c,complete,placeholder
