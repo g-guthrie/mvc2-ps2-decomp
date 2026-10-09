@@ -3334,3 +3334,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/initialize_match_choices.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_match_choices.o" \
     private/SLUS_204.86.rom --source src/initialize_match_choices.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_timered_payload_reset.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_timered_payload_reset.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_timered_payload_reset.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_timered_payload_reset.c

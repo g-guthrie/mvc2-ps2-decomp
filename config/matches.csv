@@ -9123,3 +9123,4 @@ func_0030E280,0x0030E280,0xB0,src/grok_w7_timed_short_position_setup.c,complete
 func_00174B60,0x00174B60,0x5C,src/initialize_shared_workspace.c,complete
 func_0030E330,0x0030E330,0x70,src/grok_w7_flagged_transition_setup.c,complete
 func_00170F60,0x00170F60,0x6C,src/initialize_match_choices.c,complete
+func_0030E6B0,0x0030E6B0,0xDC,src/grok_w7_timered_payload_reset.c,complete
