@@ -20,7 +20,11 @@ data_u32_00438310,0x00438310,0x2F0,src/data/data_u32_00438310.c,complete,placeho
 data_zero_00438600,0x00438600,0x28,src/data/data_zero_00438600.c,complete,placeholder
 data_u32_00438630,0x00438630,0x30,src/data/data_u32_00438630.c,complete,placeholder
 data_zero_00438660,0x00438660,0x40,src/data/data_zero_00438660.c,complete,placeholder
-data_u32_004386A0,0x004386A0,0x148,src/data/data_u32_004386A0.c,complete,placeholder
+data_raw_004386A0,0x004386A0,0x8,src/data/data_raw_004386A0.c,complete,placeholder
+data_u32_004386A8,0x004386A8,0x8,src/data/data_u32_004386A8.c,complete,reconstructed
+data_raw_004386B0,0x004386B0,0x8,src/data/data_raw_004386B0.c,complete,placeholder
+data_u32_004386B8,0x004386B8,0x30,src/data/data_u32_004386B8.c,complete,reconstructed
+data_raw_004386E8,0x004386E8,0x100,src/data/data_raw_004386E8.c,complete,placeholder
 jtbl_004387E8,0x004387E8,0x8,src/data/jtbl_004387E8.c,complete,placeholder
 data_u32_004387F0,0x004387F0,0x830,src/data/data_u32_004387F0.c,complete,placeholder
 data_zero_00439020,0x00439020,0x70,src/data/data_zero_00439020.c,complete,placeholder
