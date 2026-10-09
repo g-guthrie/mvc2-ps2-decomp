@@ -20,6 +20,8 @@ extern void func_002E44B0(u8 *, u8 *);
 extern void func_002E45D0(u8 *, u8 *);
 extern void func_002E4690(u8 *, u8 *);
 extern void func_002E4710(u8 *, u8 *);
+extern int func_00176160(u8 *, int, int, int);
+extern void func_00175C00(u8 *, int);
 extern void func_00175670();
 extern void func_001975C0(u8 *, u8 *);
 extern int func_00175700(u8 *);
@@ -89,6 +91,21 @@ void func_002E4420(u8 *p) {
     func_002E45D0(p, q);
     func_002E4690(p, q);
     func_002E4710(p, q);
+}
+
+void func_002E4690(u8 *p, u8 *q)
+{
+    if (*(s8 *)(q + 0x10) == 0)
+        return;
+    q[0x10] = 0;
+    if (p[0x169] == 12 && p[0x168] == 5) {
+        int base;
+        q[0x10] = 1;
+        base = ((p[37] * 3) << 4) + 5;
+        func_00176160(p, 0, (s8)p[337] + base, 1);
+        return;
+    }
+    func_00175C00(p, 0);
 }
 
 void func_00195690(u8 *p, u8 *q) {

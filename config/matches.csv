@@ -9288,3 +9288,4 @@ func_0039EE60,0x0039EE60,0x104,src/update_motion_event_stream_0039EE60.c,complet
 residual_0039ED60,0x0039ED60,0x100,src/initialize_motion_event_stream_0039ED60.c,complete
 func_0024AB80,0x0024AB80,0xC8,src/grok_w7_0024.c,complete
 func_00411978,0x00411978,0x9C,src/dispatch_runtime_callback_00411978.c,complete
+func_002E4690,0x002E4690,0x7C,src/grok_w3_0019.c,complete
