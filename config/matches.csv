@@ -9209,3 +9209,4 @@ func_0030F260,0x0030F260,0x78,src/grok_w7_target_flag_query.c,complete
 func_00415300,0x00415300,0x18,src/reset_expanded_runtime_workspace_00415300.c,complete
 func_00307760,0x00307760,0x68,src/grok_w7_context_motion_state_reset.c,complete
 func_00302890,0x00302890,0x74,src/grok_w7_motion_floor_clamp.c,complete
+func_003035D0,0x003035D0,0x70,src/grok_w7_negative_flag_reset.c,complete

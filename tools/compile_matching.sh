@@ -3898,3 +3898,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_motion_floor_clamp.o" private/SLUS_204.86.rom \
     --source src/grok_w7_motion_floor_clamp.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_negative_flag_reset.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_negative_flag_reset.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_negative_flag_reset.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_negative_flag_reset.c
