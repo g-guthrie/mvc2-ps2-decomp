@@ -1811,3 +1811,13 @@ the identity initializer now consistently use float elements, preserving
 every affected function byte. Four complete source objects verify.
 Catalog: 579,680 linked matching code bytes (17.5997%), 9,045 functions;
 data remains 74,761 bytes (11.5361%). Both full-image hashes pass.
+
+
+### SDK size-class allocation
+
+The 164-byte allocator initializes the class lists, reuses a free node or
+allocates its header and word capacity, then resets usage and sign fields.
+It shares the native 20-byte header with the previously recovered return
+routine. Both complete objects verify exactly. Catalog: 579,844 linked
+matching code bytes (17.6047%), 9,046 functions; data remains 74,761 bytes
+(11.5361%). Catalog validation and both full-image hashes pass.

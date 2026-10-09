@@ -1,6 +1,4 @@
-typedef unsigned char u8;
-typedef struct SdkFreeNode { struct SdkFreeNode *next; int sizeClass; } SdkFreeNode;
-typedef struct SdkFreeListContext { u8 unknown[76]; SdkFreeNode **freeLists; } SdkFreeListContext;
+#include "sdk_free_list_types.h"
 void func_0011DB30(SdkFreeListContext *context, SdkFreeNode *value)
 {
  if (value != 0) {
