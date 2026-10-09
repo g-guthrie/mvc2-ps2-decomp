@@ -3829,3 +3829,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_timered_context_frame_setup.o" private/SLUS_204.86.rom \
     --source src/grok_w7_timered_context_frame_setup.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_timered_action_trigger.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_timered_action_trigger.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_timered_action_trigger.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_timered_action_trigger.c
