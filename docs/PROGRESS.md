@@ -1706,3 +1706,12 @@ add 48 reconstructed data bytes, with direct native loads documented.
 Catalog: 578,536 linked matching code bytes (17.5649%), 9,036 functions;
 74,421 reconstructed data bytes (11.4836%). Whole affected objects,
 catalog validation, loaded-image hash, and packed ELF hash pass.
+
+
+### Timed acceleration transition
+
+The 200-byte actor transition now matches exactly within the complete
+27-function motion source object. Catalog: 578,736 linked matching code
+bytes (17.5710%), 9,037 functions. Data remains 74,421 bytes (11.4836%).
+The full loaded-image and packed ELF hashes pass. An SDK string-output
+probe remains uncredited because two store positions differ from retail.
