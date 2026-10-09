@@ -3201,3 +3201,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/initialize_format_callback_count_003F14A0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_format_callback_count_003F14A0.o" \
     private/SLUS_204.86.rom --source src/initialize_format_callback_count_003F14A0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_constant_vector_reset.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_constant_vector_reset.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_constant_vector_reset.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_constant_vector_reset.c

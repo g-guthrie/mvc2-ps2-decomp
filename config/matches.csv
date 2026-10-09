@@ -9103,3 +9103,4 @@ func_00309670,0x00309670,0x104,src/move_setup.c,complete
 func_00309780,0x00309780,0x104,src/move_setup.c,complete
 func_00309930,0x00309930,0x168,src/move_setup.c,complete
 func_00309AA0,0x00309AA0,0x154,src/move_setup.c,complete
+func_00301ED0,0x00301ED0,0x8C,src/grok_w7_constant_vector_reset.c,complete
