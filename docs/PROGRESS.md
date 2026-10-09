@@ -2922,3 +2922,11 @@ F490. The F498 references load each row third component, not a separate table.
 Skipped rows24..26, prefix and unrelated tail stay raw. All five partition
 objects, catalog, full hybrid linkage and packed retail ELF identity pass.
 Data: 85,706 bytes (13.2249%); code remains605,236 bytes (18.3756%).
+
+## Conditional motion, animation event and bounce update
+
+Integrated whole exact callbacks at2F8290 (88bytes),22EEE0 (108bytes) and
+22E7E0 (212bytes). Complete source files verify with their registered profiles;
+known floating motion constants preserve their bit values through FloatBits.
+Catalog, full hybrid linkage and packed retail ELF identity pass. Catalog:
+605,644 code bytes (18.3880%), 9,253 functions; data85,706 bytes (13.2249%).
