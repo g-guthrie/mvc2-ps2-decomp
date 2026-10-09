@@ -2273,3 +2273,14 @@ pointer; all four functions in that source remain exact.
 Catalog: 588,812 matching code bytes (17.8769%), 9,111 functions; data
 remains 80,153 bytes (12.3681%). Whole-object, catalog, and both image
 hash checks pass.
+
+
+### Random-state update, format count, and complete label columns
+
+The random-state update and format count helper add 132 exact code bytes.
+The three fixed 21-row label banks prove another 148 data bytes: the
+first bank’s label column, remaining second-bank characters, and the G
+map entry. Other copied numeric fields remain uncredited until their
+roles are established. Catalog: 588,944 exact code bytes (17.8809%),
+9,113 functions, 80,301 reconstructed data bytes (12.3909%). Changed
+whole objects, catalog, and both image hashes pass.
