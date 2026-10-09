@@ -3235,3 +3235,9 @@ Recovered the complete 96-byte initializer at 0x0015C560 in the existing
 unit-scale source object. All three functions remain exact. Code reaches
 611,024 bytes (18.5513%), 9,294 functions; data remains 151,998 bytes
 (23.4542%).
+
+## Fourth unit scale event constructor
+
+Recovered the complete 96-byte constructor at 0x0015C280 in the existing
+source object. All four functions remain exact. Code reaches 611,120 bytes
+(18.5542%), 9,295 functions; data remains 151,998 bytes (23.4542%).
