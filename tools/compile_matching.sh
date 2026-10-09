@@ -2903,3 +2903,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/scale_runtime_state_value_00416770.o"
 "$PYTHON" tools/verify_object.py "$BUILD/scale_runtime_state_value_00416770.o" \
     private/SLUS_204.86.rom --source src/scale_runtime_state_value_00416770.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/normalize_runtime_state_size_00416730.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/normalize_runtime_state_size_00416730.o"
+"$PYTHON" tools/verify_object.py "$BUILD/normalize_runtime_state_size_00416730.o" \
+    private/SLUS_204.86.rom --source src/normalize_runtime_state_size_00416730.c
