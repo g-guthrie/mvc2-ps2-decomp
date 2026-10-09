@@ -633,6 +633,34 @@ void func_00309670(u8 *p) {
  reset_move_counters(p, p[0x1b5], 8);
 }
 
+void func_00309780(u8 *p) {
+ switch (p[0x1fc]) {
+ case 0:
+  p[0x168] = 0;
+  p[0x1b5] = 9;
+  func_001E3710(p, 20);
+  *(const unsigned int **)(p + 0x408) = &data_u32_004C1594[0];
+  p[0x1bb] = 0;
+  break;
+ case 1:
+  p[0x168] = 1;
+  p[0x1b5] = 10;
+  func_001E3710(p, 21);
+  *(const unsigned int **)(p + 0x408) = &data_ff_004C1598[0];
+  p[0x1bb] = 1;
+  break;
+ case 2:
+  p[0x168] = 2;
+  p[0x1b5] = 11;
+  func_001E3710(p, 22);
+  *(const unsigned int **)(p + 0x408) = &data_ff_004C1598[1];
+  p[0x1bb] = 2;
+  func_003092C0(p);
+  break;
+ }
+ reset_move_counters(p, p[0x1b5], 10);
+}
+
 void func_00301040(u8 *p) {
  switch (p[0x1fc]) {
  case 0:
