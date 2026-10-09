@@ -9286,3 +9286,4 @@ func_0039E4E0,0x0039E4E0,0x70,src/create_motion_event_0039E4E0.c,complete
 func_002C1670,0x002C1670,0xC4,src/grok_r1_0028.c,complete
 func_0039EE60,0x0039EE60,0x104,src/update_motion_event_stream_0039EE60.c,complete
 residual_0039ED60,0x0039ED60,0x100,src/initialize_motion_event_stream_0039ED60.c,complete
+func_0024AB80,0x0024AB80,0xC8,src/grok_w7_0024.c,complete

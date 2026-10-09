@@ -6,6 +6,7 @@ typedef unsigned int u32;
 
 extern int func_00175700(u8 *);
 extern void func_001843A0(u8 *);
+extern void func_001AC7E0(u8 *, u8);
 extern int func_00364EC0(u8 *, int);
 extern void func_001A78D0(u8 *, int);
 extern int func_001757E0(u8 *, int, int);
@@ -58,6 +59,25 @@ void func_0024AB20(u8 *p)
     func_001A78D0(p, 0);
     func_001757E0(p, 19, 3);
     func_0024AB80(p);
+}
+
+void func_0024AB80(u8 *p)
+{
+    p[826] = 255;
+    if ((s8)func_00175700(p) < 0) {
+        p[7]++;
+        S(p, 28) = 60;
+        func_001AC7E0(p, 0);
+        func_001AC7E0(p, 1);
+        func_001AC7E0(p, 2);
+        func_001AC7E0(p, 3);
+        func_001AC7E0(p, 4);
+        func_001AC7E0(p, 5);
+        func_001AC7E0(p, 6);
+        func_001AC7E0(p, 7);
+        func_001AC7E0(p, 8);
+        func_001AC7E0(p, 9);
+    }
 }
 
 void func_0024C3F0(u8 *p)
