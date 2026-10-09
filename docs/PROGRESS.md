@@ -1537,3 +1537,26 @@ words, upper halfwords, table tails, and prefixes remain raw and uncredited.
 Current catalog:572,960 linked code bytes(17.3957%),8,987 functions;72,966
 reconstructed data bytes(11.2591%) across2,400 owners. All changed units,
 data tests, full loaded image, and packed executable verify exactly.
+
+
+### File traversal, runtime release, and bounded table checkpoint
+
+Runtime release 00410BD8 adds 60 exact bytes. It decrements the unsigned
+reference count and invokes cleanup only when the new value is zero. SDK
+file walker 0011C838 adds 148 exact bytes: it traverses context glue nodes,
+walks their 88-byte file records, invokes the supplied callback for nonzero
+flags, and combines callback results. Its callback declarations agree with
+the previously recovered cleanup wrappers. Both use verified EE GCC 2.96
+and SNAS recipes.
+
+The animation pair table at 00472F80 adds 64 data bytes. Its state initializer
+zeros the selector; the update reads both floats and masks the incremented
+selector with 7. A direct float load at 00472F68 adds four bytes, preserving
+the surrounding raw 64-bit load and unused words. The four-pair table at
+0044DD50 adds 32 bytes with a mask of 3 before its two float loads. The signed
+byte-pair table at 0044FFE0 adds 32 bytes with its masked 16-row selector.
+
+The catalog reports 573,168 exact linked code bytes (17.4020%), 8,989
+functions, and 73,098 reconstructed data bytes (11.2794%) across 2,404
+owners. Changed objects, data tests, the complete hybrid loaded image, and
+the packed executable all verify exactly.

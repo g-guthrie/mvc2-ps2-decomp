@@ -2803,3 +2803,8 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
     "$BUILD/release_runtime_reference_00410BD8.s"
 "$PYTHON" tools/verify_object.py "$BUILD/release_runtime_reference_00410BD8.o" \
     private/SLUS_204.86.rom --source src/release_runtime_reference_00410BD8.c
+
+"$WIBO" "$SNCPP" -P src/sdk_file_walk_0011C838.c "$BUILD/sdk_file_walk_0011C838.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_file_walk_0011C838.i" "$BUILD/sdk_file_walk_0011C838.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_file_walk_0011C838.o" "$BUILD/sdk_file_walk_0011C838.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sdk_file_walk_0011C838.o" private/SLUS_204.86.rom --source src/sdk_file_walk_0011C838.c
