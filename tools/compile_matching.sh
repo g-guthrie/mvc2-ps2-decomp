@@ -2768,3 +2768,10 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
     "$BUILD/query_runtime_value_004103D8.s"
 "$PYTHON" tools/verify_object.py "$BUILD/query_runtime_value_004103D8.o" \
     private/SLUS_204.86.rom --source src/query_runtime_value_004103D8.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_substate_gated_increment.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_substate_gated_increment.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_substate_gated_increment.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_substate_gated_increment.c
