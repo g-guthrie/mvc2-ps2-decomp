@@ -2170,3 +2170,13 @@ stays raw. This adds 30 reconstructed bytes, with prefix and neighboring
 records unclaimed. Catalog: 587,132 linked matching code bytes
 (17.8259%), 79,710 reconstructed data bytes (12.2997%). All changed data
 objects, catalog validation, and both full-image hashes pass.
+
+
+### SDK reset flags and selector maps
+
+The fixed ten-word reset loop proves every flag, including zero-valued
+slots. Three independent selector checks bound the ten-byte maps. These
+add 70 reconstructed bytes; each map suffix remains raw. Catalog:
+587,132 linked matching code bytes (17.8259%), 79,780 reconstructed data
+bytes (12.3105%). All changed data objects, catalog validation, and both
+full-image hashes pass.
