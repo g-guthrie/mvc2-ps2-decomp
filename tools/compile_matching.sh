@@ -3050,6 +3050,17 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
     "$BUILD/dispatch_runtime_state_metric_00408808.o" \
     private/SLUS_204.86.rom --source src/dispatch_runtime_state_metric_00408808.c
 
+"$WIBO" "$SNCPP" -P src/query_runtime_state_boolean_004087B8.c \
+    "$BUILD/query_runtime_state_boolean_004087B8.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/query_runtime_state_boolean_004087B8.i" \
+    "$BUILD/query_runtime_state_boolean_004087B8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/query_runtime_state_boolean_004087B8.o" \
+    "$BUILD/query_runtime_state_boolean_004087B8.s"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/query_runtime_state_boolean_004087B8.o" \
+    private/SLUS_204.86.rom --source src/query_runtime_state_boolean_004087B8.c
+
 "$WIBO" "$SNCPP" -P src/read_runtime_record_fields_00405350.c \
     "$BUILD/read_runtime_record_fields_00405350.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
