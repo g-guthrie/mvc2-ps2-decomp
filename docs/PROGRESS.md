@@ -3104,3 +3104,10 @@ Recovered the complete 156-byte handler at 0x002E77B0. Both functions in
 the changed source object verify exactly; hybrid linkage and the packed
 retail ELF hash pass. Code reaches 608,408 bytes (18.4719%), 9,276 functions.
 Data remains 151,986 bytes (23.4523%).
+
+## Motion timer sequence
+
+Recovered the complete 172-byte handler at 0x0027C340. Every registered
+function in the changed source object remains exact. Catalog validation,
+hybrid linkage and the packed retail ELF hash pass. Code is 608,580 bytes
+(18.4771%) across 9,277 functions; data is 151,986 bytes (23.4523%).
