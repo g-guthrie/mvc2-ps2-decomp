@@ -9046,3 +9046,4 @@ func_00120838,0x00120838,0x2C,src/sdk_parse_integer64_00120838.c,complete
 func_0011DB30,0x0011DB30,0x2C,src/sdk_return_size_class_node_0011DB30.c,complete
 func_002B4280,0x002B4280,0xC0,src/motion_speed_transition.c,complete
 func_002B6530,0x002B6530,0xA4,src/motion_speed_transition.c,complete
+func_002B6920,0x002B6920,0xA4,src/grok_w7_signed_flag_spawn_position.c,complete
