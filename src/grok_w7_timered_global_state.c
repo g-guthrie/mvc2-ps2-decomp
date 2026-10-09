@@ -30,9 +30,9 @@ void func_002F0F70(u8 *p)
             *(s16 *)(p + 0x1C) = 2;
     }
 
-    timer = *(volatile s16 *)(p + 0x1C);
+    timer = *(s16 *)(p + 0x1C);
     timer--;
-    *(volatile s16 *)(p + 0x1C) = timer;
+    *(s16 *)(p + 0x1C) = timer;
     if (timer == 0)
         func_002F1DF0(p);
 }
