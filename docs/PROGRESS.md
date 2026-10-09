@@ -1715,3 +1715,13 @@ The 200-byte actor transition now matches exactly within the complete
 bytes (17.5710%), 9,037 functions. Data remains 74,421 bytes (11.4836%).
 The full loaded-image and packed ELF hashes pass. An SDK string-output
 probe remains uncredited because two store positions differ from retail.
+
+
+### Complete lookup banks and allocator interface
+
+Four banks of twelve code-point lookup entries add 192 reconstructed data
+bytes. Native selection and the twelve-word scan prove the full extent.
+The allocator wrappers now accept unsigned byte counts and return pointers;
+both affected source objects remain byte-exact. Catalog: 578,736 linked
+code bytes (17.5710%), 74,613 reconstructed data bytes (11.5132%).
+Changed objects and both full-image hashes pass.
