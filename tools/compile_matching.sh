@@ -2277,6 +2277,16 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
 "$PYTHON" tools/verify_object.py "$BUILD/dispatch_runtime_message_004098A8.o" \
     private/SLUS_204.86.rom --source src/dispatch_runtime_message_004098A8.c
 
+"$WIBO" "$SNCPP" -P src/release_runtime_record_handle_00408EA0.c \
+    "$BUILD/release_runtime_record_handle_00408EA0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/release_runtime_record_handle_00408EA0.i" \
+    "$BUILD/release_runtime_record_handle_00408EA0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/release_runtime_record_handle_00408EA0.o" \
+    "$BUILD/release_runtime_record_handle_00408EA0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/release_runtime_record_handle_00408EA0.o" \
+    private/SLUS_204.86.rom --source src/release_runtime_record_handle_00408EA0.c
+
 "$WIBO" "$SNCPP" -P src/indexed_runtime_accessors.c "$BUILD/indexed_runtime_accessors.i"
 "$WIBO" "$SNCC1" "$BUILD/indexed_runtime_accessors.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/indexed_runtime_accessors.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/indexed_runtime_accessors.o" "$BUILD/indexed_runtime_accessors.s"
