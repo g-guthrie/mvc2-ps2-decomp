@@ -2294,3 +2294,12 @@ parameters; its definition now records that API and remains exact. The
 transform helper reads three floats and writes three float outputs.
 Catalog: 589,192 code bytes (17.8885%), 9,115 functions; data remains
 80,301 bytes (12.3909%). Whole objects, catalog, and both image hashes pass.
+
+
+### Ordinal label selectors and suffixes
+
+Twenty-one signed selector IDs, symbolic suffix pointers, and four-byte
+ordinal labels add 189 data bytes. The text consumer reads exactly four
+characters for each selected pointer; all intervening padding remains raw.
+Catalog: 589,192 code bytes (17.8885%), 80,490 data bytes (12.4201%).
+All changed objects, symbolic relocations, catalog, and both hashes pass.
