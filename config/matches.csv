@@ -9159,3 +9159,4 @@ func_0030A7C0,0x0030A7C0,0x13C,src/grok_w7_deadline_position_transition.c,comple
 func_0030A180,0x0030A180,0x120,src/grok_w7_stateful_motion_entry.c,complete
 func_0030A330,0x0030A330,0x88,src/grok_w7_negative_actor_transition.c,complete
 func_0030AB60,0x0030AB60,0xB0,src/grok_w7_conditional_vector_entry.c,complete
+func_00303A50,0x00303A50,0xE4,src/grok_w7_owner_context_float_setup.c,complete
