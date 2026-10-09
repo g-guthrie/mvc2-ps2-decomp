@@ -3168,3 +3168,11 @@ original diagnostic conditions. Whole-object verification passes. Code is
 Recovered the complete 124-byte function at 0x002E4690. All eight registered
 functions in its source object remain exact. Code reaches 610,272 bytes
 (18.5285%), 9,286 functions; data remains 151,986 bytes (23.4523%).
+
+## Scene anchor initializer
+
+Recovered the complete 112-byte initializer at 0x00141250. Native caller
+0x003D2344 ignores its result; the source preserves allocation failure,
+callback setup and typed float3 position copy. Whole-object verification
+passes. Code reaches 610,384 bytes (18.5319%) across 9,287 functions; data
+remains 151,986 bytes (23.4523%).
