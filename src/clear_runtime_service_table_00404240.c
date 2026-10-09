@@ -9,3 +9,8 @@ void func_00404240(void)
 {
     func_0011D8F8(D_004854C0, 0, 960);
 }
+
+void func_00404268(void)
+{
+    func_0011D8F8(D_004854C0, 0, 960);
+}
