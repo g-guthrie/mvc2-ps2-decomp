@@ -9072,3 +9072,4 @@ func_002F5330,0x002F5330,0x60,src/grok_w7_negative_result_reset.c,complete
 func_002F52C0,0x002F52C0,0x6C,src/grok_w7_negative_result_reset.c,complete
 func_002F5A30,0x002F5A30,0x70,src/grok_w7_negative_result_reset.c,complete
 func_002F5440,0x002F5440,0x78,src/grok_w7_state_setup_callbacks.c,complete
+func_002F54C0,0x002F54C0,0x70,src/grok_w7_negative_result_reset.c,complete

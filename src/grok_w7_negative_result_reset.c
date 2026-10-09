@@ -74,3 +74,25 @@ void func_002F5A30(u8 *p)
         func_00183920(p, position.pair.values);
     }
 }
+
+void func_002F54C0(u8 *p, void *q)
+{
+    s8 result;
+    ActorView *actor = (ActorView *)p;
+
+    p[0x40d] = 0;
+    p[0x40c] = 0;
+    p[0x33b] = 0;
+    p[0x33c] = 0;
+    p[0x1b0] = 0;
+    p[0x200] = 3;
+    result = (s8)func_00175700(p);
+    if (result < 0) {
+        func_00126400();
+        actor->f5c.bits = 0;
+        actor->f60.bits = 0;
+        actor->f68.bits = 0;
+        actor->f6c.bits = 0;
+        func_00184540(p);
+    }
+}
