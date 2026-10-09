@@ -3089,3 +3089,11 @@ Recovered the complete 124-byte initializer at 0x004207C0, using the existing
 backend state type and menu notice interface. Whole-object relocation
 verification passes. Code reaches 608,252 bytes (18.4672%) across 9,275
 functions. Data remains 151,998 bytes (23.4542%).
+
+## Selector evidence correction
+
+Removed 12 bytes of reconstructed credit at 0x004768A0. Indirect handlers
+for the state object at 0x004F7F30 can modify selector byte +2, invalidating
+the prior direct-store-only proof. The compiled bytes remain unchanged and
+placed as a placeholder. The pending 0x00476BB0 candidate is also held.
+Code remains 608,252 bytes (18.4672%); data is 151,986 bytes (23.4523%).
