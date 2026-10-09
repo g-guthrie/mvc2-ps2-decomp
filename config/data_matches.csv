@@ -1800,7 +1800,7 @@ data_u32_0044E974,0x0044E974,0xC,src/data/data_u32_0044E974.c,complete,placehold
 jtbl_0044E980,0x0044E980,0x50,src/data/jtbl_0044E980.c,complete,reconstructed
 data_u32_0044E9D0,0x0044E9D0,0x150,src/data/data_u32_0044E9D0.c,complete,placeholder
 jtbl_0044EB20,0x0044EB20,0x10,src/data/jtbl_0044EB20.c,complete,reconstructed
-data_u32_0044EB30,0x0044EB30,0x100,src/data/data_u32_0044EB30.c,complete,placeholder
+data_f32_0044EB30,0x0044EB30,0x100,src/data/data_f32_0044EB30.c,complete,reconstructed
 jtbl_0044EC30,0x0044EC30,0x30,src/data/jtbl_0044EC30.c,complete,reconstructed
 data_u32_0044EC60,0x0044EC60,0x50,src/data/data_u32_0044EC60.c,complete,placeholder
 jtbl_0044ECB0,0x0044ECB0,0x1c,src/data/jtbl_0044ECB0.c,complete,placeholder
