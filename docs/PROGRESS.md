@@ -1841,3 +1841,13 @@ one word after the allocated 20-byte node header, and the actor callback
 counts down its gated 16-bit timer. Catalog: 580,228 linked matching code
 bytes (17.6163%), 9,050 functions; data remains 74,825 bytes (11.5459%).
 Both native objects, catalog validation, and both full-image hashes pass.
+
+
+### Bounded quit-menu records
+
+The native loop visits exactly three eight-byte records. Their consumed
+byte fields and symbolic text pointers, plus the three terminated labels,
+add 39 reconstructed bytes. Each unused record byte and the unvisited
+37-row tail remains raw. Catalog: 580,228 linked matching code bytes
+(17.6163%), 74,864 reconstructed data bytes (11.5519%). All changed data
+objects, catalog validation, and both full-image hashes pass.
