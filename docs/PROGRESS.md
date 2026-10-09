@@ -2227,3 +2227,12 @@ canonical signed format-entry declaration and copies the declared word count.
 Catalog: 588,204 exact code bytes (17.8585%), 9,107 functions, and
 80,015 reconstructed data bytes (12.3468%). Both whole objects, catalog
 validation, and full loaded-image and packed-ELF hashes pass.
+
+
+### Bounded selector fields and timing
+
+Three signed halfwords selected by the observed 0/1/2/4 callers and a
+two-entry signed timing table add 14 data bytes. The callback increments
+its zero-initialized index and leaves the lookup state at two.
+Catalog: 588,204 exact code bytes (17.8585%), 80,029 reconstructed
+data bytes (12.3489%). Changed data objects, catalog, and both hashes pass.
