@@ -16,7 +16,7 @@ typedef struct CallbackEntry {
 extern CallbackEntry *func_003DA750(int, int, int);
 extern void func_0041A090(void);
 extern void func_0041ACC0(void);
-extern void func_003DD020(void *);
+extern s32 func_003DD020(void *);
 extern s32 func_003299D0(void);
 extern void (*D_0043CD0C)(void);
 extern void func_0041C2F0(void);

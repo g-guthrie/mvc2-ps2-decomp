@@ -91,7 +91,7 @@ void func_003DB9C0(void *p) { func_003F0A60(D_005BF280, p); }
 
 void func_003DB9D0(void *p) { func_003F0DB0(D_005BF280, p); }
 
-void func_003DB9E0(s32 handle) { func_003F0DF0(D_005BF280, handle); }
+s32 func_003DB9E0(s32 handle) { return func_003F0DF0(D_005BF280, handle); }
 
 void func_003DCFB0(void *p) { func_003F0A40(D_0062C020, p); }
 

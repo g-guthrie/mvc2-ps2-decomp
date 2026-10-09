@@ -19,7 +19,7 @@ typedef struct RuntimePool {
 } RuntimePool;
 
 extern void func_0039E450();
-extern void func_003DD020();
+extern s32 func_003DD020();
 extern void *func_003F09C0(void *, u32, s32);
 extern void func_003F0A40();
 extern void func_003F0A60();
@@ -118,9 +118,10 @@ void func_003D9080(void) {
 void func_003DB9B0(void *p) { func_003F0C50(D_005BF280, p); }
 void func_003DB9C0(void *p) { func_003F0A60(D_005BF280, p); }
 void func_003DB9D0(void *p) { func_003F0DB0(D_005BF280, p); }
-void func_003DB9E0(s32 handle) { func_003F0DF0((RuntimePool *)D_005BF280, handle); }
+s32 func_003DB9E0(s32 handle) { return func_003F0DF0((RuntimePool *)D_005BF280, handle); }
 void func_003DB9F0(void) { func_003F0E60(D_005BF280); }
 
+/* The native bound check is only index < count; callers must pass positive handles. */
 s32 func_003F0DF0(RuntimePool *pool, s32 handle)
 {
     s32 index = handle - 1;
