@@ -1,4 +1,14 @@
 typedef unsigned char u8;
+typedef unsigned short u16;
+typedef signed short s16;
+typedef unsigned int u32;
+
+extern int func_001E3710(u8 *, int);
+extern int func_001757E0(u8 *, int, int);
+extern u8 *D_004C2794 __attribute__((section(".sdata")));
+extern u8 D_004C1508[] __attribute__((section(".sdata")));
+extern u8 D_004C150C[] __attribute__((section(".sdata")));
+extern u8 D_004C1510[] __attribute__((section(".sdata")));
 
 extern void func_001861B0(u8 *);
 extern void func_001E97C0(u8 *);
@@ -563,6 +573,37 @@ void func_00305520(u8 *p) {
         else func_003055B0(p);
     }
 }
+
+void func_00305690(u8 *p)
+{
+    switch (p[0x1FC]) {
+    case 0:
+        p[0x168] = 0;
+        p[0x1B5] = 6;
+        func_001E3710(p, 20);
+        *(u32 *)(p + 0x408) = (unsigned int)D_004C1508;
+        p[0x1BB] = 0;
+        break;
+    case 1:
+        p[0x168] = 1;
+        p[0x1B5] = 7;
+        *(u32 *)(p + 0x408) = (unsigned int)D_004C150C;
+        p[0x1BB] = 1;
+        break;
+    case 2:
+        p[0x168] = 2;
+        p[0x1B5] = 8;
+        *(u32 *)(p + 0x408) = (unsigned int)D_004C1510;
+        p[0x1BB] = 2;
+        break;
+    }
+    *(volatile u8 *)(p + 0x1B5) = p[0x1B5];
+    p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+    *(u32 *)(p + 0x1D8) = 0;
+    ((s16 *)(D_004C2794 + 0x7C))[p[2]]++;
+    func_001757E0(p, 9, p[0x168]);
+}
+
 void residual_003093C0(u8 *p) {
     func_001861B0(p);
     if (p[530] == 1) {
