@@ -2284,3 +2284,13 @@ map entry. Other copied numeric fields remain uncredited until their
 roles are established. Catalog: 588,944 exact code bytes (17.8809%),
 9,113 functions, 80,301 reconstructed data bytes (12.3909%). Changed
 whole objects, catalog, and both image hashes pass.
+
+
+### Point transform and gated motion
+
+A 100-byte point wrapper and 148-byte motion handler now match. All three
+direct calls to the matrix-reset helper supply the same two legacy float
+parameters; its definition now records that API and remains exact. The
+transform helper reads three floats and writes three float outputs.
+Catalog: 589,192 code bytes (17.8885%), 9,115 functions; data remains
+80,301 bytes (12.3909%). Whole objects, catalog, and both image hashes pass.
