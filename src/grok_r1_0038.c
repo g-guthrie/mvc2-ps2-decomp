@@ -4,6 +4,20 @@ typedef signed short s16;
 typedef signed int s32;
 typedef unsigned int u32;
 
+typedef struct RuntimePoolEntry {
+    u32 value;
+    u32 size;
+    u8 opaque[8];
+} RuntimePoolEntry;
+
+typedef struct RuntimePool {
+    s32 count;
+    s32 unused;
+    RuntimePoolEntry *entries;
+    u8 opaque[16];
+    s32 used;
+} RuntimePool;
+
 extern void func_0039E450();
 extern void func_003DD020();
 extern void *func_003F09C0(void *, u32, s32);
@@ -11,7 +25,7 @@ extern void func_003F0A40();
 extern void func_003F0A60();
 extern void func_003F0C50();
 extern void func_003F0DB0();
-extern void func_003F0DF0();
+extern s32 func_003F0DF0(RuntimePool *pool, s32 handle);
 extern void func_003F0E60();
 extern void func_0040EF48();
 extern void func_00416A50();
@@ -104,8 +118,21 @@ void func_003D9080(void) {
 void func_003DB9B0(void *p) { func_003F0C50(D_005BF280, p); }
 void func_003DB9C0(void *p) { func_003F0A60(D_005BF280, p); }
 void func_003DB9D0(void *p) { func_003F0DB0(D_005BF280, p); }
-void func_003DB9E0(void *p) { func_003F0DF0(D_005BF280, p); }
+void func_003DB9E0(s32 handle) { func_003F0DF0((RuntimePool *)D_005BF280, handle); }
 void func_003DB9F0(void) { func_003F0E60(D_005BF280); }
+
+s32 func_003F0DF0(RuntimePool *pool, s32 handle)
+{
+    s32 index = handle - 1;
+    if (index >= pool->count)
+        return 0;
+    if (pool->entries[index].size == 0)
+        return 0;
+    pool->used -= pool->entries[index].size;
+    pool->entries[index].size = 0;
+    pool->entries[index].value = 0;
+    return 1;
+}
 
 void *func_003DCF70(u32 size) { return func_003F09C0(D_0062C020, size, 0); }
 void func_003DCF90(void *p) { func_003F0A20((s32 *)D_0062C020, 0, p); }
