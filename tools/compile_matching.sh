@@ -2369,6 +2369,11 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/ee96_string_chain.i" 
 "${AS:-mipsel-linux-gnu-as}" -EL -march=r5900 -mabi=eabi -G0 -o "$BUILD/ee96_string_chain.o" "$BUILD/ee96_string_chain.s"
 "$PYTHON" tools/verify_object.py "$BUILD/ee96_string_chain.o" private/SLUS_204.86.rom --source src/ee96_string_chain.c
 
+"$WIBO" "$SNCPP" -P src/sdk_random_number_0011F5D8.c "$BUILD/sdk_random_number_0011F5D8.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_random_number_0011F5D8.i" "$BUILD/sdk_random_number_0011F5D8.s"
+"$GNUAS" -EL -march=r5900 -mabi=eabi -G0 -o "$BUILD/sdk_random_number_0011F5D8.o" "$BUILD/sdk_random_number_0011F5D8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sdk_random_number_0011F5D8.o" private/SLUS_204.86.rom --source src/sdk_random_number_0011F5D8.c
+
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/vector_frame_compare_004148C0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/vector_frame_compare_004148C0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/vector_frame_compare_004148C0.o" private/SLUS_204.86.rom --source src/vector_frame_compare_004148C0.c
