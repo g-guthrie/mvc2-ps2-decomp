@@ -1,3 +1,4 @@
+typedef signed char s8;
 typedef unsigned char u8;
 typedef unsigned int u32;
 typedef signed short s16;
@@ -7,6 +8,7 @@ extern int func_001757E0(u8 *, int, int);
 extern void func_00185490(u8 *);
 extern void func_001D36E0(u8 *, int);
 extern void func_00183D10(u8 *);
+extern void func_00183D50(u8 *);
 extern u8 *D_004C2794;
 
 void func_002AD6F0(u8 *p)
@@ -459,5 +461,26 @@ void func_002E1EB0(u8 *p)
     if (--*(s16 *)(p + 0x1C) < 0) {
         p[6]++;
         func_001757E0(p, 2, 2);
+    }
+}
+
+void func_002E0B80(u8 *p)
+{
+    func_00175700(p);
+    if (*(s8 *)(p + 0x150) != 0)
+        return;
+
+    *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
+    *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
+    *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
+    *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
+
+    if (*(f32 *)(p + 0x38) < *(f32 *)(p + 0x430)) {
+        p[6]++;
+        p[7] = 0;
+        p[0x20D] = 0;
+        *(f32 *)(p + 0x38) = *(f32 *)(p + 0x430);
+        func_001757E0(p, 1, 3);
+        func_00183D50(p);
     }
 }
