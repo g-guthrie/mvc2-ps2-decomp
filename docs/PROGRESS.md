@@ -2904,3 +2904,13 @@ Catalog, full hybrid linkage and packed retail ELF identity pass. Catalog:
 605,236 code bytes (18.3756%), 9,250 functions; data84,686 bytes (13.0675%).
 Separate vector-base and JAL-delay-slot reviews rejected unsupported pending
 credit before integration.
+
+## Bounded stage data partition checkpoint
+
+Integrated348 reconstructed bytes across packed three-byte parameter words,
+bounded stage vectors and six strided frame codes. Explicit actor/mode/frame
+producer bounds exclude overlapping stream reads from neighboring vectors.
+All21 changed data partitions, eleven data tests, catalog, full hybrid linkage
+and packed retail ELF identity pass. Data: 85,034 bytes (13.1212%), 2,913
+reconstructed units. Code remains605,236 bytes (18.3756%).
+The separate F490 vector-bank correction is queued for integration.
