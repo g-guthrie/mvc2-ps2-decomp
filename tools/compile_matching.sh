@@ -4245,3 +4245,9 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
     "$BUILD/detect_runtime_path_prefix_0040BF00.o" \
     private/SLUS_204.86.rom --source src/detect_runtime_path_prefix_0040BF00.c
 
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/lookup_runtime_sine_00417440.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/lookup_runtime_sine_00417440.o"
+"$PYTHON" tools/verify_object.py "$BUILD/lookup_runtime_sine_00417440.o" \
+    private/SLUS_204.86.rom --source src/lookup_runtime_sine_00417440.c
