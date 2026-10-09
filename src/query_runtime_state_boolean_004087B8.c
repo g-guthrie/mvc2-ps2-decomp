@@ -6,11 +6,11 @@ typedef struct {
     u8 padding0[2];
     s8 mode;
     u8 padding3[45];
-    void *handle;
+    s32 handle;
 } RuntimeMetricState;
 
 extern RuntimeMetricState D_004872F0;
-extern s32 func_001089F0(void *handle, s32 option, s32 *result);
+extern s32 func_001089F0(s32 handle, s32 option, s32 *result);
 
 s32 func_004087B8(void)
 {

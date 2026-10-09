@@ -2930,3 +2930,13 @@ Integrated whole exact callbacks at2F8290 (88bytes),22EEE0 (108bytes) and
 known floating motion constants preserve their bit values through FloatBits.
 Catalog, full hybrid linkage and packed retail ELF identity pass. Catalog:
 605,644 code bytes (18.3880%), 9,253 functions; data85,706 bytes (13.2249%).
+
+## Reviewed strategy, query and path runtime batch
+
+Integrated five whole exact functions (56,80,92,84,88bytes). Strategy dispatch
+uses a void API because its caller does not consume the callee return; the JAL
+delay-slot store uses priorV0. The booleanquery uses an integer handle, proved
+by1089F0→107670 bounding/scaling it into a32-entry table. Both corrections
+remain exact. All five complete objects, catalog, full hybrid linkage and
+packed retail ELF identity pass. Catalog: 606,044 code bytes (18.4001%),
+9,258 functions; data remains85,706 bytes (13.2249%).
