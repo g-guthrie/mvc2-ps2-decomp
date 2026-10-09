@@ -404,7 +404,20 @@ void func_002A66F0(u8 *p) {
         func_001266A0(p, 0, 0);
     }
 }
-extern void func_00290290(u8 *);
+extern void func_00294B20(u8 *, void *);
+extern int func_00294BC0(u8 *);
+extern u8 D_00457490[];
+
+void func_00290290(u8 *p)
+{
+    func_00175700(p);
+    if ((s8)p[337] != 0) {
+        p[7]++;
+        func_00294B20(p, D_00457490);
+        func_00294BC0(p);
+    }
+}
+
 void func_00290240(u8 *p) {
     p[7]++;
     func_00175C00(p, 0);
