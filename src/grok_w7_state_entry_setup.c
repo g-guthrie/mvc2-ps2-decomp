@@ -27,3 +27,28 @@ void func_002F0480(u8 *p)
         }
     }
 }
+
+extern void func_001757E0(u8 *, int, int);
+extern void func_00183D10(u8 *);
+extern void func_00184540(u8 *);
+extern void func_002F1DF0(u8 *);
+
+void func_002F0B10(u8 *p)
+{
+    if (p[6] == 0) {
+        p[6]++;
+        if (p[0x20D] != 2) {
+            p[0x20D] = 0;
+            func_00183D10(p);
+        }
+        func_001757E0(p, 21, 19);
+        func_001E3210(p, 30);
+    }
+
+    if ((s8)func_00175700(p) < 0) {
+        if (p[0x20D] == 2)
+            func_00184540(p);
+        else
+            func_002F1DF0(p);
+    }
+}
