@@ -1410,3 +1410,22 @@ messages to the variadic formatter. Their 34-byte text-plus-NUL objects add 102
 reconstructed bytes; all padding remains raw. Code stays 571,240 (17.3434%);
 data is 71,192 (10.9853%) across 2,317 reconstructed owners. Changed objects,
 catalog validation, loaded-image hash, and packed-ELF hash all pass.
+
+
+### Reentrant write and thread priority checkpoint
+
+The reentrant write helper0011F640 is now exact C (96 bytes): it forwards an
+integer low-level result through a wide signed return and propagates the error
+word only for a failed write. The file callback0011F9C8 (100 bytes) narrows that
+result, advances its cached position on success, and clears flag0x1000 on failure.
+Both whole units compile with EE GCC2.96 and SNAS, resolve their external calls,
+and link exactly. The previous uncredited callback probe now has a consistent
+callee contract.
+
+Five directly consumed I/O descriptor fields are signed thread priorities,
+passed to ChangeThreadPriority at00103C70. Their20 bytes are reconstructed;
+the rest of the original zero region remains placeholder coverage.
+
+Catalog:571,436 linked matching code bytes (17.3494%) and71,212 reconstructed
+data bytes (10.9884%),8,972 functions and2,322 data owners. Targeted native
+verification, data tests, loaded-image hash, and packed-ELF hash pass.
