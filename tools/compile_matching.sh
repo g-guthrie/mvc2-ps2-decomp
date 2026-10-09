@@ -3013,3 +3013,9 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_parse_integer64_0
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_return_size_class_node_0011DB30.i" "$BUILD/sdk_return_size_class_node_0011DB30.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_return_size_class_node_0011DB30.o" "$BUILD/sdk_return_size_class_node_0011DB30.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sdk_return_size_class_node_0011DB30.o" private/SLUS_204.86.rom --source src/sdk_return_size_class_node_0011DB30.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/transform_runtime_point_00417E30.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/transform_runtime_point_00417E30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/transform_runtime_point_00417E30.o" \
+    private/SLUS_204.86.rom --source src/transform_runtime_point_00417E30.c
