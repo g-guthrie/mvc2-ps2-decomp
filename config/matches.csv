@@ -9189,3 +9189,4 @@ func_0030AC10,0x0030AC10,0x60,src/grok_w7_timed_state_transition.c,complete
 func_0030BCA0,0x0030BCA0,0x68,src/grok_w7_context_target_flip_dispatch.c,complete
 func_0030F2E0,0x0030F2E0,0x118,src/grok_w7_stage_motion_setup.c,complete
 func_0030F450,0x0030F450,0x108,src/grok_w7_contextual_actor_handoff.c,complete
+func_0030F560,0x0030F560,0xE4,src/grok_w7_signed_context_handoff.c,complete
