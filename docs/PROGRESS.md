@@ -3256,3 +3256,12 @@ relocation to its exact raw byte owner at 0x004BF0C8. The target remains
 uncredited; its extent is not inferred from the pointer. Changed data
 objects verify exactly. Data reaches 152,002 bytes (23.4548%) across 2,953
 reconstructed units; code remains 611,336 bytes (18.5608%).
+
+## Runtime object pointer
+
+Recovered the four-byte Runtime pointer at 0x0043B6F8. Its symbolic
+relocation addresses the existing u32 owner plus six words (0x18 bytes),
+without introducing overlapping target storage. Consumers return the
+pointer and write through it. Surrounding words remain raw. Changed
+objects verify exactly. Data is 152,006 bytes (23.4554%) across 2,954 units;
+code remains 611,336 bytes (18.5608%).
