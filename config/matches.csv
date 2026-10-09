@@ -9306,4 +9306,5 @@ func_001571D0,0x001571D0,0x80,src/create_counted_position_event_001571D0.c,compl
 func_0030AC70,0x0030AC70,0xBC,src/grok_w7_timed_state_transition.c,complete
 func_0029F470,0x0029F470,0x90,src/grok_r3_0028.c,complete
 func_0041D020,0x0041D020,0x50,src/advance_runtime_grid_position_0041D020.c,complete
+func_0041C400,0x0041C400,0x5C,src/initialize_runtime_animation_backend_0041C400.c,complete
 func_0041C4B0,0x0041C4B0,0x98,src/initialize_runtime_effect_backend_0041C4B0.c,complete
