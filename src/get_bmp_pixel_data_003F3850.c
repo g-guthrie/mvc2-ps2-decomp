@@ -3,7 +3,7 @@ typedef unsigned short u16;
 typedef unsigned int u32;
 
 extern const char D_004BAD30[];
-extern void func_003F5540(const char *message);
+extern void func_003F5540(const char *format, ...);
 
 u8 *func_003F3850(const u16 *header)
 {

@@ -2088,3 +2088,13 @@ objects and the graphics matrix initializer verify exactly. Catalog:
 584,520 linked matching code bytes (17.7466%), 9,086 functions; data
 remains 79,612 bytes (12.2846%). Catalog validation and both full-image
 hashes pass.
+
+
+### BMP pixel-data pointer
+
+The 76-byte helper validates the native BM signature and reconstructs
+the little-endian pixel offset from two halfwords. Its diagnostic call
+uses the reporter’s native variable-argument interface. Catalog: 584,596
+linked matching code bytes (17.7489%), 9,087 functions; data remains
+79,612 bytes (12.2846%). Native object, catalog validation, and both
+full-image hashes pass.
