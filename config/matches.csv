@@ -9037,3 +9037,4 @@ func_00418AA0,0x00418AA0,0x6C,src/dispatch_runtime_mode_result_00418AA0.c,comple
 func_002D0590,0x002D0590,0x94,src/fixed_launch_effect_initializers.c,complete
 func_00417D50,0x00417D50,0x4C,src/convert_runtime_angles_00417D50.c,complete
 func_0011B5F8,0x0011B5F8,0x78,src/sdk_allocate_file_glue_0011B5F8.c,complete
+func_002D1330,0x002D1330,0x154,src/grok_w7_conditional_phase_chain.c,complete
