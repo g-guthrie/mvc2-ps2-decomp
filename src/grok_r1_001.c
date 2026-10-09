@@ -2,6 +2,7 @@ typedef unsigned char u8;
 typedef signed char s8;
 typedef signed short s16;
 typedef signed int s32;
+typedef unsigned int u32;
 
 extern u8 D_004D18A0;
 extern u8 D_00583B9B;
@@ -17,6 +18,9 @@ extern void func_003DAA40(u8 *);
 extern void func_00151650(u8);
 extern void func_00417A50(float, float, float);
 extern void func_00414C70(float);
+extern s32 func_00119098(float value);
+extern void func_003DF850(s32 index, s32 value);
+extern const char D_004BE9A8[];
 extern s32 func_00108F48(s32, s32);
 extern s32 func_0010ADC0(void);
 extern s32 func_0010B360(s32, s32, s32);
@@ -74,6 +78,12 @@ void func_001532F0(void) {
 void func_0016F0C0(float x) {
     D_004F1CAC = x;
     func_00414C70(x);
+}
+
+void func_00414C70(float value) {
+    s32 alpha = func_00119098(255.0f * value);
+    u32 color = (((u32)alpha & 0xff) << 24) | 0x00ffffff;
+    func_003DF850(14, (s32)color);
 }
 
 void func_001090F0(s32 x) { if (func_00108F48(x, 6)) return; }

@@ -9152,3 +9152,4 @@ func_0030ECA0,0x0030ECA0,0x74,src/grok_w7_fixed_phase_entry.c,complete
 func_0030ED20,0x0030ED20,0x90,src/grok_w7_timered_state_exit.c,complete
 func_0030EBF0,0x0030EBF0,0xB0,src/grok_w7_timered_float_setup.c,complete
 func_0030EA00,0x0030EA00,0xE8,src/grok_w7_masked_timer_phase_handler.c,complete
+func_00414C70,0x00414C70,0x40,src/grok_r1_001.c,complete
