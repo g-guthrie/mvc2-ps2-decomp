@@ -2042,3 +2042,16 @@ count type; interleaved payloads and padding stay raw. This adds 48
 reconstructed bytes. Catalog: 582,824 linked matching code bytes
 (17.6951%), 79,416 reconstructed data bytes (12.2543%). All affected data
 objects, catalog validation, and both full-image hashes pass.
+
+
+### Graphics transforms, motion family, and bounded curve fields
+
+Seven exact functions add 876 code bytes: two graphics transforms and
+five motion handlers. The zero-filled initial counter and signed count
+guard prove all 32 curve rows; only each consumed halfword and float
+receive credit, adding 192 bytes. A fixed renderer threshold adds four
+more bytes. Every two-byte row gap and surrounding data remains raw.
+Catalog: 583,700 linked matching code bytes (17.7217%), 9,080 functions;
+79,612 reconstructed data bytes (12.2846%). All affected whole source
+objects and 104 data objects, catalog validation, and both full-image
+hashes pass.
