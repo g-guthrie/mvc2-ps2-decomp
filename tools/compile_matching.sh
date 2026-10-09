@@ -3308,3 +3308,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_timed_position_setup.o" private/SLUS_204.86.rom \
     --source src/grok_w7_timed_position_setup.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_timed_short_position_setup.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_timed_short_position_setup.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_timed_short_position_setup.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_timed_short_position_setup.c
