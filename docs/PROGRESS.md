@@ -2032,3 +2032,13 @@ its raw numeric dispatch table remains uncredited data. Catalog: 582,824
 linked matching code bytes (17.6951%), 9,073 functions; data remains
 79,368 bytes (12.2469%). All affected whole sources, catalog validation,
 and both full-image hashes pass.
+
+
+### Six curve metadata choices
+
+Constructor calls prove selectors 0..5 for the six symbolic curve
+pointers and six record counts. Native signed comparison determines the
+count type; interleaved payloads and padding stay raw. This adds 48
+reconstructed bytes. Catalog: 582,824 linked matching code bytes
+(17.6951%), 79,416 reconstructed data bytes (12.2543%). All affected data
+objects, catalog validation, and both full-image hashes pass.
