@@ -105,3 +105,20 @@ void func_002F1360(u8 *p)
         func_003A9A60(p);
     }
 }
+
+extern void func_001266A0(u8 *, int, int);
+
+void func_002F5390(u8 *p, s16 *timer)
+{
+    p[0x40C] = 2;
+    p[0x33C] = 5;
+    p[0x1B0] = 0;
+    p[0x200] = 3;
+    func_001266A0(p, 1, 1);
+
+    p[0x20] = 2;
+    *timer = 8;
+    func_001757E0(p, 22, 4);
+    p[6] = 6;
+    func_00175700(p);
+}
