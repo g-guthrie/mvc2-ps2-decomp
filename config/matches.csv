@@ -9200,3 +9200,4 @@ func_003030D0,0x003030D0,0x70,src/grok_w7_timered_context_timer_reset.c,complete
 func_00302DE0,0x00302DE0,0x68,src/grok_w7_timered_action_frame_reset.c,complete
 func_00302E50,0x00302E50,0x78,src/grok_w7_timered_context_frame_setup.c,complete
 func_00303D70,0x00303D70,0x6C,src/grok_w7_timered_action_trigger.c,complete
+func_00303390,0x00303390,0xA4,src/grok_w7_timered_phase_increment.c,complete
