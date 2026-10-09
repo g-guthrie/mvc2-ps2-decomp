@@ -1782,3 +1782,13 @@ The 192-byte actor restart handler now matches within the complete
 (17.5861%), 9,042 functions. Four catalog placeholders remain excluded
 from credit. Data stays 74,673 bytes (11.5225%). Whole-source verification,
 catalog validation, and both full-image hashes pass.
+
+
+### Mode pointer tables and timed floor check
+
+Three bounded five-entry tables now use symbolic C object pointers with
+verified relocations; native selector writes prove entries 0..4. They add
+60 reconstructed bytes. A 164-byte actor floor-check handler matches within
+the complete 30-function motion source. Catalog: 579,396 linked code bytes
+(17.5911%), 9,043 functions; 74,733 reconstructed data bytes (11.5317%).
+Affected objects, catalog validation, and both full-image hashes pass.
