@@ -2823,6 +2823,16 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
 "$PYTHON" tools/verify_object.py "$BUILD/dispatch_runtime_object_value_004020D8.o" \
     private/SLUS_204.86.rom --source src/dispatch_runtime_object_value_004020D8.c
 
+"$WIBO" "$SNCPP" -P src/clamp_runtime_state_value_0040EDE0.c \
+    "$BUILD/clamp_runtime_state_value_0040EDE0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/clamp_runtime_state_value_0040EDE0.i" \
+    "$BUILD/clamp_runtime_state_value_0040EDE0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/clamp_runtime_state_value_0040EDE0.o" \
+    "$BUILD/clamp_runtime_state_value_0040EDE0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/clamp_runtime_state_value_0040EDE0.o" \
+    private/SLUS_204.86.rom --source src/clamp_runtime_state_value_0040EDE0.c
+
 "$WIBO" "$SNCPP" -P src/set_runtime_slot_pair_004075B8.c \
     "$BUILD/set_runtime_slot_pair_004075B8.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
