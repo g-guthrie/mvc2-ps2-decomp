@@ -9126,3 +9126,4 @@ func_00170F60,0x00170F60,0x6C,src/initialize_match_choices.c,complete
 func_0030E6B0,0x0030E6B0,0xDC,src/grok_w7_timered_payload_reset.c,complete
 func_00171640,0x00171640,0x7C,src/advance_global_phase.c,complete
 func_0030B1A0,0x0030B1A0,0x8C,src/grok_w7_timered_flag_transition.c,complete
+func_0030B500,0x0030B500,0xB4,src/grok_w7_timed_three_axis_reset.c,complete
