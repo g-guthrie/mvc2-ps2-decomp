@@ -3857,3 +3857,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_gate_timer_reset.o" private/SLUS_204.86.rom \
     --source src/grok_w7_gate_timer_reset.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_timed_sequence_fanout.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_timed_sequence_fanout.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_timed_sequence_fanout.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_timed_sequence_fanout.c
