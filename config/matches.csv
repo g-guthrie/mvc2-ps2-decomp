@@ -9283,3 +9283,4 @@ func_0027C340,0x0027C340,0xAC,src/grok_r1_0020.c,complete
 func_00175B40,0x00175B40,0xC0,src/copy_animation_records_00175B40.c,complete
 func_0026FDE0,0x0026FDE0,0xC4,src/physics_dispatchers.c,complete
 func_0039E4E0,0x0039E4E0,0x70,src/create_motion_event_0039E4E0.c,complete
+func_002C1670,0x002C1670,0xC4,src/grok_r1_0028.c,complete

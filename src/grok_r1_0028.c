@@ -26,6 +26,9 @@ extern void func_002B4630(u8 *);
 extern s32 func_002C0530(u8 *);
 extern s32 func_002C0590(u8 *);
 extern void func_002C1670(u8 *);
+extern void func_002C1740(u8 *);
+extern void func_002C1780(u8 *);
+extern void func_002C17C0(u8 *);
 extern void func_002C6CE0(u8 *);
 extern void func_002C6DE0(u8 *);
 extern s32 func_002D9730(u8 *);
@@ -184,6 +187,31 @@ void func_002C1630(u8 *p)
         func_001821D0(p);
     }
     func_002C1670(p);
+}
+
+void func_002C1670(u8 *p)
+{
+    u8 state;
+    if (p[0x215] == 0)
+        func_001820A0(p);
+    func_00182300(p);
+    state = p[0x1FC];
+    if (state == 96) {
+        *(s16 *)(p + 0x1C) = 0;
+        func_002C17C0(p);
+        return;
+    }
+    if (state >= 97 && state < 100) {
+        *(s16 *)(p + 0x1C) = 1;
+        func_002C17C0(p);
+        return;
+    }
+    if (p[0x212] == 1)
+        func_002C1780(p);
+    else
+        func_002C1740(p);
+    if (func_001864A0(p))
+        func_001865B0(p);
 }
 
 void func_002C6C20(u8 *p)
