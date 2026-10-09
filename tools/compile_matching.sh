@@ -2856,3 +2856,12 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
     "$BUILD/count_runtime_span_0040FF88.s"
 "$PYTHON" tools/verify_object.py "$BUILD/count_runtime_span_0040FF88.o" \
     private/SLUS_204.86.rom --source src/count_runtime_span_0040FF88.c
+
+"$WIBO" "$SNCPP" -P src/runtime_mode_wrappers_00411A18.c \
+    "$BUILD/runtime_mode_wrappers_00411A18.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/runtime_mode_wrappers_00411A18.i" "$BUILD/runtime_mode_wrappers_00411A18.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/runtime_mode_wrappers_00411A18.o" \
+    "$BUILD/runtime_mode_wrappers_00411A18.s"
+"$PYTHON" tools/verify_object.py "$BUILD/runtime_mode_wrappers_00411A18.o" \
+    private/SLUS_204.86.rom --source src/runtime_mode_wrappers_00411A18.c

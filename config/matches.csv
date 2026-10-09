@@ -8998,3 +8998,6 @@ func_00410000,0x00410000,0x134,src/consume_runtime_span_00410000.c,complete
 func_00410290,0x00410290,0x144,src/merge_runtime_span_00410290.c,complete
 func_0040FEA8,0x0040FEA8,0x34,src/initialize_runtime_state_0040FEA8.c,complete
 func_0040FF88,0x0040FF88,0x74,src/count_runtime_span_0040FF88.c,complete
+func_00411A18,0x00411A18,0x18,src/runtime_mode_wrappers_00411A18.c,complete
+func_00411A30,0x00411A30,0x18,src/runtime_mode_wrappers_00411A18.c,complete
+func_00411A48,0x00411A48,0x18,src/runtime_mode_wrappers_00411A18.c,complete
