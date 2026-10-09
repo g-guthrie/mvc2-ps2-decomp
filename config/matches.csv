@@ -9084,3 +9084,4 @@ func_002F89B0,0x002F89B0,0x88,src/grok_w7_velocity_transfer_state.c,complete
 func_002F8A40,0x002F8A40,0x74,src/grok_w7_velocity_transfer_state.c,complete
 func_002F8AC0,0x002F8AC0,0x8C,src/grok_w7_velocity_transfer_state.c,complete
 func_002F9510,0x002F9510,0x110,src/grok_w7_negative_result_reset.c,complete
+func_002F8FC0,0x002F8FC0,0xB8,src/grok_w7_context_state_dispatch.c,complete

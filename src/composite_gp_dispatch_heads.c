@@ -1,4 +1,4 @@
-typedef unsigned char u8;
+#include "mvc2_state_callbacks.h"
 typedef void (*DispatchFn)(u8 *);
 typedef void (*ContextDispatchFn)(u8 *, void *);
 
@@ -264,7 +264,7 @@ extern DispatchFn jtbl_004C11B0[2];
 extern DispatchFn jtbl_004C1240[2];
 extern DispatchFn jtbl_004C12D0[2];
 extern DispatchFn jtbl_004C1330[2];
-extern DispatchFn jtbl_004C1388[2];
+extern Mvc2OwnerStateCallback jtbl_004C1388[2];
 extern DispatchFn jtbl_004C1390[2];
 extern DispatchFn jtbl_004C13A8[2];
 extern DispatchFn jtbl_004C13B0[2];
@@ -903,7 +903,7 @@ void func_002F3B60(u8 *p) { jtbl_004C12D0[p[6]](p); }
 
 void func_002F5990(u8 *p) { jtbl_004C1330[p[6]](p); }
 
-void func_002F9080(u8 *p) { jtbl_004C1388[p[6]](p); }
+void func_002F9080(u8 *p, void *context) { jtbl_004C1388[p[6]](p, context); }
 
 void func_002F91E0(u8 *p) { jtbl_004C1390[p[6]](p); }
 

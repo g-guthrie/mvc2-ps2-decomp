@@ -160,7 +160,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/composite_dispatch_heads.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/composite_dispatch_heads.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/composite_gp_dispatch_heads.c -c -lang c -O3 -sdatathreshold 8 \
+    src/composite_gp_dispatch_heads.c -c -lang c -O3 -sdatathreshold 8 -i src/data \
     -o "$BUILD/composite_gp_dispatch_heads.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/argument_dispatch_heads.c -c -lang c -O3 -sdatathreshold 8 \
@@ -2930,6 +2930,13 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_indexed_flag_transition.o" private/SLUS_204.86.rom \
     --source src/grok_w7_indexed_flag_transition.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_context_state_dispatch.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_context_state_dispatch.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_context_state_dispatch.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_context_state_dispatch.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w7_external_state_trigger.c -c -lang c -O3 -sdatathreshold 0 \

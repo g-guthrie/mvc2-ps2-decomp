@@ -1312,7 +1312,7 @@ jtbl_004C11B0,0x004C11B0,0x10,src/composite_gp_dispatch_heads.c,jtbl_004C11B0,vo
 jtbl_004C1240,0x004C1240,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C1240,void(u8 *)
 jtbl_004C12D0,0x004C12D0,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C12D0,void(u8 *)
 jtbl_004C1330,0x004C1330,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C1330,void(u8 *)
-jtbl_004C1388,0x004C1388,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C1388,void(u8 *)
+jtbl_004C1388,0x004C1388,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C1388,"void(u8 *, void *)"
 jtbl_004C1390,0x004C1390,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C1390,void(u8 *)
 jtbl_004C13A0,0x004C13A0,0x08,src/grok_dispatch_r2.c,jtbl_004C13A0,void(u8 *)
 jtbl_004C13A8,0x004C13A8,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C13A8,void(u8 *)
