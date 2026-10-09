@@ -3315,3 +3315,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_timed_short_position_setup.o" private/SLUS_204.86.rom \
     --source src/grok_w7_timed_short_position_setup.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_shared_workspace.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/initialize_shared_workspace.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_shared_workspace.o" \
+    private/SLUS_204.86.rom --source src/initialize_shared_workspace.c

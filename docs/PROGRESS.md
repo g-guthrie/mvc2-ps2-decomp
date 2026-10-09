@@ -2303,3 +2303,14 @@ ordinal labels add 189 data bytes. The text consumer reads exactly four
 characters for each selected pointer; all intervening padding remains raw.
 Catalog: 589,192 code bytes (17.8885%), 80,490 data bytes (12.4201%).
 All changed objects, symbolic relocations, catalog, and both hashes pass.
+
+
+### Timed position setup and shared workspace initialization
+
+Two complete position handlers and the gated workspace reset add 448
+exact code bytes. Both file-header identity accessors now return pointers,
+as required by every observed caller; their complete source object
+remains exact. The workspace scale is a float, confirmed by native
+LWC1/SWC1 consumers. Catalog: 589,640 code bytes (17.9021%), 9,118
+functions, 80,490 data bytes (12.4201%). Whole objects, catalog, and
+both loaded-image and packed-ELF hashes pass.

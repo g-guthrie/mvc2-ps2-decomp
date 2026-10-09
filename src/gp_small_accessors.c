@@ -32,5 +32,6 @@ void func_001E41B0(unsigned char value) { D_004C272A = value; }
 unsigned char func_001E2120(void) { return D_004BFAE0; }
 int func_003FE4F0(void) { return D_004C22D0; }
 int func_003FE9E0(void) { return D_004C22D4; }
-int func_003F1530(int value) { return value; }
-int func_003F1F00(int value) { return value; }
+/* Every native caller passes a file buffer and reads returned header words. */
+unsigned int *func_003F1530(void *file) { return file; }
+unsigned int *func_003F1F00(void *file) { return file; }
