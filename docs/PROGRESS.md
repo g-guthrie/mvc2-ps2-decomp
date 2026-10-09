@@ -2472,3 +2472,14 @@ remains uncredited pending producer-domain proof. Unknown target payloads
 and unread padding remain raw. Catalog: 598,212 matching code bytes
 (18.1623%), 83,095 reconstructed data bytes (12.8220%). Changed data
 objects, relocations, catalog, and both full-image hashes pass.
+
+
+### EE96 object lifecycle and narrowed TIM2 selectors
+
+Nine complete runtime helpers add 620 code bytes. Native argument audit
+confirms the logger takes one text input and the value dispatcher targets
+a scalar-state pointer with a void result; the corrected API remains exact.
+The TIM2-derived lookup now credits only rows0..4 and10 (48 bytes), with
+other rows raw. Catalog: 598,832 code bytes (18.1812%), 9,182 functions,
+83,143 data bytes (12.8294%). All changed objects, 45 tests, catalog,
+script syntax, and both full-image hashes pass.
