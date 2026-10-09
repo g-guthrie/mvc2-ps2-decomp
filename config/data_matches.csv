@@ -900,8 +900,11 @@ data_u32_00445078,0x00445078,0x8,src/data/data_u32_00445078.c,complete,placehold
 gScaleKeys_00445080,0x00445080,0x10,src/data/scale_keys_00445080.c,complete,reconstructed
 gScaleKeys_00445090,0x00445090,0x18,src/data/scale_keys_00445090.c,complete,reconstructed
 data_u32_004450A8,0x004450A8,0x178,src/data/data_u32_004450A8.c,complete,placeholder
-D_00445220,0x00445220,0x18,src/data/D_00445220.c,complete,placeholder
-data_u32_00445238,0x00445238,0x38,src/data/data_u32_00445238.c,complete,placeholder
+D_00445220,0x00445220,0x18,src/data/D_00445220.c,complete,reconstructed
+data_raw_00445238,0x00445238,0x8,src/data/data_raw_00445238.c,complete,placeholder
+data_u32_00445240,0x00445240,0x18,src/data/data_u32_00445240.c,complete,reconstructed
+data_raw_00445258,0x00445258,0x8,src/data/data_raw_00445258.c,complete,placeholder
+data_u32_00445260,0x00445260,0x10,src/data/data_u32_00445260.c,complete,placeholder
 data_f32_one_00445270,0x00445270,0x18,src/data/data_f32_one_00445270.c,complete,placeholder
 data_u32_00445290,0x00445290,0x18,src/data/data_u32_00445290.c,complete,placeholder
 data_f32_one_004452A8,0x004452A8,0x8,src/data/data_f32_one_004452A8.c,complete,placeholder
