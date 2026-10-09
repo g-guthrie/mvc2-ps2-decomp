@@ -928,7 +928,7 @@ data_u32_00444D2C,0x00444D2C,0x4,src/data/data_u32_00444D2C.c,complete,placehold
 gMvc2AxisScaleCurves_00444D30,0x00444D30,0x120,src/data/axis_scale_curves_00444D30.c,complete,reconstructed
 data_u32_00444E50,0x00444E50,0x20,src/data/data_u32_00444E50.c,complete,placeholder
 gMvc2ScaleKeys_00444E70,0x00444E70,0x68,src/data/scale_keys_00444E70.c,complete,reconstructed
-data_f32_one_00444ED8,0x00444ED8,0xC,src/data/data_f32_one_00444ED8.c,complete,placeholder
+data_f32_one_00444ED8,0x00444ED8,0xC,src/data/data_f32_one_00444ED8.c,complete,reconstructed
 data_u32_00444EE4,0x00444EE4,0x10C,src/data/data_u32_00444EE4.c,complete,placeholder
 jtbl_00444FF0,0x00444FF0,0x10,src/data/jtbl_00444FF0.c,complete,reconstructed
 gScaleKeys_00445000,0x00445000,0x10,src/data/scale_keys_00445000.c,complete,reconstructed
