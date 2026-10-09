@@ -1899,3 +1899,13 @@ table. Its seven entries now use symbolic references and verified
 relocations, adding 28 reconstructed bytes. Catalog: 580,452 linked code
 bytes (17.6231%), 75,028 reconstructed data bytes (11.5773%). Native
 object, catalog validation, and both full-image hashes pass.
+
+
+### Indexed transition motion
+
+The 148-byte helper now matches alongside its 92-byte caller. Its native
+GP-relative lookup uses an incomplete byte-array declaration, and the
+three-float position copy uses a typed aggregate. Both callback signatures
+match the owner-state dispatch table. Catalog: 580,600 linked matching
+code bytes (17.6276%), 9,053 functions; data remains 75,028 bytes
+(11.5773%). Whole source, catalog, and both full-image hashes pass.
