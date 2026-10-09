@@ -1,4 +1,5 @@
 typedef unsigned int u32;
+/* Four 12-entry code-point banks selected by func_0012BFF0 for 0x20, 0x34, 0x36, or 0x3A. The consumer scans at most twelve 32-bit entries per selected bank. */
 u32 data_u32_004AD200[48] = {
     0x0000001Cu, 0x00000038u, 0x00000007u, 0x0000002Du, 0x00000036u, 0x00000023u, 0x0000001Fu, 0x0000001Eu, 
     0x00000037u, 0x00000003u, 0x00000024u, 0x0000003Au, 0x00000020u, 0x0000001Cu, 0x00000038u, 0x00000007u, 
