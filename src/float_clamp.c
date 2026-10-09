@@ -2,11 +2,26 @@ typedef unsigned char u8;
 typedef float f32;
 typedef signed int s32;
 
-extern void func_0028D8B0(u8 *);
+extern int func_0028D8B0(u8 *);
 extern void func_00294BC0(u8 *);
+extern void func_0028D810(u8 *, u8 *);
 extern int func_00175700(u8 *);
 extern void func_00175C00(u8 *, s32);
 extern void func_00184540(u8 *);
+
+int func_0028D8B0(u8 *p) {
+    u8 *ctx = p + 696;
+    u8 timer = p[710];
+    int result = 1;
+    timer--;
+    p[710] = timer;
+    if (timer == 0) {
+        if (ctx[15] != 0)
+            result = 0;
+        func_0028D810(p, *(u8 **)(ctx + 16));
+    }
+    return result;
+}
 
 void func_0028B010(u8 *a0) {
     func_0028D8B0(a0);
