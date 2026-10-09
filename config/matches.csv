@@ -9001,3 +9001,9 @@ func_0040FF88,0x0040FF88,0x74,src/count_runtime_span_0040FF88.c,complete
 func_00411A18,0x00411A18,0x18,src/runtime_mode_wrappers_00411A18.c,complete
 func_00411A30,0x00411A30,0x18,src/runtime_mode_wrappers_00411A18.c,complete
 func_00411A48,0x00411A48,0x18,src/runtime_mode_wrappers_00411A18.c,complete
+func_00411A60,0x00411A60,0x1C,src/runtime_mode_wrappers_00411A18.c,complete
+func_00411A80,0x00411A80,0x1C,src/runtime_mode_wrappers_00411A18.c,complete
+func_00411AA0,0x00411AA0,0x18,src/runtime_mode_wrappers_00411A18.c,complete
+func_00411AB8,0x00411AB8,0x18,src/runtime_mode_wrappers_00411A18.c,complete
+func_00411AD0,0x00411AD0,0x18,src/runtime_mode_wrappers_00411A18.c,complete
+func_00411AE8,0x00411AE8,0x18,src/runtime_mode_wrappers_00411A18.c,complete
