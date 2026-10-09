@@ -3176,3 +3176,11 @@ Recovered the complete 112-byte initializer at 0x00141250. Native caller
 callback setup and typed float3 position copy. Whole-object verification
 passes. Code reaches 610,384 bytes (18.5319%) across 9,287 functions; data
 remains 151,986 bytes (23.4523%).
+
+## Owner-linked scene overlay
+
+Recovered the complete 112-byte initializer at 0x0014A220. The source
+preserves allocation failure and the exact -0.1f depth representation,
+and connects the owner context. Whole-object verification passes. Code
+reaches 610,496 bytes (18.5353%), 9,288 functions; data remains 151,986 bytes
+(23.4523%).
