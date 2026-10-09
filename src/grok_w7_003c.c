@@ -8,16 +8,16 @@ extern s16 D_004C27A4;
 extern s8 *D_004C2840;
 extern s8 D_004C2A40;
 
-extern s32 func_003DA780(void);
+extern void *func_003DA780(void *context, s32 type, s32 initializer);
 extern void func_003D7190(s8 *);
 extern void func_003D7030(void);
 extern void func_00174BC0(void);
 
-s32 func_003DA750(void)
+void *func_003DA750(void *context, s32 type, s32 initializer)
 {
     if (D_004C27A4 <= 0)
         return 0;
-    return func_003DA780();
+    return func_003DA780(context, type, initializer);
 }
 
 void func_003D7310(s32 p)

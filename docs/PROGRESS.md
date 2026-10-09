@@ -2262,3 +2262,14 @@ steps add 86 data bytes. Native callback allocation clears the object;
 its counters/selectors start at zero and exit at five or seven, preserving
 the proven table bounds. Catalog: 588,344 code bytes (17.8627%), 80,153
 data bytes (12.3681%). Changed data objects, catalog, and both hashes pass.
+
+
+### Velocity reset, timer transition, and indexed format access
+
+Three complete functions add 468 exact C bytes. The format lookup uses
+the canonical signed-tag prototype. The existing allocator wrapper now
+explicitly forwards its three real arguments and returns the allocated
+pointer; all four functions in that source remain exact.
+Catalog: 588,812 matching code bytes (17.8769%), 9,111 functions; data
+remains 80,153 bytes (12.3681%). Whole-object, catalog, and both image
+hash checks pass.

@@ -2,7 +2,7 @@ typedef unsigned char u8;
 typedef unsigned int u32;
 typedef signed int s32;
 
-extern s32 *func_003F1540(u8 *file, u32 tag);
+extern s32 *func_003F1540(void *file, s32 tag);
 
 s32 func_003F1410(u8 *file, s32 index)
 {
