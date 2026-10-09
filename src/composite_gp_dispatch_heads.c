@@ -264,7 +264,7 @@ extern DispatchFn jtbl_004C11B0[2];
 extern DispatchFn jtbl_004C1240[2];
 extern DispatchFn jtbl_004C12D0[2];
 extern DispatchFn jtbl_004C1330[2];
-extern Mvc2OwnerStateCallback jtbl_004C1388[2];
+extern const Mvc2OwnerStateCallback jtbl_004C1388[2] __attribute__((section(".sdata")));
 extern DispatchFn jtbl_004C1390[2];
 extern DispatchFn jtbl_004C13A8[2];
 extern DispatchFn jtbl_004C13B0[2];

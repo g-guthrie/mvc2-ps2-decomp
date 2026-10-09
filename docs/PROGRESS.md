@@ -2065,3 +2065,15 @@ functions; data remains 79,612 bytes (12.2846%). Whole-source proof,
 catalog validation, and both full-image hashes pass. The quad-builder
 candidate remains uncredited: its initially proposed extra float
 parameters are not supported by the native caller/callee contract.
+
+
+### Owner-context callback chain
+
+The native two-argument dispatch chain now passes its context through
+func_002F9080 and jtbl_004C1388. The new 184-byte helper consumes the six
+context bytes. Both complete dispatcher objects, the new source, and
+both callback-table objects verify exactly. The table declaration keeps
+its native GP-relative access and agrees with its const provider.
+Catalog: 584,156 linked matching code bytes (17.7356%), 9,082 functions;
+data remains 79,612 bytes (12.2846%). All 45 tests, catalog validation,
+and both full-image hashes pass.
