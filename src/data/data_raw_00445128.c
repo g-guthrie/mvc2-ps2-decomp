@@ -1,0 +1,5 @@
+typedef unsigned char u8;
+/* Unconsumed inter-curve bytes remain raw. */
+u8 data_raw_00445128[0x8] = {
+    0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u
+};
