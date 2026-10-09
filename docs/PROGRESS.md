@@ -2682,3 +2682,12 @@ fourth word for the selector, including explicit zero arguments on null paths.
 Whole object, catalog, full hybrid linkage and packed retail ELF identity pass.
 Catalog: 602,788 code bytes (18.3013%), 9,215 functions; data remains 83,806
 bytes (12.9317%).
+
+## State-mode setup candidate review
+
+Imported the 305690 state-mode setup candidate for further recovery but held it
+out of matching credit: an artificial volatile self-write forced an instruction
+and did not establish the intended ordinary actor-memory semantics. Removed
+that qualifier and typed its 408 stores as pointers. Existing registered
+functions in the complete source object still verify exactly. Candidate repair
+continues; catalog remains 602,788 code bytes (18.3013%).
