@@ -851,7 +851,7 @@ void func_002F4190(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_002F4460(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_002F4B20(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
+void func_002F4B20(u8 *actor, void *owner) {  func_00175700(actor); }
 
 void func_002FDB90(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 

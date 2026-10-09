@@ -1970,3 +1970,14 @@ bytes beyond the previously credited first vectors; gaps and tail stay raw.
 Catalog: 581,404 linked matching code bytes (17.6520%), 9,060 functions;
 79,340 reconstructed data bytes (12.2426%). All affected objects, 45 tests,
 catalog validation, and both full-image hashes pass.
+
+
+### Indexed state selector and bounded byte table
+
+The 200-byte handler matches within its complete source. Its flag mask
+proves all sixteen byte lookup entries; provider and consumer declarations
+now agree on the byte-array type. Nearby helper/caller signatures were
+aligned without changing bytes. Catalog: 581,604 linked matching code
+bytes (17.6581%), 9,061 functions; 79,356 reconstructed data bytes
+(12.2451%). All affected whole sources, data object, catalog validation,
+and both full-image hashes pass.
