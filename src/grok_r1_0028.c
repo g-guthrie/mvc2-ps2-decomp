@@ -30,7 +30,19 @@ extern void func_002C6CE0(u8 *);
 extern void func_002C6DE0(u8 *);
 extern s32 func_002D9730(u8 *);
 extern s32 func_002D97A0(u8 *);
-extern void func_002D9D10(u8 *);
+extern void func_002DC070(u8 *);
+void func_002D9D10(u8 *p)
+{
+    func_002DC070(p);
+    func_001820A0(p);
+    func_00182300(p);
+    if ((s8)func_00175700(p) < 0) {
+        func_00184540(p);
+        return;
+    }
+    if (func_001864A0(p))
+        func_001865B0(p);
+}
 extern void func_002E1520(u8 *, int);
 extern s32 func_002E92E0(u8 *);
 
