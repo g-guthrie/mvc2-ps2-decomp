@@ -1,2 +1,0 @@
-typedef unsigned char u8;
-u8 data_u8_004A6EDC[4] = { 0x66, 0x66, 0x66, 0x3F };
