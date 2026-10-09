@@ -799,7 +799,7 @@ data_f32_one_0044394C,0x0044394C,0xC,src/data/data_f32_one_0044394C.c,complete,p
 data_u32_00443958,0x00443958,0x18,src/data/data_u32_00443958.c,complete,placeholder
 data_zero_00443970,0x00443970,0x10,src/data/data_zero_00443970.c,complete,placeholder
 jtbl_00443984,0x00443984,0x2C,src/data/jtbl_00443984.c,complete,placeholder
-data_f32_one_004439B0,0x004439B0,0x10,src/data/data_f32_one_004439B0.c,complete,placeholder
+data_f32_one_004439B0,0x004439B0,0x10,src/data/data_f32_one_004439B0.c,complete,reconstructed
 data_u32_004439C0,0x004439C0,0xD0,src/data/data_u32_004439C0.c,complete,placeholder
 jtbl_00443A90,0x00443A90,0x1c,src/data/jtbl_00443A90.c,complete,reconstructed
 jtbl_00443AB0,0x00443AB0,0x1c,src/data/jtbl_00443AB0.c,complete,reconstructed
