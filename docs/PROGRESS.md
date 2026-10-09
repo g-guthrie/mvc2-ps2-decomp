@@ -3071,3 +3071,14 @@ The shared175910helper has an existinginteger-return definition; five caller
 declarations were corrected fromvoid, with allaffectedcomplete sourceobjects
 still exact. Catalog, fullhybrid linkage andpackedretailELF identity pass.
 Catalog:608,128codebytes(18.4634%),9,274functions;data151,982bytes(23.4517%).
+
+## Fixed four-float transform recovery
+
+Recovered the 16-byte float vector at 0x004443F0. The native consumer loads
+all four components as floats and stores them into four float fields. Both
+affected whole data objects verify exactly; hybrid linkage and the packed
+retail ELF hash pass. Data reaches 151,998 bytes (23.4542%) across 2,952
+reconstructed units. Code remains 608,128 bytes (18.4634%).
+
+The proposed signed-delta bank at 0x004642C0 remains a placeholder because
+animation asset copies overwrite its selector and its range is unproven.
