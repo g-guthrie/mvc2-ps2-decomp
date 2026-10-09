@@ -2683,7 +2683,7 @@ jtbl_00456720,0x00456720,0x18,.rodata,src/data/jtbl_00456720.c,typed_state_callb
 jtbl_00456740,0x00456740,0x2c,.rodata,src/data/jtbl_00456740.c,typed_state_callback_table
 jtbl_00456770,0x00456770,0x18,.rodata,src/data/jtbl_00456770.c,typed_state_callback_table
 jtbl_00456790,0x00456790,0x10,.rodata,src/data/jtbl_00456790.c,typed_state_callback_table
-data_u32_004567A0,0x004567A0,0x20,.data,src/data/data_u32_004567A0.c,initialized_u32_table
+data_u8_004567A0,0x004567A0,0x20,.data,src/data/data_u8_004567A0.c,initialized_byte_array
 jtbl_004567C0,0x004567C0,0x14,.rodata,src/data/jtbl_004567C0.c,typed_state_callback_table
 jtbl_004567D8,0x004567D8,0xC,.rodata,src/data/jtbl_004567D8.c,typed_state_callback_table
 data_u32_004567E4,0x004567E4,0x4,.data,src/data/data_u32_004567E4.c,initialized_u32_table
