@@ -3054,3 +3054,12 @@ addition was removed before credit, and the canonicalobject-pool object was
 restored/reverified. Fullhybrid andpackedretail hashes still pass. Coverage
 remains607,724codebytes(18.4511%) and151,982databytes(23.4517%).
 A separate uncreditedprobe corrected its LBU/BLEZ gate to zero-only.
+
+## Motion-context profile recovery
+
+Integrated the complete208-byte profile handler with its grounded two-pointer
+and integerflag API, preserving the existing companion declaration during
+conflict resolution. All three functions in the complete source object verify
+exactly. Catalog, fullhybrid linkage and packedretailELF identity pass. Catalog:
+607,932codebytes(18.4574%),9,272functions;data151,982bytes(23.4517%).
+Fresh Luna worker contexts continue the fullscope recovery.
