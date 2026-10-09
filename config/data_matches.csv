@@ -4894,7 +4894,12 @@ data_u32_004AC75C,0x004AC75C,0xC,src/data/data_u32_004AC75C.c,complete,placehold
 data_u32_004AC768,0x004AC768,0x14,src/data/data_u32_004AC768.c,complete,placeholder
 data_u32_004AC77C,0x004AC77C,0x14,src/data/data_u32_004AC77C.c,complete,placeholder
 data_zero_004AC790,0x004AC790,0x80,src/data/data_zero_004AC790.c,complete,placeholder
-data_raw_004AC810,0x004AC810,0x20,src/data/data_raw_004AC810.c,complete,placeholder
+gFloatInfinityString_004AC810,0x004AC810,0x9,src/data/gFloatInfinityString_004AC810.c,complete,reconstructed
+data_raw_004AC819,0x004AC819,0x7,src/data/data_raw_004AC819.c,complete,placeholder
+gFloatNaNString_004AC820,0x004AC820,0x4,src/data/gFloatNaNString_004AC820.c,complete,reconstructed
+data_raw_004AC824,0x004AC824,0x4,src/data/data_raw_004AC824.c,complete,placeholder
+gFloatZeroString_004AC828,0x004AC828,0x2,src/data/gFloatZeroString_004AC828.c,complete,reconstructed
+data_raw_004AC82A,0x004AC82A,0x6,src/data/data_raw_004AC82A.c,complete,placeholder
 gDecimalConversionFactors_004AC830,0x004AC830,0x18,src/data/gDecimalConversionFactors_004AC830.c,complete,reconstructed
 data_raw_004AC848,0x004AC848,0x8,src/data/data_raw_004AC848.c,complete,placeholder
 jtbl_004AC850,0x004AC850,0x18,src/data/jtbl_004AC850.c,complete,placeholder
