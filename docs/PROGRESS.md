@@ -2616,3 +2616,12 @@ now preserves its actual return contract even though that caller ignores it.
 All four whole objects remain exact under their established compiler recipes
 (including MWCCPS2 3.0-011126 for state_return_family). Full hybrid linkage and
 packed ELF identity pass. Credit remains 602,456 code bytes (18.2912%).
+
+## Runtime service pool reset checkpoint
+
+Recovered the complete 200-byte runtime service pool reset, preserving native
+handle checks, entry stride, cleanup calls and counter-clear ordering before
+the workspace fills. Ordinary counter globals suffice for an exact match;
+unnecessary volatile qualifiers were removed. Whole object, catalog and full
+retail link/packed ELF identity pass. Catalog: 602,656 code bytes (18.2973%),
+9,213 functions. Data remains 83,806 bytes (12.9317%).

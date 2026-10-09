@@ -2,9 +2,9 @@ typedef unsigned char u8;
 typedef unsigned int u32;
 typedef signed int s32;
 
-extern volatile s32 D_004C2894;
-extern volatile s32 D_004C2898;
-extern volatile s32 D_004C289C;
+extern s32 D_004C2894;
+extern s32 D_004C2898;
+extern s32 D_004C289C;
 extern u8 D_004F9170[0x24900];
 extern u8 D_004F8470[0xD00];
 extern u8 D_0051DA70[0x51400];
