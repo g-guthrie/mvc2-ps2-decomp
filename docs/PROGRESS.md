@@ -2130,3 +2130,14 @@ uses its caller-proven object pointer. Catalog: 585,148 linked matching
 code bytes (17.7657%), 9,093 functions; data remains 79,642 bytes
 (12.2892%). Both whole sources, catalog validation, and both full-image
 hashes pass.
+
+
+### Nine-step sequence and manifest-sized actor setup
+
+Nine consumed signed halfwords and their signed limit add 22 data bytes;
+upper-half gaps and neighbors stay raw. The actor setup function matches
+its complete 0xEC manifest extent, adding 236 code bytes. Its four-byte
+suffix is already a separate config/gaps.csv gap and receives no credit.
+Catalog: 585,384 linked matching code bytes (17.7729%), 9,094 functions;
+79,664 reconstructed data bytes (12.2926%). Whole affected objects,
+catalog validation, and both full-image hashes pass.
