@@ -1,2 +1,3 @@
+/* func_003CEB10 and func_003CEBC0 load all three entries with lwc1 and copy them into the object position fields at +0x50..+0x58. */
 typedef float f32;
 f32 data_f32_one_00476880[3] = { 1.0f, 1.0f, 1.0f };
