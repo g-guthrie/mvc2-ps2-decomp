@@ -8981,3 +8981,4 @@ func_00122500,0x00122500,0x60,src/sdk_reentrant_write_00122500.c,complete
 func_002F0330,0x002F0330,0x94,src/grok_w7_reverse_acceleration_resets.c,complete
 func_002F0790,0x002F0790,0x94,src/grok_w7_reverse_acceleration_resets.c,complete
 func_0011FA30,0x0011FA30,0x80,src/sdk_file_write_0011FA30.c,complete
+func_004106E8,0x004106E8,0x34,src/derive_archive_segment_004106E8.c,complete
