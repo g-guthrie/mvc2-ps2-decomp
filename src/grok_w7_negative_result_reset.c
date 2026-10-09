@@ -14,6 +14,11 @@ extern void func_00126400(void);
 extern void func_00184540(u8 *);
 extern void func_001843A0(u8 *);
 extern void func_00183920(u8 *, f32 *);
+extern void func_00185490(u8 *);
+extern void func_0018C4B0(u8 *, int);
+extern void func_00175C00(u8 *, int);
+extern void func_00183D10(u8 *);
+extern void func_00183D50(u8 *);
 extern const u32 jtbl_0045BCE0[12];
 void func_002F48D0(u8 *p)
 {
@@ -111,4 +116,47 @@ void func_002F5EE0(u8 *p)
     } else {
         ((ActorCallback)jtbl_0045BCE0[p[6]])(p);
     }
+}
+
+void func_002F9510(u8 *p)
+{
+    s8 result;
+    ActorView *actor = (ActorView *)p;
+
+    if (p[7] == 0) {
+        p[7]++;
+        func_00185490(p);
+        func_0018C4B0(p, 5);
+        func_00175C00(p, 0);
+        actor->f5c.bits = 0;
+        actor->f60.bits = 0;
+        actor->f68.bits = 0;
+        actor->f6c.bits = 0;
+        func_001757E0(p, 21, 4);
+        return;
+    }
+
+    result = (s8)func_00175700(p);
+    if (result < 0) {
+        ((s8 *)p)[0x1e7] = -1;
+        if (p[0x210] != 0) {
+            p[0x210] = 0;
+            p[0x1e8] = 0;
+            p[0x1e9] = 0;
+            p[0x1ea] = 17;
+            p[0x1ed] = 0;
+        }
+        func_00184540(p);
+        actor->f6c.bits = 0xC04DB6DB;
+        return;
+    }
+
+    if (*(s8 *)(p + 0x151) != 0)
+        p[0x151] = 0;
+    if (*(f32 *)(p + 0x430) < *(f32 *)(p + 0x38))
+        return;
+    *(f32 *)(p + 0x38) = *(f32 *)(p + 0x430);
+    p[0x20d] = 0;
+    func_00183D50(p);
+    func_001843A0(p);
 }
