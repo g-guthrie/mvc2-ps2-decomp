@@ -4257,3 +4257,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/reset_runtime_global_state_0041F860.o"
 "$PYTHON" tools/verify_object.py "$BUILD/reset_runtime_global_state_0041F860.o" \
     private/SLUS_204.86.rom --source src/reset_runtime_global_state_0041F860.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/dispatch_runtime_animation_mode_0041B0E0.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/dispatch_runtime_animation_mode_0041B0E0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/dispatch_runtime_animation_mode_0041B0E0.o" \
+    private/SLUS_204.86.rom --source src/dispatch_runtime_animation_mode_0041B0E0.c
