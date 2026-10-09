@@ -3515,3 +3515,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_deadline_position_transition.o" private/SLUS_204.86.rom \
     --source src/grok_w7_deadline_position_transition.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_stateful_motion_entry.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/grok_w7_stateful_motion_entry.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_stateful_motion_entry.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_stateful_motion_entry.c
