@@ -6050,6 +6050,7 @@ func_00400658,0x00400658,0x44,src/adjust_runtime_object_offset_00400658.c,comple
 func_004006A0,0x004006A0,0x44,src/runtime_remaining_size_004006A0.c,complete
 func_004006E8,0x004006E8,0x58,src/initialize_runtime_object_state_004006E8.c,complete
 func_00400740,0x00400740,0x50,src/release_runtime_object_resource_00400740.c,complete
+func_004005F8,0x004005F8,0x58,src/release_runtime_object_004005F8.c,complete
 func_00280E70,0x00280E70,0x4c,src/grok_r2_0028.c,complete
 func_002824F0,0x002824F0,0x4c,src/grok_r2_0028.c,complete
 func_00285670,0x00285670,0x50,src/grok_r2_0028.c,complete

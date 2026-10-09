@@ -2743,6 +2743,16 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
 "$PYTHON" tools/verify_object.py "$BUILD/release_runtime_object_resource_00400740.o" \
     private/SLUS_204.86.rom --source src/release_runtime_object_resource_00400740.c
 
+"$WIBO" "$SNCPP" -P src/release_runtime_object_004005F8.c \
+    "$BUILD/release_runtime_object_004005F8.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/release_runtime_object_004005F8.i" \
+    "$BUILD/release_runtime_object_004005F8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/release_runtime_object_004005F8.o" \
+    "$BUILD/release_runtime_object_004005F8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/release_runtime_object_004005F8.o" \
+    private/SLUS_204.86.rom --source src/release_runtime_object_004005F8.c
+
 "$WIBO" "$SNCPP" -P src/prepare_archive_and_pack_00410688.c \
     "$BUILD/prepare_archive_and_pack_00410688.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
