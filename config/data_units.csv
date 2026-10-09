@@ -175,7 +175,9 @@ data_u32_0043E330,0x0043E330,0x54,.data,src/data/data_u32_0043E330.c,initialized
 data_f32_one_0043E384,0x0043E384,0x8,.data,src/data/data_f32_one_0043E384.c,filled_f32_one
 data_u32_0043E38C,0x0043E38C,0x24,.data,src/data/data_u32_0043E38C.c,initialized_u32_table
 jtbl_0043E3B0,0x0043E3B0,0x20,.rodata,src/data/jtbl_0043E3B0.c,jump_table
-data_u32_0043E3D0,0x0043E3D0,0x490,.data,src/data/data_u32_0043E3D0.c,initialized_u32_table
+data_records_0043E3D0,0x0043E3D0,0x38,.data,src/data/data_records_0043E3D0.c,bounded_mixed_records
+data_raw_0043E408,0x0043E408,0x8,.data,src/data/data_raw_0043E408.c,initialized_byte_array
+data_records_0043E410,0x0043E410,0x450,.data,src/data/data_records_0043E410.c,bounded_mixed_records
 jtbl_0043E860,0x0043E860,0x40,.rodata,src/data/jtbl_0043E860.c,jump_table
 data_f32_0043E8A0,0x0043E8A0,0x40,.data,src/data/data_f32_0043E8A0.c,indexed_f32_lookup
 jtbl_0043E8EC,0x0043E8EC,0x38,.rodata,src/data/jtbl_0043E8EC.c,jump_table
