@@ -4996,7 +4996,11 @@ gSystemModeSelector_004872F1,0x004872F1,0x1,src/data/gSystemModeSelector_004872F
 data_raw_004872F2,0x004872F2,0x2E,src/data/data_raw_004872F2.c,complete,placeholder
 data_u32_00487320,0x00487320,0x20,src/data/data_u32_00487320.c,complete,placeholder
 data_zero_00487340,0x00487340,0xFD0,src/data/data_zero_00487340.c,complete,placeholder
-data_u32_00488310,0x00488310,0x18,src/data/data_u32_00488310.c,complete,placeholder
+data_u32_00488310,0x00488310,0x4,src/data/data_u32_00488310.c,complete,placeholder
+data_s32_00488314,0x00488314,0x4,src/data/data_s32_00488314.c,complete,reconstructed
+data_s32_00488318,0x00488318,0x4,src/data/data_s32_00488318.c,complete,reconstructed
+data_s32_0048831C,0x0048831C,0x4,src/data/data_s32_0048831C.c,complete,reconstructed
+data_u32_00488320,0x00488320,0x8,src/data/data_u32_00488320.c,complete,placeholder
 jtbl_00488328,0x00488328,0xC,src/data/jtbl_00488328.c,complete,placeholder
 jtbl_00488338,0x00488338,0x14,src/data/jtbl_00488338.c,complete,placeholder
 jtbl_00488350,0x00488350,0xC,src/data/jtbl_00488350.c,complete,placeholder
