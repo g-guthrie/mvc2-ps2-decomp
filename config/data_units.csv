@@ -64,7 +64,9 @@ data_u32_0043B430,0x0043B430,0x10,.data,src/data/data_u32_0043B430.c,initialized
 data_zero_0043B440,0x0043B440,0x70,.data,src/data/data_zero_0043B440.c,zero_initialized_untyped
 data_u32_0043B4B0,0x0043B4B0,0x10,.data,src/data/data_u32_0043B4B0.c,initialized_u32_table
 data_zero_0043B4C0,0x0043B4C0,0x230,.data,src/data/data_zero_0043B4C0.c,zero_initialized_untyped
-data_u32_0043B6F0,0x0043B6F0,0x10,.data,src/data/data_u32_0043B6F0.c,initialized_u32_table
+data_u32_0043B6F0,0x0043B6F0,0x8,.data,src/data/data_u32_0043B6F0.c,initialized_u32_table
+data_ptr_0043B6F8,0x0043B6F8,0x4,.data,src/data/data_ptr_0043B6F8.c,pointer_scalar
+data_u32_0043B6FC,0x0043B6FC,0x4,.data,src/data/data_u32_0043B6FC.c,uint32_scalar
 gMvc2AllocatorBins_0043B708,0x0043B708,0x408,.data,src/data/mvc2_allocator_bins_0043B708.c,allocator_intrusive_bins
 gCoalescingLimit_0043BB10,0x0043BB10,0x8,.data,src/data/gCoalescingLimit_0043BB10.c,uint64_scalar
 gCoalescingOffset_0043BB18,0x0043BB18,0x8,.data,src/data/gCoalescingOffset_0043BB18.c,uint64_scalar
