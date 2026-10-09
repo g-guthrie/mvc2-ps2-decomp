@@ -2160,3 +2160,13 @@ vector add 16 reconstructed bytes; unselected values and surrounding
 bytes stay raw. Catalog: 587,132 linked matching code bytes (17.8259%),
 79,680 reconstructed data bytes (12.2951%). All split data objects,
 catalog validation, and both full-image hashes pass.
+
+
+### Six bounded UI effect records
+
+The native constructor loop selects records 0..5. Each six-byte record
+consumes two signed halfwords and one signed byte; the remaining byte
+stays raw. This adds 30 reconstructed bytes, with prefix and neighboring
+records unclaimed. Catalog: 587,132 linked matching code bytes
+(17.8259%), 79,710 reconstructed data bytes (12.2997%). All changed data
+objects, catalog validation, and both full-image hashes pass.
