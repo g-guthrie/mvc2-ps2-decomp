@@ -1909,3 +1909,13 @@ three-float position copy uses a typed aggregate. Both callback signatures
 match the owner-state dispatch table. Catalog: 580,600 linked matching
 code bytes (17.6276%), 9,053 functions; data remains 75,028 bytes
 (11.5773%). Whole source, catalog, and both full-image hashes pass.
+
+
+### Character output wrapper and point-bank starts
+
+The 36-byte default-context character-output wrapper is exact. Seven
+selector-proven point-bank starts add 84 reconstructed float-vector bytes;
+all gaps and later dynamically indexed frames remain raw. Catalog:
+580,636 linked matching code bytes (17.6287%), 9,054 functions; 75,112
+reconstructed data bytes (11.5902%). All changed objects, catalog
+validation, and both full-image hashes pass.
