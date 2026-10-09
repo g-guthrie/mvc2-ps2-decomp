@@ -9192,3 +9192,5 @@ func_0030F2E0,0x0030F2E0,0x118,src/grok_w7_stage_motion_setup.c,complete
 func_0030F450,0x0030F450,0x108,src/grok_w7_contextual_actor_handoff.c,complete
 func_0030F560,0x0030F560,0xE4,src/grok_w7_signed_context_handoff.c,complete
 func_0040EDE0,0x0040EDE0,0x1C,src/clamp_runtime_state_value_0040EDE0.c,complete
+func_00400D20,0x00400D20,0x18,src/runtime_message_callbacks_00400D20.c,complete
+func_00400EF0,0x00400EF0,0x18,src/runtime_message_callbacks_00400D20.c,complete
