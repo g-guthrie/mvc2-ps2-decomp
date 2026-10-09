@@ -3248,3 +3248,11 @@ Recovered all 112 bytes at 0x00135DB0 and all 104 bytes at 0x0015BFB0.
 Allocation assignment within the condition reproduces the native branch
 sequence. Both whole objects verify exactly. Code reaches 611,336 bytes
 (18.5608%), 9,297 functions; data remains 151,998 bytes (23.4542%).
+
+## Fixed storage pointer field
+
+Recovered the four-byte pointer field at 0x004C2534 with a symbolic
+relocation to its exact raw byte owner at 0x004BF0C8. The target remains
+uncredited; its extent is not inferred from the pointer. Changed data
+objects verify exactly. Data reaches 152,002 bytes (23.4548%) across 2,953
+reconstructed units; code remains 611,336 bytes (18.5608%).
