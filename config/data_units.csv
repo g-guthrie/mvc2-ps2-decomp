@@ -5887,7 +5887,9 @@ data_u8_004B7662,0x004B7662,0x6,.data,src/data/data_u8_004B7662.c,initialized_by
 gMvc2StageIndexFormat_004B7668,0x004B7668,0xF,.data,src/data/gMvc2StageIndexFormat_004B7668.c,printf_format_string
 data_u8_004B7677,0x004B7677,0xD,.data,src/data/data_u8_004B7677.c,initialized_byte_array
 data_f32_004B7684,0x004B7684,0xF8,.data,src/data/data_f32_004B7684.c,bounded_float_record_fields
-data_u8_004B777C,0x004B777C,0x13C,.data,src/data/data_u8_004B777C.c,initialized_byte_array
+data_raw_004B777C,0x004B777C,0x24,.data,src/data/data_raw_004B777C.c,initialized_byte_array
+data_f32v3_004B77A0,0x004B77A0,0x6C,.data,src/data/data_f32v3_004B77A0.c,float_vector3_array
+data_raw_004B780C,0x004B780C,0xAC,.data,src/data/data_raw_004B780C.c,initialized_byte_array
 data_f32_004B78B8,0x004B78B8,0xC,.data,src/data/data_f32_004B78B8.c,indexed_f32_values
 data_u32_004B78C4,0x004B78C4,0x4,.data,src/data/data_u32_004B78C4.c,initialized_u32_table
 gMvc2RelativeScaleFactors_004B78C8,0x004B78C8,0x8,.data,src/data/relative_scale_factors_004B78C8.c,relative_scale_factors
