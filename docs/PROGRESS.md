@@ -2914,3 +2914,11 @@ All21 changed data partitions, eleven data tests, catalog, full hybrid linkage
 and packed retail ELF identity pass. Data: 85,034 bytes (13.1212%), 2,913
 reconstructed units. Code remains605,236 bytes (18.3756%).
 The separate F490 vector-bank correction is queued for integration.
+
+## Corrected F490 actor position bank
+
+Reconstructed672 bytes across vector rows0..23 and27..58 from the true base
+F490. The F498 references load each row third component, not a separate table.
+Skipped rows24..26, prefix and unrelated tail stay raw. All five partition
+objects, catalog, full hybrid linkage and packed retail ELF identity pass.
+Data: 85,706 bytes (13.2249%); code remains605,236 bytes (18.3756%).
