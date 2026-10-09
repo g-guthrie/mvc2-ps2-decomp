@@ -4339,3 +4339,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/create_unit_scale_event_0015C130.o"
 "$PYTHON" tools/verify_object.py "$BUILD/create_unit_scale_event_0015C130.o" \
     private/SLUS_204.86.rom --source src/create_unit_scale_event_0015C130.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/reset_runtime_fade_state_0041D5F0.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/reset_runtime_fade_state_0041D5F0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/reset_runtime_fade_state_0041D5F0.o" \
+    private/SLUS_204.86.rom --source src/reset_runtime_fade_state_0041D5F0.c
