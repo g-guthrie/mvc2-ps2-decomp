@@ -2957,3 +2957,12 @@ updates, indexed callback dispatch and typed linked-object pointer stores.
 Both complete source files, catalog, full hybrid linkage and packed retail
 ELF identity pass. Catalog: 606,312 code bytes (18.4083%), 9,260 functions;
 data remains86,154 bytes (13.2941%).
+
+## Bounded threshold and scene vector tables
+
+Integrated184 reconstructed bytes: seventeen timer words, seven float3 scene
+rows and eight selector-bounded motion thresholds. Native timer initialization
+sets both index and byte offset to zero; the offset advances fourbytes per
+iteration. Unread tails remain raw. Changed objects, catalog, full hybrid
+linkage and packed retail ELF identity pass. Data: 86,338 bytes (13.3224%).
+Code remains606,312 bytes (18.4083%).
