@@ -18,7 +18,7 @@ extern u8 D_0045CB50[];
 extern u8 D_0045D050[];
 extern int func_00189310(u8 *, u8 *, u8 *);
 extern int func_00189EE0(u8 *, u8 *, u8 *);
-extern int func_00174170(u8 *);
+extern int func_00174170(void);
 extern int func_001757E0(u8 *, int, int);
 extern int func_001E7FD0(u8 *);
 
@@ -88,21 +88,21 @@ int func_0022CFB0(u8 *p) {
 }
 
 void func_002EB2A0(u8 *p) {
-    if ((func_00174170(p) & 1) == 0) p[360] = 0;
+    if ((func_00174170() & 1) == 0) p[360] = 0;
     else p[360] = 1;
     func_001757E0(p, 19, p[360]);
     p[6]++;
 }
 
 void func_00302930(u8 *p) {
-    if ((func_00174170(p) & 1) == 0) p[360] = 0;
+    if ((func_00174170() & 1) == 0) p[360] = 0;
     else p[360] = 1;
     func_001757E0(p, 19, p[360]);
     p[6]++;
 }
 
 void func_0023BBF0(u8 *p) {
-    if ((func_00174170(p) & 1) == 0) p[360] = 0;
+    if ((func_00174170() & 1) == 0) p[360] = 0;
     else p[360] = 1;
     func_001757E0(p, 19, p[360]);
     p[6]++;

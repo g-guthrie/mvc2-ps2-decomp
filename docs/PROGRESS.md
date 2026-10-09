@@ -2607,3 +2607,12 @@ parameter matches the native callback table contract; the allocator callback
 uses its canonical byte arguments. Whole-function, catalog and full retail
 link/packed ELF verification pass. Catalog: 602,456 code bytes (18.2912%),
 9,212 functions. Data remains 83,806 bytes (12.9317%).
+
+## Random helper caller contract correction
+
+Corrected four source groups to declare and call func_00174170 as int(void),
+matching its native two-global state recurrence. One former void declaration
+now preserves its actual return contract even though that caller ignores it.
+All four whole objects remain exact under their established compiler recipes
+(including MWCCPS2 3.0-011126 for state_return_family). Full hybrid linkage and
+packed ELF identity pass. Credit remains 602,456 code bytes (18.2912%).

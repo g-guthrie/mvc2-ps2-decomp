@@ -17,7 +17,7 @@ extern void func_00328C70(u8 *);
 extern void func_00328EC0(u8 *);
 extern void func_00329510(u8 *);
 extern void func_00329810(u8 *);
-extern int func_00174170(u8 *);
+extern int func_00174170(void);
 extern int func_001757E0(u8 *, int, int);
 extern u8 *D_004C2840;
 extern u8 D_00583B90[];
@@ -81,7 +81,7 @@ void func_0032C4E0(void)
 
 void func_00326690(u8 *p)
 {
-    unsigned v = (unsigned)func_00174170(p);
+    unsigned v = (unsigned)func_00174170();
     func_001757E0(p, 0, (u8)(v % 3 + 10));
 }
 

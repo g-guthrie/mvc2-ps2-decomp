@@ -17,7 +17,7 @@ extern void func_00163B00(u8 *);
 extern void func_00163CD0(u8 *);
 extern void func_00418030(void);
 extern void func_001E74C0(void);
-extern void func_00174170(u8 *);
+extern int func_00174170(void);
 extern void func_0016D260(void);
 extern void func_0016B0C0(u8 *, s32, s32);
 extern void func_00166C80(u8 *, s32, s32);
@@ -236,7 +236,7 @@ void residual_001620A0(u8 *p)
 {
     p[0x13c] = 1;
     p[4]++;
-    func_00174170(p);
+    func_00174170();
     *(s32 *)(p + 0x64) = 0xc2c80000;
     *(s32 *)(p + 0x70) = 0xc1200000;
 }
