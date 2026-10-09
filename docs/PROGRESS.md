@@ -2599,3 +2599,11 @@ result; the existing timer action intentionally ignores it. All affected whole
 objects verify exactly, including the twenty-one-function allocator source.
 Catalog: 602,272 code bytes (18.2856%), 9,211 functions. Data remains 83,806
 bytes (12.9317%). Full relink and packed retail ELF identity pass.
+
+## Context timer flag and position checkpoint
+
+Recovered the complete 184-byte timer/flag/position handler. Its unused context
+parameter matches the native callback table contract; the allocator callback
+uses its canonical byte arguments. Whole-function, catalog and full retail
+link/packed ELF verification pass. Catalog: 602,456 code bytes (18.2912%),
+9,212 functions. Data remains 83,806 bytes (12.9317%).
