@@ -2109,3 +2109,14 @@ and converts the chosen address at the call site, keeping that table
 uncredited data. Catalog: 585,032 linked matching code bytes (17.7622%),
 9,091 functions; data remains 79,612 bytes (12.2846%). All affected whole
 sources, catalog validation, and both full-image hashes pass.
+
+
+### Signed thresholds and renderer variants
+
+Six directly loaded signed threshold bytes and two constructor-proven
+float3 variants add 30 reconstructed bytes. Other selectors and the
+remaining banks stay raw. The SDK registration-pair proposal is held
+for correction: native reads include the 0x5B pair, and its five-entry
+loop reads only first words. Catalog: 585,032 linked matching code bytes
+(17.7622%), 79,642 reconstructed data bytes (12.2892%). Changed data
+objects, catalog validation, and both full-image hashes pass.
