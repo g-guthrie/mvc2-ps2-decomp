@@ -9029,3 +9029,4 @@ func_002B7120,0x002B7120,0xBC,src/grok_w7_timed_variant_transitions.c,complete
 func_002C3EB0,0x002C3EB0,0x84,src/motion_speed_transition.c,complete
 func_002C1F30,0x002C1F30,0x9C,src/motion_speed_transition.c,complete
 func_002C20F0,0x002C20F0,0x9C,src/motion_speed_transition.c,complete
+func_002C2C40,0x002C2C40,0x8C,src/grok_w7_002c.c,complete

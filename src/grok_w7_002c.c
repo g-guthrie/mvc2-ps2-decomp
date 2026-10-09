@@ -72,3 +72,27 @@ void func_002C3640(u8 *p)
     *D_004C28D8 = p[439];
     func_001757E0(p, 22, 1);
 }
+
+extern void func_002C40F0(u8 *);
+
+void func_002C2C40(u8 *p)
+{
+    p[6]++;
+    if (p[0x215] != 0)
+        func_002C40F0(p);
+    if (p[0x20D] == 2)
+        goto state_two;
+    func_00183D10(p);
+    func_002C25A0(p);
+    goto transition;
+
+state_two:
+    p[0x20D] = 2;
+    p[0x1E8] = 0;
+    p[0x1E9] = 0;
+    p[0x1EA] = 17;
+    p[0x1ED] = 0;
+
+transition:
+    func_001757E0(p, 21, 5);
+}
