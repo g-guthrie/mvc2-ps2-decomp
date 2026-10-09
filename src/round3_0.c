@@ -629,16 +629,32 @@ void func_002D5910(u8 *p) {
     }
 }
 
-extern s32 func_003B40B0(u8 *, int);
+extern u8 *func_003DA750(void *, int, int);
+extern void func_003B4240(u8 *);
+
+u8 *func_003B40B0(u8 *owner, int mode)
+{
+    u8 *entry = func_003DA750(0, 1, 0);
+    if (entry != 0) {
+        *(void (**)(u8 *))(entry + 16) = func_003B4240;
+        *(u8 **)(entry + 24) = owner;
+        entry[32] = 0;
+        entry[35] = mode;
+        entry[34] = 1;
+        *(s16 *)(entry + 38) = 0x3400;
+    }
+    return entry;
+}
+
 extern void func_00185960(u8 *, u8 *);
 void func_00308570(u8 *p, void *unused) {
     u8 *q = p + 696;
-    s32 value;
+    u8 *value;
     func_00175700(p);
     if (*(s8 *)(p + 336)) {
         p[336] = 0;
         value = func_003B40B0(p, 1);
-        *(s32 *)(p + 20) = value;
+        *(u8 **)(p + 20) = value;
         if (value == 0) q[4] = 1;
         else func_00185960(p, *(u8 **)(p + 20));
         p[6]++;
@@ -648,12 +664,12 @@ void func_00308570(u8 *p, void *unused) {
 
 void func_003086F0(u8 *p, void *unused) {
     u8 *q = p + 696;
-    s32 value;
+    u8 *value;
     func_00175700(p);
     if (*(s8 *)(p + 336)) {
         p[336] = 0;
         value = func_003B40B0(p, 4);
-        *(s32 *)(p + 20) = value;
+        *(u8 **)(p + 20) = value;
         if (value == 0) q[4] = 1;
         else func_00185960(p, *(u8 **)(p + 20));
         p[6]++;

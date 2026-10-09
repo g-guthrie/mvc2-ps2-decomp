@@ -8806,6 +8806,7 @@ func_002367A0,0x002367A0,0x7C,src/round3_0.c,complete
 func_00303E40,0x00303E40,0x80,src/round3_0.c,complete
 func_00308570,0x00308570,0x80,src/round3_0.c,complete
 func_003086F0,0x003086F0,0x80,src/round3_0.c,complete
+func_003B40B0,0x003B40B0,0x68,src/round3_0.c,complete
 func_002B6600,0x002B6600,0x84,src/round3_0.c,complete
 func_002B67C0,0x002B67C0,0x84,src/round3_0.c,complete
 func_00258DC0,0x00258DC0,0x7C,src/round3_0.c,complete
