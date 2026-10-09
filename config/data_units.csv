@@ -4654,7 +4654,9 @@ data_u32_00474590,0x00474590,0xA0,.data,src/data/data_u32_00474590.c,initialized
 data_zero_00474630,0x00474630,0x22,.data,src/data/data_zero_00474630.c,zero_initialized_untyped
 data_u32_00474660,0x00474660,0x30,.data,src/data/data_u32_00474660.c,initialized_u32_table
 jtbl_00474690,0x00474690,0x30,.rodata,src/data/jtbl_00474690.c,typed_state_callback_table
-data_u32_004746C0,0x004746C0,0x104,.data,src/data/data_u32_004746C0.c,initialized_u32_table
+data_raw_004746C0,0x004746C0,0x40,.data,src/data/data_raw_004746C0.c,initialized_byte_array
+data_f32_00474700,0x00474700,0xC0,.data,src/data/data_f32_00474700.c,indexed_f32_pair_banks
+data_raw_004747C0,0x004747C0,0x4,.data,src/data/data_raw_004747C0.c,initialized_byte_array
 data_u32_004747C4,0x004747C4,0x14,.data,src/data/data_u32_004747C4.c,filled_u32_constant
 data_u32_004747D8,0x004747D8,0x12DC,.data,src/data/data_u32_004747D8.c,initialized_u32_table
 short_values_00475AB4,0x00475AB4,0x4,.data,src/data/short_values_00475AB4.c,indexed_s16_state_values
