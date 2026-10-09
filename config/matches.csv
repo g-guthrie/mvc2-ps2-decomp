@@ -9276,3 +9276,4 @@ func_00417440,0x00417440,0xBC,src/lookup_runtime_sine_00417440.c,complete
 func_0041F860,0x0041F860,0x94,src/reset_runtime_global_state_0041F860.c,complete
 func_002F4390,0x002F4390,0xD0,src/animation_state_transfers.c,complete
 func_0041B0E0,0x0041B0E0,0x4C,src/dispatch_runtime_animation_mode_0041B0E0.c,complete
+func_0041AA10,0x0041AA10,0x78,src/update_runtime_animation_state_0041AA10.c,complete
