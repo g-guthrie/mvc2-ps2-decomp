@@ -11,7 +11,18 @@ extern void func_0019D270(u8 *, int);
 extern void func_0019D740(u8 *, int);
 extern void func_00185870(u8 *, int);
 extern void func_00226B20(u8 *);
-extern void func_0022EEE0(u8 *);
+
+void func_0022EEE0(u8 *p)
+{
+    u8 *ctx = p + 696;
+    if ((s8)func_00175700(p) < 0) {
+        p[7] = 1;
+        ctx[17] = 0;
+        p[361] = 19;
+        p[360] = 6;
+        func_001757E0(p, p[361], p[360]);
+    }
+}
 
 void func_00227AF0(u8 *p)
 {
@@ -72,4 +83,3 @@ void func_002250A0(u8 *p)
         func_001843A0(p);
     }
 }
-
