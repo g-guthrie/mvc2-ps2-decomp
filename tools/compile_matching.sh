@@ -2980,3 +2980,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/dispatch_runtime_mode_result_00418AA0.o" \
     private/SLUS_204.86.rom --source src/dispatch_runtime_mode_result_00418AA0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/convert_runtime_angles_00417D50.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/convert_runtime_angles_00417D50.o"
+"$PYTHON" tools/verify_object.py "$BUILD/convert_runtime_angles_00417D50.o" \
+    private/SLUS_204.86.rom --source src/convert_runtime_angles_00417D50.c
