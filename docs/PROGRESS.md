@@ -2323,3 +2323,13 @@ models only the two observed halfword fields; other bytes remain opaque.
 Global phase advancement preserves signed byte gates and its idle fallback.
 Catalog: 590,204 matching code bytes (17.9192%), 9,122 functions; data
 remains 80,490 bytes (12.4201%). Whole objects, catalog, and both hashes pass.
+
+
+### Signed motion vectors and timed flag transition
+
+The 140-byte transition handler and 288 bytes of signed motion-vector
+pairs are exact. Sector construction reduces an 8-bit angle to 0..31;
+step updates mask with 0x1F. Native LH loads convert the offsets to
+floats for X/Y updates, and the secondary lookup masks its eight-pair
+index. Catalog: 590,344 code bytes (17.9235%), 9,123 functions,
+80,778 data bytes (12.4645%). Changed objects, catalog, and both hashes pass.
