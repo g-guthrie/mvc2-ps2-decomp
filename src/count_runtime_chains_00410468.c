@@ -1,18 +1,12 @@
-typedef unsigned char u8;
-typedef signed int s32;
+#include "runtime_span_types.h"
 
-struct RuntimeChain
+s32 func_00410468(struct RuntimeQueryContext *context, s32 index)
 {
-    struct RuntimeChain *next;
-};
-
-s32 func_00410468(void *context, s32 index)
-{
-    struct RuntimeChain *node;
+    struct RuntimeNode *node;
     s32 count;
 
     count = 0;
-    node = *(struct RuntimeChain **)((u8 *)context + index * 4 + 24);
+    node = context->entries[index];
     if (node != 0)
     {
         do
@@ -24,13 +18,13 @@ s32 func_00410468(void *context, s32 index)
     return count;
 }
 
-s32 func_004104A8(void *context)
+s32 func_004104A8(struct RuntimeQueryContext *context)
 {
-    struct RuntimeChain *node;
+    struct RuntimeNode *node;
     s32 count;
 
     count = 0;
-    node = *(struct RuntimeChain **)((u8 *)context + 20);
+    node = context->moved;
     if (node != 0)
     {
         do

@@ -1584,3 +1584,30 @@ lookup at 00450C60. Remaining resource fields retain raw ownership.
 Catalog: 573,512 exact linked code bytes (17.4124%), 8,991 functions, and
 73,246 reconstructed data bytes (11.3023%) across 2,412 owners. Changed code
 and data objects, data tests, full loaded-image hash, and packed-ELF hash pass.
+
+
+### Runtime span operations and audited data checkpoint
+
+Whole units 00410000 (308 bytes), 00410290 (324 bytes), 0040FEA8 (52 bytes),
+and 0040FF88 (116 bytes) add 800 exact linked code bytes. They consume or
+merge spans, initialize the state buffer, and total indexed-list lengths.
+The shared context header now records the pool and capacity fields at +12
+and +16, the moved list at +20, four indexed lists at +24, and the fallback
+at +40. Existing query and list-count units also use that common model and
+still reproduce their full native instructions.
+
+Data adds 103 bytes: sixteen even-position lookup bytes at 00454C10 (odd
+bytes raw), a single six-float array at 004641E0 (24 bytes), bounded pair and
+float tables at 00462C00/30 (48 bytes), and Infinity/NaN/zero strings (15
+bytes including NULs). The six-float array consolidates adjacent owners so
+its declared extent agrees with the guarded 0–5 consumer. Unused prefixes,
+interleaved bytes, and string tails remain raw.
+
+The proposed 00453EC0 contiguous-prefix recovery remains uncredited: native
+0025E3DC doubles the masked index, so the actual footprint is sixteen even
+bytes across the 32-byte bank. A corrected consumed-field split is pending.
+
+Current catalog: 574,312 exact linked code bytes (17.4367%), 8,995 functions;
+73,349 reconstructed data bytes (11.3182%) across 2,434 owners. All changed
+code/data objects, data tests, full loaded-image hash, and packed-ELF hash
+pass. Full source reconstruction remains incomplete.
