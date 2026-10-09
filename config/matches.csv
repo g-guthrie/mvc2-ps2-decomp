@@ -9219,3 +9219,4 @@ func_004154C0,0x004154C0,0xC8,src/reset_runtime_service_pool_004154C0.c,complete
 func_00415450,0x00415450,0x64,src/clear_runtime_service_workspace_00415450.c,complete
 func_0040ADF0,0x0040ADF0,0x20,src/set_runtime_option_fields_0040ADF0.c,complete
 func_0040AF58,0x0040AF58,0x30,src/dispatch_runtime_parameter_callback_0040AF58.c,complete
+func_004098A8,0x004098A8,0x30,src/dispatch_runtime_message_004098A8.c,complete

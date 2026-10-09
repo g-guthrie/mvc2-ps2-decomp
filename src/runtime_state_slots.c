@@ -13,8 +13,8 @@ extern s32 D_00487324;
 extern u8 D_004872F2;
 extern RuntimeMessageCallback D_004891AC;
 extern void *D_004891B0;
-extern s32 D_00488314;
-extern s32 D_00488318;
+extern RuntimeMessageCallback D_00488314;
+extern void *D_00488318;
 
 void func_0040A2A8(s32 value) { D_00489018 = value; }
 s32 func_0040A2B8(void) { return D_00489018; }
@@ -30,7 +30,7 @@ void func_0040B3A0(RuntimeMessageCallback callback, void *context) {
     D_004891AC = callback;
     D_004891B0 = context;
 }
-void func_00409AC8(s32 left, s32 right) {
-    D_00488314 = left;
-    D_00488318 = right;
+void func_00409AC8(RuntimeMessageCallback callback, void *context) {
+    D_00488314 = callback;
+    D_00488318 = context;
 }
