@@ -9087,3 +9087,4 @@ func_002F9510,0x002F9510,0x110,src/grok_w7_negative_result_reset.c,complete
 func_002F8FC0,0x002F8FC0,0xB8,src/grok_w7_context_state_dispatch.c,complete
 func_002F9C00,0x002F9C00,0x58,src/grok_w7_negative_result_reset.c,complete
 func_002FC360,0x002FC360,0x70,src/grok_w7_context_transition_orchestrator.c,complete
+func_002FC3D0,0x002FC3D0,0x64,src/grok_w7_context_transition_orchestrator.c,complete
