@@ -9304,3 +9304,4 @@ func_002B41F0,0x002B41F0,0x88,src/positioned_motion_constants.c,complete
 func_0015BB60,0x0015BB60,0x68,src/create_updated_event_0015BFB0.c,complete
 func_001571D0,0x001571D0,0x80,src/create_counted_position_event_001571D0.c,complete
 func_0030AC70,0x0030AC70,0xBC,src/grok_w7_timed_state_transition.c,complete
+func_0029F470,0x0029F470,0x90,src/grok_r3_0028.c,complete

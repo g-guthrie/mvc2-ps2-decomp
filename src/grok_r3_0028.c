@@ -6,6 +6,8 @@ typedef signed int s32;
 
 extern int func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
+extern float D_00458290[];
+extern float D_00458294[];
 extern void func_00175C00(u8 *, s32);
 extern void func_001843A0(u8 *);
 extern void func_00184540(u8 *);
@@ -114,6 +116,19 @@ void func_0029F590(u8 *p)
     if ((s8)func_00175700(p) < 0) {
         p[6]++;
         func_0029F470(p);
+    }
+}
+
+void func_0029F470(u8 *p)
+{
+    func_001757E0(p, 21, 10);
+    *(u32 *)(p + 96) = 0;
+    *(u32 *)(p + 108) = 0;
+    *(float *)(p + 92) = D_00458290[p[0x1B7] * 2];
+    *(float *)(p + 104) = D_00458294[p[0x1B7] * 2];
+    if (*(s16 *)(p + 320) != 0) {
+        *(float *)(p + 92) = -*(float *)(p + 92);
+        *(float *)(p + 104) = -*(float *)(p + 104);
     }
 }
 
