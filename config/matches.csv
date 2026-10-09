@@ -6046,6 +6046,7 @@ func_0040F1D0,0x0040F1D0,0x10,src/grok_r1_0040.c,complete
 func_0040F728,0x0040F728,0x28,src/grok_r1_0040.c,complete
 func_00419FC0,0x00419FC0,0x20,src/grok_r1_0040.c,complete
 func_0041DB80,0x0041DB80,0x1C,src/grok_r1_0040.c,complete
+func_00400658,0x00400658,0x44,src/adjust_runtime_object_offset_00400658.c,complete
 func_004006A0,0x004006A0,0x44,src/runtime_remaining_size_004006A0.c,complete
 func_00280E70,0x00280E70,0x4c,src/grok_r2_0028.c,complete
 func_002824F0,0x002824F0,0x4c,src/grok_r2_0028.c,complete
