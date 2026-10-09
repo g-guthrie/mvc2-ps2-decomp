@@ -2651,3 +2651,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/grok_w7_wait_frame_motion.o" private/SLUS_204.86.rom \
     --source src/grok_w7_wait_frame_motion.c
 
+    src/grok_w7_zero_frame_velocity_setup.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/grok_w7_zero_frame_velocity_setup.o"
+    "$BUILD/grok_w7_zero_frame_velocity_setup.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_zero_frame_velocity_setup.c
+
