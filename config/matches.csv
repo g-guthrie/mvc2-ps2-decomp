@@ -9135,3 +9135,4 @@ func_003CE6D0,0x003CE6D0,0xA8,src/initialize_vector_template.c,complete
 func_003CEB10,0x003CEB10,0xA4,src/initialize_vector_template.c,complete
 func_0011F5D8,0x0011F5D8,0x64,src/sdk_random_number_0011F5D8.c,complete
 func_003FEBD8,0x003FEBD8,0x1C,src/ee96_cleanup_thunks.c,complete
+func_003FB108,0x003FB108,0x1C,src/ee96_register_callback_003FB108.c,complete

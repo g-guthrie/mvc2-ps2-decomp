@@ -2349,6 +2349,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/matrix_multiply_003F3C40.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/matrix_multiply_003F3C40.o"
 "$PYTHON" tools/verify_object.py "$BUILD/matrix_multiply_003F3C40.o" private/SLUS_204.86.rom --source src/matrix_multiply_003F3C40.c
 
+"$WIBO" "$SNCPP" -P src/ee96_register_callback_003FB108.c "$BUILD/ee96_register_callback_003FB108.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 "$BUILD/ee96_register_callback_003FB108.i" "$BUILD/ee96_register_callback_003FB108.s"
+"$GNUAS" -EL -march=r5900 -mabi=eabi -G8 -o "$BUILD/ee96_register_callback_003FB108.o" "$BUILD/ee96_register_callback_003FB108.s"
+"$PYTHON" tools/verify_object.py "$BUILD/ee96_register_callback_003FB108.o" private/SLUS_204.86.rom --source src/ee96_register_callback_003FB108.c
+
 "$WIBO" "$SNCPP" -P src/ee96_cleanup_thunks.c "$BUILD/ee96_cleanup_thunks.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/ee96_cleanup_thunks.i" "$BUILD/ee96_cleanup_thunks.s"
 "${AS:-mipsel-linux-gnu-as}" -EL -march=r5900 -mabi=eabi -G0 -o "$BUILD/ee96_cleanup_thunks.o" "$BUILD/ee96_cleanup_thunks.s"
