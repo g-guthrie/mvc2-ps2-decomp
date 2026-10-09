@@ -1,0 +1,3 @@
+typedef unsigned int u32;
+/* Unbounded neighboring words retained without reconstruction credit. */
+u32 data_u32_0043EAF0[20] = { 0x42480000u, 0x00000000u, 0xC1F00000u, 0xC1800000u, 0x00000000u, 0xC2700000u, 0x41200000u, 0xC2200000u, 0xC1F00000u, 0xC2280000u, 0x41700000u, 0xC2700000u, 0x41200000u, 0x42200000u, 0xC1F00000u, 0xC2280000u, 0xC1700000u, 0xC2700000u, 0x00000000u, 0x00000000u };
