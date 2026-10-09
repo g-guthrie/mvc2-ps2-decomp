@@ -83,10 +83,11 @@ void func_002F1780(u8 *p)
     }
 
     {
-        PlanarOffset position;
-        ((int *)position)[0] = 0xC262AAAA;
-        ((int *)position)[1] = 0x43362492;
-        func_0015D010(p, position);
+        /* The helper reads two floats; padding preserves retail's 16-byte slot. */
+        struct { union { float values[2]; int bits[2]; } offsets; int padding[2]; } position;
+        position.offsets.bits[0] = 0xC262AAAA;
+        position.offsets.bits[1] = 0x43362492;
+        func_0015D010(p, position.offsets.values);
     }
 
     func_001266A0(p, 5, 5);

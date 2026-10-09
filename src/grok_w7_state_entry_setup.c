@@ -1,7 +1,6 @@
 typedef unsigned char u8;
 typedef signed int s32;
 typedef signed short s16;
-typedef float PlanarOffset[2] __attribute__((aligned(16)));
 
 typedef signed char s8;
 typedef float f32;
@@ -22,7 +21,8 @@ void func_002F0480(u8 *p)
         func_00175C00(p, 1);
         *(s32 *)(p + 0x2B8) = 0;
         {
-            struct { union { f32 range[2]; s32 bits[2]; } values; s32 padding[2]; } position;
+            /* Preserve the helper's 16-byte local slot with defined float bit access. */
+        struct { union { f32 range[2]; s32 bits[2]; } values; s32 padding[2]; } position;
             position.values.bits[0] = 0x41ad5555;
             position.values.bits[1] = 0x4320b6db;
             func_001830D0(p, position.values.range, 1);
@@ -30,7 +30,7 @@ void func_002F0480(u8 *p)
     }
 }
 
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
 extern void func_00183D10(u8 *);
 extern void func_00184540(u8 *);
 extern void func_002F1DF0(u8 *);
@@ -84,7 +84,7 @@ extern void func_003A9A60(u8 *);
 
 void func_002F1360(u8 *p)
 {
-    PlanarOffset position;
+    struct { union { f32 range[2]; s32 bits[2]; } values; s32 padding[2]; } position;
 
     p[0x40C] = 2;
     p[0x33C] = 5;
@@ -99,9 +99,9 @@ void func_002F1360(u8 *p)
         p[0x151] = 0;
         func_00175C00(p, 1);
         *(s32 *)(p + 0x2B8) = 0;
-        ((s32 *)position)[0] = 0x4226AAAA;
-        ((s32 *)position)[1] = 0x433A6DB6;
-        func_001830D0(p, position, 1);
+        position.values.bits[0] = 0x4226AAAA;
+        position.values.bits[1] = 0x433A6DB6;
+        func_001830D0(p, position.values.range, 1);
         func_003A9A60(p);
     }
 }
