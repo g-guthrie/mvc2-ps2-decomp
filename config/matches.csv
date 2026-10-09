@@ -9090,3 +9090,4 @@ func_002FC360,0x002FC360,0x70,src/grok_w7_context_transition_orchestrator.c,comp
 func_002FC3D0,0x002FC3D0,0x64,src/grok_w7_context_transition_orchestrator.c,complete
 func_003F38A0,0x003F38A0,0x40,src/initialize_runtime_graphics_matrix_003F38A0.c,complete
 func_003F3850,0x003F3850,0x4C,src/get_bmp_pixel_data_003F3850.c,complete
+func_003F5180,0x003F5180,0x64,src/align_graphics_extent_003F5180.c,complete
