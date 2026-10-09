@@ -13,8 +13,8 @@ extern void func_001266A0(u8 *, int, int);
 extern void func_0015D010(u8 *, f32 *);
 extern void func_0018C6E0(u8 *);
 extern int func_001757E0(u8 *, int, int);
-extern int func_001DA7F0(u8 *, int);
-extern void func_00185960(u8 *, int);
+extern u8 *func_001DA7F0(u8 *, int);
+extern void func_00185960(u8 *, u8 *);
 extern void func_001843A0(u8 *);
 
 void func_003083A0(u8 *p)
@@ -24,7 +24,7 @@ void func_003083A0(u8 *p)
         u32 padding[2];
     } local;
     u8 *context = p + 0x2B8;
-    int result;
+    u8 *result;
 
     if ((*(u16 *)(p + 0x20E) & 0x0400) != 0) {
         *(s8 *)(p + 0x1E6) ^= 1;

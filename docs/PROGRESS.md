@@ -2451,3 +2451,13 @@ pointers, while size/offset helpers preserve the signed word arithmetic
 and conditional state writes observed in their native callers.
 Catalog: 596,704 code bytes (18.1165%), 9,165 functions, 81,930 data
 bytes (12.6423%). Changed whole objects, catalog, and both image hashes pass.
+
+
+### Contextual movement and allocation results
+
+Eight complete handlers add 1,508 exact code bytes. The event constructor
+now returns its allocated pointer, and callers store/link that pointer
+with the canonical API. Its whole existing source group remains exact.
+Catalog: 598,212 code bytes (18.1623%), 9,173 functions, 81,930 data
+bytes (12.6423%). All changed source objects, catalog, and both full-image
+hashes pass.

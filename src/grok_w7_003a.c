@@ -99,7 +99,7 @@ void func_003BFD30(u8 *p)
     }
 }
 
-void func_003B4040(u8 *p, u8 q)
+void *func_003B4040(u8 *p, u8 q)
 {
     Event *e = func_003DA750(0, 1, 0);
     if (e != 0) {
@@ -110,6 +110,7 @@ void func_003B4040(u8 *p, u8 q)
         e->field34 = 0;
         e->field38 = 0x3400;
     }
+    return e;
 }
 
 void func_003B7570(u8 *p)
