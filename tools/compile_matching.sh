@@ -3347,3 +3347,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/advance_global_phase.o"
 "$PYTHON" tools/verify_object.py "$BUILD/advance_global_phase.o" \
     private/SLUS_204.86.rom --source src/advance_global_phase.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_timered_flag_transition.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_timered_flag_transition.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_timered_flag_transition.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_timered_flag_transition.c
