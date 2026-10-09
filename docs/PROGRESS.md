@@ -2529,3 +2529,12 @@ reset. The single-flag callback uses the verified byte arguments of its callee.
 Catalog: 601,320 code bytes (18.2567%), 9,204 functions, and 83,647 data bytes
 (12.9072%). All twelve objects, catalog validation, full relink and packed retail
 ELF identity pass. The next code push threshold remains 21.0711%.
+
+## Masked byte table checkpoint
+
+Reconstructed signed waveform, category, effect, flag, nonzero, even-offset,
+delta and variation table entries. Adjacent unused bytes remain placeholders.
+Catalog: 601,320 code bytes (18.2567%) and 83,950 data bytes (12.9540%),
+with 2,853 reconstructed data source units. Changed data objects, eleven data
+tests, catalog validation, full relink and packed retail ELF identity pass.
+Reachable waveform and nibble selector coverage remains under additional audit.
