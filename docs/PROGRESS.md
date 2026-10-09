@@ -2826,3 +2826,14 @@ runtime source objects and all four data partitions verify exactly. Catalog,
 full hybrid linkage and packed retail ELF identity pass. Catalog: 604,340 code
 bytes (18.3484%), 9,236 functions; data84,314 bytes (13.0101%), 2,888
 reconstructed source units. Intervening data spans remain raw placeholders.
+
+## Runtime payload clear checkpoint
+
+Recovered the complete 28-byte record payload clear with a caller-grounded
+record pointer and ignored memory-fill result. Whole EE96/SNAS object, catalog,
+full hybrid linkage and packed retail ELF identity pass. Catalog: 604,368 code
+bytes (18.3492%), 9,237 functions; data 84,314 bytes (13.0101%).
+
+Independent animation-copy helper175B40 probe models the native record stride
+and nested halfword-copy loops but remains a compiler-layout mismatch; no
+source row or matching credit was added for that candidate.
