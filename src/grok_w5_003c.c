@@ -4,6 +4,11 @@ typedef signed short s16;
 typedef signed int s32;
 typedef unsigned int u32;
 typedef float f32;
+typedef struct RuntimeRecord {
+    u8 opaque[4];
+    u32 active;
+    u8 rest[360];
+} RuntimeRecord;
 
 #define F(p, o) (*(f32 *)((u8 *)(p) + (o)))
 #define S(p, o) (*(s16 *)((u8 *)(p) + (o)))
@@ -16,6 +21,7 @@ extern u8 D_0058EFD0[];
 extern u8 D_0058EC40[];
 extern u8 D_00152930[];
 extern u8 D_005BF280[];
+extern u8 D_005BF2F0[];
 extern u8 D_0058F280[];
 
 extern void func_003D14F0(void);
@@ -26,6 +32,7 @@ extern void func_003D26E0(void);
 extern void func_003DC9C0(void);
 extern void func_003DB9F0(void);
 extern void func_003F0310(void);
+extern void func_003F0370(RuntimeRecord *record);
 extern void func_003DAA40(void);
 extern void func_00130040(void);
 extern void func_00130820(void);
@@ -68,6 +75,20 @@ void func_003DD040(void)
     func_003DC9C0();
     func_003DB9F0();
     func_003F0310();
+}
+
+void func_003F0310(void)
+{
+    s32 index = 0;
+    s32 offset = 0;
+
+    do {
+        RuntimeRecord *record = (RuntimeRecord *)(D_005BF2F0 + offset);
+        if (record->active != 0)
+            func_003F0370(record);
+        index++;
+        offset += 0x170;
+    } while (index < 1024);
 }
 
 void func_003C9210(void)
