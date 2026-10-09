@@ -1,4 +1,3 @@
-typedef signed int s32;
 #include "runtime_message_callback.h"
 
 extern RuntimeMessageCallback D_004872E4;
