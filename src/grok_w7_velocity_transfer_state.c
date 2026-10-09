@@ -1,9 +1,14 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
+typedef unsigned int u32;
+typedef signed short s16;
 typedef signed short s16;
 typedef signed char s8;
 typedef float f32;
+typedef union { f32 value; u32 bits; } FloatBits;
+typedef struct { u8 prefix[0x60]; FloatBits f60; u8 padding[8]; FloatBits f6c; } ActorView;
 extern int func_00175700(u8 *);
+extern int func_001757E0(u8 *, int, int);
 extern int func_001864A0(u8 *);
 extern int func_002F8EB0(u8 *);
 extern void func_001845F0(u8 *);
@@ -68,5 +73,21 @@ void func_002F89B0(u8 *p)
     if (result < 0) {
         p[6]++;
         *(s16 *)(p + 28) = 16;
+    }
+}
+
+void func_002F8A40(u8 *p)
+{
+    s16 timer;
+    ActorView *actor = (ActorView *)p;
+
+    func_00175700(p);
+    timer = *(s16 *)(p + 28) - 1;
+    *(s16 *)(p + 28) = timer;
+    if (timer == 0) {
+        p[6]++;
+        actor->f60.bits = 0xC09A4924;
+        actor->f6c.bits = 0xBE092492;
+        func_001757E0(p, 18, 1);
     }
 }
