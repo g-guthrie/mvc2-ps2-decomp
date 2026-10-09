@@ -4369,3 +4369,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/advance_runtime_grid_position_0041D020.o"
 "$PYTHON" tools/verify_object.py "$BUILD/advance_runtime_grid_position_0041D020.o" \
     private/SLUS_204.86.rom --source src/advance_runtime_grid_position_0041D020.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_runtime_effect_backend_0041C4B0.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/initialize_runtime_effect_backend_0041C4B0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_runtime_effect_backend_0041C4B0.o" \
+    private/SLUS_204.86.rom --source src/initialize_runtime_effect_backend_0041C4B0.c
