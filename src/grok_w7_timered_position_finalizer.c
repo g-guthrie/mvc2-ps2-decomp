@@ -1,7 +1,7 @@
 typedef unsigned char u8;
 typedef unsigned int u32;
 typedef float f32;
-extern int func_001266A0(u8 *, int, int);
+extern void func_001266A0(u8 *, int, int);
 extern void func_0015D010(u8 *, f32 *);
 extern void func_0018C6E0(u8 *);
 extern int func_001757E0(u8 *, int, int);
@@ -14,10 +14,10 @@ void func_00308490(u8 *p)
     p[0x1B4] = 10;
     p[7] = 0;
     p[6] = 0;
-    *(u32 *)(p + 0x5C) = 0;
-    *(u32 *)(p + 0x60) = 0;
-    *(u32 *)(p + 0x68) = 0;
-    *(u32 *)(p + 0x6C) = 0;
+    *(f32 *)(p + 0x5C) = 0.0f;
+    *(f32 *)(p + 0x60) = 0.0f;
+    *(f32 *)(p + 0x68) = 0.0f;
+    *(f32 *)(p + 0x6C) = 0.0f;
     func_001266A0(p, 5, 5);
     position.pair.bits[0] = 0xC2F00000;
     position.pair.bits[1] = 0x42CDB6DB;
