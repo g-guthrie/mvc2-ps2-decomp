@@ -3028,6 +3028,17 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
     "$BUILD/set_runtime_object_offset_00400CF8.o" \
     private/SLUS_204.86.rom --source src/set_runtime_object_offset_00400CF8.c
 
+"$WIBO" "$SNCPP" -P src/call_runtime_scalar_action_004087A0.c \
+    "$BUILD/call_runtime_scalar_action_004087A0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/call_runtime_scalar_action_004087A0.i" \
+    "$BUILD/call_runtime_scalar_action_004087A0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/call_runtime_scalar_action_004087A0.o" \
+    "$BUILD/call_runtime_scalar_action_004087A0.s"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/call_runtime_scalar_action_004087A0.o" \
+    private/SLUS_204.86.rom --source src/call_runtime_scalar_action_004087A0.c
+
 "$WIBO" "$SNCPP" -P src/read_runtime_record_fields_00405350.c \
     "$BUILD/read_runtime_record_fields_00405350.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
