@@ -2720,3 +2720,12 @@ Their whole EE96/SNAS objects verify exactly; the twelve-function state-slot
 source also remains exact with callback/context pointer types. Catalog:
 603,036 code bytes (18.3088%), 9,220 functions; data 83,806 bytes (12.9317%).
 Full hybrid relink and packed retail ELF identity pass.
+
+## Physics and timed motion integration checkpoint
+
+Integrated three complete caller-grounded handlers: 3061E0 (152 bytes),
+30D640 (136 bytes), and 30D8A0 (236 bytes). Both whole source objects verify
+all registered functions exactly with their established compiler recipes. The
+305690 candidate remains uncredited and ordinary pointer-typed. Catalog:
+603,560 code bytes (18.3247%), 9,223 functions; data 83,806 bytes (12.9317%).
+Full hybrid linkage and packed retail ELF identity pass.
