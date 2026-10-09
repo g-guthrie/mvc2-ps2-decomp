@@ -1175,7 +1175,9 @@ data_u32_00446974,0x00446974,0xC,.data,src/data/data_u32_00446974.c,filled_u32_c
 data_u32_00446980,0x00446980,0x34,.data,src/data/data_u32_00446980.c,initialized_u32_table
 data_u32_004469B4,0x004469B4,0xC,.data,src/data/data_u32_004469B4.c,filled_u32_constant
 D_004469C0,0x004469C0,0x1C,.rodata,src/data/D_004469C0.c,pointer_table
-data_u32_004469DC,0x004469DC,0x54,.data,src/data/data_u32_004469DC.c,initialized_u32_table
+data_raw_004469DC,0x004469DC,0x4,.data,src/data/data_raw_004469DC.c,initialized_byte_array
+data_s16_004469E0,0x004469E0,0x2,.data,src/data/data_s16_004469E0.c,bounded_signed_threshold
+data_raw_004469E2,0x004469E2,0x4E,.data,src/data/data_raw_004469E2.c,initialized_byte_array
 D_00446A60,0x00446A60,0x1C,.rodata,src/data/D_00446A60.c,pointer_table
 data_u32_00446A7C,0x00446A7C,0x4,.data,src/data/data_u32_00446A7C.c,initialized_u32_table
 jtbl_00446A80,0x00446A80,0x1c,.rodata,src/data/jtbl_00446A80.c,jump_table
