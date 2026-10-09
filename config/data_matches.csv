@@ -4823,7 +4823,11 @@ data_zero_00477930,0x00477930,0x40,src/data/data_zero_00477930.c,complete,placeh
 data_u32_00477970,0x00477970,0x40,src/data/data_u32_00477970.c,complete,placeholder
 data_zero_004779B0,0x004779B0,0x20,src/data/data_zero_004779B0.c,complete,placeholder
 gIoDescriptorHeaderWords_004779D0,0x004779D0,0x20,src/data/gIoDescriptorHeaderWords_004779D0.c,complete,reconstructed
-data_raw_004779F0,0x004779F0,0xB50,src/data/data_raw_004779F0.c,complete,placeholder
+data_raw_004779F0,0x004779F0,0x950,src/data/data_raw_004779F0.c,complete,placeholder
+data_u32_00478340,0x00478340,0x80,src/data/data_u32_00478340.c,complete,reconstructed
+data_u32_004783C0,0x004783C0,0x80,src/data/data_u32_004783C0.c,complete,reconstructed
+data_u32_00478440,0x00478440,0x80,src/data/data_u32_00478440.c,complete,reconstructed
+data_raw_004784C0,0x004784C0,0x80,src/data/data_raw_004784C0.c,complete,placeholder
 data_raw_00478540,0x00478540,0x200,src/data/data_raw_00478540.c,complete,placeholder
 data_raw_00478740,0x00478740,0x200,src/data/data_raw_00478740.c,complete,placeholder
 D_00478940,0x00478940,0x10,src/data/D_00478940.c,complete,reconstructed
