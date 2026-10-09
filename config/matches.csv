@@ -9063,3 +9063,4 @@ func_002F4E00,0x002F4E00,0x70,src/grok_w7_external_state_trigger.c,complete
 func_002F4F40,0x002F4F40,0x7C,src/grok_w7_indexed_flag_transition.c,complete
 func_002F4FC0,0x002F4FC0,0xAC,src/grok_w7_velocity_transfer_state.c,complete
 func_0011B9F8,0x0011B9F8,0x98,src/sdk_buffered_character_0011B9F8.c,complete
+func_002F4A50,0x002F4A50,0xC8,src/grok_w7_indexed_flag_transition.c,complete
