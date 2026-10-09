@@ -1394,3 +1394,19 @@ The catalog reports 571,240 code bytes (17.3434%) and 70,818 reconstructed
 data bytes (10.9276%) across 2,312 data owners. Targeted object checks and
 all 45 tests pass. The hybrid loaded image and packed executable also match
 retail hashes. Full source decompilation and linkage remain incomplete.
+
+
+### Bounded sprite tables and allocation messages
+
+Native func_0033A590 wraps its signed frame selector at 34; its constructor
+receives a 484-byte cleared record, and the allocator insertion callback writes
+only list links. The two 34-entry tables therefore have complete consumer bounds.
+The threshold table participates in signed comparison and integer-to-float
+conversion; the pattern entries participate in signed frame-index multiplication.
+Both are signed 32-bit source arrays and verify exactly (272 bytes).
+
+Three allocation-failure callsites pass the SSCACHE, TEXTURE, and PALETTE
+messages to the variadic formatter. Their 34-byte text-plus-NUL objects add 102
+reconstructed bytes; all padding remains raw. Code stays 571,240 (17.3434%);
+data is 71,192 (10.9853%) across 2,317 reconstructed owners. Changed objects,
+catalog validation, loaded-image hash, and packed-ELF hash all pass.
