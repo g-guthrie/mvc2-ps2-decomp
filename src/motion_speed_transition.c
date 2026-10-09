@@ -484,3 +484,30 @@ void func_002E0B80(u8 *p)
         func_00183D50(p);
     }
 }
+
+void func_002B4280(u8 *p)
+{
+    *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
+    *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
+    if ((s8)func_00175700(p) >= 0)
+        return;
+
+    p[6]++;
+    {
+        f32 speed;
+        if (p[0x1E6] != 0)
+            speed = -2.5f;
+        else
+            speed = 2.5f;
+        *(f32 *)(p + 0x5C) = speed;
+    }
+    {
+        f32 acceleration;
+        if (p[0x1E6] != 0)
+            acceleration = 0.20833333f;
+        else
+            acceleration = -0.20833333f;
+        *(f32 *)(p + 0x68) = acceleration;
+    }
+    func_001757E0(p, 2, 3);
+}
