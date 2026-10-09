@@ -9274,3 +9274,4 @@ func_0040BF00,0x0040BF00,0x58,src/detect_runtime_path_prefix_0040BF00.c,complete
 func_0027B950,0x0027B950,0x60,src/round3_0.c,complete
 func_00417440,0x00417440,0xBC,src/lookup_runtime_sine_00417440.c,complete
 func_0041F860,0x0041F860,0x94,src/reset_runtime_global_state_0041F860.c,complete
+func_002F4390,0x002F4390,0xD0,src/animation_state_transfers.c,complete
