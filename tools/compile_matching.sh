@@ -3195,3 +3195,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/get_format_record_count_003F1E10.o"
 "$PYTHON" tools/verify_object.py "$BUILD/get_format_record_count_003F1E10.o" \
     private/SLUS_204.86.rom --source src/get_format_record_count_003F1E10.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_format_callback_count_003F14A0.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/initialize_format_callback_count_003F14A0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_format_callback_count_003F14A0.o" \
+    private/SLUS_204.86.rom --source src/initialize_format_callback_count_003F14A0.c
