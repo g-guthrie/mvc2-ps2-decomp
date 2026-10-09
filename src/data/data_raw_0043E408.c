@@ -1,3 +1,3 @@
 typedef unsigned char u8;
-/* Unclassified zero tail after the parser terminator. */
-u8 data_raw_0043E408[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+/* Raw bytes retained without reconstruction credit. */
+u8 data_raw_0043E408[8] = { 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u };
