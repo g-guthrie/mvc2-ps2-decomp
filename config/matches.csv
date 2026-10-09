@@ -9278,3 +9278,4 @@ func_002F4390,0x002F4390,0xD0,src/animation_state_transfers.c,complete
 func_0041B0E0,0x0041B0E0,0x4C,src/dispatch_runtime_animation_mode_0041B0E0.c,complete
 func_0041AA10,0x0041AA10,0x78,src/update_runtime_animation_state_0041AA10.c,complete
 func_004207C0,0x004207C0,0x7C,src/initialize_backend_notice_004207C0.c,complete
+func_002E77B0,0x002E77B0,0x9C,src/grok_w7_velocity_interaction_dispatch.c,complete
