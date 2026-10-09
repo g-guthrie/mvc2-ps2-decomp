@@ -1611,3 +1611,29 @@ Current catalog: 574,312 exact linked code bytes (17.4367%), 8,995 functions;
 73,349 reconstructed data bytes (11.3182%) across 2,434 owners. All changed
 code/data objects, data tests, full loaded-image hash, and packed-ELF hash
 pass. Full source reconstruction remains incomplete.
+
+
+### Runtime mode, lifecycle, and state-layout checkpoint
+
+Nine mode wrappers add 224 exact bytes and now propagate the signed callback
+results observed in the native callees. Reference acquisition/release and
+service reset add 228 bytes. The reset declares seven word counters, while
+its native loop deliberately clears only the first four. Cleanup, state
+transition, scale, and size helpers add 212 bytes. Their shared owner/state
+header records the proven pointer/index and flag/type/size offsets, avoiding
+conflicting declarations.
+
+The EE compiler runner accepts small-data thresholds 0 and 8, with 0 still
+the default. GP-relative lifecycle units use both EE GCC -G8 and SNAS -G8;
+the default -G0 path was checked against the existing 148-byte file walker.
+All affected whole objects verify under their recorded recipes.
+
+The corrected 00453EC0 lookup contributes its sixteen even bytes, with every
+odd byte raw. It replaces the previously held false contiguous-prefix
+candidate without integrating that candidate. A masked 16-float lookup and
+eight four-float vectors at 004741A0/E0 add 192 bytes.
+
+Catalog: 574,976 exact linked code bytes (17.4569%), 9,011 functions;
+73,557 reconstructed data bytes (11.3503%) across 2,452 owners. All 45
+tests, changed code/data objects, full loaded-image hash, and packed-ELF hash
+pass. Full source reconstruction remains incomplete.
