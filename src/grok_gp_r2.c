@@ -2,6 +2,8 @@ typedef signed char s8;
 typedef unsigned char u8;
 typedef signed short s16;
 typedef signed int s32;
+typedef unsigned int u32;
+typedef unsigned long long u64;
 
 extern s16 D_004C2784;
 extern s16 D_004C2788;
@@ -12,8 +14,10 @@ extern u8 D_004C2668;
 extern u8 D_004C27D0;
 extern s32 D_004C2618;
 extern s32 D_004C2814;
+extern u32 D_004C2AD0;
 extern u8 *D_004C2840;
 extern u8 *D_004C28D8;
+extern void func_003E0DB0(s32, u64 *, u64 *, u32);
 
 void func_00128380(void) {
     D_004C2790 += 4096;
@@ -78,4 +82,18 @@ void func_0041DB80(void) {
     D_004C2840[3] = 0;
     D_004C2840[4] = 0;
     D_004C2840[5] = 0;
+}
+
+void func_003F0070(s32 present, u64 *first, u64 *second)
+{
+    if (present) {
+        func_003E0DB0(present, first, second, D_004C2AD0);
+        second[1] = 8;
+        first[1] = 6;
+    } else {
+        second[0] = 0;
+        second[1] = 8;
+        first[0] = 0;
+        first[1] = 6;
+    }
 }
