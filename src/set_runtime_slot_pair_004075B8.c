@@ -1,6 +1,5 @@
 typedef signed int s32;
-
-typedef void (*RuntimeMessageCallback)(void *context, const char *message);
+#include "runtime_message_callback.h"
 
 extern RuntimeMessageCallback D_004872E4;
 extern void *D_004872E8;
