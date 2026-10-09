@@ -2314,3 +2314,12 @@ remains exact. The workspace scale is a float, confirmed by native
 LWC1/SWC1 consumers. Catalog: 589,640 code bytes (17.9021%), 9,118
 functions, 80,490 data bytes (12.4201%). Whole objects, catalog, and
 both loaded-image and packed-ELF hashes pass.
+
+
+### Match-choice initialization and additional phase transitions
+
+Four complete functions add 564 code bytes. The 32-byte choice workspace
+models only the two observed halfword fields; other bytes remain opaque.
+Global phase advancement preserves signed byte gates and its idle fallback.
+Catalog: 590,204 matching code bytes (17.9192%), 9,122 functions; data
+remains 80,490 bytes (12.4201%). Whole objects, catalog, and both hashes pass.
