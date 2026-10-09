@@ -69,3 +69,29 @@ void func_002F6370(u8 *p)
     func_0015D010(p, position);
     func_001757E0(p, 15, 3);
 }
+
+void func_002F1780(u8 *p)
+{
+    u8 mode = p[0x20B] & 0x3F;
+
+    if (mode == 0)
+        p[0x1E6] ^= 1;
+
+    if ((p[0x22] & 1) == 0) {
+        *(short *)(p + 0x140) ^= 1;
+        p[0x1E6] ^= 1;
+    }
+
+    {
+        PlanarOffset position;
+        ((int *)position)[0] = 0xC262AAAA;
+        ((int *)position)[1] = 0x43362492;
+        func_0015D010(p, position);
+    }
+
+    func_001266A0(p, 5, 5);
+    if ((p[0x20B] & 0x3F) != 0)
+        p[0x1B4] = 10;
+    func_001757E0(p, 15, p[0x20B] & 0x3F);
+    func_0018C6E0(p);
+}

@@ -9019,3 +9019,4 @@ func_002F0480,0x002F0480,0x8C,src/grok_w7_state_entry_setup.c,complete
 func_002F0B10,0x002F0B10,0xA4,src/grok_w7_state_entry_setup.c,complete
 func_002F1430,0x002F1430,0x9C,src/grok_w7_state_entry_setup.c,complete
 func_002F1600,0x002F1600,0xA0,src/grok_w7_motion_triggered_state.c,complete
+func_002F1780,0x002F1780,0xC0,src/fixed_launch_effect_initializers.c,complete
