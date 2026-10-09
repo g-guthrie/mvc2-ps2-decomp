@@ -8994,3 +8994,4 @@ func_0011C838,0x0011C838,0x94,src/sdk_file_walk_0011C838.c,complete
 func_004105D8,0x004105D8,0xAC,src/decode_hex_length_004105D8.c,complete
 func_002F0F70,0x002F0F70,0xCC,src/grok_w7_timered_global_state.c,complete
 func_0011B7A8,0x0011B7A8,0x8C,src/sdk_initialize_context_0011B7A8.c,complete
+func_00410000,0x00410000,0x134,src/consume_runtime_span_00410000.c,complete
