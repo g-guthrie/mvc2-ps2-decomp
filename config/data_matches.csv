@@ -4973,7 +4973,8 @@ data_u8_004ACD30,0x004ACD30,0x74,src/data/data_u8_004ACD30.c,complete,placeholde
 data_u32_004ACDA4,0x004ACDA4,0x18,src/data/data_u32_004ACDA4.c,complete,placeholder
 data_u32_004ACDBC,0x004ACDBC,0x204,src/data/data_u32_004ACDBC.c,complete,placeholder
 data_zero_004ACFC0,0x004ACFC0,0x10,src/data/data_zero_004ACFC0.c,complete,placeholder
-data_u32_004ACFD0,0x004ACFD0,0x100,src/data/data_u32_004ACFD0.c,complete,placeholder
+data_s8_stride4_004ACFD0,0x004ACFD0,0x54,src/data/data_s8_stride4_004ACFD0.c,complete,reconstructed
+data_u8_004AD024,0x004AD024,0xAC,src/data/data_u8_004AD024.c,complete,placeholder
 jtbl_004AD0F0,0x004AD0F0,0x28,src/data/jtbl_004AD0F0.c,complete,placeholder
 jtbl_004AD120,0x004AD120,0x18,src/data/jtbl_004AD120.c,complete,placeholder
 jtbl_004AD140,0x004AD140,0x48,src/data/jtbl_004AD140.c,complete,placeholder
