@@ -1337,7 +1337,9 @@ data_u32_00449064,0x00449064,0xC,.data,src/data/data_u32_00449064.c,filled_u32_c
 data_u32_00449070,0x00449070,0x50,.data,src/data/data_u32_00449070.c,initialized_u32_table
 gMvc2ModeHandlerTable_004490C0,0x004490C0,0x160,.rodata,src/data/mvc2_mode_handler_table_004490C0.c,mode_handler_dispatch
 D_00449220,0x00449220,0x10,.rodata,src/data/D_00449220.c,pointer_table
-data_u32_00449230,0x00449230,0x80,.data,src/data/data_u32_00449230.c,initialized_u32_table
+data_raw_00449230,0x449230,0x60,.data,src/data/data_raw_00449230.c,raw_byte_array
+data_u8_00449290,0x449290,0x10,.data,src/data/data_u8_00449290.c,initialized_byte_array
+data_u8_004492A0,0x4492a0,0x10,.data,src/data/data_u8_004492A0.c,initialized_byte_array
 jtbl_004492B0,0x004492B0,0xC,.rodata,src/data/jtbl_004492B0.c,typed_state_callback_table
 data_u32_004492BC,0x004492BC,0x4,.data,src/data/data_u32_004492BC.c,initialized_u32_table
 jtbl_004492C0,0x004492C0,0xC,.rodata,src/data/jtbl_004492C0.c,typed_state_callback_table

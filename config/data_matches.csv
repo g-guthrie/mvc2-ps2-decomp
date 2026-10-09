@@ -1337,7 +1337,9 @@ data_u32_00449064,0x00449064,0xC,src/data/data_u32_00449064.c,complete,placehold
 data_u32_00449070,0x00449070,0x50,src/data/data_u32_00449070.c,complete,placeholder
 gMvc2ModeHandlerTable_004490C0,0x004490C0,0x160,src/data/mvc2_mode_handler_table_004490C0.c,complete,reconstructed
 D_00449220,0x00449220,0x10,src/data/D_00449220.c,complete,placeholder
-data_u32_00449230,0x00449230,0x80,src/data/data_u32_00449230.c,complete,placeholder
+data_raw_00449230,0x449230,0x60,src/data/data_raw_00449230.c,complete,placeholder
+data_u8_00449290,0x449290,0x10,src/data/data_u8_00449290.c,complete,reconstructed
+data_u8_004492A0,0x4492a0,0x10,src/data/data_u8_004492A0.c,complete,reconstructed
 jtbl_004492B0,0x004492B0,0xC,src/data/jtbl_004492B0.c,complete,reconstructed
 data_u32_004492BC,0x004492BC,0x4,src/data/data_u32_004492BC.c,complete,placeholder
 jtbl_004492C0,0x004492C0,0xC,src/data/jtbl_004492C0.c,complete,reconstructed
