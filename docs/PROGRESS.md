@@ -2502,3 +2502,11 @@ nine modulo-selected geometry vectors, masked float-record fields, fixed
 vectors, and two 64-entry signed phase banks. Padding and unused record
 words remain raw. Catalog: 599,804 code bytes (18.2107%), 83,647 data
 bytes (12.9072%). Changed data objects, catalog, and both image hashes pass.
+
+
+### Runtime message slots and scalar state clamp
+
+The typed callback/context setter, two message adapters, and scalar-state
+clamp add 116 exact code bytes. Their actual native interfaces are recorded
+in source. Catalog: 599,920 code bytes (18.2142%), 9,191 functions,
+83,647 data bytes (12.9072%). Whole object, catalog, and full-image checks pass.
