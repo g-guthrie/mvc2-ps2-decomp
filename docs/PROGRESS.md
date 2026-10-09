@@ -1671,3 +1671,16 @@ Catalog: 577,576 exact linked code bytes (17.5358%), 9,030 functions;
 74,293 reconstructed data bytes (11.4638%). All changed native objects,
 45 tests, catalog validation, full hybrid image, and packed retail ELF pass.
 The next requested five-point code publication threshold remains 694,017 bytes.
+
+
+### Runtime switch and masked byte lookup
+
+The 108-byte runtime switch handler is compiler-exact. Its compiler-local
+jump-table symbol is aliased in the canonical object used by the linker;
+the existing raw jump table remains uncredited data. The byte lookup at
+0x43EDF0 now credits 16 entries, bounded by the factory argument mask.
+
+Catalog: 577,684 exact linked code bytes (17.5391%), 9,031 functions;
+74,309 reconstructed data bytes (11.4663%). Changed native objects and
+both full-image hash gates pass. Remote main remains b1b061f9; the next
+five-point code push remains due at 694,017 bytes.

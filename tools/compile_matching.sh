@@ -2976,7 +2976,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "${OBJCOPY:-mipsel-linux-gnu-objcopy}" \
     --redefine-sym @18=jtbl_004BEE40 \
     "$BUILD/dispatch_runtime_mode_result_00418AA0.o" \
-    "$BUILD/dispatch_runtime_mode_result_00418AA0-verified.o"
+    "$BUILD/dispatch_runtime_mode_result_00418AA0.o"
 "$PYTHON" tools/verify_object.py \
-    "$BUILD/dispatch_runtime_mode_result_00418AA0-verified.o" \
+    "$BUILD/dispatch_runtime_mode_result_00418AA0.o" \
     private/SLUS_204.86.rom --source src/dispatch_runtime_mode_result_00418AA0.c
