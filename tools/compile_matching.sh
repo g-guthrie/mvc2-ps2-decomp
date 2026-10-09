@@ -3333,6 +3333,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     private/SLUS_204.86.rom --source src/reset_runtime_service_pool_004154C0.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/clear_runtime_service_workspace_00415450.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/clear_runtime_service_workspace_00415450.o"
+"$PYTHON" tools/verify_object.py "$BUILD/clear_runtime_service_workspace_00415450.o" \
+    private/SLUS_204.86.rom --source src/clear_runtime_service_workspace_00415450.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/transform_homogeneous_point_003DE480.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/transform_homogeneous_point_003DE480.o"
 "$PYTHON" tools/verify_object.py "$BUILD/transform_homogeneous_point_003DE480.o" \
