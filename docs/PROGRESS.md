@@ -1684,3 +1684,15 @@ Catalog: 577,684 exact linked code bytes (17.5391%), 9,031 functions;
 74,309 reconstructed data bytes (11.4663%). Changed native objects and
 both full-image hash gates pass. Remote main remains b1b061f9; the next
 five-point code push remains due at 694,017 bytes.
+
+
+### File-record allocator and corrected conversion ABI
+
+The 120-byte SDK file-glue allocator uses the verified 88-byte file layout.
+The 76-byte conversion chain now declares double intermediates and a float
+return, matching the native helpers and callers. The 148-byte offset-launch
+initializer and sixteen-entry float lookup also verify exactly.
+
+Catalog: 578,028 exact linked code bytes (17.5495%), 9,034 functions;
+74,373 reconstructed data bytes (11.4762%). Every changed object, catalog
+validation, full loaded-image hash, and packed ELF hash pass.

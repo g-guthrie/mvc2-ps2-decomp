@@ -2986,3 +2986,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/convert_runtime_angles_00417D50.o"
 "$PYTHON" tools/verify_object.py "$BUILD/convert_runtime_angles_00417D50.o" \
     private/SLUS_204.86.rom --source src/convert_runtime_angles_00417D50.c
+
+"$WIBO" "$SNCPP" -P src/sdk_allocate_file_glue_0011B5F8.c "$BUILD/sdk_allocate_file_glue_0011B5F8.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_allocate_file_glue_0011B5F8.i" "$BUILD/sdk_allocate_file_glue_0011B5F8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_allocate_file_glue_0011B5F8.o" "$BUILD/sdk_allocate_file_glue_0011B5F8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sdk_allocate_file_glue_0011B5F8.o" private/SLUS_204.86.rom --source src/sdk_allocate_file_glue_0011B5F8.c
