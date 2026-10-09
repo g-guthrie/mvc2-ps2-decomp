@@ -2875,3 +2875,12 @@ path for nine transition vectors, adding108data bytes; the four-byte tail
 remains raw. Changed objects, catalog, full hybrid linkage and packed retail
 ELF identity pass. Catalog: 604,728 code bytes (18.3602%), 9,243 functions;
 data84,686 bytes (13.0675%), 2,901 reconstructed source units.
+
+## Runtime offset setter checkpoint
+
+Recovered the complete 28-byte object-offset setter, preserving its word store
+and forwarded helper result. Whole EE96/SNAS object, catalog, full hybrid
+linkage and packed retail ELF identity pass. Catalog: 604,756 code bytes
+(18.3610%), 9,244 functions; data remains 84,686 bytes (13.0675%).
+Additional SN/EE probes of animation helper175B40 remain size/layout mismatches
+and do not receive credit.
