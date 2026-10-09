@@ -1560,3 +1560,27 @@ The catalog reports 573,168 exact linked code bytes (17.4020%), 8,989
 functions, and 73,098 reconstructed data bytes (11.2794%) across 2,404
 owners. Changed objects, data tests, the complete hybrid loaded image, and
 the packed executable all verify exactly.
+
+
+### SDK initialization, timer semantics, and selector tables
+
+SDK initializer 0011B7A8 adds 140 exact bytes. Its recovered context layout
+places the initialization flag at 0x38, cleanup callback at 0x3C, file-group
+header at 0x1D8, and three 88-byte file records at 0x1E4. It installs cleanup,
+initializes the three standard files, and publishes the file-group header.
+The layout agrees with the previously recovered file walker and cleanup.
+
+Timer handler 002F0F70 adds 204 exact bytes. Its gates affect only the minimum
+timer clamp; decrement and expiry handling occur outside those gates. Both
+unsupported volatile casts from the draft were removed before verification.
+The archive decoder and segment output now identify their result as an
+unsigned hexadecimal payload length, with agreeing caller declarations.
+
+Data additions are a masked 16-byte unsigned lookup, the four-byte resource
+reference count, three bounded tables at 0044DA30/50/60 (80 bytes), two
+bounded halfword tables at 0044E800/10 (32 bytes), and the 16-byte signed
+lookup at 00450C60. Remaining resource fields retain raw ownership.
+
+Catalog: 573,512 exact linked code bytes (17.4124%), 8,991 functions, and
+73,246 reconstructed data bytes (11.3023%) across 2,412 owners. Changed code
+and data objects, data tests, full loaded-image hash, and packed-ELF hash pass.
