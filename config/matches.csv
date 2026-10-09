@@ -9163,3 +9163,4 @@ func_0030A330,0x0030A330,0x88,src/grok_w7_negative_actor_transition.c,complete
 func_0030AB60,0x0030AB60,0xB0,src/grok_w7_conditional_vector_entry.c,complete
 func_00303A50,0x00303A50,0xE4,src/grok_w7_owner_context_float_setup.c,complete
 func_003F0DF0,0x003F0DF0,0x6C,src/grok_r1_0038.c,complete
+func_0030FE70,0x0030FE70,0xF4,src/grok_w7_activation_validator.c,complete
