@@ -5050,7 +5050,9 @@ data_u8_004B114C,0x004B114C,0x4,.data,src/data/data_u8_004B114C.c,initialized_by
 gUiDecimal3FormatAlt_004B1150,0x004B1150,0x4,.data,src/data/gUiDecimal3FormatAlt_004B1150.c,printf_format_string
 data_u8_004B1154,0x004B1154,0x4,.data,src/data/data_u8_004B1154.c,initialized_byte_array
 gUiDecimal2Format_004B1158,0x004B1158,0x5,.data,src/data/gUiDecimal2Format_004B1158.c,printf_format_string
-data_u8_004B115D,0x004B115D,0x83,.data,src/data/data_u8_004B115D.c,initialized_byte_array
+data_raw_004B115D,0x004B115D,0x3,.data,src/data/data_raw_004B115D.c,initialized_byte_array
+data_s32_004B1160,0x004B1160,0x7C,.data,src/data/data_s32_004B1160.c,initialized_s32_table
+data_raw_004B11DC,0x004B11DC,0x4,.data,src/data/data_raw_004B11DC.c,initialized_byte_array
 jtbl_004B11E0,0x004B11E0,0x40,.rodata,src/data/jtbl_004B11E0.c,jump_table
 gSpriteMotionBytePairs_004B1220,0x004B1220,0x30,.data,src/data/gSpriteMotionBytePairs_004B1220.c,bounded_u8_pair_table
 data_zero_004B1250,0x004B1250,0x6,.data,src/data/data_zero_004B1250.c,zero_initialized_untyped
