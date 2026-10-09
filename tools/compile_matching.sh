@@ -3321,3 +3321,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/initialize_shared_workspace.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_shared_workspace.o" \
     private/SLUS_204.86.rom --source src/initialize_shared_workspace.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_flagged_transition_setup.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_flagged_transition_setup.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_flagged_transition_setup.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_flagged_transition_setup.c
