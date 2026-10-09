@@ -2141,3 +2141,13 @@ suffix is already a separate config/gaps.csv gap and receives no credit.
 Catalog: 585,384 linked matching code bytes (17.7729%), 9,094 functions;
 79,664 reconstructed data bytes (12.2926%). Whole affected objects,
 catalog validation, and both full-image hashes pass.
+
+
+### Phase setup family
+
+Six complete functions add 1,748 exact code bytes within the shared
+move-setup source. Their data references use actual providers or the
+explicit native GP address alias; no data bytes receive new credit.
+Catalog: 587,132 linked matching code bytes (17.8259%), 9,100 functions;
+data remains 79,664 bytes (12.2926%). The complete source object, catalog
+validation, and both full-image hashes pass.
