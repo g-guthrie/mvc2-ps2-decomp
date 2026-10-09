@@ -9233,6 +9233,7 @@ func_00404360,0x00404360,0x24,src/dispatch_runtime_record_fields_00404360.c,comp
 func_00404240,0x00404240,0x24,src/clear_runtime_service_table_00404240.c,complete
 func_00404268,0x00404268,0x24,src/clear_runtime_service_table_00404240.c,complete
 func_004043C0,0x004043C0,0x34,src/clear_runtime_record_buffer_004043C0.c,complete
+func_00404488,0x00404488,0x24,src/clear_runtime_record_buffer_004043C0.c,complete
 func_00404388,0x00404388,0x24,src/copy_runtime_record_halfwords_00404388.c,complete
 func_0040D178,0x0040D178,0x30,src/read_runtime_record_field_0040D178.c,complete
 func_0040A310,0x0040A310,0x24,src/read_scaled_runtime_fields_0040A310.c,complete
