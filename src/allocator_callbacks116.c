@@ -203,7 +203,7 @@ void func_003B1EF0(u8 *arg, u8 first, u8 second) {
 }
 extern Entry *func_003DA750(int, int, int);
 extern void func_003B28E0(void);
-void func_003B2860(u8 *arg, u8 first, u8 second) {
+Entry *func_003B2860(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 2, 0);
     if (entry != 0) {
         entry->callback = func_003B28E0;
@@ -213,6 +213,7 @@ void func_003B2860(u8 *arg, u8 first, u8 second) {
         entry->field32 = first;
         entry->field33 = second;
     }
+    return entry;
 }
 extern Entry *func_003DA750(int, int, int);
 extern void func_003B2FC0(void);

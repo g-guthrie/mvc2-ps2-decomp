@@ -9,6 +9,9 @@ extern void func_00185490(u8 *);
 extern void func_00175C00(u8 *, int);
 extern void func_00183D10(u8 *);
 extern int func_001757E0(u8 *, int, int);
+extern int func_00175700(u8 *);
+extern void func_001843A0(u8 *);
+extern void *func_003B2860(u8 *, int, int);
 extern void func_00303B40(u8 *, void *);
 void func_00303A50(u8 *p, void *context)
 {
@@ -35,4 +38,25 @@ void func_00303A50(u8 *p, void *context)
     ((s16 *)(D_004C2794 + 124))[p[2]]++;
     func_001757E0(p, 22, 0);
     func_00303B40(p, state);
+}
+
+void func_00303B40(u8 *p, void *context)
+{
+    u8 *owner = context;
+
+    p[0x40C] = 2;
+    p[0x33C] = 5;
+    p[0x405] = p[0x269] == 6 ? 2 : 0;
+    func_00175700(p);
+    if ((s8)p[0x151] != 0) {
+        p[0x151] = 0;
+        if (func_003B2860(p, 0, 0) == 0) {
+            func_001843A0(p);
+            return;
+        }
+    }
+    if (owner[3] != 0) {
+        p[6]++;
+        func_001757E0(p, 22, 1);
+    }
 }

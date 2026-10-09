@@ -9213,3 +9213,4 @@ func_003035D0,0x003035D0,0x70,src/grok_w7_negative_flag_reset.c,complete
 func_00303720,0x00303720,0x80,src/grok_w7_negative_flag_reset.c,complete
 func_00302440,0x00302440,0xA8,src/motion_speed_transition.c,complete
 func_00303CE0,0x00303CE0,0x88,src/grok_w7_context_timer_state_reset.c,complete
+func_00303B40,0x00303B40,0xBC,src/grok_w7_owner_context_float_setup.c,complete
