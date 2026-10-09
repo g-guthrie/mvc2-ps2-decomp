@@ -3265,3 +3265,10 @@ without introducing overlapping target storage. Consumers return the
 pointer and write through it. Surrounding words remain raw. Changed
 objects verify exactly. Data is 152,006 bytes (23.4554%) across 2,954 units;
 code remains 611,336 bytes (18.5608%).
+
+## Countdown physics integrator
+
+Recovered the complete 136-byte integrator at 0x002B41F0. Every registered
+function in the changed source object remains exact under its O4/Op
+profile. Code reaches 611,472 bytes (18.5649%), 9,298 functions; data remains
+152,006 bytes (23.4554%).
