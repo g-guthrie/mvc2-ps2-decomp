@@ -3024,3 +3024,13 @@ and packed retail ELF identity pass. Catalog:607,576 codebytes(18.4466%),
 9,270functions;data remains151,926bytes(23.4431%).
 Descriptor word roles have now been identified as string pointers and are
 queued for typed integration rather than generic integer credit.
+
+## Symbolic archive descriptors and bounded scale samples
+
+Reconstructed32bytes of descriptor string-pointer pairs after auditing their
+formatter and bytewise path consumers. Numericcasts were replaced with typed
+external archive-name/pathbuffer symbols; R32relocations resolve exactly. Six
+selected f32 scale samples add24bytes; unread fields andtails stay raw.
+Changed objects, catalog, full hybrid linkage and packed retail ELF identity
+pass. Data:151,982bytes(23.4517%),2,951reconstructedunits. Code remains
+607,576bytes(18.4466%).
