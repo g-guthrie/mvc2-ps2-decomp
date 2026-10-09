@@ -1696,3 +1696,13 @@ initializer and sixteen-entry float lookup also verify exactly.
 Catalog: 578,028 exact linked code bytes (17.5495%), 9,034 functions;
 74,373 reconstructed data bytes (11.4762%). Every changed object, catalog
 validation, full loaded-image hash, and packed ELF hash pass.
+
+
+### Conditional actor chain and fixed vectors
+
+Two exact handlers add 508 code bytes: the conditional phase chain and
+gated offset-launch initializer. Four fixed three-component float vectors
+add 48 reconstructed data bytes, with direct native loads documented.
+Catalog: 578,536 linked matching code bytes (17.5649%), 9,036 functions;
+74,421 reconstructed data bytes (11.4836%). Whole affected objects,
+catalog validation, loaded-image hash, and packed ELF hash pass.
