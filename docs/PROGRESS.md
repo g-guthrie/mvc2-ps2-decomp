@@ -1412,11 +1412,11 @@ data is 71,192 (10.9853%) across 2,317 reconstructed owners. Changed objects,
 catalog validation, loaded-image hash, and packed-ELF hash all pass.
 
 
-### Reentrant write and thread priority checkpoint
+### Reentrant input and thread priority checkpoint
 
-The reentrant write helper0011F640 is now exact C (96 bytes): it forwards an
+The reentrant read helper 0011F640 is now exact C (96 bytes): it forwards an
 integer low-level result through a wide signed return and propagates the error
-word only for a failed write. The file callback0011F9C8 (100 bytes) narrows that
+word only for a failed read. The file callback 0011F9C8 (100 bytes) narrows that
 result, advances its cached position on success, and clears flag0x1000 on failure.
 Both whole units compile with EE GCC2.96 and SNAS, resolve their external calls,
 and link exactly. The previous uncredited callback probe now has a consistent
@@ -1429,3 +1429,27 @@ the rest of the original zero region remains placeholder coverage.
 Catalog:571,436 linked matching code bytes (17.3494%) and71,212 reconstructed
 data bytes (10.9884%),8,972 functions and2,322 data owners. Targeted native
 verification, data tests, loaded-image hash, and packed-ELF hash pass.
+
+
+### Archive preparation, first-frame reset, and animation lookup
+
+The first-frame reset handler 002F11B0 adds 184 exact bytes. Archive preparation
+00410688 adds 92: it clears the buffer, copies up to seven string bytes with
+NUL padding, then formats the length. Its formatter and wrapper return void.
+The helper 00120440 is strncpy, as proven by its NUL scan and padding loop.
+
+Following the low-level descriptor branches corrects the prior SDK labels:
+0011F640 and 0011F9C8 are input/read routines (descriptor 0), with mutable
+buffers. Their corrected declarations still match. The output/write error
+wrapper 00122500 (descriptor 1 or 2) adds 96 exact bytes; its 128-byte file
+callback remains an uncredited private probe.
+
+Fixed-selector animation records add 96 reconstructed bytes. The signed
+halfword bank 004A6DF0 adds 128: four 32-byte copies and a 64-entry LH loop
+prove the complete prefix; its 88-byte tail remains raw.
+
+Current catalog: 571,808 code bytes (17.3607%), 71,436 data
+bytes (11.0230%), 8,975 functions and 2,328 reconstructed data owners.
+
+Changed objects verify exactly, and both the hybrid loaded-image and packed
+retail-ELF hashes pass. Source decompilation remains incomplete.

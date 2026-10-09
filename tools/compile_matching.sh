@@ -2693,15 +2693,15 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
 "$PYTHON" tools/verify_object.py "$BUILD/count_runtime_chains_00410468.o" \
     private/SLUS_204.86.rom --source src/count_runtime_chains_00410468.c
 
-"$WIBO" "$SNCPP" -P src/sdk_reentrant_write_0011F640.c "$BUILD/sdk_reentrant_write_0011F640.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_reentrant_write_0011F640.i" "$BUILD/sdk_reentrant_write_0011F640.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_reentrant_write_0011F640.o" "$BUILD/sdk_reentrant_write_0011F640.s"
-"$PYTHON" tools/verify_object.py "$BUILD/sdk_reentrant_write_0011F640.o" private/SLUS_204.86.rom --source src/sdk_reentrant_write_0011F640.c
+"$WIBO" "$SNCPP" -P src/sdk_reentrant_read_0011F640.c "$BUILD/sdk_reentrant_read_0011F640.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_reentrant_read_0011F640.i" "$BUILD/sdk_reentrant_read_0011F640.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_reentrant_read_0011F640.o" "$BUILD/sdk_reentrant_read_0011F640.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sdk_reentrant_read_0011F640.o" private/SLUS_204.86.rom --source src/sdk_reentrant_read_0011F640.c
 
-"$WIBO" "$SNCPP" -P src/sdk_file_write_0011F9C8.c "$BUILD/sdk_file_write_0011F9C8.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_file_write_0011F9C8.i" "$BUILD/sdk_file_write_0011F9C8.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_file_write_0011F9C8.o" "$BUILD/sdk_file_write_0011F9C8.s"
-"$PYTHON" tools/verify_object.py "$BUILD/sdk_file_write_0011F9C8.o" private/SLUS_204.86.rom --source src/sdk_file_write_0011F9C8.c
+"$WIBO" "$SNCPP" -P src/sdk_file_read_0011F9C8.c "$BUILD/sdk_file_read_0011F9C8.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_file_read_0011F9C8.i" "$BUILD/sdk_file_read_0011F9C8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_file_read_0011F9C8.o" "$BUILD/sdk_file_read_0011F9C8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sdk_file_read_0011F9C8.o" private/SLUS_204.86.rom --source src/sdk_file_read_0011F9C8.c
 
 "$WIBO" "$SNCPP" -P src/prepare_archive_and_pack_00410688.c \
     "$BUILD/prepare_archive_and_pack_00410688.i"
@@ -2718,3 +2718,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/grok_w7_first_frame_reset.o" private/SLUS_204.86.rom \
     --source src/grok_w7_first_frame_reset.c
 
+
+"$WIBO" "$SNCPP" -P src/sdk_reentrant_write_00122500.c "$BUILD/sdk_reentrant_write_00122500.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_reentrant_write_00122500.i" "$BUILD/sdk_reentrant_write_00122500.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_reentrant_write_00122500.o" "$BUILD/sdk_reentrant_write_00122500.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sdk_reentrant_write_00122500.o" private/SLUS_204.86.rom --source src/sdk_reentrant_write_00122500.c
