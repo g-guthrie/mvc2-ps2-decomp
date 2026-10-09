@@ -2798,3 +2798,12 @@ passes the referenced record and consumes the returned state byte; the null
 path preserves its diagnostic call and -1 result. Whole EE96/SNAS object,
 catalog, full hybrid linkage and packed retail ELF identity pass. Catalog:
 603,876 code bytes (18.3343%), 9,230 functions; data 84,290 bytes (13.0064%).
+
+## Scaled runtime attribute readers
+
+Recovered two complete 36-byte attribute readers with return-consuming
+selector-dispatch evidence. Unsigned widening defines the eleven-bit shift
+for negative signed inputs while preserving the native low-word/sign-extension
+result; both whole functions remain exact under EE96/SNAS. Catalog, full
+hybrid linkage and packed retail ELF pass. Catalog: 603,948 code bytes
+(18.3365%), 9,232 functions; data remains 84,290 bytes (13.0064%).
