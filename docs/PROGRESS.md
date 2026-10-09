@@ -1930,3 +1930,13 @@ ignored helper declaration matches the existing source convention.
 Catalog: 580,844 linked matching code bytes (17.6350%), 9,056 functions;
 data remains 75,112 bytes (11.5902%). Both whole sources, catalog
 validation, and both full-image hashes pass.
+
+
+### External state actor trigger
+
+The 112-byte actor callback now matches, including the signed flag gate,
+optional external request, and known callback invocation. Catalog:
+580,956 linked matching code bytes (17.6384%), 9,057 functions; data
+remains 75,112 bytes (11.5902%). Whole-source verification, catalog
+validation, and both full-image hashes pass. The SDK buffered character
+output candidate remains uncredited at 132 versus 152 native bytes.
