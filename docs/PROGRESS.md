@@ -2740,3 +2740,11 @@ their directly loaded fifth float words receive credit. All changed data
 objects, eleven data tests, catalog, full linkage and packed retail ELF pass.
 Catalog: 603,560 code bytes (18.3247%), 84,242 data bytes (12.9990%),
 2,883 reconstructed data source units.
+
+## Runtime signed-byte accessor checkpoint
+
+Recovered two complete 56-byte record accessors with caller-grounded pointer
+inputs, signed-byte returns and native null diagnostic callbacks. Both whole
+EE96/SNAS objects verify exactly. Catalog: 603,672 code bytes (18.3281%),
+9,225 functions; data 84,242 bytes (12.9990%). Full hybrid linkage and packed
+retail ELF identity pass.
