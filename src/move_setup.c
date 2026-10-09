@@ -6,6 +6,9 @@ extern const unsigned int jtbl_004C1580[2] __attribute__((section(".sdata")));
 extern unsigned int data_ff_004C158C[2] __attribute__((section(".sdata")));
 extern unsigned int data_u32_004C1594[1] __attribute__((section(".sdata")));
 extern unsigned int data_ff_004C1598[2] __attribute__((section(".sdata")));
+extern unsigned int data_u32_004C15A0[1] __attribute__((section(".sdata")));
+extern unsigned int data_ff_004C15A4[2] __attribute__((section(".sdata")));
+extern unsigned int data_u32_004C15B8[6] __attribute__((section(".sdata")));
 extern int func_001757E0(u8 *, int, int);
 extern void func_00176160(u8 *, int, int, int);
 extern void func_003092C0(u8 *);
@@ -659,6 +662,46 @@ void func_00309780(u8 *p) {
   break;
  }
  reset_move_counters(p, p[0x1b5], 10);
+}
+
+void func_00309930(u8 *p) {
+ switch (p[0x1fc]) {
+ case 0:
+  p[0x168] = 0;
+  p[0x1b5] = 12;
+  func_001E3710(p, 20);
+  if (p[0x210] == 0)
+   *(const unsigned int **)(p + 0x408) = &data_u32_004C15A0[0];
+  else
+   *(const unsigned int **)(p + 0x408) = &data_u32_004C15B8[0];
+  p[0x1bb] = 0;
+  break;
+ case 1:
+  p[0x168] = 1;
+  p[0x1b5] = 13;
+  func_001E3710(p, 21);
+  if (p[0x210] == 0)
+   *(const unsigned int **)(p + 0x408) = &data_ff_004C15A4[0];
+  else
+   *(const unsigned int **)(p + 0x408) = &data_u32_004C15B8[1];
+  p[0x1bb] = 1;
+  func_00176160(p, 1, 18, 1);
+  break;
+ case 2:
+  p[0x168] = 2;
+  p[0x1b5] = 14;
+  func_001E3710(p, 22);
+  if (p[0x210] == 0)
+   *(const unsigned int **)(p + 0x408) = &data_ff_004C15A4[1];
+  else
+   *(const unsigned int **)(p + 0x408) = &data_u32_004C15B8[2];
+  p[0x1bb] = 2;
+  func_003092C0(p);
+  break;
+ }
+ reset_move_counters(p, p[0x1b5], 11);
+ if (*(signed char *)(p + 0x1ea) & 0x0F)
+  *(signed char *)(p + 0x1ea) -= 1;
 }
 
 void func_00301040(u8 *p) {

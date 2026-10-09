@@ -9101,3 +9101,4 @@ func_00309450,0x00309450,0x10C,src/move_setup.c,complete
 func_00309560,0x00309560,0x104,src/move_setup.c,complete
 func_00309670,0x00309670,0x104,src/move_setup.c,complete
 func_00309780,0x00309780,0x104,src/move_setup.c,complete
+func_00309930,0x00309930,0x168,src/move_setup.c,complete
