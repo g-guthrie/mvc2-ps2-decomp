@@ -2983,3 +2983,13 @@ add48data bytes; unused rows and gaps stay raw. The complete callback source,
 all eight data partitions, catalog, full hybrid linkage and packed retail ELF
 identity pass. Catalog: 606,960 code bytes (18.4279%), 9,265 functions;
 data86,386 bytes (13.3299%), 2,924 reconstructed units.
+
+## Quadrant sine lookup code recovery
+
+Recovered the complete188-byte float-returning lookup at417440 under older
+MWCCPS2. Callers supply16-bit angle values in a32-bit register and consumeF0.
+The table uses an incompletef32array/addressalias only; no extent ordata credit
+is inferred merely from the code registration. Whole object, catalog, full
+hybrid linkage and packed retail ELF identity pass. Catalog:607,148 code bytes
+(18.4336%),9,266functions;data86,386bytes(13.3299%). Table recovery is under
+separate native-index/consumer review.
