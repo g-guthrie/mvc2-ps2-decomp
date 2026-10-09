@@ -2400,3 +2400,12 @@ wrapper now explicitly forwards its real owner pointer; the whole
 22-function source group remains exact. Catalog: 594,472 matching code
 bytes (18.0488%), 9,151 functions; data remains 81,134 bytes (12.5194%).
 All changed whole objects, catalog, and full-image hashes pass.
+
+
+### Owner-state motion and deadline handlers
+
+Five complete handlers add 1,116 exact C bytes, preserving ordered float
+comparisons, signed status gates, object-pointer results, and GP-relative
+state access. Catalog: 595,588 matching code bytes (18.0827%), 9,156
+functions; data remains 81,134 bytes (12.5194%). Each source object,
+catalog validation, and both full-image hashes pass.
