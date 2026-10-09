@@ -3272,3 +3272,9 @@ Recovered the complete 136-byte integrator at 0x002B41F0. Every registered
 function in the changed source object remains exact under its O4/Op
 profile. Code reaches 611,472 bytes (18.5649%), 9,298 functions; data remains
 152,006 bytes (23.4554%).
+
+## Second updated event constructor
+
+Recovered the complete 104-byte constructor at 0x0015BB60 in the existing
+source object. Both constructors remain exact. Code reaches 611,576 bytes
+(18.5681%), 9,299 functions; data remains 152,006 bytes (23.4554%).
