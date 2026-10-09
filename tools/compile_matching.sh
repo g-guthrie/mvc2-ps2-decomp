@@ -2824,6 +2824,17 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
 "$PYTHON" tools/verify_object.py "$BUILD/process_active_runtime_entries_00400AF8.o" \
     private/SLUS_204.86.rom --source src/process_active_runtime_entries_00400AF8.c
 
+"$WIBO" "$SNCPP" -P src/dispatch_runtime_entry_version_00400AD0.c \
+    "$BUILD/dispatch_runtime_entry_version_00400AD0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/dispatch_runtime_entry_version_00400AD0.i" \
+    "$BUILD/dispatch_runtime_entry_version_00400AD0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/dispatch_runtime_entry_version_00400AD0.o" \
+    "$BUILD/dispatch_runtime_entry_version_00400AD0.s"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/dispatch_runtime_entry_version_00400AD0.o" \
+    private/SLUS_204.86.rom --source src/dispatch_runtime_entry_version_00400AD0.c
+
 "$WIBO" "$SNCPP" -P src/zero_runtime_object_00400308.c \
     "$BUILD/zero_runtime_object_00400308.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
