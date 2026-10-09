@@ -2379,3 +2379,14 @@ explicitly forward two arguments with void returns, as native callers
 require. Catalog: 592,960 exact code bytes (18.0029%), 9,141 functions,
 81,034 data bytes (12.5040%). Whole-source, data, catalog, and both
 full-image hash checks pass.
+
+
+### Countdown transitions and bounded float curves
+
+Three phase/countdown handlers and another vector-template initializer
+add 688 code bytes. Three bounded callback curves add 100 data bytes;
+their counters start in cleared objects and leave the lookup states at
+their proven endpoints. Unread trailing words remain raw.
+Catalog: 593,648 matching code bytes (18.0238%), 9,145 functions,
+81,134 reconstructed data bytes (12.5194%). Whole source objects,
+changed data units, catalog, and both full-image hashes pass.

@@ -42,3 +42,21 @@ void func_003CEB10(void)
  *(Vec4 *)(p+0x74)=D_00476890;
  *(void **)(p+0xd8)=D_00476840;
 }
+
+extern void func_003CF790(u8 *);
+extern Vec4 D_00476A90;
+extern u8 D_004768C0[];
+void func_003CED60(void)
+{
+ u8 *p=func_003DA780(0,16,1);
+ if (p==0) return;
+ p[0x13c]=1;
+ *(void (**)(u8 *))(p+16)=func_003CF790;
+ *(f32 *)(p+0x34)=0.0f;
+ *(f32 *)(p+0x38)=0.0f;
+ *(f32 *)(p+0x3c)=0.0f;
+ *(Vec3 *)(p+0x50)=D_00476700;
+ *(u32 *)(p+0xd0)=0x800031;
+ *(Vec4 *)(p+0x74)=D_00476A90;
+ *(void **)(p+0xd8)=D_004768C0;
+}
