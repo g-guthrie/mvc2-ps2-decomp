@@ -2711,3 +2711,10 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
     "$BUILD/prepare_archive_and_pack_00410688.s"
 "$PYTHON" tools/verify_object.py "$BUILD/prepare_archive_and_pack_00410688.o" \
     private/SLUS_204.86.rom --source src/prepare_archive_and_pack_00410688.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_first_frame_reset.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/grok_w7_first_frame_reset.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_first_frame_reset.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_first_frame_reset.c
+
