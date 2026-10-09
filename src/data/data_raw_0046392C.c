@@ -1,0 +1,4 @@
+typedef unsigned char u8;
+u8 data_raw_0046392C[0x4] = {
+    0x92, 0x24, 0x89, 0xBF,
+};
