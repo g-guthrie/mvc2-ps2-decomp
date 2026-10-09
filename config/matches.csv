@@ -9015,3 +9015,4 @@ func_00416670,0x00416670,0x38,src/transition_runtime_state_00416670.c,complete
 func_00416770,0x00416770,0x24,src/scale_runtime_state_value_00416770.c,complete
 func_00416730,0x00416730,0x40,src/normalize_runtime_state_size_00416730.c,complete
 func_002F3410,0x002F3410,0x90,src/grok_w7_state_two_marker_restart.c,complete
+func_002F0480,0x002F0480,0x8C,src/grok_w7_state_entry_setup.c,complete
