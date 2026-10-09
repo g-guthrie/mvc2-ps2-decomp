@@ -5723,7 +5723,9 @@ gAdxRnaReturnValuesFormat_004B6C00,0x004B6C00,0x11,src/data/gAdxRnaReturnValuesF
 data_zero_004B6C11,0x004B6C11,0xF,src/data/data_zero_004B6C11.c,complete,placeholder
 jtbl_004B6C20,0x004B6C20,0x20,src/data/jtbl_004B6C20.c,complete,placeholder
 gPs2Swizzle4x4ByteMap_004B6C40,0x004B6C40,0x10,src/data/gPs2Swizzle4x4ByteMap_004B6C40.c,complete,reconstructed
-data_u8_004B6C50,0x004B6C50,0x288,src/data/data_u8_004B6C50.c,complete,placeholder
+data_raw_004B6C50,0x004B6C50,0x1C0,src/data/data_raw_004B6C50.c,complete,placeholder
+data_u32_004B6E10,0x004B6E10,0x80,src/data/data_u32_004B6E10.c,complete,reconstructed
+data_raw_004B6E90,0x004B6E90,0x48,src/data/data_raw_004B6E90.c,complete,placeholder
 data_u32_004B6ED8,0x004B6ED8,0x10,src/data/data_u32_004B6ED8.c,complete,placeholder
 data_u32_004B6EE8,0x004B6EE8,0x6C,src/data/data_u32_004B6EE8.c,complete,placeholder
 data_u32_004B6F54,0x004B6F54,0xC,src/data/data_u32_004B6F54.c,complete,placeholder
