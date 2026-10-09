@@ -8971,3 +8971,5 @@ func_002E57F0,0x002E57F0,0x114,src/grok_w7_zero_frame_velocity_setup.c,complete
 func_002E5600,0x002E5600,0x5C,src/grok_w7_nonzero_state_launch.c,complete
 func_002E5660,0x002E5660,0xA8,src/grok_w7_negative_floor_rebound.c,complete
 func_00420400,0x00420400,0xB8,src/initialize_effect_parameters_00420400.c,complete
+func_00410468,0x00410468,0x3C,src/count_runtime_chains_00410468.c,complete
+func_004104A8,0x004104A8,0x34,src/count_runtime_chains_00410468.c,complete
