@@ -5,8 +5,8 @@ extern void func_001266A0(u8 *, int, int);
 extern void func_0015D010(u8 *, f32 *);
 extern void func_0018C6E0(u8 *);
 extern int func_001757E0(u8 *, int, int);
-extern int func_001DA7F0(u8 *, int);
-extern void func_00185960(u8 *, int);
+extern u8 *func_001DA7F0(u8 *, int);
+extern void func_00185960(u8 *, u8 *);
 extern void func_00184540(u8 *);
 void func_00308490(u8 *p)
 {
@@ -27,9 +27,9 @@ void func_00308490(u8 *p)
     func_001757E0(p, 21, 14);
     p[0x1B7] = 1;
     {
-        int type = func_001DA7F0(p, 4);
-        if (type != 0)
-            func_00185960(p, type);
+        u8 *event = func_001DA7F0(p, 4);
+        if (event != 0)
+            func_00185960(p, event);
         else
             func_00184540(p);
     }

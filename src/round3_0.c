@@ -601,7 +601,7 @@ void func_002D5910(u8 *p) {
 }
 
 extern s32 func_003B40B0(u8 *, int);
-extern void func_00185960(u8 *, s32);
+extern void func_00185960(u8 *, u8 *);
 void func_00308570(u8 *p, void *unused) {
     u8 *q = p + 696;
     s32 value;
@@ -611,7 +611,7 @@ void func_00308570(u8 *p, void *unused) {
         value = func_003B40B0(p, 1);
         *(s32 *)(p + 20) = value;
         if (value == 0) q[4] = 1;
-        else func_00185960(p, *(s32 *)(p + 20));
+        else func_00185960(p, *(u8 **)(p + 20));
         p[6]++;
         func_001E3210(p, 37);
     }
@@ -626,7 +626,7 @@ void func_003086F0(u8 *p, void *unused) {
         value = func_003B40B0(p, 4);
         *(s32 *)(p + 20) = value;
         if (value == 0) q[4] = 1;
-        else func_00185960(p, *(s32 *)(p + 20));
+        else func_00185960(p, *(u8 **)(p + 20));
         p[6]++;
         func_001E3210(p, 37);
     }

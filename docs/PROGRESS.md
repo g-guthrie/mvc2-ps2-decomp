@@ -2366,3 +2366,16 @@ zero stores, with all affected whole source objects still exact.
 Catalog: 592,412 matching code bytes (17.9862%), 9,138 functions; data
 remains 80,906 bytes (12.4843%). Whole-source proofs, catalog validation,
 and both full-image hashes pass.
+
+
+### Animation transitions, bounded config rows, and pointer APIs
+
+Three complete handlers add 548 code bytes; bounded animation records,
+signed coordinate pairs, and side vectors add 128 data bytes. Sample
+pointers have opaque pointee types because the mutable sample owner
+remains uncredited. The allocation finalizer now returns/links object
+pointers; both affected source objects remain exact. Dispatcher thunks
+explicitly forward two arguments with void returns, as native callers
+require. Catalog: 592,960 exact code bytes (18.0029%), 9,141 functions,
+81,034 data bytes (12.5040%). Whole-source, data, catalog, and both
+full-image hash checks pass.
