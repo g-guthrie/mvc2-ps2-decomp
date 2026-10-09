@@ -490,7 +490,22 @@ void func_00257760(u8 *p) {
     }
 }
 
-extern void func_0024CB40(u8 *);
+extern u8 *func_001E7FD0(u8 *);
+extern void func_00185640(u8 *, u8 *);
+
+void func_0024CB40(u8 *p)
+{
+    u8 *target;
+    func_00175700(p);
+    if (*(s8 *)(p + 337) != 0) {
+        p[6]++;
+        if ((target = func_001E7FD0(p)) == 0)
+            return;
+        p[523] = 194;
+        func_00185640(p, target);
+    }
+}
+
 void func_0024CAC0(u8 *p) {
     p[6]++;
     func_00185490(p);
