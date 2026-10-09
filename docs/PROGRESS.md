@@ -1489,3 +1489,26 @@ remains71,436 bytes (11.0230%).
 
 The targeted functions, affected simple-leaves unit, complete hybrid image,
 and packed executable all verify exactly.
+
+
+### Animation stream consumer and pointer audit
+
+The parser at00134850 consumes payload bytes0–2 and float+4. Byte3 is read
+only when field1 is negative. At each negative terminator it reads only byte0.
+The two direct stream prefixes and the sixteen masked selector pointers now
+reconstruct only those consumed fields. All padding, skipped payload bytes,
+terminator tails, and inter-stream gaps retain raw placeholder owners. The
+empty stream at004BF358 contributes only its terminating signed byte.
+
+The pointer bank uses symbolic references with declarations matching the
+record providers. Its entries and every selected stream have bounded consumer
+proof. This batch adds1,054 data bytes:989 stream bytes,64 pointer bytes, and
+one empty-stream terminator. Current data is72,490 (11.1856%) across2,384
+reconstructed owners. Code stays572,452 (17.3802%). Changed objects, data
+tests, loaded-image hash, and packed-ELF hash pass.
+
+An independent typed file-refill candidate0011F6D8 remains private and
+uncredited. EE GCC2.96 plusSNAS emits372 bytes versus380 retail; relocated
+instruction comparison identifies two missing NOPs and corresponding branch
+layout differences. SN GCC2.95.2 emits376 bytes with additional register/frame
+differences. No instruction or object patches are used.
