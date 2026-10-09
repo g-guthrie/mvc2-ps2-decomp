@@ -1,4 +1,5 @@
 typedef unsigned int u32;
+typedef signed int s32;
 
 struct RuntimeObject
 {
@@ -9,7 +10,7 @@ struct RuntimeObject
     u32 unk10;
 };
 
-extern void func_004120A0(u32 handle);
+extern s32 func_004120A0(u32 handle);
 
 void func_00413DA0(struct RuntimeObject *object)
 {

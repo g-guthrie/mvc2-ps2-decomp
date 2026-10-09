@@ -1,11 +1,4 @@
-typedef unsigned int u32;
-typedef signed int s32;
-
-struct RuntimeOwner
-{
-    u32 unk00[5];
-    u32 stateIndex;
-};
+#include "runtime_state_types.h"
 
 extern const s32 D_004BEDC0[];
 

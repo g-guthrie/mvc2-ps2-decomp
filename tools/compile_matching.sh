@@ -2893,19 +2893,19 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     private/SLUS_204.86.rom --source src/cleanup_runtime_object_00413DA0.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/transition_runtime_state_00416670.c -c -lang c -O3 -sdatathreshold 8 \
+    -i src src/transition_runtime_state_00416670.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/transition_runtime_state_00416670.o"
 "$PYTHON" tools/verify_object.py "$BUILD/transition_runtime_state_00416670.o" \
     private/SLUS_204.86.rom --source src/transition_runtime_state_00416670.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/scale_runtime_state_value_00416770.c -c -lang c -O3 -sdatathreshold 8 \
+    -i src src/scale_runtime_state_value_00416770.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/scale_runtime_state_value_00416770.o"
 "$PYTHON" tools/verify_object.py "$BUILD/scale_runtime_state_value_00416770.o" \
     private/SLUS_204.86.rom --source src/scale_runtime_state_value_00416770.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/normalize_runtime_state_size_00416730.c -c -lang c -O3 -sdatathreshold 8 \
+    -i src src/normalize_runtime_state_size_00416730.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/normalize_runtime_state_size_00416730.o"
 "$PYTHON" tools/verify_object.py "$BUILD/normalize_runtime_state_size_00416730.o" \
     private/SLUS_204.86.rom --source src/normalize_runtime_state_size_00416730.c

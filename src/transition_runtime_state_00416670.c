@@ -1,19 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned int u32;
-
-struct RuntimeState
-{
-    u8 unk00[0x12];
-    u8 flags;
-    u8 type;
-};
-
-struct RuntimeOwner
-{
-    u32 unk00;
-    u32 unk04;
-    struct RuntimeState *state;
-};
+#include "runtime_state_types.h"
 
 void func_00416670(struct RuntimeOwner *owner)
 {
