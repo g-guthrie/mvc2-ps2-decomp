@@ -8,7 +8,7 @@ extern void func_00184540();
 extern void func_001E3210();
 extern void func_001266A0();
 extern int func_001757E0(u8 *, int, int);
-extern void func_0011D8F8();
+extern void *func_0011D8F8(void *, int, unsigned int);
 
 void func_00212230(u8 *p) { p[700] = 255; func_00175700(p); }
 

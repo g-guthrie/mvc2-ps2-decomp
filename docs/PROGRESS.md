@@ -2665,3 +2665,11 @@ destination-pointer return and unsigned byte-count interface: grok_r2_0014,
 grok_w3_0026, grok_w5_0018, grok_w3_0024 and grok_r2_0024. All five complete
 objects verify exactly. Full hybrid linkage and packed retail ELF identity pass.
 Code remains 602,756 bytes (18.3003%); no new coverage credit is claimed.
+
+## Typed memory-fill tail declarations
+
+Replaced the remaining five loose memory-fill declarations with the verified
+three-argument destination-pointer API in tail_call_leaves, leaves7, leaves13,
+leaves20 and grok_w5_0028. Every complete source object verifies exactly. Full
+hybrid linkage and packed retail ELF identity pass. This interface correction
+adds no coverage credit; code remains 602,756 bytes (18.3003%).

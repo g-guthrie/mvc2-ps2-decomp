@@ -6,7 +6,7 @@ extern void func_00175C00();
 extern void func_003DAA40();
 extern int func_001757E0(u8 *, int, int);
 extern void func_003C88C0(u8 *);
-extern void func_0011D8F8();
+extern void *func_0011D8F8(void *, int, unsigned int);
 extern void func_003DCDC0();
 extern void func_003F5270();
 extern void func_00239A90(u8 *);

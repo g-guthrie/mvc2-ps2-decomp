@@ -8,7 +8,7 @@ typedef unsigned int u32;
 #define I(p, o) (*(s32 *)((u8 *)(p) + (o)))
 
 extern void func_00178F20();
-extern void func_0011D8F8();
+extern void *func_0011D8F8(void *, int, unsigned int);
 extern s32 func_00175700();
 extern int func_001757E0(u8 *, int, int);
 extern void func_00175C00();
