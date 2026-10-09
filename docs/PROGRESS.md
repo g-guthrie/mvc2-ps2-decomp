@@ -3162,3 +3162,9 @@ Recovered the complete 156-byte dispatcher at 0x00411978 under EE GCC
 original diagnostic conditions. Whole-object verification passes. Code is
 610,148 bytes (18.5247%), 9,285 functions; data remains 151,986 bytes
 (23.4523%).
+
+## Owner-context motion update
+
+Recovered the complete 124-byte function at 0x002E4690. All eight registered
+functions in its source object remain exact. Code reaches 610,272 bytes
+(18.5285%), 9,286 functions; data remains 151,986 bytes (23.4523%).
