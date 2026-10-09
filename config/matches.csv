@@ -9172,3 +9172,4 @@ func_00306D20,0x00306D20,0x94,src/grok_w7_context_result_transition.c,complete
 func_00306E80,0x00306E80,0x9C,src/grok_w7_motion_limit_callback.c,complete
 func_00306F20,0x00306F20,0xBC,src/grok_w7_grounded_result_reset.c,complete
 func_003070F0,0x003070F0,0xCC,src/grok_w7_contextual_grounded_reset.c,complete
+func_003076B0,0x003076B0,0xA8,src/grok_w7_motion_timer_warning.c,complete
