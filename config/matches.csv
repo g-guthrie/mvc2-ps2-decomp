@@ -9077,3 +9077,4 @@ func_002F5EE0,0x002F5EE0,0x64,src/grok_w7_negative_result_reset.c,complete
 func_0011CB70,0x0011CB70,0x54,src/sdk_default_heap_0011CB70.c,complete
 func_0011CBC8,0x0011CBC8,0x48,src/sdk_default_heap_0011CB70.c,complete
 func_003DE480,0x003DE480,0xA4,src/transform_homogeneous_point_003DE480.c,complete
+func_002F8E40,0x002F8E40,0x68,src/grok_w7_velocity_transfer_state.c,complete
