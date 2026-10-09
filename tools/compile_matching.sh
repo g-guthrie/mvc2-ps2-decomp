@@ -2847,3 +2847,12 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
     "$BUILD/initialize_runtime_state_0040FEA8.s"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_runtime_state_0040FEA8.o" \
     private/SLUS_204.86.rom --source src/initialize_runtime_state_0040FEA8.c
+
+"$WIBO" "$SNCPP" -P src/count_runtime_span_0040FF88.c \
+    "$BUILD/count_runtime_span_0040FF88.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/count_runtime_span_0040FF88.i" "$BUILD/count_runtime_span_0040FF88.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/count_runtime_span_0040FF88.o" \
+    "$BUILD/count_runtime_span_0040FF88.s"
+"$PYTHON" tools/verify_object.py "$BUILD/count_runtime_span_0040FF88.o" \
+    private/SLUS_204.86.rom --source src/count_runtime_span_0040FF88.c
