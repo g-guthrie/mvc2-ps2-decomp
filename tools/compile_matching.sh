@@ -4281,3 +4281,9 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     -o "$BUILD/copy_animation_records_00175B40.o"
 "$PYTHON" tools/verify_object.py "$BUILD/copy_animation_records_00175B40.o" \
     private/SLUS_204.86.rom --source src/copy_animation_records_00175B40.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/create_motion_event_0039E4E0.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/create_motion_event_0039E4E0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/create_motion_event_0039E4E0.o" \
+    private/SLUS_204.86.rom --source src/create_motion_event_0039E4E0.c

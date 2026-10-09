@@ -3118,3 +3118,12 @@ Recovered the complete 192-byte animation record copy helper at 0x00175B40
 with MWCCPS2 3.0 O3/Op, and the 196-byte dispatcher at 0x0026FDE0. Whole
 source-object verification passes. Code reaches 608,968 bytes (18.4889%)
 across 9,279 functions; data remains 151,986 bytes (23.4523%).
+
+## Motion event allocation
+
+Recovered the complete 112-byte child-event allocator at 0x0039E4E0.
+Its allocation failure is explicit. The proposed four-record motion stream
+at 0x00472854 remains uncredited: its consumer advances the pointer before
+allocation, but decrements the record count only on success. Whole-object
+verification passes. Code reaches 609,080 bytes (18.4923%), 9,280 functions;
+data remains 151,986 bytes (23.4523%).
