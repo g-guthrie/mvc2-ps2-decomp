@@ -3003,3 +3003,14 @@ The complete source object, catalog, full hybrid linkage and packed retail
 ELF identity pass. Catalog:607,252 code bytes(18.4368%),9,267functions;
 data remains86,386bytes(13.3299%). The separately bounded quarter-wave data
 recovery is queued for independent root verification.
+
+## Quarter-wave table independent verification
+
+Reconstructed65,540 bytes across16,385 finite monotone f32 samples selected
+by the native quadrant masks. Root checked contiguouscoverage496A50..4A6A54,
+all22 float spans and both rawprefix/gap units against retail. Previously
+unowned six-sample bytes are included; adjacent descriptors stay separate.
+All24 partition objects, eleven data tests, catalog, full hybrid linkage and
+packed retail ELF identity pass. Data:151,926bytes(23.4431%),2,946
+reconstructedunits. Code remains607,252bytes(18.4368%); the requested push
+threshold still follows verifiedcode progress, next21.0711%.
