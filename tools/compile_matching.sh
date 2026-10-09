@@ -3282,3 +3282,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/random_state_step.o"
 "$PYTHON" tools/verify_object.py "$BUILD/random_state_step.o" \
     private/SLUS_204.86.rom --source src/random_state_step.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/get_format_table_count_003F13A0.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/get_format_table_count_003F13A0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/get_format_table_count_003F13A0.o" \
+    private/SLUS_204.86.rom --source src/get_format_table_count_003F13A0.c

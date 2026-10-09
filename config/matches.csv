@@ -9115,3 +9115,4 @@ func_0030DEF0,0x0030DEF0,0xE4,src/grok_w7_velocity_sign_reset_transition.c,compl
 func_0030E3A0,0x0030E3A0,0x9C,src/grok_w7_timed_transition_reset.c,complete
 func_003F1410,0x003F1410,0x54,src/get_format_word_by_index_003F1410.c,complete
 func_00174170,0x00174170,0x48,src/random_state_step.c,complete
+func_003F13A0,0x003F13A0,0x3C,src/get_format_table_count_003F13A0.c,complete
