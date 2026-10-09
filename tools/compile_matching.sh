@@ -2838,3 +2838,12 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
     "$BUILD/merge_runtime_span_00410290.s"
 "$PYTHON" tools/verify_object.py "$BUILD/merge_runtime_span_00410290.o" \
     private/SLUS_204.86.rom --source src/merge_runtime_span_00410290.c
+
+"$WIBO" "$SNCPP" -P src/initialize_runtime_state_0040FEA8.c \
+    "$BUILD/initialize_runtime_state_0040FEA8.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/initialize_runtime_state_0040FEA8.i" "$BUILD/initialize_runtime_state_0040FEA8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/initialize_runtime_state_0040FEA8.o" \
+    "$BUILD/initialize_runtime_state_0040FEA8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_runtime_state_0040FEA8.o" \
+    private/SLUS_204.86.rom --source src/initialize_runtime_state_0040FEA8.c
