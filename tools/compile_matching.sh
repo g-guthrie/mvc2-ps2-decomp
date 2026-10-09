@@ -3801,3 +3801,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_signed_context_handoff.o" private/SLUS_204.86.rom \
     --source src/grok_w7_signed_context_handoff.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_timered_effect_frame_increment.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_timered_effect_frame_increment.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_timered_effect_frame_increment.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_timered_effect_frame_increment.c

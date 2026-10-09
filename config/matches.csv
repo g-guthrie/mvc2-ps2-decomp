@@ -9195,3 +9195,4 @@ func_0040EDE0,0x0040EDE0,0x1C,src/clamp_runtime_state_value_0040EDE0.c,complete
 func_00400D20,0x00400D20,0x18,src/runtime_message_callbacks_00400D20.c,complete
 func_00400EF0,0x00400EF0,0x18,src/runtime_message_callbacks_00400D20.c,complete
 func_00405D98,0x00405D98,0x2C,src/dispatch_runtime_message_00405D98.c,complete
+func_00303060,0x00303060,0x64,src/grok_w7_timered_effect_frame_increment.c,complete
