@@ -2641,3 +2641,11 @@ Counter resets and zero/negative fills preserve native ordering and extents;
 its no-argument signature is grounded by the native 12F4C0 caller. Whole-object,
 catalog, full relink and packed retail ELF verification pass. Catalog: 602,756
 code bytes (18.3003%), 9,214 functions; data 83,806 bytes (12.9317%).
+
+## Memory-fill declaration correction
+
+Corrected grok_tail_r2 to use the verified destination-pointer return and
+unsigned byte-count contract of func_0011D8F8. Removed an unused conflicting
+declaration from round2_pairs1. Both whole source objects verify exactly;
+full hybrid linkage and packed retail ELF identity pass. Code remains
+602,756 bytes (18.3003%); no additional percentage credit is claimed.
