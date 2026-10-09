@@ -4530,7 +4530,8 @@ data_u32_004A6DB8,0x004A6DB8,0x8,src/data/data_u32_004A6DB8.c,complete,placehold
 data_f32_one_004A6DC0,0x004A6DC0,0x8,src/data/data_f32_one_004A6DC0.c,complete,placeholder
 data_u32_004A6DC8,0x004A6DC8,0x18,src/data/data_u32_004A6DC8.c,complete,placeholder
 data_zero_004A6DE0,0x004A6DE0,0x10,src/data/data_zero_004A6DE0.c,complete,placeholder
-data_u32_004A6DF0,0x004A6DF0,0xD8,src/data/data_u32_004A6DF0.c,complete,placeholder
+data_s16_004A6DF0,0x004A6DF0,0x80,src/data/data_s16_004A6DF0.c,complete,reconstructed
+data_raw_004A6E70,0x004A6E70,0x58,src/data/data_raw_004A6E70.c,complete,placeholder
 data_f32_one_004A6EC8,0x004A6EC8,0x8,src/data/data_f32_one_004A6EC8.c,complete,placeholder
 effect_parameters_004A6ED0,0x004A6ED0,0x10,src/data/effect_parameters_004A6ED0.c,complete,reconstructed
 data_f32_one_004A6EE0,0x004A6EE0,0x8,src/data/data_f32_one_004A6EE0.c,complete,placeholder
