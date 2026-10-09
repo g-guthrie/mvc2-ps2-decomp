@@ -30,6 +30,7 @@ extern void func_003F0E60();
 extern void func_0040EF48();
 extern void func_00416A50();
 s32 func_003F0A20(s32 *p, s32 i, s32 *out);
+extern s32 func_0010D5C0(s32, s32, u32);
 
 extern u8 D_0038A680[];
 extern u8 D_004D18D3;
@@ -154,4 +155,19 @@ s32 func_003F0A20(s32 *p, s32 i, s32 *out) {
 s32 func_003FF338(void) {
     func_0040EF48();
     return 0;
+}
+
+typedef struct FormatDescriptor {
+    u8 output[8];
+    u32 length;
+} FormatDescriptor;
+
+void func_003ED820(s32 a0, s32 a1, FormatDescriptor *descriptor)
+{
+    if (func_0010D5C0(a0, a1, descriptor->length) == 1) {
+        descriptor->output[0] = 1;
+        descriptor->output[1] = 10;
+        descriptor->output[2] = a0;
+        descriptor->output[3] = a1;
+    }
 }
