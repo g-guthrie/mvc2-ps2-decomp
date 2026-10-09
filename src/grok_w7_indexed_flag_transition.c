@@ -1,7 +1,8 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
-typedef unsigned int u32;
+typedef signed char s8;
 typedef signed int s32;
+typedef unsigned int u32;
 typedef float f32;
 typedef union { f32 value; u32 bits; } FloatBits;
 typedef struct { u8 prefix[0x60]; FloatBits f60; u8 padding[8]; FloatBits f6c; } ActorView;
@@ -9,11 +10,13 @@ typedef struct { u8 prefix[0x60]; FloatBits f60; u8 padding[8]; FloatBits f6c; }
 extern u8 D_004C1320[] __attribute__((section(".sdata")));
 extern u8 D_004C1310[] __attribute__((section(".sdata")));
 extern u8 data_u32_0045BC50[16];
+extern u8 D_004C1318[] __attribute__((section(".sdata")));
 extern int func_001757E0(u8 *, int, int);
 extern void func_002F4FC0(u8 *, void *);
 extern void func_001266A0(u8 *, int, int);
 extern int func_00175700(u8 *);
 extern void func_002F4B20(u8 *, void *);
+extern void func_002F4BB0(u8 *, void *);
 
 void func_002F4F40(u8 *p, void *q)
 {
@@ -44,4 +47,16 @@ void func_002F4A50(u8 *p, void *q, int state)
     p[6] = 6;
     func_00175700(p);
     func_002F4B20(p, q);
+}
+
+void func_002F4B30(u8 *p, void *q)
+{
+    s32 half;
+
+    ((s8 *)p)[0x1b1] = -128;
+    p[0x201] = 0;
+    half = *(u16 *)q / 2;
+    func_001757E0(p, 21, D_004C1318[half]);
+    p[6]++;
+    func_002F4BB0(p, q);
 }
