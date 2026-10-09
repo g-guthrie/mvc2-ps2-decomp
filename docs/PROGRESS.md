@@ -3133,3 +3133,10 @@ data remains 151,986 bytes (23.4523%).
 Recovered the complete 196-byte callback at 0x002C1670. All registered
 functions in its source object verify exactly. Code reaches 609,276 bytes
 (18.4982%), 9,281 functions; data remains 151,986 bytes (23.4523%).
+
+## Motion stream consumer
+
+Recovered the complete 260-byte consumer at 0x0039EE60, including the
+stream advance before allocation and the success-only record decrement.
+Whole-object verification passes. Code reaches 609,536 bytes (18.5061%),
+9,282 functions; data remains 151,986 bytes (23.4523%).
