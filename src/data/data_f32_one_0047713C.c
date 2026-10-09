@@ -1,3 +1,4 @@
+/* Held from reconstructed credit: selector-nine producer path is not established. */
 typedef float f32;
 
 /* func_003D0EE0 selects this row when D_004C27D0 is nine;

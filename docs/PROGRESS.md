@@ -2781,3 +2781,12 @@ interior address alias only; no existing placeholder data gains credit. Whole
 EE96/SNAS object, catalog, full linkage and packed retail ELF identity pass.
 Catalog: 603,792 code bytes (18.3317%), 9,228 functions; data remains 84,278
 bytes (13.0046%).
+
+## Halfword copy and six-step scalar table checkpoint
+
+Recovered the 36-byte record halfword copy with ordinary overlapping-pointer
+semantics, and the 24-byte six-step scalar table with initialized counters and
+frame-dispatched task groups. Both objects, catalog, full hybrid linkage and
+packed retail ELF identity pass. Held twelve bytes at47713C because the selector
+nine producer path remains conditional. Catalog: 603,828 code bytes (18.3328%),
+9,229 functions; data 84,290 bytes (13.0064%), 2,886 reconstructed units.
