@@ -2209,3 +2209,12 @@ the signed countdown, float-word representations, and native callback
 order. Catalog: 587,720 linked matching code bytes (17.8438%), 9,104
 functions; data remains 79,927 bytes (12.3332%). All three whole source
 objects, catalog validation, and both full-image hashes pass.
+
+
+### Masked effect reset
+
+The 196-byte handler matches with the effect helper’s canonical byte
+arguments, preserving the signed result gate and independent flag clears.
+Catalog: 587,916 linked matching code bytes (17.8497%), 9,105 functions;
+data remains 79,927 bytes (12.3332%). Whole-source verification, catalog
+validation, and both full-image hashes pass.

@@ -5,7 +5,7 @@ typedef float f32;
 typedef union { u32 bits; f32 value; } FloatBits;
 extern int func_00175700(u8 *);
 extern void func_001843A0(u8 *);
-extern void func_003B38F0(u8 *, int, int);
+extern void func_003B38F0(u8 *, u8, u8);
 void func_00301AC0(u8 *p)
 {
     if ((s8)func_00175700(p) < 0) {
