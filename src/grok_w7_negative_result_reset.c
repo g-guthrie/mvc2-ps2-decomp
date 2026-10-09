@@ -10,6 +10,7 @@ extern int func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_00126400(void);
 extern void func_00184540(u8 *);
+extern void func_001843A0(u8 *);
 extern void func_00183920(u8 *, f32 *);
 void func_002F48D0(u8 *p)
 {

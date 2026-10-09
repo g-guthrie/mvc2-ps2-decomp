@@ -2000,3 +2000,14 @@ allocated pointer, matching the caller that tests allocation success.
 All affected whole sources retain exact bytes. Catalog: 582,020 linked
 matching code bytes (17.6707%), 9,065 functions; data remains 79,356 bytes
 (12.2451%). Catalog validation and both full-image hashes pass.
+
+
+### Reset callback family and sole SYS label
+
+Three exact handlers add 316 code bytes within the four-function reset
+source. Eight native callers and the absence of stored function pointers
+support the sole selected label slot; only its symbolic pointer and SYS
+string add eight reconstructed bytes. Other slots and surrounding bytes
+stay raw. Catalog: 582,336 linked matching code bytes (17.6803%), 9,068
+functions; 79,364 reconstructed data bytes (12.2463%). Affected whole
+sources and data objects, catalog, and both full-image hashes pass.
