@@ -1870,3 +1870,14 @@ The native loop reads exactly 31 signed words, offsets 0..0x78 of the
 This adds 124 reconstructed bytes. Catalog: 580,360 linked matching code
 bytes (17.6203%), 74,988 reconstructed data bytes (11.5711%). All three
 split objects, catalog validation, and both full-image hashes pass.
+
+
+### Indexed actor transition
+
+The 92-byte indexed transition helper now matches. Its GP-addressed byte
+table is declared as an array, rather than indexing beyond a scalar;
+the unresolved extent receives no data credit. Callback argument types
+match the existing owner-state dispatch table. Catalog: 580,452 linked
+matching code bytes (17.6231%), 9,052 functions; data remains 74,988 bytes
+(11.5711%). Native object, catalog validation, and both full-image hashes
+pass.
