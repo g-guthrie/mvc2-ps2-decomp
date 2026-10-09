@@ -2564,3 +2564,12 @@ shared object verifies both complete spans. Catalog: 601,780 code bytes
 (18.2707%), 9,208 functions; data remains 83,806 bytes (12.9317%).
 All 34 project tests, assembly splitting, catalog validation and full retail
 link/packed ELF identity pass.
+
+## Timed motion acceleration checkpoint
+
+Recovered the complete 168-byte timed motion acceleration callback. Its
+callback signature is grounded by the native table and dispatcher; floating
+point motion and signed timer behavior are preserved. The entire shared object
+verifies all 31 credited functions after the addition. Catalog: 601,948 code
+bytes (18.2758%), 9,209 functions. Data remains 83,806 bytes (12.9317%).
+Full hybrid relink and packed ELF identity match retail.
