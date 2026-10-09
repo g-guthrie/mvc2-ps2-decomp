@@ -6055,6 +6055,7 @@ func_00400AF8,0x00400AF8,0x60,src/process_active_runtime_entries_00400AF8.c,comp
 func_00400308,0x00400308,0x1C,src/zero_runtime_object_00400308.c,complete
 func_00401920,0x00401920,0x30,src/read_runtime_mode_00401920.c,complete
 func_00401F38,0x00401F38,0x4C,src/read_versioned_runtime_state_00401F38.c,complete
+func_00405350,0x00405350,0x30,src/read_runtime_record_fields_00405350.c,complete
 func_00280E70,0x00280E70,0x4c,src/grok_r2_0028.c,complete
 func_002824F0,0x002824F0,0x4c,src/grok_r2_0028.c,complete
 func_00285670,0x00285670,0x50,src/grok_r2_0028.c,complete
