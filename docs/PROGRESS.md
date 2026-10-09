@@ -2120,3 +2120,13 @@ for correction: native reads include the 0x5B pair, and its five-entry
 loop reads only first words. Catalog: 585,032 linked matching code bytes
 (17.7622%), 79,642 reconstructed data bytes (12.2892%). Changed data
 objects, catalog validation, and both full-image hashes pass.
+
+
+### Format record count and callback counter
+
+Two exact helpers add 116 code bytes. The record lookup declaration
+matches the existing signed-word/tag interface, and the callback walker
+uses its caller-proven object pointer. Catalog: 585,148 linked matching
+code bytes (17.7657%), 9,093 functions; data remains 79,642 bytes
+(12.2892%). Both whole sources, catalog validation, and both full-image
+hashes pass.
