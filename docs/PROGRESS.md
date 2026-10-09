@@ -2341,3 +2341,16 @@ The complete 180-byte reset handler matches its flag gate, state clear,
 and aligned three-word position representation. Catalog: 590,524 exact
 code bytes (17.9289%), 9,124 functions, 80,778 reconstructed data bytes
 (12.4645%). Whole-object, catalog, and both full-image hashes pass.
+
+
+### Flag updates, randomized state, and object vector initialization
+
+Six complete functions add 800 code bytes; consumed motion-pattern bytes
+and float vector templates add 128 data bytes. The randomized initializer
+uses MWCCPS2 3.0, while the vector constructors use ordinary struct copies.
+The random wrapper now has its actual no-argument integer-return API.
+Identical symbol duplicates and stale residual aliases were removed; five
+intentional same-address alias pairs are explicitly marked for the splitter.
+Splitting, baseline relinking, all 45 tests, changed whole objects, catalog,
+and both hybrid hashes pass. Catalog: 591,324 code bytes (17.9532%),
+9,130 functions, 80,906 data bytes (12.4843%).

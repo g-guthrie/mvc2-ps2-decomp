@@ -3380,3 +3380,9 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     -o "$BUILD/randomized_object_state.o"
 "$PYTHON" tools/verify_object.py "$BUILD/randomized_object_state.o" \
     private/SLUS_204.86.rom --source src/randomized_object_state.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_vector_template.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/initialize_vector_template.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_vector_template.o" \
+    private/SLUS_204.86.rom --source src/initialize_vector_template.c
