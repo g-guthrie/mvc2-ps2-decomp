@@ -4251,3 +4251,9 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     -o "$BUILD/lookup_runtime_sine_00417440.o"
 "$PYTHON" tools/verify_object.py "$BUILD/lookup_runtime_sine_00417440.o" \
     private/SLUS_204.86.rom --source src/lookup_runtime_sine_00417440.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/reset_runtime_global_state_0041F860.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/reset_runtime_global_state_0041F860.o"
+"$PYTHON" tools/verify_object.py "$BUILD/reset_runtime_global_state_0041F860.o" \
+    private/SLUS_204.86.rom --source src/reset_runtime_global_state_0041F860.c
