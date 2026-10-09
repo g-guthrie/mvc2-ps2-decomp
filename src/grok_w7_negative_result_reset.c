@@ -7,6 +7,7 @@ typedef union { f32 value; u32 bits; } FloatBits;
 typedef struct { u8 prefix[0x5c]; FloatBits f5c; FloatBits f60; u32 padding; FloatBits f68; FloatBits f6c; } ActorView;
 extern void func_002F4710(u8 *);
 extern int func_00175700(u8 *);
+extern int func_001757E0(u8 *, int, int);
 extern void func_00126400(void);
 extern void func_00184540(u8 *);
 void func_002F48D0(u8 *p)
@@ -24,4 +25,32 @@ void func_002F48D0(u8 *p)
     actor->f6c.bits = 0;
     actor->f6c.bits = 0xBF4DB6DB;
     func_00184540(p);
+}
+
+void func_002F5330(u8 *p, void *q)
+{
+    s8 result = (s8)func_00175700(p);
+    ActorView *actor = (ActorView *)p;
+    if (result < 0) {
+        func_00126400();
+        actor->f5c.bits = 0;
+        actor->f60.bits = 0;
+        actor->f68.bits = 0;
+        actor->f6c.bits = 0;
+        actor->f6c.bits = 0xBF4DB6DB;
+        func_00184540(p);
+    }
+}
+
+void func_002F52C0(u8 *p, void *q)
+{
+    p[0x40d] = 0;
+    p[0x40c] = 0;
+    p[0x33b] = 0;
+    p[0x33c] = 0;
+    p[6]++;
+    ((s8 *)p)[0x1b1] = -128;
+    p[0x201] = 0;
+    func_001757E0(p, 21, 25);
+    func_002F5330(p, q);
 }
