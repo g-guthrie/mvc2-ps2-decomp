@@ -1242,6 +1242,7 @@ func_00226CF0,0x00226CF0,0x20,src/indirect_dispatch.c,complete
 func_00226DA0,0x00226DA0,0x20,src/composite_dispatch_heads.c,complete
 func_00226ED0,0x00226ED0,0x3c,src/signed_result_handlers.c,complete
 func_00226F10,0x00226F10,0x34,src/sequential_calls.c,complete
+func_00226F50,0x00226F50,0x84,src/sequential_calls.c,complete
 func_00226FE0,0x00226FE0,0x3c,src/signed_result_handlers.c,complete
 func_00227390,0x00227390,0x2c,src/sequential_calls.c,complete
 func_002273C0,0x002273C0,0x20,src/composite_dispatch_heads.c,complete

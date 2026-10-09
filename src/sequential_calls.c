@@ -24,7 +24,16 @@ extern void func_002174A0();
 extern void func_0021E530();
 extern void func_00223DD0();
 extern void func_00226D10();
-extern void func_00226F50();
+extern void func_001863F0(u8 *);
+extern void (*jtbl_004517A0[])(u8 *);
+void func_00226F50(u8 *p) {
+    *(float *)(p + 52) += *(float *)(p + 92);
+    *(float *)(p + 92) += *(float *)(p + 104);
+    *(float *)(p + 56) += *(float *)(p + 96);
+    *(float *)(p + 96) += *(float *)(p + 108);
+    func_001863F0(p);
+    jtbl_004517A0[*(unsigned int *)(p + 820)](p);
+}
 extern void func_0022DC20();
 extern void func_0022DD70();
 extern void func_00234530();
