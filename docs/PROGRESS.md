@@ -2431,3 +2431,14 @@ contract. The complete 228-byte context handler matches, and CA70 adds
 zero stores have explicit types. Catalog: 595,816 code bytes (18.0896%),
 9,157 functions, 81,930 data bytes (12.6423%). Both full caller objects,
 the isolated handler, table relocations, catalog, and both image hashes pass.
+
+
+### Resource status, descriptors, and activation callback
+
+Four complete functions add 548 exact C bytes. Pool-release status is
+forwarded through its real one-handle wrappers; the native upper-bound
+behavior is preserved. The activation gate and tail wrapper now use the
+actor-only API established by their callback table, with unsupported
+extra parameters removed. Catalog: 596,364 code bytes (18.1062%),
+9,161 functions, 81,930 data bytes (12.6423%). All affected whole
+objects, catalog, and both full-image hash checks pass.

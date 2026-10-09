@@ -19,7 +19,7 @@ typedef struct RuntimePool {
 } RuntimePool;
 
 extern void func_0039E450();
-extern s32 func_003DD020();
+extern s32 func_003DD020(s32 handle);
 extern void *func_003F09C0(void *, u32, s32);
 extern void func_003F0A40();
 extern void func_003F0A60();
@@ -141,8 +141,8 @@ void func_003DCF90(void *p) { func_003F0A20((s32 *)D_0062C020, 0, p); }
 void func_003DCFB0(void *p) { func_003F0A40(D_0062C020, p); }
 void *func_003DCFC0(u32 size) { return func_003F09C0(D_0062C020, size, 1); }
 
-s32 func_003DE860(void) {
-    func_003DD020();
+s32 func_003DE860(s32 handle) {
+    func_003DD020(handle);
     return 1;
 }
 
