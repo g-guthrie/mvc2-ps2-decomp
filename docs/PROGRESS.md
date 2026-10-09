@@ -2974,3 +2974,12 @@ the floor-clamped update and indexed state dispatch. The complete shared source
 file verifies all registered functions with its established compiler profile.
 Catalog, full hybrid linkage and packed retail ELF identity pass. Catalog:
 606,732 code bytes (18.4210%), 9,263 functions; data86,338 bytes (13.3224%).
+
+## Phase callbacks and selected placement vectors
+
+Integrated two whole exact phase callbacks (132,96bytes) while preserving
+existing source functions during conflict resolution. Selected vector rows0/2
+add48data bytes; unused rows and gaps stay raw. The complete callback source,
+all eight data partitions, catalog, full hybrid linkage and packed retail ELF
+identity pass. Catalog: 606,960 code bytes (18.4279%), 9,265 functions;
+data86,386 bytes (13.3299%), 2,924 reconstructed units.
