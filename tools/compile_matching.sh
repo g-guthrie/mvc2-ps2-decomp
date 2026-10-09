@@ -2932,6 +2932,13 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     --source src/grok_w7_signed_flag_spawn_position.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_timed_variant_transitions.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_timed_variant_transitions.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_timed_variant_transitions.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_timed_variant_transitions.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w7_state_two_marker_restart.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w7_state_two_marker_restart.o"
 "$PYTHON" tools/verify_object.py \
