@@ -1881,3 +1881,12 @@ match the existing owner-state dispatch table. Catalog: 580,452 linked
 matching code bytes (17.6231%), 9,052 functions; data remains 74,988 bytes
 (11.5711%). Native object, catalog validation, and both full-image hashes
 pass.
+
+
+### Renderer position vector
+
+Direct native float loads prove all three components at 0x4B31EC.
+Only that 12-byte vector is reconstructed; the remaining 0x170-byte bank
+tail stays raw. Catalog: 580,452 linked matching code bytes (17.6231%),
+75,000 reconstructed data bytes (11.5729%). Both split objects, catalog
+validation, and both full-image hashes pass.
