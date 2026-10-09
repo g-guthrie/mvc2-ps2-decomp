@@ -3082,3 +3082,10 @@ reconstructed units. Code remains 608,128 bytes (18.4634%).
 
 The proposed signed-delta bank at 0x004642C0 remains a placeholder because
 animation asset copies overwrite its selector and its range is unproven.
+
+## Backend notice initializer
+
+Recovered the complete 124-byte initializer at 0x004207C0, using the existing
+backend state type and menu notice interface. Whole-object relocation
+verification passes. Code reaches 608,252 bytes (18.4672%) across 9,275
+functions. Data remains 151,998 bytes (23.4542%).
