@@ -1314,7 +1314,7 @@ jtbl_00448CC0,0x00448CC0,0x24,.rodata,src/data/jtbl_00448CC0.c,typed_state_callb
 jtbl_00448CE8,0x00448CE8,0xC,.rodata,src/data/jtbl_00448CE8.c,typed_state_callback_table
 data_u32_00448CF4,0x00448CF4,0xC,.data,src/data/data_u32_00448CF4.c,initialized_u32_table
 gMvc2StageHandlerTable_00448D00,0x00448D00,0xEC,.rodata,src/data/mvc2_stage_handler_table_00448D00.c,mode_indexed_stage_handler_dispatch
-data_u32_00448DF0,0x00448DF0,0x40,.data,src/data/data_u32_00448DF0.c,initialized_u32_table
+data_s8_00448DF0,0x00448DF0,0x40,.data,src/data/data_s8_00448DF0.c,indexed_s8_table
 jtbl_00448E30,0x00448E30,0x1c,.rodata,src/data/jtbl_00448E30.c,jump_table
 jtbl_00448E50,0x00448E50,0x8c,.rodata,src/data/jtbl_00448E50.c,jump_table
 data_u32_00448EE0,0x00448EE0,0x30,.data,src/data/data_u32_00448EE0.c,initialized_u32_table

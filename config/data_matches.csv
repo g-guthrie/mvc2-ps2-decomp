@@ -1314,7 +1314,7 @@ jtbl_00448CC0,0x00448CC0,0x24,src/data/jtbl_00448CC0.c,complete,reconstructed
 jtbl_00448CE8,0x00448CE8,0xC,src/data/jtbl_00448CE8.c,complete,reconstructed
 data_u32_00448CF4,0x00448CF4,0xC,src/data/data_u32_00448CF4.c,complete,placeholder
 gMvc2StageHandlerTable_00448D00,0x00448D00,0xEC,src/data/mvc2_stage_handler_table_00448D00.c,complete,reconstructed
-data_u32_00448DF0,0x00448DF0,0x40,src/data/data_u32_00448DF0.c,complete,placeholder
+data_s8_00448DF0,0x00448DF0,0x40,src/data/data_s8_00448DF0.c,complete,reconstructed
 jtbl_00448E30,0x00448E30,0x1c,src/data/jtbl_00448E30.c,complete,placeholder
 jtbl_00448E50,0x00448E50,0x8c,src/data/jtbl_00448E50.c,complete,placeholder
 data_u32_00448EE0,0x00448EE0,0x30,src/data/data_u32_00448EE0.c,complete,placeholder
