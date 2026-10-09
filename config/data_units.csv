@@ -5541,8 +5541,9 @@ data_u32_004B402C,0x004B402C,0xC,.data,src/data/data_u32_004B402C.c,filled_u32_c
 data_u32_004B4038,0x004B4038,0x1C,.data,src/data/data_u32_004B4038.c,initialized_u32_table
 data_u32_004B4054,0x004B4054,0xC,.data,src/data/data_u32_004B4054.c,filled_u32_constant
 data_f32_one_004B4060,0x004B4060,0x40,.data,src/data/data_f32_one_004B4060.c,filled_f32_one
-data_u32_004B40C0,0x004B40C0,0x24,.data,src/data/data_u32_004B40C0.c,initialized_u32_table
-data_u32_004B40E4,0x004B40E4,0x10,.data,src/data/data_u32_004B40E4.c,filled_u32_constant
+data_f32_004B40C0,0x004B40C0,0x24,.data,src/data/data_f32_004B40C0.c,initialized_f32_table
+data_f32_004B40E4,0x004B40E4,0xC,.data,src/data/data_f32_004B40E4.c,initialized_f32_table
+data_raw_004B40F0,0x004B40F0,0x4,.data,src/data/data_raw_004B40F0.c,initialized_byte_array
 data_u32_004B40F4,0x004B40F4,0x30,.data,src/data/data_u32_004B40F4.c,initialized_u32_table
 data_u32_004B4124,0x004B4124,0x10,.data,src/data/data_u32_004B4124.c,filled_u32_constant
 data_u32_004B4134,0x004B4134,0xC,.data,src/data/data_u32_004B4134.c,initialized_u32_table
