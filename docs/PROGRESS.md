@@ -2966,3 +2966,11 @@ sets both index and byte offset to zero; the offset advances fourbytes per
 iteration. Unread tails remain raw. Changed objects, catalog, full hybrid
 linkage and packed retail ELF identity pass. Data: 86,338 bytes (13.3224%).
 Code remains606,312 bytes (18.4083%).
+
+## Sequential motion integration checkpoint
+
+Integrated three whole exact motion callbacks (132,156,132bytes), including
+the floor-clamped update and indexed state dispatch. The complete shared source
+file verifies all registered functions with its established compiler profile.
+Catalog, full hybrid linkage and packed retail ELF identity pass. Catalog:
+606,732 code bytes (18.4210%), 9,263 functions; data86,338 bytes (13.3224%).
