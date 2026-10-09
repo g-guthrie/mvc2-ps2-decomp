@@ -3154,3 +3154,11 @@ Recovered the complete 200-byte callback at 0x0024AB80. All ten registered
 functions in the changed source object verify exactly. Code reaches
 609,992 bytes (18.5200%) across 9,284 functions; data remains 151,986 bytes
 (23.4523%).
+
+## Runtime callback dispatcher
+
+Recovered the complete 156-byte dispatcher at 0x00411978 under EE GCC
+2.96. Native code forwards a 32-bit callback argument and preserves the
+original diagnostic conditions. Whole-object verification passes. Code is
+610,148 bytes (18.5247%), 9,285 functions; data remains 151,986 bytes
+(23.4523%).
