@@ -2959,6 +2959,13 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/grok_w7_context_timer_controller.o" private/SLUS_204.86.rom \
     --source src/grok_w7_context_timer_controller.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/grok_w7_compact_state_latch.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_compact_state_latch.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_compact_state_latch.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_compact_state_latch.c
+
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w7_external_state_trigger.c -c -lang c -O3 -sdatathreshold 0 \
     -o "$BUILD/grok_w7_external_state_trigger.o"

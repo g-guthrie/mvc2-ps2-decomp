@@ -9093,3 +9093,4 @@ func_003F3850,0x003F3850,0x4C,src/get_bmp_pixel_data_003F3850.c,complete
 func_003F5180,0x003F5180,0x64,src/align_graphics_extent_003F5180.c,complete
 func_002FC640,0x002FC640,0x68,src/grok_w7_indexed_context_callback.c,complete
 func_002FC6B0,0x002FC6B0,0xA0,src/grok_w7_context_timer_controller.c,complete
+func_002FC890,0x002FC890,0x48,src/grok_w7_compact_state_latch.c,complete
