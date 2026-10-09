@@ -2748,3 +2748,11 @@ inputs, signed-byte returns and native null diagnostic callbacks. Both whole
 EE96/SNAS objects verify exactly. Catalog: 603,672 code bytes (18.3281%),
 9,225 functions; data 84,242 bytes (12.9990%). Full hybrid linkage and packed
 retail ELF identity pass.
+
+## Selected UI and secondary position vectors
+
+Reconstructed two directly selected UI float3 rows and a directly loaded
+secondary-position float3. All three compiled data objects, catalog validation,
+full hybrid linkage and packed retail ELF identity pass. Data: 84,278 bytes
+(13.0046%), 2,886 reconstructed units. Code remains 603,672 bytes (18.3281%).
+The UI selector writer audit continues alongside fresh recovery work.
