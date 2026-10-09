@@ -1,5 +1,6 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
+typedef signed short s16;
 typedef signed char s8;
 typedef float f32;
 extern int func_00175700(u8 *);
@@ -52,5 +53,20 @@ void func_002F94A0(u8 *p)
         p[0x1ea] = 17;
     finish:
         func_002F8EB0(p);
+    }
+}
+
+void func_002F89B0(u8 *p)
+{
+    s8 result;
+
+    *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5c);
+    *(f32 *)(p + 0x5c) += *(f32 *)(p + 0x68);
+    *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
+    *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6c);
+    result = (s8)func_00175700(p);
+    if (result < 0) {
+        p[6]++;
+        *(s16 *)(p + 28) = 16;
     }
 }
