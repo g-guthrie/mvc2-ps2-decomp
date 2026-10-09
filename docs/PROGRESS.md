@@ -2021,3 +2021,14 @@ four reconstructed bytes, with the other slots raw. Catalog: 582,568
 linked matching code bytes (17.6874%), 9,070 functions; 79,368
 reconstructed data bytes (12.2469%). Both whole sources, split data
 objects, catalog validation, and both full-image hashes pass.
+
+
+### Default SDK heap wrappers and actor dispatch
+
+The 84-byte allocation and 72-byte release wrappers preserve the native
+lock/reentrant-operation/unlock sequence and allocation result. A 100-byte
+flag-gated actor callback also matches within its six-function source;
+its raw numeric dispatch table remains uncredited data. Catalog: 582,824
+linked matching code bytes (17.6951%), 9,073 functions; data remains
+79,368 bytes (12.2469%). All affected whole sources, catalog validation,
+and both full-image hashes pass.
