@@ -2856,3 +2856,12 @@ floats. Header and interstitial bytes remain raw. Changed objects, catalog,
 full hybrid linkage and packed retail ELF identity pass. Catalog: 604,508 code
 bytes (18.3535%), 9,240 functions; data84,458 bytes (13.0324%), 2,890
 reconstructed source units.
+
+## Cleanup walker, frame codes and actor vectors
+
+Recovered the complete 96-byte sixteen-entry cleanup walk. Six signed
+halfword frame codes and three bounded actor-vector banks add120data bytes;
+unused gap bytes remain raw. Changed objects, catalog, full hybrid linkage
+and packed retail ELF identity pass. Catalog: 604,604 code bytes (18.3564%),
+9,241 functions; data84,578 bytes (13.0509%), 2,899 reconstructed units.
+The separately reviewed mode-transition vector table is queued for integration.
