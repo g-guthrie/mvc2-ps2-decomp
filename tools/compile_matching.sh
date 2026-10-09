@@ -2257,6 +2257,16 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
 "$PYTHON" tools/verify_object.py "$BUILD/set_runtime_option_fields_0040ADF0.o" \
     private/SLUS_204.86.rom --source src/set_runtime_option_fields_0040ADF0.c
 
+"$WIBO" "$SNCPP" -P src/dispatch_runtime_parameter_callback_0040AF58.c \
+    "$BUILD/dispatch_runtime_parameter_callback_0040AF58.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/dispatch_runtime_parameter_callback_0040AF58.i" \
+    "$BUILD/dispatch_runtime_parameter_callback_0040AF58.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/dispatch_runtime_parameter_callback_0040AF58.o" \
+    "$BUILD/dispatch_runtime_parameter_callback_0040AF58.s"
+"$PYTHON" tools/verify_object.py "$BUILD/dispatch_runtime_parameter_callback_0040AF58.o" \
+    private/SLUS_204.86.rom --source src/dispatch_runtime_parameter_callback_0040AF58.c
+
 "$WIBO" "$SNCPP" -P src/indexed_runtime_accessors.c "$BUILD/indexed_runtime_accessors.i"
 "$WIBO" "$SNCC1" "$BUILD/indexed_runtime_accessors.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/indexed_runtime_accessors.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/indexed_runtime_accessors.o" "$BUILD/indexed_runtime_accessors.s"

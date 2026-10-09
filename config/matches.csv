@@ -9218,3 +9218,4 @@ func_00303FF0,0x00303FF0,0xB8,src/grok_w7_context_timer_flag_position.c,complete
 func_004154C0,0x004154C0,0xC8,src/reset_runtime_service_pool_004154C0.c,complete
 func_00415450,0x00415450,0x64,src/clear_runtime_service_workspace_00415450.c,complete
 func_0040ADF0,0x0040ADF0,0x20,src/set_runtime_option_fields_0040ADF0.c,complete
+func_0040AF58,0x0040AF58,0x30,src/dispatch_runtime_parameter_callback_0040AF58.c,complete
