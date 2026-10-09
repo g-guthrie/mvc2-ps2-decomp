@@ -1,3 +1,4 @@
+/* Held uncredited pending caller-value proof for the extracted nibbles. */
 typedef unsigned int u32;
 /* func_001E6670 takes selectors from a 4-bit nibble (srl 28, andi 0xF at 0x001E6768-74, 0x001E6800-0C, and 0x001E6880-84). It indexes this bank with selector*8 and loads both words in each selected pair at 0x001E6794-A4 and 0x001E682C-3C; the final pair uses both column bases at 0x001E6890-9C and 0x001E68A0-AC. All 16 pairs are in range. */
 u32 data_u32_004B6E10[32] = {

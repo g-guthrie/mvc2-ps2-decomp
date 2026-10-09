@@ -2461,3 +2461,14 @@ with the canonical API. Its whole existing source group remains exact.
 Catalog: 598,212 code bytes (18.1623%), 9,173 functions, 81,930 data
 bytes (12.6423%). All changed source objects, catalog, and both full-image
 hashes pass.
+
+
+### Bounded decoder, palette, timeline, and motion data
+
+The integrated batch adds 1,165 verified data bytes from fixed decoder
+indices, symbolic pointer tables, finite timeline/palette selectors, and
+explicitly masked float/byte banks. The 004B6E10 nibble-pair candidate
+remains uncredited pending producer-domain proof. Unknown target payloads
+and unread padding remain raw. Catalog: 598,212 matching code bytes
+(18.1623%), 83,095 reconstructed data bytes (12.8220%). Changed data
+objects, relocations, catalog, and both full-image hashes pass.
