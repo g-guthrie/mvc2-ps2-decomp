@@ -848,7 +848,8 @@ D_00444520,0x00444520,0x240,.rodata,src/data/resource_handlers.c,handler_vector
 jtbl_00444760,0x00444760,0x28,.rodata,src/data/jtbl_00444760.c,jump_table
 jtbl_00444790,0x00444790,0x28,.rodata,src/data/jtbl_00444790.c,jump_table
 data_u32_004447C0,0x004447C0,0x180,.data,src/data/data_u32_004447C0.c,initialized_u32_table
-D_00444940,0x00444940,0x10,.rodata,src/data/D_00444940.c,pointer_table
+D_00444940,0x00444940,0x4,.rodata,src/data/D_00444940.c,pointer_table
+data_raw_00444944,0x00444944,0xC,.rodata,src/data/data_raw_00444944.c,initialized_byte_array
 data_u32_00444950,0x00444950,0xC,.data,src/data/data_u32_00444950.c,filled_u32_constant
 data_u32_0044495C,0x0044495C,0x14,.data,src/data/data_u32_0044495C.c,initialized_u32_table
 data_f32_one_00444970,0x00444970,0x18,.data,src/data/data_f32_one_00444970.c,filled_f32_one
