@@ -2277,6 +2277,16 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
 "$PYTHON" tools/verify_object.py "$BUILD/dispatch_runtime_message_004098A8.o" \
     private/SLUS_204.86.rom --source src/dispatch_runtime_message_004098A8.c
 
+"$WIBO" "$SNCPP" -P src/set_runtime_status_mode_0040CA70.c \
+    "$BUILD/set_runtime_status_mode_0040CA70.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/set_runtime_status_mode_0040CA70.i" \
+    "$BUILD/set_runtime_status_mode_0040CA70.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/set_runtime_status_mode_0040CA70.o" \
+    "$BUILD/set_runtime_status_mode_0040CA70.s"
+"$PYTHON" tools/verify_object.py "$BUILD/set_runtime_status_mode_0040CA70.o" \
+    private/SLUS_204.86.rom --source src/set_runtime_status_mode_0040CA70.c
+
 "$WIBO" "$SNCPP" -P src/release_runtime_record_handle_00408EA0.c \
     "$BUILD/release_runtime_record_handle_00408EA0.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
