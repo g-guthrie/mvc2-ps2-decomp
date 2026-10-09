@@ -3205,3 +3205,11 @@ Recovered the complete 96-byte constructor at 0x001555A0. It retains
 allocation failure and assigns the callback, owner and two byte fields.
 Whole-object verification passes. Code reaches 610,676 bytes (18.5408%),
 9,290 functions; data remains 151,998 bytes (23.4542%).
+
+## Unit scale event initializer
+
+Recovered the complete 92-byte initializer at 0x0015C130. Ordinary float
+assignments reproduce the native three unit-scale stores. Allocation
+failure and callback setup remain intact. Whole-object verification passes.
+Code reaches 610,768 bytes (18.5435%), 9,291 functions; data remains
+151,998 bytes (23.4542%).
