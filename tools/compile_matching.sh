@@ -2844,6 +2844,26 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
 "$PYTHON" tools/verify_object.py "$BUILD/read_runtime_mode_00401920.o" \
     private/SLUS_204.86.rom --source src/read_runtime_mode_00401920.c
 
+"$WIBO" "$SNCPP" -P src/read_runtime_record_mode_0040A218.c \
+    "$BUILD/read_runtime_record_mode_0040A218.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/read_runtime_record_mode_0040A218.i" \
+    "$BUILD/read_runtime_record_mode_0040A218.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/read_runtime_record_mode_0040A218.o" \
+    "$BUILD/read_runtime_record_mode_0040A218.s"
+"$PYTHON" tools/verify_object.py "$BUILD/read_runtime_record_mode_0040A218.o" \
+    private/SLUS_204.86.rom --source src/read_runtime_record_mode_0040A218.c
+
+"$WIBO" "$SNCPP" -P src/read_runtime_record_state_0040BCB8.c \
+    "$BUILD/read_runtime_record_state_0040BCB8.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/read_runtime_record_state_0040BCB8.i" \
+    "$BUILD/read_runtime_record_state_0040BCB8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/read_runtime_record_state_0040BCB8.o" \
+    "$BUILD/read_runtime_record_state_0040BCB8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/read_runtime_record_state_0040BCB8.o" \
+    private/SLUS_204.86.rom --source src/read_runtime_record_state_0040BCB8.c
+
 "$WIBO" "$SNCPP" -P src/read_versioned_runtime_state_00401F38.c \
     "$BUILD/read_versioned_runtime_state_00401F38.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
