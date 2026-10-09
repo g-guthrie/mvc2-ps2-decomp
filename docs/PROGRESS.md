@@ -2409,3 +2409,14 @@ comparisons, signed status gates, object-pointer results, and GP-relative
 state access. Catalog: 595,588 matching code bytes (18.0827%), 9,156
 functions; data remains 81,134 bytes (12.5194%). Each source object,
 catalog validation, and both full-image hashes pass.
+
+
+### Masked geometry and bounded animation data
+
+The batch adds 756 data bytes from fixed vectors, bounded float streams,
+and explicit 4/8/16-entry masks. The 64-float bank feeds velocity and
+acceleration pairs; eight-vector geometry and signed/byte selectors have
+independent native range checks. The signed 00472E70 bank’s source comment
+now names its actual 003A6E40/003A7110 consumers and exact LH sites.
+Catalog: 595,588 code bytes (18.0827%), 81,890 data bytes (12.6361%).
+All changed data objects, relocations, catalog, and both image hashes pass.
