@@ -2829,3 +2829,12 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
     "$BUILD/consume_runtime_span_00410000.s"
 "$PYTHON" tools/verify_object.py "$BUILD/consume_runtime_span_00410000.o" \
     private/SLUS_204.86.rom --source src/consume_runtime_span_00410000.c
+
+"$WIBO" "$SNCPP" -P src/merge_runtime_span_00410290.c \
+    "$BUILD/merge_runtime_span_00410290.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/merge_runtime_span_00410290.i" "$BUILD/merge_runtime_span_00410290.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/merge_runtime_span_00410290.o" \
+    "$BUILD/merge_runtime_span_00410290.s"
+"$PYTHON" tools/verify_object.py "$BUILD/merge_runtime_span_00410290.o" \
+    private/SLUS_204.86.rom --source src/merge_runtime_span_00410290.c
