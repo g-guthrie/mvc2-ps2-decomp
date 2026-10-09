@@ -9012,3 +9012,4 @@ func_00411BC8,0x00411BC8,0x44,src/manage_runtime_reference_00411B98.c,complete
 func_00411B28,0x00411B28,0x70,src/initialize_runtime_service_00411B28.c,complete
 func_00413DA0,0x00413DA0,0x38,src/cleanup_runtime_object_00413DA0.c,complete
 func_00416670,0x00416670,0x38,src/transition_runtime_state_00416670.c,complete
+func_00416770,0x00416770,0x24,src/scale_runtime_state_value_00416770.c,complete
