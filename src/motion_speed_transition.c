@@ -206,6 +206,8 @@ void func_002F1060(u8 *p)
 
 extern int func_00175700(u8 *);
 extern void func_001843A0(u8 *);
+extern void func_00184540(u8 *);
+extern int func_001864A0(u8 *);
 void func_002F5CC0(u8 *p)
 {
     if (p[6] == 0) {
@@ -510,4 +512,20 @@ void func_002B4280(u8 *p)
         *(f32 *)(p + 0x68) = acceleration;
     }
     func_001757E0(p, 2, 3);
+}
+
+void func_002B6530(u8 *p)
+{
+    *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
+    *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
+    *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
+    *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
+    func_00175700(p);
+    *(s16 *)(p + 0x1C) -= 1;
+    if (*(s16 *)(p + 0x1C) <= 0) {
+        func_00184540(p);
+        return;
+    }
+    if (func_001864A0(p))
+        func_00184540(p);
 }
