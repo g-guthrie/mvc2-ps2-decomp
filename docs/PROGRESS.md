@@ -1851,3 +1851,13 @@ add 39 reconstructed bytes. Each unused record byte and the unvisited
 37-row tail remains raw. Catalog: 580,228 linked matching code bytes
 (17.6163%), 74,864 reconstructed data bytes (11.5519%). All changed data
 objects, catalog validation, and both full-image hashes pass.
+
+
+### Runtime menu notice and backend state
+
+The 132-byte menu-notice handler is compiler-exact. Four related sources
+now share the backend-state layout and use the canonical void notice
+setter declaration. All five affected functions retain exact bytes.
+Catalog: 580,360 linked matching code bytes (17.6203%), 9,051 functions;
+data remains 74,864 bytes (11.5519%). Catalog validation and both
+full-image hashes pass.

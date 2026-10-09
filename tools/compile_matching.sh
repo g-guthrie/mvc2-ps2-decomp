@@ -2591,19 +2591,19 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     private/SLUS_204.86.rom --source src/select_transfer_backend_004206D0.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/update_backend_timeout_004205F0.c -c -lang c -O3 -sdatathreshold 8 \
+    -i src src/update_backend_timeout_004205F0.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/update_backend_timeout_004205F0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/update_backend_timeout_004205F0.o" \
     private/SLUS_204.86.rom --source src/update_backend_timeout_004205F0.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/reset_backend_state_00420660.c -c -lang c -O3 -sdatathreshold 8 \
+    -i src src/reset_backend_state_00420660.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/reset_backend_state_00420660.o"
 "$PYTHON" tools/verify_object.py "$BUILD/reset_backend_state_00420660.o" \
     private/SLUS_204.86.rom --source src/reset_backend_state_00420660.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/backend_lifecycle_handlers_00420840.c -c -lang c -O3 -sdatathreshold 8 \
+    -i src src/backend_lifecycle_handlers_00420840.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/backend_lifecycle_handlers_00420840.o"
 "$PYTHON" tools/verify_object.py "$BUILD/backend_lifecycle_handlers_00420840.o" \
     private/SLUS_204.86.rom --source src/backend_lifecycle_handlers_00420840.c
@@ -3051,7 +3051,7 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_initialize_single
 "$PYTHON" tools/verify_object.py "$BUILD/sdk_initialize_single_word_0011DED8.o" private/SLUS_204.86.rom --source src/sdk_initialize_single_word_0011DED8.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/initialize_runtime_menu_notice_00420560.c -c -lang c -O3 -sdatathreshold 8 \
+    -i src src/initialize_runtime_menu_notice_00420560.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/initialize_runtime_menu_notice_00420560.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_runtime_menu_notice_00420560.o" \
     private/SLUS_204.86.rom --source src/initialize_runtime_menu_notice_00420560.c

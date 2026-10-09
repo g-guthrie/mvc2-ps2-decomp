@@ -1,24 +1,13 @@
+#include "runtime_backend_types.h"
 typedef signed char s8;
 typedef unsigned char u8;
 typedef signed short s16;
 typedef int s32;
 
-struct BackendState
-{
-    u8 unknown0;
-    u8 unknown1;
-    s8 selectedBackend;
-    u8 unknown3;
-    u8 unknown4;
-    u8 unknown5;
-    u8 unknown6;
-    u8 unknown7;
-    s16 frameLimit;
-};
 
 extern struct BackendState *D_004C2840;
 extern s32 func_003299D0(void);
-extern s32 func_003298B0(s32 value, s32 duration, s32 mode);
+extern void func_003298B0(s32 value, s32 duration, s32 mode);
 extern void func_00152990(int value);
 
 void func_00420840(void)
