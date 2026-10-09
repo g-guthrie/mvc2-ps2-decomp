@@ -2764,3 +2764,11 @@ record and three value arguments. It preserves the native conditional writes
 and success result. Whole EE96/SNAS object, catalog, full hybrid linkage and
 packed retail ELF identity pass. Catalog: 603,720 code bytes (18.3296%),
 9,226 functions; data remains 84,278 bytes (13.0046%).
+
+## Runtime field adapter checkpoint
+
+Recovered the complete 36-byte record adapter with its caller-grounded value
+arguments and mutable halfword outputs at record+48/+50. The native argument
+reordering is preserved. Whole EE96/SNAS object, catalog, full hybrid linkage
+and packed retail ELF identity pass. Catalog: 603,756 code bytes (18.3307%),
+9,227 functions; data remains 84,278 bytes (13.0046%).
