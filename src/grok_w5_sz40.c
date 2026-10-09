@@ -1,5 +1,8 @@
 typedef unsigned char u8;
+typedef signed char s8;
 
+extern int func_00175700(u8 *);
+extern void func_00184540(u8 *);
 extern int func_001820A0(u8 *);
 extern int func_00182300(u8 *);
 extern int func_001864A0(u8 *);
@@ -60,7 +63,15 @@ extern void func_002D26D0(u8 *);
 extern void func_002F34A0(u8 *);
 extern void func_002F3410(u8 *);
 extern void func_002F82F0(u8 *);
-extern void func_002F8290(u8 *);
+extern void func_002FA200(u8 *);
+void func_002F8290(u8 *p) {
+    if (p[718] != 0) {
+        func_002FA200(p);
+        return;
+    }
+    if ((s8)func_00175700(p) < 0)
+        func_00184540(p);
+}
 extern void func_002FD510(u8 *);
 extern void func_002FD4D0(u8 *);
 extern void func_00306440(u8 *);
