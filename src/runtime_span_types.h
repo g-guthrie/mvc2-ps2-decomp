@@ -25,7 +25,9 @@ struct RuntimeQueryContext
 {
     u8 unknown0[5];
     s8 mode;
-    u8 unknown6[14];
+    u8 unknown6[6];
+    struct RuntimeNode *pool;
+    s32 capacity;
     struct RuntimeNode *moved;
     struct RuntimeNode *entries[4];
     RuntimeFallback fallback;
