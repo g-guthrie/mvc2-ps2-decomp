@@ -80,7 +80,15 @@ void func_002D9DD0(u8 *p) {
 extern void func_002DD450();
 extern void func_002E5410();
 extern void func_002EE7B0();
-extern void func_002EE860();
+extern void (*jtbl_0045B860[])(u8 *);
+void func_002EE860(u8 *p) {
+    *(f32 *)(p + 52) += *(f32 *)(p + 92);
+    *(f32 *)(p + 92) += *(f32 *)(p + 104);
+    *(f32 *)(p + 56) += *(f32 *)(p + 96);
+    *(f32 *)(p + 96) += *(f32 *)(p + 108);
+    func_001863F0(p);
+    jtbl_0045B860[*(unsigned int *)(p + 820)](p);
+}
 extern void func_002F33A0();
 void func_002F4710(u8 *p) {
     f32 *y;

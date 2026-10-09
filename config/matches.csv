@@ -2581,6 +2581,7 @@ func_002ED790,0x002ED790,0x24,src/argument_dispatch_heads.c,complete
 func_002EE790,0x002EE790,0x20,src/indirect_dispatch.c,complete
 func_002EE820,0x002EE820,0x34,src/sequential_calls.c,complete
 func_002EE8F0,0x002EE8F0,0x3c,src/signed_result_handlers.c,complete
+func_002EE860,0x002EE860,0x84,src/sequential_calls.c,complete
 func_002EED40,0x002EED40,0x2c,src/sequential_calls.c,complete
 func_002EED70,0x002EED70,0x20,src/composite_dispatch_heads.c,complete
 func_002EEEC0,0x002EEEC0,0x20,src/composite_dispatch_heads.c,complete
