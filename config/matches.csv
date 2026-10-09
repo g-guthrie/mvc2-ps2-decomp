@@ -9292,3 +9292,4 @@ func_002E4690,0x002E4690,0x7C,src/grok_w3_0019.c,complete
 func_00141250,0x00141250,0x70,src/create_scene_anchor_00141250.c,complete
 func_0014A220,0x0014A220,0x70,src/create_owner_overlay_0014A220.c,complete
 func_001382F0,0x001382F0,0x54,src/create_mode_event_001382F0.c,complete
+func_001555A0,0x001555A0,0x60,src/create_owner_mode_event_001555A0.c,complete

@@ -3198,3 +3198,10 @@ Recovered the complete 84-byte initializer at 0x001382F0, preserving
 allocation failure, mode byte, timers and callback setup. Whole-object
 verification passes. Code reaches 610,580 bytes (18.5378%), 9,289 functions;
 data remains 151,998 bytes (23.4542%).
+
+## Owner mode event constructor
+
+Recovered the complete 96-byte constructor at 0x001555A0. It retains
+allocation failure and assigns the callback, owner and two byte fields.
+Whole-object verification passes. Code reaches 610,676 bytes (18.5408%),
+9,290 functions; data remains 151,998 bytes (23.4542%).
