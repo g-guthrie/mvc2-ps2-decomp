@@ -6032,7 +6032,7 @@ gMvc2PresetPosition_004B8230,0x004B8230,0xC,src/data/preset_position_004B8230.c,
 data_u8_004B823C,0x004B823C,0x18,src/data/data_u8_004B823C.c,complete,placeholder
 data_f32_004B8254,0x004B8254,0x4,src/data/data_f32_004B8254.c,complete,reconstructed
 data_u8_004B8258,0x004B8258,0x28,src/data/data_u8_004B8258.c,complete,placeholder
-data_f32_one_004B8280,0x004B8280,0xC,src/data/data_f32_one_004B8280.c,complete,placeholder
+data_f32_one_004B8280,0x004B8280,0xC,src/data/data_f32_one_004B8280.c,complete,reconstructed
 data_u32_004B828C,0x004B828C,0x4,src/data/data_u32_004B828C.c,complete,placeholder
 data_u32_004B8290,0x004B8290,0xC,src/data/data_u32_004B8290.c,complete,placeholder
 data_u32_004B829C,0x004B829C,0x34,src/data/data_u32_004B829C.c,complete,placeholder
