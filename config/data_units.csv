@@ -4868,8 +4868,7 @@ data_u32_00476EC4,0x00476EC4,0xC,.data,src/data/data_u32_00476EC4.c,filled_u32_c
 data_u32_00476ED0,0x00476ED0,0x140,.data,src/data/data_u32_00476ED0.c,initialized_u32_table
 jtbl_00477010,0x00477010,0x44,.rodata,src/data/jtbl_00477010.c,jump_table
 data_u32_00477060,0x00477060,0xD0,.data,src/data/data_u32_00477060.c,initialized_u32_table
-data_f32_one_00477130,0x00477130,0x8,.data,src/data/data_f32_one_00477130.c,filled_f32_one
-data_u32_00477138,0x00477138,0x4,.data,src/data/data_u32_00477138.c,initialized_u32_table
+data_f32_00477130,0x00477130,0xC,.data,src/data/data_f32_00477130.c,initialized_f32_table
 data_f32_one_0047713C,0x0047713C,0xC,.data,src/data/data_f32_one_0047713C.c,filled_f32_one
 data_u32_00477148,0x00477148,0x4,.data,src/data/data_u32_00477148.c,initialized_u32_table
 data_f32_one_0047714C,0x0047714C,0x8,.data,src/data/data_f32_one_0047714C.c,filled_f32_one
