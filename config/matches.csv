@@ -8975,3 +8975,4 @@ func_00410468,0x00410468,0x3C,src/count_runtime_chains_00410468.c,complete
 func_004104A8,0x004104A8,0x34,src/count_runtime_chains_00410468.c,complete
 func_0011F640,0x0011F640,0x60,src/sdk_reentrant_write_0011F640.c,complete
 func_0011F9C8,0x0011F9C8,0x64,src/sdk_file_write_0011F9C8.c,complete
+func_00410688,0x00410688,0x5C,src/prepare_archive_and_pack_00410688.c,complete
