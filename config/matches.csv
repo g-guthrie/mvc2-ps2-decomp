@@ -9027,3 +9027,4 @@ func_002F55C0,0x002F55C0,0x98,src/grok_w7_motion_triggered_state.c,complete
 func_002B5BB0,0x002B5BB0,0xA4,src/grok_w7_signed_flag_spawn_position.c,complete
 func_002B7120,0x002B7120,0xBC,src/grok_w7_timed_variant_transitions.c,complete
 func_002C3EB0,0x002C3EB0,0x84,src/motion_speed_transition.c,complete
+func_002C1F30,0x002C1F30,0x9C,src/motion_speed_transition.c,complete
