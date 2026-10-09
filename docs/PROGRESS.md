@@ -3140,3 +3140,10 @@ Recovered the complete 260-byte consumer at 0x0039EE60, including the
 stream advance before allocation and the success-only record decrement.
 Whole-object verification passes. Code reaches 609,536 bytes (18.5061%),
 9,282 functions; data remains 151,986 bytes (23.4523%).
+
+## Complete motion initializer residual
+
+Recovered all 256 bytes of residual_0039ED60, preserving the owner-state
+copy, typed float3 copy, timers and tail call. MWCCPS2 3.0 O3/Op produces
+an exact whole-object match. Code reaches 609,792 bytes (18.5139%) across
+9,283 functions; data remains 151,986 bytes (23.4523%).
