@@ -16,6 +16,7 @@ MATCH_FLAGS=${MATCH_FLAGS:--O3 -sdatathreshold 0}
 SNCPP=${SNCPP:-private/toolchain/compilers/sn-gcc-2.95.2/cpp.exe}
 SNCC1=${SNCC1:-private/toolchain/compilers/sn-gcc-2.95.2/cc1.exe}
 SNAS=${SNAS:-private/toolchain/compilers/sn-gcc-2.95.2/ee-as.exe}
+GNUAS=${GNUAS:-${AS:-mipsel-linux-gnu-as}}
 BUILD=build/matching
 mkdir -p "$BUILD"
 

@@ -2691,3 +2691,11 @@ and did not establish the intended ordinary actor-memory semantics. Removed
 that qualifier and typed its 408 stores as pointers. Existing registered
 functions in the complete source object still verify exactly. Candidate repair
 continues; catalog remains 602,788 code bytes (18.3013%).
+
+## Legacy EE assembler configuration repair
+
+The full registered rebuild passed its data stage but stopped at a legacy EE
+assembly step because GNUAS was unset. Added the established AS/default
+assembler fallback for GNUAS and resumed at that failed step using the completed
+objects. Shell syntax and all 34 project tests pass. Remaining whole-object
+checks and full-image validation continue; no new coverage is claimed.
