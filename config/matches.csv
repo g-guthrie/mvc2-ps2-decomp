@@ -9155,3 +9155,4 @@ func_0030EA00,0x0030EA00,0xE8,src/grok_w7_masked_timer_phase_handler.c,complete
 func_00414C70,0x00414C70,0x40,src/grok_r1_001.c,complete
 func_003F0310,0x003F0310,0x5C,src/grok_w5_003c.c,complete
 func_0030AE90,0x0030AE90,0xC8,src/grok_w7_deferred_float_state_setup.c,complete
+func_0030A7C0,0x0030A7C0,0x13C,src/grok_w7_deadline_position_transition.c,complete

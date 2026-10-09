@@ -3508,3 +3508,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_deferred_float_state_setup.o" private/SLUS_204.86.rom \
     --source src/grok_w7_deferred_float_state_setup.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_deadline_position_transition.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/grok_w7_deadline_position_transition.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_deadline_position_transition.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_deadline_position_transition.c
