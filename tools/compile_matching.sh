@@ -3249,3 +3249,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/copy_format_record_payload_003F1E70.o"
 "$PYTHON" tools/verify_object.py "$BUILD/copy_format_record_payload_003F1E70.o" \
     private/SLUS_204.86.rom --source src/copy_format_record_payload_003F1E70.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_zero_phase_counter_transition.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_zero_phase_counter_transition.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_zero_phase_counter_transition.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_zero_phase_counter_transition.c
