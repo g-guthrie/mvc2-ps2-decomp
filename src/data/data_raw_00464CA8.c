@@ -1,0 +1,6 @@
+typedef unsigned char u8;
+/* Remaining three pointer words are unreachable through the current callers. */
+const u8 data_raw_00464CA8[0xC] = {
+    0x80u, 0x85u, 0x4Bu, 0x00u, 0x88u, 0x85u, 0x4Bu, 0x00u,
+    0x90u, 0x85u, 0x4Bu, 0x00u,
+};

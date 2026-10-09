@@ -3765,7 +3765,9 @@ jtbl_00464C00,0x00464C00,0x2c,.rodata,src/data/jtbl_00464C00.c,typed_state_callb
 data_u32_00464C30,0x00464C30,0x50,.data,src/data/data_u32_00464C30.c,initialized_u32_table
 jtbl_00464C80,0x00464C80,0x10,.rodata,src/data/jtbl_00464C80.c,typed_state_callback_table
 data_u32_00464C90,0x00464C90,0x10,.data,src/data/data_u32_00464C90.c,initialized_u32_table
-D_00464CA0,0x00464CA0,0x14,.rodata,src/data/D_00464CA0.c,pointer_table
+D_00464CA0,0x00464CA0,0x4,.rodata,src/data/D_00464CA0.c,initialized_u32_table
+data_ptr_00464CA4,0x00464CA4,0x4,.rodata,src/data/data_ptr_00464CA4.c,pointer_scalar
+data_raw_00464CA8,0x00464CA8,0xC,.rodata,src/data/data_raw_00464CA8.c,initialized_byte_array
 data_u8_00464CB4,0x00464CB4,0xC,.data,src/data/data_u8_00464CB4.c,initialized_byte_array
 gIconSystemFilename_00464CC0,0x00464CC0,0x9,.data,src/data/gIconSystemFilename_00464CC0.c,nul_terminated_message
 data_u8_00464CC9,0x00464CC9,0x7,.data,src/data/data_u8_00464CC9.c,initialized_byte_array

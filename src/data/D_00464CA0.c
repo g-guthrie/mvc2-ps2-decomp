@@ -1,8 +1,2 @@
-/* Source-safe reconstruction of initialized table. */
-const unsigned int D_00464CA0[5] = {
-    (unsigned int)0x004B8570,
-    (unsigned int)0x004B8578,
-    (unsigned int)0x004B8580,
-    (unsigned int)0x004B8588,
-    (unsigned int)0x004B8590,
-};
+/* The known callers select only slot 1; preserve the unconsumed slot 0 raw. */
+const unsigned int D_00464CA0[1] = { 0x004B8570u };
