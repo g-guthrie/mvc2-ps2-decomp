@@ -1452,7 +1452,8 @@ data_s16_0044B88C,0x0044B88C,0x2,.data,src/data/data_s16_0044B88C.c,initialized_
 data_raw_0044B88E,0x0044B88E,0x2,.data,src/data/data_raw_0044B88E.c,initialized_byte_array
 data_s16_0044B890,0x0044B890,0x2,.data,src/data/data_s16_0044B890.c,initialized_s16_values
 data_raw_0044B892,0x0044B892,0x16,.data,src/data/data_raw_0044B892.c,initialized_byte_array
-data_u32_0044B8A8,0x0044B8A8,0xC,.data,src/data/data_u32_0044B8A8.c,filled_u32_constant
+data_s32_0044B8A8,0x0044B8A8,0x4,.data,src/data/data_s32_0044B8A8.c,int32_scalar
+data_raw_0044B8AC,0x0044B8AC,0x8,.data,src/data/data_raw_0044B8AC.c,initialized_byte_array
 data_u32_0044B8B4,0x0044B8B4,0x1C,.data,src/data/data_u32_0044B8B4.c,initialized_u32_table
 data_f32_one_0044B8D0,0x0044B8D0,0x18,.data,src/data/data_f32_one_0044B8D0.c,filled_f32_one
 data_u32_0044B8E8,0x0044B8E8,0xC,.data,src/data/data_u32_0044B8E8.c,filled_u32_constant
