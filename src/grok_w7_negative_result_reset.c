@@ -9,10 +9,13 @@ typedef void (*ActorCallback)(u8 *);
 typedef struct { u8 prefix[0x5c]; FloatBits f5c; FloatBits f60; u32 padding; FloatBits f68; FloatBits f6c; } ActorView;
 extern void func_002F4710(u8 *);
 extern int func_00175700(u8 *);
+extern void func_001843A0(u8 *);
+extern int func_002F8EB0(u8 *);
+extern void func_002F8E40(u8 *);
+extern void func_001E3210(u8 *, int);
 extern int func_001757E0(u8 *, int, int);
 extern void func_00126400(void);
 extern void func_00184540(u8 *);
-extern void func_001843A0(u8 *);
 extern void func_00183920(u8 *, f32 *);
 extern void func_00185490(u8 *);
 extern void func_0018C4B0(u8 *, int);
@@ -159,4 +162,15 @@ void func_002F9510(u8 *p)
     p[0x20d] = 0;
     func_00183D50(p);
     func_001843A0(p);
+}
+
+void func_002F9C00(u8 *p)
+{
+    s8 result = (s8)func_00175700(p);
+    if (result < 0) {
+        func_002F8EB0(p);
+        func_001E3210(p, 43);
+    } else {
+        func_002F8E40(p);
+    }
 }
