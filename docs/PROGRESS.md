@@ -3097,3 +3097,10 @@ for the state object at 0x004F7F30 can modify selector byte +2, invalidating
 the prior direct-store-only proof. The compiled bytes remain unchanged and
 placed as a placeholder. The pending 0x00476BB0 candidate is also held.
 Code remains 608,252 bytes (18.4672%); data is 151,986 bytes (23.4523%).
+
+## Velocity floor handler
+
+Recovered the complete 156-byte handler at 0x002E77B0. Both functions in
+the changed source object verify exactly; hybrid linkage and the packed
+retail ELF hash pass. Code reaches 608,408 bytes (18.4719%), 9,276 functions.
+Data remains 151,986 bytes (23.4523%).
