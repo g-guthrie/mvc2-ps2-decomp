@@ -1,6 +1,6 @@
 typedef unsigned char u8;
 typedef signed short s16;
-extern int func_003B5A40(u8 *, int);
+extern void *func_003B5A40(u8 *, int);
 extern void func_001E3210(u8 *, int);
 extern int func_001757E0(u8 *, int, int);
 void func_00307AD0(u8 *p, void *context)
