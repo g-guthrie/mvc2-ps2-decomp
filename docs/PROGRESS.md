@@ -2949,3 +2949,11 @@ no selected map output is the FF sentinel. Skipped rows, prefix and tail remain
 raw. All five partition objects, catalog, full hybrid linkage and packed retail
 ELF identity pass. Data: 86,154 bytes (13.2941%), 2,917 reconstructed units.
 Code remains606,044 bytes (18.4001%).
+
+## Indexed motion and linked actor handoff callbacks
+
+Integrated two whole exact callbacks (132,136bytes), preserving float motion
+updates, indexed callback dispatch and typed linked-object pointer stores.
+Both complete source files, catalog, full hybrid linkage and packed retail
+ELF identity pass. Catalog: 606,312 code bytes (18.4083%), 9,260 functions;
+data remains86,154 bytes (13.2941%).
