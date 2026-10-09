@@ -4962,7 +4962,12 @@ jtbl_004AADD0,0x004AADD0,0xEC,src/data/jtbl_004AADD0.c,complete,placeholder
 gPs2SystemText_004AAEC0,0x004AAEC0,0x16,src/data/gPs2SystemText_004AAEC0.c,complete,reconstructed
 data_u8_004AAED6,0x004AAED6,0x2,src/data/data_u8_004AAED6.c,complete,placeholder
 data_u32_004AAED8,0x004AAED8,0x28,src/data/data_u32_004AAED8.c,complete,reconstructed
-data_raw_004AAF00,0x004AAF00,0x30,src/data/data_raw_004AAF00.c,complete,placeholder
+data_u8_004AAF00,0x004AAF00,0xA,src/data/data_u8_004AAF00.c,complete,reconstructed
+data_raw_004AAF0A,0x004AAF0A,0x6,src/data/data_raw_004AAF0A.c,complete,placeholder
+data_u8_004AAF10,0x004AAF10,0xA,src/data/data_u8_004AAF10.c,complete,reconstructed
+data_raw_004AAF1A,0x004AAF1A,0x6,src/data/data_raw_004AAF1A.c,complete,placeholder
+data_u8_004AAF20,0x004AAF20,0xA,src/data/data_u8_004AAF20.c,complete,reconstructed
+data_raw_004AAF2A,0x004AAF2A,0x6,src/data/data_raw_004AAF2A.c,complete,placeholder
 gPs2SystemText_004AAF30,0x004AAF30,0x22,src/data/gPs2SystemText_004AAF30.c,complete,reconstructed
 data_u8_004AAF52,0x004AAF52,0x6,src/data/data_u8_004AAF52.c,complete,placeholder
 gPs2SystemText_004AAF58,0x004AAF58,0x25,src/data/gPs2SystemText_004AAF58.c,complete,reconstructed

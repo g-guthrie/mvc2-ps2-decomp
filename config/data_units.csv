@@ -4962,7 +4962,12 @@ jtbl_004AADD0,0x004AADD0,0xEC,.rodata,src/data/jtbl_004AADD0.c,jump_table
 gPs2SystemText_004AAEC0,0x004AAEC0,0x16,.data,src/data/gPs2SystemText_004AAEC0.c,nul_terminated_message
 data_u8_004AAED6,0x004AAED6,0x2,.data,src/data/data_u8_004AAED6.c,initialized_byte_array
 data_u32_004AAED8,0x004AAED8,0x28,.data,src/data/data_u32_004AAED8.c,initialized_u32_table
-data_raw_004AAF00,0x004AAF00,0x30,.data,src/data/data_raw_004AAF00.c,initialized_byte_array
+data_u8_004AAF00,0x004AAF00,0xA,.data,src/data/data_u8_004AAF00.c,initialized_byte_array
+data_raw_004AAF0A,0x004AAF0A,0x6,.data,src/data/data_raw_004AAF0A.c,initialized_byte_array
+data_u8_004AAF10,0x004AAF10,0xA,.data,src/data/data_u8_004AAF10.c,initialized_byte_array
+data_raw_004AAF1A,0x004AAF1A,0x6,.data,src/data/data_raw_004AAF1A.c,initialized_byte_array
+data_u8_004AAF20,0x004AAF20,0xA,.data,src/data/data_u8_004AAF20.c,initialized_byte_array
+data_raw_004AAF2A,0x004AAF2A,0x6,.data,src/data/data_raw_004AAF2A.c,initialized_byte_array
 gPs2SystemText_004AAF30,0x004AAF30,0x22,.data,src/data/gPs2SystemText_004AAF30.c,nul_terminated_message
 data_u8_004AAF52,0x004AAF52,0x6,.data,src/data/data_u8_004AAF52.c,initialized_byte_array
 gPs2SystemText_004AAF58,0x004AAF58,0x25,.data,src/data/gPs2SystemText_004AAF58.c,nul_terminated_message
