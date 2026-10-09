@@ -1940,3 +1940,12 @@ optional external request, and known callback invocation. Catalog:
 remains 75,112 bytes (11.5902%). Whole-source verification, catalog
 validation, and both full-image hashes pass. The SDK buffered character
 output candidate remains uncredited at 132 versus 152 native bytes.
+
+
+### Indexed flag transition
+
+The 124-byte actor transition now matches, including its GP-relative
+lookup and typed float representations. Catalog: 581,080 linked matching
+code bytes (17.6422%), 9,058 functions; data remains 75,112 bytes
+(11.5902%). Native object, catalog validation, and both full-image hashes
+pass. The buffered character-output variants remain private and uncredited.
