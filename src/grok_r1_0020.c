@@ -27,6 +27,7 @@ extern void func_0027C340(u8 *);
 extern void func_00279270(u8 *);
 extern void func_0027BD50(u8 *);
 extern void func_002482C0(u8 *);
+extern void func_001BE890(u8 *, u8);
 
 void func_00227F90(u8 *p) {
     if (*(s8 *)(p + 337) == 0)
@@ -200,6 +201,25 @@ void func_0027C300(u8 *p) {
     p[6]++;
     func_001757E0(p, 21, 4);
     func_0027C340(p);
+}
+
+void func_0027C340(u8 *p)
+{
+    p[0x33C] = 5;
+    func_00175700(p);
+    if (*(s8 *)(p + 0x151) != 0) {
+        p[6]++;
+        *(s16 *)(p + 0x1C) = 0;
+        *(s16 *)(p + 0x1E) = 1;
+        func_001BE890(p, 7);
+        func_001BE890(p, 8);
+        func_001BE890(p, 9);
+        func_001BE890(p, 10);
+        func_001BE890(p, 11);
+        func_001BE890(p, 12);
+        func_001BE890(p, 13);
+        p[0x22] = 50;
+    }
 }
 
 void func_00229DE0(u8 *p) {
