@@ -12,7 +12,7 @@ extern void func_00178F20(u8 *);
 extern void func_001843A0(u8 *);
 extern void func_00184540(u8 *);
 extern void func_00186CE0(u8 *, int);
-extern void func_0011D8F8(u8 *, int, int);
+extern void *func_0011D8F8(void *, int, unsigned int);
 extern int func_00248890(u8 *);
 extern int func_002488F0(u8 *);
 extern void func_00279270(u8 *);

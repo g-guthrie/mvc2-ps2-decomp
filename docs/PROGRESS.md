@@ -2657,3 +2657,11 @@ callbacks to preserve the helper destination-pointer return and unsigned byte
 count. All seven pool functions and both initialization callbacks remain exact
 in their complete source objects. Full retail hybrid linkage and packed ELF
 identity pass; credited code remains 602,756 bytes (18.3003%).
+
+## Remaining typed memory-fill callers
+
+Corrected five source groups with explicit memory-fill prototypes to the native
+destination-pointer return and unsigned byte-count interface: grok_r2_0014,
+grok_w3_0026, grok_w5_0018, grok_w3_0024 and grok_r2_0024. All five complete
+objects verify exactly. Full hybrid linkage and packed retail ELF identity pass.
+Code remains 602,756 bytes (18.3003%); no new coverage credit is claimed.
