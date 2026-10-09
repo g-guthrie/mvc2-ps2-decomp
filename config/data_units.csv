@@ -5291,7 +5291,8 @@ data_raw_004B1D06,0x004B1D06,0x2,.data,src/data/data_raw_004B1D06.c,initialized_
 data_s16_004B1D08,0x004B1D08,0x2,.data,src/data/data_s16_004B1D08.c,initialized_s16_values
 data_raw_004B1D0A,0x004B1D0A,0x6,.data,src/data/data_raw_004B1D0A.c,initialized_byte_array
 data_s16_004B1D10,0x004B1D10,0x2,.data,src/data/data_s16_004B1D10.c,initialized_s16_values
-data_raw_004B1D12,0x004B1D12,0xE,.data,src/data/data_raw_004B1D12.c,initialized_byte_array
+data_raw_004B1D12,0x004B1D12,0x6,.data,src/data/data_raw_004B1D12.c,initialized_byte_array
+data_s32_004B1D18,0x004B1D18,0x8,.data,src/data/data_s32_004B1D18.c,initialized_s32_table
 data_f32_004B1D20,0x004B1D20,0xC,.data,src/data/data_f32_004B1D20.c,float_vector3
 data_u32_004B1D2C,0x004B1D2C,0x3C,.data,src/data/data_u32_004B1D2C.c,initialized_u32_table
 data_f32_004B1D68,0x004B1D68,0xC,.data,src/data/data_f32_004B1D68.c,float_vector3
