@@ -10,6 +10,7 @@ extern int func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_00126400(void);
 extern void func_00184540(u8 *);
+extern void func_00183920(u8 *, f32 *);
 void func_002F48D0(u8 *p)
 {
     s8 result;
@@ -53,4 +54,22 @@ void func_002F52C0(u8 *p, void *q)
     p[0x201] = 0;
     func_001757E0(p, 21, 25);
     func_002F5330(p, q);
+}
+
+void func_002F5A30(u8 *p)
+{
+    s8 result;
+    struct { union { f32 values[2]; u32 bits[2]; } pair; u32 padding[2]; } position;
+
+    result = (s8)func_00175700(p);
+    if (result < 0) {
+        func_001843A0(p);
+        return;
+    }
+    if (*(s8 *)(p + 0x151) != 0) {
+        p[0x151] = 0;
+        position.pair.bits[0] = 0x42BE0000;
+        position.pair.bits[1] = 0x42700000;
+        func_00183920(p, position.pair.values);
+    }
 }
