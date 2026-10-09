@@ -1746,3 +1746,12 @@ now records that ignored argument. Both source objects are exact.
 Catalog: 578,952 linked matching code bytes (17.5776%), 9,039 functions;
 74,669 reconstructed data bytes (11.5219%). Changed objects and both
 full-image hash gates pass.
+
+
+### Signed 64-bit integer parsing wrapper
+
+The 44-byte default-context integer parser wrapper is compiler-exact.
+The callee uses signed 64-bit limits, a text pointer, an end-pointer output,
+and a base argument. Catalog: 578,996 linked matching code bytes
+(17.5789%), 9,040 functions; data remains 74,669 bytes (11.5219%).
+The native object, catalog validation, and both full-image hashes pass.

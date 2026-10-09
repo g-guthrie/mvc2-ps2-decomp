@@ -9042,3 +9042,4 @@ func_002D0630,0x002D0630,0xA8,src/fixed_launch_effect_initializers.c,complete
 func_002E1EB0,0x002E1EB0,0xC8,src/motion_speed_transition.c,complete
 func_002E0B80,0x002E0B80,0xBC,src/motion_speed_transition.c,complete
 func_0011C998,0x0011C998,0x1C,src/sdk_default_static_record_0011C998.c,complete
+func_00120838,0x00120838,0x2C,src/sdk_parse_integer64_00120838.c,complete
