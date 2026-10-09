@@ -14,6 +14,7 @@ extern void func_001843A0(u8 *);
 extern void func_00184540(u8 *);
 extern void func_00185490(u8 *);
 extern void func_00186A20(u8 *);
+extern int func_0019F3F0(u8 *, int, int);
 extern void func_00178F20();
 extern void func_001820A0(u8 *);
 extern void func_00182300(u8 *);
@@ -25,6 +26,7 @@ extern s32 func_0023F520(u8 *);
 extern void func_0022E7E0(u8 *);
 extern void func_0022EB50(u8 *);
 
+extern u8 *D_004C2840 __attribute__((section(".sdata")));
 extern u8 D_004F1F45;
 extern u8 D_004F1F46;
 extern u8 D_004D18A0;
@@ -133,6 +135,23 @@ void func_0022E8C0(u8 *p)
         p[0x13c] = 1;
         func_0022E7E0(p);
     }
+}
+
+void func_0022E7E0(u8 *p)
+{
+    *(f32 *)(p + 52) += *(f32 *)(p + 92);
+    *(f32 *)(p + 92) += *(f32 *)(p + 104);
+    *(f32 *)(p + 56) += *(f32 *)(p + 96);
+    *(f32 *)(p + 96) += *(f32 *)(p + 108);
+    if ((s8)p[337] <= 0) {
+        p[7]++;
+        *(f32 *)(p + 92) = -(*(f32 *)(p + 92) / 4.0f);
+        *(u32 *)(p + 96) = 0x40092492;
+        *(u32 *)(p + 108) = 0xBECDB6DB;
+    }
+    if ((*(u32 *)(D_004C2840 + 28) & 3) == 0)
+        func_0019F3F0(p, 2, 0);
+    func_00175700(p);
 }
 
 void func_0022EBD0(u8 *p)
