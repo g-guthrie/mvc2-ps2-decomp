@@ -2633,3 +2633,11 @@ and corrected the memory-fill helper declaration to return its destination
 pointer. The caller ignores that pointer. The complete 24-byte reset remains
 exact; full hybrid linkage and packed retail ELF identity pass. Code credit
 remains 602,656 bytes (18.2973%).
+
+## Runtime service workspace initializer checkpoint
+
+Recovered the complete 100-byte initializer for the three service workspaces.
+Counter resets and zero/negative fills preserve native ordering and extents;
+its no-argument signature is grounded by the native 12F4C0 caller. Whole-object,
+catalog, full relink and packed retail ELF verification pass. Catalog: 602,756
+code bytes (18.3003%), 9,214 functions; data 83,806 bytes (12.9317%).
