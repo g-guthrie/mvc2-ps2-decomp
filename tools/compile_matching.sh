@@ -3049,3 +3049,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_initialize_single_word_0011DED8.i" "$BUILD/sdk_initialize_single_word_0011DED8.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_initialize_single_word_0011DED8.o" "$BUILD/sdk_initialize_single_word_0011DED8.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sdk_initialize_single_word_0011DED8.o" private/SLUS_204.86.rom --source src/sdk_initialize_single_word_0011DED8.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_runtime_menu_notice_00420560.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/initialize_runtime_menu_notice_00420560.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_runtime_menu_notice_00420560.o" \
+    private/SLUS_204.86.rom --source src/initialize_runtime_menu_notice_00420560.c
