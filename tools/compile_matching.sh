@@ -2886,6 +2886,17 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
     "$BUILD/read_runtime_record_field_0040D178.o" \
     private/SLUS_204.86.rom --source src/read_runtime_record_field_0040D178.c
 
+"$WIBO" "$SNCPP" -P src/reset_runtime_record_state_0040CF98.c \
+    "$BUILD/reset_runtime_record_state_0040CF98.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/reset_runtime_record_state_0040CF98.i" \
+    "$BUILD/reset_runtime_record_state_0040CF98.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/reset_runtime_record_state_0040CF98.o" \
+    "$BUILD/reset_runtime_record_state_0040CF98.s"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/reset_runtime_record_state_0040CF98.o" \
+    private/SLUS_204.86.rom --source src/reset_runtime_record_state_0040CF98.c
+
 "$WIBO" "$SNCPP" -P src/read_scaled_runtime_fields_0040A310.c \
     "$BUILD/read_scaled_runtime_fields_0040A310.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
