@@ -2875,6 +2875,17 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
     "$BUILD/initialize_runtime_descriptor_00404408.o" \
     private/SLUS_204.86.rom --source src/initialize_runtime_descriptor_00404408.c
 
+"$WIBO" "$SNCPP" -P src/dispatch_runtime_record_fields_00404360.c \
+    "$BUILD/dispatch_runtime_record_fields_00404360.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/dispatch_runtime_record_fields_00404360.i" \
+    "$BUILD/dispatch_runtime_record_fields_00404360.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/dispatch_runtime_record_fields_00404360.o" \
+    "$BUILD/dispatch_runtime_record_fields_00404360.s"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/dispatch_runtime_record_fields_00404360.o" \
+    private/SLUS_204.86.rom --source src/dispatch_runtime_record_fields_00404360.c
+
 "$WIBO" "$SNCPP" -P src/read_versioned_runtime_state_00401F38.c \
     "$BUILD/read_versioned_runtime_state_00401F38.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
