@@ -2545,3 +2545,13 @@ The 104-byte contextual motion reset matches in full, using known floating-point
 velocity and acceleration fields and the existing bit-preserving float constant
 representation. Catalog: 601,424 code bytes (18.2599%), 9,205 functions.
 Whole-object and full retail image identity checks pass.
+
+## Motion floor clamp and selector coverage audit
+
+The 116-byte motion floor clamp matches in full. Catalog: 601,540 code bytes
+(18.2634%), 9,206 functions. Full relink and packed ELF match retail.
+
+Removed 144 bytes of reconstructed data credit: the waveform callback lifetime
+does not yet prove a full 128-index cycle, and the hex formatter caller does not
+establish all sixteen input nibbles. Their exact typed sources remain held
+placeholders. Data: 83,806 bytes (12.9317%), 2,851 reconstructed source units.

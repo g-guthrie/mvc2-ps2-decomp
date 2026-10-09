@@ -1,3 +1,4 @@
+/* Held from reconstructed credit: full reachable selector coverage is unproven. */
 typedef signed char s8;
 /* func_003C45B0 decrements task field1C at 0x003C45E4, masks it to 0x7F at 0x003C45F0, and loads this signed-byte lookup with lb at 0x003C460C. */
 s8 data_s8_00475E00[128] = {
