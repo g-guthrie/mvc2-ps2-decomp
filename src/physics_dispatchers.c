@@ -1,9 +1,12 @@
 typedef unsigned char u8;
+typedef signed char s8;
 
 extern void func_00282610(u8 *);
 extern void func_00282680(u8 *);
 extern void func_002825A0(u8 *);
 extern void func_002823F0(u8 *);
+extern int func_00175700(u8 *);
+extern void func_001843A0(u8 *);
 
 extern void func_001863F0();
 extern void func_001EA110();
@@ -140,7 +143,7 @@ extern void func_00301940();
 extern void func_00301A60();
 extern void func_00305DE0();
 extern void func_00305FE0();
-extern void func_003061E0();
+extern void func_003061E0(u8 *);
 extern void func_00306280();
 extern void func_00310950();
 extern void func_00310AE0();
@@ -234,5 +237,24 @@ void func_002FD100(u8 *p) { *(float *)(p+52) += *(float *)(p+92); *(float *)(p+9
 void func_003015F0(u8 *p) { *(float *)(p+52) += *(float *)(p+92); *(float *)(p+92) += *(float *)(p+104); *(float *)(p+56) += *(float *)(p+96); *(float *)(p+96) += *(float *)(p+108); func_001863F0(p); if (p[530] == 1) { if (p[525] == 1) func_00301A60(p); else func_00301940(p); } else { if (p[525] == 1) func_00301840(p); else func_003016C0(p); } }
 
 void func_00305D10(u8 *p) { *(float *)(p+52) += *(float *)(p+92); *(float *)(p+92) += *(float *)(p+104); *(float *)(p+56) += *(float *)(p+96); *(float *)(p+96) += *(float *)(p+108); func_001863F0(p); if (p[530] == 1) { if (p[525] == 1) func_00306280(p); else func_003061E0(p); } else { if (p[525] == 1) func_00305FE0(p); else func_00305DE0(p); } }
+
+void func_003061E0(u8 *p)
+{
+    u8 *owner = p + 0x2B8;
+    u8 state = p[0x1FC];
+
+    switch (state) {
+    case 0:
+    case 1:
+        if ((s8)func_00175700(p) < 0)
+            func_001843A0(p);
+        break;
+    case 2:
+        owner[0x10] = 8;
+        if ((s8)func_00175700(p) < 0)
+            func_001843A0(p);
+        break;
+    }
+}
 
 void func_00310880(u8 *p) { *(float *)(p+52) += *(float *)(p+92); *(float *)(p+92) += *(float *)(p+104); *(float *)(p+56) += *(float *)(p+96); *(float *)(p+96) += *(float *)(p+108); func_001863F0(p); if (p[530] == 1) { if (p[525] == 1) func_00310F60(p); else func_00310B50(p); } else { if (p[525] == 1) func_00310AE0(p); else func_00310950(p); } }
