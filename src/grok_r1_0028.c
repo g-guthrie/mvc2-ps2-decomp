@@ -9,7 +9,11 @@ extern int func_001757E0(u8 *, int, int);
 
 extern void func_001821D0(u8 *);
 extern void func_00182380(u8 *);
+extern void func_001820A0(u8 *);
+extern void func_00182300(u8 *);
 extern void func_001843A0(u8 *);
+extern int func_001864A0(u8 *);
+extern void func_001865B0(u8 *);
 
 extern void func_001C8B10(u8 *);
 extern void func_001C9420(u8 *, int, int);
@@ -22,12 +26,26 @@ extern void func_002B4630(u8 *);
 extern s32 func_002C0530(u8 *);
 extern s32 func_002C0590(u8 *);
 extern void func_002C1670(u8 *);
-extern void func_002C6C60(u8 *);
+extern void func_002C6CE0(u8 *);
+extern void func_002C6DE0(u8 *);
 extern s32 func_002D9730(u8 *);
 extern s32 func_002D97A0(u8 *);
 extern void func_002D9D10(u8 *);
 extern void func_002E1520(u8 *, int);
 extern s32 func_002E92E0(u8 *);
+
+void func_002C6C60(u8 *p)
+{
+    if (p[533] == 0)
+        func_001820A0(p);
+    func_00182300(p);
+    if (p[530] == 1)
+        func_002C6DE0(p);
+    else
+        func_002C6CE0(p);
+    if (func_001864A0(p))
+        func_001865B0(p);
+}
 extern s32 func_002E9340(u8 *);
 extern s32 func_002EE150(u8 *);
 extern s32 func_002EE200(u8 *);
