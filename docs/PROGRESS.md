@@ -1981,3 +1981,12 @@ aligned without changing bytes. Catalog: 581,604 linked matching code
 bytes (17.6581%), 9,061 functions; 79,356 reconstructed data bytes
 (12.2451%). All affected whole sources, data object, catalog validation,
 and both full-image hashes pass.
+
+
+### Indexed-state callbacks
+
+Two complete handlers add 228 matching code bytes. Their shared source
+now verifies four functions, retaining the corrected byte-table provider
+declaration. Catalog: 581,832 linked matching code bytes (17.6650%),
+9,063 functions; data remains 79,356 bytes (12.2451%). Whole-source
+verification, catalog validation, and both full-image hashes pass.
