@@ -2930,6 +2930,17 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
     "$BUILD/clear_runtime_service_table_00404240.o" \
     private/SLUS_204.86.rom --source src/clear_runtime_service_table_00404240.c
 
+"$WIBO" "$SNCPP" -P src/clear_runtime_record_buffer_004043C0.c \
+    "$BUILD/clear_runtime_record_buffer_004043C0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/clear_runtime_record_buffer_004043C0.i" \
+    "$BUILD/clear_runtime_record_buffer_004043C0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/clear_runtime_record_buffer_004043C0.o" \
+    "$BUILD/clear_runtime_record_buffer_004043C0.s"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/clear_runtime_record_buffer_004043C0.o" \
+    private/SLUS_204.86.rom --source src/clear_runtime_record_buffer_004043C0.c
+
 "$WIBO" "$SNCPP" -P src/read_versioned_runtime_state_00401F38.c \
     "$BUILD/read_versioned_runtime_state_00401F38.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
