@@ -4234,3 +4234,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/dispatch_runtime_record_strategy_0041AE60.o" \
     private/SLUS_204.86.rom --source src/dispatch_runtime_record_strategy_0041AE60.c
 
+"$WIBO" "$SNCPP" -P src/detect_runtime_path_prefix_0040BF00.c \
+    "$BUILD/detect_runtime_path_prefix_0040BF00.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/detect_runtime_path_prefix_0040BF00.i" \
+    "$BUILD/detect_runtime_path_prefix_0040BF00.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/detect_runtime_path_prefix_0040BF00.o" \
+    "$BUILD/detect_runtime_path_prefix_0040BF00.s"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/detect_runtime_path_prefix_0040BF00.o" \
+    private/SLUS_204.86.rom --source src/detect_runtime_path_prefix_0040BF00.c
+
