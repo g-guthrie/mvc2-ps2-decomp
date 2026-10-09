@@ -74,6 +74,10 @@ extern void func_0026C020();
 extern void func_0026C0F0();
 extern void func_0026C190();
 extern void func_0026C1D0();
+extern void func_0026FEB0(u8 *);
+extern void func_0026FFF0(u8 *);
+extern void func_00270030(u8 *);
+extern void func_00270070(u8 *);
 extern void func_00274650();
 extern void func_00274920();
 extern void func_002749C0();
@@ -204,6 +208,25 @@ void func_0025D480(u8 *p) { *(float *)(p+52) += *(float *)(p+92); *(float *)(p+9
 void func_00263610(u8 *p) { *(float *)(p+52) += *(float *)(p+92); *(float *)(p+92) += *(float *)(p+104); *(float *)(p+56) += *(float *)(p+96); *(float *)(p+96) += *(float *)(p+108); func_001863F0(p); if (p[530] == 1) { if (p[525] == 1) func_00263B20(p); else func_00263970(p); } else { if (p[525] == 1) func_00263850(p); else func_002636E0(p); } }
 
 void func_0026BF50(u8 *p) { *(float *)(p+52) += *(float *)(p+92); *(float *)(p+92) += *(float *)(p+104); *(float *)(p+56) += *(float *)(p+96); *(float *)(p+96) += *(float *)(p+108); func_001863F0(p); if (p[530] == 1) { if (p[525] == 1) func_0026C1D0(p); else func_0026C190(p); } else { if (p[525] == 1) func_0026C0F0(p); else func_0026C020(p); } }
+
+void func_0026FDE0(u8 *p)
+{
+    if (p[530] == 1) {
+        if (p[525] == 1)
+            func_00270070(p);
+        else
+            func_00270030(p);
+    } else if (p[525] == 1) {
+        func_0026FFF0(p);
+    } else {
+        func_0026FEB0(p);
+    }
+    *(float *)(p + 52) += *(float *)(p + 92);
+    *(float *)(p + 92) += *(float *)(p + 104);
+    *(float *)(p + 56) += *(float *)(p + 96);
+    *(float *)(p + 96) += *(float *)(p + 108);
+    func_001863F0(p);
+}
 
 void func_00274580(u8 *p) { *(float *)(p+52) += *(float *)(p+92); *(float *)(p+92) += *(float *)(p+104); *(float *)(p+56) += *(float *)(p+96); *(float *)(p+96) += *(float *)(p+108); func_001863F0(p); if (p[530] == 1) { if (p[525] == 1) func_00274B90(p); else func_002749C0(p); } else { if (p[525] == 1) func_00274920(p); else func_00274650(p); } }
 
