@@ -2151,3 +2151,12 @@ explicit native GP address alias; no data bytes receive new credit.
 Catalog: 587,132 linked matching code bytes (17.8259%), 9,100 functions;
 data remains 79,664 bytes (12.2926%). The complete source object, catalog
 validation, and both full-image hashes pass.
+
+
+### Zero-variant renderer constants
+
+Both native callers pass selector zero. The selected scale and float3
+vector add 16 reconstructed bytes; unselected values and surrounding
+bytes stay raw. Catalog: 587,132 linked matching code bytes (17.8259%),
+79,680 reconstructed data bytes (12.2951%). All split data objects,
+catalog validation, and both full-image hashes pass.
