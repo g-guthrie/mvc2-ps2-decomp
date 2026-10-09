@@ -4194,3 +4194,10 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     -o "$BUILD/animation_data_selector_00175A30.o"
 "$PYTHON" tools/verify_object.py "$BUILD/animation_data_selector_00175A30.o" \
     private/SLUS_204.86.rom --source src/animation_data_selector_00175A30.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/dispatch_runtime_record_strategy_0041AE60.c -c -lang c $MATCH_FLAGS \
+    -o "$BUILD/dispatch_runtime_record_strategy_0041AE60.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/dispatch_runtime_record_strategy_0041AE60.o" \
+    private/SLUS_204.86.rom --source src/dispatch_runtime_record_strategy_0041AE60.c
+
