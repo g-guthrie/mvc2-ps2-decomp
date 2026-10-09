@@ -3156,3 +3156,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/initialize_runtime_graphics_matrix_003F38A0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_runtime_graphics_matrix_003F38A0.o" \
     private/SLUS_204.86.rom --source src/initialize_runtime_graphics_matrix_003F38A0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/get_bmp_pixel_data_003F3850.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/get_bmp_pixel_data_003F3850.o"
+"$PYTHON" tools/verify_object.py "$BUILD/get_bmp_pixel_data_003F3850.o" \
+    private/SLUS_204.86.rom --source src/get_bmp_pixel_data_003F3850.c
