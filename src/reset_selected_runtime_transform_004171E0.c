@@ -1,9 +1,9 @@
-typedef unsigned int u32;
+typedef float f32;
 typedef signed int s32;
 
-extern u32 D_006327B0[];
+extern f32 D_006327B0[];
 extern s32 D_004C2B40;
-extern void func_003DD260(u32 *matrix);
+extern void func_003DD260(f32 *matrix);
 
 void func_004171E0(void)
 {

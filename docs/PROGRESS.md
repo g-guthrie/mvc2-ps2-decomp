@@ -1802,3 +1802,12 @@ arguments 0..6; the native consumer is func_00136390 at load 0x1363BC.
 Catalog: 579,560 linked matching code bytes (17.5960%), 9,044 functions;
 74,761 reconstructed data bytes (11.5361%). Changed native objects,
 catalog validation, and both full-image hashes pass.
+
+
+### Runtime point transform and matrix types
+
+The 120-byte point-transform helper matches exactly. Matrix storage and
+the identity initializer now consistently use float elements, preserving
+every affected function byte. Four complete source objects verify.
+Catalog: 579,680 linked matching code bytes (17.5997%), 9,045 functions;
+data remains 74,761 bytes (11.5361%). Both full-image hashes pass.

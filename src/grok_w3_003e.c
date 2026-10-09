@@ -8,10 +8,10 @@ extern f32 D_004F8094;
 extern f32 D_004F8098;
 extern f32 D_004F809C;
 extern f32 D_004F8060[];
-extern char D_00632770[];
+extern f32 D_00632770[];
 
 extern void func_003DF850(s32, void *);
-extern void func_003DD260(void *);
+extern void func_003DD260(f32 *);
 
 f32 func_003E0C20(f32 x)
 {
