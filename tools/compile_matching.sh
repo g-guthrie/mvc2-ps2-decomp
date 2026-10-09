@@ -3006,6 +3006,17 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
 "$PYTHON" tools/verify_object.py "$BUILD/read_versioned_runtime_state_00401F38.o" \
     private/SLUS_204.86.rom --source src/read_versioned_runtime_state_00401F38.c
 
+"$WIBO" "$SNCPP" -P src/set_runtime_record_reload_00402208.c \
+    "$BUILD/set_runtime_record_reload_00402208.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/set_runtime_record_reload_00402208.i" \
+    "$BUILD/set_runtime_record_reload_00402208.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/set_runtime_record_reload_00402208.o" \
+    "$BUILD/set_runtime_record_reload_00402208.s"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/set_runtime_record_reload_00402208.o" \
+    private/SLUS_204.86.rom --source src/set_runtime_record_reload_00402208.c
+
 "$WIBO" "$SNCPP" -P src/read_runtime_record_fields_00405350.c \
     "$BUILD/read_runtime_record_fields_00405350.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
