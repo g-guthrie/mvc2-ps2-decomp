@@ -2622,6 +2622,7 @@ func_002F3DC0,0x002F3DC0,0x20,src/indirect_dispatch.c,complete
 func_002F3E10,0x002F3E10,0x20,src/composite_dispatch_heads.c,complete
 func_002F4190,0x002F4190,0x8,src/tail_leaves.c,complete
 func_002F4460,0x002F4460,0x8,src/tail_leaves.c,complete
+func_002F4710,0x002F4710,0x9C,src/sequential_calls.c,complete
 func_002F4830,0x002F4830,0x2c,src/sequential_calls.c,complete
 func_002F4B20,0x002F4B20,0x8,src/tail_leaves.c,complete
 func_002F4CA0,0x002F4CA0,0x24,src/argument_dispatch_heads.c,complete

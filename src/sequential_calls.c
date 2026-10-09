@@ -82,7 +82,28 @@ extern void func_002E5410();
 extern void func_002EE7B0();
 extern void func_002EE860();
 extern void func_002F33A0();
-extern void func_002F4710();
+void func_002F4710(u8 *p) {
+    f32 *y;
+    f32 *dz;
+    f32 *dy;
+    f32 *ddz;
+    func_001863F0(p);
+    y = (f32 *)(p + 92);
+    dy = (f32 *)(p + 104);
+    dz = (f32 *)(p + 96);
+    ddz = (f32 *)(p + 108);
+    *(f32 *)(p + 52) += *(f32 *)(p + 92);
+    *(f32 *)(p + 92) += *(f32 *)(p + 104);
+    *(f32 *)(p + 56) += *(f32 *)(p + 96);
+    *(f32 *)(p + 96) += *(f32 *)(p + 108);
+    if (*(f32 *)(p + 56) < *(f32 *)(p + 1072)) {
+        *(f32 *)(p + 56) = *(f32 *)(p + 1072);
+        *y = 0;
+        *dz = 0;
+        *dy = 0;
+        *ddz = 0;
+    }
+}
 extern void func_002F8220();
 extern void func_002FD460();
 extern void func_00306390();
