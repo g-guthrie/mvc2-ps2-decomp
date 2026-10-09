@@ -2772,3 +2772,12 @@ arguments and mutable halfword outputs at record+48/+50. The native argument
 reordering is preserved. Whole EE96/SNAS object, catalog, full hybrid linkage
 and packed retail ELF identity pass. Catalog: 603,756 code bytes (18.3307%),
 9,227 functions; data remains 84,278 bytes (13.0046%).
+
+## Runtime service table clear checkpoint
+
+Recovered the complete 36-byte startup clear with a caller-grounded no-argument
+void interface and the canonical memory-fill API. Its 960-byte target uses an
+interior address alias only; no existing placeholder data gains credit. Whole
+EE96/SNAS object, catalog, full linkage and packed retail ELF identity pass.
+Catalog: 603,792 code bytes (18.3317%), 9,228 functions; data remains 84,278
+bytes (13.0046%).
