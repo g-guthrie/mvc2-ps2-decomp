@@ -25,6 +25,7 @@ extern void func_00176160(u8 *, int, int, int);
 extern void func_00183920(u8 *, float *);
 extern u8 D_004D18A0;
 extern void func_002DD930(u8 *);
+extern void func_002B41F0(u8 *);
 
 void func_00243330(u8 *p)
 {
@@ -480,6 +481,18 @@ void func_002B4150(u8 *p)
         *(float *)(p + 104) = y;
         func_002B41F0(p);
     }
+}
+
+void func_002B41F0(u8 *p)
+{
+    *(float *)(p + 52) += *(float *)(p + 92);
+    *(float *)(p + 92) += *(float *)(p + 104);
+    *(float *)(p + 56) += *(float *)(p + 96);
+    *(float *)(p + 96) += *(float *)(p + 108);
+    func_00175700(p);
+    *(short *)(p + 28) -= 1;
+    if (*(short *)(p + 28) <= 0)
+        p[6]++;
 }
 
 void func_002E5930(u8 *p)
