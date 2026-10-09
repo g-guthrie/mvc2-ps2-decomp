@@ -3294,3 +3294,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/project_point_to_xy.o"
 "$PYTHON" tools/verify_object.py "$BUILD/project_point_to_xy.o" \
     private/SLUS_204.86.rom --source src/project_point_to_xy.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_gated_motion_advancement.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_gated_motion_advancement.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_gated_motion_advancement.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_gated_motion_advancement.c
