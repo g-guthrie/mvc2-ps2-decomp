@@ -2333,3 +2333,11 @@ step updates mask with 0x1F. Native LH loads convert the offsets to
 floats for X/Y updates, and the secondary lookup masks its eight-pair
 index. Catalog: 590,344 code bytes (17.9235%), 9,123 functions,
 80,778 data bytes (12.4645%). Changed objects, catalog, and both hashes pass.
+
+
+### Timed three-word reset
+
+The complete 180-byte reset handler matches its flag gate, state clear,
+and aligned three-word position representation. Catalog: 590,524 exact
+code bytes (17.9289%), 9,124 functions, 80,778 reconstructed data bytes
+(12.4645%). Whole-object, catalog, and both full-image hashes pass.
