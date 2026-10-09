@@ -1949,3 +1949,12 @@ lookup and typed float representations. Catalog: 581,080 linked matching
 code bytes (17.6422%), 9,058 functions; data remains 75,112 bytes
 (11.5902%). Native object, catalog validation, and both full-image hashes
 pass. The buffered character-output variants remain private and uncredited.
+
+
+### Velocity transfer actor state
+
+The 172-byte handler now matches, including float position/velocity
+updates, the signed low-byte animation result, and secondary-object state
+dispatch. Catalog: 581,252 linked matching code bytes (17.6474%), 9,059
+functions; data remains 75,112 bytes (11.5902%). Whole-source proof,
+catalog validation, and both full-image hashes pass.
