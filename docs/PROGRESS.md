@@ -2253,3 +2253,12 @@ bytes. Call sites restrict the selector fields to 0/1/2; the float-pair
 consumer maps its byte selector to 0..3, including the default case.
 Catalog: 588,344 exact code bytes (17.8627%), 80,067 reconstructed
 data bytes (12.3548%). Changed objects, catalog, and both image hashes pass.
+
+
+### Fixed vector and bounded animation curves
+
+A three-float vector, two interpolation records, and seven signed ID/float
+steps add 86 data bytes. Native callback allocation clears the object;
+its counters/selectors start at zero and exit at five or seven, preserving
+the proven table bounds. Catalog: 588,344 code bytes (17.8627%), 80,153
+data bytes (12.3681%). Changed data objects, catalog, and both hashes pass.
