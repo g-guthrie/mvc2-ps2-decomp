@@ -2520,3 +2520,12 @@ the callback uses the stored context and the same message/reserved tuple.
 Setter and adapter types share that verified contract. Catalog: 599,964
 code bytes (18.2155%), 9,192 functions, 83,647 data bytes (12.9072%).
 All four affected functions, catalog, and both full-image hashes pass.
+
+## Actor timers and runtime workspace reset checkpoint
+
+Twelve additional whole functions match relocated retail bytes: actor timer,
+phase, callback, position and flag handlers, plus the expanded runtime workspace
+reset. The single-flag callback uses the verified byte arguments of its callee.
+Catalog: 601,320 code bytes (18.2567%), 9,204 functions, and 83,647 data bytes
+(12.9072%). All twelve objects, catalog validation, full relink and packed retail
+ELF identity pass. The next code push threshold remains 21.0711%.
