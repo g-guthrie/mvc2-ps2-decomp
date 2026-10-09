@@ -2582,3 +2582,11 @@ interleaved and prefix bytes remain raw placeholders. Changed objects, catalog
 validation, full relink and packed retail ELF identity pass. Catalog: 602,084
 code bytes (18.2799%), 9,210 functions, and 83,822 data bytes (12.9342%) across
 2,867 reconstructed source units. Additional producer-domain audits continue.
+
+## Selector producer correction
+
+Confirmed the native random recurrence and its seeded cycle independently:
+43,534 visited states cover all low four- and five-bit selectors. This supports
+the five random-selected byte banks. The deterministic delta table at 446D40
+has unproven input-field domains, so its sixteen bytes are held placeholders.
+Data credit is 83,806 bytes (12.9317%), 2,866 reconstructed units.
