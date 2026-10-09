@@ -4,6 +4,8 @@ typedef unsigned short u16;
 extern u8 *D_004C2794;
 extern const unsigned int jtbl_004C1580[2] __attribute__((section(".sdata")));
 extern unsigned int data_ff_004C158C[2] __attribute__((section(".sdata")));
+extern unsigned int data_u32_004C1594[1] __attribute__((section(".sdata")));
+extern unsigned int data_ff_004C1598[2] __attribute__((section(".sdata")));
 extern int func_001757E0(u8 *, int, int);
 extern void func_00176160(u8 *, int, int, int);
 extern void func_003092C0(u8 *);
@@ -601,6 +603,34 @@ void func_00309560(u8 *p) {
   break;
  }
  reset_move_counters(p, p[0x1b5], 9);
+}
+
+void func_00309670(u8 *p) {
+ switch (p[0x1fc]) {
+ case 0:
+  p[0x168] = 0;
+  p[0x1b5] = 3;
+  func_001E3710(p, 20);
+  *(const unsigned int **)(p + 0x408) = &data_u32_004C1594[0];
+  p[0x1bb] = 0;
+  break;
+ case 1:
+  p[0x168] = 1;
+  p[0x1b5] = 4;
+  func_001E3710(p, 21);
+  *(const unsigned int **)(p + 0x408) = &data_ff_004C1598[0];
+  p[0x1bb] = 1;
+  break;
+ case 2:
+  p[0x168] = 2;
+  p[0x1b5] = 5;
+  func_001E3710(p, 22);
+  *(const unsigned int **)(p + 0x408) = &data_ff_004C1598[1];
+  p[0x1bb] = 2;
+  func_003092C0(p);
+  break;
+ }
+ reset_move_counters(p, p[0x1b5], 8);
 }
 
 void func_00301040(u8 *p) {
