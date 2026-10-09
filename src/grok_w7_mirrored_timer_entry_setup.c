@@ -17,7 +17,7 @@ void func_0030BD10(u8 *p)
         q = *(u8 **)(p + 0x1DC);
         toggled = q[0x1E6] ^ 1;
         *(s16 *)(q + 0x140) = toggled;
-        ((u8 *)(*(u32 *)(p + 0x1DC)))[0x1E6] = toggled;
+        (*(u8 **)(p + 0x1DC))[0x1E6] = toggled;
     }
     position.pair.bits[0] = 0xC2D55555;
     position.pair.bits[1] = 0x434DB6DB;

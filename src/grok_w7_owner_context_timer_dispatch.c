@@ -3,7 +3,7 @@ typedef unsigned int u32;
 typedef signed char s8;
 extern void func_0030C120(u8 *);
 extern int func_00175700(u8 *);
-extern int func_001266A0(u8 *, int, int);
+extern void func_001266A0(u8 *, int, int);
 extern void func_00175C00(u8 *, int);
 void func_0030C090(u8 *p)
 {

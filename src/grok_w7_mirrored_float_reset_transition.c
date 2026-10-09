@@ -19,15 +19,15 @@ void func_0030BDD0(u8 *p)
         q = *(u8 **)(p + 0x1DC);
         toggled = q[0x1E6] ^ 1;
         *(s16 *)(q + 0x140) = toggled;
-        ((u8 *)(*(u32 *)(p + 0x1DC)))[0x1E6] = toggled;
+        (*(u8 **)(p + 0x1DC))[0x1E6] = toggled;
     }
     position.pair.bits[0] = 0xC2D55555;
     position.pair.bits[1] = 0x434DB6DB;
     func_0015D010(p, position.pair.values);
     p[0x1B4] = 10;
     func_00176160(p, 1, 5, 1);
-    ((u8 *)(*(u32 *)(p + 0x1DC)))[0x23E] = 3;
-    ((u8 *)(*(u32 *)(p + 0x1DC)))[0x23C] = 3;
+    (*(u8 **)(p + 0x1DC))[0x23E] = 3;
+    (*(u8 **)(p + 0x1DC))[0x23C] = 3;
     func_00328E60(*(u8 **)(p + 0x1DC));
     func_001DAF30(p, 1);
     func_001757E0(p, 15, 2);

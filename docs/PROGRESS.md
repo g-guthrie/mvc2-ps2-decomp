@@ -2354,3 +2354,15 @@ intentional same-address alias pairs are explicitly marked for the splitter.
 Splitting, baseline relinking, all 45 tests, changed whole objects, catalog,
 and both hybrid hashes pass. Catalog: 591,324 code bytes (17.9532%),
 9,130 functions, 80,906 data bytes (12.4843%).
+
+
+### SDK random generator, callbacks, cleanup, and mirrored transitions
+
+Eight complete functions add 1,088 exact C bytes. The SDK random generator
+uses the native unsigned 64-bit recurrence in its reentrant context.
+Registered callbacks take the proven context/buffer pointers and ignore
+return values. Mirrored handlers use typed owner-pointer reloads and float
+zero stores, with all affected whole source objects still exact.
+Catalog: 592,412 matching code bytes (17.9862%), 9,138 functions; data
+remains 80,906 bytes (12.4843%). Whole-source proofs, catalog validation,
+and both full-image hashes pass.
