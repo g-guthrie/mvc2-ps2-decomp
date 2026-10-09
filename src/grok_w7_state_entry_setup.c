@@ -1,5 +1,7 @@
 typedef unsigned char u8;
 typedef signed int s32;
+typedef signed short s16;
+typedef float PlanarOffset[2] __attribute__((aligned(16)));
 
 typedef signed char s8;
 typedef float f32;
@@ -53,7 +55,6 @@ void func_002F0B10(u8 *p)
     }
 }
 
-typedef signed short s16;
 extern void func_001E3710(u8 *, int);
 
 void func_002F1430(u8 *p)
@@ -76,5 +77,31 @@ void func_002F1430(u8 *p)
     } else if (*(s8 *)(p + 0x151) != 0) {
         *(s8 *)(p + 0x151) = 0;
         func_001E3710(p, 76);
+    }
+}
+
+extern void func_003A9A60(u8 *);
+
+void func_002F1360(u8 *p)
+{
+    PlanarOffset position;
+
+    p[0x40C] = 2;
+    p[0x33C] = 5;
+    p[0x405] = (p[0x269] == 6) ? 2 : 0;
+    func_00175700(p);
+    --*(s16 *)(p + 0x1C);
+
+    if (*(s8 *)(p + 0x151) != 0) {
+        p[0x404] = 0;
+        p[0x405] = 0;
+        p[6]++;
+        p[0x151] = 0;
+        func_00175C00(p, 1);
+        *(s32 *)(p + 0x2B8) = 0;
+        ((s32 *)position)[0] = 0x4226AAAA;
+        ((s32 *)position)[1] = 0x433A6DB6;
+        func_001830D0(p, position, 1);
+        func_003A9A60(p);
     }
 }
