@@ -1832,3 +1832,12 @@ pointer bytes; every selector is masked to 0..3. Catalog: 580,072 linked
 matching code bytes (17.6116%), 9,048 functions; 74,825 reconstructed data
 bytes (11.5459%). Affected objects, catalog validation, and both full-image
 hashes pass.
+
+
+### Single-word SDK value and actor countdown
+
+Two exact functions add 156 code bytes: the SDK constructor initializes
+one word after the allocated 20-byte node header, and the actor callback
+counts down its gated 16-bit timer. Catalog: 580,228 linked matching code
+bytes (17.6163%), 9,050 functions; data remains 74,825 bytes (11.5459%).
+Both native objects, catalog validation, and both full-image hashes pass.
