@@ -1,0 +1,4 @@
+/* Rows 4-5 stay raw: func_0027C820 derives a selector from field 0x1B7 + 4,
+ * and no complete bound for that value is established. */
+typedef unsigned char u8;
+u8 data_raw_0044C3D8[0xC] = { 0xD7u, 0xFFu, 0x53u, 0x00u, 0x00u, 0x03u, 0xD7u, 0xFFu, 0x53u, 0x00u, 0x00u, 0x04u };
