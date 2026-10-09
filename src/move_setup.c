@@ -2,7 +2,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 extern u8 *D_004C2794;
-extern const unsigned int jtbl_004C1580[2] __attribute__((section(".sdata")));
+extern const unsigned int D_004C1588[] __attribute__((section(".sdata")));
 extern unsigned int data_ff_004C158C[2] __attribute__((section(".sdata")));
 extern unsigned int data_u32_004C1594[1] __attribute__((section(".sdata")));
 extern unsigned int data_ff_004C1598[2] __attribute__((section(".sdata")));
@@ -559,7 +559,7 @@ void func_00309450(u8 *p) {
   p[0x168] = 0;
   p[0x1b5] = 0;
   func_001E3710(p, 20);
-  *(const unsigned int **)(p + 0x408) = &jtbl_004C1580[2];
+  *(const unsigned int **)(p + 0x408) = D_004C1588;
   p[0x1bb] = 0;
   break;
  case 1:
@@ -588,7 +588,7 @@ void func_00309560(u8 *p) {
   p[0x168] = 0;
   p[0x1b5] = 6;
   func_001E3710(p, 20);
-  *(const unsigned int **)(p + 0x408) = &jtbl_004C1580[2];
+  *(const unsigned int **)(p + 0x408) = D_004C1588;
   p[0x1bb] = 0;
   break;
  case 1:
