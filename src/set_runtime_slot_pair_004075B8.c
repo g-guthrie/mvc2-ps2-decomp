@@ -1,15 +1,17 @@
 typedef signed int s32;
 
-extern s32 D_004872E4;
-extern s32 D_004872E8;
+typedef void (*RuntimeMessageCallback)(void *context, const char *message);
 
-void func_004075B8(s32 first, s32 second)
+extern RuntimeMessageCallback D_004872E4;
+extern void *D_004872E8;
+
+void func_004075B8(RuntimeMessageCallback callback, void *context)
 {
-    if (first == 0) {
+    if (callback == 0) {
         D_004872E4 = 0;
         D_004872E8 = 0;
     } else {
-        D_004872E4 = first;
-        D_004872E8 = second;
+        D_004872E4 = callback;
+        D_004872E8 = context;
     }
 }
