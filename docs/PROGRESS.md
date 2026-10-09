@@ -2884,3 +2884,12 @@ linkage and packed retail ELF identity pass. Catalog: 604,756 code bytes
 (18.3610%), 9,244 functions; data remains 84,686 bytes (13.0675%).
 Additional SN/EE probes of animation helper175B40 remain size/layout mismatches
 and do not receive credit.
+
+## Runtime scalar wrapper and metric dispatch
+
+Recovered the complete 24-byte scalar action wrapper and76-byte signed-mode
+metric dispatcher with return-consuming caller evidence. Unsigned multiplication
+preserves native low-word doubling without signed overflow; the dispatcher
+still verifies exactly. Both whole objects, catalog, full hybrid linkage and
+packed retail ELF identity pass. Catalog: 604,856 code bytes (18.3641%),
+9,246 functions; data remains84,686 bytes (13.0675%).

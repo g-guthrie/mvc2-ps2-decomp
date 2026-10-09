@@ -9,7 +9,7 @@ s32 func_00408808(void)
 {
     s8 mode = D_004872F1;
     if (mode == 1)
-        return func_004087A0() * 2;
+        return (s32)((unsigned int)func_004087A0() * 2u);
     if (mode == 2)
         return func_004087B8();
     return 0;
