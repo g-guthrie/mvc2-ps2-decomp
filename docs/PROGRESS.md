@@ -2993,3 +2993,13 @@ is inferred merely from the code registration. Whole object, catalog, full
 hybrid linkage and packed retail ELF identity pass. Catalog:607,148 code bytes
 (18.4336%),9,266functions;data86,386bytes(13.3299%). Table recovery is under
 separate native-index/consumer review.
+
+## Callback allocation pointer contract
+
+Recovered the complete104-byte allocator callback with pointer return, typed
+owner/record slots and both consuming callback APIs corrected. The3DA750
+wrapper forwards its owner pointer to the already reconstructed allocator.
+The complete source object, catalog, full hybrid linkage and packed retail
+ELF identity pass. Catalog:607,252 code bytes(18.4368%),9,267functions;
+data remains86,386bytes(13.3299%). The separately bounded quarter-wave data
+recovery is queued for independent root verification.
