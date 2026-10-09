@@ -50,10 +50,10 @@ void func_003DD2B0(s32 *p) {
 }
 
 /* func_003DDB60 */
-void func_003DDB60(u8 *p, f32 a, f32 b, f32 c) {
-    *(f32 *)(p + 48) = a;
-    *(f32 *)(p + 52) = b;
-    *(f32 *)(p + 56) = c;
+void func_003DDB60(f32 *p, f32 a, f32 b, f32 c) {
+    p[12] = a;
+    p[13] = b;
+    p[14] = c;
 }
 
 /* func_003DF7B0 */

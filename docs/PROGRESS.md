@@ -1821,3 +1821,14 @@ It shares the native 20-byte header with the previously recovered return
 routine. Both complete objects verify exactly. Catalog: 579,844 linked
 matching code bytes (17.6047%), 9,046 functions; data remains 74,761 bytes
 (11.5361%). Catalog validation and both full-image hashes pass.
+
+
+### Global callback gate, matrix translation, and preset pointers
+
+Two exact functions add 228 code bytes. The matrix translation setter
+now uses float element pointers consistently with its caller, without
+changing bytes. Four bounded random-selector tables add 64 symbolic
+pointer bytes; every selector is masked to 0..3. Catalog: 580,072 linked
+matching code bytes (17.6116%), 9,048 functions; 74,825 reconstructed data
+bytes (11.5459%). Affected objects, catalog validation, and both full-image
+hashes pass.
