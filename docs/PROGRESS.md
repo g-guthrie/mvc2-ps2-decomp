@@ -1890,3 +1890,12 @@ Only that 12-byte vector is reconstructed; the remaining 0x170-byte bank
 tail stays raw. Catalog: 580,452 linked matching code bytes (17.6231%),
 75,000 reconstructed data bytes (11.5729%). Both split objects, catalog
 validation, and both full-image hashes pass.
+
+
+### Seven graphics-bank choices
+
+The factory loop creates every selector 0..6 for the point-bank pointer
+table. Its seven entries now use symbolic references and verified
+relocations, adding 28 reconstructed bytes. Catalog: 580,452 linked code
+bytes (17.6231%), 75,028 reconstructed data bytes (11.5773%). Native
+object, catalog validation, and both full-image hashes pass.
