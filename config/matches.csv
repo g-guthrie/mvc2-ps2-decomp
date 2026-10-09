@@ -9082,3 +9082,4 @@ func_003DE680,0x003DE680,0x70,src/transform_runtime_view_point_003DE680.c,comple
 func_002F94A0,0x002F94A0,0x68,src/grok_w7_velocity_transfer_state.c,complete
 func_002F89B0,0x002F89B0,0x88,src/grok_w7_velocity_transfer_state.c,complete
 func_002F8A40,0x002F8A40,0x74,src/grok_w7_velocity_transfer_state.c,complete
+func_002F8AC0,0x002F8AC0,0x8C,src/grok_w7_velocity_transfer_state.c,complete
