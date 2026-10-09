@@ -2,10 +2,11 @@ typedef unsigned char u8;
 typedef signed char s8;
 typedef signed short s16;
 typedef signed int s32;
+typedef unsigned int u32;
 
 extern void func_0039E450();
 extern void func_003DD020();
-extern void *func_003F09C0(void *, void *, s32);
+extern void *func_003F09C0(void *, u32, s32);
 extern void func_003F0A40();
 extern void func_003F0A60();
 extern void func_003F0C50();
@@ -106,10 +107,10 @@ void func_003DB9D0(void *p) { func_003F0DB0(D_005BF280, p); }
 void func_003DB9E0(void *p) { func_003F0DF0(D_005BF280, p); }
 void func_003DB9F0(void) { func_003F0E60(D_005BF280); }
 
-void *func_003DCF70(void *p) { return func_003F09C0(D_0062C020, p, 0); }
+void *func_003DCF70(u32 size) { return func_003F09C0(D_0062C020, size, 0); }
 void func_003DCF90(void *p) { func_003F0A20((s32 *)D_0062C020, 0, p); }
 void func_003DCFB0(void *p) { func_003F0A40(D_0062C020, p); }
-void *func_003DCFC0(void *p) { return func_003F09C0(D_0062C020, p, 1); }
+void *func_003DCFC0(u32 size) { return func_003F09C0(D_0062C020, size, 1); }
 
 s32 func_003DE860(void) {
     func_003DD020();
