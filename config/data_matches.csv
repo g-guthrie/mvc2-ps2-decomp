@@ -1432,7 +1432,7 @@ data_u32_0044DC0C,0x0044DC0C,0xC4,src/data/data_u32_0044DC0C.c,complete,placehol
 jtbl_0044DCD0,0x0044DCD0,0x14,src/data/jtbl_0044DCD0.c,complete,placeholder
 jtbl_0044DCF0,0x0044DCF0,0x3c,src/data/jtbl_0044DCF0.c,complete,placeholder
 jtbl_0044DD30,0x0044DD30,0x20,src/data/jtbl_0044DD30.c,complete,reconstructed
-data_u32_0044DD50,0x0044DD50,0x20,src/data/data_u32_0044DD50.c,complete,placeholder
+data_f32_0044DD50,0x0044DD50,0x20,src/data/data_f32_0044DD50.c,complete,reconstructed
 jtbl_0044DD70,0x0044DD70,0x2c,src/data/jtbl_0044DD70.c,complete,placeholder
 data_u32_0044DDA0,0x0044DDA0,0x20,src/data/data_u32_0044DDA0.c,complete,placeholder
 jtbl_0044DDC0,0x0044DDC0,0x1c,src/data/jtbl_0044DDC0.c,complete,reconstructed
