@@ -5091,7 +5091,8 @@ data_raw_004ACC04,0x004ACC04,0x104,.data,src/data/data_raw_004ACC04.c,initialize
 data_s8_004ACD08,0x004ACD08,0x6,.data,src/data/data_s8_004ACD08.c,initialized_s8_table
 data_raw_004ACD0E,0x004ACD0E,0x2,.data,src/data/data_raw_004ACD0E.c,initialized_byte_array
 data_f32_004ACD10,0x004ACD10,0x20,.data,src/data/data_f32_004ACD10.c,initialized_f32_values
-data_u8_004ACD30,0x004ACD30,0x74,.data,src/data/data_u8_004ACD30.c,initialized_byte_array
+data_f32_004ACD30,0x004ACD30,0x18,.data,src/data/data_f32_004ACD30.c,initialized_f32_values
+data_raw_004ACD48,0x004ACD48,0x5C,.data,src/data/data_raw_004ACD48.c,initialized_byte_array
 data_u32_004ACDA4,0x004ACDA4,0x18,.data,src/data/data_u32_004ACDA4.c,filled_u32_constant
 data_u32_004ACDBC,0x004ACDBC,0x204,.data,src/data/data_u32_004ACDBC.c,initialized_u32_table
 data_zero_004ACFC0,0x004ACFC0,0x10,.data,src/data/data_zero_004ACFC0.c,zero_initialized_untyped
