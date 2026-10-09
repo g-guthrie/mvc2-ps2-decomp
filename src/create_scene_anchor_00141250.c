@@ -2,7 +2,7 @@ typedef unsigned char u8;
 typedef short s16;
 typedef unsigned int u32;
 typedef struct {float x,y,z;} Float3;
-extern u8 *func_003DA750(void *,int,int);
+extern void *func_003DA750(void *,int,int);
 extern void func_001412C0(u8 *);
 extern u32 D_004C2818;
 extern Float3 D_004B1E38;

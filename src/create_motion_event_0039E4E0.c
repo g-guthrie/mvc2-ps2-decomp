@@ -1,7 +1,7 @@
 /* Allocate a child motion event, preserving allocation failure. */
 typedef unsigned char u8;
 typedef short s16;
-extern u8 *func_003DA750(void *, int, int);
+extern void *func_003DA750(void *, int, int);
 extern void func_0039E550(u8 *);
 u8 *func_0039E4E0(u8 *owner, int mode) {
  u8 *event=func_003DA750(owner,1,2);

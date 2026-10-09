@@ -2,7 +2,7 @@ typedef unsigned char u8;
 typedef short s16;
 typedef unsigned int u32;
 typedef union {float value;u32 bits;} FloatBits;
-extern u8 *func_003DA750(void *,int,int);
+extern void *func_003DA750(void *,int,int);
 extern void func_0014A290(u8 *);
 extern u32 D_004C27FC;
 void func_0014A220(u8 *owner) {
