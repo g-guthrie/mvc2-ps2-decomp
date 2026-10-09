@@ -2756,3 +2756,11 @@ secondary-position float3. All three compiled data objects, catalog validation,
 full hybrid linkage and packed retail ELF identity pass. Data: 84,278 bytes
 (13.0046%), 2,886 reconstructed units. Code remains 603,672 bytes (18.3281%).
 The UI selector writer audit continues alongside fresh recovery work.
+
+## Runtime descriptor initializer checkpoint
+
+Recovered the complete 48-byte descriptor initializer with caller-grounded
+record and three value arguments. It preserves the native conditional writes
+and success result. Whole EE96/SNAS object, catalog, full hybrid linkage and
+packed retail ELF identity pass. Catalog: 603,720 code bytes (18.3296%),
+9,226 functions; data remains 84,278 bytes (13.0046%).
