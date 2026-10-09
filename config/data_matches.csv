@@ -520,7 +520,7 @@ data_zero_00442500,0x00442500,0x10,src/data/data_zero_00442500.c,complete,placeh
 data_u32_00442510,0x00442510,0x10,src/data/data_u32_00442510.c,complete,placeholder
 data_zero_00442520,0x00442520,0x10,src/data/data_zero_00442520.c,complete,placeholder
 data_u32_00442530,0x00442530,0x20,src/data/data_u32_00442530.c,complete,placeholder
-D_00442550,0x00442550,0x1C,src/data/D_00442550.c,complete,placeholder
+D_00442550,0x00442550,0x1C,src/data/D_00442550.c,complete,reconstructed
 data_u32_0044256C,0x0044256C,0x4,src/data/data_u32_0044256C.c,complete,placeholder
 jtbl_00442570,0x00442570,0xC,src/data/jtbl_00442570.c,complete,placeholder
 data_u32_0044257C,0x0044257C,0x4,src/data/data_u32_0044257C.c,complete,placeholder
