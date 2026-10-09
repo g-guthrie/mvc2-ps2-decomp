@@ -3321,6 +3321,12 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_default_heap_0011
 "$PYTHON" tools/verify_object.py "$BUILD/sdk_default_heap_0011CB70.o" private/SLUS_204.86.rom --source src/sdk_default_heap_0011CB70.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/reset_expanded_runtime_workspace_00415300.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/reset_expanded_runtime_workspace_00415300.o"
+"$PYTHON" tools/verify_object.py "$BUILD/reset_expanded_runtime_workspace_00415300.o" \
+    private/SLUS_204.86.rom --source src/reset_expanded_runtime_workspace_00415300.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/transform_homogeneous_point_003DE480.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/transform_homogeneous_point_003DE480.o"
 "$PYTHON" tools/verify_object.py "$BUILD/transform_homogeneous_point_003DE480.o" \

@@ -9206,3 +9206,4 @@ func_003071C0,0x003071C0,0x88,src/grok_w7_gate_timer_reset.c,complete
 func_003073A0,0x003073A0,0x7C,src/grok_w7_timed_sequence_fanout.c,complete
 func_00307540,0x00307540,0x7C,src/grok_w7_context_position_refresh.c,complete
 func_0030F260,0x0030F260,0x78,src/grok_w7_target_flag_query.c,complete
+func_00415300,0x00415300,0x18,src/reset_expanded_runtime_workspace_00415300.c,complete
