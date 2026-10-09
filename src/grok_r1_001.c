@@ -20,7 +20,6 @@ extern void func_00417A50(float, float, float);
 extern void func_00414C70(float);
 extern s32 func_00119098(float value);
 extern void func_003DF850(s32 index, s32 value);
-extern const char D_004BE9A8[];
 extern s32 func_00108F48(s32, s32);
 extern s32 func_0010ADC0(void);
 extern s32 func_0010B360(s32, s32, s32);

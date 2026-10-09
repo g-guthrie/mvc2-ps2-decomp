@@ -2390,3 +2390,13 @@ their proven endpoints. Unread trailing words remain raw.
 Catalog: 593,648 matching code bytes (18.0238%), 9,145 functions,
 81,134 reconstructed data bytes (12.5194%). Whole source objects,
 changed data units, catalog, and both full-image hashes pass.
+
+
+### Phase exits, packed alpha, and record cleanup
+
+Four complete actor handlers, a scaled alpha submitter, and the 1,024-slot
+cleanup loop add 824 code bytes. The existing conditional object-free
+wrapper now explicitly forwards its real owner pointer; the whole
+22-function source group remains exact. Catalog: 594,472 matching code
+bytes (18.0488%), 9,151 functions; data remains 81,134 bytes (12.5194%).
+All changed whole objects, catalog, and full-image hashes pass.

@@ -33,7 +33,7 @@ extern void func_003DC9C0(void);
 extern void func_003DB9F0(void);
 extern void func_003F0310(void);
 extern void func_003F0370(RuntimeRecord *record);
-extern void func_003DAA40(void);
+extern void func_003DAA40(u8 *object);
 extern void func_00130040(void);
 extern void func_00130820(void);
 extern void func_003DA6F0(s32);
@@ -91,10 +91,10 @@ void func_003F0310(void)
     } while (index < 1024);
 }
 
-void func_003C9210(void)
+void func_003C9210(u8 *object)
 {
     if (!D_004D18A6)
-        func_003DAA40();
+        func_003DAA40(object);
 }
 
 void func_003D24A0(void)
