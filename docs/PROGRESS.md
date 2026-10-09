@@ -3147,3 +3147,10 @@ Recovered all 256 bytes of residual_0039ED60, preserving the owner-state
 copy, typed float3 copy, timers and tail call. MWCCPS2 3.0 O3/Op produces
 an exact whole-object match. Code reaches 609,792 bytes (18.5139%) across
 9,283 functions; data remains 151,986 bytes (23.4523%).
+
+## Exit animation sequence
+
+Recovered the complete 200-byte callback at 0x0024AB80. All ten registered
+functions in the changed source object verify exactly. Code reaches
+609,992 bytes (18.5200%) across 9,284 functions; data remains 151,986 bytes
+(23.4523%).
