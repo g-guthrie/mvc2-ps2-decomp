@@ -2794,3 +2794,12 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_cleanup_context_0
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_cleanup_default_0011B788.i" "$BUILD/sdk_cleanup_default_0011B788.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_cleanup_default_0011B788.o" "$BUILD/sdk_cleanup_default_0011B788.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sdk_cleanup_default_0011B788.o" private/SLUS_204.86.rom --source src/sdk_cleanup_default_0011B788.c
+
+"$WIBO" "$SNCPP" -P src/release_runtime_reference_00410BD8.c \
+    "$BUILD/release_runtime_reference_00410BD8.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/release_runtime_reference_00410BD8.i" "$BUILD/release_runtime_reference_00410BD8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/release_runtime_reference_00410BD8.o" \
+    "$BUILD/release_runtime_reference_00410BD8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/release_runtime_reference_00410BD8.o" \
+    private/SLUS_204.86.rom --source src/release_runtime_reference_00410BD8.c
