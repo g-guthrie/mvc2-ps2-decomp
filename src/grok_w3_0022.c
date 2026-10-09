@@ -2,6 +2,7 @@ typedef unsigned char u8;
 typedef signed char s8;
 typedef signed short s16;
 typedef signed int s32;
+typedef unsigned int u32;
 typedef float f32;
 
 extern int func_00175700(u8 *);
@@ -141,6 +142,22 @@ void func_0022EBD0(u8 *p)
         p[7]++;
         func_0022EB50(p);
     }
+}
+
+void func_0022EB50(u8 *p)
+{
+    s16 timer = *(s16 *)(p + 0x1c) - 1;
+    *(s16 *)(p + 0x1c) = timer;
+    if (timer != 0) {
+        func_00175700(p);
+        return;
+    }
+    p[7]++;
+    *(u32 *)(p + 0x5c) = 0;
+    *(u32 *)(p + 0x68) = 0;
+    *(u32 *)(p + 0x60) = 0x41632492;
+    *(u32 *)(p + 0x6c) = 0xBF092492;
+    func_001757E0(p, 18, 1);
 }
 
 void func_00239C80(u8 *p, u8 *q)

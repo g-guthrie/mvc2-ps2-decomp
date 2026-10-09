@@ -6450,6 +6450,7 @@ func_00187320,0x00187320,0x44,src/grok_w3_0018.c,complete
 func_0022A250,0x0022A250,0x44,src/grok_w3_0022.c,complete
 func_0022A780,0x0022A780,0x54,src/grok_w3_0022.c,complete
 func_0022C5D0,0x0022C5D0,0x48,src/grok_w3_0022.c,complete
+func_0022EB50,0x0022EB50,0x78,src/grok_w3_0022.c,complete
 func_0022F190,0x0022F190,0x4C,src/grok_w3_0022.c,complete
 func_00230AA0,0x00230AA0,0x4C,src/grok_w3_0022.c,complete
 func_00234530,0x00234530,0x50,src/grok_w3_0022.c,complete
