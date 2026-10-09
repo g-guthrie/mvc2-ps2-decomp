@@ -5375,9 +5375,9 @@ gSpriteRotationVectors_004B14A0,0x004B14A0,0x1F8,src/data/gSpriteRotationVectors
 data_zero_004B1698,0x004B1698,0x8,src/data/data_zero_004B1698.c,complete,placeholder
 data_f32pair_004B16A0,0x004B16A0,0x90,src/data/data_f32pair_004B16A0.c,complete,reconstructed
 data_f32v3x3_004B1730,0x004B1730,0x1B0,src/data/data_f32v3x3_004B1730.c,complete,reconstructed
-data_f32_one_004B18E0,0x004B18E0,0xC,src/data/data_f32_one_004B18E0.c,complete,placeholder
+data_f32_one_004B18E0,0x004B18E0,0xC,src/data/data_f32_one_004B18E0.c,complete,reconstructed
 data_u32_004B18EC,0x004B18EC,0x4,src/data/data_u32_004B18EC.c,complete,placeholder
-data_f32_one_004B18F0,0x004B18F0,0xC,src/data/data_f32_one_004B18F0.c,complete,placeholder
+data_f32_one_004B18F0,0x004B18F0,0xC,src/data/data_f32_one_004B18F0.c,complete,reconstructed
 data_u8_004B18FC,0x004B18FC,0x4,src/data/data_u8_004B18FC.c,complete,placeholder
 data_f32_004B1900,0x004B1900,0xC,src/data/data_f32_004B1900.c,complete,reconstructed
 data_f32_004B190C,0x004B190C,0xC,src/data/data_f32_004B190C.c,complete,reconstructed
