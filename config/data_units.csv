@@ -3912,13 +3912,13 @@ data_f32_00463860,0x00463860,0x8,.data,src/data/data_f32_00463860.c,float_pair
 data_u8_00463868,0x00463868,0x88,.data,src/data/data_u8_00463868.c,initialized_byte_array
 data_f32_004638F0,0x004638F0,0x8,.data,src/data/data_f32_004638F0.c,float_pair
 data_f32_004638F8,0x004638F8,0x4,.data,src/data/data_f32_004638F8.c,float_scalar
+data_f32_004638FC,0x004638FC,0x4,.data,src/data/data_f32_004638FC.c,float_scalar
 data_f32v3_00463900,0x00463900,0xC,.data,src/data/data_f32v3_00463900.c,float_vector3
 data_raw_0046390C,0x0046390C,0x4,.data,src/data/data_raw_0046390C.c,initialized_byte_array
 data_f32v3_00463910,0x00463910,0xC,.data,src/data/data_f32v3_00463910.c,float_vector3
 data_raw_0046391C,0x0046391C,0x4,.data,src/data/data_raw_0046391C.c,initialized_byte_array
 data_f32v3_00463920,0x00463920,0xC,.data,src/data/data_f32v3_00463920.c,float_vector3
 data_raw_0046392C,0x0046392C,0x4,.data,src/data/data_raw_0046392C.c,initialized_byte_array
-data_f32_004638FC,0x004638FC,0x4,.data,src/data/data_f32_004638FC.c,float_scalar
 jtbl_00463930,0x00463930,0xC,.rodata,src/data/jtbl_00463930.c,jump_table
 data_u32_0046393C,0x0046393C,0x4,.data,src/data/data_u32_0046393C.c,initialized_u32_table
 jtbl_00463940,0x00463940,0x1c,.rodata,src/data/jtbl_00463940.c,jump_table
@@ -4627,7 +4627,8 @@ data_u32_00473E70,0x00473E70,0x10,.data,src/data/data_u32_00473E70.c,initialized
 jtbl_00473E80,0x00473E80,0x10,.rodata,src/data/jtbl_00473E80.c,typed_state_callback_table
 data_u32_00473E90,0x00473E90,0x140,.data,src/data/data_u32_00473E90.c,initialized_u32_table
 jtbl_00473FD0,0x00473FD0,0x20,.rodata,src/data/jtbl_00473FD0.c,jump_table
-data_u32_00473FF0,0x00473FF0,0x100,.data,src/data/data_u32_00473FF0.c,initialized_u32_table
+data_s16_00473FF0,0x00473FF0,0x80,.data,src/data/data_s16_00473FF0.c,initialized_s16_table
+data_s16_00474070,0x00474070,0x80,.data,src/data/data_s16_00474070.c,initialized_s16_table
 jtbl_004740F0,0x004740F0,0x10,.rodata,src/data/jtbl_004740F0.c,typed_state_callback_table
 data_u32_00474100,0x00474100,0x28,.data,src/data/data_u32_00474100.c,initialized_u32_table
 jtbl_00474128,0x00474128,0xC,.rodata,src/data/jtbl_00474128.c,jump_table

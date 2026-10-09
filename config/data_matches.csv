@@ -3912,13 +3912,13 @@ data_f32_00463860,0x00463860,0x8,src/data/data_f32_00463860.c,complete,reconstru
 data_u8_00463868,0x00463868,0x88,src/data/data_u8_00463868.c,complete,placeholder
 data_f32_004638F0,0x004638F0,0x8,src/data/data_f32_004638F0.c,complete,reconstructed
 data_f32_004638F8,0x004638F8,0x4,src/data/data_f32_004638F8.c,complete,reconstructed
+data_f32_004638FC,0x004638FC,0x4,src/data/data_f32_004638FC.c,complete,reconstructed
 data_f32v3_00463900,0x00463900,0xC,src/data/data_f32v3_00463900.c,complete,reconstructed
 data_raw_0046390C,0x0046390C,0x4,src/data/data_raw_0046390C.c,complete,placeholder
 data_f32v3_00463910,0x00463910,0xC,src/data/data_f32v3_00463910.c,complete,reconstructed
 data_raw_0046391C,0x0046391C,0x4,src/data/data_raw_0046391C.c,complete,placeholder
 data_f32v3_00463920,0x00463920,0xC,src/data/data_f32v3_00463920.c,complete,reconstructed
 data_raw_0046392C,0x0046392C,0x4,src/data/data_raw_0046392C.c,complete,placeholder
-data_f32_004638FC,0x004638FC,0x4,src/data/data_f32_004638FC.c,complete,reconstructed
 jtbl_00463930,0x00463930,0xC,src/data/jtbl_00463930.c,complete,placeholder
 data_u32_0046393C,0x0046393C,0x4,src/data/data_u32_0046393C.c,complete,placeholder
 jtbl_00463940,0x00463940,0x1c,src/data/jtbl_00463940.c,complete,placeholder
@@ -4627,7 +4627,8 @@ data_u32_00473E70,0x00473E70,0x10,src/data/data_u32_00473E70.c,complete,placehol
 jtbl_00473E80,0x00473E80,0x10,src/data/jtbl_00473E80.c,complete,reconstructed
 data_u32_00473E90,0x00473E90,0x140,src/data/data_u32_00473E90.c,complete,placeholder
 jtbl_00473FD0,0x00473FD0,0x20,src/data/jtbl_00473FD0.c,complete,placeholder
-data_u32_00473FF0,0x00473FF0,0x100,src/data/data_u32_00473FF0.c,complete,placeholder
+data_s16_00473FF0,0x00473FF0,0x80,src/data/data_s16_00473FF0.c,complete,reconstructed
+data_s16_00474070,0x00474070,0x80,src/data/data_s16_00474070.c,complete,reconstructed
 jtbl_004740F0,0x004740F0,0x10,src/data/jtbl_004740F0.c,complete,reconstructed
 data_u32_00474100,0x00474100,0x28,src/data/data_u32_00474100.c,complete,placeholder
 jtbl_00474128,0x00474128,0xC,src/data/jtbl_00474128.c,complete,placeholder
