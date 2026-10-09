@@ -1,6 +1,6 @@
 typedef unsigned int u32;
 extern u32 data_u32_0043EE20[];
-/* func_00136110 creates selectors 0..3 or 4..6, stores them as field20 in func_001362C0, then func_00136370 loads all seven pointers from this table. */
+/* func_00136110 creates selectors 0..3 or 4..6, stores them as field20 in func_001362C0, then func_00136390 loads base + 4*field20 at 0x001363BC; all seven pointers are reachable. */
 u32 * const D_0043F140[7] = {
     &data_u32_0043EE20[0],
     &data_u32_0043EE20[0x20],

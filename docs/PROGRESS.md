@@ -1792,3 +1792,13 @@ verified relocations; native selector writes prove entries 0..4. They add
 the complete 30-function motion source. Catalog: 579,396 linked code bytes
 (17.5911%), 9,043 functions; 74,733 reconstructed data bytes (11.5317%).
 Affected objects, catalog validation, and both full-image hashes pass.
+
+
+### Spawn position and seven asset pointers
+
+The 164-byte spawn handler now matches within its two-function source.
+The asset table has seven symbolic pointers selected by fixed factory
+arguments 0..6; the native consumer is func_00136390 at load 0x1363BC.
+Catalog: 579,560 linked matching code bytes (17.5960%), 9,044 functions;
+74,761 reconstructed data bytes (11.5361%). Changed native objects,
+catalog validation, and both full-image hashes pass.
