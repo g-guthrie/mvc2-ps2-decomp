@@ -50,7 +50,7 @@ extern void func_003C9A20(u8 *, u8 *, u8 *);
 extern s32 func_003DB9B0(u8 *);
 extern s16 *func_003DD030(void);
 extern s32 func_003DA750(s32, s32, s32);
-extern void func_00175910(u8 *, s32, s32, s32);
+extern int func_00175910(u8 *, s32, s32, s32);
 extern s32 func_00118FA8(f32);
 extern void func_003F0B70(void *, void *, s32, u8 *, u8 *, u8 *, s32);
 extern void func_003D77C0(void);

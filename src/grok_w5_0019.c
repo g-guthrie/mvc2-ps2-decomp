@@ -40,7 +40,7 @@ extern int func_00175700(u8 *);
 extern void func_001975C0(u8 *, u8 *);
 extern void func_0019C470(u8 *);
 extern void func_0019CB70(u8 *);
-extern void func_00175910(u8 *, int, int, int);
+extern int func_00175910(u8 *, int, int, int);
 extern u8 D_00446FD0[];
 extern u8 D_00446FD1[];
 extern s16 D_0044A310[];

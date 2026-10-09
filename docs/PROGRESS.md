@@ -3063,3 +3063,11 @@ conflict resolution. All three functions in the complete source object verify
 exactly. Catalog, fullhybrid linkage and packedretailELF identity pass. Catalog:
 607,932codebytes(18.4574%),9,272functions;data151,982bytes(23.4517%).
 Fresh Luna worker contexts continue the fullscope recovery.
+
+## Fresh runtime animation integration
+
+Integrated wholeexact76-byte animationmode dispatch and120-byte stateupdate.
+The shared175910helper has an existinginteger-return definition; five caller
+declarations were corrected fromvoid, with allaffectedcomplete sourceobjects
+still exact. Catalog, fullhybrid linkage andpackedretailELF identity pass.
+Catalog:608,128codebytes(18.4634%),9,274functions;data151,982bytes(23.4517%).
