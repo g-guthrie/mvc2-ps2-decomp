@@ -2939,6 +2939,13 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     --source src/grok_w7_external_state_trigger.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w7_velocity_transfer_state.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_w7_velocity_transfer_state.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/grok_w7_velocity_transfer_state.o" private/SLUS_204.86.rom \
+    --source src/grok_w7_velocity_transfer_state.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w7_masked_flag_transition.c -c -lang c -O3 -sdatathreshold 0 \
     -o "$BUILD/grok_w7_masked_flag_transition.o"
 "$PYTHON" tools/verify_object.py \

@@ -9061,3 +9061,4 @@ func_002F48D0,0x002F48D0,0x68,src/grok_w7_negative_result_reset.c,complete
 func_002F4570,0x002F4570,0x68,src/grok_w7_masked_flag_transition.c,complete
 func_002F4E00,0x002F4E00,0x70,src/grok_w7_external_state_trigger.c,complete
 func_002F4F40,0x002F4F40,0x7C,src/grok_w7_indexed_flag_transition.c,complete
+func_002F4FC0,0x002F4FC0,0xAC,src/grok_w7_velocity_transfer_state.c,complete
