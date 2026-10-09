@@ -107,7 +107,8 @@ void func_002FEA00(u8 *p, void *unused) {
     if (--*(s16 *)(p + 28) == 0)
         func_001843A0(p);
 }
-void func_00307420(u8 *p) {
+void func_00307420(u8 *p, void *context) {
+    (void)context;
     func_00175700(p);
     if (--*(s16 *)(p + 28) == 0)
         func_001843A0(p);
@@ -706,5 +707,4 @@ void func_00292660(u8 *p) {
         q[24] = 0;
     }
 }
-
 
