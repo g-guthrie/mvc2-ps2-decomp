@@ -9113,3 +9113,4 @@ func_003F1E70,0x003F1E70,0x8C,src/copy_format_record_payload_003F1E70.c,complete
 func_0030DCD0,0x0030DCD0,0x8C,src/grok_w7_zero_phase_counter_transition.c,complete
 func_0030DEF0,0x0030DEF0,0xE4,src/grok_w7_velocity_sign_reset_transition.c,complete
 func_0030E3A0,0x0030E3A0,0x9C,src/grok_w7_timed_transition_reset.c,complete
+func_003F1410,0x003F1410,0x54,src/get_format_word_by_index_003F1410.c,complete

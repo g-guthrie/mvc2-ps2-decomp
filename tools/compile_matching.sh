@@ -3270,3 +3270,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w7_timed_transition_reset.o" private/SLUS_204.86.rom \
     --source src/grok_w7_timed_transition_reset.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/get_format_word_by_index_003F1410.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/get_format_word_by_index_003F1410.o"
+"$PYTHON" tools/verify_object.py "$BUILD/get_format_word_by_index_003F1410.o" \
+    private/SLUS_204.86.rom --source src/get_format_word_by_index_003F1410.c
