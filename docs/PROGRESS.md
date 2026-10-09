@@ -2538,3 +2538,10 @@ Catalog: 601,320 code bytes (18.2567%) and 83,950 data bytes (12.9540%),
 with 2,853 reconstructed data source units. Changed data objects, eleven data
 tests, catalog validation, full relink and packed retail ELF identity pass.
 Reachable waveform and nibble selector coverage remains under additional audit.
+
+## Context motion reset checkpoint
+
+The 104-byte contextual motion reset matches in full, using known floating-point
+velocity and acceleration fields and the existing bit-preserving float constant
+representation. Catalog: 601,424 code bytes (18.2599%), 9,205 functions.
+Whole-object and full retail image identity checks pass.
