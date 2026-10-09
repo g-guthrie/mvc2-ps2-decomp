@@ -1250,7 +1250,16 @@ jtbl_0044BF30,0x0044BF30,0x2c,.rodata,src/data/jtbl_0044BF30.c,typed_state_callb
 jtbl_0044BF60,0x0044BF60,0xc4,.rodata,src/data/jtbl_0044BF60.c,jump_table
 jtbl_0044C030,0x0044C030,0x2c,.rodata,src/data/jtbl_0044C030.c,jump_table
 jtbl_0044C060,0x0044C060,0x80,.rodata,src/data/jtbl_0044C060.c,typed_state_callback_table
-data_u32_0044C0E0,0x0044C0E0,0xD0,.data,src/data/data_u32_0044C0E0.c,initialized_u32_table
+data_record_0044C0E0,0x0044C0E0,0x6,.data,src/data/data_record_0044C0E0.c,bounded_byte_records
+data_raw_0044C0E6,0x0044C0E6,0x6,.data,src/data/data_raw_0044C0E6.c,initialized_byte_array
+data_records_0044C0EC,0x0044C0EC,0x2A,.data,src/data/data_records_0044C0EC.c,bounded_byte_records
+data_raw_0044C116,0x0044C116,0x6,.data,src/data/data_raw_0044C116.c,initialized_byte_array
+data_records_0044C11C,0x0044C11C,0x1E,.data,src/data/data_records_0044C11C.c,bounded_byte_records
+data_raw_0044C13A,0x0044C13A,0x6,.data,src/data/data_raw_0044C13A.c,initialized_byte_array
+data_records_0044C140,0x0044C140,0xC,.data,src/data/data_records_0044C140.c,bounded_byte_records
+data_raw_0044C14C,0x0044C14C,0x12,.data,src/data/data_raw_0044C14C.c,initialized_byte_array
+data_record_0044C15E,0x0044C15E,0x6,.data,src/data/data_record_0044C15E.c,bounded_byte_records
+data_raw_0044C164,0x0044C164,0x4C,.data,src/data/data_raw_0044C164.c,initialized_byte_array
 jtbl_0044C1B0,0x0044C1B0,0x68,.rodata,src/data/jtbl_0044C1B0.c,typed_state_callback_table
 jtbl_0044C220,0x0044C220,0x2c,.rodata,src/data/jtbl_0044C220.c,jump_table
 data_u32_0044C250,0x0044C250,0x20,.data,src/data/data_u32_0044C250.c,initialized_u32_table
