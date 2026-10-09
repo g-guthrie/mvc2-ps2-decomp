@@ -9096,3 +9096,4 @@ func_002FC6B0,0x002FC6B0,0xA0,src/grok_w7_context_timer_controller.c,complete
 func_002FC890,0x002FC890,0x48,src/grok_w7_compact_state_latch.c,complete
 func_003F1E10,0x003F1E10,0x54,src/get_format_record_count_003F1E10.c,complete
 func_003F14A0,0x003F14A0,0x20,src/initialize_format_callback_count_003F14A0.c,complete
+func_00301040,0x00301040,0xEC,src/move_setup.c,complete

@@ -542,6 +542,32 @@ FINAL_ANIMATION_SETUP(func_002D1F40, 9, D_004C0F3C, 10, D_004C0F40, 11, D_004C0F
 FINAL_ANIMATION_SETUP(func_002E9780, 3, D_004C1134, 4, D_004C1138, 5, D_004C113C, 8)
 FINAL_ANIMATION_SETUP(func_00300F40, 3, D_004C1474, 4, D_004C1478, 5, D_004C147C, 8)
 
+void func_00301040(u8 *p) {
+ switch (p[0x1fc]) {
+ case 0:
+  p[0x168] = 0;
+  p[0x1b5] = 9;
+  func_001E3710(p, 20);
+  *(int **)(p + 0x408) = &D_004C1474;
+  p[0x1bb] = 0;
+  break;
+ case 1:
+  p[0x168] = 1;
+  p[0x1b5] = 10;
+  *(int **)(p + 0x408) = &D_004C1478;
+  p[0x1bb] = 1;
+  break;
+ case 2:
+  p[0x168] = 2;
+  p[0x1b5] = 11;
+  *(int **)(p + 0x408) = &D_004C147C;
+  p[0x1bb] = 2;
+  func_001E3710(p, 22);
+  break;
+ }
+ reset_move_counters(p, p[0x1b5], 10);
+}
+
 /* The first three command states use the same reset behavior. */
 MOVE_SETUP(func_00208DD0, func_001E3710, 0, 20, D_004BFDC8, func_001E3210, 1, 30, D_004BFDCC, func_001E3210, 2, 30, D_004BFDD0, 7)
 MOVE_SETUP(func_00248A20, func_001E3710, 0, 20, D_004C03B0, func_001E3710, 1, 21, D_004C03B4, func_001E3710, 2, 22, D_004C03B8, 7)
