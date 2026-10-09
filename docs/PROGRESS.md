@@ -1512,3 +1512,28 @@ uncredited. EE GCC2.96 plusSNAS emits372 bytes versus380 retail; relocated
 instruction comparison identifies two missing NOPs and corresponding branch
 layout differences. SN GCC2.95.2 emits376 bytes with additional register/frame
 differences. No instruction or object patches are used.
+
+
+### Runtime query, cleanup, and bounded animation checkpoint
+
+Runtime slot query004103D8 adds140 bytes. It clears the actual-value output,
+bounds its four-entry index, invokes the fallback with error-3 for invalid
+indices, copies the node value, and selects equality or inclusive threshold
+comparison by the signed mode byte. SDK cleanup wrappers0011B768/0011B788
+add56 bytes; the context initializer installs the former as its callback.
+
+Substate handler002E6040 adds140 bytes with its negative-state path preserved.
+Seven-character lookup004105D8 adds172 bytes. Its index declaration now agrees
+with the const-char caller, and explicit signed-byte casts preserve native LB
+loads. The accumulator uses unsigned32-bit arithmetic; its table alias is an
+incomplete array, correcting the false48-entry extent inferred from a raw
+zero span. ASCII0–9/A–F/a–f map across the following physical owners.
+
+Data additions total476 bytes: five bounded float3 vectors and their eight
+pointers(92), eight signed seven-halfword rows(112), four bounded eight-pair
+float banks(256), and eight consumed low-halfwords(16). Unused fourth vector
+words, upper halfwords, table tails, and prefixes remain raw and uncredited.
+
+Current catalog:572,960 linked code bytes(17.3957%),8,987 functions;72,966
+reconstructed data bytes(11.2591%) across2,400 owners. All changed units,
+data tests, full loaded image, and packed executable verify exactly.
