@@ -52,3 +52,29 @@ void func_002F0B10(u8 *p)
             func_002F1DF0(p);
     }
 }
+
+typedef signed short s16;
+extern void func_001E3710(u8 *, int);
+
+void func_002F1430(u8 *p)
+{
+    s16 timer;
+
+    p[0x40C] = 2;
+    p[0x33C] = 5;
+    func_00175700(p);
+
+    timer = *(s16 *)(p + 0x1C) - 1;
+    *(s16 *)(p + 0x1C) = timer;
+    if (timer < 0) {
+        p[0x40D] = 0;
+        p[0x40C] = 0;
+        p[0x33B] = 0;
+        p[0x33C] = 0;
+        p[6]++;
+        func_001757E0(p, 21, 5);
+    } else if (*(s8 *)(p + 0x151) != 0) {
+        *(s8 *)(p + 0x151) = 0;
+        func_001E3710(p, 76);
+    }
+}
