@@ -1453,3 +1453,20 @@ bytes (11.0230%), 8,975 functions and 2,328 reconstructed data owners.
 
 Changed objects verify exactly, and both the hybrid loaded-image and packed
 retail-ELF hashes pass. Source decompilation remains incomplete.
+
+
+### Paired acceleration resets and file output callback
+
+Two whole acceleration-reset handlers (002F0330 and002F0790) add296 bytes.
+Their float predicate uses !(product <0), preserving the native unordered
+comparison path as well as nonnegative products.
+
+The file output callback0011FA30 adds128 bytes. Its opaque cookie is cast to
+the file structure; append mode seeks to end, it clears the cached-position
+flag, then narrows the reentrant write result. This source form also reproduces
+the native register allocation. The normal EE GCC2.96/SNAS recipe verifies it
+without instruction or object patches.
+
+Catalog:572,232 exact linked code bytes (17.3736%),8,978 functions; data remains
+71,436 bytes (11.0230%). The targeted units, complete hybrid loaded image, and
+packed executable all match retail.

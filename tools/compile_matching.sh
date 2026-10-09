@@ -2730,3 +2730,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/grok_w7_reverse_acceleration_resets.o" private/SLUS_204.86.rom \
     --source src/grok_w7_reverse_acceleration_resets.c
 
+
+"$WIBO" "$SNCPP" -P src/sdk_file_write_0011FA30.c "$BUILD/sdk_file_write_0011FA30.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_file_write_0011FA30.i" "$BUILD/sdk_file_write_0011FA30.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_file_write_0011FA30.o" "$BUILD/sdk_file_write_0011FA30.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sdk_file_write_0011FA30.o" private/SLUS_204.86.rom --source src/sdk_file_write_0011FA30.c
