@@ -9057,3 +9057,4 @@ func_00420560,0x00420560,0x84,src/initialize_runtime_menu_notice_00420560.c,comp
 func_002F5070,0x002F5070,0x5C,src/grok_w7_indexed_transition_setup.c,complete
 func_002F50D0,0x002F50D0,0x94,src/grok_w7_indexed_transition_setup.c,complete
 func_0011B9D0,0x0011B9D0,0x24,src/sdk_write_character_0011B9D0.c,complete
+func_002F48D0,0x002F48D0,0x68,src/grok_w7_negative_result_reset.c,complete
