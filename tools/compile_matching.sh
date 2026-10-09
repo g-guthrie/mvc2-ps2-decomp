@@ -2967,3 +2967,16 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/initialize_runtime_services_00418C70.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_runtime_services_00418C70.o" \
     private/SLUS_204.86.rom --source src/initialize_runtime_services_00418C70.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/dispatch_runtime_mode_result_00418AA0.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/dispatch_runtime_mode_result_00418AA0.o"
+# MWCC emits this switch table as a local object; alias its symbol to the
+# existing absolute table so the function verifier can resolve its address.
+"${OBJCOPY:-mipsel-linux-gnu-objcopy}" \
+    --redefine-sym @18=jtbl_004BEE40 \
+    "$BUILD/dispatch_runtime_mode_result_00418AA0.o" \
+    "$BUILD/dispatch_runtime_mode_result_00418AA0-verified.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/dispatch_runtime_mode_result_00418AA0-verified.o" \
+    private/SLUS_204.86.rom --source src/dispatch_runtime_mode_result_00418AA0.c
