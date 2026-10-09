@@ -2817,3 +2817,12 @@ profiles emitted an extra instruction and remain unsuitable for this unit.
 Registered object, catalog, full hybrid linkage and packed retail ELF pass.
 Catalog: 604,216 code bytes (18.3446%), 9,233 functions; data 84,290 bytes
 (13.0064%). No assembly or forced volatile constraints were used.
+
+## Runtime clear entries and bounded effect vectors
+
+Integrated three caller-grounded clear entries (36,52,36 bytes) and two
+float3 effect vectors selected by the explicit0/1 constructor calls. Whole
+runtime source objects and all four data partitions verify exactly. Catalog,
+full hybrid linkage and packed retail ELF identity pass. Catalog: 604,340 code
+bytes (18.3484%), 9,236 functions; data84,314 bytes (13.0101%), 2,888
+reconstructed source units. Intervening data spans remain raw placeholders.
