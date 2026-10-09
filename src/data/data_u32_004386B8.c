@@ -1,3 +1,3 @@
-/* func_0010C2F8 submits 0x54 directly, then loops over 0x55..0x59. */
+/* func_0010C2F8 loads service ID 0x54 from offset 0x10 of its base pair. */
 typedef unsigned int u32;
-u32 data_u32_004386B8[12] = { 0x00000054u, 0x0010C800u, 0x00000055u, 0x00000000u, 0x00000056u, 0x00000000u, 0x00000057u, 0x00000000u, 0x00000058u, 0x00000000u, 0x00000059u, 0x00000000u };
+u32 data_u32_004386B8 = 0x54u;
