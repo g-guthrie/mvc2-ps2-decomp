@@ -2493,3 +2493,12 @@ source objects still exact. The dispatcher’s interior callback address
 uses an incomplete array alias without claiming a new table extent.
 Catalog: 599,804 code bytes (18.2107%), 9,187 functions, 83,143 data
 bytes (12.8294%). Changed whole objects, catalog, and both image hashes pass.
+
+
+### Signed phase banks and fixed geometry
+
+The batch adds 504 reconstructed data bytes from two signed-byte banks,
+nine modulo-selected geometry vectors, masked float-record fields, fixed
+vectors, and two 64-entry signed phase banks. Padding and unused record
+words remain raw. Catalog: 599,804 code bytes (18.2107%), 83,647 data
+bytes (12.9072%). Changed data objects, catalog, and both image hashes pass.
