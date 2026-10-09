@@ -5,7 +5,7 @@ typedef signed char s8;
 typedef float f32;
 typedef union { f32 value; u32 bits; } FloatBits;
 typedef struct { u8 prefix[0x5c]; FloatBits f5c; FloatBits f60; u32 padding; FloatBits f68; FloatBits f6c; } ActorView;
-extern int func_002F4710(u8 *);
+extern void func_002F4710(u8 *);
 extern int func_00175700(u8 *);
 extern void func_00126400(void);
 extern void func_00184540(u8 *);

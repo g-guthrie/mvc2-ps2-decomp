@@ -1919,3 +1919,14 @@ all gaps and later dynamically indexed frames remain raw. Catalog:
 580,636 linked matching code bytes (17.6287%), 9,054 functions; 75,112
 reconstructed data bytes (11.5902%). All changed objects, catalog
 validation, and both full-image hashes pass.
+
+
+### Actor reset and masked transition
+
+Two complete 104-byte handlers add 208 matching code bytes. The reset
+uses the canonical animation result and typed float representations;
+the transition gates its callbacks with the native flag masks. The
+ignored helper declaration matches the existing source convention.
+Catalog: 580,844 linked matching code bytes (17.6350%), 9,056 functions;
+data remains 75,112 bytes (11.5902%). Both whole sources, catalog
+validation, and both full-image hashes pass.
