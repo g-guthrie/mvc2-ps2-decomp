@@ -4381,3 +4381,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/initialize_runtime_animation_backend_0041C400.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_runtime_animation_backend_0041C400.o" \
     private/SLUS_204.86.rom --source src/initialize_runtime_animation_backend_0041C400.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/dispatch_runtime_animation_effect_0041C550.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/dispatch_runtime_animation_effect_0041C550.o"
+"$PYTHON" tools/verify_object.py "$BUILD/dispatch_runtime_animation_effect_0041C550.o" \
+    private/SLUS_204.86.rom --source src/dispatch_runtime_animation_effect_0041C550.c
