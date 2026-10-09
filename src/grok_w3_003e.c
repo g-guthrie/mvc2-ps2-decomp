@@ -44,7 +44,8 @@ void func_00414C30(f32 *p)
     func_003DF850(89, D_004F8060);
 }
 
-void func_00417950(void)
+/* All three direct callers supply the legacy 640x480 float parameters. */
+void func_00417950(f32 width, f32 height)
 {
     func_003DD260(D_00632770);
     func_003DF850(25, D_00632770);

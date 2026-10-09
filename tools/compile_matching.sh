@@ -3288,3 +3288,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/get_format_table_count_003F13A0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/get_format_table_count_003F13A0.o" \
     private/SLUS_204.86.rom --source src/get_format_table_count_003F13A0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/project_point_to_xy.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/project_point_to_xy.o"
+"$PYTHON" tools/verify_object.py "$BUILD/project_point_to_xy.o" \
+    private/SLUS_204.86.rom --source src/project_point_to_xy.c
