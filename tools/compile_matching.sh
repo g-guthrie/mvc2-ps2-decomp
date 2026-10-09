@@ -2865,3 +2865,13 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
     "$BUILD/runtime_mode_wrappers_00411A18.s"
 "$PYTHON" tools/verify_object.py "$BUILD/runtime_mode_wrappers_00411A18.o" \
     private/SLUS_204.86.rom --source src/runtime_mode_wrappers_00411A18.c
+
+"$WIBO" "$SNCPP" -P src/manage_runtime_reference_00411B98.c \
+    "$BUILD/manage_runtime_reference_00411B98.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 \
+    "$BUILD/manage_runtime_reference_00411B98.i" \
+    "$BUILD/manage_runtime_reference_00411B98.s"
+"$WIBO" "$SNAS" -G8 -o "$BUILD/manage_runtime_reference_00411B98.o" \
+    "$BUILD/manage_runtime_reference_00411B98.s"
+"$PYTHON" tools/verify_object.py "$BUILD/manage_runtime_reference_00411B98.o" \
+    private/SLUS_204.86.rom --source src/manage_runtime_reference_00411B98.c
