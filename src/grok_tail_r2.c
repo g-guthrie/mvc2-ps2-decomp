@@ -14,7 +14,7 @@ extern void func_003F0A60(void *, void *);
 extern void func_003F0DB0(void *, void *);
 extern void func_003F0DF0(void *, void *);
 extern void func_003F0A40(void *, void *);
-extern void func_003F09C0(void *, void *, s32);
+extern void *func_003F09C0(void *, void *, s32);
 extern void func_003F0A20();
 extern void func_003DCD40(void *, s32, s32);
 
@@ -94,10 +94,10 @@ void func_003DB9E0(void *p) { func_003F0DF0(D_005BF280, p); }
 
 void func_003DCFB0(void *p) { func_003F0A40(D_0062C020, p); }
 
-void func_003DCF70(void *p) { func_003F09C0(D_0062C020, p, 0); }
+void *func_003DCF70(void *p) { return func_003F09C0(D_0062C020, p, 0); }
 
 void func_003DCF90(void *p) { func_003F0A20(D_0062C020, 0, p); }
 
-void func_003DCFC0(void *p) { func_003F09C0(D_0062C020, p, 1); }
+void *func_003DCFC0(void *p) { return func_003F09C0(D_0062C020, p, 1); }
 
 void func_00413D30(void) { func_003DCD40(D_00632480, 0, 200); }
