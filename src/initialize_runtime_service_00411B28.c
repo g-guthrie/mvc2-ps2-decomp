@@ -2,7 +2,7 @@ typedef unsigned char u8;
 typedef unsigned int u32;
 typedef signed int s32;
 
-extern u8 D_00496708[16];
+extern u32 D_00496708[7];
 extern u8 D_00496728[28];
 extern u8 D_004C2B10[8];
 extern u8 D_004C2B18[8];
@@ -17,7 +17,7 @@ void func_00411B28(void)
     func_0011D8F8(D_004C2B10, 0, 8);
     func_0011D8F8(D_004C2B18, 0, 8);
 
-    entry = (u32 *)D_00496708;
+    entry = D_00496708;
     count = 3;
     do
     {

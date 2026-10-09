@@ -2885,3 +2885,9 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 \
     "$BUILD/initialize_runtime_service_00411B28.s"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_runtime_service_00411B28.o" \
     private/SLUS_204.86.rom --source src/initialize_runtime_service_00411B28.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/cleanup_runtime_object_00413DA0.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/cleanup_runtime_object_00413DA0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/cleanup_runtime_object_00413DA0.o" \
+    private/SLUS_204.86.rom --source src/cleanup_runtime_object_00413DA0.c
