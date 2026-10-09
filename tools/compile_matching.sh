@@ -2891,3 +2891,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/cleanup_runtime_object_00413DA0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/cleanup_runtime_object_00413DA0.o" \
     private/SLUS_204.86.rom --source src/cleanup_runtime_object_00413DA0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/transition_runtime_state_00416670.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/transition_runtime_state_00416670.o"
+"$PYTHON" tools/verify_object.py "$BUILD/transition_runtime_state_00416670.o" \
+    private/SLUS_204.86.rom --source src/transition_runtime_state_00416670.c
