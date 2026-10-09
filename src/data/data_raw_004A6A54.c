@@ -1,0 +1,5 @@
+typedef unsigned char u8;
+/* Zero words after the last selected sine sample and before the neighboring descriptor table; retained raw. */
+u8 data_raw_004A6A54[0xC] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+};
