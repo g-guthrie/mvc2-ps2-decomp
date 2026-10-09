@@ -3241,3 +3241,10 @@ unit-scale source object. All three functions remain exact. Code reaches
 Recovered the complete 96-byte constructor at 0x0015C280 in the existing
 source object. All four functions remain exact. Code reaches 611,120 bytes
 (18.5542%), 9,295 functions; data remains 151,998 bytes (23.4542%).
+
+## Marked and updated event constructors
+
+Recovered all 112 bytes at 0x00135DB0 and all 104 bytes at 0x0015BFB0.
+Allocation assignment within the condition reproduces the native branch
+sequence. Both whole objects verify exactly. Code reaches 611,336 bytes
+(18.5608%), 9,297 functions; data remains 151,998 bytes (23.4542%).

@@ -9298,3 +9298,5 @@ func_0015C3F0,0x0015C3F0,0x5C,src/create_unit_scale_event_0015C130.c,complete
 func_0041D5F0,0x0041D5F0,0x44,src/reset_runtime_fade_state_0041D5F0.c,complete
 func_0015C560,0x0015C560,0x60,src/create_unit_scale_event_0015C130.c,complete
 func_0015C280,0x0015C280,0x60,src/create_unit_scale_event_0015C130.c,complete
+func_00135DB0,0x00135DB0,0x70,src/create_marked_event_00135DB0.c,complete
+func_0015BFB0,0x0015BFB0,0x68,src/create_updated_event_0015BFB0.c,complete

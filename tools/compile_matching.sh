@@ -4345,3 +4345,15 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/reset_runtime_fade_state_0041D5F0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/reset_runtime_fade_state_0041D5F0.o" \
     private/SLUS_204.86.rom --source src/reset_runtime_fade_state_0041D5F0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/create_marked_event_00135DB0.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/create_marked_event_00135DB0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/create_marked_event_00135DB0.o" \
+    private/SLUS_204.86.rom --source src/create_marked_event_00135DB0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/create_updated_event_0015BFB0.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/create_updated_event_0015BFB0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/create_updated_event_0015BFB0.o" \
+    private/SLUS_204.86.rom --source src/create_updated_event_0015BFB0.c
