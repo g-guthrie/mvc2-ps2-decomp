@@ -2790,3 +2790,11 @@ frame-dispatched task groups. Both objects, catalog, full hybrid linkage and
 packed retail ELF identity pass. Held twelve bytes at47713C because the selector
 nine producer path remains conditional. Catalog: 603,828 code bytes (18.3328%),
 9,229 functions; data 84,290 bytes (13.0064%), 2,886 reconstructed units.
+
+## Runtime record field reader checkpoint
+
+Recovered the complete 48-byte signed record-byte reader. Its native caller
+passes the referenced record and consumes the returned state byte; the null
+path preserves its diagnostic call and -1 result. Whole EE96/SNAS object,
+catalog, full hybrid linkage and packed retail ELF identity pass. Catalog:
+603,876 code bytes (18.3343%), 9,230 functions; data 84,290 bytes (13.0064%).
