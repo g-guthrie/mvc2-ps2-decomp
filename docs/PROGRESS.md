@@ -2011,3 +2011,13 @@ string add eight reconstructed bytes. Other slots and surrounding bytes
 stay raw. Catalog: 582,336 linked matching code bytes (17.6803%), 9,068
 functions; 79,364 reconstructed data bytes (12.2463%). Affected whole
 sources and data objects, catalog, and both full-image hashes pass.
+
+
+### State setup callback pair and fixed renderer pointer
+
+The setup/callback pair adds 232 exact code bytes. Fixed native loads
+prove the first renderer-bank pointer; only that symbolic pointer adds
+four reconstructed bytes, with the other slots raw. Catalog: 582,568
+linked matching code bytes (17.6874%), 9,070 functions; 79,368
+reconstructed data bytes (12.2469%). Both whole sources, split data
+objects, catalog validation, and both full-image hashes pass.
