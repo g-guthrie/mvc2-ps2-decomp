@@ -1,39 +1,10 @@
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned int u32;
-typedef signed int s32;
-
-struct RuntimeNode;
-struct RuntimeNodeValue
-{
-    u32 first;
-    s32 value;
-};
-
-struct RuntimeNode
-{
-    struct RuntimeNode *next;
-    u32 unknown;
-    struct RuntimeNodeValue value;
-};
-
-typedef void (*RuntimeFallback)(void *argument, s32 error);
-
-struct RuntimeQueryContext
-{
-    u8 unknown0[5];
-    s8 mode;
-    u8 unknown6[18];
-    struct RuntimeNode *entries[4];
-    RuntimeFallback fallback;
-    void *fallbackArgument;
-};
+#include "runtime_span_types.h"
 
 s32 func_004103D8(struct RuntimeQueryContext *context, s32 index,
                   s32 expected, s32 *actual)
 {
     struct RuntimeNode *node;
-    struct RuntimeNodeValue value;
+    struct RuntimeSpan span;
 
     *actual = 0;
     if ((u32)index >= 4)
@@ -47,13 +18,13 @@ s32 func_004103D8(struct RuntimeQueryContext *context, s32 index,
     if (node == 0)
         return 0;
 
-    value = node->value;
-    *actual = value.value;
+    span = node->span;
+    *actual = span.length;
     if (context->mode == 1)
     {
-        if (value.value < expected)
+        if (span.length < expected)
             return 0;
         return 1;
     }
-    return value.value == expected;
+    return span.length == expected;
 }
