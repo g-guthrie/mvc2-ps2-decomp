@@ -2940,3 +2940,12 @@ by1089F0→107670 bounding/scaling it into a32-entry table. Both corrections
 remain exact. All five complete objects, catalog, full hybrid linkage and
 packed retail ELF identity pass. Catalog: 606,044 code bytes (18.4001%),
 9,258 functions; data remains85,706 bytes (13.2249%).
+
+## Bounded sprite coordinate pair bank
+
+Integrated448 bytes across float2 rows0..23 and27..58. The constructor
+inputs and composed pair/map lookup both stay in0..58 while excluding24..26;
+no selected map output is the FF sentinel. Skipped rows, prefix and tail remain
+raw. All five partition objects, catalog, full hybrid linkage and packed retail
+ELF identity pass. Data: 86,154 bytes (13.2941%), 2,917 reconstructed units.
+Code remains606,044 bytes (18.4001%).
