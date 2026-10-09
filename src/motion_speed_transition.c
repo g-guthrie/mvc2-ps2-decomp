@@ -5,6 +5,7 @@ typedef float f32;
 
 extern int func_001757E0(u8 *, int, int);
 extern void func_00185490(u8 *);
+extern void func_001D36E0(u8 *, int);
 extern void func_00183D10(u8 *);
 extern u8 *D_004C2794;
 
@@ -438,5 +439,25 @@ void func_002C20F0(u8 *p)
     if (--*(s16 *)(p + 0x1C) == 0) {
         p[6]++;
         func_001757E0(p, 2, 3);
+    }
+}
+
+void func_002E1EB0(u8 *p)
+{
+    s16 timer = *(s16 *)(p + 0x1E) - 1;
+    *(s16 *)(p + 0x1E) = timer;
+    if (timer < 0) {
+        *(s16 *)(p + 0x1E) = 4;
+        func_001D36E0(p, 0);
+    }
+
+    *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
+    *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
+    *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
+    *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
+    func_00175700(p);
+    if (--*(s16 *)(p + 0x1C) < 0) {
+        p[6]++;
+        func_001757E0(p, 2, 2);
     }
 }
