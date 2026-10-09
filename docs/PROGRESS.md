@@ -2236,3 +2236,11 @@ two-entry signed timing table add 14 data bytes. The callback increments
 its zero-initialized index and leaves the lookup state at two.
 Catalog: 588,204 exact code bytes (17.8585%), 80,029 reconstructed
 data bytes (12.3489%). Changed data objects, catalog, and both hashes pass.
+
+
+### Zero phase transition
+
+The complete 140-byte handler preserves both random-state reads and uses
+the allocator helper’s pointer return and canonical no-argument random API.
+Catalog: 588,344 exact code bytes (17.8627%), 9,108 functions; data remains
+80,029 bytes (12.3489%). Whole-object and full-image checks pass.
