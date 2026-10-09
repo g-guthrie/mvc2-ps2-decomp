@@ -2077,3 +2077,14 @@ its native GP-relative access and agrees with its const provider.
 Catalog: 584,156 linked matching code bytes (17.7356%), 9,082 functions;
 data remains 79,612 bytes (12.2846%). All 45 tests, catalog validation,
 and both full-image hashes pass.
+
+
+### Context sequence, periodic gate, cleanup, and matrix initialization
+
+Four exact functions add 364 code bytes. The periodic callback uses the
+random helper’s native no-argument contract; removing the unused actor
+argument preserves all bytes. The complete reset and context source
+objects and the graphics matrix initializer verify exactly. Catalog:
+584,520 linked matching code bytes (17.7466%), 9,086 functions; data
+remains 79,612 bytes (12.2846%). Catalog validation and both full-image
+hashes pass.

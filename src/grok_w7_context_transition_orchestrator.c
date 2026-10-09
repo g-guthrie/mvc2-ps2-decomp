@@ -6,7 +6,7 @@ extern void func_002FC440(u8 *, u8 *);
 extern void func_002FC6B0(u8 *, u8 *);
 extern void func_002FC850(u8 *, u8 *);
 extern void func_002FC890(u8 *, u8 *);
-extern int func_00174170(u8 *);
+extern int func_00174170(void);
 extern void func_001D91E0(u8 *, u8, u8);
 
 void func_002FC360(u8 *p)
@@ -31,7 +31,7 @@ void func_002FC3D0(u8 *p, u8 *q)
     count = (u8)count;
     if (count & 0xf)
         return;
-    if (func_00174170(p) & 7)
+    if (func_00174170() & 7)
         return;
     func_001D91E0(p, 0, 0);
 }
