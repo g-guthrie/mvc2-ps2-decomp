@@ -9255,6 +9255,7 @@ func_00401EE8,0x00401EE8,0x4C,src/read_versioned_runtime_state_00401F38.c,comple
 func_00402208,0x00402208,0x30,src/set_runtime_record_reload_00402208.c,complete
 func_00400CF8,0x00400CF8,0x1C,src/set_runtime_object_offset_00400CF8.c,complete
 func_004087A0,0x004087A0,0x18,src/call_runtime_scalar_action_004087A0.c,complete
+func_0040C088,0x0040C088,0x54,src/compare_runtime_path_bytes_0040C088.c,complete
 func_00408808,0x00408808,0x4C,src/dispatch_runtime_state_metric_00408808.c,complete
 func_0041AE60,0x0041AE60,0x38,src/dispatch_runtime_record_strategy_0041AE60.c,complete
 func_004087B8,0x004087B8,0x50,src/query_runtime_state_boolean_004087B8.c,complete

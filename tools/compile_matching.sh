@@ -3039,6 +3039,17 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
     "$BUILD/call_runtime_scalar_action_004087A0.o" \
     private/SLUS_204.86.rom --source src/call_runtime_scalar_action_004087A0.c
 
+"$WIBO" "$SNCPP" -P src/compare_runtime_path_bytes_0040C088.c \
+    "$BUILD/compare_runtime_path_bytes_0040C088.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/compare_runtime_path_bytes_0040C088.i" \
+    "$BUILD/compare_runtime_path_bytes_0040C088.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/compare_runtime_path_bytes_0040C088.o" \
+    "$BUILD/compare_runtime_path_bytes_0040C088.s"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/compare_runtime_path_bytes_0040C088.o" \
+    private/SLUS_204.86.rom --source src/compare_runtime_path_bytes_0040C088.c
+
 "$WIBO" "$SNCPP" -P src/dispatch_runtime_state_metric_00408808.c \
     "$BUILD/dispatch_runtime_state_metric_00408808.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
