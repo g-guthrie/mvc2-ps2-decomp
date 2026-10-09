@@ -4357,3 +4357,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/create_updated_event_0015BFB0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/create_updated_event_0015BFB0.o" \
     private/SLUS_204.86.rom --source src/create_updated_event_0015BFB0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/create_counted_position_event_001571D0.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/create_counted_position_event_001571D0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/create_counted_position_event_001571D0.o" \
+    private/SLUS_204.86.rom --source src/create_counted_position_event_001571D0.c

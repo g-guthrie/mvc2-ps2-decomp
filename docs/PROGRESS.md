@@ -3278,3 +3278,11 @@ profile. Code reaches 611,472 bytes (18.5649%), 9,298 functions; data remains
 Recovered the complete 104-byte constructor at 0x0015BB60 in the existing
 source object. Both constructors remain exact. Code reaches 611,576 bytes
 (18.5681%), 9,299 functions; data remains 152,006 bytes (23.4554%).
+
+## Counted position event constructor
+
+Recovered the complete 128-byte constructor at 0x001571D0. Native caller
+0x0015482C supplies the unused middle argument and kind in A2. The source
+preserves allocation failure, the signed-byte counter and typed float3
+position copy. Whole-object verification passes. Code reaches 611,704 bytes
+(18.5720%), 9,300 functions; data remains 152,006 bytes (23.4554%).

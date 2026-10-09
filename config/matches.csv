@@ -9302,3 +9302,4 @@ func_00135DB0,0x00135DB0,0x70,src/create_marked_event_00135DB0.c,complete
 func_0015BFB0,0x0015BFB0,0x68,src/create_updated_event_0015BFB0.c,complete
 func_002B41F0,0x002B41F0,0x88,src/positioned_motion_constants.c,complete
 func_0015BB60,0x0015BB60,0x68,src/create_updated_event_0015BFB0.c,complete
+func_001571D0,0x001571D0,0x80,src/create_counted_position_event_001571D0.c,complete
