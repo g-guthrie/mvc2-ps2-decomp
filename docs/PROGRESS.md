@@ -1725,3 +1725,12 @@ The allocator wrappers now accept unsigned byte counts and return pointers;
 both affected source objects remain byte-exact. Catalog: 578,736 linked
 code bytes (17.5710%), 74,613 reconstructed data bytes (11.5132%).
 Changed objects and both full-image hashes pass.
+
+
+### Ground-clamp actor motion
+
+The 188-byte ground-clamp handler matches as part of its complete
+28-function source object. Catalog: 578,924 linked matching code bytes
+(17.5767%), 9,038 functions. Data stays 74,613 bytes (11.5132%).
+Changed code, catalog validation, and both full-image hashes pass.
+The palette-byte patch is held for correction of its selector pair order.
