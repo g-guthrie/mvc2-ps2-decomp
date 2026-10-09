@@ -3034,3 +3034,12 @@ selected f32 scale samples add24bytes; unread fields andtails stay raw.
 Changed objects, catalog, full hybrid linkage and packed retail ELF identity
 pass. Data:151,982bytes(23.4517%),2,951reconstructedunits. Code remains
 607,576bytes(18.4466%).
+
+## Runtime global initializer verification
+
+Recovered the complete148-byte global reset with its scalarzero/nonzero mode
+and void API supported by nativecaller use. The externalstate layout preserves
+reservedbytes and evidenced halfword/word writeoffsets; no initializeddata
+credit is claimed for that mutable state. Wholeobject, catalog, fullhybrid
+linkage and packedretailELF identity pass. Catalog:607,724codebytes(18.4511%),
+9,271functions;data remains151,982bytes(23.4517%).
