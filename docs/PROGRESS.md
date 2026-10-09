@@ -2442,3 +2442,12 @@ actor-only API established by their callback table, with unsupported
 extra parameters removed. Catalog: 596,364 code bytes (18.1062%),
 9,161 functions, 81,930 data bytes (12.6423%). All affected whole
 objects, catalog, and both full-image hash checks pass.
+
+
+### Recursive transforms and runtime size/state helpers
+
+Four complete functions add 340 exact code bytes. Child links are read as
+pointers, while size/offset helpers preserve the signed word arithmetic
+and conditional state writes observed in their native callers.
+Catalog: 596,704 code bytes (18.1165%), 9,165 functions, 81,930 data
+bytes (12.6423%). Changed whole objects, catalog, and both image hashes pass.

@@ -179,9 +179,9 @@ s32 func_003F1650(u8 *node, Matrix parent)
 {
     func_003F3C40((float (*)[4])(node + 148), (float (*)[4])(node + 84), parent);
     func_003F3FD0(node + 212, node + 148);
-    if (*(u32 *)(node + 16) != 0)
+    if (*(u8 **)(node + 16) != 0)
         func_003F1650(*(u8 **)(node + 16), (float (*)[4])(node + 148));
-    if (*(u32 *)(node + 12) != 0)
+    if (*(u8 **)(node + 12) != 0)
         func_003F1650(*(u8 **)(node + 12), parent);
     return 1;
 }
