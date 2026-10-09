@@ -2180,3 +2180,12 @@ add 70 reconstructed bytes; each map suffix remains raw. Catalog:
 587,132 linked matching code bytes (17.8259%), 79,780 reconstructed data
 bytes (12.3105%). All changed data objects, catalog validation, and both
 full-image hashes pass.
+
+
+### Constant vector reset
+
+The 140-byte handler uses typed float representations and preserves
+the native signed flag gate and orientation-dependent negation. Catalog:
+587,272 linked matching code bytes (17.8302%), 9,101 functions; data
+remains 79,780 bytes (12.3105%). Whole-source verification, catalog
+validation, and both full-image hashes pass.
