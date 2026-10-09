@@ -2955,3 +2955,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/reset_selected_runtime_transform_004171E0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/reset_selected_runtime_transform_004171E0.o" \
     private/SLUS_204.86.rom --source src/reset_selected_runtime_transform_004171E0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/zero_runtime_word_00416A70.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/zero_runtime_word_00416A70.o"
+"$PYTHON" tools/verify_object.py "$BUILD/zero_runtime_word_00416A70.o" \
+    private/SLUS_204.86.rom --source src/zero_runtime_word_00416A70.c
