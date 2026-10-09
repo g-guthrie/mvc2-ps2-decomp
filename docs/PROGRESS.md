@@ -2837,3 +2837,12 @@ bytes (18.3492%), 9,237 functions; data 84,314 bytes (13.0101%).
 Independent animation-copy helper175B40 probe models the native record stride
 and nested halfword-copy loops but remains a compiler-layout mismatch; no
 source row or matching credit was added for that candidate.
+
+## Runtime diagnostic and version dispatch integration
+
+Recovered the complete 36-byte diagnostic return and 40-byte version-gated
+dispatch. The diagnostic references the existing named string with its verified
+address and uses the canonical variadic formatter contract. The dispatcher
+accepts the mutable entry it forwards to its callee. Both whole EE96/SNAS
+objects, catalog, full hybrid linkage and packed retail ELF pass. Catalog:
+604,444 code bytes (18.3515%), 9,239 functions; data84,314 bytes (13.0101%).
