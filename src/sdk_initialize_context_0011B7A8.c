@@ -1,14 +1,5 @@
-typedef unsigned char u8;
-typedef unsigned short u16;
-typedef signed short s16;
-typedef struct {
-    u8 prefix[12];
-    u16 flags;
-    s16 descriptor;
-    u8 state[64];
-    int position;
-    void *context;
-} SdkFile;
+#include "sdk_file_types.h"
+
 typedef struct Glue { struct Glue *next; int count; SdkFile *files; } Glue;
 typedef struct Reent {
  u8 unknown0[56]; int initialized; void (*cleanup)(void *);

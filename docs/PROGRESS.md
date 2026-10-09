@@ -1637,3 +1637,24 @@ Catalog: 574,976 exact linked code bytes (17.4569%), 9,011 functions;
 73,557 reconstructed data bytes (11.3503%) across 2,452 owners. All 45
 tests, changed code/data objects, full loaded-image hash, and packed-ELF hash
 pass. Full source reconstruction remains incomplete.
+
+
+### SDK file layout and actor state checkpoint
+
+A shared 88-byte SDK file layout replaces eight repeated opaque definitions.
+Its cursor/count/buffer/cookie fields and four callbacks agree with the native
+initializer at 0011B598. Read and seek callbacks now accept opaque cookies
+matching their installed function-pointer types; all eight existing whole
+units retain exact native code. The initializer adds 92 exact bytes, using
+normal stdio assignment order rather than scheduling or object patches.
+
+Eight actor handlers add 1,284 bytes: 002F3410, 002F0480, 002F0B10, 002F1430,
+002F1360, 002F1600, 002F1780, and 002F5390. The position handlers use typed
+union bit views instead of incompatible integer-pointer writes into floats.
+New animation helper declarations use the canonical int return. Every
+affected whole translation unit verifies under its recorded MWCC recipe.
+
+Catalog: 576,352 exact linked code bytes (17.4986%), 9,020 functions. Data
+stays 73,557 bytes (11.3503%). All changed code objects, the complete hybrid
+loaded image, and the packed executable match retail. Larger motion-table
+and additional bounded-data candidates remain queued for consumer review.
