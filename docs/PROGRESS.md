@@ -3043,3 +3043,14 @@ reservedbytes and evidenced halfword/word writeoffsets; no initializeddata
 credit is claimed for that mutable state. Wholeobject, catalog, fullhybrid
 linkage and packedretailELF identity pass. Catalog:607,724codebytes(18.4511%),
 9,271functions;data remains151,982bytes(23.4517%).
+
+## Project gate and allocator registry audit
+
+All34 projecttests, shellsyntax, and fullassembler splitting pass after recent
+source/data integrations; only the five previously documented intentional
+alias warnings remain. A newallocatorguard probe matched48bytes, but registry
+review found that sameguard already reconstructed in grok_w7_003c. The duplicate
+addition was removed before credit, and the canonicalobject-pool object was
+restored/reverified. Fullhybrid andpackedretail hashes still pass. Coverage
+remains607,724codebytes(18.4511%) and151,982databytes(23.4517%).
+A separate uncreditedprobe corrected its LBU/BLEZ gate to zero-only.
