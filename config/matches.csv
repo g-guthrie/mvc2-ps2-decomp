@@ -9238,6 +9238,7 @@ func_0040B6E0,0x0040B6E0,0x1C,src/clear_runtime_record_payload_0040B6E0.c,comple
 func_0040EF48,0x0040EF48,0x24,src/log_unimplemented_runtime_service_0040EF48.c,complete
 func_00400AD0,0x00400AD0,0x28,src/dispatch_runtime_entry_version_00400AD0.c,complete
 func_0040CF98,0x0040CF98,0x40,src/reset_runtime_record_state_0040CF98.c,complete
+func_0040D118,0x0040D118,0x60,src/cleanup_runtime_entry_table_0040D118.c,complete
 func_00404388,0x00404388,0x24,src/copy_runtime_record_halfwords_00404388.c,complete
 func_0040D178,0x0040D178,0x30,src/read_runtime_record_field_0040D178.c,complete
 func_0040A310,0x0040A310,0x24,src/read_scaled_runtime_fields_0040A310.c,complete
