@@ -33,6 +33,11 @@ def inventory(target):
     return selected
 
 
+def defined_functions(source):
+    # Anchor at a return type, so "if (func(...)) {" is not a definition.
+    return re.findall(r"^[ \t]*(?:(?:static|inline|unsigned|signed|long|short|const)[ \t]+)*[A-Za-z_]\w*[ \t*]+(func_[0-9a-fA-F]{8})\s*\([^;{}]*\)\s*\{", source, re.MULTILINE)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--target", type=Path, default=ROOT / "private/SLUS_204.86.rom")
@@ -49,7 +54,7 @@ def main():
     wanted = {row["name"]: row for row in selected}
     definitions = {}
     for source in sorted((ROOT / "src").glob("*.c")):
-        for name in re.findall(r"\b(func_[0-9a-fA-F]{8})\s*\([^;{}]*\)\s*\{", source.read_text()):
+        for name in defined_functions(source.read_text()):
             if name in wanted:
                 definitions.setdefault(name, []).append(source.relative_to(ROOT).as_posix())
     results = []
