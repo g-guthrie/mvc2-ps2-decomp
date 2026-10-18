@@ -8748,3 +8748,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$WIBO" "$EE29CC1" "$BUILD/sony29_varargs_forwarder_00105E48.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_varargs_forwarder_00105E48.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_varargs_forwarder_00105E48.o" "$BUILD/sony29_varargs_forwarder_00105E48.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_varargs_forwarder_00105E48.o" private/SLUS_204.86.rom --source src/sony29_varargs_forwarder_00105E48.c
+
+"$WIBO" "$SNCPP" -P src/sony29_varargs_handler_00105E80.c "$BUILD/sony29_varargs_handler_00105E80.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_varargs_handler_00105E80.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_varargs_handler_00105E80.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_varargs_handler_00105E80.o" "$BUILD/sony29_varargs_handler_00105E80.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_varargs_handler_00105E80.o" private/SLUS_204.86.rom --source src/sony29_varargs_handler_00105E80.c
