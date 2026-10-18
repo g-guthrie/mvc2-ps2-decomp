@@ -200,3 +200,13 @@ void func_0027A500(u8 *p)
             *(u32 *)(p + 92) = 0x41555555;
     }
 }
+
+extern DispatchFn jtbl_0044FCB0[];
+void func_001F9250(u8 *p)
+{
+    *(f32 *)(p + 56) = *(f32 *)(p + 1072);
+    if (func_003D92F0(p))
+        func_001843A0(p);
+    else
+        jtbl_0044FCB0[p[32]](p);
+}

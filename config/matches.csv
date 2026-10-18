@@ -9337,3 +9337,4 @@ func_001E8070,0x001E8070,0x94,src/live_target_selection.c,complete
 func_00271620,0x00271620,0x84,src/motion_speed_transition.c,complete
 func_0027B5C0,0x0027B5C0,0x84,src/sequential_calls.c,complete
 func_003220F0,0x003220F0,0x50,src/grok_w3_0020.c,complete
+func_001F9250,0x001F9250,0x64,src/grok_w3_0027.c,complete
