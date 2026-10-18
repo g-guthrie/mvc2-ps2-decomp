@@ -5882,7 +5882,9 @@ data_ff_004B6A10,0x004B6A10,0xC,src/data/data_ff_004B6A10.c,complete,placeholder
 data_u32_004B6A1C,0x004B6A1C,0xC,src/data/data_u32_004B6A1C.c,complete,placeholder
 data_ff_004B6A28,0x004B6A28,0x8,src/data/data_ff_004B6A28.c,complete,placeholder
 data_u32_004B6A30,0x004B6A30,0x18,src/data/data_u32_004B6A30.c,complete,reconstructed
-data_u8_004B6A48,0x004B6A48,0x1B8,src/data/data_u8_004B6A48.c,complete,placeholder
+data_u8_004B6A48,0x004B6A48,0x20,src/data/data_u8_004B6A48.c,complete,placeholder
+data_u8_004B6A68,0x004B6A68,0x100,src/data/data_u8_004B6A68.c,complete,reconstructed
+data_u8_004B6B68,0x004B6B68,0x98,src/data/data_u8_004B6B68.c,complete,placeholder
 gAdxRnaReturnValuesFormat_004B6C00,0x004B6C00,0x11,src/data/gAdxRnaReturnValuesFormat_004B6C00.c,complete,reconstructed
 data_zero_004B6C11,0x004B6C11,0xF,src/data/data_zero_004B6C11.c,complete,placeholder
 jtbl_004B6C20,0x004B6C20,0x20,src/data/jtbl_004B6C20.c,complete,placeholder
