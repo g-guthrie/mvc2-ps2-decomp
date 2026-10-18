@@ -161,17 +161,20 @@ See the initial audit dispositions in
 recoveries in [docs/PROGRESS.md](docs/PROGRESS.md). The generated graphic and
 successful decomp.dev report are the current progress authority.
 
-The current larger gameplay batch contains five complete functions / 1,720
-bytes, independently compiled and checked in full. Root corrected the two-player
-array extents, preserved a two-float stack payload's observed 16-byte alignment,
-and checked animation API declarations against their existing definitions.
+The latest follow-on gameplay batch adds 14 complete functions / 3,724
+bytes, independently compiled and checked in full. It includes the stage actor
+type dispatcher, motion/attachment state updates, related actor launch variants,
+and parent-state initialization. The catalog now credits 1,415,184 code bytes
+(42.9664%) and 153,965 data bytes (23.7577%).
 
 Active assignments are explicit; map color describes coverage, not ownership.
 The workers now focus on uncovered gameplay families, with separate ranges:
 
 - Codex root: 0x00190000..0x00198000, integration and publication.
-- Code worker: 0x001A0000..0x001A8000.
-- Data worker's current gameplay task: 0x00180000..0x00188000.
+- Code worker: 0x001A0000..0x001A8000; selected uncovered template pairs
+  including 0x001EA110.
+- Data worker's current gameplay task: 0x00180000..0x00188000; currently
+  testing the selected 0x00209690 / 0x002097F0 pair.
 - Runtime worker's current gameplay task: 0x00200000..0x00208000.
 
 Check the current catalog and recent commits before starting adjacent work.

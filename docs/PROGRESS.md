@@ -3879,3 +3879,20 @@ data bytes (23.7577%). All new and changed objects were independently compiled.
 After publishing this coordination checkpoint, the next scheduled full-point
 threshold is 1,444,397 code bytes (43.8534%). Further exact worker results are
 queued for the next part so publication does not wait for ongoing searches.
+
+
+The next larger gameplay batch adds 14 complete C functions / 3,724 bytes
+since d59cb58f. Runtime state/attachment/motion routines are 0x00200960 (44),
+0x00202CA0 (220), 0x00202860 (364), 0x002029D0 (368), 0x00203360 (320), and
+0x00207AC0 (236). Other verified routines are 0x001A1230 (232), 0x0015C2E0
+(264), 0x00180F20 (556), 0x00167700 (224), 0x0021F740 (204), 0x0021F8E0
+(204), 0x0014F9F0 (264), and 0x00378E90 (224). Root separately compiled each
+full object and verified relocated bytes against retail. Template similarity was
+used only for candidate selection; it did not substitute for verification.
+
+The launch variants use a proper two-player state array. The stage dispatcher
+preserves the observed zero second arguments, and the motion setup uses the
+observed aligned two-float payload. All recipes are registered in the normal
+build script, with no opcode rewriting, assembly lifts or codegen barriers.
+Catalog: 1,415,184 / 3,293,696 C code bytes (42.9664%), 14,665 credited functions,
+and unchanged 153,965 / 648,064 data bytes (23.7577%).
