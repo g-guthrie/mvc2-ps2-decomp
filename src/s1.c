@@ -1,0 +1,16 @@
+typedef signed int s32;
+typedef unsigned int u32;
+extern void func_0040E520(void);
+void func_003FF0C8(void) { func_0040E520(); }
+extern s32 *func_0011B370(void);
+s32 func_001045E0(void) { s32 *p = func_0011B370(); __asm__ volatile(""); *p = 5; return -1; }
+extern void func_00408628(s32);
+extern s32 D_00487338;
+extern void func_00404240(void);
+extern void func_003F78F0(void);
+extern void func_0011D8F8(void *, s32, s32);
+extern char D_004791F8[];
+void func_003F7B78(void) { func_00404240(); func_003F78F0(); func_0011D8F8(D_004791F8, 0, 0xB00); }
+extern void func_0011FE88(s32 *, s32);
+extern s32 D_00439940[];
+extern unsigned char D_004AB388[];

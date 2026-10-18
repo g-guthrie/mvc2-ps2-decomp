@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
-"""Cross-check config/matches.csv against tools/compile_matching.sh.
+"""Cross-check the ledger, the build script, and the sources.
 
-Every source credited in the ledger must be compiled and verified by the build
-script, and every source the build script verifies must be credited. A source
-that is credited but never compiled means functions counted as matched without
-anything checking them; a source compiled but not credited makes the build fail
-with "no matching functions selected".
+Three invariants:
+
+1. Every source credited in config/matches.csv is compiled and verified by
+   tools/compile_matching.sh. A credited-but-uncompiled source means functions
+   counted as matched with nothing checking them.
+2. Every source the build script verifies is credited. Otherwise the build
+   fails with "no matching functions selected".
+3. Every non-static func_ body in src/ is registered. An unregistered body is
+   unverified code that reads as if it matched; it is usually a leftover from
+   an attempt whose ledger row was removed but whose source was not. Recipe-2
+   helper leaves are exempt because they are declared static.
 """
 import csv
 import re
@@ -23,6 +29,27 @@ def wired_sources(script: str) -> set[str]:
     return {s for s in sources if "$" not in s}
 
 
+def orphan_bodies() -> list[tuple[str, str]]:
+    credited = set()
+    with (ROOT / "config/matches.csv").open(newline="") as handle:
+        credited = {row["name"].strip() for row in csv.DictReader(handle) if row.get("name")}
+    orphans = []
+    for source in sorted((ROOT / "src").rglob("*.c")):
+        text = source.read_text(errors="ignore")
+        for match in re.finditer(
+            r"^(?!static\b)[A-Za-z_][\w *]*\b(func_[0-9A-Fa-f]{8})\s*\([^;]*\)\s*\{",
+            text,
+            re.M,
+        ):
+            name = match.group(1)
+            if name in credited:
+                continue
+            if re.search(r"\bstatic\b[^\n]*\b" + name + r"\b", text):
+                continue
+            orphans.append((str(source.relative_to(ROOT)), name))
+    return orphans
+
+
 def credited_sources(path: Path) -> set[str]:
     with path.open(newline="") as handle:
         return {row["source"].strip() for row in csv.DictReader(handle) if row.get("source")}
@@ -38,10 +65,19 @@ def main() -> int:
         print(f"credited but never compiled: {source}")
     for source in uncredited:
         print(f"compiled but not credited: {source}")
-    if uncompiled or uncredited:
-        print(f"FAIL: {len(uncompiled)} uncompiled, {len(uncredited)} uncredited")
+    orphans = orphan_bodies()
+    for source, name in orphans:
+        print(f"unregistered body: {name} in {source}")
+    if uncompiled or uncredited or orphans:
+        print(
+            f"FAIL: {len(uncompiled)} uncompiled, {len(uncredited)} uncredited, "
+            f"{len(orphans)} unregistered bodies"
+        )
         return 1
-    print(f"ok: {len(credited)} sources both credited and verified by the build")
+    print(
+        f"ok: {len(credited)} sources both credited and verified by the build, "
+        "no unregistered bodies"
+    )
     return 0
 
 

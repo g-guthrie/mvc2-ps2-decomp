@@ -115,25 +115,6 @@ void func_0017AEC0(u8 *p) {
 extern void func_00179150(u8 *);
 extern void func_00178F20(u8 *);
 
-void func_002BF850(u8 *p) {
-    u8 *r = p;
-    p = *(u8 **)(p + 476);
-    switch (p[347]) {
-    case 1:
-        func_00179150(p);
-        break;
-    case 2: {
-        f32 b = *(f32 *)(p + 1072);
-        f32 a = *(f32 *)(p + 56);
-        f32 *f = (f32 *)(p + 56);
-        if (!(a > b)) {
-            *f = b;
-        }
-    }
-    default:
-        func_00178F20(*(u8 **)(r + 476));
-    }
-}
 
 extern void func_00389950(u8 *, s32);
 
@@ -275,15 +256,3 @@ void func_003DE0C0(Mtx *p) {
 extern void (*D_00472B40[])(u8 *, u8 *);
 extern void func_003DAA40(void);
 
-void func_003A2540(u8 *p) {
-    u8 *q = *(u8 **)(p + 24);
-    s8 v;
-    if (p[4] < 2) {
-        D_00472B40[p[32]](p, q);
-    } else {
-        func_003DAA40();
-    }
-    ((s8 *)p)[36] = ((s8 *)q)[36] + ((s8 *)p)[49];
-    if (((s8 *)p)[36] > 7) p[36] = 7;
-    if (((s8 *)p)[36] < 0) p[36] = 0;
-}

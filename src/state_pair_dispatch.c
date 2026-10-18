@@ -574,7 +574,7 @@ void func_00305520(u8 *p) {
     }
 }
 
-void func_00305690(u8 *p)
+static void func_00305690(u8 *p)
 {
     switch (p[0x1FC]) {
     case 0:

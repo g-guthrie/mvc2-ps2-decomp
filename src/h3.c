@@ -136,7 +136,7 @@ void func_001E2420(u8 *p, u8 b)
     func_00422FB0(((s & 0x7F) << 16) | ((b & 0x7F) << 8) | 1);
 }
 
-extern void func_00224BB0(u8 *p)
+static void func_00224BB0(u8 *p)
 {
     f32 *a = (f32 *)(p + 0x5C);
     f32 *c = (f32 *)(p + 0x68);

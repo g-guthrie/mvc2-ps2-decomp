@@ -14,15 +14,6 @@ extern void func_001C8AE0();
 extern u8 D_004B55F0[];
 extern f32 D_004F1F4C, D_004F1F58, D_004F1F94, D_004F1FA0;
 
-s32 func_00173600(u8 *a0, s32 a1, s32 a2) {
-    s8 *p = (s8 *)D_004B55F0 + (s8)a1 * 3;
-    a0[0x544] = p[0];
-    a0[0x545] = p[1];
-    a0[0x546] = p[2];
-    a0[0x547] = 0x2A;
-    a0[0x520] = 7;
-    return 0;
-}
 
 void func_00123410(void) {
     *(V3 *)&D_004F1F58 = *(V3 *)&D_004F1F4C;

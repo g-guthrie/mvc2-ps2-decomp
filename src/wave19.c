@@ -6,14 +6,6 @@ typedef unsigned int u32;
 typedef signed int s32;
 
 extern void func_003DF850();
-void func_0016D460(void) {
-    s32 a[2];
-    a[0] = 0x4B189680;
-    a[1] = 0x4B189680;
-    func_003DF850(0xF, 0);
-    func_003DF850(0x10, a[0]);
-    func_003DF850(0x11, a[1]);
-}
 
 extern void func_00175C00();
 extern void func_003DAA40();
