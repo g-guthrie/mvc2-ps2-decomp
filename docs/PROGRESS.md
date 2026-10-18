@@ -3322,3 +3322,7 @@ Recovered all 120 bytes at 0x0015BE90, preserving owner linkage, unit scale, cal
 ## Paired child scale event constructor
 
 Recovered all 120 bytes at 0x0015BA40 in the existing child-scale source object. Both functions verify exactly. Code reaches 613,028 bytes (18.6122%), 9,311 functions; data remains 152,051 bytes (23.4623%).
+
+## Signed move parameter records
+
+Recovered 24 bytes as six bounded four-byte signed records at 0x004C158C..0x004C15A4. Native consumer 0x00184720 loads signed bytes at offsets 0..3; setup paths provide base or base+4 record pointers. All four data objects and the complete move_setup source object verify exactly. Data reaches 152,075 bytes (23.4660%); code remains 613,028 bytes (18.6122%).
