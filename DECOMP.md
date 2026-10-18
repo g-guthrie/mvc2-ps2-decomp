@@ -39,8 +39,8 @@
 The current sources contain exact address getters, simple/straight leaves,
 direct tails, absolute and GP-relative dispatchers, signed-result/reset/call
 handlers, and 2,077 verified dispatcher heads split from oversized assembly
-ranges. The current progress report catalogs 14,414 matching functions and
-1,341,752 source bytes (40.7370%). `make match` is the private relocated-object
+ranges. The current progress report catalogs 14,415 matching functions and
+1,341,912 source bytes (40.7418%). `make match` is the private relocated-object
 verification gate; the full current-main compiler pass and hybrid link remain
 separate from catalog/report validation. The two new Sony SDK functions pass
 whole-object checks and a two-span link into the retail image. Data progress

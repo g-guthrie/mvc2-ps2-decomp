@@ -471,3 +471,11 @@ The helper's native implementation consumes no incoming argument registers.
 All four new Sony functions (264 bytes) pass complete relocated-object checks
 and the isolated four-span image/packed-ELF comparison, without instruction
 substitutions. This remains a batch proof, separate from a full-main rebuild.
+
+The fifth new Sony function, `read_rom_version_001004E0.c` (160 bytes),
+reads and closes the ROM version file, then converts and compares its version.
+It matches unmodified Sony GCC with either G0 or G8; the registered profile
+uses G0. Independent recompilation and the isolated five-span link prove all
+424 newly recovered bytes and the packed retail ELF. No prior matching
+function was duplicated. The rest of main still requires its own full-build
+verification; the report/catalog and the five-span proof are different gates.
