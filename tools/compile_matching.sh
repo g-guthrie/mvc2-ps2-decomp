@@ -8359,6 +8359,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/z4_d.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/z4_d.o"
 "$PYTHON" tools/verify_object.py "$BUILD/z4_d.o" private/SLUS_204.86.rom --source src/z4_d.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_radial_snap_0015C2E0.c -c -lang c -O3 -Op -sdatathreshold 0 \
+    -o "$BUILD/actor_radial_snap_0015C2E0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_radial_snap_0015C2E0.o" \
+    private/SLUS_204.86.rom --source src/actor_radial_snap_0015C2E0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/z4_e.c -c -lang c -O3 -Op -fp off -sdatathreshold 0 -o "$BUILD/z4_e.o"
 "$PYTHON" tools/verify_object.py "$BUILD/z4_e.o" private/SLUS_204.86.rom --source src/z4_e.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
