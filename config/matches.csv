@@ -9392,3 +9392,5 @@ func_001978B0,0x001978B0,0x64,src/create_owner_mode_child_001978B0.c,complete
 func_002B5950,0x002B5950,0xA4,src/animation_spawn_positions.c,complete
 func_002AC190,0x002AC190,0x80,src/grok_w7_sz80.c,complete
 func_002957D0,0x002957D0,0x80,src/grok_w7_sz80.c,complete
+func_00417170,0x00417170,0x68,src/prepare_runtime_transform_pair_00417170.c,complete
+func_00417200,0x00417200,0x68,src/prepare_runtime_transform_pair_00417170.c,complete
