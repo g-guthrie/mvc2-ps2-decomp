@@ -3688,3 +3688,14 @@ Local Sony checkpoint: four guarded RPC routines add 448 exact bytes, preserving
 Local Sony checkpoint: four parameterized RPC operations add 496 exact bytes. The eight-function guarded RPC source verifies in full; the 38-function Sony batch totals 3,216 bytes and reproduces the loaded image and packed ELF as isolated replacements. Local catalog: 1,344,704 bytes (40.8266%), 14,448 functions. The frozen full build remains in progress. Next push threshold remains 1,375,009 code bytes.
 
 Local pre-reconciliation callback checkpoint: the three event callback routines add 296 exact bytes. Their internal references require the ownership-checked section resolver, with missing/ambiguous/padded-anchor rejection tests. This local catalog is 1,345,000 bytes (40.8356%), prior to incorporating the parallel wave-16 additions. All initialized-data objects in the frozen full build have passed; its remaining code checks are active.
+
+
+Reconciled Sony / wave-16 publication: independently compiled all 150 incoming
+source files (261 functions), then reverified their objects against the combined
+symbol map. No duplicate credited names or conflicting shared addresses were
+found. The 41-function Sony batch (3,512 bytes) reproduces the loaded retail
+image and packed ELF; this is an isolated replacement proof, while the frozen
+full compiler/link run remains active. Combined catalog: 1,417,244 code bytes
+(43.0290%), 14,712 functions, 153,593 data bytes (23.7003%). All 38 repository
+tests and two Sony tool tests pass. Next scheduled Codex code publication is
+1,450,181 verified bytes (44.0290%), subject to fresh parallel reconciliation.

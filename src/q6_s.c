@@ -1,0 +1,42 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
+typedef unsigned int u32;
+typedef signed int s32;
+typedef float f32;
+
+void func_002F69E0(u8 *p) {
+    extern s32 func_00188690();
+    extern s32 func_00188ED0();
+    extern s32 func_00188C70();
+    extern s32 func_00189130();
+    extern s32 func_002F6E80();
+    extern s32 func_002F7030();
+    extern s32 func_002F6F10();
+    extern s32 func_002F6FA0();
+    extern s32 func_002F6B00();
+    extern s32 func_002F6BF0();
+    extern s32 func_002F6D00();
+    extern s32 func_002F6DD0();
+    extern s32 func_002F70C0();
+    extern s32 func_002F7130();
+    extern s32 func_00187BB0();
+    extern void func_00188330();
+    if (p[0x2CE] == 0 && func_00188690() != 0) return;
+    if (func_00188ED0(p) != 0) return;
+    if (func_00188C70(p) != 0) return;
+    if (func_00189130(p) != 0) return;
+    if (func_002F6E80(p) != 0) return;
+    if (func_002F7030(p) != 0) return;
+    if (func_002F6F10(p) != 0) return;
+    if (func_002F6FA0(p) != 0) return;
+    if (func_002F6B00(p) != 0) return;
+    if (func_002F6BF0(p) != 0) return;
+    if (func_002F6D00(p) != 0) return;
+    if (func_002F6DD0(p) != 0) return;
+    if (func_002F70C0(p) != 0) return;
+    if (func_002F7130(p) != 0) return;
+    func_00187BB0(p);
+    func_00188330(p);
+}

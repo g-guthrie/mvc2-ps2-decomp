@@ -1,0 +1,47 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
+typedef unsigned int u32;
+typedef signed int s32;
+typedef float f32;
+extern u8 D_004D18A0[];
+extern u8 D_004D18D0[];
+extern u8 D_004D18D1[];
+extern u8 D_004D18D2[];
+extern u8 *D_004D18B8[];
+extern u8 *D_004D18BC[];
+extern u8 *D_004D18C0[];
+extern u8 *D_004D18C4[];
+extern u8 *D_004D18C8[];
+extern u8 *D_004D18CC[];
+extern u8 D_004F20B0[];
+extern u8 D_004F2C20[];
+extern u8 D_004F3790[];
+extern u8 D_004F2668[];
+extern u8 D_004F31D8[];
+extern u8 D_004F3D48[];
+extern u8 D_004F2603[], D_004F24D5[], D_004F3173[], D_004F3045[], D_004F3CE3[], D_004F3BB5[];
+extern u8 D_004F2BBB[], D_004F2A8D[], D_004F372B[], D_004F35FD[], D_004F429B[], D_004F416D[];
+extern u8 *D_004C2794;
+
+void func_003D7DF0(void) {
+    extern void func_0011D8F8(u8 *, s32, s32);
+    func_0011D8F8(D_004D18A0, 0, 0xC0);
+    D_004C2794 = D_004D18A0;
+    D_004D18D2[0] = 0;
+    D_004D18B8[0] = D_004F20B0;
+    D_004D18BC[0] = D_004F2C20;
+    D_004D18C0[0] = D_004F3790;
+    D_004D18C4[0] = D_004F2668;
+    D_004D18C8[0] = D_004F31D8;
+    D_004D18CC[0] = D_004F3D48;
+    D_004D18D0[0] = 6;
+    D_004D18D1[0] = 1;
+    D_004F24D5[0] = D_004F2603[0];
+    D_004F3045[0] = D_004F3173[0];
+    D_004F3BB5[0] = D_004F3CE3[0];
+    D_004F2A8D[0] = D_004F2BBB[0];
+    D_004F35FD[0] = D_004F372B[0];
+    D_004F416D[0] = D_004F429B[0];
+}
