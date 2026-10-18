@@ -10717,6 +10717,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/w192_t.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/w192_t.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w192_t.o" private/SLUS_204.86.rom --source src/w192_t.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/animation_displacement_002A4290.c -c -lang c -O3 -Op -sdatathreshold 0 \
+    -o "$BUILD/animation_displacement_002A4290.o"
+"$PYTHON" tools/verify_object.py "$BUILD/animation_displacement_002A4290.o" \
+    private/SLUS_204.86.rom --source src/animation_displacement_002A4290.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/w192_u.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/w192_u.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w192_u.o" private/SLUS_204.86.rom --source src/w192_u.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \

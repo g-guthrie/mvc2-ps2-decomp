@@ -15360,6 +15360,7 @@ func_002D4470,0x002D4470,0x140,src/w192_q.c,complete
 func_002789F0,0x002789F0,0x144,src/w192_r.c,complete
 func_001F4070,0x001F4070,0x148,src/w192_s.c,complete
 func_002A4420,0x002A4420,0x14c,src/w192_t.c,complete
+func_002A4290,0x002A4290,0x190,src/animation_displacement_002A4290.c,complete
 func_0036E3B0,0x0036E3B0,0x150,src/w192_u.c,complete
 func_0041BBB0,0x0041BBB0,0xC8,src/w1913_a.c,complete
 func_003F1C10,0x003F1C10,0xF4,src/w1913_a.c,complete
