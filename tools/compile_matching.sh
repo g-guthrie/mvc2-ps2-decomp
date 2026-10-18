@@ -8728,3 +8728,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_wait.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_wait.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_wait.o" "$BUILD/sony29_rpc_wait.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_wait.o" private/SLUS_204.86.rom --source src/sony29_rpc_wait.c
+
+"$WIBO" "$SNCPP" -P src/sony29_syscall_dispatchers.c "$BUILD/sony29_syscall_dispatchers.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_syscall_dispatchers.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_syscall_dispatchers.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_syscall_dispatchers.o" "$BUILD/sony29_syscall_dispatchers.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_syscall_dispatchers.o" private/SLUS_204.86.rom --source src/sony29_syscall_dispatchers.c
