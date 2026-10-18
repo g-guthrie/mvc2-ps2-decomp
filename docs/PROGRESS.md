@@ -3664,3 +3664,7 @@ Recovered all 112 bytes at 0x001CB610, preserving mode initialization, inherited
 ## Owner mode/timer constructor
 
 Recovered all 108 bytes at 0x00199DE0, preserving the byte mode, halfword timer, owner context, callback and allocation failure. Whole-object verification passes. Code reaches 647,788 bytes (19.6675%), 9,711 functions; data remains 153,593 bytes (23.7003%).
+
+## Sony GCC ROM version reader
+
+Recovered all 160 bytes at 0x001004E0 with Sony EE GCC 2.9-991111 `-O2 -G0 -ffunction-sections`. The routine reads `rom0:ROMVER`, closes the file, parses its version suffix and compares it with `0x01315670`. The unmodified compiler/assembler object matches the complete retail function.

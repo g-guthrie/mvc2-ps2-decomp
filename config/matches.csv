@@ -14417,3 +14417,4 @@ func_0010FF48,0x0010FF48,0x40,src/sony29_thread_lifecycle.c,complete
 func_00110770,0x00110770,0x44,src/sony29_thread_lifecycle.c,complete
 func_0010E670,0x0010E670,0x5C,src/sony29_interrupt_state.c,complete
 func_0010D090,0x0010D090,0x28,src/sony29_interrupt_state.c,complete
+func_001004E0,0x001004E0,0xA0,src/read_rom_version_001004E0.c,complete

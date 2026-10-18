@@ -8677,3 +8677,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$WIBO" "$EE29CC1" "$BUILD/sony29_interrupt_state.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_interrupt_state.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_interrupt_state.o" "$BUILD/sony29_interrupt_state.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_interrupt_state.o" private/SLUS_204.86.rom --source src/sony29_interrupt_state.c
+
+"$WIBO" "$SNCPP" -P src/read_rom_version_001004E0.c "$BUILD/read_rom_version_001004E0.i"
+"$WIBO" "$EE29CC1" "$BUILD/read_rom_version_001004E0.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/read_rom_version_001004E0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/read_rom_version_001004E0.o" "$BUILD/read_rom_version_001004E0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/read_rom_version_001004E0.o" private/SLUS_204.86.rom --source src/read_rom_version_001004E0.c
