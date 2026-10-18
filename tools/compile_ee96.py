@@ -10,8 +10,8 @@ import tempfile
 import uuid
 
 
-def compile_source(source, output, compiler, small_data_threshold=0):
-    flags = ["-O2", f"-G{small_data_threshold}", "-ffunction-sections", "-quiet"]
+def compile_source(source, output, compiler, small_data_threshold=0, opt="O2"):
+    flags = [f"-{opt}", f"-G{small_data_threshold}", "-ffunction-sections", "-quiet"]
     system = platform.system()
     if system == "Linux":
         with tempfile.TemporaryDirectory(prefix="mvc2-ee96-") as directory:
@@ -44,11 +44,12 @@ def compile_source(source, output, compiler, small_data_threshold=0):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--small-data-threshold", type=int, choices=(0, 8), default=0)
+    parser.add_argument("--opt", choices=("O0", "O1", "O2", "O3"), default="O2")
     parser.add_argument("source", type=Path)
     parser.add_argument("output", type=Path)
     args = parser.parse_args()
     compiler = Path(os.environ["EE96CC1"]).resolve()
-    compile_source(args.source, args.output, compiler, args.small_data_threshold)
+    compile_source(args.source, args.output, compiler, args.small_data_threshold, args.opt)
 
 
 if __name__ == "__main__":
