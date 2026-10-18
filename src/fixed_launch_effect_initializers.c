@@ -136,3 +136,24 @@ void func_002D0630(u8 *p)
     func_0018C6E0(p);
     func_001757E0(p, 15, 3);
 }
+
+void func_001ED230(u8 *p)
+{
+    p[0x1E6] ^= 1;
+    *(short *)(p + 0x140) = p[0x1E6];
+    if ((p[0x22] & 2) == 0) {
+        p[0x1E6] ^= 1;
+        *(short *)(p + 0x140) = p[0x1E6];
+    }
+
+    func_001266A0(p, 5, 5);
+    {
+        struct { union { float values[2]; unsigned int bits[2]; } offset; unsigned int padding[2]; } position;
+        position.offset.bits[0] = 0xC2A6AAAA;
+        position.offset.bits[1] = 0x431E9249;
+        func_0015D010(p, position.offset.values);
+    }
+    p[0x1B4] = 10;
+    func_0018C6E0(p);
+    func_001757E0(p, 15, 1);
+}

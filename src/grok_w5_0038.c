@@ -39,6 +39,7 @@ extern u8 *D_004C29F8;
 extern u8 *D_004C29D8;
 extern u16 *D_004C2A08;
 extern u8 *D_004C29C4;
+extern u8 *D_004C2938;
 extern u8 *D_004C29A4;
 
 void func_00394B60(u8 *p)
@@ -356,4 +357,16 @@ void func_00389120(u8 *p, u8 *q)
         p[316] = 0;
     } else
         func_00175700(p);
+}
+
+void func_00346030(void)
+{
+    if (D_004C2938[2] < 12) {
+        u32 value = D_004C2938[3] - 1;
+        D_004C2938[3] = value;
+        if ((u8)value <= 0) {
+            D_004C2938[3] = 2;
+            D_004C2938[2]++;
+        }
+    }
 }
