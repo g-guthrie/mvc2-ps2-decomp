@@ -170,8 +170,8 @@ motion/attachment state updates, actor launch variants, timed state setup and a
 440-byte damped-motion handler. One older 736-byte mesh-loader caller lost
 credit because its fabricated helper bodies only shaped register allocation.
 Those batches reached 43.0850% code. The newer waves 17–19 baseline is
-1,619,392 code bytes (49.1664%). Nineteen independently verified functions added since that baseline bring
-the current catalog to 1,626,248 code bytes (49.3746%); reconstructed data is
+1,619,392 code bytes (49.1664%). Twenty-six independently verified C spans added since that baseline bring
+the current catalog to 1,627,796 code bytes (49.4216%); reconstructed data is
 154,221 bytes (23.7972%).
 The near-matching natural mesh-loader candidate remains uncredited.
 
@@ -190,10 +190,10 @@ see [docs/PROGRESS.md](docs/PROGRESS.md) for their source ownership.
 Active assignments are explicit; map color describes coverage, not ownership.
 The workers now focus on uncovered gameplay families, with separate ranges:
 
-- Codex root: 0x001F30A0, integration and publication.
-- Code worker: uncovered MWCC gameplay outside the ranges below.
+- Codex root: integration, publication, and uncovered 0x00180000–0x001FFFFF spans.
+- Code worker: 0x0015BD40 and its real two-argument helper contract.
 - Second code worker: uncovered EE96 SDK functions in 0x003Fxxxx.
-- Runtime worker: uncovered gameplay in 0x00200000–0x0027FFFF.
+- Runtime worker: 0x00271820, then uncovered gameplay in 0x00200000–0x0027FFFF.
 
 Check the current catalog and recent commits before starting adjacent work.
 Use function evidence to choose compilers; the SDK address bands are mixed.

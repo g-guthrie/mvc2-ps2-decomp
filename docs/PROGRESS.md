@@ -4035,3 +4035,21 @@ The complete hybrid and packed executable match the retail SHA-256 hashes
 recorded above. Unrecovered spans still use retail bytes in the hybrid build.
 The next scheduled full-point gate remains 1,652,329 code bytes; this smaller
 checkpoint publishes the reusable compiler-table build path for other workers.
+
+
+### Further actor-state C recovery — October 18
+
+Seven additional complete C spans / 1,548 bytes match under their existing
+registered profiles: 001F30A0 (312), 0028B0B0 (300), 001A2A40 (256),
+001F4D20 (252), residual_001F69C0 (196), residual_001DB920 (108), and
+residual_001F8CF0 (124). The three residual catalog boundaries are unchanged;
+the C covers each entire recorded span, including its return sequence.
+Every credited function in all seven affected source units was recompiled and
+verified. The last motion constructor uses ordinary stores with no volatile
+constraints. The existing 001DBA70 caller now explicitly passes its task to
+00174240; the corrected caller and all its unit companions remain exact.
+
+Catalog: 1,627,796 / 3,293,696 C bytes (49.4216%), 15,430 credited spans;
+154,221 / 648,064 reconstructed data bytes (23.7972%). All 51 tests and the
+complete hybrid/packed-image checks pass, with the same retail hashes above.
+No near-match probes receive credit. The remaining source recovery is ongoing.
