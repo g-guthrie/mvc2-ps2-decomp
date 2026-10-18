@@ -3370,3 +3370,7 @@ Recovered 24 bytes across four signed-byte owners with six explicit four-byte ro
 ## Child position event constructor
 
 Recovered all 128 bytes at 0x001396E0, preserving parent linkage, inherited mode bytes, float position initialization and allocation failure. Whole-object verification passes. Code reaches 615,624 bytes (18.6910%), 9,330 functions; data remains 152,155 bytes (23.4784%).
+
+## Four-function gameplay batch
+
+Recovered four complete functions totaling 492 bytes: live target selection, paired motion integration, animation completion and a two-context callback sequence. All affected whole source objects verify with their registered profiles. Code reaches 616,116 bytes (18.7059%), 9,334 functions; data remains 152,155 bytes (23.4784%).
