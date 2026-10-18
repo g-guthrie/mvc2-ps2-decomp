@@ -301,3 +301,7 @@ void func_0030D640(u8 *p)
 }
 
 void func_00310880(u8 *p) { *(float *)(p+52) += *(float *)(p+92); *(float *)(p+92) += *(float *)(p+104); *(float *)(p+56) += *(float *)(p+96); *(float *)(p+96) += *(float *)(p+108); func_001863F0(p); if (p[530] == 1) { if (p[525] == 1) func_00310F60(p); else func_00310B50(p); } else { if (p[525] == 1) func_00310AE0(p); else func_00310950(p); } }
+
+extern void func_00309F00(u8 *), func_00309E80(u8 *), func_00309DB0(u8 *), func_00309CF0(u8 *);
+
+void residual_00309C20(u8 *p) { *(float *)(p+52) += *(float *)(p+92); *(float *)(p+92) += *(float *)(p+104); *(float *)(p+56) += *(float *)(p+96); *(float *)(p+96) += *(float *)(p+108); func_001863F0(p); if (p[530] == 1) { if (p[525] == 1) func_00309F00(p); else func_00309E80(p); } else { if (p[525] == 1) func_00309DB0(p); else func_00309CF0(p); } }

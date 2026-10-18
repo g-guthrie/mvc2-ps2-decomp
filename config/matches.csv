@@ -15533,3 +15533,11 @@ func_002742B0,0x002742B0,0x134,src/w172_e.c,complete
 residual_001F69C0,0x001F69C0,0xC4,src/x0_f.c,complete
 residual_001DB920,0x001DB920,0x6C,src/wave24.c,complete
 residual_001F8CF0,0x001F8CF0,0x7C,src/positioned_motion_constants.c,complete
+residual_00309C20,0x00309C20,0xC4,src/physics_dispatchers.c,complete
+residual_003B8DE0,0x003B8DE0,0xB4,src/x10_a.c,complete
+residual_002CF2A0,0x002CF2A0,0xA8,src/q13_a.c,complete
+residual_00282D60,0x00282D60,0xA4,src/v5_a.c,complete
+residual_002FF2D0,0x002FF2D0,0xA0,src/n4e.c,complete
+residual_0030EF40,0x0030EF40,0x98,src/grok_w5_0030.c,complete
+residual_002855C0,0x002855C0,0xA4,src/ground_reset.c,complete
+residual_002B7940,0x002B7940,0xA0,src/mode_input_gates.c,complete

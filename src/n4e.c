@@ -91,3 +91,21 @@ void func_003440E0(s32 n) {
         *(u32 *)(o + 0x74) = 0;
     }
 }
+
+s32 residual_002FF2D0(u8 *p) {
+    s32 x = (*(u16 *)(p + 0x20E) & 0xC00) >> 10;
+    s32 r;
+    u32 a;
+    p[0x22] = x;
+    if ((u8)x != 0) {
+        a = p[0x212];
+        if (a == 0 && p[0x1B7] == 1) {
+            r = func_001E7FD0(p);
+            if (r != 0) { p[0x20B] = 2; return r; }
+        } else if (a == 1 && p[0x1B7] == 1) {
+            r = func_001E7FD0(p);
+            if (r != 0) { p[0x20B] = 1; return r; }
+        }
+    }
+    return 0;
+}
