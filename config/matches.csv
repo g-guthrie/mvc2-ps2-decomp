@@ -9598,3 +9598,4 @@ func_0039CB00,0x0039CB00,0x54,src/wave0b.c,complete
 func_00350AC0,0x00350AC0,0x54,src/wave0b.c,complete
 func_0033D360,0x0033D360,0x50,src/wave0c.c,complete
 func_00153E60,0x00153E60,0x50,src/wave0c.c,complete
+func_0037F3A0,0x0037F3A0,0x50,src/update_global_counter_0037F3A0.c,complete

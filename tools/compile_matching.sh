@@ -4719,3 +4719,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/wave0c.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/wave0c.o"
 "$PYTHON" tools/verify_object.py "$BUILD/wave0c.o" private/SLUS_204.86.rom --source src/wave0c.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/update_global_counter_0037F3A0.c -c -lang c -O3 -sdatathreshold 8 \
+ -o "$BUILD/update_global_counter_0037F3A0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/update_global_counter_0037F3A0.o" \
+ private/SLUS_204.86.rom --source src/update_global_counter_0037F3A0.c
