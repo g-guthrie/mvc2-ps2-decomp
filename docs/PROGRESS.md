@@ -3442,3 +3442,7 @@ Recovered all 40 bytes at 0x00411288 using EE GCC 2.96 with G8. The slot at 0x00
 ## Third-state signed move banks
 
 Recovered 48 bytes across four complete three-row signed banks. Setup paths provide explicit row pointers, and the native consumer loads signed components 0..3. All data and whole move_setup objects verify exactly. Data reaches 152,795 bytes (23.5771%), 3,006 reconstructed units; code remains 617,292 bytes (18.7416%).
+
+## Second runtime callback reader
+
+Recovered all 40 bytes at 0x004112B0 in the existing runtime slot-reader source object. Both functions verify exactly using EE GCC 2.96 G8. Code reaches 617,332 bytes (18.7428%), 9,346 functions; data remains 152,795 bytes (23.5771%).
