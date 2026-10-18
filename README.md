@@ -170,10 +170,16 @@ motion/attachment state updates, actor launch variants, timed state setup and a
 440-byte damped-motion handler. One older 736-byte mesh-loader caller lost
 credit because its fabricated helper bodies only shaped register allocation.
 Those batches reached 43.0850% code. The newer waves 17–19 baseline is
-1,619,392 code bytes (49.1664%). Thirteen independently verified functions added since that baseline bring
-the current catalog to 1,624,092 code bytes (49.3091%); reconstructed data is
-154,029 bytes (23.7676%).
+1,619,392 code bytes (49.1664%). Nineteen independently verified functions added since that baseline bring
+the current catalog to 1,626,248 code bytes (49.3746%); reconstructed data is
+154,221 bytes (23.7972%).
 The near-matching natural mesh-loader candidate remains uncredited.
+
+The four 48-byte switch tables at 004B73E0–004B7470 now come from the
+compiled C owners in `src/w192_r.c`; their raw pointer-literal file is removed.
+The normal build reuses the code object and verifies each complete table,
+including its case-label relocations. The linker selects tables by symbol and
+section index because MWCC gives them identical `.rodata` section names.
 
 Keep genuine helper bodies with their callers when matching depends on known
 register preservation. Verify the helper itself and all affected original units.
@@ -185,9 +191,9 @@ Active assignments are explicit; map color describes coverage, not ownership.
 The workers now focus on uncovered gameplay families, with separate ranges:
 
 - Codex root: 0x001F30A0, integration and publication.
-- Code worker: 0x001B03B0 (next whole-function template).
-- Second code worker: 0x0038EAC0 (next whole-function template).
-- Runtime worker: 0x0027B340 (next whole-function template).
+- Code worker: uncovered MWCC gameplay outside the ranges below.
+- Second code worker: uncovered EE96 SDK functions in 0x003Fxxxx.
+- Runtime worker: uncovered gameplay in 0x00200000–0x0027FFFF.
 
 Check the current catalog and recent commits before starting adjacent work.
 Use function evidence to choose compilers; the SDK address bands are mixed.

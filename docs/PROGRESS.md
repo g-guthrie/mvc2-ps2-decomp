@@ -4010,3 +4010,28 @@ Catalog: 1,624,092 / 3,293,696 C bytes (49.3091%), 15,417 credited functions;
 hybrid/packed-image checks pass with the retail SHA-256 hashes recorded above.
 The next scheduled full-point gate remains 1,652,329 code bytes. This smaller
 checkpoint also publishes the genuine helper context for parallel work.
+
+
+### Compiler-owned switch tables and six further C recoveries — October 18
+
+Added six full C functions / 2,156 bytes since the 49.3091% checkpoint:
+0036FB20 (324), 00278850 (416), 0027B1A0 (416), 00346180 (320),
+003F90B8 (372), and 002742B0 (308). All affected source objects were
+independently recompiled with their registered profiles and checked in full.
+The existing 0040D738 compiler-constraint placeholder stays uncredited.
+
+Four complete 48-byte compiler-generated switch tables now replace the raw
+192-byte unit at 004B73E0. Their C owners are 00278850, 002789F0, 0027B1A0,
+and 0027B340 in w192_r.c. The normal data build verifies the already-compiled
+code object, including R_MIPS_32 relocations to each owner's case labels.
+Hybrid generation selects each symbol's complete section by index and resolves
+its compiler-emitted bytes; it never copies target data for these tables.
+The obsolete raw pointer-literal source was deleted. Nine tests cover duplicate
+section names, relocation and size failures, and missing C/build ownership.
+
+Catalog: 1,626,248 / 3,293,696 C bytes (49.3746%), 15,423 credited functions;
+154,221 / 648,064 reconstructed data bytes (23.7972%). All 51 tests pass.
+The complete hybrid and packed executable match the retail SHA-256 hashes
+recorded above. Unrecovered spans still use retail bytes in the hybrid build.
+The next scheduled full-point gate remains 1,652,329 code bytes; this smaller
+checkpoint publishes the reusable compiler-table build path for other workers.
