@@ -9598,8 +9598,4 @@ func_0039CB00,0x0039CB00,0x54,src/wave0b.c,complete
 func_00350AC0,0x00350AC0,0x54,src/wave0b.c,complete
 func_0033D360,0x0033D360,0x50,src/wave0c.c,complete
 func_00153E60,0x00153E60,0x50,src/wave0c.c,complete
-func_0037F3A0,0x0037F3A0,0x50,src/update_global_counter_0037F3A0.c,complete
 func_001FC080,0x001FC080,0x12C,src/dispatch_conditional_chain_001FC080.c,complete
-func_0037F440,0x0037F440,0x38,src/update_object_timer_0037F440.c,complete
-func_003BC820,0x003BC820,0x50,src/dispatch_owner_event_003BC820.c,complete
-func_003BCAE0,0x003BCAE0,0x50,src/dispatch_owner_event_003BCAE0.c,complete
