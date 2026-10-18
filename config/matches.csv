@@ -13866,6 +13866,7 @@ func_002C5CF0,0x002C5CF0,0xE4,src/y2_a.c,complete
 func_002705C0,0x002705C0,0xE4,src/y2_a.c,complete
 func_0020C9D0,0x0020C9D0,0xE8,src/y2_a.c,complete
 func_0029CDF0,0x0029CDF0,0xEC,src/y2_a.c,complete
+func_0029D060,0x0029D060,0xEC,src/y2_a.c,complete
 func_003715E0,0x003715E0,0xEC,src/y2_a.c,complete
 func_00185290,0x00185290,0xF0,src/y2_a.c,complete
 func_0024C710,0x0024C710,0xF0,src/y2_a.c,complete
