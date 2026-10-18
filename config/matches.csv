@@ -14756,3 +14756,4 @@ func_00207C80,0x00207C80,0x10C,src/advance_entity_attachment_event_00207C80.c,co
 func_0036AE90,0x0036AE90,0xEC,src/initialize_actor_effect_0036AE90.c,complete
 func_001EB9C0,0x001EB9C0,0x100,src/actor_anim_progress_001EB9C0.c,complete
 func_0028B4D0,0x0028B4D0,0x11C,src/initialize_actor_timed_state_0028B4D0.c,complete
+func_00297B40,0x00297B40,0x100,src/actor_motion_timer_00297B40.c,complete

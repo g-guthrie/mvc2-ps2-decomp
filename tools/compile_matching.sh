@@ -8491,6 +8491,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py "$BUILD/actor_anim_progress_001EB9C0.o" \
     private/SLUS_204.86.rom --source src/actor_anim_progress_001EB9C0.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_motion_timer_00297B40.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/actor_motion_timer_00297B40.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_motion_timer_00297B40.o" \
+    private/SLUS_204.86.rom --source src/actor_motion_timer_00297B40.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/z8_d.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/z8_d.o"
 "$PYTHON" tools/verify_object.py "$BUILD/z8_d.o" private/SLUS_204.86.rom --source src/z8_d.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
