@@ -434,3 +434,25 @@ variable explicitly and verify the resulting object as usual:
 "$WIBO" "$SNAS" -G0 -o build/matching/UNIT.o build/matching/UNIT.s
 "$PYTHON" tools/verify_object.py build/matching/UNIT.o private/SLUS_204.86.rom --source src/UNIT.c
 ```
+
+### First exact Sony 2.9 SDK recovery
+
+`sony29_thread_lifecycle.c` contains two complete native matches using Sony
+2.9 `-O2 -G0 -ffunction-sections` and SNAS: `func_0010FF48` (64 bytes) closes
+and resets a nonnegative thread handle, and `func_00110770` (68 bytes) registers
+its alarm callback with the current thread ID and sleeps. The nested argument
+evaluation in the latter preserves the callback across GetThreadId, and the
+void final call produces the native tail jump. All save slots and function
+bodies match without postprocessing. Whole-object relocation verification
+passes for both functions. Full-current-main relinking is a separate gate.
+
+The first two functions were also placed as isolated compiled sections at their
+retail addresses, with every other span retained from the target image. That
+batch link produced raw-image SHA-256
+`c5206f568f068e5bd93ba47676500764c3d45719890865fa71ada10afadcd26f` and
+packed-ELF SHA-256
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+This proves these two replacements; it is not a complete-current-main compiler
+or linkage run. `docs/SONY29_CANDIDATES.csv` preserves the 173-span conservative
+inventory used by the audit. Its remaining spans need C recovery before they
+can receive a source/compiler comparison.

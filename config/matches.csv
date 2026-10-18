@@ -14413,3 +14413,5 @@ func_00287780,0x00287780,0x100,src/z12_g.c,complete
 func_0036BCB0,0x0036BCB0,0x100,src/z12_h.c,complete
 func_00391090,0x00391090,0x104,src/z12_i.c,complete
 func_001D3950,0x001D3950,0x108,src/z12_i.c,complete
+func_0010FF48,0x0010FF48,0x40,src/sony29_thread_lifecycle.c,complete
+func_00110770,0x00110770,0x44,src/sony29_thread_lifecycle.c,complete

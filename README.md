@@ -27,8 +27,8 @@ compiler as `MW MIPS C Compiler (2.4.1.01)` / `PlayStation2`.
 | BSS | `0x004c2580..0x00634380` (`0x171e00` bytes) |
 | Global pointer | `0x004c7270` |
 
-The current catalog reports **14,410 matching source functions (1,341,488 bytes)**
-and **153,593 bytes of reconstructed initialized data**: **40.7290%** of the
+The current catalog reports **14,412 matching source functions (1,341,620 bytes)**
+and **153,593 bytes of reconstructed initialized data**: **40.7330%** of the
 conservative text span and **23.7003%** of initialized data. Whole-object
 compiler verification and full-image linkage are separate private build checks.
 The data checkpoint exceeds
@@ -153,7 +153,7 @@ point. Unbounded data tables remain placeholders even when bytes match.
 
 Claude coordination update (October 18): the stale progress graphic blocked
 report uploads; public main dc715f79 now has successful CI and is visible on
-decomp.dev at 40.7290%. `assets/progress.svg` is now regenerated with every
+decomp.dev at 40.7330%. `assets/progress.svg` is now regenerated with every
 catalog change. An unpatched compiler audit found that Sony 2.9-ee-991111
 natively emits SD/LD spills at 16-byte spacing; this pattern does not prove a
 missing later SN release. Public compiler download links, hashes and the

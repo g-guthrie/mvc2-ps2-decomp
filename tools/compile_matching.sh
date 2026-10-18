@@ -8666,3 +8666,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/z12_i.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/z12_i.o"
 "$PYTHON" tools/verify_object.py "$BUILD/z12_i.o" private/SLUS_204.86.rom --source src/z12_i.c
+
+: "${EE29CC1:?run tools/setup_sony29.py and source private/sony29.env}"
+"$WIBO" "$SNCPP" -P src/sony29_thread_lifecycle.c "$BUILD/sony29_thread_lifecycle.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_thread_lifecycle.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_thread_lifecycle.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_thread_lifecycle.o" "$BUILD/sony29_thread_lifecycle.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_thread_lifecycle.o" private/SLUS_204.86.rom --source src/sony29_thread_lifecycle.c
