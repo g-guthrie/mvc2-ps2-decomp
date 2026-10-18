@@ -9407,3 +9407,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/initialize_actor_effect_0036AE90.c -c -lang c -O3,p -sdatathreshold 8 -o "$BUILD/initialize_actor_effect_0036AE90.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_actor_effect_0036AE90.o" \
     private/SLUS_204.86.rom --source src/initialize_actor_effect_0036AE90.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_actor_timed_state_0028B4D0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/initialize_actor_timed_state_0028B4D0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_actor_timed_state_0028B4D0.o" \
+    private/SLUS_204.86.rom --source src/initialize_actor_timed_state_0028B4D0.c
