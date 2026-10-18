@@ -4543,3 +4543,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
  -o "$BUILD/create_resource_depth_event_0014D9E0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/create_resource_depth_event_0014D9E0.o" \
  private/SLUS_204.86.rom --source src/create_resource_depth_event_0014D9E0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/create_fixed_position_event_0014EA80.c -c -lang c -O3 -sdatathreshold 8 \
+ -o "$BUILD/create_fixed_position_event_0014EA80.o"
+"$PYTHON" tools/verify_object.py "$BUILD/create_fixed_position_event_0014EA80.o" \
+ private/SLUS_204.86.rom --source src/create_fixed_position_event_0014EA80.c

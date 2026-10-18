@@ -3482,3 +3482,7 @@ Recovered two complete 164-byte accepted-transition handlers and a 68-byte runti
 ## Additional deferred signed move banks
 
 Recovered 88 bytes as 22 explicitly selected four-byte signed rows, preserving unreferenced surrounding spans as placeholders. All fourteen changed data objects and the complete deferred_move_setup object verify with the required compiler profile. Data reaches 153,435 bytes (23.6759%), 3,048 reconstructed units; code remains 620,800 bytes (18.8481%).
+
+## Fixed position event constructor
+
+Recovered all 148 bytes at 0x0014EA80, preserving fixed float representations, timer, owner linkage, callback and allocation failure. Whole-object verification passes. Code reaches 620,948 bytes (18.8526%), 9,374 functions; data remains 153,435 bytes (23.6759%).
