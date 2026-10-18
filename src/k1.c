@@ -11,7 +11,7 @@ extern void func_00408628(void);
 extern volatile s32 D_0048733C;
 void func_00408760(s32 a) { func_00408628(); D_0048733C = a; }
 extern void func_00105540(int);
-void func_00105628(int c) { if (c == 10) { func_00105540(13); __asm__ volatile(""); func_00105540(10); } else func_00105540(c); }
+
 extern void func_00102428();
 s32 func_00102B50(u32 *p, s32 m) { if (m == 1) return (*p >> 8) & 1; func_00102428(); return 0; }
 typedef struct VT { char pad[0x24]; s32 (*f24)(void *, int); } VT;

@@ -7,10 +7,6 @@ typedef signed int s32;
 typedef float f32;
 
 extern void func_0040EFE0(void);
-void func_0040D548(void) {
-    func_0040EFE0();
-    __asm__ volatile("");
-}
 
 extern void func_0040AAB8(s32 a, s32 *out);
 s32 func_0040ADC8(s32 a) {

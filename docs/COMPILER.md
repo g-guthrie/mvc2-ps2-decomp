@@ -519,3 +519,20 @@ The three routines in `sony29_event_callbacks.c` exercise this path: lazy event
 registration, callback/argument replacement with interrupt-state restoration,
 and guarded callback dispatch. All three complete bodies verify directly
 against retail with unchanged Sony compiler and assembler output.
+
+
+### Constraint-free wrapper profiles and larger gameplay loops
+
+Eight formerly constrained wrappers now match ordinary C: Sony 2.9 O2/G0
+handles two status resets, the CR/LF callback, and the semaphore wait wrapper;
+EE GCC 2.96 O1/G0 handles four framed call wrappers. The latter optimization
+profile preserves the native call/epilogue where O2 generated a shorter sibling
+call. Correct kernel return contracts are supported by the
+[PS2SDK kernel declarations](https://raw.githubusercontent.com/ps2dev/ps2sdk/master/ee/kernel/include/kernel.h).
+The obsolete constrained definitions were removed and every affected original
+object recompiled, alongside the newly registered source units.
+
+The 436-byte paired-timer routine at 0x00190130 uses MWCC3.0.3 O3/Op/G8.
+Its do-while loops keep independent record offsets; comparisons on signed-short
+assignment results preserve the retail sign extensions. Speed preference Op
+provides the native join padding without embedded NOPs or instruction changes.

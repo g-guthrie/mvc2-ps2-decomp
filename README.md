@@ -147,34 +147,37 @@ The original claimed 196-function list is still unavailable; the conservative
 173-span audit now finds 40 available C definitions and 53 exact flag/source
 profiles. Probe results do not automatically earn C credit.
 
-Codex has recovered 58 Sony C functions / 5,368 bytes without opcode rewriting.
+Codex has recovered 62 Sony C functions / 5,544 bytes without opcode rewriting.
 The frozen complete compiler/data build and the later combined hybrid/packed
 image checks pass exactly. Unrecovered spans still use retail bytes. All
 registered source changes since the frozen build were separately recompiled.
 
 The progress audit removed algorithmic assembly and compiler-constraint credit;
-four former assembly copies now have exact C replacements. Three empty-barrier
-removals preserve exact objects; 35 constraint-dependent functions remain
-placeholders. Required kernel/CPU operations retain their documented exception.
+four former assembly copies now have exact C replacements. Three empty-barrier removals preserve exact objects; eight further functions
+now match without constraints under real compiler profiles. The remaining
+27 constraint-dependent functions stay placeholders. Required kernel/CPU operations retain their documented exception.
 See the initial audit dispositions in
 [docs/ASSEMBLY_CREDIT_AUDIT.csv](docs/ASSEMBLY_CREDIT_AUDIT.csv) and subsequent
 recoveries in [docs/PROGRESS.md](docs/PROGRESS.md). The generated graphic and
 successful decomp.dev report are the current progress authority.
 
-Active assignments are explicit; map color describes coverage, not ownership.
-Codex root integrates and publishes directly to main, and continues SDK work at
-0x00108000..0x00112000. Three Luna workers are testing natural C with other real
-compiler profiles for these disjoint, currently uncredited targets:
+The latest follow-on gameplay batch adds 20 complete functions / 5,256
+bytes, independently compiled and checked in full. It includes the stage actor
+type dispatcher, motion/attachment state updates, related actor launch variants,
+and parent-state initialization. The catalog now credits 1,416,716 code bytes
+(43.0130%) and 153,965 data bytes (23.7577%).
 
-- Code: 003FE170, 003FEEA8, 003FEF20, 00105628, 004067B8, 0040D398,
-  003FCCF0, 003FD2A0, 0040D6A0, 0040A440, 00400F98, 00407298.
-- Data worker's current compiler task: 00411720, 003FEAE8, 00407BC0,
-  0040D300, 003FDE10, 0040C7C0, 00408078, 00107AB8, 001045E0,
-  00407EF8, 00405DC8.
-- Runtime: 00407FC8, 0040D548, 00104608, 004040F0, 00406818, 003FEF70,
-  003FEF48, 0040CD38, 0040D268, 0040CAA0, 0040D738, 003FDC70.
+Active assignments are explicit; map color describes coverage, not ownership.
+The workers now focus on uncovered gameplay families, with separate ranges:
+
+- Codex root: 0x00190000..0x00198000, integration and publication.
+- Code worker: 0x001A0000..0x001A8000; selected uncovered template pairs
+  including 0x001EA110.
+- Data worker's current gameplay task: 0x00180000..0x00188000; currently
+  testing the selected 0x00209690 / 0x002097F0 pair.
+- Runtime worker's current gameplay task: 0x00200000..0x00208000.
 
 Check the current catalog and recent commits before starting adjacent work.
 Use function evidence to choose compilers; the SDK address bands are mixed.
-Normal pushes follow each additional full percentage point of verified C;
-this accounting/tooling correction is published immediately.
+Verified code is pushed at least after each additional full percentage point.
+This smaller checkpoint also publishes the current gameplay assignments.

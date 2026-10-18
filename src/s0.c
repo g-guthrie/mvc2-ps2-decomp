@@ -16,7 +16,7 @@ void func_0010E5E0(int a, int b, int c) { func_00103E10(c); __asm__ volatile("sy
 extern void func_00107A68(void);
 extern void func_00103E20(int);
 extern int D_00438304;
-int func_00107AB8(void) { func_00107A68(); __asm__ volatile(""); func_00103E20(D_00438304); __asm__ volatile(""); return 0; }
+
 
 
 extern void func_00104210(int, void *);

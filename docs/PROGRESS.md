@@ -3840,3 +3840,81 @@ Physical assembly replacements remain in that hybrid proof but earn zero C
 credit where classified placeholder. The corrected publication checkpoint is
 1,409,452 code bytes; the next scheduled code push threshold is 1,442,389 bytes
 (43.7924%), subject to reconciliation with parallel verified work.
+
+
+Larger gameplay recovery: all 436 bytes at 0x00190130 now match MWCCPS2
+3.0.3 O3/Op/G8. The routine processes two player records, updates the observed
+signed timers and paired values, clamps the values to 1 or 144 as appropriate,
+and calls the refresh helper after each change. Natural do-while loops retain
+independent record offsets; assignment-expression comparisons preserve the
+retail signed-short conversions. No assembly or opcode changes are used.
+
+
+Real compiler profiles recover eight constraint-free functions (288 bytes)
+from the audit: four use Sony 2.9 O2/G0 and four use EE GCC 2.96 O1/G0.
+The status-reset pair is grouped, as are the O1 wrappers. Their original
+barrier-dependent definitions were deleted; all three new full objects and
+all eight affected original source objects independently recompile exactly.
+There are 27 remaining optimizer-constraint placeholders. Together with the
+436-byte player timer routine, this local follow-on adds 724 verified C bytes
+since e7c78e97, reaching 1,410,176 bytes (42.8144%).
+
+
+First larger gameplay batch: five complete routines total 1,720 bytes:
+0x00190130 (436), 0x001804F0 (336), 0x00180890 (404), 0x002004B0 (272), and
+0x00201A80 (272). Root independently recompiled every object. The stage state
+uses proper two-player arrays at 0x7C/0x80 and a symbolic BSS byte reference;
+the entity initializer uses an observed 16-byte-aligned two-float local rather
+than unused scratch words. Known animation helper declarations were aligned
+with the existing int-returning definitions, and all objects remained exact.
+Together with the eight constraint-free compiler matches, this checkpoint adds
+2,008 verified C bytes since e7c78e97. The worker ranges are now explicit gameplay
+ranges in README, and the next batch continues independently.
+
+
+The first larger batch passes the complete current hybrid link and packed
+retail ELF checks, with the same retail hashes recorded above. Catalog:
+1,411,460 code bytes (42.8534%), 14,651 credited functions, 153,965 reconstructed
+data bytes (23.7577%). All new and changed objects were independently compiled.
+After publishing this coordination checkpoint, the next scheduled full-point
+threshold is 1,444,397 code bytes (43.8534%). Further exact worker results are
+queued for the next part so publication does not wait for ongoing searches.
+
+
+The next larger gameplay batch adds 14 complete C functions / 3,724 bytes
+since d59cb58f. Runtime state/attachment/motion routines are 0x00200960 (44),
+0x00202CA0 (220), 0x00202860 (364), 0x002029D0 (368), 0x00203360 (320), and
+0x00207AC0 (236). Other verified routines are 0x001A1230 (232), 0x0015C2E0
+(264), 0x00180F20 (556), 0x00167700 (224), 0x0021F740 (204), 0x0021F8E0
+(204), 0x0014F9F0 (264), and 0x00378E90 (224). Root separately compiled each
+full object and verified relocated bytes against retail. Template similarity was
+used only for candidate selection; it did not substitute for verification.
+
+The launch variants use a proper two-player state array. The stage dispatcher
+preserves the observed zero second arguments, and the motion setup uses the
+observed aligned two-float payload. All recipes are registered in the normal
+build script, with no opcode rewriting, assembly lifts or codegen barriers.
+Catalog: 1,415,184 / 3,293,696 C code bytes (42.9664%), 14,665 credited functions,
+and unchanged 153,965 / 648,064 data bytes (23.7577%).
+
+
+The publication set also includes 0x001EA110 (296), 0x00209690 (240),
+0x002097F0 (240), 0x00349320 (244), 0x001EAB70 (244), and 0x00207C80 (268),
+bringing this checkpoint to 20 additional exact C functions / 5,256 bytes since
+d59cb58f. Root independently compiled these units, including all 14 registered
+functions in the changed y5_e.c object. New animation helper declarations use
+the existing int-returning ABI with explicit signed-byte conversions as needed;
+the owner-state indicator also uses a proper two-player array. All remain exact.
+Catalog: 1,416,716 code bytes (43.0130%), 14,671 credited functions; data remains
+153,965 bytes (23.7577%). This checkpoint publishes progress before the existing
+full-point threshold of 1,444,397 bytes, which remains the next scheduled gate.
+
+
+Final combined hybrid relink and retail ELF packing both pass for this
+43.0130% checkpoint. Loaded image SHA-256 remains
+c5206f568f068e5bd93ba47676500764c3d45719890865fa71ada10afadcd26f;
+packed retail ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+The 40 repository tests and two Sony tooling tests pass, as do catalog validation,
+report generation, shell syntax and whitespace checks. Each newly added function
+has its own full compiler/object verification in addition to that combined proof.

@@ -8,9 +8,6 @@ typedef struct { s32 a; s32 b; s32 c; } T3;
 extern void func_003F64A0(s32);
 void func_003FF5D0(T3 *p, s32 v){ p->c = v; func_003F64A0(p->b); }
 
-extern s32 *func_0011B370(void);
-s32 func_00104608(void){ s32 *e = func_0011B370(); __asm__ volatile(""); *e = 5; return -1; }
-
 extern s32 func_00406AE8(s32);
 typedef struct { s32 a, b, c; } T4;
 void func_00400BE8(T4 *p, s32 *out){ *out = func_00406AE8(p->c); }
