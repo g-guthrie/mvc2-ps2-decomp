@@ -15510,3 +15510,6 @@ func_001A09B0,0x001A09B0,0x170,src/w1811_x.c,complete
 func_001B03B0,0x001B03B0,0x15C,src/w1813_q.c,complete
 func_0036FB20,0x0036FB20,0x144,src/w198_c.c,complete
 func_002742B0,0x002742B0,0x134,src/w172_e.c,complete
+residual_001F69C0,0x001F69C0,0xC4,src/x0_f.c,complete
+residual_001DB920,0x001DB920,0x6C,src/wave24.c,complete
+residual_001F8CF0,0x001F8CF0,0x7C,src/positioned_motion_constants.c,complete

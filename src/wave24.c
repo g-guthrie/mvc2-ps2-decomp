@@ -60,13 +60,13 @@ void *func_003DA750(s32 a, s32 b, s32 c);
 void func_001DBE50(void *a);
 void func_001DBBB0(void *a);
 void func_001DBC80(void *a);
-s32 func_00174240();
+s32 func_00174240(u8 *);
 void func_001DBA70(u8 *a0) {
     if (a0[5] == 0) {
         func_001DBE50(a0);
         func_001DBBB0(a0);
     } else {
-        if (func_00174240() == 0) {
+        if (func_00174240(a0) == 0) {
             u32 t = a0[4];
             a0[4] = t + 1;
         }
@@ -210,5 +210,20 @@ s32 func_001343E0(u8 *a0, u8 *a1) {
         a0[32] = 3;
         func_001E3CE0(15);
         return 0;
+    }
+}
+
+void func_001DBAE0(void *);
+void residual_001DB920(u8 *a0) {
+    if (a0[5] == 0) {
+        func_001DBE50(a0);
+        func_001DBAE0(a0);
+    } else {
+        if (func_00174240(a0) == 0) {
+            u32 t = a0[4];
+            a0[4] = t + 1;
+        }
+        func_001DBE50(a0);
+        func_001DBC80(a0);
     }
 }

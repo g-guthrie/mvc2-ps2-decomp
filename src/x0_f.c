@@ -108,3 +108,32 @@ s32 func_002B8720(u8 *p) {
     func_00186A60(p, 0x1D);
     return 1;
 }
+
+void residual_001F69C0(u8 *p) {
+    extern s8 func_00175700();
+    extern void func_001843A0();
+    extern void func_001549B0();
+    extern void func_001E3210();
+    extern void func_001266A0();
+    u32 v[4];
+    u8 *q;
+    if (func_00175700(p) < 0) {
+        func_001843A0(p);
+        return;
+    }
+    if (*(s8 *)(p + 0x151) == 2) {
+        p[0x151] = 0;
+        v[0] = 0xC33AAAAA;
+        v[1] = 0x43092492;
+        func_001549B0(p, v);
+        func_001E3210(p, 0x20);
+    } else if (*(s8 *)(p + 0x151) == 1) {
+        p[0x151] = 0;
+        func_001266A0(p, 0, 0);
+        q = *(u8 **)(p + 0x1DC);
+        *(u8 **)(q + 0x1C8) = p;
+        q[0x20A] = 1;
+        q[0x1B5] = 0x24;
+        p[0x1B5] = 0x24;
+    }
+}
