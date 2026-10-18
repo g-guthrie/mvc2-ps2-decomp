@@ -41,30 +41,6 @@ done:
 }
 
 typedef struct { u8 pad0[6]; u8 b6; u8 pad7[0x15]; s16 h1c; u8 pad1e[0x16]; f32 f34, f38; u8 pad3c[0x20]; f32 f5c, f60, pad64, f68, f6c; u8 pad70[0x176]; u8 b1e6; } S7;
-void func_001EAB70(S7 *p) {
-    extern void func_00175700();
-    extern void func_001757E0();
-    f32 c;
-    p->f34 += p->f5c;
-    p->f5c += p->f68;
-    p->f38 += p->f60;
-    p->f60 += p->f6c;
-    func_00175700(p);
-    {
-        s16 v = p->h1c - 1;
-        p->h1c = v;
-        if (v <= 0) {
-            u32 t = p->b6;
-            p->b6 = t + 1;
-            if (p->b1e6 != 0) c = -4.166666507720947f; else c = 4.166666507720947f;
-            p->f5c = c;
-            if (p->b1e6 != 0) c = 0.33854165673255920f; else c = -0.33854165673255920f;
-            p->f68 = c;
-            func_001757E0(p, 2, 3);
-        }
-    }
-}
-
 void func_0025E6A0(u8 *p) {
     extern void func_00176160();
     extern void func_001757E0();

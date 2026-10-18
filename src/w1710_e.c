@@ -64,39 +64,6 @@ void func_0027F460(S5 *p) {
     }
 }
 
-void func_00207C80(u8 *p) {
-    extern void func_00175700();
-    extern void func_001E3710();
-    extern void func_0018FDB0();
-    extern void func_00198620();
-    extern void func_001757E0();
-    u8 *q = *(u8 **)(p + 0x1DC);
-    s32 r;
-    func_00175700(p);
-    if (*(s8 *)(p + 0x150) != 0) {
-        p[0x150] = 0;
-        func_001E3710(p, 0x17);
-    }
-    r = *(s8 *)(p + 0x151);
-    if (r != 0) {
-        if (p[0x20D] != 2) q[0x1B5] = 0x38; else q[0x1B5] = 0x39;
-        func_0018FDB0(p);
-        p[0x151] = 0;
-        {
-            s16 v = *(s16 *)(p + 0x1C) - 1;
-            *(s16 *)(p + 0x1C) = v;
-            if (v == 0) {
-                u32 t = p[6];
-                p[6] = t + 1;
-                func_00198620(p, 4, 0);
-                if ((s8)r < 0) *(s16 *)(p + 0x140) ^= 1;
-                if (p[0x20D] != 2) p[0x168] = 0xC; else p[0x168] = 0x11;
-                func_001757E0(p, 0x15, p[0x168]);
-            }
-        }
-    }
-}
-
 typedef struct { u8 pad0[7]; u8 b7; u8 pad8[0x2C]; f32 f34, f38; u8 pad3c[0x20]; f32 f5c, f60, pad64, f68, f6c; u8 pad70[0xE1]; s8 b151, b152; u8 pad153[0x3E6]; s8 b539; u8 pad53a[0x2]; } S12;
 extern u8 D_004F1F45, D_004F1F46;
 void func_001F33C0(S12 *p) {

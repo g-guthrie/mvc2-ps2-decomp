@@ -25,74 +25,8 @@ void func_00370810(PC *p) {
     }
 }
 typedef struct { u8 p0[0x34]; f32 f34; u8 p38[0x151-0x38]; s8 b151; u8 p152[0x1E6-0x152]; u8 b1e6; u8 p1e7[0x1FC-0x1E7]; u8 b1fc; } PI;
-void func_00209690(PI *p) {
-    extern s8 func_00175700(PI *);
-    extern void func_001843A0(PI *);
-    f32 d, c;
-    f32 z = 0.0f;
-    switch (p->b1fc) {
-    case 2:
-        if (func_00175700(p) < 0) {
-            func_001843A0(p);
-        } else {
-            d = p->b151;
-            if (d != z) {
-                p->b151 = 0;
-                if (p->b1e6 != 0) c = 1.6666666269302368f; else c = -1.6666666269302368f;
-                d = d * c;
-                p->f34 += d;
-            }
-        }
-        break;
-    case 0:
-    case 1:
-        if (func_00175700(p) < 0) func_001843A0(p);
-        break;
-    default:
-        break;
-    }
-}
 typedef struct { u8 p0[7]; u8 b7; u8 p8[0x5C-8]; f32 f5c; f32 f60; u8 p64[4]; f32 f68; f32 f6c; u8 p70[0x140-0x70]; s16 h140; u8 p142[0x151-0x142]; s8 b151; u8 p152[0x2B8-0x152]; u8 *w2b8; } PO;
 typedef struct { u8 p0[0x140]; s16 h140; u8 p142[0x1B5-0x142]; u8 b1b5; u8 p1b6[0x1C8-0x1B6]; PO *w1c8; u8 p1cc[0x20A-0x1CC]; u8 b20a; u8 p20b[2]; u8 b20d; } PP;
-void func_00201A80(PO *p) {
-    extern s8 func_00175700(PO *);
-    extern void func_001757E0(PO *, s32, s32);
-    extern void func_00198100(PO *, s32);
-    extern void func_00190D50(PP *, PO *);
-    extern void func_00200990(PO *);
-    PP *o;
-    PP **pp;
-    pp = (PP **)((u8 *)p + 0x2B8);
-    if (func_00175700(p) < 0) {
-        u32 t;
-        *(u8 *)((u8 *)p + 0x40D) = 0;
-        *(u8 *)((u8 *)p + 0x40C) = 0;
-        *(u8 *)((u8 *)p + 0x33B) = 0;
-        *(u8 *)((u8 *)p + 0x33C) = 0;
-        t = p->b7;
-        p->b7 = t + 1;
-        p->f5c = 3.3333332538604736f;
-        p->f68 = 0;
-        p->f60 = -4.285714149475098f;
-        p->f6c = -1.0714285373687744f;
-        if (p->h140 != 0) p->f5c = -p->f5c;
-        func_001757E0(p, 0x16, 0x13);
-        return;
-    }
-    if (p->b151 != 0) {
-        p->b151 = 0;
-        func_00198100(p, 2);
-        o = *pp;
-        o->w1c8 = p;
-        o->h140 = p->h140;
-        o->b20a = 1;
-        o->b20d = 2;
-        o->b1b5 = 0x44;
-        func_00190D50(o, p);
-        func_00190D50(o, p);
-        func_00200990(p);
-    }
-}
 typedef struct { u8 p0[2]; u8 b2; u8 p3[3]; u8 b6; u8 p7[0x34-7]; f32 f34; f32 f38; u8 p3c[0x5C-0x3C]; f32 f5c; f32 f60; u8 p64[4]; f32 f68; f32 f6c; u8 p70[0x1E6-0x70]; u8 b1e6; u8 b1e7; u8 p1e8[0x1EE-0x1E8]; u8 b1ee; u8 p1ef[0x430-0x1EF]; f32 f430; } PQ;
 void func_00178560(PQ *p) {
     extern void func_00185490(PQ *);

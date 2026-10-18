@@ -36,35 +36,6 @@ void func_0037DA90(u8 *p, u8 *q) {
 
 typedef struct { u8 pad0[0x7C]; s16 h7c[1]; } G12;
 extern G12 *D_004C2794;
-void func_001EA110(u8 *p) {
-    extern s8 func_00175700();
-    extern void func_001843A0();
-    f32 c;
-    switch (p[0x1FC]) {
-    case 0:
-    case 1:
-        if (func_00175700(p) < 0) func_001843A0(p);
-        break;
-    case 2:
-        if (func_00175700(p) < 0) {
-            func_001843A0(p);
-        } else if (p[6] != 0) {
-            if (*(s8 *)(p + 0x151) != 0) {
-                p[0x151] = 0;
-                *(u8 *)(p + 0x1B5) = 0x13;
-                ((u8 *)p)[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
-                *(s32 *)(p + 0x1D8) = 0;
-                D_004C2794->h7c[p[2]]++;
-            }
-            if (*(s8 *)(p + 0x150) != 0) {
-                if (p[0x1E6] != 0) c = 3.3333332538604736f; else c = -3.3333332538604736f;
-                *(f32 *)(p + 0x34) += c;
-            }
-        }
-        break;
-    }
-}
-
 void func_002701E0(u8 *p) {
     extern void func_001861B0();
     extern void func_0018C4B0();

@@ -10,24 +10,6 @@ extern u8 D_004B7130[];
 extern f32 D_004B7140[], D_004B7144[], D_004B7148[], D_004B714C[];
 extern void func_0018C4B0(u8 *, int);
 extern int func_001757E0(u8 *, int, int);
-void func_0021F8E0(u8 *p) {
-    p[0x1b5] = D_004B7130[0];
-    p[0x1b2] = *(u16 *)(p + 0x1c0) = 0;
-    *(int *)(p + 0x1d8) = 0;
-    { unsigned int offset = p[2] * 2; offset += (unsigned int)D_004C2794; ++*(short *)(offset + 0x7c); }
-    func_0018C4B0(p, 5);
-    func_001757E0(p, 0x15, 0xB);
-    if (p[0x1e6]) {
-        *(f32 *)(p + 0x5C) = D_004B7140[0];
-        *(f32 *)(p + 0x68) = D_004B7144[0];
-    } else {
-        *(f32 *)(p + 0x5C) = -D_004B7140[0];
-        *(f32 *)(p + 0x68) = -D_004B7144[0];
-    }
-    *(f32 *)(p + 0x60) = D_004B7148[0];
-    *(f32 *)(p + 0x6C) = D_004B714C[0];
-}
-
 extern u8 *D_004C2794;
 extern u32 data_u32_004BFF40, D_004BFF44, D_004BFF48, D_004BFF58, D_004BFF5C, D_004BFF60;
 void func_0021DBE0(u8 *p) {
