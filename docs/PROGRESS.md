@@ -3486,3 +3486,7 @@ Recovered 88 bytes as 22 explicitly selected four-byte signed rows, preserving u
 ## Fixed position event constructor
 
 Recovered all 148 bytes at 0x0014EA80, preserving fixed float representations, timer, owner linkage, callback and allocation failure. Whole-object verification passes. Code reaches 620,948 bytes (18.8526%), 9,374 functions; data remains 153,435 bytes (23.6759%).
+
+## Entry group and animation spawn recovery
+
+Recovered complete functions at 0x003419A0 (76 bytes) and 0x00298A30 (164 bytes). Both affected whole source objects verify with their registered compiler version and scheduling options. Code reaches 621,188 bytes (18.8599%), 9,376 functions; data remains 153,435 bytes (23.6759%).
