@@ -3458,3 +3458,7 @@ Recovered all 40 bytes at 0x00411B00 using EE GCC 2.96. The source preserves uns
 ## Extended bounded move-data batch
 
 Recovered 504 bytes as 126 explicitly selected signed four-byte rows across 21 source banks. Unreferenced surrounding spans remain raw. All 69 changed data objects and the whole move_setup object verify exactly; row-reference coverage was independently checked. Data reaches 153,299 bytes (23.6549%), 3,036 reconstructed units; code remains 617,488 bytes (18.7476%).
+
+## Resource/depth event constructor
+
+Recovered all 152 bytes at 0x0014D9E0 after confirming native callers supply owner, resource, index and initialization mode in A0..A3 and depth in F12. Whole-object verification passes. Code reaches 617,640 bytes (18.7522%), 9,349 functions; data remains 153,299 bytes (23.6549%).
