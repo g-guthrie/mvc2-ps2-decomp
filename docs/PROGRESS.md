@@ -3326,3 +3326,7 @@ Recovered all 120 bytes at 0x0015BA40 in the existing child-scale source object.
 ## Signed move parameter records
 
 Recovered 24 bytes as six bounded four-byte signed records at 0x004C158C..0x004C15A4. Native consumer 0x00184720 loads signed bytes at offsets 0..3; setup paths provide base or base+4 record pointers. All four data objects and the complete move_setup source object verify exactly. Data reaches 152,075 bytes (23.4660%); code remains 613,028 bytes (18.6122%).
+
+## Runtime transform heap reset
+
+Recovered all 24 bytes at 0x004152E0, clearing the runtime word and forwarding the exact memset result for the 0xF700-byte heap. Whole-object verification passes. Code reaches 613,052 bytes (18.6129%), 9,312 functions; data remains 152,075 bytes (23.4660%).
