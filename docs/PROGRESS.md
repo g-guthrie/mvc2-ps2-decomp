@@ -3600,3 +3600,7 @@ Recovered complete functions at 0x003DBA30 (84 bytes) and 0x0020A910 (88 bytes).
 ## Overlay vertex template
 
 Recovered all 64 bytes at 0x004771D0 as four sixteen-byte vertex records. Native setup writes depth/attributes at record+8/+12; renderer 0x00417AE0 loads every coordinate as a float and packed attributes as words. The third float is depth, not opacity. Data object verifies exactly. Data reaches 153,593 bytes (23.7003%), 3,053 reconstructed units; code remains 638,896 bytes (19.3975%).
+
+## Child-mode gameplay dispatch pair
+
+Recovered complete wrappers at 0x0020C040 and 0x0020C230, 76 bytes each. Both functions in the shared source object verify exactly. Code reaches 639,048 bytes (19.4022%), 9,603 functions; data remains 153,593 bytes (23.7003%).
