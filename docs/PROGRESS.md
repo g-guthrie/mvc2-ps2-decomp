@@ -3306,3 +3306,7 @@ Recovered accessor-proven runtime fields, preserving surrounding raw owners. Cal
 ## Owner-kind event constructor
 
 Recovered the complete 116-byte constructor at 0x001569C0, including byte-kind pool selection, allocation failure, callback and owner-context setup. Whole-object verification passes. Code reaches 612,568 bytes (18.5982%), 9,307 functions; data remains 152,051 bytes (23.4623%).
+
+## Paired owner-kind event constructor
+
+Recovered all 116 bytes at 0x00156AD0 in the existing owner-kind source unit. Both complete functions verify exactly. Code is 612,684 bytes (18.6017%), 9,308 functions; data remains 152,051 bytes (23.4623%).
