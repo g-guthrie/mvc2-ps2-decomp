@@ -42,7 +42,7 @@ handlers, and 2,077 verified dispatcher heads split from oversized assembly
 ranges. `make match` verifies all 9,334 credited functions and 616,116/616,116 bytes
 directly against retail, resolving HI16/LO16, R_MIPS_26, and GPREL16
 relocations. The exact hybrid link places compiled functions at their
-retail addresses, so all 616,116 bytes count as `complete_code`. Data progress credits 152,155 bytes across 2,980 reconstructed
+retail addresses, so all 616,116 bytes count as `complete_code`. Data progress credits 152,299 bytes across 2,984 reconstructed
 source units. Raw arrays, untyped fills, and numeric-address tables remain
 uncredited placeholders even when physically included by the hybrid linker.
 See [progress rules](docs/PROGRESS.md) for the catalog policy. The split

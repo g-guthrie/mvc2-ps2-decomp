@@ -3374,3 +3374,7 @@ Recovered all 128 bytes at 0x001396E0, preserving parent linkage, inherited mode
 ## Four-function gameplay batch
 
 Recovered four complete functions totaling 492 bytes: live target selection, paired motion integration, animation completion and a two-context callback sequence. All affected whole source objects verify with their registered profiles. Code reaches 616,116 bytes (18.7059%), 9,334 functions; data remains 152,155 bytes (23.4784%).
+
+## Complete signed move banks
+
+Recovered 144 bytes as 36 four-byte signed records across the banks at 0x004C0CC0 and 0x004C0F30. Every row is selected by an explicit setup pointer and consumed with signed loads at offsets 0..3. The unproven prefix at 0x004C0CB0 remains raw. All changed data objects and the complete move_setup object verify exactly. Data is 152,299 bytes (23.5006%), 2,984 reconstructed units; code remains 616,116 bytes (18.7059%).
