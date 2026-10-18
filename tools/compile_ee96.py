@@ -10,8 +10,8 @@ import tempfile
 import uuid
 
 
-def compile_source(source, output, compiler, small_data_threshold=0, opt="O2"):
-    flags = [f"-{opt}", f"-G{small_data_threshold}", "-ffunction-sections", "-quiet"]
+def compile_source(source, output, compiler, small_data_threshold=0, opt="O2", extra_flags=()):
+    flags = [f"-{opt}", f"-G{small_data_threshold}", "-ffunction-sections", "-quiet", *extra_flags]
     system = platform.system()
     if system == "Linux":
         with tempfile.TemporaryDirectory(prefix="mvc2-ee96-") as directory:
@@ -45,11 +45,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--small-data-threshold", type=int, choices=(0, 8), default=0)
     parser.add_argument("--opt", choices=("O0", "O1", "O2", "O3"), default="O2")
+    parser.add_argument("--extra-flags", default="", help="extra cc1 flags, e.g. '-fschedule-insns2'")
     parser.add_argument("source", type=Path)
     parser.add_argument("output", type=Path)
     args = parser.parse_args()
     compiler = Path(os.environ["EE96CC1"]).resolve()
-    compile_source(args.source, args.output, compiler, args.small_data_threshold, args.opt)
+    compile_source(args.source, args.output, compiler, args.small_data_threshold, args.opt, args.extra_flags.split())
 
 
 if __name__ == "__main__":
