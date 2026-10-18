@@ -8687,3 +8687,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$WIBO" "$EE29CC1" "$BUILD/update_runtime_mode_state_00101D50.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/update_runtime_mode_state_00101D50.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/update_runtime_mode_state_00101D50.o" "$BUILD/update_runtime_mode_state_00101D50.s"
 "$PYTHON" tools/verify_object.py "$BUILD/update_runtime_mode_state_00101D50.o" private/SLUS_204.86.rom --source src/update_runtime_mode_state_00101D50.c
+
+"$WIBO" "$SNCPP" -P src/sony29_buffer_slot_control.c "$BUILD/sony29_buffer_slot_control.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_buffer_slot_control.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_buffer_slot_control.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_buffer_slot_control.o" "$BUILD/sony29_buffer_slot_control.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_buffer_slot_control.o" private/SLUS_204.86.rom --source src/sony29_buffer_slot_control.c
