@@ -7699,6 +7699,7 @@ jtbl_004C14E8,0x004C14E8,0x08,.rodata,src/data/jtbl_004C14E8.c,typed_state_callb
 jtbl_004C14F0,0x004C14F0,0x08,.rodata,src/data/jtbl_004C14F0.c,typed_state_callback_table
 jtbl_004C14F8,0x004C14F8,0x08,.rodata,src/data/jtbl_004C14F8.c,typed_state_callback_table
 jtbl_004C1500,0x004C1500,0x08,.rodata,src/data/jtbl_004C1500.c,typed_state_callback_table
+data_s8_004C1508,0x004C1508,0x4,.data,src/data/data_s8_004C1508.c,initialized_s8_records
 data_s8_004C150C,0x004C150C,0x8,.data,src/data/data_s8_004C150C.c,initialized_s8_records
 data_u32_004C1514,0x004C1514,0x4,.data,src/data/data_u32_004C1514.c,initialized_u32_table
 data_ff_004C1518,0x004C1518,0x8,.data,src/data/data_ff_004C1518.c,filled_u32_ones
@@ -7718,10 +7719,10 @@ data_s8_004C158C,0x004C158C,0x8,.data,src/data/data_s8_004C158C.c,initialized_s8
 data_s8_004C1594,0x004C1594,0x4,.data,src/data/data_s8_004C1594.c,initialized_s8_records
 data_s8_004C1598,0x004C1598,0x8,.data,src/data/data_s8_004C1598.c,initialized_s8_records
 data_s8_004C15A0,0x004C15A0,0x4,.data,src/data/data_s8_004C15A0.c,initialized_s8_records
-data_ff_004C15A4,0x004C15A4,0x8,.data,src/data/data_ff_004C15A4.c,filled_u32_ones
-data_u32_004C15AC,0x004C15AC,0x4,.data,src/data/data_u32_004C15AC.c,initialized_u32_table
-data_ff_004C15B0,0x004C15B0,0x8,.data,src/data/data_ff_004C15B0.c,filled_u32_ones
-data_u32_004C15B8,0x004C15B8,0x18,.data,src/data/data_u32_004C15B8.c,initialized_u32_table
+data_s8_004C15A4,0x004C15A4,0x8,.data,src/data/data_s8_004C15A4.c,initialized_s8_records
+data_s8_004C15AC,0x004C15AC,0x4,.data,src/data/data_s8_004C15AC.c,initialized_s8_records
+data_s8_004C15B0,0x004C15B0,0x8,.data,src/data/data_s8_004C15B0.c,initialized_s8_records
+data_s8_004C15B8,0x004C15B8,0x18,.data,src/data/data_s8_004C15B8.c,initialized_s8_records
 jtbl_004C15D0,0x004C15D0,0x8,.rodata,src/data/jtbl_004C15D0.c,jump_table
 jtbl_004C15D8,0x004C15D8,0x08,.rodata,src/data/jtbl_004C15D8.c,typed_state_callback_table
 jtbl_004C15E0,0x004C15E0,0x08,.rodata,src/data/jtbl_004C15E0.c,typed_state_callback_table

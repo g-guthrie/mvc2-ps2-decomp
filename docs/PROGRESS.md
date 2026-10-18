@@ -3342,3 +3342,7 @@ Recovered all 100 bytes at 0x00140FD0 with ordinary float assignments, callback 
 ## Gameplay duplicate-family recovery
 
 Recovered three complete gameplay routines at 0x002EA850 (140 bytes), 0x002EADC0 (168 bytes), and 0x002EC8F0 (136 bytes) using their independently verified duplicate-family C bodies. Every registered function in all three affected objects remains exact under its configured compiler profile. Code reaches 613,596 bytes (18.6294%), 9,316 functions; data remains 152,083 bytes (23.4673%).
+
+## Bounded signed move selector banks
+
+Recovered 48 bytes across five signed-byte owners at 0x004C1508 and 0x004C15A4..0x004C15D0. Setup functions select each four-byte row directly; native consumer 0x00184720 supplies signed component accesses. All changed data and whole gameplay source objects verify exactly. Data is 152,131 bytes (23.4747%), 2,976 reconstructed units; code remains 613,596 bytes (18.6294%).

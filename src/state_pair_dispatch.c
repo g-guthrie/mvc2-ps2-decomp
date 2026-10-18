@@ -6,7 +6,7 @@ typedef unsigned int u32;
 extern int func_001E3710(u8 *, int);
 extern int func_001757E0(u8 *, int, int);
 extern u8 *D_004C2794 __attribute__((section(".sdata")));
-extern u8 D_004C1508[] __attribute__((section(".sdata")));
+extern signed char data_s8_004C1508[4] __attribute__((section(".sdata")));
 extern signed char data_s8_004C150C[8] __attribute__((section(".sdata")));
 
 
@@ -581,7 +581,7 @@ void func_00305690(u8 *p)
         p[0x168] = 0;
         p[0x1B5] = 6;
         func_001E3710(p, 20);
-        *(u8 **)(p + 0x408) = D_004C1508;
+        *(signed char **)(p + 0x408) = data_s8_004C1508;
         p[0x1BB] = 0;
         break;
     case 1:

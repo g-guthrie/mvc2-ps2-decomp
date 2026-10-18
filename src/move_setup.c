@@ -7,10 +7,10 @@ extern signed char data_s8_004C158C[8] __attribute__((section(".sdata")));
 extern signed char data_s8_004C1594[4] __attribute__((section(".sdata")));
 extern signed char data_s8_004C1598[8] __attribute__((section(".sdata")));
 extern signed char data_s8_004C15A0[4] __attribute__((section(".sdata")));
-extern unsigned int data_ff_004C15A4[2] __attribute__((section(".sdata")));
-extern unsigned int data_u32_004C15AC[1] __attribute__((section(".sdata")));
-extern unsigned int data_ff_004C15B0[2] __attribute__((section(".sdata")));
-extern unsigned int data_u32_004C15B8[6] __attribute__((section(".sdata")));
+extern signed char data_s8_004C15A4[8] __attribute__((section(".sdata")));
+extern signed char data_s8_004C15AC[4] __attribute__((section(".sdata")));
+extern signed char data_s8_004C15B0[8] __attribute__((section(".sdata")));
+extern signed char data_s8_004C15B8[24] __attribute__((section(".sdata")));
 extern int func_001757E0(u8 *, int, int);
 extern void func_00176160(u8 *, int, int, int);
 extern void func_003092C0(u8 *);
@@ -675,7 +675,7 @@ void func_00309930(u8 *p) {
   if (p[0x210] == 0)
    *(const signed char **)(p + 0x408) = (const signed char *)(&data_s8_004C15A0[0]);
   else
-   *(const signed char **)(p + 0x408) = (const signed char *)(&data_u32_004C15B8[0]);
+   *(const signed char **)(p + 0x408) = (const signed char *)(&data_s8_004C15B8[0]);
   p[0x1bb] = 0;
   break;
  case 1:
@@ -683,9 +683,9 @@ void func_00309930(u8 *p) {
   p[0x1b5] = 13;
   func_001E3710(p, 21);
   if (p[0x210] == 0)
-   *(const signed char **)(p + 0x408) = (const signed char *)(&data_ff_004C15A4[0]);
+   *(const signed char **)(p + 0x408) = (const signed char *)(&data_s8_004C15A4[0]);
   else
-   *(const signed char **)(p + 0x408) = (const signed char *)(&data_u32_004C15B8[1]);
+   *(const signed char **)(p + 0x408) = (const signed char *)(&data_s8_004C15B8[4]);
   p[0x1bb] = 1;
   func_00176160(p, 1, 18, 1);
   break;
@@ -694,9 +694,9 @@ void func_00309930(u8 *p) {
   p[0x1b5] = 14;
   func_001E3710(p, 22);
   if (p[0x210] == 0)
-   *(const signed char **)(p + 0x408) = (const signed char *)(&data_ff_004C15A4[1]);
+   *(const signed char **)(p + 0x408) = (const signed char *)(&data_s8_004C15A4[4]);
   else
-   *(const signed char **)(p + 0x408) = (const signed char *)(&data_u32_004C15B8[2]);
+   *(const signed char **)(p + 0x408) = (const signed char *)(&data_s8_004C15B8[8]);
   p[0x1bb] = 2;
   func_003092C0(p);
   break;
@@ -713,9 +713,9 @@ void func_00309AA0(u8 *p) {
   p[0x1b5] = 15;
   func_001E3710(p, 20);
   if (p[0x210] == 0)
-   *(const signed char **)(p + 0x408) = (const signed char *)(&data_u32_004C15AC[0]);
+   *(const signed char **)(p + 0x408) = (const signed char *)(&data_s8_004C15AC[0]);
   else
-   *(const signed char **)(p + 0x408) = (const signed char *)(&data_u32_004C15B8[3]);
+   *(const signed char **)(p + 0x408) = (const signed char *)(&data_s8_004C15B8[12]);
   p[0x1bb] = 0;
   break;
  case 1:
@@ -723,9 +723,9 @@ void func_00309AA0(u8 *p) {
   p[0x1b5] = 16;
   func_001E3710(p, 21);
   if (p[0x210] == 0)
-   *(const signed char **)(p + 0x408) = (const signed char *)(&data_ff_004C15B0[0]);
+   *(const signed char **)(p + 0x408) = (const signed char *)(&data_s8_004C15B0[0]);
   else
-   *(const signed char **)(p + 0x408) = (const signed char *)(&data_u32_004C15B8[4]);
+   *(const signed char **)(p + 0x408) = (const signed char *)(&data_s8_004C15B8[16]);
   p[0x1bb] = 1;
   break;
  case 2:
@@ -733,9 +733,9 @@ void func_00309AA0(u8 *p) {
   p[0x1b5] = 17;
   func_001E3710(p, 22);
   if (p[0x210] == 0)
-   *(const signed char **)(p + 0x408) = (const signed char *)(&data_ff_004C15B0[1]);
+   *(const signed char **)(p + 0x408) = (const signed char *)(&data_s8_004C15B0[4]);
   else
-   *(const signed char **)(p + 0x408) = (const signed char *)(&data_u32_004C15B8[5]);
+   *(const signed char **)(p + 0x408) = (const signed char *)(&data_s8_004C15B8[20]);
   p[0x1bb] = 2;
   func_003092C0(p);
   break;
