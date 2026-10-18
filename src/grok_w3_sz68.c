@@ -69,3 +69,16 @@ void func_0025D550(u8 *p) { CHECK_201 }
 void func_0025D740(u8 *p) { CHECK_201 }
 void func_002B3A40(u8 *p) { CHECK_201 }
 void func_002B3AB0(u8 *p) { CHECK_201 }
+
+void func_00263B20(u8 *p) {
+    switch (p[508]) {
+    case 1:
+    case 0:
+    case 2:
+        if ((s8)func_00175700(p) < 0)
+            func_001843A0(p);
+        break;
+    default:
+        break;
+    }
+}

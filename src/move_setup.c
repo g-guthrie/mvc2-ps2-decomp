@@ -558,3 +558,30 @@ MOVE_SETUP(func_0024E300, func_001E3710, 0, 20, D_004C0438, func_001E3710, 1, 21
 MOVE_SETUP(func_0025CC70, func_001E3710, 0, 20, data_s8_004C0590[0], func_001E3710, 1, 21, data_s8_004C0590[4], func_001E3710, 2, 26, data_s8_004C0590[8], 7)
 MOVE_SETUP(func_0028E680, func_001E3710, 0, 20, D_004C09B8, func_001E3710, 1, 21, D_004C09BC, func_001E3710, 2, 22, data_s8_004C09C0[0], 7)
 MOVE_SETUP(func_002CC510, func_001E3710, 0, 20, D_004C0EB8, func_001E3710, 1, 21, D_004C0EBC, func_001E3710, 2, 22, data_s8_004C0EC0[0], 7)
+
+void func_002E9880(u8 *p)
+{
+    switch (p[0x1FC]) {
+    case 0:
+        p[0x168] = 0;
+        p[0x1B5] = 9;
+        func_001E3710(p, 20);
+        *(const signed char **)(p + 0x408) = data_s8_004C1134;
+        p[0x1BB] = 0;
+        break;
+    case 1:
+        p[0x168] = 1;
+        p[0x1B5] = 10;
+        *(const signed char **)(p + 0x408) = data_s8_004C1138;
+        p[0x1BB] = 1;
+        break;
+    case 2:
+        p[0x168] = 2;
+        p[0x1B5] = 11;
+        *(const signed char **)(p + 0x408) = data_s8_004C113C;
+        p[0x1BB] = 2;
+        func_001E3710(p, 22);
+        break;
+    }
+    reset_move_counters(p, p[0x1B5], 10);
+}

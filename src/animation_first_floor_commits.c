@@ -39,3 +39,13 @@ void func_002E7FB0(u8 *p) {
   func_00183d50(p);func_001757E0(p,21,19);
  }
 }
+
+void func_00326390(u8 *p) {
+ func_00175700(p);
+ *(float *)(p+0x34)+=*(float *)(p+0x5c); *(float *)(p+0x5c)+=*(float *)(p+0x68);
+ *(float *)(p+0x38)+=*(float *)(p+0x60); *(float *)(p+0x60)+=*(float *)(p+0x6c);
+ if (*(float *)(p+0x38)<*(float *)(p+0x430)) {
+  ++p[6]; *(float *)(p+0x38)=*(float *)(p+0x430); p[0x20d]=0;
+  func_00183d50(p);func_001757E0(p,15,2);
+ }
+}

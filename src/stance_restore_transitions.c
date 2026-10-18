@@ -51,3 +51,49 @@ void func_0025C120(u8 *p) {
     }
     func_00186A60(p,21);
 }
+
+void func_002102C0(u8 *p) {
+    s8 value;
+    p[5] = 0;
+    p[7] = 0;
+    p[6] = 0;
+    value = *(s8 *)(p + 1245);
+    switch (value) {
+    case 0:
+        p[509] = 0;
+        p[439] = 1;
+        break;
+    case 1:
+        p[509] = 13;
+        p[439] = 1;
+        break;
+    case 2:
+        p[509] = 9;
+        p[439] = 1;
+        break;
+    }
+    func_00186A60(p, 21);
+}
+
+void func_00210330(u8 *p) {
+    s8 value;
+    p[5] = 0;
+    p[7] = 0;
+    p[6] = 0;
+    value = *(s8 *)(p + 1245);
+    switch (value) {
+    case 0:
+        p[509] = 0;
+        p[439] = 1;
+        break;
+    case 1:
+        p[509] = 13;
+        p[439] = 1;
+        break;
+    case 2:
+        p[509] = 9;
+        p[439] = 1;
+        break;
+    }
+    func_00186A60(p, 21);
+}

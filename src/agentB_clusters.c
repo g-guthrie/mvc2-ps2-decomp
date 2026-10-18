@@ -291,3 +291,23 @@ void func_002E5490(u8 *p) {
     if (func_001864A0(p))
         func_001865B0(p);
 }
+
+int func_002958C0(u8 *p) {
+    if (!func_001891F0(p, 15)) return 0;
+    p[509] = 15;
+    p[5] = 0;
+    func_00186A60(p, 21);
+    p[7] = 0;
+    p[6] = 0;
+    return 1;
+}
+
+int func_00208B00(u8 *p) {
+    if (!func_001891F0(p, 17)) return 0;
+    p[509] = 17;
+    p[5] = 0;
+    func_00186A60(p, 21);
+    p[7] = 0;
+    p[6] = 0;
+    return 1;
+}

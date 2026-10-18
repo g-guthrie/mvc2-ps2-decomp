@@ -17,6 +17,7 @@ extern void func_001865B0(u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_0034FA80(u8 *, int);
 extern void func_0034E160(u8 *, int);
+extern void func_00352170(u8 *, int);
 extern void func_0020CB80(u8 *, u8 *);
 extern void func_0020D250(u8 *, u8 *, int);
 extern void func_00217DD0(u8 *);
@@ -130,3 +131,13 @@ void func_0020CE10(u8 *p, u8 *q)
 }
 
 
+
+void func_00214430(u8 *p)
+{
+    if ((s8)func_00175700(p) < 0)
+        func_001843A0(p);
+    else if (*(s8 *)(p + 337)) {
+        p[337] = 0;
+        func_00352170(p, 3);
+    }
+}

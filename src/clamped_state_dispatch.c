@@ -30,3 +30,19 @@ CLAMPED_STATE_DISPATCH(func_00212EC0, D_00450C70)
 CLAMPED_STATE_DISPATCH(func_00265760, D_004542A8)
 CLAMPED_STATE_DISPATCH(func_00265AB0, D_004542B8)
 CLAMPED_STATE_DISPATCH(func_00268D50, D_004543C0)
+
+extern StateHandler jtbl_00454278[];
+int func_00264DC0(u8 *p)
+{
+    if (p[0x20d] == 2) {
+        func_001820A0(p);
+        if (*(float *)(p + 0x38) <= *(float *)(p + 0x430))
+            *(float *)(p + 0x38) = *(float *)(p + 0x430);
+    }
+    {
+        StateHandler *handlers = jtbl_00454278;
+        unsigned int state = (unsigned int)p + 0x2b8;
+        unsigned int index = p[6];
+        return handlers[index](p, (u8 *)state);
+    }
+}

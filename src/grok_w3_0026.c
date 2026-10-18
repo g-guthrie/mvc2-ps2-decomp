@@ -347,3 +347,11 @@ void func_0027ECE0(u8 *p)
 }
 
 
+
+void func_00203250(u8 *p)
+{
+    u8 *q = p + 0x2b8;
+    s8 saved = q[0x0c];
+    func_0011D8F8(p + 0x2b8, 0, 0x80);
+    q[0x0c] = saved;
+}

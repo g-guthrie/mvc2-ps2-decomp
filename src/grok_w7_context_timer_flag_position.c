@@ -37,3 +37,33 @@ void func_00303FF0(u8 *p, void *context)
         func_00183920(p, position.position.values);
     }
 }
+
+extern void func_003A6DC0(u8 *, u8, u8);
+void func_002ECF70(u8 *p, void *context)
+{
+    s16 timer;
+
+    func_00175700(p);
+    timer = *(s16 *)(p + 0x1C);
+    *(s16 *)(p + 0x1C) = timer - 1;
+    if (timer == 0) {
+        p[6]++;
+        func_001757E0(p, 21, 19);
+        return;
+    }
+    if ((*(s8 *)(p + 0x151) & 1) != 0) {
+        *(s8 *)(p + 0x151) &= (s8)~1;
+        func_003A6DC0(p, 1, 8);
+    }
+    if ((*(s8 *)(p + 0x151) & 2) != 0) {
+        struct {
+            union { f32 values[2]; u32 bits[2]; } position;
+            u32 padding[2];
+        } position __attribute__((aligned(16)));
+
+        *(s8 *)(p + 0x151) &= (s8)~2;
+        position.position.bits[0] = 0;
+        position.position.bits[1] = 0x42FCDB6D;
+        func_00183920(p, position.position.values);
+    }
+}

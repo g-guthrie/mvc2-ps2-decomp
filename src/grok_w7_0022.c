@@ -10,6 +10,10 @@ extern u8 D_004C00C8;
 extern u8 D_004C00C9;
 extern u8 D_004C00D0;
 extern u8 D_004C00D1;
+extern u8 D_004C1840;
+extern u8 D_004C1841;
+extern u8 D_004C1848;
+extern u8 D_004C1849;
 extern void func_0022C5C0(u8 *);
 extern void func_00186A60(u8 *, int);
 extern void func_0023E0B0(u8 *, u8 *);
@@ -44,4 +48,24 @@ void func_0023E120(u8 *p, u8 *q)
 {
     jtbl_004527B0[p[6]](p, q);
     func_0023E0B0(p, q);
+}
+
+void func_003265F0(u8 *p)
+{
+    p[5] = 0;
+    p[7] = 0;
+    p[6] = 0;
+    p[509] = (&D_004C1840)[(s8)p[1245] * 2];
+    p[439] = (&D_004C1841)[(s8)p[1245] * 2];
+    func_00186A60(p, 21);
+}
+
+void func_00326640(u8 *p)
+{
+    p[5] = 0;
+    p[7] = 0;
+    p[6] = 0;
+    p[509] = (&D_004C1848)[(s8)p[1245] * 2];
+    p[439] = (&D_004C1849)[(s8)p[1245] * 2];
+    func_00186A60(p, 21);
 }
