@@ -9608,3 +9608,4 @@ func_0020C040,0x0020C040,0x4C,src/child_mode_dispatchers.c,complete
 func_0020C230,0x0020C230,0x4C,src/child_mode_dispatchers.c,complete
 func_002E7700,0x002E7700,0x40,src/initialize_collision_state_002E7700.c,complete
 func_00362760,0x00362760,0x58,src/dispatch_child_mode_00362760.c,complete
+func_002CE850,0x002CE850,0x54,src/advance_owned_event_002CE850.c,complete
