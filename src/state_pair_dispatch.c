@@ -7,8 +7,8 @@ extern int func_001E3710(u8 *, int);
 extern int func_001757E0(u8 *, int, int);
 extern u8 *D_004C2794 __attribute__((section(".sdata")));
 extern u8 D_004C1508[] __attribute__((section(".sdata")));
-extern u8 D_004C150C[] __attribute__((section(".sdata")));
-extern u8 D_004C1510[] __attribute__((section(".sdata")));
+extern signed char data_s8_004C150C[8] __attribute__((section(".sdata")));
+
 
 extern void func_001861B0(u8 *);
 extern void func_001E97C0(u8 *);
@@ -587,13 +587,13 @@ void func_00305690(u8 *p)
     case 1:
         p[0x168] = 1;
         p[0x1B5] = 7;
-        *(u8 **)(p + 0x408) = D_004C150C;
+        *(signed char **)(p + 0x408) = data_s8_004C150C;
         p[0x1BB] = 1;
         break;
     case 2:
         p[0x168] = 2;
         p[0x1B5] = 8;
-        *(u8 **)(p + 0x408) = D_004C1510;
+        *(signed char **)(p + 0x408) = &data_s8_004C150C[4];
         p[0x1BB] = 2;
         break;
     }

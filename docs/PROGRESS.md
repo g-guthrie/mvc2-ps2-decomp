@@ -3330,3 +3330,7 @@ Recovered 24 bytes as six bounded four-byte signed records at 0x004C158C..0x004C
 ## Runtime transform heap reset
 
 Recovered all 24 bytes at 0x004152E0, clearing the runtime word and forwarding the exact memset result for the 0xF700-byte heap. Whole-object verification passes. Code reaches 613,052 bytes (18.6129%), 9,312 functions; data remains 152,075 bytes (23.4660%).
+
+## Adjacent signed move records
+
+Recovered the eight-byte owner at 0x004C150C as two four-byte signed records. Setup paths select the base and base+4, and the native consumer loads signed offsets 0..3. The data object and every registered state_pair_dispatch function verify exactly. Data reaches 152,083 bytes (23.4673%); code remains 613,052 bytes (18.6129%).
