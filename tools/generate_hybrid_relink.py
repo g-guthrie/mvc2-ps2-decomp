@@ -14,6 +14,11 @@ from pathlib import Path
 from elftools.elf.elffile import ELFFile
 from elftools.elf.enums import ENUM_RELOC_TYPE_MIPS
 
+if __package__:
+    from .verify_data_object import resolved_data
+else:
+    from verify_data_object import resolved_data
+
 
 SYMBOL_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(0x[0-9A-Fa-f]+)\s*;")
 NAME_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
@@ -192,6 +197,18 @@ def verify_compiled_data_unit(unit: DataUnit, object_path: Path) -> None:
             )
         if section.data_size != unit.size:
             raise SystemExit(f"compiled data section has extra bytes: {unit.name}")
+
+
+def extract_compiled_data_unit(
+    unit: DataUnit, object_path: Path, addresses: dict[str, int]
+) -> bytes:
+    """Read one complete compiler-owned data section, selected by its symbol.
+
+    Several function tables may have the same ELF section name. Never select
+    them by name alone or take a prefix from a larger section.
+    """
+    verify_compiled_data_unit(unit, object_path)
+    return resolved_data(unit, object_path, addresses)
 
 
 def extract_compiled_functions(
@@ -377,11 +394,32 @@ def main() -> None:
             )
         else:
             unit = next(value for value in data_units if value.name == name)
-            object_path = default_object_path(source, args.compiled_dir)
-            if not object_path.is_file():
-                raise SystemExit(f"compiled data object missing for {source}: {object_path}")
-            verify_compiled_data_unit(unit, object_path)
-            link_inputs.append(f"        {object_path.as_posix()}({unit.section})")
+            if source in compiled_objects:
+                # Code-owned tables can live in distinct, identically named
+                # .rodata sections. Emit only the whole symbol's own section.
+                body = extract_compiled_data_unit(unit, compiled_objects[source], addresses)
+                compiled_section = f".compiled_data.{name}"
+                compiled_lines.extend([
+                    f'.section {compiled_section}, "a", @progbits',
+                    f".global {name}",
+                    f".type {name}, @object",
+                    f"{name}:",
+                    *[
+                        "    .byte " + ", ".join(f"0x{byte:02X}" for byte in body[offset:offset + 16])
+                        for offset in range(0, len(body), 16)
+                    ],
+                    f".size {name}, . - {name}",
+                    "",
+                ])
+                link_inputs.append(
+                    f"        {build.as_posix()}/compiled_sections.o({compiled_section})"
+                )
+            else:
+                object_path = default_object_path(source, args.compiled_dir)
+                if not object_path.is_file():
+                    raise SystemExit(f"compiled data object missing for {source}: {object_path}")
+                verify_compiled_data_unit(unit, object_path)
+                link_inputs.append(f"        {object_path.as_posix()}({unit.section})")
         cursor = start + size
     if cursor < image_size:
         # Data replacements increase the number of raw gaps too; use the full

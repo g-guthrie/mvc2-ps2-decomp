@@ -37,9 +37,26 @@ Path(build, "data").mkdir(parents=True, exist_ok=True)
 with Path("config/data_units.csv").open(newline="", encoding="utf-8") as stream:
     units = list(csv.DictReader(stream))
 
+with Path("config/matches.csv").open(newline="", encoding="utf-8") as stream:
+    code_sources = {
+        row["source"] for row in csv.DictReader(stream)
+        if row["status"] in {"matching", "complete"}
+    }
+
 for unit in units:
     source = Path(unit["source"])
     name = unit["name"]
+    if unit["kind"] == "compiler_switch_table":
+        if unit["source"] not in code_sources:
+            raise SystemExit(f"compiler switch table has no registered C owner: {name}")
+        object_path = Path(build) / source.relative_to("src").with_suffix(".o")
+        if not object_path.is_file():
+            raise SystemExit(f"compile code owner before its switch table: {source}")
+        subprocess.check_call([
+            python, "tools/verify_data_object.py", str(object_path), target,
+            "--name", name, "--symbols", "config/symbol_addrs.txt",
+        ])
+        continue
     object_path = Path(build) / "data" / (source.stem + ".o")
     subprocess.check_call(
         [

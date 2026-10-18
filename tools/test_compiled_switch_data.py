@@ -1,4 +1,7 @@
 import struct
+import os
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -252,6 +255,41 @@ class CompiledSwitchDataTest(unittest.TestCase):
                 {self.function_a: self.function_a_address,
                  self.function_b: self.function_b_address},
             )
+
+
+class CompiledSwitchBuildTest(unittest.TestCase):
+    def _run_build(self, registered):
+        repository = Path(__file__).resolve().parents[1]
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "tools").symlink_to(repository / "tools", target_is_directory=True)
+            (root / "config").mkdir()
+            (root / "src/data").mkdir(parents=True)
+            (root / "src/data/dummy.c").write_text("const int data_u32_00424200 = 0;\n")
+            (root / "config/data_units.csv").write_text(
+                "name,address,size,section,source,kind\n"
+                "jtbl_004B73E0,0x004B73E0,0x30,.rodata,src/owner.c,compiler_switch_table\n"
+            )
+            (root / "config/matches.csv").write_text(
+                "source,status\n" + ("src/owner.c,complete\n" if registered else "")
+            )
+            return subprocess.run(
+                ["sh", str(repository / "tools/compile_matching_data.sh")],
+                cwd=root,
+                env={**os.environ, "PYTHON": sys.executable, "WIBO": "/missing/wibo",
+                     "MWCCPS2": "/missing/mwcc", "BUILD": "build/matching"},
+                text=True, capture_output=True,
+            )
+
+    def test_rejects_table_without_registered_code_owner(self):
+        result = self._run_build(False)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("compiler switch table has no registered C owner: jtbl_004B73E0", result.stderr)
+
+    def test_requires_compiled_code_owner(self):
+        result = self._run_build(True)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn("compile code owner before its switch table: src/owner.c", result.stderr)
 
 
 if __name__ == "__main__":
