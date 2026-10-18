@@ -3528,3 +3528,7 @@ Recovered all 100 bytes at 0x001978B0, preserving owner pointer, inherited actor
 ## Gameplay transition variant batch
 
 Recovered three complete routines totaling 420 bytes. Both affected source objects verify with their distinct registered compiler versions and scheduling flags. Code reaches 622,720 bytes (18.9064%), 9,389 functions; data remains 153,435 bytes (23.6759%).
+
+## Runtime transform preparation pair
+
+Recovered two complete 104-byte wrappers at 0x00417170 and 0x00417200. The source preserves vector inputs, matrix preparation and native unsigned offset shifting. Both functions verify exactly in one object. Code reaches 622,928 bytes (18.9127%), 9,391 functions; data remains 153,435 bytes (23.6759%).

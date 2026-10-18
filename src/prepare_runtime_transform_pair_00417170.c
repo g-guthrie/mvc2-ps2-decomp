@@ -15,7 +15,7 @@ void func_00417170(const struct RuntimeVector3 *vector)
     void *object;
     func_003DD260(D_00632770);
     func_003DDB20(D_00632770, vector->x, vector->y, vector->z);
-    object = D_006327B0 + (D_004C2B40 << 6);
+    object = D_006327B0 + ((u32)D_004C2B40 << 6);
     func_003DE160(object, object, D_00632770);
 }
 void func_00417200(const struct RuntimeVector3 *vector)
@@ -23,6 +23,6 @@ void func_00417200(const struct RuntimeVector3 *vector)
     void *object;
     func_003DD260(D_00632770);
     func_003DDB60(D_00632770, vector->x, vector->y, vector->z);
-    object = D_006327B0 + (D_004C2B40 << 6);
+    object = D_006327B0 + ((u32)D_004C2B40 << 6);
     func_003DE160(object, object, D_00632770);
 }
