@@ -4848,3 +4848,9 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
  -o "$BUILD/activate_threshold_mode_001EE480.o"
 "$PYTHON" tools/verify_object.py "$BUILD/activate_threshold_mode_001EE480.o" \
  private/SLUS_204.86.rom --source src/activate_threshold_mode_001EE480.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/create_two_context_state_001D8580.c -c -lang c -O3 -sdatathreshold 0 \
+ -o "$BUILD/create_two_context_state_001D8580.o"
+"$PYTHON" tools/verify_object.py "$BUILD/create_two_context_state_001D8580.o" \
+ private/SLUS_204.86.rom --source src/create_two_context_state_001D8580.c
