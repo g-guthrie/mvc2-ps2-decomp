@@ -14752,3 +14752,4 @@ func_00207AC0,0x00207AC0,0xEC,src/setup_entity_motion_state_00207AC0.c,complete
 func_001EA110,0x001EA110,0x128,src/state_indicator_001EA110.c,complete
 func_00349320,0x00349320,0xF4,src/initialize_interaction_variant_00349320.c,complete
 func_001EAB70,0x001EAB70,0xF4,src/actor_timed_motion_001EAB70.c,complete
+func_00207C80,0x00207C80,0x10C,src/advance_entity_attachment_event_00207C80.c,complete
