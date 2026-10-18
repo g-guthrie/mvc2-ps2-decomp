@@ -3536,3 +3536,7 @@ Recovered two complete 104-byte wrappers at 0x00417170 and 0x00417200. The sourc
 ## Bounded ten-entry map
 
 Recovered 40 bytes at 0x004381E0 from a consumer with an explicit unsigned index<10 guard. The surrounding library-data owners remain raw. All three data objects and the complete SN GCC lookup object verify exactly. Data reaches 153,475 bytes (23.6821%), 3,049 reconstructed units; code remains 622,928 bytes (18.9127%).
+
+## State-specific gameplay setup
+
+Recovered all 104 bytes at 0x00320ED0 in the existing gameplay source object. Every registered function remains exact with its registered O3/G8 profile. Code reaches 623,032 bytes (18.9159%), 9,392 functions; data remains 153,475 bytes (23.6821%).
