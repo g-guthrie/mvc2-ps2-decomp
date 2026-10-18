@@ -15151,6 +15151,8 @@ func_00357B30,0x00357B30,0x110,src/w1811_k.c,complete
 func_003D9FE0,0x003D9FE0,0x128,src/w1811_l.c,complete
 func_002743F0,0x002743F0,0x134,src/w1811_m.c,complete
 func_0023AC20,0x0023AC20,0x144,src/w1811_o.c,complete
+func_0023AAD0,0x0023AAD0,0x144,src/animation_move_handlers_0023AAD0_00287220.c,complete
+func_00287220,0x00287220,0x144,src/animation_move_handlers_0023AAD0_00287220.c,complete
 func_00281C80,0x00281C80,0x148,src/w1811_q.c,complete
 func_002BC920,0x002BC920,0x154,src/w1811_s.c,complete
 func_002597B0,0x002597B0,0x164,src/w1811_u.c,complete

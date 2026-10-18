@@ -10139,6 +10139,13 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/w1811_o.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/w1811_o.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w1811_o.o" private/SLUS_204.86.rom --source src/w1811_o.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/animation_move_handlers_0023AAD0_00287220.c -c -lang c \
+    -O3 -sdatathreshold 8 -o "$BUILD/animation_move_handlers_0023AAD0_00287220.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/animation_move_handlers_0023AAD0_00287220.o" \
+    private/SLUS_204.86.rom \
+    --source src/animation_move_handlers_0023AAD0_00287220.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/w1811_q.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/w1811_q.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w1811_q.o" private/SLUS_204.86.rom --source src/w1811_q.c
