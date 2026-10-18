@@ -3596,3 +3596,7 @@ Recovered all 84 bytes at 0x0039C960 with the owner/object comparison, mismatch 
 ## Address builder and handoff dispatch
 
 Recovered complete functions at 0x003DBA30 (84 bytes) and 0x0020A910 (88 bytes). Both new source objects verify with their registered profiles. Code reaches 638,896 bytes (19.3975%), 9,601 functions; data remains 153,529 bytes (23.6904%).
+
+## Overlay vertex template
+
+Recovered all 64 bytes at 0x004771D0 as four sixteen-byte vertex records. Native setup writes depth/attributes at record+8/+12; renderer 0x00417AE0 loads every coordinate as a float and packed attributes as words. The third float is depth, not opacity. Data object verifies exactly. Data reaches 153,593 bytes (23.7003%), 3,053 reconstructed units; code remains 638,896 bytes (19.3975%).

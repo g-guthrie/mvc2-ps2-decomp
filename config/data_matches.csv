@@ -4929,7 +4929,7 @@ jtbl_00477170,0x00477170,0x2c,src/data/jtbl_00477170.c,complete,placeholder
 jtbl_004771A0,0x004771A0,0x8,src/data/jtbl_004771A0.c,complete,placeholder
 data_u32_004771A8,0x004771A8,0x8,src/data/data_u32_004771A8.c,complete,placeholder
 jtbl_004771B0,0x004771B0,0x1c,src/data/jtbl_004771B0.c,complete,placeholder
-data_u8_004771D0,0x004771D0,0x40,src/data/data_u8_004771D0.c,complete,placeholder
+data_u8_004771D0,0x004771D0,0x40,src/data/data_u8_004771D0.c,complete,reconstructed
 data_f32_00477210,0x00477210,0x8,src/data/data_f32_00477210.c,complete,reconstructed
 data_u8_00477218,0x00477218,0x8,src/data/data_u8_00477218.c,complete,placeholder
 data_f32_00477220,0x00477220,0x8,src/data/data_f32_00477220.c,complete,reconstructed
