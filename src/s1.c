@@ -3,7 +3,7 @@ typedef unsigned int u32;
 extern void func_0040E520(void);
 void func_003FF0C8(void) { func_0040E520(); }
 extern s32 *func_0011B370(void);
-s32 func_001045E0(void) { s32 *p = func_0011B370(); __asm__ volatile(""); *p = 5; return -1; }
+
 extern void func_00408628(s32);
 extern s32 D_00487338;
 extern void func_00404240(void);

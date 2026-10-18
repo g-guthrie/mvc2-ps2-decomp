@@ -3848,3 +3848,13 @@ signed timers and paired values, clamps the values to 1 or 144 as appropriate,
 and calls the refresh helper after each change. Natural do-while loops retain
 independent record offsets; assignment-expression comparisons preserve the
 retail signed-short conversions. No assembly or opcode changes are used.
+
+
+Real compiler profiles recover eight constraint-free functions (288 bytes)
+from the audit: four use Sony 2.9 O2/G0 and four use EE GCC 2.96 O1/G0.
+The status-reset pair is grouped, as are the O1 wrappers. Their original
+barrier-dependent definitions were deleted; all three new full objects and
+all eight affected original source objects independently recompile exactly.
+There are 27 remaining optimizer-constraint placeholders. Together with the
+436-byte player timer routine, this local follow-on adds 724 verified C bytes
+since e7c78e97, reaching 1,410,176 bytes (42.8144%).

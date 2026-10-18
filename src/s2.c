@@ -15,7 +15,7 @@ extern char D_00484100[];
 void func_003FF300(void) { func_0040EF00(); }
 void func_00400038(s32 *p) { func_003F81C0(p[1]); }
 void func_003FFFA8(s32 *p) { func_003F8140(p[1]); }
-void func_00407EF8(void) { func_0010F148(0); __asm__ volatile(""); }
+
 
 void func_003FF358(void) { func_003F7B78(); func_0011D8F8(D_00484100, 0, 0x9C0); }
 

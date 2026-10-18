@@ -12,3 +12,16 @@ void func_003FEF70(void)
 {
     func_00411818(6);
 }
+
+extern int func_00103D00(void);
+extern int func_0010F148(int);
+
+void func_003FE170(void)
+{
+    func_00103D00();
+}
+
+void func_00407EF8(void)
+{
+    func_0010F148(0);
+}

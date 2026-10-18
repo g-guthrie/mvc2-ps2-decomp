@@ -9277,7 +9277,12 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -G0 -o "$BUILD/ee96_o1_wrappers.o" "$BUILD/ee96_o1_wrappers.s"
 "$PYTHON" tools/verify_object.py "$BUILD/ee96_o1_wrappers.o" private/SLUS_204.86.rom --source src/ee96_o1_wrappers.c
 
-"$WIBO" "$SNCPP" -P src/sony29_status_reset_00104608.c "$BUILD/sony29_status_reset_00104608.i"
-"$WIBO" "$EE29CC1" "$BUILD/sony29_status_reset_00104608.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_status_reset_00104608.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_status_reset_00104608.o" "$BUILD/sony29_status_reset_00104608.s"
-"$PYTHON" tools/verify_object.py "$BUILD/sony29_status_reset_00104608.o" private/SLUS_204.86.rom --source src/sony29_status_reset_00104608.c
+"$WIBO" "$SNCPP" -P src/sony29_status_resets.c "$BUILD/sony29_status_resets.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_status_resets.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_status_resets.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_status_resets.o" "$BUILD/sony29_status_resets.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_status_resets.o" private/SLUS_204.86.rom --source src/sony29_status_resets.c
+
+"$WIBO" "$SNCPP" -P src/sony29_scalar_wrappers.c "$BUILD/sony29_scalar_wrappers.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_scalar_wrappers.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_scalar_wrappers.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_scalar_wrappers.o" "$BUILD/sony29_scalar_wrappers.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_scalar_wrappers.o" private/SLUS_204.86.rom --source src/sony29_scalar_wrappers.c

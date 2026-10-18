@@ -14,11 +14,3 @@ void func_003FDBA8(void) {
     D_004C22B4 = 0;
     func_003FDAA0();
 }
-
-void func_003FE170(void) {
-    func_00103D00();
-    __asm__ volatile("");
-}
-
-
-

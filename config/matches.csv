@@ -11024,7 +11024,7 @@ func_00411858,0x00411858,0x3C,src/k0b.c,complete
 func_00400008,0x00400008,0x18,src/k1.c,complete
 func_003FFF78,0x003FFF78,0x18,src/k1.c,complete
 func_00408760,0x00408760,0x30,src/k1.c,complete
-func_00105628,0x00105628,0x34,src/k1.c,placeholder
+func_00105628,0x00105628,0x34,src/sony29_scalar_wrappers.c,complete
 func_00102B50,0x00102B50,0x38,src/k1.c,complete
 func_00400CA0,0x00400CA0,0x44,src/k1.c,complete
 func_00410898,0x00410898,0x54,src/k1.c,complete
@@ -11373,7 +11373,7 @@ func_00102C58,0x00102C58,0x14,src/s0.c,complete
 func_00104AC0,0x00104AC0,0x20,src/s0.c,complete
 func_0040A2C8,0x0040A2C8,0x20,src/s0.c,complete
 func_0010E5E0,0x0010E5E0,0x24,src/s0.c,complete
-func_00107AB8,0x00107AB8,0x2C,src/s0.c,placeholder
+func_00107AB8,0x00107AB8,0x2C,src/sony29_scalar_wrappers.c,complete
 func_0040B9F0,0x0040B9F0,0x38,src/s0.c,complete
 func_00401E98,0x00401E98,0x4C,src/s0.c,complete
 func_00406E20,0x00406E20,0x64,src/s0.c,complete
@@ -11386,7 +11386,7 @@ func_00102DB8,0x00102DB8,0x6C,src/s0h.c,placeholder
 func_0010CA20,0x0010CA20,0x48,src/s0h.c,complete
 func_00104630,0x00104630,0xA4,src/s0h.c,placeholder
 func_003FF0C8,0x003FF0C8,0x14,src/s1.c,complete
-func_001045E0,0x001045E0,0x28,src/s1.c,placeholder
+func_001045E0,0x001045E0,0x28,src/sony29_status_resets.c,complete
 func_003F7B78,0x003F7B78,0x34,src/s1.c,complete
 func_003F64F0,0x003F64F0,0x20,src/s1b.c,complete
 func_0040D638,0x0040D638,0x68,src/s1b.c,complete
@@ -11414,7 +11414,7 @@ func_00102F98,0x00102F98,0x28,src/s3v.c,placeholder
 func_004135D0,0x004135D0,0x30,src/s3v.c,placeholder
 func_003FF258,0x003FF258,0x14,src/s4.c,complete
 func_003FF5D0,0x003FF5D0,0x1C,src/s4.c,complete
-func_00104608,0x00104608,0x28,src/sony29_status_reset_00104608.c,complete
+func_00104608,0x00104608,0x28,src/sony29_status_resets.c,complete
 func_00400BE8,0x00400BE8,0x2C,src/s4.c,complete
 func_003FF060,0x003FF060,0x34,src/s4.c,complete
 func_003F8448,0x003F8448,0x48,src/s4.c,complete
@@ -11476,7 +11476,7 @@ func_001BB830,0x001BB830,0x7c,src/m2d.c,complete
 func_003FF300,0x003FF300,0x14,src/s2.c,complete
 func_00400038,0x00400038,0x18,src/s2.c,complete
 func_003FFFA8,0x003FFFA8,0x18,src/s2.c,complete
-func_00407EF8,0x00407EF8,0x1C,src/s2.c,placeholder
+func_00407EF8,0x00407EF8,0x1C,src/ee96_o1_wrappers.c,complete
 func_003FF358,0x003FF358,0x2C,src/s2.c,complete
 func_003F7D58,0x003F7D58,0x40,src/s2.c,complete
 func_004075E0,0x004075E0,0x64,src/s2.c,complete
@@ -12331,7 +12331,7 @@ func_00102B88,0x00102B88,0x34,src/b10s2_b.c,complete
 func_003EAB40,0x003EAB40,0x54,src/b10s2_b.c,complete
 func_001166D8,0x001166D8,0x34,src/b10s2_c.c,complete
 func_003FDBA8,0x003FDBA8,0x18,src/b10s2_d.c,complete
-func_003FE170,0x003FE170,0x1C,src/b10s2_d.c,placeholder
+func_003FE170,0x003FE170,0x1C,src/ee96_o1_wrappers.c,complete
 func_003FE780,0x003FE780,0x6C,src/b10s2_e.c,complete
 func_003FE940,0x003FE940,0x6C,src/b10s2_e.c,complete
 func_003FEEA8,0x003FEEA8,0x78,src/b10s2_f.c,placeholder
