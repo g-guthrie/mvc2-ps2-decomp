@@ -3310,3 +3310,7 @@ Recovered the complete 116-byte constructor at 0x001569C0, including byte-kind p
 ## Paired owner-kind event constructor
 
 Recovered all 116 bytes at 0x00156AD0 in the existing owner-kind source unit. Both complete functions verify exactly. Code is 612,684 bytes (18.6017%), 9,308 functions; data remains 152,051 bytes (23.4623%).
+
+## Variant mode event constructor
+
+Recovered all 104 bytes at 0x00138280. Native callers provide numeric zero/one arguments for the stored variant word; byte mode, callback, timers and allocation failure are preserved. Whole-object verification passes. Code is 612,788 bytes (18.6049%), 9,309 functions; data remains 152,051 bytes (23.4623%).

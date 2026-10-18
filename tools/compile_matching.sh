@@ -4393,3 +4393,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
  -o "$BUILD/create_owner_kind_event_001569C0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/create_owner_kind_event_001569C0.o" \
  private/SLUS_204.86.rom --source src/create_owner_kind_event_001569C0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/create_variant_mode_event_00138280.c -c -lang c -O3 -sdatathreshold 0 \
+ -o "$BUILD/create_variant_mode_event_00138280.o"
+"$PYTHON" tools/verify_object.py "$BUILD/create_variant_mode_event_00138280.o" \
+ private/SLUS_204.86.rom --source src/create_variant_mode_event_00138280.c

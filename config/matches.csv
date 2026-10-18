@@ -9311,3 +9311,4 @@ func_0041C550,0x0041C550,0x5C,src/dispatch_runtime_animation_effect_0041C550.c,c
 func_0041C4B0,0x0041C4B0,0x98,src/initialize_runtime_effect_backend_0041C4B0.c,complete
 func_001569C0,0x001569C0,0x74,src/create_owner_kind_event_001569C0.c,complete
 func_00156AD0,0x00156AD0,0x74,src/create_owner_kind_event_001569C0.c,complete
+func_00138280,0x00138280,0x68,src/create_variant_mode_event_00138280.c,complete
