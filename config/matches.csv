@@ -9345,3 +9345,4 @@ func_00323DC0,0x00323DC0,0x5C,src/grok_w3_0020.c,complete
 func_00144260,0x00144260,0x90,src/create_indexed_position_event_00144260.c,complete
 func_001445A0,0x001445A0,0x90,src/create_small_scale_event_001445A0.c,complete
 func_00135600,0x00135600,0x94,src/create_cloned_scene_event_00135600.c,complete
+func_00136B60,0x00136B60,0x88,src/create_background_scale_event_00136B60.c,complete

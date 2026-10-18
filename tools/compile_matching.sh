@@ -4465,3 +4465,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
  -o "$BUILD/create_cloned_scene_event_00135600.o"
 "$PYTHON" tools/verify_object.py "$BUILD/create_cloned_scene_event_00135600.o" \
  private/SLUS_204.86.rom --source src/create_cloned_scene_event_00135600.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/create_background_scale_event_00136B60.c -c -lang c -O3 -sdatathreshold 8 \
+ -o "$BUILD/create_background_scale_event_00136B60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/create_background_scale_event_00136B60.o" \
+ private/SLUS_204.86.rom --source src/create_background_scale_event_00136B60.c

@@ -3418,3 +3418,7 @@ Recovered all 148 bytes at 0x00135600, preserving inherited fields, typed positi
 ## Additional bounded signed move rows
 
 Recovered 60 bytes across the three-row bank at 0x004BFB7C and the twelve-row suffix at 0x004C0E30. The 16-byte prefix at 0x004C0E20 remains raw. Each recovered row has an explicit setup pointer and signed component reads. Changed data and whole move_setup objects verify exactly. Data reaches 152,711 bytes (23.5642%), 2,997 reconstructed units; code remains 617,056 bytes (18.7345%).
+
+## Background scale event constructor
+
+Recovered all 136 bytes at 0x00136B60 with typed position/scale fields, context linkage, callback and allocation failure intact. Whole-object verification passes. Code reaches 617,192 bytes (18.7386%), 9,343 functions; data remains 152,711 bytes (23.5642%).
