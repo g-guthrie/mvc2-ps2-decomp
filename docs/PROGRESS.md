@@ -3973,3 +3973,40 @@ packed-ELF SHA-256:
 48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
 README now separates the previous 43% checkpoint from current progress and
 correctly instructs cloud workers to supply their own input archive.
+
+
+The next post-wave-19 checkpoint adds eleven complete functions / 3,900 C bytes
+since 33eb07e6: 001A27A0 (328), 002A4D30 (536), 00196120 (308), 001A09B0 (368),
+001A5420 (368), 002140C0 (308), 0023AAD0 (324), 00287220 (324), 0027B340 (324),
+001B03B0 (348), and 0038EAC0 (364). Root independently recompiled every changed
+object in full. Registered profiles use MWCCPS2 3.0.3 or 3.0-011126 with the
+verified per-unit flags.
+
+Genuine helper context replaces fabricated clobber assumptions. The verified
+84-byte 00195630 acceleration update now shares one TU with 001956E0, 00197070
+and new 00196120. Correct explicit arguments remain exact because the compiler
+can see the real helper's register preservation. Its two-actor interface follows
+the retail caller; the owner parameter is unused by the helper. Definitions and
+callers were moved, with every affected original object reverified. The genuine
+76-byte 00213FD0 also moved into w191_m, replacing an invented 8-byte local body;
+existing 00214200 and new 002140C0 remain exact. Other same-named local helpers
+in w9m2c and w1710_d were checked: those implementations and their caller objects
+are genuine and exact. Known animation contracts and two-player prefix arrays
+were corrected in the changed TUs without changing their compiled bytes.
+
+Two raw tables now have bounded floating-point reconstructions. 004585C0
+(48 bytes) holds three rows of X velocity/acceleration and Y velocity/acceleration
+read by 002A4290. 00458610 (16 bytes) holds two X/Y animation-frame corrections
+read by 002A4D30. Both typed consumers and data objects remain exact, including
+negative zero. Legacy symbol names stay stable. This adds 64 data bytes.
+
+The two 48-byte compiler-generated switch tables in w192_r were independently
+relocated and checked against retail at 004B7410 and 004B7470, establishing the
+case mappings as well as the instruction bytes. They earn no data credit yet:
+the containing raw 192-byte unit still owns four tables.
+
+Catalog: 1,624,092 / 3,293,696 C bytes (49.3091%), 15,417 credited functions;
+154,029 / 648,064 reconstructed data bytes (23.7676%). All 42 tests and complete
+hybrid/packed-image checks pass with the retail SHA-256 hashes recorded above.
+The next scheduled full-point gate remains 1,652,329 code bytes. This smaller
+checkpoint also publishes the genuine helper context for parallel work.

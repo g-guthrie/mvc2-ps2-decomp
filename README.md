@@ -145,11 +145,12 @@ Sony EE GCC 2.9 is installed by `tools/setup_sony29.py`; source
 `private/sony29.env` after the normal build environment. The pinned download,
 smoke test, probe inventory and compiler recipes are documented in
 [docs/COMPILER.md](docs/COMPILER.md#reproducible-sony-setup-and-candidate-audit).
-The original claimed 196-function list is still unavailable; the conservative
-173-span audit now finds 40 available C definitions and 53 exact flag/source
-profiles. Probe results do not automatically earn C credit.
+The initial conservative 173-span audit recorded 40 available C definitions
+and 53 exact flag/source profiles; the claimed 196-function list was unavailable
+for that audit. Probe results do not automatically earn C credit.
 
-Codex has recovered 62 Sony C functions / 5,544 bytes without opcode rewriting.
+Current registered Sony 2.9 recipes cover 73 credited C functions / 7,040 bytes
+without opcode rewriting; the earlier Codex batch covered 62 functions / 5,544 bytes.
 The frozen complete compiler/data build and the later combined hybrid/packed
 image checks pass exactly. Unrecovered spans still use retail bytes. All
 registered source changes since the frozen build were separately recompiled.
@@ -169,20 +170,24 @@ motion/attachment state updates, actor launch variants, timed state setup and a
 440-byte damped-motion handler. One older 736-byte mesh-loader caller lost
 credit because its fabricated helper bodies only shaped register allocation.
 Those batches reached 43.0850% code. The newer waves 17–19 baseline is
-1,619,392 code bytes (49.1664%). Two new independently verified functions
-bring the current catalog to 1,620,192 bytes (49.1907%); data is 153,965 bytes
-(23.7577%).
+1,619,392 code bytes (49.1664%). Thirteen independently verified functions added since that baseline bring
+the current catalog to 1,624,092 code bytes (49.3091%); reconstructed data is
+154,029 bytes (23.7676%).
 The near-matching natural mesh-loader candidate remains uncredited.
+
+Keep genuine helper bodies with their callers when matching depends on known
+register preservation. Verify the helper itself and all affected original units.
+Invented stand-ins and omitted required arguments do not establish a C match.
+The motion/rebound and state-event helper groups now use verified real bodies;
+see [docs/PROGRESS.md](docs/PROGRESS.md) for their source ownership.
 
 Active assignments are explicit; map color describes coverage, not ownership.
 The workers now focus on uncovered gameplay families, with separate ranges:
 
-- Codex root: 0x0018CEA0 / 0x0018D030, independent build verification,
-  integration and publication.
-- Code worker: 0x001A0000..0x001A8000; 0x001A14D0 is integrated,
-  with 0x001A0880 still an uncredited probe.
-- Second code worker: 0x002A0000..0x002A8000; 0x002A4290 is integrated.
-- Runtime worker: 0x00200000..0x00208000, starting with 0x002017C0.
+- Codex root: 0x001F30A0, integration and publication.
+- Code worker: 0x001B03B0 (next whole-function template).
+- Second code worker: 0x0038EAC0 (next whole-function template).
+- Runtime worker: 0x0027B340 (next whole-function template).
 
 Check the current catalog and recent commits before starting adjacent work.
 Use function evidence to choose compilers; the SDK address bands are mixed.
