@@ -1,0 +1,48 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
+typedef unsigned int u32;
+typedef signed int s32;
+typedef float f32;
+typedef struct { f32 x, y, z; } V3;
+extern V3 D_004B1940[];
+
+void func_0013E760(u8 *p)
+{
+    V3 *a = &D_004B1940[p[0x20] * 2];
+    V3 *b = &D_004B1940[p[0x20] * 2 + 1];
+    f32 d, e;
+    e = a->x;
+    d = (b->x - e) / 30.0f;
+    *(f32 *)(p + 0x34) = e + (f32)*(s16 *)(p + 0x1C) * d;
+    e = a->y;
+    d = (b->y - e) / 30.0f;
+    *(f32 *)(p + 0x38) = e + (f32)*(s16 *)(p + 0x1C) * d;
+    e = a->z;
+    d = (b->z - e) / 30.0f;
+    *(f32 *)(p + 0x3C) = e + (f32)*(s16 *)(p + 0x1C) * d;
+}
+extern f32 *D_004F1F4C;
+extern V3 D_00440820[];
+
+void func_0013FB40(u8 *p)
+{
+    V3 *a;
+    f32 *b;
+    f32 d, e;
+    p[0x13C] = 1;
+    if (*(s16 *)(p + 0x1E) == 0) return;
+    *(s16 *)(p + 0x1E) -= 1;
+    a = &D_00440820[p[0x22]];
+    b = (f32*)&D_004F1F4C;
+    e = a->x;
+    d = (b[0] - e) / 30.0f;
+    *(f32 *)(p + 0x34) = e + (f32)*(s16 *)(p + 0x1E) * d;
+    e = a->y;
+    d = (b[1] - e) / 30.0f;
+    *(f32 *)(p + 0x38) = e + (f32)*(s16 *)(p + 0x1E) * d;
+    e = a->z;
+    d = (b[2] - e) / 30.0f;
+    *(f32 *)(p + 0x3C) = e + (f32)*(s16 *)(p + 0x1E) * d;
+}
