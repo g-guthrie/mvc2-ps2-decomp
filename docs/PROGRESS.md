@@ -3338,3 +3338,7 @@ Recovered the eight-byte owner at 0x004C150C as two four-byte signed records. Se
 ## Unit-color event initializer
 
 Recovered all 100 bytes at 0x00140FD0 with ordinary float assignments, callback setup and allocation failure intact. Whole-object verification passes. Code reaches 613,152 bytes (18.6159%), 9,313 functions; data remains 152,083 bytes (23.4673%).
+
+## Gameplay duplicate-family recovery
+
+Recovered three complete gameplay routines at 0x002EA850 (140 bytes), 0x002EADC0 (168 bytes), and 0x002EC8F0 (136 bytes) using their independently verified duplicate-family C bodies. Every registered function in all three affected objects remains exact under its configured compiler profile. Code reaches 613,596 bytes (18.6294%), 9,316 functions; data remains 152,083 bytes (23.4673%).
