@@ -161,21 +161,24 @@ See the initial audit dispositions in
 recoveries in [docs/PROGRESS.md](docs/PROGRESS.md). The generated graphic and
 successful decomp.dev report are the current progress authority.
 
-The latest follow-on gameplay batch adds 20 complete functions / 5,256
-bytes, independently compiled and checked in full. It includes the stage actor
-type dispatcher, motion/attachment state updates, related actor launch variants,
-and parent-state initialization. The catalog now credits 1,416,716 code bytes
-(43.0130%) and 153,965 data bytes (23.7577%).
+The latest two follow-on batches add 32 genuine C functions / 8,364 bytes,
+independently compiled and checked in full. They include stage actor dispatch,
+motion/attachment state updates, actor launch variants, timed state setup and a
+440-byte damped-motion handler. One older 736-byte mesh-loader caller lost
+credit because its fabricated helper bodies only shaped register allocation.
+The catalog now credits 1,419,088 code bytes (43.0850%) and 153,965 data bytes
+(23.7577%). The near-matching natural mesh-loader candidate remains uncredited.
 
 Active assignments are explicit; map color describes coverage, not ownership.
 The workers now focus on uncovered gameplay families, with separate ranges:
 
 - Codex root: 0x00190000..0x00198000, integration and publication.
-- Code worker: 0x001A0000..0x001A8000; selected uncovered template pairs
-  including 0x001EA110.
-- Data worker's current gameplay task: 0x00180000..0x00188000; currently
-  testing the selected 0x00209690 / 0x002097F0 pair.
-- Runtime worker's current gameplay task: 0x00200000..0x00208000.
+- Code worker: 0x001A0000..0x001A8000 and selected template pairs;
+  the latest exact batch is complete, with 0x002340F0 still an uncredited probe.
+- Data worker's gameplay range: 0x00180000..0x00188000; the selected
+  follow-on pairs are complete, with 0x003F2BF0 still an uncredited probe.
+- Runtime worker's gameplay range: 0x00200000..0x00208000; the latest
+  batch and explicit 0x0020FA50 / 0x00217AD0 / 0x00218750 pairs are complete.
 
 Check the current catalog and recent commits before starting adjacent work.
 Use function evidence to choose compilers; the SDK address bands are mixed.

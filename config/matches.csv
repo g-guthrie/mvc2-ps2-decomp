@@ -14474,7 +14474,7 @@ func_00153F70,0x00153F70,0x1B0,src/L3_b.c,complete
 func_00375890,0x00375890,0x21C,src/L3_c.c,complete
 func_0012FD70,0x0012FD70,0x254,src/L3_d.c,complete
 func_0032A570,0x0032A570,0x27C,src/L3_e.c,complete
-func_003F2EB0,0x003F2EB0,0x2E0,src/L3_f.c,complete
+func_003F2EB0,0x003F2EB0,0x2E0,src/L3_f.c,placeholder
 func_00279950,0x00279950,0xC4,src/q7_e.c,complete
 func_00200880,0x00200880,0xD8,src/q7_e.c,complete
 func_002FFCE0,0x002FFCE0,0x118,src/q7_e.c,complete
