@@ -2,6 +2,9 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 extern u8 *D_004C2794;
+extern signed char data_s8_004C06AC[4] __attribute__((section(".sdata")));
+extern signed char data_s8_004C06B0[8] __attribute__((section(".sdata")));
+extern signed char data_s8_004C06C4[12] __attribute__((section(".sdata")));
 extern signed char data_s8_004C0E30[48] __attribute__((section(".sdata")));
 extern signed char data_s8_004BFB7C[12] __attribute__((section(".sdata")));
 extern signed char data_s8_004C03B0[64] __attribute__((section(".sdata")));
@@ -132,12 +135,6 @@ extern int D_004C065C;
 extern int D_004C066C;
 extern int D_004C0670;
 extern int D_004C0674;
-extern int D_004C06AC;
-extern int D_004C06B0;
-extern int D_004C06B4;
-extern int D_004C06C4;
-extern int D_004C06C8;
-extern int D_004C06CC;
 extern int D_004C0934;
 extern int D_004C0938;
 extern int D_004C093C;
@@ -339,7 +336,7 @@ EXTENDED_MOVE_SETUP(func_0024E8E0, func_001E3710, 15, 20, data_s8_004C0440[28], 
 EXTENDED_MOVE_SETUP(func_0025D0F0, func_001E3710, 12, 20, data_s8_004C0590[24], data_s8_004C0590[48], func_001E3710, 13, 21, data_s8_004C0590[28], data_s8_004C0590[52], func_001E3710, 14, 26, data_s8_004C0590[32], data_s8_004C0590[56], 11, 15, 1)
 EXTENDED_MOVE_SETUP(func_0025D240, func_001E3710, 15, 20, data_s8_004C0590[36], data_s8_004C0590[60], func_001E3710, 16, 21, data_s8_004C0590[40], D_004C05D0, func_001E3710, 17, 22, data_s8_004C0590[44], D_004C05D4, 12, 240, 16)
 EXTENDED_MOVE_SETUP(func_00263470, func_001E3710, 15, 20, D_004C0654, D_004C066C, func_001E3710, 16, 21, D_004C0658, D_004C0670, func_001E3710, 17, 22, D_004C065C, D_004C0674, 12, 240, 16)
-EXTENDED_MOVE_SETUP(func_0026BDB0, func_001E3710, 15, 20, D_004C06AC, D_004C06C4, func_001E3710, 16, 21, D_004C06B0, D_004C06C8, func_001E3710, 17, 22, D_004C06B4, D_004C06CC, 12, 240, 16)
+EXTENDED_MOVE_SETUP(func_0026BDB0, func_001E3710, 15, 20, data_s8_004C06AC[0], data_s8_004C06C4[0], func_001E3710, 16, 21, data_s8_004C06B0[0], data_s8_004C06C4[4], func_001E3710, 17, 22, data_s8_004C06B0[4], data_s8_004C06C4[8], 12, 240, 16)
 EXTENDED_MOVE_SETUP(func_0026FAF0, func_001E3210, 12, 31, data_s8_004C0720[16], data_s8_004C0720[40], func_001E3210, 13, 32, data_s8_004C0720[20], data_s8_004C0720[44], func_001E3210, 14, 33, data_s8_004C0720[24], data_s8_004C0720[48], 11, 15, 1)
 EXTENDED_MOVE_SETUP(func_0026FC40, func_001E3710, 15, 20, data_s8_004C0720[28], data_s8_004C0720[52], func_001E3710, 16, 21, data_s8_004C0720[32], data_s8_004C0720[56], func_001E3710, 17, 22, data_s8_004C0720[36], data_s8_004C0720[60], 12, 240, 16)
 EXTENDED_MOVE_SETUP(func_00287370, func_001E3710, 15, 20, D_004C0934, D_004C094C, func_001E3710, 16, 21, D_004C0938, D_004C0950, func_001E3710, 17, 22, D_004C093C, D_004C0954, 12, 240, 16)

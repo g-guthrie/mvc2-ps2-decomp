@@ -3426,3 +3426,7 @@ Recovered all 136 bytes at 0x00136B60 with typed position/scale fields, context 
 ## Three-row signed move bank
 
 Recovered 12 bytes at 0x004C1690..0x004C169C from explicit setup pointers and signed native component reads. Both data objects and the whole move_setup object verify exactly. Data reaches 152,723 bytes (23.5660%), 2,999 reconstructed units; code remains 617,192 bytes (18.7386%).
+
+## Extended signed move rows
+
+Recovered 24 bytes as six explicitly selected four-byte signed records at 0x004C06AC..0x004C06B8 and 0x004C06C4..0x004C06D0. The unreferenced twelve-byte span at 0x004C06B8 remains raw. All changed data and whole move_setup objects verify exactly. Data reaches 152,747 bytes (23.5697%), 3,002 reconstructed units; code remains 617,192 bytes (18.7386%).
