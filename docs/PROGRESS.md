@@ -3516,3 +3516,7 @@ Recovered all 100 bytes at 0x001ACDC0, preserving both context pointers, mode by
 ## Owner callback and one-time runtime initialization
 
 Recovered complete helpers at 0x0036C050 (92 bytes) and 0x00413D50 (68 bytes). All registered functions in both affected objects verify exactly. Code reaches 622,092 bytes (18.8874%), 9,384 functions; data remains 153,435 bytes (23.6759%).
+
+## Runtime request preparation
+
+Recovered all 108 bytes at 0x00413DF0, preserving stack request preparation and forwarded argument order. Whole-object verification passes. Code reaches 622,200 bytes (18.8906%), 9,385 functions; data remains 153,435 bytes (23.6759%).
