@@ -9372,3 +9372,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/initialize_parent_actor_00378E90.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/initialize_parent_actor_00378E90.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_parent_actor_00378E90.o" \
     private/SLUS_204.86.rom --source src/initialize_parent_actor_00378E90.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/setup_entity_motion_state_00207AC0.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/setup_entity_motion_state_00207AC0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/setup_entity_motion_state_00207AC0.o" private/SLUS_204.86.rom --source src/setup_entity_motion_state_00207AC0.c
