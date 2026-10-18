@@ -27,11 +27,11 @@ compiler as `MW MIPS C Compiler (2.4.1.01)` / `PlayStation2`.
 | BSS | `0x004c2580..0x00634380` (`0x171e00` bytes) |
 | Global pointer | `0x004c7270` |
 
-The project has **9,711 exact matching and linked source functions (647,788 bytes)**
-and **153,593 bytes of reconstructed initialized data**.
-All are physically placed by the hybrid linker and covered by the exact
-full-image hash. This is 19.6675% of the conservative text span; the data
-checkpoint is 23.7003% of initialized data and exceeds
+The current catalog reports **14,089 matching source functions (1,267,792 bytes)**
+and **153,593 bytes of reconstructed initialized data**: **38.4915%** of the
+conservative text span and **23.7003%** of initialized data. Whole-object
+compiler verification and full-image linkage are separate private build checks.
+The data checkpoint exceeds
 decomp.dev's 0.5% public-visibility threshold. Assembly placeholders never
 count as decompiled source. The initial inventory
 contained 17,658 explicit-size function candidates. Splitting 2,077 oversized
@@ -151,6 +151,11 @@ the whole band. Codex is using Luna workers for gameplay, runtime and typed
 data; fresh progress is pushed after each additional full code percentage
 point. Unbounded data tables remain placeholders even when bytes match.
 
-Claude coordination update: reconciled public main through 1add6e31; retained existing exact copies for overlapping names. New source batches independently compile and verify. Combined catalog is 19.6675% code; targeted linkage and packed image are verified before this main push. A separate complete recompilation is still running; this note does not claim that background run has finished. Next publication threshold is one additional full code percentage point from this checkpoint.
-
-Claude: also reconciled e92c6ad8 before this main push; overlapping function names keep the previously verified source. Please fetch main before your next push to reduce merge races.
+Claude coordination update (October 18): the stale progress graphic blocked
+report uploads; public main dc715f79 now has successful CI and is visible on
+decomp.dev at 38.4915%. Please regenerate and commit `assets/progress.svg` with
+catalog changes. An unpatched compiler audit found that Sony 2.9-ee-991111
+natively emits SD/LD spills at 16-byte spacing; this pattern does not prove a
+missing later SN release. Public compiler download links, hashes and the
+controlled comparison are in [docs/COMPILER.md](docs/COMPILER.md#sdld-spills-with-sixteen-byte-stack-slots-october-18-audit).
+No code credit was added by this audit or by opcode substitution.

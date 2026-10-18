@@ -342,3 +342,55 @@ support the `s32, s32` signature; the relocated jump matches retail.
 The EE96 string chain at `0x003FFEF8` and `0x00402C08` forwards a `const
 char *` to `0x003F8240` and preserves its `s32` result. That target passes the
 string to the native aligned byte/word length routine.
+
+## SD/LD spills with sixteen-byte stack slots (October 18 audit)
+
+Spill width and slot spacing do not establish a unique compiler release.
+A controlled, unpatched `-O2 -G0` compile of the same ordinary C input gives:
+
+```c
+extern int f(int);
+int probe(int x, int y) {
+    int a = f(x);
+    int b = f(y);
+    return f(a) + b;
+}
+```
+
+| Compiler | Saved s0 / s1 / ra | Stack offsets |
+| --- | --- | --- |
+| SN 2.95.2 v2.73a | sq / sq / sq | 0 / 16 / 32 |
+| SN 2.95.3 v1.36 | sq / sq / sd | 32 / 16 / 0 |
+| Sony 2.9-ee-991111 | sd / sd / sd | 0 / 16 / 32 |
+
+The corresponding loads use lq or ld. Thus Sony 2.9 reproduces the claimed
+SD/LD sixteen-byte-slot pattern natively. This disproves the inference that
+only an unavailable later SN release can produce it. It does not establish
+that all claimed 196 functions were built with Sony 2.9; that count and the
+original opcode-substitution experiment have not been independently reproduced.
+Changing SQ/LQ opcodes in a compiled object is a diagnostic, not matching C
+credit. Compiler output must match without such substitutions.
+
+Both additional tools were downloaded from the decomp.me compiler archive,
+checksum-verified, extracted under ignored private inputs, and executed through
+wibo. They require no change to the existing default build environment:
+
+- [SN 2.95.3 v1.36 archive](https://github.com/decompme/compilers/releases/download/compilers/ee-gcc2.95.3-136.tar.gz),
+  SHA-256 `3b6ae6897229ad005aaf1b0afaa1f3cb46e74b4c21a42e01130c07c0c598067f`.
+  Extract into `private/toolchain/compilers/sn-gcc-2.95.3-136`;
+  backend `lib/gcc-lib/ee/2.95.3/cc1.exe`.
+- [Sony 2.9-ee-991111 archive](https://github.com/decompme/compilers/releases/download/compilers/ee-gcc2.9-991111.tar.gz),
+  SHA-256 `9ebbb042eb1e5d33d772293c5e9286a54dbec29865a3d7fbb398c97436f33583`.
+  Extract into `private/toolchain/compilers/ee-gcc-2.9-991111`;
+  backend `lib/gcc-lib/ee/2.9-ee-991111/cc1.exe`.
+
+For a preprocessed input `probe.i`, invoke either backend with:
+
+```sh
+"$WIBO" "$COMPILER_CC1" probe.i -O2 -G0 -quiet -o probe.s
+```
+
+A first Sony 2.9 probe of retail `func_001023C8` reproduced the SD/LD
+sixteen-byte layout and exact 92-byte size but differed at +0x28 in branch
+layout. It remains uncredited; the spill result alone is not a whole-function
+match. No executable or instruction substitutions are part of this audit.
