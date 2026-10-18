@@ -14437,3 +14437,4 @@ func_00104F78,0x00104F78,0x30,src/sony29_syscall_dispatchers.c,complete
 func_00104FA8,0x00104FA8,0x24,src/sony29_syscall_dispatchers.c,complete
 func_00104FD0,0x00104FD0,0x24,src/sony29_syscall_dispatchers.c,complete
 func_00104FF8,0x00104FF8,0x24,src/sony29_syscall_dispatchers.c,complete
+func_00105088,0x00105088,0x3C,src/sony29_ring_cursor_00105088.c,complete
