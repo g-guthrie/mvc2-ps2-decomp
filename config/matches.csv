@@ -14741,3 +14741,4 @@ func_002029D0,0x002029D0,0x170,src/advance_entity_motion_state_002029D0.c,comple
 func_00203360,0x00203360,0x140,src/dispatch_runtime_update_00203360.c,complete
 func_001A1230,0x001A1230,0xE8,src/actor_motion_clamp_001A1230.c,complete
 func_0015C2E0,0x0015C2E0,0x108,src/actor_radial_snap_0015C2E0.c,complete
+func_00167700,0x00167700,0xE0,src/select_interaction_flags_00167700.c,complete

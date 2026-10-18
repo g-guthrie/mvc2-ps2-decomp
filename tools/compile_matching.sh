@@ -9346,3 +9346,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/dispatch_runtime_update_00203360.c -c -lang c -O3 -sdatathreshold 0 \
     -o "$BUILD/dispatch_runtime_update_00203360.o"
 "$PYTHON" tools/verify_object.py "$BUILD/dispatch_runtime_update_00203360.o" private/SLUS_204.86.rom --source src/dispatch_runtime_update_00203360.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/select_interaction_flags_00167700.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/select_interaction_flags_00167700.o"
+"$PYTHON" tools/verify_object.py "$BUILD/select_interaction_flags_00167700.o" \
+    private/SLUS_204.86.rom --source src/select_interaction_flags_00167700.c
