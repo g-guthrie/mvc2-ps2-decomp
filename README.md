@@ -60,7 +60,7 @@ generated assembly, and build output remain ignored.
 ## Cloud executors
 
 Build inputs are included on public `main` in
-[build-inputs/mvc2-ps2-build-inputs.tar.gz](build-inputs/mvc2-ps2-build-inputs.tar.gz).
+a build-inputs bundle you supply yourself (see [build-inputs/README.md](build-inputs/README.md)).
 See [docs/CLOUD_BUILD.md](docs/CLOUD_BUILD.md) for Linux dependencies.
 After creating `.venv` and installing `requirements.txt`, prepare the Mac EE GCC
 runner or Linux dependencies described in [docs/CLOUD_BUILD.md](docs/CLOUD_BUILD.md):

@@ -11,3 +11,4 @@ __pycache__/
 *.pyc
 .venv/
 /config/SLUS_204.86.d
+/build-inputs/*.tar.gz

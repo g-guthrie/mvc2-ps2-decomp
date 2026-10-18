@@ -130,28 +130,3 @@ typedef struct { f32 x, y, z; } V3_FA50;
 extern u8 D_004F1F45;
 extern u8 D_004F1F46;
 
-void func_0020FA50(u8 *p)
-{
-    extern void func_00175700();
-    extern void func_00158C70(V3_FA50 *, s32);
-    extern void func_001E3A40(u8 *);
-    extern void func_001757E0(u8 *, s32, s32);
-    V3_FA50 v;
-    u32 t;
-    func_00175700(p);
-    *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
-    *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
-    if (*(f32 *)(p + 0x38) <= *(f32 *)(p + 0x430)) {
-        t = p[6];
-        p[6] = t + 1;
-        *(f32 *)(p + 0x38) = *(f32 *)(p + 0x430);
-        p[0x20D] = 0;
-        D_004F1F45 = 3;
-        D_004F1F46 = 1;
-        v = *(V3_FA50 *)(p + 0x34);
-        v.x += (p[0x1E6] != 0) ? -8 : 8;
-        func_00158C70(&v, -1);
-        func_001E3A40(p);
-        func_001757E0(p, 0xF, 4);
-    }
-}

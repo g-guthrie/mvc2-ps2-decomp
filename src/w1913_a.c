@@ -69,40 +69,6 @@ s32 func_003F1C10(u8 *a, s32 b, S2 *o) {
 }
 
 typedef struct P2B { u8 pad0[6]; u8 b6; u8 pad7[0x34 - 7]; f32 f34, f38; u8 pad3C[0x5C - 0x3C]; f32 f5C, f60, f64, f68, f6C; u8 pad70[0x1E6 - 0x70]; u8 b1E6; u8 pad1E7[0x20D - 0x1E7]; u8 b20D; u8 pad20E[0x430 - 0x20E]; f32 f430; } P2B;
-void func_002BC230(P2B *p) {
-    extern int func_00175700(P2B *);
-    extern void func_00183d50();
-    extern int func_001757E0(P2B *, int, int);
-    f32 *v1, *a1, *a2, *a3;
-    u8 t; u32 t6;
-    func_00175700(p);
-    v1 = &p->f5C;
-    a2 = &p->f68;
-    a1 = &p->f60;
-    a3 = &p->f6C;
-    p->f34 += p->f5C;
-    p->f5C += p->f68;
-    p->f38 += p->f60;
-    p->f60 += p->f6C;
-    t = p->b1E6;
-    if ((t == 0 && p->f5C > 0.0f) || (t != 0 && p->f5C < 0.0f)) {
-        *v1 = 0;
-        *a2 = 0;
-    }
-    if (p->f38 <= p->f430) {
-        t6 = p->b6;
-        p->b6 = t6 + 1;
-        p->f38 = p->f430;
-        p->b20D = 0;
-        *v1 = 0;
-        *a1 = 0;
-        *a2 = 0;
-        *a3 = 0;
-        func_00183d50(p);
-        func_001757E0(p, 0x15, 0x1B);
-    }
-}
-
 typedef struct P20 { u8 pad0[0x34]; f32 f34, f38; u8 pad3C[0x5C - 0x3C]; f32 f5C, f60, f64, f68, f6C; } P20;
 void func_0020CCE0(P20 *p, u8 *q) {
     extern int func_00175700(P20 *);

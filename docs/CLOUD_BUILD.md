@@ -1,7 +1,7 @@
 # Cloud matching-build setup
 
 The required build-input bundle is committed on public `main` at
-[build-inputs/mvc2-ps2-build-inputs.tar.gz](../build-inputs/mvc2-ps2-build-inputs.tar.gz).
+a build-inputs bundle you supply yourself (see [build-inputs/README.md](../build-inputs/README.md)).
 Clone or pull the source repo; no private companion repository or authenticated
 asset download is needed.
 

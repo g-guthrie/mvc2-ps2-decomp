@@ -36,39 +36,6 @@ void func_0020BAB0(SB *q) {
 
 
 typedef struct { u8 p0[0x34]; f32 f34, f38; u8 p3c[0x20]; f32 f5c, f60; u8 p64[4]; f32 f68, f6c; u8 p70[0x3C0]; f32 f430; } SB3;
-void func_001EB9C0(SB3 *q) {
-    extern void func_00183d50();
-    extern void func_001757E0();
-    extern void func_00175700();
-    extern void func_001EB830();
-    u8 *p = (u8 *)q;
-    s16 t;
-    q->f34 += q->f5c;
-    q->f5c += q->f68;
-    q->f38 += q->f60;
-    q->f60 += q->f6c;
-    if (q->f38 <= q->f430) {
-        p[6] = 3;
-        *(f32 *)((s32)p + 0x38) = *(f32 *)((s32)p + 0x430);
-        p[0x20D] = 0;
-        func_00183d50(p);
-        func_001757E0(p, 1, 3);
-        return;
-    }
-    if (*(s8 *)(p + 0x151) < 0) {
-        p[0x151] = 0;
-        t = *(s16 *)(p + 0x1C) - 1;
-        *(s16 *)(p + 0x1C) = t;
-        if (t < 0) {
-            p[6]++;
-            func_001757E0(p, 0x15, 0xA);
-            return;
-        }
-    }
-    func_00175700(p);
-    func_001EB830(p);
-}
-
 typedef struct { u8 p0[0x34]; f32 f34, f38; u8 p3c[0x20]; f32 f5c, f60; u8 p64[4]; f32 f68, f6c; } SB4;
 void func_002EFE30(u8 *p) {
     extern void func_00175C00();

@@ -2,7 +2,7 @@
 
 - Target only the NTSC-U PS2 executable `SLUS_204.86` documented in the README.
 - At the owner's explicit request, the checksum-pinned executable/compiler
-  build bundle is included under `build-inputs/` on public main. Extracted
+  build bundle is NOT distributed; you supply it yourself. Extracted
   working inputs remain under ignored `private/`. Keep other game assets,
   generated assembly, and SDK files out of Git.
 - A function counts as matching C only after its verified compiler and
