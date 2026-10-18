@@ -4756,3 +4756,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
  -o "$BUILD/dispatch_handoff_mode_0020A910.o"
 "$PYTHON" tools/verify_object.py "$BUILD/dispatch_handoff_mode_0020A910.o" \
  private/SLUS_204.86.rom --source src/dispatch_handoff_mode_0020A910.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/child_mode_dispatchers.c -c -lang c -O3 -sdatathreshold 8 \
+ -o "$BUILD/child_mode_dispatchers.o"
+"$PYTHON" tools/verify_object.py "$BUILD/child_mode_dispatchers.o" \
+ private/SLUS_204.86.rom --source src/child_mode_dispatchers.c
