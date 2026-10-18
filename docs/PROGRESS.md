@@ -3544,3 +3544,7 @@ Recovered all 104 bytes at 0x00320ED0 in the existing gameplay source object. Ev
 ## Masked signed-byte lookup
 
 Recovered all 32 bytes at 0x0044ED00. The consumer masks the signed timer with 0x1F before each byte lookup, establishing the complete extent. The data object and whole consumer source object verify exactly. Data reaches 153,507 bytes (23.6870%), 3,050 reconstructed units; code remains 623,032 bytes (18.9159%).
+
+## Paired owner mode constructor
+
+Recovered all 100 bytes at 0x001B6750 in the existing owner-mode source object. Both complete functions verify exactly. Code reaches 623,132 bytes (18.9189%), 9,393 functions; data remains 153,507 bytes (23.6870%).
