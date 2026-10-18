@@ -14439,3 +14439,4 @@ func_00104FD0,0x00104FD0,0x24,src/sony29_syscall_dispatchers.c,complete
 func_00104FF8,0x00104FF8,0x24,src/sony29_syscall_dispatchers.c,complete
 func_00105088,0x00105088,0x3C,src/sony29_ring_cursor_00105088.c,complete
 func_00110A70,0x00110A70,0x6C,src/sony29_rpc_result.c,complete
+func_00105E48,0x00105E48,0x38,src/sony29_varargs_forwarder_00105E48.c,complete
