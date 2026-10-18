@@ -3801,3 +3801,10 @@ state and the recovered void variadic logger declaration preserve the target
 operations; a combined query condition reproduces its branches. The final
 formatted source recompiled and passed full-byte verification. Local code is
 1,412,780 bytes (42.8935%), before the pending compiler-barrier audit.
+
+
+Recovered the full 16-byte ASCII hexadecimal digit table at 0x004959D8.
+`func_00410540` masks each of its seven lookup indices to a nibble, establishing
+complete coverage of entries 0..15; its existing exact object and the compiled
+data object both verify against the private target. Reconstructed data reaches
+153,965 bytes (23.7577%).

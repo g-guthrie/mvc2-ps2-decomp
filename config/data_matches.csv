@@ -5073,7 +5073,7 @@ data_zero_00490DB0,0x00490DB0,0x4000,src/data/data_zero_00490DB0.c,complete,plac
 jtbl_00494DB4,0x00494DB4,0x24,src/data/jtbl_00494DB4.c,complete,placeholder
 data_zero_00494DE0,0x00494DE0,0xBF0,src/data/data_zero_00494DE0.c,complete,placeholder
 data_raw_004959D0,0x4959d0,0x8,src/data/data_raw_004959D0.c,complete,placeholder
-data_u8_004959D8,0x4959d8,0x10,src/data/data_u8_004959D8.c,complete,placeholder
+data_u8_004959D8,0x4959d8,0x10,src/data/data_u8_004959D8.c,complete,reconstructed
 data_raw_004959E8,0x4959e8,0x8,src/data/data_raw_004959E8.c,complete,placeholder
 data_zero_004959F0,0x004959F0,0xC0,src/data/data_zero_004959F0.c,complete,placeholder
 data_u32_00495AB0,0x00495AB0,0x30,src/data/data_u32_00495AB0.c,complete,placeholder
