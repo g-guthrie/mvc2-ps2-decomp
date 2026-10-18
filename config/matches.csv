@@ -14048,6 +14048,8 @@ func_0037B220,0x0037B220,0xDC,src/y5_e.c,complete
 func_0033D3B0,0x0033D3B0,0xDC,src/y5_e.c,complete
 func_0025BEC0,0x0025BEC0,0xE4,src/y5_e.c,complete
 func_0024EBC0,0x0024EBC0,0xF0,src/y5_e.c,complete
+func_00209690,0x00209690,0xF0,src/y5_e.c,complete
+func_002097F0,0x002097F0,0xF0,src/y5_e.c,complete
 func_00210D60,0x00210D60,0xEC,src/y5_e.c,complete
 func_00298830,0x00298830,0xE0,src/y5_f.c,complete
 func_00132400,0x00132400,0xE8,src/y5_i.c,complete

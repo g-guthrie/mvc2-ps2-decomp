@@ -292,6 +292,62 @@ void func_0024EBC0(u8 *p)
     }
 }
 
+void func_00209690(u8 *p)
+{
+    extern s8 func_00175700();
+    extern void func_001843A0();
+    f32 f, k, z;
+    switch (p[0x1FC]) {
+    case 2:
+        if (func_00175700(p) < 0) {
+            func_001843A0(p);
+        } else {
+            f = (f32)*(s8 *)(p + 0x151);
+            z = 0.0f;
+            if (f != z) {
+                p[0x151] = 0;
+                if (p[0x1E6] != 0) k = 1.6666666269302368f;
+                else k = -1.6666666269302368f;
+                f *= k;
+                *(f32 *)(p + 0x34) += f;
+            }
+        }
+        break;
+    case 0:
+    case 1:
+        if (func_00175700(p) < 0) func_001843A0(p);
+        break;
+    }
+}
+
+void func_002097F0(u8 *p)
+{
+    extern s8 func_00175700();
+    extern void func_001843A0();
+    f32 f, k, z;
+    switch (p[0x1FC]) {
+    case 2:
+        if (func_00175700(p) < 0) {
+            func_001843A0(p);
+        } else {
+            f = (f32)*(s8 *)(p + 0x151);
+            z = 0.0f;
+            if (f != z) {
+                p[0x151] = 0;
+                if (p[0x1E6] != 0) k = 1.6666666269302368f;
+                else k = -1.6666666269302368f;
+                f *= k;
+                *(f32 *)(p + 0x34) += f;
+            }
+        }
+        break;
+    case 0:
+    case 1:
+        if (func_00175700(p) < 0) func_001843A0(p);
+        break;
+    }
+}
+
 extern u8 data_s8_004BFE80[4];
 extern u8 D_004BFE84[4];
 extern u8 D_004BFE88[4];
