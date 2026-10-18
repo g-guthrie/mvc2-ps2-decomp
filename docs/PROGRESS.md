@@ -3490,3 +3490,7 @@ Recovered all 148 bytes at 0x0014EA80, preserving fixed float representations, t
 ## Entry group and animation spawn recovery
 
 Recovered complete functions at 0x003419A0 (76 bytes) and 0x00298A30 (164 bytes). Both affected whole source objects verify with their registered compiler version and scheduling options. Code reaches 621,188 bytes (18.8599%), 9,376 functions; data remains 153,435 bytes (23.6759%).
+
+## Additional launch-effect initializer
+
+Recovered all 148 bytes at 0x002C4760 in the existing launch-effect source object. Every registered function in the object verifies with its O3/Op profile. Code reaches 621,336 bytes (18.8644%), 9,377 functions; data remains 153,435 bytes (23.6759%).
