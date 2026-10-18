@@ -3604,3 +3604,7 @@ Recovered all 64 bytes at 0x004771D0 as four sixteen-byte vertex records. Native
 ## Child-mode gameplay dispatch pair
 
 Recovered complete wrappers at 0x0020C040 and 0x0020C230, 76 bytes each. Both functions in the shared source object verify exactly. Code reaches 639,048 bytes (19.4022%), 9,603 functions; data remains 153,593 bytes (23.7003%).
+
+## Collision setup and child dispatch
+
+Recovered complete functions at 0x002E7700 (64 bytes) and 0x00362760 (88 bytes). The external callback array remains incomplete, avoiding an unsupported extent claim. Both source objects verify exactly. Code reaches 639,200 bytes (19.4068%), 9,605 functions; data remains 153,593 bytes (23.7003%).
