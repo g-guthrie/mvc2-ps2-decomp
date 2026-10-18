@@ -47,3 +47,35 @@ int func_0028DC70(u8 *p) {
     func_00186A60(p,21);
     return 1;
 }
+
+extern unsigned int data_u32_00451440[];
+int func_00222D80(u8 *p) {
+    int result = 0;
+    if (!func_00189310(p, (u8 *)data_u32_00451440, p + 0x390)) return result;
+    if (p[0x20d] == 2) {
+        if (!p[0x210]) {
+            if (*(signed char *)(p + 0x1e8)) return result;
+            p[0x1e8] = *(signed char *)(p + 0x1e8) + 1;
+        }
+    }
+    func_0018A990(p, p + 0x390);
+    p[5] = 0; p[7] = 0; p[6] = 0; p[0x1fd] = 0;
+    func_00186A60(p, 21);
+    return 1;
+}
+
+extern unsigned int data_u32_00452B20[];
+int func_00243800(u8 *p) {
+    int result = 0;
+    if (!func_00189310(p, (u8 *)data_u32_00452B20, p + 0x380)) return result;
+    if (p[0x20d] == 2) {
+        if (!p[0x210]) {
+            if (*(signed char *)(p + 0x1e8)) return result;
+            p[0x1e8] = *(signed char *)(p + 0x1e8) + 1;
+        }
+    }
+    func_0018A990(p, p + 0x380);
+    p[5] = 0; p[7] = 0; p[6] = 0; p[0x1fd] = 0;
+    func_00186A60(p, 21);
+    return 1;
+}
