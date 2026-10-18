@@ -4,9 +4,9 @@ typedef unsigned short u16;
 typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
-typedef struct G { u8 pad[0x7C]; s16 h7C[1]; } G;
+typedef struct G { u8 pad[0x7C]; s16 h7C[2]; } G;
 extern G *D_004C2794;
-extern void func_001757E0(u8 *, s32, s32);
+extern s32 func_001757E0(u8 *, s32, s32);
 
 void func_002789F0(u8 *p)
 {
