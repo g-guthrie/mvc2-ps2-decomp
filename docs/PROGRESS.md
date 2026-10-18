@@ -3508,3 +3508,7 @@ Recovered all 92 bytes at 0x001B0FA0, preserving inherited context, owner linkag
 Recovered all 96 bytes at 0x0019CD70, preserving linked owner context, mode initialization, callback and allocation failure. Whole-object verification passes. Code reaches 621,832 bytes (18.8795%), 9,381 functions; data remains 153,435 bytes (23.6759%).
 
 The proposed transition-table promotion remains held: native animation records can overwrite the column selector, and its binary domain is unproven. No unsupported table credit was integrated.
+
+## Two-context event constructor
+
+Recovered all 100 bytes at 0x001ACDC0, preserving both context pointers, mode byte, callback and allocation failure. Whole-object verification passes. Code reaches 621,932 bytes (18.8825%), 9,382 functions; data remains 153,435 bytes (23.6759%).

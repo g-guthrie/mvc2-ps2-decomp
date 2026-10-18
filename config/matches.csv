@@ -9384,3 +9384,4 @@ func_00157970,0x00157970,0x98,src/create_position_scale_color_events.c,complete
 func_001576A0,0x001576A0,0x9C,src/create_position_scale_color_events.c,complete
 func_001B0FA0,0x001B0FA0,0x5C,src/create_owner_callback_001B0FA0.c,complete
 func_0019CD70,0x0019CD70,0x60,src/create_owner_child_event_0019CD70.c,complete
+func_001ACDC0,0x001ACDC0,0x64,src/create_two_context_event_001ACDC0.c,complete
