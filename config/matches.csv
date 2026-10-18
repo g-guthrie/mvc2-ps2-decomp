@@ -9389,3 +9389,6 @@ func_0036C050,0x0036C050,0x5C,src/create_owner_callback_001B0FA0.c,complete
 func_00413D50,0x00413D50,0x44,src/initialize_runtime_object_once_00413D50.c,complete
 func_00413DF0,0x00413DF0,0x6C,src/prepare_runtime_request_00413DF0.c,complete
 func_001978B0,0x001978B0,0x64,src/create_owner_mode_child_001978B0.c,complete
+func_002B5950,0x002B5950,0xA4,src/animation_spawn_positions.c,complete
+func_002AC190,0x002AC190,0x80,src/grok_w7_sz80.c,complete
+func_002957D0,0x002957D0,0x80,src/grok_w7_sz80.c,complete

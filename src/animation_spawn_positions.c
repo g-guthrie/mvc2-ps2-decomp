@@ -46,3 +46,22 @@ void func_00298A30(u8 *p)
         func_001830D0(p, position, 3);
     }
 }
+
+void func_002B5950(u8 *p)
+{
+    p[0x40c] = 2;
+    p[0x33c] = 5;
+    p[0x405] = p[0x269] == 6 ? 2 : 0;
+    func_00175700(p);
+    if (*(signed char *)(p + 0x151)) {
+        float position[4];
+        ++p[6];
+        p[0x404] = 0;
+        p[0x405] = 0;
+        p[0x151] = 0;
+        position[0] = 53.33333206176757812500f;
+        position[1] = 188.57142639160156250000f;
+        position[2] = 0.0f;
+        func_001830D0(p, position, 1);
+    }
+}

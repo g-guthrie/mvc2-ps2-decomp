@@ -154,3 +154,32 @@ int func_00322530(u8 *p)
     func_00186A60(p, (p[0x1FD] = 1, 21));
     return 1;
 }
+
+extern int func_00189EE0(u8 *, u8 *, u8 *);
+extern u8 D_00458B60[];
+int func_002AC190(u8 *p)
+{
+    if (!func_00189EE0(p, D_00458B60, p + 0x3B8))
+        return 0;
+    if (*(s8 *)*(u8 **)(p + 0x420) < 3)
+        return 0;
+    p[5] = 0;
+    p[7] = 0;
+    p[6] = 0;
+    func_00186A60(p, (p[0x1FD] = 18, 29));
+    return 1;
+}
+
+extern u8 D_00457D10[];
+int func_002957D0(u8 *p)
+{
+    if (!func_00189EE0(p, D_00457D10, p + 0x3C0))
+        return 0;
+    if (*(s8 *)*(u8 **)(p + 0x420) < 3)
+        return 0;
+    p[5] = 0;
+    p[7] = 0;
+    p[6] = 0;
+    func_00186A60(p, (p[0x1FD] = 8, 29));
+    return 1;
+}
