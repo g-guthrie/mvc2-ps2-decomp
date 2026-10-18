@@ -3466,3 +3466,7 @@ Recovered all 152 bytes at 0x0014D9E0 after confirming native callers supply own
 ## Nineteen-function gameplay recovery
 
 Integrated nineteen complete gameplay routines totaling 2,584 bytes across fifteen source objects. Preserved the newer signed move-data references while resolving the setup-source overlap. Every registered function in all affected objects verifies with its configured compiler profile. Code reaches 620,224 bytes (18.8306%), 9,368 functions; data remains 153,299 bytes (23.6549%).
+
+## Runtime text callback pair
+
+Recovered the complete text callback helpers at 0x00411380 (76 bytes) and 0x004113D0 (104 bytes). Both objects verify under EE GCC 2.96 G8, preserving bounded text copies and optional callback dispatch. Code reaches 620,404 bytes (18.8361%), 9,370 functions; data remains 153,299 bytes (23.6549%).
