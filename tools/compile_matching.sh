@@ -9257,3 +9257,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$WIBO" "$EE29CC1" "$BUILD/record_threshold_poll_00102498.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/record_threshold_poll_00102498.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/record_threshold_poll_00102498.o" "$BUILD/record_threshold_poll_00102498.s"
 "$PYTHON" tools/verify_object.py "$BUILD/record_threshold_poll_00102498.o" private/SLUS_204.86.rom --source src/record_threshold_poll_00102498.c
+
+"$WIBO" "$SNCPP" -P src/sony29_word_copies.c "$BUILD/sony29_word_copies.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_word_copies.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_word_copies.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_word_copies.o" "$BUILD/sony29_word_copies.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_word_copies.o" private/SLUS_204.86.rom --source src/sony29_word_copies.c

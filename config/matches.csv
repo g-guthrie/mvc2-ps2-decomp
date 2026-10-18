@@ -10354,8 +10354,8 @@ func_0010EF20,0x0010EF20,0x1C,src/sdk5.c,complete
 func_00119DA0,0x00119DA0,0x28,src/sdk5.c,complete
 func_00102CE8,0x00102CE8,0x1C,src/sdk5b.c,placeholder
 func_00102D08,0x00102D08,0x24,src/sdk5b.c,placeholder
-func_0010C2A0,0x0010C2A0,0x38,src/sdk5b.c,placeholder
-func_0010D128,0x0010D128,0x38,src/sdk5b.c,placeholder
+func_0010C2A0,0x0010C2A0,0x38,src/sony29_word_copies.c,complete
+func_0010D128,0x0010D128,0x38,src/sony29_word_copies.c,complete
 func_003FB5C0,0x003FB5C0,0x2C,src/sdk5b.c,placeholder
 func_0040DFA8,0x0040DFA8,0x5C,src/sdk5b.c,placeholder
 func_00103958,0x00103958,0x5C,src/sdk5b.c,placeholder
@@ -11016,8 +11016,8 @@ func_004061C0,0x004061C0,0x60,src/k0.c,complete
 func_00408628,0x00408628,0x6C,src/k0.c,complete
 func_00410DC8,0x00410DC8,0x90,src/k0.c,complete
 func_00400528,0x00400528,0x9C,src/k0.c,complete
-func_0010CD08,0x0010CD08,0x38,src/k0a.c,placeholder
-func_0010CAD8,0x0010CAD8,0x38,src/k0a.c,placeholder
+func_0010CD08,0x0010CD08,0x38,src/sony29_word_copies.c,complete
+func_0010CAD8,0x0010CAD8,0x38,src/sony29_word_copies.c,complete
 func_00416A00,0x00416A00,0x50,src/k0a.c,placeholder
 func_00411898,0x00411898,0x10,src/k0b.c,complete
 func_00411858,0x00411858,0x3C,src/k0b.c,complete

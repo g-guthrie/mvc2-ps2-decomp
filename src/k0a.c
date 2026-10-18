@@ -1,42 +1,6 @@
 /* Hand-written SDK assembly routines (VU0 helpers, delay loops, word copies). */
 #define FN(name, body) __asm__(".section .text." #name ",\"ax\",@progbits
 .p2align 3\n.globl " #name "\n.ent " #name "\n" #name ":\n.set noreorder\n.set noat\n" body ".set reorder\n.end " #name "\n")
-FN(func_0010CD08,
-  "srl $6,$6,2\n"
-  "beqz $6,2f\n"
-  "daddu $7,$0,$0\n"
-  "nop\n"
-  "1:\n"
-  "lw $3,0($5)\n"
-  "addiu $7,$7,1\n"
-  "addiu $5,$5,4\n"
-  "sltu $2,$7,$6\n"
-  "sw $3,0($4)\n"
-  "addiu $4,$4,4\n"
-  "bnez $2,1b\n"
-  "nop\n"
-  "2:\n"
-  "jr $31\n"
-  "daddu $2,$0,$0\n"
-  );
-FN(func_0010CAD8,
-  "srl $6,$6,2\n"
-  "beqz $6,2f\n"
-  "daddu $7,$0,$0\n"
-  "nop\n"
-  "1:\n"
-  "lw $3,0($5)\n"
-  "addiu $7,$7,1\n"
-  "addiu $5,$5,4\n"
-  "sltu $2,$7,$6\n"
-  "sw $3,0($4)\n"
-  "addiu $4,$4,4\n"
-  "bnez $2,1b\n"
-  "nop\n"
-  "2:\n"
-  "jr $31\n"
-  "daddu $2,$0,$0\n"
-  );
 FN(func_00416A00,
   "daddu $3,$4,$0\n"
   "b 2f\n"

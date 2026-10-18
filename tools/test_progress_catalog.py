@@ -41,6 +41,18 @@ class ProgressCatalogTest(unittest.TestCase):
             )
             validate_source_credit(load_matches(catalog), root)
 
+    def test_required_cpu_operation_retains_credit(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "src").mkdir()
+            (root / "src/k2s.c").write_text(
+                '#define FN(name, body) __asm__(body)\n'
+                'FN(func_001048B0, "mfc0 $2,$12\\n");\n'
+            )
+            validate_source_credit(
+                {"func_001048B0": {"source": "src/k2s.c"}}, root
+            )
+
     def test_assembly_placeholder_gets_no_code_credit(self):
         with tempfile.TemporaryDirectory() as directory:
             catalog = Path(directory) / "matches.csv"

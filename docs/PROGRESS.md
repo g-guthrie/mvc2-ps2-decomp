@@ -3783,3 +3783,12 @@ its negative control failed on the formerly credited vector stream. Genuine C
 neighbors and correctly classified placeholders pass. All 39 repository tests
 and two Sony tool tests pass. Empty optimizer barriers are being reverified
 separately; this is not a claim that those source constraints are resolved.
+
+
+Replaced four obsolete assembly copies (0x0010C2A0, 0x0010CAD8,
+0x0010CD08 and 0x0010D128) with natural C loops compiled by Sony 2.9 O2/G0.
+All four complete 56-byte functions verify independently; deleted their old FN
+bodies and registered the new grouped source. These restore 224 bytes of valid
+C credit after the audit correction; they are not newly discovered executable
+bytes. Code now reaches 1,412,620 bytes (42.8886%) before resolving the empty
+barrier audit. The separate non-FN barrier cleanup is still in progress.
