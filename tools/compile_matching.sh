@@ -9438,3 +9438,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/update_entity_velocity_00218750.c -c -lang c -O3 -sdatathreshold 0 \
     -o "$BUILD/update_entity_velocity_00218750.o"
 "$PYTHON" tools/verify_object.py "$BUILD/update_entity_velocity_00218750.o" private/SLUS_204.86.rom --source src/update_entity_velocity_00218750.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/update_entity_timed_motion_00217AD0.c -c -lang c -O3 -Op -sdatathreshold 0 \
+    -o "$BUILD/update_entity_timed_motion_00217AD0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/update_entity_timed_motion_00217AD0.o" private/SLUS_204.86.rom --source src/update_entity_timed_motion_00217AD0.c
