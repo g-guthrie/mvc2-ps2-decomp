@@ -3648,3 +3648,7 @@ Recovered all 72 bytes at 0x00334D80 in the existing wave14d object. Both regist
 ## Alternate transform sequence
 
 Recovered all 84 bytes at 0x003F3BE0 in the existing wave5 source object. Every registered function in the object verifies exactly. Code reaches 647,364 bytes (19.6546%), 9,707 functions; data remains 153,593 bytes (23.7003%).
+
+## Inherited-mode event constructor
+
+Recovered all 108 bytes at 0x00194100, preserving allocator owner input, inherited context/actor fields, signed mode increment, callback and allocation failure. Whole-object verification passes. Code reaches 647,472 bytes (19.6579%), 9,708 functions; data remains 153,593 bytes (23.7003%).
