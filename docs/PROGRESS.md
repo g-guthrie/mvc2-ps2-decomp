@@ -3584,3 +3584,7 @@ Recovered the 18-byte prefix at 0x0044DDA0. Native call sites pass constant17 or
 ## Cleared-mode child constructor
 
 Recovered all 104 bytes at 0x001D36E0, preserving mode initialization, actor byte, owner linkage, callback and allocation failure. Whole-object verification passes. Code reaches 638,532 bytes (19.3865%), 9,597 functions; data remains 153,529 bytes (23.6904%).
+
+## Owner two-mode event constructor
+
+Recovered all 108 bytes at 0x001D2730, preserving both mode bytes, owner pointer, callback and allocation failure. Whole-object verification passes. Code reaches 638,640 bytes (19.3898%), 9,598 functions; data remains 153,529 bytes (23.6904%).

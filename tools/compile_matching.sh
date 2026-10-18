@@ -4732,3 +4732,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
  -o "$BUILD/create_cleared_mode_child_001D36E0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/create_cleared_mode_child_001D36E0.o" \
  private/SLUS_204.86.rom --source src/create_cleared_mode_child_001D36E0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/create_owner_two_mode_event_001D2730.c -c -lang c -O3 -sdatathreshold 0 \
+ -o "$BUILD/create_owner_two_mode_event_001D2730.o"
+"$PYTHON" tools/verify_object.py "$BUILD/create_owner_two_mode_event_001D2730.o" \
+ private/SLUS_204.86.rom --source src/create_owner_two_mode_event_001D2730.c
