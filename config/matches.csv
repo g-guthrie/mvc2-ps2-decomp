@@ -10283,7 +10283,7 @@ func_0012BB80,0x0012BB80,0x78,src/g4b.c,complete
 func_003FF1F8,0x003FF1F8,0x14,src/sdk4.c,complete
 func_003FF178,0x003FF178,0x14,src/sdk4.c,complete
 func_003FF210,0x003FF210,0x14,src/sdk4.c,complete
-func_003FEF70,0x003FEF70,0x1C,src/sdk4.c,placeholder
+func_003FEF70,0x003FEF70,0x1C,src/ee96_o1_wrappers.c,complete
 func_003FEF48,0x003FEF48,0x28,src/sdk4.c,placeholder
 func_003FF388,0x003FF388,0x24,src/sdk4.c,complete
 func_003F85D0,0x003F85D0,0x2C,src/sdk4.c,complete
@@ -11414,7 +11414,7 @@ func_00102F98,0x00102F98,0x28,src/s3v.c,placeholder
 func_004135D0,0x004135D0,0x30,src/s3v.c,placeholder
 func_003FF258,0x003FF258,0x14,src/s4.c,complete
 func_003FF5D0,0x003FF5D0,0x1C,src/s4.c,complete
-func_00104608,0x00104608,0x28,src/s4.c,placeholder
+func_00104608,0x00104608,0x28,src/sony29_status_reset_00104608.c,complete
 func_00400BE8,0x00400BE8,0x2C,src/s4.c,complete
 func_003FF060,0x003FF060,0x34,src/s4.c,complete
 func_003F8448,0x003F8448,0x48,src/s4.c,complete
@@ -12230,7 +12230,7 @@ func_00122398,0x00122398,0x54,src/m6w9e.c,complete
 func_003D6850,0x003D6850,0x58,src/m6w9f.c,complete
 func_00147320,0x00147320,0xA0,src/m6w9g.c,complete
 func_0034AAA0,0x0034AAA0,0x84,src/m6w9h.c,complete
-func_0040D548,0x0040D548,0x1C,src/s3w9e.c,placeholder
+func_0040D548,0x0040D548,0x1C,src/ee96_o1_wrappers.c,complete
 func_0040ADC8,0x0040ADC8,0x24,src/s3w9e.c,complete
 func_004025C0,0x004025C0,0x30,src/s3w9e.c,complete
 func_0040EE28,0x0040EE28,0x34,src/s3w9e.c,complete

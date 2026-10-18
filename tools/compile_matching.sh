@@ -9271,3 +9271,13 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/update_pair_value_timers_00190130.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/update_pair_value_timers_00190130.o"
 "$PYTHON" tools/verify_object.py "$BUILD/update_pair_value_timers_00190130.o" private/SLUS_204.86.rom --source src/update_pair_value_timers_00190130.c
+
+"$WIBO" "$SNCPP" -P src/ee96_o1_wrappers.c "$BUILD/ee96_o1_wrappers.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O1 "$BUILD/ee96_o1_wrappers.i" "$BUILD/ee96_o1_wrappers.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/ee96_o1_wrappers.o" "$BUILD/ee96_o1_wrappers.s"
+"$PYTHON" tools/verify_object.py "$BUILD/ee96_o1_wrappers.o" private/SLUS_204.86.rom --source src/ee96_o1_wrappers.c
+
+"$WIBO" "$SNCPP" -P src/sony29_status_reset_00104608.c "$BUILD/sony29_status_reset_00104608.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_status_reset_00104608.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_status_reset_00104608.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_status_reset_00104608.o" "$BUILD/sony29_status_reset_00104608.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_status_reset_00104608.o" private/SLUS_204.86.rom --source src/sony29_status_reset_00104608.c
