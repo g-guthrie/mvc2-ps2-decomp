@@ -4555,3 +4555,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
  -o "$BUILD/create_position_scale_color_events.o"
 "$PYTHON" tools/verify_object.py "$BUILD/create_position_scale_color_events.o" \
  private/SLUS_204.86.rom --source src/create_position_scale_color_events.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/create_owner_callback_001B0FA0.c -c -lang c -O3 -sdatathreshold 0 \
+ -o "$BUILD/create_owner_callback_001B0FA0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/create_owner_callback_001B0FA0.o" \
+ private/SLUS_204.86.rom --source src/create_owner_callback_001B0FA0.c

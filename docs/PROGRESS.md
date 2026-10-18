@@ -3498,3 +3498,7 @@ Recovered all 148 bytes at 0x002C4760 in the existing launch-effect source objec
 ## Position/scale/color event pair
 
 Recovered two complete constructors at 0x00157970 (152 bytes) and 0x001576A0 (156 bytes), preserving typed position copies, scale/color fields, callbacks and allocation failure. Both functions verify exactly in one source object. Code reaches 621,644 bytes (18.8738%), 9,379 functions; data remains 153,435 bytes (23.6759%).
+
+## Owner callback constructor
+
+Recovered all 92 bytes at 0x001B0FA0, preserving inherited context, owner linkage, mode byte, callback and allocation failure. Whole-object verification passes. Code reaches 621,736 bytes (18.8765%), 9,380 functions; data remains 153,435 bytes (23.6759%).
