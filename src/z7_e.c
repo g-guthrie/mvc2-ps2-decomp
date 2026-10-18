@@ -6,11 +6,8 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-typedef struct { u8 pad0[0x7C]; s16 f7c[2]; } G4;
+typedef struct { u8 pad0[0x7C]; s16 f7c[1]; } G4;
 extern G4 *D_004C2794;
-extern u32 D_004C03B0;
-extern u32 D_004C03B4;
-extern u32 D_004C03B8;
 extern u32 D_004C03BC;
 extern u32 D_004C03C0;
 extern u32 D_004C03C4;
@@ -52,35 +49,6 @@ void func_00248C00(u8 *p) {
     }
     reset_command(p, *(volatile u8 *)(p + 0x1B5));
     func_001757E0(p, 8, p[0x168]);
-}
-
-void func_00248B10(u8 *p) {
-    extern void func_001E3710();
-    extern void func_001757E0();
-    switch (p[0x1FC]) {
-    case 0:
-        p[0x168] = 0;
-        p[0x1B5] = 6;
-        func_001E3710(p, 0x14);
-        *(u32 *)(p + 0x408) = (u32)&D_004C03B0;
-        p[0x1BB] = 0;
-        break;
-    case 1:
-        p[0x168] = 1;
-        p[0x1B5] = 7;
-        *(u32 *)(p + 0x408) = (u32)&D_004C03B4;
-        p[0x1BB] = 1;
-        break;
-    case 2:
-        p[0x168] = 2;
-        p[0x1B5] = 8;
-        func_001E3710(p, 0x16);
-        *(u32 *)(p + 0x408) = (u32)&D_004C03B8;
-        p[0x1BB] = 2;
-        break;
-    }
-    reset_command(p, *(volatile u8 *)(p + 0x1B5));
-    func_001757E0(p, 9, p[0x168]);
 }
 
 typedef struct { u8 pad0[1]; s8 b1; s8 b2; u8 pad3[5]; s16 h8; u8 pad4[0x29 - 0xA]; s8 b29; } G5;
