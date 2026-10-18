@@ -50,7 +50,7 @@ void func_004017E0(R2 *p) {
     func_003FF160(p->wc, 0);
     func_0040EA00(p->wc, 1);
     func_003FF658(p->w4);
-    if (p->b2 == 2 && p->obj != 0) { p->obj->vt->fn(p->obj); __asm__ volatile(""); }
+    if (p->b2 == 2 && p->obj != 0) { p->obj->vt->fn(p->obj); }
     p->obj = 0;
     p->b1 = 0;
     func_003F9660();
