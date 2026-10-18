@@ -9316,3 +9316,6 @@ func_0015BE90,0x0015BE90,0x78,src/create_child_scale_event_0015BE90.c,complete
 func_0015BA40,0x0015BA40,0x78,src/create_child_scale_event_0015BE90.c,complete
 func_004152E0,0x004152E0,0x18,src/reset_runtime_transform_heap_004152E0.c,complete
 func_00140FD0,0x00140FD0,0x64,src/create_unit_color_event_00140FD0.c,complete
+func_002EA850,0x002EA850,0x8C,src/grok_w7_constant_vector_reset.c,complete
+func_002EADC0,0x002EADC0,0xA8,src/motion_speed_transition.c,complete
+func_002EC8F0,0x002EC8F0,0x88,src/grok_w7_context_timer_state_reset.c,complete
