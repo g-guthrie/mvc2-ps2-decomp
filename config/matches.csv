@@ -9607,3 +9607,4 @@ func_0020A910,0x0020A910,0x58,src/dispatch_handoff_mode_0020A910.c,complete
 func_0020C040,0x0020C040,0x4C,src/child_mode_dispatchers.c,complete
 func_0020C230,0x0020C230,0x4C,src/child_mode_dispatchers.c,complete
 func_002E7700,0x002E7700,0x40,src/initialize_collision_state_002E7700.c,complete
+func_00362760,0x00362760,0x58,src/dispatch_child_mode_00362760.c,complete
