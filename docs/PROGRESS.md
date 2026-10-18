@@ -3414,3 +3414,7 @@ Recovered all 64 bytes at 0x004C03B0 as 16 explicitly selected four-byte signed 
 ## Cloned scene event constructor
 
 Recovered all 148 bytes at 0x00135600, preserving inherited fields, typed position copy, opacity, callback and allocation failure. Whole-object verification passes. Code reaches 617,056 bytes (18.7345%), 9,342 functions; data remains 152,651 bytes (23.5549%).
+
+## Additional bounded signed move rows
+
+Recovered 60 bytes across the three-row bank at 0x004BFB7C and the twelve-row suffix at 0x004C0E30. The 16-byte prefix at 0x004C0E20 remains raw. Each recovered row has an explicit setup pointer and signed component reads. Changed data and whole move_setup objects verify exactly. Data reaches 152,711 bytes (23.5642%), 2,997 reconstructed units; code remains 617,056 bytes (18.7345%).
