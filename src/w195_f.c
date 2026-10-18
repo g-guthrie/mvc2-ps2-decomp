@@ -25,3 +25,12 @@ void func_001A61B0(N *p) {
         p = p->next;
     }
 }
+
+void func_001A2A40(N *p) {
+    s32 i;
+    s32 n = p->count;
+    for (i = 0; i < n; i++) {
+        p->f13C = D_004C2840->flag & 1;
+        p = p->next;
+    }
+}

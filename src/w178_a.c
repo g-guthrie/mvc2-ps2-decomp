@@ -447,3 +447,37 @@ void func_00378300(u8 *p, u8 *q) {
     func_00175700(p);
 }
 
+
+void func_001F4D20(u8 *p) {
+    extern void func_00175700();
+    extern s32 func_001864A0();
+    extern void func_001E3210();
+    extern void func_001F72E0();
+    extern void func_0015B660();
+    extern void func_001E3710();
+    extern void func_0018FDB0();
+    extern void func_001757E0();
+    u8 *q;
+    f32 v[4];
+    *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
+    *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
+    *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
+    *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
+    func_00175700(p);
+    if (func_001864A0(p) != 0) {
+        p[7]++;
+        D_004F1F45 = 2;
+        D_004F1F46 = 1;
+        func_001E3210(p, 0x15);
+        func_001F72E0(p);
+        q = *(u8 **)(p + 0x1DC);
+        q[0x1B5] = 0x52;
+        p[0x1B5] = 0x52;
+        v[0] = *(f32 *)(q + 0x34);
+        v[1] = *(f32 *)(p + 0x430);
+        func_0015B660(v, 1);
+        func_001E3710(p, 0x49);
+        func_0018FDB0(p);
+        func_001757E0(p, 0xF, 0x38);
+    }
+}
