@@ -14442,3 +14442,4 @@ func_00110A70,0x00110A70,0x6C,src/sony29_rpc_result.c,complete
 func_00105E48,0x00105E48,0x38,src/sony29_varargs_forwarder_00105E48.c,complete
 func_00105E80,0x00105E80,0x60,src/sony29_varargs_handler_00105E80.c,complete
 func_00100908,0x00100908,0xBC,src/write_gs_register_packet_00100908.c,complete
+func_00106898,0x00106898,0x1C,src/sony29_clear_flag_00106898.c,complete

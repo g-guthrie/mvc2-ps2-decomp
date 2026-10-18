@@ -8758,3 +8758,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$WIBO" "$EE29CC1" "$BUILD/write_gs_register_packet_00100908.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/write_gs_register_packet_00100908.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/write_gs_register_packet_00100908.o" "$BUILD/write_gs_register_packet_00100908.s"
 "$PYTHON" tools/verify_object.py "$BUILD/write_gs_register_packet_00100908.o" private/SLUS_204.86.rom --source src/write_gs_register_packet_00100908.c
+
+"$WIBO" "$SNCPP" -P src/sony29_clear_flag_00106898.c "$BUILD/sony29_clear_flag_00106898.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_clear_flag_00106898.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_clear_flag_00106898.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_clear_flag_00106898.o" "$BUILD/sony29_clear_flag_00106898.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_clear_flag_00106898.o" private/SLUS_204.86.rom --source src/sony29_clear_flag_00106898.c
