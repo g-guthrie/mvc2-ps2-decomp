@@ -3382,3 +3382,7 @@ Recovered 144 bytes as 36 four-byte signed records across the banks at 0x004C0CC
 ## Global gameplay dispatcher
 
 Recovered all 100 bytes at 0x001F9250 in the existing source unit. Every registered function in the object verifies exactly. Code reaches 616,216 bytes (18.7090%), 9,335 functions; data remains 152,299 bytes (23.5006%).
+
+## Runtime entry-slot reset
+
+Recovered all 64 bytes at 0x00414FE0, resetting each eight-byte entry handle/state and clearing the count. Whole-object verification passes under O3/Op. Code reaches 616,280 bytes (18.7109%), 9,336 functions; data remains 152,299 bytes (23.5006%).
