@@ -9232,3 +9232,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$WIBO" "$EE29CC1" "$BUILD/sony29_message_dispatch.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_message_dispatch.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_message_dispatch.o" "$BUILD/sony29_message_dispatch.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_message_dispatch.o" private/SLUS_204.86.rom --source src/sony29_message_dispatch.c
+
+"$WIBO" "$SNCPP" -P src/sony29_handler_registration.c "$BUILD/sony29_handler_registration.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_handler_registration.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_handler_registration.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_handler_registration.o" "$BUILD/sony29_handler_registration.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_handler_registration.o" private/SLUS_204.86.rom --source src/sony29_handler_registration.c
