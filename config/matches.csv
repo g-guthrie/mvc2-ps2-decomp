@@ -9348,3 +9348,4 @@ func_00135600,0x00135600,0x94,src/create_cloned_scene_event_00135600.c,complete
 func_00136B60,0x00136B60,0x88,src/create_background_scale_event_00136B60.c,complete
 func_00411818,0x00411818,0x3C,src/dispatch_runtime_indexed_callback_00411818.c,complete
 func_00411288,0x00411288,0x28,src/invoke_runtime_slot_callback_00411288.c,complete
+func_004112B0,0x004112B0,0x28,src/invoke_runtime_slot_callback_00411288.c,complete
