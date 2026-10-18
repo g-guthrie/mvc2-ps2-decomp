@@ -3656,3 +3656,7 @@ Recovered all 108 bytes at 0x00194100, preserving allocator owner input, inherit
 ## Alternate SDK reentrant seek
 
 Recovered all 96 bytes at 0x0011EAA0 using the established EE GCC 2.96 pipeline, preserving wide seek arguments and error handling. Whole-object verification passes. Code reaches 647,568 bytes (19.6608%), 9,709 functions; data remains 153,593 bytes (23.7003%).
+
+## Mode and flags child constructor
+
+Recovered all 112 bytes at 0x001CB610, preserving mode initialization, inherited actor byte, unsigned flags transfer, owner pointer, callback and allocation failure. Whole-object verification passes. Code reaches 647,680 bytes (19.6642%), 9,710 functions; data remains 153,593 bytes (23.7003%).

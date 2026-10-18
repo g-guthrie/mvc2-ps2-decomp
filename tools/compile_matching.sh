@@ -4875,3 +4875,9 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
  "$BUILD/sdk_reentrant_seek_0011EAA0.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sdk_reentrant_seek_0011EAA0.o" \
  private/SLUS_204.86.rom --source src/sdk_reentrant_seek_0011EAA0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/create_mode_flags_child_001CB610.c -c -lang c -O3 -sdatathreshold 0 \
+ -o "$BUILD/create_mode_flags_child_001CB610.o"
+"$PYTHON" tools/verify_object.py "$BUILD/create_mode_flags_child_001CB610.o" \
+ private/SLUS_204.86.rom --source src/create_mode_flags_child_001CB610.c
