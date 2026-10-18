@@ -4842,3 +4842,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/wave9b.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/wave9b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/wave9b.o" private/SLUS_204.86.rom --source src/wave9b.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+ src/activate_threshold_mode_001EE480.c -c -lang c -O3 -sdatathreshold 0 \
+ -o "$BUILD/activate_threshold_mode_001EE480.o"
+"$PYTHON" tools/verify_object.py "$BUILD/activate_threshold_mode_001EE480.o" \
+ private/SLUS_204.86.rom --source src/activate_threshold_mode_001EE480.c
