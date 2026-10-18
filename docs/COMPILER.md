@@ -486,3 +486,16 @@ state-parameter updates. Its O2/G0 object was independently recompiled and
 compared. The six new functions total 584 bytes; their isolated compiled
 sections reproduce the same loaded-image and packed-ELF hashes. This batch
 proof does not claim a full current-main compiler rebuild.
+
+### Sony local function-section relocations
+
+SNAS can emit calls and function-pointer references against unnamed
+STT_SECTION symbols. `verify_object.py` now resolves them using consistent
+known addresses of selected functions. An inferred anchor requires an
+executable section starting at the function, with symbol size, expected native
+size and full section size equal. Unselected functions, padding, pools, unknown
+addresses and conflicting anchors cannot supply a fallback address. Every
+selected function still undergoes its full relocated-byte comparison. This
+implements the hybrid linker's existing address calculation with stricter
+ownership eligibility for verification. The related positive and negative
+checks run in both `make test` and the progress-report workflow.

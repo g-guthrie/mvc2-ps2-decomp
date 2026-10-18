@@ -125,6 +125,42 @@ def report_words(
         print(f"  ... {len(bad) - 24} more")
 
 
+def relocation_target(symbol, symbols, addresses):
+    """Resolve local section references from consistent, known symbol anchors."""
+    if symbol.name in addresses:
+        return addresses[symbol.name], symbol.name
+    section_index = symbol["st_shndx"]
+    if not isinstance(section_index, int):
+        raise SystemExit(f"no target address for relocation {symbol.name!r}")
+    bases = {
+        addresses[anchor.name] - anchor["st_value"]
+        for anchor in symbols
+        if anchor["st_shndx"] == section_index and anchor.name in addresses
+    }
+    if not bases:
+        raise SystemExit(f"no target address for relocation {symbol.name!r}")
+    if len(bases) != 1:
+        raise SystemExit(f"inconsistent retail base for section {section_index}")
+    value = bases.pop() + symbol["st_value"]
+    return value, f"@section:{section_index}:{symbol['st_value']}"
+
+
+def whole_function_anchors(elf, symbols, matches):
+    """Only infer addresses for sections wholly owned by a selected function."""
+    anchors = []
+    for match in matches:
+        symbol = symbols.get(match["name"])
+        size = int(match["size"], 0)
+        if symbol is None or not isinstance(symbol["st_shndx"], int):
+            continue
+        section = elf.get_section(symbol["st_shndx"])
+        if (symbol["st_info"]["type"] == "STT_FUNC"
+                and symbol["st_value"] == 0 and symbol["st_size"] == size
+                and section.data_size == size and section["sh_flags"] & 4):
+            anchors.append(symbol)
+    return anchors
+
+
 def verify(
     object_path: Path,
     target_path: Path,
@@ -148,6 +184,7 @@ def verify(
         if symbol_table is None:
             raise SystemExit("object has no symbol table")
         symbols = {symbol.name: symbol for symbol in symbol_table.iter_symbols() if symbol.name}
+        section_anchors = whole_function_anchors(elf, symbols, matches)
 
         relocations_by_section = {}
         for section in elf.iter_sections():
@@ -188,15 +225,13 @@ def verify(
                 if not (start <= offset < start + size):
                     continue
                 relocation_symbol = symbol_table.get_symbol(relocation["r_info_sym"])
-                relocation_value = addresses.get(relocation_symbol.name)
-                if relocation_value is None:
-                    raise SystemExit(
-                        f"no target address for relocation {relocation_symbol.name} in {name}"
-                    )
+                relocation_value, relocation_key = relocation_target(
+                    relocation_symbol, section_anchors, addresses
+                )
                 local_offset = offset - start
                 function_relocations.append((
                     local_offset, relocation["r_info_type"], relocation_value,
-                    relocation_symbol.name,
+                    relocation_key,
                     relocation["r_addend"] if relocation.is_RELA() else None,
                 ))
 

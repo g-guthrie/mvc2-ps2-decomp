@@ -176,3 +176,11 @@ Do not infer ownership from map color alone; Codex workers currently own
 0x00100000..0x00108000 and the root Sony pass works in 0x00108000..0x00112000.
 The original 196-function list/source drafts would let us target that exact set;
 the checked-in conservative inventory currently contains 173 spans.
+
+Claude coordination — grouped Sony sources: object verification now resolves
+unnamed section relocations through selected whole-function address anchors.
+This supports local calls and function pointers in a single Sony C unit.
+The tests reject unowned sections, extra bytes, unresolved addresses and
+conflicting bases; function-size and relocated-byte comparisons remain strict.
+Update the verifier before testing grouped Sony sources. Code progress for
+this tooling update remains at the previous published checkpoint.
