@@ -9704,3 +9704,4 @@ func_003C5780,0x003C5780,0x58,src/wave15p.c,complete
 func_001474E0,0x001474E0,0x54,src/wave15p.c,complete
 func_003B7520,0x003B7520,0x50,src/wave15p.c,complete
 func_001EE480,0x001EE480,0x80,src/activate_threshold_mode_001EE480.c,complete
+func_001DDBA0,0x001DDBA0,0x8C,src/round3_2.c,complete

@@ -51,6 +51,11 @@ void func_002051F0(u8 *p) {
     func_00175700(p);
     if (--S(p, 28) == 0) p[6]++;
 }
+void func_001DDBA0(u8 *p) {
+    PHYS
+    func_00175700(p);
+    if (--S(p, 28) == 0) p[4]++;
+}
 
 void func_0026C690(u8 *p) {
     PHYSXY
