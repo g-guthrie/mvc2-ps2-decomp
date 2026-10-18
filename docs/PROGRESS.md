@@ -3366,3 +3366,7 @@ Integrated ten complete gameplay routines totaling 1,512 bytes, extending verifi
 ## Signed move bank at 0x004C0688
 
 Recovered 24 bytes across four signed-byte owners with six explicit four-byte row pointers. The shared native consumer reads signed components 0..3. All four data objects and the complete move_setup source object verify exactly. Data is 152,155 bytes (23.4784%), 2,980 reconstructed units; code remains 615,496 bytes (18.6871%).
+
+## Child position event constructor
+
+Recovered all 128 bytes at 0x001396E0, preserving parent linkage, inherited mode bytes, float position initialization and allocation failure. Whole-object verification passes. Code reaches 615,624 bytes (18.6910%), 9,330 functions; data remains 152,155 bytes (23.4784%).

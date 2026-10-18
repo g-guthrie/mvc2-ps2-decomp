@@ -9332,3 +9332,4 @@ func_002EC180,0x002EC180,0x70,src/grok_w7_negative_flag_reset.c,complete
 func_002EC660,0x002EC660,0xE4,src/grok_w7_owner_context_float_setup.c,complete
 func_002EC750,0x002EC750,0xBC,src/grok_w7_owner_context_float_setup.c,complete
 func_002EC980,0x002EC980,0x6C,src/grok_w7_timered_action_trigger.c,complete
+func_001396E0,0x001396E0,0x80,src/create_child_position_event_001396E0.c,complete
