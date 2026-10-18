@@ -6,14 +6,6 @@ typedef unsigned int u32;
 typedef signed int s32;
 
 
-float func_001CB150(u8 *a, u8 *b) {
-    float f = 106.66666412353516f;
-    if (*(s16 *)(b + 0x140) != 0) f = -f;
-    f += *(float *)(b + 0x34);
-    f -= *(float *)(a + 0x34);
-    return f;
-}
-
 void func_001B50B0(u8 *a, u8 *b) {
     float y, c;
     s16 h;

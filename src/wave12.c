@@ -22,11 +22,6 @@ void func_0035BE70(u8 *p, u8 *q) {
 
 
 
-void func_0016D260(void) {
-    if (D_004F1D20[0] != 0) func_00418000(D_004F1D30);
-    else func_00418010();
-}
-
 
 extern void func_00122770(void *, void *, void *, void *);
 extern void func_00417270(void *);
@@ -88,18 +83,6 @@ void func_00390CB0(u8 *p, u8 *q) {
     v[1] = *(float *)(p + 0x38);
     func_0015B200(q, v, 1, 0xF9);
     func_001E3710(q, 7);
-}
-
-void func_001382F0(s32 a) {
-    u8 *o = func_003DA750(0, 6, 0);
-    if (o) {
-        o[0x13C] = 0;
-        *(void (**)(u8 *))(o + 0x10) = func_00138900;
-        o[0x20] = a;
-        *(s16 *)(o + 0x1C) = 0;
-        o[0x21] = 0;
-        *(s32 *)(o + 0xDC) = 0;
-    }
 }
 
 
