@@ -479,3 +479,10 @@ uses G0. Independent recompilation and the isolated five-span link prove all
 424 newly recovered bytes and the packed retail ELF. No prior matching
 function was duplicated. The rest of main still requires its own full-build
 verification; the report/catalog and the five-span proof are different gates.
+
+`update_runtime_mode_state_00101D50.c` adds a sixth complete Sony match
+(160 bytes), preserving the previous mode, event registration/removal and
+state-parameter updates. Its O2/G0 object was independently recompiled and
+compared. The six new functions total 584 bytes; their isolated compiled
+sections reproduce the same loaded-image and packed-ELF hashes. This batch
+proof does not claim a full current-main compiler rebuild.

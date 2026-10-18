@@ -3670,3 +3670,5 @@ Recovered all 108 bytes at 0x00199DE0, preserving the byte mode, halfword timer,
 Recovered all 160 bytes at 0x001004E0 with Sony EE GCC 2.9-991111 `-O2 -G0 -ffunction-sections`. The routine reads `rom0:ROMVER`, closes the file, parses its version suffix and compares it with `0x01315670`. The unmodified compiler/assembler object matches the complete retail function.
 
 Recovered all 160 bytes at 0x00101D50 with Sony EE GCC 2.9-991111 `-O2 -G0 -ffunction-sections`. The routine transitions a runtime mode, releases an existing mode before replacing it, stores the returned parameter and reports the previous state. Its unmodified compiler/assembler object matches the complete retail function.
+
+Combined public-main Sony checkpoint after overlap reconciliation: six newly recovered functions, 584 bytes, independently compiled without opcode substitutions and linked as isolated replacements into the exact retail image. Current catalog: 1,342,072 code bytes (40.7467%), 14,416 functions. Worker-local percentages above reflect older bases.
