@@ -9306,3 +9306,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/initialize_actor_attachment_00201A80.c -c -lang c -O3 -sdatathreshold 0 \
     -o "$BUILD/initialize_actor_attachment_00201A80.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_actor_attachment_00201A80.o" private/SLUS_204.86.rom --source src/initialize_actor_attachment_00201A80.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/dispatch_runtime_state_00200960.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/dispatch_runtime_state_00200960.o"
+"$PYTHON" tools/verify_object.py "$BUILD/dispatch_runtime_state_00200960.o" private/SLUS_204.86.rom --source src/dispatch_runtime_state_00200960.c
