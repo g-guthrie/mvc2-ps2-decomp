@@ -7021,7 +7021,7 @@ func_00251050,0x00251050,0x60,src/grok_w5_0024.c,complete
 func_002524C0,0x002524C0,0x60,src/grok_w5_0024.c,complete
 func_00252840,0x00252840,0x60,src/grok_w5_0024.c,complete
 func_00252960,0x00252960,0x5C,src/grok_w5_0024.c,complete
-func_00213FD0,0x00213FD0,0x4C,src/grok_w5_0020.c,complete
+func_00213FD0,0x00213FD0,0x4C,src/w191_m.c,complete
 residual_00202E60,0x00202E60,0x48,src/grok_w5_0020.c,complete
 func_0020C980,0x0020C980,0x4C,src/grok_w5_0020.c,complete
 residual_0020A5D0,0x0020A5D0,0x4C,src/grok_w5_0020.c,complete
@@ -15406,6 +15406,7 @@ func_0026A6B0,0x0026A6B0,0x104,src/w191_h.c,complete
 func_00328160,0x00328160,0x10C,src/w191_i.c,complete
 func_00380650,0x00380650,0x11C,src/w191_k.c,complete
 func_002E50C0,0x002E50C0,0x12C,src/w191_l.c,complete
+func_002140C0,0x002140C0,0x134,src/w191_m.c,complete
 func_00214200,0x00214200,0x134,src/w191_m.c,complete
 func_002EE480,0x002EE480,0x138,src/w191_n.c,complete
 func_003B0330,0x003B0330,0x13C,src/w191_o.c,complete
