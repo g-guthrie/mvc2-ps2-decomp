@@ -9387,3 +9387,4 @@ func_0019CD70,0x0019CD70,0x60,src/create_owner_child_event_0019CD70.c,complete
 func_001ACDC0,0x001ACDC0,0x64,src/create_two_context_event_001ACDC0.c,complete
 func_0036C050,0x0036C050,0x5C,src/create_owner_callback_001B0FA0.c,complete
 func_00413D50,0x00413D50,0x44,src/initialize_runtime_object_once_00413D50.c,complete
+func_00413DF0,0x00413DF0,0x6C,src/prepare_runtime_request_00413DF0.c,complete
