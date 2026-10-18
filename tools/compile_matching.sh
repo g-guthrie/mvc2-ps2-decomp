@@ -5369,6 +5369,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/g3.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/g3.o"
 "$PYTHON" tools/verify_object.py "$BUILD/g3.o" private/SLUS_204.86.rom --source src/g3.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_state_tick_001A14D0.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/owner_state_tick_001A14D0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_state_tick_001A14D0.o" \
+    private/SLUS_204.86.rom --source src/owner_state_tick_001A14D0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/g3b.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/g3b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/g3b.o" private/SLUS_204.86.rom --source src/g3b.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
