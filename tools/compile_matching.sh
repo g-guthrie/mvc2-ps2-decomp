@@ -4725,3 +4725,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
  -o "$BUILD/update_global_counter_0037F3A0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/update_global_counter_0037F3A0.o" \
  private/SLUS_204.86.rom --source src/update_global_counter_0037F3A0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/dispatch_conditional_chain_001FC080.c -c -lang c -O3 -sdatathreshold 0 \
+ -o "$BUILD/dispatch_conditional_chain_001FC080.o"
+"$PYTHON" tools/verify_object.py "$BUILD/dispatch_conditional_chain_001FC080.o" \
+ private/SLUS_204.86.rom --source src/dispatch_conditional_chain_001FC080.c

@@ -1,0 +1,40 @@
+typedef unsigned char u8;
+extern int func_00188690(u8 *);
+extern int func_00188ED0(u8 *);
+extern int func_00188C70(u8 *);
+extern int func_00189130(u8 *);
+extern int func_001FC540(u8 *);
+extern int func_001FC5C0(u8 *);
+extern int func_001FC4C0(u8 *);
+extern int func_001FC380(u8 *);
+extern int func_001FC310(u8 *);
+extern int func_001FC240(u8 *);
+extern int func_001FC1B0(u8 *);
+extern int func_001FC450(u8 *);
+extern int func_001FC750(u8 *);
+extern int func_001FC6E0(u8 *);
+extern int func_001FC680(u8 *);
+extern int func_00187E00(u8 *, u8 *);
+extern int func_00187BB0(u8 *);
+extern int func_00188330(u8 *);
+void func_001FC080(u8 *p)
+{
+    if (func_00188690(p)) return;
+    if (func_00188ED0(p)) return;
+    if (func_00188C70(p)) return;
+    if (func_00189130(p)) return;
+    if (func_001FC540(p)) return;
+    if (func_001FC5C0(p)) return;
+    if (func_001FC4C0(p)) return;
+    if (func_001FC380(p)) return;
+    if (func_001FC310(p)) return;
+    if (func_001FC240(p)) return;
+    if (func_001FC1B0(p)) return;
+    if (func_001FC450(p)) return;
+    if (func_001FC750(p)) return;
+    if (func_001FC6E0(p)) return;
+    if (func_001FC680(p)) return;
+    if (func_00187E00(p, p + 968)) return;
+    func_00187BB0(p);
+    func_00188330(p);
+}
