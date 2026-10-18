@@ -3434,3 +3434,7 @@ Recovered 24 bytes as six explicitly selected four-byte signed records at 0x004C
 ## Indexed runtime callback dispatch
 
 Recovered all 60 bytes at 0x00411818 using EE GCC 2.96, preserving the optional callback and forwarded context. The incomplete external entry array adds no data-extent credit. Whole-object verification passes. Code reaches 617,252 bytes (18.7404%), 9,344 functions; data remains 152,747 bytes (23.5697%).
+
+## Runtime slot callback reader
+
+Recovered all 40 bytes at 0x00411288 using EE GCC 2.96 with G8. The slot at 0x004C2B10 contains the optional callback and context. Whole-object verification passes. Code reaches 617,292 bytes (18.7416%), 9,345 functions; data remains 152,747 bytes (23.5697%).
