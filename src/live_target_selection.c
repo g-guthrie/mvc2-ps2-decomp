@@ -14,3 +14,22 @@ u8 *func_001E7FD0(u8 *p) {
     }
     return 0;
 }
+
+extern int func_001E81C0(u8 *, u8 *, int);
+u8 *func_001E8070(u8 *p)
+{
+    short request;
+
+    if (D_004D18A1 & 8)
+        return 0;
+    request = *(short *)(*(u8 **)(p + 0x1D4) + 2);
+    if (request >= 0)
+        return 0;
+    if (D_004D18A0 != 4)
+        return 0;
+    if (!*(signed char *)(p + 0x24B)) {
+        if (func_001E81C0(p, *(u8 **)(p + 0x220), request & 0x1FFF))
+            return *(u8 **)(p + 0x220);
+    }
+    return 0;
+}

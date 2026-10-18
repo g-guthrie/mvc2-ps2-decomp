@@ -9333,3 +9333,7 @@ func_002EC660,0x002EC660,0xE4,src/grok_w7_owner_context_float_setup.c,complete
 func_002EC750,0x002EC750,0xBC,src/grok_w7_owner_context_float_setup.c,complete
 func_002EC980,0x002EC980,0x6C,src/grok_w7_timered_action_trigger.c,complete
 func_001396E0,0x001396E0,0x80,src/create_child_position_event_001396E0.c,complete
+func_001E8070,0x001E8070,0x94,src/live_target_selection.c,complete
+func_00271620,0x00271620,0x84,src/motion_speed_transition.c,complete
+func_0027B5C0,0x0027B5C0,0x84,src/sequential_calls.c,complete
+func_003220F0,0x003220F0,0x50,src/grok_w3_0020.c,complete

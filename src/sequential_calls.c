@@ -266,3 +266,15 @@ void func_00322F10(void *p) { func_00183D90(p); func_00322E20(p); }
 void func_0032E690(void *p) { func_0032E650(p); func_0032E610(p); }
 
 void func_00341C20(void *p) { func_00341C60(p); func_00341CC0(p); func_00341DE0(p); }
+
+extern void func_001843A0(u8 *);
+void func_0027B5C0(u8 *p)
+{
+    *(f32 *)(p + 52) += *(f32 *)(p + 92);
+    *(f32 *)(p + 92) += *(f32 *)(p + 104);
+    *(f32 *)(p + 56) += *(f32 *)(p + 96);
+    *(f32 *)(p + 96) += *(f32 *)(p + 108);
+    func_001863F0(p);
+    if ((s8)func_00175700(p) < 0)
+        func_001843A0(p);
+}

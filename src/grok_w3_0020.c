@@ -206,3 +206,11 @@ void func_002158B0(u8 *p) {
     }
 }
 
+
+extern void func_00322020(u8 *, u8 *);
+void func_003220F0(u8 *p, u8 *q) {
+    p[337] = 10;
+    func_001E3710(p, 5);
+    func_00126400();
+    func_00322020(p, q);
+}
