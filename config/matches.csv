@@ -9602,3 +9602,4 @@ func_001FC080,0x001FC080,0x12C,src/dispatch_conditional_chain_001FC080.c,complet
 func_001D36E0,0x001D36E0,0x68,src/create_cleared_mode_child_001D36E0.c,complete
 func_001D2730,0x001D2730,0x6C,src/create_owner_two_mode_event_001D2730.c,complete
 func_0039C960,0x0039C960,0x54,src/dispatch_owner_mode_0039C960.c,complete
+func_003DBA30,0x003DBA30,0x54,src/build_dma_address_003DBA30.c,complete
