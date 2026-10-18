@@ -3616,3 +3616,7 @@ Recovered all 84 bytes at 0x002CE850 with frame completion, state changes and ev
 ## Two-context child constructor
 
 Recovered all 108 bytes at 0x001D1B80, preserving distinct context fields, mode, callback and allocation failure. Whole-object verification passes. Code reaches 639,392 bytes (19.4126%), 9,607 functions; data remains 153,593 bytes (23.7003%).
+
+## Parallel-main reconciliation through 81c130a2
+
+Integrated 93 additional non-overlapping functions (7,244 bytes) from Claude, preserving six existing exact recoveries. Independently rebuilt every new source object; catalog and all 34 tests pass. Combined code reaches 646,636 bytes (19.6325%), 9,700 functions; data remains 153,593 bytes (23.7003%). Publication threshold remains 20.3742% from the last Codex main push.
