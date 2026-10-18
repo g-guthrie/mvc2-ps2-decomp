@@ -97,12 +97,41 @@ def relocate_bytes(body: bytes, relocations: list[tuple], gp: int) -> bytes:
     return bytes(compiled)
 
 
+def report_words(
+    name: str, compiled: bytes, expected: bytes, unrelocated: bool = False
+) -> None:
+    """Print a per-word diff, so a near miss can be judged at a glance.
+
+    The first differing byte says almost nothing about how close a function is:
+    one wrong register early reads the same as a completely wrong body. Counting
+    differing 32-bit words, and showing where they are, distinguishes "one
+    register off" from "not this toolchain".
+    """
+    words = min(len(compiled), len(expected)) // 4
+    bad = [
+        i for i in range(words)
+        if compiled[i * 4 : i * 4 + 4] != expected[i * 4 : i * 4 + 4]
+    ]
+    print(
+        f"diff: {name} {len(bad)}/{words} words differ"
+        f"{'' if len(compiled) == len(expected) else f' (size {len(compiled)} vs {len(expected)})'}"
+        f"{' [pre-relocation: call and %hi/%lo fields read as 0]' if unrelocated else ''}"
+    )
+    for i in bad[:24]:
+        got = struct.unpack_from("<I", compiled, i * 4)[0]
+        want = struct.unpack_from("<I", expected, i * 4)[0]
+        print(f"  +0x{i * 4:04x}  compiled={got:08x}  target={want:08x}")
+    if len(bad) > 24:
+        print(f"  ... {len(bad) - 24} more")
+
+
 def verify(
     object_path: Path,
     target_path: Path,
     matches_path: Path,
     symbols_path: Path,
     source: str | None = None,
+    diff: bool = False,
 ) -> None:
     addresses = load_addresses(symbols_path)
     gp = addresses.get("_gp")
@@ -140,6 +169,16 @@ def verify(
             start = symbol["st_value"]
             size = symbol["st_size"] or expected_size
             if size != expected_size:
+                if diff:
+                    # Relocations are resolved further down, so the bytes here
+                    # still have zeroed relocation fields; calls and %hi/%lo
+                    # halves will read as differences that are not real.
+                    body = section.data()[start : start + size]
+                    target_offset = address - BASE_ADDRESS
+                    report_words(
+                        name, body, target[target_offset : target_offset + expected_size],
+                        unrelocated=True,
+                    )
                 raise SystemExit(f"compiled size mismatch for {name}: {size} != {expected_size}")
             compiled = section.data()[start : start + size]
             function_relocations = []
@@ -166,6 +205,8 @@ def verify(
             target_offset = address - BASE_ADDRESS
             expected = target[target_offset : target_offset + size]
             if bytes(compiled) != expected:
+                if diff:
+                    report_words(name, bytes(compiled), expected)
                 mismatch = next(
                     index for index, (left, right) in enumerate(zip(compiled, expected)) if left != right
                 )
@@ -183,8 +224,13 @@ def main() -> None:
     parser.add_argument("--matches", type=Path, default=Path("config/matches.csv"))
     parser.add_argument("--symbols", type=Path, default=Path("config/symbol_addrs.txt"))
     parser.add_argument("--source")
+    parser.add_argument(
+        "--diff",
+        action="store_true",
+        help="on a mismatch, list the differing 32-bit words before exiting",
+    )
     args = parser.parse_args()
-    verify(args.object, args.target, args.matches, args.symbols, args.source)
+    verify(args.object, args.target, args.matches, args.symbols, args.source, args.diff)
 
 
 if __name__ == "__main__":
