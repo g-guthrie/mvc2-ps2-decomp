@@ -3632,3 +3632,7 @@ Queued worker functions 0x0012A120 and 0x0012A170 already exist in the reconcile
 ## Two-context state constructor
 
 Recovered all 108 bytes at 0x001D8580, preserving both context pointers, mode, state word, callback and allocation failure. Whole-object verification passes. Code reaches 647,012 bytes (19.6440%), 9,703 functions; data remains 153,593 bytes (23.7003%).
+
+## Owner submode dispatch
+
+Recovered all 88 bytes at 0x003C4550 in the existing wave11b source object. All registered functions in the object verify exactly. Code reaches 647,100 bytes (19.6466%), 9,704 functions; data remains 153,593 bytes (23.7003%).
