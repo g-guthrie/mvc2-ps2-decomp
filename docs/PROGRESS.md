@@ -3636,3 +3636,7 @@ Recovered all 108 bytes at 0x001D8580, preserving both context pointers, mode, s
 ## Owner submode dispatch
 
 Recovered all 88 bytes at 0x003C4550 in the existing wave11b source object. All registered functions in the object verify exactly. Code reaches 647,100 bytes (19.6466%), 9,704 functions; data remains 153,593 bytes (23.7003%).
+
+## Linked flags event constructor
+
+Recovered all 108 bytes at 0x001CCC20, preserving copied context/flags, mode initialization, callback and allocation failure. Whole-object verification passes. Code reaches 647,208 bytes (19.6499%), 9,705 functions; data remains 153,593 bytes (23.7003%).
