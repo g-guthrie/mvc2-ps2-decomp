@@ -3532,3 +3532,7 @@ Recovered three complete routines totaling 420 bytes. Both affected source objec
 ## Runtime transform preparation pair
 
 Recovered two complete 104-byte wrappers at 0x00417170 and 0x00417200. The source preserves vector inputs, matrix preparation and native unsigned offset shifting. Both functions verify exactly in one object. Code reaches 622,928 bytes (18.9127%), 9,391 functions; data remains 153,435 bytes (23.6759%).
+
+## Bounded ten-entry map
+
+Recovered 40 bytes at 0x004381E0 from a consumer with an explicit unsigned index<10 guard. The surrounding library-data owners remain raw. All three data objects and the complete SN GCC lookup object verify exactly. Data reaches 153,475 bytes (23.6821%), 3,049 reconstructed units; code remains 622,928 bytes (18.9127%).

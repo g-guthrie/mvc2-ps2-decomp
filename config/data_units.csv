@@ -10,7 +10,9 @@ data_u32_00432200,0x00432200,0x2000,.data,src/data/data_u32_00432200.c,initializ
 data_u32_00434200,0x00434200,0x2000,.data,src/data/data_u32_00434200.c,initialized_u32_table
 data_u32_00436200,0x00436200,0x1F60,.data,src/data/data_u32_00436200.c,initialized_u32_table
 data_zero_00438160,0x00438160,0x20,.data,src/data/data_zero_00438160.c,zero_initialized_untyped
-data_u32_00438180,0x00438180,0xF8,.data,src/data/data_u32_00438180.c,initialized_u32_table
+data_u32_00438180,0x00438180,0x60,.data,src/data/data_u32_00438180.c,initialized_u32_table
+data_u32_004381E0,0x004381E0,0x28,.data,src/data/data_u32_004381E0.c,bounded_u32_lookup
+data_u32_00438208,0x00438208,0x70,.data,src/data/data_u32_00438208.c,initialized_u32_table
 data_ff_00438278,0x00438278,0x8,.data,src/data/data_ff_00438278.c,filled_u32_ones
 data_ff_00438280,0x00438280,0x70,.data,src/data/data_ff_00438280.c,filled_u32_ones
 data_ff_004382F0,0x004382F0,0x8,.data,src/data/data_ff_004382F0.c,filled_u32_ones
