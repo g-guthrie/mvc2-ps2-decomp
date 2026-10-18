@@ -4743,3 +4743,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
  -o "$BUILD/dispatch_owner_event_003BC820.o"
 "$PYTHON" tools/verify_object.py "$BUILD/dispatch_owner_event_003BC820.o" \
  private/SLUS_204.86.rom --source src/dispatch_owner_event_003BC820.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/dispatch_owner_event_003BCAE0.c -c -lang c -O3 -sdatathreshold 8 \
+ -o "$BUILD/dispatch_owner_event_003BCAE0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/dispatch_owner_event_003BCAE0.o" \
+ private/SLUS_204.86.rom --source src/dispatch_owner_event_003BCAE0.c
