@@ -9377,3 +9377,5 @@ func_00222D80,0x00222D80,0xA4,src/accepted_transition_resets.c,complete
 func_00243800,0x00243800,0xA4,src/accepted_transition_resets.c,complete
 func_00411228,0x00411228,0x44,src/submit_runtime_value_command_00411228.c,complete
 func_0014EA80,0x0014EA80,0x94,src/create_fixed_position_event_0014EA80.c,complete
+func_003419A0,0x003419A0,0x4C,src/entry_group_updates.c,complete
+func_00298A30,0x00298A30,0xA4,src/animation_spawn_positions.c,complete
