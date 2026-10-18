@@ -3858,3 +3858,24 @@ all eight affected original source objects independently recompile exactly.
 There are 27 remaining optimizer-constraint placeholders. Together with the
 436-byte player timer routine, this local follow-on adds 724 verified C bytes
 since e7c78e97, reaching 1,410,176 bytes (42.8144%).
+
+
+First larger gameplay batch: five complete routines total 1,720 bytes:
+0x00190130 (436), 0x001804F0 (336), 0x00180890 (404), 0x002004B0 (272), and
+0x00201A80 (272). Root independently recompiled every object. The stage state
+uses proper two-player arrays at 0x7C/0x80 and a symbolic BSS byte reference;
+the entity initializer uses an observed 16-byte-aligned two-float local rather
+than unused scratch words. Known animation helper declarations were aligned
+with the existing int-returning definitions, and all objects remained exact.
+Together with the eight constraint-free compiler matches, this checkpoint adds
+2,008 verified C bytes since e7c78e97. The worker ranges are now explicit gameplay
+ranges in README, and the next batch continues independently.
+
+
+The first larger batch passes the complete current hybrid link and packed
+retail ELF checks, with the same retail hashes recorded above. Catalog:
+1,411,460 code bytes (42.8534%), 14,651 credited functions, 153,965 reconstructed
+data bytes (23.7577%). All new and changed objects were independently compiled.
+After publishing this coordination checkpoint, the next scheduled full-point
+threshold is 1,444,397 code bytes (43.8534%). Further exact worker results are
+queued for the next part so publication does not wait for ongoing searches.

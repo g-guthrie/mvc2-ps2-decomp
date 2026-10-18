@@ -6,12 +6,12 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-typedef struct { u8 pad[0x7C]; s16 slot7c[1]; u8 pad7e[2]; s16 slot80[1]; } G2794;
+typedef struct { u8 pad[0x7C]; s16 slot7c[2]; s16 slot80[2]; } G2794;
 extern G2794 *D_004C2794;
 extern const s8 data_s8_004ACD08[6];
 extern const s8 D_004ACD90[]; /* byte table interior at 0x004ACD90 */
-extern const s8 data_raw_004ACD48[0x5C];
 extern const f32 data_f32_004ACD30[6];
+extern u8 D_004D18E5[];
 
 void func_001804F0(u8 *p)
 {
@@ -19,7 +19,7 @@ void func_001804F0(u8 *p)
     *(s16 *)(p + 0x13E) = data_s8_004ACD08[p[0x1B8]];
     p[0x30] = D_004ACD90[*(s8 *)(p + 0x540)];
 
-    if (*(u8 *)0x004D18E5 == 0) {
+    if (D_004D18E5[0] == 0) {
         *(f32 *)(p + 0x34) = data_f32_004ACD30[p[2] * 3];
         *(f32 *)(p + 0x38) = data_f32_004ACD30[p[2] * 3 + 1];
         *(f32 *)(p + 0x3C) = data_f32_004ACD30[p[2] * 3 + 2];
