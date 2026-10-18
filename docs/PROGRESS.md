@@ -3314,3 +3314,7 @@ Recovered all 116 bytes at 0x00156AD0 in the existing owner-kind source unit. Bo
 ## Variant mode event constructor
 
 Recovered all 104 bytes at 0x00138280. Native callers provide numeric zero/one arguments for the stored variant word; byte mode, callback, timers and allocation failure are preserved. Whole-object verification passes. Code is 612,788 bytes (18.6049%), 9,309 functions; data remains 152,051 bytes (23.4623%).
+
+## Child scale event constructor
+
+Recovered all 120 bytes at 0x0015BE90, preserving owner linkage, unit scale, callback and allocation failure. Whole-object verification passes. Code is 612,908 bytes (18.6085%), 9,310 functions; data remains 152,051 bytes (23.4623%).
