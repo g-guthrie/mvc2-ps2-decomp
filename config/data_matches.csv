@@ -7446,15 +7446,7 @@ jtbl_004C0390,0x004C0390,0x08,src/data/jtbl_004C0390.c,complete,placeholder
 jtbl_004C0398,0x004C0398,0x08,src/data/jtbl_004C0398.c,complete,reconstructed
 jtbl_004C03A0,0x004C03A0,0x08,src/data/jtbl_004C03A0.c,complete,reconstructed
 jtbl_004C03A8,0x004C03A8,0x08,src/data/jtbl_004C03A8.c,complete,reconstructed
-data_u32_004C03B0,0x004C03B0,0x4,src/data/data_u32_004C03B0.c,complete,placeholder
-data_ff_004C03B4,0x004C03B4,0x8,src/data/data_ff_004C03B4.c,complete,placeholder
-data_u32_004C03BC,0x004C03BC,0x4,src/data/data_u32_004C03BC.c,complete,placeholder
-data_ff_004C03C0,0x004C03C0,0x8,src/data/data_ff_004C03C0.c,complete,placeholder
-data_u32_004C03C8,0x004C03C8,0x4,src/data/data_u32_004C03C8.c,complete,placeholder
-data_ff_004C03CC,0x004C03CC,0x8,src/data/data_ff_004C03CC.c,complete,placeholder
-data_u32_004C03D4,0x004C03D4,0x4,src/data/data_u32_004C03D4.c,complete,placeholder
-data_ff_004C03D8,0x004C03D8,0x8,src/data/data_ff_004C03D8.c,complete,placeholder
-data_u32_004C03E0,0x004C03E0,0x10,src/data/data_u32_004C03E0.c,complete,placeholder
+data_s8_004C03B0,0x004C03B0,0x40,src/data/data_s8_004C03B0.c,complete,reconstructed
 jtbl_004C03F8,0x004C03F8,0x08,src/data/jtbl_004C03F8.c,complete,reconstructed
 jtbl_004C0400,0x004C0400,0x08,src/data/jtbl_004C0400.c,complete,reconstructed
 jtbl_004C0408,0x004C0408,0x8,src/data/jtbl_004C0408.c,complete,placeholder

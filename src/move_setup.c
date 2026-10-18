@@ -2,6 +2,7 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 extern u8 *D_004C2794;
+extern signed char data_s8_004C03B0[64] __attribute__((section(".sdata")));
 extern signed char data_s8_004C0720[64] __attribute__((section(".sdata")));
 extern signed char data_s8_004C0590[64] __attribute__((section(".sdata")));
 extern signed char data_s8_004C0440[64] __attribute__((section(".sdata")));
@@ -59,9 +60,6 @@ extern int D_004BFFAC;
 extern int D_004C00E4;
 extern int D_004C00E8;
 extern int D_004C00EC;
-extern int D_004C03BC;
-extern int D_004C03C0;
-extern int D_004C03C4;
 extern int D_004C0438;
 extern int D_004C043C;
 extern int D_004C0630;
@@ -123,16 +121,6 @@ extern int D_004BFD98;
 extern int D_004BFDA8;
 extern int D_004BFDAC;
 extern int D_004BFDB0;
-extern int D_004C03C8;
-extern int D_004C03CC;
-extern int D_004C03D0;
-extern int D_004C03D4;
-extern int D_004C03D8;
-extern int D_004C03DC;
-extern int D_004C03E0;
-extern int D_004C03E4;
-extern int D_004C03E8;
-extern int D_004C03EC;
 extern int D_004C03F0;
 extern int D_004C03F4;
 extern int D_004C05D0;
@@ -248,9 +236,6 @@ extern int D_004C1474;
 extern int D_004C1478;
 extern int D_004C147C;
 
-extern int D_004C03B0;
-extern int D_004C03B4;
-extern int D_004C03B8;
 static inline void reset_move_counters(u8 *p,u8 command, int mode) {
  /* Retain the command write performed again by the retail reset sequence. */
  *(volatile u8 *)(p+0x1b5)=command;
@@ -301,7 +286,7 @@ MOVE_SETUP(func_00223450, func_001E3710, 3, 20, D_004BFFA4, func_001E3710, 4, 21
 MOVE_SETUP(func_00223550, func_001E3710, 9, 20, D_004BFFA4, func_001E3710, 10, 21, D_004BFFA8, func_001E3710, 11, 22, D_004BFFAC, 10)
 MOVE_SETUP(func_0022D370, func_001E3710, 3, 20, D_004C00E4, func_001E3710, 4, 21, D_004C00E8, func_001E3710, 5, 22, D_004C00EC, 8)
 MOVE_SETUP(func_0022D470, func_001E3710, 9, 20, D_004C00E4, func_001E3710, 10, 21, D_004C00E8, func_001E3710, 11, 22, D_004C00EC, 10)
-MOVE_SETUP(func_00248CF0, func_001E3710, 9, 20, D_004C03BC, func_001E3710, 10, 21, D_004C03C0, func_001E3710, 11, 22, D_004C03C4, 10)
+MOVE_SETUP(func_00248CF0, func_001E3710, 9, 20, data_s8_004C03B0[12], func_001E3710, 10, 21, data_s8_004C03B0[16], func_001E3710, 11, 22, data_s8_004C03B0[20], 10)
 MOVE_SETUP(func_0024E3F0, func_001E3710, 6, 20, D_004C0438, func_001E3710, 7, 21, D_004C043C, func_001E3710, 8, 22, data_s8_004C0440[0], 9)
 MOVE_SETUP(func_0024E4F0, func_001E3710, 3, 20, data_s8_004C0440[4], func_001E3710, 4, 21, data_s8_004C0440[8], func_001E3710, 5, 22, data_s8_004C0440[12], 8)
 MOVE_SETUP(func_0024E5F0, func_001E3710, 9, 20, data_s8_004C0440[4], func_001E3710, 10, 21, data_s8_004C0440[8], func_001E3710, 11, 22, data_s8_004C0440[12], 10)
@@ -361,8 +346,8 @@ EXTENDED_MOVE_SETUP(func_001FCFC0, func_001E3710, 12, 20, D_004BFCE0, D_004BFCF8
 EXTENDED_MOVE_SETUP(func_00204350, func_001E3710, 12, 20, D_004BFD90, D_004BFDA8, func_001E3710, 13, 21, D_004BFD94, D_004BFDAC, func_001E3710, 14, 22, D_004BFD98, D_004BFDB0, 11, 15, 1)
 EXTENDED_MOVE_SETUP(func_002092D0, func_001E3710, 12, 20, data_s8_004BFDC8[24], data_s8_004BFDC8[48], func_001E3210, 13, 30, data_s8_004BFDC8[28], data_s8_004BFDC8[52], func_001E3210, 14, 30, data_s8_004BFDC8[32], data_s8_004BFDC8[56], 11, 15, 1)
 EXTENDED_MOVE_SETUP(func_00209420, func_001E3710, 15, 20, data_s8_004BFDC8[36], data_s8_004BFDC8[60], func_001E3210, 16, 30, data_s8_004BFDC8[40], data_s8_004BFDC8[64], func_001E3210, 17, 30, data_s8_004BFDC8[44], data_s8_004BFDC8[68], 12, 240, 16)
-EXTENDED_MOVE_SETUP(func_00248EC0, func_001E3710, 12, 20, D_004C03C8, D_004C03E0, func_001E3710, 13, 21, D_004C03CC, D_004C03E4, func_001E3710, 14, 22, D_004C03D0, D_004C03E8, 11, 15, 1)
-EXTENDED_MOVE_SETUP(func_00249010, func_001E3710, 15, 20, D_004C03D4, D_004C03EC, func_001E3710, 16, 21, D_004C03D8, D_004C03F0, func_001E3710, 17, 22, D_004C03DC, D_004C03F4, 12, 240, 16)
+EXTENDED_MOVE_SETUP(func_00248EC0, func_001E3710, 12, 20, data_s8_004C03B0[24], data_s8_004C03B0[48], func_001E3710, 13, 21, data_s8_004C03B0[28], data_s8_004C03B0[52], func_001E3710, 14, 22, data_s8_004C03B0[32], data_s8_004C03B0[56], 11, 15, 1)
+EXTENDED_MOVE_SETUP(func_00249010, func_001E3710, 15, 20, data_s8_004C03B0[36], data_s8_004C03B0[60], func_001E3710, 16, 21, data_s8_004C03B0[40], D_004C03F0, func_001E3710, 17, 22, data_s8_004C03B0[44], D_004C03F4, 12, 240, 16)
 EXTENDED_MOVE_SETUP(func_0024E790, func_001E3710, 12, 20, data_s8_004C0440[16], data_s8_004C0440[40], func_001E3710, 13, 21, data_s8_004C0440[20], data_s8_004C0440[44], func_001E3710, 14, 22, data_s8_004C0440[24], data_s8_004C0440[48], 11, 15, 1)
 EXTENDED_MOVE_SETUP(func_0024E8E0, func_001E3710, 15, 20, data_s8_004C0440[28], data_s8_004C0440[52], func_001E3710, 16, 21, data_s8_004C0440[32], data_s8_004C0440[56], func_001E3710, 17, 22, data_s8_004C0440[36], data_s8_004C0440[60], 12, 240, 16)
 EXTENDED_MOVE_SETUP(func_0025D0F0, func_001E3710, 12, 20, data_s8_004C0590[24], data_s8_004C0590[48], func_001E3710, 13, 21, data_s8_004C0590[28], data_s8_004C0590[52], func_001E3710, 14, 26, data_s8_004C0590[32], data_s8_004C0590[56], 11, 15, 1)
@@ -689,7 +674,7 @@ void func_00301040(u8 *p) {
 
 /* The first three command states use the same reset behavior. */
 MOVE_SETUP(func_00208DD0, func_001E3710, 0, 20, data_s8_004BFDC8[0], func_001E3210, 1, 30, data_s8_004BFDC8[4], func_001E3210, 2, 30, data_s8_004BFDC8[8], 7)
-MOVE_SETUP(func_00248A20, func_001E3710, 0, 20, D_004C03B0, func_001E3710, 1, 21, D_004C03B4, func_001E3710, 2, 22, D_004C03B8, 7)
+MOVE_SETUP(func_00248A20, func_001E3710, 0, 20, data_s8_004C03B0[0], func_001E3710, 1, 21, data_s8_004C03B0[4], func_001E3710, 2, 22, data_s8_004C03B0[8], 7)
 MOVE_SETUP(func_0024E300, func_001E3710, 0, 20, D_004C0438, func_001E3710, 1, 21, D_004C043C, func_001E3710, 2, 22, data_s8_004C0440[0], 7)
 MOVE_SETUP(func_0025CC70, func_001E3710, 0, 20, data_s8_004C0590[0], func_001E3710, 1, 21, data_s8_004C0590[4], func_001E3710, 2, 26, data_s8_004C0590[8], 7)
 MOVE_SETUP(func_0028E680, func_001E3710, 0, 20, D_004C09B8, func_001E3710, 1, 21, D_004C09BC, func_001E3710, 2, 22, D_004C09C0, 7)
