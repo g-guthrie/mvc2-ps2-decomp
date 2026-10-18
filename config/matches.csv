@@ -14763,3 +14763,4 @@ func_00321A90,0x00321A90,0xE8,src/initialize_actor_handoff_00321A90.c,complete
 func_002BC230,0x002BC230,0x11C,src/actor_grounded_motion_002BC230.c,complete
 func_00218750,0x00218750,0xE4,src/update_entity_velocity_00218750.c,complete
 func_00217AD0,0x00217AD0,0xD0,src/update_entity_timed_motion_00217AD0.c,complete
+func_002DB600,0x002DB600,0x1B8,src/update_damped_actor_motion_002DB600.c,complete
