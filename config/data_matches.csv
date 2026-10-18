@@ -888,7 +888,9 @@ data_u32_00443DDC,0x00443DDC,0x1C,src/data/data_u32_00443DDC.c,complete,placehol
 data_f32_one_00443DF8,0x00443DF8,0x8,src/data/data_f32_one_00443DF8.c,complete,placeholder
 data_u32_00443E00,0x00443E00,0x4,src/data/data_u32_00443E00.c,complete,placeholder
 data_f32_one_00443E04,0x00443E04,0x8,src/data/data_f32_one_00443E04.c,complete,placeholder
-data_u32_00443E0C,0x00443E0C,0x34,src/data/data_u32_00443E0C.c,complete,placeholder
+data_u32_00443E0C,0x00443E0C,0x20,src/data/data_u32_00443E0C.c,complete,placeholder
+data_vec3_00443E2C,0x00443E2C,0xC,src/data/data_vec3_00443E2C.c,complete,reconstructed
+data_zero_00443E38,0x00443E38,0x8,src/data/data_zero_00443E38.c,complete,placeholder
 data_zero_00443E40,0x00443E40,0x10,src/data/data_zero_00443E40.c,complete,placeholder
 data_u32_00443E50,0x00443E50,0x1B8,src/data/data_u32_00443E50.c,complete,placeholder
 data_f32_one_00444008,0x00444008,0x8,src/data/data_f32_one_00444008.c,complete,placeholder
