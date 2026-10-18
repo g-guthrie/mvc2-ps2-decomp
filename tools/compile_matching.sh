@@ -9397,3 +9397,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/advance_entity_attachment_event_00207C80.c -c -lang c -O3 -sdatathreshold 0 \
     -o "$BUILD/advance_entity_attachment_event_00207C80.o"
 "$PYTHON" tools/verify_object.py "$BUILD/advance_entity_attachment_event_00207C80.o" private/SLUS_204.86.rom --source src/advance_entity_attachment_event_00207C80.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_actor_effect_0036AE90.c -c -lang c -O3,p -sdatathreshold 8 -o "$BUILD/initialize_actor_effect_0036AE90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_actor_effect_0036AE90.o" \
+    private/SLUS_204.86.rom --source src/initialize_actor_effect_0036AE90.c
