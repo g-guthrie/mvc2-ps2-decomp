@@ -3592,3 +3592,7 @@ Recovered all 108 bytes at 0x001D2730, preserving both mode bytes, owner pointer
 ## Owner-mode gameplay dispatch
 
 Recovered all 84 bytes at 0x0039C960 with the owner/object comparison, mismatch handler and indexed callback path preserved. Whole-object verification passes. Code reaches 638,724 bytes (19.3923%), 9,599 functions; data remains 153,529 bytes (23.6904%).
+
+## Address builder and handoff dispatch
+
+Recovered complete functions at 0x003DBA30 (84 bytes) and 0x0020A910 (88 bytes). Both new source objects verify with their registered profiles. Code reaches 638,896 bytes (19.3975%), 9,601 functions; data remains 153,529 bytes (23.6904%).
