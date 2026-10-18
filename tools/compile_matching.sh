@@ -2297,3 +2297,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/wave1d.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/wave1d.o"
 "$PYTHON" tools/verify_object.py "$BUILD/wave1d.o" private/SLUS_204.86.rom --source src/wave1d.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/wave8.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/wave8.o"
+"$PYTHON" tools/verify_object.py "$BUILD/wave8.o" private/SLUS_204.86.rom --source src/wave8.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/wave8b.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/wave8b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/wave8b.o" private/SLUS_204.86.rom --source src/wave8b.c
