@@ -8,7 +8,7 @@ typedef float f32;
 
 typedef struct {
     u8 pad0[0x7C];
-    s16 h7C[1];
+    s16 h7C[2];
 } G2142;
 
 extern G2142 *D_004C2794;
@@ -28,12 +28,12 @@ static void func_00213FD0(u8 *p)
 
 void func_00214200(u8 *p)
 {
-    extern s8 func_00175700(u8 *);
+    extern s32 func_00175700(u8 *);
     extern s32 func_0018AB10(u8 *);
-    extern void func_001757E0(u8 *, s32, s32);
+    extern s32 func_001757E0(u8 *, s32, s32);
     u32 t;
 
-    if (func_00175700(p) >= 0) {
+    if ((s8)func_00175700(p) >= 0) {
         if (*(s8 *)(p + 0x150) != 0) {
             *(s8 *)(p + 0x150) = 0;
             p[0x1B5] = 0x3B;
@@ -63,12 +63,12 @@ void func_00214200(u8 *p)
 
 void func_002140C0(u8 *p)
 {
-    extern s8 func_00175700(u8 *);
+    extern s32 func_00175700(u8 *);
     extern s32 func_0018AB10(u8 *);
-    extern void func_001757E0(u8 *, s32, s32);
+    extern s32 func_001757E0(u8 *, s32, s32);
     u32 t;
 
-    if (func_00175700(p) >= 0) {
+    if ((s8)func_00175700(p) >= 0) {
         if (*(s8 *)(p + 0x150) != 0) {
             *(s8 *)(p + 0x150) = 0;
             p[0x1B5] = 0x3B;
