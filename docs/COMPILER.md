@@ -464,3 +464,10 @@ all instructions and relocations. A three-span batch link, including the
 previous two Sony recoveries (224 bytes total), reproduces the full loaded
 image and packed retail ELF with the hashes above. All other spans in this
 batch proof remain retail placeholders; it is not a full-main rebuild.
+
+A fourth native Sony match, `func_0010D090` (40 bytes), preserves its scalar
+argument across the no-argument synchronization helper and tail-forwards it.
+The helper's native implementation consumes no incoming argument registers.
+All four new Sony functions (264 bytes) pass complete relocated-object checks
+and the isolated four-span image/packed-ELF comparison, without instruction
+substitutions. This remains a batch proof, separate from a full-main rebuild.
