@@ -3402,3 +3402,7 @@ Recovered all 144 bytes at 0x00144260, preserving indexed vector selection, call
 ## Four complete signed move banks
 
 Recovered 264 bytes across four banks with explicit setup pointers for every four-byte row. The shared native consumer reads signed components 0..3. All four data objects and the complete move_setup object verify exactly. Data reaches 152,587 bytes (23.5451%); code remains 616,764 bytes (18.7256%).
+
+## Small-scale scene event initializer
+
+Recovered all 144 bytes at 0x001445A0, preserving typed position, exact 0.1 scale representation, timers, callback and allocation failure. Whole-object verification passes. Code reaches 616,908 bytes (18.7300%), 9,341 functions; data remains 152,587 bytes (23.5451%).
