@@ -9709,3 +9709,4 @@ func_001D8580,0x001D8580,0x6C,src/create_two_context_state_001D8580.c,complete
 func_003C4550,0x003C4550,0x58,src/wave11b.c,complete
 func_001CCC20,0x001CCC20,0x6C,src/create_linked_flags_event_001CCC20.c,complete
 func_00334D80,0x00334D80,0x48,src/wave14d.c,complete
+func_003F3BE0,0x003F3BE0,0x54,src/wave5.c,complete

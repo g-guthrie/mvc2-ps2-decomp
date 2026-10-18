@@ -105,6 +105,14 @@ void func_003DDEC0(u8 *p, f32 x, f32 a, f32 b) {
     func_003DDC30(p, a);
     func_003DDD00(p, b);
 }
+extern void func_003F38E0(u8 *);
+extern void func_003F39E0(u8 *, f32);
+extern void func_003F3AE0(u8 *, f32);
+void func_003F3BE0(u8 *p, f32 x, f32 a, f32 b) {
+    func_003F38E0(p);
+    func_003F39E0(p, a);
+    func_003F3AE0(p, b);
+}
 
 void func_001CB0D0(u8 *p) {
     p[5] = 0;
