@@ -10191,6 +10191,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/w1812_c.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/w1812_c.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w1812_c.o" private/SLUS_204.86.rom --source src/w1812_c.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/animation_flight_update_002A4D30.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/animation_flight_update_002A4D30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/animation_flight_update_002A4D30.o" \
+    private/SLUS_204.86.rom --source src/animation_flight_update_002A4D30.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/w1812_d.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/w1812_d.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w1812_d.o" private/SLUS_204.86.rom --source src/w1812_d.c

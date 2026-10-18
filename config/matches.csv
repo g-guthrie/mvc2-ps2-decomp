@@ -15181,6 +15181,7 @@ func_002269C0,0x002269C0,0x160,src/w1812_b.c,complete
 func_003BB730,0x003BB730,0x154,src/w1812_b.c,complete
 func_00265E40,0x00265E40,0x13C,src/w1812_c.c,complete
 func_002A4BE0,0x002A4BE0,0x144,src/w1812_c.c,complete
+func_002A4D30,0x002A4D30,0x218,src/animation_flight_update_002A4D30.c,complete
 func_0036C890,0x0036C890,0x148,src/w1812_c.c,complete
 func_0020AFF0,0x0020AFF0,0x100,src/w1812_c.c,complete
 func_003649E0,0x003649E0,0x108,src/w1812_c.c,complete
