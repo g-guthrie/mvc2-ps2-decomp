@@ -9286,3 +9286,8 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$EE29CC1" "$BUILD/sony29_scalar_wrappers.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_scalar_wrappers.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_scalar_wrappers.o" "$BUILD/sony29_scalar_wrappers.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_scalar_wrappers.o" private/SLUS_204.86.rom --source src/sony29_scalar_wrappers.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_entity_state_002004B0.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/initialize_entity_state_002004B0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_entity_state_002004B0.o" private/SLUS_204.86.rom --source src/initialize_entity_state_002004B0.c

@@ -14729,3 +14729,4 @@ func_00102498,0x00102498,0x84,src/record_threshold_poll_00102498.c,complete
 func_0010E6D0,0x0010E6D0,0xA0,src/sony29_event_callbacks.c,complete
 func_0010F148,0x0010F148,0xA0,src/sony29_wait_idle.c,complete
 func_00190130,0x00190130,0x1B4,src/update_pair_value_timers_00190130.c,complete
+func_002004B0,0x002004B0,0x110,src/initialize_entity_state_002004B0.c,complete
