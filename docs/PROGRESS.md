@@ -3552,3 +3552,7 @@ Recovered all 100 bytes at 0x001B6750 in the existing owner-mode source object. 
 ## Owner flags event constructor
 
 Recovered all 100 bytes at 0x001D6B50, preserving unsigned halfword flag transfer, owner pointer, mode, callback and allocation failure. Whole-object verification passes. Code reaches 623,232 bytes (18.9220%), 9,394 functions; data remains 153,507 bytes (23.6870%).
+
+## Event registration and collision response
+
+Recovered complete functions at 0x0037EA30 (100 bytes) and 0x002CE1D0 (112 bytes). Added the missing interleaved compile/verify recipes for both new source units and retained typed representations for motion float fields. Both objects verify exactly. Code reaches 623,444 bytes (18.9284%), 9,396 functions; data remains 153,507 bytes (23.6870%).
