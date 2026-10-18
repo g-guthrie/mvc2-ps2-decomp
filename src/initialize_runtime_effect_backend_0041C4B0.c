@@ -20,7 +20,9 @@ extern void func_00146C80(s32 mode);
 extern void func_003298B0(s32 color, s32 duration, s32 mode);
 extern void func_0012ACC0(s32 callback);
 extern void func_0041CA40(void);
-extern void func_0041C550(void);
+typedef unsigned char u8;
+extern void func_0041C550(u8 *, u8 *);
+
 
 void func_0041C4B0(struct MenuNoticeData *data)
 {
@@ -40,5 +42,5 @@ void func_0041C4B0(struct MenuNoticeData *data)
     func_00146C80(5);
     func_003298B0(-16777216, 10, 0);
     func_0012ACC0((s32)func_0041CA40);
-    *(void (**)(void))0x0043CD0C = func_0041C550;
+    *(void (**)(u8 *, u8 *))0x0043CD0C = func_0041C550;
 }
