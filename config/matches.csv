@@ -9320,3 +9320,4 @@ func_002EA850,0x002EA850,0x8C,src/grok_w7_constant_vector_reset.c,complete
 func_002EADC0,0x002EADC0,0xA8,src/motion_speed_transition.c,complete
 func_002EC8F0,0x002EC8F0,0x88,src/grok_w7_context_timer_state_reset.c,complete
 func_00136C80,0x00136C80,0x80,src/create_scene_resource_event_00136C80.c,complete
+func_0014E7B0,0x0014E7B0,0x90,src/create_owner_position_event_0014E7B0.c,complete

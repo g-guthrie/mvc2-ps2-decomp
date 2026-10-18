@@ -4423,3 +4423,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
  -o "$BUILD/create_scene_resource_event_00136C80.o"
 "$PYTHON" tools/verify_object.py "$BUILD/create_scene_resource_event_00136C80.o" \
  private/SLUS_204.86.rom --source src/create_scene_resource_event_00136C80.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/create_owner_position_event_0014E7B0.c -c -lang c -O3 -sdatathreshold 0 \
+ -o "$BUILD/create_owner_position_event_0014E7B0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/create_owner_position_event_0014E7B0.o" \
+ private/SLUS_204.86.rom --source src/create_owner_position_event_0014E7B0.c

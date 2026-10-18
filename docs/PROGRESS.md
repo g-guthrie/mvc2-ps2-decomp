@@ -3350,3 +3350,7 @@ Recovered 48 bytes across five signed-byte owners at 0x004C1508 and 0x004C15A4..
 ## Scene resource event constructor
 
 Recovered all 128 bytes at 0x00136C80. Source preserves the resource pointer, typed position vector, callback and allocation failure. Whole-object verification passes. Code reaches 613,724 bytes (18.6333%), 9,317 functions; data remains 152,131 bytes (23.4747%).
+
+## Owner position event constructor
+
+Recovered all 144 bytes at 0x0014E7B0, preserving float input, exact position representation, timer, owner linkage and allocation failure. Whole-object verification passes. Code reaches 613,868 bytes (18.6377%), 9,318 functions; data remains 152,131 bytes (23.4747%).
