@@ -14447,3 +14447,7 @@ func_0010ACD0,0x0010ACD0,0x70,src/sony29_guarded_rpc.c,complete
 func_0010AF48,0x0010AF48,0x70,src/sony29_guarded_rpc.c,complete
 func_0010AFB8,0x0010AFB8,0x70,src/sony29_guarded_rpc.c,complete
 func_0010B028,0x0010B028,0x70,src/sony29_guarded_rpc.c,complete
+func_0010AD40,0x0010AD40,0x80,src/sony29_guarded_rpc.c,complete
+func_0010ADC0,0x0010ADC0,0x78,src/sony29_guarded_rpc.c,complete
+func_0010B098,0x0010B098,0x7C,src/sony29_guarded_rpc.c,complete
+func_0010B118,0x0010B118,0x7C,src/sony29_guarded_rpc.c,complete
