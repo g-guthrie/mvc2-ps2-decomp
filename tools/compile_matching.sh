@@ -4719,3 +4719,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/wave0c.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/wave0c.o"
 "$PYTHON" tools/verify_object.py "$BUILD/wave0c.o" private/SLUS_204.86.rom --source src/wave0c.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/wave12.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/wave12.o"
+"$PYTHON" tools/verify_object.py "$BUILD/wave12.o" private/SLUS_204.86.rom --source src/wave12.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/wave12b.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/wave12b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/wave12b.o" private/SLUS_204.86.rom --source src/wave12b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/wave12c.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/wave12c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/wave12c.o" private/SLUS_204.86.rom --source src/wave12c.c
