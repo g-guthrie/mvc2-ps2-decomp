@@ -3462,3 +3462,7 @@ Recovered 504 bytes as 126 explicitly selected signed four-byte rows across 21 s
 ## Resource/depth event constructor
 
 Recovered all 152 bytes at 0x0014D9E0 after confirming native callers supply owner, resource, index and initialization mode in A0..A3 and depth in F12. Whole-object verification passes. Code reaches 617,640 bytes (18.7522%), 9,349 functions; data remains 153,299 bytes (23.6549%).
+
+## Nineteen-function gameplay recovery
+
+Integrated nineteen complete gameplay routines totaling 2,584 bytes across fifteen source objects. Preserved the newer signed move-data references while resolving the setup-source overlap. Every registered function in all affected objects verifies with its configured compiler profile. Code reaches 620,224 bytes (18.8306%), 9,368 functions; data remains 153,299 bytes (23.6549%).
