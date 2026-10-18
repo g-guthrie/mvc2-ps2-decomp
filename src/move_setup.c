@@ -2,6 +2,36 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 extern u8 *D_004C2794;
+extern signed char data_s8_004BFB04[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004BFC50[16] __attribute__((section(".sdata")));
+extern signed char data_s8_004BFCD4[24] __attribute__((section(".sdata")));
+extern signed char data_s8_004BFCF8[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004BFD80[28] __attribute__((section(".sdata")));
+extern signed char data_s8_004BFDA8[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004BFE80[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004BFFA4[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C00E4[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C0324[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C0630[24] __attribute__((section(".sdata")));
+extern signed char data_s8_004C0654[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C0898[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C0910[24] __attribute__((section(".sdata")));
+extern signed char data_s8_004C0934[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C094C[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C09C0[28] __attribute__((section(".sdata")));
+extern signed char data_s8_004C09E8[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C0A80[28] __attribute__((section(".sdata")));
+extern signed char data_s8_004C0AA8[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C0B50[24] __attribute__((section(".sdata")));
+extern signed char data_s8_004C0BD0[36] __attribute__((section(".sdata")));
+extern signed char data_s8_004C0C00[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C0D30[16] __attribute__((section(".sdata")));
+extern signed char data_s8_004C0EC0[28] __attribute__((section(".sdata")));
+extern signed char data_s8_004C0EE8[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C1294[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C1344[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C1474[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C16A8[12] __attribute__((section(".sdata")));
 extern signed char data_s8_004BFB70[12] __attribute__((section(".sdata")));
 extern signed char data_s8_004C0214[12] __attribute__((section(".sdata")));
 extern signed char data_s8_004C13D0[12] __attribute__((section(".sdata")));
@@ -44,156 +74,33 @@ extern signed char data_s8_004C15B8[24] __attribute__((section(".sdata")));
 extern int func_001757E0(u8 *, int, int);
 extern void func_00176160(u8 *, int, int, int);
 extern void func_003092C0(u8 *);
-extern int D_004BFB04;
-extern int D_004BFB08;
-extern int D_004BFB0C;
 extern int D_004BFC48;
 extern int D_004BFC4C;
-extern int D_004BFC50;
-extern int D_004BFC54;
-extern int D_004BFC58;
-extern int D_004BFC5C;
-extern int D_004BFCD4;
-extern int D_004BFCD8;
-extern int D_004BFCDC;
 extern int D_004BFD78;
 extern int D_004BFD7C;
-extern int D_004BFD80;
-extern int D_004BFD84;
-extern int D_004BFD88;
-extern int D_004BFD8C;
-extern int D_004BFFA4;
-extern int D_004BFFA8;
-extern int D_004BFFAC;
-extern int D_004C00E4;
-extern int D_004C00E8;
-extern int D_004C00EC;
 extern int D_004C0438;
 extern int D_004C043C;
-extern int D_004C0630;
-extern int D_004C0634;
-extern int D_004C0638;
-extern int D_004C063C;
-extern int D_004C0640;
-extern int D_004C0644;
 extern int D_004C0718;
 extern int D_004C071C;
-extern int D_004C0898;
-extern int D_004C089C;
-extern int D_004C08A0;
 extern int D_004C09B8;
 extern int D_004C09BC;
-extern int D_004C09C0;
 extern int D_004C0A78;
 extern int D_004C0A7C;
-extern int D_004C0A80;
-extern int D_004C0A84;
-extern int D_004C0A88;
-extern int D_004C0A8C;
-extern int D_004C0B50;
-extern int D_004C0B54;
-extern int D_004C0B58;
-extern int D_004C0B5C;
-extern int D_004C0B60;
-extern int D_004C0B64;
-extern int D_004C0BD0;
-extern int D_004C0BD4;
-extern int D_004C0BD8;
-extern int D_004C0BDC;
-extern int D_004C0BE0;
-extern int D_004C0BE4;
 extern int D_004C0D28;
 extern int D_004C0D2C;
-extern int D_004C0D30;
-extern int D_004C0D34;
-extern int D_004C0D38;
-extern int D_004C0D3C;
 extern int D_004C0EB8;
 extern int D_004C0EBC;
-extern int D_004C0EC0;
-extern int D_004C0EC4;
-extern int D_004C0EC8;
-extern int D_004C0ECC;
 extern void func_001E3210(u8 *,int);
 extern void func_001E3710(u8 *,int);
 
-extern int D_004BFCE0;
-extern int D_004BFCE4;
-extern int D_004BFCE8;
-extern int D_004BFCF8;
-extern int D_004BFCFC;
-extern int D_004BFD00;
-extern int D_004BFD90;
-extern int D_004BFD94;
-extern int D_004BFD98;
-extern int D_004BFDA8;
-extern int D_004BFDAC;
-extern int D_004BFDB0;
 extern int D_004C03F0;
 extern int D_004C03F4;
 extern int D_004C05D0;
 extern int D_004C05D4;
-extern int D_004C0654;
-extern int D_004C0658;
-extern int D_004C065C;
 extern int D_004C066C;
 extern int D_004C0670;
 extern int D_004C0674;
-extern int D_004C0934;
-extern int D_004C0938;
-extern int D_004C093C;
-extern int D_004C094C;
-extern int D_004C0950;
-extern int D_004C0954;
-extern int D_004C09D0;
-extern int D_004C09D4;
-extern int D_004C09D8;
-extern int D_004C09E8;
-extern int D_004C09EC;
-extern int D_004C09F0;
-extern int D_004C0A90;
-extern int D_004C0A94;
-extern int D_004C0A98;
-extern int D_004C0AA8;
-extern int D_004C0AAC;
-extern int D_004C0AB0;
-extern int D_004C0BE8;
-extern int D_004C0BEC;
-extern int D_004C0BF0;
-extern int D_004C0C00;
-extern int D_004C0C04;
-extern int D_004C0C08;
-extern int D_004C0ED0;
-extern int D_004C0ED4;
-extern int D_004C0ED8;
-extern int D_004C0EE8;
-extern int D_004C0EEC;
-extern int D_004C0EF0;
-extern int D_004C16A8;
-extern int D_004C16AC;
-extern int D_004C16B0;
 
-extern int D_004BFE80;
-extern int D_004BFE84;
-extern int D_004BFE88;
-extern int D_004C0324;
-extern int D_004C0328;
-extern int D_004C032C;
-extern int D_004C0910;
-extern int D_004C0914;
-extern int D_004C0918;
-extern int D_004C091C;
-extern int D_004C0920;
-extern int D_004C0924;
-extern int D_004C09C4;
-extern int D_004C09C8;
-extern int D_004C09CC;
-extern int D_004C1294;
-extern int D_004C1298;
-extern int D_004C129C;
-extern int D_004C1344;
-extern int D_004C1348;
-extern int D_004C134C;
 
 extern int D_004BFF34;
 extern int D_004BFF38;
@@ -207,9 +114,6 @@ extern int D_004C069C;
 extern int D_004C1134;
 extern int D_004C1138;
 extern int D_004C113C;
-extern int D_004C1474;
-extern int D_004C1478;
-extern int D_004C147C;
 
 static inline void reset_move_counters(u8 *p,u8 command, int mode) {
  /* Retain the command write performed again by the retail reset sequence. */
@@ -248,42 +152,42 @@ void name(u8 *p) { \
  reset_move_counters(p,p[0x1b5],mode); \
 }
 
-MOVE_SETUP(func_001E9B40, func_001E3710, 9, 20, D_004BFB04, func_001E3710, 10, 21, D_004BFB08, func_001E3710, 11, 22, D_004BFB0C, 10)
+MOVE_SETUP(func_001E9B40, func_001E3710, 9, 20, data_s8_004BFB04[0], func_001E3710, 10, 21, data_s8_004BFB04[4], func_001E3710, 11, 22, data_s8_004BFB04[8], 10)
 MOVE_SETUP(func_001EEC40, func_001E3710, 3, 20, data_s8_004BFB7C[0], func_001E3710, 4, 21, data_s8_004BFB7C[4], func_001E3710, 5, 22, data_s8_004BFB7C[8], 8)
-MOVE_SETUP(func_001F7CC0, func_001E3710, 6, 20, D_004BFC48, func_001E3710, 7, 21, D_004BFC4C, func_001E3710, 8, 22, D_004BFC50, 9)
-MOVE_SETUP(func_001F7FA0, func_001E3710, 9, 20, D_004BFC54, func_001E3710, 10, 21, D_004BFC58, func_001E3710, 11, 22, D_004BFC5C, 10)
-MOVE_SETUP(func_001FCE30, func_001E3710, 9, 20, D_004BFCD4, func_001E3710, 10, 21, D_004BFCD8, func_001E3710, 11, 22, D_004BFCDC, 10)
-MOVE_SETUP(func_00203EB0, func_001E3710, 6, 20, D_004BFD78, func_001E3710, 7, 21, D_004BFD7C, func_001E3710, 8, 22, D_004BFD80, 9)
-MOVE_SETUP(func_002041B0, func_001E3710, 9, 20, D_004BFD84, func_001E3710, 10, 21, D_004BFD88, func_001E3710, 11, 22, D_004BFD8C, 10)
+MOVE_SETUP(func_001F7CC0, func_001E3710, 6, 20, D_004BFC48, func_001E3710, 7, 21, D_004BFC4C, func_001E3710, 8, 22, data_s8_004BFC50[0], 9)
+MOVE_SETUP(func_001F7FA0, func_001E3710, 9, 20, data_s8_004BFC50[4], func_001E3710, 10, 21, data_s8_004BFC50[8], func_001E3710, 11, 22, data_s8_004BFC50[12], 10)
+MOVE_SETUP(func_001FCE30, func_001E3710, 9, 20, data_s8_004BFCD4[0], func_001E3710, 10, 21, data_s8_004BFCD4[4], func_001E3710, 11, 22, data_s8_004BFCD4[8], 10)
+MOVE_SETUP(func_00203EB0, func_001E3710, 6, 20, D_004BFD78, func_001E3710, 7, 21, D_004BFD7C, func_001E3710, 8, 22, data_s8_004BFD80[0], 9)
+MOVE_SETUP(func_002041B0, func_001E3710, 9, 20, data_s8_004BFD80[4], func_001E3710, 10, 21, data_s8_004BFD80[8], func_001E3710, 11, 22, data_s8_004BFD80[12], 10)
 MOVE_SETUP(func_00208EC0, func_001E3710, 6, 20, data_s8_004BFDC8[0], func_001E3210, 7, 30, data_s8_004BFDC8[4], func_001E3210, 8, 30, data_s8_004BFDC8[8], 9)
 MOVE_SETUP(func_00208FC0, func_001E3710, 3, 20, data_s8_004BFDC8[12], func_001E3210, 4, 30, data_s8_004BFDC8[16], func_001E3210, 5, 30, data_s8_004BFDC8[20], 8)
-MOVE_SETUP(func_00223450, func_001E3710, 3, 20, D_004BFFA4, func_001E3710, 4, 21, D_004BFFA8, func_001E3710, 5, 22, D_004BFFAC, 8)
-MOVE_SETUP(func_00223550, func_001E3710, 9, 20, D_004BFFA4, func_001E3710, 10, 21, D_004BFFA8, func_001E3710, 11, 22, D_004BFFAC, 10)
-MOVE_SETUP(func_0022D370, func_001E3710, 3, 20, D_004C00E4, func_001E3710, 4, 21, D_004C00E8, func_001E3710, 5, 22, D_004C00EC, 8)
-MOVE_SETUP(func_0022D470, func_001E3710, 9, 20, D_004C00E4, func_001E3710, 10, 21, D_004C00E8, func_001E3710, 11, 22, D_004C00EC, 10)
+MOVE_SETUP(func_00223450, func_001E3710, 3, 20, data_s8_004BFFA4[0], func_001E3710, 4, 21, data_s8_004BFFA4[4], func_001E3710, 5, 22, data_s8_004BFFA4[8], 8)
+MOVE_SETUP(func_00223550, func_001E3710, 9, 20, data_s8_004BFFA4[0], func_001E3710, 10, 21, data_s8_004BFFA4[4], func_001E3710, 11, 22, data_s8_004BFFA4[8], 10)
+MOVE_SETUP(func_0022D370, func_001E3710, 3, 20, data_s8_004C00E4[0], func_001E3710, 4, 21, data_s8_004C00E4[4], func_001E3710, 5, 22, data_s8_004C00E4[8], 8)
+MOVE_SETUP(func_0022D470, func_001E3710, 9, 20, data_s8_004C00E4[0], func_001E3710, 10, 21, data_s8_004C00E4[4], func_001E3710, 11, 22, data_s8_004C00E4[8], 10)
 MOVE_SETUP(func_00248CF0, func_001E3710, 9, 20, data_s8_004C03B0[12], func_001E3710, 10, 21, data_s8_004C03B0[16], func_001E3710, 11, 22, data_s8_004C03B0[20], 10)
 MOVE_SETUP(func_0024E3F0, func_001E3710, 6, 20, D_004C0438, func_001E3710, 7, 21, D_004C043C, func_001E3710, 8, 22, data_s8_004C0440[0], 9)
 MOVE_SETUP(func_0024E4F0, func_001E3710, 3, 20, data_s8_004C0440[4], func_001E3710, 4, 21, data_s8_004C0440[8], func_001E3710, 5, 22, data_s8_004C0440[12], 8)
 MOVE_SETUP(func_0024E5F0, func_001E3710, 9, 20, data_s8_004C0440[4], func_001E3710, 10, 21, data_s8_004C0440[8], func_001E3710, 11, 22, data_s8_004C0440[12], 10)
 MOVE_SETUP(func_0025CD60, func_001E3710, 6, 20, data_s8_004C0590[0], func_001E3710, 7, 21, data_s8_004C0590[4], func_001E3710, 8, 26, data_s8_004C0590[8], 9)
 MOVE_SETUP(func_0025CE60, func_001E3710, 3, 20, data_s8_004C0590[12], func_001E3710, 4, 21, data_s8_004C0590[16], func_001E3710, 5, 22, data_s8_004C0590[20], 8)
-MOVE_SETUP(func_00262F10, func_001E3710, 6, 20, D_004C0630, func_001E3710, 7, 21, D_004C0634, func_001E3710, 8, 22, D_004C0638, 9)
-MOVE_SETUP(func_00263150, func_001E3710, 9, 20, D_004C063C, func_001E3710, 10, 21, D_004C0640, func_001E3710, 11, 22, D_004C0644, 10)
+MOVE_SETUP(func_00262F10, func_001E3710, 6, 20, data_s8_004C0630[0], func_001E3710, 7, 21, data_s8_004C0630[4], func_001E3710, 8, 22, data_s8_004C0630[8], 9)
+MOVE_SETUP(func_00263150, func_001E3710, 9, 20, data_s8_004C0630[12], func_001E3710, 10, 21, data_s8_004C0630[16], func_001E3710, 11, 22, data_s8_004C0630[20], 10)
 MOVE_SETUP(func_0026F750, func_001E3210, 6, 31, D_004C0718, func_001E3210, 7, 32, D_004C071C, func_001E3210, 8, 33, data_s8_004C0720[0], 9)
 MOVE_SETUP(func_0026F850, func_001E3710, 3, 20, data_s8_004C0720[4], func_001E3710, 4, 21, data_s8_004C0720[8], func_001E3710, 5, 22, data_s8_004C0720[12], 8)
 MOVE_SETUP(func_0026F950, func_001E3710, 9, 20, data_s8_004C0720[4], func_001E3710, 10, 21, data_s8_004C0720[8], func_001E3710, 11, 22, data_s8_004C0720[12], 10)
-MOVE_SETUP(func_00281B80, func_001E3710, 6, 20, D_004C0898, func_001E3710, 7, 21, D_004C089C, func_001E3710, 8, 22, D_004C08A0, 9)
-MOVE_SETUP(func_0028E770, func_001E3710, 6, 20, D_004C09B8, func_001E3710, 7, 21, D_004C09BC, func_001E3710, 8, 22, D_004C09C0, 9)
-MOVE_SETUP(func_00295B90, func_001E3710, 6, 20, D_004C0A78, func_001E3710, 7, 21, D_004C0A7C, func_001E3710, 8, 22, D_004C0A80, 9)
-MOVE_SETUP(func_00295DD0, func_001E3710, 9, 20, D_004C0A84, func_001E3710, 10, 21, D_004C0A88, func_001E3710, 11, 22, D_004C0A8C, 10)
-MOVE_SETUP(func_002A15F0, func_001E3710, 6, 20, D_004C0B50, func_001E3710, 7, 21, D_004C0B54, func_001E3710, 8, 22, D_004C0B58, 9)
-MOVE_SETUP(func_002A1820, func_001E3710, 9, 20, D_004C0B5C, func_001E3710, 10, 21, D_004C0B60, func_001E3710, 11, 22, D_004C0B64, 10)
-MOVE_SETUP(func_002A7A60, func_001E3710, 6, 20, D_004C0BD0, func_001E3710, 7, 21, D_004C0BD4, func_001E3710, 8, 22, D_004C0BD8, 9)
-MOVE_SETUP(func_002A7CE0, func_001E3710, 9, 20, D_004C0BDC, func_001E3710, 10, 21, D_004C0BE0, func_001E3710, 11, 22, D_004C0BE4, 10)
-MOVE_SETUP(func_002B8CA0, func_001E3710, 6, 20, D_004C0D28, func_001E3710, 7, 21, D_004C0D2C, func_001E3710, 8, 22, D_004C0D30, 9)
-MOVE_SETUP(func_002B8ED0, func_001E3710, 9, 20, D_004C0D34, func_001E3710, 10, 21, D_004C0D38, func_001E3710, 11, 22, D_004C0D3C, 10)
-MOVE_SETUP(func_002CC600, func_001E3710, 6, 20, D_004C0EB8, func_001E3710, 7, 21, D_004C0EBC, func_001E3710, 8, 22, D_004C0EC0, 9)
-MOVE_SETUP(func_002CC840, func_001E3710, 9, 20, D_004C0EC4, func_001E3710, 10, 21, D_004C0EC8, func_001E3710, 11, 22, D_004C0ECC, 10)
+MOVE_SETUP(func_00281B80, func_001E3710, 6, 20, data_s8_004C0898[0], func_001E3710, 7, 21, data_s8_004C0898[4], func_001E3710, 8, 22, data_s8_004C0898[8], 9)
+MOVE_SETUP(func_0028E770, func_001E3710, 6, 20, D_004C09B8, func_001E3710, 7, 21, D_004C09BC, func_001E3710, 8, 22, data_s8_004C09C0[0], 9)
+MOVE_SETUP(func_00295B90, func_001E3710, 6, 20, D_004C0A78, func_001E3710, 7, 21, D_004C0A7C, func_001E3710, 8, 22, data_s8_004C0A80[0], 9)
+MOVE_SETUP(func_00295DD0, func_001E3710, 9, 20, data_s8_004C0A80[4], func_001E3710, 10, 21, data_s8_004C0A80[8], func_001E3710, 11, 22, data_s8_004C0A80[12], 10)
+MOVE_SETUP(func_002A15F0, func_001E3710, 6, 20, data_s8_004C0B50[0], func_001E3710, 7, 21, data_s8_004C0B50[4], func_001E3710, 8, 22, data_s8_004C0B50[8], 9)
+MOVE_SETUP(func_002A1820, func_001E3710, 9, 20, data_s8_004C0B50[12], func_001E3710, 10, 21, data_s8_004C0B50[16], func_001E3710, 11, 22, data_s8_004C0B50[20], 10)
+MOVE_SETUP(func_002A7A60, func_001E3710, 6, 20, data_s8_004C0BD0[0], func_001E3710, 7, 21, data_s8_004C0BD0[4], func_001E3710, 8, 22, data_s8_004C0BD0[8], 9)
+MOVE_SETUP(func_002A7CE0, func_001E3710, 9, 20, data_s8_004C0BD0[12], func_001E3710, 10, 21, data_s8_004C0BD0[16], func_001E3710, 11, 22, data_s8_004C0BD0[20], 10)
+MOVE_SETUP(func_002B8CA0, func_001E3710, 6, 20, D_004C0D28, func_001E3710, 7, 21, D_004C0D2C, func_001E3710, 8, 22, data_s8_004C0D30[0], 9)
+MOVE_SETUP(func_002B8ED0, func_001E3710, 9, 20, data_s8_004C0D30[4], func_001E3710, 10, 21, data_s8_004C0D30[8], func_001E3710, 11, 22, data_s8_004C0D30[12], 10)
+MOVE_SETUP(func_002CC600, func_001E3710, 6, 20, D_004C0EB8, func_001E3710, 7, 21, D_004C0EBC, func_001E3710, 8, 22, data_s8_004C0EC0[0], 9)
+MOVE_SETUP(func_002CC840, func_001E3710, 9, 20, data_s8_004C0EC0[4], func_001E3710, 10, 21, data_s8_004C0EC0[8], func_001E3710, 11, 22, data_s8_004C0EC0[12], 10)
 
 #define EXTENDED_MOVE_SETUP(name,set0,command0,animation0,table0,alternate0,set1,command1,animation1,table1,alternate1,set2,command2,animation2,table2,alternate2,mode,mask,step) \
 void name(u8 *p) { \
@@ -317,8 +221,8 @@ void name(u8 *p) { \
  if (*(signed char *)(p+0x1ea) & mask) *(signed char *)(p+0x1ea) -= step; \
 }
 
-EXTENDED_MOVE_SETUP(func_001FCFC0, func_001E3710, 12, 20, D_004BFCE0, D_004BFCF8, func_001E3710, 13, 21, D_004BFCE4, D_004BFCFC, func_001E3710, 14, 22, D_004BFCE8, D_004BFD00, 11, 15, 1)
-EXTENDED_MOVE_SETUP(func_00204350, func_001E3710, 12, 20, D_004BFD90, D_004BFDA8, func_001E3710, 13, 21, D_004BFD94, D_004BFDAC, func_001E3710, 14, 22, D_004BFD98, D_004BFDB0, 11, 15, 1)
+EXTENDED_MOVE_SETUP(func_001FCFC0, func_001E3710, 12, 20, data_s8_004BFCD4[12], data_s8_004BFCF8[0], func_001E3710, 13, 21, data_s8_004BFCD4[16], data_s8_004BFCF8[4], func_001E3710, 14, 22, data_s8_004BFCD4[20], data_s8_004BFCF8[8], 11, 15, 1)
+EXTENDED_MOVE_SETUP(func_00204350, func_001E3710, 12, 20, data_s8_004BFD80[16], data_s8_004BFDA8[0], func_001E3710, 13, 21, data_s8_004BFD80[20], data_s8_004BFDA8[4], func_001E3710, 14, 22, data_s8_004BFD80[24], data_s8_004BFDA8[8], 11, 15, 1)
 EXTENDED_MOVE_SETUP(func_002092D0, func_001E3710, 12, 20, data_s8_004BFDC8[24], data_s8_004BFDC8[48], func_001E3210, 13, 30, data_s8_004BFDC8[28], data_s8_004BFDC8[52], func_001E3210, 14, 30, data_s8_004BFDC8[32], data_s8_004BFDC8[56], 11, 15, 1)
 EXTENDED_MOVE_SETUP(func_00209420, func_001E3710, 15, 20, data_s8_004BFDC8[36], data_s8_004BFDC8[60], func_001E3210, 16, 30, data_s8_004BFDC8[40], data_s8_004BFDC8[64], func_001E3210, 17, 30, data_s8_004BFDC8[44], data_s8_004BFDC8[68], 12, 240, 16)
 EXTENDED_MOVE_SETUP(func_00248EC0, func_001E3710, 12, 20, data_s8_004C03B0[24], data_s8_004C03B0[48], func_001E3710, 13, 21, data_s8_004C03B0[28], data_s8_004C03B0[52], func_001E3710, 14, 22, data_s8_004C03B0[32], data_s8_004C03B0[56], 11, 15, 1)
@@ -327,22 +231,22 @@ EXTENDED_MOVE_SETUP(func_0024E790, func_001E3710, 12, 20, data_s8_004C0440[16], 
 EXTENDED_MOVE_SETUP(func_0024E8E0, func_001E3710, 15, 20, data_s8_004C0440[28], data_s8_004C0440[52], func_001E3710, 16, 21, data_s8_004C0440[32], data_s8_004C0440[56], func_001E3710, 17, 22, data_s8_004C0440[36], data_s8_004C0440[60], 12, 240, 16)
 EXTENDED_MOVE_SETUP(func_0025D0F0, func_001E3710, 12, 20, data_s8_004C0590[24], data_s8_004C0590[48], func_001E3710, 13, 21, data_s8_004C0590[28], data_s8_004C0590[52], func_001E3710, 14, 26, data_s8_004C0590[32], data_s8_004C0590[56], 11, 15, 1)
 EXTENDED_MOVE_SETUP(func_0025D240, func_001E3710, 15, 20, data_s8_004C0590[36], data_s8_004C0590[60], func_001E3710, 16, 21, data_s8_004C0590[40], D_004C05D0, func_001E3710, 17, 22, data_s8_004C0590[44], D_004C05D4, 12, 240, 16)
-EXTENDED_MOVE_SETUP(func_00263470, func_001E3710, 15, 20, D_004C0654, D_004C066C, func_001E3710, 16, 21, D_004C0658, D_004C0670, func_001E3710, 17, 22, D_004C065C, D_004C0674, 12, 240, 16)
+EXTENDED_MOVE_SETUP(func_00263470, func_001E3710, 15, 20, data_s8_004C0654[0], D_004C066C, func_001E3710, 16, 21, data_s8_004C0654[4], D_004C0670, func_001E3710, 17, 22, data_s8_004C0654[8], D_004C0674, 12, 240, 16)
 EXTENDED_MOVE_SETUP(func_0026BDB0, func_001E3710, 15, 20, data_s8_004C06AC[0], data_s8_004C06C4[0], func_001E3710, 16, 21, data_s8_004C06B0[0], data_s8_004C06C4[4], func_001E3710, 17, 22, data_s8_004C06B0[4], data_s8_004C06C4[8], 12, 240, 16)
 EXTENDED_MOVE_SETUP(func_0026FAF0, func_001E3210, 12, 31, data_s8_004C0720[16], data_s8_004C0720[40], func_001E3210, 13, 32, data_s8_004C0720[20], data_s8_004C0720[44], func_001E3210, 14, 33, data_s8_004C0720[24], data_s8_004C0720[48], 11, 15, 1)
 EXTENDED_MOVE_SETUP(func_0026FC40, func_001E3710, 15, 20, data_s8_004C0720[28], data_s8_004C0720[52], func_001E3710, 16, 21, data_s8_004C0720[32], data_s8_004C0720[56], func_001E3710, 17, 22, data_s8_004C0720[36], data_s8_004C0720[60], 12, 240, 16)
-EXTENDED_MOVE_SETUP(func_00287370, func_001E3710, 15, 20, D_004C0934, D_004C094C, func_001E3710, 16, 21, D_004C0938, D_004C0950, func_001E3710, 17, 22, D_004C093C, D_004C0954, 12, 240, 16)
-EXTENDED_MOVE_SETUP(func_0028EAF0, func_001E3710, 12, 20, D_004C09D0, D_004C09E8, func_001E3710, 13, 21, D_004C09D4, D_004C09EC, func_001E3710, 14, 22, D_004C09D8, D_004C09F0, 11, 15, 1)
-EXTENDED_MOVE_SETUP(func_00295F10, func_001E3710, 12, 20, D_004C0A90, D_004C0AA8, func_001E3710, 13, 21, D_004C0A94, D_004C0AAC, func_001E3710, 14, 22, D_004C0A98, D_004C0AB0, 11, 15, 1)
-EXTENDED_MOVE_SETUP(func_002A7E80, func_001E3710, 12, 20, D_004C0BE8, D_004C0C00, func_001E3710, 13, 21, D_004C0BEC, D_004C0C04, func_001E3710, 14, 22, D_004C0BF0, D_004C0C08, 11, 15, 1)
+EXTENDED_MOVE_SETUP(func_00287370, func_001E3710, 15, 20, data_s8_004C0934[0], data_s8_004C094C[0], func_001E3710, 16, 21, data_s8_004C0934[4], data_s8_004C094C[4], func_001E3710, 17, 22, data_s8_004C0934[8], data_s8_004C094C[8], 12, 240, 16)
+EXTENDED_MOVE_SETUP(func_0028EAF0, func_001E3710, 12, 20, data_s8_004C09C0[16], data_s8_004C09E8[0], func_001E3710, 13, 21, data_s8_004C09C0[20], data_s8_004C09E8[4], func_001E3710, 14, 22, data_s8_004C09C0[24], data_s8_004C09E8[8], 11, 15, 1)
+EXTENDED_MOVE_SETUP(func_00295F10, func_001E3710, 12, 20, data_s8_004C0A80[16], data_s8_004C0AA8[0], func_001E3710, 13, 21, data_s8_004C0A80[20], data_s8_004C0AA8[4], func_001E3710, 14, 22, data_s8_004C0A80[24], data_s8_004C0AA8[8], 11, 15, 1)
+EXTENDED_MOVE_SETUP(func_002A7E80, func_001E3710, 12, 20, data_s8_004C0BD0[24], data_s8_004C0C00[0], func_001E3710, 13, 21, data_s8_004C0BD0[28], data_s8_004C0C00[4], func_001E3710, 14, 22, data_s8_004C0BD0[32], data_s8_004C0C00[8], 11, 15, 1)
 EXTENDED_MOVE_SETUP(func_002B3680, func_001E3710, 12, 20, data_s8_004C0CC0[24], data_s8_004C0CC0[48], func_001E3710, 13, 21, data_s8_004C0CC0[28], data_s8_004C0CC0[52], func_001E3710, 14, 22, data_s8_004C0CC0[32], data_s8_004C0CC0[56], 11, 15, 1)
 EXTENDED_MOVE_SETUP(func_002B37D0, func_001E3710, 15, 20, data_s8_004C0CC0[36], data_s8_004C0CC0[60], func_001E3710, 16, 21, data_s8_004C0CC0[40], data_s8_004C0D00[0], func_001E3710, 17, 22, data_s8_004C0CC0[44], data_s8_004C0D00[4], 12, 240, 16)
 EXTENDED_MOVE_SETUP(func_002C6380, func_001E3710, 12, 20, data_s8_004C0E30[0], data_s8_004C0E30[24], func_001E3710, 13, 21, data_s8_004C0E30[4], data_s8_004C0E30[28], func_001E3710, 14, 22, data_s8_004C0E30[8], data_s8_004C0E30[32], 11, 15, 1)
 EXTENDED_MOVE_SETUP(func_002C64D0, func_001E3710, 15, 20, data_s8_004C0E30[12], data_s8_004C0E30[36], func_001E3710, 16, 21, data_s8_004C0E30[16], data_s8_004C0E30[40], func_001E3710, 17, 22, data_s8_004C0E30[20], data_s8_004C0E30[44], 12, 240, 16)
-EXTENDED_MOVE_SETUP(func_002CC980, func_001E3710, 12, 20, D_004C0ED0, D_004C0EE8, func_001E3710, 13, 21, D_004C0ED4, D_004C0EEC, func_001E3710, 14, 22, D_004C0ED8, D_004C0EF0, 11, 15, 1)
+EXTENDED_MOVE_SETUP(func_002CC980, func_001E3710, 12, 20, data_s8_004C0EC0[16], data_s8_004C0EE8[0], func_001E3710, 13, 21, data_s8_004C0EC0[20], data_s8_004C0EE8[4], func_001E3710, 14, 22, data_s8_004C0EC0[24], data_s8_004C0EE8[8], 11, 15, 1)
 EXTENDED_MOVE_SETUP(func_002D20E0, func_001E3710, 12, 20, data_s8_004C0F30[24], data_s8_004C0F30[48], func_001E3710, 13, 21, data_s8_004C0F30[28], data_s8_004C0F30[52], func_001E3710, 14, 22, data_s8_004C0F30[32], data_s8_004C0F30[56], 11, 15, 1)
 EXTENDED_MOVE_SETUP(func_002D2230, func_001E3710, 15, 20, data_s8_004C0F30[36], data_s8_004C0F30[60], func_001E3710, 16, 21, data_s8_004C0F30[40], data_s8_004C0F70[0], func_001E3710, 17, 22, data_s8_004C0F30[44], data_s8_004C0F70[4], 12, 240, 16)
-EXTENDED_MOVE_SETUP(func_00310510, func_001E3710, 12, 20, data_s8_004C1690[0], D_004C16A8, func_001E3710, 13, 21, data_s8_004C1694[0], D_004C16AC, func_001E3710, 14, 22, data_s8_004C1694[4], D_004C16B0, 11, 15, 1)
+EXTENDED_MOVE_SETUP(func_00310510, func_001E3710, 12, 20, data_s8_004C1690[0], data_s8_004C16A8[0], func_001E3710, 13, 21, data_s8_004C1694[0], data_s8_004C16A8[4], func_001E3710, 14, 22, data_s8_004C1694[4], data_s8_004C16A8[8], 11, 15, 1)
 
 #define THIRD_STATE_SETUP(name,command0,table0,command1,table1,command2,table2,mode) \
 void name(u8 *p) { \
@@ -373,17 +277,17 @@ void name(u8 *p) { \
 
 THIRD_STATE_SETUP(func_001EEB50, 6, data_s8_004BFB70[0], 7, data_s8_004BFB70[4], 8, data_s8_004BFB70[8], 9)
 THIRD_STATE_SETUP(func_001EED40, 9, data_s8_004BFB7C[0], 10, data_s8_004BFB7C[4], 11, data_s8_004BFB7C[8], 10)
-THIRD_STATE_SETUP(func_00210E50, 6, D_004BFE80, 7, D_004BFE84, 8, D_004BFE88, 9)
+THIRD_STATE_SETUP(func_00210E50, 6, data_s8_004BFE80[0], 7, data_s8_004BFE80[4], 8, data_s8_004BFE80[8], 9)
 THIRD_STATE_SETUP(func_0023A850, 3, data_s8_004C0214[0], 4, data_s8_004C0214[4], 5, data_s8_004C0214[8], 8)
-THIRD_STATE_SETUP(func_00244190, 3, D_004C0324, 4, D_004C0328, 5, D_004C032C, 8)
+THIRD_STATE_SETUP(func_00244190, 3, data_s8_004C0324[0], 4, data_s8_004C0324[4], 5, data_s8_004C0324[8], 8)
 THIRD_STATE_SETUP(func_0025CF60, 9, data_s8_004C0590[12], 10, data_s8_004C0590[16], 11, data_s8_004C0590[20], 10)
-THIRD_STATE_SETUP(func_00286EB0, 6, D_004C0910, 7, D_004C0914, 8, D_004C0918, 9)
-THIRD_STATE_SETUP(func_00286FA0, 3, D_004C091C, 4, D_004C0920, 5, D_004C0924, 8)
-THIRD_STATE_SETUP(func_00287090, 9, D_004C091C, 10, D_004C0920, 11, D_004C0924, 10)
-THIRD_STATE_SETUP(func_0028E870, 3, D_004C09C4, 4, D_004C09C8, 5, D_004C09CC, 8)
-THIRD_STATE_SETUP(func_0028E960, 9, D_004C09C4, 10, D_004C09C8, 11, D_004C09CC, 10)
-THIRD_STATE_SETUP(func_002F2AA0, 3, D_004C1294, 4, D_004C1298, 5, D_004C129C, 8)
-THIRD_STATE_SETUP(func_002F7850, 3, D_004C1344, 4, D_004C1348, 5, D_004C134C, 8)
+THIRD_STATE_SETUP(func_00286EB0, 6, data_s8_004C0910[0], 7, data_s8_004C0910[4], 8, data_s8_004C0910[8], 9)
+THIRD_STATE_SETUP(func_00286FA0, 3, data_s8_004C0910[12], 4, data_s8_004C0910[16], 5, data_s8_004C0910[20], 8)
+THIRD_STATE_SETUP(func_00287090, 9, data_s8_004C0910[12], 10, data_s8_004C0910[16], 11, data_s8_004C0910[20], 10)
+THIRD_STATE_SETUP(func_0028E870, 3, data_s8_004C09C0[4], 4, data_s8_004C09C0[8], 5, data_s8_004C09C0[12], 8)
+THIRD_STATE_SETUP(func_0028E960, 9, data_s8_004C09C0[4], 10, data_s8_004C09C0[8], 11, data_s8_004C09C0[12], 10)
+THIRD_STATE_SETUP(func_002F2AA0, 3, data_s8_004C1294[0], 4, data_s8_004C1294[4], 5, data_s8_004C1294[8], 8)
+THIRD_STATE_SETUP(func_002F7850, 3, data_s8_004C1344[0], 4, data_s8_004C1344[4], 5, data_s8_004C1344[8], 8)
 THIRD_STATE_SETUP(func_002FCB90, 3, data_s8_004C13D0[0], 4, data_s8_004C13D0[4], 5, data_s8_004C13D0[8], 8)
 THIRD_STATE_SETUP(func_00305890, 9, data_s8_004C1514[0], 10, data_s8_004C1514[4], 11, data_s8_004C1514[8], 10)
 
@@ -427,7 +331,7 @@ FINAL_ANIMATION_SETUP(func_002D1D40, 6, data_s8_004C0F30[0], 7, data_s8_004C0F30
 FINAL_ANIMATION_SETUP(func_002D1E40, 3, data_s8_004C0F30[12], 4, data_s8_004C0F30[16], 5, data_s8_004C0F30[20], 8)
 FINAL_ANIMATION_SETUP(func_002D1F40, 9, data_s8_004C0F30[12], 10, data_s8_004C0F30[16], 11, data_s8_004C0F30[20], 10)
 FINAL_ANIMATION_SETUP(func_002E9780, 3, data_s8_004C1134[0], 4, data_s8_004C1138[0], 5, data_s8_004C113C[0], 8)
-FINAL_ANIMATION_SETUP(func_00300F40, 3, D_004C1474, 4, D_004C1478, 5, D_004C147C, 8)
+FINAL_ANIMATION_SETUP(func_00300F40, 3, data_s8_004C1474[0], 4, data_s8_004C1474[4], 5, data_s8_004C1474[8], 8)
 
 void func_00309450(u8 *p) {
  switch (p[0x1fc]) {
@@ -627,19 +531,19 @@ void func_00301040(u8 *p) {
   p[0x168] = 0;
   p[0x1b5] = 9;
   func_001E3710(p, 20);
-  *(int **)(p + 0x408) = &D_004C1474;
+  *(signed char **)(p + 0x408) = &data_s8_004C1474[0];
   p[0x1bb] = 0;
   break;
  case 1:
   p[0x168] = 1;
   p[0x1b5] = 10;
-  *(int **)(p + 0x408) = &D_004C1478;
+  *(signed char **)(p + 0x408) = &data_s8_004C1474[4];
   p[0x1bb] = 1;
   break;
  case 2:
   p[0x168] = 2;
   p[0x1b5] = 11;
-  *(int **)(p + 0x408) = &D_004C147C;
+  *(signed char **)(p + 0x408) = &data_s8_004C1474[8];
   p[0x1bb] = 2;
   func_001E3710(p, 22);
   break;
@@ -652,5 +556,5 @@ MOVE_SETUP(func_00208DD0, func_001E3710, 0, 20, data_s8_004BFDC8[0], func_001E32
 MOVE_SETUP(func_00248A20, func_001E3710, 0, 20, data_s8_004C03B0[0], func_001E3710, 1, 21, data_s8_004C03B0[4], func_001E3710, 2, 22, data_s8_004C03B0[8], 7)
 MOVE_SETUP(func_0024E300, func_001E3710, 0, 20, D_004C0438, func_001E3710, 1, 21, D_004C043C, func_001E3710, 2, 22, data_s8_004C0440[0], 7)
 MOVE_SETUP(func_0025CC70, func_001E3710, 0, 20, data_s8_004C0590[0], func_001E3710, 1, 21, data_s8_004C0590[4], func_001E3710, 2, 26, data_s8_004C0590[8], 7)
-MOVE_SETUP(func_0028E680, func_001E3710, 0, 20, D_004C09B8, func_001E3710, 1, 21, D_004C09BC, func_001E3710, 2, 22, D_004C09C0, 7)
-MOVE_SETUP(func_002CC510, func_001E3710, 0, 20, D_004C0EB8, func_001E3710, 1, 21, D_004C0EBC, func_001E3710, 2, 22, D_004C0EC0, 7)
+MOVE_SETUP(func_0028E680, func_001E3710, 0, 20, D_004C09B8, func_001E3710, 1, 21, D_004C09BC, func_001E3710, 2, 22, data_s8_004C09C0[0], 7)
+MOVE_SETUP(func_002CC510, func_001E3710, 0, 20, D_004C0EB8, func_001E3710, 1, 21, D_004C0EBC, func_001E3710, 2, 22, data_s8_004C0EC0[0], 7)
