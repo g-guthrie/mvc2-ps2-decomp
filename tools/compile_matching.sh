@@ -4549,3 +4549,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
  -o "$BUILD/create_fixed_position_event_0014EA80.o"
 "$PYTHON" tools/verify_object.py "$BUILD/create_fixed_position_event_0014EA80.o" \
  private/SLUS_204.86.rom --source src/create_fixed_position_event_0014EA80.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/create_position_scale_color_events.c -c -lang c -O3 -sdatathreshold 8 \
+ -o "$BUILD/create_position_scale_color_events.o"
+"$PYTHON" tools/verify_object.py "$BUILD/create_position_scale_color_events.o" \
+ private/SLUS_204.86.rom --source src/create_position_scale_color_events.c

@@ -3494,3 +3494,7 @@ Recovered complete functions at 0x003419A0 (76 bytes) and 0x00298A30 (164 bytes)
 ## Additional launch-effect initializer
 
 Recovered all 148 bytes at 0x002C4760 in the existing launch-effect source object. Every registered function in the object verifies with its O3/Op profile. Code reaches 621,336 bytes (18.8644%), 9,377 functions; data remains 153,435 bytes (23.6759%).
+
+## Position/scale/color event pair
+
+Recovered two complete constructors at 0x00157970 (152 bytes) and 0x001576A0 (156 bytes), preserving typed position copies, scale/color fields, callbacks and allocation failure. Both functions verify exactly in one source object. Code reaches 621,644 bytes (18.8738%), 9,379 functions; data remains 153,435 bytes (23.6759%).

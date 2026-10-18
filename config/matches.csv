@@ -9380,3 +9380,5 @@ func_0014EA80,0x0014EA80,0x94,src/create_fixed_position_event_0014EA80.c,complet
 func_003419A0,0x003419A0,0x4C,src/entry_group_updates.c,complete
 func_00298A30,0x00298A30,0xA4,src/animation_spawn_positions.c,complete
 func_002C4760,0x002C4760,0x94,src/fixed_launch_effect_initializers.c,complete
+func_00157970,0x00157970,0x98,src/create_position_scale_color_events.c,complete
+func_001576A0,0x001576A0,0x9C,src/create_position_scale_color_events.c,complete
