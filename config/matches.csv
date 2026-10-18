@@ -9322,3 +9322,13 @@ func_002EC8F0,0x002EC8F0,0x88,src/grok_w7_context_timer_state_reset.c,complete
 func_00136C80,0x00136C80,0x80,src/create_scene_resource_event_00136C80.c,complete
 func_0014E7B0,0x0014E7B0,0x90,src/create_owner_position_event_0014E7B0.c,complete
 func_0014EEC0,0x0014EEC0,0x74,src/create_owner_timer_event_0014EEC0.c,complete
+func_002E93B0,0x002E93B0,0x64,src/grok_w7_gated_countdown_callback.c,complete
+func_002E9FA0,0x002E9FA0,0x78,src/grok_w7_timered_single_flag_callback.c,complete
+func_002EA440,0x002EA440,0xC4,src/grok_w7_masked_float_effect_reset.c,complete
+func_002EAFB0,0x002EAFB0,0x9C,src/grok_w7_timered_vertical_reset.c,complete
+func_002EB170,0x002EB170,0x8C,src/grok_w7_timered_two_float_reset.c,complete
+func_002EBF40,0x002EBF40,0xA4,src/grok_w7_timered_phase_increment.c,complete
+func_002EC180,0x002EC180,0x70,src/grok_w7_negative_flag_reset.c,complete
+func_002EC660,0x002EC660,0xE4,src/grok_w7_owner_context_float_setup.c,complete
+func_002EC750,0x002EC750,0xBC,src/grok_w7_owner_context_float_setup.c,complete
+func_002EC980,0x002EC980,0x6C,src/grok_w7_timered_action_trigger.c,complete

@@ -21,3 +21,22 @@ void func_00302630(u8 *p)
     func_001757E0(p, 18, 1);
     func_001D9D80(p, 1, 0);
 }
+
+extern void func_001D5670(u8 *, int, int);
+void func_002EAFB0(u8 *p)
+{
+    s16 timer;
+    func_00175700(p);
+    *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
+    *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
+    timer = *(s16 *)(p + 0x1C);
+    timer--;
+    *(s16 *)(p + 0x1C) = timer;
+    if (timer != 0)
+        return;
+    p[6]++;
+    *(f32 *)(p + 0x38) = *(f32 *)(p + 0x430);
+    *(s16 *)(p + 0x1C) = 8;
+    func_001757E0(p, 18, 1);
+    func_001D5670(p, 1, 0);
+}

@@ -22,3 +22,21 @@ void func_00301760(u8 *p)
         func_001757E0(p, 20, 0);
     }
 }
+
+extern void func_003A6DC0(u8 *, u8, u8);
+void func_002E9FA0(u8 *p)
+{
+    s16 timer;
+
+    func_00175700(p);
+    if (*(s8 *)(p + 0x151) != 0) {
+        *(s8 *)(p + 0x151) = 0;
+        func_003A6DC0(p, 1, 0);
+    }
+    timer = *(s16 *)(p + 0x1C) - 1;
+    *(s16 *)(p + 0x1C) = timer;
+    if (timer == 0) {
+        p[6]++;
+        func_001757E0(p, 20, 0);
+    }
+}
