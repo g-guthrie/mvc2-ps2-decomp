@@ -14427,3 +14427,7 @@ func_0010E510,0x0010E510,0x64,src/sony29_rpc_queries.c,complete
 func_0010E4A8,0x0010E4A8,0x68,src/sony29_rpc_queries.c,complete
 func_0010E578,0x0010E578,0x68,src/sony29_rpc_queries.c,complete
 func_0010E608,0x0010E608,0x68,src/sony29_timed_semaphore_wait.c,complete
+func_00107AE8,0x00107AE8,0xC,src/sony29_global_call_forwarder_00107AE8.c,complete
+func_00104E88,0x00104E88,0x24,src/sony29_syscall_parameters.c,complete
+func_00104EB0,0x00104EB0,0x30,src/sony29_syscall_parameters.c,complete
+func_00104EE0,0x00104EE0,0x24,src/sony29_syscall_parameters.c,complete

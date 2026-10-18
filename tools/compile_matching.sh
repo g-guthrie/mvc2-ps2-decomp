@@ -8708,3 +8708,13 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$WIBO" "$EE29CC1" "$BUILD/sony29_timed_semaphore_wait.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_timed_semaphore_wait.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_timed_semaphore_wait.o" "$BUILD/sony29_timed_semaphore_wait.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_timed_semaphore_wait.o" private/SLUS_204.86.rom --source src/sony29_timed_semaphore_wait.c
+
+"$WIBO" "$SNCPP" -P src/sony29_global_call_forwarder_00107AE8.c "$BUILD/sony29_global_call_forwarder_00107AE8.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_global_call_forwarder_00107AE8.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_global_call_forwarder_00107AE8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_global_call_forwarder_00107AE8.o" "$BUILD/sony29_global_call_forwarder_00107AE8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_global_call_forwarder_00107AE8.o" private/SLUS_204.86.rom --source src/sony29_global_call_forwarder_00107AE8.c
+
+"$WIBO" "$SNCPP" -P src/sony29_syscall_parameters.c "$BUILD/sony29_syscall_parameters.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_syscall_parameters.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_syscall_parameters.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_syscall_parameters.o" "$BUILD/sony29_syscall_parameters.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_syscall_parameters.o" private/SLUS_204.86.rom --source src/sony29_syscall_parameters.c
