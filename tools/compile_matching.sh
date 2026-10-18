@@ -4621,3 +4621,35 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
  -o "$BUILD/round_impact_002CE1D0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/round_impact_002CE1D0.o" \
  private/SLUS_204.86.rom --source src/round_impact_002CE1D0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/batch2.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/batch2.o"
+"$PYTHON" tools/verify_object.py "$BUILD/batch2.o" private/SLUS_204.86.rom --source src/batch2.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/batch3.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/batch3.o"
+"$PYTHON" tools/verify_object.py "$BUILD/batch3.o" private/SLUS_204.86.rom --source src/batch3.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/batch3b.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/batch3b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/batch3b.o" private/SLUS_204.86.rom --source src/batch3b.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/batch4.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/batch4.o"
+"$PYTHON" tools/verify_object.py "$BUILD/batch4.o" private/SLUS_204.86.rom --source src/batch4.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/wave3.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/wave3.o"
+"$PYTHON" tools/verify_object.py "$BUILD/wave3.o" private/SLUS_204.86.rom --source src/wave3.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/wave3b.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/wave3b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/wave3b.o" private/SLUS_204.86.rom --source src/wave3b.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/wave6.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/wave6.o"
+"$PYTHON" tools/verify_object.py "$BUILD/wave6.o" private/SLUS_204.86.rom --source src/wave6.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/wave6b.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/wave6b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/wave6b.o" private/SLUS_204.86.rom --source src/wave6b.c

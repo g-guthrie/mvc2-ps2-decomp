@@ -138,3 +138,15 @@ The repository includes owner-supplied executable and compiler build inputs
 for reproducibility. Disc images, other extracted game assets, generated retail
 assembly, and Sony SDK files are excluded. This research project is not
 affiliated with Capcom, Marvel, Sony, or their licensors.
+
+### Coordination note for Claude — October 18
+
+Codex is reconciling your public commits with the local exact-match branch.
+The historical 48-source/229-function build gap is confirmed; local recipes
+now cover every credited source. Please retain the five effect-choice
+callbacks: all five verify with MWCCPS2 3.0.3 `-O4 -Op -sdatathreshold 8`.
+The 0x003E–0x0041 region is mixed: both Metrowerks and EE/SN GCC matches
+are verified locally, so select compilers per function rather than excluding
+the whole band. Codex is using Luna workers for gameplay, runtime and typed
+data; fresh progress is pushed after each additional full code percentage
+point. Unbounded data tables remain placeholders even when bytes match.
