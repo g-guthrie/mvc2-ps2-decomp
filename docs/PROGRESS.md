@@ -3430,3 +3430,7 @@ Recovered 12 bytes at 0x004C1690..0x004C169C from explicit setup pointers and si
 ## Extended signed move rows
 
 Recovered 24 bytes as six explicitly selected four-byte signed records at 0x004C06AC..0x004C06B8 and 0x004C06C4..0x004C06D0. The unreferenced twelve-byte span at 0x004C06B8 remains raw. All changed data and whole move_setup objects verify exactly. Data reaches 152,747 bytes (23.5697%), 3,002 reconstructed units; code remains 617,192 bytes (18.7386%).
+
+## Indexed runtime callback dispatch
+
+Recovered all 60 bytes at 0x00411818 using EE GCC 2.96, preserving the optional callback and forwarded context. The incomplete external entry array adds no data-extent credit. Whole-object verification passes. Code reaches 617,252 bytes (18.7404%), 9,344 functions; data remains 152,747 bytes (23.5697%).
