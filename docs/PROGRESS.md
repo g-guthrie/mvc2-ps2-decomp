@@ -3478,3 +3478,7 @@ Recovered 48 bytes across six explicitly selected signed row owners, preserving 
 ## Accepted transitions and runtime value command
 
 Recovered two complete 164-byte accepted-transition handlers and a 68-byte runtime command helper. Both affected whole source objects verify with their required compiler versions and flags. Code reaches 620,800 bytes (18.8481%), 9,373 functions; data remains 153,347 bytes (23.6623%).
+
+## Additional deferred signed move banks
+
+Recovered 88 bytes as 22 explicitly selected four-byte signed rows, preserving unreferenced surrounding spans as placeholders. All fourteen changed data objects and the complete deferred_move_setup object verify with the required compiler profile. Data reaches 153,435 bytes (23.6759%), 3,048 reconstructed units; code remains 620,800 bytes (18.8481%).

@@ -2,35 +2,19 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 extern u8 *D_004C2794;
+extern signed char data_s8_004BFEDC[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C01A0[16] __attribute__((section(".sdata")));
+extern signed char data_s8_004C01BC[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C1060[24] __attribute__((section(".sdata")));
+extern signed char data_s8_004C1084[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C174C[12] __attribute__((section(".sdata")));
 extern signed char data_s8_004C02C0[12] __attribute__((section(".sdata")));
 extern signed char data_s8_004C02CC[12] __attribute__((section(".sdata")));
 extern signed char data_s8_004C10D4[12] __attribute__((section(".sdata")));
 extern void func_001E3710(u8 *,int);
 extern int func_001757E0(u8 *, int, int);
-extern int D_004BFEDC;
-extern int D_004BFEE0;
-extern int D_004BFEE4;
 extern int D_004C0198;
 extern int D_004C019C;
-extern int D_004C01A0;
-extern int D_004C01A4;
-extern int D_004C01A8;
-extern int D_004C01AC;
-extern int D_004C01BC;
-extern int D_004C01C0;
-extern int D_004C01C4;
-extern int D_004C1060;
-extern int D_004C1064;
-extern int D_004C1068;
-extern int D_004C106C;
-extern int D_004C1070;
-extern int D_004C1074;
-extern int D_004C1084;
-extern int D_004C1088;
-extern int D_004C108C;
-extern int D_004C174C;
-extern int D_004C1750;
-extern int D_004C1754;
 
 #define DEFERRED_SETUP(name,command0,table0,command1,table1,command2,table2,mode) \
 void name(u8 *p) { \
@@ -69,19 +53,19 @@ void name(u8 *p) { \
  func_001757E0(p,mode,(u8)strength); \
 }
 
-DEFERRED_SETUP(func_002168B0, 3, D_004BFEDC, 4, D_004BFEE0, 5, D_004BFEE4, 8)
-DEFERRED_SETUP(func_002169A0, 9, D_004BFEDC, 10, D_004BFEE0, 11, D_004BFEE4, 10)
-DEFERRED_SETUP(func_00233D80, 6, D_004C0198, 7, D_004C019C, 8, D_004C01A0, 9)
-DEFERRED_SETUP(func_00233E70, 3, D_004C01A4, 4, D_004C01A8, 5, D_004C01AC, 8)
-DEFERRED_SETUP(func_00233F60, 9, D_004C01A4, 10, D_004C01A8, 11, D_004C01AC, 10)
-DEFERRED_SETUP(func_002341F0, 15, D_004C01BC, 16, D_004C01C0, 17, D_004C01C4, 12)
+DEFERRED_SETUP(func_002168B0, 3, data_s8_004BFEDC[0], 4, data_s8_004BFEDC[4], 5, data_s8_004BFEDC[8], 8)
+DEFERRED_SETUP(func_002169A0, 9, data_s8_004BFEDC[0], 10, data_s8_004BFEDC[4], 11, data_s8_004BFEDC[8], 10)
+DEFERRED_SETUP(func_00233D80, 6, D_004C0198, 7, D_004C019C, 8, data_s8_004C01A0[0], 9)
+DEFERRED_SETUP(func_00233E70, 3, data_s8_004C01A0[4], 4, data_s8_004C01A0[8], 5, data_s8_004C01A0[12], 8)
+DEFERRED_SETUP(func_00233F60, 9, data_s8_004C01A0[4], 10, data_s8_004C01A0[8], 11, data_s8_004C01A0[12], 10)
+DEFERRED_SETUP(func_002341F0, 15, data_s8_004C01BC[0], 16, data_s8_004C01BC[4], 17, data_s8_004C01BC[8], 12)
 DEFERRED_SETUP(func_0023F7D0, 6, data_s8_004C02C0[0], 7, data_s8_004C02C0[4], 8, data_s8_004C02C0[8], 9)
 DEFERRED_SETUP(func_0023F8C0, 3, data_s8_004C02CC[0], 4, data_s8_004C02CC[4], 5, data_s8_004C02CC[8], 8)
 DEFERRED_SETUP(func_0023F9B0, 9, data_s8_004C02CC[0], 10, data_s8_004C02CC[4], 11, data_s8_004C02CC[8], 10)
-DEFERRED_SETUP(func_002DCBC0, 6, D_004C1060, 7, D_004C1064, 8, D_004C1068, 9)
-DEFERRED_SETUP(func_002DCCB0, 3, D_004C106C, 4, D_004C1070, 5, D_004C1074, 8)
-DEFERRED_SETUP(func_002DCDA0, 9, D_004C106C, 10, D_004C1070, 11, D_004C1074, 10)
-DEFERRED_SETUP(func_002DD030, 15, D_004C1084, 16, D_004C1088, 17, D_004C108C, 12)
+DEFERRED_SETUP(func_002DCBC0, 6, data_s8_004C1060[0], 7, data_s8_004C1060[4], 8, data_s8_004C1060[8], 9)
+DEFERRED_SETUP(func_002DCCB0, 3, data_s8_004C1060[12], 4, data_s8_004C1060[16], 5, data_s8_004C1060[20], 8)
+DEFERRED_SETUP(func_002DCDA0, 9, data_s8_004C1060[12], 10, data_s8_004C1060[16], 11, data_s8_004C1060[20], 10)
+DEFERRED_SETUP(func_002DD030, 15, data_s8_004C1084[0], 16, data_s8_004C1084[4], 17, data_s8_004C1084[8], 12)
 DEFERRED_SETUP(func_002E4B60, 9, data_s8_004C10D4[0], 10, data_s8_004C10D4[4], 11, data_s8_004C10D4[8], 10)
-DEFERRED_SETUP(func_0031BCA0, 3, D_004C174C, 4, D_004C1750, 5, D_004C1754, 8)
-DEFERRED_SETUP(func_0031BD90, 9, D_004C174C, 10, D_004C1750, 11, D_004C1754, 10)
+DEFERRED_SETUP(func_0031BCA0, 3, data_s8_004C174C[0], 4, data_s8_004C174C[4], 5, data_s8_004C174C[8], 8)
+DEFERRED_SETUP(func_0031BD90, 9, data_s8_004C174C[0], 10, data_s8_004C174C[4], 11, data_s8_004C174C[8], 10)
