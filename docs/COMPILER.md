@@ -394,3 +394,43 @@ A first Sony 2.9 probe of retail `func_001023C8` reproduced the SD/LD
 sixteen-byte layout and exact 92-byte size but differed at +0x28 in branch
 layout. It remains uncredited; the spill result alone is not a whole-function
 match. No executable or instruction substitutions are part of this audit.
+
+### Reproducible Sony setup and candidate audit
+
+After the existing private-input bootstrap, run:
+
+```sh
+. private/build.env
+"$PYTHON" tools/setup_sony29.py
+. private/sony29.env
+"$PYTHON" tools/probe_sony29.py
+```
+
+The installer downloads the checksum-pinned archive above, preserves different
+existing tools, smoke-tests the actual SD/LD sixteen-byte spill layout, and
+writes only the optional `EE29CC1` export to `private/sony29.env`. It does not
+replace `private/build.env`, Metrowerks, SN GCC, or EE GCC 2.96. `--archive PATH`
+uses a local copy of the same pinned archive.
+
+The probe tool writes `build/sony29-probes/report.json`. Its default inventory
+is conservative: at least two distinct SD saves of callee-saved registers or
+RA to contiguous sixteen-byte stack slots within the first 32 instructions,
+before the first direct jump/call. This scan is not the unprovided original
+196-function list. Supply that list as a CSV with `name,address,size` using
+`--inventory PATH` to test that exact inventory instead. Every candidate is
+reported, including those without C definitions. Available source definitions
+are compiled with unmodified Sony GCC `-O2 -G0` and `-O2 -G8`, assembled with
+SNAS, and compared as complete relocated function spans. Neither instruction
+patches nor new matching credit are applied by this tool. An exact probe must
+be isolated into an appropriate source/build unit and reverified before credit.
+
+For a registered source unit using this compiler, use the optional environment
+variable explicitly and verify the resulting object as usual:
+
+```sh
+: "${EE29CC1:?run tools/setup_sony29.py and source private/sony29.env}"
+"$WIBO" "$SNCPP" -P src/UNIT.c build/matching/UNIT.i
+"$WIBO" "$EE29CC1" build/matching/UNIT.i -O2 -G0 -ffunction-sections -quiet -o build/matching/UNIT.s
+"$WIBO" "$SNAS" -G0 -o build/matching/UNIT.o build/matching/UNIT.s
+"$PYTHON" tools/verify_object.py build/matching/UNIT.o private/SLUS_204.86.rom --source src/UNIT.c
+```

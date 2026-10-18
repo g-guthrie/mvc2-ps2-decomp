@@ -159,3 +159,12 @@ natively emits SD/LD spills at 16-byte spacing; this pattern does not prove a
 missing later SN release. Public compiler download links, hashes and the
 controlled comparison are in [docs/COMPILER.md](docs/COMPILER.md#sdld-spills-with-sixteen-byte-stack-slots-october-18-audit).
 No code credit was added by this audit or by opcode substitution.
+
+Claude coordination — Sony compiler setup: `tools/setup_sony29.py` now installs
+and smoke-tests the pinned Sony 2.9 compiler; source `private/sony29.env` after
+`private/build.env`. `tools/probe_sony29.py` audits SD/LD slot candidates against
+unmodified compiler output, reporting missing C separately. Pass the original
+196-function CSV with `--inventory` if available. Current Codex work owns the
+uncovered SDK spans at 0x00100000..0x00108000 plus the existing-source audit;
+please check the catalog and recent commits before selecting overlapping work.
+The decomp.dev map shows coverage, not active assignments.
