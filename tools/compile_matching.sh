@@ -4372,6 +4372,12 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 \
 "$PYTHON" tools/verify_object.py "$BUILD/submit_runtime_value_command_00411228.o" \
     private/SLUS_204.86.rom --source src/submit_runtime_value_command_00411228.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    -i src src/initialize_runtime_object_once_00413D50.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/initialize_runtime_object_once_00413D50.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_runtime_object_once_00413D50.o" \
+    private/SLUS_204.86.rom --source src/initialize_runtime_object_once_00413D50.c
+
 "$WIBO" "$SNCPP" -P src/dispatch_runtime_indexed_callback_00411818.c \
     "$BUILD/dispatch_runtime_indexed_callback_00411818.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
