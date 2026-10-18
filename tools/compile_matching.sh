@@ -9242,3 +9242,13 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$WIBO" "$EE29CC1" "$BUILD/side_packet_dispatch_001023C8.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/side_packet_dispatch_001023C8.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/side_packet_dispatch_001023C8.o" "$BUILD/side_packet_dispatch_001023C8.s"
 "$PYTHON" tools/verify_object.py "$BUILD/side_packet_dispatch_001023C8.o" private/SLUS_204.86.rom --source src/side_packet_dispatch_001023C8.c
+
+"$WIBO" "$SNCPP" -P src/sony29_rpc_initialize.c "$BUILD/sony29_rpc_initialize.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_initialize.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_initialize.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_initialize.o" "$BUILD/sony29_rpc_initialize.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_initialize.o" private/SLUS_204.86.rom --source src/sony29_rpc_initialize.c
+
+"$WIBO" "$SNCPP" -P src/sony29_rpc_compatibility.c "$BUILD/sony29_rpc_compatibility.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_compatibility.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_compatibility.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_compatibility.o" "$BUILD/sony29_rpc_compatibility.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_compatibility.o" private/SLUS_204.86.rom --source src/sony29_rpc_compatibility.c

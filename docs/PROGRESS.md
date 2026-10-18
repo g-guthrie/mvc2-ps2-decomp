@@ -3736,3 +3736,14 @@ catalog: 1,417,840 code bytes (43.0471%), 14,718 functions; 153,861 data bytes
 (23.7416%). Public 8126a486 has green CI and decomp.dev shows 43.03% code
 and 23.70% data from that commit. The linkage checkpoint is published early
 so parallel work can use the confirmed complete build foundation.
+
+
+Local Sony follow-on after fecb5956: initialization at 0x0010D4A0 adds 156
+exact bytes, clearing the observed fields in eight seven-word slots before its
+RPC. The three-function compatibility/query source adds 428 exact bytes at
+0x0010B298, 0x0010B770 and 0x0010B8A0, preserving signed error returns and
+native calls. All objects recompile and verify against the current catalog.
+The three-float constant at 0x004443B8 adds 12 reconstructed data bytes, with
+direct fixed component loads supporting its finite extent. Current code:
+1,418,424 bytes (43.0648%); next scheduled publication threshold from fecb5956
+is 1,450,777 bytes (44.0471%).
