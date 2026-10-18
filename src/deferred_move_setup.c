@@ -2,6 +2,9 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 extern u8 *D_004C2794;
+extern signed char data_s8_004C02C0[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C02CC[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C10D4[12] __attribute__((section(".sdata")));
 extern void func_001E3710(u8 *,int);
 extern int func_001757E0(u8 *, int, int);
 extern int D_004BFEDC;
@@ -16,12 +19,6 @@ extern int D_004C01AC;
 extern int D_004C01BC;
 extern int D_004C01C0;
 extern int D_004C01C4;
-extern int D_004C02C0;
-extern int D_004C02C4;
-extern int D_004C02C8;
-extern int D_004C02CC;
-extern int D_004C02D0;
-extern int D_004C02D4;
 extern int D_004C1060;
 extern int D_004C1064;
 extern int D_004C1068;
@@ -31,9 +28,6 @@ extern int D_004C1074;
 extern int D_004C1084;
 extern int D_004C1088;
 extern int D_004C108C;
-extern int D_004C10D4;
-extern int D_004C10D8;
-extern int D_004C10DC;
 extern int D_004C174C;
 extern int D_004C1750;
 extern int D_004C1754;
@@ -46,21 +40,21 @@ void name(u8 *p) { \
  case 0: \
   command=command0; \
   strength=0; \
-  *(int **)(p+0x408)=&table0; \
+  *(signed char **)(p+0x408)=(signed char *)&table0; \
   animation=20; \
   p[0x1bb]=0; \
   break; \
  case 1: \
   command=command1; \
   strength=1; \
-  *(int **)(p+0x408)=&table1; \
+  *(signed char **)(p+0x408)=(signed char *)&table1; \
   animation=21; \
   p[0x1bb]=1; \
   break; \
  case 2: \
   command=command2; \
   strength=2; \
-  *(int **)(p+0x408)=&table2; \
+  *(signed char **)(p+0x408)=(signed char *)&table2; \
   animation=22; \
   p[0x1bb]=2; \
   break; \
@@ -81,13 +75,13 @@ DEFERRED_SETUP(func_00233D80, 6, D_004C0198, 7, D_004C019C, 8, D_004C01A0, 9)
 DEFERRED_SETUP(func_00233E70, 3, D_004C01A4, 4, D_004C01A8, 5, D_004C01AC, 8)
 DEFERRED_SETUP(func_00233F60, 9, D_004C01A4, 10, D_004C01A8, 11, D_004C01AC, 10)
 DEFERRED_SETUP(func_002341F0, 15, D_004C01BC, 16, D_004C01C0, 17, D_004C01C4, 12)
-DEFERRED_SETUP(func_0023F7D0, 6, D_004C02C0, 7, D_004C02C4, 8, D_004C02C8, 9)
-DEFERRED_SETUP(func_0023F8C0, 3, D_004C02CC, 4, D_004C02D0, 5, D_004C02D4, 8)
-DEFERRED_SETUP(func_0023F9B0, 9, D_004C02CC, 10, D_004C02D0, 11, D_004C02D4, 10)
+DEFERRED_SETUP(func_0023F7D0, 6, data_s8_004C02C0[0], 7, data_s8_004C02C0[4], 8, data_s8_004C02C0[8], 9)
+DEFERRED_SETUP(func_0023F8C0, 3, data_s8_004C02CC[0], 4, data_s8_004C02CC[4], 5, data_s8_004C02CC[8], 8)
+DEFERRED_SETUP(func_0023F9B0, 9, data_s8_004C02CC[0], 10, data_s8_004C02CC[4], 11, data_s8_004C02CC[8], 10)
 DEFERRED_SETUP(func_002DCBC0, 6, D_004C1060, 7, D_004C1064, 8, D_004C1068, 9)
 DEFERRED_SETUP(func_002DCCB0, 3, D_004C106C, 4, D_004C1070, 5, D_004C1074, 8)
 DEFERRED_SETUP(func_002DCDA0, 9, D_004C106C, 10, D_004C1070, 11, D_004C1074, 10)
 DEFERRED_SETUP(func_002DD030, 15, D_004C1084, 16, D_004C1088, 17, D_004C108C, 12)
-DEFERRED_SETUP(func_002E4B60, 9, D_004C10D4, 10, D_004C10D8, 11, D_004C10DC, 10)
+DEFERRED_SETUP(func_002E4B60, 9, data_s8_004C10D4[0], 10, data_s8_004C10D4[4], 11, data_s8_004C10D4[8], 10)
 DEFERRED_SETUP(func_0031BCA0, 3, D_004C174C, 4, D_004C1750, 5, D_004C1754, 8)
 DEFERRED_SETUP(func_0031BD90, 9, D_004C174C, 10, D_004C1750, 11, D_004C1754, 10)

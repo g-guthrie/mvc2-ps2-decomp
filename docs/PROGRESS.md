@@ -3470,3 +3470,7 @@ Integrated nineteen complete gameplay routines totaling 2,584 bytes across fifte
 ## Runtime text callback pair
 
 Recovered the complete text callback helpers at 0x00411380 (76 bytes) and 0x004113D0 (104 bytes). Both objects verify under EE GCC 2.96 G8, preserving bounded text copies and optional callback dispatch. Code reaches 620,404 bytes (18.8361%), 9,370 functions; data remains 153,299 bytes (23.6549%).
+
+## Deferred and extended signed setup rows
+
+Recovered 48 bytes across six explicitly selected signed row owners, preserving the unreferenced prefix at 0x004C0660. All seven changed data objects and both complete setup source objects verify with their registered compiler versions. Data reaches 153,347 bytes (23.6623%), 3,042 reconstructed units; code remains 620,404 bytes (18.8361%).
