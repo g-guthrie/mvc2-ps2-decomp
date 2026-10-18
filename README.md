@@ -161,11 +161,11 @@ See the initial audit dispositions in
 recoveries in [docs/PROGRESS.md](docs/PROGRESS.md). The generated graphic and
 successful decomp.dev report are the current progress authority.
 
-The latest follow-on gameplay batch adds 14 complete functions / 3,724
+The latest follow-on gameplay batch adds 20 complete functions / 5,256
 bytes, independently compiled and checked in full. It includes the stage actor
 type dispatcher, motion/attachment state updates, related actor launch variants,
-and parent-state initialization. The catalog now credits 1,415,184 code bytes
-(42.9664%) and 153,965 data bytes (23.7577%).
+and parent-state initialization. The catalog now credits 1,416,716 code bytes
+(43.0130%) and 153,965 data bytes (23.7577%).
 
 Active assignments are explicit; map color describes coverage, not ownership.
 The workers now focus on uncovered gameplay families, with separate ranges:

@@ -3896,3 +3896,25 @@ observed aligned two-float payload. All recipes are registered in the normal
 build script, with no opcode rewriting, assembly lifts or codegen barriers.
 Catalog: 1,415,184 / 3,293,696 C code bytes (42.9664%), 14,665 credited functions,
 and unchanged 153,965 / 648,064 data bytes (23.7577%).
+
+
+The publication set also includes 0x001EA110 (296), 0x00209690 (240),
+0x002097F0 (240), 0x00349320 (244), 0x001EAB70 (244), and 0x00207C80 (268),
+bringing this checkpoint to 20 additional exact C functions / 5,256 bytes since
+d59cb58f. Root independently compiled these units, including all 14 registered
+functions in the changed y5_e.c object. New animation helper declarations use
+the existing int-returning ABI with explicit signed-byte conversions as needed;
+the owner-state indicator also uses a proper two-player array. All remain exact.
+Catalog: 1,416,716 code bytes (43.0130%), 14,671 credited functions; data remains
+153,965 bytes (23.7577%). This checkpoint publishes progress before the existing
+full-point threshold of 1,444,397 bytes, which remains the next scheduled gate.
+
+
+Final combined hybrid relink and retail ELF packing both pass for this
+43.0130% checkpoint. Loaded image SHA-256 remains
+c5206f568f068e5bd93ba47676500764c3d45719890865fa71ada10afadcd26f;
+packed retail ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+The 40 repository tests and two Sony tooling tests pass, as do catalog validation,
+report generation, shell syntax and whitespace checks. Each newly added function
+has its own full compiler/object verification in addition to that combined proof.
