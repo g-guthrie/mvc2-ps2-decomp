@@ -3660,3 +3660,7 @@ Recovered all 96 bytes at 0x0011EAA0 using the established EE GCC 2.96 pipeline,
 ## Mode and flags child constructor
 
 Recovered all 112 bytes at 0x001CB610, preserving mode initialization, inherited actor byte, unsigned flags transfer, owner pointer, callback and allocation failure. Whole-object verification passes. Code reaches 647,680 bytes (19.6642%), 9,710 functions; data remains 153,593 bytes (23.7003%).
+
+## Owner mode/timer constructor
+
+Recovered all 108 bytes at 0x00199DE0, preserving the byte mode, halfword timer, owner context, callback and allocation failure. Whole-object verification passes. Code reaches 647,788 bytes (19.6675%), 9,711 functions; data remains 153,593 bytes (23.7003%).

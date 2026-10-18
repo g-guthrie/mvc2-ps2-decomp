@@ -4881,3 +4881,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
  -o "$BUILD/create_mode_flags_child_001CB610.o"
 "$PYTHON" tools/verify_object.py "$BUILD/create_mode_flags_child_001CB610.o" \
  private/SLUS_204.86.rom --source src/create_mode_flags_child_001CB610.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/create_owner_mode_timer_00199DE0.c -c -lang c -O3 -sdatathreshold 0 \
+ -o "$BUILD/create_owner_mode_timer_00199DE0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/create_owner_mode_timer_00199DE0.o" \
+ private/SLUS_204.86.rom --source src/create_owner_mode_timer_00199DE0.c

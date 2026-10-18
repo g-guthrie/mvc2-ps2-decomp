@@ -9713,3 +9713,4 @@ func_003F3BE0,0x003F3BE0,0x54,src/wave5.c,complete
 func_00194100,0x00194100,0x6C,src/create_inherited_mode_event_00194100.c,complete
 func_0011EAA0,0x0011EAA0,0x60,src/sdk_reentrant_seek_0011EAA0.c,complete
 func_001CB610,0x001CB610,0x70,src/create_mode_flags_child_001CB610.c,complete
+func_00199DE0,0x00199DE0,0x6C,src/create_owner_mode_timer_00199DE0.c,complete
