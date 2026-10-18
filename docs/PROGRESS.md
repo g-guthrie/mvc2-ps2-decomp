@@ -3398,3 +3398,7 @@ Recovered complete functions at 0x00346030 (80 bytes), 0x001ED230 (168 bytes), a
 ## Indexed position event constructor
 
 Recovered all 144 bytes at 0x00144260, preserving indexed vector selection, callback setup and allocation failure. The incomplete external vector-pointer array adds no data-extent credit. Whole-object verification passes. Code reaches 616,764 bytes (18.7256%), 9,340 functions; data remains 152,323 bytes (23.5043%).
+
+## Four complete signed move banks
+
+Recovered 264 bytes across four banks with explicit setup pointers for every four-byte row. The shared native consumer reads signed components 0..3. All four data objects and the complete move_setup object verify exactly. Data reaches 152,587 bytes (23.5451%); code remains 616,764 bytes (18.7256%).
