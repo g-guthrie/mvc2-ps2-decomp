@@ -3652,3 +3652,7 @@ Recovered all 84 bytes at 0x003F3BE0 in the existing wave5 source object. Every 
 ## Inherited-mode event constructor
 
 Recovered all 108 bytes at 0x00194100, preserving allocator owner input, inherited context/actor fields, signed mode increment, callback and allocation failure. Whole-object verification passes. Code reaches 647,472 bytes (19.6579%), 9,708 functions; data remains 153,593 bytes (23.7003%).
+
+## Alternate SDK reentrant seek
+
+Recovered all 96 bytes at 0x0011EAA0 using the established EE GCC 2.96 pipeline, preserving wide seek arguments and error handling. Whole-object verification passes. Code reaches 647,568 bytes (19.6608%), 9,709 functions; data remains 153,593 bytes (23.7003%).
