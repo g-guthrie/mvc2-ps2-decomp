@@ -11,7 +11,7 @@ typedef struct {
     s16 h7c[2];
 } PlayerCounts;
 extern PlayerCounts *D_004C2794;
-extern u32 data_u32_00458610[4];
+extern f32 data_u32_00458610[4];
 
 void func_002A4D30(u8 *p)
 {
@@ -50,7 +50,7 @@ void func_002A4D30(u8 *p)
             else value = *(f32 *)(data_u32_00458610 + *(s8 *)(p + 0x151) * 2);
             *(f32 *)(p + 0x34) += value;
             {
-                u32 *tableY = data_u32_00458610 + 1;
+                f32 *tableY = data_u32_00458610 + 1;
                 value = *(f32 *)(tableY + *(s8 *)(p + 0x151) * 2);
             }
             *(f32 *)(p + 0x38) += value;

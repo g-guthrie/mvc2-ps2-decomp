@@ -6,9 +6,9 @@ typedef signed int s32;
 extern u16 D_004D18DC;
 extern u8 D_004D18DB;
 extern void func_001A28F0(u8 *, u8 *);
-extern void func_001A2F20(void);
+extern void func_001A2F20(u8 *, u8 *);
 extern void func_001A2B40(u8 *, u8 *);
-extern void func_001A2A40(void);
+extern void func_001A2A40(u8 *);
 extern void func_001A0880(u8 *, u8 *);
 extern void func_001A2D60(u8 *, u8 *);
 
@@ -25,7 +25,7 @@ void func_001A27A0(u8 *p, u8 *q) {
         return;
 
     if (p[5] == 0) {
-        func_001A2F20();
+        func_001A2F20(p, q);
         func_001A2B40(p, q);
         if ((s8)r[0x3A] == -1) {
             p[5]++;
@@ -39,7 +39,7 @@ void func_001A27A0(u8 *p, u8 *q) {
             p[0x13C] = 0;
             func_001A28F0(p, q);
         } else {
-            func_001A2A40();
+            func_001A2A40(p);
             func_001A0880(p, q);
             func_001A2D60(p, q);
             func_001A2B40(p, q);
