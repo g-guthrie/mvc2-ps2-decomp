@@ -15500,3 +15500,4 @@ func_00196120,0x00196120,0x134,src/owner_rebound_motion_00196120.c,complete
 func_001A5420,0x001A5420,0x170,src/w1811_x.c,complete
 func_001A09B0,0x001A09B0,0x170,src/w1811_x.c,complete
 func_001B03B0,0x001B03B0,0x15C,src/w1813_q.c,complete
+func_0036FB20,0x0036FB20,0x144,src/w198_c.c,complete
