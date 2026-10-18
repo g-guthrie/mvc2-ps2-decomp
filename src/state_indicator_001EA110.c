@@ -6,24 +6,24 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-typedef struct { u8 pad[0x7C]; s16 f7c[1]; } G4;
+typedef struct { u8 pad[0x7C]; s16 f7c[2]; } G4;
 extern G4 *D_004C2794;
 
 void func_001EA110(u8 *p)
 {
-    extern s8 func_00175700();
+    extern s32 func_00175700(u8 *);
     extern void func_001843A0();
     f32 d;
 
     switch (p[0x1FC]) {
     case 0:
     case 1:
-        if (func_00175700(p) < 0) {
+        if ((s8)func_00175700(p) < 0) {
             func_001843A0(p);
         }
         break;
     case 2:
-        if (func_00175700(p) < 0) {
+        if ((s8)func_00175700(p) < 0) {
             func_001843A0(p);
             return;
         }
