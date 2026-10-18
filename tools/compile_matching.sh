@@ -4738,3 +4738,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
  -o "$BUILD/create_owner_two_mode_event_001D2730.o"
 "$PYTHON" tools/verify_object.py "$BUILD/create_owner_two_mode_event_001D2730.o" \
  private/SLUS_204.86.rom --source src/create_owner_two_mode_event_001D2730.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/dispatch_owner_mode_0039C960.c -c -lang c -O3 -sdatathreshold 8 \
+ -o "$BUILD/dispatch_owner_mode_0039C960.o"
+"$PYTHON" tools/verify_object.py "$BUILD/dispatch_owner_mode_0039C960.o" \
+ private/SLUS_204.86.rom --source src/dispatch_owner_mode_0039C960.c
