@@ -9216,6 +9216,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/q8_ac.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/q8_ac.o"
 "$PYTHON" tools/verify_object.py "$BUILD/q8_ac.o" private/SLUS_204.86.rom --source src/q8_ac.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_indicator_001EA110.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/state_indicator_001EA110.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_indicator_001EA110.o" \
+    private/SLUS_204.86.rom --source src/state_indicator_001EA110.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/q1_g.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/q1_g.o"
 "$PYTHON" tools/verify_object.py "$BUILD/q1_g.o" private/SLUS_204.86.rom --source src/q1_g.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
