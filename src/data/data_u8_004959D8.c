@@ -1,6 +1,5 @@
-/* Held from reconstructed credit: full reachable selector coverage is unproven. */
 typedef unsigned char u8;
-/* func_00410540 extracts each nibble with andi 0xF and uses it as a byte index at 0x00410554, 0x00410574, 0x00410594, 0x004105B0, 0x004105B8, 0x004105C0, and 0x004105C8. */
+/* func_00410540 emits seven hexadecimal digits, masking each index to 0..15. */
 u8 data_u8_004959D8[16] = {
     0x30u, 0x31u, 0x32u, 0x33u, 0x34u, 0x35u, 0x36u, 0x37u,
     0x38u, 0x39u, 0x61u, 0x62u, 0x63u, 0x64u, 0x65u, 0x66u,

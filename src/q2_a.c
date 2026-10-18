@@ -424,4 +424,3 @@ typedef struct {
     u8 p0[7]; u8 f7; u8 p00[0x1C - 8]; s16 f1c; u8 p01[0x34 - 0x1E]; f32 f34; f32 f38; u8 p2[0x5C - 0x3C]; f32 f5c; f32 f60; u8 p3[4]; f32 f68; f32 f6c;
     u8 p4[0x160 - 0x70]; s8 b[10]; s8 f16a; u8 p5[0x2BC - 0x16B]; f32 f2bc;
 } P29ED;
-

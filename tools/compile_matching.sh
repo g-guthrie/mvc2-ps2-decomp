@@ -8693,6 +8693,93 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$WIBO" "$EE29CC1" "$BUILD/update_runtime_mode_state_00101D50.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/update_runtime_mode_state_00101D50.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/update_runtime_mode_state_00101D50.o" "$BUILD/update_runtime_mode_state_00101D50.s"
 "$PYTHON" tools/verify_object.py "$BUILD/update_runtime_mode_state_00101D50.o" private/SLUS_204.86.rom --source src/update_runtime_mode_state_00101D50.c
+
+"$WIBO" "$SNCPP" -P src/sony29_buffer_slot_control.c "$BUILD/sony29_buffer_slot_control.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_buffer_slot_control.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_buffer_slot_control.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_buffer_slot_control.o" "$BUILD/sony29_buffer_slot_control.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_buffer_slot_control.o" private/SLUS_204.86.rom --source src/sony29_buffer_slot_control.c
+
+
+"$WIBO" "$SNCPP" -P src/sony29_cache_line_rounding.c "$BUILD/sony29_cache_line_rounding.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_cache_line_rounding.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_cache_line_rounding.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_cache_line_rounding.o" "$BUILD/sony29_cache_line_rounding.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_cache_line_rounding.o" private/SLUS_204.86.rom --source src/sony29_cache_line_rounding.c
+
+"$WIBO" "$SNCPP" -P src/sony29_rpc_queries.c "$BUILD/sony29_rpc_queries.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_queries.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_queries.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_queries.o" "$BUILD/sony29_rpc_queries.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_queries.o" private/SLUS_204.86.rom --source src/sony29_rpc_queries.c
+
+"$WIBO" "$SNCPP" -P src/sony29_timed_semaphore_wait.c "$BUILD/sony29_timed_semaphore_wait.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_timed_semaphore_wait.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_timed_semaphore_wait.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_timed_semaphore_wait.o" "$BUILD/sony29_timed_semaphore_wait.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_timed_semaphore_wait.o" private/SLUS_204.86.rom --source src/sony29_timed_semaphore_wait.c
+
+"$WIBO" "$SNCPP" -P src/sony29_global_call_forwarder_00107AE8.c "$BUILD/sony29_global_call_forwarder_00107AE8.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_global_call_forwarder_00107AE8.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_global_call_forwarder_00107AE8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_global_call_forwarder_00107AE8.o" "$BUILD/sony29_global_call_forwarder_00107AE8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_global_call_forwarder_00107AE8.o" private/SLUS_204.86.rom --source src/sony29_global_call_forwarder_00107AE8.c
+
+"$WIBO" "$SNCPP" -P src/sony29_syscall_parameters.c "$BUILD/sony29_syscall_parameters.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_syscall_parameters.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_syscall_parameters.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_syscall_parameters.o" "$BUILD/sony29_syscall_parameters.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_syscall_parameters.o" private/SLUS_204.86.rom --source src/sony29_syscall_parameters.c
+
+"$WIBO" "$SNCPP" -P src/sony29_control_probe.c "$BUILD/sony29_control_probe.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_control_probe.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_control_probe.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_control_probe.o" "$BUILD/sony29_control_probe.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_control_probe.o" private/SLUS_204.86.rom --source src/sony29_control_probe.c
+
+"$WIBO" "$SNCPP" -P src/sony29_rpc_wait.c "$BUILD/sony29_rpc_wait.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_wait.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_wait.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_wait.o" "$BUILD/sony29_rpc_wait.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_wait.o" private/SLUS_204.86.rom --source src/sony29_rpc_wait.c
+
+"$WIBO" "$SNCPP" -P src/sony29_syscall_dispatchers.c "$BUILD/sony29_syscall_dispatchers.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_syscall_dispatchers.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_syscall_dispatchers.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_syscall_dispatchers.o" "$BUILD/sony29_syscall_dispatchers.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_syscall_dispatchers.o" private/SLUS_204.86.rom --source src/sony29_syscall_dispatchers.c
+
+"$WIBO" "$SNCPP" -P src/sony29_ring_cursor_00105088.c "$BUILD/sony29_ring_cursor_00105088.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_ring_cursor_00105088.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_ring_cursor_00105088.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_ring_cursor_00105088.o" "$BUILD/sony29_ring_cursor_00105088.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_ring_cursor_00105088.o" private/SLUS_204.86.rom --source src/sony29_ring_cursor_00105088.c
+
+"$WIBO" "$SNCPP" -P src/sony29_rpc_result.c "$BUILD/sony29_rpc_result.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_result.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_result.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_result.o" "$BUILD/sony29_rpc_result.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_result.o" private/SLUS_204.86.rom --source src/sony29_rpc_result.c
+
+"$WIBO" "$SNCPP" -P src/sony29_varargs_forwarder_00105E48.c "$BUILD/sony29_varargs_forwarder_00105E48.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_varargs_forwarder_00105E48.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_varargs_forwarder_00105E48.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_varargs_forwarder_00105E48.o" "$BUILD/sony29_varargs_forwarder_00105E48.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_varargs_forwarder_00105E48.o" private/SLUS_204.86.rom --source src/sony29_varargs_forwarder_00105E48.c
+
+"$WIBO" "$SNCPP" -P src/sony29_varargs_handler_00105E80.c "$BUILD/sony29_varargs_handler_00105E80.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_varargs_handler_00105E80.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_varargs_handler_00105E80.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_varargs_handler_00105E80.o" "$BUILD/sony29_varargs_handler_00105E80.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_varargs_handler_00105E80.o" private/SLUS_204.86.rom --source src/sony29_varargs_handler_00105E80.c
+
+"$WIBO" "$SNCPP" -P src/write_gs_register_packet_00100908.c "$BUILD/write_gs_register_packet_00100908.i"
+"$WIBO" "$EE29CC1" "$BUILD/write_gs_register_packet_00100908.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/write_gs_register_packet_00100908.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/write_gs_register_packet_00100908.o" "$BUILD/write_gs_register_packet_00100908.s"
+"$PYTHON" tools/verify_object.py "$BUILD/write_gs_register_packet_00100908.o" private/SLUS_204.86.rom --source src/write_gs_register_packet_00100908.c
+
+"$WIBO" "$SNCPP" -P src/sony29_clear_flag_00106898.c "$BUILD/sony29_clear_flag_00106898.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_clear_flag_00106898.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_clear_flag_00106898.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_clear_flag_00106898.o" "$BUILD/sony29_clear_flag_00106898.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_clear_flag_00106898.o" private/SLUS_204.86.rom --source src/sony29_clear_flag_00106898.c
+
+"$WIBO" "$SNCPP" -P src/sony29_guarded_rpc.c "$BUILD/sony29_guarded_rpc.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_guarded_rpc.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_guarded_rpc.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_guarded_rpc.o" "$BUILD/sony29_guarded_rpc.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_guarded_rpc.o" private/SLUS_204.86.rom --source src/sony29_guarded_rpc.c
+
+"$WIBO" "$SNCPP" -P src/sony29_event_callbacks.c "$BUILD/sony29_event_callbacks.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_event_callbacks.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_event_callbacks.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_event_callbacks.o" "$BUILD/sony29_event_callbacks.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_event_callbacks.o" private/SLUS_204.86.rom --source src/sony29_event_callbacks.c
+
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/L0_c.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/L0_c.o"
 "$PYTHON" tools/verify_object.py "$BUILD/L0_c.o" private/SLUS_204.86.rom --source src/L0_c.c
@@ -10102,3 +10189,43 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/w189_l.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/w189_l.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w189_l.o" private/SLUS_204.86.rom --source src/w189_l.c
+
+"$WIBO" "$SNCPP" -P src/sony29_message_dispatch.c "$BUILD/sony29_message_dispatch.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_message_dispatch.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_message_dispatch.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_message_dispatch.o" "$BUILD/sony29_message_dispatch.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_message_dispatch.o" private/SLUS_204.86.rom --source src/sony29_message_dispatch.c
+
+"$WIBO" "$SNCPP" -P src/sony29_handler_registration.c "$BUILD/sony29_handler_registration.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_handler_registration.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_handler_registration.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_handler_registration.o" "$BUILD/sony29_handler_registration.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_handler_registration.o" private/SLUS_204.86.rom --source src/sony29_handler_registration.c
+
+"$WIBO" "$SNCPP" -P src/side_packet_dispatch_001023C8.c "$BUILD/side_packet_dispatch_001023C8.i"
+"$WIBO" "$EE29CC1" "$BUILD/side_packet_dispatch_001023C8.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/side_packet_dispatch_001023C8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/side_packet_dispatch_001023C8.o" "$BUILD/side_packet_dispatch_001023C8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/side_packet_dispatch_001023C8.o" private/SLUS_204.86.rom --source src/side_packet_dispatch_001023C8.c
+
+"$WIBO" "$SNCPP" -P src/sony29_rpc_initialize.c "$BUILD/sony29_rpc_initialize.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_initialize.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_initialize.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_initialize.o" "$BUILD/sony29_rpc_initialize.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_initialize.o" private/SLUS_204.86.rom --source src/sony29_rpc_initialize.c
+
+"$WIBO" "$SNCPP" -P src/sony29_rpc_compatibility.c "$BUILD/sony29_rpc_compatibility.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_compatibility.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_compatibility.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_compatibility.o" "$BUILD/sony29_rpc_compatibility.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_compatibility.o" private/SLUS_204.86.rom --source src/sony29_rpc_compatibility.c
+
+"$WIBO" "$SNCPP" -P src/record_threshold_poll_00102498.c "$BUILD/record_threshold_poll_00102498.i"
+"$WIBO" "$EE29CC1" "$BUILD/record_threshold_poll_00102498.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/record_threshold_poll_00102498.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/record_threshold_poll_00102498.o" "$BUILD/record_threshold_poll_00102498.s"
+"$PYTHON" tools/verify_object.py "$BUILD/record_threshold_poll_00102498.o" private/SLUS_204.86.rom --source src/record_threshold_poll_00102498.c
+
+"$WIBO" "$SNCPP" -P src/sony29_word_copies.c "$BUILD/sony29_word_copies.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_word_copies.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_word_copies.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_word_copies.o" "$BUILD/sony29_word_copies.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_word_copies.o" private/SLUS_204.86.rom --source src/sony29_word_copies.c
+
+"$WIBO" "$SNCPP" -P src/sony29_wait_idle.c "$BUILD/sony29_wait_idle.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_wait_idle.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_wait_idle.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_wait_idle.o" "$BUILD/sony29_wait_idle.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_wait_idle.o" private/SLUS_204.86.rom --source src/sony29_wait_idle.c

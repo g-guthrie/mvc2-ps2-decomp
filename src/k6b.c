@@ -26,9 +26,9 @@ void func_003FDE88(void) {
     while (!D_004C2348) {
         D_004C22F8++;
         D_004C22E0 = 1;
-        func_00411A30(); __asm__ volatile("");
-        D_004C22E0 = 0; __asm__ volatile("");
-        func_003FE170(); __asm__ volatile("");
+        func_00411A30();
+        D_004C22E0 = 0;
+        func_003FE170();
     }
     D_004C2350 = 1;
     func_00103C20();

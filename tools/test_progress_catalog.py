@@ -4,6 +4,7 @@ from pathlib import Path
 
 from tools.objdiff_report import load_matches
 from tools.verify_object import load_matches as load_compiler_matches
+from tools.validate_progress_catalog import validate_source_credit
 
 from tools.progress_catalog import (
     DATA_BEGIN,
@@ -19,6 +20,39 @@ from tools.progress_catalog import (
 
 
 class ProgressCatalogTest(unittest.TestCase):
+    def test_instruction_stream_cannot_receive_c_credit(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "mixed.c").write_text(
+                '#define FN(name, body) __asm__(body)\n'
+                'FN(func_00100000, "jr $31\\n");\n'
+                'int func_00100010(void) { return 1; }\n'
+            )
+            # Genuine C in the same translation unit remains eligible.
+            validate_source_credit({"func_00100010": {"source": "mixed.c"}}, root)
+            with self.assertRaisesRegex(SystemExit, "assembly instruction stream credited as C"):
+                validate_source_credit({"func_00100000": {"source": "mixed.c"}}, root)
+            # Correctly classified placeholders are filtered by the report loader.
+            catalog = root / "matches.csv"
+            catalog.write_text(
+                'name,address,size,source,status\n'
+                'func_00100000,0x00100000,0x4,mixed.c,placeholder\n'
+                'func_00100010,0x00100010,0x4,mixed.c,complete\n'
+            )
+            validate_source_credit(load_matches(catalog), root)
+
+    def test_required_cpu_operation_retains_credit(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "src").mkdir()
+            (root / "src/k2s.c").write_text(
+                '#define FN(name, body) __asm__(body)\n'
+                'FN(func_001048B0, "mfc0 $2,$12\\n");\n'
+            )
+            validate_source_credit(
+                {"func_001048B0": {"source": "src/k2s.c"}}, root
+            )
+
     def test_assembly_placeholder_gets_no_code_credit(self):
         with tempfile.TemporaryDirectory() as directory:
             catalog = Path(directory) / "matches.csv"

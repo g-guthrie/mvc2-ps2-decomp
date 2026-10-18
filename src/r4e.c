@@ -54,7 +54,6 @@ void func_004062F8(s32 a) {
     func_004061C0(a);
     if (func_004063B0(a, n) == 1) { func_0011D740(D_0062FD48, a, n + 1); return; }
     func_00405DC8(D_004BC978);
-    __asm__ volatile("");
   }
 }
 

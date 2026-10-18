@@ -486,3 +486,36 @@ state-parameter updates. Its O2/G0 object was independently recompiled and
 compared. The six new functions total 584 bytes; their isolated compiled
 sections reproduce the same loaded-image and packed-ELF hashes. This batch
 proof does not claim a full current-main compiler rebuild.
+
+### Sony 2.9 variadic argument stream
+
+The two logger wrappers use the target MIPS EABI argument-save layout. With
+one named argument, seven eight-byte GP argument slots precede the overflow
+stack cursor: `(register_word *)__builtin_next_arg(context) - 7` selects that
+save area. The compiler-generated 144-byte frame stores a1 through t3 at
+frame offsets 88 through 136; offset 144 is the caller's overflow-argument
+area. The native consumer advances by eight bytes, including beyond the
+seven saved registers. No manual register binding or opcode rewriting is used.
+This agrees with the EABI GP offset computation in the
+[GCC MIPS va_start implementation](https://gcc.gnu.org/legacy-ml/gcc-patches/1999-09n/msg00347.html)
+and the compiler's documented
+[varargs support](https://gcc.gnu.org/onlinedocs/gcc-2.95.3/gcc_17.html).
+Whole-object verification covers the actual Sony prologues and forwarding.
+The logger's void return declaration is shared by its recovered C callers.
+
+### Internal function-section references
+
+Sony's assembler can encode local calls and function pointers using unnamed
+STT_SECTION symbols. The object verifier now resolves these from consistent
+known-address anchors, matching the linker’s existing address calculation.
+Inference is limited to selected executable function sections whose entire
+section equals the declared, expected function span. Unselected sections,
+extra pool/padding bytes, missing addresses, and conflicting bases cannot
+supply an inferred anchor. Ordinary function sizes and final relocated-byte
+comparison remain mandatory. Tests cover successful local calls, distinct
+HI/LO keys, missing anchors, conflicting bases and extra section bytes.
+
+The three routines in `sony29_event_callbacks.c` exercise this path: lazy event
+registration, callback/argument replacement with interrupt-state restoration,
+and guarded callback dispatch. All three complete bodies verify directly
+against retail with unchanged Sony compiler and assembler output.

@@ -2,6 +2,7 @@
 """Fail if code/data catalogs would publish lying decomp.dev stats."""
 
 import csv
+import re
 from pathlib import Path
 
 from tools.objdiff_report import load_data_matches, load_functions, load_matches
@@ -13,6 +14,30 @@ from tools.progress_catalog import (
     validate_code_catalog,
     validate_data_catalog,
 )
+
+
+# These small COP0 primitives fall under DECOMP.md's required CPU-operation
+# exception. Other instruction-stream lifts must remain placeholders.
+CPU_ASSEMBLY_PRIMITIVES = {
+    ("src/s0h.c", "func_0010CA20"),
+    ("src/k5h.c", "func_0010CA68"),
+    ("src/k2s.c", "func_001048B0"),
+}
+
+
+def validate_source_credit(matches, root=Path(".")):
+    """Reject credited instruction streams using the repository's FN macro."""
+    by_source = {}
+    for name, row in matches.items():
+        by_source.setdefault(row["source"], set()).add(name)
+    for source, credited in by_source.items():
+        text = (root / source).read_text()
+        if not re.search(r"#define\s+FN\([^\n]*__asm__", text):
+            continue
+        lifted = set(re.findall(r"^\s*FN\(\s*(func_[0-9A-Fa-f]{8})\s*,", text, re.MULTILINE))
+        for name in sorted(credited & lifted):
+            if (source, name) not in CPU_ASSEMBLY_PRIMITIVES:
+                raise SystemExit(f"assembly instruction stream credited as C: {name} ({source})")
 
 
 def main() -> None:
@@ -35,6 +60,7 @@ def main() -> None:
     }:
         if not Path(source).is_file():
             raise SystemExit(f"catalog source missing: {source}")
+    validate_source_credit(matches)
     print(
         f"catalog ok: linked code {complete_code}/{TEXT_SIZE} "
         f"({complete_code * 100.0 / TEXT_SIZE:.4f}%), "

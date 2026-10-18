@@ -3672,3 +3672,171 @@ Recovered all 160 bytes at 0x001004E0 with Sony EE GCC 2.9-991111 `-O2 -G0 -ffun
 Recovered all 160 bytes at 0x00101D50 with Sony EE GCC 2.9-991111 `-O2 -G0 -ffunction-sections`. The routine transitions a runtime mode, releases an existing mode before replacing it, stores the returned parameter and reports the previous state. Its unmodified compiler/assembler object matches the complete retail function.
 
 Combined public-main Sony checkpoint after overlap reconciliation: six newly recovered functions, 584 bytes, independently compiled without opcode substitutions and linked as isolated replacements into the exact retail image. Current catalog: 1,342,072 code bytes (40.7467%), 14,416 functions. Worker-local percentages above reflect older bases.
+
+Local Sony follow-on: the enabled buffer-slot byte setter (100 bytes) and two cache-line alignment wrappers (20 bytes each) pass independent unpatched compiler/object verification. The nine-function Sony batch (724 bytes) reproduces the exact image/packed ELF when linked as isolated replacements; other spans remain retail in this batch proof. Local catalog: 1,342,212 bytes (40.7509%), 14,419 functions. Last public checkpoint remains 09d6665d; next scheduled push threshold is 1,375,009 verified code bytes (41.7467%).
+
+Local Sony checkpoint: four RPC command helpers (408 bytes), timed semaphore wait (104 bytes), and four SDK wrappers (132 bytes) add 644 independently verified bytes. The 18-function Sony batch now totals 1,368 bytes and its isolated compiled sections reproduce the retail loaded image and packed ELF, while other spans remain retail in this batch proof. Local catalog: 1,342,856 bytes (40.7705%), 14,428 functions. Public checkpoint remains 09d6665d; next scheduled push threshold remains 1,375,009 code bytes.
+
+Local Sony checkpoint: control-state probe (104 bytes), RPC wait/query helper (108 bytes), four syscall record wrappers (156 bytes) and ring-cursor update (60 bytes) add 428 independently verified bytes. The 25-function Sony batch totals 1,796 bytes and reproduces the loaded image and packed ELF as isolated replacements. Local catalog: 1,343,284 bytes (40.7835%), 14,435 functions. A separate full compiler/link pass is running on frozen snapshot 898a3cbd; this note does not claim its completion. Next push threshold remains 1,375,009 code bytes.
+
+Recovered all 188 bytes at 0x00100908 with Sony EE GCC 2.9-991111 `-O2 -G0 -ffunction-sections`. The routine routes a five-word GS packet to one of two register maps based on the stored system version. Its unmodified compiler/assembler object matches the complete retail function.
+
+Local Sony checkpoint: RPC result helper (108 bytes), two ABI-reviewed variadic wrappers (56 and 96 bytes), GS packet writer (188 bytes), and flag clear (28 bytes) add 476 exact bytes. The 30-function Sony batch totals 2,272 bytes and reproduces the loaded image and packed ELF as isolated replacements. Logger declarations were aligned with the recovered void-return wrapper and recompiled exactly. Local catalog: 1,343,760 bytes (40.7979%), 14,440 functions. The frozen full compiler/link pass remains in progress; next push threshold remains 1,375,009 code bytes.
+
+Local Sony checkpoint: four guarded RPC routines add 448 exact bytes, preserving initialization rejection, four-byte transfer sizes, and unsigned failure sentinels. All 34 Sony functions (2,720 bytes) reproduce the loaded image and packed ELF as isolated replacements. Local catalog: 1,344,208 bytes (40.8115%), 14,444 functions. The separate frozen full build remains in progress. Next push threshold remains 1,375,009 code bytes.
+
+Local Sony checkpoint: four parameterized RPC operations add 496 exact bytes. The eight-function guarded RPC source verifies in full; the 38-function Sony batch totals 3,216 bytes and reproduces the loaded image and packed ELF as isolated replacements. Local catalog: 1,344,704 bytes (40.8266%), 14,448 functions. The frozen full build remains in progress. Next push threshold remains 1,375,009 code bytes.
+
+Local pre-reconciliation callback checkpoint: the three event callback routines add 296 exact bytes. Their internal references require the ownership-checked section resolver, with missing/ambiguous/padded-anchor rejection tests. This local catalog is 1,345,000 bytes (40.8356%), prior to incorporating the parallel wave-16 additions. All initialized-data objects in the frozen full build have passed; its remaining code checks are active.
+
+
+Reconciled Sony / wave-16 publication: independently compiled all 150 incoming
+source files (261 functions), then reverified their objects against the combined
+symbol map. No duplicate credited names or conflicting shared addresses were
+found. The 41-function Sony batch (3,512 bytes) reproduces the loaded retail
+image and packed ELF; this is an isolated replacement proof, while the frozen
+full compiler/link run remains active. Combined catalog: 1,417,244 code bytes
+(43.0290%), 14,712 functions, 153,593 data bytes (23.7003%). All 38 repository
+tests and two Sony tool tests pass. Next scheduled Codex code publication is
+1,450,181 verified bytes (44.0290%), subject to fresh parallel reconciliation.
+
+
+Local follow-on: two Sony message-dispatch helpers add 148 exact code bytes.
+The third related helper still differs and remains uncredited. Recovered the
+256-byte lookup at 0x004B6A68 after confirming func_001E3BB0 truncates its
+index to an unsigned byte; the 32-byte prefix and 152-byte suffix retain
+placeholder status. All three split data objects verify against retail.
+Local catalog: 1,417,392 code bytes (43.0335%), 153,849 data bytes (23.7398%).
+The updated conservative Sony audit found C for 27 of 173 candidates and
+38 exact compiler/source/flag profiles, including alternative flag profiles;
+this does not establish the original claimed set of 196 functions.
+
+Local Sony handler registration: 0x0010C1A8 (96 bytes) and 0x0010C208 (132 bytes) match unmodified Sony O2/G0 output. The latter preserves the 1..13 index check, prior-handler return and different registration calls for indices 1..3. Combined code reaches 1,417,620 bytes (43.0404%).
+
+Local Sony RPC shutdown: all 128 bytes at 0x0010D540 match. The recovered helper returns the server response and clears the initialized flag only after a response of one. All five functions in the grouped query object reverify exactly; code reaches 1,417,748 bytes (43.0443%).
+
+
+Full linkage checkpoint: frozen snapshot 898a3cbd completed `make hybrid`,
+including all registered compiler recipes and initialized-data objects. Its
+loaded image and packed retail ELF match exactly. The current combined catalog
+was then linked using those verified objects plus independently recompiled
+wave-16 and later Sony/data additions. All current source changes since the
+snapshot were covered by those compiler passes. Current hybrid linkage and
+packed ELF are exact as well: loaded SHA-256
+c5206f568f068e5bd93ba47676500764c3d45719890865fa71ada10afadcd26f;
+packed ELF SHA-256
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+This remains a hybrid reconstruction: unrecovered spans are retail bytes.
+
+The 92-byte side-packet dispatcher now matches natural C after retaining its
+common result epilogue. Sony recoveries total 47 functions / 4,108 bytes.
+A separate 12-byte native three-float position vector is now reconstructed,
+with both observed consumers reading exactly its three components. Current
+catalog: 1,417,840 code bytes (43.0471%), 14,718 functions; 153,861 data bytes
+(23.7416%). Public 8126a486 has green CI and decomp.dev shows 43.03% code
+and 23.70% data from that commit. The linkage checkpoint is published early
+so parallel work can use the confirmed complete build foundation.
+
+
+Local Sony follow-on after fecb5956: initialization at 0x0010D4A0 adds 156
+exact bytes, clearing the observed fields in eight seven-word slots before its
+RPC. The three-function compatibility/query source adds 428 exact bytes at
+0x0010B298, 0x0010B770 and 0x0010B8A0, preserving signed error returns and
+native calls. All objects recompile and verify against the current catalog.
+The three-float constant at 0x004443B8 adds 12 reconstructed data bytes, with
+direct fixed component loads supporting its finite extent. Current code:
+1,418,424 bytes (43.0648%); next scheduled publication threshold from fecb5956
+is 1,450,777 bytes (44.0471%).
+
+
+Local callback and data follow-on: the 160-byte event completion callback at
+0x0010E6D0 now matches with volatile shared state and the correct integer-return
+semaphore syscall declaration. All four functions in its grouped source verify
+in full. The 132-byte record-threshold poll also matches after aligning its
+logger declaration with the recovered variadic void function. Fixed vectors at
+0x004B8290, 0x004454F8, 0x00442590 and 0x00443E2C are reconstructed from direct
+component consumers; split padding remains placeholder. Current catalog before
+the assembly-credit audit: 1,418,716 code bytes (43.0737%), 14,724 functions;
+153,921 data bytes (23.7509%). A fresh full combined link passed immediately
+before the event callback and final vector addition; their objects pass exact
+verification and will be included in the next full link.
+
+
+The additional fixed records at 0x004443D0 (four floats) and 0x004B1E38
+(three floats) now compile and verify in their split data units. Both have
+direct native consumers of exactly those components; surrounding prefixes
+and zero suffixes remain placeholders. Reconstructed initialized data reaches
+153,949 bytes (23.7552%) before the assembly-credit audit. The code catalog
+is unchanged by this data work.
+
+
+Assembly-credit correction: the audit found 56 whole-function FN instruction
+streams (6,048 bytes). Retained the 112 bytes of existing COP0 status/interrupt
+primitives under the explicit CPU-operation exception, including the tightly
+coupled DI/SYNC/status-poll sequence. Demoted the other 53 streams (5,936 bytes),
+plus the 20-byte vector-subtraction and two NOP spin/delay implementations
+(364 bytes). Total correction: 56 functions / 6,320 bytes. Sources and compiler
+recipes remain intact for exact hybrid linkage, but these placeholders earn
+zero C credit. docs/ASSEMBLY_CREDIT_AUDIT.csv records the initial disposition.
+A report gate catches this repository's whole-function FN assembly convention;
+its negative control failed on the formerly credited vector stream. Genuine C
+neighbors and correctly classified placeholders pass. All 39 repository tests
+and two Sony tool tests pass. Empty optimizer barriers are being reverified
+separately; this is not a claim that those source constraints are resolved.
+
+
+Replaced four obsolete assembly copies (0x0010C2A0, 0x0010CAD8,
+0x0010CD08 and 0x0010D128) with natural C loops compiled by Sony 2.9 O2/G0.
+All four complete 56-byte functions verify independently; deleted their old FN
+bodies and registered the new grouped source. These restore 224 bytes of valid
+C credit after the audit correction; they are not newly discovered executable
+bytes. Code now reaches 1,412,620 bytes (42.8886%) before resolving the empty
+barrier audit. The separate non-FN barrier cleanup is still in progress.
+
+
+Recovered the previously held 160-byte wait/query helper at 0x0010F148 with
+unmodified Sony O2/G0 output. Its blocking path waits on the shared busy state
+or RPC activity, while the query path returns a boolean. Correct volatile
+state and the recovered void variadic logger declaration preserve the target
+operations; a combined query condition reproduces its branches. The final
+formatted source recompiled and passed full-byte verification. Local code is
+1,412,780 bytes (42.8935%), before the pending compiler-barrier audit.
+
+
+Recovered the full 16-byte ASCII hexadecimal digit table at 0x004959D8.
+`func_00410540` masks each of its seven lookup indices to a nibble, establishing
+complete coverage of entries 0..15; its existing exact object and the compiled
+data object both verify against the private target. Reconstructed data reaches
+153,965 bytes (23.7577%).
+
+
+Completed the optimizer-constraint audit: 42 empty-asm statements across 37
+functions were tested without those constraints, using existing recipes.
+Five statements could be removed from three functions (412 bytes), preserving
+all selected functions in their objects. The other 34 functions (3,232 bytes)
+and the 96-byte unused register-pin dependency are now placeholders. Root
+independently recompiled the three changed full objects and all passed exact
+verification. Supported prototype corrections were tested, but did not solve
+the remaining functions under those profiles. Further real compiler-profile
+probes are assigned explicitly in README. All 162 MWCC kernel syscall wrappers
+were recompiled exactly and retain the required CPU-operation exception.
+
+Corrected publication catalog: 1,409,452 / 3,293,696 code bytes (42.7924%),
+14,638 credited functions, and 153,965 / 648,064 reconstructed data bytes
+(23.7577%). Sony recovery totals 58 complete C functions / 5,368 bytes, including
+four replacements of formerly miscredited assembly. The 173-span probe now has
+40 C definitions and 53 exact compiler/source/flag profiles; 133 spans still lack
+C definitions. This does not claim verification of the unavailable original
+196-function list. Whole-function sizes and relocated-byte checks stay strict.
+
+
+Final correction gates passed: all 40 repository tests and two Sony tool tests,
+catalog/report generation, and the current full combined hybrid/packed-image
+checks. The loaded image remains SHA-256
+c5206f568f068e5bd93ba47676500764c3d45719890865fa71ada10afadcd26f;
+the packed retail ELF remains SHA-256
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+Physical assembly replacements remain in that hybrid proof but earn zero C
+credit where classified placeholder. The corrected publication checkpoint is
+1,409,452 code bytes; the next scheduled code push threshold is 1,442,389 bytes
+(43.7924%), subject to reconciliation with parallel verified work.
