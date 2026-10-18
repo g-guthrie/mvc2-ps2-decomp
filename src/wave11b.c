@@ -78,6 +78,12 @@ void func_001A72C0(u8 *a, u8 *b) {
     if (b[0x169] != 0x13) a[4]++;
     else D_004BF790[a[5]](a, b);
 }
+extern void (*D_004C2158[2])(u8 *, u8 *) __attribute__((section(".sdata")));
+void func_003C4550(u8 *a, u8 *b) {
+    *(s8 *)(a + 0x24) = *(s8 *)(b + 0x24);
+    if (b[0x169] != 0x16) a[4]++;
+    else D_004C2158[a[5]](a, b);
+}
 
 extern void func_003DAA40(u8 *);
 void func_0013DEC0(u8 *p) {
