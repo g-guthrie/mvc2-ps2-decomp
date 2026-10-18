@@ -5016,8 +5016,8 @@ data_zero_00488390,0x00488390,0xC88,.data,src/data/data_zero_00488390.c,zero_ini
 data_s32_00489018,0x00489018,0x4,.data,src/data/data_s32_00489018.c,int32_scalar
 data_zero_0048901C,0x0048901C,0x184,.data,src/data/data_zero_0048901C.c,zero_initialized_untyped
 data_u32_004891A0,0x004891A0,0xC,.data,src/data/data_u32_004891A0.c,initialized_u32_table
-data_s32_004891AC,0x004891AC,0x4,.data,src/data/data_s32_004891AC.c,int32_scalar
-data_s32_004891B0,0x004891B0,0x4,.data,src/data/data_s32_004891B0.c,int32_scalar
+data_callback_004891AC,0x004891AC,0x4,.data,src/data/data_callback_004891AC.c,message_callback_pointer
+data_ptr_004891B0,0x004891B0,0x4,.data,src/data/data_ptr_004891B0.c,context_pointer
 data_u32_004891B4,0x004891B4,0x4,.data,src/data/data_u32_004891B4.c,uint32_scalar
 jtbl_004891B8,0x004891B8,0xC,.rodata,src/data/jtbl_004891B8.c,jump_table
 jtbl_004891C8,0x004891C8,0x14,.rodata,src/data/jtbl_004891C8.c,jump_table

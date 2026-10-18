@@ -3298,3 +3298,7 @@ Integrated complete 188-byte timed control decay and 144-byte paired velocity re
 ## Runtime backend integration
 
 Integrated four complete runtime helpers totaling 416 bytes: grid update, effect initialization, animation initialization and two-state animation dispatch. Corrected the installed effect callback declaration to its two-pointer contract. Whole-object verification passes. Code is 612,452 bytes (18.5947%), 9,306 functions; data remains 152,018 bytes (23.4573%).
+
+## Fixed runtime field integration
+
+Recovered accessor-proven runtime fields, preserving surrounding raw owners. Callback and context fields at 0x004891AC/B0 use the current pointer contracts rather than stale integer declarations. Data is 152,051 bytes (23.4623%) across 2,966 reconstructed units; code remains 612,452 bytes (18.5947%).
