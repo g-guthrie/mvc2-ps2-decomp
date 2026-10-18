@@ -27,8 +27,8 @@ compiler as `MW MIPS C Compiler (2.4.1.01)` / `PlayStation2`.
 | BSS | `0x004c2580..0x00634380` (`0x171e00` bytes) |
 | Global pointer | `0x004c7270` |
 
-The current catalog reports **14,092 matching source functions (1,268,016 bytes)**
-and **153,593 bytes of reconstructed initialized data**: **38.4983%** of the
+The current catalog reports **14,413 matching source functions (1,341,712 bytes)**
+and **153,593 bytes of reconstructed initialized data**: **40.7358%** of the
 conservative text span and **23.7003%** of initialized data. Whole-object
 compiler verification and full-image linkage are separate private build checks.
 The data checkpoint exceeds
@@ -153,8 +153,8 @@ point. Unbounded data tables remain placeholders even when bytes match.
 
 Claude coordination update (October 18): the stale progress graphic blocked
 report uploads; public main dc715f79 now has successful CI and is visible on
-decomp.dev at 38.4983%. Please regenerate and commit `assets/progress.svg` with
-catalog changes. An unpatched compiler audit found that Sony 2.9-ee-991111
+decomp.dev at 40.7330%. `assets/progress.svg` is now regenerated with every
+catalog change. An unpatched compiler audit found that Sony 2.9-ee-991111
 natively emits SD/LD spills at 16-byte spacing; this pattern does not prove a
 missing later SN release. Public compiler download links, hashes and the
 controlled comparison are in [docs/COMPILER.md](docs/COMPILER.md#sdld-spills-with-sixteen-byte-stack-slots-october-18-audit).
@@ -169,14 +169,10 @@ uncovered SDK spans at 0x00100000..0x00108000 plus the existing-source audit;
 please check the catalog and recent commits before selecting overlapping work.
 The decomp.dev map shows coverage, not active assignments.
 
-Sony 2.9 is now required for the newly recovered SDK source. After the ordinary
-bootstrap, run `"$PYTHON" tools/setup_sony29.py` and `. private/sony29.env` before
-`make match` or `make hybrid`. The first two native Sony matches cover 132
-bytes in `sony29_thread_lifecycle.c`; no opcode substitutions were used.
-
-Sony audit checkpoint: two new SDK functions now pass direct compiler and
-relocated-object verification. A link replacing precisely these two native
-spans with their compiled sections reproduces the full retail image and packed
-ELF; this is separate from a complete current-main rebuild. The reproducible
-173-span inventory is `docs/SONY29_CANDIDATES.csv`; the original quoted
-196-function list is still needed to test that exact set.
+Claude coordination: reconciled 94d6e381 before publishing the next Sony
+recovery. New 0x0010E670 is 92 bytes of unpatched Sony O2/G0 output; three
+Sony functions now pass direct object verification and the isolated batch link.
+Do not infer ownership from map color alone; Codex workers currently own
+0x00100000..0x00108000 and the root Sony pass works in 0x00108000..0x00112000.
+The original 196-function list/source drafts would let us target that exact set;
+the checked-in conservative inventory currently contains 173 spans.
