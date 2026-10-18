@@ -4362,6 +4362,16 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 \
 "$PYTHON" tools/verify_object.py "$BUILD/dispatch_runtime_text_pair_callback_004113D0.o" \
     private/SLUS_204.86.rom --source src/dispatch_runtime_text_pair_callback_004113D0.c
 
+"$WIBO" "$SNCPP" -P src/submit_runtime_value_command_00411228.c \
+    "$BUILD/submit_runtime_value_command_00411228.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 \
+    "$BUILD/submit_runtime_value_command_00411228.i" \
+    "$BUILD/submit_runtime_value_command_00411228.s"
+"$WIBO" "$SNAS" -G8 -o "$BUILD/submit_runtime_value_command_00411228.o" \
+    "$BUILD/submit_runtime_value_command_00411228.s"
+"$PYTHON" tools/verify_object.py "$BUILD/submit_runtime_value_command_00411228.o" \
+    private/SLUS_204.86.rom --source src/submit_runtime_value_command_00411228.c
+
 "$WIBO" "$SNCPP" -P src/dispatch_runtime_indexed_callback_00411818.c \
     "$BUILD/dispatch_runtime_indexed_callback_00411818.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \

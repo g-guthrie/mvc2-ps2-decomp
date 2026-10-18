@@ -9375,3 +9375,4 @@ func_00411380,0x00411380,0x4C,src/dispatch_runtime_text_callback_00411380.c,comp
 func_004113D0,0x004113D0,0x68,src/dispatch_runtime_text_pair_callback_004113D0.c,complete
 func_00222D80,0x00222D80,0xA4,src/accepted_transition_resets.c,complete
 func_00243800,0x00243800,0xA4,src/accepted_transition_resets.c,complete
+func_00411228,0x00411228,0x44,src/submit_runtime_value_command_00411228.c,complete
