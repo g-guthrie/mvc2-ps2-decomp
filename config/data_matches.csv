@@ -7391,7 +7391,11 @@ data_u32_004BFE80,0x004BFE80,0x48,src/data/data_u32_004BFE80.c,complete,placehol
 jtbl_004BFEC8,0x004BFEC8,0x8,src/data/jtbl_004BFEC8.c,complete,reconstructed
 data_u32_004BFED0,0x004BFED0,0x30,src/data/data_u32_004BFED0.c,complete,placeholder
 jtbl_004BFF00,0x004BFF00,0x28,src/data/jtbl_004BFF00.c,complete,reconstructed
-data_u32_004BFF30,0x004BFF30,0x40,src/data/data_u32_004BFF30.c,complete,placeholder
+data_u32_004BFF30,0x004BFF30,0x4,src/data/data_u32_004BFF30.c,complete,placeholder
+data_s8_004BFF34,0x004BFF34,0x4,src/data/data_s8_004BFF34.c,complete,reconstructed
+data_s8_004BFF38,0x004BFF38,0x4,src/data/data_s8_004BFF38.c,complete,reconstructed
+data_s8_004BFF3C,0x004BFF3C,0x4,src/data/data_s8_004BFF3C.c,complete,reconstructed
+data_u32_004BFF40,0x004BFF40,0x30,src/data/data_u32_004BFF40.c,complete,placeholder
 jtbl_004BFF70,0x004BFF70,0x28,src/data/jtbl_004BFF70.c,complete,reconstructed
 data_u32_004BFFA0,0x004BFFA0,0x40,src/data/data_u32_004BFFA0.c,complete,placeholder
 jtbl_004BFFE0,0x004BFFE0,0x8,src/data/jtbl_004BFFE0.c,complete,reconstructed
@@ -7643,7 +7647,11 @@ jtbl_004C1108,0x004C1108,0x08,src/data/jtbl_004C1108.c,complete,reconstructed
 jtbl_004C1110,0x004C1110,0x08,src/data/jtbl_004C1110.c,complete,reconstructed
 jtbl_004C1118,0x004C1118,0x08,src/data/jtbl_004C1118.c,complete,reconstructed
 jtbl_004C1120,0x004C1120,0x08,src/data/jtbl_004C1120.c,complete,reconstructed
-data_u32_004C1130,0x004C1130,0x40,src/data/data_u32_004C1130.c,complete,placeholder
+data_u32_004C1130,0x004C1130,0x4,src/data/data_u32_004C1130.c,complete,placeholder
+data_s8_004C1134,0x004C1134,0x4,src/data/data_s8_004C1134.c,complete,reconstructed
+data_s8_004C1138,0x004C1138,0x4,src/data/data_s8_004C1138.c,complete,reconstructed
+data_s8_004C113C,0x004C113C,0x4,src/data/data_s8_004C113C.c,complete,reconstructed
+data_u32_004C1140,0x004C1140,0x30,src/data/data_u32_004C1140.c,complete,placeholder
 jtbl_004C1170,0x004C1170,0x08,src/data/jtbl_004C1170.c,complete,reconstructed
 jtbl_004C1178,0x004C1178,0x08,src/data/jtbl_004C1178.c,complete,reconstructed
 jtbl_004C1180,0x004C1180,0x08,src/data/jtbl_004C1180.c,complete,reconstructed

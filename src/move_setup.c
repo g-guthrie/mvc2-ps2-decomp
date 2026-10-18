@@ -5,6 +5,12 @@ extern u8 *D_004C2794;
 extern signed char data_s8_004C0688[4] __attribute__((section(".sdata")));
 extern signed char data_s8_004C0CC0[64] __attribute__((section(".sdata")));
 extern signed char data_s8_004C0D00[8] __attribute__((section(".sdata")));
+extern signed char data_s8_004C1134[4] __attribute__((section(".sdata")));
+extern signed char data_s8_004C1138[4] __attribute__((section(".sdata")));
+extern signed char data_s8_004C113C[4] __attribute__((section(".sdata")));
+extern signed char data_s8_004BFF34[4] __attribute__((section(".sdata")));
+extern signed char data_s8_004BFF38[4] __attribute__((section(".sdata")));
+extern signed char data_s8_004BFF3C[4] __attribute__((section(".sdata")));
 extern signed char data_s8_004C0F30[64] __attribute__((section(".sdata")));
 extern signed char data_s8_004C0F70[8] __attribute__((section(".sdata")));
 extern signed char data_s8_004C068C[8] __attribute__((section(".sdata")));
@@ -512,7 +518,7 @@ void name(u8 *p) { \
  reset_move_counters(p,p[0x1b5],mode); \
 }
 
-FINAL_ANIMATION_SETUP(func_0021DA40, 9, D_004BFF34, 10, D_004BFF38, 11, D_004BFF3C, 10)
+FINAL_ANIMATION_SETUP(func_0021DA40, 9, data_s8_004BFF34[0], 10, data_s8_004BFF38[0], 11, data_s8_004BFF3C[0], 10)
 FINAL_ANIMATION_SETUP(func_0026B8B0, 6, data_s8_004C0688[0], 7, data_s8_004C068C[0], 8, data_s8_004C068C[4], 9)
 FINAL_ANIMATION_SETUP(func_0026B9B0, 3, data_s8_004C0694[0], 4, data_s8_004C0698[0], 5, data_s8_004C0698[4], 8)
 FINAL_ANIMATION_SETUP(func_0026BAB0, 9, data_s8_004C0694[0], 10, data_s8_004C0698[0], 11, data_s8_004C0698[4], 10)
@@ -522,7 +528,7 @@ FINAL_ANIMATION_SETUP(func_002B34E0, 9, data_s8_004C0CC0[12], 10, data_s8_004C0C
 FINAL_ANIMATION_SETUP(func_002D1D40, 6, data_s8_004C0F30[0], 7, data_s8_004C0F30[4], 8, data_s8_004C0F30[8], 9)
 FINAL_ANIMATION_SETUP(func_002D1E40, 3, data_s8_004C0F30[12], 4, data_s8_004C0F30[16], 5, data_s8_004C0F30[20], 8)
 FINAL_ANIMATION_SETUP(func_002D1F40, 9, data_s8_004C0F30[12], 10, data_s8_004C0F30[16], 11, data_s8_004C0F30[20], 10)
-FINAL_ANIMATION_SETUP(func_002E9780, 3, D_004C1134, 4, D_004C1138, 5, D_004C113C, 8)
+FINAL_ANIMATION_SETUP(func_002E9780, 3, data_s8_004C1134[0], 4, data_s8_004C1138[0], 5, data_s8_004C113C[0], 8)
 FINAL_ANIMATION_SETUP(func_00300F40, 3, D_004C1474, 4, D_004C1478, 5, D_004C147C, 8)
 
 void func_00309450(u8 *p) {

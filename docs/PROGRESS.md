@@ -3386,3 +3386,7 @@ Recovered all 100 bytes at 0x001F9250 in the existing source unit. Every registe
 ## Runtime entry-slot reset
 
 Recovered all 64 bytes at 0x00414FE0, resetting each eight-byte entry handle/state and clearing the count. Whole-object verification passes under O3/Op. Code reaches 616,280 bytes (18.7109%), 9,336 functions; data remains 152,299 bytes (23.5006%).
+
+## Selected signed move records
+
+Recovered 24 bytes as six explicitly selected four-byte signed records in the banks at 0x004BFF34 and 0x004C1134. Leading words and trailing 48-byte spans remain placeholders. All ten changed data objects and the whole move_setup source object verify exactly. Data reaches 152,323 bytes (23.5043%); code remains 616,280 bytes (18.7109%).
