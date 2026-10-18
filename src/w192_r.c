@@ -6,7 +6,33 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef struct G { u8 pad[0x7C]; s16 h7C[2]; } G;
 extern G *D_004C2794;
+extern void func_001861B0(u8 *);
 extern s32 func_001757E0(u8 *, s32, s32);
+
+void func_00278850(u8 *p)
+{
+    u8 x;
+    func_001861B0(p);
+    switch (p[0x1FC]) {
+    case 0: p[0x169] = 9; p[0x168] = 0; x = 6; break;
+    case 1: p[0x169] = 9; p[0x168] = 1; x = 7; break;
+    case 2: p[0x169] = 9; p[0x168] = 2; x = 8; break;
+    case 3: p[0x169] = 10; p[0x168] = 0; x = 9; break;
+    case 4: p[0x169] = 10; p[0x168] = 1; x = 10; break;
+    case 5: p[0x169] = 10; p[0x168] = 2; x = 11; break;
+    case 6: p[0x169] = 7; p[0x168] = 0; x = 0; break;
+    case 7: p[0x169] = 7; p[0x168] = 1; x = 1; break;
+    case 8: p[0x169] = 7; p[0x168] = 2; x = 2; break;
+    case 9: p[0x169] = 8; p[0x168] = 0; x = 3; break;
+    case 10: p[0x169] = 8; p[0x168] = 1; x = 4; break;
+    case 11: p[0x169] = 8; p[0x168] = 2; x = 5; break;
+    }
+    p[0x1B5] = x;
+    p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+    *(u32 *)(p + 0x1D8) = 0;
+    D_004C2794->h7C[p[2]]++;
+    func_001757E0(p, p[0x169], p[0x168]);
+}
 
 void func_002789F0(u8 *p)
 {
@@ -52,6 +78,31 @@ void func_002789F0(u8 *p)
         if ((a & 0xF0) != 0)
             p[0x1EA] = a - 0x10;
     }
+}
+
+void func_0027B1A0(u8 *p)
+{
+    u8 x;
+    func_001861B0(p);
+    switch (p[0x1FC]) {
+    case 0: p[0x169] = 9; p[0x168] = 0; x = 6; break;
+    case 1: p[0x169] = 9; p[0x168] = 1; x = 7; break;
+    case 2: p[0x169] = 9; p[0x168] = 2; x = 8; break;
+    case 3: p[0x169] = 10; p[0x168] = 0; x = 9; break;
+    case 4: p[0x169] = 10; p[0x168] = 1; x = 10; break;
+    case 5: p[0x169] = 10; p[0x168] = 2; x = 11; break;
+    case 6: p[0x169] = 7; p[0x168] = 0; x = 0; break;
+    case 7: p[0x169] = 7; p[0x168] = 1; x = 1; break;
+    case 8: p[0x169] = 7; p[0x168] = 2; x = 2; break;
+    case 9: p[0x169] = 8; p[0x168] = 0; x = 3; break;
+    case 10: p[0x169] = 8; p[0x168] = 1; x = 4; break;
+    case 11: p[0x169] = 8; p[0x168] = 2; x = 5; break;
+    }
+    p[0x1B5] = x;
+    p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+    *(u32 *)(p + 0x1D8) = 0;
+    D_004C2794->h7C[p[2]]++;
+    func_001757E0(p, p[0x169], p[0x168]);
 }
 
 void func_0027B340(u8 *p)
