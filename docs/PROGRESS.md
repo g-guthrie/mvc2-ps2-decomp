@@ -3358,3 +3358,7 @@ Recovered all 144 bytes at 0x0014E7B0, preserving float input, exact position re
 ## Owner timer event constructor
 
 Recovered all 116 bytes at 0x0014EEC0, preserving timer, owner linkage, callback and allocation failure. Whole-object verification passes. Code reaches 613,984 bytes (18.6412%), 9,319 functions; data remains 152,131 bytes (23.4747%).
+
+## Ten-function gameplay recovery batch
+
+Integrated ten complete gameplay routines totaling 1,512 bytes, extending verified duplicate families for timers, callbacks, motion and state resets. Every affected source object verifies with its registered compiler profile. Code reaches 615,496 bytes (18.6871%), 9,329 functions; data remains 152,131 bytes (23.4747%).
