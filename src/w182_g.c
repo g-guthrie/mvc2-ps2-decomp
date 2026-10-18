@@ -81,7 +81,7 @@ void func_001D0A70(u8 *p, u8 *q)
     }
 }
 
-typedef struct { u8 pad[0x7C]; s16 f7c[1]; } G94;
+typedef struct { u8 pad[0x7C]; s16 f7c[2]; } G94;
 extern G94 *D_004C2794;
 extern u8 *D_004C2938;
 extern s8 *D_004C29C4;
