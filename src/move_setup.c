@@ -2,6 +2,10 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 extern u8 *D_004C2794;
+extern signed char data_s8_004BFB70[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C0214[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C13D0[12] __attribute__((section(".sdata")));
+extern signed char data_s8_004C1514[12] __attribute__((section(".sdata")));
 extern signed char data_s8_004C06AC[4] __attribute__((section(".sdata")));
 extern signed char data_s8_004C06B0[8] __attribute__((section(".sdata")));
 extern signed char data_s8_004C06C4[12] __attribute__((section(".sdata")));
@@ -169,15 +173,9 @@ extern int D_004C16A8;
 extern int D_004C16AC;
 extern int D_004C16B0;
 
-extern int D_004BFB70;
-extern int D_004BFB74;
-extern int D_004BFB78;
 extern int D_004BFE80;
 extern int D_004BFE84;
 extern int D_004BFE88;
-extern int D_004C0214;
-extern int D_004C0218;
-extern int D_004C021C;
 extern int D_004C0324;
 extern int D_004C0328;
 extern int D_004C032C;
@@ -196,12 +194,6 @@ extern int D_004C129C;
 extern int D_004C1344;
 extern int D_004C1348;
 extern int D_004C134C;
-extern int D_004C13D0;
-extern int D_004C13D4;
-extern int D_004C13D8;
-extern int D_004C1514;
-extern int D_004C1518;
-extern int D_004C151C;
 
 extern int D_004BFF34;
 extern int D_004BFF38;
@@ -379,10 +371,10 @@ void name(u8 *p) { \
  reset_move_counters(p,p[0x1b5],mode); \
 }
 
-THIRD_STATE_SETUP(func_001EEB50, 6, D_004BFB70, 7, D_004BFB74, 8, D_004BFB78, 9)
+THIRD_STATE_SETUP(func_001EEB50, 6, data_s8_004BFB70[0], 7, data_s8_004BFB70[4], 8, data_s8_004BFB70[8], 9)
 THIRD_STATE_SETUP(func_001EED40, 9, data_s8_004BFB7C[0], 10, data_s8_004BFB7C[4], 11, data_s8_004BFB7C[8], 10)
 THIRD_STATE_SETUP(func_00210E50, 6, D_004BFE80, 7, D_004BFE84, 8, D_004BFE88, 9)
-THIRD_STATE_SETUP(func_0023A850, 3, D_004C0214, 4, D_004C0218, 5, D_004C021C, 8)
+THIRD_STATE_SETUP(func_0023A850, 3, data_s8_004C0214[0], 4, data_s8_004C0214[4], 5, data_s8_004C0214[8], 8)
 THIRD_STATE_SETUP(func_00244190, 3, D_004C0324, 4, D_004C0328, 5, D_004C032C, 8)
 THIRD_STATE_SETUP(func_0025CF60, 9, data_s8_004C0590[12], 10, data_s8_004C0590[16], 11, data_s8_004C0590[20], 10)
 THIRD_STATE_SETUP(func_00286EB0, 6, D_004C0910, 7, D_004C0914, 8, D_004C0918, 9)
@@ -392,8 +384,8 @@ THIRD_STATE_SETUP(func_0028E870, 3, D_004C09C4, 4, D_004C09C8, 5, D_004C09CC, 8)
 THIRD_STATE_SETUP(func_0028E960, 9, D_004C09C4, 10, D_004C09C8, 11, D_004C09CC, 10)
 THIRD_STATE_SETUP(func_002F2AA0, 3, D_004C1294, 4, D_004C1298, 5, D_004C129C, 8)
 THIRD_STATE_SETUP(func_002F7850, 3, D_004C1344, 4, D_004C1348, 5, D_004C134C, 8)
-THIRD_STATE_SETUP(func_002FCB90, 3, D_004C13D0, 4, D_004C13D4, 5, D_004C13D8, 8)
-THIRD_STATE_SETUP(func_00305890, 9, D_004C1514, 10, D_004C1518, 11, D_004C151C, 10)
+THIRD_STATE_SETUP(func_002FCB90, 3, data_s8_004C13D0[0], 4, data_s8_004C13D0[4], 5, data_s8_004C13D0[8], 8)
+THIRD_STATE_SETUP(func_00305890, 9, data_s8_004C1514[0], 10, data_s8_004C1514[4], 11, data_s8_004C1514[8], 10)
 
 /* These handlers install the third state before its animation callback. */
 #define FINAL_ANIMATION_SETUP(name,command0,table0,command1,table1,command2,table2,mode) \
