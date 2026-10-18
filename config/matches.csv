@@ -13866,6 +13866,7 @@ func_002C5CF0,0x002C5CF0,0xE4,src/y2_a.c,complete
 func_002705C0,0x002705C0,0xE4,src/y2_a.c,complete
 func_0020C9D0,0x0020C9D0,0xE8,src/y2_a.c,complete
 func_0029CDF0,0x0029CDF0,0xEC,src/y2_a.c,complete
+func_0029D060,0x0029D060,0xEC,src/y2_a.c,complete
 func_003715E0,0x003715E0,0xEC,src/y2_a.c,complete
 func_00185290,0x00185290,0xF0,src/y2_a.c,complete
 func_0024C710,0x0024C710,0xF0,src/y2_a.c,complete
@@ -14473,7 +14474,7 @@ func_00153F70,0x00153F70,0x1B0,src/L3_b.c,complete
 func_00375890,0x00375890,0x21C,src/L3_c.c,complete
 func_0012FD70,0x0012FD70,0x254,src/L3_d.c,complete
 func_0032A570,0x0032A570,0x27C,src/L3_e.c,complete
-func_003F2EB0,0x003F2EB0,0x2E0,src/L3_f.c,complete
+func_003F2EB0,0x003F2EB0,0x2E0,src/L3_f.c,placeholder
 func_00279950,0x00279950,0xC4,src/q7_e.c,complete
 func_00200880,0x00200880,0xD8,src/q7_e.c,complete
 func_002FFCE0,0x002FFCE0,0x118,src/q7_e.c,complete
@@ -15482,3 +15483,14 @@ func_0013A610,0x0013A610,0x144,src/w1911_s.c,complete
 func_003D44E0,0x003D44E0,0x144,src/w1911_t.c,complete
 func_0012B920,0x0012B920,0x14C,src/w1911_u.c,complete
 func_001BEBD0,0x001BEBD0,0x150,src/w1911_v.c,complete
+func_0036AE90,0x0036AE90,0xEC,src/initialize_actor_effect_0036AE90.c,complete
+func_001EB9C0,0x001EB9C0,0x100,src/actor_anim_progress_001EB9C0.c,complete
+func_0028B4D0,0x0028B4D0,0x11C,src/initialize_actor_timed_state_0028B4D0.c,complete
+func_00297B40,0x00297B40,0x100,src/actor_motion_timer_00297B40.c,complete
+func_0026C020,0x0026C020,0xD0,src/effect_handler_0026C020.c,complete
+func_00321A90,0x00321A90,0xE8,src/initialize_actor_handoff_00321A90.c,complete
+func_002BC230,0x002BC230,0x11C,src/actor_grounded_motion_002BC230.c,complete
+func_00218750,0x00218750,0xE4,src/update_entity_velocity_00218750.c,complete
+func_00217AD0,0x00217AD0,0xD0,src/update_entity_timed_motion_00217AD0.c,complete
+func_002DB600,0x002DB600,0x1B8,src/update_damped_actor_motion_002DB600.c,complete
+func_0020FA50,0x0020FA50,0xF0,src/handle_entity_height_threshold_0020FA50.c,complete

@@ -9,7 +9,10 @@ typedef float f32;
 extern u8 *(*D_004C2B0C)(s32);
 extern s32 func_00119098(f32);
 
-/* local stand-ins: real bodies keep the temporaries out of the caller's way */
+/* Uncredited compiler probe. These invented helper bodies shape caller clobbers;
+ * they are not reconstructions of the retail helpers. The caller remains a
+ * placeholder despite matching relocated bytes. Use real helper declarations
+ * or verified helper implementations before restoring C credit. */
 static s32 func_003F1FF0(a, i, j, k) u8 *a; s32 i, j, k; {
     a = *(u8 **)(a + 4); i = *(s32 *)(a + 8); j = *(s32 *)(a + 12) + i; k = *(s32 *)(a + 16) ^ j;
     return *(s32 *)(a + k) + i + j;

@@ -8492,6 +8492,16 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/z8_c.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/z8_c.o"
 "$PYTHON" tools/verify_object.py "$BUILD/z8_c.o" private/SLUS_204.86.rom --source src/z8_c.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_anim_progress_001EB9C0.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/actor_anim_progress_001EB9C0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_anim_progress_001EB9C0.o" \
+    private/SLUS_204.86.rom --source src/actor_anim_progress_001EB9C0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_motion_timer_00297B40.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/actor_motion_timer_00297B40.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_motion_timer_00297B40.o" \
+    private/SLUS_204.86.rom --source src/actor_motion_timer_00297B40.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/z8_d.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/z8_d.o"
 "$PYTHON" tools/verify_object.py "$BUILD/z8_d.o" private/SLUS_204.86.rom --source src/z8_d.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
@@ -8863,6 +8873,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/q7_e.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/q7_e.o"
 "$PYTHON" tools/verify_object.py "$BUILD/q7_e.o" private/SLUS_204.86.rom --source src/q7_e.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_grounded_motion_002BC230.c -c -lang c -O3 -Op -sdatathreshold 0 \
+    -o "$BUILD/actor_grounded_motion_002BC230.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_grounded_motion_002BC230.o" \
+    private/SLUS_204.86.rom --source src/actor_grounded_motion_002BC230.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/q7_f.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/q7_f.o"
 "$PYTHON" tools/verify_object.py "$BUILD/q7_f.o" private/SLUS_204.86.rom --source src/q7_f.c
@@ -10974,3 +10989,44 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/w1911_v.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/w1911_v.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w1911_v.o" private/SLUS_204.86.rom --source src/w1911_v.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_actor_effect_0036AE90.c -c -lang c -O3,p -sdatathreshold 8 -o "$BUILD/initialize_actor_effect_0036AE90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_actor_effect_0036AE90.o" \
+    private/SLUS_204.86.rom --source src/initialize_actor_effect_0036AE90.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_actor_timed_state_0028B4D0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/initialize_actor_timed_state_0028B4D0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_actor_timed_state_0028B4D0.o" \
+    private/SLUS_204.86.rom --source src/initialize_actor_timed_state_0028B4D0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/effect_handler_0026C020.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/effect_handler_0026C020.o"
+"$PYTHON" tools/verify_object.py "$BUILD/effect_handler_0026C020.o" \
+    private/SLUS_204.86.rom --source src/effect_handler_0026C020.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_actor_handoff_00321A90.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/initialize_actor_handoff_00321A90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_actor_handoff_00321A90.o" \
+    private/SLUS_204.86.rom --source src/initialize_actor_handoff_00321A90.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/update_entity_velocity_00218750.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/update_entity_velocity_00218750.o"
+"$PYTHON" tools/verify_object.py "$BUILD/update_entity_velocity_00218750.o" private/SLUS_204.86.rom --source src/update_entity_velocity_00218750.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/update_entity_timed_motion_00217AD0.c -c -lang c -O3 -Op -sdatathreshold 0 \
+    -o "$BUILD/update_entity_timed_motion_00217AD0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/update_entity_timed_motion_00217AD0.o" private/SLUS_204.86.rom --source src/update_entity_timed_motion_00217AD0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/update_damped_actor_motion_002DB600.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/update_damped_actor_motion_002DB600.o"
+"$PYTHON" tools/verify_object.py "$BUILD/update_damped_actor_motion_002DB600.o" \
+    private/SLUS_204.86.rom --source src/update_damped_actor_motion_002DB600.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/handle_entity_height_threshold_0020FA50.c -c -lang c -O3 -Op -sdatathreshold 0 \
+    -o "$BUILD/handle_entity_height_threshold_0020FA50.o"
+"$PYTHON" tools/verify_object.py "$BUILD/handle_entity_height_threshold_0020FA50.o" private/SLUS_204.86.rom --source src/handle_entity_height_threshold_0020FA50.c

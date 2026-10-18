@@ -3918,3 +3918,33 @@ packed retail ELF SHA-256 remains
 The 40 repository tests and two Sony tooling tests pass, as do catalog validation,
 report generation, shell syntax and whitespace checks. Each newly added function
 has its own full compiler/object verification in addition to that combined proof.
+
+
+The next batch adds twelve complete genuine-C functions / 3,108 bytes:
+0x0036AE90 (236), 0x001EB9C0 (256), 0x0028B4D0 (284), 0x00297B40 (256),
+0x0026C020 (208), 0x0029D060 (236), 0x00321A90 (232), 0x002BC230 (284),
+0x00218750 (228), 0x00217AD0 (208), 0x002DB600 (440), and 0x0020FA50 (240).
+Root independently compiled and verified every new full object, plus all
+registered functions in the modified y2_a.c unit. The handoff payload is a real
+aligned two-float vector; the retail 0x001548D0 helper reads only offsets 0/4.
+
+Two candidates were rejected: 0x00248B10 needs a fabricated volatile self-read,
+and 0x003F2BF0 only matched after importing invented helper bodies from L3_f.c.
+Those helpers use unrelated arithmetic and extra unpassed arguments to shape
+caller clobbers; they are not retail reconstructions. The natural external-call
+version remains a 704-byte near match, without credit. The existing
+0x003F2EB0 (736 bytes) has accordingly been changed from complete to placeholder;
+its hybrid object still matches retail but no longer earns C credit. The 0x002340F0 probe also stays uncredited.
+
+Together, the two batches since d59cb58f add 32 genuine C functions / 8,364 bytes
+and remove the older 736-byte credit, for a net gain of 7,628 code bytes.
+Current catalog: 1,419,088 / 3,293,696 code bytes (43.0850%), 14,682 credited
+functions, and unchanged 153,965 / 648,064 data bytes (23.7577%). All recipes are
+registered; no proprietary inputs or tool binaries are added to the repository.
+
+
+The corrected second batch passes all 42 tests, catalog/report generation,
+shell syntax and whitespace checks. Its full combined hybrid relink and packed
+retail ELF checks pass with the same loaded-image and packed-ELF SHA-256 hashes
+recorded above. Full-image identity includes unrecovered retail spans; credited
+C progress remains 43.0850%.
