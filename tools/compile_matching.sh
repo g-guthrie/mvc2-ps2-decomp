@@ -8446,6 +8446,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/z6_a.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/z6_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/z6_a.o" private/SLUS_204.86.rom --source src/z6_a.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_motion_clamp_001A1230.c -c -lang c -O3 -Op -sdatathreshold 0 \
+    -o "$BUILD/actor_motion_clamp_001A1230.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_motion_clamp_001A1230.o" \
+    private/SLUS_204.86.rom --source src/actor_motion_clamp_001A1230.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/z6_b.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/z6_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/z6_b.o" private/SLUS_204.86.rom --source src/z6_b.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
