@@ -64,3 +64,30 @@ void func_002BF1F0(PH *p) {
         q[0x1B5] = 0x22;
     }
 }
+
+s32 func_003008C0(u8 *p) {
+    extern s32 func_0018AA50(u8 *, s32, s16 *, s32);
+    extern s32 func_0018A580(u8 *);
+    extern void func_00186A60(u8 *, s32);
+    s16 buf;
+    u32 f;
+    if (p[0x2BA] != 0) return 0;
+    if (!func_0018AA50(p, 0x140, &buf, 3)) return 0;
+    if (p[0x20D] == 2) {
+        if (p[0x210] == 0) {
+            if (((s8 *)p)[0x1E8] != 0) return 0;
+            *(s8 *)((s32)p + 0x1E8) += 1;
+        }
+    }
+    if (!func_0018A580(p)) return 0;
+    f = *(u16 *)(p + 0x35E);
+    if (f & 0x800) p[0x1B7] = 2;
+    else if (f & 0x400) p[0x1B7] = 0;
+    else p[0x1B7] = 1;
+    p[5] = 0;
+    p[7] = 0;
+    p[6] = 0;
+    p[0x1FD] = 3;
+    func_00186A60(p, 0x15);
+    return 1;
+}
