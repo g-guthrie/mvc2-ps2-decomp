@@ -3640,3 +3640,7 @@ Recovered all 88 bytes at 0x003C4550 in the existing wave11b source object. All 
 ## Linked flags event constructor
 
 Recovered all 108 bytes at 0x001CCC20, preserving copied context/flags, mode initialization, callback and allocation failure. Whole-object verification passes. Code reaches 647,208 bytes (19.6499%), 9,705 functions; data remains 153,593 bytes (23.7003%).
+
+## Mode-event dispatch helper
+
+Recovered all 72 bytes at 0x00334D80 in the existing wave14d object. Both registered functions verify exactly with MWCCPS2 3.0 O3/G8. Code reaches 647,280 bytes (19.6521%), 9,706 functions; data remains 153,593 bytes (23.7003%).
