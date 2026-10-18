@@ -3302,3 +3302,7 @@ Integrated four complete runtime helpers totaling 416 bytes: grid update, effect
 ## Fixed runtime field integration
 
 Recovered accessor-proven runtime fields, preserving surrounding raw owners. Callback and context fields at 0x004891AC/B0 use the current pointer contracts rather than stale integer declarations. Data is 152,051 bytes (23.4623%) across 2,966 reconstructed units; code remains 612,452 bytes (18.5947%).
+
+## Owner-kind event constructor
+
+Recovered the complete 116-byte constructor at 0x001569C0, including byte-kind pool selection, allocation failure, callback and owner-context setup. Whole-object verification passes. Code reaches 612,568 bytes (18.5982%), 9,307 functions; data remains 152,051 bytes (23.4623%).

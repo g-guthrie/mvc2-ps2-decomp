@@ -9309,3 +9309,4 @@ func_0041D020,0x0041D020,0x50,src/advance_runtime_grid_position_0041D020.c,compl
 func_0041C400,0x0041C400,0x5C,src/initialize_runtime_animation_backend_0041C400.c,complete
 func_0041C550,0x0041C550,0x5C,src/dispatch_runtime_animation_effect_0041C550.c,complete
 func_0041C4B0,0x0041C4B0,0x98,src/initialize_runtime_effect_backend_0041C4B0.c,complete
+func_001569C0,0x001569C0,0x74,src/create_owner_kind_event_001569C0.c,complete
