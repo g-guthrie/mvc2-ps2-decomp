@@ -11,6 +11,8 @@
   inline assembly blocks. Algorithmic control flow and memory operations must
   be reconstructed in C; instruction-stream lifts remain uncredited.
 - Assembly placeholders and mechanically translated output count as zero.
+- Empty asm barriers used solely to force matching code generation, and unused
+  fixed-register locals, remain uncredited until the C matches without them.
 - Whole-image linkage and target-hash verification remain the final gate.
 - The deterministic ELF packer now reconstructs the complete retail
   `SLUS_204.86` container byte-for-byte from the exact hybrid loaded image.

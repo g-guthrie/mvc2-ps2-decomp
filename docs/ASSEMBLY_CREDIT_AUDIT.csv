@@ -28,11 +28,15 @@ func_00103820,0x00103820,0x48,src/s5a.c,placeholder,whole algorithmic assembly i
 func_00103868,0x00103868,0x60,src/s2c.c,placeholder,whole algorithmic assembly instruction stream
 func_001038C8,0x001038C8,0x8C,src/k1a.c,placeholder,whole algorithmic assembly instruction stream
 func_00103958,0x00103958,0x5C,src/sdk5b.c,placeholder,whole algorithmic assembly instruction stream
+func_001045E0,0x001045E0,0x28,src/s1.c,placeholder,empty optimizer barrier required for exact output
+func_00104608,0x00104608,0x28,src/s4.c,placeholder,empty optimizer barrier required for exact output
 func_00104630,0x00104630,0xA4,src/s0h.c,placeholder,whole algorithmic assembly instruction stream
 func_00104770,0x00104770,0xA4,src/p1.c,placeholder,whole algorithmic assembly instruction stream
 func_001048B0,0x001048B0,0x10,src/k2s.c,complete,COP0 status query
 func_00105540,0x00105540,0x38,src/s5a.c,placeholder,whole algorithmic assembly instruction stream
+func_00105628,0x00105628,0x34,src/k1.c,placeholder,empty optimizer barrier required for exact output
 func_00106578,0x00106578,0xAC,src/s1k.c,placeholder,whole algorithmic assembly instruction stream
+func_00107AB8,0x00107AB8,0x2C,src/s0.c,placeholder,empty optimizer barrier required for exact output
 func_0010C2A0,0x0010C2A0,0x38,src/sdk5b.c,placeholder,whole algorithmic assembly instruction stream
 func_0010CA20,0x0010CA20,0x48,src/s0h.c,complete,interrupt disable with required status polling
 func_0010CA68,0x0010CA68,0x18,src/k5h.c,complete,interrupt enable and prior status
@@ -49,12 +53,46 @@ func_001200D8,0x001200D8,0x1AC,src/mmi_a.c,placeholder,whole algorithmic assembl
 func_00120288,0x00120288,0x1B8,src/mmi_a.c,placeholder,whole algorithmic assembly instruction stream
 func_00120440,0x00120440,0x1BC,src/mmi_a.c,placeholder,whole algorithmic assembly instruction stream
 func_003FB5C0,0x003FB5C0,0x2C,src/sdk5b.c,placeholder,whole algorithmic assembly instruction stream
+func_003FCCF0,0x003FCCF0,0x90,src/k4.c,placeholder,empty optimizer barrier required for exact output
+func_003FD2A0,0x003FD2A0,0x68,src/k5.c,placeholder,empty optimizer barrier required for exact output
+func_003FDC70,0x003FDC70,0x60,src/w3_c.c,placeholder,unused register pin required for exact output
+func_003FDE10,0x003FDE10,0x28,src/r3_a.c,placeholder,empty optimizer barrier required for exact output
+func_003FDE88,0x003FDE88,0x60,src/k6b.c,complete,empty barriers removed; whole object remains exact
+func_003FE170,0x003FE170,0x1C,src/b10s2_d.c,placeholder,empty optimizer barrier required for exact output
+func_003FEAE8,0x003FEAE8,0x70,src/p2e8.c,placeholder,empty optimizer barrier required for exact output
+func_003FEEA8,0x003FEEA8,0x78,src/b10s2_f.c,placeholder,empty optimizer barrier required for exact output
+func_003FEF20,0x003FEF20,0x28,src/k0.c,placeholder,empty optimizer barrier required for exact output
+func_003FEF48,0x003FEF48,0x28,src/sdk4.c,placeholder,empty optimizer barrier required for exact output
+func_003FEF70,0x003FEF70,0x1C,src/sdk4.c,placeholder,empty optimizer barrier required for exact output
 func_003FF1C0,0x003FF1C0,0x34,src/k4.c,placeholder,whole algorithmic assembly instruction stream
+func_00400F98,0x00400F98,0x4C,src/p2.c,placeholder,empty optimizer barrier required for exact output
+func_004017E0,0x004017E0,0x84,src/k2.c,complete,empty barriers removed; whole object remains exact
+func_004040F0,0x004040F0,0x88,src/s4w9.c,placeholder,empty optimizer barrier required for exact output
+func_00405DC8,0x00405DC8,0x28,src/s3.c,placeholder,empty optimizer barrier required for exact output
+func_004062F8,0x004062F8,0xB8,src/r4e.c,complete,empty barriers removed; whole object remains exact
+func_004067B8,0x004067B8,0x5c,src/k3.c,placeholder,empty optimizer barrier required for exact output
+func_00406818,0x00406818,0x78,src/s5.c,placeholder,empty optimizer barrier required for exact output
+func_00407298,0x00407298,0x58,src/p2.c,placeholder,empty optimizer barrier required for exact output
+func_00407BC0,0x00407BC0,0x38,src/p4e.c,placeholder,empty optimizer barrier required for exact output
 func_00407EC8,0x00407EC8,0x2c,src/w2_o.c,placeholder,whole algorithmic assembly instruction stream
+func_00407EF8,0x00407EF8,0x1C,src/s2.c,placeholder,empty optimizer barrier required for exact output
+func_00407FC8,0x00407FC8,0xAC,src/s3.c,placeholder,empty optimizer barrier required for exact output
+func_00408078,0x00408078,0x70,src/r4e.c,placeholder,empty optimizer barrier required for exact output
 func_004095C8,0x004095C8,0xD0,src/w1_c.c,placeholder,algorithmic delay and spin loops with assembly NOP
+func_0040A440,0x0040A440,0xA8,src/p0.c,placeholder,empty optimizer barrier required for exact output
 func_0040AF28,0x0040AF28,0x2C,src/w9a0.c,placeholder,whole algorithmic assembly instruction stream
+func_0040C7C0,0x0040C7C0,0x44,src/r3_b.c,placeholder,empty optimizer barrier required for exact output
+func_0040CAA0,0x0040CAA0,0x7c,src/w0_z.c,placeholder,empty optimizer barrier required for exact output
+func_0040CD38,0x0040CD38,0x40,src/sdk4.c,placeholder,empty optimizer barrier required for exact output
+func_0040D268,0x0040D268,0x94,src/w0_ab.c,placeholder,empty optimizer barrier required for exact output
+func_0040D300,0x0040D300,0x94,src/p4e.c,placeholder,empty optimizer barrier required for exact output
+func_0040D398,0x0040D398,0x94,src/k3.c,placeholder,empty optimizer barrier required for exact output
+func_0040D548,0x0040D548,0x1C,src/s3w9e.c,placeholder,empty optimizer barrier required for exact output
+func_0040D6A0,0x0040D6A0,0x98,src/k6b.c,placeholder,empty optimizer barrier required for exact output
+func_0040D738,0x0040D738,0x110,src/w1_b.c,placeholder,empty optimizer barrier required for exact output
 func_0040DFA8,0x0040DFA8,0x5C,src/sdk5b.c,placeholder,whole algorithmic assembly instruction stream
 func_0040FD00,0x0040FD00,0x34,src/k2s.c,placeholder,whole algorithmic assembly instruction stream
 func_00410C18,0x00410C18,0x9C,src/u2b.c,placeholder,algorithmic spin loop with assembly NOP
+func_00411720,0x00411720,0xA0,src/p2.c,placeholder,empty optimizer barrier required for exact output
 func_004135D0,0x004135D0,0x30,src/s3v.c,placeholder,whole algorithmic assembly instruction stream
 func_00416A00,0x00416A00,0x50,src/k0a.c,placeholder,whole algorithmic assembly instruction stream

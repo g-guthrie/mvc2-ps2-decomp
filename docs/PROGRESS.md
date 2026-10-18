@@ -3808,3 +3808,35 @@ Recovered the full 16-byte ASCII hexadecimal digit table at 0x004959D8.
 complete coverage of entries 0..15; its existing exact object and the compiled
 data object both verify against the private target. Reconstructed data reaches
 153,965 bytes (23.7577%).
+
+
+Completed the optimizer-constraint audit: 42 empty-asm statements across 37
+functions were tested without those constraints, using existing recipes.
+Five statements could be removed from three functions (412 bytes), preserving
+all selected functions in their objects. The other 34 functions (3,232 bytes)
+and the 96-byte unused register-pin dependency are now placeholders. Root
+independently recompiled the three changed full objects and all passed exact
+verification. Supported prototype corrections were tested, but did not solve
+the remaining functions under those profiles. Further real compiler-profile
+probes are assigned explicitly in README. All 162 MWCC kernel syscall wrappers
+were recompiled exactly and retain the required CPU-operation exception.
+
+Corrected publication catalog: 1,409,452 / 3,293,696 code bytes (42.7924%),
+14,638 credited functions, and 153,965 / 648,064 reconstructed data bytes
+(23.7577%). Sony recovery totals 58 complete C functions / 5,368 bytes, including
+four replacements of formerly miscredited assembly. The 173-span probe now has
+40 C definitions and 53 exact compiler/source/flag profiles; 133 spans still lack
+C definitions. This does not claim verification of the unavailable original
+196-function list. Whole-function sizes and relocated-byte checks stay strict.
+
+
+Final correction gates passed: all 40 repository tests and two Sony tool tests,
+catalog/report generation, and the current full combined hybrid/packed-image
+checks. The loaded image remains SHA-256
+c5206f568f068e5bd93ba47676500764c3d45719890865fa71ada10afadcd26f;
+the packed retail ELF remains SHA-256
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+Physical assembly replacements remain in that hybrid proof but earn zero C
+credit where classified placeholder. The corrected publication checkpoint is
+1,409,452 code bytes; the next scheduled code push threshold is 1,442,389 bytes
+(43.7924%), subject to reconciliation with parallel verified work.
