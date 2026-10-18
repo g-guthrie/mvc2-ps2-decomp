@@ -3556,3 +3556,7 @@ Recovered all 100 bytes at 0x001D6B50, preserving unsigned halfword flag transfe
 ## Event registration and collision response
 
 Recovered complete functions at 0x0037EA30 (100 bytes) and 0x002CE1D0 (112 bytes). Added the missing interleaved compile/verify recipes for both new source units and retained typed representations for motion float fields. Both objects verify exactly. Code reaches 623,444 bytes (18.9284%), 9,396 functions; data remains 153,507 bytes (23.6870%).
+
+## Runtime message-state dispatch
+
+Recovered all 96 bytes at 0x0041B130. Corrected its animation-helper declaration to the existing integer-return interface; bytes remain exact. Code reaches 623,540 bytes (18.9313%), 9,397 functions; data remains 153,507 bytes (23.6870%).

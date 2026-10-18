@@ -6,13 +6,13 @@ struct RuntimeMessageObject { u8 unk00[0xD0]; s32 active; };
 extern struct RuntimeMessageState *D_004C2840;
 extern u8 D_004C2528[2];
 extern u8 D_004C252C[2];
-extern void func_00175910(struct RuntimeMessageObject *object, s32 first,
-                          s32 second, u32 message);
+extern s32 func_00175910(u8 *object, s32 first,
+                          s32 second, s32 message);
 void func_0041B130(struct RuntimeMessageObject *object)
 {
     u32 selector = D_004C2840->selector & 1;
     if (object->active != 0)
-        func_00175910(object, 22, 29, D_004C252C[selector]);
+        func_00175910((u8 *)object, 22, 29, D_004C252C[selector]);
     else
-        func_00175910(object, 22, 29, D_004C2528[selector]);
+        func_00175910((u8 *)object, 22, 29, D_004C2528[selector]);
 }
