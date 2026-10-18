@@ -9398,3 +9398,4 @@ func_00320ED0,0x00320ED0,0x68,src/grok_w6_002a.c,complete
 func_001B6750,0x001B6750,0x64,src/create_owner_mode_child_001978B0.c,complete
 func_001D6B50,0x001D6B50,0x64,src/create_owner_flags_event_001D6B50.c,complete
 func_0037EA30,0x0037EA30,0x64,src/create_event_registration_0037EA30.c,complete
+func_002CE1D0,0x002CE1D0,0x70,src/round_impact_002CE1D0.c,complete
