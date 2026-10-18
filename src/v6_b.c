@@ -212,3 +212,25 @@ s32 func_0028CC80(u8 *o) {
     }
     return r;
 }
+
+extern s16 D_00457A40[];
+
+s32 func_00293FD0(u8 *o) {
+    void func_001C09A0();
+    s32 r;
+    s16 t = *(s16*)(o + 0x1E) - 1;
+    *(s16*)(o + 0x1E) = t;
+    r = 0;
+    if (t == 0) {
+        do {
+            u32 c;
+            r = D_00457A40[o[7] * 2];
+            c = r & 0xFF;
+            if (r == -1) break;
+            func_001C09A0(o, c);
+            *(s16*)(o + 0x1E) = D_00457A40[o[7] * 2 + 1];
+            { u32 u = o[7]; o[7] = u + 1; }
+        } while (*(s16*)(o + 0x1E) != 0);
+    }
+    return r;
+}
