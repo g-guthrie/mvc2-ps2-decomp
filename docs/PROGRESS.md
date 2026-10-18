@@ -3512,3 +3512,7 @@ The proposed transition-table promotion remains held: native animation records c
 ## Two-context event constructor
 
 Recovered all 100 bytes at 0x001ACDC0, preserving both context pointers, mode byte, callback and allocation failure. Whole-object verification passes. Code reaches 621,932 bytes (18.8825%), 9,382 functions; data remains 153,435 bytes (23.6759%).
+
+## Owner callback and one-time runtime initialization
+
+Recovered complete helpers at 0x0036C050 (92 bytes) and 0x00413D50 (68 bytes). All registered functions in both affected objects verify exactly. Code reaches 622,092 bytes (18.8874%), 9,384 functions; data remains 153,435 bytes (23.6759%).
