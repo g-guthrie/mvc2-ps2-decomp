@@ -4750,3 +4750,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
  -o "$BUILD/build_dma_address_003DBA30.o"
 "$PYTHON" tools/verify_object.py "$BUILD/build_dma_address_003DBA30.o" \
  private/SLUS_204.86.rom --source src/build_dma_address_003DBA30.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/dispatch_handoff_mode_0020A910.c -c -lang c -O3 -sdatathreshold 8 \
+ -o "$BUILD/dispatch_handoff_mode_0020A910.o"
+"$PYTHON" tools/verify_object.py "$BUILD/dispatch_handoff_mode_0020A910.o" \
+ private/SLUS_204.86.rom --source src/dispatch_handoff_mode_0020A910.c
