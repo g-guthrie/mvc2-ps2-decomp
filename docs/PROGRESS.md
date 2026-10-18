@@ -3644,3 +3644,7 @@ Recovered all 108 bytes at 0x001CCC20, preserving copied context/flags, mode ini
 ## Mode-event dispatch helper
 
 Recovered all 72 bytes at 0x00334D80 in the existing wave14d object. Both registered functions verify exactly with MWCCPS2 3.0 O3/G8. Code reaches 647,280 bytes (19.6521%), 9,706 functions; data remains 153,593 bytes (23.7003%).
+
+## Alternate transform sequence
+
+Recovered all 84 bytes at 0x003F3BE0 in the existing wave5 source object. Every registered function in the object verifies exactly. Code reaches 647,364 bytes (19.6546%), 9,707 functions; data remains 153,593 bytes (23.7003%).
