@@ -5638,7 +5638,7 @@ data_u8_004B3398,0x004B3398,0x8,.data,src/data/data_u8_004B3398.c,initialized_by
 data_f32_004B33A0,0x004B33A0,0xC,.data,src/data/data_f32_004B33A0.c,indexed_f32_values
 data_u8_004B33AC,0x004B33AC,0x14,.data,src/data/data_u8_004B33AC.c,initialized_byte_array
 data_f32_004B33C0,0x004B33C0,0xC,.data,src/data/data_f32_004B33C0.c,indexed_f32_values
-data_u8_004B33CC,0x004B33CC,0xC,.data,src/data/data_u8_004B33CC.c,initialized_byte_array
+data_vec3_004B33CC,0x004B33CC,0xC,.data,src/data/data_vec3_004B33CC.c,float_vector3
 data_f32_004B33D8,0x004B33D8,0xC,.data,src/data/data_f32_004B33D8.c,indexed_f32_values
 data_u8_004B33E4,0x004B33E4,0x30,.data,src/data/data_u8_004B33E4.c,initialized_byte_array
 data_f32_004B3414,0x004B3414,0x4,.data,src/data/data_f32_004B3414.c,indexed_f32_values
