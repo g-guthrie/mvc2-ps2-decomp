@@ -2096,3 +2096,159 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/positioned_unit_scale_spawns.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/positioned_unit_scale_spawns.o"
 "$PYTHON" tools/verify_object.py "$BUILD/positioned_unit_scale_spawns.o" private/SLUS_204.86.rom --source src/positioned_unit_scale_spawns.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/accepted_interaction_latches.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/accepted_interaction_latches.o"
+"$PYTHON" tools/verify_object.py "$BUILD/accepted_interaction_latches.o" private/SLUS_204.86.rom --source src/accepted_interaction_latches.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/accepted_transition_resets.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/accepted_transition_resets.o"
+"$PYTHON" tools/verify_object.py "$BUILD/accepted_transition_resets.o" private/SLUS_204.86.rom --source src/accepted_transition_resets.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/airborne_event_motion.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/airborne_event_motion.o"
+"$PYTHON" tools/verify_object.py "$BUILD/airborne_event_motion.o" private/SLUS_204.86.rom --source src/airborne_event_motion.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/airborne_landing_steps.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/airborne_landing_steps.o"
+"$PYTHON" tools/verify_object.py "$BUILD/airborne_landing_steps.o" private/SLUS_204.86.rom --source src/airborne_landing_steps.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/animation_displacement_events.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/animation_displacement_events.o"
+"$PYTHON" tools/verify_object.py "$BUILD/animation_displacement_events.o" private/SLUS_204.86.rom --source src/animation_displacement_events.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/animation_nibble_dispatch.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/animation_nibble_dispatch.o"
+"$PYTHON" tools/verify_object.py "$BUILD/animation_nibble_dispatch.o" private/SLUS_204.86.rom --source src/animation_nibble_dispatch.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/animation_numbered_effects.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/animation_numbered_effects.o"
+"$PYTHON" tools/verify_object.py "$BUILD/animation_numbered_effects.o" private/SLUS_204.86.rom --source src/animation_numbered_effects.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/animation_position_callbacks.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/animation_position_callbacks.o"
+"$PYTHON" tools/verify_object.py "$BUILD/animation_position_callbacks.o" private/SLUS_204.86.rom --source src/animation_position_callbacks.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/animation_spawn_positions.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/animation_spawn_positions.o"
+"$PYTHON" tools/verify_object.py "$BUILD/animation_spawn_positions.o" private/SLUS_204.86.rom --source src/animation_spawn_positions.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/clamped_state_dispatch.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/clamped_state_dispatch.o"
+"$PYTHON" tools/verify_object.py "$BUILD/clamped_state_dispatch.o" private/SLUS_204.86.rom --source src/clamped_state_dispatch.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/completed_owner_dispatch.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/completed_owner_dispatch.o"
+"$PYTHON" tools/verify_object.py "$BUILD/completed_owner_dispatch.o" private/SLUS_204.86.rom --source src/completed_owner_dispatch.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/conditional_animation_updates.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/conditional_animation_updates.o"
+"$PYTHON" tools/verify_object.py "$BUILD/conditional_animation_updates.o" private/SLUS_204.86.rom --source src/conditional_animation_updates.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/descending_event_contacts.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/descending_event_contacts.o"
+"$PYTHON" tools/verify_object.py "$BUILD/descending_event_contacts.o" private/SLUS_204.86.rom --source src/descending_event_contacts.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/effect_fade_states.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/effect_fade_states.o"
+"$PYTHON" tools/verify_object.py "$BUILD/effect_fade_states.o" private/SLUS_204.86.rom --source src/effect_fade_states.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/effect_followup_callbacks.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/effect_followup_callbacks.o"
+"$PYTHON" tools/verify_object.py "$BUILD/effect_followup_callbacks.o" private/SLUS_204.86.rom --source src/effect_followup_callbacks.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/effect_state_callbacks.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/effect_state_callbacks.o"
+"$PYTHON" tools/verify_object.py "$BUILD/effect_state_callbacks.o" private/SLUS_204.86.rom --source src/effect_state_callbacks.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/elevated_mode_input_gates.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/elevated_mode_input_gates.o"
+"$PYTHON" tools/verify_object.py "$BUILD/elevated_mode_input_gates.o" private/SLUS_204.86.rom --source src/elevated_mode_input_gates.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/filtered_interaction_dispatch.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/filtered_interaction_dispatch.o"
+"$PYTHON" tools/verify_object.py "$BUILD/filtered_interaction_dispatch.o" private/SLUS_204.86.rom --source src/filtered_interaction_dispatch.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/global_phase_animation_steps.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/global_phase_animation_steps.o"
+"$PYTHON" tools/verify_object.py "$BUILD/global_phase_animation_steps.o" private/SLUS_204.86.rom --source src/global_phase_animation_steps.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/global_phase_events.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/global_phase_events.o"
+"$PYTHON" tools/verify_object.py "$BUILD/global_phase_events.o" private/SLUS_204.86.rom --source src/global_phase_events.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/ground_input_gates.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/ground_input_gates.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ground_input_gates.o" private/SLUS_204.86.rom --source src/ground_input_gates.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/ground_transition_gates.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/ground_transition_gates.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ground_transition_gates.o" private/SLUS_204.86.rom --source src/ground_transition_gates.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/height_input_gates.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/height_input_gates.o"
+"$PYTHON" tools/verify_object.py "$BUILD/height_input_gates.o" private/SLUS_204.86.rom --source src/height_input_gates.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/indexed_child_parameters.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/indexed_child_parameters.o"
+"$PYTHON" tools/verify_object.py "$BUILD/indexed_child_parameters.o" private/SLUS_204.86.rom --source src/indexed_child_parameters.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/indexed_scale_steps.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/indexed_scale_steps.o"
+"$PYTHON" tools/verify_object.py "$BUILD/indexed_scale_steps.o" private/SLUS_204.86.rom --source src/indexed_scale_steps.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/interaction_stance_resets.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/interaction_stance_resets.o"
+"$PYTHON" tools/verify_object.py "$BUILD/interaction_stance_resets.o" private/SLUS_204.86.rom --source src/interaction_stance_resets.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/latched_interaction_stances.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/latched_interaction_stances.o"
+"$PYTHON" tools/verify_object.py "$BUILD/latched_interaction_stances.o" private/SLUS_204.86.rom --source src/latched_interaction_stances.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/launch_record_initializers.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/launch_record_initializers.o"
+"$PYTHON" tools/verify_object.py "$BUILD/launch_record_initializers.o" private/SLUS_204.86.rom --source src/launch_record_initializers.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/live_owner_stance_resets.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/live_owner_stance_resets.o"
+"$PYTHON" tools/verify_object.py "$BUILD/live_owner_stance_resets.o" private/SLUS_204.86.rom --source src/live_owner_stance_resets.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/mode_input_gates.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/mode_input_gates.o"
+"$PYTHON" tools/verify_object.py "$BUILD/mode_input_gates.o" private/SLUS_204.86.rom --source src/mode_input_gates.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/mode_motion_updates.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/mode_motion_updates.o"
+"$PYTHON" tools/verify_object.py "$BUILD/mode_motion_updates.o" private/SLUS_204.86.rom --source src/mode_motion_updates.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/ordered_input_checks.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/ordered_input_checks.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ordered_input_checks.o" private/SLUS_204.86.rom --source src/ordered_input_checks.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_depth_dispatch.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/owner_depth_dispatch.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_depth_dispatch.o" private/SLUS_204.86.rom --source src/owner_depth_dispatch.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_state_dispatch.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/owner_state_dispatch.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_state_dispatch.o" private/SLUS_204.86.rom --source src/owner_state_dispatch.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_threshold_latches.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/owner_threshold_latches.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_threshold_latches.o" private/SLUS_204.86.rom --source src/owner_threshold_latches.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/pending_phase_events.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/pending_phase_events.o"
+"$PYTHON" tools/verify_object.py "$BUILD/pending_phase_events.o" private/SLUS_204.86.rom --source src/pending_phase_events.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/planar_motion_resets.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/planar_motion_resets.o"
+"$PYTHON" tools/verify_object.py "$BUILD/planar_motion_resets.o" private/SLUS_204.86.rom --source src/planar_motion_resets.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/relative_record_walks.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/relative_record_walks.o"
+"$PYTHON" tools/verify_object.py "$BUILD/relative_record_walks.o" private/SLUS_204.86.rom --source src/relative_record_walks.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/relative_scale_interpolation.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/relative_scale_interpolation.o"
+"$PYTHON" tools/verify_object.py "$BUILD/relative_scale_interpolation.o" private/SLUS_204.86.rom --source src/relative_scale_interpolation.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/stance_restore_transitions.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/stance_restore_transitions.o"
+"$PYTHON" tools/verify_object.py "$BUILD/stance_restore_transitions.o" private/SLUS_204.86.rom --source src/stance_restore_transitions.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/table_transition_input_gates.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/table_transition_input_gates.o"
+"$PYTHON" tools/verify_object.py "$BUILD/table_transition_input_gates.o" private/SLUS_204.86.rom --source src/table_transition_input_gates.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/three_axis_key_steps.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/three_axis_key_steps.o"
+"$PYTHON" tools/verify_object.py "$BUILD/three_axis_key_steps.o" private/SLUS_204.86.rom --source src/three_axis_key_steps.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/timed_child_parameters.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/timed_child_parameters.o"
+"$PYTHON" tools/verify_object.py "$BUILD/timed_child_parameters.o" private/SLUS_204.86.rom --source src/timed_child_parameters.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/uniform_scale_steps.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/uniform_scale_steps.o"
+"$PYTHON" tools/verify_object.py "$BUILD/uniform_scale_steps.o" private/SLUS_204.86.rom --source src/uniform_scale_steps.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/unoccupied_interaction_stances.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/unoccupied_interaction_stances.o"
+"$PYTHON" tools/verify_object.py "$BUILD/unoccupied_interaction_stances.o" private/SLUS_204.86.rom --source src/unoccupied_interaction_stances.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/vertical_landing_animations.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/vertical_landing_animations.o"
+"$PYTHON" tools/verify_object.py "$BUILD/vertical_landing_animations.o" private/SLUS_204.86.rom --source src/vertical_landing_animations.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/wrapped_degree_phases.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/wrapped_degree_phases.o"
+"$PYTHON" tools/verify_object.py "$BUILD/wrapped_degree_phases.o" private/SLUS_204.86.rom --source src/wrapped_degree_phases.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/batch1.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/batch1.o"
+"$PYTHON" tools/verify_object.py "$BUILD/batch1.o" private/SLUS_204.86.rom --source src/batch1.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/batch2.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/batch2.o"
+"$PYTHON" tools/verify_object.py "$BUILD/batch2.o" private/SLUS_204.86.rom --source src/batch2.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/batch3.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/batch3.o"
+"$PYTHON" tools/verify_object.py "$BUILD/batch3.o" private/SLUS_204.86.rom --source src/batch3.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/batch3b.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/batch3b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/batch3b.o" private/SLUS_204.86.rom --source src/batch3b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/batch4.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/batch4.o"
+"$PYTHON" tools/verify_object.py "$BUILD/batch4.o" private/SLUS_204.86.rom --source src/batch4.c
