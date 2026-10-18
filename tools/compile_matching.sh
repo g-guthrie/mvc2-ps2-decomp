@@ -3518,6 +3518,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     private/SLUS_204.86.rom --source src/zero_runtime_word_00416A70.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    -i src src/reset_runtime_entry_slots_00414FE0.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/reset_runtime_entry_slots_00414FE0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/reset_runtime_entry_slots_00414FE0.o" \
+    private/SLUS_204.86.rom --source src/reset_runtime_entry_slots_00414FE0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -i src src/reset_runtime_transform_heap_004152E0.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/reset_runtime_transform_heap_004152E0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/reset_runtime_transform_heap_004152E0.o" \
