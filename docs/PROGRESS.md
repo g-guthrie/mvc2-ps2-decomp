@@ -3410,3 +3410,7 @@ Recovered all 144 bytes at 0x001445A0, preserving typed position, exact 0.1 scal
 ## Consolidated signed move bank
 
 Recovered all 64 bytes at 0x004C03B0 as 16 explicitly selected four-byte signed records. The data object and complete move_setup source object verify exactly. Data reaches 152,651 bytes (23.5549%), 2,995 reconstructed units; code remains 616,908 bytes (18.7300%).
+
+## Cloned scene event constructor
+
+Recovered all 148 bytes at 0x00135600, preserving inherited fields, typed position copy, opacity, callback and allocation failure. Whole-object verification passes. Code reaches 617,056 bytes (18.7345%), 9,342 functions; data remains 152,651 bytes (23.5549%).
