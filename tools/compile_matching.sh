@@ -5017,6 +5017,16 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/wave31.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/wave31.o"
 "$PYTHON" tools/verify_object.py "$BUILD/wave31.o" private/SLUS_204.86.rom --source src/wave31.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_stage_actor_001804F0.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/initialize_stage_actor_001804F0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_stage_actor_001804F0.o" \
+    private/SLUS_204.86.rom --source src/initialize_stage_actor_001804F0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_stage_actor_00180890.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/initialize_stage_actor_00180890.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_stage_actor_00180890.o" \
+    private/SLUS_204.86.rom --source src/initialize_stage_actor_00180890.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/wave31b.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/wave31b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/wave31b.o" private/SLUS_204.86.rom --source src/wave31b.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
