@@ -3450,3 +3450,7 @@ Recovered all 40 bytes at 0x004112B0 in the existing runtime slot-reader source 
 ## Offset effect helper
 
 Recovered all 116 bytes at 0x0015D010, preserving facing-dependent horizontal offset, vertical offset, depth and the subsequent effect callback. Whole-object verification passes. Code reaches 617,448 bytes (18.7464%), 9,347 functions; data remains 152,795 bytes (23.5771%).
+
+## Runtime service lookup
+
+Recovered all 40 bytes at 0x00411B00 using EE GCC 2.96. The source preserves unsigned index validation and guarded table access. Whole-object verification passes. Code reaches 617,488 bytes (18.7476%), 9,348 functions; data remains 152,795 bytes (23.5771%).
