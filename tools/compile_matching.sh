@@ -4390,6 +4390,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py "$BUILD/prepare_runtime_transform_pair_00417170.o" \
     private/SLUS_204.86.rom --source src/prepare_runtime_transform_pair_00417170.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    -i src src/dispatch_runtime_message_by_state_0041B130.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/dispatch_runtime_message_by_state_0041B130.o"
+"$PYTHON" tools/verify_object.py "$BUILD/dispatch_runtime_message_by_state_0041B130.o" \
+    private/SLUS_204.86.rom --source src/dispatch_runtime_message_by_state_0041B130.c
+
 "$WIBO" "$SNCPP" -P src/dispatch_runtime_indexed_callback_00411818.c \
     "$BUILD/dispatch_runtime_indexed_callback_00411818.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
