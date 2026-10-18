@@ -1741,7 +1741,8 @@ jtbl_0044DCF0,0x0044DCF0,0x3c,.rodata,src/data/jtbl_0044DCF0.c,jump_table
 jtbl_0044DD30,0x0044DD30,0x20,.rodata,src/data/jtbl_0044DD30.c,typed_state_callback_table
 data_f32_0044DD50,0x0044DD50,0x20,.data,src/data/data_f32_0044DD50.c,indexed_f32_pair_table
 jtbl_0044DD70,0x0044DD70,0x2c,.rodata,src/data/jtbl_0044DD70.c,jump_table
-data_u32_0044DDA0,0x0044DDA0,0x20,.data,src/data/data_u32_0044DDA0.c,initialized_u32_table
+data_u8_0044DDA0,0x0044DDA0,0x12,.data,src/data/data_u8_0044DDA0.c,bounded_u8_lookup
+data_u8_0044DDB2,0x0044DDB2,0xE,.data,src/data/data_u8_0044DDB2.c,initialized_byte_array
 jtbl_0044DDC0,0x0044DDC0,0x1c,.rodata,src/data/jtbl_0044DDC0.c,typed_state_callback_table
 jtbl_0044DDE0,0x0044DDE0,0x7c,.rodata,src/data/jtbl_0044DDE0.c,typed_state_callback_table
 jtbl_0044DE60,0x0044DE60,0x3c,.rodata,src/data/jtbl_0044DE60.c,typed_state_callback_table

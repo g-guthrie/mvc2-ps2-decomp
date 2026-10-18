@@ -9,7 +9,7 @@ extern void func_001CB5A0(u8 *, s32, s32);
 extern int func_001757E0(u8 *, int, int);
 extern void func_00178F20(u8 *, u8 *);
 extern u8 D_0044DAC0[];
-extern u8 D_0044DDA0[];
+extern u8 data_u8_0044DDA0[18];
 extern u8 *D_004C2840;
 
 s32 func_00100240(void) { return func_00119AB8() < 0; }
@@ -61,7 +61,7 @@ void func_001CB180(u8 *p)
 
 void func_001CCF40(u8 *p, s32 a1)
 {
-    func_001757E0(p, 23, D_0044DDA0[a1 & 0xff]);
+    func_001757E0(p, 23, data_u8_0044DDA0[a1 & 0xff]);
 }
 
 void func_00239C80(u8 *p, u8 *q)

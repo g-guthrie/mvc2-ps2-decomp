@@ -21,7 +21,7 @@ extern void func_003DCD40(void *, s32, s32);
 
 extern u8 D_00583B9B;
 extern u8 D_00583B90[];
-extern u8 D_0044DDA0[];
+extern u8 data_u8_0044DDA0[18];
 extern u8 D_004492A0[];
 extern char D_004F1CC0[];
 extern char D_005BF280[];
@@ -73,7 +73,7 @@ void func_0013A480(u8 *p) {
 }
 
 void func_001CCF40(u8 *p, s32 a1) {
-    func_001757E0(p, 23, D_0044DDA0[a1 & 0xFF]);
+    func_001757E0(p, 23, data_u8_0044DDA0[a1 & 0xFF]);
 }
 
 void func_00191F20(u8 *p, u8 a1) {

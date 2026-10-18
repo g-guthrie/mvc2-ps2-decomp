@@ -22,7 +22,7 @@ typedef struct {
     u8 pad28[4];
 } Entry;
 
-extern u8 D_0044DDA0[];
+extern u8 data_u8_0044DDA0[18];
 extern u8 D_0044DAC0[];
 extern int func_001757E0(u8 *, int, int);
 extern void func_001C5110(u8 *);
@@ -38,7 +38,7 @@ extern s8 func_00175670(u8 *);
 extern void func_001CF6A0(u8 *);
 
 void func_001CCF40(u8 *p, s32 a1) {
-    func_001757E0(p, 23, D_0044DDA0[(u8)a1]);
+    func_001757E0(p, 23, data_u8_0044DDA0[(u8)a1]);
 }
 
 void func_001C4D30(u8 *p) {

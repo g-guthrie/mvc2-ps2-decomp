@@ -3576,3 +3576,7 @@ Integrated the complete 300-byte function at 0x001FC080. Four queued worker resu
 ## Runtime effect float slot
 
 Recovered the four-byte float at 0x004C2530 from its typed native loads/stores and exact 1.0f initialization. Data and initializer source objects verify exactly. Data reaches 153,511 bytes (23.6876%), 3,051 reconstructed units; code remains 638,428 bytes (19.3833%).
+
+## Caller-bounded unsigned-byte lookup
+
+Recovered the 18-byte prefix at 0x0044DDA0. Native call sites pass constant17 or the positive countdown initialized11; lookup is skipped at nonpositive count. No literal function-pointer references were found. The fourteen-byte tail stays raw. Both data and all affected whole source objects verify exactly. Data reaches 153,529 bytes (23.6904%), 3,052 reconstructed units; code remains 638,428 bytes (19.3833%).
