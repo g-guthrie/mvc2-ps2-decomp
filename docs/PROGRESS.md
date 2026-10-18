@@ -3712,3 +3712,5 @@ The updated conservative Sony audit found C for 27 of 173 candidates and
 this does not establish the original claimed set of 196 functions.
 
 Local Sony handler registration: 0x0010C1A8 (96 bytes) and 0x0010C208 (132 bytes) match unmodified Sony O2/G0 output. The latter preserves the 1..13 index check, prior-handler return and different registration calls for indices 1..3. Combined code reaches 1,417,620 bytes (43.0404%).
+
+Local Sony RPC shutdown: all 128 bytes at 0x0010D540 match. The recovered helper returns the server response and clears the initialized flag only after a response of one. All five functions in the grouped query object reverify exactly; code reaches 1,417,748 bytes (43.0443%).
