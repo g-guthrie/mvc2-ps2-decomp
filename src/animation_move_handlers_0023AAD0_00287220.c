@@ -22,14 +22,14 @@ extern s32 D_004C0928, D_004C092C, D_004C0930, D_004C0940, D_004C0944, D_004C094
 extern GG *D_004C2794;
 
 void func_0023AAD0(O *p) {
-    extern void func_001757E0(O *, s32, s32);
-    extern void func_001E3710(O *, s32);
+    extern s32 func_001757E0(u8 *, s32, s32);
+    extern void func_001E3710(u8 *, s32);
     u32 t;
     switch (p->b1FC) {
     case 0:
         p->b168 = 0;
         p->b1B5 = 12;
-        func_001E3710(p, 20);
+        func_001E3710((u8 *)p, 20);
         if (p->b210 == 0) p->w408 = &D_004C0220;
         else p->w408 = &D_004C0238;
         p->b1BB = 0;
@@ -37,7 +37,7 @@ void func_0023AAD0(O *p) {
     case 1:
         p->b168 = 1;
         p->b1B5 = 13;
-        func_001E3710(p, 21);
+        func_001E3710((u8 *)p, 21);
         if (p->b210 == 0) p->w408 = &D_004C0224;
         else p->w408 = &D_004C023C;
         p->b1BB = 1;
@@ -55,19 +55,19 @@ void func_0023AAD0(O *p) {
     p->b1B2 = p->s1C0 = 0;
     p->w1D8 = 0;
     D_004C2794->f7c[p->b2]++;
-    func_001757E0(p, 11, p->b168);
+    func_001757E0((u8 *)p, 11, p->b168);
     if ((p->b1EA & 0x0F) != 0) p->b1EA = p->b1EA - 1;
 }
 
 void func_00287220(O *p) {
-    extern void func_001757E0(O *, s32, s32);
-    extern void func_001E3710(O *, s32);
+    extern s32 func_001757E0(u8 *, s32, s32);
+    extern void func_001E3710(u8 *, s32);
     u32 t;
     switch (p->b1FC) {
     case 0:
         p->b168 = 0;
         p->b1B5 = 12;
-        func_001E3710(p, 20);
+        func_001E3710((u8 *)p, 20);
         if (p->b210 == 0) p->w408 = &D_004C0928;
         else p->w408 = &D_004C0940;
         p->b1BB = 0;
@@ -75,7 +75,7 @@ void func_00287220(O *p) {
     case 1:
         p->b168 = 1;
         p->b1B5 = 13;
-        func_001E3710(p, 21);
+        func_001E3710((u8 *)p, 21);
         if (p->b210 == 0) p->w408 = &D_004C092C;
         else p->w408 = &D_004C0944;
         p->b1BB = 1;
@@ -93,6 +93,6 @@ void func_00287220(O *p) {
     p->b1B2 = p->s1C0 = 0;
     p->w1D8 = 0;
     D_004C2794->f7c[p->b2]++;
-    func_001757E0(p, 11, p->b168);
+    func_001757E0((u8 *)p, 11, p->b168);
     if ((p->b1EA & 0x0F) != 0) p->b1EA = p->b1EA - 1;
 }
