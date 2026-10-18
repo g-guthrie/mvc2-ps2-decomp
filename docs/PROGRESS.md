@@ -3524,3 +3524,7 @@ Recovered all 108 bytes at 0x00413DF0, preserving stack request preparation and 
 ## Owner mode child constructor
 
 Recovered all 100 bytes at 0x001978B0, preserving owner pointer, inherited actor byte, mode, callback and allocation failure. Whole-object verification passes. Code reaches 622,300 bytes (18.8937%), 9,386 functions; data remains 153,435 bytes (23.6759%).
+
+## Gameplay transition variant batch
+
+Recovered three complete routines totaling 420 bytes. Both affected source objects verify with their distinct registered compiler versions and scheduling flags. Code reaches 622,720 bytes (18.9064%), 9,389 functions; data remains 153,435 bytes (23.6759%).
