@@ -4447,3 +4447,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
  -o "$BUILD/create_child_position_event_001396E0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/create_child_position_event_001396E0.o" \
  private/SLUS_204.86.rom --source src/create_child_position_event_001396E0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/create_indexed_position_event_00144260.c -c -lang c -O3 -sdatathreshold 8 \
+ -o "$BUILD/create_indexed_position_event_00144260.o"
+"$PYTHON" tools/verify_object.py "$BUILD/create_indexed_position_event_00144260.o" \
+ private/SLUS_204.86.rom --source src/create_indexed_position_event_00144260.c

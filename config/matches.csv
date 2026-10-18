@@ -9342,3 +9342,4 @@ func_00414FE0,0x00414FE0,0x40,src/reset_runtime_entry_slots_00414FE0.c,complete
 func_00346030,0x00346030,0x50,src/grok_w5_0038.c,complete
 func_001ED230,0x001ED230,0xA8,src/fixed_launch_effect_initializers.c,complete
 func_00323DC0,0x00323DC0,0x5C,src/grok_w3_0020.c,complete
+func_00144260,0x00144260,0x90,src/create_indexed_position_event_00144260.c,complete

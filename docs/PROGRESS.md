@@ -3394,3 +3394,7 @@ Recovered 24 bytes as six explicitly selected four-byte signed records in the ba
 ## Three-function gameplay batch
 
 Recovered complete functions at 0x00346030 (80 bytes), 0x001ED230 (168 bytes), and 0x00323DC0 (92 bytes). All affected whole objects verify with their registered profiles. Code reaches 616,620 bytes (18.7212%), 9,339 functions; data remains 152,323 bytes (23.5043%).
+
+## Indexed position event constructor
+
+Recovered all 144 bytes at 0x00144260, preserving indexed vector selection, callback setup and allocation failure. The incomplete external vector-pointer array adds no data-extent credit. Whole-object verification passes. Code reaches 616,764 bytes (18.7256%), 9,340 functions; data remains 152,323 bytes (23.5043%).
