@@ -3422,3 +3422,7 @@ Recovered 60 bytes across the three-row bank at 0x004BFB7C and the twelve-row su
 ## Background scale event constructor
 
 Recovered all 136 bytes at 0x00136B60 with typed position/scale fields, context linkage, callback and allocation failure intact. Whole-object verification passes. Code reaches 617,192 bytes (18.7386%), 9,343 functions; data remains 152,711 bytes (23.5642%).
+
+## Three-row signed move bank
+
+Recovered 12 bytes at 0x004C1690..0x004C169C from explicit setup pointers and signed native component reads. Both data objects and the whole move_setup object verify exactly. Data reaches 152,723 bytes (23.5660%), 2,999 reconstructed units; code remains 617,192 bytes (18.7386%).

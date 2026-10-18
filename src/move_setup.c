@@ -8,6 +8,8 @@ extern signed char data_s8_004C03B0[64] __attribute__((section(".sdata")));
 extern signed char data_s8_004C0720[64] __attribute__((section(".sdata")));
 extern signed char data_s8_004C0590[64] __attribute__((section(".sdata")));
 extern signed char data_s8_004C0440[64] __attribute__((section(".sdata")));
+extern signed char data_s8_004C1690[4] __attribute__((section(".sdata")));
+extern signed char data_s8_004C1694[8] __attribute__((section(".sdata")));
 extern signed char data_s8_004BFDC8[72] __attribute__((section(".sdata")));
 extern signed char data_s8_004C0688[4] __attribute__((section(".sdata")));
 extern signed char data_s8_004C0CC0[64] __attribute__((section(".sdata")));
@@ -166,9 +168,6 @@ extern int D_004C0ED8;
 extern int D_004C0EE8;
 extern int D_004C0EEC;
 extern int D_004C0EF0;
-extern int D_004C1690;
-extern int D_004C1694;
-extern int D_004C1698;
 extern int D_004C16A8;
 extern int D_004C16AC;
 extern int D_004C16B0;
@@ -354,7 +353,7 @@ EXTENDED_MOVE_SETUP(func_002C64D0, func_001E3710, 15, 20, data_s8_004C0E30[12], 
 EXTENDED_MOVE_SETUP(func_002CC980, func_001E3710, 12, 20, D_004C0ED0, D_004C0EE8, func_001E3710, 13, 21, D_004C0ED4, D_004C0EEC, func_001E3710, 14, 22, D_004C0ED8, D_004C0EF0, 11, 15, 1)
 EXTENDED_MOVE_SETUP(func_002D20E0, func_001E3710, 12, 20, data_s8_004C0F30[24], data_s8_004C0F30[48], func_001E3710, 13, 21, data_s8_004C0F30[28], data_s8_004C0F30[52], func_001E3710, 14, 22, data_s8_004C0F30[32], data_s8_004C0F30[56], 11, 15, 1)
 EXTENDED_MOVE_SETUP(func_002D2230, func_001E3710, 15, 20, data_s8_004C0F30[36], data_s8_004C0F30[60], func_001E3710, 16, 21, data_s8_004C0F30[40], data_s8_004C0F70[0], func_001E3710, 17, 22, data_s8_004C0F30[44], data_s8_004C0F70[4], 12, 240, 16)
-EXTENDED_MOVE_SETUP(func_00310510, func_001E3710, 12, 20, D_004C1690, D_004C16A8, func_001E3710, 13, 21, D_004C1694, D_004C16AC, func_001E3710, 14, 22, D_004C1698, D_004C16B0, 11, 15, 1)
+EXTENDED_MOVE_SETUP(func_00310510, func_001E3710, 12, 20, data_s8_004C1690[0], D_004C16A8, func_001E3710, 13, 21, data_s8_004C1694[0], D_004C16AC, func_001E3710, 14, 22, data_s8_004C1694[4], D_004C16B0, 11, 15, 1)
 
 #define THIRD_STATE_SETUP(name,command0,table0,command1,table1,command2,table2,mode) \
 void name(u8 *p) { \
