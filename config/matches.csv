@@ -14720,3 +14720,4 @@ func_0010D0B8,0x0010D0B8,0x4C,src/sony29_message_dispatch.c,complete
 func_0010C1A8,0x0010C1A8,0x60,src/sony29_handler_registration.c,complete
 func_0010C208,0x0010C208,0x84,src/sony29_handler_registration.c,complete
 func_0010D540,0x0010D540,0x80,src/sony29_rpc_queries.c,complete
+func_001023C8,0x001023C8,0x5C,src/side_packet_dispatch_001023C8.c,complete
