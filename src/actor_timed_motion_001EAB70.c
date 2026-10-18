@@ -9,8 +9,8 @@ void func_001EAB70(u8 *p)
 {
     s16 h;
     f32 v;
-    extern void func_00175700();
-    extern void func_001757E0();
+    extern s32 func_00175700(u8 *);
+    extern s32 func_001757E0(u8 *, s32, s32);
 
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
