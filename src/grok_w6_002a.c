@@ -390,3 +390,27 @@ void func_002542B0(u8 *p)
     }
     func_00186A60(p, 21);
 }
+
+void func_00320ED0(u8 *p)
+{
+    s8 v;
+    p[5] = 0;
+    p[6] = 0;
+    p[7] = 0;
+    v = (s8)p[0x4DD];
+    switch (v) {
+    case 0:
+        p[0x1FD] = 10;
+        p[0x1B7] = 1;
+        break;
+    case 1:
+        p[0x1FD] = 11;
+        p[0x1B7] = 1;
+        break;
+    case 2:
+        p[0x1FD] = 12;
+        p[0x1B7] = 1;
+        break;
+    }
+    func_00186A60(p, 21);
+}
