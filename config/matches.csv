@@ -9350,3 +9350,4 @@ func_00411818,0x00411818,0x3C,src/dispatch_runtime_indexed_callback_00411818.c,c
 func_00411288,0x00411288,0x28,src/invoke_runtime_slot_callback_00411288.c,complete
 func_004112B0,0x004112B0,0x28,src/invoke_runtime_slot_callback_00411288.c,complete
 func_0015D010,0x0015D010,0x74,src/create_offset_effect_0015D010.c,complete
+func_00411B00,0x00411B00,0x28,src/read_runtime_service_table_00411B00.c,complete

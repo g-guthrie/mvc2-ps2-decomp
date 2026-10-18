@@ -4332,6 +4332,16 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 \
 "$PYTHON" tools/verify_object.py "$BUILD/invoke_runtime_slot_callback_00411288.o" \
     private/SLUS_204.86.rom --source src/invoke_runtime_slot_callback_00411288.c
 
+"$WIBO" "$SNCPP" -P src/read_runtime_service_table_00411B00.c \
+    "$BUILD/read_runtime_service_table_00411B00.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/read_runtime_service_table_00411B00.i" \
+    "$BUILD/read_runtime_service_table_00411B00.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/read_runtime_service_table_00411B00.o" \
+    "$BUILD/read_runtime_service_table_00411B00.s"
+"$PYTHON" tools/verify_object.py "$BUILD/read_runtime_service_table_00411B00.o" \
+    private/SLUS_204.86.rom --source src/read_runtime_service_table_00411B00.c
+
 "$WIBO" "$SNCPP" -P src/dispatch_runtime_indexed_callback_00411818.c \
     "$BUILD/dispatch_runtime_indexed_callback_00411818.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
