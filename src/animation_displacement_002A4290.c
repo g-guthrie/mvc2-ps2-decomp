@@ -7,7 +7,7 @@ typedef signed int s32;
 typedef float f32;
 
 /* Four interleaved IEEE-754 components per table entry. */
-extern u32 data_u32_004585C0[12];
+extern f32 data_u32_004585C0[12];
 
 void func_002A4290(u8 *p)
 {
@@ -21,14 +21,14 @@ void func_002A4290(u8 *p)
         p[6] = t + 1;
         func_00186A20(p);
         *(s16 *)(p + 0x1C) = 12;
-        if (p[0x1E6] != 0) value = ((f32 *)(data_u32_004585C0 + 0))[p[0x1B7] * 4];
-        else value = -((f32 *)(data_u32_004585C0 + 0))[p[0x1B7] * 4];
+        if (p[0x1E6] != 0) value = (data_u32_004585C0 + 0)[p[0x1B7] * 4];
+        else value = -(data_u32_004585C0 + 0)[p[0x1B7] * 4];
         *(f32 *)(p + 0x5C) = value;
-        if (p[0x1E6] != 0) value = ((f32 *)(data_u32_004585C0 + 1))[p[0x1B7] * 4];
-        else value = -((f32 *)(data_u32_004585C0 + 1))[p[0x1B7] * 4];
+        if (p[0x1E6] != 0) value = (data_u32_004585C0 + 1)[p[0x1B7] * 4];
+        else value = -(data_u32_004585C0 + 1)[p[0x1B7] * 4];
         *(f32 *)(p + 0x68) = value;
-        *(f32 *)(p + 0x60) = ((f32 *)(data_u32_004585C0 + 2))[p[0x1B7] * 4];
-        *(f32 *)(p + 0x6C) = ((f32 *)(data_u32_004585C0 + 3))[p[0x1B7] * 4];
+        *(f32 *)(p + 0x60) = (data_u32_004585C0 + 2)[p[0x1B7] * 4];
+        *(f32 *)(p + 0x6C) = (data_u32_004585C0 + 3)[p[0x1B7] * 4];
     }
     value = (f32)p[0x15B];
     zero = 0.0f;

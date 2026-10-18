@@ -2966,7 +2966,7 @@ data_u32_00458550,0x00458550,0x10,.data,src/data/data_u32_00458550.c,initialized
 jtbl_00458560,0x00458560,0x20,.rodata,src/data/jtbl_00458560.c,typed_state_callback_table
 data_u32_00458580,0x00458580,0x30,.data,src/data/data_u32_00458580.c,initialized_u32_table
 jtbl_004585B0,0x004585B0,0x10,.rodata,src/data/jtbl_004585B0.c,typed_state_callback_table
-data_u32_004585C0,0x004585C0,0x30,.data,src/data/data_u32_004585C0.c,initialized_u32_table
+data_u32_004585C0,0x004585C0,0x30,.data,src/data/data_u32_004585C0.c,initialized_f32_table
 jtbl_004585F0,0x004585F0,0x20,.rodata,src/data/jtbl_004585F0.c,typed_state_callback_table
 data_u32_00458610,0x00458610,0x10,.data,src/data/data_u32_00458610.c,initialized_u32_table
 jtbl_00458620,0x00458620,0x34,.rodata,src/data/jtbl_00458620.c,jump_table
