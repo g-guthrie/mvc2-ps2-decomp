@@ -12,6 +12,8 @@ typedef float f32;
 extern int func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_001266A0(u8 *, int, int);
+extern void func_00186A20(u8 *);
+extern void func_00183D50(u8 *);
 extern void func_001843A0(u8 *);
 extern void func_00184540(u8 *);
 extern void func_001820A0(u8 *);
@@ -30,6 +32,8 @@ extern void func_0020C0E0(u8 *, u8 *);
 extern void func_0020D2F0(u8 *, u8 *);
 extern void func_0020D250(u8 *, u8 *, int);
 extern void func_0021C770(u8 *, u8 *);
+extern void func_00328740(u8 *);
+extern s8 D_004ACD08[];
 
 void func_00210C70(u8 *p)
 {
@@ -81,6 +85,42 @@ void residual_0020A5D0(u8 *p)
     func_0034FA80(p, 3);
     S(p, 28) = 24;
     func_001757E0(p, 0, 0);
+}
+
+void func_0020BDF0(u8 *p, u8 *q)
+{
+    func_00175700(p);
+    if (*(s8 *)(p + 0x151) != 0)
+        return;
+    func_00186A20(p);
+    *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
+    *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
+    *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
+    *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
+    if (*(f32 *)(p + 0x38) <= *(f32 *)(p + 0x430)) {
+        *(f32 *)(p + 0x38) = *(f32 *)(p + 0x430);
+        p[0x20D] = 0;
+        func_00183D50(p);
+        func_001843A0(p);
+        return;
+    }
+    {
+        s16 timer = *(s16 *)(p + 0x1C) - 1;
+        *(s16 *)(p + 0x1C) = timer;
+        if (timer >= 0)
+            return;
+    }
+    if ((*(s8 *)(p + 0x211) & (p[0x1E6] + 1)) == 0)
+        return;
+    p[6]++;
+    func_00328740(p);
+    func_001266A0(p, 0, 0);
+    if ((*(u8 **)(p + 0x220))[1] == 0x1A)
+        func_001266A0(p, 1, 13);
+    q[10] = 1;
+    q[7] = 0;
+    q[8] = 0;
+    func_001757E0(p, 20, 6);
 }
 
 void residual_00211E90(u8 *p)
