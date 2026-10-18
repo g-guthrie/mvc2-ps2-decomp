@@ -3286,3 +3286,7 @@ Recovered the complete 128-byte constructor at 0x001571D0. Native caller
 preserves allocation failure, the signed-byte counter and typed float3
 position copy. Whole-object verification passes. Code reaches 611,704 bytes
 (18.5720%), 9,300 functions; data remains 152,006 bytes (23.4554%).
+
+## Runtime callback and context fields
+
+Recovered 12 bytes at 0x00488314..0x00488320 using the current consumer contracts: message callback, context pointer, and signed state word. Corrected the initial integer-only declarations. All five data objects verify exactly; full linkage and packed retail hash pass. Data reaches 152,018 bytes (23.4573%); code remains 611,704 bytes (18.5720%).
