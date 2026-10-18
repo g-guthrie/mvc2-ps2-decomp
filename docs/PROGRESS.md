@@ -3792,3 +3792,12 @@ bodies and registered the new grouped source. These restore 224 bytes of valid
 C credit after the audit correction; they are not newly discovered executable
 bytes. Code now reaches 1,412,620 bytes (42.8886%) before resolving the empty
 barrier audit. The separate non-FN barrier cleanup is still in progress.
+
+
+Recovered the previously held 160-byte wait/query helper at 0x0010F148 with
+unmodified Sony O2/G0 output. Its blocking path waits on the shared busy state
+or RPC activity, while the query path returns a boolean. Correct volatile
+state and the recovered void variadic logger declaration preserve the target
+operations; a combined query condition reproduces its branches. The final
+formatted source recompiled and passed full-byte verification. Local code is
+1,412,780 bytes (42.8935%), before the pending compiler-barrier audit.

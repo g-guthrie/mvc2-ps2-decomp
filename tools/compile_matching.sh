@@ -9262,3 +9262,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$WIBO" "$EE29CC1" "$BUILD/sony29_word_copies.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_word_copies.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_word_copies.o" "$BUILD/sony29_word_copies.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_word_copies.o" private/SLUS_204.86.rom --source src/sony29_word_copies.c
+
+"$WIBO" "$SNCPP" -P src/sony29_wait_idle.c "$BUILD/sony29_wait_idle.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_wait_idle.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_wait_idle.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_wait_idle.o" "$BUILD/sony29_wait_idle.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_wait_idle.o" private/SLUS_204.86.rom --source src/sony29_wait_idle.c
