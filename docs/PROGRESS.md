@@ -3948,3 +3948,28 @@ shell syntax and whitespace checks. Its full combined hybrid relink and packed
 retail ELF checks pass with the same loaded-image and packed-ELF SHA-256 hashes
 recorded above. Full-image identity includes unrecovered retail spans; credited
 C progress remains 43.0850%.
+
+
+Rewritten-main refresh: started from 86d737e5 (49.1664%), preserving the old
+branch and private probes. Every old symbol address and match record was
+unchanged by the incoming waves. Independently recompiled all 502 added or
+modified C units relative to the preceding Codex checkpoint; all 722 full-function
+comparisons passed. Previously verified unchanged objects were retained.
+
+Added two independently verified complete C functions: 0x001A14D0 (400 bytes),
+an owner-state update with timed transitions, and 0x002A4290 (400 bytes), an
+animation-driven velocity/displacement update. The first uses MWCC3.0.3 O3/G0;
+the second uses MWCC3.0.3 O3/Op/G0. Their normal build recipes and address aliases
+are registered. No data credit is added for the second routine's existing table.
+Catalog: 1,620,192 code bytes (49.1907%), 15,406 credited functions, and
+153,965 reconstructed data bytes (23.7577%). The unrelated 0x00194170 dispatch
+inventory span is left untouched because it contains multiple entry bodies;
+0x0018CEA0 / 0x0018D030 probes remain private and uncredited.
+
+All 42 tests, catalog/report generation, and the combined hybrid/packed-retail
+ELF checks pass. Loaded-image SHA-256:
+c5206f568f068e5bd93ba47676500764c3d45719890865fa71ada10afadcd26f;
+packed-ELF SHA-256:
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+README now separates the previous 43% checkpoint from current progress and
+correctly instructs cloud workers to supply their own input archive.

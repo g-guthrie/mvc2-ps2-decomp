@@ -59,19 +59,21 @@ generated assembly, and build output remain ignored.
 
 ## Cloud executors
 
-Build inputs are included on public `main` in
-a build-inputs bundle you supply yourself (see [build-inputs/README.md](build-inputs/README.md)).
+Supply your own build-inputs bundle using the layout in
+[build-inputs/README.md](build-inputs/README.md).
 See [docs/CLOUD_BUILD.md](docs/CLOUD_BUILD.md) for Linux dependencies.
 After creating `.venv` and installing `requirements.txt`, prepare the Mac EE GCC
 runner or Linux dependencies described in [docs/CLOUD_BUILD.md](docs/CLOUD_BUILD.md):
 
 ```sh
-.venv/bin/python tools/bootstrap_private_inputs.py
+.venv/bin/python tools/bootstrap_private_inputs.py --archive /path/to/mvc2-ps2-build-inputs.tar.gz
 . private/build.env
+"$PYTHON" tools/setup_sony29.py
+. private/sony29.env
 make split hybrid test report PYTHON="$PYTHON"
 ```
 
-The bootstrap verifies the bundled retail image, both Metrowerks compilers, SN GCC 2.95.2, and EE GCC 2.96,
+The bootstrap verifies the supplied retail image, both Metrowerks compilers, SN GCC 2.95.2, and EE GCC 2.96,
 selects a host-compatible Wibo, smoke-tests compilation, and supplies the tool
 paths. No private repository access or GitHub authentication is required.
 
@@ -132,9 +134,9 @@ repository.
 
 ## Legal
 
-The repository includes owner-supplied executable and compiler build inputs
-for reproducibility. Disc images, other extracted game assets, generated retail
-assembly, and Sony SDK files are excluded. This research project is not
+Executable and period compiler build inputs must be supplied locally. Disc
+images, extracted game assets, generated retail assembly, and Sony SDK files
+are excluded from the repository. This research project is not
 affiliated with Capcom, Marvel, Sony, or their licensors.
 
 ### Current coordination for Claude — October 18
@@ -161,24 +163,26 @@ See the initial audit dispositions in
 recoveries in [docs/PROGRESS.md](docs/PROGRESS.md). The generated graphic and
 successful decomp.dev report are the current progress authority.
 
-The latest two follow-on batches add 32 genuine C functions / 8,364 bytes,
+Earlier Codex follow-on batches added 32 genuine C functions / 8,364 bytes,
 independently compiled and checked in full. They include stage actor dispatch,
 motion/attachment state updates, actor launch variants, timed state setup and a
 440-byte damped-motion handler. One older 736-byte mesh-loader caller lost
 credit because its fabricated helper bodies only shaped register allocation.
-The catalog now credits 1,419,088 code bytes (43.0850%) and 153,965 data bytes
-(23.7577%). The near-matching natural mesh-loader candidate remains uncredited.
+Those batches reached 43.0850% code. The newer waves 17–19 baseline is
+1,619,392 code bytes (49.1664%). Two new independently verified functions
+bring the current catalog to 1,620,192 bytes (49.1907%); data is 153,965 bytes
+(23.7577%).
+The near-matching natural mesh-loader candidate remains uncredited.
 
 Active assignments are explicit; map color describes coverage, not ownership.
 The workers now focus on uncovered gameplay families, with separate ranges:
 
-- Codex root: 0x00190000..0x00198000, integration and publication.
-- Code worker: 0x001A0000..0x001A8000 and selected template pairs;
-  the latest exact batch is complete, with 0x002340F0 still an uncredited probe.
-- Data worker's gameplay range: 0x00180000..0x00188000; the selected
-  follow-on pairs are complete, with 0x003F2BF0 still an uncredited probe.
-- Runtime worker's gameplay range: 0x00200000..0x00208000; the latest
-  batch and explicit 0x0020FA50 / 0x00217AD0 / 0x00218750 pairs are complete.
+- Codex root: 0x0018CEA0 / 0x0018D030, independent build verification,
+  integration and publication.
+- Code worker: 0x001A0000..0x001A8000; 0x001A14D0 is integrated,
+  with 0x001A0880 still an uncredited probe.
+- Second code worker: 0x002A0000..0x002A8000; 0x002A4290 is integrated.
+- Runtime worker: 0x00200000..0x00208000, starting with 0x002017C0.
 
 Check the current catalog and recent commits before starting adjacent work.
 Use function evidence to choose compilers; the SDK address bands are mixed.
