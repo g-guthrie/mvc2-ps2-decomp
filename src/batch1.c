@@ -11,19 +11,3 @@ extern s32 D_004C28A0;
 extern s32 D_004C2B40;
 extern u8 D_0056EE70[];
 extern u8 D_006327B0[];
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
