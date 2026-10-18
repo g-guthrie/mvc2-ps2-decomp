@@ -4726,3 +4726,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
  -o "$BUILD/dispatch_conditional_chain_001FC080.o"
 "$PYTHON" tools/verify_object.py "$BUILD/dispatch_conditional_chain_001FC080.o" \
  private/SLUS_204.86.rom --source src/dispatch_conditional_chain_001FC080.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/create_cleared_mode_child_001D36E0.c -c -lang c -O3 -sdatathreshold 0 \
+ -o "$BUILD/create_cleared_mode_child_001D36E0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/create_cleared_mode_child_001D36E0.o" \
+ private/SLUS_204.86.rom --source src/create_cleared_mode_child_001D36E0.c

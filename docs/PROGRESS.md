@@ -3580,3 +3580,7 @@ Recovered the four-byte float at 0x004C2530 from its typed native loads/stores a
 ## Caller-bounded unsigned-byte lookup
 
 Recovered the 18-byte prefix at 0x0044DDA0. Native call sites pass constant17 or the positive countdown initialized11; lookup is skipped at nonpositive count. No literal function-pointer references were found. The fourteen-byte tail stays raw. Both data and all affected whole source objects verify exactly. Data reaches 153,529 bytes (23.6904%), 3,052 reconstructed units; code remains 638,428 bytes (19.3833%).
+
+## Cleared-mode child constructor
+
+Recovered all 104 bytes at 0x001D36E0, preserving mode initialization, actor byte, owner linkage, callback and allocation failure. Whole-object verification passes. Code reaches 638,532 bytes (19.3865%), 9,597 functions; data remains 153,529 bytes (23.6904%).
