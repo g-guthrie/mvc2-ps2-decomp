@@ -3624,3 +3624,7 @@ Integrated 93 additional non-overlapping functions (7,244 bytes) from Claude, pr
 ## Threshold activation and physics countdown
 
 Recovered complete functions at 0x001EE480 (128 bytes) and 0x001DDBA0 (140 bytes). Both affected whole source objects verify with their respective registered compiler versions. Code reaches 646,904 bytes (19.6407%), 9,702 functions; data remains 153,593 bytes (23.7003%).
+
+## Ramp-update duplicate audit
+
+Queued worker functions 0x0012A120 and 0x0012A170 already exist in the reconciled public-main sources wave11b.c and wave12b.c. Removed the duplicate import and retained their verified canonical rows. No additional code credit.
