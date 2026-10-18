@@ -14745,3 +14745,4 @@ func_00167700,0x00167700,0xE0,src/select_interaction_flags_00167700.c,complete
 func_0021F740,0x0021F740,0xCC,src/initialize_actor_launch_0021F740.c,complete
 func_0021F8E0,0x0021F8E0,0xCC,src/initialize_actor_launch_0021F8E0.c,complete
 func_0014F9F0,0x0014F9F0,0x108,src/actor_spawn_0014F9F0.c,complete
+func_00378E90,0x00378E90,0xE0,src/initialize_parent_actor_00378E90.c,complete
