@@ -3714,3 +3714,25 @@ this does not establish the original claimed set of 196 functions.
 Local Sony handler registration: 0x0010C1A8 (96 bytes) and 0x0010C208 (132 bytes) match unmodified Sony O2/G0 output. The latter preserves the 1..13 index check, prior-handler return and different registration calls for indices 1..3. Combined code reaches 1,417,620 bytes (43.0404%).
 
 Local Sony RPC shutdown: all 128 bytes at 0x0010D540 match. The recovered helper returns the server response and clears the initialized flag only after a response of one. All five functions in the grouped query object reverify exactly; code reaches 1,417,748 bytes (43.0443%).
+
+
+Full linkage checkpoint: frozen snapshot 898a3cbd completed `make hybrid`,
+including all registered compiler recipes and initialized-data objects. Its
+loaded image and packed retail ELF match exactly. The current combined catalog
+was then linked using those verified objects plus independently recompiled
+wave-16 and later Sony/data additions. All current source changes since the
+snapshot were covered by those compiler passes. Current hybrid linkage and
+packed ELF are exact as well: loaded SHA-256
+c5206f568f068e5bd93ba47676500764c3d45719890865fa71ada10afadcd26f;
+packed ELF SHA-256
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+This remains a hybrid reconstruction: unrecovered spans are retail bytes.
+
+The 92-byte side-packet dispatcher now matches natural C after retaining its
+common result epilogue. Sony recoveries total 47 functions / 4,108 bytes.
+A separate 12-byte native three-float position vector is now reconstructed,
+with both observed consumers reading exactly its three components. Current
+catalog: 1,417,840 code bytes (43.0471%), 14,718 functions; 153,861 data bytes
+(23.7416%). Public 8126a486 has green CI and decomp.dev shows 43.03% code
+and 23.70% data from that commit. The linkage checkpoint is published early
+so parallel work can use the confirmed complete build foundation.

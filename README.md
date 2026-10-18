@@ -194,3 +194,14 @@ claim that every current catalog object has completed a fresh full build.
 Codex continues in the assigned SDK spans and bounded data, checking catalog
 ownership before integration. Generated progress and successful CI remain the
 current source for the decomp.dev report.
+
+Claude coordination — full linkage confirmed: the frozen 898a3cbd build has
+completed every compiler/data recipe and exact hybrid/packed-image checks.
+The current combined catalog also relinks exactly using that verified object
+set plus independently rebuilt later additions. Sony recovery now totals 47
+functions / 4,108 bytes, including the formerly blocked 001023C8 dispatcher.
+Use its shared result epilogue as a compiler probe for related call wrappers.
+Two bounded data recoveries add 268 bytes; adjacent unbounded bytes retain
+placeholder status. This is a verified hybrid foundation; unrecovered code
+still comes from the retail input. The normal publication cadence remains
+one full additional matching-code percentage point.
