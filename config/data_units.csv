@@ -1860,6 +1860,7 @@ data_u32_0044EC60,0x0044EC60,0x50,.data,src/data/data_u32_0044EC60.c,initialized
 jtbl_0044ECB0,0x0044ECB0,0x1c,.rodata,src/data/jtbl_0044ECB0.c,jump_table
 jtbl_0044ECD0,0x0044ECD0,0x10,.rodata,src/data/jtbl_0044ECD0.c,typed_state_callback_table
 data_u32_0044ECE0,0x0044ECE0,0x20,.data,src/data/data_u32_0044ECE0.c,initialized_u32_table
+data_s8_0044ED00,0x0044ED00,0x20,.data,src/data/data_s8_0044ED00.c,signed_byte_lookup_32
 data_u32_0044ED20,0x0044ED20,0x50,.data,src/data/data_u32_0044ED20.c,initialized_u32_table
 jtbl_0044ED70,0x0044ED70,0x44,.rodata,src/data/jtbl_0044ED70.c,jump_table
 jtbl_0044EDC0,0x0044EDC0,0xc0,.rodata,src/data/jtbl_0044EDC0.c,jump_table

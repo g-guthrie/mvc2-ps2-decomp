@@ -1860,6 +1860,7 @@ data_u32_0044EC60,0x0044EC60,0x50,src/data/data_u32_0044EC60.c,complete,placehol
 jtbl_0044ECB0,0x0044ECB0,0x1c,src/data/jtbl_0044ECB0.c,complete,placeholder
 jtbl_0044ECD0,0x0044ECD0,0x10,src/data/jtbl_0044ECD0.c,complete,reconstructed
 data_u32_0044ECE0,0x0044ECE0,0x20,src/data/data_u32_0044ECE0.c,complete,placeholder
+data_s8_0044ED00,0x0044ED00,0x20,src/data/data_s8_0044ED00.c,complete,reconstructed
 data_u32_0044ED20,0x0044ED20,0x50,src/data/data_u32_0044ED20.c,complete,placeholder
 jtbl_0044ED70,0x0044ED70,0x44,src/data/jtbl_0044ED70.c,complete,placeholder
 jtbl_0044EDC0,0x0044EDC0,0xc0,src/data/jtbl_0044EDC0.c,complete,placeholder

@@ -44,11 +44,11 @@ extern void func_001D1950(void);
 extern void func_001DBD60(u8 *);
 extern void func_001DBCD0(u8 *);
 extern void func_001DBDF0(u8 *);
-extern s8 D_0044ED00[];
+extern s8 data_s8_0044ED00[32];
 
 void func_001DEF30(u8 *p)
 {
-    s8 a1 = D_0044ED00[S(p, 28) & 0x1f];
+    s8 a1 = data_s8_0044ED00[S(p, 28) & 0x1f];
     if (S(p, 320) != 0)
         a1 = (s8)-a1;
     F(p, 52) += (f32)a1;
