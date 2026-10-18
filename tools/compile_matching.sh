@@ -4322,6 +4322,16 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
 "$PYTHON" tools/verify_object.py "$BUILD/dispatch_runtime_callback_00411978.o" \
     private/SLUS_204.86.rom --source src/dispatch_runtime_callback_00411978.c
 
+"$WIBO" "$SNCPP" -P src/dispatch_runtime_indexed_callback_00411818.c \
+    "$BUILD/dispatch_runtime_indexed_callback_00411818.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
+    "$BUILD/dispatch_runtime_indexed_callback_00411818.i" \
+    "$BUILD/dispatch_runtime_indexed_callback_00411818.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/dispatch_runtime_indexed_callback_00411818.o" \
+    "$BUILD/dispatch_runtime_indexed_callback_00411818.s"
+"$PYTHON" tools/verify_object.py "$BUILD/dispatch_runtime_indexed_callback_00411818.o" \
+    private/SLUS_204.86.rom --source src/dispatch_runtime_indexed_callback_00411818.c
+
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/create_scene_anchor_00141250.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/create_scene_anchor_00141250.o"
