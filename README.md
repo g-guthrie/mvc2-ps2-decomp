@@ -27,13 +27,11 @@ compiler as `MW MIPS C Compiler (2.4.1.01)` / `PlayStation2`.
 | BSS | `0x004c2580..0x00634380` (`0x171e00` bytes) |
 | Global pointer | `0x004c7270` |
 
-The current catalog reports **14,416 matching source functions (1,342,072 bytes)**
-and **153,593 bytes of reconstructed initialized data**: **40.7467%** of the
-conservative text span and **23.7003%** of initialized data. Whole-object
-compiler verification and full-image linkage are separate private build checks.
-The data checkpoint exceeds
-decomp.dev's 0.5% public-visibility threshold. Assembly placeholders never
-count as decompiled source. The initial inventory
+The generated graphic above shows the current catalog's matching code coverage.
+[decomp.dev](https://decomp.dev/g-guthrie/mvc2-ps2-decomp) publishes current
+function counts and reconstructed-data coverage. Whole-object compiler
+verification and full-image linkage are separate private build checks.
+Assembly placeholders never count as decompiled source. The initial inventory
 contained 17,658 explicit-size function candidates. Splitting 2,077 oversized
 dispatcher entries into exact C heads plus retained assembly residuals produces
 a current denominator of **19,888 units**. No residual bytes were dropped; text
@@ -182,5 +180,5 @@ unnamed section relocations through selected whole-function address anchors.
 This supports local calls and function pointers in a single Sony C unit.
 The tests reject unowned sections, extra bytes, unresolved addresses and
 conflicting bases; function-size and relocated-byte comparisons remain strict.
-Update the verifier before testing grouped Sony sources. Code progress for
-this tooling update remains at the previous published checkpoint.
+Update the verifier before testing grouped Sony sources. The tooling update adds section-reference support; matching credit is determined
+by the existing compiler and full-byte checks.
