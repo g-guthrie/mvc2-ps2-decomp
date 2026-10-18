@@ -8698,3 +8698,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$WIBO" "$EE29CC1" "$BUILD/sony29_cache_line_rounding.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_cache_line_rounding.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_cache_line_rounding.o" "$BUILD/sony29_cache_line_rounding.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_cache_line_rounding.o" private/SLUS_204.86.rom --source src/sony29_cache_line_rounding.c
+
+"$WIBO" "$SNCPP" -P src/sony29_rpc_queries.c "$BUILD/sony29_rpc_queries.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_queries.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_queries.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_queries.o" "$BUILD/sony29_rpc_queries.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_queries.o" private/SLUS_204.86.rom --source src/sony29_rpc_queries.c

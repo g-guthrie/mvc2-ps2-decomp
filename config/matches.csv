@@ -14422,3 +14422,7 @@ func_0010D090,0x0010D090,0x28,src/sony29_interrupt_state.c,complete
 func_001004E0,0x001004E0,0xA0,src/read_rom_version_001004E0.c,complete
 func_00101D50,0x00101D50,0xA0,src/update_runtime_mode_state_00101D50.c,complete
 func_0010DA40,0x0010DA40,0x64,src/sony29_buffer_slot_control.c,complete
+func_0010E440,0x0010E440,0x64,src/sony29_rpc_queries.c,complete
+func_0010E510,0x0010E510,0x64,src/sony29_rpc_queries.c,complete
+func_0010E4A8,0x0010E4A8,0x68,src/sony29_rpc_queries.c,complete
+func_0010E578,0x0010E578,0x68,src/sony29_rpc_queries.c,complete
