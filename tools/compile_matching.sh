@@ -8682,3 +8682,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$WIBO" "$EE29CC1" "$BUILD/read_rom_version_001004E0.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/read_rom_version_001004E0.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/read_rom_version_001004E0.o" "$BUILD/read_rom_version_001004E0.s"
 "$PYTHON" tools/verify_object.py "$BUILD/read_rom_version_001004E0.o" private/SLUS_204.86.rom --source src/read_rom_version_001004E0.c
+
+"$WIBO" "$SNCPP" -P src/update_runtime_mode_state_00101D50.c "$BUILD/update_runtime_mode_state_00101D50.i"
+"$WIBO" "$EE29CC1" "$BUILD/update_runtime_mode_state_00101D50.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/update_runtime_mode_state_00101D50.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/update_runtime_mode_state_00101D50.o" "$BUILD/update_runtime_mode_state_00101D50.s"
+"$PYTHON" tools/verify_object.py "$BUILD/update_runtime_mode_state_00101D50.o" private/SLUS_204.86.rom --source src/update_runtime_mode_state_00101D50.c
