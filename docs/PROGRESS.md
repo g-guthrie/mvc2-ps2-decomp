@@ -3362,3 +3362,7 @@ Recovered all 116 bytes at 0x0014EEC0, preserving timer, owner linkage, callback
 ## Ten-function gameplay recovery batch
 
 Integrated ten complete gameplay routines totaling 1,512 bytes, extending verified duplicate families for timers, callbacks, motion and state resets. Every affected source object verifies with its registered compiler profile. Code reaches 615,496 bytes (18.6871%), 9,329 functions; data remains 152,131 bytes (23.4747%).
+
+## Signed move bank at 0x004C0688
+
+Recovered 24 bytes across four signed-byte owners with six explicit four-byte row pointers. The shared native consumer reads signed components 0..3. All four data objects and the complete move_setup source object verify exactly. Data is 152,155 bytes (23.4784%), 2,980 reconstructed units; code remains 615,496 bytes (18.6871%).

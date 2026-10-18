@@ -2,6 +2,10 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 extern u8 *D_004C2794;
+extern signed char data_s8_004C0688[4] __attribute__((section(".sdata")));
+extern signed char data_s8_004C068C[8] __attribute__((section(".sdata")));
+extern signed char data_s8_004C0694[4] __attribute__((section(".sdata")));
+extern signed char data_s8_004C0698[8] __attribute__((section(".sdata")));
 extern const unsigned int D_004C1588[] __attribute__((section(".sdata")));
 extern signed char data_s8_004C158C[8] __attribute__((section(".sdata")));
 extern signed char data_s8_004C1594[4] __attribute__((section(".sdata")));
@@ -351,21 +355,21 @@ void name(u8 *p) { \
   p[0x168]=0; \
   p[0x1b5]=command0; \
   set0(p,animation0); \
-  *(int **)(p+0x408)=&table0; \
+  *(signed char **)(p+0x408)=(signed char *)&table0; \
   p[0x1bb]=0; \
   break; \
  case 1: \
   p[0x168]=1; \
   p[0x1b5]=command1; \
   set1(p,animation1); \
-  *(int **)(p+0x408)=&table1; \
+  *(signed char **)(p+0x408)=(signed char *)&table1; \
   p[0x1bb]=1; \
   break; \
  case 2: \
   p[0x168]=2; \
   p[0x1b5]=command2; \
   set2(p,animation2); \
-  *(int **)(p+0x408)=&table2; \
+  *(signed char **)(p+0x408)=(signed char *)&table2; \
   p[0x1bb]=2; \
   break; \
  } \
@@ -416,7 +420,7 @@ void name(u8 *p) { \
   p[0x168]=0; \
   p[0x1b5]=command0; \
   set0(p,animation0); \
-  if (p[0x210] == 0) *(int **)(p+0x408)=&table0; \
+  if (p[0x210] == 0) *(signed char **)(p+0x408)=(signed char *)&table0; \
   else *(int **)(p+0x408)=&alternate0; \
   p[0x1bb]=0; \
   break; \
@@ -424,7 +428,7 @@ void name(u8 *p) { \
   p[0x168]=1; \
   p[0x1b5]=command1; \
   set1(p,animation1); \
-  if (p[0x210] == 0) *(int **)(p+0x408)=&table1; \
+  if (p[0x210] == 0) *(signed char **)(p+0x408)=(signed char *)&table1; \
   else *(int **)(p+0x408)=&alternate1; \
   p[0x1bb]=1; \
   break; \
@@ -432,7 +436,7 @@ void name(u8 *p) { \
   p[0x168]=2; \
   p[0x1b5]=command2; \
   set2(p,animation2); \
-  if (p[0x210] == 0) *(int **)(p+0x408)=&table2; \
+  if (p[0x210] == 0) *(signed char **)(p+0x408)=(signed char *)&table2; \
   else *(int **)(p+0x408)=&alternate2; \
   p[0x1bb]=2; \
   break; \
@@ -475,20 +479,20 @@ void name(u8 *p) { \
   p[0x168]=0; \
   p[0x1b5]=command0; \
   func_001E3710(p,20); \
-  *(int **)(p+0x408)=&table0; \
+  *(signed char **)(p+0x408)=(signed char *)&table0; \
   p[0x1bb]=0; \
   break; \
  case 1: \
   p[0x168]=1; \
   p[0x1b5]=command1; \
   func_001E3710(p,21); \
-  *(int **)(p+0x408)=&table1; \
+  *(signed char **)(p+0x408)=(signed char *)&table1; \
   p[0x1bb]=1; \
   break; \
  case 2: \
   p[0x168]=2; \
   p[0x1b5]=command2; \
-  *(int **)(p+0x408)=&table2; \
+  *(signed char **)(p+0x408)=(signed char *)&table2; \
   p[0x1bb]=2; \
   break; \
  } \
@@ -519,20 +523,20 @@ void name(u8 *p) { \
   p[0x168]=0; \
   p[0x1b5]=command0; \
   func_001E3710(p,20); \
-  *(int **)(p+0x408)=&table0; \
+  *(signed char **)(p+0x408)=(signed char *)&table0; \
   p[0x1bb]=0; \
   break; \
  case 1: \
   p[0x168]=1; \
   p[0x1b5]=command1; \
   func_001E3710(p,21); \
-  *(int **)(p+0x408)=&table1; \
+  *(signed char **)(p+0x408)=(signed char *)&table1; \
   p[0x1bb]=1; \
   break; \
  case 2: \
   p[0x168]=2; \
   p[0x1b5]=command2; \
-  *(int **)(p+0x408)=&table2; \
+  *(signed char **)(p+0x408)=(signed char *)&table2; \
   p[0x1bb]=2; \
   func_001E3710(p,22); \
   break; \
@@ -541,9 +545,9 @@ void name(u8 *p) { \
 }
 
 FINAL_ANIMATION_SETUP(func_0021DA40, 9, D_004BFF34, 10, D_004BFF38, 11, D_004BFF3C, 10)
-FINAL_ANIMATION_SETUP(func_0026B8B0, 6, D_004C0688, 7, D_004C068C, 8, D_004C0690, 9)
-FINAL_ANIMATION_SETUP(func_0026B9B0, 3, D_004C0694, 4, D_004C0698, 5, D_004C069C, 8)
-FINAL_ANIMATION_SETUP(func_0026BAB0, 9, D_004C0694, 10, D_004C0698, 11, D_004C069C, 10)
+FINAL_ANIMATION_SETUP(func_0026B8B0, 6, data_s8_004C0688[0], 7, data_s8_004C068C[0], 8, data_s8_004C068C[4], 9)
+FINAL_ANIMATION_SETUP(func_0026B9B0, 3, data_s8_004C0694[0], 4, data_s8_004C0698[0], 5, data_s8_004C0698[4], 8)
+FINAL_ANIMATION_SETUP(func_0026BAB0, 9, data_s8_004C0694[0], 10, data_s8_004C0698[0], 11, data_s8_004C0698[4], 10)
 FINAL_ANIMATION_SETUP(func_002B32E0, 6, D_004C0CC0, 7, D_004C0CC4, 8, D_004C0CC8, 9)
 FINAL_ANIMATION_SETUP(func_002B33E0, 3, D_004C0CCC, 4, D_004C0CD0, 5, D_004C0CD4, 8)
 FINAL_ANIMATION_SETUP(func_002B34E0, 9, D_004C0CCC, 10, D_004C0CD0, 11, D_004C0CD4, 10)
