@@ -3346,3 +3346,7 @@ Recovered three complete gameplay routines at 0x002EA850 (140 bytes), 0x002EADC0
 ## Bounded signed move selector banks
 
 Recovered 48 bytes across five signed-byte owners at 0x004C1508 and 0x004C15A4..0x004C15D0. Setup functions select each four-byte row directly; native consumer 0x00184720 supplies signed component accesses. All changed data and whole gameplay source objects verify exactly. Data is 152,131 bytes (23.4747%), 2,976 reconstructed units; code remains 613,596 bytes (18.6294%).
+
+## Scene resource event constructor
+
+Recovered all 128 bytes at 0x00136C80. Source preserves the resource pointer, typed position vector, callback and allocation failure. Whole-object verification passes. Code reaches 613,724 bytes (18.6333%), 9,317 functions; data remains 152,131 bytes (23.4747%).
