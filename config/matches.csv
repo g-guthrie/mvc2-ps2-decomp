@@ -15064,6 +15064,7 @@ func_002CEEB0,0x002CEEB0,0x160,src/w182_f.c,complete
 func_0039CB60,0x0039CB60,0x130,src/w182_g.c,complete
 func_001D0A70,0x001D0A70,0x144,src/w182_g.c,complete
 func_003464A0,0x003464A0,0x16C,src/w182_g.c,complete
+func_0038EAC0,0x0038EAC0,0x16C,src/w182_g.c,complete
 func_00153D20,0x00153D20,0x140,src/w182_h.c,complete
 func_00268130,0x00268130,0x148,src/w182_i.c,complete
 func_0016F8A0,0x0016F8A0,0x15C,src/w182_j.c,complete
