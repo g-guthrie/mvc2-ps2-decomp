@@ -6113,7 +6113,7 @@ data_f32_004B8254,0x004B8254,0x4,.data,src/data/data_f32_004B8254.c,float_scalar
 data_u8_004B8258,0x004B8258,0x28,.data,src/data/data_u8_004B8258.c,initialized_byte_array
 data_f32_one_004B8280,0x004B8280,0xC,.data,src/data/data_f32_one_004B8280.c,filled_f32_one
 data_u32_004B828C,0x004B828C,0x4,.data,src/data/data_u32_004B828C.c,initialized_u32_table
-data_u32_004B8290,0x004B8290,0xC,.data,src/data/data_u32_004B8290.c,filled_u32_constant
+data_vec3_004B8290,0x004B8290,0xC,.data,src/data/data_vec3_004B8290.c,float_vector3
 data_u32_004B829C,0x004B829C,0x34,.data,src/data/data_u32_004B829C.c,initialized_u32_table
 jtbl_004B82D0,0x004B82D0,0x18,.rodata,src/data/jtbl_004B82D0.c,jump_table
 data_u32_004B82F0,0x004B82F0,0xC0,.data,src/data/data_u32_004B82F0.c,initialized_u32_table
