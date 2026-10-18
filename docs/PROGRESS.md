@@ -3390,3 +3390,7 @@ Recovered all 64 bytes at 0x00414FE0, resetting each eight-byte entry handle/sta
 ## Selected signed move records
 
 Recovered 24 bytes as six explicitly selected four-byte signed records in the banks at 0x004BFF34 and 0x004C1134. Leading words and trailing 48-byte spans remain placeholders. All ten changed data objects and the whole move_setup source object verify exactly. Data reaches 152,323 bytes (23.5043%); code remains 616,280 bytes (18.7109%).
+
+## Three-function gameplay batch
+
+Recovered complete functions at 0x00346030 (80 bytes), 0x001ED230 (168 bytes), and 0x00323DC0 (92 bytes). All affected whole objects verify with their registered profiles. Code reaches 616,620 bytes (18.7212%), 9,339 functions; data remains 152,323 bytes (23.5043%).
