@@ -14431,3 +14431,5 @@ func_00107AE8,0x00107AE8,0xC,src/sony29_global_call_forwarder_00107AE8.c,complet
 func_00104E88,0x00104E88,0x24,src/sony29_syscall_parameters.c,complete
 func_00104EB0,0x00104EB0,0x30,src/sony29_syscall_parameters.c,complete
 func_00104EE0,0x00104EE0,0x24,src/sony29_syscall_parameters.c,complete
+func_0010CD50,0x0010CD50,0x68,src/sony29_control_probe.c,complete
+func_0010F1E8,0x0010F1E8,0x6C,src/sony29_rpc_wait.c,complete

@@ -8718,3 +8718,13 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$WIBO" "$EE29CC1" "$BUILD/sony29_syscall_parameters.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_syscall_parameters.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_syscall_parameters.o" "$BUILD/sony29_syscall_parameters.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_syscall_parameters.o" private/SLUS_204.86.rom --source src/sony29_syscall_parameters.c
+
+"$WIBO" "$SNCPP" -P src/sony29_control_probe.c "$BUILD/sony29_control_probe.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_control_probe.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_control_probe.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_control_probe.o" "$BUILD/sony29_control_probe.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_control_probe.o" private/SLUS_204.86.rom --source src/sony29_control_probe.c
+
+"$WIBO" "$SNCPP" -P src/sony29_rpc_wait.c "$BUILD/sony29_rpc_wait.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_wait.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_wait.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_wait.o" "$BUILD/sony29_rpc_wait.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_wait.o" private/SLUS_204.86.rom --source src/sony29_rpc_wait.c
