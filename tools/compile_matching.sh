@@ -4762,3 +4762,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
  -o "$BUILD/child_mode_dispatchers.o"
 "$PYTHON" tools/verify_object.py "$BUILD/child_mode_dispatchers.o" \
  private/SLUS_204.86.rom --source src/child_mode_dispatchers.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/initialize_collision_state_002E7700.c -c -lang c -O3 -sdatathreshold 8 \
+ -o "$BUILD/initialize_collision_state_002E7700.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_collision_state_002E7700.o" \
+ private/SLUS_204.86.rom --source src/initialize_collision_state_002E7700.c
