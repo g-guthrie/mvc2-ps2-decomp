@@ -1,0 +1,55 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
+typedef unsigned int u32;
+typedef signed int s32;
+typedef float f32;
+typedef struct { u8 p0[2]; s8 b2; u8 p3[5]; s16 h8; } GF;
+extern GF *D_004C2840;
+extern u8 D_00477158[];
+void func_003D2040(void) {
+    extern s32 func_0012E560(void);
+    extern void func_003D6D50(void);
+    extern void func_003D6E20(void);
+    extern void func_00170160(s32);
+    extern void func_003DA410(void);
+    extern void func_00122DA0(void);
+    extern void func_003D2020(void);
+    extern void func_0016CDA0(void);
+    extern void func_0016D160(void);
+    extern void func_00329890(void);
+    extern void func_00122840(s32);
+    extern void func_0016F090(u8 *);
+    extern void func_0016F0C0(f32);
+    extern void func_003298B0(s32, s32, s32);
+    extern void func_00143D50(void);
+    extern void func_001E3F50(s32);
+    extern void func_001E4340(s32);
+    extern void func_001E3FE0(void);
+    extern void func_00172520(void);
+    extern void func_0012E780(s32);
+    if (func_0012E560()) {
+        D_004C2840->b2 = D_004C2840->b2 + 1;
+        D_004C2840->h8 = 0x1E0;
+        func_003D6D50();
+        func_003D6E20();
+        func_00170160(13);
+        func_003DA410();
+        func_00122DA0();
+        func_003D2020();
+        func_0016CDA0();
+        func_0016D160();
+        func_00329890();
+        func_00122840(0);
+        func_0016F090(D_00477158);
+        func_0016F0C0(0.30000001192092896f);
+        func_003298B0(-1, 60, 0);
+        func_00143D50();
+        func_001E3F50(21);
+        func_001E4340(1);
+        func_001E3FE0();
+        func_00172520();
+        func_0012E780(7);
+    }
+}
