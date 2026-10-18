@@ -14725,3 +14725,4 @@ func_0010D4A0,0x0010D4A0,0x9C,src/sony29_rpc_initialize.c,complete
 func_0010B298,0x0010B298,0x8C,src/sony29_rpc_compatibility.c,complete
 func_0010B770,0x0010B770,0x90,src/sony29_rpc_compatibility.c,complete
 func_0010B8A0,0x0010B8A0,0x90,src/sony29_rpc_compatibility.c,complete
+func_00102498,0x00102498,0x84,src/record_threshold_poll_00102498.c,complete
