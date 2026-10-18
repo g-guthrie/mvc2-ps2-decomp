@@ -4737,3 +4737,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
  -o "$BUILD/update_object_timer_0037F440.o"
 "$PYTHON" tools/verify_object.py "$BUILD/update_object_timer_0037F440.o" \
  private/SLUS_204.86.rom --source src/update_object_timer_0037F440.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/dispatch_owner_event_003BC820.c -c -lang c -O3 -sdatathreshold 8 \
+ -o "$BUILD/dispatch_owner_event_003BC820.o"
+"$PYTHON" tools/verify_object.py "$BUILD/dispatch_owner_event_003BC820.o" \
+ private/SLUS_204.86.rom --source src/dispatch_owner_event_003BC820.c
