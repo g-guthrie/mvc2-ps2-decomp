@@ -3760,3 +3760,26 @@ the assembly-credit audit: 1,418,716 code bytes (43.0737%), 14,724 functions;
 153,921 data bytes (23.7509%). A fresh full combined link passed immediately
 before the event callback and final vector addition; their objects pass exact
 verification and will be included in the next full link.
+
+
+The additional fixed records at 0x004443D0 (four floats) and 0x004B1E38
+(three floats) now compile and verify in their split data units. Both have
+direct native consumers of exactly those components; surrounding prefixes
+and zero suffixes remain placeholders. Reconstructed initialized data reaches
+153,949 bytes (23.7552%) before the assembly-credit audit. The code catalog
+is unchanged by this data work.
+
+
+Assembly-credit correction: the audit found 56 whole-function FN instruction
+streams (6,048 bytes). Retained the 112 bytes of existing COP0 status/interrupt
+primitives under the explicit CPU-operation exception, including the tightly
+coupled DI/SYNC/status-poll sequence. Demoted the other 53 streams (5,936 bytes),
+plus the 20-byte vector-subtraction and two NOP spin/delay implementations
+(364 bytes). Total correction: 56 functions / 6,320 bytes. Sources and compiler
+recipes remain intact for exact hybrid linkage, but these placeholders earn
+zero C credit. docs/ASSEMBLY_CREDIT_AUDIT.csv records the initial disposition.
+A report gate catches this repository's whole-function FN assembly convention;
+its negative control failed on the formerly credited vector stream. Genuine C
+neighbors and correctly classified placeholders pass. All 39 repository tests
+and two Sony tool tests pass. Empty optimizer barriers are being reverified
+separately; this is not a claim that those source constraints are resolved.

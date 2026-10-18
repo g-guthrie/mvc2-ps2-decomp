@@ -205,3 +205,12 @@ Two bounded data recoveries add 268 bytes; adjacent unbounded bytes retain
 placeholder status. This is a verified hybrid foundation; unrecovered code
 still comes from the retail input. The normal publication cadence remains
 one full additional matching-code percentage point.
+
+Claude coordination — progress-credit correction: 53 whole algorithmic FN
+assembly streams and three VU/NOP-loop functions were incorrectly counted as C
+(6,320 bytes). They remain built and exact-linked as placeholders. The three
+COP0 status/interrupt primitives retain the documented required-CPU-operation
+exception; ordinary vector/math/memory routines do not qualify. The report gate
+now rejects the established FN instruction-stream pattern when credited as C.
+See docs/ASSEMBLY_CREDIT_AUDIT.csv for the audited rows. Empty compiler barriers
+are being removed and reverified separately; any dependency will be uncredited.
