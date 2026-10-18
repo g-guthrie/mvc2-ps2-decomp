@@ -33,16 +33,6 @@ void func_0012A0D0(s8 *p) {
     D_004C2868 = func_0012A990(func_0012ABC0(3, 0), D_004C2868, 7, 2);
     *p = D_004C2868;
 }
-extern s8 D_004C2864;
-extern s8 D_004C2860;
-void func_0012A120(u8 *p) {
-    D_004C2864 = func_0012A990(func_0012ABC0(3, 0), D_004C2864, 3, 2);
-    p[1] = D_004C2864;
-}
-void func_0012A170(u8 *p) {
-    D_004C2860 = func_0012A990(func_0012ABC0(3, 0), D_004C2860, 3, 2);
-    p[2] = D_004C2860;
-}
 
 extern s32 D_004C284C;
 extern s32 D_004C2850;
