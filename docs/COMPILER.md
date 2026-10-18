@@ -456,3 +456,11 @@ This proves these two replacements; it is not a complete-current-main compiler
 or linkage run. `docs/SONY29_CANDIDATES.csv` preserves the 173-span conservative
 inventory used by the audit. Its remaining spans need C recovery before they
 can receive a source/compiler comparison.
+
+`sony29_interrupt_state.c` adds the complete 92-byte `func_0010E670`:
+a guarded state replacement preserves the old value while conditionally
+restoring the prior interrupt state. Unpatched Sony GCC O2/G0 and SNAS reproduce
+all instructions and relocations. A three-span batch link, including the
+previous two Sony recoveries (224 bytes total), reproduces the full loaded
+image and packed retail ELF with the hashes above. All other spans in this
+batch proof remain retail placeholders; it is not a full-main rebuild.

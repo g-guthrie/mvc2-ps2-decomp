@@ -14094,3 +14094,4 @@ func_002F6B00,0x002F6B00,0xEC,src/y0_r.c,complete
 func_0031CCD0,0x0031CCD0,0xF0,src/y0_r.c,complete
 func_0010FF48,0x0010FF48,0x40,src/sony29_thread_lifecycle.c,complete
 func_00110770,0x00110770,0x44,src/sony29_thread_lifecycle.c,complete
+func_0010E670,0x0010E670,0x5C,src/sony29_interrupt_state.c,complete
