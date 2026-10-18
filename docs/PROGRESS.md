@@ -3520,3 +3520,7 @@ Recovered complete helpers at 0x0036C050 (92 bytes) and 0x00413D50 (68 bytes). A
 ## Runtime request preparation
 
 Recovered all 108 bytes at 0x00413DF0, preserving stack request preparation and forwarded argument order. Whole-object verification passes. Code reaches 622,200 bytes (18.8906%), 9,385 functions; data remains 153,435 bytes (23.6759%).
+
+## Owner mode child constructor
+
+Recovered all 100 bytes at 0x001978B0, preserving owner pointer, inherited actor byte, mode, callback and allocation failure. Whole-object verification passes. Code reaches 622,300 bytes (18.8937%), 9,386 functions; data remains 153,435 bytes (23.6759%).
