@@ -14715,3 +14715,5 @@ func_003BD670,0x003BD670,0x12C,src/q2_e.c,complete
 func_00277BE0,0x00277BE0,0x130,src/q2_e.c,complete
 func_002E71E0,0x002E71E0,0x130,src/q2_e.c,complete
 func_003BFA40,0x003BFA40,0x120,src/q2_e.c,complete
+func_0010D048,0x0010D048,0x48,src/sony29_message_dispatch.c,complete
+func_0010D0B8,0x0010D0B8,0x4C,src/sony29_message_dispatch.c,complete

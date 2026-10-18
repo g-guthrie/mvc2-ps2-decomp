@@ -3699,3 +3699,14 @@ full compiler/link run remains active. Combined catalog: 1,417,244 code bytes
 (43.0290%), 14,712 functions, 153,593 data bytes (23.7003%). All 38 repository
 tests and two Sony tool tests pass. Next scheduled Codex code publication is
 1,450,181 verified bytes (44.0290%), subject to fresh parallel reconciliation.
+
+
+Local follow-on: two Sony message-dispatch helpers add 148 exact code bytes.
+The third related helper still differs and remains uncredited. Recovered the
+256-byte lookup at 0x004B6A68 after confirming func_001E3BB0 truncates its
+index to an unsigned byte; the 32-byte prefix and 152-byte suffix retain
+placeholder status. All three split data objects verify against retail.
+Local catalog: 1,417,392 code bytes (43.0335%), 153,849 data bytes (23.7398%).
+The updated conservative Sony audit found C for 27 of 173 candidates and
+38 exact compiler/source/flag profiles, including alternative flag profiles;
+this does not establish the original claimed set of 196 functions.

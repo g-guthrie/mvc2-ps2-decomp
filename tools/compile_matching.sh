@@ -9227,3 +9227,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/q2_e.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/q2_e.o"
 "$PYTHON" tools/verify_object.py "$BUILD/q2_e.o" private/SLUS_204.86.rom --source src/q2_e.c
+
+"$WIBO" "$SNCPP" -P src/sony29_message_dispatch.c "$BUILD/sony29_message_dispatch.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_message_dispatch.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_message_dispatch.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_message_dispatch.o" "$BUILD/sony29_message_dispatch.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_message_dispatch.o" private/SLUS_204.86.rom --source src/sony29_message_dispatch.c
