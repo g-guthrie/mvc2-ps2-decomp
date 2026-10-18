@@ -502,3 +502,20 @@ and the compiler's documented
 [varargs support](https://gcc.gnu.org/onlinedocs/gcc-2.95.3/gcc_17.html).
 Whole-object verification covers the actual Sony prologues and forwarding.
 The logger's void return declaration is shared by its recovered C callers.
+
+### Internal function-section references
+
+Sony's assembler can encode local calls and function pointers using unnamed
+STT_SECTION symbols. The object verifier now resolves these from consistent
+known-address anchors, matching the linker’s existing address calculation.
+Inference is limited to selected executable function sections whose entire
+section equals the declared, expected function span. Unselected sections,
+extra pool/padding bytes, missing addresses, and conflicting bases cannot
+supply an inferred anchor. Ordinary function sizes and final relocated-byte
+comparison remain mandatory. Tests cover successful local calls, distinct
+HI/LO keys, missing anchors, conflicting bases and extra section bytes.
+
+The three routines in `sony29_event_callbacks.c` exercise this path: lazy event
+registration, callback/argument replacement with interrupt-state restoration,
+and guarded callback dispatch. All three complete bodies verify directly
+against retail with unchanged Sony compiler and assembler output.

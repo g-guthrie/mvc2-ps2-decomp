@@ -14451,3 +14451,6 @@ func_0010AD40,0x0010AD40,0x80,src/sony29_guarded_rpc.c,complete
 func_0010ADC0,0x0010ADC0,0x78,src/sony29_guarded_rpc.c,complete
 func_0010B098,0x0010B098,0x7C,src/sony29_guarded_rpc.c,complete
 func_0010B118,0x0010B118,0x7C,src/sony29_guarded_rpc.c,complete
+func_0010EAD8,0x0010EAD8,0x74,src/sony29_event_callbacks.c,complete
+func_0010EB50,0x0010EB50,0x3C,src/sony29_event_callbacks.c,complete
+func_0010EB90,0x0010EB90,0x78,src/sony29_event_callbacks.c,complete
