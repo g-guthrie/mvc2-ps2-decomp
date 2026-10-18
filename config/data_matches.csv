@@ -7995,7 +7995,7 @@ data_u32_004C2508,0x004C2508,0x4,src/data/data_u32_004C2508.c,complete,placehold
 data_ptr_004C250C,0x004C250C,0x4,src/data/data_ptr_004C250C.c,complete,reconstructed
 jtbl_004C2518,0x004C2518,0x08,src/data/jtbl_004C2518.c,complete,reconstructed
 jtbl_004C2520,0x004C2520,0x08,src/data/jtbl_004C2520.c,complete,reconstructed
-data_u32_004C2530,0x004C2530,0x4,src/data/data_u32_004C2530.c,complete,placeholder
+data_f32_004C2530,0x004C2530,0x4,src/data/data_f32_004C2530.c,complete,reconstructed
 data_ptr_004C2534,0x004C2534,0x4,src/data/data_ptr_004C2534.c,complete,reconstructed
 data_s32_004C2538,0x004C2538,0x4,src/data/data_s32_004C2538.c,complete,reconstructed
 data_s32_004C253C,0x004C253C,0x4,src/data/data_s32_004C253C.c,complete,reconstructed

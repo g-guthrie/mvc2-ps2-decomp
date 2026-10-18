@@ -12,7 +12,7 @@ extern s32 D_004C2B64;
 extern s32 D_004C2B68;
 extern signed char D_004C27C4;
 extern signed char D_004C27C0;
-extern float D_004C2530;
+extern float data_f32_004C2530;
 extern s32 func_0012E560(struct MenuNoticeData *data);
 extern s32 func_003299D0(void);
 extern void func_003DA650(s32 value);
@@ -31,7 +31,7 @@ void func_0041C4B0(struct MenuNoticeData *data)
     if (func_003299D0() != 0)
         return;
 
-    D_004C2530 = 1.0f;
+    data_f32_004C2530 = 1.0f;
     D_004C2B5C = 0;
     D_004C27C4 = 1;
     D_004C2B60 = 0;

@@ -3572,3 +3572,7 @@ Merged public main through 1add6e31, deduplicated eight additional overlapping d
 ## Post-main conditional gameplay chain
 
 Integrated the complete 300-byte function at 0x001FC080. Four queued worker results overlapped merged public-main functions and were deduplicated without extra credit. The new source object verifies exactly. Code reaches 638,428 bytes (19.3833%), 9,596 functions; data remains 153,507 bytes (23.6870%). Next push milestone remains 20.3742% from the prior published checkpoint.
+
+## Runtime effect float slot
+
+Recovered the four-byte float at 0x004C2530 from its typed native loads/stores and exact 1.0f initialization. Data and initializer source objects verify exactly. Data reaches 153,511 bytes (23.6876%), 3,051 reconstructed units; code remains 638,428 bytes (19.3833%).
