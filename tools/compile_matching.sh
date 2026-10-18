@@ -8867,6 +8867,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/q7_e.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/q7_e.o"
 "$PYTHON" tools/verify_object.py "$BUILD/q7_e.o" private/SLUS_204.86.rom --source src/q7_e.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_grounded_motion_002BC230.c -c -lang c -O3 -Op -sdatathreshold 0 \
+    -o "$BUILD/actor_grounded_motion_002BC230.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_grounded_motion_002BC230.o" \
+    private/SLUS_204.86.rom --source src/actor_grounded_motion_002BC230.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/q7_f.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/q7_f.o"
 "$PYTHON" tools/verify_object.py "$BUILD/q7_f.o" private/SLUS_204.86.rom --source src/q7_f.c

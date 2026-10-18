@@ -14760,3 +14760,4 @@ func_0028B4D0,0x0028B4D0,0x11C,src/initialize_actor_timed_state_0028B4D0.c,compl
 func_00297B40,0x00297B40,0x100,src/actor_motion_timer_00297B40.c,complete
 func_0026C020,0x0026C020,0xD0,src/effect_handler_0026C020.c,complete
 func_00321A90,0x00321A90,0xE8,src/initialize_actor_handoff_00321A90.c,complete
+func_002BC230,0x002BC230,0x11C,src/actor_grounded_motion_002BC230.c,complete
