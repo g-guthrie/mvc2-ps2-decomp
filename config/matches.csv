@@ -14092,3 +14092,5 @@ func_0026B7C0,0x0026B7C0,0xEC,src/y0_p.c,complete
 func_003422F0,0x003422F0,0xEC,src/y0_q.c,complete
 func_002F6B00,0x002F6B00,0xEC,src/y0_r.c,complete
 func_0031CCD0,0x0031CCD0,0xF0,src/y0_r.c,complete
+func_0010FF48,0x0010FF48,0x40,src/sony29_thread_lifecycle.c,complete
+func_00110770,0x00110770,0x44,src/sony29_thread_lifecycle.c,complete
