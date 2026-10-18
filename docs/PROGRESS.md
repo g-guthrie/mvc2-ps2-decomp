@@ -3548,3 +3548,7 @@ Recovered all 32 bytes at 0x0044ED00. The consumer masks the signed timer with 0
 ## Paired owner mode constructor
 
 Recovered all 100 bytes at 0x001B6750 in the existing owner-mode source object. Both complete functions verify exactly. Code reaches 623,132 bytes (18.9189%), 9,393 functions; data remains 153,507 bytes (23.6870%).
+
+## Owner flags event constructor
+
+Recovered all 100 bytes at 0x001D6B50, preserving unsigned halfword flag transfer, owner pointer, mode, callback and allocation failure. Whole-object verification passes. Code reaches 623,232 bytes (18.9220%), 9,394 functions; data remains 153,507 bytes (23.6870%).

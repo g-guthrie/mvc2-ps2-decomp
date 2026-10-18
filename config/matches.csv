@@ -9396,3 +9396,4 @@ func_00417170,0x00417170,0x68,src/prepare_runtime_transform_pair_00417170.c,comp
 func_00417200,0x00417200,0x68,src/prepare_runtime_transform_pair_00417170.c,complete
 func_00320ED0,0x00320ED0,0x68,src/grok_w6_002a.c,complete
 func_001B6750,0x001B6750,0x64,src/create_owner_mode_child_001978B0.c,complete
+func_001D6B50,0x001D6B50,0x64,src/create_owner_flags_event_001D6B50.c,complete
