@@ -9267,3 +9267,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$WIBO" "$EE29CC1" "$BUILD/sony29_wait_idle.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_wait_idle.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_wait_idle.o" "$BUILD/sony29_wait_idle.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_wait_idle.o" private/SLUS_204.86.rom --source src/sony29_wait_idle.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/update_pair_value_timers_00190130.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/update_pair_value_timers_00190130.o"
+"$PYTHON" tools/verify_object.py "$BUILD/update_pair_value_timers_00190130.o" private/SLUS_204.86.rom --source src/update_pair_value_timers_00190130.c

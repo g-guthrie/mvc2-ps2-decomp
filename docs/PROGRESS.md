@@ -3840,3 +3840,11 @@ Physical assembly replacements remain in that hybrid proof but earn zero C
 credit where classified placeholder. The corrected publication checkpoint is
 1,409,452 code bytes; the next scheduled code push threshold is 1,442,389 bytes
 (43.7924%), subject to reconciliation with parallel verified work.
+
+
+Larger gameplay recovery: all 436 bytes at 0x00190130 now match MWCCPS2
+3.0.3 O3/Op/G8. The routine processes two player records, updates the observed
+signed timers and paired values, clamps the values to 1 or 144 as appropriate,
+and calls the refresh helper after each change. Natural do-while loops retain
+independent record offsets; assignment-expression comparisons preserve the
+retail signed-short conversions. No assembly or opcode changes are used.
