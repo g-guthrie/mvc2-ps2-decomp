@@ -9383,3 +9383,4 @@ func_002C4760,0x002C4760,0x94,src/fixed_launch_effect_initializers.c,complete
 func_00157970,0x00157970,0x98,src/create_position_scale_color_events.c,complete
 func_001576A0,0x001576A0,0x9C,src/create_position_scale_color_events.c,complete
 func_001B0FA0,0x001B0FA0,0x5C,src/create_owner_callback_001B0FA0.c,complete
+func_0019CD70,0x0019CD70,0x60,src/create_owner_child_event_0019CD70.c,complete
