@@ -9423,3 +9423,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     -o "$BUILD/effect_handler_0026C020.o"
 "$PYTHON" tools/verify_object.py "$BUILD/effect_handler_0026C020.o" \
     private/SLUS_204.86.rom --source src/effect_handler_0026C020.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_actor_handoff_00321A90.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/initialize_actor_handoff_00321A90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_actor_handoff_00321A90.o" \
+    private/SLUS_204.86.rom --source src/initialize_actor_handoff_00321A90.c
