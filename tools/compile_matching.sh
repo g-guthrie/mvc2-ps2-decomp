@@ -9316,3 +9316,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/initialize_entity_attachment_00202CA0.c -c -lang c -O3 -sdatathreshold 0 \
     -o "$BUILD/initialize_entity_attachment_00202CA0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_entity_attachment_00202CA0.o" private/SLUS_204.86.rom --source src/initialize_entity_attachment_00202CA0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/update_entity_motion_state_00202860.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/update_entity_motion_state_00202860.o"
+"$PYTHON" tools/verify_object.py "$BUILD/update_entity_motion_state_00202860.o" private/SLUS_204.86.rom --source src/update_entity_motion_state_00202860.c

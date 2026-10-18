@@ -14735,3 +14735,4 @@ func_002004B0,0x002004B0,0x110,src/initialize_entity_state_002004B0.c,complete
 func_00201A80,0x00201A80,0x110,src/initialize_actor_attachment_00201A80.c,complete
 func_00200960,0x00200960,0x2C,src/dispatch_runtime_state_00200960.c,complete
 func_00202CA0,0x00202CA0,0xDC,src/initialize_entity_attachment_00202CA0.c,complete
+func_00202860,0x00202860,0x16C,src/update_entity_motion_state_00202860.c,complete
