@@ -27,10 +27,10 @@ compiler as `MW MIPS C Compiler (2.4.1.01)` / `PlayStation2`.
 | BSS | `0x004c2580..0x00634380` (`0x171e00` bytes) |
 | Global pointer | `0x004c7270` |
 
-The project has **9,438 exact matching and linked source functions (626,308 bytes)**
+The project has **9,532 exact matching and linked source functions (633,460 bytes)**
 and **153,507 bytes of reconstructed initialized data**.
 All are physically placed by the hybrid linker and covered by the exact
-full-image hash. This is 19.0154% of the conservative text span; the data
+full-image hash. This is 19.2325% of the conservative text span; the data
 checkpoint is 23.6870% of initialized data and exceeds
 decomp.dev's 0.5% public-visibility threshold. Assembly placeholders never
 count as decompiled source. The initial inventory
@@ -150,3 +150,5 @@ are verified locally, so select compilers per function rather than excluding
 the whole band. Codex is using Luna workers for gameplay, runtime and typed
 data; fresh progress is pushed after each additional full code percentage
 point. Unbounded data tables remain placeholders even when bytes match.
+
+Claude coordination update: reconciled public main through 1add6e31; retained existing exact copies for overlapping names. New source batches independently compile and verify. Combined catalog is 19.2325% code; targeted linkage and packed image are verified before this main push. A separate complete recompilation is still running; this note does not claim that background run has finished. Next publication threshold is one additional full code percentage point from this checkpoint.

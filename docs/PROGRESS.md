@@ -3564,3 +3564,7 @@ Recovered all 96 bytes at 0x0041B130. Corrected its animation-helper declaration
 ## Parallel Claude reconciliation
 
 Merged origin/main through 122e0677, retaining existing verified callbacks and compiler recipes. Added 41 new independently verified functions (2,768 bytes); fourteen overlapping recoveries keep the existing credited source. All 34 tests pass. Code reaches 626,308 bytes (19.0154%), 9,438 functions; data remains 153,507 bytes (23.6870%). README contains coordination notes for Claude. Full-build gate remains pending in the primary checkout before publication.
+
+## Main-branch parallel-work reconciliation
+
+Merged public main through 1add6e31, deduplicated eight additional overlapping definitions, and independently verified every new source object. Combined code is 633,460 bytes (19.2325%); data is 153,507 bytes (23.6870%). All 34 tests pass; exact combined linkage and packed ELF checked before push. The separate full recompilation remains in progress.
