@@ -14886,6 +14886,7 @@ func_002D7A30,0x002D7A30,0x124,src/w171_p.c,complete
 func_00176E70,0x00176E70,0x12C,src/w171_r.c,complete
 func_00224C30,0x00224C30,0x130,src/w171_s.c,complete
 func_001F31E0,0x001F31E0,0x138,src/w171_t.c,complete
+func_001F30A0,0x001F30A0,0x138,src/w171_t.c,complete
 func_0019D7C0,0x0019D7C0,0x6C,src/w176_a.c,complete
 func_002CB890,0x002CB890,0xA0,src/w176_a.c,complete
 func_002B0D00,0x002B0D00,0xB0,src/w176_a.c,complete
@@ -14906,6 +14907,7 @@ func_001A4E80,0x001A4E80,0x124,src/w176_n.c,complete
 func_00125C90,0x00125C90,0x128,src/w176_p.c,complete
 func_00275C20,0x00275C20,0x12C,src/w176_q.c,complete
 func_00292420,0x00292420,0x12C,src/w176_r.c,complete
+func_0028B0B0,0x0028B0B0,0x12C,src/w176_r.c,complete
 func_001BE2A0,0x001BE2A0,0x134,src/w176_s.c,complete
 func_002B56E0,0x002B56E0,0x134,src/w176_t.c,complete
 func_00380510,0x00380510,0x134,src/w176_u.c,complete
