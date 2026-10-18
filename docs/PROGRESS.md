@@ -3290,3 +3290,7 @@ position copy. Whole-object verification passes. Code reaches 611,704 bytes
 ## Runtime callback and context fields
 
 Recovered 12 bytes at 0x00488314..0x00488320 using the current consumer contracts: message callback, context pointer, and signed state word. Corrected the initial integer-only declarations. All five data objects verify exactly; full linkage and packed retail hash pass. Data reaches 152,018 bytes (23.4573%); code remains 611,704 bytes (18.5720%).
+
+## October 17 recovery continuation
+
+Integrated complete 188-byte timed control decay and 144-byte paired velocity reset functions. Both changed whole source objects verify exactly. Code reaches 612,036 bytes (18.5820%) across 9,302 functions; data remains 152,018 bytes (23.4573%). Callback/context data types now follow current consumer interfaces.
