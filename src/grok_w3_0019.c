@@ -26,7 +26,6 @@ extern void func_00175670();
 extern void func_001975C0(u8 *, u8 *);
 extern int func_00175700(u8 *);
 extern void func_0019C470(u8 *);
-extern void func_00195630(u8 *, u8 *);
 typedef struct {
     u8 field0;
     u8 field1;
@@ -120,16 +119,6 @@ void func_0019C420(u8 *p) {
         p[4]++;
         func_0019C470(p);
     }
-}
-
-void func_001956E0(u8 *p, u8 *q) {
-    s16 t = S(p, 0x1C);
-    S(p, 0x1C) = t - 1;
-    if (t == 0)
-        p[6]++;
-    func_00195630(p, q);
-    func_00175670();
-    func_001975C0(p, q);
 }
 
 void func_00192B00(u8 *p) {

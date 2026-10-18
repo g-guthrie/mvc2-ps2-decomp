@@ -11047,3 +11047,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/handle_entity_height_threshold_0020FA50.c -c -lang c -O3 -Op -sdatathreshold 0 \
     -o "$BUILD/handle_entity_height_threshold_0020FA50.o"
 "$PYTHON" tools/verify_object.py "$BUILD/handle_entity_height_threshold_0020FA50.o" private/SLUS_204.86.rom --source src/handle_entity_height_threshold_0020FA50.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_rebound_motion_00196120.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/owner_rebound_motion_00196120.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_rebound_motion_00196120.o" \
+    private/SLUS_204.86.rom --source src/owner_rebound_motion_00196120.c

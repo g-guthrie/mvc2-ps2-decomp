@@ -50,14 +50,6 @@ extern f32 D_004F1FCC;
 extern u8 D_0044A7E0[];
 extern u16 D_0044A7F0[];
 
-void func_00195630(u8 *p)
-{
-    F(p, 0x68) -= F(p, 0x98);
-    F(p, 0x34) += F(p, 0x5c) + F(p, 0x68);
-    F(p, 0x6c) -= F(p, 0x9c);
-    F(p, 0x38) += F(p, 0x60) + F(p, 0x6c);
-}
-
 void func_00190C10(u8 *p)
 {
     p[0x295] = 0;

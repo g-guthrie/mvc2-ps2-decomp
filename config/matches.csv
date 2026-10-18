@@ -6823,7 +6823,7 @@ func_00139620,0x00139620,0x40,src/grok_w5_0013.c,complete
 func_00139660,0x00139660,0x40,src/grok_w5_0013.c,complete
 func_0013A440,0x0013A440,0x38,src/grok_w5_0013.c,complete
 func_00139590,0x00139590,0x3C,src/grok_w5_0013.c,complete
-func_00195630,0x00195630,0x54,src/grok_w5_0019.c,complete
+func_00195630,0x00195630,0x54,src/owner_rebound_motion_00196120.c,complete
 func_00190C10,0x00190C10,0x44,src/grok_w5_0019.c,complete
 func_00192B00,0x00192B00,0x48,src/grok_w5_0019.c,complete
 func_0019FEE0,0x0019FEE0,0x4C,src/grok_w5_0019.c,complete
@@ -7423,7 +7423,7 @@ func_00194CA0,0x00194CA0,0x64,src/grok_w3_0019.c,complete
 func_00198100,0x00198100,0x68,src/grok_w3_0019.c,complete
 func_001906C0,0x001906C0,0x44,src/grok_w3_0019.c,complete
 func_00193DA0,0x00193DA0,0x68,src/grok_w3_0019.c,complete
-func_001956E0,0x001956E0,0x68,src/grok_w3_0019.c,complete
+func_001956E0,0x001956E0,0x68,src/owner_rebound_motion_00196120.c,complete
 func_0027C100,0x0027C100,0x54,src/grok_w3_0027.c,complete
 func_0027C820,0x0027C820,0x54,src/grok_w3_0027.c,complete
 func_002748B0,0x002748B0,0x58,src/grok_w3_0027.c,complete
@@ -14731,7 +14731,7 @@ func_00214340,0x00214340,0xF0,src/w1710_d.c,complete
 func_00154A20,0x00154A20,0xF0,src/w1710_e.c,complete
 func_0027F460,0x0027F460,0xF4,src/w1710_e.c,complete
 func_001F33C0,0x001F33C0,0x128,src/w1710_e.c,complete
-func_00197070,0x00197070,0x134,src/w1710_e.c,complete
+func_00197070,0x00197070,0x134,src/owner_rebound_motion_00196120.c,complete
 func_002BE610,0x002BE610,0xF0,src/w1710_f.c,complete
 func_0025E6A0,0x0025E6A0,0x138,src/w1710_f.c,complete
 func_00186DA0,0x00186DA0,0xFC,src/w1710_g.c,complete
@@ -15491,3 +15491,4 @@ func_002DB600,0x002DB600,0x1B8,src/update_damped_actor_motion_002DB600.c,complet
 func_0020FA50,0x0020FA50,0xF0,src/handle_entity_height_threshold_0020FA50.c,complete
 func_001A14D0,0x001A14D0,0x190,src/owner_state_tick_001A14D0.c,complete
 func_001A27A0,0x001A27A0,0x148,src/owner_state_tick_001A27A0.c,complete
+func_00196120,0x00196120,0x134,src/owner_rebound_motion_00196120.c,complete
