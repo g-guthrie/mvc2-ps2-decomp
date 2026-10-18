@@ -9352,3 +9352,13 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/select_interaction_flags_00167700.o"
 "$PYTHON" tools/verify_object.py "$BUILD/select_interaction_flags_00167700.o" \
     private/SLUS_204.86.rom --source src/select_interaction_flags_00167700.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_actor_launch_0021F740.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/initialize_actor_launch_0021F740.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_actor_launch_0021F740.o" \
+    private/SLUS_204.86.rom --source src/initialize_actor_launch_0021F740.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_actor_launch_0021F8E0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/initialize_actor_launch_0021F8E0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_actor_launch_0021F8E0.o" \
+    private/SLUS_204.86.rom --source src/initialize_actor_launch_0021F8E0.c
