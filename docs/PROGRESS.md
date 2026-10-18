@@ -3612,3 +3612,7 @@ Recovered complete functions at 0x002E7700 (64 bytes) and 0x00362760 (88 bytes).
 ## Owned-event advance handler
 
 Recovered all 84 bytes at 0x002CE850 with frame completion, state changes and event creation preserved. Whole-object verification passes. Code reaches 639,284 bytes (19.4093%), 9,606 functions; data remains 153,593 bytes (23.7003%).
+
+## Two-context child constructor
+
+Recovered all 108 bytes at 0x001D1B80, preserving distinct context fields, mode, callback and allocation failure. Whole-object verification passes. Code reaches 639,392 bytes (19.4126%), 9,607 functions; data remains 153,593 bytes (23.7003%).
