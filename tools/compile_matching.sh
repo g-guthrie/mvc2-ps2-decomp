@@ -4411,3 +4411,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
  -o "$BUILD/create_child_scale_event_0015BE90.o"
 "$PYTHON" tools/verify_object.py "$BUILD/create_child_scale_event_0015BE90.o" \
  private/SLUS_204.86.rom --source src/create_child_scale_event_0015BE90.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+ src/create_unit_color_event_00140FD0.c -c -lang c -O3 -sdatathreshold 8 \
+ -o "$BUILD/create_unit_color_event_00140FD0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/create_unit_color_event_00140FD0.o" \
+ private/SLUS_204.86.rom --source src/create_unit_color_event_00140FD0.c

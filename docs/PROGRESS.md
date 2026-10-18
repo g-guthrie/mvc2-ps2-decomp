@@ -3334,3 +3334,7 @@ Recovered all 24 bytes at 0x004152E0, clearing the runtime word and forwarding t
 ## Adjacent signed move records
 
 Recovered the eight-byte owner at 0x004C150C as two four-byte signed records. Setup paths select the base and base+4, and the native consumer loads signed offsets 0..3. The data object and every registered state_pair_dispatch function verify exactly. Data reaches 152,083 bytes (23.4673%); code remains 613,052 bytes (18.6129%).
+
+## Unit-color event initializer
+
+Recovered all 100 bytes at 0x00140FD0 with ordinary float assignments, callback setup and allocation failure intact. Whole-object verification passes. Code reaches 613,152 bytes (18.6159%), 9,313 functions; data remains 152,083 bytes (23.4673%).
