@@ -3747,3 +3747,16 @@ The three-float constant at 0x004443B8 adds 12 reconstructed data bytes, with
 direct fixed component loads supporting its finite extent. Current code:
 1,418,424 bytes (43.0648%); next scheduled publication threshold from fecb5956
 is 1,450,777 bytes (44.0471%).
+
+
+Local callback and data follow-on: the 160-byte event completion callback at
+0x0010E6D0 now matches with volatile shared state and the correct integer-return
+semaphore syscall declaration. All four functions in its grouped source verify
+in full. The 132-byte record-threshold poll also matches after aligning its
+logger declaration with the recovered variadic void function. Fixed vectors at
+0x004B8290, 0x004454F8, 0x00442590 and 0x00443E2C are reconstructed from direct
+component consumers; split padding remains placeholder. Current catalog before
+the assembly-credit audit: 1,418,716 code bytes (43.0737%), 14,724 functions;
+153,921 data bytes (23.7509%). A fresh full combined link passed immediately
+before the event callback and final vector addition; their objects pass exact
+verification and will be included in the next full link.
