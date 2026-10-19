@@ -11,6 +11,7 @@ extern s32 D_004C2830;
 typedef void (*Mvc2StateHandler)(u8 *);
 extern const Mvc2StateHandler jtbl_00440240[];
 extern const Mvc2StateHandler jtbl_00440260[];
+extern const Mvc2StateHandler jtbl_00440280[];
 void func_0013A9D0(u8 *p) {
     u8 *state = *(u8 **)(p + 0x18);
     jtbl_00440240[state[4]](p);
@@ -24,6 +25,17 @@ void func_0013AA00(u8 *p) {
 void func_0013ABD0(u8 *p) {
     u8 *state = *(u8 **)(p + 0x18);
     jtbl_00440260[state[4]](p);
+}
+
+void func_0013ADA0(u8 *p) {
+    u8 *context = *(u8 **)(p + 0x18);
+    u8 *state = *(u8 **)(context + 0x18);
+    jtbl_00440280[state[4]](p);
+}
+
+void func_0013ADD0(u8 *p) {
+    *(s8 *)(p + 0x13C) = *(s8 *)(*(u8 **)(p + 0x18) + 0x13C);
+    *(V3 *)(p + 0x50) = *(V3 *)(*(u8 **)(p + 0x18) + 0x50);
 }
 
 void func_0013A610(u8 *p) {

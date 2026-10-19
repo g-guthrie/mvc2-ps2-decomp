@@ -15539,6 +15539,8 @@ func_0013A610,0x0013A610,0x144,src/w1911_s.c,complete
 func_0013A9D0,0x0013A9D0,0x24,src/w1911_s.c,complete
 func_0013AA00,0x0013AA00,0x10,src/w1911_s.c,complete
 func_0013ABD0,0x0013ABD0,0x24,src/w1911_s.c,complete
+func_0013ADA0,0x0013ADA0,0x28,src/w1911_s.c,complete
+func_0013ADD0,0x0013ADD0,0x2C,src/w1911_s.c,complete
 func_003D44E0,0x003D44E0,0x144,src/w1911_t.c,complete
 func_0012B920,0x0012B920,0x14C,src/w1911_u.c,complete
 func_001BEBD0,0x001BEBD0,0x150,src/w1911_v.c,complete
