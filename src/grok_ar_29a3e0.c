@@ -31,3 +31,21 @@ void func_0029A3E0(u8 *p)
     *(u32 *)(p + 0x6C) = 0;
     func_001757E0(p, 0xF, 0);
 }
+
+void func_001ED180(u8 *p)
+{
+    PlanarOffset v;
+    p[0x1E6] ^= 1;
+    *(s16 *)(p + 0x140) = p[0x1E6];
+    if ((p[0x22] & 2) == 0) {
+        p[0x1E6] ^= 1;
+        *(s16 *)(p + 0x140) = p[0x1E6];
+    }
+    func_001266A0(p, 5, 5);
+    ((u32 *)v)[0] = 0xC2A6AAAA;
+    ((u32 *)v)[1] = 0x431E9249;
+    func_0015D010(p, v);
+    p[0x1B4] = 0xA;
+    func_0018C6E0(p);
+    func_001757E0(p, 0xF, 0);
+}
