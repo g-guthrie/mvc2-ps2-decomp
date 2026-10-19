@@ -28,7 +28,7 @@ extern void func_00387C90(void);
 extern void func_003A8B70(void);
 extern void func_001C8B70(void);
 extern void func_00329810(void);
-extern void func_003289F0(void);
+extern void func_003289F0(u8 *);
 extern void func_00328C70(void);
 extern void func_00328EC0(void);
 extern void func_00329510(void);

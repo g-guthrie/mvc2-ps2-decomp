@@ -23,7 +23,7 @@ extern void func_00328530(u8 *);
 extern void func_00328560(u8 *);
 extern void func_00328710(u8 *);
 extern void func_00328730(u8 *);
-extern void func_00328A20(u8 *);
+extern void func_00328A20(u8 *, void *);
 extern void func_00328AA0(u8 *);
 extern void func_00328BA0(u8 *);
 extern void func_00328BB0(u8 *);
@@ -80,7 +80,8 @@ const Mvc2StateCallback jtbl_0045E120[56] = {
     func_00328560,
     func_00328710,
     func_00328730,
-    func_00328A20,
+    /* Owner-aware subtable starts here; unary constructors select only 0..7. */
+    (Mvc2StateCallback)func_00328A20,
     func_00328AA0,
     func_00328BA0,
     func_00328BB0,

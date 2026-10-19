@@ -26,7 +26,10 @@ extern void func_00186A60(u8 *, s32);
 extern void func_001843A0(u8 *);
 extern void func_001F8820(u8 *);
 extern void func_001F87E0(u8 *);
+extern void func_001E3210(u8 *, s32);
+extern void func_001FED30(u8 *);
 extern u8 *D_004C2840;
+extern u8 *D_004C2794;
 typedef void (*StateHandler)(u8 *);
 extern const u32 jtbl_0044F8F0[20];
 extern const u32 jtbl_0044FB10[14];
@@ -103,6 +106,64 @@ void func_001F0420(u8 *p)
     F(p, 56) = F(p, 1072);
     func_00185490(p);
     func_00183D10(p);
+}
+
+void func_001F04B0(u8 *p)
+{
+    p[7]++;
+    p[0x1B5] = 50;
+    p[0x1B2] = *(unsigned short *)(p + 0x1C0) = 0;
+    I(p, 0x1D8) = 0;
+    ((s16 *)(D_004C2794 + 0x7C))[p[2]]++;
+    func_0018C4B0(p, 8);
+    func_001F0420(p);
+    func_001E3210(p, 3);
+    func_001757E0(p, 21, 0);
+}
+
+void func_001F08F0(u8 *p)
+{
+    p[7]++;
+    p[0x1B5] = 51;
+    p[0x1B2] = *(unsigned short *)(p + 0x1C0) = 0;
+    I(p, 0x1D8) = 0;
+    ((s16 *)(D_004C2794 + 0x7C))[p[2]]++;
+    func_001F0420(p);
+    func_0018C4B0(p, 8);
+    func_001E3210(p, 3);
+    func_001757E0(p, 21, 2);
+}
+
+void func_001FEDB0(u8 *p)
+{
+    p[7]++;
+    p[0x1B5] = 55;
+    p[0x1B2] = *(unsigned short *)(p + 0x1C0) = 0;
+    I(p, 0x1D8) = 0;
+    ((s16 *)(D_004C2794 + 0x7C))[p[2]]++;
+    func_0018C4B0(p, 5);
+    func_001FED30(p);
+    func_00183D10(p);
+    p[0x168] = p[0x1B7];
+    func_001757E0(p, 21, p[0x168]);
+}
+
+void func_001FEF00(u8 *p)
+{
+    p[7]++;
+    p[0x1B5] = 56;
+    p[0x1B2] = *(unsigned short *)(p + 0x1C0) = 0;
+    I(p, 0x1D8) = 0;
+    ((s16 *)(D_004C2794 + 0x7C))[p[2]]++;
+    func_0018C4B0(p, 5);
+    func_00185490(p);
+    p[0x20D] = 2;
+    F(p, 0x5C) /= 8.0f;
+    F(p, 0x68) /= 8.0f;
+    F(p, 0x60) /= 8.0f;
+    F(p, 0x6C) /= 8.0f;
+    p[0x168] = (s8)p[0x1B7] + 2;
+    func_001757E0(p, 21, p[0x168]);
 }
 
 void func_001F6940(u8 *p)

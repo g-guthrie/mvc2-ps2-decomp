@@ -28,7 +28,7 @@ extern void func_00143C60();
 extern void func_00146F50();
 extern void func_00147D20();
 extern void func_0014C080();
-extern void func_0015E3A0();
+extern void func_0015E3A0(u8 *);
 extern void func_0015EAA0();
 extern void func_0015ED10();
 extern void func_0015F3D0();
@@ -216,7 +216,7 @@ void func_00156510(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, 
 
 void func_0015E2E0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a1, a1, a2, a3); }
 
-void func_0015E620(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0015E3A0(a0, a1, a2, a3); }
+void func_0015E620(u8 *owner) { func_0015E3A0(owner); }
 
 void func_0015E9E0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a1, a1, a2, a3); }
 

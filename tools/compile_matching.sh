@@ -14955,4 +14955,22 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/perspective_matrix_003d
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/random_pair_state_001dbe70.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/random_pair_state_001dbe70.o"
 "$PYTHON" tools/verify_object.py "$BUILD/random_pair_state_001dbe70.o" private/SLUS_204.86.rom --source src/random_pair_state_001dbe70.c
 
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/owner_state_initializers_002bc390.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/owner_state_initializers_002bc390.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_state_initializers_002bc390.o" private/SLUS_204.86.rom --source src/owner_state_initializers_002bc390.c
+
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/owner_pair_state_002391c0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/owner_pair_state_002391c0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_pair_state_002391c0.o" private/SLUS_204.86.rom --source src/owner_pair_state_002391c0.c
+
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/owner_random_motion_002366d0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/owner_random_motion_002366d0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_random_motion_002366d0.o" private/SLUS_204.86.rom --source src/owner_random_motion_002366d0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/position_snap_state_00258850.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/position_snap_state_00258850.o"
+"$PYTHON" tools/verify_object.py "$BUILD/position_snap_state_00258850.o" private/SLUS_204.86.rom --source src/position_snap_state_00258850.c
+
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/core_state_entries_0017c390.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/core_state_entries_0017c390.o"
+"$PYTHON" tools/verify_object.py "$BUILD/core_state_entries_0017c390.o" private/SLUS_204.86.rom --source src/core_state_entries_0017c390.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

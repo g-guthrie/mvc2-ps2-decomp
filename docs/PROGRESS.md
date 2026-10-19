@@ -4413,3 +4413,38 @@ recorded above, including the interface corrections and per-unit data layout.
 This publication delivers the compiler-command repair before the next normal
 code threshold. That threshold remains 1,948,762 bytes (59.1664%), 31,294 bytes
 beyond this revision. Complete source decompilation remains unfinished.
+
+
+## Core state handlers and parallel data verification (2026-10-19)
+
+This checkpoint adds 18 exact C functions (2,580 bytes): native actor/state
+initializers, random-pair motion, owner-aware setup, and six core state handlers.
+Each complete symbol was compiler/relocation-verified, then all replacements
+were linked into the byte-identical loaded ROM and packed retail ELF.
+Native table slots and incoming contexts were independently checked. Known
+callback declarations now preserve the event/owner arguments, including the
+owner-aware interior table at 0x0045E1A0. That interior table shares storage
+with a unary dispatch table whose visible constructors select only slots 0–7;
+its owner callback at slot 32 is not evidence of a valid unary owner call.
+
+Linked matching code is 1,920,048 / 3,293,696 bytes (58.2946%). Reconstructed
+linked data remains 175,721 / 648,064 bytes (27.1148%). This is partial source
+recovery; unchanged retail bytes still supply the unmatched image regions.
+
+`tools/compile_matching_data.sh` now defaults to four independent workers.
+After setting the documented private toolchain variables, use
+`DATA_JOBS=1 make hybrid` for serial data compilation. Compiler flags and
+verification recipes are unchanged. Worker failures cancel queued jobs, join
+active jobs, and fail the build. Output names retain the relinker's source-path
+convention, and colliding output paths fail before compilation.
+
+The actual parallel script verified all 8,085 standalone data units and four
+compiler-owned switch tables in 457.837 seconds. A real invalid-C control
+failed in 0.303 seconds and canceled 59 queued jobs. The 76 units whose symbol
+names differ from source filenames were rechecked after the filename fix;
+all objects matched the paths required by the linker. An earlier 40-unit
+comparison measured a 3.22x speedup over serial data compilation.
+
+The next normal code checkpoint remains 1,948,762 bytes (59.1664%), another
+28,714 bytes beyond this revision. This additional tooling publication does
+not reset that grid.
