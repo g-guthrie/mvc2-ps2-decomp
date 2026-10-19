@@ -1,5 +1,7 @@
 typedef signed int s32;
 typedef unsigned int u32;
+typedef unsigned char u8;
+typedef signed char s8;
 
 extern void func_0040EDE0(void);
 void func_003FF258(void){ func_0040EDE0(); }
@@ -41,13 +43,94 @@ void func_004104E0(RP *src, s32 max, RP *out, RP *res){
     if (res->n == 0) res->a = 0; else { s32 n = out->n; s32 a = out->a; res->a = a + n; }
 }
 
-typedef struct { signed char flag; char pad[0xAB]; } Slot;
+typedef struct { u8 pad[0xC]; void (*callback)(void *); } SlotVtable;
+typedef struct { SlotVtable *vtable; } SlotObject;
+typedef struct {
+    s8 active;
+    u8 pad1[2];
+    s8 callbackCount;
+    void *resource4;
+    void *resource8;
+    void *resourceC;
+    void *callback10;
+    u32 pad14;
+    SlotObject *callback18;
+    u8 pad1C[0x58];
+    void *resource74;
+    SlotObject *callback78[2];
+    SlotObject *callback80[5];
+    void *resource94;
+    u8 pad98[0x14];
+} Slot;
+extern void func_003FB128(const char *message);
+extern void func_00401400(void);
+extern void func_00401868(u8 *slot);
+extern void func_003FF0E0(void *object);
+extern void func_003FF568(s32 *object);
+extern void func_004005F8(u8 *object);
+extern void func_0040CD38(u8 *object);
+extern void func_003F9630(void);
+extern void func_003F60B0(void *object);
+extern void *func_0011D8F8(void *destination, s32 value, u32 size);
+extern void func_003F9660(void);
+extern char gAdxtDiagnostic_004BBFD0[];
+void func_00401428(Slot *slot)
+{
+    SlotObject **firstTable;
+    SlotObject **secondTable;
+    s32 i;
+    SlotObject *object;
+    void *resource;
+
+    if (slot == 0) {
+        func_003FB128(gAdxtDiagnostic_004BBFD0);
+        return;
+    }
+    func_00401400();
+    if (slot->active == 1)
+        func_00401868((u8 *)slot);
+    if (slot->resourceC != 0)
+        func_003FF0E0(slot->resourceC);
+    if (slot->resource4 != 0)
+        func_003FF568((s32 *)slot->resource4);
+    if (slot->resource8 != 0)
+        func_004005F8((u8 *)slot->resource8);
+    if (slot->resource94 != 0)
+        func_0040CD38((u8 *)slot->resource94);
+    func_003F9630();
+    if (slot->callback10 != 0)
+        ((SlotObject *)slot->callback10)->vtable->callback(slot->callback10);
+    i = 0;
+    if (i < slot->callbackCount) {
+        secondTable = slot->callback80;
+        firstTable = slot->callback78;
+        do {
+            /* The per-slot callback at +0x18 is 0x60 bytes before this table. */
+            object = *(SlotObject **)((u8 *)firstTable - 0x60);
+            if (object != 0)
+                object->vtable->callback(object);
+            if (*firstTable != 0)
+                (*firstTable)->vtable->callback(*firstTable);
+            if (*secondTable != 0)
+                (*secondTable)->vtable->callback(*secondTable);
+            i++;
+            firstTable++;
+            secondTable++;
+        } while (i < slot->callbackCount);
+    }
+    resource = slot->resource74;
+    if (resource != 0)
+        func_003F60B0(resource);
+    func_0011D8F8(slot, 0, 0xAC);
+    slot->active = 0;
+    func_003F9660();
+}
+
 extern Slot D_0047C620[16];
-extern void func_00401428(Slot *);
 void func_004015C8(void){
     Slot *p = D_0047C620;
     do {
-        if (p->flag == 1) func_00401428(p);
+        if (p->active == 1) func_00401428(p);
         p++;
     } while ((s32)p < (s32)(D_0047C620 + 16));
 }
