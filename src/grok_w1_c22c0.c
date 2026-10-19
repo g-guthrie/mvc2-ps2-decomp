@@ -15,7 +15,7 @@ void func_001C22C0(u8 *p, u8 *q)
     func_001C2330(p, q);
 }
 
-extern void func_001C37D0();
+extern void func_001C37D0(u8 *, u8 *);
 
 void func_001C3720(u8 *p, u8 *q)
 {
