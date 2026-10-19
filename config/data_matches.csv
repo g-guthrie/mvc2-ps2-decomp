@@ -63,7 +63,9 @@ data_u32_004399C0,0x004399C0,0x4,src/data/data_u32_004399C0.c,complete,reconstru
 data_ff_004399C4,0x004399C4,0xC,src/data/data_ff_004399C4.c,complete,placeholder
 data_zero_004399D0,0x004399D0,0x30,src/data/data_zero_004399D0.c,complete,placeholder
 data_rpc_response_00439A00,0x00439A00,0x4,src/data/data_rpc_response_00439A00.c,complete,reconstructed
-data_zero_00439A04,0x00439A04,0x19EC,src/data/data_zero_00439A04.c,complete,placeholder
+data_zero_00439A04,0x00439A04,0x117C,src/data/data_zero_00439A04.c,complete,placeholder
+data_rpc_response_0043AB80,0x0043AB80,0x4,src/data/data_rpc_response_0043AB80.c,complete,reconstructed
+data_zero_0043AB84,0x0043AB84,0x86C,src/data/data_zero_0043AB84.c,complete,placeholder
 data_u32_0043B3F0,0x0043B3F0,0x10,src/data/data_u32_0043B3F0.c,complete,placeholder
 data_rpc_command_status_0043B400,0x0043B400,0x4,src/data/data_rpc_command_status_0043B400.c,complete,reconstructed
 data_rpc_semaphore_id_0043B404,0x0043B404,0x4,src/data/data_rpc_semaphore_id_0043B404.c,complete,reconstructed
