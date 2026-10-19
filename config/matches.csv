@@ -15332,6 +15332,7 @@ func_0010E318,0x0010E318,0x54,src/sony29_f.c,complete
 func_00104F08,0x00104F08,0x34,src/sony29_h.c,complete
 func_00104D28,0x00104D28,0x7C,src/sony29_i.c,complete
 func_00104C90,0x00104C90,0x94,src/sony29_j.c,complete
+func_00104DA8,0x00104DA8,0x98,src/sony29_j.c,complete
 func_00104928,0x00104928,0x68,src/sony29_k.c,complete
 func_00102BC0,0x00102BC0,0x98,src/sony29_l.c,complete
 func_00110FD8,0x00110FD8,0xB8,src/sony29_n.c,complete
