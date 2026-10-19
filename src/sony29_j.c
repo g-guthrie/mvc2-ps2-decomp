@@ -11,8 +11,8 @@ extern D3168 D_004C3168;
 extern int D_004C3160;
 extern int D_00438258;
 extern int func_00103E10(int);
-extern int func_00103D20(void);
-extern int func_00103D60(void);
+extern int func_00103D20(int);
+extern int func_00103D60(int);
 
 int func_00104C90(int a0) {
     int s0;
@@ -23,10 +23,12 @@ int func_00104C90(int a0) {
         "syscall 0\n"
         "move %0, $2\n"
         : "=r"(s0)
+        :
+        : "$2", "$3"
     );
 
     if (s0 != a0) {
-        return func_00103D20();
+        return func_00103D20(a0);
     }
     if ((unsigned int) s0 >= 0x100) {
         return -1;
@@ -52,10 +54,12 @@ int func_00104DA8(int a0) {
         "syscall 0\n"
         "move %0, $2\n"
         : "=r"(s0)
+        :
+        : "$2", "$3"
     );
 
     if (s0 != a0) {
-        return func_00103D60();
+        return func_00103D60(a0);
     }
     if ((unsigned int)s0 >= 0x100) {
         return -1;

@@ -13,7 +13,7 @@ extern u8 *D_004C28DC;
 
 void func_00393000(u8 *p) {
     extern void func_00175700(u8 *);
-    extern void func_00179160(u8 *, u8 *);
+    extern void func_00179160(void *, void *);
     extern s32 func_00393390(u8 *);
     extern void func_003933A0(u8 *);
     u8 *s = *(u8 **)(p + 0x1DC);

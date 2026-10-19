@@ -10,7 +10,7 @@ typedef struct { f32 x, y, z; } V3;
 
 void func_0021C690(u8 *p, void *a1) {
     extern void func_001266A0(u8 *, s32, s32);
-    extern void func_00179160(u8 *, void *);
+    extern void func_00179160(void *, void *);
     extern s32 func_00118FA8(f32);
     V3 v;
     f32 x;

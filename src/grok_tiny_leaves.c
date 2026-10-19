@@ -383,11 +383,15 @@ void func_00103D10(void) {
     }
 }
 
-void func_00103D20(void) {
+/* The kernel consumes the thread ID in A0 and returns its status in V0. */
+int func_00103D20(int thread_id) {
+    int result;
     asm {
         addiu v1, r0, -52
         syscall 0
+        move result, v0
     }
+    return result;
 }
 
 void func_00103D30(void) {
@@ -411,11 +415,15 @@ void func_00103D50(void) {
     }
 }
 
-void func_00103D60(void) {
+/* The kernel consumes the thread ID in A0 and returns its status in V0. */
+int func_00103D60(int thread_id) {
+    int result;
     asm {
         addiu v1, r0, -56
         syscall 0
+        move result, v0
     }
+    return result;
 }
 
 void func_00103D70(void) {
