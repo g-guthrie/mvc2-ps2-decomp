@@ -385,3 +385,51 @@ void func_002B8DA0(u8 *a)
     D_004C2794->f7c[a[2]]++;
     func_001757E0(a, 8, a[0x168]);
 }
+
+extern s32 D_004C09DC, D_004C09E0, D_004C09E4;
+extern s32 D_004C09F4, D_004C09F8, D_004C09FC;
+void func_0028EC40(u8 *a)
+{
+    extern void func_001E3710(u8 *, s32);
+    extern int func_001757E0(u8 *, int, int);
+    u32 t;
+    switch (a[0x1FC]) {
+    case 0:
+        a[0x168] = 0;
+        a[0x1B5] = 0xF;
+        func_001E3710(a, 0x14);
+        if (a[0x210] == 0) *(void **)(a + 0x408) = &D_004C09DC;
+        else *(void **)(a + 0x408) = &D_004C09F4;
+        a[0x1BB] = 0;
+        break;
+    case 1:
+        a[0x168] = 1;
+        a[0x1B5] = 0x10;
+        func_001E3710(a, 0x15);
+        if (a[0x210] == 0) *(void **)(a + 0x408) = &D_004C09E0;
+        else *(void **)(a + 0x408) = &D_004C09F8;
+        a[0x1BB] = 1;
+        break;
+    case 2:
+        a[0x168] = 2;
+        a[0x1B5] = 0x11;
+        if (*(u16 *)(a + 0x20E) & 0x2000) {
+            a[0x168] = 6;
+            a[0x1B5] = 0x12;
+        }
+        func_001E3710(a, 0x16);
+        if (a[0x210] == 0) *(void **)(a + 0x408) = &D_004C09E4;
+        else *(void **)(a + 0x408) = &D_004C09FC;
+        a[0x1BB] = 2;
+        break;
+    default:
+        break;
+    }
+    t = a[0x1B5];
+    ((ActorActionView *)a)->action = t;
+    a[0x1B2] = *(u16 *)(a + 0x1C0) = 0;
+    *(s32 *)(a + 0x1D8) = 0;
+    D_004C2794->f7c[a[2]]++;
+    func_001757E0(a, 0xC, a[0x168]);
+    if (*(s8 *)(a + 0x1EA) & 0xF0) a[0x1EA] = *(s8 *)(a + 0x1EA) - 0x10;
+}

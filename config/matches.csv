@@ -16005,3 +16005,4 @@ func_00256C20,0x00256C20,0x1D8,src/select_input_buffer_00256a70.c,complete
 func_002B8DA0,0x002B8DA0,0x124,src/w175_b.c,complete
 func_0024C590,0x0024C590,0xB0,src/x5_e.c,complete
 func_002544D0,0x002544D0,0x1A4,src/conditional_engine_chains.c,complete
+func_0028EC40,0x0028EC40,0x16C,src/w175_b.c,complete
