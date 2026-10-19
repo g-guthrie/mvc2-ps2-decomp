@@ -25,3 +25,22 @@ void func_001B5350(W1B5350_O *s, W1B5350_O *d) {
     if (h == 0) x = -x;
     d->f34 += x;
 }
+
+typedef struct { s16 x, y, z; } W1B3D90_T;
+extern W1B3D90_T D_004B5710[];
+extern W1B3D90_T D_004B5712[];
+typedef struct { u8 pad0[0x21]; u8 idx; u8 pad22[0x12]; f32 f34; f32 f38; u8 pad3c[0x104]; s16 h140; } W1B3D90_O;
+
+void func_001B3D90(W1B3D90_O *s, W1B3D90_O *d)
+{
+    f32 x;
+    s16 h;
+    d->f34 = s->f34;
+    d->f38 = s->f38;
+    d->f38 += (f32)D_004B5712[d->idx].x;
+    x = (f32)D_004B5710[d->idx].x;
+    h = s->h140;
+    d->h140 = h;
+    if (h == 0) x = -x;
+    d->f34 += x;
+}

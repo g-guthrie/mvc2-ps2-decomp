@@ -15235,6 +15235,7 @@ func_001B2240,0x001B2240,0x138,src/w188_g.c,complete
 func_0015C740,0x0015C740,0x168,src/w188_h.c,complete
 func_003305E0,0x003305E0,0x16C,src/w188_j.c,complete
 func_001B5350,0x001B5350,0x80,src/w1812_a.c,complete
+func_001B3D90,0x001B3D90,0x90,src/w1812_a.c,complete
 func_0021DBE0,0x0021DBE0,0x170,src/w1812_b.c,complete
 func_00234640,0x00234640,0x150,src/w1812_b.c,complete
 func_002269C0,0x002269C0,0x160,src/w1812_b.c,complete
