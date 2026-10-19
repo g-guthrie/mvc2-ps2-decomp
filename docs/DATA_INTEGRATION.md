@@ -96,3 +96,19 @@ the retail strides confirms both paths remain within their ranges and their
 union visits all 56 records. This supports the entire 448-byte typed object.
 All changed data objects and their code consumers were compiled and checked
 over their complete spans.
+
+### Object state callback tables at 00440240–00440348
+
+The four six-entry tables at 00440240, 00440260, 00440280, and 00440330
+contain unary object callbacks. Their actual consumers are 0013A9D0,
+0013ABD0, 0013ADA0, and 0013B4A0; each forwards the object in A0. The
+0013ADA0 consumer follows the extra context pointer before reading the
+selector. The shared AA00/ADD0 callbacks copy the signed state byte, and
+ADD0 also copies the three-float vector. ABC0 and B5E0 tail-call the
+unary object-pool unlink routine 003DAA40. Their old generic four-argument
+source wrappers were corrected before assigning typed table credit.
+
+All four complete 24-byte data objects match after symbolic relocation.
+The complete affected w1911_s, g8, and tail_leaves code objects were also
+recompiled and verified. Only these 96 table bytes are promoted here;
+alignment gaps and adjacent ranges retain their existing classifications.

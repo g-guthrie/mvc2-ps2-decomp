@@ -87,7 +87,7 @@ s32 func_00166410(u8 *p, u8 *q) {
 extern void func_0013B6A0();
 extern void func_0013B770();
 typedef void (*Mvc2StateCallback)(u8 *);
-extern Mvc2StateCallback jtbl_00440330[];
+extern const Mvc2StateCallback jtbl_00440330[];
 void func_0013B4A0(u8 *p) {
     u8 *state = *(u8 **)(p + 0x18);
     jtbl_00440330[state[4]](p);
