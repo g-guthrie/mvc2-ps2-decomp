@@ -2478,7 +2478,8 @@ residual_0017C360,0x0017C360,0x84,0x0017C3E4,assembly_residual,verified-boundary
 func_0017C3F0,0x0017C3F0,0x54,0x0017C444,code,spimdisasm-explicit-size-before-first-data
 func_0017C450,0x0017C450,0x48,0x0017C498,code,spimdisasm-explicit-size-before-first-data
 func_0017C4A0,0x0017C4A0,0x18,0x0017C4B8,code,spimdisasm-explicit-size-before-first-data
-func_0017C4C0,0x0017C4C0,0x120,0x0017C5E0,code,spimdisasm-explicit-size-before-first-data
+func_0017C4C0,0x0017C4C0,0x30,0x0017C4F0,code,native-table-callback
+func_0017C4F0,0x0017C4F0,0xF0,0x0017C5E0,code,native-table-callback
 func_0017C5E0,0x0017C5E0,0x128,0x0017C708,code,spimdisasm-explicit-size-before-first-data
 func_0017C710,0x0017C710,0x78,0x0017C788,code,spimdisasm-explicit-size-before-first-data
 func_0017C790,0x0017C790,0x54,0x0017C7E4,code,spimdisasm-explicit-size-before-first-data

@@ -14650,3 +14650,15 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_zc_1a3810.c 
 # Separately referenced dispatch heads; their alignment remains uncredited.
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/owner_callback_dispatch_prefixes.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/owner_callback_dispatch_prefixes.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_callback_dispatch_prefixes.o" private/SLUS_204.86.rom --source src/owner_callback_dispatch_prefixes.c
+
+# Exact callback and initializer recovery from the frozen 2026-10-19 Grok snapshot.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_du_0013B2D0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_du_0013B2D0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_du_0013B2D0.o" private/SLUS_204.86.rom --source src/grok_du_0013B2D0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_du_00135E40.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_du_00135E40.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_du_00135E40.o" private/SLUS_204.86.rom --source src/grok_du_00135E40.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_da_1473e0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_da_1473e0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_da_1473e0.o" private/SLUS_204.86.rom --source src/grok_da_1473e0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_ew_00143920.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_ew_00143920.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_ew_00143920.o" private/SLUS_204.86.rom --source src/grok_ew_00143920.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_dx_17c4c0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/grok_dx_17c4c0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_dx_17c4c0.o" private/SLUS_204.86.rom --source src/grok_dx_17c4c0.c

@@ -16765,3 +16765,9 @@ func_001A3620,0x001A3620,0x20,src/owner_callback_dispatch_prefixes.c,complete
 func_001DDC30,0x001DDC30,0x24,src/owner_callback_dispatch_prefixes.c,complete
 func_001DDC60,0x001DDC60,0x20,src/owner_callback_dispatch_prefixes.c,complete
 func_001DA440,0x001DA440,0x54,src/owner_callback_dispatch_prefixes.c,complete
+residual_0013B2D0,0x0013B2D0,0xA4,src/grok_du_0013B2D0.c,complete
+residual_00135E40,0x00135E40,0xCC,src/grok_du_00135E40.c,complete
+residual_001473E0,0x001473E0,0xD0,src/grok_da_1473e0.c,complete
+func_00143920,0x00143920,0x13C,src/grok_ew_00143920.c,complete
+func_0017C4C0,0x0017C4C0,0x30,src/grok_dx_17c4c0.c,complete
+func_0017C4F0,0x0017C4F0,0xF0,src/grok_dx_17c4c0.c,complete
