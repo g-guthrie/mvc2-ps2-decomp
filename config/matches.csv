@@ -15942,3 +15942,4 @@ func_001F28E0,0x001F28E0,0x58,src/grok_w5_001f.c,complete
 func_002C6B10,0x002C6B10,0x94,src/owner_state_callback_002C6B10.c,complete
 func_00256580,0x00256580,0x214,src/select_launch_actions_00256580.c,complete
 func_002567A0,0x002567A0,0x230,src/select_launch_actions_00256580.c,complete
+func_0029D690,0x0029D690,0xA8,src/owner_state_callback_0029D690.c,complete
