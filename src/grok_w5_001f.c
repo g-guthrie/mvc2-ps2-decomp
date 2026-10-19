@@ -27,6 +27,8 @@ extern void func_001F87E0(u8 *);
 extern u8 *D_004C2840;
 typedef void (*StateHandler)(u8 *);
 extern const u32 jtbl_0044F8F0[20];
+extern const u32 jtbl_0044FB10[14];
+extern void func_00178F20(u8 *, u8 *);
 extern const u32 jtbl_0044F880[8];
 
 #define F(p, o) (*(f32 *)((u8 *)(p) + (o)))
@@ -315,4 +317,14 @@ void func_001F28E0(u8 *p)
         p[7]++;
         func_001757E0(p, 15, 30);
     }
+}
+
+void func_001F7020(u8 *p)
+{
+    ((StateHandler)jtbl_0044FB10[p[523] & 0x3f])(p);
+}
+
+void func_001F7050(u8 *p)
+{
+    func_00178F20(*(u8 **)(p + 476), p);
 }

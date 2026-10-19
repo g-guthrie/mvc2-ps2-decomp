@@ -735,3 +735,11 @@ A0 holding the actor. This handler only reads and updates A0. The adjacent
 `jtbl_0044F880[p[7]]`; the two ordinary-C functions match as a 52-byte head,
 a 12-byte NOP gap, and an 88-byte handler under the existing MWCCPS2 3.0.3
 `-O3 -sdatathreshold 8` recipe.
+
+
+`func_001F7020` is selected by outer table slot `0x0044F6A0`; it dispatches
+`p[0x20b] & 0x3f` through `jtbl_0044FB10`. The first inner slot at
+`0x0044FB10` selects `func_001F7050`, whose tail call forwards the field at
+`p + 0x1dc` as A0 and p as A1 to `func_00178F20`. Both are recovered as a
+36-byte dispatch head and a 12-byte tail-call handler, with the original
+four-byte leading and 12-byte separating gaps retained in the boundary map.
