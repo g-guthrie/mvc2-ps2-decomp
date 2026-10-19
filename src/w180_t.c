@@ -17,7 +17,7 @@ void func_0032B690(u8 *p) {
     s16 c;
     u8 *g;
     extern void func_0032BEF0();
-    extern void func_0013A070();
+    extern void func_0013A070(u8 *, s32);
     if (D_00583B90[*(s8 *)(p + 0x538)] != 3) {
         return;
     }

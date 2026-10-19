@@ -204,6 +204,40 @@ void func_00139EE0(u8 *p)
     }
 }
 
+void func_0013A070(u8 *p, s32 q)
+{
+    extern u8 *func_003DA750(s32, s32, s32);
+    extern void func_0013A3F0(u8 *);
+    extern void func_0013A4A0(u8 *, s32);
+    extern void func_0013A890(u8 *, s32);
+    extern void func_001E3CE0(u8);
+    u8 *o;
+
+    if ((o = func_003DA750(0, 6, 1)) != 0) {
+        o[0x13C] = 1;
+        *(void **)(o + 0x10) = func_0013A3F0;
+        *(u8 **)(o + 0x18) = p;
+        *(Big **)(o + 0x14) = &D_004F20B0[*(s8 *)(p + 0x538) + *(s16 *)(p + 0x1E) * 2];
+        o[0x20] = *(s8 *)(p + 0x538);
+        o[0x21] = *(s8 *)(p + 0x1E);
+        if (o[0x20] != 0) {
+            *(s16 *)(o + 0xCC) = 0x69;
+            *(s32 *)(o + 0x84) = D_004C2830;
+        } else {
+            *(s16 *)(o + 0xCC) = 0x62;
+            *(s32 *)(o + 0x84) = D_004C2830;
+        }
+        *(V3 *)(o + 0x34) = D_0043FFF0[o[0x20]];
+        *(u32 *)(o + 0x40) = D_00440010[o[0x20]].a;
+        *(u32 *)(o + 0x44) = D_00440010[o[0x20]].b;
+        *(u32 *)(o + 0x48) = D_00440010[o[0x20]].c;
+        *(s32 *)(o + 0xD0) = 0x80F;
+        func_0013A4A0(o, (q + 1) & 0xFF);
+        func_0013A890(o, q);
+        func_001E3CE0(o[0x20] + 0x4C);
+    }
+}
+
 void func_001F4590(u8 *p)
 {
     extern void func_001F0420(u8 *);
