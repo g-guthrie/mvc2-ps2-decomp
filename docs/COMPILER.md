@@ -751,3 +751,5 @@ success dispatches through `jtbl_0044F710[p[32]](p)`. The 92-byte C body
 matches in `grok_w5_001f.c` under the existing MWCCPS2 3.0.3
 `-O3 -sdatathreshold 8` recipe, after a four-byte leading gap in the recovered
 boundary.
+
+The Sony event helpers `00104C90` and `00104DA8` use EE GCC 2.9 `-O2 -G0 -ffunction-sections`. Their required syscall primitive declares V0/V1 clobbers; queue updates and fallback control flow remain C. The fallback wrappers `00103D20` and `00103D60` take a thread ID and return an integer kernel status, consistent with the [PS2SDK kernel declarations](https://github.com/ps2dev/ps2sdk/blob/master/ee/kernel/include/kernel.h). Both wrappers and their complete caller translation unit reproduce retail exactly.
