@@ -11041,6 +11041,10 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="-msoft-float" "$BUILD/newlib_mprec_helpers.i" "$BUILD/newlib_mprec_helpers.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_mprec_helpers.o" "$BUILD/newlib_mprec_helpers.s"
 "$PYTHON" tools/verify_object.py "$BUILD/newlib_mprec_helpers.o" private/SLUS_204.86.rom --source src/newlib_mprec_helpers.c
+"$WIBO" "$SNCPP" -P src/newlib_strcasecmp_0011FB38.c "$BUILD/newlib_strcasecmp_0011FB38.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_strcasecmp_0011FB38.i" "$BUILD/newlib_strcasecmp_0011FB38.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_strcasecmp_0011FB38.o" "$BUILD/newlib_strcasecmp_0011FB38.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_strcasecmp_0011FB38.o" private/SLUS_204.86.rom --source src/newlib_strcasecmp_0011FB38.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/w1911_b.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/w1911_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w1911_b.o" private/SLUS_204.86.rom --source src/w1911_b.c
