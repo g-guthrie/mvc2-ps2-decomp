@@ -30,3 +30,7 @@ func_003B4E50,0x003B4E50,0xB4,src/grok_ec_003B4E50.c,MWCCPS2 3.0.3-020716,"-O4,p
 residual_003CC050,0x003CC050,0x16C,src/grok_gi_003CC050.c,MWCCPS2 3.0.3-020716,"-O4,p -sdatathreshold 8",whole-symbol relocated byte exact
 func_003CCCE0,0x003CCCE0,0x174,src/grok_gi_003CCCE0.c,MWCCPS2 3.0.3-020716,"-O4,p -sdatathreshold 8",whole-symbol relocated byte exact
 func_003CE160,0x003CE160,0x16C,src/grok_gi_003CE160.c,MWCCPS2 3.0.3-020716,"-O4,p -sdatathreshold 8",whole-symbol relocated byte exact
+func_00326C80,0x00326C80,0x15C,src/grok_fc_00326C80.c,MWCCPS2 3.0.3-020716,-O3 -Op -sdatathreshold 0,whole-symbol relocated byte exact
+func_00326DE0,0x00326DE0,0x168,src/grok_fc_00326DE0.c,MWCCPS2 3.0.3-020716,-O3 -Op -sdatathreshold 0,whole-symbol relocated byte exact
+residual_0034B380,0x0034B380,0x11C,src/grok_fo_34b380.c,MWCCPS2 3.0.3-020716,-O3 -sdatathreshold 0,whole-symbol relocated byte exact
+func_002E0A40,0x002E0A40,0x134,src/grok_fr_002e0a40.c,MWCCPS2 3.0.3-020716,-O3 -sdatathreshold 0,whole-symbol relocated byte exact
