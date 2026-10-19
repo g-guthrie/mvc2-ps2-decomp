@@ -219,3 +219,133 @@ void func_001F4590(u8 *p)
     func_001757E0(p, 15, 53);
     func_001906C0(p, 10, 60, 60);
 }
+
+extern void func_0018C4B0(u8 *, s32);
+extern void func_00185490(u8 *);
+extern void func_001F9A40(u8 *);
+
+void func_001F9990(u8 *p)
+{
+    p[6]++;
+    *(u32 *)(p + 0x5C) = 0;
+    *(u32 *)(p + 0x60) = 0;
+    *(u32 *)(p + 0x68) = 0;
+    *(u32 *)(p + 0x6C) = 0;
+    p[0x1B5] = p[0x1B7] ? 50 : 51;
+    p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+    *(s32 *)(p + 0x1D8) = 0;
+    D_004C2794->f7c[p[2]]++;
+    func_0018C4B0(p, 5);
+    func_00185490(p);
+    *(s16 *)(p + 0x1C) = 0;
+    func_001757E0(p, 21, (u8)(p[0x1B7] + 6));
+    func_001F9A40(p);
+}
+
+void func_001FFAE0(u8 *p)
+{
+    extern void func_00175C00(u8 *, u32);
+    extern void func_001FED30(u8 *);
+    extern void func_00183D10(u8 *);
+    extern void func_001933B0(u8 *);
+    extern void func_001FFBA0(u8 *);
+
+    if (p[0x269] == 6) {
+        p[0x404] = 0xFF;
+        p[0x405] = 16;
+    }
+    func_00175C00(p, 0);
+    p[6]++;
+    p[0x1B5] = 69;
+    p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+    *(s32 *)(p + 0x1D8) = 0;
+    D_004C2794->f7c[p[2]]++;
+    func_001FED30(p);
+    func_00183D10(p);
+    *(s16 *)(p + 0x1C) = 114;
+    func_001933B0(p);
+    func_001757E0(p, 22, 25);
+    func_001FFBA0(p);
+}
+
+void func_001FA450(u8 *p)
+{
+    extern void func_001F9490(u8 *);
+    extern void func_00183D10(u8 *);
+    extern void func_00185490(u8 *);
+    extern void func_001FA520(u8 *);
+
+    if (p[0x269] == 6) {
+        p[0x404] = 0xFF;
+        p[0x405] = 16;
+    }
+    p[6]++;
+    *(u32 *)(p + 0x5C) = 0;
+    *(u32 *)(p + 0x60) = 0;
+    *(u32 *)(p + 0x68) = 0;
+    *(u32 *)(p + 0x6C) = 0;
+    func_001F9490(p);
+    func_00183D10(p);
+    p[0x1B5] = 60;
+    p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+    *(s32 *)(p + 0x1D8) = 0;
+    D_004C2794->f7c[p[2]]++;
+    func_00185490(p);
+    p[0x20] = 120;
+    *(s16 *)(p + 0x1C) = 0;
+    func_001757E0(p, 22, 0);
+    func_001FA520(p);
+}
+
+void func_001F9630(u8 *p)
+{
+    extern void func_001F9490(u8 *);
+    extern void func_00183D10(u8 *);
+    extern void func_00185490(u8 *);
+    extern void func_001F9720(u8 *);
+
+    p[6]++;
+    func_001F9490(p);
+    func_00183D10(p);
+    if (p[0x269] == 3) {
+        p[0x1B5] = 61;
+        p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+        *(s32 *)(p + 0x1D8) = 0;
+        D_004C2794->f7c[p[2]]++;
+    } else {
+        p[0x1B5] = p[0x1B7] ? 50 : 51;
+        p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+        *(s32 *)(p + 0x1D8) = 0;
+        D_004C2794->f7c[p[2]]++;
+        func_0018C4B0(p, 5);
+    }
+    func_00185490(p);
+    func_001757E0(p, 21, (u8)(p[0x1B7] + 2));
+    func_001F9720(p);
+}
+
+extern void func_001F9490(u8 *);
+extern void func_00183D10(u8 *);
+extern void func_00347AA0(u8 *);
+
+void func_001F9D10(u8 *p)
+{
+    p[6]++;
+    if (p[0x269] == 6) {
+        p[0x404] = 0xFF;
+        p[0x405] = 16;
+    }
+    func_001F9490(p);
+    p[0x1B5] = 53;
+    p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+    *(s32 *)(p + 0x1D8) = 0;
+    D_004C2794->f7c[p[2]]++;
+    *(s16 *)(p + 0x1C) = 0;
+    if (p[0x1E6])
+        *(u32 *)(p + 0x5C) = 0x41055555;
+    else
+        *(u32 *)(p + 0x5C) = 0xC1055555;
+    func_00183D10(p);
+    func_00347AA0(p);
+    func_001757E0(p, 22, 1);
+}

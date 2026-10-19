@@ -5,6 +5,11 @@ typedef short s16;
 typedef unsigned int u32;
 typedef float f32;
 typedef int s32;
+extern void func_001B5350(u8 *, u8 *);
+extern void func_001B4C00(u8 *, u8 *);
+extern void func_001754A0(u8 *, s32, s32);
+extern s32 func_001B4BD0(u8 *);
+
 void func_001B4910(u8 *p) {
     extern void func_00175670(u8 *);
     extern void func_001B5350(u8 *, u8 *);
@@ -42,4 +47,34 @@ void func_001B4910(u8 *p) {
             o[0xD1] = p[0xD1];
         }
     }
+}
+
+extern s32 func_001757E0(u8 *, s32, s32);
+extern void func_001754A0(u8 *, s32, s32);
+
+void func_001B4860(u8 *p) {
+    u8 *q = *(u8 **)(p + 0x18);
+    u32 t = p[6];
+    p[6] = t + 1;
+    p[0x13C] = 1;
+    if (p[0x22] & 1) *(s16 *)(q + 0x140) ^= 1;
+    func_001B5350(q, p);
+    if (p[0x22] & 1) *(s16 *)(q + 0x140) ^= 1;
+    func_001B4C00(q, p);
+    func_001754A0(p, 27, p[0x20]);
+    p[0x24] = 7;
+    *(u32 *)(p + 0x54) = 0x3F400000;
+    func_001B4BD0(p);
+}
+
+void func_001B4C80(u8 *p) {
+    u8 *q = *(u8 **)(p + 0x18);
+    p[6] = 2;
+    p[0x13C] = 1;
+    if (p[0x22] & 1) *(s16 *)(q + 0x140) ^= 1;
+    func_001B5350(q, p);
+    if (p[0x22] & 1) *(s16 *)(q + 0x140) ^= 1;
+    func_001B4C00(q, p);
+    func_001754A0(p, 27, p[0x20]);
+    func_001B4BD0(p);
 }
