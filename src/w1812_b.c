@@ -280,3 +280,64 @@ void func_0022D7B0(u8 *p) {
     func_001757E0(p, 0xC, p[0x168]);
     if (*(s8 *)(p + 0x1EA) & 0xF0) p[0x1EA] = *(s8 *)(p + 0x1EA) - 16;
 }
+
+void func_0022D600(u8 *p) {
+    extern void func_001E3710(u8 *, s32);
+    extern u32 D_004C00F0, D_004C00F4, D_004C00F8;
+    extern u32 D_004C0108, D_004C010C, D_004C0110;
+    u8 *q = p + 0x2B8;
+
+    switch (p[0x1FC]) {
+    case 0:
+        p[0x168] = 0;
+        p[0x1B5] = 0xC;
+        func_001E3710(p, 0x14);
+        if (p[0x210] == 0)
+            *(u32 **)(p + 0x408) = &D_004C00F0;
+        else
+            *(u32 **)(p + 0x408) = &D_004C0108;
+        p[0x1BB] = 0;
+        break;
+    case 1:
+        if (q[0x0E] != 0) {
+            p[0x168] = 1;
+            p[0x1B5] = 0xD;
+        } else {
+            p[0x168] = 6;
+            p[0x1B5] = 0x17;
+        }
+        p[0x168] = 1;
+        p[0x1B5] = 0xD;
+        func_001E3710(p, 0x15);
+        if (p[0x210] == 0)
+            *(u32 **)(p + 0x408) = &D_004C00F4;
+        else
+            *(u32 **)(p + 0x408) = &D_004C010C;
+        p[0x1BB] = 1;
+        break;
+    case 2:
+        if (q[0x0E] != 0) {
+            p[0x168] = 2;
+            p[0x1B5] = 0xE;
+        } else {
+            p[0x168] = 7;
+            p[0x1B5] = 0x18;
+        }
+        func_001E3710(p, 0x16);
+        if (p[0x210] == 0)
+            *(u32 **)(p + 0x408) = &D_004C00F8;
+        else
+            *(u32 **)(p + 0x408) = &D_004C0110;
+        p[0x1BB] = 2;
+        break;
+    default:
+        break;
+    }
+
+    { u32 action = p[0x1B5]; ((ActorActionView *)p)->action = action; }
+    p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+    *(s32 *)(p + 0x1D8) = 0;
+    { unsigned int offset = p[2] * 2; offset += (unsigned int)D_004C2794; ++*(short *)(offset + 0x7C); }
+    func_001757E0(p, 0xB, p[0x168]);
+    if (*(s8 *)(p + 0x1EA) & 0x0F) p[0x1EA] = *(s8 *)(p + 0x1EA) - 1;
+}
