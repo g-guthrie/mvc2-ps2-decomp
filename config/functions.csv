@@ -7217,7 +7217,7 @@ func_0022F020,0x0022F020,0x7C,0x0022F09C,code,spimdisasm-explicit-size-before-fi
 func_0022F0A0,0x0022F0A0,0x1C,0x0022F0BC,code,matching-c-head-split
 residual_0022F0BC,0x0022F0BC,0x78,0x0022F134,assembly_residual,verified-boundary-after-matching-head
 func_0022F140,0x0022F140,0x20,0x0022F160,code,matching-c-head-split
-residual_0022F160,0x0022F160,0x24,0x0022F184,assembly_residual,verified-boundary-after-matching-head
+func_0022F160,0x0022F160,0x24,0x0022F184,code,verified-independent-context-dispatcher
 func_0022F190,0x0022F190,0x4C,0x0022F1DC,code,spimdisasm-explicit-size-before-first-data
 func_0022F1E0,0x0022F1E0,0xCC,0x0022F2AC,code,spimdisasm-explicit-size-before-first-data
 func_0022F2B0,0x0022F2B0,0xC8,0x0022F378,code,spimdisasm-explicit-size-before-first-data
@@ -7286,8 +7286,15 @@ func_00231AA0,0x00231AA0,0x98,0x00231B38,code,spimdisasm-explicit-size-before-fi
 func_00231B40,0x00231B40,0x9C,0x00231BDC,code,spimdisasm-explicit-size-before-first-data
 func_00231BE0,0x00231BE0,0x30,0x00231C10,code,spimdisasm-explicit-size-before-first-data
 func_00231C10,0x00231C10,0x1C,0x00231C2C,code,matching-c-head-split
-residual_00231C2C,0x00231C2C,0x74,0x00231CA0,assembly_residual,verified-boundary-after-matching-head
-func_00231CA0,0x00231CA0,0xD0,0x00231D70,code,spimdisasm-explicit-size-before-first-data
+residual_00231C2C,0x00231C2C,0x4,0x00231C30,assembly_residual,alignment-before-function-entry
+func_00231C30,0x00231C30,0x30,0x00231C60,code,verified-independent-context-dispatcher
+func_00231C60,0x00231C60,0x40,0x00231CA0,code,verified-independent-context-dispatcher
+func_00231CA0,0x00231CA0,0x3C,0x00231CDC,code,matching-c-head-split
+residual_00231CDC,0x00231CDC,0x4,0x00231CE0,assembly_residual,alignment-before-function-entry
+func_00231CE0,0x00231CE0,0x40,0x00231D20,code,verified-independent-context-dispatcher
+func_00231D20,0x00231D20,0x2C,0x00231D4C,code,matching-c-head-split
+residual_00231D4C,0x00231D4C,0x4,0x00231D50,assembly_residual,alignment-before-function-entry
+func_00231D50,0x00231D50,0x20,0x00231D70,code,verified-independent-context-dispatcher
 func_00231D70,0x00231D70,0x3C,0x00231DAC,code,verified-exact-c-callback
 func_00231DB0,0x00231DB0,0xD4,0x00231E84,code,spimdisasm-explicit-size-before-first-data
 func_00231E90,0x00231E90,0xC4,0x00231F54,code,spimdisasm-explicit-size-before-first-data

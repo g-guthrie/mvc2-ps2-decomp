@@ -12,7 +12,8 @@ extern void func_001757E0();
 extern void func_00183D10();
 extern void func_00230B50();
 
-void func_00230BF0(u8 *p, u8 *q) {
+void func_00230BF0(u8 *p, void *context) {
+    u8 *q = context;
     if (p[0x269] == 6) {
         p[0x404] = 0xFF;
         p[0x405] = 0x10;

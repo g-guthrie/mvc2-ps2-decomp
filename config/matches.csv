@@ -15908,3 +15908,10 @@ func_0019A940,0x0019A940,0x2C,src/grok_w5_0019.c,complete
 func_0019A970,0x0019A970,0x44,src/grok_w5_0019.c,complete
 func_0024D670,0x0024D670,0xD8,src/query_owner_guard_0024d670.c,complete
 func_00259400,0x00259400,0xE4,src/scaled_pair_motion_00259400.c,complete
+func_0022F160,0x0022F160,0x24,src/character_dispatch_heads_00231ca0.c,complete
+func_00231C30,0x00231C30,0x30,src/character_dispatch_heads_00231ca0.c,complete
+func_00231C60,0x00231C60,0x40,src/character_dispatch_heads_00231ca0.c,complete
+func_00231CA0,0x00231CA0,0x3C,src/character_dispatch_heads_00231ca0.c,complete
+func_00231CE0,0x00231CE0,0x40,src/character_dispatch_heads_00231ca0.c,complete
+func_00231D20,0x00231D20,0x2C,src/character_dispatch_heads_00231ca0.c,complete
+func_00231D50,0x00231D50,0x20,src/character_dispatch_heads_00231ca0.c,complete

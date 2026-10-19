@@ -12376,3 +12376,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/scaled_pair_motion_00259400.o"
 "$PYTHON" tools/verify_object.py "$BUILD/scaled_pair_motion_00259400.o" \
     private/SLUS_204.86.rom --source src/scaled_pair_motion_00259400.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/character_dispatch_heads_00231ca0.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/character_dispatch_heads_00231ca0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/character_dispatch_heads_00231ca0.o" \
+    private/SLUS_204.86.rom --source src/character_dispatch_heads_00231ca0.c

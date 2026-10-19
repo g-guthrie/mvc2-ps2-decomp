@@ -254,3 +254,10 @@ func_0020A260,0x0020A260,0xB8,func_0020A230,jtbl_004506F0,0x004506F0,src/side_sh
 func_0024FAE0,0x0024FAE0,0xA4,func_0024FAB0,jtbl_00453300,0x00453300,src/initial_launches_0024fae0.c
 func_0019A940,0x0019A940,0x2C,func_0019A920,jtbl_0044A790,0x0044A7A4,src/grok_w5_0019.c
 func_0019A970,0x0019A970,0x44,func_0019A940,jtbl_0044A800,0x0044A800,src/grok_w5_0019.c
+func_0022F160,0x0022F160,0x24,func_0022F140,jtbl_00451D70,0x00451D90,src/character_dispatch_heads_00231ca0.c
+func_00231C30,0x00231C30,0x30,func_00231C10,jtbl_00452000,0x00452004,src/character_dispatch_heads_00231ca0.c
+func_00231C60,0x00231C60,0x40,func_00231C30,jtbl_00452000,0x00452008,src/character_dispatch_heads_00231ca0.c
+func_00231CA0,0x00231CA0,0x3C,func_00231C60,jtbl_00452000,0x0045200C,src/character_dispatch_heads_00231ca0.c
+func_00231CE0,0x00231CE0,0x40,func_00231CA0,jtbl_00452000,0x00452010,src/character_dispatch_heads_00231ca0.c
+func_00231D20,0x00231D20,0x2C,func_00231CE0,jtbl_00452000,0x00452014,src/character_dispatch_heads_00231ca0.c
+func_00231D50,0x00231D50,0x20,func_00231D20,jtbl_00451ED0,0x00451EE8,src/character_dispatch_heads_00231ca0.c

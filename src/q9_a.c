@@ -248,7 +248,8 @@ extern void func_001830D0();
 typedef struct {
     u8 p0[6]; u8 f6; u8 f7; u8 p8[0x261]; u8 f269; u8 p26a[0xD2]; u8 f33c; u8 p33d[0xC7]; u8 f404; u8 f405; u8 p406[6]; u8 f40c;
 } P_11;
-void func_00230B50(P_11 *a) {
+void func_00230B50(u8 *p, void *context) {
+    P_11 *a = (P_11 *)p;
     f32 v[4];
     u32 t;
     a->f40c = 2;
