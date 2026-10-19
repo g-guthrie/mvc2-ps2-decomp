@@ -1,4 +1,6 @@
 typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
 typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
@@ -65,6 +67,23 @@ void func_001FB600(u8 *p)
     ((u32 *)v)[2] = 0;
     func_0015D010(p, v);
     p[0x1B4] = 0xA;
+    func_0018C6E0(p);
+    func_001757E0(p, 0xF, 0);
+}
+
+void func_00232950(u8 *p)
+{
+    PlanarOffset v;
+    if (*(u16 *)(p + 0x20E) & 0x800) {
+        *(s8 *)(p + 0x1E6) ^= 1;
+        *(s16 *)(p + 0x140) ^= 1;
+    }
+    func_001266A0(p, 5, 5);
+    p[0x1B4] = 10;
+    p[6] = 0;
+    ((u32 *)v)[0] = 0xC2555555;
+    ((u32 *)v)[1] = 0x43092492;
+    func_0015D010(p, v);
     func_0018C6E0(p);
     func_001757E0(p, 0xF, 0);
 }
