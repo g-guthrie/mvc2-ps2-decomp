@@ -35,7 +35,7 @@ void func_0015DCA0(V3 *a, s16 b) {
 
 void func_0015DA50(V3 *a, s32 b) {
     extern u8 *func_003DA750(s32, s32, s32);
-    extern void func_0015DE10(void);
+    extern void func_0015DE10(u8 *);
     u8 *o;
     if ((o = func_003DA750(0, 8, 1)) != 0) {
         o[0x13C] = 1;

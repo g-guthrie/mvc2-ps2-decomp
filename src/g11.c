@@ -5,6 +5,7 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
+typedef struct { f32 x, y, z; } V3;
 
 typedef struct { s32 x; s32 pad[3]; } E16;
 typedef struct { u8 pad[0x44]; s32 v; u8 pad2[4]; } E4C;
@@ -127,7 +128,7 @@ void func_003C76C0(u8 *a, s32 b) {
 extern void func_0015DCA0();
 extern void func_0015DBE0();
 extern void func_0015DB20();
-extern void func_0015DA50(u8 *, s32);
+extern void func_0015DA50(V3 *, s32);
 extern void func_0015D970();
 void func_0015D8F0(u8 *a, s32 b) {
     s32 i = 0;
@@ -135,7 +136,7 @@ void func_0015D8F0(u8 *a, s32 b) {
         func_0015DCA0(a, b);
         func_0015DBE0(a, b);
         func_0015DB20(a, b);
-        func_0015DA50(a, b);
+        func_0015DA50((V3 *)a, b);
         func_0015D970(a, b);
         i++;
     } while (i < 1);

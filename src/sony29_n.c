@@ -9,7 +9,7 @@ extern int D_0043B400;
 extern int D_004C8980[12];
 extern int D_004C9EC0;
 extern int func_00103E30(int);
-extern int func_00106E68(void *, int, int, void *, int, void *, int, int, int);
+extern int func_00106E68(void *, int, int, void *, int, void *, int, void (*)(void *), void *);
 extern void func_00103E00(int);
 
 int func_00110FD8(int a0) {
