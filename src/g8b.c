@@ -37,6 +37,15 @@ extern void func_004177A0(s32, f32, f32, f32);
 extern void func_00414A40();
 extern void func_00416AB0();
 extern void func_004171E0();
+void func_00143370(void) {
+    f32 c = 12000.0f, a = 1.0f, b = 0.100000001f;
+    func_00414A40();
+    func_00416AB0(3);
+    func_004171E0();
+    func_004177A0(0x4000, a, b, c);
+    func_00416AB0(1);
+}
+
 void func_001433D0(void) {
     f32 c = 12000.0f, a = 1.0f, b = 0.100000001f;
     func_00414A40();

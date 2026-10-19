@@ -10530,6 +10530,7 @@ func_002AC530,0x002AC530,0x5C,src/g8.c,complete
 func_00186120,0x00186120,0x48,src/g8.c,complete
 func_0016C9B0,0x0016C9B0,0x60,src/g8b.c,complete
 func_003739E0,0x003739E0,0x6C,src/g8b.c,complete
+func_00143370,0x00143370,0x5C,src/g8b.c,complete
 func_001433D0,0x001433D0,0x5C,src/g8b.c,complete
 func_0015F240,0x0015F240,0x64,src/g8b.c,complete
 func_00238B70,0x00238B70,0x68,src/g8b.c,complete
