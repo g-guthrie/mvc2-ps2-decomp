@@ -13553,6 +13553,7 @@ func_00419520,0x00419520,0xec,src/w2_h.c,complete
 func_00419610,0x00419610,0x120,src/w2_h.c,complete
 func_00415A00,0x00415A00,0xfc,src/w2_i.c,complete
 func_003F38E0,0x003F38E0,0xf4,src/w2_j.c,complete
+func_003F3AE0,0x003F3AE0,0xf4,src/w2_j.c,complete
 func_003EE530,0x003EE530,0x154,src/w2_k.c,complete
 func_001068E8,0x001068E8,0x40,src/w2_d.c,complete
 func_0011CA18,0x0011CA18,0x154,src/w2_l.c,complete
