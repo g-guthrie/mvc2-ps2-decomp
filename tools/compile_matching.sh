@@ -11124,6 +11124,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py "$BUILD/grok_z18_f58c0.o" private/SLUS_204.86.rom --source src/grok_z18_f58c0.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_z18_f6e90.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/grok_z18_f6e90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_z18_f6e90.o" private/SLUS_204.86.rom --source src/grok_z18_f6e90.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_u24_a2800.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_u24_a2800.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_u24_a2800.o" private/SLUS_204.86.rom --source src/grok_u24_a2800.c
 
