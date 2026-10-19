@@ -17,6 +17,7 @@ Four invariants:
 """
 import csv
 import re
+import shlex
 import sys
 from pathlib import Path
 
@@ -64,14 +65,20 @@ def detached_source_commands(script: str) -> list[str]:
 
 
 def malformed_compile_continuations(script: str) -> list[str]:
-    """Catch escaped spaces in compiler argv before flags or other arguments."""
-    return [
-        line.strip()
-        for line in script.splitlines()
-        if not line.lstrip().startswith("#")
-        and "-c" in line
-        and re.search(r"\\[ \t]+\S", line)
-    ]
+    """Catch whitespace-only compiler arguments from broken continuations."""
+    malformed = []
+    for line in script.splitlines():
+        if line.lstrip().startswith("#") or "-c" not in line:
+            continue
+        fragment = line[:-1] if line.endswith("\\") else line
+        try:
+            arguments = shlex.split(fragment)
+        except ValueError:
+            # Other lines may complete a quoted argument; sh -n checks syntax.
+            continue
+        if any(argument.isspace() for argument in arguments):
+            malformed.append(line.strip())
+    return malformed
 
 
 def detached_object_verification_commands(script: str) -> list[str]:

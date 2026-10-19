@@ -151,13 +151,13 @@ s32 func_002810D0(u8 *o) {
 }
 
 void func_003BA6F0(u8 *o) {
-    void func_003BD0A0(); void func_003BD160(); s32 func_00175700(); void func_003BD4A0(); void func_001E7F60(u8*);
+    void func_003BD0A0(u8 *); void func_003BD160(); s32 func_00175700(); void func_003BD4A0(); void func_001E7F60(u8*);
     u8 *s0 = *(u8**)(o + 0x18);
     *(f32*)(o + 0x34) += *(f32*)(o + 0x5C);
     *(f32*)(o + 0x5C) += *(f32*)(o + 0x68);
     *(f32*)(o + 0x38) += *(f32*)(o + 0x60);
     *(f32*)(o + 0x60) += *(f32*)(o + 0x6C);
-    func_003BD0A0();
+    func_003BD0A0(o);
     func_003BD160(o);
     if (!(*(f32*)(s0 + 0x430) <= *(f32*)(o + 0x38))) {
         *(f32*)(o + 0x38) = *(f32*)(s0 + 0x430);

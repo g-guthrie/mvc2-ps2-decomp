@@ -554,6 +554,7 @@ void func_001E98F0(u8 *p) {
         p[0x1BB] = 2;
         break;
     }
+    /* Retail explicitly reloads and writes this byte; original intent is unknown. */
     p[0x1B5] = *(volatile u8 *)(p + 0x1B5);
     p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
     *(u32 *)(p + 0x1D8) = 0;

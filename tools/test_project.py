@@ -51,6 +51,12 @@ class ProjectTest(unittest.TestCase):
             [],
         )
         self.assertEqual(
+            malformed_compile_continuations(
+                '"$WIBO" "$MWCCPS2" src/motion\\ draft.c -c -o "$BUILD/motion.o"\n'
+            ),
+            [],
+        )
+        self.assertEqual(
             malformed_compile_continuations(malformed),
             [malformed.splitlines()[1].strip()],
         )

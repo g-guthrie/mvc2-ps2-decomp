@@ -911,13 +911,13 @@ void func_003C4A50(u8 *p, void *owner)
 
 void func_003C7330(u8 *p, void *owner) {
     *((u8 *)owner + 0x2BF) = 2;
-    jtbl_00476010[p[4] + 32](p);
+    ((DispatchFn2)jtbl_00476010[p[4] + 32])(p, owner);
 }
 
 void func_003C7850(u8 *p, void *owner) {
     ((u8 *)owner)[0x2BF] = 2;
     p[0x24] = ((signed char *)owner)[0x24];
-    jtbl_00476010[p[4] + 40](p);
+    ((DispatchFn2)jtbl_00476010[p[4] + 40])(p, owner);
 }
 
 void func_003C7CF0(u8 *p, void *owner) {

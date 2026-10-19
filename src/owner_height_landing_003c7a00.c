@@ -5,7 +5,8 @@ extern void func_001E3210(u8 *, int);
 #define F(p,o) (*(float *)((p)+(o)))
 /* Advance both velocity components; landing clears their raw 32-bit slots.
  * The negated ordered comparison also preserves the native unordered case. */
-void func_003C7A00(u8 *p, u8 *owner) {
+void func_003C7A00(u8 *p, void *owner_context) {
+    u8 *owner = owner_context;
     u32 *vx, *vy, *ax, *ay;
     vx=(u32 *)(p+0x5C); ax=(u32 *)(p+0x68); vy=(u32 *)(p+0x60); ay=(u32 *)(p+0x6C);
     F(p,0x34) += F(p,0x5C);

@@ -4379,3 +4379,37 @@ pass. Hybrid linkage and ELF packing reproduce the retail hashes recorded
 above. This checkpoint crosses the scheduled 1,915,825-byte threshold;
 the next scheduled checkpoint is 1,948,762 code bytes (59.1664%). Complete
 source decompilation remains unfinished.
+
+### Native routines, interface recovery, and compiler-argument repair — October 19
+
+Linked matching code is 1,917,468 / 3,293,696 bytes (58.2163%), adding six
+complete functions / 1,452 bytes. These include phase-based height adjustment,
+owner-relative landing, owner-effect setup, slot-list restoration, move setup,
+and a perspective matrix. Production compiler verification covers every full
+new symbol and all existing members of modified source units. Native callers
+also establish the owner-context and floating-point argument/return interfaces;
+the affected call sites, callback entry, and trig thunks now express them.
+
+Reconstructed initialized data is 175,721 / 648,064 bytes (27.1148%), adding
+248 bytes of bounded motion/state lookups and 12 UI format literals. Literal
+credit stops at each terminating NUL. Padding and unrelated bytes remain
+placeholders. Shared string/raw translation units initially passed individual
+object checks but failed whole-image placement. Giving each catalog unit its
+own source object restored exact linkage without changing credited extents.
+
+The fresh build exposed a malformed `jump_motion_002357f0.c` command: a
+backslash escaped a space before `-o`, introducing a whitespace-only filename.
+The continuation is fixed. The checker parses compiler argument fragments and
+rejects whitespace-only arguments while accepting escaped spaces inside real
+filenames. The affected 520-byte source unit verifies with its actual recipe.
+The initially empty build's verified prefix is retained, and the corrected
+suffix has now completed code compilation and entered the final data stage.
+The entire compiler-script run is still in progress; terminal success is not
+claimed.
+
+All 57 tests, catalog validation, 3,867-source coverage, shell syntax, and diff
+checks pass. Final hybrid linkage and ELF packing reproduce the retail hashes
+recorded above, including the interface corrections and per-unit data layout.
+This publication delivers the compiler-command repair before the next normal
+code threshold. That threshold remains 1,948,762 bytes (59.1664%), 31,294 bytes
+beyond this revision. Complete source decompilation remains unfinished.

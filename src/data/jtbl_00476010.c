@@ -1,5 +1,7 @@
 /* Typed callback entries recovered from the exact dispatch callers. */
-/* Consumer: src/composite_dispatch_heads.c (jtbl_00476010). */
+/* Base entries use one argument; owner-aware routes retain A1 explicitly.
+ * The landing entry is cast only for storage and dispatched through its
+ * two-argument type in argument_dispatch_heads.c. */
 #include "mvc2_state_callbacks.h"
 
 extern void func_003C65D0(u8 *);
@@ -26,7 +28,7 @@ extern void func_003C76C0(u8 *);
 extern void func_003C7740(u8 *);
 extern void func_003C7880(u8 *);
 extern void func_003C79E0(u8 *);
-extern void func_003C7A00(u8 *);
+extern void func_003C7A00(u8 *, void *);
 extern void func_003C7AC0(u8 *);
 extern void func_003C7B90(u8 *);
 extern void func_003C7C10(u8 *);
@@ -79,7 +81,7 @@ const Mvc2StateCallback jtbl_00476010[50] = {
     func_003C79E0,
     func_003C80A0,
     func_003C80B0,
-    func_003C7A00,
+    (Mvc2StateCallback)func_003C7A00,
     func_003C7AC0,
     func_003C76C0,
     func_003C7B90,
