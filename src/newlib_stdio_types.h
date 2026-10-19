@@ -10,7 +10,9 @@ typedef struct __sbuf {
 } SBuf;
 
 typedef struct __sFILE FILE;
+struct _Bigint;
 
+/* Prefix through dtoa's verified _result_k access; this is not a full _reent. */
 typedef struct _reent {
     int _errno;
     FILE *_stdin;
@@ -21,6 +23,9 @@ typedef struct _reent {
     int _current_category;
     const char *_current_locale;
     int __sdidinit;
+    void (*__cleanup)(struct _reent *);
+    struct _Bigint *_result;
+    int _result_k;
 } Reent;
 
 struct __sFILE {

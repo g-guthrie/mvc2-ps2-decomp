@@ -15717,3 +15717,4 @@ func_00217BC0,0x00217BC0,0xB8,src/grok_n_17bc0.c,complete
 func_002A8880,0x002A8880,0xA4,src/grok_n_a8880.c,complete
 func_002DE200,0x002DE200,0xA4,src/grok_n_de200.c,complete
 func_002DE330,0x002DE330,0xA0,src/grok_n_de330.c,complete
+func_00119ED8,0x00119ED8,0x22C,src/newlib_quorem_00119ED8.c,complete
