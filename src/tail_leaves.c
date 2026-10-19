@@ -348,7 +348,7 @@ void func_001A1320(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, 
 
 void func_001A3940(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_001A3A00(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40(p, a1, a2, a3); }
+void func_001A3A00(u8 *p, u8 *owner) { p[316] = 0; func_003DAA40(p); }
 
 void func_001A3DE0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
