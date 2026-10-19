@@ -4251,3 +4251,9 @@ Its existing `FILE`/`Reent` ABI types and buffer helpers reproduce the complete
 retail span with EE GCC 2.96 `-O2 -G0`; no data credit was added. The catalog
 now contains 1,689,392 / 3,293,696 matching C bytes (51.2917%). All 51 local
 tests and progress-catalog validation pass.
+
+Recovered `func_00122260` (220 bytes), the Newlib `vfprintf.c` exponent helper.
+Its 308-byte scratch bound is the original `MAXEXP` from `floatio.h`; the 2000
+Newlib ChangeLog records the later reduction to a smaller exponent buffer. The
+EE GCC 2.96 `-O2 -G0` object verifies exactly. Catalog code now stands at
+1,689,612 / 3,293,696 bytes (51.2984%).
