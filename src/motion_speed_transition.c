@@ -604,3 +604,54 @@ void func_00271620(u8 *p)
     if (*(f32 *)(p + 0x38) <= *(f32 *)(p + 0x430))
         func_00271700(p);
 }
+
+typedef struct { f32 first, second, third; } MotionRow271410;
+extern MotionRow271410 D_004548F0[];
+extern void func_001B8200(u8 *, u8);
+
+void func_00271410(u8 *p)
+{
+    s16 remaining;
+    f32 velocity;
+
+    if (*(s8 *)(p + 0x1B2) != 0 && *(s16 *)(p + 0x1E) == 0) {
+        *(s16 *)(p + 0x1E) = 1;
+        p[0x22]++;
+        remaining = *(s16 *)(p + 0x1C) - 1;
+        *(s16 *)(p + 0x1C) = remaining;
+        if (remaining == 0) {
+            p[6]++;
+            if (p[0x1E6] != 0)
+                velocity = D_004548F0[p[0x1B7]].first;
+            else
+                velocity = -D_004548F0[p[0x1B7]].first;
+            *(f32 *)(p + 0x5C) = velocity;
+            *(u32 *)(p + 0x68) = 0;
+            *(f32 *)(p + 0x60) = D_004548F0[p[0x1B7]].second;
+            *(f32 *)(p + 0x6C) = D_004548F0[p[0x1B7]].third;
+            *(u32 *)(p + 0x48) = 0;
+            func_001757E0(p, 21, (u8)(p[0x1B7] + 16));
+            func_001B8200(p, 1);
+            return;
+        }
+    }
+
+    *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
+    *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
+    *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
+    *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
+    if (*(f32 *)(p + 0x38) <= *(f32 *)(p + 0x430)) {
+        *(u32 *)(p + 0x48) = 0;
+        func_00271700(p);
+        return;
+    }
+    func_00175700(p);
+    if (*(s8 *)(p + 0x151) != 0) {
+        p[0x1B5] = p[0x22] + (p[0x1B7] != 0 ? 57 : 54);
+        p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+        *(u32 *)(p + 0x1D8) = 0;
+        ((s16 *)(D_004C2794 + 0x7C))[p[2]]++;
+        p[0x151] = 0;
+        *(s16 *)(p + 0x1E) = 0;
+    }
+}

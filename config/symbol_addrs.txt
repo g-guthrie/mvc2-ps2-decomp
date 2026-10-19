@@ -16636,3 +16636,5 @@ func_003FDE10 = 0x003fde10;
 func_003FEEA8 = 0x003feea8;
 func_003FEF20 = 0x003fef20;
 func_003FEF48 = 0x003fef48;
+D_004548F0 = 0x004548F0; // interior motion-table view
+func_001B8200 = 0x001B8200;
