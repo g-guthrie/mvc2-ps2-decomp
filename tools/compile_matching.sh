@@ -11072,3 +11072,10 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --op
 "$WIBO" "$SNAS" -G8 -o "$BUILD/runtime_framed_calls_003f.o" "$BUILD/runtime_framed_calls_003f.s"
 "$PYTHON" tools/verify_object.py "$BUILD/runtime_framed_calls_003f.o" private/SLUS_204.86.rom \
     --source src/runtime_framed_calls_003f.c
+
+"$WIBO" "$SNCPP" -P src/register_runtime_callback_00411720.c "$BUILD/register_runtime_callback_00411720.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 \
+    --extra-flags=-fno-optimize-sibling-calls "$BUILD/register_runtime_callback_00411720.i" "$BUILD/register_runtime_callback_00411720.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/register_runtime_callback_00411720.o" "$BUILD/register_runtime_callback_00411720.s"
+"$PYTHON" tools/verify_object.py "$BUILD/register_runtime_callback_00411720.o" private/SLUS_204.86.rom \
+    --source src/register_runtime_callback_00411720.c

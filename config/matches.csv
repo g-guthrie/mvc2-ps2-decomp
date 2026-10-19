@@ -11067,7 +11067,7 @@ func_004067B8,0x004067B8,0x5c,src/runtime_framed_calls_0040.c,complete
 func_003FE190,0x003FE190,0x64,src/k3.c,complete
 func_00406610,0x00406610,0x64,src/k3.c,complete
 func_003FCC80,0x003FCC80,0x70,src/k3.c,complete
-func_0040D398,0x0040D398,0x94,src/k3.c,placeholder
+func_0040D398,0x0040D398,0x94,src/k3.c,complete
 func_00411548,0x00411548,0x98,src/k3.c,complete
 func_00402940,0x00402940,0x98,src/k3.c,complete
 func_00104260,0x00104260,0xC,src/k4.c,complete
@@ -11697,7 +11697,7 @@ func_0040EF28,0x0040EF28,0x1C,src/p4.c,complete
 func_00404468,0x00404468,0x1C,src/p4.c,complete
 func_00407BC0,0x00407BC0,0x38,src/p4e.c,placeholder
 func_00401760,0x00401760,0x80,src/p4e.c,complete
-func_0040D300,0x0040D300,0x94,src/p4e.c,placeholder
+func_0040D300,0x0040D300,0x94,src/p4e.c,complete
 func_003FECC0,0x003FECC0,0x38,src/p4g.c,complete
 func_003F24D0,0x003F24D0,0x40,src/p4m.c,complete
 func_003F2590,0x003F2590,0x38,src/p4m.c,complete
@@ -13531,7 +13531,7 @@ func_004051B8,0x004051B8,0xbc,src/w0_k.c,complete
 func_00404BD0,0x00404BD0,0xd0,src/w0_n.c,complete
 func_003F7FC8,0x003F7FC8,0x130,src/w0_s.c,complete
 func_0040CAA0,0x0040CAA0,0x7c,src/runtime_framed_calls_0040.c,complete
-func_0040D268,0x0040D268,0x94,src/w0_ab.c,placeholder
+func_0040D268,0x0040D268,0x94,src/w0_ab.c,complete
 func_004112D8,0x004112D8,0xa4,src/w0_e.c,complete
 func_003FE5D8,0x003FE5D8,0x138,src/w0_u.c,complete
 func_001165B0,0x001165B0,0x124,src/w0_r.c,complete

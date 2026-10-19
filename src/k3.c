@@ -84,13 +84,20 @@ void func_003FCC80(S3FCC *p) {
 typedef struct E40D { s32 k; char pad[0x38]; s32 v; } E40D;
 typedef struct S40D { char pad[0x38]; E40D e[16]; } S40D;
 extern char D_004BE2F8[], D_004BE368[];
-extern void func_0040D5A0(void *);
+extern void func_0040D5A0(const char *, ...);
 s32 func_0040D398(S40D *p, s32 key) {
     s32 i;
-    if (p == 0) { func_0040D5A0(D_004BE2F8); __asm__ volatile(""); return 0; }
-    for (i = 0; i < 16 && p->e[i].k != key; i++) ;
-    if (i == 16) { func_0040D5A0(D_004BE368); return 0; }
-    return p->e[i].v;
+    if (p == 0) {
+        func_0040D5A0(D_004BE2F8);
+    } else {
+        for (i = 0; i < 16 && p->e[i].k != key; i++)
+            ;
+        if (i == 16)
+            func_0040D5A0(D_004BE368);
+        else
+            return p->e[i].v;
+    }
+    return 0;
 }
 
 extern void func_00411438(s32, char *, unsigned long);

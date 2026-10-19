@@ -39,7 +39,7 @@ void func_00401760(u8 *p, s32 b) {
     func_003F9660();
 }
 
-extern void func_0040D5A0();
+extern void func_0040D5A0(const char *, ...);
 extern char D_004BE2F8[];
 extern char D_004BE368[];
 s32 func_0040D300(u8 *p, s32 v) {
@@ -47,17 +47,16 @@ s32 func_0040D300(u8 *p, s32 v) {
     s32 *q;
     if (p == 0) {
         func_0040D5A0(D_004BE2F8);
-        __asm__ volatile("");
-        return -1;
+    } else {
+        q = (s32 *)(p + 0x38);
+        for (i = 0; i < 16; i++) {
+            if (*q == v) break;
+            q += 16;
+        }
+        if (i == 16)
+            func_0040D5A0(D_004BE368);
+        else
+            return *(s32 *)(p + i * 64 + 0x70);
     }
-    q = (s32 *)(p + 0x38);
-    for (i = 0; i < 16; i++) {
-        if (*q == v) break;
-        q += 16;
-    }
-    if (i == 16) {
-        func_0040D5A0(D_004BE368);
-        return -1;
-    }
-    return *(s32 *)(p + i * 64 + 0x70);
+    return -1;
 }
