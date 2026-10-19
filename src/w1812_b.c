@@ -5,6 +5,8 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
+typedef struct {u8 prefix[0x1B5];u8 action;} ActorActionView;
+typedef char ActorActionOffsetCheck[((u32)&((ActorActionView *)0)->action==0x1B5)?1:-1];
 extern u8 *D_004C2794;
 extern u8 D_004B7130[];
 extern f32 D_004B7140[], D_004B7144[], D_004B7148[], D_004B714C[];
@@ -47,7 +49,7 @@ void func_0021DBE0(u8 *p) {
     default:
         break;
     }
-    p[0x1B5] = *(volatile u8 *)(p + 0x1B5);
+    {u32 t=p[0x1B5];((ActorActionView *)p)->action=t;}
     p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
     *(s32 *)(p + 0x1D8) = 0;
     { unsigned int offset = p[2] * 2; offset += (unsigned int)D_004C2794; ++*(short *)(offset + 0x7c); }
@@ -171,3 +173,52 @@ void func_003BB730(u8 *p) {
 
 extern void (*jtbl_004C1B94[2])(u8 *, u8 *);
 extern void (*jtbl_004C1188[2])(u8 *, u8 *);
+
+extern u32 D_004BFF4C;
+extern u32 D_004BFF50;
+extern u32 D_004BFF54;
+extern u32 D_004BFF64;
+extern u32 D_004BFF68;
+extern u32 D_004BFF6C;
+void func_0021DD50(u8 *p) {
+    extern void func_001E3710(u8 *, s32);
+    extern void func_001E3210(u8 *, s32);
+    extern s32 func_001757E0(u8 *, s32, s32);
+    switch (p[0x1FC]) {
+    case 0:
+        p[0x168] = 0;
+        p[0x1B5] = 0xF;
+        func_001E3210(p,3);
+        func_001E3710(p, 0x14);
+        if (p[0x210] == 0) *(u32 **)(p + 0x408) = &D_004BFF4C;
+        else *(u32 **)(p + 0x408) = &D_004BFF64;
+        p[0x1BB] = 0;
+        break;
+    case 1:
+        p[0x168] = 1;
+        p[0x1B5] = 0x10;
+        func_001E3210(p,4);
+        func_001E3710(p, 0x15);
+        if (p[0x210] == 0) *(u32 **)(p + 0x408) = &D_004BFF50;
+        else *(u32 **)(p + 0x408) = &D_004BFF68;
+        p[0x1BB] = 1;
+        break;
+    case 2:
+        if(*(u16 *)(p+0x20E)&0x2000) {p[0x1B5]=18;p[0x168]=5;}
+        else {p[0x168]=2;p[0x1B5]=17;}
+        func_001E3210(p,4);
+        func_001E3710(p,0x16);
+        if (p[0x210] == 0) *(u32 **)(p + 0x408) = &D_004BFF54;
+        else *(u32 **)(p + 0x408) = &D_004BFF6C;
+        p[0x1BB] = 2;
+        break;
+    default:
+        break;
+    }
+    {u32 t=p[0x1B5];((ActorActionView *)p)->action=t;}
+    p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+    *(s32 *)(p + 0x1D8) = 0;
+    { unsigned int offset = p[2] * 2; offset += (unsigned int)D_004C2794; ++*(short *)(offset + 0x7c); }
+    func_001757E0(p, 0xC, p[0x168]);
+    if (*(s8 *)(p + 0x1EA) & 0xF0) p[0x1EA] = *(s8 *)(p + 0x1EA) - 16;
+}
