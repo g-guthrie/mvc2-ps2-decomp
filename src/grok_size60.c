@@ -130,6 +130,7 @@ void func_00232EF0(u8 *p) { INIT_00232E90 }
         func_00186A60(p, 29); \
     }
 
+void func_0023EE00(u8 *p) { INIT_0023EE60 }
 void func_0023EE60(u8 *p) { INIT_0023EE60 }
 
 #define INIT_002481A0 \
