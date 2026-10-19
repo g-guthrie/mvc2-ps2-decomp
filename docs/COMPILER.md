@@ -650,3 +650,11 @@ signed header-offset checks, and native error returns before extracting the
 16-bit field at byte 16 or the bytes at 18/19. Native callers at 0x003F7EE4
 and 0x003F7E98/0x003F9C14 prove the three- and four-argument interfaces,
 including separate byte outputs for the latter. No header-data credit is added.
+
+The same ADX header unit also recovers the complete 308-byte function at
+0x003F9BE8. It calls the verified version reader, retains the signed offset
+and version-dependent length checks, and decodes the four halfwords at bytes
+24–31 into two output pairs. Older versions clear both pairs. The native call
+at 0x003F7F00 passes the header, length and two distinct stack-backed output
+arrays. All three functions in the shared unit match under the same EE GCC
+2.96 `-O2 -G0` recipe, including the internal call relocation.
