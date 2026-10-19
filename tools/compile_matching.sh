@@ -12591,3 +12591,9 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     -o "$BUILD/queued_action_0022f590.o"
 "$PYTHON" tools/verify_object.py "$BUILD/queued_action_0022f590.o" \
     private/SLUS_204.86.rom --source src/queued_action_0022f590.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/input_level_timer_00276d00.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/input_level_timer_00276d00.o"
+"$PYTHON" tools/verify_object.py "$BUILD/input_level_timer_00276d00.o" \
+    private/SLUS_204.86.rom --source src/input_level_timer_00276d00.c
