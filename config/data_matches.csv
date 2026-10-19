@@ -1326,7 +1326,7 @@ jtbl_0044875C,0x0044875C,0xC,src/data/jtbl_0044875C.c,complete,placeholder
 data_u32_00448768,0x00448768,0xC,src/data/data_u32_00448768.c,complete,placeholder
 data_u32_00448774,0x00448774,0x8C,src/data/data_u32_00448774.c,complete,placeholder
 jtbl_00448880,0x00448880,0x64,src/data/jtbl_00448880.c,complete,reconstructed
-jtbl_004488E8,0x004488E8,0xC,src/data/jtbl_004488E8.c,complete,placeholder
+jtbl_004488E8,0x004488E8,0xC,src/data/jtbl_004488E8.c,complete,reconstructed
 data_u32_004488F4,0x004488F4,0xC,src/data/data_u32_004488F4.c,complete,placeholder
 jtbl_00448900,0x00448900,0x1c,src/data/jtbl_00448900.c,complete,reconstructed
 jtbl_00448920,0x00448920,0xC,src/data/jtbl_00448920.c,complete,reconstructed
