@@ -170,9 +170,9 @@ motion/attachment state updates, actor launch variants, timed state setup and a
 440-byte damped-motion handler. One older 736-byte mesh-loader caller lost
 credit because its fabricated helper bodies only shaped register allocation.
 Those batches reached 43.0850% code. The newer waves 17–19 baseline is
-1,619,392 code bytes (49.1664%). Ninety-four independently verified C spans added since that baseline bring
-the current catalog to 1,641,320 code bytes (49.8322%); reconstructed data is
-173,165 bytes (26.7204%).
+1,619,392 code bytes (49.1664%). Subsequent independently verified C recovery brings
+the current catalog to 1,644,796 code bytes (49.9377%); reconstructed data is
+173,921 bytes (26.8370%).
 The near-matching natural mesh-loader candidate remains uncredited.
 The latest source work also recovers the bounded forty-slot runtime-object
 pool with its shared layout and complete native initializer/allocator spans,

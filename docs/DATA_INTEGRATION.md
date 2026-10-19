@@ -71,3 +71,28 @@ remain separate placeholders. All thirty-three replacement data objects
 match their complete retail spans, and the five changed code units match
 with their original compiler profiles. A negative control setting the first
 record key to one is rejected by `verify_data_object.py`.
+
+### Bounded handler and animation tables
+
+The Sony handler registration guard in `sony29_handler_registration.c`
+accepts indices 1 through 13. These thirteen `void (*)(void)` entries at
+00438664–00438698 contribute 52 reconstructed bytes. The preceding four
+bytes and trailing eight bytes retain placeholder status.
+
+The first 256 bytes at 0044A410 contain 32 eight-byte animation samples:
+two signed halfwords, one signed byte, one implicit alignment byte, and a
+final signed halfword. `00198B50` advances its selector with `(old + 4) &
+0x7C` and multiplies that selector by two, bounding every read to one of
+these 32 records. Its four aliases select offsets 0, 2, 4, and 6. The
+alignment byte at offset 5 is zero in every retail sample; the next 256
+bytes remain an uncredited raw placeholder.
+
+The 448-byte command table at 0044C890 contains 56 records with four byte
+fields followed by a signed record stride. `001C1CA0` reads those fields and
+advances its record pointer by that stride. The actual entry roots in g7.c
+and v8_a.c select records 0 and 14. The first path visits 0–13 and loops to
+0; the second visits 14–55 and then cycles over 42–55. Independently walking
+the retail strides confirms both paths remain within their ranges and their
+union visits all 56 records. This supports the entire 448-byte typed object.
+All changed data objects and their code consumers were compiled and checked
+over their complete spans.

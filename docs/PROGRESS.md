@@ -4163,3 +4163,48 @@ matches all 3,941,760 retail bytes, and the packed 3,942,320-byte retail ELF
 also matches exactly. Their SHA-256 values remain c5206f568f068e5bd93ba47676500764c3d45719890865fa71ada10afadcd26f and
 48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
 Unrecovered ranges still come from the private retail input.
+
+
+### Whole callbacks, verified local candidates, and bounded animation data — October 18
+
+Since c4149b12, 21 additional whole functions contribute 3,672 C bytes.
+These include the 003FF810 stream query, three-way motion setups, a separately
+referenced 0041A730 motion callback, Sony RPC command/compatibility routines,
+the 003F3AE0 matrix transform, and runtime validation/seek callbacks.
+Eleven of the recoveries came from existing local Grok candidates: all were
+independently compiled and compared in full before integration, including the
+already written 00165720 collision routine. The original working tree and its
+uncommitted files were preserved.
+
+The shared source audit withdrew 196 bytes for 0040A378. Its old calls omitted
+object arguments required by the real helpers. Explicit, properly typed
+arguments still produce different instructions, so it and its 0040BDC8
+candidate remain uncredited. The net code gain is 3,476 bytes. Affected code
+units were checked in full, including their existing credited functions.
+
+Three source-contract repairs preserve existing exact spans without adding
+credit: 003F7FC8 explicitly returns the native zero recognition result;
+0040D040 passes the real resource pointer to 00400740; and 0011F938 returns
+the actual formatting helper's result. The imported 001C6D00 candidate now
+uses the animation helper's real one-argument signature. The 002A2800 source
+retains the retail facing test whose two branches assign the same acceleration;
+removing that redundant native branch would break the whole-function match.
+
+The data recovery adds 756 bytes: thirteen Sony handler pointers (52),
+32 bounded animation samples (256), and 56 fully reachable animation commands
+(448). DATA_INTEGRATION.md records their field, extent, and traversal proof.
+The unused handler words and the unproven half of the sample area remain
+placeholders.
+
+Catalog: 1,644,796 / 3,293,696 matching C bytes (49.9377%), 15,518 credited spans;
+173,921 / 648,064 reconstructed data bytes (26.8370%). The next scheduled
+full-point gate remains 1,652,329 C bytes.
+
+All 51 tests and build-coverage validation pass. The combined hybrid relink
+reproduces the 3,941,760-byte retail image, and the packed 3,942,320-byte ELF
+also matches exactly. SHA-256 remains c5206f568f068e5bd93ba47676500764c3d45719890865fa71ada10afadcd26f for the image
+and 48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7 for the ELF.
+This smaller checkpoint publishes the source-contract corrections and the
+previously unpublished, independently verified C recoveries. Unrecovered
+ranges still use the private retail input; full source decompilation remains
+incomplete.
