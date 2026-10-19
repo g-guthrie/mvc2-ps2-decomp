@@ -3903,7 +3903,7 @@ func_001B6020,0x001B6020,0x20,0x001B6040,code,spimdisasm-explicit-size-before-fi
 func_001B6040,0x001B6040,0x108,0x001B6148,code,spimdisasm-explicit-size-before-first-data
 func_001B6150,0x001B6150,0x44,0x001B6194,code,spimdisasm-explicit-size-before-first-data
 func_001B61A0,0x001B61A0,0x20,0x001B61C0,code,matching-c-head-split
-residual_001B61C0,0x001B61C0,0xD4,0x001B6294,assembly_residual,verified-boundary-after-matching-head
+func_001B61C0,0x001B61C0,0xD4,0x001B6294,code,spimdisasm-explicit-size-before-first-data
 func_001B62A0,0x001B62A0,0x170,0x001B6410,code,spimdisasm-explicit-size-before-first-data
 func_001B6410,0x001B6410,0x174,0x001B6584,code,spimdisasm-explicit-size-before-first-data
 func_001B6590,0x001B6590,0x20,0x001B65B0,code,matching-c-head-split
