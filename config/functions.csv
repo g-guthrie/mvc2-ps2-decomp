@@ -13333,8 +13333,7 @@ func_003031B0,0x003031B0,0x50,0x00303200,code,spimdisasm-explicit-size-before-fi
 func_00303200,0x00303200,0x134,0x00303334,code,spimdisasm-explicit-size-before-first-data
 func_00303340,0x00303340,0x50,0x00303390,code,spimdisasm-explicit-size-before-first-data
 func_00303390,0x00303390,0xA4,0x00303434,code,spimdisasm-explicit-size-before-first-data
-func_00303434,0x00303434,0x4,0x00303438,code,spimdisasm-explicit-size-before-first-data
-gap_00303438,0x00303438,0x8,0x00303440,padding,verified-alignment-padding
+gap_00303434,0x00303434,0xC,0x00303440,padding,verified-alignment-padding
 func_00303440,0x00303440,0x5C,0x0030349C,code,independent-callback-entry-table-prologue-return
 func_003034A0,0x003034A0,0x3C,0x003034DC,code,spimdisasm-explicit-size-before-first-data
 func_003034E0,0x003034E0,0x20,0x00303500,code,matching-c-head-split
