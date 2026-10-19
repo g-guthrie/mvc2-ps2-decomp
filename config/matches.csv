@@ -16754,3 +16754,4 @@ func_001D0DC0,0x001D0DC0,0xF8,src/grok_z1_1d0dc0.c,complete
 func_00194AD0,0x00194AD0,0xE0,src/grok_z4_194ad0.c,complete
 func_001A3640,0x001A3640,0xF0,src/grok_z4_1a3640.c,complete
 func_003A8BA0,0x003A8BA0,0xE8,src/grok_z5_3a8ba0.c,complete
+func_001DB6F0,0x001DB6F0,0xE4,src/grok_au_1db6f0.c,complete

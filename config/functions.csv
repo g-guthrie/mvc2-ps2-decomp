@@ -5013,7 +5013,7 @@ func_001DB5D0,0x001DB5D0,0x50,0x001DB620,code,spimdisasm-explicit-size-before-fi
 func_001DB620,0x001DB620,0x14,0x001DB634,code,spimdisasm-explicit-size-before-first-data
 func_001DB640,0x001DB640,0x88,0x001DB6C8,code,spimdisasm-explicit-size-before-first-data
 func_001DB6D0,0x001DB6D0,0x20,0x001DB6F0,code,matching-c-head-split
-residual_001DB6F0,0x001DB6F0,0xE4,0x001DB7D4,assembly_residual,verified-boundary-after-matching-head
+func_001DB6F0,0x001DB6F0,0xE4,0x001DB7D4,code,exact-old-mwcc-owner-load-callback
 func_001DB7E0,0x001DB7E0,0x58,0x001DB838,code,spimdisasm-explicit-size-before-first-data
 func_001DB840,0x001DB840,0x60,0x001DB8A0,code,spimdisasm-explicit-size-before-first-data
 func_001DB8A0,0x001DB8A0,0x54,0x001DB8F4,code,spimdisasm-explicit-size-before-first-data

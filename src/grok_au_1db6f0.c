@@ -26,8 +26,7 @@ void func_001DB6F0(u8 *p)
         n--;
         s++;
         d++;
-        
-        
+
     } while (n > 0);
     p[0x13C] = 1;
     p[2] = q[2];

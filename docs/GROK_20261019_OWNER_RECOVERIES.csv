@@ -8,3 +8,4 @@ func_001D9E30,0x001D9E30,0x118,src/grok_z1_1d9e30.c,MWCCPS2_30,-O3 -sdatathresho
 func_001DA4A0,0x001DA4A0,0xFC,src/grok_z1_1da4a0.c,MWCCPS2_30,-O3 -sdatathreshold 0,96
 func_001DDC80,0x001DDC80,0x104,src/grok_z1_1ddc80.c,MWCCPS2_30,-O3 -sdatathreshold 0,80
 func_003A8BA0,0x003A8BA0,0xE8,src/grok_z5_3a8ba0.c,MWCCPS2_30,-O3 -sdatathreshold 0,12
+func_001DB6F0,0x001DB6F0,0xE4,src/grok_au_1db6f0.c,MWCCPS2_30,-O3 -sdatathreshold 0,0

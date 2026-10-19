@@ -14638,3 +14638,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_z4_1a3640.c 
 "$PYTHON" tools/verify_object.py "$BUILD/grok_z4_1a3640.o" private/SLUS_204.86.rom --source src/grok_z4_1a3640.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_z5_3a8ba0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/grok_z5_3a8ba0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_z5_3a8ba0.o" private/SLUS_204.86.rom --source src/grok_z5_3a8ba0.c
+
+# Existing callback table suffix at +0x10 bytes; no separate data allocation.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_au_1db6f0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/grok_au_1db6f0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_au_1db6f0.o" private/SLUS_204.86.rom --source src/grok_au_1db6f0.c
