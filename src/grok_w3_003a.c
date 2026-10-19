@@ -147,6 +147,12 @@ void func_003B9500(u8 *p)
     jtbl_00474460[p[4]](p);
 }
 
+void func_003B9550(u8 *p)
+{
+    p[4]++;
+    jtbl_00474460[p[0x20] + 4](p);
+}
+
 void func_003BA360(u8 *p)
 {
     func_003BD920(p);
