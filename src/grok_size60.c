@@ -50,6 +50,7 @@ void func_002A6D40(u8 *p) { INIT_001F70C0 }
         func_00186A60(p, 29); \
     }
 
+void func_002030B0(u8 *p) { INIT_00203110 }
 void func_00203110(u8 *p) { INIT_00203110 }
 
 #define INIT_00207F10 \
