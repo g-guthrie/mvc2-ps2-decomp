@@ -671,3 +671,13 @@ at `0x0036E70C`, and A2 to `p + 0x88` at `0x0036E720`, before invoking
 `D_00463DA0[p[5]]`. The callback forwards those same byte pointers to
 `func_0036EF10`; that consumer reads the owner at offset `0x220` and the
 state's first word. The three-argument type agrees with `src/h8.c`.
+
+`func_0020CB80` uses MWCC 3.0.3 `-O3 -Op -sdatathreshold 0`. The parent
+`func_0020BC30` sets A1 to `p + 0x2B8` at `0x0020BC3C`; table entry
+`0x00450894` selects `func_0020CB00`, which preserves that input into
+`jtbl_004508C0[p[7]]`. Its second entry selects this callback. The existing
+initializer `residual_0020CB20` also forwards the same state pointer directly
+at `0x0020CB60`. The inner table and dispatcher now retain this real argument.
+A double temporary merges the facing-dependent target calculation before
+its float conversion; subtraction from the actor position remains float,
+then division by 32 uses double as in retail.
