@@ -15660,3 +15660,16 @@ func_001192B0,0x001192B0,0x25C,src/fp_bit_add_parts_001192B0.c,complete
 func_003FF3E8,0x003FF3E8,0x17C,src/create_stream_group_003FF3E8.c,complete
 func_003F7C38,0x003F7C38,0x11C,src/create_stream_engine_003F7C38.c,complete
 func_00404290,0x00404290,0xCC,src/create_runtime_handle_00404290.c,complete
+func_00315980,0x00315980,0x4C,src/independent_state_entry_00315980.c,complete
+func_0031AA30,0x0031AA30,0x6C,src/independent_state_entry_0031AA30.c,complete
+func_0031ACA0,0x0031ACA0,0x60,src/independent_state_entry_0031ACA0.c,complete
+func_0034ACF0,0x0034ACF0,0x68,src/independent_state_entry_0034ACF0.c,complete
+func_003572E0,0x003572E0,0x58,src/independent_state_entry_003572E0.c,complete
+func_0036B910,0x0036B910,0x58,src/independent_state_entry_0036B910.c,complete
+func_00388B30,0x00388B30,0x94,src/independent_state_entry_00388B30.c,complete
+func_00390060,0x00390060,0x60,src/independent_state_entry_00390060.c,complete
+func_0039CE40,0x0039CE40,0x50,src/independent_state_entry_0039CE40.c,complete
+func_003B0540,0x003B0540,0x68,src/independent_state_entries_003B0540_003B0D90.c,complete
+func_003B0D90,0x003B0D90,0x68,src/independent_state_entries_003B0540_003B0D90.c,complete
+func_003B9C40,0x003B9C40,0x38,src/independent_state_entry_003B9C40.c,complete
+func_003BC2C0,0x003BC2C0,0x60,src/independent_state_entry_003BC2C0.c,complete
