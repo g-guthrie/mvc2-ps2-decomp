@@ -1349,7 +1349,7 @@ jtbl_004C16D0,0x004C16D0,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C16D0,vo
 jtbl_004C16E0,0x004C16E0,0x08,src/grok_w5_disp.c,jtbl_004C16E0,void(u8 *)
 jtbl_004C16E8,0x004C16E8,0x08,src/grok_w5_disp.c,jtbl_004C16E8,void(u8 *)
 jtbl_004C1700,0x004C1700,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C1700,void(u8 *)
-jtbl_004C1708,0x004C1708,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C1708,void(u8 *)
+jtbl_004C1708,0x004C1708,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C1708,"void(u8 *, void *)"
 jtbl_004C1710,0x004C1710,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C1710,void(u8 *)
 jtbl_004C1770,0x004C1770,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C1770,void(u8 *)
 jtbl_004C1778,0x004C1778,0x08,src/composite_gp_dispatch_heads.c,jtbl_004C1778,void(u8 *)
