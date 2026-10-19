@@ -58,3 +58,14 @@ s32 func_0028DA30(u8 *p, u8 key) {
     } while (i <= 2);
     return 0;
 }
+
+
+s32 func_00294D40(u8 *p, u8 key) {
+    s32 i = 0;
+    do {
+        u8 *e = D_004D18A0[p[2] + 2][i];
+        if (e != p && e[1] == key) { return 1; }
+        i++;
+    } while (i <= 2);
+    return 0;
+}
