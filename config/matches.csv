@@ -12923,6 +12923,7 @@ func_002ABF80,0x002ABF80,0xAC,src/t7_a.c,complete
 func_0039E2D0,0x0039E2D0,0xB4,src/t7_a.c,complete
 func_00228E20,0x00228E20,0x7C,src/t7_b.c,complete
 func_003A0E80,0x003A0E80,0x7C,src/t7_b.c,complete
+func_0016B650,0x0016B650,0xD0,src/t7_b.c,complete
 func_0016B720,0x0016B720,0xA0,src/t7_b.c,complete
 func_002D90D0,0x002D90D0,0xA0,src/t7_b.c,complete
 func_002362B0,0x002362B0,0xA0,src/t7_b.c,complete

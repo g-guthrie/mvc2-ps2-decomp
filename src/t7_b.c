@@ -501,3 +501,34 @@ void func_0018FFB0(u8 *p) {
         }
     }
 }
+
+extern void func_0013FE60(u8 *, V3 *);
+extern void func_00140E90(u8 *, V3 *);
+extern void func_003298B0(s32, s32, s32);
+extern void func_001E3CC0(s32);
+void func_0016B650(void) {
+    s16 v = *(s16 *)(D_004C2840 + 0xE) - 1;
+    *(s16 *)(D_004C2840 + 0xE) = v;
+    if (v == 0) {
+        s8 t = *(s8 *)(D_004C2840 + 5);
+        *(s8 *)(D_004C2840 + 5) = t + 1;
+        *(s16 *)(D_004C2840 + 0xE) = 0x1E0;
+        func_0013FE60((u8 *)0x800, (V3 *)0);
+        func_00140E90((u8 *)0x800, (V3 *)0);
+        func_003298B0(0xFF000000, 0x1E0, 0);
+        func_001E3CC0(0);
+    }
+    {
+        s8 f = D_004C2840[0x88];
+        if (f & 1) {
+            if (D_004F4480[0] & 0x8000) goto L1;
+        }
+        if (f & 2) {
+            if (D_004F4494[0] & 0x8000) {
+L1:
+                func_0016BF10();
+            }
+            return;
+        }
+    }
+}
