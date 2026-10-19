@@ -140,6 +140,36 @@ void func_002DD230(u8 *p)
     }
 }
 
+
+void func_00249BF0(u8 *p)
+{
+    extern int func_00175700(u8 *);
+    extern void func_00184540(u8 *);
+    extern void func_001E3240(u8 *, int);
+    unsigned int offset;
+    if ((s8)func_00175700(p) < 0) {
+        func_00184540(p);
+        return;
+    }
+    switch (p[0x1FC]) {
+    case 0:
+        if (*(s8 *)(p + 0x151) != 0) {
+            *(s8 *)(p + 0x151) = 0;
+            RESET(0x0F)
+            func_001E3240(p, 0x23);
+        }
+        break;
+    case 1:
+        if (*(s8 *)(p + 0x151) != 0) {
+            *(s8 *)(p + 0x151) = 0;
+            RESET(0x10)
+        }
+        break;
+    case 2:
+        break;
+    }
+}
+
 void func_0029CBE0(u8 *p)
 {
     extern void func_001861B0();
