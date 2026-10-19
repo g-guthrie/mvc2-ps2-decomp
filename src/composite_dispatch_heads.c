@@ -3666,6 +3666,12 @@ void func_003521D0(u8 *p) { jtbl_00462640[p[4]](p); }
 
 void func_00353790(u8 *p) { jtbl_00462B50[p[4]](p); }
 
+void func_003539A0(u8 *p) {
+    signed char *q = *(signed char **)(p + 0x18);
+    p[0x24] = q[0x24];
+    jtbl_00462B50[p[0x21] + 4](p);
+}
+
 void func_003544F0(u8 *p) { jtbl_00462B70[p[4]](p); }
 
 void func_003547E0(u8 *p) { jtbl_00462B80[p[4]](p); }
