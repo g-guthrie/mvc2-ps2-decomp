@@ -3705,7 +3705,7 @@ func_001B0910,0x001B0910,0x58,0x001B0968,code,spimdisasm-explicit-size-before-fi
 func_001B0970,0x001B0970,0x64,0x001B09D4,code,spimdisasm-explicit-size-before-first-data
 func_001B09E0,0x001B09E0,0x11C,0x001B0AFC,code,spimdisasm-explicit-size-before-first-data
 func_001B0B00,0x001B0B00,0x1C,0x001B0B1C,code,matching-c-head-split
-residual_001B0B1C,0x001B0B1C,0x4,0x001B0B20,assembly_residual,leading-nops
+gap_001B0B1C,0x001B0B1C,0x4,0x001B0B20,padding,verified-alignment-padding
 func_001B0B20,0x001B0B20,0x3C,0x001B0B5C,code,callback-table-and-prologue-verified-entry
 func_001B0B60,0x001B0B60,0x1C,0x001B0B7C,code,matching-c-head-split
 residual_001B0B7C,0x001B0B7C,0xA8,0x001B0C24,assembly_residual,verified-boundary-after-matching-head
@@ -3748,7 +3748,7 @@ func_001B27E0,0x001B27E0,0x60,0x001B2840,code,spimdisasm-explicit-size-before-fi
 func_001B2840,0x001B2840,0x74,0x001B28B4,code,spimdisasm-explicit-size-before-first-data
 func_001B28C0,0x001B28C0,0x50,0x001B2910,code,spimdisasm-explicit-size-before-first-data
 func_001B2910,0x001B2910,0x1C,0x001B292C,code,matching-c-head-split
-residual_001B292C,0x001B292C,0x4,0x001B2930,assembly_residual,leading-nops
+gap_001B292C,0x001B292C,0x4,0x001B2930,padding,verified-alignment-padding
 func_001B2930,0x001B2930,0x48,0x001B2978,code,callback-table-and-prologue-verified-entry
 func_001B2980,0x001B2980,0x6C,0x001B29EC,code,spimdisasm-explicit-size-before-first-data
 func_001B29F0,0x001B29F0,0x1C,0x001B2A0C,code,matching-c-head-split
@@ -3767,7 +3767,7 @@ func_001B2E60,0x001B2E60,0x1C,0x001B2E7C,code,matching-c-head-split
 residual_001B2E7C,0x001B2E7C,0xB8,0x001B2F34,assembly_residual,verified-boundary-after-matching-head
 func_001B2F40,0x001B2F40,0x4C,0x001B2F8C,code,spimdisasm-explicit-size-before-first-data
 func_001B2F90,0x001B2F90,0x1C,0x001B2FAC,code,matching-c-head-split
-residual_001B2FAC,0x001B2FAC,0x4,0x001B2FB0,assembly_residual,leading-nops
+gap_001B2FAC,0x001B2FAC,0x4,0x001B2FB0,padding,verified-alignment-padding
 func_001B2FB0,0x001B2FB0,0x34,0x001B2FE4,code,callback-table-and-prologue-verified-entry
 func_001B2FF0,0x001B2FF0,0x7C,0x001B306C,code,spimdisasm-explicit-size-before-first-data
 func_001B3070,0x001B3070,0x1C,0x001B308C,code,matching-c-head-split
