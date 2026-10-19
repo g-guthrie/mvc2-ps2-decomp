@@ -7253,7 +7253,7 @@ residual_00198980,0x00198980,0x20,src/grok_w5_disp.c,complete
 residual_001A44E0,0x001A44E0,0x20,src/grok_w5_disp.c,complete
 residual_001AFD30,0x001AFD30,0x20,src/grok_w5_disp.c,complete
 residual_001B1020,0x001B1020,0x20,src/grok_w5_disp.c,complete
-residual_001B6020,0x001B6020,0x20,src/grok_w5_disp.c,complete
+func_001B6020,0x001B6020,0x20,src/grok_w5_disp.c,complete
 residual_001B7CF0,0x001B7CF0,0x20,src/grok_w5_disp.c,complete
 residual_001BB990,0x001BB990,0x24,src/grok_w5_disp.c,complete
 residual_001BFEA0,0x001BFEA0,0x20,src/grok_w5_disp.c,complete
@@ -15852,3 +15852,4 @@ func_001B76E0,0x001B76E0,0x20,src/event_clone_dispatch_001b76e0.c,complete
 func_001B7700,0x001B7700,0xF4,src/event_clone_001b7700.c,complete
 func_001B8E30,0x001B8E30,0xE8,src/event_clone_001b8e30.c,complete
 func_00122560,0x00122560,0x10C,src/newlib_wsetup_00122560.c,complete
+func_001B6040,0x001B6040,0x108,src/event_clone_001b6040.c,complete

@@ -122,7 +122,7 @@ void residual_001AFD30(u8 *p) { jtbl_0044BC10[p[32]](p); }
 
 void residual_001B1020(u8 *p) { jtbl_0044BC80[p[32]](p); }
 
-void residual_001B6020(u8 *p) { jtbl_0044BE10[p[4]](p); }
+void func_001B6020(u8 *p) { jtbl_0044BE10[p[4]](p); }
 
 void residual_001B7CF0(u8 *p) { jtbl_0044BED0[p[32]](p); }
 
