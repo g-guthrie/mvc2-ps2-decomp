@@ -11587,3 +11587,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/independent_state_entry_00397630.o"
 "$PYTHON" tools/verify_object.py "$BUILD/independent_state_entry_00397630.o" \
     private/SLUS_204.86.rom --source src/independent_state_entry_00397630.c
+
+"$WIBO" "$SNCPP" -P src/find_named_runtime_span_0040C6D0.c "$BUILD/find_named_runtime_span_0040C6D0.i"
+"$PYTHON" tools/compile_ee96.py "$BUILD/find_named_runtime_span_0040C6D0.i" "$BUILD/find_named_runtime_span_0040C6D0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/find_named_runtime_span_0040C6D0.o" "$BUILD/find_named_runtime_span_0040C6D0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/find_named_runtime_span_0040C6D0.o" private/SLUS_204.86.rom --source src/find_named_runtime_span_0040C6D0.c

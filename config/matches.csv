@@ -15694,3 +15694,4 @@ func_00328530,0x00328530,0x2C,src/independent_state_entry_00328530.c,complete
 func_00336210,0x00336210,0x40,src/independent_state_entry_00336210.c,complete
 func_0038D6E0,0x0038D6E0,0x24,src/independent_state_entry_0038D6E0.c,complete
 func_00397630,0x00397630,0x10,src/independent_state_entry_00397630.c,complete
+func_0040C6D0,0x0040C6D0,0xC8,src/find_named_runtime_span_0040C6D0.c,complete
