@@ -80,7 +80,7 @@ void func_00253410(u8 *p) {
     extern void func_0018C6E0(u8 *);
     extern void func_0015D010(u8 *, u32 *);
     extern void func_001757E0(u8 *, s32, s32);
-    extern void func_00179160(u8 *, u32);
+    extern void func_00179160(u8 *, void *);
     u32 v[4];
     func_001266A0(p, 6, 6);
     func_0018C6E0(p);
@@ -91,7 +91,7 @@ void func_00253410(u8 *p) {
     func_0015D010(p, v);
     func_001757E0(p, 0xF, 0);
     *(V3 *)v = *(V3 *)(p + 0x34);
-    func_00179160(p, *(u32 *)(p + 0x1DC));
+    func_00179160(p, *(void **)(p + 0x1DC));
     *(V3 *)(p + 0x34) = *(V3 *)v;
 }
 

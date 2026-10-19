@@ -57,7 +57,7 @@ s32 func_00237CD0(u8 *a, u8 *b) {
 }
 
 extern void func_0015D010();
-extern void func_00179160();
+extern void func_00179160(void *, void *);
 void func_0021C890(u8 *p, void *q) {
     u32 v[3];
     p[0x151] = 2;

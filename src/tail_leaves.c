@@ -46,8 +46,7 @@ extern void func_00175670();
 extern int func_00175700(u8 *);
 extern void func_001765C0();
 extern void func_00178F20();
-extern void func_00179160();
-extern void func_00179170();
+extern void func_00179170(void *, void *, s32);
 extern void func_001843A0();
 extern void func_00184540();
 extern void func_0018C4B0();
@@ -255,9 +254,9 @@ void func_00171DA0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001719E0(a0, a1, a2, 
 
 void func_00172310(void) {  func_00127140(); }
 
-void func_00179150(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00179170(a0, a1, 0, a3); }
+void func_00179150(void *a0, void *a1) { func_00179170(a0, a1, 0); }
 
-void func_00179160(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00179170(a0, a1, 1, a3); }
+void func_00179160(void *a0, void *a1) { func_00179170(a0, a1, 1); }
 
 void func_0017BFF0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00191D40(a0, a1, a2, a3); }
 
@@ -671,11 +670,11 @@ void func_00219250(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00219260(a0, a1, a2, 
 
 void func_0021BBE0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00178F20(a0, a1, a2, a3); }
 
-void func_0021BBF0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00179160(a0, a1, a2, a3); }
+void func_0021BBF0(void *a0, void *a1) { func_00179160(a0, a1); }
 
 void func_0021C0D0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00178F20(a0, a1, a2, a3); }
 
-void func_0021C5E0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00179160(a0, a1, a2, a3); }
+void func_0021C5E0(void *a0, void *a1) { func_00179160(a0, a1); }
 
 void func_00227E60(u8 *p) { func_0022C5D0(p); }
 
@@ -873,11 +872,11 @@ void func_0031E710(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0031E720(a0, a1, a2, 
 
 void func_00321490(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00178F20(a0, a1, a2, a3); }
 
-void func_003214A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00179160(a0, a1, a2, a3); }
+void func_003214A0(void *a0, void *a1) { func_00179160(a0, a1); }
 
 void func_00321980(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00178F20(a0, a1, a2, a3); }
 
-void func_00321E90(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00179160(a0, a1, a2, a3); }
+void func_00321E90(void *a0, void *a1) { func_00179160(a0, a1); }
 
 void func_00328410(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 

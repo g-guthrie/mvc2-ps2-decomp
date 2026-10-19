@@ -138,7 +138,7 @@ void func_00239B70(P2 *p) {
 
 void func_002B22F0(u8 *p) {
     extern void func_00178F20();
-    extern void func_00179160();
+    extern void func_00179160(void *, void *);
     u8 *o;
     s32 a;
     f32 f;
