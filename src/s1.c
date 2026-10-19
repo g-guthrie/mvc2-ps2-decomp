@@ -1,7 +1,9 @@
 typedef signed int s32;
 typedef unsigned int u32;
-extern void func_0040E520(void);
-void func_003FF0C8(void) { func_0040E520(); }
+extern void *func_0040E520(void **streams, s32 count);
+void *func_003FF0C8(void **streams, s32 count) {
+    return func_0040E520(streams, count);
+}
 extern s32 *func_0011B370(void);
 
 extern void func_00408628(s32);
