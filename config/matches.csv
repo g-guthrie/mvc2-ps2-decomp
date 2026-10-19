@@ -15853,3 +15853,5 @@ func_001B7700,0x001B7700,0xF4,src/event_clone_001b7700.c,complete
 func_001B8E30,0x001B8E30,0xE8,src/event_clone_001b8e30.c,complete
 func_00122560,0x00122560,0x10C,src/newlib_wsetup_00122560.c,complete
 func_001B6040,0x001B6040,0x108,src/event_clone_001b6040.c,complete
+func_002F4010,0x002F4010,0x34,src/state_init_002f4050.c,complete
+func_002F4050,0x002F4050,0xBC,src/state_init_002f4050.c,complete
