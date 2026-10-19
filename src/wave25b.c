@@ -60,6 +60,21 @@ void func_00304A80(u8 *p) {
 typedef struct { u8 p0[0x34]; float f34; float f38; } S4;
 typedef struct { u8 p0[5]; u8 f5; u8 p1[2]; S4 *f8; u8 p2[0x28]; } S5;
 void func_001A87F0(void *p, s32 a1);
+extern void func_001A8140(u8 *, u8 *);
+void func_001A81B0(u8 *p, u8 *q) {
+    u32 t = p[5];
+    u8 *s;
+    float f;
+    s = *(u8 **)(p + 8);
+    p[5] = t + 1;
+    if (s[0x20] == 4) f = -26.666666f;
+    else f = -53.333332f;
+    if (*(s16 *)(p + 0x140) != 0) f = -f;
+    *(float *)(p + 0x34) = *(float *)(s + 0x34) + f;
+    *(float *)(p + 0x38) = *(float *)(s + 0x38);
+    func_001A8140(p, q);
+}
+
 void func_001A88A0(u8 *p, s32 a1, s32 a2) {
     u32 t = p[5];
     u8 *s;
