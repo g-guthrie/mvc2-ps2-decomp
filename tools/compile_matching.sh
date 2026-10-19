@@ -11545,6 +11545,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     private/SLUS_204.86.rom --source src/independent_state_entry_0031D260.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/independent_state_entry_003112D0.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/independent_state_entry_003112D0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/independent_state_entry_003112D0.o" \
+    private/SLUS_204.86.rom --source src/independent_state_entry_003112D0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/independent_state_entry_00327E20.c -c -lang c -O3 -sdatathreshold 0 \
     -o "$BUILD/independent_state_entry_00327E20.o"
 "$PYTHON" tools/verify_object.py "$BUILD/independent_state_entry_00327E20.o" \

@@ -21,6 +21,8 @@ const Mvc2StateCallback jtbl_0045D340[11] = {
     func_0030FF90,
     func_00310880,
     func_00311310,
+    /* Slot 6 is consumed by func_0030FF70; its physical previous head,
+     * func_003112B0, dispatches a different table. */
     func_003112D0,
     func_00310850,
     func_00310B70,

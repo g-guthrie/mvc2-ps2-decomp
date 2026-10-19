@@ -13730,7 +13730,7 @@ residual_0031116C,0x0031116C,0x80,0x003111EC,assembly_residual,verified-boundary
 func_003111F0,0x003111F0,0x58,0x00311248,code,spimdisasm-explicit-size-before-first-data
 func_00311250,0x00311250,0x54,0x003112A4,code,spimdisasm-explicit-size-before-first-data
 func_003112B0,0x003112B0,0x20,0x003112D0,code,matching-c-head-split
-residual_003112D0,0x003112D0,0x34,0x00311304,assembly_residual,verified-boundary-after-matching-head
+func_003112D0,0x003112D0,0x34,0x00311304,code,independent-callback-entry-table-prologue-return
 func_00311310,0x00311310,0x70,0x00311380,code,spimdisasm-explicit-size-before-first-data
 func_00311380,0x00311380,0x3C,0x003113BC,code,spimdisasm-explicit-size-before-first-data
 func_003113C0,0x003113C0,0x20,0x003113E0,code,matching-c-head-split

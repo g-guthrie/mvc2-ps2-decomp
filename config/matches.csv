@@ -15696,3 +15696,4 @@ func_0038D6E0,0x0038D6E0,0x24,src/independent_state_entry_0038D6E0.c,complete
 func_00397630,0x00397630,0x10,src/independent_state_entry_00397630.c,complete
 func_0040C6D0,0x0040C6D0,0xC8,src/find_named_runtime_span_0040C6D0.c,complete
 func_0011B838,0x0011B838,0xB8,src/newlib_sflags_0011B838.c,complete
+func_003112D0,0x003112D0,0x34,src/independent_state_entry_003112D0.c,complete
