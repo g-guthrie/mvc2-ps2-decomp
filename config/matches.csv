@@ -15629,3 +15629,12 @@ func_00282720,0x00282720,0x64,src/state_entries_00282720.c,complete
 func_003145A0,0x003145A0,0x124,src/independent_state_entry_003145A0.c,complete
 func_002CED00,0x002CED00,0xA8,src/state_entries_002CED00.c,complete
 func_002F1530,0x002F1530,0xD0,src/state_entries_002CED00.c,complete
+func_001385D0,0x001385D0,0x5C,src/func_001385D0.c,complete
+func_00138650,0x00138650,0x3C,src/func_00138650.c,complete
+func_00139AB0,0x00139AB0,0x5C,src/func_00139AB0.c,complete
+func_0013A230,0x0013A230,0x70,src/func_0013A230.c,complete
+func_00155620,0x00155620,0x50,src/func_00155620.c,complete
+func_0015A520,0x0015A520,0x54,src/func_0015A520.c,complete
+func_00162430,0x00162430,0x30,src/func_00162430.c,complete
+func_0016C3F0,0x0016C3F0,0x3C,src/func_0016C3F0.c,complete
+func_00176980,0x00176980,0x64,src/func_00176980.c,complete
