@@ -5,6 +5,11 @@ extern int func_001757E0(u8 *, int, int);
 extern void func_001843A0();
 extern void func_00178F20();
 
+void func_002E0CC0(u8 *a, void *b) {
+    a[0x208] = 2;
+    func_00178F20(b, a);
+}
+
 void func_002B6AF0(u8 *p) { p[1036] = 2; p[828] = 5; p[6]++; func_001757E0(p, 21, 24); }
 
 void func_002B7CD0(u8 *p) { func_001757E0(p, 15, 3); }
