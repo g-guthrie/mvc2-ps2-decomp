@@ -1,0 +1,10 @@
+name,address,size,source,compiler,flags,prefix_uncredited_bytes
+func_00194AD0,0x00194AD0,0xE0,src/grok_z4_194ad0.c,MWCCPS2_30,-O3 -sdatathreshold 0,48
+func_001A3280,0x001A3280,0x110,src/grok_z1_1a3280.c,MWCCPS2_30,-O3 -sdatathreshold 0,12
+func_001A3640,0x001A3640,0xF0,src/grok_z4_1a3640.c,MWCCPS2_30,-O3 -sdatathreshold 0,80
+func_001D0DC0,0x001D0DC0,0xF8,src/grok_z1_1d0dc0.c,MWCCPS2_30,-O3 -sdatathreshold 0,12
+func_001D5720,0x001D5720,0x118,src/grok_z1_1d5720.c,MWCCPS2_30,-O3 -sdatathreshold 0,12
+func_001D9E30,0x001D9E30,0x118,src/grok_z1_1d9e30.c,MWCCPS2_30,-O3 -sdatathreshold 0,12
+func_001DA4A0,0x001DA4A0,0xFC,src/grok_z1_1da4a0.c,MWCCPS2_30,-O3 -sdatathreshold 0,96
+func_001DDC80,0x001DDC80,0x104,src/grok_z1_1ddc80.c,MWCCPS2_30,-O3 -sdatathreshold 0,80
+func_003A8BA0,0x003A8BA0,0xE8,src/grok_z5_3a8ba0.c,MWCCPS2_30,-O3 -sdatathreshold 0,12

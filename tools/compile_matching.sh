@@ -14618,3 +14618,23 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_cu_2db270.c -c -la
 # Signed byte state transitions preserve their promoted integer comparisons.
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_cu_2e44b0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/grok_cu_2e44b0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_cu_2e44b0.o" private/SLUS_204.86.rom --source src/grok_cu_2e44b0.c
+
+# Owner callback copies: genuine old-MWCC loop padding; full bodies verified.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_z1_1da4a0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/grok_z1_1da4a0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_z1_1da4a0.o" private/SLUS_204.86.rom --source src/grok_z1_1da4a0.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_z1_1ddc80.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/grok_z1_1ddc80.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_z1_1ddc80.o" private/SLUS_204.86.rom --source src/grok_z1_1ddc80.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_z1_1d9e30.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/grok_z1_1d9e30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_z1_1d9e30.o" private/SLUS_204.86.rom --source src/grok_z1_1d9e30.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_z1_1d5720.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/grok_z1_1d5720.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_z1_1d5720.o" private/SLUS_204.86.rom --source src/grok_z1_1d5720.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_z1_1a3280.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/grok_z1_1a3280.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_z1_1a3280.o" private/SLUS_204.86.rom --source src/grok_z1_1a3280.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_z1_1d0dc0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/grok_z1_1d0dc0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_z1_1d0dc0.o" private/SLUS_204.86.rom --source src/grok_z1_1d0dc0.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_z4_194ad0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/grok_z4_194ad0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_z4_194ad0.o" private/SLUS_204.86.rom --source src/grok_z4_194ad0.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_z4_1a3640.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/grok_z4_1a3640.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_z4_1a3640.o" private/SLUS_204.86.rom --source src/grok_z4_1a3640.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_z5_3a8ba0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/grok_z5_3a8ba0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_z5_3a8ba0.o" private/SLUS_204.86.rom --source src/grok_z5_3a8ba0.c
