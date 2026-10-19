@@ -15873,3 +15873,5 @@ func_002218B0,0x002218B0,0x118,src/initial_launch_002218b0.c,complete
 func_001D88C0,0x001D88C0,0x140,src/event_clone_001d88c0.c,complete
 func_00221310,0x00221310,0x60,src/initial_launch_002218b0.c,complete
 func_00221370,0x00221370,0xC4,src/initial_launch_002218b0.c,complete
+func_001F56E0,0x001F56E0,0x40,src/state_dispatch_001f56e0.c,complete
+func_001F5720,0x001F5720,0x3C,src/state_action_001f5720.c,complete

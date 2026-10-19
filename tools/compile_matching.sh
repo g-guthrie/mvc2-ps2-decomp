@@ -12251,6 +12251,18 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$PYTHON" tools/verify_object.py "$BUILD/event_clone_001d88c0.o" \
     private/SLUS_204.86.rom --source src/event_clone_001d88c0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/state_dispatch_001f56e0.c -c -lang c -O3,p -Op -sdatathreshold 8 \
+    -o "$BUILD/state_dispatch_001f56e0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_dispatch_001f56e0.o" \
+    private/SLUS_204.86.rom --source src/state_dispatch_001f56e0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/state_action_001f5720.c -c -lang c -O3,p -Op -sdatathreshold 8 \
+    -o "$BUILD/state_action_001f5720.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_action_001f5720.o" \
+    private/SLUS_204.86.rom --source src/state_action_001f5720.c
+
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/capture_transition_00229910.c -c -lang c -O3 -Op -sdatathreshold 0 -i src/data \
     -o "$BUILD/capture_transition_00229910.o"
