@@ -3,8 +3,8 @@ typedef unsigned int u32;
 typedef void (*StateDispatchFn)(u8 *);
 typedef void (*ContextDispatchFn)(u8 *, void *);
 
-extern u32 jtbl_0045D930[9];
-extern u32 jtbl_0045D948[3];
+extern const u32 jtbl_0045D930[9];
+extern const u32 jtbl_0045D948[3];
 
 void func_0031A6E0(u8 *p)
 {
