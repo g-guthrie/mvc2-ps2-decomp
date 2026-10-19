@@ -15785,3 +15785,5 @@ func_00319C30,0x00319C30,0xAC,src/grok_nm3_319c30.c,complete
 func_00306600,0x00306600,0x80,src/grok_n_06600.c,complete
 func_00312570,0x00312570,0x90,src/grok_w4b_residual_00312570.c,complete
 func_0039D280,0x0039D280,0x80,src/grok_w5b_0039d280.c,complete
+func_003F9AF0,0x003F9AF0,0x80,src/read_adx_header_fields_003F9AF0.c,complete
+func_003F9B70,0x003F9B70,0x78,src/read_adx_header_fields_003F9AF0.c,complete

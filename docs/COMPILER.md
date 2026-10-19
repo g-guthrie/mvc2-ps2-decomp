@@ -643,3 +643,10 @@ relocation is named `func_00119CE8` with objcopy's symbol-renaming option,
 so it reaches the actual unsigned helper without changing the legacy `dptoul`
 address used by other compiler units. No instruction bytes are rewritten;
 both the repaired 280-byte function and the Newlib unit verify in full.
+
+`read_adx_header_fields_003F9AF0.c` uses EE GCC 2.96 `-O2 -G0` for two
+complete 128/120-byte header readers. They retain the big-endian magic check,
+signed header-offset checks, and native error returns before extracting the
+16-bit field at byte 16 or the bytes at 18/19. Native callers at 0x003F7EE4
+and 0x003F7E98/0x003F9C14 prove the three- and four-argument interfaces,
+including separate byte outputs for the latter. No header-data credit is added.

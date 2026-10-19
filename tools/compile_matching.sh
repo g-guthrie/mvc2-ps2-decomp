@@ -11912,3 +11912,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5b_0039d280.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/grok_w5b_0039d280.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_w5b_0039d280.o" \
     private/SLUS_204.86.rom --source src/grok_w5b_0039d280.c
+
+"$WIBO" "$SNCPP" -P src/read_adx_header_fields_003F9AF0.c "$BUILD/read_adx_header_fields_003F9AF0.i"
+"$PYTHON" tools/compile_ee96.py "$BUILD/read_adx_header_fields_003F9AF0.i" "$BUILD/read_adx_header_fields_003F9AF0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/read_adx_header_fields_003F9AF0.o" "$BUILD/read_adx_header_fields_003F9AF0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/read_adx_header_fields_003F9AF0.o" private/SLUS_204.86.rom --source src/read_adx_header_fields_003F9AF0.c
