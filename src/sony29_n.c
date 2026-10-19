@@ -80,3 +80,28 @@ int func_0010FFB8(int a0) {
     }
     return s0;
 }
+
+int func_00110DF0(int a0, int a1) {
+    int s0 = a0;
+    int s1 = a1;
+    int v0;
+
+    if (D_004C8900.f24 == 0) {
+        return -0x64;
+    }
+
+    v0 = func_00103E30(D_0043B404);
+    if (v0 < 0) {
+        return -0xC8;
+    }
+
+    D_004C8980[1] = s0;
+    D_004C8980[2] = s1;
+    s0 = func_00106E68(&D_004C8900, 0x10, 1, &D_004C8980, 0x30, &D_004C9EC0, 4, 0, 0);
+    if (s0 == 0) {
+        D_0043B400 = 0x10;
+    } else {
+        func_00103E00(D_0043B404);
+    }
+    return s0;
+}
