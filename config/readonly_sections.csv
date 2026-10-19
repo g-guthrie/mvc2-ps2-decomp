@@ -1,2 +1,3 @@
 source,section,address,size
 src/newlib_dtoa_0011A108.c,.rodata,0x004AC810,0x58
+src/select_character_action_00255950.c,.rodata,0x004B72B0,0x34

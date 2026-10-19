@@ -12394,3 +12394,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/table_motion_002206a0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/table_motion_002206a0.o" \
     private/SLUS_204.86.rom --source src/table_motion_002206a0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/select_character_action_00255950.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/select_character_action_00255950.o"
+"$PYTHON" tools/verify_object.py "$BUILD/select_character_action_00255950.o" \
+    private/SLUS_204.86.rom --source src/select_character_action_00255950.c

@@ -15920,3 +15920,4 @@ func_00231D50,0x00231D50,0x20,src/character_dispatch_heads_00231ca0.c,complete
 func_001EFC80,0x001EFC80,0xF0,src/grok_w7_001e.c,complete
 func_002206A0,0x002206A0,0x104,src/table_motion_002206a0.c,complete
 func_00220E40,0x00220E40,0x104,src/table_motion_002206a0.c,complete
+func_00255950,0x00255950,0x684,src/select_character_action_00255950.c,complete
