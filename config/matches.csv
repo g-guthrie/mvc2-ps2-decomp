@@ -15902,3 +15902,4 @@ func_00206380,0x00206380,0x150,src/counter_effects_00206380.c,complete
 func_0024FAB0,0x0024FAB0,0x24,src/initial_launches_0024fae0.c,complete
 func_0024FAE0,0x0024FAE0,0xA4,src/initial_launches_0024fae0.c,complete
 func_00261DA0,0x00261DA0,0x28,src/initial_launches_0024fae0.c,complete
+func_00122340,0x00122340,0x54,src/string_stream_printf_00122340.c,complete
