@@ -728,3 +728,10 @@ For manual object builds, create the output directories first, for example
 `wibo-macos` to report its missing `FormatMessageA` import while attempting to
 format the compiler's file error. The same compiler commands succeeded once the
 directories existed; check the output path before diagnosing a toolchain failure.
+`func_001F28E0` is the first handler in `jtbl_0044F8C0` at slot
+`0x0044F8C0`. The outer state dispatch at `0x001F2D30` calls that table with
+A0 holding the actor. This handler only reads and updates A0. The adjacent
+`func_001F28A0` initializes launch fields and dispatches through
+`jtbl_0044F880[p[7]]`; the two ordinary-C functions match as a 52-byte head,
+a 12-byte NOP gap, and an 88-byte handler under the existing MWCCPS2 3.0.3
+`-O3 -sdatathreshold 8` recipe.

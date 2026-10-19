@@ -5529,7 +5529,8 @@ func_001F2610,0x001F2610,0xB8,0x001F26C8,code,spimdisasm-explicit-size-before-fi
 func_001F26D0,0x001F26D0,0xFC,0x001F27CC,code,spimdisasm-explicit-size-before-first-data
 func_001F27D0,0x001F27D0,0x90,0x001F2860,code,spimdisasm-explicit-size-before-first-data
 func_001F2860,0x001F2860,0x3C,0x001F289C,code,spimdisasm-explicit-size-before-first-data
-func_001F28A0,0x001F28A0,0x98,0x001F2938,code,spimdisasm-explicit-size-before-first-data
+func_001F28A0,0x001F28A0,0x34,0x001F28D4,code,spimdisasm-explicit-size-before-first-data
+func_001F28E0,0x001F28E0,0x58,0x001F2938,code,spimdisasm-explicit-size-before-first-data
 func_001F2940,0x001F2940,0x13C,0x001F2A7C,code,spimdisasm-explicit-size-before-first-data
 func_001F2A80,0x001F2A80,0xB8,0x001F2B38,code,spimdisasm-explicit-size-before-first-data
 func_001F2B40,0x001F2B40,0x110,0x001F2C50,code,spimdisasm-explicit-size-before-first-data
