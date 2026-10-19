@@ -69,13 +69,13 @@ void func_003D7220(u8 *p)
 
 extern u8 D_004D18A1[];
 extern u8 D_00445E20[];
-extern s32 (*D_00446120[])(u8 *, s32);
+extern s32 (*const D_00446120[])(u8 *, s32);
 
 extern u8 D_004531B0[];
 
 extern u8 D_004D18A1[];
 extern u8 D_00445E20[];
-extern s32 (*D_00446120[])(u8 *, s32);
+extern s32 (*const D_00446120[])(u8 *, s32);
 
 s32 func_00168D90(u8 *p)
 {
