@@ -4262,3 +4262,9 @@ Recovered `func_001220A0` (448 bytes), the Newlib `vfprintf.c` `cvt()` helper.
 It calls the already matched dtoa implementation and preserves the source-era
 soft-float conversions. EE GCC 2.96 `-O2 -G0` verifies the full body; catalog
 code now stands at 1,690,060 / 3,293,696 bytes (51.3120%).
+
+The existing `func_001208B8` (`__sprint`) now uses the verified `FILE *`
+and 12-byte `__suio` request types, and explicitly forwards both arguments
+to `func_0011C458` (`__sfvwrite`). The original argument-omitting declaration
+is removed. Its EE GCC 2.96 O2/G0 object remains byte-exact at 72 bytes;
+this improves the recovered ABI without increasing matching-byte credit.
