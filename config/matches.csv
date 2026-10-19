@@ -15892,3 +15892,4 @@ func_00200190,0x00200190,0x28,src/early_motion_initializers.c,complete
 func_002001C0,0x002001C0,0xA8,src/early_motion_initializers.c,complete
 func_00202110,0x00202110,0x20,src/early_motion_initializers.c,complete
 func_00202130,0x00202130,0xB8,src/early_motion_initializers.c,complete
+func_00120900,0x00120900,0xB4,src/newlib_sbprintf_00120900.c,complete
