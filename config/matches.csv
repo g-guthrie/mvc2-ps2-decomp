@@ -15658,3 +15658,5 @@ func_001FE090,0x001FE090,0x34,src/grok_luna_oct19_callbacks.c,complete
 func_0040CC30,0x0040CC30,0x108,src/runtime_entry_create_0040CC30.c,complete
 func_001192B0,0x001192B0,0x25C,src/fp_bit_add_parts_001192B0.c,complete
 func_003FF3E8,0x003FF3E8,0x17C,src/create_stream_group_003FF3E8.c,complete
+func_003F7C38,0x003F7C38,0x11C,src/create_stream_engine_003F7C38.c,complete
+func_00404290,0x00404290,0xCC,src/create_runtime_handle_00404290.c,complete

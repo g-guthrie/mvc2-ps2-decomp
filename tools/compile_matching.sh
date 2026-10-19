@@ -11426,3 +11426,13 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/compile_ee96.py --extra-flags=-fno-strength-reduce "$BUILD/create_stream_group_003FF3E8.i" "$BUILD/create_stream_group_003FF3E8.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/create_stream_group_003FF3E8.o" "$BUILD/create_stream_group_003FF3E8.s"
 "$PYTHON" tools/verify_object.py "$BUILD/create_stream_group_003FF3E8.o" private/SLUS_204.86.rom --source src/create_stream_group_003FF3E8.c
+
+"$WIBO" "$SNCPP" -P src/create_stream_engine_003F7C38.c "$BUILD/create_stream_engine_003F7C38.i"
+"$PYTHON" tools/compile_ee96.py "$BUILD/create_stream_engine_003F7C38.i" "$BUILD/create_stream_engine_003F7C38.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/create_stream_engine_003F7C38.o" "$BUILD/create_stream_engine_003F7C38.s"
+"$PYTHON" tools/verify_object.py "$BUILD/create_stream_engine_003F7C38.o" private/SLUS_204.86.rom --source src/create_stream_engine_003F7C38.c
+
+"$WIBO" "$SNCPP" -P src/create_runtime_handle_00404290.c "$BUILD/create_runtime_handle_00404290.i"
+"$PYTHON" tools/compile_ee96.py "$BUILD/create_runtime_handle_00404290.i" "$BUILD/create_runtime_handle_00404290.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/create_runtime_handle_00404290.o" "$BUILD/create_runtime_handle_00404290.s"
+"$PYTHON" tools/verify_object.py "$BUILD/create_runtime_handle_00404290.o" private/SLUS_204.86.rom --source src/create_runtime_handle_00404290.c
