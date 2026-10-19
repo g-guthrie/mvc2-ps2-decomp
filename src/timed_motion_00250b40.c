@@ -76,3 +76,34 @@ void func_00251810(u8 *p)
         }
     }
 }
+
+/* Unary callback: jtbl_00453380 slot 3 (0045339C). */
+void func_00251360(u8 *p)
+{
+    p[0x40C]=2;
+    p[0x33C]=5;
+    func_00175700(p);
+    F(p,0x34)+=F(p,0x5C);
+    F(p,0x5C)+=F(p,0x68);
+    F(p,0x38)+=F(p,0x60);
+    F(p,0x60)+=F(p,0x6C);
+    if(--*(s16 *)(p+0x1C)==0) {
+        p[0x40D]=0;
+        p[0x40C]=0;
+        p[0x33B]=0;
+        p[0x33C]=0;
+        p[7]++;
+        F(p,0x5C)=p[0x1E6] ? 5.0f : -5.0f;
+        F(p,0x68)=p[0x1E6] ? -0.1041666641831398f : 0.1041666641831398f;
+        reset_action(p,0x3D);
+        func_001757E0(p,22,1);
+        return;
+    }
+    if(*(s8 *)(p+0x1B2)) {
+        if(--p[0x22]==0) {
+            p[0x22]=1;
+            if(--*(s16 *)(p+0x1E)==0) {*(s16 *)(p+0x1C)=1;return;}
+            reset_action(p,0x3C);
+        }
+    }
+}
