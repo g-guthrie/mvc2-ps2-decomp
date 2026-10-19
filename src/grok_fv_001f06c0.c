@@ -5,8 +5,7 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef float f32;
 
-typedef struct { u8 pad[0x7C]; s16 v[1]; } G0;
-extern G0 *D_004C2794;
+extern u8 *D_004C2794;
 extern void func_0018C4B0(u8 *, int);
 extern void func_00185490(u8 *);
 extern int func_001757E0(u8 *, int, int);
@@ -20,7 +19,7 @@ void func_001F06C0(u8 *p)
     p[0x1B5] = 0x34;
     p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
     *(u32 *)(p + 0x1D8) = 0;
-    D_004C2794->v[p[2]]++;
+    ((s16 *)(D_004C2794 + 0x7C))[p[2]]++;
     func_0018C4B0(p, 8);
     func_00185490(p);
     *(u32 *)(p + 0x60) = 0x40CDB6DB;
