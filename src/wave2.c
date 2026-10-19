@@ -69,6 +69,15 @@ s32 func_00273C20(u8 *p) {
     return 1;
 }
 
+s32 func_00254480(u8 *p) {
+    if (p[0x20D] != 2) return 1;
+    if (p[0x210] == 0) {
+        if (*(s8 *)(p + 0x1E8) != 0) return 0;
+        *(s8 *)(p + 0x1E8) += 1;
+    }
+    return 1;
+}
+
 void func_002809D0(u8 *p) {
     switch (p[0x452]) {
     case 0:
