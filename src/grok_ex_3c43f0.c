@@ -13,7 +13,7 @@ extern s8 D_004C2148[] __attribute__((section(".sdata")));
 extern int func_00175910(u8 *, s32, s32, s32);
 extern void func_003C4550(u8 *, u8 *);
 
-void residual_003C43F0(u8 *p, u8 *q)
+void func_003C43F0(u8 *p, u8 *q)
 {
     s32 n;
     s32 *d;

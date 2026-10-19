@@ -8,7 +8,7 @@ typedef struct { f32 x, y, z; } V3;
 
 extern void func_003674C0(u8 *);
 
-void residual_003673D0(u8 *p)
+void func_003673D0(u8 *p)
 {
     s32 n;
     s32 *d;

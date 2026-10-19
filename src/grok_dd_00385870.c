@@ -10,7 +10,7 @@ typedef struct { f32 x, y, z; } V3;
 extern u8 *D_004C29AC __attribute__((section(".sdata")));
 extern int func_001757E0(u8 *, s32, s32);
 
-void residual_00385870(u8 *p)
+void func_00385870(u8 *p)
 {
     s32 n;
     s32 *d;

@@ -14884,3 +14884,33 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/window_clone_003ba9e0.c
 "$PYTHON" tools/verify_object.py "$BUILD/window_clone_003ba9e0.o" private/SLUS_204.86.rom --source src/window_clone_003ba9e0.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/window_clone_0034a770.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/window_clone_0034a770.o"
 "$PYTHON" tools/verify_object.py "$BUILD/window_clone_0034a770.o" private/SLUS_204.86.rom --source src/window_clone_0034a770.c
+
+# Whole native state-handler windows with independently identified entries.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_dd_00385870.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_dd_00385870.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_dd_00385870.o" private/SLUS_204.86.rom --source src/grok_dd_00385870.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_dl_3673d0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_dl_3673d0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_dl_3673d0.o" private/SLUS_204.86.rom --source src/grok_dl_3673d0.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_dl_369340.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_dl_369340.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_dl_369340.o" private/SLUS_204.86.rom --source src/grok_dl_369340.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_ef_350030.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_ef_350030.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_ef_350030.o" private/SLUS_204.86.rom --source src/grok_ef_350030.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_ef_350190.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_ef_350190.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_ef_350190.o" private/SLUS_204.86.rom --source src/grok_ef_350190.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_ef_3584f0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_ef_3584f0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_ef_3584f0.o" private/SLUS_204.86.rom --source src/grok_ef_3584f0.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_el_00393420.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_el_00393420.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_el_00393420.o" private/SLUS_204.86.rom --source src/grok_el_00393420.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_el_00393AA0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_el_00393AA0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_el_00393AA0.o" private/SLUS_204.86.rom --source src/grok_el_00393AA0.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_el_00394100.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_el_00394100.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_el_00394100.o" private/SLUS_204.86.rom --source src/grok_el_00394100.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_ex_3c13d0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_ex_3c13d0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_ex_3c13d0.o" private/SLUS_204.86.rom --source src/grok_ex_3c13d0.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_ex_3c43f0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_ex_3c43f0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_ex_3c43f0.o" private/SLUS_204.86.rom --source src/grok_ex_3c43f0.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_fg_003A6BC0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_fg_003A6BC0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_fg_003A6BC0.o" private/SLUS_204.86.rom --source src/grok_fg_003A6BC0.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_gf_00394BA0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_gf_00394BA0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_gf_00394BA0.o" private/SLUS_204.86.rom --source src/grok_gf_00394BA0.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_gi_003C65D0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_gi_003C65D0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_gi_003C65D0.o" private/SLUS_204.86.rom --source src/grok_gi_003C65D0.c

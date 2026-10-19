@@ -13,7 +13,7 @@ extern u8 *D_004C29DC __attribute__((section(".sdata")));
 extern int func_001757E0(u8 *, s32, s32);
 extern void func_00394CD0(u8 *);
 
-void residual_00394BA0(u8 *p)
+void func_00394BA0(u8 *p)
 {
     s32 n;
     s32 *d;
