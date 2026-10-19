@@ -110,3 +110,15 @@ s32 func_0016A930(u8 *p, u8 *q, s32 r) {
     }
     return 0;
 }
+
+s32 func_0016A6D0(u8 *p, u8 *q, s32 r) {
+    extern s32 func_0016A7C0(u8 *, u8 *, s32, s32);
+    u16 *t = *(u16 **)(p + 0x1D4);
+    if (r != 0) {
+        if (func_0016A7C0(p, q, t[2] & 0x3FF, r)) return 1;
+        if (func_0016A7C0(p, q, t[3] & 0x3FF, r)) return 1;
+        if (func_0016A7C0(p, q, t[4] & 0x3FF, r)) return 1;
+        if (func_0016A7C0(p, q, t[5] & 0x3FF, r)) return 1;
+    }
+    return 0;
+}
