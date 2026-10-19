@@ -141,3 +141,39 @@ done:
 err:
     func_003A9E50(a, b);
 }
+
+/* SP+0x20 holds two initialized float words, passed to 001830D0. */
+typedef float PlanarOffset[2] __attribute__((aligned(16)));
+void func_002612D0(u8 *a) {
+    PlanarOffset buf;
+    typedef char OffsetSizeCheck[(sizeof(buf)==8)?1:-1];
+    f32 c;
+    extern s32 func_00175700(u8 *);
+    extern void func_001830D0(u8 *, float *, s32);
+    extern int func_001757E0(u8 *, s32, s32);
+    extern void func_0036BFF0(u8 *, s32, s32, s32);
+    a[0x33C] = 5;
+    if ((s8)func_00175700(a) >= 0) {
+        if (*(s8 *)(a + 0x151) == 1) {
+            a[0x151] = 0;
+            *(u32 *)&buf[0] = 0xC1D55555;
+            *(u32 *)&buf[1] = 0x43092492;
+            func_001830D0(a, buf, 1);
+        }
+    }
+    if ((s8)a[0x153] < 0) {
+        a[6]++;
+        if (a[0x20D] != 2) {
+            a[0x20D] = 2;
+            c = 21.428569793701172f;
+            *(f32 *)(a + 0x38) = c + *(f32 *)(a + 0x430);
+        }
+        a[7] = 0;
+        func_001757E0(a, 0x16, 3);
+        func_0036BFF0(a, 0xA, 0x13, 0xA);
+        func_0036BFF0(a, 9, 0x13, 9);
+        func_0036BFF0(a, 0xB, 0x13, 0xB);
+    }
+    func_00175700(a);
+}
+
