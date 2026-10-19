@@ -70,9 +70,8 @@ def verify_switch_table(unit):
 def compile_and_verify(unit):
     source = Path(unit["source"])
     name = unit["name"]
-    # Use the data-unit name so each unit owns a unique object path even when
-    # multiple units are declared in the same source file.
-    object_path = data_build / (name + ".o")
+    # Match generate_hybrid_relink.py's object naming convention.
+    object_path = data_build / (source.stem + ".o")
     compile_result = subprocess.run(
         [
             wibo,
@@ -116,6 +115,15 @@ def compile_and_verify(unit):
 
 standalone_units = [unit for unit in units if unit["kind"] != "compiler_switch_table"]
 switch_tables = [unit for unit in units if unit["kind"] == "compiler_switch_table"]
+object_owners = {}
+for unit in standalone_units:
+    object_path = Path(unit["source"]).stem + ".o"
+    previous = object_owners.setdefault(object_path, unit)
+    if previous is not unit:
+        raise SystemExit(
+            f"standalone data units {previous['name']} and {unit['name']} "
+            f"share output object path {object_path}"
+        )
 if jobs == 1:
     for unit in standalone_units:
         try:
