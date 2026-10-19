@@ -7,6 +7,7 @@ typedef float f32;
 
 extern int func_00175700(u8 *);
 extern int func_003D92F0(u8 *);
+extern void func_0018C4B0(u8 *, s32);
 extern int func_001757E0(u8 *, int, int);
 extern void func_00185490(u8 *);
 extern void func_00183D10(u8 *);
@@ -337,4 +338,11 @@ void func_001F03A0(u8 *p)
         func_001843A0(p);
     else
         ((StateHandler)jtbl_0044F710[p[32]])(p);
+}
+void func_001F0EC0(u8 *p)
+{
+    p[7]++;
+    func_0018C4B0(p, 10);
+    func_001F0420(p);
+    func_001757E0(p, 15, 8);
 }
