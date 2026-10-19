@@ -15224,7 +15224,7 @@ func_00327750,0x00327750,0x164,src/w1812_g.c,complete
 func_003ECBE0,0x003ECBE0,0x118,src/w1812_h.c,complete
 func_003F89D8,0x003F89D8,0x120,src/w1812_i.c,complete
 func_00407770,0x00407770,0xF4,src/w1812_i.c,complete
-func_0040A378,0x0040A378,0xC4,src/w189_a.c,complete
+func_0040A378,0x0040A378,0xC4,src/w189_a.c,placeholder
 func_00404968,0x00404968,0x140,src/w189_a.c,complete
 func_002E29D0,0x002E29D0,0xD4,src/w189_b.c,complete
 func_002CEAB0,0x002CEAB0,0xE4,src/w189_b.c,complete
@@ -15561,3 +15561,6 @@ func_00271410,0x00271410,0x210,src/motion_speed_transition.c,complete
 func_004007A0,0x004007A0,0x40,src/set_runtime_sector_count_004007A0.c,complete
 func_004007F0,0x004007F0,0x2E0,src/process_runtime_object_004007F0.c,complete
 func_003FF810,0x003FF810,0x120,src/query_runtime_streams_003FF810.c,complete
+func_0041A730,0x0041A730,0x98,src/m5j.c,complete
+func_002340F0,0x002340F0,0xFC,src/w171_i.c,complete
+func_002DCAD0,0x002DCAD0,0xE8,src/deferred_move_setup.c,complete

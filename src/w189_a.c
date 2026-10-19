@@ -11,6 +11,8 @@ extern s32 func_0040A2F8();
 extern s32 func_0040A310();
 extern s32 func_0040A338();
 extern s32 func_0040A350();
+/* Uncredited legacy body: helper object arguments are still omitted.
+ * The typed, explicit-argument C candidate has not matched retail yet. */
 s32 func_0040A378(s32 a, s32 b) {
     s32 r = 0;
     if (a != 0) {
