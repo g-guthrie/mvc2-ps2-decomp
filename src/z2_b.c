@@ -37,6 +37,7 @@ void func_00351470(P351470 *p)
 typedef struct { u8 pad[0x7C]; s16 f7c[1]; } G305690;
 extern G305690 *D_004C2794;
 extern s32 D_004C1508[1], D_004C150C[1], D_004C1510[1];
+extern s32 D_004C0214[1], D_004C0218[1], D_004C021C[1];
 void func_00305690(u8 *p)
 {
     extern void func_001E3710();
@@ -67,6 +68,38 @@ void func_00305690(u8 *p)
     *(s32 *)(p + 0x1D8) = 0;
     D_004C2794->f7c[p[2]]++;
     func_001757E0(p, 9, p[0x168]);
+}
+
+void func_0023A940(u8 *p)
+{
+    extern void func_001E3710();
+    extern void func_001757E0();
+    switch (p[0x1FC]) {
+    case 0:
+        p[0x168] = 0;
+        p[0x1B5] = 9;
+        func_001E3710(p, 0x14);
+        *(s32 **)(p + 0x408) = D_004C0214;
+        p[0x1BB] = 0;
+        break;
+    case 1:
+        p[0x168] = 1;
+        p[0x1B5] = 10;
+        *(s32 **)(p + 0x408) = D_004C0218;
+        p[0x1BB] = 1;
+        break;
+    case 2:
+        p[0x168] = 2;
+        p[0x1B5] = 11;
+        *(s32 **)(p + 0x408) = D_004C021C;
+        p[0x1BB] = 2;
+        break;
+    }
+    { u32 t = *(u8 *)(p + 0x1B5); p[0x1B5] = t; }
+    p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+    *(s32 *)(p + 0x1D8) = 0;
+    D_004C2794->f7c[p[2]]++;
+    func_001757E0(p, 10, p[0x168]);
 }
 
 extern s32 D_004C2870, D_004C2848, D_004C284C;
