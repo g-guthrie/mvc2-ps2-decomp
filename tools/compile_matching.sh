@@ -11524,3 +11524,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/compile_ee96.py "$BUILD/create_decoder_group_0040E520.i" "$BUILD/create_decoder_group_0040E520.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/create_decoder_group_0040E520.o" "$BUILD/create_decoder_group_0040E520.s"
 "$PYTHON" tools/verify_object.py "$BUILD/create_decoder_group_0040E520.o" private/SLUS_204.86.rom --source src/create_decoder_group_0040E520.c
+
+# Keep the final release calls in the framed function without source barriers.
+"$WIBO" "$SNCPP" -P src/release_runtime_entries_0040D6A0.c "$BUILD/release_runtime_entries_0040D6A0.i"
+"$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --extra-flags=-fno-optimize-sibling-calls "$BUILD/release_runtime_entries_0040D6A0.i" "$BUILD/release_runtime_entries_0040D6A0.s"
+"$WIBO" "$SNAS" -G8 -o "$BUILD/release_runtime_entries_0040D6A0.o" "$BUILD/release_runtime_entries_0040D6A0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/release_runtime_entries_0040D6A0.o" private/SLUS_204.86.rom --source src/release_runtime_entries_0040D6A0.c

@@ -8,15 +8,6 @@ extern void func_0040CD38(void *);
 extern void func_0040D630(void);
 extern void func_0040D580(s32, s32);
 extern RuntimeU8 D_00489818[];
-void func_0040D6A0(void) {
-    s32 i;
-    if (--D_004C2474 == 0) {
-        for (i = 0; i < 16; i++)
-            if (((RuntimeEntrySlot *)D_00489818)[i].in_use == 1)
-                func_0040CD38(&((RuntimeEntrySlot *)D_00489818)[i]);
-        func_0011D8F8(D_00489818, 0, 0x4380); func_0040D630(); __asm__ volatile(""); func_0040D580(0, 0); __asm__ volatile("");
-    }
-}
 extern volatile s64 D_004C2348;
 extern volatile s64 D_004C22F8;
 extern s64 D_004C2350;

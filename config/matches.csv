@@ -11127,7 +11127,7 @@ func_0040B3B8,0x0040B3B8,0xa0,src/k6.c,complete
 func_00102F88,0x00102F88,0x10,src/k6a.c,placeholder
 func_00103808,0x00103808,0x18,src/k6a.c,placeholder
 func_00102EF0,0x00102EF0,0x2c,src/k6a.c,placeholder
-func_0040D6A0,0x0040D6A0,0x98,src/k6b.c,placeholder
+func_0040D6A0,0x0040D6A0,0x98,src/release_runtime_entries_0040D6A0.c,complete
 func_003FDE88,0x003FDE88,0x60,src/k6b.c,complete
 func_003FB178,0x003FB178,0x68,src/k6b.c,complete
 func_00154850,0x00154850,0x80,src/h6s.c,complete
