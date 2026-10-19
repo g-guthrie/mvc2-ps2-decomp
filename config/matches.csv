@@ -15640,3 +15640,5 @@ func_0016C3F0,0x0016C3F0,0x3C,src/func_0016C3F0.c,complete
 func_00176980,0x00176980,0x64,src/func_00176980.c,complete
 func_00361C60,0x00361C60,0x108,src/independent_state_entry_00361C60.c,complete
 func_003140F0,0x003140F0,0xE4,src/independent_state_entry_003140F0.c,complete
+func_0023E9C0,0x0023E9C0,0x98,src/state_entry_0023E9C0.c,complete
+func_00222290,0x00222290,0x58,src/state_entry_00222290.c,complete
