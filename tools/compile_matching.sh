@@ -10993,6 +10993,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/w1911_a.i" "$BUILD/w1911_a.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/w1911_a.o" "$BUILD/w1911_a.s"
 "$PYTHON" tools/verify_object.py "$BUILD/w1911_a.o" private/SLUS_204.86.rom --source src/w1911_a.c
+"$WIBO" "$SNCPP" -P src/fp_bit_add_parts_001192B0.c "$BUILD/fp_bit_add_parts_001192B0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/fp_bit_add_parts_001192B0.i" "$BUILD/fp_bit_add_parts_001192B0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/fp_bit_add_parts_001192B0.o" "$BUILD/fp_bit_add_parts_001192B0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/fp_bit_add_parts_001192B0.o" private/SLUS_204.86.rom --source src/fp_bit_add_parts_001192B0.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/w1911_b.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/w1911_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w1911_b.o" private/SLUS_204.86.rom --source src/w1911_b.c
