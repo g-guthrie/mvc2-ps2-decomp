@@ -15759,3 +15759,7 @@ func_001B2FB0,0x001B2FB0,0x34,src/grok_nop_1b2fb0.c,complete
 func_001B0CF0,0x001B0CF0,0x6C,src/grok_nopa_1b0cf0.c,complete
 func_001B2A10,0x001B2A10,0x68,src/grok_nopa_1b2a10.c,complete
 func_001FA860,0x001FA860,0x50,src/grok_nop_fa85c.c,complete
+func_001B4020,0x001B4020,0x9C,src/grok_nopa_1b4020.c,complete
+func_001B4120,0x001B4120,0x90,src/grok_nopa_1b4120.c,complete
+func_001B4440,0x001B4440,0x88,src/grok_nopa_1b4440.c,complete
+func_001B4FD0,0x001B4FD0,0x68,src/grok_nopa_1b4fd0.c,complete

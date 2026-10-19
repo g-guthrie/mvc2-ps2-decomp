@@ -11796,3 +11796,19 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_nop_fa85c.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_nop_fa85c.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_nop_fa85c.o" private/SLUS_204.86.rom --source src/grok_nop_fa85c.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_nopa_1b4020.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_nopa_1b4020.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_nopa_1b4020.o" private/SLUS_204.86.rom --source src/grok_nopa_1b4020.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_nopa_1b4120.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_nopa_1b4120.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_nopa_1b4120.o" private/SLUS_204.86.rom --source src/grok_nopa_1b4120.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_nopa_1b4440.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_nopa_1b4440.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_nopa_1b4440.o" private/SLUS_204.86.rom --source src/grok_nopa_1b4440.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_nopa_1b4fd0.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_nopa_1b4fd0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_nopa_1b4fd0.o" private/SLUS_204.86.rom --source src/grok_nopa_1b4fd0.c
