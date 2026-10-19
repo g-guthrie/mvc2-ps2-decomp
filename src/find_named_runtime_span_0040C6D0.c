@@ -11,3 +11,16 @@ void func_0040C6D0(int *output,char *name,unsigned char *bytes,int count){
  }
  output[0]=0;output[1]=0;
 }
+
+extern RuntimeDirectory D_00489000;
+extern int func_0040A578(char *,char *);
+void func_0040A9C8(int *output,char *name,unsigned char *bytes,int count){
+ int i;
+ RuntimeDirectoryEntry *spans=(RuntimeDirectoryEntry *)bytes;
+ for(i=0;i<count;i++){
+  if(func_0040A578(name,(char *)(bytes+(D_00489000.span_count*8+(D_00489000.name_length+1)*i)))==0){
+   output[0]=spans[i].descriptor;output[1]=spans[i].length;return;
+  }
+ }
+ output[0]=0;output[1]=0;
+}

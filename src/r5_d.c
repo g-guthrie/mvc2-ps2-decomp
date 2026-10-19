@@ -14,3 +14,9 @@ void func_00417270(u16 a) {
     s32 i = a;
     func_003DDD00(D_006327B0 + (D_004C2B40 << 6), (float)(6.283185307179586 * i / 65536.0));
 }
+
+extern void func_003DDB70(void *,float);
+void func_00417350(u16 a) {
+    s32 i = a;
+    func_003DDB70(D_006327B0 + (D_004C2B40 << 6), (float)(6.283185307179586 * i / 65536.0));
+}

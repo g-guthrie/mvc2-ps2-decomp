@@ -5,3 +5,5 @@ func_0031FA10,0x0031FA10,0xDC,src/grok_sc_0021a560.c,MWCCPS2,-O3 -sdatathreshold
 func_0031D2D0,0x0031D2D0,0xA8,src/grok_y3_217df0.c,MWCCPS2,-O3 -Op,jtbl_0045DB30[0]
 func_003D4AD0,0x003D4AD0,0x94,src/m3i.c,MWCCPS2,"-O3,p -sdatathreshold 0",003D4F70 / 003D4F80 direct JAL
 func_002E15C0,0x002E15C0,0x104,src/grok_cu_2e15c0.c,MWCCPS2,-O3 -sdatathreshold 8,0045AFE0 / 0045AFEC callback pointers
+func_00417350,0x00417350,0x70,src/r5_d.c,MWCCPS2,-O3 -Op -fp off -sdatathreshold 8,001227C8 / 003416E8 direct JAL
+func_0040A9C8,0x0040A9C8,0xC8,src/find_named_runtime_span_0040C6D0.c,EE GCC 2.96,O2 G0 default production recipe,0040AB44 direct JAL

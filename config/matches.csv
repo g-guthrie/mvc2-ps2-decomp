@@ -16729,3 +16729,5 @@ func_0031FA10,0x0031FA10,0xDC,src/grok_sc_0021a560.c,complete
 func_0031D2D0,0x0031D2D0,0xA8,src/grok_y3_217df0.c,complete
 func_003D4AD0,0x003D4AD0,0x94,src/m3i.c,complete
 func_002E15C0,0x002E15C0,0x104,src/grok_cu_2e15c0.c,complete
+func_00417350,0x00417350,0x70,src/r5_d.c,complete
+func_0040A9C8,0x0040A9C8,0xC8,src/find_named_runtime_span_0040C6D0.c,complete
