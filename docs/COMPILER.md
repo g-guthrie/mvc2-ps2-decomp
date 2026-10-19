@@ -721,3 +721,10 @@ and its adjacent handler, respectively. The outer dispatcher at
 `jtbl_0044F8F0[p[7]](p)`; `func_001F3E90` consumes only A0 and forwards it to
 the status and error handlers. Their complete split bodies
 match in `grok_w5_001f.c` under MWCCPS2 3.0.3 `-O3 -sdatathreshold 8`.
+
+
+For manual object builds, create the output directories first, for example
+`mkdir -p build/matching/data`. A missing output directory was confirmed to cause
+`wibo-macos` to report its missing `FormatMessageA` import while attempting to
+format the compiler's file error. The same compiler commands succeeded once the
+directories existed; check the output path before diagnosing a toolchain failure.
