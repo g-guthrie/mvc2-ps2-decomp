@@ -13060,6 +13060,7 @@ func_003FFF60,0x003FFF60,0x18,src/u0_a.c,complete
 func_003FDBC0,0x003FDBC0,0xB0,src/u0_b.c,complete
 func_00118E90,0x00118E90,0xB4,src/u0_c.c,complete
 func_00407868,0x00407868,0xBC,src/u0_c.c,complete
+func_004076B0,0x004076B0,0xBC,src/u0_c.c,complete
 func_00405DF0,0x00405DF0,0xC4,src/u0_c.c,complete
 func_00401980,0x00401980,0xC8,src/u0_c.c,complete
 func_00408F88,0x00408F88,0xD0,src/u0_c.c,complete

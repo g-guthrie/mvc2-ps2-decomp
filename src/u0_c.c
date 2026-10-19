@@ -29,9 +29,11 @@ float func_00118E90(fp_t *src) {
     return dst.value;
 }
 typedef struct { u8 pad[0x60]; s32 (*fn)(void *, s32, s32, s32); } T;
+extern char D_004BD210[], D_004BD238[], D_004BD268[];
 extern char D_004BD330[], D_004BD358[], D_004BD380[];
-extern T *func_00406128(s32);
-extern void func_00405DC8(char *), func_0011D8F8(void *, s32, s32);
+extern s32 func_00406128(s32);
+extern void func_00405DC8(const char *);
+extern void *func_0011D8F8(void *, s32, u32);
 s32 func_00407868(s32 a, s32 b) {
     s32 v[5];
     T *t;
@@ -43,7 +45,7 @@ s32 func_00407868(s32 a, s32 b) {
         func_00405DC8(D_004BD358);
         return -1;
     }
-    t = func_00406128(a);
+    t = (T *)func_00406128(a);
     if (t == 0) {
         func_00405DC8(D_004BD380);
         return -1;
@@ -53,11 +55,32 @@ s32 func_00407868(s32 a, s32 b) {
     if (t->fn != 0) return t->fn(v, 3, 0, 0);
     return -1;
 }
+
+s32 func_004076B0(s32 a, s32 b) {
+    s32 v[5];
+    T *t;
+    if (a == 0) {
+        func_00405DC8(D_004BD210);
+        return -1;
+    }
+    if (b == 0) {
+        func_00405DC8(D_004BD238);
+        return -1;
+    }
+    t = (T *)func_00406128(a);
+    if (t == 0) {
+        func_00405DC8(D_004BD268);
+        return -1;
+    }
+    func_0011D8F8(v, 0, 0x14);
+    v[0] = b;
+    if (t->fn != 0) return t->fn(v, 1, 0, 0);
+    return -1;
+}
 typedef struct { s32 a, b; } E8;
 typedef struct { s32 pad; u8 b[12]; } E16;
 extern volatile s32 D_004872E0[]; extern s32 D_004872EC;
 extern E8 D_0062FA08[]; extern E16 D_0062FB48[]; extern u8 D_0062FD48[];
-extern void func_0011D8F8(void *, s32, s32);
 void func_00405DF0(void) {
     s32 i;
     (void)D_004872E0[0];
@@ -116,7 +139,7 @@ s32 *func_00408F88(u32 a, s32 *b, u32 c) {
 }
 typedef struct { u8 pad[0x48]; s32 (*fn)(s32, s32, s32); } T48;
 extern char D_004BCEF0[];
-extern void func_00406688(char *, char *, s32), func_004067B8(char *), func_00407B08(char *, char *), func_00405DC8(char *);
+extern void func_00406688(char *, char *, s32), func_004067B8(char *), func_00407B08(char *, char *), func_00405DC8(const char *);
 s32 func_004071C0(s32 a, s32 b, s32 c) {
     char buf[0x130];
     char buf2[0x130];
