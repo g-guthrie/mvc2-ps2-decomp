@@ -38,3 +38,24 @@ void func_001B3810(u8 *p) {
         func_00175670(p);
     }
 }
+
+typedef struct { u8 value; u8 pad[5]; } B5714Entry;
+extern B5714Entry D_004B5714[];
+extern void func_001754A0(u8 *, s32, s32);
+
+void func_001B38D0(u8 *p) {
+    u8 *q = *(u8 **)(p + 0x18);
+    u16 *state = (u16 *)(p + 0xD0);
+    if (*(s8 *)(q + 0x151) != 0) {
+        p[6]++;
+        p[0x13C] = 1;
+        func_001B3D90(q, p);
+        func_001754A0(p, 27, D_004B5714[p[0x21]].value);
+    }
+    if (*state != *(u16 *)(q + 0x168)) {
+        p[6] = 0;
+        p[5] = 0;
+        p[4] = 0;
+        p[0x13C] = 0;
+    }
+}

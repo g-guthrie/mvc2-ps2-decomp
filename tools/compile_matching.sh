@@ -9793,6 +9793,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_luna_oct19_callbacks.c -c -lang c -O3 -sdatathreshold 0 \
     -o "$BUILD/grok_luna_oct19_callbacks.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_luna_oct19_callbacks.o" private/SLUS_204.86.rom --source src/grok_luna_oct19_callbacks.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_luna_oct19_callbacks_b2.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_luna_oct19_callbacks_b2.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_luna_oct19_callbacks_b2.o" private/SLUS_204.86.rom --source src/grok_luna_oct19_callbacks_b2.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/w184_f.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/w184_f.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w184_f.o" private/SLUS_204.86.rom --source src/w184_f.c

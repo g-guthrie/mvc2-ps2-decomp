@@ -15677,3 +15677,11 @@ func_001195D0,0x001195D0,0x284,src/fp_bit_multiply_001195D0.c,complete
 func_00119118,0x00119118,0xD8,src/fp_bit_pack_double_00119118.c,complete
 func_0040E520,0x0040E520,0x348,src/create_decoder_group_0040E520.c,complete
 func_00119858,0x00119858,0x140,src/fp_bit_divide_double_00119858.c,complete
+func_00198570,0x00198570,0x4C,src/grok_luna_oct19_callbacks_b2.c,complete
+func_0019B280,0x0019B280,0x3C,src/grok_luna_oct19_callbacks_b2.c,complete
+func_00199CF0,0x00199CF0,0x64,src/grok_luna_oct19_callbacks_b2.c,complete
+func_001FF970,0x001FF970,0x5C,src/grok_luna_oct19_callbacks_b2.c,complete
+func_001FE580,0x001FE580,0x74,src/create_owner_mode_child_001978B0.c,complete
+func_001FFF00,0x001FFF00,0xA4,src/create_owner_mode_child_001978B0.c,complete
+func_001B26C0,0x001B26C0,0x60,src/grok_luna_oct19_callbacks_b2.c,complete
+func_001B38D0,0x001B38D0,0xAC,src/m12c.c,complete

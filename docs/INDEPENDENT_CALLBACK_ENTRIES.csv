@@ -85,3 +85,11 @@ func_003B0540,0x003B0540,0x68,func_003B0520,jtbl_00473C70,0x00473C70,src/indepen
 func_003B0D90,0x003B0D90,0x68,func_003B0D70,jtbl_00473CC0,0x00473CC0,src/independent_state_entries_003B0540_003B0D90.c
 func_003B9C40,0x003B9C40,0x38,residual_003B9C20,jtbl_004744C0,0x004744C0,src/independent_state_entry_003B9C40.c
 func_003BC2C0,0x003BC2C0,0x60,func_003BC2A0,jtbl_00474690,0x00474690,src/independent_state_entry_003BC2C0.c
+func_00198570,0x00198570,0x4C,func_00198550,jtbl_0044A3F0,0x0044A3F0,src/grok_luna_oct19_callbacks_b2.c
+func_00199CF0,0x00199CF0,0x64,func_00199CD0,jtbl_0044A6F0,0x0044A6F0,src/grok_luna_oct19_callbacks_b2.c
+func_0019B280,0x0019B280,0x3C,func_0019B260,jtbl_0044A860,0x0044A860,src/grok_luna_oct19_callbacks_b2.c
+func_001B26C0,0x001B26C0,0x60,func_001B26A0,jtbl_0044BCC0,0x0044BCC0,src/grok_luna_oct19_callbacks_b2.c
+func_001B38D0,0x001B38D0,0xAC,func_001B38B0,jtbl_0044BD28,0x0044BD28,src/m12c.c
+func_001FE580,0x001FE580,0x74,func_001FE560,jtbl_0044FFD0,0x0044FFD0,src/create_owner_mode_child_001978B0.c
+func_001FF970,0x001FF970,0x5C,func_001FF950,jtbl_00450110,0x00450110,src/grok_luna_oct19_callbacks_b2.c
+func_001FFF00,0x001FFF00,0xA4,func_001FFEE0,jtbl_00450138,0x00450138,src/create_owner_mode_child_001978B0.c
