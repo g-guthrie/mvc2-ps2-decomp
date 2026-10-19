@@ -15888,3 +15888,7 @@ func_0021BAB0,0x0021BAB0,0x30,src/release_owner_0021bae0.c,complete
 func_0021BAE0,0x0021BAE0,0x100,src/release_owner_0021bae0.c,complete
 func_002381E0,0x002381E0,0x20,src/launch_reset_00238200.c,complete
 func_00238200,0x00238200,0x100,src/launch_reset_00238200.c,complete
+func_00200190,0x00200190,0x28,src/early_motion_initializers.c,complete
+func_002001C0,0x002001C0,0xA8,src/early_motion_initializers.c,complete
+func_00202110,0x00202110,0x20,src/early_motion_initializers.c,complete
+func_00202130,0x00202130,0xB8,src/early_motion_initializers.c,complete

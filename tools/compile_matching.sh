@@ -12322,3 +12322,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/launch_reset_00238200.o"
 "$PYTHON" tools/verify_object.py "$BUILD/launch_reset_00238200.o" \
     private/SLUS_204.86.rom --source src/launch_reset_00238200.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/early_motion_initializers.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/early_motion_initializers.o"
+"$PYTHON" tools/verify_object.py "$BUILD/early_motion_initializers.o" \
+    private/SLUS_204.86.rom --source src/early_motion_initializers.c
