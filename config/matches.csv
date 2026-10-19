@@ -15956,3 +15956,4 @@ func_0027AF80,0x0027AF80,0x21C,src/palette_cycle_0027af80.c,complete
 func_00250B40,0x00250B40,0x230,src/timed_motion_00250b40.c,complete
 func_002357F0,0x002357F0,0x208,src/jump_motion_002357f0.c,complete
 func_0023C450,0x0023C450,0x1FC,src/launch_fixed_motion_0023c450.c,complete
+func_0023CF30,0x0023CF30,0x20C,src/launch_fixed_motion_0023cf30.c,complete

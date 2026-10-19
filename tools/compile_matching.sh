@@ -12522,3 +12522,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/launch_fixed_motion_0023c450.o"
 "$PYTHON" tools/verify_object.py "$BUILD/launch_fixed_motion_0023c450.o" \
     private/SLUS_204.86.rom --source src/launch_fixed_motion_0023c450.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/launch_fixed_motion_0023cf30.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/launch_fixed_motion_0023cf30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/launch_fixed_motion_0023cf30.o" \
+    private/SLUS_204.86.rom --source src/launch_fixed_motion_0023cf30.c
