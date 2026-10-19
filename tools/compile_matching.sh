@@ -11410,3 +11410,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/independent_state_entry_00320F60.o"
 "$PYTHON" tools/verify_object.py "$BUILD/independent_state_entry_00320F60.o" \
     private/SLUS_204.86.rom --source src/independent_state_entry_00320F60.c
+
+# Queue-backed runtime entry construction; complete EE GCC 2.96 function.
+"$WIBO" "$SNCPP" -P src/runtime_entry_create_0040CC30.c "$BUILD/runtime_entry_create_0040CC30.i"
+"$PYTHON" tools/compile_ee96.py "$BUILD/runtime_entry_create_0040CC30.i" "$BUILD/runtime_entry_create_0040CC30.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/runtime_entry_create_0040CC30.o" "$BUILD/runtime_entry_create_0040CC30.s"
+"$PYTHON" tools/verify_object.py "$BUILD/runtime_entry_create_0040CC30.o" private/SLUS_204.86.rom --source src/runtime_entry_create_0040CC30.c
