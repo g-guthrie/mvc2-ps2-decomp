@@ -15974,3 +15974,4 @@ func_002763B0,0x002763B0,0x21C,src/jump_table_motion_002763b0.c,complete
 func_0027E090,0x0027E090,0x21C,src/landing_effect_0027e090.c,complete
 func_0028D440,0x0028D440,0x70,src/owner_state_callback_0028D440.c,complete
 func_0023C9A0,0x0023C9A0,0x184,src/launch_fixed_motion_0023c450.c,complete
+func_0022F590,0x0022F590,0x140,src/queued_action_0022f590.c,complete
