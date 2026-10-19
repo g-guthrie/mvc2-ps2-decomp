@@ -15838,3 +15838,4 @@ func_003239F0,0x003239F0,0x9C,src/grok_q4_3239f0.c,complete
 func_00325460,0x00325460,0xC0,src/grok_q4_325460.c,complete
 func_00325730,0x00325730,0xC0,src/grok_q4_325730.c,complete
 func_00320500,0x00320500,0xB8,src/grok_q4_320500.c,complete
+func_001B53E0,0x001B53E0,0x15C,src/event_clone_001b53e0.c,complete
