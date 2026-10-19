@@ -12348,3 +12348,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/repeating_child_effect_00205c10.o"
 "$PYTHON" tools/verify_object.py "$BUILD/repeating_child_effect_00205c10.o" \
     private/SLUS_204.86.rom --source src/repeating_child_effect_00205c10.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/counter_effects_00206380.c -c -lang c -O3 -Op -sdatathreshold 0 \
+    -o "$BUILD/counter_effects_00206380.o"
+"$PYTHON" tools/verify_object.py "$BUILD/counter_effects_00206380.o" \
+    private/SLUS_204.86.rom --source src/counter_effects_00206380.c

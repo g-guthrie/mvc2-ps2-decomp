@@ -15898,3 +15898,4 @@ func_0020A230,0x0020A230,0x24,src/side_shift_0020a260.c,complete
 func_0020A260,0x0020A260,0xB8,src/side_shift_0020a260.c,complete
 func_001209B8,0x001209B8,0x74,src/newlib_vfprintf_entry_001209B8.c,complete
 func_00205C10,0x00205C10,0x14C,src/repeating_child_effect_00205c10.c,complete
+func_00206380,0x00206380,0x150,src/counter_effects_00206380.c,complete
