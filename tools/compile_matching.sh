@@ -12426,3 +12426,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/motion_stop_002C1580.o"
 "$PYTHON" tools/verify_object.py "$BUILD/motion_stop_002C1580.o" \
     private/SLUS_204.86.rom --source src/motion_stop_002C1580.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/angle_velocity_00237d40.c -c -lang c -O3 -Op -sdatathreshold 0 \
+    -o "$BUILD/angle_velocity_00237d40.o"
+"$PYTHON" tools/verify_object.py "$BUILD/angle_velocity_00237d40.o" \
+    private/SLUS_204.86.rom --source src/angle_velocity_00237d40.c

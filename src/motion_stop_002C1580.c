@@ -2,8 +2,8 @@ typedef unsigned char u8;
 typedef signed int s32;
 typedef float f32;
 
-extern void func_00175700(u8 *);
-extern void func_001757E0(u8 *, s32, s32);
+extern s32 func_00175700(u8 *);
+extern s32 func_001757E0(u8 *, s32, s32);
 
 void func_002C1580(u8 *p)
 {

@@ -707,7 +707,7 @@ data object or a full actor layout. The inline event helper retains the typed
 action write, frame reset, and per-player counter update seen in retail.
 
 The complete `0x00255950` (1,668-byte) and `0x00274060` (228-byte) routines match
-with MWCCPS2 3.0.3 `-O3 -Op -sdatathreshold 8`. A raw-byte self-assignment can
+with MWCCPS2 3.0.3 `-O3 -Op -sdatathreshold 8 -i src`. A raw-byte self-assignment can
 eliminate native action-byte reads and writes under this profile. Preserve the
 field's checked type and ordinary byte-oriented caller view; do not add volatile
 accesses, padding, or opcode patches. The first routine's complete 52-byte compiler
