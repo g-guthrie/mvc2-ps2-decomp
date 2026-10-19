@@ -15763,3 +15763,12 @@ func_001B4020,0x001B4020,0x9C,src/grok_nopa_1b4020.c,complete
 func_001B4120,0x001B4120,0x90,src/grok_nopa_1b4120.c,complete
 func_001B4440,0x001B4440,0x88,src/grok_nopa_1b4440.c,complete
 func_001B4FD0,0x001B4FD0,0x68,src/grok_nopa_1b4fd0.c,complete
+func_00207710,0x00207710,0xA4,src/grok_nopb_07710.c,complete
+func_0020C720,0x0020C720,0x90,src/grok_nopb_0c720.c,complete
+func_0020EAD0,0x0020EAD0,0x9C,src/grok_nopb_0ead0.c,complete
+func_0020EBF0,0x0020EBF0,0x9C,src/grok_nopb_0ebf0.c,complete
+func_00238D50,0x00238D50,0x98,src/grok_nopb_38d50.c,complete
+func_002403E0,0x002403E0,0x84,src/grok_nopb_403e0.c,complete
+func_002424A0,0x002424A0,0x98,src/grok_nopb_424a0.c,complete
+func_002425A0,0x002425A0,0x98,src/grok_nopb_425a0.c,complete
+func_002777E0,0x002777E0,0x98,src/grok_nopb_777e0.c,complete
