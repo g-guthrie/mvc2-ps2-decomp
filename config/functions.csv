@@ -5077,7 +5077,7 @@ func_001DBCD0,0x001DBCD0,0x90,0x001DBD60,code,spimdisasm-explicit-size-before-fi
 func_001DBD60,0x001DBD60,0x84,0x001DBDE4,code,spimdisasm-explicit-size-before-first-data
 func_001DBDF0,0x001DBDF0,0x5C,0x001DBE4C,code,spimdisasm-explicit-size-before-first-data
 func_001DBE50,0x001DBE50,0x20,0x001DBE70,code,matching-c-head-split
-residual_001DBE70,0x001DBE70,0x94,0x001DBF04,assembly_residual,verified-boundary-after-matching-head
+func_001DBE70,0x001DBE70,0x94,0x001DBF04,code,verified-complete-c-function
 func_001DBF10,0x001DBF10,0x94,0x001DBFA4,code,spimdisasm-explicit-size-before-first-data
 func_001DBFB0,0x001DBFB0,0xA8,0x001DC058,code,spimdisasm-explicit-size-before-first-data
 func_001DC060,0x001DC060,0x44,0x001DC0A4,code,spimdisasm-explicit-size-before-first-data

@@ -17081,3 +17081,4 @@ func_003C7A00,0x003C7A00,0xC0,src/owner_height_landing_003c7a00.c,complete
 func_0036D460,0x0036D460,0xEC,src/owner_effect_spawn_0036d460.c,complete
 func_003D7F10,0x003D7F10,0x170,src/roster_slot_restore_003d7f10.c,complete
 func_003DD360,0x003DD360,0xDC,src/perspective_matrix_003dd360.c,complete
+func_001DBE70,0x001DBE70,0x94,src/random_pair_state_001dbe70.c,matching

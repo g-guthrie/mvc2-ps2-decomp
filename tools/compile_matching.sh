@@ -14951,4 +14951,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/roster_slot_restore_003
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/perspective_matrix_003dd360.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/perspective_matrix_003dd360.o"
 "$PYTHON" tools/verify_object.py "$BUILD/perspective_matrix_003dd360.o" private/SLUS_204.86.rom --source src/perspective_matrix_003dd360.c
 
+# Independently recovered complete callback body.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/random_pair_state_001dbe70.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/random_pair_state_001dbe70.o"
+"$PYTHON" tools/verify_object.py "$BUILD/random_pair_state_001dbe70.o" private/SLUS_204.86.rom --source src/random_pair_state_001dbe70.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
