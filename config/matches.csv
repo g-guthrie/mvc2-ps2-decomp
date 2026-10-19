@@ -15624,3 +15624,5 @@ func_002A6EA0,0x002A6EA0,0x70,src/state_entries_002A6EA0.c,complete
 func_002ECDC0,0x002ECDC0,0x80,src/state_entries_002ECDC0.c,complete
 func_00282720,0x00282720,0x64,src/state_entries_00282720.c,complete
 func_003145A0,0x003145A0,0x124,src/independent_state_entry_003145A0.c,complete
+func_002CED00,0x002CED00,0xA8,src/state_entries_002CED00.c,complete
+func_002F1530,0x002F1530,0xD0,src/state_entries_002CED00.c,complete

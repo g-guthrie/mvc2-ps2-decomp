@@ -11306,3 +11306,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/independent_state_entry_003145A0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/independent_state_entry_003145A0.o" \
     private/SLUS_204.86.rom --source src/independent_state_entry_003145A0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_002CED00.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/state_entries_002CED00.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_002CED00.o" private/SLUS_204.86.rom --source src/state_entries_002CED00.c
