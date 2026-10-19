@@ -54,3 +54,43 @@ void func_002D6A60(S2D6 *p)
         break;
     }
 }
+
+void func_002E1BB0(S2D6 *p)
+{
+    extern void func_00183D90(S2D6 *);
+    extern void func_001863F0(S2D6 *);
+    extern s8 func_00175700(S2D6 *);
+    extern void func_00184540(S2D6 *);
+    extern void func_00182380(S2D6 *);
+    extern void func_001821D0(S2D6 *);
+    extern void func_001820A0(S2D6 *);
+    extern void func_00182300(S2D6 *);
+    extern int func_001864A0(S2D6 *);
+    extern void func_001865B0(S2D6 *);
+    extern void func_002E18F0(S2D6 *);
+    extern void func_002E1990(S2D6 *);
+    switch (p->b213) {
+    case 3:
+        func_00183D90(p);
+    case 0:
+        p->f34 += p->f5C;
+        p->f5C += p->f68;
+        p->f38 += p->f60;
+        p->f60 += p->f6C;
+        func_001863F0(p);
+        if (p->b212 == 0) func_002E18F0(p);
+        else func_002E1990(p);
+        break;
+    case 2:
+        if (*(u8 *)((u8 *)p + 0x215) == 0) {
+            func_00182380(p);
+            func_001821D0(p);
+        }
+    case 1:
+        func_001820A0(p);
+        func_00182300(p);
+        if (func_00175700(p) < 0) func_00184540(p);
+        if (func_001864A0(p) != 0) func_001865B0(p);
+        break;
+    }
+}
