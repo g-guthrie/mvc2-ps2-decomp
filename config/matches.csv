@@ -15988,3 +15988,4 @@ func_00256A70,0x00256A70,0x1A8,src/select_input_buffer_00256a70.c,complete
 func_002DB380,0x002DB380,0xFC,src/owner_state_callback_002DB380.c,complete
 func_002947C0,0x002947C0,0x70,src/owner_state_callback_002947C0.c,complete
 func_00294D40,0x00294D40,0x68,src/n4d.c,complete
+func_0029C1E0,0x0029C1E0,0x160,src/w187_s.c,complete
