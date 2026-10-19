@@ -15698,3 +15698,4 @@ func_0040C6D0,0x0040C6D0,0xC8,src/find_named_runtime_span_0040C6D0.c,complete
 func_0011B838,0x0011B838,0xB8,src/newlib_sflags_0011B838.c,complete
 func_003112D0,0x003112D0,0x34,src/independent_state_entry_003112D0.c,complete
 func_0011B480,0x0011B480,0x114,src/newlib_fflush_0011B480.c,complete
+func_0011B380,0x0011B380,0x100,src/newlib_fclose_0011B380.c,complete
