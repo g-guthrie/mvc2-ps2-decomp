@@ -28,3 +28,17 @@ MODE_INPUT_GATE(func_002D53F0, 1)
 MODE_INPUT_GATE(func_0030BB60, 1)
 
 MODE_INPUT_GATE(residual_002B7940, 2)
+/* Native table entry 0x0044F490 uses the opposite two input transition results. */
+int func_001ED000(u8 *p) {
+    if ((p[0x22] = (*(unsigned short *)(p + 0x20e) & 0xc00) >> 10)) {
+        int mode = p[0x212];
+        if (!mode && p[0x1b7] == 1) {
+            int result = func_001E7FD0(p);
+            if (result) { p[0x20b] = 1; return result; }
+        } else if (mode == 1 && p[0x1b7] == 1) {
+            int result = func_001E7FD0(p);
+            if (result) { p[0x20b] = 0; return result; }
+        }
+    }
+    return 0;
+}

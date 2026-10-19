@@ -8339,6 +8339,7 @@ func_002C44C0,0x002C44C0,0xA0,src/mode_input_gates.c,complete
 func_002D0360,0x002D0360,0xA0,src/mode_input_gates.c,complete
 func_002D53F0,0x002D53F0,0xA0,src/mode_input_gates.c,complete
 func_0030BB60,0x0030BB60,0xA0,src/mode_input_gates.c,complete
+func_001ED000,0x001ED000,0xA0,src/mode_input_gates.c,complete
 func_00156BE0,0x00156BE0,0x6C,src/uniform_scale_steps.c,complete
 func_00156D00,0x00156D00,0x6C,src/uniform_scale_steps.c,complete
 func_00156EE0,0x00156EE0,0x6C,src/uniform_scale_steps.c,complete
