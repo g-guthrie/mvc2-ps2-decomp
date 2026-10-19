@@ -5,6 +5,7 @@ from types import SimpleNamespace
 from tools.verify_object import (
     R_MIPS_26, R_MIPS_32, R_MIPS_HI16, R_MIPS_LO16,
     R_MIPS_GPREL16, relocate_bytes, relocation_target, whole_function_anchors,
+    validated_readonly_bases,
 )
 
 
@@ -19,6 +20,57 @@ class RelocationTest(unittest.TestCase):
         def __init__(self, size):
             super().__init__(sh_flags=6)
             self.data_size = size
+
+    def readonly_fixture(self, *, addend=4, flags=2, extra=b''):
+        class Section(dict):
+            def __init__(self, name, body, flags):
+                super().__init__(sh_type='SHT_PROGBITS', sh_flags=flags)
+                self.name, self.body, self.data_size = name, body, len(body)
+            def data(self):
+                return self.body
+        class Rel(dict):
+            def is_RELA(self):
+                return False
+        code = Section('.text.f', b'\0' * 8, 6)
+        data = Section('.rodata', struct.pack('<II', 0x12345678, addend) + extra, flags)
+        rel = Section('.rel.rodata', b'', 0)
+        rel.update(sh_type='SHT_REL', sh_info=1)
+        rel.iter_relocations = lambda: [Rel(r_offset=4, r_info_type=R_MIPS_32, r_info_sym=0)]
+        local, function = self.Symbol('', 0, 0), self.Symbol('f', 0, 0)
+        sections = [code, data, rel]
+        table = SimpleNamespace(get_symbol=lambda _: local)
+        elf = SimpleNamespace(iter_sections=lambda: iter(sections),
+                              get_section=lambda i: sections[i],
+                              get_section_by_name=lambda _: table)
+        matches = [dict(name='f', source='src/f.c', size='8')]
+        addresses = dict(f=0x100000, _gp=0x4C7270)
+        target = b'\0' * 16 + struct.pack('<II', 0x12345678, 0x100004) + b'\0' * 8
+        mapping = [dict(source='src/f.c', section='.rodata', address='0x100010', size='8')]
+        return elf, {'f': function}, matches, addresses, target, mapping
+
+    def test_readonly_section_requires_all_relocated_bytes(self):
+        args = self.readonly_fixture()
+        self.assertEqual(validated_readonly_bases(*args), {1: 0x100010})
+        elf, symbols, matches, addresses, target, mappings = args
+        mappings[0]['address'] = '0x100014'
+        with self.assertRaisesRegex(SystemExit, 'differs from retail'):
+            validated_readonly_bases(*args)
+        mappings[0]['address'] = '0x100010'
+        corrupted = target[:16] + b'\0' + target[17:]
+        with self.assertRaisesRegex(SystemExit, 'differs from retail'):
+            validated_readonly_bases(elf, symbols, matches, addresses, corrupted, mappings)
+
+    def test_readonly_section_rejects_partial_writable_and_escaped_labels(self):
+        for options, message in [
+                ({'extra': b'\0'}, 'invalid whole readonly'),
+                ({'flags': 3}, 'invalid whole readonly'),
+                ({'addend': 8}, 'outside whole function')]:
+            with self.subTest(options=options), self.assertRaisesRegex(SystemExit, message):
+                validated_readonly_bases(*self.readonly_fixture(**options))
+        args = self.readonly_fixture()
+        args[1]['f']['st_size'] = 4
+        with self.assertRaisesRegex(SystemExit, 'no whole function owner'):
+            validated_readonly_bases(*args)
 
     def test_section_anchor_requires_complete_selected_function_ownership(self):
         symbol = self.Symbol('callee', 10, 0)

@@ -125,13 +125,16 @@ def report_words(
         print(f"  ... {len(bad) - 24} more")
 
 
-def relocation_target(symbol, symbols, addresses):
+def relocation_target(symbol, symbols, addresses, section_bases=None):
     """Resolve local section references from consistent, known symbol anchors."""
     if symbol.name in addresses:
         return addresses[symbol.name], symbol.name
     section_index = symbol["st_shndx"]
     if not isinstance(section_index, int):
         raise SystemExit(f"no target address for relocation {symbol.name!r}")
+    if section_bases and section_index in section_bases:
+        return (section_bases[section_index] + symbol["st_value"],
+                f"@section:{section_index}:{symbol['st_value']}")
     bases = {
         addresses[anchor.name] - anchor["st_value"]
         for anchor in symbols
@@ -161,6 +164,72 @@ def whole_function_anchors(elf, symbols, matches):
     return anchors
 
 
+def load_readonly_sections(path=Path("config/readonly_sections.csv")):
+    """Explicit compiler-constant locations; these do not award data credit."""
+    if not path.is_file():
+        return []
+    with path.open(newline="", encoding="utf-8") as stream:
+        return list(csv.DictReader(stream))
+
+
+def validated_readonly_bases(elf, symbols, matches, addresses, target, mappings):
+    """Anchor a complete readonly section only after checking every byte.
+
+    Jump-table entries must resolve inside a whole selected function. Unknown
+    symbols, partial sections, writable sections and escaped labels are rejected.
+    The constants remain uncredited placeholders in the hybrid image.
+    """
+    sources = {row["source"] for row in matches if row["name"] in symbols}
+    selected = [row for row in mappings if row["source"] in sources]
+    if not selected:
+        return {}
+    anchors = whole_function_anchors(elf, symbols, matches)
+    table = elf.get_section_by_name(".symtab")
+    sections = list(elf.iter_sections())
+    result = {}
+    for row in selected:
+        candidates = [(i, sec) for i, sec in enumerate(sections)
+                      if sec.name == row["section"]]
+        if len(candidates) != 1:
+            raise SystemExit(f"readonly section missing or ambiguous: {row['section']}")
+        index, section = candidates[0]
+        size, address = int(row["size"], 0), int(row["address"], 0)
+        offset = address - BASE_ADDRESS
+        if (section["sh_type"] != "SHT_PROGBITS"
+                or section["sh_flags"] & 7 != 2
+                or size <= 0 or section.data_size != size
+                or offset < 0 or offset + size > len(target)):
+            raise SystemExit(f"invalid whole readonly section: {row['section']}")
+        relocations = []
+        for relsec in sections:
+            if (relsec["sh_type"] not in {"SHT_REL", "SHT_RELA"}
+                    or relsec["sh_info"] != index):
+                continue
+            for rel in relsec.iter_relocations():
+                pos = rel["r_offset"]
+                if rel["r_info_type"] != R_MIPS_32 or pos % 4 or not 0 <= pos <= size - 4:
+                    raise SystemExit("unsupported readonly relocation or offset")
+                symbol = table.get_symbol(rel["r_info_sym"])
+                owners = [a for a in anchors if a["st_shndx"] == symbol["st_shndx"]]
+                if not owners:
+                    raise SystemExit("readonly relocation has no whole function owner")
+                value, key = relocation_target(symbol, anchors, addresses)
+                addend = (rel["r_addend"] if rel.is_RELA()
+                          else struct.unpack_from("<I", section.data(), pos)[0])
+                if not any(addresses[a.name] <= value + addend
+                           < addresses[a.name] + a["st_size"] for a in owners):
+                    raise SystemExit("readonly label outside whole function")
+                relocations.append((pos, R_MIPS_32, value, key,
+                                    rel["r_addend"] if rel.is_RELA() else None))
+        body = relocate_bytes(section.data(), relocations, addresses["_gp"])
+        if body != target[offset:offset + size]:
+            raise SystemExit(f"readonly section differs from retail: {row['section']}")
+        if index in result:
+            raise SystemExit(f"duplicate readonly mapping: {row['section']}")
+        result[index] = address
+    return result
+
+
 def verify(
     object_path: Path,
     target_path: Path,
@@ -185,6 +254,8 @@ def verify(
             raise SystemExit("object has no symbol table")
         symbols = {symbol.name: symbol for symbol in symbol_table.iter_symbols() if symbol.name}
         section_anchors = whole_function_anchors(elf, symbols, matches)
+        readonly_bases = validated_readonly_bases(
+            elf, symbols, matches, addresses, target, load_readonly_sections())
 
         relocations_by_section = {}
         for section in elf.iter_sections():
@@ -226,7 +297,7 @@ def verify(
                     continue
                 relocation_symbol = symbol_table.get_symbol(relocation["r_info_sym"])
                 relocation_value, relocation_key = relocation_target(
-                    relocation_symbol, section_anchors, addresses
+                    relocation_symbol, section_anchors, addresses, readonly_bases
                 )
                 local_offset = offset - start
                 function_relocations.append((

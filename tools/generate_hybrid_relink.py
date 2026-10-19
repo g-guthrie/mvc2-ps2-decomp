@@ -16,8 +16,10 @@ from elftools.elf.enums import ENUM_RELOC_TYPE_MIPS
 
 if __package__:
     from .verify_data_object import resolved_data
+    from .verify_object import load_readonly_sections, validated_readonly_bases
 else:
     from verify_data_object import resolved_data
+    from verify_object import load_readonly_sections, validated_readonly_bases
 
 
 SYMBOL_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(0x[0-9A-Fa-f]+)\s*;")
@@ -215,6 +217,8 @@ def extract_compiled_functions(
     matches: list[tuple[str, int, int, str]],
     compiled_objects: dict[str, Path],
     addresses: dict[str, int],
+    target: bytes | None = None,
+    readonly_sections=(),
 ) -> tuple[dict[str, CompiledFunction], dict[str, int]]:
     by_source: dict[str, list[tuple[str, int, int]]] = {}
     for name, address, size, source in matches:
@@ -250,6 +254,18 @@ def extract_compiled_functions(
                     relocations_by_section.setdefault(section.header.sh_info, []).extend(
                         section.iter_relocations()
                     )
+            selected_readonly = [row for row in readonly_sections if row["source"] == source]
+            if selected_readonly:
+                if target is None:
+                    raise SystemExit("retail image required for readonly section validation")
+                selected_matches = [dict(name=n, address=hex(a), size=hex(z), source=source)
+                                    for n, a, z in source_matches]
+                validated = validated_readonly_bases(
+                    elf, symbols, selected_matches, addresses, target, selected_readonly)
+                for index, base in validated.items():
+                    if index in section_bases and section_bases[index] != base:
+                        raise SystemExit("conflicting validated readonly section base")
+                    section_bases[index] = base
 
             for name, address, expected_size in source_matches:
                 symbol = symbols.get(name)
@@ -335,7 +351,7 @@ def main() -> None:
     addresses.update({name: address for name, address, _, _ in matches})
     addresses.update({unit.name: unit.address for unit in data_units})
     compiled_functions, synthetic_symbols = extract_compiled_functions(
-        matches, compiled_objects, addresses
+        matches, compiled_objects, addresses, target, load_readonly_sections()
     )
     build = args.build
     build.mkdir(parents=True, exist_ok=True)
