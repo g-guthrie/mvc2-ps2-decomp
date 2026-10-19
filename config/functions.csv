@@ -5889,7 +5889,7 @@ func_001FF390,0x001FF390,0x16C,0x001FF4FC,code,spimdisasm-explicit-size-before-f
 func_001FF500,0x001FF500,0xAC,0x001FF5AC,code,spimdisasm-explicit-size-before-first-data
 func_001FF5B0,0x001FF5B0,0x48,0x001FF5F8,code,spimdisasm-explicit-size-before-first-data
 func_001FF600,0x001FF600,0x20,0x001FF620,code,matching-c-head-split
-residual_001FF620,0x001FF620,0x16C,0x001FF78C,assembly_residual,verified-boundary-after-matching-head
+func_001FF620,0x001FF620,0x16C,0x001FF78C,code,verified-complete-c-function
 func_001FF790,0x001FF790,0xC0,0x001FF850,code,spimdisasm-explicit-size-before-first-data
 func_001FF850,0x001FF850,0xAC,0x001FF8FC,code,spimdisasm-explicit-size-before-first-data
 func_001FF900,0x001FF900,0x48,0x001FF948,code,spimdisasm-explicit-size-before-first-data

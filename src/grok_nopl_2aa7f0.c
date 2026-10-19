@@ -7,6 +7,11 @@ typedef float f32;
 
 extern u8 *D_004C2794;
 extern f32 D_00458960[][4];
+/* Four column views into the existing eight-word data_u32_004500F0 table. */
+extern f32 D_004500F0[][4];
+extern f32 D_004500F4[][4];
+extern f32 D_004500F8[][4];
+extern f32 D_004500FC[][4];
 extern void func_0018C4B0(u8 *, int);
 extern void func_00185490(u8 *);
 extern void func_00394780(u8 *, int, int);
@@ -43,4 +48,39 @@ void func_002AA7F0(u8 *p)
     func_00394780(p, 9, 0);
     p[360] = p[439] ? 23 : 21;
     func_001757E0(p, 21, p[360]);
+}
+
+void func_001FF620(u8 *p)
+{
+    p[7]++;
+    p[0x1B5] = p[0x1B7] + 52;
+    p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+    *(u32 *)(p + 0x1D8) = 0;
+    ((s16 *)(D_004C2794 + 124))[p[2]]++;
+    func_0018C4B0(p, 5);
+    func_00185490(p);
+    p[0x20D] = 2;
+    *(u32 *)(p + 0x5C) = 0;
+    *(u32 *)(p + 0x60) = 0;
+    *(u32 *)(p + 0x68) = 0;
+    *(u32 *)(p + 0x6C) = 0;
+    {
+        f32 vx;
+        if (p[0x1E6])
+            vx = D_004500F0[p[0x1B7]][0];
+        else
+            vx = -D_004500F0[p[0x1B7]][0];
+        *(f32 *)(p + 92) = vx;
+    }
+    {
+        f32 vz;
+        if (p[0x1E6])
+            vz = D_004500F4[p[0x1B7]][0];
+        else
+            vz = -D_004500F4[p[0x1B7]][0];
+        *(f32 *)(p + 104) = vz;
+    }
+    *(f32 *)(p + 96) = D_004500F8[p[0x1B7]][0];
+    *(f32 *)(p + 108) = D_004500FC[p[0x1B7]][0];
+    func_001757E0(p, 21, (u8)(p[0x1B7] + 7));
 }
