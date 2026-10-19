@@ -231,7 +231,7 @@ void func_00140370(s32 idx) {
     }
 }
 
-extern void (*D_0044B548[])();
+extern void (*D_0044B548[])(u8 *, u8 *);
 
 void func_001A8910(u8 *p, u8 *q) {
     if (q[0x1E4] != 0x14 || q[0x1FC] != 1) {

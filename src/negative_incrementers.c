@@ -23,7 +23,7 @@ void func_001A3EE0(u8 *p) { if ((s8)func_00175700(p) < 0) { u32 v = p[4]; v++; p
 
 void func_001A74B0(u8 *p) { if ((s8)func_00175700(p) < 0) { u32 v = p[4]; v++; p[4] = v; p[316] = 0; } }
 
-void func_001A8B20(u8 *p) { if ((s8)func_00175670(p) < 0) { u32 v = p[4]; v++; p[4] = v; p[316] = 0; } }
+void func_001A8B20(u8 *p, u8 *unused) { if ((s8)func_00175670(p) < 0) { u32 v = p[4]; v++; p[4] = v; p[316] = 0; } }
 
 void func_001B6150(u8 *p) { if ((s8)func_00175700(p) < 0) { u32 v = p[4]; v++; p[4] = v; p[316] = 0; } }
 
