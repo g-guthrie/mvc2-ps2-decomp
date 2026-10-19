@@ -196,7 +196,9 @@ void func_0022A780(u8 *p)
     }
 }
 
-void func_00231800(u8 *p)
+/* The 00451FD0 callback table and direct caller 00231840 supply context.
+ * This leaf does not need to read that second callback argument. */
+void func_00231800(u8 *p, void *context)
 {
     p[7]++;
     p[0x20d] = 2;
