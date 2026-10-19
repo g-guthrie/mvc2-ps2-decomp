@@ -15700,3 +15700,4 @@ func_003112D0,0x003112D0,0x34,src/independent_state_entry_003112D0.c,complete
 func_0011B480,0x0011B480,0x114,src/newlib_fflush_0011B480.c,complete
 func_0011B380,0x0011B380,0x100,src/newlib_fclose_0011B380.c,complete
 func_0040C578,0x0040C578,0x154,src/close_runtime_directory_0040C578.c,complete
+func_0011C458,0x0011C458,0x3E0,src/newlib_sfvwrite_0011C458.c,complete

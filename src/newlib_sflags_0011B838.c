@@ -18,8 +18,7 @@
  * WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
  * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  */
-typedef signed int s32;
-typedef struct _reent { s32 _errno; } Reent;
+#include "newlib_stdio_types.h"
 #define __SRD 4
 #define __SWR 8
 #define __SAPP 0x100

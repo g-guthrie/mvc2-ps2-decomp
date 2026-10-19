@@ -19,47 +19,7 @@
  * IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED
  * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
  */
-typedef unsigned char u8;
-typedef signed short s16;
-typedef unsigned short u16;
-typedef signed int s32;
-typedef struct __sbuf { unsigned char *_base; int _size; } SBuf;
-typedef struct __sFILE FILE;
-typedef struct _reent {
-    int _errno;
-    FILE *_stdin;
-    FILE *_stdout;
-    FILE *_stderr;
-    int _inc;
-    char _emergency[25];
-    int _current_category;
-    const char *_current_locale;
-    int __sdidinit;
-    void (*__cleanup)(struct _reent *);
-} Reent;
-struct __sFILE {
-    unsigned char *_p;
-    int _r;
-    int _w;
-    short _flags;
-    short _file;
-    SBuf _bf;
-    int _lbfsize;
-    void *_cookie;
-    int (*_read)(void *, char *, int);
-    int (*_write)(void *, const char *, int);
-    s32 (*_seek)(void *, s32, int);
-    int (*_close)(void *);
-    SBuf _ub;
-    unsigned char *_up;
-    int _ur;
-    unsigned char _ubuf[3];
-    unsigned char _nbuf[1];
-    SBuf _lb;
-    int _blksize;
-    int _offset;
-    Reent *_data;
-};
+#include "newlib_stdio_types.h"
 extern Reent *D_0043B6F8;
 extern void func_0011B7A8(Reent *);
 extern int func_0011C838(Reent *, int (*)(FILE *));
