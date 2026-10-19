@@ -14925,3 +14925,9 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_el_0039CF30.
 "$PYTHON" tools/verify_object.py "$BUILD/grok_el_0039CF30.o" private/SLUS_204.86.rom --source src/grok_el_0039CF30.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_el_0039D180.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_el_0039D180.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_el_0039D180.o" private/SLUS_204.86.rom --source src/grok_el_0039D180.c
+
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_gp6_36ffe0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_gp6_36ffe0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_gp6_36ffe0.o" private/SLUS_204.86.rom --source src/grok_gp6_36ffe0.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_cu_2e1460.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_cu_2e1460.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_cu_2e1460.o" private/SLUS_204.86.rom --source src/grok_cu_2e1460.c

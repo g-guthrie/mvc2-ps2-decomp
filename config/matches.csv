@@ -16900,3 +16900,15 @@ func_00390190,0x00390190,0x9C,src/grok_dd_00390190.c,complete
 func_0036A650,0x0036A650,0xBC,src/grok_dl_36a650.c,complete
 func_0039CF30,0x0039CF30,0xE8,src/grok_el_0039CF30.c,complete
 func_0039D180,0x0039D180,0xD8,src/grok_el_0039D180.c,complete
+func_0036FFE0,0x0036FFE0,0x130,src/grok_gp6_36ffe0.c,matching
+func_002E1460,0x002E1460,0xC0,src/grok_cu_2e1460.c,matching
+func_0023E8B0,0x0023E8B0,0x70,src/ground_input_gates.c,matching
+func_002030B0,0x002030B0,0x58,src/grok_size60.c,matching
+func_0023EE00,0x0023EE00,0x58,src/grok_size60.c,matching
+func_00248140,0x00248140,0x58,src/grok_size60.c,matching
+func_00192BF0,0x00192BF0,0xE8,src/grok_fx_001C86C0.c,matching
+func_00198240,0x00198240,0xB0,src/x0_g.c,matching
+func_001C3720,0x001C3720,0x68,src/grok_w1_c22c0.c,matching
+func_00196700,0x00196700,0x60,src/g1b.c,matching
+func_0021F490,0x0021F490,0x60,src/initial_launch_002218b0.c,matching
+func_0013ED90,0x0013ED90,0x78,src/g12e.c,matching
