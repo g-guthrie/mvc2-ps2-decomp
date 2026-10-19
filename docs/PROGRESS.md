@@ -4208,3 +4208,38 @@ This smaller checkpoint publishes the source-contract corrections and the
 previously unpublished, independently verified C recoveries. Unrecovered
 ranges still use the private retail input; full source decompilation remains
 incomplete.
+
+
+### Full-point milestone: independent callback recovery — October 18
+
+Recovered 59 complete C functions / 8,208 bytes since 758aa75b, bringing the
+catalog to 1,653,004 / 3,293,696 matching C bytes (50.1869%), with 15,577
+credited spans. Reconstructed initialized data remains 173,921 / 648,064 bytes
+(26.8370%). This crosses the scheduled 1,652,329-byte full-point gate; the next
+scheduled gate is 1,685,266 bytes (51.1664%).
+
+Fifty-eight recoveries were mislabeled residual spans, although actual callback
+tables enter them directly after a completed dispatcher. Each recovered body
+has a complete native return or tail exit and independently matches its entire
+compiler-generated function. INDEPENDENT_CALLBACK_ENTRIES.csv records each
+pointer witness, preceding dispatcher, and source owner. The preceding dispatcher
+is the physical neighbor, not necessarily the consumer of the recorded table.
+Native register arguments are preserved even where an older callback-table type
+still models fewer parameters. No inventory address, size, end, overall function
+count, or denominator changed; entries already credited under residual names
+were excluded from new progress.
+
+The other recovery is the 416-byte runtime slot cleanup at 00401428, including
+its optional callbacks, nested callback tables, and resource cleanup. Its full
+11-function source unit was independently recompiled after integrating its
+required verifier anchors. Every other changed source unit was also compiled
+with its registered compiler and checked over complete spans. The working tree
+containing earlier local candidates was only read; its uncommitted work remains
+untouched.
+
+All 51 tests and build-coverage validation pass. The combined hybrid image is
+byte-identical to the 3,941,760-byte retail input, and the packed 3,942,320-byte
+ELF also matches exactly. Their SHA-256 values remain
+c5206f568f068e5bd93ba47676500764c3d45719890865fa71ada10afadcd26f and
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7. Unrecovered
+ranges still use private retail input; complete source decompilation is ongoing.
