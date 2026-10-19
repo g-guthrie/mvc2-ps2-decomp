@@ -15685,3 +15685,12 @@ func_001FE580,0x001FE580,0x74,src/create_owner_mode_child_001978B0.c,complete
 func_001FFF00,0x001FFF00,0xA4,src/create_owner_mode_child_001978B0.c,complete
 func_001B26C0,0x001B26C0,0x60,src/grok_luna_oct19_callbacks_b2.c,complete
 func_001B38D0,0x001B38D0,0xAC,src/m12c.c,complete
+func_0031D260,0x0031D260,0x48,src/independent_state_entry_0031D260.c,complete
+func_00327E20,0x00327E20,0x18,src/independent_state_entry_00327E20.c,complete
+func_00328140,0x00328140,0x1C,src/independent_state_entry_00328140.c,complete
+func_003292F0,0x003292F0,0x1C,src/independent_state_entry_003292F0.c,complete
+func_00328350,0x00328350,0x24,src/independent_state_entry_00328350.c,complete
+func_00328530,0x00328530,0x2C,src/independent_state_entry_00328530.c,complete
+func_00336210,0x00336210,0x40,src/independent_state_entry_00336210.c,complete
+func_0038D6E0,0x0038D6E0,0x24,src/independent_state_entry_0038D6E0.c,complete
+func_00397630,0x00397630,0x10,src/independent_state_entry_00397630.c,complete
