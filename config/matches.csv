@@ -9454,6 +9454,8 @@ func_00163D70,0x00163D70,0x4C,src/wave6b.c,complete
 func_00125A20,0x00125A20,0x54,src/wave6b.c,complete
 func_001D9700,0x001D9700,0x58,src/wave6b.c,complete
 func_0016B3E0,0x0016B3E0,0x54,src/wave6b.c,complete
+func_0016B5D0,0x0016B5D0,0x24,src/wave6b.c,complete
+func_0016B600,0x0016B600,0x44,src/wave6b.c,complete
 func_001CA7E0,0x001CA7E0,0x54,src/wave6b.c,complete
 func_00329750,0x00329750,0x58,src/wave6b.c,complete
 func_003B90B0,0x003B90B0,0x48,src/wave6b.c,complete

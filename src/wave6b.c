@@ -98,12 +98,27 @@ extern void func_003DA6F0(s32);
 extern void func_003D7310(void (*)(void));
 extern void func_001526A0(void);
 extern void (*D_00446290[])(void);
+typedef void (*Mvc2StateDispatch)(void);
+extern const u32 jtbl_004462B0[];
 
 void func_0016B3E0(void) {
     func_003DA6F0(0xD);
     func_003DA6F0(7);
     func_003D7310(func_001526A0);
     D_00446290[*(s8 *)(D_004C2840 + 4)]();
+}
+
+void func_0016B5D0(void) {
+    ((Mvc2StateDispatch)jtbl_004462B0[((s8 *)D_004C2840)[5]])();
+}
+
+void func_0016B600(void) {
+    s16 timer = *(s16 *)(D_004C2840 + 0xE) - 1;
+    *(s16 *)(D_004C2840 + 0xE) = timer;
+    if (timer == 0) {
+        ((s8 *)D_004C2840)[5]++;
+        *(s16 *)(D_004C2840 + 0xE) = 16;
+    }
 }
 
 extern void func_001CABF0(u8 *);
