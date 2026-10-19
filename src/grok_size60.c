@@ -146,6 +146,7 @@ void func_0023EE60(u8 *p) { INIT_0023EE60 }
         func_00186A60(p, 29); \
     }
 
+void func_00248140(u8 *p) { INIT_002481A0 }
 void func_002481A0(u8 *p) { INIT_002481A0 }
 void func_00286030(u8 *p) { INIT_002481A0 }
 void func_00286090(u8 *p) { INIT_002481A0 }
