@@ -32,6 +32,11 @@ int func_00402118(short *p) {
     return p[0x20];
 }
 
+void func_003F83A8(int *p) {
+    if (p[1] == 0)
+        p[1] = 1;
+}
+
 
 
 struct Slot { void (**fn)(void); int pad[3]; };

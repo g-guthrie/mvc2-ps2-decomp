@@ -17107,3 +17107,7 @@ func_00137B00,0x00137B00,0xF0,src/indexed_event_spawn_00137b00.c,complete
 func_002C17C0,0x002C17C0,0x1C,src/grok_002C17C0.c,complete
 func_003AB400,0x003AB400,0x2C,src/argument_dispatch_heads.c,complete
 func_003AB430,0x003AB430,0x30,src/argument_dispatch_heads.c,complete
+func_003F83A8,0x003F83A8,0x18,src/k0.c,complete
+func_0019A560,0x0019A560,0xE4,src/owner_state_copy_setup_0019a560.c,complete
+func_001684B0,0x001684B0,0xEC,src/team_health_script_test_001684b0.c,complete
+func_001685A0,0x001685A0,0xF0,src/team_health_script_test_001684b0.c,complete

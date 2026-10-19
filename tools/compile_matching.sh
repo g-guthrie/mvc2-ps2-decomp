@@ -14993,4 +14993,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/indexed_event_spawn_001
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_002C17C0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/grok_002C17C0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_002C17C0.o" private/SLUS_204.86.rom --source src/grok_002C17C0.c
 
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/owner_state_copy_setup_0019a560.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/owner_state_copy_setup_0019a560.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_state_copy_setup_0019a560.o" private/SLUS_204.86.rom --source src/owner_state_copy_setup_0019a560.c
+
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/team_health_script_test_001684b0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/team_health_script_test_001684b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/team_health_script_test_001684b0.o" private/SLUS_204.86.rom --source src/team_health_script_test_001684b0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

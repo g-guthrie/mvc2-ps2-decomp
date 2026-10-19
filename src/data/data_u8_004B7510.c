@@ -1,0 +1,7 @@
+typedef unsigned char u8;
+
+/* func_00281040 can index all twelve thresholds with a clamped signed state. */
+u8 data_u8_004B7510[12] = {
+    0x18, 0x18, 0x18, 0x1A, 0x1A, 0x1A,
+    0x1C, 0x1C, 0x1C, 0x1E, 0x1E, 0x1E
+};

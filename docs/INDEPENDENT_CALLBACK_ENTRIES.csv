@@ -318,3 +318,6 @@ func_0017CCF0,0x0017CCF0,0x60,func_0017C8C0,jtbl_004BF4D8,0x004BF4F0,src/core_st
 func_0017C8F0,0x0017C8F0,0x88,func_0017C8C0,jtbl_004BF4D8,0x004BF4D8,src/core_state_entries_0017c390.c
 func_0017CAA0,0x0017CAA0,0x7C,func_0017C8C0,jtbl_004BF4D8,0x004BF4E0,src/core_state_entries_0017c390.c
 func_003AB430,0x003AB430,0x30,func_003AA4D0,jtbl_00473A70,0x00473A90,src/argument_dispatch_heads.c
+func_0019A560,0x0019A560,0xE4,func_0019A540,jtbl_0044A7A0,0x0044A7A0,src/owner_state_copy_setup_0019a560.c
+func_001684B0,0x001684B0,0xEC,func_00163F40,gMvc2Dispatch_00445A20,0x00445C0C,src/team_health_script_test_001684b0.c
+func_001685A0,0x001685A0,0xF0,func_00163F40,gMvc2Dispatch_00445A20,0x00445C10,src/team_health_script_test_001684b0.c
