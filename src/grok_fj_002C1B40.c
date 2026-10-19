@@ -5,8 +5,8 @@ typedef unsigned int u32;
 typedef float f32;
 
 extern void func_001E3710(u8 *, int);
-extern void func_00175700(u8 *);
-extern void func_001757E0(u8 *, int, int);
+extern int func_00175700(u8 *);
+extern int func_001757E0(u8 *, int, int);
 
 void func_002C1B40(u8 *p)
 {

@@ -5,7 +5,7 @@ typedef signed int s32;
 typedef float f32;
 typedef double f64;
 
-extern void func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern f64 litodp(s32);
 extern f64 dpmul(f64, f64);
 extern f64 dpdiv(f64, f64);

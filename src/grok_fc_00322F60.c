@@ -9,10 +9,10 @@ typedef float f32;
 extern u8 *D_004C2794;
 extern void func_001861B0(u8 *);
 extern void func_0018C4B0(u8 *, s32);
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
 extern void func_00183D90(u8 *);
 extern void func_001863F0(u8 *);
-extern s32 func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern void func_003266E0(u8 *);
 extern void func_003CD6B0(u8 *, s32);
 

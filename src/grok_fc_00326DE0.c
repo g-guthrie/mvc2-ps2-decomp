@@ -8,7 +8,7 @@ extern f32 D_004F1FC8;
 extern f32 D_004F1FCC;
 extern void func_00185490(u8 *);
 extern void func_00186A60(u8 *, s32);
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
 extern void func_00175C00(u8 *, int);
 
 void func_00326DE0(u8 *p)

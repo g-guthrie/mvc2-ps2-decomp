@@ -7,7 +7,7 @@ typedef float f32;
 
 extern u8 *D_004C2794 __attribute__((section(".sdata")));
 extern int func_00175700(u8 *);
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
 
 void func_002B11E0(u8 *p)
 {

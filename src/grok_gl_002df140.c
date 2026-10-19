@@ -8,13 +8,14 @@ typedef float f32;
 extern u8 *D_004C2794 __attribute__((section(".sdata")));
 extern void func_00185490(u8 *);
 extern void func_00183D10(u8 *);
-extern void func_001757E0(u8 *, int, int);
-extern s8 func_00175700(u8 *);
-extern void func_001830D0(u8 *, u32 *, int);
+extern int func_001757E0(u8 *, int, int);
+extern int func_00175700(u8 *);
+extern void func_001830D0(u8 *, void *, int);
 
 void func_002DF140(u8 *p)
 {
-    u32 v[4];
+    /* The native passes this two-word buffer at the 16-byte-aligned $sp+0x20. */
+    u32 v[2] __attribute__((aligned(16)));
 
     if (p[7] == 0) {
         if (p[0x269] == 6) {

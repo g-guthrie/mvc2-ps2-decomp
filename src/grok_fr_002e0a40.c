@@ -3,14 +3,16 @@ typedef signed char s8;
 typedef signed short s16;
 typedef unsigned int u32;
 typedef float f32;
+/* The native writes x/y and leaves z untouched before the matched Vec3 consumer. */
+typedef struct { f32 x, y, z; } V3;
 
 extern u8 D_004F1F46;
 extern u8 D_004F1F45;
 extern int func_00175700(u8 *);
-extern void func_00158C70(f32 *, int);
+extern void func_00158C70(u8 *, int);
 extern void func_001E3A40(u8 *);
 extern void func_00126400(void);
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
 
 void func_002E0A40(u8 *p)
 {
@@ -22,11 +24,11 @@ void func_002E0A40(u8 *p)
     if (*(f32 *)(p + 56) >= *(f32 *)(p + 1072))
         ;
     else {
-        f32 sp[4];
+        V3 sp;
         u8 *s0 = *(u8 **)(p + 476);
-        sp[0] = *(f32 *)(s0 + 52);
-        sp[1] = *(f32 *)(s0 + 1072);
-        func_00158C70(sp, s0[2]);
+        sp.x = *(f32 *)(s0 + 52);
+        sp.y = *(f32 *)(s0 + 1072);
+        func_00158C70((u8 *)&sp, s0[2]);
         func_001E3A40(p);
         D_004F1F46 = 1;
         D_004F1F45 = 2;

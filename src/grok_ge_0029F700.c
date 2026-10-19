@@ -5,15 +5,13 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef float f32;
 
-typedef struct { u8 pad[0x7C]; s16 a[1]; } G7C;
-
-extern G7C *D_004C2794;
+extern u8 *D_004C2794 __attribute__((section(".sdata")));
 extern void func_00175C00(u8 *, int);
 extern void func_0018C4B0(u8 *, int);
 extern void func_001E3210(u8 *, int);
 extern void func_00185490(u8 *);
 extern void func_0029D5E0(u8 *);
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
 
 void func_0029F700(u8 *p)
 {
@@ -35,14 +33,14 @@ void func_0029F700(u8 *p)
         p[0x1B5] = 72;
         p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
         *(u32 *)(p + 0x1D8) = 0;
-        D_004C2794->a[p[2]]++;
+        ((s16 *)(D_004C2794 + 0x7C))[p[2]]++;
         func_001757E0(p, 21, (u8)(p[0x1B7] + 13));
     } else {
         func_0029D5E0(p);
         p[0x1B5] = 50;
         p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
         *(u32 *)(p + 0x1D8) = 0;
-        D_004C2794->a[p[2]]++;
+        ((s16 *)(D_004C2794 + 0x7C))[p[2]]++;
         func_001757E0(p, 21, (u8)(p[0x1B7] + 3));
     }
 }

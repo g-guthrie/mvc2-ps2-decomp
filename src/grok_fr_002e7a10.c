@@ -5,9 +5,9 @@ typedef unsigned int u32;
 typedef float f32;
 
 extern int func_00175700(u8 *);
-extern void func_001830D0(u8 *, float *, int);
+extern void func_001830D0(u8 *, void *, int);
 extern void func_003A43F0(u8 *);
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
 
 void func_002E7A10(u8 *p)
 {
@@ -17,7 +17,8 @@ void func_002E7A10(u8 *p)
         p[1029] = (p[617] == 6) ? 2 : 0;
         func_00175700(p);
         if (*(s8 *)(p + 337) & 1) {
-            f32 sp[4];
+            /* The native passes this two-float buffer at the 16-byte-aligned $sp+0x20. */
+            f32 sp[2] __attribute__((aligned(16)));
             p[1028] = 0;
             p[1029] = 0;
             p[7]++;

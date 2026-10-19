@@ -8,8 +8,8 @@ typedef float f32;
 extern u8 *D_004C2794 __attribute__((section(".sdata")));
 extern void func_00185490(u8 *);
 extern void func_0018C4B0(u8 *, int);
-extern void func_001757E0(u8 *, int, int);
-extern s8 func_00175700(u8 *);
+extern int func_001757E0(u8 *, int, int);
+extern int func_00175700(u8 *);
 extern void func_00184540(u8 *);
 extern void func_003A0530(u8 *, int);
 
@@ -51,7 +51,7 @@ void func_002DB9D0(u8 *p)
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
     if (*(f32 *)(p + 0x38) < *(f32 *)(p + 0x430))
         *(f32 *)(p + 0x38) = *(f32 *)(p + 0x430);
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         func_00184540(p);
         return;
     }

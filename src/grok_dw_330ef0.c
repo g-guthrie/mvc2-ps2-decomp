@@ -2,12 +2,14 @@
 typedef unsigned char u8;
 typedef signed short s16;
 typedef signed int s32;
+typedef unsigned int u32;
 typedef float f32;
 
 extern u8 *D_004C283C;
 extern f32 func_00417F60(void);
-extern void func_00170E60(u8 *, s32, s32, s32, void (*)(void), u8 *);
-extern void func_00331350(void);
+extern void func_00170E60(
+    void *, void *, void *, void *, void (*)(u8 *, u8 *, s32), s32);
+extern void func_00331350(u8 *, u8 *, s32);
 
 void func_00330EF0(u8 *p)
 {
@@ -32,9 +34,9 @@ void func_00330EF0(u8 *p)
     s = *(u8 **)(p + 0x84);
     func_00170E60(
         *(u8 **)(D_004C283C + 0x14),
-        *(s32 *)(*(u8 **)(s + 0x1C) + 0x18),
-        *(s32 *)(s + 0x14),
-        *(s32 *)((s32)*(u8 **)(s + 0x1C) + *(s16 *)(p + 0xCC) * 4),
+        (void *)*(u32 *)(*(u8 **)(s + 0x1C) + 0x18),
+        (void *)*(u32 *)(s + 0x14),
+        (void *)*(u32 *)((s32)*(u8 **)(s + 0x1C) + *(s16 *)(p + 0xCC) * 4),
         func_00331350,
-        p);
+        (s32)p);
 }
