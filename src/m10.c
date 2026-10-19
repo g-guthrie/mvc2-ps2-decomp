@@ -36,14 +36,14 @@ void func_00297F90(u8 *p) {
         *w = 0;
     }
 }
-extern void (*D_0044B2F8[])(u8 *);
+extern void (*D_0044B2F8[])(u8 *, u8 *);
 void func_001A4C30(u8 *p) {
     u8 *q = *(u8 **)(p + 0x18);
     if (p[0x23] == 0) {
         if (q[5] != 0 || q[0x1E4] != 0x15 || q[0x1FD] != 2) {
             p[4] = 2;
         }
-        D_0044B2F8[p[4]](p);
+        D_0044B2F8[p[4]](p, q);
     }
 }
 void func_001318E0(s32 *out, u32 a, u32 b) {
