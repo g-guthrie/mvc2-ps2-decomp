@@ -11,7 +11,7 @@ extern void func_0018C4B0(u8 *, int);
 extern void func_00185490(u8 *);
 extern void func_001757E0(u8 *, int, int);
 
-void residual_001F06C0(u8 *p)
+void func_001F06C0(u8 *p)
 {
     u16 *pad = (u16 *)(p + 0x2B8);
     u16 w;

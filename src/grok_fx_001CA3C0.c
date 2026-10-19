@@ -12,7 +12,7 @@ typedef struct { f32 x, y, z; } V3;
 extern u32 D_0044D8A0[];
 extern void func_001CA4D0(u8 *);
 
-void residual_001CA3C0(u8 *p)
+void func_001CA3C0(u8 *p)
 {
     s32 n;
     s32 *d;

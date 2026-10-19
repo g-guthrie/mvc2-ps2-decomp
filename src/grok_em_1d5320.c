@@ -13,7 +13,7 @@ extern f32 D_0044E430[];
 extern s32 func_00118FA8(f32);
 extern void func_001757E0(u8 *, s32, s32);
 
-void residual_001D5320(u8 *p, u8 *q)
+void func_001D5320(u8 *p, u8 *q)
 {
     s32 n;
     s32 *d;

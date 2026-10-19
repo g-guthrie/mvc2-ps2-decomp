@@ -12,7 +12,7 @@ extern void func_001757E0(u8 *, int, int);
 extern s8 func_00175700(u8 *);
 extern void func_001830D0(u8 *, u32 *, int);
 
-void residual_002DF140(u8 *p)
+void func_002DF140(u8 *p)
 {
     u32 v[4];
 

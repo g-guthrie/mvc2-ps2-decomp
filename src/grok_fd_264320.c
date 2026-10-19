@@ -6,7 +6,7 @@ typedef float f32;
 extern void func_001757E0(u8 *, int, int);
 extern u8 *func_001B3E30(u8 *, int, int);
 
-void residual_00264320(u8 *p)
+void func_00264320(u8 *p)
 {
     u8 *q;
     p[6]++;

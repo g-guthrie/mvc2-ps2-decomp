@@ -11,7 +11,7 @@ typedef struct { f32 x, y, z; } V3;
 extern s32 func_00174170(void);
 extern void func_001754A0(u8 *, s32, s32);
 
-void residual_001E1060(u8 *p, u8 *q)
+void func_001E1060(u8 *p, u8 *q)
 {
     s32 n;
     s32 *d;

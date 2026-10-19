@@ -10,7 +10,7 @@ extern void func_0018C4B0(u8 *, int);
 extern void func_001757E0(u8 *, int, int);
 extern void func_0023CF30(u8 *, u8 *);
 
-void residual_0023CE50(u8 *p, u8 *q)
+void func_0023CE50(u8 *p, u8 *q)
 {
     p[7]++;
     func_0018C4B0(p, 5);

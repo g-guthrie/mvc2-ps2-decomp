@@ -11,7 +11,7 @@ extern f32 D_0044DCA0[];
 extern f32 D_0044DCA4[];
 extern void func_001754A0(u8 *, s32, s32);
 
-void residual_001CC730(u8 *p)
+void func_001CC730(u8 *p)
 {
     s32 n;
     s32 *d;

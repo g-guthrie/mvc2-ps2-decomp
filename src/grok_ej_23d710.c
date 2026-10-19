@@ -10,7 +10,7 @@ extern void func_00183D10(u8 *);
 extern void func_001757E0(u8 *, int, int);
 extern void func_0023D800(u8 *, u8 *);
 
-void residual_0023D710(u8 *p, u8 *q)
+void func_0023D710(u8 *p, u8 *q)
 {
     if (p[0x269] == 6) {
         p[0x404] = 255;

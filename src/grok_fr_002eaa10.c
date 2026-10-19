@@ -16,7 +16,7 @@ extern int func_00175700(u8 *);
 extern void func_001843A0(u8 *);
 extern void func_003A6DC0(u8 *, int, int);
 
-void residual_002EAA10(u8 *p)
+void func_002EAA10(u8 *p)
 {
     if (p[6] == 0) {
         func_001861B0(p);

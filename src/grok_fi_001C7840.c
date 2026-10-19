@@ -9,7 +9,7 @@ extern void func_001757E0(u8 *, int, int);
 extern void func_0015E630(u8 *);
 extern void func_001C7960(u8 *, u8 *);
 
-void residual_001C7840(u8 *p, u8 *q)
+void func_001C7840(u8 *p, u8 *q)
 {
     s16 face;
     p[7]++;

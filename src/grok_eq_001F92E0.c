@@ -4,7 +4,7 @@ typedef signed short s16;
 extern int func_00174170(void);
 extern void func_001757E0(u8 *, int, int);
 
-void residual_001F92E0(u8 *p)
+void func_001F92E0(u8 *p)
 {
     p[6]++;
     if (p[0x20] == 2) {

@@ -9,7 +9,7 @@ typedef struct { f32 x, y, z; } V3;
 extern u8 D_004F1F45;
 extern u8 D_004F1F46;
 
-void residual_001D9C70(u8 *p, u8 *q)
+void func_001D9C70(u8 *p, u8 *q)
 {
     s32 n;
     s32 *d;

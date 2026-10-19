@@ -15,7 +15,7 @@ extern s32 func_00174470(u8 *);
 extern void func_003CAB00(u8 *, u8 *);
 extern void func_001E7F60(u8 *);
 
-void residual_003CC050(u8 *p, u8 *q)
+void func_003CC050(u8 *p, u8 *q)
 {
     if (q[5] != 0) {
         *(f32 *)(p + 0x5C) = *(f32 *)(p + 0x5C) / 2.0f;

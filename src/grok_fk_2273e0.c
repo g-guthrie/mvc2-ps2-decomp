@@ -15,7 +15,7 @@ extern void func_001863F0(u8 *);
 extern s8 func_00175700(u8 *);
 extern void func_0022C5D0(u8 *);
 
-void residual_002273E0(u8 *p)
+void func_002273E0(u8 *p)
 {
     if (p[6] == 0) {
         p[6]++;

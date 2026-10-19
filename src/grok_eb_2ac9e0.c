@@ -18,7 +18,7 @@ extern void func_00184540(u8 *);
 extern int func_001864A0(u8 *);
 extern void func_001865B0(u8 *);
 
-void residual_002AC9E0(u8 *p)
+void func_002AC9E0(u8 *p)
 {
     switch (p[0x213]) {
     case 3:

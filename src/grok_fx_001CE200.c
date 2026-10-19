@@ -4,7 +4,7 @@ typedef float f32;
 
 extern void func_00175700(u8 *);
 
-void residual_001CE200(u8 *p)
+void func_001CE200(u8 *p)
 {
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);

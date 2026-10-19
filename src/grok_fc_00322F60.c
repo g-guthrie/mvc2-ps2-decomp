@@ -16,7 +16,7 @@ extern s32 func_00175700(u8 *);
 extern void func_003266E0(u8 *);
 extern void func_003CD6B0(u8 *, s32);
 
-void residual_00322F60(u8 *p)
+void func_00322F60(u8 *p)
 {
     if (p[6] == 0) {
         p[6]++;

@@ -10,7 +10,7 @@ extern s32 func_00175700(u8 *);
 extern void func_001E3710(u8 *, s32);
 extern void func_001E7F60(u8 *);
 
-void residual_0034B380(u8 *p)
+void func_0034B380(u8 *p)
 {
     u8 *q;
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);

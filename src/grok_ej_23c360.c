@@ -11,7 +11,7 @@ extern void func_00186A20(u8 *);
 extern void func_001757E0(u8 *, int, int);
 extern void func_0023C450(u8 *, u8 *);
 
-void residual_0023C360(u8 *p, u8 *q)
+void func_0023C360(u8 *p, u8 *q)
 {
     p[7]++;
     func_0018C4B0(p, 5);
