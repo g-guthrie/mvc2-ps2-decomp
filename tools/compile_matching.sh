@@ -6274,10 +6274,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$SNCC1" "$BUILD/p2c.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/p2c.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/p2c.o" "$BUILD/p2c.s"
 "$PYTHON" tools/verify_object.py "$BUILD/p2c.o" private/SLUS_204.86.rom --source src/p2c.c
-"$WIBO" "$SNCPP" -P src/p2e8.c "$BUILD/p2e8.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 "$BUILD/p2e8.i" "$BUILD/p2e8.s"
-"$WIBO" "$SNAS" -G8 -o "$BUILD/p2e8.o" "$BUILD/p2e8.s"
-"$PYTHON" tools/verify_object.py "$BUILD/p2e8.o" private/SLUS_204.86.rom --source src/p2e8.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/n9.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/n9.o"
 "$PYTHON" tools/verify_object.py "$BUILD/n9.o" private/SLUS_204.86.rom --source src/n9.c
@@ -6763,10 +6759,6 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --op
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 --extra-flags="" "$BUILD/b10s2_e.i" "$BUILD/b10s2_e.s"
 "$WIBO" "$SNAS" -G8 -o "$BUILD/b10s2_e.o" "$BUILD/b10s2_e.s"
 "$PYTHON" tools/verify_object.py "$BUILD/b10s2_e.o" private/SLUS_204.86.rom --source src/b10s2_e.c
-"$WIBO" "$SNCPP" -P src/b10s2_f.c "$BUILD/b10s2_f.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 --extra-flags="" "$BUILD/b10s2_f.i" "$BUILD/b10s2_f.s"
-"$WIBO" "$SNAS" -G8 -o "$BUILD/b10s2_f.o" "$BUILD/b10s2_f.s"
-"$PYTHON" tools/verify_object.py "$BUILD/b10s2_f.o" private/SLUS_204.86.rom --source src/b10s2_f.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/b10s2_g.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/b10s2_g.o"
 "$PYTHON" tools/verify_object.py "$BUILD/b10s2_g.o" private/SLUS_204.86.rom --source src/b10s2_g.c
@@ -11073,3 +11065,10 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --op
 "$WIBO" "$SNAS" -G8 -o "$BUILD/runtime_object_storage.o" "$BUILD/runtime_object_storage.s"
 "$PYTHON" tools/verify_object.py "$BUILD/runtime_object_storage.o" private/SLUS_204.86.rom \
     --source src/runtime_object_storage.c
+
+"$WIBO" "$SNCPP" -P src/runtime_framed_calls_003f.c "$BUILD/runtime_framed_calls_003f.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 \
+    --extra-flags=-fno-optimize-sibling-calls "$BUILD/runtime_framed_calls_003f.i" "$BUILD/runtime_framed_calls_003f.s"
+"$WIBO" "$SNAS" -G8 -o "$BUILD/runtime_framed_calls_003f.o" "$BUILD/runtime_framed_calls_003f.s"
+"$PYTHON" tools/verify_object.py "$BUILD/runtime_framed_calls_003f.o" private/SLUS_204.86.rom \
+    --source src/runtime_framed_calls_003f.c

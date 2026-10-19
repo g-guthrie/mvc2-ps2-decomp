@@ -18,7 +18,8 @@ extern void func_00411720(s32, s32, s32, s32);
 void func_003FEF20(s32 a, s32 b) { func_00411720(1, 0, a, b); }
 void func_003FEF48(s32 a, s32 b) { func_00411720(6, 0, a, b); }
 
-extern s32 D_004C2334;
+/* Shared task IDs are cleared by 003FE780/003FE7F0 during shutdown. */
+extern volatile s32 D_004C2334;
 extern s32 D_0047D0F8[];
 extern void func_003FDD28(s32, s32);
 void func_003FDE10(void) { func_003FDD28(D_004C2334, D_0047D0F8[0]); }
@@ -55,7 +56,7 @@ void func_003FCCF0(struct T3FCCF0 *p)
     }
 }
 
-extern volatile s32 D_004C2330, D_004C2334;
+extern volatile s32 D_004C2330;
 extern s32 func_003FE190(void *);
 extern void func_003FE120(void *);
 extern s32 func_003FE4F0(void);
