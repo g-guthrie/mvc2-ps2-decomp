@@ -16,6 +16,7 @@ extern s32 D_004C1338[2];
 extern s32 D_004C133C[2];
 extern s32 D_004C1340[2];
 typedef struct { u8 p0[0x34]; f32 f34; f32 f38; u8 p1[0x20]; f32 f5c; f32 f60; u8 p2[4]; f32 f68; f32 f6c; } A_00274DA0;
+extern s32 D_004BFCC8, D_004BFCCC, D_004BFCD0;
 extern s32 D_004BFCD4[2];
 extern s32 D_004BFCD8[2];
 extern s32 D_004BFCDC[2];
@@ -586,4 +587,47 @@ void func_00211370(u8 *a)
     D_004C2794->f7c[a[2]]++;
     func_001757E0(a, 12, a[0x168]);
     if (*(s8 *)(a + 0x1EA) & 0xF0) a[0x1EA] = *(s8 *)(a + 0x1EA) - 16;
+}
+
+void func_001FCBC0(u8 *a)
+{
+    extern void func_001E3710(u8 *, s32);
+    extern int func_001757E0(u8 *, int, int);
+    u32 t;
+    switch (a[0x1FC]) {
+    case 0:
+        a[0x168] = 0;
+        a[0x1B5] = 6;
+        func_001E3710(a, 0x14);
+        *(void **)(a + 0x408) = &D_004BFCC8;
+        a[0x1BB] = 0;
+        break;
+    case 1:
+        a[0x168] = 1;
+        a[0x1B5] = 7;
+        func_001E3710(a, 0x15);
+        *(void **)(a + 0x408) = &D_004BFCCC;
+        a[0x1BB] = 1;
+        break;
+    case 2:
+        if (*(u16 *)(a + 0x20E) & 0x400) {
+            a[0x168] = 3;
+            a[0x1B5] = 28;
+        } else {
+            a[0x168] = 2;
+            a[0x1B5] = 8;
+        }
+        func_001E3710(a, 0x16);
+        *(void **)(a + 0x408) = &D_004BFCD0;
+        a[0x1BB] = 2;
+        break;
+    default:
+        break;
+    }
+    t = a[0x1B5];
+    ((ActorActionView *)a)->action = t;
+    a[0x1B2] = *(u16 *)(a + 0x1C0) = 0;
+    *(s32 *)(a + 0x1D8) = 0;
+    D_004C2794->f7c[a[2]]++;
+    func_001757E0(a, 9, a[0x168]);
 }
