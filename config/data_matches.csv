@@ -5020,7 +5020,8 @@ data_raw_004872F3,0x004872F3,0x2D,src/data/data_raw_004872F3.c,complete,placehol
 data_u32_00487320,0x00487320,0x4,src/data/data_u32_00487320.c,complete,placeholder
 data_s32_00487324,0x00487324,0x4,src/data/data_s32_00487324.c,complete,reconstructed
 data_u32_00487328,0x00487328,0x18,src/data/data_u32_00487328.c,complete,placeholder
-data_zero_00487340,0x00487340,0xFD0,src/data/data_zero_00487340.c,complete,placeholder
+data_timeout_counter_00487340,0x00487340,0x4,src/data/data_timeout_counter_00487340.c,complete,reconstructed
+data_raw_00487344,0x00487344,0xFCC,src/data/data_raw_00487344.c,complete,placeholder
 data_u32_00488310,0x00488310,0x4,src/data/data_u32_00488310.c,complete,placeholder
 data_callback_00488314,0x00488314,0x4,src/data/data_callback_00488314.c,complete,reconstructed
 data_ptr_00488318,0x00488318,0x4,src/data/data_ptr_00488318.c,complete,reconstructed
