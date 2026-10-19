@@ -16,7 +16,7 @@ void func_00263010(u8 *p)
 {
     extern void func_001E3710(u8 *, s32);
     extern void func_001757E0(u8 *, s32, s32);
-    extern void func_001B53E0(u8 *, s32, s32);
+    extern u8 *func_001B53E0(u8 *, s32, s32);
     switch (p[0x1FC]) {
     case 0:
         p[0x168] = 0;

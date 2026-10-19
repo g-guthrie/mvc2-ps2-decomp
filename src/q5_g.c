@@ -63,7 +63,7 @@ void func_00265BE0(u8 *a) {
     extern s32 func_00185980();
     extern void func_00185640();
     extern void func_001757E0();
-    extern void func_001B53E0();
+    extern u8 *func_001B53E0(u8 *, s32, s32);
     s16 h;
     func_00175700(a);
     if (*(s8 *)(a + 0x1B2) != 0) {

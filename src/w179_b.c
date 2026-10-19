@@ -166,7 +166,7 @@ void func_00263DB0(u8 *p) {
     extern void func_001757E0();
     extern void func_001E3710();
     extern void func_0018C4B0();
-    extern void func_001B53E0();
+    extern u8 *func_001B53E0(u8 *, s32, s32);
     extern void func_00183D90();
     extern void func_001863F0();
     extern s32 func_00175700();
