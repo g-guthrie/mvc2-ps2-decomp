@@ -15949,3 +15949,4 @@ func_0021D7C0,0x0021D7C0,0x27C,src/select_throw_motion_0021d7c0.c,complete
 func_0023A440,0x0023A440,0x140,src/select_input_variant_0023a440.c,complete
 func_00285E50,0x00285E50,0x74,src/owner_state_callback_00285E50.c,complete
 func_002C1E80,0x002C1E80,0xA4,src/owner_state_callback_002C1E80.c,complete
+func_002FB800,0x002FB800,0x60,src/owner_state_callback_002FB800.c,complete

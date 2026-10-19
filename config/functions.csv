@@ -13118,7 +13118,7 @@ func_002FB620,0x002FB620,0x70,0x002FB690,code,spimdisasm-explicit-size-before-fi
 func_002FB690,0x002FB690,0x24,0x002FB6B4,code,matching-c-head-split
 residual_002FB6B4,0x002FB6B4,0x124,0x002FB7D8,assembly_residual,verified-boundary-after-matching-head
 func_002FB7E0,0x002FB7E0,0x1C,0x002FB7FC,code,matching-c-head-split
-residual_002FB7FC,0x002FB7FC,0x64,0x002FB860,assembly_residual,verified-boundary-after-matching-head
+func_002FB800,0x002FB800,0x60,0x002FB860,code,typed-callback-table-entry
 func_002FB860,0x002FB860,0xB4,0x002FB914,code,spimdisasm-explicit-size-before-first-data
 func_002FB920,0x002FB920,0xAC,0x002FB9CC,code,spimdisasm-explicit-size-before-first-data
 func_002FB9D0,0x002FB9D0,0x20,0x002FB9F0,code,matching-c-head-split
