@@ -15799,3 +15799,7 @@ func_00311A90,0x00311A90,0x94,src/grok_w4b_residual_00311A90.c,complete
 func_0019F2A0,0x0019F2A0,0x64,src/grok_nop_9f2a0.c,complete
 func_0019F2A0,0x0019F2A0,0x64,src/grok_nop_9f2a0.c,complete
 func_001FA740,0x001FA740,0x7C,src/grok_nopk_1fa740.c,complete
+func_00303440,0x00303440,0x5C,src/grok_nm3_303438.c,complete
+func_0038F270,0x0038F270,0x5C,src/grok_nopd_38f270.c,complete
+func_003B8BA0,0x003B8BA0,0x6C,src/grok_w5b_003b8ba0.c,complete
+func_00311B30,0x00311B30,0xB4,src/grok_nm3_311b30.c,complete
