@@ -4053,3 +4053,37 @@ Catalog: 1,627,796 / 3,293,696 C bytes (49.4216%), 15,430 credited spans;
 154,221 / 648,064 reconstructed data bytes (23.7972%). All 51 tests and the
 complete hybrid/packed-image checks pass, with the same retail hashes above.
 No near-match probes receive credit. The remaining source recovery is ongoing.
+
+
+### Gameplay recovery, real helper contracts, and framed SDK calls — October 18
+
+Added 39 complete C spans / 8,220 bytes since the 49.4216% checkpoint:
+25 gameplay and residual spans plus 003F9230/404 B, 003F93C8/412 B,
+00271820/268 B, 0020BDF0/344 B, 00182AA0/300 B, 002ECA50/220 B, and
+eight formerly constrained runtime wrappers / 804 B. Every residual retains
+its existing full boundary. Every changed source unit was independently
+recompiled and checked in full.
+
+Five gameplay models no longer use volatile self-reads (w180_v, w1812_d,
+y1_j, y0_l, z2_b). The 0033F470 model now uses a void state switch instead
+of an uninitialized return; its full 240-byte function and new 0033F630 variant
+match. The 003A7B20 and 003B2E90 allocation helpers now return their allocated
+entry, matching the callers that inspect it. All 21 functions in their unit
+remain exact. The 0015B8B0 model now takes and forwards the actual second
+argument to 0015BA00; both the 328-byte caller and real 52-byte helper match.
+0015BD40 remains uncredited with a two-word instruction-order mismatch.
+
+EE GCC 2.96's `-fno-optimize-sibling-calls` reproduces eight normal runtime
+call frames from ordinary C. The new shared unit and registered recipe remove
+the old assembly barriers; see the compiler documentation for the exact
+profile and reproduction command. Nineteen barrier-dependent placeholders
+remain. 0040D738 has a new exact compiler probe but stays uncredited pending
+helper-contract review. The discarded-read 00407BC0 candidate also stays a
+placeholder. No probe, instruction substitution, or partial function receives
+matching credit.
+
+Catalog: 1,636,016 / 3,293,696 C bytes (49.6711%), 15,469 credited spans;
+154,221 / 648,064 reconstructed data bytes (23.7972%). All 51 tests and the
+complete hybrid/packed-image checks pass with the retail hashes above.
+The next scheduled full-point gate remains 1,652,329 code bytes. This smaller
+checkpoint makes the compiler profile and source-contract corrections public.

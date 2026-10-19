@@ -536,3 +536,34 @@ The 436-byte paired-timer routine at 0x00190130 uses MWCC3.0.3 O3/Op/G8.
 Its do-while loops keep independent record offsets; comparisons on signed-short
 assignment results preserve the retail sign extensions. Speed preference Op
 provides the native join padding without embedded NOPs or instruction changes.
+
+
+### Framed runtime calls with EE GCC 2.96
+
+`src/runtime_framed_calls_0040.c` uses EE GCC 2.96 with
+`-O2 -G0 -ffunction-sections -fno-optimize-sibling-calls`. The option preserves
+normal call frames and return sequences for the eight runtime wrappers in that
+unit. The compiler output matches each complete retail function, totaling
+804 bytes: 00400F98, 00405DC8, 004067B8, 00407FC8, 0040A440, 0040C7C0,
+0040CAA0, and 0040CD38. The old empty-assembly definitions were removed from
+six mixed-profile units and the obsolete single-function w0_z.c was deleted.
+All remaining functions in the affected original units were recompiled and
+verified with their original profiles.
+
+The normal matching build includes the compile-and-verify recipe. To run this
+unit separately after sourcing `private/build.env`:
+
+```sh
+"$WIBO" "$SNCPP" -P src/runtime_framed_calls_0040.c build/matching/runtime_framed_calls_0040.i
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --opt O2 \
+    --extra-flags=-fno-optimize-sibling-calls \
+    build/matching/runtime_framed_calls_0040.i build/matching/runtime_framed_calls_0040.s
+"$WIBO" "$SNAS" -G0 -o build/matching/runtime_framed_calls_0040.o build/matching/runtime_framed_calls_0040.s
+"$PYTHON" tools/verify_object.py build/matching/runtime_framed_calls_0040.o private/SLUS_204.86.rom \
+    --source src/runtime_framed_calls_0040.c
+```
+
+A separate probe also matches 0040D738 after removing its barrier and applying
+this profile. It stays a placeholder pending review of its helper contracts;
+probe results alone do not change the catalog. The other constrained functions
+remain subject to full source and compiler verification.
