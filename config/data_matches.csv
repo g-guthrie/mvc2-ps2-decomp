@@ -21,7 +21,9 @@ data_ff_00438304,0x00438304,0xC,src/data/data_ff_00438304.c,complete,placeholder
 data_u32_00438310,0x00438310,0x2F0,src/data/data_u32_00438310.c,complete,placeholder
 data_zero_00438600,0x00438600,0x28,src/data/data_zero_00438600.c,complete,placeholder
 data_u32_00438630,0x00438630,0x30,src/data/data_u32_00438630.c,complete,placeholder
-data_zero_00438660,0x00438660,0x40,src/data/data_zero_00438660.c,complete,placeholder
+data_zero_00438660,0x00438660,0x4,src/data/data_zero_00438660.c,complete,placeholder
+data_handler_slots_00438664,0x00438664,0x34,src/data/data_handler_slots_00438664.c,complete,reconstructed
+data_zero_00438698,0x00438698,0x8,src/data/data_zero_00438698.c,complete,placeholder
 data_raw_004386A0,0x004386A0,0x8,src/data/data_raw_004386A0.c,complete,placeholder
 data_sdk_pair_004386A8,0x004386A8,0x8,src/data/data_sdk_pair_004386A8.c,complete,reconstructed
 data_u32_004386B0,0x004386B0,0x4,src/data/data_u32_004386B0.c,complete,reconstructed

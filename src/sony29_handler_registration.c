@@ -1,4 +1,5 @@
-typedef void (*Handler)(void);
+#include "sony29_handler_table.h"
+typedef Sony29Handler Handler;
 extern Handler D_00438658;
 extern Handler D_00438660[];
 extern void func_0010C6C0(void);
