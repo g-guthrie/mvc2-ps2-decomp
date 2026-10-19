@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Cross-check the ledger, the build script, and the sources.
 
-Three invariants:
+Four invariants:
 
 1. Every source credited in config/matches.csv is compiled and verified by
    tools/compile_matching.sh. A credited-but-uncompiled source means functions
@@ -12,6 +12,8 @@ Three invariants:
    unverified code that reads as if it matched; it is usually a leftover from
    an attempt whose ledger row was removed but whose source was not. Recipe-2
    helper leaves are exempt because they are declared static.
+4. The data build runs after code compilation so table verifiers can resolve
+   every native function owner from a freshly compiled object.
 """
 import csv
 import re
@@ -76,6 +78,26 @@ def detached_object_verification_commands(script: str) -> list[str]:
     ]
 
 
+def premature_data_build_commands(script: str) -> list[str]:
+    """Require data tables to compile after all code-owner translation units."""
+    lines = script.splitlines()
+    calls = [
+        index
+        for index, line in enumerate(lines)
+        if re.search(r"\btools/compile_matching_data\.sh\b", line)
+    ]
+    if len(calls) != 1:
+        return [f"expected one data build call, found {len(calls)}"]
+
+    later_compiles = []
+    for line in lines[calls[0] + 1 :]:
+        if re.search(r"\bsrc/[\w./-]+\.c\s+-c\b", line) or re.match(
+            r"\s*for unit in ", line
+        ):
+            later_compiles.append(line.strip())
+    return later_compiles
+
+
 def credited_sources(path: Path) -> set[str]:
     with path.open(newline="") as handle:
         return {row["source"].strip() for row in csv.DictReader(handle) if row.get("source")}
@@ -97,14 +119,25 @@ def main() -> int:
     detached_verification = detached_object_verification_commands(script)
     for command in detached_verification:
         print(f"object verification command missing verifier prefix: {command}")
+    premature_data_build = premature_data_build_commands(script)
+    for command in premature_data_build:
+        print(f"data build occurs before code compilation is complete: {command}")
     orphans = orphan_bodies()
     for source, name in orphans:
         print(f"unregistered body: {name} in {source}")
-    if uncompiled or uncredited or orphans or detached or detached_verification:
+    if (
+        uncompiled
+        or uncredited
+        or orphans
+        or detached
+        or detached_verification
+        or premature_data_build
+    ):
         print(
             f"FAIL: {len(uncompiled)} uncompiled, {len(uncredited)} uncredited, "
             f"{len(orphans)} unregistered bodies, {len(detached)} detached compile commands, "
-            f"{len(detached_verification)} detached object verification commands"
+            f"{len(detached_verification)} detached object verification commands, "
+            f"{len(premature_data_build)} code compiles after the data build"
         )
         return 1
     print(

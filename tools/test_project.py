@@ -4,6 +4,36 @@ from tools.objdiff_report import DATA_SIZE, TEXT_SIZE, build_report
 
 
 class ProjectTest(unittest.TestCase):
+    def test_data_build_must_follow_all_code_compiles(self):
+        from tools.check_build_coverage import premature_data_build_commands
+
+        valid = (
+            'MWCIncludes="$MWCCPS2" "$WIBO" "$MWCCPS2" \\\n'
+            '    src/owner.c -c -lang c \\\n'
+            '    -o "$BUILD/owner.o"\n'
+            'for unit in other_owner; do\n'
+            '    "$WIBO" "$MWCCPS2" "src/$unit.c" -c -lang c \\\n'
+            '        -o "$BUILD/$unit.o"\n'
+            'done\n'
+            'PYTHON="$PYTHON" tools/compile_matching_data.sh\n'
+        )
+        self.assertEqual(premature_data_build_commands(valid), [])
+
+        invalid = (
+            'PYTHON="$PYTHON" tools/compile_matching_data.sh\n'
+            'MWCIncludes="$MWCCPS2" "$WIBO" "$MWCCPS2" \\\n'
+            '    src/late_owner.c -c -lang c \\\n'
+            '    -o "$BUILD/late_owner.o"\n'
+            'for unit in later_owner; do\n'
+            '    "$WIBO" "$MWCCPS2" "src/$unit.c" -c -lang c \\\n'
+            '        -o "$BUILD/$unit.o"\n'
+            'done\n'
+        )
+        self.assertEqual(
+            premature_data_build_commands(invalid),
+            ['src/late_owner.c -c -lang c \\', 'for unit in later_owner; do'],
+        )
+
     def test_orphan_object_verification_heads_are_rejected(self):
         from tools.check_build_coverage import detached_object_verification_commands
 
