@@ -12533,3 +12533,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/owner_state_callback_002A5410.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_state_callback_002A5410.o" \
     private/SLUS_204.86.rom --source src/owner_state_callback_002A5410.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/air_control_002498d0.c -c -lang c -O3 -Op -sdatathreshold 8 -i src \
+    -o "$BUILD/air_control_002498d0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/air_control_002498d0.o" \
+    private/SLUS_204.86.rom --source src/air_control_002498d0.c
