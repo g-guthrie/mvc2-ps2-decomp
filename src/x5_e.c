@@ -57,3 +57,23 @@ s32 func_0027C570(u8 *p) {
     }
     return r;
 }
+
+extern s8 D_00453080[];
+extern void func_00363640(u8 *,u8,u8);
+s32 func_0024C590(u8 *p) {
+    s8 r;
+    s16 v;
+    v = *(s16 *)(p + 0x1E) - 1;
+    *(s16 *)(p + 0x1E) = v;
+    if (v != 0) return 0;
+    {
+        do {
+            r = D_00453080[*(s16 *)(p + 0x1C) * 2];
+            if (r == -1) break;
+            func_00363640(p, (u8)r, (u8)*(s16 *)(p+0x1C));
+            *(s16 *)(p + 0x1E) = D_00453080[*(s16 *)(p + 0x1C) * 2 + 1];
+            *(s16 *)(p + 0x1C) = *(s16 *)(p + 0x1C) + 1;
+        } while (*(s16 *)(p + 0x1E) == 0);
+    }
+    return r;
+}
