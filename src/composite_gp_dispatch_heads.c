@@ -96,6 +96,7 @@ extern DispatchFn jtbl_004BFCC0[2];
 extern DispatchFn jtbl_004BFD10[2];
 extern DispatchFn jtbl_004BFD20[2];
 extern DispatchFn jtbl_004BFD30[2];
+extern DispatchFn jtbl_004500B0[];
 extern DispatchFn jtbl_004BFD38[2];
 extern DispatchFn jtbl_004BFD48[2];
 extern DispatchFn jtbl_004BFD58[2];
@@ -1165,3 +1166,5 @@ void func_003BA9C0(u8 *p) { jtbl_004C2068[p[5]](p); }
 void func_0041A840(u8 *p) { jtbl_004C2518[p[5]](p); }
 
 void func_0041AA90(u8 *p) { jtbl_004C2520[p[5]](p); }
+
+void func_001FF1C0(u8 *p) { jtbl_004500B0[p[7]](p); }
