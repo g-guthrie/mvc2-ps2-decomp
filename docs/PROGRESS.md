@@ -4268,3 +4268,43 @@ and 12-byte `__suio` request types, and explicitly forwards both arguments
 to `func_0011C458` (`__sfvwrite`). The original argument-omitting declaration
 is removed. Its EE GCC 2.96 O2/G0 object remains byte-exact at 72 bytes;
 this improves the recovered ABI without increasing matching-byte credit.
+
+### Combined Grok and independent recovery checkpoint — October 19
+
+Matching and hybrid-linked C now covers 1,898,764 / 3,293,696 bytes
+(57.6484%), across 16,801 credited function spans. This adds 140 functions /
+36,192 bytes since main's 56.5496% checkpoint. Reconstructed initialized data
+is 174,409 / 648,064 bytes (26.9123%); two bounded four-byte objects add eight
+bytes of data credit. Raw fallback ranges continue to earn no source credit.
+
+A read-only snapshot of newer Grok work supplied 92 independently replayed
+functions / 26,152 bytes. Their per-source compilers, flags, and source audits
+are recorded in [the replay manifest](grok-new-primary-20261019-replay.csv).
+Thirty-five use MWCCPS2 3.0-011126 with genuine `#pragma padloop on`; the
+compiler emits the native loop padding without inline NOPs or opcode patching.
+Other recoveries include callback bodies and dispatch heads, with native
+entry references and disjoint whole-function boundaries. The integration
+preserves uncredited prefixes and alignment gaps.
+
+Source audits corrected helper argument/return types, callback signatures,
+open pointer views, and local vector extents. Two local vectors contain only
+x/y and retain their native 16-byte alignment. Another native Vec3 call leaves
+z uninitialized; its recovered source documents and preserves that behavior.
+No opaque extra elements were added just to shape the stack frame.
+
+All 135 changed code translation units were independently compiled and
+verified against the private retail input; every subsequent audit correction
+was replayed again. All eight changed data units were recompiled and verified.
+The 53 tests, progress-catalog validation, shell syntax, and build coverage
+(3,827 credited source units, no unregistered bodies) pass. Full linkage and
+packing reproduce the retail loaded image and ELF:
+
+- Loaded image: 3,941,760 bytes, SHA-256
+  `c5206f568f068e5bd93ba47676500764c3d45719890865fa71ada10afadcd26f`.
+- Packed ELF: 3,942,320 bytes, SHA-256
+  `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+
+This crosses the scheduled 1,882,888-byte checkpoint. The next scheduled
+checkpoint is 1,915,825 code bytes (58.1664%). Complete source decompilation
+remains unfinished; exact hybrid reconstruction still uses private retail
+bytes for unrecovered regions.
