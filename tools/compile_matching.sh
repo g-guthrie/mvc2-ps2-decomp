@@ -11029,6 +11029,10 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_sfvwrite_0011C458.i" "$BUILD/newlib_sfvwrite_0011C458.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_sfvwrite_0011C458.o" "$BUILD/newlib_sfvwrite_0011C458.s"
 "$PYTHON" tools/verify_object.py "$BUILD/newlib_sfvwrite_0011C458.o" private/SLUS_204.86.rom --source src/newlib_sfvwrite_0011C458.c
+"$WIBO" "$SNCPP" -P src/newlib_srefill_0011F6D8.c "$BUILD/newlib_srefill_0011F6D8.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_srefill_0011F6D8.i" "$BUILD/newlib_srefill_0011F6D8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_srefill_0011F6D8.o" "$BUILD/newlib_srefill_0011F6D8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_srefill_0011F6D8.o" private/SLUS_204.86.rom --source src/newlib_srefill_0011F6D8.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/w1911_b.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/w1911_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w1911_b.o" private/SLUS_204.86.rom --source src/w1911_b.c
