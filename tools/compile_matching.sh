@@ -14987,4 +14987,10 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -G0 -o "$BUILD/soft_float_narrow_00119c90.o" "$BUILD/soft_float_narrow_00119c90.s"
 "$PYTHON" tools/verify_object.py "$BUILD/soft_float_narrow_00119c90.o" private/SLUS_204.86.rom --source src/soft_float_narrow_00119c90.c
 
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/indexed_event_spawn_00137b00.c -c -lang c -O3 -Op -fp off -sdatathreshold 0 -o "$BUILD/indexed_event_spawn_00137b00.o"
+"$PYTHON" tools/verify_object.py "$BUILD/indexed_event_spawn_00137b00.o" private/SLUS_204.86.rom --source src/indexed_event_spawn_00137b00.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_002C17C0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/grok_002C17C0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_002C17C0.o" private/SLUS_204.86.rom --source src/grok_002C17C0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

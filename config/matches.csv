@@ -17103,3 +17103,7 @@ func_0016F1B0,0x0016F1B0,0x114,src/resource_section_bind_0016f1b0.c,complete
 func_0016FD80,0x0016FD80,0x19C,src/resource_record_passes_0016fd80.c,complete
 func_002F7540,0x002F7540,0x30,src/composite_dispatch_heads.c,complete
 func_00119C90,0x00119C90,0x54,src/soft_float_narrow_00119c90.c,complete
+func_00137B00,0x00137B00,0xF0,src/indexed_event_spawn_00137b00.c,complete
+func_002C17C0,0x002C17C0,0x1C,src/grok_002C17C0.c,complete
+func_003AB400,0x003AB400,0x2C,src/argument_dispatch_heads.c,complete
+func_003AB430,0x003AB430,0x30,src/argument_dispatch_heads.c,complete

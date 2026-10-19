@@ -61,7 +61,7 @@ void func_00264760(u8 *p) {
 
 extern f32 D_004F1FD8[];
 extern f32 D_004F1FDC[];
-extern u32 D_004554E0[];
+extern const u8 *const D_004554E0[];
 extern u32 func_00174170();
 
 s32 func_00280F80(u8 *p) {
@@ -76,7 +76,7 @@ s32 func_00280F80(u8 *p) {
         p[0x495] = 1;
         p[0x496] = 1;
         r = func_00174170();
-        *(u32 *)(p + 0x484) = D_004554E0[r & 3];
+        *(const u8 **)(p + 0x484) = D_004554E0[r & 3];
         return 1;
     }
     return 0;

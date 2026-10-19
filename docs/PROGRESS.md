@@ -4474,3 +4474,31 @@ The verified totals are 1,920,868 / 3,293,696 code bytes (58.3195%) and
 packing reproduce the retail hashes recorded above. The next normal publication
 threshold remains 1,948,762 code bytes (59.1664%), another 27,894 bytes beyond this
 batch. Full source recovery remains unfinished.
+
+
+## Event setup, owner dispatch, and command profiles (2026-10-19)
+
+Four further functions add 360 bytes of exact C: the indexed event constructor
+00137B00, the signed-selector dispatcher 002C17C0, and owner dispatchers 003AB400
+and 003AB430. The constructor uses MWCC with `-fp off` for its float constant stores; its direct caller supplies byte arguments.
+The 28-byte 002C17C0 body excludes its trailing NOP. Two callers set its selector
+to 0 or 1, proving the complete eight-byte callback table at 004C0DE8. Both callback
+targets already have exact unary source. The const table and its consumer now
+agree on pointer types and explicit GP-relative placement.
+
+Thirteen structured data objects add 90 bytes: that callback table, two four-entry
+symbolic command-profile pointer tables, eight bounded command streams, and two
+masked byte lookups. The profile names resolve to actual byte arrays through
+R_MIPS_32 relocations. Native 00280AE0 establishes opcode/operand semantics and
+reset behavior; the shared header names the recovered commands. Opcodes 1 and 2
+consume one operand and return, while some other commands continue parsing within
+the same call. Unclassified alignment bytes and remaining pointer words retain
+placeholder status. The larger parser is not credited: a private C++ candidate
+is still two instructions away from exact, despite matching its generated table.
+
+The verified totals are 1,921,228 / 3,293,696 code bytes (58.3305%) and
+175,883 / 648,064 reconstructed data bytes (27.1398%). All 57 tests, catalog and
+build-coverage checks pass. Final loaded ROM and packed retail ELF hashes match
+the references above. The next normal push remains 1,948,762 code bytes
+(59.1664%), another 27,534 bytes beyond this batch; full source recovery remains
+unfinished.
