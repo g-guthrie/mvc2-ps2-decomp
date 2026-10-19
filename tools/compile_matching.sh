@@ -11062,6 +11062,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$WIBO" "$SNCPP" -P src/w1911_k.c "$BUILD/w1911_k.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="-msoft-float" "$BUILD/w1911_k.i" "$BUILD/w1911_k.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/w1911_k.o" "$BUILD/w1911_k.s"
+# EE GCC unsigned-double conversion uses the retail unsigned helper.
+"${OBJCOPY:-mipsel-linux-gnu-objcopy}" --redefine-sym dptoul=func_00119CE8 "$BUILD/w1911_k.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w1911_k.o" private/SLUS_204.86.rom --source src/w1911_k.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/w1911_l.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/w1911_l.o"

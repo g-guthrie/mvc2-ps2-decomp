@@ -627,3 +627,19 @@ inside a whole selected function, and every resolved constant byte must match
 retail. Partial, writable, ambiguous, changed, and out-of-range sections are
 rejected. These anchors supply relocation evidence without adding data credit;
 the normal data catalog remains the authority for compiled data replacements.
+
+The Newlib 1.10.0 `dtoa.c` adaptation in `newlib_dtoa_0011A108.c` retains
+its 556-byte quotient helper in the same source unit. EE GCC 2.96
+`-O2 -G0 -msoft-float` produces the complete 4,708-byte conversion routine.
+Its 0x58-byte readonly section at 0x004AC810 contains compiler literals and
+six local jump-table entries; the production verifier checks all resolved
+bytes before using that base. The checked `_reent` view extends only through
+`_result` and `_result_k` at 0x40/0x44, with no data or opaque-tail credit.
+
+EE GCC's signed double-to-integer libcall `dptoli` resolves to 0x00119BC0.
+The existing unsigned 64-bit conversion in `w1911_k.c` now uses unsigned
+32-bit casts for both halves. Its compiler-generated unsigned conversion
+relocation is named `func_00119CE8` with objcopy's symbol-renaming option,
+so it reaches the actual unsigned helper without changing the legacy `dptoul`
+address used by other compiler units. No instruction bytes are rewritten;
+both the repaired 280-byte function and the Newlib unit verify in full.
