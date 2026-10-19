@@ -2348,7 +2348,8 @@ func_001769F0,0x001769F0,0x74,0x00176A64,code,spimdisasm-explicit-size-before-fi
 func_00176A70,0x00176A70,0x34,0x00176AA4,code,spimdisasm-explicit-size-before-first-data
 func_00176AB0,0x00176AB0,0x23C,0x00176CEC,code,spimdisasm-explicit-size-before-first-data
 func_00176CF0,0x00176CF0,0xC8,0x00176DB8,code,spimdisasm-explicit-size-before-first-data
-func_00176DC0,0x00176DC0,0x54,0x00176E14,code,spimdisasm-explicit-size-before-first-data
+func_00176DC0,0x00176DC0,0x28,0x00176DE8,code,native-jump-table-dispatch-boundary
+func_00176DF0,0x00176DF0,0x24,0x00176E14,code,native-jump-table-target
 func_00176E20,0x00176E20,0x50,0x00176E70,code,spimdisasm-explicit-size-before-first-data
 func_00176E70,0x00176E70,0x12C,0x00176F9C,code,spimdisasm-explicit-size-before-first-data
 func_00176FA0,0x00176FA0,0xD4,0x00177074,code,spimdisasm-explicit-size-before-first-data
