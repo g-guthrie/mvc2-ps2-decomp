@@ -170,6 +170,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/composite_gp_dispatch_heads.c -c -lang c -O3 -sdatathreshold 8 -i src/data \
     -o "$BUILD/composite_gp_dispatch_heads.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/func_001794A0.c -c -lang c -O4,p -sdatathreshold 0 \
+    -o "$BUILD/func_001794A0.o"
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/func_001794A0.o" private/SLUS_204.86.rom \
+    --source src/func_001794A0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/argument_dispatch_heads.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/argument_dispatch_heads.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
