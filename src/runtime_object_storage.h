@@ -17,5 +17,6 @@ extern RuntimeObjectStorage gRuntimeObjectPool_00484AC0[MVC2_RUNTIME_OBJECT_COUN
 void func_00400148(RuntimeObjectStorage *, int, int, int, int);
 RuntimeObjectStorage *func_004001A8(int, int, int, int);
 RuntimeObjectStorage *func_00400258(int, int, int, int);
+void func_004007A0(RuntimeObjectStorage *, int);
 
 #endif

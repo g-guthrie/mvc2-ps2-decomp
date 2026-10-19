@@ -596,3 +596,16 @@ The 00400AF8 processor scans exactly forty slots, and 004000F8 clears exactly
 its complete 2,560-byte object matches retail. The raw ranges on either side
 remain placeholders. A negative control changing the first slot's initial
 active flag is rejected by the whole-data verifier.
+
+
+### Runtime sector-count calculation
+
+`set_runtime_sector_count_004007A0.c` compiles with EE GCC 2.96
+`-O2 -G0 -ffunction-sections -fno-schedule-insns`. The complete 64-byte
+function matches retail, including the signed division and its delay-slot
+store. A negative count derives the sector count from the object's byte
+length, rounding upward only for a positive remainder; other counts are
+stored directly. The shared 64-byte runtime-object layout supplies the
+length at offset 0x14 and sector count at offset 0x30. No instruction
+rewriting or assembly barriers are used. The normal matching build includes
+the preprocessing, compiler option, assembly, and full-function verifier.

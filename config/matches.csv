@@ -15558,3 +15558,4 @@ func_0023A940,0x0023A940,0xE4,src/z2_b.c,complete
 func_00233C90,0x00233C90,0xE8,src/deferred_move_setup.c,complete
 func_0023F6E0,0x0023F6E0,0xE8,src/deferred_move_setup.c,complete
 func_00271410,0x00271410,0x210,src/motion_speed_transition.c,complete
+func_004007A0,0x004007A0,0x40,src/set_runtime_sector_count_004007A0.c,complete

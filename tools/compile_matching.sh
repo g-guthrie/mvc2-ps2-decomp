@@ -11079,3 +11079,12 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -G0 -o "$BUILD/register_runtime_callback_00411720.o" "$BUILD/register_runtime_callback_00411720.s"
 "$PYTHON" tools/verify_object.py "$BUILD/register_runtime_callback_00411720.o" private/SLUS_204.86.rom \
     --source src/register_runtime_callback_00411720.c
+
+# This sector-count calculation retains the retail register schedule with the
+# first scheduling pass disabled; the compiler still performs its final pass.
+"$WIBO" "$SNCPP" -P src/set_runtime_sector_count_004007A0.c "$BUILD/set_runtime_sector_count_004007A0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 \
+    --extra-flags=-fno-schedule-insns "$BUILD/set_runtime_sector_count_004007A0.i" "$BUILD/set_runtime_sector_count_004007A0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/set_runtime_sector_count_004007A0.o" "$BUILD/set_runtime_sector_count_004007A0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/set_runtime_sector_count_004007A0.o" private/SLUS_204.86.rom \
+    --source src/set_runtime_sector_count_004007A0.c
