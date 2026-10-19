@@ -681,3 +681,10 @@ at `0x0020CB60`. The inner table and dispatcher now retain this real argument.
 A double temporary merges the facing-dependent target calculation before
 its float conversion; subtraction from the actor position remains float,
 then division by 32 uses double as in retail.
+
+`func_002FEDA0` uses the same MWCC 3.0.3 O3/Op/G0 profile. Its real state
+input comes from `func_002FF2A0`, which sets A1 to `p + 0x2B8` at
+`0x002FF2B0`. Slot `0x0045C1CC` selects the context-preserving head
+`func_002FEF40`; inner slot `0x0045C1AC` selects this callback. Both typed
+tables already retain that argument. The inverted less-or-equal test
+preserves the retail unordered floating-point path.
