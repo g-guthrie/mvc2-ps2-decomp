@@ -5443,7 +5443,7 @@ func_001EE890,0x001EE890,0x64,0x001EE8F4,code,spimdisasm-explicit-size-before-fi
 func_001EE900,0x001EE900,0x60,0x001EE960,code,spimdisasm-explicit-size-before-first-data
 func_001EE960,0x001EE960,0x74,0x001EE9D4,code,spimdisasm-explicit-size-before-first-data
 func_001EE9E0,0x001EE9E0,0x24,0x001EEA04,code,spimdisasm-explicit-size-before-first-data
-func_001EEA10,0x001EEA10,0x134,0x001EEB44,code,spimdisasm-explicit-size-before-first-data
+func_001EEA10,0x001EEA10,0x134,0x001EEB44,code,verified-complete-c-function
 func_001EEB50,0x001EEB50,0xF0,0x001EEC40,code,spimdisasm-explicit-size-before-first-data
 func_001EEC40,0x001EEC40,0xFC,0x001EED3C,code,spimdisasm-explicit-size-before-first-data
 func_001EED40,0x001EED40,0xF0,0x001EEE30,code,spimdisasm-explicit-size-before-first-data
