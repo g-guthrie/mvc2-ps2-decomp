@@ -12432,3 +12432,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/angle_velocity_00237d40.o"
 "$PYTHON" tools/verify_object.py "$BUILD/angle_velocity_00237d40.o" \
     private/SLUS_204.86.rom --source src/angle_velocity_00237d40.c
+    src/owner_state_callback_002D5190.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/owner_state_callback_002D5190.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_state_callback_002D5190.o" \
+    private/SLUS_204.86.rom --source src/owner_state_callback_002D5190.c
