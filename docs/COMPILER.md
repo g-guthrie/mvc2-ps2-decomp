@@ -743,3 +743,11 @@ a 12-byte NOP gap, and an 88-byte handler under the existing MWCCPS2 3.0.3
 `p + 0x1dc` as A0 and p as A1 to `func_00178F20`. Both are recovered as a
 36-byte dispatch head and a 12-byte tail-call handler, with the original
 four-byte leading and 12-byte separating gaps retained in the boundary map.
+
+
+`func_001F03A0` is selected by table slot `0x0044F68C`. It calls
+`func_003D92F0(p)` first, reports a failure through `func_001843A0(p)`, and on
+success dispatches through `jtbl_0044F710[p[32]](p)`. The 92-byte C body
+matches in `grok_w5_001f.c` under the existing MWCCPS2 3.0.3
+`-O3 -sdatathreshold 8` recipe, after a four-byte leading gap in the recovered
+boundary.
