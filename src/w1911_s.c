@@ -8,7 +8,18 @@ typedef struct { f32 x, y, z; } V3;
 typedef struct { V3 r[3]; } Row;
 extern Row D_00440090[];
 extern s32 D_004C2830;
-extern void func_0013A9D0(void);
+typedef void (*Mvc2StateHandler)(u8 *);
+extern const u32 jtbl_00440240[];
+void func_0013A9D0(u8 *p) {
+    u8 *state = *(u8 **)(p + 0x18);
+    ((Mvc2StateHandler)jtbl_00440240[state[4]])(p);
+}
+
+void func_0013AA00(u8 *p) {
+    u8 *context = *(u8 **)(p + 0x18);
+    *(s8 *)(p + 0x13C) = *(s8 *)(context + 0x13C);
+}
+
 void func_0013A610(u8 *p) {
     extern u8 *func_003DA750(s32, s32, s32);
     extern void func_0013A760(u8 *);
