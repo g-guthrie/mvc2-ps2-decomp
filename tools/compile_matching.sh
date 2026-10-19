@@ -12364,3 +12364,15 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/initial_launches_0024fae0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initial_launches_0024fae0.o" \
     private/SLUS_204.86.rom --source src/initial_launches_0024fae0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/query_owner_guard_0024d670.c -c -lang c -O3,p -Op -sdatathreshold 0 \
+    -o "$BUILD/query_owner_guard_0024d670.o"
+"$PYTHON" tools/verify_object.py "$BUILD/query_owner_guard_0024d670.o" \
+    private/SLUS_204.86.rom --source src/query_owner_guard_0024d670.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/scaled_pair_motion_00259400.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/scaled_pair_motion_00259400.o"
+"$PYTHON" tools/verify_object.py "$BUILD/scaled_pair_motion_00259400.o" \
+    private/SLUS_204.86.rom --source src/scaled_pair_motion_00259400.c

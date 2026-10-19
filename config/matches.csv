@@ -15906,3 +15906,5 @@ func_00122340,0x00122340,0x54,src/string_stream_printf_00122340.c,complete
 func_0016A1F0,0x0016A1F0,0x1C,src/leaf_batch_a.c,complete
 func_0019A940,0x0019A940,0x2C,src/grok_w5_0019.c,complete
 func_0019A970,0x0019A970,0x44,src/grok_w5_0019.c,complete
+func_0024D670,0x0024D670,0xD8,src/query_owner_guard_0024d670.c,complete
+func_00259400,0x00259400,0xE4,src/scaled_pair_motion_00259400.c,complete
