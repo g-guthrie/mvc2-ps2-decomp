@@ -4,7 +4,7 @@ typedef struct {
 
 extern Msg85C0 D_004C85C0;
 extern unsigned char D_004C8380[];
-extern int func_00106E68(void *, int, int, int, int, void *, int, int, int);
+extern int func_00106E68(void *, int, int, void *, int, void *, int, void (*)(void *), void *);
 extern int func_0010DA40(int, int, int);
 
 int func_0010DEA8(int a0, int a1, int a2, int a3) {
@@ -24,6 +24,26 @@ int func_0010DEA8(int a0, int a1, int a2, int a3) {
     if (ret == 1) {
         func_0010DA40(a0, a1, 2);
         ret = D_004C85C0.f14;
+    }
+    return ret;
+}
+
+int func_0010E1B0(int a0, int a1, int a2) {
+    int r;
+    int ret;
+
+    D_004C85C0.f0c = a2;
+    D_004C85C0.f04 = a0;
+    D_004C85C0.f08 = a1;
+    D_004C85C0.f00 = 10;
+    r = func_00106E68(D_004C8380, 1, 0, &D_004C85C0, 0x80, &D_004C85C0, 0x80, 0, 0);
+    if (r < 0) {
+        return 0;
+    }
+    ret = D_004C85C0.f10;
+    if (ret == 1) {
+        func_0010DA40(a0, a1, 2);
+        ret = D_004C85C0.f10;
     }
     return ret;
 }
