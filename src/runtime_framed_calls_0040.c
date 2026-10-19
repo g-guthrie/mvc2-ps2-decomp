@@ -1,3 +1,4 @@
+#include "runtime_entry_table.h"
 /* EE GCC 2.96: -O2 -G0 -fno-optimize-sibling-calls. */
 typedef unsigned char u8;
 typedef signed char s8;
@@ -119,8 +120,7 @@ void func_0040CB30(const char *source)
         func_0011FE88((char *)D_004896E0, source);
 }
 
-typedef struct { u8 pad[0x2C]; s32 a, b, c, d, e; } RuntimeRecord;
-void func_0040D738(u8 *p)
+void func_0040D738(RuntimeEntrySlot *p)
 {
     extern s32 func_004003C8(s32, s32, s32, s32, s32);
     extern void func_0040D5A0(const char *, ...);
@@ -130,29 +130,30 @@ void func_0040D738(u8 *p)
     extern s32 func_004006E8(u8 *);
     extern char D_004BE3E0[];
     extern char D_004BE400[];
-    RuntimeRecord *e;
-    u8 *q;
+    RuntimeEntryRecord *e;
     s32 v, r;
-    q = p + (*(s32 *)(p + 0x20) << 6);
-    e = (RuntimeRecord *)(q + 0x38);
-    if (*(s32 *)(p + 0x24) > 0) {
-        if (*(s32 *)(p + 0x28) == 0) {
-            r = func_004003C8((s32)(q + 0x3C), e->a, e->b, e->c, *(s32 *)(p + 8));
-            *(s32 *)(p + 0x28) = r;
-            if (r == 0) func_0040D5A0(D_004BE3E0, q + 0x3C);
-            v = func_00400BE0(*(void **)(p + 0x28));
-            *(s8 *)(p + 2) = 0;
-            *(s32 *)(p + 0x2C) = (v + 2047) / 2048;
-            e->e = 0;
+    e = &p->records[p->record_index];
+    if (p->remaining > 0) {
+        if (p->handle == 0) {
+            r = func_004003C8((s32)e->name, e->argument_2c, e->argument_30,
+                              e->argument_34, p->argument_08);
+            p->handle = r;
+            if (r == 0) func_0040D5A0(D_004BE3E0, e->name);
+            v = func_00400BE0((void *)p->handle);
+            p->state_02 = 0;
+            p->scaled_size = (v + 2047) / 2048;
+            e->value_3c = 0;
         }
-        if (*(s8 *)(p + 2) == 0) {
-            func_00400BB8(*(u8 **)(p + 0x28), *(s32 *)(p + 0x14), *(s32 *)(p + 0x18));
-            func_00400658(*(s32 **)(p + 0x28), 0);
-            func_004006E8(*(u8 **)(p + 0x28));
-            *(s8 *)(p + 2) = 1;
+        if (p->state_02 == 0) {
+            func_00400BB8((u8 *)p->handle, p->argument_14, p->argument_18);
+            func_00400658((s32 *)p->handle, 0);
+            func_004006E8((u8 *)p->handle);
+            p->state_02 = 1;
         }
-        e->d = 1;
+        e->word_38 = 1;
     } else {
-        if (*(s32 *)(p + 0x28) != 0) { func_0040D5A0(D_004BE400, *(s32 *)(p + 0x24), *(s32 *)(p + 0x28));  }
+        if (p->handle != 0) {
+            func_0040D5A0(D_004BE400, p->remaining, p->handle);
+        }
     }
 }

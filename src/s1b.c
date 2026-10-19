@@ -1,3 +1,4 @@
+#include "runtime_entry_table.h"
 typedef signed int s32;
 typedef unsigned int u32;
 extern void (*D_004C2214)(void);
@@ -10,7 +11,7 @@ extern s32 D_004C2474;
 extern void func_0040D548(void *);
 extern void func_0040D568(void *);
 extern void func_0040D628(void);
-extern char D_00489818[];
+extern RuntimeU8 D_00489818[];
 extern void func_0011D8F8(void *, s32, s32);
 void func_0040D638(void) {
     char buf[16];

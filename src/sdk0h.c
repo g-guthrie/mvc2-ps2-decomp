@@ -1,14 +1,14 @@
+#include "runtime_entry_table.h"
 typedef signed int s32;
 typedef unsigned char u8;
 typedef signed char s8;
-typedef struct S1 { s8 flag; u8 pad[0x437]; } S1;
-extern S1 D_00489818[];
-S1 *func_0040CBD0(void) {
-    S1 *r = 0;
+extern RuntimeU8 D_00489818[];
+RuntimeEntrySlot *func_0040CBD0(void) {
+    RuntimeEntrySlot *r = 0;
     s32 i;
     for (i = 0; i < 16; i++) {
-        S1 *p = &D_00489818[i];
-        if (p->flag == 0) { r = p; break; }
+        RuntimeEntrySlot *p = &((RuntimeEntrySlot *)D_00489818)[i];
+        if (p->in_use == 0) { r = p; break; }
     }
     return r;
 }
