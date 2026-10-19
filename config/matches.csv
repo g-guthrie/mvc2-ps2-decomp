@@ -15886,3 +15886,5 @@ func_00201C80,0x00201C80,0x40,src/crossing_stop_00201150.c,complete
 func_00201CC0,0x00201CC0,0xE4,src/crossing_stop_00201150.c,complete
 func_0021BAB0,0x0021BAB0,0x30,src/release_owner_0021bae0.c,complete
 func_0021BAE0,0x0021BAE0,0x100,src/release_owner_0021bae0.c,complete
+func_002381E0,0x002381E0,0x20,src/launch_reset_00238200.c,complete
+func_00238200,0x00238200,0x100,src/launch_reset_00238200.c,complete
