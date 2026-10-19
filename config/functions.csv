@@ -3708,9 +3708,11 @@ func_001B0B00,0x001B0B00,0x1C,0x001B0B1C,code,matching-c-head-split
 gap_001B0B1C,0x001B0B1C,0x4,0x001B0B20,padding,verified-alignment-padding
 func_001B0B20,0x001B0B20,0x3C,0x001B0B5C,code,callback-table-and-prologue-verified-entry
 func_001B0B60,0x001B0B60,0x1C,0x001B0B7C,code,matching-c-head-split
-residual_001B0B7C,0x001B0B7C,0xA8,0x001B0C24,assembly_residual,verified-boundary-after-matching-head
+residual_001B0B7C,0x001B0B7C,0x4,0x001B0B80,assembly_residual,leading-nops
+func_001B0B80,0x001B0B80,0xA4,0x001B0C24,code,callback-table-and-prologue-verified-entry
 func_001B0C30,0x001B0C30,0x1C,0x001B0C4C,code,matching-c-head-split
-residual_001B0C4C,0x001B0C4C,0x80,0x001B0CCC,assembly_residual,verified-boundary-after-matching-head
+residual_001B0C4C,0x001B0C4C,0x4,0x001B0C50,assembly_residual,leading-nops
+func_001B0C50,0x001B0C50,0x7C,0x001B0CCC,code,callback-table-and-prologue-verified-entry
 func_001B0CD0,0x001B0CD0,0x1C,0x001B0CEC,code,matching-c-head-split
 gap_001B0CEC,0x001B0CEC,0x4,0x001B0CF0,padding,verified-alignment-padding
 func_001B0CF0,0x001B0CF0,0x6C,0x001B0D5C,code,callback-table-and-prologue-verified-entry
@@ -3766,7 +3768,8 @@ func_001B2CE0,0x001B2CE0,0x1C,0x001B2CFC,code,matching-c-head-split
 residual_001B2CFC,0x001B2CFC,0xB8,0x001B2DB4,assembly_residual,verified-boundary-after-matching-head
 func_001B2DC0,0x001B2DC0,0x94,0x001B2E54,code,spimdisasm-explicit-size-before-first-data
 func_001B2E60,0x001B2E60,0x1C,0x001B2E7C,code,matching-c-head-split
-residual_001B2E7C,0x001B2E7C,0xB8,0x001B2F34,assembly_residual,verified-boundary-after-matching-head
+residual_001B2E7C,0x001B2E7C,0x4,0x001B2E80,assembly_residual,leading-nops
+func_001B2E80,0x001B2E80,0xB4,0x001B2F34,code,callback-table-and-prologue-verified-entry
 func_001B2F40,0x001B2F40,0x4C,0x001B2F8C,code,spimdisasm-explicit-size-before-first-data
 func_001B2F90,0x001B2F90,0x1C,0x001B2FAC,code,matching-c-head-split
 gap_001B2FAC,0x001B2FAC,0x4,0x001B2FB0,padding,verified-alignment-padding

@@ -15773,3 +15773,6 @@ func_002403E0,0x002403E0,0x84,src/grok_nopb_403e0.c,complete
 func_002424A0,0x002424A0,0x98,src/grok_nopb_424a0.c,complete
 func_002425A0,0x002425A0,0x98,src/grok_nopb_425a0.c,complete
 func_002777E0,0x002777E0,0x98,src/grok_nopb_777e0.c,complete
+func_001B0B80,0x001B0B80,0xA4,src/grok_nope_1b0b80.c,complete
+func_001B0C50,0x001B0C50,0x7C,src/grok_nope_1b0c50.c,complete
+func_001B2E80,0x001B2E80,0xB4,src/grok_nope_1b2e80.c,complete
