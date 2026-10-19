@@ -4087,3 +4087,43 @@ Catalog: 1,636,016 / 3,293,696 C bytes (49.6711%), 15,469 credited spans;
 complete hybrid/packed-image checks pass with the retail hashes above.
 The next scheduled full-point gate remains 1,652,329 code bytes. This smaller
 checkpoint makes the compiler profile and source-contract corrections public.
+
+
+### Typed runtime-object storage and twenty complete C recoveries — October 18
+
+Added twenty complete C spans / 3,188 bytes since bbd8bac4: nine gameplay
+functions / 1,980 bytes and eleven SDK functions / 1,208 bytes. The gameplay
+batch includes 00241430, 00238A10, 002D00D0, 00254480, 00210F40, 00218910,
+0023A940, 00233C90, and 0023F6E0. The SDK batch includes 0040D738, 00405170,
+00400148, 004001A8, and the seven routines in runtime_framed_calls_003f.c.
+Every changed source unit was independently recompiled with its registered
+profile and verified in full.
+
+The 00400148/004001A8 catalog repairs merge adjacent uncredited fragments
+into the actual 96/172-byte functions. Both returns and all bytes remain in
+the comparison. Direct calls target the real starts; the old interior labels
+have no direct-call or initialized-pointer entries. The function catalog's
+byte total and fixed code denominator are unchanged; its entry count falls
+by two. The existing 00400258 allocator and the bounded 00400AF8 pool processor
+also match with the shared RuntimeObjectStorage layout.
+
+The data recovery is a typed array of forty 64-byte runtime objects, initially
+inactive. Its size and stride are independently established by the 0xA00-byte
+clear, the forty-slot processor, and both partition allocators. The complete
+2,560-byte C initializer matches retail. The surrounding 31,172-byte and
+7,712-byte raw ranges retain placeholder status. Corrupting the first active
+flag makes the private data verifier fail. This adds 2,560 reconstructed data
+bytes without changing the data denominator.
+
+The q1d template's two embedded command helpers incorrectly cleared one byte
+at 1C0. They now use the genuine halfword-clearing implementation from
+pending_commands.c. Both 72-byte helpers, the real 92-byte motion helper, and
+all four 92-byte callers match in full. Existing caller credit is unchanged.
+The additional framed-call recovery removes eight more empty barriers;
+ten empty-barrier placeholders remain. The 140-versus-148-byte
+record-search probes stay uncredited.
+
+Catalog: 1,639,204 / 3,293,696 C bytes (49.7679%), 15,489 credited spans;
+156,781 / 648,064 reconstructed data bytes (24.1922%). All 51 tests, static
+build coverage, and full hybrid/packed-image checks pass with the retail hashes
+above. The next scheduled full-point gate remains 1,652,329 code bytes.

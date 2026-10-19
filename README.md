@@ -157,8 +157,8 @@ registered source changes since the frozen build were separately recompiled.
 
 The progress audit removed algorithmic assembly and compiler-constraint credit;
 four former assembly copies now have exact C replacements. Three empty-barrier removals preserve exact objects; eight further functions
-now match without constraints under real compiler profiles. The remaining
-27 constraint-dependent functions stay placeholders. Required kernel/CPU operations retain their documented exception.
+now match without constraints under real compiler profiles. Remaining
+constraint-dependent functions stay placeholders. Required kernel/CPU operations retain their documented exception.
 See the initial audit dispositions in
 [docs/ASSEMBLY_CREDIT_AUDIT.csv](docs/ASSEMBLY_CREDIT_AUDIT.csv) and subsequent
 recoveries in [docs/PROGRESS.md](docs/PROGRESS.md). The generated graphic and
@@ -170,10 +170,12 @@ motion/attachment state updates, actor launch variants, timed state setup and a
 440-byte damped-motion handler. One older 736-byte mesh-loader caller lost
 credit because its fabricated helper bodies only shaped register allocation.
 Those batches reached 43.0850% code. The newer waves 17–19 baseline is
-1,619,392 code bytes (49.1664%). Sixty-five independently verified C spans added since that baseline bring
-the current catalog to 1,636,016 code bytes (49.6711%); reconstructed data is
-154,221 bytes (23.7972%).
+1,619,392 code bytes (49.1664%). Eighty-five independently verified C spans added since that baseline bring
+the current catalog to 1,639,204 code bytes (49.7679%); reconstructed data is
+156,781 bytes (24.1922%).
 The near-matching natural mesh-loader candidate remains uncredited.
+The latest source work also recovers the bounded forty-slot runtime-object
+pool with its shared layout and complete native initializer/allocator spans.
 
 The four 48-byte switch tables at 004B73E0–004B7470 now come from the
 compiled C owners in `src/w192_r.c`; their raw pointer-literal file is removed.

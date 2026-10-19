@@ -542,11 +542,11 @@ provides the native join padding without embedded NOPs or instruction changes.
 
 `src/runtime_framed_calls_0040.c` uses EE GCC 2.96 with
 `-O2 -G0 -ffunction-sections -fno-optimize-sibling-calls`. The option preserves
-normal call frames and return sequences for the eight runtime wrappers in that
+normal call frames and return sequences for the nine runtime wrappers in that
 unit. The compiler output matches each complete retail function, totaling
-804 bytes: 00400F98, 00405DC8, 004067B8, 00407FC8, 0040A440, 0040C7C0,
-0040CAA0, and 0040CD38. The old empty-assembly definitions were removed from
-six mixed-profile units and the obsolete single-function w0_z.c was deleted.
+1,076 bytes: 00400F98, 00405DC8, 004067B8, 00407FC8, 0040A440, 0040C7C0,
+0040CAA0, 0040CD38, and 0040D738. The old empty-assembly definitions were removed from
+seven mixed-profile units and the obsolete single-function w0_z.c was deleted.
 All remaining functions in the affected original units were recompiled and
 verified with their original profiles.
 
@@ -563,7 +563,36 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --opt O2 \
     --source src/runtime_framed_calls_0040.c
 ```
 
-A separate probe also matches 0040D738 after removing its barrier and applying
-this profile. It stays a placeholder pending review of its helper contracts;
-probe results alone do not change the catalog. The other constrained functions
-remain subject to full source and compiler verification.
+The 0040D738 helper review established the real return contracts and pointer
+arguments for 00400BE0, 00400BB8, 00400658, and 004006E8. The corrected source
+passes the same complete 272-byte comparison and now owns that span. The other
+constrained functions remain subject to full source and compiler verification.
+
+
+### Additional framed SDK calls and runtime-object storage
+
+`runtime_framed_calls_003f.c` uses EE GCC 2.96 `-O2 -G8` with
+`-fno-optimize-sibling-calls`. Seven complete functions match in this unit,
+totaling 600 bytes: 003FEF20, 003FEF48, 003FDE10, 003FD2A0, 003FCCF0,
+003FEAE8, and 003FEEA8. The last two arguments of 00411720 are 32-bit values,
+as confirmed by its complete native implementation. The shared task-ID slots
+at 004C2330/004C2334 retain volatile accesses: the asynchronous shutdown
+routines 003FE7F0/003FE780 clear those slots while the task loop uses them.
+The empty assembly barriers are removed. The old comment-only p2e8.c and
+b10s2_f.c files and their obsolete compile entries were deleted.
+
+`runtime_object_storage.c` uses EE GCC 2.96 `-O2 -G8`. Its 96-byte initializer
+at 00400148 and 172-byte allocator at 004001A8 reproduce complete functions
+that the old catalog had split at 0040015C and 004001BC. Native direct calls
+enter at the two real starts; neither interior address has a direct call or
+initialized function pointer. Both full returns are included. The two merges
+preserve every catalog byte. The existing 172-byte allocator 00400258 also
+matches in the shared unit.
+
+The shared header fixes the 64-byte slot layout, including the signed active
+byte and the constructor's descriptor, base offset, length, and sector fields.
+The 00400AF8 processor scans exactly forty slots, and 004000F8 clears exactly
+0xA00 bytes. The typed forty-object initialized pool now owns 00484AC0–004854C0;
+its complete 2,560-byte object matches retail. The raw ranges on either side
+remain placeholders. A negative control changing the first slot's initial
+active flag is rejected by the whole-data verifier.
