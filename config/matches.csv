@@ -223,6 +223,8 @@ func_0016F1A0,0x0016F1A0,0x8,src/tail_leaves.c,complete
 func_0016FA00,0x0016FA00,0x8,src/simple_leaves.c,complete
 func_00170DF0,0x00170DF0,0x8,src/simple_leaves.c,complete
 func_00170E00,0x00170E00,0x8,src/simple_leaves.c,complete
+func_001712A0,0x001712A0,0x24,src/state_dispatch_001712A0.c,complete
+func_001712D0,0x001712D0,0x8,src/state_dispatch_001712A0.c,complete
 func_001712E0,0x001712E0,0x8,src/simple_leaves.c,complete
 func_001716C0,0x001716C0,0x8,src/tail_leaves.c,complete
 func_00171DA0,0x00171DA0,0x8,src/tail_leaves.c,complete

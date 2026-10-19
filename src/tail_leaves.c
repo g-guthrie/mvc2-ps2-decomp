@@ -39,7 +39,7 @@ extern void func_001628C0();
 extern void func_00162BA0();
 extern void func_0016A210();
 extern void func_0016B3E0();
-extern void func_001712A0();
+extern void func_001712A0(s32, s32, s32, s32);
 extern void func_001719E0();
 extern void func_00174A40();
 extern void func_00175670();

@@ -31,6 +31,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/simple_leaves.c -c -lang c $MATCH_FLAGS -o "$BUILD/simple_leaves.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_dispatch_001712A0.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/state_dispatch_001712A0.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/global_counter_leaves.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/global_counter_leaves.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -730,6 +733,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/main.o" private/SLUS_204.86.rom --source src/main.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/simple_leaves.o" private/SLUS_204.86.rom --source src/simple_leaves.c
+"$PYTHON" tools/verify_object.py \
+    "$BUILD/state_dispatch_001712A0.o" private/SLUS_204.86.rom \
+    --source src/state_dispatch_001712A0.c
 "$PYTHON" tools/verify_object.py \
     "$BUILD/global_counter_leaves.o" private/SLUS_204.86.rom \
     --source src/global_counter_leaves.c

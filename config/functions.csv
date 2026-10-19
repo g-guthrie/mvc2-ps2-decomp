@@ -2256,7 +2256,8 @@ func_00170FD0,0x00170FD0,0xF0,0x001710C0,code,spimdisasm-explicit-size-before-fi
 func_001710C0,0x001710C0,0x48,0x00171108,code,spimdisasm-explicit-size-before-first-data
 func_00171110,0x00171110,0xFC,0x0017120C,code,spimdisasm-explicit-size-before-first-data
 func_00171210,0x00171210,0x88,0x00171298,code,spimdisasm-explicit-size-before-first-data
-func_001712A0,0x001712A0,0x38,0x001712D8,code,spimdisasm-explicit-size-before-first-data
+func_001712A0,0x001712A0,0x24,0x001712C4,code,native-jump-table-target-boundary
+func_001712D0,0x001712D0,0x8,0x001712D8,code,native-jump-table-target
 func_001712E0,0x001712E0,0x8,0x001712E8,code,spimdisasm-explicit-size-before-first-data
 func_001712F0,0x001712F0,0x350,0x00171640,code,spimdisasm-explicit-size-before-first-data
 func_00171640,0x00171640,0x7C,0x001716BC,code,spimdisasm-explicit-size-before-first-data
