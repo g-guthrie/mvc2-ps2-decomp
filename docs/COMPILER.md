@@ -658,3 +658,9 @@ and version-dependent length checks, and decodes the four halfwords at bytes
 at 0x003F7F00 passes the header, length and two distinct stack-backed output
 arrays. All three functions in the shared unit match under the same EE GCC
 2.96 `-O2 -G0` recipe, including the internal call relocation.
+
+The same EE GCC 2.96 O2/G0 header unit also reconstructs `func_003F9F80`
+(92 bytes): validate a 16-byte minimum and `0x8001` magic, then return the
+big-endian header offset plus four through its `u16` output. The native call
+at `0x00403394` supplies the buffer, length, and stack output pointer and
+checks its status. All four complete functions in this source verify exactly.

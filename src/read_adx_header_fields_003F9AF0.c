@@ -51,3 +51,13 @@ int func_003F9BE8(const u16 *p, int length, u16 *first, u16 *second)
     }
     return 0;
 }
+
+int func_003F9F80(const u16 *p, int length, u16 *out)
+{
+    if (length < 16)
+        return -1;
+    if ((u16)SWAP16(p[0]) != 0x8001)
+        return -2;
+    *out = (u16)(((const u8 *)p)[3] | ((p[1] << 8) & 0xFF00)) + 4;
+    return 0;
+}
