@@ -14930,4 +14930,24 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_gp6_36ffe0.c
 "$PYTHON" tools/verify_object.py "$BUILD/grok_gp6_36ffe0.o" private/SLUS_204.86.rom --source src/grok_gp6_36ffe0.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_cu_2e1460.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_cu_2e1460.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_cu_2e1460.o" private/SLUS_204.86.rom --source src/grok_cu_2e1460.c
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/sinusoidal_height_step_003bd0a0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/sinusoidal_height_step_003bd0a0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sinusoidal_height_step_003bd0a0.o" private/SLUS_204.86.rom --source src/sinusoidal_height_step_003bd0a0.c
+
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/owner_height_landing_003c7a00.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/owner_height_landing_003c7a00.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_height_landing_003c7a00.o" private/SLUS_204.86.rom --source src/owner_height_landing_003c7a00.c
+
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/owner_effect_spawn_0036d460.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/owner_effect_spawn_0036d460.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_effect_spawn_0036d460.o" private/SLUS_204.86.rom --source src/owner_effect_spawn_0036d460.c
+
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/roster_slot_restore_003d7f10.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/roster_slot_restore_003d7f10.o"
+"$PYTHON" tools/verify_object.py "$BUILD/roster_slot_restore_003d7f10.o" private/SLUS_204.86.rom --source src/roster_slot_restore_003d7f10.c
+
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/perspective_matrix_003dd360.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/perspective_matrix_003dd360.o"
+"$PYTHON" tools/verify_object.py "$BUILD/perspective_matrix_003dd360.o" private/SLUS_204.86.rom --source src/perspective_matrix_003dd360.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

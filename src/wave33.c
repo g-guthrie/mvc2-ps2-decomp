@@ -90,12 +90,12 @@ void func_00359670(P359670 *p, Q359670 *q) {
 typedef struct E64 { u8 b[64]; } E64;
 extern E64 D_0061BEE0[];
 extern u8 D_0061BE20[], D_0061C6E0[], D_0061C760[], D_0061BE60[], D_0061BEA0[];
-void func_003DD360(void *);
+void func_003DD360(f32 *, f32, f32, f32, f32);
 void func_003DD440(void *);
 void func_003DE160(void *, void *, void *);
-void func_003DD2E0(s32 i) {
+void func_003DD2E0(s32 i, f32 far_plane, f32 near_plane, f32 fov, f32 aspect) {
     E64 *p = &D_0061BEE0[i];
-    func_003DD360(p);
+    func_003DD360((f32 *)p, far_plane, near_plane, fov, aspect);
     func_003DD440(p);
     func_003DE160(D_0061BE20, D_0061C6E0, D_0061C760);
     func_003DE160(D_0061BE60, D_0061C6E0, D_0061BEA0);

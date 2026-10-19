@@ -27,7 +27,7 @@ typedef struct {
     u8 pad25[0xF];
     f32 x, y, z;
     u8 pad40[0x10];
-    f32 speed_x, speed_y;
+    f32 scale_x, scale_y;
     u8 pad58[0x10];
     u32 zero68, zero6c;
     u8 pad70[0xCC];
@@ -49,7 +49,7 @@ typedef char SpawnEffectEventOffsetsCheck[
      (unsigned int)&((SpawnEffectEvent *)0)->timer == 0x1C &&
      (unsigned int)&((SpawnEffectEvent *)0)->action == 0x24 &&
      (unsigned int)&((SpawnEffectEvent *)0)->x == 0x34 &&
-     (unsigned int)&((SpawnEffectEvent *)0)->speed_x == 0x50 &&
+     (unsigned int)&((SpawnEffectEvent *)0)->scale_x == 0x50 &&
      (unsigned int)&((SpawnEffectEvent *)0)->zero68 == 0x68 &&
      (unsigned int)&((SpawnEffectEvent *)0)->active == 0x13C &&
      (unsigned int)&((SpawnEffectEvent *)0)->animation == 0x169)
@@ -67,7 +67,7 @@ void func_0036D460(SpawnEffectEvent *event) {
     s16 reverse_offset = -96;
     u8 action = 11;
     f32 height = 20.0f;
-    u16 *timer_table = (u16 *)D_004C1C88;
+    const u16 *timer_table = D_004C1C88;
 
     event->active = 1;
     event->x = event->owner->x;
@@ -78,8 +78,8 @@ void func_0036D460(SpawnEffectEvent *event) {
     event->y += height;
     event->action = action;
     owner->effect_spawn_alt = 1;
-    event->speed_x = 1.5f;
-    event->speed_y = 1.5f;
+    event->scale_x = 1.5f;
+    event->scale_y = 1.5f;
     event->zero68 = 0;
     event->zero6c = 0;
     timer_table += event->owner->state;

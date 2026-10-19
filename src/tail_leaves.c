@@ -6,9 +6,9 @@ typedef signed int s32;
 extern void func_00103E10();
 extern void func_0010C480();
 extern void func_00116CD0();
-extern void func_00116FA0();
+extern float func_00116FA0(float);
 extern void func_001170A0();
-extern void func_00117240();
+extern float func_00117240(float);
 extern void func_00117328();
 extern void func_001173E8();
 extern void func_00117418();
@@ -1382,13 +1382,13 @@ void func_003DE6F0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00116CD0(a0, a1, a2, 
 
 void func_003DE700(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001173E8(a0, a1, a2, a3); }
 
-void func_003DE710(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00116FA0(a0, a1, a2, a3); }
+float func_003DE710(float angle) { return func_00116FA0(angle); }
 
 void func_003DE770(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001170A0(a0, a1, a2, a3); }
 
 void func_003DE780(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00117418(a0, a1, a2, a3); }
 
-void func_003DE790(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00117240(a0, a1, a2, a3); }
+float func_003DE790(float angle) { return func_00117240(angle); }
 
 void func_003DE7D0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00117328(a0, a1, a2, a3); }
 

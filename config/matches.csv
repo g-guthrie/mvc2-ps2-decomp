@@ -17075,3 +17075,9 @@ func_0017C360,0x0017C360,0x28,src/preaction_dispatch_heads.c,complete
 func_001FED00,0x001FED00,0x24,src/preaction_dispatch_heads.c,complete
 func_002429F0,0x002429F0,0x2c,src/composite_dispatch_heads.c,complete
 func_001FED80,0x001FED80,0x24,src/preaction_dispatch_heads.c,complete
+func_001E98F0,0x001E98F0,0x100,src/q9_d.c,complete
+func_003BD0A0,0x003BD0A0,0xB4,src/sinusoidal_height_step_003bd0a0.c,complete
+func_003C7A00,0x003C7A00,0xC0,src/owner_height_landing_003c7a00.c,complete
+func_0036D460,0x0036D460,0xEC,src/owner_effect_spawn_0036d460.c,complete
+func_003D7F10,0x003D7F10,0x170,src/roster_slot_restore_003d7f10.c,complete
+func_003DD360,0x003DD360,0xDC,src/perspective_matrix_003dd360.c,complete
