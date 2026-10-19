@@ -68,3 +68,47 @@ void func_0015A950(u8 *p) {
         }
     }
 }
+
+void func_0015AC20(u8 *p) {
+    extern void func_003DAA40(u8 *);
+    s32 delay = *(s32 *)(p + 0xD4);
+    f32 rate = 0.46666666865348816f;
+    if (delay != 0) {
+        *(s32 *)(p + 0xD4) = delay - 1;
+        return;
+    }
+
+    p[0x13C] = 1;
+    *(f32 *)(p + 0x50) += rate * (f32)*(s32 *)(p + 0xD8);
+    *(f32 *)(p + 0x54) += rate * (f32)*(s32 *)(p + 0xD8);
+
+    if (*(s16 *)(p + 0x1C) == 0) {
+        *(s16 *)(p + 0x1C) = 1;
+        {
+            f32 value = *(f32 *)(p + 0x74) - 0.0416666679084301f;
+            *(f32 *)(p + 0x74) = value;
+            if (value < 0.0f) *(f32 *)(p + 0x74) = 0.0f;
+        }
+        {
+            f32 value = *(f32 *)(p + 0x78) - 0.0416666679084301f;
+            *(f32 *)(p + 0x78) = value;
+            if (value < 0.0f) *(f32 *)(p + 0x78) = 0.0f;
+        }
+        {
+            f32 value = *(f32 *)(p + 0x7C) - 0.0416666679084301f;
+            *(f32 *)(p + 0x7C) = value;
+            if (value < 0.0f) *(f32 *)(p + 0x7C) = 0.0f;
+        }
+        {
+            f32 value = *(f32 *)(p + 0x80) - 0.0416666679084301f;
+            *(f32 *)(p + 0x80) = value;
+            if (value < 0.0f) *(f32 *)(p + 0x80) = 0.0f;
+        }
+    }
+
+    {
+        s16 value = *(s16 *)(p + 0x1E) - 1;
+        *(s16 *)(p + 0x1E) = value;
+        if (value == 0) func_003DAA40(p);
+    }
+}

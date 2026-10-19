@@ -16,7 +16,7 @@ void func_0015AD80(s32 a0, V3 *pos, s32 n, s32 k, u32 flags, f32 vel)
 {
     extern u8 *func_003DA750(s32, s32, s32);
     extern s32 func_00118FA8(f32);
-    extern void func_0015AC20();
+    extern void func_0015AC20(u8 *);
     u8 *o;
     u32 f = flags & 0xFFFF;
     u32 s1;
