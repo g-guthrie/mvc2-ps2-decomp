@@ -1,9 +1,10 @@
+/* Table 0x0045BFC0 is consumed by func_002FB9D0; physical predecessor: 002FB7E0. */
 typedef unsigned char u8;
 typedef signed char s8;
 typedef signed short s16;
 typedef unsigned int u32;
 
-extern void func_00175700(u8 *);
+extern int func_00175700(u8 *);
 
 void func_002FB800(u8 *p)
 {
