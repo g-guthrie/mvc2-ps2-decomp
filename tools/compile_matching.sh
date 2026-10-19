@@ -12310,3 +12310,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/crossing_stop_00201150.o"
 "$PYTHON" tools/verify_object.py "$BUILD/crossing_stop_00201150.o" \
     private/SLUS_204.86.rom --source src/crossing_stop_00201150.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/release_owner_0021bae0.c -c -lang c -O3,p -Op -sdatathreshold 8 \
+    -o "$BUILD/release_owner_0021bae0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/release_owner_0021bae0.o" \
+    private/SLUS_204.86.rom --source src/release_owner_0021bae0.c
