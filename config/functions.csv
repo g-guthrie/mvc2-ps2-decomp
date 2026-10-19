@@ -1084,7 +1084,8 @@ func_00138940,0x00138940,0x38,0x00138978,code,spimdisasm-explicit-size-before-fi
 func_00138980,0x00138980,0x20,0x001389A0,code,matching-c-head-split
 residual_001389A0,0x001389A0,0x78,0x00138A18,assembly_residual,verified-boundary-after-matching-head
 func_00138A20,0x00138A20,0x38,0x00138A58,code,spimdisasm-explicit-size-before-first-data
-func_00138A60,0x00138A60,0x38,0x00138A98,code,spimdisasm-explicit-size-before-first-data
+func_00138A60,0x00138A60,0x24,0x00138A84,code,native-jump-table-dispatch-boundary
+func_00138A90,0x00138A90,0x8,0x00138A98,code,native-jump-table-target
 func_00138AA0,0x00138AA0,0x320,0x00138DC0,code,spimdisasm-explicit-size-before-first-data
 func_00138DC0,0x00138DC0,0x324,0x001390E4,code,spimdisasm-explicit-size-before-first-data
 func_001390F0,0x001390F0,0xA8,0x00139198,code,spimdisasm-explicit-size-before-first-data

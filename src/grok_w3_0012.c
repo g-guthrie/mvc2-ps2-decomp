@@ -95,6 +95,22 @@ void func_00138A20(u8 *p) {
     func_001396E0(p);
 }
 
+typedef void (*StateHandler)(u8 *);
+extern const StateHandler jtbl_0043FB70[7];
+extern void func_001391E0(u8 *);
+
+void func_00138A60(u8 *p)
+{
+    u8 *q = *(u8 **)(p + 0x18);
+    jtbl_0043FB70[q[5]](p);
+}
+
+void func_00138A90(u8 *p)
+{
+    p[5] = 0;
+    func_001391E0(p);
+}
+
 void func_00122770(s32 a0, s32 a1, s32 *a2) {
     func_00122670();
     *a2 -= 0x4000;
