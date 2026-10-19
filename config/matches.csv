@@ -15851,3 +15851,4 @@ func_001B7D10,0x001B7D10,0x118,src/event_clone_001b7d10.c,complete
 func_001B76E0,0x001B76E0,0x20,src/event_clone_dispatch_001b76e0.c,complete
 func_001B7700,0x001B7700,0xF4,src/event_clone_001b7700.c,complete
 func_001B8E30,0x001B8E30,0xE8,src/event_clone_001b8e30.c,complete
+func_00122560,0x00122560,0x10C,src/newlib_wsetup_00122560.c,complete

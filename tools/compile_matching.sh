@@ -11027,6 +11027,10 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_fflush_0011B480.i" "$BUILD/newlib_fflush_0011B480.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_fflush_0011B480.o" "$BUILD/newlib_fflush_0011B480.s"
 "$PYTHON" tools/verify_object.py "$BUILD/newlib_fflush_0011B480.o" private/SLUS_204.86.rom --source src/newlib_fflush_0011B480.c
+"$WIBO" "$SNCPP" -P src/newlib_wsetup_00122560.c "$BUILD/newlib_wsetup_00122560.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_wsetup_00122560.i" "$BUILD/newlib_wsetup_00122560.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_wsetup_00122560.o" "$BUILD/newlib_wsetup_00122560.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_wsetup_00122560.o" private/SLUS_204.86.rom --source src/newlib_wsetup_00122560.c
 "$WIBO" "$SNCPP" -P src/newlib_fclose_0011B380.c "$BUILD/newlib_fclose_0011B380.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_fclose_0011B380.i" "$BUILD/newlib_fclose_0011B380.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_fclose_0011B380.o" "$BUILD/newlib_fclose_0011B380.s"

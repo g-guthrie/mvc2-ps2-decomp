@@ -4243,3 +4243,11 @@ ELF also matches exactly. Their SHA-256 values remain
 c5206f568f068e5bd93ba47676500764c3d45719890865fa71ada10afadcd26f and
 48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7. Unrecovered
 ranges still use private retail input; complete source decompilation is ongoing.
+
+### Newlib stream setup recovery — October 19
+
+Recovered `func_00122560` (268 bytes) as the Newlib 1.10.0 `__swsetup` routine.
+Its existing `FILE`/`Reent` ABI types and buffer helpers reproduce the complete
+retail span with EE GCC 2.96 `-O2 -G0`; no data credit was added. The catalog
+now contains 1,689,392 / 3,293,696 matching C bytes (51.2917%). All 51 local
+tests and progress-catalog validation pass.
