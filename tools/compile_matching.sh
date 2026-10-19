@@ -12458,3 +12458,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/select_throw_motion_0021d7c0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/select_throw_motion_0021d7c0.o" \
     private/SLUS_204.86.rom --source src/select_throw_motion_0021d7c0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/select_input_variant_0023a440.c -c -lang c -O3,p -Op -sdatathreshold 0 \
+    -o "$BUILD/select_input_variant_0023a440.o"
+"$PYTHON" tools/verify_object.py "$BUILD/select_input_variant_0023a440.o" \
+    private/SLUS_204.86.rom --source src/select_input_variant_0023a440.c
