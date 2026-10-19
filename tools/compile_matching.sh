@@ -12619,3 +12619,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/owner_state_callback_002947C0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_state_callback_002947C0.o" \
     private/SLUS_204.86.rom --source src/owner_state_callback_002947C0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/deferred_input_setup_00216670.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/deferred_input_setup_00216670.o"
+"$PYTHON" tools/verify_object.py "$BUILD/deferred_input_setup_00216670.o" \
+    private/SLUS_204.86.rom --source src/deferred_input_setup_00216670.c
