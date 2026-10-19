@@ -147,7 +147,7 @@ void func_00347F90(void *arg, u8 mode) {
         entry->value = 0x206;
     }
 }
-void func_0034B070(void *arg, u8 mode) {
+void *func_0034B070(void *arg, u8 mode) {
     CallbackEntry *entry = func_003DA750(0, 1, 0);
     if (entry != 0) {
         entry->callback = (u32)func_0034B0D0;
@@ -155,6 +155,7 @@ void func_0034B070(void *arg, u8 mode) {
         entry->mode = mode;
         entry->value = 0x400;
     }
+    return entry;
 }
 void func_0034BC80(void *arg, u8 mode) {
     CallbackEntry *entry = func_003DA750(0, 1, 0);
