@@ -9,10 +9,10 @@ typedef struct { V3 r[3]; } Row;
 extern Row D_00440090[];
 extern s32 D_004C2830;
 typedef void (*Mvc2StateHandler)(u8 *);
-extern const u32 jtbl_00440240[];
+extern Mvc2StateHandler jtbl_00440240[];
 void func_0013A9D0(u8 *p) {
     u8 *state = *(u8 **)(p + 0x18);
-    ((Mvc2StateHandler)jtbl_00440240[state[4]])(p);
+    jtbl_00440240[state[4]](p);
 }
 
 void func_0013AA00(u8 *p) {
