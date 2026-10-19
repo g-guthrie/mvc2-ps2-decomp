@@ -11773,3 +11773,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/compile_ee96.py --extra-flags=-fno-optimize-sibling-calls "$BUILD/finish_runtime_entry_0040D8F8.i" "$BUILD/finish_runtime_entry_0040D8F8.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/finish_runtime_entry_0040D8F8.o" "$BUILD/finish_runtime_entry_0040D8F8.s"
 "$PYTHON" tools/verify_object.py "$BUILD/finish_runtime_entry_0040D8F8.o" private/SLUS_204.86.rom --source src/finish_runtime_entry_0040D8F8.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_nop_1b0b20.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_nop_1b0b20.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_nop_1b0b20.o" private/SLUS_204.86.rom --source src/grok_nop_1b0b20.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_nop_1b2930.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_nop_1b2930.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_nop_1b2930.o" private/SLUS_204.86.rom --source src/grok_nop_1b2930.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_nop_1b2fb0.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_nop_1b2fb0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_nop_1b2fb0.o" private/SLUS_204.86.rom --source src/grok_nop_1b2fb0.c
