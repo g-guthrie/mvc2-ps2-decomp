@@ -15581,3 +15581,4 @@ func_001516A0,0x001516A0,0x6C,src/grok_z11_516a0.c,complete
 func_001E4150,0x001E4150,0x54,src/grok_u18_e4150.c,complete
 func_003F0DB0,0x003F0DB0,0x40,src/grok_z32_f0db0.c,complete
 func_0013B010,0x0013B010,0x48,src/grok_m_3b010.c,complete
+func_0023E3E0,0x0023E3E0,0xDC,src/independent_state_entry_0023E3E0.c,complete
