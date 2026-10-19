@@ -9,7 +9,7 @@ typedef struct { u8 pad[0x34]; f32 f34; } PF;
 
 void func_00266280(u8 *p) {
     extern s8 func_00175700(u8 *);
-    extern void func_001B3E30(u8 *, s32, s32);
+    extern u8 *func_001B3E30(u8 *, int, int);
     u8 *a;
     f32 k;
     u32 t;

@@ -13,7 +13,7 @@ typedef struct P {
 } P;
 void func_002663E0(P *p) {
     extern s8 func_00175700(P *);
-    extern void func_001B3E30(P *, s32, s32);
+    extern u8 *func_001B3E30(u8 *, int, int);
     Q *q;
     f32 c;
     p->b40C = 2;
@@ -30,9 +30,9 @@ void func_002663E0(P *p) {
         p->f34 += c;
         p->f38 = 137.14285278320312f + q->f38;
         switch (p->b20) {
-        case 0x18: func_001B3E30(p, 0x12, 5); break;
-        case 0x14: func_001B3E30(p, 0x11, 5); break;
-        case 0x10: func_001B3E30(p, 0x10, 5); break;
+        case 0x18: func_001B3E30((u8 *)p, 0x12, 5); break;
+        case 0x14: func_001B3E30((u8 *)p, 0x11, 5); break;
+        case 0x10: func_001B3E30((u8 *)p, 0x10, 5); break;
         }
     }
 }

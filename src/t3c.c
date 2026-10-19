@@ -13,7 +13,7 @@ extern s32 func_00175700();
 extern void func_001843A0();
 extern Q_001F9A40 D_0044FBB0[];
 extern void func_001F9B00();
-extern void func_001B3E30();
+extern u8 *func_001B3E30(u8 *, int, int);
 extern f32 func_00417440(s16);
 extern void func_0031AF50();
 extern void func_003C4910();

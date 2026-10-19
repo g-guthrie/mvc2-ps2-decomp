@@ -16,7 +16,7 @@ void func_00269530(u8 *p)
     extern s8 func_00175700();
     extern void func_00269D10();
     extern void func_001757E0();
-    extern void func_001B3E30();
+    extern u8 *func_001B3E30(u8 *, int, int);
     s8 r;
     f32 x;
     if (*(s8 *)(p + 0x1B2) != 0 || *(s8 *)(p + 0x151) == 3) {

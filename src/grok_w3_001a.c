@@ -37,7 +37,7 @@ extern int func_001757E0(u8 *, int, int);
 extern void func_001AFC90(u8 *);
 extern void func_001E3270(u8 *, s32, f32);
 extern void func_001B5350(u8 *, u8 *);
-extern void func_001B3E30(u8 *, s32, s32);
+extern u8 *func_001B3E30(u8 *, int, int);
 extern SpawnEntry *func_003DA750(s32, s32, s32);
 extern void func_001BE570(void);
 extern void func_001BFB10(void);

@@ -28,7 +28,7 @@ extern void func_001E3710(u8 *, s32);
 extern void func_00191210(u8 *);
 extern void func_001BE890(u8 *, s32);
 extern int func_003D92F0(u8 *);
-extern void func_001B3E30(u8 *, s32, s32);
+extern u8 *func_001B3E30(u8 *, int, int);
 extern DispatchFn jtbl_00454C60[];
 extern DispatchFn jtbl_00454CB0[];
 extern DispatchFn jtbl_004553D0[];

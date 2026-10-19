@@ -36,7 +36,7 @@ void func_001DA0C0(u8 *p, u8 *q) {
 void func_00267170(u8 *p) {
     extern s8 func_00175700();
     extern void func_00267E20();
-    extern void func_001B3E30();
+    extern u8 *func_001B3E30(u8 *, int, int);
     f32 c;
     if (func_00175700(p) < 0) {
         func_00267E20(p);

@@ -105,7 +105,7 @@ extern s8 D_00473B81[];
 
 extern void func_001B3D90(u8 *a, u8 *b);
 extern s32 func_00175670(u8 *a);
-extern void func_001B3E30(u8 *a, s32 b, s32 c);
+extern u8 *func_001B3E30(u8 *, int, int);
 
 void func_001B3760(u8 *p) {
     u8 *s = *(u8 **)(p + 0x18);
