@@ -16606,3 +16606,4 @@ func_00225120,0x00225120,0xE4,src/grok_cp_225120.c,complete
 func_0022BB10,0x0022BB10,0xF8,src/grok_cp_22bb10.c,complete
 func_003D9B60,0x003D9B60,0xC4,src/grok_cv_003D9B60.c,complete
 func_002D3D40,0x002D3D40,0x10C,src/grok_cu_2d3d40.c,complete
+func_0016AF10,0x0016AF10,0xC8,src/z8_d.c,complete

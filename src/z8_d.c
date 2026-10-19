@@ -24,6 +24,26 @@ s32 func_0016AFE0(A16 *a, A16 *b, B16 *c, C16 *d) {
     return z < k * (f32)d->h6 + k * (f32)w;
 }
 
+typedef struct { u8 pad[0x34]; f32 value; } Pos1610;
+typedef struct { u8 pad0[0x34]; f32 value; u8 pad1[0x140 - 0x38]; s16 angle_flags; } Actor1610;
+typedef struct { s16 value0; u8 pad[2]; s16 value4; } CPair1610;
+typedef struct { s16 value0; s16 value2; } DPair1610;
+
+s32 func_0016AF10(Pos1610 *a, Actor1610 *b, CPair1610 *c, DPair1610 *d) {
+    f32 k = 1.6666666269302368f;
+    f32 x, y, z;
+    if (c->value0 != 0) goto calculate;
+    return 1;
+calculate:
+    x = a->value + k * (f32)c->value4;
+    y = k * (f32)d->value0;
+    if (b->angle_flags != 0) y = -y;
+    y += b->value;
+    z = x - y;
+    if (z < 0.0f) z = -z;
+    return z < k * (f32)d->value2 + k * (f32)c->value0;
+}
+
 extern f32 D_004F1FC8;
 extern f32 D_004F1FD4;
 typedef struct { s16 h0, h2; } H2;
