@@ -12256,3 +12256,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/landing_transition_002feda0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/landing_transition_002feda0.o" \
     private/SLUS_204.86.rom --source src/landing_transition_002feda0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initial_launch_002218b0.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/initial_launch_002218b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initial_launch_002218b0.o" \
+    private/SLUS_204.86.rom --source src/initial_launch_002218b0.c

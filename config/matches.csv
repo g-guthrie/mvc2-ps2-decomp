@@ -15868,3 +15868,5 @@ func_0020CB80,0x0020CB80,0x15C,src/edge_slide_0020cb80.c,complete
 func_001B61C0,0x001B61C0,0xD4,src/event_clone_001b61c0.c,complete
 func_00229910,0x00229910,0x138,src/capture_transition_00229910.c,complete
 func_002FEDA0,0x002FEDA0,0x15C,src/landing_transition_002feda0.c,complete
+func_00221850,0x00221850,0x60,src/initial_launch_002218b0.c,complete
+func_002218B0,0x002218B0,0x118,src/initial_launch_002218b0.c,complete

@@ -6787,7 +6787,8 @@ func_002215E0,0x002215E0,0x128,0x00221708,code,spimdisasm-explicit-size-before-f
 func_00221710,0x00221710,0x68,0x00221778,code,spimdisasm-explicit-size-before-first-data
 func_00221780,0x00221780,0x8C,0x0022180C,code,spimdisasm-explicit-size-before-first-data
 func_00221810,0x00221810,0x3C,0x0022184C,code,spimdisasm-explicit-size-before-first-data
-func_00221850,0x00221850,0x178,0x002219C8,code,spimdisasm-explicit-size-before-first-data
+func_00221850,0x00221850,0x60,0x002218B0,code,matching-c-head-split
+func_002218B0,0x002218B0,0x118,0x002219C8,code,verified-table-entered-callback
 func_002219D0,0x002219D0,0xB8,0x00221A88,code,spimdisasm-explicit-size-before-first-data
 func_00221A90,0x00221A90,0x8C,0x00221B1C,code,spimdisasm-explicit-size-before-first-data
 func_00221B20,0x00221B20,0x3C,0x00221B5C,code,spimdisasm-explicit-size-before-first-data
