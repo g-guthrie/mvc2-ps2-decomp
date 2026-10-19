@@ -12878,7 +12878,8 @@ func_002F4460,0x002F4460,0x8,0x002F4468,code,spimdisasm-explicit-size-before-fir
 func_002F4470,0x002F4470,0x80,0x002F44F0,code,spimdisasm-explicit-size-before-first-data
 func_002F44F0,0x002F44F0,0x74,0x002F4564,code,spimdisasm-explicit-size-before-first-data
 func_002F4570,0x002F4570,0x68,0x002F45D8,code,spimdisasm-explicit-size-before-first-data
-func_002F45E0,0x002F45E0,0x12C,0x002F470C,code,spimdisasm-explicit-size-before-first-data
+func_002F45E0,0x002F45E0,0x30,0x002F4610,code,spimdisasm-explicit-size-before-first-data
+func_002F4610,0x002F4610,0xFC,0x002F470C,code,spimdisasm-explicit-size-before-first-data
 func_002F4710,0x002F4710,0x9C,0x002F47AC,code,spimdisasm-explicit-size-before-first-data
 func_002F47B0,0x002F47B0,0x80,0x002F4830,code,spimdisasm-explicit-size-before-first-data
 func_002F4830,0x002F4830,0x2C,0x002F485C,code,spimdisasm-explicit-size-before-first-data

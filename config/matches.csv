@@ -15877,3 +15877,4 @@ func_001F56E0,0x001F56E0,0x40,src/state_dispatch_001f56e0.c,complete
 func_001F5720,0x001F5720,0x3C,src/state_action_001f5720.c,complete
 func_0026DB70,0x0026DB70,0x120,src/restore_target_0026db70.c,complete
 func_00253FC0,0x00253FC0,0x13C,src/alternating_throw_00253fc0.c,complete
+func_002F45E0,0x002F45E0,0x30,src/dispatch_owner_state_002F45E0.c,complete
