@@ -1,6 +1,9 @@
 /* Strength-selecting move setup and shared timer/counter reset. */
 typedef unsigned char u8;
 typedef unsigned short u16;
+/* Partial actor view; used only through an existing actor pointer. */
+typedef struct {u8 prefix[0x1B5];u8 action;} ActorActionView;
+typedef char ActorActionOffsetCheck[((unsigned int)&((ActorActionView *)0)->action == 0x1B5) ? 1 : -1];
 extern u8 *D_004C2794;
 extern signed char data_s8_004C066C[4] __attribute__((section(".sdata")));
 extern signed char data_s8_004C0670[4] __attribute__((section(".sdata")));
@@ -120,7 +123,7 @@ extern int D_004C113C;
 
 static inline void reset_move_counters(u8 *p,u8 command, int mode) {
  /* Retain the command write performed again by the retail reset sequence. */
- *(volatile u8 *)(p+0x1b5)=command;
+ ((ActorActionView *)p)->action=command;
  p[0x1b2]=*(u16 *)(p+0x1c0)=0;
  *(int *)(p+0x1d8)=0;
  { unsigned int offset=p[2]*2; offset += (unsigned int)D_004C2794; ++*(short *)(offset+0x7c); }
