@@ -15855,3 +15855,4 @@ func_00122560,0x00122560,0x10C,src/newlib_wsetup_00122560.c,complete
 func_001B6040,0x001B6040,0x108,src/event_clone_001b6040.c,complete
 func_002F4010,0x002F4010,0x34,src/state_init_002f4050.c,complete
 func_002F4050,0x002F4050,0xBC,src/state_init_002f4050.c,complete
+func_0036EE40,0x0036EE40,0xCC,src/sequential_calls.c,complete
