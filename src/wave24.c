@@ -214,7 +214,7 @@ s32 func_001343E0(u8 *a0, u8 *a1) {
 }
 
 void func_001DBAE0(void *);
-void residual_001DB920(u8 *a0) {
+void func_001DB920(u8 *a0) {
     if (a0[5] == 0) {
         func_001DBE50(a0);
         func_001DBAE0(a0);

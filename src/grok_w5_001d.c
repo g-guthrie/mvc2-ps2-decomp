@@ -44,6 +44,9 @@ extern void func_001D1950(void);
 extern void func_001DBD60(u8 *);
 extern void func_001DBCD0(u8 *);
 extern void func_001DBDF0(u8 *);
+extern s32 func_00174240(u8 *);
+extern void func_001DBBB0(u8 *);
+extern void func_001DBC80(u8 *);
 extern s8 data_s8_0044ED00[32];
 
 void func_001DEF30(u8 *p)
@@ -315,4 +318,23 @@ void func_001D2C00(u8 *p, u8 mode)
         e->callback = func_001D2C70;
         e->arg = p;
     }
+}
+
+void func_001DB990(u8 *p)
+{
+    if (p[5] == 0) {
+        F(p, 52) += F(p, 92);
+        F(p, 92) += F(p, 104);
+        F(p, 56) += F(p, 96);
+        F(p, 96) += F(p, 108);
+        func_001DBBB0(p);
+        return;
+    }
+    if (func_00174240(p) == 0)
+        p[4]++;
+    F(p, 52) += F(p, 92);
+    F(p, 92) += F(p, 104);
+    F(p, 56) += F(p, 96);
+    F(p, 96) += F(p, 108);
+    func_001DBC80(p);
 }
