@@ -16776,9 +16776,9 @@ func_002B4650,0x002B4650,0xBC,src/grok_dg_2b4650.c,complete
 func_001A4500,0x001A4500,0xAC,src/grok_dm_1a4500.c,complete
 func_001A3E10,0x001A3E10,0xC4,src/grok_dm_1a3e10.c,complete
 func_003A4E90,0x003A4E90,0xE8,src/grok_dp_003A4E90.c,complete
-func_00330EF0,0x00330EF0,0xF4,src/grok_dw_330ef0.c,matching
-func_00338050,0x00338050,0xB0,src/grok_dw_338050.c,matching
-func_003395E0,0x003395E0,0xB0,src/grok_dw_3395e0.c,matching
+func_00330EF0,0x00330EF0,0xF4,src/grok_dw_330ef0.c,complete
+func_00338050,0x00338050,0xB0,src/grok_dw_338050.c,complete
+func_003395E0,0x003395E0,0xB0,src/grok_dw_3395e0.c,complete
 func_001B02C0,0x001B02C0,0xEC,src/grok_ed_001B02C0.c,complete
 func_001B1040,0x001B1040,0xD8,src/grok_ed_001B1040.c,complete
 func_001B5700,0x001B5700,0xCC,src/grok_ed_001B5700.c,complete
