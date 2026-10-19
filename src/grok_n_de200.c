@@ -10,7 +10,7 @@ extern void func_0018C4B0(u8 *, int);
 extern int func_001757E0(u8 *, int, int);
 extern u8 *D_004C2794;
 
-void residual_002DE200(u8 *p, void *context)
+void func_002DE200(u8 *p, void *context)
 {
     p[6]++;
     p[0x20D] = 0;

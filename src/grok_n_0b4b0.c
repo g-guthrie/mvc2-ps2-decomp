@@ -9,7 +9,7 @@ extern void func_00183D10(u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern u8 *D_004C2794;
 
-void residual_0020B4B0(u8 *p)
+void func_0020B4B0(u8 *p)
 {
     if (p[0x269] == 6) {
         p[0x404] = 0xFF;

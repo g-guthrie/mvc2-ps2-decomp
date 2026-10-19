@@ -6,7 +6,7 @@ typedef unsigned int u32;
 
 extern int func_00175700(u8 *);
 
-void residual_00217BC0(u8 *p)
+void func_00217BC0(u8 *p)
 {
     func_00175700(p);
     if ((s8)p[0x151] == 0) {

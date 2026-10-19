@@ -10,7 +10,7 @@ extern void func_0018C4B0(u8 *, int);
 extern int func_001757E0(u8 *, int, int);
 extern u8 *D_004C2794;
 
-void residual_002DE330(u8 *p)
+void func_002DE330(u8 *p)
 {
     p[6]++;
     *(f32 *)(p + 0x38) = *(f32 *)(p + 0x430);
