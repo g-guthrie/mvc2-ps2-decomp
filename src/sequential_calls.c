@@ -1,5 +1,6 @@
 typedef unsigned char u8;
 typedef signed char s8;
+typedef signed short s16;
 typedef float f32;
 typedef unsigned short u16;
 typedef unsigned int u32;
@@ -13,6 +14,12 @@ extern u8 D_004F1D29[];
 extern u8 D_004F1D2A[];
 extern u8 D_004F1D2B[];
 extern u8 D_004F1D2C[];
+extern int func_003299D0(void);
+extern void func_003D26F0(void);
+extern void func_003DA6F0(int);
+extern void func_003D2520(void);
+extern void func_001E4140(void);
+extern void func_001E3CE0(int);
 extern void func_0011D8F8(void *, int, int);
 extern void func_003D6D50(void);
 extern void func_003D6E20(void);
@@ -350,4 +357,29 @@ void func_003D2240(void)
     func_001E4150();
     func_001E3CA0(1);
     func_0012E780(6);
+}
+
+void func_003D23C0(void)
+{
+    if (func_003299D0() == 0)
+        func_003D26F0();
+    if (--*(s16 *)(D_004C2840 + 8) < 0) {
+        D_004C2840[1] = 1;
+        D_004C2840[2] = 0;
+        D_004C2840[3] = 0;
+        D_004C2840[4] = 0;
+        D_004C2840[5] = 0;
+        D_004C2840[6] = 0;
+        D_004C2840[7] = 0;
+        func_003DA410();
+        return;
+    }
+    func_003DA6F0(13);
+    if (func_003299D0() == 0) {
+        func_003D2520();
+        if (D_004C2840[0] == 3) {
+            func_001E4140();
+            func_001E3CE0(2);
+        }
+    }
 }

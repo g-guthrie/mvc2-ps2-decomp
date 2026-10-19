@@ -15846,3 +15846,4 @@ func_003F9F80,0x003F9F80,0x5C,src/read_adx_header_fields_003F9AF0.c,complete
 func_001B7AB0,0x001B7AB0,0xF4,src/event_clone_001b7ab0.c,complete
 func_001794A0,0x001794A0,0x54,src/func_001794A0.c,complete
 func_003D2240,0x003D2240,0x180,src/sequential_calls.c,complete
+func_003D23C0,0x003D23C0,0xD8,src/sequential_calls.c,complete
