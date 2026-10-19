@@ -1550,6 +1550,7 @@ func_002500F0,0x002500F0,0x20,src/argument_dispatch_heads.c,complete
 func_002502B0,0x002502B0,0x20,src/composite_dispatch_heads.c,complete
 func_00250530,0x00250530,0x1c,src/composite_gp_dispatch_heads.c,complete
 func_002509B0,0x002509B0,0x24,src/argument_dispatch_heads.c,complete
+func_002509E0,0x002509E0,0x98,src/grok_nopk_1f0cc0.c,complete
 func_00250E40,0x00250E40,0x4c,src/reset_on_negative.c,complete
 func_00250E90,0x00250E90,0x24,src/argument_dispatch_heads.c,complete
 func_002510B0,0x002510B0,0x4c,src/reset_on_negative.c,complete

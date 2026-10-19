@@ -8222,7 +8222,7 @@ func_002506D0,0x002506D0,0x1A4,0x00250874,code,spimdisasm-explicit-size-before-f
 func_00250880,0x00250880,0xBC,0x0025093C,code,spimdisasm-explicit-size-before-first-data
 func_00250940,0x00250940,0x70,0x002509B0,code,spimdisasm-explicit-size-before-first-data
 func_002509B0,0x002509B0,0x24,0x002509D4,code,matching-c-head-split
-residual_002509D4,0x002509D4,0xA4,0x00250A78,assembly_residual,verified-boundary-after-matching-head
+func_002509E0,0x002509E0,0x98,0x00250A78,code,verified-complete-c-function
 func_00250A80,0x00250A80,0xC0,0x00250B40,code,spimdisasm-explicit-size-before-first-data
 func_00250B40,0x00250B40,0x230,0x00250D70,code,spimdisasm-explicit-size-before-first-data
 func_00250D70,0x00250D70,0xC8,0x00250E38,code,spimdisasm-explicit-size-before-first-data
