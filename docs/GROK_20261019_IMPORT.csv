@@ -1,0 +1,935 @@
+original_name,canonical_name,address,size,source,decision,reason
+residual_00135F30,func_00135F30,0x00135F30,0x70,src/grok_y1_135f30.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001363F0,func_001363F0,0x001363F0,0x8C,src/grok_q1_1363f0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00137200,func_00137200,0x00137200,0xB0,src/grok_y1_137200.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00137C10,func_00137C10,0x00137C10,0x90,src/grok_r1_00137c10.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001385D0,func_001385D0,0x001385D0,0x5C,src/grok_w0b_residual_001385D0.c,already_matched,retain current independently verified source and boundaries
+residual_001389A0,func_001389A0,0x001389A0,0x78,src/grok_r1_001389a0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00138A60,func_00138A60,0x00138A60,0x38,src/grok_w3_0012.c,already_matched,retain current independently verified source and boundaries
+residual_00139AB0,func_00139AB0,0x00139AB0,0x5C,src/grok_w0b_residual_00139AB0.c,already_matched,retain current independently verified source and boundaries
+func_0013A9D0,func_0013A9D0,0x0013A9D0,0x40,src/w1911_s.c,already_matched,retain current independently verified source and boundaries
+func_0013ABD0,func_0013ABD0,0x0013ABD0,0xC0,src/w1911_s.c,already_matched,retain current independently verified source and boundaries
+func_0013ADA0,func_0013ADA0,0x0013ADA0,0x5C,src/w1911_s.c,already_matched,retain current independently verified source and boundaries
+func_0013B4A0,func_0013B4A0,0x0013B4A0,0x38,src/g8.c,already_matched,retain current independently verified source and boundaries
+func_0013B5F0,func_0013B5F0,0x0013B5F0,0xAC,src/g8.c,already_matched,retain current independently verified source and boundaries
+residual_0013C350,func_0013C350,0x0013C350,0x7C,src/grok_r1_0013c350.c,already_matched,retain current independently verified source and boundaries
+residual_00155620,func_00155620,0x00155620,0x50,src/grok_w0b_residual_00155620.c,already_matched,retain current independently verified source and boundaries
+residual_0015A520,func_0015A520,0x0015A520,0x54,src/grok_w0_residual_0015A520.c,already_matched,retain current independently verified source and boundaries
+residual_0015F7A0,func_0015F7A0,0x0015F7A0,0x9C,src/grok_w0_residual_0015F7A0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0016A1F0,func_0016A1F0,0x0016A1F0,0x1C,src/leaf_batch_a.c,already_matched,retain current independently verified source and boundaries
+func_0016B5D0,func_0016B5D0,0x0016B5D0,0x74,src/wave6b.c,already_matched,retain current independently verified source and boundaries
+residual_0016C3F0,func_0016C3F0,0x0016C3F0,0x3C,src/grok_w0b_residual_0016C3F0.c,already_matched,retain current independently verified source and boundaries
+func_0016C700,func_0016C700,0x0016C700,0x6C,src/composite_dispatch_heads.c,already_matched,retain current independently verified source and boundaries
+residual_00176980,func_00176980,0x00176980,0x64,src/grok_nm0_176980.c,already_matched,retain current independently verified source and boundaries
+func_00177180,func_00177180,0x00177180,0x18C,src/grok_t2_77180.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00177A60,func_00177A60,0x00177A60,0xE0,src/grok_y7_177a60.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001794A0,func_001794A0,0x001794A0,0x54,src/grok_nop_7949c.c,already_matched,retain current independently verified source and boundaries
+func_0017A8A0,func_0017A8A0,0x0017A8A0,0x100,src/grok_t2_7a8a0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0017B970,func_0017B970,0x0017B970,0xA0,src/grok_nm0_17b970.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0017C1B0,func_0017C1B0,0x0017C1B0,0x184,src/grok_t2_7c1b0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0017D570,func_0017D570,0x0017D570,0x19C,src/grok_t2_7d570.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0017D840,func_0017D840,0x0017D840,0x1B4,src/grok_t2_7d840.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0017FA80,func_0017FA80,0x0017FA80,0x8C,src/grok_q1_17fa80.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001959B0,func_001959B0,0x001959B0,0x38,src/grok_nop_1959b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00195AE0,func_00195AE0,0x00195AE0,0x5C,src/grok_nop_195ae0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00197C20,func_00197C20,0x00197C20,0x78,src/grok_z18_97c20.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00198030,func_00198030,0x00198030,0x58,src/grok_y2_198028.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00198570,func_00198570,0x00198570,0x4C,src/grok_nm0_198570.c,already_matched,retain current independently verified source and boundaries
+residual_00199CF0,func_00199CF0,0x00199CF0,0x64,src/grok_r1_00199cf0.c,already_matched,retain current independently verified source and boundaries
+func_0019A940,func_0019A940,0x0019A940,0x74,src/grok_w5_0019.c,already_matched,retain current independently verified source and boundaries
+residual_0019B280,func_0019B280,0x0019B280,0x3C,src/grok_nm_19b280.c,already_matched,retain current independently verified source and boundaries
+residual_0019F2A0,func_0019F2A0,0x0019F2A0,0x64,src/grok_nop_9f2a0.c,already_matched,retain current independently verified source and boundaries
+func_001A20F0,func_001A20F0,0x001A20F0,0x9C,src/grok_t1_1a20f0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001AA060,func_001AA060,0x001AA060,0x6C,src/grok_nop_aa060.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001AA140,func_001AA140,0x001AA140,0x78,src/grok_r1_001aa140.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001AA2A0,func_001AA2A0,0x001AA2A0,0xA0,src/grok_s2_1aa2a0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001AA620,func_001AA620,0x001AA620,0x98,src/grok_s2_1aa620.c,imported,complete ordinary-C object size and relocated bytes verified
+func_001AA7B0,func_001AA7B0,0x001AA7B0,0xEC,src/grok_t5_1aa7b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001AAE40,func_001AAE40,0x001AAE40,0x98,src/grok_r1_001aae40.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001AB4A0,func_001AB4A0,0x001AB4A0,0x58,src/grok_nop_ab4a0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001ABB50,func_001ABB50,0x001ABB50,0x88,src/grok_r1_001abb50.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001ABFF0,func_001ABFF0,0x001ABFF0,0x60,src/grok_w1_abff0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001B0B20,func_001B0B20,0x001B0B20,0x3C,src/grok_nop_1b0b20.c,already_matched,retain current independently verified source and boundaries
+residual_001B0B80,func_001B0B80,0x001B0B80,0xA4,src/grok_nope_1b0b80.c,already_matched,retain current independently verified source and boundaries
+residual_001B0C50,func_001B0C50,0x001B0C50,0x7C,src/grok_nope_1b0c50.c,already_matched,retain current independently verified source and boundaries
+residual_001B0CF0,func_001B0CF0,0x001B0CF0,0x6C,src/grok_nopa_1b0cf0.c,already_matched,retain current independently verified source and boundaries
+residual_001B26C0,func_001B26C0,0x001B26C0,0x60,src/grok_u9_1b26c0.c,already_matched,retain current independently verified source and boundaries
+residual_001B2930,func_001B2930,0x001B2930,0x48,src/grok_nop_1b2930.c,already_matched,retain current independently verified source and boundaries
+residual_001B2A10,func_001B2A10,0x001B2A10,0x68,src/grok_nopa_1b2a10.c,already_matched,retain current independently verified source and boundaries
+residual_001B2E80,func_001B2E80,0x001B2E80,0xB4,src/grok_nope_1b2e80.c,already_matched,retain current independently verified source and boundaries
+residual_001B2FB0,func_001B2FB0,0x001B2FB0,0x34,src/grok_nop_1b2fb0.c,already_matched,retain current independently verified source and boundaries
+residual_001B36B0,func_001B36B0,0x001B36B0,0xAC,src/grok_nope_1b36b0.c,already_matched,retain current independently verified source and boundaries
+residual_001B38D0,func_001B38D0,0x001B38D0,0xAC,src/m12c.c,already_matched,retain current independently verified source and boundaries
+residual_001B4020,func_001B4020,0x001B4020,0x9C,src/grok_nopa_1b4020.c,already_matched,retain current independently verified source and boundaries
+residual_001B4120,func_001B4120,0x001B4120,0x90,src/grok_nopa_1b4120.c,already_matched,retain current independently verified source and boundaries
+residual_001B4440,func_001B4440,0x001B4440,0x88,src/grok_nopa_1b4440.c,already_matched,retain current independently verified source and boundaries
+residual_001B4860,func_001B4860,0x001B4860,0xB0,src/w1911_n.c,already_matched,retain current independently verified source and boundaries
+residual_001B4C80,func_001B4C80,0x001B4C80,0x9C,src/grok_r1_001b4c80.c,already_matched,retain current independently verified source and boundaries
+residual_001B4FD0,func_001B4FD0,0x001B4FD0,0x68,src/grok_nopa_1b4fd0.c,already_matched,retain current independently verified source and boundaries
+residual_001B8980,func_001B8980,0x001B8980,0x98,src/grok_v4_1b8980.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001BD950,func_001BD950,0x001BD950,0x78,src/grok_z18_bd950.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001BDC40,func_001BDC40,0x001BDC40,0x78,src/grok_nopj_001BDC40.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C1010,func_001C1010,0x001C1010,0x68,src/grok_q2_c1010.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C2010,func_001C2010,0x001C2010,0xC8,src/grok_r2_1c2010.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C22C0,func_001C22C0,0x001C22C0,0x68,src/grok_w1_c22c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C23F0,func_001C23F0,0x001C23F0,0xD0,src/grok_nopf_1c23f0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C2540,func_001C2540,0x001C2540,0x6C,src/grok_nop_c2540.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C2620,func_001C2620,0x001C2620,0x98,src/grok_nopa_1c2620.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C2740,func_001C2740,0x001C2740,0x98,src/grok_nopa_1c2740.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C2860,func_001C2860,0x001C2860,0x9C,src/grok_nopa_1c2860.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C2980,func_001C2980,0x001C2980,0x98,src/grok_nopa_1c2980.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C2DD0,func_001C2DD0,0x001C2DD0,0xB0,src/grok_sc_001c2dd0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C42F0,func_001C42F0,0x001C42F0,0x68,src/grok_w1_c42f0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C4440,func_001C4440,0x001C4440,0x90,src/grok_nopf_1c4440.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C4560,func_001C4560,0x001C4560,0x7C,src/grok_nopa_1c4560.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C46B0,func_001C46B0,0x001C46B0,0x60,src/grok_w1_c46b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C7250,func_001C7250,0x001C7250,0xEC,src/grok_r2_1c7250.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C7B90,func_001C7B90,0x001C7B90,0xB0,src/grok_r2_1c7b90.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C7E10,func_001C7E10,0x001C7E10,0xB0,src/grok_r2_1c7e10.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C8080,func_001C8080,0x001C8080,0xCC,src/grok_r2_1c8080.c,imported,complete ordinary-C object size and relocated bytes verified
+func_001D6D10,func_001D6D10,0x001D6D10,0x30,src/grok_w5_001d.c,already_matched,retain current independently verified source and boundaries
+residual_001D6D40,func_001D6D40,0x001D6D40,0x3C,src/grok_y2_1d6d10.c,already_matched,retain current independently verified source and boundaries
+residual_001DB1A0,func_001DB1A0,0x001DB1A0,0x48,src/grok_z18_db1a0.c,already_matched,retain current independently verified source and boundaries
+func_001DB990,func_001DB990,0x001DB990,0xD8,src/grok_w5_001d.c,already_matched,retain current independently verified source and boundaries
+residual_001EC870,func_001EC870,0x001EC870,0xC4,src/grok_sc_001ec870.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001ED000,func_001ED000,0x001ED000,0xA0,src/grok_s2_1ed000.c,already_matched,retain current independently verified source and boundaries
+residual_001ED3F0,func_001ED3F0,0x001ED3F0,0x88,src/grok_nopk_1ed3f0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_001EFC80,func_001EFC80,0x001EFC80,0xF0,src/grok_w7_001e.c,already_matched,retain current independently verified source and boundaries
+residual_001EFFD0,func_001EFFD0,0x001EFFD0,0x110,src/grok_s6_1effd0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001F03A0,func_001F03A0,0x001F03A0,0x5C,src/grok_nop_1f03a0.c,already_matched,retain current independently verified source and boundaries
+residual_001F0CC0,func_001F0CC0,0x001F0CC0,0x88,src/grok_nopk_1f0cc0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001F1640,func_001F1640,0x001F1640,0x80,src/grok_z18_f1640.c,already_matched,retain current independently verified source and boundaries
+residual_001F1ED0,func_001F1ED0,0x001F1ED0,0x84,src/grok_w1_f1ed0.c,already_matched,retain current independently verified source and boundaries
+func_001F22E0,func_001F22E0,0x001F22E0,0x110,src/grok_s6_1f22e0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_001F28A0,func_001F28A0,0x001F28A0,0x98,src/grok_w5_001f.c,already_matched,retain current independently verified source and boundaries
+func_001F3E50,func_001F3E50,0x001F3E50,0x40,src/grok_w5_001f.c,already_matched,retain current independently verified source and boundaries
+residual_001F3E90,func_001F3E90,0x001F3E90,0x3C,src/grok_y2_1f3e50.c,already_matched,retain current independently verified source and boundaries
+residual_001F42B0,func_001F42B0,0x001F42B0,0x98,src/grok_n_f42b0.c,already_matched,retain current independently verified source and boundaries
+residual_001F4590,func_001F4590,0x001F4590,0x74,src/grok_w1_f4590.c,already_matched,retain current independently verified source and boundaries
+residual_001F5720,func_001F5720,0x001F5720,0x3C,src/grok_y2_1f56e0.c,already_matched,retain current independently verified source and boundaries
+residual_001F5780,func_001F5780,0x001F5780,0x40,src/grok_nm0_1f5780.c,already_matched,retain current independently verified source and boundaries
+residual_001F58C0,func_001F58C0,0x001F58C0,0x88,src/grok_z18_f58c0.c,already_matched,retain current independently verified source and boundaries
+residual_001F5A70,func_001F5A70,0x001F5A70,0x94,src/grok_z18_f5a70.c,already_matched,retain current independently verified source and boundaries
+residual_001F5FA0,func_001F5FA0,0x001F5FA0,0xD0,src/grok_sc_001f5fa0.c,already_matched,retain current independently verified source and boundaries
+residual_001F6690,func_001F6690,0x001F6690,0x7C,src/grok_y2_1f6684.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001F6E90,func_001F6E90,0x001F6E90,0x80,src/grok_z18_f6e90.c,already_matched,retain current independently verified source and boundaries
+residual_001F89E0,func_001F89E0,0x001F89E0,0x88,src/grok_n_f89e0.c,already_matched,retain current independently verified source and boundaries
+residual_001F8F40,func_001F8F40,0x001F8F40,0xB8,src/grok_v7_1f8f40.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001F94E0,func_001F94E0,0x001F94E0,0xA4,src/grok_nopk_1f94e0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001F9630,func_001F9630,0x001F9630,0xF0,src/w184_e.c,already_matched,retain current independently verified source and boundaries
+residual_001F9990,func_001F9990,0x001F9990,0xB0,src/grok_z18_f9990.c,already_matched,retain current independently verified source and boundaries
+residual_001F9D10,func_001F9D10,0x001F9D10,0xCC,src/grok_sc_001f9d10.c,already_matched,retain current independently verified source and boundaries
+residual_001FA450,func_001FA450,0x001FA450,0xC8,src/grok_sc_001fa450.c,already_matched,retain current independently verified source and boundaries
+residual_001FA740,func_001FA740,0x001FA740,0x7C,src/grok_nopk_1fa740.c,already_matched,retain current independently verified source and boundaries
+residual_001FA860,func_001FA860,0x001FA860,0x50,src/grok_nop_fa85c.c,already_matched,retain current independently verified source and boundaries
+residual_001FB890,func_001FB890,0x001FB890,0x88,src/grok_nopk_1fb890.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001FBC30,func_001FBC30,0x001FBC30,0xC0,src/grok_s8_1fbc30.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001FDE20,func_001FDE20,0x001FDE20,0xA0,src/grok_n_fde20.c,already_matched,retain current independently verified source and boundaries
+residual_001FE580,func_001FE580,0x001FE580,0x74,src/grok_z18_fe580.c,already_matched,retain current independently verified source and boundaries
+residual_001FEA20,func_001FEA20,0x001FEA20,0x80,src/grok_y2_1fe9f0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001FF970,func_001FF970,0x001FF970,0x5C,src/grok_w1_ff970.c,already_matched,retain current independently verified source and boundaries
+residual_001FFAE0,func_001FFAE0,0x001FFAE0,0xC0,src/grok_w1b_ffae0.c,already_matched,retain current independently verified source and boundaries
+residual_001FFF00,func_001FFF00,0x001FFF00,0xA4,src/grok_q2_fff00.c,already_matched,retain current independently verified source and boundaries
+func_002017C0,func_002017C0,0x002017C0,0x190,src/grok_t6_2017c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00202670,func_00202670,0x00202670,0xA0,src/grok_nopk_202670.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00205680,func_00205680,0x00205680,0x88,src/grok_y3_205680.c,already_matched,retain current independently verified source and boundaries
+func_00205D60,func_00205D60,0x00205D60,0x1C4,src/grok_t6_205d60.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00206600,func_00206600,0x00206600,0xD4,src/grok_sc_00206600.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00206D10,func_00206D10,0x00206D10,0xA8,src/grok_n_06d10.c,already_matched,retain current independently verified source and boundaries
+residual_00207710,func_00207710,0x00207710,0xA4,src/grok_nopb_07710.c,already_matched,retain current independently verified source and boundaries
+residual_00209D30,func_00209D30,0x00209D30,0xA4,src/grok_n_09d30.c,already_matched,retain current independently verified source and boundaries
+func_00209E70,func_00209E70,0x00209E70,0xF4,src/grok_t6_209e70.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0020A020,func_0020A020,0x0020A020,0x90,src/grok_n_0a020.c,already_matched,retain current independently verified source and boundaries
+residual_0020A1B0,func_0020A1B0,0x0020A1B0,0x58,src/grok_nop_20a1b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0020B1B0,func_0020B1B0,0x0020B1B0,0x70,src/grok_w1_0b1b0.c,already_matched,retain current independently verified source and boundaries
+residual_0020B4B0,func_0020B4B0,0x0020B4B0,0xB0,src/grok_n_0b4b0.c,already_matched,retain current independently verified source and boundaries
+residual_0020B6C0,func_0020B6C0,0x0020B6C0,0xB0,src/grok_z18_0b6c0.c,already_matched,retain current independently verified source and boundaries
+residual_0020B840,func_0020B840,0x0020B840,0xB4,src/grok_w1b_0b840.c,already_matched,retain current independently verified source and boundaries
+residual_0020B9D0,func_0020B9D0,0x0020B9D0,0xD8,src/grok_sc_0020b9d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0020C720,func_0020C720,0x0020C720,0x90,src/grok_nopb_0c720.c,already_matched,retain current independently verified source and boundaries
+residual_0020CE90,func_0020CE90,0x0020CE90,0xA4,src/grok_w1b_0ce90.c,already_matched,retain current independently verified source and boundaries
+residual_0020D090,func_0020D090,0x0020D090,0x94,src/grok_w1_d090.c,already_matched,retain current independently verified source and boundaries
+residual_0020D3C0,func_0020D3C0,0x0020D3C0,0xE8,src/grok_q2_0d3c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0020D550,func_0020D550,0x0020D550,0xA8,src/grok_z18_0d550.c,already_matched,retain current independently verified source and boundaries
+residual_0020DDB0,func_0020DDB0,0x0020DDB0,0xB0,src/grok_n_0ddb0.c,already_matched,retain current independently verified source and boundaries
+residual_0020EAD0,func_0020EAD0,0x0020EAD0,0x9C,src/grok_nopb_0ead0.c,already_matched,retain current independently verified source and boundaries
+residual_0020EBF0,func_0020EBF0,0x0020EBF0,0x9C,src/grok_nopb_0ebf0.c,already_matched,retain current independently verified source and boundaries
+residual_0020ED10,func_0020ED10,0x0020ED10,0xBC,src/grok_q2_0ed10.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0020F2C0,func_0020F2C0,0x0020F2C0,0xA0,src/grok_s2_20f2c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00211B70,func_00211B70,0x00211B70,0x78,src/grok_n_11b70.c,already_matched,retain current independently verified source and boundaries
+residual_00212160,func_00212160,0x00212160,0x50,src/grok_z18_12160.c,already_matched,retain current independently verified source and boundaries
+residual_002138D0,func_002138D0,0x002138D0,0x98,src/grok_w1b_138d0.c,already_matched,retain current independently verified source and boundaries
+residual_002148C0,func_002148C0,0x002148C0,0xA0,src/grok_s2_2148c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00215820,func_00215820,0x00215820,0x84,src/grok_z18_15820.c,already_matched,retain current independently verified source and boundaries
+residual_00217BC0,func_00217BC0,0x00217BC0,0xB8,src/grok_n_17bc0.c,already_matched,retain current independently verified source and boundaries
+residual_00217DF0,func_00217DF0,0x00217DF0,0xA8,src/grok_y3_217df0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002182B0,func_002182B0,0x002182B0,0xD8,src/grok_sc_002182b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002183B0,func_002183B0,0x002183B0,0xB4,src/grok_v5_2183b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00219530,func_00219530,0x00219530,0xC4,src/grok_sc_00219530.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00219950,func_00219950,0x00219950,0xA4,src/grok_w1b_19950.c,already_matched,retain current independently verified source and boundaries
+residual_00219D40,func_00219D40,0x00219D40,0xB8,src/grok_w1b_19d40.c,already_matched,retain current independently verified source and boundaries
+residual_0021A560,func_0021A560,0x0021A560,0xDC,src/grok_sc_0021a560.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0021AA30,func_0021AA30,0x0021AA30,0xE4,src/grok_nopf_21aa30.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0021B050,func_0021B050,0x0021B050,0xB8,src/grok_w1b_1b050.c,already_matched,retain current independently verified source and boundaries
+residual_0021B2A0,func_0021B2A0,0x0021B2A0,0x9C,src/grok_nopk_21b2a0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0021B410,func_0021B410,0x0021B410,0x5C,src/grok_nop_21b410.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0021E820,func_0021E820,0x0021E820,0x78,src/grok_n_1e820.c,already_matched,retain current independently verified source and boundaries
+residual_0021E9D0,func_0021E9D0,0x0021E9D0,0x68,src/grok_w1b_1e9d0.c,already_matched,retain current independently verified source and boundaries
+residual_0021FD20,func_0021FD20,0x0021FD20,0xCC,src/grok_sc_0021fd20.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00221B80,func_00221B80,0x00221B80,0x84,src/grok_u2_21b80.c,already_matched,retain current independently verified source and boundaries
+residual_00221DE0,func_00221DE0,0x00221DE0,0xA0,src/grok_s2_221de0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00222290,func_00222290,0x00222290,0x58,src/grok_u2_22290.c,already_matched,retain current independently verified source and boundaries
+residual_00222610,func_00222610,0x00222610,0x20,src/grok_u2_22610.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00224510,func_00224510,0x00224510,0x4C,src/grok_u2_24510.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00224760,func_00224760,0x00224760,0x14C,src/grok_nopk_224760.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00224A00,func_00224A00,0x00224A00,0xC0,src/grok_q2_24a00.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00225030,func_00225030,0x00225030,0x68,src/grok_u2_25030.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00225A20,func_00225A20,0x00225A20,0xA8,src/grok_u2_25a20.c,already_matched,retain current independently verified source and boundaries
+residual_00226DC0,func_00226DC0,0x00226DC0,0x9C,src/grok_s2_226dc0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00227020,func_00227020,0x00227020,0xB8,src/grok_v8_227020.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00227750,func_00227750,0x00227750,0x74,src/grok_s2_227750.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0022A2C0,func_0022A2C0,0x0022A2C0,0xA4,src/grok_y3_22a2c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0022AA50,func_0022AA50,0x0022AA50,0x98,src/grok_w2_2aa50.c,already_matched,retain current independently verified source and boundaries
+residual_0022ABB0,func_0022ABB0,0x0022ABB0,0xB8,src/grok_w2_2abb0.c,already_matched,retain current independently verified source and boundaries
+residual_0022B910,func_0022B910,0x0022B910,0x54,src/grok_u2_2b910.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0022B990,func_0022B990,0x0022B990,0xA4,src/grok_u2_2b990.c,already_matched,retain current independently verified source and boundaries
+func_0022C070,func_0022C070,0x0022C070,0xB4,src/grok_v8_22c070.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0022EE70,func_0022EE70,0x0022EE70,0x44,src/grok_y2_22ee40.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0022F100,func_0022F100,0x0022F100,0x34,src/grok_y2_22f0bc.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0022F160,func_0022F160,0x0022F160,0x24,src/grok_nm2_2f160.c,already_matched,retain current independently verified source and boundaries
+residual_0022FBC0,func_0022FBC0,0x0022FBC0,0xB0,src/grok_u2_2fbc0.c,already_matched,retain current independently verified source and boundaries
+residual_0022FE50,func_0022FE50,0x0022FE50,0x74,src/grok_u2_2fe50.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00232B80,func_00232B80,0x00232B80,0xA8,src/grok_nopk_232b80.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00232C70,func_00232C70,0x00232C70,0xA0,src/grok_nopk_232c70.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00232D50,func_00232D50,0x00232D50,0xC8,src/grok_s1_232d50.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002355F0,func_002355F0,0x002355F0,0xA4,src/grok_w2b_355f0.c,already_matched,retain current independently verified source and boundaries
+residual_002356C0,func_002356C0,0x002356C0,0x98,src/grok_q2_356c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00237F00,func_00237F00,0x00237F00,0xD0,src/grok_w2b_37f00.c,already_matched,retain current independently verified source and boundaries
+residual_00238C00,func_00238C00,0x00238C00,0x28,src/grok_u2_38c00.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00238D50,func_00238D50,0x00238D50,0x98,src/grok_nopb_38d50.c,already_matched,retain current independently verified source and boundaries
+residual_00238FD0,func_00238FD0,0x00238FD0,0xBC,src/grok_q2_38fd0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0023BF60,func_0023BF60,0x0023BF60,0xD4,src/grok_sc_0023bf60.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0023C8C0,func_0023C8C0,0x0023C8C0,0xDC,src/grok_nopk_23c8c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0023D3B0,func_0023D3B0,0x0023D3B0,0xDC,src/grok_nopk_23d3b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0023D520,func_0023D520,0x0023D520,0xD0,src/grok_nopk_23d520.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0023E3E0,func_0023E3E0,0x0023E3E0,0xDC,src/grok_sc_0023e3e0.c,already_matched,retain current independently verified source and boundaries
+residual_0023E640,func_0023E640,0x0023E640,0x80,src/grok_q2_3e640.c,already_matched,retain current independently verified source and boundaries
+residual_0023E720,func_0023E720,0x0023E720,0xBC,src/grok_nopk_23e720.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0023E9C0,func_0023E9C0,0x0023E9C0,0x98,src/grok_q2_3e9c0.c,already_matched,retain current independently verified source and boundaries
+residual_002403E0,func_002403E0,0x002403E0,0x84,src/grok_nopb_403e0.c,already_matched,retain current independently verified source and boundaries
+residual_00240F60,func_00240F60,0x00240F60,0x80,src/grok_q3_240f60.c,already_matched,retain current independently verified source and boundaries
+residual_002423D0,func_002423D0,0x002423D0,0x64,src/grok_nopb_2423d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002424A0,func_002424A0,0x002424A0,0x98,src/grok_nopb_424a0.c,already_matched,retain current independently verified source and boundaries
+residual_002425A0,func_002425A0,0x002425A0,0x98,src/grok_nopb_425a0.c,already_matched,retain current independently verified source and boundaries
+residual_00242820,func_00242820,0x00242820,0xBC,src/grok_q3_242820.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00245640,func_00245640,0x00245640,0x98,src/grok_q3_245640.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00245DA0,func_00245DA0,0x00245DA0,0xD4,src/grok_sc_00245da0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00245F30,func_00245F30,0x00245F30,0xFC,src/grok_nopg_245f30.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00246300,func_00246300,0x00246300,0xF4,src/grok_nopg_246300.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002467B0,func_002467B0,0x002467B0,0xDC,src/grok_sc_002467b0.c,already_matched,retain current independently verified source and boundaries
+func_00246890,func_00246890,0x00246890,0xC4,src/v9_a.c,already_matched,retain current independently verified source and boundaries
+residual_00246AD0,func_00246AD0,0x00246AD0,0xD0,src/grok_sc_00246ad0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002473D0,func_002473D0,0x002473D0,0x94,src/grok_q3_2473d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002474D0,func_002474D0,0x002474D0,0xBC,src/grok_nopg_2474d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00247630,func_00247630,0x00247630,0xD8,src/grok_nopg_247630.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00247A30,func_00247A30,0x00247A30,0x98,src/grok_q3_247a30.c,already_matched,retain current independently verified source and boundaries
+residual_00247CD0,func_00247CD0,0x00247CD0,0x94,src/grok_r3_0024.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00249BF0,func_00249BF0,0x00249BF0,0x108,src/q1_m.c,already_matched,retain current independently verified source and boundaries
+residual_00249D20,func_00249D20,0x00249D20,0x98,src/grok_r3_0027.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0024A560,func_0024A560,0x0024A560,0xB8,src/grok_sc_0024a560.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0024A890,func_0024A890,0x0024A890,0x6C,src/grok_nopb_24a890.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0024BB50,func_0024BB50,0x0024BB50,0xBC,src/grok_s8_24bb50.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0024BD60,func_0024BD60,0x0024BD60,0xBC,src/grok_s8_24bd60.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0024BF60,func_0024BF60,0x0024BF60,0xD4,src/grok_sc_0024bf60.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0024C590,func_0024C590,0x0024C590,0xB0,src/grok_y3_24c590.c,already_matched,retain current independently verified source and boundaries
+residual_0024C820,func_0024C820,0x0024C820,0x74,src/grok_nopb_24c820.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0024C900,func_0024C900,0x0024C900,0xB8,src/grok_s8_24c900.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0024CC00,func_0024CC00,0x0024CC00,0xA8,src/grok_q3_24cc00.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0024CD60,func_0024CD60,0x0024CD60,0xB4,src/grok_nopg_24cd60.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0024F720,func_0024F720,0x0024F720,0x50,src/grok_nopb_24f720.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002502D0,func_002502D0,0x002502D0,0x70,src/grok_w2_502d0.c,already_matched,retain current independently verified source and boundaries
+residual_00251B30,func_00251B30,0x00251B30,0xB8,src/grok_w2_51b30.c,already_matched,retain current independently verified source and boundaries
+residual_002529E0,func_002529E0,0x002529E0,0x88,src/grok_z18_529e0.c,already_matched,retain current independently verified source and boundaries
+residual_00257D80,func_00257D80,0x00257D80,0x64,src/grok_nopg_257d80.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00258090,func_00258090,0x00258090,0x40,src/grok_nm2_58090.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002587C0,func_002587C0,0x002587C0,0x48,src/grok_nopb_2587c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00258B10,func_00258B10,0x00258B10,0x18,src/grok_u2_58b10.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00258C80,func_00258C80,0x00258C80,0x64,src/grok_nopb_258c80.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00258D20,func_00258D20,0x00258D20,0x64,src/grok_nopb_258d20.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002591C0,func_002591C0,0x002591C0,0xD8,src/grok_w2b_591c0.c,already_matched,retain current independently verified source and boundaries
+residual_00259A20,func_00259A20,0x00259A20,0xA4,src/grok_w2_59a20.c,already_matched,retain current independently verified source and boundaries
+residual_00259BB0,func_00259BB0,0x00259BB0,0xA4,src/grok_w2_59bb0.c,already_matched,retain current independently verified source and boundaries
+residual_00259DD0,func_00259DD0,0x00259DD0,0xA0,src/grok_w2_59dd0.c,already_matched,retain current independently verified source and boundaries
+residual_0025A1C0,func_0025A1C0,0x0025A1C0,0x98,src/grok_q3_25a1c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0025A520,func_0025A520,0x0025A520,0x98,src/grok_w2_5a520.c,already_matched,retain current independently verified source and boundaries
+residual_0025AD50,func_0025AD50,0x0025AD50,0x5C,src/grok_nopb_25ad50.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0025B900,func_0025B900,0x0025B900,0xC4,src/grok_x2_25b900.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0025BC70,func_0025BC70,0x0025BC70,0x5C,src/grok_x2_25bc70.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0025D970,func_0025D970,0x0025D970,0x128,src/w178_e.c,already_matched,retain current independently verified source and boundaries
+residual_0025DFE0,func_0025DFE0,0x0025DFE0,0x4C,src/grok_nopb_25dfe0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0025E1A0,func_0025E1A0,0x0025E1A0,0x64,src/grok_nopb_25e1a0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0025E240,func_0025E240,0x0025E240,0x40,src/grok_nopb_25e240.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0025E2B0,func_0025E2B0,0x0025E2B0,0x40,src/grok_nopb_25e2b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0025EE60,func_0025EE60,0x0025EE60,0xB0,src/grok_w2b_5ee60.c,already_matched,retain current independently verified source and boundaries
+residual_0025EFC0,func_0025EFC0,0x0025EFC0,0xB4,src/grok_w2b_5efc0.c,already_matched,retain current independently verified source and boundaries
+residual_0025F1B0,func_0025F1B0,0x0025F1B0,0xA8,src/grok_y3_25f1b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0025F580,func_0025F580,0x0025F580,0xB8,src/grok_w2b_5f580.c,already_matched,retain current independently verified source and boundaries
+residual_0025F760,func_0025F760,0x0025F760,0xB0,src/grok_w2b_5f760.c,already_matched,retain current independently verified source and boundaries
+residual_00260310,func_00260310,0x00260310,0xB0,src/grok_w2b_60310.c,already_matched,retain current independently verified source and boundaries
+residual_002604F0,func_002604F0,0x002604F0,0xD4,src/grok_sd_2604f0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00260880,func_00260880,0x00260880,0xD4,src/grok_w2b_60880.c,already_matched,retain current independently verified source and boundaries
+func_002612D0,func_002612D0,0x002612D0,0x110,src/w188_d.c,already_matched,retain current independently verified source and boundaries
+residual_00261730,func_00261730,0x00261730,0x5C,src/grok_nopb_261730.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002617F0,func_002617F0,0x002617F0,0x94,src/grok_nopg_2617f0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00263F10,func_00263F10,0x00263F10,0xB0,src/grok_x2_263f10.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00264130,func_00264130,0x00264130,0x9C,src/grok_s3_264130.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00269050,func_00269050,0x00269050,0xA4,src/grok_w2b_69050.c,already_matched,retain current independently verified source and boundaries
+func_0026BC50,func_0026BC50,0x0026BC50,0x158,src/move_setup.c,already_matched,retain current independently verified source and boundaries
+residual_0026C740,func_0026C740,0x0026C740,0xBC,src/grok_x2_26c740.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0026C950,func_0026C950,0x0026C950,0x44,src/grok_nopb_26c950.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0026CD40,func_0026CD40,0x0026CD40,0xB0,src/grok_w2b_6cd40.c,already_matched,retain current independently verified source and boundaries
+residual_0026CEC0,func_0026CEC0,0x0026CEC0,0xCC,src/grok_w2_6cec0.c,already_matched,retain current independently verified source and boundaries
+residual_0026D890,func_0026D890,0x0026D890,0xA8,src/grok_w2_6d890.c,already_matched,retain current independently verified source and boundaries
+residual_0026D960,func_0026D960,0x0026D960,0xEC,src/grok_s1_26d960.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0026DB40,func_0026DB40,0x0026DB40,0x24,src/grok_u2_6db40.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0026DEA0,func_0026DEA0,0x0026DEA0,0xAC,src/grok_w2_6dea0.c,already_matched,retain current independently verified source and boundaries
+residual_0026E630,func_0026E630,0x0026E630,0x50,src/grok_nopb_26e630.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0026FF30,func_0026FF30,0x0026FF30,0x7C,src/grok_nopg_26ff30.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00270520,func_00270520,0x00270520,0xA0,src/grok_r3_0027.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00270BF0,func_00270BF0,0x00270BF0,0x140,src/grok_nopg_270bf0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00270DE0,func_00270DE0,0x00270DE0,0x80,src/grok_q3_270de0.c,already_matched,retain current independently verified source and boundaries
+residual_00271C50,func_00271C50,0x00271C50,0x80,src/grok_z18_71c50.c,already_matched,retain current independently verified source and boundaries
+residual_00271E00,func_00271E00,0x00271E00,0x9C,src/grok_r3_0027.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002724B0,func_002724B0,0x002724B0,0xCC,src/grok_sd_2724b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00272690,func_00272690,0x00272690,0x88,src/grok_r3_0027.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00274EF0,func_00274EF0,0x00274EF0,0xB4,src/grok_v9_274ef0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00275350,func_00275350,0x00275350,0x48,src/grok_nopb_275350.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00275490,func_00275490,0x00275490,0x70,src/grok_z18_75490.c,already_matched,retain current independently verified source and boundaries
+residual_00275730,func_00275730,0x00275730,0x60,src/grok_nopb_275730.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00275810,func_00275810,0x00275810,0x60,src/grok_nopb_275810.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002758E0,func_002758E0,0x002758E0,0x60,src/grok_nopb_2758e0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00275F20,func_00275F20,0x00275F20,0xB0,src/grok_s8_275f20.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00276110,func_00276110,0x00276110,0x84,src/grok_r3_0027.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002762D0,func_002762D0,0x002762D0,0xE0,src/grok_sd_2762d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00276F00,func_00276F00,0x00276F00,0xE0,src/grok_sd_276f00.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002773B0,func_002773B0,0x002773B0,0x10C,src/grok_nopg_2773b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002777E0,func_002777E0,0x002777E0,0x98,src/grok_nopb_777e0.c,already_matched,retain current independently verified source and boundaries
+residual_002792B0,func_002792B0,0x002792B0,0xBC,src/grok_s8_2792b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00279520,func_00279520,0x00279520,0xBC,src/grok_s8_279520.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002796E0,func_002796E0,0x002796E0,0xC8,src/grok_sd_2796e0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00279EB0,func_00279EB0,0x00279EB0,0x74,src/grok_x4_279eb0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00279FF0,func_00279FF0,0x00279FF0,0xA8,src/grok_s8_279ff0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0027A450,func_0027A450,0x0027A450,0xAC,src/grok_s8_27a450.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0027A8D0,func_0027A8D0,0x0027A8D0,0xB8,src/grok_s8_27a8d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0027B6B0,func_0027B6B0,0x0027B6B0,0x5C,src/grok_nopg_27b6b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0027B800,func_0027B800,0x0027B800,0x6C,src/grok_nopb_27b800.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0027C1E0,func_0027C1E0,0x0027C1E0,0xB0,src/grok_s8_27c1e0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0027CA20,func_0027CA20,0x0027CA20,0xD0,src/grok_sd_27ca20.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0027CC40,func_0027CC40,0x0027CC40,0x7C,src/grok_x4_27cc40.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0027CD90,func_0027CD90,0x0027CD90,0xB8,src/grok_s8_27cd90.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0027DF50,func_0027DF50,0x0027DF50,0x98,src/grok_w2_7df50.c,already_matched,retain current independently verified source and boundaries
+residual_0027EA20,func_0027EA20,0x0027EA20,0x80,src/grok_z18_7ea20.c,already_matched,retain current independently verified source and boundaries
+residual_00282A80,func_00282A80,0x00282A80,0xE4,src/grok_nopl_282a80.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00283230,func_00283230,0x00283230,0xAC,src/grok_nopg_283230.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002833D0,func_002833D0,0x002833D0,0xA4,src/grok_nopg_2833d0.c,already_matched,retain current independently verified source and boundaries
+residual_00284E90,func_00284E90,0x00284E90,0xA4,src/grok_w2_84e90.c,already_matched,retain current independently verified source and boundaries
+residual_00288420,func_00288420,0x00288420,0x78,src/grok_nopc_288420.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00288700,func_00288700,0x00288700,0x6C,src/grok_q3_288700.c,already_matched,retain current independently verified source and boundaries
+residual_00288D40,func_00288D40,0x00288D40,0x78,src/grok_nopc_288d40.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00288DF0,func_00288DF0,0x00288DF0,0x84,src/grok_r3_0027.c,already_matched,retain current independently verified source and boundaries
+residual_00289210,func_00289210,0x00289210,0xB4,src/grok_s8_289210.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002893B0,func_002893B0,0x002893B0,0xD8,src/grok_sd_2893b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028A010,func_0028A010,0x0028A010,0x74,src/grok_nopc_28a010.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028AC40,func_0028AC40,0x0028AC40,0x94,src/grok_s3_28ac40.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028BBA0,func_0028BBA0,0x0028BBA0,0xC4,src/grok_sd_28bba0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028BD20,func_0028BD20,0x0028BD20,0xBC,src/grok_s9_28bd20.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028C070,func_0028C070,0x0028C070,0xBC,src/grok_s9_28c070.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028C1E0,func_0028C1E0,0x0028C1E0,0xD8,src/grok_sd_28c1e0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028CF70,func_0028CF70,0x0028CF70,0xB8,src/grok_s9_28cf70.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028D270,func_0028D270,0x0028D270,0x84,src/grok_z18_8d270.c,already_matched,retain current independently verified source and boundaries
+residual_0028D580,func_0028D580,0x0028D580,0x84,src/grok_s1_28d580.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028F7E0,func_0028F7E0,0x0028F7E0,0x50,src/grok_nopc_28f7e0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002900A0,func_002900A0,0x002900A0,0x4C,src/grok_nops_2900a0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00290820,func_00290820,0x00290820,0x6C,src/grok_nopc_290820.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002908C0,func_002908C0,0x002908C0,0x6C,src/grok_nopc_2908c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00290C70,func_00290C70,0x00290C70,0xD8,src/grok_sd_290c70.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00291080,func_00291080,0x00291080,0xCC,src/grok_sd_291080.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00291220,func_00291220,0x00291220,0xA4,src/grok_nopc_291220.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00291370,func_00291370,0x00291370,0x74,src/grok_nopc_291370.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00291FB0,func_00291FB0,0x00291FB0,0x94,src/grok_s3_291fb0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00292F10,func_00292F10,0x00292F10,0xC4,src/grok_sd_292f10.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00293090,func_00293090,0x00293090,0xBC,src/grok_s9_293090.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002933E0,func_002933E0,0x002933E0,0xBC,src/grok_s9_2933e0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00293550,func_00293550,0x00293550,0xD8,src/grok_sd_293550.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002942C0,func_002942C0,0x002942C0,0xB8,src/grok_s9_2942c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002945C0,func_002945C0,0x002945C0,0x84,src/grok_z18_945c0.c,already_matched,retain current independently verified source and boundaries
+residual_00294890,func_00294890,0x00294890,0x84,src/grok_s1_294890.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00294D40,func_00294D40,0x00294D40,0x68,src/n4d.c,already_matched,retain current independently verified source and boundaries
+residual_00297020,func_00297020,0x00297020,0x98,src/grok_q3_297020.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00298970,func_00298970,0x00298970,0xB8,src/grok_x3_298970.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00299080,func_00299080,0x00299080,0xA8,src/grok_q3_299080.c,already_matched,retain current independently verified source and boundaries
+residual_00299DD0,func_00299DD0,0x00299DD0,0xB0,src/grok_s9_299dd0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0029A6A0,func_0029A6A0,0x0029A6A0,0x88,src/grok_nopg_29a6a0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0029C1E0,func_0029C1E0,0x0029C1E0,0x160,src/w187_s.c,already_matched,retain current independently verified source and boundaries
+residual_0029D690,func_0029D690,0x0029D690,0xA8,src/grok_s9_29d690.c,already_matched,retain current independently verified source and boundaries
+residual_0029FC40,func_0029FC40,0x0029FC40,0x80,src/grok_z18_9fc40.c,already_matched,retain current independently verified source and boundaries
+residual_0029FF20,func_0029FF20,0x0029FF20,0xBC,src/grok_s9_29ff20.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002A0100,func_002A0100,0x002A0100,0xD0,src/grok_nopg_2a0100.c,imported,complete ordinary-C object size and relocated bytes verified
+func_002A16F0,func_002A16F0,0x002A16F0,0x130,src/w175_b.c,already_matched,retain current independently verified source and boundaries
+residual_002A2470,func_002A2470,0x002A2470,0xB8,src/grok_v6_2a2470.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002A2750,func_002A2750,0x002A2750,0xB0,src/grok_v6_2a2750.c,imported,complete ordinary-C object size and relocated bytes verified
+func_002A4070,func_002A4070,0x002A4070,0xC0,src/grok_r3_0024.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002A4660,func_002A4660,0x002A4660,0x70,src/grok_nopc_2a4660.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002A4770,func_002A4770,0x002A4770,0xB8,src/grok_s9_2a4770.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002A55D0,func_002A55D0,0x002A55D0,0xB8,src/grok_s9_2a55d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002A58C0,func_002A58C0,0x002A58C0,0xA8,src/grok_nopg_2a58c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002A6EA0,func_002A6EA0,0x002A6EA0,0x70,src/grok_q3_2a6ea0.c,already_matched,retain current independently verified source and boundaries
+residual_002A8880,func_002A8880,0x002A8880,0xA4,src/grok_n_a8880.c,already_matched,retain current independently verified source and boundaries
+residual_002A8DA0,func_002A8DA0,0x002A8DA0,0xAC,src/grok_nopg_2a8da0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002AA7F0,func_002AA7F0,0x002AA7F0,0x17C,src/grok_nopl_2aa7f0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002AAAF0,func_002AAAF0,0x002AAAF0,0xA4,src/grok_s9_2aaaf0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_002AB410,func_002AB410,0x002AB410,0x88,src/grok_v6_2ab410.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002AE190,func_002AE190,0x002AE190,0xB8,src/grok_x3_2ae190.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002B0DD0,func_002B0DD0,0x002B0DD0,0xB0,src/grok_s9_2b0dd0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002B19C0,func_002B19C0,0x002B19C0,0xB8,src/grok_s9_2b19c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002B4470,func_002B4470,0x002B4470,0xA4,src/grok_y3_2b4470.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002B4D00,func_002B4D00,0x002B4D00,0xD4,src/grok_sa_2b4d00.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002B5890,func_002B5890,0x002B5890,0xB8,src/grok_sa_2b5890.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002B5AD0,func_002B5AD0,0x002B5AD0,0xDC,src/grok_sa_2b5ad0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002B5EE0,func_002B5EE0,0x002B5EE0,0xC4,src/grok_sa_2b5ee0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002B6430,func_002B6430,0x002B6430,0xAC,src/grok_sa_2b6430.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002B6870,func_002B6870,0x002B6870,0xA4,src/grok_sa_2b6870.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002B7070,func_002B7070,0x002B7070,0xAC,src/grok_sa_2b7070.c,imported,complete ordinary-C object size and relocated bytes verified
+func_002B7D10,func_002B7D10,0x002B7D10,0x84,src/grok_v2_std.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002B9900,func_002B9900,0x002B9900,0x80,src/grok_nopg_2b9900.c,already_matched,retain current independently verified source and boundaries
+residual_002B9B50,func_002B9B50,0x002B9B50,0x48,src/grok_nopc_2b9b50.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002B9F60,func_002B9F60,0x002B9F60,0xA8,src/grok_sa_2b9f60.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002BA0F0,func_002BA0F0,0x002BA0F0,0xCC,src/grok_sa_2ba0f0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002BA610,func_002BA610,0x002BA610,0xBC,src/grok_sa_2ba610.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002BA9D0,func_002BA9D0,0x002BA9D0,0xC4,src/grok_sa_2ba9d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002BACF0,func_002BACF0,0x002BACF0,0xB0,src/grok_sa_2bacf0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002BB960,func_002BB960,0x002BB960,0xC4,src/grok_sa_2bb960.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002BDE40,func_002BDE40,0x002BDE40,0xB8,src/grok_sa_2bde40.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002BE360,func_002BE360,0x002BE360,0xD0,src/grok_cq_2be360.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002C1E80,func_002C1E80,0x002C1E80,0xA4,src/grok_v6_2c1e80.c,already_matched,retain current independently verified source and boundaries
+residual_002C2040,func_002C2040,0x002C2040,0xAC,src/grok_v6_2c2040.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002C2F20,func_002C2F20,0x002C2F20,0xB8,src/grok_sa_2c2f20.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002C4130,func_002C4130,0x002C4130,0x24,src/grok_u2_c4130.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002C41C0,func_002C41C0,0x002C41C0,0x7C,src/grok_nopc_2c41c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002C48C0,func_002C48C0,0x002C48C0,0x94,src/grok_r4_2c48c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002C6B10,func_002C6B10,0x002C6B10,0x94,src/grok_noph_2c6b10.c,already_matched,retain current independently verified source and boundaries
+residual_002C71A0,func_002C71A0,0x002C71A0,0xA4,src/grok_v6_2c71a0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002C7A90,func_002C7A90,0x002C7A90,0xB0,src/grok_noph_2c7a90.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002C83E0,func_002C83E0,0x002C83E0,0x74,src/grok_x4_2c83e0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002CAD10,func_002CAD10,0x002CAD10,0xB0,src/grok_noph_2cad10.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002CAE50,func_002CAE50,0x002CAE50,0xC8,src/grok_r4_2cae50.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002CB000,func_002CB000,0x002CB000,0x9C,src/grok_noph_2cb000.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002CB1F0,func_002CB1F0,0x002CB1F0,0xC8,src/grok_sa_2cb1f0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002CD2E0,func_002CD2E0,0x002CD2E0,0xA8,src/grok_v6_2cd2e0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002CED00,func_002CED00,0x002CED00,0xA8,src/grok_q4_ced00.c,already_matched,retain current independently verified source and boundaries
+residual_002D2DD0,func_002D2DD0,0x002D2DD0,0xC8,src/grok_sa_2d2dd0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002D3720,func_002D3720,0x002D3720,0xC8,src/grok_noph_2d3720.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002D42C0,func_002D42C0,0x002D42C0,0xB0,src/grok_sa_2d42c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002D5190,func_002D5190,0x002D5190,0xB0,src/grok_nopm_2d5190.c,already_matched,retain current independently verified source and boundaries
+residual_002D6CE0,func_002D6CE0,0x002D6CE0,0x70,src/grok_n_d6ce0.c,already_matched,retain current independently verified source and boundaries
+residual_002D6F70,func_002D6F70,0x002D6F70,0xC0,src/grok_v6_2d6f70.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002D71E0,func_002D71E0,0x002D71E0,0x28,src/grok_u2_d71e0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002D7950,func_002D7950,0x002D7950,0xD4,src/grok_sa_2d7950.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002D7EA0,func_002D7EA0,0x002D7EA0,0x6C,src/grok_nopc_2d7ea0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002D8230,func_002D8230,0x002D8230,0xD0,src/grok_sa_2d8230.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002D8620,func_002D8620,0x002D8620,0xB8,src/grok_sa_2d8620.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002D9FE0,func_002D9FE0,0x002D9FE0,0xAC,src/grok_v9_2d9fe0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002DDE70,func_002DDE70,0x002DDE70,0xC4,src/grok_sa_2dde70.c,imported,complete ordinary-C object size and relocated bytes verified
+func_002DE100,func_002DE100,0x002DE100,0xD4,src/grok_w3_0040.c,already_matched,retain current independently verified source and boundaries
+residual_002DE200,func_002DE200,0x002DE200,0xA4,src/grok_n_de200.c,already_matched,retain current independently verified source and boundaries
+residual_002DE330,func_002DE330,0x002DE330,0xA0,src/grok_n_de330.c,already_matched,retain current independently verified source and boundaries
+residual_002DE3F0,func_002DE3F0,0x002DE3F0,0x94,src/grok_t4_2de3f0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002DE960,func_002DE960,0x002DE960,0xC0,src/grok_q4_de960.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002DF3B0,func_002DF3B0,0x002DF3B0,0xB8,src/grok_q4_df3b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002DFD90,func_002DFD90,0x002DFD90,0xA4,src/grok_noph_2dfd90.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002DFF00,func_002DFF00,0x002DFF00,0x98,src/grok_noph_2dff00.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002E0330,func_002E0330,0x002E0330,0xC0,src/grok_sa_2e0330.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002E2820,func_002E2820,0x002E2820,0xBC,src/grok_sa_2e2820.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002E2B10,func_002E2B10,0x002E2B10,0xBC,src/grok_sa_2e2b10.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002E2DD0,func_002E2DD0,0x002E2DD0,0xB8,src/grok_nopm_2e2dd0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002E5A80,func_002E5A80,0x002E5A80,0x88,src/grok_noph_2e5a80.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002E7030,func_002E7030,0x002E7030,0x100,src/grok_t7_2e7030.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002E7940,func_002E7940,0x002E7940,0xC4,src/grok_sb_2e7940.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002E7C70,func_002E7C70,0x002E7C70,0xBC,src/grok_noph_2e7c70.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002E7EF0,func_002E7EF0,0x002E7EF0,0xB4,src/grok_sb_2e7ef0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002E8660,func_002E8660,0x002E8660,0xC0,src/grok_r4_2e8660.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002EC0B0,func_002EC0B0,0x002EC0B0,0xC8,src/grok_sb_2ec0b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002EC210,func_002EC210,0x002EC210,0xB4,src/grok_noph_2ec210.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002ECDC0,func_002ECDC0,0x002ECDC0,0x80,src/grok_r4_2ecdc0.c,already_matched,retain current independently verified source and boundaries
+residual_002ECEA0,func_002ECEA0,0x002ECEA0,0xC4,src/grok_nopm_2ecea0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002ED200,func_002ED200,0x002ED200,0xC0,src/grok_sb_2ed200.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002ED420,func_002ED420,0x002ED420,0x98,src/grok_q4_ed420.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002ED5C0,func_002ED5C0,0x002ED5C0,0xBC,src/grok_v6_2ed5c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002EF5D0,func_002EF5D0,0x002EF5D0,0xCC,src/grok_sb_2ef5d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002EFB50,func_002EFB50,0x002EFB50,0xAC,src/grok_sb_2efb50.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002F1290,func_002F1290,0x002F1290,0xCC,src/grok_sb_2f1290.c,imported,complete ordinary-C object size and relocated bytes verified
+func_002F2D80,func_002F2D80,0x002F2D80,0x13C,src/animation_move_handlers_0023AAD0_00287220.c,already_matched,retain current independently verified source and boundaries
+residual_002F3E30,func_002F3E30,0x002F3E30,0xA4,src/grok_sb_2f3e30.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002F59B0,func_002F59B0,0x002F59B0,0x7C,src/grok_nopc_2f59b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002FA370,func_002FA370,0x002FA370,0x98,src/grok_noph_2fa370.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002FA750,func_002FA750,0x002FA750,0x9C,src/grok_r4_2fa750.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002FA8E0,func_002FA8E0,0x002FA8E0,0xA0,src/grok_noph_2fa8e0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002FA9E0,func_002FA9E0,0x002FA9E0,0xDC,src/grok_noph_2fa9e0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002FAE60,func_002FAE60,0x002FAE60,0xD8,src/grok_sb_2fae60.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002FB430,func_002FB430,0x002FB430,0xA4,src/grok_r4_2fb430.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002FB800,func_002FB800,0x002FB800,0x60,src/grok_nopc_2fb800.c,already_matched,retain current independently verified source and boundaries
+func_002FCE10,func_002FCE10,0x002FCE10,0x158,src/w194_l.c,already_matched,retain current independently verified source and boundaries
+residual_002FD680,func_002FD680,0x002FD680,0x80,src/grok_noph_2fd680.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002FD7D0,func_002FD7D0,0x002FD7D0,0xA8,src/grok_v6_2fd7d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002FF040,func_002FF040,0x002FF040,0xBC,src/grok_noph_2ff040.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002FF1A0,func_002FF1A0,0x002FF1A0,0xA0,src/grok_noph_2ff1a0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00300090,func_00300090,0x00300090,0xA8,src/grok_nm3_300090.c,already_matched,retain current independently verified source and boundaries
+func_00302BA0,func_00302BA0,0x00302BA0,0x98,src/grok_nm_302ba0.c,already_matched,retain current independently verified source and boundaries
+residual_00302CA0,func_00302CA0,0x00302CA0,0xDC,src/grok_nm3_302ca0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00302F30,func_00302F30,0x00302F30,0xD0,src/grok_nm3_302f30.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00303440,func_00303440,0x00303440,0x5C,src/grok_nm3_303438.c,already_matched,retain current independently verified source and boundaries
+residual_00303500,func_00303500,0x00303500,0xC8,src/grok_nm3_303500.c,already_matched,retain current independently verified source and boundaries
+residual_00303660,func_00303660,0x00303660,0xB4,src/grok_nm3_303660.c,already_matched,retain current independently verified source and boundaries
+residual_00303F20,func_00303F20,0x00303F20,0xC4,src/grok_noph_303f20.c,already_matched,retain current independently verified source and boundaries
+residual_00304110,func_00304110,0x00304110,0xA0,src/grok_nm3_304110.c,already_matched,retain current independently verified source and boundaries
+residual_003043A0,func_003043A0,0x003043A0,0xC0,src/grok_sb_3043a0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003045C0,func_003045C0,0x003045C0,0x98,src/grok_w4b_residual_003045C0.c,already_matched,retain current independently verified source and boundaries
+residual_00304750,func_00304750,0x00304750,0xBC,src/grok_v6_304750.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00306480,func_00306480,0x00306480,0x160,src/physics_dispatchers.c,already_matched,retain current independently verified source and boundaries
+residual_00306600,func_00306600,0x00306600,0x80,src/grok_n_06600.c,already_matched,retain current independently verified source and boundaries
+residual_003068E0,func_003068E0,0x003068E0,0x98,src/grok_q4_3068e0.c,already_matched,retain current independently verified source and boundaries
+func_00306A90,func_00306A90,0x00306A90,0xC,src/grok_u3_306a90.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00307490,func_00307490,0x00307490,0xB0,src/grok_q4_307490.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003075E0,func_003075E0,0x003075E0,0xC8,src/grok_sb_3075e0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003077F0,func_003077F0,0x003077F0,0xC0,src/grok_nm3_3077f0.c,already_matched,retain current independently verified source and boundaries
+residual_00308120,func_00308120,0x00308120,0xC4,src/grok_sb_308120.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0030B0F0,func_0030B0F0,0x0030B0F0,0xAC,src/grok_nm3_30b0f0.c,already_matched,retain current independently verified source and boundaries
+residual_0030B250,func_0030B250,0x0030B250,0xD0,src/grok_nopm_30b250.c,already_matched,retain current independently verified source and boundaries
+residual_0030B740,func_0030B740,0x0030B740,0x70,src/grok_nopd_30b740.c,already_matched,retain current independently verified source and boundaries
+residual_0030C180,func_0030C180,0x0030C180,0xB4,src/grok_v6_30c180.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0030C2F0,func_0030C2F0,0x0030C2F0,0xB0,src/grok_v6_30c2f0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0030D400,func_0030D400,0x0030D400,0xAC,src/grok_v6_30d400.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00310B70,func_00310B70,0x00310B70,0x80,src/grok_w4_residual_00310B70.c,already_matched,retain current independently verified source and boundaries
+residual_00310DB0,func_00310DB0,0x00310DB0,0x8C,src/grok_nopd_310db0.c,already_matched,retain current independently verified source and boundaries
+residual_00311170,func_00311170,0x00311170,0x7C,src/grok_nopd_311170.c,already_matched,retain current independently verified source and boundaries
+residual_003112D0,func_003112D0,0x003112D0,0x34,src/grok_s3_3112d0.c,already_matched,retain current independently verified source and boundaries
+residual_00311690,func_00311690,0x00311690,0xF0,src/grok_nopm_311690.c,already_matched,retain current independently verified source and boundaries
+residual_00311A90,func_00311A90,0x00311A90,0x94,src/grok_w4b_residual_00311A90.c,already_matched,retain current independently verified source and boundaries
+func_00311B30,func_00311B30,0x00311B30,0xB4,src/grok_nm3_311b30.c,already_matched,retain current independently verified source and boundaries
+residual_00311C70,func_00311C70,0x00311C70,0x9C,src/grok_s3_311c70.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00312570,func_00312570,0x00312570,0x90,src/grok_w4b_residual_00312570.c,already_matched,retain current independently verified source and boundaries
+residual_003149F0,func_003149F0,0x003149F0,0xC0,src/grok_q4_3149f0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00314BB0,func_00314BB0,0x00314BB0,0xD4,src/grok_sb_314bb0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00314FE0,func_00314FE0,0x00314FE0,0xBC,src/grok_sb_314fe0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00315140,func_00315140,0x00315140,0xA8,src/grok_noph_315140.c,already_matched,retain current independently verified source and boundaries
+residual_00315250,func_00315250,0x00315250,0xA0,src/grok_nopm_315250.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00315390,func_00315390,0x00315390,0xC8,src/grok_sb_315390.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00315980,func_00315980,0x00315980,0x4C,src/grok_n_15980.c,already_matched,retain current independently verified source and boundaries
+residual_00315CA0,func_00315CA0,0x00315CA0,0x94,src/grok_w4b_residual_00315CA0.c,already_matched,retain current independently verified source and boundaries
+residual_00316690,func_00316690,0x00316690,0x94,src/grok_nopd_316690.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00317C10,func_00317C10,0x00317C10,0x84,src/grok_n_17c10.c,already_matched,retain current independently verified source and boundaries
+residual_00317EC0,func_00317EC0,0x00317EC0,0x84,src/grok_n_17ec0.c,already_matched,retain current independently verified source and boundaries
+residual_00318550,func_00318550,0x00318550,0xC4,src/grok_sb_318550.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00319C30,func_00319C30,0x00319C30,0xAC,src/grok_nm3_319c30.c,already_matched,retain current independently verified source and boundaries
+residual_0031A1A0,func_0031A1A0,0x0031A1A0,0xB8,src/grok_sb_31a1a0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0031AA30,func_0031AA30,0x0031AA30,0x6C,src/grok_n_1aa30.c,already_matched,retain current independently verified source and boundaries
+residual_0031ACA0,func_0031ACA0,0x0031ACA0,0x60,src/grok_n_1aca0.c,already_matched,retain current independently verified source and boundaries
+residual_0031D0A0,func_0031D0A0,0x0031D0A0,0xB8,src/grok_v6_31d0a0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0031D260,func_0031D260,0x0031D260,0x48,src/grok_s3_31d260.c,already_matched,retain current independently verified source and boundaries
+residual_0031E9F0,func_0031E9F0,0x0031E9F0,0xBC,src/grok_nm3_31e9f0.c,already_matched,retain current independently verified source and boundaries
+residual_0031EDF0,func_0031EDF0,0x0031EDF0,0x9C,src/grok_q4_31edf0.c,already_matched,retain current independently verified source and boundaries
+residual_0031F1D0,func_0031F1D0,0x0031F1D0,0xB8,src/grok_q4_31f1d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00320500,func_00320500,0x00320500,0xB8,src/grok_q4_320500.c,already_matched,retain current independently verified source and boundaries
+residual_00320750,func_00320750,0x00320750,0x9C,src/grok_nopd_320750.c,already_matched,retain current independently verified source and boundaries
+residual_003208C0,func_003208C0,0x003208C0,0x5C,src/grok_nopd_3208c0.c,already_matched,retain current independently verified source and boundaries
+residual_003209A0,func_003209A0,0x003209A0,0xA8,src/grok_nopd_3209a0.c,already_matched,retain current independently verified source and boundaries
+residual_00320AD0,func_00320AD0,0x00320AD0,0xA8,src/grok_nopd_320ad0.c,already_matched,retain current independently verified source and boundaries
+residual_00320BE0,func_00320BE0,0x00320BE0,0x9C,src/grok_nopd_320be0.c,already_matched,retain current independently verified source and boundaries
+residual_003239F0,func_003239F0,0x003239F0,0x9C,src/grok_q4_3239f0.c,already_matched,retain current independently verified source and boundaries
+residual_00325460,func_00325460,0x00325460,0xC0,src/grok_q4_325460.c,already_matched,retain current independently verified source and boundaries
+residual_00325730,func_00325730,0x00325730,0xC0,src/grok_q4_325730.c,already_matched,retain current independently verified source and boundaries
+residual_00328290,func_00328290,0x00328290,0x60,src/grok_s4_328290.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0032F540,func_0032F540,0x0032F540,0x74,src/grok_s4_32f540.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00335AA0,func_00335AA0,0x00335AA0,0x64,src/grok_nopd_335aa0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00335DA0,func_00335DA0,0x00335DA0,0x5C,src/grok_nopd_335da0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00335F60,func_00335F60,0x00335F60,0x5C,src/grok_nopd_335f60.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00336140,func_00336140,0x00336140,0x54,src/grok_nopd_336140.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00336550,func_00336550,0x00336550,0x8C,src/grok_nopd_336550.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00336620,func_00336620,0x00336620,0x50,src/grok_nopd_336620.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00336710,func_00336710,0x00336710,0x50,src/grok_nopd_336710.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003402B0,func_003402B0,0x003402B0,0x54,src/grok_q0_3402b0.c,already_matched,retain current independently verified source and boundaries
+residual_003497A0,func_003497A0,0x003497A0,0x12C,src/grok_nopi_3497a0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00349970,func_00349970,0x00349970,0x12C,src/grok_nopi_349970.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00349B40,func_00349B40,0x00349B40,0xEC,src/grok_nopi_349b40.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00349CC0,func_00349CC0,0x00349CC0,0x130,src/grok_nopi_349cc0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00349EA0,func_00349EA0,0x00349EA0,0x130,src/grok_nopi_349ea0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0034ACF0,func_0034ACF0,0x0034ACF0,0x68,src/grok_w4_residual_0034ACF0.c,already_matched,retain current independently verified source and boundaries
+residual_0034B9D0,func_0034B9D0,0x0034B9D0,0xE8,src/grok_t3_34b9d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0034BB10,func_0034BB10,0x0034BB10,0x13C,src/grok_v1_34bb10.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0034E030,func_0034E030,0x0034E030,0x58,src/grok_nopd_34e030.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0034F410,func_0034F410,0x0034F410,0x9C,src/grok_nopi_34f410.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003506C0,func_003506C0,0x003506C0,0xC8,src/grok_nopi_3506c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00350B80,func_00350B80,0x00350B80,0x84,src/grok_s4_350b80.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00350DA0,func_00350DA0,0x00350DA0,0xA0,src/grok_nopd_350da0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00350EE0,func_00350EE0,0x00350EE0,0xA8,src/grok_nopi_350ee0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00351EB0,func_00351EB0,0x00351EB0,0xA4,src/grok_nopd_351eb0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00352000,func_00352000,0x00352000,0xBC,src/grok_nopn_352000.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003572E0,func_003572E0,0x003572E0,0x58,src/grok_w4_residual_003572E0.c,already_matched,retain current independently verified source and boundaries
+residual_00359260,func_00359260,0x00359260,0xA4,src/grok_nopd_359260.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00359350,func_00359350,0x00359350,0x54,src/grok_nopd_359350.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00359410,func_00359410,0x00359410,0xB4,src/grok_y4_359410.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0035A500,func_0035A500,0x0035A500,0x5C,src/grok_nopd_35a500.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0035D620,func_0035D620,0x0035D620,0xAC,src/grok_nopd_35d620.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0035DAF0,func_0035DAF0,0x0035DAF0,0xA0,src/grok_nopd_35daf0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0035FFC0,func_0035FFC0,0x0035FFC0,0x58,src/grok_nopd_35ffc0.c,already_matched,retain current independently verified source and boundaries
+residual_00366A60,func_00366A60,0x00366A60,0x11C,src/grok_t3_366a60.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00367AB0,func_00367AB0,0x00367AB0,0xF8,src/grok_u8_367ab0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00368A40,func_00368A40,0x00368A40,0x198,src/grok_v3_residual_00368A40.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00368E90,func_00368E90,0x00368E90,0x108,src/grok_t9_368e90.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003691C0,func_003691C0,0x003691C0,0x114,src/grok_v1_3691c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0036B910,func_0036B910,0x0036B910,0x58,src/grok_w4_residual_0036B910.c,already_matched,retain current independently verified source and boundaries
+residual_0036E520,func_0036E520,0x0036E520,0xCC,src/grok_t3_36e520.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0036EE40,func_0036EE40,0x0036EE40,0xCC,src/sequential_calls.c,already_matched,retain current independently verified source and boundaries
+residual_00371370,func_00371370,0x00371370,0xE0,src/grok_nopi_371370.c,already_matched,retain current independently verified source and boundaries
+residual_003717F0,func_003717F0,0x003717F0,0x3C,src/grok_u3_3717f0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00373DD0,func_00373DD0,0x00373DD0,0xBC,src/grok_nopi_373dd0.c,already_matched,retain current independently verified source and boundaries
+residual_003750D0,func_003750D0,0x003750D0,0xFC,src/grok_nopi_3750d0.c,already_matched,retain current independently verified source and boundaries
+residual_00377AA0,func_00377AA0,0x00377AA0,0x90,src/grok_x4_377aa0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00377D00,func_00377D00,0x00377D00,0x84,src/grok_nopd_377d00.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00378D50,func_00378D50,0x00378D50,0x54,src/grok_r5_378d50.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00384030,func_00384030,0x00384030,0x3C,src/grok_u3_384030.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00388570,func_00388570,0x00388570,0x7C,src/grok_w5b_00388570.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00388B30,func_00388B30,0x00388B30,0x94,src/grok_w5_00388b30.c,already_matched,retain current independently verified source and boundaries
+residual_00388F00,func_00388F00,0x00388F00,0x54,src/grok_nopd_388f00.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00388FC0,func_00388FC0,0x00388FC0,0x54,src/grok_nopd_388fc0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00389080,func_00389080,0x00389080,0x54,src/grok_nopd_389080.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00389CA0,func_00389CA0,0x00389CA0,0x60,src/grok_w5b_00389ca0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0038DCD0,func_0038DCD0,0x0038DCD0,0xC8,src/grok_x4_38dcd0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0038F270,func_0038F270,0x0038F270,0x5C,src/grok_nopd_38f270.c,already_matched,retain current independently verified source and boundaries
+residual_00390060,func_00390060,0x00390060,0x60,src/grok_n_90060.c,already_matched,retain current independently verified source and boundaries
+residual_0039BDF0,func_0039BDF0,0x0039BDF0,0x134,src/grok_x4_39bdf0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0039C730,func_0039C730,0x0039C730,0x54,src/grok_w5b_0039c730.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0039CE40,func_0039CE40,0x0039CE40,0x50,src/grok_w5_0039ce40.c,already_matched,retain current independently verified source and boundaries
+residual_0039D280,func_0039D280,0x0039D280,0x80,src/grok_w5b_0039d280.c,already_matched,retain current independently verified source and boundaries
+func_003A07D0,func_003A07D0,0x003A07D0,0xAC,src/grok_x1_3a07d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003A45B0,func_003A45B0,0x003A45B0,0xBC,src/grok_sb_3a45b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003A5CA0,func_003A5CA0,0x003A5CA0,0xB4,src/grok_nopi_3a5ca0.c,already_matched,retain current independently verified source and boundaries
+residual_003AD700,func_003AD700,0x003AD700,0xA0,src/grok_y5_3ad700.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003B0540,func_003B0540,0x003B0540,0x68,src/grok_n_b0540.c,already_matched,retain current independently verified source and boundaries
+residual_003B0D90,func_003B0D90,0x003B0D90,0x68,src/grok_n_b0540.c,already_matched,retain current independently verified source and boundaries
+residual_003B1E00,func_003B1E00,0x003B1E00,0xB4,src/grok_nopi_3b1e00.c,already_matched,retain current independently verified source and boundaries
+residual_003B6970,func_003B6970,0x003B6970,0x4C,src/grok_nopd_3b6970.c,imported,complete ordinary-C object size and relocated bytes verified
+func_003B77D0,func_003B77D0,0x003B77D0,0xB4,src/grok_x1_3b77d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003B8780,func_003B8780,0x003B8780,0xB0,src/grok_sb_3b8780.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003B8BA0,func_003B8BA0,0x003B8BA0,0x6C,src/grok_w5b_003b8ba0.c,already_matched,retain current independently verified source and boundaries
+residual_003B9070,func_003B9070,0x003B9070,0x40,src/grok_nops_3b9070.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003B9C40,func_003B9C40,0x003B9C40,0x38,src/grok_w5_003b9c40.c,already_matched,retain current independently verified source and boundaries
+residual_003BA3D0,func_003BA3D0,0x003BA3D0,0xA8,src/grok_sb_3ba3d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003BAB40,func_003BAB40,0x003BAB40,0xA8,src/grok_sb_3bab40.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003BAF50,func_003BAF50,0x003BAF50,0xA8,src/grok_sb_3baf50.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003BB470,func_003BB470,0x003BB470,0xB4,src/grok_sb_3bb470.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003BC2C0,func_003BC2C0,0x003BC2C0,0x60,src/grok_n_bc2c0.c,already_matched,retain current independently verified source and boundaries
+residual_003BC3C0,func_003BC3C0,0x003BC3C0,0xC0,src/grok_sb_3bc3c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003BC5D0,func_003BC5D0,0x003BC5D0,0x78,src/grok_s7_3bc5d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003C3B00,func_003C3B00,0x003C3B00,0x7C,src/grok_y5_3c3b00.c,imported,complete ordinary-C object size and relocated bytes verified
+func_003D2240,func_003D2240,0x003D2240,0x180,src/sequential_calls.c,already_matched,retain current independently verified source and boundaries
+func_003D23C0,func_003D23C0,0x003D23C0,0xD8,src/sequential_calls.c,already_matched,retain current independently verified source and boundaries
+func_003D6AF0,func_003D6AF0,0x003D6AF0,0x20,src/grok_u3_3d6af0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_003D90A0,func_003D90A0,0x003D90A0,0x18,src/grok_u3_3d90a0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00401428,func_00401428,0x00401428,0x1A0,src/s4.c,already_matched,retain current independently verified source and boundaries
+func_0041A860,func_0041A860,0x0041A860,0x1AC,src/grok_v1_41a860.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0041AAB0,func_0041AAB0,0x0041AAB0,0x74,src/grok_nopd_41aab0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0041AB30,func_0041AB30,0x0041AB30,0x6C,src/grok_q5_41ab30.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001D5D90,residual_001D5D90,0x001D5D90,0xFC,src/grok_y9_1d5d90.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001D6060,residual_001D6060,0x001D6060,0xFC,src/grok_y9_1d6060.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001D6330,residual_001D6330,0x001D6330,0xFC,src/grok_y9_1d6330.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001D6970,residual_001D6970,0x001D6970,0xFC,src/grok_y9_1d6970.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001D9010,residual_001D9010,0x001D9010,0xF4,src/grok_y9_1d9010.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001AD450,func_001AD450,0x001AD450,0xE0,src/grok_y8_1ad450.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001DA4A0,residual_001DA4A0,0x001DA4A0,0xFC,src/grok_z1_1da4a0.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001DDC80,residual_001DDC80,0x001DDC80,0x104,src/grok_z1_1ddc80.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001D9A90,residual_001D9A90,0x001D9A90,0x100,src/grok_z1_1d9a90.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001D9E30,residual_001D9E30,0x001D9E30,0x118,src/grok_z1_1d9e30.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001D5720,residual_001D5720,0x001D5720,0x118,src/grok_z1_1d5720.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001DDA20,residual_001DDA20,0x001DDA20,0x134,src/grok_z1_1dda20.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001DAD60,residual_001DAD60,0x001DAD60,0x124,src/grok_z1_1dad60.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001A3280,residual_001A3280,0x001A3280,0x110,src/grok_z1_1a3280.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001D8B60,residual_001D8B60,0x001D8B60,0x120,src/grok_z1_1d8b60.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001A3470,residual_001A3470,0x001A3470,0x130,src/grok_z1_1a3470.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001DDE30,residual_001DDE30,0x001DDE30,0x100,src/grok_z2_1dde30.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001DDFD0,residual_001DDFD0,0x001DDFD0,0x100,src/grok_z2_1ddfd0.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001DE500,residual_001DE500,0x001DE500,0x104,src/grok_z2_1de500.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001DE690,residual_001DE690,0x001DE690,0xFC,src/grok_z2_1de690.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001D6760,residual_001D6760,0x001D6760,0x128,src/grok_z1_1d6760.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001D0DC0,residual_001D0DC0,0x001D0DC0,0xF8,src/grok_z1_1d0dc0.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001DEB20,residual_001DEB20,0x001DEB20,0x12C,src/grok_z2_1deb20.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001DED00,residual_001DED00,0x001DED00,0x124,src/grok_z2_1ded00.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001E1240,residual_001E1240,0x001E1240,0xE8,src/grok_z4_1e1240.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_00194AD0,residual_00194AD0,0x00194AD0,0xE0,src/grok_z4_194ad0.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001A3640,residual_001A3640,0x001A3640,0xF0,src/grok_z4_1a3640.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_003A8BA0,residual_003A8BA0,0x003A8BA0,0xE8,src/grok_z5_3a8ba0.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_003C7050,residual_003C7050,0x003C7050,0xE0,src/grok_z5_3c7050.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_003C71D0,residual_003C71D0,0x003C71D0,0xDC,src/grok_z5_3c71d0.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_003C46D0,residual_003C46D0,0x003C46D0,0x104,src/grok_z5_3c46d0.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001D9550,residual_001D9550,0x001D9550,0x130,src/grok_z4_1d9550.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_00220140,func_00220140,0x00220140,0x11C,src/grok_z6_220140.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00220AA0,func_00220AA0,0x00220AA0,0xEC,src/grok_z6_220aa0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00272E90,func_00272E90,0x00272E90,0x40,src/grok_z7_272e90.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002753E0,func_002753E0,0x002753E0,0x4C,src/grok_z7_2753e0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0027E380,func_0027E380,0x0027E380,0x70,src/grok_z7_27e380.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00271790,func_00271790,0x00271790,0x88,src/grok_z7_271790.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002B49C0,func_002B49C0,0x002B49C0,0x38,src/grok_z7_2b49c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002A5AD0,func_002A5AD0,0x002A5AD0,0x40,src/grok_z7_2a5ad0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00285E50,func_00285E50,0x00285E50,0x74,src/grok_z7_285e50.c,already_matched,retain current independently verified source and boundaries
+residual_00288350,func_00288350,0x00288350,0x44,src/grok_z7_288350.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028FFD0,func_0028FFD0,0x0028FFD0,0x44,src/grok_z7_28ffd0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002A5D10,func_002A5D10,0x002A5D10,0x70,src/grok_z7_2a5d10.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002A50A0,func_002A50A0,0x002A50A0,0xB8,src/grok_z7_2a50a0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002A8F90,func_002A8F90,0x002A8F90,0xC0,src/grok_z7_2a8f90.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028A7D0,func_0028A7D0,0x0028A7D0,0x64,src/grok_z7_28a7d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00291B40,func_00291B40,0x00291B40,0x64,src/grok_z7_291b40.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002B1060,func_002B1060,0x002B1060,0xC4,src/grok_z7_2b1060.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0029E0E0,func_0029E0E0,0x0029E0E0,0xC4,src/grok_z7_29e0e0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028A100,func_0028A100,0x0028A100,0xCC,src/grok_z7_28a100.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002A41B0,func_002A41B0,0x002A41B0,0xD4,src/grok_z7_2a41b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0027DAE0,func_0027DAE0,0x0027DAE0,0x8C,src/grok_z7_27dae0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00399E10,func_00399E10,0x00399E10,0xA4,src/grok_z9_399e10.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003CAA50,func_003CAA50,0x003CAA50,0x50,src/grok_za_3caa50.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003B4270,func_003B4270,0x003B4270,0x7C,src/grok_za_3b4270.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001A3810,residual_001A3810,0x001A3810,0x12C,src/grok_zc_1a3810.c,held_inline_assembly,assembly instructions are not matching-C credit
+func_00125700,func_00125700,0x00125700,0x19C,src/grok_zd_125700.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0017ACB0,func_0017ACB0,0x0017ACB0,0x16C,src/grok_zg_17acb0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0017E2E0,func_0017E2E0,0x0017E2E0,0x178,src/grok_zg_17e2e0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0017E6E0,func_0017E6E0,0x0017E6E0,0x19C,src/grok_zg_17e6e0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0017EBB0,func_0017EBB0,0x0017EBB0,0x198,src/grok_zg_17ebb0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0017F060,func_0017F060,0x0017F060,0x168,src/grok_zg_17f060.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0017FC40,func_0017FC40,0x0017FC40,0x19C,src/grok_zg_17fc40.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00245140,func_00245140,0x00245140,0x180,src/grok_zh_245140.c,imported,complete ordinary-C object size and relocated bytes verified
+func_001843A0,func_001843A0,0x001843A0,0x1A0,src/grok_zg_1843a0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_002544D0,func_002544D0,0x002544D0,0x1A4,src/grok_zi_2544d0.c,already_matched,retain current independently verified source and boundaries
+func_001834A0,func_001834A0,0x001834A0,0x184,src/grok_zg_1834a0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0026C3D0,func_0026C3D0,0x0026C3D0,0x170,src/grok_zi_26c3d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00278D60,func_00278D60,0x00278D60,0x19C,src/grok_zi_278d60.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002A3580,func_002A3580,0x002A3580,0x16C,src/grok_zj_2a3580.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002D3880,func_002D3880,0x002D3880,0x184,src/grok_zj_2d3880.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00215490,func_00215490,0x00215490,0xB8,src/grok_zo_215490.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00238440,func_00238440,0x00238440,0x60,src/grok_zo_238440.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00241950,func_00241950,0x00241950,0x78,src/grok_zo_241950.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028D440,func_0028D440,0x0028D440,0x70,src/grok_zo_28d440.c,already_matched,retain current independently verified source and boundaries
+residual_002947C0,func_002947C0,0x002947C0,0x70,src/grok_zo_2947c0.c,already_matched,retain current independently verified source and boundaries
+residual_002A5F70,func_002A5F70,0x002A5F70,0xB8,src/grok_zo_2a5f70.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0019C510,residual_0019C510,0x0019C510,0x100,src/grok_zp_19c510.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_0019A110,residual_0019A110,0x0019A110,0xF8,src/grok_zp_19a110.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_002A3460,func_002A3460,0x002A3460,0xE4,src/grok_zq_2a3460.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002B03B0,func_002B03B0,0x002B03B0,0xE8,src/grok_zq_2b03b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002AE8F0,func_002AE8F0,0x002AE8F0,0x108,src/grok_zq_2ae8f0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_002A3190,func_002A3190,0x002A3190,0x154,src/grok_zq_2a3190.c,imported,complete ordinary-C object size and relocated bytes verified
+func_002A3A90,func_002A3A90,0x002A3A90,0x160,src/grok_zq_2a3a90.c,imported,complete ordinary-C object size and relocated bytes verified
+func_002AB4A0,func_002AB4A0,0x002AB4A0,0xEC,src/grok_zq_2ab4a0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_002B53C0,func_002B53C0,0x002B53C0,0x160,src/grok_zq_2b53c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00323B90,func_00323B90,0x00323B90,0xE4,src/grok_zr_323b90.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00185770,func_00185770,0x00185770,0x100,src/grok_zp_185770.c,imported,complete ordinary-C object size and relocated bytes verified
+func_003AD910,func_003AD910,0x003AD910,0xF8,src/grok_zs_3ad910.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0031D780,func_0031D780,0x0031D780,0xE8,src/grok_zr_31d780.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003140F0,func_003140F0,0x003140F0,0xE4,src/grok_zr_3140f0.c,already_matched,retain current independently verified source and boundaries
+residual_00318B60,func_00318B60,0x00318B60,0xE0,src/grok_zr_318b60.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00312DD0,func_00312DD0,0x00312DD0,0xE4,src/grok_zr_312dd0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00398B00,residual_00398B00,0x00398B00,0x128,src/grok_zs_398b00.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_00205F50,func_00205F50,0x00205F50,0xE4,src/grok_zt_205f50.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002061A0,func_002061A0,0x002061A0,0x124,src/grok_zt_2061a0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00207340,func_00207340,0x00207340,0x11C,src/grok_zt_207340.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00204D70,func_00204D70,0x00204D70,0x128,src/grok_zt_204d70.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003C25B0,residual_003C25B0,0x003C25B0,0x118,src/grok_zw_3c25b0.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_003C2950,residual_003C2950,0x003C2950,0x118,src/grok_zw_3c2950.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_003C2CF0,residual_003C2CF0,0x003C2CF0,0x134,src/grok_zw_3c2cf0.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_003C3490,residual_003C3490,0x003C3490,0x11C,src/grok_zw_3c3490.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_003C3720,residual_003C3720,0x003C3720,0x110,src/grok_zw_3c3720.c,held_inline_assembly,assembly instructions are not matching-C credit
+func_0024A150,func_0024A150,0x0024A150,0x100,src/grok_aa_24a150.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0024FE60,func_0024FE60,0x0024FE60,0xEC,src/grok_aa_24fe60.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00250110,func_00250110,0x00250110,0xF4,src/grok_aa_250110.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00347870,residual_00347870,0x00347870,0x130,src/grok_ac_347870.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_00347DF0,residual_00347DF0,0x00347DF0,0x130,src/grok_ac_347df0.c,held_inline_assembly,assembly instructions are not matching-C credit
+func_0034A590,func_0034A590,0x0034A590,0xE8,src/grok_ac_34a590.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0034B0F0,residual_0034B0F0,0x0034B0F0,0x14C,src/grok_ac_34b0f0.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_0034B690,residual_0034B690,0x0034B690,0x120,src/grok_ac_34b690.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_0034C0C0,residual_0034C0C0,0x0034C0C0,0x120,src/grok_ac_34c0c0.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_0034C940,residual_0034C940,0x0034C940,0x124,src/grok_ac_34c940.c,held_inline_assembly,assembly instructions are not matching-C credit
+func_002765D0,func_002765D0,0x002765D0,0xDC,src/grok_ab_2765d0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0027F880,func_0027F880,0x0027F880,0x134,src/grok_ab_27f880.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00281A20,func_00281A20,0x00281A20,0x158,src/grok_ab_281a20.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00282970,func_00282970,0x00282970,0xEC,src/grok_ab_282970.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028B340,func_0028B340,0x0028B340,0xE0,src/grok_ab_28b340.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0024B520,func_0024B520,0x0024B520,0xE4,src/grok_aa_24b520.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00247120,func_00247120,0x00247120,0xE8,src/grok_aa_247120.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00242040,func_00242040,0x00242040,0x144,src/grok_aa_242040.c,imported,complete ordinary-C object size and relocated bytes verified
+func_003D1040,func_003D1040,0x003D1040,0x14C,src/grok_ad_003D1040.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0012A590,func_0012A590,0x0012A590,0x150,src/grok_ae_12a590.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00361C60,func_00361C60,0x00361C60,0x108,src/grok_ah_361c60.c,already_matched,retain current independently verified source and boundaries
+residual_003627E0,func_003627E0,0x003627E0,0xD8,src/grok_ah_3627e0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00364290,func_00364290,0x00364290,0xC0,src/grok_ah_364290.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0036ABB0,residual_0036ABB0,0x0036ABB0,0x108,src/grok_ah_36abb0.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_002C2850,func_002C2850,0x002C2850,0xE8,src/grok_ag_002C2850.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002C2A60,func_002C2A60,0x002C2A60,0xE8,src/grok_ag_002C2A60.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002C3F60,func_002C3F60,0x002C3F60,0xF0,src/grok_ag_002C3F60.c,imported,complete ordinary-C object size and relocated bytes verified
+func_002C5030,func_002C5030,0x002C5030,0xB8,src/grok_ag_002C5030.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00371970,func_00371970,0x00371970,0x114,src/grok_ak_00371970.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00256E20,func_00256E20,0x00256E20,0xCC,src/grok_aj_256e20.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00257A70,func_00257A70,0x00257A70,0x148,src/grok_aj_257a70.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0025B800,func_0025B800,0x0025B800,0xC4,src/grok_aj_25b800.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0025D3B0,func_0025D3B0,0x0025D3B0,0xCC,src/grok_aj_25d3b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0025F8C0,func_0025F8C0,0x0025F8C0,0x118,src/grok_aj_25f8c0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00228B30,func_00228B30,0x00228B30,0x118,src/grok_an_228b30.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00283C70,func_00283C70,0x00283C70,0xC8,src/grok_ao_283c70.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00288040,func_00288040,0x00288040,0xFC,src/grok_ao_288040.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028AED0,func_0028AED0,0x0028AED0,0xCC,src/grok_ao_28aed0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028B7E0,func_0028B7E0,0x0028B7E0,0xD0,src/grok_ao_28b7e0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028BEB0,func_0028BEB0,0x0028BEB0,0x104,src/grok_ao_28beb0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028C3A0,func_0028C3A0,0x0028C3A0,0x114,src/grok_ao_28c3a0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0028C8F0,func_0028C8F0,0x0028C8F0,0xF4,src/grok_ao_28c8f0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028CA80,func_0028CA80,0x0028CA80,0xE4,src/grok_ao_28ca80.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028F870,func_0028F870,0x0028F870,0xB8,src/grok_ao_28f870.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0028FAD0,func_0028FAD0,0x0028FAD0,0xBC,src/grok_ao_28fad0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00291460,func_00291460,0x00291460,0xD8,src/grok_ao_291460.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001A7EE0,func_001A7EE0,0x001A7EE0,0xB8,src/grok_am_1a7ee0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001A8020,func_001A8020,0x001A8020,0x114,src/grok_am_1a8020.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001A8240,func_001A8240,0x001A8240,0xBC,src/grok_am_1a8240.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00383970,residual_00383970,0x00383970,0xE4,src/grok_ap_00383970.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_00385D60,func_00385D60,0x00385D60,0xF4,src/grok_ap_00385D60.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00391540,func_00391540,0x00391540,0xA4,src/grok_ap_00391540.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00307010,func_00307010,0x00307010,0xE0,src/grok_as_00307010.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00307C90,func_00307C90,0x00307C90,0xAC,src/grok_as_00307C90.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0030B420,func_0030B420,0x0030B420,0xE0,src/grok_as_0030B420.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0030D720,func_0030D720,0x0030D720,0x118,src/grok_as_0030D720.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00310120,func_00310120,0x00310120,0xFC,src/grok_as_00310120.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00310370,func_00310370,0x00310370,0x100,src/grok_as_00310370.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00313840,func_00313840,0x00313840,0xCC,src/grok_as_00313840.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00318DF0,func_00318DF0,0x00318DF0,0xD0,src/grok_as_00318DF0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C6810,func_001C6810,0x001C6810,0xF0,src/grok_aq_c6810.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C6F40,func_001C6F40,0x001C6F40,0x108,src/grok_aq_c6f40.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001C9120,residual_001C9120,0x001C9120,0x104,src/grok_aq_c9120.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_00292240,func_00292240,0x00292240,0xCC,src/grok_ar_292240.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002926B0,func_002926B0,0x002926B0,0xE0,src/grok_ar_2926b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00292B50,func_00292B50,0x00292B50,0xD0,src/grok_ar_292b50.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00293220,func_00293220,0x00293220,0x104,src/grok_ar_293220.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00293DD0,func_00293DD0,0x00293DD0,0xE4,src/grok_ar_293dd0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0029A3E0,func_0029A3E0,0x0029A3E0,0xB8,src/grok_ar_29a3e0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0029BA00,func_0029BA00,0x0029BA00,0xE8,src/grok_ar_29ba00.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0029C360,func_0029C360,0x0029C360,0xE4,src/grok_ar_29c360.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00297640,func_00297640,0x00297640,0xF8,src/grok_ar_297640.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00299950,func_00299950,0x00299950,0xD0,src/grok_ar_299950.c,imported,complete ordinary-C object size and relocated bytes verified
+func_003A0430,func_003A0430,0x003A0430,0xD4,src/grok_ax_003A0430.c,imported,complete ordinary-C object size and relocated bytes verified
+func_003AEF10,func_003AEF10,0x003AEF10,0xC8,src/grok_ax_003AEF10.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002D7F80,func_002D7F80,0x002D7F80,0x100,src/grok_aw_2d7f80.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002D9EB0,func_002D9EB0,0x002D9EB0,0x108,src/grok_aw_2d9eb0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_002DB380,func_002DB380,0x002DB380,0xFC,src/grok_aw_2db380.c,already_matched,retain current independently verified source and boundaries
+residual_002DBB70,func_002DBB70,0x002DBB70,0xD0,src/grok_aw_2dbb70.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002E2570,func_002E2570,0x002E2570,0x104,src/grok_aw_2e2570.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002611C0,func_002611C0,0x002611C0,0x110,src/grok_av_2611c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00261EB0,func_00261EB0,0x00261EB0,0xB0,src/grok_av_261eb0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00277A70,func_00277A70,0x00277A70,0xCC,src/grok_av_277a70.c,imported,complete ordinary-C object size and relocated bytes verified
+func_001D2390,func_001D2390,0x001D2390,0x110,src/grok_au_1d2390.c,already_matched,retain current independently verified source and boundaries
+residual_001D4970,residual_001D4970,0x001D4970,0xEC,src/grok_au_1d4970.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001DB6F0,residual_001DB6F0,0x001DB6F0,0xE4,src/grok_au_1db6f0.c,held_inline_assembly,assembly instructions are not matching-C credit
+func_001E3430,func_001E3430,0x001E3430,0xE8,src/grok_bb_1e3430.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003BF420,func_003BF420,0x003BF420,0xDC,src/grok_bd_003BF420.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003C61F0,func_003C61F0,0x003C61F0,0xC8,src/grok_bd_003C61F0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00134040,func_00134040,0x00134040,0xE0,src/grok_ba_00134040.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0013A4A0,func_0013A4A0,0x0013A4A0,0x10C,src/grok_ba_0013A4A0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0013D9A0,func_0013D9A0,0x0013D9A0,0xF8,src/grok_ba_0013D9A0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00166630,func_00166630,0x00166630,0xDC,src/grok_be_00166630.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00169AE0,func_00169AE0,0x00169AE0,0xD4,src/grok_be_00169AE0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_003DE230,func_003DE230,0x003DE230,0xE4,src/grok_bh_003DE230.c,held_inline_assembly,assembly instructions are not matching-C credit
+func_00322960,func_00322960,0x00322960,0x100,src/grok_bg_00322960.c,imported,complete ordinary-C object size and relocated bytes verified
+func_002206A0,func_002206A0,0x002206A0,0x104,src/grok_bf_2206a0.c,already_matched,retain current independently verified source and boundaries
+func_00220E40,func_00220E40,0x00220E40,0x104,src/grok_bf_220e40.c,already_matched,retain current independently verified source and boundaries
+residual_0022FC90,func_0022FC90,0x0022FC90,0x104,src/grok_bf_22fc90.c,imported,complete ordinary-C object size and relocated bytes verified
+func_003E8B30,func_003E8B30,0x003E8B30,0xC8,src/grok_bh_003E8B30.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001A9190,func_001A9190,0x001A9190,0xFC,src/grok_bj_1a9190.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001AD7E0,func_001AD7E0,0x001AD7E0,0xC4,src/grok_bj_1ad7e0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001AED90,residual_001AED90,0x001AED90,0x108,src/grok_bj_1aed90.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_001AF2F0,residual_001AF2F0,0x001AF2F0,0x100,src/grok_bj_1af2f0.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_00325CB0,func_00325CB0,0x00325CB0,0xD0,src/grok_bl_00325CB0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00327070,func_00327070,0x00327070,0x114,src/grok_bl_00327070.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00240C10,func_00240C10,0x00240C10,0xA4,src/grok_bn_240c10.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0024C1C0,func_0024C1C0,0x0024C1C0,0xF8,src/grok_bn_24c1c0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003508C0,func_003508C0,0x003508C0,0xE0,src/grok_bp_003508C0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003521F0,residual_003521F0,0x003521F0,0x110,src/grok_bp_003521F0.c,held_inline_assembly,assembly instructions are not matching-C credit
+residual_00365D80,func_00365D80,0x00365D80,0xA4,src/grok_bp_00365D80.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0017B300,func_0017B300,0x0017B300,0xA4,src/grok_bm_0017B300.c,imported,complete ordinary-C object size and relocated bytes verified
+func_002A7950,func_002A7950,0x002A7950,0x110,src/grok_bo_2a7950.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002AAE60,func_002AAE60,0x002AAE60,0xD0,src/grok_bo_2aae60.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002B1530,func_002B1530,0x002B1530,0xDC,src/grok_bo_2b1530.c,imported,complete ordinary-C object size and relocated bytes verified
+func_002B3B20,func_002B3B20,0x002B3B20,0xD4,src/grok_bo_2b3b20.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00335830,func_00335830,0x00335830,0x114,src/grok_bt_335830.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00336920,func_00336920,0x00336920,0xD8,src/grok_bt_336920.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_003379B0,func_003379B0,0x003379B0,0xD8,src/grok_bt_3379b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001B2AF0,func_001B2AF0,0x001B2AF0,0xC8,src/grok_br_1b2af0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001B2D00,func_001B2D00,0x001B2D00,0xB4,src/grok_br_1b2d00.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001B6040,func_001B6040,0x001B6040,0x108,src/grok_br_1b6040.c,already_matched,retain current independently verified source and boundaries
+residual_001B65B0,func_001B65B0,0x001B65B0,0x108,src/grok_br_1b65b0.c,already_matched,retain current independently verified source and boundaries
+func_001B7570,func_001B7570,0x001B7570,0xC0,src/grok_br_1b7570.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001B7D10,func_001B7D10,0x001B7D10,0x118,src/grok_br_1b7d10.c,already_matched,retain current independently verified source and boundaries
+residual_002F1530,func_002F1530,0x002F1530,0xD0,src/grok_bw_2f1530.c,already_matched,retain current independently verified source and boundaries
+residual_002FE4B0,func_002FE4B0,0x002FE4B0,0x110,src/grok_bw_2fe4b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002FEA70,func_002FEA70,0x002FEA70,0x10C,src/grok_bw_2fea70.c,imported,complete ordinary-C object size and relocated bytes verified
+func_001CA290,func_001CA290,0x001CA290,0x108,src/grok_bu_ca290.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00270910,func_00270910,0x00270910,0xE4,src/grok_bv_270910.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0039AF40,func_0039AF40,0x0039AF40,0x110,src/grok_bx_0039AF40.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0039BA40,func_0039BA40,0x0039BA40,0xB0,src/grok_bx_0039BA40.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002A2B00,func_002A2B00,0x002A2B00,0xF4,src/grok_ca_2a2b00.c,imported,complete ordinary-C object size and relocated bytes verified
+func_002A5410,func_002A5410,0x002A5410,0xF0,src/grok_ca_2a5410.c,already_matched,retain current independently verified source and boundaries
+residual_002A6960,func_002A6960,0x002A6960,0xE0,src/grok_ca_2a6960.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002A99F0,func_002A99F0,0x002A99F0,0xF8,src/grok_ca_2a99f0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_003CBF20,func_003CBF20,0x003CBF20,0x110,src/grok_cb_003CBF20.c,imported,complete ordinary-C object size and relocated bytes verified
+func_003CD610,func_003CD610,0x003CD610,0xA0,src/grok_cb_003CD610.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002047C0,func_002047C0,0x002047C0,0xC4,src/grok_cd_2047c0.c,already_matched,retain current independently verified source and boundaries
+func_002064D0,func_002064D0,0x002064D0,0xA0,src/grok_cd_2064d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0020E510,func_0020E510,0x0020E510,0xEC,src/grok_cd_20e510.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002284D0,func_002284D0,0x002284D0,0xA4,src/grok_ch_2284d0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0030F0B0,func_0030F0B0,0x0030F0B0,0xD0,src/grok_ci_30f0b0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0031D890,func_0031D890,0x0031D890,0xC4,src/grok_ci_31d890.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0031DFA0,func_0031DFA0,0x0031DFA0,0xF0,src/grok_ci_31dfa0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001989A0,func_001989A0,0x001989A0,0xD4,src/grok_cg_1989a0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0019B640,func_0019B640,0x0019B640,0xBC,src/grok_cg_19b640.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_001AB630,func_001AB630,0x001AB630,0xAC,src/grok_cg_1ab630.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_0026A9D0,func_0026A9D0,0x0026A9D0,0x108,src/grok_cm_26a9d0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_001E8EB0,func_001E8EB0,0x001E8EB0,0xE8,src/grok_cl_1e8eb0.c,imported,complete ordinary-C object size and relocated bytes verified
+func_00143CA0,func_00143CA0,0x00143CA0,0xA4,src/grok_co_143ca0.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_00225120,func_00225120,0x00225120,0xE4,src/grok_cp_225120.c,imported,complete ordinary-C object size and relocated bytes verified
+func_0022BB10,func_0022BB10,0x0022BB10,0xF8,src/grok_cp_22bb10.c,imported,complete ordinary-C object size and relocated bytes verified
+func_003D31A0,func_003D31A0,0x003D31A0,0xF4,src/grok_cv_003D31A0.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_003D68B0,func_003D68B0,0x003D68B0,0xEC,src/grok_cv_003D68B0.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_003D69A0,func_003D69A0,0x003D69A0,0x118,src/grok_cv_003D69A0.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_003D7350,func_003D7350,0x003D7350,0xB0,src/grok_cv_003D7350.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_003D80E0,func_003D80E0,0x003D80E0,0xD8,src/grok_cv_003D80E0.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_003D8440,func_003D8440,0x003D8440,0xFC,src/grok_cv_003D8440.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_003D9B60,func_003D9B60,0x003D9B60,0xC4,src/grok_cv_003D9B60.c,imported,complete ordinary-C object size and relocated bytes verified
+func_003DC2F0,func_003DC2F0,0x003DC2F0,0xC8,src/grok_cv_003DC2F0.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_003DD360,func_003DD360,0x003DD360,0xDC,src/grok_cv_003DD360.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_003EBC20,func_003EBC20,0x003EBC20,0xD4,src/grok_cv_003EBC20.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_003ED0D0,func_003ED0D0,0x003ED0D0,0xE4,src/grok_cv_003ED0D0.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_003F0370,func_003F0370,0x003F0370,0x100,src/grok_cv_003F0370.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+residual_002D3D40,func_002D3D40,0x002D3D40,0x10C,src/grok_cu_2d3d40.c,imported,complete ordinary-C object size and relocated bytes verified
+residual_002D57F0,residual_002D57F0,0x002D57F0,0xF4,src/grok_cu_2d57f0.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+residual_002D5D30,residual_002D5D30,0x002D5D30,0x104,src/grok_cu_2d5d30.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+residual_002DAC10,residual_002DAC10,0x002DAC10,0x110,src/grok_cu_2dac10.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+residual_002DB270,residual_002DB270,0x002DB270,0x104,src/grok_cu_2db270.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_002E1460,func_002E1460,0x002E1460,0xC0,src/grok_cu_2e1460.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_002E15C0,func_002E15C0,0x002E15C0,0x104,src/grok_cu_2e15c0.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_002E44B0,func_002E44B0,0x002E44B0,0x114,src/grok_cu_2e44b0.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_002E4890,func_002E4890,0x002E4890,0xF0,src/grok_cu_2e4890.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_002E4980,func_002E4980,0x002E4980,0xF0,src/grok_cu_2e4980.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_002E4A70,func_002E4A70,0x002E4A70,0xF0,src/grok_cu_2e4a70.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+residual_002E5CE0,residual_002E5CE0,0x002E5CE0,0xC4,src/grok_cu_2e5ce0.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_001718D0,func_001718D0,0x001718D0,0x108,src/grok_cs_1718d0.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_001745B0,func_001745B0,0x001745B0,0x118,src/grok_cs_1745b0.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_0017DEC0,func_0017DEC0,0x0017DEC0,0xE4,src/grok_cs_17dec0.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_0017E0D0,func_0017E0D0,0x0017E0D0,0xDC,src/grok_cs_17e0d0.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+residual_0017E1D0,residual_0017E1D0,0x0017E1D0,0x104,src/grok_cs_17e1d0.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+residual_0017F1F0,residual_0017F1F0,0x0017F1F0,0x100,src/grok_cs_17f1f0.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_00180090,func_00180090,0x00180090,0xFC,src/grok_cs_180090.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_00185080,func_00185080,0x00185080,0xCC,src/grok_cs_185080.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_00185EC0,func_00185EC0,0x00185EC0,0xD0,src/grok_cs_185ec0.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_00186F00,func_00186F00,0x00186F00,0xD8,src/grok_cs_186f00.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_00187370,func_00187370,0x00187370,0xDC,src/grok_cs_187370.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles
+func_001891F0,func_001891F0,0x001891F0,0x118,src/grok_cs_1891f0.c,held_not_exact,candidate did not match tested MWCC 3.0.3 or 3.0-011126 profiles

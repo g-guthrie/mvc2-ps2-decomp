@@ -110,15 +110,15 @@ void func_00217260(u8 *p) {
     }
 }
 
-void func_001830D0(u8 *p, s32 b, s32 c) {
-    extern void func_001834A0();
+void func_001830D0(u8 *p, const f32 *b, s32 c) {
+    extern void func_001834A0(u8 *, const f32 *);
     extern void func_001E3710();
     extern void func_001E3210();
     extern void func_001581C0();
     extern void func_0018C6B0();
     extern void func_0016EDA0();
     extern void func_001E3BB0();
-    extern void func_00183210();
+    extern void func_00183210(u8 *, const f32 *, s32);
     u8 t = p[0x269];
     if (t == 4) {
         p[0x33B] = 4;
