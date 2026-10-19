@@ -14106,3 +14106,203 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$MWCCPS2" \
     src/grok_cp_22bb10.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_cp_22bb10.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_cp_22bb10.o" private/SLUS_204.86.rom --source src/grok_cp_22bb10.c
+compile_one src/grok_cx_199e70.c -O3 -sdatathreshold 0
+compile_one src/grok_cy_25dac0.c -O4,p -sdatathreshold 8
+compile_one src/grok_da_1473e0.c -O4,p -sdatathreshold 8
+compile_one src/grok_dd_00385870.c -O4,p -sdatathreshold 8
+compile_one src/grok_dd_0039018C.c -O4,p -sdatathreshold 8
+compile_one src/grok_dg_2b4650.c -O4,p -sdatathreshold 8
+compile_one src/grok_di_00176090.c -O4,p -sdatathreshold 8
+compile_one src/grok_dl_3673d0.c -O3 -sdatathreshold 0
+compile_one src/grok_dl_369340.c -O3 -sdatathreshold 0
+compile_one src/grok_dl_36a644.c -O3 -sdatathreshold 0
+compile_one src/grok_dm_1a3e10.c -O4,p -sdatathreshold 8
+compile_one src/grok_dm_1a4500.c -O4,p -sdatathreshold 8
+compile_one src/grok_dm_1a4650.c -O4,p -sdatathreshold 8
+compile_one src/grok_dp_003A4E90.c -O3 -sdatathreshold 0
+compile_one src/grok_du_00135E40.c -O4,p -sdatathreshold 8
+compile_one src/grok_du_0013B2D0.c -O4,p -sdatathreshold 8
+compile_one src/grok_dw_330ef0.c -O4,p -sdatathreshold 8
+compile_one src/grok_dw_338050.c -O4,p -sdatathreshold 8
+compile_one src/grok_dw_3395e0.c -O4,p -sdatathreshold 8
+compile_one src/grok_dx_17c4c0.c -O3 -sdatathreshold 0
+compile_one src/grok_ed_001B02C0.c -O4,p -sdatathreshold 8
+compile_one src/grok_ed_001B1040.c -O4,p -sdatathreshold 8
+compile_one src/grok_ed_001B5700.c -O4,p -sdatathreshold 8
+compile_one src/grok_eb_2aa350.c -O4,p -sdatathreshold 8
+compile_one src/grok_eb_2ac210.c -O4,p -sdatathreshold 8
+compile_one src/grok_eb_2ac9e0.c -O4,p -sdatathreshold 8
+compile_one src/grok_eb_2acb50.c -O4,p -sdatathreshold 8
+compile_one src/grok_ec_003B4E50.c -O4,p -sdatathreshold 8
+compile_one src/grok_eh_0037E330.c -O4,p -sdatathreshold 8
+compile_one src/grok_ef_350030.c -O4,p -sdatathreshold 8
+compile_one src/grok_ef_350190.c -O4,p -sdatathreshold 8
+compile_one src/grok_ef_3584f0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ej_237d40.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ej_23b3d0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ej_23c360.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ej_23ce50.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ej_23d710.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ek_002FEC20.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ek_00302090.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_el_00393420.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_el_00393AA0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_el_00394100.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_el_0039CF2C.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_el_0039D17C.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ei_1d1974.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ei_1d2154.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ei_1d27c4.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ei_1d2a94.c -O4,p -sdatathreshold 8
+compile_one src/grok_em_1d5320.c -O4,p -sdatathreshold 8
+compile_one src/grok_em_1d6500.c -O4,p -sdatathreshold 8
+compile_one src/grok_em_1d6e84.c -O4,p -sdatathreshold 8
+compile_one src/grok_em_1d7594.c -O4,p -sdatathreshold 8
+compile_one src/grok_eq_001F92E0.c -O4,p -sdatathreshold 8
+compile_one src/grok_er_240a30.c -O4,p -sdatathreshold 8
+compile_one src/grok_er_2521a4.c -O4,p -sdatathreshold 8
+compile_one src/grok_et_1a1110.c -O4,p -sdatathreshold 8
+compile_one src/grok_et_1a4014.c -O4,p -sdatathreshold 8
+compile_one src/grok_eu_001BFEC0.c -O4,p -sdatathreshold 8
+compile_one src/grok_ev_278710.c -O4,p -sdatathreshold 8
+compile_one src/grok_ex_3c13d0.c -O4,p -sdatathreshold 0
+compile_one src/grok_ex_3c1a40.c -O4,p -sdatathreshold 0
+compile_one src/grok_ex_3c43f0.c -O4,p -sdatathreshold 0
+compile_one src/grok_ew_00143920.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fa_001B3E30.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fa_001B53E0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fa_001B6860.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fa_001B69D0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fa_001B6DA0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fc_00322F60.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fc_00326C80.c -O4,p -sdatathreshold 0
+
+compile_one src/grok_fc_00326DE0.c -O4,p -sdatathreshold 0
+
+compile_one src/grok_fd_2632f0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fd_264320.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fd_2657e0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fd_266ca0.c -O4,p -sdatathreshold 0
+
+compile_one src/grok_ff_2b0100.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ff_2b11e0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ff_2be060.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fg_003A6BC0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fj_002C1B40.c -O3 -sdatathreshold 0
+
+compile_one src/grok_fj_002CC700.c -O3 -sdatathreshold 8
+
+compile_one src/grok_fi_001C01E0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fi_001C40D0.c -O4,p -sdatathreshold 0
+
+compile_one src/grok_fi_001C74D0.c -O4,p -sdatathreshold 0
+
+compile_one src/grok_fi_001C7840.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fi_001C8FD0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fk_2273e0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fl_36b150.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fl_36dde0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fn_2841b0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fo_347b10.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fo_34b380.c -O4,p -sdatathreshold 0
+
+compile_one src/grok_fm_001E1060.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ft_1add40.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ft_1ade90.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ft_1ae220.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ft_1aeac0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ft_1aec10.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ft_1af000.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ft_1afd50.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fs_00390650.c -O3 -sdatathreshold 0
+
+compile_one src/grok_fr_002e0a40.c -O4,p -sdatathreshold 0
+
+compile_one src/grok_fr_002e7a10.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fr_002eaa10.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fx_001C86C0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fx_001C8B90.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fx_001CA3C0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fx_001CC0A0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fx_001CDF2C.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fx_001CE200.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fx_001CF8F0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fv_001f06c0.c -O4,p -sdatathreshold 8
+compile_one src/grok_fv_001f0ab0.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fy_1adb40.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_fy_1a6c90.c -O4,p -sdatathreshold 8
+compile_one src/grok_fz_001d5000.c -O4,p -sdatathreshold 8
+compile_one src/grok_fz_001d5160.c -O4,p -sdatathreshold 8
+compile_one src/grok_fz_001d7d94.c -O4,p -sdatathreshold 8
+compile_one src/grok_fz_001d8630.c -O4,p -sdatathreshold 8
+compile_one src/grok_fz_001d9c70.c -O4,p -sdatathreshold 0
+compile_one src/grok_fz_001df290.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_ge_0029F700.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_gd_001C9770.c -O4,p -sdatathreshold 8
+compile_one src/grok_gd_001CA000.c -O4,p -sdatathreshold 8
+compile_one src/grok_gd_001CC730.c -O4,p -sdatathreshold 8
+compile_one src/grok_gd_001CDB70.c -O4,p -sdatathreshold 8
+compile_one src/grok_gd_001CE06C.c -O4,p -sdatathreshold 8
+compile_one src/grok_gd_001CE32C.c -O4,p -sdatathreshold 8
+
+compile_one src/grok_gf_00394BA0.c -O4,p -sdatathreshold 8
+compile_one src/grok_gf_0039B410.c -O4,p -sdatathreshold 8
