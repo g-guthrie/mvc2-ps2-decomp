@@ -11812,6 +11812,7 @@ func_0024DE60,0x0024DE60,0x94,src/n9c.c,complete
 func_00151A20,0x00151A20,0x6C,src/n9d.c,complete
 func_00384410,0x00384410,0x90,src/n9p.c,complete
 func_001BB650,0x001BB650,0x98,src/n9p.c,complete
+func_00163110,0x00163110,0x10,src/func_00163110.c,complete
 func_00163120,0x00163120,0x8C,src/n9p.c,complete
 func_001BF860,0x001BF860,0x34,src/q0.c,complete
 func_004166F0,0x004166F0,0x3C,src/q0.c,complete

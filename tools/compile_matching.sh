@@ -6287,6 +6287,10 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/n9d.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/n9d.o"
 "$PYTHON" tools/verify_object.py "$BUILD/n9d.o" private/SLUS_204.86.rom --source src/n9d.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/func_00163110.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/func_00163110.o"
+"$PYTHON" tools/verify_object.py "$BUILD/func_00163110.o" private/SLUS_204.86.rom --source src/func_00163110.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/n9p.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/n9p.o"
 "$PYTHON" tools/verify_object.py "$BUILD/n9p.o" private/SLUS_204.86.rom --source src/n9p.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
