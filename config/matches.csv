@@ -15927,3 +15927,5 @@ func_002833D0,0x002833D0,0xA4,src/owner_state_callback_002833d0.c,complete
 func_001D6D10,0x001D6D10,0x2C,src/grok_w5_001d.c,complete
 func_001D6D40,0x001D6D40,0x3C,src/grok_w5_001d.c,complete
 func_00274060,0x00274060,0xE4,src/select_ground_action_00274060.c,complete
+func_001F3E50,0x001F3E50,0x40,src/grok_w5_001f.c,complete
+func_001F3E90,0x001F3E90,0x3C,src/grok_w5_001f.c,complete

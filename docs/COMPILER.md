@@ -713,3 +713,11 @@ field's checked type and ordinary byte-oriented caller view; do not add volatile
 accesses, padding, or opcode patches. The first routine's complete 52-byte compiler
 jump table is checked through `config/readonly_sections.csv` and remains uncredited
 data until it has a separate source-ownership proof.
+`func_001F3E50` and `func_001F3E90` are separate callbacks in
+`jtbl_0044F8E0`: slots `0x0044F8E8` and `0x0044F8EC` point to the dispatcher
+and its adjacent handler, respectively. The outer dispatcher at
+`0x001F2D60` indexes this table by `p[6]` while retaining the actor in A0. The
+`0x001F3E50` handler sets launch fields and then calls
+`jtbl_0044F8F0[p[7]](p)`; `func_001F3E90` consumes only A0 and forwards it to
+the status and error handlers. Their complete split bodies
+match in `grok_w5_001f.c` under MWCCPS2 3.0.3 `-O3 -sdatathreshold 8`.

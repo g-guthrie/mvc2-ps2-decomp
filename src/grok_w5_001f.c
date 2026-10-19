@@ -2,6 +2,7 @@ typedef unsigned char u8;
 typedef signed char s8;
 typedef signed short s16;
 typedef signed int s32;
+typedef unsigned int u32;
 typedef float f32;
 
 extern int func_00175700(u8 *);
@@ -24,6 +25,8 @@ extern void func_001843A0(u8 *);
 extern void func_001F8820(u8 *);
 extern void func_001F87E0(u8 *);
 extern u8 *D_004C2840;
+typedef void (*StateHandler)(u8 *);
+extern const u32 jtbl_0044F8F0[20];
 
 #define F(p, o) (*(f32 *)((u8 *)(p) + (o)))
 #define I(p, o) (*(s32 *)((u8 *)(p) + (o)))
@@ -278,4 +281,20 @@ void func_001F8770(u8 *p)
         func_001F87E0(p);
     if (func_001864A0(p))
         func_001865B0(p);
+}
+
+void func_001F3E50(u8 *p)
+{
+    p[510] = 1;
+    p[513] = 2;
+    p[521] = 2;
+    p[1036] = 2;
+    p[828] = 5;
+    ((StateHandler)jtbl_0044F8F0[p[7]])(p);
+}
+
+void func_001F3E90(u8 *p)
+{
+    if ((s8)func_00175700(p) < 0)
+        func_001843A0(p);
 }
