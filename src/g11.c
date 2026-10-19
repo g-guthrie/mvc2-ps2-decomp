@@ -127,7 +127,7 @@ void func_003C76C0(u8 *a, s32 b) {
 extern void func_0015DCA0();
 extern void func_0015DBE0();
 extern void func_0015DB20();
-extern void func_0015DA50();
+extern void func_0015DA50(u8 *, s32);
 extern void func_0015D970();
 void func_0015D8F0(u8 *a, s32 b) {
     s32 i = 0;
