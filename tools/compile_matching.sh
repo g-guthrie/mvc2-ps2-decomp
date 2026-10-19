@@ -14602,3 +14602,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/runtime_flag2_loo
 # Three explicitly initialized offset floats, naturally 12 bytes with native 16-byte alignment.
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_cu_2d57f0.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/grok_cu_2d57f0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_cu_2d57f0.o" private/SLUS_204.86.rom --source src/grok_cu_2d57f0.c
+
+# Native three-float effect position and reloaded owner accesses.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_cu_2d5d30.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/grok_cu_2d5d30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_cu_2d5d30.o" private/SLUS_204.86.rom --source src/grok_cu_2d5d30.c

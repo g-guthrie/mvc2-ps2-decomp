@@ -16740,3 +16740,4 @@ func_002119D0,0x002119D0,0x174,src/grok_zt_204d70.c,complete
 func_001E99F0,0x001E99F0,0x148,src/grok_bo_2a7950.c,complete
 func_003F1AB0,0x003F1AB0,0x54,src/runtime_flag2_lookup.c,complete
 func_002D57F0,0x002D57F0,0xF4,src/grok_cu_2d57f0.c,complete
+func_002D5D30,0x002D5D30,0x104,src/grok_cu_2d5d30.c,complete
