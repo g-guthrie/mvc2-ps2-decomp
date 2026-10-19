@@ -39,3 +39,13 @@ Nine callbacks use the genuine MWCC 3.0 loop-padding option and preserve the nat
 Four additional routines recover direction/animation setup, a launch initializer, signed-byte state updates and deferred actor setup. Float constants and explicit promoted-byte comparisons reproduce the native instructions without synthetic barriers. The deferred setup preserves retail's lack of default initialization beyond its three explicit switch cases.
 
 The timeout counter at 00487340 is a volatile four-byte unsigned value reset, incremented and compared by 00408628. Its 4,044-byte raw tail remains uncredited; both split objects independently match retail. All 53 tests, catalog validation, shell syntax and 3,727-source build coverage pass. The complete hybrid image and packed executable retain the exact sizes and hashes above. These hybrid image checks include raw fallback bytes and do not imply complete source reconstruction.
+
+## Dispatch heads and effect initialization
+
+The next local checkpoint adds ten complete functions (1,480 bytes) after 5c9fc70d, reaching 1,871,224 / 3,293,696 matching code bytes (56.8123%). Reconstructed initialized data remains 174,405 / 648,064 bytes (26.9117%). The next publication threshold remains 57.1664%.
+
+The additions include the 001DB6F0 table-suffix callback, 001A3810 owner callback, 002632F0 move setup, 00156520 effect initializer, and six independently bounded dispatch heads. The original owner-callback ledger now records original prefix lengths; four previously uncredited prefix regions contain these six recovered heads. Alignment remains uncredited.
+
+The strided byte lookups in 001A3810 use actual GP storage placement with unsized extern views. This avoids the earlier two-byte declarations, whose stride-two access could exceed their declared extent. No extra data credit or guessed object size is introduced. The effect initializer's stored callback now has the one-object argument consumed by the exact 00156750 body. Its source vector is genuinely three floats; the already reconstructed 00444BA0 scale vector adds no new data credit.
+
+Independent production-profile verification covers all five affected C translation units. All 53 tests, catalog validation, shell syntax and 3,730-source build coverage pass. The complete hybrid image and packed retail executable remain byte-identical with the sizes and hashes above.
