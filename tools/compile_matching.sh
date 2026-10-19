@@ -12528,3 +12528,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/launch_fixed_motion_0023cf30.o"
 "$PYTHON" tools/verify_object.py "$BUILD/launch_fixed_motion_0023cf30.o" \
     private/SLUS_204.86.rom --source src/launch_fixed_motion_0023cf30.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_state_callback_002A5410.c -c -lang c -O3 -Op -sdatathreshold 0 \
+    -o "$BUILD/owner_state_callback_002A5410.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_state_callback_002A5410.o" \
+    private/SLUS_204.86.rom --source src/owner_state_callback_002A5410.c
