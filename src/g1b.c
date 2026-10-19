@@ -9,8 +9,8 @@ typedef float f32;
 extern s32 func_00175700();
 extern void func_00126400();
 extern void func_002F1DF0();
-extern void func_00197610();
-extern void func_001754A0();
+extern void func_00197610(u8 *, u8 *, u8 *);
+extern void func_001754A0(u8 *, s32, s32);
 extern void func_001BB8D0();
 extern void (*D_0044C040[])();
 extern void *func_003DA750();
@@ -100,5 +100,17 @@ void func_001DB1F0(u8 *p) {
             p[0x152] = 1;
             func_00175700(p);
         }
+    }
+}
+
+void func_00196700(u8 *p, u8 *q) {
+    u8 *r;
+    u32 t = p[5];
+    p[5] = t + 1;
+    r = p + 0x88;
+    if (p[0x21] < 4) {
+        *(u16 *)(r + 0x20) = *(u16 *)(q + 0x168);
+        func_00197610(p, q, r);
+        func_001754A0(p, 0x1B, (u8)(p[0x21] + 0xB));
     }
 }
