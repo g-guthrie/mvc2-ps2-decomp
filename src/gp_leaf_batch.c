@@ -46,6 +46,11 @@ void func_003D6B30(void) {
     D_004C2840[2] = 0;
 }
 
+void func_003D6B10(void) {
+    ((s8 *)D_004C2840)[1]++;
+    func_00174150();
+}
+
 void func_003D72F0(void) { D_004C2A4C++; }
 
 void func_003D7300(void) { D_004C2A5C = 0; D_004C2A58 = 0; D_004C2A4C = 0; }
