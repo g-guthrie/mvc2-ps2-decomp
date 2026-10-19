@@ -4333,3 +4333,19 @@ checks pass. Hybrid linkage and ELF packing again reproduce the retail SHA-256
 values recorded above. This publication repairs the build before the next
 scheduled code checkpoint; that checkpoint remains 1,915,825 bytes (58.1664%),
 8,393 bytes beyond this revision. Exact source decompilation remains incomplete.
+
+### Window recovery checkpoint — October 19
+
+The next local checkpoint adds 28 compiler-verified functions / 3,468 code
+bytes and a bounded 32-byte state lookup. Linked matching code is
+1,910,900 / 3,293,696 bytes (58.0169%); reconstructed initialized data is
+175,457 / 648,064 bytes (27.0740%). The trajectory function at 0x001A9650
+now has actual C in place of its uncredited opcode placeholder. All affected
+source units were recompiled and verified with their production recipes.
+
+All 55 tests, catalog validation, 3,862-source build coverage, and shell syntax
+checks pass. Hybrid linkage and ELF packing reproduce the retail hashes above.
+A separate fresh build of the published build repair is still running; these
+results do not establish completion of that full compile-script replay.
+The next scheduled publication remains 1,915,825 code bytes (58.1664%),
+4,925 bytes beyond this local checkpoint. Complete source recovery is unfinished.

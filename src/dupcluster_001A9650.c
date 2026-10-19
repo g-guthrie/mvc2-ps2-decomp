@@ -1,26 +1,25 @@
+/* Count trajectory steps until vertical motion is descending and below the limit. */
 typedef unsigned char u8;
 typedef signed int s32;
-
-s32 func_001A9650(u8 *a0) {
-    asm {
-        .word 0xc4820038
-        .word 0x0000102d
-        .word 0xc4830060
-        .word 0x00000000
-        .word 0xc481006c
-        .word 0x44800000
-        .word 0x46031080
-        .word 0x460118c0
-        .word 0x46001836
-        .word 0x00000000
-        .word 0x4500fffb
-        .word 0x24420001
-        .word 0x460c1036
-        .word 0x00000000
-        .word 0x4500fff7
-        .word 0x00000000
-        .word 0x00000000
-        jr ra
-        nop
-    }
+typedef float f32;
+typedef struct {
+    u8 header[0x38];
+    f32 height;
+    u8 gap3c[0x24];
+    f32 verticalVelocity;
+    u8 gap64[8];
+    f32 verticalAcceleration;
+} Trajectory;
+s32 func_001A9650(Trajectory *p, f32 limit)
+{
+    s32 steps = 0;
+    f32 zero = 0.0f;
+    f32 height = p->height;
+    f32 velocity = p->verticalVelocity;
+    do {
+        height += velocity;
+        velocity += p->verticalAcceleration;
+        steps++;
+    } while (velocity > zero || height > limit);
+    return steps;
 }
