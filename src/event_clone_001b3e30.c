@@ -12,7 +12,7 @@ typedef struct EventRecord {
     u8 padding14[4];
     u8 *owner;
 } EventRecord;
-extern EventRecord *func_003DA750(s32, s32, s32);
+extern void *func_003DA750(void *, s32, s32);
 extern void func_001B3F80(u8 *);
 
 /* Direct callers pass (owner, kind, value); the returned event is reused by callers. */
