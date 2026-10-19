@@ -15777,3 +15777,4 @@ func_001B0B80,0x001B0B80,0xA4,src/grok_nope_1b0b80.c,complete
 func_001B0C50,0x001B0C50,0x7C,src/grok_nope_1b0c50.c,complete
 func_001B2E80,0x001B2E80,0xB4,src/grok_nope_1b2e80.c,complete
 func_001B36B0,0x001B36B0,0xAC,src/grok_nope_1b36b0.c,complete
+func_001FDE20,0x001FDE20,0xA0,src/grok_n_fde20.c,complete
