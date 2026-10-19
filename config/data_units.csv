@@ -2460,7 +2460,8 @@ data_u32_0045377C,0x0045377C,0x4,.data,src/data/data_u32_0045377C.c,initialized_
 jtbl_00453780,0x00453780,0xC,.rodata,src/data/jtbl_00453780.c,typed_state_callback_table
 data_u32_0045378C,0x0045378C,0x4,.data,src/data/data_u32_0045378C.c,initialized_u32_table
 jtbl_00453790,0x00453790,0xC,.rodata,src/data/jtbl_00453790.c,typed_state_callback_table
-data_u32_0045379C,0x0045379C,0x24,.data,src/data/data_u32_0045379C.c,initialized_u32_table
+data_u32_0045379C,0x0045379C,0x4,.data,src/data/data_u32_0045379C.c,initialized_u32_table
+gMvc2RandomStartStateTable_004537A0,0x004537A0,0x20,.data,src/data/gMvc2RandomStartStateTable_004537A0.c,indexed_e2_record_table
 jtbl_004537C0,0x004537C0,0x28,.rodata,src/data/jtbl_004537C0.c,typed_state_callback_table
 jtbl_004537F0,0x004537F0,0x14,.rodata,src/data/jtbl_004537F0.c,typed_state_callback_table
 jtbl_00453810,0x00453810,0x14,.rodata,src/data/jtbl_00453810.c,typed_state_callback_table
@@ -7396,7 +7397,8 @@ gMvc2EffectAngles_004BF438,0x004BF438,0x8,.data,src/data/gMvc2EffectAngles_004BF
 gMvc2EffectAngles_004BF440,0x004BF440,0x8,.data,src/data/gMvc2EffectAngles_004BF440.c,typed_effect_angle_table
 data_u32_004BF448,0x004BF448,0x8,.data,src/data/data_u32_004BF448.c,initialized_u32_table
 jtbl_004BF450,0x004BF450,0x30,.rodata,src/data/jtbl_004BF450.c,typed_state_callback_table
-data_u32_004BF480,0x004BF480,0x28,.data,src/data/data_u32_004BF480.c,initialized_u32_table
+data_s8_004BF480,0x004BF480,0x4,.data,src/data/data_s8_004BF480.c,indexed_s8_table
+data_raw_004BF484,0x004BF484,0x24,.data,src/data/data_raw_004BF484.c,raw_byte_array
 jtbl_004BF4A8,0x004BF4A8,0x8,.rodata,src/data/jtbl_004BF4A8.c,jump_table
 data_u32_004BF4B0,0x004BF4B0,0x10,.data,src/data/data_u32_004BF4B0.c,initialized_u32_table
 jtbl_004BF4C0,0x004BF4C0,0x10,.rodata,src/data/jtbl_004BF4C0.c,jump_table
@@ -7503,7 +7505,10 @@ data_u32_004BFFB0,0x004BFFB0,0x30,.data,src/data/data_u32_004BFFB0.c,initialized
 jtbl_004BFFE0,0x004BFFE0,0x8,.rodata,src/data/jtbl_004BFFE0.c,typed_state_callback_table
 data_u32_004BFFE8,0x004BFFE8,0x8,.data,src/data/data_u32_004BFFE8.c,initialized_u32_table
 jtbl_004BFFF8,0x004BFFF8,0x18,.rodata,src/data/jtbl_004BFFF8.c,typed_state_callback_table
-data_u32_004C0010,0x004C0010,0xB0,.data,src/data/data_u32_004C0010.c,initialized_u32_table
+data_u32_004C0010,0x004C0010,0x70,.data,src/data/data_u32_004C0010.c,initialized_u32_table
+data_u8_004C0080,0x004C0080,0x4,.data,src/data/data_u8_004C0080.c,indexed_u8_table
+data_zero_004C0084,0x004C0084,0x4,.data,src/data/data_zero_004C0084.c,zero_initialized_untyped
+data_u32_004C0088,0x004C0088,0x38,.data,src/data/data_u32_004C0088.c,initialized_u32_table
 jtbl_004C00C0,0x004C00C0,0x8,.rodata,src/data/jtbl_004C00C0.c,jump_table
 data_u32_004C00C8,0x004C00C8,0x1C,.data,src/data/data_u32_004C00C8.c,initialized_u32_table
 data_s8_004C00E4,0x004C00E4,0xC,.data,src/data/data_s8_004C00E4.c,initialized_s8_records

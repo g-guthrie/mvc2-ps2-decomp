@@ -3203,6 +3203,15 @@ void func_002E6260(u8 *p) {
 
 void func_002F7570(u8 *p) { jtbl_0045BE40[p[0x213] + 4](p); }
 
+typedef void (*DualContextDispatchFn)(u8 *, int);
+void func_002F7540(u8 *p, int arg) {
+    u8 *q = (u8 *)arg;
+    if (*(short *)(p + 0x434) == 0) {
+        *(short *)(q + 0xE) = 0;
+    }
+    ((DualContextDispatchFn)jtbl_0045BE40[q[0xD]])(p, arg);
+}
+
 void func_002E6930(u8 *p) { jtbl_0045B2A0[p[6]](p); }
 
 void func_002E69C0(u8 *p) { jtbl_0045B2B0[p[7]](p); }

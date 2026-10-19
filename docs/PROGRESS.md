@@ -4448,3 +4448,29 @@ comparison measured a 3.22x speedup over serial data compilation.
 The next normal code checkpoint remains 1,948,762 bytes (59.1664%), another
 28,714 bytes beyond this revision. This additional tooling publication does
 not reset that grid.
+
+
+## Resource binding and float conversion (2026-10-19)
+
+Four additional functions contribute 820 bytes of exact C: resource-relative
+section binding at 0016F1B0, two resource passes at 0016FD80, a context dispatcher
+at 002F7540, and double-to-float conversion at 00119C90. Whole modified translation
+units compile and verify exactly. The conversion uses EE GCC 2.96 with its normal
+float-return ABI: native caller 001AD4F8 passes the double bits in A0 and consumes
+F0 at 001AD500. Its existing pack wrapper now explicitly returns float, matching
+the pack helper and callers. Instruction equality alone would not establish that
+source interface. Resource binding resolves 14 offsets; header word +4 and the
+individual meanings of copied resource-record fields remain unclassified.
+
+Four bounded lookup objects contribute another 72 reconstructed data bytes.
+The random state tables at 004537A0 and 004577A0 each hold 16 two-byte records;
+masked native lookups establish the domains, and separately referenced dispatch
+tables establish their endpoints. The four-entry maps at 004BF480 and 004C0080
+have independent masked consumers and endpoint references. Unclassified prefixes,
+suffixes, and the four-byte gap at 004C0084 remain uncredited placeholders.
+
+The verified totals are 1,920,868 / 3,293,696 code bytes (58.3195%) and
+175,793 / 648,064 reconstructed data bytes (27.1259%). Final linkage and ELF
+packing reproduce the retail hashes recorded above. The next normal publication
+threshold remains 1,948,762 code bytes (59.1664%), another 27,894 bytes beyond this
+batch. Full source recovery remains unfinished.

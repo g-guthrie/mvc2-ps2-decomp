@@ -14973,4 +14973,18 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/position_snap_state_002
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/core_state_entries_0017c390.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/core_state_entries_0017c390.o"
 "$PYTHON" tools/verify_object.py "$BUILD/core_state_entries_0017c390.o" private/SLUS_204.86.rom --source src/core_state_entries_0017c390.c
 
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/resource_section_bind_0016f1b0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/resource_section_bind_0016f1b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/resource_section_bind_0016f1b0.o" private/SLUS_204.86.rom --source src/resource_section_bind_0016f1b0.c
+
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/resource_record_passes_0016fd80.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/resource_record_passes_0016fd80.o"
+"$PYTHON" tools/verify_object.py "$BUILD/resource_record_passes_0016fd80.o" private/SLUS_204.86.rom --source src/resource_record_passes_0016fd80.c
+
+# Double-to-float conversion returns through the SDK float register ABI.
+"$WIBO" "$SNCPP" -P src/soft_float_narrow_00119c90.c "$BUILD/soft_float_narrow_00119c90.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 "$BUILD/soft_float_narrow_00119c90.i" "$BUILD/soft_float_narrow_00119c90.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/soft_float_narrow_00119c90.o" "$BUILD/soft_float_narrow_00119c90.s"
+"$PYTHON" tools/verify_object.py "$BUILD/soft_float_narrow_00119c90.o" private/SLUS_204.86.rom --source src/soft_float_narrow_00119c90.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

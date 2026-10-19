@@ -17099,3 +17099,7 @@ func_0017CE90,0x0017CE90,0x64,src/core_state_entries_0017c390.c,complete
 func_0017CCF0,0x0017CCF0,0x60,src/core_state_entries_0017c390.c,complete
 func_0017C8F0,0x0017C8F0,0x88,src/core_state_entries_0017c390.c,complete
 func_0017CAA0,0x0017CAA0,0x7C,src/core_state_entries_0017c390.c,complete
+func_0016F1B0,0x0016F1B0,0x114,src/resource_section_bind_0016f1b0.c,complete
+func_0016FD80,0x0016FD80,0x19C,src/resource_record_passes_0016fd80.c,complete
+func_002F7540,0x002F7540,0x30,src/composite_dispatch_heads.c,complete
+func_00119C90,0x00119C90,0x54,src/soft_float_narrow_00119c90.c,complete
