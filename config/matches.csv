@@ -15997,3 +15997,4 @@ func_00216670,0x00216670,0xEC,src/deferred_input_setup_00216670.c,complete
 func_002A16F0,0x002A16F0,0x130,src/w175_b.c,complete
 func_002FCE10,0x002FCE10,0x158,src/w194_l.c,complete
 func_00246890,0x00246890,0xC4,src/v9_a.c,complete
+func_0025D970,0x0025D970,0x128,src/w178_e.c,complete
