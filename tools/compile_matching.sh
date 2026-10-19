@@ -1341,6 +1341,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_001e3520.o" private/SLUS_204.86.rom \
     --source src/grok_w5_001e3520.c
+"$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_001d2390.o" private/SLUS_204.86.rom \
     --source src/grok_w5_001d2390.c
 "$PYTHON" tools/verify_object.py \

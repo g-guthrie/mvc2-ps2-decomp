@@ -61,6 +61,21 @@ def detached_source_commands(script: str) -> list[str]:
     ]
 
 
+def detached_object_verification_commands(script: str) -> list[str]:
+    """Catch object/ROM verification arguments that lost the verifier prefix."""
+    lines = script.splitlines()
+    object_head = re.compile(
+        r'^\s*(?:"\$BUILD/[\w./-]+\.o"|\$BUILD/[\w./-]+\.o)'
+        r'\s+private/[\w./-]+\.(?:rom|elf)(?:\s|\\|$)'
+    )
+    return [
+        line.strip()
+        for index, line in enumerate(lines)
+        if object_head.match(line)
+        and (index == 0 or not lines[index - 1].rstrip().endswith("\\"))
+    ]
+
+
 def credited_sources(path: Path) -> set[str]:
     with path.open(newline="") as handle:
         return {row["source"].strip() for row in csv.DictReader(handle) if row.get("source")}
@@ -79,13 +94,17 @@ def main() -> int:
     detached = detached_source_commands(script)
     for command in detached:
         print(f"source command missing compiler prefix: {command}")
+    detached_verification = detached_object_verification_commands(script)
+    for command in detached_verification:
+        print(f"object verification command missing verifier prefix: {command}")
     orphans = orphan_bodies()
     for source, name in orphans:
         print(f"unregistered body: {name} in {source}")
-    if uncompiled or uncredited or orphans or detached:
+    if uncompiled or uncredited or orphans or detached or detached_verification:
         print(
             f"FAIL: {len(uncompiled)} uncompiled, {len(uncredited)} uncredited, "
-            f"{len(orphans)} unregistered bodies, {len(detached)} detached compile commands"
+            f"{len(orphans)} unregistered bodies, {len(detached)} detached compile commands, "
+            f"{len(detached_verification)} detached object verification commands"
         )
         return 1
     print(

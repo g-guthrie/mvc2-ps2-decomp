@@ -4,6 +4,43 @@ from tools.objdiff_report import DATA_SIZE, TEXT_SIZE, build_report
 
 
 class ProjectTest(unittest.TestCase):
+    def test_orphan_object_verification_heads_are_rejected(self):
+        from tools.check_build_coverage import detached_object_verification_commands
+
+        valid = (
+            '"$PYTHON" tools/verify_object.py \\\n'
+            '    "$BUILD/grok_good.o" private/SLUS_204.86.rom \\\n'
+            '    --source src/grok_good.c\n'
+        )
+        for object_path in ('"$BUILD/grok_bad.o"', '$BUILD/grok_bad.o'):
+            with self.subTest(object_path=object_path):
+                script = (
+                    valid
+                    + f'    {object_path} private/SLUS_204.86.rom \\\n'
+                    + '    --source src/grok_bad.c\n'
+                )
+                self.assertEqual(
+                    detached_object_verification_commands(script),
+                    [f'{object_path} private/SLUS_204.86.rom \\'],
+                )
+
+    def test_multiline_compile_and_verify_continuations_are_valid(self):
+        from tools.check_build_coverage import (
+            detached_object_verification_commands,
+            detached_source_commands,
+        )
+
+        script = (
+            'WIBO="$WIBO" "$MWCCPS2" \\\n'
+            '    src/grok_good.c -c -lang c \\\n'
+            '    -o "$BUILD/grok_good.o"\n'
+            '"$PYTHON" tools/verify_object.py \\\n'
+            '    "$BUILD/grok_good.o" private/SLUS_204.86.rom \\\n'
+            '    --source src/grok_good.c\n'
+        )
+        self.assertEqual(detached_source_commands(script), [])
+        self.assertEqual(detached_object_verification_commands(script), [])
+
     def test_duplicate_match_ownership_is_rejected(self):
         from pathlib import Path
         import tempfile
