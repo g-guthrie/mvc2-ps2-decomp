@@ -15826,3 +15826,4 @@ func_00300090,0x00300090,0xA8,src/grok_nm3_300090.c,complete
 func_00303F20,0x00303F20,0xC4,src/grok_noph_303f20.c,complete
 func_003F9BE8,0x003F9BE8,0x134,src/read_adx_header_fields_003F9AF0.c,complete
 func_0011FB38,0x0011FB38,0xD8,src/newlib_strcasecmp_0011FB38.c,complete
+func_001B3E30,0x001B3E30,0x150,src/event_clone_001b3e30.c,complete

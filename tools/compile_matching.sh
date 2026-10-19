@@ -12061,3 +12061,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_noph_303f20.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/grok_noph_303f20.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_noph_303f20.o" \
     private/SLUS_204.86.rom --source src/grok_noph_303f20.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/event_clone_001b3e30.c -c -lang c -O3 -Op -sdatathreshold 0 \
+    -o "$BUILD/event_clone_001b3e30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/event_clone_001b3e30.o" \
+    private/SLUS_204.86.rom --source src/event_clone_001b3e30.c
