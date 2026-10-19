@@ -4257,3 +4257,8 @@ Its 308-byte scratch bound is the original `MAXEXP` from `floatio.h`; the 2000
 Newlib ChangeLog records the later reduction to a smaller exponent buffer. The
 EE GCC 2.96 `-O2 -G0` object verifies exactly. Catalog code now stands at
 1,689,612 / 3,293,696 bytes (51.2984%).
+
+Recovered `func_001220A0` (448 bytes), the Newlib `vfprintf.c` `cvt()` helper.
+It calls the already matched dtoa implementation and preserves the source-era
+soft-float conversions. EE GCC 2.96 `-O2 -G0` verifies the full body; catalog
+code now stands at 1,690,060 / 3,293,696 bytes (51.3120%).

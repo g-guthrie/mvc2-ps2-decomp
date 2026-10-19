@@ -11035,6 +11035,10 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_vfprintf_exponent_00122260.i" "$BUILD/newlib_vfprintf_exponent_00122260.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_vfprintf_exponent_00122260.o" "$BUILD/newlib_vfprintf_exponent_00122260.s"
 "$PYTHON" tools/verify_object.py "$BUILD/newlib_vfprintf_exponent_00122260.o" private/SLUS_204.86.rom --source src/newlib_vfprintf_exponent_00122260.c
+"$WIBO" "$SNCPP" -P src/newlib_vfprintf_cvt_001220A0.c "$BUILD/newlib_vfprintf_cvt_001220A0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_vfprintf_cvt_001220A0.i" "$BUILD/newlib_vfprintf_cvt_001220A0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_vfprintf_cvt_001220A0.o" "$BUILD/newlib_vfprintf_cvt_001220A0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_vfprintf_cvt_001220A0.o" private/SLUS_204.86.rom --source src/newlib_vfprintf_cvt_001220A0.c
 "$WIBO" "$SNCPP" -P src/newlib_fclose_0011B380.c "$BUILD/newlib_fclose_0011B380.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_fclose_0011B380.i" "$BUILD/newlib_fclose_0011B380.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_fclose_0011B380.o" "$BUILD/newlib_fclose_0011B380.s"
