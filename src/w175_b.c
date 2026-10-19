@@ -341,3 +341,47 @@ void func_002A16F0(u8 *a)
     D_004C2794->f7c[a[2]]++;
     func_001757E0(a, 8, a[0x168]);
 }
+
+extern s32 D_004C0D34, D_004C0D38, D_004C0D3C;
+void func_002B8DA0(u8 *a)
+{
+    extern void func_001E3710(u8 *, s32);
+    extern int func_001757E0(u8 *, int, int);
+    u32 t;
+    switch (a[0x1FC]) {
+    case 0:
+        a[0x168] = 0;
+        a[0x1B5] = 3;
+        func_001E3710(a, 0x14);
+        *(void **)(a + 0x408) = &D_004C0D34;
+        a[0x1BB] = 0;
+        break;
+    case 1:
+        a[0x168] = 4;
+        a[0x1B5] = 0x16;
+        func_001E3710(a, 0x15);
+        *(void **)(a + 0x408) = &D_004C0D38;
+        a[0x1BB] = 1;
+        break;
+    case 2:
+        if (*(u16 *)(a + 0x20E) & 0x400) {
+            a[0x168] = 5;
+            a[0x1B5] = 0x17;
+        } else {
+            a[0x168] = 2;
+            a[0x1B5] = 5;
+        }
+        func_001E3710(a, 0x16);
+        *(void **)(a + 0x408) = &D_004C0D3C;
+        a[0x1BB] = 2;
+        break;
+    default:
+        break;
+    }
+    t = a[0x1B5];
+    ((ActorActionView *)a)->action = t;
+    a[0x1B2] = *(u16 *)(a + 0x1C0) = 0;
+    *(s32 *)(a + 0x1D8) = 0;
+    D_004C2794->f7c[a[2]]++;
+    func_001757E0(a, 8, a[0x168]);
+}
