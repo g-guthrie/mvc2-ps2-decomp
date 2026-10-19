@@ -4308,3 +4308,28 @@ This crosses the scheduled 1,882,888-byte checkpoint. The next scheduled
 checkpoint is 1,915,825 code bytes (58.1664%). Complete source decompilation
 remains unfinished; exact hybrid reconstruction still uses private retail
 bytes for unrecovered regions.
+
+### Build-verification repair and combined recovery — October 19
+
+Code is now 1,907,432 / 3,293,696 bytes (57.9116%), adding 37 complete
+functions / 8,668 bytes since the previous public checkpoint. Reconstructed
+initialized data is 175,425 / 648,064 bytes (27.0691%), adding 1,016 bytes of
+bounded offset, motion, and selector records. The per-function recipes and
+native entry witnesses are in `window-clone-frontier-20261019-replay.csv` and
+`grok-asm-source-candidates-20261019-replay.csv`. Leading alignment words remain
+uncredited; input-gate return types preserve the selected-target pointers.
+
+The compile script had a verification stanza with its command head missing:
+the shell attempted to execute `grok_w5_001d2390.o` instead of verifying it.
+The command head is restored, and the coverage checker now rejects detached
+object-verification arguments as well as detached compiler arguments. Regression
+tests cover quoted/unquoted failures and valid multiline continuations. The
+272-byte affected function was recompiled with its production recipe and
+verified exactly. The entire compiler script has not been rerun end to end for
+this repair; all changed source units and data objects were replayed separately.
+
+All 55 tests, catalog validation, 3,860-source build coverage, and shell syntax
+checks pass. Hybrid linkage and ELF packing again reproduce the retail SHA-256
+values recorded above. This publication repairs the build before the next
+scheduled code checkpoint; that checkpoint remains 1,915,825 bytes (58.1664%),
+8,393 bytes beyond this revision. Exact source decompilation remains incomplete.
