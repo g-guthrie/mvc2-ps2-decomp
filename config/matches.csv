@@ -16733,3 +16733,4 @@ func_00417350,0x00417350,0x70,src/r5_d.c,complete
 func_0040A9C8,0x0040A9C8,0xC8,src/find_named_runtime_span_0040C6D0.c,complete
 func_002119D0,0x002119D0,0x174,src/grok_zt_204d70.c,complete
 func_001E99F0,0x001E99F0,0x148,src/grok_bo_2a7950.c,complete
+func_003F1AB0,0x003F1AB0,0x54,src/runtime_flag2_lookup.c,complete
