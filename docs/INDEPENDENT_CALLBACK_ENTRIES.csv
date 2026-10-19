@@ -60,7 +60,7 @@ func_002F1530,0x002F1530,0xD0,func_002F1510,jtbl_0045B9B0,0x0045B9C0,src/state_e
 func_00310B70,0x00310B70,0x80,func_00310B50,jtbl_0045D360,0x0045D360,src/independent_state_entry_00310B70.c
 func_003140F0,0x003140F0,0xE4,func_003140D0,jtbl_0045D510,0x0045D510,src/independent_state_entry_003140F0.c
 func_003145A0,0x003145A0,0x124,func_00314580,jtbl_004C16F0,0x004C16F0,src/independent_state_entry_003145A0.c
-func_00315980,0x00315980,0x4C,func_00315C80,jtbl_0045D5B0,0x0045D5B0,src/independent_state_entry_00315980.c
+func_00315980,0x00315980,0x4C,func_00315960,jtbl_0045D598,0x0045D5B0,src/independent_state_entry_00315980.c
 func_00317C10,0x00317C10,0x84,func_00317BF0,jtbl_0045D7C0,0x0045D7C0,src/independent_state_entry_00317C10.c
 func_00317EC0,0x00317EC0,0x84,func_00317EA0,jtbl_0045D7D0,0x0045D7D0,src/independent_state_entry_00317EC0.c
 func_0031AA30,0x0031AA30,0x6C,func_0031AA10,jtbl_0045D958,0x0045D958,src/independent_state_entry_0031AA30.c
@@ -78,9 +78,9 @@ func_001F5A70,0x001F5A70,0x94,func_001F5A50,jtbl_0044FA20,0x0044FA30,src/w184_e.
 func_001F5FA0,0x001F5FA0,0xD0,func_001F5F80,jtbl_0044FA48,0x0044FA48,src/w184_e.c
 func_001FE090,0x001FE090,0x34,func_001FE070,jtbl_0044FF80,0x0044FF80,src/grok_luna_oct19_callbacks.c
 func_0036B910,0x0036B910,0x58,func_0036B8F0,jtbl_00463B10,0x00463B10,src/independent_state_entry_0036B910.c
-func_00388B30,0x00388B30,0x94,func_00388910,jtbl_00464AE0,0x00464AF0,src/independent_state_entry_00388B30.c
-func_00390060,0x00390060,0x60,func_0038FD60,jtbl_00471AC0,0x00471AD8,src/independent_state_entry_00390060.c
-func_0039CE40,0x0039CE40,0x50,func_0039CCC0,jtbl_00472760,0x00472770,src/independent_state_entry_0039CE40.c
+func_00388B30,0x00388B30,0x94,func_00388B10,jtbl_00464AF0,0x00464AF0,src/independent_state_entry_00388B30.c
+func_00390060,0x00390060,0x60,func_00390040,jtbl_00471AD8,0x00471AD8,src/independent_state_entry_00390060.c
+func_0039CE40,0x0039CE40,0x50,func_0039CE20,jtbl_00472770,0x00472770,src/independent_state_entry_0039CE40.c
 func_003B0540,0x003B0540,0x68,func_003B0520,jtbl_00473C70,0x00473C70,src/independent_state_entries_003B0540_003B0D90.c
 func_003B0D90,0x003B0D90,0x68,func_003B0D70,jtbl_00473CC0,0x00473CC0,src/independent_state_entries_003B0540_003B0D90.c
 func_003B9C40,0x003B9C40,0x38,residual_003B9C20,jtbl_004744C0,0x004744C0,src/independent_state_entry_003B9C40.c
