@@ -12574,3 +12574,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/landing_effect_0027e090.o"
 "$PYTHON" tools/verify_object.py "$BUILD/landing_effect_0027e090.o" \
     private/SLUS_204.86.rom --source src/landing_effect_0027e090.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_state_callback_0028D440.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/owner_state_callback_0028D440.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_state_callback_0028D440.o" \
+    private/SLUS_204.86.rom --source src/owner_state_callback_0028D440.c
