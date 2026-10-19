@@ -3907,7 +3907,7 @@ residual_001B61C0,0x001B61C0,0xD4,0x001B6294,assembly_residual,verified-boundary
 func_001B62A0,0x001B62A0,0x170,0x001B6410,code,spimdisasm-explicit-size-before-first-data
 func_001B6410,0x001B6410,0x174,0x001B6584,code,spimdisasm-explicit-size-before-first-data
 func_001B6590,0x001B6590,0x20,0x001B65B0,code,matching-c-head-split
-residual_001B65B0,0x001B65B0,0x108,0x001B66B8,assembly_residual,verified-boundary-after-matching-head
+func_001B65B0,0x001B65B0,0x108,0x001B66B8,code,spimdisasm-explicit-size-before-first-data
 func_001B66C0,0x001B66C0,0x60,0x001B6720,code,spimdisasm-explicit-size-before-first-data
 func_001B6720,0x001B6720,0x14,0x001B6734,code,spimdisasm-explicit-size-before-first-data
 func_001B6740,0x001B6740,0x8,0x001B6748,code,spimdisasm-explicit-size-before-first-data

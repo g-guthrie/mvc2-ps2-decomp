@@ -15861,3 +15861,4 @@ func_001B6860,0x001B6860,0x168,src/event_clone_001b6860.c,complete
 func_001B69D0,0x001B69D0,0x184,src/event_clone_001b69d0.c,complete
 func_001B6DA0,0x001B6DA0,0x16C,src/event_clone_001b6da0.c,complete
 func_00122260,0x00122260,0xDC,src/newlib_vfprintf_exponent_00122260.c,complete
+func_001B65B0,0x001B65B0,0x108,src/event_clone_001b65b0.c,complete
