@@ -697,3 +697,19 @@ verified dispatcher `func_001D6D10` loads the signed byte pointer from
 read its second argument, but the dispatcher passes the real pointer in A1. Both
 split functions compile exactly in `grok_w5_001d.c` under the unit's MWCCPS2 3.0.3 `-O3 -sdatathreshold 0`
 recipe, with a four-byte NOP gap between them.
+
+
+### Actor action reset views
+
+`src/actor_action_event.h` models the real action byte at actor offset `0x1B5`
+with a compile-time offset check. It is a partial code view, not a reconstructed
+data object or a full actor layout. The inline event helper retains the typed
+action write, frame reset, and per-player counter update seen in retail.
+
+The complete `0x00255950` (1,668-byte) and `0x00274060` (228-byte) routines match
+with MWCCPS2 3.0.3 `-O3 -Op -sdatathreshold 8`. A raw-byte self-assignment can
+eliminate native action-byte reads and writes under this profile. Preserve the
+field's checked type and ordinary byte-oriented caller view; do not add volatile
+accesses, padding, or opcode patches. The first routine's complete 52-byte compiler
+jump table is checked through `config/readonly_sections.csv` and remains uncredited
+data until it has a separate source-ownership proof.

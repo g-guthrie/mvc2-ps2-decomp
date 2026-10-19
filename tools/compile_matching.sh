@@ -12396,7 +12396,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     private/SLUS_204.86.rom --source src/table_motion_002206a0.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/select_character_action_00255950.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    src/select_character_action_00255950.c -c -lang c -O3 -Op -sdatathreshold 8 -i src \
     -o "$BUILD/select_character_action_00255950.o"
 "$PYTHON" tools/verify_object.py "$BUILD/select_character_action_00255950.o" \
     private/SLUS_204.86.rom --source src/select_character_action_00255950.c
@@ -12404,3 +12404,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/owner_state_callback_002833d0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_state_callback_002833d0.o" \
     private/SLUS_204.86.rom --source src/owner_state_callback_002833d0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/select_ground_action_00274060.c -c -lang c -O3 -Op -sdatathreshold 8 -i src \
+    -o "$BUILD/select_ground_action_00274060.o"
+"$PYTHON" tools/verify_object.py "$BUILD/select_ground_action_00274060.o" \
+    private/SLUS_204.86.rom --source src/select_ground_action_00274060.c
