@@ -50,6 +50,17 @@ def orphan_bodies() -> list[tuple[str, str]]:
     return orphans
 
 
+def detached_source_commands(script: str) -> list[str]:
+    """Catch appended source lines that lost their compiler command prefix."""
+    lines = script.splitlines()
+    return [
+        line.strip()
+        for index, line in enumerate(lines)
+        if re.match(r"\s*src/[\w./-]+\.c\s+-c\b", line)
+        and (index == 0 or not lines[index - 1].rstrip().endswith("\\"))
+    ]
+
+
 def credited_sources(path: Path) -> set[str]:
     with path.open(newline="") as handle:
         return {row["source"].strip() for row in csv.DictReader(handle) if row.get("source")}
@@ -65,13 +76,16 @@ def main() -> int:
         print(f"credited but never compiled: {source}")
     for source in uncredited:
         print(f"compiled but not credited: {source}")
+    detached = detached_source_commands(script)
+    for command in detached:
+        print(f"source command missing compiler prefix: {command}")
     orphans = orphan_bodies()
     for source, name in orphans:
         print(f"unregistered body: {name} in {source}")
-    if uncompiled or uncredited or orphans:
+    if uncompiled or uncredited or orphans or detached:
         print(
             f"FAIL: {len(uncompiled)} uncompiled, {len(uncredited)} uncredited, "
-            f"{len(orphans)} unregistered bodies"
+            f"{len(orphans)} unregistered bodies, {len(detached)} detached compile commands"
         )
         return 1
     print(

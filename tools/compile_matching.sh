@@ -12448,6 +12448,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/select_launch_actions_00256580.o"
 "$PYTHON" tools/verify_object.py "$BUILD/select_launch_actions_00256580.o" \
     private/SLUS_204.86.rom --source src/select_launch_actions_00256580.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_state_callback_0029D690.c -c -lang c -O3 -Op -sdatathreshold 8 \
     -o "$BUILD/owner_state_callback_0029D690.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_state_callback_0029D690.o" \
@@ -12464,6 +12466,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     -o "$BUILD/select_input_variant_0023a440.o"
 "$PYTHON" tools/verify_object.py "$BUILD/select_input_variant_0023a440.o" \
     private/SLUS_204.86.rom --source src/select_input_variant_0023a440.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_state_callback_00285E50.c -c -lang c -O3 -Op -sdatathreshold 8 \
     -o "$BUILD/owner_state_callback_00285E50.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_state_callback_00285E50.o" \
@@ -12480,3 +12484,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/owner_state_callback_002FB800.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_state_callback_002FB800.o" \
     private/SLUS_204.86.rom --source src/owner_state_callback_002FB800.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/palette_cycle_0027af80.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/palette_cycle_0027af80.o"
+"$PYTHON" tools/verify_object.py "$BUILD/palette_cycle_0027af80.o" \
+    private/SLUS_204.86.rom --source src/palette_cycle_0027af80.c
