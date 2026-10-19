@@ -12505,3 +12505,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/palette_cycle_0027af80.o"
 "$PYTHON" tools/verify_object.py "$BUILD/palette_cycle_0027af80.o" \
     private/SLUS_204.86.rom --source src/palette_cycle_0027af80.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/timed_motion_00250b40.c -c -lang c -O3 -Op -sdatathreshold 8 -i src \
+    -o "$BUILD/timed_motion_00250b40.o"
+"$PYTHON" tools/verify_object.py "$BUILD/timed_motion_00250b40.o" \
+    private/SLUS_204.86.rom --source src/timed_motion_00250b40.c
