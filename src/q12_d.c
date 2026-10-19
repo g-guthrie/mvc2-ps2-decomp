@@ -51,6 +51,27 @@ void func_0013AA10(u8 *p)
     }
 }
 
+void func_0013AC00(u8 *p)
+{
+    extern void func_0013B3C0(u8 *, s32);
+    u8 a = p[5];
+    switch (a) {
+    case 0:
+        p[5] = a + 1;
+        func_0013B3C0(p, 1);
+    case 1:
+        *(f32 *)(p + 0x54) += 0.1f;
+        if (*(f32 *)(p + 0x54) >= 1.0f) {
+            { u32 c = p[5]; p[5] = c + 1; }
+            *(f32 *)(p + 0x54) = 1.0f;
+        }
+    case 2:
+        break;
+    default:
+        break;
+    }
+}
+
 typedef struct { u8 p0[5]; u8 b5; u8 p6[0x2E]; f32 f34; u8 p38[0x38]; f32 f70; } S8;
 void func_00134500(S8 *p)
 {
