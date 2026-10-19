@@ -66,6 +66,9 @@ extern signed char data_s8_004C068C[8] __attribute__((section(".sdata")));
 extern signed char data_s8_004C0694[4] __attribute__((section(".sdata")));
 extern signed char data_s8_004C0698[8] __attribute__((section(".sdata")));
 extern const unsigned int D_004C1588[] __attribute__((section(".sdata")));
+extern unsigned int data_u32_004C06A0[1] __attribute__((section(".sdata")));
+extern unsigned int data_ff_004C06A4[2] __attribute__((section(".sdata")));
+extern unsigned int data_u32_004C06B8[3] __attribute__((section(".sdata")));
 extern signed char data_s8_004C158C[8] __attribute__((section(".sdata")));
 extern signed char data_s8_004C1594[4] __attribute__((section(".sdata")));
 extern signed char data_s8_004C1598[8] __attribute__((section(".sdata")));
@@ -523,6 +526,46 @@ void func_00309AA0(u8 *p) {
  reset_move_counters(p, p[0x1b5], 12);
  if (*(signed char *)(p + 0x1ea) & 0xF0)
   *(signed char *)(p + 0x1ea) -= 16;
+}
+
+
+void func_0026BC50(u8 *p) {
+ switch (p[0x1fc]) {
+ case 0:
+  p[0x168] = 0;
+  p[0x1b5] = 12;
+  func_001E3710(p, 20);
+  if (p[0x210] == 0)
+   *(const signed char **)(p + 0x408) = (const signed char *)data_u32_004C06A0;
+  else
+   *(const signed char **)(p + 0x408) = (const signed char *)data_u32_004C06B8;
+  p[0x1bb] = 0;
+  break;
+ case 1:
+  p[0x168] = 1;
+  p[0x1b5] = 13;
+  func_001E3710(p, 21);
+  if (p[0x210] == 0)
+   *(const signed char **)(p + 0x408) = (const signed char *)data_ff_004C06A4;
+  else
+   *(const signed char **)(p + 0x408) = (const signed char *)&data_u32_004C06B8[1];
+  p[0x1bb] = 1;
+  break;
+ case 2:
+  p[0x168] = 2;
+  p[0x1b5] = 14;
+  func_001E3710(p, 22);
+  if (p[0x210] == 0)
+   *(const signed char **)(p + 0x408) = (const signed char *)&data_ff_004C06A4[1];
+  else
+   *(const signed char **)(p + 0x408) = (const signed char *)&data_u32_004C06B8[2];
+  p[0x1bb] = 2;
+  func_001E3710(p, 22);
+  break;
+ }
+ reset_move_counters(p, p[0x1b5], 11);
+ if (*(signed char *)(p + 0x1ea) & 0x0F)
+  *(signed char *)(p + 0x1ea) -= 1;
 }
 
 void func_00301040(u8 *p) {
