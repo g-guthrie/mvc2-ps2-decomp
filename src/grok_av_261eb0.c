@@ -1,6 +1,10 @@
 typedef unsigned char u8;
 typedef signed char s8;
 typedef float f32;
+typedef signed short s16;
+typedef unsigned int u32;
+typedef f32 PlanarOffset[2] __attribute__((aligned(16)));
+typedef char PlanarOffsetSizeCheck[(sizeof(PlanarOffset) == 8) ? 1 : -1];
 
 extern int func_00175700(u8 *);
 extern void func_001548D0(u8 *, f32 *, int);
@@ -27,4 +31,28 @@ void func_00261EB0(u8 *p)
     }
     if ((s8)func_00175700(p) < 0)
         func_00184540(p);
+}
+
+void func_00261DD0(u8 *p)
+{
+    if ((s8)p[0x151] == 1) {
+        PlanarOffset v;
+        u8 *q;
+
+        ((u32 *)v)[0] = 0xC3200000;
+        ((u32 *)v)[1] = 0x431A4924;
+        func_001548D0(p, v, 2);
+        func_001E3710(p, 2);
+        p[0x151] = 0;
+        q = *(u8 **)(p + 0x1DC);
+        *(u8 **)(q + 0x1C8) = p;
+        *(s8 *)(p + 0x1E6) = *(s8 *)(p + 0x140);
+        *(s16 *)(q + 0x140) = p[0x1E6] ^ 1;
+        *(s8 *)(q + 0x1E6) = *(s8 *)(q + 0x140);
+        q[0x1B5] = 0x20;
+        q[0x20A] = 1;
+        func_001266A0(p, 0, 0);
+    }
+    if ((s8)func_00175700(p) < 0)
+        func_001843A0(p);
 }

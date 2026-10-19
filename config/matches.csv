@@ -16550,6 +16550,7 @@ func_002DBB70,0x002DBB70,0xD0,src/grok_aw_2dbb70.c,complete
 func_002E2570,0x002E2570,0x104,src/grok_aw_2e2570.c,complete
 func_002611C0,0x002611C0,0x110,src/grok_av_2611c0.c,complete
 func_00261EB0,0x00261EB0,0xB0,src/grok_av_261eb0.c,complete
+func_00261DD0,0x00261DD0,0xC0,src/grok_av_261eb0.c,complete
 func_00277A70,0x00277A70,0xCC,src/grok_av_277a70.c,complete
 func_001E3430,0x001E3430,0xE8,src/grok_bb_1e3430.c,complete
 func_003BF420,0x003BF420,0xDC,src/grok_bd_003BF420.c,complete

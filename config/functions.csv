@@ -8697,7 +8697,7 @@ func_00261C50,0x00261C50,0x88,0x00261CD8,code,typed-callback-table-entry
 func_00261CE0,0x00261CE0,0xB4,0x00261D94,code,spimdisasm-explicit-size-before-first-data
 func_00261DA0,0x00261DA0,0x28,0x00261DC8,code,matching-c-head-split
 residual_00261DC8,0x00261DC8,0x8,0x00261DD0,assembly_residual,alignment-before-function-entry
-func_00261DD0,0x00261DD0,0xC0,0x00261E90,code,verified-independent-callback
+func_00261DD0,0x00261DD0,0xC0,0x00261E90,code,verified-complete-c-function
 func_00261E90,0x00261E90,0x1C,0x00261EAC,code,matching-c-head-split
 func_00261EB0,0x00261EB0,0xB0,0x00261F60,code,verified-complete-c-function
 func_00261F60,0x00261F60,0x24,0x00261F84,code,matching-c-head-split
