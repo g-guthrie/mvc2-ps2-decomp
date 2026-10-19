@@ -231,7 +231,8 @@ extern s16 D_004C27A4;
 extern u8 *func_003DA750(s32 a, s32 b, s32 c);
 extern void func_003544F0(void);
 
-s32 func_00354460(u8 *a, u8 b) {
+/* Callers pass a signed halfword state; truncation occurs at the byte store. */
+s32 func_00354460(u8 *a, s32 b) {
     s32 i;
     u8 *p;
     if (D_004C27A4 < 3) return 0;

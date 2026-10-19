@@ -15961,3 +15961,5 @@ func_0023C450,0x0023C450,0x1FC,src/launch_fixed_motion_0023c450.c,complete
 func_0023CF30,0x0023CF30,0x20C,src/launch_fixed_motion_0023cf30.c,complete
 func_002A5410,0x002A5410,0xF0,src/owner_state_callback_002A5410.c,complete
 func_002498D0,0x002498D0,0x228,src/air_control_002498d0.c,complete
+func_002196F0,0x002196F0,0x1F8,src/toggle_motion_002196f0.c,complete
+func_0021A7A0,0x0021A7A0,0x204,src/toggle_full_motion_0021a7a0.c,complete

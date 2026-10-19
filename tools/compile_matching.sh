@@ -12539,3 +12539,15 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/air_control_002498d0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/air_control_002498d0.o" \
     private/SLUS_204.86.rom --source src/air_control_002498d0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/toggle_motion_002196f0.c -c -lang c -O3 -Op -sdatathreshold 8 -i src \
+    -o "$BUILD/toggle_motion_002196f0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/toggle_motion_002196f0.o" \
+    private/SLUS_204.86.rom --source src/toggle_motion_002196f0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/toggle_full_motion_0021a7a0.c -c -lang c -O3 -Op -sdatathreshold 8 -i src \
+    -o "$BUILD/toggle_full_motion_0021a7a0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/toggle_full_motion_0021a7a0.o" \
+    private/SLUS_204.86.rom --source src/toggle_full_motion_0021a7a0.c
