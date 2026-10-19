@@ -202,3 +202,29 @@ void func_00246BA0(u8 *p, u8 *q) {
         func_001830D0(p, v, 1);
     }
 }
+
+/* Called with actor and context at 00246870. Retail initializes all three
+ * words of this 12-byte, 16-byte-aligned local vector at SP+0x30. */
+void func_00246890(u8 *p, u8 *q) {
+    extern int func_00175700(u8 *);
+    extern void func_001830D0(u8 *, float *, int);
+    f32 v[3] __attribute__((aligned(16)));
+    typedef char LocalVectorSizeCheck[(sizeof(v) == 12) ? 1 : -1];
+    p[0x40C] = 2;
+    p[0x33C] = 5;
+    p[0x405] = (p[0x269] == 6) ? 2 : 0;
+    func_00175700(p);
+    if (*(s8*)(p+0x151) != 0) {
+        p[0x151] = 0;
+        p[7]++;
+        *(s16*)(p+0x1C) = 0x5A;
+        *(s16*)(p+0x1E) = 0;
+        q[7] = 5;
+        *(u32*)&v[0] = 0xC2855555;
+        *(u32*)&v[1] = 0x434DB6DB;
+        *(s32*)&v[2] = 0;
+        p[0x404] = 0;
+        p[0x405] = 0;
+        func_001830D0(p, v, 1);
+    }
+}
