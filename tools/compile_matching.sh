@@ -12603,3 +12603,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/context_motion_00231840.o"
 "$PYTHON" tools/verify_object.py "$BUILD/context_motion_00231840.o" \
     private/SLUS_204.86.rom --source src/context_motion_00231840.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/select_input_buffer_00256a70.c -c -lang c -O3,p -Op -sdatathreshold 8 -i src \
+    -o "$BUILD/select_input_buffer_00256a70.o"
+"$PYTHON" tools/verify_object.py "$BUILD/select_input_buffer_00256a70.o" \
+    private/SLUS_204.86.rom --source src/select_input_buffer_00256a70.c
