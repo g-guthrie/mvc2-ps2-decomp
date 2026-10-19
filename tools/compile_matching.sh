@@ -14610,3 +14610,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_cu_2d5d30.c -c -la
 # Bounded direction selection and explicit byte-sized animation strength.
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_cu_2dac10.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/grok_cu_2dac10.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_cu_2dac10.o" private/SLUS_204.86.rom --source src/grok_cu_2dac10.c
+
+# Native velocity constant; avoid an address-taken integer pun temporary.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_cu_2db270.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/grok_cu_2db270.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_cu_2db270.o" private/SLUS_204.86.rom --source src/grok_cu_2db270.c

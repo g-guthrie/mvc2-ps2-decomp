@@ -12197,7 +12197,7 @@ func_002DB060,0x002DB060,0x74,0x002DB0D4,code,spimdisasm-explicit-size-before-fi
 func_002DB0E0,0x002DB0E0,0x48,0x002DB128,code,spimdisasm-explicit-size-before-first-data
 func_002DB130,0x002DB130,0x11C,0x002DB24C,code,typed-callback-table-entry
 func_002DB250,0x002DB250,0x20,0x002DB270,code,matching-c-head-split
-residual_002DB270,0x002DB270,0x104,0x002DB374,assembly_residual,verified-boundary-after-matching-head
+func_002DB270,0x002DB270,0x104,0x002DB374,code,exact-complete-native-entry
 func_002DB380,0x002DB380,0xFC,0x002DB47C,code,typed-callback-table-entry
 func_002DB480,0x002DB480,0x58,0x002DB4D8,code,spimdisasm-explicit-size-before-first-data
 func_002DB4E0,0x002DB4E0,0xA8,0x002DB588,code,spimdisasm-explicit-size-before-first-data
