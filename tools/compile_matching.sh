@@ -11868,3 +11868,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_nope_1b2e80.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_nope_1b2e80.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_nope_1b2e80.o" private/SLUS_204.86.rom --source src/grok_nope_1b2e80.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_nope_1b36b0.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_nope_1b36b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_nope_1b36b0.o" private/SLUS_204.86.rom --source src/grok_nope_1b36b0.c
