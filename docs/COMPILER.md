@@ -609,3 +609,21 @@ stored directly. The shared 64-byte runtime-object layout supplies the
 length at offset 0x14 and sector count at offset 0x30. No instruction
 rewriting or assembly barriers are used. The normal matching build includes
 the preprocessing, compiler option, assembly, and full-function verifier.
+
+`finish_runtime_entry_0040D8F8.c` uses EE GCC 2.96 `-O2 -G0` with
+`-fno-optimize-sibling-calls`. Its complete 340-byte body releases the active
+object, preserves the first 39 bytes of the current filename in the aligned
+40-byte temporary buffer, advances the signed ring index, and optionally
+requeues the captured arguments. The compiler's ordinary builtin `memcpy`
+expansion reproduces the unaligned doubleword and aligned word/halfword/byte
+copy. The buffer alignment follows its actual 0x006320C0 address; neither
+buffer data nor the still-unmatched enqueue routine earns new credit.
+
+`config/readonly_sections.csv` can declare an exact compiler-generated
+readonly section by source, section name, retail address, and size. Both the
+function verifier and hybrid extractor validate the entire section before
+using its base for anonymous relocations. Jump-table relocations must resolve
+inside a whole selected function, and every resolved constant byte must match
+retail. Partial, writable, ambiguous, changed, and out-of-range sections are
+rejected. These anchors supply relocation evidence without adding data credit;
+the normal data catalog remains the authority for compiled data replacements.

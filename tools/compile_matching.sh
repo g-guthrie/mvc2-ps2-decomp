@@ -11768,3 +11768,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/compile_ee96.py "$BUILD/close_runtime_directory_0040C578.i" "$BUILD/close_runtime_directory_0040C578.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/close_runtime_directory_0040C578.o" "$BUILD/close_runtime_directory_0040C578.s"
 "$PYTHON" tools/verify_object.py "$BUILD/close_runtime_directory_0040C578.o" private/SLUS_204.86.rom --source src/close_runtime_directory_0040C578.c
+
+"$WIBO" "$SNCPP" -P src/finish_runtime_entry_0040D8F8.c "$BUILD/finish_runtime_entry_0040D8F8.i"
+"$PYTHON" tools/compile_ee96.py --extra-flags=-fno-optimize-sibling-calls "$BUILD/finish_runtime_entry_0040D8F8.i" "$BUILD/finish_runtime_entry_0040D8F8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/finish_runtime_entry_0040D8F8.o" "$BUILD/finish_runtime_entry_0040D8F8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/finish_runtime_entry_0040D8F8.o" private/SLUS_204.86.rom --source src/finish_runtime_entry_0040D8F8.c
