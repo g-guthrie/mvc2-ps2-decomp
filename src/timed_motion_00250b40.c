@@ -43,3 +43,36 @@ void func_00250B40(u8 *p, u8 *context)
         }
     }
 }
+
+/* Unary callback: jtbl_004533B0 slot 3, selected by func_002515F0. */
+void func_00251810(u8 *p)
+{
+    p[0x40C]=2;
+    p[0x33C]=5;
+    func_00175700(p);
+    F(p,0x34)+=F(p,0x5C);
+    F(p,0x5C)+=F(p,0x68);
+    F(p,0x38)+=F(p,0x60);
+    F(p,0x60)+=F(p,0x6C);
+    if(--*(s16 *)(p+0x1C)==0) {
+        p[0x40D]=0;
+        p[0x40C]=0;
+        p[0x33B]=0;
+        p[0x33C]=0;
+        p[7]++;
+        F(p,0x5C)=p[0x1E6] ? 5.0f : -5.0f;
+        F(p,0x68)=p[0x1E6] ? -0.0520833320915699f : 0.0520833320915699f;
+        *(u32 *)(p+0x60)=0xC0CDB6DB;
+        *(u32 *)(p+0x6C)=0xBF4DB6DB;
+        reset_action(p,0x3F);
+        func_001757E0(p,22,3);
+        return;
+    }
+    if(*(s8 *)(p+0x1B2)) {
+        if(--p[0x22]==0) {
+            p[0x22]=1;
+            if(--*(s16 *)(p+0x1E)==0) {*(s16 *)(p+0x1C)=1;return;}
+            reset_action(p,0x3E);
+        }
+    }
+}
