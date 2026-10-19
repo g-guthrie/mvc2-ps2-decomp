@@ -81,7 +81,7 @@ extern void func_0040C6D0(s32 *, s32, s32, s32);
 typedef struct { u8 pad0; s8 f1; s8 f2; u8 pad3[0x25]; s32 f28; s32 f2c; s32 f30; s32 f34; } O;
 extern u8 D_004BE2F8[];
 extern void func_0040D5A0(void *);
-extern void func_00400740(void);
+extern void func_00400740(s8 *);
 extern void func_004005F8(s32);
 extern void func_0040CF98(O *);
 void func_0040D040(O *o) {
@@ -93,7 +93,7 @@ void func_0040D040(O *o) {
         o->f1 = 0;
         if (o->f28 != 0) {
             if (o->f2 == 1) {
-                func_00400740();
+                func_00400740((s8 *)o->f28);
                 o->f2 = 0;
             }
             func_004005F8(o->f28);
@@ -111,6 +111,7 @@ extern s32 func_001209B8(FL *, const char *, void *);
 s32 func_0011F938(char *buf, const char *fmt, ...) {
     __builtin_va_list ap;
     FL f;
+    s32 written;
     __builtin_stdarg_start(ap, fmt);
     f.flags = 0x208;
     f.p = (u8 *)buf;
@@ -118,6 +119,7 @@ s32 func_0011F938(char *buf, const char *fmt, ...) {
     f.w = 0x7FFFFFFF;
     f.size = 0x7FFFFFFF;
     f.data = D_0043B6F8;
-    func_001209B8(&f, fmt, ap);
+    written = func_001209B8(&f, fmt, ap);
     *f.p = 0;
+    return written;
 }
