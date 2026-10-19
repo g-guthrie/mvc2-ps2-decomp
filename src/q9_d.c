@@ -526,6 +526,41 @@ void func_001E97C0(u8 *p) {
     func_001757E0(p, p[0x169], p[0x168]);
 }
 
+extern void func_001E3710(u8 *, s32);
+extern int func_001757E0(u8 *, s32, s32);
+
+void func_001E98F0(u8 *p) {
+    p[0x169] = 7;
+    switch (p[0x1FC]) {
+    case 0:
+        p[0x168] = 0;
+        p[0x1B5] = 6;
+        func_001E3710(p, 0x14);
+        *(s32 **)(p + 0x408) = &D_004BFAF8;
+        p[0x1BB] = 0;
+        break;
+    case 1:
+        p[0x168] = 1;
+        p[0x1B5] = 7;
+        func_001E3710(p, 0x15);
+        *(s32 **)(p + 0x408) = &D_004BFAFC;
+        p[0x1BB] = 1;
+        break;
+    case 2:
+        p[0x168] = 2;
+        p[0x1B5] = 8;
+        func_001E3710(p, 0x16);
+        *(s32 **)(p + 0x408) = &D_004BFB00;
+        p[0x1BB] = 2;
+        break;
+    }
+    p[0x1B5] = *(volatile u8 *)(p + 0x1B5);
+    p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+    *(u32 *)(p + 0x1D8) = 0;
+    D_004C2794->h7c[p[2]]++;
+    func_001757E0(p, 9, p[0x168]);
+}
+
 
 
 void func_00182970(u8 *p, u8 *q, u8 *r) {
