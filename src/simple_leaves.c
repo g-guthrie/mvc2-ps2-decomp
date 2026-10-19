@@ -139,7 +139,7 @@ void func_00198E00(void) {}
 
 void func_00199390(void) {}
 
-void func_0019AE90(void) {}
+void func_0019AE90(u8 *p, u8 *q) {}
 
 void func_0019D510(void) {}
 
