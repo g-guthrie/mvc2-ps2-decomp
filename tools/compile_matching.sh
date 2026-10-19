@@ -11005,6 +11005,10 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="-msoft-float" "$BUILD/fp_bit_pack_double_00119118.i" "$BUILD/fp_bit_pack_double_00119118.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/fp_bit_pack_double_00119118.o" "$BUILD/fp_bit_pack_double_00119118.s"
 "$PYTHON" tools/verify_object.py "$BUILD/fp_bit_pack_double_00119118.o" private/SLUS_204.86.rom --source src/fp_bit_pack_double_00119118.c
+"$WIBO" "$SNCPP" -P src/fp_bit_divide_double_00119858.c "$BUILD/fp_bit_divide_double_00119858.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="-msoft-float" "$BUILD/fp_bit_divide_double_00119858.i" "$BUILD/fp_bit_divide_double_00119858.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/fp_bit_divide_double_00119858.o" "$BUILD/fp_bit_divide_double_00119858.s"
+"$PYTHON" tools/verify_object.py "$BUILD/fp_bit_divide_double_00119858.o" private/SLUS_204.86.rom --source src/fp_bit_divide_double_00119858.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/w1911_b.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/w1911_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w1911_b.o" private/SLUS_204.86.rom --source src/w1911_b.c

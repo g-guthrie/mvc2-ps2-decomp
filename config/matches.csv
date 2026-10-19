@@ -15676,3 +15676,4 @@ func_003BC2C0,0x003BC2C0,0x60,src/independent_state_entry_003BC2C0.c,complete
 func_001195D0,0x001195D0,0x284,src/fp_bit_multiply_001195D0.c,complete
 func_00119118,0x00119118,0xD8,src/fp_bit_pack_double_00119118.c,complete
 func_0040E520,0x0040E520,0x348,src/create_decoder_group_0040E520.c,complete
+func_00119858,0x00119858,0x140,src/fp_bit_divide_double_00119858.c,complete
