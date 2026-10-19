@@ -1,0 +1,7 @@
+name,address,size,source,compiler,flags,native_entry_evidence
+func_0031FC50,0x0031FC50,0x204,src/toggle_full_motion_0021a7a0.c,MWCCPS2,"-O3 -Op -sdatathreshold 8 -i src",jtbl_0045DC28[1]
+func_0031E770,0x0031E770,0x1D8,src/launch_motion_002192b0.c,MWCCPS2,-O3 -Op -sdatathreshold 0,0031E064 / 0031E364 / 0031E484 direct JAL
+func_0031FA10,0x0031FA10,0xDC,src/grok_sc_0021a560.c,MWCCPS2,-O3 -sdatathreshold 8,jtbl_0045DC38[0]
+func_0031D2D0,0x0031D2D0,0xA8,src/grok_y3_217df0.c,MWCCPS2,-O3 -Op,jtbl_0045DB30[0]
+func_003D4AD0,0x003D4AD0,0x94,src/m3i.c,MWCCPS2,"-O3,p -sdatathreshold 0",003D4F70 / 003D4F80 direct JAL
+func_002E15C0,0x002E15C0,0x104,src/grok_cu_2e15c0.c,MWCCPS2,-O3 -sdatathreshold 8,0045AFE0 / 0045AFEC callback pointers

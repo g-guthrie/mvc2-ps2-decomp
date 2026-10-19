@@ -14590,3 +14590,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     -o "$BUILD/grok_zw_3c3720.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_zw_3c3720.o" \
     private/SLUS_204.86.rom --source src/grok_zw_3c3720.c
+
+# Actor command selection; all source operations and complete relocated body match.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_cu_2e15c0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/grok_cu_2e15c0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_cu_2e15c0.o" private/SLUS_204.86.rom --source src/grok_cu_2e15c0.c

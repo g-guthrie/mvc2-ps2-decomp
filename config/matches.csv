@@ -16723,3 +16723,9 @@ residual_003C3720,0x003C3720,0x110,src/grok_zw_3c3720.c,complete
 residual_003C46D0,0x003C46D0,0x104,src/grok_z5_3c46d0.c,complete
 residual_003C7050,0x003C7050,0xE0,src/grok_z5_3c7050.c,complete
 residual_003C71D0,0x003C71D0,0xDC,src/grok_z5_3c71d0.c,complete
+func_0031FC50,0x0031FC50,0x204,src/toggle_full_motion_0021a7a0.c,complete
+func_0031E770,0x0031E770,0x1D8,src/launch_motion_002192b0.c,complete
+func_0031FA10,0x0031FA10,0xDC,src/grok_sc_0021a560.c,complete
+func_0031D2D0,0x0031D2D0,0xA8,src/grok_y3_217df0.c,complete
+func_003D4AD0,0x003D4AD0,0x94,src/m3i.c,complete
+func_002E15C0,0x002E15C0,0x104,src/grok_cu_2e15c0.c,complete

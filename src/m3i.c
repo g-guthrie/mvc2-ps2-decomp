@@ -24,3 +24,15 @@ void func_00148D40(u8 *p, s32 idx, s32 n) {
         e++;
     }
 }
+
+extern Ent D_004B91D0[];
+
+/* Three-argument native calls at 003D4F70 and 003D4F80. */
+void func_003D4AD0(u8 *p, s32 idx, s32 n) {
+    Ent *e = &D_004B91D0[idx];
+    s32 i;
+    for (i = 0; i < n; i++) {
+        func_003D7350(e->a + *(s8 *)(p + 1) * 0x35, e->b, e->c, e->d);
+        e++;
+    }
+}
