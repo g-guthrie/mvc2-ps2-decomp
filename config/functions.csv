@@ -13338,10 +13338,11 @@ gap_00303434,0x00303434,0xC,0x00303440,padding,verified-alignment-padding
 func_00303440,0x00303440,0x5C,0x0030349C,code,independent-callback-entry-table-prologue-return
 func_003034A0,0x003034A0,0x3C,0x003034DC,code,spimdisasm-explicit-size-before-first-data
 func_003034E0,0x003034E0,0x20,0x00303500,code,matching-c-head-split
-residual_00303500,0x00303500,0xC8,0x003035C8,assembly_residual,verified-boundary-after-matching-head
+func_00303500,0x00303500,0xC8,0x003035C8,code,independent-callback-entry-table-prologue-return
 func_003035D0,0x003035D0,0x70,0x00303640,code,spimdisasm-explicit-size-before-first-data
 func_00303640,0x00303640,0x1C,0x0030365C,code,matching-c-head-split
-residual_0030365C,0x0030365C,0xB8,0x00303714,assembly_residual,verified-boundary-after-matching-head
+gap_0030365C,0x0030365C,0x4,0x00303660,padding,verified-alignment-padding
+func_00303660,0x00303660,0xB4,0x00303714,code,independent-callback-entry-table-prologue-return
 func_00303720,0x00303720,0x80,0x003037A0,code,spimdisasm-explicit-size-before-first-data
 func_003037A0,0x003037A0,0x1C,0x003037BC,code,matching-c-head-split
 residual_003037BC,0x003037BC,0x10C,0x003038C8,assembly_residual,verified-boundary-after-matching-head
@@ -13364,7 +13365,7 @@ func_00303F20,0x00303F20,0xC4,0x00303FE4,code,independent-callback-entry-table-p
 func_00303FF0,0x00303FF0,0xB8,0x003040A8,code,spimdisasm-explicit-size-before-first-data
 func_003040B0,0x003040B0,0x3C,0x003040EC,code,spimdisasm-explicit-size-before-first-data
 func_003040F0,0x003040F0,0x20,0x00304110,code,matching-c-head-split
-residual_00304110,0x00304110,0xA0,0x003041B0,assembly_residual,verified-boundary-after-matching-head
+func_00304110,0x00304110,0xA0,0x003041B0,code,independent-callback-entry-table-prologue-return
 func_003041B0,0x003041B0,0x60,0x00304210,code,spimdisasm-explicit-size-before-first-data
 func_00304210,0x00304210,0x1C,0x0030422C,code,matching-c-head-split
 residual_0030422C,0x0030422C,0xD4,0x00304300,assembly_residual,verified-boundary-after-matching-head

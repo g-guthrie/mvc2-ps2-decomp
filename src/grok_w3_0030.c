@@ -240,7 +240,7 @@ void func_003018E0(u8 *p) {
     }
 }
 
-void func_003041B0(u8 *p) {
+void func_003041B0(u8 *p, void *context) {
     if ((s8)func_00175700(p) < 0)
         func_001843A0(p);
     else if (*(s8 *)(p + 0x151)) {

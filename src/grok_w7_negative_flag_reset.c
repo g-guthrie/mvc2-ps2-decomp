@@ -5,7 +5,7 @@ extern int func_00175700(u8 *);
 extern void func_001843A0(u8 *);
 extern void func_003B1EF0(u8 *, u8, u8);
 
-void func_003035D0(u8 *p)
+void func_003035D0(u8 *p, void *context)
 {
     if ((s8)func_00175700(p) < 0) {
         func_001843A0(p);
@@ -18,7 +18,7 @@ void func_003035D0(u8 *p)
     }
 }
 
-void func_00303720(u8 *p)
+void func_00303720(u8 *p, void *context)
 {
     s8 flags;
 

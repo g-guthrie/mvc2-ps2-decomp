@@ -2,10 +2,10 @@
 /* Consumer: src/composite_gp_dispatch_heads.c (jtbl_004C14D0). */
 #include "mvc2_state_callbacks.h"
 
-extern void func_00303500(u8 *);
-extern void func_003035D0(u8 *);
+extern void func_00303500(u8 *, void *);
+extern void func_003035D0(u8 *, void *);
 
-const Mvc2StateCallback jtbl_004C14D0[2] = {
+const Mvc2OwnerStateCallback jtbl_004C14D0[2] = {
     func_00303500,
     func_003035D0,
 };
