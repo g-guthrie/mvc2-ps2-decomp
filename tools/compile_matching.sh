@@ -12190,3 +12190,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/state_init_002f4050.o"
 "$PYTHON" tools/verify_object.py "$BUILD/state_init_002f4050.o" \
     private/SLUS_204.86.rom --source src/state_init_002f4050.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/launch_motion_002192b0.c -c -lang c -O3 -Op -sdatathreshold 0 \
+    -o "$BUILD/launch_motion_002192b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/launch_motion_002192b0.o" \
+    private/SLUS_204.86.rom --source src/launch_motion_002192b0.c

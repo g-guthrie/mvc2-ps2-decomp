@@ -1,0 +1,25 @@
+typedef unsigned char u8;
+typedef unsigned int u32;
+typedef signed short s16;
+
+extern float func_00417500(u32);
+extern float func_00417440(u32);
+
+void func_002192B0(u8 *p)
+{
+    s16 angle;
+
+    *(u32 *)(p + 0x5C) = 0;
+    *(u32 *)(p + 0x60) = 0;
+    *(u32 *)(p + 0x68) = 0;
+    *(u32 *)(p + 0x6C) = 0;
+    angle = (s16)(((40 - p[0x22] * 4) & 31) << 11);
+    *(float *)(p + 0x5C) = 1.6666666269302368f *
+        (166400.0f * (1000.0f * func_00417500(angle)) / 100000.0f / 256.0f);
+    *(float *)(p + 0x60) = 2.142857074737549f *
+        (166400.0f * (1000.0f * func_00417440(angle)) / 125000.0f / 256.0f);
+    *(float *)(p + 0x68) = -(1.6666666269302368f *
+        (307200.0f * (1000.0f * func_00417500(angle)) / 100000.0f / 256.0f)) / 256.0f;
+    *(float *)(p + 0x6C) = -(2.142857074737549f *
+        (307200.0f * (1000.0f * func_00417440(angle)) / 125000.0f / 256.0f)) / 256.0f;
+}
