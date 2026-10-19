@@ -12332,3 +12332,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/early_motion_initializers.o"
 "$PYTHON" tools/verify_object.py "$BUILD/early_motion_initializers.o" \
     private/SLUS_204.86.rom --source src/early_motion_initializers.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/side_shift_0020a260.c -c -lang c -O3 -Op -sdatathreshold 0 \
+    -o "$BUILD/side_shift_0020a260.o"
+"$PYTHON" tools/verify_object.py "$BUILD/side_shift_0020a260.o" \
+    private/SLUS_204.86.rom --source src/side_shift_0020a260.c
