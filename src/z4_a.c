@@ -473,3 +473,31 @@ void func_00156650(V3 *v, s32 b, s32 flag, s32 c, s32 e)
         func_00156AD0(o, e);
     }
 }
+
+void func_00156520(V3 *v, s32 unused, s32 flag, s32 c, s32 e)
+{
+    extern u8 *func_003DA750(s32, s32, s32);
+    extern void func_00156750(void);
+    extern void func_001567A0(u8 *, s32);
+    extern void func_001568A0(u8 *, s32);
+    extern void func_001569C0(u8 *, s32);
+    extern void func_00156AD0(u8 *, s32);
+    extern void func_001550D0(V3 *, s32, s32, s32);
+    u8 *o;
+    if ((o = func_003DA750(0, e, 1)) != 0) {
+        D_004D1900[0] = D_004D1900[0] + 1;
+        o[0x13C] = 0;
+        *(void (**)(void))(o + 0x10) = func_00156750;
+        *(V3 *)(o + 0x34) = *v;
+        *(s32 *)(o + 0xD0) = 0x800181;
+        if (flag == 1) {
+            *(s32 *)(o + 0xD0) |= 0x10;
+            *(V3 *)(o + 0x50) = D_00444BA0[0];
+        }
+        func_001567A0(o, e);
+        func_001568A0(o, e);
+        func_001569C0(o, e);
+        func_00156AD0(o, e);
+        func_001550D0(v, flag, c, e);
+    }
+}

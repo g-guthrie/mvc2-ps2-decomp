@@ -14158,6 +14158,7 @@ func_0023CC40,0x0023CC40,0xF4,src/z4_a.c,complete
 func_003AE160,0x003AE160,0xF4,src/z4_a.c,complete
 func_00288EE0,0x00288EE0,0x100,src/z4_a.c,complete
 func_00156650,0x00156650,0x100,src/z4_a.c,complete
+func_00156520,0x00156520,0x124,src/z4_a.c,complete
 func_001B7E30,0x001B7E30,0xE4,src/z4_b.c,complete
 func_00235270,0x00235270,0xE8,src/z4_c.c,complete
 func_00229800,0x00229800,0x104,src/z4_c.c,complete
