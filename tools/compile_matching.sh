@@ -14371,3 +14371,30 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_zt_2061a0.c -c -la
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_zt_207340.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/grok_zt_207340.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_zt_207340.o" private/SLUS_204.86.rom --source src/grok_zt_207340.c
+
+# Exact C recoveries in the 2026-10-19 0x28-0x3D frontier.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_u3_30a_dispatches.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/grok_u3_30a_dispatches.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_u3_30a_dispatches.o" \
+    private/SLUS_204.86.rom --source src/grok_u3_30a_dispatches.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_u3_316a50.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_u3_316a50.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_u3_316a50.o" \
+    private/SLUS_204.86.rom --source src/grok_u3_316a50.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_u3_31a6_dispatches.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/grok_u3_31a6_dispatches.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_u3_31a6_dispatches.o" \
+    private/SLUS_204.86.rom --source src/grok_u3_31a6_dispatches.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_u3_397fa0.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/grok_u3_397fa0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_u3_397fa0.o" \
+    private/SLUS_204.86.rom --source src/grok_u3_397fa0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_u3_3c_owner_dispatchers.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/grok_u3_3c_owner_dispatchers.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_u3_3c_owner_dispatchers.o" \
+    private/SLUS_204.86.rom --source src/grok_u3_3c_owner_dispatchers.c
