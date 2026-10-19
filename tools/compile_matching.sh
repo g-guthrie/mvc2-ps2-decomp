@@ -11908,6 +11908,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_nopb_777e0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/grok_nopb_777e0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_nopb_777e0.o" \
     private/SLUS_204.86.rom --source src/grok_nopb_777e0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_nope_1b0b80.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/grok_nope_1b0b80.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_nope_1b0b80.o" private/SLUS_204.86.rom --source src/grok_nope_1b0b80.c
 
@@ -11922,6 +11924,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_nope_1b36b0.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_nope_1b36b0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_nope_1b36b0.o" private/SLUS_204.86.rom --source src/grok_nope_1b36b0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_n_fde20.c -c -lang c -O3 -Op -o "$BUILD/grok_n_fde20.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_n_fde20.o" private/SLUS_204.86.rom --source src/grok_n_fde20.c
 
@@ -12406,6 +12410,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/select_character_action_00255950.o"
 "$PYTHON" tools/verify_object.py "$BUILD/select_character_action_00255950.o" \
     private/SLUS_204.86.rom --source src/select_character_action_00255950.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_state_callback_002833d0.c -c -lang c -O3 -Op -sdatathreshold 8 \
     -o "$BUILD/owner_state_callback_002833d0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_state_callback_002833d0.o" \
@@ -12416,6 +12422,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/select_ground_action_00274060.o"
 "$PYTHON" tools/verify_object.py "$BUILD/select_ground_action_00274060.o" \
     private/SLUS_204.86.rom --source src/select_ground_action_00274060.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_state_callback_002B9900.c -c -lang c -O3 -Op -sdatathreshold 8 \
     -o "$BUILD/owner_state_callback_002B9900.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_state_callback_002B9900.o" \
@@ -12432,6 +12440,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/angle_velocity_00237d40.o"
 "$PYTHON" tools/verify_object.py "$BUILD/angle_velocity_00237d40.o" \
     private/SLUS_204.86.rom --source src/angle_velocity_00237d40.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_state_callback_002D5190.c -c -lang c -O3 -Op -sdatathreshold 8 \
     -o "$BUILD/owner_state_callback_002D5190.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_state_callback_002D5190.o" \
