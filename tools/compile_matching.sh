@@ -11515,3 +11515,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/independent_state_entries_003B0540_003B0D90.o"
 "$PYTHON" tools/verify_object.py "$BUILD/independent_state_entries_003B0540_003B0D90.o" \
     private/SLUS_204.86.rom --source src/independent_state_entries_003B0540_003B0D90.c
+
+"$WIBO" "$SNCPP" -P src/create_decoder_group_0040E520.c "$BUILD/create_decoder_group_0040E520.i"
+"$PYTHON" tools/compile_ee96.py "$BUILD/create_decoder_group_0040E520.i" "$BUILD/create_decoder_group_0040E520.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/create_decoder_group_0040E520.o" "$BUILD/create_decoder_group_0040E520.s"
+"$PYTHON" tools/verify_object.py "$BUILD/create_decoder_group_0040E520.o" private/SLUS_204.86.rom --source src/create_decoder_group_0040E520.c
