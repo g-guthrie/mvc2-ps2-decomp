@@ -15904,3 +15904,5 @@ func_0024FAE0,0x0024FAE0,0xA4,src/initial_launches_0024fae0.c,complete
 func_00261DA0,0x00261DA0,0x28,src/initial_launches_0024fae0.c,complete
 func_00122340,0x00122340,0x54,src/string_stream_printf_00122340.c,complete
 func_0016A1F0,0x0016A1F0,0x1C,src/leaf_batch_a.c,complete
+func_0019A940,0x0019A940,0x2C,src/grok_w5_0019.c,complete
+func_0019A970,0x0019A970,0x44,src/grok_w5_0019.c,complete

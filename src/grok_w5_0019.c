@@ -35,7 +35,7 @@ extern void func_0019D5A0(void);
 extern void func_0019C870(void);
 extern void func_001754A0(u8 *, int, int);
 extern int func_00417A40(u8 *);
-extern void func_00175670(u8 *);
+extern s8 func_00175670(u8 *);
 extern int func_00175700(u8 *);
 extern void func_001975C0(u8 *, u8 *);
 extern void func_0019C470(u8 *);
@@ -189,5 +189,25 @@ void func_0019CCE0(u8 *p)
     if (!*(s8 *)(q + 0x151) || H(q, 360) != S(p, 28)) {
         p[4]++;
         p[0x13c] = 0;
+    }
+}
+
+
+typedef void (*OwnerHandler)(u8 *, void *);
+extern const u32 jtbl_0044A800[9];
+
+void func_0019A940(u8 *p)
+{
+    void *owner = *(void **)(p + 0x18);
+    p[0x24] = 8;
+    ((OwnerHandler)jtbl_0044A800[p[0x20]])(p, owner);
+}
+
+void func_0019A970(u8 *p, void *owner)
+{
+    s8 result = func_00175670(p);
+    if (result < 0) {
+        p[4]++;
+        p[0x13C] = 0;
     }
 }
