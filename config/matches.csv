@@ -11825,6 +11825,7 @@ func_0035ADE0,0x0035ADE0,0x5C,src/q1g.c,complete
 func_00417700,0x00417700,0x68,src/q1h.c,complete
 func_00299AF0,0x00299AF0,0x5C,src/q1d.c,complete
 func_002D0070,0x002D0070,0x5C,src/q1d.c,complete
+func_002D00D0,0x002D00D0,0x5C,src/q1d.c,complete
 func_0030A620,0x0030A620,0x5C,src/q1d.c,complete
 func_001A45B0,0x001A45B0,0x64,src/n6.c,complete
 func_00295060,0x00295060,0x6C,src/n6.c,complete
