@@ -1,3 +1,4 @@
+data_animation_commands_0044C890 = 0x0044C890;
 data_animation_samples_0044A410 = 0x0044A410;
 data_callback_00488314 = 0x00488314;
 data_callback_004891AC = 0x004891AC;
@@ -2339,7 +2340,6 @@ data_u32_0044C470 = 0x0044C470;
 data_u32_0044C480 = 0x0044C480;
 data_u32_0044C530 = 0x0044C530;
 data_u32_0044C874 = 0x0044C874;
-data_u32_0044C890 = 0x0044C890;
 data_u32_0044CA70 = 0x0044CA70;
 data_u32_0044CB44 = 0x0044CB44;
 data_u32_0044CB54 = 0x0044CB54;
