@@ -12525,7 +12525,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     private/SLUS_204.86.rom --source src/timed_motion_00250b40.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/jump_motion_002357f0.c -c -lang c -O3 -Op -sdatathreshold 8 -i src \    -o "$BUILD/jump_motion_002357f0.o"
+    src/jump_motion_002357f0.c -c -lang c -O3 -Op -sdatathreshold 8 -i src \
+    -o "$BUILD/jump_motion_002357f0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/jump_motion_002357f0.o" \
     private/SLUS_204.86.rom --source src/jump_motion_002357f0.c
 

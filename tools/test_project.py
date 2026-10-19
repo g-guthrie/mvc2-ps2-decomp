@@ -34,6 +34,27 @@ class ProjectTest(unittest.TestCase):
             ['src/late_owner.c -c -lang c \\', 'for unit in later_owner; do'],
         )
 
+    def test_compile_continuations_cannot_escape_spaces_before_flags(self):
+        from tools.check_build_coverage import malformed_compile_continuations
+
+        valid = (
+            'MWCIncludes="$MWCCPS2" "$WIBO" "$MWCCPS2" \\\n'
+            '    src/motion.c -c -lang c -i src \\\n'
+            '    -o "$BUILD/motion.o"\n'
+        )
+        malformed = (
+            'MWCIncludes="$MWCCPS2" "$WIBO" "$MWCCPS2" \\\n'
+            '    src/motion.c -c -lang c -i src \\    -o "$BUILD/motion.o"\n'
+        )
+        self.assertEqual(
+            malformed_compile_continuations(valid),
+            [],
+        )
+        self.assertEqual(
+            malformed_compile_continuations(malformed),
+            [malformed.splitlines()[1].strip()],
+        )
+
     def test_orphan_object_verification_heads_are_rejected(self):
         from tools.check_build_coverage import detached_object_verification_commands
 

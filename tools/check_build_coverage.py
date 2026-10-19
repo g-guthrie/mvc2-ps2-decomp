@@ -63,6 +63,17 @@ def detached_source_commands(script: str) -> list[str]:
     ]
 
 
+def malformed_compile_continuations(script: str) -> list[str]:
+    """Catch escaped spaces in compiler argv before flags or other arguments."""
+    return [
+        line.strip()
+        for line in script.splitlines()
+        if not line.lstrip().startswith("#")
+        and "-c" in line
+        and re.search(r"\\[ \t]+\S", line)
+    ]
+
+
 def detached_object_verification_commands(script: str) -> list[str]:
     """Catch object/ROM verification arguments that lost the verifier prefix."""
     lines = script.splitlines()
@@ -116,6 +127,9 @@ def main() -> int:
     detached = detached_source_commands(script)
     for command in detached:
         print(f"source command missing compiler prefix: {command}")
+    malformed_continuations = malformed_compile_continuations(script)
+    for command in malformed_continuations:
+        print(f"shell continuation has text after its backslash: {command}")
     detached_verification = detached_object_verification_commands(script)
     for command in detached_verification:
         print(f"object verification command missing verifier prefix: {command}")
@@ -130,12 +144,14 @@ def main() -> int:
         or uncredited
         or orphans
         or detached
+        or malformed_continuations
         or detached_verification
         or premature_data_build
     ):
         print(
             f"FAIL: {len(uncompiled)} uncompiled, {len(uncredited)} uncredited, "
             f"{len(orphans)} unregistered bodies, {len(detached)} detached compile commands, "
+            f"{len(malformed_continuations)} malformed shell continuations, "
             f"{len(detached_verification)} detached object verification commands, "
             f"{len(premature_data_build)} code compiles after the data build"
         )
