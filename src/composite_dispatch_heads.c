@@ -3388,6 +3388,17 @@ void func_00306AB0(u8 *p) {
     jtbl_0045CC30[p[0x20]](p);
 }
 
+extern int func_003D92F0(u8 *p);
+extern void func_001843A0(u8 *p);
+extern int func_00175700(u8 *p);
+
+void func_00306AE0(u8 *p) {
+    if (func_003D92F0(p) != 0)
+        func_001843A0(p);
+    else
+        func_00175700(p);
+}
+
 void func_00306B30(u8 *p) { jtbl_0045CC50[p[509]](p); }
 
 void func_00308100(u8 *p) { jtbl_0045CCE8[p[6]](p); }
