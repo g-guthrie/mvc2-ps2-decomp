@@ -1168,7 +1168,8 @@ func_0013B4E0,0x0013B4E0,0x78,0x0013B558,code,spimdisasm-explicit-size-before-fi
 func_0013B560,0x0013B560,0x6C,0x0013B5CC,code,spimdisasm-explicit-size-before-first-data
 func_0013B5D0,0x0013B5D0,0x8,0x0013B5D8,code,spimdisasm-explicit-size-before-first-data
 func_0013B5E0,0x0013B5E0,0x8,0x0013B5E8,code,spimdisasm-explicit-size-before-first-data
-func_0013B5F0,0x0013B5F0,0xAC,0x0013B69C,code,spimdisasm-explicit-size-before-first-data
+func_0013B5F0,0x0013B5F0,0x24,0x0013B614,code,native-indirect-dispatch
+func_0013B620,0x0013B620,0x7C,0x0013B69C,code,native-table-callback
 func_0013B6A0,0x0013B6A0,0xC4,0x0013B764,code,spimdisasm-explicit-size-before-first-data
 func_0013B770,0x0013B770,0x5C,0x0013B7CC,code,spimdisasm-explicit-size-before-first-data
 func_0013B7D0,0x0013B7D0,0x268,0x0013BA38,code,spimdisasm-explicit-size-before-first-data

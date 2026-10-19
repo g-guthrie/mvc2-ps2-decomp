@@ -88,6 +88,7 @@ extern void func_0013B6A0();
 extern void func_0013B770();
 typedef void (*Mvc2StateCallback)(u8 *);
 extern const Mvc2StateCallback jtbl_00440330[];
+extern const Mvc2StateCallback jtbl_00440350[];
 void func_0013B4A0(u8 *p) {
     u8 *state = *(u8 **)(p + 0x18);
     jtbl_00440330[state[4]](p);
@@ -95,6 +96,11 @@ void func_0013B4A0(u8 *p) {
 
 void func_0013B4D0(u8 *p) {
     p[0x13C] = 0;
+}
+
+void func_0013B5F0(u8 *p) {
+    u8 *state = *(u8 **)(p + 0x18);
+    jtbl_00440350[state[4]](p);
 }
 
 void func_0013B4E0(u8 *p) {

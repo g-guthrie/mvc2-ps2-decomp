@@ -10516,6 +10516,7 @@ func_00166410,0x00166410,0x74,src/g8.c,complete
 func_0013B4E0,0x0013B4E0,0x78,src/g8.c,complete
 func_0013B4A0,0x0013B4A0,0x24,src/g8.c,complete
 func_0013B4D0,0x0013B4D0,0x8,src/g8.c,complete
+func_0013B5F0,0x0013B5F0,0x24,src/g8.c,complete
 func_0018E260,0x0018E260,0x7C,src/g8.c,complete
 func_002D7E00,0x002D7E00,0x7C,src/g8.c,complete
 func_003A53E0,0x003A53E0,0x7C,src/g8.c,complete
