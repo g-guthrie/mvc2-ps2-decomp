@@ -11148,3 +11148,139 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/independent_state_entry_0023E3E0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/independent_state_entry_0023E3E0.o" private/SLUS_204.86.rom \
     --source src/independent_state_entry_0023E3E0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_002467B0.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/state_entries_002467B0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_002467B0.o" private/SLUS_204.86.rom --source src/state_entries_002467B0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_0025AF60.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/state_entries_0025AF60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_0025AF60.o" private/SLUS_204.86.rom --source src/state_entries_0025AF60.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_0021B6B0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/state_entries_0021B6B0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_0021B6B0.o" private/SLUS_204.86.rom --source src/state_entries_0021B6B0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_002047C0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/state_entries_002047C0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_002047C0.o" private/SLUS_204.86.rom --source src/state_entries_002047C0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_00247A30.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/state_entries_00247A30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_00247A30.o" private/SLUS_204.86.rom --source src/state_entries_00247A30.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_0025F580.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/state_entries_0025F580.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_0025F580.o" private/SLUS_204.86.rom --source src/state_entries_0025F580.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_0020A020.c -c -lang c -O3 -Op -o "$BUILD/state_entries_0020A020.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_0020A020.o" private/SLUS_204.86.rom --source src/state_entries_0020A020.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_00211B70.c -c -lang c -O3 -Op -o "$BUILD/state_entries_00211B70.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_00211B70.o" private/SLUS_204.86.rom --source src/state_entries_00211B70.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_002138D0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/state_entries_002138D0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_002138D0.o" private/SLUS_204.86.rom --source src/state_entries_002138D0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_0021E820.c -c -lang c -O3 -Op -o "$BUILD/state_entries_0021E820.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_0021E820.o" private/SLUS_204.86.rom --source src/state_entries_0021E820.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_002D6CE0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/state_entries_002D6CE0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_002D6CE0.o" private/SLUS_204.86.rom --source src/state_entries_002D6CE0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_0022AA50.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/state_entries_0022AA50.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_0022AA50.o" private/SLUS_204.86.rom --source src/state_entries_0022AA50.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_0026D890.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/state_entries_0026D890.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_0026D890.o" private/SLUS_204.86.rom --source src/state_entries_0026D890.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_00299080.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/state_entries_00299080.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_00299080.o" private/SLUS_204.86.rom --source src/state_entries_00299080.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_0020B1B0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/state_entries_0020B1B0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_0020B1B0.o" private/SLUS_204.86.rom --source src/state_entries_0020B1B0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_002502D0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/state_entries_002502D0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_002502D0.o" private/SLUS_204.86.rom --source src/state_entries_002502D0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_00205680.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/state_entries_00205680.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_00205680.o" private/SLUS_204.86.rom --source src/state_entries_00205680.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_00212160.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/state_entries_00212160.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_00212160.o" private/SLUS_204.86.rom --source src/state_entries_00212160.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_00215820.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/state_entries_00215820.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_00215820.o" private/SLUS_204.86.rom --source src/state_entries_00215820.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_0021E9D0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/state_entries_0021E9D0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_0021E9D0.o" private/SLUS_204.86.rom --source src/state_entries_0021E9D0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_0023E640.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/state_entries_0023E640.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_0023E640.o" private/SLUS_204.86.rom --source src/state_entries_0023E640.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_00240F60.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/state_entries_00240F60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_00240F60.o" private/SLUS_204.86.rom --source src/state_entries_00240F60.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_002529E0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/state_entries_002529E0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_002529E0.o" private/SLUS_204.86.rom --source src/state_entries_002529E0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_00270DE0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/state_entries_00270DE0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_00270DE0.o" private/SLUS_204.86.rom --source src/state_entries_00270DE0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_00271C50.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/state_entries_00271C50.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_00271C50.o" private/SLUS_204.86.rom --source src/state_entries_00271C50.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_00275490.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/state_entries_00275490.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_00275490.o" private/SLUS_204.86.rom --source src/state_entries_00275490.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_0027EA20.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/state_entries_0027EA20.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_0027EA20.o" private/SLUS_204.86.rom --source src/state_entries_0027EA20.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_00288700.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/state_entries_00288700.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_00288700.o" private/SLUS_204.86.rom --source src/state_entries_00288700.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_00288DF0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/state_entries_00288DF0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_00288DF0.o" private/SLUS_204.86.rom --source src/state_entries_00288DF0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_0028D270.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/state_entries_0028D270.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_0028D270.o" private/SLUS_204.86.rom --source src/state_entries_0028D270.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_002945C0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/state_entries_002945C0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_002945C0.o" private/SLUS_204.86.rom --source src/state_entries_002945C0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_002A6EA0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/state_entries_002A6EA0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_002A6EA0.o" private/SLUS_204.86.rom --source src/state_entries_002A6EA0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_002ECDC0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/state_entries_002ECDC0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_002ECDC0.o" private/SLUS_204.86.rom --source src/state_entries_002ECDC0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_entries_00282720.c -c -lang c -O3 -Op -o "$BUILD/state_entries_00282720.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_entries_00282720.o" private/SLUS_204.86.rom --source src/state_entries_00282720.c
