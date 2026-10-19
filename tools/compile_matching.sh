@@ -12568,3 +12568,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/jump_table_motion_002763b0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/jump_table_motion_002763b0.o" \
     private/SLUS_204.86.rom --source src/jump_table_motion_002763b0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/landing_effect_0027e090.c -c -lang c -O3 -Op -sdatathreshold 8 -i src \
+    -o "$BUILD/landing_effect_0027e090.o"
+"$PYTHON" tools/verify_object.py "$BUILD/landing_effect_0027e090.o" \
+    private/SLUS_204.86.rom --source src/landing_effect_0027e090.c

@@ -9,13 +9,14 @@ void func_0019A3D0(u8 *owner,int parameter) {
   *(unsigned short *)(p+208)=*(unsigned short *)(owner+0x168);
  }
 }
-void func_001BFCA0(u8 *owner,int parameter) {
+u8 *func_001BFCA0(u8 *owner,int parameter) {
  u8 *p=func_003DA750(0,3,0);
  if(p) {
   *(void (**)(u8 *))(p+0x10)=func_001BFE80;*(u8 **)(p+0x18)=owner;
   p[0x20]=parameter;*(short *)(p+0x26)=6656;
   *(unsigned short *)(p+30)=*(unsigned short *)(owner+0x168);
  }
+ return p;
 }
 void func_003778A0(u8 *owner,int parameter) {
  u8 *p=func_003DA750(0,1,0);
