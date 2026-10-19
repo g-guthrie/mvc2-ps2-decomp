@@ -15569,3 +15569,13 @@ func_00110298,0x00110298,0xB8,src/sony29_n.c,complete
 func_00107DC8,0x00107DC8,0x8C,src/sony29_rpc_compatibility.c,complete
 func_00165720,0x00165720,0xE8,src/y7_l.c,complete
 func_0010FFB8,0x0010FFB8,0xB8,src/sony29_n.c,complete
+func_00319080,0x00319080,0x134,src/grok_n_19080.c,complete
+func_002A2800,0x002A2800,0xD4,src/grok_u24_a2800.c,complete
+func_001C6D00,0x001C6D00,0x120,src/grok_u1c_c6d00.c,complete
+func_00169850,0x00169850,0x70,src/grok_m_69850.c,complete
+func_001B4580,0x001B4580,0x6C,src/grok_z18_b4580.c,complete
+func_0041C460,0x0041C460,0x48,src/grok_z32_41c460.c,complete
+func_001516A0,0x001516A0,0x6C,src/grok_z11_516a0.c,complete
+func_001E4150,0x001E4150,0x54,src/grok_u18_e4150.c,complete
+func_003F0DB0,0x003F0DB0,0x40,src/grok_z32_f0db0.c,complete
+func_0013B010,0x0013B010,0x48,src/grok_m_3b010.c,complete
