@@ -688,3 +688,12 @@ input comes from `func_002FF2A0`, which sets A1 to `p + 0x2B8` at
 `func_002FEF40`; inner slot `0x0045C1AC` selects this callback. Both typed
 tables already retain that argument. The inverted less-or-equal test
 preserves the retail unordered floating-point path.
+
+`func_001D6D40` is a table callback with an unused second argument. Its
+verified dispatcher `func_001D6D10` loads the signed byte pointer from
+`p + 0x18`, copies its byte at offset `0x24`, then calls
+`jtbl_0044E600[p[0x20]](p, q)` at `0x001D6D34`. Retail slots `0x0044E600`,
+`0x0044E608`, and `0x0044E60C` point to `func_001D6D40`. The handler does not
+read its second argument, but the dispatcher passes the real pointer in A1. Both
+split functions compile exactly in `grok_w5_001d.c` under the unit's MWCCPS2 3.0.3 `-O3 -sdatathreshold 0`
+recipe, with a four-byte NOP gap between them.

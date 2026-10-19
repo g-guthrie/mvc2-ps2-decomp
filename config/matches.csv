@@ -15922,3 +15922,5 @@ func_002206A0,0x002206A0,0x104,src/table_motion_002206a0.c,complete
 func_00220E40,0x00220E40,0x104,src/table_motion_002206a0.c,complete
 func_00255950,0x00255950,0x684,src/select_character_action_00255950.c,complete
 func_002833D0,0x002833D0,0xA4,src/owner_state_callback_002833d0.c,complete
+func_001D6D10,0x001D6D10,0x2C,src/grok_w5_001d.c,complete
+func_001D6D40,0x001D6D40,0x3C,src/grok_w5_001d.c,complete
