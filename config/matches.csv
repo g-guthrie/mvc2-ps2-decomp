@@ -15896,3 +15896,4 @@ func_00120900,0x00120900,0xB4,src/newlib_sbprintf_00120900.c,complete
 func_0020A210,0x0020A210,0x20,src/side_shift_0020a260.c,complete
 func_0020A230,0x0020A230,0x24,src/side_shift_0020a260.c,complete
 func_0020A260,0x0020A260,0xB8,src/side_shift_0020a260.c,complete
+func_001209B8,0x001209B8,0x74,src/newlib_vfprintf_entry_001209B8.c,complete

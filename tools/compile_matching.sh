@@ -11027,6 +11027,10 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_sbprintf_00120900.i" "$BUILD/newlib_sbprintf_00120900.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_sbprintf_00120900.o" "$BUILD/newlib_sbprintf_00120900.s"
 "$PYTHON" tools/verify_object.py "$BUILD/newlib_sbprintf_00120900.o" private/SLUS_204.86.rom --source src/newlib_sbprintf_00120900.c
+"$WIBO" "$SNCPP" -P src/newlib_vfprintf_entry_001209B8.c "$BUILD/newlib_vfprintf_entry_001209B8.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_vfprintf_entry_001209B8.i" "$BUILD/newlib_vfprintf_entry_001209B8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_vfprintf_entry_001209B8.o" "$BUILD/newlib_vfprintf_entry_001209B8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_vfprintf_entry_001209B8.o" private/SLUS_204.86.rom --source src/newlib_vfprintf_entry_001209B8.c
 "$WIBO" "$SNCPP" -P src/newlib_fflush_0011B480.c "$BUILD/newlib_fflush_0011B480.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_fflush_0011B480.i" "$BUILD/newlib_fflush_0011B480.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_fflush_0011B480.o" "$BUILD/newlib_fflush_0011B480.s"
