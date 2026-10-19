@@ -12,3 +12,12 @@ void func_00315980(u8 *p)
         func_001DD8A0(p, 0xF, 0);
     }
 }
+
+void func_003163B0(u8 *p)
+{
+    func_00175700(p);
+    if ((s8)p[0x151] == 0) {
+        p[6]++;
+        func_001DD8A0(p, 0xF, 0);
+    }
+}

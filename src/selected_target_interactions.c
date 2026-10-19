@@ -32,3 +32,13 @@ int func_00295140(u8 *p) {
  p[0x20b]=0xC4; func_00185640(p,target);
  return 1;
 }
+extern u8 D_00459900[];
+extern u8 *func_001E7FD0(u8 *);
+int func_002C03B0(u8 *p) {
+ u8 *target;
+ if (!func_00189310(p,D_00459900,p+0x3D0)) return 0;
+ target=func_001E7FD0(p);
+ if (!target) return 0;
+ p[0x20b]=0xC3; func_00185640(p,target);
+ return 1;
+}

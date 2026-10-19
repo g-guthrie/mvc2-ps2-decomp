@@ -214,6 +214,7 @@ void func_00254250(u8 *p) { INIT_002541F0 }
 void func_0025BFF0(u8 *p) { INIT_0025BFF0 }
 void func_0025C050(u8 *p) { INIT_0025BFF0 }
 void func_00316B00(u8 *p) { INIT_0025BFF0 }
+void func_00316AA0(u8 *p) { INIT_0025BFF0 }
 
 #define INIT_00261FB0 \
     { \
@@ -406,6 +407,7 @@ void func_002FBC40(u8 *p) { INIT_002FBBE0 }
     }
 
 void func_003004C0(u8 *p) { INIT_003004C0 }
+void func_00300460(u8 *p) { INIT_003004C0 }
 
 #define INIT_003088B0 \
     { \
