@@ -12354,3 +12354,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/counter_effects_00206380.o"
 "$PYTHON" tools/verify_object.py "$BUILD/counter_effects_00206380.o" \
     private/SLUS_204.86.rom --source src/counter_effects_00206380.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initial_launches_0024fae0.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/initial_launches_0024fae0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initial_launches_0024fae0.o" \
+    private/SLUS_204.86.rom --source src/initial_launches_0024fae0.c

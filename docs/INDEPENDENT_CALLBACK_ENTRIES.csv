@@ -251,3 +251,4 @@ func_00238200,0x00238200,0x100,func_002381E0,jtbl_004C01E8,0x004C01E8,src/launch
 func_002001C0,0x002001C0,0xA8,func_00200190,jtbl_00450150,0x00450150,src/early_motion_initializers.c
 func_00202130,0x00202130,0xB8,func_00202110,jtbl_00450200,0x00450200,src/early_motion_initializers.c
 func_0020A260,0x0020A260,0xB8,func_0020A230,jtbl_004506F0,0x004506F0,src/side_shift_0020a260.c
+func_0024FAE0,0x0024FAE0,0xA4,func_0024FAB0,jtbl_00453300,0x00453300,src/initial_launches_0024fae0.c
