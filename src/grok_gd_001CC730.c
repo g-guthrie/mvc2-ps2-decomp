@@ -1,5 +1,4 @@
 #pragma padloop on
-#pragma padloop on
 typedef unsigned char u8;
 typedef signed char s8;
 typedef signed int s32;
