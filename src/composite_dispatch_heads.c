@@ -3186,6 +3186,12 @@ void func_002E5EC0(u8 *p) { jtbl_0045B250[p[509]](p); }
 
 void func_002E6110(u8 *p) { jtbl_0045B280[p[6]](p); }
 
+extern ContextDispatchFn jtbl_0045AE10[3];
+
+void func_002E0C90(u8 *p) {
+    jtbl_0045AE10[p[0x20B] & 0x3F](p, *(void **)(p + 0x1DC));
+}
+
 void func_002E6260(u8 *p) {
     p[0x209] = 2;
     jtbl_0045B290[p[7]](p, p + 0x2B8);
