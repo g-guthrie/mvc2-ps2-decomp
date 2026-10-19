@@ -4,6 +4,7 @@ typedef unsigned int u32;
 typedef signed short s16;
 typedef void (*Callback)(u8 *);
 
+extern const u32 jtbl_00451340[5];
 extern const u32 jtbl_004513D0[23];
 extern const Callback jtbl_00451390[15];
 extern void func_00221440(u8 *);
@@ -13,6 +14,15 @@ extern void func_00186A20(u8 *);
 extern void func_00183D10(u8 *);
 extern void func_0018C4B0(u8 *, int);
 extern int func_001757E0(u8 *, int, int);
+
+void func_0021F490(u8 *p)
+{
+    *(float *)(p + 0x34) += *(float *)(p + 0x5C);
+    *(float *)(p + 0x5C) += *(float *)(p + 0x68);
+    *(float *)(p + 0x38) += *(float *)(p + 0x60);
+    *(float *)(p + 0x60) += *(float *)(p + 0x6C);
+    ((Callback *)jtbl_00451340)[p[6]](p);
+}
 
 void func_00221850(u8 *p)
 {
