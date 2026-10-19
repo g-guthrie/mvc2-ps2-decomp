@@ -103,29 +103,6 @@ void func_0040D430(s32 *p, s32 n)
     p[5] = n;
 }
 
-extern u8 D_004BEB90[], D_004BEBB8[];
-extern void func_00411380();
-extern void func_00411288();
-extern void func_004112B0();
-typedef struct { s32 a; s32 b; } P8;
-extern P8 D_00632360[];
-void func_00411720(s32 a, s32 b, s32 c, s32 d)
-{
-    P8 *e;
-    if ((u32)b >= 4) {
-        func_00411380(D_004BEB90);
-    }
-    if (a < 0 || b >= 7) {
-        func_00411380(D_004BEBB8);
-    }
-    func_00411288();
-    e = &D_00632360[a * 4 + b];
-    e->a = c;
-    e->b = d;
-    func_004112B0();
-    __asm__ volatile("");
-}
-
 typedef struct { u8 pad[8]; u8 *x8; } C11;
 extern C11 *D_0043B6F8;
 extern void func_001209B8();

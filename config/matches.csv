@@ -11779,7 +11779,7 @@ func_0040A520,0x0040A520,0x54,src/p2.c,complete
 func_00407298,0x00407298,0x58,src/p2.c,placeholder
 func_00409E60,0x00409E60,0x58,src/p2.c,complete
 func_0040D430,0x0040D430,0x64,src/p2.c,complete
-func_00411720,0x00411720,0xA0,src/p2.c,placeholder
+func_00411720,0x00411720,0xA0,src/register_runtime_callback_00411720.c,complete
 func_0011EB60,0x0011EB60,0x70,src/p2.c,complete
 func_003EA0D0,0x003EA0D0,0x54,src/p2b.c,complete
 func_003E9580,0x003E9580,0x58,src/p2b.c,complete

@@ -14,9 +14,16 @@ typedef struct S25 {
 } S25;
 typedef struct E138 { S25 payload; u8 pad[0x138 - sizeof(S25)]; } E138;
 
-extern void func_00411720(s32, s32, s32, s32);
-void func_003FEF20(s32 a, s32 b) { func_00411720(1, 0, a, b); }
-void func_003FEF48(s32 a, s32 b) { func_00411720(6, 0, a, b); }
+typedef s32 (*RuntimeCallback)(s32);
+extern void func_00411720(s32, s32, RuntimeCallback, s32);
+void func_003FEF20(RuntimeCallback callback, s32 argument)
+{
+    func_00411720(1, 0, callback, argument);
+}
+void func_003FEF48(RuntimeCallback callback, s32 argument)
+{
+    func_00411720(6, 0, callback, argument);
+}
 
 /* Shared task IDs are cleared by 003FE780/003FE7F0 during shutdown. */
 extern volatile s32 D_004C2334;
