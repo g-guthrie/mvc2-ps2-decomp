@@ -109,6 +109,16 @@ void func_0040CAA0(s8 *path)
     }
 }
 
+extern unsigned char D_004896E0[];
+extern char gHostPathPrefix_004BE278[6];
+void func_0040CB30(const char *source)
+{
+    if (source == 0)
+        __builtin_memcpy(D_004896E0, gHostPathPrefix_004BE278, sizeof gHostPathPrefix_004BE278);
+    else
+        func_0011FE88((char *)D_004896E0, source);
+}
+
 typedef struct { u8 pad[0x2C]; s32 a, b, c, d, e; } RuntimeRecord;
 void func_0040D738(u8 *p)
 {

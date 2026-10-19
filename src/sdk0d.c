@@ -18,7 +18,7 @@ void func_0010CCA8(void) {
 extern s32 D_004891A8;
 extern s32 D_004891B8;
 extern void func_0040CAA0(s32);
-extern void func_0040CB30(s32);
+extern void func_0040CB30(const char *source);
 s32 *func_0040AEE8(void) {
     volatile s32 *v = &D_004891A8;
     s32 x = *v;
