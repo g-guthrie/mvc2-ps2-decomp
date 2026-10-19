@@ -36,7 +36,7 @@ void func_001AA8E0(u8 *p) {
 }
 
 extern u8 D_004C1020[8];
-extern s32 D_0045A840[];
+extern u32 *const D_0045A840[];
 extern u8 D_0045A990[], D_0045A9A0[], D_0045A9B0[];
 
 void func_002D99F0(u8 *p) {
@@ -48,7 +48,7 @@ void func_002D99F0(u8 *p) {
     if (p[0x20D] == 1) a = (u8)(a + 6);
     if (p[0x212] != 0) a = (u8)(a + 3);
     a = (u8)a;
-    *(s32 *)(p + 0x408) = D_0045A840[a % 6];
+    *(u32 **)(p + 0x408) = D_0045A840[a % 6];
     p[0x1BB] = D_004C1020[p[0x1FC]];
     p[0x1B5] = D_0045A990[a];
     p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;

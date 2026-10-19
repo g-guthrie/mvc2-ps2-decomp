@@ -2146,7 +2146,7 @@ jtbl_004515D0,0x004515D0,0xC,src/data/jtbl_004515D0.c,complete,reconstructed
 data_u32_004515DC,0x004515DC,0x4,src/data/data_u32_004515DC.c,complete,placeholder
 jtbl_004515E0,0x004515E0,0xC,src/data/jtbl_004515E0.c,complete,reconstructed
 data_u32_004515EC,0x004515EC,0x4,src/data/data_u32_004515EC.c,complete,placeholder
-D_004515F0,0x004515F0,0x18,src/data/D_004515F0.c,complete,placeholder
+D_004515F0,0x004515F0,0x18,src/data/D_004515F0.c,complete,reconstructed
 data_u32_00451608,0x00451608,0x8,src/data/data_u32_00451608.c,complete,placeholder
 jtbl_00451610,0x00451610,0x30,src/data/jtbl_00451610.c,complete,placeholder
 data_u32_00451640,0x00451640,0x90,src/data/data_u32_00451640.c,complete,placeholder
@@ -3211,7 +3211,7 @@ data_u32_0045A7E0,0x0045A7E0,0x18,src/data/data_u32_0045A7E0.c,complete,placehol
 jtbl_0045A7F8,0x0045A7F8,0xC,src/data/jtbl_0045A7F8.c,complete,reconstructed
 data_raw_0045A804,0x45a804,0x2d,src/data/data_raw_0045A804.c,complete,placeholder
 data_u8_0045A831,0x45a831,0xf,src/data/data_u8_0045A831.c,complete,reconstructed
-D_0045A840,0x0045A840,0x18,src/data/D_0045A840.c,complete,placeholder
+D_0045A840,0x0045A840,0x18,src/data/D_0045A840.c,complete,reconstructed
 data_u32_0045A858,0x0045A858,0x8,src/data/data_u32_0045A858.c,complete,placeholder
 jtbl_0045A860,0x0045A860,0x30,src/data/jtbl_0045A860.c,complete,placeholder
 data_u32_0045A890,0x0045A890,0x80,src/data/data_u32_0045A890.c,complete,placeholder
@@ -3656,7 +3656,7 @@ data_u32_0045E27C,0x0045E27C,0x4,src/data/data_u32_0045E27C.c,complete,placehold
 jtbl_0045E280,0x0045E280,0x40,src/data/jtbl_0045E280.c,complete,placeholder
 jtbl_0045E2C0,0x0045E2C0,0xC,src/data/jtbl_0045E2C0.c,complete,reconstructed
 jtbl_0045E2CC,0x0045E2CC,0x8,src/data/jtbl_0045E2CC.c,complete,placeholder
-jtbl_0045E2E0,0x0045E2E0,0x28,src/data/jtbl_0045E2E0.c,complete,placeholder
+jtbl_0045E2E0,0x0045E2E0,0x28,src/data/jtbl_0045E2E0.c,complete,reconstructed
 jtbl_0045E310,0x0045E310,0x24,src/data/jtbl_0045E310.c,complete,placeholder
 data_u32_0045E340,0x0045E340,0x148,src/data/data_u32_0045E340.c,complete,placeholder
 gMvc2PresetEffectPosition_0045E488,0x0045E488,0xC,src/data/preset_position_0045E488.c,complete,reconstructed

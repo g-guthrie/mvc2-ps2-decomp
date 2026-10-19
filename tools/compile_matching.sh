@@ -15001,4 +15001,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/owner_state_copy_
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/team_health_script_test_001684b0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/team_health_script_test_001684b0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/team_health_script_test_001684b0.o" private/SLUS_204.86.rom --source src/team_health_script_test_001684b0.c
 
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/object_phase_setup_001487d0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/object_phase_setup_001487d0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/object_phase_setup_001487d0.o" private/SLUS_204.86.rom --source src/object_phase_setup_001487d0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

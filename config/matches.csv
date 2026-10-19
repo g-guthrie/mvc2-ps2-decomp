@@ -17111,3 +17111,4 @@ func_003F83A8,0x003F83A8,0x18,src/k0.c,complete
 func_0019A560,0x0019A560,0xE4,src/owner_state_copy_setup_0019a560.c,complete
 func_001684B0,0x001684B0,0xEC,src/team_health_script_test_001684b0.c,complete
 func_001685A0,0x001685A0,0xF0,src/team_health_script_test_001684b0.c,complete
+func_001487D0,0x001487D0,0xE0,src/object_phase_setup_001487d0.c,complete

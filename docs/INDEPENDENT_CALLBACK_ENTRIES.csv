@@ -321,3 +321,4 @@ func_003AB430,0x003AB430,0x30,func_003AA4D0,jtbl_00473A70,0x00473A90,src/argumen
 func_0019A560,0x0019A560,0xE4,func_0019A540,jtbl_0044A7A0,0x0044A7A0,src/owner_state_copy_setup_0019a560.c
 func_001684B0,0x001684B0,0xEC,func_00163F40,gMvc2Dispatch_00445A20,0x00445C0C,src/team_health_script_test_001684b0.c
 func_001685A0,0x001685A0,0xF0,func_00163F40,gMvc2Dispatch_00445A20,0x00445C10,src/team_health_script_test_001684b0.c
+func_001487D0,0x001487D0,0xE0,residual_001487B0,jtbl_00443AD0,0x00443AE0,src/object_phase_setup_001487d0.c
