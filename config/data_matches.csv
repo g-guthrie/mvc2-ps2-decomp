@@ -1230,7 +1230,7 @@ data_raw_00446A60,0x00446A60,0x4,src/data/data_raw_00446A60.c,complete,placehold
 D_00446A64,0x00446A64,0x4,src/data/D_00446A64.c,complete,reconstructed
 data_raw_00446A68,0x00446A68,0x14,src/data/data_raw_00446A68.c,complete,placeholder
 data_u32_00446A7C,0x00446A7C,0x4,src/data/data_u32_00446A7C.c,complete,placeholder
-jtbl_00446A80,0x00446A80,0x1c,src/data/jtbl_00446A80.c,complete,placeholder
+jtbl_00446A80,0x00446A80,0x1c,src/data/jtbl_00446A80.c,complete,reconstructed
 jtbl_00446AA0,0x00446AA0,0x10,src/data/jtbl_00446AA0.c,complete,placeholder
 jtbl_00446AB0,0x00446AB0,0xB8,src/data/jtbl_00446AB0.c,complete,placeholder
 D_00446B70,0x00446B70,0x10,src/data/D_00446B70.c,complete,reconstructed

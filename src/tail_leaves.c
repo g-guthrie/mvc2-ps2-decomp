@@ -14,7 +14,7 @@ extern void func_001173E8();
 extern void func_00117418();
 extern void func_0011F5C0();
 extern int func_0011F5D8(void);
-extern void func_00127140();
+extern void func_00127140(void);
 extern void func_00127590();
 extern void func_001283C0();
 extern void func_00128A30();
@@ -39,7 +39,7 @@ extern void func_001628C0();
 extern void func_00162BA0();
 extern void func_0016A210();
 extern void func_0016B3E0();
-extern void func_001712A0(s32, s32, s32, s32);
+extern void func_001712A0(void);
 extern void func_001719E0();
 extern void func_00174A40();
 extern void func_00175670();
@@ -140,7 +140,7 @@ extern void func_003A00F0();
 extern void func_003ABB40();
 extern void func_003B78A0();
 extern void func_003B7EC0();
-extern void func_003D9C30();
+extern void func_003D9C30(void);
 extern void func_003DAA40();
 extern void func_003DB9D0();
 extern s32 func_003DB9E0(s32 handle);
@@ -249,11 +249,11 @@ void func_0016B240(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0016A210(a0, a1, a2, 
 
 void func_0016F1A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0012DA40(a0, a1, 2, a3); }
 
-void func_001716C0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003D9C30(a0, a1, a2, a3); }
+void func_001716C0(void) {  func_003D9C30(); }
 
 void func_00171DA0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001719E0(a0, a1, a2, a3); }
 
-void func_00172310(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00127140(a0, a1, a2, a3); }
+void func_00172310(void) {  func_00127140(); }
 
 void func_00179150(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00179170(a0, a1, 0, a3); }
 
@@ -1361,7 +1361,7 @@ void func_003D1FA0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00127590(a0, a1, a2, 
 
 void func_003D2CA0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003299F0(a0, a1, a2, a3); }
 
-void func_003D2CB0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001712A0(a0, a1, a2, a3); }
+void func_003D2CB0(void) {  func_001712A0(); }
 
 void func_003D2CC0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001283C0(a0, a1, a2, a3); }
 
