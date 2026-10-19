@@ -664,3 +664,10 @@ The same EE GCC 2.96 O2/G0 header unit also reconstructs `func_003F9F80`
 big-endian header offset plus four through its `u16` output. The native call
 at `0x00403394` supplies the buffer, length, and stack output pointer and
 checks its status. All four complete functions in this source verify exactly.
+
+`func_0036EE40` preserves two real callback inputs while positioning its effect.
+Its verified dispatcher `func_0036E6F0` sets A1 to the owner at `p + 0x18`
+at `0x0036E70C`, and A2 to `p + 0x88` at `0x0036E720`, before invoking
+`D_00463DA0[p[5]]`. The callback forwards those same byte pointers to
+`func_0036EF10`; that consumer reads the owner at offset `0x220` and the
+state's first word. The three-argument type agrees with `src/h8.c`.

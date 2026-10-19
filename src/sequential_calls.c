@@ -20,7 +20,7 @@ extern void func_003DA6F0(int);
 extern void func_003D2520(void);
 extern void func_001E4140(void);
 extern void func_001E3CE0(int);
-extern void func_0036EF10(u8 *, void *, void *);
+extern void func_0036EF10(u8 *, u8 *, u8 *);
 extern void func_0011D8F8(void *, int, int);
 extern void func_003D6D50(void);
 extern void func_003D6E20(void);
@@ -386,7 +386,7 @@ void func_003D23C0(void)
 }
 
 
-void func_0036EE40(u8 *p, void *arg1, void *arg2)
+void func_0036EE40(u8 *p, u8 *owner, u8 *state)
 {
     p[5]++;
     p[0x13C] = 1;
@@ -397,5 +397,5 @@ void func_0036EE40(u8 *p, void *arg1, void *arg2)
     *(f32 *)(p + 0x34) += (f32)(*(s16 *)(*(u8 **)(p + 0x18) + 0x140) ? 0x9F : -0x9F);
     *(f32 *)(p + 0x38) += 165.0f;
     func_001E3210(p, 0x23);
-    func_0036EF10(p, arg1, arg2);
+    func_0036EF10(p, owner, state);
 }
