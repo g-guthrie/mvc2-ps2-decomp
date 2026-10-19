@@ -4999,7 +4999,9 @@ gIoDescriptorWord3_0047D0EC,0x0047D0EC,0x4,src/data/gIoDescriptorWord3_0047D0EC.
 gIoDescriptorWord4_0047D0F0,0x0047D0F0,0x4,src/data/gIoDescriptorWord4_0047D0F0.c,complete,reconstructed
 gIoDescriptorWord5_0047D0F4,0x0047D0F4,0x4,src/data/gIoDescriptorWord5_0047D0F4.c,complete,reconstructed
 data_raw_0047D0F8,0x0047D0F8,0x4,src/data/data_raw_0047D0F8.c,complete,placeholder
-data_raw_0047D0FC,0x0047D0FC,0xA1E4,src/data/data_raw_0047D0FC.c,complete,placeholder
+data_raw_0047D0FC,0x0047D0FC,0x79c4,src/data/data_raw_0047D0FC.c,complete,placeholder
+gRuntimeObjectPool_00484AC0,0x00484AC0,0xA00,src/data/gRuntimeObjectPool_00484AC0.c,complete,reconstructed
+data_raw_004854C0,0x004854C0,0x1E20,src/data/data_raw_004854C0.c,complete,placeholder
 data_u32_004872E0,0x004872E0,0x10,src/data/data_u32_004872E0.c,complete,placeholder
 data_raw_004872F0,0x004872F0,0x1,src/data/data_raw_004872F0.c,complete,placeholder
 gSystemModeSelector_004872F1,0x004872F1,0x1,src/data/gSystemModeSelector_004872F1.c,complete,reconstructed

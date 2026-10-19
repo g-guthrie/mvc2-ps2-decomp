@@ -4999,7 +4999,9 @@ gIoDescriptorWord3_0047D0EC,0x0047D0EC,0x4,.data,src/data/gIoDescriptorWord3_004
 gIoDescriptorWord4_0047D0F0,0x0047D0F0,0x4,.data,src/data/gIoDescriptorWord4_0047D0F0.c,signed_thread_priority
 gIoDescriptorWord5_0047D0F4,0x0047D0F4,0x4,.data,src/data/gIoDescriptorWord5_0047D0F4.c,signed_thread_priority
 data_raw_0047D0F8,0x0047D0F8,0x4,.data,src/data/data_raw_0047D0F8.c,initialized_byte_array
-data_raw_0047D0FC,0x0047D0FC,0xA1E4,.data,src/data/data_raw_0047D0FC.c,initialized_byte_array
+data_raw_0047D0FC,0x0047D0FC,0x79c4,.data,src/data/data_raw_0047D0FC.c,initialized_byte_array
+gRuntimeObjectPool_00484AC0,0x00484AC0,0xA00,.data,src/data/gRuntimeObjectPool_00484AC0.c,runtime_object_pool
+data_raw_004854C0,0x004854C0,0x1E20,.data,src/data/data_raw_004854C0.c,initialized_byte_array
 data_u32_004872E0,0x004872E0,0x10,.data,src/data/data_u32_004872E0.c,initialized_u32_table
 data_raw_004872F0,0x004872F0,0x1,.data,src/data/data_raw_004872F0.c,initialized_byte_array
 gSystemModeSelector_004872F1,0x004872F1,0x1,.data,src/data/gSystemModeSelector_004872F1.c,signed_selector_byte

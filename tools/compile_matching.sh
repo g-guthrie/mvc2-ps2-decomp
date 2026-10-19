@@ -11066,3 +11066,10 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -G0 -o "$BUILD/runtime_framed_calls_0040.o" "$BUILD/runtime_framed_calls_0040.s"
 "$PYTHON" tools/verify_object.py "$BUILD/runtime_framed_calls_0040.o" private/SLUS_204.86.rom \
     --source src/runtime_framed_calls_0040.c
+
+"$WIBO" "$SNCPP" -P src/runtime_object_storage.c "$BUILD/runtime_object_storage.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 \
+    "$BUILD/runtime_object_storage.i" "$BUILD/runtime_object_storage.s"
+"$WIBO" "$SNAS" -G8 -o "$BUILD/runtime_object_storage.o" "$BUILD/runtime_object_storage.s"
+"$PYTHON" tools/verify_object.py "$BUILD/runtime_object_storage.o" private/SLUS_204.86.rom \
+    --source src/runtime_object_storage.c

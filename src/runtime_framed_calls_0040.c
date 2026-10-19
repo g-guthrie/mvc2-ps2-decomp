@@ -108,3 +108,41 @@ void func_0040CAA0(s8 *path)
         func_0011FE88((char *)&D_004895D8, (const char *)path);
     }
 }
+
+typedef struct { u8 pad[0x2C]; s32 a, b, c, d, e; } RuntimeRecord;
+void func_0040D738(u8 *p)
+{
+    extern s32 func_004003C8(s32, s32, s32, s32, s32);
+    extern void func_0040D5A0(const char *, ...);
+    extern s32 func_00400BE0(void *);
+    extern s32 func_00400BB8(u8 *, s32, s32);
+    extern s32 func_00400658(s32 *, s32);
+    extern s32 func_004006E8(u8 *);
+    extern char D_004BE3E0[];
+    extern char D_004BE400[];
+    RuntimeRecord *e;
+    u8 *q;
+    s32 v, r;
+    q = p + (*(s32 *)(p + 0x20) << 6);
+    e = (RuntimeRecord *)(q + 0x38);
+    if (*(s32 *)(p + 0x24) > 0) {
+        if (*(s32 *)(p + 0x28) == 0) {
+            r = func_004003C8((s32)(q + 0x3C), e->a, e->b, e->c, *(s32 *)(p + 8));
+            *(s32 *)(p + 0x28) = r;
+            if (r == 0) func_0040D5A0(D_004BE3E0, q + 0x3C);
+            v = func_00400BE0(*(void **)(p + 0x28));
+            *(s8 *)(p + 2) = 0;
+            *(s32 *)(p + 0x2C) = (v + 2047) / 2048;
+            e->e = 0;
+        }
+        if (*(s8 *)(p + 2) == 0) {
+            func_00400BB8(*(u8 **)(p + 0x28), *(s32 *)(p + 0x14), *(s32 *)(p + 0x18));
+            func_00400658(*(s32 **)(p + 0x28), 0);
+            func_004006E8(*(u8 **)(p + 0x28));
+            *(s8 *)(p + 2) = 1;
+        }
+        e->d = 1;
+    } else {
+        if (*(s32 *)(p + 0x28) != 0) { func_0040D5A0(D_004BE400, *(s32 *)(p + 0x24), *(s32 *)(p + 0x28));  }
+    }
+}

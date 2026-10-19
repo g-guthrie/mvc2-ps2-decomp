@@ -12,6 +12,12 @@ void func_00405130(void) {
     D_004C2420++;
 }
 
+void func_00405170(void) {
+    s32 count = D_004C2420 - 1;
+    D_004C2420 = count;
+    if (count == 0) func_0011D8F8(D_00485F80, 0, 0x1360);
+}
+
 extern s32 D_004C24DC;
 extern u8 D_00494DD8[];
 void func_0040FD78(void) {

@@ -159,43 +159,6 @@ void func_00404DA8(u8 *p)
     }
 }
 
-typedef struct { u8 pad[0x2C]; s32 a, b, c, d, e; } E40D;
-void func_0040D738(u8 *p)
-{
-    extern s32 func_004003C8();
-    extern void func_0040D5A0(u8 *, ...);
-    extern s32 func_00400BE0();
-    extern void func_00400BB8();
-    extern void func_00400658();
-    extern s32 func_004006E8();
-    extern u8 D_004BE3E0[];
-    extern u8 D_004BE400[];
-    E40D *e;
-    u8 *q;
-    s32 v, r;
-    q = p + (*(s32 *)(p + 0x20) << 6);
-    e = (E40D *)(q + 0x38);
-    if (*(s32 *)(p + 0x24) > 0) {
-        if (*(s32 *)(p + 0x28) == 0) {
-            r = func_004003C8(q + 0x3C, e->a, e->b, e->c, *(s32 *)(p + 8));
-            *(s32 *)(p + 0x28) = r;
-            if (r == 0) func_0040D5A0(D_004BE3E0, q + 0x3C);
-            v = func_00400BE0(*(s32 *)(p + 0x28));
-            *(s8 *)(p + 2) = 0;
-            *(s32 *)(p + 0x2C) = (v + 2047) / 2048;
-            e->e = 0;
-        }
-        if (*(s8 *)(p + 2) == 0) {
-            func_00400BB8(*(s32 *)(p + 0x28), *(s32 *)(p + 0x14), *(s32 *)(p + 0x18));
-            func_00400658(*(s32 *)(p + 0x28), 0);
-            func_004006E8(*(s32 *)(p + 0x28));
-            *(s8 *)(p + 2) = 1;
-        }
-        e->d = 1;
-    } else {
-        if (*(s32 *)(p + 0x28) != 0) { func_0040D5A0(D_004BE400, *(s32 *)(p + 0x24), *(s32 *)(p + 0x28)); __asm__ volatile(""); }
-    }
-}
 
 s32 func_003FBE88(s32 a0, s32 a1, s32 a2, u8 *a3)
 {

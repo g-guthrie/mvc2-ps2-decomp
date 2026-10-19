@@ -11682,7 +11682,7 @@ func_004003C8,0x004003C8,0xA0,src/p3.c,complete
 func_00406440,0x00406440,0xA8,src/p3.c,complete
 func_0040B8A8,0x0040B8A8,0xAC,src/p3.c,complete
 func_0040F598,0x0040F598,0x44,src/p3c.c,complete
-func_00400258,0x00400258,0xAC,src/p3c.c,complete
+func_00400258,0x00400258,0xAC,src/runtime_object_storage.c,complete
 func_003FE7F0,0x003FE7F0,0x6C,src/p3i.c,complete
 func_003FE040,0x003FE040,0x90,src/p3j.c,complete
 func_00119098,0x00119098,0x80,src/p3k.c,complete
@@ -12473,6 +12473,7 @@ func_00100478,0x00100478,0x68,src/pw39_e.c,placeholder
 func_004118A8,0x004118A8,0x10,src/b10s_0_a.c,complete
 func_00405130,0x00405130,0x3C,src/b10s_0_e.c,complete
 func_0040FD78,0x0040FD78,0x44,src/b10s_0_e.c,complete
+func_00405170,0x00405170,0x44,src/b10s_0_e.c,complete
 func_004110D8,0x004110D8,0x54,src/b10s_0_e.c,complete
 func_003EBA40,0x003EBA40,0x3C,src/b10s_0_f.c,complete
 func_003F4280,0x003F4280,0x2C,src/b10s_0_g.c,complete
@@ -13565,7 +13566,7 @@ func_0040A118,0x0040A118,0x100,src/w1_b.c,complete
 func_003F8810,0x003F8810,0xCC,src/w1_b.c,complete
 func_003FB398,0x003FB398,0xC4,src/w1_b.c,complete
 func_00404DA8,0x00404DA8,0xE4,src/w1_b.c,complete
-func_0040D738,0x0040D738,0x110,src/w1_b.c,placeholder
+func_0040D738,0x0040D738,0x110,src/runtime_framed_calls_0040.c,complete
 func_003FBE88,0x003FBE88,0x150,src/w1_b.c,complete
 func_003F8BF0,0x003F8BF0,0x174,src/w1_b.c,complete
 func_003F90B8,0x003F90B8,0x174,src/w1_b.c,complete
@@ -15546,3 +15547,5 @@ func_00182AA0,0x00182AA0,0x12C,src/q9_d.c,complete
 residual_002ECA50,0x002ECA50,0xDC,src/q9_d.c,complete
 func_00241430,0x00241430,0x158,src/grok_w5_0024.c,complete
 func_00238A10,0x00238A10,0x158,src/grok_w5_0024.c,complete
+func_00400148,0x00400148,0x60,src/runtime_object_storage.c,complete
+func_004001A8,0x004001A8,0xAC,src/runtime_object_storage.c,complete
