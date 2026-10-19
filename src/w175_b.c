@@ -28,6 +28,7 @@ extern s16 D_004F2B3C[];
 extern s32 D_004C00D8[2];
 extern s32 D_004C00DC[2];
 extern s32 D_004C00E0[2];
+extern s32 D_004C0B5C, D_004C0B60, D_004C0B64;
 
 void func_0013DFB0(s32 a, V3 *src)
 {
@@ -291,4 +292,52 @@ void func_0022D0D0(u8 *a)
     *(s32 *)(a + 0x1D8) = 0;
     D_004C2794->f7c[a[2]]++;
     func_001757E0(a, 7, a[0x168]);
+}
+
+typedef struct { u8 prefix[0x1B5]; u8 action; } ActorActionView;
+typedef char ActorActionOffsetCheck[
+    ((u32)&((ActorActionView *)0)->action == 0x1B5) ? 1 : -1];
+
+void func_002A16F0(u8 *a)
+{
+    extern void func_001E3710(u8 *, s32);
+    extern int func_001757E0(u8 *, int, int);
+    u32 t;
+    switch (a[0x1FC]) {
+    case 0:
+        a[0x168] = 0;
+        a[0x1B5] = 3;
+        func_001E3710(a, 0x14);
+        *(void **)(a + 0x408) = &D_004C0B5C;
+        a[0x1BB] = 0;
+        break;
+    case 1:
+        a[0x168] = 4;
+        a[0x1B5] = 0x16;
+        func_001E3710(a, 0x15);
+        *(void **)(a + 0x408) = &D_004C0B60;
+        a[0x1BB] = 1;
+        break;
+    case 2:
+        if (*(u16 *)(a + 0x20E) & 0x400) {
+            a[6]++;
+            a[0x168] = 5;
+            a[0x1B5] = 0x17;
+        } else {
+            a[0x168] = 2;
+            a[0x1B5] = 5;
+        }
+        func_001E3710(a, 0x16);
+        *(void **)(a + 0x408) = &D_004C0B64;
+        a[0x1BB] = 2;
+        break;
+    default:
+        break;
+    }
+    t = a[0x1B5];
+    ((ActorActionView *)a)->action = t;
+    a[0x1B2] = *(u16 *)(a + 0x1C0) = 0;
+    *(s32 *)(a + 0x1D8) = 0;
+    D_004C2794->f7c[a[2]]++;
+    func_001757E0(a, 8, a[0x168]);
 }
