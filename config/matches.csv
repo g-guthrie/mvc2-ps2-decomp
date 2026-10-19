@@ -15088,6 +15088,7 @@ func_00387710,0x00387710,0x160,src/w186_p.c,complete
 func_001D30B0,0x001D30B0,0x168,src/w186_q.c,complete
 func_00164300,0x00164300,0x174,src/w186_r.c,complete
 func_0031F5E0,0x0031F5E0,0x178,src/w186_s.c,complete
+func_0021A110,0x0021A110,0x194,src/w186_s.c,complete
 func_001864A0,0x001864A0,0x90,src/w180_c.c,complete
 func_0011B8F0,0x0011B8F0,0xDC,src/w180_e.c,complete
 func_003F8670,0x003F8670,0x20,src/w180_e.c,complete
