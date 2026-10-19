@@ -1,6 +1,7 @@
 typedef unsigned char u8;
 
-extern void func_00179160();
+/* 00179160 forwards two actor pointers and fixes the callee mode to 1. */
+extern void func_00179160(u8 *, u8 *);
 
 void func_00316A50(u8 *p)
 {
