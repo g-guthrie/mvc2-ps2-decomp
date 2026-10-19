@@ -16684,3 +16684,4 @@ func_003C7CF0,0x003C7CF0,0x30,src/argument_dispatch_heads.c,complete
 func_003D6B10,0x003D6B10,0x14,src/gp_leaf_batch.c,complete
 func_003D90C0,0x003D90C0,0xC,src/global_accessors.c,complete
 func_00183770,0x00183770,0x1AC,src/grok_zg_1834a0.c,complete
+func_00183210,0x00183210,0x1A8,src/grok_zg_1834a0.c,complete
