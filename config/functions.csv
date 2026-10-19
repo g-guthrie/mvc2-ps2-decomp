@@ -12189,7 +12189,7 @@ func_002DAA30,0x002DAA30,0xDC,0x002DAB0C,code,spimdisasm-explicit-size-before-fi
 func_002DAB10,0x002DAB10,0x7C,0x002DAB8C,code,spimdisasm-explicit-size-before-first-data
 func_002DAB90,0x002DAB90,0x54,0x002DABE4,code,spimdisasm-explicit-size-before-first-data
 func_002DABF0,0x002DABF0,0x20,0x002DAC10,code,matching-c-head-split
-residual_002DAC10,0x002DAC10,0x110,0x002DAD20,assembly_residual,verified-boundary-after-matching-head
+func_002DAC10,0x002DAC10,0x110,0x002DAD20,code,exact-complete-native-entry
 func_002DAD20,0x002DAD20,0x94,0x002DADB4,code,spimdisasm-explicit-size-before-first-data
 func_002DADC0,0x002DADC0,0x1B8,0x002DAF78,code,spimdisasm-explicit-size-before-first-data
 func_002DAF80,0x002DAF80,0xD4,0x002DB054,code,spimdisasm-explicit-size-before-first-data
