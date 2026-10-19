@@ -14914,3 +14914,13 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_gf_00394BA0.
 "$PYTHON" tools/verify_object.py "$BUILD/grok_gf_00394BA0.o" private/SLUS_204.86.rom --source src/grok_gf_00394BA0.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_gi_003C65D0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_gi_003C65D0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_gi_003C65D0.o" private/SLUS_204.86.rom --source src/grok_gi_003C65D0.c
+
+# Whole native state-handler windows with independently identified entries.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_dd_00390190.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_dd_00390190.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_dd_00390190.o" private/SLUS_204.86.rom --source src/grok_dd_00390190.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_dl_36a650.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_dl_36a650.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_dl_36a650.o" private/SLUS_204.86.rom --source src/grok_dl_36a650.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_el_0039CF30.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_el_0039CF30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_el_0039CF30.o" private/SLUS_204.86.rom --source src/grok_el_0039CF30.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_el_0039D180.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_el_0039D180.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_el_0039D180.o" private/SLUS_204.86.rom --source src/grok_el_0039D180.c
