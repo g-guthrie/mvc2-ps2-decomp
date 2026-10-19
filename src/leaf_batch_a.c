@@ -237,6 +237,10 @@ typedef struct Sbits {
     char pad[1220];
     s32 f1220;
 } Sbits;
+s32 func_0016A1F0(Sbits *p, s32 bit) {
+    p->f1220 &= ~(1 << bit);
+    return 1;
+}
 
 /* ---- func_0016CA10 ---- */
 typedef struct SFloat {
