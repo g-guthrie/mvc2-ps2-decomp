@@ -15859,3 +15859,4 @@ func_0036EE40,0x0036EE40,0xCC,src/sequential_calls.c,complete
 func_002192B0,0x002192B0,0x1D8,src/launch_motion_002192b0.c,complete
 func_001B6860,0x001B6860,0x168,src/event_clone_001b6860.c,complete
 func_001B69D0,0x001B69D0,0x184,src/event_clone_001b69d0.c,complete
+func_001B6DA0,0x001B6DA0,0x16C,src/event_clone_001b6da0.c,complete
