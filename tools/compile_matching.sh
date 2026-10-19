@@ -11917,3 +11917,27 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/compile_ee96.py "$BUILD/read_adx_header_fields_003F9AF0.i" "$BUILD/read_adx_header_fields_003F9AF0.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/read_adx_header_fields_003F9AF0.o" "$BUILD/read_adx_header_fields_003F9AF0.s"
 "$PYTHON" tools/verify_object.py "$BUILD/read_adx_header_fields_003F9AF0.o" private/SLUS_204.86.rom --source src/read_adx_header_fields_003F9AF0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_nopd_320750.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/grok_nopd_320750.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_nopd_320750.o" \
+    private/SLUS_204.86.rom --source src/grok_nopd_320750.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_nopd_3208c0.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_nopd_3208c0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_nopd_3208c0.o" \
+    private/SLUS_204.86.rom --source src/grok_nopd_3208c0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_nopd_3209a0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/grok_nopd_3209a0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_nopd_3209a0.o" \
+    private/SLUS_204.86.rom --source src/grok_nopd_3209a0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_nopd_320ad0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/grok_nopd_320ad0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_nopd_320ad0.o" \
+    private/SLUS_204.86.rom --source src/grok_nopd_320ad0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_nopd_320be0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/grok_nopd_320be0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_nopd_320be0.o" \
+    private/SLUS_204.86.rom --source src/grok_nopd_320be0.c
