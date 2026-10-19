@@ -11095,3 +11095,10 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --op
 "$WIBO" "$SNAS" -G8 -o "$BUILD/process_runtime_object_004007F0.o" "$BUILD/process_runtime_object_004007F0.s"
 "$PYTHON" tools/verify_object.py "$BUILD/process_runtime_object_004007F0.o" private/SLUS_204.86.rom \
     --source src/process_runtime_object_004007F0.c
+
+"$WIBO" "$SNCPP" -P src/query_runtime_streams_003FF810.c "$BUILD/query_runtime_streams_003FF810.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 \
+    "$BUILD/query_runtime_streams_003FF810.i" "$BUILD/query_runtime_streams_003FF810.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/query_runtime_streams_003FF810.o" "$BUILD/query_runtime_streams_003FF810.s"
+"$PYTHON" tools/verify_object.py "$BUILD/query_runtime_streams_003FF810.o" private/SLUS_204.86.rom \
+    --source src/query_runtime_streams_003FF810.c
