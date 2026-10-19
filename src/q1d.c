@@ -13,19 +13,29 @@ extern void func_001843A0(u8 *);
 extern s32 func_001757E0(u8 *, s32, s32);
 
 static void func_00296FB0(u8 *p) {
-    u8 t = p[0x15B];
-    if (t != 0) {
-        p[0x1B5] = t; p[0x1B2] = p[0x1C0] = 0; *(s32 *)(p + 0x1D8) = 0;
-        { u8 *q = D_004C2794 + p[2] * 2; s16 v = *(s16 *)(q + 0x7C) + 1; *(s16 *)(q + 0x7C) = v; }
+    s32 command = p[0x15B];
+    if (command) {
+        u32 offset;
+        p[0x1B5] = command;
+        p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+        *(s32 *)(p + 0x1D8) = 0;
+        offset = p[2] * 2;
+        offset += (u32)D_004C2794;
+        ++*(s16 *)(offset + 0x7C);
         p[0x15B] = 0;
     }
 }
 
 static void func_002CFA20(u8 *p) {
-    u8 t = p[0x15B];
-    if (t != 0) {
-        p[0x1B5] = t; p[0x1B2] = p[0x1C0] = 0; *(s32 *)(p + 0x1D8) = 0;
-        { u8 *q = D_004C2794 + p[2] * 2; s16 v = *(s16 *)(q + 0x7C) + 1; *(s16 *)(q + 0x7C) = v; }
+    s32 command = p[0x15B];
+    if (command) {
+        u32 offset;
+        p[0x1B5] = command;
+        p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+        *(s32 *)(p + 0x1D8) = 0;
+        offset = p[2] * 2;
+        offset += (u32)D_004C2794;
+        ++*(s16 *)(offset + 0x7C);
         p[0x15B] = 0;
     }
 }
