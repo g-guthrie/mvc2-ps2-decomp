@@ -214,6 +214,8 @@ func_00168AE0,0x00168AE0,0x8,src/simple_leaves.c,complete
 func_00168F70,0x00168F70,0x8,src/simple_leaves.c,complete
 func_0016B240,0x0016B240,0x8,src/tail_leaves.c,complete
 func_0016C3B0,0x0016C3B0,0x20,src/composite_dispatch_heads.c,complete
+func_0016C700,0x0016C700,0x30,src/composite_dispatch_heads.c,complete
+func_0016C730,0x0016C730,0x3C,src/composite_dispatch_heads.c,complete
 func_0016C500,0x0016C500,0x20,src/composite_dispatch_heads.c,complete
 func_0016C7D0,0x0016C7D0,0x20,src/composite_dispatch_heads.c,complete
 func_0016C890,0x0016C890,0x20,src/composite_dispatch_heads.c,complete

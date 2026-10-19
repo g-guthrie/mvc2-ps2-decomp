@@ -1,4 +1,5 @@
 typedef unsigned char u8;
+typedef unsigned short u16;
 typedef unsigned int u32;
 typedef void (*DispatchFn)(u8 *);
 typedef void (*ContextDispatchFn)(u8 *, void *);
@@ -56,6 +57,7 @@ extern DispatchFn jtbl_00445810[];
 extern DispatchFn jtbl_00445820[];
 extern DispatchFn jtbl_00445830[];
 extern DispatchFn jtbl_004462E0[];
+extern DispatchFn jtbl_00446340[];
 extern DispatchFn jtbl_00446320[];
 extern DispatchFn jtbl_00446360[];
 extern DispatchFn jtbl_00446380[];
@@ -1443,6 +1445,24 @@ void func_00163AA0(u8 *p) { jtbl_00445820[p[4]](p); }
 void func_00163C70(u8 *p) { jtbl_00445830[p[4]](p); }
 
 void func_0016C3B0(u8 *p) { jtbl_004462E0[p[33]](p); }
+
+void func_0016C700(u8 *p)
+{
+    *(u32 *)(p + 0xD0) |= 0x20000;
+    jtbl_00446340[p[4]](p);
+}
+
+void func_0016C730(u8 *p)
+{
+    p[4] += 1;
+    *(u16 *)(p + 0x1C) = 0x10;
+    *(u16 *)(p + 0x1E) = 360;
+    *(u32 *)(p + 0x104) = 0x3D800000;
+    *(u32 *)(p + 0x10C) = 0x3F800000;
+    *(u32 *)(p + 0x108) = 0;
+    *(u32 *)(p + 0x110) = 0x3F800000;
+    *(u32 *)(p + 0x118) = 0;
+}
 
 void func_0016C500(u8 *p) { jtbl_00446320[p[4]](p); }
 
