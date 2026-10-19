@@ -12,7 +12,7 @@ s32 func_001044C8(s32 descriptor) { return -1; }
 
 s32 func_001044D0(void) { return -1; }
 
-void func_0034B5A0(u8 *a, s32 b) {
+u8 *func_0034B5A0(u8 *a, s32 b) {
     extern u8 *func_003DA750();
     extern void func_0034B670();
     u8 *o;
@@ -32,6 +32,7 @@ void func_0034B5A0(u8 *a, s32 b) {
         *(f32 *)(o + 0x34) += *(f32 *)(a + 0x34);
         *(f32 *)(o + 0x38) += *(f32 *)(a + 0x38);
     }
+    return o;
 }
 
 void func_0039F650(u8 *a) {
