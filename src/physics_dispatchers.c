@@ -13,6 +13,11 @@ extern void func_001843A0(u8 *);
 extern void func_0030F650(u8 *);
 extern u8 *D_004C2794 __attribute__((section(".sdata")));
 
+extern void func_001861B0(u8 *);
+extern void func_0018C4B0(u8 *, int);
+extern void func_001757E0(u8 *, int, int);
+extern void func_00183D90(u8 *);
+extern void func_001E3710(u8 *, int);
 extern void func_001863F0();
 extern void func_001EA110();
 extern void func_001EA240();
@@ -305,3 +310,38 @@ void func_00310880(u8 *p) { *(float *)(p+52) += *(float *)(p+92); *(float *)(p+9
 extern void func_00309F00(u8 *), func_00309E80(u8 *), func_00309DB0(u8 *), func_00309CF0(u8 *);
 
 void residual_00309C20(u8 *p) { *(float *)(p+52) += *(float *)(p+92); *(float *)(p+92) += *(float *)(p+104); *(float *)(p+56) += *(float *)(p+96); *(float *)(p+96) += *(float *)(p+108); func_001863F0(p); if (p[530] == 1) { if (p[525] == 1) func_00309F00(p); else func_00309E80(p); } else { if (p[525] == 1) func_00309DB0(p); else func_00309CF0(p); } }
+
+void func_00306480(u8 *p)
+{
+    u8 *q = p + 0x2B8;
+
+    p[0x2C8] = 8;
+    if (p[6] == 0) {
+        func_001861B0(p);
+        p[6]++;
+        func_0018C4B0(p, 5);
+        if (p[0x212] == 1) {
+            p[0x1B5] = 0x35;
+            p[0x20D] = 0;
+            func_001757E0(p, 0x14, 0);
+            p[0x1B5] = (s8)p[0x1B5];
+            p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+            *(u32 *)(p + 0x1D8) = 0;
+            ((s16 *)(D_004C2794 + 0x7C))[p[2]]++;
+            *(u16 *)(q + 0x12) = *(u16 *)(p + 0x168);
+        }
+    }
+    if (p[0x213] == 3)
+        func_00183D90(p);
+    *(float *)(p + 0x34) += *(float *)(p + 0x5C);
+    *(float *)(p + 0x5C) += *(float *)(p + 0x68);
+    *(float *)(p + 0x38) += *(float *)(p + 0x60);
+    *(float *)(p + 0x60) += *(float *)(p + 0x6C);
+    func_001863F0(p);
+    if (p[0x15B]) {
+        func_001E3710(p, 0x16);
+        p[0x15B] = 0;
+    }
+    if ((s8)func_00175700(p) < 0)
+        func_001843A0(p);
+}

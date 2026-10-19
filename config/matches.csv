@@ -15840,3 +15840,4 @@ func_00325730,0x00325730,0xC0,src/grok_q4_325730.c,complete
 func_00320500,0x00320500,0xB8,src/grok_q4_320500.c,complete
 func_001B53E0,0x001B53E0,0x15C,src/event_clone_001b53e0.c,complete
 func_001C8FD0,0x001C8FD0,0x124,src/event_clone_001c8fd0.c,complete
+func_00306480,0x00306480,0x160,src/physics_dispatchers.c,complete
