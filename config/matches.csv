@@ -16625,6 +16625,7 @@ func_00176090,0x00176090,0xC8,src/y11_d.c,complete
 func_0015AC20,0x0015AC20,0x160,src/w1710_n.c,complete
 func_0013AC00,0x0013AC00,0x90,src/q12_d.c,complete
 func_00110DF0,0x00110DF0,0xCC,src/sony29_n.c,complete
+func_001113B0,0x001113B0,0xCC,src/sony29_n.c,complete
 func_00110350,0x00110350,0xD8,src/sony29_n.c,complete
 func_00218AB0,0x00218AB0,0xF0,src/grok_ci_31dfa0.c,complete
 func_001EB4E0,0x001EB4E0,0xF8,src/grok_ar_297640.c,complete
