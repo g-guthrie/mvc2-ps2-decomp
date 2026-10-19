@@ -11,13 +11,14 @@ typedef struct { f32 x, y, z; } V3;
 extern int func_001757E0(u8 *, s32, s32);
 extern void func_001D8DB0(u8 *, u8 *);
 
-void residual_001D8B60(u8 *p, u8 *q)
+void func_001D8B60(u8 *p, u8 *q)
 {
     s32 n;
     s32 *d;
     s32 *s;
     u32 t = p[4];
     p[4] = t + 1;
+    /* Copy 0xC4 bytes: offsets 0xEC through 0x1AF in the 0x1E4-byte event. */
     n = 0x31;
     s = (s32 *)(q + 0xEC);
     d = (s32 *)(p + 0xEC);
@@ -26,7 +27,7 @@ void residual_001D8B60(u8 *p, u8 *q)
         n--;
         s++;
         d++;
-            } while (n > 0);
+    } while (n > 0);
     p[0x13C] = 1;
     p[2] = q[2];
     p[1] = q[1];

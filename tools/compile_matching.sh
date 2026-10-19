@@ -14848,3 +14848,39 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_gl_002db9d0.c -c -
 "$PYTHON" tools/verify_object.py "$BUILD/grok_gl_002db9d0.o" private/SLUS_204.86.rom --source src/grok_gl_002db9d0.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_gl_002df140.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_gl_002df140.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_gl_002df140.o" private/SLUS_204.86.rom --source src/grok_gl_002df140.c
+
+# Whole native state-handler windows with independently identified entries.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/clone_state_0036c190.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/clone_state_0036c190.o"
+"$PYTHON" tools/verify_object.py "$BUILD/clone_state_0036c190.o" private/SLUS_204.86.rom --source src/clone_state_0036c190.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/clone_state_00321390.c -c -lang c -O3,p -Op -sdatathreshold 8 -o "$BUILD/clone_state_00321390.o"
+"$PYTHON" tools/verify_object.py "$BUILD/clone_state_00321390.o" private/SLUS_204.86.rom --source src/clone_state_00321390.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/clone_state_002c4640.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/clone_state_002c4640.o"
+"$PYTHON" tools/verify_object.py "$BUILD/clone_state_002c4640.o" private/SLUS_204.86.rom --source src/clone_state_002c4640.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/clone_state_002ec3e0.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/clone_state_002ec3e0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/clone_state_002ec3e0.o" private/SLUS_204.86.rom --source src/clone_state_002ec3e0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/clone_state_003037f0.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/clone_state_003037f0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/clone_state_003037f0.o" private/SLUS_204.86.rom --source src/clone_state_003037f0.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/clone_state_00281fe0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/clone_state_00281fe0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/clone_state_00281fe0.o" private/SLUS_204.86.rom --source src/clone_state_00281fe0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/clone_input_0029a260.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/clone_input_0029a260.o"
+"$PYTHON" tools/verify_object.py "$BUILD/clone_input_0029a260.o" private/SLUS_204.86.rom --source src/clone_input_0029a260.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/clone_input_002ed0c0.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/clone_input_002ed0c0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/clone_input_002ed0c0.o" private/SLUS_204.86.rom --source src/clone_input_002ed0c0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/clone_input_00304260.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/clone_input_00304260.o"
+"$PYTHON" tools/verify_object.py "$BUILD/clone_input_00304260.o" private/SLUS_204.86.rom --source src/clone_input_00304260.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_z1_1d8b60.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_z1_1d8b60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_z1_1d8b60.o" private/SLUS_204.86.rom --source src/grok_z1_1d8b60.c
+
+# Whole native state-handler windows with independently identified entries.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/window_clone_002d04e0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/window_clone_002d04e0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/window_clone_002d04e0.o" private/SLUS_204.86.rom --source src/window_clone_002d04e0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/window_clone_002cd900.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/window_clone_002cd900.o"
+"$PYTHON" tools/verify_object.py "$BUILD/window_clone_002cd900.o" private/SLUS_204.86.rom --source src/window_clone_002cd900.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/window_clone_297df0_2ce780.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/window_clone_297df0_2ce780.o"
+"$PYTHON" tools/verify_object.py "$BUILD/window_clone_297df0_2ce780.o" private/SLUS_204.86.rom --source src/window_clone_297df0_2ce780.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/window_clone_297df0_2ce780.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/window_clone_297df0_2ce780.o"
+"$PYTHON" tools/verify_object.py "$BUILD/window_clone_297df0_2ce780.o" private/SLUS_204.86.rom --source src/window_clone_297df0_2ce780.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/window_clone_003ba9e0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/window_clone_003ba9e0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/window_clone_003ba9e0.o" private/SLUS_204.86.rom --source src/window_clone_003ba9e0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/window_clone_0034a770.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/window_clone_0034a770.o"
+"$PYTHON" tools/verify_object.py "$BUILD/window_clone_0034a770.o" private/SLUS_204.86.rom --source src/window_clone_0034a770.c
