@@ -15989,3 +15989,4 @@ func_002DB380,0x002DB380,0xFC,src/owner_state_callback_002DB380.c,complete
 func_002947C0,0x002947C0,0x70,src/owner_state_callback_002947C0.c,complete
 func_00294D40,0x00294D40,0x68,src/n4d.c,complete
 func_0029C1E0,0x0029C1E0,0x160,src/w187_s.c,complete
+func_002F2D80,0x002F2D80,0x13C,src/animation_move_handlers_0023AAD0_00287220.c,complete

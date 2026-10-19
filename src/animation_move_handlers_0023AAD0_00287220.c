@@ -19,6 +19,7 @@ typedef struct O {
 } O;
 extern s32 D_004C0220, D_004C0224, D_004C0228, D_004C0238, D_004C023C, D_004C0240;
 extern s32 D_004C0928, D_004C092C, D_004C0930, D_004C0940, D_004C0944, D_004C0948;
+extern s32 D_004C12A0, D_004C12A4, D_004C12A8, D_004C12B8, D_004C12BC, D_004C12C0;
 extern GG *D_004C2794;
 
 void func_0023AAD0(O *p) {
@@ -85,6 +86,44 @@ void func_00287220(O *p) {
         p->b1B5 = 14;
         if (p->b210 == 0) p->w408 = &D_004C0930;
         else p->w408 = &D_004C0948;
+        p->b1BB = 2;
+        break;
+    }
+    t = p->b1B5;
+    p->b1B5 = t;
+    p->b1B2 = p->s1C0 = 0;
+    p->w1D8 = 0;
+    D_004C2794->f7c[p->b2]++;
+    func_001757E0((u8 *)p, 11, p->b168);
+    if ((p->b1EA & 0x0F) != 0) p->b1EA = p->b1EA - 1;
+}
+
+
+void func_002F2D80(O *p) {
+    extern s32 func_001757E0(u8 *, s32, s32);
+    extern void func_001E3710(u8 *, s32);
+    u32 t;
+    switch (p->b1FC) {
+    case 0:
+        p->b168 = 0;
+        p->b1B5 = 12;
+        if (p->b210 == 0) p->w408 = &D_004C12A0;
+        else p->w408 = &D_004C12B8;
+        p->b1BB = 0;
+        break;
+    case 1:
+        p->b168 = 1;
+        p->b1B5 = 13;
+        func_001E3710((u8 *)p, 21);
+        if (p->b210 == 0) p->w408 = &D_004C12A4;
+        else p->w408 = &D_004C12BC;
+        p->b1BB = 1;
+        break;
+    case 2:
+        p->b168 = 2;
+        p->b1B5 = 14;
+        if (p->b210 == 0) p->w408 = &D_004C12A8;
+        else p->w408 = &D_004C12C0;
         p->b1BB = 2;
         break;
     }
