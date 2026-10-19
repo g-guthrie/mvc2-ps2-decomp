@@ -3936,6 +3936,11 @@ void func_0039D260(u8 *p) { jtbl_00472790[p[5]](p); }
 
 void func_0039D3E0(u8 *p) { jtbl_004727A0[p[4]](p); }
 
+void func_0039E050(u8 *p) {
+    *(float *)(p + 0x34) = *(float *)(*(u8 **)(p + 0x18) + 0x34);
+    jtbl_004727A0[p[5] + 16](p);
+}
+
 void func_0039D710(u8 *p) { jtbl_004727B0[p[4]](p); }
 
 void func_0039DB10(u8 *p) { jtbl_004727C0[p[4]](p); }
