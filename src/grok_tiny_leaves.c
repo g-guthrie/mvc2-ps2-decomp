@@ -159,32 +159,48 @@ void func_00103B10(void) {
     }
 }
 
-void func_00103B20(void) {
+/* EE syscall 0x14: _EnableIntc(cause). */
+int func_00103B20(int cause) {
+    int result;
     asm {
         addiu v1, r0, 20
         syscall 0
+        move result, v0
     }
+    return result;
 }
 
-void func_00103B30(void) {
+/* EE syscall 0x15: _DisableIntc(cause). */
+int func_00103B30(int cause) {
+    int result;
     asm {
         addiu v1, r0, 21
         syscall 0
+        move result, v0
     }
+    return result;
 }
 
-void func_00103B40(void) {
+/* EE syscall 0x16: _EnableDmac(channel). */
+int func_00103B40(int channel) {
+    int result;
     asm {
         addiu v1, r0, 22
         syscall 0
+        move result, v0
     }
+    return result;
 }
 
-void func_00103B50(void) {
+/* EE syscall 0x17: _DisableDmac(channel). */
+int func_00103B50(int channel) {
+    int result;
     asm {
         addiu v1, r0, 23
         syscall 0
+        move result, v0
     }
+    return result;
 }
 
 void func_00103B60(void) {
