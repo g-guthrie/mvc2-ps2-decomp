@@ -1,9 +1,15 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_00440260[6] = {
-    (unsigned int)0x0013AA00,
-    (unsigned int)0x0013AA00,
-    (unsigned int)0x0013AC00,
-    (unsigned int)0x0013AC90,
-    (unsigned int)0x0013AA00,
-    (unsigned int)0x0013ABC0,
+typedef unsigned char u8;
+typedef void (*Mvc2StateHandler)(u8 *);
+extern void func_0013AA00(u8 *);
+extern void func_0013AC00(u8 *);
+extern void func_0013AC90(u8 *);
+extern void func_0013ABC0(u8 *);
+
+const Mvc2StateHandler jtbl_00440260[6] = {
+    func_0013AA00,
+    func_0013AA00,
+    func_0013AC00,
+    func_0013AC90,
+    func_0013AA00,
+    func_0013ABC0,
 };
