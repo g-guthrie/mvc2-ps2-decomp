@@ -64,3 +64,33 @@ s32 func_00165900(u8 *a, u8 *b) {
     *(s16 *)(a + 0x4F0) = s1;
     return 0;
 }
+
+s32 func_00165720(u8 *a, u8 *b) {
+    extern s32 func_0016B240();
+    extern void func_0016B0C0();
+    extern void func_00186CE0();
+    u16 s1;
+    s32 v;
+    if (func_0016B240(a, 0) == 0) return 0;
+    func_0016B0C0(a, b, 0);
+    func_0016B0C0(a, b, 1);
+    v = *(s32 *)(a + 0x4C8);
+    switch (v) {
+    case 0:
+        s1 = 0x2800;
+        break;
+    case 0xFF:
+        s1 = 0x2000;
+        break;
+    case 1:
+        s1 = 0x2400;
+        break;
+    }
+    a[0x1E7] = v;
+    *(s16 *)(a + 0x35E) = s1;
+    func_00186CE0(a, 2);
+    *(s16 *)(a + 0x35E) = 0;
+    if (s1 & 0xC00) s1 = s1 ^ (a[0x1E6] * 3 << 10);
+    *(s16 *)(a + 0x4F0) = s1;
+    return 0;
+}
