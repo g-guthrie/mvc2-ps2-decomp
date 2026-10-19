@@ -33,7 +33,6 @@ extern void func_0020D2F0(u8 *, u8 *);
 extern void func_0020D250(u8 *, u8 *, int);
 extern void func_0021C770(u8 *, u8 *);
 extern void func_00328740(u8 *);
-extern s8 D_004ACD08[];
 
 void func_00210C70(u8 *p)
 {
