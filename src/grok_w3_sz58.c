@@ -135,3 +135,7 @@ void func_00321300(u8 *p, u8 *q)
     func_001266A0(p, 5, 5);
     func_001757E0(p, 15, 4);
 }
+
+/* Same native initializer family, compiled with this unit's old-MWCC recipe. */
+void func_002A0A10(u8 *p) { INIT_2A0A70 }
+void func_00304950(u8 *p) { INIT_2A0A70 }
