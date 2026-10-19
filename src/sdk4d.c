@@ -21,10 +21,10 @@ s32 func_004069C8(Obj *o) {
     else func_00405DC8(D_004BCB58);
     return r;
 }
-s32 func_00406960(Obj *o) {
+s32 func_00406960(Obj *o, s32 count, s32 buffer) {
     s32 r;
     if (o == 0) { func_00405DC8(D_004BCB00); return 0; }
-    if (*(s32 (**)(void *))((u8 *)o->vt + 0x20)) r = (*(s32 (**)(void *))((u8 *)o->vt + 0x20))(o->arg);
+    if (*(s32 (**)(void *, s32, s32))((u8 *)o->vt + 0x20)) r = (*(s32 (**)(void *, s32, s32))((u8 *)o->vt + 0x20))(o->arg, count, buffer);
     else { r = 0; func_00405DC8(D_004BCB20); }
     return r;
 }
