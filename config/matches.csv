@@ -15792,3 +15792,7 @@ func_003208C0,0x003208C0,0x5C,src/grok_nopd_3208c0.c,complete
 func_003209A0,0x003209A0,0xA8,src/grok_nopd_3209a0.c,complete
 func_00320AD0,0x00320AD0,0xA8,src/grok_nopd_320ad0.c,complete
 func_00320BE0,0x00320BE0,0x9C,src/grok_nopd_320be0.c,complete
+func_0030B740,0x0030B740,0x70,src/grok_nopd_30b740.c,complete
+func_00310DB0,0x00310DB0,0x8C,src/grok_nopd_310db0.c,complete
+func_00311170,0x00311170,0x7C,src/grok_nopd_311170.c,complete
+func_00311A90,0x00311A90,0x94,src/grok_w4b_residual_00311A90.c,complete
