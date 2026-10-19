@@ -15947,3 +15947,4 @@ func_001F7020,0x001F7020,0x24,src/grok_w5_001f.c,complete
 func_001F7050,0x001F7050,0xC,src/grok_w5_001f.c,complete
 func_0021D7C0,0x0021D7C0,0x27C,src/select_throw_motion_0021d7c0.c,complete
 func_0023A440,0x0023A440,0x140,src/select_input_variant_0023a440.c,complete
+func_00285E50,0x00285E50,0x74,src/owner_state_callback_00285E50.c,complete
