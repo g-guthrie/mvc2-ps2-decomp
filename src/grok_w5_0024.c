@@ -24,6 +24,7 @@ extern void func_002401F0(u8 *);
 extern void func_001A3A10(u8 *, int, int);
 extern void func_0018C4B0(u8 *, int);
 extern int func_001A3F40(u8 *);
+extern s32 func_00119098(f32);
 extern void func_0035EF90(u8 *, int, u8 *);
 extern void func_001A7930(u8 *, int);
 extern void func_00367F90(u8 *, int, int);
@@ -277,4 +278,27 @@ void func_0024B6C0(u8 *p)
         (*(volatile f32 *)(p + 104)) = 0.0f;
     }
     func_0024BA20(p);
+}
+
+void func_00241430(u8 *p, u8 *q)
+{
+    f32 mode = (f32)(p[0x15B] & 0x7F);
+    if (*(f32 *)(q + 0x14) != mode) {
+        *(f32 *)(q + 0x18) = *(f32 *)(q + 0x14);
+        *(f32 *)(q + 0x14) = mode;
+        *(f32 *)(q + 0x1C) = mode - *(f32 *)(q + 0x18);
+        if (*(f32 *)(q + 0x1C) >= 16.0f)
+            *(f32 *)(q + 0x1C) -= 32.0f;
+        if (*(f32 *)(q + 0x1C) <= -16.0f)
+            *(f32 *)(q + 0x1C) += 32.0f;
+        *(f32 *)(q + 0x1C) /= (f32)*(s8 *)(p + 0x152);
+    }
+    if (*(f32 *)(q + 0x14) == *(f32 *)(q + 0x18))
+        *(s32 *)(q + 0x1C) = 0;
+    *(f32 *)(q + 0x18) += *(f32 *)(q + 0x1C);
+    if (*(f32 *)(q + 0x18) < 0.0f)
+        *(f32 *)(q + 0x18) += 32.0f;
+    if (*(f32 *)(q + 0x18) >= 32.0f)
+        *(f32 *)(q + 0x18) -= 32.0f;
+    p[0x22] = func_00119098(*(f32 *)(q + 0x18));
 }

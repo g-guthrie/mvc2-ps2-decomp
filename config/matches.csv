@@ -15544,3 +15544,4 @@ residual_002855C0,0x002855C0,0xA4,src/ground_reset.c,complete
 residual_002B7940,0x002B7940,0xA0,src/mode_input_gates.c,complete
 func_00182AA0,0x00182AA0,0x12C,src/q9_d.c,complete
 residual_002ECA50,0x002ECA50,0xDC,src/q9_d.c,complete
+func_00241430,0x00241430,0x158,src/grok_w5_0024.c,complete
