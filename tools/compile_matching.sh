@@ -11993,3 +11993,13 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_nm_302ba0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/grok_nm_302ba0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_nm_302ba0.o" \
     private/SLUS_204.86.rom --source src/grok_nm_302ba0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w4b_residual_003045C0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/grok_w4b_residual_003045C0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_w4b_residual_003045C0.o" \
+    private/SLUS_204.86.rom --source src/grok_w4b_residual_003045C0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/grok_w4b_residual_00315CA0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/grok_w4b_residual_00315CA0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_w4b_residual_00315CA0.o" \
+    private/SLUS_204.86.rom --source src/grok_w4b_residual_00315CA0.c

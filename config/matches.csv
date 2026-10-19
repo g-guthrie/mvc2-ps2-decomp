@@ -15803,3 +15803,5 @@ func_0038F270,0x0038F270,0x5C,src/grok_nopd_38f270.c,complete
 func_003B8BA0,0x003B8BA0,0x6C,src/grok_w5b_003b8ba0.c,complete
 func_00311B30,0x00311B30,0xB4,src/grok_nm3_311b30.c,complete
 func_00302BA0,0x00302BA0,0x98,src/grok_nm_302ba0.c,complete
+func_003045C0,0x003045C0,0x98,src/grok_w4b_residual_003045C0.c,complete
+func_00315CA0,0x00315CA0,0x94,src/grok_w4b_residual_00315CA0.c,complete
