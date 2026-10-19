@@ -6,7 +6,7 @@ typedef unsigned int u32;
 extern u8 *D_004C2794 __attribute__((section(".sdata")));
 extern void func_001861B0(u8 *);
 extern void func_0018C4B0(u8 *, int);
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
 extern void func_0023B4C0(u8 *);
 extern void func_0023B5B0(u8 *);
 

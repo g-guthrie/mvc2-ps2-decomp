@@ -4,7 +4,7 @@ typedef signed short s16;
 typedef signed int s32;
 typedef float f32;
 
-extern void func_001757E0(u8 *, s32, s32);
+extern int func_001757E0(u8 *, s32, s32);
 extern void func_00176160(u8 *, s32, s32, s32);
 
 void func_001B5700(u8 *p)

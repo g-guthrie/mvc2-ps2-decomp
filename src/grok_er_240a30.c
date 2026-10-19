@@ -6,9 +6,9 @@ typedef unsigned int u32;
 typedef float f32;
 
 extern u8 *D_004C2794 __attribute__((section(".sdata")));
-extern void func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern void func_00183D50(u8 *);
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
 
 void func_00240A30(u8 *p)
 {

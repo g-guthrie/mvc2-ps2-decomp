@@ -7,7 +7,7 @@ extern u8 *D_004C2794 __attribute__((section(".sdata")));
 extern void func_00185490(u8 *);
 extern void func_00175C00(u8 *, int);
 extern void func_00183D10(u8 *);
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
 extern void func_0023D800(u8 *, u8 *);
 
 void func_0023D710(u8 *p, u8 *q)

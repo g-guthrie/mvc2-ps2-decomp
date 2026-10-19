@@ -11,7 +11,7 @@ extern s16 D_0044E400[];
 extern u8 D_0044E420[];
 extern f32 D_0044E430[];
 extern s32 func_00118FA8(f32);
-extern void func_001757E0(u8 *, s32, s32);
+extern int func_001757E0(u8 *, s32, s32);
 
 void func_001D5320(u8 *p, u8 *q)
 {

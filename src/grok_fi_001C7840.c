@@ -5,7 +5,7 @@ typedef float f32;
 
 extern f32 D_004F1FC8[];
 extern f32 D_004F1FCC[];
-extern void func_001757E0(u8 *, int, int);
+extern int func_001757E0(u8 *, int, int);
 extern void func_0015E630(u8 *);
 extern void func_001C7960(u8 *, u8 *);
 
