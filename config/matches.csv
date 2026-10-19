@@ -15551,3 +15551,4 @@ func_00238A10,0x00238A10,0x158,src/grok_w5_0024.c,complete
 func_00400148,0x00400148,0x60,src/runtime_object_storage.c,complete
 func_004001A8,0x004001A8,0xAC,src/runtime_object_storage.c,complete
 func_00254480,0x00254480,0x4C,src/wave2.c,complete
+func_00210F40,0x00210F40,0xF4,src/w1911_p.c,complete
