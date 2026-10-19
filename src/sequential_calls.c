@@ -1,6 +1,40 @@
 typedef unsigned char u8;
 typedef signed char s8;
 typedef float f32;
+typedef unsigned short u16;
+typedef unsigned int u32;
+extern s8 *D_004C2840 __attribute__((section(".sdata")));
+extern u8 D_004F4384[];
+extern u8 D_004D18A0[];
+extern u8 D_00477148[];
+extern u8 D_004F1D20[];
+extern u8 D_004F1D24[];
+extern u8 D_004F1D29[];
+extern u8 D_004F1D2A[];
+extern u8 D_004F1D2B[];
+extern u8 D_004F1D2C[];
+extern void func_0011D8F8(void *, int, int);
+extern void func_003D6D50(void);
+extern void func_003D6E20(void);
+extern void func_001E2330(void);
+extern void func_00170160(int);
+extern void func_003DA410(void);
+extern void func_0016CDA0(void);
+extern void func_00122DA0(void);
+extern void func_00329890(void);
+extern void func_00122840(int);
+extern void func_0016F090(void *);
+extern void func_0016F0C0(f32);
+extern void func_0016D160(void);
+extern void func_00141250(void);
+extern void func_0013FE60(int, int);
+extern void func_00140E90(int, int);
+extern void func_0013FCE0(int);
+extern void func_001410D0(void);
+extern void func_003298B0(int, int, int);
+extern void func_001E4150(void);
+extern void func_001E3CA0(int);
+extern void func_0012E780(int);
 extern void func_0015FAA0();
 extern void func_0015FDF0();
 extern void func_0015FEB0();
@@ -277,4 +311,43 @@ void func_0027B5C0(u8 *p)
     func_001863F0(p);
     if ((s8)func_00175700(p) < 0)
         func_001843A0(p);
+}
+
+void func_003D2240(void)
+{
+    D_004C2840[2]++;
+    *(u16 *)(D_004C2840 + 8) = 0x708;
+    D_004C2840[0x4C] = 0;
+    func_0011D8F8(D_004F4384, 0, 0x80);
+    func_0011D8F8(D_004D18A0, 0, 0xC0);
+    func_003D6D50();
+    func_003D6E20();
+    func_001E2330();
+    func_00170160(0xB);
+    func_003DA410();
+    func_0016CDA0();
+    func_00122DA0();
+    func_00329890();
+    func_00122840(0);
+    func_0016F090(D_00477148);
+    func_0016F0C0(1.0f);
+    func_0016D160();
+    D_004F1D20[0] = 1;
+    *(u32 *)D_004F1D24 = 0x5B;
+    *(u32 *)D_004F1D2C = 0x44DE8000;
+    D_004F1D29[0] = 0x13;
+    D_004F1D2A[0] = 0x18;
+    D_004F1D2B[0] = 0x5B;
+    func_00141250();
+    func_0013FE60(0x800, 0);
+    func_00140E90(0x800, 0);
+    func_0013FCE0(2);
+    func_0013FCE0(0);
+    func_0013FCE0(1);
+    func_0013FCE0(4);
+    func_001410D0();
+    func_003298B0(0, 0x3C, 0);
+    func_001E4150();
+    func_001E3CA0(1);
+    func_0012E780(6);
 }
