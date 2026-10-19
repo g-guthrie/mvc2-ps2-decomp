@@ -16757,3 +16757,10 @@ func_001A3640,0x001A3640,0xF0,src/grok_z4_1a3640.c,complete
 func_003A8BA0,0x003A8BA0,0xE8,src/grok_z5_3a8ba0.c,complete
 func_001DB6F0,0x001DB6F0,0xE4,src/grok_au_1db6f0.c,complete
 func_002632F0,0x002632F0,0x180,src/move_setup.c,complete
+func_001A3810,0x001A3810,0x12C,src/grok_zc_1a3810.c,complete
+func_00194AA0,0x00194AA0,0x30,src/owner_callback_dispatch_prefixes.c,complete
+func_001A35F0,0x001A35F0,0x2C,src/owner_callback_dispatch_prefixes.c,complete
+func_001A3620,0x001A3620,0x20,src/owner_callback_dispatch_prefixes.c,complete
+func_001DDC30,0x001DDC30,0x24,src/owner_callback_dispatch_prefixes.c,complete
+func_001DDC60,0x001DDC60,0x20,src/owner_callback_dispatch_prefixes.c,complete
+func_001DA440,0x001DA440,0x54,src/owner_callback_dispatch_prefixes.c,complete

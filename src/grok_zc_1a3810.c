@@ -8,9 +8,9 @@ typedef float f32;
 
 typedef struct { f32 x, y, z; } V3;
 
-extern u8 D_004BF680[2];
-extern u8 D_004BF681[2];
-extern void func_001757E0(u8 *, s32, s32);
+extern u8 D_004BF680[] __attribute__((section(".sdata")));
+extern u8 D_004BF681[] __attribute__((section(".sdata")));
+extern int func_001757E0(u8 *, s32, s32);
 extern void func_001A3950(u8 *, u8 *);
 
 void func_001A3810(u8 *p, void *owner)
@@ -29,8 +29,7 @@ void func_001A3810(u8 *p, void *owner)
         n--;
         s++;
         d++;
-        
-        
+
     } while (n > 0);
     p[0x13C] = 1;
     p[2] = q[2];

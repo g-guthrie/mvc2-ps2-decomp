@@ -14642,3 +14642,11 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_z5_3a8ba0.c 
 # Existing callback table suffix at +0x10 bytes; no separate data allocation.
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_au_1db6f0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/grok_au_1db6f0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_au_1db6f0.o" private/SLUS_204.86.rom --source src/grok_au_1db6f0.c
+
+# Strided GP lookup views use actual storage placement rather than guessed bounds.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_zc_1a3810.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/grok_zc_1a3810.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_zc_1a3810.o" private/SLUS_204.86.rom --source src/grok_zc_1a3810.c
+
+# Separately referenced dispatch heads; their alignment remains uncredited.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/owner_callback_dispatch_prefixes.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/owner_callback_dispatch_prefixes.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_callback_dispatch_prefixes.o" private/SLUS_204.86.rom --source src/owner_callback_dispatch_prefixes.c

@@ -14,3 +14,9 @@ func_002DAC10,0x002DAC10,0x110,src/grok_cu_2dac10.c,MWCCPS2,-O3 -Op -sdatathresh
 func_002DB270,0x002DB270,0x104,src/grok_cu_2db270.c,MWCCPS2,-O3 -Op -sdatathreshold 8,0045AAF0 callback pointer
 func_002E44B0,0x002E44B0,0x114,src/grok_cu_2e44b0.c,MWCCPS2,-O3 -sdatathreshold 8,002E4444 two-pointer direct JAL
 func_0031BA60,0x0031BA60,0xEC,src/deferred_input_setup_00216670.c,MWCCPS2_30,-O3 -sdatathreshold 8,0031BA0C direct JAL; native switch lacks default initialization
+func_00194AA0,0x00194AA0,0x30,src/owner_callback_dispatch_prefixes.c,MWCCPS2,-O3 -sdatathreshold 8,native owner-call chain and full tail dispatcher
+func_001A35F0,0x001A35F0,0x2C,src/owner_callback_dispatch_prefixes.c,MWCCPS2,-O3 -sdatathreshold 8,native owner-call chain and full tail dispatcher
+func_001A3620,0x001A3620,0x20,src/owner_callback_dispatch_prefixes.c,MWCCPS2,-O3 -sdatathreshold 8,native owner-call chain and full tail dispatcher
+func_001DDC30,0x001DDC30,0x24,src/owner_callback_dispatch_prefixes.c,MWCCPS2,-O3 -sdatathreshold 8,native owner-call chain and full tail dispatcher
+func_001DDC60,0x001DDC60,0x20,src/owner_callback_dispatch_prefixes.c,MWCCPS2,-O3 -sdatathreshold 8,native owner-call chain and full tail dispatcher
+func_001DA440,0x001DA440,0x54,src/owner_callback_dispatch_prefixes.c,MWCCPS2,-O3 -sdatathreshold 8,native owner dispatch with signed frame clamp
