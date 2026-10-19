@@ -50,7 +50,7 @@ extern void func_0016EDA0();
 extern void func_0018F8C0();
 extern void func_002A70B0();
 extern void func_00175910();
-extern void (*D_0044BDE0[])();
+extern void (*D_0044BDE0[])(u8 *);
 
 s32 func_001AED10(u8 *p) {
     *(f32 *)(p + 0x34) = *(f32 *)(*(u8 **)(p + 0x14) + 0x34);
