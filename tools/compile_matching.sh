@@ -11610,3 +11610,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/compile_ee96.py "$BUILD/find_named_runtime_span_0040C6D0.i" "$BUILD/find_named_runtime_span_0040C6D0.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/find_named_runtime_span_0040C6D0.o" "$BUILD/find_named_runtime_span_0040C6D0.s"
 "$PYTHON" tools/verify_object.py "$BUILD/find_named_runtime_span_0040C6D0.o" private/SLUS_204.86.rom --source src/find_named_runtime_span_0040C6D0.c
+
+"$WIBO" "$SNCPP" -P src/close_runtime_directory_0040C578.c "$BUILD/close_runtime_directory_0040C578.i"
+"$PYTHON" tools/compile_ee96.py "$BUILD/close_runtime_directory_0040C578.i" "$BUILD/close_runtime_directory_0040C578.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/close_runtime_directory_0040C578.o" "$BUILD/close_runtime_directory_0040C578.s"
+"$PYTHON" tools/verify_object.py "$BUILD/close_runtime_directory_0040C578.o" private/SLUS_204.86.rom --source src/close_runtime_directory_0040C578.c

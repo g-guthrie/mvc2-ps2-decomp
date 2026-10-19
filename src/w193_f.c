@@ -15,7 +15,7 @@ extern u8 D_004BE248[];
 extern s32 func_0011D8F8(u8 *, s32, s32);
 extern void func_0040C798(void);
 extern void func_0040B098(void);
-extern void func_0040C578(void);
+extern s32 func_0040C578(void);
 extern s32 func_0040C2C0(u8 *, u8 *);
 extern void func_0011EB60(u8 *, u8 *);
 extern void func_0040AF58(s32, u8 *);
