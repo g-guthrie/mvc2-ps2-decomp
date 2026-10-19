@@ -170,12 +170,15 @@ motion/attachment state updates, actor launch variants, timed state setup and a
 440-byte damped-motion handler. One older 736-byte mesh-loader caller lost
 credit because its fabricated helper bodies only shaped register allocation.
 Those batches reached 43.0850% code. The newer waves 17–19 baseline is
-1,619,392 code bytes (49.1664%). Eighty-five independently verified C spans added since that baseline bring
-the current catalog to 1,639,204 code bytes (49.7679%); reconstructed data is
-156,781 bytes (24.1922%).
+1,619,392 code bytes (49.1664%). Ninety-four independently verified C spans added since that baseline bring
+the current catalog to 1,641,320 code bytes (49.8322%); reconstructed data is
+173,165 bytes (26.7204%).
 The near-matching natural mesh-loader candidate remains uncredited.
 The latest source work also recovers the bounded forty-slot runtime-object
-pool with its shared layout and complete native initializer/allocator spans.
+pool with its shared layout and complete native initializer/allocator spans,
+plus the sixteen bounded runtime-entry record arrays. The latest whole-function
+recoveries include the 736-byte runtime stream processor, its sector-count
+setter, and three 148-byte record searches.
 
 The four 48-byte switch tables at 004B73E0–004B7470 now come from the
 compiled C owners in `src/w192_r.c`; their raw pointer-literal file is removed.

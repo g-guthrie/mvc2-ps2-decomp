@@ -4127,3 +4127,39 @@ Catalog: 1,639,204 / 3,293,696 C bytes (49.7679%), 15,489 credited spans;
 156,781 / 648,064 reconstructed data bytes (24.1922%). All 51 tests, static
 build coverage, and full hybrid/packed-image checks pass with the retail hashes
 above. The next scheduled full-point gate remains 1,652,329 code bytes.
+
+
+### Runtime processor, record searches, and bounded record arrays — October 18
+
+Since 8994dcd1, nine complete functions add 2,116 verified C bytes:
+00411720 (160), 00407298 (88), 0040D398/0040D300/0040D268 (148 each),
+0040CB30 (96), 00271410 (528), 004007A0 (64), and 004007F0 (736).
+The three record searches preserve the original bounded loop and its
+post-loop success/failure split. They no longer need empty assembly barriers.
+The callback registration and dispatcher also use real callback types and
+normal source control flow. Five empty-barrier placeholders remain.
+
+The sector setter uses EE GCC 2.96 -O2 -G0 -fno-schedule-insns. The complete
+stream processor uses the ordinary -O2 -G8 profile; its completion, retry,
+request, transfer-size limits, callback, and error paths all match retail.
+Reviewing its helper exposed two missing forwarded arguments in the old
+00406960 declaration. The corrected helper passes count and buffer to the
+native callback; all three functions in sdk4d.c still match exactly.
+
+The record-table data contributes sixteen fully typed 0x400-byte arrays,
+16,384 additional reconstructed bytes. Its shared layout and consumer/bounds
+evidence are documented in DATA_INTEGRATION.md. Every unknown outer prefix
+retains placeholder status. All 33 replacement data objects and all affected
+code units were independently compiled and compared over their complete spans;
+a changed first record key is rejected by the private data verifier.
+
+Catalog: 1,641,320 / 3,293,696 C bytes (49.8322%), 15,498 credited spans;
+173,165 / 648,064 reconstructed data bytes (26.7204%). The next scheduled
+full-point gate remains 1,652,329 code bytes. This smaller checkpoint publishes
+the shared layouts and verified compiler recipes for other workers.
+
+All 51 tests and build-coverage validation pass. The combined hybrid link
+matches all 3,941,760 retail bytes, and the packed 3,942,320-byte retail ELF
+also matches exactly. Their SHA-256 values remain c5206f568f068e5bd93ba47676500764c3d45719890865fa71ada10afadcd26f and
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+Unrecovered ranges still come from the private retail input.

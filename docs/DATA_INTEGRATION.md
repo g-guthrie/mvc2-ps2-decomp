@@ -49,3 +49,25 @@ PYTHONPATH=. python3 -m unittest tests/test_data_integration.py
 The test suite checks catalog scope, source-derived dispatch labels, metadata,
 and collision rejection. The private-object verifier is intentionally a
 separate local gate because it requires the user-owned image.
+
+### Runtime entry records at 00489818
+
+The runtime entry pool has sixteen slots with a 0x438-byte stride. Each slot
+contains a 0x38-byte control prefix and sixteen 0x40-byte inner records.
+`0040D118` scans all sixteen slots; `0040D6A0` clears the complete 0x4380-byte
+pool; `0040CBD0` uses the same bounds and stride to find a free slot.
+
+The inner layout is shared in `src/runtime_entry_table.h`. The searches
+`0040D398`, `0040D300`, and `0040D268` inspect sixteen keys at record offset
+0 and respectively return the value at +0x3C, the word at +0x38, and the name
+at +4. `0040D738` passes that name to the open helper, reads the three integer
+arguments at +0x2C/+0x30/+0x34, and writes +0x38 and +0x3C. The inline name
+occupies the region from +4 to the first argument at +0x2C. The argument
+names describe their observed uses, without asserting unknown writer behavior.
+
+Only the sixteen 0x400-byte record arrays are reconstructed data: 16,384
+bytes in total. Every 0x38-byte outer prefix and the four leading bytes
+remain separate placeholders. All thirty-three replacement data objects
+match their complete retail spans, and the five changed code units match
+with their original compiler profiles. A negative control setting the first
+record key to one is rejected by `verify_data_object.py`.
