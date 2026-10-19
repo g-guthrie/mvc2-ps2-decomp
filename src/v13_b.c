@@ -47,7 +47,7 @@ typedef struct FH {
 void func_00297740(FH *p) {
     extern double func_00119058(f32);
     extern void func_00175700();
-    extern void func_001C8FD0();
+    extern u8 *func_001C8FD0(u8 *, s32);
     extern void func_001757E0();
     extern void func_002975D0();
     f32 old = p->f60;
@@ -63,7 +63,7 @@ void func_00297740(FH *p) {
         u32 t = p->b6;
         p->b6 = t + 1;
     }
-    func_001C8FD0(p, 0);
+    func_001C8FD0((u8 *)p, 0);
     p->h1c = p->b1b7 * 2 + 1;
     func_001757E0(p, 0x15, 6);
     func_002975D0(p);

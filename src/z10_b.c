@@ -134,7 +134,7 @@ extern V3_299E80 D_00583B80;
 void func_00299E80(u8 *p) {
     extern void func_00175700();
     extern void func_00186A20();
-    extern void func_001C8FD0();
+    extern u8 *func_001C8FD0(u8 *, s32);
     extern void func_001830D0();
     V3_299E80 v;
     u32 t;
