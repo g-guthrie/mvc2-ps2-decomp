@@ -135,21 +135,6 @@ extern s32 D_00438660[];
 extern void D_0010C900(void);
 extern void func_00103A90(s32, void *);
 extern void func_00103AA0(s32, void *);
-struct T3FCCF0 { char b0; signed char b1; char pad[2]; s32 f4; };
-extern void func_003FB510(s32, s32, void *, s32, s32);
-extern void func_003FD138(void *);
-extern void func_004005F8();
-extern void func_0011D8F8(void *, s32, s32);
-void func_003FCCF0(struct T3FCCF0 *p) {
-    func_003FB510(3, 0, p, -1, -1);
-    if (p) {
-        if (p->b1 == 2) func_003FD138(p);
-        if (p->f4) func_004005F8(p->f4);
-        func_0011D8F8(p, 0, 0x138);
-        func_003FB510(3, 1, p, -1, -1); __asm__ volatile("");
-    }
-}
-
 struct E6128 { s32 v; char key[12]; };
 extern char D_0062FB4C[];
 extern s32 func_0011FFA0(void);

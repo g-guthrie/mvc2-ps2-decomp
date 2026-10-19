@@ -4,14 +4,12 @@ typedef unsigned short u16;
 extern void func_0040EC90(void);
 extern void func_0040EA48(void);
 extern void func_0040ED00(void);
-extern s32 func_00411720(s32, s32, long long, long long);
 extern void func_0011D8F8(void *, s32, s32);
 extern void func_003F79A8();
 
 void func_003FF1F8(void) { func_0040EC90(); }
 void func_003FF178(void) { func_0040EA48(); }
 void func_003FF210(void) { func_0040ED00(); }
-void func_003FEF48(long long a, long long b) { func_00411720(6, 0, a, b); __asm__ volatile(""); }
 extern char D_00484100[];
 void func_003FF388(void) { func_0011D8F8(D_00484100, 0, 0x9C0); }
 void func_003F85D0(u16 *d, u16 *s, s32 n) { while (n > 0) { *d = *s; s++; n--; d++; } }

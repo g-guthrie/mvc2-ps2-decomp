@@ -36,18 +36,6 @@ void func_0040EC90(void) {
     func_00408CE8();
     func_00410F68();
 }
-extern void func_003F9630(void);
-extern void func_003F9660(void);
-extern void func_003FD228(void *);
-extern signed char D_00479E00[];
-void func_003FD2A0(void) {
-    s32 i; signed char *p;
-    func_003F9630();
-    p = D_00479E00;
-    for (i = 15; i >= 0; i--, p += 0x138) if (p[0] == 1) func_003FD228(p);
-    func_003F9660();
-    __asm__ volatile("");
-}
 extern s32 func_0011FFA0(const char *);
 extern s32 func_0040A520(s32, s32);
 s32 func_0040A578(const char *a, const char *b) {

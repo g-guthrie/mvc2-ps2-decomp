@@ -6,7 +6,6 @@ extern void func_0040EE00(void);
 extern void func_003FB128(void *);
 extern void func_0011EB60(void *);
 extern char D_004BE810[];
-extern void func_00411720(int, int, int, int);
 
 int func_00408948(void) { return D_00487348; }
 void func_003FF190(void) { func_0040EA58(); }
@@ -15,7 +14,6 @@ void func_003FF098(void) { func_0040E288(); }
 void func_003FF270(void) { func_0040EE00(); }
 void func_003FD9C8(int a, void *b) { func_003FB128(b); }
 void func_0040EA08(void) { func_0011EB60(D_004BE810); }
-void func_003FEF20(int a, int b) { func_00411720(1, 0, a, b); __asm__ volatile(""); }
 
 struct H { int p0, p1, p2; };
 extern int func_00404488(int);
