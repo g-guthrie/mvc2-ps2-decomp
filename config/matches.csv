@@ -16013,3 +16013,5 @@ func_002E1BB0,0x002E1BB0,0x134,src/w1813_o.c,complete
 func_002BEA80,0x002BEA80,0xC8,src/z3_d.c,complete
 func_00295C90,0x00295C90,0x140,src/q9_d.c,complete
 func_00223840,0x00223840,0x16C,src/w175_b.c,complete
+func_002111E0,0x002111E0,0x18C,src/w175_b.c,complete
+func_00211370,0x00211370,0x1AC,src/w175_b.c,complete

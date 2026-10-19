@@ -481,3 +481,109 @@ void func_00223840(u8 *a)
     func_001757E0(a, 0xC, a[0x168]);
     if (*(s8 *)(a + 0x1EA) & 0xF0) a[0x1EA] = *(s8 *)(a + 0x1EA) - 0x10;
 }
+
+extern u32 data_u32_004BFE8C[15] __attribute__((section(".sdata")));
+
+void func_002111E0(u8 *a)
+{
+    extern void func_001E3710(u8 *, s32);
+    extern int func_001757E0(u8 *, int, int);
+    u32 t;
+    switch (a[0x1FC]) {
+    case 0:
+        a[0x168] = 0;
+        a[0x1B5] = 12;
+        func_001E3710(a, 0x14);
+        if (a[0x210] == 0) *(void **)(a + 0x408) = &data_u32_004BFE8C[3];
+        else *(void **)(a + 0x408) = &data_u32_004BFE8C[9];
+        a[0x1BB] = 0;
+        break;
+    case 1:
+        a[0x168] = 1;
+        a[0x1B5] = 13;
+        if (*(u16 *)(a + 0x20E) & 0x1000) {
+            a[0x168] = 3;
+            a[0x1B5] = 18;
+        }
+        func_001E3710(a, 0x15);
+        if (a[0x210] == 0) *(void **)(a + 0x408) = &data_u32_004BFE8C[4];
+        else *(void **)(a + 0x408) = &data_u32_004BFE8C[10];
+        a[0x1BB] = 1;
+        break;
+    case 2:
+        a[0x168] = 2;
+        a[0x1B5] = 14;
+        if (*(u16 *)(a + 0x20E) & 0x1000) {
+            a[0x168] = 4;
+            a[0x1B5] = 19;
+        }
+        func_001E3710(a, 0x16);
+        if (a[0x210] == 0) *(void **)(a + 0x408) = &data_u32_004BFE8C[5];
+        else *(void **)(a + 0x408) = &data_u32_004BFE8C[11];
+        a[0x1BB] = 2;
+        break;
+    default:
+        break;
+    }
+    t = a[0x1B5];
+    ((ActorActionView *)a)->action = t;
+    a[0x1B2] = *(u16 *)(a + 0x1C0) = 0;
+    *(s32 *)(a + 0x1D8) = 0;
+    D_004C2794->f7c[a[2]]++;
+    func_001757E0(a, 11, a[0x168]);
+    if (*(s8 *)(a + 0x1EA) & 0x0F) a[0x1EA] = *(s8 *)(a + 0x1EA) - 1;
+}
+
+void func_00211370(u8 *a)
+{
+    extern void func_001E3710(u8 *, s32);
+    extern int func_001757E0(u8 *, int, int);
+    u32 t;
+    switch (a[0x1FC]) {
+    case 0:
+        a[0x168] = 0;
+        a[0x1B5] = 15;
+        if (*(u16 *)(a + 0x20E) & 0x1000) {
+            a[0x168] = 3;
+            a[0x1B5] = 20;
+        }
+        func_001E3710(a, 0x14);
+        if (a[0x210] == 0) *(void **)(a + 0x408) = &data_u32_004BFE8C[6];
+        else *(void **)(a + 0x408) = &data_u32_004BFE8C[12];
+        a[0x1BB] = 0;
+        break;
+    case 1:
+        a[0x168] = 1;
+        a[0x1B5] = 16;
+        if (*(u16 *)(a + 0x20E) & 0x1000) {
+            a[0x168] = 4;
+            a[0x1B5] = 21;
+        }
+        func_001E3710(a, 0x15);
+        if (a[0x210] == 0) *(void **)(a + 0x408) = &data_u32_004BFE8C[7];
+        else *(void **)(a + 0x408) = &data_u32_004BFE8C[13];
+        a[0x1BB] = 1;
+        break;
+    case 2:
+        a[0x168] = 2;
+        a[0x1B5] = 17;
+        if (*(u16 *)(a + 0x20E) & 0x1000) {
+            a[0x168] = 5;
+            a[0x1B5] = 22;
+        }
+        func_001E3710(a, 0x16);
+        if (a[0x210] == 0) *(void **)(a + 0x408) = &data_u32_004BFE8C[8];
+        else *(void **)(a + 0x408) = &data_u32_004BFE8C[14];
+        a[0x1BB] = 2;
+        break;
+    default:
+        break;
+    }
+    t = a[0x1B5];
+    ((ActorActionView *)a)->action = t;
+    a[0x1B2] = *(u16 *)(a + 0x1C0) = 0;
+    *(s32 *)(a + 0x1D8) = 0;
+    D_004C2794->f7c[a[2]]++;
+    func_001757E0(a, 12, a[0x168]);
+    if (*(s8 *)(a + 0x1EA) & 0xF0) a[0x1EA] = *(s8 *)(a + 0x1EA) - 16;
+}

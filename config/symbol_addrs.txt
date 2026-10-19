@@ -11293,6 +11293,7 @@ data_s8_004BFCF8 = 0x004BFCF8; // allow_duplicated:True
 data_s8_004BFD80 = 0x004BFD80; // allow_duplicated:True
 data_s8_004BFDA8 = 0x004BFDA8; // allow_duplicated:True
 data_s8_004BFE80 = 0x004BFE80; // allow_duplicated:True
+data_u32_004BFE8C = 0x004BFE8C;
 data_s8_004BFFA4 = 0x004BFFA4; // allow_duplicated:True
 data_u32_004BFFB0 = 0x004BFFB0;
 data_s8_004C00E4 = 0x004C00E4; // allow_duplicated:True
