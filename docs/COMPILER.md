@@ -753,3 +753,5 @@ matches in `grok_w5_001f.c` under the existing MWCCPS2 3.0.3
 boundary.
 
 The Sony event helpers `00104C90` and `00104DA8` use EE GCC 2.9 `-O2 -G0 -ffunction-sections`. Their required syscall primitive declares V0/V1 clobbers; queue updates and fallback control flow remain C. The fallback wrappers `00103D20` and `00103D60` take a thread ID and return an integer kernel status, consistent with the [PS2SDK kernel declarations](https://github.com/ps2dev/ps2sdk/blob/master/ee/kernel/include/kernel.h). Both wrappers and their complete caller translation unit reproduce retail exactly.
+
+The 38 follow-up Grok loop recoveries use MWCC 3.0 (`011126`) with `#pragma padloop on`: 35 sources use `-O3 -sdatathreshold 0`, two use `-O3 -sdatathreshold 8`, and one uses `-O4,p -sdatathreshold 0`. Each production recipe verifies the full catalogued function; artificial inline NOP blocks are absent. See `GROK_20261019_LOOP_RECOVERIES.csv` for per-source profiles.
