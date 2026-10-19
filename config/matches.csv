@@ -15945,3 +15945,4 @@ func_002567A0,0x002567A0,0x230,src/select_launch_actions_00256580.c,complete
 func_0029D690,0x0029D690,0xA8,src/owner_state_callback_0029D690.c,complete
 func_001F7020,0x001F7020,0x24,src/grok_w5_001f.c,complete
 func_001F7050,0x001F7050,0xC,src/grok_w5_001f.c,complete
+func_0021D7C0,0x0021D7C0,0x27C,src/select_throw_motion_0021d7c0.c,complete
