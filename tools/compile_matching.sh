@@ -12609,3 +12609,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     -o "$BUILD/select_input_buffer_00256a70.o"
 "$PYTHON" tools/verify_object.py "$BUILD/select_input_buffer_00256a70.o" \
     private/SLUS_204.86.rom --source src/select_input_buffer_00256a70.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_state_callback_002DB380.c -c -lang c -O3 -Op -sdatathreshold 8 \
+    -o "$BUILD/owner_state_callback_002DB380.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_state_callback_002DB380.o" \
+    private/SLUS_204.86.rom --source src/owner_state_callback_002DB380.c
