@@ -5,6 +5,9 @@ typedef unsigned short u16;
 typedef struct {u8 prefix[0x1B5];u8 action;} ActorActionView;
 typedef char ActorActionOffsetCheck[((unsigned int)&((ActorActionView *)0)->action == 0x1B5) ? 1 : -1];
 extern u8 *D_004C2794;
+extern unsigned int data_u32_004C0648[3] __attribute__((section(".sdata")));
+extern unsigned int data_u32_004C0660[3] __attribute__((section(".sdata")));
+extern u8 *func_001B53E0(u8 *, int, int);
 extern signed char data_s8_004C066C[4] __attribute__((section(".sdata")));
 extern signed char data_s8_004C0670[4] __attribute__((section(".sdata")));
 extern signed char data_s8_004C0674[4] __attribute__((section(".sdata")));
@@ -238,6 +241,52 @@ EXTENDED_MOVE_SETUP(func_0024E8E0, func_001E3710, 15, 20, data_s8_004C0440[28], 
 EXTENDED_MOVE_SETUP(func_0025D0F0, func_001E3710, 12, 20, data_s8_004C0590[24], data_s8_004C0590[48], func_001E3710, 13, 21, data_s8_004C0590[28], data_s8_004C0590[52], func_001E3710, 14, 26, data_s8_004C0590[32], data_s8_004C0590[56], 11, 15, 1)
 EXTENDED_MOVE_SETUP(func_0025D240, func_001E3710, 15, 20, data_s8_004C0590[36], data_s8_004C0590[60], func_001E3710, 16, 21, data_s8_004C0590[40], D_004C05D0, func_001E3710, 17, 22, data_s8_004C0590[44], D_004C05D4, 12, 240, 16)
 EXTENDED_MOVE_SETUP(func_00263470, func_001E3710, 15, 20, data_s8_004C0654[0], data_s8_004C066C[0], func_001E3710, 16, 21, data_s8_004C0654[4], data_s8_004C0670[0], func_001E3710, 17, 22, data_s8_004C0654[8], data_s8_004C0674[0], 12, 240, 16)
+
+void func_002632F0(u8 *p)
+{
+    switch (p[0x1FC]) {
+    case 0:
+        p[0x168] = 0;
+        p[0x1B5] = 12;
+        func_001757E0(p, 11, p[0x168]);
+        func_001B53E0(p, 0, 2);
+        func_001E3710(p, 20);
+        if (p[0x210] == 0)
+            *(u8 **)(p + 0x408) = (u8 *)&data_u32_004C0648[0];
+        else
+            *(u8 **)(p + 0x408) = (u8 *)&data_u32_004C0660[0];
+        p[0x1BB] = 0;
+        break;
+    case 1:
+        p[0x168] = 1;
+        p[0x1B5] = 13;
+        func_001E3710(p, 21);
+        if (p[0x210] == 0)
+            *(u8 **)(p + 0x408) = (u8 *)&data_u32_004C0648[1];
+        else
+            *(u8 **)(p + 0x408) = (u8 *)&data_u32_004C0660[1];
+        p[0x1BB] = 1;
+        func_001757E0(p, 11, p[0x168]);
+        break;
+    case 2:
+        p[0x168] = 2;
+        p[0x1B5] = 14;
+        func_001E3710(p, 22);
+        if (p[0x210] == 0)
+            *(u8 **)(p + 0x408) = (u8 *)&data_u32_004C0648[2];
+        else
+            *(u8 **)(p + 0x408) = (u8 *)&data_u32_004C0660[2];
+        p[0x1BB] = 2;
+        func_001757E0(p, 11, p[0x168]);
+        break;
+    }
+    ((ActorActionView *)p)->action = p[0x1B5];
+    p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+    *(unsigned int *)(p + 0x1D8) = 0;
+    ((short *)(D_004C2794 + 124))[p[2]]++;
+    if (*(signed char *)(p + 0x1EA) & 0x0F)
+        *(signed char *)(p + 0x1EA) -= 1;
+}
 EXTENDED_MOVE_SETUP(func_0026BDB0, func_001E3710, 15, 20, data_s8_004C06AC[0], data_s8_004C06C4[0], func_001E3710, 16, 21, data_s8_004C06B0[0], data_s8_004C06C4[4], func_001E3710, 17, 22, data_s8_004C06B0[4], data_s8_004C06C4[8], 12, 240, 16)
 EXTENDED_MOVE_SETUP(func_0026FAF0, func_001E3210, 12, 31, data_s8_004C0720[16], data_s8_004C0720[40], func_001E3210, 13, 32, data_s8_004C0720[20], data_s8_004C0720[44], func_001E3210, 14, 33, data_s8_004C0720[24], data_s8_004C0720[48], 11, 15, 1)
 EXTENDED_MOVE_SETUP(func_0026FC40, func_001E3710, 15, 20, data_s8_004C0720[28], data_s8_004C0720[52], func_001E3710, 16, 21, data_s8_004C0720[32], data_s8_004C0720[56], func_001E3710, 17, 22, data_s8_004C0720[36], data_s8_004C0720[60], 12, 240, 16)
