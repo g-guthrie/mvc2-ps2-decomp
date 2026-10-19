@@ -13312,8 +13312,9 @@ func_00302A10,0x00302A10,0x44,0x00302A54,code,spimdisasm-explicit-size-before-fi
 func_00302A60,0x00302A60,0x44,0x00302AA4,code,spimdisasm-explicit-size-before-first-data
 func_00302AB0,0x00302AB0,0x5C,0x00302B0C,code,spimdisasm-explicit-size-before-first-data
 func_00302B10,0x00302B10,0x8C,0x00302B9C,code,spimdisasm-explicit-size-before-first-data
-func_00302BA0,0x00302BA0,0x8C,0x00302C2C,code,spimdisasm-explicit-size-before-first-data
-func_00302C2C,0x00302C2C,0xC,0x00302C38,code,spimdisasm-explicit-size-before-first-data
+gap_00302B9C,0x00302B9C,0x4,0x00302BA0,padding,verified-alignment-padding
+func_00302BA0,0x00302BA0,0x98,0x00302C38,code,independent-callback-entry-table-prologue-return
+gap_00302C38,0x00302C38,0x8,0x00302C40,padding,verified-alignment-padding
 func_00302C40,0x00302C40,0x3C,0x00302C7C,code,spimdisasm-explicit-size-before-first-data
 func_00302C80,0x00302C80,0x20,0x00302CA0,code,matching-c-head-split
 residual_00302CA0,0x00302CA0,0xDC,0x00302D7C,assembly_residual,verified-boundary-after-matching-head
