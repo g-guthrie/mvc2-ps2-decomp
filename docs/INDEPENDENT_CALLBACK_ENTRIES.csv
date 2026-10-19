@@ -261,3 +261,4 @@ func_00231CA0,0x00231CA0,0x3C,func_00231C60,jtbl_00452000,0x0045200C,src/charact
 func_00231CE0,0x00231CE0,0x40,func_00231CA0,jtbl_00452000,0x00452010,src/character_dispatch_heads_00231ca0.c
 func_00231D20,0x00231D20,0x2C,func_00231CE0,jtbl_00452000,0x00452014,src/character_dispatch_heads_00231ca0.c
 func_00231D50,0x00231D50,0x20,func_00231D20,jtbl_00451ED0,0x00451EE8,src/character_dispatch_heads_00231ca0.c
+func_002833D0,0x002833D0,0xA4,func_002833B0,jtbl_004C08F8,0x004C08F8,src/owner_state_callback_002833d0.c
