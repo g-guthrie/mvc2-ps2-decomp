@@ -14614,3 +14614,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_cu_2dac10.c -c -la
 # Native velocity constant; avoid an address-taken integer pun temporary.
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_cu_2db270.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/grok_cu_2db270.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_cu_2db270.o" private/SLUS_204.86.rom --source src/grok_cu_2db270.c
+
+# Signed byte state transitions preserve their promoted integer comparisons.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_cu_2e44b0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/grok_cu_2e44b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_cu_2e44b0.o" private/SLUS_204.86.rom --source src/grok_cu_2e44b0.c
