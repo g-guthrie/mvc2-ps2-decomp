@@ -15646,3 +15646,4 @@ func_00310B70,0x00310B70,0x80,src/independent_state_entry_00310B70.c,complete
 func_00317C10,0x00317C10,0x84,src/independent_state_entry_00317C10.c,complete
 func_00317EC0,0x00317EC0,0x84,src/independent_state_entry_00317EC0.c,complete
 func_00320F60,0x00320F60,0x8C,src/independent_state_entry_00320F60.c,complete
+func_0013C350,0x0013C350,0x7C,src/func_0013C350.c,complete
