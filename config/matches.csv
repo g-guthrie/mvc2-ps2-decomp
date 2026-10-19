@@ -15564,3 +15564,5 @@ func_003FF810,0x003FF810,0x120,src/query_runtime_streams_003FF810.c,complete
 func_0041A730,0x0041A730,0x98,src/m5j.c,complete
 func_002340F0,0x002340F0,0xFC,src/w171_i.c,complete
 func_002DCAD0,0x002DCAD0,0xE8,src/deferred_move_setup.c,complete
+func_00110298,0x00110298,0xB8,src/sony29_n.c,complete
+func_00107DC8,0x00107DC8,0x8C,src/sony29_rpc_compatibility.c,complete

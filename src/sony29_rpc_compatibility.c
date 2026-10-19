@@ -31,3 +31,14 @@ int func_0010B8A0(u32 value)
  if(func_00106E68(D_004C7080,10,0,D_004C6E80,4,D_004C6E80,4,0,0)<0)return -65537;
  return D_004C6E80[0];
 }
+
+extern char D_004C6C28[];
+extern void *D_00438310;
+int func_00107DC8(void)
+{
+ const void *reference = D_0043824C;
+ const void *current = D_004C6C28;
+ return func_0011D6A8(current,reference,4) &&
+        func_0011D6A8(current,D_00438310,4) &&
+        func_0011D6A8(reference,D_00438310,4);
+}
