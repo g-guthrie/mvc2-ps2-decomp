@@ -13423,7 +13423,7 @@ func_00306400,0x00306400,0x3C,0x0030643C,code,spimdisasm-explicit-size-before-fi
 func_00306440,0x00306440,0x3C,0x0030647C,code,spimdisasm-explicit-size-before-first-data
 func_00306480,0x00306480,0x160,0x003065E0,code,spimdisasm-explicit-size-before-first-data
 func_003065E0,0x003065E0,0x20,0x00306600,code,matching-c-head-split
-residual_00306600,0x00306600,0x80,0x00306680,assembly_residual,verified-boundary-after-matching-head
+func_00306600,0x00306600,0x80,0x00306680,code,independent-callback-entry-table-prologue-return
 func_00306680,0x00306680,0xB0,0x00306730,code,spimdisasm-explicit-size-before-first-data
 func_00306730,0x00306730,0x3C,0x0030676C,code,spimdisasm-explicit-size-before-first-data
 func_00306770,0x00306770,0x20,0x00306790,code,matching-c-head-split
@@ -13790,7 +13790,7 @@ func_00312400,0x00312400,0xB8,0x003124B8,code,spimdisasm-explicit-size-before-fi
 func_003124C0,0x003124C0,0x80,0x00312540,code,spimdisasm-explicit-size-before-first-data
 func_00312540,0x00312540,0x8,0x00312548,code,spimdisasm-explicit-size-before-first-data
 func_00312550,0x00312550,0x20,0x00312570,code,matching-c-head-split
-residual_00312570,0x00312570,0x90,0x00312600,assembly_residual,verified-boundary-after-matching-head
+func_00312570,0x00312570,0x90,0x00312600,code,independent-callback-entry-table-prologue-return
 func_00312600,0x00312600,0x20,0x00312620,code,matching-c-head-split
 residual_00312620,0x00312620,0x1C,0x0031263C,assembly_residual,verified-boundary-after-matching-head
 residual_0031263C,0x0031263C,0x4,0x00312640,assembly_residual,padding-before-callback-referenced-function
@@ -17065,7 +17065,7 @@ func_0039D130,0x0039D130,0x28,0x0039D158,code,spimdisasm-explicit-size-before-fi
 func_0039D160,0x0039D160,0x1C,0x0039D17C,code,matching-c-head-split
 residual_0039D17C,0x0039D17C,0xDC,0x0039D258,assembly_residual,verified-boundary-after-matching-head
 func_0039D260,0x0039D260,0x20,0x0039D280,code,matching-c-head-split
-residual_0039D280,0x0039D280,0x80,0x0039D300,assembly_residual,verified-boundary-after-matching-head
+func_0039D280,0x0039D280,0x80,0x0039D300,code,independent-callback-entry-table-prologue-return
 func_0039D300,0x0039D300,0xA4,0x0039D3A4,code,spimdisasm-explicit-size-before-first-data
 func_0039D3B0,0x0039D3B0,0x28,0x0039D3D8,code,spimdisasm-explicit-size-before-first-data
 func_0039D3E0,0x0039D3E0,0x20,0x0039D400,code,matching-c-head-split
