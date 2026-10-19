@@ -40,13 +40,7 @@ s32 func_0040B958(F *f, s32 off, s32 whence) {
 typedef struct { s32 a; s32 b; } G;
 extern G D_004895C0;
 extern void func_0040C6D0(s32 *, s32, s32, s32);
-void func_0040C7C0(s32 x, s32 *out) {
-    G *g = &D_004895C0;
-    s32 a = g->a;
-    out[0] = 0;
-    out[1] = 0;
-    if (a) { func_0040C6D0(out, x, a, g->b); __asm__ volatile(""); }
-}
+
 
 typedef struct { u8 pad0; s8 f1; s8 f2; u8 pad3[0x25]; s32 f28; s32 f2c; s32 f30; s32 f34; } O;
 extern u8 D_004BE2F8[];
@@ -91,4 +85,3 @@ s32 func_0011F938(char *buf, const char *fmt, ...) {
     func_001209B8(&f, fmt, ap);
     *f.p = 0;
 }
-

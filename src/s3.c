@@ -6,7 +6,7 @@ void func_00408698(void) { func_00408628(); func_00411288(); }
 
 extern char D_004872E8[];
 extern void func_00405D98(void *, void *, int);
-void func_00405DC8(void *p) { func_00405D98(D_004872E8, p, 0); __asm__ volatile(""); }
+
 
 
 typedef struct S3F6 { char pad[0xA8]; s32 a; s32 b; } S3F6;
@@ -45,21 +45,7 @@ extern void func_00411288(void), func_004112B0(void);
 extern void func_00407EF8(void *), func_00407F18(void *);
 extern Q407 D_004872F0;
 extern volatile s32 D_0048734C;
-void func_00407FC8(R407 *p) {
-    signed char m;
-    func_00411288();
-    m = p->b2;
-    if (m == 2) {
-        if ((signed char)D_004872F0.f1 == 1) func_00407EF8(p);
-        if ((signed char)D_004872F0.f1 == m) func_00407F18(p);
-        if (p->b2 != 9) {
-            p->b2 = 3;
-            D_0048734C++;
-        }
-    }
-    func_004112B0();
-    __asm__ volatile("");
-}
+
 
 typedef struct A119 { s32 a, b, c, d; } A119;
 extern void func_00118E90(A119 *);

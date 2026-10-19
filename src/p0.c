@@ -78,11 +78,3 @@ extern void func_0011FC10(char *, void *);
 extern s32 func_0011FFA0(char *);
 extern s32 func_0011FD40(char *, void *);
 extern void func_00409AE0(char *);
-void func_0040A440(char *a0, char *a1) {
-    func_0011FE88(a1, D_00489020);
-    if (*a0 != '/' && *a0 != '\\') func_0011FC10(a1, D_004BDC30);
-    func_0011FC10(a1, a0);
-    if (func_0011FD40(a1 + func_0011FFA0(a1) - 2, D_004BDC38)) func_0011FC10(a1, D_004BDC38);
-    func_00409AE0(a1);
-    __asm__ volatile("");
-}

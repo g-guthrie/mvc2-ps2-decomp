@@ -46,10 +46,7 @@ void func_004117C0(s32 i, s32 a, s32 b) { func_00411288(); D_00632440[i].a = a; 
 extern char D_0062FD48[];
 extern s32 func_0011FFA0(char *);
 extern void func_0011D740(char *, char *, s32);
-void func_004067B8(char *d) {
-    s32 n = func_0011FFA0(D_0062FD48);
-    if (!D_0062FD48[0]) d[0] = 0; else { func_0011D740(d, D_0062FD48, n + 1); __asm__ volatile(""); }
-}
+
 
 extern void func_00103CE0();
 extern s32 func_00103D70();

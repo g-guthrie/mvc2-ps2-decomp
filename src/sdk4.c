@@ -33,9 +33,7 @@ extern void func_0010CAC8(void *, s32, s32);
 extern u8 *func_003F1F90(void *, s32);
 
 extern void func_0040D040(void);
-void func_0040CD38(u8 *p) {
-    if (p) { func_0040D040(); p[0] = 0; func_0011D8F8(p, 0, 0x438); __asm__ volatile(""); }
-}
+
 
 s32 func_004098F8(void) {
     extern signed char D_00488390[];

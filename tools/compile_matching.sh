@@ -7743,10 +7743,6 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/w0_s.i" "$BUILD/w0_s.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/w0_s.o" "$BUILD/w0_s.s"
 "$PYTHON" tools/verify_object.py "$BUILD/w0_s.o" private/SLUS_204.86.rom --source src/w0_s.c
-"$WIBO" "$SNCPP" -P src/w0_z.c "$BUILD/w0_z.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/w0_z.i" "$BUILD/w0_z.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/w0_z.o" "$BUILD/w0_z.s"
-"$PYTHON" tools/verify_object.py "$BUILD/w0_z.o" private/SLUS_204.86.rom --source src/w0_z.c
 "$WIBO" "$SNCPP" -P src/w0_ab.c "$BUILD/w0_ab.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/w0_ab.i" "$BUILD/w0_ab.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/w0_ab.o" "$BUILD/w0_ab.s"
@@ -11062,3 +11058,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_rebound_motion_00196120.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/owner_rebound_motion_00196120.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_rebound_motion_00196120.o" \
     private/SLUS_204.86.rom --source src/owner_rebound_motion_00196120.c
+
+# Preserve the retail call frames without empty-assembly barriers.
+"$WIBO" "$SNCPP" -P src/runtime_framed_calls_0040.c "$BUILD/runtime_framed_calls_0040.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 \
+    --extra-flags=-fno-optimize-sibling-calls "$BUILD/runtime_framed_calls_0040.i" "$BUILD/runtime_framed_calls_0040.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/runtime_framed_calls_0040.o" "$BUILD/runtime_framed_calls_0040.s"
+"$PYTHON" tools/verify_object.py "$BUILD/runtime_framed_calls_0040.o" private/SLUS_204.86.rom \
+    --source src/runtime_framed_calls_0040.c

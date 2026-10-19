@@ -35,16 +35,7 @@ void func_00119058(f32 x)
 }
 
 extern void func_0040C808();
-void func_00400F98(s32 *p)
-{
-    if (p != 0) {
-        func_0040C808(p[0], p[2], p[3], p[1]);
-        __asm__ volatile("");
-    } else {
-        func_0040C808(p, 0, 0, 0);
-        __asm__ volatile("");
-    }
-}
+
 
 extern s32 D_0047C5B0, D_0047C5B4, D_0047C5AC, D_0047C5B8;
 extern void func_003FCCF0();
