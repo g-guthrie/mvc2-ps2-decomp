@@ -6,6 +6,7 @@ typedef float f32;
 
 extern u8 *D_004C2840;
 extern u8 D_004F20B0[];
+extern u8 *D_0044F134 __attribute__((section(".data")));
 
 void func_001E3520(u8 *p, s32 animation)
 {
@@ -23,7 +24,7 @@ void func_001E3520(u8 *p, s32 animation)
     if (mode <= -1) mode = 0;
     if (mode >= 16) mode = 15;
     if (((s8 *)D_004C2840)[0x45] != 0) {
-        u8 *map = *(u8 **)(u32)0x0044F134;
+        u8 *map = D_0044F134;
         s32 mapped = map[(u8)animation];
         if (mapped == 254) return;
         if (mapped != 255) animation = mapped;
