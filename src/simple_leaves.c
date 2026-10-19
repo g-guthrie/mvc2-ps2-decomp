@@ -77,7 +77,7 @@ void func_0015B1F0(void) {}
 
 s32 func_00168AE0(void) { return 0; }
 
-s32 func_00168F70(void) { return 1; }
+s32 func_00168F70(u8 *p, s32 unused) { return 1; }
 
 void func_0016F0D0(void) {}
 
