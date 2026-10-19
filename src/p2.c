@@ -56,22 +56,29 @@ s32 func_0040A520(s8 a, s8 b)
     return (x ^ y) ? -1 : 0;
 }
 
-extern u8 D_004BCF60[], D_004BCF88[];
-extern void func_00405DC8();
-s32 func_00407298(s32 **p)
+typedef s32 (*RuntimeObjectCallback)(s32 argument);
+typedef struct RuntimeObjectCallbackOps {
+    u32 pad[19];
+    RuntimeObjectCallback callback;
+} RuntimeObjectCallbackOps;
+typedef struct RuntimeCallbackObject {
+    RuntimeObjectCallbackOps *ops;
+    s32 argument;
+} RuntimeCallbackObject;
+
+extern const char D_004BCF60[], D_004BCF88[];
+extern void func_00405DC8(const char *message);
+s32 func_00407298(RuntimeCallbackObject *object)
 {
-    s32 (*f)();
-    if (p == 0) {
+    if (object == 0) {
         func_00405DC8(D_004BCF60);
-        __asm__ volatile("");
-        return 0;
+    } else {
+        RuntimeObjectCallback callback = object->ops->callback;
+        if (callback != 0)
+            return callback(object->argument);
+        else
+            func_00405DC8(D_004BCF88);
     }
-    f = (s32 (*)())(*p)[0x13];
-    if (f != 0) {
-        return f((s32)p[1]);
-    }
-    func_00405DC8(D_004BCF88);
-    __asm__ volatile("");
     return 0;
 }
 

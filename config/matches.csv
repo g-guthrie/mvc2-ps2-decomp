@@ -11776,7 +11776,7 @@ func_00119058,0x00119058,0x3C,src/p2.c,complete
 func_00400F98,0x00400F98,0x4C,src/runtime_framed_calls_0040.c,complete
 func_003FBFD8,0x003FBFD8,0x4C,src/p2.c,complete
 func_0040A520,0x0040A520,0x54,src/p2.c,complete
-func_00407298,0x00407298,0x58,src/p2.c,placeholder
+func_00407298,0x00407298,0x58,src/p2.c,complete
 func_00409E60,0x00409E60,0x58,src/p2.c,complete
 func_0040D430,0x0040D430,0x64,src/p2.c,complete
 func_00411720,0x00411720,0xA0,src/register_runtime_callback_00411720.c,complete
