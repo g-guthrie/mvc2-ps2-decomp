@@ -37,6 +37,42 @@ s32 func_0040B958(F *f, s32 off, s32 whence) {
     return pos;
 }
 
+typedef struct {
+    u8 pad0[8];
+    s32 end;
+    s32 position;
+    u8 pad1[4];
+    s32 status;
+} SeekState;
+
+extern u8 D_004BDBA8[];
+extern void func_004098A8(s32 auxiliary, const char *message);
+s32 func_00409EB8(SeekState *f, s32 off, s32 whence) {
+    s32 end, pos;
+    if (f == 0) {
+        func_004098A8((s32)f, (const char *)D_004BDBA8);
+        return 0;
+    }
+    if (whence == 0) {
+        f->position = off;
+        end = f->end;
+    } else if (whence == 2) {
+        end = f->end;
+        f->position = end + off;
+    } else if (whence == 1) {
+        end = f->end;
+        f->position = f->position + off;
+    } else {
+        end = f->end;
+    }
+    pos = f->position;
+    f->status = 0;
+    if (pos >= end) pos = end;
+    if (pos < 0) pos = 0;
+    f->position = pos;
+    return pos;
+}
+
 typedef struct { s32 a; s32 b; } G;
 extern G D_004895C0;
 extern void func_0040C6D0(s32 *, s32, s32, s32);

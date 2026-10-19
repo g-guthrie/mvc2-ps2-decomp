@@ -12649,6 +12649,7 @@ func_003FEBB8,0x003FEBB8,0x1C,src/r3_a.c,complete
 func_003FDE10,0x003FDE10,0x28,src/runtime_framed_calls_003f.c,complete
 func_00404638,0x00404638,0x44,src/r3_a.c,complete
 func_0040B958,0x0040B958,0x94,src/r3_b.c,complete
+func_00409EB8,0x00409EB8,0x94,src/r3_b.c,complete
 func_0040C7C0,0x0040C7C0,0x44,src/runtime_framed_calls_0040.c,complete
 func_0040D040,0x0040D040,0x94,src/r3_b.c,complete
 func_0011F938,0x0011F938,0x90,src/r3_b.c,complete
