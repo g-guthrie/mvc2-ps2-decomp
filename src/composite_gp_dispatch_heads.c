@@ -1014,6 +1014,8 @@ void func_00347280(u8 *p) { jtbl_004C1990[p[32]](p); }
 
 void func_00348C40(u8 *p) { jtbl_004C19B8[p[32]](p); }
 
+void func_00348C60(u8 *p) { p[4]++; p[0x13C] = 0; }
+
 void func_00349780(u8 *p) { jtbl_004C19C0[p[5]](p); }
 
 void func_00349950(u8 *p) { jtbl_004C19C8[p[5]](p); }
