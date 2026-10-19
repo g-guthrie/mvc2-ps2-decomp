@@ -14598,3 +14598,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_cu_2e15c0.c -c -la
 # Flag-2 runtime lookup uses the older compiler's shared return schedule.
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/runtime_flag2_lookup.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/runtime_flag2_lookup.o"
 "$PYTHON" tools/verify_object.py "$BUILD/runtime_flag2_lookup.o" private/SLUS_204.86.rom --source src/runtime_flag2_lookup.c
+
+# Three explicitly initialized offset floats, naturally 12 bytes with native 16-byte alignment.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_cu_2d57f0.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/grok_cu_2d57f0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_cu_2d57f0.o" private/SLUS_204.86.rom --source src/grok_cu_2d57f0.c

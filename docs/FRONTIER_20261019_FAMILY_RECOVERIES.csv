@@ -8,3 +8,4 @@ func_002E15C0,0x002E15C0,0x104,src/grok_cu_2e15c0.c,MWCCPS2,-O3 -sdatathreshold 
 func_00417350,0x00417350,0x70,src/r5_d.c,MWCCPS2,-O3 -Op -fp off -sdatathreshold 8,001227C8 / 003416E8 direct JAL
 func_0040A9C8,0x0040A9C8,0xC8,src/find_named_runtime_span_0040C6D0.c,EE GCC 2.96,O2 G0 default production recipe,0040AB44 direct JAL
 func_003F1AB0,0x003F1AB0,0x54,src/runtime_flag2_lookup.c,MWCCPS2_30,-O3 -sdatathreshold 0,0041534C direct JAL
+func_002D57F0,0x002D57F0,0xF4,src/grok_cu_2d57f0.c,MWCCPS2,-O3 -Op -sdatathreshold 8,jtbl_0045A5A0[0]; preceding four-byte gap uncredited
