@@ -1,0 +1,2 @@
+source,section,address,size
+src/newlib_dtoa_0011A108.c,.rodata,0x004AC810,0x58

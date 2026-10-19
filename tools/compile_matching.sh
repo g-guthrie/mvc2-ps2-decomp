@@ -11033,10 +11033,10 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_srefill_0011F6D8.i" "$BUILD/newlib_srefill_0011F6D8.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_srefill_0011F6D8.o" "$BUILD/newlib_srefill_0011F6D8.s"
 "$PYTHON" tools/verify_object.py "$BUILD/newlib_srefill_0011F6D8.o" private/SLUS_204.86.rom --source src/newlib_srefill_0011F6D8.c
-"$WIBO" "$SNCPP" -P src/newlib_quorem_00119ED8.c "$BUILD/newlib_quorem_00119ED8.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="-msoft-float" "$BUILD/newlib_quorem_00119ED8.i" "$BUILD/newlib_quorem_00119ED8.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_quorem_00119ED8.o" "$BUILD/newlib_quorem_00119ED8.s"
-"$PYTHON" tools/verify_object.py "$BUILD/newlib_quorem_00119ED8.o" private/SLUS_204.86.rom --source src/newlib_quorem_00119ED8.c
+"$WIBO" "$SNCPP" -P src/newlib_dtoa_0011A108.c "$BUILD/newlib_dtoa_0011A108.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="-msoft-float" "$BUILD/newlib_dtoa_0011A108.i" "$BUILD/newlib_dtoa_0011A108.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_dtoa_0011A108.o" "$BUILD/newlib_dtoa_0011A108.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_dtoa_0011A108.o" private/SLUS_204.86.rom --source src/newlib_dtoa_0011A108.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/w1911_b.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/w1911_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w1911_b.o" private/SLUS_204.86.rom --source src/w1911_b.c
