@@ -16000,3 +16000,4 @@ func_002FCE10,0x002FCE10,0x158,src/w194_l.c,complete
 func_00246890,0x00246890,0xC4,src/v9_a.c,complete
 func_0025D970,0x0025D970,0x128,src/w178_e.c,complete
 func_002612D0,0x002612D0,0x110,src/w188_d.c,complete
+func_00256C20,0x00256C20,0x1D8,src/select_input_buffer_00256a70.c,complete
