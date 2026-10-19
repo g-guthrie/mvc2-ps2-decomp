@@ -11,3 +11,9 @@ void func_001712A0(void)
 void func_001712D0(void)
 {
 }
+
+extern const Handler jtbl_00446780[];
+void func_0016E960(void)
+{
+    jtbl_00446780[D_004C2840[0x92]]();
+}

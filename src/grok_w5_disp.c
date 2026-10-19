@@ -394,3 +394,24 @@ void func_002F3D60(u8 *p)
     }
 }
 
+
+extern DispatchFn jtbl_0045A450[];
+extern DispatchFn jtbl_0045BB40[];
+extern DispatchFn jtbl_00450740[];
+extern DispatchFn jtbl_00454600[];
+void func_002D3080(u8 *p) {
+    p[6]++;
+    jtbl_0045A450[p[0x20]](p);
+}
+void func_002F3B80(u8 *p) {
+    p[6]++;
+    jtbl_0045BB40[p[0x20]](p);
+}
+void func_0020A970(u8 *p) {
+    p[6]++;
+    jtbl_00450740[p[0x20]](p);
+}
+void func_0026CA00(u8 *p) {
+    p[6]++;
+    jtbl_00454600[p[0x20]](p);
+}

@@ -4126,3 +4126,193 @@ void func_0041A1D0(u8 *p) { jtbl_004A6D20[p[5]](p); }
 void func_0041A4A0(u8 *p) { jtbl_004A6D30[p[5]](p); }
 
 void func_0041ACC0(u8 *p) { jtbl_004A6D40[p[4]](p); }
+
+extern DispatchFn jtbl_0043E918[];
+extern DispatchFn jtbl_0044F8E0[];
+extern DispatchFn jtbl_004509E0[];
+extern DispatchFn jtbl_00450D70[];
+extern DispatchFn jtbl_00451410[];
+extern DispatchFn jtbl_00451F60[];
+extern DispatchFn jtbl_00452058[];
+extern DispatchFn jtbl_00452458[];
+extern DispatchFn jtbl_00452AD8[];
+extern DispatchFn jtbl_004534C0[];
+extern DispatchFn jtbl_00454490[];
+extern DispatchFn jtbl_00454A50[];
+extern DispatchFn jtbl_00449310[];
+extern DispatchFn jtbl_00449420[];
+extern DispatchFn jtbl_0044AF80[];
+extern DispatchFn jtbl_0044B3A0[];
+extern DispatchFn jtbl_0044B400[];
+extern DispatchFn jtbl_0044B440[];
+extern DispatchFn jtbl_0044B990[];
+extern DispatchFn jtbl_0044BFD0[];
+extern DispatchFn jtbl_0044C030[];
+extern DispatchFn jtbl_0044DCF0[];
+extern DispatchFn jtbl_0044DDF0[];
+extern DispatchFn jtbl_0044E080[];
+extern DispatchFn jtbl_0044E470[];
+extern DispatchFn jtbl_0044E540[];
+extern DispatchFn jtbl_0044E7D0[];
+extern DispatchFn jtbl_0044E8C0[];
+extern DispatchFn jtbl_0044EFB0[];
+extern DispatchFn jtbl_0044B538[];
+extern DispatchFn jtbl_0044B660[];
+extern DispatchFn jtbl_00451F80[];
+extern DispatchFn jtbl_004523A8[];
+extern DispatchFn jtbl_00452FF0[];
+extern DispatchFn jtbl_00453390[];
+extern DispatchFn jtbl_00453720[];
+extern DispatchFn jtbl_00454910[];
+extern DispatchFn jtbl_004549B0[];
+extern DispatchFn jtbl_00456878[];
+extern DispatchFn jtbl_004568D0[];
+extern DispatchFn jtbl_004577F8[];
+extern DispatchFn jtbl_00457818[];
+extern DispatchFn jtbl_0044D9A0[];
+extern DispatchFn jtbl_00459700[];
+extern DispatchFn jtbl_0045ADE0[];
+extern DispatchFn jtbl_0045B358[];
+extern DispatchFn jtbl_0045CF90[];
+extern DispatchFn jtbl_0045D4E0[];
+extern DispatchFn jtbl_0045DF88[];
+extern DispatchFn jtbl_0045E0B0[];
+extern DispatchFn jtbl_0045BF10[];
+extern DispatchFn jtbl_00461E70[];
+extern DispatchFn jtbl_004632C0[];
+extern DispatchFn jtbl_00463310[];
+extern DispatchFn jtbl_00463370[];
+extern DispatchFn jtbl_004634F0[];
+extern DispatchFn jtbl_00463780[];
+extern DispatchFn jtbl_004637E0[];
+extern DispatchFn jtbl_00463940[];
+extern DispatchFn jtbl_004639A0[];
+extern DispatchFn jtbl_004721E0[];
+extern DispatchFn jtbl_004722E0[];
+extern DispatchFn jtbl_00472600[];
+extern DispatchFn jtbl_00472D60[];
+extern DispatchFn jtbl_00472E60[];
+extern DispatchFn jtbl_00473CE0[];
+extern DispatchFn jtbl_00473E00[];
+extern DispatchFn jtbl_00450000[];
+extern DispatchFn jtbl_00451E80[];
+extern ContextDispatchFn jtbl_00452490[];
+extern ContextDispatchFn jtbl_00452B10[];
+extern void func_00239770(u8 *);
+extern void func_002430A0(u8 *);
+extern void func_002E8440(u8 *);
+typedef int (*ContextResultDispatchFn)(u8 *, void *);
+extern ContextResultDispatchFn jtbl_00445C20[];
+extern ContextDispatchFn jtbl_00452A98[];
+void func_00133950(u8 *p) { jtbl_0043E918[p[5]](p); }
+void func_001F2D60(u8 *p) { jtbl_0044F8E0[p[6]](p); }
+void func_0020F5F0(u8 *p) { jtbl_004509E0[p[6]](p); }
+void func_00214D40(u8 *p) { jtbl_00450D70[p[6]](p); }
+void func_00222100(u8 *p) { jtbl_00451410[p[6]](p); }
+void func_00230340(u8 *p) { jtbl_00451F60[p[6]](p); }
+void func_002324F0(u8 *p) { jtbl_00452058[p[6]](p); }
+void func_00239730(u8 *p) { jtbl_00452458[p[6]](p); }
+void func_00243060(u8 *p) { jtbl_00452AD8[p[6]](p); }
+void func_00253600(u8 *p) { jtbl_004534C0[p[6]](p); }
+void func_0026A190(u8 *p) { jtbl_00454490[p[6]](p); }
+void func_00272E70(u8 *p) { jtbl_00454A50[p[6]](p); }
+void func_001934E0(u8 *p) { jtbl_00449310[p[4]](p); }
+void func_001941A0(u8 *p) { jtbl_00449420[p[4]](p); }
+void func_001A0BB0(u8 *p) { jtbl_0044AF80[p[4]](p); }
+void func_001A5630(u8 *p) { jtbl_0044B3A0[p[4]](p); }
+void func_001A6C70(u8 *p) { jtbl_0044B400[p[4]](p); }
+void func_001A7540(u8 *p) { jtbl_0044B440[p[4]](p); }
+void func_001AD2A0(u8 *p) { jtbl_0044B990[p[4]](p); }
+void func_001BA690(u8 *p) { jtbl_0044BFD0[p[4]](p); }
+void func_001BAEC0(u8 *p) { jtbl_0044C030[p[4]](p); }
+void func_001CBED0(u8 *p) { jtbl_0044DCF0[p[4]](p); }
+void func_001CE530(u8 *p) { jtbl_0044DDF0[p[4]](p); }
+void func_001D2CA0(u8 *p) { jtbl_0044E080[p[4]](p); }
+void func_001D4680(u8 *p) { jtbl_0044E470[p[4]](p); }
+void func_001D5B60(u8 *p) { jtbl_0044E540[p[4]](p); }
+void func_001D8DF0(u8 *p) { jtbl_0044E7D0[p[4]](p); }
+void func_001DA270(u8 *p) { jtbl_0044E8C0[p[4]](p); }
+void func_001E0D70(u8 *p) { jtbl_0044EFB0[p[4]](p); }
+void func_001A7B80(u8 *p) { jtbl_0044B538[p[5]](p); }
+void func_001A8E50(u8 *p) { jtbl_0044B660[p[5]](p); }
+void func_00230B10(u8 *p) { jtbl_00451F80[p[7]](p); }
+void func_00236D70(u8 *p) { jtbl_004523A8[p[7]](p); }
+void func_0024B040(u8 *p) { jtbl_00452FF0[p[7]](p); }
+void func_00251120(u8 *p) { jtbl_00453390[p[7]](p); }
+void func_00258830(u8 *p) { jtbl_00453720[p[7]](p); }
+void func_00271770(u8 *p) { jtbl_00454910[p[7]](p); }
+void func_00272070(u8 *p) { jtbl_004549B0[p[7]](p); }
+void func_00289020(u8 *p) { jtbl_00456878[p[7]](p); }
+void func_00289600(u8 *p) { jtbl_004568D0[p[7]](p); }
+void func_00290A90(u8 *p) { jtbl_004577F8[p[7]](p); }
+void func_00290EC0(u8 *p) { jtbl_00457818[p[7]](p); }
+void func_001CA5A0(u8 *p) { jtbl_0044D9A0[p[33]](p); }
+void func_002BECF0(u8 *p) { jtbl_00459700[p[6]](p); }
+void func_002E0790(u8 *p) { jtbl_0045ADE0[p[6]](p); }
+void func_002E8400(u8 *p) { jtbl_0045B358[p[6]](p); }
+void func_0030BFC0(u8 *p) { jtbl_0045CF90[p[6]](p); }
+void func_00313AE0(u8 *p) { jtbl_0045D4E0[p[6]](p); }
+void func_00323650(u8 *p) { jtbl_0045DF88[p[6]](p); }
+void func_00325FC0(u8 *p) { jtbl_0045E0B0[p[6]](p); }
+void func_002F9220(u8 *p) { jtbl_0045BF10[p[7]](p); }
+void func_003472A0(u8 *p) { jtbl_00461E70[p[4]](p); }
+void func_0035C860(u8 *p) { jtbl_004632C0[p[4]](p); }
+void func_0035D4A0(u8 *p) { jtbl_00463310[p[4]](p); }
+void func_0035DFA0(u8 *p) { jtbl_00463370[p[4]](p); }
+void func_003611B0(u8 *p) { jtbl_004634F0[p[4]](p); }
+void func_00364F50(u8 *p) { jtbl_00463780[p[4]](p); }
+void func_003660D0(u8 *p) { jtbl_004637E0[p[4]](p); }
+void func_00368040(u8 *p) { jtbl_00463940[p[4]](p); }
+void func_003690A0(u8 *p) { jtbl_004639A0[p[4]](p); }
+void func_00392970(u8 *p) { jtbl_004721E0[p[4]](p); }
+void func_00394830(u8 *p) { jtbl_004722E0[p[4]](p); }
+void func_003997D0(u8 *p) { jtbl_00472600[p[4]](p); }
+void func_003A50C0(u8 *p) { jtbl_00472D60[p[4]](p); }
+void func_003A6E70(u8 *p) { jtbl_00472E60[p[4]](p); }
+void func_003B11F0(u8 *p) { jtbl_00473CE0[p[4]](p); }
+void func_003B39A0(u8 *p) { jtbl_00473E00[p[4]](p); }
+void func_001FE9F0(u8 *p) {
+    p[6]++;
+    p[7] = 0;
+    jtbl_00450000[p[0x20]](p);
+}
+void func_0022EE40(u8 *p) {
+    p[6]++;
+    p[7] = 0;
+    jtbl_00451E80[p[0x20]](p);
+}
+void func_00239C30(u8 *p) {
+    jtbl_00452490[p[0x20B] & 0x3F](p, *(void **)(p + 0x1DC));
+}
+void func_002435C0(u8 *p) {
+    jtbl_00452B10[p[0x20B] & 0x3F](p, *(void **)(p + 0x1DC));
+}
+void func_00239750(u8 *p) {
+    p[6]++;
+    *(u32 *)(p + 92) = 0;
+    *(u32 *)(p + 96) = 0;
+    *(u32 *)(p + 104) = 0;
+    *(u32 *)(p + 108) = 0;
+    func_00239770(p);
+}
+void func_00243080(u8 *p) {
+    p[6]++;
+    *(u32 *)(p + 92) = 0;
+    *(u32 *)(p + 96) = 0;
+    *(u32 *)(p + 104) = 0;
+    *(u32 *)(p + 108) = 0;
+    func_002430A0(p);
+}
+void func_002E8420(u8 *p) {
+    p[6]++;
+    *(u32 *)(p + 92) = 0;
+    *(u32 *)(p + 96) = 0;
+    *(u32 *)(p + 104) = 0;
+    *(u32 *)(p + 108) = 0;
+    func_002E8440(p);
+}
+int func_00163F70(u8 *p, void *entry) { return jtbl_00445C20[p[0x454]](p, entry); }
+void func_002429F0(u8 *p) {
+    p[0x209] = 1;
+    jtbl_00452A98[p[6]](p, p + 0x2B8);
+}

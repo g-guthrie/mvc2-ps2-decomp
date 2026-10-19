@@ -268,3 +268,22 @@ void func_003B52C0(u8 *p, u8 *q)
     } else
         func_003B5530(p, q);
 }
+
+extern DispatchFn jtbl_0044A3C0[];
+extern DispatchFn jtbl_0044A690[];
+extern DispatchFn jtbl_00462460[];
+void func_00198210(u8 *p)
+{
+    p[4]++;
+    jtbl_0044A3C0[p[0x20] + 4](p);
+}
+void func_001996D0(u8 *p)
+{
+    p[4]++;
+    jtbl_0044A690[p[0x20] + 4](p);
+}
+void func_0034FB80(u8 *p)
+{
+    p[4]++;
+    jtbl_00462460[p[0x20] + 4](p);
+}

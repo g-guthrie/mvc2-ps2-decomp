@@ -272,3 +272,14 @@ void func_0039BDC0(u8 *p) { p[36] = 11; jtbl_004C1E58[p[5]](p); }
 void func_0039C0E0(u8 *p) { p[36] = 11; jtbl_004C1E60[p[5]](p); }
 
 void func_003AFCB0(u8 *p) { p[36] = 11; jtbl_00473C50[p[5]](p); }
+
+extern Fn jtbl_0045BFE0[];
+extern Fn jtbl_0045C250[];
+extern Fn jtbl_00448BB0[];
+extern Fn jtbl_00450060[];
+extern Fn jtbl_004BFD28[] __attribute__((section(".sdata")));
+void func_002FBB60(u8 *p) { p[510] = 1; jtbl_0045BFE0[p[523] & 63](p); }
+void func_00300170(u8 *p) { p[510] = 1; jtbl_0045C250[p[523] & 63](p); }
+void func_0017C360(u8 *p) { p[513] = 2; jtbl_00448BB0[p[6]](p); }
+void func_001FED00(u8 *p) { p[708] = 0; jtbl_00450060[p[0x1FD]](p); }
+void func_001FED80(u8 *p) { p[708] = 10; jtbl_004BFD28[p[7]](p); }

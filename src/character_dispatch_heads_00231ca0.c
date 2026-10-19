@@ -48,3 +48,18 @@ void func_00231C60(u8 *p,void *context)
     p[0x33C]=5;
     jtbl_00451FB8[p[7]](p,context);
 }
+
+extern void (*jtbl_00452020[])(u8 *,void *);
+extern void (*jtbl_00452040[])(u8 *,void *);
+void func_00232490(u8 *p,void *context)
+{
+    p[0x40C]=2;
+    p[0x33C]=5;
+    jtbl_00452020[p[7]](p,context);
+}
+void func_002324C0(u8 *p,void *context)
+{
+    p[0x40C]=2;
+    p[0x33C]=5;
+    jtbl_00452040[p[7]](p,context);
+}

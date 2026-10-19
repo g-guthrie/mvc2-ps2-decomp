@@ -24,3 +24,6 @@ extern void (*jtbl_004506E0[])(u8 *);
 extern void (*jtbl_004506F0[])(u8 *,void *);
 void func_0020A210(u8 *p) { jtbl_004506E0[*(s16 *)(p+0x1E)](p); }
 void func_0020A230(u8 *p) { jtbl_004506F0[p[7]](p,p+0x2B8); }
+
+extern void (*jtbl_00450780[])(u8 *);
+void func_0020ABC0(u8 *p) { jtbl_00450780[*(s16 *)(p+0x1C)](p); }

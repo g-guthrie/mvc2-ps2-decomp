@@ -170,3 +170,14 @@ void func_00177F30(u8 *p) {
         func_001757E0(p, 0x11, 0);
     }
 }
+
+extern void func_00178050(u8 *);
+void func_00178010(u8 *p) {
+    p[6] += 1;
+    F(p, 0x5C) = F(p, 0x22C);
+    F(p, 0x60) = F(p, 0x230);
+    I(p, 0x68) = 0;
+    I(p, 0x6C) = 0xBFBC9249;
+    *(s16 *)(p + 0x1E) = 0;
+    func_00178050(p);
+}

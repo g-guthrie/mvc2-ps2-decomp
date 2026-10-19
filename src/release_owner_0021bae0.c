@@ -37,3 +37,11 @@ void func_0021BAB0(u8 *p)
     p[0x201] = 3;
     jtbl_00451108[p[0x20B]](p);
 }
+
+extern void (*jtbl_0045DC98[])(u8 *);
+void func_00321360(u8 *p)
+{
+    p[0x1FE] = 1;
+    p[0x201] = 3;
+    jtbl_0045DC98[p[0x20B]](p);
+}

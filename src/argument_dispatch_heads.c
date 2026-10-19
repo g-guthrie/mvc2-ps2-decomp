@@ -933,3 +933,38 @@ void func_003CAA20(u8 *p) { jtbl_004765D0[p[4]](p, *(void **)(p + 24)); }
 void func_003CD100(u8 *p) { jtbl_00476650[p[4]](p, *(void **)(p + 24)); }
 
 void func_003CD720(u8 *p) { jtbl_00476680[p[4]](p, *(void **)(p + 24)); }
+
+extern DispatchFn2 jtbl_0044B100[];
+extern DispatchFn2 jtbl_0044C0C0[];
+extern DispatchFn2 jtbl_00450800[];
+extern DispatchFn2 jtbl_00452A40[];
+extern DispatchFn2 jtbl_00453350[];
+extern DispatchFn2 jtbl_00452800[];
+extern DispatchFn1 jtbl_0045BFF0[];
+extern DispatchFn2 jtbl_004584C0[];
+extern DispatchFn2 jtbl_00459E60[];
+extern DispatchFn2 jtbl_00459F70[];
+extern DispatchFn2 jtbl_0045CC80[];
+extern DispatchFn2 jtbl_0045B650[];
+extern DispatchFn2 jtbl_0045CA70[];
+extern DispatchFn2 jtbl_0045D450[];
+extern DispatchFn2 jtbl_00462B90[];
+extern DispatchFn2 jtbl_004BFB58[] __attribute__((section(".sdata")));
+extern DispatchFn2 jtbl_004C0F18[] __attribute__((section(".sdata")));
+void func_001A3AB0(u8 *p) { jtbl_0044B100[p[4]](p, *(void **)(p + 24)); }
+void func_001BBE30(u8 *p) { jtbl_0044C0C0[p[4]](p, *(void **)(p + 24)); }
+void func_0020AE20(u8 *p) { jtbl_00450800[p[6]](p, p + 696); }
+void func_002415B0(u8 *p) { jtbl_00452A40[p[7]](p, p + 696); }
+void func_00250550(u8 *p) { jtbl_00453350[p[7]](p, p + 696); }
+void func_0023E880(u8 *p) { jtbl_00452800[p[509]](p, p + 696); }
+void func_002FBB90(u8 *p) { jtbl_0045BFF0[p[523] & 63](p); }
+void func_002A2D00(u8 *p) { jtbl_004584C0[p[7]](p, p + 696); }
+void func_002C7BF0(u8 *p) { jtbl_00459E60[p[7]](p, p + 696); }
+void func_002CA020(u8 *p) { jtbl_00459F70[p[7]](p, p + 696); }
+void func_00306B50(u8 *p) { jtbl_0045CC80[p[6]](p, p + 696); }
+void func_002ED090(u8 *p) { jtbl_0045B650[p[509]](p, p + 696); }
+void func_00304230(u8 *p) { jtbl_0045CA70[p[509]](p, p + 696); }
+void func_00312950(u8 *p) { jtbl_0045D450[p[509]](p, p + 696); }
+void func_00354AD0(u8 *p) { jtbl_00462B90[p[4]](p, *(void **)(p + 24)); }
+void func_001EAEB0(u8 *p) { jtbl_004BFB58[p[6]](p, p + 696); }
+void func_002CD8E0(u8 *p) { jtbl_004C0F18[p[6]](p, p + 696); }

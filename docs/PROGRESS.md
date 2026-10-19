@@ -4349,3 +4349,33 @@ A separate fresh build of the published build repair is still running; these
 results do not establish completion of that full compile-script replay.
 The next scheduled publication remains 1,915,825 code bytes (58.1664%),
 4,925 bytes beyond this local checkpoint. Complete source recovery is unfinished.
+
+### Dispatch recovery and clean-build ordering — October 19
+
+Linked matching code reaches 1,916,016 / 3,293,696 bytes (58.1722%). This
+adds 148 complete functions / 5,116 bytes to the previous local checkpoint;
+the combined gain since the previous public checkpoint is 176 functions /
+8,584 bytes. Reconstructed initialized data reaches 175,473 / 648,064 bytes
+(27.0765%), including the 16-byte signed correction lookup bounded by its
+consumer's `& 0xF`. Whole production source units were recompiled, including
+all previously credited members. Each new function includes its native ending
+and has an independent pointer, direct-call, or tail-jump entry witness.
+
+An independent ABI review identified a return-value/context contract at
+0x00163F70. Its definition now explicitly forwards the context argument and
+integer callback result required by the caller at 0x00169BC0. Newly referenced
+callback arrays have unspecified extents; actual GP addressing uses the
+small-data section rather than guessed array lengths.
+
+The build from an empty object directory exposed another ordering defect:
+the data verifier ran before `src/w192_r.c`, its switch-table owner, was
+compiled. Data compilation/verification now runs after all code compilation.
+The coverage gate rejects premature data calls, with regression cases for
+both direct compilation and the existing `for unit` loops. The corrected
+fresh build is running; completion of that entire script remains unproven.
+
+All 56 tests, catalog validation, source coverage, and shell syntax checks
+pass. Hybrid linkage and ELF packing reproduce the retail hashes recorded
+above. This checkpoint crosses the scheduled 1,915,825-byte threshold;
+the next scheduled checkpoint is 1,948,762 code bytes (59.1664%). Complete
+source decompilation remains unfinished.

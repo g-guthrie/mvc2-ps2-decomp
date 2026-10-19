@@ -163,3 +163,6 @@ void func_003596F0(u8 *p) { jtbl_00463100[p[5]](p); }
 void func_003760B0(u8 *p) { jtbl_00463F80[p[5]](p); }
 
 void func_00379940(u8 *p) { jtbl_00464140[p[4]](p); }
+
+extern DispatchFn jtbl_00463720[];
+void func_00363DB0(u8 *p) { jtbl_00463720[p[5]](p); }

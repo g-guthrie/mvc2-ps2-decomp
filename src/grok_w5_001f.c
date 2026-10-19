@@ -346,3 +346,12 @@ void func_001F0EC0(u8 *p)
     func_001F0420(p);
     func_001757E0(p, 15, 8);
 }
+
+extern const u32 jtbl_0044F8C0[];
+void func_001F2D20(u8 *p)
+{
+    p[510] = 1;
+    p[513] = 2;
+    p[521] = 2;
+    ((StateHandler)jtbl_0044F8C0[p[7]])(p);
+}

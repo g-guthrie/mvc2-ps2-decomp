@@ -64,3 +64,58 @@ void func_001DDC30(u8 *p, void *owner) {
 void func_001DDC60(u8 *p, void *owner) {
     jtbl_0044EDC0[p[4]](p, owner);
 }
+
+extern OwnerCallback jtbl_004C1B68[] __attribute__((section(".sdata")));
+extern OwnerCallback jtbl_004C1B78[] __attribute__((section(".sdata")));
+extern OwnerCallback jtbl_004C1B94[] __attribute__((section(".sdata")));
+extern OwnerCallback jtbl_004C1B98[] __attribute__((section(".sdata")));
+extern OwnerCallback jtbl_004C1B58[] __attribute__((section(".sdata")));
+extern OwnerCallback jtbl_004C1C00[] __attribute__((section(".sdata")));
+extern OwnerCallback jtbl_004C1E38[] __attribute__((section(".sdata")));
+extern OwnerCallback jtbl_004C1F08[] __attribute__((section(".sdata")));
+extern OwnerCallback jtbl_004C20E8[] __attribute__((section(".sdata")));
+void func_0035D850(u8 *p, void *owner) {
+    u8 *q = owner;
+    p[0x24] = *(s8 *)(q + 0x24) + *(s8 *)(p + 0x31);
+    jtbl_004C1B68[p[5]](p, owner);
+}
+void func_0035DD10(u8 *p, void *owner) {
+    u8 *q = owner;
+    p[0x24] = *(s8 *)(q + 0x24) + *(s8 *)(p + 0x31);
+    jtbl_004C1B78[p[5]](p, owner);
+}
+void func_0035E3A0(u8 *p, void *owner) {
+    u8 *q = owner;
+    p[0x24] = *(s8 *)(q + 0x24) + *(s8 *)(p + 0x31);
+    jtbl_004C1B94[p[5]](p, owner);
+}
+void func_0035E660(u8 *p, void *owner) {
+    u8 *q = owner;
+    p[0x24] = *(s8 *)(q + 0x24) + *(s8 *)(p + 0x31);
+    jtbl_004C1B98[p[5]](p, owner);
+}
+void func_0035CF70(u8 *p, void *owner) {
+    u8 *q = owner;
+    *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
+    jtbl_004C1B58[p[5]](p, owner);
+}
+void func_003616A0(u8 *p, void *owner) {
+    u8 *q = owner;
+    *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
+    jtbl_004C1C00[p[5]](p, owner);
+}
+void func_00396A40(u8 *p, void *owner) {
+    u8 *q = owner;
+    *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
+    jtbl_004C1E38[p[5]](p, owner);
+}
+void func_003A8150(u8 *p, void *owner) {
+    u8 *q = owner;
+    *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
+    jtbl_004C1F08[p[5]](p, owner);
+}
+void func_003C0FC0(u8 *p, void *owner) {
+    u8 *q = owner;
+    *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
+    jtbl_004C20E8[p[5]](p, owner);
+}
