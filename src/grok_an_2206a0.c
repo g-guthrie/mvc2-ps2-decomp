@@ -1,0 +1,35 @@
+typedef unsigned char u8;
+typedef unsigned short u16;
+typedef signed short s16;
+typedef unsigned int u32;
+typedef float f32;
+
+extern u8 D_004B7170[];
+extern u8 D_004B7180[];
+extern u8 D_004B71C0[];
+extern u8 D_004B71D0[];
+extern u8 *D_004C2794;
+extern void func_001757E0(u8 *, int, int);
+extern void func_00222730(u8 *, int, f32 *, f32 *);
+
+void func_002206A0(u8 *p)
+{
+    u8 *sub = p + 0x2B8;
+    u8 saved;
+    f32 a, b;
+
+    p[0x1B5] = D_004B7170[*(u16 *)(p + 0x2D4)];
+    p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+    *(u32 *)(p + 0x1D8) = 0;
+    ((s16 *)(D_004C2794 + 0x7C))[p[2]]++;
+    func_001757E0(p, 0x15, D_004B7180[*(u16 *)(p + 0x2D4) * 4]);
+    p[0x22] = D_004B71C0[*(u16 *)(sub + 0x1C)];
+    saved = p[0x22];
+    p[0x22] = D_004B71D0[*(u16 *)(sub + 0x1C)];
+    func_00222730(p, 1000, &a, &b);
+    p[0x22] = saved;
+    if (p[0x1E6])
+        a = -a;
+    *(f32 *)(p + 0x5C) = a;
+    *(f32 *)(p + 0x60) = b;
+}

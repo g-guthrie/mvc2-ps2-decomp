@@ -1,0 +1,26 @@
+typedef unsigned char u8;
+typedef signed int s32;
+typedef float f32;
+
+extern void func_001AC390(u8 *, s32);
+extern void func_001AB6E0(u8 *, u8 *);
+extern void func_001AB840(u8 *, u8 *);
+
+void residual_001AB630(u8 *p, u8 *q)
+{
+    f32 x;
+    func_001AC390(q, 0x38);
+    x = *(f32 *)(p + 0x34);
+    if (x - -13.333333015441895f < 0) {
+        q[7] = 1;
+        func_001AB6E0(p, q);
+        return;
+    }
+    if (!(13.333333015441895f < x)) {
+        q[7] = 1;
+        func_001AB6E0(p, q);
+        return;
+    }
+    q[7] = 3;
+    func_001AB840(p, q);
+}

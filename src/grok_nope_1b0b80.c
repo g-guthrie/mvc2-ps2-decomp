@@ -1,0 +1,25 @@
+/* Metrowerks 3.0: ./try.sh src/grok_nope_1b0b80.c "-O3 -sdatathreshold 8" */
+typedef unsigned char u8;
+typedef signed short s16;
+
+extern int func_00175670(u8 *);
+extern u8 *D_004C2840;
+
+void residual_001B0B80(u8 *p)
+{
+    s16 t;
+    u8 *q;
+
+    func_00175670(p);
+    q = *(u8 **)(p + 24);
+    *(float *)(p + 52) += (float)(*(s16 *)(q + 0x140) != 0 ? 0x12 : -0x12);
+    *(float *)(p + 56) = *(float *)(p + 96);
+    if (!(*(int *)(D_004C2840 + 0x1C) & 1))
+        *(float *)(p + 56) += 3.0f;
+    t = *(s16 *)(p + 28);
+    *(s16 *)(p + 28) = t - 1;
+    if (t == 0) {
+        p[4]++;
+        p[316] = 0;
+    }
+}

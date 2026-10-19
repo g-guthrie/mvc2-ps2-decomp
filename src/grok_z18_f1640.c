@@ -1,0 +1,21 @@
+typedef unsigned char u8;
+typedef unsigned short u16;
+typedef signed short s16;
+typedef unsigned int u32;
+
+extern void func_0018C4B0(u8 *, int);
+extern void func_00185490(u8 *);
+extern void func_001757E0(u8 *, int, int);
+extern u8 *D_004C2794;
+
+void residual_001F1640(u8 *p)
+{
+    p[7]++;
+    p[0x1B5] = 0x25;
+    p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+    *(u32 *)(p + 0x1D8) = 0;
+    ((s16 *)(D_004C2794 + 124))[p[2]]++;
+    func_0018C4B0(p, 0xA);
+    func_00185490(p);
+    func_001757E0(p, 0xF, 0xF);
+}
