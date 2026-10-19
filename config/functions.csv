@@ -1270,8 +1270,7 @@ func_001410D0,0x001410D0,0x58,0x00141128,code,spimdisasm-explicit-size-before-fi
 func_00141130,0x00141130,0x114,0x00141244,code,spimdisasm-explicit-size-before-first-data
 func_00141250,0x00141250,0x70,0x001412C0,code,spimdisasm-explicit-size-before-first-data
 func_001412C0,0x001412C0,0x8,0x001412C8,code,spimdisasm-explicit-size-before-first-data
-func_001412D0,0x001412D0,0x148,0x00141418,code,spimdisasm-explicit-size-before-first-data
-func_00141418,0x00141418,0x4,0x0014141C,code,spimdisasm-explicit-size-before-first-data
+func_001412D0,0x001412D0,0x14C,0x0014141C,code,native-return-delay-slot-boundary
 func_00141420,0x00141420,0x11C,0x0014153C,code,spimdisasm-explicit-size-before-first-data
 func_00141540,0x00141540,0x64,0x001415A4,code,spimdisasm-explicit-size-before-first-data
 func_001415B0,0x001415B0,0x6E0,0x00141C90,code,spimdisasm-explicit-size-before-first-data
