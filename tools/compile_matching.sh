@@ -11420,3 +11420,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/compile_ee96.py "$BUILD/runtime_entry_create_0040CC30.i" "$BUILD/runtime_entry_create_0040CC30.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/runtime_entry_create_0040CC30.o" "$BUILD/runtime_entry_create_0040CC30.s"
 "$PYTHON" tools/verify_object.py "$BUILD/runtime_entry_create_0040CC30.o" private/SLUS_204.86.rom --source src/runtime_entry_create_0040CC30.c
+
+# Stream-group constructor retains indexed copies rather than induction pointers.
+"$WIBO" "$SNCPP" -P src/create_stream_group_003FF3E8.c "$BUILD/create_stream_group_003FF3E8.i"
+"$PYTHON" tools/compile_ee96.py --extra-flags=-fno-strength-reduce "$BUILD/create_stream_group_003FF3E8.i" "$BUILD/create_stream_group_003FF3E8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/create_stream_group_003FF3E8.o" "$BUILD/create_stream_group_003FF3E8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/create_stream_group_003FF3E8.o" private/SLUS_204.86.rom --source src/create_stream_group_003FF3E8.c
