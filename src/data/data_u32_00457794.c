@@ -1,5 +1,3 @@
 typedef unsigned int u32;
-u32 data_u32_00457794[11] = {
-    0x00000000u, 0x00000000u, 0x00000000u, 0x00050005u, 0x00060005u, 0x00070006u, 0x00070007u, 0x00080008u, 
-    0x00080008u, 0x000A0009u, 0x000A000Au, 
-};
+/* Unclassified prefix before the bounded random-state records at 004577A0. */
+u32 data_u32_00457794[3] = { 0x00000000u, 0x00000000u, 0x00000000u };

@@ -14994,6 +14994,7 @@ gMvc2ParticleScaleVector_00444A78 = 0x00444A78;
 gMvc2ParticleScaleVectors_00444AF0 = 0x00444AF0;
 gMvc2PositionOffsets_004762F0 = 0x004762F0;
 gMvc2PresetEffectPosition_0045E488 = 0x0045E488;
+gMvc2RandomStartStateTable_004577A0 = 0x004577A0;
 gMvc2PresetPosition_004B8060 = 0x004B8060;
 gMvc2PresetPosition_004B8070 = 0x004B8070;
 gMvc2PresetPosition_004B8230 = 0x004B8230;
