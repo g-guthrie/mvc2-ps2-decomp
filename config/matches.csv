@@ -15756,3 +15756,6 @@ func_0040D8F8,0x0040D8F8,0x154,src/finish_runtime_entry_0040D8F8.c,complete
 func_001B0B20,0x001B0B20,0x3C,src/grok_nop_1b0b20.c,complete
 func_001B2930,0x001B2930,0x48,src/grok_nop_1b2930.c,complete
 func_001B2FB0,0x001B2FB0,0x34,src/grok_nop_1b2fb0.c,complete
+func_001B0CF0,0x001B0CF0,0x6C,src/grok_nopa_1b0cf0.c,complete
+func_001B2A10,0x001B2A10,0x68,src/grok_nopa_1b2a10.c,complete
+func_001FA860,0x001FA860,0x50,src/grok_nop_fa85c.c,complete
