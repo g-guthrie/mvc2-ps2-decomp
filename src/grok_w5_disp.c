@@ -30,7 +30,11 @@ extern DispatchFn jtbl_00454E90[];
 extern DispatchFn jtbl_00455090[];
 extern DispatchFn jtbl_00456868[];
 extern DispatchFn jtbl_00456960[];
+extern DispatchFn2 jtbl_00456980[];
+extern DispatchFn2 jtbl_004569A0[];
 extern DispatchFn jtbl_004569C0[];
+extern DispatchFn2 jtbl_004578B0[];
+extern DispatchFn2 jtbl_004578D0[];
 extern DispatchFn jtbl_00456A70[];
 extern DispatchFn jtbl_00456AA0[];
 extern DispatchFn jtbl_004576D0[];
@@ -192,6 +196,10 @@ void func_00289000(u8 *p) { jtbl_00456868[p[6]](p); }
 
 void func_0028A770(u8 *a0, u8 *p) { jtbl_00456960[p[24]](a0); }
 
+void func_0028A790(u8 *a0, u8 *p) { jtbl_00456980[p[24]](a0, p); }
+
+void func_0028A7B0(u8 *a0, u8 *p) { jtbl_004569A0[p[24]](a0, p); }
+
 void func_0028AC20(u8 *a0, u8 *p) { jtbl_004569C0[p[24]](a0); }
 
 void func_0028BB80(u8 *p) { jtbl_00456A70[p[7]](p); }
@@ -203,6 +211,10 @@ void func_0028F850(u8 *p) { jtbl_004576D0[p[7]](p); }
 void func_00290A70(u8 *p) { jtbl_004C0A38[p[6]](p); }
 
 void func_00291AE0(u8 *a0, u8 *p) { jtbl_00457890[p[24]](a0); }
+
+void func_00291B00(u8 *a0, u8 *p) { jtbl_004578B0[p[24]](a0, p); }
+
+void func_00291B20(u8 *a0, u8 *p) { jtbl_004578D0[p[24]](a0, p); }
 
 void func_00291F90(u8 *a0, u8 *p) { jtbl_004578F0[p[24]](a0); }
 
