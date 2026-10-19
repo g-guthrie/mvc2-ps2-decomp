@@ -15985,3 +15985,4 @@ func_00251360,0x00251360,0x1C8,src/timed_motion_00250b40.c,complete
 func_00231840,0x00231840,0x1C4,src/context_motion_00231840.c,complete
 func_00256A70,0x00256A70,0x1A8,src/select_input_buffer_00256a70.c,complete
 func_002DB380,0x002DB380,0xFC,src/owner_state_callback_002DB380.c,complete
+func_002947C0,0x002947C0,0x70,src/owner_state_callback_002947C0.c,complete
