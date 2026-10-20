@@ -15841,4 +15841,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/motion_recoil_0024eda0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/motion_recoil_0024eda0.o" private/SLUS_204.86.rom --source src/motion_recoil_0024eda0.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_setup_00187840.c -c -lang c -O4 -Op -sdatathreshold 8 \
+    -o "$BUILD/actor_setup_00187840.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_setup_00187840.o" private/SLUS_204.86.rom --source src/actor_setup_00187840.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/random_launch_00396030.c -c -lang c -O4 -Op -sdatathreshold 8 \
+    -o "$BUILD/random_launch_00396030.o"
+"$PYTHON" tools/verify_object.py "$BUILD/random_launch_00396030.o" private/SLUS_204.86.rom --source src/random_launch_00396030.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
