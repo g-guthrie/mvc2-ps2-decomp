@@ -4204,7 +4204,7 @@ jtbl_00461E70,0x00461E70,0x14,src/data/jtbl_00461E70.c,complete,placeholder
 jtbl_00461E90,0x00461E90,0x40,src/data/jtbl_00461E90.c,complete,reconstructed
 data_u32_00461ED0,0x00461ED0,0x10,src/data/data_u32_00461ED0.c,complete,placeholder
 jtbl_00461EE0,0x00461EE0,0x10,src/data/jtbl_00461EE0.c,complete,placeholder
-data_u32_00461EF0,0x00461EF0,0x10,src/data/data_u32_00461EF0.c,complete,placeholder
+data_u32_00461EF0,0x00461EF0,0x10,src/data/data_u32_00461EF0.c,complete,reconstructed
 jtbl_00461F00,0x00461F00,0x28,src/data/jtbl_00461F00.c,complete,placeholder
 jtbl_00461F30,0x00461F30,0x18,src/data/jtbl_00461F30.c,complete,reconstructed
 jtbl_00461F50,0x00461F50,0x10,src/data/jtbl_00461F50.c,complete,reconstructed
