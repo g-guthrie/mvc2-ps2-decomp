@@ -7882,7 +7882,7 @@ func_003CD5A0,0x003CD5A0,0x60,src/dupcluster_gate96b.c,complete
 func_001C4C30,0x001C4C30,0x68,src/float_motion_transitions.c,complete
 func_0013C730,0x0013C730,0x68,src/dupcluster_0013C730.c,complete
 func_00177CE0,0x00177CE0,0x6C,src/dupcluster_00177CE0.c,complete
-func_00178DA0,0x00178DA0,0x6C,src/dupcluster_00178DA0.c,placeholder
+func_00178DA0,0x00178DA0,0x6C,src/dupcluster_00178DA0.c,complete
 func_0013C9A0,0x0013C9A0,0x44,src/float_motion_transitions.c,complete
 func_00316940,0x00316940,0x34,src/height_limits.c,complete
 func_001519E0,0x001519E0,0x3C,src/dupcluster_001519E0.c,complete
@@ -9864,7 +9864,7 @@ func_003453C0,0x003453C0,0x8C,src/wave20.c,complete
 func_0034B240,0x0034B240,0x88,src/wave20.c,complete
 func_00201370,0x00201370,0x9C,src/wave20.c,complete
 func_002E3880,0x002E3880,0x94,src/wave20.c,complete
-func_003DC950,0x003DC950,0x64,src/wave20.c,complete
+func_003DC950,0x003DC950,0x64,src/wave20.c,placeholder
 func_002D3A10,0x002D3A10,0x78,src/wave20b.c,complete
 func_001D6FD0,0x001D6FD0,0x7C,src/wave20b.c,complete
 func_00362C20,0x00362C20,0x7C,src/wave20b.c,complete
@@ -12288,7 +12288,7 @@ func_00416CC0,0x00416CC0,0x74,src/w9s2g.c,complete
 func_003E93A0,0x003E93A0,0x78,src/w9s2gp.c,complete
 func_004172E0,0x004172E0,0x70,src/w9s2f.c,complete
 func_00417EB0,0x00417EB0,0xA4,src/w9s2m30.c,complete
-func_00418B10,0x00418B10,0x3C,src/w9s2m.c,complete
+func_00418B10,0x00418B10,0x3C,src/w9s2m.c,placeholder
 func_00408700,0x00408700,0x30,src/w9e0.c,complete
 func_0040D498,0x0040D498,0x30,src/w9e0.c,complete
 func_003FE120,0x003FE120,0x50,src/w9e0.c,complete
@@ -12303,7 +12303,7 @@ func_00117078,0x00117078,0x28,src/w9e1.c,complete
 func_0040F070,0x0040F070,0x44,src/w9e8.c,complete
 func_0040AF28,0x0040AF28,0x2C,src/w9a0.c,placeholder
 func_0041CEB0,0x0041CEB0,0x30,src/w9m0.c,complete
-func_003F0470,0x003F0470,0x58,src/w9m0.c,complete
+func_003F0470,0x003F0470,0x58,src/w9m0.c,placeholder
 func_003EA070,0x003EA070,0x54,src/w9m0.c,complete
 func_003EB960,0x003EB960,0x5C,src/w9m8.c,complete
 func_004121B0,0x004121B0,0xA4,src/w9m3.c,complete
@@ -13776,7 +13776,7 @@ func_00360BD0,0x00360BD0,0x80,src/x5_b.c,complete
 func_0013B060,0x0013B060,0xC0,src/x5_b.c,complete
 func_00173EC0,0x00173EC0,0xC8,src/x5_b.c,complete
 func_001A2610,0x001A2610,0xD0,src/x5_b.c,complete
-func_00394CD0,0x00394CD0,0xD0,src/x5_b.c,complete
+func_00394CD0,0x00394CD0,0xD0,src/x5_b.c,placeholder
 func_001FD430,0x001FD430,0xD8,src/x5_b.c,complete
 func_001B9290,0x001B9290,0xB8,src/x5_b.c,complete
 func_00163CD0,0x00163CD0,0x6C,src/x5_b.c,complete
@@ -14116,7 +14116,7 @@ func_00281640,0x00281640,0xC0,src/y1_f.c,complete
 func_0028DD20,0x0028DD20,0xD4,src/y1_f.c,complete
 func_0021C4A0,0x0021C4A0,0xE8,src/y1_f.c,complete
 func_00161690,0x00161690,0xCC,src/y1_g.c,complete
-func_003DCAD0,0x003DCAD0,0xD4,src/y1_h.c,complete
+func_003DCAD0,0x003DCAD0,0xD4,src/y1_h.c,placeholder
 func_0033F470,0x0033F470,0xF0,src/y1_i.c,complete
 func_0033F630,0x0033F630,0xF0,src/y1_i.c,complete
 func_002F7940,0x002F7940,0xF0,src/y1_j.c,complete
@@ -14193,7 +14193,7 @@ func_0019F0F0,0x0019F0F0,0x10C,src/z2_a.c,complete
 func_00351470,0x00351470,0xD0,src/z2_b.c,complete
 func_00305690,0x00305690,0xE4,src/z2_b.c,complete
 func_002F29B0,0x002F29B0,0xE4,src/z2_b.c,complete
-func_00170C30,0x00170C30,0xFC,src/z2_b.c,complete
+func_00170C30,0x00170C30,0xFC,src/z2_b.c,placeholder
 func_0014EB20,0x0014EB20,0x104,src/z2_b.c,complete
 func_002687B0,0x002687B0,0xE4,src/z2_c.c,complete
 func_0035A340,0x0035A340,0xF8,src/z2_c.c,complete
@@ -15061,7 +15061,7 @@ func_00343D30,0x00343D30,0x14C,src/w181_l.c,complete
 func_001E9C80,0x001E9C80,0x154,src/w181_m.c,complete
 func_002C9E90,0x002C9E90,0x170,src/w181_n.c,complete
 func_00379620,0x00379620,0x17C,src/w181_o.c,complete
-func_003DE3D0,0x003DE3D0,0xAC,src/w184_b.c,complete
+func_003DE3D0,0x003DE3D0,0xAC,src/w184_b.c,placeholder
 func_00291610,0x00291610,0x110,src/w184_b.c,complete
 func_00252AC0,0x00252AC0,0x118,src/w184_b.c,complete
 func_0020E290,0x0020E290,0x12C,src/w184_b.c,complete
@@ -15166,7 +15166,7 @@ func_002719C0,0x002719C0,0x16C,src/w183_t.c,complete
 func_00236A10,0x00236A10,0x178,src/w183_v.c,complete
 func_0018CA30,0x0018CA30,0x180,src/w183_w.c,complete
 func_001325A0,0x001325A0,0x188,src/w183_x.c,complete
-func_003DE160,0x003DE160,0xCC,src/w183_z.c,complete
+func_003DE160,0x003DE160,0xCC,src/w183_z.c,placeholder
 func_001802A0,0x001802A0,0xB4,src/w1813_b.c,complete
 func_00400468,0x00400468,0xC0,src/w1813_c.c,complete
 func_003B2750,0x003B2750,0xDC,src/w1813_e.c,complete
