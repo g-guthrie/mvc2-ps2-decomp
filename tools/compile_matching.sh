@@ -15806,4 +15806,9 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     -o "$BUILD/owner_contact_filter_003bd4c0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_contact_filter_003bd4c0.o" private/SLUS_204.86.rom --source src/owner_contact_filter_003bd4c0.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nibble_remap_003eb4a0.c -c -lang c -O4,p -sdatathreshold 8 \
+    -o "$BUILD/nibble_remap_003eb4a0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nibble_remap_003eb4a0.o" private/SLUS_204.86.rom --source src/nibble_remap_003eb4a0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

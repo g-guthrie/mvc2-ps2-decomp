@@ -17406,3 +17406,5 @@ func_002B6F20,0x002B6F20,0xE0,src/animation_countdown_reset_002b6f20.c,complete
 func_003562D0,0x003562D0,0x54,src/owner_tag_guard_003562d0.c,complete
 func_00379A60,0x00379A60,0x204,src/owner_countdown_animation_00379a60.c,complete
 func_003BD4C0,0x003BD4C0,0x190,src/owner_contact_filter_003bd4c0.c,complete
+func_003EB4A0,0x003EB4A0,0x128,src/nibble_remap_003eb4a0.c,complete
+func_00191600,0x00191600,0x168,src/w184_i.c,complete
