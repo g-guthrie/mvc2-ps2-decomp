@@ -17368,3 +17368,4 @@ func_001067F0,0x001067F0,0xA8,src/sony29_rpc_packet_allocation.c,complete
 func_0010B328,0x0010B328,0x38,src/sony29_rpc_lifecycle_helpers.c,complete
 func_0010BD00,0x0010BD00,0x28,src/sony29_rpc_lifecycle_helpers.c,complete
 func_00260960,0x00260960,0x9C,src/grok_ia_00260960.c,complete
+func_002C3080,0x002C3080,0x168,src/grok_fj_002c3080.c,complete

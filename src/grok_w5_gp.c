@@ -12,7 +12,7 @@ extern s16 D_00633720[];
 extern void (*D_004C2654)(void);
 
 extern void func_0012E780(s32);
-extern void func_002C3200(void);
+extern void func_002C3200(u8 *p);
 
 void func_00152960(void) {
     void (*fp)(void) = D_004C2654;
@@ -20,9 +20,9 @@ void func_00152960(void) {
         fp();
 }
 
-void func_002C31F0(void) {
+void func_002C31F0(u8 *p) {
     D_004C28D8[0] = 2;
-    func_002C3200();
+    func_002C3200(p);
 }
 
 void func_0032BFF0(void) {
