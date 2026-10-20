@@ -1,3 +1,4 @@
+#include "cri_sj_ring_buffer_types.h"
 #include "cri_sj_memory_types.h"
 typedef unsigned char u8;
 typedef signed char s8;
@@ -726,9 +727,9 @@ void func_0040EEF8(void) {}
 
 void *func_0040F1B8(CriSjMemory *p) { return p->uuid; }
 
-s32 func_0040F520(void *p) { return *(s32 *)((u8 *)p + 20); }
+char *func_0040F520(CriSjMemory *p) { return p->buffer; }
 
-s32 func_0040F710(void *p) { return *(s32 *)((u8 *)p + 8); }
+UUID *func_0040F710(SJRBFRecord *p) { return p->uuid; }
 
 s32 func_0040FCD0(void *p) { return *(s32 *)((u8 *)p + 28); }
 

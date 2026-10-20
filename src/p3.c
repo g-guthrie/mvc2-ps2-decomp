@@ -21,7 +21,6 @@ extern s32 func_00103B10(s32, s32);
 extern s32 D_004C3AD4;
 extern s32 D_00438268;
 extern void func_0011D8F8(void *, s32, s32);
-extern u8 D_00490DA8[];
 extern s32 D_004C24D8;
 
 void func_003FF288(void) { func_0040EE28(); }

@@ -6323,7 +6323,8 @@ jtbl_004908D4,0x004908D4,0x24,src/data/jtbl_004908D4.c,complete,placeholder
 data_sj_memory_records_004908F8,0x004908F8,0x480,src/data/data_sj_memory_records_004908F8.c,complete,reconstructed
 data_raw_00490D78,0x00490D78,0xC,src/data/data_raw_00490D78.c,complete,placeholder
 jtbl_00490D84,0x00490D84,0x24,src/data/jtbl_00490D84.c,complete,placeholder
-data_zero_00490DB0,0x00490DB0,0x4000,src/data/data_zero_00490DB0.c,complete,placeholder
+data_sjr_bf_records_00490DA8,0x00490DA8,0x4000,src/data/data_sjr_bf_records_00490DA8.c,complete,reconstructed
+data_raw_00494DA8,0x00494DA8,0xC,src/data/data_raw_00494DA8.c,complete,placeholder
 jtbl_00494DB4,0x00494DB4,0x24,src/data/jtbl_00494DB4.c,complete,placeholder
 data_zero_00494DE0,0x00494DE0,0xBF0,src/data/data_zero_00494DE0.c,complete,placeholder
 data_raw_004959D0,0x4959d0,0x8,src/data/data_raw_004959D0.c,complete,placeholder

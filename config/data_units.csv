@@ -6323,7 +6323,8 @@ jtbl_004908D4,0x004908D4,0x24,.rodata,src/data/jtbl_004908D4.c,jump_table
 data_sj_memory_records_004908F8,0x004908F8,0x480,.data,src/data/data_sj_memory_records_004908F8.c,bounded_cri_sj_memory_records
 data_raw_00490D78,0x00490D78,0xC,.data,src/data/data_raw_00490D78.c,opaque_dispatch_prefix
 jtbl_00490D84,0x00490D84,0x24,.rodata,src/data/jtbl_00490D84.c,jump_table
-data_zero_00490DB0,0x00490DB0,0x4000,.data,src/data/data_zero_00490DB0.c,zero_initialized_untyped
+data_sjr_bf_records_00490DA8,0x00490DA8,0x4000,.data,src/data/data_sjr_bf_records_00490DA8.c,bounded_sjr_bf_record_table
+data_raw_00494DA8,0x00494DA8,0xC,.data,src/data/data_raw_00494DA8.c,opaque_dispatch_prefix
 jtbl_00494DB4,0x00494DB4,0x24,.rodata,src/data/jtbl_00494DB4.c,jump_table
 data_zero_00494DE0,0x00494DE0,0xBF0,.data,src/data/data_zero_00494DE0.c,zero_initialized_untyped
 data_raw_004959D0,0x4959d0,0x8,.data,src/data/data_raw_004959D0.c,raw_byte_array

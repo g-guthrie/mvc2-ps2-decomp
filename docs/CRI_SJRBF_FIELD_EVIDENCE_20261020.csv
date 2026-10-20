@@ -1,0 +1,17 @@
+offset,width,type,name,direct evidence,semantic source
+0x00,4,SJ_OBJ,SJ interface/vtbl,"creator stores D_00490D78 at +0; native vtable table ends at row start",SJ_OBJ base pointer per sj.h
+0x04,4,Sint32,used,"creator tests +4 across 256 rows, stores 1; destroy clears +4",SJRBF slot-use field
+0x08,4,UUID*,uuid,"creator stores D_004BEA10; GetUuid method loads/returns +8",target UUID bytes match SJRBF uuid
+0x0C,4,Sint32,unk0C,"Reset clears; GetChunk/PutChunk/IsGetChunk read/update",unknown internal word retained as neutral name
+0x10,4,Sint32,unk10,"Reset sets from bsize; multiple methods read/update",unknown internal word retained as neutral name
+0x14,4,Sint32,unk14,"Reset clears; chunk methods use/update",unknown internal word retained as neutral name
+0x18,4,Sint32,unk18,"Reset clears; chunk methods use/update",unknown internal word retained as neutral name
+0x1C,4,Sint8*,buf,"Create A0 stored at +1C; chunk methods use buffer",matches SJRBF_Create argument 1
+0x20,4,Sint32,bsize,"Create A1 stored at +20; Reset reads and transfers to unk10",matches SJRBF_Create argument 2
+0x24,4,Sint32,xsize,"Create A2 stored at +24; chunk methods use",matches SJRBF_Create argument 3
+0x28,4,Sint32,unk28,"Reset clears; methods read/update",unknown internal word retained as neutral name
+0x2C,4,Sint32,unk2C,"Reset clears; methods read/update",unknown internal word retained as neutral name
+0x30,4,Sint32,unk30,"Reset clears; methods read/update",unknown internal word retained as neutral name
+0x34,4,Sint32,unk34,"Reset clears; methods read/update",unknown internal word retained as neutral name
+0x38,4,SJRBFErrorCallback,err_func,"Create installs trap; EntryErrFunc setter replaces; error paths call with err_obj,-3",exact SJRBF_EntryErrFunc signature void(void*,Sint32)
+0x3C,4,void*,err_obj,"Create initializes self pointer; EntryErrFunc setter replaces; error paths pass it as A0",SJRBF error callback object/context field

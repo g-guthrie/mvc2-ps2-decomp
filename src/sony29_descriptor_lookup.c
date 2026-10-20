@@ -1,9 +1,10 @@
+#include "sony29_kernel_semaphore_calls.h"
+#include "sony29_fileio_descriptor_types.h"
 /* Native IOP descriptor lookup, semaphore ownership and completion requests. */
 typedef unsigned char u8;
 typedef unsigned int u32;
-typedef struct {int current,limit,initial,waiters;u32 attributes,option;} SemaParams;
-typedef struct {int handle,active,word8,word12;} Descriptor;
-extern Descriptor D_004C6A00[];
+typedef SonyEeSemaParams SemaParams;
+typedef SonyFileDescriptor Descriptor;
 extern int D_00438308,D_0043830C;
 extern int func_00103DE0(SemaParams *);
 extern int func_00103E20(int);
@@ -12,8 +13,8 @@ void func_00107588(void)
 {
  SemaParams params;
  if(D_00438308==-1){
-  params.initial=1;
-  params.limit=1;
+  params.init_count=1;
+  params.max_count=1;
   params.option=0;
   D_00438308=func_00103DE0(&params);
   D_0043830C=func_00103DE0(&params);

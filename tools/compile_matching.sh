@@ -16051,4 +16051,10 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -G0 -o "$BUILD/cri_sj_memory_methods.o" "$BUILD/cri_sj_memory_methods.s"
 "$PYTHON" tools/verify_object.py "$BUILD/cri_sj_memory_methods.o" private/SLUS_204.86.rom --source src/cri_sj_memory_methods.c
 
+# File-service close: typed 16-byte descriptor and 20-byte completion request.
+"$WIBO" "$SNCPP" -P src/sony29_fileio_close_00108118.c "$BUILD/sony29_fileio_close_00108118.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_fileio_close_00108118.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_fileio_close_00108118.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_fileio_close_00108118.o" "$BUILD/sony29_fileio_close_00108118.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_fileio_close_00108118.o" private/SLUS_204.86.rom --source src/sony29_fileio_close_00108118.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

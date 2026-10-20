@@ -1,0 +1,37 @@
+#ifndef MVC2_CRI_SJ_RING_BUFFER_TYPES_H
+#define MVC2_CRI_SJ_RING_BUFFER_TYPES_H
+
+struct _sj_vtbl;
+typedef struct _UUID UUID;
+typedef struct {
+    struct _sj_vtbl *vtbl;
+} SJ_OBJ;
+typedef void (*SJRBFErrorCallback)(void *object, signed int error_code);
+
+typedef struct SJRBFRecord {
+    SJ_OBJ sj;
+    signed int used;
+    UUID *uuid;
+    signed int unk0C;
+    signed int unk10;
+    signed int unk14;
+    signed int unk18;
+    signed char *buf;
+    signed int bsize;
+    signed int xsize;
+    signed int unk28;
+    signed int unk2C;
+    signed int unk30;
+    signed int unk34;
+    SJRBFErrorCallback err_func;
+    void *err_obj;
+} SJRBFRecord;
+typedef char SJRBFRecord_size_check[sizeof(SJRBFRecord) == 0x40 ? 1 : -1];
+extern SJRBFRecord D_00490DA8[256];
+
+UUID *func_0040F710(SJRBFRecord *record);
+void func_0040F718(SJRBFRecord *record, SJRBFErrorCallback callback, void *context);
+void func_0040F728(SJ_OBJ *object);
+int func_0040F750(SJRBFRecord *record, int line);
+int func_0040FC08(SJRBFRecord *record, int line, int requested, int *available);
+#endif
