@@ -15901,4 +15901,9 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     -o "$BUILD/input_direction_motion_001f0980.o"
 "$PYTHON" tools/verify_object.py "$BUILD/input_direction_motion_001f0980.o" private/SLUS_204.86.rom --source src/input_direction_motion_001f0980.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/format_hex_display_00136570.c -c -lang c -O4,p -sdatathreshold 8 \
+    -o "$BUILD/format_hex_display_00136570.o"
+"$PYTHON" tools/verify_object.py "$BUILD/format_hex_display_00136570.o" private/SLUS_204.86.rom --source src/format_hex_display_00136570.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

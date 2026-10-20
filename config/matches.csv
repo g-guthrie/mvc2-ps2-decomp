@@ -17435,3 +17435,4 @@ func_001028B0,0x001028B0,0x68,src/runtime_address_modes_00102a50.c,complete
 func_00102918,0x00102918,0x74,src/runtime_address_modes_00102a50.c,complete
 func_00102990,0x00102990,0x74,src/runtime_address_modes_00102a50.c,complete
 func_001F0980,0x001F0980,0x104,src/input_direction_motion_001f0980.c,complete
+func_00136570,0x00136570,0xD0,src/format_hex_display_00136570.c,complete
