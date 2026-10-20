@@ -49,9 +49,22 @@ s32 func_004167A0(s32 *p, s32 b, s32 n) {
     return p[4] + r + n * p[3];
 }
 
-static u8 *func_003F1F90(s32 a, s32 b, s32 c, s32 d) { return (u8 *)(a + b); }
+static u32 *func_003F1F90(u32 *p, u32 key)
+{
+    u32 *e = p;
+    u32 i;
+    if (p[0] & key) {
+        e += 3;
+        for (i = 0; i < p[1]; i++) {
+            if (e[0] == key) return e;
+            e = (u32 *)((u8 *)e + e[2]);
+        }
+    }
+    return 0;
+}
+
 u8 *func_003F2510(s32 a, s32 n, s32 c) {
-    u8 *r = func_003F1F90(a, 0x1000, c, n);
+    u8 *r = (u8 *)func_003F1F90((u32 *)a, 0x1000);
     u8 *q = r + 12;
     if (r == 0) return 0;
     return q + n * 12;

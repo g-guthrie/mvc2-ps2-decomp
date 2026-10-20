@@ -13,11 +13,11 @@ typedef struct {
     s32 size;
 } E;
 
-/* Recipe 2: static leaf so $a0/$a1 survive the call without a saved register. */
-static H *func_003F1F00(void) { return (H *)0x1000; }
+/* Native identity accessor: return the supplied format header. */
+static H *func_003F1F00(void *file) { return (H *)file; }
 
 E *func_003F1F10(E *e, u32 m) {
-    H *h = func_003F1F00();
+    H *h = func_003F1F00(e);
     u32 i;
     if (h->mask & m) {
         e = (E *)((u8 *)e + 12);

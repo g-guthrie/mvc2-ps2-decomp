@@ -18702,7 +18702,7 @@ func_003DAE10,0x003DAE10,0x7C,0x003DAE8C,code,spimdisasm-explicit-size-before-fi
 func_003DAE90,0x003DAE90,0x184,0x003DB014,code,spimdisasm-explicit-size-before-first-data
 func_003DB020,0x003DB020,0x75C,0x003DB77C,code,spimdisasm-explicit-size-before-first-data
 func_003DB780,0x003DB780,0x68,0x003DB7E8,code,spimdisasm-explicit-size-before-first-data
-func_003DB7F0,0x003DB7F0,0x98,0x003DB888,code,spimdisasm-explicit-size-before-first-data
+func_003DB7F0,0x003DB7F0,0x98,0x003DB888,code,genuine-math-wrapper-candidate-not-exact
 func_003DB890,0x003DB890,0x48,0x003DB8D8,code,spimdisasm-explicit-size-before-first-data
 func_003DB8E0,0x003DB8E0,0x8C,0x003DB96C,code,spimdisasm-explicit-size-before-first-data
 func_003DB970,0x003DB970,0x8,0x003DB978,code,spimdisasm-explicit-size-before-first-data
@@ -20134,7 +20134,7 @@ func_0041B6C0,0x0041B6C0,0x50,0x0041B710,code,spimdisasm-explicit-size-before-fi
 func_0041B710,0x0041B710,0xD0,0x0041B7E0,code,spimdisasm-explicit-size-before-first-data
 func_0041B7E0,0x0041B7E0,0xD0,0x0041B8B0,code,spimdisasm-explicit-size-before-first-data
 func_0041B8B0,0x0041B8B0,0x220,0x0041BAD0,code,spimdisasm-explicit-size-before-first-data
-func_0041BAD0,0x0041BAD0,0x58,0x0041BB28,code,spimdisasm-explicit-size-before-first-data
+func_0041BAD0,0x0041BAD0,0x58,0x0041BB28,code,unverified-c-poll-delay-retained-in-raw-image
 func_0041BB30,0x0041BB30,0x78,0x0041BBA8,code,spimdisasm-explicit-size-before-first-data
 func_0041BBB0,0x0041BBB0,0xC8,0x0041BC78,code,spimdisasm-explicit-size-before-first-data
 func_0041BC80,0x0041BC80,0x10C,0x0041BD8C,code,spimdisasm-explicit-size-before-first-data

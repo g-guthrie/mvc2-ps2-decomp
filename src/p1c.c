@@ -4,27 +4,27 @@ typedef unsigned int u32;
 typedef unsigned char u8;
 typedef float f32;
 
-/* Recipe 2: the leaf is static with a real body so $a3 stays live across it. */
-static s32 func_003F1F90(s32 a, s32 b) {
-    s32 t = a & b;
-    s32 u = t | b;
-    s32 w = u ^ a;
-    return (t ^ w) + u + (a << 2);
+/* Native format-record lookup; matches the canonical w2_f implementation. */
+static u32 *func_003F1F90(u32 *p, u32 key)
+{
+    u32 *e = p;
+    u32 i;
+    if (p[0] & key) {
+        e += 3;
+        for (i = 0; i < p[1]; i++) {
+            if (e[0] == key) return e;
+            e = (u32 *)((u8 *)e + e[2]);
+        }
+    }
+    return 0;
 }
+
 s32 func_003F2550(s32 a, s32 i) {
-    s32 r = func_003F1F90(a, 0x4000);
+    s32 r = (s32)func_003F1F90((u32 *)a, 0x4000);
     s32 off = i * 8;
     if (r == 0) return 0;
     r += 12;
     return r + off;
-}
-
-/* Spin until both poll results are zero; the busy-wait carries six nops. */
-extern s32 func_00104990(s32 n);
-void func_0041BAD0(void) {
-    while (func_00104990(2) | func_00104990(1)) {
-        asm { nop; nop; nop; nop; nop; nop }
-    }
 }
 
 typedef struct {
