@@ -15581,4 +15581,20 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/packet_writers.c 
 "$PYTHON" tools/verify_object.py "$BUILD/packet_writers.o" private/SLUS_204.86.rom --source src/packet_writers.c
 "$PYTHON" tools/verify_object.py "$BUILD/packet_writers.o" private/SLUS_204.86.rom --matches config/local_helper_matches.csv --source src/packet_writers.c
 
+
+# Native Sony file I/O and completion callbacks.
+"$WIBO" "$SNCPP" -P src/sony29_mc_fileio.c "$BUILD/sony29_mc_fileio.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_mc_fileio.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_mc_fileio.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_mc_fileio.o" "$BUILD/sony29_mc_fileio.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_mc_fileio.o" private/SLUS_204.86.rom --source src/sony29_mc_fileio.c
+
+"$WIBO" "$SNCPP" -P src/sony29_cddvd_read_completion.c "$BUILD/sony29_cddvd_read_completion.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_cddvd_read_completion.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_cddvd_read_completion.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_cddvd_read_completion.o" "$BUILD/sony29_cddvd_read_completion.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_cddvd_read_completion.o" private/SLUS_204.86.rom --source src/sony29_cddvd_read_completion.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/file_record_uniformity_003F3700.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/file_record_uniformity_003F3700.o"
+"$PYTHON" tools/verify_object.py "$BUILD/file_record_uniformity_003F3700.o" private/SLUS_204.86.rom --source src/file_record_uniformity_003F3700.c
+"$PYTHON" tools/verify_object.py "$BUILD/file_record_uniformity_003F3700.o" private/SLUS_204.86.rom --matches config/local_helper_matches.csv --source src/file_record_uniformity_003F3700.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

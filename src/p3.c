@@ -5,9 +5,9 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 
-extern u32 *D_004C8928;
-extern u32 *D_004C892C;
-extern u32 *D_004C8930;
+extern int *D_004C8928;
+extern int *D_004C892C;
+extern int *D_004C8930;
 typedef char *va_list;
 extern void func_00120A30(void *, s32, char *, va_list);
 extern u8 D_004C83D0[];
@@ -37,8 +37,8 @@ void func_001061D8(void) {
     D_00438268 = 0;
 }
 
-void func_00110898(u32 a) {
-    u32 *p = (u32 *)(a | 0x20000000);
+void func_00110898(void *argument) {
+    int *p = (int *)((u32)argument | 0x20000000);
     if (D_004C8928) *D_004C8928 = p[0];
     if (D_004C892C) *D_004C892C = p[1];
     if (D_004C8930) *D_004C8930 = p[36];

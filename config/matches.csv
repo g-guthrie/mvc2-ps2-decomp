@@ -17320,3 +17320,10 @@ func_00110EC0,0x00110EC0,0x118,src/sony29_mc_fileinfo.c,complete
 func_00420AB0,0x00420AB0,0x50,src/packet_writers.c,complete
 func_00420B30,0x00420B30,0x68,src/packet_writers.c,complete
 func_00291970,0x00291970,0xAC,src/t11_e.c,complete
+func_00110070,0x00110070,0xc4,src/sony29_mc_fileio.c,complete
+func_00110138,0x00110138,0x124,src/sony29_mc_fileio.c,complete
+func_001104B8,0x001104B8,0x114,src/sony29_mc_fileio.c,complete
+func_001107B8,0x001107B8,0xe0,src/sony29_mc_fileio.c,complete
+func_001108F0,0x001108F0,0x17c,src/sony29_mc_fileio.c,complete
+func_0010E908,0x0010E908,0xa0,src/sony29_cddvd_read_completion.c,complete
+func_003F3700,0x003F3700,0x70,src/file_record_uniformity_003F3700.c,complete
