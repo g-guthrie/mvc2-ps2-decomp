@@ -7,6 +7,8 @@ struct RuntimeState {
     u32 address;
     unsigned char pad14[0xC];
     s32 value;
+    unsigned char pad24[0xC];
+    u32 extra;
 };
 extern u32 func_00102520(u32 address);
 extern void func_00102428(void *p);
@@ -41,4 +43,26 @@ void func_00102AD0(struct RuntimeState *p, u32 address, s32 value) {
     flags &= -2;
     flags |= 0x100;
     p->flags = flags;
+}
+
+void func_001028B0(struct RuntimeState *p, u32 address) {
+    u32 mapped = func_00102520(address);
+    func_00102428(p);
+    if (p->extra != 0xFFFFFFFFu) p->extra = mapped;
+    p->value = 0;
+    p->flags = (p->flags & -13) | 0x105;
+}
+void func_00102918(struct RuntimeState *p, u32 address, s32 value) {
+    u32 mapped = func_00102520(address);
+    func_00102428(p);
+    if (p->address != 0xFFFFFFFFu) p->address = mapped;
+    p->value = value;
+    p->flags = (p->flags & -13) | 0x101;
+}
+void func_00102990(struct RuntimeState *p, u32 address, s32 value) {
+    u32 mapped = func_00102520(address);
+    func_00102428(p);
+    if (p->address != 0xFFFFFFFFu) p->address = mapped;
+    p->value = value;
+    p->flags = (p->flags & -13) | 0x109;
 }

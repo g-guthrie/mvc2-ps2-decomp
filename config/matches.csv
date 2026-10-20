@@ -17431,3 +17431,7 @@ func_0034C720,0x0034C720,0xEC,src/owner_spacing_update_0034c720.c,complete
 func_00102A50,0x00102A50,0x7C,src/runtime_address_modes_00102a50.c,complete
 func_00102AD0,0x00102AD0,0x80,src/runtime_address_modes_00102a50.c,complete
 func_00267C90,0x00267C90,0xE0,src/input_motion_00267c90.c,complete
+func_001028B0,0x001028B0,0x68,src/runtime_address_modes_00102a50.c,complete
+func_00102918,0x00102918,0x74,src/runtime_address_modes_00102a50.c,complete
+func_00102990,0x00102990,0x74,src/runtime_address_modes_00102a50.c,complete
+func_001F0980,0x001F0980,0x104,src/input_direction_motion_001f0980.c,complete
