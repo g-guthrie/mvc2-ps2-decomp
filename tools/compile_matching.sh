@@ -15906,4 +15906,19 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/format_hex_display_00136570.o"
 "$PYTHON" tools/verify_object.py "$BUILD/format_hex_display_00136570.o" private/SLUS_204.86.rom --source src/format_hex_display_00136570.c
 
+"$WIBO" "$SNCPP" -P src/runtime_flag_wait_00102428.c "$BUILD/runtime_flag_wait_00102428.i"
+"$WIBO" "$EE29CC1" "$BUILD/runtime_flag_wait_00102428.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/runtime_flag_wait_00102428.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/runtime_flag_wait_00102428.o" "$BUILD/runtime_flag_wait_00102428.s"
+"$PYTHON" tools/verify_object.py "$BUILD/runtime_flag_wait_00102428.o" private/SLUS_204.86.rom --source src/runtime_flag_wait_00102428.c
+
+"$WIBO" "$SNCPP" -P src/initialize_semaphore_00107a68.c "$BUILD/initialize_semaphore_00107a68.i"
+"$WIBO" "$EE29CC1" "$BUILD/initialize_semaphore_00107a68.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/initialize_semaphore_00107a68.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/initialize_semaphore_00107a68.o" "$BUILD/initialize_semaphore_00107a68.s"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_semaphore_00107a68.o" private/SLUS_204.86.rom --source src/initialize_semaphore_00107a68.c
+
+"$WIBO" "$SNCPP" -P src/copy_four_slots_00103418.c "$BUILD/copy_four_slots_00103418.i"
+"$WIBO" "$EE29CC1" "$BUILD/copy_four_slots_00103418.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/copy_four_slots_00103418.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/copy_four_slots_00103418.o" "$BUILD/copy_four_slots_00103418.s"
+"$PYTHON" tools/verify_object.py "$BUILD/copy_four_slots_00103418.o" private/SLUS_204.86.rom --source src/copy_four_slots_00103418.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
