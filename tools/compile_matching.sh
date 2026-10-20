@@ -15479,4 +15479,16 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -mips4 -G0 -o "$BUILD/newlib_sqrtf_00114228.o" "$BUILD/newlib_sqrtf_00114228.s"
 "$PYTHON" tools/verify_object.py "$BUILD/newlib_sqrtf_00114228.o" private/SLUS_204.86.rom --source src/newlib_sqrtf_00114228.c
 
+
+# Complete PS2 fdlibm float kernels; unmodified EE96 output, SNAS MIPS IV.
+"$WIBO" "$SNCPP" -P src/newlib_atan2f_001130F0.c "$BUILD/newlib_atan2f_001130F0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_atan2f_001130F0.i" "$BUILD/newlib_atan2f_001130F0.s"
+"$WIBO" "$SNAS" -mips4 -G0 -o "$BUILD/newlib_atan2f_001130F0.o" "$BUILD/newlib_atan2f_001130F0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_atan2f_001130F0.o" private/SLUS_204.86.rom --source src/newlib_atan2f_001130F0.c
+
+"$WIBO" "$SNCPP" -P src/newlib_powf_00113698.c "$BUILD/newlib_powf_00113698.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_powf_00113698.i" "$BUILD/newlib_powf_00113698.s"
+"$WIBO" "$SNAS" -mips4 -G0 -o "$BUILD/newlib_powf_00113698.o" "$BUILD/newlib_powf_00113698.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_powf_00113698.o" private/SLUS_204.86.rom --source src/newlib_powf_00113698.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

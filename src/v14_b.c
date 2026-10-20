@@ -5,6 +5,7 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
+typedef struct { f32 x, y, z; } V3_001CB680;
 
 void func_00177820(u8 *p) {
     extern void func_0018F320();
@@ -29,25 +30,23 @@ void func_00177820(u8 *p) {
     }
 }
 
-static void func_001CB680(u8 *a, u8 *b) {
-    s32 *d = (s32 *)(a + 0xEC);
-    s32 *e = (s32 *)(b + 0xEC);
-    s32 n = 0x31;
-    a[4] = a[4] + 1;
-    do {
-        *d = *e;
-        n--;
-        e++;
-        d++;
-    } while (n > 0);
-    a[0x13C] = 1;
-    a[2] = b[2];
-    a[1] = b[1];
-    *(f32 *)(a + 0x50) = *(f32 *)(b + 0x50);
-    *(f32 *)(a + 0x54) = *(f32 *)(b + 0x54);
-    a[0x1B7] = b[0x1B7];
-    a[0x1B8] = b[0x1B8];
-    a[0x30] = b[0x30];
+static void func_001CB680(u8 *p, u8 *o) {
+    s32 n;
+    u32 *d, *s;
+    p[4]++;
+    s = (u32 *)(o + 236);
+    d = (u32 *)(p + 236);
+    for (n = 49; n > 0; n--) *d++ = *s++;
+    p[316] = 1;
+    p[2] = o[2];
+    p[1] = o[1];
+    *(f32 *)(p + 80) = *(f32 *)(o + 80);
+    *(f32 *)(p + 84) = *(f32 *)(o + 84);
+    p[439] = o[439];
+    p[440] = o[440];
+    *(s8 *)(p + 48) = *(s8 *)(o + 48);
+    *(V3_001CB680 *)(p + 80) = *(V3_001CB680 *)(o + 80);
+    *(s8 *)(p + 36) = *(s8 *)(o + 36);
 }
 
 void func_001CBBC0(u8 *p, u8 *q) {
