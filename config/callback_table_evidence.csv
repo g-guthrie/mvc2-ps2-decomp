@@ -104,7 +104,6 @@ jtbl_0044B6F0,0x0044B6F0,0x1c,src/composite_dispatch_heads.c,jtbl_0044B6F0,void(
 jtbl_0044B710,0x0044B710,0x14,src/composite_dispatch_heads.c,jtbl_0044B710,void(u8 *)
 jtbl_0044B730,0x0044B730,0x1c,src/composite_dispatch_heads.c,jtbl_0044B730,void(u8 *)
 jtbl_0044B760,0x0044B760,0xC,src/composite_dispatch_heads.c,jtbl_0044B760,void(u8 *)
-jtbl_0044B7B0,0x0044B7B0,0x14,src/composite_dispatch_heads.c,jtbl_0044B7B0,void(u8 *)
 jtbl_0044B850,0x0044B850,0x1c,src/composite_dispatch_heads.c,jtbl_0044B850,void(u8 *)
 jtbl_0044B930,0x0044B930,0xd0,src/composite_dispatch_heads.c,jtbl_0044B930,void(u8 *)
 jtbl_0044BA20,0x0044BA20,0x70,src/composite_dispatch_heads.c,jtbl_0044BA20,void(u8 *)

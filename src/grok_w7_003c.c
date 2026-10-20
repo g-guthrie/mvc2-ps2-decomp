@@ -3,7 +3,7 @@ typedef signed short s16;
 typedef signed int s32;
 
 extern s32 D_004C2A5C;
-extern s32 D_0058C800[];
+extern void (*D_0058C800[])(void);
 extern s16 D_004C27A4;
 extern s8 *D_004C2840;
 extern s8 D_004C2A40;
@@ -20,7 +20,7 @@ void *func_003DA750(void *context, s32 type, s32 initializer)
     return func_003DA780(context, type, initializer);
 }
 
-void func_003D7310(s32 p)
+void func_003D7310(void (*p)(void))
 {
     if (D_004C2A5C != 16) {
         D_0058C800[D_004C2A5C] = p;

@@ -29,7 +29,8 @@ typedef struct { float a, b; } E8;
 extern E8 D_004B3CB0[];
 typedef struct { float x, y, z; } V3;
 extern s32 func_00175700();
-extern u32 D_0044B770[];
+typedef void (*Mvc2OwnerPhaseCallback)(u8 *, u8 *);
+extern Mvc2OwnerPhaseCallback D_0044B770[];
 extern u8 D_004531C0[];
 extern s32 func_00189310();
 extern void func_0018A990();
@@ -106,7 +107,7 @@ void func_001AB160(u8 *p, u8 *q) {
         }
         return;
     } else {
-        ((void (*)(u8 *))D_0044B770[p[7]])(p);
+        D_0044B770[p[7]](p, q);
     }
 }
 

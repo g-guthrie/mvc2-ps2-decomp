@@ -14,7 +14,7 @@ extern void func_00166C80(void *p, void *q, s32 n);
 extern void func_00228400(void *p);
 extern void func_0022C700(void *p);
 
-void func_001ABAD0(u8 *p) {
+void func_001ABAD0(u8 *p, u8 *owner) {
     s16 v;
     func_00175700(p);
     v = *(s16 *)(p + 0x1C) - 1;

@@ -15389,4 +15389,15 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/payload_recovered
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/payload_recovered_003844c0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/payload_recovered_003844c0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/payload_recovered_003844c0.o" private/SLUS_204.86.rom --source src/payload_recovered_003844c0.c
 
+
+# Exact recovered queue and render functions.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_fv_001f11b0.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_fv_001f11b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_fv_001f11b0.o" private/SLUS_204.86.rom --source src/grok_fv_001f11b0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_dx_172760.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_dx_172760.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_dx_172760.o" private/SLUS_204.86.rom --source src/grok_dx_172760.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_he_00143A60.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_he_00143A60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_he_00143A60.o" private/SLUS_204.86.rom --source src/grok_he_00143A60.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

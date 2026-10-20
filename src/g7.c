@@ -25,7 +25,8 @@ void func_00258990(u8 *p) {
 }
 
 extern void func_00197620();
-extern void (*D_0044A2A0[])();
+typedef void (*OwnerStateCallback)(u8 *, u8 *);
+extern OwnerStateCallback D_0044A2A0[];
 
 void func_00195920(u8 *a0, u8 *a1) {
     u8 *a2 = a0 + 0x88;
@@ -36,7 +37,7 @@ void func_00195920(u8 *a0, u8 *a1) {
         *a2 = 1;
         func_00197620(a0, a1, a2);
     } else {
-        D_0044A2A0[a0[6]](a0, a1, a2);
+        D_0044A2A0[a0[6]](a0, a1);
     }
 }
 

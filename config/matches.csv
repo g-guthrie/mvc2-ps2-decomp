@@ -17280,3 +17280,6 @@ func_00115120,0x00115120,0x238,src/newlib_k_sin_00115120.c,complete
 func_001BA8A0,0x001BA8A0,0xC8,src/payload_recovered_001ba8a0.c,complete
 func_003848A0,0x003848A0,0x120,src/payload_recovered_003848a0.c,complete
 func_003844C0,0x003844C0,0x11C,src/payload_recovered_003844c0.c,complete
+func_001F11B0,0x001F11B0,0x184,src/grok_fv_001f11b0.c,complete
+func_00172760,0x00172760,0x164,src/grok_dx_172760.c,complete
+func_00143A60,0x00143A60,0x1F4,src/grok_he_00143A60.c,complete

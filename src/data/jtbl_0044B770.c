@@ -1,18 +1,37 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_0044B770[15] = {
-    (unsigned int)0x001AB210,
-    (unsigned int)0x001AB2E0,
-    (unsigned int)0x001AB360,
-    (unsigned int)0x001AB430,
-    (unsigned int)0x001AB630,
-    (unsigned int)0x001AB6E0,
-    (unsigned int)0x001AB780,
-    (unsigned int)0x001AB840,
-    (unsigned int)0x001AB8B0,
-    (unsigned int)0x001AB970,
-    (unsigned int)0x001ABA00,
-    (unsigned int)0x001ABAD0,
-    (unsigned int)0x001ABB50,
-    (unsigned int)0x001ABBE0,
-    (unsigned int)0x001ABC40,
+typedef unsigned char u8;
+typedef void (*Mvc2OwnerPhaseCallback)(u8 *, u8 *);
+
+extern void func_001AB210(u8 *, u8 *);
+extern void func_001AB2E0(u8 *, u8 *);
+extern void func_001AB360(u8 *, u8 *);
+extern void func_001AB430(u8 *, u8 *);
+extern void func_001AB630(u8 *, u8 *);
+extern void func_001AB6E0(u8 *, u8 *);
+extern void func_001AB780(u8 *, u8 *);
+extern void func_001AB840(u8 *, u8 *);
+extern void func_001AB8B0(u8 *, u8 *);
+extern void func_001AB970(u8 *, u8 *);
+extern void func_001ABA00(u8 *, u8 *);
+extern void func_001ABAD0(u8 *, u8 *);
+extern void func_001ABB50(u8 *, u8 *);
+extern void func_001ABBE0(u8 *, u8 *);
+extern void func_001ABC40(u8 *, u8 *);
+
+/* func_001AB160 preserves owner q in A1 across this indexed dispatch. */
+const Mvc2OwnerPhaseCallback jtbl_0044B770[15] = {
+    func_001AB210,
+    func_001AB2E0,
+    func_001AB360,
+    func_001AB430,
+    func_001AB630,
+    func_001AB6E0,
+    func_001AB780,
+    func_001AB840,
+    func_001AB8B0,
+    func_001AB970,
+    func_001ABA00,
+    func_001ABAD0,
+    func_001ABB50,
+    func_001ABBE0,
+    func_001ABC40,
 };

@@ -242,7 +242,7 @@ void func_00321CC0(u8 *p, u8 *q) {
     v[1] = 17.14285660f;
     func_001548D0(p, v, 2);
 }
-void func_001AB970(u8 *p) {
+void func_001AB970(u8 *p, u8 *owner) {
     if ((s8)func_00175700(p) < 0) {
         u32 t = p[7];
         p[7] = t + 1;

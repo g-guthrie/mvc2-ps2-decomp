@@ -84,7 +84,7 @@ void func_00166550(u8 *a, u8 *b) {
     func_00166C80(a, b, *(s32*)(a + 0x460) <= D_004D1802);
 }
 
-void func_001AB2E0(u8 *a) {
+void func_001AB2E0(u8 *a, u8 *owner) {
     func_00175700(a);
     *(f32*)(a + 0x34) += *(f32*)(a + 0x5C);
     *(f32*)(a + 0x5C) += *(f32*)(a + 0x68);

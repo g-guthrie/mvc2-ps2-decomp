@@ -15,7 +15,7 @@ extern f32 D_004F1FCC[];
 
 extern void func_003DAA40(void *p);
 extern void func_003298B0(u32 a, s32 b, s32 c);
-extern void func_001ABAD0(void *p);
+extern void func_001ABAD0(void *p, void *owner);
 extern void func_001757E0(void *p, s32 a, s32 b);
 
 void func_003B7FC0(u8 *p) {
@@ -58,9 +58,9 @@ void func_0016BDC0(void) {
     }
 }
 
-void func_001ABA00(u8 *p) {
+void func_001ABA00(u8 *p, u8 *owner) {
     s16 h;
-    func_001ABAD0(p);
+    func_001ABAD0(p, owner);
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
     h = *(s16 *)(p + 0x140);

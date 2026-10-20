@@ -379,7 +379,7 @@ void func_0031C7E0(u8 *p) {
 void func_001AB210(u8 *p, u8 *o) {
     extern s32 func_00174470();
     extern void func_001757E0();
-    extern void func_001AB2E0();
+    extern void func_001AB2E0(u8 *, u8 *);
     extern f32 D_004F1FC8;
     extern f32 D_004F1FCC;
     {
