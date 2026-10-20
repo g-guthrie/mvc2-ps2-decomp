@@ -24,16 +24,16 @@ void func_0035BE70(u8 *p, u8 *q) {
 
 
 extern void func_00122770(void *, void *, void *, void *);
-extern void func_00417270(void *);
-extern void func_00417350(s32);
-extern void func_004172E0(s32);
+extern void func_00417270(u32);
+extern void func_00417350(u32);
+extern void func_004172E0(u32);
 
-void func_001227A0(void *a, void *b) {
+void func_001227A0(void *a, u32 angle) {
     s32 x, y, z;
     func_00122770(a, &x, &y, &z);
-    func_00417270(b);
-    func_00417350(y);
-    func_004172E0(z);
+    func_00417270(angle);
+    func_00417350((u32)y);
+    func_004172E0((u32)z);
 }
 
 extern void func_00184540(u8 *);

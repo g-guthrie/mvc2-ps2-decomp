@@ -17424,3 +17424,4 @@ func_00396030,0x00396030,0x1AC,src/random_launch_00396030.c,complete
 func_00357700,0x00357700,0xBC,src/spawn_counted_00357700.c,complete
 func_001F1070,0x001F1070,0x140,src/motion_table_update_001f1070.c,complete
 func_001FB250,0x001FB250,0x180,src/motion_landing_001fb250.c,complete
+func_001431A0,0x001431A0,0x1C4,src/render_matrix_001431a0.c,complete

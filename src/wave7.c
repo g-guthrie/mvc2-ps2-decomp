@@ -14,7 +14,7 @@ extern void func_004142F0(u8 *);
 extern void func_00417770(float, float);
 extern void func_00134230(u8 *, u8 *);
 extern void func_00334C40(u8 *);
-extern void func_001227A0(float *, u8 *);
+extern void func_001227A0(void *, u32);
 extern void func_001757E0(u8 *, s32, u32);
 extern void func_001CA8F0(u8 *);
 extern void func_00297D50(u8 *);
@@ -90,12 +90,14 @@ s32 func_00334BF0(u8 *p) {
     return 0;
 }
 
-void func_001227F0(float *a, float *b, u8 *c) {
+void func_001227F0(void *from, void *to, u32 angle) {
+    float *a = (float *)from;
+    float *b = (float *)to;
     float t[3];
     t[0] = b[0] - a[0];
     t[1] = b[1] - a[1];
     t[2] = b[2] - a[2];
-    func_001227A0(t, c);
+    func_001227A0(t, angle);
 }
 
 void func_00178E60(u8 *p) {

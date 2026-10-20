@@ -10,13 +10,13 @@ typedef signed int s32;
 extern void func_003DDD00(void *, float);
 extern s32 D_004C2B40;
 extern char D_006327B0[];
-void func_00417270(u16 a) {
-    s32 i = a;
+void func_00417270(u32 a) {
+    s32 i = (u16)a;
     func_003DDD00(D_006327B0 + (D_004C2B40 << 6), (float)(6.283185307179586 * i / 65536.0));
 }
 
 extern void func_003DDB70(void *,float);
-void func_00417350(u16 a) {
-    s32 i = a;
+void func_00417350(u32 a) {
+    s32 i = (u16)a;
     func_003DDB70(D_006327B0 + (D_004C2B40 << 6), (float)(6.283185307179586 * i / 65536.0));
 }

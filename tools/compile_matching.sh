@@ -15866,4 +15866,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/motion_landing_001fb250.o"
 "$PYTHON" tools/verify_object.py "$BUILD/motion_landing_001fb250.o" private/SLUS_204.86.rom --source src/motion_landing_001fb250.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/render_matrix_001431a0.c -c -lang c -O4 -Op -sdatathreshold 8 \
+    -o "$BUILD/render_matrix_001431a0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/render_matrix_001431a0.o" private/SLUS_204.86.rom --source src/render_matrix_001431a0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
