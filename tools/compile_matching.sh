@@ -15851,4 +15851,19 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/random_launch_00396030.o"
 "$PYTHON" tools/verify_object.py "$BUILD/random_launch_00396030.o" private/SLUS_204.86.rom --source src/random_launch_00396030.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/spawn_counted_00357700.c -c -lang c -O4 -Op -sdatathreshold 8 \
+    -o "$BUILD/spawn_counted_00357700.o"
+"$PYTHON" tools/verify_object.py "$BUILD/spawn_counted_00357700.o" private/SLUS_204.86.rom --source src/spawn_counted_00357700.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/motion_table_update_001f1070.c -c -lang c -O4 -Op -sdatathreshold 8 \
+    -o "$BUILD/motion_table_update_001f1070.o"
+"$PYTHON" tools/verify_object.py "$BUILD/motion_table_update_001f1070.o" private/SLUS_204.86.rom --source src/motion_table_update_001f1070.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/motion_landing_001fb250.c -c -lang c -O4 -Op -sdatathreshold 8 \
+    -o "$BUILD/motion_landing_001fb250.o"
+"$PYTHON" tools/verify_object.py "$BUILD/motion_landing_001fb250.o" private/SLUS_204.86.rom --source src/motion_landing_001fb250.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

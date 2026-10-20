@@ -17421,3 +17421,6 @@ func_0024F000,0x0024F000,0x188,src/motion_shift_0024f000.c,complete
 func_0024EDA0,0x0024EDA0,0x124,src/motion_recoil_0024eda0.c,complete
 func_00187840,0x00187840,0x160,src/actor_setup_00187840.c,complete
 func_00396030,0x00396030,0x1AC,src/random_launch_00396030.c,complete
+func_00357700,0x00357700,0xBC,src/spawn_counted_00357700.c,complete
+func_001F1070,0x001F1070,0x140,src/motion_table_update_001f1070.c,complete
+func_001FB250,0x001FB250,0x180,src/motion_landing_001fb250.c,complete
