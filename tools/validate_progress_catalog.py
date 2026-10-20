@@ -26,15 +26,30 @@ CPU_ASSEMBLY_PRIMITIVES = {
 
 
 def validate_source_credit(matches, root=Path(".")):
-    """Reject credited instruction streams using the repository's FN macro."""
+    """Reject instruction streams presented as reconstructed C functions."""
     by_source = {}
     for name, row in matches.items():
         by_source.setdefault(row["source"], set()).add(name)
     for source, credited in by_source.items():
         text = (root / source).read_text()
-        if not re.search(r"#define\s+FN\([^\n]*__asm__", text):
-            continue
-        lifted = set(re.findall(r"^\s*FN\(\s*(func_[0-9A-Fa-f]{8})\s*,", text, re.MULTILINE))
+        lifted = set()
+        if re.search(r"#define\s+FN\([^\n]*__asm__", text):
+            lifted.update(re.findall(
+                r"^\s*FN\(\s*(func_[0-9A-Fa-f]{8})\s*,", text, re.MULTILINE
+            ))
+        # MWCC also accepts whole assembly functions in a .c file. An exact
+        # object match does not turn those bodies into reconstructed C.
+        code = re.sub(
+            r'"(?:\\.|[^"\\])*"|\'(?:\\.|[^\'\\])*\'|//[^\n]*|/\*.*?\*/',
+            lambda match: " " + "\n" * match.group().count("\n"),
+            text,
+            flags=re.DOTALL,
+        )
+        lifted.update(re.findall(
+            r"\b(?:asm|__asm|__asm__)\s+(?:[A-Za-z_]\w*[\s*]+)+"
+            r"([A-Za-z_]\w*)\s*\([^;{}]*\)\s*\{",
+            code,
+        ))
         for name in sorted(credited & lifted):
             if (source, name) not in CPU_ASSEMBLY_PRIMITIVES:
                 raise SystemExit(f"assembly instruction stream credited as C: {name} ({source})")

@@ -20,6 +20,39 @@ from tools.progress_catalog import (
 
 
 class ProgressCatalogTest(unittest.TestCase):
+    def test_metrowerks_assembly_bodies_cannot_receive_c_credit(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "mixed.c").write_text(
+                'asm void func_002301C0(void) { .word 0x03E00008 }\n'
+                'asm void *func_003DC120(void *p, int x) { jr ra }\n'
+                'int func_00100010(void) { return 1; }\n'
+            )
+            validate_source_credit({"func_00100010": {"source": "mixed.c"}}, root)
+            for name in ("func_002301C0", "func_003DC120"):
+                with self.subTest(name=name), self.assertRaisesRegex(
+                    SystemExit, "assembly instruction stream credited as C"
+                ):
+                    validate_source_credit({name: {"source": "mixed.c"}}, root)
+            catalog = root / "matches.csv"
+            catalog.write_text(
+                'name,address,size,source,status\n'
+                'func_002301C0,0x002301C0,0x9C,mixed.c,placeholder\n'
+                'func_003DC120,0x003DC120,0x64,mixed.c,placeholder\n'
+                'func_00100010,0x00100010,0x4,mixed.c,complete\n'
+            )
+            validate_source_credit(load_matches(catalog), root)
+
+    def test_assembly_mentions_do_not_disqualify_real_c(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "real.c").write_text(
+                '/* Example:\nasm void func_00100000(void) { jr ra }\n*/\n'
+                'const char *note = "asm void func_00100000(void) { jr ra }";\n'
+                'int func_00100000(void) { return 1; }\n'
+            )
+            validate_source_credit({"func_00100000": {"source": "real.c"}}, root)
+
     def test_instruction_stream_cannot_receive_c_credit(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
