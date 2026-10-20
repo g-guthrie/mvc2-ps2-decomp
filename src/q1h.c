@@ -8,5 +8,5 @@ typedef float f32;
 
 extern f32 func_003DE700(void); extern double func_00119058(f32);
 s32 func_00417700(void) {
-    return (u8)(func_00119058(256.0f * func_003DE700()) / 6.283185307179586 + 0.5);
+    return (u8)((u32)(s32)(func_00119058(256.0f * func_003DE700()) / 6.283185307179586 + 0.5));
 }

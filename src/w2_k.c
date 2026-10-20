@@ -36,7 +36,7 @@ void func_003EE530(Q *p, s16 lim)
     }
     p->rad = a;
     p->ang = func_00118FA8(360.0f * (p->rad / 6.2831855f));
-    p->len = (u32)func_001173D0((double)(p->x * p->x) + (double)(p->y * p->y));
+    p->len = (u32)(s32)func_001173D0((double)(p->x * p->x) + (double)(p->y * p->y));
     if (p->len > 0x7F) {
         p->len = 0x7F;
     }

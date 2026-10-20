@@ -10,7 +10,7 @@ extern f64 litodp(s32);
 extern f64 dpmul(f64, f64);
 extern f64 dpdiv(f64, f64);
 extern f64 dpadd(f64, f64);
-extern u32 dptoul(f64);
+extern s32 dptoli(f64);
 extern f32 func_00417440(u32);
 
 void func_0036DDE0(u8 *p, u8 *q)
@@ -38,7 +38,7 @@ void func_0036DDE0(u8 *p, u8 *q)
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
-    *(f32 *)(p + 0x38) += 5.0f * func_00417440((u32)dptoul(dpadd(0.5, dpdiv(dpmul(65536.0, litodp(*(s16 *)(p + 0x1E))), 360.0))) & 0xFFFF);
+    *(f32 *)(p + 0x38) += 5.0f * func_00417440((u32)dptoli(dpadd(0.5, dpdiv(dpmul(65536.0, litodp(*(s16 *)(p + 0x1E))), 360.0))) & 0xFFFF);
     {
         s16 ang = *(s16 *)(p + 0x1E);
         ang -= 6;
