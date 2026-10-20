@@ -17144,3 +17144,7 @@ func_001AF860,0x001AF860,0x14C,src/copy_owner_chain_001a2960.c,complete
 func_001D3240,0x001D3240,0x124,src/payload_motion_initializers_001d3240.c,complete
 func_001DEB20,0x001DEB20,0x12C,src/payload_motion_initializers_001d3240.c,complete
 func_001B11F0,0x001B11F0,0x198,src/copy_owner_chain_001a2960.c,complete
+func_001D9550,0x001D9550,0x130,src/payload_motion_initializers_001d3240.c,complete
+func_001D8E10,0x001D8E10,0x144,src/payload_motion_initializers_001d3240.c,complete
+func_001D5B80,0x001D5B80,0x164,src/payload_motion_initializers_001d3240.c,complete
+func_001DA290,0x001DA290,0x160,src/payload_motion_initializers_001d3240.c,complete

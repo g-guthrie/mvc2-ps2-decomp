@@ -348,3 +348,7 @@ func_001AF860,0x001AF860,0x14C,func_001AF840,jtbl_0044BBE0,0x0044BBE0,src/copy_o
 func_001D3240,0x001D3240,0x124,func_001D3220,jtbl_0044E090,0x0044E090,src/payload_motion_initializers_001d3240.c
 func_001DEB20,0x001DEB20,0x12C,func_001DEB00,jtbl_0044EE50,0x0044EE50,src/payload_motion_initializers_001d3240.c
 func_001B11F0,0x001B11F0,0x198,func_001B1120,jtbl_0044BC70,0x0044BC88,src/copy_owner_chain_001a2960.c
+func_001D9550,0x001D9550,0x130,func_001D9530,jtbl_0044E850,0x0044E850,src/payload_motion_initializers_001d3240.c
+func_001D8E10,0x001D8E10,0x144,func_001D8DF0,jtbl_0044E7E0,0x0044E7E0,src/payload_motion_initializers_001d3240.c
+func_001D5B80,0x001D5B80,0x164,func_001D5B60,jtbl_0044E550,0x0044E550,src/payload_motion_initializers_001d3240.c
+func_001DA290,0x001DA290,0x160,func_001DA270,jtbl_0044E8D0,0x0044E8D0,src/payload_motion_initializers_001d3240.c
