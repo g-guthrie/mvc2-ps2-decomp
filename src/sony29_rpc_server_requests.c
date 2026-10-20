@@ -1,16 +1,7 @@
-/* Native SIF RPC server queue operations and received CALL dispatch.
- * The server and queue layouts are corroborated by public SIF RPC headers. */
-#include "sony29_rpc_packet_header.h"
-typedef struct RpcServer RpcServer;
-typedef struct SonyRpcQueue RpcQueue;
-struct RpcServer {
- int sid;void *(*function)(int,void *,int);void *buffer;int size;
- void *(*callback)(int,void *,int);void *callback_buffer;int size2;
- SonyRpcClient *client;void *packet;int number;
- void *receive_buffer;int receive_size,receive_mode,rpc_id;
- RpcServer *link,*next;RpcQueue *queue;
-};
-struct SonyRpcQueue {int thread,active;RpcServer *servers,*first,*last;RpcQueue *next;};
+/* Complete native SIF RPC server and queue removal operations. */
+#include "sony29_rpc_server_types.h"
+typedef SonyRpcServer RpcServer;
+typedef SonyRpcQueue RpcQueue;
 extern int func_0010CA20(void);
 extern void func_0010CA68(void);
 RpcServer *func_00107200(RpcServer *server,RpcQueue *queue)

@@ -116,7 +116,10 @@ extern Fn D_00488110[]; extern s32 D_00488210[];
 extern void func_0040EFE0(), func_0040EFF8();
 extern s32 func_00409250(s32, s32, s32, s32);
 extern void func_004093E8(s32);
-s32 *func_00408F88(u32 a, s32 *b, u32 c) {
+void *func_00408F88(int command, void *buffer, int size) {
+    u32 a = (u32)command;
+    s32 *b = buffer;
+    u32 c = (u32)size;
     func_0040EFE0();
     switch (a) {
     case 0:

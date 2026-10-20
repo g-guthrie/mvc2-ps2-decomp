@@ -17396,3 +17396,7 @@ func_0010A668,0x0010A668,0x238,src/sony29_fileio_buffer_requests.c,complete
 func_00107AF8,0x00107AF8,0x98,src/sony29_fileio_registration.c,complete
 func_001075E8,0x001075E8,0x88,src/sony29_fileio_registration.c,complete
 func_00108D68,0x00108D68,0x1DC,src/sony29_fileio_device_control.c,complete
+func_002CCEB0,0x002CCEB0,0x170,src/mode_command_motion_002cceb0.c,complete
+func_00107098,0x00107098,0x94,src/sony29_rpc_server_registration.c,complete
+func_00107130,0x00107130,0xD0,src/sony29_rpc_server_registration.c,complete
+func_0010AE58,0x0010AE58,0xF0,src/sony29_rpc_path_command.c,complete

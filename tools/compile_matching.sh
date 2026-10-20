@@ -15760,4 +15760,17 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_do_002e5db0.
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_fileio_device_control.o" "$BUILD/sony29_fileio_device_control.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_fileio_device_control.o" private/SLUS_204.86.rom --source src/sony29_fileio_device_control.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/mode_command_motion_002cceb0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/mode_command_motion_002cceb0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/mode_command_motion_002cceb0.o" private/SLUS_204.86.rom --source src/mode_command_motion_002cceb0.c
+
+"$WIBO" "$SNCPP" -P src/sony29_rpc_server_registration.c "$BUILD/sony29_rpc_server_registration.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_server_registration.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_server_registration.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_server_registration.o" "$BUILD/sony29_rpc_server_registration.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_server_registration.o" private/SLUS_204.86.rom --source src/sony29_rpc_server_registration.c
+
+"$WIBO" "$SNCPP" -P src/sony29_rpc_path_command.c "$BUILD/sony29_rpc_path_command.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_path_command.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_path_command.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_path_command.o" "$BUILD/sony29_rpc_path_command.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_path_command.o" private/SLUS_204.86.rom --source src/sony29_rpc_path_command.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
