@@ -4476,7 +4476,7 @@ data_u32_00464BB4,0x00464BB4,0x4C,.data,src/data/data_u32_00464BB4.c,initialized
 jtbl_00464C00,0x00464C00,0x2c,.rodata,src/data/jtbl_00464C00.c,typed_state_callback_table
 data_u32_00464C30,0x00464C30,0x50,.data,src/data/data_u32_00464C30.c,initialized_u32_table
 jtbl_00464C80,0x00464C80,0x10,.rodata,src/data/jtbl_00464C80.c,typed_state_callback_table
-data_u32_00464C90,0x00464C90,0x10,.data,src/data/data_u32_00464C90.c,initialized_u32_table
+data_u32_00464C90,0x00464C90,0x10,.data,src/data/data_u32_00464C90.c,signed_s16_xy_pair_table
 D_00464CA0,0x00464CA0,0x4,.rodata,src/data/D_00464CA0.c,initialized_u32_table
 data_ptr_00464CA4,0x00464CA4,0x4,.rodata,src/data/data_ptr_00464CA4.c,pointer_scalar
 data_raw_00464CA8,0x00464CA8,0xC,.rodata,src/data/data_raw_00464CA8.c,initialized_byte_array
