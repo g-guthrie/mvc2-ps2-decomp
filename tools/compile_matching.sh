@@ -1670,7 +1670,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/dupcluster_gate96.o" private/SLUS_204.86.rom \
     --source src/dupcluster_gate96.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/dupcluster_gate92c.c -c -lang c $MATCH_FLAGS \
+    src/dupcluster_gate92c.c -c -lang c -O3 -Op -sdatathreshold 0 \
     -o "$BUILD/dupcluster_gate92c.o"
 "$PYTHON" tools/verify_object.py \
     "$BUILD/dupcluster_gate92c.o" private/SLUS_204.86.rom \
@@ -15016,5 +15016,17 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/motion_profile_00235c40
 # Independently recovered complete callback bodies.
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_368060.c -c -lang c -O3,p -sdatathreshold 8 -o "$BUILD/grok_368060.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_368060.o" private/SLUS_204.86.rom --source src/grok_368060.c
+
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/scale_drift_phase_001b57d0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/scale_drift_phase_001b57d0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/scale_drift_phase_001b57d0.o" private/SLUS_204.86.rom --source src/scale_drift_phase_001b57d0.c
+
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/enqueue_actor_001e7f60.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/enqueue_actor_001e7f60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/enqueue_actor_001e7f60.o" private/SLUS_204.86.rom --source src/enqueue_actor_001e7f60.c
+
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/copy_owner_chain_001a2960.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/copy_owner_chain_001a2960.o"
+"$PYTHON" tools/verify_object.py "$BUILD/copy_owner_chain_001a2960.o" private/SLUS_204.86.rom --source src/copy_owner_chain_001a2960.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

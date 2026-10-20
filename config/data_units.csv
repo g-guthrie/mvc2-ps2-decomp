@@ -6104,7 +6104,7 @@ data_u8_004B722C,0x004B722C,0x1,.data,src/data/data_u8_004B722C.c,initialized_by
 data_u8_004B722D,0x004B722D,0x3,.data,src/data/data_u8_004B722D.c,initialized_byte_array
 data_u32_004B7230,0x004B7230,0x10,.data,src/data/data_u32_004B7230.c,initialized_u32_table
 jtbl_004B7240,0x004B7240,0x28,.rodata,src/data/jtbl_004B7240.c,jump_table
-data_u32_004B7270,0x004B7270,0x40,.data,src/data/data_u32_004B7270.c,initialized_u32_table
+data_motion_profile_004B7270,0x004B7270,0x40,.data,src/data/data_motion_profile_004B7270.c,fixed_point_motion_profile_table
 jtbl_004B72B0,0x004B72B0,0x34,.rodata,src/data/jtbl_004B72B0.c,jump_table
 jtbl_004B72F0,0x004B72F0,0x34,.rodata,src/data/jtbl_004B72F0.c,jump_table
 jtbl_004B7330,0x004B7330,0x34,.rodata,src/data/jtbl_004B7330.c,jump_table
