@@ -17443,3 +17443,4 @@ func_001366C0,0x001366C0,0x16C,src/timer_display_001366c0.c,complete
 func_00103230,0x00103230,0x50,src/matrix_three_components_00103230.c,complete
 func_001032A8,0x001032A8,0xB0,src/matrix_frame_build_001032a8.c,complete
 func_00103358,0x00103358,0xC0,src/matrix_negated_basis_00103358.c,complete
+func_0010DAF8,0x0010DAF8,0x34,src/pad_request_label_0010daf8.c,complete
