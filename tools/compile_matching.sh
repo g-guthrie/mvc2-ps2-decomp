@@ -15951,4 +15951,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$SNAS" -G0 -o "$BUILD/pad_current_buffer_0010d860.o" "$BUILD/pad_current_buffer_0010d860.s"
 "$PYTHON" tools/verify_object.py "$BUILD/pad_current_buffer_0010d860.o" private/SLUS_204.86.rom --source src/pad_current_buffer_0010d860.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/scene_angle_create_001453b0.c -c -lang c -O4,p -sdatathreshold 8 \
+    -o "$BUILD/scene_angle_create_001453b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/scene_angle_create_001453b0.o" private/SLUS_204.86.rom --source src/scene_angle_create_001453b0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

@@ -17445,3 +17445,4 @@ func_001032A8,0x001032A8,0xB0,src/matrix_frame_build_001032a8.c,complete
 func_00103358,0x00103358,0xC0,src/matrix_negated_basis_00103358.c,complete
 func_0010DAF8,0x0010DAF8,0x34,src/pad_request_label_0010daf8.c,complete
 func_0010D860,0x0010D860,0x60,src/pad_current_buffer_0010d860.c,complete
+func_001453B0,0x001453B0,0x1A4,src/scene_angle_create_001453b0.c,complete
