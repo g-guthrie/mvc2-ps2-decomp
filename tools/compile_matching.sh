@@ -15946,4 +15946,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$SNAS" -G0 -o "$BUILD/pad_request_label_0010daf8.o" "$BUILD/pad_request_label_0010daf8.s"
 "$PYTHON" tools/verify_object.py "$BUILD/pad_request_label_0010daf8.o" private/SLUS_204.86.rom --source src/pad_request_label_0010daf8.c
 
+"$WIBO" "$SNCPP" -P src/pad_current_buffer_0010d860.c "$BUILD/pad_current_buffer_0010d860.i"
+"$WIBO" "$EE29CC1" "$BUILD/pad_current_buffer_0010d860.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/pad_current_buffer_0010d860.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/pad_current_buffer_0010d860.o" "$BUILD/pad_current_buffer_0010d860.s"
+"$PYTHON" tools/verify_object.py "$BUILD/pad_current_buffer_0010d860.o" private/SLUS_204.86.rom --source src/pad_current_buffer_0010d860.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
