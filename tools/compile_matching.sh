@@ -15532,4 +15532,21 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -G0 -o "$BUILD/fp_bit_compare_parts_00119998.o" "$BUILD/fp_bit_compare_parts_00119998.s"
 "$PYTHON" tools/verify_object.py "$BUILD/fp_bit_compare_parts_00119998.o" private/SLUS_204.86.rom --source src/fp_bit_compare_parts_00119998.c
 
+
+# Remaining fdlibm float kernels and double sine dispatcher.
+"$WIBO" "$SNCPP" -P src/newlib_k_cosf_00115358.c "$BUILD/newlib_k_cosf_00115358.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_k_cosf_00115358.i" "$BUILD/newlib_k_cosf_00115358.s"
+"$WIBO" "$SNAS" -mips4 -G0 -o "$BUILD/newlib_k_cosf_00115358.o" "$BUILD/newlib_k_cosf_00115358.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_k_cosf_00115358.o" private/SLUS_204.86.rom --source src/newlib_k_cosf_00115358.c
+
+"$WIBO" "$SNCPP" -P src/newlib_k_sinf_00115D10.c "$BUILD/newlib_k_sinf_00115D10.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_k_sinf_00115D10.i" "$BUILD/newlib_k_sinf_00115D10.s"
+"$WIBO" "$SNAS" -mips4 -G0 -o "$BUILD/newlib_k_sinf_00115D10.o" "$BUILD/newlib_k_sinf_00115D10.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_k_sinf_00115D10.o" private/SLUS_204.86.rom --source src/newlib_k_sinf_00115D10.c
+
+"$WIBO" "$SNCPP" -P src/newlib_sin_00116B98.c "$BUILD/newlib_sin_00116B98.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_sin_00116B98.i" "$BUILD/newlib_sin_00116B98.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_sin_00116B98.o" "$BUILD/newlib_sin_00116B98.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_sin_00116B98.o" private/SLUS_204.86.rom --source src/newlib_sin_00116B98.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
