@@ -6,6 +6,7 @@ typedef int ptrdiff_t;
 #define INTERNAL_NEWLIB
 #define DEFINE_MALLOC
 #define DEFINE_FREE
+#define DEFINE_CALLOC
 #define MALLOC_ALIGNMENT 16
 #define SIZE_T_SMALLER_THAN_LONG
 #define _POINTER_INT int
@@ -16,6 +17,9 @@ extern void *func_0011F858(Reent *,int);
 #define __malloc_unlock func_0011DA38
 #define _malloc_r func_0011CE68
 #define _free_r func_0011BAE0
+#define _calloc_r func_00119DC8
+#define memset func_0011D8F8
+extern void *func_0011D8F8(void *,int,size_t);
 #define _malloc_trim_r func_0011BDD8
 #define malloc_extend_top func_0011CC10
 #define __malloc_av_ D_0043B708

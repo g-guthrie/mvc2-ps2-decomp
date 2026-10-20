@@ -17300,3 +17300,7 @@ func_001154A8,0x001154A8,0x864,src/newlib_k_rem_pio2f_001154A8.c,complete
 func_001132D0,0x001132D0,0x2E0,src/newlib_logf_001132D0.c,complete
 func_00115E18,0x00115E18,0x284,src/newlib_k_tanf_00115E18.c,complete
 func_00116CD0,0x00116CD0,0x28C,src/newlib_atanf_00116CD0.c,complete
+func_00119DC8,0x00119DC8,0xB4,src/newlib_heap_core.c,complete
+func_00119BC0,0x00119BC0,0x9C,src/fp_bit_integer_conversions.c,complete
+func_00119CE8,0x00119CE8,0xA0,src/fp_bit_integer_conversions.c,complete
+func_00119998,0x00119998,0x120,src/fp_bit_compare_parts_00119998.c,complete

@@ -15520,4 +15520,16 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -mips4 -G0 -o "$BUILD/newlib_atanf_00116CD0.o" "$BUILD/newlib_atanf_00116CD0.s"
 "$PYTHON" tools/verify_object.py "$BUILD/newlib_atanf_00116CD0.o" private/SLUS_204.86.rom --source src/newlib_atanf_00116CD0.c
 
+# GCC fp-bit signed and unsigned 32-bit conversions.
+"$WIBO" "$SNCPP" -P src/fp_bit_integer_conversions.c "$BUILD/fp_bit_integer_conversions.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags=-msoft-float "$BUILD/fp_bit_integer_conversions.i" "$BUILD/fp_bit_integer_conversions.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/fp_bit_integer_conversions.o" "$BUILD/fp_bit_integer_conversions.s"
+"$PYTHON" tools/verify_object.py "$BUILD/fp_bit_integer_conversions.o" private/SLUS_204.86.rom --source src/fp_bit_integer_conversions.c
+
+# GCC fp-bit comparison with its original inline classifiers.
+"$WIBO" "$SNCPP" -P src/fp_bit_compare_parts_00119998.c "$BUILD/fp_bit_compare_parts_00119998.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/fp_bit_compare_parts_00119998.i" "$BUILD/fp_bit_compare_parts_00119998.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/fp_bit_compare_parts_00119998.o" "$BUILD/fp_bit_compare_parts_00119998.s"
+"$PYTHON" tools/verify_object.py "$BUILD/fp_bit_compare_parts_00119998.o" private/SLUS_204.86.rom --source src/fp_bit_compare_parts_00119998.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
