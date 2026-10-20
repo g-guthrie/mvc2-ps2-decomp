@@ -9,8 +9,16 @@ typedef float f32;
 typedef struct { s32 x[49]; } S49_1C8DE0;
 typedef struct { f32 x, y, z; } V3_1C8DE0;
 extern s8 D_004BFA48[8];
+extern s8 D_004BFA44[8];
 static void func_001C8D60(u8 *p) {
-    *(s16 *)(p + 0x1C) = 0;
+    *(float *)(p + 0x34) = *(float *)(*(u8 **)(p + 0x18) + 0x34);
+    *(float *)(p + 0x38) = *(float *)(*(u8 **)(p + 0x18) + 0x38);
+    if (*(s16 *)(*(u8 **)(p + 0x18) + 0x140) != 0) {
+        *(float *)(p + 0x34) = *(float *)(p + 0x34) +
+                               1.6666666f * (float)D_004BFA44[p[0x20]];
+    }
+    ((s8 *)p)[0x24] = ((s8 *)*(u8 **)(p + 0x18))[0x24];
+    ((s8 *)p)[0x31] = -1;
 }
 
 void func_001C8DE0(u8 *p) {
