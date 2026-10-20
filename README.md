@@ -31,11 +31,10 @@ The generated graphic above shows the current catalog's matching code coverage.
 [decomp.dev](https://decomp.dev/g-guthrie/mvc2-ps2-decomp) publishes current
 function counts and reconstructed-data coverage. Whole-object compiler
 verification and full-image linkage are separate private build checks.
-Assembly placeholders never count as decompiled source. The initial inventory
-contained 17,658 explicit-size function candidates. Splitting 2,077 oversized
-dispatcher entries into exact C heads plus retained assembly residuals produces
-a current denominator of **19,888 units**. No residual bytes were dropped; text
-gaps and initialized data remain separately visible in the progress report.
+Assembly placeholders never count as decompiled source. The current inventory
+contains **20,300 function spans** after boundary corrections and splitting
+oversized dispatcher entries. Retained assembly residuals, text gaps and
+initialized data remain separately visible in the progress report.
 
 Compiler-in-the-loop evidence currently identifies
 `mwcps2-3.0.3-020716` as the strongest product-build candidate with an `-O3`

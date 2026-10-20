@@ -20,7 +20,6 @@ extern void func_00417A50(float, float, float);
 extern void func_00414C70(float);
 extern s32 func_00119098(float value);
 extern void func_003DF850(s32 index, s32 value);
-extern s32 func_00108F48(s32, s32);
 extern s32 func_0010ADC0(void);
 extern s32 func_0010B360(s32, s32, s32);
 extern s32 func_0010BBD8(s32, s32, s32, s32);
@@ -85,11 +84,6 @@ void func_00414C70(float value) {
     func_003DF850(14, (s32)color);
 }
 
-void func_001090F0(s32 x) { if (func_00108F48(x, 6)) return; }
-void func_001092C0(s32 x) { if (func_00108F48(x, 8)) return; }
-void func_00109670(s32 x) { if (func_00108F48(x, 16)) return; }
-void func_00109FE8(s32 x) { if (func_00108F48(x, 18)) return; }
-void func_0010A410(s32 x) { if (func_00108F48(x, 21)) return; }
 
 void func_0010AE38(void) { if (func_0010ADC0()) return; }
 void func_0010B950(s32 a, s32 b, s32 c) { if (func_0010B360(a, b, c)) return; }

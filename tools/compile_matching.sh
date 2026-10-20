@@ -15730,4 +15730,24 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_do_002e5db0.
 "$WIBO" "$SNAS" -mips4 -G8 -o "$BUILD/adxt_start_sj_00401640.o" "$BUILD/adxt_start_sj_00401640.s"
 "$PYTHON" tools/verify_object.py "$BUILD/adxt_start_sj_00401640.o" private/SLUS_204.86.rom --source src/adxt_start_sj_00401640.c
 
+"$WIBO" "$SNCPP" -P src/sony29_fileio_path_requests.c "$BUILD/sony29_fileio_path_requests.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_fileio_path_requests.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_fileio_path_requests.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_fileio_path_requests.o" "$BUILD/sony29_fileio_path_requests.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_fileio_path_requests.o" private/SLUS_204.86.rom --source src/sony29_fileio_path_requests.c
+
+"$WIBO" "$SNCPP" -P src/sony29_fileio_metadata_requests.c "$BUILD/sony29_fileio_metadata_requests.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_fileio_metadata_requests.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_fileio_metadata_requests.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_fileio_metadata_requests.o" "$BUILD/sony29_fileio_metadata_requests.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_fileio_metadata_requests.o" private/SLUS_204.86.rom --source src/sony29_fileio_metadata_requests.c
+
+"$WIBO" "$SNCPP" -P src/lookup_runtime_descriptor_0040AAB8.c "$BUILD/lookup_runtime_descriptor_0040AAB8.i"
+"$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/lookup_runtime_descriptor_0040AAB8.i" "$BUILD/lookup_runtime_descriptor_0040AAB8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/lookup_runtime_descriptor_0040AAB8.o" "$BUILD/lookup_runtime_descriptor_0040AAB8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/lookup_runtime_descriptor_0040AAB8.o" private/SLUS_204.86.rom --source src/lookup_runtime_descriptor_0040AAB8.c
+
+"$WIBO" "$SNCPP" -P src/sony29_fileio_buffer_requests.c "$BUILD/sony29_fileio_buffer_requests.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_fileio_buffer_requests.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_fileio_buffer_requests.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_fileio_buffer_requests.o" "$BUILD/sony29_fileio_buffer_requests.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_fileio_buffer_requests.o" private/SLUS_204.86.rom --source src/sony29_fileio_buffer_requests.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

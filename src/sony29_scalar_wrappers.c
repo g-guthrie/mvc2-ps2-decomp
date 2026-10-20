@@ -1,3 +1,4 @@
+#include "sony29_fileio_path_requests.h"
 extern int func_00105540(int);
 extern void func_00107A68(void);
 extern int func_00103E20(int);
@@ -13,7 +14,7 @@ void func_00105628(int character)
     }
 }
 
-int func_00107AB8(void)
+int func_00107AB8(int operation)
 {
     func_00107A68();
     func_00103E20(D_00438304);

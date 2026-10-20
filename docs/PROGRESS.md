@@ -8,7 +8,7 @@ objdiff v2 field meanings, as decomp.dev displays them:
 | fully linked | `complete_code_percent` | That matching C is **placed by the hybrid linker** |
 | data bar | `matched_data_percent` / `complete_data_percent` | Completed-source initialized data in `0x00424200..0x004C2580` |
 
-`complete_*` is **not** “the packed ELF SHA-matches retail.” Hybrid copies unmatched bytes from the dump, so the image can hash 100% while linked C is still ~10%.
+`complete_*` is **not** “the packed ELF SHA-matches retail.” Hybrid copies unmatched bytes from the dump, so the image can hash 100% while linked C remains incomplete.
 
 ## Rules the catalog must keep
 
