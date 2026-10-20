@@ -4,6 +4,54 @@ from tools.objdiff_report import DATA_SIZE, TEXT_SIZE, build_report
 
 
 class ProjectTest(unittest.TestCase):
+    def test_wired_sources_accepts_preprocessed_sdk_assembly(self):
+        from tools.check_build_coverage import wired_sources
+
+        assembly_compile = (
+            '"$WIBO" "$SNCPP" -P src/primitive.S "$BUILD/primitive.s"\n'
+            '"$WIBO" "$SNAS" -G0 -o "$BUILD/primitive.o" "$BUILD/primitive.s"\n'
+        )
+        verification = (
+            '"$PYTHON" tools/verify_object.py "$BUILD/primitive.o" '
+            'private/SLUS_204.86.rom --source src/primitive.S\n'
+        )
+        legacy = (
+            '"$PYTHON" tools/verify_object.py "$BUILD/legacy.o" '
+            'private/SLUS_204.86.rom --source "src/legacy.c"\n'
+        )
+        self.assertEqual(wired_sources(assembly_compile), set())
+        self.assertEqual(
+            wired_sources(legacy + assembly_compile + verification),
+            {"src/legacy.c", "src/primitive.S"},
+        )
+        for invalid in ("src/primitive.S.disabled", "src/legacy.c.disabled", "src/header.h"):
+            with self.subTest(source=invalid):
+                self.assertEqual(wired_sources(f'--source {invalid}\n'), set())
+
+    def test_deci2_sdk_assembly_credit_has_production_recipe(self):
+        import csv
+        from pathlib import Path
+        from tools.check_build_coverage import wired_sources
+
+        root = Path(__file__).resolve().parent.parent
+        script = (root / "tools/compile_matching.sh").read_text()
+        with (root / "config/matches.csv").open(newline="") as handle:
+            owners = [row for row in csv.DictReader(handle)
+                      if row["name"] == "func_00104210"]
+        self.assertEqual(len(owners), 1)
+        self.assertEqual(owners[0]["source"], "src/sony_deci2_call.S")
+        self.assertEqual(int(owners[0]["size"], 0), 16)
+        self.assertIn(owners[0]["source"], wired_sources(script))
+        cpp = script.index('"$SNCPP" -P src/sony_deci2_call.S ')
+        assemble = script.index('"$SNAS" -G0 -o "$BUILD/sony_deci2_call.o" ')
+        verify = script.index('tools/verify_object.py "$BUILD/sony_deci2_call.o" ')
+        self.assertLess(cpp, assemble)
+        self.assertLess(assemble, verify)
+        self.assertNotIn(
+            "void func_00104210(void)",
+            (root / "src/grok_tiny_leaves.c").read_text(),
+        )
+
     def test_data_build_must_follow_all_code_compiles(self):
         from tools.check_build_coverage import premature_data_build_commands
 

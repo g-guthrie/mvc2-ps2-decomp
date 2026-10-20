@@ -6,7 +6,6 @@ extern void func_0040E930(void);
 extern void func_0040E980(void);
 extern void func_003F81F0(void *p, void *q);
 extern void func_00402DE0(u32 a, u32 b, u32 c);
-extern void func_00104210(s32 a, void *b);
 extern void func_003F6150(void *p);
 
 void func_003FF0B0(void) { func_0040E4B0(); }

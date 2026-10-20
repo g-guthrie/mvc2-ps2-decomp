@@ -1,5 +1,4 @@
 typedef unsigned long long u64;
-extern void func_00104210(int, void *);
 int func_00104598(int a, char *b) {
     *(u64 *)(b + 0x48) = 0;
     *(int *)(b + 4) = 0x2000;

@@ -19,7 +19,6 @@ extern int D_00438304;
 
 
 
-extern void func_00104210(int, void *);
 
 
 extern char D_004BE080[];

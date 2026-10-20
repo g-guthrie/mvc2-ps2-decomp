@@ -70,7 +70,6 @@ struct D4895C0 { s32 a, b; };
 extern struct D4895C0 D_004895C0;
 extern void func_0040C6D0(s32 *, s32, s32, s32);
 extern char D_004C3570[];
-extern void func_00104210(s32, void *);
 struct T401 { s32 a, b; };
 extern void func_0040CA70();
 extern void func_0040CAA0();

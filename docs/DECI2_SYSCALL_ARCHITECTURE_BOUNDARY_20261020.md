@@ -1,0 +1,20 @@
+# Typed DECI2 syscall architecture boundary
+
+The earlier DECI2 wrapper repairs changed caller-side declarations and return propagation. The actual provider at 00104210 still had a conflicting `void func_00104210(void)` definition in the legacy syscall assembly CU. This change removes only that definition and gives the symbol one original SDK architecture implementation plus one shared C ABI header.
+
+`src/sony_deci2_call.S` retains the normal-mode `SYSCALL_SPECIAL` macro verbatim from [PS2SDK kernel.S](https://github.com/ps2dev/ps2sdk/blob/329e2bb43287e16af16c4dde1c614e2662c24468/ee/kernel/src/kernel.S), with the syscall number from [syscallnr.h](https://github.com/ps2dev/ps2sdk/blob/329e2bb43287e16af16c4dde1c614e2662c24468/ee/kernel/include/syscallnr.h). The original macro's symbol parameter exports the existing project name. The retained SDK implementation loads the architecture selector in V1, performs the system call and returns through the SDK's original return sequence. It preserves operation/parameter inputs in A0/A1 and the kernel result in V0. The SDK copyright notice remains in the source, and the complete Academic Free License 2.0 is included in `LICENSES/PS2SDK-AFL-2.0.txt`.
+
+`src/sony_deci2_call.h` declares the existing project ABI as `int func_00104210(int operation, void *parameters)`. Its opaque pointer carries each operation's marshalled parameter record. The signed result and register contract agree with the public `Deci2Call` declaration in the pinned [kernel header](https://github.com/ps2dev/ps2sdk/blob/329e2bb43287e16af16c4dde1c614e2662c24468/ee/kernel/include/kernel.h). All four direct C caller CUs now include that header instead of redeclaring the primitive locally.
+
+This is explicitly an SDK assembly architecture primitive. It is not a newly recovered portable C function, a target instruction lift or synthetic padding. The existing 16-byte ledger row moves from the old CU to the dedicated `.S`; function count and credited byte total are unchanged. The other 161 legacy syscall definitions remain untouched and are not claimed to have completed an ABI audit.
+
+Validation:
+
+- SNCPP preprocessing and the existing SNAS G0 assembler produce exactly the complete native 16-byte symbol, with no allocated non-code sections.
+- The remaining 161 functions (2576 bytes) in the legacy CU all pass the current integration verifier with the actual modern MWCC O3 / small-data-threshold-zero recipe. A source comparison proves only the old DECI2 definition was removed.
+- The four header-dependent CUs recompile under their literal Sony 2.9 O2/G0 profiles; all eleven complete functions (572 bytes) remain exact, with no allocated non-code sections.
+- The production build preprocesses, assembles and verifies the new source explicitly. The coverage checker now recognizes both `.c` and preprocessed `.S` verifier registrations while rejecting misleading suffixes. Regression tests cover registration, absent verification and the actual production recipe/ledger owner. The integration suite passes all 88 tests, with shell syntax validation also passing.
+
+The integration checkout independently replayed all 254 affected functions and reproduced both the 3,941,760-byte ROM and 3,942,320-byte retail ELF exactly. No new code or data credit is requested by this boundary repair.
+
+A final reference audit also found ten legacy CUs with declaration-only references to this primitive and no calls: `s0`, `k4`, `sdk3`, `sdk5`, `s2m`, `s39a`, `s2`, `sdk2`, `sdk2b` and `s5`. Their unused local declarations are removed, so no stale conflicting prototype remains outside the shared header. All 81 complete functions in those CUs (5236 bytes) were replayed against the current integration inputs under their actual EE96, SN or modern MWCC profiles and remained exact; their objects contain no reference to the DECI2 symbol. The `s2m` proof uses the integration tree's already corrected helper body, which this declaration-only patch does not alter. These removals add no code or data credit.

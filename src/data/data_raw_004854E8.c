@@ -1,0 +1,5 @@
+/* Unread runtime-handle bytes retained raw at 0x004854E8. */
+typedef unsigned char u8;
+u8 data_raw_004854E8[0x8] = {
+    0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
+};

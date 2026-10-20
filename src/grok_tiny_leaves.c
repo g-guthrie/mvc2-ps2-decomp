@@ -960,13 +960,6 @@ void func_00104200(void) {
     }
 }
 
-void func_00104210(void) {
-    asm {
-        addiu v1, r0, 124
-        syscall 0
-    }
-}
-
 void func_00104220(void) {
     asm {
         addiu v1, r0, 125

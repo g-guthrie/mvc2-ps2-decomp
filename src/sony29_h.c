@@ -1,23 +1,24 @@
-extern void func_00104210(int, void *);
+#include "sony_deci2_call.h"
 
-void func_00104F08(int a0, int a1, int a2) {
+
+int func_00104F08(int a0, void *a1, unsigned short a2) {
     struct {
-        int f0, f4, f8;
+        int f0; void *f4; unsigned int f8;
     } buf;
 
     buf.f4 = a1;
     buf.f8 = a2 & 0xFFFF;
     buf.f0 = a0;
-    func_00104210(-5, &buf);
+    return func_00104210(-5, &buf);
 }
 
-void func_00104F40(int a0, int a1, int a2) {
+int func_00104F40(int a0, void *a1, unsigned short a2) {
     struct {
-        int f0, f4, f8;
+        int f0; void *f4; unsigned int f8;
     } buf;
 
     buf.f4 = a1;
     buf.f8 = a2 & 0xFFFF;
     buf.f0 = a0;
-    func_00104210(-6, &buf);
+    return func_00104210(-6, &buf);
 }

@@ -5820,7 +5820,7 @@ func_001041D0,0x001041D0,0x10,src/grok_tiny_leaves.c,complete
 func_001041E0,0x001041E0,0x10,src/grok_tiny_leaves.c,complete
 func_001041F0,0x001041F0,0x10,src/grok_tiny_leaves.c,complete
 func_00104200,0x00104200,0x10,src/grok_tiny_leaves.c,complete
-func_00104210,0x00104210,0x10,src/grok_tiny_leaves.c,complete
+func_00104210,0x00104210,0x10,src/sony_deci2_call.S,complete
 func_00104220,0x00104220,0x10,src/grok_tiny_leaves.c,complete
 func_00104230,0x00104230,0x10,src/grok_tiny_leaves.c,complete
 func_00104240,0x00104240,0x10,src/grok_tiny_leaves.c,complete
@@ -17358,3 +17358,13 @@ func_00107670,0x00107670,0x6c,src/sony29_descriptor_lookup.c,complete
 func_002C8230,0x002C8230,0x174,src/grok_fj_002C8230.c,complete
 func_002E8920,0x002E8920,0x15C,src/grok_fr_002e8920.c,complete
 func_002C3D50,0x002C3D50,0x158,src/grok_fj_002C3D50.c,complete
+func_002E16D0,0x002E16D0,0x174,src/grok_fr_002e16d0.c,complete
+func_00104AE0,0x00104AE0,0xd8,src/sony29_thread_command_queue.c,complete
+func_00104BB8,0x00104BB8,0xd4,src/sony29_thread_command_queue.c,complete
+func_00104E40,0x00104E40,0x44,src/sony29_deci2_console.c,complete
+func_001043A8,0x001043A8,0x7c,src/sony29_deci2_console.c,complete
+func_00105578,0x00105578,0xB0,src/sony29_line_buffered_output.c,complete
+func_001067F0,0x001067F0,0xA8,src/sony29_rpc_packet_allocation.c,complete
+func_0010B328,0x0010B328,0x38,src/sony29_rpc_lifecycle_helpers.c,complete
+func_0010BD00,0x0010BD00,0x28,src/sony29_rpc_lifecycle_helpers.c,complete
+func_00260960,0x00260960,0x9C,src/grok_ia_00260960.c,complete

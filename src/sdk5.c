@@ -61,7 +61,6 @@ extern void func_0010EC08(int, int, int);
 void func_0010EF20(int a, int b) { do { func_0010EC08(a, b, 0); } while (0); }
 extern long long func_00120838(const char *, char **, int);
 s32 func_00119DA0(const char *s) { return (s32)func_00120838(s, 0, 10); }
-extern s32 func_00104210(int, u32 *);
 extern char D_004C3570[];
 typedef struct Ent { char pad[0x10]; int f10; char pad2[0xC]; } Ent;
 extern char D_004C83D0[];

@@ -10,7 +10,6 @@ extern int D_00438270;
 extern int func_00104C90(int);
 extern void func_0011EB60(void *);
 extern char D_004BE900[];
-extern void func_00104210(int, void *);
 extern int *func_0011B370(void);
 extern char D_004BC490[];
 extern void func_003FB128(void *);

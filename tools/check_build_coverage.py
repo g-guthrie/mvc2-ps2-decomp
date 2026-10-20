@@ -25,7 +25,7 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 def wired_sources(script: str) -> set[str]:
-    sources = set(re.findall(r'--source\s+"?(src/[\w./-]+\.c)"?', script))
+    sources = set(re.findall(r'--source\s+"?(src/[\w./-]+\.(?:c|S))"?(?=\s|$)', script))
     for units in re.findall(r'^for unit in ([^;]+); do', script, re.M):
         sources.update(f"src/{unit}.c" for unit in units.split())
     # loops that verify "src/$unit.c" are covered by the expansion above

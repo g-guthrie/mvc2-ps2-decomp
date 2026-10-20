@@ -404,6 +404,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_tiny_leaves.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_tiny_leaves.o"
+"$WIBO" "$SNCPP" -P src/sony_deci2_call.S "$BUILD/sony_deci2_call.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony_deci2_call.o" "$BUILD/sony_deci2_call.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony_deci2_call.o" private/SLUS_204.86.rom --source src/sony_deci2_call.S
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_tiny2.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_tiny2.o"
@@ -15657,5 +15660,36 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_fr_002e8920.c -c -
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_fj_002C3D50.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_fj_002C3D50.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_fj_002C3D50.o" private/SLUS_204.86.rom --source src/grok_fj_002C3D50.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_fr_002e16d0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_fr_002e16d0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_fr_002e16d0.o" private/SLUS_204.86.rom --source src/grok_fr_002e16d0.c
+
+"$WIBO" "$SNCPP" -P src/sony29_deci2_console.c "$BUILD/sony29_deci2_console.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_deci2_console.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_deci2_console.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_deci2_console.o" "$BUILD/sony29_deci2_console.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_deci2_console.o" private/SLUS_204.86.rom --source src/sony29_deci2_console.c
+
+"$WIBO" "$SNCPP" -P src/sony29_line_buffered_output.c "$BUILD/sony29_line_buffered_output.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_line_buffered_output.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_line_buffered_output.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_line_buffered_output.o" "$BUILD/sony29_line_buffered_output.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_line_buffered_output.o" private/SLUS_204.86.rom --source src/sony29_line_buffered_output.c
+
+"$WIBO" "$SNCPP" -P src/sony29_rpc_lifecycle_helpers.c "$BUILD/sony29_rpc_lifecycle_helpers.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_lifecycle_helpers.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_lifecycle_helpers.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_lifecycle_helpers.o" "$BUILD/sony29_rpc_lifecycle_helpers.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_lifecycle_helpers.o" private/SLUS_204.86.rom --source src/sony29_rpc_lifecycle_helpers.c
+
+"$WIBO" "$SNCPP" -P src/sony29_rpc_packet_allocation.c "$BUILD/sony29_rpc_packet_allocation.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_packet_allocation.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_packet_allocation.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_packet_allocation.o" "$BUILD/sony29_rpc_packet_allocation.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_packet_allocation.o" private/SLUS_204.86.rom --source src/sony29_rpc_packet_allocation.c
+
+"$WIBO" "$SNCPP" -P src/sony29_thread_command_queue.c "$BUILD/sony29_thread_command_queue.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_thread_command_queue.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_thread_command_queue.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_thread_command_queue.o" "$BUILD/sony29_thread_command_queue.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_thread_command_queue.o" private/SLUS_204.86.rom --source src/sony29_thread_command_queue.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_ia_00260960.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_ia_00260960.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_ia_00260960.o" private/SLUS_204.86.rom --source src/grok_ia_00260960.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

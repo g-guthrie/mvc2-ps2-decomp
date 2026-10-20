@@ -5,7 +5,6 @@ typedef unsigned char u8;
 extern void *func_0011D8F8(void *, s32, s32);
 extern void *func_003F55B0(void *, s32, s32);
 
-extern s32 func_00104210(s32, void *);
 
 
 extern s32 func_00107328(s32);

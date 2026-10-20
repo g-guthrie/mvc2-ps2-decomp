@@ -14,7 +14,6 @@ extern void func_003F83C0(s32);
 typedef struct { u8 a, b; u8 pad[2]; s32 v; } B;
 void func_003FF658(B *p) { func_003F83C0(p->v); p->b = 0; }
 
-extern void func_00104210(s32, void *);
 
 
 extern char D_004BB340[];

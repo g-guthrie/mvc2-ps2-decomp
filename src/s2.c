@@ -7,7 +7,6 @@ extern void func_0040EF00(void);
 extern void func_003F81C0(s32);
 extern void func_003F8140(s32);
 extern s32 func_0010F148(s32);
-extern void func_00104210(s32, void *);
 extern void func_003F7B78(void);
 extern void *func_0011D8F8(void *, s32, s32);
 extern char D_00484100[];
