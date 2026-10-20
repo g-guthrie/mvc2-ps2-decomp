@@ -9,7 +9,9 @@ typedef signed int s32;
 extern u8 *D_004C2840;
 
 static void func_00157250(u8 *p) {
-    *(s32 *)(p + 0x20) = 0;
+    *(f32 *)(p + 52) += *(f32 *)(p + 92);
+    *(f32 *)(p + 56) += *(f32 *)(p + 96);
+    *(f32 *)(p + 60) += *(f32 *)(p + 100);
 }
 
 void func_00157470(u8 *p) {
