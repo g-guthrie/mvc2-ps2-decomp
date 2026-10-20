@@ -15049,4 +15049,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/payload_setup_cal
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/payload_mode_initializers_001c4dd0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/payload_mode_initializers_001c4dd0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/payload_mode_initializers_001c4dd0.o" private/SLUS_204.86.rom --source src/payload_mode_initializers_001c4dd0.c
 
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/payload_spawn_initializers_001baee0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/payload_spawn_initializers_001baee0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/payload_spawn_initializers_001baee0.o" private/SLUS_204.86.rom --source src/payload_spawn_initializers_001baee0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

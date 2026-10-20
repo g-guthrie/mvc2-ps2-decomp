@@ -17135,3 +17135,5 @@ func_001C4DD0,0x001C4DD0,0xEC,src/payload_mode_initializers_001c4dd0.c,complete
 func_001C4F40,0x001C4F40,0xE4,src/payload_mode_initializers_001c4dd0.c,complete
 func_001B9B60,0x001B9B60,0x114,src/copy_owner_chain_001a2960.c,complete
 func_001BA3A0,0x001BA3A0,0x120,src/copy_owner_chain_001a2960.c,complete
+func_001BAEE0,0x001BAEE0,0x134,src/payload_spawn_initializers_001baee0.c,complete
+func_001C1470,0x001C1470,0x114,src/payload_spawn_initializers_001baee0.c,complete

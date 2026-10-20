@@ -339,3 +339,5 @@ func_001C4DD0,0x001C4DD0,0xEC,func_001C4DB0,jtbl_0044CC40,0x0044CC40,src/payload
 func_001C4F40,0x001C4F40,0xE4,func_001C4F20,jtbl_0044CC50,0x0044CC50,src/payload_mode_initializers_001c4dd0.c
 func_001B9B60,0x001B9B60,0x114,func_001B9B40,jtbl_0044BF80,0x0044BF80,src/copy_owner_chain_001a2960.c
 func_001BA3A0,0x001BA3A0,0x120,func_001BA380,jtbl_0044BFB0,0x0044BFB0,src/copy_owner_chain_001a2960.c
+func_001BAEE0,0x001BAEE0,0x134,func_001BAEC0,jtbl_0044C030,0x0044C030,src/payload_spawn_initializers_001baee0.c
+func_001C1470,0x001C1470,0x114,func_001C1450,jtbl_0044C880,0x0044C880,src/payload_spawn_initializers_001baee0.c
