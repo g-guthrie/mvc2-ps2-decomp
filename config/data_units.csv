@@ -12,7 +12,9 @@ data_u32_00436200,0x00436200,0x1F60,.data,src/data/data_u32_00436200.c,initializ
 data_zero_00438160,0x00438160,0x20,.data,src/data/data_zero_00438160.c,zero_initialized_untyped
 data_u32_00438180,0x00438180,0x60,.data,src/data/data_u32_00438180.c,initialized_u32_table
 data_u32_004381E0,0x004381E0,0x28,.data,src/data/data_u32_004381E0.c,bounded_u32_lookup
-data_u32_00438208,0x00438208,0x70,.data,src/data/data_u32_00438208.c,initialized_u32_table
+data_raw_00438208,0x00438208,0x44,.data,src/data/data_raw_00438208.c,opaque_mixed_prefix
+D_0043824C,0x0043824C,0x4,.data,src/data/D_0043824C.c,fixed_sdk_revision_token
+data_raw_00438250,0x00438250,0x28,.data,src/data/data_raw_00438250.c,opaque_mutable_state_and_pointer_tail
 data_ff_00438278,0x00438278,0x8,.data,src/data/data_ff_00438278.c,filled_u32_ones
 data_ff_00438280,0x00438280,0x70,.data,src/data/data_ff_00438280.c,filled_u32_ones
 data_ff_004382F0,0x004382F0,0x8,.data,src/data/data_ff_004382F0.c,filled_u32_ones
