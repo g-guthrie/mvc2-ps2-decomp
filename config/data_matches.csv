@@ -55,7 +55,7 @@ jtbl_00439920,0x00439920,0x2C,src/data/jtbl_00439920.c,complete,placeholder
 data_zero_00439950,0x00439950,0x30,src/data/data_zero_00439950.c,complete,placeholder
 data_u32_00439980,0x00439980,0x10,src/data/data_u32_00439980.c,complete,placeholder
 data_zero_00439990,0x00439990,0x10,src/data/data_zero_00439990.c,complete,placeholder
-data_u32_004399A0,0x004399A0,0x8,src/data/data_u32_004399A0.c,complete,placeholder
+data_u32_004399A0,0x004399A0,0x8,src/data/data_u32_004399A0.c,complete,reconstructed
 data_sony29_semaphore_ids_004399A8,0x004399A8,0x8,src/data/sony29_semaphore_ids_004399A8.c,complete,reconstructed
 data_u32_004399B0,0x004399B0,0x8,src/data/data_u32_004399B0.c,complete,placeholder
 data_ff_004399B8,0x004399B8,0x8,src/data/data_ff_004399B8.c,complete,placeholder
