@@ -3,8 +3,8 @@ extern void func_0040EE98(void); void func_003FF2D0(void){ func_0040EE98(); }
 extern void func_0040C7C0(void *a, int *b);
 int func_0040CA48(void *a){ int b[2]; func_0040C7C0(a, b); return b[1] != 0; }
 
-extern void func_00104818(int a, int b);
-void func_003FB370(int a, long b){ func_00104818(a, a + (int)b - 1); }
+extern void func_00104818(void *first, void *last);
+void func_003FB370(int a, long b){ func_00104818((void *)(unsigned int)a, (void *)((unsigned int)a + (unsigned int)b - 1u)); }
 
 extern char D_004BC278[];
 extern void func_003FB128(void *p);

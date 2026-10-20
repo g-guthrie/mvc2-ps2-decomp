@@ -10280,7 +10280,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/w1812_g.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/w1812_g.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w1812_g.o" private/SLUS_204.86.rom --source src/w1812_g.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/w1812_h.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/w1812_h.o"
+    src/w1812_h.c -c -lang c -O3 -sdatathreshold 0 -i src -o "$BUILD/w1812_h.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w1812_h.o" private/SLUS_204.86.rom --source src/w1812_h.c
 "$WIBO" "$SNCPP" -P src/w1812_i.c "$BUILD/w1812_i.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/w1812_i.i" "$BUILD/w1812_i.s"
@@ -15998,5 +15998,25 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$EE29CC1" "$BUILD/sony29_set_tlb_entry_0010c3f0.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_set_tlb_entry_0010c3f0.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_set_tlb_entry_0010c3f0.o" "$BUILD/sony29_set_tlb_entry_0010c3f0.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_set_tlb_entry_0010c3f0.o" private/SLUS_204.86.rom --source src/sony29_set_tlb_entry_0010c3f0.c
+
+"$WIBO" "$SNCPP" -P src/sony29_console_read_00104428.c "$BUILD/sony29_console_read_00104428.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_console_read_00104428.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_console_read_00104428.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_console_read_00104428.o" "$BUILD/sony29_console_read_00104428.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_console_read_00104428.o" private/SLUS_204.86.rom --source src/sony29_console_read_00104428.c
+
+"$WIBO" "$SNCPP" -P src/sony29_cache_ranges.c "$BUILD/sony29_cache_ranges.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_cache_ranges.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_cache_ranges.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_cache_ranges.o" "$BUILD/sony29_cache_ranges.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_cache_ranges.o" private/SLUS_204.86.rom --source src/sony29_cache_ranges.c
+
+"$WIBO" "$SNCPP" -P src/sony29_wait_vblank_00104270.c "$BUILD/sony29_wait_vblank_00104270.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_wait_vblank_00104270.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_wait_vblank_00104270.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_wait_vblank_00104270.o" "$BUILD/sony29_wait_vblank_00104270.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_wait_vblank_00104270.o" private/SLUS_204.86.rom --source src/sony29_wait_vblank_00104270.c
+
+"$WIBO" "$SNCPP" -P src/sony29_gs_half_offset.c "$BUILD/sony29_gs_half_offset.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_gs_half_offset.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_gs_half_offset.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_gs_half_offset.o" "$BUILD/sony29_gs_half_offset.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_gs_half_offset.o" private/SLUS_204.86.rom --source src/sony29_gs_half_offset.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

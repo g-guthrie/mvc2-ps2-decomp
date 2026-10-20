@@ -1,3 +1,4 @@
+#include "sony29_gs_half_offset.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -9,8 +10,6 @@ extern s32 D_0062BC40, D_0062BC44, D_0062BC3C, D_0062BC00;
 extern s16 D_0062BC38;
 extern u8 D_0062BCB0[], D_0062BD30[], D_0062BE20[], D_0062BEA0[], D_0062BC50[];
 void func_003ECBE0(void) {
-    extern void func_00101DF0(u8 *, s32, s32, s32);
-    extern void func_00102058(u8 *, s32, s32, s32);
     extern void func_001023C8(u8 *, s32);
     extern void func_00100F00(s32, s32);
     extern void func_003FE9E8(s32);
@@ -22,11 +21,11 @@ void func_003ECBE0(void) {
         D_0062BC3C = D_0062BC3C ^ 1;
         if (D_0062BC00 != 2) {
             if (D_0062BC3C != 0) {
-                func_00101DF0(D_0062BCB0, 0x800, 0x800, D_0062BC38);
-                func_00102058(D_0062BD30, 0x800, 0x800, D_0062BC38);
+                func_00101DF0((GsDrawContext *)D_0062BCB0, 0x800, 0x800, D_0062BC38);
+                func_00102058((GsDrawContext *)D_0062BD30, 0x800, 0x800, D_0062BC38);
             } else {
-                func_00101DF0(D_0062BE20, 0x800, 0x800, D_0062BC38);
-                func_00102058(D_0062BEA0, 0x800, 0x800, D_0062BC38);
+                func_00101DF0((GsDrawContext *)D_0062BE20, 0x800, 0x800, D_0062BC38);
+                func_00102058((GsDrawContext *)D_0062BEA0, 0x800, 0x800, D_0062BC38);
             }
         }
         func_001023C8(D_0062BC50, D_0062BC3C);
