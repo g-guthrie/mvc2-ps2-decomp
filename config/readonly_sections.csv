@@ -13,3 +13,6 @@ src/newlib_powf_00113698.c,.rodata,0x004ABB78,0x88
 src/newlib_rem_pio2_00112818.c,.rodata,0x004AB8E0,0x250
 src/newlib_rem_pio2f_00113E78.c,.rodata,0x004ABC00,0x3C0
 src/newlib_k_rem_pio2f_001154A8.c,.rodata,0x004AC108,0x4C
+src/newlib_logf_001132D0.c,.rodata,0x004ABB30,0x30
+src/newlib_k_tanf_00115E18.c,.rodata,0x004AC158,0x44
+src/newlib_atanf_00116CD0.c,.rodata,0x004AC290,0x54

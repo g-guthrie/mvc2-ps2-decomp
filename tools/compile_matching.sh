@@ -15509,4 +15509,21 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -mips4 -G0 -o "$BUILD/newlib_k_rem_pio2f_001154A8.o" "$BUILD/newlib_k_rem_pio2f_001154A8.s"
 "$PYTHON" tools/verify_object.py "$BUILD/newlib_k_rem_pio2f_001154A8.o" private/SLUS_204.86.rom --source src/newlib_k_rem_pio2f_001154A8.c
 
+
+# Original PS2 float log, atan and tangent kernels.
+"$WIBO" "$SNCPP" -P src/newlib_logf_001132D0.c "$BUILD/newlib_logf_001132D0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_logf_001132D0.i" "$BUILD/newlib_logf_001132D0.s"
+"$WIBO" "$SNAS" -mips4 -G0 -o "$BUILD/newlib_logf_001132D0.o" "$BUILD/newlib_logf_001132D0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_logf_001132D0.o" private/SLUS_204.86.rom --source src/newlib_logf_001132D0.c
+
+"$WIBO" "$SNCPP" -P src/newlib_k_tanf_00115E18.c "$BUILD/newlib_k_tanf_00115E18.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_k_tanf_00115E18.i" "$BUILD/newlib_k_tanf_00115E18.s"
+"$WIBO" "$SNAS" -mips4 -G0 -o "$BUILD/newlib_k_tanf_00115E18.o" "$BUILD/newlib_k_tanf_00115E18.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_k_tanf_00115E18.o" private/SLUS_204.86.rom --source src/newlib_k_tanf_00115E18.c
+
+"$WIBO" "$SNCPP" -P src/newlib_atanf_00116CD0.c "$BUILD/newlib_atanf_00116CD0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_atanf_00116CD0.i" "$BUILD/newlib_atanf_00116CD0.s"
+"$WIBO" "$SNAS" -mips4 -G0 -o "$BUILD/newlib_atanf_00116CD0.o" "$BUILD/newlib_atanf_00116CD0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_atanf_00116CD0.o" private/SLUS_204.86.rom --source src/newlib_atanf_00116CD0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

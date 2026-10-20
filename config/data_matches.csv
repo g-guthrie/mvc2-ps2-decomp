@@ -82,8 +82,10 @@ gMvc2AllocatorBins_0043B708,0x0043B708,0x408,src/data/mvc2_allocator_bins_0043B7
 gCoalescingLimit_0043BB10,0x0043BB10,0x8,src/data/gCoalescingLimit_0043BB10.c,complete,reconstructed
 gCoalescingOffset_0043BB18,0x0043BB18,0x8,src/data/gCoalescingOffset_0043BB18.c,complete,reconstructed
 gCoalescingEndMarker_0043BB20,0x0043BB20,0x4,src/data/gCoalescingEndMarker_0043BB20.c,complete,reconstructed
-data_raw_0043BB24,0x0043BB24,0xC,src/data/data_raw_0043BB24.c,complete,placeholder
-data_zero_0043BB30,0x0043BB30,0x30,src/data/data_zero_0043BB30.c,complete,placeholder
+data_raw_0043BB24,0x0043BB24,0x4,src/data/data_raw_0043BB24.c,complete,placeholder
+gMaxSbrkedMem_0043BB28,0x0043BB28,0x8,src/data/gMaxSbrkedMem_0043BB28.c,complete,reconstructed
+gMaxTotalMem_0043BB30,0x0043BB30,0x8,src/data/gMaxTotalMem_0043BB30.c,complete,reconstructed
+gCurrentMallinfo_0043BB38,0x0043BB38,0x28,src/data/gCurrentMallinfo_0043BB38.c,complete,reconstructed
 data_u32_0043BB60,0x0043BB60,0x14,src/data/data_u32_0043BB60.c,complete,placeholder
 data_u32_0043BB74,0x0043BB74,0xC,src/data/data_u32_0043BB74.c,complete,placeholder
 data_u32_0043BC10,0x0043BC10,0x3B0,src/data/data_u32_0043BC10.c,complete,placeholder
