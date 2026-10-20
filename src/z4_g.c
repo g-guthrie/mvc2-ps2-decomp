@@ -10,10 +10,15 @@ extern u8 D_00458A40[], D_00458A50[], D_00458AE0[], D_00458AF0[];
 
 static s32 func_002AB9A0(u8 *p)
 {
-    s32 i, r = 0;
-    for (i = 0; i < 8; i++)
-        r += p[i * 3];
-    return r;
+    if (p[0x20D] != 2)
+        return 1;
+    if (p[0x210] == 0) {
+        s32 x = *(s8 *)(p + 0x1E8);
+        if (x != 0)
+            return 0;
+        *(s8 *)(p + 0x1E8) = x + 1;
+    }
+    return 1;
 }
 
 s32 func_002ABCA0(u8 *p)
