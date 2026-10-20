@@ -1,0 +1,3 @@
+/* Opaque bytes after the terminal state mask before the next independent base. */
+typedef unsigned char u8;
+u8 data_raw_00458F16[0xa] = { 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u };

@@ -17152,3 +17152,9 @@ func_001A7340,0x001A7340,0x170,src/payload_motion_initializers_001d3240.c,comple
 func_001DE300,0x001DE300,0x164,src/payload_motion_initializers_001d3240.c,complete
 func_001BF6A0,0x001BF6A0,0x154,src/copy_owner_chain_001a2960.c,complete
 func_001A7500,0x001A7500,0x3C,src/owner_callback_dispatch_prefixes.c,complete
+func_001A79B0,0x001A79B0,0x194,src/payload_placement_initializers_001a79b0.c,complete
+func_001BC7C0,0x001BC7C0,0x194,src/payload_placement_initializers_001a79b0.c,complete
+func_001BE910,0x001BE910,0x194,src/payload_placement_initializers_001a79b0.c,complete
+func_001AE370,0x001AE370,0x164,src/copy_owner_chain_001a2960.c,complete
+func_001DDA20,0x001DDA20,0x134,src/copy_owner_chain_001a2960.c,complete
+func_001C0A90,0x001C0A90,0x198,src/payload_placement_initializers_001a79b0.c,complete
