@@ -491,41 +491,6 @@ void func_00103DD0(void) {
     }
 }
 
-void func_00103DE0(void) {
-    asm {
-        addiu v1, r0, 64
-        syscall 0
-    }
-}
-
-void func_00103DF0(void) {
-    asm {
-        addiu v1, r0, 65
-        syscall 0
-    }
-}
-
-void func_00103E00(void) {
-    asm {
-        addiu v1, r0, 66
-        syscall 0
-    }
-}
-
-void func_00103E10(void) {
-    asm {
-        addiu v1, r0, -67
-        syscall 0
-    }
-}
-
-void func_00103E20(void) {
-    asm {
-        addiu v1, r0, 68
-        syscall 0
-    }
-}
-
 void func_00103E30(void) {
     asm {
         addiu v1, r0, 69

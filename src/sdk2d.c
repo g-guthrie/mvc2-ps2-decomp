@@ -25,7 +25,6 @@ extern char D_004BE390[];
 typedef struct Buf { char pad[0x14]; int pos; int limit; } Buf;
 
 
-extern void func_0010CEB8(void *, int, int);
 extern void func_0010CFD0(void);
 extern void func_00104200(int, void *);
 extern char D_004AB260[];

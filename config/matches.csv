@@ -5753,11 +5753,11 @@ func_00103DA0,0x00103DA0,0x10,src/grok_tiny_leaves.c,complete
 func_00103DB0,0x00103DB0,0x10,src/grok_tiny_leaves.c,complete
 func_00103DC0,0x00103DC0,0x10,src/grok_tiny_leaves.c,complete
 func_00103DD0,0x00103DD0,0x10,src/grok_tiny_leaves.c,complete
-func_00103DE0,0x00103DE0,0x10,src/grok_tiny_leaves.c,complete
-func_00103DF0,0x00103DF0,0x10,src/grok_tiny_leaves.c,complete
-func_00103E00,0x00103E00,0x10,src/grok_tiny_leaves.c,complete
-func_00103E10,0x00103E10,0x10,src/grok_tiny_leaves.c,complete
-func_00103E20,0x00103E20,0x10,src/grok_tiny_leaves.c,complete
+func_00103DE0,0x00103DE0,0x10,src/sony29_kernel_semaphore_calls.S,complete
+func_00103DF0,0x00103DF0,0x10,src/sony29_kernel_semaphore_calls.S,complete
+func_00103E00,0x00103E00,0x10,src/sony29_kernel_semaphore_calls.S,complete
+func_00103E10,0x00103E10,0x10,src/sony29_kernel_semaphore_calls.S,complete
+func_00103E20,0x00103E20,0x10,src/sony29_kernel_semaphore_calls.S,complete
 func_00103E30,0x00103E30,0x10,src/grok_tiny_leaves.c,complete
 func_00103E40,0x00103E40,0x10,src/grok_tiny_leaves.c,complete
 func_00103E50,0x00103E50,0x10,src/grok_tiny_leaves.c,complete
@@ -17400,3 +17400,6 @@ func_002CCEB0,0x002CCEB0,0x170,src/mode_command_motion_002cceb0.c,complete
 func_00107098,0x00107098,0x94,src/sony29_rpc_server_registration.c,complete
 func_00107130,0x00107130,0xD0,src/sony29_rpc_server_registration.c,complete
 func_0010AE58,0x0010AE58,0xF0,src/sony29_rpc_path_command.c,complete
+func_0010FC98,0x0010FC98,0xF8,src/sony29_cddvd_clock_read.c,complete
+func_0010CEB8,0x0010CEB8,0x118,src/sony29_exec_arguments.c,complete
+func_002B6F20,0x002B6F20,0xE0,src/animation_countdown_reset_002b6f20.c,complete

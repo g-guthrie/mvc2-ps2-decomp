@@ -52,6 +52,31 @@ class ProjectTest(unittest.TestCase):
             (root / "src/grok_tiny_leaves.c").read_text(),
         )
 
+    def test_semaphore_sdk_provider_keeps_existing_credit_and_integer_results(self):
+        import csv
+        from pathlib import Path
+        from tools.check_build_coverage import wired_sources
+
+        root = Path(__file__).resolve().parent.parent
+        names = {"func_00103DE0", "func_00103DF0", "func_00103E00",
+                 "func_00103E10", "func_00103E20"}
+        source = "src/sony29_kernel_semaphore_calls.S"
+        with (root / "config/matches.csv").open(newline="") as handle:
+            rows = [row for row in csv.DictReader(handle) if row["name"] in names]
+        self.assertEqual(len(rows), len(names))
+        self.assertEqual({row["name"] for row in rows}, names)
+        self.assertEqual({row["source"] for row in rows}, {source})
+        self.assertEqual([int(row["size"], 0) for row in rows], [16] * 5)
+        self.assertIn(source, wired_sources((root / "tools/compile_matching.sh").read_text()))
+        legacy = (root / "src/grok_tiny_leaves.c").read_text()
+        header = (root / "src/sony29_kernel_semaphore_calls.h").read_text()
+        assembly = (root / source).read_text()
+        for name in sorted(names):
+            with self.subTest(name=name):
+                self.assertNotRegex(legacy, rf"\b{name}\s*\([^;{{}}]*\)\s*\{{")
+                self.assertRegex(header, rf"\bint\s+{name}\s*\(")
+                self.assertIn(f"SYSCALL_SPECIAL({name},", assembly)
+
     def test_data_build_must_follow_all_code_compiles(self):
         from tools.check_build_coverage import premature_data_build_commands
 

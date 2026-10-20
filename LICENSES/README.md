@@ -18,3 +18,5 @@ notices. `src/newlib_heap_core.c` retains Doug Lea’s public-domain allocator
 attribution and source configuration documentation.
 
 The original PS2SDK syscall macro in `src/sony_deci2_call.S` retains its upstream copyright notice and is licensed under the Academic Free License version 2.0. Its complete license is included in `PS2SDK-AFL-2.0.txt`; the pinned source and architecture-boundary proof are documented in `docs/DECI2_SYSCALL_ARCHITECTURE_BOUNDARY_20261020.md`.
+
+The same pinned PS2SDK normal-mode syscall macro and AFL 2.0 notice also apply to `src/sony29_kernel_semaphore_calls.S`.

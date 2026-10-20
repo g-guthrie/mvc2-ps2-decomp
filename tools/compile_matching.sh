@@ -15773,4 +15773,21 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/mode_command_motion_002
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_path_command.o" "$BUILD/sony29_rpc_path_command.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_path_command.o" private/SLUS_204.86.rom --source src/sony29_rpc_path_command.c
 
+"$WIBO" "$SNCPP" -P src/sony29_cddvd_clock_read.c "$BUILD/sony29_cddvd_clock_read.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_cddvd_clock_read.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_cddvd_clock_read.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_cddvd_clock_read.o" "$BUILD/sony29_cddvd_clock_read.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_cddvd_clock_read.o" private/SLUS_204.86.rom --source src/sony29_cddvd_clock_read.c
+
+"$WIBO" "$SNCPP" -P src/sony29_exec_arguments.c "$BUILD/sony29_exec_arguments.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_exec_arguments.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_exec_arguments.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_exec_arguments.o" "$BUILD/sony29_exec_arguments.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_exec_arguments.o" private/SLUS_204.86.rom --source src/sony29_exec_arguments.c
+
+"$WIBO" "$SNCPP" -P src/sony29_kernel_semaphore_calls.S "$BUILD/sony29_kernel_semaphore_calls.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_kernel_semaphore_calls.o" "$BUILD/sony29_kernel_semaphore_calls.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_kernel_semaphore_calls.o" private/SLUS_204.86.rom --source src/sony29_kernel_semaphore_calls.S
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/animation_countdown_reset_002b6f20.c -c -lang c -O4 -Op -sdatathreshold 8 -o "$BUILD/animation_countdown_reset_002b6f20.o"
+"$PYTHON" tools/verify_object.py "$BUILD/animation_countdown_reset_002b6f20.o" private/SLUS_204.86.rom --source src/animation_countdown_reset_002b6f20.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

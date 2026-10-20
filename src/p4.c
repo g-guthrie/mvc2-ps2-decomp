@@ -16,9 +16,7 @@ void func_0040EF28(void) { func_0011EB60(D_004BE978); }
 
 extern s32 func_00110138();
 extern s32 D_0043B400;
-extern void func_0010CEB8();
 extern void func_0010CFD0();
-extern s32 D_004386A0;
 extern void func_00103A20();
 extern void func_00402498();
 extern void func_003FD928();
