@@ -26,13 +26,13 @@ void func_003FF628(ADXSJD decoder)
 }
 
 extern void func_00118F48();
-extern void func_00119C60(s32, s32, s32, u64);
-void func_00119058(f32 x)
+extern double func_00119C60(s32, s32, s32, u64);
+double func_00119058(f32 x)
 {
     s32 out[4];
     f32 in = x;
     func_00118F48(&in, out);
-    func_00119C60(out[0], out[1], out[2], (u64)(u32)out[3] << 30);
+    return func_00119C60(out[0], out[1], out[2], (u64)(u32)out[3] << 30);
 }
 
 extern void func_0040C808();

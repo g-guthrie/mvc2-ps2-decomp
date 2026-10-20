@@ -17415,3 +17415,4 @@ func_002866F0,0x002866F0,0x144,src/interaction_transition_002866f0.c,complete
 func_001F5470,0x001F5470,0x18C,src/frame_motion_001f5470.c,complete
 func_00134D30,0x00134D30,0x110,src/create_flagged_effect_00134d30.c,complete
 func_002876B0,0x002876B0,0xCC,src/interaction_mode_002876b0.c,complete
+func_0017DFB0,0x0017DFB0,0x120,src/actor_transition_0017dfb0.c,complete

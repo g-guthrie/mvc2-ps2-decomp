@@ -51,6 +51,6 @@ typedef struct { s32 cls, sign, normal_exp; unsigned int fraction; } A119;
 extern float func_00118E90(A119 *);
 float func_00119028(s32 a, s32 b, s32 c, s32 d) { A119 s; s.cls = a; s.sign = b; s.normal_exp = c; s.fraction = d; return func_00118E90(&s); }
 
-typedef struct B119 { s32 a, b, c; long d; } B119;
-extern void func_00119118(B119 *);
-void func_00119C60(s32 a, s32 b, s32 c, long d) { B119 s; s.a = a; s.b = b; s.c = c; s.d = d; func_00119118(&s); }
+typedef struct B119 { s32 a, b, c; unsigned long long d; } B119;
+extern double func_00119118(B119 *);
+double func_00119C60(s32 a, s32 b, s32 c, unsigned long long d) { B119 s; s.a = a; s.b = b; s.c = c; s.d = d; return func_00119118(&s); }
