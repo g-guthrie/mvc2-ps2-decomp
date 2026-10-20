@@ -15831,4 +15831,14 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     -o "$BUILD/owner_follow_00380e10.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_follow_00380e10.o" private/SLUS_204.86.rom --source src/owner_follow_00380e10.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/motion_shift_0024f000.c -c -lang c -O4 -Op -sdatathreshold 8 \
+    -o "$BUILD/motion_shift_0024f000.o"
+"$PYTHON" tools/verify_object.py "$BUILD/motion_shift_0024f000.o" private/SLUS_204.86.rom --source src/motion_shift_0024f000.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/motion_recoil_0024eda0.c -c -lang c -O4 -Op -sdatathreshold 8 \
+    -o "$BUILD/motion_recoil_0024eda0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/motion_recoil_0024eda0.o" private/SLUS_204.86.rom --source src/motion_recoil_0024eda0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

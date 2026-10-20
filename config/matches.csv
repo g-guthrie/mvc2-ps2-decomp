@@ -17417,3 +17417,5 @@ func_00134D30,0x00134D30,0x110,src/create_flagged_effect_00134d30.c,complete
 func_002876B0,0x002876B0,0xCC,src/interaction_mode_002876b0.c,complete
 func_0017DFB0,0x0017DFB0,0x120,src/actor_transition_0017dfb0.c,complete
 func_00380E10,0x00380E10,0x16C,src/owner_follow_00380e10.c,complete
+func_0024F000,0x0024F000,0x188,src/motion_shift_0024f000.c,complete
+func_0024EDA0,0x0024EDA0,0x124,src/motion_recoil_0024eda0.c,complete
