@@ -11,7 +11,16 @@ typedef struct { s32 x[49]; } S49;
 typedef struct { u32 a, b; } G2708;
 extern G2708 *D_004C2708;
 
-static void func_001C88F0(u8 *p) { p[0x13D] = 0; }
+static void func_001C88F0(u8 *p) {
+    f32 *offset = (f32 *)D_004C2708;
+    *(f32 *)(p + 0x34) = *(f32 *)(*(u8 **)(p + 0x18) + 0x34);
+    *(f32 *)(p + 0x38) = *(f32 *)(*(u8 **)(p + 0x18) + 0x38);
+    if (*(s16 *)(p + 0x140))
+        *(f32 *)(p + 0x34) += offset[0];
+    else
+        *(f32 *)(p + 0x34) -= offset[0];
+    *(f32 *)(p + 0x38) += offset[1];
+}
 
 void func_001C8960(u8 *p) {
     extern void func_001757E0(u8 *, s32, s32);

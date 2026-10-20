@@ -9,7 +9,12 @@ typedef float f32;
 typedef struct { f32 x, y, z; } V3;
 typedef struct { s32 x[49]; } S49;
 
-static void func_00396EC0(u8 *p) { p[0x13D] = 0; }
+static void func_00396EC0(u8 *p, u8 *q, u8 *r) {
+    *(f32 *)(p + 52) = *(f32 *)(q + 52);
+    *(f32 *)(p + 56) = *(f32 *)(q + 56);
+    *(f32 *)(p + 52) += *(f32 *)(r + 8);
+    *(f32 *)(p + 56) += *(f32 *)(r + 12);
+}
 
 void func_00397030(u8 *p, u8 *q, u8 *r) {
     extern void func_00396D10(u8 *, u8 *);
@@ -27,7 +32,7 @@ void func_00397030(u8 *p, u8 *q, u8 *r) {
     *(V3 *)(p + 0x50) = *(V3 *)(q + 0x50);
     *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
     p[0x13C] = 0;
-    func_00396EC0(p);
+    func_00396EC0(p, q, r);
     *(s8 *)(p + 0x31) = -0x10;
     r[7] = 0;
     r[0] = 0;
