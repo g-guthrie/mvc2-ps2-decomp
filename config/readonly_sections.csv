@@ -16,3 +16,4 @@ src/newlib_k_rem_pio2f_001154A8.c,.rodata,0x004AC108,0x4C
 src/newlib_logf_001132D0.c,.rodata,0x004ABB30,0x30
 src/newlib_k_tanf_00115E18.c,.rodata,0x004AC158,0x44
 src/newlib_atanf_00116CD0.c,.rodata,0x004AC290,0x54
+src/newlib_vfprintf_00120a30.c,.rodata,0x004AC9E0,0x204

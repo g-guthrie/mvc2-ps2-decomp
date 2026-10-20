@@ -6241,10 +6241,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/n1j.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/n1j.o"
 "$PYTHON" tools/verify_object.py "$BUILD/n1j.o" private/SLUS_204.86.rom --source src/n1j.c
-"$WIBO" "$SNCPP" -P src/n1k.c "$BUILD/n1k.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 "$BUILD/n1k.i" "$BUILD/n1k.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/n1k.o" "$BUILD/n1k.s"
-"$PYTHON" tools/verify_object.py "$BUILD/n1k.o" private/SLUS_204.86.rom --source src/n1k.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/q3.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/q3.o"
 "$PYTHON" tools/verify_object.py "$BUILD/q3.o" private/SLUS_204.86.rom --source src/q3.c
@@ -11045,14 +11041,6 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_sflags_0011B838.i" "$BUILD/newlib_sflags_0011B838.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_sflags_0011B838.o" "$BUILD/newlib_sflags_0011B838.s"
 "$PYTHON" tools/verify_object.py "$BUILD/newlib_sflags_0011B838.o" private/SLUS_204.86.rom --source src/newlib_sflags_0011B838.c
-"$WIBO" "$SNCPP" -P src/newlib_sbprintf_00120900.c "$BUILD/newlib_sbprintf_00120900.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_sbprintf_00120900.i" "$BUILD/newlib_sbprintf_00120900.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_sbprintf_00120900.o" "$BUILD/newlib_sbprintf_00120900.s"
-"$PYTHON" tools/verify_object.py "$BUILD/newlib_sbprintf_00120900.o" private/SLUS_204.86.rom --source src/newlib_sbprintf_00120900.c
-"$WIBO" "$SNCPP" -P src/newlib_vfprintf_entry_001209B8.c "$BUILD/newlib_vfprintf_entry_001209B8.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_vfprintf_entry_001209B8.i" "$BUILD/newlib_vfprintf_entry_001209B8.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_vfprintf_entry_001209B8.o" "$BUILD/newlib_vfprintf_entry_001209B8.s"
-"$PYTHON" tools/verify_object.py "$BUILD/newlib_vfprintf_entry_001209B8.o" private/SLUS_204.86.rom --source src/newlib_vfprintf_entry_001209B8.c
 "$WIBO" "$SNCPP" -P src/string_stream_printf_00122340.c "$BUILD/string_stream_printf_00122340.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/string_stream_printf_00122340.i" "$BUILD/string_stream_printf_00122340.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/string_stream_printf_00122340.o" "$BUILD/string_stream_printf_00122340.s"
@@ -11065,14 +11053,6 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_wsetup_00122560.i" "$BUILD/newlib_wsetup_00122560.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_wsetup_00122560.o" "$BUILD/newlib_wsetup_00122560.s"
 "$PYTHON" tools/verify_object.py "$BUILD/newlib_wsetup_00122560.o" private/SLUS_204.86.rom --source src/newlib_wsetup_00122560.c
-"$WIBO" "$SNCPP" -P src/newlib_vfprintf_exponent_00122260.c "$BUILD/newlib_vfprintf_exponent_00122260.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_vfprintf_exponent_00122260.i" "$BUILD/newlib_vfprintf_exponent_00122260.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_vfprintf_exponent_00122260.o" "$BUILD/newlib_vfprintf_exponent_00122260.s"
-"$PYTHON" tools/verify_object.py "$BUILD/newlib_vfprintf_exponent_00122260.o" private/SLUS_204.86.rom --source src/newlib_vfprintf_exponent_00122260.c
-"$WIBO" "$SNCPP" -P src/newlib_vfprintf_cvt_001220A0.c "$BUILD/newlib_vfprintf_cvt_001220A0.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_vfprintf_cvt_001220A0.i" "$BUILD/newlib_vfprintf_cvt_001220A0.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_vfprintf_cvt_001220A0.o" "$BUILD/newlib_vfprintf_cvt_001220A0.s"
-"$PYTHON" tools/verify_object.py "$BUILD/newlib_vfprintf_cvt_001220A0.o" private/SLUS_204.86.rom --source src/newlib_vfprintf_cvt_001220A0.c
 "$WIBO" "$SNCPP" -P src/newlib_fclose_0011B380.c "$BUILD/newlib_fclose_0011B380.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_fclose_0011B380.i" "$BUILD/newlib_fclose_0011B380.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_fclose_0011B380.o" "$BUILD/newlib_fclose_0011B380.s"
@@ -15810,5 +15790,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/nibble_remap_003eb4a0.c -c -lang c -O4,p -sdatathreshold 8 \
     -o "$BUILD/nibble_remap_003eb4a0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/nibble_remap_003eb4a0.o" private/SLUS_204.86.rom --source src/nibble_remap_003eb4a0.c
+
+"$WIBO" "$SNCPP" -P src/newlib_vfprintf_00120a30.c "$BUILD/newlib_vfprintf_00120a30.i"
+"$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_vfprintf_00120a30.i" "$BUILD/newlib_vfprintf_00120a30.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_vfprintf_00120a30.o" "$BUILD/newlib_vfprintf_00120a30.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_vfprintf_00120a30.o" private/SLUS_204.86.rom --source src/newlib_vfprintf_00120a30.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

@@ -11746,7 +11746,7 @@ func_0026E440,0x0026E440,0x98,src/n1g.c,complete
 func_00275590,0x00275590,0xA0,src/n1g.c,complete
 func_00191B60,0x00191B60,0x88,src/n1i.c,complete
 func_0028E530,0x0028E530,0x8C,src/n1j.c,complete
-func_001208B8,0x001208B8,0x48,src/n1k.c,complete
+func_001208B8,0x001208B8,0x48,src/newlib_vfprintf_00120a30.c,complete
 func_00284950,0x00284950,0x88,src/q3.c,complete
 func_00419EE0,0x00419EE0,0x90,src/q3.c,complete
 func_0029BAF0,0x0029BAF0,0x94,src/q3.c,complete
@@ -15884,10 +15884,10 @@ func_002192B0,0x002192B0,0x1D8,src/launch_motion_002192b0.c,complete
 func_001B6860,0x001B6860,0x168,src/event_clone_001b6860.c,complete
 func_001B69D0,0x001B69D0,0x184,src/event_clone_001b69d0.c,complete
 func_001B6DA0,0x001B6DA0,0x16C,src/event_clone_001b6da0.c,complete
-func_00122260,0x00122260,0xDC,src/newlib_vfprintf_exponent_00122260.c,complete
+func_00122260,0x00122260,0xDC,src/newlib_vfprintf_00120a30.c,complete
 func_001B65B0,0x001B65B0,0x108,src/event_clone_001b65b0.c,complete
 func_001B6410,0x001B6410,0x174,src/event_clone_001b6410.c,complete
-func_001220A0,0x001220A0,0x1C0,src/newlib_vfprintf_cvt_001220A0.c,complete
+func_001220A0,0x001220A0,0x1C0,src/newlib_vfprintf_00120a30.c,complete
 func_0020CB80,0x0020CB80,0x15C,src/edge_slide_0020cb80.c,complete
 func_001B61C0,0x001B61C0,0xD4,src/event_clone_001b61c0.c,complete
 func_00229910,0x00229910,0x138,src/capture_transition_00229910.c,complete
@@ -15915,11 +15915,11 @@ func_00200190,0x00200190,0x28,src/early_motion_initializers.c,complete
 func_002001C0,0x002001C0,0xA8,src/early_motion_initializers.c,complete
 func_00202110,0x00202110,0x20,src/early_motion_initializers.c,complete
 func_00202130,0x00202130,0xB8,src/early_motion_initializers.c,complete
-func_00120900,0x00120900,0xB4,src/newlib_sbprintf_00120900.c,complete
+func_00120900,0x00120900,0xB4,src/newlib_vfprintf_00120a30.c,complete
 func_0020A210,0x0020A210,0x20,src/side_shift_0020a260.c,complete
 func_0020A230,0x0020A230,0x24,src/side_shift_0020a260.c,complete
 func_0020A260,0x0020A260,0xB8,src/side_shift_0020a260.c,complete
-func_001209B8,0x001209B8,0x74,src/newlib_vfprintf_entry_001209B8.c,complete
+func_001209B8,0x001209B8,0x74,src/newlib_vfprintf_00120a30.c,complete
 func_00205C10,0x00205C10,0x14C,src/repeating_child_effect_00205c10.c,complete
 func_00206380,0x00206380,0x150,src/counter_effects_00206380.c,complete
 func_0024FAB0,0x0024FAB0,0x24,src/initial_launches_0024fae0.c,complete
@@ -17408,3 +17408,4 @@ func_00379A60,0x00379A60,0x204,src/owner_countdown_animation_00379a60.c,complete
 func_003BD4C0,0x003BD4C0,0x190,src/owner_contact_filter_003bd4c0.c,complete
 func_003EB4A0,0x003EB4A0,0x128,src/nibble_remap_003eb4a0.c,complete
 func_00191600,0x00191600,0x168,src/w184_i.c,complete
+func_00120A30,0x00120A30,0x1670,src/newlib_vfprintf_00120a30.c,complete
