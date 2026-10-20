@@ -171,7 +171,13 @@ void func_0019E580(u8 *p)
     *(f32 *)(p + 0x38) = *(f32 *)(q + 0x38);
 }
 
-static void func_0019EA00(void *p, void *q) { D_004C2840 = 0; }
+static void func_0019EA00(u8 *a0, void *q) {
+    u8 *owner = *(u8 **)(a0 + 20);
+    *(s16 *)(a0 + 320) = *(s16 *)(owner + 320);
+    *(s8 *)(a0 + 49) = -2;
+    *(f32 *)(a0 + 52) = *(f32 *)(owner + 52);
+    *(f32 *)(a0 + 56) = *(f32 *)(owner + 56);
+}
 extern void func_0019F3A0(void *p, void *q);
 
 void func_0019EA30(u8 *p, void *q)
