@@ -6,7 +6,15 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-static s32 func_0028A490(u8 *p) { return p[0x10] != 0; }
+static s32 func_0028A490(u8 *p) {
+    u8 state = p[0x1E6];
+    u8 *owner = *(u8 **)(p + 0x220);
+    if ((state == 0 && *(f32 *)(p + 0x34) < *(f32 *)(owner + 0x34)) ||
+        (state != 0 && *(f32 *)(p + 0x34) > *(f32 *)(owner + 0x34))) {
+        return 1;
+    }
+    return 0;
+}
 extern void func_0028A530(u8 *p);
 extern void func_0028B0B0(u8 *p);
 extern void func_001757E0(u8 *p, s32 a, s32 b);
