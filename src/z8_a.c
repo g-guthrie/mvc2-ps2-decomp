@@ -8,8 +8,17 @@ typedef float f32;
 typedef struct { f32 x, y, z; } V3;
 
 extern V3 D_004B338C;
+extern f32 D_004B3380[];
 
-static void func_00144CB0(u8 *p) { *(s16 *)(p + 0x20) = 0; }
+static void func_00144CB0(u8 *p) {
+    f32 *b = D_004B3380 + 3;
+    *(f32 *)(p + 0x34) = D_004B3380[0] +
+        (f32)*(s16 *)(p + 0x1C) * (b[0] - D_004B3380[0]) / 30.0f;
+    *(f32 *)(p + 0x38) = D_004B3380[1] +
+        (f32)*(s16 *)(p + 0x1C) * (b[1] - D_004B3380[1]) / 30.0f;
+    *(f32 *)(p + 0x3C) = D_004B3380[2] +
+        (f32)*(s16 *)(p + 0x1C) * (b[2] - D_004B3380[2]) / 30.0f;
+}
 
 void func_00144F50(u8 *p) {
     s16 v = *(s16 *)(p + 0x1C) + 1;
