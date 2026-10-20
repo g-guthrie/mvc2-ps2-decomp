@@ -20,17 +20,9 @@ s32 func_003F1950(s32 a) {
 }
 
 typedef struct { u8 pad[4]; u32 *f4; u8 pad2[0x12]; s16 f1a; } S;
-static u64 *func_00420A00(S *p) { return *(u64 **)((u8 *)p + 0x10); }
-static s32 func_00420A20(S *p, s32 k) { return *(s32 *)((u8 *)p + 0x14) == k; }
-s32 func_00420B30(S *p, u64 v, s32 n) {
-    u64 *q = func_00420A00(p);
-    if (func_00420A20(p, 2) == 0) return 0;
-    p->f4 = (u32 *)q;
-    q[0] = ((u64)0x4000000 << 32) | (u32)0x8000 | ((u64)n << 60);
-    q[1] = v;
-    p->f1a = n;
-    return 1;
-}
+
+
+
 
 typedef struct { u8 pad0; s8 f1; u16 f2; } K;
 void func_003EE480(K *k, u8 c) {

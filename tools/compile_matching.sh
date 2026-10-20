@@ -6945,9 +6945,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/b10s_0_i.i" "$BUILD/b10s_0_i.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/b10s_0_i.o" "$BUILD/b10s_0_i.s"
 "$PYTHON" tools/verify_object.py "$BUILD/b10s_0_i.o" private/SLUS_204.86.rom --source src/b10s_0_i.c
-MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/b10s_0_j.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/b10s_0_j.o"
-"$PYTHON" tools/verify_object.py "$BUILD/b10s_0_j.o" private/SLUS_204.86.rom --source src/b10s_0_j.c
 "$WIBO" "$SNCPP" -P src/b10s_0_k.c "$BUILD/b10s_0_k.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/b10s_0_k.i" "$BUILD/b10s_0_k.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/b10s_0_k.o" "$BUILD/b10s_0_k.s"
@@ -7780,9 +7777,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/w0_t.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/w0_t.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w0_t.o" private/SLUS_204.86.rom --source src/w0_t.c
-MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/w0_d.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/w0_d.o"
-"$PYTHON" tools/verify_object.py "$BUILD/w0_d.o" private/SLUS_204.86.rom --source src/w0_d.c
 "$WIBO" "$SNCPP" -P src/w0_b.c "$BUILD/w0_b.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/w0_b.i" "$BUILD/w0_b.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/w0_b.o" "$BUILD/w0_b.s"

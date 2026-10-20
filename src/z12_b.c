@@ -115,32 +115,8 @@ typedef struct { f32 x, y, z; } V47;
 typedef struct { V47 v0; V47 v1; u16 h18; u8 pad1a; s8 b1b; } T47;
 extern T47 D_00442B50[];
 extern u32 D_004C2804;
-static void func_00147D20(void) { D_004C2804 = 0; }
-void func_00147E50(u8 *p) {
-    extern void func_00147920(u8 *, s32, s32);
-    extern void func_00147AB0(s32, s32);
-    extern void func_00147870(s32, s32);
-    T47 *e;
-    p[4]++;
-    p[0x13C] = 1;
-    e = &D_00442B50[p[0x20]];
-    *(u16 *)(p + 0xCC) = e->h18;
-    *(u32 *)(p + 0x84) = D_004C2804;
-    *(V47 *)(p + 0x34) = e->v0;
-    *(V47 *)(p + 0x50) = e->v1;
-    *(u32 *)(p + 0xD0) |= 0x420;
-    *(u32 *)(p + 0xD4) = 0;
-    *(u32 *)(p + 0x74) = 0x3F800000;
-    func_00147D20();
-    func_00147920(p, 3, p[0x20]);
-    if (e->b1b != 0) {
-        if (((s8)e->b1b & 0x80) != 0) {
-            func_00147AB0(5, (s8)p[0x20]);
-        } else {
-            func_00147870(6, (s8)p[0x20]);
-        }
-    }
-}
+
+
 
 extern u8 *D_004C29FC;
 void func_00399EC0(PH *p) {

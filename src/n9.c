@@ -38,18 +38,9 @@ void func_003CC820(u8 *p, s32 b) {
     }
 }
 
-static s32 func_0024C590(u8 *p) { P(u8,0x80) = 0; return 0; }
+
 extern void func_00126400();
-void func_0024C4F0(u8 *p) {
-    P(u8,0x40C) = 2;
-    P(u8,0x33C) = 5;
-    if (P(s8,0x151)) func_00175700(p);
-    if (func_0024C590(p) < 0) {
-        u32 t = P(u8,6);
-        P(u8,6) = t + 1;
-        func_00126400(p);
-    }
-}
+
 
 extern void func_00158220(V3 *);
 void func_001581C0(u8 *p, f32 *q) {
