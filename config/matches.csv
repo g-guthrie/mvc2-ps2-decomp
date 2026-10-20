@@ -17428,3 +17428,5 @@ func_001431A0,0x001431A0,0x1C4,src/render_matrix_001431a0.c,complete
 func_003421E0,0x003421E0,0xD4,src/bobbing_position_003421e0.c,complete
 func_00102A08,0x00102A08,0x48,src/runtime_flag_reset_00102a08.c,complete
 func_0034C720,0x0034C720,0xEC,src/owner_spacing_update_0034c720.c,complete
+func_00102A50,0x00102A50,0x7C,src/runtime_address_modes_00102a50.c,complete
+func_00102AD0,0x00102AD0,0x80,src/runtime_address_modes_00102a50.c,complete

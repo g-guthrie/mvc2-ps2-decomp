@@ -15886,4 +15886,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/owner_spacing_update_0034c720.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_spacing_update_0034c720.o" private/SLUS_204.86.rom --source src/owner_spacing_update_0034c720.c
 
+"$WIBO" "$SNCPP" -P src/runtime_address_modes_00102a50.c "$BUILD/runtime_address_modes_00102a50.i"
+"$WIBO" "$EE29CC1" "$BUILD/runtime_address_modes_00102a50.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/runtime_address_modes_00102a50.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/runtime_address_modes_00102a50.o" "$BUILD/runtime_address_modes_00102a50.s"
+"$PYTHON" tools/verify_object.py "$BUILD/runtime_address_modes_00102a50.o" private/SLUS_204.86.rom --source src/runtime_address_modes_00102a50.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
