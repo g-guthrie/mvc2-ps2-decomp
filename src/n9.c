@@ -7,11 +7,15 @@ typedef signed int s32;
 typedef float f32;
 typedef struct { f32 x, y, z; } V3;
 
-static void func_0034CF30(u8 *p, u8 *q) { p[0x40] = 0; }
+static void func_0034CF30(u8 *p) {
+    u8 *q = *(u8 **)(p + 0x18);
+    *(f32 *)(p + 0x34) = *(f32 *)(q + 0x34) + *(f32 *)(p + 0x64);
+    *(f32 *)(p + 0x38) = *(f32 *)(q + 0x38) + *(f32 *)(p + 0x70);
+}
 extern void func_0034D080(u8 *);
 void func_0034D200(u8 *p) {
     u8 *q = *(u8 **)(p + 0x18);
-    func_0034CF30(p, q);
+    func_0034CF30(p);
     if (q[0x22] != 0xFF) {
         u32 t = p[5];
         p[5] = t + 1;
