@@ -162,12 +162,12 @@ void func_002F8BF0(S2F8BF0 *p) {
 
 typedef struct E43F490 { u32 a[3]; } E43F490;
 extern E43F490 D_0043F490[];
-void func_00416AE0(s32 a);
+extern s32 func_00416AE0(const void *);
 void func_00416F80(void *p);
 void func_004171E0(void);
 void func_001227F0(void *a, void *b, u32 c);
-void func_00416D40(void *p);
-void func_00416CC0(s32 a);
+extern void *func_00416D40(void *);
+extern s32 func_00416CC0(s32);
 
 void func_00137DF0(u8 *p) {
     func_00416AE0(0);

@@ -7,7 +7,7 @@ typedef unsigned int u32;
 typedef float f32;
 struct RuntimeVector3 { f32 x, y, z; };
 
-extern s32 func_00416AE0(s32);
+extern s32 func_00416AE0(const void *);
 extern void func_00417A50(f32, f32, f32);
 extern void func_00417170(const struct RuntimeVector3 *);
 extern void func_004172E0(u32);
@@ -15,7 +15,7 @@ extern void func_00417270(u32);
 extern void func_00417200(const struct RuntimeVector3 *);
 extern f32 func_001519E0(u8 *);
 extern void func_00417FC0(f32);
-extern void *func_00416D40(f32 *);
+extern void *func_00416D40(void *);
 extern void func_003DDAD0(u32 *, f32, f32, f32);
 extern void func_003DDDC0(f32 *, f32, f32, f32);
 extern void func_003DD260(f32 *);

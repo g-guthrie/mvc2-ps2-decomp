@@ -25,16 +25,24 @@ existing caller modules use consistent word-angle declarations, including
 the direction helpers at 001227A0 and 001227F0. Existing callers of the
 latter already pass a word angle; its old pointer formal was inaccurate.
 
-All 29 previously credited functions in the four affected source units
+All 52 previously credited functions in the seven affected source units
 were independently recompiled with their production recipes and remain
 byte-exact. The new 452-byte routine also passes whole-span relocated-byte
-verification. A private negative control restored the narrow caller
+verification, for 53 verified functions across eight source units. A private negative control restored the narrow caller
 prototypes: the verifier rejected precisely the two LHU instructions that
 then replaced native LW loads. No verifier rule was changed.
 
+A follow-up native-body audit establishes that push takes a nullable
+pointer, not a scalar selector. Its nonnull path reads one float at each
+0x40-byte stride; all four reconstructed push callers currently pass null.
+Snapshot writes 16 contiguous output floats and returns a backup-slot
+pointer; pop returns an integer status. The caller declarations now agree
+on these pointer/result interfaces. This follow-up adds no matching bytes.
+
 Three aliases identify existing helper entries at 00417170, 00417200 and
-00417FC0. They add no matching bytes or data ownership. The other 13,725
-pinned source/object pairs and all 37 shared headers remain unchanged.
+00417FC0. They add no matching bytes or data ownership. The follow-up checked 13,726 other pinned
+source/object pairs and all 37 shared headers against checkpoint
+`11d63677`; none changed.
 No assembly, barriers, fake helper effects or padding were introduced.
 
 A fresh executable split, production coverage, catalog validation and the

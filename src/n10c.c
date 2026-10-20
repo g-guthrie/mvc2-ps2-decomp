@@ -104,13 +104,13 @@ u8 func_0018AC30(u8 *p) {
 extern u8 D_004C27D0;
 extern u8 *D_004C283C;
 extern void func_00122FE0();
-extern void func_00416AE0(s32 a);
+extern s32 func_00416AE0(const void *);
 extern void func_004171E0();
 extern void func_001532F0();
 extern void func_0011D8F8(void *p, s32 a, s32 b);
 extern void func_003DD260(void *p);
 extern void func_001538B0(void *p, s32 a, void *q);
-extern void func_00416CC0(s32 a);
+extern s32 func_00416CC0(s32);
 
 void func_00153250(void) {
     u8 t[0x40];
