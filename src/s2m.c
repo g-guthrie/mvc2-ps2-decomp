@@ -33,10 +33,9 @@ extern s32 func_003EA130(E64 *);
 
 typedef struct { s32 a; s32 n; } H1530;
 typedef struct { u8 t; u8 p[7]; s32 len; } Ent;
-extern H1530 D_0048F000;
-static H1530 *func_003F1530(void) { return &D_0048F000; }
+static H1530 *func_003F1530(void *file) { return (H1530 *)file; }
 Ent *func_003F1540(Ent *e, s32 t) {
-    H1530 *h = func_003F1530();
+    H1530 *h = func_003F1530(e);
     s32 n = h->n;
     u32 i;
     e = (Ent *)((char *)e + 0xC);

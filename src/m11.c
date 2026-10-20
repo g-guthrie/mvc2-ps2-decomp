@@ -195,7 +195,10 @@ void func_001B8710(u8 *p) {
     if ((s8)func_00175670(p) < 0) func_001B87B0(p);
 }
 
-static void func_00191F50(void *p) {}
+static void func_00191F50(u8 *p) {
+    if (*(f32 *)(p + 0x38) <= 34.28571319580078125f + *(f32 *)(p + 0x430))
+        *(f32 *)(p + 0x38) = 34.28571319580078125f + *(f32 *)(p + 0x430);
+}
 extern void func_00191F20();
 
 void func_00192490(u8 *p) {

@@ -216,7 +216,30 @@ void func_00316730(u8 *p, u8 *q) {
     }
 }
 
-static void func_001CB680(u8 *p) { *(volatile s32 *)0x10000 = 1; }
+static void func_001CB680(u8 *p, u8 *o) {
+    s32 n;
+    u32 *d, *s;
+    p[4]++;
+    s = (u32 *)(o + 236);
+    d = (u32 *)(p + 236);
+    n = 49;
+    do {
+        *d = *s;
+        n--;
+        s++;
+        d++;
+    } while (n > 0);
+    p[316] = 1;
+    p[2] = o[2];
+    p[1] = o[1];
+    *(f32 *)(p + 80) = *(f32 *)(o + 80);
+    *(f32 *)(p + 84) = *(f32 *)(o + 84);
+    p[439] = o[439];
+    p[440] = o[440];
+    *(s8 *)(p + 48) = *(s8 *)(o + 48);
+    *(V3 *)(p + 80) = *(V3 *)(o + 80);
+    *(s8 *)(p + 36) = *(s8 *)(o + 36);
+}
 
 void func_001CB920(u8 *a, u8 *b) {
     extern void func_001754A0();
@@ -225,7 +248,7 @@ void func_001CB920(u8 *a, u8 *b) {
     extern void func_001CB610();
     s16 v;
     if (a[4] == 0) {
-        func_001CB680(a);
+        func_001CB680(a, b);
         func_001754A0(a, 0x1B, 0x25);
         *(s16 *)(a + 0x1C) = 2;
         *(s8 *)(a + 0x31) = -1;

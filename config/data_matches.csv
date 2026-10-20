@@ -152,6 +152,8 @@ data_u32_0043CCB0,0x0043CCB0,0x8,src/data/data_u32_0043CCB0.c,complete,placehold
 jtbl_0043CCB8,0x0043CCB8,0xC,src/data/jtbl_0043CCB8.c,complete,placeholder
 data_u32_0043CCC4,0x0043CCC4,0x1C,src/data/data_u32_0043CCC4.c,complete,placeholder
 gMvc2ModeSelectDispatch_0043CCE0,0x0043CCE0,0x24,src/data/mvc2_mode_select_dispatch_0043CCE0.c,complete,reconstructed
+data_callback_slot_0043CD08,0x0043CD08,0x4,src/data/data_callback_slot_0043CD08.c,complete,reconstructed
+data_callback_slot_0043CD0C,0x0043CD0C,0x4,src/data/data_callback_slot_0043CD0C.c,complete,reconstructed
 data_u32_0043CD10,0x0043CD10,0x90,src/data/data_u32_0043CD10.c,complete,placeholder
 jtbl_0043CDA0,0x0043CDA0,0xF5C,src/data/jtbl_0043CDA0.c,complete,placeholder
 data_s8_0043DD00,0x0043DD00,0xA,src/data/data_s8_0043DD00.c,complete,reconstructed

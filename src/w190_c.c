@@ -8,7 +8,16 @@ typedef float f32;
 
 /* Metrowerks 3.0.3: ./try.sh src/w190_c.c "-O3 -sdatathreshold 0" */
 
-static void func_002555E0(u8 *p) { *(s32 *)(p + 0x100) = 0; }
+static void func_002555E0(u8 *p) {
+    if (*(s16 *)(p + 0x2B8) > 0) {
+        p[1037] = 0;
+        p[1036] = 0;
+        p[828] = 5;
+    } else {
+        p[1036] = 2;
+        p[828] = 5;
+    }
+}
 extern s32 func_00175700(u8 *);
 extern void func_00175C00(u8 *, s32);
 extern void func_001757E0(u8 *, s32, s32);

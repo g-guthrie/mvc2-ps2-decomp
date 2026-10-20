@@ -152,6 +152,8 @@ data_u32_0043CCB0,0x0043CCB0,0x8,.data,src/data/data_u32_0043CCB0.c,initialized_
 jtbl_0043CCB8,0x0043CCB8,0xC,.rodata,src/data/jtbl_0043CCB8.c,jump_table
 data_u32_0043CCC4,0x0043CCC4,0x1C,.data,src/data/data_u32_0043CCC4.c,initialized_u32_table
 gMvc2ModeSelectDispatch_0043CCE0,0x0043CCE0,0x24,.rodata,src/data/mvc2_mode_select_dispatch_0043CCE0.c,mode_select_dispatch
+data_callback_slot_0043CD08,0x0043CD08,0x4,.data,src/data/data_callback_slot_0043CD08.c,callback_pointer_slot
+data_callback_slot_0043CD0C,0x0043CD0C,0x4,.data,src/data/data_callback_slot_0043CD0C.c,callback_pointer_slot
 data_u32_0043CD10,0x0043CD10,0x90,.data,src/data/data_u32_0043CD10.c,initialized_u32_table
 jtbl_0043CDA0,0x0043CDA0,0xF5C,.rodata,src/data/jtbl_0043CDA0.c,jump_table
 data_s8_0043DD00,0x0043DD00,0xA,.data,src/data/data_s8_0043DD00.c,bounded_signed_byte_lookup

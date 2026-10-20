@@ -12,11 +12,17 @@ extern void func_00183920();
 extern void func_001E3710();
 extern void func_001830D0();
 extern void func_0036BFF0();
+extern u8 *D_004C2794;
 static void func_002CFA20(u8 *p) {
-    u32 t = p[0x15B];
-    if (t != 0) {
-        p[0x1B5] = t;
-        *(u16 *)(p + 0x1C0) = 0;
+    s32 command = p[0x15B];
+    if (command) {
+        u32 offset;
+        p[0x1B5] = command;
+        p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+        *(s32 *)(p + 0x1D8) = 0;
+        offset = p[2] * 2;
+        offset += (u32)D_004C2794;
+        ++*(s16 *)(offset + 0x7C);
         p[0x15B] = 0;
     }
 }

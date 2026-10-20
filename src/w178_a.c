@@ -70,9 +70,9 @@ void func_00217EA0(u8 *p) {
 
 extern f32 D_00444350[];
 static void func_00150520(u8 *o, f32 a, f32 b, f32 c) {
-    *(f32 *)(o + 0x40) = a;
-    *(f32 *)(o + 0x44) = b;
-    *(f32 *)(o + 0x48) = c;
+    *(f32 *)(o + 0x78) = a;
+    *(f32 *)(o + 0x7C) = b;
+    *(f32 *)(o + 0x80) = c;
 }
 
 void func_001508D0(u8 *a, s16 b, s32 c, f32 x, f32 y, f32 z) {
