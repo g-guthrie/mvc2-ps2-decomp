@@ -11,9 +11,13 @@ extern u8 D_00458A70[];
 extern u8 D_00458B00[];
 extern u8 D_00458B10[];
 
-extern s32 D_004C2840;
 static s32 func_002AB9A0(u8 *p) {
-    return D_004C2840 != 0;
+    if (p[0x20D] != 2) return 1;
+    if (p[0x210] == 0) {
+        if (*(s8 *)(p + 0x1E8) != 0) return 0;
+        *(s8 *)(p + 0x1E8) += 1;
+    }
+    return 1;
 }
 
 s32 func_002ABDA0(u8 *p) {
