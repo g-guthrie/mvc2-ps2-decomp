@@ -520,7 +520,25 @@ void func_0033E090(u8 *p) {
 }
 
 extern f32 D_0045A220[];
-static void func_002CF1D0(u8 *p) { p[0x10] = 1; }
+static void func_002CF1D0(u8 *p) {
+    u8 c = p[0x15B];
+    if (c > 0) {
+        if (!(*(f32 *)(p + 0x38) < 720.0f + *(f32 *)(p + 0x430))) {
+            p[0x1B5] = 0x4E;
+            p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+            *(s32 *)(p + 0x1D8) = 0;
+            D_004C2794->f7c[p[2]]++;
+            *(s16 *)(p + 0x1C0) = 0;
+        } else {
+            p[0x1B5] = c;
+            p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
+            *(s32 *)(p + 0x1D8) = 0;
+            D_004C2794->f7c[p[2]]++;
+            *(s16 *)(p + 0x1C0) = 0x10;
+        }
+        p[0x15B] = 0;
+    }
+}
 void func_002CF350(u8 *p) {
     extern s32 func_00175700(u8 *);
     extern void func_001830D0(u8 *, f32 *, s32);
