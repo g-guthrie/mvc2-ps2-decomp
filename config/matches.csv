@@ -17127,3 +17127,7 @@ func_001C9530,0x001C9530,0x104,src/payload_state_initializers_00199220.c,complet
 func_001941C0,0x001941C0,0x140,src/positioned_payload_initializers_001941c0.c,complete
 func_00194480,0x00194480,0x150,src/positioned_payload_initializers_001941c0.c,complete
 func_001BFB30,0x001BFB30,0xF0,src/alpha_payload_initializer_001bfb30.c,complete
+func_00198730,0x00198730,0xEC,src/copy_owner_chain_001a2960.c,complete
+func_001BAA10,0x001BAA10,0xF4,src/copy_owner_chain_001a2960.c,complete
+func_001CBEF0,0x001CBEF0,0x10C,src/payload_setup_callbacks_001cbef0.c,complete
+func_001E0D90,0x001E0D90,0x110,src/payload_setup_callbacks_001cbef0.c,complete

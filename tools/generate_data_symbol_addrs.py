@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 SYMBOL_RE = re.compile(
-    r"\b(?:(?:func|lbl|jtbl|g)[A-Za-z0-9_]*|data_[A-Za-z0-9_]*)_([0-9A-Fa-f]{8})\b"
+    r"\b(?:(?:func|residual|lbl|jtbl|g)[A-Za-z0-9_]*|data_[A-Za-z0-9_]*)_([0-9A-Fa-f]{8})\b"
 )
 
 

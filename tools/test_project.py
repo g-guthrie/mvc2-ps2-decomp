@@ -254,6 +254,8 @@ class ProjectTest(unittest.TestCase):
                 "extern char gMvc2Scratchpad_70000000[];\n"
                 "extern char jtblTyped_00464100[];\n"
                 "extern void func_00163F40(void);\n"
+                "extern void residual_003AFA90(unsigned char *);\n"
+                "void (*jtbl_004C1F78)(unsigned char *) = residual_003AFA90;\n"
                 "int ordinary;\n",
                 encoding="utf-8",
             )
@@ -263,6 +265,8 @@ class ProjectTest(unittest.TestCase):
                 "gMvc2Scratchpad_70000000": 0x70000000,
                 "jtblTyped_00464100": 0x00464100,
                 "func_00163F40": 0x00163F40,
+                "residual_003AFA90": 0x003AFA90,
+                "jtbl_004C1F78": 0x004C1F78,
             })
 
 
