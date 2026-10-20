@@ -119,3 +119,11 @@ void func_003C0FC0(u8 *p, void *owner) {
     *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
     jtbl_004C20E8[p[5]](p, owner);
 }
+
+extern OwnerCallback D_004BF794[] __attribute__((section(".sdata")));
+void func_001A7500(u8 *p, void *owner) {
+ u8 *q=owner;
+ *(float *)(p+0x34)=*(float *)(q+0x34)+*(float *)(p+0x5C);
+ *(float *)(p+0x38)=*(float *)(q+0x38)+*(float *)(p+0x60);
+ D_004BF794[p[5]](p,owner);
+}

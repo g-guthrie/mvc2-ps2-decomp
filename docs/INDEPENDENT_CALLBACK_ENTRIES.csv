@@ -352,3 +352,7 @@ func_001D9550,0x001D9550,0x130,func_001D9530,jtbl_0044E850,0x0044E850,src/payloa
 func_001D8E10,0x001D8E10,0x144,func_001D8DF0,jtbl_0044E7E0,0x0044E7E0,src/payload_motion_initializers_001d3240.c
 func_001D5B80,0x001D5B80,0x164,func_001D5B60,jtbl_0044E550,0x0044E550,src/payload_motion_initializers_001d3240.c
 func_001DA290,0x001DA290,0x160,func_001DA270,jtbl_0044E8D0,0x0044E8D0,src/payload_motion_initializers_001d3240.c
+func_001A7340,0x001A7340,0x170,func_001A7320,jtbl_0044B440,0x0044B440,src/payload_motion_initializers_001d3240.c
+func_001DE300,0x001DE300,0x164,func_001DE2E0,jtbl_0044EE10,0x0044EE10,src/payload_motion_initializers_001d3240.c
+func_001BF6A0,0x001BF6A0,0x154,func_001BF5C0,jtbl_0044C490,0x0044C490,src/copy_owner_chain_001a2960.c
+func_001A7500,0x001A7500,0x3C,func_001A74B0,jtbl_0044B440,0x0044B444,src/owner_callback_dispatch_prefixes.c

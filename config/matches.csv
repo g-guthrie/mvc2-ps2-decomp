@@ -17148,3 +17148,7 @@ func_001D9550,0x001D9550,0x130,src/payload_motion_initializers_001d3240.c,comple
 func_001D8E10,0x001D8E10,0x144,src/payload_motion_initializers_001d3240.c,complete
 func_001D5B80,0x001D5B80,0x164,src/payload_motion_initializers_001d3240.c,complete
 func_001DA290,0x001DA290,0x160,src/payload_motion_initializers_001d3240.c,complete
+func_001A7340,0x001A7340,0x170,src/payload_motion_initializers_001d3240.c,complete
+func_001DE300,0x001DE300,0x164,src/payload_motion_initializers_001d3240.c,complete
+func_001BF6A0,0x001BF6A0,0x154,src/copy_owner_chain_001a2960.c,complete
+func_001A7500,0x001A7500,0x3C,src/owner_callback_dispatch_prefixes.c,complete
