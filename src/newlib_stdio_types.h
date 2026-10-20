@@ -39,7 +39,7 @@ struct __sFILE {
     void *_cookie;
     int (*_read)(void *, char *, int);
     int (*_write)(void *, const char *, int);
-    s32 (*_seek)(void *, s32, int);
+    long long (*_seek)(void *, long long, int);
     int (*_close)(void *);
     SBuf _ub;
     unsigned char *_up;
