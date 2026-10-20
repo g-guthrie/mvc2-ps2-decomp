@@ -17302,3 +17302,5 @@ func_00112DD0,0x00112DD0,0x31C,src/newlib_sqrt_00112DD0.c,complete
 func_00114228,0x00114228,0xCC,src/newlib_sqrtf_00114228.c,complete
 func_001130F0,0x001130F0,0x1E0,src/newlib_atan2f_001130F0.c,complete
 func_00113698,0x00113698,0x7E0,src/newlib_powf_00113698.c,complete
+func_00112818,0x00112818,0x5B8,src/newlib_rem_pio2_00112818.c,complete
+func_00113E78,0x00113E78,0x3B0,src/newlib_rem_pio2f_00113E78.c,complete

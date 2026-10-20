@@ -15491,4 +15491,16 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -mips4 -G0 -o "$BUILD/newlib_powf_00113698.o" "$BUILD/newlib_powf_00113698.s"
 "$PYTHON" tools/verify_object.py "$BUILD/newlib_powf_00113698.o" private/SLUS_204.86.rom --source src/newlib_powf_00113698.c
 
+
+# Complete fdlibm double and PS2 float argument reduction.
+"$WIBO" "$SNCPP" -P src/newlib_rem_pio2_00112818.c "$BUILD/newlib_rem_pio2_00112818.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_rem_pio2_00112818.i" "$BUILD/newlib_rem_pio2_00112818.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_rem_pio2_00112818.o" "$BUILD/newlib_rem_pio2_00112818.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_rem_pio2_00112818.o" private/SLUS_204.86.rom --source src/newlib_rem_pio2_00112818.c
+
+"$WIBO" "$SNCPP" -P src/newlib_rem_pio2f_00113E78.c "$BUILD/newlib_rem_pio2f_00113E78.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_rem_pio2f_00113E78.i" "$BUILD/newlib_rem_pio2f_00113E78.s"
+"$WIBO" "$SNAS" -mips4 -G0 -o "$BUILD/newlib_rem_pio2f_00113E78.o" "$BUILD/newlib_rem_pio2f_00113E78.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_rem_pio2f_00113E78.o" private/SLUS_204.86.rom --source src/newlib_rem_pio2f_00113E78.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

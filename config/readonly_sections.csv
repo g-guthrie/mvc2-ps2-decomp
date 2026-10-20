@@ -10,3 +10,5 @@ src/newlib_atan2_00111588.c,.rodata,0x004AB660,0xB0
 src/newlib_atan_001160A0.c,.rodata,0x004AC1A0,0xB0
 src/newlib_pow_001118C8.c,.rodata,0x004AB710,0x1D0
 src/newlib_powf_00113698.c,.rodata,0x004ABB78,0x88
+src/newlib_rem_pio2_00112818.c,.rodata,0x004AB8E0,0x250
+src/newlib_rem_pio2f_00113E78.c,.rodata,0x004ABC00,0x3C0
