@@ -9149,7 +9149,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/q9_e.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/q9_e.o"
 "$PYTHON" tools/verify_object.py "$BUILD/q9_e.o" private/SLUS_204.86.rom --source src/q9_e.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/q9_f.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/q9_f.o"
+    src/q9_f.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/q9_f.o"
 "$PYTHON" tools/verify_object.py "$BUILD/q9_f.o" private/SLUS_204.86.rom --source src/q9_f.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/q0_g.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/q0_g.o"

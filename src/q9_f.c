@@ -31,7 +31,10 @@ void func_0039C790(u8 *p) {
 
 
 static void func_003AE2C0(u8 *p) { *(u32 *)(p + 0x100) = 0; }
-static void func_003AE370(void) { }
+extern s16 D_004C1F50;
+static void func_003AE370(u8 *p) {
+    *(s16 *)(p + 30) = (&D_004C1F50)[*(s32 *)(p + 208)];
+}
 
 void func_003AE390(u8 *p) {
     extern void func_001757E0();
@@ -50,7 +53,7 @@ void func_003AE390(u8 *p) {
     p[0x24] = 0;
     *(u32 *)(p + 0xD0) = 0;
     func_003AE2C0(p);
-    func_003AE370();
+    func_003AE370(p);
     p[0x168] = 2;
     if (p[0x21] != 0) p[0x168] = 4;
     func_001757E0(p, 0x13, p[0x168]);
