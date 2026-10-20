@@ -1,3 +1,4 @@
+#include "cri_sj_memory_types.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -723,7 +724,7 @@ s32 func_0040EEA8(void) { return 16; }
 
 void func_0040EEF8(void) {}
 
-s32 func_0040F1B8(void *p) { return *(s32 *)((u8 *)p + 8); }
+void *func_0040F1B8(CriSjMemory *p) { return p->uuid; }
 
 s32 func_0040F520(void *p) { return *(s32 *)((u8 *)p + 20); }
 

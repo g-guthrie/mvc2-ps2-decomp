@@ -7,14 +7,6 @@ extern void func_00423750(void);
 
 f32 func_00404CC0(void) { return 0.0f; }
 
-s32 func_0040F1D0(s32 *p)
-{
-    s32 v = p[6];
-    p[4] = 0;
-    p[3] = v;
-    return v;
-}
-
 s32 func_0040F728(s32 *p)
 {
     s32 v = p[8];

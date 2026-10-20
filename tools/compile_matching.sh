@@ -30,7 +30,7 @@ mkdir -p "$BUILD"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/main.c -c -lang c $MATCH_FLAGS -o "$BUILD/main.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/simple_leaves.c -c -lang c $MATCH_FLAGS -o "$BUILD/simple_leaves.o"
+    src/simple_leaves.c -c -lang c $MATCH_FLAGS -i src -o "$BUILD/simple_leaves.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/state_dispatch_001712A0.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/state_dispatch_001712A0.o"
@@ -152,7 +152,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/leaf_batch_c.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/leaf_batch_c.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/straight_leaves.c -c -lang c $MATCH_FLAGS -o "$BUILD/straight_leaves.o"
+    src/straight_leaves.c -c -lang c $MATCH_FLAGS -i src -o "$BUILD/straight_leaves.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/tail_leaves.c -c -lang c $MATCH_FLAGS -o "$BUILD/tail_leaves.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -16044,5 +16044,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_command_replies.i" -O2 -G0 -ffunction-sections -fno-strict-aliasing -quiet -o "$BUILD/sony29_rpc_command_replies.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_command_replies.o" "$BUILD/sony29_rpc_command_replies.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_command_replies.o" private/SLUS_204.86.rom --source src/sony29_rpc_command_replies.c
+
+# CRI SJ memory methods: shared void reset and typed can-get interface.
+"$WIBO" "$SNCPP" -P src/cri_sj_memory_methods.c "$BUILD/cri_sj_memory_methods.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/cri_sj_memory_methods.i" "$BUILD/cri_sj_memory_methods.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/cri_sj_memory_methods.o" "$BUILD/cri_sj_memory_methods.s"
+"$PYTHON" tools/verify_object.py "$BUILD/cri_sj_memory_methods.o" private/SLUS_204.86.rom --source src/cri_sj_memory_methods.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

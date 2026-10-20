@@ -6320,7 +6320,8 @@ data_u32_0048E0B4,0x0048E0B4,0xC,src/data/data_u32_0048E0B4.c,complete,placehold
 data_u32_0048E1A4,0x0048E1A4,0xC,src/data/data_u32_0048E1A4.c,complete,placeholder
 data_zero_0048E320,0x0048E320,0x25B4,src/data/data_zero_0048E320.c,complete,placeholder
 jtbl_004908D4,0x004908D4,0x24,src/data/jtbl_004908D4.c,complete,placeholder
-data_zero_00490900,0x00490900,0x480,src/data/data_zero_00490900.c,complete,placeholder
+data_sj_memory_records_004908F8,0x004908F8,0x480,src/data/data_sj_memory_records_004908F8.c,complete,reconstructed
+data_raw_00490D78,0x00490D78,0xC,src/data/data_raw_00490D78.c,complete,placeholder
 jtbl_00490D84,0x00490D84,0x24,src/data/jtbl_00490D84.c,complete,placeholder
 data_zero_00490DB0,0x00490DB0,0x4000,src/data/data_zero_00490DB0.c,complete,placeholder
 jtbl_00494DB4,0x00494DB4,0x24,src/data/jtbl_00494DB4.c,complete,placeholder

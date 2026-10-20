@@ -17,15 +17,15 @@ typedef struct S2 { s8 flag; u8 pad[0x43]; } S2;
 extern u8 D_00487B60[];
 extern void func_0040EFE0(void);
 extern void func_00409470(S2 *);
-extern s32 func_0040EFF8(void);
-s32 func_00409810(void) {
+extern void func_0040EFF8(void);
+void func_00409810(void) {
     s32 i;
     u32 row_address;
     func_0040EFE0();
     row_address = (u32)D_00487B60;
     for (i = 7; i >= 0; i--, row_address += 0x44)
         if (*(s8 *)row_address == 1) func_00409470((S2 *)row_address);
-    return func_0040EFF8();
+    func_0040EFF8();
 }
 typedef struct S3 { s32 state; u8 pad[0x38]; } S3;
 extern S3 D_004854C0[];

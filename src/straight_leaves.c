@@ -1,3 +1,4 @@
+#include "cri_sj_memory_types.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -349,7 +350,7 @@ void func_00409450(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 36) = value2; *
 
 void func_00409460(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 44) = value2; *(s32 *)(p + 40) = value1; }
 
-void func_0040F1C0(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 32) = value2; *(s32 *)(p + 28) = value1; }
+void func_0040F1C0(CriSjMemory *p, CriSjErrorCallback callback, void *context) { p->error_context = context; p->error_callback = callback; }
 
 void func_0040F718(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 60) = value2; *(s32 *)(p + 56) = value1; }
 

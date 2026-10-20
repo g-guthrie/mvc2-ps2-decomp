@@ -10,7 +10,7 @@ struct Input {InputVtable *vtable;};
 extern void func_0040D5A0(const char *,...);
 extern char D_004BE280[],D_004BE2B0[];
 extern void func_0040D548(s32 *);
-extern void func_0040D568(s32 *);
+extern void func_0040D568(void *);
 extern u8 *func_0040CBD0(void);
 u8 *func_0040CC30(Input *input){
  s32 context;u8 *p;s32 total,i;

@@ -19837,7 +19837,8 @@ func_0040EFB0,0x0040EFB0,0x10,0x0040EFC0,code,spimdisasm-explicit-size-before-fi
 func_0040EFC0,0x0040EFC0,0x10,0x0040EFD0,code,spimdisasm-explicit-size-before-first-data
 func_0040EFD0,0x0040EFD0,0xC,0x0040EFDC,code,spimdisasm-explicit-size-before-first-data
 func_0040EFE0,0x0040EFE0,0x18,0x0040EFF8,code,spimdisasm-explicit-size-before-first-data
-func_0040EFF8,0x0040EFF8,0x34,0x0040F02C,code,spimdisasm-explicit-size-before-first-data
+func_0040EFF8,0x0040EFF8,0x18,0x0040F010,code,native-return-and-distinct-error-callback-entry
+func_0040F010,0x0040F010,0x1C,0x0040F02C,code,separate-callback-entry-and-native-self-branch
 func_0040F030,0x0040F030,0x3C,0x0040F06C,code,spimdisasm-explicit-size-before-first-data
 func_0040F070,0x0040F070,0x44,0x0040F0B4,code,spimdisasm-explicit-size-before-first-data
 func_0040F0B8,0x0040F0B8,0xC8,0x0040F180,code,spimdisasm-explicit-size-before-first-data

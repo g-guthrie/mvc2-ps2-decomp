@@ -6,6 +6,9 @@ typedef unsigned char u8;
 extern volatile s32 D_004C24C8;
 void func_0040EFE0(void) { D_004C24C8; D_004C24C8 = D_004C24C8 + 1; }
 
+/* The matching unlock includes the native volatile read after the update. */
+void func_0040EFF8(void) { D_004C24C8 = D_004C24C8 - 1; (void)D_004C24C8; }
+
 extern s32 D_004C22A0;
 extern s32 D_004C22A4;
 extern void func_0011D8F8(void *, s32, s32);

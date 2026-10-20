@@ -1,6 +1,7 @@
 typedef signed int s32;
 typedef unsigned int u32;
 typedef signed short s16;
+#include "cri_sj_memory_types.h"
 typedef unsigned char u8;
 extern void *func_0011D8F8(void *, s32, s32);
 
@@ -16,9 +17,9 @@ extern s32 D_004C2AB0, D_004C2AB4;
 extern char D_006267A0[];
 
 extern s32 D_004C24D0;
-extern char D_004908F8[];
+
 void func_0040F030(void) {
-    if (D_004C24D0 == 0) func_0011D8F8(D_004908F8, 0, 0x480);
+    if (D_004C24D0 == 0) func_0011D8F8(D_004908F8, 0, sizeof(D_004908F8));
     D_004C24D0++;
 }
 

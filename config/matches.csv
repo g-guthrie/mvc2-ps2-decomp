@@ -6064,7 +6064,7 @@ func_0016C370,0x0016C370,0x38,src/grok_r2_0014.c,complete
 func_0014C030,0x0014C030,0x44,src/grok_r2_0014.c,complete
 func_0016D160,0x0016D160,0x30,src/grok_r2_0014.c,complete
 func_00404CC0,0x00404CC0,0xC,src/grok_r1_0040.c,complete
-func_0040F1D0,0x0040F1D0,0x10,src/grok_r1_0040.c,complete
+func_0040F1D0,0x0040F1D0,0x10,src/cri_sj_memory_methods.c,complete
 func_0040F728,0x0040F728,0x28,src/grok_r1_0040.c,complete
 func_00419FC0,0x00419FC0,0x20,src/grok_r1_0040.c,complete
 func_0041DB80,0x0041DB80,0x1C,src/grok_r1_0040.c,complete
@@ -17472,3 +17472,5 @@ func_00106298,0x00106298,0x134,src/sony29_sif_send_backend_00106298.c,complete
 func_0010CA80,0x0010CA80,0x48,src/sony29_two_semaphore_initializer_0010ca80.c,complete
 func_00106BE8,0x00106BE8,0xB0,src/sony29_rpc_command_replies.c,complete
 func_001069E0,0x001069E0,0x60,src/sony29_rpc_command_replies.c,complete
+func_0040F478,0x0040F478,0xA4,src/cri_sj_memory_methods.c,complete
+func_0040EFF8,0x0040EFF8,0x18,src/k2b.c,complete
