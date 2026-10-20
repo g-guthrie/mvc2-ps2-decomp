@@ -107,11 +107,12 @@ s32 func_0040BCF8(S40BCF8 *p) {
 }
 
 /* Soft-float: (double)a / (double)b * 100.0 truncated to u32. */
+extern s32 dptoli(double);
 extern void func_00401B78(s32 x, s32 *a, s32 *b);
 u32 func_00401E28(s32 x) {
     s32 a, b;
     func_00401B78(x, &a, &b);
-    return (u32)((double)a / (double)b * 100.0);
+    return (u32)dptoli((double)a / (double)b * 100.0);
 }
 
 typedef struct {

@@ -4,6 +4,7 @@ typedef unsigned short u16;
 typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
+extern s32 dptoli(double);
 
 
 
@@ -202,7 +203,7 @@ void func_00335950(u8 *a) {
 
 s32 func_00333EC0(void *a);
 void func_00333E30(u8 *a) {
-    u32 v = (u32)(*(float *)(a + 0x70) * 65536.0 / 360.0 + 0.5);
+    u32 v = (u32)dptoli(*(float *)(a + 0x70) * 65536.0 / 360.0 + 0.5);
     *(u32 *)(a + 0x48) = (u16)v;
     if (func_00333EC0(a) != 0) {
         u32 n = a[5];

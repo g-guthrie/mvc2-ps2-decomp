@@ -21,7 +21,7 @@ An independent ELF relocation audit found exactly 37 `dptoli` relocations in
 these objects and no `dptoul`; the 37 corresponding retail instructions were
 also read directly and all call 00119BC0.
 
-The global alias remains unchanged while the remaining 15 legacy callsites
+At this checkpoint the global alias remained unchanged while the remaining 15 legacy callsites
 are investigated. In particular, `z13_g.c` still needs its selector invariant
 proved, and one entry in `t7_e.c` still lacks a traced input producer. Neither
 file is modified by this checkpoint. The explicitly unsigned conversions
@@ -71,3 +71,7 @@ Full loaded-image linkage and packed retail ELF remain byte-exact with SHA-256
 `c5206f568f068e5bd93ba47676500764c3d45719890865fa71ada10afadcd26f` and
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 All 91 tests and catalog validation pass. Code remains 61.7602%; data 30.1510%.
+
+The followup in [SIGNED_DOUBLE_HELPER_BINDINGS_20261020.md](SIGNED_DOUBLE_HELPER_BINDINGS_20261020.md)
+closes these remaining conversions and corrects the shared alias after tracing
+the pending producers and preserving full-domain helper semantics where needed.

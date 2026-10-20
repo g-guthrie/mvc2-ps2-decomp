@@ -644,13 +644,17 @@ six local jump-table entries; the production verifier checks all resolved
 bytes before using that base. The checked `_reent` view extends only through
 `_result` and `_result_k` at 0x40/0x44, with no data or opaque-tail credit.
 
-EE GCC's signed double-to-integer libcall `dptoli` resolves to 0x00119BC0.
-The existing unsigned 64-bit conversion in `w1911_k.c` now uses unsigned
-32-bit casts for both halves. Its compiler-generated unsigned conversion
-relocation is named `func_00119CE8` with objcopy's symbol-renaming option,
-so it reaches the actual unsigned helper without changing the legacy `dptoul`
-address used by other compiler units. No instruction bytes are rewritten;
-both the repaired 280-byte function and the Newlib unit verify in full.
+The signed double-to-integer libcall `dptoli` resolves to 0x00119BC0;
+the unsigned `dptoul` resolves to 0x00119CE8. The earlier shared signed alias
+has been removed after auditing all 52 affected native calls in 39 source
+units. Bounded phase conversions now convert to signed 32-bit before unsigned
+masking; five calls with unbounded float inputs explicitly invoke the real
+signed helper, preserving its truncation, NaN and saturation behavior.
+`w1911_k.c` keeps unsigned 32-bit casts for both halves of its 64-bit result
+and uses the compiler-generated `dptoul` symbol directly. Its object no longer
+needs symbol renaming. See `SIGNED_DOUBLE_HELPER_BINDINGS_20261020.md` for the
+source and native-call audit. The complete 280-byte function and Newlib unit
+continue to verify in full.
 
 `read_adx_header_fields_003F9AF0.c` uses EE GCC 2.96 `-O2 -G0` for two
 complete 128/120-byte header readers. They retain the big-endian magic check,
