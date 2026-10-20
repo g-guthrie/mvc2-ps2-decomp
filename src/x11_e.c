@@ -7,11 +7,23 @@ typedef signed int s32;
 typedef float f32;
 
 typedef struct { u8 pad0[4]; u8 b4; u8 pad5[0x17]; s16 h1c; u8 pad1e[0x2a]; s32 w48; } S4;
-static s32 func_0015BA00(S4 *p) { return p->h1c > 0; }
+static s32 func_0015BA00(u8 *a0, u8 *a1) {
+    s16 v = *(s16 *)(a1 + 320);
+    s32 ret;
+    if (v != a0[7]) {
+        a0[5] = (u8)v;
+        ret = 1;
+        a0[7] = (u8)*(s8 *)(a1 + 320);
+    } else {
+        a0[7] = (u8)v;
+        ret = 0;
+    }
+    return ret;
+}
 void func_0015BC90(S4 *p, u8 *q) {
     extern void func_0015BD40();
     *(u8 *)((u8 *)p + 0x13C) = 1;
-    if (func_0015BA00(p) != 0) {
+    if (func_0015BA00((u8 *)p, q) != 0) {
         u32 t = p->b4;
         p->b4 = t + 1;
         func_0015BD40();
