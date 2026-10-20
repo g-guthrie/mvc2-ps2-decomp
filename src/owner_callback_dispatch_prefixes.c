@@ -127,3 +127,8 @@ void func_001A7500(u8 *p, void *owner) {
  *(float *)(p+0x38)=*(float *)(q+0x38)+*(float *)(p+0x60);
  D_004BF794[p[5]](p,owner);
 }
+
+/* This state releases only its actor; the retail entry is a unary tail call. */
+typedef struct Object Object;
+extern void func_003DAA40(Object *);
+void func_001D04F0(u8 *p) { func_003DAA40((Object *)p); }

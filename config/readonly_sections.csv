@@ -1,3 +1,6 @@
 source,section,address,size
 src/newlib_dtoa_0011A108.c,.rodata,0x004AC810,0x58
 src/select_character_action_00255950.c,.rodata,0x004B72B0,0x34
+src/newlib_k_rem_pio2_001145D0.c,.rodata,0x004AC028,0x70
+src/newlib_floor_00116710.c,.rodata,0x004AC250,0x10
+src/newlib_scalbn_001169B0.c,.rodata,0x004AC260,0x30

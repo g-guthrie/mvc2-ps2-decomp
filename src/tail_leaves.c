@@ -554,7 +554,6 @@ void func_001D0100(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; func_0
 
 void func_001D0120(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
-void func_001D04F0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
 void func_001D0F70(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; func_003DAA40(p); }
 

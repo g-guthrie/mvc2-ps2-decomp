@@ -400,3 +400,32 @@ void func_001C06F0(u8 *d) {
     *(f32 *)(d + 0x88) = (10.0f * *(f32 *)(d + 0x68) - *(f32 *)(d + 0x50)) / 30.0f;
     func_001C08D0(d);
 }
+
+extern void func_001D04F0(u8 *);
+extern void func_001D02E0(u8 *);
+
+void func_001D01D0(u8 *p) {
+    u8 *owner;
+    p[4]++;
+    owner = *(u8 **)(*(u8 **)(p + 0x18) + 0x1CC);
+    if (owner[1] != 40) {
+        func_001D04F0(p);
+        return;
+    }
+    *(Payload *)(p + 0xEC) = *(Payload *)(owner + 0xEC);
+    p[0x13C] = 1;
+    p[2] = owner[2];
+    p[1] = owner[1];
+    *(f32 *)(p + 0x50) = *(f32 *)(owner + 0x50);
+    *(f32 *)(p + 0x54) = *(f32 *)(owner + 0x54);
+    p[0x1B7] = owner[0x1B7];
+    p[0x1B8] = owner[0x1B8];
+    *(s8 *)(p + 0x30) = *(s8 *)(owner + 0x30);
+    *(V3 *)(p + 0x50) = *(V3 *)(owner + 0x50);
+    *(s8 *)(p + 0x24) = *(s8 *)(owner + 0x24);
+    *(u8 **)(p + 0x14) = owner;
+    *(s16 *)(p + 0x140) = *(s16 *)(owner + 0x140);
+    *(s8 *)(p + 0x31) = -1;
+    func_001757E0(p, 23, 7);
+    func_001D02E0(p);
+}

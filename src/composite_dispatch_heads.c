@@ -119,7 +119,7 @@ extern DispatchFn jtbl_0044B3B0[];
 extern DispatchFn jtbl_0044B3C0[];
 extern DispatchFn jtbl_0044B410[];
 extern DispatchFn jtbl_0044B430[];
-extern DispatchFn jtbl_0044B460[];
+extern ContextDispatchFn jtbl_0044B460[];
 extern DispatchFn jtbl_0044B4E0[];
 extern DispatchFn jtbl_0044B620[];
 extern DispatchFn jtbl_0044B670[];
@@ -260,7 +260,7 @@ extern ContextDispatchFn jtbl_0044E7E0[];
 extern DispatchFn jtbl_0044E7F0[];
 extern ContextDispatchFn jtbl_0044E840[];
 extern ContextDispatchFn jtbl_0044E850[];
-extern DispatchFn jtbl_0044E860[];
+extern ContextDispatchFn jtbl_0044E860[];
 extern DispatchFn jtbl_0044E870[];
 extern DispatchFn jtbl_0044E880[];
 extern DispatchFn jtbl_0044E910[];
@@ -278,7 +278,7 @@ extern DispatchFn jtbl_0044EE00[];
 extern ContextDispatchFn jtbl_0044EE10[];
 extern DispatchFn jtbl_0044EE20[];
 extern DispatchFn jtbl_0044EE30[];
-extern DispatchFn jtbl_0044EE40[];
+extern ContextDispatchFn jtbl_0044EE40[];
 extern ContextDispatchFn jtbl_0044EE50[];
 extern DispatchFn jtbl_0044EE70[];
 extern DispatchFn jtbl_0044EE90[];
@@ -1591,7 +1591,7 @@ void func_001A6EB0(u8 *p) { jtbl_0044B410[p[4]](p); }
 
 void func_001A7320(u8 *p) { jtbl_0044B430[p[4]](p); }
 
-void func_001A7880(u8 *p) { jtbl_0044B460[p[4]](p); }
+void func_001A7880(u8 *p, void *owner) { jtbl_0044B460[p[4]](p, owner); }
 
 void func_001A7990(u8 *p) { jtbl_0044B4E0[p[4]](p); }
 
@@ -1873,7 +1873,7 @@ void func_001D9530(u8 *p, void *owner) { jtbl_0044E840[p[4]](p, owner); }
 
 void func_001D9760(u8 *p, void *owner) { jtbl_0044E850[p[4]](p, owner); }
 
-void func_001D9A70(u8 *p) { jtbl_0044E860[p[4]](p); }
+void func_001D9A70(u8 *p, void *owner) { jtbl_0044E860[p[4]](p, owner); }
 
 void func_001D9C50(u8 *p) { jtbl_0044E870[p[4]](p); }
 
@@ -1909,7 +1909,7 @@ void func_001DE670(u8 *p) { jtbl_0044EE20[p[4]](p); }
 
 void func_001DE8B0(u8 *p) { jtbl_0044EE30[p[4]](p); }
 
-void func_001DEB00(u8 *p) { jtbl_0044EE40[p[4]](p); }
+void func_001DEB00(u8 *p, void *owner) { jtbl_0044EE40[p[4]](p, owner); }
 
 void func_001DECE0(u8 *p, void *owner) { jtbl_0044EE50[p[4]](p, owner); }
 

@@ -1,0 +1,12 @@
+/*
+ * ====================================================
+ * Copyright (C) 1993 by Sun Microsystems, Inc. All rights reserved.
+ *
+ * Developed at SunPro, a Sun Microsystems, Inc. business.
+ * Permission to use, copy, modify, and distribute this
+ * software is freely granted, provided that this notice
+ * is preserved.
+ * ====================================================
+ */
+
+Source pin: Newlib 1.10.0, sourceware tag newlib-1_10_0, commit ffbf3c2fe5af89ba84aad3359964ead31121b7ad; fdlibm sources: src/newlib_k_rem_pio2_001145D0.c, src/newlib_floor_00116710.c, and src/newlib_scalbn_001169B0.c.

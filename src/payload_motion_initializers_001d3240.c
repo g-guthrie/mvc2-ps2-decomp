@@ -115,3 +115,112 @@ if(!*(s16*)(p+0x140))fp[13]-=16.6666660308837890625f;
 else {f32 position=fp[13];f32 displacement=16.6666660308837890625f;fp[13]=position+displacement;}
 {f32 position=fp[14];f32 displacement=77.142852783203125f;fp[14]=position+displacement;}
 func_001757E0(p,23,21);func_001DE470(p,q);}
+
+#pragma padloop on
+extern void func_001D9960(u8 *, u8 *);
+
+void func_001D9780(u8 *p, u8 *q) {
+    f32 *fp = (f32 *)p;
+    u8 *r = p + 0xD0;
+    p[4]++;
+    *(Payload *)(p + 0xEC) = *(Payload *)(q + 0xEC);
+    p[0x13C] = 1;
+    p[2] = q[2];
+    p[1] = q[1];
+    *(f32 *)(p + 0x50) = *(f32 *)(q + 0x50);
+    *(f32 *)(p + 0x54) = *(f32 *)(q + 0x54);
+    p[0x1B7] = q[0x1B7];
+    p[0x1B8] = q[0x1B8];
+    *(s8 *)(p + 0x30) = *(s8 *)(q + 0x30);
+    *(V3 *)(p + 0x50) = *(V3 *)(q + 0x50);
+    *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
+    p[0x13C] = 1;
+    fp[0x50 / 4] = 1.5f;
+    fp[0x118 / 4] = 0.5f;
+    *(f32 *)(p + 0x34) = *(f32 *)(q + 0x34);
+    *(f32 *)(p + 0x38) = *(f32 *)(q + 0x38);
+    *(f32 *)(p + 0x3C) = *(f32 *)(q + 0x3C);
+    if (p[0x21] == 0)
+        p[0x168] = 7;
+    else
+        p[0x168] = 8;
+    func_001754A0(p, 27, p[0x168]);
+    fp[0x5C / 4] = 0.0f;
+    if (*(s16 *)(p + 0x140) != 0)
+        fp[0x5C / 4] = -fp[0x5C / 4];
+    if (p[0x20] == 2) {
+        fp[0x60 / 4] = 188.57142639160156f;
+    } else {
+        fp[0x60 / 4] = 229.28570556640625f;
+        *(s32 *)(p + 0x48) = 2560;
+    }
+    r[2] = 0;
+    r[3] = 3;
+    func_001D9960(p, q);
+}
+
+/* Interleaved signed coordinate views; callers select the native pose index. */
+extern s16 D_0044ED30[];
+extern s16 D_0044ED32[];
+extern u8 D_0044ED58[];
+extern void func_001DEA90(u8 *, u8 *);
+void func_001DE8D0(u8 *p, u8 *q) {
+    f32 *fp = (f32 *)p;
+    p[4]++;
+    *(Payload *)(p + 0xEC) = *(Payload *)(q + 0xEC);
+    p[0x13C] = 1;
+    p[2] = q[2];
+    p[1] = q[1];
+    *(f32 *)(p + 0x50) = *(f32 *)(q + 0x50);
+    *(f32 *)(p + 0x54) = *(f32 *)(q + 0x54);
+    p[0x1B7] = q[0x1B7];
+    p[0x1B8] = q[0x1B8];
+    *(s8 *)(p + 0x30) = *(s8 *)(q + 0x30);
+    *(V3 *)(p + 0x50) = *(V3 *)(q + 0x50);
+    *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
+    p[0x13C] = 1;
+    *(s8 *)(p + 0x31) = -1;
+    *(f32 *)(p + 0x34) = *(f32 *)(q + 0x34);
+    *(f32 *)(p + 0x38) = *(f32 *)(q + 0x38);
+    *(f32 *)(p + 0x3C) = *(f32 *)(q + 0x3C);
+    fp[23] = 1.6666666269302368f * D_0044ED30[p[0x21] * 2];
+    *(f32 *)(p + 0x38) += 2.1428570747375488f * D_0044ED32[p[0x21] * 2];
+    if (*(s16 *)(p + 0x140)) fp[23] = -fp[23];
+    *(f32 *)(p + 0x34) += fp[23];
+    func_001757E0(p, 23, D_0044ED58[p[0x21]]);
+    func_001DEA90(p, q);
+}
+
+extern s8 D_004BF780[] __attribute__((section(".sdata")));
+extern s16 D_004BF778[] __attribute__((section(".sdata")));
+extern f32 D_004F1FD0;
+extern void func_001A7820(u8 *, u8 *);
+void func_001A7560(u8 *p, u8 *q) {
+    f32 *fp = (f32 *)p;
+    p[4]++;
+    *(Payload *)(p + 0xEC) = *(Payload *)(q + 0xEC);
+    p[0x13C] = 1;
+    p[2] = q[2];
+    p[1] = q[1];
+    *(f32 *)(p + 0x50) = *(f32 *)(q + 0x50);
+    *(f32 *)(p + 0x54) = *(f32 *)(q + 0x54);
+    p[0x1B7] = q[0x1B7];
+    p[0x1B8] = q[0x1B8];
+    *(s8 *)(p + 0x30) = *(s8 *)(q + 0x30);
+    *(V3 *)(p + 0x50) = *(V3 *)(q + 0x50);
+    *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
+    p[0x13C] = 0;
+    *(s8 *)(p + 0x31) = D_004BF780[p[0x21]];
+    *(f32 *)(p + 0x34) = *(f32 *)(q + 0x34);
+    *(f32 *)(p + 0x38) = D_004F1FD0;
+    *(f32 *)(p + 0x3C) = *(f32 *)(q + 0x3C);
+    if (*(s16 *)(p + 0x140) == 0)
+        fp[13] += 1.6666666269302368f * D_004BF778[p[0x21]];
+    else
+        fp[13] -= 1.6666666269302368f * D_004BF778[p[0x21]];
+    *(f32 *)(p + 0x60) = -12.857142448425293f;
+    *(f32 *)(p + 0x6C) = -0.8035714030265808f;
+    func_001757E0(p, 19, 7);
+    *(s16 *)(p + 0x1C) = p[0x21] * 8;
+    func_001A7820(p, q);
+}
