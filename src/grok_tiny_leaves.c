@@ -54,11 +54,15 @@ void func_00103A20(void) {
     }
 }
 
-void func_00103A30(void) {
+/* EE syscall 0x07: ExecPS2(entry, gp, argc, argv). */
+int func_00103A30(void *entry, void *global_pointer, int argc, char **argv) {
+    int result;
     asm {
         addiu v1, r0, 7
         syscall 0
+        move result, v0
     }
+    return result;
 }
 
 void func_00103A40(void) {
@@ -988,11 +992,17 @@ void func_0010C3D0(void) {
     }
 }
 
-void func_0010C3E0(void) {
+/* EE syscall 0x56: _SetTLBEntry(index, mask, hi, lo0, lo1). */
+int func_0010C3E0(unsigned int index, unsigned int page_mask,
+                   unsigned int entry_hi, unsigned int entry_lo0,
+                   unsigned int entry_lo1) {
+    int result;
     asm {
         addiu v1, r0, 86
         syscall 0
+        move result, v0
     }
+    return result;
 }
 
 void func_0010C420(void) {

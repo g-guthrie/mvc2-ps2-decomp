@@ -3,4 +3,5 @@
 char *func_0010CEB8(const char *filename,int argc,char *const *argv);
 void func_0010D048(const char *filename,int argc,char **argv);
 void func_0010D0B8(int argc,char **argv);
+int func_0010CFD8(void *entry,void *global_pointer,int argc,char **argv);
 #endif

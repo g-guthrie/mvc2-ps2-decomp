@@ -2,12 +2,13 @@
 typedef signed int s32;
 typedef unsigned char u8;
 typedef signed char s8;
+typedef unsigned int u32;
 extern RuntimeU8 D_00489818[];
 RuntimeEntrySlot *func_0040CBD0(void) {
     RuntimeEntrySlot *r = 0;
     s32 i;
     for (i = 0; i < 16; i++) {
-        RuntimeEntrySlot *p = &((RuntimeEntrySlot *)D_00489818)[i];
+        RuntimeEntrySlot *p = (RuntimeEntrySlot *)((u32)D_00489818 + i * 0x438);
         if (p->in_use == 0) { r = p; break; }
     }
     return r;

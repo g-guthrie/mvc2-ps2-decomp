@@ -5,7 +5,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 
 extern void func_00103E10();
-extern void func_0010C480();
+extern int func_0010C480(void);
 extern void func_00116CD0();
 extern float func_00116FA0(float);
 extern void func_001170A0();
@@ -153,7 +153,7 @@ extern void func_004121B0();
 extern void func_00423240();
 extern void func_00423650();
 
-void func_0010CFD0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0010C480(a0, a1, a2, a3); }
+void func_0010CFD0(void) { func_0010C480(); }
 
 void func_0012AA90(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0012A990(a0, a1, a2, 0); }
 

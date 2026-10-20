@@ -15989,4 +15989,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_kernel_memory_helpers.o" "$BUILD/sony29_kernel_memory_helpers.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_kernel_memory_helpers.o" private/SLUS_204.86.rom --source src/sony29_kernel_memory_helpers.c
 
+"$WIBO" "$SNCPP" -P src/sony29_exec_ps2_0010cfd8.c "$BUILD/sony29_exec_ps2_0010cfd8.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_exec_ps2_0010cfd8.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_exec_ps2_0010cfd8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_exec_ps2_0010cfd8.o" "$BUILD/sony29_exec_ps2_0010cfd8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_exec_ps2_0010cfd8.o" private/SLUS_204.86.rom --source src/sony29_exec_ps2_0010cfd8.c
+
+"$WIBO" "$SNCPP" -P src/sony29_set_tlb_entry_0010c3f0.c "$BUILD/sony29_set_tlb_entry_0010c3f0.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_set_tlb_entry_0010c3f0.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_set_tlb_entry_0010c3f0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_set_tlb_entry_0010c3f0.o" "$BUILD/sony29_set_tlb_entry_0010c3f0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_set_tlb_entry_0010c3f0.o" private/SLUS_204.86.rom --source src/sony29_set_tlb_entry_0010c3f0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
