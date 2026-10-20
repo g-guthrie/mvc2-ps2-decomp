@@ -50,3 +50,31 @@ and 9,148 bytes. The original failed source remains in the local recovery copy.
 Entry 0022ADA0 was also repaired and matched (384 bytes). Byte wrapping now
 occurs at the native animation-ID arithmetic assignments before passing the
 full integer argument. The accepted recovery totals 46 functions /9,532 bytes.
+
+## Build bootstrap and validation
+
+A fresh split initially failed because repeated declarations and intentional
+address aliases lacked Splat metadata. Consolidating 203 duplicate declarations
+and annotating 131 aliases preserves all 18,917 distinct symbol/address bindings
+and every existing Splat attribute. The object verifier resolves exactly the
+same address dictionary before and after this cleanup. A fresh `make split`
+now completes across the entire configured image and generates the BSS assembly.
+
+All 3,946 production code source groups have passed the relocated-object
+verifier in this run, including existing uncredited placeholder units. The
+remaining compile recipes ran in parallel with their original compiler flags;
+objects already compiled and verified earlier in the same run were reused and
+verified again. Placeholder code retains zero matching credit.
+
+All 8,304 compiled data sections passed verification. The final hybrid link
+places the recovered functions and reproduces the complete 3,941,760-byte
+loaded image (SHA-256
+`c5206f568f068e5bd93ba47676500764c3d45719890865fa71ada10afadcd26f`).
+The deterministic packer also reproduces the complete 3,942,320-byte retail
+ELF (SHA-256
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`).
+These image checks include the project's uncredited raw regions; they do not
+imply that those regions have been decompiled.
+
+This checkpoint links 1,952,480 /3,293,696 code bytes (59.2793%) and
+177,895 /648,064 reconstructed data bytes (27.4502%).
