@@ -17350,3 +17350,11 @@ func_0010BBD8,0x0010BBD8,0x104,src/sony29_rpc_record_operations.c,complete
 func_0010BD28,0x0010BD28,0xec,src/sony29_rpc_record_operations.c,complete
 func_0010BE18,0x0010BE18,0xdc,src/sony29_rpc_record_operations.c,complete
 func_0010C2F8,0x0010C2F8,0xC4,src/sony29_kernel_hook_initialization.c,complete
+func_00310220,0x00310220,0x144,src/grok_gh_00310220.c,complete
+func_0022D210,0x0022D210,0x160,src/grok_kp_0022D210.c,complete
+func_0022A410,0x0022A410,0x118,src/grok_kp_0022A410.c,complete
+func_00107588,0x00107588,0x5c,src/sony29_descriptor_lookup.c,complete
+func_00107670,0x00107670,0x6c,src/sony29_descriptor_lookup.c,complete
+func_002C8230,0x002C8230,0x174,src/grok_fj_002C8230.c,complete
+func_002E8920,0x002E8920,0x15C,src/grok_fr_002e8920.c,complete
+func_002C3D50,0x002C3D50,0x158,src/grok_fj_002C3D50.c,complete

@@ -15635,4 +15635,27 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/sprite_handoff_00
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_record_operations.o" "$BUILD/sony29_rpc_record_operations.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_record_operations.o" private/SLUS_204.86.rom --source src/sony29_rpc_record_operations.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_gh_00310220.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_gh_00310220.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_gh_00310220.o" private/SLUS_204.86.rom --source src/grok_gh_00310220.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_kp_0022D210.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_kp_0022D210.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_kp_0022D210.o" private/SLUS_204.86.rom --source src/grok_kp_0022D210.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_kp_0022A410.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_kp_0022A410.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_kp_0022A410.o" private/SLUS_204.86.rom --source src/grok_kp_0022A410.c
+
+"$WIBO" "$SNCPP" -P src/sony29_descriptor_lookup.c "$BUILD/sony29_descriptor_lookup.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_descriptor_lookup.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_descriptor_lookup.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_descriptor_lookup.o" "$BUILD/sony29_descriptor_lookup.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_descriptor_lookup.o" private/SLUS_204.86.rom --source src/sony29_descriptor_lookup.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_fj_002C8230.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_fj_002C8230.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_fj_002C8230.o" private/SLUS_204.86.rom --source src/grok_fj_002C8230.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_fr_002e8920.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_fr_002e8920.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_fr_002e8920.o" private/SLUS_204.86.rom --source src/grok_fr_002e8920.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_fj_002C3D50.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_fj_002C3D50.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_fj_002C3D50.o" private/SLUS_204.86.rom --source src/grok_fj_002C3D50.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
