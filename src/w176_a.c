@@ -7,15 +7,15 @@ typedef signed int s32;
 typedef float f32;
 typedef struct { u8 pad[0x2B8]; f32 b[2]; } S2B8;
 
-extern void *func_003DA750(s32,s32,s32);
-extern void func_0019D830(void);
+extern void *func_003DA750(u8 *,s32,s32);
+extern void func_0019D830(u8 *);
 
-void func_0019D7C0(s32 a, u8 *b) {
+void func_0019D7C0(u8 *a, u8 *b) {
     u8 *o;
     if ((o = (u8 *)func_003DA750(a, 3, 2)) != 0) {
         *(u8 *)(o + 0) = 1;
         *(u32 *)(o + 0x10) = (u32)func_0019D830;
-        *(u32 *)(o + 0x18) = a;
+        *(u8 **)(o + 0x18) = a;
         *(u32 *)(o + 0xD4) = (u32)b;
         *(u8 *)(o + 0x20) = 1;
         *(s16 *)(o + 0x26) = 0xA02;
