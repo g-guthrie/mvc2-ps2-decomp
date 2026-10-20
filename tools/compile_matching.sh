@@ -15549,4 +15549,8 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_sin_00116B98.o" "$BUILD/newlib_sin_00116B98.s"
 "$PYTHON" tools/verify_object.py "$BUILD/newlib_sin_00116B98.o" private/SLUS_204.86.rom --source src/newlib_sin_00116B98.c
 
+# State-table caller with genuine external helper and no-argument completion.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/state_table_step_0024C4F0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/state_table_step_0024C4F0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_table_step_0024C4F0.o" private/SLUS_204.86.rom --source src/state_table_step_0024C4F0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

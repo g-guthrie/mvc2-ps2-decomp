@@ -17307,3 +17307,4 @@ func_00119998,0x00119998,0x120,src/fp_bit_compare_parts_00119998.c,complete
 func_00115358,0x00115358,0x150,src/newlib_k_cosf_00115358.c,complete
 func_00115D10,0x00115D10,0x104,src/newlib_k_sinf_00115D10.c,complete
 func_00116B98,0x00116B98,0x134,src/newlib_sin_00116B98.c,complete
+func_0024C4F0,0x0024C4F0,0x60,src/state_table_step_0024C4F0.c,complete
