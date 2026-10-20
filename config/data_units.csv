@@ -399,9 +399,13 @@ data_f32_0043F180,0x0043F180,0xC,.data,src/data/data_f32_0043F180.c,bounded_xyz_
 data_f32_0043F18C,0x0043F18C,0x8,.data,src/data/data_f32_0043F18C.c,bounded_xy_row1
 data_raw_0043F194,0x0043F194,0x4,.data,src/data/data_raw_0043F194.c,unread_position_z
 data_f32_0043F198,0x0043F198,0x8,.data,src/data/data_f32_0043F198.c,bounded_xy_row2
-data_u8_0043F1A0,0x0043F1A0,0x140,.data,src/data/data_u8_0043F1A0.c,initialized_byte_array
-data_f32_negone_0043F2E0,0x0043F2E0,0x24,.data,src/data/data_f32_negone_0043F2E0.c,filled_f32_neg_one
-data_raw_0043F310,0x0043F310,0x180,.data,src/data/data_raw_0043F310.c,initialized_byte_array
+data_u8_0043F1A0,0x0043F1A0,0x8,.data,src/data/data_u8_0043F1A0.c,raw_unread_prefix
+D_0043F1A8,0x0043F1A8,0xC,.data,src/data/D_0043F1A8.c,fixed_camera_position3
+data_u8_0043F1B4,0x0043F1B4,0xC,.data,src/data/data_u8_0043F1B4.c,raw_gap
+D_0043F1C0,0x0043F1C0,0x120,.data,src/data/D_0043F1C0.c,bounded_position3_rows_0_23
+data_f32_negone_0043F2E0,0x0043F2E0,0x24,.data,src/data/data_f32_negone_0043F2E0.c,unselected_sentinel_placeholder
+data_f32v3_0043F304,0x0043F304,0x180,.data,src/data/data_f32v3_0043F304.c,bounded_position3_rows_27_58
+data_u8_0043F484,0x0043F484,0xC,.data,src/data/data_u8_0043F484.c,raw_unselected_tail
 data_f32v3_0043F490,0x0043F490,0x120,.data,src/data/data_f32v3_0043F490.c,initialized_float_vector_table
 data_raw_0043F5B0,0x0043F5B0,0x24,.data,src/data/data_raw_0043F5B0.c,initialized_byte_array
 data_f32v3_0043F5D4,0x0043F5D4,0x180,.data,src/data/data_f32v3_0043F5D4.c,initialized_float_vector_table

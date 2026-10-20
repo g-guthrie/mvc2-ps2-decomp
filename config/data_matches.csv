@@ -399,9 +399,13 @@ data_f32_0043F180,0x0043F180,0xC,src/data/data_f32_0043F180.c,complete,reconstru
 data_f32_0043F18C,0x0043F18C,0x8,src/data/data_f32_0043F18C.c,complete,reconstructed
 data_raw_0043F194,0x0043F194,0x4,src/data/data_raw_0043F194.c,complete,placeholder
 data_f32_0043F198,0x0043F198,0x8,src/data/data_f32_0043F198.c,complete,reconstructed
-data_u8_0043F1A0,0x0043F1A0,0x140,src/data/data_u8_0043F1A0.c,complete,placeholder
+data_u8_0043F1A0,0x0043F1A0,0x8,src/data/data_u8_0043F1A0.c,complete,placeholder
+D_0043F1A8,0x0043F1A8,0xC,src/data/D_0043F1A8.c,complete,reconstructed
+data_u8_0043F1B4,0x0043F1B4,0xC,src/data/data_u8_0043F1B4.c,complete,placeholder
+D_0043F1C0,0x0043F1C0,0x120,src/data/D_0043F1C0.c,complete,reconstructed
 data_f32_negone_0043F2E0,0x0043F2E0,0x24,src/data/data_f32_negone_0043F2E0.c,complete,placeholder
-data_raw_0043F310,0x0043F310,0x180,src/data/data_raw_0043F310.c,complete,placeholder
+data_f32v3_0043F304,0x0043F304,0x180,src/data/data_f32v3_0043F304.c,complete,reconstructed
+data_u8_0043F484,0x0043F484,0xC,src/data/data_u8_0043F484.c,complete,placeholder
 data_f32v3_0043F490,0x0043F490,0x120,src/data/data_f32v3_0043F490.c,complete,reconstructed
 data_raw_0043F5B0,0x0043F5B0,0x24,src/data/data_raw_0043F5B0.c,complete,placeholder
 data_f32v3_0043F5D4,0x0043F5D4,0x180,src/data/data_f32v3_0043F5D4.c,complete,reconstructed
