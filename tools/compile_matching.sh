@@ -15796,4 +15796,14 @@ MWCIncludes=$(dirname "$MWCCPS2_24") "$WIBO" "$MWCCPS2_24" \
     -o "$BUILD/owner_tag_guard_003562d0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_tag_guard_003562d0.o" private/SLUS_204.86.rom --source src/owner_tag_guard_003562d0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_countdown_animation_00379a60.c -c -lang c -O4,p -sdatathreshold 8 \
+    -o "$BUILD/owner_countdown_animation_00379a60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_countdown_animation_00379a60.o" private/SLUS_204.86.rom --source src/owner_countdown_animation_00379a60.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_contact_filter_003bd4c0.c -c -lang c -O4,p -sdatathreshold 8 \
+    -o "$BUILD/owner_contact_filter_003bd4c0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_contact_filter_003bd4c0.o" private/SLUS_204.86.rom --source src/owner_contact_filter_003bd4c0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

@@ -17404,3 +17404,5 @@ func_0010FC98,0x0010FC98,0xF8,src/sony29_cddvd_clock_read.c,complete
 func_0010CEB8,0x0010CEB8,0x118,src/sony29_exec_arguments.c,complete
 func_002B6F20,0x002B6F20,0xE0,src/animation_countdown_reset_002b6f20.c,complete
 func_003562D0,0x003562D0,0x54,src/owner_tag_guard_003562d0.c,complete
+func_00379A60,0x00379A60,0x204,src/owner_countdown_animation_00379a60.c,complete
+func_003BD4C0,0x003BD4C0,0x190,src/owner_contact_filter_003bd4c0.c,complete
