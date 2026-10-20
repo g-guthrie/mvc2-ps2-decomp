@@ -6840,8 +6840,8 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --op
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/b10s2_j.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/b10s2_j.o"
 "$PYTHON" tools/verify_object.py "$BUILD/b10s2_j.o" private/SLUS_204.86.rom --source src/b10s2_j.c
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/q1_a.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/q1_a.o"
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/q1_a.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/q1_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/q1_a.o" private/SLUS_204.86.rom --source src/q1_a.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/q1_b.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/q1_b.o"

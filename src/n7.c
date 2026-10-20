@@ -255,7 +255,11 @@ void func_0019E790(u8 *p) {
 
 /* 0x0019CA20 */
 static void func_0019C840(u8 *p) {
-    p[0x1D] = 1;
+    *(s8 *)(p + 0x24) = *(s8 *)(*(u8 **)(p + 0x18) + 0x24);
+    if (p[0x20])
+        *(s8 *)(p + 0x31) = 1;
+    else
+        *(s8 *)(p + 0x31) = -1;
 }
 extern void func_0019CAC0(u8 *);
 extern void func_0019C7E0(u8 *);
@@ -308,7 +312,14 @@ void func_0034E090(u8 *p) {
 
 /* 0x00259D10 */
 static void func_002555E0(u8 *p) {
-    p[0x1D] = 1;
+    if (*(s16 *)(p + 696) > 0) {
+        p[1037] = 0;
+        p[1036] = 0;
+        p[828] = 5;
+    } else {
+        p[1036] = 2;
+        p[828] = 5;
+    }
 }
 void func_00259D10(u8 *p) {
     func_002555E0(p);

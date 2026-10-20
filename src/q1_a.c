@@ -12,7 +12,25 @@ extern s32 func_0016A1F0(u8 *, s32);
 extern s32 func_00169BC0(u8 *, s32, s32);
 extern s32 func_00169AE0(u8 *, s32);
 extern void func_00169E50(u8 *, s32);
-static void func_001CB680(u8 *p, u8 *q) { p[0x10] = 0; }
+typedef struct { f32 x, y, z; } CopyV3;
+static void func_001CB680(u8 *p, u8 *o) {
+    s32 n;
+    u32 *d, *s;
+    p[4]++;
+    s = (u32 *)(o + 236);
+    d = (u32 *)(p + 236);
+    for (n = 49; n > 0; n--) *d++ = *s++;
+    p[316] = 1;
+    p[2] = o[2];
+    p[1] = o[1];
+    *(f32 *)(p + 80) = *(f32 *)(o + 80);
+    *(f32 *)(p + 84) = *(f32 *)(o + 84);
+    p[439] = o[439];
+    p[440] = o[440];
+    *(s8 *)(p + 48) = *(s8 *)(o + 48);
+    *(CopyV3 *)(p + 80) = *(CopyV3 *)(o + 80);
+    *(s8 *)(p + 36) = *(s8 *)(o + 36);
+}
 extern void func_001754A0(u8 *, s32, s32);
 extern s32 func_00175670(u8 *);
 extern s32 func_00175700(u8 *);
