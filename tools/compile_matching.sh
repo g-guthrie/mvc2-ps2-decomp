@@ -15936,4 +15936,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$SNAS" -G0 -o "$BUILD/matrix_frame_build_001032a8.o" "$BUILD/matrix_frame_build_001032a8.s"
 "$PYTHON" tools/verify_object.py "$BUILD/matrix_frame_build_001032a8.o" private/SLUS_204.86.rom --source src/matrix_frame_build_001032a8.c
 
+"$WIBO" "$SNCPP" -P src/matrix_negated_basis_00103358.c "$BUILD/matrix_negated_basis_00103358.i"
+"$WIBO" "$EE29CC1" "$BUILD/matrix_negated_basis_00103358.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/matrix_negated_basis_00103358.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/matrix_negated_basis_00103358.o" "$BUILD/matrix_negated_basis_00103358.s"
+"$PYTHON" tools/verify_object.py "$BUILD/matrix_negated_basis_00103358.o" private/SLUS_204.86.rom --source src/matrix_negated_basis_00103358.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
