@@ -1,0 +1,5 @@
+/* Opaque bytes left outside native-read effect fields at 0x004A8FF8. */
+typedef unsigned char u8;
+u8 data_raw_004A8FF8[0x8] = {
+    0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u
+};

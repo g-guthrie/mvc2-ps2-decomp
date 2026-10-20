@@ -17327,3 +17327,17 @@ func_001107B8,0x001107B8,0xe0,src/sony29_mc_fileio.c,complete
 func_001108F0,0x001108F0,0x17c,src/sony29_mc_fileio.c,complete
 func_0010E908,0x0010E908,0xa0,src/sony29_cddvd_read_completion.c,complete
 func_003F3700,0x003F3700,0x70,src/file_record_uniformity_003F3700.c,complete
+func_00193210,0x00193210,0x110,src/sprite_handoff_00193210.c,complete
+func_0010D8C0,0x0010D8C0,0x50,src/sony29_pad_buffer_queries.c,complete
+func_0010D910,0x0010D910,0x7c,src/sony29_pad_buffer_queries.c,complete
+func_0010D990,0x0010D990,0x78,src/sony29_pad_buffer_queries.c,complete
+func_0010DAA8,0x0010DAA8,0x50,src/sony29_pad_buffer_queries.c,complete
+func_0010E0F8,0x0010E0F8,0xb4,src/sony29_pad_buffer_queries.c,complete
+func_0010E260,0x0010E260,0x5c,src/sony29_pad_buffer_queries.c,complete
+func_0010E2C0,0x0010E2C0,0x54,src/sony29_pad_buffer_queries.c,complete
+func_0010E020,0x0010E020,0xd8,src/sony29_pad_settings.c,complete
+func_0010E370,0x0010E370,0xcc,src/sony29_pad_settings.c,complete
+func_0010DB30,0x0010DB30,0x120,src/sony29_pad_actuator_query.c,complete
+func_0010DC50,0x0010DC50,0x11C,src/sony29_pad_actuator_query.c,complete
+func_0010DD70,0x0010DD70,0x138,src/sony29_pad_actuator_query.c,complete
+func_0010DF60,0x0010DF60,0xC0,src/sony29_pad_actuator_query.c,complete

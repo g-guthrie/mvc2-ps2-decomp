@@ -1,0 +1,23 @@
+kind,address,origin,next_root,next_root_origin,record_count,stream_bytes,native_read_bytes,opaque_payload_bytes,raw_gap_bytes,body_command_count
+stream,0x004A9F70,source callback root,0x004A9FE0,source callback root,1,101,93,8,11,66
+stream,0x004A9FE0,source callback root,0x004AA010,source callback root,1,44,42,2,4,21
+stream,0x004AA010,source callback root,0x004AA0A0,source callback root,1,140,126,14,4,93
+stream,0x004AA0A0,source callback root,0x004AA100,source callback root,1,84,76,8,12,49
+stream,0x004AA100,source callback root,0x004AA160,func_00421C00 conditional callback at 0x00421C44,1,81,76,5,15,52
+stream,0x004AA160,func_00421C00 conditional callback at 0x00421C44,0x004AA240,func_00421C00 conditional callback at 0x00421C7C,1,217,197,20,7,158
+stream,0x004AA240,func_00421C00 conditional callback at 0x00421C7C,0x004AA320,source callback root,1,218,198,20,6,159
+stream,0x004AA320,source callback root,0x004AA3B0,source callback root,1,140,126,14,4,93
+stream,0x004AA3B0,source callback root,0x004AA430,source callback root,1,120,109,11,8,79
+stream,0x004AA430,source callback root,0x004AA4E0,source callback root,1,162,148,14,14,115
+stream,0x004AA4E0,source callback root,0x004AA510,source callback root,1,45,43,2,3,22
+stream,0x004AA510,source callback root,0x004AA540,source callback root,1,40,38,2,8,17
+stream,0x004AA540,source callback root,0x004AA570,source callback root,1,43,41,2,5,20
+stream,0x004AA570,source callback root,0x004AA5D0,source callback root,1,81,76,5,15,52
+stream,0x004AA5D0,source callback root,0x004AA690,source callback root,1,179,165,14,13,132
+stream,0x004AA690,source callback root,0x004AA750,source callback root,1,180,166,14,12,133
+stream,0x004AA750,source callback root,0x004AA780,source callback root,1,43,41,2,5,20
+stream,0x004AA780,source callback root,0x004AA800,source callback root,1,47,45,2,81,24
+stream,0x004AA800,source callback root,0x004AA850,source callback root,1,78,73,5,2,49
+stream,0x004AA850,source callback root,0x004AA8A0,source callback root,1,78,73,5,2,49
+stream,0x004AA8A0,source callback root,0x004AA980,independent source symbol gPs2SystemText_004AA980,1,194,177,17,30,141
+TOTAL,0x004A9F70,21 source/native callback roots,0x004AA980,independent source symbol gPs2SystemText_004AA980,21,2315,2129,186,261,1544

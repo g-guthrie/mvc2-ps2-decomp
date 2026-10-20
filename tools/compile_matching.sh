@@ -15597,4 +15597,22 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/file_record_unifo
 "$PYTHON" tools/verify_object.py "$BUILD/file_record_uniformity_003F3700.o" private/SLUS_204.86.rom --source src/file_record_uniformity_003F3700.c
 "$PYTHON" tools/verify_object.py "$BUILD/file_record_uniformity_003F3700.o" private/SLUS_204.86.rom --matches config/local_helper_matches.csv --source src/file_record_uniformity_003F3700.c
 
+"$WIBO" "$SNCPP" -P src/sony29_pad_buffer_queries.c "$BUILD/sony29_pad_buffer_queries.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_pad_buffer_queries.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_pad_buffer_queries.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_pad_buffer_queries.o" "$BUILD/sony29_pad_buffer_queries.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_pad_buffer_queries.o" private/SLUS_204.86.rom --source src/sony29_pad_buffer_queries.c
+
+"$WIBO" "$SNCPP" -P src/sony29_pad_settings.c "$BUILD/sony29_pad_settings.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_pad_settings.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_pad_settings.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_pad_settings.o" "$BUILD/sony29_pad_settings.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_pad_settings.o" private/SLUS_204.86.rom --source src/sony29_pad_settings.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/sprite_handoff_00193210.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/sprite_handoff_00193210.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sprite_handoff_00193210.o" private/SLUS_204.86.rom --source src/sprite_handoff_00193210.c
+
+"$WIBO" "$SNCPP" -P src/sony29_pad_actuator_query.c "$BUILD/sony29_pad_actuator_query.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_pad_actuator_query.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_pad_actuator_query.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_pad_actuator_query.o" "$BUILD/sony29_pad_actuator_query.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_pad_actuator_query.o" private/SLUS_204.86.rom --source src/sony29_pad_actuator_query.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

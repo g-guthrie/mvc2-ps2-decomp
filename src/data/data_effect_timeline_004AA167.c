@@ -1,0 +1,53 @@
+/* Native-read effect fields; variable records retain BE bytes and opaque skips. */
+typedef unsigned char u8;
+typedef struct {
+    u8 preamble_3AA167_opcode_05;
+    u8 preamble_3AA167_saved_value;
+    u8 preamble_3AA169_opcode_06;
+    u8 preamble_3AA169_payload_u8;
+    u8 preamble_3AA16B_opcode_07;
+    u8 preamble_3AA16B_payload_u8;
+    u8 preamble_3AA16D_opcode_08;
+    u8 preamble_3AA16D_payload_u8;
+    u8 preamble_3AA16F_opcode_09;
+    u8 preamble_3AA16F_payload_u8;
+    u8 preamble_3AA171_opcode_01;
+    u8 preamble_3AA171_be16_a_high;
+    u8 preamble_3AA171_be16_a_low;
+    u8 preamble_3AA171_be16_b_high;
+    u8 preamble_3AA171_be16_b_low;
+    u8 preamble_3AA171_native_read_u8;
+    u8 body_3AA177_native_opcode_1E;
+    u8 body_3AA178_native_opcode_2B;
+    u8 body_3AA179_native_opcode_2B;
+    u8 body_3AA17A_native_opcode_28;
+    u8 body_3AA17B_native_opcode_2B;
+    u8 body_3AA17C_native_opcode_91;
+    u8 body_3AA17D_target_adjust_opcode_0D;
+    u8 body_3AA17E_native_opcode_22;
+    u8 body_3AA17F_native_opcode_41;
+    u8 body_3AA180_native_opcode_46;
+    u8 body_3AA181_native_opcode_48;
+    u8 body_3AA182_native_opcode_39;
+    u8 body_3AA183_native_opcode_39;
+    u8 body_3AA184_native_opcode_3C;
+    u8 body_3AA185_native_opcode_36;
+    u8 body_3AA186_native_opcode_3C;
+    u8 body_3AA187_native_opcode_38;
+    u8 body_3AA188_native_opcode_41;
+    u8 body_3AA189_native_opcode_47;
+    u8 body_3AA18A_target_adjust_opcode_0D;
+    u8 body_3AA18B_native_opcode_46;
+    u8 body_3AA18C_native_opcode_43;
+    u8 body_3AA18D_native_opcode_34;
+    u8 body_3AA18E_native_opcode_36;
+    u8 body_3AA18F_native_opcode_38;
+    u8 body_3AA190_opcode_04;
+    u8 body_3AA190_opcode_04_payload;
+    u8 body_3AA192_opcode_01;
+    u8 body_3AA192_be16_high;
+    u8 body_3AA192_be16_low;
+} EffectTimelineRun_004AA167;
+EffectTimelineRun_004AA167 data_effect_timeline_004AA167 = {
+    0x05u, 0x18u, 0x06u, 0xFFu, 0x07u, 0xFFu, 0x08u, 0xFFu, 0x09u, 0xFFu, 0x01u, 0x00u, 0x7Fu, 0x00u, 0x60u, 0x80u, 0x1Eu, 0x2Bu, 0x2Bu, 0x28u, 0x2Bu, 0x91u, 0x0Du, 0x22u, 0x41u, 0x46u, 0x48u, 0x39u, 0x39u, 0x3Cu, 0x36u, 0x3Cu, 0x38u, 0x41u, 0x47u, 0x0Du, 0x46u, 0x43u, 0x34u, 0x36u, 0x38u, 0x04u, 0x00u, 0x01u, 0x00u, 0x94u
+};

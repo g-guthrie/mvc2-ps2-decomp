@@ -1,0 +1,7 @@
+kind,address,next_callback_root,record_count,stream_bytes,native_read_bytes,opaque_payload_bytes,raw_gap_bytes,body_command_count
+stream,0x004A8F80,0x004A9000,1,120,109,11,8,79
+stream,0x004A9000,0x004A9060,1,81,76,5,15,52
+stream,0x004A9060,0x004A9120,1,179,165,14,13,132
+stream,0x004A9120,0x004A91E0,1,180,166,14,12,133
+stream,0x004A91E0,0x004A9280,1,144,130,14,16,97
+TOTAL,0x004A8F80,0x004A9280,5,704,646,58,64,493
