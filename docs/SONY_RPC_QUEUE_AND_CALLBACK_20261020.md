@@ -18,9 +18,10 @@ clobber describes the synchronization boundary. No raw function body or
 instruction rewriting is involved.
 
 Queue removal reads the head at offset 0x0C, reads its successor at offset
-0x3C, and writes the busy flag at offset four. All other prefix bytes remain
-opaque in the C views. The routine enables interrupts unconditionally, as in
-the native function. The worker processes each returned item through
+0x3C, and writes the busy flag at offset four. The queue and server views now
+use the shared Sony RPC declarations, which also supply the newly recovered
+call dispatcher. The routine enables interrupts unconditionally, as in the
+native function. The worker processes each returned item through
 `00107380` and calls the sleep-thread syscall adapter `00103D00` when empty.
 These views add no data credit.
 

@@ -1,0 +1,20 @@
+offset,width,field_type_or_role,direct_native_accesses
+0x00,1,s8 active,"00408DB0: lb [00408DDC], sb [00408E64]; 00408CE8 loop tests lb [00408D10]"
+0x01,1,s8 mode,00408DB0: sb [00408E50]; 00408960: lb [00408980]
+0x02,1,s8 state,"00408DB0: sb [00408E68]; 00408960: lb/lbu [0040898C,00408994,004089A4], sb [004089FC,00408CBC]"
+0x03,1,raw,No direct byte access in pool allocator/sweep/release disassembly; preserve raw
+0x04,4,object pointer,"00408960: lw [004089A8,00408A44,00408AC8,00408C60]; 00408DB0: sw [00408E5C]"
+0x08,4,object pointer,"00408960: lw [004089CC,00408A64,00408AF8,00408C78]; 00408DB0: sw [00408E60]"
+0x0C,4,RuntimeSpan.start,"00408960: form p+0xC [004089AC], sw 0(p+0xC) [004089C8], sdr [00408CA4]"
+0x10,4,RuntimeSpan.length,"00408960: sw [004089D4], lw [004089F0]"
+0x14,4,RuntimeSpan.start,"00408960: form p+0x14 [004089C4], sw 0(p+0x14) [004089E8], sdl/sdr [00408CB4,00408CB8]"
+0x18,4,RuntimeSpan.length,00408960: sw [004089F4]
+0x1C,4,SonySifDmaTransfer.source,"00408960: form p+0x1C [00408C28], sw [00408C34]"
+0x20,4,SonySifDmaTransfer.destination,00408960: sw [00408C3C]
+0x24,4,SonySifDmaTransfer.size,00408960: sw [00408C40]
+0x28,4,SonySifDmaTransfer.attributes,00408960: sw [00408C48]
+0x2C,4,s32 transfer_id,"00408960: lw [0040899C], sw [00408C50]"
+0x30,4,s32,00408DB0: sw [00408E6C]
+0x34,4,s32,00408DB0: sw [00408E70]
+0x38,4,s32,00408DB0: sw [00408E58]; 00408960: lw [00408A88]
+0x3C,4,s32,"00408960: lw [004089EC], sw [00408A04]"

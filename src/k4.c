@@ -1,4 +1,5 @@
 typedef signed int s32;
+typedef unsigned int u32;
 typedef unsigned char u8;
 typedef unsigned short u16;
 
@@ -57,7 +58,6 @@ extern void func_0040E868(s32);
 void func_003FF0E0(s32 a) { func_0040E9F8(a, 0); func_0040E980(a, 0); func_0040E868(a); }
 
 struct Q { s32 size; s32 cnt; char *cur; s32 pad; char data[1]; };
-extern void func_00106298(s32, s32, s32, s32, s32, s32, s32);
 struct R { char p0; char p1; signed char n; char pad[0x11]; s32 v[1]; };
 void func_003F6108(char *p) {
     s32 i;
@@ -87,8 +87,12 @@ extern signed char D_00487358[];
 extern void func_00408960(void *);
 extern void func_00409810(void);
 void func_00408CE8(void) {
-    s32 i; signed char *p = D_00487358;
-    for (i = 31; i >= 0; i--, p += 0x40) if (p[0] == 1) func_00408960(p);
+    s32 i;
+    u32 address = (u32)D_00487358;
+    for (i = 31; i >= 0; i--, address += 0x40) {
+        signed char *p = (signed char *)address;
+        if (p[0] == 1) func_00408960(p);
+    }
     func_00409810();
 }
 

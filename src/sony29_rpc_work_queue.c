@@ -1,15 +1,7 @@
 /* Interrupt-protected RPC queue removal and its server-thread loop. */
-typedef unsigned char u8;
-typedef struct RpcItem {
-    u8 opaque[0x3C];
-    struct RpcItem *next;
-} RpcItem;
-typedef struct RpcQueue {
-    u8 opaque00[4];
-    int busy;
-    u8 opaque08[4];
-    RpcItem *head;
-} RpcQueue;
+#include "sony29_rpc_server_types.h"
+typedef SonyRpcServer RpcItem;
+typedef SonyRpcQueue RpcQueue;
 extern int func_0010CA20(void);
 extern int func_0010CA68(void);
 extern void func_00107380(RpcItem *);
@@ -19,11 +11,11 @@ RpcItem *func_00107328(RpcQueue *queue)
 {
     RpcItem *item;
     func_0010CA20();
-    item = queue->head;
-    if (!item) queue->busy = 0;
+    item = queue->first;
+    if (!item) queue->active = 0;
     else {
-        queue->busy = 1;
-        queue->head = item->next;
+        queue->active = 1;
+        queue->first = item->next;
     }
     func_0010CA68();
     return item;

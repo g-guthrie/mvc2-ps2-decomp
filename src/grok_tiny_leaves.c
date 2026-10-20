@@ -880,11 +880,16 @@ void func_00104190(void) {
     }
 }
 
-void func_001041A0(void) {
+/* EE syscall 0x77: SifSetDma(descriptors, count). */
+struct SonySifDmaTransfer;
+int func_001041A0(struct SonySifDmaTransfer *descriptors, int count) {
+    int result;
     asm {
         addiu v1, r0, 119
         syscall 0
+        move result, v0
     }
+    return result;
 }
 
 void func_001041B0(void) {

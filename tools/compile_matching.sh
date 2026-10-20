@@ -16019,4 +16019,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_gs_half_offset.o" "$BUILD/sony29_gs_half_offset.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_gs_half_offset.o" private/SLUS_204.86.rom --source src/sony29_gs_half_offset.c
 
+"$WIBO" "$SNCPP" -P src/sony29_rpc_queue_call_00106dd8.c "$BUILD/sony29_rpc_queue_call_00106dd8.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_queue_call_00106dd8.i" -O2 -G0 -fno-strict-aliasing -ffunction-sections -quiet -o "$BUILD/sony29_rpc_queue_call_00106dd8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_queue_call_00106dd8.o" "$BUILD/sony29_rpc_queue_call_00106dd8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_queue_call_00106dd8.o" private/SLUS_204.86.rom --source src/sony29_rpc_queue_call_00106dd8.c
+
+"$WIBO" "$SNCPP" -P src/sony29_sif_command_send.c "$BUILD/sony29_sif_command_send.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_sif_command_send.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_sif_command_send.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_sif_command_send.o" "$BUILD/sony29_sif_command_send.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_sif_command_send.o" private/SLUS_204.86.rom --source src/sony29_sif_command_send.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
