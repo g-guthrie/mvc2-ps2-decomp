@@ -4416,10 +4416,10 @@ func_001C4D30,0x001C4D30,0x24,0x001C4D54,code,spimdisasm-explicit-size-before-fi
 func_001C4D60,0x001C4D60,0x40,0x001C4DA0,code,spimdisasm-explicit-size-before-first-data
 func_001C4DA0,0x001C4DA0,0x10,0x001C4DB0,code,spimdisasm-explicit-size-before-first-data
 func_001C4DB0,0x001C4DB0,0x20,0x001C4DD0,code,matching-c-head-split
-residual_001C4DD0,0x001C4DD0,0xEC,0x001C4EBC,assembly_residual,verified-boundary-after-matching-head
+func_001C4DD0,0x001C4DD0,0xEC,0x001C4EBC,code,verified-complete-c-function
 func_001C4EC0,0x001C4EC0,0x58,0x001C4F18,code,spimdisasm-explicit-size-before-first-data
 func_001C4F20,0x001C4F20,0x20,0x001C4F40,code,matching-c-head-split
-residual_001C4F40,0x001C4F40,0xE4,0x001C5024,assembly_residual,verified-boundary-after-matching-head
+func_001C4F40,0x001C4F40,0xE4,0x001C5024,code,verified-complete-c-function
 func_001C5030,0x001C5030,0x48,0x001C5078,code,spimdisasm-explicit-size-before-first-data
 func_001C5080,0x001C5080,0x14,0x001C5094,code,spimdisasm-explicit-size-before-first-data
 func_001C50A0,0x001C50A0,0x8,0x001C50A8,code,spimdisasm-explicit-size-before-first-data

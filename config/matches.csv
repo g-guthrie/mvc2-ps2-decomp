@@ -17131,3 +17131,5 @@ func_00198730,0x00198730,0xEC,src/copy_owner_chain_001a2960.c,complete
 func_001BAA10,0x001BAA10,0xF4,src/copy_owner_chain_001a2960.c,complete
 func_001CBEF0,0x001CBEF0,0x10C,src/payload_setup_callbacks_001cbef0.c,complete
 func_001E0D90,0x001E0D90,0x110,src/payload_setup_callbacks_001cbef0.c,complete
+func_001C4DD0,0x001C4DD0,0xEC,src/payload_mode_initializers_001c4dd0.c,complete
+func_001C4F40,0x001C4F40,0xE4,src/payload_mode_initializers_001c4dd0.c,complete
