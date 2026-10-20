@@ -4,6 +4,7 @@ set -eu
 : "${WIBO:?set WIBO to the private wibo executable}"
 : "${MWCCPS2:?set MWCCPS2 to the private mwccps2.exe}"
 : "${MWCCPS2_30:?set MWCCPS2_30 to private mwccps2-3.0-011126/mwccps2.exe}"
+: "${MWCCPS2_24:?set MWCCPS2_24 to private mwcps2-2.4-001213/mwccps2.exe}"
 
 : "${SNCPP:?set SNCPP to SN GCC 2.95.2 cpp.exe}"
 : "${SNCC1:?set SNCC1 to SN GCC 2.95.2 cc1.exe}"
@@ -15789,5 +15790,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/mode_command_motion_002
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/animation_countdown_reset_002b6f20.c -c -lang c -O4 -Op -sdatathreshold 8 -o "$BUILD/animation_countdown_reset_002b6f20.o"
 "$PYTHON" tools/verify_object.py "$BUILD/animation_countdown_reset_002b6f20.o" private/SLUS_204.86.rom --source src/animation_countdown_reset_002b6f20.c
+
+MWCIncludes=$(dirname "$MWCCPS2_24") "$WIBO" "$MWCCPS2_24" \
+    src/owner_tag_guard_003562d0.c -c -lang c -O4,p -sdatathreshold 8 \
+    -o "$BUILD/owner_tag_guard_003562d0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_tag_guard_003562d0.o" private/SLUS_204.86.rom --source src/owner_tag_guard_003562d0.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

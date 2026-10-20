@@ -759,3 +759,24 @@ The 38 follow-up Grok loop recoveries use MWCC 3.0 (`011126`) with `#pragma padl
 ### Conditional moves also occur in exact Metrowerks output
 
 The recovered `func_001CFBB0` in `src/payload_phase_initializers_001a9720.c` is a complete 356-byte match with MWCCPS2 Version 3.0 (runtime built November 26, 2001), `-O3 -Op -sdatathreshold 8`. Retail instruction 0x001CFCEC is `movz a2, zero, v0`. The ordinary C selector `(s8)(p[0x20] ? 23 : 0)` reproduces it, including the subsequent sign extension and helper call. A `movz` instruction alone therefore does not distinguish Sony GCC from Metrowerks. Use complete relocated object matches and multiple independent compiler traits when assigning a compiler family. This counterexample does not establish the provenance of unrelated functions.
+
+## Exact 2.4 profile for owner tag guard
+
+`src/owner_tag_guard_003562d0.c` matches all 84 native bytes at `003562D0`
+with `mwcps2-2.4-001213`, `-O4,p -sdatathreshold 8`. The same source under
+3.0, 3.0.1 and 3.0.3 produces 80 bytes: it moves the state value load into
+an otherwise empty branch delay slot. This is evidence for this translation
+unit's production recipe; it does not identify the compiler of other units.
+The C contains no padding, assembly, volatile access or artificial operation.
+
+The production build requires `MWCCPS2_24` alongside the existing compiler
+variables. Extract the public archive into a private directory and export its
+executable path before running `make hybrid`:
+
+```sh
+curl -L https://github.com/decompme/compilers/releases/download/compilers/mwcps2-2.4-001213.tar.gz | tar xz -C "$PRIVATE_COMPILER_DIR"
+export MWCCPS2_24="$PRIVATE_COMPILER_DIR/mwcps2-2.4-001213/mwccps2.exe"
+```
+
+Set the path to the actual extracted executable if the archive's directory
+layout differs. Compiler binaries remain private.
