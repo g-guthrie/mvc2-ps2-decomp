@@ -15826,4 +15826,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/actor_transition_0017dfb0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_transition_0017dfb0.o" private/SLUS_204.86.rom --source src/actor_transition_0017dfb0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_follow_00380e10.c -c -lang c -O4,p -sdatathreshold 8 \
+    -o "$BUILD/owner_follow_00380e10.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_follow_00380e10.o" private/SLUS_204.86.rom --source src/owner_follow_00380e10.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
