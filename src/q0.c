@@ -8,8 +8,20 @@ typedef float f32;
 typedef signed long long s64;
 typedef unsigned long long u64;
 
-/* Recipe 2: static leaf with a real body so the compiler tracks its register footprint. */
-static void func_001BF550(u8 *p) { p[0] = 1; }
+extern u8 *D_004C2704;
+static void func_001BF550(u8 *p) {
+    if (*D_004C2704 < 11) {
+        s16 t = *(s16 *)(p + 0x1E) - 1;
+        *(s16 *)(p + 0x1E) = t;
+        if (t <= 0) {
+            u32 c;
+            *(s16 *)(p + 0x1E) = 1;
+            c = *D_004C2704;
+            *D_004C2704 = c + 1;
+            *(f32 *)(p + 0x34) += 53.333332f;
+        }
+    }
+}
 void func_001BF860(u8 *p) {
     if (*(s16 *)(*(u8 **)(p + 0x18) + 0x1C) <= 0) {
         u32 t = p[5]; p[5] = t + 1;
