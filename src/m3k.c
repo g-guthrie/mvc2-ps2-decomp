@@ -12,7 +12,14 @@ extern s32 func_0018AA50(u8 *, s32, s16 *, s32);
 extern void func_0011D8F8(u8 *, s32, s32);
 extern void func_002AA0E0(u8 *);
 extern void func_00394780(u8 *, s32, s32);
-static f32 func_002ADC20(u8 *p) { return *(f32 *)(p + 0x68) * 0.5f; }
+static f32 func_002ADC20(u8 *p) {
+    f32 v = *(f32 *)(p + 0x5C);
+    *(f32 *)(p + 0x34) += v;
+    *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
+    *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
+    *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
+    return *(f32 *)(p + 0x5C) * v;
+}
 extern void func_00183DF0(u8 *, s32);
 
 void func_00394080(u8 *p) {
