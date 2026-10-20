@@ -17317,3 +17317,6 @@ func_00110C28,0x00110C28,0x84,src/sony29_mc_fileinfo.c,complete
 func_00110CB0,0x00110CB0,0x140,src/sony29_mc_fileinfo.c,complete
 func_00110AE0,0x00110AE0,0x148,src/sony29_mc_fileinfo.c,complete
 func_00110EC0,0x00110EC0,0x118,src/sony29_mc_fileinfo.c,complete
+func_00420AB0,0x00420AB0,0x50,src/packet_writers.c,complete
+func_00420B30,0x00420B30,0x68,src/packet_writers.c,complete
+func_00291970,0x00291970,0xAC,src/t11_e.c,complete

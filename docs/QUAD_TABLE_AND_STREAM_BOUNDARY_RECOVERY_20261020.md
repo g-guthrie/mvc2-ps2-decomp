@@ -1,0 +1,9 @@
+# Quad records and final command-stream boundary
+
+The native readers at 00422150 and 00422740 establish four signed 32-bit fields per 16-byte record at 004A6F80. The parser masks its table selector to one byte. The text renderer additionally bounds digit, uppercase and lowercase branches and reads rows 16..77, plus fixed punctuation rows. The source-backed program selectors and these native renderer branches establish 96 records in eighteen contiguous runs, reconstructing 1,536 bytes.
+
+The first 4 KiB candidate retains 2,560 bytes of unselected records as raw, including nonzero row 156. The separate all-zero 4 KiB candidate at 004A7F80 remains raw: opcode 10 supplies its index, but the 47 inventoried C-root programs do not select that opcode. Additional native-only input paths are not assumed covered by that inventory. All 38 replacement objects across the 8,192-byte region verify exactly. Reproduce the detailed native receipt with `python tools/report_effect_transform_tables.py --rom private/SLUS_204.86.rom`.
+
+The final program beginning at 004A9ED0 reaches an opcode-zero terminator at 004A9F60 and ends at 004A9F61. The previous zero-run split at 004A9F60 was not an independent owner. Actual adjacent callbacks reference 004A9ED0 and 004A9F70, establishing the correct next bound. Its 160-byte span now contains 134 native-read bytes, eleven opaque skipped bytes and a fifteen-byte raw tail. All ten changed objects verify exactly. The separate follow-up receipt is produced by `python tools/report_effect_timeline_a9ed0_followup.py --rom private/SLUS_204.86.rom`.
+
+Across 004A9280..004A9F70, the combined recovery now accounts for 2,663 native-read bytes, 238 skipped bytes and 411 gap/tail bytes. The original bounded receipt tool remains available for reproducing the earlier 004A9280..004A9F60 view; it explicitly labels that end as an import boundary. No command-parser code credit is added by the data recovery.

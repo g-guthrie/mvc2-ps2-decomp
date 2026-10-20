@@ -1,0 +1,4 @@
+name,address,size,source,status
+func_00420A00,0x00420A00,0x18,src/packet_writers.c,matching
+func_00420A20,0x00420A20,0x30,src/packet_writers.c,matching
+func_00291800,0x00291800,0x58,src/t11_e.c,matching

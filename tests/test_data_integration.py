@@ -68,8 +68,11 @@ class DataIntegrationTest(unittest.TestCase):
             )
 
     def test_unit_loader_returns_exact_catalog_metadata(self):
-        unit = load_unit(ROOT / "config/data_units.csv", "data_zero_004A7950")
-        self.assertEqual(unit, Unit("data_zero_004A7950", 0x004A7950, 0x1630, ".data"))
+        units_path = ROOT / "config/data_units.csv"
+        first_table_gap = load_unit(units_path, "data_raw_004A7940")
+        second_table_candidate = load_unit(units_path, "data_raw_004A7F80")
+        self.assertEqual(first_table_gap, Unit("data_raw_004A7940", 0x004A7940, 0x640, ".data"))
+        self.assertEqual(second_table_candidate, Unit("data_raw_004A7F80", 0x004A7F80, 0x1000, ".data"))
 
     def test_report_counts_only_cataloged_complete_data(self):
         matches = load_data_matches(

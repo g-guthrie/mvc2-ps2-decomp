@@ -34,7 +34,7 @@ report: progress-check
 
 test:
 	PYTHONPATH=. $(PYTHON) -m unittest tools.test_project tools.test_progress_catalog tools.test_hybrid_relink tools.test_pack_retail_elf tools.test_verify_object tools.test_compiled_switch_data
-	PYTHONPATH=. $(PYTHON) -m unittest discover -s tests -p test_effect_timeline.py
+	PYTHONPATH=. $(PYTHON) -m unittest discover -s tests -p 'test_effect*.py'
 
 clean:
 	rm -rf asm build build-report

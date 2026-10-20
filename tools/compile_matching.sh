@@ -7333,6 +7333,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/t11_e.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/t11_e.o"
 "$PYTHON" tools/verify_object.py "$BUILD/t11_e.o" private/SLUS_204.86.rom --source src/t11_e.c
+"$PYTHON" tools/verify_object.py "$BUILD/t11_e.o" private/SLUS_204.86.rom --matches config/local_helper_matches.csv --source src/t11_e.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/t6_a.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/t6_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/t6_a.o" private/SLUS_204.86.rom --source src/t6_a.c
@@ -15574,5 +15575,10 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$EE29CC1" "$BUILD/sony29_mc_fileinfo.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_mc_fileinfo.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_mc_fileinfo.o" "$BUILD/sony29_mc_fileinfo.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_mc_fileinfo.o" private/SLUS_204.86.rom --source src/sony29_mc_fileinfo.c
+
+# Actual packet writers; helper spans are verified separately without credit.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/packet_writers.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/packet_writers.o"
+"$PYTHON" tools/verify_object.py "$BUILD/packet_writers.o" private/SLUS_204.86.rom --source src/packet_writers.c
+"$PYTHON" tools/verify_object.py "$BUILD/packet_writers.o" private/SLUS_204.86.rom --matches config/local_helper_matches.csv --source src/packet_writers.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh
