@@ -17393,3 +17393,6 @@ func_0010A1A0,0x0010A1A0,0x26C,src/sony29_fileio_metadata_requests.c,complete
 func_0040AAB8,0x0040AAB8,0xAC,src/lookup_runtime_descriptor_0040AAB8.c,complete
 func_001098C0,0x001098C0,0x158,src/sony29_fileio_buffer_requests.c,complete
 func_0010A668,0x0010A668,0x238,src/sony29_fileio_buffer_requests.c,complete
+func_00107AF8,0x00107AF8,0x98,src/sony29_fileio_registration.c,complete
+func_001075E8,0x001075E8,0x88,src/sony29_fileio_registration.c,complete
+func_00108D68,0x00108D68,0x1DC,src/sony29_fileio_device_control.c,complete

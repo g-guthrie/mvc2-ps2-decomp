@@ -15750,4 +15750,14 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_do_002e5db0.
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_fileio_buffer_requests.o" "$BUILD/sony29_fileio_buffer_requests.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_fileio_buffer_requests.o" private/SLUS_204.86.rom --source src/sony29_fileio_buffer_requests.c
 
+"$WIBO" "$SNCPP" -P src/sony29_fileio_registration.c "$BUILD/sony29_fileio_registration.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_fileio_registration.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_fileio_registration.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_fileio_registration.o" "$BUILD/sony29_fileio_registration.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_fileio_registration.o" private/SLUS_204.86.rom --source src/sony29_fileio_registration.c
+
+"$WIBO" "$SNCPP" -P src/sony29_fileio_device_control.c "$BUILD/sony29_fileio_device_control.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_fileio_device_control.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_fileio_device_control.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_fileio_device_control.o" "$BUILD/sony29_fileio_device_control.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_fileio_device_control.o" private/SLUS_204.86.rom --source src/sony29_fileio_device_control.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
