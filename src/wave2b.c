@@ -47,9 +47,14 @@ void func_0032CE60(void) {
 }
 
 extern void (*D_004C1980[2])(u8 *);
+extern u8 *D_004C2938;
 static void func_00345FE0(u8 *p) {
-    *(float *)(p + 0x34) = *(float *)(*(u8 **)(p + 0x18) + 0x34);
-    *(float *)(p + 0x38) = *(float *)(*(u8 **)(p + 0x18) + 0x38);
+    u8 *q = *(u8 **)(p + 24);
+    *(float *)(p + 52) = *(float *)(q + 52);
+    q = *(u8 **)(p + 24);
+    *(float *)(p + 56) = *(float *)(q + 56);
+    *(float *)(p + 52) += *(float *)(D_004C2938 + 8);
+    *(float *)(p + 56) += *(float *)(D_004C2938 + 12);
 }
 void func_003462C0(u8 *p) {
     func_00345FE0(p);
