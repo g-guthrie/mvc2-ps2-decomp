@@ -15029,4 +15029,16 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/enqueue_actor_001e7f60.
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/copy_owner_chain_001a2960.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/copy_owner_chain_001a2960.o"
 "$PYTHON" tools/verify_object.py "$BUILD/copy_owner_chain_001a2960.o" private/SLUS_204.86.rom --source src/copy_owner_chain_001a2960.c
 
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/payload_state_initializers_00199220.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/payload_state_initializers_00199220.o"
+"$PYTHON" tools/verify_object.py "$BUILD/payload_state_initializers_00199220.o" private/SLUS_204.86.rom --source src/payload_state_initializers_00199220.c
+
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/positioned_payload_initializers_001941c0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/positioned_payload_initializers_001941c0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/positioned_payload_initializers_001941c0.o" private/SLUS_204.86.rom --source src/positioned_payload_initializers_001941c0.c
+
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/alpha_payload_initializer_001bfb30.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/alpha_payload_initializer_001bfb30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/alpha_payload_initializer_001bfb30.o" private/SLUS_204.86.rom --source src/alpha_payload_initializer_001bfb30.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

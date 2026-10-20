@@ -1,8 +1,8 @@
-/* Typed callback entries recovered from the exact dispatch callers. */
+/* Callback addresses; the first entry also receives the inherited owner in a1. */
 /* Consumer: src/grok_w5_disp.c (jtbl_00449440). */
 #include "mvc2_state_callbacks.h"
 
-extern void func_00194480(u8 *);
+extern void func_00194480(u8 *, u8 *);
 extern void func_001945D0(u8 *);
 extern void func_00194710(u8 *);
 extern void func_001947C0(u8 *);
@@ -12,7 +12,7 @@ extern void func_00194960(u8 *);
 extern void func_00194980(u8 *);
 
 const Mvc2StateCallback jtbl_00449440[8] = {
-    func_00194480,
+    (Mvc2StateCallback)func_00194480,
     func_00194940,
     func_00194960,
     func_00194980,
