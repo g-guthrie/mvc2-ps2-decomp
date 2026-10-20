@@ -17282,3 +17282,5 @@ func_001F11B0,0x001F11B0,0x184,src/grok_fv_001f11b0.c,complete
 func_00172760,0x00172760,0x164,src/grok_dx_172760.c,complete
 func_00143A60,0x00143A60,0x1F4,src/grok_he_00143A60.c,complete
 func_003486B0,0x003486B0,0x148,src/grok_fo_3486b0.c,complete
+func_0019D970,0x0019D970,0x160,src/grok_hs_19d970.c,complete
+func_00215650,0x00215650,0x148,src/grok_gk_215650.c,complete

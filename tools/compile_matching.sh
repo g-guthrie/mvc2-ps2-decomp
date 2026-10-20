@@ -15402,4 +15402,14 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_he_00143A60.
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_fo_3486b0.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_fo_3486b0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_fo_3486b0.o" private/SLUS_204.86.rom --source src/grok_fo_3486b0.c
 
+
+# Exact recovered queue and render functions.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_hs_19d970.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_hs_19d970.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_hs_19d970.o" private/SLUS_204.86.rom --source src/grok_hs_19d970.c
+
+
+# Exact recovered queue and render functions.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_gk_215650.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_gk_215650.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_gk_215650.o" private/SLUS_204.86.rom --source src/grok_gk_215650.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

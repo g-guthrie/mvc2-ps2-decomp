@@ -8,7 +8,11 @@ typedef signed int s32;
 typedef float f32;
 
 extern u8 *D_004C2794 __attribute__((section(".sdata")));
-extern s32 data_u32_00461EF0[];
+typedef struct {
+    s32 x_16_16;
+    s32 y_16_16;
+} Motion16_16Pair;
+extern Motion16_16Pair data_u32_00461EF0[2];
 extern int func_001757E0(u8 *, s32, s32);
 
 void func_003486B0(u8 *p, u8 *q)
@@ -21,8 +25,8 @@ void func_003486B0(u8 *p, u8 *q)
     *(s32 *)(p + 0x1D8) = 0;
     ((s16 *)(D_004C2794 + 0x7C))[p[2]]++;
     *(u32 *)(p + 0x34) = 0x42555555;
-    *(f32 *)(p + 0x5C) = (1.6666666269302368f * (f32)data_u32_00461EF0[p[0x1B7] * 2]) / 65536.0f;
-    *(f32 *)(p + 0x60) = -((2.1428570747375488f * (f32)data_u32_00461EF0[p[0x1B7] * 2 + 1]) / 65536.0f);
+    *(f32 *)(p + 0x5C) = (1.6666666269302368f * (f32)data_u32_00461EF0[p[0x1B7]].x_16_16) / 65536.0f;
+    *(f32 *)(p + 0x60) = -((2.1428570747375488f * (f32)data_u32_00461EF0[p[0x1B7]].y_16_16) / 65536.0f);
     if (*(s16 *)(p + 0x140) != 0)
         *(f32 *)(p + 0x34) = *(f32 *)(p + 0x34) + *(f32 *)(q + 0x34);
     else {
