@@ -81,7 +81,7 @@ void func_001AACC0(u8 *p, u8 *q) {
 
 extern u16 D_004D18DC;
 extern u8 D_004D18DB;
-static void func_003C9200(u8 *q, s32 b) { D_004D18DB = 1; }
+static void func_003C9200(u8 *p, s32 b) { p[4]++; }
 
 void func_003C8CD0(u8 *p, s32 b) {
     if ((D_004D18DC & (1 << D_004D18DB)) == 0) {
