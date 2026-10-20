@@ -6,7 +6,14 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-static s32 func_00254480(u8 *p) { return *(s32 *)(p + 4) != 0; }
+static s32 func_00254480(u8 *p) {
+    if (p[0x20D] != 2) return 1;
+    if (p[0x210] == 0) {
+        if (*(s8 *)(p + 0x1E8) != 0) return 0;
+        *(s8 *)(p + 0x1E8) += 1;
+    }
+    return 1;
+}
 
 s32 func_00254910(u8 *p) {
     extern s32 func_00189310();
