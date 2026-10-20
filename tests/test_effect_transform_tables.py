@@ -10,6 +10,7 @@ from tools.effect_transform_tables import (
     contiguous_row_runs,
     signed_quad,
 )
+from tools.report_effect_transform_tables import NATIVE_ONLY_ROOT_BOUNDS, parser_root_inventory
 
 
 class EffectTransformTableTests(unittest.TestCase):
@@ -37,6 +38,20 @@ class EffectTransformTableTests(unittest.TestCase):
         for i, value in enumerate((-1, 0, 121, -144)):
             image[i * 4:i * 4 + 4] = value.to_bytes(4, "little", signed=True)
         self.assertEqual(signed_quad(bytes(image), address), (-1, 0, 121, -144))
+
+    def test_native_only_stream_roots_have_explicit_next_root_bounds(self):
+        roots = parser_root_inventory()
+        self.assertEqual(len(roots), 52)
+        self.assertEqual(
+            NATIVE_ONLY_ROOT_BOUNDS,
+            {
+                0x004A9360: (0x004A93D0, "native func_004220B0 callsite 0x00421540"),
+                0x004A96B0: (0x004A9720, "native func_004220B0 callsite 0x00421750"),
+                0x004AA160: (0x004AA240, "func_00421C00 conditional callback at 0x00421C44"),
+                0x004AA240: (0x004AA320, "func_00421C00 conditional callback at 0x00421C7C"),
+                0x004AA7B0: (0x004AA800, "native func_004220B0 callsite 0x00421E90"),
+            },
+        )
 
 
 if __name__ == "__main__":

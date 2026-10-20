@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import json
 import re
 from pathlib import Path
@@ -37,6 +38,15 @@ except ModuleNotFoundError:
 
 
 IMAGE_BASE = 0x00100000
+STREAM_END = 0x004AA980
+STREAM_END_SYMBOL = "gPs2SystemText_004AA980"
+NATIVE_ONLY_ROOT_BOUNDS = {
+    0x004A9360: (0x004A93D0, "native func_004220B0 callsite 0x00421540"),
+    0x004A96B0: (0x004A9720, "native func_004220B0 callsite 0x00421750"),
+    0x004AA160: (0x004AA240, "func_00421C00 conditional callback at 0x00421C44"),
+    0x004AA240: (0x004AA320, "func_00421C00 conditional callback at 0x00421C7C"),
+    0x004AA7B0: (0x004AA800, "native func_004220B0 callsite 0x00421E90"),
+}
 CALLBACK_SOURCES = (
     Path("src/float_callbacks.c"),
     Path("src/effect_state_callbacks.c"),
@@ -72,15 +82,33 @@ def callback_roots() -> list[int]:
     return sorted(roots)
 
 
+def parser_root_inventory() -> list[int]:
+    return sorted(set(callback_roots()) | set(NATIVE_ONLY_ROOT_BOUNDS))
+
+
 def complement_row_runs(rows: list[int]) -> list[tuple[int, int]]:
     used = set(rows)
     return contiguous_row_runs(row for row in range(TABLE_SIZE // ROW_SIZE) if row not in used)
 
 
+def verify_stream_end_owner() -> None:
+    with Path("config/data_units.csv").open(newline="", encoding="utf-8") as stream:
+        units = {row["name"]: row for row in csv.DictReader(stream)}
+    owner = units.get(STREAM_END_SYMBOL)
+    if owner is None or int(owner["address"], 0) != STREAM_END:
+        raise SystemExit(
+            f"missing effect stream end owner {STREAM_END_SYMBOL} at 0x{STREAM_END:08X}"
+        )
+
+
 def create_receipt(image: bytes) -> dict[str, object]:
-    roots = callback_roots()
-    if len(roots) != 47:
-        raise SystemExit(f"expected 47 source-backed parser roots, found {len(roots)}")
+    verify_stream_end_owner()
+    source_roots = callback_roots()
+    if len(source_roots) != 47:
+        raise SystemExit(f"expected 47 source-backed parser roots, found {len(source_roots)}")
+    roots = parser_root_inventory()
+    if len(roots) != 52:
+        raise SystemExit(f"expected 52 source/native parser roots, found {len(roots)}")
     if TABLE1_BASE + TABLE_SIZE != TABLE2_BASE:
         raise SystemExit("the table1 next-base boundary changed")
     if TABLE2_BASE + TABLE_SIZE != NEXT_OWNER:
@@ -89,12 +117,35 @@ def create_receipt(image: bytes) -> dict[str, object]:
     selectors: set[int] = set()
     body_opcode10: list[dict[str, int]] = []
     parsed_roots = []
-    for address in roots:
-        program = parse_program(image, address - IMAGE_BASE, len(image))
+    for index, address in enumerate(roots):
+        if index + 1 < len(roots):
+            next_root = roots[index + 1]
+            next_origin = (
+                NATIVE_ONLY_ROOT_BOUNDS[next_root][1]
+                if next_root in NATIVE_ONLY_ROOT_BOUNDS
+                else "source callback reference"
+            )
+        else:
+            next_root = STREAM_END
+            next_origin = f"independent source symbol {STREAM_END_SYMBOL}"
+        if address in NATIVE_ONLY_ROOT_BOUNDS:
+            expected_next, origin = NATIVE_ONLY_ROOT_BOUNDS[address]
+            if expected_next != next_root:
+                raise SystemExit(
+                    f"native root 0x{address:08X} has proven bound 0x{expected_next:08X}, "
+                    f"but actual root inventory gives 0x{next_root:08X}"
+                )
+        else:
+            origin = "source callback reference"
+        limit = next_root - IMAGE_BASE
+        program = parse_program(image, address - IMAGE_BASE, limit)
         if program.count != 1:
             raise SystemExit(f"unexpected count {program.count} at 0x{address:08X}")
+        if program.end > limit:
+            raise SystemExit(f"stream at 0x{address:08X} crosses bound 0x{next_root:08X}")
         opcodes = [command.opcode for record in program.records for command in record.commands]
-        selectors.update(body_table1_selectors(opcodes))
+        root_selectors = body_table1_selectors(opcodes)
+        selectors.update(root_selectors)
         for record in program.records:
             for command in record.commands:
                 if command.opcode == 10:
@@ -105,9 +156,13 @@ def create_receipt(image: bytes) -> dict[str, object]:
         parsed_roots.append(
             {
                 "address": f"0x{address:08X}",
+                "origin": origin,
+                "next_root": f"0x{next_root:08X}",
+                "next_root_origin": next_origin,
                 "count": program.count,
                 "parsed_bytes": program.end - program.start,
                 "body_command_count": sum(len(record.commands) for record in program.records),
+                "body_table1_selectors": sorted(root_selectors),
             }
         )
 

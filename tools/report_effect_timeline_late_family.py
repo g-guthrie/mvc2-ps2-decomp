@@ -20,6 +20,7 @@ END = 0x004AA980
 NATIVE_ONLY_ROOTS = {
     0x004AA160: "func_00421C00 conditional callback at 0x00421C44",
     0x004AA240: "func_00421C00 conditional callback at 0x00421C7C",
+    0x004AA7B0: "native callsite 0x00421E90",
 }
 NEXT_OWNER_SYMBOL = "gPs2SystemText_004AA980"
 
@@ -45,8 +46,8 @@ def verify_next_owner() -> None:
 def parse_late_family(image: bytes) -> list[dict[str, object]]:
     verify_next_owner()
     roots = late_roots()
-    if len(roots) != 21:
-        raise SystemExit(f"expected 21 callback roots in late family, found {len(roots)}")
+    if len(roots) != 22:
+        raise SystemExit(f"expected 22 callback roots in late family, found {len(roots)}")
     rows = []
     total_read = total_opaque = total_gap = total_commands = 0
     for index, (address, origin) in enumerate(roots):
@@ -89,7 +90,7 @@ def parse_late_family(image: bytes) -> list[dict[str, object]]:
             }
         )
     span = END - START
-    if (total_read, total_opaque, total_gap) != (2129, 186, 261):
+    if (total_read, total_opaque, total_gap) != (2202, 191, 183):
         raise SystemExit(
             f"accounting changed: native-read={total_read}, opaque={total_opaque}, gap={total_gap}"
         )
@@ -99,7 +100,7 @@ def parse_late_family(image: bytes) -> list[dict[str, object]]:
         {
             "kind": "TOTAL",
             "address": f"0x{START:08X}",
-            "origin": "21 source/native callback roots",
+            "origin": "22 source/native callback roots",
             "next_root": f"0x{END:08X}",
             "next_root_origin": f"independent source symbol {NEXT_OWNER_SYMBOL}",
             "record_count": len(roots),

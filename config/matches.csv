@@ -17341,3 +17341,12 @@ func_0010DB30,0x0010DB30,0x120,src/sony29_pad_actuator_query.c,complete
 func_0010DC50,0x0010DC50,0x11C,src/sony29_pad_actuator_query.c,complete
 func_0010DD70,0x0010DD70,0x138,src/sony29_pad_actuator_query.c,complete
 func_0010DF60,0x0010DF60,0xC0,src/sony29_pad_actuator_query.c,complete
+func_0010D7A8,0x0010D7A8,0xB8,src/sony29_pad_port_close.c,complete
+func_0010B360,0x0010B360,0x208,src/sony29_rpc_payload_transfers.c,complete
+func_0010B568,0x0010B568,0x208,src/sony29_rpc_payload_transfers.c,complete
+func_0010B970,0x0010B970,0x224,src/sony29_rpc_payload_transfers.c,complete
+func_0010B800,0x0010B800,0xa0,src/sony29_rpc_record_operations.c,complete
+func_0010BBD8,0x0010BBD8,0x104,src/sony29_rpc_record_operations.c,complete
+func_0010BD28,0x0010BD28,0xec,src/sony29_rpc_record_operations.c,complete
+func_0010BE18,0x0010BE18,0xdc,src/sony29_rpc_record_operations.c,complete
+func_0010C2F8,0x0010C2F8,0xC4,src/sony29_kernel_hook_initialization.c,complete

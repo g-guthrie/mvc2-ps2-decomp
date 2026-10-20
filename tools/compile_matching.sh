@@ -15615,4 +15615,24 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/sprite_handoff_00
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_pad_actuator_query.o" "$BUILD/sony29_pad_actuator_query.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_pad_actuator_query.o" private/SLUS_204.86.rom --source src/sony29_pad_actuator_query.c
 
+"$WIBO" "$SNCPP" -P src/sony29_pad_port_close.c "$BUILD/sony29_pad_port_close.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_pad_port_close.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_pad_port_close.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_pad_port_close.o" "$BUILD/sony29_pad_port_close.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_pad_port_close.o" private/SLUS_204.86.rom --source src/sony29_pad_port_close.c
+
+"$WIBO" "$SNCPP" -P src/sony29_rpc_payload_transfers.c "$BUILD/sony29_rpc_payload_transfers.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_payload_transfers.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_payload_transfers.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_payload_transfers.o" "$BUILD/sony29_rpc_payload_transfers.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_payload_transfers.o" private/SLUS_204.86.rom --source src/sony29_rpc_payload_transfers.c
+
+"$WIBO" "$SNCPP" -P src/sony29_kernel_hook_initialization.c "$BUILD/sony29_kernel_hook_initialization.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_kernel_hook_initialization.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_kernel_hook_initialization.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_kernel_hook_initialization.o" "$BUILD/sony29_kernel_hook_initialization.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_kernel_hook_initialization.o" private/SLUS_204.86.rom --source src/sony29_kernel_hook_initialization.c
+
+"$WIBO" "$SNCPP" -P src/sony29_rpc_record_operations.c "$BUILD/sony29_rpc_record_operations.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_record_operations.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_record_operations.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_record_operations.o" "$BUILD/sony29_rpc_record_operations.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_record_operations.o" private/SLUS_204.86.rom --source src/sony29_rpc_record_operations.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

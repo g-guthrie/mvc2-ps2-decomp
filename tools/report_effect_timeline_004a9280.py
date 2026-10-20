@@ -26,6 +26,12 @@ CALLBACK_SOURCES = (
 )
 
 
+NATIVE_ONLY_ROOTS = {
+    0x004A9360: "native callsite 0x00421540",
+    0x004A96B0: "native callsite 0x00421750",
+}
+
+
 def _command_receipt(command, phase: str) -> dict[str, object]:
     opcode = command.opcode
     operand = command.operand
@@ -150,6 +156,7 @@ def callback_roots() -> list[int]:
                 r"func_004220B0\([^,]+,\s*(D_004A[0-9A-Fa-f]{4})", source
             )
         )
+    roots.update(NATIVE_ONLY_ROOTS)
     return sorted(address for address in roots if BASE <= address < END)
 
 
@@ -167,8 +174,8 @@ def main() -> None:
     else:
         data = load_original_bytes(Path("src/data/data_u32_004A9280.c"))
     roots = callback_roots()
-    if len(roots) != 23:
-        raise SystemExit(f"expected 23 independently referenced roots, found {len(roots)}")
+    if len(roots) != 25:
+        raise SystemExit(f"expected 25 independently referenced roots, found {len(roots)}")
     native_read_bytes = 0
     opaque_payload_bytes = 0
     raw_gap_bytes = 0
@@ -255,9 +262,9 @@ def main() -> None:
         )
     held_bytes = records[-1]["span_bytes"]
     total_covered = native_read_bytes + opaque_payload_bytes + raw_gap_bytes + held_bytes
-    expected_native_read = 2529
-    expected_opaque = 227
-    expected_gap = 396
+    expected_native_read = 2711
+    expected_opaque = 243
+    expected_gap = 198
     if (native_read_bytes != expected_native_read or opaque_payload_bytes != expected_opaque
             or raw_gap_bytes != expected_gap or total_covered != END - BASE):
         raise SystemExit(
