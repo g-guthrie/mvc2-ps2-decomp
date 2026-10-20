@@ -15333,4 +15333,60 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_scalbn_001169B0.o" "$BUILD/newlib_scalbn_001169B0.s"
 "$PYTHON" tools/verify_object.py "$BUILD/newlib_scalbn_001169B0.o" private/SLUS_204.86.rom --source src/newlib_scalbn_001169B0.c
 
+
+# Exact owner callbacks and fdlibm kernel cosine.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_hb_353140.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_hb_353140.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_hb_353140.o" private/SLUS_204.86.rom --source src/grok_hb_353140.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/payload_owner_launch_003c2010.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/payload_owner_launch_003c2010.o"
+"$PYTHON" tools/verify_object.py "$BUILD/payload_owner_launch_003c2010.o" private/SLUS_204.86.rom --source src/payload_owner_launch_003c2010.c
+
+"$WIBO" "$SNCPP" -P src/newlib_k_cos_001142F8.c "$BUILD/newlib_k_cos_001142F8.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_k_cos_001142F8.i" "$BUILD/newlib_k_cos_001142F8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_k_cos_001142F8.o" "$BUILD/newlib_k_cos_001142F8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_k_cos_001142F8.o" private/SLUS_204.86.rom --source src/newlib_k_cos_001142F8.c
+
+
+# Recovered owner constructors, state transitions, and kernel sine.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/payload_recovered_003c3140.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/payload_recovered_003c3140.o"
+"$PYTHON" tools/verify_object.py "$BUILD/payload_recovered_003c3140.o" private/SLUS_204.86.rom --source src/payload_recovered_003c3140.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/payload_recovered_00360a40.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/payload_recovered_00360a40.o"
+"$PYTHON" tools/verify_object.py "$BUILD/payload_recovered_00360a40.o" private/SLUS_204.86.rom --source src/payload_recovered_00360a40.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/payload_recovered_003c1d80.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/payload_recovered_003c1d80.o"
+"$PYTHON" tools/verify_object.py "$BUILD/payload_recovered_003c1d80.o" private/SLUS_204.86.rom --source src/payload_recovered_003c1d80.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_fe_0018A7A0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_fe_0018A7A0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_fe_0018A7A0.o" private/SLUS_204.86.rom --source src/grok_fe_0018A7A0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/payload_recovered_00388200.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/payload_recovered_00388200.o"
+"$PYTHON" tools/verify_object.py "$BUILD/payload_recovered_00388200.o" private/SLUS_204.86.rom --source src/payload_recovered_00388200.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/payload_recovered_003d77e0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/payload_recovered_003d77e0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/payload_recovered_003d77e0.o" private/SLUS_204.86.rom --source src/payload_recovered_003d77e0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/payload_recovered_003873a0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/payload_recovered_003873a0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/payload_recovered_003873a0.o" private/SLUS_204.86.rom --source src/payload_recovered_003873a0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/payload_recovered_00388930.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/payload_recovered_00388930.o"
+"$PYTHON" tools/verify_object.py "$BUILD/payload_recovered_00388930.o" private/SLUS_204.86.rom --source src/payload_recovered_00388930.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_fs_0038A3F0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_fs_0038A3F0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_fs_0038A3F0.o" private/SLUS_204.86.rom --source src/grok_fs_0038A3F0.c
+
+"$WIBO" "$SNCPP" -P src/newlib_k_sin_00115120.c "$BUILD/newlib_k_sin_00115120.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_k_sin_00115120.i" "$BUILD/newlib_k_sin_00115120.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_k_sin_00115120.o" "$BUILD/newlib_k_sin_00115120.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_k_sin_00115120.o" private/SLUS_204.86.rom --source src/newlib_k_sin_00115120.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/payload_recovered_001ba8a0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/payload_recovered_001ba8a0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/payload_recovered_001ba8a0.o" private/SLUS_204.86.rom --source src/payload_recovered_001ba8a0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/payload_recovered_003848a0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/payload_recovered_003848a0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/payload_recovered_003848a0.o" private/SLUS_204.86.rom --source src/payload_recovered_003848a0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/payload_recovered_003844c0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/payload_recovered_003844c0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/payload_recovered_003844c0.o" private/SLUS_204.86.rom --source src/payload_recovered_003844c0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

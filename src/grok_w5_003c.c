@@ -224,7 +224,7 @@ void func_003D7CC0(u8 *p, u8 *q)
         func_00175910(p, 22, 41, *(s8 *)(q + 0x151));
 }
 
-void func_003C15B0(u8 *p)
+void func_003C15B0(u8 *p, u8 *owner)
 {
     S(p, 0xd0) = (s16)func_00118FA8((f32)S(p, 0xd0) + F(p, 0x5c));
 }

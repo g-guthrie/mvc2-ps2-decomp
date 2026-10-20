@@ -92,7 +92,7 @@ s32 func_003BD650(u8 *p) {
     return 0;
 }
 
-void func_003C3910(u8 *p) {
+void func_003C3910(u8 *p, void *owner) {
     s16 v = *(s16 *)(p + 28);
     *(s16 *)(p + 28) = v - 1;
     if (v == 0) {

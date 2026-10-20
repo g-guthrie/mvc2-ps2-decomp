@@ -321,7 +321,7 @@ void func_003BFC60(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 
 void func_003C11A0(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 
-void func_003C3A30(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
+void func_003C3A30(u8 *p, void *owner) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 
 void func_003C48E0(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 

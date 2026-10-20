@@ -132,3 +132,8 @@ void func_001A7500(u8 *p, void *owner) {
 typedef struct Object Object;
 extern void func_003DAA40(Object *);
 void func_001D04F0(u8 *p) { func_003DAA40((Object *)p); }
+
+void func_003C3A50(u8 *p, void *owner) {
+    p[0x13C] = 0;
+    func_003DAA40((Object *)p);
+}

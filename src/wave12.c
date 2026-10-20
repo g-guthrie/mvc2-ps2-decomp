@@ -148,12 +148,12 @@ end:
 }
 
 extern void func_003C3A50(u8 *, u8 *);
-extern void (*D_00475CB0[])(u8 *);
+extern void (*D_00475CB0[])(u8 *, u8 *);
 
 void func_003C1350(u8 *p) {
     u8 *q = *(u8 **)(p + 0x18);
     if (q[0x169] != 0x16) func_003C3A50(p, q);
-    else D_00475CB0[p[0x20]](p);
+    else D_00475CB0[p[0x20]](p, q);
 }
 
 extern u8 D_004CD183[][20];

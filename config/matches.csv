@@ -3745,7 +3745,7 @@ func_003C3120,0x003C3120,0x20,src/composite_dispatch_heads.c,complete
 func_003C3470,0x003C3470,0x20,src/composite_dispatch_heads.c,complete
 func_003C3700,0x003C3700,0x20,src/composite_dispatch_heads.c,complete
 func_003C3A30,0x003C3A30,0x14,src/straight_leaves.c,complete
-func_003C3A50,0x003C3A50,0x8,src/tail_leaves.c,complete
+func_003C3A50,0x003C3A50,0x8,src/owner_callback_dispatch_prefixes.c,complete
 func_003C3AE0,0x003C3AE0,0x20,src/argument_dispatch_heads.c,complete
 func_003C42C0,0x003C42C0,0x8,src/tail_leaves.c,complete
 func_003C43D0,0x003C43D0,0x20,src/composite_dispatch_heads.c,complete
@@ -6375,7 +6375,7 @@ func_0028ADA0,0x0028ADA0,0x54,src/grok_w4_sz54.c,complete
 func_00292110,0x00292110,0x54,src/grok_w4_sz54.c,complete
 func_003F7C18,0x003F7C18,0x1C,src/grok_r2_003c.c,complete
 func_003D6820,0x003D6820,0x2C,src/grok_r2_003c.c,complete
-func_003C15F0,0x003C15F0,0x40,src/grok_r2_003c.c,complete
+func_003C15F0,0x003C15F0,0x40,src/m12b.c,complete
 func_003C3DA0,0x003C3DA0,0x40,src/grok_r2_003c.c,complete
 func_003ED8E0,0x003ED8E0,0x38,src/grok_r2_003c.c,complete
 func_003C64C0,0x003C64C0,0x3C,src/grok_r2_003c.c,complete
@@ -17264,3 +17264,19 @@ func_001D9780,0x001D9780,0x18C,src/payload_motion_initializers_001d3240.c,comple
 func_001DE8D0,0x001DE8D0,0x1B4,src/payload_motion_initializers_001d3240.c,complete
 func_001A7560,0x001A7560,0x1C0,src/payload_motion_initializers_001d3240.c,complete
 func_001C55A0,0x001C55A0,0x130,src/payload_mode_initializers_001c4dd0.c,complete
+func_00353140,0x00353140,0x1A8,src/grok_hb_353140.c,complete
+func_003C2010,0x003C2010,0x248,src/payload_owner_launch_003c2010.c,complete
+func_001142F8,0x001142F8,0x2D4,src/newlib_k_cos_001142F8.c,complete
+func_003C3140,0x003C3140,0x1A8,src/payload_recovered_003c3140.c,complete
+func_00360A40,0x00360A40,0x190,src/payload_recovered_00360a40.c,complete
+func_003C1D80,0x003C1D80,0x1AC,src/payload_recovered_003c1d80.c,complete
+func_0018A7A0,0x0018A7A0,0x178,src/grok_fe_0018A7A0.c,complete
+func_00388200,0x00388200,0x104,src/payload_recovered_00388200.c,complete
+func_003D77E0,0x003D77E0,0x184,src/payload_recovered_003d77e0.c,complete
+func_003873A0,0x003873A0,0x114,src/payload_recovered_003873a0.c,complete
+func_00388930,0x00388930,0x14C,src/payload_recovered_00388930.c,complete
+func_0038A3F0,0x0038A3F0,0x16C,src/grok_fs_0038A3F0.c,complete
+func_00115120,0x00115120,0x238,src/newlib_k_sin_00115120.c,complete
+func_001BA8A0,0x001BA8A0,0xC8,src/payload_recovered_001ba8a0.c,complete
+func_003848A0,0x003848A0,0x120,src/payload_recovered_003848a0.c,complete
+func_003844C0,0x003844C0,0x11C,src/payload_recovered_003844c0.c,complete

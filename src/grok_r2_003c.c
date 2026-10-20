@@ -81,14 +81,7 @@ void func_003D6820(s32 idx) {
         D_004F7F7A = 0;
 }
 
-void func_003C15F0(u8 *p) {
-    s16 flag = S(p, 0x140);
-    s16 x = S(p, 0xD0);
-    s16 *q = (s16 *)(p + 0xD0);
-    if (flag == 0)
-        x = -x;
-    F(p, 0x34) = (f32)(x + q[1]);
-}
+
 
 void func_003C3DA0(u8 *p) {
     s16 flag = S(p, 0x140);

@@ -46,7 +46,7 @@ void func_00214830(u8 *p) {
     }
 }
 
-void func_003C3940(u8 *p) {
+void func_003C3940(u8 *p, void *owner) {
     u8 *q = *(u8 **)(p + 0x14);
     func_00175700(p);
     *(f32 *)(p + 0x34) = *(f32 *)(q + 0x34);

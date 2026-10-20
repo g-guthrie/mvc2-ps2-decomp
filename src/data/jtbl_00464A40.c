@@ -1,6 +1,8 @@
-/* Source-safe reconstruction of initialized table. */
-const unsigned int jtbl_00464A40[3] = {
-    (unsigned int)0x00388390,
-    (unsigned int)0x00388440,
-    (unsigned int)0x003884D0,
+/* State callbacks receive the actor and the owner loaded by func_00388310. */
+#include "mvc2_state_callbacks.h"
+extern void func_00388390(u8 *, void *);
+extern void func_00388440(u8 *, void *);
+extern void func_003884D0(u8 *, void *);
+const Mvc2OwnerStateCallback jtbl_00464A40[3] = {
+    func_00388390, func_00388440, func_003884D0,
 };

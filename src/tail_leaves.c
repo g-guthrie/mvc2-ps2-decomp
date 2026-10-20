@@ -1327,7 +1327,6 @@ void func_003BFC80(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, 
 
 void func_003C11C0(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40(p, a1, a2, a3); }
 
-void func_003C3A50(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40(p, a1, a2, a3); }
 
 void func_003C42C0(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40(p, a1, a2, a3); }
 

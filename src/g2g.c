@@ -38,7 +38,7 @@ void func_00160F90(u8 *a) {
         *(s16 *)(a + 0x1C) = *(s16 *)(a + 0x1C) + 1;
     }
 }
-extern void (*D_004C1DC0[2])();
+extern void (*D_004C1DC0[2])(u8 *, u8 *);
 void func_0038A300(u8 *a) {
     u8 *b = *(u8 **)(a + 0x18);
     if (b[4] >= 2) {
@@ -50,7 +50,7 @@ void func_0038A300(u8 *a) {
             *(s8 *)(a + 0x13D) = *(s8 *)(b + 0x13D);
             *(s16 *)(a + 0x13E) = *(s16 *)(b + 0x13E);
         }
-        D_004C1DC0[a[5]]();
+        D_004C1DC0[a[5]](a, b);
     }
 }
 extern s32 func_003D92F0();

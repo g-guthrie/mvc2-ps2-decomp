@@ -110,8 +110,8 @@ s32 func_0021CFD0(u8 *p) {
 }
 
 extern void func_003C1530(void *p);
-extern void func_003C15F0(void *p, s32 a);
-void func_003C1930(u8 *p, s32 x) {
+extern void func_003C15F0(u8 *p, u8 *a);
+void func_003C1930(u8 *p, u8 *x) {
     s16 v;
     func_003C1530(p);
     func_003C15F0(p, x);
