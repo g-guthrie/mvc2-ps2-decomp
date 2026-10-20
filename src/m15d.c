@@ -89,7 +89,16 @@ extern u32 func_00417A40(void);
 extern void func_001843A0(void *p);
 extern void func_00296FB0(void *p);
 
-static void func_00345EE0(u8 *p) { *(s32 *)(p + 0x100) = 0; }
+static void func_00345EE0(u8 *p) {
+    float k = 1.5f;
+    float v;
+    u8 *q = *(u8 **)(p + 0x18);
+    *(float *)(p + 0x34) = *(float *)(q + 0x34);
+    *(float *)(p + 0x38) = *(float *)(*(u8 **)(p + 0x18) + 0x38);
+    v = k * (float)((s32)D_004C2938[6] << 5);
+    if (*(s16 *)(p + 0x140) == 0) v = -v;
+    *(float *)(p + 0x34) = *(float *)(p + 0x34) + v;
+}
 
 void func_00145A90(u8 *p) {
     u8 *q;
