@@ -16,7 +16,7 @@ untouched and receive no additional credit.
 Root independently compiled and verified the full closure: both requests
 664 bytes, reply callback 180 bytes, packet allocator 168 bytes, clear helper
 28 bytes, EE96 caller 208 bytes and older MWCC caller 140 bytes. All seven
-functions, totaling 1,488 bytes, are exact; new credit is only the two request
+functions, totaling 1,388 bytes, are exact; new credit is only the two request
 functions. Sony sources use EE GCC 2.9 O2/G0, function sections and SN AS G0.
 The other callers retain their existing EE96 O2/G8 and MWCC 3.0-011126
 O3/Op/G8 profiles.

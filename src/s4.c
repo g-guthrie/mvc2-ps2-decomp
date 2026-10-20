@@ -6,9 +6,14 @@ typedef signed char s8;
 extern void func_0040EDE0(void);
 void func_003FF258(void){ func_0040EDE0(); }
 
-typedef struct { s32 a; s32 b; s32 c; } T3;
-extern void func_003F64A0(s32);
-void func_003FF5D0(T3 *p, s32 v){ p->c = v; func_003F64A0(p->b); }
+typedef struct S64 S64;
+typedef struct { s32 state; S64 *reference; void *input; } Decoder;
+extern void func_003F64A0(S64 *reference);
+void func_003FF5D0(void *object, void *sj){
+    Decoder *decoder = object;
+    decoder->input = sj;
+    func_003F64A0(decoder->reference);
+}
 
 extern s32 func_00406AE8(s32);
 typedef struct { s32 a, b, c; } T4;

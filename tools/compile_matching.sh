@@ -15711,4 +15711,23 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_dg_002b1740.
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_client_requests.o" "$BUILD/sony29_rpc_client_requests.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_client_requests.o" private/SLUS_204.86.rom --source src/sony29_rpc_client_requests.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_do_002e7400.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_do_002e7400.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_do_002e7400.o" private/SLUS_204.86.rom --source src/grok_do_002e7400.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/sound_queue_001e5070.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/sound_queue_001e5070.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sound_queue_001e5070.o" private/SLUS_204.86.rom --source src/sound_queue_001e5070.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_do_002e5db0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_do_002e5db0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_do_002e5db0.o" private/SLUS_204.86.rom --source src/grok_do_002e5db0.c
+
+"$WIBO" "$SNCPP" -P src/sony29_rpc_server_requests.c "$BUILD/sony29_rpc_server_requests.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_server_requests.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_server_requests.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_server_requests.o" "$BUILD/sony29_rpc_server_requests.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_server_requests.o" private/SLUS_204.86.rom --source src/sony29_rpc_server_requests.c
+
+"$WIBO" "$SNCPP" -P src/adxt_start_sj_00401640.c "$BUILD/adxt_start_sj_00401640.i"
+"$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 --extra-flags="" "$BUILD/adxt_start_sj_00401640.i" "$BUILD/adxt_start_sj_00401640.s"
+"$WIBO" "$SNAS" -mips4 -G8 -o "$BUILD/adxt_start_sj_00401640.o" "$BUILD/adxt_start_sj_00401640.s"
+"$PYTHON" tools/verify_object.py "$BUILD/adxt_start_sj_00401640.o" private/SLUS_204.86.rom --source src/adxt_start_sj_00401640.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

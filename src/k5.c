@@ -17,7 +17,8 @@ extern char D_004BB580[];
 typedef struct SD8 { char pad0; signed char t; char pad[0x2A]; s32 f2C; } SD8;
 void func_003FD8F0(SD8 *p, s32 v) { if (p->t == 2) func_003FB128(D_004BB580); else p->f2C = v; }
 typedef struct S3B { u8 pad0[3]; u8 f3; char pad1[0x28]; s32 f2C, f30, f34, f38, f3C, f40, f44; char pad2[0x50]; s32 f98; } S3B;
-void func_003FF3B0(S3B *p) {
+void func_003FF3B0(void *object) {
+    S3B *p = object;
     p->f3 = 0; p->f98 = 0; p->f2C = 0; p->f30 = 0; p->f34 = 0; p->f40 = 0; p->f44 = 0; p->f38 = 0x7FFFFFFF; p->f3C = -1;
 }
 typedef unsigned int u32;

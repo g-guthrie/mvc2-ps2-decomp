@@ -17374,3 +17374,9 @@ func_00106928,0x00106928,0xB4,src/sony29_rpc_reply_completion.c,complete
 func_002B1740,0x002B1740,0xCC,src/grok_dg_002b1740.c,complete
 func_00106A40,0x00106A40,0x158,src/sony29_rpc_client_requests.c,complete
 func_00106C98,0x00106C98,0x140,src/sony29_rpc_client_requests.c,complete
+func_002E7400,0x002E7400,0xDC,src/grok_do_002e7400.c,complete
+func_001E5070,0x001E5070,0x1BC,src/sound_queue_001e5070.c,complete
+func_002E5DB0,0x002E5DB0,0x110,src/grok_do_002e5db0.c,complete
+func_00401640,0x00401640,0xC4,src/adxt_start_sj_00401640.c,complete
+func_00107200,0x00107200,0x94,src/sony29_rpc_server_requests.c,complete
+func_00107298,0x00107298,0x90,src/sony29_rpc_server_requests.c,complete

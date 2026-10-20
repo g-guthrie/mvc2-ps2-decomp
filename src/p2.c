@@ -17,11 +17,12 @@ s32 func_003F6E48(u8 *p)
     return func_003F6B30(p);
 }
 
-extern void func_003FF3B0();
-void func_003FF628(u8 *p)
+typedef void *ADXSJD;
+extern void func_003FF3B0(ADXSJD decoder);
+void func_003FF628(ADXSJD decoder)
 {
-    func_003FF3B0(p);
-    p[1] = 1;
+    func_003FF3B0(decoder);
+    ((u8 *)decoder)[1] = 1;
 }
 
 extern void func_00118F48();

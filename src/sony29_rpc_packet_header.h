@@ -8,10 +8,17 @@ typedef struct SonyRpcHeader {
     void *pkt_addr;
     unsigned int rpc_id;
 } SonyRpcHeader;
+struct SonyRpcQueue;
 typedef struct SonyRpcPacketPool {
     unsigned int counter;
     unsigned char *buffer;
     int count;
+    unsigned int unknown_0c[2];
+    unsigned char *reply_buffer;
+    int reply_count;
+    unsigned int unknown_1c[2];
+    int reply_index;
+    struct SonyRpcQueue *queues;
 } SonyRpcPacketPool;
 SonyRpcHeader *func_001067F0(SonyRpcPacketPool *pool);
 typedef struct SonyRpcReceive {

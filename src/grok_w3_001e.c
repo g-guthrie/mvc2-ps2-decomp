@@ -17,7 +17,7 @@ extern void func_001E56C0(int);
 extern void func_00402BC0(int);
 extern u8 D_004BFAE0;
 extern void func_001E4EB0(int, int, int);
-extern void func_001E5070(int, int, int);
+extern void func_001E5070(int, int, int, float);
 extern u8 D_004CD183[];
 extern int func_00175700(u8 *);
 extern void func_001843A0(u8 *);
@@ -66,9 +66,9 @@ void func_001E3270(u8 *p, int a1) {
         func_001E4EB0(D_004CD183[p[440] * 20], a1, 128);
 }
 
-void func_001E3320(u8 *p, int a1) {
+void func_001E3320(u8 *p, int a1, float scale) {
     if ((u8)a1 < 64)
-        func_001E5070(D_004CD183[p[440] * 20], a1, 128);
+        func_001E5070(D_004CD183[p[440] * 20], a1, 128, scale);
 }
 
 void func_001FD3F0(u8 *p) {
