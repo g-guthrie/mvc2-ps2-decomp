@@ -15921,4 +15921,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$SNAS" -G0 -o "$BUILD/copy_four_slots_00103418.o" "$BUILD/copy_four_slots_00103418.s"
 "$PYTHON" tools/verify_object.py "$BUILD/copy_four_slots_00103418.o" private/SLUS_204.86.rom --source src/copy_four_slots_00103418.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/timer_display_001366c0.c -c -lang c -O4 -Op -sdatathreshold 8 \
+    -o "$BUILD/timer_display_001366c0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/timer_display_001366c0.o" private/SLUS_204.86.rom --source src/timer_display_001366c0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

@@ -17439,3 +17439,4 @@ func_00136570,0x00136570,0xD0,src/format_hex_display_00136570.c,complete
 func_00102428,0x00102428,0x70,src/runtime_flag_wait_00102428.c,complete
 func_00107A68,0x00107A68,0x4C,src/initialize_semaphore_00107a68.c,complete
 func_00103418,0x00103418,0x68,src/copy_four_slots_00103418.c,complete
+func_001366C0,0x001366C0,0x16C,src/timer_display_001366c0.c,complete
