@@ -9,8 +9,8 @@ extern void func_0011D8F8(void *, s32, s32);
 typedef struct Obj { s32 *vt; } Obj;
 
 typedef struct T44 { u8 b[0x44]; } T44;
-extern T44 D_00487B60[];
-T44 *func_00409208(u32 i) { if (i >= 8) return 0; return &D_00487B60[i]; }
+extern u8 D_00487B60[];
+T44 *func_00409208(u32 i) { if (i >= 8) return 0; return (T44 *)((u32)D_00487B60 + i * 0x44); }
 void func_0040F180(s32 *p) {
     if (p) { func_0011D8F8(p, 0, 0x24); p[1] = 0; }
 }

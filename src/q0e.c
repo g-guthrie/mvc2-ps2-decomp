@@ -1,3 +1,4 @@
+#include "sony29_rpc_packet_header.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -9,12 +10,11 @@ extern void func_00408628();
 extern volatile s32 D_00487338;
 void func_00408730(s32 x) { func_00408628(x); D_00487338 = x; }
 
-typedef struct { u8 pad0[0x14]; u8 *base; s32 n; s32 pad1[2]; s32 idx; } Ring;
-u8 *func_001068B8(Ring *p) {
+u8 *func_001068B8(SonyRpcPacketPool *p) {
     u8 *b;
-    s32 r = p->idx % p->n;
-    b = p->base + r * 64;
-    p->idx = r + 1;
+    s32 r = p->reply_index % p->reply_count;
+    b = p->reply_buffer + r * 64;
+    p->reply_index = r + 1;
     return b;
 }
 

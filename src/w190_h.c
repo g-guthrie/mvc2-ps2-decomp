@@ -14,13 +14,13 @@ extern void func_004093E8(u8 *);
 
 void func_00409698(void) {
     s32 i, one;
-    u8 *p;
+    u32 row_address;
     if (--D_004C2458 == 0) {
         one = 1;
-        p = D_00487B60;
+        row_address = (u32)D_00487B60;
         for (i = 7; i >= 0; i--) {
-            if (*(s8 *)p == one) func_004093E8(p);
-            p += 0x44;
+            if (*(s8 *)row_address == one) func_004093E8((u8 *)row_address);
+            row_address += 0x44;
         }
     }
 }

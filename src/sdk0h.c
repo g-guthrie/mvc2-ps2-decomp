@@ -14,17 +14,17 @@ RuntimeEntrySlot *func_0040CBD0(void) {
     return r;
 }
 typedef struct S2 { s8 flag; u8 pad[0x43]; } S2;
-extern S2 D_00487B60[];
+extern u8 D_00487B60[];
 extern void func_0040EFE0(void);
 extern void func_00409470(S2 *);
 extern s32 func_0040EFF8(void);
 s32 func_00409810(void) {
     s32 i;
-    S2 *p;
+    u32 row_address;
     func_0040EFE0();
-    p = D_00487B60;
-    for (i = 7; i >= 0; i--, p++)
-        if (p->flag == 1) func_00409470(p);
+    row_address = (u32)D_00487B60;
+    for (i = 7; i >= 0; i--, row_address += 0x44)
+        if (*(s8 *)row_address == 1) func_00409470((S2 *)row_address);
     return func_0040EFF8();
 }
 typedef struct S3 { s32 state; u8 pad[0x38]; } S3;

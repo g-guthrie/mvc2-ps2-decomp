@@ -7853,7 +7853,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/w2_k.c -c -lang c -O3 -Op -fp off -sdatathreshold 0 -o "$BUILD/w2_k.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w2_k.o" private/SLUS_204.86.rom --source src/w2_k.c
 "$WIBO" "$SNCPP" -P src/w2_d.c "$BUILD/w2_d.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="-falign-jumps=1" "$BUILD/w2_d.i" "$BUILD/w2_d.s"
+"$WIBO" "$EE29CC1" "$BUILD/w2_d.i" -O2 -G0 -ffunction-sections -fno-strict-aliasing -quiet -o "$BUILD/w2_d.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/w2_d.o" "$BUILD/w2_d.s"
 "$PYTHON" tools/verify_object.py "$BUILD/w2_d.o" private/SLUS_204.86.rom --source src/w2_d.c
 "$WIBO" "$SNCPP" -P src/w2_l.c "$BUILD/w2_l.i"
@@ -16038,5 +16038,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$EE29CC1" "$BUILD/sony29_two_semaphore_initializer_0010ca80.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_two_semaphore_initializer_0010ca80.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_two_semaphore_initializer_0010ca80.o" "$BUILD/sony29_two_semaphore_initializer_0010ca80.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_two_semaphore_initializer_0010ca80.o" private/SLUS_204.86.rom --source src/sony29_two_semaphore_initializer_0010ca80.c
+
+# Sony RPC command replies: packet aliases require the native SDK profile.
+"$WIBO" "$SNCPP" -P src/sony29_rpc_command_replies.c "$BUILD/sony29_rpc_command_replies.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_command_replies.i" -O2 -G0 -ffunction-sections -fno-strict-aliasing -quiet -o "$BUILD/sony29_rpc_command_replies.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_command_replies.o" "$BUILD/sony29_rpc_command_replies.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_command_replies.o" private/SLUS_204.86.rom --source src/sony29_rpc_command_replies.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

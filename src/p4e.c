@@ -4,7 +4,6 @@ typedef unsigned int u32;
 typedef signed int s32;
 
 extern s32 func_003F1F90();
-extern s32 func_001068B8();
 extern void func_0011D8F8();
 extern void func_0010CFD0();
 extern void func_00103A20();
