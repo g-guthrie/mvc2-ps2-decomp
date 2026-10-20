@@ -7,8 +7,14 @@ typedef signed int s32;
 typedef float f32;
 extern u8 D_00453990[];
 extern int func_00189310(u8 *, u8 *, u8 *);
-extern u8 D_00455CC0[];
-static int func_0025C240(u8 *p) { return *(s32 *)(D_00455CC0 + 8); }
+static int func_0025C240(u8 *p) {
+    if (p[0x20D] != 2) return 1;
+    if (p[0x210] == 0) {
+        if (*(s8 *)(p + 0x1E8) != 0) return 0;
+        *(s8 *)(p + 0x1E8) += 1;
+    }
+    return 1;
+}
 extern void func_0018A990(u8 *, u8 *);
 extern void func_00186A60(u8 *, int);
 
