@@ -76,13 +76,13 @@ s32 func_00118FA8(f32 x) {
     }
 }
 
-typedef struct { s8 f; u8 pad[0x2F]; } E40B6;
-extern E40B6 D_00489220[13];
-E40B6 *func_0040B6A8(void) {
-    E40B6 *r = 0;
+#include "HtciFileRequest.h"
+extern HtciFileRequest D_00489220[13];
+HtciFileRequest *func_0040B6A8(void) {
+    HtciFileRequest *r = 0;
     s32 i;
     for (i = 0; i < 13; i++) {
-        if (D_00489220[i].f == 0) {
+        if (D_00489220[i].slot_state == 0) {
             r = &D_00489220[i];
         }
     }

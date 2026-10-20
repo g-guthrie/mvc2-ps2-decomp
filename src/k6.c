@@ -28,11 +28,11 @@ s32 func_00401FD8(S3 *p) {
     if (p->b >= 2) return func_004000B8(p->v);
     return 0;
 }
-typedef struct S4 { signed char a; char p1; signed char c; char pad[0x2D]; } S4;
-extern S4 D_00489220[];
+#include "HtciFileRequest.h"
+extern HtciFileRequest D_00489220[13];
 s32 func_0040AF88(void) {
-    s32 i; S4 *p = D_00489220;
-    for (i = 0; i < 13; i++, p++) if (p->a == 1 && p->c == 2) return 1;
+    s32 i; signed char *p = (signed char *)D_00489220;
+    for (i = 0; i < 13; i++, p += 0x30) if (p[0] == 1 && p[2] == 2) return 1;
     return 0;
 }
 extern void func_00409708(s32, void *, s32, void *, s32);

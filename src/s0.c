@@ -67,13 +67,13 @@ extern int func_003FD530(void);
 extern void func_003FD138(int);
 extern void func_003FBFD8(void);
 
-typedef struct { signed char st; char pad[0x2F]; } E30;
-extern E30 D_00489220[];
-extern int func_0040AFD8(void *);
+#include "HtciFileRequest.h"
+extern HtciFileRequest D_00489220[13];
+extern int func_0040AFD8(HtciFileRequest *);
 int func_0040B028(void) {
-    int i; E30 *p = D_00489220;
+    int i; HtciFileRequest *p = D_00489220;
     for (i = 0; i < 13; i++, p++) {
-        if (p->st == 1 && func_0040AFD8(p) == 0) return 0;
+        if (p->slot_state == 1 && func_0040AFD8(p) == 0) return 0;
     }
     return 1;
 }

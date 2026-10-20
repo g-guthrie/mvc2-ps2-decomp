@@ -9,15 +9,16 @@ typedef float f32;
 /* EE GCC 2.96: ./tryee.sh src/w188_a.c sn   (-O2, -G0) */
 
 extern volatile u8 D_004891B4;
-extern s8 D_00489220[];
+#include "HtciFileRequest.h"
+extern HtciFileRequest D_00489220[13];
 
 void func_0040B2E8(void) {
-    s8 *p;
+    HtciFileRequest *p;
     s32 i;
     s32 c;
     extern void func_00411288(void);
     extern void func_004112B0(void);
-    extern void func_0040B220(s8 *);
+    extern void func_0040B220(HtciFileRequest *);
     func_00411288();
     if ((s8)D_004891B4 == 1) {
         func_004112B0();
@@ -26,8 +27,8 @@ void func_0040B2E8(void) {
     D_004891B4 = 1;
     func_004112B0();
     c = 1;
-    for (i = 12, p = D_00489220; i >= 0; i--, p += 0x30) {
-        if (*p == c) func_0040B220(p);
+    for (i = 12, p = D_00489220; i >= 0; i--, p++) {
+        if (p->slot_state == c) func_0040B220(p);
     }
     D_004891B4 = 0;
 }

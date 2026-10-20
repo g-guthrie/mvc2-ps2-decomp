@@ -1,35 +1,36 @@
 typedef unsigned char u8;
 typedef signed char s8;
+#include "HtciFileRequest.h"
 typedef unsigned short u16;
 typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 
-void func_0040B220(u8 *p)
+void func_0040B220(HtciFileRequest *p)
 {
     extern void func_00411288();
     extern void func_004112B0();
     extern s32 func_00407EC0();
     extern void func_00407C80();
-    if (*(s32 *)(p + 0x2C) != 0) {
+    if (p->request_handle_2c != 0) {
         func_00411288();
-        switch (func_00407EC0(*(s32 *)(p + 0x2C))) {
+        switch (func_00407EC0(p->request_handle_2c)) {
         case 9:
-            *(u8 *)(p + 2) = 3;
-            func_00407C80(*(s32 *)(p + 0x2C));
-            *(s32 *)(p + 0x2C) = 0;
+            p->operation_state = 3;
+            func_00407C80(p->request_handle_2c);
+            p->request_handle_2c = 0;
             break;
         case 3:
-            *(s32 *)(p + 0x28) = *(s32 *)(p + 0x24);
-            *(s32 *)(p + 0x1C) += *(s32 *)(p + 0x24);
-            *(u8 *)(p + 2) = 1;
-            func_00407C80(*(s32 *)(p + 0x2C));
-            *(s32 *)(p + 0x2C) = 0;
+            p->raw_28_2b.word = p->requested_bytes_24;
+            p->progress_1c += p->requested_bytes_24;
+            p->operation_state = 1;
+            func_00407C80(p->request_handle_2c);
+            p->request_handle_2c = 0;
             break;
         case 0:
-            *(u8 *)(p + 2) = 0;
-            func_00407C80(*(s32 *)(p + 0x2C));
-            *(s32 *)(p + 0x2C) = 0;
+            p->operation_state = 0;
+            func_00407C80(p->request_handle_2c);
+            p->request_handle_2c = 0;
             break;
         case 1:
         case 2:

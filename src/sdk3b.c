@@ -3,6 +3,7 @@ typedef unsigned int u32;
 typedef unsigned short u16;
 typedef signed char s8;
 typedef unsigned char u8;
+#include "HtciFileRequest.h"
 
 typedef struct { s32 a, b; } Pair;
 typedef struct { s8 a; s8 kind; s8 pad[2]; s32 val; } Obj;
@@ -31,10 +32,9 @@ s32 func_003FD4B0(s32 *p, s32 *out) {
     *out = p[6];
     return p[7];
 }
-s32 func_0040AFD8(s32 *p) {
-    s32 *q = p + 5;
-    if (func_001089F0(p[6], 1, q) < 0) return 0;
-    return *q != 1;
+s32 func_0040AFD8(HtciFileRequest *p) {
+    if (func_001089F0(p->file_handle_18, 1, &p->result_14) < 0) return 0;
+    return p->result_14 != 1;
 }
 void func_003F81F0(u8 *s, s32 a) {
     u16 t[3];
