@@ -17409,3 +17409,4 @@ func_003BD4C0,0x003BD4C0,0x190,src/owner_contact_filter_003bd4c0.c,complete
 func_003EB4A0,0x003EB4A0,0x128,src/nibble_remap_003eb4a0.c,complete
 func_00191600,0x00191600,0x168,src/w184_i.c,complete
 func_00120A30,0x00120A30,0x1670,src/newlib_vfprintf_00120a30.c,complete
+func_003DAE10,0x003DAE10,0x7C,src/paired_record_copy_003dae10.c,complete

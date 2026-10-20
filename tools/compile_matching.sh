@@ -15796,4 +15796,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_vfprintf_00120a30.o" "$BUILD/newlib_vfprintf_00120a30.s"
 "$PYTHON" tools/verify_object.py "$BUILD/newlib_vfprintf_00120a30.o" private/SLUS_204.86.rom --source src/newlib_vfprintf_00120a30.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/paired_record_copy_003dae10.c -c -lang c -O4 -Op -sdatathreshold 8 \
+    -o "$BUILD/paired_record_copy_003dae10.o"
+"$PYTHON" tools/verify_object.py "$BUILD/paired_record_copy_003dae10.o" private/SLUS_204.86.rom --source src/paired_record_copy_003dae10.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
