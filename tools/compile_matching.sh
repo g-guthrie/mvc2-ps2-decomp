@@ -15959,4 +15959,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/scene_angle_children_00145560.o"
 "$PYTHON" tools/verify_object.py "$BUILD/scene_angle_children_00145560.o" private/SLUS_204.86.rom --source src/scene_angle_children_00145560.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/scene_scale_motion_init_00145b10.c -c -lang c -O4,p -sdatathreshold 8 \
+    -o "$BUILD/scene_scale_motion_init_00145b10.o"
+"$PYTHON" tools/verify_object.py "$BUILD/scene_scale_motion_init_00145b10.o" private/SLUS_204.86.rom --source src/scene_scale_motion_init_00145b10.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
