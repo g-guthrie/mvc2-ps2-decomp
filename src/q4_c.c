@@ -214,7 +214,17 @@ void func_0025A260(P25A *p) {
 
 extern void func_0036A9B0(void *, s32);
 typedef struct { u8 pad0[0x6]; u8 f6; u8 pad7[0x14a]; s8 f151; } P259;
-static void func_002555E0(void *p, s32 a, s32 b, void *q) { *(s32 *)p = a + b; }
+static void func_002555E0(void *arg, s32 a, s32 b, void *q) {
+    u8 *p = arg;
+    if (*(s16 *)(p + 696) > 0) {
+        p[1037] = 0;
+        p[1036] = 0;
+        p[828] = 5;
+    } else {
+        p[1036] = 2;
+        p[828] = 5;
+    }
+}
 void func_00259C60(P259 *p, s32 a1, s32 a2) {
     s16 *q = (s16 *)((u8 *)p + 0x2B8);
     func_002555E0(p, a1, a2, q);
