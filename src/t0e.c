@@ -15,7 +15,7 @@ static s32 func_0028A490(u8 *p) {
     }
     return 0;
 }
-extern void func_0028A530(u8 *p);
+extern void func_0028A530(u8 *p, u8 *q);
 extern void func_0028B0B0(u8 *p);
 extern void func_001757E0(u8 *p, s32 a, s32 b);
 void func_0028A6B0(u8 *p, u8 *q) {
@@ -23,7 +23,7 @@ void func_0028A6B0(u8 *p, u8 *q) {
     if (func_0028A490(p) != 0) {
         p[7] = 6;
         q[0x18] = 0;
-        func_0028A530(p);
+        func_0028A530(p, q);
     } else {
         if (q[0x18] == 0) {
             t = q[0x18];
