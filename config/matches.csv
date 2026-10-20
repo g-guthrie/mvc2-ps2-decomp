@@ -17440,3 +17440,5 @@ func_00102428,0x00102428,0x70,src/runtime_flag_wait_00102428.c,complete
 func_00107A68,0x00107A68,0x4C,src/initialize_semaphore_00107a68.c,complete
 func_00103418,0x00103418,0x68,src/copy_four_slots_00103418.c,complete
 func_001366C0,0x001366C0,0x16C,src/timer_display_001366c0.c,complete
+func_00103230,0x00103230,0x50,src/matrix_three_components_00103230.c,complete
+func_001032A8,0x001032A8,0xB0,src/matrix_frame_build_001032a8.c,complete

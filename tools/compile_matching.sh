@@ -15926,4 +15926,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/timer_display_001366c0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/timer_display_001366c0.o" private/SLUS_204.86.rom --source src/timer_display_001366c0.c
 
+"$WIBO" "$SNCPP" -P src/matrix_three_components_00103230.c "$BUILD/matrix_three_components_00103230.i"
+"$WIBO" "$EE29CC1" "$BUILD/matrix_three_components_00103230.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/matrix_three_components_00103230.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/matrix_three_components_00103230.o" "$BUILD/matrix_three_components_00103230.s"
+"$PYTHON" tools/verify_object.py "$BUILD/matrix_three_components_00103230.o" private/SLUS_204.86.rom --source src/matrix_three_components_00103230.c
+
+"$WIBO" "$SNCPP" -P src/matrix_frame_build_001032a8.c "$BUILD/matrix_frame_build_001032a8.i"
+"$WIBO" "$EE29CC1" "$BUILD/matrix_frame_build_001032a8.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/matrix_frame_build_001032a8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/matrix_frame_build_001032a8.o" "$BUILD/matrix_frame_build_001032a8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/matrix_frame_build_001032a8.o" private/SLUS_204.86.rom --source src/matrix_frame_build_001032a8.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
