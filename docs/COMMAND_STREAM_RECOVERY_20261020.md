@@ -1,0 +1,13 @@
+# Bounded command-stream recovery
+
+The 3,296-byte region at 004A9280..004A9F60 now retains exact contiguous ownership while reconstructing only 2,529 native-read bytes. Its 211 source units comprise 105 typed runs, 83 raw skipped-payload runs, 22 raw gaps between programs, and one held final fragment. Skipped operands account for 227 bytes, inter-program gaps for 396, and the final A9ED0 fragment for 144. Those bytes remain placeholders.
+
+The retail wrapper at 004220B0 reads a byte count and starts the cursor at one. The complete native reader at 00422150 supplies the grammar. Its preamble table at 004BF160 has thirteen entries: opcode 1 reads two big-endian 16-bit fields and one unsigned byte, then enters the body; opcodes 5, 6, 7, 8, 9 and 11 read one byte each; opcode 12 advances past two bytes without reading them. Other preamble opcodes consume only themselves. The opcode-12 branch at 00422224 contains both cursor increments at 0042222C and 00422238.
+
+In the body, opcode 1 reads one big-endian 16-bit field and skips three more bytes; opcodes 4 and 10 each read one byte. Opcode 0 terminates the record. Opcodes 5 and 13 adjust rendering state without consuming an operand. Other body values select a native table row. Big-endian fields remain explicit high/low byte members; unused operand bytes are separate raw objects. No meaning beyond the native operations is assigned to their values.
+
+The four existing callback source families independently reference 23 roots in this region. Twenty-two count-one programs terminate before the next independently referenced owner. The final fragment has no terminator before the current import boundary at 004A9F60 and is held raw. That boundary came from automatic zero-run splitting; it is not an independently referenced owner. The next callback root is 004A9F70. A separate follow-up must establish the last program's extent across the zero run.
+
+All 211 objects pass the standard compiler/data verifier against the immutable retail image. The native-image parser receipt and the source-derived receipt agree. Reproduce the detailed receipt with `python tools/report_effect_timeline_004a9280.py --rom private/SLUS_204.86.rom --output build-report/command-stream-receipt.json`; omit `--rom` to reconstruct the same input from the source-owned units. Detailed generated receipts stay outside Git. Nine parser tests include truncated two-byte opcode-12 operands, skipped body payloads, owner-boundary termination, and exclusion of opaque bytes from reconstruction credit; Makefile and CI run them.
+
+The parser wrappers themselves receive no additional code credit from this data change. Full-image identity and the rest of the code catalog are verified separately.

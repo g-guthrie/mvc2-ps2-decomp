@@ -1,0 +1,28 @@
+/* Native-read fields from func_00422150 at 0x004A98C9. */
+typedef unsigned char u8;
+typedef struct {
+    u8 body_649_native_opcode_93;
+    u8 body_64A_native_opcode_39;
+    u8 body_64B_native_opcode_42;
+    u8 body_64C_native_opcode_45;
+    u8 body_64D_target_adjust_opcode_0D;
+    u8 body_64E_native_opcode_69;
+    u8 body_64F_native_opcode_7F;
+    u8 body_650_native_opcode_74;
+    u8 body_651_native_opcode_8C;
+    u8 body_652_native_opcode_6C;
+    u8 body_653_native_opcode_87;
+    u8 body_654_native_opcode_74;
+    u8 body_655_native_opcode_87;
+    u8 body_656_native_opcode_7C;
+    u8 body_657_native_opcode_82;
+    u8 body_658_native_opcode_81;
+    u8 body_659_native_opcode_9A;
+    u8 body_65A_native_opcode_52;
+    u8 body_65B_native_opcode_94;
+    u8 body_65C_native_opcode_8E;
+    u8 body_65D_terminator_opcode;
+} EffectTimelineRun_004A98C9;
+EffectTimelineRun_004A98C9 data_effect_timeline_004A98C9 = {
+    0x93u, 0x39u, 0x42u, 0x45u, 0x0Du, 0x69u, 0x7Fu, 0x74u, 0x8Cu, 0x6Cu, 0x87u, 0x74u, 0x87u, 0x7Cu, 0x82u, 0x81u, 0x9Au, 0x52u, 0x94u, 0x8Eu, 0x00u
+};

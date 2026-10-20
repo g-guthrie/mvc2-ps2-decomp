@@ -15553,4 +15553,26 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/state_table_step_0024C4F0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/state_table_step_0024C4F0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/state_table_step_0024C4F0.o" private/SLUS_204.86.rom --source src/state_table_step_0024C4F0.c
 
+
+# Genuine runtime arithmetic/text helpers and Sony memory-card RPCs.
+"$WIBO" "$SNCPP" -P src/gcc_muldi3_00117448.c "$BUILD/gcc_muldi3_00117448.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/gcc_muldi3_00117448.i" "$BUILD/gcc_muldi3_00117448.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/gcc_muldi3_00117448.o" "$BUILD/gcc_muldi3_00117448.s"
+"$PYTHON" tools/verify_object.py "$BUILD/gcc_muldi3_00117448.o" private/SLUS_204.86.rom --source src/gcc_muldi3_00117448.c
+
+"$WIBO" "$SNCPP" -P src/newlib_strupr_00120868.c "$BUILD/newlib_strupr_00120868.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_strupr_00120868.i" "$BUILD/newlib_strupr_00120868.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_strupr_00120868.o" "$BUILD/newlib_strupr_00120868.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_strupr_00120868.o" private/SLUS_204.86.rom --source src/newlib_strupr_00120868.c
+
+"$WIBO" "$SNCPP" -P src/newlib_tanf_00117328.c "$BUILD/newlib_tanf_00117328.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_tanf_00117328.i" "$BUILD/newlib_tanf_00117328.s"
+"$WIBO" "$SNAS" -mips4 -G0 -o "$BUILD/newlib_tanf_00117328.o" "$BUILD/newlib_tanf_00117328.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_tanf_00117328.o" private/SLUS_204.86.rom --source src/newlib_tanf_00117328.c
+
+"$WIBO" "$SNCPP" -P src/sony29_mc_fileinfo.c "$BUILD/sony29_mc_fileinfo.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_mc_fileinfo.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_mc_fileinfo.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_mc_fileinfo.o" "$BUILD/sony29_mc_fileinfo.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_mc_fileinfo.o" private/SLUS_204.86.rom --source src/sony29_mc_fileinfo.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

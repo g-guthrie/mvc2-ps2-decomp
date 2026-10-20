@@ -1,0 +1,54 @@
+/* Native-read fields from func_00422150 at 0x004A9897. */
+typedef unsigned char u8;
+typedef struct {
+    u8 preamble_617_opcode_05;
+    u8 preamble_617_saved_value;
+    u8 preamble_619_opcode_06;
+    u8 preamble_619_payload_u8;
+    u8 preamble_61B_opcode_07;
+    u8 preamble_61B_payload_u8;
+    u8 preamble_61D_opcode_08;
+    u8 preamble_61D_payload_u8;
+    u8 preamble_61F_opcode_09;
+    u8 preamble_61F_payload_u8;
+    u8 preamble_621_opcode_01;
+    u8 preamble_621_be16_a_high;
+    u8 preamble_621_be16_a_low;
+    u8 preamble_621_be16_b_high;
+    u8 preamble_621_be16_b_low;
+    u8 preamble_621_native_read_u8;
+    u8 body_627_native_opcode_1C;
+    u8 body_628_native_opcode_3B;
+    u8 body_629_native_opcode_38;
+    u8 body_62A_native_opcode_36;
+    u8 body_62B_native_opcode_3E;
+    u8 body_62C_native_opcode_3C;
+    u8 body_62D_native_opcode_41;
+    u8 body_62E_native_opcode_3A;
+    u8 body_62F_target_adjust_opcode_0D;
+    u8 body_630_native_opcode_40;
+    u8 body_631_native_opcode_38;
+    u8 body_632_native_opcode_40;
+    u8 body_633_native_opcode_42;
+    u8 body_634_native_opcode_45;
+    u8 body_635_native_opcode_4C;
+    u8 body_636_target_adjust_opcode_0D;
+    u8 body_637_native_opcode_36;
+    u8 body_638_native_opcode_34;
+    u8 body_639_native_opcode_45;
+    u8 body_63A_native_opcode_37;
+    u8 body_63B_target_adjust_opcode_0D;
+    u8 body_63C_native_opcode_93;
+    u8 body_63D_native_opcode_18;
+    u8 body_63E_native_opcode_26;
+    u8 body_63F_native_opcode_1B;
+    u8 body_640_native_opcode_94;
+    u8 body_641_opcode_04;
+    u8 body_641_opcode_04_payload;
+    u8 body_643_opcode_01;
+    u8 body_643_be16_high;
+    u8 body_643_be16_low;
+} EffectTimelineRun_004A9897;
+EffectTimelineRun_004A9897 data_effect_timeline_004A9897 = {
+    0x05u, 0x18u, 0x06u, 0xFFu, 0x07u, 0xFFu, 0x08u, 0xFFu, 0x09u, 0xFFu, 0x01u, 0x00u, 0x78u, 0x00u, 0xB0u, 0x80u, 0x1Cu, 0x3Bu, 0x38u, 0x36u, 0x3Eu, 0x3Cu, 0x41u, 0x3Au, 0x0Du, 0x40u, 0x38u, 0x40u, 0x42u, 0x45u, 0x4Cu, 0x0Du, 0x36u, 0x34u, 0x45u, 0x37u, 0x0Du, 0x93u, 0x18u, 0x26u, 0x1Bu, 0x94u, 0x04u, 0x00u, 0x01u, 0x00u, 0x85u
+};

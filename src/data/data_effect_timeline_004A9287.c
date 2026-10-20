@@ -1,0 +1,51 @@
+/* Native-read fields from func_00422150 at 0x004A9287. */
+typedef unsigned char u8;
+typedef struct {
+    u8 preamble_007_opcode_05;
+    u8 preamble_007_saved_value;
+    u8 preamble_009_opcode_06;
+    u8 preamble_009_payload_u8;
+    u8 preamble_00B_opcode_07;
+    u8 preamble_00B_payload_u8;
+    u8 preamble_00D_opcode_08;
+    u8 preamble_00D_payload_u8;
+    u8 preamble_00F_opcode_09;
+    u8 preamble_00F_payload_u8;
+    u8 preamble_011_opcode_01;
+    u8 preamble_011_be16_a_high;
+    u8 preamble_011_be16_a_low;
+    u8 preamble_011_be16_b_high;
+    u8 preamble_011_be16_b_low;
+    u8 preamble_011_native_read_u8;
+    u8 body_017_native_opcode_30;
+    u8 body_018_native_opcode_1A;
+    u8 body_019_native_opcode_2B;
+    u8 body_01A_native_opcode_27;
+    u8 body_01B_native_opcode_22;
+    u8 body_01C_native_opcode_27;
+    u8 body_01D_native_opcode_20;
+    u8 body_01E_native_opcode_91;
+    u8 body_01F_target_adjust_opcode_0D;
+    u8 body_020_native_opcode_1F;
+    u8 body_021_native_opcode_42;
+    u8 body_022_native_opcode_45;
+    u8 body_023_native_opcode_40;
+    u8 body_024_native_opcode_34;
+    u8 body_025_native_opcode_47;
+    u8 body_026_native_opcode_47;
+    u8 body_027_native_opcode_3C;
+    u8 body_028_native_opcode_41;
+    u8 body_029_native_opcode_3A;
+    u8 body_02A_native_opcode_96;
+    u8 body_02B_target_adjust_opcode_0D;
+    u8 body_02C_native_opcode_1D;
+    u8 body_02D_native_opcode_42;
+    u8 body_02E_opcode_04;
+    u8 body_02E_opcode_04_payload;
+    u8 body_030_opcode_01;
+    u8 body_030_be16_high;
+    u8 body_030_be16_low;
+} EffectTimelineRun_004A9287;
+EffectTimelineRun_004A9287 data_effect_timeline_004A9287 = {
+    0x05u, 0x00u, 0x06u, 0xFFu, 0x07u, 0xFFu, 0x08u, 0xFFu, 0x09u, 0xFFu, 0x01u, 0x00u, 0x8Eu, 0x01u, 0x34u, 0x80u, 0x30u, 0x1Au, 0x2Bu, 0x27u, 0x22u, 0x27u, 0x20u, 0x91u, 0x0Du, 0x1Fu, 0x42u, 0x45u, 0x40u, 0x34u, 0x47u, 0x47u, 0x3Cu, 0x41u, 0x3Au, 0x96u, 0x0Du, 0x1Du, 0x42u, 0x04u, 0x00u, 0x01u, 0x00u, 0x80u
+};
