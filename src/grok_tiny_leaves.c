@@ -892,11 +892,15 @@ int func_001041A0(struct SonySifDmaTransfer *descriptors, int count) {
     return result;
 }
 
-void func_001041B0(void) {
+/* EE syscall -0x77: iSifSetDma(descriptors, count). */
+int func_001041B0(struct SonySifDmaTransfer *descriptors, int count) {
+    int result;
     asm {
         addiu v1, r0, -119
         syscall 0
+        move result, v0
     }
+    return result;
 }
 
 void func_001041C0(void) {

@@ -16029,4 +16029,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_sif_command_send.o" "$BUILD/sony29_sif_command_send.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_sif_command_send.o" private/SLUS_204.86.rom --source src/sony29_sif_command_send.c
 
+"$WIBO" "$SNCPP" -P src/sony29_sif_send_backend_00106298.c "$BUILD/sony29_sif_send_backend_00106298.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_sif_send_backend_00106298.i" -O2 -G0 -fno-strict-aliasing -ffunction-sections -quiet -o "$BUILD/sony29_sif_send_backend_00106298.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_sif_send_backend_00106298.o" "$BUILD/sony29_sif_send_backend_00106298.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_sif_send_backend_00106298.o" private/SLUS_204.86.rom --source src/sony29_sif_send_backend_00106298.c
+
+"$WIBO" "$SNCPP" -P src/sony29_two_semaphore_initializer_0010ca80.c "$BUILD/sony29_two_semaphore_initializer_0010ca80.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_two_semaphore_initializer_0010ca80.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_two_semaphore_initializer_0010ca80.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_two_semaphore_initializer_0010ca80.o" "$BUILD/sony29_two_semaphore_initializer_0010ca80.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_two_semaphore_initializer_0010ca80.o" private/SLUS_204.86.rom --source src/sony29_two_semaphore_initializer_0010ca80.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

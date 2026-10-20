@@ -17468,3 +17468,5 @@ func_00102058,0x00102058,0x88,src/sony29_gs_half_offset.c,complete
 func_00106DD8,0x00106DD8,0x8C,src/sony29_rpc_queue_call_00106dd8.c,complete
 func_001063D0,0x001063D0,0x3C,src/sony29_sif_command_send.c,complete
 func_00106410,0x00106410,0x3C,src/sony29_sif_command_send.c,complete
+func_00106298,0x00106298,0x134,src/sony29_sif_send_backend_00106298.c,complete
+func_0010CA80,0x0010CA80,0x48,src/sony29_two_semaphore_initializer_0010ca80.c,complete
