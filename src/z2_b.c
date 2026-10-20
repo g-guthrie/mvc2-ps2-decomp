@@ -151,7 +151,16 @@ void func_00170C30(void)
 typedef struct { u8 pad0[4]; s8 b4; u8 pad1; s8 b6; } G14EB20;
 extern G14EB20 *D_004C2840;
 extern u8 D_004F7D37[], D_004D1577[];
-static void func_0014E770(u8 *p) { p[5] = 0; }
+static void func_0014E770(u8 *p) {
+    u8 *q = *(u8 **)(p + 24);
+    if (*(s32 *)(q + 220) != 0) {
+        if (q[4] == 1) {
+            *(s16 *)(p + 30) = *(s16 *)(q + 30);
+        } else {
+            *(s16 *)(p + 30) = *(s16 *)(q + 30);
+        }
+    }
+}
 void func_0014EB20(u8 *p)
 {
     if (D_004C2840->b6 + *(s16 *)(p + 0x1E) == 0) {
