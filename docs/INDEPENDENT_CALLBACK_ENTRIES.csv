@@ -337,3 +337,5 @@ func_001CBEF0,0x001CBEF0,0x10C,func_001CBED0,jtbl_0044DCF0,0x0044DCF0,src/payloa
 func_001E0D90,0x001E0D90,0x110,func_001E0D70,jtbl_0044EFB0,0x0044EFB0,src/payload_setup_callbacks_001cbef0.c
 func_001C4DD0,0x001C4DD0,0xEC,func_001C4DB0,jtbl_0044CC40,0x0044CC40,src/payload_mode_initializers_001c4dd0.c
 func_001C4F40,0x001C4F40,0xE4,func_001C4F20,jtbl_0044CC50,0x0044CC50,src/payload_mode_initializers_001c4dd0.c
+func_001B9B60,0x001B9B60,0x114,func_001B9B40,jtbl_0044BF80,0x0044BF80,src/copy_owner_chain_001a2960.c
+func_001BA3A0,0x001BA3A0,0x120,func_001BA380,jtbl_0044BFB0,0x0044BFB0,src/copy_owner_chain_001a2960.c
