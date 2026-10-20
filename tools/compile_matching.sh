@@ -15065,4 +15065,23 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/payload_motion_in
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/payload_placement_initializers_001a79b0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/payload_placement_initializers_001a79b0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/payload_placement_initializers_001a79b0.o" private/SLUS_204.86.rom --source src/payload_placement_initializers_001a79b0.c
 
+# GCC 2.96 libgcc2.c unsigned 64-bit division and remainder helpers.
+"$WIBO" "$SNCPP" -P src/gcc_udivdi3_001181e8.c "$BUILD/gcc_udivdi3_001181e8.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/gcc_udivdi3_001181e8.i" "$BUILD/gcc_udivdi3_001181e8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/gcc_udivdi3_001181e8.o" "$BUILD/gcc_udivdi3_001181e8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/gcc_udivdi3_001181e8.o" private/SLUS_204.86.rom --source src/gcc_udivdi3_001181e8.c
+"$WIBO" "$SNCPP" -P src/gcc_umoddi3_00118768.c "$BUILD/gcc_umoddi3_00118768.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/gcc_umoddi3_00118768.i" "$BUILD/gcc_umoddi3_00118768.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/gcc_umoddi3_00118768.o" "$BUILD/gcc_umoddi3_00118768.s"
+"$PYTHON" tools/verify_object.py "$BUILD/gcc_umoddi3_00118768.o" private/SLUS_204.86.rom --source src/gcc_umoddi3_00118768.c
+
+"$WIBO" "$SNCPP" -P src/gcc_divdi3_001174c0.c "$BUILD/gcc_divdi3_001174c0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/gcc_divdi3_001174c0.i" "$BUILD/gcc_divdi3_001174c0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/gcc_divdi3_001174c0.o" "$BUILD/gcc_divdi3_001174c0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/gcc_divdi3_001174c0.o" private/SLUS_204.86.rom --source src/gcc_divdi3_001174c0.c
+"$WIBO" "$SNCPP" -P src/gcc_moddi3_00117b58.c "$BUILD/gcc_moddi3_00117b58.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/gcc_moddi3_00117b58.i" "$BUILD/gcc_moddi3_00117b58.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/gcc_moddi3_00117b58.o" "$BUILD/gcc_moddi3_00117b58.s"
+"$PYTHON" tools/verify_object.py "$BUILD/gcc_moddi3_00117b58.o" private/SLUS_204.86.rom --source src/gcc_moddi3_00117b58.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

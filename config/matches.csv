@@ -17158,3 +17158,10 @@ func_001BE910,0x001BE910,0x194,src/payload_placement_initializers_001a79b0.c,com
 func_001AE370,0x001AE370,0x164,src/copy_owner_chain_001a2960.c,complete
 func_001DDA20,0x001DDA20,0x134,src/copy_owner_chain_001a2960.c,complete
 func_001C0A90,0x001C0A90,0x198,src/payload_placement_initializers_001a79b0.c,complete
+func_001181E8,0x001181E8,0x57C,src/gcc_udivdi3_001181e8.c,complete
+func_00118768,0x00118768,0x568,src/gcc_umoddi3_00118768.c,complete
+func_001B24C0,0x001B24C0,0x1DC,src/copy_owner_chain_001a2960.c,complete
+func_001CDCD0,0x001CDCD0,0x164,src/copy_owner_chain_001a2960.c,complete
+func_001174C0,0x001174C0,0x694,src/gcc_divdi3_001174c0.c,complete
+func_00117B58,0x00117B58,0x690,src/gcc_moddi3_00117b58.c,complete
+func_001C06F0,0x001C06F0,0x1DC,src/copy_owner_chain_001a2960.c,complete

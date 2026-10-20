@@ -1,0 +1,1 @@
+The GCC runtime excerpts in `src/gcc_libgcc_udivmod_core.h` retain the original GPL version 2 or later notice and GCC linking exception. The complete GPL text here is copied verbatim from the pinned upstream GCC snapshot recorded in that header. These notices apply to the files carrying them.

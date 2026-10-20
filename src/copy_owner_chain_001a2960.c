@@ -1,6 +1,7 @@
 typedef unsigned char u8;
 typedef signed char s8;
 typedef signed short s16;
+typedef unsigned short u16;
 typedef signed int s32;
 typedef unsigned int u32;
 typedef float f32;
@@ -71,6 +72,7 @@ void func_001A16D0(u8 *p,u8 *q) {
 extern u32 D_0044A620[];
 extern void func_00198960(u8 *);
 extern s32 func_001754A0(u8 *, u8, u8);
+extern void func_00176160(u8 *, s32, u16, s32);
 
 void func_00198730(u8 *p)
 {
@@ -312,4 +314,89 @@ void func_001DDA20(u8 *p, u8 *q) {
         fp[0x5C / 4] = -fp[0x5C / 4];
     func_001757E0(p, 18, 2);
     func_001DDC30(p, q);
+}
+
+void func_001B24C0(u8 *p) {
+    u8 *d = p;
+    d[4]++;
+    p = *(u8 **)(p + 0x18);
+    *(Payload *)(d + 0xEC) = *(Payload *)(p + 0xEC);
+    d[0x13C] = 1;
+    d[2] = p[2];
+    d[1] = p[1];
+    *(f32 *)(d + 0x50) = *(f32 *)(p + 0x50);
+    *(f32 *)(d + 0x54) = *(f32 *)(p + 0x54);
+    d[0x1B7] = p[0x1B7];
+    d[0x1B8] = p[0x1B8];
+    *(s8 *)(d + 0x30) = *(s8 *)(p + 0x30);
+    *(V3 *)(d + 0x50) = *(V3 *)(p + 0x50);
+    *(s8 *)(d + 0x24) = *(s8 *)(p + 0x24);
+    d[0x13C] = 1;
+    d[0x24] = 0;
+    *(s16 *)(d + 0x140) = *(s16 *)(*(u8 **)(d + 0x18) + 0x140);
+    *(f32 *)(d + 0x34) = *(f32 *)(*(u8 **)(d + 0x18) + 0x34);
+    *(f32 *)(d + 0x38) = *(f32 *)(*(u8 **)(d + 0x18) + 0x38);
+    *(f32 *)(d + 0x3C) = *(f32 *)(*(u8 **)(d + 0x18) + 0x3C);
+    *(f32 *)(d + 0x34) += *(s16 *)(d + 0x140) != 0 ? 26.666666f : -26.666666f;
+    *(f32 *)(d + 0x38) += 205.71428f;
+    *(f32 *)(d + 0x68) = 0.0f;
+    *(f32 *)(d + 0x6C) = 0.0f;
+    *(f32 *)(d + 0x5C) = *(s16 *)(d + 0x140) != 0 ? 5.8333330154418945f : -5.8333330154418945f;
+    *(f32 *)(d + 0x68) = *(s16 *)(d + 0x140) != 0 ? 0.41666666f : -0.41666666f;
+    *(f32 *)(d + 0x60) = 2.1428571f;
+    *(f32 *)(d + 0x6C) = 0.26785713f;
+    func_00176160(p, 4, 8, 1);
+    func_001754A0(d, 27, 13);
+}
+
+typedef struct Object Object;
+extern void func_003DAA40(Object*);
+extern int func_00175700(u8*);
+void func_001CDCD0(u8*p,u8*q){s8 frame;u32 animation;s16 *hp=(s16*)p;
+if(!p[4]){p[4]++;
+*(Payload*)(p+0xec)=*(Payload*)(q+0xec);
+p[0x13c]=1;p[2]=q[2];p[1]=q[1];
+*(f32*)(p+0x50)=*(f32*)(q+0x50);*(f32*)(p+0x54)=*(f32*)(q+0x54);
+p[0x1b7]=q[0x1b7];p[0x1b8]=q[0x1b8];*(s8*)(p+0x30)=*(s8*)(q+0x30);
+*(V3*)(p+0x50)=*(V3*)(q+0x50);*(s8*)(p+0x24)=*(s8*)(q+0x24);
+p[0x13c]=0;*(s8*)(p+0x31)=-1;*(f32*)(p+0x34)=*(f32*)(q+0x34);*(f32*)(p+0x38)=*(f32*)(q+0x38);}
+if(*(u16*)(q+0x168)!=*(s32*)(p+0xd0)){func_003DAA40((Object*)p);return;}
+*(s8*)(p+0x24)=*(s8*)(q+0x24);*(f32*)(p+0x34)=*(f32*)(q+0x34);*(f32*)(p+0x38)=*(f32*)(q+0x38);
+frame=*(s8*)(q+0x161);animation=(u8)frame;
+if(frame){p[0x13c]=1;if((u8)animation!=hp[14]){hp[14]=(u8)animation;func_001757E0(p,23,animation);}else func_00175700(p);}
+else if(hp[14])func_00175700(p);
+}
+
+extern void func_001C08D0(u8*);
+void func_001C06F0(u8 *d) {
+    f32 dx;
+    d[4]++;
+    *(Payload *)(d + 0xEC) = *(Payload *)(*(u8 **)(d + 0x18) + 0xEC);
+    d[0x13C] = 1;
+    d[2] = (*(u8 **)(d + 0x18))[2];
+    d[1] = (*(u8 **)(d + 0x18))[1];
+    *(f32 *)(d + 0x50) = *(f32 *)(*(u8 **)(d + 0x18) + 0x50);
+    *(f32 *)(d + 0x54) = *(f32 *)(*(u8 **)(d + 0x18) + 0x54);
+    d[0x1B7] = (*(u8 **)(d + 0x18))[0x1B7];
+    d[0x1B8] = (*(u8 **)(d + 0x18))[0x1B8];
+    *(s8 *)(d + 0x30) = *(s8 *)(*(u8 **)(d + 0x18) + 0x30);
+    *(V3 *)(d + 0x50) = *(V3 *)(*(u8 **)(d + 0x18) + 0x50);
+    *(s8 *)(d + 0x24) = *(s8 *)(*(u8 **)(d + 0x18) + 0x24);
+    d[0x24] = 0;
+    func_001754A0(d, 27, 4);
+    {
+        V3 ownerPosition = *(V3 *)(*(u8 **)(d + 0x18) + 0x34);
+        *(V3 *)(d + 0x34) = ownerPosition;
+    }
+    dx = -40.0f;
+    if (*(s16 *)(d + 0x140) != 0)
+        dx = -dx;
+    *(f32 *)(d + 0x34) += dx * *(f32 *)(d + 0x50);
+    *(f32 *)(d + 0x38) += 205.71428f * *(f32 *)(d + 0x54);
+    *(V3 *)(d + 0x68) = *(V3 *)(d + 0x50);
+    *(f32 *)(d + 0x50) *= 0.015f;
+    *(f32 *)(d + 0x54) *= 0.015f;
+    *(s16 *)(d + 0x1C) = 30;
+    *(f32 *)(d + 0x88) = (10.0f * *(f32 *)(d + 0x68) - *(f32 *)(d + 0x50)) / 30.0f;
+    func_001C08D0(d);
 }
