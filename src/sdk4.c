@@ -25,8 +25,6 @@ extern char D_004BC4F0[];
 extern void func_003FB128(void *);
 void func_00402650(u8 *p, s32 v) { if (p == 0) func_003FB128(D_004BC4F0); else p[0x70] = v; }
 
-extern s32 D_00438978;
-extern void func_0010CAC8(void *, s32, s32);
 
 extern u8 *func_003F1F90(void *, s32);
 

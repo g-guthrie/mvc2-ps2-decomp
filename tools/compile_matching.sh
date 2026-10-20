@@ -15984,4 +15984,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_work_queue.o" "$BUILD/sony29_rpc_work_queue.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_work_queue.o" private/SLUS_204.86.rom --source src/sony29_rpc_work_queue.c
 
+"$WIBO" "$SNCPP" -P src/sony29_kernel_memory_helpers.c "$BUILD/sony29_kernel_memory_helpers.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_kernel_memory_helpers.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_kernel_memory_helpers.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_kernel_memory_helpers.o" "$BUILD/sony29_kernel_memory_helpers.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_kernel_memory_helpers.o" private/SLUS_204.86.rom --source src/sony29_kernel_memory_helpers.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

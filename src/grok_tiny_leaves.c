@@ -1037,11 +1037,15 @@ void func_0010C470(void) {
     }
 }
 
-void func_0010CAC8(void) {
+/* EE syscall 0x5A: Copy(destination, source, size). */
+int func_0010CAC8(void *destination, const void *source, int size) {
+    int result;
     asm {
         addiu v1, r0, 90
         syscall 0
+        move result, v0
     }
+    return result;
 }
 
 void func_0010CB50(void) {
