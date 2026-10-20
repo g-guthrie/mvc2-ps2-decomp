@@ -9,7 +9,12 @@ typedef float f32;
 
 extern s32 func_00175700();
 
-static void func_002B5100(void *p) {}
+static void func_002B5100(u8 *p) {
+    *(float *)(p + 0x38) += *(float *)(p + 0x60);
+    *(float *)(p + 0x60) += *(float *)(p + 0x6C);
+    if (*(float *)(p + 0x60) * *(float *)(p + 0x6C) > 0.0f)
+        *(float *)(p + 0x6C) = -1.607142806053161621f;
+}
 
 void func_002B62B0(u8 *p) {
     f32 z;

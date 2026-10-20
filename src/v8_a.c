@@ -268,8 +268,30 @@ void func_00291540(u8 *p) {
     }
 }
 
-static void func_00224BB0(u8 *p) {
-    *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
+typedef struct {
+    u8 p0[0x34];
+    f32 f34, f38;
+    u8 p3c[0x20];
+    f32 f5c, f60;
+    u8 p64[4];
+    f32 f68, f6c;
+    u8 p70[0x3C0];
+    f32 f430;
+} S_00224BB0;
+static void func_00224BB0(S_00224BB0 *p) {
+    f32 *v1, *a1, *a2, *a3;
+    p->f34 += p->f5c;
+    v1 = &p->f5c;
+    a2 = &p->f68;
+    a1 = &p->f60;
+    p->f5c += p->f68;
+    p->f38 += p->f60;
+    p->f60 += p->f6c;
+    a3 = &p->f6c;
+    if (p->f38 <= p->f430) {
+        p->f38 = p->f430;
+        *v1 = 0; *a1 = 0; *a2 = 0; *a3 = 0;
+    }
 }
 
 void func_00224D60(u8 *p) {
@@ -281,7 +303,7 @@ void func_00224D60(u8 *p) {
     p[0x33C] = 5;
     p[0x405] = (p[0x269] == 6) ? 2 : 0;
     func_00175700(p);
-    func_00224BB0(p);
+    func_00224BB0((S_00224BB0 *)p);
     if (*(s8 *)(p + 0x151) != 0) {
         u32 t = p[6];
         p[6] = t + 1;

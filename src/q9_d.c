@@ -5,8 +5,23 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
+typedef struct { f32 x, y, z; } V3;
+extern V3 D_004B1940[];
 
-static void func_0013E760(u8 *p) { *(u32 *)(p + 0x100) = 0; }
+static void func_0013E760(u8 *p) {
+    V3 *a = &D_004B1940[p[0x20] * 2];
+    V3 *b = &D_004B1940[p[0x20] * 2 + 1];
+    f32 d, e;
+    e = a->x;
+    d = (b->x - e) / 30.0f;
+    *(f32 *)(p + 0x34) = e + (f32)*(s16 *)(p + 0x1C) * d;
+    e = a->y;
+    d = (b->y - e) / 30.0f;
+    *(f32 *)(p + 0x38) = e + (f32)*(s16 *)(p + 0x1C) * d;
+    e = a->z;
+    d = (b->z - e) / 30.0f;
+    *(f32 *)(p + 0x3C) = e + (f32)*(s16 *)(p + 0x1C) * d;
+}
 
 void func_0013EA00(u8 *p) {
     s16 t = *(s16 *)(p + 0x1C);
@@ -28,7 +43,6 @@ void func_0013EA00(u8 *p) {
 typedef struct { u8 pad0[0x7C]; s16 h7c[1]; } G12;
 extern G12 *D_004C2794;
 typedef struct { f32 x, y; u8 b8; } G40;
-typedef struct { f32 x, y, z; } V3;
 extern G40 *D_004C2940;
 
 void func_0023E180(u8 *p, s32 a1) {
