@@ -27,9 +27,13 @@ s32 func_004166F0(u8 *p) {
     return r;
 }
 
-static s32 func_00416770(s32 *p) { return p[0] + 1; }
+extern const s32 D_004BEDC0[];
+static s32 func_00416770(void *owner, s32 scale) {
+    s32 factor = D_004BEDC0[((s32 *)owner)[5]];
+    return (scale * factor) >> 3;
+}
 s32 func_004167A0(s32 *p, s32 b, s32 n) {
-    s32 r = func_00416770(p);
+    s32 r = func_00416770(p, b);
     return p[4] + r + n * p[3];
 }
 

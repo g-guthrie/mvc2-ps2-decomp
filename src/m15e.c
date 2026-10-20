@@ -89,7 +89,16 @@ extern u32 func_00417A40(void);
 extern void func_001843A0(void *p);
 extern void func_00296FB0(void *p);
 
-static void func_0014E770(u8 *p) { *(s32 *)(p + 0x100) = 0; }
+static void func_0014E770(u8 *p) {
+    u8 *q = *(u8 **)(p + 24);
+    if (*(s32 *)(q + 220) != 0) {
+        if (q[4] == 1) {
+            *(s16 *)(p + 30) = *(s16 *)(q + 30);
+        } else {
+            *(s16 *)(p + 30) = *(s16 *)(q + 30);
+        }
+    }
+}
 
 void func_001505F0(u8 *p) {
     func_0014E770(p);
