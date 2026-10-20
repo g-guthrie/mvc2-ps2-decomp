@@ -9,7 +9,7 @@ extern u16 D_004F4484;
 extern u16 D_004F4498;
 extern u32 D_004636B0[];
 
-void func_003C33B0(u8 *p) {
+void func_003C33B0(u8 *p, u8 *q) {
     extern void func_001E7F60();
     extern void func_001757E0();
     if (*(s16 *)(p + 0x1C) == 0) {

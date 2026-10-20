@@ -11,7 +11,7 @@ extern f32 D_004F1FC8, D_004F1FCC, D_004F1FD0;
 extern s32 func_00175700(void *);
 extern void func_001757E0(void *, s32, s32);
 
-void func_003C3690(u8 *p) {
+void func_003C3690(u8 *p, u8 *q) {
     func_00175700(p);
     if (p[0x21] == 0) {
         *(f32 *)(p + 0x34) = D_004F1FCC;

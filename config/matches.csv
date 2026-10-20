@@ -17449,3 +17449,4 @@ func_001453B0,0x001453B0,0x1A4,src/scene_angle_create_001453b0.c,complete
 func_00145560,0x00145560,0x220,src/scene_angle_children_00145560.c,complete
 func_00145B10,0x00145B10,0x1BC,src/scene_scale_motion_init_00145b10.c,complete
 func_001254F0,0x001254F0,0x208,src/camera_horizontal_tracking_001254f0.c,complete
+func_003C32F0,0x003C32F0,0xB4,src/partner_action_dispatch_003c32f0.c,complete

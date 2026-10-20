@@ -119,29 +119,30 @@ void func_00154650(P154 *p) {
     }
 }
 
-extern void func_003C3CE0(void *);
-extern void func_003C3DA0(void *, s32);
+extern void func_003C3CE0(u8 *, u8 *);
+extern void func_003C3DA0(u8 *, u8 *);
 extern void func_001E7F60();
 extern s8 D_00475DB0[];
 typedef struct { u8 pad0[0x4]; u8 f4; u8 f5; u8 pad6[0x16]; s16 f1C; s16 f1E; u8 pad20[0x14]; f32 f34; u8 pad38[0x108]; s16 f140; } P3C4;
-void func_003C4090(P3C4 *p, s32 x) {
+void func_003C4090(u8 *p, u8 *q) {
+    P3C4 *actor = (P3C4 *)p;
     s32 v;
-    func_003C3CE0(p);
-    func_003C3DA0(p, x);
-    if (p->f1E != 0) {
-        p->f1E = p->f1E - 1;
+    func_003C3CE0(p, q);
+    func_003C3DA0(p, q);
+    if (actor->f1E != 0) {
+        actor->f1E = actor->f1E - 1;
         func_001E7F60();
     }
-    v = D_00475DB0[p->f1E];
-    if (p->f140 != 0) v = (s8)-v;
-    p->f34 += (f32)v;
+    v = D_00475DB0[actor->f1E];
+    if (actor->f140 != 0) v = (s8)-v;
+    actor->f34 += (f32)v;
     {
-        s16 t = p->f1C;
-        p->f1C = t - 1;
+        s16 t = actor->f1C;
+        actor->f1C = t - 1;
         if (t == 0) {
-            u32 u = p->f4;
-            p->f4 = u + 1;
-            p->f5 = 0;
+            u32 u = actor->f4;
+            actor->f4 = u + 1;
+            actor->f5 = 0;
         }
     }
 }

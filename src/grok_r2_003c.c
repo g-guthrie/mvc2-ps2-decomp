@@ -83,7 +83,7 @@ void func_003D6820(s32 idx) {
 
 
 
-void func_003C3DA0(u8 *p) {
+void func_003C3DA0(u8 *p, u8 *ignored) {
     s16 flag = S(p, 0x140);
     s16 x = S(p, 0xD0);
     s16 *q = (s16 *)(p + 0xD0);

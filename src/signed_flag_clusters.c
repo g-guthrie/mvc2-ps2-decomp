@@ -91,7 +91,7 @@ void func_003C24D0(u8 *p) {
     if ((s8)func_00175700(p) < 0)
         p[4]++;
 }
-void func_003C3430(u8 *p) {
+void func_003C3430(u8 *p, u8 *q) {
     if ((s8)func_00175700(p) < 0)
         p[4]++;
 }

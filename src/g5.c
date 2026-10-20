@@ -39,7 +39,7 @@ void func_00138690(u8 *p) {
     }
 }
 
-void func_003C3CE0(u8 *p) {
+void func_003C3CE0(u8 *p, u8 *ignored) {
     s16 *q = (s16 *)(p + 0xD0);
     if (*(s16 *)(p + 0x140) == 0) {
         q[1] = func_00118FA8(D_004F1FCC);

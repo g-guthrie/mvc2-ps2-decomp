@@ -15969,4 +15969,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/camera_horizontal_tracking_001254f0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/camera_horizontal_tracking_001254f0.o" private/SLUS_204.86.rom --source src/camera_horizontal_tracking_001254f0.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/partner_action_dispatch_003c32f0.c -c -lang c -O4,p -sdatathreshold 8 \
+    -o "$BUILD/partner_action_dispatch_003c32f0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/partner_action_dispatch_003c32f0.o" private/SLUS_204.86.rom --source src/partner_action_dispatch_003c32f0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

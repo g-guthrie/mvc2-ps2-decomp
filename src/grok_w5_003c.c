@@ -229,7 +229,7 @@ void func_003C15B0(u8 *p, u8 *owner)
     S(p, 0xd0) = (s16)func_00118FA8((f32)S(p, 0xd0) + F(p, 0x5c));
 }
 
-void func_003C3D60(u8 *p)
+void func_003C3D60(u8 *p, u8 *q)
 {
     S(p, 0xd0) = (s16)func_00118FA8((f32)S(p, 0xd0) + F(p, 0x5c));
 }

@@ -99,7 +99,7 @@ void func_00161410(P61 *p)
         p->f80 += p->f58;
     }
 }
-extern void (*D_004C2130[2])(u8 *, u8 *);
+extern const u32 jtbl_004C20F8[16] __attribute__((section(".sdata")));
 
 void func_003C3DE0(u8 *p, u8 *q)
 {
@@ -112,7 +112,7 @@ void func_003C3DE0(u8 *p, u8 *q)
         return;
     }
     p[0x24] = 0xC;
-    D_004C2130[p[5]](p, q);
+    ((void (*)(u8 *, u8 *))jtbl_004C20F8[14 + p[5]])(p, q);
     *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24) + *(s8 *)(p + 0x31);
     if (*(s8 *)(p + 0x24) > 7)
         *(s8 *)(p + 0x24) = 7;

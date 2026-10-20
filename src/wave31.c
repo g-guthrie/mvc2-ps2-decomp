@@ -63,13 +63,13 @@ void func_00180490(void) {
     }
 }
 
-extern void func_003C3CE0(void *, s32);
-extern void func_003C3D60(void *, s32);
-extern void func_003C3DA0(void *, s32);
-void func_003C4260(u8 *p, s32 a1) {
-    func_003C3CE0(p, a1);
-    func_003C3D60(p, a1);
-    func_003C3DA0(p, a1);
+extern void func_003C3CE0(u8 *, u8 *);
+extern void func_003C3D60(u8 *, u8 *);
+extern void func_003C3DA0(u8 *, u8 *);
+void func_003C4260(u8 *p, u8 *q) {
+    func_003C3CE0(p, q);
+    func_003C3D60(p, q);
+    func_003C3DA0(p, q);
     if (*(s16 *)(p + 0xD0) < 0) {
         u32 t = p[4];
         p[4] = t + 1;
