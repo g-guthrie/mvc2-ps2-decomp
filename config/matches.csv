@@ -17137,3 +17137,10 @@ func_001B9B60,0x001B9B60,0x114,src/copy_owner_chain_001a2960.c,complete
 func_001BA3A0,0x001BA3A0,0x120,src/copy_owner_chain_001a2960.c,complete
 func_001BAEE0,0x001BAEE0,0x134,src/payload_spawn_initializers_001baee0.c,complete
 func_001C1470,0x001C1470,0x114,src/payload_spawn_initializers_001baee0.c,complete
+func_001C1E10,0x001C1E10,0x150,src/payload_phase_initializers_001a9720.c,complete
+func_001A9720,0x001A9720,0x150,src/payload_phase_initializers_001a9720.c,complete
+func_001CFBB0,0x001CFBB0,0x164,src/payload_phase_initializers_001a9720.c,complete
+func_001AF860,0x001AF860,0x14C,src/copy_owner_chain_001a2960.c,complete
+func_001D3240,0x001D3240,0x124,src/payload_motion_initializers_001d3240.c,complete
+func_001DEB20,0x001DEB20,0x12C,src/payload_motion_initializers_001d3240.c,complete
+func_001B11F0,0x001B11F0,0x198,src/copy_owner_chain_001a2960.c,complete
