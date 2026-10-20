@@ -44,7 +44,16 @@ extern u8 *D_004C29BC;
 extern u8 *D_004C29C0;
 extern void (*D_00471A60[])(u8 *);
 extern void (*D_00471A70[])(u8 *);
-static void func_0038E500(void) { D_004C29C4 = D_004C29C4; }
+static void func_0038E500(u8 *p) {
+    f32 k = 1.6666666f;
+    f32 v;
+    *(f32 *)(p + 0x34) = *(f32 *)(*(u8 **)(p + 0x18) + 0x34);
+    *(f32 *)(p + 0x38) = *(f32 *)(*(u8 **)(p + 0x18) + 0x38);
+    v = k * (f32)(D_004C29C4[6] << 5);
+    if (*(s16 *)(p + 0x140) == 0) v = -v;
+    *(f32 *)(p + 0x34) += v;
+    *(u32 *)(p + 0x50) = 0x3F866666;
+}
 
 void func_0038E570(u8 *p) {
     if (p[0x20] == 0) {
@@ -57,7 +66,7 @@ void func_0038E570(u8 *p) {
         D_004C29C4 = p + 0x88;
         D_004C29BC = q + 0x2B8;
         D_004C29C0 = *(u8 **)(p + 0x18) + 0x88;
-        func_0038E500();
+        func_0038E500(p);
         D_00471A70[p[4]](p);
     }
 }

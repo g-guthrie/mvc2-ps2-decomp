@@ -15341,7 +15341,7 @@ func_003484A0,0x003484A0,0x74,0x00348514,code,spimdisasm-explicit-size-before-fi
 func_00348520,0x00348520,0x2C,0x0034854C,code,verified-source-recovery
 residual_0034854C,0x0034854C,0x4,0x00348550,assembly_residual,uncredited-native-alignment
 residual_00348550,0x00348550,0x158,0x003486A8,assembly_residual,native-remainder-after-verified-c-entry
-func_003486B0,0x003486B0,0x148,0x003487F8,code,spimdisasm-explicit-size-before-first-data
+func_003486B0,0x003486B0,0x148,0x003487F8,code,verified-complete-c-function
 func_00348800,0x00348800,0x19C,0x0034899C,code,spimdisasm-explicit-size-before-first-data
 func_003489A0,0x003489A0,0x44,0x003489E4,code,spimdisasm-explicit-size-before-first-data
 func_003489F0,0x003489F0,0x84,0x00348A74,code,spimdisasm-explicit-size-before-first-data
