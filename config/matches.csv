@@ -17284,3 +17284,7 @@ func_00143A60,0x00143A60,0x1F4,src/grok_he_00143A60.c,complete
 func_003486B0,0x003486B0,0x148,src/grok_fo_3486b0.c,complete
 func_0019D970,0x0019D970,0x160,src/grok_hs_19d970.c,complete
 func_00215650,0x00215650,0x148,src/grok_gk_215650.c,complete
+func_002648F0,0x002648F0,0x120,src/grok_fd_2648f0.c,complete
+func_00384C40,0x00384C40,0x114,src/grok_dd_00384C40.c,complete
+func_0017D270,0x0017D270,0x11C,src/grok_dx_17d260.c,complete
+func_001C1160,0x001C1160,0xE8,src/grok_dj_c1160.c,complete

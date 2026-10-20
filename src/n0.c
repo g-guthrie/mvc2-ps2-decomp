@@ -113,5 +113,3 @@ void func_003BC320(u8 *a) {
         func_003BD800(a);
     }
 }
-
-static void func_0030A450(u8 *a) { a[1] = 0; }
