@@ -6,7 +6,16 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-static void func_002555E0(u8 *p) { *(volatile s32 *)0x10000 = 1; }
+static void func_002555E0(u8 *p) {
+    if (*(s16 *)(p + 696) > 0) {
+        p[1037] = 0;
+        p[1036] = 0;
+        p[828] = 5;
+    } else {
+        p[1036] = 2;
+        p[828] = 5;
+    }
+}
 
 void func_0025AC10(u8 *p) {
     extern void func_001757E0();
