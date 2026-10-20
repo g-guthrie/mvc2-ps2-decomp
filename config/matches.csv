@@ -17426,3 +17426,5 @@ func_001F1070,0x001F1070,0x140,src/motion_table_update_001f1070.c,complete
 func_001FB250,0x001FB250,0x180,src/motion_landing_001fb250.c,complete
 func_001431A0,0x001431A0,0x1C4,src/render_matrix_001431a0.c,complete
 func_003421E0,0x003421E0,0xD4,src/bobbing_position_003421e0.c,complete
+func_00102A08,0x00102A08,0x48,src/runtime_flag_reset_00102a08.c,complete
+func_0034C720,0x0034C720,0xEC,src/owner_spacing_update_0034c720.c,complete

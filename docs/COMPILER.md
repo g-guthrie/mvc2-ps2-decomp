@@ -435,6 +435,14 @@ variable explicitly and verify the resulting object as usual:
 "$PYTHON" tools/verify_object.py build/matching/UNIT.o private/SLUS_204.86.rom --source src/UNIT.c
 ```
 
+The complete 72-byte `func_00102A08` in
+`src/runtime_flag_reset_00102a08.c` is another verified control for this
+layout. The unmodified compiler emits `sd s0,0(sp)` and `sd ra,16(sp)` in
+a 32-byte frame and reproduces every retail instruction with the production
+recipe above. A later unavailable SN release is therefore not required for
+this function. This result does not establish the compiler or matching status
+of every function with similar saves; those still need whole-span verification.
+
 ### First exact Sony 2.9 SDK recovery
 
 `sony29_thread_lifecycle.c` contains two complete native matches using Sony

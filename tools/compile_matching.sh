@@ -15876,4 +15876,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/bobbing_position_003421e0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/bobbing_position_003421e0.o" private/SLUS_204.86.rom --source src/bobbing_position_003421e0.c
 
+"$WIBO" "$SNCPP" -P src/runtime_flag_reset_00102a08.c "$BUILD/runtime_flag_reset_00102a08.i"
+"$WIBO" "$EE29CC1" "$BUILD/runtime_flag_reset_00102a08.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/runtime_flag_reset_00102a08.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/runtime_flag_reset_00102a08.o" "$BUILD/runtime_flag_reset_00102a08.s"
+"$PYTHON" tools/verify_object.py "$BUILD/runtime_flag_reset_00102a08.o" private/SLUS_204.86.rom --source src/runtime_flag_reset_00102a08.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_spacing_update_0034c720.c -c -lang c -O4 -Op -sdatathreshold 8 \
+    -o "$BUILD/owner_spacing_update_0034c720.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_spacing_update_0034c720.o" private/SLUS_204.86.rom --source src/owner_spacing_update_0034c720.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
