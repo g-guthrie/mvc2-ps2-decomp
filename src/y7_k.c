@@ -19,7 +19,14 @@ extern struct { u8 pad[4]; s8 f4; u8 pad2; s8 f6; } *D_004C2840;
 extern s32 D_004C27FC;
 
 static void func_0014E770(u8 *a, s32 b, s32 c, u8 *d) {
-    D_004C27FC = 0;
+    u8 *q = *(u8 **)(a + 24);
+    if (*(s32 *)(q + 220) != 0) {
+        if (q[4] == 1) {
+            *(s16 *)(a + 30) = *(s16 *)(q + 30);
+        } else {
+            *(s16 *)(a + 30) = *(s16 *)(q + 30);
+        }
+    }
 }
 
 void func_0014FFF0(u8 *a, s32 a1, s32 a2) {
