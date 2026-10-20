@@ -6,12 +6,15 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 typedef struct { f32 x, y, z, w; } V4a;
+typedef struct { f32 x, y, z; } V3;
+extern V3 D_004425A0;
+extern V3 D_0044269C[];
+extern void *func_003DA750(void *, s32, s32);
+extern void func_00146BD0(u8 *);
 extern V4a D_004425B0;
 extern u8 *D_004C2804;
 
-void func_001461F0(u8 *a, u8 b, s16 c) {
-    extern u8 *func_003DA750();
-    extern void func_00146BD0();
+u8 *func_001461F0(u8 *a, u8 b, s16 c) {
     u8 *o;
     if ((o = func_003DA750(0, 0xD, 0)) != 0) {
         o[0x13C] = 1;
@@ -24,6 +27,7 @@ void func_001461F0(u8 *a, u8 b, s16 c) {
         *(V4a *)(o + 0x74) = D_004425B0;
         *(u32 *)(o + 0xD0) = 0x800431;
     }
+    return o;
 }
 
 s32 func_002394F0(u8 *p) {
@@ -217,7 +221,6 @@ typedef struct { f32 x, y, z; } V3i;
 extern V3i D_0043DF64[];
 extern u8 *D_004C2834;
 void func_00132310(u8 *a, u8 *b) {
-    extern u8 *func_003DA750();
     extern void func_00133020();
     u8 *o;
     if ((o = func_003DA750(0, 0xE, 1)) != 0) {
@@ -340,3 +343,34 @@ void func_00284320(u8 *p) {
     }
 }
 
+
+u8 *func_00146040(s32 a, s32 b, s32 c)
+{
+    u8 *p;
+    u8 *q;
+
+    if ((s8)a == 0)
+        p = func_003DA750(0, 0xD, 1);
+    else
+        p = func_003DA750(0, 0xD, 0);
+    if (p != 0) {
+        p[0x13C] = 0;
+        *(void (**)(u8 *))(p + 0x10) = func_00146BD0;
+        p[0x23] = a;
+        p[0x20] = b;
+        p[0x21] = c;
+        *(V3 *)(p + 0x50) = D_004425A0;
+        *(V4a *)(p + 0x74) = D_004425B0;
+        *(u32 *)(p + 0xD0) = 0x800431;
+    }
+    if ((s8)a == 0) {
+        q = func_001461F0(p, 1, 6);
+        *(V3 *)(q + 0x50) = D_0044269C[p[0x20]];
+        *(f32 *)(q + 0x3C) = -0.1f;
+        q = func_001461F0(p, 1, 7);
+        *(V3 *)(q + 0x50) = D_0044269C[p[0x20]];
+        q[0x21] = 1;
+        *(f32 *)(q + 0x3C) = -0.12f;
+    }
+    return p;
+}

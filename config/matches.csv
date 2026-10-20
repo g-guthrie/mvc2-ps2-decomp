@@ -17410,3 +17410,8 @@ func_003EB4A0,0x003EB4A0,0x128,src/nibble_remap_003eb4a0.c,complete
 func_00191600,0x00191600,0x168,src/w184_i.c,complete
 func_00120A30,0x00120A30,0x1670,src/newlib_vfprintf_00120a30.c,complete
 func_003DAE10,0x003DAE10,0x7C,src/paired_record_copy_003dae10.c,complete
+func_00146040,0x00146040,0x1A8,src/y10_b.c,complete
+func_002866F0,0x002866F0,0x144,src/interaction_transition_002866f0.c,complete
+func_001F5470,0x001F5470,0x18C,src/frame_motion_001f5470.c,complete
+func_00134D30,0x00134D30,0x110,src/create_flagged_effect_00134d30.c,complete
+func_002876B0,0x002876B0,0xCC,src/interaction_mode_002876b0.c,complete

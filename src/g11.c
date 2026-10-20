@@ -193,7 +193,7 @@ void func_00197F70(u8 *a) {
     }
 }
 
-extern void func_00146040();
+extern u8 *func_00146040(s32, s32, s32);
 void func_00146BF0(void) {
     s32 i;
     func_00146040(3, 0, 0);

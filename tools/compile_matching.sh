@@ -8251,7 +8251,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/y10_a.c -c -lang c -O3,p -sdatathreshold 8 -o "$BUILD/y10_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/y10_a.o" private/SLUS_204.86.rom --source src/y10_a.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/y10_b.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/y10_b.o"
+    src/y10_b.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/y10_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/y10_b.o" private/SLUS_204.86.rom --source src/y10_b.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/y10_c.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/y10_c.o"
@@ -15800,5 +15800,25 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/paired_record_copy_003dae10.c -c -lang c -O4 -Op -sdatathreshold 8 \
     -o "$BUILD/paired_record_copy_003dae10.o"
 "$PYTHON" tools/verify_object.py "$BUILD/paired_record_copy_003dae10.o" private/SLUS_204.86.rom --source src/paired_record_copy_003dae10.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/interaction_transition_002866f0.c -c -lang c -O4,p -sdatathreshold 8 \
+    -o "$BUILD/interaction_transition_002866f0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/interaction_transition_002866f0.o" private/SLUS_204.86.rom --source src/interaction_transition_002866f0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/frame_motion_001f5470.c -c -lang c -O4,p -sdatathreshold 8 \
+    -o "$BUILD/frame_motion_001f5470.o"
+"$PYTHON" tools/verify_object.py "$BUILD/frame_motion_001f5470.o" private/SLUS_204.86.rom --source src/frame_motion_001f5470.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/create_flagged_effect_00134d30.c -c -lang c -O4,p -sdatathreshold 8 \
+    -o "$BUILD/create_flagged_effect_00134d30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/create_flagged_effect_00134d30.o" private/SLUS_204.86.rom --source src/create_flagged_effect_00134d30.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/interaction_mode_002876b0.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/interaction_mode_002876b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/interaction_mode_002876b0.o" private/SLUS_204.86.rom --source src/interaction_mode_002876b0.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh
