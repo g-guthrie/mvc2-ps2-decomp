@@ -118,4 +118,3 @@ long long func_00120600(Reent *rptr,const char *nptr,char **endptr,int base)
 		*endptr = (char *) (any ? s - 1 : nptr);
 	return (acc);
 }
-

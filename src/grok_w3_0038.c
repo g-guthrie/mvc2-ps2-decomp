@@ -65,15 +65,7 @@ void func_00399BA0(u8 *p)
     func_003DAA40(p);
 }
 
-void func_00396F90(u8 *p, s8 *q)
-{
-    s16 t = *(s16 *)(p + 0x1c) - 1;
-    *(s16 *)(p + 0x1c) = t;
-    if (t <= 0) {
-        *(s16 *)(p + 0x1c) = 2;
-        *q = *q - 1;
-    }
-}
+
 
 void func_0038E700(u8 *p)
 {

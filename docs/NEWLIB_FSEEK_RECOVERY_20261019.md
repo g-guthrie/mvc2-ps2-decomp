@@ -9,3 +9,8 @@ The shared `FILE._seek` callback accepts and returns signed 64-bit offsets. Nati
 The native stat layout follows Newlib's original complete structure: mode at +4, signed 64-bit size at +0x10, and a total of 104 bytes. It uses the actual Newlib fields, including timestamps and spare fields, without a fabricated stack tail. Native fseek uses the default 1,024-byte block size rather than HAVE_BLKSIZE.
 
 The header's complete include closure contains thirteen existing C translation units; no other header includes it. All twenty-two credited functions in that closure were replayed exactly with their production profiles, including `-msoft-float` for dtoa/mprec. The fseek function adds 1,196 code bytes; the callback contract correction adds no separate credit.
+
+Root integration replays the current sixteen-source include closure, including
+the newly typed integer-parser wrapper and new parser/fseek units. The header
+changes no offsets; unrelated cached units retain their checked source/object
+hashes. All closure functions pass their literal production profiles.

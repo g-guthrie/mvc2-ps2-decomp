@@ -7,3 +7,12 @@ The GCC runtime excerpts in `src/gcc_libgcc_udivmod_core.h` retain the original 
 `src/newlib_atan2_00111588.c` retains the Sun Microsystems fdlibm notice
 from pinned Newlib1.10.0. Its notice permits use, copying, modification, and
 distribution with the notice preserved.
+
+`src/newlib_atan_001160A0.c` retains the Sun fdlibm notice. The Newlib
+`fseek` and signed parser recoveries retain their Berkeley notices in source.
+This product includes software developed by the University of California,
+Berkeley and its contributors.
+
+The recovered `pow`, double/float `sqrt` sources retain their Sun fdlibm
+notices. `src/newlib_heap_core.c` retains Doug Lea’s public-domain allocator
+attribution and source configuration documentation.

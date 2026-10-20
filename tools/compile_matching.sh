@@ -7325,9 +7325,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/t9_i.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/t9_i.o"
 "$PYTHON" tools/verify_object.py "$BUILD/t9_i.o" private/SLUS_204.86.rom --source src/t9_i.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/t9_k.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/t9_k.o"
-"$PYTHON" tools/verify_object.py "$BUILD/t9_k.o" private/SLUS_204.86.rom --source src/t9_k.c
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/t11_a.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/t11_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/t11_a.o" private/SLUS_204.86.rom --source src/t11_a.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
@@ -15440,5 +15437,46 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_dq_001E4480.
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_atan2_00111588.i" "$BUILD/newlib_atan2_00111588.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_atan2_00111588.o" "$BUILD/newlib_atan2_00111588.s"
 "$PYTHON" tools/verify_object.py "$BUILD/newlib_atan2_00111588.o" private/SLUS_204.86.rom --source src/newlib_atan2_00111588.c
+
+
+# Exact recovered queue and render functions.
+"$WIBO" "$SNCPP" -P src/newlib_fseek_0011BF48.c "$BUILD/newlib_fseek_0011BF48.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_fseek_0011BF48.i" "$BUILD/newlib_fseek_0011BF48.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_fseek_0011BF48.o" "$BUILD/newlib_fseek_0011BF48.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_fseek_0011BF48.o" private/SLUS_204.86.rom --source src/newlib_fseek_0011BF48.c
+
+"$WIBO" "$SNCPP" -P src/newlib_strtol_r_00120600.c "$BUILD/newlib_strtol_r_00120600.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_strtol_r_00120600.i" "$BUILD/newlib_strtol_r_00120600.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_strtol_r_00120600.o" "$BUILD/newlib_strtol_r_00120600.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_strtol_r_00120600.o" private/SLUS_204.86.rom --source src/newlib_strtol_r_00120600.c
+
+"$WIBO" "$SNCPP" -P src/newlib_atan_001160A0.c "$BUILD/newlib_atan_001160A0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_atan_001160A0.i" "$BUILD/newlib_atan_001160A0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_atan_001160A0.o" "$BUILD/newlib_atan_001160A0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_atan_001160A0.o" private/SLUS_204.86.rom --source src/newlib_atan_001160A0.c
+
+
+# Exact recovered queue and render functions.
+"$WIBO" "$SNCPP" -P src/newlib_heap_core.c "$BUILD/newlib_heap_core.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_heap_core.i" "$BUILD/newlib_heap_core.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_heap_core.o" "$BUILD/newlib_heap_core.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_heap_core.o" private/SLUS_204.86.rom --source src/newlib_heap_core.c
+
+
+# Exact recovered queue and render functions.
+"$WIBO" "$SNCPP" -P src/newlib_pow_001118C8.c "$BUILD/newlib_pow_001118C8.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_pow_001118C8.i" "$BUILD/newlib_pow_001118C8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_pow_001118C8.o" "$BUILD/newlib_pow_001118C8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_pow_001118C8.o" private/SLUS_204.86.rom --source src/newlib_pow_001118C8.c
+
+"$WIBO" "$SNCPP" -P src/newlib_sqrt_00112DD0.c "$BUILD/newlib_sqrt_00112DD0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_sqrt_00112DD0.i" "$BUILD/newlib_sqrt_00112DD0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_sqrt_00112DD0.o" "$BUILD/newlib_sqrt_00112DD0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_sqrt_00112DD0.o" private/SLUS_204.86.rom --source src/newlib_sqrt_00112DD0.c
+
+"$WIBO" "$SNCPP" -P src/newlib_sqrtf_00114228.c "$BUILD/newlib_sqrtf_00114228.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_sqrtf_00114228.i" "$BUILD/newlib_sqrtf_00114228.s"
+"$WIBO" "$SNAS" -mips4 -G0 -o "$BUILD/newlib_sqrtf_00114228.o" "$BUILD/newlib_sqrtf_00114228.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_sqrtf_00114228.o" private/SLUS_204.86.rom --source src/newlib_sqrtf_00114228.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

@@ -9,8 +9,18 @@ typedef float f32;
 extern void func_001B3D90(void *q, void *p);
 extern s32 func_00175670(void *p);
 
-static void func_00396F90(void *a, void *b) {
-    *(u32 *)((u8 *)b + 0x10) = (u32)a;
+typedef struct {
+    u8 pad[0x1C];
+    s16 timer;
+} TimerActor;
+
+static void func_00396F90(TimerActor *p, s8 *q) {
+    s16 t = p->timer - 1;
+    p->timer = t;
+    if (t <= 0) {
+        p->timer = 2;
+        *q = *q - 1;
+    }
 }
 
 void func_00397250(u8 *a, u8 *b, s8 *c) {
@@ -20,7 +30,7 @@ void func_00397250(u8 *a, u8 *b, s8 *c) {
         a[0x13C] = 0;
     } else {
         c[7] = 0;
-        func_00396F90(a, c);
+        func_00396F90((TimerActor *)a, c);
         if (c[0] < 0) {
             u32 t = a[4];
             a[4] = t + 1;

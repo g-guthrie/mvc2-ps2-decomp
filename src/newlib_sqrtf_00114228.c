@@ -9,7 +9,7 @@
  *
  * Developed at SunPro, a Sun Microsystems, Inc. business.
  * Permission to use, copy, modify, and distribute this
- * software is freely granted, provided that this notice 
+ * software is freely granted, provided that this notice
  * is preserved.
  * ====================================================
  */
@@ -140,7 +140,7 @@ typedef union { float value; __uint32_t word; } ieee_float_shape_type;
 #endif
 {
 	float z;
-	__int32_t 	sign = (__int32_t)0x80000000; 
+	__int32_t 	sign = (__int32_t)0x80000000;
 	__uint32_t r,hx;
 	__int32_t ix,s,q,m,t,i;
 
@@ -173,12 +173,12 @@ typedef union { float value; __uint32_t word; } ieee_float_shape_type;
 	r = 0x01000000L;		/* r = moving bit from right to left */
 
 	while(r!=0) {
-	    t = s+r; 
-	    if(t<=ix) { 
-		s    = t+r; 
-		ix  -= t; 
-		q   += r; 
-	    } 
+	    t = s+r;
+	    if(t<=ix) {
+		s    = t+r;
+		ix  -= t;
+		q   += r;
+	    }
 	    ix += ix;
 	    r>>=1;
 	}

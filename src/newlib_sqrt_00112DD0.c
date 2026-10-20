@@ -7,7 +7,7 @@
  *
  * Developed at SunPro, a Sun Microsystems, Inc. business.
  * Permission to use, copy, modify, and distribute this
- * software is freely granted, provided that this notice 
+ * software is freely granted, provided that this notice
  * is preserved.
  * ====================================================
  */
@@ -17,10 +17,10 @@
  *           ------------------------------------------
  *	     |  Use the hardware sqrt if you have one |
  *           ------------------------------------------
- * Method: 
- *   Bit by bit method using integer arithmetic. (Slow, but portable) 
+ * Method:
+ *   Bit by bit method using integer arithmetic. (Slow, but portable)
  *   1. Normalization
- *	Scale x to y in [1,4) with even powers of 2: 
+ *	Scale x to y in [1,4) with even powers of 2:
  *	find an integer k such that  1 <= (y=x*2^(2k)) < 4, then
  *		sqrt(x) = 2^k * sqrt(y)
  *   2. Bit by bit computation
@@ -29,9 +29,9 @@
  *                                     i+1         2
  *	    s  = 2*q , and	y  =  2   * ( y - q  ).		(1)
  *	     i      i            i                 i
- *                                                        
- *	To compute q    from q , one checks whether 
- *		    i+1       i                       
+ *
+ *	To compute q    from q , one checks whether
+ *		    i+1       i
  *
  *			      -(i+1) 2
  *			(q + 2      ) <= y.			(2)
@@ -41,12 +41,12 @@
  *		 	       i+1   i             i+1   i
  *
  *	With some algebric manipulation, it is not difficult to see
- *	that (2) is equivalent to 
+ *	that (2) is equivalent to
  *                             -(i+1)
  *			s  +  2       <= y			(3)
  *			 i                i
  *
- *	The advantage of (3) is that s  and y  can be computed by 
+ *	The advantage of (3) is that s  and y  can be computed by
  *				      i      i
  *	the following recurrence formula:
  *	    if (3) is false
@@ -58,10 +58,10 @@
  *                         -i                     -(i+1)
  *	    s	  =  s  + 2  ,  y    = y  -  s  - 2  		(5)
  *           i+1      i          i+1    i     i
- *				
- *	One may easily use induction to prove (4) and (5). 
+ *
+ *	One may easily use induction to prove (4) and (5).
  *	Note. Since the left hand side of (3) contain only i+2 bits,
- *	      it does not necessary to do a full (53-bit) comparison 
+ *	      it does not necessary to do a full (53-bit) comparison
  *	      in (3).
  *   3. Final rounding
  *	After generating the 53 bits result, we compute one more bit.
@@ -71,7 +71,7 @@
  *	The rounding mode can be detected by checking whether
  *	huge + tiny is equal to huge, and whether huge - tiny is
  *	equal to huge for some floating point number "huge" and "tiny".
- *		
+ *
  * Special cases:
  *	sqrt(+-0) = +-0 	... exact
  *	sqrt(inf) = inf
@@ -105,17 +105,17 @@ typedef union { double value; struct { __uint32_t lsw; __uint32_t msw; } parts; 
 #endif
 {
 	double z;
-	__int32_t sign = (int)0x80000000; 
+	__int32_t sign = (int)0x80000000;
 	__uint32_t r,t1,s1,ix1,q1;
 	__int32_t ix0,s0,q,m,t,i;
 
 	EXTRACT_WORDS(ix0,ix1,x);
 
     /* take care of Inf and NaN */
-	if((ix0&0x7ff00000)==0x7ff00000) {			
+	if((ix0&0x7ff00000)==0x7ff00000) {
 	    return x*x+x;		/* sqrt(NaN)=NaN, sqrt(+inf)=+inf
 					   sqrt(-inf)=sNaN */
-	} 
+	}
     /* take care of zero */
 	if(ix0<=0) {
 	    if(((ix0&(~sign))|ix1)==0) return x;/* sqrt(+-0) = +-0 */
@@ -149,12 +149,12 @@ typedef union { double value; struct { __uint32_t lsw; __uint32_t msw; } parts; 
 	r = 0x00200000;		/* r = moving bit from right to left */
 
 	while(r!=0) {
-	    t = s0+r; 
-	    if(t<=ix0) { 
-		s0   = t+r; 
-		ix0 -= t; 
-		q   += r; 
-	    } 
+	    t = s0+r;
+	    if(t<=ix0) {
+		s0   = t+r;
+		ix0 -= t;
+		q   += r;
+	    }
 	    ix0 += ix0 + ((ix1&sign)>>31);
 	    ix1 += ix1;
 	    r>>=1;
@@ -162,9 +162,9 @@ typedef union { double value; struct { __uint32_t lsw; __uint32_t msw; } parts; 
 
 	r = sign;
 	while(r!=0) {
-	    t1 = s1+r; 
+	    t1 = s1+r;
 	    t  = s0;
-	    if((t<ix0)||((t==ix0)&&(t1<=ix1))) { 
+	    if((t<ix0)||((t==ix0)&&(t1<=ix1))) {
 		s1  = t1+r;
 		if(((t1&sign)==sign)&&(s1&sign)==0) s0 += 1;
 		ix0 -= t;
@@ -185,7 +185,7 @@ typedef union { double value; struct { __uint32_t lsw; __uint32_t msw; } parts; 
 	        if (q1==(__uint32_t)0xffffffff) { q1=0; q += 1;}
 		else if (z>one) {
 		    if (q1==(__uint32_t)0xfffffffe) q+=1;
-		    q1+=2; 
+		    q1+=2;
 		} else
 	            q1 += (q1&1);
 	    }
@@ -197,5 +197,5 @@ typedef union { double value; struct { __uint32_t lsw; __uint32_t msw; } parts; 
 	INSERT_WORDS(z,ix0,ix1);
 	return z;
 }
- 
+
 #endif /* defined(_DOUBLE_IS_32BITS) */
