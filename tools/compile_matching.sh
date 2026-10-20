@@ -15503,4 +15503,10 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -mips4 -G0 -o "$BUILD/newlib_rem_pio2f_00113E78.o" "$BUILD/newlib_rem_pio2f_00113E78.s"
 "$PYTHON" tools/verify_object.py "$BUILD/newlib_rem_pio2f_00113E78.o" private/SLUS_204.86.rom --source src/newlib_rem_pio2f_00113E78.c
 
+# Complete six-argument float kernel reducer.
+"$WIBO" "$SNCPP" -P src/newlib_k_rem_pio2f_001154A8.c "$BUILD/newlib_k_rem_pio2f_001154A8.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_k_rem_pio2f_001154A8.i" "$BUILD/newlib_k_rem_pio2f_001154A8.s"
+"$WIBO" "$SNAS" -mips4 -G0 -o "$BUILD/newlib_k_rem_pio2f_001154A8.o" "$BUILD/newlib_k_rem_pio2f_001154A8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_k_rem_pio2f_001154A8.o" private/SLUS_204.86.rom --source src/newlib_k_rem_pio2f_001154A8.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
