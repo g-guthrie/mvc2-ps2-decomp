@@ -7,13 +7,18 @@ typedef signed int s32;
 typedef float f32;
 extern s8 *D_004C299C;
 
-/* Static leaf callee in the same unit: the compiler sees it does not clobber
-   $a1 and keeps the argument pointer there across the call. */
-static void func_0037F440(void) { D_004C299C[1] = 1; }
+static void func_0037F440(u8 *p) {
+    s16 t = *(s16 *)(p + 0x1C) - 1;
+    *(s16 *)(p + 0x1C) = t;
+    if (t <= 0) {
+        *(s16 *)(p + 0x1C) = 1;
+        *D_004C299C -= 1;
+    }
+}
 
 void func_0037F8A0(u8 *p) {
     D_004C299C[7] = 0;
-    func_0037F440();
+    func_0037F440(p);
     if (*D_004C299C < 0) {
         u32 t = p[4];
         p[4] = t + 1;
