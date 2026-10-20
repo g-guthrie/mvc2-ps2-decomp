@@ -15426,4 +15426,19 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_dx_17d260.c -c -la
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_dj_c1160.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_dj_c1160.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_dj_c1160.o" private/SLUS_204.86.rom --source src/grok_dj_c1160.c
 
+
+# Exact recovered queue and render functions.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_ds_240850.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/grok_ds_240850.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_ds_240850.o" private/SLUS_204.86.rom --source src/grok_ds_240850.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_dq_001E4480.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/grok_dq_001E4480.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_dq_001E4480.o" private/SLUS_204.86.rom --source src/grok_dq_001E4480.c
+
+
+# Sun fdlibm atan2.
+"$WIBO" "$SNCPP" -P src/newlib_atan2_00111588.c "$BUILD/newlib_atan2_00111588.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/newlib_atan2_00111588.i" "$BUILD/newlib_atan2_00111588.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_atan2_00111588.o" "$BUILD/newlib_atan2_00111588.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_atan2_00111588.o" private/SLUS_204.86.rom --source src/newlib_atan2_00111588.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

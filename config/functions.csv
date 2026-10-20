@@ -537,7 +537,7 @@ func_00111090,0x00111090,0x1C8,0x00111258,code,spimdisasm-explicit-size-before-f
 func_00111258,0x00111258,0x158,0x001113B0,code,spimdisasm-explicit-size-before-first-data
 func_001113B0,0x001113B0,0xCC,0x0011147C,code,spimdisasm-explicit-size-before-first-data
 func_00111480,0x00111480,0x108,0x00111588,code,spimdisasm-explicit-size-before-first-data
-func_00111588,0x00111588,0x33C,0x001118C4,code,spimdisasm-explicit-size-before-first-data
+func_00111588,0x00111588,0x33C,0x001118C4,code,verified-complete-c-function
 func_001118C8,0x001118C8,0xF4C,0x00112814,code,spimdisasm-explicit-size-before-first-data
 func_00112818,0x00112818,0x5B8,0x00112DD0,code,spimdisasm-explicit-size-before-first-data
 func_00112DD0,0x00112DD0,0x31C,0x001130EC,code,spimdisasm-explicit-size-before-first-data
@@ -5303,7 +5303,7 @@ func_001E42A0,0x001E42A0,0x2C,0x001E42CC,code,spimdisasm-explicit-size-before-fi
 func_001E42D0,0x001E42D0,0x70,0x001E4340,code,spimdisasm-explicit-size-before-first-data
 func_001E4340,0x001E4340,0xA8,0x001E43E8,code,spimdisasm-explicit-size-before-first-data
 func_001E43F0,0x001E43F0,0x90,0x001E4480,code,spimdisasm-explicit-size-before-first-data
-func_001E4480,0x001E4480,0xD4,0x001E4554,code,spimdisasm-explicit-size-before-first-data
+func_001E4480,0x001E4480,0xD4,0x001E4554,code,verified-complete-c-function
 func_001E4560,0x001E4560,0x14C,0x001E46AC,code,spimdisasm-explicit-size-before-first-data
 func_001E46B0,0x001E46B0,0x8,0x001E46B8,code,spimdisasm-explicit-size-before-first-data
 func_001E46C0,0x001E46C0,0x8,0x001E46C8,code,spimdisasm-explicit-size-before-first-data
@@ -7845,7 +7845,7 @@ residual_0024070C,0x0024070C,0x98,0x002407A4,assembly_residual,verified-boundary
 func_002407B0,0x002407B0,0x58,0x00240808,code,spimdisasm-explicit-size-before-first-data
 func_00240810,0x00240810,0x20,0x00240830,code,matching-c-head-split
 func_00240830,0x00240830,0x20,0x00240850,code,typed-callback-table-entry
-residual_00240850,0x00240850,0xD8,0x00240928,assembly_residual,verified-boundary-after-matching-head
+func_00240850,0x00240850,0xD8,0x00240928,code,verified-complete-c-function
 func_00240930,0x00240930,0xFC,0x00240A2C,code,spimdisasm-explicit-size-before-first-data
 func_00240A30,0x00240A30,0x144,0x00240B74,code,verified-complete-c-function
 func_00240B80,0x00240B80,0x60,0x00240BE0,code,spimdisasm-explicit-size-before-first-data
