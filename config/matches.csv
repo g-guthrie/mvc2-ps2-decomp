@@ -17112,3 +17112,7 @@ func_0019A560,0x0019A560,0xE4,src/owner_state_copy_setup_0019a560.c,complete
 func_001684B0,0x001684B0,0xEC,src/team_health_script_test_001684b0.c,complete
 func_001685A0,0x001685A0,0xF0,src/team_health_script_test_001684b0.c,complete
 func_001487D0,0x001487D0,0xE0,src/object_phase_setup_001487d0.c,complete
+func_0013DB00,0x0013DB00,0xDC,src/interpolate_pose_0013db00.c,complete
+func_002BF040,0x002BF040,0xC4,src/t1_b.c,complete
+func_00235C40,0x00235C40,0xBC,src/motion_profile_00235c40.c,complete
+func_00368060,0x00368060,0xDC,src/grok_368060.c,complete

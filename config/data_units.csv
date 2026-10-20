@@ -5734,7 +5734,7 @@ gR1ButtonSettingPrompt_004B36A0,0x004B36A0,0x11,.data,src/data/gR1ButtonSettingP
 data_zero_004B36B1,0x004B36B1,0xF,.data,src/data/data_zero_004B36B1.c,zero_initialized_untyped
 gR2ButtonSettingPrompt_004B36C0,0x004B36C0,0x11,.data,src/data/gR2ButtonSettingPrompt_004B36C0.c,nul_terminated_message
 data_zero_004B36D1,0x004B36D1,0xF,.data,src/data/data_zero_004B36D1.c,zero_initialized_untyped
-data_u32_004B36E0,0x004B36E0,0x150,.data,src/data/data_u32_004B36E0.c,initialized_u32_table
+data_button_config_render_004B36E0,0x004B36E0,0x150,.data,src/data/data_button_config_render_004B36E0.c,button_config_renderer_records
 jtbl_004B3830,0x004B3830,0x60,.rodata,src/data/jtbl_004B3830.c,jump_table
 gPlayerFormat_004B3890,0x004B3890,0x9,.data,src/data/gPlayerFormat_004B3890.c,nul_terminated_message
 data_raw_004B3899,0x004B3899,0x7,.data,src/data/data_raw_004B3899.c,initialized_byte_array

@@ -5802,7 +5802,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/m3h.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/m3h.o"
 "$PYTHON" tools/verify_object.py "$BUILD/m3h.o" private/SLUS_204.86.rom --source src/m3h.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/m3i.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/m3i.o"
+    src/m3i.c -c -lang c -O3,p -sdatathreshold 0 -i src -o "$BUILD/m3i.o"
 "$PYTHON" tools/verify_object.py "$BUILD/m3i.o" private/SLUS_204.86.rom --source src/m3i.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/m3j.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/m3j.o"
@@ -15004,5 +15004,17 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/team_health_scrip
 # Independently recovered complete callback bodies.
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/object_phase_setup_001487d0.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/object_phase_setup_001487d0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/object_phase_setup_001487d0.o" private/SLUS_204.86.rom --source src/object_phase_setup_001487d0.c
+
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/interpolate_pose_0013db00.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/interpolate_pose_0013db00.o"
+"$PYTHON" tools/verify_object.py "$BUILD/interpolate_pose_0013db00.o" private/SLUS_204.86.rom --source src/interpolate_pose_0013db00.c
+
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/motion_profile_00235c40.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/motion_profile_00235c40.o"
+"$PYTHON" tools/verify_object.py "$BUILD/motion_profile_00235c40.o" private/SLUS_204.86.rom --source src/motion_profile_00235c40.c
+
+# Independently recovered complete callback bodies.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_368060.c -c -lang c -O3,p -sdatathreshold 8 -o "$BUILD/grok_368060.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_368060.o" private/SLUS_204.86.rom --source src/grok_368060.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh
