@@ -7,9 +7,6 @@ extern void *func_003F55B0(void *, s32, s32);
 
 
 
-extern s32 func_00107328(s32);
-extern void func_00107380(s32);
-extern void func_00103D00(void);
 
 extern s32 D_004C2AB0, D_004C2AB4;
 typedef struct { char b[0x18]; } R18;

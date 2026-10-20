@@ -15974,4 +15974,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/partner_action_dispatch_003c32f0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/partner_action_dispatch_003c32f0.o" private/SLUS_204.86.rom --source src/partner_action_dispatch_003c32f0.c
 
+"$WIBO" "$SNCPP" -P src/sony29_rpc_reset_and_callback.c "$BUILD/sony29_rpc_reset_and_callback.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_reset_and_callback.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_reset_and_callback.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_reset_and_callback.o" "$BUILD/sony29_rpc_reset_and_callback.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_reset_and_callback.o" private/SLUS_204.86.rom --source src/sony29_rpc_reset_and_callback.c
+
+"$WIBO" "$SNCPP" -P src/sony29_rpc_work_queue.c "$BUILD/sony29_rpc_work_queue.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_work_queue.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_work_queue.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_work_queue.o" "$BUILD/sony29_rpc_work_queue.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_work_queue.o" private/SLUS_204.86.rom --source src/sony29_rpc_work_queue.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

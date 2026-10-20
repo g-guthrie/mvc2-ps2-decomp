@@ -1,4 +1,8 @@
 name,address,size,source,status
+func_00107328,0x00107328,0x58,src/sony29_rpc_work_queue.c,complete
+func_00107548,0x00107548,0x40,src/sony29_rpc_work_queue.c,complete
+func_00107B90,0x00107B90,0x2C,src/sony29_rpc_reset_and_callback.c,complete
+func_00107E58,0x00107E58,0x34,src/sony29_rpc_reset_and_callback.c,complete
 func_001B59A0,0x001B59A0,0xC,src/byte_setter_leaves.c,complete
 func_001CE470,0x001CE470,0xC,src/byte_setter_leaves.c,complete
 func_00329490,0x00329490,0xC,src/byte_setter_leaves.c,complete

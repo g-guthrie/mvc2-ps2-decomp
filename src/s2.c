@@ -28,9 +28,6 @@ void func_003F7D58(S7D58 *p) {
     }
 }
 
-extern s32 func_00107328(s32);
-extern void func_00107380(s32);
-extern void func_00103D00(void);
 
 typedef struct { s32 a, b, c, d; } Q4;
 extern Q4 D_00632140;
