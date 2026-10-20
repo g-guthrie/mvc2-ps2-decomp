@@ -438,7 +438,19 @@ void func_00122670(V122670 *v, f32 *len, s32 *a, s32 *b)
 }
 
 typedef struct { u8 pad0[6]; u8 b6; u8 pad1[0x2D]; f32 f34, f38; u8 pad3[0x20]; f32 f5c, f60; u8 pad4[4]; f32 f68, f6c; } P276A80;
-static void func_00275A40(P276A80 *p) { p->b6 = 0; }
+static s32 func_00275A40(P276A80 *p)
+{
+    u8 *bytes = (u8 *)p;
+    if (p->f38 < *(f32 *)(bytes + 0x430)) {
+        *(s32 *)(bytes + 92) = 0;
+        *(s32 *)(bytes + 96) = 0;
+        *(s32 *)(bytes + 104) = 0;
+        *(s32 *)(bytes + 108) = 0;
+        p->f38 = *(f32 *)(bytes + 0x430);
+        return 1;
+    }
+    return 0;
+}
 void func_00276A80(P276A80 *p)
 {
     extern s8 func_00175700();
