@@ -2,8 +2,9 @@
  * public SIF RPC layout; the backing pool uses native 64-byte slots. */
 typedef unsigned char u8;
 typedef unsigned int u32;
-typedef struct {u32 command[4],rec_id;void *pkt_addr;u32 rpc_id;} RpcHeader;
-typedef struct {u32 counter;u8 *buffer;int count;} PacketPool;
+#include "sony29_rpc_packet_header.h"
+typedef SonyRpcHeader RpcHeader;
+typedef SonyRpcPacketPool PacketPool;
 extern int func_0010CA20(void);
 extern void func_0010CA68(void);
 RpcHeader *func_001067F0(PacketPool *pool)

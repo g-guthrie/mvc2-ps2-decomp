@@ -1,8 +1,7 @@
-typedef unsigned int u32;
-typedef struct { char pad[16]; u32 state; char pad2[4]; u32 status; } Record;
+#include "sony29_rpc_packet_header.h"
 
-void func_00106898(Record *record)
+void func_00106898(SonyRpcHeader *packet)
 {
-    record->status = 0;
-    record->state &= 0xFFFFFFFEu;
+    packet->rpc_id = 0;
+    packet->rec_id &= 0xFFFFFFFEu;
 }

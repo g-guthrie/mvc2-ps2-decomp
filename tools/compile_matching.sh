@@ -2592,7 +2592,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/poll_packet_buffer_00422D20.c -c -lang c -O3 -Op \
-    -sdatathreshold 8 -o "$BUILD/poll_packet_buffer_00422D20.o"
+    -sdatathreshold 8 -i src -o "$BUILD/poll_packet_buffer_00422D20.o"
 "$PYTHON" tools/verify_object.py "$BUILD/poll_packet_buffer_00422D20.o" \
     private/SLUS_204.86.rom --source src/poll_packet_buffer_00422D20.c
 
@@ -15694,5 +15694,21 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_ia_00260960.c -c -
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_fj_002c3080.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_fj_002c3080.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_fj_002c3080.o" private/SLUS_204.86.rom --source src/grok_fj_002c3080.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_dg_002b7360.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_dg_002b7360.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_dg_002b7360.o" private/SLUS_204.86.rom --source src/grok_dg_002b7360.c
+
+"$WIBO" "$SNCPP" -P src/sony29_rpc_reply_completion.c "$BUILD/sony29_rpc_reply_completion.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_reply_completion.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_reply_completion.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_reply_completion.o" "$BUILD/sony29_rpc_reply_completion.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_reply_completion.o" private/SLUS_204.86.rom --source src/sony29_rpc_reply_completion.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/grok_dg_002b1740.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_dg_002b1740.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grok_dg_002b1740.o" private/SLUS_204.86.rom --source src/grok_dg_002b1740.c
+
+"$WIBO" "$SNCPP" -P src/sony29_rpc_client_requests.c "$BUILD/sony29_rpc_client_requests.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_rpc_client_requests.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_rpc_client_requests.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_client_requests.o" "$BUILD/sony29_rpc_client_requests.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_client_requests.o" private/SLUS_204.86.rom --source src/sony29_rpc_client_requests.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh
