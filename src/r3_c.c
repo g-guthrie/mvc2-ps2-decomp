@@ -8,11 +8,11 @@ typedef unsigned long long u64;
 typedef signed long long s64;
 typedef float f32;
 
-extern u32 *func_003F1F00(void);
+extern u32 *func_003F1F00(void *file);
 extern u32 *func_003F1F10(s32, s32);
 s32 func_003F1950(s32 a) {
     u32 *p;
-    if ((*func_003F1F00() & 1) != 0) {
+    if ((*func_003F1F00((void *)a) & 1) != 0) {
         if ((p = func_003F1F10(a, 1)) != 0) return p[1];
         return 0;
     }
