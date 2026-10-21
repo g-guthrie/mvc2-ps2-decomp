@@ -553,3 +553,7 @@ private/code-lane/round31/root/FINAL_VERIFICATION.json.
 ## Parent edge setups at 001B1D20 and 001B1EE0
 
 Both callbacks take the child byte-buffer pointer and retain the native parent pointer for the four-argument `void func_00176160` call. The first additionally calls unary `void func_0015E630`. Both call the actual three-argument `int func_001754A0`, ignoring its result. The 196-byte inherited-state view and XYZ position view preserve the actual complete native copies, repeated stores and float expression order. Whole-function matches are 440 and 424 bytes. See `ACTOR_FRAME_AND_COORDINATE_TABLES_20261021.md` for the accompanying DATA boundaries and input preconditions.
+
+## Mirrored parent-margin callbacks
+
+`001B16F0` (508 bytes), `001B18F0` (532 bytes), and `001B1B10` (516 bytes) retain the 196-byte inherited-state copy, repeated parent-field stores, signed facing test, and exact native float arithmetic. Each mirrored boundary calculation uses one signed margin in both branches: left boundary minus margin and right boundary plus margin. The parent texture-copy helper and child setup/animation helpers use their actual reviewed contracts. The source uses ordinary position/motion field views and the unchanged inherited-state header. All three whole functions verify in one production translation unit; no near-match or duplicate prior function receives credit.

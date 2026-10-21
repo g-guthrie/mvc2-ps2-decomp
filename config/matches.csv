@@ -17631,3 +17631,6 @@ func_0041CCA0,0x0041CCA0,0x78,src/grid_code_lookup_0041CCA0.c,complete
 func_001B1D20,0x001B1D20,0x1B8,src/actor_parent_edge_setups_001B1D20.c,complete
 func_001B1EE0,0x001B1EE0,0x1A8,src/actor_parent_edge_setups_001B1D20.c,complete
 func_00366CA0,0x00366CA0,0x164,src/luna_r_00366ca0.c,complete
+func_001B16F0,0x001B16F0,0x1FC,src/actor_parent_margin_setups_001B16F0.c,complete
+func_001B18F0,0x001B18F0,0x214,src/actor_parent_margin_setups_001B16F0.c,complete
+func_001B1B10,0x001B1B10,0x204,src/actor_parent_margin_setups_001B16F0.c,complete
