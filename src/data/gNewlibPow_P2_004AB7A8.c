@@ -1,0 +1,1 @@
+const double gNewlibPow_P2_004AB7A8 = -0.002777777777701559;

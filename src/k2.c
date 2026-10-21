@@ -1,4 +1,5 @@
 typedef signed int s32;
+#include "cri_sj_ring_buffer_types.h"
 typedef unsigned int u32;
 typedef unsigned short u16;
 typedef unsigned char u8;
@@ -61,7 +62,9 @@ typedef struct { s32 x; s32 n; } R3;
 typedef struct { char pad[0x1C]; void (*cb)(s32, s32); s32 arg; } O3;
 extern void func_0040EFE0(void);
 extern void func_0040EFF8(void);
-void func_0040F2E8(O3 *o, s32 mode, R3 *r) {
+void func_0040F2E8(SJ_OBJ *object, s32 mode, SJCK *chunk) {
+    O3 *o = (O3 *)object;
+    R3 *r = (R3 *)chunk;
     if (r->n > 0 && r->x != 0) {
         func_0040EFE0();
         if (mode == 0) {

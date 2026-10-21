@@ -1,0 +1,1 @@
+const double gNewlibKcosC2_004ABFD0 = -0.0013888888888874107;

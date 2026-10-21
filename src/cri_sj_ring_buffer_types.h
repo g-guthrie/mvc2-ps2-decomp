@@ -2,10 +2,33 @@
 #define MVC2_CRI_SJ_RING_BUFFER_TYPES_H
 
 struct _sj_vtbl;
+#ifndef MVC2_CRI_SJ_INTERFACE_TYPEDEF
+#define MVC2_CRI_SJ_INTERFACE_TYPEDEF
+typedef struct _sj_vtbl CriSjInterface;
+#endif
 typedef struct _UUID UUID;
 typedef struct {
+    signed char *data;
+    signed int len;
+} SJCK;
+typedef struct SJ_OBJ {
     struct _sj_vtbl *vtbl;
 } SJ_OBJ;
+
+struct _sj_vtbl {
+    void (*QueryInterface)(void);
+    void (*AddRef)(void);
+    void (*Release)(void);
+    void (*Destroy)(SJ_OBJ *object);
+    UUID *(*GetUuid)(SJ_OBJ *object);
+    void (*Reset)(SJ_OBJ *object);
+    void (*GetChunk)(SJ_OBJ *object, signed int id, signed int nbyte, SJCK *chunk);
+    void (*UngetChunk)(SJ_OBJ *object, signed int id, SJCK *chunk);
+    void (*PutChunk)(SJ_OBJ *object, signed int id, SJCK *chunk);
+    signed int (*GetNumData)(SJ_OBJ *object, signed int id);
+    signed int (*IsGetChunk)(SJ_OBJ *object, signed int id, signed int nbyte, signed int *available);
+    void (*EntryErrFunc)(SJ_OBJ *object, void (*callback)(void *, signed int), void *context);
+};
 typedef void (*SJRBFErrorCallback)(void *object, signed int error_code);
 
 typedef struct SJRBFRecord {

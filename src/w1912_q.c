@@ -7,7 +7,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 
 extern void func_0040F010(void *, int);
-extern struct CriSjInterface D_004908C8;
+extern CriSjInterface D_004908C8;
 extern u8 D_004BE9D0[];
 
 
@@ -23,9 +23,9 @@ CriSjMemory *func_0040F0B8(char *x, s32 y) {
     e->interface = &D_004908C8;
     e->buffer = x;
     e->size = y;
-    e->uuid = D_004BE9D0;
+    e->uuid = (struct _UUID *)D_004BE9D0;
     e->error_callback = func_0040F010;
     e->error_context = e;
-    func_0040F1D0(e);
+    func_0040F1D0((struct SJ_OBJ *)e);
     return e;
 }

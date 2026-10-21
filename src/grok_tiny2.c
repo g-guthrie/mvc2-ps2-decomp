@@ -20,14 +20,6 @@ s32 func_0013BCE0(u8 *p)
     return p[33] == *(s8 *)(*(u8 **)(p + 20) + 1245);
 }
 
-s32 func_0040F1D0(s32 *p)
-{
-    s32 v = p[6];
-    p[4] = 0;
-    p[3] = v;
-    return v;
-}
-
 s32 func_00419FC0(void)
 {
     func_00423750();

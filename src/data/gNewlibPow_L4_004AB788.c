@@ -1,0 +1,1 @@
+const double gNewlibPow_L4_004AB788 = 0.27272812380853395;

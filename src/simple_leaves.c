@@ -725,7 +725,7 @@ s32 func_0040EEA8(void) { return 16; }
 
 void func_0040EEF8(void) {}
 
-void *func_0040F1B8(CriSjMemory *p) { return p->uuid; }
+UUID *func_0040F1B8(SJ_OBJ *object) { return ((CriSjMemory *)object)->uuid; }
 
 char *func_0040F520(CriSjMemory *p) { return p->buffer; }
 

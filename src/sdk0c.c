@@ -1,6 +1,7 @@
 typedef signed int s32;
 typedef unsigned int u32;
 typedef unsigned char u8;
+#include "cri_sj_ring_buffer_types.h"
 
 extern u8 D_004AB388;
 extern s32 D_00439920[];
@@ -11,7 +12,8 @@ typedef struct Obj { s32 *vt; } Obj;
 typedef struct T44 { u8 b[0x44]; } T44;
 extern u8 D_00487B60[];
 T44 *func_00409208(u32 i) { if (i >= 8) return 0; return (T44 *)((u32)D_00487B60 + i * 0x44); }
-void func_0040F180(s32 *p) {
+void func_0040F180(SJ_OBJ *object) {
+    s32 *p = (s32 *)object;
     if (p) { func_0011D8F8(p, 0, 0x24); p[1] = 0; }
 }
 typedef s32 (*VF)(void *, s32);

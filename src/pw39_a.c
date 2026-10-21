@@ -6,6 +6,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 typedef unsigned long u64;
+#include "cri_sj_ring_buffer_types.h"
 
 /* EE GCC 2.96: ./tryee.sh src/pw39_a.c sn */
 typedef struct { s32 a; s32 b; s32 c[10]; } T;
@@ -13,7 +14,8 @@ typedef struct { s32 a; s32 b; s32 c[10]; } T;
 extern void func_003F81C8(s32 a);
 void func_00400020(s32 *p) { func_003F81C8(p[1]); }
 
-s32 func_0040F1E0(s32 *p, s32 n) {
+s32 func_0040F1E0(SJ_OBJ *object, s32 n) {
+    s32 *p = (s32 *)object;
     if (n == 1) return p[3];
     if (n != 0) {
         void (*f)(s32, s32) = (void (*)(s32, s32))p[7];

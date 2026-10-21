@@ -351,7 +351,7 @@ void func_00409450(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 36) = value2; *
 
 void func_00409460(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 44) = value2; *(s32 *)(p + 40) = value1; }
 
-void func_0040F1C0(CriSjMemory *p, CriSjErrorCallback callback, void *context) { p->error_context = context; p->error_callback = callback; }
+void func_0040F1C0(SJ_OBJ *object, CriSjErrorCallback callback, void *context) { CriSjMemory *p = (CriSjMemory *)object; p->error_context = context; p->error_callback = callback; }
 
 void func_0040F718(SJRBFRecord *p, SJRBFErrorCallback err_func, void *err_obj) { p->err_obj = err_obj; p->err_func = err_func; }
 

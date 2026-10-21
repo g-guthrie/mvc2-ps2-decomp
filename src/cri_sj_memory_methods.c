@@ -1,8 +1,9 @@
 #include "cri_sj_ring_buffer_types.h"
 /* SJMEM reset has the void-return SJ interface contract. */
 #include "cri_sj_memory_types.h"
-void func_0040F1D0(CriSjMemory *p)
+void func_0040F1D0(SJ_OBJ *object)
 {
+    CriSjMemory *p = (CriSjMemory *)object;
     int size=p->size;
     p->offset=0;
     p->remaining=size;
@@ -10,8 +11,9 @@ void func_0040F1D0(CriSjMemory *p)
 
 extern void func_0040EFE0(void);
 extern void func_0040EFF8(void);
-int func_0040F478(CriSjMemory *record,int line,int requested,int *available)
+int func_0040F478(SJ_OBJ *object,int line,int requested,int *available)
 {
+    CriSjMemory *record = (CriSjMemory *)object;
     int amount;
     func_0040EFE0();
     if (line==0) amount=0;
@@ -41,27 +43,27 @@ void func_0040F728(SJ_OBJ *object)
     p->unk10 = v;
 }
 
-typedef struct { char *data; int length; } CriSjChunk;
 extern void func_0040EFE0(void);
 extern void func_0040EFF8(void);
-void func_0040F228(CriSjMemory *record, int line, int requested, CriSjChunk *output)
+void func_0040F228(SJ_OBJ *object, int line, int requested, SJCK *output)
 {
+    CriSjMemory *record = (CriSjMemory *)object;
     int amount;
     func_0040EFE0();
     if (line == 0) {
-        output->length = 0;
+        output->len = 0;
         output->data = 0;
     } else if (line == 1) {
         amount = record->remaining < requested ? record->remaining : requested;
-        output->length = amount;
+        output->len = amount;
         {
             int offset = record->offset;
             record->offset = offset + amount;
-            output->data = record->buffer + offset;
+            output->data = (signed char *)(record->buffer + offset);
         }
-        record->remaining -= output->length;
+        record->remaining -= output->len;
     } else {
-        output->length = 0;
+        output->len = 0;
         output->data = 0;
         if (record->error_callback)
             record->error_callback(record->error_context, -3);
