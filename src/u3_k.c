@@ -2,11 +2,11 @@ typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;
 typedef signed int s32;
-extern s32 *D_00478B50[];
+extern s32 * const D_00478B50[4];
 
 void func_003EB810(u8 *src, u8 *dst, s32 stride) {
     s32 j, k, i;
-    s32 **tp = D_00478B50;
+    s32 * const *tp = D_00478B50;
     for (k = 0; k < 4; k++) {
         s32 *t = *tp++;
         for (j = 0; j < 2; j++) {

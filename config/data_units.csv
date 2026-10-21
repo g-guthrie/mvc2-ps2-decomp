@@ -5403,10 +5403,10 @@ data_u32_00478340,0x00478340,0x80,.data,src/data/data_u32_00478340.c,bounded_u32
 data_u32_004783C0,0x004783C0,0x80,.data,src/data/data_u32_004783C0.c,bounded_u32_indices
 data_u32_00478440,0x00478440,0x80,.data,src/data/data_u32_00478440.c,bounded_u32_indices
 data_s32_004784C0,0x004784C0,0x80,.data,src/data/data_s32_004784C0.c,bounded_s32_indices
-data_raw_00478540,0x00478540,0x200,.data,src/data/data_raw_00478540.c,raw_decoder_words
-data_raw_00478740,0x00478740,0x200,.data,src/data/data_raw_00478740.c,raw_decoder_words
+data_raw_00478540,0x00478540,0x200,.data,src/data/data_raw_00478540.c,bounded_nibble_remap_indices
+data_raw_00478740,0x00478740,0x200,.data,src/data/data_raw_00478740.c,bounded_nibble_remap_indices
 D_00478940,0x00478940,0x10,.rodata,src/data/D_00478940.c,pointer_table
-data_u32_00478950,0x00478950,0x200,.data,src/data/data_u32_00478950.c,initialized_u32_table
+data_u32_00478950,0x00478950,0x200,.data,src/data/data_u32_00478950.c,bounded_byte_remap_indices
 D_00478B50,0x00478B50,0x10,.rodata,src/data/D_00478B50.c,pointer_table
 data_u32_00478B60,0x00478B60,0x320,.data,src/data/data_u32_00478B60.c,initialized_u32_table
 data_zero_00478E80,0x00478E80,0x170,.data,src/data/data_zero_00478E80.c,zero_initialized_untyped
@@ -7103,7 +7103,7 @@ data_u8_004ABB84,0x004ABB84,0x4,.data,src/data/data_u8_004ABB84.c,initialized_by
 data_f32_004ABB88,0x004ABB88,0x4,.data,src/data/data_f32_004ABB88.c,float_scalar
 data_u8_004ABB8C,0x004ABB8C,0x70,.data,src/data/data_u8_004ABB8C.c,initialized_byte_array
 data_f32_004ABBFC,0x004ABBFC,0x4,.data,src/data/data_f32_004ABBFC.c,float_scalar
-data_u8_004ABC00,0x004ABC00,0x29C,.data,src/data/data_u8_004ABC00.c,initialized_byte_array
+D_004ABC00,0x004ABC00,0x318,.data,src/data/D_004ABC00.c,initialized_s32_digit_table
 data_f32_004AC29C,0x004AC29C,0x8,.data,src/data/data_f32_004AC29C.c,float_pair
 data_u8_004AC2A4,0x004AC2A4,0x8,.data,src/data/data_u8_004AC2A4.c,initialized_byte_array
 data_f32_004AC2AC,0x004AC2AC,0x4,.data,src/data/data_f32_004AC2AC.c,float_scalar
