@@ -8417,9 +8417,9 @@ data_raw_004BA510,0x004BA510,0x10,.data,src/data/data_raw_004BA510.c,initialized
 gInvalidTbpMessage_004BA520,0x004BA520,0x19,.data,src/data/gInvalidTbpMessage_004BA520.c,nul_terminated_message
 data_raw_004BA539,0x004BA539,0x7,.data,src/data/data_raw_004BA539.c,initialized_byte_array
 gMvc2ActionDispatch_004BA540,0x004BA540,0x20,.rodata,src/data/mvc2_action_dispatch_004BA540.c,code_pointer_vector
-jtbl_004BA560,0x004BA560,0x16C,.rodata,src/data/jtbl_004BA560.c,jump_table
+jtbl_004BA560,0x004BA560,0x170,.rodata,src/data/jtbl_004BA560.c,jump_table
 jtbl_004BA6D0,0x004BA6D0,0x20,.rodata,src/data/jtbl_004BA6D0.c,jump_table
-jtbl_004BA6F0,0x004BA6F0,0x20,.rodata,src/data/jtbl_004BA6F0.c,jump_table
+jtbl_004BA6F0,0x004BA6F0,0x18,.rodata,src/data/jtbl_004BA6F0.c,jump_table
 gTextureAllocError_004BA710,0x004BA710,0x51,.data,src/data/gTextureAllocError_004BA710.c,nul_terminated_message
 data_raw_004BA761,0x004BA761,0xF,.data,src/data/data_raw_004BA761.c,initialized_byte_array
 gUnsupportedTextureDepth_004BA770,0x004BA770,0x40,.data,src/data/gUnsupportedTextureDepth_004BA770.c,nul_terminated_message
@@ -9910,3 +9910,4 @@ data_ptr_004C2534,0x004C2534,0x4,.data,src/data/data_ptr_004C2534.c,pointer_scal
 data_s32_004C2538,0x004C2538,0x4,.data,src/data/data_s32_004C2538.c,int32_scalar
 data_s32_004C253C,0x004C253C,0x4,.data,src/data/data_s32_004C253C.c,int32_scalar
 data_zero_004C2540,0x004C2540,0x40,.data,src/data/data_zero_004C2540.c,zero_initialized_untyped
+data_raw_004BA708,0x004BA708,0x8,.rodata,src/data/data_raw_004BA708.c,initialized_byte_array

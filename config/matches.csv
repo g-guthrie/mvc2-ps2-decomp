@@ -17493,3 +17493,5 @@ func_002FC910,0x002FC910,0x8,src/tail_leaves.c,complete
 func_003088A0,0x003088A0,0x8,src/tail_leaves.c,complete
 func_00104300,0x00104300,0xA4,src/sony29_wait_vblank_00104270.c,complete
 func_002B7580,0x002B7580,0x16C,src/actor_state_transfer_002B7580.c,complete
+func_002B7DA0,0x002B7DA0,0x13C,src/actor_state_transfer_002B7580.c,complete
+func_002B4710,0x002B4710,0x140,src/actor_state_transfer_002B7580.c,complete
