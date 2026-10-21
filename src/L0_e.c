@@ -6,9 +6,9 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-extern s32 *D_0043CB10[];
-extern f32 *D_0043CB50[];
-extern f32 *D_0043CB30[];
+extern const void * const D_0043CB10[5];
+extern const void * const D_0043CB50[5];
+extern const void * const D_0043CB30[5];
 extern s8 D_004F1F48;
 extern s8 D_004F1F49;
 extern s8 D_004F1F47;
@@ -25,8 +25,8 @@ void func_001234D0(void)
     extern void func_001239E0(s32, s32);
     extern void func_00124660(s32, s32);
     extern void func_00123BE0(s32, s32);
-    s32 *s0;
-    f32 *t0, *t1;
+    const s32 *s0;
+    const f32 *t0, *t1;
     s32 v;
     u8 t;
     s32 off;
