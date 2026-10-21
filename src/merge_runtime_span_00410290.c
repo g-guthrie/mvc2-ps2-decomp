@@ -1,11 +1,13 @@
 #include "runtime_span_types.h"
+#include "cri_sj_ring_buffer_types.h"
 
 extern void func_0040EFE0(void);
 extern void func_0040EFF8(void);
 
-void func_00410290(struct RuntimeQueryContext *context, s32 index,
-                   const struct RuntimeSpan *span)
+void func_00410290(SJ_OBJ *object, s32 index, SJCK *chunk)
 {
+    struct RuntimeQueryContext *context = (struct RuntimeQueryContext *)object;
+    const struct RuntimeSpan *span = (const struct RuntimeSpan *)chunk;
     struct RuntimeNode *node;
 
     if ((u32)index >= 4)

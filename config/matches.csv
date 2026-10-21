@@ -17562,3 +17562,8 @@ func_001C03B0,0x001C03B0,0x1FC,src/actor_emission_cycles_001CCF60.c,complete
 func_001CC8C0,0x001CC8C0,0x188,src/actor_emission_cycles_001CCF60.c,complete
 func_001CC280,0x001CC280,0x194,src/actor_emission_cycles_001CCF60.c,complete
 func_003A8DB0,0x003A8DB0,0x11C,src/actor_pattern_burst_003A8DB0.c,complete
+func_001DC460,0x001DC460,0x19C,src/actor_emission_cycles_001CCF60.c,complete
+func_001D1C10,0x001D1C10,0x1FC,src/actor_emission_cycles_001CCF60.c,complete
+func_003A3050,0x003A3050,0x2E4,src/actor_lifecycle_003A3050.c,complete
+func_003AABB0,0x003AABB0,0x1E4,src/actor_input_motion_003AABB0.c,complete
+func_003AB270,0x003AB270,0x190,src/actor_input_motion_003AABB0.c,complete

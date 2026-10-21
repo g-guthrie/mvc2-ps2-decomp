@@ -16203,3 +16203,11 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_pattern_burst_003A8DB0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_pattern_burst_003A8DB0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_pattern_burst_003A8DB0.o" private/SLUS_204.86.rom --source src/actor_pattern_burst_003A8DB0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_lifecycle_003A3050.c -c -lang c -O4,p -sdatathreshold 8 -i src -o "$BUILD/actor_lifecycle_003A3050.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_lifecycle_003A3050.o" private/SLUS_204.86.rom --source src/actor_lifecycle_003A3050.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_input_motion_003AABB0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_input_motion_003AABB0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_input_motion_003AABB0.o" private/SLUS_204.86.rom --source src/actor_input_motion_003AABB0.c

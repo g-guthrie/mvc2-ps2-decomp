@@ -729,7 +729,7 @@ UUID *func_0040F1B8(SJ_OBJ *object) { return ((CriSjMemory *)object)->uuid; }
 
 char *func_0040F520(CriSjMemory *p) { return p->buffer; }
 
-UUID *func_0040F710(SJRBFRecord *p) { return p->uuid; }
+UUID *func_0040F710(SJ_OBJ *object) { return ((SJRBFRecord *)object)->uuid; }
 
 s32 func_0040FCD0(void *p) { return *(s32 *)((u8 *)p + 28); }
 
@@ -737,7 +737,7 @@ s32 func_0040FCD8(void *p) { return *(s32 *)((u8 *)p + 32); }
 
 s32 func_0040FCE0(void *p) { return *(s32 *)((u8 *)p + 36); }
 
-s32 func_0040FEE0(void *p) { return *(s32 *)((u8 *)p + 8); }
+UUID *func_0040FEE0(SJ_OBJ *object) { return *(UUID **)((u8 *)object + 8); }
 
 void func_00416A50(void) {}
 

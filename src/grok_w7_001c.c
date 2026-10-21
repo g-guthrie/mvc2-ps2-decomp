@@ -31,8 +31,8 @@ extern Entry *func_003DA750(s32, s32, s32);
 extern void func_001C1CA0(u8 *, u8 *, void *);
 extern void func_001C3DC0(u8 *, u8 *, void *);
 extern void func_001C84D0(u8 *, u8 *, void *);
-extern void func_001DC1F0(u8 *);
-extern void func_001DC440(u8 *);
+extern void func_001DC1F0(u8 *, void *);
+extern void func_001DC440(u8 *, void *);
 
 s32 func_001C1D40(u8 *p, u8 *q)
 {
@@ -76,9 +76,9 @@ void func_001DC1A0(u8 *p, u8 *q)
     if (p[33] != 0)
         *(s32 *)(q + 724) = 4;
     if (p[32] == 0)
-        func_001DC1F0(p);
+        func_001DC1F0(p, q);
     else
-        func_001DC440(p);
+        func_001DC440(p, q);
 }
 
 void func_001C1100(u8 *p)

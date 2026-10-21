@@ -703,3 +703,65 @@ void func_001CC280(u8 *p) {
  *(s16 *)(p+0x1C)=D_0044DC90[*(s16 *)(p+0x1E)];
  p[0x22]=8;func_001754A0(p,27,8);
 }
+
+extern int func_00174170(void);
+extern int func_001754A0(u8 *,int,int);
+extern void func_001DC600(u8 *,void *);
+void func_001DC460(u8 *p,void *context) {
+ u8 *q=context;
+ ActorMotion *motion=(ActorMotion *)p;
+ u32 state=p[4];
+ p[4]=state+1;
+        *(ActorState *)(p+0xEC)=*(ActorState *)(q+0xEC);
+        p[0x13C]=1;
+        p[2]=q[2];p[1]=q[1];
+        *(f32 *)(p+0x50)=*(f32 *)(q+0x50);
+        *(f32 *)(p+0x54)=*(f32 *)(q+0x54);
+        p[0x1B7]=q[0x1B7];p[0x1B8]=q[0x1B8];
+        *(s8 *)(p+0x30)=*(s8 *)(q+0x30);
+        *(V3 *)(p+0x50)=*(V3 *)(q+0x50);
+        *(s8 *)(p+0x24)=*(s8 *)(q+0x24);
+ p[0x24]=8;
+ motion->vx=0;motion->vy=0;motion->ax=0;motion->ay=0;
+ motion->vx=(1.6666666269302368f*(((func_00174170()&255)-128)*128))/65536.0f;
+ motion->vy=(2.142857074737549f*(((func_00174170()&255)+96)*1024))/65536.0f;
+ motion->ay=-0.4017857015132904f;
+ func_001754A0(p,27,(u8)((func_00174170()&3)+9));
+ func_001DC600(p,q);
+}
+
+typedef struct {s16 x,y;} EmissionOffset;
+typedef struct {s32 vx,ax,vy,ay;} FixedMotion;
+extern EmissionOffset D_0044E000[4];
+extern FixedMotion D_0044E010;
+void func_001D1C10(u8 *p) {
+ ActorMotion *motion=(ActorMotion *)p;
+ u32 state=p[4];
+ u8 *q=*(u8 **)(p+0x14);
+ p[4]=state+1;
+        *(ActorState *)(p+0xEC)=*(ActorState *)(q+0xEC);
+        p[0x13C]=1;
+        p[2]=q[2];p[1]=q[1];
+        *(f32 *)(p+0x50)=*(f32 *)(q+0x50);
+        *(f32 *)(p+0x54)=*(f32 *)(q+0x54);
+        p[0x1B7]=q[0x1B7];p[0x1B8]=q[0x1B8];
+        *(s8 *)(p+0x30)=*(s8 *)(q+0x30);
+        *(V3 *)(p+0x50)=*(V3 *)(q+0x50);
+        *(s8 *)(p+0x24)=*(s8 *)(q+0x24);
+ p[0x24]=0;
+ *(s16 *)(p+0x140)=*(s16 *)(q+0x140);
+ p[0x14C]=16;p[0x14D]=16;p[0x14E]=16;p[0x14F]=16;
+ *(V3 *)(p+0x34)=*(V3 *)(q+0x34);
+ {
+ s32 dx=D_0044E000[p[0x20]].x;
+ s32 dy=D_0044E000[p[0x20]].y;
+ motion->vx=(1.6666666269302368f*D_0044E010.vx)/65536.0f;
+ motion->ax=(1.6666666269302368f*D_0044E010.ax)/65536.0f;
+ motion->vy=(2.142857074737549f*D_0044E010.vy)/65536.0f;
+ motion->ay=(2.142857074737549f*D_0044E010.ay)/65536.0f;
+ if(*(s16 *)(p+0x140)) {dx=-dx;motion->vx=-motion->vx;motion->ax=-motion->ax;}
+ motion->x+=1.6666666269302368f*dx;
+ motion->y+=2.142857074737549f*dy;
+ }
+ func_001757E0(p,23,10);
+}

@@ -353,9 +353,14 @@ void func_00409460(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 44) = value2; *
 
 void func_0040F1C0(SJ_OBJ *object, CriSjErrorCallback callback, void *context) { CriSjMemory *p = (CriSjMemory *)object; p->error_context = context; p->error_callback = callback; }
 
-void func_0040F718(SJRBFRecord *p, SJRBFErrorCallback err_func, void *err_obj) { p->err_obj = err_obj; p->err_func = err_func; }
+void func_0040F718(SJ_OBJ *object, SJRBFErrorCallback err_func, void *err_obj) { SJRBFRecord *p = (SJRBFRecord *)object; p->err_obj = err_obj; p->err_func = err_func; }
 
-void func_0040FEE8(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 44) = value2; *(s32 *)(p + 40) = value1; }
+typedef struct {
+    u8 pad0[0x28];
+    void (*error_callback)(void *, signed int);
+    void *error_context;
+} SjrmObject;
+void func_0040FEE8(SJ_OBJ *object, void (*callback)(void *, signed int), void *context) { SjrmObject *p = (SjrmObject *)object; p->error_context = context; p->error_callback = callback; }
 
 void func_0041ABA0(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 

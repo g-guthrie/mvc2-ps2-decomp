@@ -6,7 +6,7 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
-extern u8 D_00490D78[];
+extern CriSjInterface D_00490D78;
 extern UUID D_004BEA10;
 
 SJRBFRecord *func_0040F5E0(s8 *buf, s32 bsize, s32 xsize)
@@ -25,7 +25,7 @@ SJRBFRecord *func_0040F5E0(s8 *buf, s32 bsize, s32 xsize)
     } else {
         e = &D_00490DA8[i];
         e->used = 1;
-        e->sj.vtbl = (struct _sj_vtbl *)D_00490D78;
+        e->sj.vtbl = &D_00490D78;
         e->buf = buf;
         e->bsize = bsize;
         e->xsize = xsize;

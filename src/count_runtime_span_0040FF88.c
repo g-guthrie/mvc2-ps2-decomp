@@ -1,7 +1,9 @@
 #include "runtime_span_types.h"
+#include "cri_sj_ring_buffer_types.h"
 
-s32 func_0040FF88(struct RuntimeQueryContext *context, s32 index)
+s32 func_0040FF88(SJ_OBJ *object, s32 index)
 {
+    struct RuntimeQueryContext *context = (struct RuntimeQueryContext *)object;
     struct RuntimeNode *node;
     s32 total;
 

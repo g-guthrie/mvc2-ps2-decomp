@@ -52,9 +52,13 @@ typedef struct SJRBFRecord {
 typedef char SJRBFRecord_size_check[sizeof(SJRBFRecord) == 0x40 ? 1 : -1];
 extern SJRBFRecord D_00490DA8[256];
 
-UUID *func_0040F710(SJRBFRecord *record);
-void func_0040F718(SJRBFRecord *record, SJRBFErrorCallback callback, void *context);
+UUID *func_0040F710(SJ_OBJ *object);
+void func_0040F718(SJ_OBJ *object, SJRBFErrorCallback callback, void *context);
 void func_0040F728(SJ_OBJ *object);
-int func_0040F750(SJRBFRecord *record, int line);
-int func_0040FC08(SJRBFRecord *record, int line, int requested, int *available);
+int func_0040F750(SJ_OBJ *object, int line);
+int func_0040FC08(SJ_OBJ *object, int line, int requested, int *available);
+void func_0040F6D0(SJ_OBJ *object);
+void func_0040F7A0(SJ_OBJ *object, int line, int requested, SJCK *chunk);
+void func_0040FA70(SJ_OBJ *object, int line, SJCK *chunk);
+void func_0040F910(SJ_OBJ *object, int line, SJCK *chunk);
 #endif

@@ -1,4 +1,5 @@
 #include "runtime_span_types.h"
+#include "cri_sj_ring_buffer_types.h"
 
 extern void func_0040EFE0(void);
 extern void func_0040EFF8(void);
@@ -6,9 +7,11 @@ extern void func_004104E0(const struct RuntimeSpan *source, s32 maximum,
                           struct RuntimeSpan *span,
                           struct RuntimeSpan *remainder);
 
-void func_00410000(struct RuntimeQueryContext *context, s32 index,
-                   s32 length, struct RuntimeSpan *result)
+void func_00410000(SJ_OBJ *object, s32 index,
+                   s32 length, SJCK *chunk)
 {
+    struct RuntimeQueryContext *context = (struct RuntimeQueryContext *)object;
+    struct RuntimeSpan *result = (struct RuntimeSpan *)chunk;
     struct RuntimeNode *node;
     struct RuntimeSpan range;
     struct RuntimeSpan remainder;

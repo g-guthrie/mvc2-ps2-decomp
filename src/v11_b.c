@@ -40,7 +40,7 @@ void func_0013FCE0(s32 n) {
 
 extern s32 D_004C283C;
 extern s32 D_0045ED80[];
-extern s32 D_0045ED20[];
+extern s32 D_0045ED20[8][3];
 
 
 typedef struct { u8 *a, *b, *c; } E3;

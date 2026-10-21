@@ -5,6 +5,7 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
+#include "cri_sj_ring_buffer_types.h"
 
 extern void func_0040EFE0(void);
 
@@ -35,7 +36,8 @@ void func_0040EE28(s32 a, s32 b) {
 
 extern void func_0011D8F8(s32 *p, s32 v, s32 n);
 extern void func_0040EFF8(void);
-void func_0040F6D0(s32 *p) {
+void func_0040F6D0(SJ_OBJ *object) {
+    s32 *p = (s32 *)object;
     func_0040EFE0();
     if (p != 0) {
         func_0011D8F8(p, 0, 0x40);
