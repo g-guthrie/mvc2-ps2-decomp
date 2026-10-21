@@ -53,14 +53,7 @@ extern s32 func_0010B298(void);
 extern s32 D_004C6E80[];
 extern char D_004C7080[];
 
-typedef struct { s32 a, b; } P2;
-extern P2 D_00439140[];
-extern char D_00438998[];
-extern s32 func_0010CD50(void);
-extern void func_0010CCE8(s32, s32);
-extern void func_0010CCF8(s32, void *, s32);
 extern void func_00104060(s32);
-extern s32 func_0010CD40(s32);
 
 typedef struct { s32 w0[10]; s32 w28; s16 f; char pad2[0x12]; } E64b;
 extern E64b D_006207A0[];

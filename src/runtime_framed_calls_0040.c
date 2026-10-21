@@ -62,7 +62,7 @@ void func_0040C7C0(s32 value, s32 *output)
         func_0040C6D0(output, value, first, D_004895C0.second);
 }
 
-extern void func_0040D040(u8 *);
+extern void func_0040D040(void *);
 void func_0040CD38(u8 *object)
 {
     if (object != 0) {

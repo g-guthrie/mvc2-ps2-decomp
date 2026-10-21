@@ -28,7 +28,6 @@ void func_00402650(u8 *p, s32 v) { if (p == 0) func_003FB128(D_004BC4F0); else p
 
 extern u8 *func_003F1F90(void *, s32);
 
-extern void func_0040D040(void);
 
 
 s32 func_004098F8(void) {

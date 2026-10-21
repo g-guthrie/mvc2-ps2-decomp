@@ -16098,3 +16098,55 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/initialize_runtime_tables_00414E30.c -c -lang c -O4,p -sdatathreshold 8 \
     -o "$BUILD/initialize_runtime_tables_00414E30.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_runtime_tables_00414E30.o" private/SLUS_204.86.rom --source src/initialize_runtime_tables_00414E30.c
+
+# Complete actor inherited-state copies; legacy compiler emits the native aggregate loop.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_inherited_state_clones.c -c -lang c -O4,p -sdatathreshold 8 -i src \
+    -o "$BUILD/actor_inherited_state_clones.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_inherited_state_clones.o" private/SLUS_204.86.rom --source src/actor_inherited_state_clones.c
+
+# Complete actor inherited-state copies; legacy compiler emits the native aggregate loop.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_inherited_state_setups.c -c -lang c -O4,p -sdatathreshold 8 -i src \
+    -o "$BUILD/actor_inherited_state_setups.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_inherited_state_setups.o" private/SLUS_204.86.rom --source src/actor_inherited_state_setups.c
+
+"$WIBO" "$SNCPP" -P src/sony29_install_kernel_handlers_0010CDB8.c "$BUILD/sony29_install_kernel_handlers_0010CDB8.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_install_kernel_handlers_0010CDB8.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_install_kernel_handlers_0010CDB8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_install_kernel_handlers_0010CDB8.o" "$BUILD/sony29_install_kernel_handlers_0010CDB8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_install_kernel_handlers_0010CDB8.o" private/SLUS_204.86.rom --source src/sony29_install_kernel_handlers_0010CDB8.c
+
+"$WIBO" "$SNCPP" -P src/sony29_install_kernel_handlers_0010D170.c "$BUILD/sony29_install_kernel_handlers_0010D170.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_install_kernel_handlers_0010D170.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_install_kernel_handlers_0010D170.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_install_kernel_handlers_0010D170.o" "$BUILD/sony29_install_kernel_handlers_0010D170.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_install_kernel_handlers_0010D170.o" private/SLUS_204.86.rom --source src/sony29_install_kernel_handlers_0010D170.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/texture_channel_swap_00416570.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/texture_channel_swap_00416570.o"
+"$PYTHON" tools/verify_object.py "$BUILD/texture_channel_swap_00416570.o" private/SLUS_204.86.rom --source src/texture_channel_swap_00416570.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_transition_bounds_001B1520.c -c -lang c -O4,p -sdatathreshold 0 -i src -o "$BUILD/actor_transition_bounds_001B1520.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_transition_bounds_001B1520.o" private/SLUS_204.86.rom --source src/actor_transition_bounds_001B1520.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_randomized_spawn_003A1E30.c -c -lang c -O4,p -sdatathreshold 8 -i src -o "$BUILD/actor_randomized_spawn_003A1E30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_randomized_spawn_003A1E30.o" private/SLUS_204.86.rom --source src/actor_randomized_spawn_003A1E30.c
+
+"$WIBO" "$SNCPP" -P src/sony29_cddvd_command_0010F8A0.c "$BUILD/sony29_cddvd_command_0010F8A0.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_cddvd_command_0010F8A0.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_cddvd_command_0010F8A0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_cddvd_command_0010F8A0.o" "$BUILD/sony29_cddvd_command_0010F8A0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_cddvd_command_0010F8A0.o" private/SLUS_204.86.rom --source src/sony29_cddvd_command_0010F8A0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_burst_spawn_003CA340.c -c -lang c -O4,p -sdatathreshold 8 -i src -o "$BUILD/actor_burst_spawn_003CA340.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_burst_spawn_003CA340.o" private/SLUS_204.86.rom --source src/actor_burst_spawn_003CA340.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_launch_setup_003B4A10.c -c -lang c -O4,p -sdatathreshold 8 -i src -o "$BUILD/actor_launch_setup_003B4A10.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_launch_setup_003B4A10.o" private/SLUS_204.86.rom --source src/actor_launch_setup_003B4A10.c
+
+"$WIBO" "$SNCPP" -P src/cri_audio_release_00401868.c "$BUILD/cri_audio_release_00401868.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/cri_audio_release_00401868.i" "$BUILD/cri_audio_release_00401868.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/cri_audio_release_00401868.o" "$BUILD/cri_audio_release_00401868.s"
+"$PYTHON" tools/verify_object.py "$BUILD/cri_audio_release_00401868.o" private/SLUS_204.86.rom --source src/cri_audio_release_00401868.c

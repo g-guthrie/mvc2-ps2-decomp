@@ -3,7 +3,7 @@ typedef unsigned char u8;
 typedef signed short s16;
 extern u8 *func_003DA750(u8 *, int, int);
 extern void func_003B4240(u8 *);
-void func_003B4120(u8 *p)
+u8 *func_003B4120(u8 *p)
 {
     u8 *first, *next;
     s16 value = 5;
@@ -38,4 +38,5 @@ void func_003B4120(u8 *p)
         }
         i++;
     } while(i<5);
+    return next;
 }

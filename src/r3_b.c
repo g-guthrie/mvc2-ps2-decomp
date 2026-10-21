@@ -78,13 +78,14 @@ extern G D_004895C0;
 extern void func_0040C6D0(s32 *, s32, s32, s32);
 
 
-typedef struct { u8 pad0; s8 f1; s8 f2; u8 pad3[0x25]; s32 f28; s32 f2c; s32 f30; s32 f34; } O;
+typedef struct { u8 pad0; s8 f1; s8 f2; u8 pad3[0x25]; u8 *f28; s32 f2c; s32 f30; s32 f34; } O;
 extern u8 D_004BE2F8[];
 extern void func_0040D5A0(void *);
 extern void func_00400740(s8 *);
-extern void func_004005F8(s32);
+extern void func_004005F8(u8 *);
 extern void func_0040CF98(O *);
-void func_0040D040(O *o) {
+void func_0040D040(void *work) {
+    O *o = work;
     if (o == 0) {
         func_0040D5A0(D_004BE2F8);
         return;

@@ -1081,25 +1081,28 @@ void func_0010CC98(void) {
     }
 }
 
-void func_0010CCE8(void) {
+void func_0010CCE8(int syscall_number, void *handler) {
     asm {
         addiu v1, r0, 116
         syscall 0
     }
 }
 
-void func_0010CCF8(void) {
+void func_0010CCF8(void *destination, const void *source, unsigned int size) {
     asm {
         addiu v1, r0, 90
         syscall 0
     }
 }
 
-void func_0010CD40(void) {
+void *func_0010CD40(int syscall_number) {
+    void *handler;
     asm {
         addiu v1, r0, 91
         syscall 0
+        move handler, v0
     }
+    return handler;
 }
 
 void func_0010CE68(void) {
@@ -1116,24 +1119,27 @@ void func_0010CEA8(void) {
     }
 }
 
-void func_0010D108(void) {
+void func_0010D108(int syscall_number, void *handler) {
     asm {
         addiu v1, r0, 116
         syscall 0
     }
 }
 
-void func_0010D118(void) {
+void func_0010D118(void *destination, const void *source, unsigned int size) {
     asm {
         addiu v1, r0, 90
         syscall 0
     }
 }
 
-void func_0010D160(void) {
+void *func_0010D160(int syscall_number) {
+    void *handler;
     asm {
         addiu v1, r0, 91
         syscall 0
+        move handler, v0
     }
+    return handler;
 }
 

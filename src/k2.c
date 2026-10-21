@@ -44,7 +44,8 @@ extern void func_003FF148(s32, s32);
 extern void func_003FF160(s32, s32);
 extern void func_0040EA00(s32, s32);
 extern void func_003FF658(s32);
-void func_004017E0(R2 *p) {
+void func_004017E0(void *owner) {
+    R2 *p = owner;
     func_003F9630(p);
     func_003FF148(p->wc, 0);
     func_003FF160(p->wc, 0);

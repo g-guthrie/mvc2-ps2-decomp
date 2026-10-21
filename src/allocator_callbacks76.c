@@ -6,7 +6,7 @@ extern EventEntry *func_003DA750(int, int, int);
 extern void func_0019C4F0(void);
 extern void func_001B8B40(void);
 extern void func_001B8E10(void);
-extern void func_001B9000(void);
+extern void func_001B9000(u8 *);
 extern void func_001B9450(void);
 extern void func_001B9740(void);
 extern void func_001C86A0(void);

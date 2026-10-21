@@ -26,8 +26,8 @@ extern Event *func_003DA750(int, int, int);
 
 extern void func_001AD260(void);
 extern void func_001B7CD0(void);
-extern void func_001B8260(void);
-extern void func_001B8840(void);
+extern void func_001B8260(u8 *);
+extern void func_001B8840(u8 *);
 extern void func_001C8D40(void);
 extern void func_001CBE90(void);
 extern void func_001D1000(void);
