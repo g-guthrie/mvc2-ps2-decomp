@@ -82,7 +82,6 @@ extern double litodp(s32);
 extern double dpmul(double, double);
 extern double dpdiv(double, double);
 extern float dptofp(double);
-extern void func_003DE7D0(float);
 extern signed char D_00487358[];
 extern void func_00408960(void *);
 extern void func_00409810(void);

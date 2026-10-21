@@ -12,14 +12,14 @@ extern f32 D_004F1F4C[3];
 extern f32 D_004F1F58[3];
 extern f32 D_004F1F94[3];
 extern f32 D_004F1FA0[3];
-extern s32 D_004F1FB8;
+extern f32 D_004F1FB8;
 extern f32 D_004F1FF4;
 extern u8 D_004F2038;
 extern u8 D_004F1F45;
 
 void func_00123120(void)
 {
-    extern f32 func_004175C0(s32);
+    extern f32 func_004175C0(u16);
     extern s32 func_00126530(void);
     extern void func_00126400(void);
     extern void func_00126780(void);
