@@ -1,3 +1,3 @@
-extern unsigned char data_raw_00449460[];
-/* func_00194E40 loads this pointer for the selected one of four records and indexes its packed sample records. */
-const void * D_0044A248 = &data_raw_00449460[0x0];
+#include "packed_sample_00449460.h"
+extern PackedSample_00449460 data_raw_00449460[];
+const void * D_0044A248 = data_raw_00449460;

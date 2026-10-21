@@ -1433,7 +1433,9 @@ data_u32_00449320,0x00449320,0xE0,.data,src/data/data_u32_00449320.c,initialized
 jtbl_00449400,0x00449400,0x1c,.rodata,src/data/jtbl_00449400.c,typed_state_callback_table
 jtbl_00449420,0x00449420,0x1c,.rodata,src/data/jtbl_00449420.c,jump_table
 jtbl_00449440,0x00449440,0x20,.rodata,src/data/jtbl_00449440.c,typed_state_callback_table
-data_raw_00449460,0x00449460,0x900,.data,src/data/data_raw_00449460.c,raw_byte_array
+data_raw_00449460,0x00449460,0x100,.data,src/data/data_raw_00449460.c,bounded_8byte_sample_records_raw_tail
+data_sample_bank_00449560,0x00449560,0x400,.data,src/data/data_sample_bank_00449560.c,bounded_8byte_sample_records_raw_tail
+data_sample_bank_00449960,0x00449960,0x400,.data,src/data/data_sample_bank_00449960.c,bounded_8byte_sample_records_raw_tail
 D_00449D60,0x00449D60,0xC0,.data,src/data/D_00449D60.c,signed_fixed_motion_six_word_table
 D_00449E20,0x00449E20,0x198,.data,src/data/D_00449E20.c,signed_attachment_pose_6byte_table
 data_raw_00449FB8,0x00449FB8,0xE8,.data,src/data/data_raw_00449FB8.c,raw_byte_array

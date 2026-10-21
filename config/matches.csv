@@ -17709,3 +17709,8 @@ func_00238730,0x00238730,0x168,src/owner_motion_handoff_00238730.c,complete
 func_002FF890,0x002FF890,0xBC,src/child_motion_transition_002FF890.c,complete
 func_0020DFA0,0x0020DFA0,0x1B8,src/owner_escape_motion_0020DFA0.c,complete
 func_00303200,0x00303200,0x30,src/dispatcher_00303200.c,complete
+func_0019FF30,0x0019FF30,0x28,src/record_triplet_dispatch_0019FF30.c,complete
+func_001A0D00,0x001A0D00,0x58,src/owner_phase_dispatch_001A0D00.c,complete
+func_002AC370,0x002AC370,0x1b4,src/actor_command_chain_002AC370.c,complete
+func_001E8CD0,0x001E8CD0,0x1dc,src/stage_update_001E8CD0.c,complete
+func_001EDC90,0x001EDC90,0x1d4,src/actor_command_chain_001EDC90.c,complete

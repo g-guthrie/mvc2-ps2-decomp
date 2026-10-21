@@ -16617,5 +16617,20 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$MWCCPS2" -i src src/dispatcher_00303200.c -c -lang c -O3 -sdatathreshold 8 -Op -o "$BUILD/dispatcher_00303200.o"
 "$PYTHON" tools/verify_object.py "$BUILD/dispatcher_00303200.o" private/SLUS_204.86.rom --source src/dispatcher_00303200.c
 
+"$WIBO" "$MWCCPS2_30" -i src src/record_triplet_dispatch_0019FF30.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/record_triplet_dispatch_0019FF30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/record_triplet_dispatch_0019FF30.o" private/SLUS_204.86.rom --source src/record_triplet_dispatch_0019FF30.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/owner_phase_dispatch_001A0D00.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/owner_phase_dispatch_001A0D00.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_phase_dispatch_001A0D00.o" private/SLUS_204.86.rom --source src/owner_phase_dispatch_001A0D00.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_command_chain_002AC370.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_command_chain_002AC370.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_command_chain_002AC370.o" private/SLUS_204.86.rom --source src/actor_command_chain_002AC370.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/stage_update_001E8CD0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/stage_update_001E8CD0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/stage_update_001E8CD0.o" private/SLUS_204.86.rom --source src/stage_update_001E8CD0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_command_chain_001EDC90.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_command_chain_001EDC90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_command_chain_001EDC90.o" private/SLUS_204.86.rom --source src/actor_command_chain_001EDC90.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

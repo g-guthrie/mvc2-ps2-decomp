@@ -1433,7 +1433,9 @@ data_u32_00449320,0x00449320,0xE0,src/data/data_u32_00449320.c,complete,placehol
 jtbl_00449400,0x00449400,0x1c,src/data/jtbl_00449400.c,complete,reconstructed
 jtbl_00449420,0x00449420,0x1c,src/data/jtbl_00449420.c,complete,placeholder
 jtbl_00449440,0x00449440,0x20,src/data/jtbl_00449440.c,complete,reconstructed
-data_raw_00449460,0x00449460,0x900,src/data/data_raw_00449460.c,complete,placeholder
+data_raw_00449460,0x00449460,0x100,src/data/data_raw_00449460.c,complete,placeholder
+data_sample_bank_00449560,0x00449560,0x400,src/data/data_sample_bank_00449560.c,complete,placeholder
+data_sample_bank_00449960,0x00449960,0x400,src/data/data_sample_bank_00449960.c,complete,placeholder
 D_00449D60,0x00449D60,0xC0,src/data/D_00449D60.c,complete,reconstructed
 D_00449E20,0x00449E20,0x198,src/data/D_00449E20.c,complete,reconstructed
 data_raw_00449FB8,0x00449FB8,0xE8,src/data/data_raw_00449FB8.c,complete,placeholder
