@@ -202,7 +202,7 @@ void func_001E9700(u8 *actor) {}
 
 s32 func_001ED0A0(void) { return 0; }
 
-void func_001F7A90(void) {}
+void func_001F7A90(u8 *actor) {}
 
 s32 func_001FB4D0(void) { return 0; }
 

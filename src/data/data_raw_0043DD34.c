@@ -1,0 +1,1 @@
+unsigned char data_raw_0043DD34[4] = { 0x00, 0x00, 0x00, 0x00 };

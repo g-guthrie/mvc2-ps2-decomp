@@ -39,4 +39,8 @@ extern const Mvc2CharacterActionRecord112View D_0044F2E0;
 extern const Mvc2CharacterActionPrefix80 jtbl_0044F2E0;
 /* Shared live slot-zero protocol: actor passed even to this empty implementation. */
 extern void func_001E9700(unsigned char *actor);
+/* Same proven one-actor/predicate protocol for the next complete prefix. */
+extern const Mvc2CharacterActionRecord112View D_0044FBD0;
+extern const Mvc2CharacterActionPrefix80 jtbl_0044FBD0;
+extern void func_001F7A90(unsigned char *actor);
 #endif

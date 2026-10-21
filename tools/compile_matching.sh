@@ -16704,5 +16704,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$MWCCPS2_30" -i src src/record_header_copy_0019FF60.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/record_header_copy_0019FF60.o"
 "$PYTHON" tools/verify_object.py "$BUILD/record_header_copy_0019FF60.o" private/SLUS_204.86.rom --source src/record_header_copy_0019FF60.c
 
+"$WIBO" "$MWCCPS2_30" -i src src/model_sample_colors_00131E20.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/model_sample_colors_00131E20.o"
+"$PYTHON" tools/verify_object.py "$BUILD/model_sample_colors_00131E20.o" private/SLUS_204.86.rom --source src/model_sample_colors_00131E20.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh
