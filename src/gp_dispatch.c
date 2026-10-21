@@ -1,5 +1,9 @@
 typedef unsigned char u8;
 typedef void (*DispatchFn)(u8 *);
+typedef unsigned int ContextTableWord;
+typedef void (*ContextByteCallback)(u8 *,u8 *);
+extern const ContextTableWord jtbl_004C19A0[32] __attribute__((section(".sdata")));
+
 
 extern DispatchFn jtbl_004BF520[2];
 extern DispatchFn jtbl_004BF550[2];
@@ -15,7 +19,6 @@ extern DispatchFn jtbl_004C11A8[2];
 extern DispatchFn jtbl_004C14B0[2];
 extern DispatchFn jtbl_004C14E8[2];
 extern DispatchFn jtbl_004C18E0[2];
-extern DispatchFn jtbl_004C19E8[2];
 extern DispatchFn jtbl_004C1AE8[2];
 extern DispatchFn jtbl_004C1B20[2];
 extern DispatchFn jtbl_004C1B28[2];
@@ -49,7 +52,7 @@ void func_00303980(u8 *p) { jtbl_004C14E8[p[6]](p); }
 
 void func_003378E0(u8 *p) { jtbl_004C18E0[p[4]](p); }
 
-void func_0034A060(u8 *p) { jtbl_004C19E8[p[5]](p); }
+void func_0034A060(u8 *p,u8 *context) { ((ContextByteCallback)(jtbl_004C19A0+18)[p[5]])(p,context); }
 
 void func_003593D0(u8 *p) { jtbl_004C1AE8[p[5]](p); }
 

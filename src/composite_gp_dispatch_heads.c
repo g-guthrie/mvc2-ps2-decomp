@@ -1,4 +1,8 @@
 #include "mvc2_state_callbacks.h"
+typedef unsigned int ContextTableWord;
+typedef void (*ContextByteCallback)(u8 *,u8 *);
+extern const ContextTableWord jtbl_004C19A0[32] __attribute__((section(".sdata")));
+
 typedef void (*DispatchFn)(u8 *);
 typedef void (*ContextDispatchFn)(u8 *, void *);
 
@@ -326,11 +330,6 @@ extern DispatchFn jtbl_004C1918[2];
 extern DispatchFn jtbl_004C1950[2];
 extern DispatchFn jtbl_004C1990[2];
 extern DispatchFn jtbl_004C19B8[2];
-extern DispatchFn jtbl_004C19C0[2];
-extern DispatchFn jtbl_004C19C8[2];
-extern DispatchFn jtbl_004C19D0[2];
-extern DispatchFn jtbl_004C19D8[2];
-extern DispatchFn jtbl_004C19E0[2];
 extern DispatchFn jtbl_004C1A08[2];
 extern DispatchFn jtbl_004C1A30[2];
 extern DispatchFn jtbl_004C1A38[2];
@@ -1047,15 +1046,15 @@ void func_00348C40(u8 *p) { jtbl_004C19B8[p[32]](p); }
 
 void func_00348C60(u8 *p) { p[4]++; p[0x13C] = 0; }
 
-void func_00349780(u8 *p) { jtbl_004C19C0[p[5]](p); }
+void func_00349780(u8 *p,u8 *context) { ((ContextByteCallback)(jtbl_004C19A0+8)[p[5]])(p,context); }
 
-void func_00349950(u8 *p) { jtbl_004C19C8[p[5]](p); }
+void func_00349950(u8 *p,u8 *context) { ((ContextByteCallback)(jtbl_004C19A0+10)[p[5]])(p,context); }
 
-void func_00349B20(u8 *p) { jtbl_004C19D0[p[5]](p); }
+void func_00349B20(u8 *p,u8 *context) { ((ContextByteCallback)(jtbl_004C19A0+12)[p[5]])(p,context); }
 
-void func_00349CA0(u8 *p) { jtbl_004C19D8[p[5]](p); }
+void func_00349CA0(u8 *p,u8 *context) { ((ContextByteCallback)(jtbl_004C19A0+14)[p[5]])(p,context); }
 
-void func_00349E80(u8 *p) { jtbl_004C19E0[p[5]](p); }
+void func_00349E80(u8 *p,u8 *context) { ((ContextByteCallback)(jtbl_004C19A0+16)[p[5]])(p,context); }
 
 void func_0034BAF0(u8 *p) { jtbl_004C1A08[p[5]](p); }
 

@@ -16632,5 +16632,50 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$MWCCPS2_30" -i src src/actor_command_chain_001EDC90.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_command_chain_001EDC90.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_command_chain_001EDC90.o" private/SLUS_204.86.rom --source src/actor_command_chain_001EDC90.c
 
+"$WIBO" "$MWCCPS2_30" -i src src/owner_reposition_0020E790.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/owner_reposition_0020E790.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_reposition_0020E790.o" private/SLUS_204.86.rom --source src/owner_reposition_0020E790.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/clone_offset_motion_setup_00356E20.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/clone_offset_motion_setup_00356E20.o"
+"$PYTHON" tools/verify_object.py "$BUILD/clone_offset_motion_setup_00356E20.o" private/SLUS_204.86.rom --source src/clone_offset_motion_setup_00356E20.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/contact_pulse_sequence_003698E0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/contact_pulse_sequence_003698E0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/contact_pulse_sequence_003698E0.o" private/SLUS_204.86.rom --source src/contact_pulse_sequence_003698E0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/contact_offset_sequence_00369BF0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/contact_offset_sequence_00369BF0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/contact_offset_sequence_00369BF0.o" private/SLUS_204.86.rom --source src/contact_offset_sequence_00369BF0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/owner_phase_position_update_0036F240.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/owner_phase_position_update_0036F240.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_phase_position_update_0036F240.o" private/SLUS_204.86.rom --source src/owner_phase_position_update_0036F240.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/owner_linked_effect_update_00358620.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/owner_linked_effect_update_00358620.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_linked_effect_update_00358620.o" private/SLUS_204.86.rom --source src/owner_linked_effect_update_00358620.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/owner_contact_followthrough_0036EF10.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/owner_contact_followthrough_0036EF10.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_contact_followthrough_0036EF10.o" private/SLUS_204.86.rom --source src/owner_contact_followthrough_0036EF10.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/contact_scale_decay_0036B490.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/contact_scale_decay_0036B490.o"
+"$PYTHON" tools/verify_object.py "$BUILD/contact_scale_decay_0036B490.o" private/SLUS_204.86.rom --source src/contact_scale_decay_0036B490.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/linked_contact_expiry_0035BC20.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/linked_contact_expiry_0035BC20.o"
+"$PYTHON" tools/verify_object.py "$BUILD/linked_contact_expiry_0035BC20.o" private/SLUS_204.86.rom --source src/linked_contact_expiry_0035BC20.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/proximity_action_tick_0035FDF0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/proximity_action_tick_0035FDF0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/proximity_action_tick_0035FDF0.o" private/SLUS_204.86.rom --source src/proximity_action_tick_0035FDF0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/context_selector_animation_00353430.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/context_selector_animation_00353430.o"
+"$PYTHON" tools/verify_object.py "$BUILD/context_selector_animation_00353430.o" private/SLUS_204.86.rom --source src/context_selector_animation_00353430.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/rotating_effect_countdown_00355930.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/rotating_effect_countdown_00355930.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rotating_effect_countdown_00355930.o" private/SLUS_204.86.rom --source src/rotating_effect_countdown_00355930.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/linked_scaled_effect_setup_0036D730.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/linked_scaled_effect_setup_0036D730.o"
+"$PYTHON" tools/verify_object.py "$BUILD/linked_scaled_effect_setup_0036D730.o" private/SLUS_204.86.rom --source src/linked_scaled_effect_setup_0036D730.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/linked_effect_setup_0036D6C0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/linked_effect_setup_0036D6C0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/linked_effect_setup_0036D6C0.o" private/SLUS_204.86.rom --source src/linked_effect_setup_0036D6C0.c
+
+"$WIBO" "$MWCCPS2" -i src src/interaction_launch_00349240.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/interaction_launch_00349240.o"
+"$PYTHON" tools/verify_object.py "$BUILD/interaction_launch_00349240.o" private/SLUS_204.86.rom --source src/interaction_launch_00349240.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

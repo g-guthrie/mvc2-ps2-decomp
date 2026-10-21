@@ -30,7 +30,7 @@ void func_00329050(u8 *p, u8 *q) {
 extern s32 func_00175700();
 extern void func_003DBAF0(u8 *, s32, s32, s32);
 
-void func_00349C30(u8 *p) {
+void func_00349C30(u8 *p,u8 *context) {
     u8 *o = *(u8 **)(p + 0x14);
     f32 a = *(f32 *)(p + 0x5C);
     *(f32 *)(p + 0x34) = *(f32 *)(o + 0x34) + a;

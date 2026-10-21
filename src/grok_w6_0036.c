@@ -9,7 +9,7 @@ extern void func_00185870(u8 *, u8 *);
 extern void func_00174910(u8 *, int);
 extern void func_001E7F60(u8 *);
 extern void func_00368FB0(u8 *);
-extern void func_0036F5A0(u8 *);
+extern s32 func_0036F5A0(u8 *, u8 *, s32 *);
 extern void func_00370730(u8 *);
 extern void func_00372B50(u8 *);
 extern void func_00373A80(u8 *);
@@ -32,7 +32,7 @@ void func_00377860(s8 *p, s8 *q)
     }
 }
 
-void func_0036F560(u8 *p, u8 *q, u8 **r)
+void func_0036F560(u8 *p, u8 *q, s32 *r)
 {
     if (*r) {
         u8 *s = *(u8 **)(p + 452);
@@ -117,9 +117,9 @@ void func_0036A710(u8 *p, u8 *q)
     }
 }
 
-void func_0036F450(u8 *p)
+void func_0036F450(u8 *p, u8 *context, s32 *contact)
 {
-    func_0036F5A0(p);
+    func_0036F5A0(p, context, contact);
     if (*(s8 *)(*(u8 **)(p + 24) + 337) == 15) {
         p[4]++;
         p[316] = 0;

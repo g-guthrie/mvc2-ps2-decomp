@@ -217,7 +217,7 @@ void func_001F5140(u8 *p) {
     }
 }
 
-void func_003498D0(u8 *p) {
+void func_003498D0(u8 *p,u8 *context) {
     u8 *q = *(u8 **)(p + 20);
     if (q[32] == 0) F(p, 52) = F(q, 52) + F(p, 92);
     else F(p, 52) = F(q, 52) + F(p, 104);
@@ -227,7 +227,7 @@ void func_003498D0(u8 *p) {
         p[316] = 0;
     }
 }
-void func_00349AA0(u8 *p) {
+void func_00349AA0(u8 *p,u8 *context) {
     u8 *q = *(u8 **)(p + 20);
     if (q[32] == 0) F(p, 52) = F(q, 52) + F(p, 92);
     else F(p, 52) = F(q, 52) + F(p, 104);

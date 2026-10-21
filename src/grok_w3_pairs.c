@@ -48,7 +48,7 @@ void func_003CCF40(u8 *p, u8 *q) {
     func_00175700(p);
 }
 
-void func_00349DF0(u8 *p) {
+void func_00349DF0(u8 *p,u8 *context) {
     u8 *q = *(u8 **)(p + 20);
     if (q[32] == 3)
         F(p, 52) = F(q, 52) + F(p, 92);
@@ -60,7 +60,7 @@ void func_00349DF0(u8 *p) {
         p[316] = 0;
     }
 }
-void func_00349FD0(u8 *p) {
+void func_00349FD0(u8 *p,u8 *context) {
     u8 *q = *(u8 **)(p + 20);
     if (q[32] == 3)
         F(p, 52) = F(q, 52) + F(p, 92);

@@ -7,9 +7,9 @@ typedef signed int s32;
 typedef float f32;
 
 extern s32 *D_004C2840;
-extern void func_001325A0(s32,s32,s32);
+extern void func_001325A0(u8 *, s16 *, s32);
 
-void func_00131AB0(s32 a, s32 b, s32 c) {
+void func_00131AB0(u8 *a, s16 *b, s32 c) {
     if (D_004C2840[5] != 0x40) {
         func_001325A0(a,b,c);
     }
