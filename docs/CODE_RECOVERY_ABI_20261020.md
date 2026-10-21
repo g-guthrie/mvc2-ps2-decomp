@@ -526,3 +526,26 @@ headers, plus two new units. Linked CODE is2,081,300 /3,293,696 bytes
 (63.1904%); DATA remains256,703 /648,064 (39.6107%). The fixed next
 CODE threshold remains2,113,447, leaving32,147 bytes. This local bank adds
 640 source bytes; it does not reset the publication grid.
+
+
+### Inheritance, direction/timer transition and grid lookup: 472 C bytes
+
+C5890/184,3B0BC0/168 and41CCA0/120 are complete exact native functions. The
+C5890 residual is renamed without extent changes. The216-byte3B0B90 row splits
+into uncredited dispatcher40,padding8 and new BC0/168, preserving its interval
+and fixed denominator. No dispatcher, padding or DATA credit is added.
+
+C5890 uses the existing ActorState and actual one-input owner-loading helper.
+BC0 uses the true integer animation/RNG interfaces and bounded byte-direction/
+timer arithmetic.41CCA0 has bounded8x8 short reads and true status result; its
+sole existing C caller's one-line void-to-int declaration correction preserves
+its whole276-byte function and complete object hash. Existing key-present
+preconditions remain explicit; no behavior-changing fallback is invented.
+Source, partial-view and ABI limits are in round31/root/SOURCE_REVIEW.md.
+
+Four production units verify four functions; only three new bodies get472B.
+All95 child tests,coverage/catalog,fresh split and full ROM/ELF hashes pass.
+All14115 other cached pairs and47 child headers remain unchanged. No public
+header,DATA,canonical or shared-handoff writes; root counters/2113447 grid and
+publication remain authoritative. Frozen receipt:
+private/code-lane/round31/root/FINAL_VERIFICATION.json.

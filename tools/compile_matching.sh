@@ -16382,5 +16382,15 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py "$BUILD/func_00277D40.o" \
     private/SLUS_204.86.rom --source src/func_00277D40.c
 
+"$WIBO" "$MWCCPS2_30" -i src src/actor_owner_inherit_001C5890.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_owner_inherit_001C5890.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_inherit_001C5890.o" private/SLUS_204.86.rom --source src/actor_owner_inherit_001C5890.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_direction_timer_003B0BC0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_direction_timer_003B0BC0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_direction_timer_003B0BC0.o" private/SLUS_204.86.rom --source src/actor_direction_timer_003B0BC0.c
+
+"$WIBO" "$MWCCPS2" src/grid_code_lookup_0041CCA0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/grid_code_lookup_0041CCA0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grid_code_lookup_0041CCA0.o" private/SLUS_204.86.rom --source src/grid_code_lookup_0041CCA0.c
+
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

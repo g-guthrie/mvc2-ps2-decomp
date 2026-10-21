@@ -13,7 +13,7 @@ extern s16 D_00633720[][8];
 void func_0041D270(s32 a)
 {
     extern s32 func_0041CEB0(u8);
-    extern void func_0041CCA0(s16, s16 *, s16 *);
+    extern int func_0041CCA0(s16, s16 *, s16 *);
     s16 idx = a;
     u8 *s0;
     u8 **s1;

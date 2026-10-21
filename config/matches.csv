@@ -17625,3 +17625,6 @@ func_00109690,0x00109690,0xC8,src/sony29_fileio_descriptor_create_00109690.c,com
 func_003B9A90,0x003B9A90,0x164,src/actor_random_burst_003B9A90.c,complete
 func_00231490,0x00231490,0x158,src/func_00231490.c,complete
 func_00277D40,0x00277D40,0x190,src/func_00277D40.c,complete
+func_001C5890,0x001C5890,0xB8,src/actor_owner_inherit_001C5890.c,complete
+func_003B0BC0,0x003B0BC0,0xA8,src/actor_direction_timer_003B0BC0.c,complete
+func_0041CCA0,0x0041CCA0,0x78,src/grid_code_lookup_0041CCA0.c,complete

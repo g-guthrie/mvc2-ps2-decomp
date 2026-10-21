@@ -65,3 +65,7 @@ units were independently compiled and verified. All 118 tests, fresh splitting,
 full hybrid linkage and packed retail ELF byte identity passed. The combined
 totals are 2,083,120 matching CODE bytes (63.2457%) and 262,595 reconstructed
 DATA bytes (40.5199%). The next fixed CODE milestone stays 2,113,447 bytes.
+
+## Coordinate pairs at 0x004B52F0
+
+The complete seven-pair float table spans `[0x004B52F0,0x004B5328)`. Native `func_0016E080` loads its first two pairs directly, then reads five further pairs through the same base pointer at offsets `0x10 + 8*i` and `0x14 + 8*i`, for `i=0..4`. The following player-label string remains a separate owner. This replaces the earlier four-float fragment and 40-byte raw fragment with one 56-byte typed object. The original 16 reconstructed bytes are retained once, so new DATA progress is 40 bytes. The consumer function remains unmatched.

@@ -8251,8 +8251,7 @@ data_geometry_records_004B49A0,0x004B49A0,0x5A0,.data,src/data/data_geometry_rec
 data_geometry_render_records_004B4F40,0x004B4F40,0x390,.data,src/data/data_geometry_render_records_004B4F40.c,render_records_57x16
 data_packed_vertex_color_words_004B52D0,0x004B52D0,0x1C,.data,src/data/data_packed_vertex_color_words_004B52D0.c,seven_pass_packed_vertex_colors
 data_raw_004B52EC,0x004B52EC,0x4,.data,src/data/data_raw_004B52EC.c,unreconstructed_vertex_color_tail
-data_f32_004B52F0,0x004B52F0,0x10,.data,src/data/data_f32_004B52F0.c,indexed_f32_values
-data_u8_004B5300,0x004B5300,0x28,.data,src/data/data_u8_004B5300.c,initialized_byte_array
+data_render_coordinate_pairs_004B52F0,0x004B52F0,0x38,.data,src/data/data_render_coordinate_pairs_004B52F0.c,render_coordinate_pairs
 gPlayerLabel_004B5328,0x004B5328,0x7,.data,src/data/gPlayerLabel_004B5328.c,debug_label
 data_u8_004B532F,0x004B532F,0x1,.data,src/data/data_u8_004B532F.c,initialized_byte_array
 gPlayerOneLabel_004B5330,0x004B5330,0x2,.data,src/data/gPlayerOneLabel_004B5330.c,debug_label
