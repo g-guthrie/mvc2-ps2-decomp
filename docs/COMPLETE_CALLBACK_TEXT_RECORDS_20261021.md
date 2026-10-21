@@ -37,8 +37,9 @@ proven complete record, without claiming an integer or padding meaning.
 The202 old fragment owners are retired; their2,711 reconstructed bytes are
 preserved once. Only243 command-operand bytes add reconstruction credit.
 All198 inter-root gap bytes retain their existing separate owners and zero
-credit. The incomplete004A9ED0 record remains unpromoted at its existing
-import boundary; this change does not guess its end.
+credit. The004A9ED0 record was initially held at the old report import boundary.
+A later native/parser check established its actual terminator and corrected
+that boundary; see LATE_TEXT_RECORDS_AND_REPORT_BOUNDARY_20261021.md.
 
 The native callback span004214E0–00421B60 was checked word-for-word against
 retail (416 words), including materialization of all24 record addresses.

@@ -109,3 +109,19 @@ code and prior local packet yield a net increase of 2,084 bytes; data adds 245.
 
 The fixed next code publication threshold remains 2,080,510 bytes, with
 6,698 bytes remaining. Corrections and extra publications do not reset it.
+
+
+## Follow-up: remove the remaining unused thread-start local
+
+003FE258 now matches at148 bytes under its unchanged production EE96 O2/G8
+recipe after removing the unused fixed-register local k. The existing j local
+is read by the actual thread-id condition. The post-callback volatile observation
+now reuses j, preserving its load and native ordering without adding a fixed
+binding, empty barrier, dummy use or manual padding. This retains the same
+explicit distinction between used bindings and unused codegen destinations
+as the earlier003FDD28 repair.
+
+Only004109C0 (108 bytes) and0040D1D8 (144 bytes) remain quarantined:252 bytes
+total. The148 bytes are restored source credit, not a newly discovered function.
+The current118-test suite and both complete retail-image comparisons passed;
+the restored148-byte function now receives linked credit.

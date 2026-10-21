@@ -16284,5 +16284,16 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/draw_counter_text_00421
 "$WIBO" "$MWCCPS2_30" -i src src/actor_palette_start_003AE020.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_palette_start_003AE020.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_palette_start_003AE020.o" private/SLUS_204.86.rom --source src/actor_palette_start_003AE020.c
 
+"$WIBO" "$MWCCPS2_30" -i src src/actor_sibling_launch_001D4C10.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_sibling_launch_001D4C10.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_sibling_launch_001D4C10.o" private/SLUS_204.86.rom --source src/actor_sibling_launch_001D4C10.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_facing_start_003A9FE0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_facing_start_003A9FE0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_facing_start_003A9FE0.o" private/SLUS_204.86.rom --source src/actor_facing_start_003A9FE0.c
+
+"$WIBO" "$SNCPP" -P src/sony29_image_page_count_001009C8.c "$BUILD/sony29_image_page_count_001009C8.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_image_page_count_001009C8.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_image_page_count_001009C8.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_image_page_count_001009C8.o" "$BUILD/sony29_image_page_count_001009C8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_image_page_count_001009C8.o" private/SLUS_204.86.rom --source src/sony29_image_page_count_001009C8.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

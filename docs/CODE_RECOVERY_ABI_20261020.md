@@ -285,3 +285,63 @@ producer also reproduced its ignored auto-label output on a second run; all
 actual frozen inputs stayed unchanged. Root code reaches2,074,996 bytes
 (62.9990%), with DATA unchanged at255,836. The fixed publication grid remains
 2,080,510 code bytes;5,514 remain to that threshold.
+
+### Sibling effects, facing setup and GS pages: 1,048 new C bytes
+
+D4C10/412 inherits its owner state and allocates16 siblings with actual context,
+parent links, ordinals and signed priorities. Allocation failure selects its
+termination path and marks the real owner work byte. D4EE0/196 initializes the
+child and returns the actual175910 result; its numeric callback table is not
+recast as a uniform return type. The concrete ordinal1..16 producer chain
+bounds the byte lookup. Its declaration remains unsized, with no invented
+32-byte DATA object. Each true body is separated from a72-byte uncredited
+head and eight real padding bytes; existing trailing gaps remain unchanged.
+
+3A9FE0/240 inherits its parent and updates the actual halfword facing field,
+then tail-calls its genuine one-actor next handler. The existing residual is
+renamed at unchanged extent. Its DATA callback declaration already agrees.
+
+1009C8/200 calculates image-page dimensions from actual signed16 inputs and
+returns the native signed16 result. The packed mode word uses an eight-byte
+builtin memcpy snapshot, not an incompatible u64 lvalue over the u32 storage.
+The getter's address is aligned+16 within the real96-byte owner. All arithmetic
+is bounded by the signed16 inputs; no new helper signature, header or DATA
+change is needed. Source is ordinary C with no assembly or forcing.
+
+Three production units verify four whole functions. All95 child tests,
+coverage/catalog, fresh split and complete retail ROM/ELF identity pass. Frozen
+proof: `private/code-lane/round23/root/FINAL_VERIFICATION.json`. Root's corrected
+source-credit counter remains authoritative; the raw child catalog predates
+its three repaired forcing bodies and400-byte quarantine. The fixed2,080,510
+publication threshold is unchanged. No DATA credit or CODE push.
+
+
+### Correct the actual00340A40 entry and its caller (zero credit)
+
+The inventory split a single160-byte function into a four-byte stack prologue
+at00340A40 and a156-byte row at00340A44. Its native caller at0034099C calls
+00340A40, and its normal epilogue ends at00340AE0. The inventory now represents
+that complete body once. No direct jumps or initialized-data pointer cells
+reference00340A44 in the checked text/data spans. Neighboring credited
+00340AE0 and00340AF0 bodies retain their extents.
+
+The existing00340970 caller now explicitly passes its actor pointer through
+the actual one-pointer prototype. All13 functions in its production unit still
+verify exactly. The160-byte callee remains unmatched and receives no credit;
+correcting the boundary does not turn a near match into matching C.
+
+Root independently rebuilt allthree new CODE1048 units and verified allfour
+whole functions. Root also corrected the middle text report's actual next-root
+boundary and added two source-backed regressions. Final whole-image checks
+use the current118-test suite, keeping child95-test evidence separate.
+
+
+The associated thread-start follow-up also removes its unused fixed local and
+restores148 bytes under the existing EE96 production recipe, with its used
+condition binding retained. Together with the four new functions (1,048 bytes),
+root's verified linked code reaches2,076,192 bytes (63.0353%). The real-entry
+inventory correction and caller ABI repair add zero bytes. The next fixed
+publication grid remains2,080,510 code bytes;4,318 bytes remain.
+
+Root passed all118 tests and reproduced the complete retail loaded image and
+packed ELF byte-for-byte before promoting these rows to linked status.

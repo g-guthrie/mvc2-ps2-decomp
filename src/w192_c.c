@@ -27,7 +27,7 @@ void func_003FE258(void) {
     func_00103C00(D_004C2320, 0);
     { register s32 j __asm__("$3"); j = D_004C2320; if (j != 0) {
         func_003FE1F8(D_004C2320);
-        { register s32 k __asm__("$3"); k = D_004C2320; }
+        j = D_004C2320;
     } }
     func_00103C70(D_004C2320, D_0047D0E4[0]);
 }

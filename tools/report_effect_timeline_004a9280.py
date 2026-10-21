@@ -16,7 +16,8 @@ except ModuleNotFoundError:
 
 
 BASE = 0x004A9280
-END = 0x004A9F60
+# The next independently referenced callback root, not the old import cutoff.
+END = 0x004A9F70
 IMAGE_BASE = 0x00100000
 CALLBACK_SOURCES = (
     Path("src/float_callbacks.c"),
@@ -189,20 +190,7 @@ def main() -> None:
         try:
             program = parse_program(data, start, limit)
         except TimelineParseError as error:
-            if index != len(roots) - 1:
-                raise SystemExit(f"0x{address:08X} crosses next owner 0x{next_owner:08X}: {error}")
-            records.append(
-                {
-                    "address": f"0x{address:08X}",
-                    "boundary_address": f"0x{next_owner:08X}",
-                    "boundary_kind": "next_callback_root" if index + 1 < len(roots) else "catalog_import_end",
-                    "span_bytes": limit - start,
-                    "status": "held_raw_at_import_boundary",
-                    "detail": str(error),
-                    "raw_gap_address": f"0x{address:08X}",
-                }
-            )
-            continue
+            raise SystemExit(f"0x{address:08X} crosses next owner 0x{next_owner:08X}: {error}")
         if program.count != 1:
             raise SystemExit(f"unexpected record count {program.count} at 0x{address:08X}")
         if program.end > limit:
@@ -223,7 +211,7 @@ def main() -> None:
             {
                 "address": f"0x{address:08X}",
                 "boundary_address": f"0x{next_owner:08X}",
-                    "boundary_kind": "next_callback_root" if index + 1 < len(roots) else "catalog_import_end",
+                    "boundary_kind": "next_callback_root",
                 "span_bytes": limit - start,
                 "count": program.count,
                 "record_lengths": [record.end - record.start for record in program.records],
@@ -260,11 +248,11 @@ def main() -> None:
                 "status": "complete_before_next_owner",
             }
         )
-    held_bytes = records[-1]["span_bytes"]
+    held_bytes = 0  # Every bound is now an independently referenced next root.
     total_covered = native_read_bytes + opaque_payload_bytes + raw_gap_bytes + held_bytes
-    expected_native_read = 2711
-    expected_opaque = 243
-    expected_gap = 198
+    expected_native_read = 2845
+    expected_opaque = 254
+    expected_gap = 213
     if (native_read_bytes != expected_native_read or opaque_payload_bytes != expected_opaque
             or raw_gap_bytes != expected_gap or total_covered != END - BASE):
         raise SystemExit(

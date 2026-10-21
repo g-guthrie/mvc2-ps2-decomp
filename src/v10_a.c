@@ -208,12 +208,12 @@ void func_001372B0(S_72B0 *p) {
 
 typedef struct { u8 p0[4]; u8 b4; u8 p5[0x17]; s16 h1c; u8 p1e[2]; u8 b20; u8 p21[0x13]; f32 f34, f38; } S_0970;
 void func_00340970(S_0970 *p) {
-    extern void func_00340A40();
+    extern void func_00340A40(u8 *);
     s32 h = p->h1c;
     if (h != 0) {
         p->h1c = h - 1;
         if (p->b20 < 4) {
-            func_00340A40();
+            func_00340A40((u8 *)p);
             return;
         }
         p->f34 += (f32)((p->h1c % 2) ? 2 : -2);
