@@ -16086,3 +16086,15 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/linked_effect_children_003B4120.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/linked_effect_children_003B4120.o"
 "$PYTHON" tools/verify_object.py "$BUILD/linked_effect_children_003B4120.o" private/SLUS_204.86.rom --source src/linked_effect_children_003B4120.c
+
+# Context setup and complete dispatch entries, excluding alignment words.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/context_dispatchers_20261020.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/context_dispatchers_20261020.o"
+"$PYTHON" tools/verify_object.py "$BUILD/context_dispatchers_20261020.o" private/SLUS_204.86.rom --source src/context_dispatchers_20261020.c
+
+# Runtime handle, entry-slot and byte-table initialization; compiler unrolls loops.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_runtime_tables_00414E30.c -c -lang c -O4,p -sdatathreshold 8 \
+    -o "$BUILD/initialize_runtime_tables_00414E30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_runtime_tables_00414E30.o" private/SLUS_204.86.rom --source src/initialize_runtime_tables_00414E30.c

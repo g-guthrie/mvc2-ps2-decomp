@@ -33,7 +33,7 @@ report: progress-check
 	PYTHONPATH=. $(PYTHON) -m tools.objdiff_report --report build-report/report.json --svg assets/progress.svg
 
 test:
-	PYTHONPATH=. $(PYTHON) -m unittest tools.test_project tools.test_progress_catalog tools.test_hybrid_relink tools.test_pack_retail_elf tools.test_verify_object tools.test_compiled_switch_data
+	PYTHONPATH=. $(PYTHON) -m unittest tools.test_project tools.test_progress_catalog tools.test_hybrid_relink tools.test_pack_retail_elf tools.test_verify_object tools.test_compiled_switch_data tools.test_sony29_tools
 	PYTHONPATH=. $(PYTHON) -m unittest discover -s tests
 
 clean:

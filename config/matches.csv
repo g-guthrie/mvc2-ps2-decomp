@@ -17499,3 +17499,8 @@ func_003299F0,0x003299F0,0xC4,src/context_value_dispatch_003299F0.c,complete
 func_0032BDF0,0x0032BDF0,0xCC,src/stage_select_input_0032BDF0.c,complete
 func_003D7350,0x003D7350,0xB0,src/text_pool_append_003D7350.c,complete
 func_003B4120,0x003B4120,0x11C,src/linked_effect_children_003B4120.c,complete
+func_00323610,0x00323610,0x3C,src/context_dispatchers_20261020.c,complete
+func_0034FB40,0x0034FB40,0x34,src/context_dispatchers_20261020.c,complete
+func_00366090,0x00366090,0x34,src/context_dispatchers_20261020.c,complete
+func_00368000,0x00368000,0x34,src/context_dispatchers_20261020.c,complete
+func_00414E30,0x00414E30,0xC8,src/initialize_runtime_tables_00414E30.c,complete
