@@ -53,3 +53,14 @@ generated progress graphic was changed.
 Unmatched candidates, including 003B42F0, 003C4D30, 001B16F0, and the image
 format builder, remain uncredited. Earlier frozen objects and receipts are
 preserved independently of this batch.
+
+## Coordinator validation
+
+The coordinator independently rebuilt all seven delivered source units and
+verified all 45 whole functions in them. Both recovered callback roots were
+checked against native table entries; the 16 alignment bytes remain uncredited.
+With the current data catalog, the hybrid loaded image and reconstructed ELF
+remain byte-identical to retail. All 95 tests pass. This checkpoint reaches
+2,053,084/3,293,696 linked code bytes (62.3337%) and
+241,784/648,064 initialized-data bytes (37.3087%). It is a local checkpoint;
+the next fixed publication threshold is 2,080,510 code bytes.
