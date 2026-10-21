@@ -125,3 +125,24 @@ Only004109C0 (108 bytes) and0040D1D8 (144 bytes) remain quarantined:252 bytes
 total. The148 bytes are restored source credit, not a newly discovered function.
 The current118-test suite and both complete retail-image comparisons passed;
 the restored148-byte function now receives linked credit.
+
+
+## Follow-up: ordinary ring-accessor failure flow
+
+0040D1D8 now matches all144 bytes without its empty asm. Both validation errors
+call the real variadic logging function, then share one failure return. Its
+successful path retains the original signed modulo16 and slot access. The
+source uses no fixed register, artificial volatility or manual padding; the
+production EE96 O2/G0 recipe is unchanged. The logging declaration agrees
+with the existing const-char-pointer variadic provider.
+
+Fifteen bounded source/profile probes retained the unsuccessful compiler
+frontier. The shared failure-return source is exact under the unchanged
+production flags. These144 bytes are restored credit for an existing function.
+Only004109C0 (108 bytes) remains quarantined. Its latest scalar-copy candidate
+is five of27 words off; ordinary aggregate and compiler-profile trials remain
+uncredited. Neighboring credited functions in that unit remain untouched.
+
+The144-byte accessor repair passed the current118-test suite and both full
+retail-image comparisons; its source credit is now linked. The108-byte RPC
+wrapper remains uncredited.

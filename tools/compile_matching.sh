@@ -16295,5 +16295,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/draw_counter_text_00421
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_image_page_count_001009C8.o" "$BUILD/sony29_image_page_count_001009C8.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_image_page_count_001009C8.o" private/SLUS_204.86.rom --source src/sony29_image_page_count_001009C8.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" -i src src/payload_recovered_00384fc0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/payload_recovered_00384fc0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/payload_recovered_00384fc0.o" private/SLUS_204.86.rom --source src/payload_recovered_00384fc0.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

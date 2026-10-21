@@ -15389,7 +15389,7 @@ func_001277A0,0x001277A0,0x144,src/w1910_s.c,complete
 func_003BCCF0,0x003BCCF0,0x144,src/w1910_t.c,complete
 func_00183920,0x00183920,0x150,src/w1910_u.c,complete
 func_003C5420,0x003C5420,0x148,src/w1910_v.c,complete
-func_0040D1D8,0x0040D1D8,0x90,src/w1912_b.c,placeholder
+func_0040D1D8,0x0040D1D8,0x90,src/w1912_b.c,complete
 func_003C00E0,0x003C00E0,0xD4,src/w1912_c.c,complete
 func_00235400,0x00235400,0xE0,src/w1912_d.c,complete
 func_0041CA40,0x0041CA40,0xE8,src/w1912_e.c,complete
@@ -17605,3 +17605,4 @@ func_001D4C10,0x001D4C10,0x19C,src/actor_sibling_launch_001D4C10.c,complete
 func_001D4EE0,0x001D4EE0,0xC4,src/actor_sibling_launch_001D4C10.c,complete
 func_003A9FE0,0x003A9FE0,0xF0,src/actor_facing_start_003A9FE0.c,complete
 func_001009C8,0x001009C8,0xC8,src/sony29_image_page_count_001009C8.c,complete
+func_00384FC0,0x00384FC0,0xD8,src/payload_recovered_00384fc0.c,complete

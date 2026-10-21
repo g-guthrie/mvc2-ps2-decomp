@@ -345,3 +345,35 @@ publication grid remains2,080,510 code bytes;4,318 bytes remain.
 
 Root passed all118 tests and reproduced the complete retail loaded image and
 packed ELF byte-for-byte before promoting these rows to linked status.
+
+
+### Complete384FC0 callback and two real owner boundaries:216 new bytes
+
+The table at00464740 selects the actual216-byte callback beginning00384FC0.
+The old00385048 inventory entry was inside that body. Its tail enters the
+existing one-actor handler003850A0. Root independently checked all native
+words, the actual callback-table pointer, and the absence of direct call or
+initialized-pointer references to the false interior entry.
+
+The source uses the established196-byte ActorState type for its inherited
+copy, followed by the actual identity, scale and signed-byte fields. Its two
+timer stores use signed16-bit fields. This replaces the worker's raw49-word
+copy view with the shared field-aware type and retains exact216-byte code.
+The legacy recipe adds the existing src include directory for that header.
+The eight-byte following padding gap remains uncredited.
+
+A second table at00464600 proves003824E0 is a492-byte owner ending003826CC;
+00382634 was another interior inventory split. That boundary is corrected
+without adding source credit: the492-byte body still lacks an exact C match.
+The following four-byte padding gap is untouched. Both merges preserve the
+exact combined spans and neighboring credited functions.
+
+
+Root independently compiled the refined216-byte callback and144-byte accessor
+repair, passed all118 tests, and reproduced the complete retail loaded image
+and packed ELF byte-for-byte. The cache audit verifies14,822 unchanged pairs,
+one rebuilt existing unit, one new source/object pair and47 unchanged headers.
+Both functions now receive linked credit. Local matching code is2,076,552
+/3,293,696 bytes (63.0463%); reconstructed data remains256,328 /648,064
+(39.5529%). The fixed next code publication threshold is2,080,510, with3,958
+bytes remaining. Only the108-byte RPC wrapper remains source-credit quarantined.

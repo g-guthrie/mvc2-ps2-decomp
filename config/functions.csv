@@ -16758,8 +16758,6 @@ func_00382220,0x00382220,0x20,0x00382240,code,matching-c-head-split
 residual_00382240,0x00382240,0x1D4,0x00382414,assembly_residual,verified-boundary-after-matching-head
 func_00382420,0x00382420,0x98,0x003824B8,code,spimdisasm-explicit-size-before-first-data
 func_003824C0,0x003824C0,0x20,0x003824E0,code,matching-c-head-split
-residual_003824E0,0x003824E0,0x154,0x00382634,assembly_residual,verified-boundary-after-matching-head
-func_00382634,0x00382634,0x98,0x003826CC,code,spimdisasm-explicit-size-before-first-data
 func_003826D0,0x003826D0,0x98,0x00382768,code,spimdisasm-explicit-size-before-first-data
 func_00382770,0x00382770,0x20,0x00382790,code,matching-c-head-split
 residual_00382790,0x00382790,0x134,0x003828C4,assembly_residual,verified-boundary-after-matching-head
@@ -16813,8 +16811,6 @@ func_00384D60,0x00384D60,0x20,0x00384D80,code,matching-c-head-split
 residual_00384D80,0x00384D80,0x148,0x00384EC8,assembly_residual,verified-boundary-after-matching-head
 func_00384ED0,0x00384ED0,0xC8,0x00384F98,code,spimdisasm-explicit-size-before-first-data
 func_00384FA0,0x00384FA0,0x20,0x00384FC0,code,matching-c-head-split
-residual_00384FC0,0x00384FC0,0x88,0x00385048,assembly_residual,verified-boundary-after-matching-head
-func_00385048,0x00385048,0x50,0x00385098,code,spimdisasm-explicit-size-before-first-data
 func_003850A0,0x003850A0,0x90,0x00385130,code,spimdisasm-explicit-size-before-first-data
 func_00385130,0x00385130,0xA0,0x003851D0,code,spimdisasm-explicit-size-before-first-data
 func_003851D0,0x003851D0,0x44,0x00385214,code,spimdisasm-explicit-size-before-first-data
@@ -20332,3 +20328,5 @@ func_001D4C10,0x001D4C10,0x19c,0x1d4dac,code,verified-native-callback-entry
 gap_001D4ED8,0x1d4ed8,0x8,0x001D4EE0,padding,verified-alignment-padding
 func_001D4EE0,0x001D4EE0,0xc4,0x1d4fa4,code,verified-native-callback-entry
 func_003A9FE0,0x003A9FE0,0xF0,0x003AA0D0,code,verified-native-callback-entry
+func_003824E0,0x003824E0,0x1EC,0x003826CC,code,callback-table-entry-with-native-prologue-and-return
+func_00384FC0,0x00384FC0,0xD8,0x00385098,code,callback-table-entry-with-native-tail-call
