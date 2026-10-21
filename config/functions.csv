@@ -16122,7 +16122,7 @@ func_003656B0,0x003656B0,0xA8,0x00365758,code,spimdisasm-explicit-size-before-fi
 func_00365760,0x00365760,0x6C,0x003657CC,code,spimdisasm-explicit-size-before-first-data
 func_003657D0,0x003657D0,0x80,0x00365850,code,spimdisasm-explicit-size-before-first-data
 func_00365850,0x00365850,0x20,0x00365870,code,matching-c-head-split
-residual_00365870,0x00365870,0x2C0,0x00365B30,assembly_residual,verified-boundary-after-matching-head
+func_00365870,0x00365870,0x2C0,0x00365B30,code,verified-independent-entry-prologue-return
 func_00365B30,0x00365B30,0xF4,0x00365C24,code,spimdisasm-explicit-size-before-first-data
 func_00365C30,0x00365C30,0xB8,0x00365CE8,code,spimdisasm-explicit-size-before-first-data
 func_00365CF0,0x00365CF0,0x6C,0x00365D5C,code,spimdisasm-explicit-size-before-first-data
