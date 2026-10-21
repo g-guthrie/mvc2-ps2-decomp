@@ -74,7 +74,7 @@ void func_00317AD0(u8 *p) {
     if ((s8)func_00175700(p) < 0) func_001843A0(p);
 }
 
-void func_0023D980(u8 *p) {
+void func_0023D980(u8 *p, u8 *context) {
     s16 t1, t2;
     u32 u;
     s32 *v1, *a0, *a1, *a2;

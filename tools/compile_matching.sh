@@ -16578,5 +16578,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$MWCCPS2" -i src src/func_0033AD60.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/func_0033AD60.o"
 "$PYTHON" tools/verify_object.py "$BUILD/func_0033AD60.o" private/SLUS_204.86.rom --source src/func_0033AD60.c
 
+"$WIBO" "$MWCCPS2" -i src src/luna_r2_func_00239870.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/luna_r2_func_00239870.o"
+"$PYTHON" tools/verify_object.py "$BUILD/luna_r2_func_00239870.o" private/SLUS_204.86.rom --source src/luna_r2_func_00239870.c
+
+"$WIBO" "$MWCCPS2" -i src src/luna_r2_func_0023de30.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/luna_r2_func_0023de30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/luna_r2_func_0023de30.o" private/SLUS_204.86.rom --source src/luna_r2_func_0023de30.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

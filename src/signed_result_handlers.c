@@ -254,7 +254,7 @@ void func_0023D330(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); 
 
 void func_0023D6B0(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
-void func_0023E070(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
+void func_0023E070(u8 *p, u8 *context) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
 void func_0023E6C0(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 

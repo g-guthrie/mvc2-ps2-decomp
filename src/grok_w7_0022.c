@@ -5,7 +5,7 @@ typedef void (*DispatchFn)(u8 *);
 typedef void (*DispatchFn2)(u8 *, u8 *);
 
 extern DispatchFn jtbl_00451C10[];
-extern DispatchFn2 jtbl_004527B0[];
+extern const unsigned int jtbl_004527B0[];
 extern u8 D_004C00C8;
 extern u8 D_004C00C9;
 extern u8 D_004C00D0;
@@ -46,7 +46,7 @@ void func_0022BF60(u8 *p)
 
 void func_0023E120(u8 *p, u8 *q)
 {
-    jtbl_004527B0[p[6]](p, q);
+    ((DispatchFn2)jtbl_004527B0[p[6]])(p, q);
     func_0023E0B0(p, q);
 }
 

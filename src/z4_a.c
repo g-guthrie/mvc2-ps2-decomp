@@ -27,7 +27,7 @@ extern s16 D_004F2B8A[];
 extern u16 D_004F4480[];
 extern u16 D_004F4494[];
 
-void func_0023DF90(u8 *p)
+void func_0023DF90(u8 *p, u8 *context)
 {
     extern void func_00175700(u8 *);
     extern void func_00183d50(u8 *);

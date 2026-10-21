@@ -266,7 +266,7 @@ void func_00225310(R *p) {
     }
 }
 
-void func_0023D800(u8 *p) {
+void func_0023D800(u8 *p, u8 *context) {
     u32 v[3];
     p[0x40C] = 2;
     p[0x33C] = 5;

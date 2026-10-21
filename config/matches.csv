@@ -17696,3 +17696,5 @@ func_0031C940,0x0031C940,0x1bc,src/func_0031C940.c,complete
 func_0031D960,0x0031D960,0x15c,src/func_0031D960.c,complete
 func_0031DAC0,0x0031DAC0,0x17c,src/func_0031DAC0.c,complete
 func_0033AD60,0x0033AD60,0x170,src/func_0033AD60.c,complete
+func_00239870,0x00239870,0x14C,src/luna_r2_func_00239870.c,complete
+func_0023DE30,0x0023DE30,0x15C,src/luna_r2_func_0023de30.c,complete
