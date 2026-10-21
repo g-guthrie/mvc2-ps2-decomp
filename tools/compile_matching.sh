@@ -16298,5 +16298,21 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/draw_counter_text_00421
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" -i src src/payload_recovered_00384fc0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/payload_recovered_00384fc0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/payload_recovered_00384fc0.o" private/SLUS_204.86.rom --source src/payload_recovered_00384fc0.c
 
+"$WIBO" "$MWCCPS2_30" -i src src/actor_flipped_spawn_001CE7B0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_flipped_spawn_001CE7B0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_flipped_spawn_001CE7B0.o" private/SLUS_204.86.rom --source src/actor_flipped_spawn_001CE7B0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_velocity_start_003C1A40.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_velocity_start_003C1A40.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_velocity_start_003C1A40.o" private/SLUS_204.86.rom --source src/actor_velocity_start_003C1A40.c
+
+"$WIBO" "$SNCPP" -P src/sony29_gif_dma_submit_00100D80.c "$BUILD/sony29_gif_dma_submit_00100D80.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_gif_dma_submit_00100D80.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_gif_dma_submit_00100D80.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_gif_dma_submit_00100D80.o" "$BUILD/sony29_gif_dma_submit_00100D80.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_gif_dma_submit_00100D80.o" private/SLUS_204.86.rom --source src/sony29_gif_dma_submit_00100D80.c
+
+"$WIBO" "$SNCPP" -P src/sony29_gs_packet_builders_00100A90.c "$BUILD/sony29_gs_packet_builders_00100A90.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_gs_packet_builders_00100A90.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_gs_packet_builders_00100A90.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_gs_packet_builders_00100A90.o" "$BUILD/sony29_gs_packet_builders_00100A90.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_gs_packet_builders_00100A90.o" private/SLUS_204.86.rom --source src/sony29_gs_packet_builders_00100A90.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

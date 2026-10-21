@@ -377,3 +377,51 @@ Both functions now receive linked credit. Local matching code is2,076,552
 /3,293,696 bytes (63.0463%); reconstructed data remains256,328 /648,064
 (39.5529%). The fixed next code publication threshold is2,080,510, with3,958
 bytes remaining. Only the108-byte RPC wrapper remains source-credit quarantined.
+
+### GS packet methods and actor setups: 1,688 new C bytes
+
+Recovered GS environment100A90/484, sprite packet100C78/260 and GIF DMA
+submission100D80/232, plus actor setupsCE7B0/316 and3C1A40/396. The two GS
+builders share one real value/register-pair type. All packing and branching
+are C; the builders' only assembly is the actual final CPU sync. Coordinate
+scaling uses bounded signed32 multiplication and unsigned64 packing, avoiding
+negative signed shifts. The128-byte environment retains the native read-modify-write bytes for its
+three one-bit controls. Root uses actual bitfield assignments for those flags,
+without a raw-value C read or an added zero-initialization assumption.
+The96-byte sprite packet assigns every output word. DMA polling uses actual
+volatile MMIO, a bounded counter and a safe8-byte memcpy tag snapshot.
+
+CE7B0's one-actor callback and current integer animation API agree.3C1A40's
+generic context input and typed owner helper agree at their direct call. It
+uses the real owner Z field, not an uninitialized local. Native LH/stride4
+and numeric float conversion support a signedXY view of475CA0. Its raw DATA
+storage remains a placeholder, with no new whole-object type or extent credit. The native valid-variant protocol remains
+a precondition; no guessed global index bound or padding extent is added.
+
+Both existing residual rows are renamed without changing boundaries. Four
+production units verify five whole functions. All95 child tests, coverage/
+catalog, fresh split and both complete retail image comparisons pass. All
+14104 other source/object pairs and47 headers remain unchanged. Frozen proof:
+`private/code-lane/round25/root/FINAL_VERIFICATION.json`; explicit packet math
+and source/ABI review: `private/code-lane/round25/root/GS_SOURCE_REVIEW.md`.
+Root's corrected counter and fixed2,080,510 grid remain authoritative.
+
+
+Root's GS review replaces three raw64-bit OR/AND updates with writes to their
+actual single-bit controls. Both methods remain exactly484 and260 bytes
+under the unchanged Sony29 recipe. This preserves the native physical updates
+without evaluating prior uninitialized reserved storage as a raw C value.
+The value/register pair remains16 bytes and the environment remains128 bytes.
+The396-byte actor method retains only its native signed-halfword field view;
+three standard packed-word/byte-copy alternatives were privately tested and
+remain non-matching, without changing the uncredited DATA owner.
+
+Root independently rebuilt all five complete functions using their production
+recipes. The aggregate gate passed 118 tests, catalog validation, fresh split,
+full loaded-ROM identity and packed-ELF identity. The frozen input audit
+checked 14,830 unchanged source/object pairs and 47 unchanged headers, plus
+four new compilation units. Linked matching code is now 2,078,240 / 3,293,696
+bytes (63.0975%); reconstructed data remains 256,369 / 648,064 bytes
+(39.5592%). The next fixed code publication threshold remains 2,080,510,
+with 2,270 verified code bytes remaining. These are root aggregate counts;
+the worker snapshot above excludes intervening parent integrations.

@@ -17606,3 +17606,8 @@ func_001D4EE0,0x001D4EE0,0xC4,src/actor_sibling_launch_001D4C10.c,complete
 func_003A9FE0,0x003A9FE0,0xF0,src/actor_facing_start_003A9FE0.c,complete
 func_001009C8,0x001009C8,0xC8,src/sony29_image_page_count_001009C8.c,complete
 func_00384FC0,0x00384FC0,0xD8,src/payload_recovered_00384fc0.c,complete
+func_001CE7B0,0x001CE7B0,0x13C,src/actor_flipped_spawn_001CE7B0.c,complete
+func_003C1A40,0x003C1A40,0x18C,src/actor_velocity_start_003C1A40.c,complete
+func_00100D80,0x00100D80,0xE8,src/sony29_gif_dma_submit_00100D80.c,complete
+func_00100A90,0x00100A90,0x1E4,src/sony29_gs_packet_builders_00100A90.c,complete
+func_00100C78,0x00100C78,0x104,src/sony29_gs_packet_builders_00100A90.c,complete
