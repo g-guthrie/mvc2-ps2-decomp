@@ -16587,5 +16587,20 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$MWCCPS2_30" src/actor_state_00207070.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_state_00207070.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_state_00207070.o" private/SLUS_204.86.rom --source src/actor_state_00207070.c
 
+"$WIBO" "$MWCCPS2" -i src src/actor_event_001B62A0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/actor_event_001B62A0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_event_001B62A0.o" private/SLUS_204.86.rom --source src/actor_event_001B62A0.c
+
+"$WIBO" "$MWCCPS2" -i src src/parent_child_handoff_002E8720.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/parent_child_handoff_002E8720.o"
+"$PYTHON" tools/verify_object.py "$BUILD/parent_child_handoff_002E8720.o" private/SLUS_204.86.rom --source src/parent_child_handoff_002E8720.c
+
+"$WIBO" "$MWCCPS2" -i src src/actor_context_00236350.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/actor_context_00236350.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_context_00236350.o" private/SLUS_204.86.rom --source src/actor_context_00236350.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/resource_update_group_001E8890.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/resource_update_group_001E8890.o"
+"$PYTHON" tools/verify_object.py "$BUILD/resource_update_group_001E8890.o" private/SLUS_204.86.rom --source src/resource_update_group_001E8890.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/resource_clear_group_001E8B10.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/resource_clear_group_001E8B10.o"
+"$PYTHON" tools/verify_object.py "$BUILD/resource_clear_group_001E8B10.o" private/SLUS_204.86.rom --source src/resource_clear_group_001E8B10.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

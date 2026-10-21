@@ -19,7 +19,8 @@ extern Fn jtbl_00451400[];
 extern Fn jtbl_004515C0[];
 extern Fn jtbl_00451BA0[];
 extern Fn jtbl_004520A0[];
-extern Fn jtbl_00452358[];
+typedef void (*ContextFn)(u8 *, u8 *);
+extern ContextFn jtbl_00452358[];
 extern Fn jtbl_004523B8[];
 extern Fn jtbl_00452440[];
 extern Fn jtbl_00452850[];
@@ -133,7 +134,7 @@ void func_0022FE20(u8 *p) { p[518] = 3; jtbl_004C0140[p[6]](p); }
 
 void func_00232B50(u8 *p) { p[510] = 1; jtbl_004520A0[p[523] & 63](p); }
 
-void func_002361C0(u8 *p) { p[521] = 2; jtbl_00452358[p[7]](p); }
+void func_002361C0(u8 *p, void *context) { p[521] = 2; jtbl_00452358[p[7]](p, context); }
 
 void func_00237190(u8 *p) { p[521] = 2; jtbl_004523B8[p[7]](p); }
 

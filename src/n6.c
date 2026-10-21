@@ -74,13 +74,13 @@ void func_0038CDD0(s32 a0) {
 
 extern CallbackEntry *func_003DA750(s32, s32, s32);
 extern void func_001B6830(void);
-void func_001B67C0(u8 *a0, u8 *a1) {
+void func_001B67C0(u8 *a0, u32 a1) {
     u8 *e = (u8 *)func_003DA750(0, 3, 0);
     if (e) {
         PTR(e, 0x10) = (u8 *)func_001B6830;
         PTR(e, 0x18) = a0;
         PTR(e, 0x14) = PTR(a0, 0x18);
-        U8(e, 0x20) = (u8)(u32)a1;
+        U8(e, 0x20) = (u8)a1;
         U8(e, 1) = U8(a0, 1);
         S16(e, 0x26) = 0x1501;
     }

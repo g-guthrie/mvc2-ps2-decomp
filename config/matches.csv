@@ -17699,3 +17699,8 @@ func_0033AD60,0x0033AD60,0x170,src/func_0033AD60.c,complete
 func_00239870,0x00239870,0x14C,src/luna_r2_func_00239870.c,complete
 func_0023DE30,0x0023DE30,0x15C,src/luna_r2_func_0023de30.c,complete
 func_00207070,0x00207070,0x198,src/actor_state_00207070.c,complete
+func_001B62A0,0x001B62A0,0x170,src/actor_event_001B62A0.c,complete
+func_002E8720,0x002E8720,0x1f4,src/parent_child_handoff_002E8720.c,complete
+func_00236350,0x00236350,0x148,src/actor_context_00236350.c,complete
+func_001E8890,0x001E8890,0x1bc,src/resource_update_group_001E8890.c,complete
+func_001E8B10,0x001E8B10,0x1bc,src/resource_clear_group_001E8B10.c,complete
