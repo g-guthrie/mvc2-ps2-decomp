@@ -69,15 +69,15 @@ class DataIntegrationTest(unittest.TestCase):
 
     def test_unit_loader_returns_exact_catalog_metadata(self):
         units_path = ROOT / "config/data_units.csv"
-        first_table_gap = load_unit(units_path, "data_raw_004A7940")
-        second_table_candidate = load_unit(units_path, "data_raw_004A7F80")
-        self.assertEqual(first_table_gap, Unit(
-            "data_raw_004A7940", 0x004A7940, 0x640, ".data",
-            "src/data/data_raw_004A7940.c", "opaque_unaccessed_quad_rows",
+        primary_table = load_unit(units_path, "data_s32x4_004A6F80")
+        secondary_table = load_unit(units_path, "data_s32x4_004A7F80")
+        self.assertEqual(primary_table, Unit(
+            "data_s32x4_004A6F80", 0x004A6F80, 0x1000, ".data",
+            "src/data/data_s32x4_004A6F80.c", "bounded_s32x4_lookup",
         ))
-        self.assertEqual(second_table_candidate, Unit(
-            "data_raw_004A7F80", 0x004A7F80, 0x1000, ".data",
-            "src/data/data_raw_004A7F80.c", "opaque_unselected_zero_table_candidate",
+        self.assertEqual(secondary_table, Unit(
+            "data_s32x4_004A7F80", 0x004A7F80, 0x1000, ".data",
+            "src/data/data_s32x4_004A7F80.c", "bounded_s32x4_lookup",
         ))
 
     def test_report_counts_only_cataloged_complete_data(self):
