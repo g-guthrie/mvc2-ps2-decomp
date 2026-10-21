@@ -17643,3 +17643,17 @@ func_0019D050,0x0019D050,0x218,src/actor_copy_motion_0019D050.c,complete
 func_0019CE30,0x0019CE30,0x218,src/actor_inherited_state_child_0019CE30.c,complete
 func_001CAF00,0x001CAF00,0x19C,src/actor_owner_dispatch_001CAF00.c,complete
 func_001B6B60,0x001B6B60,0x23C,src/actor_position_cycle_001B6B60.c,complete
+func_00197920,0x00197920,0x2C,src/actor_inherited_state_dispatch_00197920.c,complete
+func_00197950,0x00197950,0xEC,src/actor_inherited_state_dispatch_00197920.c,complete
+func_0019E750,0x0019E750,0x38,src/actor_timer_callback_0019E750.c,complete
+func_003447E0,0x003447E0,0x1AC,src/scene_lifecycle_phases_003447E0.c,complete
+func_00345450,0x00345450,0x1F8,src/scene_lifecycle_phases_003447E0.c,complete
+func_00343EF0,0x00343EF0,0x1E4,src/scene_position_transition_00343EF0.c,complete
+func_00344A30,0x00344A30,0x138,src/scene_animation_cycle_00344A30.c,complete
+func_0034E4F0,0x0034E4F0,0x140,src/actor_effect_launch_0034E4F0.c,complete
+func_0034C1E0,0x0034C1E0,0x130,src/actor_rise_initialization_0034C1E0.c,complete
+func_00344B70,0x00344B70,0x208,src/scene_colour_phases_00344B70.c,complete
+func_00344E00,0x00344E00,0x1F0,src/scene_colour_phases_00344B70.c,complete
+func_00345650,0x00345650,0x1DC,src/model_y_wave_callback_00345650.c,complete
+func_00346610,0x00346610,0x188,src/actor_owner_signal_00346610.c,complete
+func_0034D890,0x0034D890,0x1C4,src/actor_lifetime_phase_0034D890.c,complete

@@ -3058,7 +3058,8 @@ func_001977E0,0x001977E0,0x30,0x00197810,code,spimdisasm-explicit-size-before-fi
 func_00197810,0x00197810,0x44,0x00197854,code,spimdisasm-explicit-size-before-first-data
 func_00197860,0x00197860,0x44,0x001978A4,code,spimdisasm-explicit-size-before-first-data
 func_001978B0,0x001978B0,0x64,0x00197914,code,spimdisasm-explicit-size-before-first-data
-func_00197920,0x00197920,0x11C,0x00197A3C,code,spimdisasm-explicit-size-before-first-data
+func_00197920,0x00197920,0x2C,0x0019794C,code,native-indirect-dispatch
+func_00197950,0x00197950,0xEC,0x00197A3C,code,native-table-callback
 func_00197A40,0x00197A40,0x98,0x00197AD8,code,spimdisasm-explicit-size-before-first-data
 func_00197AE0,0x00197AE0,0x88,0x00197B68,code,spimdisasm-explicit-size-before-first-data
 func_00197B70,0x00197B70,0x90,0x00197C00,code,spimdisasm-explicit-size-before-first-data
@@ -3290,7 +3291,8 @@ func_0019E500,0x0019E500,0x8,0x0019E508,code,spimdisasm-explicit-size-before-fir
 func_0019E510,0x0019E510,0x64,0x0019E574,code,spimdisasm-explicit-size-before-first-data
 func_0019E580,0x0019E580,0x70,0x0019E5F0,code,spimdisasm-explicit-size-before-first-data
 func_0019E5F0,0x0019E5F0,0x7C,0x0019E66C,code,spimdisasm-explicit-size-before-first-data
-func_0019E670,0x0019E670,0x118,0x0019E788,code,spimdisasm-explicit-size-before-first-data
+func_0019E670,0x0019E670,0xE0,0x0019E750,code,native-indirect-dispatch
+func_0019E750,0x0019E750,0x38,0x0019E788,code,native-table-callback
 func_0019E790,0x0019E790,0x94,0x0019E824,code,spimdisasm-explicit-size-before-first-data
 func_0019E830,0x0019E830,0xBC,0x0019E8EC,code,spimdisasm-explicit-size-before-first-data
 func_0019E8F0,0x0019E8F0,0xB4,0x0019E9A4,code,spimdisasm-explicit-size-before-first-data

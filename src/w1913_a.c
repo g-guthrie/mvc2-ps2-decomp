@@ -11,7 +11,7 @@ typedef struct T41C { u8 pad[0x1C]; s32 w1C; u8 pad20[0x170 - 0x20]; } T41C;
 typedef struct A41B { s32 w0; u32 w4; s32 w8; s32 wC; u16 h10; u16 h12; } A41B;
 extern T41C D_005BF2F0[];
 u8 *func_0041BBB0(A41B *a) {
-    extern u8 *func_003DD030(s32);
+    extern s32 func_003DD030(s32);
     u8 *base;
     u16 *p2;
     u16 *q;
@@ -19,16 +19,16 @@ u8 *func_0041BBB0(A41B *a) {
     u16 v;
     s32 n;
     n = a->w0 - 1;
-    base = func_003DD030(((T41C *)((u8 *)D_005BF2F0 + n * 0x170))->w1C);
+    base = (u8 *)(u32)func_003DD030(((T41C *)((u8 *)D_005BF2F0 + n * 0x170))->w1C);
     idx = a->h12;
-    p2 = (u16 *)func_003DD030(a->w8);
+    p2 = (u16 *)(u32)func_003DD030(a->w8);
     v = p2[idx * 2];
     if (v == 0xFFFF) {
         a->h12 = 0;
         a->h10 = 0;
         return 0;
     }
-    q = (u16 *)func_003DD030(a->wC);
+    q = (u16 *)(u32)func_003DD030(a->wC);
     a->h10 = idx;
     a->h12 = idx + 1;
     return base + q[v];

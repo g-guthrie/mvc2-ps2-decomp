@@ -5,7 +5,7 @@ typedef struct { s32 f0, f4, f8, fC; } S;
 extern S D_00632610[];
 s32 func_004120A0(s32 n) {
     extern void func_003DC9C0(s32);
-    extern s32 *func_003DD030(s32);
+    extern s32 func_003DD030(s32);
     extern void func_003DD020(s32);
     extern void func_003E94D0(s32), func_003E9420(s32);
     s32 i;
@@ -19,7 +19,7 @@ s32 func_004120A0(s32 n) {
     s = &D_00632610[n];
     if (s->f0 == 0) return 1;
     func_003DC9C0(n);
-    a = func_003DD030(s->fC);
+    a = (s32 *)(u32)func_003DD030(s->fC);
     i = 0;
     off = 0;
     do {
@@ -29,7 +29,7 @@ s32 func_004120A0(s32 n) {
     } while (i < 16);
     func_003DD020(s->fC);
     s->fC = 0;
-    b = func_003DD030(s->f8);
+    b = (s32 *)(u32)func_003DD030(s->f8);
     k = 0;
     off2 = 0;
     do {

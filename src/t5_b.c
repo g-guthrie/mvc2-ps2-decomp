@@ -30,7 +30,7 @@ extern void func_00170E60(s32 a, s32 b, s32 c, s32 d, void *e, u8 *f);
 extern void func_001446F0();
 extern void func_0033D190();
 extern u8 *func_003DA750(int, int, int);
-extern void func_003447E0();
+extern void func_003447E0(u8 *);
 extern void func_003BA360();
 extern V3 D_00460D60[];
 

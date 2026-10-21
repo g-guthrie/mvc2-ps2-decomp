@@ -16,15 +16,15 @@ s32 func_0041BC80(P *p, u16 idx, f32 *dst) {
     u8 *b;
     u8 *c;
     u32 fl;
-    extern u8 *func_003DD030(s32);
+    extern s32 func_003DD030(s32);
     T *t;
     s32 i;
     i = p->n - 1;
     t = D_005BF2F0 + i;
-    src = (f32 *)func_003DD030(t->h);
-    a = func_003DD030(p->h2);
+    src = (f32 *)(u32)func_003DD030(t->h);
+    a = (u8 *)(u32)func_003DD030(p->h2);
     idx = *(u16 *)(a + idx * 4);
-    b = func_003DD030(p->h3);
+    b = (u8 *)(u32)func_003DD030(p->h3);
     src = (f32 *)((u8 *)src + *(u16 *)(b + idx * 2));
     fl = p->flags;
     if (fl & 1) {

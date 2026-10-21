@@ -47,8 +47,8 @@ extern void func_003D79B0(u8 *, u8 *);
 extern void func_003D7B50(u8 *, u8 *);
 extern void func_003C9370(u8 *);
 extern void func_003C9A20(u8 *, u8 *, u8 *);
-extern s32 func_003DB9B0(u8 *);
-extern s16 *func_003DD030(void);
+extern s32 func_003DB9B0(s32);
+extern s32 func_003DD030(s32);
 extern s32 func_003DA750(s32, s32, s32);
 extern int func_00175910(u8 *, s32, s32, s32);
 extern s32 func_00118FA8(f32);
@@ -149,17 +149,19 @@ void func_003C9330(u8 *p)
         func_003C9A20(p, P(p, 24), P(p, 8));
 }
 
-void func_003DCFE0(u8 *p)
+s32 func_003DCFE0(s32 size, s32 ignored_hint)
 {
-    if (!func_003DB9B0(p)) {
+    s32 handle = func_003DB9B0(size);
+    if (!handle) {
         func_003DD040();
-        func_003DB9B0(p);
+        handle = func_003DB9B0(size);
     }
+    return handle;
 }
 
-s32 func_003DEC90(void)
+s32 func_003DEC90(s32 handle)
 {
-    s16 *p = func_003DD030();
+    s16 *p = (s16 *)(u32)func_003DD030(handle);
     if (p)
         return p[1];
     return 0;

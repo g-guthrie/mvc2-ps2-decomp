@@ -1,5 +1,0 @@
-typedef unsigned int u32;
-u32 data_u32_0046C680[9] = {
-    0xFFFFFFFFu, 0x88FFFFFFu, 0xC21F801Fu, 0xFFFFFFFFu, 0xDAFFE75Fu, 0xFFFFFBDFu, 0xD6DFEB7Fu, 0xFFFFF3BFu, 
-    0xEF9FF39Fu, 
-};

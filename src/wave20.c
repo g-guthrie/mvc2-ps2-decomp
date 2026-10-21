@@ -293,7 +293,7 @@ u8 *func_003B9310(u8 *a, u8 b, u8 c) {
 typedef struct { float x, y, z; } V3;
 extern s32 D_004C283C;
 extern V3 D_004B82E8;
-extern void func_00345450();
+extern void func_00345450(u8 *);
 extern void func_00170DF0();
 
 void func_003453C0(void) {

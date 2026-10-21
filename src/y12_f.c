@@ -16,7 +16,7 @@ extern u8 D_004F4384[];
 extern u8 D_004D18A0[];
 typedef struct { u8 pad[0x7C]; s16 f7c[8]; } G7C;
 extern G7C *D_004C2794;
-typedef struct { u8 b[10]; } T10;
+typedef struct LaunchRecord { s16 vx,vy,x,y; u8 animation,event; } T10;
 extern T10 D_004B8300[];
 
 void func_00154FF0(u8 *p) {
@@ -83,7 +83,7 @@ void func_00172A10(void) {
 
 void func_003458F0(u8 *p) {
     extern void func_00345BD0();
-    extern void func_00345CB0();
+    extern void func_00345CB0(u8 *, u8 *, T10 *);
     u8 *q;
     u8 *r;
     u32 t = p[4];

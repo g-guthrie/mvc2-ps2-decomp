@@ -23,8 +23,8 @@ extern s32 func_003DD020(s32 handle);
 extern void *func_003F09C0(void *, u32, s32);
 extern void func_003F0A40();
 extern void func_003F0A60();
-extern void func_003F0C50();
-extern void func_003F0DB0();
+extern s32 func_003F0C50(u8 *, s32);
+extern s32 func_003F0DB0(s32 *, s32);
 extern s32 func_003F0DF0(RuntimePool *pool, s32 handle);
 extern void func_003F0E60();
 extern void func_0040EF48();
@@ -119,9 +119,9 @@ void func_003D9080(void) {
     D_004D1901 = 0;
 }
 
-void func_003DB9B0(void *p) { func_003F0C50(D_005BF280, p); }
+s32 func_003DB9B0(s32 size) { return func_003F0C50(D_005BF280, size); }
 void func_003DB9C0(void *p) { func_003F0A60(D_005BF280, p); }
-void func_003DB9D0(void *p) { func_003F0DB0(D_005BF280, p); }
+s32 func_003DB9D0(s32 handle) { return func_003F0DB0((s32 *)D_005BF280, handle); }
 s32 func_003DB9E0(s32 handle) { return func_003F0DF0((RuntimePool *)D_005BF280, handle); }
 void func_003DB9F0(void) { func_003F0E60(D_005BF280); }
 

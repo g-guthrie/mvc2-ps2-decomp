@@ -4532,3 +4532,42 @@ Verified totals are **2,090,344 / 3,293,696 code bytes (63.4650%)** and
 **296,923 / 648,064 reconstructed data bytes (45.8169%)**. This DATA publication
 does not reset the fixed CODE grid: the next checkpoint remains 2,113,447 bytes,
 23,103 beyond this batch. Full source decompilation remains incomplete.
+
+## 2026-10-21 — Scene callbacks and complete memory-card icon
+
+Fourteen complete functions add 5,024 verified C bytes. The batch closes actual
+scene lifecycle, position, signed animation cycle, colour, resource-stream,
+owner signalling and lifetime callbacks, plus three real inherited-state/timer
+entries. Two callable inventory splits preserve the conservative text span;
+adjacent alignment and remaining near matches stay uncredited. Eighteen old
+compilation units receive coherent type/signature declarations while retaining
+whole-object byte identity.
+
+Scene/effect tables add 160 net reconstructed bytes, preserving their one
+previously reconstructed byte once. Four actor-table owners add another 82:
+a three-float spawn vector, four ten-byte launch records, six float heights and
+six signed animation codes. Their 118 opaque adjacent bytes remain placeholders.
+The actual float/signed-byte providers unlock the exact 304-byte rise callback.
+See `SCENE_TABLES_AND_CALLBACKS_RECOVERY_20261021.md` for native roles, valid-input
+contracts and ownership boundaries.
+
+The complete 50,968-byte `mvsc2.ico` owner contains a standard PS2 icon header,
+756 typed vertices, a complete animation sequence, and 128-by-128 PSMCT16 texture.
+Its native memory-card write path fixes the file length. The file replaces 377
+raw placeholder units and covers 1,328 previously unowned internal bytes; none
+of those units had reconstructed credit. Net new DATA is 51,210 bytes including
+the actor/scene tables. `MEMORY_CARD_ICON_RECOVERY_20261021.md` records the parse,
+file selection and standard format references.
+
+All changed/new compilation units verify exactly. The aggregate gate runs all
+118 tests, catalog/build coverage, fresh splitting, hybrid linkage and retail
+ELF packing. It checks the unchanged hashes of 14,509 source/object pairs and
+52 headers; 18 old pairs are recompiled, 28 are new and 385 raw pairs retire,
+leaving 14,555 pairs. Full linked ROM and packed ELF retain the retail hashes
+listed above. Status promotion is followed by all 17 catalog tests and report
+regeneration.
+
+Verified totals are **2,095,368 / 3,293,696 code bytes (63.6175%)** and
+**348,133 / 648,064 reconstructed data bytes (53.7189%)**. This DATA checkpoint
+does not reset the fixed CODE grid: the next normal checkpoint remains
+2,113,447 bytes, another 18,079 bytes. Source recovery remains incomplete.

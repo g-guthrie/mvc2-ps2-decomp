@@ -20,7 +20,8 @@ extern s32 func_00189310();
 extern u8 D_00454120[];
 extern s32 func_00191210();
 extern void (*D_004543F0[])();
-extern u8 D_00465260[];
+struct PS2IconFile;
+extern struct PS2IconFile D_00465260;
 extern s32 D_00471978[];
 extern s32 func_0019B710();
 extern void func_0019B740();
@@ -102,7 +103,7 @@ void func_00380270(u8 *a, s32 b, s32 c) {
 s32 func_0038D290(s32 a, s32 b) {
     switch (a) {
     case 0: return 0;
-    case 1: return (s32)D_00465260;
+    case 1: return (s32)&D_00465260;
     case 2: return 0;
     case 3: return 0;
     case 4: return D_00471978[b];

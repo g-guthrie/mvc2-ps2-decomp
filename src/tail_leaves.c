@@ -117,7 +117,7 @@ extern void func_00336F10();
 extern void func_0033A420();
 extern void func_0033BE20();
 extern void func_00345BC0();
-extern void func_00346490();
+extern void func_00346490(u8 *);
 extern void func_00351AD0();
 extern void func_00352160();
 extern void func_003562C0();
@@ -142,12 +142,12 @@ extern void func_003B78A0();
 extern void func_003B7EC0();
 extern void func_003D9C30(void);
 extern void func_003DAA40();
-extern void func_003DB9D0();
+extern s32 func_003DB9D0(s32);
 extern s32 func_003DB9E0(s32 handle);
 extern void func_003DE890();
 extern void func_003ECD00();
 extern void func_003ED2E0();
-extern void func_003F0C60();
+extern s32 func_003F0C60(u8 *, s32, s32);
 extern void func_003F5440();
 extern void func_004121B0();
 extern void func_00423240();
@@ -916,9 +916,9 @@ void func_00345BB0(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_00345BC0(p,
 
 void func_00345BC0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
-void func_00346480(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_00346490(p, a1, a2, a3); }
+void func_00346480(u8 *p) { p[316] = 0; func_00346490(p); }
 
-void func_00346490(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
+void func_00346490(u8 *object) { extern void func_003DAA40(struct Object *); func_003DAA40((struct Object *)object); }
 
 void func_003467B0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
@@ -958,7 +958,7 @@ void func_0034DC20(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, 
 
 void func_0034E150(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
-void func_0034FA70(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
+void func_0034FA70(u8 *object) { extern void func_003DAA40(struct Object *); func_003DAA40((struct Object *)object); }
 
 void func_00350FE0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
@@ -1375,7 +1375,7 @@ void func_003DB970(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003ED2E0(a0, a1, a2, 
 
 s32 func_003DD020(s32 handle) { return func_003DB9E0(handle); }
 
-void func_003DD030(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DB9D0(a0, a1, a2, a3); }
+s32 func_003DD030(s32 handle) { return func_003DB9D0(handle); }
 
 void func_003DE6F0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00116CD0(a0, a1, a2, a3); }
 
@@ -1393,7 +1393,7 @@ float func_003DE7D0(float angle) { return func_00117328(angle); }
 
 void func_003DE880(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DE890(a0, a1, 0, a3); }
 
-void func_003F0C50(u8 *p, s32 a1, s32 a2, s32 a3) {  func_003F0C60(p, a1, *(s32 *)(p + 24), a3); }
+s32 func_003F0C50(u8 *pool, s32 size) { return func_003F0C60(pool, size, *(s32 *)(pool + 24)); }
 
 void func_003F5080(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003F5440(a0, 0, a2, a3); }
 

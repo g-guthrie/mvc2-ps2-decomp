@@ -87,7 +87,7 @@ void func_0016FA00(void) {}
 
 void func_00170DF0(void) {}
 
-void func_00170E00(void) {}
+void func_00170E00(void *resource, float alpha, float red, float green, float blue) {}
 
 void func_001712E0(void) {}
 

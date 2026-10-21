@@ -9,7 +9,7 @@ typedef float f32;
 typedef struct { s32 a; s32 b; s32 c; s32 d; } Slot;
 typedef struct { s16 w; s16 cnt; } Cell;
 extern Slot D_00632610[16];
-extern Cell *func_003DD030(s32);
+extern s32 func_003DD030(s32);
 void func_004121B0(void)
 {
     Slot *s = D_00632610;
@@ -17,7 +17,7 @@ void func_004121B0(void)
     for (i = 0; i < 16; i++, s++) {
         if (s->a != 0 && s->b != 0) {
             s32 j;
-            Cell *q = func_003DD030(s->b);
+            Cell *q = (Cell *)(u32)func_003DD030(s->b);
             for (j = 0; j < 0x1D0; j++, q++) {
                 s32 t = q->cnt;
                 if (t != 0) {

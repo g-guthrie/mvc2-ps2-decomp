@@ -10,7 +10,7 @@ typedef float f32;
 typedef struct T41C { u8 pad[0x1C]; s32 w1C; u8 pad20[0x170 - 0x20]; } T41C;
 typedef struct A41C { s32 w0; u32 w4; s32 w8; s32 wC; } A41C;
 extern T41C D_005BF2F0[];
-extern u8 *func_003DD030(s32);
+extern s32 func_003DD030(s32);
 s32 func_0041C010(A41C *a, u32 idx, f32 *src) {
     u8 *base;
     u16 *p2;
@@ -24,11 +24,11 @@ s32 func_0041C010(A41C *a, u32 idx, f32 *src) {
     u32 pos;
     f32 *d;
     n = a->w0 - 1;
-    base = func_003DD030(((T41C *)((u8 *)D_005BF2F0 + n * 0x170))->w1C);
-    p2 = (u16 *)func_003DD030(a->w8);
+    base = (u8 *)(u32)func_003DD030(((T41C *)((u8 *)D_005BF2F0 + n * 0x170))->w1C);
+    p2 = (u16 *)(u32)func_003DD030(a->w8);
     off = p2[(u16)idx * 2];
     cnt = p2[(u16)idx * 2 + 1];
-    p3 = (u16 *)func_003DD030(a->wC);
+    p3 = (u16 *)(u32)func_003DD030(a->wC);
     fl = a->w4;
     j = off;
     for (i = 0; i < cnt; i++, j++) {

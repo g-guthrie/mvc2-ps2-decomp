@@ -16422,5 +16422,38 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$MWCCPS2_30" -i src src/actor_position_cycle_001B6B60.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_position_cycle_001B6B60.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_position_cycle_001B6B60.o" private/SLUS_204.86.rom --source src/actor_position_cycle_001B6B60.c
 
+"$WIBO" "$MWCCPS2_30" -i src src/actor_inherited_state_dispatch_00197920.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_inherited_state_dispatch_00197920.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_inherited_state_dispatch_00197920.o" private/SLUS_204.86.rom --source src/actor_inherited_state_dispatch_00197920.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_timer_callback_0019E750.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_timer_callback_0019E750.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_timer_callback_0019E750.o" private/SLUS_204.86.rom --source src/actor_timer_callback_0019E750.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/scene_lifecycle_phases_003447E0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/scene_lifecycle_phases_003447E0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/scene_lifecycle_phases_003447E0.o" private/SLUS_204.86.rom --source src/scene_lifecycle_phases_003447E0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/scene_position_transition_00343EF0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/scene_position_transition_00343EF0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/scene_position_transition_00343EF0.o" private/SLUS_204.86.rom --source src/scene_position_transition_00343EF0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/scene_animation_cycle_00344A30.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/scene_animation_cycle_00344A30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/scene_animation_cycle_00344A30.o" private/SLUS_204.86.rom --source src/scene_animation_cycle_00344A30.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_effect_launch_0034E4F0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_effect_launch_0034E4F0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_effect_launch_0034E4F0.o" private/SLUS_204.86.rom --source src/actor_effect_launch_0034E4F0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_rise_initialization_0034C1E0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_rise_initialization_0034C1E0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_rise_initialization_0034C1E0.o" private/SLUS_204.86.rom --source src/actor_rise_initialization_0034C1E0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/scene_colour_phases_00344B70.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/scene_colour_phases_00344B70.o"
+"$PYTHON" tools/verify_object.py "$BUILD/scene_colour_phases_00344B70.o" private/SLUS_204.86.rom --source src/scene_colour_phases_00344B70.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/model_y_wave_callback_00345650.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/model_y_wave_callback_00345650.o"
+"$PYTHON" tools/verify_object.py "$BUILD/model_y_wave_callback_00345650.o" private/SLUS_204.86.rom --source src/model_y_wave_callback_00345650.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_owner_signal_00346610.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_owner_signal_00346610.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_signal_00346610.o" private/SLUS_204.86.rom --source src/actor_owner_signal_00346610.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_lifetime_phase_0034D890.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_lifetime_phase_0034D890.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_lifetime_phase_0034D890.o" private/SLUS_204.86.rom --source src/actor_lifetime_phase_0034D890.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

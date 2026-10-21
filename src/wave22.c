@@ -340,7 +340,7 @@ void func_00267600(u8 *a0) {
     }
 }
 
-extern void func_00344E00(void);
+extern void func_00344E00(u8 *);
 extern V3 D_00460DE0[];
 
 void func_00344FF0(s32 a0) {
