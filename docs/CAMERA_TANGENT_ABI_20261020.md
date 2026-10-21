@@ -23,3 +23,6 @@ the four affected compilation units remain whole relocated matches:
 No registers, assembly, qualifiers, padding, or instructions were added to
 force the match. Full loaded-image and packed-ELF retail identity checks and
 the 95-test suite pass. Verified code remains 2,053,084 bytes (62.3337%).
+
+The coordinator independently rebuilt all four units and reverified all661
+functions, then repeated the combined image and95-test gates successfully.

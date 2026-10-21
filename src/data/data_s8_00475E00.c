@@ -1,6 +1,5 @@
-/* Held from reconstructed credit: full reachable selector coverage is unproven. */
 typedef signed char s8;
-/* func_003C45B0 decrements task field1C at 0x003C45E4, masks it to 0x7F at 0x003C45F0, and loads this signed-byte lookup with lb at 0x003C460C. */
+/* func_003C45B0 decrements field1C, masks it to 0..127, then reads one signed byte. */
 s8 data_s8_00475E00[128] = {
     0, -1, -2, -3, -4, -5, -6, -7, -8, -9, -10, -11, -12, -13, -14, -15,
     -16, -17, -18, -19, -20, -21, -22, -23, -24, -25, -26, -27, -28, -29, -30, -31,
