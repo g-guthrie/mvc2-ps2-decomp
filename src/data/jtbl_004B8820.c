@@ -1,10 +1,15 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_004B8820[7] = {
-    (unsigned int)0x003CDA4C,
-    (unsigned int)0x003CDA44,
-    (unsigned int)0x003CDA44,
-    (unsigned int)0x003CDA2C,
-    (unsigned int)0x003CDA2C,
-    (unsigned int)0x003CDA9C,
-    (unsigned int)0x003CDA9C,
+/* Native bounded switch targets represented as byte-address code locations. */
+typedef const unsigned char *Mvc2SwitchTarget;
+extern const unsigned char lbl_003CDA2C[];
+extern const unsigned char lbl_003CDA44[];
+extern const unsigned char lbl_003CDA4C[];
+extern const unsigned char lbl_003CDA9C[];
+const Mvc2SwitchTarget jtbl_004B8820[7] = {
+    lbl_003CDA4C,
+    lbl_003CDA44,
+    lbl_003CDA44,
+    lbl_003CDA2C,
+    lbl_003CDA2C,
+    lbl_003CDA9C,
+    lbl_003CDA9C,
 };

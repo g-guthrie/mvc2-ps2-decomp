@@ -1,25 +1,40 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_004BEF40[22] = {
-    (unsigned int)0x004192B4,
-    (unsigned int)0x00418E38,
-    (unsigned int)0x00418FD0,
-    (unsigned int)0x00419038,
-    (unsigned int)0x00419088,
-    (unsigned int)0x004190E8,
-    (unsigned int)0x00419148,
-    (unsigned int)0x004192B4,
-    (unsigned int)0x004192B4,
-    (unsigned int)0x004192B4,
-    (unsigned int)0x004191A8,
-    (unsigned int)0x00418EA8,
-    (unsigned int)0x00418E44,
-    (unsigned int)0x00418F08,
-    (unsigned int)0x004192B4,
-    (unsigned int)0x004191F8,
-    (unsigned int)0x00418F78,
-    (unsigned int)0x004192B4,
-    (unsigned int)0x00419258,
-    (unsigned int)0x004192B4,
-    (unsigned int)0x004192B4,
-    (unsigned int)0x004192B4,
+/* Native-bounded switch destinations; each target is a registered code-location alias. */
+typedef const unsigned char *Mvc2SwitchTarget;
+extern const unsigned char lbl_00418E38[];
+extern const unsigned char lbl_00418E44[];
+extern const unsigned char lbl_00418EA8[];
+extern const unsigned char lbl_00418F08[];
+extern const unsigned char lbl_00418F78[];
+extern const unsigned char lbl_00418FD0[];
+extern const unsigned char lbl_00419038[];
+extern const unsigned char lbl_00419088[];
+extern const unsigned char lbl_004190E8[];
+extern const unsigned char lbl_00419148[];
+extern const unsigned char lbl_004191A8[];
+extern const unsigned char lbl_004191F8[];
+extern const unsigned char lbl_00419258[];
+extern const unsigned char lbl_004192B4[];
+const Mvc2SwitchTarget jtbl_004BEF40[22] = {
+    lbl_004192B4,
+    lbl_00418E38,
+    lbl_00418FD0,
+    lbl_00419038,
+    lbl_00419088,
+    lbl_004190E8,
+    lbl_00419148,
+    lbl_004192B4,
+    lbl_004192B4,
+    lbl_004192B4,
+    lbl_004191A8,
+    lbl_00418EA8,
+    lbl_00418E44,
+    lbl_00418F08,
+    lbl_004192B4,
+    lbl_004191F8,
+    lbl_00418F78,
+    lbl_004192B4,
+    lbl_00419258,
+    lbl_004192B4,
+    lbl_004192B4,
+    lbl_004192B4,
 };

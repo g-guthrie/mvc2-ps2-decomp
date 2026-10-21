@@ -1,16 +1,30 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_004B72B0[13] = {
-    (unsigned int)0x002559A4,
-    (unsigned int)0x00255A3C,
-    (unsigned int)0x00255A5C,
-    (unsigned int)0x00255B30,
-    (unsigned int)0x00255B94,
-    (unsigned int)0x00255BF8,
-    (unsigned int)0x00255C5C,
-    (unsigned int)0x00255CC0,
-    (unsigned int)0x00255D24,
-    (unsigned int)0x00255D88,
-    (unsigned int)0x00255DEC,
-    (unsigned int)0x00255E50,
-    (unsigned int)0x00255EB4,
+/* Native-bounded switch destinations; each target is a registered code-location alias. */
+typedef const unsigned char *Mvc2SwitchTarget;
+extern const unsigned char lbl_002559A4[];
+extern const unsigned char lbl_00255A3C[];
+extern const unsigned char lbl_00255A5C[];
+extern const unsigned char lbl_00255B30[];
+extern const unsigned char lbl_00255B94[];
+extern const unsigned char lbl_00255BF8[];
+extern const unsigned char lbl_00255C5C[];
+extern const unsigned char lbl_00255CC0[];
+extern const unsigned char lbl_00255D24[];
+extern const unsigned char lbl_00255D88[];
+extern const unsigned char lbl_00255DEC[];
+extern const unsigned char lbl_00255E50[];
+extern const unsigned char lbl_00255EB4[];
+const Mvc2SwitchTarget jtbl_004B72B0[13] = {
+    lbl_002559A4,
+    lbl_00255A3C,
+    lbl_00255A5C,
+    lbl_00255B30,
+    lbl_00255B94,
+    lbl_00255BF8,
+    lbl_00255C5C,
+    lbl_00255CC0,
+    lbl_00255D24,
+    lbl_00255D88,
+    lbl_00255DEC,
+    lbl_00255E50,
+    lbl_00255EB4,
 };
