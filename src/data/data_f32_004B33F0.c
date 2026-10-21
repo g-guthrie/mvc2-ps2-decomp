@@ -1,0 +1,3 @@
+typedef float f32;
+/* Nine physically bounded scalar samples. Native selects one by signed context+0xC without a local range check. */
+f32 data_f32_004B33F0[9] = { -173.02999877929688f, -144.9499969482422f, -120.66000366210938f, -94.87999725341797f, -69.44000244140625f, -44.11000061035156f, -18.899999618530273f, 6.989999771118164f, 31.739999771118164f };
