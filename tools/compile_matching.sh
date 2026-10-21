@@ -30,7 +30,7 @@ mkdir -p "$BUILD"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/main.c -c -lang c $MATCH_FLAGS -o "$BUILD/main.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/simple_leaves.c -c -lang c $MATCH_FLAGS -i src -o "$BUILD/simple_leaves.o"
+    src/simple_leaves.c -c -lang c -i src/data $MATCH_FLAGS -i src -o "$BUILD/simple_leaves.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/state_dispatch_001712A0.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/state_dispatch_001712A0.o"
@@ -154,7 +154,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/straight_leaves.c -c -lang c $MATCH_FLAGS -i src -o "$BUILD/straight_leaves.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/tail_leaves.c -c -lang c $MATCH_FLAGS -o "$BUILD/tail_leaves.o"
+    src/tail_leaves.c -c -lang c -i src $MATCH_FLAGS -o "$BUILD/tail_leaves.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/indirect_dispatch.c -c -lang c $MATCH_FLAGS -o "$BUILD/indirect_dispatch.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -263,7 +263,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/direct_state_tail.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/direct_state_tail.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/bulk_copy_112.c -c -lang c -O3,p -sdatathreshold 0 \
+    src/bulk_copy_112.c -c -lang c -i src/data -O3,p -sdatathreshold 0 \
     -o "$BUILD/bulk_copy_112.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/conditional_engine_chains.c -c -lang c $MATCH_FLAGS \
@@ -7309,7 +7309,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/t9_e.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/t9_e.o"
 "$PYTHON" tools/verify_object.py "$BUILD/t9_e.o" private/SLUS_204.86.rom --source src/t9_e.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/t9_g.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/t9_g.o"
+    src/t9_g.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/t9_g.o"
 "$PYTHON" tools/verify_object.py "$BUILD/t9_g.o" private/SLUS_204.86.rom --source src/t9_g.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/t9_h.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/t9_h.o"
@@ -9679,7 +9679,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/w170_n.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/w170_n.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w170_n.o" private/SLUS_204.86.rom --source src/w170_n.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/w170_o.c -c -lang c -O3,p -sdatathreshold 8 -o "$BUILD/w170_o.o"
+    src/w170_o.c -c -lang c -i src/data -O3,p -sdatathreshold 8 -o "$BUILD/w170_o.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w170_o.o" private/SLUS_204.86.rom --source src/w170_o.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/w170_p.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/w170_p.o"
@@ -16700,6 +16700,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 
 "$WIBO" "$MWCCPS2_30" -i src src/owner_entry_motion_00365870.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/owner_entry_motion_00365870.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_entry_motion_00365870.o" private/SLUS_204.86.rom --source src/owner_entry_motion_00365870.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/record_header_copy_0019FF60.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/record_header_copy_0019FF60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/record_header_copy_0019FF60.o" private/SLUS_204.86.rom --source src/record_header_copy_0019FF60.c
 
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

@@ -15,7 +15,7 @@ typedef struct {
     u8 field0;
     u8 field1;
     u8 pad2[14];
-    void (*callback)(void);
+    void (*callback)(u8 *);
     u8 pad20[4];
     void *arg;
     u16 extra;
@@ -26,16 +26,16 @@ typedef struct {
     u16 value;
 } Entry;
 
-extern Entry *func_003DA750(int, int, int);
-extern void func_00192BD0(void);
-extern void func_0019FF30(void);
-extern void func_001996B0(void);
-extern void func_0019CB50(void);
-extern void func_0019D5A0(void);
-extern void func_0019C870(void);
+extern void *func_003DA750(void *, int, int);
+extern void func_00192BD0(u8 *);
+extern void func_0019FF30(u8 *);
+extern void func_001996B0(u8 *);
+extern void func_0019CB50(u8 *);
+extern void func_0019D5A0(u8 *);
+extern void func_0019C870(u8 *);
 extern void func_001754A0(u8 *, int, int);
 extern int func_00417A40(u8 *);
-extern s8 func_00175670(u8 *);
+extern int func_00175670(u8 *);
 extern int func_00175700(u8 *);
 extern void func_001975C0(u8 *, u8 *);
 extern void func_0019C470(u8 *);
@@ -205,7 +205,7 @@ void func_0019A940(u8 *p)
 
 void func_0019A970(u8 *p, void *owner)
 {
-    s8 result = func_00175670(p);
+    s8 result = (s8)func_00175670(p);
     if (result < 0) {
         p[4]++;
         p[0x13C] = 0;

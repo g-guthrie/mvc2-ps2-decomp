@@ -1,3 +1,4 @@
+#include "mvc2_character_action_record_0044F2E0.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -28,7 +29,7 @@ void func_00180360(void) {
             }
             s0[0x13C] = *s0;
             func_001757E0(s0, 0, 0);
-            *(u8 **)(s0 + 0x43C) = D_004D1070 + s0[0x1B8] * 128;
+            *(Mvc2CharacterActionRecord112View **)(s0 + 0x43C) = (Mvc2CharacterActionRecord112View *)(D_004D1070 + s0[0x1B8] * 128);
             func_00180890(s0);
             *(u8 **)(s0 + 0x220) = D_004C2794->ent[i][0];
         }

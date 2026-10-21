@@ -1,6 +1,7 @@
+#include "mvc2_character_action_record_0044F2E0.h"
 typedef unsigned char u8;
 typedef unsigned int u32;
-extern u32 D_0044F2E0[];
+
 extern u32 D_0044F670[];
 extern u32 D_0044FBD0[];
 extern u32 D_0044FEE0[];
@@ -60,7 +61,7 @@ extern u32 D_0045D740[];
 extern u32 D_0045DA70[];
 extern u32 D_0045DE00[];
 
-void func_001E8FA0(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_0044F2E0[i]; }
+void func_001E8FA0(u8 *p) { Mvc2CharacterActionRecord112View *dst = *(Mvc2CharacterActionRecord112View **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst->copy_words[i] = D_0044F2E0.copy_words[i]; }
 void func_001EDBE0(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_0044F670[i]; }
 void func_001F72F0(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_0044FBD0[i]; }
 void func_001FBFD0(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_0044FEE0[i]; }

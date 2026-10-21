@@ -1,3 +1,4 @@
+#include "mvc2_character_action_record_0044F2E0.h"
 #include "cri_sj_ring_buffer_types.h"
 #include "cri_sj_memory_types.h"
 typedef unsigned char u8;
@@ -197,7 +198,7 @@ void func_001E7410(void) {}
 
 void func_001E7420(void) {}
 
-void func_001E9700(void) {}
+void func_001E9700(u8 *actor) {}
 
 s32 func_001ED0A0(void) { return 0; }
 

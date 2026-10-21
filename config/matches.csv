@@ -17737,3 +17737,4 @@ func_0021C9F0,0x0021C9F0,0x11C,src/predicate_chain_0021C9F0.c,complete
 func_0031B480,0x0031B480,0x178,src/input_action_0031B480.c,complete
 func_00152AD0,0x00152AD0,0x248,src/render_active_objects_00152AD0.c,complete
 func_00365870,0x00365870,0x2C0,src/owner_entry_motion_00365870.c,complete
+func_0019FF60,0x0019FF60,0xA4,src/record_header_copy_0019FF60.c,complete

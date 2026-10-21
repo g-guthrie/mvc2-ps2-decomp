@@ -2431,7 +2431,7 @@ data_u16_0044F2C8,0x0044F2C8,0x8,.data,src/data/data_u16_0044F2C8.c,interaction_
 data_interaction_header_0044F2D0,0x0044F2D0,0x4,.data,src/data/data_interaction_header_0044F2D0.c,interaction_filter_header
 data_raw_0044F2D4,0x0044F2D4,0x4,.data,src/data/data_raw_0044F2D4.c,raw_bytes
 data_u16_0044F2D8,0x0044F2D8,0x8,.data,src/data/data_u16_0044F2D8.c,interaction_state_masks
-jtbl_0044F2E0,0x0044F2E0,0x50,.rodata,src/data/jtbl_0044F2E0.c,jump_table
+jtbl_0044F2E0,0x0044F2E0,0x50,.rodata,src/data/jtbl_0044F2E0.c,typed_character_action_callback_prefix
 data_zero_0044F330,0x0044F330,0x20,.data,src/data/data_zero_0044F330.c,zero_initialized_untyped
 jtbl_0044F350,0x0044F350,0x78,.rodata,src/data/jtbl_0044F350.c,typed_state_callback_table
 jtbl_0044F3D0,0x0044F3D0,0x14,.rodata,src/data/jtbl_0044F3D0.c,typed_state_callback_table
