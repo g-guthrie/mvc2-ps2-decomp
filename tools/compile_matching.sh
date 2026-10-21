@@ -16677,5 +16677,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$MWCCPS2" -i src src/interaction_launch_00349240.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/interaction_launch_00349240.o"
 "$PYTHON" tools/verify_object.py "$BUILD/interaction_launch_00349240.o" private/SLUS_204.86.rom --source src/interaction_launch_00349240.c
 
+"$WIBO" "$MWCCPS2" -i src src/scene_orbit_0033C300.c -c -lang c -O3 -Op -fp off -sdatathreshold 0 -o "$BUILD/scene_orbit_0033C300.o"
+"$PYTHON" tools/verify_object.py "$BUILD/scene_orbit_0033C300.o" private/SLUS_204.86.rom --source src/scene_orbit_0033C300.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

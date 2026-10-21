@@ -11,7 +11,7 @@ extern u8 *D_004C2840;
 extern s8 D_004C2864;
 extern s8 D_004C285C;
 extern s8 D_004C286C;
-extern u8 D_004BF397[2];
+extern u8 D_004BF397[5];
 extern V3 D_004439C0[];
 
 void func_001486B0(u8 *p) {

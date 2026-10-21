@@ -17729,3 +17729,4 @@ func_00355930,0x00355930,0x13c,src/rotating_effect_countdown_00355930.c,complete
 func_0036D730,0x0036D730,0x78,src/linked_scaled_effect_setup_0036D730.c,complete
 func_0036D6C0,0x0036D6C0,0x6c,src/linked_effect_setup_0036D6C0.c,complete
 func_00349240,0x00349240,0xE0,src/interaction_launch_00349240.c,complete
+func_0033C300,0x0033C300,0x16C,src/scene_orbit_0033C300.c,complete
