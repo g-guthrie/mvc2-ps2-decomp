@@ -53,6 +53,10 @@ That function now returns its last allocated child pointer. The existing
 five-iteration loop always assigns the returned local, and the recovered
 caller uses its actual pointer/null contract.
 
+The new 001CCDA0 caller also consumes the allocation result from existing
+001CCC20. Its definition now returns that child pointer; all 108 bytes still
+match. This is another zero-credit return-contract correction.
+
 The new kernel patch routines install temporary copy and handler-lookup
 implementations before invoking those syscall slots. Six existing syscall
 primitives now declare their
@@ -86,7 +90,7 @@ actor parameter declarations were corrected in existing constructors.
 Every new function and each changed existing source unit was compiled with
 its production recipe and passed whole relocated-byte comparison. The
 readonly switch table also passed the production comparison. Against the
-preceding cached proof, 14,046 other source/object pairs and all 45 previous
+preceding cached proof, 14,045 other source/object pairs and all 45 previous
 headers remained unchanged; one shared actor-state header was added.
 
 All 95 tests pass. A fresh split, complete loaded-image relink, and deterministic
