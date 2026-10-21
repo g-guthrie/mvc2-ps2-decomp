@@ -1412,3 +1412,12 @@ void func_0041B0D0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, 
 void func_0041D6D0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0012AD00(a0, a1, a2, a3); }
 
 void func_00423890(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00103E10(a0, a1, a2, a3); }
+
+/* Native secondary entries retained beside the state dispatchers. */
+extern void func_00359A70(u8 *);
+void func_00359A90(u8 *state) { func_00359A70(state); }
+void func_00359AE0(u8 *state) { func_00359A70(state); }
+void func_00359B30(u8 *state) { (void)state; }
+void func_00359B80(u8 *state) { func_00359A70(state); }
+void func_00359BD0(u8 *state) { func_00359A70(state); }
+void func_00359C20(u8 *state) { func_00359A70(state); }

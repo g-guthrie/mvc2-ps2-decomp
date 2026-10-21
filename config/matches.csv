@@ -17479,3 +17479,9 @@ func_0040F228,0x0040F228,0xBC,src/cri_sj_memory_methods.c,complete
 func_0040F528,0x0040F528,0x8,src/cri_sj_memory_methods.c,complete
 func_0040F010,0x0040F010,0x1C,src/cri_sj_memory_methods.c,complete
 func_0040F530,0x0040F530,0x1C,src/cri_sj_memory_methods.c,complete
+func_00359A90,0x00359A90,0x8,src/tail_leaves.c,complete
+func_00359AE0,0x00359AE0,0x8,src/tail_leaves.c,complete
+func_00359B30,0x00359B30,0x8,src/tail_leaves.c,complete
+func_00359B80,0x00359B80,0x8,src/tail_leaves.c,complete
+func_00359BD0,0x00359BD0,0x8,src/tail_leaves.c,complete
+func_00359C20,0x00359C20,0x8,src/tail_leaves.c,complete
