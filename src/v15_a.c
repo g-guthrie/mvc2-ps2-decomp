@@ -214,7 +214,7 @@ void func_00177B90(u8 *p) {
 void func_00266F80(u8 *p) {
     extern s32 func_00267B00();
     extern s32 func_00267E40();
-    extern s32 func_00267D70();
+    extern s32 func_00267D70(u8 *, s32);
     extern void func_00267E20();
     extern s32 func_00175700();
     extern void func_001E3710();

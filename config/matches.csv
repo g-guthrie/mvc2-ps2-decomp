@@ -17567,3 +17567,4 @@ func_001D1C10,0x001D1C10,0x1FC,src/actor_emission_cycles_001CCF60.c,complete
 func_003A3050,0x003A3050,0x2E4,src/actor_lifecycle_003A3050.c,complete
 func_003AABB0,0x003AABB0,0x1E4,src/actor_input_motion_003AABB0.c,complete
 func_003AB270,0x003AB270,0x190,src/actor_input_motion_003AABB0.c,complete
+func_00267D70,0x00267D70,0xB0,src/signed_button_motion_00267d70.c,complete

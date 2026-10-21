@@ -16067,7 +16067,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -o "$BUILD/context_value_dispatch_003299F0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/context_value_dispatch_003299F0.o" private/SLUS_204.86.rom --source src/context_value_dispatch_003299F0.c
 
-PYTHON="$PYTHON" tools/compile_matching_data.sh
 
 # Two-player stage selection and formatted stage label.
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -16211,3 +16210,11 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_input_motion_003AABB0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_input_motion_003AABB0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_input_motion_003AABB0.o" private/SLUS_204.86.rom --source src/actor_input_motion_003AABB0.c
+
+# Signed button-driven actor motion; legacy compiler recipe verified whole.
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/signed_button_motion_00267d70.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/signed_button_motion_00267d70.o"
+"$PYTHON" tools/verify_object.py "$BUILD/signed_button_motion_00267d70.o" private/SLUS_204.86.rom --source src/signed_button_motion_00267d70.c
+
+# Compile data after every code owner, including compiler-owned switch tables.
+PYTHON="$PYTHON" tools/compile_matching_data.sh

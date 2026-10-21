@@ -1,15 +1,11 @@
-typedef unsigned char u8;
-typedef signed char s8;
 typedef unsigned short u16;
 typedef signed short s16;
-typedef unsigned int u32;
-typedef signed int s32;
+#include "runtime_span_types.h"
 typedef float f32;
 typedef unsigned long u64;
 
 /* EE GCC 2.96, small-data 8: ./tryee8.sh src/pw39_b.c sn */
 extern s32 D_004C24DC;
-extern u8 D_00494DD8[];
 extern void func_0011D8F8(void *, s32, s32);
 void func_0040FD38(void) {
     if (D_004C24DC == 0) func_0011D8F8(D_00494DD8, 0, 0xC00);

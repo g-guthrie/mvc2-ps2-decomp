@@ -1,9 +1,4 @@
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef signed short s16;
-typedef unsigned int u32;
-typedef signed int s32;
+#include "runtime_span_types.h"
 extern void func_0011D8F8(void *, s32, s32);
 extern s32 D_004C2420;
 extern u8 D_00485F80[];
@@ -19,7 +14,6 @@ void func_00405170(void) {
 }
 
 extern s32 D_004C24DC;
-extern u8 D_00494DD8[];
 void func_0040FD78(void) {
     s32 v = D_004C24DC - 1;
     D_004C24DC = v;

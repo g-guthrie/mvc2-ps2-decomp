@@ -21,8 +21,8 @@ void func_0040B220(HtciFileRequest *p)
             p->request_handle_2c = 0;
             break;
         case 3:
-            p->raw_28_2b.word = p->requested_bytes_24;
-            p->progress_1c += p->requested_bytes_24;
+            p->completed_blocks_28 = p->requested_blocks_24;
+            p->progress_blocks_1c += p->requested_blocks_24;
             p->operation_state = 1;
             func_00407C80(p->request_handle_2c);
             p->request_handle_2c = 0;

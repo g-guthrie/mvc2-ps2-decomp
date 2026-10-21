@@ -23,8 +23,8 @@ jobs:
         run: PYTHONPATH=. python -m unittest tools.test_project tools.test_progress_catalog tools.test_hybrid_relink tools.test_pack_retail_elf tools.test_verify_object tools.test_compiled_switch_data tools.test_sony29_tools
       - name: Test command-stream parsing and label provenance
         run: PYTHONPATH=. python -m unittest discover -s tests
-      - name: Validate progress catalog
-        run: PYTHONPATH=. python -m tools.validate_progress_catalog
+      - name: Validate build wiring and progress catalog
+        run: make progress-check
       - name: Generate objdiff v2 report
         run: PYTHONPATH=. python -m tools.objdiff_report --report build-report/report.json --svg assets/progress.svg
       - name: Check progress graphic
