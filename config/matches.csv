@@ -11055,7 +11055,7 @@ func_00410DC8,0x00410DC8,0x90,src/k0.c,complete
 func_00400528,0x00400528,0x9C,src/k0.c,complete
 func_0010CD08,0x0010CD08,0x38,src/sony29_word_copies.c,complete
 func_0010CAD8,0x0010CAD8,0x38,src/sony29_word_copies.c,complete
-func_00416A00,0x00416A00,0x50,src/k0a.c,placeholder
+func_00416A00,0x00416A00,0x50,src/serialized_resource_lookups.c,complete
 func_00411898,0x00411898,0x10,src/k0b.c,complete
 func_00411858,0x00411858,0x3C,src/k0b.c,complete
 func_00400008,0x00400008,0x18,src/k1.c,complete
@@ -17580,3 +17580,10 @@ func_003A16D0,0x003A16D0,0x294,src/actor_launch_patterns_003A16D0.c,complete
 func_003A1970,0x003A1970,0x25C,src/actor_launch_patterns_003A16D0.c,complete
 func_003B84C0,0x003B84C0,0x1D0,src/actor_randomized_start_003B84C0.c,complete
 func_001DC820,0x001DC820,0x11C,src/actor_owner_resume_001DC820.c,complete
+func_001CE330,0x001CE330,0x140,src/actor_phase_setups_001CE330.c,complete
+func_001CE550,0x001CE550,0xF4,src/actor_phase_setups_001CE330.c,complete
+func_001D24C0,0x001D24C0,0xFC,src/actor_phase_setups_001CE330.c,complete
+func_001D1030,0x001D1030,0x128,src/actor_phase_setups_001CE330.c,complete
+func_003B7B00,0x003B7B00,0x208,src/actor_setup_3B7B00.c,complete
+func_003B7630,0x003B7630,0x1A0,src/actor_setup_3B7630.c,complete
+func_00416180,0x00416180,0x50,src/serialized_resource_lookups.c,complete

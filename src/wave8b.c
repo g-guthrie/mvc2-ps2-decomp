@@ -16,8 +16,8 @@ extern void func_001E3CE0();
 extern void func_003DA6F0();
 extern void func_003D7310();
 extern void func_001527F0();
-extern u8 *func_00416180();
-extern void func_00176230();
+extern u8 *func_00416180(void *, int);
+extern void func_00176230(short *, short *);
 extern u8 D_00446C08[];
 
 void func_003C84E0(u8 *p, float x, float y) {
@@ -48,6 +48,6 @@ void func_001765C0(void) {
 void func_001E6610(u8 *a, s32 n) {
     u8 *r;
     if (n >= 0x1B) n -= 3;
-    r = func_00416180(D_004C28BC + 0x100000, n);
-    func_00176230(r, D_004C28BC + 0x300000 + ((u32)a << 17));
+    r = func_00416180((void *)(D_004C28BC + 0x100000), n);
+    func_00176230((short *)r, (short *)(D_004C28BC + 0x300000 + ((u32)a << 17)));
 }

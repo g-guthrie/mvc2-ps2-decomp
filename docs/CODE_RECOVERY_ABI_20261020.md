@@ -137,3 +137,22 @@ add zero credit; the wider callback-table ISO C limitation remains documented.
 Six complete production units verify 212 functions. All 95 tests, build/catalog
 gates, fresh split, loaded ROM and packed ELF comparisons pass. Frozen evidence:
 `private/code-lane/round14/root/FINAL_VERIFICATION.json`.
+
+### Phase setups, action starts and serialized lookups: 2,208 new C bytes
+
+Four early phase setups add 1,112 bytes, two action starts add 936 bytes and
+two directory lookups add 160 bytes. Native callback entries and full extents
+are verified; 16 leading padding bytes remain excluded. Serialized offsets
+are decoded with target-width unsigned address arithmetic, allowing payloads
+outside the directory array. Three caller units use the actual pointer result
+and the decompressor's signed-halfword pointer contract. The now-obsolete k0a
+assembly placeholder and its production recipe are removed.
+
+The 474270 consumer proves float XY pairs by full float loads/arithmetic. Its
+separate typed DATA replacement proposal remains for the DATA owner; CODE
+changes no DATA definition or credit. The other action start uses existing
+bounded float tables and their actual declared record fields.
+
+Seven production units verify 25 functions, including 17 existing caller-owned
+functions. All 95 tests, build/catalog gates and both complete retail image
+comparisons pass. Evidence: `private/code-lane/round15/root/FINAL_VERIFICATION.json`.

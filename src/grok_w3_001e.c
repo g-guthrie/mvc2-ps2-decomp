@@ -9,8 +9,8 @@ extern void func_001E3710(u8 *, int);
 extern void func_001E3240(u8 *, int);
 extern u8 D_004B6A68[];
 
-extern u8 *func_00416180(u8 *, int);
-extern void func_00176230(u8 *, u8 *);
+extern u8 *func_00416180(void *, int);
+extern void func_00176230(short *, short *);
 extern void func_001E5F40(int, u8 *);
 extern u8 *D_004C28B0;
 extern void func_001E56C0(int);
@@ -57,7 +57,7 @@ void func_001E3BB0(u8 *p, int a1) {
 
 void func_001E7470(u8 *p) {
     u8 *r = func_00416180(*(u8 **)(p + 404), 1);
-    func_00176230(r, D_004C28B0);
+    func_00176230((short *)r, (short *)D_004C28B0);
     func_001E5F40(((int)p[440] >> 1) + 3238, D_004C28B0);
 }
 
@@ -80,7 +80,7 @@ void func_001FD3F0(u8 *p) {
 
 void func_001E7430(u8 *p) {
     u8 *r = func_00416180(*(u8 **)(p + 404), 0);
-    func_00176230(r, D_004C28B0);
+    func_00176230((short *)r, (short *)D_004C28B0);
     func_001E5F40(3225, D_004C28B0);
 }
 

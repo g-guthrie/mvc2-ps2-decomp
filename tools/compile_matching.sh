@@ -5680,10 +5680,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 "$BUILD/k0.i" "$BUILD/k0.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/k0.o" "$BUILD/k0.s"
 "$PYTHON" tools/verify_object.py "$BUILD/k0.o" private/SLUS_204.86.rom --source src/k0.c
-"$WIBO" "$SNCPP" -P src/k0a.c "$BUILD/k0a.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 "$BUILD/k0a.i" "$BUILD/k0a.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/k0a.o" "$BUILD/k0a.s"
-"$PYTHON" tools/verify_object.py "$BUILD/k0a.o" private/SLUS_204.86.rom --source src/k0a.c
 "$WIBO" "$SNCPP" -P src/k0b.c "$BUILD/k0b.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 "$BUILD/k0b.i" "$BUILD/k0b.s"
 "$WIBO" "$SNAS" -G8 -o "$BUILD/k0b.o" "$BUILD/k0b.s"
@@ -16238,6 +16234,18 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 
 "$WIBO" "$MWCCPS2_30" -i src src/actor_owner_resume_001DC820.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_owner_resume_001DC820.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_owner_resume_001DC820.o" private/SLUS_204.86.rom --source src/actor_owner_resume_001DC820.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_phase_setups_001CE330.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_phase_setups_001CE330.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_phase_setups_001CE330.o" private/SLUS_204.86.rom --source src/actor_phase_setups_001CE330.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_setup_3B7B00.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_setup_3B7B00.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_setup_3B7B00.o" private/SLUS_204.86.rom --source src/actor_setup_3B7B00.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_setup_3B7630.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_setup_3B7630.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_setup_3B7630.o" private/SLUS_204.86.rom --source src/actor_setup_3B7630.c
+
+"$WIBO" "$MWCCPS2" -i src src/serialized_resource_lookups.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/serialized_resource_lookups.o"
+"$PYTHON" tools/verify_object.py "$BUILD/serialized_resource_lookups.o" private/SLUS_204.86.rom --source src/serialized_resource_lookups.c
 
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

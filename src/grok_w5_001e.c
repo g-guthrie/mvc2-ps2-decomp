@@ -16,8 +16,8 @@ extern void func_001E46C0(s32);
 extern void func_001E24E0(u8 *, s32);
 extern void func_001E2420(u8 *, s32);
 extern void func_001E3710(u8 *, s32);
-extern s32 func_00416180(void *, s32);
-extern void func_00176230(s32, u8 *);
+extern u8 *func_00416180(void *, int);
+extern void func_00176230(short *, short *);
 extern void func_001E5F40(s32, u8 *);
 extern void func_001E56C0(u8);
 extern void func_00402BC0(s32);
@@ -66,8 +66,8 @@ void func_001E3C00(u8 *p)
 
 void func_001E7430(u8 *p)
 {
-    s32 r = func_00416180(*(void **)(p + 0x194), 0);
-    func_00176230(r, D_004C28B0);
+    u8 *r = func_00416180(*(void **)(p + 0x194), 0);
+    func_00176230((short *)r, (short *)D_004C28B0);
     func_001E5F40(0xC99, D_004C28B0);
 }
 
