@@ -1,0 +1,1 @@
+const double gNewlibSin_S2_004AC0A8 = 0.00833333333332249;

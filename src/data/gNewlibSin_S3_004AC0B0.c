@@ -1,0 +1,1 @@
+const double gNewlibSin_S3_004AC0B0 = -0.0001984126982985795;
