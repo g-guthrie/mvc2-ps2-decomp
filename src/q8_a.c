@@ -175,7 +175,7 @@ s32 func_00167310(u8 *p, s32 b) {
     return 0;
 }
 
-typedef struct { f32 a; f32 lim; f32 c; } T7F30;
+typedef struct { f32 x; f32 y; f32 z; } T7F30;
 extern T7F30 D_004B7F30[];
 void func_003363F0(u8 *p) {
     T7F30 *t = D_004B7F30;
@@ -185,10 +185,10 @@ void func_003363F0(u8 *p) {
     v = *(f32 *)(p + 0x60);
     t += i;
     *(f32 *)(p + 0x38) = v;
-    if (v <= t->lim) {
+    if (v <= t->y) {
         *(u32 *)(p + 0x60) = 0;
         *(u32 *)(p + 0x6C) = 0;
-        *(f32 *)(p + 0x38) = t->lim;
+        *(f32 *)(p + 0x38) = t->y;
         p[7] = 0;
         p[5] = 0;
     }

@@ -16376,5 +16376,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py "$BUILD/func_00231490.o" \
     private/SLUS_204.86.rom --source src/func_00231490.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/func_00277D40.c -c -lang c -O3 -sdatathreshold 0 \
+    -o "$BUILD/func_00277D40.o"
+"$PYTHON" tools/verify_object.py "$BUILD/func_00277D40.o" \
+    private/SLUS_204.86.rom --source src/func_00277D40.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

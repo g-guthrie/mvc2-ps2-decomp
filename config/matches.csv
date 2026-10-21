@@ -17624,3 +17624,4 @@ func_003A7110,0x003A7110,0x170,src/actor_fall_transition_003A7110.c,complete
 func_00109690,0x00109690,0xC8,src/sony29_fileio_descriptor_create_00109690.c,complete
 func_003B9A90,0x003B9A90,0x164,src/actor_random_burst_003B9A90.c,complete
 func_00231490,0x00231490,0x158,src/func_00231490.c,complete
+func_00277D40,0x00277D40,0x190,src/func_00277D40.c,complete
