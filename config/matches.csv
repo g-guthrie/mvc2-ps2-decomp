@@ -17630,3 +17630,4 @@ func_003B0BC0,0x003B0BC0,0xA8,src/actor_direction_timer_003B0BC0.c,complete
 func_0041CCA0,0x0041CCA0,0x78,src/grid_code_lookup_0041CCA0.c,complete
 func_001B1D20,0x001B1D20,0x1B8,src/actor_parent_edge_setups_001B1D20.c,complete
 func_001B1EE0,0x001B1EE0,0x1A8,src/actor_parent_edge_setups_001B1D20.c,complete
+func_00366CA0,0x00366CA0,0x164,src/luna_r_00366ca0.c,complete
