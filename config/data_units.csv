@@ -2453,7 +2453,13 @@ data_u32_0044F530,0x0044F530,0x40,.data,src/data/data_u32_0044F530.c,initialized
 data_zero_0044F570,0x0044F570,0x20,.data,src/data/data_zero_0044F570.c,zero_initialized_untyped
 data_u32_0044F590,0x0044F590,0x10,.data,src/data/data_u32_0044F590.c,initialized_u32_table
 data_u32_0044F5B0,0x0044F5B0,0xC0,.data,src/data/data_u32_0044F5B0.c,initialized_u32_table
-jtbl_0044F670,0x0044F670,0x50,.rodata,src/data/jtbl_0044F670.c,jump_table
+jtbl_0044F670,0x0044F670,0x14,.rodata,src/data/jtbl_0044F670.c,typed_action_callback_run
+data_callback_fields_0044F688,0x0044F688,0xc,.rodata,src/data/data_callback_fields_0044F688.c,typed_action_callback_run
+data_callback_fields_0044F698,0x0044F698,0x14,.rodata,src/data/data_callback_fields_0044F698.c,typed_action_callback_run
+data_callback_fields_0044F6B0,0x0044F6B0,0x10,.rodata,src/data/data_callback_fields_0044F6B0.c,typed_action_callback_run
+data_callback_raw_0044F684,0x0044F684,0x4,.data,src/data/data_callback_raw_0044F684.c,opaque_action_callback_slot
+data_callback_raw_0044F694,0x0044F694,0x4,.data,src/data/data_callback_raw_0044F694.c,opaque_action_callback_slot
+data_callback_raw_0044F6AC,0x0044F6AC,0x4,.data,src/data/data_callback_raw_0044F6AC.c,opaque_action_callback_slot
 data_zero_0044F6C0,0x0044F6C0,0x10,.data,src/data/data_zero_0044F6C0.c,zero_initialized_untyped
 data_u32_0044F6D0,0x0044F6D0,0x10,.data,src/data/data_u32_0044F6D0.c,initialized_u32_table
 jtbl_0044F6E0,0x0044F6E0,0x2c,.rodata,src/data/jtbl_0044F6E0.c,typed_state_callback_table

@@ -1,23 +1,13 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_0044F670[20] = {
-    (unsigned int)0x001EE9E0,
-    (unsigned int)0x001EDC90,
-    (unsigned int)0x001EF430,
-    (unsigned int)0x001EFE40,
-    (unsigned int)0x001EFFB0,
-    (unsigned int)0x001F01F0,
-    (unsigned int)0x001F0200,
-    (unsigned int)0x001F03A0,
-    (unsigned int)0x001F0400,
-    (unsigned int)0x001F6160,
-    (unsigned int)0x001F6660,
-    (unsigned int)0x001F6FF0,
-    (unsigned int)0x001F7020,
-    (unsigned int)0x001EE960,
-    (unsigned int)0x001F5F80,
-    (unsigned int)0x001EFE60,
-    (unsigned int)0x001F70C0,
-    (unsigned int)0x001F7120,
-    (unsigned int)0x001F7180,
-    (unsigned int)0x001F71F0,
+#include "mvc2_character_action_record_0044F670.h"
+extern void func_001EE9E0(unsigned char *);
+extern void func_001EDC90(unsigned char *);
+extern void func_001EF430(unsigned char *);
+extern void func_001EFE40(unsigned char *);
+extern void func_001EFFB0(unsigned char *);
+const Mvc2F670Slots0To4 jtbl_0044F670 = {
+    func_001EE9E0,
+    func_001EDC90,
+    func_001EF430,
+    func_001EFE40,
+    func_001EFFB0,
 };

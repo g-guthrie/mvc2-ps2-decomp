@@ -70,9 +70,9 @@ s32 func_001C8570(u8 *p, u8 *q)
     return r;
 }
 
-void func_001DC1A0(u8 *p, u8 *q)
+void func_001DC1A0(u8 *p)
 {
-    q = P(p, 24);
+    u8 *q = P(p, 24);
     if (p[33] != 0)
         *(s32 *)(q + 724) = 4;
     if (p[32] == 0)
