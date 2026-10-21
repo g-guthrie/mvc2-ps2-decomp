@@ -1763,13 +1763,13 @@ data_u32_0044C290,0x0044C290,0xF0,src/data/data_u32_0044C290.c,complete,placehol
 data_zero_0044C380,0x0044C380,0x10,src/data/data_zero_0044C380.c,complete,placeholder
 jtbl_0044C390,0x0044C390,0x1c,src/data/jtbl_0044C390.c,complete,reconstructed
 jtbl_0044C3B0,0x0044C3B0,0x10,src/data/jtbl_0044C3B0.c,complete,reconstructed
+data_records_0044C3C0,0x0044C3C0,0x60,src/data/data_records_0044C3C0.c,complete,reconstructed
 jtbl_0044C420,0x0044C420,0x50,src/data/jtbl_0044C420.c,complete,reconstructed
 data_u32_0044C470,0x0044C470,0x8,src/data/data_u32_0044C470.c,complete,placeholder
 data_f32_one_0044C478,0x0044C478,0x8,src/data/data_f32_one_0044C478.c,complete,placeholder
 data_u32_0044C480,0x0044C480,0x10,src/data/data_u32_0044C480.c,complete,placeholder
 jtbl_0044C490,0x0044C490,0x44,src/data/jtbl_0044C490.c,complete,placeholder
 jtbl_0044C4E0,0x0044C4E0,0x50,src/data/jtbl_0044C4E0.c,complete,reconstructed
-data_records_0044C3C0,0x0044C3C0,0x60,src/data/data_records_0044C3C0.c,complete,reconstructed
 data_effect_launch_header_0044C530,0x0044C530,0x3,src/data/data_effect_launch_header_0044C530.c,complete,reconstructed
 data_raw_0044C533,0x0044C533,0x1,src/data/data_raw_0044C533.c,complete,placeholder
 data_effect_launch_motion_0044C534,0x0044C534,0x6,src/data/data_effect_launch_motion_0044C534.c,complete,reconstructed
@@ -7278,14 +7278,17 @@ data_raw_004AD0C8,0x004AD0C8,0x1,src/data/data_raw_004AD0C8.c,complete,placehold
 data_u8_004AD0C9,0x004AD0C9,0x2,src/data/data_u8_004AD0C9.c,complete,reconstructed
 data_raw_004AD0CB,0x004AD0CB,0x5,src/data/data_raw_004AD0CB.c,complete,placeholder
 jtbl_004AD0F0,0x004AD0F0,0x28,src/data/jtbl_004AD0F0.c,complete,reconstructed
-jtbl_004AD120,0x004AD120,0x18,src/data/jtbl_004AD120.c,complete,placeholder
-jtbl_004AD140,0x004AD140,0x48,src/data/jtbl_004AD140.c,complete,placeholder
-jtbl_004AD190,0x004AD190,0x70,src/data/jtbl_004AD190.c,complete,placeholder
+jtbl_004AD120,0x004AD120,0x18,src/data/jtbl_004AD120.c,complete,reconstructed
+jtbl_004AD140,0x004AD140,0x30,src/data/jtbl_004AD140.c,complete,reconstructed
+data_raw_004AD170,0x004AD170,0x18,src/data/data_raw_004AD170.c,complete,placeholder
+jtbl_004AD190,0x004AD190,0x30,src/data/jtbl_004AD190.c,complete,reconstructed
+data_raw_004AD1C0,0x004AD1C0,0x40,src/data/data_raw_004AD1C0.c,complete,placeholder
 data_u32_004AD200,0x004AD200,0xC0,src/data/data_u32_004AD200.c,complete,reconstructed
 jtbl_004AD2C0,0x004AD2C0,0x74,src/data/jtbl_004AD2C0.c,complete,reconstructed
 data_u32_004AD340,0x004AD340,0x2000,src/data/data_u32_004AD340.c,complete,placeholder
 data_u32_004AF340,0x004AF340,0x1D60,src/data/data_u32_004AF340.c,complete,placeholder
-jtbl_004B10A0,0x004B10A0,0x48,src/data/jtbl_004B10A0.c,complete,placeholder
+jtbl_004B10A0,0x004B10A0,0x30,src/data/jtbl_004B10A0.c,complete,reconstructed
+data_raw_004B10D0,0x004B10D0,0x18,src/data/data_raw_004B10D0.c,complete,placeholder
 jtbl_004B10F0,0x004B10F0,0x34,src/data/jtbl_004B10F0.c,complete,reconstructed
 gUiDecimal3Format_004B1130,0x004B1130,0x4,src/data/gUiDecimal3Format_004B1130.c,complete,reconstructed
 data_u8_004B1134,0x004B1134,0x4,src/data/data_u8_004B1134.c,complete,placeholder
@@ -7475,7 +7478,8 @@ data_zero_004B36B1,0x004B36B1,0xF,src/data/data_zero_004B36B1.c,complete,placeho
 gR2ButtonSettingPrompt_004B36C0,0x004B36C0,0x11,src/data/gR2ButtonSettingPrompt_004B36C0.c,complete,reconstructed
 data_zero_004B36D1,0x004B36D1,0xF,src/data/data_zero_004B36D1.c,complete,placeholder
 data_button_config_render_004B36E0,0x004B36E0,0x150,src/data/data_button_config_render_004B36E0.c,complete,reconstructed
-jtbl_004B3830,0x004B3830,0x60,src/data/jtbl_004B3830.c,complete,placeholder
+jtbl_004B3830,0x004B3830,0x30,src/data/jtbl_004B3830.c,complete,reconstructed
+data_raw_004B3860,0x004B3860,0x30,src/data/data_raw_004B3860.c,complete,placeholder
 gPlayerFormat_004B3890,0x004B3890,0x9,src/data/gPlayerFormat_004B3890.c,complete,reconstructed
 data_raw_004B3899,0x004B3899,0x7,src/data/data_raw_004B3899.c,complete,placeholder
 gDtrDecimalFormat_004B38A0,0x004B38A0,0x3,src/data/gDtrDecimalFormat_004B38A0.c,complete,reconstructed
@@ -7512,7 +7516,7 @@ data_u32_004B3D24,0x004B3D24,0xC,src/data/data_u32_004B3D24.c,complete,placehold
 data_f32_one_004B3D30,0x004B3D30,0x40,src/data/data_f32_one_004B3D30.c,complete,reconstructed
 gMvc2ChildLifeTable_004B3D70,0x004B3D70,0x20,src/data/child_life_table_004B3D70.c,complete,reconstructed
 data_u32_004B3D90,0x004B3D90,0x10,src/data/data_u32_004B3D90.c,complete,placeholder
-jtbl_004B3DA0,0x004B3DA0,0x18,src/data/jtbl_004B3DA0.c,complete,placeholder
+jtbl_004B3DA0,0x004B3DA0,0x18,src/data/jtbl_004B3DA0.c,complete,reconstructed
 data_u32_004B3DC0,0x004B3DC0,0x4,src/data/data_u32_004B3DC0.c,complete,placeholder
 data_f32_one_004B3DC4,0x004B3DC4,0x18,src/data/data_f32_one_004B3DC4.c,complete,placeholder
 data_u32_004B3DDC,0x004B3DDC,0x38,src/data/data_u32_004B3DDC.c,complete,placeholder
@@ -7621,7 +7625,7 @@ data_f32v4_004B59F0,0x004B59F0,0xA0,src/data/data_f32v4_004B59F0.c,complete,reco
 data_f32v2_004B5A90,0x004B5A90,0x50,src/data/data_f32v2_004B5A90.c,complete,reconstructed
 data_f32v2_004B5AE0,0x004B5AE0,0x50,src/data/data_f32v2_004B5AE0.c,complete,reconstructed
 jtbl_004B5B30,0x004B5B30,0x18,src/data/jtbl_004B5B30.c,complete,placeholder
-jtbl_004B5B50,0x004B5B50,0x18,src/data/jtbl_004B5B50.c,complete,placeholder
+jtbl_004B5B50,0x004B5B50,0x18,src/data/jtbl_004B5B50.c,complete,reconstructed
 data_ff_004B5B70,0x004B5B70,0x8,src/data/data_ff_004B5B70.c,complete,placeholder
 data_u32_004B5B78,0x004B5B78,0x18,src/data/data_u32_004B5B78.c,complete,placeholder
 data_ff_004B5B90,0x004B5B90,0x20,src/data/data_ff_004B5B90.c,complete,placeholder
@@ -7765,7 +7769,7 @@ gScoreboardWinPrefix_004B7060,0x004B7060,0x3,src/data/gScoreboardWinPrefix_004B7
 data_u8_004B7063,0x004B7063,0xD,src/data/data_u8_004B7063.c,complete,placeholder
 jtbl_004B7070,0x004B7070,0x80,src/data/jtbl_004B7070.c,complete,reconstructed
 data_u32_004B70F0,0x004B70F0,0x10,src/data/data_u32_004B70F0.c,complete,placeholder
-jtbl_004B7100,0x004B7100,0x18,src/data/jtbl_004B7100.c,complete,placeholder
+jtbl_004B7100,0x004B7100,0x18,src/data/jtbl_004B7100.c,complete,reconstructed
 data_raw_004B7120,0x004B7120,0x10,src/data/data_raw_004B7120.c,complete,placeholder
 data_u8_004B7130,0x004B7130,0x1,src/data/data_u8_004B7130.c,complete,reconstructed
 data_raw_004B7131,0x004B7131,0x1,src/data/data_raw_004B7131.c,complete,placeholder
@@ -7865,7 +7869,7 @@ jtbl_004B7550,0x004B7550,0x1c,src/data/jtbl_004B7550.c,complete,reconstructed
 data_raw_004B7570,0x004B7570,0x3A,src/data/data_raw_004B7570.c,complete,placeholder
 data_u8_004B75AA,0x004B75AA,0x1,src/data/data_u8_004B75AA.c,complete,reconstructed
 data_raw_004B75AB,0x004B75AB,0x45,src/data/data_raw_004B75AB.c,complete,placeholder
-jtbl_004B75F0,0x004B75F0,0x18,src/data/jtbl_004B75F0.c,complete,placeholder
+jtbl_004B75F0,0x004B75F0,0x18,src/data/jtbl_004B75F0.c,complete,reconstructed
 jtbl_004B7610,0x004B7610,0x20,src/data/jtbl_004B7610.c,complete,reconstructed
 data_u8_004B7630,0x004B7630,0x12,src/data/data_u8_004B7630.c,complete,reconstructed
 data_u8_004B7642,0x004B7642,0xE,src/data/data_u8_004B7642.c,complete,placeholder
@@ -7941,7 +7945,7 @@ data_f32_one_004B8280,0x004B8280,0xC,src/data/data_f32_one_004B8280.c,complete,r
 data_u32_004B828C,0x004B828C,0x4,src/data/data_u32_004B828C.c,complete,placeholder
 data_vec3_004B8290,0x004B8290,0xC,src/data/data_vec3_004B8290.c,complete,reconstructed
 data_u32_004B829C,0x004B829C,0x34,src/data/data_u32_004B829C.c,complete,placeholder
-jtbl_004B82D0,0x004B82D0,0x18,src/data/jtbl_004B82D0.c,complete,placeholder
+jtbl_004B82D0,0x004B82D0,0x18,src/data/jtbl_004B82D0.c,complete,reconstructed
 data_u32_004B82F0,0x004B82F0,0xC0,src/data/data_u32_004B82F0.c,complete,placeholder
 jtbl_004B83B0,0x004B83B0,0x1c,src/data/jtbl_004B83B0.c,complete,reconstructed
 data_u32_004B83D0,0x004B83D0,0x88,src/data/data_u32_004B83D0.c,complete,placeholder
@@ -7949,7 +7953,7 @@ data_u32_004B8458,0x004B8458,0xC,src/data/data_u32_004B8458.c,complete,placehold
 data_u32_004B8464,0x004B8464,0x30,src/data/data_u32_004B8464.c,complete,placeholder
 data_u32_004B8494,0x004B8494,0x14,src/data/data_u32_004B8494.c,complete,placeholder
 data_u32_004B84A8,0x004B84A8,0x38,src/data/data_u32_004B84A8.c,complete,placeholder
-jtbl_004B84E0,0x004B84E0,0x18,src/data/jtbl_004B84E0.c,complete,placeholder
+jtbl_004B84E0,0x004B84E0,0x18,src/data/jtbl_004B84E0.c,complete,reconstructed
 data_raw_004B8500,0x004B8500,0x78,src/data/data_raw_004B8500.c,complete,placeholder
 gSystemLabel_004B8578,0x004B8578,0x4,src/data/gSystemLabel_004B8578.c,complete,reconstructed
 data_raw_004B857C,0x004B857C,0x1C,src/data/data_raw_004B857C.c,complete,placeholder
@@ -7966,9 +7970,9 @@ gBootNetworkFilenamePathFormat_004B85F8,0x004B85F8,0x9,src/data/gBootNetworkFile
 data_zero_004B8601,0x004B8601,0xF,src/data/data_zero_004B8601.c,complete,placeholder
 gBootNetworkPathPrefixFormat_004B8610,0x004B8610,0x14,src/data/gBootNetworkPathPrefixFormat_004B8610.c,complete,reconstructed
 data_u8_004B8624,0x004B8624,0x13C,src/data/data_u8_004B8624.c,complete,placeholder
-jtbl_004B8760,0x004B8760,0x18,src/data/jtbl_004B8760.c,complete,placeholder
-jtbl_004B8780,0x004B8780,0x18,src/data/jtbl_004B8780.c,complete,placeholder
-jtbl_004B87A0,0x004B87A0,0x18,src/data/jtbl_004B87A0.c,complete,placeholder
+jtbl_004B8760,0x004B8760,0x18,src/data/jtbl_004B8760.c,complete,reconstructed
+jtbl_004B8780,0x004B8780,0x18,src/data/jtbl_004B8780.c,complete,reconstructed
+jtbl_004B87A0,0x004B87A0,0x18,src/data/jtbl_004B87A0.c,complete,reconstructed
 jtbl_004B87C0,0x004B87C0,0x5c,src/data/jtbl_004B87C0.c,complete,reconstructed
 jtbl_004B8820,0x004B8820,0x1c,src/data/jtbl_004B8820.c,complete,reconstructed
 jtbl_004B8840,0x004B8840,0x40,src/data/jtbl_004B8840.c,complete,placeholder
@@ -8125,7 +8129,8 @@ data_button_config_render_004B9208,0x004B9208,0x128,src/data/data_button_config_
 jtbl_004B9330,0x004B9330,0x24,src/data/jtbl_004B9330.c,complete,reconstructed
 data_u32_004B9360,0x004B9360,0x10,src/data/data_u32_004B9360.c,complete,placeholder
 data_zero_004B9370,0x004B9370,0x10,src/data/data_zero_004B9370.c,complete,placeholder
-jtbl_004B9380,0x004B9380,0x68,src/data/jtbl_004B9380.c,complete,placeholder
+jtbl_004B9380,0x004B9380,0x30,src/data/jtbl_004B9380.c,complete,reconstructed
+data_raw_004B93B0,0x004B93B0,0x38,src/data/data_raw_004B93B0.c,complete,placeholder
 data_u8_004B93F0,0x004B93F0,0x8,src/data/data_u8_004B93F0.c,complete,placeholder
 gUiHex8Format_004B93F8,0x004B93F8,0x5,src/data/gUiHex8Format_004B93F8.c,complete,reconstructed
 data_u8_004B93FD,0x004B93FD,0x3,src/data/data_u8_004B93FD.c,complete,placeholder
@@ -8420,6 +8425,7 @@ gMvc2ActionDispatch_004BA540,0x004BA540,0x20,src/data/mvc2_action_dispatch_004BA
 jtbl_004BA560,0x004BA560,0x170,src/data/jtbl_004BA560.c,complete,reconstructed
 jtbl_004BA6D0,0x004BA6D0,0x20,src/data/jtbl_004BA6D0.c,complete,reconstructed
 jtbl_004BA6F0,0x004BA6F0,0x18,src/data/jtbl_004BA6F0.c,complete,reconstructed
+data_raw_004BA708,0x004BA708,0x8,src/data/data_raw_004BA708.c,complete,placeholder
 gTextureAllocError_004BA710,0x004BA710,0x51,src/data/gTextureAllocError_004BA710.c,complete,reconstructed
 data_raw_004BA761,0x004BA761,0xF,src/data/data_raw_004BA761.c,complete,placeholder
 gUnsupportedTextureDepth_004BA770,0x004BA770,0x40,src/data/gUnsupportedTextureDepth_004BA770.c,complete,reconstructed
@@ -8467,8 +8473,8 @@ gClayHandleError_004BABA0,0x004BABA0,0x2B,src/data/gClayHandleError_004BABA0.c,c
 data_raw_004BABCB,0x004BABCB,0x5,src/data/data_raw_004BABCB.c,complete,placeholder
 gClayFormatError_004BABD0,0x004BABD0,0x25,src/data/gClayFormatError_004BABD0.c,complete,reconstructed
 data_raw_004BABF5,0x004BABF5,0xB,src/data/data_raw_004BABF5.c,complete,placeholder
-jtbl_004BAC00,0x004BAC00,0x18,src/data/jtbl_004BAC00.c,complete,placeholder
-jtbl_004BAC20,0x004BAC20,0x18,src/data/jtbl_004BAC20.c,complete,placeholder
+jtbl_004BAC00,0x004BAC00,0x18,src/data/jtbl_004BAC00.c,complete,reconstructed
+jtbl_004BAC20,0x004BAC20,0x18,src/data/jtbl_004BAC20.c,complete,reconstructed
 data_u8_004BAC40,0x004BAC40,0x8,src/data/data_u8_004BAC40.c,complete,placeholder
 gAdxRnaOutputMode_004BAC48,0x004BAC48,0x3,src/data/gAdxRnaOutputMode_004BAC48.c,complete,reconstructed
 data_u8_004BAC4B,0x004BAC4B,0x5,src/data/data_u8_004BAC4B.c,complete,placeholder
@@ -9115,7 +9121,7 @@ gHstPfsPathFormat_004BEE20,0x004BEE20,0xC,src/data/gHstPfsPathFormat_004BEE20.c,
 data_u8_004BEE2C,0x004BEE2C,0x4,src/data/data_u8_004BEE2C.c,complete,placeholder
 gHstFilesystemName_004BEE30,0x004BEE30,0x4,src/data/gHstFilesystemName_004BEE30.c,complete,reconstructed
 data_u8_004BEE34,0x004BEE34,0xC,src/data/data_u8_004BEE34.c,complete,placeholder
-jtbl_004BEE40,0x004BEE40,0x18,src/data/jtbl_004BEE40.c,complete,placeholder
+jtbl_004BEE40,0x004BEE40,0x18,src/data/jtbl_004BEE40.c,complete,reconstructed
 gMvc2BootModulePath_004BEE60,0x004BEE60,0x1F,src/data/boot_string_004BEE60.c,complete,reconstructed
 data_u8_004BEE7F,0x004BEE7F,0x1,src/data/data_u8_004BEE7F.c,complete,placeholder
 gMvc2SetupHostMessage_004BEE80,0x004BEE80,0x19,src/data/boot_string_004BEE80.c,complete,reconstructed
@@ -9910,4 +9916,3 @@ data_ptr_004C2534,0x004C2534,0x4,src/data/data_ptr_004C2534.c,complete,reconstru
 data_s32_004C2538,0x004C2538,0x4,src/data/data_s32_004C2538.c,complete,reconstructed
 data_s32_004C253C,0x004C253C,0x4,src/data/data_s32_004C253C.c,complete,reconstructed
 data_zero_004C2540,0x004C2540,0x40,src/data/data_zero_004C2540.c,complete,placeholder
-data_raw_004BA708,0x004BA708,0x8,src/data/data_raw_004BA708.c,complete,placeholder
