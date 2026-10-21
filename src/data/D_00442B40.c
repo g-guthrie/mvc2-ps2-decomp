@@ -1,9 +1,12 @@
-typedef unsigned int u32;
-extern u32 data_u32_00442AAC[37];
-/* func_00147750 indexes all four entries with the task field20 at 0x0014775C-0x00147780. func_00147660 creates four tasks with field20=0..3 in its 0x00147674-0x001476D0 loop; its callback reaches func_00147750 through residual_001487D0 at 0x0014886C. */
-u32 * const D_00442B40[4] = {
-    data_u32_00442AAC + 0x11,
-    data_u32_00442AAC + 0x19,
-    data_u32_00442AAC + 0x1D,
-    data_u32_00442AAC + 0x21,
+typedef unsigned char u8;
+extern const u8 data_scene_entry_prefix_00442AF0[];
+extern const u8 data_scene_entry_prefix_00442B10[];
+extern const u8 data_scene_entry_prefix_00442B20[];
+extern const u8 data_scene_entry_prefix_00442B30[];
+/* The four immutable starts are the selected subrecords of D_00442AB0. */
+const void * const D_00442B40[4] = {
+    data_scene_entry_prefix_00442AF0,
+    data_scene_entry_prefix_00442B10,
+    data_scene_entry_prefix_00442B20,
+    data_scene_entry_prefix_00442B30,
 };
