@@ -16512,5 +16512,17 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$MWCCPS2_30" -i src src/actor_variant_motion_00372780.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_variant_motion_00372780.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_variant_motion_00372780.o" private/SLUS_204.86.rom --source src/actor_variant_motion_00372780.c
 
+"$WIBO" "$MWCCPS2_30" -i src src/clone_motion_sequence_00357010.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/clone_motion_sequence_00357010.o"
+"$PYTHON" tools/verify_object.py "$BUILD/clone_motion_sequence_00357010.o" private/SLUS_204.86.rom --source src/clone_motion_sequence_00357010.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/grab_contact_update_003663E0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grab_contact_update_003663E0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grab_contact_update_003663E0.o" private/SLUS_204.86.rom --source src/grab_contact_update_003663E0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/clone_mode_action_setup_00355CA0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/clone_mode_action_setup_00355CA0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/clone_mode_action_setup_00355CA0.o" private/SLUS_204.86.rom --source src/clone_mode_action_setup_00355CA0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/clone_random_motion_setup_003564A0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/clone_random_motion_setup_003564A0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/clone_random_motion_setup_003564A0.o" private/SLUS_204.86.rom --source src/clone_random_motion_setup_003564A0.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

@@ -1,0 +1,2 @@
+/* Raw path gap; no reconstructed credit or alignment claim. */
+unsigned char data_raw_0045F798[8] = { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };

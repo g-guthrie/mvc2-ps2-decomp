@@ -17674,3 +17674,7 @@ func_0036F120,0x0036F120,0x118,src/owner_contact_phase_0036F120.c,complete
 func_0036F7A0,0x0036F7A0,0x174,src/owner_phase_follower_0036F7A0.c,complete
 func_00384220,0x00384220,0x158,src/actor_phase_timer_00384220.c,complete
 func_00372780,0x00372780,0x190,src/actor_variant_motion_00372780.c,complete
+func_00357010,0x00357010,0x290,src/clone_motion_sequence_00357010.c,complete
+func_003663E0,0x003663E0,0x37C,src/grab_contact_update_003663E0.c,complete
+func_00355CA0,0x00355CA0,0x3DC,src/clone_mode_action_setup_00355CA0.c,complete
+func_003564A0,0x003564A0,0x2C8,src/clone_random_motion_setup_003564A0.c,complete

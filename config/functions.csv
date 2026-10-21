@@ -16134,7 +16134,8 @@ func_00366020,0x00366020,0x68,0x00366088,code,spimdisasm-explicit-size-before-fi
 func_00366090,0x00366090,0x34,0x003660C4,code,verified-complete-c-dispatch-entry
 func_003660D0,0x003660D0,0x20,0x003660F0,code,verified-complete-c-function
 residual_003660F0,0x003660F0,0x25C,0x0036634C,assembly_residual,native-suffix-after-verified-c-body
-func_00366350,0x00366350,0x40C,0x0036675C,code,spimdisasm-explicit-size-before-first-data
+func_00366350,0x00366350,0x8C,0x003663DC,code,native-dispatch-head-boundary
+func_003663E0,0x003663E0,0x37C,0x0036675C,code,verified-complete-c-function
 func_00366760,0x00366760,0x134,0x00366894,code,spimdisasm-explicit-size-before-first-data
 func_003668A0,0x003668A0,0x44,0x003668E4,code,spimdisasm-explicit-size-before-first-data
 func_003668F0,0x003668F0,0x144,0x00366A34,code,spimdisasm-explicit-size-before-first-data

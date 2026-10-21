@@ -4690,3 +4690,30 @@ Totals are **2,101,924 / 3,293,696 CODE bytes (63.8166%)** and
 checkpoint remains 2,113,447 bytes, another 11,523 bytes. This DATA and
 integrity publication does not reset the grid. Full source decompilation remains
 unfinished.
+
+## 2026-10-21: clone callbacks and path resources
+
+Four exact callbacks add 3,248 CODE bytes. Native evidence separates an old
+uncredited composite dispatcher/callback span into its real 140-byte dispatcher,
+four raw bytes and 892-byte callable. The next credited function is unchanged;
+the text denominator is unchanged.
+
+Fixed-point motion and attachment poses add 600 DATA bytes, twelve interpolation
+paths with their pointer/count directories add 1,500, and three coordinate-pair
+banks add 1,440. Total new reconstructed DATA is 3,540 bytes. Raw gaps and opaque
+neighbors stay excluded. See `PATH_RESOURCES_AND_CLONE_CALLBACKS_20261021.md`
+for fields, actual source interfaces, resource preconditions and native selector
+limits. Two existing shared vector types are reused without changing headers.
+
+The bank checks 14,617 untouched source/object pairs and all 53 existing headers,
+freshly compiles five changed old DATA units and 36 new units, and retires four
+raw owners, leaving 14,658 source/object pairs. All four cleaned CODE objects
+retain the frozen worker object hashes. Publication requires catalog checks,
+the project test suite, fresh splitting, hybrid linkage and both full retail
+image hashes.
+
+Totals are **2,105,172 / 3,293,696 CODE bytes (63.9152%)** and
+**366,572 / 648,064 reconstructed DATA bytes (56.5642%)**. The fixed CODE
+checkpoint remains 2,113,447 bytes, another 8,275 bytes. This extra DATA
+publication does not reset that grid. Complete source decompilation remains
+unfinished.
