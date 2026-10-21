@@ -16524,5 +16524,59 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$MWCCPS2_30" -i src src/clone_random_motion_setup_003564A0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/clone_random_motion_setup_003564A0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/clone_random_motion_setup_003564A0.o" private/SLUS_204.86.rom --source src/clone_random_motion_setup_003564A0.c
 
+"$WIBO" "$MWCCPS2_30" -i src src/sequence_primary_update_00352990.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/sequence_primary_update_00352990.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sequence_primary_update_00352990.o" private/SLUS_204.86.rom --source src/sequence_primary_update_00352990.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/sequence_secondary_update_00352C90.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/sequence_secondary_update_00352C90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sequence_secondary_update_00352C90.o" private/SLUS_204.86.rom --source src/sequence_secondary_update_00352C90.c
+
+"$WIBO" "$MWCCPS2" -i src src/actor_owner_followup_003A3420.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/actor_owner_followup_003A3420.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_followup_003A3420.o" private/SLUS_204.86.rom --source src/actor_owner_followup_003A3420.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_owner_acceleration_001971B0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_owner_acceleration_001971B0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_acceleration_001971B0.o" private/SLUS_204.86.rom --source src/actor_owner_acceleration_001971B0.c
+
+"$WIBO" "$MWCCPS2" -i src src/global_menu_phase_0032A3E0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/global_menu_phase_0032A3E0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/global_menu_phase_0032A3E0.o" private/SLUS_204.86.rom --source src/global_menu_phase_0032A3E0.c
+
+"$WIBO" "$MWCCPS2" -i src src/actor_airborne_strength20_001F19B0.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/actor_airborne_strength20_001F19B0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_airborne_strength20_001F19B0.o" private/SLUS_204.86.rom --source src/actor_airborne_strength20_001F19B0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/func_00269750.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/func_00269750.o"
+"$PYTHON" tools/verify_object.py "$BUILD/func_00269750.o" private/SLUS_204.86.rom --source src/func_00269750.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/collision_height_bands_003540B0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/collision_height_bands_003540B0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/collision_height_bands_003540B0.o" private/SLUS_204.86.rom --source src/collision_height_bands_003540B0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/projectile_arc_transition_00368470.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/projectile_arc_transition_00368470.o"
+"$PYTHON" tools/verify_object.py "$BUILD/projectile_arc_transition_00368470.o" private/SLUS_204.86.rom --source src/projectile_arc_transition_00368470.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/contact_motion_sequence_00369EE0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/contact_motion_sequence_00369EE0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/contact_motion_sequence_00369EE0.o" private/SLUS_204.86.rom --source src/contact_motion_sequence_00369EE0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/func_001994B0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/func_001994B0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/func_001994B0.o" private/SLUS_204.86.rom --source src/func_001994B0.c
+
+"$WIBO" "$MWCCPS2" -i src src/func_002EF3E0.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/func_002EF3E0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/func_002EF3E0.o" private/SLUS_204.86.rom --source src/func_002EF3E0.c
+
+"$WIBO" "$MWCCPS2" -i src src/func_0030E020.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/func_0030E020.o"
+"$PYTHON" tools/verify_object.py "$BUILD/func_0030E020.o" private/SLUS_204.86.rom --source src/func_0030E020.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/func_00337D50.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/func_00337D50.o"
+"$PYTHON" tools/verify_object.py "$BUILD/func_00337D50.o" private/SLUS_204.86.rom --source src/func_00337D50.c
+
+"$WIBO" "$MWCCPS2" -i src src/func_0031C940.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/func_0031C940.o"
+"$PYTHON" tools/verify_object.py "$BUILD/func_0031C940.o" private/SLUS_204.86.rom --source src/func_0031C940.c
+
+"$WIBO" "$MWCCPS2" -i src src/func_0031D960.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/func_0031D960.o"
+"$PYTHON" tools/verify_object.py "$BUILD/func_0031D960.o" private/SLUS_204.86.rom --source src/func_0031D960.c
+
+"$WIBO" "$MWCCPS2" -i src src/func_0031DAC0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/func_0031DAC0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/func_0031DAC0.o" private/SLUS_204.86.rom --source src/func_0031DAC0.c
+
+"$WIBO" "$MWCCPS2" -i src src/func_0033AD60.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/func_0033AD60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/func_0033AD60.o" private/SLUS_204.86.rom --source src/func_0033AD60.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

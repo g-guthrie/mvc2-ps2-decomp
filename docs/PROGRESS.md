@@ -4717,3 +4717,27 @@ Totals are **2,105,172 / 3,293,696 CODE bytes (63.9152%)** and
 checkpoint remains 2,113,447 bytes, another 8,275 bytes. This extra DATA
 publication does not reset that grid. Complete source decompilation remains
 unfinished.
+
+## 2026-10-21: motion tables and context callbacks
+
+Eighteen complete functions add 8,652 CODE bytes. Character motion variants,
+scale blocks and their pointer directory, GS address/data commands, and EE TLB,
+syscall-hook and semaphore records add 7,312 reconstructed DATA bytes. Opaque
+gaps and the copied executable payload remain uncredited. See
+`MOTION_TABLES_AND_CONTEXT_CALLBACKS_20261021.md` for layouts, actual callback
+and math-helper interfaces, local resource preconditions and exact accounting.
+
+The bank checks 14,614 unchanged source/object pairs and all 53 old headers,
+freshly compiles 13 changed old and 35 new source units, and retires 31 raw
+providers, leaving 14,662 pairs and 55 headers. Both new headers' six includers
+are freshly compiled. Existing code objects retain identity, with one explicit
+exception limited to the Sony compiler's generated hexadecimal filename in
+non-loaded debug metadata; all other bytes and strict code matches are checked.
+Publication requires catalog coverage, all 118 project tests, fresh splitting,
+hybrid placement and both full retail image identities.
+
+Totals are **2,113,824 / 3,293,696 CODE bytes (64.1779%)** and
+**373,884 / 648,064 reconstructed DATA bytes (57.6925%)**. This crosses the
+fixed CODE checkpoint at 2,113,447 bytes. The following fixed checkpoint is
+2,146,384 bytes, another 32,560 CODE bytes. Full source decompilation remains
+unfinished; identical hybrid images do not establish complete source recovery.

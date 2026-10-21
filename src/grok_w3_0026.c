@@ -131,7 +131,7 @@ void func_0027FE70(u8 *p)
     jtbl_004553D0[p[0x1e4]](p);
 }
 
-void func_00269AF0(u8 *p)
+void func_00269AF0(u8 *p, void *context)
 {
     if ((s8)func_00175700(p) < 0) {
         p[7] = 1;
@@ -174,7 +174,7 @@ void func_00264710(u8 *p)
     *(s32 *)(p + 0x6c) = 0xbf1a4924;
 }
 
-void func_00269960(u8 *p)
+void func_00269960(u8 *p, void *context)
 {
     if ((s8)func_00175700(p) < 0) {
         p[7]++;
@@ -182,7 +182,7 @@ void func_00269960(u8 *p)
     }
 }
 
-void func_002699B0(u8 *p)
+void func_002699B0(u8 *p, void *context)
 {
     if ((s8)func_00175700(p) < 0) {
         p[7]++;
@@ -190,7 +190,7 @@ void func_002699B0(u8 *p)
     }
 }
 
-void func_00269A00(u8 *p)
+void func_00269A00(u8 *p, void *context)
 {
     if ((s8)func_00175700(p) < 0) {
         p[7]++;
@@ -198,7 +198,7 @@ void func_00269A00(u8 *p)
     }
 }
 
-void func_00269A50(u8 *p)
+void func_00269A50(u8 *p, void *context)
 {
     if ((s8)func_00175700(p) < 0) {
         p[7]++;
@@ -206,7 +206,7 @@ void func_00269A50(u8 *p)
     }
 }
 
-void func_00269AA0(u8 *p)
+void func_00269AA0(u8 *p, void *context)
 {
     if ((s8)func_00175700(p) < 0) {
         p[7]++;

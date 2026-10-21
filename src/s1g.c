@@ -9,4 +9,4 @@ static inline void gb(B *p, s32 i, s32 *o) { if (o) *o = p->e[i].b; }
 static inline void gc(B *p, s32 i, s32 *o) { if (o) *o = p->e[i].c; }
 static inline void gd(B *p, s32 i, s32 *o) { if (o) *o = p->e[i].d; }
 void func_00405388(B *p, s32 i, s32 *a, s32 *b, s32 *c, s32 *d) { ga(p,i,a); gb(p,i,b); gc(p,i,c); gd(p,i,d); }
-extern float func_003DE700(void);
+extern float func_003DE700(float,float);

@@ -36,7 +36,7 @@ extern u8 D_004F1F45[];
 extern u8 D_004F1F46[];
 typedef struct { u8 pad[0x7C]; s16 f7C[1]; } G6;
 extern G6 *D_004C2794;
-void func_002698B0(u8 *o) {
+void func_002698B0(u8 *o, void *context) {
     s32 func_00175700(); void func_001757E0(); void func_00374E50();
     s8 r = func_00175700();
     if (r < 0) {

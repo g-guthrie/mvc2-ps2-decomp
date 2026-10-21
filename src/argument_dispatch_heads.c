@@ -87,7 +87,7 @@ extern DispatchFn2 jtbl_00454298[];
 extern DispatchFn2 jtbl_00454330[];
 extern DispatchFn2 jtbl_00454378[];
 extern DispatchFn2 jtbl_00454390[];
-extern DispatchFn2 jtbl_00454420[];
+extern const DispatchFn2 jtbl_00454420[];
 extern DispatchFn2 jtbl_00454ED0[];
 extern DispatchFn2 jtbl_00455180[];
 extern DispatchFn2 jtbl_00455B00[];

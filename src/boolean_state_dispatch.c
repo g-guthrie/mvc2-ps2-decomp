@@ -26,8 +26,8 @@ extern void func_0031BF20(u8 *);
 extern void func_0031C020(u8 *);
 extern void func_003292D0(u8 *);
 extern void func_00329450(u8 *);
-extern void func_00352990(u8 *);
-extern void func_00352C90(u8 *);
+extern void func_00352990(u8 *,u8 *);
+extern void func_00352C90(u8 *,u8 *);
 
 void func_001D7340(u8 *p) { if (!p[0x20]) func_001D7380(p); else func_001D7450(p); }
 void func_001DCA50(u8 *p, void *owner) { if (!p[0x20]) func_001DCA90(p, owner); else func_001DCC80(p, owner); }
@@ -42,4 +42,4 @@ void func_002CD7A0(u8 *p) { if (!p[0x6]) func_002CD7E0(p); else func_002CD870(p)
 void func_002DCEF0(u8 *p) { if (!p[0x212]) func_002DCF30(p); else func_002DD030(p); }
 void func_0031BEE0(u8 *p) { if (!p[0x212]) func_0031BF20(p); else func_0031C020(p); }
 void func_00329290(u8 *p) { if (!p[0x20]) func_003292D0(p); else func_00329450(p); }
-void func_00352950(u8 *p) { if (!p[0x20]) func_00352990(p); else func_00352C90(p); }
+void func_00352950(u8 *p, void *context) { if (!p[0x20]) func_00352990(p,context); else func_00352C90(p,context); }

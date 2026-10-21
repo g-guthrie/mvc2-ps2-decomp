@@ -12,8 +12,9 @@ extern u8 *D_004C2840 __attribute__((section(".sdata")));
 extern u8 D_004F1F45;
 extern u8 D_004F1F46;
 
-void func_00266CA0(u8 *p, u8 *s0)
+void func_00266CA0(u8 *p, void *context)
 {
+    u8 *s0 = (u8 *)context;
     p[0x40C] = 2;
     p[0x33C] = 5;
     if (!(*(u32 *)(D_004C2840 + 0x1C) & 1))
