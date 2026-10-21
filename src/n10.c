@@ -191,24 +191,6 @@ void func_00228CB0(u8 *p) {
     }
 }
 
-extern void func_0037B400(void *p, s32 a, s32 b);
-
-void func_0037B670(u8 *p) {
-    p[0x13C] = 1;
-    if (*(s16 *)(p + 0x1C) != 0) {
-        s16 v;
-        *(f32 *)(p + 0x118) -= 0.125f;
-        func_00175670(p);
-        v = *(s16 *)(p + 0x1C) - 1;
-        *(s16 *)(p + 0x1C) = v;
-        *(f32 *)(p + 0x50) += -0.1125f;
-        *(f32 *)(p + 0x54) += 0.3125f;
-    } else {
-        p[0x13C] = 0;
-        func_0037B400(p, 0, 0);
-    }
-}
-
 extern void func_0019BE70();
 
 void func_0019BDD0(u8 *p) {

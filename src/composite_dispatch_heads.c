@@ -1191,7 +1191,7 @@ extern DispatchFn jtbl_00463EC0[];
 extern DispatchFn jtbl_00463F60[];
 extern DispatchFn jtbl_00463FA0[];
 extern DispatchFn jtbl_00463FF0[];
-extern DispatchFn jtbl_00464100[];
+extern const DispatchFn jtbl_00464100[];
 extern DispatchFn jtbl_00464120[];
 extern DispatchFn jtbl_00464170[];
 extern DispatchFn jtbl_00464180[];

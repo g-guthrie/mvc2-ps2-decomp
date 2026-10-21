@@ -1,9 +1,10 @@
+#include "action_record.h"
 typedef unsigned char u8;typedef signed char s8;typedef unsigned short u16;typedef signed short s16;typedef unsigned int u32;typedef signed int s32;typedef float f32;
 typedef struct { f32 x, y, z; } V3;
 typedef struct { u8 p0[4]; u8 f4; u8 p5[0x19]; u16 f1e_; } X;
 typedef struct { u8 p0[4]; u8 f4; u8 p5[0x19]; s16 f1e; u8 p20; u8 f21; u8 p22; u8 f23; u8 p24[0x10]; V3 pos; u8 p40[0x1C]; V3 vel; V3 prev; } S;
 extern V3 D_0043DD80[];
-extern u8 D_00456080[];
+extern Mvc2ActionRecord D_00456080[];
 
 void func_002A6500(u8 *p) {
     extern void func_00175700(); extern void func_00183d50();
@@ -137,7 +138,7 @@ void func_00132880(S *p, u8 *q) {
 }
 
 void func_0028A1D0(u8 *p) {
-    extern void func_00175700(); extern void func_0028D810(); extern void func_001830D0();
+    extern void func_00175700(); extern void func_0028D810(u8 *, u8 *); extern void func_001830D0();
     u8 *q;
     f32 v[4];
     p[0x40C] = 2;
@@ -151,7 +152,7 @@ void func_0028A1D0(u8 *p) {
         p[0x405] = 0;
         q[0xB] = 2;
         q[0xA] = 0xFF;
-        func_0028D810(p, D_00456080);
+        func_0028D810(p, (u8 *)D_00456080);
         *(u32*)&v[0] = 0xC1555555;
         *(u32*)&v[1] = 0x42D20000;
         *(s32*)&v[2] = 0;

@@ -16491,5 +16491,26 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$MWCCPS2_30" -i src src/owner_fade_phase_0036E5F0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/owner_fade_phase_0036E5F0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_fade_phase_0036E5F0.o" private/SLUS_204.86.rom --source src/owner_fade_phase_0036E5F0.c
 
+"$WIBO" "$MWCCPS2" -i src src/actor_owner_transition_00370AB0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/actor_owner_transition_00370AB0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_transition_00370AB0.o" private/SLUS_204.86.rom --source src/actor_owner_transition_00370AB0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/owner_motion_setup_0036C740.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/owner_motion_setup_0036C740.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_motion_setup_0036C740.o" private/SLUS_204.86.rom --source src/owner_motion_setup_0036C740.c
+
+"$WIBO" "$MWCCPS2" -i src src/actor_phase_motion_00370110.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_phase_motion_00370110.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_phase_motion_00370110.o" private/SLUS_204.86.rom --source src/actor_phase_motion_00370110.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/owner_contact_phase_0036F120.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/owner_contact_phase_0036F120.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_contact_phase_0036F120.o" private/SLUS_204.86.rom --source src/owner_contact_phase_0036F120.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/owner_phase_follower_0036F7A0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/owner_phase_follower_0036F7A0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_phase_follower_0036F7A0.o" private/SLUS_204.86.rom --source src/owner_phase_follower_0036F7A0.c
+
+"$WIBO" "$MWCCPS2" -i src src/actor_phase_timer_00384220.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/actor_phase_timer_00384220.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_phase_timer_00384220.o" private/SLUS_204.86.rom --source src/actor_phase_timer_00384220.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_variant_motion_00372780.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_variant_motion_00372780.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_variant_motion_00372780.o" private/SLUS_204.86.rom --source src/actor_variant_motion_00372780.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

@@ -14,7 +14,8 @@ extern void func_003792B0(u8 *);
 extern void func_00379350(u8 *);
 extern void func_003793F0(u8 *);
 extern void func_00379410(u8 *);
-extern void func_003794A0(u8 *);
+/* Native-only entry; full function boundary and extra-register contract remain unknown. */
+extern void func_003794A0();
 extern void func_00379620(u8 *);
 extern void func_003797A0(u8 *);
 extern void func_003797C0(u8 *);
@@ -22,14 +23,18 @@ extern void func_00379C70(u8 *);
 extern void func_00379FA0(u8 *);
 extern void func_0037A7C0(u8 *);
 extern void func_0037A800(u8 *);
-extern void func_0037A8B0(u8 *);
-extern void func_0037AB50(u8 *);
-extern void func_0037AE70(u8 *);
-extern void func_0037AFC0(u8 *);
-extern void func_0037B100(u8 *);
+/* Native-only entry reads A1 in the pinned prefix; complete contract remains unknown. */
+extern void func_0037A8B0();
+/* Native-only entry reads A1/A2; no C-owned prototype is asserted. */
+extern void func_0037AB50();
+/* Native-only entry reads A2 and may forward A1; no C-owned prototype is asserted. */
+extern void func_0037AE70();
+extern void func_0037AFC0(u8 *, u8 *, u8 *);
+extern void func_0037B100(u8 *, u8 *, u8 *);
 extern void func_0037B3E0(u8 *);
-extern void func_0037B400(u8 *);
+extern void func_0037B400(u8 *, u8 *);
 
+/* Scheduler stores unary callback addresses here. Casts erase heterogeneous leaf types at this data boundary; they do not establish ambient A1/A2 context validity. */
 const Mvc2StateCallback jtbl_00464100[27] = {
     func_00378D50,
     func_00379170,
@@ -43,7 +48,7 @@ const Mvc2StateCallback jtbl_00464100[27] = {
     func_00379220,
     func_003792B0,
     func_00379350,
-    func_003794A0,
+    (Mvc2StateCallback)func_003794A0,
     func_00379620,
     func_003797A0,
     func_003797C0,
@@ -51,11 +56,11 @@ const Mvc2StateCallback jtbl_00464100[27] = {
     func_00379FA0,
     func_0037A7C0,
     func_0037A800,
-    func_0037A8B0,
-    func_0037AB50,
-    func_0037AE70,
-    func_0037AFC0,
-    func_0037B100,
+    (Mvc2StateCallback)func_0037A8B0,
+    (Mvc2StateCallback)func_0037AB50,
+    (Mvc2StateCallback)func_0037AE70,
+    (Mvc2StateCallback)func_0037AFC0,
+    (Mvc2StateCallback)func_0037B100,
     func_0037B3E0,
-    func_0037B400,
+    (Mvc2StateCallback)func_0037B400,
 };

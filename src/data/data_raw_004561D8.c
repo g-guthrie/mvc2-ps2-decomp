@@ -1,0 +1,5 @@
+/* Opaque bytes retained without semantic credit. */
+typedef unsigned char u8;
+u8 data_raw_004561D8[0x8] = {
+    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+};

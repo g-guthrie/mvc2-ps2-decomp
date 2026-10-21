@@ -40,7 +40,7 @@ extern void func_001DD9A0(void);
 extern void func_001E07C0(void);
 extern void func_00347280(void);
 extern void func_00368000(u8 *);
-extern void func_00378D30(void);
+extern void func_00378D30(u8 *event);
 extern void func_00383C90(void);
 extern void func_00390D00(void);
 extern void func_003947F0(void);

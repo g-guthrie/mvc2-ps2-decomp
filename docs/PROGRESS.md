@@ -4663,3 +4663,30 @@ Totals are **2,099,856 / 3,293,696 CODE bytes (63.7538%)** and
 **358,053 / 648,064 reconstructed DATA bytes (55.2496%)**. The normal fixed
 CODE checkpoint remains 2,113,447 bytes, another 13,591 bytes. These extra DATA
 publications do not reset that grid. Full source decompilation remains unfinished.
+
+## 2026-10-21: action streams, motion rows and callback interface repairs
+
+Seven whole actor callbacks add 2,528 CODE bytes. Two old bodies totaling 460
+bytes are withdrawn because their matching sources used an unsupported third
+cleanup-helper input; truthful candidates remain uncredited under docs/nonmatching.
+Net CODE gain is 2,068 bytes. The native fallback preserves their original spans.
+
+Action records add 2,152 DATA bytes, phase durations add 32, and independently
+reviewed motion resources and seven-float rows add 2,795. Total new reconstructed
+DATA is 4,979 bytes. Raw gaps and tails remain excluded. See
+`ACTION_MOTION_DATA_AND_ABI_REPAIR_20261021.md` for field roles, local resource
+preconditions, mixed-use neighboring anchors, and the source interface repairs.
+
+The bank checks 14,558 unchanged source/object pairs and all 52 old headers,
+freshly compiles 28 changed old units and 40 new units, and retires six raw
+owners, leaving 14,626 pairs. One new shared action header has exactly 37
+includers, all freshly compiled. Remaining exports in four changed code objects
+are checked against the full registered name/size sets; other changed old code
+objects retain whole object identity. Publication requires the project test suite,
+catalog checks, fresh splitting, hybrid linkage and both full retail image hashes.
+
+Totals are **2,101,924 / 3,293,696 CODE bytes (63.8166%)** and
+**363,032 / 648,064 reconstructed DATA bytes (56.0179%)**. The fixed CODE
+checkpoint remains 2,113,447 bytes, another 11,523 bytes. This DATA and
+integrity publication does not reset the grid. Full source decompilation remains
+unfinished.

@@ -1,3 +1,4 @@
+#include "action_record.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef signed short s16;
@@ -19,7 +20,7 @@ extern void func_001843A0(u8 *);
 extern void func_0028D810(u8 *, u8 *);
 extern void func_001E3210(u8 *, int);
 extern void func_001C09A0(u8 *, int);
-extern u8 D_004563A0[];
+extern Mvc2ActionRecord D_004563A0[];
 
 typedef void (*DispatchFn)(u8 *);
 extern DispatchFn jtbl_00455A30[];
@@ -134,7 +135,7 @@ void func_0028C690(u8 *p)
     func_00175700(p);
     if (!*(s8 *)(p + 0x151)) {
         p[6]++;
-        func_0028D810(p, D_004563A0);
+        func_0028D810(p, (u8 *)D_004563A0);
     }
 }
 

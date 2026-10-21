@@ -11671,7 +11671,6 @@ func_00314AB0,0x00314AB0,0x90,src/n10.c,complete
 func_002FE960,0x002FE960,0x94,src/n10.c,complete
 func_002DA990,0x002DA990,0x94,src/n10.c,complete
 func_00228CB0,0x00228CB0,0x98,src/n10.c,complete
-func_0037B670,0x0037B670,0x98,src/n10.c,complete
 func_0019BDD0,0x0019BDD0,0x98,src/n10.c,complete
 func_001ED480,0x001ED480,0x9C,src/n10.c,complete
 func_00217C80,0x00217C80,0x9C,src/n10.c,complete
@@ -14993,7 +14992,6 @@ func_001893E0,0x001893E0,0x114,src/w175_a.c,complete
 func_0031E3E0,0x0031E3E0,0x118,src/w175_a.c,complete
 func_00169470,0x00169470,0x124,src/w175_a.c,complete
 func_0035BB00,0x0035BB00,0x11C,src/w175_a.c,complete
-func_0037AFC0,0x0037AFC0,0x134,src/w175_a.c,complete
 func_0013DFB0,0x0013DFB0,0xC0,src/w175_b.c,complete
 func_002F7630,0x002F7630,0x104,src/w175_b.c,complete
 func_00274DA0,0x00274DA0,0x12C,src/w175_b.c,complete
@@ -17669,3 +17667,10 @@ func_00357390,0x00357390,0x144,src/actor_landing_phase_00357390.c,complete
 func_0036C510,0x0036C510,0x1B8,src/owner_edge_setup_0036C510.c,complete
 func_0036D220,0x0036D220,0x11C,src/linked_offset_setup_0036D220.c,complete
 func_0036E5F0,0x0036E5F0,0xFC,src/owner_fade_phase_0036E5F0.c,complete
+func_00370AB0,0x00370AB0,0x174,src/actor_owner_transition_00370AB0.c,complete
+func_0036C740,0x0036C740,0x14C,src/owner_motion_setup_0036C740.c,complete
+func_00370110,0x00370110,0x1AC,src/actor_phase_motion_00370110.c,complete
+func_0036F120,0x0036F120,0x118,src/owner_contact_phase_0036F120.c,complete
+func_0036F7A0,0x0036F7A0,0x174,src/owner_phase_follower_0036F7A0.c,complete
+func_00384220,0x00384220,0x158,src/actor_phase_timer_00384220.c,complete
+func_00372780,0x00372780,0x190,src/actor_variant_motion_00372780.c,complete

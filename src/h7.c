@@ -1,3 +1,4 @@
+#include "action_record.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -90,11 +91,11 @@ void func_0018F6B0(u8 *p) {
 }
 extern void func_00289570(void *p);
 extern s8 func_00175700(void *p);
-extern void func_0028D810(void *p, void *a);
+extern void func_0028D810(u8 *, u8 *);
 extern void func_0028D8B0(void *p);
 extern void func_001C09A0(void *p, s32 a);
 extern void func_00385EE0(void *p, s32 a);
-extern u8 D_00455CF0[];
+extern Mvc2ActionRecord D_00455CF0[];
 void func_00289490(u8 *p) {
     func_00289570(p);
     func_00175700(p);
@@ -102,7 +103,7 @@ void func_00289490(u8 *p) {
         u32 t = p[7];
         p[7] = t + 1;
         p[0x151] = 0;
-        func_0028D810(p, D_00455CF0);
+        func_0028D810(p, (u8 *)D_00455CF0);
         func_0028D8B0(p);
         func_001C09A0(p, 5);
         func_00385EE0(p, 2);
