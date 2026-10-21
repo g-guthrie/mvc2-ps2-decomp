@@ -7011,7 +7011,7 @@ gConversionFactorTenthA_004AAFE8,0x004AAFE8,0x8,src/data/gConversionFactorTenthA
 gConversionFactorTenthB_004AAFF0,0x004AAFF0,0x8,src/data/gConversionFactorTenthB_004AAFF0.c,complete,reconstructed
 gConversionFactorMillion_004AAFF8,0x004AAFF8,0x8,src/data/gConversionFactorMillion_004AAFF8.c,complete,reconstructed
 jtbl_004AB000,0x004AB000,0x124,src/data/jtbl_004AB000.c,complete,reconstructed
-jtbl_004AB130,0x004AB130,0x64,src/data/jtbl_004AB130.c,complete,placeholder
+jtbl_004AB130,0x004AB130,0x64,src/data/jtbl_004AB130.c,complete,reconstructed
 data_u8_004AB1A0,0x004AB1A0,0x8,src/data/data_u8_004AB1A0.c,complete,placeholder
 gPs2SystemText_004AB1A8,0x004AB1A8,0x4,src/data/gPs2SystemText_004AB1A8.c,complete,reconstructed
 data_u8_004AB1AC,0x004AB1AC,0x4,src/data/data_u8_004AB1AC.c,complete,placeholder
@@ -7282,7 +7282,7 @@ jtbl_004AD120,0x004AD120,0x18,src/data/jtbl_004AD120.c,complete,placeholder
 jtbl_004AD140,0x004AD140,0x48,src/data/jtbl_004AD140.c,complete,placeholder
 jtbl_004AD190,0x004AD190,0x70,src/data/jtbl_004AD190.c,complete,placeholder
 data_u32_004AD200,0x004AD200,0xC0,src/data/data_u32_004AD200.c,complete,reconstructed
-jtbl_004AD2C0,0x004AD2C0,0x74,src/data/jtbl_004AD2C0.c,complete,placeholder
+jtbl_004AD2C0,0x004AD2C0,0x74,src/data/jtbl_004AD2C0.c,complete,reconstructed
 data_u32_004AD340,0x004AD340,0x2000,src/data/data_u32_004AD340.c,complete,placeholder
 data_u32_004AF340,0x004AF340,0x1D60,src/data/data_u32_004AF340.c,complete,placeholder
 jtbl_004B10A0,0x004B10A0,0x48,src/data/jtbl_004B10A0.c,complete,placeholder
@@ -7588,7 +7588,7 @@ data_u8_004B536D,0x004B536D,0x3,src/data/data_u8_004B536D.c,complete,placeholder
 gHandicapLabel_004B5370,0x004B5370,0x9,src/data/gHandicapLabel_004B5370.c,complete,reconstructed
 data_u8_004B5379,0x004B5379,0x7,src/data/data_u8_004B5379.c,complete,placeholder
 data_zero_004B5380,0x004B5380,0x10,src/data/data_zero_004B5380.c,complete,placeholder
-jtbl_004B5390,0x004B5390,0x98,src/data/jtbl_004B5390.c,complete,placeholder
+jtbl_004B5390,0x004B5390,0x98,src/data/jtbl_004B5390.c,complete,reconstructed
 gEffectTypeVariantMap_004B5430,0x004B5430,0x18,src/data/gEffectTypeVariantMap_004B5430.c,complete,reconstructed
 data_u8_004B5448,0x004B5448,0x1A8,src/data/data_u8_004B5448.c,complete,placeholder
 gPaletteColorVariants_004B55F0,0x004B55F0,0x3C,src/data/gPaletteColorVariants_004B55F0.c,complete,reconstructed
@@ -7763,7 +7763,7 @@ data_u8_004B7058,0x004B7058,0x4,src/data/data_u8_004B7058.c,complete,reconstruct
 data_raw_004B705C,0x004B705C,0x4,src/data/data_raw_004B705C.c,complete,placeholder
 gScoreboardWinPrefix_004B7060,0x004B7060,0x3,src/data/gScoreboardWinPrefix_004B7060.c,complete,reconstructed
 data_u8_004B7063,0x004B7063,0xD,src/data/data_u8_004B7063.c,complete,placeholder
-jtbl_004B7070,0x004B7070,0x80,src/data/jtbl_004B7070.c,complete,placeholder
+jtbl_004B7070,0x004B7070,0x80,src/data/jtbl_004B7070.c,complete,reconstructed
 data_u32_004B70F0,0x004B70F0,0x10,src/data/data_u32_004B70F0.c,complete,placeholder
 jtbl_004B7100,0x004B7100,0x18,src/data/jtbl_004B7100.c,complete,placeholder
 data_raw_004B7120,0x004B7120,0x10,src/data/data_raw_004B7120.c,complete,placeholder
@@ -7969,7 +7969,7 @@ data_u8_004B8624,0x004B8624,0x13C,src/data/data_u8_004B8624.c,complete,placehold
 jtbl_004B8760,0x004B8760,0x18,src/data/jtbl_004B8760.c,complete,placeholder
 jtbl_004B8780,0x004B8780,0x18,src/data/jtbl_004B8780.c,complete,placeholder
 jtbl_004B87A0,0x004B87A0,0x18,src/data/jtbl_004B87A0.c,complete,placeholder
-jtbl_004B87C0,0x004B87C0,0x5c,src/data/jtbl_004B87C0.c,complete,placeholder
+jtbl_004B87C0,0x004B87C0,0x5c,src/data/jtbl_004B87C0.c,complete,reconstructed
 jtbl_004B8820,0x004B8820,0x1c,src/data/jtbl_004B8820.c,complete,placeholder
 jtbl_004B8840,0x004B8840,0x40,src/data/jtbl_004B8840.c,complete,placeholder
 data_u32_004B8880,0x004B8880,0x10,src/data/data_u32_004B8880.c,complete,placeholder

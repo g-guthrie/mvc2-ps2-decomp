@@ -5,7 +5,7 @@
 typedef void (*Mvc2DispatchHandler)(void);
 extern const Mvc2DispatchHandler gMvc2Dispatch_00445A20[256];
 
-extern void lbl_00163F90(void);
+extern void func_00163F90(void);
 extern void func_00163FB0(void);
 extern void func_00163FD0(void);
 extern void func_001640A0(void);

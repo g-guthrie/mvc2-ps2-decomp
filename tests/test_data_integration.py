@@ -46,7 +46,7 @@ class DataIntegrationTest(unittest.TestCase):
 
     def test_source_address_labels_become_symbolic_linker_entries(self):
         symbols = dict(extract_symbols(ROOT / "src/data/mvc2_dispatch_00445A20.c"))
-        self.assertEqual(symbols["lbl_00163F90"], 0x00163F90)
+        self.assertEqual(symbols["func_00163F90"], 0x00163F90)
         self.assertEqual(symbols["func_00168810"], 0x00168810)
         self.assertGreaterEqual(len(symbols), 112)
         jump_table_symbols = dict(extract_symbols(ROOT / "src/data/jtbl_004C2518.c"))

@@ -1,32 +1,58 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_004AD2C0[29] = {
-    (unsigned int)0x0012E7B8,
-    (unsigned int)0x0012EF30,
-    (unsigned int)0x0012EF30,
-    (unsigned int)0x0012E80C,
-    (unsigned int)0x0012E8F0,
-    (unsigned int)0x0012E97C,
-    (unsigned int)0x0012E9DC,
-    (unsigned int)0x0012EA18,
-    (unsigned int)0x0012EA90,
-    (unsigned int)0x0012EF30,
-    (unsigned int)0x0012EACC,
-    (unsigned int)0x0012EAE4,
-    (unsigned int)0x0012EA98,
-    (unsigned int)0x0012EB88,
-    (unsigned int)0x0012EB90,
-    (unsigned int)0x0012EC58,
-    (unsigned int)0x0012EC58,
-    (unsigned int)0x0012ECB4,
-    (unsigned int)0x0012ECDC,
-    (unsigned int)0x0012EDDC,
-    (unsigned int)0x0012ECFC,
-    (unsigned int)0x0012EDFC,
-    (unsigned int)0x0012ED4C,
-    (unsigned int)0x0012EE4C,
-    (unsigned int)0x0012EC90,
-    (unsigned int)0x0012EEDC,
-    (unsigned int)0x0012EF30,
-    (unsigned int)0x0012EF00,
-    (unsigned int)0x0012EF18,
+/* Bounded native switch targets; code destinations are byte-address aliases. */
+typedef const unsigned char *Mvc2SwitchTarget;
+extern const unsigned char lbl_0012E7B8[];
+extern const unsigned char lbl_0012E80C[];
+extern const unsigned char lbl_0012E8F0[];
+extern const unsigned char lbl_0012E97C[];
+extern const unsigned char lbl_0012E9DC[];
+extern const unsigned char lbl_0012EA18[];
+extern const unsigned char lbl_0012EA90[];
+extern const unsigned char lbl_0012EA98[];
+extern const unsigned char lbl_0012EACC[];
+extern const unsigned char lbl_0012EAE4[];
+extern const unsigned char lbl_0012EB88[];
+extern const unsigned char lbl_0012EB90[];
+extern const unsigned char lbl_0012EC58[];
+extern const unsigned char lbl_0012EC90[];
+extern const unsigned char lbl_0012ECB4[];
+extern const unsigned char lbl_0012ECDC[];
+extern const unsigned char lbl_0012ECFC[];
+extern const unsigned char lbl_0012ED4C[];
+extern const unsigned char lbl_0012EDDC[];
+extern const unsigned char lbl_0012EDFC[];
+extern const unsigned char lbl_0012EE4C[];
+extern const unsigned char lbl_0012EEDC[];
+extern const unsigned char lbl_0012EF00[];
+extern const unsigned char lbl_0012EF18[];
+extern const unsigned char lbl_0012EF30[];
+const Mvc2SwitchTarget jtbl_004AD2C0[29] = {
+    lbl_0012E7B8,
+    lbl_0012EF30,
+    lbl_0012EF30,
+    lbl_0012E80C,
+    lbl_0012E8F0,
+    lbl_0012E97C,
+    lbl_0012E9DC,
+    lbl_0012EA18,
+    lbl_0012EA90,
+    lbl_0012EF30,
+    lbl_0012EACC,
+    lbl_0012EAE4,
+    lbl_0012EA98,
+    lbl_0012EB88,
+    lbl_0012EB90,
+    lbl_0012EC58,
+    lbl_0012EC58,
+    lbl_0012ECB4,
+    lbl_0012ECDC,
+    lbl_0012EDDC,
+    lbl_0012ECFC,
+    lbl_0012EDFC,
+    lbl_0012ED4C,
+    lbl_0012EE4C,
+    lbl_0012EC90,
+    lbl_0012EEDC,
+    lbl_0012EF30,
+    lbl_0012EF00,
+    lbl_0012EF18,
 };

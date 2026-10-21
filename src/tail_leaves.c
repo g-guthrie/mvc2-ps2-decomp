@@ -106,7 +106,7 @@ extern void func_002F1DF0();
 extern void func_00300C10();
 extern void func_0030FE70(u8 *);
 extern void func_0031E720();
-extern void func_003299F0();
+extern void func_003299F0(void);
 extern void func_0032A900();
 extern void func_0032E520();
 extern void func_00333A00();
@@ -1357,7 +1357,7 @@ void func_003D1F90(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0012E780(4, a1, a2, a
 
 void func_003D1FA0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00127590(a0, a1, a2, a3); }
 
-void func_003D2CA0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003299F0(a0, a1, a2, a3); }
+void func_003D2CA0(void) { func_003299F0(); }
 
 void func_003D2CB0(void) {  func_001712A0(); }
 

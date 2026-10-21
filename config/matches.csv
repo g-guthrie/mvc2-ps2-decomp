@@ -15936,7 +15936,7 @@ func_00122340,0x00122340,0x54,src/string_stream_printf_00122340.c,complete
 func_0016A1F0,0x0016A1F0,0x1C,src/leaf_batch_a.c,complete
 func_0019A940,0x0019A940,0x2C,src/grok_w5_0019.c,complete
 func_0019A970,0x0019A970,0x44,src/grok_w5_0019.c,complete
-lbl_00163F90,0x00163F90,0x20,src/dispatch_callback_00163F90.c,complete
+func_00163F90,0x00163F90,0x20,src/dispatch_callback_00163F90.c,complete
 func_0024D670,0x0024D670,0xD8,src/query_owner_guard_0024d670.c,complete
 func_00259400,0x00259400,0xE4,src/scaled_pair_motion_00259400.c,complete
 func_0022F160,0x0022F160,0x24,src/character_dispatch_heads_00231ca0.c,complete
@@ -17495,3 +17495,4 @@ func_00104300,0x00104300,0xA4,src/sony29_wait_vblank_00104270.c,complete
 func_002B7580,0x002B7580,0x16C,src/actor_state_transfer_002B7580.c,complete
 func_002B7DA0,0x002B7DA0,0x13C,src/actor_state_transfer_002B7580.c,complete
 func_002B4710,0x002B4710,0x140,src/actor_state_transfer_002B7580.c,complete
+func_003299F0,0x003299F0,0xC4,src/context_value_dispatch_003299F0.c,complete

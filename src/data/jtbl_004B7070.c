@@ -1,35 +1,47 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_004B7070[32] = {
-    (unsigned int)0x001E76B4,
-    (unsigned int)0x001E74FC,
-    (unsigned int)0x001E750C,
-    (unsigned int)0x001E751C,
-    (unsigned int)0x001E7538,
-    (unsigned int)0x001E7538,
-    (unsigned int)0x001E7558,
-    (unsigned int)0x001E7558,
-    (unsigned int)0x001E7558,
-    (unsigned int)0x001E7558,
-    (unsigned int)0x001E7558,
-    (unsigned int)0x001E7580,
-    (unsigned int)0x001E7580,
-    (unsigned int)0x001E7638,
-    (unsigned int)0x001E7638,
-    (unsigned int)0x001E7638,
-    (unsigned int)0x001E7638,
-    (unsigned int)0x001E7638,
-    (unsigned int)0x001E7638,
-    (unsigned int)0x001E7638,
-    (unsigned int)0x001E7638,
-    (unsigned int)0x001E7638,
-    (unsigned int)0x001E7638,
-    (unsigned int)0x001E7638,
-    (unsigned int)0x001E7638,
-    (unsigned int)0x001E7638,
-    (unsigned int)0x001E7638,
-    (unsigned int)0x001E7638,
-    (unsigned int)0x001E7638,
-    (unsigned int)0x001E7668,
-    (unsigned int)0x001E7694,
-    (unsigned int)0x001E76A8,
+/* Bounded native switch targets; code destinations are byte-address aliases. */
+typedef const unsigned char *Mvc2SwitchTarget;
+extern const unsigned char lbl_001E74FC[];
+extern const unsigned char lbl_001E750C[];
+extern const unsigned char lbl_001E751C[];
+extern const unsigned char lbl_001E7538[];
+extern const unsigned char lbl_001E7558[];
+extern const unsigned char lbl_001E7580[];
+extern const unsigned char lbl_001E7638[];
+extern const unsigned char lbl_001E7668[];
+extern const unsigned char lbl_001E7694[];
+extern const unsigned char lbl_001E76A8[];
+extern const unsigned char lbl_001E76B4[];
+const Mvc2SwitchTarget jtbl_004B7070[32] = {
+    lbl_001E76B4,
+    lbl_001E74FC,
+    lbl_001E750C,
+    lbl_001E751C,
+    lbl_001E7538,
+    lbl_001E7538,
+    lbl_001E7558,
+    lbl_001E7558,
+    lbl_001E7558,
+    lbl_001E7558,
+    lbl_001E7558,
+    lbl_001E7580,
+    lbl_001E7580,
+    lbl_001E7638,
+    lbl_001E7638,
+    lbl_001E7638,
+    lbl_001E7638,
+    lbl_001E7638,
+    lbl_001E7638,
+    lbl_001E7638,
+    lbl_001E7638,
+    lbl_001E7638,
+    lbl_001E7638,
+    lbl_001E7638,
+    lbl_001E7638,
+    lbl_001E7638,
+    lbl_001E7638,
+    lbl_001E7638,
+    lbl_001E7638,
+    lbl_001E7668,
+    lbl_001E7694,
+    lbl_001E76A8,
 };

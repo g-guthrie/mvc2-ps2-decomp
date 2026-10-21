@@ -1,28 +1,36 @@
 # Interior code-label provenance
 
-`config/data_labels.csv` is a source-only allowlist for code addresses used as
-data-table targets but not function entries. It provides the address, owning
-function interval, in-function offset, consumer, and observed occurrence
-count. It must not be used to bless arbitrary labels.
+`config/data_labels.csv` records addresses that are inside native functions,
+with each exact owning interval, offset, consumer, and occurrence count.
+Function entries belong in `config/functions.csv` and use `func_` names;
+they must not remain on the interior-label allowlist.
 
-The first record is `lbl_00163F90`: it is `0x50` bytes inside
-`func_00163F40` and is used by `gMvc2Dispatch_00445A20` 27 times. The owning
-range is taken from the public function inventory. The executable control-flow
-target was checked privately; no instruction or table bytes are in this export.
+For example, `00163F90` was originally recorded inside an oversized range.
+Native boundaries and its existing complete 32-byte C implementation establish
+an independent callback, now named `func_00163F90`. Its 27 references in
+`gMvc2Dispatch_00445A20` are function references, not interior-label exceptions.
+No additional code or data credit follows from that correction.
 
-Run after copying the registry, verifier, test, and symbolic table source into
-the repository:
+Run the public regression checks with:
 
 ```sh
-python -m unittest tests/test_data_labels.py
-python tools/verify_data_labels.py \
-  --functions config/functions.csv \
-  --labels config/data_labels.csv \
-  --table src/mvc2_dispatch_00445A20.c
+PYTHONPATH=. python -m unittest discover -s tests -p test_data_labels.py
 ```
 
-The verifier rejects:
+These checks validate the entire current registry against the function inventory
+and validate every registered consumer's source occurrence counts. They also
+check the callback table above after its obsolete allowlist entry was removed.
+Both `make test` and report CI run this suite.
 
-* interior labels missing from the registry;
-* `func_` names that do not name a function start; and
-* all data and unrecognized identifiers in the table initializer.
+The standalone verifier accepts a registry scoped to one consumer:
+
+```sh
+python tools/verify_data_labels.py --functions config/functions.csv \
+  --labels consumer_labels.csv --table src/data/consumer.c
+```
+
+Initializers may contain function-start or registered interior-label names,
+optionally cast to the declared table element type. Unknown/data pointers,
+raw addresses, unsupported expressions, stale owning ranges, and mismatched
+occurrence counts are rejected. This source-only check does not replace the
+private compiled-object and full-image checks.

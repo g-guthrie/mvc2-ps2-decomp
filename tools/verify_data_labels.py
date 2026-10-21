@@ -67,11 +67,23 @@ def validate_registry(functions: dict[int, dict[str, object]], labels: dict[str,
 
 
 def initializer_identifiers(source: Path) -> list[str]:
-    text = source.read_text(encoding="utf-8")
+    text = re.sub(r"/\*.*?\*/|//[^\n]*", "", source.read_text(encoding="utf-8"), flags=re.DOTALL)
     match = re.search(r"=\s*\{(.*?)\};", text, flags=re.DOTALL)
     if match is None:
         raise ValueError(f"no initializer found in {source}")
-    return IDENTIFIER.findall(match.group(1))
+    declaration = re.search(r"\b([A-Za-z_]\w*)\s+[A-Za-z_]\w*\s*\[[^\]]*\]\s*=\s*\{", text)
+    element_type = declaration.group(1) if declaration else None
+    names = []
+    for entry in match.group(1).split(","):
+        entry = entry.strip()
+        if not entry:
+            continue
+        if element_type:
+            entry = re.sub(r"^\(\s*" + re.escape(element_type) + r"\s*\)\s*", "", entry)
+        if not IDENTIFIER.fullmatch(entry):
+            raise ValueError(f"unsupported table entry in {source}: {entry}")
+        names.append(entry)
+    return names
 
 
 def validate_table_source(source: Path, functions: dict[int, dict[str, object]], labels: dict[str, dict[str, object]]) -> None:
