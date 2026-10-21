@@ -10,8 +10,8 @@ typedef struct W4 { s32 a; s32 b; s32 c; s32 d; } W4;
 extern volatile s32 D_0048734C;
 s32 func_00408930(void) { return D_0048734C; }
 extern void func_0011D8F8(void *, s32, s32);
-extern char D_004895C0[];
-void func_0040C798(void) { do { func_0011D8F8(D_004895C0, 0, 0x10); } while (0); }
+#include "runtime_directory_types.h"
+void func_0040C798(void) { do { func_0011D8F8(&D_004895C0, 0, sizeof D_004895C0); } while (0); }
 extern void func_003FB128(void *);
 extern char D_004BB580[];
 typedef struct SD8 { char pad0; signed char t; char pad[0x2A]; s32 f2C; } SD8;

@@ -15,10 +15,18 @@ from elftools.elf.elffile import ELFFile
 from elftools.elf.enums import ENUM_RELOC_TYPE_MIPS
 
 if __package__:
-    from .verify_data_object import resolved_data
+    from .verify_data_object import (
+        Unit as VerifiedDataUnit,
+        embedded_switch_table_data,
+        resolved_data,
+    )
     from .verify_object import load_readonly_sections, validated_readonly_bases
 else:
-    from verify_data_object import resolved_data
+    from verify_data_object import (
+        Unit as VerifiedDataUnit,
+        embedded_switch_table_data,
+        resolved_data,
+    )
     from verify_object import load_readonly_sections, validated_readonly_bases
 
 
@@ -52,6 +60,7 @@ class DataUnit:
     size: int
     section: str
     source: str
+    kind: str = ""
 
 
 def load_matches(path: Path, base: int, image_size: int) -> list[tuple[str, int, int, str]]:
@@ -101,7 +110,7 @@ def load_data_units(path: Path, base: int, image_size: int) -> list[DataUnit]:
             source = row["source"]
             if Path(source).is_absolute() or ".." in Path(source).parts:
                 raise SystemExit(f"data source must stay within the project: {source}")
-            units.append(DataUnit(name, address, size, section, source))
+            units.append(DataUnit(name, address, size, section, source, row.get("kind", "")))
     units.sort(key=lambda unit: unit.address)
     return units
 
@@ -202,13 +211,41 @@ def verify_compiled_data_unit(unit: DataUnit, object_path: Path) -> None:
 
 
 def extract_compiled_data_unit(
-    unit: DataUnit, object_path: Path, addresses: dict[str, int]
+    unit: DataUnit,
+    object_path: Path,
+    addresses: dict[str, int],
+    *,
+    target_path: Path | None = None,
+    matches_path: Path = Path("config/matches.csv"),
+    code_symbols_path: Path = Path("config/symbol_addrs.txt"),
+    readonly_sections_path: Path = Path("config/readonly_sections.csv"),
 ) -> bytes:
-    """Read one complete compiler-owned data section, selected by its symbol.
+    """Read a whole data unit or a registered slice of its exact C owner.
 
-    Several function tables may have the same ELF section name. Never select
-    them by name alone or take a prefix from a larger section.
+    Embedded slices are restricted to compiler-generated switch tables and
+    validated through the owner's complete functions and readonly section.
+    Other units retain the standalone whole-symbol/whole-section rule.
     """
+    if unit.kind == "compiler_switch_table":
+        if target_path is None:
+            raise SystemExit(f"retail image required for compiler switch table: {unit.name}")
+        embedded = embedded_switch_table_data(
+            VerifiedDataUnit(
+                unit.name,
+                unit.address,
+                unit.size,
+                unit.section,
+                unit.source,
+                unit.kind,
+            ),
+            object_path,
+            target_path,
+            matches_path=matches_path,
+            code_symbols_path=code_symbols_path,
+            readonly_sections_path=readonly_sections_path,
+        )
+        if embedded is not None:
+            return embedded
     verify_compiled_data_unit(unit, object_path)
     return resolved_data(unit, object_path, addresses)
 
@@ -332,6 +369,9 @@ def main() -> None:
         help="optional public addresses used by compiled data relocations",
     )
     parser.add_argument("--data-units", type=Path, default=Path("config/data_units.csv"))
+    parser.add_argument(
+        "--readonly-sections", type=Path, default=Path("config/readonly_sections.csv")
+    )
     parser.add_argument("--compiled-object", action="append", default=[])
     parser.add_argument("--compiled-dir", type=Path, default=Path("build/matching"))
     parser.add_argument("--build", type=Path, default=Path("build/hybrid"))
@@ -351,7 +391,8 @@ def main() -> None:
     addresses.update({name: address for name, address, _, _ in matches})
     addresses.update({unit.name: unit.address for unit in data_units})
     compiled_functions, synthetic_symbols = extract_compiled_functions(
-        matches, compiled_objects, addresses, target, load_readonly_sections()
+        matches, compiled_objects, addresses, target,
+        load_readonly_sections(args.readonly_sections)
     )
     build = args.build
     build.mkdir(parents=True, exist_ok=True)
@@ -413,7 +454,15 @@ def main() -> None:
             if source in compiled_objects:
                 # Code-owned tables can live in distinct, identically named
                 # .rodata sections. Emit only the whole symbol's own section.
-                body = extract_compiled_data_unit(unit, compiled_objects[source], addresses)
+                body = extract_compiled_data_unit(
+                    unit,
+                    compiled_objects[source],
+                    addresses,
+                    target_path=args.target,
+                    matches_path=args.matches,
+                    code_symbols_path=args.symbols,
+                    readonly_sections_path=args.readonly_sections,
+                )
                 compiled_section = f".compiled_data.{name}"
                 compiled_lines.extend([
                     f'.section {compiled_section}, "a", @progbits',

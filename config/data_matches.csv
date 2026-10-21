@@ -6097,7 +6097,8 @@ data_u32_004891EC,0x004891EC,0x14,src/data/data_u32_004891EC.c,complete,placehol
 data_zero_00489200,0x00489200,0x10,src/data/data_zero_00489200.c,complete,placeholder
 data_u32_00489210,0x00489210,0x10,src/data/data_u32_00489210.c,complete,placeholder
 D_00489220,0x00489220,0x270,src/data/D_00489220.c,complete,reconstructed
-data_raw_00489490,0x00489490,0x140,src/data/data_raw_00489490.c,complete,placeholder
+data_raw_00489490,0x00489490,0x130,src/data/data_raw_00489490.c,complete,placeholder
+D_004895C0,0x004895C0,0x10,src/data/D_004895C0.c,complete,reconstructed
 data_s32_004895D0,0x004895D0,0x4,src/data/data_s32_004895D0.c,complete,reconstructed
 data_s32_004895D4,0x004895D4,0x4,src/data/data_s32_004895D4.c,complete,reconstructed
 data_u32_004895D8,0x004895D8,0x8,src/data/data_u32_004895D8.c,complete,placeholder
@@ -7240,7 +7241,7 @@ gFloatZeroString_004AC828,0x004AC828,0x2,src/data/gFloatZeroString_004AC828.c,co
 data_raw_004AC82A,0x004AC82A,0x6,src/data/data_raw_004AC82A.c,complete,placeholder
 gDecimalConversionFactors_004AC830,0x004AC830,0x18,src/data/gDecimalConversionFactors_004AC830.c,complete,reconstructed
 data_raw_004AC848,0x004AC848,0x8,src/data/data_raw_004AC848.c,complete,placeholder
-jtbl_004AC850,0x004AC850,0x18,src/data/jtbl_004AC850.c,complete,placeholder
+jtbl_004AC850,0x004AC850,0x18,src/newlib_dtoa_0011A108.c,complete,reconstructed
 jtbl_004AC870,0x004AC870,0x28,src/data/jtbl_004AC870.c,complete,placeholder
 data_raw_004AC8A0,0x004AC8A0,0x14,src/data/data_raw_004AC8A0.c,complete,placeholder
 data_raw_004AC8B4,0x004AC8B4,0x4,src/data/data_raw_004AC8B4.c,complete,placeholder

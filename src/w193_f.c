@@ -8,7 +8,7 @@ typedef float f32;
 typedef double f64;
 
 extern u8 D_006310C0[];
-extern s32 D_004895C0;
+#include "runtime_directory_types.h"
 extern s32 D_004895D4;
 extern u8 D_004BE220[];
 extern u8 D_004BE248[];
@@ -28,7 +28,7 @@ u32 func_0040C808(u8 *a, u8 *b, u32 c, u32 d)
     u32 m;
     s32 t;
     func_0011D8F8(D_006310C0, 0, 0x1000);
-    if (D_004895C0 == 0) {
+    if (D_004895C0.entries == 0) {
         func_0040C798();
     }
     func_0040B098();

@@ -1,4 +1,5 @@
 #include "runtime_entry_table.h"
+#include "runtime_directory_types.h"
 /* EE GCC 2.96: -O2 -G0 -fno-optimize-sibling-calls. */
 typedef unsigned char u8;
 typedef signed char s8;
@@ -51,15 +52,14 @@ void func_00400F98(s32 *parameters)
         func_0040C808(0, 0, 0, 0);
 }
 
-extern struct { s32 first, second; } D_004895C0;
-extern void func_0040C6D0(s32 *, s32, s32, s32);
-void func_0040C7C0(s32 value, s32 *output)
+extern void func_0040C6D0(s32 *output, char *name, unsigned char *bytes, s32 count);
+void func_0040C7C0(void *opaque_name, s32 *output)
 {
-    s32 first = D_004895C0.first;
+    char *name = (char *)opaque_name;
     output[0] = 0;
     output[1] = 0;
-    if (first != 0)
-        func_0040C6D0(output, value, first, D_004895C0.second);
+    if (D_004895C0.entries != 0)
+        func_0040C6D0(output, name, D_004895C0.entries, D_004895C0.count);
 }
 
 extern void func_0040D040(void *);

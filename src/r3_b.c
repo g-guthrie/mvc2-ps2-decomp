@@ -73,9 +73,6 @@ s32 func_00409EB8(SeekState *f, s32 off, s32 whence) {
     return pos;
 }
 
-typedef struct { s32 a; s32 b; } G;
-extern G D_004895C0;
-extern void func_0040C6D0(s32 *, s32, s32, s32);
 
 
 typedef struct { u8 pad0; s8 f1; s8 f2; u8 pad3[0x25]; u8 *f28; s32 f2c; s32 f30; s32 f34; } O;

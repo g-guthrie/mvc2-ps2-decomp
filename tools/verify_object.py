@@ -172,7 +172,9 @@ def load_readonly_sections(path=Path("config/readonly_sections.csv")):
         return list(csv.DictReader(stream))
 
 
-def validated_readonly_bases(elf, symbols, matches, addresses, target, mappings):
+def validated_readonly_bases(
+    elf, symbols, matches, addresses, target, mappings, resolved_sections=None
+):
     """Anchor a complete readonly section only after checking every byte.
 
     Jump-table entries must resolve inside a whole selected function. Unknown
@@ -201,6 +203,7 @@ def validated_readonly_bases(elf, symbols, matches, addresses, target, mappings)
                 or offset < 0 or offset + size > len(target)):
             raise SystemExit(f"invalid whole readonly section: {row['section']}")
         relocations = []
+        relocation_offsets = []
         for relsec in sections:
             if (relsec["sh_type"] not in {"SHT_REL", "SHT_RELA"}
                     or relsec["sh_info"] != index):
@@ -221,12 +224,18 @@ def validated_readonly_bases(elf, symbols, matches, addresses, target, mappings)
                     raise SystemExit("readonly label outside whole function")
                 relocations.append((pos, R_MIPS_32, value, key,
                                     rel["r_addend"] if rel.is_RELA() else None))
+                relocation_offsets.append(pos)
         body = relocate_bytes(section.data(), relocations, addresses["_gp"])
         if body != target[offset:offset + size]:
             raise SystemExit(f"readonly section differs from retail: {row['section']}")
         if index in result:
             raise SystemExit(f"duplicate readonly mapping: {row['section']}")
         result[index] = address
+        if resolved_sections is not None:
+            key = (row["source"], row["section"])
+            if key in resolved_sections:
+                raise SystemExit(f"duplicate readonly owner mapping: {row['source']} {row['section']}")
+            resolved_sections[key] = (address, bytes(body), tuple(relocation_offsets))
     return result
 
 
@@ -237,6 +246,8 @@ def verify(
     symbols_path: Path,
     source: str | None = None,
     diff: bool = False,
+    readonly_sections_path: Path = Path("config/readonly_sections.csv"),
+    resolved_readonly_sections: dict | None = None,
 ) -> None:
     addresses = load_addresses(symbols_path)
     gp = addresses.get("_gp")
@@ -255,7 +266,14 @@ def verify(
         symbols = {symbol.name: symbol for symbol in symbol_table.iter_symbols() if symbol.name}
         section_anchors = whole_function_anchors(elf, symbols, matches)
         readonly_bases = validated_readonly_bases(
-            elf, symbols, matches, addresses, target, load_readonly_sections())
+            elf,
+            symbols,
+            matches,
+            addresses,
+            target,
+            load_readonly_sections(readonly_sections_path),
+            resolved_readonly_sections,
+        )
 
         relocations_by_section = {}
         for section in elf.iter_sections():
@@ -331,12 +349,25 @@ def main() -> None:
     parser.add_argument("--symbols", type=Path, default=Path("config/symbol_addrs.txt"))
     parser.add_argument("--source")
     parser.add_argument(
+        "--readonly-sections",
+        type=Path,
+        default=Path("config/readonly_sections.csv"),
+    )
+    parser.add_argument(
         "--diff",
         action="store_true",
         help="on a mismatch, list the differing 32-bit words before exiting",
     )
     args = parser.parse_args()
-    verify(args.object, args.target, args.matches, args.symbols, args.source, args.diff)
+    verify(
+        args.object,
+        args.target,
+        args.matches,
+        args.symbols,
+        args.source,
+        args.diff,
+        args.readonly_sections,
+    )
 
 
 if __name__ == "__main__":
