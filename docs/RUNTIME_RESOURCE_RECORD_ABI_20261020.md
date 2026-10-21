@@ -1,0 +1,9 @@
+# Runtime resource record contracts
+
+The recovered `00415020` loader returns an integer status and walks 16-byte resource records. Its existing callers now share that contract through `runtime_resource_record.h`. The payload at offset 8 has two real states: a serialized unsigned offset before relocation and a pointer afterward. A union describes those states without accessing a pointer through an integer lvalue. The record pair used by the two notice initializers retains the complete 32-byte copy, including its terminating record.
+
+The `0016F530` and `0016F5B0` forwarding chain keeps the existing integer group-address parameter, takes an unsigned-word root list and a resource-record pointer, and returns void. Pointer conversion of the group address occurs at the downstream pointer-taking calls. The `00170140` tail now has the same void return contract; its preexisting volatile address-snapshot declarations are retained. This correction does not introduce volatile accesses. The `m5b` workspace pointer no longer needs its former volatile declaration: its existing scalar address snapshot and a typed decompressor argument reproduce the native instructions naturally.
+
+Both notice initializers use a pointer payload and the correct no-argument integer-returning pad-state guard. The resource-pass implementation copies complete records instead of declaring them as four unrelated floats. All native aggregate-copy instructions remain unchanged.
+
+This is a zero-credit source-contract correction. No initialized data, data labels, boundaries, progress accounting, or readonly-section ownership changed. All ten affected compilation units reproduce all 52 whole functions (6,628 existing bytes), including relocations. The full linked loaded image and packed retail executable remain the final placement gates. The private proof packet records recipes, hashes, frozen objects and gate logs separately from later recovery work.

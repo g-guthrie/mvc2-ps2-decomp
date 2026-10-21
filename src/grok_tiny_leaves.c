@@ -1067,14 +1067,17 @@ int func_0010CAC8(void *destination, const void *source, int size) {
     return result;
 }
 
-void func_0010CB50(void) {
+unsigned int *func_0010CB50(unsigned int *begin, unsigned int *end, unsigned int value) {
+    unsigned int *result;
     asm {
         addiu v1, r0, 131
         syscall 0
+        move result, v0
     }
+    return result;
 }
 
-void func_0010CC98(void) {
+void func_0010CC98(int syscall_number, void *handler) {
     asm {
         addiu v1, r0, 116
         syscall 0

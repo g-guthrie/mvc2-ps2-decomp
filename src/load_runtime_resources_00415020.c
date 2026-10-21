@@ -1,4 +1,4 @@
-typedef struct ResourceRecord { short id; unsigned short type; unsigned int flags; void *data; int attributes; } ResourceRecord;
+#include "runtime_resource_record.h"
 typedef struct RuntimeEntrySlot { int handle; unsigned int state; } ResourceTag;
 extern unsigned char D_0057ED70[];
 extern unsigned int D_0057FB70[];

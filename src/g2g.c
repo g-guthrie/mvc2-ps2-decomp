@@ -1,3 +1,4 @@
+#include "runtime_resource_record.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -81,19 +82,18 @@ u8 *func_0037B930(u8 *a) {
     *D_004C2994 = *(u16 *)(*(u8 **)(r + 0x18) + 0x168);
     return r;
 }
-extern void func_00176230();
-extern void func_00415020();
-extern s32 D_004C28B4;
-extern u8 *D_004C28B0;
+extern void func_00176230(s16 *, s16 *);
+extern u32 D_004C28B4;
+extern void *D_004C28B0;
 void func_0016F3C0(void) {
-    s32 *q;
+    u32 *q;
     u8 *base;
     s32 i;
-    func_00176230(D_004C28B4 + 0x2EA00, D_004C28B0);
+    func_00176230((s16 *)(D_004C28B4 + 0x2EA00u), D_004C28B0);
     base = D_004C28B0;
     i = 0;
-    while (*(s32 *)(base + i + 8) > 0) {
-        q = (s32 *)(base + i + 8); i += 0x10; *q += (s32)D_004C28B0;
+    while ((s32)((ResourceRecord *)(base + i))->payload.offset > 0) {
+        q = &((ResourceRecord *)(base + i))->payload.offset; i += sizeof(ResourceRecord); *q += (u32)D_004C28B0;
     }
     func_00415020(0xD, D_004C28B0);
 }

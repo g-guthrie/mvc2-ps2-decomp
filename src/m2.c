@@ -1,3 +1,4 @@
+#include "runtime_resource_record.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -30,9 +31,8 @@ extern void func_00126400();
 extern void func_001266A0(void *p, s32 a, s32 b);
 extern void func_0022C5D0(void *p);
 extern void func_00175670(void *p);
-extern void func_00415020(s32 a, s32 b);
-extern void func_00415320(s32 a, s32 b, s32 c);
-extern void func_00415590(s32 a, s32 b, s32 c, s32 d);
+extern int func_00415320(void *a, u32 *b, s32 c);
+extern void func_00415590(void *a, u32 *b, s32 c, s32 d);
 
 
 s32 func_0036EA50(void *a, s32 b, s32 *c) {
@@ -259,8 +259,8 @@ void func_0019AEA0(u8 *p) {
     }
 }
 
-void func_0016F530(s32 a0, s32 a1, s32 a2, s32 a3, s32 t0, s32 t1) {
+void func_0016F530(s32 a0, s32 a1, u32 *a2, ResourceRecord *a3, s32 t0, s32 t1) {
     func_00415020(a0, a3);
-    func_00415320(a1, a2, a0);
-    func_00415590(a1, a2, t0, t1);
+    func_00415320((void *)(u32)a1, a2, a0);
+    func_00415590((void *)(u32)a1, a2, t0, t1);
 }

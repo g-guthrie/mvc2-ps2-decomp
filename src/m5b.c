@@ -1,3 +1,4 @@
+#include "runtime_resource_record.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -23,17 +24,16 @@ void func_0017B8E0(u8 *p) {
     func_001E3710(p, 0x44);
 }
 
-extern volatile s32 D_004C28B0;
+extern void *D_004C28B0;
 extern u8 D_004F80D0[];
-extern void func_00176230(void *p, s32 a);
-extern void func_0016F4D0(void *p, s32 a);
-extern void func_00415020(s32 a, s32 b);
+extern void func_00176230(s16 *p, s16 *a);
+extern void func_0016F4D0(u32 *p, u8 *a);
 extern void func_00415300(void);
-extern void func_00415320(void *a, void *b, s32 c);
-extern void func_00415590(void *a, void *b, s32 c, s32 d);
-void func_0016F430(void *p, void *q) {
-    s32 g = D_004C28B0;
-    func_00176230(q, g);
+extern int func_00415320(void *a, u32 *b, s32 c);
+extern void func_00415590(void *a, u32 *b, s32 c, s32 d);
+void func_0016F430(u32 *p, s16 *q) {
+    u32 g = (u32)D_004C28B0;
+    func_00176230(q, (s16 *)g);
     func_0016F4D0(p, D_004C28B0);
     func_00415020(0xC10, D_004C28B0);
     func_00415300();

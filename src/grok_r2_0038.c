@@ -19,8 +19,8 @@ extern void func_00396EC0(u8 *, u8 *, u8 *);
 extern void func_003A5000(u8 *, int, int, int);
 extern void func_003B1130(u8 *, int, int, int);
 extern void func_003BA140(u8 *);
-extern void func_003BDA80(u8 *, u8 *);
-extern void func_003BE240(u8 *);
+extern void func_003BDA80(u8 *, void *);
+extern void func_003BE240(u8 *,u8 *);
 extern void func_003BE300(u8 *, u8 *);
 
 void func_00386740(u8 *p) {
@@ -147,8 +147,8 @@ void func_003BDA40(u8 *p) {
         func_003BE300(p, *(u8 **)(p + 24));
 }
 
-void func_003BE2C0(u8 *p) {
-    func_003BE240(p);
+void func_003BE2C0(u8 *p,u8 *q) {
+    func_003BE240(p,q);
     if (I(p, 220) == 0)
         func_001E7F60(p);
 }

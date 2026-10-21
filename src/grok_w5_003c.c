@@ -165,7 +165,7 @@ s32 func_003DEC90(void)
     return 0;
 }
 
-void func_003C9850(u8 *p)
+void func_003C9850(u8 *p, u8 *owner)
 {
     f32 *t = D_004762F0 + p[0x22] * 2;
     f32 x = t[0];

@@ -345,19 +345,18 @@ void func_00364510(P_14 *a) {
 
 extern s32 func_00174470();
 extern s32 func_001745B0();
-extern void func_003BE2C0();
+extern void func_003BE2C0(u8 *,u8 *);
 typedef struct {
     u8 p0[4]; u8 f4; u8 p5[0x2F]; f32 f34, f38; u8 p3c[0x20]; f32 f5c, f60; u8 p64[4]; f32 f68, f6c;
 } P_15;
-void func_003BE1A0(P_15 *a, void *b) {
+void func_003BE1A0(u8 *a, void *b) {
     u32 t;
-    a->f34 += a->f5c;
-    a->f5c += a->f68;
-    a->f38 += a->f60;
-    a->f60 += a->f6c;
+    ((P_15 *)a)->f34 += ((P_15 *)a)->f5c;
+    ((P_15 *)a)->f5c += ((P_15 *)a)->f68;
+    ((P_15 *)a)->f38 += ((P_15 *)a)->f60;
+    ((P_15 *)a)->f60 += ((P_15 *)a)->f6c;
     if (func_00174470(a) == 0 || func_001745B0(a) == 0) {
-        t = a->f4; a->f4 = t + 1;
+        t = ((P_15 *)a)->f4; ((P_15 *)a)->f4 = t + 1;
     }
-    func_003BE2C0(a, b);
+    func_003BE2C0((u8 *)a, (u8 *)b);
 }
-

@@ -2283,7 +2283,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$SNAS" -G0 -o "$BUILD/runtime_state_slots.o" "$BUILD/runtime_state_slots.s"
 "$PYTHON" tools/verify_object.py "$BUILD/runtime_state_slots.o" private/SLUS_204.86.rom --source src/runtime_state_slots.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/luna_a_gp_tail.c -c -lang c -O3 -sdatathreshold 8 \
+    -i src src/luna_a_gp_tail.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/luna_a_gp_tail.o"
 "$PYTHON" tools/verify_object.py "$BUILD/luna_a_gp_tail.o" private/SLUS_204.86.rom --source src/luna_a_gp_tail.c
 
@@ -4709,7 +4709,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/wave5.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/wave5.o"
 "$PYTHON" tools/verify_object.py "$BUILD/wave5.o" private/SLUS_204.86.rom --source src/wave5.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/wave5b.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/wave5b.o"
+    -i src src/wave5b.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/wave5b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/wave5b.o" private/SLUS_204.86.rom --source src/wave5b.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/wave4.c -c -lang c -O4 -Op -sdatathreshold 0 -o "$BUILD/wave4.o"
@@ -5283,7 +5283,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/g2.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/g2.o"
 "$PYTHON" tools/verify_object.py "$BUILD/g2.o" private/SLUS_204.86.rom --source src/g2.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/g2g.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/g2g.o"
+    -i src src/g2g.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/g2g.o"
 "$PYTHON" tools/verify_object.py "$BUILD/g2g.o" private/SLUS_204.86.rom --source src/g2g.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/g2op.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/g2op.o"
@@ -5824,7 +5824,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/m5.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/m5.o"
 "$PYTHON" tools/verify_object.py "$BUILD/m5.o" private/SLUS_204.86.rom --source src/m5.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/m5b.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/m5b.o"
+    -i src src/m5b.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/m5b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/m5b.o" private/SLUS_204.86.rom --source src/m5b.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/m5c.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/m5c.o"
@@ -6025,7 +6025,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/r2b.c -c -lang c -O3,p -sdatathreshold 8 -o "$BUILD/r2b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/r2b.o" private/SLUS_204.86.rom --source src/r2b.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/m2.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/m2.o"
+    -i src src/m2.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/m2.o"
 "$PYTHON" tools/verify_object.py "$BUILD/m2.o" private/SLUS_204.86.rom --source src/m2.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/m2b.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/m2b.o"
@@ -6544,7 +6544,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/w9m2g.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/w9m2g.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w9m2g.o" private/SLUS_204.86.rom --source src/w9m2g.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/m13.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/m13.o"
+    -i src src/m13.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/m13.o"
 "$PYTHON" tools/verify_object.py "$BUILD/m13.o" private/SLUS_204.86.rom --source src/m13.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/m13b.c -c -lang c -O4 -Op -sdatathreshold 0 -o "$BUILD/m13b.o"
@@ -14949,7 +14949,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/resource_section_bind_0
 "$PYTHON" tools/verify_object.py "$BUILD/resource_section_bind_0016f1b0.o" private/SLUS_204.86.rom --source src/resource_section_bind_0016f1b0.c
 
 # Independently recovered complete callback bodies.
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/resource_record_passes_0016fd80.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/resource_record_passes_0016fd80.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" -i src src/resource_record_passes_0016fd80.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/resource_record_passes_0016fd80.o"
 "$PYTHON" tools/verify_object.py "$BUILD/resource_record_passes_0016fd80.o" private/SLUS_204.86.rom --source src/resource_record_passes_0016fd80.c
 
 # Double-to-float conversion returns through the SDK float register ABI.
@@ -16160,9 +16160,46 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$PYTHON" tools/verify_object.py "$BUILD/actor_launch_variant_003B47C0.o" private/SLUS_204.86.rom --source src/actor_launch_variant_003B47C0.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/load_runtime_resources_00415020.c -c -lang c -O3,p -sdatathreshold 8 -o "$BUILD/load_runtime_resources_00415020.o"
+    -i src src/load_runtime_resources_00415020.c -c -lang c -O3,p -sdatathreshold 8 -o "$BUILD/load_runtime_resources_00415020.o"
 "$PYTHON" tools/verify_object.py "$BUILD/load_runtime_resources_00415020.o" private/SLUS_204.86.rom --source src/load_runtime_resources_00415020.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/build_palette_format_00415F30.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/build_palette_format_00415F30.o"
 "$PYTHON" tools/verify_object.py "$BUILD/build_palette_format_00415F30.o" private/SLUS_204.86.rom --source src/build_palette_format_00415F30.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_motion_preset_003BD2E0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_motion_preset_003BD2E0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_motion_preset_003BD2E0.o" private/SLUS_204.86.rom --source src/actor_motion_preset_003BD2E0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_pause_motion_003C8BD0.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/actor_pause_motion_003C8BD0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_pause_motion_003C8BD0.o" private/SLUS_204.86.rom --source src/actor_pause_motion_003C8BD0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_scene_preset_003CFA40.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/actor_scene_preset_003CFA40.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_scene_preset_003CFA40.o" private/SLUS_204.86.rom --source src/actor_scene_preset_003CFA40.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_input_history_003B5F30.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_input_history_003B5F30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_input_history_003B5F30.o" private/SLUS_204.86.rom --source src/actor_input_history_003B5F30.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/initialize_camera_00122DA0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/initialize_camera_00122DA0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/initialize_camera_00122DA0.o" private/SLUS_204.86.rom --source src/initialize_camera_00122DA0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/select_camera_presets_00123250.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/select_camera_presets_00123250.o"
+"$PYTHON" tools/verify_object.py "$BUILD/select_camera_presets_00123250.o" private/SLUS_204.86.rom --source src/select_camera_presets_00123250.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_steering_003BE040.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_steering_003BE040.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_steering_003BE040.o" private/SLUS_204.86.rom --source src/actor_steering_003BE040.c
+
+"$WIBO" "$SNCPP" -P src/sony29_kernel_table_discovery_0010CB98.c "$BUILD/sony29_kernel_table_discovery_0010CB98.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_kernel_table_discovery_0010CB98.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_kernel_table_discovery_0010CB98.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_kernel_table_discovery_0010CB98.o" "$BUILD/sony29_kernel_table_discovery_0010CB98.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_kernel_table_discovery_0010CB98.o" private/SLUS_204.86.rom --source src/sony29_kernel_table_discovery_0010CB98.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_pattern_burst_003A8DB0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_pattern_burst_003A8DB0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_pattern_burst_003A8DB0.o" private/SLUS_204.86.rom --source src/actor_pattern_burst_003A8DB0.c

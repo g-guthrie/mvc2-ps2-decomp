@@ -17,7 +17,6 @@ extern s32 D_004C2698;
 extern s32 D_004C26A4;
 extern s32 D_004C269C;
 extern u8 *D_004C2794;
-extern void func_0016F5B0(s32, s32, s32, s32, s32, s32);
 extern s32 func_0018AB60(u8 *);
 extern void func_003266E0(u8 *);
 extern void func_00125A80(s32);
