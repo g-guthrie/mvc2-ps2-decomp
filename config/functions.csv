@@ -4045,7 +4045,8 @@ func_001B8A20,0x001B8A20,0x98,0x001B8AB8,code,spimdisasm-explicit-size-before-fi
 func_001B8AC0,0x001B8AC0,0x14,0x001B8AD4,code,spimdisasm-explicit-size-before-first-data
 func_001B8AE0,0x001B8AE0,0x8,0x001B8AE8,code,spimdisasm-explicit-size-before-first-data
 func_001B8AF0,0x001B8AF0,0x4C,0x001B8B3C,code,spimdisasm-explicit-size-before-first-data
-func_001B8B40,0x001B8B40,0x150,0x001B8C90,code,spimdisasm-explicit-size-before-first-data
+func_001B8B40,0x001B8B40,0x28,0x001B8B68,code,verified-complete-c-dispatch-entry
+func_001B8B70,0x001B8B70,0x120,0x001B8C90,code,verified-native-table-entry-complete-c
 func_001B8C90,0x001B8C90,0x8C,0x001B8D1C,code,spimdisasm-explicit-size-before-first-data
 func_001B8D20,0x001B8D20,0x64,0x001B8D84,code,spimdisasm-explicit-size-before-first-data
 func_001B8D90,0x001B8D90,0x14,0x001B8DA4,code,spimdisasm-explicit-size-before-first-data
@@ -4066,7 +4067,8 @@ func_001B9350,0x001B9350,0x74,0x001B93C4,code,spimdisasm-explicit-size-before-fi
 func_001B93D0,0x001B93D0,0x14,0x001B93E4,code,spimdisasm-explicit-size-before-first-data
 func_001B93F0,0x001B93F0,0x8,0x001B93F8,code,spimdisasm-explicit-size-before-first-data
 func_001B9400,0x001B9400,0x4C,0x001B944C,code,spimdisasm-explicit-size-before-first-data
-func_001B9450,0x001B9450,0x1B4,0x001B9604,code,spimdisasm-explicit-size-before-first-data
+func_001B9450,0x001B9450,0x28,0x001B9478,code,verified-complete-c-dispatch-entry
+func_001B9480,0x001B9480,0x184,0x001B9604,code,verified-native-table-entry-complete-c
 func_001B9610,0x001B9610,0xB0,0x001B96C0,code,spimdisasm-explicit-size-before-first-data
 func_001B96C0,0x001B96C0,0x14,0x001B96D4,code,spimdisasm-explicit-size-before-first-data
 func_001B96E0,0x001B96E0,0x8,0x001B96E8,code,spimdisasm-explicit-size-before-first-data

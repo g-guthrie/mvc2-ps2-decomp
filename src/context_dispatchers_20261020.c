@@ -83,3 +83,14 @@ void func_001B9000(u8 *p) {
     D_004C26E8 = (u16 *)(p + 0xD0);
     jtbl_0044BF40[p[4]](p);
 }
+
+extern u16 *D_004C26E4, *D_004C26EC;
+extern Dispatch jtbl_0044BF10[], jtbl_0044BF60[];
+void func_001B8B40(u8 *p) {
+    D_004C26E4 = (u16 *)(p+0xD0);
+    jtbl_0044BF10[p[4]](p);
+}
+void func_001B9450(u8 *p) {
+    D_004C26EC = (u16 *)(p+0xD0);
+    jtbl_0044BF60[p[4]](p);
+}

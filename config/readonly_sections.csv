@@ -18,3 +18,4 @@ src/newlib_k_tanf_00115E18.c,.rodata,0x004AC158,0x44
 src/newlib_atanf_00116CD0.c,.rodata,0x004AC290,0x54
 src/newlib_vfprintf_00120a30.c,.rodata,0x004AC9E0,0x204
 src/actor_launch_setup_003B4A10.c,.rodata,0x004B87A0,0x18
+src/actor_launch_variant_003B47C0.c,.rodata,0x004B8780,0x18

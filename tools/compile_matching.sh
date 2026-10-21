@@ -16150,3 +16150,19 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/cri_audio_release_00401868.i" "$BUILD/cri_audio_release_00401868.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/cri_audio_release_00401868.o" "$BUILD/cri_audio_release_00401868.s"
 "$PYTHON" tools/verify_object.py "$BUILD/cri_audio_release_00401868.o" private/SLUS_204.86.rom --source src/cri_audio_release_00401868.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_emission_cycles_001CCF60.c -c -lang c -O4,p -sdatathreshold 8 -i src -o "$BUILD/actor_emission_cycles_001CCF60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_emission_cycles_001CCF60.o" private/SLUS_204.86.rom --source src/actor_emission_cycles_001CCF60.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_launch_variant_003B47C0.c -c -lang c -O4,p -sdatathreshold 8 -i src -o "$BUILD/actor_launch_variant_003B47C0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_launch_variant_003B47C0.o" private/SLUS_204.86.rom --source src/actor_launch_variant_003B47C0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/load_runtime_resources_00415020.c -c -lang c -O3,p -sdatathreshold 8 -o "$BUILD/load_runtime_resources_00415020.o"
+"$PYTHON" tools/verify_object.py "$BUILD/load_runtime_resources_00415020.o" private/SLUS_204.86.rom --source src/load_runtime_resources_00415020.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/build_palette_format_00415F30.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/build_palette_format_00415F30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/build_palette_format_00415F30.o" private/SLUS_204.86.rom --source src/build_palette_format_00415F30.c

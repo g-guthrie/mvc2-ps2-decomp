@@ -17530,3 +17530,14 @@ func_001D1F10,0x001D1F10,0x19C,src/actor_inherited_state_setups.c,complete
 func_001CCDA0,0x001CCDA0,0x194,src/actor_inherited_state_setups.c,complete
 func_001D3A60,0x001D3A60,0x1A4,src/actor_inherited_state_setups.c,complete
 func_00401868,0x00401868,0xB4,src/cri_audio_release_00401868.c,complete
+func_001CCF60,0x001CCF60,0x1CC,src/actor_emission_cycles_001CCF60.c,complete
+func_001CD130,0x001CD130,0x1E0,src/actor_emission_cycles_001CCF60.c,complete
+func_001CD320,0x001CD320,0x1FC,src/actor_emission_cycles_001CCF60.c,complete
+func_001CD520,0x001CD520,0x2A4,src/actor_emission_cycles_001CCF60.c,complete
+func_001B8B70,0x001B8B70,0x120,src/actor_inherited_state_setups.c,complete
+func_001B9480,0x001B9480,0x184,src/actor_inherited_state_setups.c,complete
+func_001B8B40,0x001B8B40,0x28,src/context_dispatchers_20261020.c,complete
+func_001B9450,0x001B9450,0x28,src/context_dispatchers_20261020.c,complete
+func_003B47C0,0x003B47C0,0x24C,src/actor_launch_variant_003B47C0.c,complete
+func_00415020,0x00415020,0x118,src/load_runtime_resources_00415020.c,complete
+func_00415F30,0x00415F30,0x1DC,src/build_palette_format_00415F30.c,complete
