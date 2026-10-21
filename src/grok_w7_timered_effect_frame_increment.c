@@ -5,7 +5,7 @@ extern void func_003031B0(u8 *);
 extern int func_00175700(u8 *);
 extern void func_003B10B0(u8 *, int, int);
 
-void func_00303060(u8 *p)
+void func_00303060(u8 *p, u8 *context)
 {
     s16 timer;
 

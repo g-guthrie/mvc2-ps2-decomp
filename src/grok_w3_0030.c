@@ -65,7 +65,7 @@ void func_00301CF0(u8 *p) {
         p[0x151] = 0;
 }
 
-void func_00302D80(u8 *p) {
+void func_00302D80(u8 *p, u8 *context) {
     func_00175700(p);
     if (*(s8 *)(p + 0x151)) {
         p[7]++;
@@ -74,7 +74,7 @@ void func_00302D80(u8 *p) {
     }
 }
 
-void func_00303140(u8 *p) {
+void func_00303140(u8 *p, u8 *context) {
     s16 v;
     func_003031B0(p);
     func_00175700(p);

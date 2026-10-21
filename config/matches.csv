@@ -17708,3 +17708,4 @@ func_00185980,0x00185980,0x104,src/owner_backlink_query_00185980.c,complete
 func_00238730,0x00238730,0x168,src/owner_motion_handoff_00238730.c,complete
 func_002FF890,0x002FF890,0xBC,src/child_motion_transition_002FF890.c,complete
 func_0020DFA0,0x0020DFA0,0x1B8,src/owner_escape_motion_0020DFA0.c,complete
+func_00303200,0x00303200,0x30,src/dispatcher_00303200.c,complete

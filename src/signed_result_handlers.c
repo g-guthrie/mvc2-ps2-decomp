@@ -812,7 +812,7 @@ void func_003024F0(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); 
 
 void func_00302C40(void *p) { if ((s8)func_00175700(p) < 0) { func_001846B0(p); } }
 
-void func_00302ED0(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
+void func_00302ED0(u8 *p, u8 *context) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
 void func_003034A0(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 

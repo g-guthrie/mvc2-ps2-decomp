@@ -1001,7 +1001,7 @@ extern DispatchFn jtbl_0045C970[];
 extern DispatchFn jtbl_0045C980[];
 extern DispatchFn jtbl_0045C990[];
 extern DispatchFn jtbl_0045C9C8[];
-extern DispatchFn jtbl_0045C9E0[];
+extern void (* const jtbl_0045C9E0[])(u8 *, u8 *);
 extern DispatchFn jtbl_0045CA20[];
 extern ContextDispatchFn jtbl_0045CA40[];
 extern DispatchFn jtbl_0045CA58[];
@@ -3388,7 +3388,7 @@ void func_00302910(u8 *p) { jtbl_0045C990[p[6]](p); }
 
 void func_00302C80(u8 *p) { jtbl_0045C9C8[p[6]](p); }
 
-void func_00302F10(u8 *p) { jtbl_0045C9E0[p[7]](p); }
+void func_00302F10(u8 *p, u8 *context) { jtbl_0045C9E0[p[7]](p, context); }
 
 void func_003034E0(u8 *p) { jtbl_0045CA20[p[6]](p); }
 
