@@ -16362,5 +16362,19 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -G0 -o "$BUILD/stream_engine_default_commit_003F7C18.o" "$BUILD/stream_engine_default_commit_003F7C18.s"
 "$PYTHON" tools/verify_object.py "$BUILD/stream_engine_default_commit_003F7C18.o" private/SLUS_204.86.rom --source src/stream_engine_default_commit_003F7C18.c
 
+"$WIBO" "$SNCPP" -P src/sony29_fileio_descriptor_create_00109690.c "$BUILD/sony29_fileio_descriptor_create_00109690.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_fileio_descriptor_create_00109690.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_fileio_descriptor_create_00109690.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_fileio_descriptor_create_00109690.o" "$BUILD/sony29_fileio_descriptor_create_00109690.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_fileio_descriptor_create_00109690.o" private/SLUS_204.86.rom --source src/sony29_fileio_descriptor_create_00109690.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_random_burst_003B9A90.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_random_burst_003B9A90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_random_burst_003B9A90.o" private/SLUS_204.86.rom --source src/actor_random_burst_003B9A90.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/func_00231490.c -c -lang c -O4,p -sdatathreshold 0 -i src \
+    -o "$BUILD/func_00231490.o"
+"$PYTHON" tools/verify_object.py "$BUILD/func_00231490.o" \
+    private/SLUS_204.86.rom --source src/func_00231490.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

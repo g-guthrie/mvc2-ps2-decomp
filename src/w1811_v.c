@@ -37,7 +37,7 @@ extern s8 D_004D1917[];
 extern s16 D_004BF448;
 extern s32 D_004C2838;
 
-void func_0015B000(f32 x, s32 a0, V3 *pos, s32 a2, s32 idx, u16 flags) {
+void func_0015B000(s32 a0, V3 *pos, f32 x, s32 a2, s32 idx, u16 flags) {
     extern O *func_003DA750(s32, s32, s32);
     extern void func_0015AED0();
     extern void func_0015B160();

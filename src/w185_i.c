@@ -12,7 +12,7 @@ extern G2 *D_004C2840;
 
 extern s32 D_004C2838;
 
-void func_0015AD80(s32 a0, V3 *pos, s32 n, s32 k, u32 flags, f32 vel)
+void func_0015AD80(s32 a0, V3 *pos, f32 vel, s32 n, s32 k, u32 flags)
 {
     extern u8 *func_003DA750(s32, s32, s32);
     extern s32 func_00118FA8(f32);
