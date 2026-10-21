@@ -1,3 +1,4 @@
+#include "runtime_stream_query.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -18,7 +19,6 @@ void func_00401A48(u8 *p, s32 *a, s32 *b) {
     extern s32 func_003FF190(s32);
     extern s32 func_00402298(u8 *, s32);
     extern s32 func_003FFFF0(s32);
-    extern s32 func_003FFFA8(s32);
     raw = p[1];
     if ((u32)raw - 3 < 2) {
         r1 = func_003FFF78(*(s32 *)(p + 4));
@@ -35,7 +35,7 @@ void func_00401A48(u8 *p, s32 *a, s32 *b) {
         r1 = func_003FFF78(arg);
         arg = *(s32 *)(p + 4);
         *b = r1;
-        r5 = func_003FFFA8(arg);
+        r5 = func_003FFFA8((void *)arg);
         *a = *a * (16 / r5);
         *a += *(s32 *)(p + 0xA4);
     } else {

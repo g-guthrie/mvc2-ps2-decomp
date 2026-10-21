@@ -1,4 +1,4 @@
-typedef signed int s32;
+#include "stream_group_types.h"
 
 extern void func_00408628(void);
 extern void func_00411288(void);
@@ -15,16 +15,15 @@ void func_003F64D0(S3F6 *p, s32 v) { p->a = v; p->b = v / 0x60; }
 extern volatile s32 D_00487330[];
 void func_004086D0(s32 v) { func_00408628(); D_00487330[0] = v; }
 
-typedef struct P3FF { s32 pad0; void *obj; char pad1[0x24]; s32 f2C; s32 f30; s32 f34; } P3FF;
 extern s32 func_003F81B0(void *), func_003F8430(void *), func_003F8438(void *);
-void func_003FFCF8(P3FF *p) {
-    void *o = p->obj;
+void func_003FFCF8(StreamGroup *p) {
+    void *o = p->engine;
     s32 a = func_003F81B0(o);
     s32 b = func_003F8430(o);
     s32 c = func_003F8438(o);
-    s32 n = a - p->f34;
+    s32 n = a - p->progress_34;
     if (c < n) n = c;
-    p->f2C += n; p->f30 += b; p->f34 += n;
+    p->progress_2c += n; p->progress_30 += b; p->progress_34 += n;
 }
 
 typedef struct P11C { char pad[0x30]; s32 f30; s32 f34; } P11C;

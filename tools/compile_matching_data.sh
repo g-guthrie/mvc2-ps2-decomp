@@ -85,6 +85,8 @@ def compile_and_verify(unit):
             "0",
             "-i",
             "src/data",
+            "-i",
+            "src",
             "-o",
             str(object_path),
         ],

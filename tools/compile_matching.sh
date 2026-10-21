@@ -16351,5 +16351,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$MWCCPS2_30" -i src src/actor_fall_transition_003A7110.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_fall_transition_003A7110.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_fall_transition_003A7110.o" private/SLUS_204.86.rom --source src/actor_fall_transition_003A7110.c
 
+"$WIBO" "$SNCPP" -P src/stream_engine_default_commit_003F7C18.c "$BUILD/stream_engine_default_commit_003F7C18.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/stream_engine_default_commit_003F7C18.i" "$BUILD/stream_engine_default_commit_003F7C18.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/stream_engine_default_commit_003F7C18.o" "$BUILD/stream_engine_default_commit_003F7C18.s"
+"$PYTHON" tools/verify_object.py "$BUILD/stream_engine_default_commit_003F7C18.o" private/SLUS_204.86.rom --source src/stream_engine_default_commit_003F7C18.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

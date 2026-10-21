@@ -1,9 +1,4 @@
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef signed short s16;
-typedef unsigned int u32;
-typedef signed int s32;
+#include "stream_group_types.h"
 
 extern void func_00408628(s32);
 extern volatile s32 D_00487334;
@@ -60,14 +55,13 @@ extern void func_003F7D58(void *);
 extern void func_003F9630(void);
 extern void func_003F9660();
 extern void *func_0011D8F8(void *, s32, u32);
-void func_003FF568(s32 *p)
+void func_003FF568(s32 *object)
 {
+    StreamGroup *p = (StreamGroup *)object;
     if (p != 0) {
-        if (p[1] != 0) {
-            func_003F7D58((void *)p[1]);
-        }
+        if (p->engine != 0) func_003F7D58(p->engine);
         func_003F9630();
-        func_0011D8F8(p, 0, 0x9C);
+        func_0011D8F8(p, 0, sizeof(*p));
         func_003F9660();
     }
 }
@@ -118,10 +112,10 @@ extern s32 func_003F8318(void *);
 extern void func_003FF930(void *);
 extern void func_003F88E0(void *);
 extern void func_003FFB08(void *);
-extern s32 func_003FFCF8(void *);
-s32 func_003FFD88(u8 *p)
+extern void func_003FFCF8(StreamGroup *);
+void func_003FFD88(StreamGroup *p)
 {
-    u8 *s = *(u8 **)(p + 4);
+    u8 *s = (u8 *)p->engine;
     s32 h;
     if (func_003F8318(s) == 0) {
         func_003FF930(p);
@@ -132,7 +126,8 @@ s32 func_003FFD88(u8 *p)
     }
     h = *(s16 *)(s + 0x98);
     if (h == 10 || h == 20) {
-        return func_003FFCF8(p);
+        func_003FFCF8(p);
+        return;
     }
 }
 

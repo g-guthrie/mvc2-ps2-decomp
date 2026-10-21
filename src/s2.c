@@ -1,22 +1,17 @@
-typedef signed int s32;
-typedef unsigned int u32;
-typedef signed short s16;
-typedef unsigned char u8;
+#include "stream_group_types.h"
+#include "runtime_stream_query.h"
 
 extern void func_0040EF00(void);
-extern void func_003F81C0(s32);
-extern void func_003F8140(s32);
 extern s32 func_0010F148(s32);
 extern void func_003F7B78(void);
 extern void *func_0011D8F8(void *, s32, s32);
-extern char D_00484100[];
 
 void func_003FF300(void) { func_0040EF00(); }
-void func_00400038(s32 *p) { func_003F81C0(p[1]); }
-void func_003FFFA8(s32 *p) { func_003F8140(p[1]); }
+int func_00400038(void *object) { return func_003F81C0(*(void **)((u8 *)object + 4)); }
+int func_003FFFA8(void *object) { return func_003F8140(*(void **)((u8 *)object + 4)); }
 
 
-void func_003FF358(void) { func_003F7B78(); func_0011D8F8(D_00484100, 0, 0x9C0); }
+void func_003FF358(void) { func_003F7B78(); func_0011D8F8(D_00484100, 0, sizeof D_00484100); }
 
 typedef struct { s16 a; s16 b; s32 c; s32 d; } S7D58;
 extern void func_004043C0(s32);

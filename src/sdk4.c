@@ -1,6 +1,4 @@
-typedef signed int s32;
-typedef unsigned char u8;
-typedef unsigned short u16;
+#include "stream_group_types.h"
 extern void func_0040EC90(void);
 extern void func_0040EA48(void);
 extern void func_0040ED00(void);
@@ -10,8 +8,7 @@ extern void func_003F79A8();
 void func_003FF1F8(void) { func_0040EC90(); }
 void func_003FF178(void) { func_0040EA48(); }
 void func_003FF210(void) { func_0040ED00(); }
-extern char D_00484100[];
-void func_003FF388(void) { func_0011D8F8(D_00484100, 0, 0x9C0); }
+void func_003FF388(void) { func_0011D8F8(D_00484100, 0, sizeof D_00484100); }
 void func_003F85D0(u16 *d, u16 *s, s32 n) { while (n > 0) { *d = *s; s++; n--; d++; } }
 
 extern char D_00484AC0[];

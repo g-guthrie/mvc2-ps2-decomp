@@ -41,15 +41,7 @@ s32 func_003F0A20(u8 *p, s32 i, s32 *out) {
     return 1;
 }
 
-s32 func_003F7C18(u8 *p, s32 unused, s32 d) {
-    s32 a = I(p, 0x8C);
-    s32 b = I(p, 0x88);
-    a += d;
-    b += d;
-    I(p, 0x8C) = a;
-    I(p, 0x88) = b;
-    return a;
-}
+
 
 void func_003D2020(void) {
     D_004F1F47 = 0;

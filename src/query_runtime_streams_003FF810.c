@@ -1,3 +1,5 @@
+#include "stream_group_types.h"
+#include "runtime_stream_query.h"
 #include "runtime_span_types.h"
 typedef struct QueryStream QueryStream;
 struct QueryStreamOps {
@@ -8,27 +10,28 @@ struct QueryStream { struct QueryStreamOps *ops; };
 extern s8 func_003F8130(void *);
 extern int func_0040FCD0(QueryStream *);
 extern int func_003F8118(void *);
-int func_003FF810(u8 *context, int *position, int *available, int *remaining)
+int func_003FF810(u8 *opaque, int *position, int *available, int *remaining)
 {
+    StreamGroup *context = (StreamGroup *)opaque;
     int i;
-    QueryStream *first = *(QueryStream **)(context + 0xC);
-    QueryStream **streams = (QueryStream **)(context + 0xC);
-    struct RuntimeSpan *span = (struct RuntimeSpan *)(context + 0x1C);
+    QueryStream *first = context->streams[0];
+    QueryStream **streams = context->streams;
+    struct RuntimeSpan *span = context->stream_spans;
     int count, maximum;
 
-    for (i = 0; i < func_003F8130(*(void **)(context + 4)); i++) {
+    for (i = 0; i < func_003F8130(context->engine); i++) {
         QueryStream *stream = streams[i];
         stream->ops->request(stream, 0, 0x4000, &span[i]);
     }
-    *position = (*(int *)(context + 0x1C) - func_0040FCD0(first)) / 2;
-    count = *(int *)(context + 0x20) / 2;
-    maximum = *(int *)(context + 0x38);
+    *position = (context->stream_spans[0].start - func_0040FCD0(first)) / 2;
+    count = context->stream_spans[0].length / 2;
+    maximum = context->maximum_available;
     if (count < maximum)
         maximum = count;
     *available = maximum;
-    if (*(int *)(context + 0x3C) >= 0)
-        *remaining = *(int *)(context + 0x3C) - *(int *)(context + 0x40);
+    if (context->remaining_limit >= 0)
+        *remaining = context->remaining_limit - context->consumed;
     else
         *remaining = 0x1FFFFFFF;
-    return func_003F8118(*(void **)(context + 4));
+    return func_003F8118(context->engine);
 }

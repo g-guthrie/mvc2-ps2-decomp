@@ -1,7 +1,4 @@
-typedef signed int s32;
-typedef unsigned int u32;
-typedef unsigned short u16;
-typedef unsigned char u8;
+#include "stream_group_types.h"
 typedef long long s64;
 extern void func_003F81B8(s32);
 extern void func_003F8128(s32);
@@ -35,13 +32,11 @@ s32 func_00407648(Obj6 *p) {
     if (p->ops->f64) r = p->ops->f64(p->arg); else func_00405DC8(D_004BD1F0);
     return r;
 }
-typedef struct E9C { signed char st; char pad[0x9B]; } E9C;
-extern E9C D_00484100[];
-extern void func_003FFE20(E9C *);
+extern void func_003FFE20(StreamGroup *);
 void func_003FFE60(void) {
     s32 i;
-    E9C *p = D_00484100;
-    for (i = 15; i >= 0; i--, p++) { if (p->st == 1) func_003FFE20(p); }
+    StreamGroup *p = D_00484100;
+    for (i = 15; i >= 0; i--, p++) { if (p->active == 1) func_003FFE20(p); }
 }
 typedef struct E138 { signed char st; char pad[0x137]; } E138;
 extern E138 D_00479E00[];

@@ -1,3 +1,4 @@
+#include "runtime_stream_query.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -90,7 +91,7 @@ void func_003F8810(u8 *p)
     s32 r;
     if (*(s32 *)(p + 4) == 1) {
         if (func_00404400(*(s32 *)(p + 8)) == 0) {
-            (*(void (**)())(p + 0x78))(*(s32 *)(p + 0x7C), p + 0x68, p + 0x6C, p + 0x70);
+            (*(RuntimeStreamQuery *)(p + 0x78))((u8 *)*(void **)(p + 0x7C), (int *)(p + 0x68), (int *)(p + 0x6C), (int *)(p + 0x70));
             func_003F84E8(p);
             *(s32 *)(p + 4) = 2;
         }
@@ -101,7 +102,7 @@ void func_003F8810(u8 *p)
         if (r == 3) {
             func_003F8690(p);
             func_004044B0(*(s32 *)(p + 8));
-            (*(void (**)())(p + 0x80))(*(s32 *)(p + 0x84), *(s32 *)(p + 0x94), *(s32 *)(p + 0x90));
+            (*(RuntimeStreamCommit *)(p + 0x80))((u8 *)*(void **)(p + 0x84), *(s32 *)(p + 0x94), *(s32 *)(p + 0x90));
             *(s32 *)(p + 4) = r;
         }
     }
@@ -213,7 +214,7 @@ void func_003F8BF0(u8 *p)
     u16 *d0, *d1;
     if (*(s32 *)(p + 4) == 1) {
         if (func_00404400(*(s32 *)(p + 8)) == 0) {
-            (*(s32 (**)())(p + 0x78))(*(s32 *)(p + 0x7C), p + 0x68, p + 0x6C, p + 0x70);
+            (*(RuntimeStreamQuery *)(p + 0x78))((u8 *)*(void **)(p + 0x7C), (int *)(p + 0x68), (int *)(p + 0x6C), (int *)(p + 0x70));
             n = *(s32 *)(c + 0x18) - *(s32 *)(c + 0x20);
             if (n > *(s32 *)(c + 0x24)) n = *(s32 *)(c + 0x24);
             if (n > *(s32 *)(c + 4)) n = *(s32 *)(c + 4);
@@ -235,7 +236,7 @@ void func_003F8BF0(u8 *p)
         }
     }
     if (*(s32 *)(p + 4) == 2) {
-        (*(void (**)())(p + 0x80))(*(s32 *)(p + 0x84), *(s32 *)(p + 0x94), *(s32 *)(p + 0x90));
+        (*(RuntimeStreamCommit *)(p + 0x80))((u8 *)*(void **)(p + 0x84), *(s32 *)(p + 0x94), *(s32 *)(p + 0x90));
         *(s32 *)(p + 4) = 3;
     }
 }
@@ -249,7 +250,7 @@ void func_003F90B8(u8 *p)
     u16 *d0, *d1;
     if (*(s32 *)(p + 4) == 1) {
         if (func_00404400(*(void **)(p + 8)) == 0) {
-            (*(s32 (**)())(p + 0x78))(*(s32 *)(p + 0x7C), p + 0x68, p + 0x6C, p + 0x70);
+            (*(RuntimeStreamQuery *)(p + 0x78))((u8 *)*(void **)(p + 0x7C), (int *)(p + 0x68), (int *)(p + 0x6C), (int *)(p + 0x70));
             n = *(s32 *)(c + 0x18) - *(s32 *)(c + 0x20);
             if (n > *(s32 *)(c + 0x24)) n = *(s32 *)(c + 0x24);
             if (n > *(s32 *)(c + 4)) n = *(s32 *)(c + 4);
@@ -271,7 +272,7 @@ void func_003F90B8(u8 *p)
         }
     }
     if (*(s32 *)(p + 4) == 2) {
-        (*(void (**)())(p + 0x80))(*(s32 *)(p + 0x84), *(s32 *)(p + 0x94), *(s32 *)(p + 0x90));
+        (*(RuntimeStreamCommit *)(p + 0x80))((u8 *)*(void **)(p + 0x84), *(s32 *)(p + 0x94), *(s32 *)(p + 0x90));
         *(s32 *)(p + 4) = 3;
     }
 }
@@ -285,7 +286,7 @@ void func_003F9230(u8 *p)
     u16 *d0, *d1;
     if (*(s32 *)(p + 4) == 1) {
         if (func_00404400(*(void **)(p + 8)) == 0) {
-            (*(s32 (**)())(p + 0x78))(*(s32 *)(p + 0x7C), p + 0x68, p + 0x6C, p + 0x70);
+            (*(RuntimeStreamQuery *)(p + 0x78))((u8 *)*(void **)(p + 0x7C), (int *)(p + 0x68), (int *)(p + 0x6C), (int *)(p + 0x70));
             n = *(s32 *)(c + 0x18) - *(s32 *)(c + 0x20);
             if (n > *(s32 *)(c + 0x24)) n = *(s32 *)(c + 0x24);
             if (n > *(s32 *)(c + 4)) n = *(s32 *)(c + 4);
@@ -307,7 +308,7 @@ void func_003F9230(u8 *p)
         }
     }
     if (*(s32 *)(p + 4) == 2) {
-        (*(void (**)())(p + 0x80))(*(s32 *)(p + 0x84), *(s32 *)(p + 0x94), *(s32 *)(p + 0x90));
+        (*(RuntimeStreamCommit *)(p + 0x80))((u8 *)*(void **)(p + 0x84), *(s32 *)(p + 0x94), *(s32 *)(p + 0x90));
         *(s32 *)(p + 4) = 3;
     }
 }
@@ -321,7 +322,7 @@ void func_003F93C8(u8 *p)
     u16 *d0, *d1;
     if (*(s32 *)(p + 4) == 1) {
         if (func_00404400(*(void **)(p + 8)) == 0) {
-            (*(s32 (**)())(p + 0x78))(*(s32 *)(p + 0x7C), p + 0x68, p + 0x6C, p + 0x70);
+            (*(RuntimeStreamQuery *)(p + 0x78))((u8 *)*(void **)(p + 0x7C), (int *)(p + 0x68), (int *)(p + 0x6C), (int *)(p + 0x70));
             n = *(s32 *)(c + 0x18) - *(s32 *)(c + 0x20);
             if (n > *(s32 *)(c + 0x24)) n = *(s32 *)(c + 0x24);
             if (n > *(s32 *)(c + 4)) n = *(s32 *)(c + 4);
@@ -343,7 +344,7 @@ void func_003F93C8(u8 *p)
         }
     }
     if (*(s32 *)(p + 4) == 2) {
-        (*(void (**)())(p + 0x80))(*(s32 *)(p + 0x84), *(s32 *)(p + 0x94), *(s32 *)(p + 0x90));
+        (*(RuntimeStreamCommit *)(p + 0x80))((u8 *)*(void **)(p + 0x84), *(s32 *)(p + 0x94), *(s32 *)(p + 0x90));
         *(s32 *)(p + 4) = 3;
     }
 }

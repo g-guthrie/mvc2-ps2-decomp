@@ -5647,7 +5647,8 @@ gIoDescriptorWord3_0047D0EC,0x0047D0EC,0x4,.data,src/data/gIoDescriptorWord3_004
 gIoDescriptorWord4_0047D0F0,0x0047D0F0,0x4,.data,src/data/gIoDescriptorWord4_0047D0F0.c,signed_thread_priority
 gIoDescriptorWord5_0047D0F4,0x0047D0F4,0x4,.data,src/data/gIoDescriptorWord5_0047D0F4.c,signed_thread_priority
 data_raw_0047D0F8,0x0047D0F8,0x4,.data,src/data/data_raw_0047D0F8.c,initialized_byte_array
-data_raw_0047D0FC,0x0047D0FC,0x79c4,.data,src/data/data_raw_0047D0FC.c,initialized_byte_array
+data_raw_0047D0FC,0x0047D0FC,0x7004,.data,src/data/data_raw_0047D0FC.c,initialized_byte_array
+D_00484100,0x00484100,0x9C0,.data,src/data/data_stream_group_pool_00484100.c,stream_group_pool_16x9c
 gRuntimeObjectPool_00484AC0,0x00484AC0,0xA00,.data,src/data/gRuntimeObjectPool_00484AC0.c,runtime_object_pool
 data_runtime_handle_prefix_004854C0,0x004854C0,0x28,.data,src/data/data_runtime_handle_prefix_004854C0.c,runtime_handle_fixed_words
 data_raw_004854E8,0x004854E8,0x8,.data,src/data/data_raw_004854E8.c,opaque_runtime_handle_gap

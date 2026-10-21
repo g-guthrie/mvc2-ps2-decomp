@@ -5647,7 +5647,8 @@ gIoDescriptorWord3_0047D0EC,0x0047D0EC,0x4,src/data/gIoDescriptorWord3_0047D0EC.
 gIoDescriptorWord4_0047D0F0,0x0047D0F0,0x4,src/data/gIoDescriptorWord4_0047D0F0.c,complete,reconstructed
 gIoDescriptorWord5_0047D0F4,0x0047D0F4,0x4,src/data/gIoDescriptorWord5_0047D0F4.c,complete,reconstructed
 data_raw_0047D0F8,0x0047D0F8,0x4,src/data/data_raw_0047D0F8.c,complete,placeholder
-data_raw_0047D0FC,0x0047D0FC,0x79c4,src/data/data_raw_0047D0FC.c,complete,placeholder
+data_raw_0047D0FC,0x0047D0FC,0x7004,src/data/data_raw_0047D0FC.c,complete,placeholder
+D_00484100,0x00484100,0x9C0,src/data/data_stream_group_pool_00484100.c,complete,reconstructed
 gRuntimeObjectPool_00484AC0,0x00484AC0,0xA00,src/data/gRuntimeObjectPool_00484AC0.c,complete,reconstructed
 data_runtime_handle_prefix_004854C0,0x004854C0,0x28,src/data/data_runtime_handle_prefix_004854C0.c,complete,reconstructed
 data_raw_004854E8,0x004854E8,0x8,src/data/data_raw_004854E8.c,complete,placeholder

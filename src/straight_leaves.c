@@ -1,11 +1,7 @@
+#include "stream_group_types.h"
+#include "runtime_stream_query.h"
 #include "cri_sj_ring_buffer_types.h"
 #include "cri_sj_memory_types.h"
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef signed short s16;
-typedef unsigned int u32;
-typedef signed int s32;
 
 void func_001345B0(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 216) = 0; *(s32 *)(p + 220) = 0; }
 
@@ -335,13 +331,13 @@ void func_003CDB60(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 
 void func_003D7C90(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 
-void func_003F80F8(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 124) = value2; *(s32 *)(p + 120) = value1; }
+void func_003F80F8(u8 *p, RuntimeStreamQuery query, void *context) { *(void **)(p + 124) = context; *(RuntimeStreamQuery *)(p + 120) = query; }
 
-void func_003F8108(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 132) = value2; *(s32 *)(p + 128) = value1; }
+void func_003F8108(u8 *p, RuntimeStreamCommit commit, void *context) { *(void **)(p + 132) = context; *(RuntimeStreamCommit *)(p + 128) = commit; }
 
-void func_003FFF10(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 84) = value2; *(s32 *)(p + 80) = value1; }
+void func_003FFF10(StreamGroup *p, StreamGroupSpanObserver observer, void *context) { p->callback_argument_54 = context; p->callback_50 = observer; }
 
-void func_003FFF20(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 76) = value2; *(s32 *)(p + 72) = value1; }
+void func_003FFF20(StreamGroup *p, StreamGroupObserver observer, void *context) { p->callback_argument_4c = context; p->callback_48 = observer; }
 
 void func_00400790(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 60) = value2; *(s32 *)(p + 56) = value1; }
 
