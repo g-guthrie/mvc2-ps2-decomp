@@ -18,7 +18,7 @@ extern void func_003DAA40(u8 *);
 extern int func_001C3E60(u8 *);
 extern int func_001C8570(u8 *);
 extern void func_001754A0(u8 *, int, int);
-extern void func_001CB5D0(u8 *);
+extern int func_001CB5D0(u8 *);
 extern void func_001E7750(int);
 extern void func_001E46E0(void);
 extern void func_001E5230(void);
@@ -107,7 +107,7 @@ void func_001C7400(u8 *p) {
         p[7]++;
 }
 
-void func_001CB490(u8 *p) {
+void func_001CB490(u8 *p,u8 *owner) {
     if (p[5] == 0) {
         p[5]++;
         func_001CB180(p);

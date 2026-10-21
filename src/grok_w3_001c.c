@@ -29,7 +29,7 @@ extern void func_001C5110(u8 *);
 extern int func_00175700(u8 *);
 extern void func_001E3240(u8 *, s32);
 extern void func_001CB5A0(u8 *, s32, s32);
-extern void func_001CB5D0(u8 *);
+extern int func_001CB5D0(u8 *);
 extern Entry *func_003DA750(s32, s32, s32);
 extern void func_001C1700(void);
 extern void func_001C1DF0(void);
@@ -122,7 +122,7 @@ void func_001C8330(u8 *p) {
     }
 }
 
-void func_001CB540(u8 *p) {
+void func_001CB540(u8 *p,u8 *owner) {
     if (p[5] == 0) {
         p[5]++;
         func_001CB5A0(p, 27, 95);

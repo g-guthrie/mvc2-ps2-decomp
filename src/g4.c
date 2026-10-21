@@ -87,15 +87,15 @@ void func_00178800(u8 *p) {
     }
 }
 
-extern void func_001CB180();
+extern void func_001CB180(u8 *);
 extern void func_001E3210(void *, s32);
-extern void func_001CB5D0(void *);
+extern int func_001CB5D0(u8 *);
 
 void func_001CB4D0(u8 *p, u8 *q) {
     u32 t = p[5];
     if (t == 0) {
         p[5] = t + 1;
-        func_001CB180();
+        func_001CB180(p);
     }
     if (*(s8 *)(p + 0x151)) {
         *(s8 *)(p + 0x151) = 0;

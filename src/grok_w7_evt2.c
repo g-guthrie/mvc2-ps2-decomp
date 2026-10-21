@@ -39,7 +39,7 @@ extern void func_0019B170(void);
 extern void func_003A08F0(void);
 extern void func_003A12E0(void);
 extern void func_00194170(void);
-extern void func_001CAF00(void);
+extern void func_001CAF00(u8 *);
 extern void func_00346820(void);
 extern void func_00346AC0(void);
 extern void func_00390D00(void);

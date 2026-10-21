@@ -17634,3 +17634,12 @@ func_00366CA0,0x00366CA0,0x164,src/luna_r_00366ca0.c,complete
 func_001B16F0,0x001B16F0,0x1FC,src/actor_parent_margin_setups_001B16F0.c,complete
 func_001B18F0,0x001B18F0,0x214,src/actor_parent_margin_setups_001B16F0.c,complete
 func_001B1B10,0x001B1B10,0x204,src/actor_parent_margin_setups_001B16F0.c,complete
+func_002D0B30,0x002D0B30,0x194,src/func_002D0B30.c,complete
+func_001B2090,0x001B2090,0x1A8,src/actor_inheritance_phases_001B2090.c,complete
+func_001B73B0,0x001B73B0,0x130,src/actor_inheritance_phases_001B2090.c,complete
+func_001BB140,0x001BB140,0x170,src/actor_inheritance_phases_001B2090.c,complete
+func_002E2F30,0x002E2F30,0x1A4,src/luna_r2_func_002e2f30.c,complete
+func_0019D050,0x0019D050,0x218,src/actor_copy_motion_0019D050.c,complete
+func_0019CE30,0x0019CE30,0x218,src/actor_inherited_state_child_0019CE30.c,complete
+func_001CAF00,0x001CAF00,0x19C,src/actor_owner_dispatch_001CAF00.c,complete
+func_001B6B60,0x001B6B60,0x23C,src/actor_position_cycle_001B6B60.c,complete

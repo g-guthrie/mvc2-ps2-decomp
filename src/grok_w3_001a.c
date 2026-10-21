@@ -42,7 +42,7 @@ extern SpawnEntry *func_003DA750(s32, s32, s32);
 extern void func_001BE570(void);
 extern void func_001BFB10(void);
 extern void func_001B6FA0(void);
-extern void func_001B73B0(void);
+extern void func_001B73B0(u8 *);
 
 void func_001A7720(u8 *p) {
     s16 t = S(p, 0x1c);

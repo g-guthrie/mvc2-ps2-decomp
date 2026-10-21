@@ -197,9 +197,9 @@ void func_0028F660(u8 *p) {
     }
 }
 
-extern void func_00175670(void *p);
+extern int func_00175670(u8 *p);
 
-void func_001BB2B0(u8 *p) {
+void func_001BB2B0(u8 *p, void *context) {
     s16 h;
     s32 f;
     func_00175670(p);

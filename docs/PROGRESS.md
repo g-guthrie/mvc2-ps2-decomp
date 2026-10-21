@@ -4502,3 +4502,33 @@ build-coverage checks pass. Final loaded ROM and packed retail ELF hashes match
 the references above. The next normal push remains 1,948,762 code bytes
 (59.1664%), another 27,534 bytes beyond this batch; full source recovery remains
 unfinished.
+
+## 2026-10-21 — Complete thread stacks and animation map bank
+
+Nine complete actor/state/motion functions add 3,976 verified C bytes. Actual
+parent/context contracts and signed owner-state fields close the inherited-state
+and callback dispatch routines; the position-cycle reader uses the real BE40
+dispatch base and indices 0–4 of the existing six-pair float owner. The related
+ABI repairs preserve all 783 existing functions in eight compilation units,
+including whole-object byte identity. Unmatched candidates remain uncredited.
+
+Five CreateThread stack buffers recover all 28,672 bytes at
+`0x0047D100..0x00484100`; their explicit runtime stack lengths establish the
+capacities. The four-byte preceding prefix remains opaque. The complete
+59-by-64-byte animation remap bank plus its 59 symbolic pointer directory adds
+4,012 reconstructed bytes. This replaces 78 fragmented placeholder bank units,
+includes the pending 64-byte map once, and leaves the unproven directory zero
+word and external alignment gap uncredited. Net new DATA is 32,684 bytes.
+
+All 118 tests, build coverage, catalog validation, and a fresh split pass. All
+new/changed objects verify exactly; 14,889 unchanged source/object pairs and
+52 headers retain their prior hashes. The full linked ROM and packed ELF match
+retail byte-for-byte. After status promotion, all 17 catalog tests pass and the
+progress graphic/report are regenerated. Pinned, tested DVP tool setup is now
+documented separately; the VU roundtrip and partial authored VCL prototype earn
+no matching credit.
+
+Verified totals are **2,090,344 / 3,293,696 code bytes (63.4650%)** and
+**296,923 / 648,064 reconstructed data bytes (45.8169%)**. This DATA publication
+does not reset the fixed CODE grid: the next checkpoint remains 2,113,447 bytes,
+23,103 beyond this batch. Full source decompilation remains incomplete.

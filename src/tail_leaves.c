@@ -77,7 +77,7 @@ extern void func_001C8B00();
 extern void func_001C8CD0();
 extern void func_001C8FC0();
 extern void func_001C9410();
-extern void func_001CB5D0();
+extern int func_001CB5D0(u8 *);
 extern void func_001CF6C0();
 extern void func_001CFA50();
 extern void func_001CFDF0();
@@ -411,11 +411,11 @@ void func_001B5F80(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, 
 
 void func_001B6740(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
-void func_001B6F30(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
+void func_001B6F30(u8 *object) { extern void func_003DAA40(struct Object *); func_003DAA40((struct Object *)object); }
 
 void func_001B7340(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
-void func_001B7650(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
+void func_001B7650(u8 *object) { extern void func_003DAA40(struct Object *); func_003DAA40((struct Object *)object); }
 
 void func_001B7C40(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; func_001B7C60(p); }
 
@@ -531,7 +531,7 @@ void func_001CAE60(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; func_0
 
 void func_001CAE80(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; func_003DAA40(p); }
 
-void func_001CB590(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001CB5D0(a0, a1, a2, a3); }
+void func_001CB590(u8 *child, u8 *owner) { func_001CB5D0(child); }
 
 void func_001CCB60(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 

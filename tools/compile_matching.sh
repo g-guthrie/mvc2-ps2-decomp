@@ -16401,5 +16401,26 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$MWCCPS2_30" -i src src/actor_parent_margin_setups_001B16F0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_parent_margin_setups_001B16F0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_parent_margin_setups_001B16F0.o" private/SLUS_204.86.rom --source src/actor_parent_margin_setups_001B16F0.c
 
+"$WIBO" "$MWCCPS2" src/func_002D0B30.c -c -lang c -O4,p -sdatathreshold 8 -i src -o "$BUILD/func_002D0B30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/func_002D0B30.o" private/SLUS_204.86.rom --source src/func_002D0B30.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_inheritance_phases_001B2090.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_inheritance_phases_001B2090.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_inheritance_phases_001B2090.o" private/SLUS_204.86.rom --source src/actor_inheritance_phases_001B2090.c
+
+"$WIBO" "$MWCCPS2" -i src src/luna_r2_func_002e2f30.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/luna_r2_func_002e2f30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/luna_r2_func_002e2f30.o" private/SLUS_204.86.rom --source src/luna_r2_func_002e2f30.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_copy_motion_0019D050.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_copy_motion_0019D050.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_copy_motion_0019D050.o" private/SLUS_204.86.rom --source src/actor_copy_motion_0019D050.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_inherited_state_child_0019CE30.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_inherited_state_child_0019CE30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_inherited_state_child_0019CE30.o" private/SLUS_204.86.rom --source src/actor_inherited_state_child_0019CE30.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_owner_dispatch_001CAF00.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_owner_dispatch_001CAF00.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_dispatch_001CAF00.o" private/SLUS_204.86.rom --source src/actor_owner_dispatch_001CAF00.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_position_cycle_001B6B60.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_position_cycle_001B6B60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_position_cycle_001B6B60.o" private/SLUS_204.86.rom --source src/actor_position_cycle_001B6B60.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh
