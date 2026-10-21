@@ -1,3 +1,0 @@
-/* Adjacent magic words have no proven typed consumers. */
-typedef unsigned char u8;
-u8 data_raw_004C23B8[0xC] = { 0x43u,0x44u,0x56u,0x00u,0,0,0,0,0x48u,0x53u,0x54u,0x00u };
