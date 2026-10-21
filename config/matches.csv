@@ -15109,6 +15109,7 @@ func_0032B690,0x0032B690,0x168,src/w180_t.c,complete
 func_00161AD0,0x00161AD0,0x170,src/w180_u.c,complete
 func_002C08A0,0x002C08A0,0x174,src/w180_v.c,complete
 func_002C0A20,0x002C0A20,0x174,src/w180_v.c,complete
+func_002C0E00,0x002C0E00,0x208,src/func_002C0E00.c,complete
 func_00156100,0x00156100,0x17C,src/w180_w.c,complete
 func_0011E960,0x0011E960,0xCC,src/w180_x.c,complete
 func_00419AC0,0x00419AC0,0xC4,src/w182_c.c,complete
