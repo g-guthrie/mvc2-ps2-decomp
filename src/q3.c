@@ -179,7 +179,6 @@ typedef struct A6 { s32 w0; s32 w4; s32 w8; s32 wC; s32 w10; s32 w14; s32 w18; s
 
 
 typedef unsigned long long u64;
-extern void func_00104150(void *flag, void *val);
 extern s32 func_0010CA20(void);
 extern void func_0010CA68(void);
 

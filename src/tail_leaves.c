@@ -1421,3 +1421,13 @@ void func_00359B30(u8 *state) { (void)state; }
 void func_00359B80(u8 *state) { func_00359A70(state); }
 void func_00359BD0(u8 *state) { func_00359A70(state); }
 void func_00359C20(u8 *state) { func_00359A70(state); }
+
+/* Referenced state-vector and dispatcher callbacks. */
+extern void func_002F75A0(u8 *);
+extern void func_002FC920(u8 *);
+void func_0020ABE0(u8 *p) { (void)func_00175700(p); }
+void func_00232E60(u8 *p) { func_001843A0(p); }
+void func_00277BD0(u8 *p) { (void)p; }
+void func_002F7590(u8 *p) { func_002F75A0(p); }
+void func_002FC910(u8 *p) { func_002FC920(p); }
+void func_003088A0(u8 *p) { (void)p; }

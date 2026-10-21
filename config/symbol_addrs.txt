@@ -20122,3 +20122,5 @@ func_001041A0 = 0x001041A0;
 
 func_00106B98 = 0x00106B98; // SDK server lookup
 func_00106410 = 0x00106410; // SDK interrupt command sender
+func_001CDE40 = 0x001CDE40;
+func_0018FDE0 = 0x0018FDE0;

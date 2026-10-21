@@ -845,7 +845,7 @@ void func_00104140(void) {
     }
 }
 
-void func_00104150(void) {
+void func_00104150(volatile unsigned int *flag, volatile unsigned long long *value) {
     asm {
         addiu v1, r0, 115
         syscall 0

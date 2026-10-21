@@ -17485,3 +17485,11 @@ func_00359B30,0x00359B30,0x8,src/tail_leaves.c,complete
 func_00359B80,0x00359B80,0x8,src/tail_leaves.c,complete
 func_00359BD0,0x00359BD0,0x8,src/tail_leaves.c,complete
 func_00359C20,0x00359C20,0x8,src/tail_leaves.c,complete
+func_0020ABE0,0x0020ABE0,0x8,src/tail_leaves.c,complete
+func_00232E60,0x00232E60,0x8,src/tail_leaves.c,complete
+func_00277BD0,0x00277BD0,0x8,src/tail_leaves.c,complete
+func_002F7590,0x002F7590,0x8,src/tail_leaves.c,complete
+func_002FC910,0x002FC910,0x8,src/tail_leaves.c,complete
+func_003088A0,0x003088A0,0x8,src/tail_leaves.c,complete
+func_00104300,0x00104300,0xA4,src/sony29_wait_vblank_00104270.c,complete
+func_002B7580,0x002B7580,0x16C,src/actor_state_transfer_002B7580.c,complete

@@ -2,3 +2,17 @@ name,address,kind,containing_function,containing_start,containing_end,offset,con
 lbl_00163F90,0x00163F90,code_interior,func_00163F40,0x00163F40,0x00163FB0,0x50,gMvc2Dispatch_00445A20,27,functions.csv explicit code range; private disassembly confirms an executable branch destination
 lbl_003DFF48,0x003DFF48,code_interior,func_003DF850,0x003DF850,0x003DFF7C,0x6F8,gMvc2ActionDispatch_004BA540,4,private disassembly xref: selector dispatch at 0x003DFF3C
 lbl_003DFF60,0x003DFF60,code_interior,func_003DF850,0x003DF850,0x003DFF7C,0x710,gMvc2ActionDispatch_004BA540,4,private disassembly xref: selector dispatch at 0x003DFF3C
+lbl_001058EC,0x001058EC,code_interior,func_00105858,0x00105858,0x00105E44,0x94,jtbl_004AB000,1,native indirect-dispatch target; instruction boundary and owner range checked against pinned ROM disassembly
+lbl_00105DF8,0x00105DF8,code_interior,func_00105858,0x00105858,0x00105E44,0x5A0,jtbl_004AB000,62,native indirect-dispatch target; instruction boundary and owner range checked against pinned ROM disassembly
+lbl_00105DB0,0x00105DB0,code_interior,func_00105858,0x00105858,0x00105E44,0x558,jtbl_004AB000,1,native indirect-dispatch target; instruction boundary and owner range checked against pinned ROM disassembly
+lbl_00105B00,0x00105B00,code_interior,func_00105858,0x00105858,0x00105E44,0x2A8,jtbl_004AB000,1,native indirect-dispatch target; instruction boundary and owner range checked against pinned ROM disassembly
+lbl_00105CC0,0x00105CC0,code_interior,func_00105858,0x00105858,0x00105E44,0x468,jtbl_004AB000,2,native indirect-dispatch target; instruction boundary and owner range checked against pinned ROM disassembly
+lbl_0010597C,0x0010597C,code_interior,func_00105858,0x00105858,0x00105E44,0x124,jtbl_004AB000,1,native indirect-dispatch target; instruction boundary and owner range checked against pinned ROM disassembly
+lbl_00105970,0x00105970,code_interior,func_00105858,0x00105858,0x00105E44,0x118,jtbl_004AB000,1,native indirect-dispatch target; instruction boundary and owner range checked against pinned ROM disassembly
+lbl_00105984,0x00105984,code_interior,func_00105858,0x00105858,0x00105E44,0x12C,jtbl_004AB000,1,native indirect-dispatch target; instruction boundary and owner range checked against pinned ROM disassembly
+lbl_00105D0C,0x00105D0C,code_interior,func_00105858,0x00105858,0x00105E44,0x4B4,jtbl_004AB000,1,native indirect-dispatch target; instruction boundary and owner range checked against pinned ROM disassembly
+lbl_00105BF0,0x00105BF0,code_interior,func_00105858,0x00105858,0x00105E44,0x398,jtbl_004AB000,1,native indirect-dispatch target; instruction boundary and owner range checked against pinned ROM disassembly
+lbl_00105A40,0x00105A40,code_interior,func_00105858,0x00105858,0x00105E44,0x1E8,jtbl_004AB000,1,native indirect-dispatch target; instruction boundary and owner range checked against pinned ROM disassembly
+lbl_00151D80,0x00151D80,code_interior,func_00151A90,0x00151A90,0x001520D8,0x2F0,jtbl_004B38F0,14,native indirect-dispatch target; instruction boundary and owner range checked against pinned ROM disassembly
+lbl_00151DB4,0x00151DB4,code_interior,func_00151A90,0x00151A90,0x001520D8,0x324,jtbl_004B38F0,71,native indirect-dispatch target; instruction boundary and owner range checked against pinned ROM disassembly
+lbl_00151E34,0x00151E34,code_interior,func_00151A90,0x00151A90,0x001520D8,0x3A4,jtbl_004B38F0,2,native indirect-dispatch target; instruction boundary and owner range checked against pinned ROM disassembly

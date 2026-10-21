@@ -7010,7 +7010,7 @@ data_raw_004AAFE4,0x004AAFE4,0x4,src/data/data_raw_004AAFE4.c,complete,placehold
 gConversionFactorTenthA_004AAFE8,0x004AAFE8,0x8,src/data/gConversionFactorTenthA_004AAFE8.c,complete,reconstructed
 gConversionFactorTenthB_004AAFF0,0x004AAFF0,0x8,src/data/gConversionFactorTenthB_004AAFF0.c,complete,reconstructed
 gConversionFactorMillion_004AAFF8,0x004AAFF8,0x8,src/data/gConversionFactorMillion_004AAFF8.c,complete,reconstructed
-jtbl_004AB000,0x004AB000,0x124,src/data/jtbl_004AB000.c,complete,placeholder
+jtbl_004AB000,0x004AB000,0x124,src/data/jtbl_004AB000.c,complete,reconstructed
 jtbl_004AB130,0x004AB130,0x64,src/data/jtbl_004AB130.c,complete,placeholder
 data_u8_004AB1A0,0x004AB1A0,0x8,src/data/data_u8_004AB1A0.c,complete,placeholder
 gPs2SystemText_004AB1A8,0x004AB1A8,0x4,src/data/gPs2SystemText_004AB1A8.c,complete,reconstructed
@@ -7480,7 +7480,7 @@ gPlayerFormat_004B3890,0x004B3890,0x9,src/data/gPlayerFormat_004B3890.c,complete
 data_raw_004B3899,0x004B3899,0x7,src/data/data_raw_004B3899.c,complete,placeholder
 gDtrDecimalFormat_004B38A0,0x004B38A0,0x3,src/data/gDtrDecimalFormat_004B38A0.c,complete,reconstructed
 data_u8_004B38A3,0x004B38A3,0x4D,src/data/data_u8_004B38A3.c,complete,placeholder
-jtbl_004B38F0,0x004B38F0,0x15c,src/data/jtbl_004B38F0.c,complete,placeholder
+jtbl_004B38F0,0x004B38F0,0x15c,src/data/jtbl_004B38F0.c,complete,reconstructed
 jtbl_004B3A50,0x004B3A50,0x44,src/data/jtbl_004B3A50.c,complete,placeholder
 jtbl_004B3AA0,0x004B3AA0,0x44,src/data/jtbl_004B3AA0.c,complete,placeholder
 data_u32_004B3AF0,0x004B3AF0,0x24,src/data/data_u32_004B3AF0.c,complete,placeholder
