@@ -126,7 +126,8 @@ void func_002269C0(u8 *p) {
     }
 }
 
-extern u8 D_00474BF6[];
+typedef struct PackedMotionSample { s16 x,y; u8 flip; s8 layer; u8 animation; } PackedMotionSample;
+extern PackedMotionSample D_00474BF0[][8];
 void func_003BB730(u8 *p) {
     extern void func_003BD7B0(u8 *);
     extern void func_003BD670(u8 *);
@@ -134,7 +135,7 @@ void func_003BB730(u8 *p) {
     extern void func_003BB8F0(u8 *);
     extern void func_003BB910(u8 *);
     extern s32 func_003BD1D0(u8 *);
-    extern void func_00175700(u8 *);
+    extern s32 func_00175700(u8 *);
     u8 *q = *(u8 **)(p + 0x18);
     u8 *r = *(u8 **)(p + 0xD0);
     u8 *t = q + 0x2B8;
@@ -144,7 +145,7 @@ void func_003BB730(u8 *p) {
         p[6]++;
         *(s16 *)(p + 0x140) = *(s16 *)(r + 0x140);
         func_003BD670(p);
-        func_001757E0(p, 0x19, D_00474BF6[r[1] * 64 + p[0x21] * 8]);
+        func_001757E0(p, 0x19, D_00474BF0[r[1]][p[0x21]].animation);
         return;
     }
     func_003BD670(p);

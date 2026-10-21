@@ -4602,3 +4602,24 @@ Verified totals are **2,097,228 / 3,293,696 code bytes (63.6740%)** and
 **348,377 / 648,064 reconstructed data bytes (53.7566%)**. The fixed normal CODE
 checkpoint remains 2,113,447 bytes, another 16,219 bytes; this source/data recovery
 checkpoint does not reset that grid. Full source decompilation remains unfinished.
+
+
+## 2026-10-21: motion inventories and three actor callbacks
+
+Three whole-function compiler matches add 1,024 CODE bytes; the typed motion
+bank adds 4,804 DATA bytes. Its three eight-byte raw regions remain uncredited.
+See `MOTION_BANK_RECOVERY_20261021.md` for ownership and array-bound limits.
+Three existing compilation units preserve whole object identity; two more
+preserve every exported function after relocation while adopting coherent
+packed-record symbols. No existing CODE credit is added for these corrections.
+
+Verification pins 14,563 unchanged source/object pairs and all 52 headers,
+recompiles five old units and eleven new units, and retires one raw owner,
+leaving 14,579 pairs. The aggregate gate runs catalog checks, the existing test
+suite, fresh splitting, hybrid linkage and packed-image comparison. Publication
+requires the loaded ROM and packed ELF to retain the retail hashes.
+
+The bank's totals are **2,098,252 / 3,293,696 CODE bytes (63.7051%)** and
+**353,181 / 648,064 reconstructed DATA bytes (54.4979%)**. The normal fixed CODE
+checkpoint remains 2,113,447 bytes, another 15,195 bytes. This additional DATA
+checkpoint does not reset the grid. Full source decompilation remains unfinished.

@@ -4820,7 +4820,6 @@ data_raw_004746C0,0x004746C0,0x40,src/data/data_raw_004746C0.c,complete,placehol
 data_f32_00474700,0x00474700,0xC0,src/data/data_f32_00474700.c,complete,reconstructed
 data_raw_004747C0,0x004747C0,0x4,src/data/data_raw_004747C0.c,complete,placeholder
 data_u32_004747C4,0x004747C4,0x14,src/data/data_u32_004747C4.c,complete,placeholder
-data_u32_004747D8,0x004747D8,0x12DC,src/data/data_u32_004747D8.c,complete,placeholder
 short_values_00475AB4,0x00475AB4,0x4,src/data/short_values_00475AB4.c,complete,reconstructed
 data_u8_00475AB8,0x00475AB8,0x4,src/data/data_u8_00475AB8.c,complete,placeholder
 jtbl_00475ABC,0x00475ABC,0x8,src/data/jtbl_00475ABC.c,complete,placeholder
@@ -10326,3 +10325,11 @@ data_cdvd_read_position_0043AB40,0x0043AB40,0x4,src/data/data_cdvd_read_position
 data_zero_gap_0043AB44,0x0043AB44,0xC,src/data/data_zero_gap_0043AB44.c,complete,placeholder
 data_sif_rpc_client_0043AB50,0x0043AB50,0x28,src/data/data_sif_rpc_client_0043AB50.c,complete,reconstructed
 data_zero_gap_0043AB78,0x0043AB78,0x8,src/data/data_zero_gap_0043AB78.c,complete,placeholder
+data_raw_004747D8,0x004747D8,0x8,src/data/data_raw_004747D8.c,complete,placeholder
+data_motion_pairs_004747E0,0x004747E0,0xB8,src/data/data_motion_pairs_004747E0.c,complete,reconstructed
+data_zero_gap_00474898,0x00474898,0x8,src/data/data_zero_gap_00474898.c,complete,placeholder
+data_motion_quads_004748A0,0x004748A0,0x170,src/data/data_motion_quads_004748A0.c,complete,reconstructed
+data_clamp_pairs_00474A10,0x00474A10,0x1D8,src/data/data_clamp_pairs_00474A10.c,complete,reconstructed
+data_zero_gap_00474BE8,0x00474BE8,0x8,src/data/data_zero_gap_00474BE8.c,complete,placeholder
+data_packed_motion_blocks_00474BF0,0x00474BF0,0xEC0,src/data/data_packed_motion_blocks_00474BF0.c,complete,reconstructed
+data_short_values_00475AB0,0x00475AB0,0x4,src/data/data_short_values_00475AB0.c,complete,reconstructed

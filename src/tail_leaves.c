@@ -988,7 +988,7 @@ void func_003562B0(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003562C0(p,
 
 void func_003562C0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
 
-void func_00356980(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40(a0, a1, a2, a3); }
+void func_00356980(u8 *object) { extern void func_003DAA40(struct Object *); func_003DAA40((struct Object *)object); }
 
 void func_00357650(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; func_00357670(p); }
 

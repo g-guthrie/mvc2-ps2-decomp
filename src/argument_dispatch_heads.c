@@ -137,7 +137,7 @@ extern DispatchFn2 jtbl_00462AC0[];
 extern DispatchFn2 jtbl_00462BA0[];
 extern DispatchFn2 jtbl_004631B0[];
 extern DispatchFn2 jtbl_00463208[];
-extern DispatchFn2 jtbl_00463228[];
+extern DispatchFn2 const jtbl_00463228[];
 extern DispatchFn2 jtbl_004632B0[];
 extern DispatchFn2 jtbl_00463300[];
 extern DispatchFn2 jtbl_00463360[];

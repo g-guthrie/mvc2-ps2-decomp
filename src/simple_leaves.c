@@ -243,7 +243,7 @@ s32 func_00247A00(void) { return 0; }
 
 void func_00248310(void) {}
 
-void func_00248320(void) {}
+void func_00248320(u8 *actor) {}
 
 void func_00248330(void) {}
 

@@ -16467,5 +16467,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$MWCCPS2_30" -i src src/owner_move_phase_0034CA70.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/owner_move_phase_0034CA70.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_move_phase_0034CA70.o" private/SLUS_204.86.rom --source src/owner_move_phase_0034CA70.c
 
+"$WIBO" "$MWCCPS2_30" -i src src/actor_timer_event_00246960.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_timer_event_00246960.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_timer_event_00246960.o" private/SLUS_204.86.rom --source src/actor_timer_event_00246960.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/owner_mode_motion_00356770.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/owner_mode_motion_00356770.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_mode_motion_00356770.o" private/SLUS_204.86.rom --source src/owner_mode_motion_00356770.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/owner_capture_phase_0035C610.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/owner_capture_phase_0035C610.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_capture_phase_0035C610.o" private/SLUS_204.86.rom --source src/owner_capture_phase_0035C610.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

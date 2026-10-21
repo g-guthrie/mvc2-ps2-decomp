@@ -4820,7 +4820,6 @@ data_raw_004746C0,0x004746C0,0x40,.data,src/data/data_raw_004746C0.c,initialized
 data_f32_00474700,0x00474700,0xC0,.data,src/data/data_f32_00474700.c,indexed_f32_pair_banks
 data_raw_004747C0,0x004747C0,0x4,.data,src/data/data_raw_004747C0.c,initialized_byte_array
 data_u32_004747C4,0x004747C4,0x14,.data,src/data/data_u32_004747C4.c,filled_u32_constant
-data_u32_004747D8,0x004747D8,0x12DC,.data,src/data/data_u32_004747D8.c,initialized_u32_table
 short_values_00475AB4,0x00475AB4,0x4,.data,src/data/short_values_00475AB4.c,indexed_s16_state_values
 data_u8_00475AB8,0x00475AB8,0x4,.data,src/data/data_u8_00475AB8.c,initialized_byte_array
 jtbl_00475ABC,0x00475ABC,0x8,.rodata,src/data/jtbl_00475ABC.c,jump_table
@@ -10326,3 +10325,11 @@ data_cdvd_read_position_0043AB40,0x0043AB40,0x4,.data,src/data/data_cdvd_read_po
 data_zero_gap_0043AB44,0x0043AB44,0xC,.data,src/data/data_zero_gap_0043AB44.c,zero_initialized_raw_fragment
 data_sif_rpc_client_0043AB50,0x0043AB50,0x28,.data,src/data/data_sif_rpc_client_0043AB50.c,sif_rpc_client_data
 data_zero_gap_0043AB78,0x0043AB78,0x8,.data,src/data/data_zero_gap_0043AB78.c,zero_initialized_raw_fragment
+data_raw_004747D8,0x004747D8,0x8,.data,src/data/data_raw_004747D8.c,raw_fragment
+data_motion_pairs_004747E0,0x004747E0,0xB8,.data,src/data/data_motion_pairs_004747E0.c,motion_pair_table_23
+data_zero_gap_00474898,0x00474898,0x8,.data,src/data/data_zero_gap_00474898.c,uncredited_zero_gap
+data_motion_quads_004748A0,0x004748A0,0x170,.data,src/data/data_motion_quads_004748A0.c,motion_quad_table_23
+data_clamp_pairs_00474A10,0x00474A10,0x1D8,.data,src/data/data_clamp_pairs_00474A10.c,character_clamp_pairs_59
+data_zero_gap_00474BE8,0x00474BE8,0x8,.data,src/data/data_zero_gap_00474BE8.c,uncredited_zero_gap
+data_packed_motion_blocks_00474BF0,0x00474BF0,0xEC0,.data,src/data/data_packed_motion_blocks_00474BF0.c,packed_motion_blocks_59x8
+data_short_values_00475AB0,0x00475AB0,0x4,.data,src/data/data_short_values_00475AB0.c,bounded_s16_pair

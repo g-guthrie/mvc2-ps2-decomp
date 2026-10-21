@@ -16,7 +16,7 @@ void func_0034E630(u8 *p)
 {
     extern void func_0034E760();
     extern s32 func_00417A40();
-    extern void func_001757E0(u8 *, s32, s32);
+    extern s32 func_001757E0(u8 *, s32, s32);
     f32 sp;
     f32 fv;
     s32 r;
@@ -46,30 +46,26 @@ void func_0034E630(u8 *p)
     func_001757E0(p, 0x17, 0x23);
 }
 
-typedef struct { s16 v; u8 pad[6]; } E16;
-typedef struct { u8 v; u8 pad[7]; } E8u;
-typedef struct { s8 v; u8 pad[7]; } E8s;
-extern E16 D_00474BF0[][8];
-extern E16 D_00474BF2[][8];
-extern E8u D_00474BF4[][8];
-extern E8s D_00474BF5[][8];
+typedef struct PackedMotionSample { s16 x,y; u8 flip; s8 layer; u8 animation; } PackedMotionSample;
+extern PackedMotionSample D_00474BF0[][8];
 typedef struct { u8 p0; u8 f1; u8 p1[0x34 - 2]; f32 f34; f32 f38; u8 p2[0x140 - 0x3C]; s16 f140; } Q3BD;
 typedef struct { u8 p0[0x21]; u8 f21; u8 p00[2]; s8 f24; u8 p1[0x34 - 0x25]; f32 f34; f32 f38; u8 p2[0xD0 - 0x3C]; Q3BD *fd0; u8 p3[0x140 - 0xD4]; s16 f140; } P3BD;
 
-void func_003BD670(P3BD *p)
+void func_003BD670(u8 *object)
 {
+    P3BD *p = (P3BD *)object;
     Q3BD *q = p->fd0;
     f32 f;
     p->f34 = q->f34;
     p->f38 = q->f38;
     p->f140 = q->f140;
-    f = 1.6666666269302368f * (f32)D_00474BF0[q->f1][p->f21].v;
+    f = 1.6666666269302368f * (f32)D_00474BF0[q->f1][p->f21].x;
     if (q->f140 == 0) f = -f;
     p->f34 += f;
-    p->f38 += 2.142857074737549f * (f32)D_00474BF2[q->f1][p->f21].v;
+    p->f38 += 2.142857074737549f * (f32)D_00474BF0[q->f1][p->f21].y;
     p->f140 = q->f140;
-    if (D_00474BF4[q->f1][p->f21].v != 0) p->f140 ^= 1;
-    p->f24 = D_00474BF5[q->f1][p->f21].v;
+    if (D_00474BF0[q->f1][p->f21].flip != 0) p->f140 ^= 1;
+    p->f24 = D_00474BF0[q->f1][p->f21].layer;
 }
 
 typedef struct {
