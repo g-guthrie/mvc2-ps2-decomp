@@ -16455,5 +16455,17 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$MWCCPS2_30" -i src src/actor_lifetime_phase_0034D890.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_lifetime_phase_0034D890.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_lifetime_phase_0034D890.o" private/SLUS_204.86.rom --source src/actor_lifetime_phase_0034D890.c
 
+"$WIBO" "$MWCCPS2_30" -i src src/actor_animation_velocity_00240930.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_animation_velocity_00240930.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_animation_velocity_00240930.o" private/SLUS_204.86.rom --source src/actor_animation_velocity_00240930.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/model_depth_wave_callback_003400A0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/model_depth_wave_callback_003400A0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/model_depth_wave_callback_003400A0.o" private/SLUS_204.86.rom --source src/model_depth_wave_callback_003400A0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/owner_linked_pulse_003474C0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/owner_linked_pulse_003474C0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_linked_pulse_003474C0.o" private/SLUS_204.86.rom --source src/owner_linked_pulse_003474C0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/owner_move_phase_0034CA70.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/owner_move_phase_0034CA70.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_move_phase_0034CA70.o" private/SLUS_204.86.rom --source src/owner_move_phase_0034CA70.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

@@ -17657,3 +17657,7 @@ func_00344E00,0x00344E00,0x1F0,src/scene_colour_phases_00344B70.c,complete
 func_00345650,0x00345650,0x1DC,src/model_y_wave_callback_00345650.c,complete
 func_00346610,0x00346610,0x188,src/actor_owner_signal_00346610.c,complete
 func_0034D890,0x0034D890,0x1C4,src/actor_lifetime_phase_0034D890.c,complete
+func_00240930,0x00240930,0xFC,src/actor_animation_velocity_00240930.c,complete
+func_003400A0,0x003400A0,0x1E4,src/model_depth_wave_callback_003400A0.c,complete
+func_003474C0,0x003474C0,0x2A4,src/owner_linked_pulse_003474C0.c,complete
+func_0034CA70,0x0034CA70,0x1C0,src/owner_move_phase_0034CA70.c,complete

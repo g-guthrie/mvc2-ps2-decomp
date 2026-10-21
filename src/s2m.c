@@ -43,7 +43,7 @@ Ent *func_003F1540(Ent *e, s32 t) {
 }
 
 extern s32 D_00439990, D_004399B0;
-extern char D_004AB498[], D_0043AB50[];
+extern char D_004AB498[];
 extern void func_00105E80(void *);
 extern s32 func_00107058(void *);
 extern void func_0010E608(s32);

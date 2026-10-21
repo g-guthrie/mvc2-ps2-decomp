@@ -1,7 +1,7 @@
 /* Reconstructed complete Sony CD/DVD DMA read completion callback. */
 extern void func_0010E6D0(const int *);
 extern volatile int D_004399D4;
-typedef struct {
+typedef struct CdReadCompletion {
  int first_count,second_count;
  unsigned char *first_destination,*second_destination;
  unsigned char first_bytes[64],second_bytes[64];

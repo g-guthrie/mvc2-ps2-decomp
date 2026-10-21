@@ -4571,3 +4571,34 @@ Verified totals are **2,095,368 / 3,293,696 code bytes (63.6175%)** and
 **348,133 / 648,064 reconstructed data bytes (53.7189%)**. This DATA checkpoint
 does not reset the fixed CODE grid: the next normal checkpoint remains
 2,113,447 bytes, another 18,079 bytes. Source recovery remains incomplete.
+
+## 2026-10-21 — CD/DVD read records and further owner callbacks
+
+Four complete callbacks add 1,860 verified C bytes. The animation-velocity
+callback uses actual float storage and acceleration fields. The resource-depth
+callback receives its real two-word stack context through synchronous dispatch;
+the owner/counterpart pulse retains native unordered floating comparisons; and
+the phase callback preserves mixed integer/float helper arguments and a real
+GP-relative byte lookup. The last lookup remains an unsized extern over an
+unrecovered DATA region, with explicit valid phase input and no new DATA credit.
+
+CD/DVD request, completion, position and client records add 212 DATA bytes within
+a former 4,476-byte raw zero owner. Four modified existing compilation units
+preserve their whole object bytes while using compatible client and completion
+types. The existing Sony RPC header is reused unchanged. Its other 4,264 bytes
+remain raw placeholders. A separate 32-byte velocity table replaces the middle
+of a 196-byte raw owner; its 164 surrounding bytes remain uncredited. Total new
+DATA is 244 bytes. See `CDVD_READ_STORAGE_RECOVERY_20261021.md` for owners,
+preconditions and source-level type corrections.
+
+The aggregate verification covers all changed/new complete objects, unchanged
+hashes for 14,549 prior source/object pairs and 52 headers, all 118 tests, fresh
+splitting, hybrid linkage and packed ELF identity. Four old compilation units
+are recompiled, 16 pairs are new and two raw pairs retire, leaving 14,569 pairs.
+The loaded ROM and packed ELF retain their retail hashes. Post-promotion catalog
+checks and report generation retain the raw exclusions.
+
+Verified totals are **2,097,228 / 3,293,696 code bytes (63.6740%)** and
+**348,377 / 648,064 reconstructed data bytes (53.7566%)**. The fixed normal CODE
+checkpoint remains 2,113,447 bytes, another 16,219 bytes; this source/data recovery
+checkpoint does not reset that grid. Full source decompilation remains unfinished.
