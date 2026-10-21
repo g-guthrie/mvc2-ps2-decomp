@@ -17496,3 +17496,4 @@ func_002B7580,0x002B7580,0x16C,src/actor_state_transfer_002B7580.c,complete
 func_002B7DA0,0x002B7DA0,0x13C,src/actor_state_transfer_002B7580.c,complete
 func_002B4710,0x002B4710,0x140,src/actor_state_transfer_002B7580.c,complete
 func_003299F0,0x003299F0,0xC4,src/context_value_dispatch_003299F0.c,complete
+func_0032BDF0,0x0032BDF0,0xCC,src/stage_select_input_0032BDF0.c,complete

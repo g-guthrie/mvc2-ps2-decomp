@@ -16068,3 +16068,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py "$BUILD/context_value_dispatch_003299F0.o" private/SLUS_204.86.rom --source src/context_value_dispatch_003299F0.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh
+
+# Two-player stage selection and formatted stage label.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/stage_select_input_0032BDF0.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/stage_select_input_0032BDF0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/stage_select_input_0032BDF0.o" private/SLUS_204.86.rom --source src/stage_select_input_0032BDF0.c
