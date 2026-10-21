@@ -498,3 +498,31 @@ matching CODE is2,080,660 /3,293,696 bytes (63.1710%); linked reconstructed
 DATA is256,703 /648,064 bytes (39.6107%). This crosses the existing fixed
 CODE threshold2,080,510 by150 bytes. After this checkpoint's publication,
 the next fixed threshold advances to2,113,447; the surplus is retained.
+
+### Random motion and fall transition: 640 new C bytes
+
+DD020/272 and3A7110/368 recover two complete native callbacks. DD020 preserves
+ordered NaN behavior and explicit native unsigned vertical wrap. Its528-byte
+conflated inventory entry is conservatively split into44-byte dispatcher,
+4-byte padding, uncredited200-byte initializer,8-byte padding and272 new C
+bytes. The original denominator is unchanged; padding is never credited.
+3A7110 reuses the existing signed16-entry random lookup with RNG&15 bounds.
+Its team-index constructor evidence and native callback/helper contracts are
+frozen separately; no DATA view or owner changes are introduced.
+
+Both production units are exact. All95 child tests, coverage/catalog, fresh
+split, complete ROM and packed ELF identity pass. All14,112 prior cached
+source/object pairs and all47 headers remain unchanged. Root's corrected
+counter and fixed2,080,510 grid remain authoritative; against canonical6b079f7e
+this640-byte packet conditionally yields2,080,520, ten past the same threshold.
+Frozen receipt: private/code-lane/round28/root/FINAL_VERIFICATION.json.
+
+Root independently rebuilt both complete functions and checked294 native
+instruction PCs covering the split entry, complete bodies and visibility
+helper, plus the supplied constructor/roster-domain excerpts. All118 tests,
+catalog/coverage, fresh split, loaded-ROM identity and packed-ELF identity
+pass. Frozen audit verifies14,949 unchanged source/object pairs and48
+headers, plus two new units. Linked CODE is2,081,300 /3,293,696 bytes
+(63.1904%); DATA remains256,703 /648,064 (39.6107%). The fixed next
+CODE threshold remains2,113,447, leaving32,147 bytes. This local bank adds
+640 source bytes; it does not reset the publication grid.

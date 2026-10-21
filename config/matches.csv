@@ -17618,3 +17618,5 @@ func_003AAA60,0x003AAA60,0x14C,src/actor_owner_motion_003AAA60.c,complete
 func_003C7880,0x003C7880,0x154,src/actor_owner_launch_003C7880.c,complete
 func_002C0730,0x002C0730,0x170,src/func_002C0730.c,complete
 func_002C0BA0,0x002C0BA0,0x19C,src/func_002C0BA0.c,complete
+func_001DD020,0x001DD020,0x110,src/actor_random_motion_001DD020.c,complete
+func_003A7110,0x003A7110,0x170,src/actor_fall_transition_003A7110.c,complete

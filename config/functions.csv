@@ -5117,7 +5117,7 @@ func_001DCC80,0x001DCC80,0x118,0x001DCD98,code,spimdisasm-explicit-size-before-f
 func_001DCDA0,0x001DCDA0,0x14,0x001DCDB4,code,spimdisasm-explicit-size-before-first-data
 func_001DCDC0,0x001DCDC0,0x18,0x001DCDD8,code,spimdisasm-explicit-size-before-first-data
 func_001DCDE0,0x001DCDE0,0x13C,0x001DCF1C,code,spimdisasm-explicit-size-before-first-data
-func_001DCF20,0x001DCF20,0x210,0x001DD130,code,spimdisasm-explicit-size-before-first-data
+func_001DCF20,0x001DCF20,0x2C,0x001DCF4C,code,verified-dispatcher-before-callback
 func_001DD130,0x001DD130,0x134,0x001DD264,code,spimdisasm-explicit-size-before-first-data
 func_001DD270,0x001DD270,0x130,0x001DD3A0,code,spimdisasm-explicit-size-before-first-data
 func_001DD3A0,0x001DD3A0,0x94,0x001DD434,code,spimdisasm-explicit-size-before-first-data
@@ -20330,3 +20330,7 @@ func_003824E0,0x003824E0,0x1EC,0x003826CC,code,callback-table-entry-with-native-
 func_00384FC0,0x00384FC0,0xD8,0x00385098,code,callback-table-entry-with-native-tail-call
 func_001CE7B0,0x001CE7B0,0x13C,0x001CE8EC,code,verified-native-callback-entry
 func_003C1A40,0x003C1A40,0x18C,0x003C1BCC,code,verified-native-callback-entry
+gap_001DCF4C,0x001DCF4C,0x4,0x001DCF50,padding,verified-alignment-padding
+func_001DCF50,0x001DCF50,0xC8,0x001DD018,code,verified-native-callback-entry
+gap_001DD018,0x001DD018,0x8,0x001DD020,padding,verified-alignment-padding
+func_001DD020,0x001DD020,0x110,0x001DD130,code,verified-native-callback-entry
