@@ -4642,3 +4642,24 @@ Totals are **2,098,252 / 3,293,696 CODE bytes (63.7051%)** and
 **354,225 / 648,064 reconstructed DATA bytes (54.6590%)**. The normal fixed
 CODE checkpoint remains 2,113,447 bytes, another 15,195 bytes. Full source
 decompilation remains unfinished.
+
+## 2026-10-21: five actor callbacks, pose records and velocity profiles
+
+Five complete actor callbacks add 1,604 CODE bytes. Typed relative-pose records
+add 1,416 DATA bytes; three phased velocity profiles and their three-pointer
+directory add another 2,412. Twelve unresolved bytes remain raw and uncredited.
+See `POSE_AND_VELOCITY_DATA_RECOVERY_20261021.md` for the signed-selector and
+physical-profile preconditions, native float behavior and excluded tails.
+
+Two existing CUs are recompiled: the constructor now uses its actual profile
+pointer type, and the unary cleanup helper has its actual object input. Both
+whole objects stay byte-identical; no extra credit is claimed for old functions.
+The bank verifies 14,580 unchanged source/object pairs and all 52 headers,
+adds ten new pairs and retires three raw owners, leaving 14,592 pairs.
+Publication requires the existing 118 tests, catalog checks, fresh splitting,
+hybrid linkage and the full retail ROM and packed ELF identity checks.
+
+Totals are **2,099,856 / 3,293,696 CODE bytes (63.7538%)** and
+**358,053 / 648,064 reconstructed DATA bytes (55.2496%)**. The normal fixed
+CODE checkpoint remains 2,113,447 bytes, another 13,591 bytes. These extra DATA
+publications do not reset that grid. Full source decompilation remains unfinished.

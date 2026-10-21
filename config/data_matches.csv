@@ -1951,9 +1951,7 @@ data_u32_0044CE2C,0x0044CE2C,0x4,src/data/data_u32_0044CE2C.c,complete,placehold
 jtbl_0044CE30,0x0044CE30,0x28,src/data/jtbl_0044CE30.c,complete,reconstructed
 jtbl_0044CE60,0x0044CE60,0x98,src/data/jtbl_0044CE60.c,complete,reconstructed
 jtbl_0044CF00,0x0044CF00,0x28,src/data/jtbl_0044CF00.c,complete,placeholder
-data_u32_0044CF30,0x0044CF30,0x960,src/data/data_u32_0044CF30.c,complete,placeholder
 jtbl_0044D890,0x0044D890,0x10,src/data/jtbl_0044D890.c,complete,reconstructed
-data_u32_0044D8A0,0x0044D8A0,0x10,src/data/data_u32_0044D8A0.c,complete,placeholder
 jtbl_0044D8B0,0x0044D8B0,0xC,src/data/jtbl_0044D8B0.c,complete,placeholder
 data_u32_0044D8BC,0x0044D8BC,0x4,src/data/data_u32_0044D8BC.c,complete,placeholder
 jtbl_0044D8C0,0x0044D8C0,0x64,src/data/jtbl_0044D8C0.c,complete,reconstructed
@@ -3779,7 +3777,6 @@ data_u32_0045C23C,0x0045C23C,0x4,src/data/data_u32_0045C23C.c,complete,placehold
 jtbl_0045C240,0x0045C240,0xC,src/data/jtbl_0045C240.c,complete,reconstructed
 data_u32_0045C24C,0x0045C24C,0x4,src/data/data_u32_0045C24C.c,complete,placeholder
 jtbl_0045C250,0x0045C250,0x14,src/data/jtbl_0045C250.c,complete,placeholder
-data_u32_0045C270,0x0045C270,0x590,src/data/data_u32_0045C270.c,complete,placeholder
 jtbl_0045C800,0x0045C800,0x14,src/data/jtbl_0045C800.c,complete,reconstructed
 data_u32_0045C820,0x0045C820,0x50,src/data/data_u32_0045C820.c,complete,placeholder
 jtbl_0045C870,0x0045C870,0x50,src/data/jtbl_0045C870.c,complete,placeholder
@@ -10339,3 +10336,8 @@ data_effect_acceleration_00460C98,0x460c98,0xc,src/data/data_effect_acceleration
 data_raw_00460CA4,0x460ca4,0x4,src/data/data_raw_00460CA4.c,complete,placeholder
 data_effect_acceleration_00460CA8,0x460ca8,0xc,src/data/data_effect_acceleration_00460CA8.c,complete,reconstructed
 data_raw_00460CB4,0x460cb4,0xc,src/data/data_raw_00460CB4.c,complete,placeholder
+data_linked_actor_pose_records_0045C270,0x0045C270,0x588,src/data/data_linked_actor_pose_records_0045C270.c,complete,reconstructed
+data_raw_0045C7F8,0x0045C7F8,0x8,src/data/data_raw_0045C7F8.c,complete,placeholder
+data_effect_velocity_profiles_0044CF30,0x0044CF30,0x960,src/data/data_effect_velocity_profiles_0044CF30.c,complete,reconstructed
+data_effect_velocity_directory_0044D8A0,0x0044D8A0,0xC,src/data/data_effect_velocity_directory_0044D8A0.c,complete,reconstructed
+data_raw_0044D8AC,0x0044D8AC,0x4,src/data/data_raw_0044D8AC.c,complete,placeholder

@@ -8,7 +8,8 @@ typedef float f32;
 
 typedef struct { f32 x, y, z; } V3;
 
-extern u32 D_0044D8A0[];
+typedef float EffectVelocityProfile[25][4][2];
+extern EffectVelocityProfile *D_0044D8A0[];
 extern void func_001CA4D0(u8 *);
 
 void func_001CA3C0(u8 *p)
@@ -45,7 +46,7 @@ void func_001CA3C0(u8 *p)
     *(V3 *)(p + 0x50) = *(V3 *)(q + 0x50);
     *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
     p[0x24] = (u8)mode;
-    *(u32 *)(p + 0xD0) = D_0044D8A0[p[0x20]];
+    *(EffectVelocityProfile **)(p + 0xD0) = D_0044D8A0[p[0x20]];
     p[0x21] = (u8)ff;
     *(f32 *)(p + 0x38) = 205.7142791748047f + *(f32 *)(q + 0x34);
     {

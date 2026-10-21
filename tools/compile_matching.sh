@@ -16476,5 +16476,20 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$MWCCPS2_30" -i src src/owner_capture_phase_0035C610.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/owner_capture_phase_0035C610.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_capture_phase_0035C610.o" private/SLUS_204.86.rom --source src/owner_capture_phase_0035C610.c
 
+"$WIBO" "$MWCCPS2_30" -i src src/actor_flicker_growth_0036E280.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_flicker_growth_0036E280.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_flicker_growth_0036E280.o" private/SLUS_204.86.rom --source src/actor_flicker_growth_0036E280.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_landing_phase_00357390.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_landing_phase_00357390.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_landing_phase_00357390.o" private/SLUS_204.86.rom --source src/actor_landing_phase_00357390.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/owner_edge_setup_0036C510.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/owner_edge_setup_0036C510.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_edge_setup_0036C510.o" private/SLUS_204.86.rom --source src/owner_edge_setup_0036C510.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/linked_offset_setup_0036D220.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/linked_offset_setup_0036D220.o"
+"$PYTHON" tools/verify_object.py "$BUILD/linked_offset_setup_0036D220.o" private/SLUS_204.86.rom --source src/linked_offset_setup_0036D220.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/owner_fade_phase_0036E5F0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/owner_fade_phase_0036E5F0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_fade_phase_0036E5F0.o" private/SLUS_204.86.rom --source src/owner_fade_phase_0036E5F0.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

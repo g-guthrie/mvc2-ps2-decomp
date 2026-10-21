@@ -17664,3 +17664,8 @@ func_0034CA70,0x0034CA70,0x1C0,src/owner_move_phase_0034CA70.c,complete
 func_00246960,0x00246960,0x104,src/actor_timer_event_00246960.c,complete
 func_00356770,0x00356770,0x170,src/owner_mode_motion_00356770.c,complete
 func_0035C610,0x0035C610,0x18C,src/owner_capture_phase_0035C610.c,complete
+func_0036E280,0x0036E280,0x130,src/actor_flicker_growth_0036E280.c,complete
+func_00357390,0x00357390,0x144,src/actor_landing_phase_00357390.c,complete
+func_0036C510,0x0036C510,0x1B8,src/owner_edge_setup_0036C510.c,complete
+func_0036D220,0x0036D220,0x11C,src/linked_offset_setup_0036D220.c,complete
+func_0036E5F0,0x0036E5F0,0xFC,src/owner_fade_phase_0036E5F0.c,complete
