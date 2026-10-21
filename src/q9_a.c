@@ -294,7 +294,7 @@ typedef struct O_13 {
 extern O_13 *func_003DA750(void *, s32, s32);
 extern void func_00136370();
 extern s16 D_0043F160[];
-void func_001362C0(void *a, s32 i) {
+u8 *func_001362C0(u8 *a, s32 i) {
     O_13 *o;
     s32 c;
     c = 3;
@@ -313,6 +313,7 @@ void func_001362C0(void *a, s32 i) {
         o->f1c = D_0043F160[i];
         o->f1e = 0x78 - o->f1c;
     }
+    return (u8 *)o;
 }
 
 

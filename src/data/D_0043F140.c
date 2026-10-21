@@ -1,12 +1,18 @@
-typedef unsigned int u32;
-extern u32 data_u32_0043EE20[];
-/* func_00136110 creates selectors 0..3 or 4..6, stores them as field20 in func_001362C0, then func_00136390 loads base + 4*field20 at 0x001363BC; all seven pointers are reachable. */
-u32 * const D_0043F140[7] = {
-    &data_u32_0043EE20[0],
-    &data_u32_0043EE20[0x20],
-    &data_u32_0043EE20[0x3C],
-    &data_u32_0043EE20[0x60],
-    &data_u32_0043EE20[0x80],
-    &data_u32_0043EE20[0x90],
-    &data_u32_0043EE20[0xA8],
+typedef struct { signed char resource_bank, glyph_mode, transform, glyph; float advance; } GlyphCommand;
+typedef char GlyphCommand_size8[(sizeof(GlyphCommand)==8)?1:-1];
+extern GlyphCommand data_u32_0043EE20[];
+extern GlyphCommand data_dynamic_commands_0043EEA0[];
+extern GlyphCommand data_dynamic_commands_0043EF10[];
+extern GlyphCommand data_dynamic_commands_0043EFA0[];
+extern GlyphCommand data_dynamic_commands_0043F020[];
+extern GlyphCommand data_dynamic_commands_0043F060[];
+extern GlyphCommand data_dynamic_commands_0043F0C0[];
+const GlyphCommand * const D_0043F140[7] = {
+    data_u32_0043EE20,
+    data_dynamic_commands_0043EEA0,
+    data_dynamic_commands_0043EF10,
+    data_dynamic_commands_0043EFA0,
+    data_dynamic_commands_0043F020,
+    data_dynamic_commands_0043F060,
+    data_dynamic_commands_0043F0C0,
 };

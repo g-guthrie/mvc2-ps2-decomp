@@ -17735,3 +17735,4 @@ func_0017F750,0x0017F750,0x1D4,src/animation_landing_0017F750.c,complete
 func_00368160,0x00368160,0x308,src/owner_projectile_launch_00368160.c,complete
 func_0021C9F0,0x0021C9F0,0x11C,src/predicate_chain_0021C9F0.c,complete
 func_0031B480,0x0031B480,0x178,src/input_action_0031B480.c,complete
+func_00152AD0,0x00152AD0,0x248,src/render_active_objects_00152AD0.c,complete
