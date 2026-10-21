@@ -1,0 +1,1 @@
+unsigned char data_glyph_raw_00443CD4[4] = { 0x00, 0x00, 0x00, 0x00 };

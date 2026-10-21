@@ -1,4 +1,2 @@
-typedef unsigned int u32;
-u32 data_u32_00443C50[3] = {
-    0x00000000u, 0x3F800000u, 0x00000000u, 
-};
+/* Fragment of four native xyz scale rows; original owner boundary retained. */
+float data_u32_00443C50[3] = { 0.0f, 1.0f, 0.0f };

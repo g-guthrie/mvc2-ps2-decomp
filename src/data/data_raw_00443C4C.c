@@ -1,2 +1,2 @@
-typedef unsigned char u8;
-u8 data_raw_00443C4C[4] = { 0x00u, 0x00u, 0x80u, 0x3Fu };
+/* Fragment of four native xyz scale rows; original owner boundary retained. */
+float data_raw_00443C4C[1] = { 1.0f };

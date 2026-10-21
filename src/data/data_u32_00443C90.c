@@ -1,6 +1,5 @@
-typedef unsigned int u32;
-u32 data_u32_00443C90[20] = {
-    0x40000000u, 0xBF4CCCCDu, 0xC1500000u, 0x00000000u, 0x3F333333u, 0xC1500000u, 0x00000000u, 0x00000000u, 
-    0x40000000u, 0x3FA66666u, 0xC1500000u, 0x40000000u, 0x00000000u, 0xC1500000u, 0x00000000u, 0xBFC00000u, 
-    0xC1500000u, 0x00000000u, 0x00000000u, 0x00000000u, 
+typedef struct { float x, y, z; } GlyphPosition;
+GlyphPosition data_u32_00443C90[2] = {
+    { 2.0f, -0.800000011920929f, -13.0f },
+    { 0.0f, 0.699999988079071f, -13.0f },
 };
