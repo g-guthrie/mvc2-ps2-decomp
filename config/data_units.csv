@@ -2070,7 +2070,7 @@ jtbl_0044E68C,0x0044E68C,0x20,.rodata,src/data/jtbl_0044E68C.c,jump_table
 jtbl_0044E6B0,0x0044E6B0,0x10,.rodata,src/data/jtbl_0044E6B0.c,typed_state_callback_table
 data_u32_0044E6C0,0x0044E6C0,0x30,.data,src/data/data_u32_0044E6C0.c,initialized_u32_table
 data_zero_0044E6F0,0x0044E6F0,0x10,.data,src/data/data_zero_0044E6F0.c,zero_initialized_untyped
-data_u32_0044E700,0x0044E700,0x90,.data,src/data/data_u32_0044E700.c,initialized_u32_table
+data_u32_0044E700,0x0044E700,0x90,.data,src/data/data_u32_0044E700.c,bounded_cycle_frame_records
 jtbl_0044E790,0x0044E790,0xC,.rodata,src/data/jtbl_0044E790.c,typed_state_callback_table
 data_u32_0044E79C,0x0044E79C,0x4,.data,src/data/data_u32_0044E79C.c,initialized_u32_table
 jtbl_0044E7A0,0x0044E7A0,0x1c,.rodata,src/data/jtbl_0044E7A0.c,typed_state_callback_table
@@ -5225,7 +5225,8 @@ data_u32_00475BDC,0x00475BDC,0x4,.data,src/data/data_u32_00475BDC.c,initialized_
 jtbl_00475BE0,0x00475BE0,0x20,.rodata,src/data/jtbl_00475BE0.c,typed_state_callback_table
 data_u32_00475C00,0x00475C00,0x90,.data,src/data/data_u32_00475C00.c,initialized_u32_table
 jtbl_00475C90,0x00475C90,0x10,.rodata,src/data/jtbl_00475C90.c,typed_state_callback_table
-data_u32_00475CA0,0x00475CA0,0x10,.data,src/data/data_u32_00475CA0.c,initialized_u32_table
+data_u32_00475CA0,0x00475CA0,0xC,.data,src/data/data_u32_00475CA0.c,bounded_signed_pairs
+data_raw_00475CAC,0x00475CAC,0x4,.data,src/data/data_raw_00475CAC.c,initialized_byte_array
 jtbl_00475CB0,0x00475CB0,0x28,.rodata,src/data/jtbl_00475CB0.c,jump_table
 jtbl_00475CE0,0x00475CE0,0x28,.rodata,src/data/jtbl_00475CE0.c,typed_state_callback_table
 jtbl_00475D10,0x00475D10,0x9c,.rodata,src/data/jtbl_00475D10.c,typed_state_callback_table
@@ -6304,7 +6305,11 @@ data_zero_00495B90,0x00495B90,0x20,.data,src/data/data_zero_00495B90.c,zero_init
 data_raw_00495BB0,0x00495BB0,0x4,.data,src/data/data_raw_00495BB0.c,initialized_byte_array
 data_u32_00495BB4,0x00495BB4,0x4,.data,src/data/data_u32_00495BB4.c,uint32_scalar
 data_runtime_slots_00495BB8,0x00495BB8,0x280,.data,src/data/data_runtime_slots_00495BB8.c,fixed_20_byte_slot_pool
-data_zero_00495E38,0x00495E38,0xA18,.data,src/data/data_zero_00495E38.c,zero_initialized_untyped
+data_zero_00495E38,0x00495E38,0x8D0,.data,src/data/data_zero_00495E38.c,zero_initialized_untyped
+gRuntimeServiceCounters_00496708,0x00496708,0x1C,.data,src/data/gRuntimeServiceCounters_00496708.c,bounded_integer_table
+data_zero_00496724,0x00496724,0x4,.data,src/data/data_zero_00496724.c,zero_initialized_untyped
+gRuntimeServiceRunning_00496728,0x00496728,0x1C,.data,src/data/gRuntimeServiceRunning_00496728.c,bounded_integer_table
+data_zero_00496744,0x00496744,0x10C,.data,src/data/data_zero_00496744.c,zero_initialized_untyped
 data_u32_00496850,0x00496850,0x60,.data,src/data/data_u32_00496850.c,initialized_u32_table
 data_u32_004968B0,0x004968B0,0xC,.data,src/data/data_u32_004968B0.c,filled_u32_constant
 data_u32_004968BC,0x004968BC,0x74,.data,src/data/data_u32_004968BC.c,initialized_u32_table
@@ -10736,3 +10741,4 @@ data_raw_004C24D4,0x004C24D4,0x1C,.data,src/data/data_raw_004C24D4.c,initialized
 data_cstr_004C2508,0x004C2508,0x2,.data,src/data/data_cstr_004C2508.c,initialized_c_string
 data_raw_004C250A,0x004C250A,0x2,.data,src/data/data_raw_004C250A.c,initialized_byte_array
 data_ptr_004C2430,0x004C2430,0x4,.data,src/data/data_ptr_004C2430.c,pointer_scalar
+gVelocityTimers_004C20F0,0x004C20F0,0x3,.sdata,src/data/gVelocityTimers_004C20F0.c,bounded_signed_bytes

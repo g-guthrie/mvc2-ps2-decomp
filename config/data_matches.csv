@@ -2070,7 +2070,7 @@ jtbl_0044E68C,0x0044E68C,0x20,src/data/jtbl_0044E68C.c,complete,placeholder
 jtbl_0044E6B0,0x0044E6B0,0x10,src/data/jtbl_0044E6B0.c,complete,reconstructed
 data_u32_0044E6C0,0x0044E6C0,0x30,src/data/data_u32_0044E6C0.c,complete,placeholder
 data_zero_0044E6F0,0x0044E6F0,0x10,src/data/data_zero_0044E6F0.c,complete,placeholder
-data_u32_0044E700,0x0044E700,0x90,src/data/data_u32_0044E700.c,complete,placeholder
+data_u32_0044E700,0x0044E700,0x90,src/data/data_u32_0044E700.c,complete,reconstructed
 jtbl_0044E790,0x0044E790,0xC,src/data/jtbl_0044E790.c,complete,reconstructed
 data_u32_0044E79C,0x0044E79C,0x4,src/data/data_u32_0044E79C.c,complete,placeholder
 jtbl_0044E7A0,0x0044E7A0,0x1c,src/data/jtbl_0044E7A0.c,complete,reconstructed
@@ -5225,7 +5225,8 @@ data_u32_00475BDC,0x00475BDC,0x4,src/data/data_u32_00475BDC.c,complete,placehold
 jtbl_00475BE0,0x00475BE0,0x20,src/data/jtbl_00475BE0.c,complete,reconstructed
 data_u32_00475C00,0x00475C00,0x90,src/data/data_u32_00475C00.c,complete,placeholder
 jtbl_00475C90,0x00475C90,0x10,src/data/jtbl_00475C90.c,complete,reconstructed
-data_u32_00475CA0,0x00475CA0,0x10,src/data/data_u32_00475CA0.c,complete,placeholder
+data_u32_00475CA0,0x00475CA0,0xC,src/data/data_u32_00475CA0.c,complete,reconstructed
+data_raw_00475CAC,0x00475CAC,0x4,src/data/data_raw_00475CAC.c,complete,placeholder
 jtbl_00475CB0,0x00475CB0,0x28,src/data/jtbl_00475CB0.c,complete,placeholder
 jtbl_00475CE0,0x00475CE0,0x28,src/data/jtbl_00475CE0.c,complete,reconstructed
 jtbl_00475D10,0x00475D10,0x9c,src/data/jtbl_00475D10.c,complete,reconstructed
@@ -6304,7 +6305,11 @@ data_zero_00495B90,0x00495B90,0x20,src/data/data_zero_00495B90.c,complete,placeh
 data_raw_00495BB0,0x00495BB0,0x4,src/data/data_raw_00495BB0.c,complete,placeholder
 data_u32_00495BB4,0x00495BB4,0x4,src/data/data_u32_00495BB4.c,complete,reconstructed
 data_runtime_slots_00495BB8,0x00495BB8,0x280,src/data/data_runtime_slots_00495BB8.c,complete,reconstructed
-data_zero_00495E38,0x00495E38,0xA18,src/data/data_zero_00495E38.c,complete,placeholder
+data_zero_00495E38,0x00495E38,0x8D0,src/data/data_zero_00495E38.c,complete,placeholder
+gRuntimeServiceCounters_00496708,0x00496708,0x1C,src/data/gRuntimeServiceCounters_00496708.c,complete,reconstructed
+data_zero_00496724,0x00496724,0x4,src/data/data_zero_00496724.c,complete,placeholder
+gRuntimeServiceRunning_00496728,0x00496728,0x1C,src/data/gRuntimeServiceRunning_00496728.c,complete,reconstructed
+data_zero_00496744,0x00496744,0x10C,src/data/data_zero_00496744.c,complete,placeholder
 data_u32_00496850,0x00496850,0x60,src/data/data_u32_00496850.c,complete,placeholder
 data_u32_004968B0,0x004968B0,0xC,src/data/data_u32_004968B0.c,complete,placeholder
 data_u32_004968BC,0x004968BC,0x74,src/data/data_u32_004968BC.c,complete,placeholder
@@ -10736,3 +10741,4 @@ data_raw_004C24D4,0x004C24D4,0x1C,src/data/data_raw_004C24D4.c,complete,placehol
 data_cstr_004C2508,0x004C2508,0x2,src/data/data_cstr_004C2508.c,complete,reconstructed
 data_raw_004C250A,0x004C250A,0x2,src/data/data_raw_004C250A.c,complete,placeholder
 data_ptr_004C2430,0x004C2430,0x4,src/data/data_ptr_004C2430.c,complete,reconstructed
+gVelocityTimers_004C20F0,0x004C20F0,0x3,src/data/gVelocityTimers_004C20F0.c,complete,reconstructed

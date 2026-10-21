@@ -462,3 +462,39 @@ rebuilt existing units, two retired owners,109 new pairs, and47 unchanged
 headers. Linked matching CODE is2,079,880 /3,293,696 bytes (63.1473%);
 linked reconstructed DATA is256,488 /648,064 bytes (39.5776%). The fixed
 next CODE publication threshold remains2,080,510, with630 bytes remaining.
+
+### State-transition pair and required owner ABI
+
+002C0730/368 and002C0BA0/412 are complete one-input actor state callbacks.
+Their existing caller002C06A0 supplies the actor. Root pins324 native words
+covering both functions, that caller and the unmatched byte-selector helper.
+The known threshold helper00184110 takes an owner pointer AND a float. The
+worker candidate omitted the pointer, despite matching instructions because
+A0 incidentally retained it. Both new sources now pass the actual owner
+explicitly, sharing the provider's real partial-owner view in a header. Its
+existing implementation and both new callers remain whole-exact.
+
+The animation helper returns int, ignored here; the sound-selector helper
+takes actor plus an8-bit selector. The shared-state counter uses a flexible
+signed-halfword view with its actual7C offset, without a guessed capacity.
+Byte-table address views are unsized and retain their actual GP-relative
+storage through the compiler's small-data declaration; the surrounding raw
+DATA owner stays unchanged. Root also removed the candidate's unnecessary
+volatile read qualifier: ordinary C still reproduces both complete functions.
+No DATA credit or following4-byte gap credit comes from these CODE views.
+
+The same audit covers all registered00184110 callers in the source tree.
+Three existing caller units now include the shared real provider declaration.
+The sibling transition routines pass their missing owner pointers; the
+existing wrapper stops inventing a third helper argument while retaining its
+own legitimate third parameter for the later vertical comparison. These are
+zero-credit ABI repairs and are independently rebuilt in their entirety.
+
+Root's aggregate frozen-input gate passes118 tests, catalog and build coverage,
+fresh split, complete loaded-ROM identity and packed-ELF identity. The audit
+checks14,934 unchanged source/object pairs, seven rebuilt existing units,
+eight new pairs,47 unchanged headers and one new shared ABI header. Linked
+matching CODE is2,080,660 /3,293,696 bytes (63.1710%); linked reconstructed
+DATA is256,703 /648,064 bytes (39.6107%). This crosses the existing fixed
+CODE threshold2,080,510 by150 bytes. After this checkpoint's publication,
+the next fixed threshold advances to2,113,447; the surplus is retained.

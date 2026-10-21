@@ -17616,3 +17616,5 @@ func_00100E68,0x00100E68,0x94,src/sony29_display_field_00100E68.c,complete
 func_00101540,0x00101540,0x17C,src/sony29_gif_image_submit_00101540.c,complete
 func_003AAA60,0x003AAA60,0x14C,src/actor_owner_motion_003AAA60.c,complete
 func_003C7880,0x003C7880,0x154,src/actor_owner_launch_003C7880.c,complete
+func_002C0730,0x002C0730,0x170,src/func_002C0730.c,complete
+func_002C0BA0,0x002C0BA0,0x19C,src/func_002C0BA0.c,complete

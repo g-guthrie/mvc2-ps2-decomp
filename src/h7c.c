@@ -1,3 +1,5 @@
+#include "owner_vertical_threshold.h"
+
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -7,9 +9,9 @@ typedef signed int s32;
 typedef float f32;
 
 
-extern s32 func_00184110(void *p, f32 x, f32 r);
+
 s32 func_00184150(u8 *p, f32 x, f32 r) {
-    if (func_00184110(p, x, r)) return 1;
+    if (func_00184110((OwnerThresholdState *)p, x)) return 1;
     {
         f32 d = *(f32 *)(p + 0x38) - *(f32 *)(*(u8 **)(p + 0x220) + 0x38);
         if (r < d) return 1;

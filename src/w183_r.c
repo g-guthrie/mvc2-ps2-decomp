@@ -1,3 +1,5 @@
+#include "owner_vertical_threshold.h"
+
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -14,15 +16,15 @@ extern s32 data_s8_004BFC50;
 extern f32 D_0044FC40[];
 
 void func_001F7B60(u8 *p) {
-    extern s32 func_00184110(f32);
-    extern void func_001E3710(u8 *, s32);
-    extern void func_001757E0(u8 *, s32, s32);
+
+    extern void func_001E3710(u8 *, u8);
+    extern int func_001757E0(u8 *, s32, s32);
     u32 k = p[0x1FC];
     u32 t;
     u32 h;
     switch (k) {
     case 0:
-        if (func_00184110(D_0044FC40[0])) {
+        if (func_00184110((OwnerThresholdState *)p, D_0044FC40[0])) {
             p[0x168] = 3;
             p[0x1B5] = 0x42;
         } else {

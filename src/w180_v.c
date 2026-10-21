@@ -1,3 +1,5 @@
+#include "owner_vertical_threshold.h"
+
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -16,12 +18,12 @@ extern s8 D_004C0DA4[4];
 extern s8 D_004C0DA8[4];
 
 void func_002C08A0(u8 *p) {
-    extern s32 func_00184110(f32);
-    extern void func_001E3710();
-    extern void func_001757E0(u8 *, s32, s32);
+
+    extern void func_001E3710(u8 *, u8);
+    extern int func_001757E0(u8 *, s32, s32);
     switch (p[0x1FC]) {
     case 0:
-        if (func_00184110(D_0045999C[0]) != 0) {
+        if (func_00184110((OwnerThresholdState *)p, D_0045999C[0]) != 0) {
             p[0x168] = 3;
             p[0x1B5] = 0x36;
         } else {
@@ -33,7 +35,7 @@ void func_002C08A0(u8 *p) {
         p[0x1BB] = 0;
         break;
     case 1:
-        if (func_00184110(D_004599A0[0]) != 0) {
+        if (func_00184110((OwnerThresholdState *)p, D_004599A0[0]) != 0) {
             p[0x168] = 4;
             p[0x1B5] = 0x37;
         } else {
@@ -45,7 +47,7 @@ void func_002C08A0(u8 *p) {
         p[0x1BB] = 1;
         break;
     case 2:
-        if (func_00184110(D_004599A4[0]) != 0) {
+        if (func_00184110((OwnerThresholdState *)p, D_004599A4[0]) != 0) {
             p[0x168] = 5;
             p[0x1B5] = 0x38;
         } else {
@@ -67,12 +69,12 @@ void func_002C08A0(u8 *p) {
 extern f32 D_004599A8[], D_004599AC[], D_004599B0[];
 extern s8 D_004C0DAC[4], D_004C0DB0[4], D_004C0DB4[4];
 void func_002C0A20(u8 *p) {
-    extern s32 func_00184110(f32);
-    extern void func_001E3710();
-    extern void func_001757E0(u8 *, s32, s32);
+
+    extern void func_001E3710(u8 *, u8);
+    extern int func_001757E0(u8 *, s32, s32);
     switch (p[0x1FC]) {
     case 0:
-        if (func_00184110(D_004599A8[0]) != 0) {
+        if (func_00184110((OwnerThresholdState *)p, D_004599A8[0]) != 0) {
             p[0x168] = 3;
             p[0x1B5] = 0x33;
         } else {
@@ -84,7 +86,7 @@ void func_002C0A20(u8 *p) {
         p[0x1BB] = 0;
         break;
     case 1:
-        if (func_00184110(D_004599AC[0]) != 0) {
+        if (func_00184110((OwnerThresholdState *)p, D_004599AC[0]) != 0) {
             p[0x168] = 4;
             p[0x1B5] = 0x34;
         } else {
@@ -96,7 +98,7 @@ void func_002C0A20(u8 *p) {
         p[0x1BB] = 1;
         break;
     case 2:
-        if (func_00184110(D_004599B0[0]) != 0) {
+        if (func_00184110((OwnerThresholdState *)p, D_004599B0[0]) != 0) {
             p[0x168] = 5;
             p[0x1B5] = 0x35;
         } else {
