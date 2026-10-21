@@ -1,18 +1,11 @@
-typedef unsigned char u8;
-typedef signed char s8;
-typedef unsigned short u16;
-typedef signed short s16;
+#include "sony_command_table_types.h"
 typedef unsigned int u32;
-typedef signed int s32;
 
-typedef struct { s32 a, b; } P2;
-extern P2 *D_004C3AE4;
-extern P2 *D_004C3AEC;
-
-void func_00106240(s32 i, s32 x, s32 y) {
-    s32 off = i * 8;
-    if (i < 0) i = (s32)D_004C3AE4; else i = (s32)D_004C3AEC;
-    off += i;
-    *(s32 *)(off + 4) = y;
-    *(s32 *)off = x;
+void func_00106240(u32 id, SonyCommandHandler handler, void *argument) {
+    /* The system-ID high bit drops out of the native 32-bit byte offset. */
+    u32 offset=id*8u;
+    if ((int)id<0) id=(u32)D_004C3AE4; else id=(u32)D_004C3AEC;
+    offset+=id;
+    ((SonyCommandEntry *)offset)->argument=argument;
+    ((SonyCommandEntry *)offset)->handler=handler;
 }

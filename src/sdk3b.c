@@ -5,10 +5,7 @@ typedef signed char s8;
 typedef unsigned char u8;
 #include "HtciFileRequest.h"
 
-typedef struct { s32 a, b; } Pair;
 typedef struct { s8 a; s8 kind; s8 pad[2]; s32 val; } Obj;
-extern Pair *D_004C3AE4;
-extern Pair *D_004C3AEC;
 extern s32 func_00406B50(void);
 extern void func_003FB128(void *p);
 extern char D_004BC3D0[], D_004BC128[], D_004BB4A8[];
