@@ -4225,8 +4225,6 @@ data_f32_00460700,0x00460700,0x18,src/data/data_f32_00460700.c,complete,reconstr
 data_u8_00460718,0x00460718,0x158,src/data/data_u8_00460718.c,complete,placeholder
 data_f32_00460870,0x00460870,0x18,src/data/data_f32_00460870.c,complete,reconstructed
 data_raw_00460888,0x00460888,0x8,src/data/data_raw_00460888.c,complete,placeholder
-data_u32_00460890,0x00460890,0x420,src/data/data_u32_00460890.c,complete,placeholder
-data_zero_00460CB0,0x00460CB0,0x10,src/data/data_zero_00460CB0.c,complete,placeholder
 data_v3_00460CC0,0x00460CC0,0x24,src/data/data_v3_00460CC0.c,complete,reconstructed
 data_raw_00460CE4,0x00460CE4,0xC,src/data/data_raw_00460CE4.c,complete,placeholder
 data_v3_00460CF0,0x00460CF0,0x30,src/data/data_v3_00460CF0.c,complete,reconstructed
@@ -10333,3 +10331,11 @@ data_clamp_pairs_00474A10,0x00474A10,0x1D8,src/data/data_clamp_pairs_00474A10.c,
 data_zero_gap_00474BE8,0x00474BE8,0x8,src/data/data_zero_gap_00474BE8.c,complete,placeholder
 data_packed_motion_blocks_00474BF0,0x00474BF0,0xEC0,src/data/data_packed_motion_blocks_00474BF0.c,complete,reconstructed
 data_short_values_00475AB0,0x00475AB0,0x4,src/data/data_short_values_00475AB0.c,complete,reconstructed
+data_effect_spawn_groups_00460890,0x460890,0x3c0,src/data/data_effect_spawn_groups_00460890.c,complete,reconstructed
+data_effect_angles_00460C50,0x460c50,0x14,src/data/data_effect_angles_00460C50.c,complete,reconstructed
+data_raw_00460C64,0x460c64,0xc,src/data/data_raw_00460C64.c,complete,placeholder
+data_effect_rotation_steps_00460C70,0x460c70,0x28,src/data/data_effect_rotation_steps_00460C70.c,complete,reconstructed
+data_effect_acceleration_00460C98,0x460c98,0xc,src/data/data_effect_acceleration_00460C98.c,complete,reconstructed
+data_raw_00460CA4,0x460ca4,0x4,src/data/data_raw_00460CA4.c,complete,placeholder
+data_effect_acceleration_00460CA8,0x460ca8,0xc,src/data/data_effect_acceleration_00460CA8.c,complete,reconstructed
+data_raw_00460CB4,0x460cb4,0xc,src/data/data_raw_00460CB4.c,complete,placeholder

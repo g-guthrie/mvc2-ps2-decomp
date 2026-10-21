@@ -4623,3 +4623,22 @@ The bank's totals are **2,098,252 / 3,293,696 CODE bytes (63.7051%)** and
 **353,181 / 648,064 reconstructed DATA bytes (54.4979%)**. The normal fixed CODE
 checkpoint remains 2,113,447 bytes, another 15,195 bytes. This additional DATA
 checkpoint does not reset the grid. Full source decompilation remains unfinished.
+
+## 2026-10-21: effect spawn groups and motion parameters
+
+Two formerly raw owners now provide 1,044 reconstructed DATA bytes. Six groups
+of ten typed spawn points, five integer angles, five rotation pairs and two
+acceleration vectors follow native producer and consumer contracts. One vector
+crosses the old catalog boundary at 0x00460CB0. Three gaps totaling 28 bytes
+remain raw and uncredited. See `EFFECT_SPAWN_DATA_RECOVERY_20261021.md`.
+
+All eight new whole data objects compile exact and have independent review.
+The aggregate verification checks 14,577 unchanged source/object pairs and all
+52 headers, retires two raw owners and adds eight new units, leaving 14,585
+pairs. Publication requires catalog checks, the existing test suite, fresh
+splitting, linkage and the same full retail ROM and packed ELF hashes.
+
+Totals are **2,098,252 / 3,293,696 CODE bytes (63.7051%)** and
+**354,225 / 648,064 reconstructed DATA bytes (54.6590%)**. The normal fixed
+CODE checkpoint remains 2,113,447 bytes, another 15,195 bytes. Full source
+decompilation remains unfinished.
