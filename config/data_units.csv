@@ -6390,15 +6390,7 @@ data_ff_004A6F60,0x004A6F60,0x10,.data,src/data/data_ff_004A6F60.c,filled_u32_on
 jtbl_004A6F70,0x004A6F70,0x10,.rodata,src/data/jtbl_004A6F70.c,jump_table
 data_s32x4_004A6F80,0x004A6F80,0x1000,.data,src/data/data_s32x4_004A6F80.c,bounded_s32x4_lookup
 data_s32x4_004A7F80,0x004A7F80,0x1000,.data,src/data/data_s32x4_004A7F80.c,bounded_s32x4_lookup
-data_effect_timeline_004A8F80,0x004A8F80,0x5,.data,src/data/data_effect_timeline_004A8F80.c,effect_timeline_native_fields
-data_raw_004A8F85,0x004A8F85,0x2,.data,src/data/data_raw_004A8F85.c,opaque_effect_payload
-data_effect_timeline_004A8F87,0x004A8F87,0x2A,.data,src/data/data_effect_timeline_004A8F87.c,effect_timeline_native_fields
-data_raw_004A8FB1,0x004A8FB1,0x3,.data,src/data/data_raw_004A8FB1.c,opaque_effect_payload
-data_effect_timeline_004A8FB4,0x004A8FB4,0x1D,.data,src/data/data_effect_timeline_004A8FB4.c,effect_timeline_native_fields
-data_raw_004A8FD1,0x004A8FD1,0x3,.data,src/data/data_raw_004A8FD1.c,opaque_effect_payload
-data_effect_timeline_004A8FD4,0x004A8FD4,0x19,.data,src/data/data_effect_timeline_004A8FD4.c,effect_timeline_native_fields
-data_raw_004A8FED,0x004A8FED,0x3,.data,src/data/data_raw_004A8FED.c,opaque_effect_payload
-data_effect_timeline_004A8FF0,0x004A8FF0,0x8,.data,src/data/data_effect_timeline_004A8FF0.c,effect_timeline_native_fields
+data_effect_timeline_stream_004A8F80,0x004A8F80,0x78,.data,src/data/effect_timeline_stream_004A8F80.c,effect_text_stream_complete
 data_raw_004A8FF8,0x004A8FF8,0x8,.data,src/data/data_raw_004A8FF8.c,opaque_effect_inter_root_gap
 data_effect_timeline_004A9000,0x004A9000,0x5,.data,src/data/data_effect_timeline_004A9000.c,effect_timeline_native_fields
 data_raw_004A9005,0x004A9005,0x2,.data,src/data/data_raw_004A9005.c,opaque_effect_payload
@@ -9743,7 +9735,6 @@ data_u8_004BC7BA,0x004BC7BA,0x6,.data,src/data/data_u8_004BC7BA.c,initialized_by
 gAdxtDiagnostic_004BC7C0,0x004BC7C0,0x3F,.data,src/data/gAdxtDiagnostic_004BC7C0.c,nul_terminated_message
 data_u8_004BC7FF,0x004BC7FF,0x1,.data,src/data/data_u8_004BC7FF.c,initialized_byte_array
 jtbl_004BC800,0x004BC800,0x14,.rodata,src/data/jtbl_004BC800.c,jump_table
-data_u8_004BC820,0x004BC820,0x90,.data,src/data/data_u8_004BC820.c,initialized_byte_array
 gCvFsAddDevDiagnostic_004BC8B0,0x004BC8B0,0x22,.data,src/data/gCvFsAddDevDiagnostic_004BC8B0.c,nul_terminated_message
 data_u8_004BC8D2,0x004BC8D2,0x6,.data,src/data/data_u8_004BC8D2.c,initialized_byte_array
 gCvFsAddDevDiagnostic_004BC8D8,0x004BC8D8,0x24,.data,src/data/gCvFsAddDevDiagnostic_004BC8D8.c,nul_terminated_message
@@ -10144,7 +10135,6 @@ D_004BE9D0,0x004BE9D0,0x10,.data,src/data/D_004BE9D0.c,cri_uuid_sjmem_identity
 data_u8_004BE9E0,0x004BE9E0,0x30,.data,src/data/data_u8_004BE9E0.c,opaque_banner_and_padding
 D_004BEA10,0x004BEA10,0x10,.data,src/data/D_004BEA10.c,cri_uuid_sjr_bf_identity
 D_004BEA20,0x004BEA20,0x10,.data,src/data/D_004BEA20.c,cri_uuid_sjrm_identity
-data_u8_004BEA30,0x004BEA30,0x60,.data,src/data/data_u8_004BEA30.c,opaque_sjrm_and_sjx_banners
 gSjxInitHeapFailure_004BEA90,0x004BEA90,0x2C,.data,src/data/gSjxInitHeapFailure_004BEA90.c,nul_terminated_message
 data_u8_004BEABC,0x004BEABC,0x4,.data,src/data/data_u8_004BEABC.c,initialized_byte_array
 gSjxInitDtxFailure_004BEAC0,0x004BEAC0,0x25,.data,src/data/gSjxInitDtxFailure_004BEAC0.c,nul_terminated_message
@@ -10989,3 +10979,14 @@ data_s8_0045EEA8,0x0045EEA8,0xF,.data,src/data/data_s8_0045EEA8.c,bounded_s8_loo
 data_raw_0045EEB7,0x0045EEB7,0x79,.data,src/data/data_raw_0045EEB7.c,opaque_byte_tail
 data_f32_00460608,0x00460608,0xC,.data,src/data/data_f32_00460608.c,bounded_motion_amplitudes_3
 data_raw_00460614,0x00460614,0xC,.data,src/data/data_raw_00460614.c,opaque_numeric_tail
+data_raw_004BC814,0x004BC814,0x4,.data,src/data/data_raw_004BC814.c,uncredited_initialized_padding
+data_cstr_004BC818,0x004BC818,0x29,.data,src/data/data_cstr_004BC818.c,initialized_c_string
+data_raw_004BC841,0x004BC841,0x7,.data,src/data/data_raw_004BC841.c,uncredited_initialized_padding
+data_cstr_004BC848,0x004BC848,0x31,.data,src/data/data_cstr_004BC848.c,initialized_c_string
+data_raw_004BC879,0x004BC879,0x7,.data,src/data/data_raw_004BC879.c,uncredited_initialized_padding
+data_cstr_004BC880,0x004BC880,0x2E,.data,src/data/data_cstr_004BC880.c,initialized_c_string
+data_raw_004BC8AE,0x004BC8AE,0x2,.data,src/data/data_raw_004BC8AE.c,uncredited_initialized_padding
+data_cstr_004BEA30,0x004BEA30,0x2C,.data,src/data/data_cstr_004BEA30.c,initialized_c_string
+data_raw_004BEA5C,0x004BEA5C,0x4,.data,src/data/data_raw_004BEA5C.c,uncredited_initialized_padding
+data_cstr_004BEA60,0x004BEA60,0x2A,.data,src/data/data_cstr_004BEA60.c,initialized_c_string
+data_raw_004BEA8A,0x004BEA8A,0x6,.data,src/data/data_raw_004BEA8A.c,uncredited_initialized_padding

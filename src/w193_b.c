@@ -16,7 +16,6 @@ s32 func_003FDA00(void)
     if (func_003FE5B0() == 1) {
         func_0040D118();
         func_004050A0();
-        __asm__ volatile("");
     } else {
         func_003FE510();
         func_0040D118();

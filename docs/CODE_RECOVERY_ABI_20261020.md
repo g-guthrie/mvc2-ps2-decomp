@@ -174,3 +174,49 @@ passing image/test gates without repeating unchanged suites. Five production
 units verify 40 functions; all95 tests, coverage/catalog and complete retail
 ROM/ELF identity pass. DATA sources/credit are unchanged. Frozen proof:
 `private/code-lane/round17/root/FINAL_VERIFICATION.json`.
+
+### Cache-tag range control: 328 new C bytes
+
+Both 164-byte routines now express all iteration, address reconstruction and
+inclusive range decisions as C. Inline assembly contains only the required
+sync/cache/CP0 tag-read CPU operations; volatile and memory effects describe
+those real operations. No assembly loop, branch, address arithmetic or NOP
+padding remains in either recovered body. The obsolete two assembly lifts
+are removed from their old source units; unrelated primitives/VU placeholders
+remain unchanged and retain their existing credit status.
+
+Sony29 O2/G0 with SNAS -mips4 uses the repository's supported assembler ISA
+setting for this native integer/COP0 sequence, avoiding extra assembler hazard
+NOPs absent in retail. Existing callers already use the actual two-pointer,
+void-return contract. Three production units verify 13 spans, including two
+uncredited VU placeholders (124 bytes); only the two new C bodies add credit.
+All95 tests, coverage/catalog and both complete retail image comparisons pass.
+Evidence: `private/code-lane/round19/root/FINAL_VERIFICATION.json`.
+
+### Queue storage contract follow-up (zero credit)
+
+The queue accepts opaque object storage and accesses only its actual shared
+prefix through the active byte at13C. Its private prefix view has a distinct
+tag; it does not claim a total1E4-byte extent for the larger5B8-byte caller pool.
+Both named callers declare the same void(void*) API. The pointer table stores
+opaque object pointers. The allocator retains its independent complete Object
+type. This avoids incompatible same-tag complete structures across units.
+All23 functions in the three affected CUs verify exactly, and allthree complete
+objects are byte-identical to the passing prior image/test gate. No new credit.
+Proof: `private/code-lane/queue-opaque-followup/FINAL_VERIFICATION.json`.
+
+### Parent setup and byte-color setup: 544 new C bytes
+
+DB430/268 uses its actual one-input callback contract and loads its parent
+from18. Its existing residual interval is renamed without changing any extent.
+3C81F0/276 is a proven native table entry, split from the preceding48-byte
+dispatch head; the combined324-byte span is unchanged, with no internal gap.
+Only the complete body is credited, and the head remains uncredited.
+
+The color table is read through an unsigned-character four-byte record view,
+matching allfour native byte loads and color-byte stores. Its outer extent
+is unspecified, with no new global selector bound or word-type claim. Both
+bodies reuse the existing196-byte ActorState. No DATA definition/credit changes.
+All95 tests, coverage/catalog and both complete retail images pass. Adopting
+the final byte-only color declaration leaves the entire object byte-identical
+to the passing gate. Proof: `private/code-lane/round20/root/FINAL_VERIFICATION.json`.

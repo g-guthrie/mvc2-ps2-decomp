@@ -25,6 +25,83 @@ CPU_ASSEMBLY_PRIMITIVES = {
 }
 
 
+def function_bodies(text, names):
+    """Select definitions, preserving offsets while ignoring comments/literals."""
+    masked = re.sub(
+        r'"(?:\\.|[^"\\])*"|\'(?:\\.|[^\'\\])*\'|//[^\n]*|/\*.*?\*/',
+        lambda match: re.sub(r"[^\n]", " ", match.group()),
+        text, flags=re.DOTALL,
+    )
+    for name in names:
+        for match in re.finditer(r"\b" + re.escape(name) + r"\s*\(", masked):
+            position, depth = match.end(), 1
+            while position < len(masked) and depth:
+                depth += (masked[position] == "(") - (masked[position] == ")")
+                position += 1
+            while position < len(masked) and masked[position].isspace():
+                position += 1
+            if position == len(masked) or masked[position] != "{":
+                continue
+            start, depth = position, 1
+            position += 1
+            while position < len(masked) and depth:
+                depth += (masked[position] == "{") - (masked[position] == "}")
+                position += 1
+            if depth:
+                raise SystemExit(f"unclosed credited function body: {name}")
+            yield name, text[start:position]
+
+
+def validate_codegen_forcing(name, body, source):
+    # Tokenize rather than matching prose or quoted examples as executable code.
+    tokens = [(match.group(), match.start()) for match in re.finditer(
+        r'//[^\n]*|/\*.*?\*/|"(?:\\.|[^"\\])*"|\'(?:\\.|[^\'\\])*\'|'
+        r'[A-Za-z_]\w*|[^\s]', body, re.DOTALL,
+    ) if not match.group().startswith(("//", "/*"))]
+    values = [value for value, _ in tokens]
+    for index, value in enumerate(values):
+        if value not in {"asm", "__asm", "__asm__"}:
+            continue
+        cursor = index + 1
+        if cursor < len(values) and values[cursor] in {"volatile", "__volatile__"}:
+            cursor += 1
+        if cursor >= len(values) or values[cursor] != "(":
+            continue
+        cursor += 1
+        start = cursor
+        while cursor < len(values) and re.fullmatch(r'"(?:\s|\\[nrtvf])*"', values[cursor]):
+            cursor += 1
+        if cursor > start and cursor < len(values) and values[cursor] == ")":
+            raise SystemExit(f"empty asm codegen barrier credited as C: {name} ({source})")
+
+    # A fixed local read by C or an actual asm operand is distinct from an
+    # unused destination introduced only to select a particular load register.
+    code = " ".join(values)
+    declarations = list(re.finditer(
+        r'\bregister\b[^;{}]*?\b(\w+)\s+(?:asm|__asm|__asm__)\s*'
+        r'\(\s*"[^"\n]+"\s*\)[^;{}]*;', code,
+    ))
+    for declaration in declarations:
+        variable = declaration.group(1)
+        remaining = code[:declaration.start()] + " " + code[declaration.end():]
+        remaining_tokens = re.findall(
+            r'"(?:\\.|[^"\\])*"|\'(?:\\.|[^\'\\])*\'|[A-Za-z_]\w*|[^\s]',
+            remaining,
+        )
+        read = False
+        for index, value in enumerate(remaining_tokens):
+            if value != variable:
+                continue
+            following = remaining_tokens[index + 1:index + 3]
+            assignment = (following[:1] == ["="] and following != ["=", "="])
+            dereference = index > 0 and remaining_tokens[index - 1] == "*"
+            if not assignment or dereference:
+                read = True
+                break
+        if not read:
+            raise SystemExit(f"unused fixed-register local credited as C: {name} ({source})")
+
+
 def validate_source_credit(matches, root=Path(".")):
     """Reject instruction streams presented as reconstructed C functions."""
     by_source = {}
@@ -32,6 +109,8 @@ def validate_source_credit(matches, root=Path(".")):
         by_source.setdefault(row["source"], set()).add(name)
     for source, credited in by_source.items():
         text = (root / source).read_text()
+        for name, body in function_bodies(text, credited):
+            validate_codegen_forcing(name, body, source)
         lifted = set()
         if re.search(r"#define\s+FN\([^\n]*__asm__", text):
             lifted.update(re.findall(

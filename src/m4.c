@@ -54,8 +54,7 @@ void func_003D8EE0(u8 *p) {
 extern u8 D_004F20B0[];
 extern void func_00418040(s32 v);
 extern void func_00174F40(void *p);
-struct Object;
-extern void func_003DAB30(struct Object *p);
+extern void func_003DAB30(void *p);
 void func_00326AF0(void) {
     s32 i;
     u8 *e;
@@ -67,7 +66,7 @@ void func_00326AF0(void) {
         e = D_004F20B0 + off;
         if (*(s8 *)(e + 0x13C) != 0) {
             func_00174F40(e);
-            func_003DAB30((struct Object *)e);
+            func_003DAB30(e);
         }
         i++;
         off += 0x5B8;

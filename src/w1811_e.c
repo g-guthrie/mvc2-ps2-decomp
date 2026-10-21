@@ -36,6 +36,5 @@ void func_003FDD28(s32 a, s32 b) {
         }
         func_00103C70(a, b);
         func_003FE1F8(a);
-        __asm__ volatile("");
     }
 }

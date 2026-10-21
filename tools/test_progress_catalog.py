@@ -20,6 +20,64 @@ from tools.progress_catalog import (
 
 
 class ProgressCatalogTest(unittest.TestCase):
+    def test_empty_codegen_barriers_are_rejected_per_function(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "mixed.c").write_text(
+                'int good(void) { return 1; } void bad(void) {\n'
+                ' __asm__ volatile("");\n}\n'
+            )
+            validate_source_credit({"good": {"source": "mixed.c"}}, root)
+            with self.assertRaisesRegex(SystemExit, "empty asm codegen barrier"):
+                validate_source_credit({"bad": {"source": "mixed.c"}}, root)
+
+    def test_unused_fixed_register_destination_cannot_receive_credit(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "bad.c").write_text(
+                'extern volatile int flag; void bad(void) {\n'
+                'register int j __asm__("$3"); j = flag;\n'
+                'const char *note = "j is an example";\n}\n'
+            )
+            with self.assertRaisesRegex(SystemExit, "unused fixed-register local"):
+                validate_source_credit({"bad": {"source": "bad.c"}}, root)
+
+    def test_actual_fixed_register_reads_and_cpu_operations_remain_eligible(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "real.c").write_text(
+                'extern int flag; int comparison(void) {\n'
+                'register int j __asm__("$3"); j = flag; return j == 0; }\n'
+                'void operation(void) { register int j __asm__("$3");\n'
+                'j = flag; __asm__ volatile("syscall 0" : : "r"(j)); }\n'
+                'void fence(void) { __asm__ volatile("" : : : "memory"); }\n'
+            )
+            validate_source_credit({name: {"source": "real.c"}
+                                    for name in ("comparison", "operation", "fence")}, root)
+
+    def test_forcing_mentions_and_calls_are_not_function_bodies(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "real.c").write_text(
+                'int real(void) {\n'
+                '/* __asm__ volatile(""); */\n'
+                'const char *note = "__asm__ volatile(\\"\\");"; return 1; }\n'
+                'void caller(void) { if (real()) { __asm__ volatile(""); } }\n'
+            )
+            validate_source_credit({"real": {"source": "real.c"}}, root)
+
+    def test_whitespace_only_asm_and_unread_fixed_register_are_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "bad.c").write_text(
+                'void empty(void) { __asm__ volatile("\\n" "\\t"); }\n'
+                'void unread(void) { register int j __asm__("$3"); }\n'
+            )
+            for name, reason in (("empty", "empty asm codegen barrier"),
+                                 ("unread", "unused fixed-register local")):
+                with self.subTest(name=name), self.assertRaisesRegex(SystemExit, reason):
+                    validate_source_credit({name: {"source": "bad.c"}}, root)
+
     def test_metrowerks_assembly_bodies_cannot_receive_c_credit(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

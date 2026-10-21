@@ -1,21 +1,22 @@
-/* Shared object prefix used by the active priority queue, including larger pools. */
+/* Shared prefix used by active-object queues, including larger object pools. */
 typedef unsigned char u8;
-typedef struct Object {
+typedef struct ActiveObjectPrefix {
  u8 header[3];
  u8 kind;
  int unused04;
- struct Object *previous;
- struct Object *next;
+ struct ActiveObjectPrefix *previous;
+ struct ActiveObjectPrefix *next;
  u8 fields10[0x12c];
  signed char active;
-} Object;
+} ActiveObjectPrefix;
 
 extern signed char D_004D1960[];
-extern Object *D_004D1970[][96];
-void func_003DAB30(Object *object) {
+extern void *D_004D1970[][96];
+void func_003DAB30(void *memory) {
+ ActiveObjectPrefix *object=(ActiveObjectPrefix *)memory;
  int palette;
  signed char index;
- Object *previous;
+ ActiveObjectPrefix *previous;
  int slot,count;
  if(object->kind<5) {
  if(object->active) {

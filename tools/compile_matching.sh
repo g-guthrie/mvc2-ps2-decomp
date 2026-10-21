@@ -10170,7 +10170,7 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --op
 "$WIBO" "$SNAS" -G8 -o "$BUILD/w1811_b.o" "$BUILD/w1811_b.s"
 "$PYTHON" tools/verify_object.py "$BUILD/w1811_b.o" private/SLUS_204.86.rom --source src/w1811_b.c
 "$WIBO" "$SNCPP" -P src/w1811_e.c "$BUILD/w1811_e.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 --extra-flags="-fno-schedule-insns" "$BUILD/w1811_e.i" "$BUILD/w1811_e.s"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 --extra-flags="-fno-schedule-insns -fno-optimize-sibling-calls" "$BUILD/w1811_e.i" "$BUILD/w1811_e.s"
 "$WIBO" "$SNAS" -G8 -o "$BUILD/w1811_e.o" "$BUILD/w1811_e.s"
 "$PYTHON" tools/verify_object.py "$BUILD/w1811_e.o" private/SLUS_204.86.rom --source src/w1811_e.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -16252,6 +16252,26 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 
 "$WIBO" "$MWCCPS2_30" -i src src/active_object_priority_queue.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/active_object_priority_queue.o"
 "$PYTHON" tools/verify_object.py "$BUILD/active_object_priority_queue.o" private/SLUS_204.86.rom --source src/active_object_priority_queue.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/submit_quadword_packet_00421200.c -c -lang c -O3 -sdatathreshold 8 -i src -o "$BUILD/submit_quadword_packet_00421200.o"
+"$PYTHON" tools/verify_object.py "$BUILD/submit_quadword_packet_00421200.o" private/SLUS_204.86.rom --source src/submit_quadword_packet_00421200.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/draw_selected_text_00421C00.c -c -lang c -O4 -Op -sdatathreshold 8 -i src -o "$BUILD/draw_selected_text_00421C00.o"
+"$PYTHON" tools/verify_object.py "$BUILD/draw_selected_text_00421C00.o" private/SLUS_204.86.rom --source src/draw_selected_text_00421C00.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/draw_counter_text_00421E70.c -c -lang c -O4 -Op -sdatathreshold 0 -i src -o "$BUILD/draw_counter_text_00421E70.o"
+"$PYTHON" tools/verify_object.py "$BUILD/draw_counter_text_00421E70.o" private/SLUS_204.86.rom --source src/draw_counter_text_00421E70.c
+
+"$WIBO" "$SNCPP" -P src/sony29_cache_tag_ranges.c "$BUILD/sony29_cache_tag_ranges.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_cache_tag_ranges.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_cache_tag_ranges.s"
+"$WIBO" "$SNAS" -mips4 -G0 -o "$BUILD/sony29_cache_tag_ranges.o" "$BUILD/sony29_cache_tag_ranges.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_cache_tag_ranges.o" private/SLUS_204.86.rom --source src/sony29_cache_tag_ranges.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_parent_start_001DB430.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_parent_start_001DB430.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_parent_start_001DB430.o" private/SLUS_204.86.rom --source src/actor_parent_start_001DB430.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_color_start_003C81F0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_color_start_003C81F0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_color_start_003C81F0.o" private/SLUS_204.86.rom --source src/actor_color_start_003C81F0.c
 
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

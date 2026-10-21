@@ -1,5 +1,5 @@
 /* EE GCC 2.96 -O2 -G0 (tryee.sh src/p1.c sn): thunks, a soft-float double
-   ratio, and two VU0/cache routines written as assembly. */
+   ratio, and one uncredited VU0 routine written as assembly. */
 typedef signed int s32;
 typedef unsigned int u32;
 typedef unsigned short u16;
@@ -17,52 +17,7 @@ FN(func_00102F78,
   );
 
 /* Instruction-cache scrub over 0x1000 bytes using cache ops and mfc0 $28. */
-FN(func_00104770,
-  "lui $7, 0xFFFF\n"
-  "daddu $6, $0, $0\n"
-  "ori $7, $7, 0xF000\n"
-  "nop\n"
-  "1:\n"
-  "sync\n"
-  "cache 0x10, 0($6)\n"
-  "sync\n"
-  "mfc0 $2, $28\n"
-  "and $2, $2, $7\n"
-  "addu $2, $2, $6\n"
-  "sltu $3, $5, $2\n"
-  "sltu $2, $2, $4\n"
-  "bnez $2, 2f\n"
-  "nop\n"
-  "bnez $3, 2f\n"
-  "nop\n"
-  "sync\n"
-  "cache 0x16, 0($6)\n"
-  "sync\n"
-  "2:\n"
-  "sync\n"
-  "cache 0x10, 1($6)\n"
-  "sync\n"
-  "mfc0 $2, $28\n"
-  "and $2, $2, $7\n"
-  "addu $2, $2, $6\n"
-  "sltu $3, $5, $2\n"
-  "sltu $2, $2, $4\n"
-  "bnez $2, 3f\n"
-  "nop\n"
-  "bnez $3, 3f\n"
-  "nop\n"
-  "sync\n"
-  "cache 0x16, 1($6)\n"
-  "sync\n"
-  "3:\n"
-  "sync\n"
-  "addiu $6, $6, 0x40\n"
-  "slti $2, $6, 0x1000\n"
-  "bnez $2, 1b\n"
-  "nop\n"
-  "jr $31\n"
-  "nop\n"
-  );
+
 
 /* A reserved but unused frame slot (volatile local) gives the 0x10 frame. */
 void func_00411270(u16 *p) {

@@ -16,7 +16,8 @@ establish one complete fixed 0x1E4-byte allocation type. An unused tail and
 an incorrect allocation/free-list comment were removed during integration.
 The routine neither allocates nor unlinks free objects.
 
-The caller uses the matching struct Object pointer contract. Two other
+The public queue API accepts an opaque pointer; its implementation uses only
+the actual shared object prefix, including when callers pass larger pool objects. Two other
 units lose unused incompatible declarations for the queue banks. The root
 also preserves the previously verified func_00267D70 two-argument caller
 prototype, which was absent from the CODE worker's older baseline. No
