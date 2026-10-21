@@ -2,7 +2,7 @@ typedef unsigned char u8;
 typedef signed short s16;
 typedef float f32;
 
-extern int func_002FFB30(u8 *);
+extern int func_002FFB30(u8 *,u8 *);
 extern int func_00175910(u8 *, int, int, int);
 extern int func_001757E0(u8 *, int, int);
 
@@ -10,7 +10,7 @@ void func_00300090(u8 *p, void *context)
 {
     s16 t;
 
-    if (func_002FFB30(p)) {
+    if (func_002FFB30(p,context)) {
         func_00175910(p, 15, 1, ((u8 *)context)[0xB]);
     }
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);

@@ -1,0 +1,2 @@
+typedef unsigned char u8; typedef unsigned short u16; extern int func_002FFB30(u8 *,u8 *); extern int func_00175910(u8 *,int,int,int); extern int func_001757E0(u8 *,int,int);
+void func_002FF890(u8 *p,void *q){u8 *child=*(u8 **)(p+0x220);child[0x21]=0;if(func_002FFB30(p,q))func_00175910(p,15,1,((u8 *)q)[0xB]);*(float *)(p+0x38)+=*(float *)(p+0x60);*(float *)(p+0x60)+=*(float *)(p+0x6C);if(*(float *)(p+0x60)**(float *)(p+0x6C)>=0){p[6]++;func_001757E0(p,15,2);*(float *)(p+0x60)=2.142857f;*(float *)(p+0x6C)=0;}}

@@ -18,7 +18,7 @@ typedef struct {
 typedef char check_record_size[(sizeof(SceneEventScheduleRecord) == 0x1C) ? 1 : -1];
 typedef char check_pool_offset[(offsetof(SceneEventScheduleRecord, pool_index) == 0x18) ? 1 : -1];
 typedef char check_object24_offset[(offsetof(SceneEventScheduleRecord, object_field_24) == 0x19) ? 1 : -1];
-extern const u8 data_raw_00441CD4[];
+extern u8 data_raw_00441CD4[];
 extern u32 data_u32_0044138C[];
 extern u32 data_u32_004414B0[];
 extern u32 data_u32_00441544[];

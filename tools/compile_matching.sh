@@ -16608,5 +16608,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$MWCCPS2" -i src src/owner_motion_handoff_00238730.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/owner_motion_handoff_00238730.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_motion_handoff_00238730.o" private/SLUS_204.86.rom --source src/owner_motion_handoff_00238730.c
 
+"$WIBO" "$MWCCPS2" -i src src/child_motion_transition_002FF890.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/child_motion_transition_002FF890.o"
+"$PYTHON" tools/verify_object.py "$BUILD/child_motion_transition_002FF890.o" private/SLUS_204.86.rom --source src/child_motion_transition_002FF890.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/owner_escape_motion_0020DFA0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/owner_escape_motion_0020DFA0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_escape_motion_0020DFA0.o" private/SLUS_204.86.rom --source src/owner_escape_motion_0020DFA0.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

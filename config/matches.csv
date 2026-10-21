@@ -17706,3 +17706,5 @@ func_001E8890,0x001E8890,0x1bc,src/resource_update_group_001E8890.c,complete
 func_001E8B10,0x001E8B10,0x1bc,src/resource_clear_group_001E8B10.c,complete
 func_00185980,0x00185980,0x104,src/owner_backlink_query_00185980.c,complete
 func_00238730,0x00238730,0x168,src/owner_motion_handoff_00238730.c,complete
+func_002FF890,0x002FF890,0xBC,src/child_motion_transition_002FF890.c,complete
+func_0020DFA0,0x0020DFA0,0x1B8,src/owner_escape_motion_0020DFA0.c,complete
