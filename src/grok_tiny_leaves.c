@@ -481,11 +481,15 @@ void func_00103DB0(void) {
     }
 }
 
-void func_00103DC0(void) {
+/* EndOfHeap returns the kernel heap boundary in V0. */
+void *func_00103DC0(void) {
+    void *boundary;
     asm {
         addiu v1, r0, 62
         syscall 0
+        move boundary, v0
     }
+    return boundary;
 }
 
 void func_00103DD0(void) {

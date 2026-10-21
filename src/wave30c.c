@@ -140,7 +140,7 @@ void func_0030D350(u8 *a) {
 }
 
 typedef struct { f32 x, y, z; } V3;
-extern void func_001754A0(u8 *p, s32 a, u8 b);
+extern int func_001754A0(u8 *p, s32 a, int b);
 
 void func_00198890(u8 *a) {
     u8 *s = *(u8 **)(a + 24);
@@ -148,10 +148,10 @@ void func_00198890(u8 *a) {
     *(f32 *)(a + 52) += *(f32 *)(s + 100);
     if (a[34] == 0) {
         a[36] = 10;
-        func_001754A0(a, 27, a[439] + 6);
+        func_001754A0(a, 27, (u8)(a[439] + 6));
     } else {
         a[36] = 12;
-        func_001754A0(a, 27, a[439] + 9);
+        func_001754A0(a, 27, (u8)(a[439] + 9));
     }
 }
 

@@ -220,3 +220,68 @@ bodies reuse the existing196-byte ActorState. No DATA definition/credit changes.
 All95 tests, coverage/catalog and both complete retail images pass. Adopting
 the final byte-only color declaration leaves the entire object byte-identical
 to the passing gate. Proof: `private/code-lane/round20/root/FINAL_VERIFICATION.json`.
+
+### Heap growth and actor callbacks: 1,184 new C bytes
+
+Recovered heap growth1044E0/172, edge launchC62A0/260, palette setup3AE020/320
+and team-owned phaseD1700/432. The edge-launch interval becomes an uncredited
+72-byte native head, eight padding bytes and the whole260-byte body. The
+palette residual is renamed without changing its extent. The team callback
+joins its existing owner-start unit, alongside its actual D1610 initializer.
+
+D1700's unsigned shift is defined under a concrete native player-pool contract:
+1801E0 writes team0 into slots0/2/4;1802A0 writes team1 into slots1/3/5. The
+native player setup/dispatch chain reachesD1550, preserves the owner pointer,
+and D1610 copies its team byte before entering state1. D1700 preserves that
+byte, so the opposing-team index is0 or1. This is a scoped caller/phase
+contract, not an arbitrary-byte or whole-program memory-safety claim. Full
+native evidence: `private/code-lane/round16/d1700-domain/DOMAIN_EVIDENCE.txt`.
+
+The heap loop, interrupt retry and unsigned address/boundary decisions are C;
+assembly contains only real CPU interrupt/status operations. EndOfHeap now
+returns its actual pointer inV0; all156 existing primitive functions remain
+exact. The errno write aliases the first actual unsigned word through its
+corresponding signed type. Runtime structure declarations and DATA stay
+unchanged. Root accepted the separate zero-credit DATA repair: the existing pointer
+initializer now names the real six-word target owner at0043B408 instead of
+forming an out-of-bounds element6 of a different four-word array. The pointer
+remains byte-exact, and no Runtime aggregate extent or DATA credit is added.
+
+### Animation selector contract correction (zero credit)
+
+1754A0 already had integer-selector declarations inside its own source unit,
+but its definition used byte parameters. The native callee explicitly masks
+both selector inputs to bytes before indexing. The definition now accepts
+integers and makes that exact byte conversion explicit at each lookup. Its
+byte field stores retain their ordinary truncation. Existing integer callers
+now agree with the definition; eleven narrow/mixed declarations are aligned,
+including their actual integer return type. Two callers retain their former
+implicit byte conversions as explicit casts; nine need declaration-only
+changes. No register, barrier, dummy value or padding is introduced.
+
+All12 complete provider/caller objects are byte-identical to the baseline,
+including all21 functions in the provider. The source contract is corrected
+without changing a native instruction. The new team callback uses this same
+integer API, preserving its real byte-valued animation selection.
+
+Seventeen production units verify259 registered whole functions. All95 child
+tests, coverage/catalog, fresh split and both complete retail image comparisons
+pass. Nine minimized caller objects are also byte-identical to the objects
+used by that gate. Frozen proof:
+`private/code-lane/round21/root/FINAL_VERIFICATION.json`.
+
+Root's six reserved forcing-audit units are unchanged. The raw child catalog
+predates root's672-byte legacy quarantine; root's corrected counter and fixed
+2,080,510 publication grid remain authoritative. This packet adds only1,184
+new C bytes and zero DATA bytes.
+
+
+Root integration independently rebuilt all17 units and verified259 complete
+functions. Root's source-credit quarantine now has three unresolved bodies,
+400 bytes total; three repaired bodies are credited again. Those corrections
+are separate from this packet's1,184 new bytes. Root passed the current116-test suite and independently reproduced both
+complete retail images before marking these four new rows linked. The split
+producer also reproduced its ignored auto-label output on a second run; all
+actual frozen inputs stayed unchanged. Root code reaches2,074,996 bytes
+(62.9990%), with DATA unchanged at255,836. The fixed publication grid remains
+2,080,510 code bytes;5,514 remain to that threshold.

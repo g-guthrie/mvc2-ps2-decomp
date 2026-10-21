@@ -6,7 +6,7 @@ typedef unsigned int u32;
 typedef float f32;
 typedef struct {f32 x,y,z;} V3;
 typedef struct {u32 words[49];} Payload;
-extern s32 func_001754A0(u8*,u8,u8);
+extern int func_001754A0(u8*,int,int);
 extern void func_001C4EC0(u8*);
 extern void func_001C5030(u8*);
 void func_001C4DD0(u8*p) {

@@ -17597,3 +17597,7 @@ func_00421C00,0x00421C00,0x9C,src/draw_selected_text_00421C00.c,complete
 func_00421E70,0x00421E70,0x80,src/draw_counter_text_00421E70.c,complete
 func_001DB430,0x001DB430,0x10C,src/actor_parent_start_001DB430.c,complete
 func_003C81F0,0x003C81F0,0x114,src/actor_color_start_003C81F0.c,complete
+func_001C62A0,0x001C62A0,0x104,src/actor_edge_launch_001C62A0.c,complete
+func_001044E0,0x001044E0,0xAC,src/sony29_heap_growth_001044E0.c,complete
+func_003AE020,0x003AE020,0x140,src/actor_palette_start_003AE020.c,complete
+func_001D1700,0x001D1700,0x1B0,src/actor_owner_start_profiles_001D7970.c,complete

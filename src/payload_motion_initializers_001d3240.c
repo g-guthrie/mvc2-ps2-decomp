@@ -32,7 +32,7 @@ fp[23]=-65.0f;*(f32*)(p+0x60)=216.428558349609375f;
 if(*(s16*)(p+0x140))fp[23]=-fp[23];
 func_001757E0(p,23,29);func_001DEC50(p,q);}
 
-extern s32 func_001754A0(u8*,u8,u8);
+extern int func_001754A0(u8*,int,int);
 extern void func_001D9700(u8*,u8*);
 extern void func_001D8F60(u8*,u8*);
 

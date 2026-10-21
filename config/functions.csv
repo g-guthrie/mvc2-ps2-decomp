@@ -4470,7 +4470,7 @@ func_001C5FC0,0x001C5FC0,0x68,0x001C6028,code,spimdisasm-explicit-size-before-fi
 func_001C6030,0x001C6030,0xF0,0x001C6120,code,spimdisasm-explicit-size-before-first-data
 func_001C6120,0x001C6120,0x98,0x001C61B8,code,spimdisasm-explicit-size-before-first-data
 func_001C61C0,0x001C61C0,0x88,0x001C6248,code,spimdisasm-explicit-size-before-first-data
-func_001C6250,0x001C6250,0x154,0x001C63A4,code,spimdisasm-explicit-size-before-first-data
+func_001C6250,0x001C6250,0x48,0x001C6298,code,verified-native-dispatch-head-boundary
 func_001C63B0,0x001C63B0,0x8C,0x001C643C,code,spimdisasm-explicit-size-before-first-data
 func_001C6440,0x001C6440,0x68,0x001C64A8,code,spimdisasm-explicit-size-before-first-data
 func_001C64B0,0x001C64B0,0xAC,0x001C655C,code,spimdisasm-explicit-size-before-first-data
@@ -17761,7 +17761,6 @@ residual_003ADC90,0x003ADC90,0x1F8,0x003ADE88,assembly_residual,verified-boundar
 func_003ADE90,0x003ADE90,0xFC,0x003ADF8C,code,spimdisasm-explicit-size-before-first-data
 func_003ADF90,0x003ADF90,0x70,0x003AE000,code,spimdisasm-explicit-size-before-first-data
 func_003AE000,0x003AE000,0x20,0x003AE020,code,matching-c-head-split
-residual_003AE020,0x003AE020,0x140,0x003AE160,assembly_residual,verified-boundary-after-matching-head
 func_003AE160,0x003AE160,0xF4,0x003AE254,code,spimdisasm-explicit-size-before-first-data
 func_003AE260,0x003AE260,0x58,0x003AE2B8,code,spimdisasm-explicit-size-before-first-data
 func_003AE2C0,0x003AE2C0,0xAC,0x003AE36C,code,spimdisasm-explicit-size-before-first-data
@@ -20327,3 +20326,6 @@ gap_001DAD54,0x001DAD54,0xC,0x001DAD60,padding,verified-alignment-padding
 func_001DAD60,0x001DAD60,0x124,0x1dae84,code,verified-native-callback-entry
 func_001DB430,0x001DB430,0x10C,0x001DB53C,code,verified-native-callback-entry
 func_003C81F0,0x003C81F0,0x114,0x003C8304,code,verified-native-table-callback-entry
+gap_001C6298,0x001C6298,0x8,0x001C62A0,padding,verified-alignment-padding
+func_001C62A0,0x001C62A0,0x104,0x001C63A4,code,verified-native-callback-entry
+func_003AE020,0x003AE020,0x140,0x003AE160,code,verified-native-callback-entry

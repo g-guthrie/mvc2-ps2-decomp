@@ -6,7 +6,7 @@ typedef float f32;
 
 typedef struct { f32 x, y, z; } V3;
 
-extern s32 func_001754A0(u8 *, u8, u8);
+extern int func_001754A0(u8 *, int, int);
 
 typedef struct { u32 words[49]; } Payload;
 #pragma padloop on

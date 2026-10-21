@@ -7,7 +7,7 @@ typedef struct Runtime {
     u64 value;
 } Runtime;
 
-extern u32 data_u32_0043B3F0[];
+extern u32 data_u32_0043B408[6];
 Runtime *data_ptr_0043B6F8[1] = {
-    (Runtime *)(data_u32_0043B3F0 + 6),
+    (Runtime *)data_u32_0043B408,
 };

@@ -53,7 +53,7 @@ void func_00388D90(u8 *a, u8 *b) {
 }
 
 void func_001B5350(u32 a, u8 *b);
-void func_001754A0(u8 *a, s32 b, u8 c);
+int func_001754A0(u8 *a, s32 b, int c);
 void func_00176160(u8 *a, s32 b, s32 c, s32 d);
 void func_001B4D70(u8 *a) {
     u8 *p = a;

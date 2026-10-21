@@ -104,3 +104,42 @@ void func_001D1610(u8 *p,void *q) {
  *(u8 **)(p+0xD0)=mapping;
  func_001D1700(p,q);
 }
+
+extern s32 func_001754A0(u8 *,s32,s32);
+extern int func_00175670(u8 *);
+extern u8 D_004D18E4 __attribute__((section(".bss")));
+extern u8 D_004D18A6 __attribute__((section(".bss")));
+typedef struct {u8 prefix[0x24];s8 priority;} PriorityView;
+/* D1610 initializes this effect from a player-pool owner with team byte 0 or 1.
+ * The D15E0 state-1 callback preserves that copied byte; see DOMAIN_EVIDENCE.txt. */
+void func_001D1700(u8 *p,void *q) {
+ PriorityView *priority=(PriorityView *)p;
+ PriorityView *ownerPriority=(PriorityView *)q;
+ ActorTimer *timer=(ActorTimer *)p;
+ ActorMotion *motion=(ActorMotion *)p;
+ s32 frame;
+ if(p[1]!=((u8 *)q)[1]) {p[4]++;p[0x13C]=0;return;}
+ p[0x31]=2;
+ priority->priority=ownerPriority->priority+1;
+ if(p[0x20]) {p[0x31]=1;priority->priority=ownerPriority->priority;}
+ p[0x13C]=0;
+ if(!*(s8 *)((u8 *)q+0x13C)) return;
+ *(V3 *)(p+0x34)=*(V3 *)((u8 *)q+0x34);
+ *(s16 *)(p+0x140)=*(s16 *)((u8 *)q+0x140);
+ frame=*(s8 *)((u8 *)q+0x161);
+ if(13<frame) {timer->timer=-1;return;}
+ if(timer->timer!=frame) {
+  s16 animation;
+  timer->timer=frame;
+  animation=(*(u8 **)(p+0xD0))[frame];
+  if(animation==0) {timer->timer=-1;return;}
+  func_001754A0(p,27,(u8)animation);
+ } else if(!D_004D18E4 && !(D_004D18A6&(1u<<(p[2]^1)))) func_00175670(p);
+ p[0x13C]=1;
+ if(p[0x20]==0 && frame==13) {
+  s32 dx=10;
+  if(*(s16 *)(p+0x140)) dx=-10;
+  motion->x+=1.6666666269302368f*dx;
+  motion->y+=12.857142448425293f;
+ }
+}

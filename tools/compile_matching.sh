@@ -16273,5 +16273,16 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/draw_counter_text_00421
 "$WIBO" "$MWCCPS2_30" -i src src/actor_color_start_003C81F0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_color_start_003C81F0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_color_start_003C81F0.o" private/SLUS_204.86.rom --source src/actor_color_start_003C81F0.c
 
+"$WIBO" "$MWCCPS2_30" -i src src/actor_edge_launch_001C62A0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_edge_launch_001C62A0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_edge_launch_001C62A0.o" private/SLUS_204.86.rom --source src/actor_edge_launch_001C62A0.c
+
+"$WIBO" "$SNCPP" -P src/sony29_heap_growth_001044E0.c "$BUILD/sony29_heap_growth_001044E0.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_heap_growth_001044E0.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_heap_growth_001044E0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_heap_growth_001044E0.o" "$BUILD/sony29_heap_growth_001044E0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_heap_growth_001044E0.o" private/SLUS_204.86.rom --source src/sony29_heap_growth_001044E0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_palette_start_003AE020.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_palette_start_003AE020.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_palette_start_003AE020.o" private/SLUS_204.86.rom --source src/actor_palette_start_003AE020.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

@@ -9,7 +9,7 @@ typedef struct { u32 words[49]; } Payload;
 typedef unsigned short u16;
 typedef struct Placement {s16 x,y;s8 pose;u8 animation;} Placement;
 extern Placement D_0044B470[],D_0044C0E0[];
-extern s32 func_001754A0(u8*,u8,u8);
+extern int func_001754A0(u8*,int,int);
 extern void func_001A7B50(u8*);extern void func_001BC960(u8*);
 void func_001A79B0(u8*p){u8*q=*(u8**)(p+0x18);Placement*t;f32*fp=(f32*)p;p[4]++;*(u16*)(p+0x26)=0x1000;
 *(Payload*)(p+0xec)=*(Payload*)(q+0xec);

@@ -36,7 +36,7 @@ void func_00292090(u8 *p, u8 *q) {
 }
 
 typedef struct { f32 x, y, z; } V3;
-extern void func_001754A0(u8 *p, s32 a, u8 b);
+extern int func_001754A0(u8 *p, s32 a, int b);
 
 void func_001990A0(u8 *p) {
     u8 *q = *(u8 **)(p + 24);
@@ -49,7 +49,7 @@ void func_001990A0(u8 *p) {
         v = *(s8 *)(q + 337) >> 6;
         if (v != 0) {
             p[316] = 1;
-            { u32 w = v; w = (u8)w & 3; func_001754A0(p, 27, w + 11); }
+            { u32 w = v; w = (u8)w & 3; func_001754A0(p, 27, (u8)(w + 11)); }
         }
     }
 }
