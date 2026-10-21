@@ -20197,3 +20197,7 @@ data_semaphore_ids_00438990 = 0x00438990;
 data_raw_00438998 = 0x00438998;
 func_0010CAD8 = 0x0010CAD8;
 func_0010CB10 = 0x0010CB10;
+data_raw_00441CD4 = 0x00441CD4;
+data_scene_event_schedule_00441E30 = 0x00441E30;
+data_s16_00442514 = 0x00442514;
+data_raw_00442516 = 0x00442516;

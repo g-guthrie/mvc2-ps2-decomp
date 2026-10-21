@@ -591,11 +591,10 @@ data_u32_00441CA4,0x00441CA4,0x10,.data,src/data/data_u32_00441CA4.c,initialized
 data_f32_one_00441CB4,0x00441CB4,0x8,.data,src/data/data_f32_one_00441CB4.c,filled_f32_one
 data_u32_00441CBC,0x00441CBC,0x10,.data,src/data/data_u32_00441CBC.c,initialized_u32_table
 data_f32_one_00441CCC,0x00441CCC,0x8,.data,src/data/data_f32_one_00441CCC.c,filled_f32_one
-data_u32_00441CD4,0x00441CD4,0x518,.data,src/data/data_u32_00441CD4.c,initialized_u32_table
-data_f32_one_004421EC,0x004421EC,0x10,.data,src/data/data_f32_one_004421EC.c,filled_f32_one
-data_u32_004421FC,0x004421FC,0x304,.data,src/data/data_u32_004421FC.c,initialized_u32_table
-data_zero_00442500,0x00442500,0x10,.data,src/data/data_zero_00442500.c,zero_initialized_untyped
-data_u32_00442510,0x00442510,0x10,.data,src/data/data_u32_00442510.c,initialized_u32_table
+data_raw_00441CD4,0x00441CD4,0x15C,.data,src/data/data_raw_00441CD4.c,raw_bytes
+data_scene_event_schedule_00441E30,0x00441E30,0x6E4,.data,src/data/data_scene_event_schedule_00441E30.c,scene_event_schedule_table
+data_s16_00442514,0x00442514,0x2,.data,src/data/data_s16_00442514.c,scene_event_schedule_stop_frame
+data_raw_00442516,0x00442516,0xA,.data,src/data/data_raw_00442516.c,raw_bytes
 data_zero_00442520,0x00442520,0x10,.data,src/data/data_zero_00442520.c,zero_initialized_untyped
 data_u32_00442530,0x00442530,0x20,.data,src/data/data_u32_00442530.c,initialized_u32_table
 D_00442550,0x00442550,0x1C,.rodata,src/data/D_00442550.c,pointer_table
