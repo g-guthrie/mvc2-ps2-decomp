@@ -198,7 +198,7 @@ void func_003AEFE0(u8 *s2, u8 *s1) {
     extern void func_003AF110(void *, void *);
     extern void func_003AF770(void *, void *, void *);
     extern void func_003AF280(void *, void *);
-    extern void func_003AF890(void *, void *, void *);
+    extern void func_003AF890(u8 *, u8 *, u8 *);
     u8 *s0 = *(u8 **)(s2 + 0x18);
     u8 *v1, *a1;
     s32 v0;

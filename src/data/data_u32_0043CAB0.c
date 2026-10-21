@@ -1,4 +1,0 @@
-typedef unsigned int u32;
-u32 data_u32_0043CAB0[8] = {
-    0x00000000u, 0xC1AE147Bu, 0x00000000u, 0x00000000u, 0x00000000u, 0x00000000u, 0x00000000u, 0xC1AE28F6u, 
-};

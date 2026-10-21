@@ -104,3 +104,26 @@ ELF pack preserve retail identity:
 This proves the independent code checkout with its existing data baseline.
 The coordinator owns combined integration, reports, and publication to main.
 Unmatched candidates remain excluded from credit.
+
+## Coordinator integration audit
+
+The coordinator independently rebuilt all 24 delivered units and reverified
+306 whole functions. It also corrected the existing 003B4270 wrapper to receive
+and explicitly forward the parent context already carried in native A1 to its
+three handlers, including the new two-argument 003B4A10. All 124 bytes remain
+exact. The 003AF890 declaration in w172_d.c now agrees with its three pointer
+parameters; all five functions in that unit remain exact. These caller-contract
+repairs add zero code bytes.
+
+## Combined checkpoint validation
+
+The coordinator combined the code packet with 6,320 independently verified
+data bytes: camera channels (648), Newlib integer and double constants (584),
+the bounded gain curve (4,000), resource records (384), and decoder groups (704).
+All 95 tests pass. The hybrid loaded image is byte-identical to retail
+(SHA-256 c5206f568f068e5bd93ba47676500764c3d45719890865fa71ada10afadcd26f);
+the reconstructed retail ELF also matches
+(48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7).
+Verified linked progress is 2,048,860/3,293,696 code bytes (62.2055%) and
+241,592/648,064 initialized-data bytes (37.2790%). Unknown tails and raw
+placeholders retain zero source credit.
