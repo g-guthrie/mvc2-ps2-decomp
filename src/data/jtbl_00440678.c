@@ -1,6 +1,14 @@
-/* Source-safe reconstruction of initialized table. */
-const unsigned int jtbl_00440678[3] = {
-    (unsigned int)0x0013ED90,
-    (unsigned int)0x0013EE10,
-    (unsigned int)0x0013EE90,
+typedef unsigned char u8;
+typedef void (*StateCallback)(u8 *);
+
+extern void func_0013ED90(u8 *);
+extern void func_0013EE10(u8 *);
+extern void func_0013EE90(u8 *);
+
+/* func_0013EAD0 is called only with selectors 0 and 2; the dispatcher indexes
+ * this 3-entry callback table with the saved selector at object offset 0x20. */
+const StateCallback jtbl_00440678[3] = {
+    func_0013ED90,
+    func_0013EE10,
+    func_0013EE90,
 };
