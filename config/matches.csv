@@ -17611,3 +17611,8 @@ func_003C1A40,0x003C1A40,0x18C,src/actor_velocity_start_003C1A40.c,complete
 func_00100D80,0x00100D80,0xE8,src/sony29_gif_dma_submit_00100D80.c,complete
 func_00100A90,0x00100A90,0x1E4,src/sony29_gs_packet_builders_00100A90.c,complete
 func_00100C78,0x00100C78,0x104,src/sony29_gs_packet_builders_00100A90.c,complete
+func_001D8700,0x001D8700,0x1B8,src/actor_owner_cycle_001D8700.c,complete
+func_00100E68,0x00100E68,0x94,src/sony29_display_field_00100E68.c,complete
+func_00101540,0x00101540,0x17C,src/sony29_gif_image_submit_00101540.c,complete
+func_003AAA60,0x003AAA60,0x14C,src/actor_owner_motion_003AAA60.c,complete
+func_003C7880,0x003C7880,0x154,src/actor_owner_launch_003C7880.c,complete

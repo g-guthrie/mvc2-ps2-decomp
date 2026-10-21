@@ -425,3 +425,40 @@ bytes (63.0975%); reconstructed data remains 256,369 / 648,064 bytes
 (39.5592%). The next fixed code publication threshold remains 2,080,510,
 with 2,270 verified code bytes remaining. These are root aggregate counts;
 the worker snapshot above excludes intervening parent integrations.
+
+### Actor motion, field selection and image DMA: 1,300 new C bytes
+
+Four complete functions add D8700/440, 3AAA60/332, 100E68/148 and 101540/380.
+The scoped existing DMA caller repair retains all three functions exactly.
+All inventory boundaries and DATA ownership remain unchanged. Native state and
+record views, valid constructor domains, target signed shifts and actual MMIO
+preconditions are documented in round26/root/SOURCE_REVIEW.md. No forced
+registers, dummy locals, padding or algorithmic assembly are introduced.
+
+Five production CUs verify seven whole functions. The child's 95 tests,
+coverage/catalog, fresh split, complete retail ROM and packed ELF identity pass.
+All 14,107 other cached source/object pairs and all 47 headers are unchanged;
+only the existing DMA caller is modified. Root's corrected counter and fixed
+2,080,510 publication grid remain authoritative. The unrelated 340-byte callback
+and its DATA proposal remain excluded and held for integrator review. Frozen
+receipt: private/code-lane/round26/root/FINAL_VERIFICATION.json.
+
+### Owner launch callback and storage type
+
+003C7880 is a complete340-byte callback taking actor and owner context. Its
+existing48-byte dispatcher already converts stored callbacks back to that
+actual two-input type. The DATA declaration for this slot now names both
+inputs and casts solely for storage; the dispatcher table declaration now
+agrees with the const DATA object. Root rebuilt the new complete callback,
+all303 functions in argument_dispatch_heads, and the complete200-byte table.
+Every relocated byte remains exact. Other legacy callback-slot contracts are
+outside this scoped correction. The residual is renamed at unchanged
+[003C7880,003C79D4) bounds; neither head nor following padding is recounted.
+
+The root aggregate gate independently verifies all changed compilation units,
+118 tests, catalog/coverage, fresh split, and complete retail loaded-ROM and
+packed-ELF identity. Frozen audit:14,828 unchanged source/object pairs, four
+rebuilt existing units, two retired owners,109 new pairs, and47 unchanged
+headers. Linked matching CODE is2,079,880 /3,293,696 bytes (63.1473%);
+linked reconstructed DATA is256,488 /648,064 bytes (39.5776%). The fixed
+next CODE publication threshold remains2,080,510, with630 bytes remaining.

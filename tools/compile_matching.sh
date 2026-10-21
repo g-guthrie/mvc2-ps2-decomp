@@ -16314,5 +16314,24 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" -i src src/payload_re
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_gs_packet_builders_00100A90.o" "$BUILD/sony29_gs_packet_builders_00100A90.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_gs_packet_builders_00100A90.o" private/SLUS_204.86.rom --source src/sony29_gs_packet_builders_00100A90.c
 
+"$WIBO" "$MWCCPS2_30" -i src src/actor_owner_cycle_001D8700.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_owner_cycle_001D8700.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_cycle_001D8700.o" private/SLUS_204.86.rom --source src/actor_owner_cycle_001D8700.c
+
+"$WIBO" "$SNCPP" -P src/sony29_display_field_00100E68.c "$BUILD/sony29_display_field_00100E68.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_display_field_00100E68.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_display_field_00100E68.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_display_field_00100E68.o" "$BUILD/sony29_display_field_00100E68.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_display_field_00100E68.o" private/SLUS_204.86.rom --source src/sony29_display_field_00100E68.c
+
+"$WIBO" "$SNCPP" -P src/sony29_gif_image_submit_00101540.c "$BUILD/sony29_gif_image_submit_00101540.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_gif_image_submit_00101540.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_gif_image_submit_00101540.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_gif_image_submit_00101540.o" "$BUILD/sony29_gif_image_submit_00101540.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_gif_image_submit_00101540.o" private/SLUS_204.86.rom --source src/sony29_gif_image_submit_00101540.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_owner_motion_003AAA60.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_owner_motion_003AAA60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_motion_003AAA60.o" private/SLUS_204.86.rom --source src/actor_owner_motion_003AAA60.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_owner_launch_003C7880.c -i src -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_owner_launch_003C7880.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_launch_003C7880.o" private/SLUS_204.86.rom --source src/actor_owner_launch_003C7880.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

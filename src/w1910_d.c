@@ -12,7 +12,7 @@ void func_003ED000(void)
     extern void func_003DCD40(s32, s32, s32);
     extern void func_00101218(u8 *, s32, s32, s32, s32, s32, s32, s32);
     extern void func_00104060(s32);
-    extern void func_00101540(u8 *, s32);
+    extern int func_00101540(void *, void *);
     extern void func_00100F00(s32, s32);
     extern void func_003DD020(s32);
     u8 buf[0x60];
@@ -26,7 +26,7 @@ void func_003ED000(void)
     do {
         func_00101218(buf, 0, 0x10, 0, 0, (s16)off, 0x400, 0x40);
         func_00104060(0);
-        func_00101540(buf, b);
+        func_00101540(buf, (void *)(u32)b);
         func_00100F00(0, 0);
         i++;
         off += 0x40;

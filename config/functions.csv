@@ -18365,7 +18365,7 @@ func_003C7570,0x003C7570,0x150,0x003C76C0,code,spimdisasm-explicit-size-before-f
 func_003C76C0,0x003C76C0,0x80,0x003C7740,code,spimdisasm-explicit-size-before-first-data
 func_003C7740,0x003C7740,0x10C,0x003C784C,code,spimdisasm-explicit-size-before-first-data
 func_003C7850,0x003C7850,0x30,0x003C7880,code,exact-MWCC-C-entry-table-bounded
-residual_003C7880,0x003C7880,0x154,0x003C79D4,assembly_residual,uncredited remainder after exact recovered entry
+func_003C7880,0x003C7880,0x154,0x003C79D4,code,matching-c-body-at-existing-verified-boundary
 func_003C79E0,0x003C79E0,0x20,0x003C7A00,code,matching-c-head-split
 func_003C7A00,0x003C7A00,0xC0,0x003C7AC0,code,verified-complete-c-function
 func_003C7AC0,0x003C7AC0,0xD0,0x003C7B90,code,spimdisasm-explicit-size-before-first-data
