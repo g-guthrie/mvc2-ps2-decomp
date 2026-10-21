@@ -495,11 +495,15 @@ void func_00103DD0(void) {
     }
 }
 
-void func_00103E30(void) {
+/* PollSema returns the kernel status in V0. */
+int func_00103E30(int semaphore_id) {
+    int result;
     asm {
         addiu v1, r0, 69
         syscall 0
+        move result, v0
     }
+    return result;
 }
 
 void func_00103E40(void) {
@@ -740,7 +744,7 @@ void func_00104050(void) {
     }
 }
 
-void func_00104060(void) {
+void func_00104060(int cache_operation) {
     asm {
         addiu v1, r0, 100
         syscall 0

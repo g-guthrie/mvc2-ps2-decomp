@@ -1,4 +1,4 @@
-/* Hand-written SDK assembly: COP0 status read, indexed table accessor with spin trap, VU0 transform loop. */
+/* Hand-written SDK assembly: COP0 status read and uncredited VU0 transform loop. */
 #define FN(name, body) __asm__(".section .text." #name ",\"ax\",@progbits
 .p2align 3\n.globl " #name "\n.ent " #name "\n" #name ":\n.set noreorder\n.set noat\n" body ".set reorder\n.end " #name "\n")
 FN(func_001048B0,
@@ -6,18 +6,6 @@ FN(func_001048B0,
   "xori $2,$2,1\n"
   "jr $31\n"
   "andi $2,$2,1\n"
-  );
-FN(func_0040FD00,
-  "sll $5,$5,1\n"
-  "addu $5,$5,$6\n"
-  "sll $5,$5,2\n"
-  "addu $5,$5,$4\n"
-  "jr $31\n"
-  "lw $2,0x28($5)\n"
-  "1:\n"
-  "nop\nnop\nnop\nnop\nnop\n"
-  "b 1b\n"
-  "nop\n"
   );
 FN(func_00103718,
   ".word 0xD8A40000 /* lqc2       $vf4, 0x0($5) */\n"

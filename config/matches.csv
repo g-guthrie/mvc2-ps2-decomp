@@ -11089,7 +11089,7 @@ func_0040EFE0,0x0040EFE0,0x18,src/k2b.c,complete
 func_003FB0D8,0x003FB0D8,0x30,src/k2b.c,complete
 func_0040F550,0x0040F550,0x44,src/k2b.c,complete
 func_001048B0,0x001048B0,0x10,src/k2s.c,complete
-func_0040FD00,0x0040FD00,0x34,src/k2s.c,placeholder
+func_0040FD00,0x0040FD00,0x18,src/cri_sj_pool_support.c,complete
 func_00103718,0x00103718,0x58,src/k2s.c,placeholder
 func_00102E48,0x00102E48,0x20,src/k3.c,placeholder
 func_00102E68,0x00102E68,0x28,src/k3.c,placeholder
@@ -17568,3 +17568,15 @@ func_003A3050,0x003A3050,0x2E4,src/actor_lifecycle_003A3050.c,complete
 func_003AABB0,0x003AABB0,0x1E4,src/actor_input_motion_003AABB0.c,complete
 func_003AB270,0x003AB270,0x190,src/actor_input_motion_003AABB0.c,complete
 func_00267D70,0x00267D70,0xB0,src/signed_button_motion_00267d70.c,complete
+func_0040F380,0x0040F380,0xF8,src/cri_sj_memory_methods.c,complete
+func_0040F7A0,0x0040F7A0,0x16C,src/cri_sj_ring_buffer_chunks.c,complete
+func_0040FA70,0x0040FA70,0x198,src/cri_sj_ring_buffer_chunks.c,complete
+func_0040FEF8,0x0040FEF8,0x8C,src/cri_sj_pool_support.c,complete
+D_0040FD18,0x0040FD18,0x1C,src/cri_sj_pool_support.c,complete
+func_001D9290,0x001D9290,0x1C0,src/actor_inherited_setups_001D9290.c,complete
+func_001DA890,0x001DA890,0x164,src/actor_inherited_setups_001D9290.c,complete
+func_001CE070,0x001CE070,0x16C,src/actor_inherited_setups_001D9290.c,complete
+func_003A16D0,0x003A16D0,0x294,src/actor_launch_patterns_003A16D0.c,complete
+func_003A1970,0x003A1970,0x25C,src/actor_launch_patterns_003A16D0.c,complete
+func_003B84C0,0x003B84C0,0x1D0,src/actor_randomized_start_003B84C0.c,complete
+func_001DC820,0x001DC820,0x11C,src/actor_owner_resume_001DC820.c,complete

@@ -94,3 +94,46 @@ ELF remain byte-identical to retail, and all 95 tests pass.
 enlarging its local array matches bytes but lacks native extent evidence.
 003DC2F0 and 0033C6E0 also remain uncredited near matches. No assembly lifts,
 NOP padding, forced registers, or artificial local extents receive credit.
+
+### SJ chunk and pool methods: 1,212 new C bytes
+
+Recovered SJMEM UngetChunk, SJRBF GetChunk/UngetChunk, pool reset, the transfer
+count accessor and the separate error callback. The old 52-byte assembly lift
+is replaced by the actual 24-byte accessor and 28-byte callback; adjacent padding
+remains uncredited. The shared 48-byte pool prefix and canonical constructor
+remain intact. Cumulative byte counts use unsigned arithmetic for wraparound;
+chunk address validation uses the target's 32-bit address representation.
+
+Five production units verify 16 spans, including the unchanged 88-byte VU
+placeholder, which receives no new C credit. All 95 tests and build/catalog
+gates pass; both complete rebuilt image hashes match retail. No DATA sources
+or DATA credit changed. Frozen evidence:
+`private/code-lane/sdk-methods-integration/FINAL_VERIFICATION.json`.
+
+### Inherited actor setups: 1,168 new C bytes
+
+Recovered D9290/448, DA890/356 and CE070/364 in one production unit. Native
+callback tables establish the true entries and owner arguments. The 28 leading
+alignment bytes remain padding. The compiler's complete 24-byte switch section
+verifies against the existing DATA owner without changing its source or credit.
+All 95 tests, build/catalog gates and both complete retail image comparisons
+pass. Frozen evidence: `private/code-lane/round13/early-integration/FINAL_VERIFICATION.json`.
+
+### Actor launch, randomized start and owner resume: 2,012 new C bytes
+
+Recovered 3A16D0/660, 3A1970/604, 3B84C0/464 and DC820/284. The two launch
+patterns share one source unit. DC820 uses the genuine one-argument DC940
+callee and forwards the owner only to the actual two-argument DC9D0 callee.
+Twelve leading alignment bytes remain uncredited. DCA50 also forwards its
+actually consumed owner explicitly. No heterogeneous adapter head is changed.
+
+The randomized-start mode table is declared as 16 four-byte signed-char records;
+its native byte-zero load does not establish a 32-bit enum type. No overlapping
+DATA definition or DATA credit is added. PollSema now captures and returns its
+real kernel result; FlushCache accepts its actual operation input. The 30FF90
+wrapper calls the genuine one-argument target with one actor. These repairs
+add zero credit; the wider callback-table ISO C limitation remains documented.
+
+Six complete production units verify 212 functions. All 95 tests, build/catalog
+gates, fresh split, loaded ROM and packed ELF comparisons pass. Frozen evidence:
+`private/code-lane/round14/root/FINAL_VERIFICATION.json`.

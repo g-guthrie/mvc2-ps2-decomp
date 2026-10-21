@@ -81,3 +81,28 @@ void func_0040F530(void *context, int error)
 {
     for (;;) {}
 }
+
+void func_0040F380(SJ_OBJ *object, int line, SJCK *chunk)
+{
+    CriSjMemory *record = (CriSjMemory *)object;
+    int offset, remaining;
+    if (chunk->len <= 0 || chunk->data == 0) return;
+    func_0040EFE0();
+    if (line == 0) {
+        if (record->error_callback) record->error_callback(record->error_context,-3);
+    } else if (line == 1) {
+        offset=record->offset-chunk->len;
+        if (offset < 0) offset=0;
+        record->offset=offset;
+        remaining=record->remaining+chunk->len;
+        if (remaining > record->size) remaining=record->size;
+        record->remaining=remaining;
+        if (offset != (int)((unsigned int)chunk->data-(unsigned int)record->buffer))
+            if (record->error_callback) record->error_callback(record->error_context,-3);
+    } else {
+        chunk->len=0;
+        chunk->data=0;
+        if (record->error_callback) record->error_callback(record->error_context,-3);
+    }
+    func_0040EFF8();
+}

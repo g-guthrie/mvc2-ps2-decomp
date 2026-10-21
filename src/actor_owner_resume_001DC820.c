@@ -1,0 +1,37 @@
+#pragma padloop on
+typedef unsigned char u8;
+typedef signed char s8;
+typedef signed short s16;
+typedef unsigned int u32;
+typedef signed int s32;
+typedef float f32;
+typedef struct {f32 x,y,z;} V3;
+#include "actor_inherited_state.h"
+/* Identical anonymous partial views to q9_a.c: actual DC940 parameter type. */
+typedef struct {
+    u8 p0[0x34]; f32 f34, f38; u8 p3c[0x104]; s16 f140;
+} P_2;
+typedef struct {
+    u8 p0[0x1C]; s16 f1c, f1e; u8 p20; u8 f21; u8 p22[2]; u8 f24; u8 p25[0xF]; f32 f34, f38; u8 p3c[0x94]; P_2 *fd0;
+} Q_2;
+extern void func_001DC940(Q_2 *);
+extern void func_001DC9D0(u8 *,u8 *);
+void func_001DC820(u8 *p,void *owner) {
+ Q_2 *actor=(Q_2 *)p;
+ p[0x13C]=0;
+ {s16 remaining=actor->f1c;
+ if(remaining) {actor->f1c=remaining-1;return;}}
+ p[4]++;
+        *(ActorState *)(p+0xEC)=*(ActorState *)((*(u8 **)(p+0xD0))+0xEC);
+        p[0x13C]=1;
+        p[2]=(*(u8 **)(p+0xD0))[2];p[1]=(*(u8 **)(p+0xD0))[1];
+        *(f32 *)(p+0x50)=*(f32 *)((*(u8 **)(p+0xD0))+0x50);
+        *(f32 *)(p+0x54)=*(f32 *)((*(u8 **)(p+0xD0))+0x54);
+        p[0x1B7]=(*(u8 **)(p+0xD0))[0x1B7];p[0x1B8]=(*(u8 **)(p+0xD0))[0x1B8];
+        *(s8 *)(p+0x30)=*(s8 *)((*(u8 **)(p+0xD0))+0x30);
+        *(V3 *)(p+0x50)=*(V3 *)((*(u8 **)(p+0xD0))+0x50);
+        *(s8 *)(p+0x24)=*(s8 *)((*(u8 **)(p+0xD0))+0x24);
+ p[0x13C]=1;p[0x22]=0;
+ if(p[0x20]==0) func_001DC940((Q_2 *)p);
+ else func_001DC9D0(p,owner);
+}

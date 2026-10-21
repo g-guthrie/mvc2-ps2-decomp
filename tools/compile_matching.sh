@@ -16216,5 +16216,28 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/signed_button_motion_00267d70.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/signed_button_motion_00267d70.o"
 "$PYTHON" tools/verify_object.py "$BUILD/signed_button_motion_00267d70.o" private/SLUS_204.86.rom --source src/signed_button_motion_00267d70.c
 
+
+"$WIBO" "$SNCPP" -P -Isrc src/cri_sj_ring_buffer_chunks.c "$BUILD/cri_sj_ring_buffer_chunks.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/cri_sj_ring_buffer_chunks.i" "$BUILD/cri_sj_ring_buffer_chunks.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/cri_sj_ring_buffer_chunks.o" "$BUILD/cri_sj_ring_buffer_chunks.s"
+"$PYTHON" tools/verify_object.py "$BUILD/cri_sj_ring_buffer_chunks.o" private/SLUS_204.86.rom --source src/cri_sj_ring_buffer_chunks.c
+
+"$WIBO" "$SNCPP" -P -Isrc src/cri_sj_pool_support.c "$BUILD/cri_sj_pool_support.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/cri_sj_pool_support.i" "$BUILD/cri_sj_pool_support.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/cri_sj_pool_support.o" "$BUILD/cri_sj_pool_support.s"
+"$PYTHON" tools/verify_object.py "$BUILD/cri_sj_pool_support.o" private/SLUS_204.86.rom --source src/cri_sj_pool_support.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_inherited_setups_001D9290.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_inherited_setups_001D9290.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_inherited_setups_001D9290.o" private/SLUS_204.86.rom --source src/actor_inherited_setups_001D9290.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_launch_patterns_003A16D0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_launch_patterns_003A16D0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_launch_patterns_003A16D0.o" private/SLUS_204.86.rom --source src/actor_launch_patterns_003A16D0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_randomized_start_003B84C0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_randomized_start_003B84C0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_randomized_start_003B84C0.o" private/SLUS_204.86.rom --source src/actor_randomized_start_003B84C0.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/actor_owner_resume_001DC820.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_owner_resume_001DC820.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_resume_001DC820.o" private/SLUS_204.86.rom --source src/actor_owner_resume_001DC820.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh
