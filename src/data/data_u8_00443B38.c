@@ -1,2 +1,2 @@
-typedef unsigned char u8;
-u8 data_u8_00443B38[8] = { 0x1F, 0x85, 0x6F, 0x41, 0xEE, 0x00, 0x00, 0xFF };
+/* First vertex depth negated by native quad renderer. */
+float data_u8_00443B38 = 14.97000026702881f;
