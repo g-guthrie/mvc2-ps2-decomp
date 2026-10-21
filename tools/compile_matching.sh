@@ -16074,3 +16074,15 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/stage_select_input_0032BDF0.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/stage_select_input_0032BDF0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/stage_select_input_0032BDF0.o" private/SLUS_204.86.rom --source src/stage_select_input_0032BDF0.c
+
+# Variadic formatted-text append using the EABI register-save area.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/text_pool_append_003D7350.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/text_pool_append_003D7350.o"
+"$PYTHON" tools/verify_object.py "$BUILD/text_pool_append_003D7350.o" private/SLUS_204.86.rom --source src/text_pool_append_003D7350.c
+
+# Initial effect child followed by five secondary child allocations.
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/linked_effect_children_003B4120.c -c -lang c -O3 -sdatathreshold 8 \
+    -o "$BUILD/linked_effect_children_003B4120.o"
+"$PYTHON" tools/verify_object.py "$BUILD/linked_effect_children_003B4120.o" private/SLUS_204.86.rom --source src/linked_effect_children_003B4120.c
