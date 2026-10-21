@@ -627,7 +627,9 @@ jtbl_00440030,0x00440030,0x1c,src/data/jtbl_00440030.c,complete,reconstructed
 jtbl_00440050,0x00440050,0x18,src/data/jtbl_00440050.c,complete,reconstructed
 jtbl_00440070,0x00440070,0x18,src/data/jtbl_00440070.c,complete,placeholder
 data_f32_00440090,0x00440090,0x24,src/data/data_f32_00440090.c,complete,reconstructed
-data_u8_004400B4,0x004400B4,0x5C,src/data/data_u8_004400B4.c,complete,placeholder
+data_u8_004400B4,0x004400B4,0x24,src/data/data_u8_004400B4.c,complete,reconstructed
+data_card_raw_004400D8,0x004400D8,0x8,src/data/data_card_raw_004400D8.c,complete,placeholder
+data_card_positions_004400E0,0x004400E0,0x30,src/data/data_card_positions_004400E0.c,complete,reconstructed
 data_f32_00440110,0x00440110,0x8,src/data/data_f32_00440110.c,complete,reconstructed
 data_u8_00440118,0x00440118,0x128,src/data/data_u8_00440118.c,complete,placeholder
 jtbl_00440240,0x00440240,0x18,src/data/jtbl_00440240.c,complete,reconstructed
@@ -641,7 +643,7 @@ jtbl_00440318,0x00440318,0xC,src/data/jtbl_00440318.c,complete,reconstructed
 data_u32_00440324,0x00440324,0xC,src/data/data_u32_00440324.c,complete,placeholder
 jtbl_00440330,0x00440330,0x18,src/data/jtbl_00440330.c,complete,reconstructed
 jtbl_00440350,0x00440350,0x18,src/data/jtbl_00440350.c,complete,reconstructed
-data_u32_00440370,0x00440370,0x90,src/data/data_u32_00440370.c,complete,placeholder
+data_u32_00440370,0x00440370,0x90,src/data/data_u32_00440370.c,complete,reconstructed
 jtbl_00440400,0x00440400,0x18,src/data/jtbl_00440400.c,complete,placeholder
 jtbl_00440420,0x00440420,0x18,src/data/jtbl_00440420.c,complete,placeholder
 data_f32v3_00440440,0x00440440,0x54,src/data/data_f32v3_00440440.c,complete,reconstructed
@@ -649,7 +651,8 @@ data_raw_00440494,0x00440494,0x4C,src/data/data_raw_00440494.c,complete,placehol
 jtbl_004404E0,0x004404E0,0x24,src/data/jtbl_004404E0.c,complete,reconstructed
 data_u32_00440510,0x00440510,0x20,src/data/data_u32_00440510.c,complete,reconstructed
 jtbl_00440530,0x00440530,0x20,src/data/jtbl_00440530.c,complete,reconstructed
-data_u32_00440550,0x00440550,0x90,src/data/data_u32_00440550.c,complete,placeholder
+data_u32_00440550,0x00440550,0x48,src/data/data_u32_00440550.c,complete,reconstructed
+data_card_raw_00440598,0x00440598,0x48,src/data/data_card_raw_00440598.c,complete,placeholder
 jtbl_004405E0,0x004405E0,0x18,src/data/jtbl_004405E0.c,complete,placeholder
 jtbl_00440600,0x00440600,0x14,src/data/jtbl_00440600.c,complete,reconstructed
 data_f32v3_00440620,0x00440620,0xC,src/data/data_f32v3_00440620.c,complete,reconstructed

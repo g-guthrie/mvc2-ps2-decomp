@@ -627,7 +627,9 @@ jtbl_00440030,0x00440030,0x1c,.rodata,src/data/jtbl_00440030.c,typed_state_callb
 jtbl_00440050,0x00440050,0x18,.rodata,src/data/jtbl_00440050.c,typed_state_callback_table
 jtbl_00440070,0x00440070,0x18,.rodata,src/data/jtbl_00440070.c,jump_table
 data_f32_00440090,0x00440090,0x24,.data,src/data/data_f32_00440090.c,float_vector3_array
-data_u8_004400B4,0x004400B4,0x5C,.data,src/data/data_u8_004400B4.c,initialized_byte_array
+data_u8_004400B4,0x004400B4,0x24,.data,src/data/data_u8_004400B4.c,card_position_vectors
+data_card_raw_004400D8,0x004400D8,0x8,.data,src/data/data_card_raw_004400D8.c,opaque_neighbor_bytes
+data_card_positions_004400E0,0x004400E0,0x30,.data,src/data/data_card_positions_004400E0.c,card_position_vectors
 data_f32_00440110,0x00440110,0x8,.data,src/data/data_f32_00440110.c,float_pair
 data_u8_00440118,0x00440118,0x128,.data,src/data/data_u8_00440118.c,initialized_byte_array
 jtbl_00440240,0x00440240,0x18,.rodata,src/data/jtbl_00440240.c,jump_table
@@ -641,7 +643,7 @@ jtbl_00440318,0x00440318,0xC,.rodata,src/data/jtbl_00440318.c,typed_state_callba
 data_u32_00440324,0x00440324,0xC,.data,src/data/data_u32_00440324.c,initialized_u32_table
 jtbl_00440330,0x00440330,0x18,.rodata,src/data/jtbl_00440330.c,jump_table
 jtbl_00440350,0x00440350,0x18,.rodata,src/data/jtbl_00440350.c,jump_table
-data_u32_00440370,0x00440370,0x90,.data,src/data/data_u32_00440370.c,initialized_u32_table
+data_u32_00440370,0x00440370,0x90,.data,src/data/data_u32_00440370.c,paired_card_positions
 jtbl_00440400,0x00440400,0x18,.rodata,src/data/jtbl_00440400.c,jump_table
 jtbl_00440420,0x00440420,0x18,.rodata,src/data/jtbl_00440420.c,jump_table
 data_f32v3_00440440,0x00440440,0x54,.data,src/data/data_f32v3_00440440.c,initialized_float_vector_table
@@ -649,7 +651,8 @@ data_raw_00440494,0x00440494,0x4C,.data,src/data/data_raw_00440494.c,initialized
 jtbl_004404E0,0x004404E0,0x24,.rodata,src/data/jtbl_004404E0.c,typed_state_callback_table
 data_u32_00440510,0x00440510,0x20,.data,src/data/data_u32_00440510.c,bounded_u32_lookup_table
 jtbl_00440530,0x00440530,0x20,.rodata,src/data/jtbl_00440530.c,typed_state_callback_table
-data_u32_00440550,0x00440550,0x90,.data,src/data/data_u32_00440550.c,initialized_u32_table
+data_u32_00440550,0x00440550,0x48,.data,src/data/data_u32_00440550.c,card_position_vectors
+data_card_raw_00440598,0x00440598,0x48,.data,src/data/data_card_raw_00440598.c,opaque_neighbor_bytes
 jtbl_004405E0,0x004405E0,0x18,.rodata,src/data/jtbl_004405E0.c,jump_table
 jtbl_00440600,0x00440600,0x14,.rodata,src/data/jtbl_00440600.c,jump_table
 data_f32v3_00440620,0x00440620,0xC,.data,src/data/data_f32v3_00440620.c,initialized_float_vector_table
