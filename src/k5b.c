@@ -3,7 +3,7 @@ typedef unsigned char u8;
 typedef struct S64 { char pad[0xA4]; void *h; } S64;
 extern void (*D_004C2210)(void *);
 void func_003F64A0(S64 *p) { if (p->h) D_004C2210(p->h); }
-extern void func_00122340(char *, const char *, char *);
+extern int func_00122340(char *, const char *, char *);
 extern char D_00489708[];
 extern void (*D_004C2468)(void *, char *);
 extern void *D_004C246C;

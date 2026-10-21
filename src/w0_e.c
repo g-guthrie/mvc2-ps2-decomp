@@ -10,7 +10,7 @@ extern CB D_004C2B20;
 extern u8 D_00496748[];
 void func_004112D8(char *fmt, ...) {
     extern void func_0011D8F8();
-    extern void func_00122340();
+    extern int func_00122340();
     char *ap;
 
     func_0011D8F8(D_00496748, 0, 0x100);
