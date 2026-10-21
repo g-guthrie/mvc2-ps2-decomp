@@ -16175,7 +16175,7 @@ func_00368000,0x00368000,0x34,0x00368034,code,verified-complete-c-dispatch-entry
 func_00368040,0x00368040,0x20,0x00368060,code,verified-complete-c-function
 func_00368060,0x00368060,0xDC,0x0036813C,code,verified-complete-c-function
 func_00368140,0x00368140,0x20,0x00368160,code,matching-c-head-split
-residual_00368160,0x00368160,0x308,0x00368468,assembly_residual,verified-boundary-after-matching-head
+func_00368160,0x00368160,0x308,0x00368468,code,verified-independent-entry-prologue-return
 func_00368470,0x00368470,0x258,0x003686C8,code,spimdisasm-explicit-size-before-first-data
 func_003686D0,0x003686D0,0x3C,0x0036870C,code,spimdisasm-explicit-size-before-first-data
 func_00368710,0x00368710,0x20,0x00368730,code,matching-c-head-split

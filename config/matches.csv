@@ -17732,3 +17732,5 @@ func_00349240,0x00349240,0xE0,src/interaction_launch_00349240.c,complete
 func_0033C300,0x0033C300,0x16C,src/scene_orbit_0033C300.c,complete
 func_0036BA20,0x0036BA20,0x160,src/scale_decay_motion_0036BA20.c,complete
 func_0017F750,0x0017F750,0x1D4,src/animation_landing_0017F750.c,complete
+func_00368160,0x00368160,0x308,src/owner_projectile_launch_00368160.c,complete
+func_0021C9F0,0x0021C9F0,0x11C,src/predicate_chain_0021C9F0.c,complete
