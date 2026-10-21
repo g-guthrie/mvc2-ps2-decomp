@@ -395,6 +395,3 @@ void func_00315850(u8 *p) {
         }
     }
 }
-
-extern s8 D_004D1960[];
-extern u8 D_004D1970[];

@@ -4201,7 +4201,7 @@ data_u32_0045FBB0,0x0045FBB0,0xA18,.data,src/data/data_u32_0045FBB0.c,initialize
 data_f32_one_004605C8,0x004605C8,0xC,.data,src/data/data_f32_one_004605C8.c,filled_f32_one
 data_u32_004605D4,0x004605D4,0xC,.data,src/data/data_u32_004605D4.c,opaque_numeric_prefix
 data_v3_004605E0,0x004605E0,0x24,.data,src/data/data_v3_004605E0.c,bounded_v3_table
-data_raw_00460604,0x00460604,0x1C,.data,src/data/data_raw_00460604.c,opaque_numeric_tail
+data_raw_00460604,0x00460604,0x4,.data,src/data/data_raw_00460604.c,opaque_numeric_prefix
 gMvc2FrameTickValue_00460620,0x00460620,0x2,.data,src/data/gMvc2FrameTickValue_00460620.c,indexed_s16_state_value
 data_u8_00460622,0x00460622,0x2,.data,src/data/data_u8_00460622.c,initialized_byte_array
 gMvc2FrameTickValue_00460624,0x00460624,0x2,.data,src/data/gMvc2FrameTickValue_00460624.c,indexed_s16_state_value
@@ -10987,3 +10987,5 @@ data_s32_004C253C,0x004C253C,0x4,.data,src/data/data_s32_004C253C.c,int32_scalar
 data_zero_004C2540,0x004C2540,0x40,.data,src/data/data_zero_004C2540.c,zero_initialized_untyped
 data_s8_0045EEA8,0x0045EEA8,0xF,.data,src/data/data_s8_0045EEA8.c,bounded_s8_lookup_15
 data_raw_0045EEB7,0x0045EEB7,0x79,.data,src/data/data_raw_0045EEB7.c,opaque_byte_tail
+data_f32_00460608,0x00460608,0xC,.data,src/data/data_f32_00460608.c,bounded_motion_amplitudes_3
+data_raw_00460614,0x00460614,0xC,.data,src/data/data_raw_00460614.c,opaque_numeric_tail

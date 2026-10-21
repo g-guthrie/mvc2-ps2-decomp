@@ -91,6 +91,3 @@ extern u8 D_004F266F[];
 extern u8 *D_004C2840;
 typedef struct { u8 p0[3]; u8 f3; u8 pad[0x88-4]; s8 f88; s8 f89; u8 pad2[0x91-0x8A]; u8 f91; u8 f92; } G32;
 extern s32 D_004C2928;
-
-extern s8 D_004D1960[];
-extern u8 D_004D1970[];

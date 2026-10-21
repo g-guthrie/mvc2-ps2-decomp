@@ -17587,3 +17587,8 @@ func_001D1030,0x001D1030,0x128,src/actor_phase_setups_001CE330.c,complete
 func_003B7B00,0x003B7B00,0x208,src/actor_setup_3B7B00.c,complete
 func_003B7630,0x003B7630,0x1A0,src/actor_setup_3B7630.c,complete
 func_00416180,0x00416180,0x50,src/serialized_resource_lookups.c,complete
+func_001D7970,0x001D7970,0x134,src/actor_owner_start_profiles_001D7970.c,complete
+func_001DAD60,0x001DAD60,0x124,src/actor_owner_start_profiles_001D7970.c,complete
+func_001D12E0,0x001D12E0,0xC8,src/actor_owner_start_profiles_001D7970.c,complete
+func_001D1610,0x001D1610,0xE4,src/actor_owner_start_profiles_001D7970.c,complete
+func_003DAB30,0x003DAB30,0xC8,src/active_object_priority_queue.c,complete

@@ -8,7 +8,8 @@ typedef float f32;
 
 extern f32 func_00417440(u32);
 extern f32 D_00460608[];
-extern f32 D_004605E4[];
+typedef struct { f32 x, y, z; } V3;
+extern V3 D_004605E0[];
 
 void func_003421E0(u8 *p)
 {
@@ -16,7 +17,7 @@ void func_003421E0(u8 *p)
     f32 s = func_00417440(((u32)(s32)((double)*(s16 *)(p + 0x1C) * 65536.0 / 360.0 + 0.5) & 0xFFFFu));
     {
         f32 amplitude = D_00460608[idx];
-        f32 baseline = D_004605E4[idx * 3];
+        f32 baseline = D_004605E0[idx].y;
         s = amplitude * s;
         *(f32 *)(p + 0x38) = baseline + s;
     }

@@ -16247,5 +16247,11 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$MWCCPS2" -i src src/serialized_resource_lookups.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/serialized_resource_lookups.o"
 "$PYTHON" tools/verify_object.py "$BUILD/serialized_resource_lookups.o" private/SLUS_204.86.rom --source src/serialized_resource_lookups.c
 
+"$WIBO" "$MWCCPS2_30" -i src src/actor_owner_start_profiles_001D7970.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/actor_owner_start_profiles_001D7970.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_start_profiles_001D7970.o" private/SLUS_204.86.rom --source src/actor_owner_start_profiles_001D7970.c
+
+"$WIBO" "$MWCCPS2_30" -i src src/active_object_priority_queue.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/active_object_priority_queue.o"
+"$PYTHON" tools/verify_object.py "$BUILD/active_object_priority_queue.o" private/SLUS_204.86.rom --source src/active_object_priority_queue.c
+
 # Compile data after every code owner, including compiler-owned switch tables.
 PYTHON="$PYTHON" tools/compile_matching_data.sh

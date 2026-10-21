@@ -156,3 +156,21 @@ bounded float tables and their actual declared record fields.
 Seven production units verify 25 functions, including 17 existing caller-owned
 functions. All 95 tests, build/catalog gates and both complete retail image
 comparisons pass. Evidence: `private/code-lane/round15/root/FINAL_VERIFICATION.json`.
+
+### Owner start profiles and active object queue: 1,228 new C bytes
+
+Four owner-dependent actor starts add 1,028 bytes; their actual native table
+entries exclude 48 leading alignment bytes. Existing owner-consuming helpers
+receive both arguments. The active-object priority queue adds 200 bytes: it
+checks active kind<5, enforces the native96-entry row limit, appends an object
+and moves it toward the row start while its signed priority is lower. Its
+Object definition is identical to the existing allocator/caller type.
+
+The second caller now declares the actual opaque struct Object parameter
+and casts its byte view explicitly. Unused byte-array declarations of the
+queue table are removed from two other units. All three complete objects are
+byte-identical before and after these source-contract repairs, preserving the
+passing image/test gates without repeating unchanged suites. Five production
+units verify 40 functions; all95 tests, coverage/catalog and complete retail
+ROM/ELF identity pass. DATA sources/credit are unchanged. Frozen proof:
+`private/code-lane/round17/root/FINAL_VERIFICATION.json`.
