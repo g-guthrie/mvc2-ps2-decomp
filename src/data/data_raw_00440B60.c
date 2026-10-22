@@ -1,2 +1,3 @@
-typedef unsigned char u8;
-u8 data_raw_00440B60[8] = { 0x00u, 0x00u, 0x80u, 0x3Fu, 0x00u, 0x00u, 0x80u, 0x3Fu };
+typedef float f32;
+/* Two f32 1.0 values. */
+f32 data_raw_00440B60[2] = { 1.0f, 1.0f };

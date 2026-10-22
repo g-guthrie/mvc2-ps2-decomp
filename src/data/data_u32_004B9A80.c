@@ -1,4 +1,2 @@
-typedef unsigned int u32;
-u32 data_u32_004B9A80[4] = {
-    0x4E4F5249u, 0x4E414D20u, 0x20202020u, 0x20202020u, 
-};
+/* Space-padded name "IRON MAN" in a 16-byte field. */
+char data_u32_004B9A80[16] = "IRON MAN        ";

@@ -1,3 +1,2 @@
-typedef unsigned char u8;
 /* Selector 1 is not passed to this table consumer. */
-u8 data_raw_0044062C[0xC] = { 0x85, 0xEB, 0xA1, 0x40, 0x0A, 0xD7, 0x83, 0x40, 0x9A, 0x99, 0x09, 0xC1 };
+float data_raw_0044062C[3] = { 5.05999994f, 4.11999989f, -8.60000038f };

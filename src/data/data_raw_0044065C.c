@@ -1,3 +1,5 @@
-typedef unsigned char u8;
+typedef float f32;
+typedef struct { f32 x, y, z; } Float3;
+typedef char Float3_size_check[(sizeof(Float3) == 12) ? 1 : -1];
 /* Selector 1 is not passed to the component columns. */
-u8 data_raw_0044065C[0xC] = { 0x5C, 0xCF, 0x63, 0x43, 0xC3, 0xF5, 0x52, 0xC2, 0xA4, 0xF0, 0x0C, 0xC3 };
+Float3 data_raw_0044065C = { 227.81f, -52.74f, -140.94f };

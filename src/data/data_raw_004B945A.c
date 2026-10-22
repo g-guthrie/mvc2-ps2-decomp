@@ -1,4 +1,10 @@
 typedef unsigned char u8;
-u8 data_raw_004B945A[10] = {
-    0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x52u, 0x59u, 0x55u, 0x20u
-};
+typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
+typedef unsigned int u32;
+typedef signed int s32;
+typedef float f32;
+
+char data_raw_004B945A[10] =
+    "\000\000\000\000\000\000RYU ";

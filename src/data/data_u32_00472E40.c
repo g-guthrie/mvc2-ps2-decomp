@@ -1,4 +1,8 @@
-typedef unsigned int u32;
-u32 data_u32_00472E40[4] = {
-    0x00570003u, 0x005EFFF6u, 0x0038FFE9u, 0x00000000u, 
+/* Three (x, y) signed halfword pairs followed by a zero pair. */
+typedef short s16;
+typedef struct { s16 x; s16 y; } data_s16_pair_t;
+typedef char data_s16_pair_t_size_check[(sizeof(data_s16_pair_t) == 4) ? 1 : -1];
+
+data_s16_pair_t data_u32_00472E40[4] = {
+    { 3, 87 }, { -10, 94 }, { -23, 56 }, { 0, 0 },
 };

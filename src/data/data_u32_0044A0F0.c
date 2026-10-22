@@ -1,7 +1,8 @@
-typedef unsigned int u32;
-u32 data_u32_0044A0F0[28] = {
-    0x00000000u, 0x00170000u, 0x0002FFACu, 0xFFAC0011u, 0xFFD1FFFEu, 0xFFFEFFCCu, 0xFFCCFFD1u, 0x0000FFFEu, 
-    0x00000000u, 0x00000000u, 0xFFE10000u, 0xFFFFFFA4u, 0xFFC4FFD9u, 0x0000FFFEu, 0x00000000u, 0x00000000u, 
-    0x00000000u, 0x00000000u, 0xFFBCFFD1u, 0xFFD9FFFFu, 0xFFFEFFCCu, 0x00000000u, 0x00000000u, 0x00000000u, 
-    0x00000000u, 0xFFA90000u, 0x0002FFACu, 0x00000000u, 
+typedef short s16;
+
+s16 data_u32_0044A0F0[56] = {
+    0, 0, 0, 23, -84, 2, 17, -84, -2, -47, -52, -2, -47, -52,
+    -2, 0, 0, 0, 0, 0, 0, -31, -92, -1, -39, -60, -2, 0,
+    0, 0, 0, 0, 0, 0, 0, 0, -47, -68, -1, -39, -52, -2,
+    0, 0, 0, 0, 0, 0, 0, 0, 0, -87, -84, 2, 0, 0,
 };

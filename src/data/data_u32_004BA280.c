@@ -1,4 +1,11 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef short s16;
 typedef unsigned int u32;
-u32 data_u32_004BA280[4] = {
-    0x4D554B41u, 0x20202041u, 0x20202020u, 0x20202020u, 
-};
+typedef int s32;
+typedef float f32;
+
+/* Space-padded 16-character ASCII string (no reader found). */
+
+char data_u32_004BA280[16] = "AKUMA           ";

@@ -1,8 +1,10 @@
-/* Source-safe reconstruction of initialized table. */
-const unsigned int D_0044AF30[5] = {
-    (unsigned int)0x004BF5F0,
-    (unsigned int)0x004BF5F8,
-    (unsigned int)0x004BF600,
-    (unsigned int)0x004BF608,
-    (unsigned int)0x004BF610,
+extern unsigned int data_u32_004BF5F0[];
+
+/* Every other word of data_u32_004BF5F0 (eight-byte stride). */
+const void * const D_0044AF30[5] = {
+    &data_u32_004BF5F0[0],
+    &data_u32_004BF5F0[2],
+    &data_u32_004BF5F0[4],
+    &data_u32_004BF5F0[6],
+    &data_u32_004BF5F0[8],
 };

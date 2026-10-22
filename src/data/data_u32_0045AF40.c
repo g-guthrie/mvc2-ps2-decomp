@@ -1,4 +1,9 @@
-typedef unsigned int u32;
-u32 data_u32_0045AF40[4] = {
-    0x00050005u, 0x00050005u, 0x00070007u, 0x00070007u, 
+typedef unsigned short u16;
+typedef struct { u16 a, b; } U16Pair;
+typedef char U16Pair_size_check[(sizeof(U16Pair) == 4) ? 1 : -1];
+U16Pair data_u32_0045AF40[4] = {
+    { 5, 5 },
+    { 5, 5 },
+    { 7, 7 },
+    { 7, 7 },
 };

@@ -1,13 +1,21 @@
-typedef unsigned int u32;
-u32 data_u32_0044B16C[77] = {
-    0x00000000u, 0x00060000u, 0xFFFA0000u, 0x00060001u, 0xFFFAFFFFu, 0x00060003u, 0xFFFAFFFDu, 0x00060005u, 
-    0xFFFBFFFCu, 0x00050006u, 0xFFFCFFFBu, 0x00030007u, 0xFFFDFFF9u, 0x00020008u, 0xFFFEFFF9u, 0x00010008u, 
-    0xFFFFFFF9u, 0x00000008u, 0x0000FFF9u, 0xFFFF0008u, 0x0001FFF9u, 0xFFFE0008u, 0x0002FFF9u, 0xFFFD0007u, 
-    0x0003FFF9u, 0xFFFB0006u, 0x0004FFFBu, 0xFFFA0005u, 0x0005FFFCu, 0xFFFA0003u, 0x0006FFFDu, 0xFFFA0001u, 
-    0x0006FFFFu, 0xFFFA0000u, 0x00060000u, 0xFFFAFFFFu, 0x00060001u, 0xFFFAFFFDu, 0x00060003u, 0xFFFAFFFBu, 
-    0x00050004u, 0xFFFBFFFAu, 0x00040005u, 0xFFFDFFF9u, 0x00030007u, 0xFFFEFFF8u, 0x00020007u, 0xFFFFFFF8u, 
-    0x00010007u, 0x0000FFF8u, 0x00000007u, 0x0001FFF8u, 0xFFFF0007u, 0x0002FFF8u, 0xFFFE0007u, 0x0003FFF9u, 
-    0xFFFD0007u, 0x0005FFFAu, 0xFFFC0005u, 0x0006FFFBu, 0xFFFB0004u, 0x0006FFFDu, 0xFFFA0003u, 0x0006FFFFu, 
-    0xFFFA0001u, 0xFFFA0000u, 0xFFFBFFFAu, 0x0000FFF8u, 0x0005FFFAu, 0x00060000u, 0x00050006u, 0x00000008u, 
-    0xFFFB0006u, 0x02000102u, 0x01000201u, 0x00020001u, 0x00010201u, 
+typedef short s16;
+typedef unsigned char u8;
+typedef struct { s16 q[36][4]; u8 tail[20]; } data_u32_0044B16C_t;
+typedef char data_u32_0044B16C_t_size_check[(sizeof(data_u32_0044B16C_t) == 308) ? 1 : -1];
+
+data_u32_0044B16C_t data_u32_0044B16C[1] = {
+    {
+        {
+            { 0, 0, 0, 6 }, { 0, -6, 1, 6 }, { -1, -6, 3, 6 }, { -3, -6, 5, 6 },
+            { -4, -5, 6, 5 }, { -5, -4, 7, 3 }, { -7, -3, 8, 2 }, { -7, -2, 8, 1 },
+            { -7, -1, 8, 0 }, { -7, 0, 8, -1 }, { -7, 1, 8, -2 }, { -7, 2, 7, -3 },
+            { -7, 3, 6, -5 }, { -5, 4, 5, -6 }, { -4, 5, 3, -6 }, { -3, 6, 1, -6 },
+            { -1, 6, 0, -6 }, { 0, 6, -1, -6 }, { 1, 6, -3, -6 }, { 3, 6, -5, -6 },
+            { 4, 5, -6, -5 }, { 5, 4, -7, -3 }, { 7, 3, -8, -2 }, { 7, 2, -8, -1 },
+            { 7, 1, -8, 0 }, { 7, 0, -8, 1 }, { 7, -1, -8, 2 }, { 7, -2, -7, 3 },
+            { 7, -3, -6, 5 }, { 5, -4, -5, 6 }, { 4, -5, -3, 6 }, { 3, -6, -1, 6 },
+            { 1, -6, 0, -6 }, { -6, -5, -8, 0 }, { -6, 5, 0, 6 }, { 6, 5, 8, 0 },
+        },
+        { 0x06u, 0x00u, 0xFBu, 0xFFu, 0x02u, 0x01u, 0x00u, 0x02u, 0x01u, 0x02u, 0x00u, 0x01u, 0x01u, 0x00u, 0x02u, 0x00u, 0x01u, 0x02u, 0x01u, 0x00u },
+    },
 };

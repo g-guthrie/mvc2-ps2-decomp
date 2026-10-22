@@ -1,10 +1,5 @@
-const unsigned int jtbl_0044ADA8[8] = {
-    (unsigned int)0x00300000,
-    (unsigned int)0x00240000,
-    (unsigned int)0x004a0000,
-    (unsigned int)0x003d0000,
-    (unsigned int)0x00630014,
-    (unsigned int)0x0056fff8,
-    (unsigned int)0x00240000,
-    (unsigned int)0x00160000,
-};
+typedef short s16;
+
+/* Eight s16 (x, y) pairs; pairing taken from the halfword layout. */
+typedef struct { s16 x; s16 y; } s16_pair;
+const s16_pair jtbl_0044ADA8[8] = { { 0, 48 }, { 0, 36 }, { 0, 74 }, { 0, 61 }, { 20, 99 }, { -8, 86 }, { 0, 36 }, { 0, 22 } };

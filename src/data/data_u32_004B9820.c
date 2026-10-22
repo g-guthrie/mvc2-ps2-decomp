@@ -1,4 +1,2 @@
-typedef unsigned int u32;
-u32 data_u32_004B9820[4] = {
-    0x494C4546u, 0x20414943u, 0x20202020u, 0x20202020u, 
-};
+/* Fighter name, 16 bytes, left-justified and space-padded (no terminator). */
+char data_u32_004B9820[16] = "FELICIA         ";

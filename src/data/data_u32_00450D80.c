@@ -1,4 +1,5 @@
-typedef unsigned int u32;
-u32 data_u32_00450D80[4] = {
-    0x00000000u, 0x00000020u, 0xFFD00030u, 0xFFE0FFC0u, 
+typedef signed short s16;
+/* s16 table indexed by p->h1C / 2 in w187_u.c. */
+s16 data_u32_00450D80[8] = {
+    0, 0, 32, 0, 48, -48, -64, -32,
 };

@@ -1,3 +1,9 @@
-typedef unsigned char u8;
-/* The active selector reads only later pointers; retain these initial pointers raw. */
-const u8 data_raw_00477830[8] = { 0x70u, 0x74u, 0x47u, 0x00u, 0x60u, 0x75u, 0x47u, 0x00u };
+extern const unsigned int jtbl_00477470[];
+extern const unsigned int jtbl_00477560[];
+
+/* Two initial pointers to the jump tables at 0x00477470 and 0x00477560. The
+   active selector reads only later pointers. */
+const void * const data_raw_00477830[2] = {
+    jtbl_00477470,
+    jtbl_00477560,
+};

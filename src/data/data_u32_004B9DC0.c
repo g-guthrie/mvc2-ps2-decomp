@@ -1,4 +1,8 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
 typedef unsigned int u32;
-u32 data_u32_004B9DC0[4] = {
-    0x20202020u, 0x55522020u, 0x48205942u, 0x54524145u, 
-};
+typedef float f32;
+/* Padded 16-byte character name, space filled. */
+char data_u32_004B9DC0[16] = "      RUBY HEART";

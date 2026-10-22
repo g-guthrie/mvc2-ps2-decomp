@@ -1,4 +1,13 @@
-typedef unsigned int u32;
-u32 data_u32_0044E560[4] = {
-    0x0059FFE9u, 0x0062FFDBu, 0x0039FFCEu, 0x00000000u, 
+typedef short s16;
+
+/* Four (x, y) halfword pairs; the last pair is zero. */
+typedef struct {
+    s16 x;
+    s16 y;
+} S16Pair;
+
+typedef char S16Pair_size_check[(sizeof(S16Pair) == 4) ? 1 : -1];
+
+S16Pair data_u32_0044E560[4] = {
+    { -23, 89 }, { -37, 98 }, { -50, 57 }, { 0, 0 },
 };

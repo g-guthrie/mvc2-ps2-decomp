@@ -1,4 +1,2 @@
-typedef unsigned int u32;
-u32 data_u32_004B9FE0[4] = {
-    0x20202020u, 0x20202020u, 0x20202020u, 0x41474556u, 
-};
+/* 16-byte name field: 12 space characters followed by "VEGA". */
+char data_u32_004B9FE0[16] = "            VEGA";

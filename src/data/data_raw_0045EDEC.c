@@ -1,9 +1,20 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
 typedef unsigned int u32;
-u32 data_raw_0045EDEC[43] = {
-    0x00000000u, 0x00000000u, 0x450CA000u, 0x41D80000u, 0xC5BB8000u, 0x00000000u, 0x41F00000u, 0x00000000u,
-    0x43480000u, 0x44ABE000u, 0x41D80000u, 0xC5843000u, 0x00000000u, 0x41200000u, 0x00000000u, 0x43C80000u,
-    0x43FA0000u, 0x41D80000u, 0xC519C000u, 0x00000000u, 0x00000000u, 0x00000000u, 0x44160000u, 0x43480000u,
-    0x42200000u, 0xC5066000u, 0xC0A00000u, 0x00000000u, 0x00000000u, 0x44480000u, 0x43AA0000u, 0xC2080000u,
-    0xC5066000u, 0xC0A00000u, 0x00000000u, 0xC1380000u, 0x447A0000u, 0x43C80000u, 0xC2440000u, 0xC5066000u,
-    0x00000000u, 0x00000000u, 0xC1A00000u,
+typedef float f32;
+/* 32-bit float values, 43 entries. */
+f32 data_raw_0045EDEC[43] = {
+    0.0f, 0.0f, 2250.0f, 27.0f,
+    -6000.0f, 0.0f, 30.0f, 0.0f,
+    200.0f, 1375.0f, 27.0f, -4230.0f,
+    0.0f, 10.0f, 0.0f, 400.0f,
+    500.0f, 27.0f, -2460.0f, 0.0f,
+    0.0f, 0.0f, 600.0f, 200.0f,
+    40.0f, -2150.0f, -5.0f, 0.0f,
+    0.0f, 800.0f, 340.0f, -34.0f,
+    -2150.0f, -5.0f, 0.0f, -11.5f,
+    1000.0f, 400.0f, -49.0f, -2150.0f,
+    0.0f, 0.0f, -20.0f
 };

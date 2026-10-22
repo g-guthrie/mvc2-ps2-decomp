@@ -1,4 +1,8 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
 typedef unsigned int u32;
-u32 data_u32_004B9760[4] = {
-    0x53594241u, 0x20202053u, 0x20202020u, 0x20202020u, 
-};
+typedef float f32;
+/* Padded 16-byte character name, space filled. */
+char data_u32_004B9760[16] = "ABYSS           ";

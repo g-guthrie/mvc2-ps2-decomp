@@ -1,4 +1,6 @@
-typedef unsigned int u32;
-u32 data_u32_00465010[4] = {
-    0x00000000u, 0x6373766Du, 0x63692E32u, 0x0000006Fu, 
+typedef unsigned char u8;
+
+/* Short ASCII name "mvsc2.ico" in a 16-byte field. */
+u8 data_u32_00465010[16] = {
+    0, 0, 0, 0, 'm', 'v', 's', 'c', '2', '.', 'i', 'c', 'o', 0, 0, 0,
 };

@@ -1,4 +1,2 @@
-typedef unsigned int u32;
-u32 data_u32_004B95E0[4] = {
-    0x44495053u, 0x4D2D5245u, 0x20204E41u, 0x20202020u, 
-};
+/* Fixed 16-byte padded name field (char array, no NUL terminator). */
+char data_u32_004B95E0[16] = "SPIDER-MAN      ";

@@ -1,4 +1,6 @@
-typedef unsigned int u32;
-u32 data_u32_004C1D10[4] = {
-    0x10101110u, 0x00001010u, 0x0037E0A0u, 0x00000000u, 
+typedef unsigned char u8;
+/* u8 table indexed by p[0x23] in w1710_k.c. */
+u8 data_u32_004C1D10[16] = {
+    16, 17, 16, 16, 16, 16, 0, 0,
+    160, 224, 55, 0, 0, 0, 0, 0,
 };

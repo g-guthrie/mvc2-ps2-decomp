@@ -1,4 +1,4 @@
-typedef unsigned char u8;
-u8 data_raw_004B8DC4[0x10] = {
-    0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x08u, 0x4Cu, 0x12u, 0x00u
-};
+extern void lbl_00124C08(void);
+
+/* Three zero words and a code pointer to lbl_00124C08. */
+void *data_raw_004B8DC4[4] = { 0, 0, 0, (void *)lbl_00124C08 };

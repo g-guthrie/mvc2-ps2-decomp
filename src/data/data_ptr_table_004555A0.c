@@ -1,7 +1,5 @@
 /* Unclassified four-entry pointer table used as a profile's result array. */
-const unsigned int data_ptr_table_004555A0[4] = {
-    (unsigned int)0x00455550,
-    (unsigned int)0x00455560,
-    (unsigned int)0x00455578,
-    (unsigned int)0x00455588,
+extern unsigned int data_u32_00455510[];
+const void * const data_ptr_table_004555A0[4] = {
+    &data_u32_00455510[16], &data_u32_00455510[20], &data_u32_00455510[26], &data_u32_00455510[30],
 };

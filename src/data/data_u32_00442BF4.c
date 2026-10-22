@@ -1,4 +1,13 @@
 typedef unsigned int u32;
-u32 data_u32_00442BF4[4] = {
-    0x80000056u, 0xC0A00000u, 0xC0900000u, 0xC1500000u, 
-};
+typedef float f32;
+
+typedef struct {
+    u32 word0;
+    f32 x;
+    f32 y;
+    f32 z;
+} Data442BF4Entry;
+
+typedef char Data442BF4Entry_size_check[(sizeof(Data442BF4Entry) == 16) ? 1 : -1];
+
+Data442BF4Entry data_u32_00442BF4 = { 0x80000056u, -5.0f, -4.5f, -13.0f };

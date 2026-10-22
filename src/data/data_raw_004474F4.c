@@ -1,7 +1,39 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
 typedef unsigned int u32;
-u32 data_raw_004474F4[23] = {
-    0xFE800180u, 0xFD000380u, 0xFD000400u, 0xFD800300u, 0xFE800200u, 0xFC800420u,
-    0xFD000400u, 0xFD800300u, 0xFD000400u, 0xFD800300u, 0xFDC00200u, 0xFD000400u,
-    0xFD0002B0u, 0xFE400200u, 0xFD800300u, 0xFD000300u, 0xFE8001A0u, 0xFE800200u,
-    0xFE000280u, 0xFD000400u, 0xFD800300u, 0xFD000400u, 0x00000000u,
+typedef signed int s32;
+typedef float f32;
+
+/* Signed 16-bit pairs; final pair is zero. */
+typedef struct raw_004474F4_rec {
+    s16 lo;
+    s16 hi;
+} raw_004474F4_rec;
+typedef char raw_004474F4_rec_size_check[(sizeof(raw_004474F4_rec) == 4) ? 1 : -1];
+raw_004474F4_rec data_raw_004474F4[23] = {
+    { 384, -384 },
+    { 896, -768 },
+    { 1024, -768 },
+    { 768, -640 },
+    { 512, -384 },
+    { 1056, -896 },
+    { 1024, -768 },
+    { 768, -640 },
+    { 1024, -768 },
+    { 768, -640 },
+    { 512, -576 },
+    { 1024, -768 },
+    { 688, -768 },
+    { 512, -448 },
+    { 768, -640 },
+    { 768, -768 },
+    { 416, -384 },
+    { 512, -384 },
+    { 640, -512 },
+    { 1024, -768 },
+    { 768, -640 },
+    { 1024, -768 },
+    { 0, 0 },
 };

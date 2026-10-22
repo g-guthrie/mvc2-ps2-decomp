@@ -1,4 +1,2 @@
-typedef unsigned int u32;
-u32 data_u32_00464F90[4] = {
-    0x00000000u, 0x6373766Du, 0x63692E32u, 0x0000006Fu, 
-};
+/* Four zero bytes, then the file name "mvsc2.ico", zero padded. */
+char data_u32_00464F90[16] = "\0\0\0\0mvsc2.ico";

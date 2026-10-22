@@ -1,4 +1,8 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
 typedef unsigned int u32;
-u32 data_u32_004B9560[4] = {
-    0x4C595350u, 0x454B434Fu, 0x20202020u, 0x20202020u, 
-};
+typedef float f32;
+/* Padded 16-byte character name, space filled. */
+char data_u32_004B9560[16] = "PSYLOCKE        ";

@@ -1,4 +1,10 @@
-typedef unsigned int u32;
-u32 data_u32_004483C4[3] = {
-    0x0500FB00u, 0x0500FB00u, 0x0400FC00u, 
+typedef signed char s8;
+/* Six (s8 x, s8 y) pairs. */
+s8 data_u32_004483C4[6][2] = {
+    { 0, -5 },
+    { 0, 5 },
+    { 0, -5 },
+    { 0, 5 },
+    { 0, -4 },
+    { 0, 4 },
 };

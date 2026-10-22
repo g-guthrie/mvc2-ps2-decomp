@@ -17103,4 +17103,18 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/hk2_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/hk2_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/hk2_b.o" private/SLUS_204.86.rom --source src/hk2_b.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/hm7_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/hm7_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hm7_a.o" private/SLUS_204.86.rom --source src/hm7_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/hm5_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/hm5_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hm5_a.o" private/SLUS_204.86.rom --source src/hm5_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/hm5_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/hm5_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hm5_b.o" private/SLUS_204.86.rom --source src/hm5_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/hm2_f.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/hm2_f.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hm2_f.o" private/SLUS_204.86.rom --source src/hm2_f.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

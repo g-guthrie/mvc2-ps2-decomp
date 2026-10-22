@@ -1,4 +1,9 @@
-typedef unsigned int u32;
-u32 data_u32_004C1538[6] = {
-    0x02000201u, 0x020102FFu, 0x02FFFFFFu, 0x02010201u, 0x02FF02FFu, 0xFFFFFFFFu, 
+typedef unsigned char u8;
+u8 data_u32_004C1538[6][4] = {
+    {1, 2, 0, 2},
+    {255, 2, 1, 2},
+    {255, 255, 255, 2},
+    {1, 2, 1, 2},
+    {255, 2, 255, 2},
+    {255, 255, 255, 255},
 };

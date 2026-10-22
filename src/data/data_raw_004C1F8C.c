@@ -1,4 +1,5 @@
-typedef unsigned char u8;
-u8 data_raw_004C1F8C[0xc] = {
-    0x00u, 0x00u, 0x00u, 0x00u, 0xF4u, 0xFFu, 0x50u, 0x00u, 0xE9u, 0xFFu, 0x52u, 0x00u
-};
+typedef short s16;
+
+/* Three s16 (x, y) pairs. */
+typedef struct { s16 x; s16 y; } s16_pair;
+s16_pair data_raw_004C1F8C[3] = { { 0, 0 }, { -12, 80 }, { -23, 82 } };
