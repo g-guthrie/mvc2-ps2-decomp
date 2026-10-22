@@ -19987,4 +19987,44 @@ sed -i 's/^\tli\.d\t\$5,8\.49999999999999977796e-1$/\t.set\tnoat\n\tlui\t$1,%hi(
 "$WIBO" "$SNAS" -G0 -o "$BUILD/rb87_c.o" "$BUILD/rb87_c.s"
 "$PYTHON" tools/verify_object.py "$BUILD/rb87_c.o" private/SLUS_204.86.rom --source src/rb87_c.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/rb87_b.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/rb87_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb87_b.o" private/SLUS_204.86.rom --source src/rb87_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rb93_c.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/rb93_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb93_c.o" private/SLUS_204.86.rom --source src/rb93_c.c
+
+"$WIBO" "$SNCPP" -P src/rb89_a.c "$BUILD/rb89_a.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 --extra-flags="" "$BUILD/rb89_a.i" "$BUILD/rb89_a.s"
+"$WIBO" "$SNAS" -G8 -o "$BUILD/rb89_a.o" "$BUILD/rb89_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/rb89_a.o" private/SLUS_204.86.rom --source src/rb89_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/rb89_c.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/rb89_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb89_c.o" private/SLUS_204.86.rom --source src/rb89_c.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rb90_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/rb90_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb90_b.o" private/SLUS_204.86.rom --source src/rb90_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rb90_c.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/rb90_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb90_c.o" private/SLUS_204.86.rom --source src/rb90_c.c
+
+"$WIBO" "$SNCPP" -P src/rb88_c.c "$BUILD/rb88_c.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 --extra-flags="" "$BUILD/rb88_c.i" "$BUILD/rb88_c.s"
+"$WIBO" "$SNAS" -mips4 -G8 -o "$BUILD/rb88_c.o" "$BUILD/rb88_c.s"
+"$PYTHON" tools/verify_object.py "$BUILD/rb88_c.o" private/SLUS_204.86.rom --source src/rb88_c.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rb91_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/rb91_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb91_b.o" private/SLUS_204.86.rom --source src/rb91_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rb100_a.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "$BUILD/rb100_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb100_a.o" private/SLUS_204.86.rom --source src/rb100_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/rb99_a.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/rb99_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb99_a.o" private/SLUS_204.86.rom --source src/rb99_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

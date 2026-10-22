@@ -508,3 +508,15 @@ rb64,18,sonnet,medium,code-retry5,3,2,944,178549,53.6,struct f32 members; static
 rb84,18,sonnet,medium,code-retry5,3,2,1336,223146,16.8,volatile lo load for mul.s order; split stmt stops const hoist
 rb86,18,sonnet,medium,code-retry5,3,0,0,170022,10.7,
 rb76,18,sonnet,medium,code-retry5,3,0,0,236422,26.8,
+rb95r,18,sonnet,medium,code-retry5-resume,2,0,0,,,rb95_a already on main; 001020E0 sony29 regnaming 16w; 0010F3C8 frame residue
+rb87r,18,sonnet,medium,code-retry5-resume,2,1,684,,,goto shared fail/m1 tails; callee param types for arg order
+rb94r,18,sonnet,medium,code-retry5-resume,2,0,0,133229,5.2,EE induction-var wall
+rb93r,18,sonnet,medium,code-retry5-resume,3,1,724,,,ascending switch cases
+rb89r,18,sonnet,medium,code-retry5-resume,3,2,1380,,,stmt-order sweep for prologue lui scheduling; EE reg pin
+rb90r,18,sonnet,medium,code-retry5-resume,3,2,1396,173772,7.6,struct f32 members; ,p unrolls struct copy
+rb88r,18,sonnet,medium,code-retry5-resume,3,1,684,196321,9.6,sn -mips4; separate &w &h locals
+rb91r,18,sonnet,medium,code-retry5-resume,3,1,708,201252,11.6,(u32) arg cast for MW right-to-left arg load order
+rb100,18,sonnet,medium,code-retry5,3,1,776,166844,8.8,rt20 static func_00338670 prefix; 1 target already matched
+rb99,18,sonnet,medium,code-retry5,3,1,764,198133,13.4,3.0 + decl order; 1 target already matched
+rb101,18,sonnet,medium,code-retry5,3,0,0,250095,15.3,
+rb96r,18,sonnet,medium,code-retry5-resume,3,0,0,298776,21.4,
