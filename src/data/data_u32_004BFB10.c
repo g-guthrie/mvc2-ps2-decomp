@@ -1,4 +1,21 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef short s16;
 typedef unsigned int u32;
-u32 data_u32_004BFB10[12] = {
-    0x02010201u, 0x02FF02FFu, 0xFFFFFFFFu, 0x02010201u, 0x02FF02FFu, 0xFFFFFFFFu, 0x02000201u, 0x020102FFu, 0x02FFFFFFu, 0x02010201u, 0x02FF02FFu, 0xFFFFFFFFu
+typedef int s32;
+typedef float f32;
+s8 data_u32_004BFB10[12][4] = {
+    { 1, 2, 1, 2 },
+    { -1, 2, -1, 2 },
+    { -1, -1, -1, -1 },
+    { 1, 2, 1, 2 },
+    { -1, 2, -1, 2 },
+    { -1, -1, -1, -1 },
+    { 1, 2, 0, 2 },
+    { -1, 2, 1, 2 },
+    { -1, -1, -1, 2 },
+    { 1, 2, 1, 2 },
+    { -1, 2, -1, 2 },
+    { -1, -1, -1, -1 }
 };

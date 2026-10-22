@@ -1,10 +1,17 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef short s16;
 typedef unsigned int u32;
-u32 data_u32_00476E00[49] = {
-    0x00000000u, 0x00000001u, 0x00000002u, 0x00000003u, 0x00000004u, 0xFFFFFFFFu, 0x00000000u, 0x00000000u, 
-    0x00000000u, 0x00000001u, 0x00000002u, 0x00000003u, 0x00000004u, 0x00000005u, 0xFFFFFFFFu, 0x00000000u, 
-    0x00000000u, 0x00000002u, 0x00000003u, 0x00000004u, 0x00000005u, 0x00000006u, 0x00000007u, 0xFFFFFFFFu, 
-    0x00000000u, 0x00000001u, 0x00000002u, 0x00000003u, 0x00000004u, 0x00000005u, 0x00000006u, 0x00000007u, 
-    0x00000009u, 0xFFFFFFFFu, 0x00000000u, 0x00000000u, 0x00000000u, 0x00000001u, 0x00000002u, 0x00000003u, 
-    0x00000004u, 0x00000005u, 0x00000006u, 0x00000007u, 0xFFFFFFFFu, 0x00000000u, 0x00000000u, 0x00000000u, 
-    0x00000000u, 
+typedef int s32;
+typedef float f32;
+/* Index lists; each list is terminated by -1. */
+s32 data_u32_00476E00[49] = {
+    0, 1, 2, 3, 4, -1, 0, 0,
+    0, 1, 2, 3, 4, 5, -1, 0,
+    0, 2, 3, 4, 5, 6, 7, -1,
+    0, 1, 2, 3, 4, 5, 6, 7,
+    9, -1, 0, 0, 0, 1, 2, 3,
+    4, 5, 6, 7, -1, 0, 0, 0,
+    0,
 };

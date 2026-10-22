@@ -1,4 +1,8 @@
 typedef unsigned char u8;
-u8 data_u8_004BAB18[0x8] = {
-    0x64u, 0x65u, 0x62u, 0x75u, 0x67u, 0x3Du, 0x30u, 0x00u
-};
+typedef signed char s8;
+typedef unsigned short u16;
+typedef short s16;
+typedef unsigned int u32;
+typedef int s32;
+typedef float f32;
+char data_u8_004BAB18[8] = { 'd', 'e', 'b', 'u', 'g', '=', '0', '\x00' };

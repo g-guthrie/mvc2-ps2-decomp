@@ -1,4 +1,11 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef short s16;
 typedef unsigned int u32;
-u32 data_u32_004C1B80[4] = {
-    0x18171615u, 0x19171A19u, 0x1E1D1C1Cu, 0x1E1E1D1Cu, 
+typedef int s32;
+typedef float f32;
+u8 data_u32_004C1B80[16] = {
+    0x15u, 0x16u, 0x17u, 0x18u, 0x19u, 0x1Au, 0x17u, 0x19u,
+    0x1Cu, 0x1Cu, 0x1Du, 0x1Eu, 0x1Cu, 0x1Du, 0x1Eu, 0x1Eu,
 };
