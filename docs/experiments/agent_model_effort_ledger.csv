@@ -492,3 +492,19 @@ rb72,18,sonnet,medium,code-retry5,3,0,0,167742,9.9,
 xm18,18,sonnet,medium,code-xl,3,0,0,278628,25.0,
 rb73,18,sonnet,medium,code-retry5,3,0,0,142914,7.2,
 rb71,18,sonnet,medium,code-retry5,3,1,492,186772,10.8,3.0 struct members mov.s
+rb83,18,sonnet,medium,code-retry5,3,0,0,165981,8.2,asm skip
+xm21,18,sonnet,medium,code-xl,3,1,1836,444987,38.4,return-common-value kills slot fill; u32 val
+rb77,18,sonnet,medium,code-retry5,3,1,556,158961,9.7,s16 counter temp
+rb74,18,sonnet,medium,code-retry5,3,0,0,173361,10.8,1 word off 00133510
+rb67,18,sonnet,medium,code-retry5,3,1,484,195503,36.9,sony29 store-order sweep
+rb79,18,sonnet,medium,code-retry5,3,2,1176,178498,14.5,V3 struct; 3.0
+rb82,18,sonnet,medium,code-retry5,3,2,1304,204529,16.2,3.0 ,p; EE -mips4
+rb66,18,sonnet,medium,code-retry5,3,1,480,268127,39.9,explicit induction vars + decl sweep (worktree clash)
+rb81,18,sonnet,medium,code-retry5,3,2,1292,237860,16.7,3.0; decl order temp pool
+rb78,18,sonnet,medium,code-retry5,3,0,0,278670,18.6,
+rb75,18,sonnet,medium,code-retry5,3,1,524,203878,20.2,live a0 callee arg + volatile lwc1 CSE defeat
+rb80,18,sonnet,medium,code-retry5,3,0,0,210238,22.2,
+rb64,18,sonnet,medium,code-retry5,3,2,944,178549,53.6,struct f32 members; static neighbour prefix
+rb84,18,sonnet,medium,code-retry5,3,2,1336,223146,16.8,volatile lo load for mul.s order; split stmt stops const hoist
+rb86,18,sonnet,medium,code-retry5,3,0,0,170022,10.7,
+rb76,18,sonnet,medium,code-retry5,3,0,0,236422,26.8,
