@@ -1,30 +1,24 @@
-typedef unsigned char u8;
+#include "data/dispatch_state_6.h"
 
-void func_00229040(u8 *a0) {
-    asm {
-        lwc1 f1, 0x5C(a0)
-        addiu a1, a0, 0x5C
-        lwc1 f0, 0x34(a0)
-        mtc1 zero, f2
-        add.s f0, f0, f1
-        swc1 f0, 0x34(a0)
-        lwc1 f1, 0x68(a0)
-        lwc1 f0, 0x5C(a0)
-        add.s f1, f0, f1
-        swc1 f1, 0x5C(a0)
-        lwc1 f0, 0x68(a0)
-        mul.s f0, f1, f0
-        c.le.s f0, f2
-        nop
-        .word 0x45010006
-        .word 0x24860068
-        .word 0x90830006
-        .word 0x24630001
-        .word 0xa0830006
-        .word 0xe4a20000
-        .word 0xe4c20000
-        .word 0x00000000
-        jr ra
-        nop
+typedef struct {
+    DispatchState_6 state;
+    unsigned char gap07[0x2D];
+    float x;
+    unsigned char gap38[0x24];
+    float velocity;
+    unsigned char gap60[8];
+    float acceleration;
+} MotionActor;
+void func_00229040(DispatchState_6 *state) {
+    MotionActor *actor = (MotionActor *)state;
+    float *velocity = &actor->velocity;
+    float *acceleration = &actor->acceleration;
+    actor->x += actor->velocity;
+    actor->velocity += actor->acceleration;
+    if (!(actor->velocity * actor->acceleration <= 0.0f)) {
+        unsigned int step = actor->state.index;
+        actor->state.index = step + 1;
+        *velocity = 0.0f;
+        *acceleration = 0.0f;
     }
 }

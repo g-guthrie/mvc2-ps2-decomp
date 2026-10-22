@@ -4755,3 +4755,17 @@ Build coverage, the progress catalog, all 126 tests, and a full hybrid
 relink/pack pass. Both reconstructed retail image hashes remain identical.
 Verified CODE is 2,660,116 / 3,293,696 bytes; DATA remains
 468,869 / 648,064 bytes. Full source recovery is still incomplete.
+
+## 2026-10-22: motion-stop callback in compiler-matched C
+
+`func_00229040` replaces an uncredited assembly placeholder with 92 bytes of
+exact C under MWCCPS2 3.0.3 `-O3 -sdatathreshold 0`. The actor view exposes
+the native position, velocity, acceleration, and state-six prefix. The
+callback definition agrees with the existing typed dispatch table. Its
+negated `<= 0.0f` test preserves the native unordered-comparison behavior.
+No volatility, assembly, fixed registers, or artificial padding instructions
+are used.
+
+Build coverage, catalog validation, all 126 tests, and the full hybrid
+relink/pack pass with both retail image hashes unchanged. Verified CODE is
+2,660,208 / 3,293,696 bytes; DATA remains 468,869 / 648,064 bytes.
