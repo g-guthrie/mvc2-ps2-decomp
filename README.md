@@ -5,8 +5,23 @@
 
 [![Matching C progress](assets/progress.svg)](DECOMP.md)
 
-An early matching decompilation of **Marvel vs. Capcom 2: New Age of Heroes**
+A matching decompilation of **Marvel vs. Capcom 2: New Age of Heroes**
 for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
+
+## Status
+
+| | Matched | Total | |
+| --- | ---: | ---: | ---: |
+| Code | 2,181,412 bytes | 3,293,696 bytes | **66.23%** |
+| Initialized data | 378,638 bytes | 648,064 bytes | **58.43%** |
+| Functions | 17,801 | 20,343 | |
+
+Every matched function is C compiled with a period toolchain (Metrowerks
+MWCC 2.4/3.0/3.0.3, SN GCC 2.95.2, EE GCC 2.96, or Sony EE GCC 2.9) and
+checked byte for byte against retail. The hybrid build links all of it with
+the remaining assembly and reproduces the retail ELF exactly. CI checks the
+catalog, the build script and the tools, but cannot compile, because the
+compilers are not redistributable.
 
 This is a separate project from the Dreamcast decompilation. The PS2 port uses
 the Emotion Engine's MIPS R5900 instruction set and identifies its original
@@ -32,7 +47,7 @@ The generated graphic above shows the current catalog's matching code coverage.
 function counts and reconstructed-data coverage. Whole-object compiler
 verification and full-image linkage are separate private build checks.
 Assembly placeholders never count as decompiled source. The current inventory
-contains **20,300 function spans** after boundary corrections and splitting
+contains **20,343 function spans** after boundary corrections and splitting
 oversized dispatcher entries. Retained assembly residuals, text gaps and
 initialized data remain separately visible in the progress report.
 
