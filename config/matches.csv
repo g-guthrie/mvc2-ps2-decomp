@@ -18543,3 +18543,9 @@ func_00109758,0x00109758,0x168,src/sc15_d.c,complete
 func_0041CEE0,0x41CEE0,0x140,src/sc17_a.c,complete
 func_00252C80,0x252C80,0x128,src/sc17_b.c,complete
 func_00190D50,0x190D50,0x1DC,src/sc17_c.c,complete
+func_002603C0,0x002603C0,0xA8,src/sc20_a.c,complete
+func_00235AE0,0x00235AE0,0x114,src/sc16_c.c,complete
+func_00242D50,0x00242D50,0xCC,src/sc19_d.c,complete
+func_003D5A40,0x003D5A40,0x35C,src/sc6_b.c,complete
+func_00129890,0x00129890,0x834,src/sc6_c.c,complete
+func_0012ADE0,0x0012ADE0,0xAF0,src/sc6_d.c,complete

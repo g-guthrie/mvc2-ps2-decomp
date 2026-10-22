@@ -19224,4 +19224,34 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/sc17_c.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/sc17_c.o"
 "$PYTHON" tools/verify_object.py "$BUILD/sc17_c.o" private/SLUS_204.86.rom --source src/sc17_c.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sc20_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/sc20_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc20_a.o" private/SLUS_204.86.rom --source src/sc20_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sc16_c.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/sc16_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc16_c.o" private/SLUS_204.86.rom --source src/sc16_c.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sc19_d.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/sc19_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc19_d.o" private/SLUS_204.86.rom --source src/sc19_d.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sc6_b.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/sc6_b.o"
+"${OBJCOPY:-mipsel-linux-gnu-objcopy}" \
+    --redefine-sym @48=jtbl_004B93B0 \
+    "$BUILD/sc6_b.o" "$BUILD/sc6_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc6_b.o" private/SLUS_204.86.rom --source src/sc6_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sc6_c.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/sc6_c.o"
+"${OBJCOPY:-mipsel-linux-gnu-objcopy}" \
+    --redefine-sym @134=jtbl_004AD140 --redefine-sym @135=jtbl_004AD120 \
+    "$BUILD/sc6_c.o" "$BUILD/sc6_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc6_c.o" private/SLUS_204.86.rom --source src/sc6_c.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sc6_d.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/sc6_d.o"
+"${OBJCOPY:-mipsel-linux-gnu-objcopy}" \
+    --redefine-sym @165=jtbl_004AD1C0 --redefine-sym @166=jtbl_004AD190 --redefine-sym @167=jtbl_004AD170 \
+    "$BUILD/sc6_d.o" "$BUILD/sc6_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc6_d.o" private/SLUS_204.86.rom --source src/sc6_d.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
