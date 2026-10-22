@@ -358,3 +358,22 @@ rr25,18,sonnet,medium,code-retry2,3,0,0,167953,14.0,
 se1,18,sonnet,medium,code-sibling,3,1,248,132909,4.8,static-copy lever
 se0,18,sonnet,medium,code-sibling,3,0,0,131400,4.8,
 ra4,18,sonnet,medium,code-retry4,3,0,0,111871,5.3,
+ra11,18,sonnet,medium,code-retry4,3,0,0,105065,2.6,boundary skip
+ra15,18,sonnet,medium,code-retry4,3,1,152,107764,2.8,volatile-cast load order
+ra12,18,sonnet,medium,code-retry4,3,0,0,115708,3.2,boundary skip
+ra17,18,sonnet,medium,code-retry4,3,0,0,117262,3.9,boundary skip
+ra13,18,sonnet,medium,code-retry4,3,1,140,120985,4.0,sibling flags -O4p 3.0
+ra8,18,sonnet,medium,code-retry4,3,0,0,115226,4.2,EE bnel wall
+ra5,18,sonnet,medium,code-retry4,3,0,0,122144,4.2,
+ra7,18,sonnet,medium,code-retry4,3,0,0,118011,4.3,
+ra10,18,sonnet,medium,code-retry4,3,1,124,119647,4.5,goto shared return
+ra14,18,sonnet,medium,code-retry4,3,1,148,116837,4.5,sony29 do-while(0)
+rr18,18,sonnet,medium,code-retry2,3,1,308,241018,33.9,merged || exits
+ra9,18,sonnet,medium,code-retry4,3,0,0,121948,4.9,
+ra6,18,sonnet,medium,code-retry4,3,1,116,123873,5.4,3.0 + K&R live arg
+ra18,18,sonnet,medium,code-retry4,3,0,0,122358,5.8,
+ra16,18,sonnet,medium,code-retry4,3,0,0,137483,6.0,
+ra19,18,sonnet,medium,code-retry4,3,2,328,116561,4.1,EE sibling + load order
+ra21,18,sonnet,medium,code-retry4,3,0,0,117649,3.9,
+ra20,18,sonnet,medium,code-retry4,3,0,0,117430,4.7,
+ra22,18,sonnet,medium,code-retry4,3,0,0,130726,4.7,
