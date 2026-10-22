@@ -20089,4 +20089,16 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/horizontal_exit_bounds.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/horizontal_exit_bounds.o"
 "$PYTHON" tools/verify_object.py "$BUILD/horizontal_exit_bounds.o" private/SLUS_204.86.rom --source src/horizontal_exit_bounds.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_visibility_fade.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_visibility_fade.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_visibility_fade.o" private/SLUS_204.86.rom --source src/actor_visibility_fade.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/input_launch_motion.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/input_launch_motion.o"
+"$PYTHON" tools/verify_object.py "$BUILD/input_launch_motion.o" private/SLUS_204.86.rom --source src/input_launch_motion.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/air_action_eligibility.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/air_action_eligibility.o"
+"$PYTHON" tools/verify_object.py "$BUILD/air_action_eligibility.o" private/SLUS_204.86.rom --source src/air_action_eligibility.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

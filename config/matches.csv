@@ -18776,3 +18776,6 @@ func_001F7260,0x001F7260,0x78,src/owner_state_predicate.c,complete
 func_00174470,0x00174470,0x138,src/projected_actor_bounds.c,complete
 func_003797D0,0x003797D0,0x7C,src/horizontal_exit_bounds.c,complete
 func_0037BDE0,0x0037BDE0,0x74,src/horizontal_exit_bounds.c,complete
+func_00132B00,0x00132B00,0xD0,src/actor_visibility_fade.c,complete
+func_00178BE0,0x00178BE0,0x120,src/input_launch_motion.c,complete
+func_0018A6C0,0x0018A6C0,0xDC,src/air_action_eligibility.c,complete

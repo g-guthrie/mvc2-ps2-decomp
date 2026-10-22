@@ -4843,3 +4843,33 @@ relink/packing pass. The retail ELF remains SHA-256
 CODE is 2,660,760 / 3,293,696 bytes (80.7834%); DATA remains
 468,869 / 648,064 bytes. The fixed next publication grid remains
 2,673,376 CODE bytes.
+
+## 2026-10-22: owner-driven fade, input launch and air-action eligibility
+
+Recovered three complete functions (716 bytes):
+
+- `func_00132B00` (208 bytes) updates the effect's signed active byte and
+  opacity using its owner's enable byte, signed timer and per-side state.
+  The typed views preserve the native reloads and the crossing-below-zero
+  fade reset. Its existing caller passes the effect and owner explicitly.
+- `func_00178BE0` (288 bytes) chooses one of three four-halfword launch
+  presets from input bits 0xC00. Signed direction -1, 0 or 1 gives record
+  indices 0..2 within the existing sixteen-halfword data object. Vertical
+  and horizontal coefficients, division by 256, and the facing reversal
+  preserve the native single-precision operations. The existing dispatch
+  table has the same unary actor signature.
+- `func_0018A6C0` (220 bytes) rejects disallowed states/actions, an opponent
+  flag and ineligible airborne positions before testing the action table.
+  Both native floating-point predicates retain their unordered behavior.
+  Its existing caller consumes an integer result from one actor pointer.
+
+The fade and launch compile exactly with MWCCPS2 3.0 at -O3,p; the
+eligibility helper uses -O4,p with that compiler. Each uses a zero
+small-data threshold. No data coverage is added or retyped by this batch.
+
+Catalog/build checks, all 126 tests, and full hybrid relink/packing pass.
+The resulting retail ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+CODE is 2,661,476 / 3,293,696 bytes (80.8052%); DATA remains
+468,869 / 648,064 bytes. The next fixed full-percentage checkpoint is
+2,673,376 CODE bytes; an interim publication does not reset this grid.
