@@ -18588,3 +18588,13 @@ func_0033B1A0,0x0033B1A0,0x534,src/xl7_b.c,complete
 func_00341CC0,0x00341CC0,0x11C,src/rr0_a.c,complete
 func_00326700,0x00326700,0x1A4,src/rr0_b.c,complete
 func_0029C520,0x0029C520,0x1F8,src/rr0_c.c,complete
+func_00266B60,0x00266B60,0x138,src/rr1_a.c,complete
+func_001F51B0,0x001F51B0,0x214,src/rr2_b.c,complete
+func_0027E3F0,0x0027E3F0,0x1D4,src/rr6_b.c,complete
+func_001E74C0,0x001E74C0,0x208,src/rr5_a.c,complete
+func_001AEEA0,0x001AEEA0,0x134,src/rr3_a.c,complete
+func_003F5C30,0x003F5C30,0x22C,src/rr4_b.c,complete
+func_00179590,0x00179590,0x600,src/xl8_a.c,complete
+func_0041B8B0,0x0041B8B0,0x220,src/rr8_c.c,complete
+func_003C8DD0,0x003C8DD0,0x1F0,src/rr7_b.c,complete
+func_002E6440,0x002E6440,0x228,src/rr7_d.c,complete

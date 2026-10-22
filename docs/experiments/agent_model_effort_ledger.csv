@@ -319,3 +319,13 @@ xl7,17,sonnet,medium,code-xl,3,1,1332,188891,11.8,static priming
 xl4,17,sonnet,medium,code-xl,3,0,0,210635,12.9,
 rr0,18,sonnet,medium,code-retry2,3,3,1308,143237,7.0,
 rt24,9,sonnet,medium,code-retry,3,0,0,180145,11.1,
+rr1,18,sonnet,medium,code-retry2,3,1,312,160751,9.5,
+rr2,18,sonnet,medium,code-retry2,3,1,532,127046,6.2,
+rr6,18,sonnet,medium,code-retry2,3,1,468,168205,6.8,
+rr5,18,sonnet,medium,code-retry2,3,1,520,153896,7.5,
+rr3,18,sonnet,medium,code-retry2,3,1,308,156176,8.3,
+rr4,18,sonnet,medium,code-retry2,3,1,556,172104,9.3,dummy param
+xl8,17,sonnet,medium,code-xl,3,1,1536,321396,26.5,
+xl5,17,sonnet,medium,code-xl,3,0,0,350848,28.6,
+rr8,18,sonnet,medium,code-retry2,3,1,544,129718,7.3,
+rr7,18,sonnet,medium,code-retry2,4,2,1048,157392,10.9,
