@@ -4741,3 +4741,17 @@ Totals are **2,113,824 / 3,293,696 CODE bytes (64.1779%)** and
 fixed CODE checkpoint at 2,113,447 bytes. The following fixed checkpoint is
 2,146,384 bytes, another 32,560 CODE bytes. Full source decompilation remains
 unfinished; identical hybrid images do not establish complete source recovery.
+
+## 2026-10-22: related-actor state predicate
+
+`func_001F7260` adds 120 exact CODE bytes under MWCCPS2 3.0-011126
+`-O3,p -sdatathreshold 0`. It checks the actor kind and a byte-sized
+state on the related actor, accepting the native individual states and
+unsigned inclusive intervals. The full function matches every retail word.
+Its stored callback declaration now agrees with the actual `int(actor *)`
+interface; this declaration repair adds no DATA credit.
+
+Build coverage, the progress catalog, all 126 tests, and a full hybrid
+relink/pack pass. Both reconstructed retail image hashes remain identical.
+Verified CODE is 2,660,116 / 3,293,696 bytes; DATA remains
+468,869 / 648,064 bytes. Full source recovery is still incomplete.

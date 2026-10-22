@@ -20077,4 +20077,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/rc10_a.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/rc10_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/rc10_a.o" private/SLUS_204.86.rom --source src/rc10_a.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_state_predicate.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_state_predicate.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_state_predicate.o" private/SLUS_204.86.rom --source src/owner_state_predicate.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
