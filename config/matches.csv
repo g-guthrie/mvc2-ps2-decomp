@@ -17872,3 +17872,7 @@ func_00133CE0,0x00133CE0,0x200,src/hx9_a.c,complete
 func_001517C0,0x001517C0,0x218,src/hx9_b.c,complete
 func_00398820,0x00398820,0x234,src/hx9_c.c,complete
 func_00129620,0x00129620,0x248,src/hx9_d.c,complete
+func_00282130,0x00282130,0x198,src/hx4_e.c,complete
+func_001F9B00,0x001F9B00,0x1A4,src/hx4_f.c,complete
+func_002768D0,0x002768D0,0x1B0,src/hx4_i.c,complete
+func_003CC9C0,0x003CC9C0,0x224,src/hx8_g.c,complete

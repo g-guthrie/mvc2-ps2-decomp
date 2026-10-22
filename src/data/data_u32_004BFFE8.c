@@ -1,4 +1,3 @@
-typedef unsigned int u32;
-u32 data_u32_004BFFE8[2] = {
-    0x00020100u, 0x00000000u, 
-};
+typedef unsigned char u8;
+/* Byte table read as D_004BFFE8[h] for h = func_00174170() % 3 in src/z1_f.c. */
+u8 data_u32_004BFFE8[8] = { 0x00, 0x01, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00 };
