@@ -1,6 +1,9 @@
-/* Source-safe reconstruction of initialized table. */
-const unsigned int jtbl_0044AFF0[3] = {
-    (unsigned int)0x001A2050,
-    (unsigned int)0x001A20F0,
-    (unsigned int)0x001A2190,
+typedef void (*Mvc2Callback)(void);
+extern void func_001A2050(void);
+extern void func_001A20F0(void);
+extern void func_001A2190(void);
+const Mvc2Callback jtbl_0044AFF0[3] = {
+    func_001A2050,
+    func_001A20F0,
+    func_001A2190,
 };

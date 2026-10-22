@@ -1,19 +1,29 @@
-const unsigned int jtbl_00476DB0[17] = {
-    (unsigned int)0x00476c70,
-    (unsigned int)0x00476c90,
-    (unsigned int)0x00476cb0,
-    (unsigned int)0x00476cd0,
-    (unsigned int)0x00476d00,
-    (unsigned int)0x00476d30,
-    (unsigned int)0x00476d60,
-    (unsigned int)0x00476d80,
-    (unsigned int)0x00476d90,
-    (unsigned int)0x00476c70,
-    (unsigned int)0x00476c90,
-    (unsigned int)0x00476cb0,
-    (unsigned int)0x00476cd0,
-    (unsigned int)0x00476d00,
-    (unsigned int)0x00476d30,
-    (unsigned int)0x00476d60,
-    (unsigned int)0x00476d80,
+typedef const unsigned char *Mvc2Address;
+extern const unsigned char D_00476C70[];
+extern const unsigned char D_00476C90[];
+extern const unsigned char D_00476CB0[];
+extern const unsigned char D_00476CD0[];
+extern const unsigned char D_00476D00[];
+extern const unsigned char D_00476D30[];
+extern const unsigned char D_00476D60[];
+extern const unsigned char D_00476D80[];
+extern const unsigned char D_00476D90[];
+Mvc2Address const jtbl_00476DB0[17] = {
+    D_00476C70,
+    D_00476C90,
+    D_00476CB0,
+    D_00476CD0,
+    D_00476D00,
+    D_00476D30,
+    D_00476D60,
+    D_00476D80,
+    D_00476D90,
+    D_00476C70,
+    D_00476C90,
+    D_00476CB0,
+    D_00476CD0,
+    D_00476D00,
+    D_00476D30,
+    D_00476D60,
+    D_00476D80,
 };

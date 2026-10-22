@@ -1,61 +1,118 @@
-const unsigned int jtbl_00477650[59] = {
-    (unsigned int)0x004b9460,
-    (unsigned int)0x004b9480,
-    (unsigned int)0x004b94a0,
-    (unsigned int)0x004b94c0,
-    (unsigned int)0x004b94e0,
-    (unsigned int)0x004b9500,
-    (unsigned int)0x004b9520,
-    (unsigned int)0x004b9540,
-    (unsigned int)0x004b9560,
-    (unsigned int)0x004b9580,
-    (unsigned int)0x004b95a0,
-    (unsigned int)0x004b95c0,
-    (unsigned int)0x004b95e0,
-    (unsigned int)0x004b9600,
-    (unsigned int)0x004b9620,
-    (unsigned int)0x004b9640,
-    (unsigned int)0x004ba240,
-    (unsigned int)0x004b9680,
-    (unsigned int)0x004b96a0,
-    (unsigned int)0x004b96c0,
-    (unsigned int)0x004b96e0,
-    (unsigned int)0x004b9700,
-    (unsigned int)0x004b9720,
-    (unsigned int)0x004b9740,
-    (unsigned int)0x004b9760,
-    (unsigned int)0x004b9760,
-    (unsigned int)0x004b9760,
-    (unsigned int)0x004b9780,
-    (unsigned int)0x004ba260,
-    (unsigned int)0x004b97c0,
-    (unsigned int)0x004ba280,
-    (unsigned int)0x004ba2a0,
-    (unsigned int)0x004b9820,
-    (unsigned int)0x004ba2c0,
-    (unsigned int)0x004b9860,
-    (unsigned int)0x004b9880,
-    (unsigned int)0x004b98a0,
-    (unsigned int)0x004b98c0,
-    (unsigned int)0x004ba2e0,
-    (unsigned int)0x004b9900,
-    (unsigned int)0x004b9920,
-    (unsigned int)0x004b9940,
-    (unsigned int)0x004b9960,
-    (unsigned int)0x004b9980,
-    (unsigned int)0x004b99a0,
-    (unsigned int)0x004b99c0,
-    (unsigned int)0x004b99e0,
-    (unsigned int)0x004b9a00,
-    (unsigned int)0x004b9a20,
-    (unsigned int)0x004b9a40,
-    (unsigned int)0x004b9a60,
-    (unsigned int)0x004b9a80,
-    (unsigned int)0x004b9aa0,
-    (unsigned int)0x004b9ac0,
-    (unsigned int)0x004b9ae0,
-    (unsigned int)0x004b9b00,
-    (unsigned int)0x004b9b20,
-    (unsigned int)0x004b9540,
-    (unsigned int)0x004ba300,
+typedef const unsigned char *Mvc2Address;
+extern const unsigned char D_004B9460[];
+extern const unsigned char data_u32_004B9480[];
+extern const unsigned char data_u32_004B94A0[];
+extern const unsigned char data_u32_004B94C0[];
+extern const unsigned char data_u32_004B94E0[];
+extern const unsigned char data_u32_004B9500[];
+extern const unsigned char data_u32_004B9520[];
+extern const unsigned char data_u32_004B9540[];
+extern const unsigned char data_u32_004B9560[];
+extern const unsigned char data_u32_004B9580[];
+extern const unsigned char data_u32_004B95A0[];
+extern const unsigned char data_u32_004B95C0[];
+extern const unsigned char data_u32_004B95E0[];
+extern const unsigned char data_u32_004B9600[];
+extern const unsigned char data_u32_004B9620[];
+extern const unsigned char data_u32_004B9640[];
+extern const unsigned char data_u32_004B9680[];
+extern const unsigned char data_u32_004B96A0[];
+extern const unsigned char data_u32_004B96C0[];
+extern const unsigned char data_u32_004B96E0[];
+extern const unsigned char data_u32_004B9700[];
+extern const unsigned char data_u32_004B9720[];
+extern const unsigned char data_u32_004B9740[];
+extern const unsigned char data_u32_004B9760[];
+extern const unsigned char data_u32_004B9780[];
+extern const unsigned char data_u32_004B97C0[];
+extern const unsigned char data_u32_004B9820[];
+extern const unsigned char data_u32_004B9860[];
+extern const unsigned char data_u32_004B9880[];
+extern const unsigned char data_u32_004B98A0[];
+extern const unsigned char data_u32_004B98C0[];
+extern const unsigned char data_u32_004B9900[];
+extern const unsigned char data_u32_004B9920[];
+extern const unsigned char data_u32_004B9940[];
+extern const unsigned char data_u32_004B9960[];
+extern const unsigned char data_u32_004B9980[];
+extern const unsigned char data_u32_004B99A0[];
+extern const unsigned char data_u32_004B99C0[];
+extern const unsigned char data_u32_004B99E0[];
+extern const unsigned char data_u32_004B9A00[];
+extern const unsigned char data_u32_004B9A20[];
+extern const unsigned char data_u32_004B9A40[];
+extern const unsigned char data_u32_004B9A60[];
+extern const unsigned char data_u32_004B9A80[];
+extern const unsigned char data_u32_004B9AA0[];
+extern const unsigned char data_u32_004B9AC0[];
+extern const unsigned char data_u32_004B9AE0[];
+extern const unsigned char data_u32_004B9B00[];
+extern const unsigned char data_u32_004B9B20[];
+extern const unsigned char data_u32_004BA240[];
+extern const unsigned char data_u32_004BA260[];
+extern const unsigned char data_u32_004BA280[];
+extern const unsigned char data_u32_004BA2A0[];
+extern const unsigned char data_u32_004BA2C0[];
+extern const unsigned char data_u32_004BA2E0[];
+extern const unsigned char data_u32_004BA300[];
+Mvc2Address const jtbl_00477650[59] = {
+    D_004B9460,
+    data_u32_004B9480,
+    data_u32_004B94A0,
+    data_u32_004B94C0,
+    data_u32_004B94E0,
+    data_u32_004B9500,
+    data_u32_004B9520,
+    data_u32_004B9540,
+    data_u32_004B9560,
+    data_u32_004B9580,
+    data_u32_004B95A0,
+    data_u32_004B95C0,
+    data_u32_004B95E0,
+    data_u32_004B9600,
+    data_u32_004B9620,
+    data_u32_004B9640,
+    data_u32_004BA240,
+    data_u32_004B9680,
+    data_u32_004B96A0,
+    data_u32_004B96C0,
+    data_u32_004B96E0,
+    data_u32_004B9700,
+    data_u32_004B9720,
+    data_u32_004B9740,
+    data_u32_004B9760,
+    data_u32_004B9760,
+    data_u32_004B9760,
+    data_u32_004B9780,
+    data_u32_004BA260,
+    data_u32_004B97C0,
+    data_u32_004BA280,
+    data_u32_004BA2A0,
+    data_u32_004B9820,
+    data_u32_004BA2C0,
+    data_u32_004B9860,
+    data_u32_004B9880,
+    data_u32_004B98A0,
+    data_u32_004B98C0,
+    data_u32_004BA2E0,
+    data_u32_004B9900,
+    data_u32_004B9920,
+    data_u32_004B9940,
+    data_u32_004B9960,
+    data_u32_004B9980,
+    data_u32_004B99A0,
+    data_u32_004B99C0,
+    data_u32_004B99E0,
+    data_u32_004B9A00,
+    data_u32_004B9A20,
+    data_u32_004B9A40,
+    data_u32_004B9A60,
+    data_u32_004B9A80,
+    data_u32_004B9AA0,
+    data_u32_004B9AC0,
+    data_u32_004B9AE0,
+    data_u32_004B9B00,
+    data_u32_004B9B20,
+    data_u32_004B9540,
+    data_u32_004BA300,
 };

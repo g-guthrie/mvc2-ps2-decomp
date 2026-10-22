@@ -1,5 +1,7 @@
-/* Source-safe reconstruction of the bounded dispatch table. */
-const unsigned int jtbl_004C0150[2] = {
-    (unsigned int)0x00230AF0,
-    (unsigned int)0x00230B10,
+typedef void (*Mvc2Callback)(void);
+extern void func_00230AF0(void);
+extern void func_00230B10(void);
+const Mvc2Callback jtbl_004C0150[2] = {
+    func_00230AF0,
+    func_00230B10,
 };

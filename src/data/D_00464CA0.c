@@ -1,2 +1,5 @@
-/* The known callers select only slot 1; preserve the unconsumed slot 0 raw. */
-const unsigned int D_00464CA0[1] = { 0x004B8570u };
+typedef const unsigned char *Mvc2Address;
+extern const unsigned char D_004B8570[];
+Mvc2Address const D_00464CA0[1] = {
+    D_004B8570,
+};

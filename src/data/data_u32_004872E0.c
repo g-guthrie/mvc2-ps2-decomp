@@ -1,4 +1,8 @@
-typedef unsigned int u32;
-u32 data_u32_004872E0[4] = {
-    0x004BC880u, 0x00000000u, 0x00000000u, 0x00000000u, 
+typedef const unsigned char *Mvc2Address;
+extern const unsigned char data_cstr_004BC880[];
+Mvc2Address data_u32_004872E0[4] = {
+    data_cstr_004BC880,
+    0,
+    0,
+    0,
 };

@@ -1,5 +1,17 @@
-/* Uncredited function-pointer table suffix of the preceding mixed resource. */
-const unsigned int jtbl_0044A350[7] = {
-    0x00197950u, 0x00197C00u, 0x001980D0u, 0x001980F0u,
-    0x00197A40u, 0x00197AE0u, 0x00197B70u,
+typedef const unsigned char *Mvc2Address;
+extern const unsigned char func_00197950[];
+extern const unsigned char func_00197A40[];
+extern const unsigned char func_00197AE0[];
+extern const unsigned char func_00197B70[];
+extern const unsigned char func_00197C00[];
+extern const unsigned char func_001980F0[];
+extern const unsigned char lbl_001980D0[];
+Mvc2Address const jtbl_0044A350[7] = {
+    func_00197950,
+    func_00197C00,
+    lbl_001980D0,
+    func_001980F0,
+    func_00197A40,
+    func_00197AE0,
+    func_00197B70,
 };

@@ -1,4 +1,8 @@
-typedef unsigned int u32;
-u32 data_u32_0044F6D0[4] = {
-    0x001F7260u, 0x00000000u, 0x00000000u, 0x00000000u, 
+typedef void (*Mvc2Callback)(void);
+extern void func_001F7260(void);
+Mvc2Callback data_u32_0044F6D0[4] = {
+    func_001F7260,
+    0,
+    0,
+    0,
 };

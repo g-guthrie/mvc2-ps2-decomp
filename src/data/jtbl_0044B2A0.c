@@ -1,12 +1,23 @@
-const unsigned int jtbl_0044B2A0[10] = {
-    (unsigned int)0x004bf6a8,
-    (unsigned int)0x004bf6b0,
-    (unsigned int)0x004bf6b8,
-    (unsigned int)0x004bf6c0,
-    (unsigned int)0x004bf6c8,
-    (unsigned int)0x004bf6d0,
-    (unsigned int)0x004bf6d8,
-    (unsigned int)0x004bf6e0,
-    (unsigned int)0x004bf6e8,
-    (unsigned int)0x004bf6f0,
+typedef const unsigned char *Mvc2Address;
+extern const unsigned char D_004BF6B0[];
+extern const unsigned char D_004BF6B8[];
+extern const unsigned char D_004BF6C0[];
+extern const unsigned char D_004BF6C8[];
+extern const unsigned char D_004BF6D0[];
+extern const unsigned char D_004BF6D8[];
+extern const unsigned char D_004BF6E0[];
+extern const unsigned char D_004BF6E8[];
+extern const unsigned char D_004BF6F0[];
+extern const unsigned char data_u32_004BF6A8[];
+Mvc2Address const jtbl_0044B2A0[10] = {
+    data_u32_004BF6A8,
+    D_004BF6B0,
+    D_004BF6B8,
+    D_004BF6C0,
+    D_004BF6C8,
+    D_004BF6D0,
+    D_004BF6D8,
+    D_004BF6E0,
+    D_004BF6E8,
+    D_004BF6F0,
 };

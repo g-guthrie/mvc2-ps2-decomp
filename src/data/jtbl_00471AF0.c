@@ -1,19 +1,33 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_00471AF0[16] = {
-    (unsigned int)0x003903F0,
-    (unsigned int)0x00390650,
-    (unsigned int)0x003907E0,
-    (unsigned int)0x00390800,
-    (unsigned int)0x00390890,
-    (unsigned int)0x00390AF0,
-    (unsigned int)0x00390BB0,
-    (unsigned int)0x00390BD0,
-    (unsigned int)0x00390D20,
-    (unsigned int)0x003915F0,
-    (unsigned int)0x00390D20,
-    (unsigned int)0x00390D20,
-    (unsigned int)0x00390D50,
-    (unsigned int)0x00391020,
-    (unsigned int)0x00391620,
-    (unsigned int)0x00391640,
+typedef const unsigned char *Mvc2Address;
+extern const unsigned char func_003903F0[];
+extern const unsigned char func_00390650[];
+extern const unsigned char func_003907E0[];
+extern const unsigned char func_00390800[];
+extern const unsigned char func_00390AF0[];
+extern const unsigned char func_00390BB0[];
+extern const unsigned char func_00390BD0[];
+extern const unsigned char func_00391020[];
+extern const unsigned char func_003915F0[];
+extern const unsigned char func_00391620[];
+extern const unsigned char func_00391640[];
+extern const unsigned char lbl_00390D50[];
+extern const unsigned char residual_00390890[];
+extern const unsigned char residual_00390D20[];
+Mvc2Address const jtbl_00471AF0[16] = {
+    func_003903F0,
+    func_00390650,
+    func_003907E0,
+    func_00390800,
+    residual_00390890,
+    func_00390AF0,
+    func_00390BB0,
+    func_00390BD0,
+    residual_00390D20,
+    func_003915F0,
+    residual_00390D20,
+    residual_00390D20,
+    lbl_00390D50,
+    func_00391020,
+    func_00391620,
+    func_00391640,
 };

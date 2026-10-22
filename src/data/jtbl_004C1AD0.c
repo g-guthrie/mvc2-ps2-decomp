@@ -1,33 +1,63 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_004C1AD0[30] = {
-    (unsigned int)0x00359410,
-    (unsigned int)0x0035A720,
-    (unsigned int)0x00359220,
-    (unsigned int)0x00359140,
-    (unsigned int)0x00359310,
-    (unsigned int)0x00359260,
-    (unsigned int)0x003593B0,
-    (unsigned int)0x00359350,
-    (unsigned int)0x00359990,
-    (unsigned int)0x00359840,
-    (unsigned int)0x00359AA0,
-    (unsigned int)0x00359A90,
-    (unsigned int)0x00359AF0,
-    (unsigned int)0x00359AE0,
-    (unsigned int)0x00359B40,
-    (unsigned int)0x00359B30,
-    (unsigned int)0x00359B90,
-    (unsigned int)0x00359B80,
-    (unsigned int)0x00359BE0,
-    (unsigned int)0x00359BD0,
-    (unsigned int)0x00359C30,
-    (unsigned int)0x00359C20,
-    (unsigned int)0x00359D50,
-    (unsigned int)0x00359C70,
-    (unsigned int)0x0035A1E0,
-    (unsigned int)0x0035A0F0,
-    (unsigned int)0x0035A440,
-    (unsigned int)0x0035A340,
-    (unsigned int)0x002EFFD8,
-    (unsigned int)0x0038FFC8,
+typedef const unsigned char *Mvc2Address;
+extern const unsigned char func_00359140[];
+extern const unsigned char func_00359220[];
+extern const unsigned char func_00359260[];
+extern const unsigned char func_00359310[];
+extern const unsigned char func_00359350[];
+extern const unsigned char func_003593B0[];
+extern const unsigned char func_00359410[];
+extern const unsigned char func_00359840[];
+extern const unsigned char func_00359990[];
+extern const unsigned char func_00359A90[];
+extern const unsigned char func_00359AA0[];
+extern const unsigned char func_00359AE0[];
+extern const unsigned char func_00359AF0[];
+extern const unsigned char func_00359B30[];
+extern const unsigned char func_00359B40[];
+extern const unsigned char func_00359B80[];
+extern const unsigned char func_00359B90[];
+extern const unsigned char func_00359BD0[];
+extern const unsigned char func_00359BE0[];
+extern const unsigned char func_00359C20[];
+extern const unsigned char func_00359C30[];
+extern const unsigned char func_00359C70[];
+extern const unsigned char func_00359D50[];
+extern const unsigned char func_0035A1E0[];
+extern const unsigned char func_0035A340[];
+extern const unsigned char func_0035A440[];
+extern const unsigned char lbl_002EFFD8[];
+extern const unsigned char lbl_0038FFC8[];
+extern const unsigned char residual_0035A0F0[];
+extern const unsigned char residual_0035A720[];
+Mvc2Address const jtbl_004C1AD0[30] = {
+    func_00359410,
+    residual_0035A720,
+    func_00359220,
+    func_00359140,
+    func_00359310,
+    func_00359260,
+    func_003593B0,
+    func_00359350,
+    func_00359990,
+    func_00359840,
+    func_00359AA0,
+    func_00359A90,
+    func_00359AF0,
+    func_00359AE0,
+    func_00359B40,
+    func_00359B30,
+    func_00359B90,
+    func_00359B80,
+    func_00359BE0,
+    func_00359BD0,
+    func_00359C30,
+    func_00359C20,
+    func_00359D50,
+    func_00359C70,
+    func_0035A1E0,
+    residual_0035A0F0,
+    func_0035A440,
+    func_0035A340,
+    lbl_002EFFD8,
+    lbl_0038FFC8,
 };

@@ -1,18 +1,23 @@
-const unsigned int jtbl_004A6CE0[16] = {
-    (unsigned int)0x0041a1d0,
-    (unsigned int)0x0041a1d0,
-    (unsigned int)0x0041a4a0,
-    (unsigned int)0x0041a840,
-    (unsigned int)0x0041a840,
-    (unsigned int)0x0041a840,
-    (unsigned int)0x0041a840,
-    (unsigned int)0x0041a840,
-    (unsigned int)0x0041a840,
-    (unsigned int)0x0041a840,
-    (unsigned int)0x0041a840,
-    (unsigned int)0x0041a840,
-    (unsigned int)0x0041a840,
-    (unsigned int)0x0041a840,
-    (unsigned int)0x0041a840,
-    (unsigned int)0x0041aa90,
+typedef void (*Mvc2Callback)(void);
+extern void func_0041A1D0(void);
+extern void func_0041A4A0(void);
+extern void func_0041A840(void);
+extern void func_0041AA90(void);
+const Mvc2Callback jtbl_004A6CE0[16] = {
+    func_0041A1D0,
+    func_0041A1D0,
+    func_0041A4A0,
+    func_0041A840,
+    func_0041A840,
+    func_0041A840,
+    func_0041A840,
+    func_0041A840,
+    func_0041A840,
+    func_0041A840,
+    func_0041A840,
+    func_0041A840,
+    func_0041A840,
+    func_0041A840,
+    func_0041A840,
+    func_0041AA90,
 };

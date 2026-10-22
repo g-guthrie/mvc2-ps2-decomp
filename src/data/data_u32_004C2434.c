@@ -1,2 +1,5 @@
-/* Pointer-like initialized word has no direct consumer. */
-unsigned int data_u32_004C2434[1] = { 0x004BD778u };
+typedef const unsigned char *Mvc2Address;
+extern const unsigned char data_u8_004BD778[];
+Mvc2Address data_u32_004C2434[1] = {
+    data_u8_004BD778,
+};

@@ -1,51 +1,79 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_0044EDC0[48] = {
-    (unsigned int)0x001DDA20,
-    (unsigned int)0x001DDC30,
-    (unsigned int)0x001DF4B0,
-    (unsigned int)0x001DF4D0,
-    (unsigned int)0x001DDC80,
-    (unsigned int)0x001DDD90,
-    (unsigned int)0x001DF4B0,
-    (unsigned int)0x001DF4D0,
-    (unsigned int)0x001DDE30,
-    (unsigned int)0x001DDF30,
-    (unsigned int)0x001DF4B0,
-    (unsigned int)0x001DF4D0,
-    (unsigned int)0x001DDFD0,
-    (unsigned int)0x001DE0D0,
-    (unsigned int)0x001DF4B0,
-    (unsigned int)0x001DF4D0,
-    (unsigned int)0x001DE180,
-    (unsigned int)0x001DE270,
-    (unsigned int)0x001DF4B0,
-    (unsigned int)0x001DF4D0,
-    (unsigned int)0x001DE300,
-    (unsigned int)0x001DE470,
-    (unsigned int)0x001DF4B0,
-    (unsigned int)0x001DF4D0,
-    (unsigned int)0x001DE500,
-    (unsigned int)0x001DE610,
-    (unsigned int)0x001DF4B0,
-    (unsigned int)0x001DF4D0,
-    (unsigned int)0x001DE690,
-    (unsigned int)0x001DE790,
-    (unsigned int)0x001DF4B0,
-    (unsigned int)0x001DF4D0,
-    (unsigned int)0x001DE8D0,
-    (unsigned int)0x001DEA90,
-    (unsigned int)0x001DF4B0,
-    (unsigned int)0x001DF4D0,
-    (unsigned int)0x001DEB20,
-    (unsigned int)0x001DEC50,
-    (unsigned int)0x001DF4B0,
-    (unsigned int)0x001DF4D0,
-    (unsigned int)0x001DEF80,
-    (unsigned int)0x001DF0B0,
-    (unsigned int)0x001DF110,
-    (unsigned int)0x001DF190,
-    (unsigned int)0x001DED00,
-    (unsigned int)0x001DF210,
-    (unsigned int)0x001DF4B0,
-    (unsigned int)0x001DF4D0,
+typedef void (*Mvc2Callback)(void);
+extern void func_001DDA20(void);
+extern void func_001DDC30(void);
+extern void func_001DDC80(void);
+extern void func_001DDD90(void);
+extern void func_001DDF30(void);
+extern void func_001DE0D0(void);
+extern void func_001DE180(void);
+extern void func_001DE270(void);
+extern void func_001DE300(void);
+extern void func_001DE470(void);
+extern void func_001DE610(void);
+extern void func_001DE790(void);
+extern void func_001DE8D0(void);
+extern void func_001DEA90(void);
+extern void func_001DEB20(void);
+extern void func_001DEC50(void);
+extern void func_001DEF80(void);
+extern void func_001DF0B0(void);
+extern void func_001DF110(void);
+extern void func_001DF190(void);
+extern void func_001DF210(void);
+extern void func_001DF4B0(void);
+extern void func_001DF4D0(void);
+extern void residual_001DDE30(void);
+extern void residual_001DDFD0(void);
+extern void residual_001DE500(void);
+extern void residual_001DE690(void);
+extern void residual_001DED00(void);
+const Mvc2Callback jtbl_0044EDC0[48] = {
+    func_001DDA20,
+    func_001DDC30,
+    func_001DF4B0,
+    func_001DF4D0,
+    func_001DDC80,
+    func_001DDD90,
+    func_001DF4B0,
+    func_001DF4D0,
+    residual_001DDE30,
+    func_001DDF30,
+    func_001DF4B0,
+    func_001DF4D0,
+    residual_001DDFD0,
+    func_001DE0D0,
+    func_001DF4B0,
+    func_001DF4D0,
+    func_001DE180,
+    func_001DE270,
+    func_001DF4B0,
+    func_001DF4D0,
+    func_001DE300,
+    func_001DE470,
+    func_001DF4B0,
+    func_001DF4D0,
+    residual_001DE500,
+    func_001DE610,
+    func_001DF4B0,
+    func_001DF4D0,
+    residual_001DE690,
+    func_001DE790,
+    func_001DF4B0,
+    func_001DF4D0,
+    func_001DE8D0,
+    func_001DEA90,
+    func_001DF4B0,
+    func_001DF4D0,
+    func_001DEB20,
+    func_001DEC50,
+    func_001DF4B0,
+    func_001DF4D0,
+    func_001DEF80,
+    func_001DF0B0,
+    func_001DF110,
+    func_001DF190,
+    residual_001DED00,
+    func_001DF210,
+    func_001DF4B0,
+    func_001DF4D0,
 };

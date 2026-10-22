@@ -1,8 +1,13 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_00445510[5] = {
-    (unsigned int)0x0015FFE0,
-    (unsigned int)0x00160030,
-    (unsigned int)0x001600C0,
-    (unsigned int)0x00160150,
-    (unsigned int)0x00160190,
+typedef const unsigned char *Mvc2Address;
+extern const unsigned char func_00160030[];
+extern const unsigned char func_001600C0[];
+extern const unsigned char func_00160150[];
+extern const unsigned char func_00160190[];
+extern const unsigned char lbl_0015FFE0[];
+Mvc2Address const jtbl_00445510[5] = {
+    lbl_0015FFE0,
+    func_00160030,
+    func_001600C0,
+    func_00160150,
+    func_00160190,
 };

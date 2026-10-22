@@ -1,21 +1,39 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_0044A1D0[18] = {
-    (unsigned int)0x00194AD0,
-    (unsigned int)0x00194BB0,
-    (unsigned int)0x00197530,
-    (unsigned int)0x00197550,
-    (unsigned int)0x00194C20,
-    (unsigned int)0x00194E20,
-    (unsigned int)0x00195230,
-    (unsigned int)0x00195470,
-    (unsigned int)0x00195990,
-    (unsigned int)0x00195AC0,
-    (unsigned int)0x00195D10,
-    (unsigned int)0x00195F40,
-    (unsigned int)0x00196460,
-    (unsigned int)0x001966C0,
-    (unsigned int)0x00196980,
-    (unsigned int)0x00196C70,
-    (unsigned int)0x00197490,
-    (unsigned int)0x00197520,
+typedef const unsigned char *Mvc2Address;
+extern const unsigned char func_00194AD0[];
+extern const unsigned char func_00194BB0[];
+extern const unsigned char func_00194C20[];
+extern const unsigned char func_00194E20[];
+extern const unsigned char func_00195230[];
+extern const unsigned char func_00195470[];
+extern const unsigned char func_00195990[];
+extern const unsigned char func_00195AC0[];
+extern const unsigned char func_00195D10[];
+extern const unsigned char func_00195F40[];
+extern const unsigned char func_00196460[];
+extern const unsigned char func_001966C0[];
+extern const unsigned char func_00196980[];
+extern const unsigned char func_00196C70[];
+extern const unsigned char func_00197520[];
+extern const unsigned char func_00197530[];
+extern const unsigned char func_00197550[];
+extern const unsigned char lbl_00197490[];
+Mvc2Address const jtbl_0044A1D0[18] = {
+    func_00194AD0,
+    func_00194BB0,
+    func_00197530,
+    func_00197550,
+    func_00194C20,
+    func_00194E20,
+    func_00195230,
+    func_00195470,
+    func_00195990,
+    func_00195AC0,
+    func_00195D10,
+    func_00195F40,
+    func_00196460,
+    func_001966C0,
+    func_00196980,
+    func_00196C70,
+    lbl_00197490,
+    func_00197520,
 };

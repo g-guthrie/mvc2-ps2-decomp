@@ -1,1 +1,7 @@
-const unsigned int jtbl_004C0700[2] = { 0x0026EAA0, 0x0026EC70 };
+typedef void (*Mvc2Callback)(void);
+extern void func_0026EAA0(void);
+extern void func_0026EC70(void);
+const Mvc2Callback jtbl_004C0700[2] = {
+    func_0026EAA0,
+    func_0026EC70,
+};

@@ -1,23 +1,43 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_00454B00[20] = {
-    (unsigned int)0x00273DE0,
-    (unsigned int)0x00273680,
-    (unsigned int)0x00273E20,
-    (unsigned int)0x00274530,
-    (unsigned int)0x00274ED0,
-    (unsigned int)0x00275100,
-    (unsigned int)0x00275330,
-    (unsigned int)0x002756A0,
-    (unsigned int)0x00275A20,
-    (unsigned int)0x00277900,
-    (unsigned int)0x00277A40,
-    (unsigned int)0x00277BA0,
-    (unsigned int)0x00278070,
-    (unsigned int)0x00273C70,
-    (unsigned int)0x002780B0,
-    (unsigned int)0x00274DA0,
-    (unsigned int)0x00277ED0,
-    (unsigned int)0x00277F30,
-    (unsigned int)0x00277F90,
-    (unsigned int)0x00278000,
+typedef void (*Mvc2Callback)(void);
+extern void func_00273680(void);
+extern void func_00273C70(void);
+extern void func_00273DE0(void);
+extern void func_00273E20(void);
+extern void func_00274530(void);
+extern void func_00274DA0(void);
+extern void func_00274ED0(void);
+extern void func_00275100(void);
+extern void func_00275330(void);
+extern void func_002756A0(void);
+extern void func_00275A20(void);
+extern void func_00277900(void);
+extern void func_00277A40(void);
+extern void func_00277BA0(void);
+extern void func_00277ED0(void);
+extern void func_00277F30(void);
+extern void func_00277F90(void);
+extern void func_00278000(void);
+extern void func_00278070(void);
+extern void func_002780B0(void);
+const Mvc2Callback jtbl_00454B00[20] = {
+    func_00273DE0,
+    func_00273680,
+    func_00273E20,
+    func_00274530,
+    func_00274ED0,
+    func_00275100,
+    func_00275330,
+    func_002756A0,
+    func_00275A20,
+    func_00277900,
+    func_00277A40,
+    func_00277BA0,
+    func_00278070,
+    func_00273C70,
+    func_002780B0,
+    func_00274DA0,
+    func_00277ED0,
+    func_00277F30,
+    func_00277F90,
+    func_00278000,
 };

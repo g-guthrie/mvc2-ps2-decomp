@@ -1,48 +1,95 @@
-const unsigned int jtbl_00446AB0[46] = {
-    (unsigned int)0x004b5448,
-    (unsigned int)0x004b5450,
-    (unsigned int)0x004b5458,
-    (unsigned int)0x004b5460,
-    (unsigned int)0x004b5468,
-    (unsigned int)0x004b5470,
-    (unsigned int)0x004b5478,
-    (unsigned int)0x004b5480,
-    (unsigned int)0x004b5488,
-    (unsigned int)0x004b5490,
-    (unsigned int)0x004b5498,
-    (unsigned int)0x004b54a0,
-    (unsigned int)0x004b54a8,
-    (unsigned int)0x004b54b0,
-    (unsigned int)0x004b54b8,
-    (unsigned int)0x004b54c0,
-    (unsigned int)0x004b54c8,
-    (unsigned int)0x004b54d0,
-    (unsigned int)0x004b54d8,
-    (unsigned int)0x004b54e0,
-    (unsigned int)0x004b54e8,
-    (unsigned int)0x004b54f0,
-    (unsigned int)0x004b54f8,
-    (unsigned int)0x004b5500,
-    (unsigned int)0x004b5508,
-    (unsigned int)0x004b5510,
-    (unsigned int)0x004b5518,
-    (unsigned int)0x004b5520,
-    (unsigned int)0x004b5528,
-    (unsigned int)0x004b5530,
-    (unsigned int)0x004b5538,
-    (unsigned int)0x004b5540,
-    (unsigned int)0x004b5548,
-    (unsigned int)0x004b5550,
-    (unsigned int)0x004b5558,
-    (unsigned int)0x004b5560,
-    (unsigned int)0x004b5568,
-    (unsigned int)0x004b5570,
-    (unsigned int)0x004b5578,
-    (unsigned int)0x004b5580,
-    (unsigned int)0x004b5588,
-    (unsigned int)0x004b5590,
-    (unsigned int)0x004b5598,
-    (unsigned int)0x004b55a0,
-    (unsigned int)0x004b55a8,
-    (unsigned int)0x004b55b0,
+typedef const unsigned char *Mvc2Address;
+extern const unsigned char data_cstr_004B5448[];
+extern const unsigned char data_cstr_004B5450[];
+extern const unsigned char data_cstr_004B5458[];
+extern const unsigned char data_cstr_004B5460[];
+extern const unsigned char data_cstr_004B5468[];
+extern const unsigned char data_cstr_004B5470[];
+extern const unsigned char data_cstr_004B5478[];
+extern const unsigned char data_cstr_004B5480[];
+extern const unsigned char data_cstr_004B5488[];
+extern const unsigned char data_cstr_004B5490[];
+extern const unsigned char data_cstr_004B5498[];
+extern const unsigned char data_cstr_004B54A0[];
+extern const unsigned char data_cstr_004B54A8[];
+extern const unsigned char data_cstr_004B54B0[];
+extern const unsigned char data_cstr_004B54B8[];
+extern const unsigned char data_cstr_004B54C0[];
+extern const unsigned char data_cstr_004B54C8[];
+extern const unsigned char data_cstr_004B54D0[];
+extern const unsigned char data_cstr_004B54D8[];
+extern const unsigned char data_cstr_004B54E0[];
+extern const unsigned char data_cstr_004B54E8[];
+extern const unsigned char data_cstr_004B54F0[];
+extern const unsigned char data_cstr_004B54F8[];
+extern const unsigned char data_cstr_004B5500[];
+extern const unsigned char data_cstr_004B5508[];
+extern const unsigned char data_cstr_004B5510[];
+extern const unsigned char data_cstr_004B5518[];
+extern const unsigned char data_cstr_004B5520[];
+extern const unsigned char data_cstr_004B5528[];
+extern const unsigned char data_cstr_004B5530[];
+extern const unsigned char data_cstr_004B5538[];
+extern const unsigned char data_cstr_004B5540[];
+extern const unsigned char data_cstr_004B5548[];
+extern const unsigned char data_cstr_004B5550[];
+extern const unsigned char data_cstr_004B5558[];
+extern const unsigned char data_cstr_004B5560[];
+extern const unsigned char data_cstr_004B5568[];
+extern const unsigned char data_cstr_004B5570[];
+extern const unsigned char data_cstr_004B5578[];
+extern const unsigned char data_cstr_004B5580[];
+extern const unsigned char data_cstr_004B5588[];
+extern const unsigned char data_cstr_004B5590[];
+extern const unsigned char data_cstr_004B5598[];
+extern const unsigned char data_cstr_004B55A0[];
+extern const unsigned char data_cstr_004B55A8[];
+extern const unsigned char data_cstr_004B55B0[];
+Mvc2Address const jtbl_00446AB0[46] = {
+    data_cstr_004B5448,
+    data_cstr_004B5450,
+    data_cstr_004B5458,
+    data_cstr_004B5460,
+    data_cstr_004B5468,
+    data_cstr_004B5470,
+    data_cstr_004B5478,
+    data_cstr_004B5480,
+    data_cstr_004B5488,
+    data_cstr_004B5490,
+    data_cstr_004B5498,
+    data_cstr_004B54A0,
+    data_cstr_004B54A8,
+    data_cstr_004B54B0,
+    data_cstr_004B54B8,
+    data_cstr_004B54C0,
+    data_cstr_004B54C8,
+    data_cstr_004B54D0,
+    data_cstr_004B54D8,
+    data_cstr_004B54E0,
+    data_cstr_004B54E8,
+    data_cstr_004B54F0,
+    data_cstr_004B54F8,
+    data_cstr_004B5500,
+    data_cstr_004B5508,
+    data_cstr_004B5510,
+    data_cstr_004B5518,
+    data_cstr_004B5520,
+    data_cstr_004B5528,
+    data_cstr_004B5530,
+    data_cstr_004B5538,
+    data_cstr_004B5540,
+    data_cstr_004B5548,
+    data_cstr_004B5550,
+    data_cstr_004B5558,
+    data_cstr_004B5560,
+    data_cstr_004B5568,
+    data_cstr_004B5570,
+    data_cstr_004B5578,
+    data_cstr_004B5580,
+    data_cstr_004B5588,
+    data_cstr_004B5590,
+    data_cstr_004B5598,
+    data_cstr_004B55A0,
+    data_cstr_004B55A8,
+    data_cstr_004B55B0,
 };

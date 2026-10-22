@@ -1,12 +1,21 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_00450CF0[9] = {
-    (unsigned int)0x00214020,
-    (unsigned int)0x002140C0,
-    (unsigned int)0x00214200,
-    (unsigned int)0x00214340,
-    (unsigned int)0x00214430,
-    (unsigned int)0x00214490,
-    (unsigned int)0x002146D0,
-    (unsigned int)0x00214790,
-    (unsigned int)0x00214830,
+typedef void (*Mvc2Callback)(void);
+extern void func_00214020(void);
+extern void func_002140C0(void);
+extern void func_00214200(void);
+extern void func_00214340(void);
+extern void func_00214430(void);
+extern void func_00214490(void);
+extern void func_002146D0(void);
+extern void func_00214790(void);
+extern void func_00214830(void);
+const Mvc2Callback jtbl_00450CF0[9] = {
+    func_00214020,
+    func_002140C0,
+    func_00214200,
+    func_00214340,
+    func_00214430,
+    func_00214490,
+    func_002146D0,
+    func_00214790,
+    func_00214830,
 };

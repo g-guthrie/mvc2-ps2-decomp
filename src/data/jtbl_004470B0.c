@@ -1,5 +1,7 @@
-/* Source-safe reconstruction of initialized table. */
-const unsigned int jtbl_004470B0[2] = {
-    (unsigned int)0x00200100,
-    (unsigned int)0x00200020,
+typedef const unsigned char *Mvc2Address;
+extern const unsigned char lbl_00200020[];
+extern const unsigned char lbl_00200100[];
+Mvc2Address const jtbl_004470B0[2] = {
+    lbl_00200100,
+    lbl_00200020,
 };

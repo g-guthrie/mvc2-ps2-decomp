@@ -1,36 +1,48 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_0045DF00[33] = {
-    (unsigned int)0x00323650,
-    (unsigned int)0x00324EA0,
-    (unsigned int)0x003239D0,
-    (unsigned int)0x00323B70,
-    (unsigned int)0x00323E60,
-    (unsigned int)0x00323ED0,
-    (unsigned int)0x00324A50,
-    (unsigned int)0x00324EA0,
-    (unsigned int)0x00324FF0,
-    (unsigned int)0x003250F0,
-    (unsigned int)0x00325AF0,
-    (unsigned int)0x00323650,
-    (unsigned int)0x00324EA0,
-    (unsigned int)0x003239D0,
-    (unsigned int)0x00325710,
-    (unsigned int)0x00323E60,
-    (unsigned int)0x00323ED0,
-    (unsigned int)0x00324A50,
-    (unsigned int)0x00324EA0,
-    (unsigned int)0x00324FF0,
-    (unsigned int)0x003250F0,
-    (unsigned int)0x00325AF0,
-    (unsigned int)0x00323650,
-    (unsigned int)0x00324EA0,
-    (unsigned int)0x003239D0,
-    (unsigned int)0x00325440,
-    (unsigned int)0x00323E60,
-    (unsigned int)0x00323ED0,
-    (unsigned int)0x00324A50,
-    (unsigned int)0x00324EA0,
-    (unsigned int)0x00324FF0,
-    (unsigned int)0x003250F0,
-    (unsigned int)0x00325AF0,
+typedef void (*Mvc2Callback)(void);
+extern void func_00323650(void);
+extern void func_003239D0(void);
+extern void func_00323B70(void);
+extern void func_00323E60(void);
+extern void func_00323ED0(void);
+extern void func_00324A50(void);
+extern void func_00324EA0(void);
+extern void func_00324FF0(void);
+extern void func_003250F0(void);
+extern void func_00325440(void);
+extern void func_00325710(void);
+extern void func_00325AF0(void);
+const Mvc2Callback jtbl_0045DF00[33] = {
+    func_00323650,
+    func_00324EA0,
+    func_003239D0,
+    func_00323B70,
+    func_00323E60,
+    func_00323ED0,
+    func_00324A50,
+    func_00324EA0,
+    func_00324FF0,
+    func_003250F0,
+    func_00325AF0,
+    func_00323650,
+    func_00324EA0,
+    func_003239D0,
+    func_00325710,
+    func_00323E60,
+    func_00323ED0,
+    func_00324A50,
+    func_00324EA0,
+    func_00324FF0,
+    func_003250F0,
+    func_00325AF0,
+    func_00323650,
+    func_00324EA0,
+    func_003239D0,
+    func_00325440,
+    func_00323E60,
+    func_00323ED0,
+    func_00324A50,
+    func_00324EA0,
+    func_00324FF0,
+    func_003250F0,
+    func_00325AF0,
 };

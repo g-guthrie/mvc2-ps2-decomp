@@ -1,24 +1,45 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_0045123C[21] = {
-    (unsigned int)0x00200400,
-    (unsigned int)0x0021D400,
-    (unsigned int)0x0021C9F0,
-    (unsigned int)0x0021D4C0,
-    (unsigned int)0x0021DEF0,
-    (unsigned int)0x0021E800,
-    (unsigned int)0x0021E9B0,
-    (unsigned int)0x0021ED70,
-    (unsigned int)0x0021EF90,
-    (unsigned int)0x0021F0D0,
-    (unsigned int)0x00221DC0,
-    (unsigned int)0x00221F30,
-    (unsigned int)0x002220D0,
-    (unsigned int)0x00222850,
-    (unsigned int)0x0021D050,
-    (unsigned int)0x0021EB90,
-    (unsigned int)0x0021E6C0,
-    (unsigned int)0x00222890,
-    (unsigned int)0x002228F0,
-    (unsigned int)0x00222950,
-    (unsigned int)0x002229B0,
+typedef const unsigned char *Mvc2Address;
+extern const unsigned char func_0021C9F0[];
+extern const unsigned char func_0021D050[];
+extern const unsigned char func_0021D400[];
+extern const unsigned char func_0021D4C0[];
+extern const unsigned char func_0021DEF0[];
+extern const unsigned char func_0021E6C0[];
+extern const unsigned char func_0021E800[];
+extern const unsigned char func_0021E9B0[];
+extern const unsigned char func_0021EB90[];
+extern const unsigned char func_0021ED70[];
+extern const unsigned char func_0021EF90[];
+extern const unsigned char func_0021F0D0[];
+extern const unsigned char func_00221DC0[];
+extern const unsigned char func_00221F30[];
+extern const unsigned char func_002220D0[];
+extern const unsigned char func_00222850[];
+extern const unsigned char func_00222890[];
+extern const unsigned char func_002228F0[];
+extern const unsigned char func_00222950[];
+extern const unsigned char func_002229B0[];
+extern const unsigned char lbl_00200400[];
+Mvc2Address const jtbl_0045123C[21] = {
+    lbl_00200400,
+    func_0021D400,
+    func_0021C9F0,
+    func_0021D4C0,
+    func_0021DEF0,
+    func_0021E800,
+    func_0021E9B0,
+    func_0021ED70,
+    func_0021EF90,
+    func_0021F0D0,
+    func_00221DC0,
+    func_00221F30,
+    func_002220D0,
+    func_00222850,
+    func_0021D050,
+    func_0021EB90,
+    func_0021E6C0,
+    func_00222890,
+    func_002228F0,
+    func_00222950,
+    func_002229B0,
 };
