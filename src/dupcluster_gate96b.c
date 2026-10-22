@@ -1,17 +1,29 @@
-/* Advance a moving effect and clear its phase when the timer expires. */
-typedef unsigned char u8;
+#include "data/mvc2_state_callbacks.h"
 
-void func_003CD5A0(u8 *p) {
-    float delta;
+typedef struct {
+    u8 prefix[4];
+    u8 state;
+    u8 gap05[0x33];
+    float y;
+    u8 gap3C[0x24];
+    float velocity;
+    u8 gap64[8];
+    float acceleration;
+    u8 gap70[0xA8];
     float timer;
+    u8 gap11C[0x20];
+    u8 phase;
+} TimedEffect;
 
-    delta = *(volatile float *)(p + 0x60);
-    *(volatile float *)(p + 0x38) = *(volatile float *)(p + 0x38) + delta;
-    *(volatile float *)(p + 0x60) += *(volatile float *)(p + 0x6C);
-    timer = *(float *)(p + 0x118) - 0.05f;
-    *(float *)(p + 0x118) = timer;
+void func_003CD5A0(u8 *p, void *owner) {
+    TimedEffect *effect = (TimedEffect *)p;
+    float timer;
+    effect->y += effect->velocity;
+    effect->velocity += effect->acceleration;
+    timer = effect->timer - 0.05f;
+    effect->timer = timer;
     if (timer < 0.0f) {
-        p[4]++;
-        p[0x13C] = 0;
+        effect->state++;
+        effect->phase = 0;
     }
 }

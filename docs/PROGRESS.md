@@ -4769,3 +4769,21 @@ are used.
 Build coverage, catalog validation, all 126 tests, and the full hybrid
 relink/pack pass with both retail image hashes unchanged. Verified CODE is
 2,660,208 / 3,293,696 bytes; DATA remains 468,869 / 648,064 bytes.
+
+## 2026-10-22: faithful timed-effect callback interfaces
+
+`func_003CD5A0` now uses a typed actor view rather than volatile floating-point
+accesses to reproduce the native load order. Its 96-byte body remains exact.
+The live `func_003CD100` dispatcher passes `(actor, owner)`, establishing the
+shared table protocol and the legitimately ignored owner argument.
+
+`func_003CD310` now has the table's void return type and owner parameter.
+Its call to the bounds predicate explicitly passes the actor that the native
+callee consumes, and its animation/vector helper declarations agree with
+their implementations. The neighboring cleanup callback retains only the
+real two-argument protocol. All 648 caller bytes and all 8 cleanup bytes
+remain exact; every other registered body in the shared leaves object also
+passes fresh verification. No source-credit totals change.
+
+Catalog/build coverage, all 126 tests, and full hybrid relink/pack pass.
+Both reconstructed retail image hashes remain unchanged.

@@ -10,22 +10,25 @@ typedef struct { u8 pad[0x1C]; s32 f1C; } GC;
 extern GC *D_004C2840;
 extern u8 D_004D18A0[];
 
-s32 func_00174470();
-s32 func_003CD600(u8 *p, u8 *q);
-void func_00175700(u8 *p);
+s32 func_00174470(u8 *p);
+void func_003CD600(u8 *p, void *owner);
+int func_00175700(u8 *p);
 void func_003CD610(u8 *p, s32 a);
-void func_0015B200(u8 *p, u8 *q, s32 a, s32 b);
-void func_001757E0(u8 *p, s32 a, s32 b);
+struct O;
+typedef struct { f32 x, y, z; } EffectPosition;
+void func_0015B200(struct O *p, EffectPosition *position, u8 count, u16 flags);
+int func_001757E0(u8 *p, s32 a, s32 b);
 void func_001E7F60(u8 *p);
 
-s32 func_003CD310(u8 *p, u8 *q)
+void func_003CD310(u8 *p, void *owner)
 {
+    u8 *q = (u8 *)owner;
     s16 h;
     u32 t;
 
     h = *(s16 *)(p + 0x1E);
     if (h == 0) {
-        if (func_00174470() == 0) goto call600;
+        if (func_00174470(p) == 0) goto call600;
     } else {
         *(s16 *)((s32)p + 0x1E) = h - 1;
     }
@@ -53,7 +56,7 @@ s32 func_003CD310(u8 *p, u8 *q)
                 p[4] = 3;
                 p[0x13C] = 0;
                 *(f32 *)(p + 0x38) += 17.142856597900391f;
-                func_0015B200(p, p + 0x34, 1, 8);
+                func_0015B200((struct O *)p, (EffectPosition *)(p + 0x34), 1, 8);
                 func_001757E0(p, 0x17, (u8)(p[0x168] + 1));
             }
         }
@@ -72,6 +75,7 @@ s32 func_003CD310(u8 *p, u8 *q)
         func_001E7F60(p);
     } else {
 call600:
-        return func_003CD600(p, q);
+        func_003CD600(p, q);
+        return;
     }
 }
