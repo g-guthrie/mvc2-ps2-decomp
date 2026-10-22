@@ -83,7 +83,7 @@ void func_00272720(u8 *a) {
     }
 }
 
-extern void func_0018F320();
+extern void func_0018F320(u8 *);
 extern void func_001E3A10();
 extern void func_00163D70();
 extern void func_001E3B30();

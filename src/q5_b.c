@@ -238,7 +238,7 @@ void func_00159EA0(S159 *a) {
 typedef struct S1778 {
     u8 p0[2]; u8 b2; u8 p3[3]; u8 b6; u8 p7[0x15]; s16 h1c; u8 p1e[0x16]; u8 p34[0x2C]; f32 f60;
 } S1778;
-extern void func_0018F320();
+extern void func_0018F320(u8 *);
 extern s8 func_00175700(u8 *);
 extern s32 func_001864a0(u8 *);
 extern void func_001E3B30();
@@ -247,7 +247,7 @@ extern void func_001757E0(u8 *, s32, s32);
 
 void func_001778D0(S1778 *a) {
     u32 t;
-    func_0018F320(a);
+    func_0018F320((u8 *)a);
     func_00175700((u8 *)a);
     if (a->h1c == 0) {
         if (a->f60 > 0.0f) {

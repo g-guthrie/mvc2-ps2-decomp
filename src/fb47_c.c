@@ -11,7 +11,7 @@ extern u8 D_004F1F46;
 
 s32 func_00176AB0(u8 *p)
 {
-    extern void func_0018F320();
+    extern void func_0018F320(u8 *);
     extern s32 func_00175700(u8 *);
     extern void func_001E3A10(u8 *);
     extern void func_00163D70(u8 *);

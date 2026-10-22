@@ -7,8 +7,8 @@ typedef signed int s32;
 typedef float f32;
 
 void func_0027FA90(u8 *p) {
-    extern void func_0018F320();
-    extern void func_00175700(u8 *);
+    extern void func_0018F320(u8 *);
+    extern int func_00175700(u8 *);
     extern void func_00178E10();
     extern void func_00178E60();
     extern void func_00178F20(u8 *, u8 *);
@@ -21,10 +21,10 @@ void func_0027FA90(u8 *p) {
         *(f32 *)(p + 0x5C) = *(f32 *)(p + 0x22C);
         *(f32 *)(p + 0x60) = *(f32 *)(p + 0x230);
         *(u32 *)(p + 0x68) = 0;
-        *(u32 *)(p + 0x6C) = 0xBFBC9249;
+        *(f32 *)(p + 0x6C) = -1.47321426868438720703125f;
         *(s16 *)(p + 0x1E) = 0;
     } else if (st == 1) {
-        func_0018F320();
+        func_0018F320(p);
         func_00175700(p);
         if (*(s16 *)(p + 0x1C) != 0) {
             s16 v = *(s16 *)(p + 0x1C) - 1;

@@ -4895,3 +4895,21 @@ All affected old bodies, the new whole function, catalog/build gates,
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 CODE is 2,661,664 / 3,293,696 bytes (80.8109%); DATA remains
 468,869 / 648,064 bytes.
+
+## 2026-10-22: explicit actor input for the shared motion routine
+
+`func_0027FA90` now explicitly passes its actor pointer to
+`func_0018F320`, rather than depending on the still-live incoming A0
+register while making a zero-argument C call. Its full 284-byte body
+remains exact. Nine active translation units now use the same unary
+byte-pointer declaration; the typed caller uses an explicit byte view.
+The animation helper declaration in the repaired caller also agrees with
+its integer return, and its vertical acceleration uses the exact float
+value -1.47321426868438720703125 instead of a raw float bit pattern.
+
+Every registered function in the changed objects (45 bodies) passes
+whole-function verification. Catalog/build checks, all 126 tests and the
+full hybrid relink/packed retail ELF pass. The missing input is repaired
+without changing CODE or DATA coverage. `func_0018F320` itself remains
+uncredited because its reconstructed body still differs. CODE remains
+2,661,664 / 3,293,696 bytes; DATA remains 468,869 / 648,064 bytes.

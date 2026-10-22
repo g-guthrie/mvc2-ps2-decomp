@@ -74,7 +74,7 @@ void func_00376C80(u8 *p, u8 *q) {
 }
 
 void func_001784A0(u8 *p) {
-    extern void func_0018F320(void *);
+    extern void func_0018F320(u8 *);
     extern void func_00175700(void *);
     extern s32 func_001864a0(void *);
     extern void func_00191210(void *);

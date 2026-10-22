@@ -8,7 +8,7 @@ typedef float f32;
 typedef struct { f32 x, y, z; } V3_001CB680;
 
 void func_00177820(u8 *p) {
-    extern void func_0018F320();
+    extern void func_0018F320(u8 *);
     extern void func_00175700();
     extern s32 func_001864A0();
     extern void func_001E3B30();
