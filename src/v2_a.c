@@ -128,43 +128,11 @@ void func_003595B0(u8 *p, u8 *q) {
     }
 }
 
-static s32 func_00291800(u8 *a) {
-    u8 f = a[0x1E6];
-    u8 *o = *(u8 **)(a + 0x220);
-    if (!f) {
-        if (*(f32 *)(a + 0x34) < *(f32 *)(o + 0x34)) return 1;
-    }
-    if (f) {
-        if (*(f32 *)(a + 0x34) <= *(f32 *)(o + 0x34)) return 0;
-        return 1;
-    }
-    return 0;
-}
+extern s32 func_00291800(u8 *a);
 extern s32 func_00175700();
 extern void func_001757E0();
 extern void func_00292420();
-void func_002918A0(u8 *p, u8 *q) {
-    u8 t = q[0x18];
-    if (t == 0) {
-        q[0x18] = t + 1;
-        { u32 e = p[0x1E6]; p[0x1E6] = e ^ 1; }
-        *(s16 *)(p + 0x140) = p[0x1E6];
-        q[0x19] = 1;
-        func_001757E0(p, 0x16, 0xA);
-    }
-    if (func_00291800(p)) {
-        q[0x18] = 0;
-        func_002918A0(p, q);
-        return;
-    }
-    if ((s8)func_00175700(p) < 0) {
-        p[7] = 0;
-        q[0x18] = 0;
-        q[0x19] = 0;
-        func_001757E0(p, 0x16, 8);
-    }
-    func_00292420(p);
-}
+/* func_002918A0: not yet matched without a stand-in callee. */
 
 typedef struct { u8 pad[0x34]; f32 f34, f38; u8 pad2[0x1C]; f32 f58, f5c, f60, f64, f68, f6c; } S_002A3F80;
 extern int func_00175700();

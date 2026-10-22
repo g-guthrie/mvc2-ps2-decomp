@@ -6,28 +6,9 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-static void func_002555E0(u8 *p) {
-    if (*(s16 *)(p + 696) > 0) {
-        p[1037] = 0;
-        p[1036] = 0;
-        p[828] = 5;
-    } else {
-        p[1036] = 2;
-        p[828] = 5;
-    }
-}
+extern void func_002555E0(u8 *p);
 
-void func_0025AC10(u8 *p) {
-    extern void func_001757E0();
-    extern void func_00175700();
-    func_002555E0(p);
-    if (*(s8 *)(p + 0x153) < 0) {
-        { u32 t = p[6]; p[6] = t + 1; }
-        *(s16 *)(p + 0x140) ^= 1;
-        func_001757E0(p, 0x16, 10);
-    }
-    func_00175700(p);
-}
+/* func_0025AC10: not yet matched without a stand-in callee. */
 
 void func_00225DE0(u8 *p) {
     extern void func_00186A60();
@@ -216,56 +197,6 @@ void func_00316730(u8 *p, u8 *q) {
     }
 }
 
-static void func_001CB680(u8 *p, u8 *o) {
-    s32 n;
-    u32 *d, *s;
-    p[4]++;
-    s = (u32 *)(o + 236);
-    d = (u32 *)(p + 236);
-    n = 49;
-    do {
-        *d = *s;
-        n--;
-        s++;
-        d++;
-    } while (n > 0);
-    p[316] = 1;
-    p[2] = o[2];
-    p[1] = o[1];
-    *(f32 *)(p + 80) = *(f32 *)(o + 80);
-    *(f32 *)(p + 84) = *(f32 *)(o + 84);
-    p[439] = o[439];
-    p[440] = o[440];
-    *(s8 *)(p + 48) = *(s8 *)(o + 48);
-    *(V3 *)(p + 80) = *(V3 *)(o + 80);
-    *(s8 *)(p + 36) = *(s8 *)(o + 36);
-}
+extern void func_001CB680(u8 *p, u8 *o);
 
-void func_001CB920(u8 *a, u8 *b) {
-    extern void func_001754A0();
-    extern s32 func_00175670();
-    extern void func_003DAA40();
-    extern void func_001CB610();
-    s16 v;
-    if (a[4] == 0) {
-        func_001CB680(a, b);
-        func_001754A0(a, 0x1B, 0x25);
-        *(s16 *)(a + 0x1C) = 2;
-        *(s8 *)(a + 0x31) = -1;
-        *(f32 *)(a + 0x34) = *(f32 *)(b + 0x34);
-        *(f32 *)(a + 0x38) = *(f32 *)(b + 0x430);
-    }
-    if ((s8)func_00175670(a) < 0) {
-        func_003DAA40(a);
-        return;
-    }
-    if (*(s8 *)(a + 0x151) != 0) {
-        a[0x151] = 0;
-        v = *(s16 *)(a + 0x1C) - 1;
-        *(s16 *)(a + 0x1C) = v;
-        if (v < 0) {
-            *(s16 *)(a + 0x1C) = 2;
-            func_001CB610(b, 5);
-        }
-    }
-}
+/* func_001CB920: not yet matched without a stand-in callee. */

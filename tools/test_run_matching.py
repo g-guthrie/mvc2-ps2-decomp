@@ -56,6 +56,21 @@ class GroupJobsTest(unittest.TestCase):
         self.assertGreater(len(jobs), 1)
 
 
+class StaticCopyTest(unittest.TestCase):
+    def test_finds_static_definitions_of_retail_functions_only(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source = Path(directory) / "unit.c"
+            source.write_text(
+                "static void func_00100000(int a) { a = 0; }\n"
+                "static int helper(void) { return 1; }\n"
+                "extern void func_00100004(void);\n"
+                "void caller(void) { func_00100000(1); }\n"
+            )
+            rows = run_matching.static_copy_rows(str(source))
+        self.assertEqual([row[0] for row in rows], ["func_00100000"])
+        self.assertEqual(rows[0][1:3], ["0x00100000", "0x4"])
+
+
 class FileDigestTest(unittest.TestCase):
     def test_header_change_changes_digest(self):
         with tempfile.TemporaryDirectory() as directory:

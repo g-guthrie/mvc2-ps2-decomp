@@ -1,4 +1,16 @@
-/* Unread table tail retained byte-for-byte; no type or credit assigned. */
-const unsigned char data_raw_004B10D0[24] = {
-    0x4C, 0x0C, 0x13, 0x00, 0x8C, 0x0C, 0x13, 0x00, 0xFC, 0x0C, 0x13, 0x00, 0x1C, 0x0D, 0x13, 0x00, 0x50, 0x0D, 0x13, 0x00, 0xC4, 0x0D, 0x13, 0x00
+/* Six code-label pointers (0x00130C4C..0x00130DC4), used as a jump/handler table by func_00130820. */
+extern unsigned char lbl_00130C4C[];
+extern unsigned char lbl_00130C8C[];
+extern unsigned char lbl_00130CFC[];
+extern unsigned char lbl_00130D1C[];
+extern unsigned char lbl_00130D50[];
+extern unsigned char lbl_00130DC4[];
+
+const void *const data_raw_004B10D0[6] = {
+    lbl_00130C4C,
+    lbl_00130C8C,
+    lbl_00130CFC,
+    lbl_00130D1C,
+    lbl_00130D50,
+    lbl_00130DC4,
 };

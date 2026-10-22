@@ -51,27 +51,7 @@ void func_00388E00(u8 *a, u8 *b) {
 }
 
 extern V3 D_004B33CC, D_004B33C0;
-static void func_001450C0(u8 *p) {
-    f32 d = 20.0f;
-    f32 n = (f32)*(s16 *)(p + 0x1C);
-    *(f32 *)(p + 0x34) = D_004B33C0.x + n * (D_004B33CC.x - D_004B33C0.x) / d;
-    n = (f32)*(s16 *)(p + 0x1C);
-    *(f32 *)(p + 0x38) = D_004B33C0.y + n * (D_004B33CC.y - D_004B33C0.y) / d;
-    n = (f32)*(s16 *)(p + 0x1C);
-    *(f32 *)(p + 0x3C) = D_004B33C0.z + n * (D_004B33CC.z - D_004B33C0.z) / d;
-}
+extern void func_001450C0(u8 *p);
 typedef struct { u8 pad0[4]; u8 b4; u8 b6x; u8 pad6[0x16]; s16 h1c; } S1;
-void func_00145F30(u8 *p) {
-    s16 v = *(s16 *)(p + 0x1C) + 1;
-    *(s16 *)(p + 0x1C) = v;
-    func_001450C0(p);
-    if (*(s16 *)(p + 0x1C) == 0x14) {
-        u32 t = p[4];
-        p[4] = t + 1;
-        *(s16 *)(p + 0x1C) = 0;
-        *(V3 *)(p + 0x34) = D_004B33CC;
-        *(s32 *)(p + 0xDC) = *(s16 *)(D_004C2840 + 0xC);
-        p[6] = 1;
-    }
-}
+/* func_00145F30: not yet matched without a stand-in callee. */
 

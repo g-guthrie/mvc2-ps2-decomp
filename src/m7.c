@@ -6,29 +6,10 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-static s32 func_00291800(u8 *a) {
-    u8 f = a[0x1E6];
-    u8 *o = *(u8 **)(a + 0x220);
-    if (!f) {
-        if (*(f32 *)(a + 0x34) < *(f32 *)(o + 0x34)) return 1;
-    }
-    if (f) {
-        if (*(f32 *)(a + 0x34) <= *(f32 *)(o + 0x34)) return 0;
-        return 1;
-    }
-    return 0;
-}
+extern s32 func_00291800(u8 *a);
 extern void func_002918A0(u8 *a, u8 *b);
 extern void func_00292420(u8 *a, u8 *b);
-void func_00291860(u8 *a, u8 *b) {
-    if (func_00291800(a)) {
-        a[7] = 6;
-        b[0x18] = 0;
-        func_002918A0(a, b);
-    } else {
-        func_00292420(a, b);
-    }
-}
+/* func_00291860: not yet matched without a stand-in callee. */
 
 static void cp3(u8 *d, s8 *s) {
     d[0x544] = s[0];

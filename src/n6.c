@@ -225,41 +225,8 @@ void func_00262C20(u8 *a0) {
 }
 
 extern void func_001754A0(u8 *, s32, s32);
-static void func_001CB680(u8 *p, u8 *o) {
-    s32 n;
-    u32 *d, *s;
-    p[4]++;
-    s = (u32 *)(o + 236);
-    d = (u32 *)(p + 236);
-    for (n = 49; n > 0; n--) *d++ = *s++;
-    p[316] = 1;
-    p[2] = o[2];
-    p[1] = o[1];
-    *(f32 *)(p + 80) = *(f32 *)(o + 80);
-    *(f32 *)(p + 84) = *(f32 *)(o + 84);
-    p[439] = o[439];
-    p[440] = o[440];
-    *(s8 *)(p + 48) = *(s8 *)(o + 48);
-    *(V3 *)(p + 80) = *(V3 *)(o + 80);
-    *(s8 *)(p + 36) = *(s8 *)(o + 36);
-}
-void func_001CB730(u8 *a0, u8 *a1) {
-    s8 r;
-    if (a0[4] == 0) {
-        func_001CB680(a0, a1);
-        func_001754A0(a0, 0x1B, 0x18);
-    }
-    a0[0x24] = 0xB;
-    F32(a0, 0x34) = F32(a1, 0x34);
-    F32(a0, 0x38) = F32(a1, 0x38);
-    S16(a0, 0x140) = S16(a1, 0x140);
-    r = func_00175670(a0);
-    if (r < 0) {
-        u32 t = U8(a0, 4);
-        a0[4] = t + 1;
-        a0[0x13C] = 0;
-    }
-}
+extern void func_001CB680(u8 *p, u8 *o);
+/* func_001CB730: not yet matched without a stand-in callee. */
 
 extern void func_001757E0(u8 *, s32, s32);
 extern void func_003C80C0(u8 *, s32, s32);

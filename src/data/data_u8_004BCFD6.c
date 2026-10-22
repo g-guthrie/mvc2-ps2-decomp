@@ -1,6 +1,14 @@
 typedef unsigned char u8;
-u8 data_u8_004BCFD6[42] = {
-    0x00u, 0x00u, 0x63u, 0x76u, 0x46u, 0x73u, 0x4Du, 0x61u, 0x6Bu, 0x65u, 0x44u, 0x69u, 0x72u, 0x20u, 0x23u, 0x32u,
-    0x3Au, 0x69u, 0x6Cu, 0x6Cu, 0x65u, 0x67u, 0x61u, 0x6Cu, 0x20u, 0x64u, 0x65u, 0x76u, 0x69u, 0x63u, 0x65u, 0x20u,
-    0x6Eu, 0x61u, 0x6Du, 0x65u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
+/* Two zero bytes, the 34-character message "cvFsMakeDir #2:illegal device name", then six zero bytes. */
+typedef struct {
+    u8 pad_00[2];
+    char msg_02[34];
+    u8 tail_24[6];
+} data_u8_004BCFD6_t;
+typedef char data_u8_004BCFD6_size_check[(sizeof(data_u8_004BCFD6_t) == 42) ? 1 : -1];
+
+data_u8_004BCFD6_t data_u8_004BCFD6 = {
+    { 0, 0 },
+    { 'c','v','F','s','M','a','k','e','D','i','r',' ','#','2',':','i','l','l','e','g','a','l',' ','d','e','v','i','c','e',' ','n','a','m','e' },
+    { 0, 0, 0, 0, 0, 0 },
 };

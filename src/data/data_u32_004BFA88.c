@@ -1,4 +1,4 @@
-typedef unsigned int u32;
-u32 data_u32_004BFA88[2] = {
-    0x11100F0Fu, 0x0F0F0F12u, 
+typedef unsigned char u8;
+u8 data_u32_004BFA88[8] = {
+    0x0Fu, 0x0Fu, 0x10u, 0x11u, 0x12u, 0x0Fu, 0x0Fu, 0x0Fu,
 };

@@ -28,36 +28,13 @@ void func_002C3CA0(u8 *a) {
     }
 }
 
-static void func_002555E0(u8 *a) {
-    *(s32 *)(a + 0x10) = 0;
-    *(s32 *)(a + 0x14) = 0;
-}
+extern void func_002555E0(u8 *a);
 extern void func_001266A0();
 extern s32 D_004F1CB8;
 extern f32 D_004F1FC8;
 extern f32 D_004F1FCC;
 
-void func_0025A820(u8 *a) {
-    u32 n;
-    func_002555E0(a);
-    a[0x1FE] = 1;
-    a[0x201] = 2;
-    a[0x209] = 2;
-    D_004F1CB8 = 2;
-    n = a[6];
-    a[6] = n + 1;
-    func_001266A0(a, 1, 0xD);
-    *(f32 *)(a + 0x34) = (D_004F1FC8 + D_004F1FCC) / 2.0f;
-    {
-        f32 d;
-        if (a[0x1E6] != 0) {
-            d = -133.3333282f;
-        } else {
-            d = 133.3333282f;
-        }
-        *(f32 *)(a + 0x34) += d;
-    }
-}
+/* func_0025A820: not yet matched without a stand-in callee. */
 
 extern void func_001754A0();
 extern s8 func_00175670();

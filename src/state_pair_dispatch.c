@@ -574,35 +574,7 @@ void func_00305520(u8 *p) {
     }
 }
 
-static void func_00305690(u8 *p)
-{
-    switch (p[0x1FC]) {
-    case 0:
-        p[0x168] = 0;
-        p[0x1B5] = 6;
-        func_001E3710(p, 20);
-        *(signed char **)(p + 0x408) = data_s8_004C1508;
-        p[0x1BB] = 0;
-        break;
-    case 1:
-        p[0x168] = 1;
-        p[0x1B5] = 7;
-        *(signed char **)(p + 0x408) = data_s8_004C150C;
-        p[0x1BB] = 1;
-        break;
-    case 2:
-        p[0x168] = 2;
-        p[0x1B5] = 8;
-        *(signed char **)(p + 0x408) = &data_s8_004C150C[4];
-        p[0x1BB] = 2;
-        break;
-    }
-    *(u8 *)(p + 0x1B5) = p[0x1B5];
-    p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
-    *(u32 *)(p + 0x1D8) = 0;
-    ((s16 *)(D_004C2794 + 0x7C))[p[2]]++;
-    func_001757E0(p, 9, p[0x168]);
-}
+extern void func_00305690(u8 *p);
 
 void residual_003093C0(u8 *p) {
     func_001861B0(p);

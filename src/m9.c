@@ -9,23 +9,10 @@ typedef float f32;
 
 
 extern f32 *D_004C2708;
-static void func_001C88F0(u8 *p) {
-    *(f32 *)(p + 0x34) = *(f32 *)(*(u8 **)(p + 0x18) + 0x34);
-    *(f32 *)(p + 0x38) = *(f32 *)(*(u8 **)(p + 0x18) + 0x38);
-    if (*(s16 *)(p + 0x140) != 0) *(f32 *)(p + 0x34) += D_004C2708[0];
-    else *(f32 *)(p + 0x34) -= D_004C2708[0];
-    *(f32 *)(p + 0x38) += D_004C2708[1];
-}
+extern void func_001C88F0(u8 *p);
 extern void func_001C8AE0();
 extern void func_00175700();
-void func_001C8A90(u8 *p) {
-    func_001C88F0(p);
-    if (*(s8 *)(*(u8 **)(p + 0x18) + 0x161) != 3) {
-        func_001C8AE0();
-    } else {
-        func_00175700();
-    }
-}
+/* func_001C8A90: not yet matched without a stand-in callee. */
 
 extern void func_001E3710();
 void func_00309350(u8 *p) {

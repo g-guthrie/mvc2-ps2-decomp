@@ -1,4 +1,1 @@
-typedef unsigned int u32;
-u32 data_u32_004BA380[4] = {
-    0x20202020u, 0x20202020u, 0x2E422E42u, 0x444F4F48u, 
-};
+char data_u32_004BA380[16] = "        B.B.HOOD";

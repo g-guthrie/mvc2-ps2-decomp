@@ -1,4 +1,2 @@
-typedef unsigned int u32;
-u32 data_u32_004BA320[4] = {
-    0x20202020u, 0x20202020u, 0x422E5420u, 0x454E4E4Fu, 
-};
+/* 16-byte name field, space-padded on the left. */
+char data_u32_004BA320[16] = "         T.BONNE";

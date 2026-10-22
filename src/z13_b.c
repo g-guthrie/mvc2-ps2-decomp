@@ -35,43 +35,9 @@ extern s32 D_004AD290[];
 
 extern u8 *D_004C2840;
 
-static s32 func_0012BFB0(s32 n)
-{
-    u32 *m = (u32 *)(D_004C2840 + 0x30);
-    if (n >= 0x18)
-        m++;
-    return (*m & (1 << (n & 0x1F))) != 0;
-}
+extern s32 func_0012BFB0(s32 n);
 
-s32 func_0012BFF0(s32 c)
-{
-    s32 *t;
-    s32 i, o;
-    if (c != 0x20 && c != 0x36 && c != 0x3A && c != 0x34)
-        return 1;
-    switch (c) {
-    case 0x20:
-        t = D_004AD200;
-        break;
-    case 0x36:
-        t = D_004AD230;
-        break;
-    case 0x34:
-        t = D_004AD260;
-        break;
-    case 0x3A:
-        t = D_004AD290;
-        break;
-    }
-    i = 0; o = 0;
-    do {
-        if (func_0012BFB0(*(s32 *)((u8 *)t + o)) != 0)
-            return 1;
-        i++;
-        o += 4;
-    } while (i < 12);
-    return 0;
-}
+/* func_0012BFF0: not yet matched without a stand-in callee. */
 
 extern u8 D_004BF514[4];
 extern s8 D_004F7FC8[];

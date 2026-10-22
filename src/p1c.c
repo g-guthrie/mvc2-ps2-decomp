@@ -5,27 +5,9 @@ typedef unsigned char u8;
 typedef float f32;
 
 /* Native format-record lookup; matches the canonical w2_f implementation. */
-static u32 *func_003F1F90(u32 *p, u32 key)
-{
-    u32 *e = p;
-    u32 i;
-    if (p[0] & key) {
-        e += 3;
-        for (i = 0; i < p[1]; i++) {
-            if (e[0] == key) return e;
-            e = (u32 *)((u8 *)e + e[2]);
-        }
-    }
-    return 0;
-}
+extern u32 *func_003F1F90(u32 *p, u32 key);
 
-s32 func_003F2550(s32 a, s32 i) {
-    s32 r = (s32)func_003F1F90((u32 *)a, 0x4000);
-    s32 off = i * 8;
-    if (r == 0) return 0;
-    r += 12;
-    return r + off;
-}
+/* func_003F2550: not yet matched without a stand-in callee. */
 
 typedef struct {
     f32 x, y, z;

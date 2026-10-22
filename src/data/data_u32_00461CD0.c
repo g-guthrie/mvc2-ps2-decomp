@@ -1,5 +1,5 @@
-typedef unsigned int u32;
-u32 data_u32_00461CD0[11] = {
-    0xFFD30000u, 0xFFD9FFD6u, 0xFFDFFFDCu, 0xFFE5FFE2u, 0xFFEBFFE8u, 0xFFF1FFEEu, 0xFFF7FFF4u, 0xFFFDFFFAu, 
-    0x0003FFD0u, 0x00090006u, 0x000F000Cu, 
+typedef signed short s16;
+s16 data_u32_00461CD0[22] = {
+    0, -45, -42, -39, -36, -33, -30, -27, -24, -21, -18,
+    -15, -12, -9, -6, -3, -48, 3, 6, 9, 12, 15,
 };

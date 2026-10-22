@@ -8,37 +8,9 @@ typedef float f32;
 typedef struct { f32 x, y, z; } V3;
 extern V3 D_004B1940[];
 
-static void func_0013E760(u8 *p) {
-    V3 *a = &D_004B1940[p[0x20] * 2];
-    V3 *b = &D_004B1940[p[0x20] * 2 + 1];
-    f32 d, e;
-    e = a->x;
-    d = (b->x - e) / 30.0f;
-    *(f32 *)(p + 0x34) = e + (f32)*(s16 *)(p + 0x1C) * d;
-    e = a->y;
-    d = (b->y - e) / 30.0f;
-    *(f32 *)(p + 0x38) = e + (f32)*(s16 *)(p + 0x1C) * d;
-    e = a->z;
-    d = (b->z - e) / 30.0f;
-    *(f32 *)(p + 0x3C) = e + (f32)*(s16 *)(p + 0x1C) * d;
-}
+extern void func_0013E760(u8 *p);
 
-void func_0013EA00(u8 *p) {
-    s16 t = *(s16 *)(p + 0x1C);
-    if (t != 30) {
-        *(s16 *)(p + 0x1C) = t + 1;
-        func_0013E760(p);
-    }
-    *(s16 *)(p + 0x1E) += 1;
-    if (*(s16 *)(p + 0x1E) >= 200) *(s16 *)(p + 0x1E) = 0;
-    *(u32 *)(p + 0xD0) |= 0x20000;
-    if (p[0x20] & 1) {
-        *(f32 *)(p + 0xE0) = 0.005f * *(s16 *)(p + 0x1E);
-    } else {
-        *(f32 *)(p + 0xE0) = 1.0f - 0.005f * *(s16 *)(p + 0x1E);
-    }
-    *(u32 *)(p + 0xE4) = 0;
-}
+/* func_0013EA00: not yet matched without a stand-in callee. */
 
 typedef struct { u8 pad0[0x7C]; s16 h7c[1]; } G12;
 extern G12 *D_004C2794;

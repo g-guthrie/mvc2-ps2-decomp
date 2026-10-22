@@ -8,43 +8,13 @@ typedef float f32;
 typedef struct { f32 x, y, z; } V3;
 
 
-static void func_0014E770(u8 *p) {
-    u8 *q = *(u8 **)(p + 0x18);
-    if (*(s32 *)(q + 0xDC) != 0) {
-        *(s16 *)(p + 0x1E) = *(s16 *)(q + 0x1E);
-    }
-}
-void func_0014FD80(u8 *p) {
-    func_0014E770(p);
-    *(s8 *)(p + 0x13C) = *(s8 *)(*(u8 **)(p + 0x18) + 0x13C);
-    *(f32 *)(p + 0x74) = *(f32 *)(*(u8 **)(p + 0x18) + 0x74);
-}
+extern void func_0014E770(u8 *p);
+/* func_0014FD80: not yet matched without a stand-in callee. */
 
 extern u8 D_004B6A50[];
-static u8 func_001E3940(u8 *p, s32 x) {
-    u32 c = x & 0xFF;
-    u32 f;
-    if (p[1] == 0x14) return 0;
-    if (c == 0x10) return 0;
-    if (c == 0xF || c == 0xE || c == 6 || c == 5 || c == 4) return 0;
-    f = *(u32 *)(p + 0x428);
-    if (((f & 0x1018000) | (*(u32 *)(p + 0x42C) & 0x184000)) != 0) {
-        x = D_004B6A50[c];
-    }
-    if (p[0x216] & 0x80) {
-        x = D_004B6A50[x & 0xFF];
-        return x;
-    }
-    return x;
-}
+extern u8 func_001E3940(u8 *p, s32 x);
 extern void func_001E3710(void *, s32);
-void func_001E3B70(u8 *p, s32 x) {
-    u8 r = func_001E3940(p, x);
-    if (r != 0) {
-        x = r & 0xFF;
-    }
-    func_001E3710(p, x);
-}
+/* func_001E3B70: not yet matched without a stand-in callee. */
 
 extern s32 func_00175670(void *);
 void func_001B5C90(u8 *p) {

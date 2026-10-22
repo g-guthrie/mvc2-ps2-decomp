@@ -30,55 +30,9 @@ void func_00177820(u8 *p) {
     }
 }
 
-static void func_001CB680(u8 *p, u8 *o) {
-    s32 n;
-    u32 *d, *s;
-    p[4]++;
-    s = (u32 *)(o + 236);
-    d = (u32 *)(p + 236);
-    for (n = 49; n > 0; n--) *d++ = *s++;
-    p[316] = 1;
-    p[2] = o[2];
-    p[1] = o[1];
-    *(f32 *)(p + 80) = *(f32 *)(o + 80);
-    *(f32 *)(p + 84) = *(f32 *)(o + 84);
-    p[439] = o[439];
-    p[440] = o[440];
-    *(s8 *)(p + 48) = *(s8 *)(o + 48);
-    *(V3_001CB680 *)(p + 80) = *(V3_001CB680 *)(o + 80);
-    *(s8 *)(p + 36) = *(s8 *)(o + 36);
-}
+extern void func_001CB680(u8 *p, u8 *o);
 
-void func_001CBBC0(u8 *p, u8 *q) {
-    extern void func_001754A0();
-    extern void func_0015E630();
-    extern void func_00175670();
-    f32 f;
-    s16 h;
-    if (*(s32 *)(p + 0xD4) != *(u16 *)(q + 0x168)) {
-        u32 t = p[4];
-        p[4] = t + 1;
-        p[0x13C] = 0;
-        p[0] = 0;
-        return;
-    }
-    if (p[4] == 0) {
-        p[0] = 1;
-        func_001CB680(p, q);
-        f = 106.666664f;
-        h = *(s16 *)(q + 0x140);
-        *(s16 *)(p + 0x140) = h;
-        if (h != 0)
-            f = -f;
-        *(f32 *)(p + 0x34) = *(f32 *)(q + 0x34) + f;
-        *(f32 *)(p + 0x38) = *(f32 *)(q + 0x430);
-        func_001754A0(p, 0x1B, 0x35);
-        p[0x159] = 0xE0;
-        func_0015E630(p);
-    }
-    func_00175670(p);
-    p[0x159] = 0xE0;
-}
+/* func_001CBBC0: not yet matched without a stand-in callee. */
 
 void func_00362E20(u8 *p, u8 *q) {
     extern void func_00175700();

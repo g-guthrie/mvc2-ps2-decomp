@@ -173,6 +173,59 @@ def command_key(command: str, earlier: dict[str, bytes]) -> str:
     return digest.hexdigest()
 
 
+STATIC_COPY_RE = re.compile(r"^\s*static\b[^;{(]*\b(func_[0-9A-Fa-f]{8})\s*\([^;]*?\)\s*\{", re.M | re.S)
+_functions: dict[str, tuple[str, str]] | None = None
+
+
+def static_copy_rows(source: str) -> list[list[str]]:
+    """Rows for `static` copies of retail functions defined in a source.
+
+    A static copy of a callee changes how the compiler allocates registers
+    around the call, so a credited caller is genuine only if the copy is the
+    callee's real body. Verifying the copy at the callee's own address
+    rejects stand-ins that exist only to shape the caller.
+    """
+    global _functions
+    if _functions is None:
+        import csv
+        with open("config/functions.csv", newline="", encoding="utf-8") as stream:
+            _functions = {row["name"]: (row["address"], row["size"]) for row in csv.DictReader(stream)}
+    try:
+        text = Path(source).read_text(encoding="utf-8", errors="replace")
+    except OSError:
+        return []
+    rows = []
+    for name in dict.fromkeys(STATIC_COPY_RE.findall(text)):
+        if name in _functions:
+            address, size = _functions[name]
+            rows.append([name, address, size, source, "complete"])
+    return rows
+
+
+def verify_static_copies(argv: list[str]) -> tuple[bool, str]:
+    if "--source" not in argv:
+        return True, ""
+    source = argv[argv.index("--source") + 1]
+    rows = static_copy_rows(source)
+    if not rows:
+        return True, ""
+    import csv
+    import tempfile
+    with tempfile.NamedTemporaryFile("w", suffix=".csv", delete=False, newline="") as stream:
+        writer = csv.writer(stream)
+        writer.writerow(["name", "address", "size", "source", "status"])
+        writer.writerows(rows)
+        path = stream.name
+    try:
+        ok, output = build_runner.run_tool_main("verify_object", [argv[0], argv[1], "--matches", path, "--source", source])
+    finally:
+        os.unlink(path)
+    if ok:
+        return True, output
+    names = ", ".join(row[0] for row in rows)
+    return False, output + f"static copy in {source} is not the real body of {names}\n"
+
+
 def run_job(commands: list[str]) -> tuple[bool, str, int, int]:
     log, cached, ran = [], 0, 0
     produced: dict[str, bytes] = {}
@@ -180,6 +233,9 @@ def run_job(commands: list[str]) -> tuple[bool, str, int, int]:
         if command.startswith(VERIFY_PREFIX):
             argv = [expand(word) for word in shlex.split(command)[2:]]
             ok, output = build_runner.run_tool_main("verify_object", argv)
+            if ok:
+                ok, extra = verify_static_copies(argv)
+                output += extra
             log.append(output)
             if not ok:
                 return False, "".join(log) + f"failed: {command}\n", cached, ran
