@@ -17876,3 +17876,10 @@ func_00282130,0x00282130,0x198,src/hx4_e.c,complete
 func_001F9B00,0x001F9B00,0x1A4,src/hx4_f.c,complete
 func_002768D0,0x002768D0,0x1B0,src/hx4_i.c,complete
 func_003CC9C0,0x003CC9C0,0x224,src/hx8_g.c,complete
+func_00229210,0x00229210,0x164,src/hx7_a.c,complete
+func_0019A210,0x0019A210,0x188,src/hx7_b.c,complete
+func_00324330,0x00324330,0x198,src/hx7_c.c,complete
+func_002FAC50,0x002FAC50,0x1B0,src/hx7_d.c,complete
+func_002B6060,0x002B6060,0x1E8,src/hx7_f.c,complete
+func_00244F20,0x00244F20,0x194,src/hx3_a.c,complete
+func_00277100,0x00277100,0x1A0,src/hx3_a.c,complete
