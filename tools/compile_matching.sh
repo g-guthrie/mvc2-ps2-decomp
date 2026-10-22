@@ -17803,4 +17803,43 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/sa33_o.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/sa33_o.o"
 "$PYTHON" tools/verify_object.py "$BUILD/sa33_o.o" private/SLUS_204.86.rom --source src/sa33_o.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sa32_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/sa32_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sa32_a.o" private/SLUS_204.86.rom --source src/sa32_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sa32_b.c -c -lang c -i src -O3 -o "$BUILD/sa32_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sa32_b.o" private/SLUS_204.86.rom --source src/sa32_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sa32_c.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/sa32_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sa32_c.o" private/SLUS_204.86.rom --source src/sa32_c.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sa32_d.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/sa32_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sa32_d.o" private/SLUS_204.86.rom --source src/sa32_d.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sa32_e.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/sa32_e.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sa32_e.o" private/SLUS_204.86.rom --source src/sa32_e.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sa30_d.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/sa30_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sa30_d.o" private/SLUS_204.86.rom --source src/sa30_d.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sa30_f.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/sa30_f.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sa30_f.o" private/SLUS_204.86.rom --source src/sa30_f.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sa31_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/sa31_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sa31_a.o" private/SLUS_204.86.rom --source src/sa31_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sa31_b.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/sa31_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sa31_b.o" private/SLUS_204.86.rom --source src/sa31_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sa31_d.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/sa31_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sa31_d.o" private/SLUS_204.86.rom --source src/sa31_d.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sa31_e.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/sa31_e.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sa31_e.o" private/SLUS_204.86.rom --source src/sa31_e.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sa31_f.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/sa31_f.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sa31_f.o" private/SLUS_204.86.rom --source src/sa31_f.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

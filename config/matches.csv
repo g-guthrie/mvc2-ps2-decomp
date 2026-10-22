@@ -18093,3 +18093,16 @@ func_00167C70,0x00167C70,0x188,src/sa33_l.c,complete
 func_0014F5A0,0x0014F5A0,0x1A0,src/sa33_m.c,complete
 func_001841E0,0x001841E0,0x1B8,src/sa33_n.c,complete
 func_001884C0,0x001884C0,0x1C4,src/sa33_o.c,complete
+func_0032C3F0,0x0032C3F0,0xE4,src/sa32_a.c,complete
+func_003A79B0,0x003A79B0,0xEC,src/sa32_b.c,complete
+func_00375CA0,0x00375CA0,0xF4,src/sa32_c.c,complete
+func_002D66B0,0x002D66B0,0x168,src/sa32_d.c,complete
+func_003E0DB0,0x003E0DB0,0x1A4,src/sa32_e.c,complete
+func_0018A080,0x0018A080,0xD8,src/sa30_d.c,complete
+func_003F5090,0x003F5090,0xE4,src/sa30_f.c,complete
+func_001509D0,0x001509D0,0x10C,src/sa31_a.c,complete
+func_00126530,0x00126530,0x16C,src/sa31_a.c,complete
+func_002336B0,0x002336B0,0x128,src/sa31_b.c,complete
+func_001275F0,0x001275F0,0x1A8,src/sa31_d.c,complete
+func_0037BE60,0x0037BE60,0xD4,src/sa31_e.c,complete
+func_00166490,0x00166490,0xB4,src/sa31_f.c,complete
