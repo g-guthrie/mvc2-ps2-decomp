@@ -1,5 +1,7 @@
-typedef unsigned int u32;
-u32 data_u32_00440684[13] = {
-    0x00000000u, 0x00000000u, 0x00000000u, 0xC208D70Au, 0xC1E50A3Du, 0x422928F6u, 0xC20DEB85u, 0xC1E8F5C3u,
-    0x424347AEu, 0xC20EF5C3u, 0xC1E53333u, 0x4258AE14u, 0x00000000u,
+typedef float f32;
+f32 data_u32_00440684[13] = {
+    0.0f, 0.0f, 0.0f, -34.21f,
+    -28.63f, 42.29f, -35.48f, -29.12f,
+    48.82f, -35.74f, -28.65f, 54.17f,
+    0.0f,
 };

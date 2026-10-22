@@ -1,4 +1,4 @@
-typedef unsigned int u32;
-u32 data_u32_004ACBF0[2] = {
-    0x41A00000u, 0x00000000u, 
+typedef float f32;
+f32 data_u32_004ACBF0[2] = {
+    20.0f, 0.0f,
 };
