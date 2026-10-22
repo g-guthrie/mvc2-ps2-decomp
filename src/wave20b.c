@@ -57,7 +57,7 @@ void func_00362C20(u8 *p, u8 *q) {
 
 extern void func_001266A0();
 extern void func_0015D010();
-extern void func_0018C6E0();
+extern void func_0018C6E0(void *);
 
 void func_002329F0(u8 *p) {
     float v[4];

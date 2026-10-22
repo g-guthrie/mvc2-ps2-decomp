@@ -71,7 +71,7 @@ void func_001D5230(u8 *p, u8 *q) {
 }
 
 void func_003155D0(u8 *p) {
-    extern void func_0018C6E0();
+    extern void func_0018C6E0(void *);
     extern void func_001757E0();
     extern void func_0015D010();
     u8 *q = p + 0x2B8;

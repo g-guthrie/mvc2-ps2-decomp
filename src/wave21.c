@@ -102,7 +102,7 @@ void func_0012FC40(void) {
 }
 
 extern void (*D_0045DC88[])(u8 *, u8 *);
-void func_0018C6E0(u8 *a);
+extern void func_0018C6E0(void *);
 void func_003211B0(u8 *a0) {
     u8 *s = *(u8 **)(a0 + 0x1DC);
     func_0018C6E0(a0);
@@ -170,7 +170,7 @@ s32 func_002A0560(u8 *a0) {
 }
 
 void func_0015D010(u8 *a, f32 *b);
-void func_0018C6E0(u8 *a);
+extern void func_0018C6E0(void *);
 void func_002B7AE0(u8 *a0) {
     f32 v[3];
     a0[0x1B4] = 10;

@@ -16,7 +16,7 @@ void func_002C3820(u8 *p) {
     extern s32 func_001E7FD0(u8 *);
     extern void func_00185770(u8 *, s32);
     extern void func_0015D010(u8 *, u32 *);
-    extern void func_0018C6E0(u8 *);
+    extern void func_0018C6E0(void *);
     p[0x40C] = 2;
     p[0x33C] = 5;
     func_00175700(p);

@@ -87,7 +87,7 @@ void func_003BD9A0(u8 *a, u8 *b) {
 typedef struct { f32 x, y, z, w; } V2;
 extern void func_0015D010(u8 *, V2 *);
 extern void func_001266A0(u8 *, s32, s32);
-extern void func_0018C6E0(u8 *);
+extern void func_0018C6E0(void *);
 
 void func_0025B6C0(u8 *p) {
     V2 v;

@@ -11,7 +11,7 @@ typedef char PlanarTripletSizeCheck[(sizeof(PlanarTriplet) == 12) ? 1 : -1];
 
 extern void func_001266A0(u8 *, s32, s32);
 extern void func_0015D010(u8 *, const float *);
-extern void func_0018C6E0(u8 *);
+extern void func_0018C6E0(void *);
 extern int func_001757E0(u8 *, s32, s32);
 
 void func_0029A3E0(u8 *p)

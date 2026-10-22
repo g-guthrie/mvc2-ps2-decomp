@@ -14,7 +14,7 @@ extern u32 D_004C283C;
 extern Float3 D_004B7F30[];
 extern void func_001266A0();
 extern void func_0015D010();
-extern void func_0018C6E0();
+extern void func_0018C6E0(void *);
 extern void func_001757E0();
 extern s32 func_00189310();
 extern void func_0018A990();

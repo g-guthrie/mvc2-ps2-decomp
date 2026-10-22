@@ -95,7 +95,7 @@ void func_0018F130(u8 *p, s32 q) {
 
 extern void func_0015D010();
 extern void func_001266A0();
-extern void func_0018C6E0();
+extern void func_0018C6E0(void *);
 extern void func_001757E0();
 void func_0025B760(u8 *p) {
     f32 v[3];

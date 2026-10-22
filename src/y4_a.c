@@ -55,7 +55,7 @@ void func_002B9980(u8 *p) {
 void func_00242F90(u8 *p) {
     extern void func_001266A0(u8 *, s32, s32);
     extern void func_0015D010(u8 *, f32 *);
-    extern void func_0018C6E0(u8 *);
+    extern void func_0018C6E0(void *);
     extern void func_001757E0(u8 *, s32, s32);
     f32 v[4];
     func_001266A0(p, 5, 5);

@@ -8,7 +8,7 @@ typedef union FloatPairBits {
 } FloatPairBits;
 
 extern void func_001266A0(u8 *, int, int);
-extern void func_0018C6E0(u8 *);
+extern void func_0018C6E0(void *);
 extern void func_00176160(u8 *, int, int, int);
 extern void func_0015D010(u8 *, f32 *);
 extern int func_001757E0(u8 *, int, int);

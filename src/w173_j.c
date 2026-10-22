@@ -10,13 +10,13 @@ typedef float f32;
 
 void func_002BE800(u8 *p)
 {
-    extern void func_0018C6E0();
+    extern void func_0018C6E0(void *);
     extern void func_0015D010(u8 *, f32 *);
     extern void func_001757E0(u8 *, s32, s32);
     f32 v[3];
     f32 a;
     s16 t;
-    func_0018C6E0();
+    func_0018C6E0(p);
     t = p[0x1E6] ^ 1;
     *(s16 *)(Q + 0x140) = t;
     Q[0x1E6] = t;

@@ -90,7 +90,8 @@ void func_0019AF40(u8 *p, u8 *q) {
 typedef struct { u8 pad0[0x34]; f32 f34, f38; u8 pad1[0x5C - 0x3C]; f32 f5c, f60; u8 pad2[4]; f32 f68, f6c; } S8;
 extern void func_001843A0();
 extern s8 func_00175700();
-void func_0031CFB0(S8 *p) {
+void func_0031CFB0(u8 *actor) {
+    S8 *p = (S8 *)actor;
     u8 *q = (u8 *)p;
     s16 v;
     func_00175700(p);

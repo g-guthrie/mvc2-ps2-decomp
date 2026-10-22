@@ -29,7 +29,7 @@ void func_002660D0(PH *p) {
 typedef struct { u8 p0[6]; u8 b6; u8 b7; u8 p8[0x140-8]; s16 h140; u8 p142[0x1B4-0x142]; u8 b1b4; u8 p1b5[0x1DC-0x1B5]; s32 w1dc; u8 p1e0[0x1E6-0x1E0]; u8 b1e6; u8 p1e7[0x20E-0x1E7]; u16 h20e; } PB;
 void func_002E82F0(PB *p) {
     extern void func_001266A0(PB *, s32, s32);
-    extern void func_0018C6E0(PB *);
+    extern void func_0018C6E0(void *);
     extern void func_0015D010(PB *, f32 *);
     extern void func_001D45D0(PB *, s32);
     extern void func_00182C30(s32, s32);

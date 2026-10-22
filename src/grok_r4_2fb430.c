@@ -2,7 +2,7 @@
 typedef unsigned char u8;
 typedef float f32;
 
-extern void func_0018C6E0(u8 *);
+extern void func_0018C6E0(void *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_0015D010(u8 *, f32 *);
 extern void func_00182C30(u8 *, int);

@@ -48,7 +48,7 @@ void func_002511D0(u8 *p) {
 
 void func_00261CE0(u8 *p) {
     extern void func_0015D010();
-    extern void func_0018C6E0();
+    extern void func_0018C6E0(void *);
     extern void func_001757E0();
     u32 v[4];
     if (*(u16*)(p + 0x20E) & 0x400) {

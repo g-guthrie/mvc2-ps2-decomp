@@ -47,7 +47,7 @@ void func_002CB2C0(Se *a) {
 }
 
 void func_00315460(u8 *p) {
-    extern void func_0018C6E0();
+    extern void func_0018C6E0(void *);
     extern void func_001757E0();
     extern void func_0015D010();
     u32 v[3];

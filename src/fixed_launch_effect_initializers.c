@@ -3,7 +3,7 @@ typedef unsigned char u8;
 typedef float PlanarOffset[2] __attribute__((aligned(16)));
 extern void func_0015D010(u8 *,float *);
 extern void func_001266A0(u8 *,int,int);
-extern void func_0018C6E0(u8 *);
+extern void func_0018C6E0(void *);
 extern int func_001757E0(u8 *, int, int);
 void func_00214B00(u8 *p) {
  PlanarOffset position;position[0]=-53.33333206176757812500f;position[1]=171.42855834960937500000f;

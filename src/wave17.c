@@ -199,7 +199,7 @@ void func_002589F0(u8 *p) {
   }
 }
 
-extern void func_0018C6E0(u8 *);
+extern void func_0018C6E0(void *);
 void func_002BEB50(u8 *p) {
   u8 *o;
   s16 t;

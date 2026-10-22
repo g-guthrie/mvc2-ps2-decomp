@@ -14,7 +14,7 @@ void func_002534D0(u8 *p) {
     V3 *bp;
     u8 *o;
     extern void func_001266A0();
-    extern void func_0018C6E0();
+    extern void func_0018C6E0(void *);
     extern void func_0015D010();
     extern void func_001757E0();
     extern void func_00178F20();

@@ -9,7 +9,7 @@ typedef signed int s32;
 typedef struct { f32 x, y, z; } V2;
 void func_001266A0(u8 *a, s32 b, s32 c);
 void func_0015D010(u8 *a, V2 *v);
-void func_0018C6E0(u8 *a);
+extern void func_0018C6E0(void *);
 void func_001757E0(u8 *a, s32 b, s32 c);
 void func_0029A560(u8 *a) {
     V2 v;

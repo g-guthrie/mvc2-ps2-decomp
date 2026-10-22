@@ -79,7 +79,7 @@ void func_002DBDB0(u8 *p) {
     extern void func_0015D010();
     extern void func_001266A0();
     extern void func_001757E0();
-    extern void func_0018C6E0();
+    extern void func_0018C6E0(void *);
     s32 a;
     if (p[0x22] & 1) {
         *(s16 *)(p + 0x140) ^= 1;
@@ -252,7 +252,7 @@ void func_00229C20(u8 *p) {
 
 void func_0028D300(u8 *p) {
     extern void func_0015D010();
-    extern void func_0018C6E0();
+    extern void func_0018C6E0(void *);
     extern void func_001757E0();
     f32 v[3];
     *(u32 *)v = 0;

@@ -39,7 +39,7 @@ void func_002E3920(u8 *p, u8 *q) {
     extern void func_001D3E00();
     extern void func_001757E0(u8 *, s32, u8);
     extern void func_0015D010();
-    extern void func_0018C6E0();
+    extern void func_0018C6E0(void *);
     u32 v[4];
     s32 r;
     s16 h;

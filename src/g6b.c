@@ -95,7 +95,7 @@ void func_001BDD10(u8 *p, void *q_context) {
 }
 extern void func_001266A0(u8 *, s32, s32);
 extern void func_0015D010(u8 *, u32 *);
-extern void func_0018C6E0(u8 *);
+extern void func_0018C6E0(void *);
 extern void func_001757E0(u8 *, s32, s32);
 void func_001F64B0(u8 *p) {
     u32 v[4];
@@ -110,7 +110,7 @@ void func_001F64B0(u8 *p) {
     func_0018C6E0(p);
     func_001757E0(p, 0xF, 6);
 }
-extern void func_0018C6E0(u8 *);
+extern void func_0018C6E0(void *);
 extern void (*D_004510F8[])(u8 *, u8 *);
 void func_0021B900(u8 *p) {
     u8 *q = *(u8 **)(p + 0x1DC);

@@ -4,7 +4,7 @@ typedef unsigned int u32;
 typedef float PlanarOffset[2] __attribute__((aligned(16)));
 extern void func_001266A0(u8 *, int, int);
 extern void func_0015D010(u8 *, const float *);
-extern void func_0018C6E0(u8 *);
+extern void func_0018C6E0(void *);
 extern int func_001757E0(u8 *, int, int);
 void func_002C4640(u8 *p)
 {

@@ -151,7 +151,7 @@ void func_003D4B70(u8 *p) {
 }
 
 extern void func_0015D010(void *p, u32 *v);
-extern void func_0018C6E0(void *p);
+extern void func_0018C6E0(void *);
 void func_0022B7D0(u8 *p) {
     u32 v[4];
     if (p[0x22] & 1) {

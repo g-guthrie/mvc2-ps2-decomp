@@ -32,7 +32,7 @@ extern u8 D_0045D920[];
 
 void func_0031A450(P *p)
 {
-    extern void func_0018C6E0(P *);
+    extern void func_0018C6E0(void *);
     extern void func_0015D010(P *, f32 *);
     extern void func_001757E0(P *, s32, s32);
     extern void func_003C4910(P *, s32, s32);

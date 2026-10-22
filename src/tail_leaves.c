@@ -262,7 +262,10 @@ void func_00179160(void *a0, void *a1) { func_00179170(a0, a1, 1); }
 
 void func_0017BFF0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00191D40(a0, a1, a2, a3); }
 
-void func_0018C6E0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0018C4B0(a0, 8, a2, a3); }
+void func_0018C6E0(void *actor) {
+    extern void func_0018C4B0(u8 *, s32);
+    func_0018C4B0((u8 *)actor, 8);
+}
 
 void func_00192D30(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; func_00192D50(p); }
 

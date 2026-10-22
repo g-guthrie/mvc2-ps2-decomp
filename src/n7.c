@@ -105,7 +105,7 @@ void func_003BA230(u8 *p, u32 a, u32 b) {
 }
 
 /* 0x0024D0C0 */
-extern void func_0018C6E0(u8 *);
+extern void func_0018C6E0(void *);
 void func_0024D0C0(u8 *p) {
     if (p[0x22] & 1) {
         p[0x1E6] ^= 1;

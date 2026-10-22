@@ -19,7 +19,7 @@ void func_001B70B0(u8 *a0) {
 void func_001FB730(u8 *p) {
     extern void func_001266A0();
     extern void func_0015D010();
-    extern void func_0018C6E0();
+    extern void func_0018C6E0(void *);
     extern void func_001757E0();
     f32 v[3];
     if ((p[0x22] & 2) == 0) {

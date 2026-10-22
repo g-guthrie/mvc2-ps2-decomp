@@ -101,7 +101,7 @@ void func_0015A580(u8 *a) {
 
 typedef struct V3 { f32 x, y, z; } V3;
 void func_001266A0(void *p, s32 a, s32 b);
-void func_0018C6E0(void *p);
+extern void func_0018C6E0(void *);
 void func_0015D010(void *p, V3 *v);
 void func_001757E0(void *p, s32 a, s32 b);
 

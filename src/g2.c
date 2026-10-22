@@ -93,7 +93,7 @@ void func_001769F0(u8 *a) {
 }
 extern void func_001266A0();
 extern void func_0015D010();
-extern void func_0018C6E0();
+extern void func_0018C6E0(void *);
 extern void func_001757E0();
 void func_001F6430(u8 *a) {
     u32 v[4];

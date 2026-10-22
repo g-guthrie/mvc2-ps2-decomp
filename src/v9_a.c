@@ -65,7 +65,7 @@ void func_001A9A40(u8 *p, u8 *q) {
 }
 
 void func_0029A4A0(u8 *p) {
-    extern void func_001266A0(); extern void func_0015D010(); extern void func_0018C6E0(); extern void func_001757E0();
+    extern void func_001266A0(); extern void func_0015D010(); extern void func_0018C6E0(void *); extern void func_001757E0();
     f32 v[4];
     p[0x1E6] ^= 1;
     *(s16*)(p+0x140) = p[0x1E6];
@@ -161,7 +161,7 @@ void func_0028A1D0(u8 *p) {
 }
 
 void func_002B7B70(u8 *p) {
-    extern void func_0015D010(); extern void func_0018C6E0(); extern void func_001757E0();
+    extern void func_0015D010(); extern void func_0018C6E0(void *); extern void func_001757E0();
     f32 v[4];
     p[0x1B4] = 10;
     if (((p[0x22] << 10) & 0x800) != 0) {

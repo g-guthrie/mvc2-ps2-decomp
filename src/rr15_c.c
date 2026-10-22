@@ -35,13 +35,15 @@ typedef struct {
     u8 b7;
 } TB;
 
-void func_00178F20(OB *a, OB *b) {
+void func_00178F20(u8 *actor, u8 *owner) {
     extern void func_001823C0(OB *);
     extern void func_001757E0(OB *, s32, s32);
     extern void func_00178EB0(OB *);
     extern s32 fptosi(f32);
     TB *t;
     s8 *k;
+    OB *b = (OB *)owner;
+    OB *a = (OB *)actor;
     k = &a->b160;
     t = (TB *)(*(s32 *)((u8 *)a + 0x188) + (((u8 *)b)[1] << 10));
     t += a->b160;

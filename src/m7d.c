@@ -55,7 +55,7 @@ void func_002B6BC0(u8 *p) {
     }
 }
 
-extern void func_0018C6E0();
+extern void func_0018C6E0(void *);
 extern void func_0015D010();
 void func_002FB4E0(u8 *p) {
     struct { u32 a, b, c; } v;

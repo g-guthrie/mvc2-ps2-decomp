@@ -12,7 +12,7 @@ s16 func_0012B8D0(s16 a, s16 b) {
 }
 
 void func_002BE9E0(u8 *p) {
-    extern void func_0018C6E0(u8 *);
+    extern void func_0018C6E0(void *);
     extern void func_0015D010(u8 *, u32 *);
     extern void func_001757E0(u8 *, s32, s32);
     u32 v[3];

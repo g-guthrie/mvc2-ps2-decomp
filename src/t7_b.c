@@ -64,7 +64,7 @@ extern void func_0011D8F8();
 extern u8 D_00458AD0[];
 extern void func_001266A0();
 extern void func_0015D010();
-extern void func_0018C6E0();
+extern void func_0018C6E0(void *);
 extern void func_0016BF10();
 
 void func_00228E20(u8 *p) {

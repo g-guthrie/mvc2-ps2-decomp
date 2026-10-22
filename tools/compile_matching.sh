@@ -20157,4 +20157,16 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/character_state_entries_30.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/character_state_entries_30.o"
 "$PYTHON" tools/verify_object.py "$BUILD/character_state_entries_30.o" private/SLUS_204.86.rom --source src/character_state_entries_30.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/state_transition_callbacks.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/state_transition_callbacks.o"
+"$PYTHON" tools/verify_object.py "$BUILD/state_transition_callbacks.o" private/SLUS_204.86.rom --source src/state_transition_callbacks.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/random_animation_callbacks_30.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/random_animation_callbacks_30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/random_animation_callbacks_30.o" private/SLUS_204.86.rom --source src/random_animation_callbacks_30.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/motion_entry_callbacks.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/motion_entry_callbacks.o"
+"$PYTHON" tools/verify_object.py "$BUILD/motion_entry_callbacks.o" private/SLUS_204.86.rom --source src/motion_entry_callbacks.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

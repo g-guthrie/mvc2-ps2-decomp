@@ -11,7 +11,7 @@ extern s16 D_004B5772[][2];
 extern s32 func_001266A0(u8 *, s32, s32);
 extern s32 func_001757E0(u8 *, s32, s32);
 extern void func_0015D010(u8 *, u32 *);
-extern void func_0018C6E0(u8 *);
+extern void func_0018C6E0(void *);
 extern void func_00388780(u8 *);
 extern s32 func_00175700(u8 *);
 extern void func_001E7F60(u8 *);

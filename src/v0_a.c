@@ -21,7 +21,7 @@ void func_00367C70(u8 *p) {
 
 void func_00269FD0(u8 *p) {
     extern void func_0015D010(u8 *, u32 *);
-    extern void func_0018C6E0(u8 *);
+    extern void func_0018C6E0(void *);
     extern void func_001266A0(u8 *, s32, s32);
     extern void func_001757E0(u8 *, s32, s32);
     extern void func_001E3210(u8 *, s32);
@@ -77,7 +77,7 @@ void func_001A2310(u8 *p) {
 typedef struct { f32 x, y, z; } V3;
 void func_00253410(u8 *p) {
     extern void func_001266A0(u8 *, s32, s32);
-    extern void func_0018C6E0(u8 *);
+    extern void func_0018C6E0(void *);
     extern void func_0015D010(u8 *, u32 *);
     extern void func_001757E0(u8 *, s32, s32);
     extern void func_00179160(void *, void *);

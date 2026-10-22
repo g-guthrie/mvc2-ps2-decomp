@@ -123,7 +123,7 @@ void func_00202D80(u8 *p) {
     }
 }
 extern void func_0015D010(u8 *, void *);
-extern void func_0018C6E0(u8 *);
+extern void func_0018C6E0(void *);
 void func_002B7C40(u8 *p) {
     u32 v[3];
     p[0x1B4] = 10;

@@ -147,7 +147,7 @@ void func_002C18F0(u8 *p) {
 }
 
 void func_002ED2C0(u8 *p) {
-    extern void func_001757E0(); extern void func_0015D010(); extern void func_0018C6E0();
+    extern void func_001757E0(); extern void func_0015D010(); extern void func_0018C6E0(void *);
     f32 v[3];
     if (p[0x22] & 1) {
         { u32 t = p[0x1E6]; p[0x1E6] = t ^ 1; }

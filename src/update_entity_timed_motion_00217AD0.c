@@ -14,7 +14,8 @@ typedef struct {
 } S8;
 extern s32 func_00175700(void *);
 extern void func_001843A0(void *);
-void func_00217AD0(S8 *p) {
+void func_00217AD0(u8 *actor) {
+    S8 *p = (S8 *)actor;
     u8 *q = (u8 *)p;
     s16 timer;
     func_00175700(p);

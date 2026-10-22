@@ -73,7 +73,7 @@ void func_00155F00(u8 *d) {
     }
 }
 
-extern void func_0018C6E0(u8 *p);
+extern void func_0018C6E0(void *);
 extern void func_0015D010(u8 *p, void *v);
 
 void func_002FB580(u8 *p) {

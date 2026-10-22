@@ -46,7 +46,7 @@ extern s32 func_001841C0(void *p);
 extern void func_00199170(void *p);
 extern void func_001266A0(void *p, s32 a, s32 b);
 extern void func_0015D010(void *p, void *v);
-extern void func_0018C6E0(void *p);
+extern void func_0018C6E0(void *);
 extern s32 func_00189310(void *p, void *a, void *b);
 extern void func_0018A990();
 extern void func_00186A60(void *p, s32 a);

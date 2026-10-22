@@ -61,7 +61,7 @@ extern void func_001830D0();
 
 extern void func_001266A0();
 
-extern void func_0018C6E0();
+extern void func_0018C6E0(void *);
 
 extern void func_0015D010();
 

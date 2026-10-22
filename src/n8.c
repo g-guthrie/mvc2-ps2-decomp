@@ -138,7 +138,7 @@ void func_00273030(u8 *p)
 }
 
 extern void func_0015D010(void *p, V3 *v);
-extern void func_0018C6E0(void *p);
+extern void func_0018C6E0(void *);
 extern void func_001266A0(void *p, s32 b, s32 c);
 extern void func_001E3210(void *p, s32 b);
 
@@ -220,7 +220,7 @@ void func_0018DFE0(u8 *p)
 
 extern void func_001266A0(void *p, s32 b, s32 c);
 extern void func_0015D010(void *p, V3 *v);
-extern void func_0018C6E0(void *p);
+extern void func_0018C6E0(void *);
 
 void func_002C46D0(u8 *p)
 {

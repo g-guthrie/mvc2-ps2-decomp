@@ -126,7 +126,7 @@ void func_002D3EE0(u8 *p)
 void func_00294650(u8 *p)
 {
     extern void func_0015D010();
-    extern void func_0018C6E0();
+    extern void func_0018C6E0(void *);
     extern void func_001757E0();
     f32 v[4];
     v[0] = 0;

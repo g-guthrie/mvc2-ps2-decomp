@@ -89,7 +89,7 @@ void func_0026C5E0(O_0026C5E0 *p) {
     }
 }
 
-extern void func_0018C6E0( void *);
+extern void func_0018C6E0(void *);
 extern void func_0015D010( void *, void *);
 void func_002FB620(u8 *p) {
     f32 v[3];

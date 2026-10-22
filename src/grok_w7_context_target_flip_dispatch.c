@@ -3,7 +3,7 @@ typedef signed char s8;
 typedef signed short s16;
 typedef void (*ActorCallback)(u8 *);
 
-extern void func_0018C6E0(u8 *);
+extern void func_0018C6E0(void *);
 extern const ActorCallback D_0045CF70[];
 
 void func_0030BCA0(u8 *p)

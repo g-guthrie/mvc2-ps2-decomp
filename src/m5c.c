@@ -69,7 +69,7 @@ void func_001B71C0(u8 *p) {
 }
 
 extern void func_0015D010(void *p, f32 *v);
-extern void func_0018C6E0(void *p);
+extern void func_0018C6E0(void *);
 void func_00214C20(u8 *p) {
     f32 v[4];
     v[0] = -26.66666603f;

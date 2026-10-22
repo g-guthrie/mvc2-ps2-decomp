@@ -142,7 +142,7 @@ void func_00198170(u8 *p, int a) {
 }
 
 extern void func_0015D010(u8 *, u32 *);
-extern void func_0018C6E0(u8 *);
+extern void func_0018C6E0(void *);
 void func_002FF620(u8 *p) {
     u32 v[3];
     p[0x1B4] = 10;

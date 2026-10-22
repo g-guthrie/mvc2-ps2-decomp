@@ -272,7 +272,7 @@ void func_002CDA00(u8 *p) {
 extern void func_0029FA00();
 extern s32 func_001864a0();
 extern void func_001865B0();
-extern void func_0018C6E0();
+extern void func_0018C6E0(void *);
 extern void func_0015D010();
 extern void func_001266A0();
 

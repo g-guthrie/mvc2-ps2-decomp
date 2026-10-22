@@ -48,7 +48,7 @@ void func_001AB840(u8 *a, u8 *b) {
     func_001AB8B0(a, b);
 }
 
-void func_0018C6E0(u8 *a);
+extern void func_0018C6E0(void *);
 void func_0026EA00(u8 *a) {
     a[0x1B4] = 10;
     if (!((a[0x22] << 10) & 0x800)) {

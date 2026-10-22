@@ -2,7 +2,7 @@
 typedef unsigned char u8;
 extern int func_001757E0(u8 *, int, int);
 extern void func_0015D010(u8 *,float *);
-extern void func_0018C6E0(u8 *);
+extern void func_0018C6E0(void *);
 void func_00247AD0(u8 *p) {
  float position[3];
  if (p[0x22]&1) {p[0x1e6]^=1; *(short *)(p+0x140)=p[0x1e6];}

@@ -26,7 +26,7 @@ void func_002D7440(u8 *p) {
 
 extern void func_001266A0(u8 *, int, int);
 extern void func_0015D010(u8 *, f32 *);
-extern void func_0018C6E0(u8 *);
+extern void func_0018C6E0(void *);
 
 void func_001FB6A0(u8 *p) {
     f32 v[4];

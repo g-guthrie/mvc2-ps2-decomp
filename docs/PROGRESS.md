@@ -5144,3 +5144,29 @@ relink/packing pass. CODE is 2,669,080 / 3,293,696 bytes (81.0360%), with
 ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,673,376 CODE bytes.
+
+## State transitions and motion entry checkpoint
+
+Recovered 24 complete callbacks, adding 4,456 exact CODE bytes. The batch
+includes paired actor positioning, timed motion transitions, target
+selection, landing and collision handling, randomized animation entry,
+and motion initialization. The random pick table view is bounded by the
+native four-bit selector. Strict/unordered floating comparisons and signed
+short timer behavior remain explicit. MWCCPS2 3.0.3 and 3.0-011126 verify
+each complete body with its actual production profile.
+
+The animation wrapper `func_0018C6E0` takes one actor pointer and supplies
+mode 8 to `func_0018C4B0`. Active declarations now agree, and calls in
+`func_002CB820` and `func_002BE800` explicitly supply their actor. The
+inherited-position helper and two typed motion views retain their local
+layouts behind consistent public byte-pointer interfaces. All 1,565
+previously credited bodies in affected files remain exact.
+
+Catalog entries now name the real functions; 104 alignment bytes remain
+uncredited gaps. No DATA credit is added. Clean splitting, catalog/build
+checks, all 126 tests, and full hybrid relink/packing pass. CODE is
+2,673,536 / 3,293,696 bytes (81.1713%), with 18,776 matched functions.
+DATA remains 468,869 / 648,064 bytes. Retail ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The fixed CODE checkpoint of 2,673,376 bytes is reached; the next fixed
+full-percentage checkpoint is 2,706,313 bytes.

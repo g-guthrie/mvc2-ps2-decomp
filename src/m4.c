@@ -248,7 +248,7 @@ void func_002E7740(u8 *p) {
 
 extern void func_001757E0(void *p, s32 a, s32 b);
 extern void func_0015D010(void *p, u32 *v);
-extern void func_0018C6E0(void *p);
+extern void func_0018C6E0(void *);
 void func_0023EA60(u8 *p) {
     u32 v[3];
     func_001757E0(p, 0xF, 1);

@@ -164,7 +164,7 @@ void func_001C9960(u8 *p) {
 }
 
 void func_00272D10(u8 *p) {
-    extern void func_0018C6E0();
+    extern void func_0018C6E0(void *);
     extern void func_0015D010();
     extern void func_001757E0();
     extern void func_001B87E0();

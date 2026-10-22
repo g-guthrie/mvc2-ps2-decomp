@@ -11,7 +11,7 @@ extern void func_001757E0(void *p, s32 a, s32 b);
 extern void func_001E3210(void *p, s32 a);
 extern void func_001E3710(void *p, s32 a);
 extern void func_001266A0(s32 a, s32 b, s32 c);
-extern void func_0018C6E0(void *p);
+extern void func_0018C6E0(void *);
 
 void func_002024A0(u8 *p) {
     f32 v[3];
