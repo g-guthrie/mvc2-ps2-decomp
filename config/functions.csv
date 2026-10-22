@@ -4168,7 +4168,7 @@ func_001BC720,0x001BC720,0x74,0x001BC794,code,spimdisasm-explicit-size-before-fi
 func_001BC7A0,0x001BC7A0,0x20,0x001BC7C0,code,matching-c-head-split
 func_001BC7C0,0x001BC7C0,0x194,0x001BC954,code,verified-complete-c-function
 func_001BC960,0x001BC960,0x24,0x001BC984,code,matching-c-head-split
-residual_001BC984,0x001BC984,0x134,0x001BCAB8,assembly_residual,verified-boundary-after-matching-head
+func_001BC990,0x001BC990,0x128,0x001BCAB8,code,callback-table-entry-and-whole-function-compiler-proof
 func_001BCAC0,0x001BCAC0,0x94,0x001BCB54,code,spimdisasm-explicit-size-before-first-data
 func_001BCB60,0x001BCB60,0x17C,0x001BCCDC,code,spimdisasm-explicit-size-before-first-data
 func_001BCCE0,0x001BCCE0,0x88,0x001BCD68,code,spimdisasm-explicit-size-before-first-data
@@ -4195,7 +4195,7 @@ func_001BD950,0x001BD950,0x78,0x001BD9C8,code,verified-complete-c-function
 func_001BD9D0,0x001BD9D0,0x38,0x001BDA08,code,spimdisasm-explicit-size-before-first-data
 func_001BDA10,0x001BDA10,0x44,0x001BDA54,code,spimdisasm-explicit-size-before-first-data
 func_001BDA60,0x001BDA60,0x1C,0x001BDA7C,code,matching-c-head-split
-residual_001BDA7C,0x001BDA7C,0xF4,0x001BDB70,assembly_residual,verified-boundary-after-matching-head
+func_001BDA80,0x001BDA80,0xF0,0x001BDB70,code,callback-table-entry-and-whole-function-compiler-proof
 func_001BDB70,0x001BDB70,0x44,0x001BDBB4,code,spimdisasm-explicit-size-before-first-data
 func_001BDBC0,0x001BDBC0,0x54,0x001BDC14,code,spimdisasm-explicit-size-before-first-data
 func_001BDC20,0x001BDC20,0x1C,0x001BDC3C,code,matching-c-head-split
@@ -4203,7 +4203,7 @@ func_001BDC40,0x001BDC40,0x78,0x001BDCB8,code,verified-complete-c-function
 func_001BDCC0,0x001BDCC0,0x44,0x001BDD04,code,spimdisasm-explicit-size-before-first-data
 func_001BDD10,0x001BDD10,0x78,0x001BDD88,code,spimdisasm-explicit-size-before-first-data
 func_001BDD90,0x001BDD90,0x1C,0x001BDDAC,code,matching-c-head-split
-residual_001BDDAC,0x001BDDAC,0x28,0x001BDDD4,assembly_residual,verified-boundary-after-matching-head
+func_001BDDB0,0x001BDDB0,0x24,0x001BDDD4,code,callback-table-entry-and-whole-function-compiler-proof
 func_001BDDE0,0x001BDDE0,0x44,0x001BDE24,code,spimdisasm-explicit-size-before-first-data
 func_001BDE30,0x001BDE30,0x160,0x001BDF90,code,spimdisasm-explicit-size-before-first-data
 func_001BDF90,0x001BDF90,0x14,0x001BDFA4,code,spimdisasm-explicit-size-before-first-data

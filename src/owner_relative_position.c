@@ -2,7 +2,7 @@ typedef unsigned char u8;
 typedef signed char s8;
 typedef signed short s16;
 typedef struct {s16 x,y;s8 effect;u8 animation;} AnimationStateRecord;
-extern AnimationStateRecord D_0044C0E0[34];
+extern AnimationStateRecord D_0044C0E0[22];
 extern u8 D_004D18A6[];
 extern int func_00175670(u8 *);
 void func_001BD7D0(u8 *p,void *owner_context)

@@ -9,7 +9,7 @@ typedef float f32;
 extern u8 D_0044C350[], D_0044C351[];
 
 void func_001BE2A0(u8 *p) {
-    extern u8 *func_001BC660(u8 *, s32);
+    extern void *func_001BC660(void *, int);
     u8 *q;
     u8 *o;
     s16 h;

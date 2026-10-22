@@ -231,7 +231,7 @@ void func_002774C0(u8 *p)
 void func_001BE470(u8 *p, u8 *q, s32 n)
 {
     extern s32 func_00174170();
-    extern s32 func_001BC720(u8 *, u8 *, u8, s32);
+    extern void *func_001BC720(void *, void *, u8, int);
     u8 a, m;
     if ((p[0x23] & 3) == 3 || (func_00174170() & 3) != 0) {
         func_001BC720(q, p, 1, n);

@@ -12,9 +12,9 @@ for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
 
 | | Matched | Total | |
 | --- | ---: | ---: | ---: |
-| Code | 2,662,408 bytes | 3,293,696 bytes | **80.83%** |
+| Code | 2,662,980 bytes | 3,293,696 bytes | **80.85%** |
 | Initialized data | 468,869 bytes | 648,064 bytes | **72.35%** |
-| Functions | 18,719 | 20,344 | |
+| Functions | 18,722 | 20,344 | |
 
 Every matched function is C compiled with a period toolchain (Metrowerks
 MWCC 2.4/3.0/3.0.3, SN GCC 2.95.2, EE GCC 2.96, or Sony EE GCC 2.9) and
@@ -47,7 +47,7 @@ The generated graphic above shows the current catalog's matching code coverage.
 function counts and reconstructed-data coverage. Whole-object compiler
 verification and full-image linkage are separate private build checks.
 Assembly placeholders never count as decompiled source. The current inventory
-contains **20,343 function spans** after boundary corrections and splitting
+contains **20,344 cataloged text spans** after boundary corrections and splitting
 oversized dispatcher entries. Retained assembly residuals, text gaps and
 initialized data remain separately visible in the progress report.
 

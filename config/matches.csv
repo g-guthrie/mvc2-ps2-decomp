@@ -18782,3 +18782,6 @@ func_0018A6C0,0x0018A6C0,0xDC,src/air_action_eligibility.c,complete
 func_001A4A80,0x001A4A80,0xBC,src/linked_actor_detach.c,complete
 func_0013CC50,0x0013CC50,0x18C,src/activate_mask_differences.c,complete
 func_001BD7D0,0x001BD7D0,0x15C,src/owner_relative_position.c,complete
+func_001BC990,0x001BC990,0x128,src/owner_follow_callbacks.c,complete
+func_001BDA80,0x001BDA80,0xF0,src/owner_follow_callbacks.c,complete
+func_001BDDB0,0x001BDDB0,0x24,src/owner_follow_callbacks.c,complete

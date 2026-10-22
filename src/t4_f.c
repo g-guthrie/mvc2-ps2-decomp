@@ -53,7 +53,7 @@ s32 func_00267E40(u8 *p) {
     return 1;
 }
 
-extern void func_001BC660(void *p, s32 a);
+extern void *func_001BC660(void *, int);
 
 void func_0027A0A0(u8 *p) {
     u32 t;

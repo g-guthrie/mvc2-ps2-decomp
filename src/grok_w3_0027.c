@@ -14,10 +14,10 @@ extern void func_001BE890(u8 *, s32);
 extern void func_001BA5D0(u8 *, s32);
 extern void func_00379420(u8 *);
 extern void func_001B8FB0(u8 *);
-extern void func_001BC6C0(u8 *, s32);
+extern void func_001BC6C0(void *, int);
 extern void func_001E3270(u8 *, s32, f32);
 extern s32 func_003D92F0(u8 *);
-extern void func_001BC660(u8 *, s32);
+extern void *func_001BC660(void *, int);
 extern void func_00378CD0(u8 *, s32);
 
 typedef void (*DispatchFn)(u8 *);

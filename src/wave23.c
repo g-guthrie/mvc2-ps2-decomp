@@ -178,7 +178,7 @@ void func_001DBD60(S_001DBD60 *p) {
 
 typedef struct { u8 p0[6]; u8 c6; u8 p1[0x14A]; s8 f151; u8 p2[0x1EA]; u8 c33C; } S_00279CF0;
 extern void func_0037F080(S_00279CF0 *, s32, f32, f32);
-extern void func_001BC660(S_00279CF0 *, s32);
+extern void *func_001BC660(void *, int);
 void func_00279CF0(S_00279CF0 *a) {
     a->c33C = 5;
     func_00175700(a);

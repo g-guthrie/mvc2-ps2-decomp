@@ -145,7 +145,7 @@ void func_00238F40(u8 *a0) {
 extern void func_001843A0(void *);
 extern void func_001843A0(void *);
 extern s32 func_003D92F0();
-extern void func_001BC660(void *, int);
+extern void *func_001BC660(void *, int);
 void func_00279170(u8 *a0) {
     if (func_003D92F0(a0)) {
         func_001843A0(a0);

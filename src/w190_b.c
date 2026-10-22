@@ -11,7 +11,7 @@ typedef float f32;
 typedef struct { u8 pad[0x7C]; s16 f7c[1]; } G2794;
 extern G2794 *D_004C2794;
 extern s32 func_00175700(u8 *);
-extern void func_001BC660(u8 *, s32);
+extern void *func_001BC660(void *, int);
 
 void func_0027A570(u8 *p) {
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);

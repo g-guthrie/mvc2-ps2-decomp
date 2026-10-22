@@ -20113,4 +20113,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_relative_position.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_relative_position.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_relative_position.o" private/SLUS_204.86.rom --source src/owner_relative_position.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_follow_callbacks.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_follow_callbacks.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_follow_callbacks.o" private/SLUS_204.86.rom --source src/owner_follow_callbacks.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

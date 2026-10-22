@@ -4982,3 +4982,47 @@ CODE is 2,662,408 / 3,293,696 bytes (80.8334%), 18,719 matched functions.
 DATA remains 468,869 / 648,064 bytes. The packed ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,673,376 CODE bytes.
+
+## 2026-10-22: three callbacks recovered from residual spans
+
+Recovered 572 bytes in three complete functions with MWCCPS2 3.0.3,
+-O3,p and a zero small-data threshold:
+
+- `func_001BC990` (296 bytes) checks the owner's action/animation state,
+  copies facing and follows the signed position record before initializing
+  its animation. Its only native dispatch selector is mode 0.
+- `func_001BDA80` (240 bytes) initializes its phase and opacity, follows an
+  owner-relative coordinate pair, then tail-calls the existing animation
+  completion handler with the genuine owner argument.
+- `func_001BDDB0` (36 bytes) copies the owner's parent ground height, sets
+  vertical scale to 1.5 and tail-calls its existing completion handler.
+
+Each entry was already named by a native callback table but hidden inside
+an inventory assembly residual following a matched dispatcher. The
+inventory now records the actual entries and complete extents. Their 20
+preceding alignment bytes move to the gap catalog and remain uncredited.
+The clean split succeeds and the conservative CODE denominator is unchanged.
+
+The code views now bound the state records to 22 six-byte entries and the
+coordinate view at 0044C170 to fourteen signed pairs. The latter selector
+is zero in freshly cleared objects or comes from the native mode/variant
+pairs at 0044C350. The parent producer explicitly creates modes 0..25;
+nonzero child modes 15/20 select coordinate indices 0..13. The separate
+custom constructor is called with modes 1/7/8 and does not enter this
+coordinate path. The larger existing DATA owner's single-record-array
+spelling still needs layout refinement; this CODE batch changes no DATA
+ownership or credit.
+
+`func_001BC660` and `func_001BC720` now explicitly return their allocated
+object pointer or null, matching the callers that use those results.
+Their declarations are consistent across active callers; the custom
+constructor retains its genuine byte-sized mode parameter.
+`func_001BC6C0` keeps its void return and consistent input declarations.
+All 127 previously credited bodies in the affected files remain exact.
+
+Clean splitting, catalog/build checks, all 126 tests and full hybrid
+relink/packing pass. CODE is 2,662,980 / 3,293,696 bytes (80.8508%),
+18,722 matched functions. DATA remains 468,869 / 648,064 bytes.
+The retail ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,673,376 CODE bytes.

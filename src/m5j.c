@@ -89,7 +89,7 @@ void func_002EC4C0(f32 *p) {
     }
 }
 
-extern void func_001BC660(void *p, s32 a);
+extern void *func_001BC660(void *, int);
 extern void func_00186CE0(void *p, s32 a);
 extern u8 D_004F1F45;
 extern u8 D_004F1F46;

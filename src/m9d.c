@@ -88,15 +88,16 @@ void func_001FA090(u8 *p) {
 
 extern u32 *func_003DA750();
 extern void func_001BC7A0(u8 *);
-void func_001BC720(u32 a, u32 b, u8 c, u8 d) {
+void *func_001BC720(void *a, void *b, u8 c, int d) {
     u32 *r = func_003DA750(0, 3, 0);
     if (r != 0) {
         r[4] = (u32)func_001BC7A0;
-        r[6] = a;
-        r[5] = b;
+        r[6] = (u32)a;
+        r[5] = (u32)b;
         *(u8 *)(r + 8) = c;
         *(u8 *)((u8 *)r + 0x23) = d;
     }
+    return r;
 }
 
 extern s32 func_00175700();
