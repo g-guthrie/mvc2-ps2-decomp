@@ -17033,4 +17033,31 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/h11_d.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/h11_d.o"
 "$PYTHON" tools/verify_object.py "$BUILD/h11_d.o" private/SLUS_204.86.rom --source src/h11_d.c
 
+"$WIBO" "$SNCPP" -P src/hk10_b.c "$BUILD/hk10_b.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 --extra-flags="" "$BUILD/hk10_b.i" "$BUILD/hk10_b.s"
+"$WIBO" "$SNAS" -G8 -o "$BUILD/hk10_b.o" "$BUILD/hk10_b.s"
+"$PYTHON" tools/verify_object.py "$BUILD/hk10_b.o" private/SLUS_204.86.rom --source src/hk10_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/hk9_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/hk9_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hk9_a.o" private/SLUS_204.86.rom --source src/hk9_a.c
+"$WIBO" "$SNCPP" -P src/hk9_d.c "$BUILD/hk9_d.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/hk9_d.i" "$BUILD/hk9_d.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/hk9_d.o" "$BUILD/hk9_d.s"
+"$PYTHON" tools/verify_object.py "$BUILD/hk9_d.o" private/SLUS_204.86.rom --source src/hk9_d.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/hk5_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/hk5_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hk5_b.o" private/SLUS_204.86.rom --source src/hk5_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/hk12_b.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/hk12_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hk12_b.o" private/SLUS_204.86.rom --source src/hk12_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/hk11_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/hk11_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hk11_a.o" private/SLUS_204.86.rom --source src/hk11_a.c
+"$WIBO" "$SNCPP" -P src/hk11_b.c "$BUILD/hk11_b.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/hk11_b.i" "$BUILD/hk11_b.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/hk11_b.o" "$BUILD/hk11_b.s"
+"$PYTHON" tools/verify_object.py "$BUILD/hk11_b.o" private/SLUS_204.86.rom --source src/hk11_b.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
