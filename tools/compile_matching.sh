@@ -18372,4 +18372,57 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/fb22_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb22_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/fb22_b.o" private/SLUS_204.86.rom --source src/fb22_b.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb37_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb37_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb37_a.o" private/SLUS_204.86.rom --source src/fb37_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb37_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb37_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb37_b.o" private/SLUS_204.86.rom --source src/fb37_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb37_d.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb37_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb37_d.o" private/SLUS_204.86.rom --source src/fb37_d.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb37_g.c -c -lang c -i src -O3,p -Op -sdatathreshold 8 -o "$BUILD/fb37_g.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb37_g.o" private/SLUS_204.86.rom --source src/fb37_g.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb35_d.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb35_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb35_d.o" private/SLUS_204.86.rom --source src/fb35_d.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb35_e.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/fb35_e.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb35_e.o" private/SLUS_204.86.rom --source src/fb35_e.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb39_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb39_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb39_b.o" private/SLUS_204.86.rom --source src/fb39_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb39_d.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/fb39_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb39_d.o" private/SLUS_204.86.rom --source src/fb39_d.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb39_e.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/fb39_e.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb39_e.o" private/SLUS_204.86.rom --source src/fb39_e.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb39_g.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb39_g.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb39_g.o" private/SLUS_204.86.rom --source src/fb39_g.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb38_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb38_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb38_b.o" private/SLUS_204.86.rom --source src/fb38_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb38_c.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/fb38_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb38_c.o" private/SLUS_204.86.rom --source src/fb38_c.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb38_d.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb38_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb38_d.o" private/SLUS_204.86.rom --source src/fb38_d.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb38_f.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb38_f.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb38_f.o" private/SLUS_204.86.rom --source src/fb38_f.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb38_g.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb38_g.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb38_g.o" private/SLUS_204.86.rom --source src/fb38_g.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb40_c.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/fb40_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb40_c.o" private/SLUS_204.86.rom --source src/fb40_c.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
