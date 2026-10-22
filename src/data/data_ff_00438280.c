@@ -1,11 +1,3 @@
-typedef unsigned int u32;
-#define F 0xFFFFFFFFu
-#define F8 F,F,F,F,F,F,F,F
-u32 data_ff_00438280[28] = {
-    F8,
-    F8,
-    F8,
-    F,F,F,F
-};
-#undef F8
-#undef F
+/* Slot ids; -1 is the empty sentinel (readers test bgez / compare against -1). */
+typedef int s32;
+s32 data_ff_00438280[28] = { -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1 };

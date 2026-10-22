@@ -1,11 +1,13 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_004595D0[8] = {
-    (unsigned int)0x001D0000,
-    (unsigned int)0x00130100,
-    (unsigned int)0x00120100,
-    (unsigned int)0x00120200,
-    (unsigned int)0x00120200,
-    (unsigned int)0x00120300,
-    (unsigned int)0x00110300,
-    (unsigned int)0x00110300,
+typedef unsigned char u8;
+/* Part of the 32x4 byte table D_004595B0 (copied to the stack and indexed
+   [actor+0x22][actor+7 - 1] by func_002BCF40). */
+const u8 jtbl_004595D0[8][4] = {
+    { 0x00, 0x00, 0x1D, 0x00 },
+    { 0x00, 0x01, 0x13, 0x00 },
+    { 0x00, 0x01, 0x12, 0x00 },
+    { 0x00, 0x02, 0x12, 0x00 },
+    { 0x00, 0x02, 0x12, 0x00 },
+    { 0x00, 0x03, 0x12, 0x00 },
+    { 0x00, 0x03, 0x11, 0x00 },
+    { 0x00, 0x03, 0x11, 0x00 }
 };

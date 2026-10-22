@@ -526,3 +526,14 @@ rb102,18,sonnet,medium,code-retry5,3,1,792,,,role merges then decl hill-climb; 2
 rc1,18,sonnet,medium,code-retry6,3,2,1648,,,static neighbour prefix; EE stmt-order + reg pin
 rb85r,18,sonnet,medium,code-retry5-resume,3,2,1360,362809,35,reassign param as loop pointer
 rc6,18,sonnet,medium,code-retry6,3,0,0,226765,10.6,
+rc4,18,sonnet,medium,code-retry6,3,0,0,247740,16.9,
+rc0,18,sonnet,medium,code-retry6,3,1,808,,,rt20 static prefix + k-trick
+rc3,18,sonnet,medium,code-retry6,3,0,0,286104,18.1,
+dd1,18,sonnet,medium,data,60,0,0,,,all 60 already typed fills or unread zero/pad blocks
+rc8,18,sonnet,medium,code-retry6,3,0,0,230673,13.6,
+dd0,18,sonnet,medium,data,60,5,128,75308,1.7,10 big tables 81KB have no readers
+rb92r,18,sonnet,medium,code-retry5-resume,3,1,720,226985,45.4,s8 local with += coalesces into saved reg
+rc7,18,sonnet,medium,code-retry6,3,0,0,269682,20.0,
+de30,18,sonnet,medium,data,40,24,924,124217,4.9,record structs from readers
+de31,18,sonnet,medium,data,40,15,1377,137464,5.9,
+rc2,18,sonnet,medium,code-retry6,3,2,1700,273614,27.4,3.0 + jt alias; padded struct stops hoist

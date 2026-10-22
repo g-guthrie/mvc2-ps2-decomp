@@ -1,4 +1,4 @@
-typedef unsigned int u32;
-#define V 0x433AAAAAu
-u32 data_u32_00459990[18] = { V, V, V, V, V, V, V, V, V, V, V, V, V, V, V, V, V, V };
-#undef V
+typedef float f32;
+/* f32 constant table; func_002C075C loads the first entry with lwc1. */
+f32 data_u32_00459990[18] = { 186.666656f, 186.666656f, 186.666656f, 186.666656f, 186.666656f, 186.666656f, 186.666656f, 186.666656f, 186.666656f, 186.666656f, 186.666656f, 186.666656f, 186.666656f, 186.666656f, 186.666656f, 186.666656f, 186.666656f, 186.666656f };
+typedef char data_u32_00459990_size_check[(sizeof(data_u32_00459990) == 72) ? 1 : -1];

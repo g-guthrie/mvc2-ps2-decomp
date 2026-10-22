@@ -20051,4 +20051,22 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/rb85_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/rb85_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/rb85_a.o" private/SLUS_204.86.rom --source src/rb85_a.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rc0_b.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "$BUILD/rc0_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rc0_b.o" private/SLUS_204.86.rom --source src/rc0_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rb92_c.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/rb92_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb92_c.o" private/SLUS_204.86.rom --source src/rb92_c.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/rc2_b.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/rc2_b.o"
+"${OBJCOPY:-mipsel-linux-gnu-objcopy}" \
+    --redefine-sym @64=jtbl_004B7240 \
+    "$BUILD/rc2_b.o" "$BUILD/rc2_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rc2_b.o" private/SLUS_204.86.rom --source src/rc2_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rc2_c.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/rc2_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rc2_c.o" private/SLUS_204.86.rom --source src/rc2_c.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

@@ -1,3 +1,5 @@
-/* Opaque descriptor residual through the independently referenced table at 00458F50. */
-typedef unsigned char u8;
-u8 data_raw_00458F40[0x10] = { 0x00u, 0x02u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u };
+typedef unsigned int u32;
+/* Third mask word and zero pad of the 32-byte (kind 4) transition record at 00458F30. */
+typedef struct { u32 w2; u32 pad[3]; } TransRecTail;
+typedef char TransRecTail_size_check[(sizeof(TransRecTail) == 16) ? 1 : -1];
+TransRecTail data_raw_00458F40 = { 0x00000200u, {0,0,0} };
