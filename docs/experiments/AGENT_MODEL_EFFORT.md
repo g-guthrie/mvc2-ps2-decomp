@@ -24,3 +24,9 @@ times Haiku tokens.
   reconstructed 42%, Haiku 4-28%.
 - **Haiku low** is not a free substitute: it attempts fewer targets and
   recovers roughly half as much as medium on the same pools.
+
+## Decision: Haiku dropped
+
+Haiku retry waves at low, high, xhigh and max matched 0–3 of 15 targets per
+batch; Sonnet low matched 3–11. Haiku was retired from the fleet. The next
+phase compares Sonnet low against Sonnet medium on the same retry pool.

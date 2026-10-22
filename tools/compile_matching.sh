@@ -17344,4 +17344,19 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/hy11_c.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/hy11_c.o"
 "$PYTHON" tools/verify_object.py "$BUILD/hy11_c.o" private/SLUS_204.86.rom --source src/hy11_c.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/hz2_a.c -c -lang c -i src -O4,p -sdatathreshold 0 -o "$BUILD/hz2_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hz2_a.o" private/SLUS_204.86.rom --source src/hz2_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/hy7_f.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/hy7_f.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hy7_f.o" private/SLUS_204.86.rom --source src/hy7_f.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/hy7_j.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/hy7_j.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hy7_j.o" private/SLUS_204.86.rom --source src/hy7_j.c
+"$WIBO" "$SNCPP" -P src/hy7_l.c "$BUILD/hy7_l.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/hy7_l.i" "$BUILD/hy7_l.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/hy7_l.o" "$BUILD/hy7_l.s"
+"$PYTHON" tools/verify_object.py "$BUILD/hy7_l.o" private/SLUS_204.86.rom --source src/hy7_l.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
