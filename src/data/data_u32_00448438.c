@@ -1,4 +1,7 @@
-typedef unsigned int u32;
-u32 data_u32_00448438[4] = {
-    0xFFB0FFB0u, 0xFFB0FFB0u, 0xFFB0FFB0u, 0xFFB0FFB0u, 
+typedef short s16;
+s16 data_u32_00448438[4][2] = {
+    { -80, -80 },
+    { -80, -80 },
+    { -80, -80 },
+    { -80, -80 }
 };

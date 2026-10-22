@@ -1,2 +1,3 @@
-typedef unsigned char u8;
-u8 data_raw_004ACEA0[8] = { 0x00u, 0x00u, 0x00u, 0x20u, 0x01u, 0x00u, 0x00u, 0x00u };
+/* Row offset +0x10/+0x14 of the 24-byte rows at D_004ACDD0: two words copied verbatim by func_00127990 (lwc1/swc1 bit copies). */
+typedef unsigned int u32;
+u32 data_raw_004ACEA0[2] = { 0x20000000u, 0x00000001u };

@@ -1,8 +1,3 @@
-typedef unsigned int u32;
-#define F 0xFFFFFFFFu
-#define F8 F,F,F,F,F,F,F,F
-u32 data_ff_004BECD0[4] = {
-    F,F,F,F,
-};
-#undef F8
-#undef F
+typedef short s16;
+/* Slice of the s16 lookup table at 0x004BECD0 (read with lh at index*2 in the 0x004125xx-0x00412Bxx renderer; -1 = no entry). */
+s16 data_ff_004BECD0[8] = { -1, -1, -1, -1, -1, -1, -1, -1 };

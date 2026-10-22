@@ -1,2 +1,4 @@
-typedef unsigned char u8;
-const u8 data_raw_004AC248[8] = { 0x9B, 0x75, 0x00, 0x88, 0x3C, 0xE4, 0x37, 0x7E };
+/* libm constant just below 1.0e300, loaded as a 64-bit double by the math
+   routine at 0x001161A4. */
+typedef double f64;
+const f64 data_raw_004AC248 = 9.999999999999999e+299;

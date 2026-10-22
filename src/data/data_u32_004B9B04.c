@@ -1,4 +1,2 @@
-typedef unsigned int u32;
-u32 data_u32_004B9B04[3] = {
-    0x20202020u, 0x20202020u, 0x20202020u, 
-};
+/* Tail of a space-padded character name string (name pointer table near 0x004774xx). */
+char data_u32_004B9B04[12] = "            ";

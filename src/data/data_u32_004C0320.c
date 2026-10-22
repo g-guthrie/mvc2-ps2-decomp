@@ -1,4 +1,5 @@
-typedef unsigned int u32;
-u32 data_u32_004C0320[1] = {
-    0xFFFFFFFFu
+typedef signed char s8;
+/* s8 records of 4; actor +0x408 points at one (read with lb 0..3 in func_00184720) */
+s8 data_u32_004C0320[1][4] = {
+    { -1, -1, -1, -1 }
 };

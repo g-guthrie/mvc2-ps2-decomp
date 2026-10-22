@@ -549,3 +549,12 @@ de37,18,sonnet,medium,data,40,16,768,129110,4.4,
 df3,18,sonnet,medium,data,1,0,0,60046,1.5,cmd table
 rc12,18,sonnet,medium,code-retry6,3,0,0,250877,17.5,
 rb103,18,sonnet,medium,code-retry5,3,0,0,284641,51.8,
+rc10,18,sonnet,medium,code-retry6,3,1,956,320173,20,merged early exit; u32 val
+dg7,18,sonnet,medium,data,40,40,1052,,,all typed from reader loads
+dg2,18,sonnet,medium,data,40,37,620,,,3 overlay code blobs left
+dg3,18,sonnet,medium,data,40,19,245,,,
+dg0,18,sonnet,medium,data,40,36,572,,,
+dg10,18,sonnet,medium,data,40,11,140,,,3 ptrs symbolized; 28 pad bytes
+dg10,18,sonnet,medium,data,40,11,140,115353,3.1,lost: worktree reset before integration
+dg1,18,sonnet,medium,data,40,32,645,169959,7.2,
+dg9,18,sonnet,medium,data,40,37,1876,173228,7.8,4 code ptrs symbolized

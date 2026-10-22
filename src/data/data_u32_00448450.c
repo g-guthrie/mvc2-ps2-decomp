@@ -1,4 +1,9 @@
-typedef unsigned int u32;
-#define V 0xFFB0FFB0u
-u32 data_u32_00448450[6] = { V, V, V, V, V, V };
-#undef V
+typedef short s16;
+s16 data_u32_00448450[6][2] = {
+    { -80, -80 },
+    { -80, -80 },
+    { -80, -80 },
+    { -80, -80 },
+    { -80, -80 },
+    { -80, -80 }
+};

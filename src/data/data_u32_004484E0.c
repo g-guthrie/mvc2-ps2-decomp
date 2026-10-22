@@ -1,4 +1,13 @@
-typedef unsigned int u32;
-#define V 0x0008FFC0u
-u32 data_u32_004484E0[9] = { V, V, V, V, V, V, V, V, V };
-#undef V
+typedef short s16;
+/* read as s16 [char][3][2] via D_004484B4 (func_001821D0) */
+s16 data_u32_004484E0[9][2] = {
+    { -64, 8 },
+    { -64, 8 },
+    { -64, 8 },
+    { -64, 8 },
+    { -64, 8 },
+    { -64, 8 },
+    { -64, 8 },
+    { -64, 8 },
+    { -64, 8 }
+};
