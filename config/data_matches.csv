@@ -190,7 +190,7 @@ data_u32_0043E054,0x0043E054,0xC,src/data/data_u32_0043E054.c,complete,reconstru
 data_f32_one_0043E060,0x0043E060,0x8,src/data/data_f32_one_0043E060.c,complete,placeholder
 data_u32_0043E068,0x0043E068,0x4,src/data/data_u32_0043E068.c,complete,reconstructed
 data_f32_one_0043E06C,0x0043E06C,0x8,src/data/data_f32_one_0043E06C.c,complete,placeholder
-data_raw_0043E074,0x0043E074,0xAC,src/data/data_raw_0043E074.c,complete,placeholder
+data_raw_0043E074,0x0043E074,0xAC,src/data/data_raw_0043E074.c,complete,reconstructed
 data_f32_0043E120,0x0043E120,0x10,src/data/data_f32_0043E120.c,complete,reconstructed
 data_f32_one_0043E130,0x0043E130,0x10,src/data/data_f32_one_0043E130.c,complete,reconstructed
 data_u8_0043E140,0x0043E140,0x4,src/data/data_u8_0043E140.c,complete,placeholder
@@ -855,7 +855,7 @@ data_raw_00442950,0x00442950,0x10,src/data/data_raw_00442950.c,complete,reconstr
 data_scene_path_00442960,0x00442960,0x10,src/data/data_scene_path_00442960.c,complete,reconstructed
 data_scene_path_00442970,0x00442970,0x10,src/data/data_scene_path_00442970.c,complete,reconstructed
 data_v3_00442980,0x00442980,0x30,src/data/data_v3_00442980.c,complete,reconstructed
-data_raw_004429B0,0x004429B0,0x60,src/data/data_raw_004429B0.c,complete,placeholder
+data_raw_004429B0,0x004429B0,0x60,src/data/data_raw_004429B0.c,complete,reconstructed
 data_v4_00442A10,0x00442A10,0x10,src/data/data_v4_00442A10.c,complete,reconstructed
 data_v3_00442A20,0x00442A20,0x30,src/data/data_v3_00442A20.c,complete,reconstructed
 jtbl_00442A50,0x00442A50,0x14,src/data/jtbl_00442A50.c,complete,reconstructed
@@ -1522,7 +1522,7 @@ data_u32_00446910,0x00446910,0x10,src/data/data_u32_00446910.c,complete,reconstr
 data_ff_00446920,0x00446920,0x20,src/data/data_ff_00446920.c,complete,placeholder
 data_u32_00446940,0x00446940,0x34,src/data/data_u32_00446940.c,complete,reconstructed
 data_u32_00446974,0x00446974,0xC,src/data/data_u32_00446974.c,complete,placeholder
-data_u32_00446980,0x00446980,0x34,src/data/data_u32_00446980.c,complete,placeholder
+data_u32_00446980,0x00446980,0x34,src/data/data_u32_00446980.c,complete,reconstructed
 data_u32_004469B4,0x004469B4,0xC,src/data/data_u32_004469B4.c,complete,placeholder
 data_raw_004469C0,0x004469C0,0x4,src/data/data_raw_004469C0.c,complete,placeholder
 D_004469C4,0x004469C4,0x4,src/data/D_004469C4.c,complete,reconstructed
@@ -2393,7 +2393,7 @@ data_u32_0044EE80,0x0044EE80,0x10,src/data/data_u32_0044EE80.c,complete,reconstr
 jtbl_0044EE90,0x0044EE90,0x10,src/data/jtbl_0044EE90.c,complete,reconstructed
 data_u32_0044EEA0,0x0044EEA0,0x50,src/data/data_u32_0044EEA0.c,complete,reconstructed
 jtbl_0044EEF0,0x0044EEF0,0x18,src/data/jtbl_0044EEF0.c,complete,reconstructed
-data_raw_0044EF10,0x0044EF10,0x10,src/data/data_raw_0044EF10.c,complete,placeholder
+data_raw_0044EF10,0x0044EF10,0x10,src/data/data_raw_0044EF10.c,complete,reconstructed
 data_f32_0044EF20,0x0044EF20,0x40,src/data/data_f32_0044EF20.c,complete,reconstructed
 jtbl_0044EF60,0x0044EF60,0x10,src/data/jtbl_0044EF60.c,complete,reconstructed
 data_u32_0044EF70,0x0044EF70,0x10,src/data/data_u32_0044EF70.c,complete,reconstructed
@@ -2480,7 +2480,7 @@ data_u32_0044F940,0x0044F940,0x20,src/data/data_u32_0044F940.c,complete,reconstr
 jtbl_0044F960,0x0044F960,0xC,src/data/jtbl_0044F960.c,complete,reconstructed
 data_u32_0044F96C,0x0044F96C,0x4,src/data/data_u32_0044F96C.c,complete,placeholder
 jtbl_0044F970,0x0044F970,0x14,src/data/jtbl_0044F970.c,complete,reconstructed
-data_u32_0044F990,0x0044F990,0x30,src/data/data_u32_0044F990.c,complete,placeholder
+data_u32_0044F990,0x0044F990,0x30,src/data/data_u32_0044F990.c,complete,reconstructed
 jtbl_0044F9C0,0x0044F9C0,0x5c,src/data/jtbl_0044F9C0.c,complete,reconstructed
 jtbl_0044FA20,0x0044FA20,0x24,src/data/jtbl_0044FA20.c,complete,reconstructed
 jtbl_0044FA48,0x0044FA48,0xC,src/data/jtbl_0044FA48.c,complete,reconstructed
@@ -3332,16 +3332,16 @@ jtbl_004554D0,0x004554D0,0x10,src/data/jtbl_004554D0.c,complete,reconstructed
 data_ptr_table_004554E0,0x004554E0,0x10,src/data/data_ptr_table_004554E0.c,complete,reconstructed
 data_ptr_004554F0,0x004554F0,0x4,src/data/data_ptr_004554F0.c,complete,reconstructed
 data_raw_004554F4,0x004554F4,0x14,src/data/data_raw_004554F4.c,complete,reconstructed
-data_u32_00455510,0x00455510,0x90,src/data/data_u32_00455510.c,complete,placeholder
+data_u32_00455510,0x00455510,0x90,src/data/data_u32_00455510.c,complete,reconstructed
 data_ptr_table_004555A0,0x004555A0,0x10,src/data/data_ptr_table_004555A0.c,complete,reconstructed
 data_u32_004555B0,0x004555B0,0x80,src/data/data_u32_004555B0.c,complete,placeholder
-data_ptr_table_00455630,0x00455630,0x10,src/data/data_ptr_table_00455630.c,complete,placeholder
+data_ptr_table_00455630,0x00455630,0x10,src/data/data_ptr_table_00455630.c,complete,reconstructed
 data_u32_00455640,0x00455640,0xB0,src/data/data_u32_00455640.c,complete,reconstructed
 data_ptr_table_004556F0,0x004556F0,0x10,src/data/data_ptr_table_004556F0.c,complete,placeholder
 data_u32_00455700,0x00455700,0xC0,src/data/data_u32_00455700.c,complete,reconstructed
 data_ptr_table_004557C0,0x004557C0,0x10,src/data/data_ptr_table_004557C0.c,complete,reconstructed
 data_u32_004557D0,0x004557D0,0xB0,src/data/data_u32_004557D0.c,complete,reconstructed
-data_raw_00455880,0x00455880,0x10,src/data/data_raw_00455880.c,complete,placeholder
+data_raw_00455880,0x00455880,0x10,src/data/data_raw_00455880.c,complete,reconstructed
 data_ptr_table_00455890,0x00455890,0x18,src/data/data_ptr_table_00455890.c,complete,reconstructed
 data_ptr_table_004558B0,0x004558B0,0x18,src/data/data_ptr_table_004558B0.c,complete,reconstructed
 data_u32_004558C8,0x004558C8,0x98,src/data/data_u32_004558C8.c,complete,placeholder
@@ -4425,7 +4425,7 @@ data_u32_0045EFDC,0x0045EFDC,0xC,src/data/data_u32_0045EFDC.c,complete,placehold
 data_u32_0045EFE8,0x0045EFE8,0x8,src/data/data_u32_0045EFE8.c,complete,placeholder
 data_u32_0045EFF0,0x0045EFF0,0xC,src/data/data_u32_0045EFF0.c,complete,placeholder
 data_u32_0045EFFC,0x0045EFFC,0xC,src/data/data_u32_0045EFFC.c,complete,placeholder
-data_u32_0045F008,0x0045F008,0x8,src/data/data_u32_0045F008.c,complete,placeholder
+data_u32_0045F008,0x0045F008,0x8,src/data/data_u32_0045F008.c,complete,reconstructed
 data_u32_0045F030,0x0045F030,0xC,src/data/data_u32_0045F030.c,complete,reconstructed
 data_u32_0045F03C,0x0045F03C,0xC,src/data/data_u32_0045F03C.c,complete,placeholder
 data_u32_0045F048,0x0045F048,0x10,src/data/data_u32_0045F048.c,complete,reconstructed
@@ -4961,7 +4961,7 @@ jtbl_00472280,0x00472280,0x2c,src/data/jtbl_00472280.c,complete,reconstructed
 jtbl_004722B0,0x004722B0,0x50,src/data/jtbl_004722B0.c,complete,reconstructed
 data_u32_00472300,0x00472300,0x18,src/data/data_u32_00472300.c,complete,reconstructed
 data_u32_00472318,0x00472318,0xC,src/data/data_u32_00472318.c,complete,placeholder
-data_u32_00472324,0x00472324,0xC,src/data/data_u32_00472324.c,complete,placeholder
+data_u32_00472324,0x00472324,0xC,src/data/data_u32_00472324.c,complete,reconstructed
 jtbl_00472330,0x00472330,0x10,src/data/jtbl_00472330.c,complete,reconstructed
 data_u32_00472340,0x00472340,0x10,src/data/data_u32_00472340.c,complete,reconstructed
 jtbl_00472350,0x00472350,0x20,src/data/jtbl_00472350.c,complete,reconstructed
@@ -5009,7 +5009,7 @@ data_u32_00472854,0x00472854,0x4,src/data/data_u32_00472854.c,complete,placehold
 data_u32_00472858,0x00472858,0xC,src/data/data_u32_00472858.c,complete,placeholder
 data_u32_00472864,0x00472864,0x3C,src/data/data_u32_00472864.c,complete,placeholder
 jtbl_004728A0,0x004728A0,0x20,src/data/jtbl_004728A0.c,complete,reconstructed
-data_u32_004728C0,0x004728C0,0x120,src/data/data_u32_004728C0.c,complete,placeholder
+data_u32_004728C0,0x004728C0,0x120,src/data/data_u32_004728C0.c,complete,reconstructed
 jtbl_004729E0,0x004729E0,0x28,src/data/jtbl_004729E0.c,complete,reconstructed
 data_u32_00472A10,0x00472A10,0x30,src/data/data_u32_00472A10.c,complete,reconstructed
 jtbl_00472A40,0x00472A40,0x10,src/data/jtbl_00472A40.c,complete,reconstructed
@@ -6298,7 +6298,7 @@ data_raw_004959E8,0x4959e8,0x8,src/data/data_raw_004959E8.c,complete,placeholder
 data_zero_004959F0,0x004959F0,0xC0,src/data/data_zero_004959F0.c,complete,placeholder
 data_u32_00495AB0,0x00495AB0,0x30,src/data/data_u32_00495AB0.c,complete,placeholder
 data_zero_00495AE0,0x00495AE0,0x10,src/data/data_zero_00495AE0.c,complete,placeholder
-data_u32_00495AF0,0x00495AF0,0x20,src/data/data_u32_00495AF0.c,complete,placeholder
+data_u32_00495AF0,0x00495AF0,0x20,src/data/data_u32_00495AF0.c,complete,reconstructed
 data_zero_00495B10,0x00495B10,0x60,src/data/data_zero_00495B10.c,complete,placeholder
 data_u32_00495B70,0x00495B70,0x20,src/data/data_u32_00495B70.c,complete,placeholder
 data_zero_00495B90,0x00495B90,0x20,src/data/data_zero_00495B90.c,complete,placeholder
@@ -9136,7 +9136,7 @@ data_u32_004BA200,0x004BA200,0x10,src/data/data_u32_004BA200.c,complete,reconstr
 data_zero_004BA210,0x004BA210,0x10,src/data/data_zero_004BA210.c,complete,placeholder
 data_u32_004BA220,0x004BA220,0x10,src/data/data_u32_004BA220.c,complete,reconstructed
 data_zero_004BA230,0x004BA230,0x10,src/data/data_zero_004BA230.c,complete,placeholder
-data_u32_004BA240,0x004BA240,0x10,src/data/data_u32_004BA240.c,complete,placeholder
+data_u32_004BA240,0x004BA240,0x10,src/data/data_u32_004BA240.c,complete,reconstructed
 data_zero_004BA250,0x004BA250,0x10,src/data/data_zero_004BA250.c,complete,placeholder
 data_u32_004BA260,0x004BA260,0x10,src/data/data_u32_004BA260.c,complete,reconstructed
 data_zero_004BA270,0x004BA270,0x10,src/data/data_zero_004BA270.c,complete,placeholder
@@ -9976,7 +9976,7 @@ data_u32_004BF448,0x004BF448,0x8,src/data/data_u32_004BF448.c,complete,placehold
 jtbl_004BF450,0x004BF450,0x30,src/data/jtbl_004BF450.c,complete,reconstructed
 data_s8_004BF480,0x004BF480,0x4,src/data/data_s8_004BF480.c,complete,reconstructed
 data_s8_004BF484,0x004BF484,0x4,src/data/data_s8_004BF484.c,complete,reconstructed
-data_raw_004BF488,0x004BF488,0x20,src/data/data_raw_004BF488.c,complete,placeholder
+data_raw_004BF488,0x004BF488,0x20,src/data/data_raw_004BF488.c,complete,reconstructed
 jtbl_004BF4A8,0x004BF4A8,0x8,src/data/jtbl_004BF4A8.c,complete,reconstructed
 data_u32_004BF4B0,0x004BF4B0,0x10,src/data/data_u32_004BF4B0.c,complete,reconstructed
 jtbl_004BF4C0,0x004BF4C0,0x10,src/data/jtbl_004BF4C0.c,complete,reconstructed
@@ -10093,7 +10093,7 @@ data_u8_004C0080,0x004C0080,0x4,src/data/data_u8_004C0080.c,complete,reconstruct
 data_zero_004C0084,0x004C0084,0x4,src/data/data_zero_004C0084.c,complete,placeholder
 data_u32_004C0088,0x004C0088,0x38,src/data/data_u32_004C0088.c,complete,placeholder
 jtbl_004C00C0,0x004C00C0,0x8,src/data/jtbl_004C00C0.c,complete,reconstructed
-data_u32_004C00C8,0x004C00C8,0x1C,src/data/data_u32_004C00C8.c,complete,placeholder
+data_u32_004C00C8,0x004C00C8,0x1C,src/data/data_u32_004C00C8.c,complete,reconstructed
 data_s8_004C00E4,0x004C00E4,0xC,src/data/data_s8_004C00E4.c,complete,reconstructed
 data_u32_004C00F0,0x004C00F0,0x30,src/data/data_u32_004C00F0.c,complete,reconstructed
 jtbl_004C0120,0x004C0120,0x08,src/data/jtbl_004C0120.c,complete,reconstructed
@@ -10251,7 +10251,7 @@ jtbl_004C08F8,0x004C08F8,0x08,src/data/jtbl_004C08F8.c,complete,reconstructed
 data_u32_004C0900,0x004C0900,0x8,src/data/data_u32_004C0900.c,complete,reconstructed
 jtbl_004C0908,0x004C0908,0x8,src/data/jtbl_004C0908.c,complete,reconstructed
 data_s8_004C0910,0x004C0910,0x18,src/data/data_s8_004C0910.c,complete,reconstructed
-data_u32_004C0928,0x004C0928,0xC,src/data/data_u32_004C0928.c,complete,placeholder
+data_u32_004C0928,0x004C0928,0xC,src/data/data_u32_004C0928.c,complete,reconstructed
 data_s8_004C0934,0x004C0934,0xC,src/data/data_s8_004C0934.c,complete,reconstructed
 data_u32_004C0940,0x004C0940,0xC,src/data/data_u32_004C0940.c,complete,placeholder
 data_s8_004C094C,0x004C094C,0xC,src/data/data_s8_004C094C.c,complete,reconstructed
@@ -10310,7 +10310,7 @@ data_u32_004C0C0C,0x004C0C0C,0x4,src/data/data_u32_004C0C0C.c,complete,placehold
 jtbl_004C0C18,0x004C0C18,0x08,src/data/jtbl_004C0C18.c,complete,reconstructed
 jtbl_004C0C20,0x004C0C20,0x08,src/data/jtbl_004C0C20.c,complete,reconstructed
 jtbl_004C0C30,0x004C0C30,0x08,src/data/jtbl_004C0C30.c,complete,reconstructed
-data_u32_004C0C40,0x004C0C40,0x20,src/data/data_u32_004C0C40.c,complete,placeholder
+data_u32_004C0C40,0x004C0C40,0x20,src/data/data_u32_004C0C40.c,complete,reconstructed
 jtbl_004C0C60,0x004C0C60,0x10,src/data/jtbl_004C0C60.c,complete,placeholder
 data_u32_004C0C70,0x004C0C70,0x30,src/data/data_u32_004C0C70.c,complete,placeholder
 jtbl_004C0CA0,0x004C0CA0,0x08,src/data/jtbl_004C0CA0.c,complete,reconstructed

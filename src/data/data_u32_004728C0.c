@@ -1,12 +1,89 @@
+typedef unsigned char u8;
+typedef unsigned short u16;
 typedef unsigned int u32;
-u32 data_u32_004728C0[72] = {
-    0x00800000u, 0x0070000Cu, 0x00580018u, 0x003C000Cu, 0x00200000u, 0x003CFFF4u, 0x0058FFE8u, 0x0070FFF4u, 
-    0x00480000u, 0x000B0000u, 0x00400000u, 0x000C0000u, 0x00480000u, 0x000B0001u, 0x00400000u, 0x000C0001u, 
-    0x00140050u, 0x00050000u, 0x002C0022u, 0x00070000u, 0x00340040u, 0x00080000u, 0x00200050u, 0x00090000u, 
-    0x00080050u, 0x00060001u, 0x000C0050u, 0x000A0001u, 0xFFF80050u, 0x001D0000u, 0xFFF40050u, 0x00210000u, 
-    0xFFEC0050u, 0x001C0001u, 0xFFD40022u, 0x001E0001u, 0xFFCC0040u, 0x001F0001u, 0xFFE00050u, 0x00200001u, 
-    0xFFB80000u, 0x00220001u, 0xFFC00000u, 0x00230001u, 0xFFB80000u, 0x00220001u, 0xFFC00000u, 0x00230001u, 
-    0xFFECFFB0u, 0x001C0000u, 0xFFD4FFDEu, 0x001E0000u, 0xFFCCFFC0u, 0x001F0000u, 0xFFE0FFB0u, 0x00200000u, 
-    0x0008FFB0u, 0x00060000u, 0x000CFFB0u, 0x000A0000u, 0xFFF8FFB0u, 0x001D0001u, 0xFFF4FFB0u, 0x00210001u, 
-    0x0014FFB0u, 0x00050001u, 0x002CFFDEu, 0x00070001u, 0x0034FFC0u, 0x00080001u, 0x0020FFB0u, 0x00090001u, 
+typedef signed short s16;
+typedef signed int s32;
+typedef float f32;
+
+/* Used by the actor routine at func_0039FD90: the 8 offsets at +0x00 are
+ * indexed by actor byte 0x20 (stride 4, y/x scaled by constants and added to
+ * actor +0x34/+0x38); eight 32-byte rows at +0x20 (indexed by byte 0x20 << 5)
+ * each hold four 8-byte entries picked by a 2-bit random value. */
+typedef struct {
+    s16 x;
+    s16 y;
+} Mvc2Offset;
+typedef struct {
+    s16 x;
+    s16 y;
+    s16 flip_mask;   /* xor-ed into actor +0x140 */
+    u8 state;        /* passed to func_001757E0 */
+    u8 pad;
+} Mvc2OffsetStep;
+typedef struct {
+    Mvc2Offset offsets[8];
+    Mvc2OffsetStep steps[8][4];
+} Mvc2OffsetTable;
+typedef char Mvc2OffsetTable_size_check[(sizeof(Mvc2OffsetTable) == 288) ? 1 : -1];
+Mvc2OffsetTable data_u32_004728C0 = {
+    {
+        { 0, 128 },
+        { 12, 112 },
+        { 24, 88 },
+        { 12, 60 },
+        { 0, 32 },
+        { -12, 60 },
+        { -24, 88 },
+        { -12, 112 },
+    },
+    {
+        {
+            { 0, 72, 0, 0x0B, 0 },
+            { 0, 64, 0, 0x0C, 0 },
+            { 0, 72, 1, 0x0B, 0 },
+            { 0, 64, 1, 0x0C, 0 },
+        },
+        {
+            { 80, 20, 0, 0x05, 0 },
+            { 34, 44, 0, 0x07, 0 },
+            { 64, 52, 0, 0x08, 0 },
+            { 80, 32, 0, 0x09, 0 },
+        },
+        {
+            { 80, 8, 1, 0x06, 0 },
+            { 80, 12, 1, 0x0A, 0 },
+            { 80, -8, 0, 0x1D, 0 },
+            { 80, -12, 0, 0x21, 0 },
+        },
+        {
+            { 80, -20, 1, 0x1C, 0 },
+            { 34, -44, 1, 0x1E, 0 },
+            { 64, -52, 1, 0x1F, 0 },
+            { 80, -32, 1, 0x20, 0 },
+        },
+        {
+            { 0, -72, 1, 0x22, 0 },
+            { 0, -64, 1, 0x23, 0 },
+            { 0, -72, 1, 0x22, 0 },
+            { 0, -64, 1, 0x23, 0 },
+        },
+        {
+            { -80, -20, 0, 0x1C, 0 },
+            { -34, -44, 0, 0x1E, 0 },
+            { -64, -52, 0, 0x1F, 0 },
+            { -80, -32, 0, 0x20, 0 },
+        },
+        {
+            { -80, 8, 0, 0x06, 0 },
+            { -80, 12, 0, 0x0A, 0 },
+            { -80, -8, 1, 0x1D, 0 },
+            { -80, -12, 1, 0x21, 0 },
+        },
+        {
+            { -80, 20, 1, 0x05, 0 },
+            { -34, 44, 1, 0x07, 0 },
+            { -64, 52, 1, 0x08, 0 },
+            { -80, 32, 1, 0x09, 0 },
+        },
+    },
 };

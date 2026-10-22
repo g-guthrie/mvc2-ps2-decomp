@@ -1,4 +1,5 @@
 typedef unsigned int u32;
-u32 data_u32_00495AF0[8] = {
-    0x00000000u, 0x0000000Au, 0x0000000Bu, 0x0000000Cu, 0x0000000Du, 0x0000000Eu, 0x0000000Fu, 0x00000000u, 
-};
+
+/* Tail of the hex-digit value table read by decode_hex_length (D_004959F0,
+ * indexed by (s8) character): entries for '@', 'A'..'F', 'G'. */
+u32 data_u32_00495AF0[8] = { 0, 10, 11, 12, 13, 14, 15, 0 };

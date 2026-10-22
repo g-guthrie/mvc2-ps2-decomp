@@ -17862,3 +17862,5 @@ func_003A2100,0x003A2100,0x144,src/hm3_c.c,complete
 func_003192C0,0x003192C0,0x148,src/hm3_c.c,complete
 func_001B3AC0,0x001B3AC0,0x14C,src/hm3_f.c,complete
 func_0017B5D0,0x0017B5D0,0x190,src/hm3_f.c,complete
+func_003A5220,0x003A5220,0x178,src/hx6_b.c,complete
+func_001F20E0,0x001F20E0,0x158,src/hx6_d.c,complete
