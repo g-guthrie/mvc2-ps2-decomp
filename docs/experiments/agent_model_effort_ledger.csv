@@ -395,3 +395,22 @@ ra35,18,sonnet,medium,code-retry4,3,0,0,131884,5.9,
 ra34,18,sonnet,medium,code-retry4,3,1,212,155549,7.3,nested-if return shape
 ra39,18,sonnet,medium,code-retry4,3,1,236,141075,6.7,EE store-order sweep
 ra36,18,sonnet,medium,code-retry4,3,0,0,125898,10.2,boundary skip
+xl12,18,sonnet,medium,code-xl,3,0,0,265237,18.0,5 words off on 0x6E0
+ra38,18,sonnet,medium,code-retry4,3,0,0,171892,17.9,
+rb2,18,sonnet,medium,code-retry5,3,0,0,126811,5.2,
+rb6,18,sonnet,medium,code-retry5,3,1,264,140437,5.5,typed struct ptr list
+rb0,18,sonnet,medium,code-retry5,3,1,244,136382,6.8,load-before-test flip
+rb3,18,sonnet,medium,code-retry5,3,1,252,137627,6.9,live ptr + load order
+rb5,18,sonnet,medium,code-retry5,3,0,0,153773,7.0,static leaf needs other compiler (verify rejects)
+rb11,18,sonnet,medium,code-retry5,3,0,0,147970,8.2,
+rb7,18,sonnet,medium,code-retry5,3,2,540,159410,8.6,assign-in-test; sony29
+rb8,18,sonnet,medium,code-retry5,3,0,0,141970,8.9,
+rb1,18,sonnet,medium,code-retry5,3,0,0,152457,10.2,EE bnel wall
+rb10,18,sonnet,medium,code-retry5,3,1,284,139819,11.3,static func_00338670 lever
+rb9,18,sonnet,medium,code-retry5,3,0,0,190945,11.3,
+rb12,18,sonnet,medium,code-retry5,3,1,296,148494,7.0,(s32) address cast
+rb14,18,sonnet,medium,code-retry5,3,1,308,134045,6.3,switch for dead leftover
+rb4,18,sonnet,medium,code-retry5,3,0,0,188444,14.4,
+rb15,18,sonnet,medium,code-retry5,3,2,620,156746,8.6,,p loops; ptr-arg casts
+xl14,18,sonnet,medium,code-xl,3,2,2612,262024,42.4,decl-order sweep + recipe 1
+rb13,18,sonnet,medium,code-retry5,3,1,304,210063,13.6,EE stmt order before if
