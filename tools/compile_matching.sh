@@ -20085,4 +20085,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/projected_actor_bounds.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/projected_actor_bounds.o"
 "$PYTHON" tools/verify_object.py "$BUILD/projected_actor_bounds.o" private/SLUS_204.86.rom --source src/projected_actor_bounds.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/horizontal_exit_bounds.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/horizontal_exit_bounds.o"
+"$PYTHON" tools/verify_object.py "$BUILD/horizontal_exit_bounds.o" private/SLUS_204.86.rom --source src/horizontal_exit_bounds.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

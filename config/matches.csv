@@ -18774,3 +18774,5 @@ func_00134850,0x00134850,0x3B8,src/rc9_c.c,complete
 func_00173020,0x00173020,0x3BC,src/rc10_a.c,complete
 func_001F7260,0x001F7260,0x78,src/owner_state_predicate.c,complete
 func_00174470,0x00174470,0x138,src/projected_actor_bounds.c,complete
+func_003797D0,0x003797D0,0x7C,src/horizontal_exit_bounds.c,complete
+func_0037BDE0,0x0037BDE0,0x74,src/horizontal_exit_bounds.c,complete

@@ -4825,3 +4825,21 @@ and no data-symbol address is changed.
 
 Build coverage, catalog checks, all 126 tests, and full hybrid relink/pack
 pass with both retail image hashes unchanged. Matching totals are unchanged.
+
+## 2026-10-22: facing-dependent horizontal exit predicates
+
+Recovered `func_003797D0` (124 bytes) and `func_0037BDE0` (116 bytes)
+as ordinary C using the actor's float position at 0x34 and signed facing
+field at 0x140. Their respective margins are 146.666656494140625 and 160.
+The left-facing test retains the native negated <= comparison, including
+its unordered floating-point result. The native callers pass one actor
+pointer and consume the integer result. No extra callback arguments or
+register constraints are needed.
+
+Both complete bodies match with MWCCPS2 3.0.3 at -O3,p and a zero
+small-data threshold. Catalog/build checks, all 126 tests, and full hybrid
+relink/packing pass. The retail ELF remains SHA-256
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+CODE is 2,660,760 / 3,293,696 bytes (80.7834%); DATA remains
+468,869 / 648,064 bytes. The fixed next publication grid remains
+2,673,376 CODE bytes.
