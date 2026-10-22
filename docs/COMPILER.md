@@ -786,9 +786,10 @@ variables. Extract the public archive into a private directory and export its
 executable path before running `make hybrid`:
 
 ```sh
-curl -L https://github.com/decompme/compilers/releases/download/compilers/mwcps2-2.4-001213.tar.gz | tar xz -C "$PRIVATE_COMPILER_DIR"
+mkdir -p "$PRIVATE_COMPILER_DIR/mwcps2-2.4-001213"
+curl -L https://github.com/decompme/compilers/releases/download/compilers/mwcps2-2.4-001213.tar.gz | tar xz -C "$PRIVATE_COMPILER_DIR/mwcps2-2.4-001213"
 export MWCCPS2_24="$PRIVATE_COMPILER_DIR/mwcps2-2.4-001213/mwccps2.exe"
 ```
 
-Set the path to the actual extracted executable if the archive's directory
-layout differs. Compiler binaries remain private.
+The archive has no top-level directory, so it must be extracted into its own
+directory. Compiler binaries remain private.

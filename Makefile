@@ -27,6 +27,7 @@ pack-elf:
 	PYTHON="$(PYTHON)" tools/pack_hybrid_elf.sh
 
 progress-check:
+	$(PYTHON) tools/check_build_script.py
 	$(PYTHON) tools/check_build_coverage.py
 	PYTHONPATH=. $(PYTHON) -m tools.validate_progress_catalog
 
