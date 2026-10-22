@@ -30,3 +30,15 @@ times Haiku tokens.
 Haiku retry waves at low, high, xhigh and max matched 0–3 of 15 targets per
 batch; Sonnet low matched 3–11. Haiku was retired from the fleet. The next
 phase compares Sonnet low against Sonnet medium on the same retry pool.
+
+## Decision: Sonnet medium
+
+Wave 6 ran Sonnet low and Sonnet medium side by side on the same retry pool:
+
+| Effort | Batches | Matched | Hit rate | Tokens/batch | Tokens/match |
+|---|---|---|---|---|---|
+| low | 5 | 13 / 75 | 17% | 270k | 104k |
+| medium | 6 | 28 / 90 | 31% | 313k | 67k |
+
+Medium costs about 15% more per batch and roughly 35% less per matched
+function. All further batches run on Sonnet medium.
