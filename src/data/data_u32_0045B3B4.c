@@ -1,7 +1,42 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef short s16;
 typedef unsigned int u32;
-u32 data_u32_0045B3B4[31] = {
-    0x00000000u, 0x00000000u, 0x00000000u, 0x00000003u, 0x00000002u, 0x18001000u, 0x03000800u, 0x10000003u, 
-    0x0000000Cu, 0x18001000u, 0x00600800u, 0x10000005u, 0x00000000u, 0x18000800u, 0x14001000u, 0x03000400u, 
-    0x00000000u, 0x00000000u, 0x00000000u, 0x80000003u, 0x00000005u, 0x14001000u, 0x00600400u, 0x91000003u, 
-    0x00000001u, 0x18001000u, 0x03000800u, 0x91000003u, 0x00000006u, 0x18001000u, 0x00600800u, 
+typedef int s32;
+
+/* Move-input record: type selects handler via D_00448F10; flags at +2 tested
+   against masks (0x4000, 0x20, 0x800, ...) in func_0018A460; byte at +4 is
+   compared with a state byte in func_00189310. */
+typedef struct {
+    u8 type;
+    u8 pad;
+    u16 flags;
+    u32 id;
+    u16 arg[4];
+} MoveRec;
+typedef struct {
+    u8 type;
+    u8 pad;
+    u16 flags;
+    u32 id;
+    u16 arg[6];
+} MoveRec5;
+typedef struct {
+    u32 pad0[3];       /* tail of the preceding table */
+    MoveRec r0, r1;
+    MoveRec5 r2;
+    u32 pad1[3];
+    MoveRec r3, r4, r5;
+} MoveBlock;
+typedef char MoveBlock_size_check[(sizeof(MoveBlock) == 124) ? 1 : -1];
+MoveBlock data_u32_0045B3B4 = {
+    { 0, 0, 0 },
+    { 3, 0, 0x0000, 0x02, { 0x1000, 0x1800, 0x0800, 0x0300 } },
+    { 3, 0, 0x1000, 0x0C, { 0x1000, 0x1800, 0x0800, 0x0060 } },
+    { 5, 0, 0x1000, 0x00, { 0x0800, 0x1800, 0x1000, 0x1400, 0x0400, 0x0300 } },
+    { 0, 0, 0 },
+    { 3, 0, 0x8000, 0x05, { 0x1000, 0x1400, 0x0400, 0x0060 } },
+    { 3, 0, 0x9100, 0x01, { 0x1000, 0x1800, 0x0800, 0x0300 } },
+    { 3, 0, 0x9100, 0x06, { 0x1000, 0x1800, 0x0800, 0x0060 } },
 };

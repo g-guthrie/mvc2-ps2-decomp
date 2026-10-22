@@ -1,5 +1,9 @@
-typedef unsigned int u32;
-u32 data_u32_00472864[15] = {
-    0x00009000u, 0x00000000u, 0x00000000u, 0x00201000u, 0x00000000u, 0x1E140A00u, 0x00000028u, 0xFF60FF80u, 
-    0x0000FF40u, 0xFF800000u, 0xFF20FF50u, 0xFEC0FEF0u, 0x00000000u, 0x00000000u, 0x00000000u, 
+typedef short s16;
+typedef struct { s16 a; s16 b; } S16Pair;
+typedef char S16Pair_size_check[(sizeof(S16Pair) == 4) ? 1 : -1];
+/* Continues the {s16, s16} pair stream that func_0039EE60 walks (lh 0(p), lh 2(p), p += 4). */
+S16Pair data_u32_00472864[15] = {
+    { -28672, 0 }, { 0, 0 }, { 0, 0 }, { 4096, 32 }, { 0, 0 },
+    { 2560, 7700 }, { 40, 0 }, { -128, -160 }, { -192, 0 }, { 0, -128 },
+    { -176, -224 }, { -272, -320 }, { 0, 0 }, { 0, 0 }, { 0, 0 },
 };

@@ -1,7 +1,21 @@
 typedef unsigned int u32;
-u32 data_u32_00463234[31] = {
-    0x00000000u, 0x00000000u, 0x00000000u, 0x0280FF80u, 0x0000FFE0u, 0xFFE80100u, 0x01000000u, 0x0200FFE8u, 
-    0xFFD80300u, 0x02000300u, 0xFE80FFE0u, 0xFFE00280u, 0x0200FC00u, 0x0400FFF0u, 0xFFD00300u, 0x028000A0u, 
-    0xFE40FFC0u, 0xFFC80260u, 0x01C00080u, 0x0280FFD8u, 0xFFC80360u, 0x0220FC80u, 0xFE40FFD0u, 0xFFC802C0u, 
-    0x02400400u, 0x0000FFE0u, 0xFFF00100u, 0x0018FF81u, 0x0036FFBDu, 0x0002FFC3u, 0x001B000Bu, 
+typedef signed short s16;
+typedef struct { s16 x; s16 y; } S16Pair;
+typedef struct { s16 x; s16 y; s16 z; } S16Triple;
+/* Zero lead-in, then (from 0x00463240) 16 s16 triples indexed by a 4-bit random value times 6 (func_0035CCA0 reads lh at +0/+2/+4), then x/y s16 pairs from 0x004632A0 at stride 4 (func_0035D080). */
+typedef struct {
+    u32 lead[3];
+    S16Triple scatter[16];
+    S16Pair offsets[4];
+} Data00463234;
+typedef char Data00463234_size_check[(sizeof(Data00463234) == 124) ? 1 : -1];
+Data00463234 data_u32_00463234 = {
+    { 0, 0, 0 },
+    {
+        { -128, 640, -32 }, { 0, 256, -24 }, { 0, 256, -24 }, { 512, 768, -40 },
+        { 768, 512, -32 }, { -384, 640, -32 }, { -1024, 512, -16 }, { 1024, 768, -48 },
+        { 160, 640, -64 }, { -448, 608, -56 }, { 128, 448, -40 }, { 640, 864, -56 },
+        { -896, 544, -48 }, { -448, 704, -56 }, { 1024, 576, -32 }, { 0, 256, -16 },
+    },
+    { { -127, 24 }, { -67, 54 }, { -61, 2 }, { 11, 27 } },
 };

@@ -1,13 +1,25 @@
-typedef unsigned int u32;
-u32 data_u32_00462ED0[79] = {
-    0xFFDBFFD0u, 0xFFC6FFC6u, 0xFFCEFFC9u, 0xFFEBFFCFu, 0xFFC6000Fu, 0xFFC1000Fu, 0xFFCF001Bu, 0xFFC7001Fu, 
-    0xFFD5FFEDu, 0xFFD5FFD8u, 0xFFCDFFD1u, 0xFFC7FFD7u, 0xFFB2003Bu, 0xFFB80015u, 0xFFD1FFD2u, 0xFFC10026u, 
-    0xFFD2FFD6u, 0xFFD40001u, 0xFFCF001Au, 0xFFCAFFE1u, 0xFFCDFFBDu, 0x00000000u, 0xFFE1FFF1u, 0xFFE8FFDAu, 
-    0xFFEAFFE3u, 0x00000000u, 0x00000000u, 0x00000000u, 0xFFE4FFE5u, 0xFF7FFFF5u, 0xFF93FFD6u, 0xFFB6FFC5u, 
-    0xFFC9FFE6u, 0xFFC4FFD3u, 0xFF95FFD3u, 0xFF7DFFF4u, 0xFFE7FFE0u, 0xFFCAFFC4u, 0xFFDAFFC8u, 0xFFE2FFD5u, 
-    0xFFF2FFEBu, 0xFFF1FFCBu, 0xFFF5FFD1u, 0xFFEFFFE7u, 0xFFEE0013u, 0xFFB30042u, 0xFF8A002Bu, 0xFF8AFFD4u, 
-    0xFFE5FFE6u, 0xFF80FFF1u, 0xFF86001Bu, 0xFFB50044u, 0xFFED0008u, 0xFFDCFFD0u, 0xFFEBFFC2u, 0xFFEDFFC2u, 
-    0xFFF1FFE8u, 0xFFE5FFD4u, 0xFFDEFFCAu, 0xFFCAFFC2u, 0xFFF0FFE2u, 0xFF80FFF1u, 0xFF7FFFF1u, 0xFF80FFF1u, 
-    0xFF7FFFF1u, 0xFF7FFFF4u, 0xFF7EFFF5u, 0xFF7FFFF4u, 0xFF7EFFF4u, 0xFF81FFF0u, 0xFF80FFF0u, 0xFF81FFF0u, 
-    0xFF80FFF0u, 0xFF80FFF3u, 0xFF7EFFF3u, 0xFF80FFF3u, 0xFF7EFFF3u, 0xFF82FFF1u, 0xFF80FFF1u, 
+typedef signed short s16;
+typedef struct { s16 x; s16 y; } S16Pair;
+/* Continues the signed x/y halfword table started at D_00462DD0 (func_00358620 reads lh at +0 and +2, stride 4, indexed by a byte). */
+S16Pair data_u32_00462ED0[79] = {
+    { -48, -37 }, { -58, -58 }, { -55, -50 }, { -49, -21 },
+    { 15, -58 }, { 15, -63 }, { 27, -49 }, { 31, -57 },
+    { -19, -43 }, { -40, -43 }, { -47, -51 }, { -41, -57 },
+    { 59, -78 }, { 21, -72 }, { -46, -47 }, { 38, -63 },
+    { -42, -46 }, { 1, -44 }, { 26, -49 }, { -31, -54 },
+    { -67, -51 }, { 0, 0 }, { -15, -31 }, { -38, -24 },
+    { -29, -22 }, { 0, 0 }, { 0, 0 }, { 0, 0 },
+    { -27, -28 }, { -11, -129 }, { -42, -109 }, { -59, -74 },
+    { -26, -55 }, { -45, -60 }, { -45, -107 }, { -12, -131 },
+    { -32, -25 }, { -60, -54 }, { -56, -38 }, { -43, -30 },
+    { -21, -14 }, { -53, -15 }, { -47, -11 }, { -25, -17 },
+    { 19, -18 }, { 66, -77 }, { 43, -118 }, { -44, -118 },
+    { -26, -27 }, { -15, -128 }, { 27, -122 }, { 68, -75 },
+    { 8, -19 }, { -48, -36 }, { -62, -21 }, { -62, -19 },
+    { -24, -15 }, { -44, -27 }, { -54, -34 }, { -62, -54 },
+    { -30, -16 }, { -15, -128 }, { -15, -129 }, { -15, -128 },
+    { -15, -129 }, { -12, -129 }, { -11, -130 }, { -12, -129 },
+    { -12, -130 }, { -16, -127 }, { -16, -128 }, { -16, -127 },
+    { -16, -128 }, { -13, -128 }, { -13, -130 }, { -13, -128 },
+    { -13, -130 }, { -15, -126 }, { -15, -128 },
 };

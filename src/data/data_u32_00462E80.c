@@ -1,4 +1,10 @@
-typedef unsigned int u32;
-#define V 0xFFCAFFE6u
-u32 data_u32_00462E80[20] = { V, V, V, V, V, V, V, V, V, V, V, V, V, V, V, V, V, V, V, V };
-#undef V
+typedef signed short s16;
+typedef struct { s16 x; s16 y; } S16Pair;
+/* Continues the signed x/y halfword table started at D_00462DD0 (func_00358620 reads lh at +0 and +2, stride 4, indexed by a byte). */
+S16Pair data_u32_00462E80[20] = {
+    { -26, -54 }, { -26, -54 }, { -26, -54 }, { -26, -54 },
+    { -26, -54 }, { -26, -54 }, { -26, -54 }, { -26, -54 },
+    { -26, -54 }, { -26, -54 }, { -26, -54 }, { -26, -54 },
+    { -26, -54 }, { -26, -54 }, { -26, -54 }, { -26, -54 },
+    { -26, -54 }, { -26, -54 }, { -26, -54 }, { -26, -54 },
+};

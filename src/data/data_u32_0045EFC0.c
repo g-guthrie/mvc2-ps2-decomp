@@ -1,4 +1,3 @@
-typedef unsigned int u32;
-#define V 0x00000014u
-u32 data_u32_0045EFC0[4] = { V, V, V, V };
-#undef V
+typedef signed int s32;
+/* Slice of the frame-id sequence row1 indexed through D_0045F048 (func_0033D5F0); each 4-byte slot is read with lh. */
+s32 data_u32_0045EFC0[4] = { 20, 20, 20, 20 };

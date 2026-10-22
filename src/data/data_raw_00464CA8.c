@@ -1,6 +1,8 @@
 typedef unsigned char u8;
-/* Remaining three pointer words are unreachable through the current callers. */
-const u8 data_raw_00464CA8[0xC] = {
-    0x80u, 0x85u, 0x4Bu, 0x00u, 0x88u, 0x85u, 0x4Bu, 0x00u,
-    0x90u, 0x85u, 0x4Bu, 0x00u,
+extern u8 data_raw_004B857C[];
+/* Pointers into the SYS label strings: "EXEC", "DNLD", "NET". The third entry is unreachable through current callers. */
+const u8 * const data_raw_00464CA8[3] = {
+    &data_raw_004B857C[4],
+    &data_raw_004B857C[12],
+    &data_raw_004B857C[20],
 };

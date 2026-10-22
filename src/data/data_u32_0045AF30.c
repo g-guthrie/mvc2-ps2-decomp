@@ -1,4 +1,9 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef short s16;
 typedef unsigned int u32;
-#define V 0x00230022u
-u32 data_u32_0045AF30[4] = { V, V, V, V };
-#undef V
+typedef int s32;
+
+/* Continuation of the 16-bit-entry table starting at D_0045AF20. */
+s16 data_u32_0045AF30[8] = { 0x22, 0x23, 0x22, 0x23, 0x22, 0x23, 0x22, 0x23 };

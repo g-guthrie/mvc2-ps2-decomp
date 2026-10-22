@@ -537,3 +537,15 @@ rc7,18,sonnet,medium,code-retry6,3,0,0,269682,20.0,
 de30,18,sonnet,medium,data,40,24,924,124217,4.9,record structs from readers
 de31,18,sonnet,medium,data,40,15,1377,137464,5.9,
 rc2,18,sonnet,medium,code-retry6,3,2,1700,273614,27.4,3.0 + jt alias; padded struct stops hoist
+rc9,18,sonnet,medium,code-retry6,3,1,952,,,decl sweep 75->7; break for null exit
+de32,18,sonnet,medium,data,40,10,336,,,29 zero units in batch
+de34,18,sonnet,medium,data,40,4,672,80222,2.2,34 zero units; 2 guessed layouts
+de33,18,sonnet,medium,data,40,5,540,78114,2.6,35 zero units
+de36,18,sonnet,medium,data,40,16,400,97370,2.6,
+de35,18,sonnet,medium,data,40,23,417,99174,2.9,
+de38,18,sonnet,medium,data,40,7,124,86196,2.6,
+df0-2+4,18,sonnet,medium,data,4,0,0,243843,4,8KB command tables 0x424200-0x438160: no readers no pointers
+de37,18,sonnet,medium,data,40,16,768,129110,4.4,
+df3,18,sonnet,medium,data,1,0,0,60046,1.5,cmd table
+rc12,18,sonnet,medium,code-retry6,3,0,0,250877,17.5,
+rb103,18,sonnet,medium,code-retry5,3,0,0,284641,51.8,

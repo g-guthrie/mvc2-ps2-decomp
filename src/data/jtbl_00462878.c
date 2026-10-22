@@ -1,5 +1,6 @@
-/* Source-safe reconstruction of initialized table. */
-const unsigned int jtbl_00462878[2] = {
-    (unsigned int)0x0015FFF6,
-    (unsigned int)0x0016FFF4,
+typedef signed short s16;
+/* Part of a D_004628F0 row (16-bit offsets read with lh at +0/+2 by func_003532F0). */
+const s16 jtbl_00462878[4] = {
+    -10, 21,
+    -12, 22,
 };

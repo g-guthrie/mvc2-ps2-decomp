@@ -1,4 +1,3 @@
-typedef unsigned char u8;
-u8 data_raw_0046390C[0x4] = {
-    0x92, 0x24, 0x89, 0xBF,
-};
+typedef float f32;
+/* Fourth float of a 16-byte float record in the table at D_004638FC..D_0046392C (rows hold three coordinates plus this 15/14 factor). */
+f32 data_raw_0046390C[1] = { -1.07142854f };

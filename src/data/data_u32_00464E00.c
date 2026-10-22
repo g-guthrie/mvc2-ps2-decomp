@@ -1,5 +1,6 @@
-typedef unsigned int u32;
-u32 data_u32_00464E00[12] = {
-    0x60826C82u, 0x75827182u, 0x6B826482u, 0x75824081u, 0x40817282u, 0x60826282u, 0x62826F82u, 0x6C826E82u, 
-    0x40815182u, 0x78827282u, 0x73827282u, 0x6C826482u, 
-};
+typedef unsigned char u8;
+/* Shift-JIS full-width text "MARVEL VS CAPCOM2 SYSTEM", 48 bytes with no terminator; callers memcpy() 0x44 bytes starting here. */
+char data_u32_00464E00[48] =
+    "\x82\x6C\x82\x60\x82\x71\x82\x75\x82\x64\x82\x6B\x81\x40\x82\x75"
+    "\x82\x72\x81\x40\x82\x62\x82\x60\x82\x6F\x82\x62\x82\x6E\x82\x6C"
+    "\x82\x51\x81\x40\x82\x72\x82\x78\x82\x72\x82\x73\x82\x64\x82\x6C";

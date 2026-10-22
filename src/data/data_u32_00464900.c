@@ -1,6 +1,31 @@
-typedef unsigned int u32;
-u32 data_u32_00464900[24] = {
-    0xC13AAAAAu, 0x41092492u, 0xC162AAAAu, 0x40CDB6DBu, 0xC1555555u, 0x00000000u, 0xC13AAAAAu, 0xC1092492u, 
-    0xC13AAAAAu, 0x41092492u, 0x00000000u, 0x00000000u, 0x00000000u, 0x00000417u, 0x08170000u, 0x00080000u, 
-    0x00FF0617u, 0x06170048u, 0x008800FEu, 0x00FD0617u, 0x061700C8u, 0x010800FCu, 0x00000617u, 0x00000000u, 
+typedef float f32;
+typedef signed short s16;
+typedef unsigned short u16;
+typedef struct { f32 x; f32 y; } F32Pair;
+/* Two tables back to back. The 8-byte f32 pairs are indexed by the byte at +0x20D (func_00386940 lwc1 at +0 and +4). The 6-byte records from 0x00464930 are indexed by the byte at +0x20 and their middle s16 is added to the float at +0x38 (func_003879F0). */
+typedef struct { s16 a; s16 dy; u16 b; } Rec6;
+typedef struct {
+    F32Pair pairs[6];
+    Rec6 recs[8];
+} Data00464900;
+typedef char Data00464900_size_check[(sizeof(Data00464900) == 96) ? 1 : -1];
+Data00464900 data_u32_00464900 = {
+    {
+        { -11.666666f, 8.5714283f },
+        { -14.166666f, 6.42857122f },
+        { -13.333333f, 0.0f },
+        { -11.666666f, -8.5714283f },
+        { -11.666666f, 8.5714283f },
+        { 0.0f, 0.0f }
+    },
+    {
+        { 0, 0, 1047 },
+        { 0, 0, 2071 },
+        { 0, 8, 1559 },
+        { 255, 72, 1559 },
+        { 254, 136, 1559 },
+        { 253, 200, 1559 },
+        { 252, 264, 1559 },
+        { 0, 0, 0 },
+    },
 };

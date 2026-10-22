@@ -1,4 +1,7 @@
-typedef unsigned int u32;
-u32 data_u32_004627B0[1] = {
-    0xFFEBFFF6u, 
+typedef short s16;
+
+/* s16 {x, y} pairs read with lh at +0/+2 by func_003532F0 (via the D_004628B0 / D_004628F0 pointer tables). */
+s16 data_u32_004627B0[1][2] = {
+    { -10, -21 },
 };
+typedef char data_u32_004627B0_size_check[(sizeof(data_u32_004627B0) == 4) ? 1 : -1];

@@ -1,10 +1,12 @@
-typedef unsigned char u8;
-/* Unclassified bytes before the bounded D_00472A80 byte bank. */
-u8 data_raw_00472A50[48] = {
-    0x3Au, 0x00u, 0x5Eu, 0x00u, 0x25u, 0x00u, 0x76u, 0x00u,
-    0x34u, 0x00u, 0x46u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
-    0x55u, 0x55u, 0x55u, 0xC1u, 0x00u, 0x00u, 0x00u, 0x00u,
-    0x55u, 0x55u, 0x55u, 0xC1u, 0xDBu, 0xB6u, 0xCDu, 0x40u,
-    0x55u, 0x55u, 0x55u, 0xC1u, 0xDBu, 0xB6u, 0xCDu, 0xC0u,
-    0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
+typedef short s16;
+typedef float f32;
+/* Header halfwords followed by f32 values (-13.3333 / 0 / +-6.4286 / -10.8333 style coordinates). Layout inferred from value decoding. */
+typedef struct {
+    s16 h[8];
+    f32 f[8];
+} Data00472A50;
+typedef char Data00472A50_size_check[(sizeof(Data00472A50) == 48) ? 1 : -1];
+Data00472A50 data_raw_00472A50 = {
+    { 58, 94, 37, 118, 52, 70, 0, 0 },
+    { -13.333333f, 0.0f, -13.333333f, 6.42857122f, -13.333333f, -6.42857122f, 0.0f, 0.0f },
 };

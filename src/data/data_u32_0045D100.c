@@ -1,5 +1,8 @@
-typedef unsigned int u32;
-u32 data_u32_0045D100[12] = {
-    0x00020100u, 0x01000201u, 0x02010002u, 0x00000000u, 0x08070707u, 0x09090808u, 0x0A0A0A09u, 0x00000000u, 
-    0x00000100u, 0x00000000u, 0x00000000u, 0x00000000u, 
+typedef unsigned char u8;
+
+/* Byte lookup table indexed by a small state value (lbu with index added to the base). */
+u8 data_u32_0045D100[48] = {
+    0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 0, 0, 0,
+    7, 7, 7, 8, 8, 8, 9, 9, 9, 10, 10, 10, 0, 0, 0, 0,
+    0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 };
