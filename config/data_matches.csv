@@ -144,7 +144,7 @@ gMvc2ModeSelectDispatch_0043CCE0,0x0043CCE0,0x24,src/data/mvc2_mode_select_dispa
 data_callback_slot_0043CD08,0x0043CD08,0x4,src/data/data_callback_slot_0043CD08.c,complete,reconstructed
 data_callback_slot_0043CD0C,0x0043CD0C,0x4,src/data/data_callback_slot_0043CD0C.c,complete,reconstructed
 data_u32_0043CD10,0x0043CD10,0x90,src/data/data_u32_0043CD10.c,complete,placeholder
-jtbl_0043CDA0,0x0043CDA0,0xF5C,src/data/jtbl_0043CDA0.c,complete,placeholder
+jtbl_0043CDA0,0x0043CDA0,0xF5C,src/data/jtbl_0043CDA0.c,complete,reconstructed
 data_s8_0043DD00,0x0043DD00,0xA,src/data/data_s8_0043DD00.c,complete,reconstructed
 data_u8_0043DD0A,0x0043DD0A,0x1e,src/data/data_u8_0043DD0A.c,complete,placeholder
 data_vector_0043DD28,0x0043DD28,0xc,src/data/data_vector_0043DD28.c,complete,reconstructed
