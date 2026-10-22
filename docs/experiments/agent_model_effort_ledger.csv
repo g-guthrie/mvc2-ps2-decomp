@@ -62,3 +62,7 @@ hx8,4,haiku,high,code-large,8,1,548,308461,14.0,
 hr1,4r,haiku,high,data-retry,50,14,1128,248339,12.5,
 hx7,4,sonnet,low,code,15,5,2076,285385,15.9,
 hx3,4,haiku,high,code,15,2,820,361729,16.9,
+hr5,5r,sonnet,low,data-retry,50,4,772,92170,2.0,quick pass
+hr8,5r,haiku,medium,data-retry,50,2,160,108351,2.6,
+hr9,5r,sonnet,low,data-retry,50,14,1418,128758,4.2,
+hr6,5r,sonnet,low,data-retry,50,18,1620,190614,8.3,

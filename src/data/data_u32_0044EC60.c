@@ -1,6 +1,35 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef short s16;
 typedef unsigned int u32;
-u32 data_u32_0044EC60[20] = {
-    0xFFF00000u, 0xFFF80010u, 0x00080010u, 0x00100000u, 0xFFF8FFF0u, 0x0008FFF0u, 0x00000000u, 0x00000000u, 
-    0xFFEBFFEBu, 0x0000FFEBu, 0x0015FFEBu, 0xFFEB0000u, 0x00000000u, 0x00150000u, 0xFFEB0015u, 0x00000015u, 
-    0x00150015u, 0x00000000u, 0x00000000u, 0x00000000u, 
+typedef int s32;
+typedef float f32;
+/* x/y s16 offset pairs read by func_001DCDE0 (8 at +0, 9 at +0x20) */
+typedef struct Mv_0044EC60 {
+    s16 x;
+    s16 y;
+} Mv_0044EC60;
+typedef char Mv_0044EC60_size_check[(sizeof(Mv_0044EC60) == 4) ? 1 : -1];
+Mv_0044EC60 data_u32_0044EC60[20] = {
+    { 0, -16 },
+    { 16, -8 },
+    { 16, 8 },
+    { 0, 16 },
+    { -16, -8 },
+    { -16, 8 },
+    { 0, 0 },
+    { 0, 0 },
+    { -21, -21 },
+    { -21, 0 },
+    { -21, 21 },
+    { 0, -21 },
+    { 0, 0 },
+    { 0, 21 },
+    { 21, -21 },
+    { 21, 0 },
+    { 21, 21 },
+    { 0, 0 },
+    { 0, 0 },
+    { 0, 0 },
 };

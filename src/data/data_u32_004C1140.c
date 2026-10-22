@@ -1,4 +1,8 @@
-typedef unsigned int u32;
-u32 data_u32_004C1140[12] = {
-    0x02000201u, 0x020102FFu, 0xFFFFFFFFu, 0x02010201u, 0x02FF02FFu, 0xFFFFFFFFu, 0x02000201u, 0x020102FFu, 0x02FFFFFFu, 0x02010201u, 0x02FF02FFu, 0xFFFFFFFFu
+typedef signed char s8;
+/* Twelve 4-byte -1-padded script lists; func_002E9A40 stores pointers to them
+   (D_004C1140.. via gp) into the actor at +0x408. */
+s8 data_u32_004C1140[12][4] = {
+    { 1, 2, 0, 2 }, { -1, 2, 1, 2 }, { -1, -1, -1, -1 }, { 1, 2, 1, 2 },
+    { -1, 2, -1, 2 }, { -1, -1, -1, -1 }, { 1, 2, 0, 2 }, { -1, 2, 1, 2 },
+    { -1, -1, -1, 2 }, { 1, 2, 1, 2 }, { -1, 2, -1, 2 }, { -1, -1, -1, -1 },
 };

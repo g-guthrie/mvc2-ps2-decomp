@@ -1,19 +1,54 @@
+typedef signed char s8;
+typedef unsigned char u8;
+typedef short s16;
+typedef unsigned short u16;
+typedef int s32;
 typedef unsigned int u32;
-u32 data_u32_00440EE0[128] = {
-    0xBFC00000u, 0xBE2E147Bu, 0xC10E8F5Cu, 0x3F5C28F6u, 0xBFC00000u, 0x00000000u, 0xBF07AE14u, 0x3F800000u, 
-    0xBFC00000u, 0x00000000u, 0xC08D70A4u, 0x3F828F5Cu, 0xBFC00000u, 0xBDB851ECu, 0x40E4CCCDu, 0x3F800000u, 
-    0xBFC00000u, 0x00000000u, 0xC021EB85u, 0x3F800000u, 0xBFC00000u, 0x00000000u, 0xC06147AEu, 0x3F800000u, 
-    0xBFC00000u, 0x00000000u, 0xC0AD70A4u, 0x3F800000u, 0xBFC00000u, 0x00000000u, 0xC0CA3D71u, 0x3F99999Au, 
-    0xBFC00000u, 0xBCF5C28Fu, 0xBFC3D70Au, 0x3F866666u, 0x3FC00000u, 0x00000000u, 0x40000000u, 0x3F8CCCCDu, 
-    0x3FC00000u, 0x00000000u, 0x3F800000u, 0x3FD0A3D7u, 0x3FC00000u, 0x00000000u, 0xC1000000u, 0x3F933333u, 
-    0x3FC00000u, 0x00000000u, 0xC0400000u, 0x3F99999Au, 0x3FC00000u, 0xBD4CCCCDu, 0xC11B3333u, 0x3F8CCCCDu, 
-    0x3FC00000u, 0x00000000u, 0xC127851Fu, 0x3FACCCCDu, 0x3FC00000u, 0x00000000u, 0xC0800000u, 0x3F866666u, 
-    0x3FC00000u, 0x00000000u, 0xC137851Fu, 0x3F8CCCCDu, 0x3FC00000u, 0x00000000u, 0xC147851Fu, 0x3F8CCCCDu, 
-    0x3FC00000u, 0xBD8F5C29u, 0xC0E00000u, 0x3F800000u, 0x3FC00000u, 0x00000000u, 0xC0000000u, 0x3FA66666u, 
-    0x3FC00000u, 0x00000000u, 0xC0A00000u, 0x3F866666u, 0x3FC00000u, 0x00000000u, 0x00000000u, 0x3FDD70A4u, 
-    0x3FC00000u, 0x00000000u, 0xC0C00000u, 0x3FD47AE1u, 0x3FC00000u, 0x00000000u, 0xBF800000u, 0x3FC00000u, 
-    0xBFC00000u, 0xBD4CCCCDu, 0x40000000u, 0x3F800000u, 0xBFC00000u, 0x00000000u, 0xC11F0A3Du, 0x3F828F5Cu, 
-    0x3FC00000u, 0xBC23D70Au, 0x4123D70Au, 0x3F99999Au, 0xBFC00000u, 0xBE19999Au, 0x3E3851ECu, 0x3F333333u, 
-    0x12151413u, 0x22001110u, 0x05040102u, 0x203A1E37u, 0x21242327u, 0x031B2625u, 0x1C1D381Fu, 0x00000000u, 
-    0x39061617u, 0x08090B0Cu, 0x0D0E0F0Au, 0x36342928u, 0x332E2B32u, 0x072A3135u, 0x302F2D2Cu, 0x00000000u, 
+typedef float f32;
+/* Vec4 table of f32 records (x, y, z, scale) indexed by a byte lookup; this
+   is the tail of the table at D_00440CF0 (stride 16) read by func_00142320.
+   The two u8[32] lookups at the end map an index below 0x1C to a record. */
+typedef struct Rec_00440EE0 {
+    f32 v[4];
+} Rec_00440EE0;
+typedef struct Tab_00440EE0 {
+    Rec_00440EE0 rec[28];
+    u8 idx[2][32];
+} Tab_00440EE0;
+typedef char Tab_00440EE0_size_check[(sizeof(Tab_00440EE0) == 512) ? 1 : -1];
+Tab_00440EE0 data_u32_00440EE0 = {
+    {
+        { { -1.5f, -0.170000002f, -8.90999985f, 0.860000014f } },
+        { { -1.5f, 0.0f, -0.529999971f, 1.0f } },
+        { { -1.5f, 0.0f, -4.42000008f, 1.01999998f } },
+        { { -1.5f, -0.0900000036f, 7.1500001f, 1.0f } },
+        { { -1.5f, 0.0f, -2.52999997f, 1.0f } },
+        { { -1.5f, 0.0f, -3.51999998f, 1.0f } },
+        { { -1.5f, 0.0f, -5.42000008f, 1.0f } },
+        { { -1.5f, 0.0f, -6.32000017f, 1.20000005f } },
+        { { -1.5f, -0.0299999993f, -1.52999997f, 1.04999995f } },
+        { { 1.5f, 0.0f, 2.0f, 1.10000002f } },
+        { { 1.5f, 0.0f, 1.0f, 1.63f } },
+        { { 1.5f, 0.0f, -8.0f, 1.14999998f } },
+        { { 1.5f, 0.0f, -3.0f, 1.20000005f } },
+        { { 1.5f, -0.0500000007f, -9.69999981f, 1.10000002f } },
+        { { 1.5f, 0.0f, -10.4700003f, 1.35000002f } },
+        { { 1.5f, 0.0f, -4.0f, 1.04999995f } },
+        { { 1.5f, 0.0f, -11.4700003f, 1.10000002f } },
+        { { 1.5f, 0.0f, -12.4700003f, 1.10000002f } },
+        { { 1.5f, -0.0700000003f, -7.0f, 1.0f } },
+        { { 1.5f, 0.0f, -2.0f, 1.29999995f } },
+        { { 1.5f, 0.0f, -5.0f, 1.04999995f } },
+        { { 1.5f, 0.0f, 0.0f, 1.73000002f } },
+        { { 1.5f, 0.0f, -6.0f, 1.65999997f } },
+        { { 1.5f, 0.0f, -1.0f, 1.5f } },
+        { { -1.5f, -0.0500000007f, 2.0f, 1.0f } },
+        { { -1.5f, 0.0f, -9.93999958f, 1.01999998f } },
+        { { 1.5f, -0.00999999978f, 10.2399998f, 1.20000005f } },
+        { { -1.5f, -0.150000006f, 0.180000007f, 0.699999988f } }
+    },
+    {
+        { 0x13, 0x14, 0x15, 0x12, 0x10, 0x11, 0x00, 0x22, 0x02, 0x01, 0x04, 0x05, 0x37, 0x1E, 0x3A, 0x20, 0x27, 0x23, 0x24, 0x21, 0x25, 0x26, 0x1B, 0x03, 0x1F, 0x38, 0x1D, 0x1C, 0x00, 0x00, 0x00, 0x00 },
+        { 0x17, 0x16, 0x06, 0x39, 0x0C, 0x0B, 0x09, 0x08, 0x0A, 0x0F, 0x0E, 0x0D, 0x28, 0x29, 0x34, 0x36, 0x32, 0x2B, 0x2E, 0x33, 0x35, 0x31, 0x2A, 0x07, 0x2C, 0x2D, 0x2F, 0x30, 0x00, 0x00, 0x00, 0x00 }
+    }
 };

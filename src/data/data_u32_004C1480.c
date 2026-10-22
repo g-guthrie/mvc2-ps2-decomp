@@ -1,4 +1,23 @@
+typedef signed char s8;
+typedef unsigned char u8;
+typedef short s16;
+typedef unsigned short u16;
+typedef int s32;
 typedef unsigned int u32;
-u32 data_u32_004C1480[12] = {
-    0x02000201u, 0x020102FFu, 0xFFFFFFFFu, 0x02010201u, 0x02FF02FFu, 0xFFFFFFFFu, 0x02000201u, 0x020102FFu, 0x02FFFFFFu, 0x02010201u, 0x02FF02FFu, 0xFFFFFFFFu
+typedef float f32;
+/* Sequences of signed byte pairs, FF-terminated, grouped as four-byte rows;
+   actor+0x408 is pointed into this table gp-relative. */
+s8 data_u32_004C1480[12][4] = {
+    { 1, 2, 0, 2 },
+    { -1, 2, 1, 2 },
+    { -1, -1, -1, -1 },
+    { 1, 2, 1, 2 },
+    { -1, 2, -1, 2 },
+    { -1, -1, -1, -1 },
+    { 1, 2, 0, 2 },
+    { -1, 2, 1, 2 },
+    { -1, -1, -1, 2 },
+    { 1, 2, 1, 2 },
+    { -1, 2, -1, 2 },
+    { -1, -1, -1, -1 }
 };

@@ -1,7 +1,19 @@
-typedef unsigned int u32;
-u32 data_u32_004BF5F0[32] = {
-    0x00010000u, 0x0000000Au, 0xFFFF00E0u, 0x00000005u, 0x000100F0u, 0x00000005u, 0x000100F8u, 0x00000006u, 
-    0x00010000u, 0x00000004u, 0x00010000u, 0x00000008u, 0x00010028u, 0x00000006u, 0xFFFF0000u, 0x00000006u, 
-    0x0044AF30u, 0x0044AF50u, 0x00010000u, 0x00000002u, 0xFFFF00C0u, 0x00000006u, 0x00010000u, 0x00000014u, 
-    0x00010030u, 0x00000006u, 0x0044AFE0u, 0x0044AFE0u, 0x00010000u, 0x00000001u, 0xFFFF00C0u, 0x00000006u, 
+typedef int s32;
+/* 16.16 fixed-point / count word pairs; D_004BF630 (+0x40) is a pointer pair table indexed
+   by u8 (+0x20) in func_001A0200, D_004BF658 (+0x68) likewise. */
+extern char D_0044AF30[], D_0044AF50[], D_0044AFE0[];
+typedef struct Mv_004BF5F0 {
+    s32 a_00[16];
+    void *p_40[2];
+    s32 a_48[8];
+    void *p_68[2];
+    s32 a_70[4];
+} Mv_004BF5F0;
+typedef char Mv_004BF5F0_size_check[(sizeof(Mv_004BF5F0) == 128) ? 1 : -1];
+Mv_004BF5F0 data_u32_004BF5F0 = {
+    { 65536, 10, -65312, 5, 65776, 5, 65784, 6, 65536, 4, 65536, 8, 65576, 6, -65536, 6 },
+    { D_0044AF30, D_0044AF50 },
+    { 65536, 2, -65344, 6, 65536, 20, 65584, 6 },
+    { D_0044AFE0, D_0044AFE0 },
+    { 65536, 1, -65344, 6 },
 };
