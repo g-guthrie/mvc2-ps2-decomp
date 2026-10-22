@@ -1,4 +1,8 @@
-typedef unsigned int u32;
-u32 data_u32_004B70F0[4] = {
-    0x00000100u, 0x01000000u, 0x01000000u, 0x01010100u, 
+typedef unsigned char u8;
+/* 4x4 byte table read by func_001E7750: row = (flags & 6) >> 1, col = (flags2 & 6) >> 1. */
+u8 data_u32_004B70F0[4][4] = {
+    {0x00, 0x01, 0x00, 0x00},
+    {0x00, 0x00, 0x00, 0x01},
+    {0x00, 0x00, 0x00, 0x01},
+    {0x00, 0x01, 0x01, 0x01}
 };

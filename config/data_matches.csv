@@ -2854,7 +2854,7 @@ data_u32_004526A0,0x004526A0,0x30,src/data/data_u32_004526A0.c,complete,reconstr
 jtbl_004526D0,0x004526D0,0x18,src/data/jtbl_004526D0.c,complete,reconstructed
 data_u32_004526F0,0x004526F0,0x10,src/data/data_u32_004526F0.c,complete,reconstructed
 jtbl_00452700,0x00452700,0x18,src/data/jtbl_00452700.c,complete,reconstructed
-data_u32_00452720,0x00452720,0x60,src/data/data_u32_00452720.c,complete,placeholder
+data_u32_00452720,0x00452720,0x60,src/data/data_u32_00452720.c,complete,reconstructed
 jtbl_00452780,0x00452780,0x24,src/data/jtbl_00452780.c,complete,reconstructed
 jtbl_004527B0,0x004527B0,0x24,src/data/jtbl_004527B0.c,complete,reconstructed
 jtbl_004527D8,0x004527D8,0xC,src/data/jtbl_004527D8.c,complete,reconstructed
@@ -3337,7 +3337,7 @@ data_ptr_table_004555A0,0x004555A0,0x10,src/data/data_ptr_table_004555A0.c,compl
 data_u32_004555B0,0x004555B0,0x80,src/data/data_u32_004555B0.c,complete,placeholder
 data_ptr_table_00455630,0x00455630,0x10,src/data/data_ptr_table_00455630.c,complete,reconstructed
 data_u32_00455640,0x00455640,0xB0,src/data/data_u32_00455640.c,complete,reconstructed
-data_ptr_table_004556F0,0x004556F0,0x10,src/data/data_ptr_table_004556F0.c,complete,placeholder
+data_ptr_table_004556F0,0x004556F0,0x10,src/data/data_ptr_table_004556F0.c,complete,reconstructed
 data_u32_00455700,0x00455700,0xC0,src/data/data_u32_00455700.c,complete,reconstructed
 data_ptr_table_004557C0,0x004557C0,0x10,src/data/data_ptr_table_004557C0.c,complete,reconstructed
 data_u32_004557D0,0x004557D0,0xB0,src/data/data_u32_004557D0.c,complete,reconstructed
@@ -5199,7 +5199,7 @@ jtbl_00475D10,0x00475D10,0x9c,src/data/jtbl_00475D10.c,complete,reconstructed
 jtbl_00475DD0,0x00475DD0,0x2c,src/data/jtbl_00475DD0.c,complete,reconstructed
 data_s8_00475E00,0x00475E00,0x80,src/data/data_s8_00475E00.c,complete,reconstructed
 jtbl_00475E80,0x00475E80,0x20,src/data/jtbl_00475E80.c,complete,reconstructed
-data_u32_00475EA0,0x00475EA0,0x50,src/data/data_u32_00475EA0.c,complete,placeholder
+data_u32_00475EA0,0x00475EA0,0x50,src/data/data_u32_00475EA0.c,complete,reconstructed
 jtbl_00475EF0,0x00475EF0,0x5c,src/data/jtbl_00475EF0.c,complete,reconstructed
 jtbl_00475F50,0x00475F50,0x10,src/data/jtbl_00475F50.c,complete,reconstructed
 jtbl_00475F60,0x00475F60,0x10,src/data/jtbl_00475F60.c,complete,reconstructed
@@ -8496,7 +8496,7 @@ data_raw_004B705C,0x004B705C,0x4,src/data/data_raw_004B705C.c,complete,placehold
 gScoreboardWinPrefix_004B7060,0x004B7060,0x3,src/data/gScoreboardWinPrefix_004B7060.c,complete,reconstructed
 data_u8_004B7063,0x004B7063,0xD,src/data/data_u8_004B7063.c,complete,placeholder
 jtbl_004B7070,0x004B7070,0x80,src/data/jtbl_004B7070.c,complete,reconstructed
-data_u32_004B70F0,0x004B70F0,0x10,src/data/data_u32_004B70F0.c,complete,placeholder
+data_u32_004B70F0,0x004B70F0,0x10,src/data/data_u32_004B70F0.c,complete,reconstructed
 jtbl_004B7100,0x004B7100,0x18,src/data/jtbl_004B7100.c,complete,reconstructed
 data_raw_004B7120,0x004B7120,0x10,src/data/data_raw_004B7120.c,complete,reconstructed
 data_u8_004B7130,0x004B7130,0x1,src/data/data_u8_004B7130.c,complete,reconstructed
@@ -10669,7 +10669,7 @@ data_ptr_004C245C,0x004C245C,0x4,src/data/data_ptr_004C245C.c,complete,reconstru
 data_callback_args_004C2460,0x004C2460,0x8,src/data/data_callback_args_004C2460.c,complete,reconstructed
 data_ptr_004C2468,0x004C2468,0x4,src/data/data_ptr_004C2468.c,complete,reconstructed
 data_ptr_004C246C,0x004C246C,0x4,src/data/data_ptr_004C246C.c,complete,reconstructed
-data_u32_004C2470,0x004C2470,0x20,src/data/data_u32_004C2470.c,complete,placeholder
+data_u32_004C2470,0x004C2470,0x20,src/data/data_u32_004C2470.c,complete,reconstructed
 data_u32_004C2490,0x004C2490,0x4,src/data/data_u32_004C2490.c,complete,reconstructed
 data_ptr_004C2494,0x004C2494,0x4,src/data/data_ptr_004C2494.c,complete,reconstructed
 data_u32_004C2498,0x004C2498,0x4,src/data/data_u32_004C2498.c,complete,reconstructed
