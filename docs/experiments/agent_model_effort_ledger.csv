@@ -303,3 +303,19 @@ sd5,13,sonnet,medium,code-sibling3,4,2,856,203719,15.7,
 nm6,16,sonnet,medium,code-nearmiss,2,2,816,101468,1.7,
 nm5,16,sonnet,medium,code-nearmiss,2,0,0,112477,3.5,f1/f2 zero const
 nm0,16,sonnet,medium,code-nearmiss,3,0,0,114153,3.7,$v1 sign test after func_00175700
+nm3,16,sonnet,medium,code-nearmiss,3,0,0,115813,4.1,register naming
+nm4,16,sonnet,medium,code-nearmiss,3,0,0,128630,4.2,lui hoist / slot swap
+sd4,13,sonnet,medium,code-sibling3,4,2,1148,184499,21.4,
+nm8,16,sonnet,medium,code-nearmiss,4,0,0,137517,5.6,p[6] chain slot fill
+nm1,16,sonnet,medium,code-nearmiss,3,0,0,117672,5.8,register naming
+nm2,16,sonnet,medium,code-nearmiss,3,1,300,137139,5.9,static data-pointer reference
+nm7,16,sonnet,medium,code-nearmiss,2,0,0,103013,7.2,EE store order
+rt23,9,sonnet,medium,code-retry,1,0,0,,,2 of 3 already matched (stale pool)
+xl3,17,sonnet,medium,code-xl,3,0,0,,,418D70 one word off
+rt25,9,sonnet,medium,code-retry,2,2,968,129881,5.4,
+rt22,9,sonnet,medium,code-retry,3,0,0,146285,6.4,
+xl9,17,sonnet,medium,code-xl,3,2,2388,188916,11.8,static priming
+xl7,17,sonnet,medium,code-xl,3,1,1332,188891,11.8,static priming
+xl4,17,sonnet,medium,code-xl,3,0,0,210635,12.9,
+rr0,18,sonnet,medium,code-retry2,3,3,1308,143237,7.0,
+rt24,9,sonnet,medium,code-retry,3,0,0,180145,11.1,
