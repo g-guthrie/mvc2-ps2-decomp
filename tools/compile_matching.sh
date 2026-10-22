@@ -20105,4 +20105,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/linked_actor_detach.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/linked_actor_detach.o"
 "$PYTHON" tools/verify_object.py "$BUILD/linked_actor_detach.o" private/SLUS_204.86.rom --source src/linked_actor_detach.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/activate_mask_differences.c -c -lang c -O3,p -sdatathreshold 8 -o "$BUILD/activate_mask_differences.o"
+"$PYTHON" tools/verify_object.py "$BUILD/activate_mask_differences.o" private/SLUS_204.86.rom --source src/activate_mask_differences.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

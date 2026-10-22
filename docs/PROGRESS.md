@@ -4913,3 +4913,28 @@ full hybrid relink/packed retail ELF pass. The missing input is repaired
 without changing CODE or DATA coverage. `func_0018F320` itself remains
 uncredited because its reconstructed body still differs. CODE remains
 2,661,664 / 3,293,696 bytes; DATA remains 468,869 / 648,064 bytes.
+
+## 2026-10-22: two-word activation-mask differences
+
+Recovered `func_0013CC50` (396 bytes) as ordinary C with MWCCPS2 3.0.3,
+-O3,p and a small-data threshold of 8. The mode byte selects masks from
+two pairs of existing global words. Each combined word is XORed with
+the record's saved word at 0xD0 or 0xD4. For each differing bit, the native
+algorithm ORs that bit into the saved word and invokes the already
+verified `func_0013CB50` with its bit index. It deliberately retains this
+XOR/OR behavior rather than replacing it with a different edge detector.
+
+The two signed-byte-normalized loops visit exactly word indices 0..1 and
+bit indices 0..31. Unsigned shifts preserve bit 31 without signed-shift
+overflow; the callback receives indices 0..63. The input-word declarations
+retain their unsigned type, with explicit signed read views as consumed
+by the native expressions. No static calls or pointer references to this
+retained function were found in the pinned retail image; the unary input
+contract follows its live A0 accesses and complete native body.
+
+The complete compiled body matches after relocation. Catalog/build checks,
+all 126 tests and the full hybrid relink/retail-ELF packing pass. CODE is
+2,662,060 / 3,293,696 bytes (80.8229%), 18,718 matched functions. DATA
+remains 468,869 / 648,064 bytes. The retail ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The fixed next full-percentage checkpoint remains 2,673,376 CODE bytes.
