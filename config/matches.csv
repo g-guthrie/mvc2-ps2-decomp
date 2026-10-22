@@ -18366,3 +18366,9 @@ func_0014E2F0,0x0014E2F0,0x47C,src/fb62_a.c,complete
 func_00171DB0,0x00171DB0,0x558,src/fb68_a.c,complete
 func_001AC3F0,0x001AC3F0,0x3E8,src/fb70_a.c,complete
 func_0015B200,0x0015B200,0x458,src/fb70_b.c,complete
+func_0014FB00,0x0014FB00,0x1A0,src/fb59_a.c,complete
+func_00296500,0x00296500,0x244,src/fb59_b.c,complete
+func_00160250,0x00160250,0x264,src/fb59_c.c,complete
+func_003E0F60,0x003E0F60,0xBC0,src/fb69_d.c,complete
+func_003F21F0,0x003F21F0,0x160,src/fb69_c.c,complete
+func_00123BE0,0x00123BE0,0xA7C,src/fb61_b.c,complete
