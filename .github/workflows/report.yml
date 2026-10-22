@@ -20,7 +20,7 @@ jobs:
       - name: Install report dependencies
         run: python -m pip install pyelftools==0.32
       - name: Test reporting tools
-        run: PYTHONPATH=. python -m unittest tools.test_project tools.test_progress_catalog tools.test_hybrid_relink tools.test_pack_retail_elf tools.test_verify_object tools.test_compiled_switch_data tools.test_embedded_compiler_switch tools.test_sony29_tools
+        run: PYTHONPATH=. python -m unittest tools.test_project tools.test_progress_catalog tools.test_hybrid_relink tools.test_pack_retail_elf tools.test_verify_object tools.test_compiled_switch_data tools.test_embedded_compiler_switch tools.test_sony29_tools tools.test_run_matching
       - name: Test command-stream parsing and label provenance
         run: PYTHONPATH=. python -m unittest discover -s tests
       - name: Validate build wiring and progress catalog

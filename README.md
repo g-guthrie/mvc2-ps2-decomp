@@ -111,6 +111,17 @@ Most units use MWCCPS2 3.0.3; the explicitly documented `state_return_family`
 unit is compiled with 3.0-011126 because that compiler is the only tested one
 that reproduces its target scheduling exactly.
 
+`make match` runs `tools/run_matching.py`, which reads
+`tools/compile_matching.sh` and runs its independent units in parallel (one
+worker per CPU; set `MATCH_JOBS` to change it) with verification in-process.
+Compiled objects are cached under `build/cache/` by the content of everything
+each command reads, so a rebuild recompiles only what changed; verification
+always reruns. `--no-cache` forces a cold build, and `make match-serial` runs
+the script top to bottom with `sh` as before. Every unit runs even after a
+failure, and all failures are listed at the end. A cold `make hybrid` takes
+about 3.5 minutes on 4 cores and an unchanged rebuild about one minute,
+against roughly 16 minutes serially.
+
 `make hybrid` then replaces all matched retail windows with the actual compiled
 Metrowerks function sections and requires exact symbol placement plus the full
 loaded-image hashes and byte comparison.

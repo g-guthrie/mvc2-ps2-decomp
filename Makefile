@@ -3,7 +3,7 @@ BIN ?=
 CUE ?=
 CONFIG := config/SLUS_204.86.yaml
 
-.PHONY: setup split relink match hybrid pack-elf progress-check report test clean
+.PHONY: setup split relink match match-serial hybrid pack-elf progress-check report test clean
 
 setup:
 	@test -n "$(BIN)" || { echo "BIN is required" >&2; exit 2; }
@@ -17,6 +17,9 @@ relink:
 	PYTHON="$(PYTHON)" tools/relink_baseline.sh
 
 match:
+	PYTHON="$(PYTHON)" $(PYTHON) tools/run_matching.py
+
+match-serial:
 	PYTHON="$(PYTHON)" tools/compile_matching.sh
 
 hybrid: match
@@ -35,7 +38,7 @@ report: progress-check
 	PYTHONPATH=. $(PYTHON) -m tools.objdiff_report --report build-report/report.json --svg assets/progress.svg
 
 test:
-	PYTHONPATH=. $(PYTHON) -m unittest tools.test_project tools.test_progress_catalog tools.test_hybrid_relink tools.test_pack_retail_elf tools.test_verify_object tools.test_compiled_switch_data tools.test_embedded_compiler_switch tools.test_sony29_tools
+	PYTHONPATH=. $(PYTHON) -m unittest tools.test_project tools.test_progress_catalog tools.test_hybrid_relink tools.test_pack_retail_elf tools.test_verify_object tools.test_compiled_switch_data tools.test_embedded_compiler_switch tools.test_sony29_tools tools.test_run_matching
 	PYTHONPATH=. $(PYTHON) -m unittest discover -s tests
 
 clean:
