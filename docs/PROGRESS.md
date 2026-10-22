@@ -5122,3 +5122,25 @@ CODE is 2,665,108 / 3,293,696 bytes (80.9154%), 18,731 matched functions.
 DATA remains 468,869 / 648,064 bytes. Retail ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,673,376 CODE bytes.
+
+## Motion and character-state callback batch
+
+Recovered 21 complete callbacks, adding 3,972 exact CODE bytes. This includes
+transition timers, randomized placement, landing behavior, inherited actor
+state, four initialization/integration steps, two range-based state
+selectors, and six character-state entry handlers. Whole-function proofs
+use MWCCPS2 3.0.3, 3.0-011126, and 2.4 with each source's verified profile.
+The inherited state copies preserve the full 0xC4-byte native region; strict
+and unordered float comparisons and signed timer behavior remain explicit.
+
+Two public helper interfaces now describe the genuine unary animation
+callback and two-pointer position-copy helper. All 643 previously credited
+bodies in affected files remain exact. The function catalog separates
+52 alignment bytes as uncredited gaps; no DATA credit is added.
+
+Clean splitting, catalog/build checks, all 126 tests, and full hybrid
+relink/packing pass. CODE is 2,669,080 / 3,293,696 bytes (81.0360%), with
+18,752 matched functions. DATA remains 468,869 / 648,064 bytes. The retail
+ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,673,376 CODE bytes.

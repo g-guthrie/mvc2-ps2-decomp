@@ -20137,4 +20137,24 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/fades_and_transition.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/fades_and_transition.o"
 "$PYTHON" tools/verify_object.py "$BUILD/fades_and_transition.o" private/SLUS_204.86.rom --source src/fades_and_transition.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/motion_state_callbacks.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/motion_state_callbacks.o"
+"$PYTHON" tools/verify_object.py "$BUILD/motion_state_callbacks.o" private/SLUS_204.86.rom --source src/motion_state_callbacks.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/inherited_state_callbacks_30.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/inherited_state_callbacks_30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/inherited_state_callbacks_30.o" private/SLUS_204.86.rom --source src/inherited_state_callbacks_30.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/inlined_motion_steps.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/inlined_motion_steps.o"
+"$PYTHON" tools/verify_object.py "$BUILD/inlined_motion_steps.o" private/SLUS_204.86.rom --source src/inlined_motion_steps.c
+
+MWCIncludes=$(dirname "$MWCCPS2_24") "$WIBO" "$MWCCPS2_24" \
+    src/range_state_callbacks_24.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/range_state_callbacks_24.o"
+"$PYTHON" tools/verify_object.py "$BUILD/range_state_callbacks_24.o" private/SLUS_204.86.rom --source src/range_state_callbacks_24.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/character_state_entries_30.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/character_state_entries_30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/character_state_entries_30.o" private/SLUS_204.86.rom --source src/character_state_entries_30.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

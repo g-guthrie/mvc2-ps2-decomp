@@ -780,7 +780,7 @@ void func_002884A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_00288860(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
-void func_00288A70(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
+void func_00288A70(u8 *p) { func_00175700(p); }
 
 void func_00288BB0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
