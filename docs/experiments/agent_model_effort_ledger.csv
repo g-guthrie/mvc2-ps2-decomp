@@ -66,3 +66,17 @@ hr5,5r,sonnet,low,data-retry,50,4,772,92170,2.0,quick pass
 hr8,5r,haiku,medium,data-retry,50,2,160,108351,2.6,
 hr9,5r,sonnet,low,data-retry,50,14,1418,128758,4.2,
 hr6,5r,sonnet,low,data-retry,50,18,1620,190614,8.3,
+hr7,5r,haiku,high,data-retry,50,5,240,182246,9.8,15 of 50 already done by overlap
+hy3,5,sonnet,low,code,15,7,3124,241752,11.6,
+hy6,5,sonnet,low,code,15,10,4604,245592,12.0,
+hy9,5r,haiku,high,code-retry,15,0,0,267742,12.4,
+hy10,5r,haiku,medium,code-retry,15,0,0,238187,12.9,
+hy5,5,sonnet,low,code,15,8,3520,246825,13.8,
+hy2,5,sonnet,low,code,15,9,3952,292820,14.2,
+hy1,5,sonnet,low,code,15,11,4864,316661,16.9,
+hy8,5r,sonnet,low,code-retry,15,8,2788,263500,16.3,plus 1 bonus callee
+hy4,5,sonnet,low,code,15,6,2752,292211,14.6,
+hy11,5r,haiku,high,code-retry,15,3,664,284573,13.1,
+hr10,5r,haiku,high,data-retry,50,15,897,251109,12.2,12 of 50 already done by overlap
+hz3,5r,haiku,low,code-retry,15,0,0,191540,7.2,
+hz1,5r,haiku,xhigh,code-retry,15,0,0,277076,13.3,
