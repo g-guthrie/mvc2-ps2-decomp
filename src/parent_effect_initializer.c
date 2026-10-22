@@ -1,0 +1,41 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
+typedef unsigned int u32;
+typedef struct {u32 words[49];} Payload;
+typedef struct {float x,y,z;} Vec3;
+typedef struct {s16 x,y;s8 pose;u8 animation;} Placement;
+extern Placement D_0044C290[26];
+extern u8 D_0044C330[26];
+extern int func_00175580(u8 *,int,int,int);
+extern void func_001BE1C0(u8 *);
+void func_001BE040(u8 *p)
+{
+ u8 *owner=*(u8**)(p+0x18);
+ Placement *row;
+ float horizontal,vertical;
+ p[4]++;
+ *(u16*)(p+0x26)=0x1801;
+ *(Payload*)(p+0xEC)=*(Payload*)(owner+0xEC);
+ p[0x13C]=1;
+ horizontal=1.66666662693023681640625f;
+ vertical=2.142857074737548828125f;
+ p[2]=owner[2];p[1]=owner[1];
+ *(float*)(p+0x50)=*(float*)(owner+0x50);
+ *(float*)(p+0x54)=*(float*)(owner+0x54);
+ p[0x1B7]=owner[0x1B7];p[0x1B8]=owner[0x1B8];
+ *(s8*)(p+0x30)=*(s8*)(owner+0x30);
+ *(Vec3*)(p+0x50)=*(Vec3*)(owner+0x50);
+ *(s8*)(p+0x24)=*(s8*)(owner+0x24);
+ p[0x13C]=0;
+ *(float*)(p+0x118)=0.0f;
+ *(s16*)(p+0x1C)=D_0044C330[p[0x20]];
+ row=&D_0044C290[p[0x20]];
+ p[0x24]=7;
+ *(s8*)(p+0x31)=row->pose;
+ *(float*)(p+0x34)=*(float*)(owner+0x34)+horizontal*(float)row->x;
+ *(float*)(p+0x38)=*(float*)(owner+0x38)+vertical*(float)row->y;
+ func_00175580(p,0x1B,row->animation,1);
+ func_001BE1C0(p);
+}

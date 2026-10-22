@@ -20117,4 +20117,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_follow_callbacks.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_follow_callbacks.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_follow_callbacks.o" private/SLUS_204.86.rom --source src/owner_follow_callbacks.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/glyph_and_owner_gate.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/glyph_and_owner_gate.o"
+"$PYTHON" tools/verify_object.py "$BUILD/glyph_and_owner_gate.o" private/SLUS_204.86.rom --source src/glyph_and_owner_gate.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/parent_effect_initializer.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/parent_effect_initializer.o"
+"$PYTHON" tools/verify_object.py "$BUILD/parent_effect_initializer.o" private/SLUS_204.86.rom --source src/parent_effect_initializer.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

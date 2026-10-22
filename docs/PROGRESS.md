@@ -5026,3 +5026,42 @@ relink/packing pass. CODE is 2,662,980 / 3,293,696 bytes (80.8508%),
 The retail ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,673,376 CODE bytes.
+
+## 2026-10-22: glyph startup, owner gate and parent-effect initialization
+
+Recovered another 516 bytes from three callback entries previously grouped
+inside assembly residuals:
+
+- `func_00136390` (60 bytes) initializes the glyph script cursor, position
+  and index, then tail-calls the existing dispatcher. The seven script
+  pointers are selected by the fixed factory arguments 0..6. Its ordinary
+  C body matches with MWCCPS2 3.0.3, -O3,p and a zero small-data threshold.
+- `func_0013AFB0` (72 bytes) clears byte 0x13C and advances its phase when
+  owner depth is strictly below 170 or owner phase is at least two. The
+  strict floating comparison remains the native instruction sequence.
+  It uses the same compiler profile.
+- `func_001BE040` (384 bytes) copies the 196-byte owner payload and visual
+  metadata, initializes visibility/timing and follows the selected signed
+  position record before initializing animation and entering its handler.
+  It matches with MWCCPS2 3.0, -O3,p and a zero small-data threshold.
+  The row is selected before assigning the render pose, preserving the
+  native selector capture and field-update order.
+
+The parent factory explicitly supplies modes 0..25, bounding both the
+26-entry placement view at 0044C290 and timer view at 0044C330. No DATA
+coverage is added by these code views. Function boundaries now use the
+actual callback entries and complete compiled extents; four preceding
+alignment bytes remain in the uncredited gap catalog.
+
+Three cleanup definitions now take their genuine single pointer argument,
+removing fabricated unused arguments. The no-op handler accepts the
+callback's real ignored pointer. All fourteen related callback targets
+now agree with their unary invocation interfaces. All 1,037 previously
+credited bodies in the affected shared source files remain exact.
+
+Clean splitting, catalog/build checks, all 126 tests and full hybrid
+relink/packing pass. CODE is 2,663,496 / 3,293,696 bytes (80.8665%),
+18,725 matched functions. DATA remains 468,869 / 648,064 bytes.
+The retail ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,673,376 CODE bytes.

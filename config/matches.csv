@@ -18785,3 +18785,6 @@ func_001BD7D0,0x001BD7D0,0x15C,src/owner_relative_position.c,complete
 func_001BC990,0x001BC990,0x128,src/owner_follow_callbacks.c,complete
 func_001BDA80,0x001BDA80,0xF0,src/owner_follow_callbacks.c,complete
 func_001BDDB0,0x001BDDB0,0x24,src/owner_follow_callbacks.c,complete
+func_00136390,0x00136390,0x3C,src/glyph_and_owner_gate.c,complete
+func_0013AFB0,0x0013AFB0,0x48,src/glyph_and_owner_gate.c,complete
+func_001BE040,0x001BE040,0x180,src/parent_effect_initializer.c,complete

@@ -1021,7 +1021,7 @@ func_001360C0,0x001360C0,0x44,0x00136104,code,spimdisasm-explicit-size-before-fi
 func_00136110,0x00136110,0x1AC,0x001362BC,code,spimdisasm-explicit-size-before-first-data
 func_001362C0,0x001362C0,0xAC,0x0013636C,code,spimdisasm-explicit-size-before-first-data
 func_00136370,0x00136370,0x20,0x00136390,code,matching-c-head-split
-residual_00136390,0x00136390,0x3C,0x001363CC,assembly_residual,verified-boundary-after-matching-head
+func_00136390,0x00136390,0x3C,0x001363CC,code,callback-table-entry-and-whole-function-compiler-proof
 func_001363D0,0x001363D0,0x1C,0x001363EC,code,matching-c-head-split
 func_001363F0,0x001363F0,0x8C,0x0013647C,code,verified-complete-c-function
 func_00136480,0x00136480,0xDC,0x0013655C,code,spimdisasm-explicit-size-before-first-data
@@ -1150,7 +1150,7 @@ func_0013AE00,0x0013AE00,0x98,0x0013AE98,code,spimdisasm-explicit-size-before-fi
 func_0013AEA0,0x0013AEA0,0xBC,0x0013AF5C,code,spimdisasm-explicit-size-before-first-data
 func_0013AF60,0x0013AF60,0x2C,0x0013AF8C,code,spimdisasm-explicit-size-before-first-data
 func_0013AF90,0x0013AF90,0x1C,0x0013AFAC,code,matching-c-head-split
-residual_0013AFAC,0x0013AFAC,0x4C,0x0013AFF8,assembly_residual,verified-boundary-after-matching-head
+func_0013AFB0,0x0013AFB0,0x48,0x0013AFF8,code,callback-table-entry-and-whole-function-compiler-proof
 func_0013B000,0x0013B000,0x8,0x0013B008,code,spimdisasm-explicit-size-before-first-data
 func_0013B010,0x0013B010,0x48,0x0013B058,code,spimdisasm-explicit-size-before-first-data
 func_0013B060,0x0013B060,0xC0,0x0013B120,code,spimdisasm-explicit-size-before-first-data
@@ -4210,7 +4210,7 @@ func_001BDF90,0x001BDF90,0x14,0x001BDFA4,code,spimdisasm-explicit-size-before-fi
 func_001BDFB0,0x001BDFB0,0x8,0x001BDFB8,code,spimdisasm-explicit-size-before-first-data
 func_001BDFC0,0x001BDFC0,0x54,0x001BE014,code,spimdisasm-explicit-size-before-first-data
 func_001BE020,0x001BE020,0x20,0x001BE040,code,matching-c-head-split
-residual_001BE040,0x001BE040,0x180,0x001BE1C0,assembly_residual,verified-boundary-after-matching-head
+func_001BE040,0x001BE040,0x180,0x001BE1C0,code,callback-table-entry-and-whole-function-compiler-proof
 func_001BE1C0,0x001BE1C0,0x68,0x001BE228,code,spimdisasm-explicit-size-before-first-data
 func_001BE230,0x001BE230,0x70,0x001BE2A0,code,spimdisasm-explicit-size-before-first-data
 func_001BE2A0,0x001BE2A0,0x134,0x001BE3D4,code,spimdisasm-explicit-size-before-first-data

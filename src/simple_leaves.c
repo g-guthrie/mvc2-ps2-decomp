@@ -162,7 +162,7 @@ void func_001B53D0(void) {}
 
 void func_001B5F90(void) {}
 
-void func_001BE3E0(void) {}
+void func_001BE3E0(u8 *p) {}
 
 void func_001CB720(void) {}
 
