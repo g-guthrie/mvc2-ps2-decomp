@@ -442,3 +442,15 @@ rb32,18,sonnet,medium,code-retry5,3,2,744,200522,14.1,static neighbour; narrow l
 xm0,18,sonnet,medium,code-xl,3,1,772,201119,15.3,3.0; typed struct hoist
 rb38,18,sonnet,medium,code-retry5,3,1,388,182196,18.5,static func_00338670
 xm1,18,sonnet,medium,code-xl,3,1,780,179336,12.3,3.0 + static func_00338670
+rb46,18,sonnet,medium,code-retry5,3,0,0,126556,3.6,boundary skip
+rb45,18,sonnet,medium,code-retry5,3,2,800,129580,4.0,selective || merge; 3.0
+rb42,18,sonnet,medium,code-retry5,3,1,396,140716,4.9,natural soft-float C
+rb44,18,sonnet,medium,code-retry5,3,2,800,148574,7.6,nested return restructure
+rb41,18,sonnet,medium,code-retry5,3,2,792,148274,10.1,ascending switch; 3.0 ,p
+rb47,18,sonnet,medium,code-retry5,3,1,404,168725,9.2,compound a+= split
+xm2,18,sonnet,medium,code-xl,3,2,1576,354939,26.6,static callee; 3.0 ,p; sony29 template
+rb48,18,sonnet,medium,code-retry5,3,2,816,130393,7.8,3.0; stack array order
+rb50,18,sonnet,medium,code-retry5,3,1,420,152501,8.4,alias ptr; decl sweep
+xm7,18,sonnet,medium,code-xl,3,2,1684,222183,14.6,3.0 ,p; ptr-local stores; default-first switch
+xm5,18,sonnet,medium,code-xl,3,0,0,248271,16.9,
+xm8,18,sonnet,medium,code-xl,3,0,0,248612,17.6,

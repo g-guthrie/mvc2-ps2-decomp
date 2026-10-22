@@ -1,0 +1,48 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
+typedef unsigned int u32;
+typedef signed int s32;
+typedef float f32;
+
+void func_003DDF20(f32 *d, f32 *e, f32 *at, f32 *up) {
+    extern void func_003DE530(f32 *);
+    extern void func_003DE5C0(f32 *, f32 *, f32 *);
+    extern f32 func_003DE590(f32 *, f32 *);
+    f32 X[4];
+    f32 Y[4];
+    f32 C[4];
+    f32 A[4];
+    f32 B[4];
+    A[0] = -(at[0] - e[0]);
+    A[1] = -(at[1] - e[1]);
+    A[2] = -(at[2] - e[2]);
+    B[0] = up[0];
+    B[1] = up[1];
+    B[2] = up[2];
+    func_003DE530(A);
+    func_003DE530(B);
+    C[0] = A[0];
+    C[1] = A[1];
+    C[2] = A[2];
+    func_003DE5C0(X, B, C);
+    func_003DE530(X);
+    func_003DE5C0(Y, C, X);
+    d[3] = 0.0f;
+    d[7] = 0.0f;
+    d[11] = 0.0f;
+    d[15] = 1.0f;
+    d[0] = X[0];
+    d[4] = X[1];
+    d[8] = X[2];
+    d[1] = Y[0];
+    d[5] = Y[1];
+    d[9] = Y[2];
+    d[2] = C[0];
+    d[6] = C[1];
+    d[10] = C[2];
+    d[12] = -func_003DE590(e, X);
+    d[13] = -func_003DE590(e, Y);
+    d[14] = -func_003DE590(e, C);
+}
