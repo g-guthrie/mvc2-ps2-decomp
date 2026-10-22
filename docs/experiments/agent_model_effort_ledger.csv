@@ -454,3 +454,22 @@ rb50,18,sonnet,medium,code-retry5,3,1,420,152501,8.4,alias ptr; decl sweep
 xm7,18,sonnet,medium,code-xl,3,2,1684,222183,14.6,3.0 ,p; ptr-local stores; default-first switch
 xm5,18,sonnet,medium,code-xl,3,0,0,248271,16.9,
 xm8,18,sonnet,medium,code-xl,3,0,0,248612,17.6,
+rb51,18,sonnet,medium,code-retry5,3,0,0,150773,8.5,
+xm4,18,sonnet,medium,code-xl,3,1,796,232693,19.0,goto tail after return
+xm9,18,sonnet,medium,code-xl,3,0,0,157493,5.3,
+rb55,18,sonnet,medium,code-retry5,3,0,0,141703,5.4,3.0 vs 3.0.3 hybrid wall
+rb52,18,sonnet,medium,code-retry5,3,1,428,152802,6.7,default-first switch lever 15
+xm6,18,sonnet,medium,code-xl,3,1,820,334681,26.8,MW slot threading; 3.0
+xm3,18,sonnet,medium,code-xl,3,1,792,339433,26.9,EE in-place reuse var
+rb49,18,sonnet,medium,code-retry5,3,1,412,177046,22.9,
+rb54,18,sonnet,medium,code-retry5,3,0,0,181174,10.3,
+rb53,18,sonnet,medium,code-retry5,3,1,428,163748,11.0,3.0 dup tail; f32* alias
+xm14,18,sonnet,medium,code-xl,3,2,1808,165759,8.6,dense switch cases; assign in test
+xm11,18,sonnet,medium,code-xl,3,1,864,192706,11.6,polarity; arg cast
+xm15,18,sonnet,medium,code-xl,3,0,0,136605,6.9,
+rb43,18,sonnet,medium,code-retry5,3,0,0,183969,31.6,
+xm12,18,sonnet,medium,code-xl,3,1,892,241475,14.5,EE sibling struct + store order
+rb56,18,sonnet,medium,code-retry5,3,1,440,180242,9.5,3.0 + struct members
+rb57,18,sonnet,medium,code-retry5,3,0,0,150638,8.7,
+xm10,18,sonnet,medium,code-xl,3,1,856,233302,15.7,EE cross-jump full tails
+xm13,18,sonnet,medium,code-xl,3,1,896,279850,18.3,3.0; decl sweep

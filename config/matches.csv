@@ -18703,3 +18703,16 @@ func_003DDF20,0x003DDF20,0x198,src/rb48_b.c,complete
 func_002FE1C0,0x002FE1C0,0x1a4,src/rb50_b.c,complete
 func_0038EF00,0x0038EF00,0x348,src/xm7_a.c,complete
 func_003EABA0,0x003EABA0,0x34C,src/xm7_b.c,complete
+func_0041DF70,0x0041DF70,0x31C,src/xm4_a.c,complete
+func_00162460,0x00162460,0x1AC,src/rb52_b.c,complete
+func_0038C750,0x0038C750,0x334,src/xm6_a.c,complete
+func_003F6E70,0x003F6E70,0x318,src/xm3_b.c,complete
+func_0029D8B0,0x0029D8B0,0x19C,src/rb49_a.c,complete
+func_001A47F0,0x001A47F0,0x1AC,src/rb53_b.c,complete
+func_00129140,0x00129140,0x388,src/xm14_a.c,complete
+func_0018B500,0x0018B500,0x388,src/xm14_b.c,complete
+func_003D27D0,0x003D27D0,0x360,src/xm11_a.c,complete
+func_00408960,0x00408960,0x37C,src/xm12_b.c,complete
+func_002DDF40,0x002DDF40,0x1B8,src/rb56_a.c,complete
+func_00405968,0x00405968,0x358,src/xm10_b.c,complete
+func_00184720,0x00184720,0x380,src/xm13_a.c,complete

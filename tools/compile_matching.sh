@@ -19804,4 +19804,61 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/xm7_b.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/xm7_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/xm7_b.o" private/SLUS_204.86.rom --source src/xm7_b.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/xm4_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/xm4_a.o"
+"${OBJCOPY:-mipsel-linux-gnu-objcopy}" \
+    --redefine-sym @46=jtbl_004BF060 \
+    "$BUILD/xm4_a.o" "$BUILD/xm4_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/xm4_a.o" private/SLUS_204.86.rom --source src/xm4_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rb52_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/rb52_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb52_b.o" private/SLUS_204.86.rom --source src/rb52_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/xm6_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/xm6_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/xm6_a.o" private/SLUS_204.86.rom --source src/xm6_a.c
+
+"$WIBO" "$SNCPP" -P src/xm3_b.c "$BUILD/xm3_b.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/xm3_b.i" "$BUILD/xm3_b.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/xm3_b.o" "$BUILD/xm3_b.s"
+"$PYTHON" tools/verify_object.py "$BUILD/xm3_b.o" private/SLUS_204.86.rom --source src/xm3_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rb49_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/rb49_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb49_a.o" private/SLUS_204.86.rom --source src/rb49_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/rb53_b.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/rb53_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb53_b.o" private/SLUS_204.86.rom --source src/rb53_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/xm14_a.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/xm14_a.o"
+"${OBJCOPY:-mipsel-linux-gnu-objcopy}" \
+    --redefine-sym @53=jtbl_004AD0F0 \
+    "$BUILD/xm14_a.o" "$BUILD/xm14_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/xm14_a.o" private/SLUS_204.86.rom --source src/xm14_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/xm14_b.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/xm14_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/xm14_b.o" private/SLUS_204.86.rom --source src/xm14_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/xm11_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/xm11_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/xm11_a.o" private/SLUS_204.86.rom --source src/xm11_a.c
+
+"$WIBO" "$SNCPP" -P src/xm12_b.c "$BUILD/xm12_b.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/xm12_b.i" "$BUILD/xm12_b.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/xm12_b.o" "$BUILD/xm12_b.s"
+"$PYTHON" tools/verify_object.py "$BUILD/xm12_b.o" private/SLUS_204.86.rom --source src/xm12_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/rb56_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/rb56_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb56_a.o" private/SLUS_204.86.rom --source src/rb56_a.c
+"$WIBO" "$SNCPP" -P src/xm10_b.c "$BUILD/xm10_b.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/xm10_b.i" "$BUILD/xm10_b.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/xm10_b.o" "$BUILD/xm10_b.s"
+"$PYTHON" tools/verify_object.py "$BUILD/xm10_b.o" private/SLUS_204.86.rom --source src/xm10_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/xm13_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/xm13_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/xm13_a.o" private/SLUS_204.86.rom --source src/xm13_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
