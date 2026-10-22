@@ -1,0 +1,84 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
+typedef unsigned int u32;
+typedef signed int s32;
+typedef float f32;
+
+typedef struct { f32 x, y, z; } V3;
+typedef struct { f32 x, y, z, w; } V4;
+typedef struct { V4 v[3]; s32 c[3]; } Qd;
+typedef struct { Qd a, b; } QQ;
+
+extern V3 D_00632740;
+
+void func_00417AE0(s32 unused, s32 *a)
+{
+    extern void func_003DD260(f32 *);
+    extern void func_003DF850(s32, s32);
+    extern void func_003DE680(f32 *, V3 *);
+    extern void func_003DEE00(f32 *);
+    QQ qq;
+    f32 w[4];
+    f32 m[16];
+    V3 vec;
+    f32 *y0, *y1, *y2, *y3, *y4, *y5;
+    f32 *r;
+    f32 z;
+    f32 *f = (f32 *)a;
+
+    vec = D_00632740;
+    vec.z = -f[2];
+    func_003DD260(m);
+    func_003DF850(0x19, (s32)m);
+    func_003DE680(w, &vec);
+    y0 = &qq.a.v[0].y;
+    y1 = &qq.a.v[1].y;
+    y2 = &qq.a.v[2].y;
+    r = (f32 *)((s32)&qq.b.v[0].x);
+    y3 = &qq.b.v[0].y;
+    y4 = &qq.b.v[1].y;
+    y5 = &qq.b.v[2].y;
+    qq.a.v[0].x = f[0];
+    *y0 = f[1];
+    z = w[2];
+    qq.a.v[0].z = z;
+    qq.a.c[0] = a[3];
+    qq.a.v[1].x = f[4];
+    *y1 = f[5];
+    qq.a.v[1].z = z;
+    qq.a.c[1] = a[7];
+    qq.a.v[2].x = f[8];
+    *y2 = f[9];
+    qq.a.v[2].z = z;
+    qq.a.c[2] = a[11];
+    qq.a.v[2].w = 1.0f;
+    qq.a.v[1].w = 1.0f;
+    qq.a.v[0].w = 1.0f;
+    *r = f[4];
+    *y3 = f[5];
+    qq.b.v[0].z = z;
+    qq.b.c[0] = a[7];
+    qq.b.v[1].x = f[8];
+    *y4 = f[9];
+    qq.b.v[1].z = z;
+    qq.b.c[1] = a[11];
+    qq.b.v[2].x = f[12];
+    *y5 = f[13];
+    qq.b.v[2].z = z;
+    qq.b.c[2] = a[15];
+    qq.b.v[2].w = 1.0f;
+    qq.b.v[1].w = 1.0f;
+    qq.b.v[0].w = 1.0f;
+    *y0 -= 16.0f;
+    *y1 -= 16.0f;
+    *y2 -= 16.0f;
+    *y3 -= 16.0f;
+    *y4 -= 16.0f;
+    *y5 -= 16.0f;
+    func_003DF850(0xD, 0);
+    func_003DF850(0x5D, 0x32);
+    func_003DEE00(&qq.a.v[0].x);
+    func_003DEE00(r);
+}

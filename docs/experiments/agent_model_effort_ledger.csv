@@ -473,3 +473,22 @@ rb56,18,sonnet,medium,code-retry5,3,1,440,180242,9.5,3.0 + struct members
 rb57,18,sonnet,medium,code-retry5,3,0,0,150638,8.7,
 xm10,18,sonnet,medium,code-xl,3,1,856,233302,15.7,EE cross-jump full tails
 xm13,18,sonnet,medium,code-xl,3,1,896,279850,18.3,3.0; decl sweep
+rb62,18,sonnet,medium,code-retry5,3,3,1392,133841,4.0,static func_00338670; ,p; (u16) double andi
+rb58,18,sonnet,medium,code-retry5,3,0,0,149626,5.7,crt0 skip
+rb61,18,sonnet,medium,code-retry5,3,2,924,157197,6.9,(s32)& addr cast; arg type
+xm20,18,sonnet,medium,code-xl,3,0,0,161946,7.5,3 words off 003D4C10
+xm22,18,sonnet,medium,code-xl,1,0,0,161954,7.7,4 words off 2KB
+xm16,18,sonnet,medium,code-xl,3,0,0,259419,23.7,temps avoid a0/a1
+xm19,18,sonnet,medium,code-xl,3,1,964,188157,11.7,3.0 ,p; s32 callee proto
+rb63,18,sonnet,medium,code-retry5,3,0,0,211110,11.9,
+rb59,18,sonnet,medium,code-retry5,3,2,904,205937,15.3,volatile local struct array (sony29)
+rb65,18,sonnet,medium,code-retry5,3,1,472,166970,9.3,3.0 compound s16 accumulate
+rb60,18,sonnet,medium,code-retry5,3,2,920,235920,17.8,decl sweep; (u32)i<<2; static copies
+rb68,18,sonnet,medium,code-retry5,3,1,484,190143,10.9,3.0; volatile walker ptr
+rb69,18,sonnet,medium,code-retry5,3,1,488,158568,11.3,3.0; ptr list decl
+rb70,18,sonnet,medium,code-retry5,3,0,0,159498,10.2,
+xm17,18,sonnet,medium,code-xl,3,1,920,283018,23.4,K&R live ptr; alias struct
+rb72,18,sonnet,medium,code-retry5,3,0,0,167742,9.9,
+xm18,18,sonnet,medium,code-xl,3,0,0,278628,25.0,
+rb73,18,sonnet,medium,code-retry5,3,0,0,142914,7.2,
+rb71,18,sonnet,medium,code-retry5,3,1,492,186772,10.8,3.0 struct members mov.s

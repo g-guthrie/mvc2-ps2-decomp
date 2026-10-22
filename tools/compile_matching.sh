@@ -19861,4 +19861,61 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/xm13_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/xm13_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/xm13_a.o" private/SLUS_204.86.rom --source src/xm13_a.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rb62_a.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "$BUILD/rb62_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb62_a.o" private/SLUS_204.86.rom --source src/rb62_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rb62_b.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/rb62_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb62_b.o" private/SLUS_204.86.rom --source src/rb62_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rb62_c.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/rb62_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb62_c.o" private/SLUS_204.86.rom --source src/rb62_c.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rb61_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/rb61_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb61_a.o" private/SLUS_204.86.rom --source src/rb61_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rb61_c.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/rb61_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb61_c.o" private/SLUS_204.86.rom --source src/rb61_c.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/xm19_b.c -c -lang c -i src -O3,p -sdatathreshold 256 -o "$BUILD/xm19_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/xm19_b.o" private/SLUS_204.86.rom --source src/xm19_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rb59_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/rb59_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb59_a.o" private/SLUS_204.86.rom --source src/rb59_a.c
+"$WIBO" "$SNCPP" -P src/rb59_b.c "$BUILD/rb59_b.i"
+"$WIBO" "$EE29CC1" "$BUILD/rb59_b.i" -O2 -G0 -ffunction-sections  -quiet -o "$BUILD/rb59_b.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/rb59_b.o" "$BUILD/rb59_b.s"
+"$PYTHON" tools/verify_object.py "$BUILD/rb59_b.o" private/SLUS_204.86.rom --source src/rb59_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/rb65_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/rb65_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb65_a.o" private/SLUS_204.86.rom --source src/rb65_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/rb60_b.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/rb60_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb60_b.o" private/SLUS_204.86.rom --source src/rb60_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rb60_c.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/rb60_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb60_c.o" private/SLUS_204.86.rom --source src/rb60_c.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/rb68_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/rb68_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb68_a.o" private/SLUS_204.86.rom --source src/rb68_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/rb69_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/rb69_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb69_a.o" private/SLUS_204.86.rom --source src/rb69_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/xm17_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/xm17_a.o"
+"${OBJCOPY:-mipsel-linux-gnu-objcopy}" \
+    --redefine-sym @4=D_00472F70 \
+    "$BUILD/xm17_a.o" "$BUILD/xm17_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/xm17_a.o" private/SLUS_204.86.rom --source src/xm17_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/rb71_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/rb71_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb71_a.o" private/SLUS_204.86.rom --source src/rb71_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
