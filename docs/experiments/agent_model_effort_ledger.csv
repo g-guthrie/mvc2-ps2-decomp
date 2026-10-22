@@ -296,3 +296,10 @@ dz1,14,sonnet,medium,data-placeholder,40,4,32,59830,0.9,
 sd11,13,sonnet,medium,code-sibling3,4,0,0,128258,6.5,
 sd6,13,sonnet,medium,code-sibling3,4,2,680,141405,6.6,
 sd1,13,sonnet,medium,code-sibling3,4,1,436,162219,7.2,
+sf0,15,sonnet,medium,code-family-nearmiss,9,8,3268,205516,13.4,static priming
+sd10,13,sonnet,medium,code-sibling3,4,0,0,167983,12.7,all near misses
+sd8,13,sonnet,medium,code-sibling3,4,3,1468,202365,13.6,
+sd5,13,sonnet,medium,code-sibling3,4,2,856,203719,15.7,
+nm6,16,sonnet,medium,code-nearmiss,2,2,816,101468,1.7,
+nm5,16,sonnet,medium,code-nearmiss,2,0,0,112477,3.5,f1/f2 zero const
+nm0,16,sonnet,medium,code-nearmiss,3,0,0,114153,3.7,$v1 sign test after func_00175700
