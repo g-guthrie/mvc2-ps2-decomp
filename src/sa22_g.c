@@ -6,8 +6,8 @@ typedef signed int s32;
 typedef unsigned int u32;
 
 extern s8 D_004B55E0[];
-extern void func_00173590();
-extern void func_00173600();
+extern int func_00173590(u8 *);
+extern int func_00173600(u8 *, s8);
 void func_00173650(u8 *p)
 {
     s32 off;
@@ -22,7 +22,7 @@ void func_00173650(u8 *p)
                 m++;
             }
             if (m == 3) {
-                func_00173600();
+                func_00173600(p, i);
                 return;
             }
         } else {
@@ -31,7 +31,7 @@ void func_00173650(u8 *p)
                 m++;
             }
             if (m == 3) {
-                func_00173590();
+                func_00173590(p);
                 return;
             }
         }

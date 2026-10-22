@@ -4808,3 +4808,20 @@ No unrelated source, uncompiled historical candidates, or DATA units change.
 Build wiring, catalog validation, all 126 tests, and full hybrid relink/pack
 pass. Both retail image hashes remain unchanged. Verified CODE is
 2,660,520 / 3,293,696 bytes; DATA remains 468,869 / 648,064 bytes.
+
+## 2026-10-22: explicit name-entry replacement arguments
+
+The registered `func_00173650` caller now passes the actor and selected signed
+index to `func_00173600`, and the actor to the existing randomized-name
+helper. Their integer return declarations agree with the native setters.
+The caller's 328 bytes remain exact after these inputs become explicit.
+
+The native loop reaches the replacement helper only for selectors 16..19;
+its three-byte stride addresses the four triplets already owned by
+`gNameEntryReplacements_004B5620`. This establishes the actual resource
+precondition. The helper's bounded C candidate remains uncredited because
+its address generation still differs; the biased native alias is preserved
+and no data-symbol address is changed.
+
+Build coverage, catalog checks, all 126 tests, and full hybrid relink/pack
+pass with both retail image hashes unchanged. Matching totals are unchanged.
