@@ -112,3 +112,5 @@ sa25,7,sonnet,medium,code-retry,15,5,2000,319523,26.0,
 sa26,7,sonnet,medium,code-retry,15,5,1520,308926,26.6,
 sa23,7,sonnet,medium,code-retry,15,6,2064,327244,28.6,
 sa29,7,sonnet,medium,code-retry,15,8,2780,276809,25.8,
+sa17,7,sonnet,medium,code-retry,15,3,904,351649,34.5,func_0014C280 dropped: static copy did not verify
+sa33,7,sonnet,medium,code-retry,15,10,3672,278249,17.4,

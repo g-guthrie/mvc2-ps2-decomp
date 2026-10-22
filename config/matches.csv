@@ -18080,3 +18080,16 @@ func_00392730,0x00392730,0x17C,src/sa29_h.c,complete
 func_003923D0,0x003923D0,0x1DC,src/sa29_h.c,complete
 func_0025A8D0,0x0025A8D0,0x19C,src/sa29_i.c,complete
 func_002D5A70,0x002D5A70,0x1A4,src/sa29_j.c,complete
+func_003210D0,0x003210D0,0xe0,src/sa17_a.c,complete
+func_00339820,0x00339820,0xdc,src/sa17_g.c,complete
+func_001458C0,0x001458C0,0x1cc,src/sa17_g.c,complete
+func_00403228,0x00403228,0xDC,src/sa33_c.c,complete
+func_001E3FE0,0x001E3FE0,0xFC,src/sa33_f.c,complete
+func_0015D100,0x0015D100,0x170,src/sa33_h.c,complete
+func_002EE5C0,0x002EE5C0,0x170,src/sa33_i.c,complete
+func_00207510,0x00207510,0x17C,src/sa33_j.c,complete
+func_0012CE00,0x0012CE00,0x180,src/sa33_k.c,complete
+func_00167C70,0x00167C70,0x188,src/sa33_l.c,complete
+func_0014F5A0,0x0014F5A0,0x1A0,src/sa33_m.c,complete
+func_001841E0,0x001841E0,0x1B8,src/sa33_n.c,complete
+func_001884C0,0x001884C0,0x1C4,src/sa33_o.c,complete
