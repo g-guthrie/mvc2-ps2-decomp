@@ -72,7 +72,7 @@ void func_00150EC0(void) {}
 
 void func_00151630(void) {}
 
-void func_00152550(void *p, s32 value) { *(s32 *)((u8 *)p + 40) = value; }
+void func_00152550(void *p, void (*value)(u8 *)) { *(void (**)(u8 *))((u8 *)p + 40) = value; }
 
 s32 func_00153AA0(void *p) { return *(s32 *)((u8 *)p + 132); }
 

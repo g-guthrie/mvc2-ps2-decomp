@@ -20,8 +20,8 @@ void func_0015EF10(V3 *pos, s32 flag) {
     extern O1 *func_003DA750();
     extern s32 func_00174170();
     extern void func_0015ED20();
-    extern void func_0015EE60();
-    extern void func_00152550();
+    extern void func_0015EE60(u8 *);
+    extern void func_00152550(void *, void (*)(u8 *));
     O1 *o;
     s32 w;
     if ((o = func_003DA750(0, 0x34, 1)) != 0) {

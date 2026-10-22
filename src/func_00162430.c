@@ -1,8 +1,8 @@
 typedef unsigned char u8;
 typedef signed int s32;
 
-extern void func_00152550(u8 *, void *);
-extern void func_00162610(void);
+extern void func_00152550(void *, void (*)(u8 *));
+extern void func_00162610(u8 *);
 
 void func_00162430(u8 *p) {
     p[0x13C] = 1;

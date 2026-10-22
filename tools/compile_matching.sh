@@ -20125,4 +20125,12 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/parent_effect_initializer.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/parent_effect_initializer.o"
 "$PYTHON" tools/verify_object.py "$BUILD/parent_effect_initializer.o" private/SLUS_204.86.rom --source src/parent_effect_initializer.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/panel_transition_initializer.c -c -lang c -O3,p -sdatathreshold 8 -o "$BUILD/panel_transition_initializer.o"
+"$PYTHON" tools/verify_object.py "$BUILD/panel_transition_initializer.o" private/SLUS_204.86.rom --source src/panel_transition_initializer.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/controller_state_handlers.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/controller_state_handlers.o"
+"$PYTHON" tools/verify_object.py "$BUILD/controller_state_handlers.o" private/SLUS_204.86.rom --source src/controller_state_handlers.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

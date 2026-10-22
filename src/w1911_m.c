@@ -11,10 +11,10 @@ extern Row D_00440090[];
 extern Cfg *D_004C2840;
 extern s32 D_004C2830;
 extern void func_0013ADA0(void);
-extern void func_0013AE00(void);
+extern void func_0013AE00(u8 *);
 void func_0013A760(u8 *p) {
     extern u8 *func_003DA750(s32, s32, s32);
-    extern void func_00152550(u8 *, void (*)(void));
+    extern void func_00152550(void *, void (*)(u8 *));
     u8 *o;
     if ((o = func_003DA750(0, 6, 1)) != 0) {
         *(u8 **)(o + 0x18) = p;

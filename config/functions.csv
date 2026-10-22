@@ -1005,7 +1005,7 @@ func_00135600,0x00135600,0x94,0x00135694,code,spimdisasm-explicit-size-before-fi
 func_001356A0,0x001356A0,0x50,0x001356F0,code,spimdisasm-explicit-size-before-first-data
 func_001356F0,0x001356F0,0x200,0x001358F0,code,spimdisasm-explicit-size-before-first-data
 func_001358F0,0x001358F0,0x20,0x00135910,code,matching-c-head-split
-residual_00135910,0x00135910,0x25C,0x00135B6C,assembly_residual,verified-boundary-after-matching-head
+func_00135910,0x00135910,0x25C,0x00135B6C,code,callback-table-entry-and-whole-function-compiler-proof
 func_00135B70,0x00135B70,0x208,0x00135D78,code,spimdisasm-explicit-size-before-first-data
 func_00135D80,0x00135D80,0x14,0x00135D94,code,spimdisasm-explicit-size-before-first-data
 func_00135DA0,0x00135DA0,0x8,0x00135DA8,code,spimdisasm-explicit-size-before-first-data
@@ -1903,7 +1903,7 @@ func_00162460,0x00162460,0x1AC,0x0016260C,code,spimdisasm-explicit-size-before-f
 func_00162610,0x00162610,0x28,0x00162638,code,spimdisasm-explicit-size-before-first-data
 func_00162640,0x00162640,0x28,0x00162668,code,verified-source-recovery
 residual_00162668,0x00162668,0x8,0x00162670,assembly_residual,uncredited-native-alignment
-residual_00162670,0x00162670,0x50,0x001626C0,assembly_residual,native-remainder-after-verified-c-entry
+func_00162670,0x00162670,0x50,0x001626C0,code,callback-table-entry-and-whole-function-compiler-proof
 func_001626C0,0x001626C0,0x80,0x00162740,code,spimdisasm-explicit-size-before-first-data
 func_00162740,0x00162740,0x74,0x001627B4,code,spimdisasm-explicit-size-before-first-data
 func_001627C0,0x001627C0,0x38,0x001627F8,code,spimdisasm-explicit-size-before-first-data
@@ -3672,7 +3672,7 @@ func_001AC7E0,0x001AC7E0,0x54,0x001AC834,code,spimdisasm-explicit-size-before-fi
 func_001AC840,0x001AC840,0x20,0x001AC860,code,matching-c-head-split
 residual_001AC860,0x001AC860,0x1A0,0x001ACA00,assembly_residual,verified-boundary-after-matching-head
 func_001ACA00,0x001ACA00,0x24,0x001ACA24,code,matching-c-head-split
-residual_001ACA24,0x001ACA24,0x60,0x001ACA84,assembly_residual,verified-boundary-after-matching-head
+func_001ACA30,0x001ACA30,0x54,0x001ACA84,code,callback-table-entry-and-whole-function-compiler-proof
 func_001ACA90,0x001ACA90,0x7C,0x001ACB0C,code,spimdisasm-explicit-size-before-first-data
 func_001ACB10,0x001ACB10,0x8,0x001ACB18,code,spimdisasm-explicit-size-before-first-data
 func_001ACB20,0x001ACB20,0x14,0x001ACB34,code,spimdisasm-explicit-size-before-first-data

@@ -66,7 +66,7 @@ void func_002AABA0(u8 *p) {
 extern void func_00184540();
 extern void func_001E3240();
 
-void func_001ACA90(u8 *p) {
+void func_001ACA90(u8 *p, void *owner) {
     s16 v;
     func_00175700(p);
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);

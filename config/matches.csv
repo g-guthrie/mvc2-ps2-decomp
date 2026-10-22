@@ -18788,3 +18788,6 @@ func_001BDDB0,0x001BDDB0,0x24,src/owner_follow_callbacks.c,complete
 func_00136390,0x00136390,0x3C,src/glyph_and_owner_gate.c,complete
 func_0013AFB0,0x0013AFB0,0x48,src/glyph_and_owner_gate.c,complete
 func_001BE040,0x001BE040,0x180,src/parent_effect_initializer.c,complete
+func_00135910,0x00135910,0x25C,src/panel_transition_initializer.c,complete
+func_00162670,0x00162670,0x50,src/controller_state_handlers.c,complete
+func_001ACA30,0x001ACA30,0x54,src/controller_state_handlers.c,complete

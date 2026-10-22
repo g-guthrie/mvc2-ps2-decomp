@@ -5065,3 +5065,44 @@ relink/packing pass. CODE is 2,663,496 / 3,293,696 bytes (80.8665%),
 The retail ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,673,376 CODE bytes.
+
+## 2026-10-22: panel transition and two countdown handlers
+
+Recovered 768 bytes in three complete callback bodies:
+
+- `func_00135910` (604 bytes) initializes a winning-side panel, selects its
+  direct or table-driven motion and computes velocity toward the target.
+  Position, scale, velocity and target use their actual float-vector
+  fields. Signed palette division, facing arithmetic, byte alternate-row
+  selection and all native field reloads are retained. It matches with
+  MWCCPS2 3.0, -O3,p and a small-data threshold of 8.
+- `func_00162670` (80 bytes) resets/counts down the effect timer using its
+  controller, then installs its next callback. The unsigned timer update
+  preserves native 32-bit wrapping.
+- `func_001ACA30` (84 bytes) gates on owner state 0x16 and advances its
+  phase when the narrowed signed-short countdown reaches zero.
+  These two handlers use MWCCPS2 3.0.3, -O3,p and a zero threshold.
+
+The actual table boundaries now separate three four-entry unary groups
+from five controller/effect callbacks in the 68-byte owner at 00445770.
+The 28-byte owner at 0044B850 separates four unary lifecycle entries from
+three owner callbacks. Native dispatch argument order is explicit; the
+complete DATA owners and all their pointer values remain unchanged.
+No DATA credit is added by these interface corrections or motion views.
+
+`func_00152550` stores a unary callback at offset 0x28, so its definition
+and active declarations now take that function-pointer type. All six
+nonzero callback values used by active callers have the same genuine
+unary signature; other callers clear the slot with null. This preserves
+native argument construction without converting code pointers to integers.
+Related lifecycle cleanups lose fabricated unused parameters, and typed
+actor views retain a consistent public byte-pointer callback interface.
+All 2,577 previously credited bodies in affected files remain exact.
+
+Three inventory residuals become their real callback entries; twelve
+alignment bytes stay uncredited in the gap catalog. Clean splitting,
+catalog/build checks, all 126 tests and full hybrid relink/packing pass.
+CODE is 2,664,264 / 3,293,696 bytes (80.8898%), 18,728 matched functions.
+DATA remains 468,869 / 648,064 bytes. The retail ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,673,376 CODE bytes.

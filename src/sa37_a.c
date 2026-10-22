@@ -24,8 +24,9 @@ typedef struct SA37_D0 {
     s8 b13c;
 } SA37_D0;
 
-void func_00161160(SA37_D0 *p) {
-    extern void func_00152550(SA37_D0 *, s32);
+void func_00161160(u8 *actor_data) {
+    SA37_D0 *p = (SA37_D0 *)actor_data;
+    extern void func_00152550(void *, void (*)(u8 *));
     s32 w;
     p->b13c = (*(SA37_D1 **)((u8 *)p + 0x18))->b13c;
     if (p->wDC < 0x15) {

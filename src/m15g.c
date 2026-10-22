@@ -79,7 +79,7 @@ extern s32 D_004C2838;
 extern void func_001610C0(void *p);
 extern void func_00161240(void *p);
 extern void func_00170DF0(s32 a);
-extern void func_00152550(void *p, void *f);
+extern void func_00152550(void *, void (*)(u8 *));
 
 typedef struct { s16 a, b; } P2s;
 extern P2s D_0045F800[];

@@ -41,10 +41,11 @@ extern G62 *D_004C2840;
 extern s32 D_004C2838;
 extern u8 D_004D18A6[];
 
-void func_00162460(P62 *p)
+void func_00162460(u8 *actor_data)
 {
+    P62 *p = (P62 *)actor_data;
     extern void func_00161880(P62 *);
-    extern void func_00152550(P62 *, s32);
+    extern void func_00152550(void *, void (*)(u8 *));
     s8 t;
     u32 u;
     s16 h;

@@ -40,8 +40,8 @@ extern s32 D_004C2838;
 void func_0015B000(s32 a0, V3 *pos, f32 x, s32 a2, s32 idx, u16 flags) {
     extern O *func_003DA750(s32, s32, s32);
     extern void func_0015AED0();
-    extern void func_0015B160();
-    extern void func_00152550(O *, void *);
+    extern void func_0015B160(u8 *);
+    extern void func_00152550(void *, void (*)(u8 *));
     O *o;
     s32 big;
     if ((flags & 8) == 0) {
@@ -76,5 +76,5 @@ void func_0015B000(s32 a0, V3 *pos, f32 x, s32 a2, s32 idx, u16 flags) {
     o->f58 = x;
     o->b23 = idx;
     o->wD4 = idx << 3;
-    func_00152550(o, (void *)func_0015B160);
+    func_00152550(o, func_0015B160);
 }
