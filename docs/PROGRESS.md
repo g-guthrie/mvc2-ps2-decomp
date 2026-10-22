@@ -4873,3 +4873,25 @@ The resulting retail ELF SHA-256 remains
 CODE is 2,661,476 / 3,293,696 bytes (80.8052%); DATA remains
 468,869 / 648,064 bytes. The next fixed full-percentage checkpoint is
 2,673,376 CODE bytes; an interim publication does not reset this grid.
+
+## 2026-10-22: linked-actor detachment and explicit owner dispatch
+
+Recovered `func_001A4A80` (188 bytes) using native parent, position,
+velocity, acceleration and state fields. The stopping test is the negation
+of a strict floating comparison, preserving the native unordered result.
+MWCCPS2 3.0 with -O3,p and a zero small-data threshold reproduces the
+whole body.
+
+The live path starts at `func_001A44C0`, which loads the owner from actor
++0x18. Its `func_001A4630` dispatcher now explicitly forwards that owner
+through `jtbl_0044B150`. `func_001A4770` derives owner +0x2B8 and passes
+actor, owner and workspace through `jtbl_0044B160`. Both table declarations
+and the affected C definitions agree with these actual arguments. The
+cleanup callback keeps its genuine ignored owner argument and loses two
+invented extra arguments. No data credit changes.
+
+All affected old bodies, the new whole function, catalog/build gates,
+126 tests and the full hybrid relink/retail-ELF pack pass. ELF SHA-256:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+CODE is 2,661,664 / 3,293,696 bytes (80.8109%); DATA remains
+468,869 / 648,064 bytes.

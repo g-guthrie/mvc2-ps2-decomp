@@ -259,8 +259,9 @@ void func_001BE470(u8 *p, u8 *q, s32 n)
 }
 extern void (*D_0044B160[])(u8 *, u8 *, u8 *);
 
-void func_001A4770(u8 *a, u8 *b)
+void func_001A4770(u8 *a, void *owner)
 {
+    u8 *b = (u8 *)owner;
     u8 *c = b + 0x2B8;
     if (b[0x1E4] == 0x1C || b[5] != 0 || b[0x1FD] != 4 || *(s8 *)(c + 4) < 0) {
         a[4] = 2;

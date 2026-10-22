@@ -361,7 +361,7 @@ void func_001A4440(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Obje
 
 void func_001A4620(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
-void func_001A4B40(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_001A4B40(u8 *p, void *owner) { func_003DAA40((struct Object *)p); }
 
 void func_001A5D70(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 

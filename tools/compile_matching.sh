@@ -20101,4 +20101,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/air_action_eligibility.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/air_action_eligibility.o"
 "$PYTHON" tools/verify_object.py "$BUILD/air_action_eligibility.o" private/SLUS_204.86.rom --source src/air_action_eligibility.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/linked_actor_detach.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/linked_actor_detach.o"
+"$PYTHON" tools/verify_object.py "$BUILD/linked_actor_detach.o" private/SLUS_204.86.rom --source src/linked_actor_detach.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
