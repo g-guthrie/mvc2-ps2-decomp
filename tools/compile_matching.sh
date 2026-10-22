@@ -18425,4 +18425,114 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/fb40_c.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/fb40_c.o"
 "$PYTHON" tools/verify_object.py "$BUILD/fb40_c.o" private/SLUS_204.86.rom --source src/fb40_c.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb27_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb27_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb27_b.o" private/SLUS_204.86.rom --source src/fb27_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb27_e.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb27_e.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb27_e.o" private/SLUS_204.86.rom --source src/fb27_e.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb27_f.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb27_f.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb27_f.o" private/SLUS_204.86.rom --source src/fb27_f.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb46_a.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "$BUILD/fb46_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb46_a.o" private/SLUS_204.86.rom --source src/fb46_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb46_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb46_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb46_b.o" private/SLUS_204.86.rom --source src/fb46_b.c
+"$WIBO" "$SNCPP" -P src/fb46_d.c "$BUILD/fb46_d.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/fb46_d.i" "$BUILD/fb46_d.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/fb46_d.o" "$BUILD/fb46_d.s"
+"$PYTHON" tools/verify_object.py "$BUILD/fb46_d.o" private/SLUS_204.86.rom --source src/fb46_d.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb48_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb48_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb48_a.o" private/SLUS_204.86.rom --source src/fb48_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb48_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb48_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb48_b.o" private/SLUS_204.86.rom --source src/fb48_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb41_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/fb41_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb41_a.o" private/SLUS_204.86.rom --source src/fb41_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb41_d.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb41_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb41_d.o" private/SLUS_204.86.rom --source src/fb41_d.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb41_g.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb41_g.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb41_g.o" private/SLUS_204.86.rom --source src/fb41_g.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb47_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/fb47_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb47_a.o" private/SLUS_204.86.rom --source src/fb47_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb47_b.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/fb47_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb47_b.o" private/SLUS_204.86.rom --source src/fb47_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb47_c.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/fb47_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb47_c.o" private/SLUS_204.86.rom --source src/fb47_c.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb47_e.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/fb47_e.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb47_e.o" private/SLUS_204.86.rom --source src/fb47_e.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb47_g.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb47_g.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb47_g.o" private/SLUS_204.86.rom --source src/fb47_g.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb42_b.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/fb42_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb42_b.o" private/SLUS_204.86.rom --source src/fb42_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb42_d.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb42_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb42_d.o" private/SLUS_204.86.rom --source src/fb42_d.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb42_f.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "$BUILD/fb42_f.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb42_f.o" private/SLUS_204.86.rom --source src/fb42_f.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb49_b.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/fb49_b.o"
+"${OBJCOPY:-mipsel-linux-gnu-objcopy}" \
+    --redefine-sym @4=D_004C9F60 --redefine-sym @5=D_004C9F80 --redefine-sym @6=D_004C9FA0 \
+    "$BUILD/fb49_b.o" "$BUILD/fb49_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb49_b.o" private/SLUS_204.86.rom --source src/fb49_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb49_f.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/fb49_f.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb49_f.o" private/SLUS_204.86.rom --source src/fb49_f.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb43_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/fb43_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb43_a.o" private/SLUS_204.86.rom --source src/fb43_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb43_b.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/fb43_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb43_b.o" private/SLUS_204.86.rom --source src/fb43_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb43_d.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb43_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb43_d.o" private/SLUS_204.86.rom --source src/fb43_d.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb43_g.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb43_g.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb43_g.o" private/SLUS_204.86.rom --source src/fb43_g.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb52_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/fb52_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb52_a.o" private/SLUS_204.86.rom --source src/fb52_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb52_c.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/fb52_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb52_c.o" private/SLUS_204.86.rom --source src/fb52_c.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb52_d.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/fb52_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb52_d.o" private/SLUS_204.86.rom --source src/fb52_d.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb52_e.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/fb52_e.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb52_e.o" private/SLUS_204.86.rom --source src/fb52_e.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb45_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/fb45_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb45_a.o" private/SLUS_204.86.rom --source src/fb45_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb45_c.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb45_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb45_c.o" private/SLUS_204.86.rom --source src/fb45_c.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb45_d.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb45_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb45_d.o" private/SLUS_204.86.rom --source src/fb45_d.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb45_g.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb45_g.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fb45_g.o" private/SLUS_204.86.rom --source src/fb45_g.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
