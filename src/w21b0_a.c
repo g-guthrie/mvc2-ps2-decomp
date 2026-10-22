@@ -102,7 +102,8 @@ extern s16 D_0044C250[];
 extern s16 D_0044C252[];
 extern s16 D_0044C254[];
 
-void func_001BD230(u8 *p, u8 *q) {
+void func_001BD230(u8 *p, void *q_context) {
+    u8 *q = (u8 *)q_context;
     extern void func_00175670(u8 *);
     u32 t;
     s16 h;

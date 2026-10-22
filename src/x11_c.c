@@ -42,7 +42,8 @@ void func_0017CF00(S22 *p) {
 typedef struct { u8 b0, b1, b2, b3, b4, b5; } E15;
 typedef struct { f32 x, y, z; } V3;
 extern E15 D_0044C0E0[];
-void func_001BD4F0(u8 *p, u8 *q) {
+void func_001BD4F0(u8 *p, void *q_context) {
+    u8 *q = (u8 *)q_context;
     extern void func_00175580();
     E15 *e;
     if (q[0x1E4] != 0x15 || q[0x1FD] != 6 || *(u16 *)(q + 0x168) != 0x1507 || *(s8 *)(q + 0x150) == 0) {

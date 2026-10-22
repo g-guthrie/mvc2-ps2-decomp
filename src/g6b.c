@@ -76,7 +76,8 @@ void func_001B4F30(u8 *p) {
 }
 extern void func_00175580(u8 *, s32, s32, s32);
 extern u8 D_0044C0E0[];
-void func_001BDD10(u8 *p, u8 *q) {
+void func_001BDD10(u8 *p, void *q_context) {
+    u8 *q = (u8 *)q_context;
     if (q[4] >= 2) {
         u32 t = p[4];
         p[4] = t + 1;

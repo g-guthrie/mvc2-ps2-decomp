@@ -1,4 +1,4 @@
-typedef unsigned char u8;
+#include "owner_effect_callbacks.h"
 typedef unsigned short u16;
 typedef unsigned int u32;
 typedef void (*DispatchFn)(u8 *);
@@ -179,9 +179,7 @@ extern DispatchFn jtbl_0044BFF0[];
 extern DispatchFn jtbl_0044C000[];
 extern DispatchFn jtbl_0044C060[];
 extern DispatchFn jtbl_0044C070[];
-extern DispatchFn jtbl_0044C1B0[];
-extern DispatchFn jtbl_0044C270[];
-extern DispatchFn jtbl_0044C280[];
+extern ContextDispatchFn jtbl_0044C280[];
 extern DispatchFn jtbl_0044C390[];
 extern DispatchFn jtbl_0044C3B0[];
 extern DispatchFn jtbl_0044C420[];
@@ -1711,11 +1709,11 @@ void func_001BB510(u8 *p) { jtbl_0044C060[p[4]](p); }
 
 void func_001BB6F0(u8 *p) { jtbl_0044C070[p[4]](p); }
 
-void func_001BC7A0(u8 *p) { jtbl_0044C1B0[p[4]](p); }
+void func_001BC7A0(u8 *p) { jtbl_0044C1B0.lifecycle[p[4]](p); }
 
-void func_001BD5C0(u8 *p) { jtbl_0044C270[p[5]](p); }
+void func_001BD5C0(u8 *p, void *owner) { jtbl_0044C270.setup[p[5]](p); }
 
-void func_001BD930(u8 *p) { jtbl_0044C280[p[5]](p); }
+void func_001BD930(u8 *p, void *owner) { jtbl_0044C280[p[5]](p, owner); }
 
 void func_001BE020(u8 *p) { jtbl_0044C390[p[4]](p); }
 

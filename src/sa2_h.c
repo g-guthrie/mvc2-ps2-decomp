@@ -9,10 +9,11 @@ typedef float f32;
 typedef struct { s16 x, y; u8 pad4; u8 b5; } E6;
 extern E6 D_0044C0E0[];
 
-void func_001BDE30(u8 *a, u8 *b) {
-    extern void func_00175580(u8 *, s32, s32, s32);
+void func_001BDE30(u8 *a, void *b_context) {
+    extern int func_00175580(u8 *, s32, s32, s32);
     E6 *e;
     u32 t;
+    u8 *b = (u8 *)b_context;
     if (b[0x1E4] != 0x1D || b[0x1FD] != 3) {
         t = a[4];
         a[4] = t + 1;

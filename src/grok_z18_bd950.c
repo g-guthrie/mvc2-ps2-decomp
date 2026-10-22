@@ -4,10 +4,10 @@ typedef signed short s16;
 typedef float f32;
 
 extern void func_001754A0(u8 *, int, int);
-extern void func_001BD9D0(u8 *, u8 *);
+extern void func_001BD9D0(u8 *, void *);
 
-void func_001BD950(u8 *p, u8 *q)
-{
+void func_001BD950(u8 *p, void *q_context) {
+    u8 *q = (u8 *)q_context;
     u8 *t = *(u8 **)(p + 0x14);
     p[5]++;
     p[0x13C] = 1;

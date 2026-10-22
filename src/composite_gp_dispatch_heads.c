@@ -1,3 +1,7 @@
+#include "owner_effect_callbacks.h"
+/* GP-relative code view; the complete native owner remains in .data. */
+extern const OwnerEffectSmallTables jtbl_004BF960
+    __attribute__((section(".sdata")));
 #include "mvc2_state_callbacks.h"
 typedef unsigned int ContextTableWord;
 typedef void (*ContextByteCallback)(u8 *,u8 *);
@@ -58,12 +62,11 @@ extern DispatchFn jtbl_004BF8F0[2];
 extern DispatchFn jtbl_004BF920[2];
 extern DispatchFn jtbl_004BF928[2];
 extern DispatchFn jtbl_004BF940[2];
-extern DispatchFn jtbl_004BF960[2];
 extern DispatchFn jtbl_004BF978[2];
 extern DispatchFn jtbl_004BF980[2];
-extern DispatchFn jtbl_004BF990[2];
-extern DispatchFn jtbl_004BF998[2];
-extern DispatchFn jtbl_004BF9A0[2];
+extern ContextDispatchFn jtbl_004BF990[2];
+extern ContextDispatchFn jtbl_004BF998[2];
+extern ContextDispatchFn jtbl_004BF9A0[2];
 extern DispatchFn jtbl_004BF9C8[2];
 extern DispatchFn jtbl_004BF9D0[2];
 extern DispatchFn jtbl_004BF9E0[2];
@@ -490,17 +493,17 @@ void func_001B5100(u8 *p) { jtbl_004BF928[p[6]](p); }
 
 void func_001B5A20(u8 *p) { jtbl_004BF940[p[6]](p); }
 
-void func_001B76C0(u8 *p) { jtbl_004BF960[p[32]](p); }
+void func_001B76C0(u8 *p) { jtbl_004BF960.before[p[32]](p); }
 
 void func_001B8960(u8 *p) { jtbl_004BF978[p[32]](p); }
 
 void func_001B9910(u8 *p) { jtbl_004BF980[p[5]](p); }
 
-void func_001BDA60(u8 *p) { jtbl_004BF990[p[5]](p); }
+void func_001BDA60(u8 *p, void *owner) { jtbl_004BF990[p[5]](p, owner); }
 
-void func_001BDC20(u8 *p) { jtbl_004BF998[p[5]](p); }
+void func_001BDC20(u8 *p, void *owner) { jtbl_004BF998[p[5]](p, owner); }
 
-void func_001BDD90(u8 *p) { jtbl_004BF9A0[p[5]](p); }
+void func_001BDD90(u8 *p, void *owner) { jtbl_004BF9A0[p[5]](p, owner); }
 
 void func_001C05B0(u8 *p) { jtbl_004BF9C8[p[5]](p); }
 

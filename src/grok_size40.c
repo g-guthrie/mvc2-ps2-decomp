@@ -209,7 +209,7 @@ void func_0016CA70(u8 *p) {
     }
 }
 
-void func_001BD9D0(u8 *p) {
+void func_001BD9D0(u8 *p, void *owner) {
     if (--*(s16 *)(p + 28) == 0) {
         p[5]++;
         *(s16 *)(p + 28) = 10;

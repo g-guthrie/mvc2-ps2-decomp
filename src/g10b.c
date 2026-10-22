@@ -196,7 +196,8 @@ void func_003C9EC0(u8 *a) {
 }
 extern void (*D_0044C240[])(u8 *, u8 *);
 
-void func_001BD0C0(u8 *p, u8 *q) {
+void func_001BD0C0(u8 *p, void *q_context) {
+    u8 *q = (u8 *)q_context;
     u32 v = q[0x1E4];
     if (v != 0x15 || (v = q[0x1FD]) != 5) {
         u32 t = p[4];

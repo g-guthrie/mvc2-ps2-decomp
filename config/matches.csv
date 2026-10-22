@@ -18781,3 +18781,4 @@ func_00178BE0,0x00178BE0,0x120,src/input_launch_motion.c,complete
 func_0018A6C0,0x0018A6C0,0xDC,src/air_action_eligibility.c,complete
 func_001A4A80,0x001A4A80,0xBC,src/linked_actor_detach.c,complete
 func_0013CC50,0x0013CC50,0x18C,src/activate_mask_differences.c,complete
+func_001BD7D0,0x001BD7D0,0x15C,src/owner_relative_position.c,complete

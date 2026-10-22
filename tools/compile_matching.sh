@@ -168,10 +168,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/reset_on_negative.c -c -lang c $MATCH_FLAGS -o "$BUILD/reset_on_negative.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/composite_dispatch_heads.c -c -lang c $MATCH_FLAGS \
+    src/composite_dispatch_heads.c -c -lang c $MATCH_FLAGS -i src \
     -o "$BUILD/composite_dispatch_heads.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/composite_gp_dispatch_heads.c -c -lang c -O3 -sdatathreshold 8 -i src/data \
+    src/composite_gp_dispatch_heads.c -c -lang c -O3 -sdatathreshold 8 -i src/data -i src \
     -o "$BUILD/composite_gp_dispatch_heads.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/func_001794A0.c -c -lang c -O4,p -sdatathreshold 0 \
@@ -20108,5 +20108,9 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/activate_mask_differences.c -c -lang c -O3,p -sdatathreshold 8 -o "$BUILD/activate_mask_differences.o"
 "$PYTHON" tools/verify_object.py "$BUILD/activate_mask_differences.o" private/SLUS_204.86.rom --source src/activate_mask_differences.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_relative_position.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_relative_position.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_relative_position.o" private/SLUS_204.86.rom --source src/owner_relative_position.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

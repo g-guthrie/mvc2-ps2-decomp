@@ -1,6 +1,6 @@
 /* Expire the cooldown state and clamp negative vertical velocity. */
 typedef unsigned char u8;
-void func_001BDA10(u8 *p) {
+void func_001BDA10(u8 *p, void *owner) {
  float value=*(float *)(p+0x118)-0.100000001490116119384765625f;
  *(float *)(p+0x118)=value;
  if (value<=0.0f) { ++p[4];p[0x13c]=0; }

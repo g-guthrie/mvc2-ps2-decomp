@@ -314,7 +314,8 @@ void func_001C2200(u8 *a, u8 *b) {
 
 extern void (*D_0044C220[])(u8 *a, u8 *b);
 
-void func_001BCAC0(u8 *a, u8 *b) {
+void func_001BCAC0(u8 *a, void *b_context) {
+    u8 *b = (u8 *)b_context;
     D_0044C220[a[5]](a, b);
     if ((*(s16 *)(a + 320) = *(s16 *)(b + 320)) == 0) {
         *(f32 *)(a + 52) = *(f32 *)(b + 52) + *(f32 *)(a + 92);

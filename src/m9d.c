@@ -87,7 +87,7 @@ void func_001FA090(u8 *p) {
 }
 
 extern u32 *func_003DA750();
-extern void func_001BC7A0();
+extern void func_001BC7A0(u8 *);
 void func_001BC720(u32 a, u32 b, u8 c, u8 d) {
     u32 *r = func_003DA750(0, 3, 0);
     if (r != 0) {

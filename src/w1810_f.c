@@ -15,8 +15,10 @@ typedef struct {
     u8 p0[0x24]; s8 b24; u8 p25[0xF]; f32 f34; f32 f38; u8 p3c[0x104]; s16 h140; u8 p142[0xE];
     s8 b150; u8 p151[0x17]; u16 h168; u8 p16a[0x7A]; u8 b1e4; u8 p1e5[0x18]; u8 b1fd;
 } Qf;
-void func_001BD3B0(Pf *p, Qf *q) {
-    extern void func_00175670();
+void func_001BD3B0(u8 *actor_data, void *owner_data) {
+    Pf *p = (Pf *)actor_data;
+    Qf *q = (Qf *)owner_data;
+    extern int func_00175670(u8 *);
     T6 *t;
     s16 v;
     if (q->b1e4 != 0x15 || q->b1fd != 6 || q->h168 != 0x1507 || q->b150 == 0) {
@@ -35,6 +37,6 @@ void func_001BD3B0(Pf *p, Qf *q) {
         p->f38 = q->f38 + 2.142857074737549f * t->b;
         p->b24 = q->b24;
         p->b31 = -2;
-        func_00175670(p);
+        func_00175670((u8 *)p);
     }
 }

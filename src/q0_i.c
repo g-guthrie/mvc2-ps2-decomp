@@ -10,7 +10,8 @@ typedef struct { u8 a[6]; } E6;
 extern E6 D_0044C0E0[];
 extern V3 D_004B38E0;
 
-void func_001BD6C0(u8 *p, u8 *q) {
+void func_001BD6C0(u8 *p, void *q_context) {
+    u8 *q = (u8 *)q_context;
     extern void func_00175580(u8 *, s32, u8, s32);
     f32 f;
     s16 v;

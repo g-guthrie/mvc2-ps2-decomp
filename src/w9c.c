@@ -100,7 +100,8 @@ void func_00311E00(u8 *p) {
 
 extern void (*D_0044C230[])(u8 *, u8 *);
 
-void func_001BCED0(u8 *p, u8 *q) {
+void func_001BCED0(u8 *p, void *q_context) {
+    u8 *q = (u8 *)q_context;
     s16 v;
     D_0044C230[p[5]](p, q);
     v = *(s16 *)(q + 0x140);

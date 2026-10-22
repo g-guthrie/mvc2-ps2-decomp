@@ -4938,3 +4938,47 @@ all 126 tests and the full hybrid relink/retail-ELF packing pass. CODE is
 remains 468,869 / 648,064 bytes. The retail ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The fixed next full-percentage checkpoint remains 2,673,376 CODE bytes.
+
+## 2026-10-22: owner-relative positioning and mixed callback-table contracts
+
+Recovered `func_001BD7D0` (348 bytes) with MWCCPS2 3.0.3 at -O3,p and
+a zero small-data threshold. It advances/clears the effect when the owner
+leaves state 0x1D/3 or the animation helper returns a negative signed-byte
+result; otherwise it follows signed record offsets relative to the owner.
+The facing value is captured before copying it into the effect, exactly
+as native code does. The real `func_00175670` integer return is explicitly
+narrowed before testing.
+
+The adjacent arrays share three existing DATA owners, so their C models
+now preserve the actual native boundaries and relevant callback contracts:
+
+- 0044C1B0: four unary lifecycle entries, followed at 0044C1C0 by 22
+  owner callbacks. The existing `func_001BC960` already loads the owner from effect
+  +0x18; the unary entry dispatcher remains unary.
+- 0044C270: four unary setup entries, followed at 0044C280 by three
+  owner callbacks. The setup wrapper accepts the common ignored owner;
+  the owner wrapper explicitly forwards it.
+- 004BF960: existing groups surround three two-entry owner tables at
+  004BF990/004BF998/004BF9A0. Their wrappers forward the owner. The GP
+  code view preserves native addressing while the full owner stays in
+  its original .data section.
+
+Public owner callback definitions and declarations agree, including the
+previously typed actor/owner views. The lifecycle cleanup loses its three
+fabricated unused arguments. A callback storage declaration now records
+the actual unary target type. All 2,672 previously credited bodies in the
+affected translation units remain byte-exact, alongside the new whole
+function. Each complete DATA owner remains exactly 104, 28 or 120 bytes;
+these interface corrections add no DATA coverage.
+
+The only initialized pointers to `func_001BD7D0` are the four owner-table
+entries selected by mode values 10..13; there are no direct calls in the
+retail text. The animation helper does not modify the mode byte. These
+native edges select rows 10..13 of the existing 34-record, six-byte table
+at 0044C0E0.
+
+Catalog/build checks, all 126 tests and full hybrid relink/packing pass.
+CODE is 2,662,408 / 3,293,696 bytes (80.8334%), 18,719 matched functions.
+DATA remains 468,869 / 648,064 bytes. The packed ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,673,376 CODE bytes.

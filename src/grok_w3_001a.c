@@ -175,7 +175,8 @@ void func_001B7350(u8 *p) {
     }
 }
 
-void func_001BDBC0(u8 *p, u8 *q) {
+void func_001BDBC0(u8 *p, void *q_context) {
+    u8 *q = (u8 *)q_context;
     if ((s8)q[0x150] != 1 || q[0x1e4] != 22) {
         p[4]++;
         p[0x13c] = 0;

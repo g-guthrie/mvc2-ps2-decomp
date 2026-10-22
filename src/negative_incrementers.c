@@ -29,11 +29,11 @@ void func_001B6150(u8 *p) { if ((s8)func_00175700(p) < 0) { u32 v = p[4]; v++; p
 
 void func_001BD670(u8 *p) { if ((s8)func_00175670(p) < 0) { u32 v = p[4]; v++; p[4] = v; p[316] = 0; } }
 
-void func_001BDB70(u8 *p) { if ((s8)func_00175670(p) < 0) { u32 v = p[4]; v++; p[4] = v; p[316] = 0; } }
+void func_001BDB70(u8 *p, void *owner) { if ((s8)func_00175670(p) < 0) { u32 v = p[4]; v++; p[4] = v; p[316] = 0; } }
 
-void func_001BDCC0(u8 *p) { if ((s8)func_00175670(p) < 0) { u32 v = p[4]; v++; p[4] = v; p[316] = 0; } }
+void func_001BDCC0(u8 *p, void *owner) { if ((s8)func_00175670(p) < 0) { u32 v = p[4]; v++; p[4] = v; p[316] = 0; } }
 
-void func_001BDDE0(u8 *p) { if ((s8)func_00175670(p) < 0) { u32 v = p[4]; v++; p[4] = v; p[316] = 0; } }
+void func_001BDDE0(u8 *p, void *owner) { if ((s8)func_00175670(p) < 0) { u32 v = p[4]; v++; p[4] = v; p[316] = 0; } }
 
 void func_001C0170(u8 *p) { if ((s8)func_00175670(p) < 0) { u32 v = p[4]; v++; p[4] = v; p[316] = 0; } }
 
