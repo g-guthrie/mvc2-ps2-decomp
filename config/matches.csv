@@ -18746,3 +18746,6 @@ func_002DFB90,0x002DFB90,0x1D8,src/rb64_a.c,complete
 func_00136830,0x00136830,0x1D8,src/rb64_c.c,complete
 func_002D7B60,0x2D7B60,0x298,src/rb84_a.c,complete
 func_00134EA0,0x134EA0,0x2A0,src/rb84_b.c,complete
+func_00190F30,0x00190F30,0x2D8,src/rb94_a.c,complete
+func_00180A30,0x00180A30,0x2E4,src/rb95_a.c,complete
+func_00401150,0x00401150,0x2AC,src/rb87_c.c,complete

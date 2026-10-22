@@ -19975,4 +19975,16 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/rb84_b.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "$BUILD/rb84_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/rb84_b.o" private/SLUS_204.86.rom --source src/rb84_b.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rb94_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/rb94_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb94_a.o" private/SLUS_204.86.rom --source src/rb94_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/rb95_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/rb95_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb95_a.o" private/SLUS_204.86.rom --source src/rb95_a.c
+"$WIBO" "$SNCPP" -P src/rb87_c.c "$BUILD/rb87_c.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/rb87_c.i" "$BUILD/rb87_c.s"
+sed -i 's/^\tli\.d\t\$5,8\.49999999999999977796e-1$/\t.set\tnoat\n\tlui\t$1,%hi(D_004BBFC8)\n\tld\t$5,%lo(D_004BBFC8)($1)\n\t.set\tat/' "$BUILD/rb87_c.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/rb87_c.o" "$BUILD/rb87_c.s"
+"$PYTHON" tools/verify_object.py "$BUILD/rb87_c.o" private/SLUS_204.86.rom --source src/rb87_c.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
