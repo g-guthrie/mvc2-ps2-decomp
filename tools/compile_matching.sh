@@ -17693,10 +17693,6 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/sa28_e.c -c -lang c -i src -O3 -Op -o "$BUILD/sa28_e.o"
 "$PYTHON" tools/verify_object.py "$BUILD/sa28_e.o" private/SLUS_204.86.rom --source src/sa28_e.c
 
-"$WIBO" "$SNCPP" -P src/sa25_e.c "$BUILD/sa25_e.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/sa25_e.i" "$BUILD/sa25_e.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/sa25_e.o" "$BUILD/sa25_e.s"
-"$PYTHON" tools/verify_object.py "$BUILD/sa25_e.o" private/SLUS_204.86.rom --source src/sa25_e.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/sa25_f.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/sa25_f.o"
 "$PYTHON" tools/verify_object.py "$BUILD/sa25_f.o" private/SLUS_204.86.rom --source src/sa25_f.c
@@ -19019,10 +19015,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/sb4_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/sb4_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/sb4_b.o" private/SLUS_204.86.rom --source src/sb4_b.c
-"$WIBO" "$SNCPP" -P src/sb11_a.c "$BUILD/sb11_a.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 --extra-flags="" "$BUILD/sb11_a.i" "$BUILD/sb11_a.s"
-"$WIBO" "$SNAS" -G8 -o "$BUILD/sb11_a.o" "$BUILD/sb11_a.s"
-"$PYTHON" tools/verify_object.py "$BUILD/sb11_a.o" private/SLUS_204.86.rom --source src/sb11_a.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/sb11_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/sb11_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/sb11_b.o" private/SLUS_204.86.rom --source src/sb11_b.c
@@ -19539,5 +19531,35 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --op
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/ra19_c.i" "$BUILD/ra19_c.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/ra19_c.o" "$BUILD/ra19_c.s"
 "$PYTHON" tools/verify_object.py "$BUILD/ra19_c.o" private/SLUS_204.86.rom --source src/ra19_c.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/ra25_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/ra25_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ra25_a.o" private/SLUS_204.86.rom --source src/ra25_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/ra27_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/ra27_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ra27_a.o" private/SLUS_204.86.rom --source src/ra27_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/ra27_b.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/ra27_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ra27_b.o" private/SLUS_204.86.rom --source src/ra27_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/ra24_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/ra24_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ra24_a.o" private/SLUS_204.86.rom --source src/ra24_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/ra37_b.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/ra37_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ra37_b.o" private/SLUS_204.86.rom --source src/ra37_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/xl11_a.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "$BUILD/xl11_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/xl11_a.o" private/SLUS_204.86.rom --source src/xl11_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/ra34_c.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/ra34_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ra34_c.o" private/SLUS_204.86.rom --source src/ra34_c.c
+
+"$WIBO" "$SNCPP" -P src/ra39_a.c "$BUILD/ra39_a.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/ra39_a.i" "$BUILD/ra39_a.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/ra39_a.o" "$BUILD/ra39_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/ra39_a.o" private/SLUS_204.86.rom --source src/ra39_a.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

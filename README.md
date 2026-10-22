@@ -12,9 +12,9 @@ for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
 
 | | Matched | Total | |
 | --- | ---: | ---: | ---: |
-| Code | 2,581,152 bytes | 3,293,696 bytes | **78.37%** |
+| Code | 2,582,884 bytes | 3,293,696 bytes | **78.42%** |
 | Initialized data | 457,969 bytes | 648,064 bytes | **70.67%** |
-| Functions | 18,568 | 20,343 | |
+| Functions | 18,573 | 20,344 | |
 
 Every matched function is C compiled with a period toolchain (Metrowerks
 MWCC 2.4/3.0/3.0.3, SN GCC 2.95.2, EE GCC 2.96, or Sony EE GCC 2.9) and

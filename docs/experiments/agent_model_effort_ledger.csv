@@ -377,3 +377,21 @@ ra19,18,sonnet,medium,code-retry4,3,2,328,116561,4.1,EE sibling + load order
 ra21,18,sonnet,medium,code-retry4,3,0,0,117649,3.9,
 ra20,18,sonnet,medium,code-retry4,3,0,0,117430,4.7,
 ra22,18,sonnet,medium,code-retry4,3,0,0,130726,4.7,
+ra23,18,sonnet,medium,code-retry4,3,0,0,125383,7.7,
+ra25,18,sonnet,medium,code-retry4,3,1,32,97897,1.6,sized vs unsized extern
+ra30,18,sonnet,medium,code-retry4,3,0,0,113681,3.3,MMI asm skip; needs static callee
+ra31,18,sonnet,medium,code-retry4,3,0,0,120286,4.7,EE bnel wall
+ra28,18,sonnet,medium,code-retry4,3,0,0,124524,4.9,EE block merging
+ra29,18,sonnet,medium,code-retry4,3,0,0,119470,5.0,EE bnel wall
+ra26,18,sonnet,medium,code-retry4,3,0,0,128100,5.5,
+ra27,18,sonnet,medium,code-retry4,3,2,376,116725,5.6,partial-sum local; extra live arg
+ra32,18,sonnet,medium,code-retry4,3,0,0,122181,5.1,boundary skip
+xl13,18,sonnet,medium,code-xl,3,0,0,142092,7.0,
+ra33,18,sonnet,medium,code-retry4,3,0,0,125385,5.8,
+ra24,18,sonnet,medium,code-retry4,3,1,180,151295,9.1,struct-typed element; assign-in-expr
+ra37,18,sonnet,medium,code-retry4,3,1,228,123440,3.4,static callee copy
+xl11,18,sonnet,medium,code-xl,3,1,1092,217605,10.4,static func_00338670 lever
+ra35,18,sonnet,medium,code-retry4,3,0,0,131884,5.9,
+ra34,18,sonnet,medium,code-retry4,3,1,212,155549,7.3,nested-if return shape
+ra39,18,sonnet,medium,code-retry4,3,1,236,141075,6.7,EE store-order sweep
+ra36,18,sonnet,medium,code-retry4,3,0,0,125898,10.2,boundary skip

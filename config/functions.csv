@@ -20144,7 +20144,8 @@ func_0041BD90,0x0041BD90,0x128,0x0041BEB8,code,spimdisasm-explicit-size-before-f
 func_0041BEC0,0x0041BEC0,0x150,0x0041C010,code,spimdisasm-explicit-size-before-first-data
 func_0041C010,0x0041C010,0x170,0x0041C180,code,spimdisasm-explicit-size-before-first-data
 func_0041C180,0x0041C180,0x78,0x0041C1F8,code,spimdisasm-explicit-size-before-first-data
-func_0041C200,0x0041C200,0xB4,0x0041C2B4,code,spimdisasm-explicit-size-before-first-data
+func_0041C200,0x0041C200,0x20,0x0041C220,code,matching-c-head-split
+func_0041C220,0x0041C220,0x94,0x0041C2B4,code,verified-boundary-after-matching-head
 func_0041C2C0,0x0041C2C0,0x30,0x0041C2F0,code,spimdisasm-explicit-size-before-first-data
 func_0041C2F0,0x0041C2F0,0x104,0x0041C3F4,code,spimdisasm-explicit-size-before-first-data
 func_0041C400,0x0041C400,0x5C,0x0041C45C,code,spimdisasm-explicit-size-before-first-data
