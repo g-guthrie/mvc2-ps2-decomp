@@ -95,3 +95,8 @@ sa5,6,sonnet,medium,code-retry,15,3,876,329975,22.1,
 sa12,6,sonnet,low,code-retry,15,5,1560,315509,23.0,
 sa1,6,sonnet,medium,code-retry,15,5,1816,337984,25.7,1 overlapped an earlier match
 sa13,6,sonnet,medium,code-retry,15,6,1864,369207,24.2,
+sa15,6,sonnet,low,code-retry,15,2,788,262462,20.6,
+sa8,6,sonnet,low,code-retry,15,7,2684,261819,32.2,
+sa3,6,sonnet,medium,code-retry,15,7,2100,321164,32.3,1 overlapped an earlier match
+sa14,6,sonnet,low,code-retry,15,4,1500,314293,27.2,
+sa16,6,sonnet,medium,code-retry,15,5,1816,292505,20.0,
