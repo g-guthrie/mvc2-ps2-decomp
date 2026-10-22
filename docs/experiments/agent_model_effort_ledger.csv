@@ -329,3 +329,12 @@ xl8,17,sonnet,medium,code-xl,3,1,1536,321396,26.5,
 xl5,17,sonnet,medium,code-xl,3,0,0,350848,28.6,
 rr8,18,sonnet,medium,code-retry2,3,1,544,129718,7.3,
 rr7,18,sonnet,medium,code-retry2,4,2,1048,157392,10.9,
+rr11,18,sonnet,medium,code-retry2,3,0,0,,,
+rr13,18,sonnet,medium,code-retry2,3,3,1580,147415,5.1,keep-pointer static
+rr15,18,sonnet,medium,code-retry2,3,3,1700,140834,5.8,
+rr10,18,sonnet,medium,code-retry2,3,1,380,151700,6.6,
+rr12,18,sonnet,medium,code-retry2,3,1,588,144409,7.8,
+rr14,18,sonnet,medium,code-retry2,3,2,732,159722,8.3,
+rr16,18,sonnet,medium,code-retry2,3,2,1084,136312,8.5,
+xl10,17,sonnet,medium,code-xl,3,1,1184,417301,43.7,return-type temp pool
+rr17,18,sonnet,medium,code-retry2,3,1,624,189743,9.6,
