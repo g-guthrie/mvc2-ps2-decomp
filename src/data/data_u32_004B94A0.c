@@ -1,4 +1,2 @@
-typedef unsigned int u32;
-u32 data_u32_004B94A0[4] = {
-    0x4C495547u, 0x20202045u, 0x20202020u, 0x20202020u, 
-};
+/* Fixed 16-byte character name field, space padded. */
+char data_u32_004B94A0[16] = "GUILE           ";

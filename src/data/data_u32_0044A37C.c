@@ -1,5 +1,3 @@
 typedef unsigned int u32;
-u32 data_u32_0044A37C[9] = {
-    0x00000000u, 0x00000042u, 0x0000004Bu, 0x00000054u, 0x0000005Du, 0x00000066u, 0x0000006Fu, 0x00000000u, 
-    0x00000000u, 
-};
+/* Nine values; 66..111 step 9, then two zero words. */
+u32 data_u32_0044A37C[9] = { 0u, 66u, 75u, 84u, 93u, 102u, 111u, 0u, 0u };

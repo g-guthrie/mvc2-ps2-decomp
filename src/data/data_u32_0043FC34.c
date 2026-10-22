@@ -1,10 +1,23 @@
-typedef unsigned int u32;
-u32 data_u32_0043FC34[51] = {
-    0x00000000u, 0x00000000u, 0x00000000u, 0xFFFFFFEEu, 0xFFFFFFECu, 0xFFFFFFF8u, 0xFFFFFFECu, 0xFFFFFFE4u, 
-    0xFFFFFFECu, 0x0000000Bu, 0xFFFFFFE1u, 0x00000001u, 0xFFFFFFECu, 0x00000015u, 0xFFFFFFECu, 0xFFFFFFE4u, 
-    0x00000002u, 0xFFFFFFDAu, 0x00000002u, 0xFFFFFFEEu, 0x0000000Du, 0xFFFFFFF8u, 0x0000000Du, 0x00000015u, 
-    0x00000002u, 0x00000001u, 0x00000002u, 0x00000001u, 0x0000000Du, 0x00000015u, 0x0000000Du, 0x0000000Bu, 
-    0x0000000Du, 0x0000000Bu, 0x00000002u, 0x0000000Bu, 0xFFFFFFF8u, 0x00000015u, 0xFFFFFFF8u, 0x00000001u, 
-    0xFFFFFFF7u, 0xFFFFFFF8u, 0xFFFFFFF7u, 0xFFFFFFEEu, 0xFFFFFFF8u, 0xFFFFFFE4u, 0xFFFFFFF8u, 0xFFFFFFEEu, 
-    0x00000002u, 0xFFFFFFF8u, 0x00000002u, 
+typedef int s32;
+typedef struct { s32 x; s32 y; s32 z; } SmallVec3;
+typedef char SmallVec3_size_check[(sizeof(SmallVec3) == 12) ? 1 : -1];
+/* Seventeen small signed integer vectors. */
+SmallVec3 data_u32_0043FC34[17] = {
+    { 0, 0, 0 },
+    { -18, -20, -8 },
+    { -20, -28, -20 },
+    { 11, -31, 1 },
+    { -20, 21, -20 },
+    { -28, 2, -38 },
+    { 2, -18, 13 },
+    { -8, 13, 21 },
+    { 2, 1, 2 },
+    { 1, 13, 21 },
+    { 13, 11, 13 },
+    { 11, 2, 11 },
+    { -8, 21, -8 },
+    { 1, -9, -8 },
+    { -9, -18, -8 },
+    { -28, -8, -18 },
+    { 2, -8, 2 },
 };

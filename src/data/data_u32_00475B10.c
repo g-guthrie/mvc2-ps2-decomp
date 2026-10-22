@@ -1,4 +1,4 @@
-typedef unsigned int u32;
-u32 data_u32_00475B10[8] = {
-    0xFFC80030u, 0x00080000u, 0xFFD8FFD0u, 0x00080000u, 0x00100010u, 0x00080000u, 0x00000000u, 0x00000000u, 
-};
+typedef signed short s16;
+
+/* Sixteen s16 halfwords (layout not identified). */
+s16 data_u32_00475B10[16] = { 48, -56, 0, 8, -48, -40, 0, 8, 16, 16, 0, 8, 0, 0, 0, 0 };

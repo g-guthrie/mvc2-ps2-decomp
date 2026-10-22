@@ -1,4 +1,7 @@
-typedef unsigned int u32;
-u32 data_u32_004C01B0[3] = {
-    0x02000201u, 0x020102FFu, 0xFFFFFFFFu
+typedef unsigned char u8;
+/* Three 4-byte rows, each addressed as a byte pointer. */
+u8 data_u32_004C01B0[3][4] = {
+    { 0x01, 0x02, 0x00, 0x02 },
+    { 0xFF, 0x02, 0x01, 0x02 },
+    { 0xFF, 0xFF, 0xFF, 0xFF },
 };

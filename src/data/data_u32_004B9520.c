@@ -1,4 +1,3 @@
-typedef unsigned int u32;
-u32 data_u32_004B9520[4] = {
-    0x4C435943u, 0x2053504Fu, 0x20202020u, 0x20202020u, 
-};
+typedef char PaddedName16[16];
+/* 16-byte character name, space padded (no terminator). */
+char data_u32_004B9520[16] = "CYCLOPS         ";

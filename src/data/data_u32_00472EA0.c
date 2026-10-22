@@ -1,6 +1,25 @@
-typedef unsigned int u32;
-u32 data_u32_00472EA0[20] = {
-    0x003FFFD9u, 0x00260002u, 0x0006FFB4u, 0x0027000Au, 0x0037FF8Cu, 0x00280004u, 0x0052FFECu, 0x002B000Du, 
-    0x00000000u, 0x002D0005u, 0x00000000u, 0x002E000Bu, 0x00000000u, 0x002F000Cu, 0x00000000u, 0x003000FFu, 
-    0x003FFFD9u, 0x00260041u, 0x0046FFAEu, 0x002800FFu, 
+typedef signed short s16;
+typedef struct { s16 x; s16 y; } S16Pair;
+typedef char S16Pair_size_check[(sizeof(S16Pair) == 4) ? 1 : -1];
+S16Pair data_u32_00472EA0[20] = {
+    { -39, 63 },
+    { 2, 38 },
+    { -76, 6 },
+    { 10, 39 },
+    { -116, 55 },
+    { 4, 40 },
+    { -20, 82 },
+    { 13, 43 },
+    { 0, 0 },
+    { 5, 45 },
+    { 0, 0 },
+    { 11, 46 },
+    { 0, 0 },
+    { 12, 47 },
+    { 0, 0 },
+    { 255, 48 },
+    { -39, 63 },
+    { 65, 38 },
+    { -82, 70 },
+    { 255, 40 }
 };

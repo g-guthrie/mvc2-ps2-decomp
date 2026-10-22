@@ -1,5 +1,9 @@
-typedef unsigned int u32;
-u32 data_u32_00447AF4[11] = {
-    0x0480FB80u, 0x0500FB00u, 0x0580FA80u, 0x0400FA00u, 0x0500FB00u, 0x0300FBE0u, 0x0400FC00u, 0x0500FB00u, 
-    0x0380FA00u, 0x0500FB00u, 0x0420FBE0u, 
+typedef signed short s16;
+/* Eleven {x, z} signed halfword pairs. */
+typedef struct { s16 x; s16 z; } S16Pair;
+typedef char S16Pair_size_check[(sizeof(S16Pair) == 4) ? 1 : -1];
+S16Pair data_u32_00447AF4[11] = {
+    { -1152, 1152 }, { -1280, 1280 }, { -1408, 1408 }, { -1536, 1024 },
+    { -1280, 1280 }, { -1056, 768 }, { -1024, 1024 }, { -1280, 1280 },
+    { -1536, 896 }, { -1280, 1280 }, { -1056, 1056 },
 };

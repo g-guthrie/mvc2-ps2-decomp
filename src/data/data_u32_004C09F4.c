@@ -1,4 +1,2 @@
-typedef unsigned int u32;
-u32 data_u32_004C09F4[3] = {
-    0x02010201u, 0x02FF02FFu, 0xFFFFFFFFu
-};
+typedef signed char s8;
+s8 data_u32_004C09F4[12] = { 1, 2, 1, 2, -1, 2, -1, 2, -1, -1, -1, -1 };

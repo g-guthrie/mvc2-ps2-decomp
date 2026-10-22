@@ -1,6 +1,7 @@
-typedef unsigned char u8;
-/* Slots 1..3 have no direct consumer; preserve their original pointer words raw. */
-const u8 data_raw_00444944[0xC] = {
-    0xC0u, 0x48u, 0x44u, 0x00u, 0xC0u, 0x48u, 0x44u, 0x00u,
-    0xF0u, 0x48u, 0x44u, 0x00u,
+/* Three pointer slots into data_u32_004447C0 (offsets 0x100, 0x100, 0x130). */
+extern unsigned int data_u32_004447C0[];
+const void * const data_raw_00444944[3] = {
+    &data_u32_004447C0[64],
+    &data_u32_004447C0[64],
+    &data_u32_004447C0[76],
 };

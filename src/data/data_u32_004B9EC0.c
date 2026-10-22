@@ -1,4 +1,2 @@
-typedef unsigned int u32;
-u32 data_u32_004B9EC0[4] = {
-    0x20202020u, 0x20202020u, 0x20202020u, 0x4C4C4F52u, 
-};
+/* Fixed 16-byte, space-padded name field. */
+char data_u32_004B9EC0[16] = "            ROLL";

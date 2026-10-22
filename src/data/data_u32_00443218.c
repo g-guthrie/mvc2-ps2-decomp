@@ -1,4 +1,5 @@
 typedef unsigned int u32;
-u32 data_u32_00443218[4] = {
-    0x00010078u, 0x4134CCCDu, 0x00000000u, 0x3C23D70Au, 
-};
+typedef float f32;
+typedef struct { signed short a; signed short b; f32 c; f32 d; f32 e; } MixedRecord16;
+typedef char MixedRecord16_size_check[(sizeof(MixedRecord16) == 16) ? 1 : -1];
+MixedRecord16 data_u32_00443218 = { 120, 1, 11.3000002f, 0.0f, 0.00999999978f };

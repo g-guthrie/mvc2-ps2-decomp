@@ -1,4 +1,6 @@
-typedef unsigned int u32;
-u32 data_u32_0044DEE0[8] = {
-    0x007F0000u, 0x017D00FEu, 0x000001FCu, 0x00000000u, 0x00000000u, 0x00000000u, 0x00210004u, 0xFFFC004Bu, 
+typedef signed short s16;
+/* Sixteen signed halfwords; func_001CFBB0 reads these by index (lh, index * 2). */
+s16 data_u32_0044DEE0[16] = {
+    0, 127, 254, 381, 508, 0, 0, 0,
+    0, 0, 0, 0, 4, 33, 75, -4,
 };

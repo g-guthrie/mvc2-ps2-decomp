@@ -1,2 +1,9 @@
-typedef unsigned int u32;
-u32 data_u32_0044DFE0[12] = { 0x0084FFF4u, 0x0070002Eu, 0x00570042u, 0x0039003Au, 0x0014FFF5u, 0x0039FFCBu, 0x0058FFC8u, 0x0072FFD3u, 0x0054FFEBu, 0x005DFFF4u, 0x004CFFEAu, 0x00000000u };
+typedef signed short s16;
+/* Twelve signed {x, y} halfword pairs; the entry at 0x0044DFE0 + 0x2C is zero. */
+typedef struct { s16 x; s16 y; } S16Pair;
+typedef char S16Pair_size_check[(sizeof(S16Pair) == 4) ? 1 : -1];
+S16Pair data_u32_0044DFE0[12] = {
+    { -12, 132 }, { 46, 112 }, { 66, 87 }, { 58, 57 },
+    { -11, 20 }, { -53, 57 }, { -56, 88 }, { -45, 114 },
+    { -21, 84 }, { -12, 93 }, { -22, 76 }, { 0, 0 },
+};

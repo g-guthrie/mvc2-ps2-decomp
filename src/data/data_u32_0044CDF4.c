@@ -1,5 +1,9 @@
-typedef unsigned int u32;
-u32 data_u32_0044CDF4[11] = {
-    0x00000000u, 0x00000000u, 0x00000000u, 0x00050003u, 0x00040002u, 0x00030001u, 0x00020000u, 0x00040000u, 
-    0x00040000u, 0x00050001u, 0x00050002u, 
+typedef unsigned short u16;
+/* Eleven small unsigned halfword pairs. */
+typedef struct { u16 a; u16 b; } U16Pair;
+typedef char U16Pair_size_check[(sizeof(U16Pair) == 4) ? 1 : -1];
+U16Pair data_u32_0044CDF4[11] = {
+    { 0, 0 }, { 0, 0 }, { 0, 0 }, { 3, 5 },
+    { 2, 4 }, { 1, 3 }, { 0, 2 }, { 0, 4 },
+    { 0, 4 }, { 1, 5 }, { 2, 5 },
 };

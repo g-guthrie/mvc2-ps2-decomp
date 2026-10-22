@@ -1,5 +1,4 @@
-typedef unsigned int u32;
-u32 data_u32_00461C50[11] = {
-    0xFFD3FFD0u, 0xFFD9FFD6u, 0xFFDFFFDCu, 0xFFE5FFE2u, 0xFFEBFFE8u, 0xFFF1FFEEu, 0xFFF7FFF4u, 0xFFFDFFFAu, 
-    0x00030000u, 0x00090006u, 0x000F000Cu, 
-};
+typedef short s16;
+typedef struct { s16 x; s16 y; } S16Pair;
+typedef char S16Pair_size_check[(sizeof(S16Pair) == 4) ? 1 : -1];
+S16Pair data_u32_00461C50[11] = { { -48, -45 }, { -42, -39 }, { -36, -33 }, { -30, -27 }, { -24, -21 }, { -18, -15 }, { -12, -9 }, { -6, -3 }, { 0, 3 }, { 6, 9 }, { 12, 15 } };

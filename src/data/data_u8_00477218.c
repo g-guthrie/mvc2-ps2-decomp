@@ -1,4 +1,10 @@
 typedef unsigned char u8;
-u8 data_u8_00477218[0x8] = {
-    0x48, 0xE1, 0x7A, 0x3F, 0xFF, 0xFF, 0xFF, 0xFF,
+typedef signed short s16;
+typedef unsigned int u32;
+typedef signed int s32;
+typedef float f32;
+typedef struct { f32 f; u32 u; } F32U32;
+typedef char F32U32_size[(sizeof(F32U32)==8)?1:-1];
+F32U32 data_u8_00477218[1] = {
+    { 0.980000019f, 0xFFFFFFFFu },
 };

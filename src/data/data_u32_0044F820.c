@@ -1,4 +1,10 @@
-typedef unsigned int u32;
-u32 data_u32_0044F820[8] = {
-    0x00040000u, 0x000D8000u, 0xFFFF4000u, 0x00028000u, 0x000E8000u, 0xFFFF8000u, 0x00000000u, 0x00000000u, 
+typedef int s32;
+/* 16.16 fixed-point (x, y) pairs. */
+typedef struct { s32 x; s32 y; } Fixed16Pair;
+typedef char Fixed16Pair_size_check[(sizeof(Fixed16Pair) == 8) ? 1 : -1];
+Fixed16Pair data_u32_0044F820[4] = {
+    { 262144, 884736 },
+    { -49152, 163840 },
+    { 950272, -32768 },
+    { 0, 0 },
 };

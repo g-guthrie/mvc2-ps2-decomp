@@ -17885,3 +17885,10 @@ func_002D6570,0x002D6570,0x138,src/hk4_d.c,complete
 func_0029E400,0x0029E400,0x14C,src/hk4_f.c,complete
 func_003B6D90,0x003B6D90,0x164,src/hk7_a.c,complete
 func_0029DD10,0x0029DD10,0x170,src/hk7_b.c,complete
+func_001DCF50,0x001DCF50,0xC8,src/hk1_a.c,complete
+func_003B97D0,0x003B97D0,0x158,src/hk1_e.c,complete
+func_002F6BF0,0x002F6BF0,0x108,src/hk2_b.c,complete
+func_00235F20,0x00235F20,0x118,src/hk2_b.c,complete
+func_001F16C0,0x001F16C0,0x128,src/hk2_b.c,complete
+func_002BA1C0,0x002BA1C0,0x148,src/hk2_b.c,complete
+func_003246B0,0x003246B0,0x174,src/hk2_b.c,complete

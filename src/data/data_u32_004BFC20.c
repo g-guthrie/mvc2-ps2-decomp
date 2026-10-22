@@ -1,4 +1,3 @@
-typedef unsigned int u32;
-u32 data_u32_004BFC20[4] = {
-    0x04800280u, 0x00000000u, 0x4D024C02u, 0x4F094E02u, 
-};
+typedef signed short s16;
+/* Eight signed halfwords; func_001F2520 reads them by byte index * 2 (lh). */
+s16 data_u32_004BFC20[8] = { 640, 1152, 0, 0, 19458, 19714, 19970, 20233 };

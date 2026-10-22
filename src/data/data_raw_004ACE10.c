@@ -1,2 +1,4 @@
-typedef unsigned char u8;
-u8 data_raw_004ACE10[8] = { 0x00u, 0x00u, 0x00u, 0x80u, 0x01u, 0x00u, 0x00u, 0x00u };
+typedef unsigned int u32;
+u32 data_raw_004ACE10[2] = {
+    0x80000000u, 0x00000001u,
+};

@@ -1,4 +1,3 @@
-typedef unsigned int u32;
-u32 data_u32_00477450[8] = {
-    0x00000064u, 0x00000078u, 0x00000096u, 0x000000C8u, 0x00000032u, 0x00000000u, 0x00000000u, 0x00000000u, 
-};
+typedef int s32;
+/* Eight s32 entries; read by index. */
+s32 data_u32_00477450[8] = { 100, 120, 150, 200, 50, 0, 0, 0 };

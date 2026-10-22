@@ -1,6 +1,13 @@
-typedef unsigned char u8;
-/* Unconsumed inter-table bytes remain raw. */
-u8 data_raw_004B27BC[0x14] = {
-    0x00u, 0x00u, 0x00u, 0x00u, 0x9Au, 0x99u, 0xD9u, 0xC0u, 0x00u, 0x00u, 0x80u, 0xC0u, 0x00u, 0x00u, 0x00u, 0x00u,
-    0x00u, 0x00u, 0x00u, 0x00u
+typedef unsigned int u32;
+typedef float f32;
+typedef struct {
+    u32 a;
+    f32 b;
+    f32 c;
+    u32 d;
+    u32 e;
+} Rec20;
+typedef char Rec20_size_check[(sizeof(Rec20) == 20) ? 1 : -1];
+Rec20 data_raw_004B27BC[1] = {
+    { 0x00000000u, -6.8f, -4.0f, 0x00000000u, 0x00000000u }
 };

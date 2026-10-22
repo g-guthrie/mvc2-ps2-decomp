@@ -1,7 +1,23 @@
+typedef unsigned short u16;
 typedef unsigned int u32;
-u32 data_u32_00476800[32] = {
-    0x3E6147AEu, 0x4075C28Fu, 0xC14FD70Au, 0x3E3851ECu, 0x3F89BA5Eu, 0xC14FD70Au, 0x3DC49BA6u, 0xBFD1EB85u, 
-    0xC14FD70Au, 0xBFE3D70Au, 0xC08E76C9u, 0xC14FD70Au, 0xC0BCCCCDu, 0xC0F39581u, 0xC14FD70Au, 0x00000000u, 
-    0x00470001u, 0x00000000u, 0x00000000u, 0x00000000u, 0x004C0001u, 0x00000000u, 0x00000000u, 0x00000000u, 
-    0x004D0001u, 0x00000000u, 0x00000000u, 0x00000000u, 0x004F00FFu, 0x00000000u, 0x00000000u, 0x00000000u, 
+typedef float f32;
+typedef struct { u16 a; u16 b; u32 c[3]; } Rec16;
+/* Five f32 (x, y, z) vectors (z is constant), one zero pad word, then four 16-byte records. */
+typedef struct { f32 v[5][3]; u32 pad; Rec16 recs[4]; } Block128;
+typedef char Block128_size_check[(sizeof(Block128) == 128) ? 1 : -1];
+Block128 data_u32_00476800 = {
+    {
+        { 0.219999999f, 3.83999991f, -12.9899998f },
+        { 0.180000007f, 1.07599998f, -12.9899998f },
+        { 0.0960000008f, -1.63999999f, -12.9899998f },
+        { -1.77999997f, -4.45200014f, -12.9899998f },
+        { -5.9000001f, -7.61199999f, -12.9899998f },
+    },
+    0u,
+    {
+        { 0x0001u, 0x0047u, 0u, 0u, 0u },
+        { 0x0001u, 0x004Cu, 0u, 0u, 0u },
+        { 0x0001u, 0x004Du, 0u, 0u, 0u },
+        { 0x00FFu, 0x004Fu, 0u, 0u, 0u },
+    },
 };

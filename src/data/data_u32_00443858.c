@@ -1,4 +1,10 @@
 typedef unsigned int u32;
-u32 data_u32_00443858[4] = {
-    0x01000002u, 0xC1100000u, 0x40D0A3D7u, 0xC15170A4u, 
+typedef float f32;
+typedef struct { u32 header; f32 a; f32 b; f32 c; } Data00443858;
+typedef char Data00443858_size_check[(sizeof(Data00443858) == 16) ? 1 : -1];
+Data00443858 data_u32_00443858 = {
+    0x01000002u,
+    -9.0f,
+    6.51999998f,
+    -13.0900002f
 };

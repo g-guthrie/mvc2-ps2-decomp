@@ -1,2 +1,2 @@
-typedef unsigned char u8;
-u8 data_u8_004427D4[8] = { 0xA4u, 0x70u, 0xBDu, 0x3Eu, 0xB8u, 0x1Eu, 0x05u, 0x3Eu };
+typedef float f32;
+f32 data_u8_004427D4[2] = { 0.370000005f, 0.129999995f };

@@ -1,7 +1,9 @@
-typedef unsigned char u8;
-/* Unselected pointer words retained raw. */
-const u8 data_raw_004469C8[0x14] = {
-    0x80u,0x69u,0x44u,0x00u,0x80u,0x69u,0x44u,0x00u,
-    0x80u,0x69u,0x44u,0x00u,0x80u,0x69u,0x44u,0x00u,
-    0x80u,0x69u,0x44u,0x00u,
+/* Five pointer slots, each to data_u32_00446980. */
+extern unsigned int data_u32_00446980[];
+const void * const data_raw_004469C8[5] = {
+    data_u32_00446980,
+    data_u32_00446980,
+    data_u32_00446980,
+    data_u32_00446980,
+    data_u32_00446980,
 };

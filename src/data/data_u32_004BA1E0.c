@@ -1,4 +1,2 @@
-typedef unsigned int u32;
-u32 data_u32_004BA1E0[4] = {
-    0x20202020u, 0x20202020u, 0x48542020u, 0x534F4E41u, 
-};
+/* Fixed 16-byte, space-padded name field. */
+char data_u32_004BA1E0[16] = "          THANOS";

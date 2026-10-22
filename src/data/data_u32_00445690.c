@@ -1,4 +1,8 @@
 typedef unsigned int u32;
-u32 data_u32_00445690[3] = {
-    0x000000DEu, 0x000000DEu, 0x000000DEu, 
+typedef struct { signed short a; signed short b; } S16Pair;
+typedef char S16Pair_size_check[(sizeof(S16Pair) == 4) ? 1 : -1];
+S16Pair data_u32_00445690[3] = {
+    { 222, 0 },
+    { 222, 0 },
+    { 222, 0 },
 };

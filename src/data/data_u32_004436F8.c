@@ -1,4 +1,11 @@
 typedef unsigned int u32;
-u32 data_u32_004436F8[4] = {
-    0x01000003u, 0xC1100000u, 0x40D0A3D7u, 0xC15170A4u, 
+typedef struct {
+    u32 w0;
+    float f1;
+    float f2;
+    float f3;
+} data_u32_004436F8_rec;
+typedef char data_u32_004436F8_size_check[(sizeof(data_u32_004436F8_rec) == 16) ? 1 : -1];
+data_u32_004436F8_rec data_u32_004436F8 = {
+    0x01000003u, -9.0f, 6.52f, -13.09f,
 };

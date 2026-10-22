@@ -1,5 +1,7 @@
 typedef unsigned char u8;
-u8 data_u8_004B33AC[20] = {
-    0xA4u, 0x70u, 0x93u, 0xC1u, 0x14u, 0xAEu, 0xA5u, 0xC1u, 0xB8u, 0x1Eu, 0x68u, 0xC2u, 0x00u, 0x00u, 0x00u, 0x00u,
-    0x00u, 0x00u, 0x00u, 0x00u,
-};
+typedef signed short s16;
+typedef unsigned int u32;
+typedef signed int s32;
+typedef float f32;
+typedef char F32x5_size[(sizeof(f32[5])==20)?1:-1];
+f32 data_u8_004B33AC[5] = { -18.4300003f, -20.7099991f, -58.0299988f, 0.0f, 0.0f };

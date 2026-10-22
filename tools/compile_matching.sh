@@ -17093,4 +17093,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/hk7_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/hk7_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/hk7_b.o" private/SLUS_204.86.rom --source src/hk7_b.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/hk1_a.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/hk1_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hk1_a.o" private/SLUS_204.86.rom --source src/hk1_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/hk1_e.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/hk1_e.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hk1_e.o" private/SLUS_204.86.rom --source src/hk1_e.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/hk2_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/hk2_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hk2_b.o" private/SLUS_204.86.rom --source src/hk2_b.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

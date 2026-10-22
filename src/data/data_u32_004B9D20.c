@@ -1,4 +1,2 @@
-typedef unsigned int u32;
-u32 data_u32_004B9D20[4] = {
-    0x20202020u, 0x20202020u, 0x56202020u, 0x4D4F4E45u, 
-};
+/* Fixed 16-byte padded name string (space padded, no terminator). */
+char data_u32_004B9D20[16] = "           VENOM";

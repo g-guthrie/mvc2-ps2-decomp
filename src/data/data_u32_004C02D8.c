@@ -1,4 +1,3 @@
-typedef unsigned int u32;
-u32 data_u32_004C02D8[6] = {
-    0x02000201u, 0x020102FFu, 0xFFFFFFFFu, 0x02010201u, 0x02FF02FFu, 0xFFFFFFFFu, 
-};
+typedef signed char s8;
+/* Signed byte list; 0xFF entries are -1. */
+s8 data_u32_004C02D8[24] = { 1, 2, 0, 2, -1, 2, 1, 2, -1, -1, -1, -1, 1, 2, 1, 2, -1, 2, -1, 2, -1, -1, -1, -1 };
