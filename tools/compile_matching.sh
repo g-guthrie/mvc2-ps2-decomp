@@ -19931,7 +19931,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 
 "$WIBO" "$SNCPP" -P src/rb67_c.c "$BUILD/rb67_c.i"
 "$WIBO" "$EE29CC1" "$BUILD/rb67_c.i" -O2 -G0 -ffunction-sections  -quiet -o "$BUILD/rb67_c.s"
-sed -i 's/%hi(\$L[0-9]*)/%hi(jtbl_004AABC0)/; s/%lo(\$L[0-9]*)/%lo(jtbl_004AABC0)/' "$BUILD/rb67_c.s"
+"$PYTHON" -c 'import re, sys; from pathlib import Path; p = Path(sys.argv[1]); p.write_text(re.sub(r"%(hi|lo)\(\$L[0-9]+\)", r"%\1(jtbl_004AABC0)", p.read_text()))' "$BUILD/rb67_c.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/rb67_c.o" "$BUILD/rb67_c.s"
 "$PYTHON" tools/verify_object.py "$BUILD/rb67_c.o" private/SLUS_204.86.rom --source src/rb67_c.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -19983,7 +19983,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$PYTHON" tools/verify_object.py "$BUILD/rb95_a.o" private/SLUS_204.86.rom --source src/rb95_a.c
 "$WIBO" "$SNCPP" -P src/rb87_c.c "$BUILD/rb87_c.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/rb87_c.i" "$BUILD/rb87_c.s"
-sed -i 's/^\tli\.d\t\$5,8\.49999999999999977796e-1$/\t.set\tnoat\n\tlui\t$1,%hi(D_004BBFC8)\n\tld\t$5,%lo(D_004BBFC8)($1)\n\t.set\tat/' "$BUILD/rb87_c.s"
+"$PYTHON" -c 'import sys; from pathlib import Path; p = Path(sys.argv[1]); p.write_text(p.read_text().replace("\tli.d\t$5,8.49999999999999977796e-1\n", "\t.set\tnoat\n\tlui\t$1,%hi(D_004BBFC8)\n\tld\t$5,%lo(D_004BBFC8)($1)\n\t.set\tat\n"))' "$BUILD/rb87_c.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/rb87_c.o" "$BUILD/rb87_c.s"
 "$PYTHON" tools/verify_object.py "$BUILD/rb87_c.o" private/SLUS_204.86.rom --source src/rb87_c.c
 
