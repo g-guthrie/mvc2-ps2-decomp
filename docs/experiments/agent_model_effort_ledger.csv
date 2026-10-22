@@ -425,3 +425,7 @@ rb26,18,sonnet,medium,code-retry5,3,3,1052,150952,7.8,static callees; 3.0
 rb21,18,sonnet,medium,code-retry5,3,0,0,164472,9.6,
 rb27,18,sonnet,medium,code-retry5,3,0,0,170334,10.1,
 rb17,18,sonnet,medium,code-retry5,3,2,640,163648,10.7,float ternary; sony29 u128
+rb28,18,sonnet,medium,code-retry5,3,1,360,171301,8.7,switch default-first dead leftover
+rb29,18,sonnet,medium,code-retry5,3,1,364,165755,8.2,soft-float k+= trick
+rb30,18,sonnet,medium,code-retry5,3,1,364,133979,5.0,(u8) cast compare
+xl15,18,sonnet,medium,code-xl,2,1,2588,420163,61.5,3.0; pack(1); decl-order greedy
