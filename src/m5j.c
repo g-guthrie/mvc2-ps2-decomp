@@ -14,7 +14,7 @@ u8 *func_00319410(u8 a, u8 b) {
     return 0;
 }
 
-extern s32 func_00174470(void *p);
+extern int func_00174470(const void *);
 s32 func_0035A7B0(u8 *p, u8 *q) {
     if (func_00174470(p) == 0) {
         p[0x13C] = 0;

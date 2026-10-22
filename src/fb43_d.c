@@ -15,7 +15,7 @@ extern s16 D_004BFA20[4];
 void func_001C3A80(u8 *a, u8 *b)
 {
     extern s32 func_001C39F0(s16, s16);
-    extern s32 func_00174470(u8 *);
+    extern int func_00174470(const void *);
     extern f32 func_001C3A20(u8 *, s32);
     u8 cnt;
     u8 *c;

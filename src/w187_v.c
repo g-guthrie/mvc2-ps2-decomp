@@ -8,7 +8,7 @@ typedef float f32;
 
 typedef struct { u8 p0[0x1C]; s16 h1C; s16 h1E; u8 pa[0x14]; f32 f34; f32 f38; u8 p1[0x20]; f32 f5C; f32 f60; u8 p2[4]; f32 f68; f32 f6C; u8 p3[0x143]; s8 b1B3; } PF;
 extern s32 func_00174170();
-extern s32 func_00174470();
+extern int func_00174470(const void *);
 extern void func_001E3210();
 extern void func_003CAB00();
 extern void func_003CAB20();
@@ -26,7 +26,7 @@ void func_003CB940(PF *p, u8 *q) {
         }
         return;
     }
-    if (func_00174470() == 0) {
+    if (func_00174470(p) == 0) {
         ((u8 *)p)[0x13C] = 0;
         func_003CAB00(p, q);
         return;

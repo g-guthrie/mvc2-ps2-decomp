@@ -202,7 +202,7 @@ void func_003B2F10(u8 *a, s32 b, s32 c, s32 d, s32 e) {
 extern void func_0018F4C0(void *p);
 extern void func_00184540(void *p);
 extern void func_001843A0(void *p);
-extern s32 func_00174470(void *p);
+extern int func_00174470(const void *);
 extern void func_00347190(void *p);
 extern void func_001E7F60(void *p);
 extern u8 D_004C1380[4];

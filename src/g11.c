@@ -111,7 +111,7 @@ void func_0039BC90(u8 *a) {
     }
 }
 
-extern s32 func_00174470();
+extern int func_00174470(const void *);
 extern void func_00350FD0();
 extern s32 func_00174240();
 extern void func_003C80A0();

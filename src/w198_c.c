@@ -103,7 +103,7 @@ void func_002F1BB0(u8 *p) {
 
 void func_00396940(u8 *p, u8 *q) {
     extern s8 func_00175700(u8 *);
-    extern s32 func_00174470(u8 *);
+    extern int func_00174470(const void *);
     extern void func_001757E0(u8 *, s32, s32);
     extern void func_001E7F60(u8 *);
     extern void func_00396C50(u8 *, u8 *);

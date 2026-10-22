@@ -34,7 +34,7 @@ void func_00154400(u8 *p) {
 }
 
 extern void (*D_004C1BA8[2])(void *, void *);
-extern s32 func_00174470();
+extern int func_00174470(const void *);
 void func_0035FCA0(u8 *p, u8 *q) {
     u8 *r = q;
     u8 k = r[0x169];

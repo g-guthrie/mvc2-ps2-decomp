@@ -6,7 +6,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-extern s32 func_00174470(u8 *);
+extern int func_00174470(const void *);
 extern void func_001757E0(u8 *, s32, s32);
 extern s8 func_00175700(u8 *);
 extern void func_00174A40(u8 *, s32);

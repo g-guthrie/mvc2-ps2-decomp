@@ -88,7 +88,7 @@ void func_00388390(P_2 *a, B_2 *b) {
 }
 
 
-extern s32 func_00174470();
+extern int func_00174470(const void *);
 typedef struct {
     u8 p0[4]; u8 f4, f5; u8 p6[0x2E]; f32 f34; u8 p38[0x24]; f32 f5c; u8 p60[8]; f32 f68; u8 p6c[0xD0]; u8 f13c; u8 p13d[0x75]; s8 f1b2, f1b3;
 } P_3;

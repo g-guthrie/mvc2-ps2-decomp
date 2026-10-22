@@ -43,7 +43,7 @@ extern u8 D_0044FBA0[];
 extern void func_00176160();
 extern u32 D_0044FDE0[];
 extern void func_00394B60();
-extern s32 func_00174470();
+extern int func_00174470(const void *);
 extern void func_00395890();
 extern void func_001E7F60();
 extern u8 *D_004C29D8;
@@ -280,7 +280,7 @@ void func_00394A50(u8 *p) {
         func_00394B60(p);
         return;
     }
-    if (func_00174470() == 0) {
+    if (func_00174470(p) == 0) {
         D_004C29D8[2] = 0;
         func_00395890(p);
     } else {

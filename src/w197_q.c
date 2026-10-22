@@ -10,7 +10,7 @@ extern G197n *D_004C2794;
 void func_003D7B50(u8 *p, u8 *q) {
     extern void func_003D7D50(u8 *, u8 *);
     extern void func_003D7CC0(u8 *, u8 *);
-    extern s32 func_00174470(u8 *);
+    extern int func_00174470(const void *);
     extern void func_001E7F60(u8 *);
     u8 *a = *(u8 **)(p + 0x14);
     u8 *b = *(u8 **)(p + 0x8);

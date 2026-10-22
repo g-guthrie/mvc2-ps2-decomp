@@ -10,7 +10,7 @@ typedef struct { u8 pad[0x1C]; s16 h1C; } PS;
 extern f32 D_004F1F4C[];
 
 void func_0027EF00(u8 *p) {
-    extern s32 func_00174470();
+    extern int func_00174470(const void *);
     extern void func_00185490(u8 *);
     extern s8 func_00175700();
     extern void func_001757E0();
@@ -20,7 +20,7 @@ void func_0027EF00(u8 *p) {
     u32 t;
     switch (p[6]) {
     case 0:
-        if (func_00174470()) {
+        if (func_00174470(p)) {
             p[6] = 2;
         } else {
             p[6] = 1;

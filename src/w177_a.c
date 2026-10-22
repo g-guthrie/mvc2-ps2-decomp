@@ -109,7 +109,7 @@ void func_002F3280(PG *p) {
 typedef struct { u8 b0; u8 p1[3]; u8 b4; u8 b5; u8 p6[0x34-6]; f32 f34; u8 p38[0x5C-0x38]; f32 f5c; u8 p60[8]; f32 f68; u8 p6c[0xD0-0x6C]; s32 wd0; u8 pd4[0x13C-0xD4]; u8 b13c; u8 p13d[3]; s16 h140; } PJ;
 void func_00364C90(PJ *p, PJ *q) {
     extern void func_00175700(PJ *);
-    extern s32 func_00174470(PJ *);
+    extern int func_00174470(const void *);
     extern void func_001E3710(PJ *, s32);
     extern void func_001757E0(PJ *, s32, s32);
     func_00175700(p);

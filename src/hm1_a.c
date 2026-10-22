@@ -10,7 +10,7 @@ void func_003956F0(u8 *p)
 {
     extern void func_00395870(u8 *);
     extern void func_00395890(u8 *);
-    extern s32 func_00174470();
+    extern int func_00174470(const void *);
     extern f32 func_00417440(s32);
     extern void func_00175700(u8 *);
     extern void func_001E7F60(u8 *);
@@ -22,7 +22,7 @@ void func_003956F0(u8 *p)
         func_00395870(p);
         return;
     }
-    if (func_00174470() == 0) {
+    if (func_00174470(p) == 0) {
         func_00395890(p);
         return;
     }

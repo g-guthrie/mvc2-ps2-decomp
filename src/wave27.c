@@ -113,12 +113,12 @@ void func_0019DE50(u8 *a, u8 b, u8 c) {
     }
 }
 
-s32 func_00174470(u8 *a, u8 *b);
+extern int func_00174470(const void *);
 void func_003785F0(u8 *a, u8 *b);
 extern void (*D_00464020[2])(u8 *, u8 *);
 void func_00378280(u8 *a, u8 *b) {
     u8 *p = b + 0x2B8;
-    if (func_00174470(a, b) == 0) {
+    if (func_00174470(a) == 0) {
         func_003785F0(a, b);
         p[4] = 0;
     } else {

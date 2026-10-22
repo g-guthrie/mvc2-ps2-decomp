@@ -49,7 +49,7 @@ void func_003B1900(u8 *p, u8 *q) {
     extern void func_00175700(u8 *);
     extern void func_001E7F60(u8 *);
     extern void func_001757E0(u8 *, s32, s32);
-    extern s32 func_00174470(u8 *);
+    extern int func_00174470(const void *);
     extern void func_003B1A70(u8 *, u8 *);
     s32 x = *(s32 *)(p + 0x14);
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);

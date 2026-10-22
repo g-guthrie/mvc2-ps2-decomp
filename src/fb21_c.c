@@ -55,7 +55,7 @@ void func_003831F0(CS *p)
 {
     extern void func_001757E0(CS *, s32, s32);
     extern void func_00175910(CS *, s32, s32, s32);
-    extern s8 func_00174470(CS *);
+    extern int func_00174470(const void *);
     extern s8 func_00175700();
     extern void func_001E7F60();
     CS *q;

@@ -225,7 +225,7 @@ extern V4 D_00476B70;
 extern V4 D_00476B60;
 extern void func_003DAA40(u8 *);
 
-extern s32 func_00174470(u8 *);
+extern int func_00174470(const void *);
 extern s32 func_00174780(u8 *);
 extern void (*D_00473C60[])(u8 *, u8 *);
 

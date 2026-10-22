@@ -108,7 +108,7 @@ void func_0023B7D0(F1 *a) {
 }
 
 void func_00199DC0(void *a);
-s32 func_00174470(void *a);
+extern int func_00174470(const void *);
 void func_00199D60(F1 *a) {
     a->f34 += a->f5C;
     a->f5C += a->f68;

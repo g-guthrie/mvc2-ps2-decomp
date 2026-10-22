@@ -223,7 +223,7 @@ u8 *func_003A8D20(u8 *p, s16 a, s16 b) {
 }
 
 void func_00363B10(u8 *p) {
-    extern s32 func_00174470(u8 *);
+    extern int func_00174470(const void *);
     extern void func_00175700(u8 *);
     extern void func_001E7F60(u8 *);
     if (*(s16 *)(p + 0x1C) < 0xD3 && func_00174470(p) == 0) {

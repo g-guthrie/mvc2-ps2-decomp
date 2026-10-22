@@ -344,7 +344,7 @@ void func_00364510(P_14 *a) {
 }
 
 
-extern s32 func_00174470();
+extern int func_00174470(const void *);
 extern s32 func_001745B0();
 extern void func_003BE2C0(u8 *,u8 *);
 typedef struct {

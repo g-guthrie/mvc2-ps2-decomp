@@ -309,12 +309,12 @@ void func_00235760(u8 *p) {
     }
 }
 
-extern s32 func_00174470(void *, void *);
+extern int func_00174470(const void *);
 extern s32 func_00174780(void *);
 extern void func_00174910(void *, s32);
 extern void func_003B1020(void *, void *);
 void func_003B0CD0(u8 *p, u8 *q) {
-    if (func_00174470(p, q) == 0 || func_00174780(p) == 0) {
+    if (func_00174470(p) == 0 || func_00174780(p) == 0) {
         p[4] = 3;
     } else if (*(f32 *)(q + 0x430) > *(f32 *)(p + 0x38)) {
         p[4] = 2;

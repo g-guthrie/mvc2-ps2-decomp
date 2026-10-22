@@ -19,7 +19,7 @@ extern PositionOffset D_00472B80[];
 extern const u32 jtbl_00472BB0[];
 extern int func_001757E0(u8 *,int,int);
 extern int func_00175700(u8 *);
-extern int func_00174470(u8 *);
+extern int func_00174470(const void *);
 extern void func_003DAA40(u8 *);
 extern void func_003A3880(u8 *,u8 *);
 extern void func_001D36E0(u8 *,u8);

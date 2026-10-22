@@ -255,7 +255,7 @@ void func_0039F3F0(u8 *a0) {
 extern s32 func_00189310(void *p, void *a, void *b);
 extern u8 D_0045BD80[];
 
-extern s32 func_00174470(void *p);
+extern int func_00174470(const void *);
 extern void func_0034FA60(void *p);
 extern void func_001E7F60(void *p);
 void func_0034EC50(u8 *p) {

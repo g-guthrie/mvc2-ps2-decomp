@@ -13,7 +13,7 @@ extern E16 D_00464880[];
 
 void func_00386260(u8 *p)
 {
-    extern s32 func_00174470();
+    extern int func_00174470(const void *);
     extern void func_001757E0(u8 *, s32, s32);
     extern void func_00175700(u8 *);
     extern void func_001E7F60(u8 *);

@@ -26,7 +26,7 @@ extern void (*D_00472B58[])(TA *, TA *);
 
 void func_003A25E0(TA *p, TA *q) {
     extern void func_003A2AE0(void);
-    extern s32 func_00174470(TA *);
+    extern int func_00174470(const void *);
     extern void func_003DAA40(TA *);
     extern void func_001757E0(TA *, s32, s32);
     s8 *d;

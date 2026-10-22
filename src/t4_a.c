@@ -15,7 +15,7 @@ extern void func_002B5100(u8 *p);
 
 extern void func_00174910(void *p, s32 a);
 extern void func_001E7F60(void *p);
-extern s32 func_00174470(void *p);
+extern int func_00174470(const void *);
 
 void func_00361ED0(u8 *p, u8 *q) {
     u32 t;

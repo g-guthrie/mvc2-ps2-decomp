@@ -169,7 +169,7 @@ extern u16 D_004D18DC[];
 extern u8 D_004D18DB[];
 
 void func_00390AF0(u8 *p) {
-    extern s32 func_00174470();
+    extern int func_00174470(const void *);
     extern void func_00175700(void *);
     extern void func_001E7F60(void *);
     if ((D_004D18DC[0] & (1 << D_004D18DB[0])) == 0) {

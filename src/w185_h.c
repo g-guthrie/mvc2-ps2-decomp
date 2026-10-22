@@ -160,7 +160,7 @@ extern s16 D_00475B60[];
 
 void func_00373E90(u8 *p)
 {
-    extern s32 func_00174470();
+    extern int func_00174470(const void *);
     extern s32 func_00185980();
     extern void func_00374150();
     extern void func_00175700();

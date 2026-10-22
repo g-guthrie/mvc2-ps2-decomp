@@ -76,7 +76,7 @@ extern G1 *D_004C2794;
 
 void func_003CBC70(K1 *p, u8 *q) {
     extern s32 func_00174780();
-    extern s32 func_00174470(K1 *);
+    extern int func_00174470(const void *);
     extern void func_003CAB20(K1 *, u8 *, s32);
     extern void func_003CAB00(K1 *, u8 *);
     extern void func_001E3210(K1 *, s32);

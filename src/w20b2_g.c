@@ -17,7 +17,7 @@ extern s16 D_00476100[];
 extern s16 D_00476102[];
 
 void func_003C88C0(P_g *p, void *q) {
-    extern s32 func_00174470(P_g *);
+    extern int func_00174470(const void *);
     extern void func_00175700(P_g *);
     extern void func_003C9200(P_g *, void *);
     extern void func_003C84E0(P_g *, void *, f32, f32);

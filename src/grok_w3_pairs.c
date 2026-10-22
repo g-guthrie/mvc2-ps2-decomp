@@ -12,7 +12,7 @@ typedef float f32;
     F(p, 96) += F(p, 108);
 
 extern int func_00175700(u8 *);
-extern int func_00174470(u8 *, ...);
+extern int func_00174470(const void *);
 extern void func_0035DE40(u8 *, u8 *);
 extern void func_003CAB00(u8 *, u8 *);
 
@@ -32,7 +32,7 @@ void func_0035DDC0(u8 *p, u8 *q) {
 }
 
 void func_003CC650(u8 *p, u8 *q) {
-    if (!func_00174470(p, q)) {
+    if (!func_00174470(p)) {
         func_003CAB00(p, q);
         return;
     }
@@ -40,7 +40,7 @@ void func_003CC650(u8 *p, u8 *q) {
     func_00175700(p);
 }
 void func_003CCF40(u8 *p, u8 *q) {
-    if (!func_00174470(p, q)) {
+    if (!func_00174470(p)) {
         func_003CAB00(p, q);
         return;
     }

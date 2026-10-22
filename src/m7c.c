@@ -22,7 +22,7 @@ void func_0038FF20(u8 *p) {
     func_00175700(p);
 }
 
-extern s32 func_00174470();
+extern int func_00174470(const void *);
 extern void func_0034DC00();
 void func_0034DB80(u8 *p) {
     func_00175700(p);

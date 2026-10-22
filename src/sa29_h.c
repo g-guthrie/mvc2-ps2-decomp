@@ -11,7 +11,7 @@ extern u8 *D_004C2794;
 #define RESET_ACTION(p,code) do {u32 ca; (p)[0x1B5]=(code);(p)[0x1B2]=*(u16 *)((p)+0x1C0)=0;*(u32 *)((p)+0x1D8)=0;ca=(p)[2]*2;ca+=(u32)D_004C2794;ca+=0x7C;++*(s16 *)ca;}while(0)
 
 void func_00392730(u8 *p, u8 *q) {
-    extern s32 func_00174470(u8 *);
+    extern int func_00174470(const void *);
     extern void func_003928B0(u8 *);
     extern void func_001E7F60(u8 *);
     u8 *r;
@@ -56,7 +56,7 @@ void func_00392730(u8 *p, u8 *q) {
 }
 
 void func_003923D0(u8 *p, u8 *q) {
-    extern s32 func_00174470(u8 *);
+    extern int func_00174470(const void *);
     extern void func_003928B0(u8 *);
     extern void func_001E7F60(u8 *);
     u8 *r;

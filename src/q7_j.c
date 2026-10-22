@@ -11,7 +11,7 @@ typedef struct { u8 pad[0x1E]; s8 b[4]; } S1;
 
 void func_00352540(u8 *p) {
     extern void func_00353690();
-    extern s32 func_00174470();
+    extern int func_00174470(const void *);
     extern s32 func_00174780();
     extern void func_00175700();
     extern void func_001E7F60();

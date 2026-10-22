@@ -72,7 +72,7 @@ void func_00385EE0(u8 *a0, s32 a1) {
     }
 }
 
-extern s32 func_00174470();
+extern int func_00174470(const void *);
 extern void func_0034FA60();
 extern void func_001E7F60();
 

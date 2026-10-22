@@ -343,7 +343,7 @@ void func_0024F2E0(u8 *p) {
 }
 
 void func_00377B30(u8 *p, u8 *q) {
-    extern s32 func_00174470();
+    extern int func_00174470(const void *);
     extern s32 func_00185980();
     extern void func_001757E0();
     extern void func_00185870();

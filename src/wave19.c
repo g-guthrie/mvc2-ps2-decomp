@@ -96,7 +96,7 @@ void func_0018A990(u8 *p, u8 *q) {
     F(0x38) += F(0x60); \
     F(0x60) += F(0x6C)
 
-extern s32 func_00174470();
+extern int func_00174470(const void *);
 extern void func_001843A0();
 void func_00388140(u8 *p, u8 *q) {
     if (func_00174470(p) == 0) {

@@ -47,7 +47,7 @@ extern void func_001E3710(u8 *p, s32 a);
 extern u8 D_00455C60[];
 extern u8 D_00463860[];
 extern u8 D_00463864[];
-extern s32 func_00174470(u8 *p);
+extern int func_00174470(const void *);
 extern void func_001741D0(u8 *p, f32 *v);
 extern s16 func_00118FA8(f32 f);
 

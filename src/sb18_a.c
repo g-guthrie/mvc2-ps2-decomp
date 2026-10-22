@@ -8,7 +8,7 @@ typedef float f32;
 
 s32 func_003B3ED0(u8 *a, u8 *b) {
     extern void func_00175700(u8 *), func_001E7F60(u8 *);
-    extern s32 func_00174470(u8 *);
+    extern int func_00174470(const void *);
     extern s32 func_003B4030(u8 *, u8 *);
     u32 t;
     a[0x24] = b[0x24] + a[0x31];

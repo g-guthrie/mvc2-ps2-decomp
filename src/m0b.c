@@ -36,7 +36,7 @@ extern V3 D_0045EE98;
 extern void func_0039F480();
 extern s32 func_00189310(void *p, void *a, void *b);
 extern u8 D_0045BD80[];
-extern s32 func_00174470(void *p);
+extern int func_00174470(const void *);
 extern void func_0034FA60(void *p);
 extern void func_001E7F60(void *p);
 extern u8 D_0045BD90[];

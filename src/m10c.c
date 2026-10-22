@@ -23,7 +23,7 @@ void func_002EEAD0(u8 *p) {
     }
 }
 extern void (*D_004C1BD0[2])(u8 *, u8 *);
-extern s32 func_00174470(void *p);
+extern int func_00174470(const void *);
 void func_00360860(u8 *p, u8 *q) {
     *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
     if (!func_00174470(p) || !(*(f32 *)(q + 0x430) <= *(f32 *)(p + 0x38))) {

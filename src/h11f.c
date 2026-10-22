@@ -7,7 +7,7 @@ typedef signed int s32;
 typedef float f32;
 #define F(p,o) (*(f32 *)((u8 *)(p)+(o)))
 extern s32 func_00175700(u8 *);
-extern s32 func_00174470(u8 *);
+extern int func_00174470(const void *);
 extern void func_00350FD0(u8 *);
 extern void func_003C80A0(u8 *, u8 *);
 extern void func_0018CDF0(u8 *);

@@ -114,7 +114,7 @@ void func_00311E90(u8 *p, u8 *q)
 void func_0034EFE0(u8 *p)
 {
     extern void func_00175700(u8 *);
-    extern s32 func_00174470(u8 *);
+    extern int func_00174470(const void *);
     extern void func_0034FA60(u8 *);
     extern void func_001757E0(u8 *, s32, s32);
     extern void func_0034F330(u8 *);

@@ -6,7 +6,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-extern s32 func_00174470(void *p);
+extern int func_00174470(const void *);
 extern void func_003928B0(void *p);
 extern void *D_00471BF0[];
 
@@ -82,7 +82,7 @@ void func_0019B010(u8 *p, u8 *q) {
     }
 }
 
-extern s32 func_00174470();
+extern int func_00174470(const void *);
 extern void func_00350FD0(void *p);
 
 extern u8 *func_003DA750(void *p, s32 a, s32 b);

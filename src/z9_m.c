@@ -18,7 +18,7 @@ typedef struct {
 
 void func_0039D5F0(A1 *p) {
     s32 x;
-    extern s32 func_00174470();
+    extern int func_00174470(const void *);
     extern void func_001E7F60();
     extern void func_0039E450();
     extern void func_0015B200();
@@ -28,7 +28,7 @@ void func_0039D5F0(A1 *p) {
         p->f5c += p->f68;
         p->f38 += p->f60;
         p->f60 += p->f6c;
-        if (func_00174470() != 0) {
+        if (func_00174470(p) != 0) {
             func_001E7F60(p);
             return;
         }

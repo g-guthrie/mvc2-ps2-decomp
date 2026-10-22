@@ -296,7 +296,7 @@ void func_002CF940(u8 *p) {
 }
 
 /* 0x0034E090 */
-extern int func_00174470(u8 *);
+extern int func_00174470(const void *);
 extern void func_001E7F60(u8 *);
 void func_0034E090(u8 *p) {
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);

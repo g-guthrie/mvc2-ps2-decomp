@@ -7,7 +7,7 @@ typedef unsigned int u32;
 typedef float f32;
 typedef struct {u8 prefix[0x34];f32 x,y,z;u8 gap40[0x10];f32 scaleX,scaleY;} ActorPosition;
 extern u8 *D_004C2794 __attribute__((section(".sdata")));
-extern int func_00174470(u8 *);
+extern int func_00174470(const void *);
 extern void func_001E7F60(u8 *);
 extern int func_00175700(u8 *);
 void func_003474C0(u8 *p) {

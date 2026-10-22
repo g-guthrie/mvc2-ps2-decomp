@@ -12,7 +12,7 @@ void func_003B0E00(u8 *p, u8 *q)
     u32 u;
     extern void func_00174910(u8 *, s32);
     extern void func_00175700(u8 *);
-    extern s32 func_00174470(u8 *);
+    extern int func_00174470(const void *);
 
     if (p[7] == 0) {
         t = p[7];

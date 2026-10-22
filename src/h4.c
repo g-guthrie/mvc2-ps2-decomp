@@ -75,7 +75,7 @@ void func_002EB200(u8 *p) {
     }
 }
 extern void func_00175670();
-extern s32 func_00174470();
+extern int func_00174470(const void *);
 void func_001B44D0(u8 *p) {
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);

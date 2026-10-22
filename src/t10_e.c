@@ -36,7 +36,7 @@ extern void func_0033C250();
 extern void func_00343B10();
 extern void func_00170DF0();
 extern void func_003B3880();
-extern s32 func_00174470();
+extern int func_00174470(const void *);
 extern void func_0016B0C0();
 extern void func_00166C80();
 extern void func_001830D0();

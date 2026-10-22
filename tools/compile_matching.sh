@@ -20081,4 +20081,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/owner_state_predicate.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_state_predicate.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_state_predicate.o" private/SLUS_204.86.rom --source src/owner_state_predicate.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/projected_actor_bounds.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/projected_actor_bounds.o"
+"$PYTHON" tools/verify_object.py "$BUILD/projected_actor_bounds.o" private/SLUS_204.86.rom --source src/projected_actor_bounds.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

@@ -15,7 +15,7 @@ void func_00323490(u8 *p) {
     extern void func_001757E0();
     extern void func_00175700();
     extern void func_003CD090();
-    extern s32 func_00174470();
+    extern int func_00174470(const void *);
     u32 t = p[6];
     if (t == 0) {
         s32 v;

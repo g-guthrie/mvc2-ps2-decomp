@@ -68,7 +68,7 @@ void func_0019A650(S_0019A650 *p, Q_0019A650 *q) {
     func_001754A0(p, 0x1B, 2);
 }
 
-extern s32 func_00174470(void *);
+extern int func_00174470(const void *);
 extern void func_003CAB00(void *, void *);
 typedef struct { u8 p0[0x430]; f32 f430; } Q_003CC4E0;
 typedef struct { u8 p0[0x34]; f32 f34; f32 f38; u8 p1[0x20]; f32 f5c; f32 f60; u8 p2[4]; f32 f68; f32 f6c; } S_003CC4E0;

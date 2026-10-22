@@ -9,7 +9,7 @@ typedef float f32;
 extern u8 *D_004C29A8;
 void func_00383F40(u8 *p) {
     extern void func_001757E0();
-    extern s32 func_00174470();
+    extern int func_00174470(const void *);
     extern void func_003859F0();
     extern void func_00175700();
     extern void func_001E7F60();
@@ -26,7 +26,7 @@ void func_00383F40(u8 *p) {
         func_001757E0(p, 0x14, 1);
         return;
     }
-    if (func_00174470() == 0) {
+    if (func_00174470(p) == 0) {
         *D_004C29A8 = 0;
         func_003859F0(p);
         return;

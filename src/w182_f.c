@@ -56,7 +56,7 @@ void func_0039B570(u8 *p)
 
 void func_001D3370(u8 *p, u8 *q)
 {
-    extern s32 func_00174470(u8 *);
+    extern int func_00174470(const void *);
     u32 t;
     switch (p[5]) {
     case 0:

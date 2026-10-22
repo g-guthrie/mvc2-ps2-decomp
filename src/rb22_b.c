@@ -10,7 +10,7 @@ void func_0039D900(u8 *p) {
     extern s32 func_00175700();
     extern void func_0039DAC0(u8 *);
     extern void func_0039DA50(u8 *);
-    extern s32 func_00174470(u8 *);
+    extern int func_00174470(const void *);
     extern void func_0039E450(u8 *);
     extern void func_001757E0(u8 *, s32, s32);
     extern void func_001E7F60(u8 *);

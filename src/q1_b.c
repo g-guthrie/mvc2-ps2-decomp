@@ -153,7 +153,7 @@ void func_00364470(u8 *a)
 }
 
 extern void (*D_004C1BFC[2])();
-extern s32 func_00174470(u8 *);
+extern int func_00174470(const void *);
 
 void func_00360F40(u8 *p, u8 *q)
 {

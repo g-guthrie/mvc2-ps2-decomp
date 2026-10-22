@@ -21,7 +21,7 @@ typedef struct P {
 } P;
 
 extern f32 D_004F1F4C[];
-extern s32 func_00174470(P *);
+extern int func_00174470(const void *);
 extern void func_00185490(P *);
 extern void func_001757E0(P *, s32, s32);
 

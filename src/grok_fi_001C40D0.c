@@ -4,7 +4,7 @@ typedef unsigned int u32;
 typedef float f32;
 
 extern f32 D_004F1FD0;
-extern int func_00174470(u8 *);
+extern int func_00174470(const void *);
 extern void func_001E3210(u8 *, int);
 extern int func_001757E0(u8 *, int, int);
 extern void func_0015E630(u8 *);

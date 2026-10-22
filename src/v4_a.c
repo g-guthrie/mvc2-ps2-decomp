@@ -220,7 +220,7 @@ void func_002F7390(u8 *a, u8 *b) {
 }
 
 void func_003479A0(u8 *p) {
-    extern s32 func_00174470();
+    extern int func_00174470(const void *);
     extern void func_00175700();
     f32 z;
     u8 *s;

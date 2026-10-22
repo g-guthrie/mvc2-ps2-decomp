@@ -15,7 +15,7 @@ extern E10 D_004B8700[];
 extern void func_0039C3F0();
 extern void func_0039C4D0(u8 *p, u8 *q, void *r);
 extern void func_001830D0(u8 *p, u32 *v, s32 a, s32 b);
-extern s32 func_00174470(u8 *p);
+extern int func_00174470(const void *);
 extern void func_003C80A0(u8 *p, u8 *q);
 extern void func_00158C70(u8 *p, s32 n);
 extern void func_001757E0(u8 *p, s32 a, s32 b);

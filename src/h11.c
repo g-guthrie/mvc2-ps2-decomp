@@ -133,7 +133,7 @@ void func_001C0EF0(u8 *p, u8 *q) {
 }
 
 #define F(p, o) (*(f32 *)((u8 *)(p) + (o)))
-extern s32 func_00174470(u8 *);
+extern int func_00174470(const void *);
 extern void func_00350FD0(u8 *);
 void func_00350820(u8 *p) {
     F(p, 0x34) += F(p, 0x5C);

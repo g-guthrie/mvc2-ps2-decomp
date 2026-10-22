@@ -58,7 +58,7 @@ extern void (*D_00463FE0[])(void *, void *);
 extern void (*D_00463FD0[])(void *, void *);
 
 void func_00376C80(u8 *p, u8 *q) {
-    extern s32 func_00174470(void *);
+    extern int func_00174470(const void *);
     extern void func_00377860(void *, void *);
     if (func_00174470(p) == 0) {
         p[4] = 2;

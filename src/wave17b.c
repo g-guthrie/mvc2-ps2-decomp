@@ -26,7 +26,7 @@ int func_003BCEB0(u8 *p) {
 }
 
 
-extern int func_00174470(u8 *);
+extern int func_00174470(const void *);
 extern void (*D_004C19A8[2])(u8 *, u8 *);
 void func_003489F0(u8 *p, u8 *q) {
   u8 *s = q + 0x2B8;

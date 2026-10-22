@@ -44,7 +44,7 @@ typedef struct { f32 x, y, z; } V3;
 void func_0034F4B0(u8 *p)
 {
     extern void func_00175700();
-    extern s32 func_00174470();
+    extern int func_00174470(const void *);
     extern void func_0034FA60();
     extern void func_0015B200();
     extern void func_001E7F60();

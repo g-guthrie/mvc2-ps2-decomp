@@ -154,7 +154,7 @@ void func_0035EF90(u8 *p, u8 b, void *c) {
 }
 
 extern void func_0039ACD0(void *);
-extern s32 func_00174470(void *);
+extern int func_00174470(const void *);
 extern void (*D_00472690[])(void *);
 void func_0039A9C0(u8 *p) {
     if ((*(u8 **)(p + 0x18))[0x169] != 0x16) {

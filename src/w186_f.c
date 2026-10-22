@@ -8,7 +8,7 @@ typedef float f32;
 
 void func_00363F70(u8 *p, u8 *q) {
     extern s32 func_00185980();
-    extern s32 func_00174470();
+    extern int func_00174470(const void *);
     extern void func_00364E70();
     extern void func_001E7F60();
     if (q[5] == 0 && *(s8 *)(p + 0x1B3) == 0) {
@@ -25,7 +25,7 @@ void func_00363F70(u8 *p, u8 *q) {
             *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
             *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
             *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
-            if (func_00174470() == 0) goto fail;
+            if (func_00174470(p) == 0) goto fail;
             func_001E7F60(p);
         }
         return;

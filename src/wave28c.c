@@ -91,7 +91,7 @@ void func_00163050(V3 *s) {
 typedef struct { u8 pad[6]; u8 b6; u8 b7; u8 pad2[6]; u8 b14; } S2974;
 extern S2974 *D_004C2974;
 extern s32 func_00175700();
-extern s32 func_00174470(u8 *p);
+extern int func_00174470(const void *);
 extern void func_00367F60(u8 *p);
 extern void func_00367140(u8 *p);
 

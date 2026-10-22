@@ -74,7 +74,7 @@ void func_001318E0(s32 *out, u32 a, u32 b) {
     *out = sum;
 }
 extern s32 func_00175700(void *p);
-extern s32 func_00174470(void *p);
+extern int func_00174470(const void *);
 extern s32 func_00350FD0(void *p);
 s32 func_00350E40(u8 *p) {
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);

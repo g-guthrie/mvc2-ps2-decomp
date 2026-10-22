@@ -4787,3 +4787,24 @@ passes fresh verification. No source-credit totals change.
 
 Catalog/build coverage, all 126 tests, and full hybrid relink/pack pass.
 Both reconstructed retail image hashes remain unchanged.
+
+## 2026-10-22: projected actor bounds predicate and caller contracts
+
+`func_00174470` adds 312 exact CODE bytes under MWCCPS2 3.0-011126
+`-O3,p -sdatathreshold 0`. It projects the actor position into a two-float
+stack buffer, computes the native scaled extents and orientation selection,
+updates the projected coordinate, and compares the two explicitly narrowed
+16-bit conversion results. The intermediate stack write, floating-point
+operation order, conversion calls, and final branch sequence all match retail.
+
+The active callers now consistently declare the actual read-only actor-pointer
+interface. Seven calls explicitly pass the actor previously left incidental
+in a0, four unnecessary context arguments are removed, and the old signed-byte
+return declaration agrees with the actual integer predicate result. All 838
+registered bodies across the 137 affected old caller units remain exact after
+fresh compilation; the new function is separately verified as a whole object.
+No unrelated source, uncompiled historical candidates, or DATA units change.
+
+Build wiring, catalog validation, all 126 tests, and full hybrid relink/pack
+pass. Both retail image hashes remain unchanged. Verified CODE is
+2,660,520 / 3,293,696 bytes; DATA remains 468,869 / 648,064 bytes.

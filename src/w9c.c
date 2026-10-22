@@ -168,7 +168,7 @@ void func_00319E70(u8 *p) {
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
 }
 
-extern s32 func_00174470(u8 *p);
+extern int func_00174470(const void *);
 extern void func_0034FA60(u8 *p);
 extern void func_0034F330(u8 *p);
 extern void func_0034F3B0(u8 *p);

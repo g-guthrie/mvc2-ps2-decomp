@@ -39,7 +39,7 @@ void func_00132810(u8 *a0) {
 }
 
 extern s32 func_00175700();
-extern s32 func_00174470(u8 *a);
+extern int func_00174470(const void *);
 extern void func_001E1FC0(u8 *a, u8 *b);
 void func_001E1B00(u8 *a0, u8 *a1) {
     func_00175700(a0, a1);

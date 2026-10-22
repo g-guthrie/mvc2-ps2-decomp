@@ -142,7 +142,7 @@ void func_001AA570(u8 *p, u8 *q) {
     }
 }
 
-extern s32 func_00174470(void *);
+extern int func_00174470(const void *);
 extern void func_00350FD0(void *);
 extern void func_001E7F60(void *);
 

@@ -223,7 +223,7 @@ void func_0019AAE0(Obj *o) {
 
 extern void func_003B3880();
 extern void func_003B3870();
-extern s32 func_00174470();
+extern int func_00174470(const void *);
 
 
 extern u8 func_001898E0();

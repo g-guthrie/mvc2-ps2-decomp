@@ -21,7 +21,7 @@ typedef struct {
     u8 mode;
 } Entry;
 
-extern s32 func_00174470(u8 *);
+extern int func_00174470(const void *);
 extern s32 func_001745B0(u8 *);
 extern int func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
