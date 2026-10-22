@@ -1,5 +1,4 @@
-typedef unsigned int u32;
-u32 data_u32_0044FF8C[13] = {
-    0x00000000u, 0xFFF68000u, 0x00000000u, 0x00000000u, 0xFFFFB000u, 0xFFFC0000u, 0xFFFFE000u, 0xFFF38000u, 
-    0x0000A800u, 0xFFF90000u, 0x00001000u, 0x000B8000u, 0xFFFF5000u, 
-};
+/* 13 signed 16.16 fixed-point values (raw s32, stored as-is). */
+typedef int s32;
+typedef char data_u32_0044FF8C_size_check[(sizeof(s32) * 13 == 52) ? 1 : -1];
+s32 data_u32_0044FF8C[13] = { 0, -622592, 0, 0, -20480, -262144, -8192, -819200, 43008, -458752, 4096, 753664, -45056 };

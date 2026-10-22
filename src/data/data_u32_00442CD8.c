@@ -1,4 +1,7 @@
+/* Four-word record: u32, f32, u32, f32. Field meanings not established by a reader yet. */
 typedef unsigned int u32;
-u32 data_u32_00442CD8[4] = {
-    0x00000061u, 0x4079999Au, 0x00000000u, 0x3C23D70Au, 
+typedef struct Rec16 { u32 w0; float f1; u32 w2; float f3; } Rec16;
+typedef char data_u32_00442CD8_size_check[(sizeof(Rec16) == 16) ? 1 : -1];
+Rec16 data_u32_00442CD8[1] = {
+    { 0x00000061u, 3.9000001f, 0x00000000u, 0.00999999978f },
 };

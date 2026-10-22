@@ -1,14 +1,29 @@
+typedef unsigned char u8;
+typedef signed short s16;
+typedef unsigned short u16;
+typedef int s32;
 typedef unsigned int u32;
-u32 data_u32_004731D0[84] = {
-    0xFFCB0000u, 0x0000007Du, 0xFFB1FFD8u, 0x0000006Eu, 0xFF93FFC0u, 0x00000042u, 0xFF99FFA8u, 0x00000024u, 
-    0xFFDB0000u, 0x00000094u, 0xFFC1FFD8u, 0x00000087u, 0xFFA3FFC0u, 0x0000005Au, 0xFFA8FFA8u, 0x0000003Du, 
-    0xFFC3FF80u, 0x0000002Du, 0x00000000u, 0x00000000u, 0xFFFA0000u, 0x00060000u, 0xFFFA0002u, 0x0006FFFFu, 
-    0xFFFA0004u, 0x0005FFFCu, 0xFFFB0006u, 0x0005FFFBu, 0xFFFC0006u, 0x0004FFFBu, 0xFFFD0007u, 0x0004FFFAu, 
-    0xFFFE0008u, 0x0003FFF9u, 0xFFFE0008u, 0x0002FFF9u, 0x00000007u, 0x0000FFF8u, 0x00020007u, 0xFFFEFFF8u, 
-    0x00030007u, 0xFFFEFFF8u, 0x00040006u, 0xFFFDFFF9u, 0x00040005u, 0xFFFCFFFAu, 0x00050005u, 0xFFFBFFFAu, 
-    0x00050004u, 0xFFFAFFFCu, 0x00060001u, 0xFFFAFFFEu, 0x00060000u, 0xFFFA0000u, 0x0006FFFEu, 0xFFFA0001u, 
-    0x0006FFFCu, 0xFFFB0004u, 0x0005FFFAu, 0xFFFB0005u, 0x0004FFFAu, 0xFFFC0005u, 0x0003FFF9u, 0xFFFC0006u, 
-    0x0002FFF8u, 0xFFFD0007u, 0x0002FFF8u, 0xFFFE0007u, 0x0000FFF9u, 0x00000008u, 0xFFFEFFF9u, 0x00020008u, 
-    0xFFFDFFF9u, 0x00020008u, 0xFFFCFFFAu, 0x00030007u, 0xFFFCFFFBu, 0x00040006u, 0xFFFBFFFBu, 0x00050006u, 
-    0xFFFBFFFCu, 0x00060004u, 0xFFFAFFFFu, 0x00060002u, 
+typedef float f32;
+s16 data_u32_004731D0[168] = {
+    0, -53, 125, 0, -40, -79, 110, 0,
+    -64, -109, 66, 0, -88, -103, 36, 0,
+    0, -37, 148, 0, -40, -63, 135, 0,
+    -64, -93, 90, 0, -88, -88, 61, 0,
+    -128, -61, 45, 0, 0, 0, 0, 0,
+    0, -6, 0, 6, 2, -6, -1, 6,
+    4, -6, -4, 5, 6, -5, -5, 5,
+    6, -4, -5, 4, 7, -3, -6, 4,
+    8, -2, -7, 3, 8, -2, -7, 2,
+    7, 0, -8, 0, 7, 2, -8, -2,
+    7, 3, -8, -2, 6, 4, -7, -3,
+    5, 4, -6, -4, 5, 5, -6, -5,
+    4, 5, -4, -6, 1, 6, -2, -6,
+    0, 6, 0, -6, -2, 6, 1, -6,
+    -4, 6, 4, -5, -6, 5, 5, -5,
+    -6, 4, 5, -4, -7, 3, 6, -4,
+    -8, 2, 7, -3, -8, 2, 7, -2,
+    -7, 0, 8, 0, -7, -2, 8, 2,
+    -7, -3, 8, 2, -6, -4, 7, 3,
+    -5, -4, 6, 4, -5, -5, 6, 5,
+    -4, -5, 4, 6, -1, -6, 2, 6,
 };

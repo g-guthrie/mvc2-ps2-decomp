@@ -1,9 +1,16 @@
-/* Source-safe reconstruction of initialized table. */
-const unsigned int D_0045DD40[6] = {
-    (unsigned int)0x004C17B0,
-    (unsigned int)0x004C17B4,
-    (unsigned int)0x004C17B8,
-    (unsigned int)0x004C17BC,
-    (unsigned int)0x004C17C0,
-    (unsigned int)0x004C17C4,
+typedef unsigned char u8;
+extern u8 D_004C17B0;
+extern u8 D_004C17B4;
+extern u8 D_004C17B8;
+extern u8 D_004C17BC;
+extern u8 D_004C17C0;
+extern u8 D_004C17C4;
+/* Pointer table. */
+u8 *const D_0045DD40[6] = {
+    &D_004C17B0,
+    &D_004C17B4,
+    &D_004C17B8,
+    &D_004C17BC,
+    &D_004C17C0,
+    &D_004C17C4,
 };

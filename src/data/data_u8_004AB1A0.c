@@ -1,4 +1,3 @@
+/* 8-byte field: "...." followed by NUL padding. */
 typedef unsigned char u8;
-u8 data_u8_004AB1A0[0x8] = {
-    0x2Eu, 0x2Eu, 0x2Eu, 0x2Eu, 0x00u, 0x00u, 0x00u, 0x00u
-};
+u8 data_u8_004AB1A0[8] = "....";

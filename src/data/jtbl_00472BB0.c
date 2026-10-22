@@ -1,8 +1,13 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_00472BB0[5] = {
-    (unsigned int)0x003A3340,
-    (unsigned int)0x003A3420,
-    (unsigned int)0x003A3620,
-    (unsigned int)0x003A37F0,
-    (unsigned int)0x00240000,
+/* Jump table: 5 code addresses. */
+extern char func_003A3420[];
+extern char func_003A37F0[];
+extern char lbl_00240000[];
+extern char lbl_003A3340[];
+extern char lbl_003A3620[];
+const void * const jtbl_00472BB0[5] = {
+    lbl_003A3340,
+    func_003A3420,
+    lbl_003A3620,
+    func_003A37F0,
+    lbl_00240000,
 };

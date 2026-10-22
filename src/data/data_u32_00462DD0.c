@@ -1,9 +1,19 @@
-typedef unsigned int u32;
-u32 data_u32_00462DD0[44] = {
-    0x00000000u, 0xFFC3FFC4u, 0xFFBFFFADu, 0xFFBFFFAFu, 0xFFC4FFBAu, 0xFFCDFFCAu, 0xFFBCFFA5u, 0xFFBCFFA6u, 
-    0xFFA00010u, 0xFFB6FFBEu, 0xFFCBFFDDu, 0xFFBFFFBEu, 0xFFBEFFBAu, 0xFFCCFFB6u, 0xFFA9FFB3u, 0xFFADFFB4u, 
-    0xFFBFFFBEu, 0xFFBBFFC6u, 0xFFBBFFC6u, 0xFFF4FFB0u, 0xFFCDFFBCu, 0xFFCDFFBDu, 0xFFCDFFBEu, 0xFFD5FFD1u, 
-    0xFFDBFFD5u, 0xFFDEFFD7u, 0xFFDAFFF4u, 0xFFDB0000u, 0xFFDC0011u, 0xFFD7000Fu, 0xFFD70011u, 0xFFD90001u, 
-    0xFFD9FFF6u, 0xFFD4FFD7u, 0xFFCFFFCEu, 0xFFCDFFE5u, 0xFFD1FFE6u, 0xFFD3FFF5u, 0xFFD3FFFFu, 0xFFD2000Au, 
-    0xFFD20009u, 0xFFD1FFF7u, 0xFFCDFFEBu, 0xFFCAFFE6u, 
+typedef signed short s16;
+/* 176-byte table: 44 signed 16-byte-pair records, (x, y) order inferred from the 16-bit value pairs. */
+typedef struct {
+    s16 field_00;
+    s16 field_02;
+} data_u32_00462DD0_pair;
+data_u32_00462DD0_pair data_u32_00462DD0[44] = {
+    {0, 0}, {-60, -61}, {-83, -65}, {-81, -65},
+    {-70, -60}, {-54, -51}, {-91, -68}, {-90, -68},
+    {16, -96}, {-66, -74}, {-35, -53}, {-66, -65},
+    {-70, -66}, {-74, -52}, {-77, -87}, {-76, -83},
+    {-66, -65}, {-58, -69}, {-58, -69}, {-80, -12},
+    {-68, -51}, {-67, -51}, {-66, -51}, {-47, -43},
+    {-43, -37}, {-41, -34}, {-12, -38}, {0, -37},
+    {17, -36}, {15, -41}, {17, -41}, {1, -39},
+    {-10, -39}, {-41, -44}, {-50, -49}, {-27, -51},
+    {-26, -47}, {-11, -45}, {-1, -45}, {10, -46},
+    {9, -46}, {-9, -47}, {-21, -51}, {-26, -54},
 };

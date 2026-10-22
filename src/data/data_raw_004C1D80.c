@@ -1,5 +1,39 @@
-/* Dispatch pointers retained as raw bytes; selector bounds are not established here. */
-typedef unsigned char u8;
-const u8 data_raw_004C1D80[0x48] = {
-    0x40u, 0x80u, 0x38u, 0x00u, 0xA0u, 0x80u, 0x38u, 0x00u, 0x70u, 0x85u, 0x38u, 0x00u, 0xF0u, 0x85u, 0x38u, 0x00u, 0x10u, 0x8Bu, 0x38u, 0x00u, 0x70u, 0x91u, 0x38u, 0x00u, 0x00u, 0x8Fu, 0x38u, 0x00u, 0x60u, 0x8Fu, 0x38u, 0x00u, 0xC0u, 0x8Fu, 0x38u, 0x00u, 0x20u, 0x90u, 0x38u, 0x00u, 0x80u, 0x90u, 0x38u, 0x00u, 0xE0u, 0x90u, 0x38u, 0x00u, 0x90u, 0x95u, 0x38u, 0x00u, 0xC0u, 0x98u, 0x38u, 0x00u, 0x20u, 0x9Eu, 0x38u, 0x00u, 0x60u, 0x9Eu, 0x38u, 0x00u, 0x80u, 0xA3u, 0x38u, 0x00u, 0xF0u, 0xA3u, 0x38u, 0x00u
+/* 18 code addresses (function-table entries). w194_i.c calls through D_004C1D80[p[6]]. */
+extern char func_00388570[];
+extern char func_003885F0[];
+extern char func_00388B10[];
+extern char func_00388F00[];
+extern char func_00388F60[];
+extern char func_00388FC0[];
+extern char func_00389020[];
+extern char func_00389080[];
+extern char func_003890E0[];
+extern char func_00389170[];
+extern char func_003898C0[];
+extern char func_0038A3F0[];
+extern char lbl_00388040[];
+extern char lbl_003880A0[];
+extern char lbl_00389590[];
+extern char lbl_00389E20[];
+extern char lbl_00389E60[];
+extern char lbl_0038A380[];
+const void * const data_raw_004C1D80[18] = {
+    lbl_00388040,
+    lbl_003880A0,
+    func_00388570,
+    func_003885F0,
+    func_00388B10,
+    func_00389170,
+    func_00388F00,
+    func_00388F60,
+    func_00388FC0,
+    func_00389020,
+    func_00389080,
+    func_003890E0,
+    lbl_00389590,
+    func_003898C0,
+    lbl_00389E20,
+    lbl_00389E60,
+    lbl_0038A380,
+    func_0038A3F0,
 };

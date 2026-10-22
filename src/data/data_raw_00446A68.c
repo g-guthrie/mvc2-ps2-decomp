@@ -1,7 +1,14 @@
 typedef unsigned char u8;
-/* Unselected pointer-table entries retained raw. */
-const u8 data_raw_00446A68[0x14] = {
-    0x40u,0x6Au,0x44u,0x00u,0x40u,0x6Au,0x44u,0x00u,
-    0x40u,0x6Au,0x44u,0x00u,0x40u,0x6Au,0x44u,0x00u,
-    0x40u,0x6Au,0x44u,0x00u,
+extern u8 D_00446A40;
+extern u8 D_00446A40;
+extern u8 D_00446A40;
+extern u8 D_00446A40;
+extern u8 D_00446A40;
+/* Five pointers to the same target. */
+u8 *const data_raw_00446A68[5] = {
+    &D_00446A40,
+    &D_00446A40,
+    &D_00446A40,
+    &D_00446A40,
+    &D_00446A40,
 };

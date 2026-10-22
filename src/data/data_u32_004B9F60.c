@@ -1,4 +1,3 @@
-typedef unsigned int u32;
-u32 data_u32_004B9F60[4] = {
-    0x20202020u, 0x20202020u, 0x41532020u, 0x4152554Bu, 
-};
+/* 16-byte fixed-width name field, space padded and right-aligned: "SAKURA". */
+typedef unsigned char u8;
+u8 data_u32_004B9F60[16] = "          SAKURA";

@@ -1,2 +1,8 @@
-typedef unsigned char u8;
-u8 data_u8_00443BB8[8] = { 0x14, 0xAE, 0x6F, 0x41, 0xFF, 0xFF, 0xFF, 0xFF };
+typedef unsigned int u32;
+typedef float f32;
+/* 8-byte record: f32 field, then u32 all-ones field. */
+typedef struct {
+    f32 field_00;
+    u32 field_04;
+} data_u8_00443BB8_rec;
+data_u8_00443BB8_rec data_u8_00443BB8 = { 14.9799995f, 0xFFFFFFFFu };
