@@ -429,3 +429,16 @@ rb28,18,sonnet,medium,code-retry5,3,1,360,171301,8.7,switch default-first dead l
 rb29,18,sonnet,medium,code-retry5,3,1,364,165755,8.2,soft-float k+= trick
 rb30,18,sonnet,medium,code-retry5,3,1,364,133979,5.0,(u8) cast compare
 xl15,18,sonnet,medium,code-xl,2,1,2588,420163,61.5,3.0; pack(1); decl-order greedy
+rb36,18,sonnet,medium,code-retry5,3,2,760,143591,6.5,u16 ptr; alias store ptr
+rb18,18,sonnet,medium,code-retry5,3,2,640,146233,20.9,3.0 + struct members
+rb33,18,sonnet,medium,code-retry5,3,3,1128,139418,7.3,alias ptr; goto tails; K&R live ptr
+rb37,18,sonnet,medium,code-retry5,3,2,768,153611,7.7,inner switch; static func_00338670
+rb40,18,sonnet,medium,code-retry5,3,0,0,138265,8.2,
+rb39,18,sonnet,medium,code-retry5,3,3,1164,187344,9.8,,p; EE switch table; volatile globals
+rb35,18,sonnet,medium,code-retry5,3,1,380,157874,10.9,assign in call arg; 3.0
+rb34,18,sonnet,medium,code-retry5,3,1,376,161226,12.9,static func_00338670
+rb31,18,sonnet,medium,code-retry5,3,0,0,193033,14.1,
+rb32,18,sonnet,medium,code-retry5,3,2,744,200522,14.1,static neighbour; narrow lvalue in test
+xm0,18,sonnet,medium,code-xl,3,1,772,201119,15.3,3.0; typed struct hoist
+rb38,18,sonnet,medium,code-retry5,3,1,388,182196,18.5,static func_00338670
+xm1,18,sonnet,medium,code-xl,3,1,780,179336,12.3,3.0 + static func_00338670
