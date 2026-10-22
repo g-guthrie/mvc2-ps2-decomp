@@ -523,3 +523,6 @@ rb96r,18,sonnet,medium,code-retry5-resume,3,0,0,298776,21.4,
 rb98r,18,sonnet,medium,code-retry5-resume,3,1,764,,,3.0; struct member defeats slot hoist
 rb97r,18,sonnet,medium,code-retry5-resume,3,1,756,,,local struct for 2 float consts fixes f-reg naming; pragma opt_unroll_loops off
 rb102,18,sonnet,medium,code-retry5,3,1,792,,,role merges then decl hill-climb; 2 targets already matched
+rc1,18,sonnet,medium,code-retry6,3,2,1648,,,static neighbour prefix; EE stmt-order + reg pin
+rb85r,18,sonnet,medium,code-retry5-resume,3,2,1360,362809,35,reassign param as loop pointer
+rc6,18,sonnet,medium,code-retry6,3,0,0,226765,10.6,

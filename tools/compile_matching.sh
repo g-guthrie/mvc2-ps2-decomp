@@ -20039,4 +20039,16 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/rb102_a.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/rb102_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/rb102_a.o" private/SLUS_204.86.rom --source src/rb102_a.c
 
+"$WIBO" "$SNCPP" -P src/rc1_a.c "$BUILD/rc1_a.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/rc1_a.i" "$BUILD/rc1_a.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/rc1_a.o" "$BUILD/rc1_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/rc1_a.o" private/SLUS_204.86.rom --source src/rc1_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rc1_b.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "$BUILD/rc1_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rc1_b.o" private/SLUS_204.86.rom --source src/rc1_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rb85_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/rb85_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb85_a.o" private/SLUS_204.86.rom --source src/rb85_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
