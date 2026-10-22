@@ -63,7 +63,7 @@ void func_0025D8E0(u8 *p)
 }
 
 extern void func_003DA410(void);
-extern void func_00170160(s32);
+extern void func_00170160(int);
 extern void func_00122840(u32);
 extern void func_001E40E0(void);
 extern void func_001E4140(void);

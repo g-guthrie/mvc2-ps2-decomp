@@ -100,7 +100,7 @@ void func_0035F8B0(u8 *p, u8 *q) {
 void func_00128420(void) {
     extern void func_0016F040();
     extern void func_0016CDA0();
-    extern void func_00170160();
+    extern void func_00170160(int);
     extern void func_00122860();
     extern void func_003D6AC0();
     extern void func_001E4480();

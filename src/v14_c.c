@@ -128,7 +128,7 @@ void func_0033F3C0(s32 n) {
 
 void func_001E40E0(void) {
     extern s32 D_004C2B50;
-    extern void func_001E5F30();
+    extern void func_001E5F30(void);
     extern s32 func_00401920();
     extern void func_00401868();
     s32 r;

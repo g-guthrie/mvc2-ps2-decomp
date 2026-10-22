@@ -297,7 +297,7 @@ void func_002CB930(u8 *p) {
 }
 
 
-void func_001DD470(u8 *p, u16 n) {
+u8 *func_001DD470(u8 *p, u16 n) {
     u8 k = 3;
     u8 *r;
     if (n >= 3) {
@@ -313,4 +313,5 @@ void func_001DD470(u8 *p, u16 n) {
         *(u32 *)(r + 0xD0) = *(u16 *)(p + 0x168);
         r[0x22] = 0;
     }
+    return r;
 }

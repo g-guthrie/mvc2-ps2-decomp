@@ -22,7 +22,7 @@ void func_00134E40(void *a) {
     *(s32 *)(p + 0x84) = D_004C2834;
 }
 void func_001E40E0(void);
-void func_001E4140(void);
+extern void func_001E4140(void);
 void func_001E4150(void);
 void func_00127520(void) {
     D_004C2840[3] = 0;

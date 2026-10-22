@@ -23,7 +23,7 @@ void func_00172450(void) {
     extern void func_00172520();
     extern void func_00171700();
     extern void func_001E2130();
-    extern void func_00170160();
+    extern void func_00170160(int);
     func_0011D8F8(D_004F4384, 0, 0x80);
     D_004C2840->f18 = 3;
     D_004C2840->f88 = 0;

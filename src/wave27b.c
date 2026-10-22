@@ -28,7 +28,7 @@ void func_0033D910(u8 *a) {
 extern u8 *D_004C2840;
 void func_003DA410(void);
 void func_001E40E0(void);
-void func_001E4140(void);
+extern void func_001E4140(void);
 void func_001E4150(void);
 void func_001278F0(void) {
     u8 *p;

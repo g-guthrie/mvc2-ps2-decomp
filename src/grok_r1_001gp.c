@@ -10,7 +10,7 @@ extern u8 D_004C27D0;
 extern s32 D_004C2618;
 
 extern void func_00418080(void);
-extern void func_00170170(u8 *, s32);
+extern void func_00170170(s32, s32);
 
 void func_0016C480(u8 *p) {
     if (D_004C2668 != 0) {
@@ -26,7 +26,7 @@ void func_001741C0(s32 v) {
     func_00418080();
 }
 
-void func_00170160(u8 *p) { func_00170170(p, D_004C27D0 & 31); }
+void func_00170160(s32 mode) { func_00170170(mode, D_004C27D0 & 31); }
 
 void func_0012F040(s32 v) {
     if (v == 0) v = 0x400;

@@ -21,7 +21,7 @@ void func_003D30A0(P3D *p, s32 flag)
     extern void func_003D6AC0();
     extern void func_003D3080(s32);
     extern void func_0016EE50();
-    extern void func_001E4140();
+    extern void func_001E4140(void);
     extern void func_001E3CE0(s32);
     p->b2 = 0;
     p->b3 = 0;

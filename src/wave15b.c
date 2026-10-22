@@ -8,7 +8,7 @@ typedef signed int s32;
 extern u8 *D_004C2840;
 extern void func_00154650();
 extern void func_001E40E0();
-extern void func_001E4140();
+extern void func_001E4140(void);
 
 void func_00183DF0(u8 *unused, s32 a) {
     if (*(s32 *)(D_004C2840 + 0x1C) % a == 0) func_00154650();

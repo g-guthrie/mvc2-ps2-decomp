@@ -17,8 +17,8 @@ extern Row139 D_0043FBE0[];
 
 u8 *func_00139900(u8 *p, s32 flag) {
     extern u8 *func_003DA750(s32, s32, s32);
-    extern void func_0032DEF0(void);
-    extern void func_00139A90(void);
+    extern void func_0032DEF0(u8 *);
+    extern void func_00139A90(u8 *);
     u8 *o;
     s32 t;
     if (flag != 0) {
@@ -47,9 +47,9 @@ u8 *func_00139900(u8 *p, s32 flag) {
     *(s32 *)(o + 0xD0) = 0x801;
     *(s32 *)(o + 0xDC) = D_00583BC3[0];
     if (flag != 0) {
-        *(void **)(o + 0x10) = (void *)func_0032DEF0;
+        *(void (**)(u8 *))(o + 0x10) = func_0032DEF0;
     } else {
-        *(void **)(o + 0x10) = (void *)func_00139A90;
+        *(void (**)(u8 *))(o + 0x10) = func_00139A90;
     }
     return o;
 }

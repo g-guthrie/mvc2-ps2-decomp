@@ -5222,3 +5222,31 @@ relink/packing pass. CODE is 2,677,876 / 3,293,696 bytes (81.3031%), with
 468,869 / 648,064 bytes. The retail ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+
+## Label-named callback families
+
+Recovered 17 complete functions, adding 2,076 exact CODE bytes. Three
+owner/effect dispatch families now have their real 40-byte heads and
+80-byte gate callbacks. Three parent-phase dispatch families separate
+their 36-byte heads from the actual visibility/scaling callbacks. The
+batch also recovers the 252-byte scene reset and four paired-effect entry
+handlers. Six coarse catalog spans become their separate native functions;
+104 alignment bytes remain uncredited gaps.
+
+Callback tables now use the actual unary, owner/effect, and no-argument
+interfaces, preserving all original pointer values. The effect factory
+`func_001DD470` explicitly returns its allocation result, including null
+on failure, as required by native callers that update the returned object.
+`func_001DC6D0` retains the unused reserved word explicitly supplied by its
+sole retail caller at 0030E544. Mode selection uses an integer argument;
+queue-clear wrappers take no arguments. Related public views, no-op and
+cleanup callbacks agree with their actual callers. All 1,608 previously
+credited bodies in affected files remain exact.
+
+MWCCPS2 3.0.3 -O3,p verifies all new functions. Clean splitting, catalog
+and build checks, all 126 tests, and full hybrid relink/packing pass. CODE
+is 2,679,952 / 3,293,696 bytes (81.3661%), with 18,804 matched functions
+among 20,351 cataloged spans. DATA remains 468,869 / 648,064 bytes; no new
+DATA credit is added by the callback type corrections. Retail ELF SHA-256
+remains `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.

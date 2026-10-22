@@ -38,7 +38,7 @@ void func_00171DB0(void)
     extern void func_00131340();
     extern void func_001723C0();
     extern void func_001E40E0();
-    extern void func_001E4140();
+    extern void func_001E4140(void);
     extern void func_0016EE50();
     extern void func_003DAC00();
     extern void func_00326AF0();

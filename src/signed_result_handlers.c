@@ -844,7 +844,7 @@ void func_0030C3F0(void *p) { if ((s8)func_00175700(p) < 0) { func_00184540(p); 
 
 void func_0030DFE0(void *p) { if ((s8)func_00175700(p) < 0) { func_0030F650(p); } }
 
-void func_0030F050(void *p) { if ((s8)func_00175700(p) < 0) { func_0030F650(p); } }
+void func_0030F050(u8 *p) { if ((s8)func_00175700(p) < 0) { func_0030F650(p); } }
 
 void func_0030F220(void *p) { if ((s8)func_00175700(p) < 0) { func_001846B0(p); } }
 

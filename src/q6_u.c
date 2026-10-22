@@ -6,7 +6,9 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-void func_001DC6D0(u8 *a) {
+/* The only retail caller (0030E544) explicitly supplies zero in A1.
+ * That reserved word is unused by this complete body. */
+void func_001DC6D0(u8 *a, u32 reserved_word) {
     extern u8 *func_003DA750(u8 *, s32, s32);
     extern void func_001DC7F0(void);
     u8 *o;

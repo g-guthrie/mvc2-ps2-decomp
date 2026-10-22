@@ -87,7 +87,7 @@ extern void func_0033FF70();
 
 extern void func_003DF850(s32, s32);
 
-extern s32 func_001E5F30();
+extern void func_001E5F30(void);
 extern s32 D_004C2B50;
 extern s32 func_00401920(s32);
 extern void func_00401868(s32);

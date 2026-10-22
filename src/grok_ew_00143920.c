@@ -21,7 +21,7 @@ extern void func_0016D160(void);
 extern u8 *func_003DA750(s32, s32, s32);
 extern void func_001E2330(void);
 extern void func_001E2130(void);
-extern void func_00170160(s32);
+extern void func_00170160(int);
 extern void func_0012E780(s32);
 extern void func_00143860(void);
 extern void func_00143430(void);

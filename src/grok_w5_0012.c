@@ -22,7 +22,7 @@ extern void func_0012DBF0(s32, s32);
 extern void func_0012DA40(s32, s32, s32);
 extern void func_003D6D50(void);
 extern void func_003D6E20(void);
-extern void func_00170160(s32);
+extern void func_00170160(int);
 
 
 void func_00129870(void) {

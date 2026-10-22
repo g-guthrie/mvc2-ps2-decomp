@@ -61,7 +61,7 @@ void func_00126D10(void)
     extern void func_0016CDA0();
     extern void func_003D6D50();
     extern void func_003D6E20();
-    extern void func_00170160(s32);
+    extern void func_00170160(int);
     extern void func_00122DA0();
     extern void func_003D6AC0();
     extern void func_0013EAD0(s32);

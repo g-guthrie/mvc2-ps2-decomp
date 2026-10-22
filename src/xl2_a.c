@@ -37,7 +37,7 @@ void func_00329C50(void)
     extern void func_0038CBB0();
     extern void func_00329AC0(s32);
     extern void func_0032DF00();
-    extern void func_00170160(s32);
+    extern void func_00170160(int);
     extern void func_00329890();
     extern void func_0016D160();
     extern void func_0016CDA0();

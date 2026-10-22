@@ -10,7 +10,7 @@ extern void func_003298B0();
 extern void func_003DA410();
 extern void func_00122840();
 extern void func_001E40E0();
-extern void func_001E4140();
+extern void func_001E4140(void);
 extern void func_001E4150();
 
 void func_0016BF10(void) {

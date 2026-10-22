@@ -228,7 +228,7 @@ void func_0030EE50(u8 *p) {
     extern void func_00185490(u8 *);
     extern s8 func_00175700(u8 *);
     extern void func_001757E0(u8 *, s32, s32);
-    extern void func_001DD470(u8 *, s32);
+    extern u8 *func_001DD470(u8 *, u16);
     extern void func_0030F650(u8 *);
     extern s16 *D_004C2794[2];
     u32 t = p[6];

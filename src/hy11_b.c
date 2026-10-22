@@ -12,7 +12,7 @@ extern u8 D_004F284C[];
 
 void func_003D31A0(u8 *p) {
     extern void func_003D3080(s32);
-    extern void func_001E4140();
+    extern void func_001E4140(void);
     extern void func_001E3CE0(s32);
     extern void func_0016EE50();
     if ((s8)D_004C2840[0xAA] != 0) {

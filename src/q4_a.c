@@ -69,8 +69,10 @@ typedef struct { f32 a; f32 b; } T160;
 extern T160 D_004B3DF0[];
 extern void *D_004C2838;
 typedef struct { u8 pad0[0x1c]; s16 f1C; u8 pad1E[0xae]; s16 fCC; u8 padCE[0x2]; u32 fD0; u8 padD4[0x8]; u32 fDC; f32 fE0; f32 fE4; } P160;
-void func_001601A0(P160 *p) {
-    T160 *t = D_004B3DF0; t += p->f1C;
+void func_001601A0(u8 *actor) {
+    T160 *t = D_004B3DF0;
+    P160 *p = (P160 *)actor;
+    t += p->f1C;
     if (p->fDC != 0) {
         func_00170DA0(D_004C2838, 0x6B, func_00153AA0(), p->fCC);
     } else {

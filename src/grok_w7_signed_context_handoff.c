@@ -1,3 +1,4 @@
+typedef unsigned short u16;
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned int u32;
@@ -8,7 +9,7 @@ typedef union FloatPairBits {
 } FloatPairBits;
 
 extern int func_00175700(u8 *);
-extern void *func_001DD470(u8 *, int);
+extern u8 *func_001DD470(u8 *, u16);
 extern void func_0030F650(u8 *);
 extern void func_001548D0(u8 *, f32 *, int);
 extern void func_001E3710(u8 *, int);

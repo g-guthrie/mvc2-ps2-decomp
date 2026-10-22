@@ -38,7 +38,7 @@ void func_00135140(void) {}
 
 void func_0013B5D0(void *p) { *(u8 *)((u8 *)p + 316) = 0; }
 
-void func_0013BB60(void *p) { *(u8 *)((u8 *)p + 316) = 0; }
+void func_0013BB60(u8 *p) { *(u8 *)((u8 *)p + 316) = 0; }
 
 void func_0013DFA0(void) {}
 
@@ -432,7 +432,7 @@ void func_00329690(void) {}
 
 void func_0032BF60(void) {}
 
-void func_0032DEF0(void) {}
+void func_0032DEF0(u8 *actor) {}
 
 void func_0032ECB0(void) {}
 

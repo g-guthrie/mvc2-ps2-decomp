@@ -20181,4 +20181,20 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/action_entry_callbacks.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/action_entry_callbacks.o"
 "$PYTHON" tools/verify_object.py "$BUILD/action_entry_callbacks.o" private/SLUS_204.86.rom --source src/action_entry_callbacks.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owned_gate_callbacks.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owned_gate_callbacks.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owned_gate_callbacks.o" private/SLUS_204.86.rom --source src/owned_gate_callbacks.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/parent_phase_callbacks.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/parent_phase_callbacks.o"
+"$PYTHON" tools/verify_object.py "$BUILD/parent_phase_callbacks.o" private/SLUS_204.86.rom --source src/parent_phase_callbacks.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/scene_reset_0016e990.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/scene_reset_0016e990.o"
+"$PYTHON" tools/verify_object.py "$BUILD/scene_reset_0016e990.o" private/SLUS_204.86.rom --source src/scene_reset_0016e990.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/paired_effect_entries.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/paired_effect_entries.o"
+"$PYTHON" tools/verify_object.py "$BUILD/paired_effect_entries.o" private/SLUS_204.86.rom --source src/paired_effect_entries.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

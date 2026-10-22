@@ -56,7 +56,7 @@ void func_00172A10(void) {
     extern void func_003DA410();
     extern void func_0011D8F8();
     extern void func_001E40E0();
-    extern void func_001E4140();
+    extern void func_001E4140(void);
     extern void func_001E4150();
     D_004C2840->h8 -= 1;
     if (D_004C2840->h8 == 0x3C) {
