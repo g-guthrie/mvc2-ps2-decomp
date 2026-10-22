@@ -1,6 +1,21 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef short s16;
 typedef unsigned int u32;
-u32 data_u32_00473E10[20] = {
-    0x003FFFD9u, 0x001A0002u, 0x0006FFB4u, 0x001B000Au, 0x0037FF8Cu, 0x001C0004u, 0x0052FFECu, 0x001F000Du, 
-    0x00000000u, 0x00210005u, 0x00000000u, 0x0022000Bu, 0x00000000u, 0x0000000Cu, 0x00000000u, 0x0000000Bu, 
-    0x003FFFD9u, 0x001A0047u, 0x0046FFAEu, 0x001C00FFu, 
+typedef int s32;
+typedef float f32;
+typedef struct { s16 a, b, c, d; } Quad16;
+typedef char Quad16_size_check[(sizeof(Quad16) == 8) ? 1 : -1];
+Quad16 data_u32_00473E10[10] = {
+    { -39, 63, 2, 26 },
+    { -76, 6, 10, 27 },
+    { -116, 55, 4, 28 },
+    { -20, 82, 13, 31 },
+    { 0, 0, 5, 33 },
+    { 0, 0, 11, 34 },
+    { 0, 0, 12, 0 },
+    { 0, 0, 11, 0 },
+    { -39, 63, 71, 26 },
+    { -82, 70, 255, 28 },
 };

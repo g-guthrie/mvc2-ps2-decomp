@@ -1,5 +1,13 @@
-typedef unsigned int u32;
-u32 data_u32_00471BB0[16] = {
-    0x41700000u, 0x00000000u, 0x40AB6DB6u, 0xBECDB6DBu, 0x4112AAAAu, 0x00000000u, 0x40F00000u, 0xBECDB6DBu, 
-    0x41415555u, 0x00000000u, 0x41092492u, 0xBECDB6DBu, 0x40555555u, 0x00000000u, 0x41809249u, 0xBECDB6DBu, 
+typedef float f32;
+typedef struct {
+    f32 a;
+    f32 b;
+    f32 c;
+    f32 d;
+} F4;
+F4 data_u32_00471BB0[4] = {
+    {15.0f, 0.0f, 5.3571424f, -0.4017857f},
+    {9.166666f, 0.0f, 7.5f, -0.4017857f},
+    {12.083333f, 0.0f, 8.571428f, -0.4017857f},
+    {3.3333333f, 0.0f, 16.071428f, -0.4017857f},
 };

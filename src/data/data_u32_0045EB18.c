@@ -1,5 +1,10 @@
-typedef unsigned int u32;
-u32 data_u32_0045EB18[12] = {
-    0x00000000u, 0x00000000u, 0xC3DF0000u, 0x42540000u, 0xC4040000u, 0x43AF0000u, 0x42600000u, 0xC4698000u,
-    0xC48C89ECu, 0x43B00000u, 0xC3C1FAE1u, 0x00000000u,
+typedef float f32;
+typedef struct Vec2F32 { f32 x; f32 y; } Vec2F32;
+Vec2F32 data_u32_0045EB18[6] = {
+    { 0.0f, 0.0f },
+    { -446.0f, 53.0f },
+    { -528.0f, 350.0f },
+    { 56.0f, -934.0f },
+    { -1124.31f, 352.0f },
+    { -387.96f, 0.0f },
 };

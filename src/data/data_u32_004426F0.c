@@ -1,4 +1,5 @@
-typedef unsigned int u32;
-u32 data_u32_004426F0[8] = {
-    0x3F666667u, 0x3F638E39u, 0x3F800000u, 0x3F4FA4FBu, 0x3F471C72u, 0x3F800000u, 0x00000000u, 0x00000000u, 
+typedef float f32;
+f32 data_u32_004426F0[8] = {
+    0.90000004f, 0.8888889f, 1.0f, 0.81111115f,
+    0.7777778f, 1.0f, 0.0f, 0.0f,
 };

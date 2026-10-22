@@ -1,5 +1,10 @@
-typedef unsigned int u32;
-u32 data_u32_004C0508[14] = {
-    0xFFFFFF03u, 0xFFFF0604u, 0x03FFFF05u, 0xFFFFFFFFu, 0x03FFFFFFu, 0xFFFFFF07u, 0xFFFFFF08u, 0xFFFFFFFFu, 
-    0xFFFFFF09u, 0xFFFF0AFFu, 0xFF040BFFu, 0xFFFF0CFFu, 0xFFFF0CFFu, 0xFFFFFFFFu, 
+typedef signed char s8;
+s8 data_u32_004C0508[56] = {
+    3, -1, -1, -1, 4, 6, -1, -1,
+    5, -1, -1, 3, -1, -1, -1, -1,
+    -1, -1, -1, 3, 7, -1, -1, -1,
+    8, -1, -1, -1, -1, -1, -1, -1,
+    9, -1, -1, -1, -1, 10, -1, -1,
+    -1, 11, 4, -1, -1, 12, -1, -1,
+    -1, 12, -1, -1, -1, -1, -1, -1,
 };

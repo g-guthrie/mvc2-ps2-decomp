@@ -1,4 +1,14 @@
+typedef unsigned short u16;
+typedef short s16;
 typedef unsigned int u32;
-u32 data_u32_00442EC0[4] = {
-    0x00030071u, 0x41300000u, 0x00000000u, 0x3C23D70Au, 
+typedef float f32;
+typedef struct {
+    u16 a;
+    u16 b;
+    f32 c;
+    u32 d;
+    f32 e;
+} Rec16;
+Rec16 data_u32_00442EC0 = {
+    0x0071u, 0x0003u, 11.0f, 0x00000000u, 0.01f,
 };

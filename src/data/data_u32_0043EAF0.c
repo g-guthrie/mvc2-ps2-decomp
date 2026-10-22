@@ -1,3 +1,6 @@
-typedef unsigned int u32;
-/* Unbounded neighboring words retained without reconstruction credit. */
-u32 data_u32_0043EAF0[20] = { 0x42480000u, 0x00000000u, 0xC1F00000u, 0xC1800000u, 0x00000000u, 0xC2700000u, 0x41200000u, 0xC2200000u, 0xC1F00000u, 0xC2280000u, 0x41700000u, 0xC2700000u, 0x41200000u, 0x42200000u, 0xC1F00000u, 0xC2280000u, 0xC1700000u, 0xC2700000u, 0x00000000u, 0x00000000u };
+typedef float f32;
+typedef struct Vec2F32 { f32 x; f32 y; } Vec2F32;
+Vec2F32 data_u32_0043EAF0[10] = {
+    { 50.0f, 0.0f }, { -30.0f, -16.0f }, { 0.0f, -60.0f }, { 10.0f, -40.0f }, { -30.0f, -42.0f },
+    { 15.0f, -60.0f }, { 10.0f, 40.0f }, { -30.0f, -42.0f }, { -15.0f, -60.0f }, { 0.0f, 0.0f },
+};

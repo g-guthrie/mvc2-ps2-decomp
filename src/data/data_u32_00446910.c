@@ -1,4 +1,4 @@
-typedef unsigned int u32;
-u32 data_u32_00446910[4] = {
-    0x00800080u, 0x00000102u, 0x00000000u, 0x00000000u, 
+typedef unsigned short u16;
+u16 data_u32_00446910[8] = {
+    0x0080u, 0x0080u, 0x0102u, 0x0000u, 0x0000u, 0x0000u, 0x0000u, 0x0000u,
 };

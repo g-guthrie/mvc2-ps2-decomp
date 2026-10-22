@@ -1,4 +1,12 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef short s16;
 typedef unsigned int u32;
-u32 data_u32_004BA2E0[4] = {
-    0x49422E4Du, 0x204E4F53u, 0x20202020u, 0x20202020u, 
+typedef int s32;
+typedef float f32;
+/* Name string "M.BISON" padded with spaces. */
+char data_u32_004BA2E0[16] = {
+    'M', '.', 'B', 'I', 'S', 'O', 'N', ' ',
+    ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
 };
