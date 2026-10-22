@@ -96,8 +96,8 @@ extern void func_00251F20();
 extern void func_00251FF0();
 extern void func_00252090();
 extern void func_00255310();
-extern void func_00280330();
-extern void func_002803A0();
+extern void func_00280330(void *);
+extern int func_002803A0();
 extern void func_002BA540();
 extern void func_002BEDC0();
 extern void func_002BEF60();
@@ -767,15 +767,18 @@ void func_00278D30(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001843A0(a0, a1, a2, 
 
 void func_0027B680(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001843A0(a0, a1, a2, a3); }
 
-void func_0027D890(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00280330(a0, a1, a2, a3); }
+void func_0027D890(u8 *p) { func_00280330(p); }
 
-void func_0027D8A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00280330(a0, a1, a2, a3); }
+void func_0027D8A0(u8 *p) { func_00280330(p); }
 
-void func_0027DAA0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00280330(a0, a1, a2, a3); }
+void func_0027DAA0(u8 *p) { func_00280330(p); }
 
-void func_00280330(s32 a0, s32 a1, s32 a2, s32 a3) {  func_002803A0(a0, 0, a2, a3); }
+void func_00280330(void *actor) {
+    extern int func_002803A0(u8 *, u8);
+    func_002803A0((u8 *)actor, 0);
+}
 
-void func_00280340(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00280330(a0, a1, a2, a3); }
+void func_00280340(u8 *p) { func_00280330(p); }
 
 void func_002832E0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 

@@ -18839,3 +18839,9 @@ func_00222440,0x00222440,0x70,src/motion_entry_callbacks.c,complete
 func_00257660,0x00257660,0x60,src/motion_entry_callbacks.c,complete
 func_0027F720,0x0027F720,0x3C,src/motion_entry_callbacks.c,complete
 func_0031CF40,0x0031CF40,0x68,src/motion_entry_callbacks.c,complete
+func_00200690,0x00200690,0x1E8,src/contact_and_recovery_states.c,complete
+func_00201430,0x00201430,0x1F8,src/contact_and_recovery_states.c,complete
+func_0031E0B0,0x0031E0B0,0x20C,src/contact_and_recovery_states.c,complete
+func_0027DD50,0x0027DD50,0x1E0,src/contact_and_recovery_states.c,complete
+func_00192360,0x00192360,0xC0,src/contact_and_event_states_30.c,complete
+func_00273160,0x00273160,0x1C0,src/contact_and_event_states_30.c,complete

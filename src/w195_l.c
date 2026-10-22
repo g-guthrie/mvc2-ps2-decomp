@@ -32,9 +32,10 @@ extern s16 D_00447AE0[];
 extern s16 D_00448340[];
 extern s16 D_00448250[];
 
-void func_001820A0(T *p) {
+void func_001820A0(u8 *actor) {
     s16 *tbl;
     f32 a, b, c, t;
+    T *p = (T *)actor;
     if (p->b2B2 == 0) {
         p->b2B2 = 1;
         p->f38 += p->f60;

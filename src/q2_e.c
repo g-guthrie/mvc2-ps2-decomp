@@ -121,7 +121,7 @@ void func_002E71E0(P2E71 *p)
     extern void func_00175700();
     extern s32 func_00118FA8(f32);
     extern void func_001757E0(P2E71 *, s32, s32);
-    extern void func_001E3270(P2E71 *, s32, f32);
+    extern void func_001E3270(u8 *, s32, f32);
     s32 x, y, d1, d2;
     f32 a, b, c = 16.0f;
     ((u8 *)p)[0x40C] = 2;
@@ -147,7 +147,7 @@ void func_002E71E0(P2E71 *p)
         p->f34 = p->f5c;
         p->f38 = p->f60;
         func_001757E0(p, 0xF, 7);
-        func_001E3270(p, 0x21, 32.0f);
+        func_001E3270((u8 *)p, 0x21, 32.0f);
     }
 }
 

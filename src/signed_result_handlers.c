@@ -12,7 +12,7 @@ extern int func_001846B0();
 extern int func_001AFC90();
 extern int func_0022C5D0();
 extern int func_00267E20();
-extern int func_00280330();
+extern void func_00280330(void *);
 extern int func_0029B130();
 extern int func_002DC1B0();
 extern int func_002F1DF0();

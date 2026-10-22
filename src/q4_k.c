@@ -122,8 +122,8 @@ s32 func_001BF5C0(u8 *p)
 
 void func_001FE480(u8 *p)
 {
-    extern s8 func_00175700(void);
-    extern void func_001E3270(f32, u8 *, s32);
+    extern int func_00175700(u8 *);
+    extern void func_001E3270(u8 *, s32, f32);
     extern void func_001843A0(u8 *);
     u8 *b; f32 *v5c; f32 *v60; f32 *v68; f32 *v6c;
     b = p + 0x2B8;
@@ -135,13 +135,13 @@ void func_001FE480(u8 *p)
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
-    if (func_00175700() < 0) {
+    if ((s8)func_00175700(p) < 0) {
         *v5c = 0;
         *v60 = 0;
         *v68 = 0;
         *v6c = 0;
         b[0x1C] = 0;
-        func_001E3270(32.0f, p, 0x1F);
+        func_001E3270(p, 0x1F, 32.0f);
         func_001843A0(p);
     }
 }

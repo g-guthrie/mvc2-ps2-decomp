@@ -5170,3 +5170,29 @@ DATA remains 468,869 / 648,064 bytes. Retail ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The fixed CODE checkpoint of 2,673,376 bytes is reached; the next fixed
 full-percentage checkpoint is 2,706,313 bytes.
+
+## Contact, recovery, and sound forwarding
+
+Recovered six complete callbacks, adding 2,636 exact CODE bytes:
+`func_00200690` (488), `func_00201430` (504), `func_0031E0B0` (524),
+`func_0027DD50` (480), `func_00192360` (192), and `func_00273160` (448).
+They reconstruct contact recovery, animation transitions, owner updates,
+and timed palette/effect behavior. MWCCPS2 3.0.3 verifies the four larger
+handlers; 3.0-011126 verifies the two event handlers.
+
+`func_001E3270` now explicitly accepts and forwards the floating scale
+already consumed by the native `func_001E4EB0` backend. Its declarations
+and a caller using a different argument order now agree. That caller also
+explicitly passes its actor to animation update and tests the signed byte
+result. The reset wrapper and four forwarding lifecycle wrappers now use
+their genuine one-pointer input; the reset backend still receives mode 0.
+A typed motion view retains its layout behind the unary byte-pointer API.
+All 1,171 previously credited bodies in affected files remain exact.
+
+Eight alignment bytes remain uncredited gaps. No DATA credit is added.
+Clean splitting, catalog/build checks, all 126 tests, and full hybrid
+relink/packing pass. CODE is 2,676,172 / 3,293,696 bytes (81.2513%), with
+18,782 matched functions. DATA remains 468,869 / 648,064 bytes. The retail
+ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.

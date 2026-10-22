@@ -16,7 +16,7 @@ extern f32 D_004F1FC8, D_004F1FCC;
 
 void func_0027E920(u8 *a) {
     extern s8 func_00175700();
-    extern void func_00280330();
+    extern void func_00280330(void *);
     extern void func_00381F30();
     V3 v;
     if (func_00175700(a) < 0) {
