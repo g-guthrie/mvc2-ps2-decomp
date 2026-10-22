@@ -34,6 +34,10 @@ Every failure is listed at the end. `make match-serial` runs the script with
 
 ## Never
 
+- Match a caller against a stand-in callee. A `static` copy of a retail
+  function is allowed only if it is that function's real body; the build
+  verifies every such copy at the function's own address and fails on a
+  stand-in, an empty body, or a simplified one.
 - Credit assembly as C: no `FN(...)` macro bodies, `.word` streams, empty
   asm barriers, or unused register-pinned locals. The audit rejects them.
 - Commit the retail image, compilers (Metrowerks, SN, EE GCC, Sony), or SDK
