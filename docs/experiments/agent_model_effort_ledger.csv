@@ -520,3 +520,6 @@ rb100,18,sonnet,medium,code-retry5,3,1,776,166844,8.8,rt20 static func_00338670 
 rb99,18,sonnet,medium,code-retry5,3,1,764,198133,13.4,3.0 + decl order; 1 target already matched
 rb101,18,sonnet,medium,code-retry5,3,0,0,250095,15.3,
 rb96r,18,sonnet,medium,code-retry5-resume,3,0,0,298776,21.4,
+rb98r,18,sonnet,medium,code-retry5-resume,3,1,764,,,3.0; struct member defeats slot hoist
+rb97r,18,sonnet,medium,code-retry5-resume,3,1,756,,,local struct for 2 float consts fixes f-reg naming; pragma opt_unroll_loops off
+rb102,18,sonnet,medium,code-retry5,3,1,792,,,role merges then decl hill-climb; 2 targets already matched

@@ -20027,4 +20027,16 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/rb99_a.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/rb99_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/rb99_a.o" private/SLUS_204.86.rom --source src/rb99_a.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/rb98_c.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/rb98_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb98_c.o" private/SLUS_204.86.rom --source src/rb98_c.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/rb97_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/rb97_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb97_a.o" private/SLUS_204.86.rom --source src/rb97_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/rb102_a.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/rb102_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rb102_a.o" private/SLUS_204.86.rom --source src/rb102_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
