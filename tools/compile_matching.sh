@@ -17359,4 +17359,15 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -G0 -o "$BUILD/hy7_l.o" "$BUILD/hy7_l.s"
 "$PYTHON" tools/verify_object.py "$BUILD/hy7_l.o" private/SLUS_204.86.rom --source src/hy7_l.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/hz9_g.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/hz9_g.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hz9_g.o" private/SLUS_204.86.rom --source src/hz9_g.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/hz9_j.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/hz9_j.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hz9_j.o" private/SLUS_204.86.rom --source src/hz9_j.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/hz13_a.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "$BUILD/hz13_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hz13_a.o" private/SLUS_204.86.rom --source src/hz13_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

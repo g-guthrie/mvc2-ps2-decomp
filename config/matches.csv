@@ -17950,3 +17950,6 @@ func_003EBC20,0x003EBC20,0xD4,src/hz2_a.c,complete
 func_003BED80,0x003BED80,0x158,src/hy7_f.c,complete
 func_003E0530,0x003E0530,0x1A0,src/hy7_j.c,complete
 func_00406050,0x00406050,0xD4,src/hy7_l.c,complete
+func_00391350,0x00391350,0x164,src/hz9_g.c,complete
+func_0029E980,0x0029E980,0x164,src/hz9_j.c,complete
+func_0014B470,0x0014B470,0x1E4,src/hz13_a.c,complete
