@@ -284,3 +284,15 @@ sc20,12,sonnet,medium,code-sibling2,3,1,168,117579,4.7,
 sc16,12,sonnet,medium,code-sibling2,4,1,276,162114,7.3,
 sc19,12,sonnet,medium,code-sibling2,4,1,204,129397,5.9,
 sc6,12,sonnet,medium,code-sibling2,4,3,7072,254144,18.0,
+sd12,13,sonnet,medium,code-sibling3,1,0,0,,,register naming
+sc18,12,sonnet,medium,code-sibling2,4,2,716,135886,22.6,
+dz0,14,sonnet,medium,data-placeholder,40,1,144,74233,1.1,most units are embedded code or zeros
+sd0,13,sonnet,medium,code-sibling3,4,1,500,131537,4.1,2 boundary artifacts
+sd2,13,sonnet,medium,code-sibling3,4,1,528,135304,4.7,1 boundary artifact
+sd7,13,sonnet,medium,code-sibling3,4,4,1656,142279,5.0,
+sd3,13,sonnet,medium,code-sibling3,4,0,0,137406,5.4,1 boundary artifact
+sd9,13,sonnet,medium,code-sibling3,4,2,440,140295,6.3,
+dz1,14,sonnet,medium,data-placeholder,40,4,32,59830,0.9,
+sd11,13,sonnet,medium,code-sibling3,4,0,0,128258,6.5,
+sd6,13,sonnet,medium,code-sibling3,4,2,680,141405,6.6,
+sd1,13,sonnet,medium,code-sibling3,4,1,436,162219,7.2,

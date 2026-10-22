@@ -18549,3 +18549,16 @@ func_00242D50,0x00242D50,0xCC,src/sc19_d.c,complete
 func_003D5A40,0x003D5A40,0x35C,src/sc6_b.c,complete
 func_00129890,0x00129890,0x834,src/sc6_c.c,complete
 func_0012ADE0,0x0012ADE0,0xAF0,src/sc6_d.c,complete
+func_0010F258,0x0010F258,0x170,src/sc18_a.c,complete
+func_002E67D0,0x002E67D0,0x15C,src/sc18_d.c,complete
+func_003762B0,0x003762B0,0x1F4,src/sd0_a.c,complete
+func_002AEA60,0x2AEA60,0x210,src/sd2_a.c,complete
+func_0033B850,0x0033B850,0x178,src/sd7_a.c,complete
+func_001412D0,0x001412D0,0x14C,src/sd7_b.c,complete
+func_002613E0,0x002613E0,0x210,src/sd7_c.c,complete
+func_003311A0,0x003311A0,0x1A4,src/sd7_d.c,complete
+func_002BB1E0,0x002BB1E0,0xDC,src/sd9_a.c,complete
+func_00259320,0x00259320,0xDC,src/sd9_a.c,complete
+func_0033B6E0,0x0033B6E0,0x114,src/sd6_a.c,complete
+func_002846E0,0x002846E0,0x194,src/sd6_c.c,complete
+func_00386940,0x386940,0x1B4,src/sd1_b.c,complete

@@ -1,2 +1,3 @@
-typedef unsigned char u8;
-u8 data_u8_0043E140[4] = { 0x00, 0x00, 0x80, 0x3F };
+typedef float f32;
+/* Single f32 constant 1.0f. */
+f32 data_u8_0043E140[1] = { 1.0f };
