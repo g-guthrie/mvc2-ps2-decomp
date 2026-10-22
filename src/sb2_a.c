@@ -1,0 +1,15 @@
+typedef unsigned char u8;
+typedef signed char s8;
+extern s8 *D_004C29D4;
+extern int func_00174470(u8 *);
+extern int func_00175700(u8 *);
+extern void func_00394760(u8 *);
+void func_003932E0(u8 *p) {
+    float delta;
+    func_00175700(p);
+    delta=*(float *)(p+0x5c); *(float *)(p+0x34)+=delta;
+    delta=*(float *)(p+0x68); *(float *)(p+0x5c)+=delta;
+    delta=*(float *)(p+0x60); *(float *)(p+0x38)+=delta;
+    delta=*(float *)(p+0x6c); *(float *)(p+0x60)+=delta;
+if (!func_00174470(p) || *(float *)(p+0x38)<=*(float *)(*(u8 **)(p+0x18)+0x430)) { func_00394760(p); D_004C29D4[8] = -1; return; }
+}
