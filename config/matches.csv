@@ -18612,3 +18612,15 @@ func_0036A290,0x0036A290,0x230,src/rr16_b.c,complete
 func_001551A0,0x001551A0,0x20C,src/rr16_c.c,complete
 func_00422740,0x00422740,0x4A0,src/xl10_a.c,complete
 func_0012DF30,0x0012DF30,0x270,src/rr17_a.c,complete
+func_00124660,0x00124660,0xE84,src/xl0_a.c,complete
+func_00329C50,0x00329C50,0x55C,src/xl2_a.c,complete
+func_001E6D80,0x001E6D80,0x690,src/xl2_c.c,complete
+func_0018B890,0x0018B890,0x510,src/xl6_a.c,complete
+func_00344180,0x00344180,0x540,src/xl6_b.c,complete
+func_001E8310,0x001E8310,0x214,src/rr22_b.c,complete
+func_001E3D20,0x001E3D20,0x230,src/rr21_b.c,complete
+func_002BA800,0x002BA800,0xB4,src/se2_a.c,complete
+func_0032FF00,0x0032FF00,0x3DC,src/se2_b.c,complete
+func_002F51F0,0x2F51F0,0x34,src/ra0_b.c,complete
+func_003F09C0,0x003F09C0,0x5C,src/ra3_a.c,complete
+func_0033AA20,0x0033AA20,0xF8,src/se1_a.c,complete

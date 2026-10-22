@@ -338,3 +338,23 @@ rr14,18,sonnet,medium,code-retry2,3,2,732,159722,8.3,
 rr16,18,sonnet,medium,code-retry2,3,2,1084,136312,8.5,
 xl10,17,sonnet,medium,code-xl,3,1,1184,417301,43.7,return-type temp pool
 rr17,18,sonnet,medium,code-retry2,3,1,624,189743,9.6,
+xl0,17,sonnet,medium,code-xl,3,1,3716,612704,58.3,sibling template
+rr24,18,sonnet,medium,code-retry2,3,0,0,147364,7.1,
+rr19,18,sonnet,medium,code-retry2,3,0,0,149828,7.5,
+xl1,17,sonnet,medium,code-xl,3,0,0,664316,61.3,
+rr23,18,sonnet,medium,code-retry2,3,0,0,176681,9.5,
+xl2,17,sonnet,medium,code-xl,3,2,3052,391633,63.0,variable-role search
+xl6,17,sonnet,medium,code-xl,3,2,2640,339860,63.0,SSA-name hill-climb
+rr22,18,sonnet,medium,code-retry2,3,1,532,169331,9.9,-O4 -Op on 3.0
+rr20,18,sonnet,medium,code-retry2,3,0,0,172762,10.4,
+rr21,18,sonnet,medium,code-retry2,3,1,560,183859,11.2,<= flips
+se2,18,sonnet,medium,code-sibling,2,2,1168,114082,1.7,static-copy lever
+rr9,18,sonnet,medium,code-retry2,3,0,0,215241,39.2,worktree clash
+ra1,18,sonnet,medium,code-retry4,3,0,0,101324,2.9,
+ra2,18,sonnet,medium,code-retry4,3,0,0,109214,3.7,
+ra0,18,sonnet,medium,code-retry4,3,1,52,110943,3.9,chained store
+ra3,18,sonnet,medium,code-retry4,3,1,92,111301,4.5,
+rr25,18,sonnet,medium,code-retry2,3,0,0,167953,14.0,
+se1,18,sonnet,medium,code-sibling,3,1,248,132909,4.8,static-copy lever
+se0,18,sonnet,medium,code-sibling,3,0,0,131400,4.8,
+ra4,18,sonnet,medium,code-retry4,3,0,0,111871,5.3,
