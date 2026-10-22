@@ -20177,4 +20177,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/contact_and_event_states_30.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/contact_and_event_states_30.o"
 "$PYTHON" tools/verify_object.py "$BUILD/contact_and_event_states_30.o" private/SLUS_204.86.rom --source src/contact_and_event_states_30.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/action_entry_callbacks.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/action_entry_callbacks.o"
+"$PYTHON" tools/verify_object.py "$BUILD/action_entry_callbacks.o" private/SLUS_204.86.rom --source src/action_entry_callbacks.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

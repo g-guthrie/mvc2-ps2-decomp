@@ -55,7 +55,7 @@ typedef struct {
 extern f32 D_004F1FE0[];
 extern G_d *D_004C2794;
 
-void func_0025E7E0(P_d *p) {
+void func_0025E7E0(u8 *actor) {
     extern void func_00175700(P_d *);
     extern void func_00175C00(P_d *, s32);
     extern void func_00183d50(P_d *);
@@ -66,6 +66,7 @@ void func_0025E7E0(P_d *p) {
     f32 *s1, *s2, *s3, *s4;
     u32 h;
     s16 k;
+    P_d *p = (P_d *)actor;
 
     lim = D_004F1FE0[0] - 102.85713958740234f;
     if (lim < p->f38) {

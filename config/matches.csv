@@ -18845,3 +18845,8 @@ func_0031E0B0,0x0031E0B0,0x20C,src/contact_and_recovery_states.c,complete
 func_0027DD50,0x0027DD50,0x1E0,src/contact_and_recovery_states.c,complete
 func_00192360,0x00192360,0xC0,src/contact_and_event_states_30.c,complete
 func_00273160,0x00273160,0x1C0,src/contact_and_event_states_30.c,complete
+func_0021F110,0x0021F110,0x230,src/action_entry_callbacks.c,complete
+func_0025E440,0x0025E440,0x78,src/action_entry_callbacks.c,complete
+func_002E6130,0x002E6130,0x12C,src/action_entry_callbacks.c,complete
+func_0031FEE0,0x0031FEE0,0xF8,src/action_entry_callbacks.c,complete
+func_0025E4C0,0x0025E4C0,0x1DC,src/action_entry_callbacks.c,complete

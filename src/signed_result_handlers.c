@@ -365,7 +365,7 @@ void func_0025DCF0(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); 
 
 void func_0025DF80(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
-void func_0025EF60(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
+void func_0025EF60(u8 *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
 void func_0025F150(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 

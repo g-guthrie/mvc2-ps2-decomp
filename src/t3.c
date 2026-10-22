@@ -258,7 +258,8 @@ void func_00147870(s8 a, u8 b) {
     }
 }
 
-void func_0025EB90(S_0025EB90 *p) {
+void func_0025EB90(u8 *actor) {
+    S_0025EB90 *p = (S_0025EB90 *)actor;
     if (p->f38 < p->f430) {
         u32 t = p->b6;
         p->b6 = t + 1;

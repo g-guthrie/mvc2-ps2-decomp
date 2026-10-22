@@ -5196,3 +5196,29 @@ relink/packing pass. CODE is 2,676,172 / 3,293,696 bytes (81.2513%), with
 ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+
+## Action setup and scaling callback boundaries
+
+Recovered five complete functions, adding 1,704 exact CODE bytes:
+`func_0021F110` (560), `func_0025E440` (120), `func_0025E4C0` (476),
+`func_002E6130` (300), and `func_0031FEE0` (248). They reconstruct action
+setup, ground/air initialization, parameter selection, and scaling dispatch.
+The constructor consumes only four float fields at each selected movement
+parameter prefix; remaining bank bytes stay opaque and add no DATA credit.
+
+The former 604-byte residual at 0025E440 contained a 120-byte dispatcher,
+eight alignment bytes, and the separate 476-byte constructor. Both actual
+functions now have whole compiler proofs. The nine-entry callback table
+uses matching unary signatures, including public byte-pointer interfaces
+for three existing typed views. All pointer values remain unchanged, and
+all 449 previously credited bodies in affected files remain exact.
+
+The constructor's MOVZ instructions match MWCCPS2 3.0.3 at -O3,p: MOVZ
+alone cannot identify Sony/GCC code. The new functions use that verified
+compiler profile. Sixteen total alignment bytes remain uncredited gaps.
+Clean splitting, catalog/build checks, all 126 tests, and full hybrid
+relink/packing pass. CODE is 2,677,876 / 3,293,696 bytes (81.3031%), with
+18,787 matched functions among 20,345 cataloged spans. DATA remains
+468,869 / 648,064 bytes. The retail ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
