@@ -1,24 +1,18 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_0044EFB0[21] = {
-    (unsigned int)0x001E0D90,
-    (unsigned int)0x001E0EA0,
-    (unsigned int)0x001E1570,
-    (unsigned int)0x001E1590,
-    (unsigned int)0x001E1060,
-    (unsigned int)0x001E1190,
-    (unsigned int)0x001E1570,
-    (unsigned int)0x001E1590,
-    (unsigned int)0x001E1240,
-    (unsigned int)0x001E1330,
-    (unsigned int)0x001E1570,
-    (unsigned int)0x001E1590,
-    (unsigned int)0x001E1410,
-    (unsigned int)0x001E1430,
-    (unsigned int)0x001E1570,
-    (unsigned int)0x001E1590,
-    (unsigned int)0x001E1700,
-    (unsigned int)0x001E1910,
-    (unsigned int)0x001E1FC0,
-    (unsigned int)0x001E1FE0,
-    (unsigned int)0x00200000,
-};
+typedef const unsigned char *Mvc2Address;
+extern void func_001E0D90(void);
+extern const unsigned char lbl_001E0EA0[];
+extern void func_001E1570(void);
+extern const unsigned char lbl_001E1590[];
+extern void func_001E1060(void);
+extern const unsigned char lbl_001E1190[];
+extern const unsigned char lbl_001E1240[];
+extern void func_001E1330(void);
+extern const unsigned char lbl_001E1410[];
+extern void func_001E1430(void);
+extern const unsigned char lbl_001E1700[];
+extern void func_001E1910(void);
+extern void func_001E1FC0(void);
+extern const unsigned char lbl_001E1FE0[];
+extern const unsigned char lbl_00200000[];
+/* Compiler jump table; entries are code addresses. */
+const Mvc2Address jtbl_0044EFB0[21] = { (Mvc2Address)func_001E0D90, lbl_001E0EA0, (Mvc2Address)func_001E1570, lbl_001E1590, (Mvc2Address)func_001E1060, lbl_001E1190, (Mvc2Address)func_001E1570, lbl_001E1590, lbl_001E1240, (Mvc2Address)func_001E1330, (Mvc2Address)func_001E1570, lbl_001E1590, lbl_001E1410, (Mvc2Address)func_001E1430, (Mvc2Address)func_001E1570, lbl_001E1590, lbl_001E1700, (Mvc2Address)func_001E1910, (Mvc2Address)func_001E1FC0, lbl_001E1FE0, lbl_00200000 };

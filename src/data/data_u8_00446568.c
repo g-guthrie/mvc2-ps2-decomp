@@ -1,4 +1,8 @@
-typedef unsigned char u8;
-u8 data_u8_00446568[0x8] = {
-    0xA4, 0x70, 0x7D, 0x3F, 0xFF, 0xFF, 0xFF, 0xFF,
-};
+typedef float f32;
+typedef int s32;
+typedef struct Mv_00446568 {
+    f32 f_00;
+    s32 i_04;
+} Mv_00446568;
+typedef char Mv_00446568_size_check[(sizeof(Mv_00446568) == 8) ? 1 : -1];
+Mv_00446568 data_u8_00446568 = { 0.99000001f, -1 };

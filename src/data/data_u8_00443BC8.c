@@ -1,2 +1,12 @@
-typedef unsigned char u8;
-u8 data_u8_00443BC8[24] = { 0x14, 0xAE, 0x6F, 0x41, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00, 0xA0, 0x43, 0x00, 0x00, 0x70, 0x43, 0x14, 0xAE, 0x6F, 0x41, 0xFF, 0xFF, 0xFF, 0xFF };
+typedef float f32;
+typedef int s32;
+typedef struct Mv_00443BC8 {
+    f32 f_00;
+    s32 i_04;
+    f32 f_08;
+    f32 f_0C;
+    f32 f_10;
+    s32 i_14;
+} Mv_00443BC8;
+typedef char Mv_00443BC8_size_check[(sizeof(Mv_00443BC8) == 24) ? 1 : -1];
+Mv_00443BC8 data_u8_00443BC8 = { 14.9799995f, -1, 320.0f, 240.0f, 14.9799995f, -1 };

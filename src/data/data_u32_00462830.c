@@ -1,5 +1,17 @@
-typedef unsigned int u32;
-u32 data_u32_00462830[9] = {
-    0x0009FFE5u, 0x0009FFE4u, 0x0009FFE4u, 0x0009FFE5u, 0x0009FFE5u, 0x00000000u, 0x00000000u, 0x00000000u, 
-    0x0011FFE9u, 
+typedef short s16;
+typedef struct Mv_PAIR16 {
+    s16 s_00;
+    s16 s_02;
+} Mv_PAIR16;
+typedef char Mv_PAIR16_size_check[(sizeof(Mv_PAIR16) == 4) ? 1 : -1];
+Mv_PAIR16 data_u32_00462830[9] = {
+    { -27, 9 },
+    { -28, 9 },
+    { -28, 9 },
+    { -27, 9 },
+    { -27, 9 },
+    { 0, 0 },
+    { 0, 0 },
+    { 0, 0 },
+    { -23, 17 },
 };

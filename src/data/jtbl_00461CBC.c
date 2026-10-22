@@ -1,8 +1,14 @@
-/* Source-safe reconstruction of initialized table. */
-const unsigned int jtbl_00461CBC[5] = {
-    (unsigned int)0x00150012,
-    (unsigned int)0x001B0018,
-    (unsigned int)0x0021001E,
-    (unsigned int)0x00270024,
-    (unsigned int)0x002D002A,
+typedef short s16;
+/* Five (s16, s16) pairs. */
+typedef struct Mv_PAIR16 {
+    s16 s_00;
+    s16 s_02;
+} Mv_PAIR16;
+typedef char Mv_PAIR16_size_check[(sizeof(Mv_PAIR16) == 4) ? 1 : -1];
+const Mv_PAIR16 jtbl_00461CBC[5] = {
+    { 18, 21 },
+    { 24, 27 },
+    { 30, 33 },
+    { 36, 39 },
+    { 42, 45 },
 };

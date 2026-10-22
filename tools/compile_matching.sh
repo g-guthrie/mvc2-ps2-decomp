@@ -17102,4 +17102,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/hx6_d.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/hx6_d.o"
 "$PYTHON" tools/verify_object.py "$BUILD/hx6_d.o" private/SLUS_204.86.rom --source src/hx6_d.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/hx1_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/hx1_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hx1_a.o" private/SLUS_204.86.rom --source src/hx1_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/hx1_b.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/hx1_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hx1_b.o" private/SLUS_204.86.rom --source src/hx1_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/hx1_d.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/hx1_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hx1_d.o" private/SLUS_204.86.rom --source src/hx1_d.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

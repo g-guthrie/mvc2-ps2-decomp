@@ -17864,3 +17864,6 @@ func_001B3AC0,0x001B3AC0,0x14C,src/hm3_f.c,complete
 func_0017B5D0,0x0017B5D0,0x190,src/hm3_f.c,complete
 func_003A5220,0x003A5220,0x178,src/hx6_b.c,complete
 func_001F20E0,0x001F20E0,0x158,src/hx6_d.c,complete
+func_003C2F10,0x003C2F10,0x13C,src/hx1_a.c,complete
+func_0026D0D0,0x0026D0D0,0x188,src/hx1_b.c,complete
+func_0029A7C0,0x0029A7C0,0x1A4,src/hx1_d.c,complete

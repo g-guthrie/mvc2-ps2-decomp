@@ -1,4 +1,12 @@
-typedef unsigned int u32;
-u32 data_u32_00464A30[4] = {
-    0x00070000u, 0x0017000Fu, 0x0027001Fu, 0x0037002Fu, 
+typedef short s16;
+typedef struct Mv_PAIR16 {
+    s16 s_00;
+    s16 s_02;
+} Mv_PAIR16;
+typedef char Mv_PAIR16_size_check[(sizeof(Mv_PAIR16) == 4) ? 1 : -1];
+Mv_PAIR16 data_u32_00464A30[4] = {
+    { 0, 7 },
+    { 15, 23 },
+    { 31, 39 },
+    { 47, 55 },
 };
