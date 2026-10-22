@@ -48,7 +48,7 @@ extern s32 D_004C283C;
 extern u8 D_004C27D0;
 extern u8 *func_003DA750();
 extern void func_0033DAD0();
-extern void func_00170DF0();
+extern void func_00170DF0(u32);
 extern void func_0033DB90();
 
 void func_0033DA40(void) {
@@ -60,7 +60,7 @@ void func_0033DA40(void) {
         *(s32 *)(o + 0x84) = D_004C283C;
         *(u32 *)(o + 0xD0) = 0x800820;
         *(u32 *)(o + 0x74) = 0x3F000000;
-        func_00170DF0(*(s32 *)(o + 0x84));
+        func_00170DF0((u32)*(s32 *)(o + 0x84));
         if ((D_004C27D0 & 0x1F) == 4) {
             func_0033DB90();
         }

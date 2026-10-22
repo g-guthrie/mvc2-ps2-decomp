@@ -55,7 +55,7 @@ extern f32 D_004B3358[];
 extern s8 D_004B3368[];
 extern s32 D_004C2808;
 extern void func_00144BF0();
-extern void func_00170DF0(s32);
+extern void func_00170DF0(u32);
 extern f32 D_004B80A0[];
 extern f32 D_004B80A4[];
 extern s32 D_004C283C;

@@ -56,7 +56,7 @@ void func_001474D0(void) {}
 
 void func_00147B60(void) {}
 
-void func_00149AC0(void) {}
+void func_00149AC0(u8 *p) {}
 
 void func_0014A210(void) {}
 
@@ -86,7 +86,7 @@ void func_0016F0D0(void) {}
 
 void func_0016FA00(void) {}
 
-void func_00170DF0(void) {}
+void func_00170DF0(u32 resource) {}
 
 void func_00170E00(void *resource, float alpha, float red, float green, float blue) {}
 

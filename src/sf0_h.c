@@ -60,7 +60,7 @@ void func_0013EAD0(s32 a) {
     u8 *o;
     double k;
     extern void func_0013ED10();
-    extern void func_00170DF0(s32);
+    extern void func_00170DF0(u32);
     if ((o = func_003DA750(0, 6, 1)) != 0) {
         o[0x13C] = 1;
         o[0x20] = a;
@@ -76,7 +76,7 @@ void func_0013EAD0(s32 a) {
         switch (a) {
         case 0:
         case 1:
-            func_00170DF0(*(s32 *)(o + 0x84));
+            func_00170DF0((u32)*(s32 *)(o + 0x84));
             *(s32 *)(o + 0xD0) = 0x80F;
             *(s16 *)(o + 0x1E) = 0;
             break;

@@ -18791,3 +18791,6 @@ func_001BE040,0x001BE040,0x180,src/parent_effect_initializer.c,complete
 func_00135910,0x00135910,0x25C,src/panel_transition_initializer.c,complete
 func_00162670,0x00162670,0x50,src/controller_state_handlers.c,complete
 func_001ACA30,0x001ACA30,0x54,src/controller_state_handlers.c,complete
+func_0013C800,0x0013C800,0x110,src/fades_and_transition.c,complete
+func_00149900,0x00149900,0x16C,src/fades_and_transition.c,complete
+func_0014E100,0x0014E100,0xD0,src/fades_and_transition.c,complete

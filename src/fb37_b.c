@@ -17,8 +17,8 @@ void func_0013C110(u8 *a)
     f32 *t;
     s8 i;
     extern u8 *func_003DA750(s32, s32, s32);
-    extern void func_0013C7A0(void);
-    extern void func_0013C7E0(void);
+    extern void func_0013C7A0(u8 *);
+    extern void func_0013C7E0(u8 *);
     extern void func_0032D390(u8 *, s32, int, int, f32, f32);
     extern void func_0032D4E0(u8 *, s32, f32, int);
     extern void func_001E3CE0(s32);

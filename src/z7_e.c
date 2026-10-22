@@ -94,7 +94,7 @@ void func_0013CB50(u8 q) {
     extern u8 *func_003DA750();
     extern void func_0013CDE0();
     extern void func_00137140();
-    extern void func_00170DF0();
+    extern void func_00170DF0(u32);
     u8 *o;
     f32 half = 0.5f;
     if ((o = func_003DA750(0, 6, 1)) != 0) {
@@ -110,7 +110,7 @@ void func_0013CB50(u8 q) {
         *(u32 *)(o + 0xD0) = 0x815;
         func_00137140(o, o[0x21]);
         *(s16 *)(o + 0x1C) = 0;
-        func_00170DF0(*(u32 *)(o + 0x84));
+        func_00170DF0((u32)*(u32 *)(o + 0x84));
     }
 }
 

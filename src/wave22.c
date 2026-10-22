@@ -10,7 +10,7 @@ extern void func_00175670(void *);
 extern int func_00174470(const void *);
 extern void func_00186A60(void *, s32);
 extern void *func_003DA750(s32, s32, s32);
-extern void func_00170DF0(s32);
+extern void func_00170DF0(u32);
 extern void func_0033CAB0(void);
 extern s32 D_004C283C;
 
@@ -40,7 +40,7 @@ void func_0033CA40(void) {
         *(s32 *)(p + 0x84) = D_004C283C;
         *(s32 *)(p + 0xD0) = 0x800820;
         *(f32 *)(p + 0x74) = 0.5f;
-        func_00170DF0(*(s32 *)(p + 0x84));
+        func_00170DF0((u32)*(s32 *)(p + 0x84));
     }
 }
 

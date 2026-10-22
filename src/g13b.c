@@ -23,7 +23,7 @@ extern void func_001E7F60();
 extern void func_0032F980();
 extern u8 *func_003DA750();
 extern void func_0032FA60();
-extern void func_00170DF0();
+extern void func_00170DF0(u32);
 
 void func_003BEA00(u8 *p) {
     s16 v = *(s16 *)(p + 0x1C) - 1;
@@ -56,6 +56,6 @@ void func_0032F9E0(void) {
         *(u32 *)(o + 0x84) = D_004C283C;
         *(void **)(o + 0x10) = func_0032FA60;
         *(u32 *)(o + 0xD0) = 0x800;
-        func_00170DF0(*(u32 *)(o + 0x84));
+        func_00170DF0((u32)*(u32 *)(o + 0x84));
     }
 }

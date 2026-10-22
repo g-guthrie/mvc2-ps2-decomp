@@ -5106,3 +5106,19 @@ CODE is 2,664,264 / 3,293,696 bytes (80.8898%), 18,728 matched functions.
 DATA remains 468,869 / 648,064 bytes. The retail ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,673,376 CODE bytes.
+
+## Fade and transition callbacks
+
+Recovered `func_0013C800` (272 bytes), `func_00149900` (364 bytes), and
+`func_0014E100` (208 bytes): 844 additional exact CODE bytes. The source
+retains native unordered float comparisons, signed short timer reloads,
+and double precision transition arithmetic. Four preceding alignment bytes
+remain uncredited. Resource cleanup declarations now accept the native
+32-bit resource argument, and related lifecycle callbacks use their actual
+unary interfaces. All affected previously credited bodies remain exact.
+
+Catalog/build checks, all 126 tests, and full hybrid relink/packing pass.
+CODE is 2,665,108 / 3,293,696 bytes (80.9154%), 18,731 matched functions.
+DATA remains 468,869 / 648,064 bytes. Retail ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,673,376 CODE bytes.

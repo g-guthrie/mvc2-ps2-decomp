@@ -14,8 +14,9 @@ typedef struct {
 
 extern f32 D_004442D0[];
 
-void func_0014E1D0(S14E *p)
+void func_0014E1D0(u8 *actor_data)
 {
+    S14E *p = (S14E *)actor_data;
     s16 t = p->h1C;
     if (t != 0) {
         s16 v = p->h1C - 1;

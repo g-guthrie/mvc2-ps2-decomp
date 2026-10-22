@@ -52,7 +52,7 @@ extern f32 D_004B3358[];
 extern s8 D_004B3368[];
 extern s32 D_004C2808;
 extern void func_00144BF0();
-extern void func_00170DF0(s32);
+extern void func_00170DF0(u32);
 extern f32 D_004B80A0[];
 extern f32 D_004B80A4[];
 extern s32 D_004C283C;
@@ -127,7 +127,7 @@ void func_001449E0(s32 a) {
         *(f32 *)(o + 0x50) = 0.10000000149011612f;
         *(f32 *)(o + 0x54) = 0.10000000149011612f;
         *(f32 *)(o + 0x58) = 0.10000000149011612f;
-        if (a < 2) func_00170DF0(*(s32 *)(o + 0x84));
+        if (a < 2) func_00170DF0((u32)*(s32 *)(o + 0x84));
     }
 }
 

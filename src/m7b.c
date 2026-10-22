@@ -52,7 +52,7 @@ void func_00161380(void) {
 extern void *func_003DA750(s32, s32, s32);
 extern void func_0013FF00();
 extern u8 *D_004C2818;
-extern void func_00170DF0(u8 *);
+extern void func_00170DF0(u32);
 void func_0013FE60(u8 *a, V3 *b) {
     u8 *r = func_003DA750(0, 0xD, 1);
     if (r) {
@@ -62,6 +62,6 @@ void func_0013FE60(u8 *a, V3 *b) {
         *(u8 **)(r + 0x84) = D_004C2818;
         *(u8 **)(r + 0xD0) = a;
         if (b) *(V3 *)(r + 0x34) = *b;
-        func_00170DF0(*(u8 **)(D_004C2818 + 0x14) + 0x384);
+        func_00170DF0((u32)*(u8 **)(D_004C2818 + 0x14) + 0x384);
     }
 }

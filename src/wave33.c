@@ -286,7 +286,8 @@ void func_00272810(u8 *p) {
 
 typedef struct H13C660 { u8 p0[4]; u8 b4; u8 p1[0x13]; u8 *o18; u8 p2[0x58]; f32 f74; u8 p3[0x58]; u32 wd0; } H13C660;
 s32 func_0013C730(void *, void *);
-void func_0013C660(H13C660 *p) {
+void func_0013C660(u8 *actor_data) {
+    H13C660 *p = (H13C660 *)actor_data;
     f32 f;
     u8 *q = p->o18;
     if (q[4] >= 6) {

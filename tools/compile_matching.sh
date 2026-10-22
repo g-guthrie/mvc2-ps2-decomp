@@ -20133,4 +20133,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/controller_state_handlers.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/controller_state_handlers.o"
 "$PYTHON" tools/verify_object.py "$BUILD/controller_state_handlers.o" private/SLUS_204.86.rom --source src/controller_state_handlers.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fades_and_transition.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/fades_and_transition.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fades_and_transition.o" private/SLUS_204.86.rom --source src/fades_and_transition.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

@@ -4,7 +4,7 @@ typedef unsigned int u32;
 typedef struct {float x,y,z;} Float3;
 extern void *func_003DA750(void *,int,int);
 extern void func_00136D00(u8 *);
-extern void func_00170DF0(void *);
+extern void func_00170DF0(u32);
 extern void *D_004C2830;
 extern Float3 D_0043F1A8;
 void func_00136C80(void) {
@@ -16,6 +16,6 @@ void func_00136C80(void) {
   *(void **)(p+132)=D_004C2830;
   *(Float3 *)(p+52)=D_0043F1A8;
   *(u32 *)(p+208)=0x20801;
-  func_00170DF0(*(void **)(p+132));
+  func_00170DF0((u32)*(void **)(p+132));
  }
 }

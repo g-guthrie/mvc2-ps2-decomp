@@ -61,7 +61,7 @@ void func_0013E820(s32 a) {
     u8 *o;
     double k;
     extern void func_0013EA00();
-    extern void func_00170DF0(s32);
+    extern void func_00170DF0(u32);
     if ((o = func_003DA750(0, 0x12, 1)) != 0) {
         o[0x13C] = 1;
         o[0x20] = a;
@@ -79,6 +79,6 @@ void func_0013E820(s32 a) {
         *(s32 *)(o + 0xD0) = 0x200003;
         *(s16 *)(o + 0x1C) = 0;
         *(s16 *)(o + 0x1E) = 0;
-        if (a < 2) func_00170DF0(*(s32 *)(o + 0x84));
+        if (a < 2) func_00170DF0((u32)*(s32 *)(o + 0x84));
     }
 }

@@ -34,7 +34,7 @@ extern V3 D_00460CC0[];
 extern void func_0033C300();
 extern void func_0033C250();
 extern void func_00343B10();
-extern void func_00170DF0();
+extern void func_00170DF0(u32);
 extern void func_003B3880();
 extern int func_00174470(const void *);
 extern void func_0016B0C0();
@@ -95,7 +95,7 @@ void func_00343BE0(s32 a) {
         *(f32 *)(o + 0x80) = 1.0f;
         *(V3 *)(o + 0x34) = D_00460CC0[a];
         o[0x20] = a;
-        func_00170DF0(*(s32 *)(o + 0x84));
+        func_00170DF0((u32)*(s32 *)(o + 0x84));
     }
 }
 

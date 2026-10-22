@@ -294,7 +294,7 @@ typedef struct { float x, y, z; } V3;
 extern s32 D_004C283C;
 extern V3 D_004B82E8;
 extern void func_00345450(u8 *);
-extern void func_00170DF0();
+extern void func_00170DF0(u32);
 
 void func_003453C0(void) {
     u8 *p = func_003DA750(0, 11, 1);
@@ -308,7 +308,7 @@ void func_003453C0(void) {
         *(u32 *)(p + 120) = 0;
         *(u32 *)(p + 124) = 0;
         *(u32 *)(p + 128) = 0;
-        func_00170DF0(*(u32 *)(p + 132));
+        func_00170DF0((u32)*(u32 *)(p + 132));
     }
 }
 

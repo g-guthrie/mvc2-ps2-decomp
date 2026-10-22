@@ -12,7 +12,7 @@ typedef float f32;
 
 extern u8 *func_003DA750(s32, s32, s32);
 extern void *D_004C283C;
-extern void func_00170DF0(void *);
+extern void func_00170DF0(u32);
 extern int func_00175700(u8 *);
 extern void func_001843A0(u8 *);
 extern void func_0019B110(u8 *, s32);
@@ -99,7 +99,7 @@ void func_0033E030(void)
         S(p, 204) = 1;
         *(void **)(p + 132) = D_004C283C;
         I(p, 208) = 0x801;
-        func_00170DF0(*(void **)(p + 132));
+        func_00170DF0((u32)*(void **)(p + 132));
     }
 }
 

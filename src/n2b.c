@@ -36,7 +36,7 @@ typedef struct { u8 pad[0x24A]; s8 f; } S24A;
 extern void func_00376AE0();
 extern u8 *D_004C2818;
 extern void func_00140F30();
-extern void func_00170DF0();
+extern void func_00170DF0(u32);
 typedef struct { f32 x, y, z; } V3;
 extern u8 D_0044F260[];
 extern void func_00168E80();
@@ -76,7 +76,7 @@ void func_00140E90(u8 *a, V3 *v) {
         *(u8 **)(r + 0x84) = D_004C2818;
         *(u8 **)(r + 0xD0) = a;
         if (v) *(V3 *)(r + 0x34) = *v;
-        func_00170DF0(*(u8 **)(D_004C2818 + 0x14) + 0x4EC);
+        func_00170DF0((u32)*(u8 **)(D_004C2818 + 0x14) + 0x4EC);
     }
 }
 

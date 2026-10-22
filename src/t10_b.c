@@ -31,7 +31,7 @@ extern u8 *func_003DA750();
 extern void func_0033C300();
 extern void func_0033C250();
 extern void func_00343B10();
-extern void func_00170DF0();
+extern void func_00170DF0(u32);
 extern void func_003B3880();
 extern void func_001E7F60();
 extern int func_00174470(const void *);

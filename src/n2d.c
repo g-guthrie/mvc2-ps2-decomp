@@ -36,7 +36,7 @@ typedef struct { u8 pad[0x24A]; s8 f; } S24A;
 extern void func_00376AE0();
 extern u8 *D_004C2818;
 extern void func_00140F30();
-extern void func_00170DF0();
+extern void func_00170DF0(u32);
 typedef struct { f32 x, y, z; } V3;
 extern u8 D_0044F260[];
 extern void func_00168E80();

@@ -5,7 +5,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 extern u8 *func_003DA750(s32,s32,s32);
 extern void func_00137BF0(u8 *);
-extern void func_00170DF0(s32);
+extern void func_00170DF0(u32);
 extern void func_0013B1C0(u8 *);
 extern u8 *D_004C2924 __attribute__((section(".sdata")));
 extern s32 D_004C2830 __attribute__((section(".sdata")));
@@ -53,7 +53,7 @@ void func_00137B00(u8 index,s32 mode) {
   p->scale58=1.2f;
   p->value74=1.0f;
   p->byte01=255;
-  func_00170DF0(p->resource);
+  func_00170DF0((u32)p->resource);
   if(p->index) p->orientation48=-8192;
   else p->orientation48=8192;
   func_0013B1C0((u8 *)p);
