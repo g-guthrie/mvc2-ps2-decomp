@@ -263,3 +263,20 @@ sb26,11,sonnet,medium,code-sibling,4,2,888,139610,4.6,
 sb29,11,sonnet,medium,code-sibling,4,0,0,134332,5.4,
 sb24,11,sonnet,medium,code-sibling,4,1,352,150686,5.7,
 sb22,11,sonnet,medium,code-sibling,4,3,1080,162890,7.8,
+sc1,12,sonnet,medium,code-sibling2,4,0,0,,,all 4 boundary artifacts
+sb30,11,sonnet,medium,code-sibling,3,1,240,119186,3.9,
+sc8,12,sonnet,medium,code-sibling2,4,1,44,104466,2.5,2 boundary artifacts
+sc9,12,sonnet,medium,code-sibling2,4,0,0,112390,2.5,3 boundary artifacts
+sc4,12,sonnet,medium,code-sibling2,4,3,720,108470,2.7,
+sc12,12,sonnet,medium,code-sibling2,4,3,1104,125452,3.7,
+sc3,12,sonnet,medium,code-sibling2,4,0,0,124905,3.9,1 boundary artifact
+sc13,12,sonnet,medium,code-sibling2,4,1,376,128631,4.3,1 VU0
+sc10,12,sonnet,medium,code-sibling2,4,2,816,121647,4.4,
+sc0,12,sonnet,medium,code-sibling2,4,0,0,143717,6.3,2 boundary artifacts
+sc14,12,sonnet,medium,code-sibling2,4,2,820,129324,5.3,
+sc2,12,sonnet,medium,code-sibling2,4,2,368,156381,6.4,1 boundary artifact
+sc7,12,sonnet,medium,code-sibling2,4,1,40,147653,6.7,1 boundary artifact
+sc5,12,sonnet,medium,code-sibling2,4,2,1108,180618,8.6,
+sc15,12,sonnet,medium,code-sibling2,4,2,688,145599,6.3,
+sc11,12,sonnet,medium,code-sibling2,4,0,0,142104,9.7,2 boundary artifacts
+sc17,12,sonnet,medium,code-sibling2,4,3,1092,132614,4.9,

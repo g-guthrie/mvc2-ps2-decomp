@@ -19158,4 +19158,70 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/sb22_d.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/sb22_d.o"
 "$PYTHON" tools/verify_object.py "$BUILD/sb22_d.o" private/SLUS_204.86.rom --source src/sb22_d.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sb30_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/sb30_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sb30_a.o" private/SLUS_204.86.rom --source src/sb30_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sc8_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/sc8_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc8_a.o" private/SLUS_204.86.rom --source src/sc8_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sc4_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/sc4_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc4_a.o" private/SLUS_204.86.rom --source src/sc4_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sc12_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/sc12_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc12_a.o" private/SLUS_204.86.rom --source src/sc12_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sc13_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/sc13_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc13_a.o" private/SLUS_204.86.rom --source src/sc13_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sc10_b.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/sc10_b.o"
+"${OBJCOPY:-mipsel-linux-gnu-objcopy}" \
+    --redefine-sym @21=jtbl_004BA6D0 \
+    "$BUILD/sc10_b.o" "$BUILD/sc10_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc10_b.o" private/SLUS_204.86.rom --source src/sc10_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sc10_c.c -c -lang c -i src -O4,p -sdatathreshold 8 -o "$BUILD/sc10_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc10_c.o" private/SLUS_204.86.rom --source src/sc10_c.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sc14_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/sc14_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc14_a.o" private/SLUS_204.86.rom --source src/sc14_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sc14_c.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/sc14_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc14_c.o" private/SLUS_204.86.rom --source src/sc14_c.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sc2_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/sc2_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc2_a.o" private/SLUS_204.86.rom --source src/sc2_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sc7_a.c -c -lang c -i src -O4,p -sdatathreshold 8 -o "$BUILD/sc7_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc7_a.o" private/SLUS_204.86.rom --source src/sc7_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sc5_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/sc5_b.o"
+"${OBJCOPY:-mipsel-linux-gnu-objcopy}" \
+    --redefine-sym @41=jtbl_004B41A0 \
+    "$BUILD/sc5_b.o" "$BUILD/sc5_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc5_b.o" private/SLUS_204.86.rom --source src/sc5_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sc5_d.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/sc5_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc5_d.o" private/SLUS_204.86.rom --source src/sc5_d.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sc15_b.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/sc15_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc15_b.o" private/SLUS_204.86.rom --source src/sc15_b.c
+"$WIBO" "$SNCPP" -P src/sc15_d.c "$BUILD/sc15_d.i"
+"$WIBO" "$EE29CC1" "$BUILD/sc15_d.i" -O2 -G0 -ffunction-sections  -quiet -o "$BUILD/sc15_d.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sc15_d.o" "$BUILD/sc15_d.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sc15_d.o" private/SLUS_204.86.rom --source src/sc15_d.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sc17_a.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/sc17_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc17_a.o" private/SLUS_204.86.rom --source src/sc17_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sc17_b.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/sc17_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc17_b.o" private/SLUS_204.86.rom --source src/sc17_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sc17_c.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/sc17_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sc17_c.o" private/SLUS_204.86.rom --source src/sc17_c.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
