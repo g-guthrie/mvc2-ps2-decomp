@@ -18887,3 +18887,5 @@ func_0035E3D0,0x0035E3D0,0xB8,src/owner_landing_callbacks.c,complete
 func_0035E690,0x0035E690,0xA0,src/owner_landing_callbacks.c,complete
 func_001C59D0,0x001C59D0,0xFC,src/owner_landing_callbacks.c,complete
 func_003488E0,0x003488E0,0xBC,src/owner_motion_response_003488e0.c,complete
+func_0035D880,0x0035D880,0x74,src/vertical_motion_event_callbacks.c,complete
+func_0035DD40,0x0035DD40,0x74,src/vertical_motion_event_callbacks.c,complete

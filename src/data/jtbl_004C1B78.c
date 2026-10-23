@@ -1,7 +1,8 @@
-typedef const unsigned char *Mvc2Address;
-extern const unsigned char func_0035DDC0[];
-extern const unsigned char lbl_0035DD40[];
-Mvc2Address const jtbl_004C1B78[2] = {
-    lbl_0035DD40,
+typedef unsigned char u8;
+typedef void (*OwnerCallback)(u8 *, u8 *);
+extern void func_0035DD40(u8 *, u8 *);
+extern void func_0035DDC0(u8 *, u8 *);
+OwnerCallback const jtbl_004C1B78[2] = {
+    func_0035DD40,
     func_0035DDC0,
 };

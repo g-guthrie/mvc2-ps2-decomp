@@ -5334,3 +5334,24 @@ full hybrid linkage reproduce the retail ROM and packed ELF. CODE is now
 interface repairs add no DATA credit. The retail ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+
+
+## 2026-10-22 — Vertical motion event callbacks
+
+Recovered `0035D880` and `0035DD40`, each 116 bytes, for 232 additional
+exact CODE bytes under MWCCPS2 3.0.3 -O3,p. Both advance vertical motion,
+update animation and queue the actor, then change velocity and clear vertical
+acceleration when the animation event byte becomes nonzero. Their actual owner
+callbacks accept the second argument supplied by the existing GP dispatchers.
+The seven-entry and two-entry callback owners retain their native addresses
+with callable pointer types; the existing 0035CFE0 callback exposes the same
+provided owner argument. DATA receives no additional credit.
+
+Catalog/build checks, all 126 tests, whole compiler-object verification, and
+full hybrid linkage/packing pass. CODE is 2,682,960 / 3,293,696 bytes
+(81.4574%), with 18,826 matching functions among 20,367 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+The larger inherited-state candidates investigated in this batch do not yet
+match as whole objects and receive no catalog credit.

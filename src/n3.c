@@ -141,7 +141,7 @@ void func_00313B00(u8 *p, u8 *q) {
 }
 
 extern void func_0035D340(u8 *);
-void func_0035CFE0(u8 *p) {
+void func_0035CFE0(u8 *p, u8 *owner_unused) {
     s16 v = *(s16 *)(p + 0x1C) - 1;
     *(s16 *)(p + 0x1C) = v;
     if (v == 0) {

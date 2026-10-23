@@ -66,10 +66,10 @@ void func_001DDC60(u8 *p, void *owner) {
 }
 
 extern OwnerCallback jtbl_004C1B68[] __attribute__((section(".sdata")));
-extern OwnerCallback jtbl_004C1B78[] __attribute__((section(".sdata")));
+extern void (*const jtbl_004C1B78[2])(u8 *, u8 *) __attribute__((section(".sdata")));
 extern OwnerCallback jtbl_004C1B94[] __attribute__((section(".sdata")));
 extern OwnerCallback jtbl_004C1B98[] __attribute__((section(".sdata")));
-extern OwnerCallback jtbl_004C1B58[] __attribute__((section(".sdata")));
+extern void (*const jtbl_004C1B58[7])(u8 *, u8 *) __attribute__((section(".sdata")));
 extern OwnerCallback jtbl_004C1C00[] __attribute__((section(".sdata")));
 extern OwnerCallback jtbl_004C1E38[] __attribute__((section(".sdata")));
 extern OwnerCallback jtbl_004C1F08[] __attribute__((section(".sdata")));
