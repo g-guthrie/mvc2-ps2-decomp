@@ -5569,3 +5569,19 @@ full hybrid linkage/packing pass. CODE is 2,691,980 / 3,293,696 bytes
 DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+
+
+## 2026-10-22 — Weighted position and landing phases
+
+Recovered the complete 832-byte function `002F1870` with MWCCPS2 3.0.3
+-O3,p -sdatathreshold 0. It handles jump motion, a weighted position adjustment,
+landing, and the subsequent capture and launch phases. The existing unary
+callback interface and actual helper arguments are preserved. The four-byte
+preceding alignment remains uncredited; no DATA credit is added.
+
+Catalog/build checks, all 126 tests, whole compiler-object verification, and
+full hybrid linkage/packing pass. CODE is 2,692,812 / 3,293,696 bytes
+(81.7565%), with 18,848 matching functions among 20,378 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.

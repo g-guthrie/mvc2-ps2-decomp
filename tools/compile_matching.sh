@@ -20302,4 +20302,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/collision_transition_0029f170.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/collision_transition_0029f170.o"
 "$PYTHON" tools/verify_object.py "$BUILD/collision_transition_0029f170.o" private/SLUS_204.86.rom --source src/collision_transition_0029f170.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/weighted_position_phases_002f1870.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/weighted_position_phases_002f1870.o"
+"$PYTHON" tools/verify_object.py "$BUILD/weighted_position_phases_002f1870.o" private/SLUS_204.86.rom --source src/weighted_position_phases_002f1870.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

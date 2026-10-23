@@ -18910,3 +18910,4 @@ func_0035B800,0x0035B800,0x2F8,src/linked_contact_capture_0035b800.c,complete
 func_002B4E90,0x002B4E90,0x214,src/variant_motion_entry_002b4e90.c,complete
 func_002FDF60,0x002FDF60,0x1E4,src/motion_lane_entry_002fdf60.c,complete
 func_0029F170,0x0029F170,0x1E4,src/collision_transition_0029f170.c,complete
+func_002F1870,0x002F1870,0x340,src/weighted_position_phases_002f1870.c,complete
