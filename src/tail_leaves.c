@@ -32,11 +32,11 @@ extern void func_00147D20();
 extern void func_0014C080();
 extern void func_0015E3A0(u8 *);
 extern void func_0015EAA0();
-extern void func_0015ED10();
+extern void func_0015ED10(u8 *);
 extern void func_0015F3D0();
 extern void func_0015F840();
 extern void func_00160250();
-extern void func_001604C0();
+extern void func_001604C0(u8 *);
 extern void func_001628C0(u8 *);
 extern void func_00162BA0(u8 *);
 extern void func_0016A210();
@@ -222,7 +222,7 @@ void func_0015E620(u8 *owner) { func_0015E3A0(owner); }
 
 void func_0015E9E0(u8 *owner, u8 *effect) { func_003DAA40((struct Object *)effect); }
 
-void func_0015ED10(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0015EAA0(a0, a1, a2, a3); }
+void func_0015ED10(u8 *actor) { func_0015EAA0(actor); }
 
 void func_0015EE50(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
@@ -234,7 +234,7 @@ void func_0015F8D0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0015F840(a0, a1, a2, 
 
 void func_00160190(u8 *owner, u8 *effect) { func_003DAA40((struct Object *)effect); }
 
-void func_001604C0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00160250(a0, a1, a2, a3); }
+void func_001604C0(u8 *actor) { func_00160250(actor); }
 
 void func_001621E0(u8 *p) { func_003DAA40((struct Object *)p); }
 
@@ -289,9 +289,9 @@ void func_00197520(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00197560(a0, a1, a2, 
 
 void func_00197550(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
-void func_00198090(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
+void func_00198090(u8 *actor, u8 *owner_unused) { func_00175700(actor); }
 
-void func_001980F0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_001980F0(u8 *actor, u8 *owner_unused) { func_003DAA40((struct Object *)actor); }
 
 void func_00198610(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
@@ -890,13 +890,13 @@ void func_00328410(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Obje
 
 void func_00328730(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
-void func_00328DD0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0015ED10(a1, a1, a2, a3); }
+void func_00328DD0(u8 *context_unused, u8 *owner) { func_0015ED10(owner); }
 
 void func_00329020(u8 *context, u8 *actor) { func_00162BA0(actor); }
 
 void func_003294A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
-void func_00329670(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001604C0(a1, a1, a2, a3); }
+void func_00329670(u8 *context_unused, u8 *owner) { func_001604C0(owner); }
 
 void func_0032A9D0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0032A900(a0, a1, a2, a3); }
 

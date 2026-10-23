@@ -22940,3 +22940,9 @@ jtbl_0044CB60 = 0x0044CB60;
 func_001A9070 = 0x001A9070;
 
 func_001B6F40 = 0x001B6F40;
+
+// Native callees reached by recovered state entries.
+func_00293830 = 0x00293830;
+func_00328DD0 = 0x00328DD0;
+func_00329020 = 0x00329020;
+func_00329670 = 0x00329670;

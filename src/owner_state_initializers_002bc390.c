@@ -13,7 +13,7 @@ extern void func_00185490(u8 *);
 extern void func_001E3210(u8 *,int);
 extern int func_001757E0(u8 *,int,int);
 #define F(p,o) (*(float *)((p)+(o)))
-void func_00328A20(u8 *p,void *context) {
+void func_00328A20(u8 *p,u8 *context) {
     u8 *owner=context;
     p[4]++;
     p[1]=owner[1];

@@ -420,15 +420,15 @@ void func_00321F30(void) {}
 
 void func_00326580(void) {}
 
-void func_00328BA0(void) {}
+void func_00328BA0(u8 *actor_unused, u8 *owner_unused) {}
 
-void func_00328DF0(void) {}
+void func_00328DF0(u8 *actor_unused, u8 *owner_unused) {}
 
-void func_00329040(void) {}
+void func_00329040(u8 *actor_unused, u8 *owner_unused) {}
 
 void func_00329480(void) {}
 
-void func_00329690(void) {}
+void func_00329690(u8 *actor_unused, u8 *owner_unused) {}
 
 void func_0032BF60(void) {}
 

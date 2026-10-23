@@ -37,4 +37,18 @@ typedef struct {
 typedef char OwnerLaunchDispatchSize[sizeof(OwnerLaunchDispatchTables) == 0x4C ? 1 : -1];
 extern const OwnerLaunchDispatchTables jtbl_0044B620;
 
+typedef struct {
+    Mvc2StateCallback selector[8];
+    Mvc2StateCallback state[24];
+    ControllerEffectCallback owner[3][4];
+    Mvc2StateCallback other[8];
+    ControllerEffectCallback last[4];
+} CloneOwnerDispatchTables;
+typedef char CloneOwnerDispatchSize[sizeof(CloneOwnerDispatchTables) == 224 ? 1 : -1];
+extern const CloneOwnerDispatchTables jtbl_0045E120;
+
+typedef struct {
+    ControllerEffectCallback owner[2];
+    Mvc2StateCallback other[4];
+} SideOwnerDispatchTables;
 #endif

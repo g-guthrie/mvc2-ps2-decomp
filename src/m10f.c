@@ -36,7 +36,7 @@ void func_001D5560(s8 *p) {
 }
 
 extern s32 func_001757E0(u8 *, s32, s32);
-void func_00197EE0(u8 *p) {
+void func_00197EE0(u8 *p, u8 *owner_unused) {
     s8 r = func_00175700(p);
     if (r < 0) {
         u32 t = p[5];

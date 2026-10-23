@@ -45,7 +45,7 @@ void func_0038A380(u8 *a0, u8 *a1) {
     }
 }
 
-void func_00197CA0(u8 *p) {
+void func_00197CA0(u8 *p, u8 *owner_unused) {
     s8 r = func_00175700(p);
     if (r < 0) {
         u32 t = p[5];

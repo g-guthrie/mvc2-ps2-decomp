@@ -183,7 +183,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/argument_dispatch_heads.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/argument_dispatch_heads.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/preaction_dispatch_heads.c -c -lang c -O3 -sdatathreshold 8 \
+    src/preaction_dispatch_heads.c -c -lang c -i src -O3 -sdatathreshold 8 \
     -o "$BUILD/preaction_dispatch_heads.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/success_initializers.c -c -lang c $MATCH_FLAGS \
@@ -20249,5 +20249,21 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/capture_phases_0026d340.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/capture_phases_0026d340.o"
 "$PYTHON" tools/verify_object.py "$BUILD/capture_phases_0026d340.o" private/SLUS_204.86.rom --source src/capture_phases_0026d340.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/recovered_entry_0020f440.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/recovered_entry_0020f440.o"
+"$PYTHON" tools/verify_object.py "$BUILD/recovered_entry_0020f440.o" private/SLUS_204.86.rom --source src/recovered_entry_0020f440.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/recovered_entry_00293710.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/recovered_entry_00293710.o"
+"$PYTHON" tools/verify_object.py "$BUILD/recovered_entry_00293710.o" private/SLUS_204.86.rom --source src/recovered_entry_00293710.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/recovered_owner_00197e40.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/recovered_owner_00197e40.o"
+"$PYTHON" tools/verify_object.py "$BUILD/recovered_owner_00197e40.o" private/SLUS_204.86.rom --source src/recovered_owner_00197e40.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/recovered_linked_entries_00328.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/recovered_linked_entries_00328.o"
+"$PYTHON" tools/verify_object.py "$BUILD/recovered_linked_entries_00328.o" private/SLUS_204.86.rom --source src/recovered_linked_entries_00328.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

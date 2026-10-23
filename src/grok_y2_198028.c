@@ -4,7 +4,7 @@ typedef float f32;
 
 extern int func_00175700(u8 *);
 
-void func_00198030(u8 *p)
+void func_00198030(u8 *p, u8 *owner_unused)
 {
     func_00175700(p);
     if ((s8)p[0x151] == 0)

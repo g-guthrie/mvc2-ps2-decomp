@@ -18894,3 +18894,9 @@ func_001A8E70,0x001A8E70,0x1FC,src/trajectory_launch_001a8e70.c,complete
 func_001A8D70,0x001A8D70,0xA8,src/launch_initializer_001a8d70.c,complete
 func_002DF5E0,0x002DF5E0,0x2D8,src/capture_flight_002df5e0.c,complete
 func_0026D340,0x0026D340,0x244,src/capture_phases_0026d340.c,complete
+func_0020F440,0x0020F440,0x44,src/recovered_entry_0020f440.c,complete
+func_00293710,0x00293710,0x120,src/recovered_entry_00293710.c,complete
+func_00197E40,0x00197E40,0x94,src/recovered_owner_00197e40.c,complete
+func_00328CA0,0x00328CA0,0x8C,src/recovered_linked_entries_00328.c,complete
+func_00328EF0,0x00328EF0,0x8C,src/recovered_linked_entries_00328.c,complete
+func_00329540,0x00329540,0x8C,src/recovered_linked_entries_00328.c,complete

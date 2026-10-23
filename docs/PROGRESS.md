@@ -5413,3 +5413,37 @@ full hybrid linkage/packing pass. CODE is 2,685,436 / 3,293,696 bytes
 DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+
+
+## 2026-10-22 — Recover ordinary C from the older Grok branch
+
+Reviewed 63 old uncredited catalog rows against the current retail target.
+Thirty-six rows reproduced their claimed bytes under the old profiles, but
+byte identity alone was insufficient: several used handwritten instructions,
+manual NOPs, simplified static callees, or an unproven ambient-register contract.
+Those candidates remain uncredited. Recovered six complete ordinary C entries:
+`0020F440` (68), `00293710` (288), `00197E40` (148), `00328CA0` (140),
+`00328EF0` (140), and `00329540` (140), adding 924 CODE bytes. All six match
+MWCCPS2 3.0.3 -O4,p -sdatathreshold 8 after prototype and view cleanup.
+Their true native entry names replace old residual names; 68 prefix alignment
+bytes remain uncredited. The counter bank uses a flexible tail view rather
+than asserting a one-element array bound for a dynamic selector.
+
+The linked-effect bank at 0045E120 now represents its unary selectors/states,
+three four-entry owner slices, eight intervening unary entries, and final
+four-entry owner slice. The three new linked constructors use the owner
+supplied explicitly by their existing dispatchers. The 00197920 family now
+retains its owner through mode and side dispatch, with matching callback
+declarations; integer-address function casts have been removed from its
+seven-entry owner table. The small side bank preserves its two owner entries
+and four unrelated unary entries. Native tail helpers express the real owner
+argument they move into A0 instead of forwarding four fabricated integers.
+All original callback values and DATA owner bytes remain unchanged; these
+interface repairs add no DATA credit.
+
+Catalog/build checks, all 126 tests, whole compiler-object verification, and
+full hybrid linkage/packing pass. CODE is 2,686,360 / 3,293,696 bytes
+(81.5607%), with 18,837 matching functions among 20,375 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.

@@ -1,9 +1,9 @@
-typedef unsigned char u8;
+#include "owner_effect_callbacks.h"
 typedef signed char s8;
 typedef void (*Fn)(u8 *);
 
-extern Fn jtbl_0044A3A0[];
-extern Fn jtbl_0044A3B0[];
+extern ControllerEffectCallback const jtbl_0044A3A0[4];
+extern ControllerEffectCallback const jtbl_0044A3B0[3];
 extern Fn jtbl_0044AD80[];
 extern Fn jtbl_0044F4B0[];
 extern Fn jtbl_0044FAD0[];
@@ -78,7 +78,7 @@ extern Fn jtbl_00463E70[];
 extern Fn jtbl_00463EA0[];
 extern Fn jtbl_00473C50[];
 extern Fn jtbl_004BF4E0[2];
-extern Fn jtbl_004BF5B8[2];
+extern const SideOwnerDispatchTables jtbl_004BF5B8 __attribute__((section(".sdata")));
 extern Fn jtbl_004C0140[2];
 extern Fn jtbl_004C0610[2];
 extern Fn jtbl_004C06F8[2];
@@ -96,11 +96,11 @@ extern Fn jtbl_004C1E60[2];
 
 void func_0017CA70(u8 *p) { p[513] = 2; jtbl_004BF4E0[p[6]](p); }
 
-void func_00197E10(u8 *p) { p[49] = 4; jtbl_0044A3A0[p[5]](p); }
+void func_00197E10(u8 *p, u8 *owner) { p[49] = 4; jtbl_0044A3A0[p[5]](p, owner); }
 
-void func_00198000(u8 *p) { *(s8 *)(p + 49) = -4; jtbl_0044A3B0[p[5]](p); }
+void func_00198000(u8 *p, u8 *owner) { *(s8 *)(p + 49) = -4; jtbl_0044A3B0[p[5]](p, owner); }
 
-void func_001980A0(u8 *p) { p[49] = 4; jtbl_004BF5B8[p[5]](p); }
+void func_001980A0(u8 *p, u8 *owner) { p[49] = 4; jtbl_004BF5B8.owner[p[5]](p, owner); }
 
 void func_0019FA80(u8 *p) { p[316] = 0; jtbl_0044AD80[p[5]](p); }
 

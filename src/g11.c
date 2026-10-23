@@ -179,7 +179,7 @@ void func_003884D0(u8 *a, u8 *b) {
 }
 
 
-void func_00197F70(u8 *a) {
+void func_00197F70(u8 *a, u8 *owner_unused) {
     *(f32 *)(a + 0x34) += *(f32 *)(a + 0x5C);
     *(f32 *)(a + 0x5C) += *(f32 *)(a + 0x68);
     *(f32 *)(a + 0x38) += *(f32 *)(a + 0x60);
