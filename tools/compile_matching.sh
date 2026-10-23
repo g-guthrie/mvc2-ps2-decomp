@@ -20466,4 +20466,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/owner_follow_effect_001ba0b0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_follow_effect_001ba0b0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_follow_effect_001ba0b0.o" private/SLUS_204.86.rom --source src/owner_follow_effect_001ba0b0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/visible_owner_animation_entries.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/visible_owner_animation_entries.o"
+"$PYTHON" tools/verify_object.py "$BUILD/visible_owner_animation_entries.o" private/SLUS_204.86.rom --source src/visible_owner_animation_entries.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
