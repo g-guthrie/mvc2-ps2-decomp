@@ -33,8 +33,10 @@ extern W1B3D90_T D_004B5710[];
 extern W1B3D90_T D_004B5712[];
 typedef struct { u8 pad0[0x21]; u8 idx; u8 pad22[0x12]; f32 f34; f32 f38; u8 pad3c[0x104]; s16 h140; } W1B3D90_O;
 
-void func_001B3D90(W1B3D90_O *s, W1B3D90_O *d)
+void func_001B3D90(u8 *source, u8 *destination)
 {
+    W1B3D90_O *s = (W1B3D90_O *)source;
+    W1B3D90_O *d = (W1B3D90_O *)destination;
     f32 x;
     s16 h;
     d->f34 = s->f34;

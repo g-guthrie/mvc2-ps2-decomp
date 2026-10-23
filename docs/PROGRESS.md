@@ -5447,3 +5447,33 @@ full hybrid linkage/packing pass. CODE is 2,686,360 / 3,293,696 bytes
 DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+
+
+## 2026-10-22 — Airborne response and owner-linked animation entries
+
+Recovered three complete functions for 1,668 additional exact CODE bytes:
+`00218BC0` (576), `001B3450` (488), and `003CD750` (604). The airborne
+response matches MWCCPS2 3.0.3 -O3,p; the two linked animation/effect entries
+match MWCCPS2 3.0-011126 -O3,p. All use -sdatathreshold 0.
+
+The airborne routine reconstructs hit response, input-dependent animation
+changes, landing, and the animation-completion transition. The mode detector
+caches the owner's frame/animation pair and selects the corresponding linked
+state. The randomized entry copies inherited state, selects layer and frame
+bytes, and reproduces the native unsigned-to-float random-motion calculation.
+The RNG declaration retains its actual signed return type; unsigned conversion
+is explicit at the call sites that require it. Its two byte banks remain opaque
+native CODE views, with no new DATA extent or reconstruction credit.
+
+The twelve-entry linked callback table now shares actor/owner pointer
+signatures with its actual producer and existing implementations. No-op and
+cleanup callbacks explicitly accept their provided arguments. The existing
+positioning and motion callbacks keep their typed field views behind public
+actor pointers; all original body bytes and table pointer values remain exact.
+
+Catalog/build checks, all 126 tests, whole compiler-object verification, and
+full hybrid linkage/packing pass. CODE is 2,688,028 / 3,293,696 bytes
+(81.6113%), with 18,840 matching functions among 20,376 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.

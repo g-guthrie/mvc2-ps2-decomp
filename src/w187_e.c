@@ -13,7 +13,9 @@ extern void func_00175700(u8 *);
 typedef struct { u8 p0[0x24]; s8 b24; u8 p1[0x0F]; f32 f34; f32 f38; u8 p2[0x104]; s16 h140; u8 p3[0xE]; s8 b150; s8 b151; u8 p4[0x16]; u16 h168; } SB;
 typedef struct { u8 p0[0x24]; s8 b24; u8 p1[0x0F]; f32 f34; f32 f38; } SA;
 
-void func_003CDDF0(SA *a, SB *b) {
+void func_003CDDF0(u8 *actor, u8 *owner) {
+    SB *b = (SB *)owner;
+    SA *a = (SA *)actor;
     if (((u8 *)b)[4] >= 2 || b->h168 != *(u32 *)((u8 *)a + 0xD0)) {
         *(u32 *)((u8 *)a + 0x118) = 0;
         func_003CE3D0((u8 *)a, (u8 *)b);

@@ -1355,9 +1355,9 @@ void func_003CAB10(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40((s
 
 void func_003CD600(u8 *p, void *owner) { p[316] = 0; func_003DAA40((struct Object *)(p)); }
 
-void func_003CDB80(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40((struct Object *)(p)); }
+void func_003CDB80(u8 *p, u8 *owner_unused) { p[316] = 0; func_003DAA40((struct Object *)(p)); }
 
-void func_003CE480(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_003CE480(u8 *actor, u8 *owner_unused) { func_003DAA40((struct Object *)actor); }
 
 void func_003D1A00(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00143C60(a0, a1, a2, a3); }
 

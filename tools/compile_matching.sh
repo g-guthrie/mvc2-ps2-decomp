@@ -20266,4 +20266,16 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/recovered_linked_entries_00328.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/recovered_linked_entries_00328.o"
 "$PYTHON" tools/verify_object.py "$BUILD/recovered_linked_entries_00328.o" private/SLUS_204.86.rom --source src/recovered_linked_entries_00328.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/airborne_reaction_00218bc0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/airborne_reaction_00218bc0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/airborne_reaction_00218bc0.o" private/SLUS_204.86.rom --source src/airborne_reaction_00218bc0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_animation_modes_001b3450.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_animation_modes_001b3450.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_animation_modes_001b3450.o" private/SLUS_204.86.rom --source src/owner_animation_modes_001b3450.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/randomized_linked_entry_003cd750.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/randomized_linked_entry_003cd750.o"
+"$PYTHON" tools/verify_object.py "$BUILD/randomized_linked_entry_003cd750.o" private/SLUS_204.86.rom --source src/randomized_linked_entry_003cd750.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

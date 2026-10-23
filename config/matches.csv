@@ -18900,3 +18900,6 @@ func_00197E40,0x00197E40,0x94,src/recovered_owner_00197e40.c,complete
 func_00328CA0,0x00328CA0,0x8C,src/recovered_linked_entries_00328.c,complete
 func_00328EF0,0x00328EF0,0x8C,src/recovered_linked_entries_00328.c,complete
 func_00329540,0x00329540,0x8C,src/recovered_linked_entries_00328.c,complete
+func_00218BC0,0x00218BC0,0x240,src/airborne_reaction_00218bc0.c,complete
+func_001B3450,0x001B3450,0x1E8,src/owner_animation_modes_001b3450.c,complete
+func_003CD750,0x003CD750,0x25C,src/randomized_linked_entry_003cd750.c,complete

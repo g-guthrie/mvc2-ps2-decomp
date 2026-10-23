@@ -196,7 +196,7 @@ extern DispatchFn2 jtbl_00475EF0[];
 extern DispatchFn2 jtbl_00476530[];
 extern DispatchFn2 jtbl_004765D0[];
 extern DispatchFn2 jtbl_00476650[];
-extern DispatchFn2 jtbl_00476680[];
+extern void (*const jtbl_00476680[12])(u8 *, u8 *);
 extern DispatchFn1 jtbl_0044F4A0[];
 extern DispatchFn1 jtbl_0044F4C0[];
 extern DispatchFn1 jtbl_0044FA60[];

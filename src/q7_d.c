@@ -6,7 +6,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-extern void func_001B3D90(void *q, void *p);
+extern void func_001B3D90(u8 *q, u8 *p);
 extern s32 func_00175670(void *p);
 
 typedef struct {

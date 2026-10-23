@@ -156,7 +156,7 @@ void func_0019F040(void) {}
 
 void func_001A9160(u8 *actor_unused, u8 *owner_unused) {}
 
-void func_001B3E20(void) {}
+void func_001B3E20(void *actor_unused) {}
 
 void func_001B53D0(void) {}
 

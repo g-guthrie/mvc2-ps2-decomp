@@ -17,7 +17,7 @@ extern void func_00184540(void *p);
 extern s32 func_001864A0(void *p);
 extern void func_001865B0(void *p);
 
-void func_003CE3D0(u8 *p) {
+void func_003CE3D0(u8 *p, u8 *owner_unused) {
     u8 *q = *(u8 **)(p + 0x1C4);
     f32 z, z2;
     if (q != 0) {
