@@ -29,13 +29,13 @@ void func_00345B70(u8 *p) {
         p[316] = 0;
     }
 }
-void func_0035C3F0(u8 *p) {
+void func_0035C3F0(u8 *p, u8 *owner_unused) {
     if ((s8)func_00175700(p) < 0) {
         p[4] = 2;
         p[316] = 0;
     }
 }
-void func_0035F990(u8 *p) {
+void func_0035F990(u8 *p, u8 *owner_unused) {
     if ((s8)func_00175700(p) < 0) {
         p[4] = 2;
         p[316] = 0;

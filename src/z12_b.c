@@ -9,12 +9,13 @@ typedef struct { u8 p0[2]; u8 b2; u8 p3; u8 b4; u8 b5; u8 b6; u8 b7; u8 p8[0x1C-
 
 typedef struct { u8 pad0[4]; u8 b4; u8 b5; u8 b6; u8 pad7[0x34-7]; f32 f34; f32 f38; u8 pad3c[0x5C-0x3C]; f32 f5c; f32 f60; u8 pad64[4]; f32 f68; f32 f6c; } E1;
 extern u8 D_004C1B54[4];
-void func_0035C310(E1 *p, u8 *q) {
+void func_0035C310(u8 *actor, u8 *q) {
     extern void func_00175700();
     extern s32 func_00174240();
     extern void func_001757E0(u8 *, s32, u8);
     extern void func_001E7F60();
     u8 *r;
+    E1 *p = (E1 *)actor;
     r = q + 0x2B8;
     func_00175700(p);
     p->f34 += p->f5c;

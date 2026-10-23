@@ -5496,3 +5496,29 @@ DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
 The linked-trail and direction-selection candidates investigated alongside this
 entry remain compiler mismatches and receive no catalog credit.
+
+
+## 2026-10-22 — Linked hit responses
+
+Recovered `0035C0B0` (600 bytes) and `0035F660` (588 bytes), adding 1,188
+exact CODE bytes under MWCCPS2 3.0.3 -O3,p -sdatathreshold 0. Both retain
+owner-relative placement while their owning action remains active, handle
+successful and rejected contact, and initialize color plus signed fixed-point
+fade velocity when the action ends. The differing visibility/owner-state writes
+are preserved. Negative byte sentinels and GP-relative animation-bank views
+retain their actual native representations.
+
+The two three-entry inner callback tables now use actor/owner signatures,
+and their existing outer dispatchers forward the provided owner. The effect
+creation helpers expose actor pointers and preserve their actual integer return
+values; allocated callbacks and owner arguments are stored with pointer types.
+Existing typed field views remain internal to the motion updater. Color,
+velocity, and animation banks remain opaque CODE views with no new DATA extent
+or reconstruction credit.
+
+Catalog/build checks, all 126 tests, whole compiler-object verification, and
+full hybrid linkage/packing pass. CODE is 2,689,720 / 3,293,696 bytes
+(81.6627%), with 18,843 matching functions among 20,376 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.

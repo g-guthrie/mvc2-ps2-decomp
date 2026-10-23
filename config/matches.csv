@@ -18904,3 +18904,5 @@ func_00218BC0,0x00218BC0,0x240,src/airborne_reaction_00218bc0.c,complete
 func_001B3450,0x001B3450,0x1E8,src/owner_animation_modes_001b3450.c,complete
 func_003CD750,0x003CD750,0x25C,src/randomized_linked_entry_003cd750.c,complete
 func_002E2350,0x002E2350,0x1F8,src/scaled_motion_entry_002e2350.c,complete
+func_0035C0B0,0x0035C0B0,0x258,src/linked_hit_responses.c,complete
+func_0035F660,0x0035F660,0x24C,src/linked_hit_responses.c,complete

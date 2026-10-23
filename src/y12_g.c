@@ -5,12 +5,13 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
+typedef void (*ActorCallback)(u8 *);
 
 extern s16 D_004C27A4[2];
-void func_001A01C0();
-void func_001A4C30();
+void func_001A01C0(u8 *);
+void func_001A4C30(u8 *);
 
-s32 func_001A00E0(s32 a, s32 n, s32 b, s32 c) {
+s32 func_001A00E0(u8 *a, s32 n, s32 b, s32 c) {
     extern u8 *func_003DA750();
     s32 i;
     u8 *o;
@@ -23,15 +24,15 @@ s32 func_001A00E0(s32 a, s32 n, s32 b, s32 c) {
             o[0x20] = b;
             o[0x21] = c;
             *(s16 *)(o + 0x1E) = n;
-            *(void **)(o + 0x10) = func_001A01C0;
-            *(s32 *)(o + 0x18) = a;
+            *(ActorCallback *)(o + 0x10) = func_001A01C0;
+            *(u8 **)(o + 0x18) = a;
         }
         if (c != 0) c--;
     }
     return i;
 }
 
-s32 func_001A4B50(s32 a, s32 n, s32 b, s32 c) {
+s32 func_001A4B50(u8 *a, s32 n, s32 b, s32 c) {
     extern u8 *func_003DA750();
     s32 i;
     u8 *o;
@@ -44,8 +45,8 @@ s32 func_001A4B50(s32 a, s32 n, s32 b, s32 c) {
             o[0x20] = b;
             o[0x21] = c;
             *(s16 *)(o + 0x1E) = n;
-            *(void **)(o + 0x10) = func_001A4C30;
-            *(s32 *)(o + 0x18) = a;
+            *(ActorCallback *)(o + 0x10) = func_001A4C30;
+            *(u8 **)(o + 0x18) = a;
         }
         if (c != 0) c--;
     }
