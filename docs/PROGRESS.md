@@ -5543,3 +5543,29 @@ DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
 The owner-following update investigated alongside this entry remains a whole-
 function compiler mismatch and receives no credit.
+
+
+## 2026-10-22 — Variant motion, motion lanes, and collision transition
+
+Recovered three complete functions, adding 1,500 exact CODE bytes:
+`002B4E90` (532) selects action/motion values and cycles its animation state;
+`002FDF60` (484) selects ground/air variants and initializes four signed
+fixed-point motion lanes; `0029F170` (484) handles landing, timed emissions,
+and positive/negative collision notifications. The first two match MWCCPS2
+3.0.3 -O3,p; the collision transition matches 3.0-011126 -O3,p. All use
+-sdatathreshold 0.
+
+The context entry matches the existing actor/opaque-context callback contract.
+Its context is explicitly supplied from actor+0x2B8 through the existing
+0045C1C0/0045C170 dispatch path. The collision transition uses typed views for
+its actual timers, motion fields, and signed status word while retaining the
+public actor-pointer interface. Its unordered ground comparison and the
+distinct positive/negative writes remain unchanged. Animation and motion banks
+remain opaque CODE views; no DATA extent or reconstruction credit is added.
+
+Catalog/build checks, all 126 tests, whole compiler-object verification, and
+full hybrid linkage/packing pass. CODE is 2,691,980 / 3,293,696 bytes
+(81.7313%), with 18,847 matching functions among 20,377 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.

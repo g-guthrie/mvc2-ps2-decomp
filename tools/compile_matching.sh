@@ -20290,4 +20290,16 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/linked_contact_capture_0035b800.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/linked_contact_capture_0035b800.o"
 "$PYTHON" tools/verify_object.py "$BUILD/linked_contact_capture_0035b800.o" private/SLUS_204.86.rom --source src/linked_contact_capture_0035b800.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/variant_motion_entry_002b4e90.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/variant_motion_entry_002b4e90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/variant_motion_entry_002b4e90.o" private/SLUS_204.86.rom --source src/variant_motion_entry_002b4e90.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/motion_lane_entry_002fdf60.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/motion_lane_entry_002fdf60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/motion_lane_entry_002fdf60.o" private/SLUS_204.86.rom --source src/motion_lane_entry_002fdf60.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/collision_transition_0029f170.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/collision_transition_0029f170.o"
+"$PYTHON" tools/verify_object.py "$BUILD/collision_transition_0029f170.o" private/SLUS_204.86.rom --source src/collision_transition_0029f170.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
