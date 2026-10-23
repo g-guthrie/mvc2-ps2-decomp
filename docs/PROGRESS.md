@@ -5850,3 +5850,20 @@ verification, and full hybrid linkage/packing pass. CODE is 2,713,640 /
 DATA remains 468,869 / 648,064 bytes. The reconstructed ELF retains retail
 SHA-256 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes.
+
+## Owner-relative launch and delayed-scatter variants
+
+Eight whole functions add 2,900 bytes: side placement (280), two directional
+launches (368 and 372), table-selected velocity (348), indexed side launch
+(360), timed upward entry (340), indexed-height entry (308), and delayed
+scatter (524). The shared position routines select the signed offset before
+adding the owner coordinate. The scatter routine preserves its signed
+16-bit countdown and the original fixed -15 negative-offset behavior.
+No additional DATA credit is added.
+
+All 126 tests, catalog and source/build coverage checks, whole-object
+verification, and full hybrid linkage/packing pass. CODE is 2,716,540 /
+3,293,696 bytes (82.4769%), with 18,927 matches among 20,407 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF retains retail
+SHA-256 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes.

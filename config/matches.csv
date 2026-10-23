@@ -18982,3 +18982,11 @@ func_0019B7D0,0x0019B7D0,0x144,src/owner_saved_mode_entry_0019b7d0.c,complete
 func_00193BA0,0x00193BA0,0x1F8,src/owner_circular_entry_00193ba0.c,complete
 func_0019C240,0x0019C240,0x1D4,src/owner_offset_animation_0019c240.c,complete
 func_0019BAF0,0x0019BAF0,0x228,src/owner_random_scatter_0019baf0.c,complete
+func_001AD2C0,0x001AD2C0,0x170,src/owner_side_launch_entries.c,complete
+func_001AD640,0x001AD640,0x174,src/owner_side_launch_entries.c,complete
+func_001AD9C0,0x001AD9C0,0x118,src/owner_side_launch_entries.c,complete
+func_001AE060,0x001AE060,0x15C,src/owner_velocity_launch_entries.c,complete
+func_001AE540,0x001AE540,0x168,src/owner_velocity_launch_entries.c,complete
+func_001AE880,0x001AE880,0x154,src/owner_side_launch_entries.c,complete
+func_001AF150,0x001AF150,0x134,src/owner_side_launch_entries.c,complete
+func_001AF560,0x001AF560,0x20C,src/owner_side_launch_entries.c,complete

@@ -20562,4 +20562,12 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/owner_random_scatter_0019baf0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_random_scatter_0019baf0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_random_scatter_0019baf0.o" private/SLUS_204.86.rom --source src/owner_random_scatter_0019baf0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_side_launch_entries.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_side_launch_entries.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_side_launch_entries.o" private/SLUS_204.86.rom --source src/owner_side_launch_entries.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_velocity_launch_entries.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_velocity_launch_entries.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_velocity_launch_entries.o" private/SLUS_204.86.rom --source src/owner_velocity_launch_entries.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
