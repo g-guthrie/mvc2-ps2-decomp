@@ -25,7 +25,7 @@ void func_001C5AD0(u8 *p, u8 *owner_unused) {
     }
     func_00175700(p);
 }
-void func_001C5F40(u8 *p) {
+void func_001C5F40(u8 *p, u8 *owner_unused) {
     *(f32 *)(p + 52) += *(f32 *)(p + 92);
     *(f32 *)(p + 92) += *(f32 *)(p + 104);
     *(f32 *)(p + 56) += *(f32 *)(p + 96);

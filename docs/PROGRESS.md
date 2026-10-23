@@ -5642,3 +5642,34 @@ full hybrid linkage/packing pass. CODE is 2,697,556 / 3,293,696 bytes
 DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+
+
+## 2026-10-22 — Motion-bank launches and owner-provided phase entries
+
+Recovered six complete functions, adding 1,328 exact CODE bytes:
+`001C5E30` (264) initializes an effect on the opposite owner-facing stage edge;
+`001C5DE0` (72) updates owner work and forwards the owner through its phase bank;
+`002E6290` (424) selects and applies four fixed-point motion lanes;
+`003639B0` (352) advances after a target crossing or native readiness check;
+`001290A0` (104) gates mode callbacks; and `0034A950` (112) advances its
+owner work on animation completion. All match MWCCPS2 3.0.3 -O3,p
+-sdatathreshold 0.
+
+The existing 001C5950 mode dispatcher supplies actor+0x18 through the
+0044CCB0 bank; the recovered 001C5DE0 phase dispatcher forwards that owner
+to 001C5E30 through 0044CD10. The 001C5F40 helper now explicitly accepts
+the actual unused owner argument, preserving its original 120 bytes.
+The 0034A950 entry explicitly supplies both arguments read by 0034B040.
+The launch entry receives actor+0x2B8 from its existing context dispatcher;
+motion records retain their native four-word layout. Unordered float
+comparisons, signed selectors, full function extents, and alignment gaps
+are preserved. No DATA credit is added.
+
+Catalog/build checks, all 126 tests, whole compiler-object verification, and
+full hybrid linkage/packing pass. CODE is 2,698,884 / 3,293,696 bytes
+(81.9409%), with 18,870 matching functions among 20,399 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+The investigated input selector, inherited entries, global-request update,
+and controller-slot selector remain whole-function mismatches and uncredited.

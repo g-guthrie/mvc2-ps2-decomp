@@ -20366,4 +20366,20 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_motion_decay_00396a70.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_motion_decay_00396a70.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_motion_decay_00396a70.o" private/SLUS_204.86.rom --source src/owner_motion_decay_00396a70.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/opposite_edge_entry_001c5e30.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/opposite_edge_entry_001c5e30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/opposite_edge_entry_001c5e30.o" private/SLUS_204.86.rom --source src/opposite_edge_entry_001c5e30.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/selected_motion_launch_002e6290.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/selected_motion_launch_002e6290.o"
+"$PYTHON" tools/verify_object.py "$BUILD/selected_motion_launch_002e6290.o" private/SLUS_204.86.rom --source src/selected_motion_launch_002e6290.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/target_crossing_update_003639b0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/target_crossing_update_003639b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/target_crossing_update_003639b0.o" private/SLUS_204.86.rom --source src/target_crossing_update_003639b0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/small_control_entries.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/small_control_entries.o"
+"$PYTHON" tools/verify_object.py "$BUILD/small_control_entries.o" private/SLUS_204.86.rom --source src/small_control_entries.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
