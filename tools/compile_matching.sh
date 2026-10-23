@@ -20406,4 +20406,24 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/boundary_snap_update_002645d0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/boundary_snap_update_002645d0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/boundary_snap_update_002645d0.o" private/SLUS_204.86.rom --source src/boundary_snap_update_002645d0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/script_action_init_0029bb90.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/script_action_init_0029bb90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/script_action_init_0029bb90.o" private/SLUS_204.86.rom --source src/script_action_init_0029bb90.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/direction_exit_motion_00242aa0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/direction_exit_motion_00242aa0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/direction_exit_motion_00242aa0.o" private/SLUS_204.86.rom --source src/direction_exit_motion_00242aa0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_direction_exit_00239240.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_direction_exit_00239240.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_direction_exit_00239240.o" private/SLUS_204.86.rom --source src/owner_direction_exit_00239240.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/selection_confirm_phases_0032bb70.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/selection_confirm_phases_0032bb70.o"
+"$PYTHON" tools/verify_object.py "$BUILD/selection_confirm_phases_0032bb70.o" private/SLUS_204.86.rom --source src/selection_confirm_phases_0032bb70.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/menu_strip_render_003d3b40.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/menu_strip_render_003d3b40.o"
+"$PYTHON" tools/verify_object.py "$BUILD/menu_strip_render_003d3b40.o" private/SLUS_204.86.rom --source src/menu_strip_render_003d3b40.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

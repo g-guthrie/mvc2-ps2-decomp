@@ -18939,3 +18939,8 @@ func_003539D0,0x003539D0,0x2A8,src/linked_trail_update_003539d0.c,complete
 func_002AF510,0x002AF510,0x140,src/rise_contact_update_002af510.c,complete
 func_00319480,0x00319480,0x140,src/target_search_transition_00319480.c,complete
 func_002645D0,0x002645D0,0x13C,src/boundary_snap_update_002645d0.c,complete
+func_0029BB90,0x0029BB90,0x134,src/script_action_init_0029bb90.c,complete
+func_00242AA0,0x00242AA0,0x1B4,src/direction_exit_motion_00242aa0.c,complete
+func_00239240,0x00239240,0x1B8,src/owner_direction_exit_00239240.c,complete
+func_0032BB70,0x0032BB70,0x278,src/selection_confirm_phases_0032bb70.c,complete
+func_003D3B40,0x003D3B40,0x290,src/menu_strip_render_003d3b40.c,complete

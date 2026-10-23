@@ -5743,3 +5743,16 @@ full hybrid linkage/packing pass. CODE is 2,701,632 / 3,293,696 bytes
 DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+
+## Five actor, selection, and menu functions
+
+Recovered five complete functions: script action initialization (308 bytes),
+direction exit motion (436 bytes), owner direction exit (440 bytes), selection
+confirmation phases (632 bytes), and menu strip rendering (656 bytes). Each
+object matches its whole retail function; no data credit is added.
+
+All 126 tests, catalog and build coverage checks, and full hybrid linkage/packing
+pass. CODE is 2,704,104 / 3,293,696 bytes (82.0994%), with 18,881 matching
+functions among 20,400 cataloged spans. The reconstructed ELF retains retail
+SHA-256 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,706,313 bytes.
