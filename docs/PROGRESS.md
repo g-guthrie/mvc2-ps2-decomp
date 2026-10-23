@@ -5802,3 +5802,19 @@ and full hybrid linkage/packing pass. CODE is 2,707,864 / 3,293,696 bytes
 468,869 / 648,064 bytes. The reconstructed ELF retains retail SHA-256
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes.
+
+## Owner dispatch and directional motion entries
+
+Six whole functions add 1,240 bytes: owner-state dispatch (184), its wait-state
+transition (64), ground-position entry (188), directional drift setup (288),
+acceleration entry (276), and direction-dependent offset entry (240).
+The owner argument is preserved at the dispatcher and supplied where native
+state handlers read it. The eight alignment bytes between the first two
+functions remain uncredited. No additional DATA credit is added.
+
+All 126 tests, catalog and source/build coverage checks, whole-object
+verification, and full hybrid linkage/packing pass. CODE is 2,709,104 /
+3,293,696 bytes (82.2512%), with 18,905 matches among 20,405 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF retains retail
+SHA-256 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes.

@@ -20494,4 +20494,24 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/owner_second_animation_001d4850.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_second_animation_001d4850.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_second_animation_001d4850.o" private/SLUS_204.86.rom --source src/owner_second_animation_001d4850.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_status_dispatch_0019f820.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_status_dispatch_0019f820.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_status_dispatch_0019f820.o" private/SLUS_204.86.rom --source src/owner_status_dispatch_0019f820.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_ground_entry_001a0bd0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_ground_entry_001a0bd0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_ground_entry_001a0bd0.o" private/SLUS_204.86.rom --source src/owner_ground_entry_001a0bd0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_drift_setup_001a1110.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_drift_setup_001a1110.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_drift_setup_001a1110.o" private/SLUS_204.86.rom --source src/owner_drift_setup_001a1110.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_acceleration_entry_001a4650.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_acceleration_entry_001a4650.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_acceleration_entry_001a4650.o" private/SLUS_204.86.rom --source src/owner_acceleration_entry_001a4650.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_direction_offset_001a5a90.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_direction_offset_001a5a90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_direction_offset_001a5a90.o" private/SLUS_204.86.rom --source src/owner_direction_offset_001a5a90.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

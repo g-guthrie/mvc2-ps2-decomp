@@ -18962,3 +18962,9 @@ func_0037B780,0x0037B780,0xC8,src/visible_layer_owner_0037b780.c,complete
 func_001A6ED0,0x001A6ED0,0xB4,src/owner_hidden_layer_001a6ed0.c,complete
 func_001D46A0,0x001D46A0,0xA8,src/owner_first_animation_001d46a0.c,complete
 func_001D4850,0x001D4850,0xC0,src/owner_second_animation_001d4850.c,complete
+func_0019F820,0x0019F820,0xB8,src/owner_status_dispatch_0019f820.c,complete
+func_0019F8E0,0x0019F8E0,0x40,src/owner_status_dispatch_0019f820.c,complete
+func_001A0BD0,0x001A0BD0,0xBC,src/owner_ground_entry_001a0bd0.c,complete
+func_001A1110,0x001A1110,0x120,src/owner_drift_setup_001a1110.c,complete
+func_001A4650,0x001A4650,0x114,src/owner_acceleration_entry_001a4650.c,complete
+func_001A5A90,0x001A5A90,0xF0,src/owner_direction_offset_001a5a90.c,complete

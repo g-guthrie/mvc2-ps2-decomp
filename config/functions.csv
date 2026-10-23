@@ -3333,7 +3333,9 @@ func_0019F4F0,0x0019F4F0,0x24,0x0019F514,code,matching-c-head-split
 residual_0019F514,0x0019F514,0x174,0x0019F688,assembly_residual,verified-boundary-after-matching-head
 func_0019F690,0x0019F690,0x104,0x0019F794,code,spimdisasm-explicit-size-before-first-data
 func_0019F7A0,0x0019F7A0,0x74,0x0019F814,code,spimdisasm-explicit-size-before-first-data
-func_0019F820,0x0019F820,0x100,0x0019F920,code,spimdisasm-explicit-size-before-first-data
+func_0019F820,0x0019F820,0xB8,0x0019F8D8,code,verified-complete-c-function
+residual_0019F8D8,0x0019F8D8,0x8,0x0019F8E0,assembly_residual,native-prefix-before-verified-c-body
+func_0019F8E0,0x0019F8E0,0x40,0x0019F920,code,verified-complete-c-function
 func_0019F920,0x0019F920,0x30,0x0019F950,code,spimdisasm-explicit-size-before-first-data
 func_0019F950,0x0019F950,0x130,0x0019FA80,code,spimdisasm-explicit-size-before-first-data
 func_0019FA80,0x0019FA80,0x24,0x0019FAA4,code,matching-c-head-split
@@ -3365,7 +3367,7 @@ func_001A09B0,0x001A09B0,0x170,0x001A0B20,code,spimdisasm-explicit-size-before-f
 func_001A0B20,0x001A0B20,0x5C,0x001A0B7C,code,spimdisasm-explicit-size-before-first-data
 func_001A0B80,0x001A0B80,0x24,0x001A0BA4,code,matching-c-head-split
 func_001A0BB0,0x001A0BB0,0x20,0x001A0BD0,code,verified-complete-c-function
-residual_001A0BD0,0x001A0BD0,0xBC,0x001A0C8C,assembly_residual,native-suffix-after-verified-c-body
+func_001A0BD0,0x001A0BD0,0xBC,0x001A0C8C,code,verified-complete-c-function
 func_001A0C90,0x001A0C90,0x6C,0x001A0CFC,code,spimdisasm-explicit-size-before-first-data
 func_001A0D00,0x001A0D00,0x58,0x001A0D58,code,independent-tail-dispatch-and-table-referenced-entry
 func_001A0D60,0x001A0D60,0xDC,0x001A0E3C,code,verified-complete-c-function
@@ -3374,7 +3376,7 @@ func_001A0F40,0x001A0F40,0x20,0x001A0F60,code,matching-c-head-split
 func_001A0F60,0x001A0F60,0xFC,0x001A105C,code,verified-complete-c-function
 func_001A1060,0x001A1060,0x8C,0x001A10EC,code,spimdisasm-explicit-size-before-first-data
 func_001A10F0,0x001A10F0,0x20,0x001A1110,code,matching-c-head-split
-residual_001A1110,0x001A1110,0x120,0x001A1230,assembly_residual,verified-boundary-after-matching-head
+func_001A1110,0x001A1110,0x120,0x001A1230,code,verified-complete-c-function
 func_001A1230,0x001A1230,0xE8,0x001A1318,code,spimdisasm-explicit-size-before-first-data
 func_001A1320,0x001A1320,0x8,0x001A1328,code,spimdisasm-explicit-size-before-first-data
 func_001A1330,0x001A1330,0xD0,0x001A1400,code,spimdisasm-explicit-size-before-first-data
@@ -3456,7 +3458,7 @@ func_001A4500,0x001A4500,0xAC,0x001A45AC,code,verified-complete-c-function
 func_001A45B0,0x001A45B0,0x64,0x001A4614,code,spimdisasm-explicit-size-before-first-data
 func_001A4620,0x001A4620,0x8,0x001A4628,code,spimdisasm-explicit-size-before-first-data
 func_001A4630,0x001A4630,0x20,0x001A4650,code,matching-c-head-split
-residual_001A4650,0x001A4650,0x114,0x001A4764,assembly_residual,verified-boundary-after-matching-head
+func_001A4650,0x001A4650,0x114,0x001A4764,code,verified-complete-c-function
 func_001A4770,0x001A4770,0x80,0x001A47F0,code,spimdisasm-explicit-size-before-first-data
 func_001A47F0,0x001A47F0,0x1AC,0x001A499C,code,spimdisasm-explicit-size-before-first-data
 func_001A49A0,0x001A49A0,0xDC,0x001A4A7C,code,spimdisasm-explicit-size-before-first-data
@@ -3481,7 +3483,7 @@ func_001A5810,0x001A5810,0x68,0x001A5878,code,verified-complete-c-function
 func_001A5880,0x001A5880,0x134,0x001A59B4,code,spimdisasm-explicit-size-before-first-data
 func_001A59C0,0x001A59C0,0xA8,0x001A5A68,code,spimdisasm-explicit-size-before-first-data
 func_001A5A70,0x001A5A70,0x20,0x001A5A90,code,matching-c-head-split
-residual_001A5A90,0x001A5A90,0xF0,0x001A5B80,assembly_residual,verified-boundary-after-matching-head
+func_001A5A90,0x001A5A90,0xF0,0x001A5B80,code,verified-complete-c-function
 func_001A5B80,0x001A5B80,0x3C,0x001A5BBC,code,spimdisasm-explicit-size-before-first-data
 func_001A5BC0,0x001A5BC0,0x20,0x001A5BE0,code,matching-c-head-split
 residual_001A5BE0,0x001A5BE0,0x150,0x001A5D30,assembly_residual,verified-boundary-after-matching-head
