@@ -20286,4 +20286,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/linked_hit_responses.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/linked_hit_responses.o"
 "$PYTHON" tools/verify_object.py "$BUILD/linked_hit_responses.o" private/SLUS_204.86.rom --source src/linked_hit_responses.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/linked_contact_capture_0035b800.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/linked_contact_capture_0035b800.o"
+"$PYTHON" tools/verify_object.py "$BUILD/linked_contact_capture_0035b800.o" private/SLUS_204.86.rom --source src/linked_contact_capture_0035b800.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

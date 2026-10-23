@@ -5522,3 +5522,24 @@ full hybrid linkage/packing pass. CODE is 2,689,720 / 3,293,696 bytes
 DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+
+
+## 2026-10-22 — Linked contact capture
+
+Recovered the complete 760-byte function `0035B800` under MWCCPS2 3.0.3
+-O3,p -sdatathreshold 0. The callback follows the existing actor/opaque-owner
+interface supplied by 0035B560 and the 004631B0 bank. It reconstructs contact
+validation, per-target hit-flag updates, target capture and placement, movement
+slowing, duration selection, and rejection/landing transitions. Its per-target
+flag address uses native 32-bit address arithmetic; the selected frame is cached
+for both the actor field and animation call. The vertical-velocity test retains
+the retail unordered floating-point behavior. No DATA credit is added.
+
+Catalog/build checks, all 126 tests, whole compiler-object verification, and
+full hybrid linkage/packing pass. CODE is 2,690,480 / 3,293,696 bytes
+(81.6857%), with 18,844 matching functions among 20,376 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+The owner-following update investigated alongside this entry remains a whole-
+function compiler mismatch and receives no credit.
