@@ -18948,3 +18948,9 @@ func_00348550,0x00348550,0x158,src/owner_spark_entry_00348550.c,complete
 func_0033F260,0x0033F260,0x154,src/cycle_rotation_0033f260.c,complete
 func_00348800,0x00348800,0xDC,src/owner_spark_copy_00348800.c,complete
 func_00340A40,0x00340A40,0xA0,src/bounce_damping_00340a40.c,complete
+func_00199E70,0x00199E70,0xE0,src/owner_position_copy_00199e70.c,complete
+func_001DAFD0,0x001DAFD0,0xBC,src/cached_owner_copy_001dafd0.c,complete
+func_001DB090,0x001DB090,0x14,src/owner_animation_entry_001db090.c,complete
+func_001A0D60,0x001A0D60,0xDC,src/owner_slow_drift_001a0d60.c,complete
+func_001A0F60,0x001A0F60,0xFC,src/owner_facing_offset_001a0f60.c,complete
+func_001BA0B0,0x001BA0B0,0xF4,src/owner_follow_effect_001ba0b0.c,complete

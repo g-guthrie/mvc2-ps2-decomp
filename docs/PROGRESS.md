@@ -5771,3 +5771,18 @@ linkage/packing pass. CODE is 2,705,008 / 3,293,696 bytes (82.1268%), with
 bytes. The full reconstructed ELF retains retail SHA-256
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,706,313 bytes, 1,305 bytes away.
+
+## Owner-state checkpoint at 2,706,316 code bytes
+
+Seven whole functions add 1,308 bytes: origin-height bounce damping (160),
+cached owner position copy (224), cached owner dispatch (188), animation
+entry (20), slow drift entry (220), facing offset entry (252), and following
+effect initialization (244). Each whole object is verified against retail.
+The split owner span retains its four alignment bytes as an uncredited residual.
+
+All 126 tests, catalog validation, source/build coverage, and full hybrid
+linkage/packing pass. CODE is 2,706,316 / 3,293,696 bytes (82.1665%), with
+18,891 matches among 20,403 cataloged spans. DATA remains 468,869 / 648,064
+bytes. The reconstructed ELF retains retail SHA-256
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The fixed 2,706,313-byte CODE checkpoint is crossed; the next is 2,739,250 bytes.

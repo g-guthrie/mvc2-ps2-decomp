@@ -20442,4 +20442,28 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/bounce_damping_00340a40.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/bounce_damping_00340a40.o"
 "$PYTHON" tools/verify_object.py "$BUILD/bounce_damping_00340a40.o" private/SLUS_204.86.rom --source src/bounce_damping_00340a40.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_position_copy_00199e70.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_position_copy_00199e70.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_position_copy_00199e70.o" private/SLUS_204.86.rom --source src/owner_position_copy_00199e70.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/cached_owner_copy_001dafd0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/cached_owner_copy_001dafd0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/cached_owner_copy_001dafd0.o" private/SLUS_204.86.rom --source src/cached_owner_copy_001dafd0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_animation_entry_001db090.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_animation_entry_001db090.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_animation_entry_001db090.o" private/SLUS_204.86.rom --source src/owner_animation_entry_001db090.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_slow_drift_001a0d60.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_slow_drift_001a0d60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_slow_drift_001a0d60.o" private/SLUS_204.86.rom --source src/owner_slow_drift_001a0d60.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_facing_offset_001a0f60.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_facing_offset_001a0f60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_facing_offset_001a0f60.o" private/SLUS_204.86.rom --source src/owner_facing_offset_001a0f60.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_follow_effect_001ba0b0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_follow_effect_001ba0b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_follow_effect_001ba0b0.o" private/SLUS_204.86.rom --source src/owner_follow_effect_001ba0b0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
