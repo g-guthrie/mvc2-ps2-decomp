@@ -5477,3 +5477,22 @@ full hybrid linkage/packing pass. CODE is 2,688,028 / 3,293,696 bytes
 DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+
+
+## 2026-10-22 — Scaled motion state entry
+
+Recovered the complete 504-byte function `002E2350` under MWCCPS2 3.0.3
+-O3,p -sdatathreshold 0. The entry initializes action state, selects the
+animation, creates three indexed effects, and divides velocity and acceleration
+by eight. Its update path preserves the native ordered ground/height comparison,
+then uses animation completion to select the next movement state. Helper
+prototypes retain their actual scalar and byte parameters. No DATA credit is added.
+
+Catalog/build checks, all 126 tests, whole compiler-object verification, and
+full hybrid linkage/packing pass. CODE is 2,688,532 / 3,293,696 bytes
+(81.6266%), with 18,841 matching functions among 20,376 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+The linked-trail and direction-selection candidates investigated alongside this
+entry remain compiler mismatches and receive no catalog credit.
