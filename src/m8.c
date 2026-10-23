@@ -80,7 +80,7 @@ void func_00270760(u8 *p) {
     }
 }
 
-void func_002674E0(u8 *p) {
+void func_002674E0(u8 *p, u8 *state_unused) {
     if ((s8)func_00175700(p) < 0) {
         u32 x = *(u16 *)(p + 0x354);
         if (x & 0x3000) {

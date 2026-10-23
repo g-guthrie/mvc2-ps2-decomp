@@ -172,7 +172,7 @@ void func_003BB730(u8 *p) {
     }
 }
 
-extern void (*jtbl_004C1B94[2])(u8 *, u8 *);
+extern void (*const jtbl_004C1B94[2])(u8 *, void *);
 extern void (*jtbl_004C1188[2])(u8 *, u8 *);
 
 extern u32 D_004BFF4C;

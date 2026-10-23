@@ -18881,3 +18881,9 @@ func_001C3480,0x001C3480,0x88,src/label_state_entries.c,complete
 func_00242A20,0x00242A20,0x7C,src/label_state_entries.c,complete
 func_0026CA30,0x0026CA30,0x60,src/label_state_entries.c,complete
 func_002FDBC0,0x002FDBC0,0x90,src/label_state_entries.c,complete
+func_002678B0,0x002678B0,0xCC,src/context_entry_callbacks.c,complete
+func_002CA050,0x002CA050,0xA0,src/context_entry_callbacks.c,complete
+func_0035E3D0,0x0035E3D0,0xB8,src/owner_landing_callbacks.c,complete
+func_0035E690,0x0035E690,0xA0,src/owner_landing_callbacks.c,complete
+func_001C59D0,0x001C59D0,0xFC,src/owner_landing_callbacks.c,complete
+func_003488E0,0x003488E0,0xBC,src/owner_motion_response_003488e0.c,complete

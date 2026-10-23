@@ -9,7 +9,8 @@ typedef float f32;
 typedef struct { u8 pad[0x160]; s8 b[8]; } S;
 extern s32 func_00175700(u8 *);
 extern void func_001843A0(u8 *);
-void func_002CA610(S *a) {
+void func_002CA610(u8 *actor, u8 *state_unused) {
+    S *a = (S *)actor;
     if ((s8)func_00175700((u8 *)a) >= 0) {
         s8 *p = a->b; s8 f = p[1]; s8 *q = p + 1;
         if (f) { ((u8 *)a)[0x20D] = 0; *q = 0; }

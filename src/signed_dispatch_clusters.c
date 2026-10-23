@@ -43,7 +43,7 @@ void func_00348440(u8 *p) {
         p[4]++;
     }
 }
-void func_003489A0(u8 *p) {
+void func_003489A0(u8 *p, u8 *owner_unused) {
     if ((s8)func_00175700(p) < 0) {
         p[316] = 0;
         p[4]++;

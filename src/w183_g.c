@@ -12,12 +12,12 @@ extern G7C *D_004C2794;
 extern u8 D_004F1F45[];
 extern u8 D_004F1F46[];
 
-void func_002673D0(u8 *p) {
-    extern s8 func_00175700();
+void func_002673D0(u8 *p, u8 *state_unused) {
+    extern int func_00175700(u8 *);
     extern void func_001757E0(u8 *, s32, s32);
     extern void func_00374E50(u8 *, s32);
     u32 t;
-    if (func_00175700() < 0) {
+    if ((s8)func_00175700(p) < 0) {
         t = p[7];
         p[7] = t + 1;
         D_004F1F45[0] = 2;

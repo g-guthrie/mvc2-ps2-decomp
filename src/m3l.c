@@ -64,7 +64,7 @@ void func_00320E50(u8 *p) {
     func_00186A60(p, 0x15);
 }
 
-void func_00267570(u8 *p) {
+void func_00267570(u8 *p, u8 *state_unused) {
     s32 r;
     u32 b;
     r = func_00175700(p);

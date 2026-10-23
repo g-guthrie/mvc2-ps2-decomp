@@ -326,7 +326,7 @@ void func_00396C80(u8 *a0, f32 x, f32 y) {
     }
 }
 
-void func_00267600(u8 *a0) {
+void func_00267600(u8 *a0, u8 *state_unused) {
     if ((s8)func_00175700(a0) < 0) {
         u16 b = *(u16 *)(a0 + 0x354);
         if ((b & 0x3000) == 0 || (b & 0x2000) != 0) {

@@ -5304,3 +5304,33 @@ packed ELF. Catalog/build checks and all 126 tests pass. CODE is now
 credit is claimed. The retail ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+
+
+## 2026-10-22 — Context entries and owner-dependent motion
+
+Recovered six complete functions, adding 1,148 exact CODE bytes:
+`002678B0` (204), `002CA050` (160), `001C59D0` (252), `003488E0` (188),
+`0035E3D0` (184), and `0035E690` (160), using MWCCPS2 3.0.3 -O3,p.
+The C reconstructs scratch-state initialization, launch placement, event-driven
+motion, and landing transitions. The landing tests retain the retail unordered
+floating-point behavior instead of substituting a less-than-or-equal test.
+Native function spans are separated from adjacent dispatch heads and alignment;
+no padding or raw instructions receive new credit.
+
+Three existing effect dispatchers now explicitly forward their owner argument,
+as required by their constructors and the already typed outer dispatch table.
+The effect's internal callbacks and cleanup entries share that actual protocol.
+The small landing table has three native entries, and GP-relative code views
+retain the correct section annotation. The mixed owner at 004C19A0 now exposes
+its two motion callbacks at offset eight as function pointers, preserving the
+other address fields and all 128 original bytes. Existing scratch and owner
+callbacks accept the real second argument supplied by their native producers.
+The animation call in 002673D0 now explicitly supplies its actor argument.
+
+Catalog/build checks and all 126 tests pass. Whole compiler verification and
+full hybrid linkage reproduce the retail ROM and packed ELF. CODE is now
+2,682,728 / 3,293,696 bytes (81.4504%), with 18,824 matching functions among
+20,365 cataloged spans. DATA remains 468,869 / 648,064 bytes: these table
+interface repairs add no DATA credit. The retail ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.

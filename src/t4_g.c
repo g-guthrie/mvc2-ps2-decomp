@@ -107,7 +107,7 @@ extern void func_001830D0();
 extern void func_001757E0(void *p, s32 a, s32 b);
 extern void func_001CEAE0();
 
-void func_002CA0F0(u8 *p) {
+void func_002CA0F0(u8 *p, u8 *state_unused) {
     u32 v[3];
     u32 t;
     p[0x40C] = 2;

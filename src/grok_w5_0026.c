@@ -254,7 +254,7 @@ void func_00266EB0(u8 *p)
     func_00191210(p);
 }
 
-void func_00267690(u8 *p)
+void func_00267690(u8 *p, u8 *state_unused)
 {
     if ((s8)func_00175700(p) < 0 && !(H(p, 0x354) & 0x2000)) {
         p[7] = 2;
@@ -262,7 +262,7 @@ void func_00267690(u8 *p)
     }
 }
 
-void func_002676F0(u8 *p)
+void func_002676F0(u8 *p, u8 *state_unused)
 {
     if ((s8)func_00175700(p) < 0 && !(H(p, 0x354) & 0x1000)) {
         p[7] = 3;

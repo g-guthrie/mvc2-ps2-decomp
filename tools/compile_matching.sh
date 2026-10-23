@@ -20214,4 +20214,16 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/related_state_dispatch.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/related_state_dispatch.o"
 "$PYTHON" tools/verify_object.py "$BUILD/related_state_dispatch.o" private/SLUS_204.86.rom --source src/related_state_dispatch.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/context_entry_callbacks.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/context_entry_callbacks.o"
+"$PYTHON" tools/verify_object.py "$BUILD/context_entry_callbacks.o" private/SLUS_204.86.rom --source src/context_entry_callbacks.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_landing_callbacks.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_landing_callbacks.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_landing_callbacks.o" private/SLUS_204.86.rom --source src/owner_landing_callbacks.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_motion_response_003488e0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_motion_response_003488e0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_motion_response_003488e0.o" private/SLUS_204.86.rom --source src/owner_motion_response_003488e0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

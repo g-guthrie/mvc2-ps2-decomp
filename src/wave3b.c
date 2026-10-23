@@ -7,7 +7,7 @@ typedef signed int s32;
 
 extern u8 *D_004C2840;
 extern void (*D_004C1D70[2])(u8 *p, u8 *q);
-extern void (*D_004C1B90[2])(u8 *p, u8 *q);
+extern void (*const D_004C1B90[3])(u8 *, void *) __attribute__((section(".sdata")));
 extern void (*D_004C1C78[2])(u8 *p);
 extern void func_0013D350(u8 *p);
 extern void func_003DAA40(u8 *p);
@@ -37,7 +37,8 @@ void func_00386210(u8 *p) {
     }
 }
 
-void func_0035E090(u8 *p, u8 *q) {
+void func_0035E090(u8 *p, void *owner_context) {
+    u8 *q = owner_context;
     if (q[0x169] != 0x16) {
         p[4]++;
     } else {

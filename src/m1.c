@@ -159,10 +159,10 @@ void func_00350790(u8 *p) {
     }
 }
 
-extern void func_0035DEF0(void *, s32, s32);
-extern void func_0035E730(void *, void *);
+extern void func_0035DEF0(u8 *, u8, u8);
+extern void func_0035E730(u8 *, void *);
 
-void func_0035E0E0(u8 *p, u8 *q) {
+void func_0035E0E0(u8 *p, void *q) {
     s16 v = *(s16 *)(p + 0x1C) - 1;
     *(s16 *)(p + 0x1C) = v;
     if (v == 0) {

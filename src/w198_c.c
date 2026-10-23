@@ -232,7 +232,8 @@ void func_001C7050(u8 *p, u8 *q) {
 extern u16 D_004D18DC[];
 extern u8 D_004D18DB[];
 
-void func_0035E980(u8 *p, u8 *q) {
+void func_0035E980(u8 *p, void *owner_context) {
+    u8 *q = owner_context;
     extern s8 func_00175700(u8 *);
     extern void func_001E7F60(u8 *);
     u8 *s, *r;
