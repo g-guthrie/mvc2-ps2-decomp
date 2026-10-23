@@ -18867,3 +18867,9 @@ func_0030E1B0,0x0030E1B0,0xCC,src/paired_effect_entries.c,complete
 func_0030E4C0,0x0030E4C0,0xD8,src/paired_effect_entries.c,complete
 func_0030E7C0,0x0030E7C0,0xCC,src/paired_effect_entries.c,complete
 func_0030EB20,0x0030EB20,0xCC,src/paired_effect_entries.c,complete
+func_001F88A0,0x001F88A0,0x7C,src/label_motion_callbacks.c,complete
+func_00201740,0x00201740,0x78,src/label_motion_callbacks.c,complete
+func_0030A9D0,0x0030A9D0,0x4C,src/label_motion_callbacks.c,complete
+func_0032AFB0,0x0032AFB0,0x4C,src/label_motion_callbacks.c,complete
+func_002FFE70,0x002FFE70,0x7C,src/label_motion_callbacks.c,complete
+func_0032AF60,0x0032AF60,0x48,src/label_motion_callbacks.c,complete

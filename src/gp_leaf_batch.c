@@ -33,7 +33,7 @@ void func_001E7F20(void) {
 
 void func_0032A8E0(void) { D_004C2840[3] = 3; D_004C2840[4] = 0; D_004C2840[175] = 0; }
 
-void func_0032BED0(s8 *p) { D_004C2928 |= p[1244]; }
+void func_0032BED0(u8 *actor) { s8 *p=(s8 *)actor; D_004C2928 |= p[1244]; }
 
 void func_0032BFD0(void) { ((s8 *)D_004C2840)[4]++; *(s16 *)(D_004C2840 + 8) = 20; }
 

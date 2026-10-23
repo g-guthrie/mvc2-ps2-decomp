@@ -20197,4 +20197,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/paired_effect_entries.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/paired_effect_entries.o"
 "$PYTHON" tools/verify_object.py "$BUILD/paired_effect_entries.o" private/SLUS_204.86.rom --source src/paired_effect_entries.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/label_motion_callbacks.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/label_motion_callbacks.o"
+"$PYTHON" tools/verify_object.py "$BUILD/label_motion_callbacks.o" private/SLUS_204.86.rom --source src/label_motion_callbacks.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

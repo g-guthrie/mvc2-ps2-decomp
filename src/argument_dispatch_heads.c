@@ -264,7 +264,7 @@ extern DispatchFn2 jtbl_004C0E98[2];
 extern DispatchFn2 jtbl_004C10A0[2];
 extern DispatchFn2 jtbl_004C1110[2];
 extern DispatchFn2 jtbl_004C11B8[2];
-extern DispatchFn2 jtbl_004C1464[2];
+extern DispatchFn2 jtbl_004C1464[1];
 extern DispatchFn2 jtbl_004C1500[2];
 extern DispatchFn2 jtbl_004C1558[2];
 extern DispatchFn2 jtbl_004C1560[2];

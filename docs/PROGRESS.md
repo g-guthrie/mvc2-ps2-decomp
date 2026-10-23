@@ -5250,3 +5250,31 @@ among 20,351 cataloged spans. DATA remains 468,869 / 648,064 bytes; no new
 DATA credit is added by the callback type corrections. Retail ELF SHA-256
 remains `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+
+## Motion labels and the one-entry context table
+
+Recovered six complete functions, adding 592 exact CODE bytes:
+`func_001F88A0` (124), `func_00201740` (120), `func_0030A9D0` (76),
+`func_0032AFB0` (76), `func_002FFE70` (124), and `func_0032AF60` (72).
+They reconstruct motion/event responses, randomized animation selection,
+team-specific state clearing, and the preceding actor-bank dispatcher.
+The former 156-byte span at 0032AF60 now separates the actual dispatcher
+and callback, with eight alignment bytes uncredited. Total newly exposed
+alignment gaps are 32 bytes.
+
+The context dispatcher at 002FFEF0 supplies both actor and scratch-state
+pointers. Its callback now expresses both inputs, and the embedded table
+at 004C1464 has its real one-entry extent. Adjacent script bytes are not
+a second callback. Function-pointer table definitions preserve all original
+values and use the native callable signatures. The activation entry used
+as a no-result callback discards the animation helper's scalar status, and
+a signed-byte view retains its layout behind the public actor interface.
+All 323 previously credited bodies in affected files remain exact.
+
+MWCCPS2 3.0.3 -O3,p verifies all six new functions. Clean splitting,
+catalog/build checks, all 126 tests, and full hybrid relink/packing pass.
+CODE is 2,680,544 / 3,293,696 bytes (81.3841%), with 18,810 matched
+functions among 20,352 cataloged spans. DATA remains 468,869 / 648,064
+bytes; these interface corrections add no DATA credit. Retail ELF SHA-256
+remains `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.

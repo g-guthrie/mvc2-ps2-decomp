@@ -9,7 +9,12 @@ int name(u8 *p) { \
 }
 
 ACTIVATE_FRAME(func_001EAD30)
-ACTIVATE_FRAME(func_001F91F0)
+void func_001F91F0(u8 *p)
+{
+    ++p[6];
+    p[0x13C]=1;
+    func_001757E0(p,18,0);
+}
 ACTIVATE_FRAME(func_00283150)
 ACTIVATE_FRAME(func_00296DE0)
 ACTIVATE_FRAME(func_002A2A20)

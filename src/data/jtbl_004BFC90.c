@@ -1,16 +1,17 @@
-typedef const unsigned char *Mvc2Address;
-extern const unsigned char func_001F8880[];
-extern const unsigned char func_001F8920[];
-extern const unsigned char func_001F89C0[];
-extern const unsigned char func_001F91F0[];
-extern const unsigned char func_001F9210[];
-extern const unsigned char func_001F94E0[];
-extern const unsigned char func_001F9590[];
-extern const unsigned char lbl_001F88A0[];
-Mvc2Address const jtbl_004BFC90[8] = {
+typedef unsigned char u8;
+typedef void (*Unary)(u8 *);
+extern void func_001F8880(u8 *);
+extern void func_001F8920(u8 *);
+extern void func_001F89C0(u8 *);
+extern void func_001F91F0(u8 *);
+extern void func_001F9210(u8 *);
+extern void func_001F94E0(u8 *);
+extern void func_001F9590(u8 *);
+extern void func_001F88A0(u8 *);
+Unary const jtbl_004BFC90[8] = {
     func_001F8880,
     func_001F89C0,
-    lbl_001F88A0,
+    func_001F88A0,
     func_001F8920,
     func_001F91F0,
     func_001F9210,
