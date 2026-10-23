@@ -8139,7 +8139,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/y2_b.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/y2_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/y2_b.o" private/SLUS_204.86.rom --source src/y2_b.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/y9_a.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/y9_a.o"
+    src/y9_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/y9_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/y9_a.o" private/SLUS_204.86.rom --source src/y9_a.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/y9_b.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/y9_b.o"
@@ -20229,5 +20229,13 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/vertical_motion_event_callbacks.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/vertical_motion_event_callbacks.o"
 "$PYTHON" tools/verify_object.py "$BUILD/vertical_motion_event_callbacks.o" private/SLUS_204.86.rom --source src/vertical_motion_event_callbacks.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/capture_entry_0031f3f0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/capture_entry_0031f3f0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/capture_entry_0031f3f0.o" private/SLUS_204.86.rom --source src/capture_entry_0031f3f0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/trajectory_launch_001a8e70.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/trajectory_launch_001a8e70.o"
+"$PYTHON" tools/verify_object.py "$BUILD/trajectory_launch_001a8e70.o" private/SLUS_204.86.rom --source src/trajectory_launch_001a8e70.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

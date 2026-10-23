@@ -131,13 +131,12 @@ void func_00311D10(u8 *p) {
     }
 }
 
-typedef struct { u8 pad[6]; s16 h; u8 pad2[8]; } E16;
-extern E16 D_0044B570[];
+#include "launch_record.h"
 
 void func_001A9070(u8 *p, u8 *q) {
     f32 z = 0.0f;
     f32 c, t;
-    E16 *e;
+    const LaunchRecord *e;
     u32 n;
     *(s32 *)(p + 0x48) += *(s32 *)(p + 0xD0);
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
@@ -147,12 +146,12 @@ void func_001A9070(u8 *p, u8 *q) {
     e = &D_0044B570[p[0x20]];
     if (*(f32 *)(p + 0x60) <= z) {
         c = 2.142857074737549f;
-        t = *(f32 *)(q + 0x430) + c * (f32)e->h;
+        t = *(f32 *)(q + 0x430) + c * (f32)e->targetY;
         if (*(f32 *)(p + 0x38) <= t) {
             n = p[5];
             p[5] = n + 1;
             *(s32 *)(p + 0x48) = 0;
-            *(f32 *)(p + 0x38) = *(f32 *)(q + 0x430) + c * (f32)e->h;
+            *(f32 *)(p + 0x38) = *(f32 *)(q + 0x430) + c * (f32)e->targetY;
         }
     }
 }

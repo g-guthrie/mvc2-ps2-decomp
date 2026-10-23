@@ -97,7 +97,7 @@ void func_001A8610(u8 *p, u8 *q) {
     }
 }
 
-void func_001A95C0(u8 *p) {
+void func_001A95C0(u8 *p, u8 *owner_unused) {
     if (--*(s16 *)(p + 0x1c) == 0) {
         p[5]++;
         func_001754A0(p, 27, 12);

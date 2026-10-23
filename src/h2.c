@@ -309,7 +309,7 @@ void func_00384380(u8 *p) {
     }
 }
 
-void func_001A9530(u8 *p) {
+void func_001A9530(u8 *p, u8 *owner_unused) {
 
     s16 v;
     *(s32 *)(p + 0x48) += *(s32 *)(p + 0xD0);

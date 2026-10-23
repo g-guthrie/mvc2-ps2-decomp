@@ -28,4 +28,13 @@ typedef struct {
 } ControllerEffectDispatchTables;
 extern const ControllerEffectDispatchTables jtbl_00445770;
 
+/* The lifecycle dispatcher and its mode/launch aliases have distinct inputs. */
+typedef struct {
+    Mvc2StateCallback lifecycle[4];
+    ControllerEffectCallback mode[12];
+    ControllerEffectCallback launch[3];
+} OwnerLaunchDispatchTables;
+typedef char OwnerLaunchDispatchSize[sizeof(OwnerLaunchDispatchTables) == 0x4C ? 1 : -1];
+extern const OwnerLaunchDispatchTables jtbl_0044B620;
+
 #endif

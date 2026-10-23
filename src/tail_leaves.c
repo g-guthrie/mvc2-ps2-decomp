@@ -44,7 +44,7 @@ extern void func_0016B3E0();
 extern void func_001712A0(void);
 extern void func_001719E0();
 extern void func_00174A40();
-extern void func_00175670();
+extern int func_00175670();
 extern int func_00175700(u8 *);
 extern void func_001765C0();
 extern void func_00178F20();
@@ -380,9 +380,9 @@ void func_001A7CC0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175670(a0, a1, a2, 
 
 void func_001A8CA0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
-void func_001A9610(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175670(a0, a1, a2, a3); }
+void func_001A9610(u8 *actor, u8 *owner_unused) { func_00175670(actor); }
 
-void func_001A9640(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_001A9640(u8 *actor) { func_003DAA40((struct Object *)actor); }
 
 void func_001AB600(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 

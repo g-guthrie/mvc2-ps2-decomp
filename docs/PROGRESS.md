@@ -5355,3 +5355,34 @@ DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
 The larger inherited-state candidates investigated in this batch do not yet
 match as whole objects and receive no catalog credit.
+
+
+## 2026-10-22 — Capture entry and trajectory launch
+
+Recovered two complete functions under MWCCPS2 3.0.3 -O3,p:
+`0031F3F0` (492 bytes) validates and captures a target, records it in the
+actor's scratch context, and handles cancellation/failure motion;
+`001A8E70` (508 bytes) positions an effect from a sixteen-byte movement
+record and solves its horizontal velocity and phase rate using the native
+vertical-trajectory step counter. Total new CODE is 1,000 bytes.
+
+The launch solver and existing landing update now share the same sixteen-byte
+record layout. This is a CODE view of the existing bank, with no new DATA
+extent or reconstruction credit. The trajectory helper exposes its actual actor
+pointer argument while retaining its typed motion view internally.
+
+The 76-byte owner at 0044B620 contains four unary lifecycle callbacks,
+twelve binary mode callbacks, and three binary launch callbacks. Its C layout
+now preserves those distinct native contracts. The top-level lifecycle
+callback stays unary; the mode selector loads the owner from actor+0x18,
+and the two subordinate dispatchers now forward that real second argument.
+The related seven-entry state table and no-op/cleanup callbacks use their
+actual callable signatures. All original pointer values and owner bytes remain
+unchanged; these repairs add no DATA credit.
+
+Catalog/build checks, all 126 tests, whole compiler-object verification, and
+full hybrid linkage/packing pass. CODE is 2,683,960 / 3,293,696 bytes
+(81.4878%), with 18,828 matching functions among 20,368 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.

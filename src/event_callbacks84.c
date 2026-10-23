@@ -3,7 +3,7 @@ typedef unsigned char u8;
 typedef struct Event { u8 pad00[16]; void *callback; u8 pad14[4]; void *arg; u8 pad1c[4]; u8 mode; } Event;
 extern Event *func_003DA750(int, int, int);
 extern void func_001A7990(void);
-extern void func_001A8D50(void);
+extern void func_001A8D50(u8 *);
 extern void func_001AC840(void);
 extern void func_001AFD10(void);
 extern void func_001B1000(void);

@@ -10,8 +10,9 @@ typedef struct {
     u8 gap64[8];
     f32 verticalAcceleration;
 } Trajectory;
-s32 func_001A9650(Trajectory *p, f32 limit)
+s32 func_001A9650(u8 *actor, f32 limit)
 {
+    Trajectory *p = (Trajectory *)actor;
     s32 steps = 0;
     f32 zero = 0.0f;
     f32 height = p->height;
