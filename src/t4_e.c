@@ -12,7 +12,7 @@ extern void func_001757E0(void *p, s32 a, s32 b);
 
 extern void func_00126400();
 
-void func_002DFA20(u8 *p) {
+void func_002DFA20(u8 *p, u8 *state_unused) {
     u32 t;
     p[0x33C] = 5;
     p[0x209] = 2;

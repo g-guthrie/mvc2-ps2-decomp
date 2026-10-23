@@ -1457,7 +1457,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/grok_w5_gp.o" private/SLUS_204.86.rom \
     --source src/grok_w5_gp.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/grok_w5_disp.c -c -lang c -O3 -sdatathreshold 8 \
+    src/grok_w5_disp.c -c -lang c -i src -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_disp.o"
 "$PYTHON" tools/verify_object.py \
     "$BUILD/grok_w5_disp.o" private/SLUS_204.86.rom \
@@ -20237,5 +20237,17 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/trajectory_launch_001a8e70.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/trajectory_launch_001a8e70.o"
 "$PYTHON" tools/verify_object.py "$BUILD/trajectory_launch_001a8e70.o" private/SLUS_204.86.rom --source src/trajectory_launch_001a8e70.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/launch_initializer_001a8d70.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/launch_initializer_001a8d70.o"
+"$PYTHON" tools/verify_object.py "$BUILD/launch_initializer_001a8d70.o" private/SLUS_204.86.rom --source src/launch_initializer_001a8d70.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/capture_flight_002df5e0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/capture_flight_002df5e0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/capture_flight_002df5e0.o" private/SLUS_204.86.rom --source src/capture_flight_002df5e0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/capture_phases_0026d340.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/capture_phases_0026d340.o"
+"$PYTHON" tools/verify_object.py "$BUILD/capture_phases_0026d340.o" private/SLUS_204.86.rom --source src/capture_phases_0026d340.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

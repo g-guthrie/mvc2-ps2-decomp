@@ -27,7 +27,7 @@ void func_002DE770(u8 *p)
     func_001757E0(p, 0x15, 9);
 }
 
-void func_002DFAE0(u8 *p)
+void func_002DFAE0(u8 *p, u8 *state_unused)
 {
     extern void func_001757E0();
     p[0x209] = 2;

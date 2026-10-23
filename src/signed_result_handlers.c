@@ -690,7 +690,7 @@ void func_002DDA20(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); 
 
 void func_002DF330(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
-void func_002E0130(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
+void func_002E0130(u8 *p, u8 *state_unused) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
 void func_002E0C40(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 

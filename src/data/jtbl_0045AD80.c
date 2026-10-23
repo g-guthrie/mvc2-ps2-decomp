@@ -1,29 +1,31 @@
-/* Typed callback entries recovered from the exact dispatch callers. */
-/* Consumer: src/grok_w5_disp.c (jtbl_0045AD80). */
-#include "mvc2_state_callbacks.h"
+#include "capture_state_bank.h"
 
-extern void func_002DF3B0(u8 *);
-extern void func_002DF470(u8 *);
-extern void func_002DF510(u8 *);
-extern void func_002DF540(u8 *);
-extern void func_002DF5E0(u8 *);
-extern void func_002DF8C0(u8 *);
-extern void func_002DFA20(u8 *);
-extern void func_002DFAE0(u8 *);
-extern void func_002E0060(u8 *);
-extern void func_002E00D0(u8 *);
-extern void func_002E0130(u8 *);
+extern void func_002DF3B0(unsigned char *);
+extern void func_002DF470(unsigned char *);
+extern void func_002DF510(unsigned char *);
+extern void func_002DF540(unsigned char *);
+extern void func_002DF5E0(unsigned char *, unsigned char *);
+extern void func_002DF8C0(unsigned char *, unsigned char *);
+extern void func_002DFA20(unsigned char *, unsigned char *);
+extern void func_002DFAE0(unsigned char *, unsigned char *);
+extern void func_002E0060(unsigned char *, unsigned char *);
+extern void func_002E00D0(unsigned char *, unsigned char *);
+extern void func_002E0130(unsigned char *, unsigned char *);
 
-const Mvc2StateCallback jtbl_0045AD80[11] = {
-    func_002DF3B0,
-    func_002DF470,
-    func_002DF510,
-    func_002DF540,
-    func_002DF5E0,
-    func_002DF8C0,
-    func_002DFA20,
-    func_002DFAE0,
-    func_002E0060,
-    func_002E00D0,
-    func_002E0130,
+const CaptureStateBank jtbl_0045AD80 = {
+    {
+        func_002DF3B0,
+        func_002DF470,
+        func_002DF510,
+        func_002DF540,
+    },
+    {
+        func_002DF5E0,
+        func_002DF8C0,
+        func_002DFA20,
+        func_002DFAE0,
+        func_002E0060,
+        func_002E00D0,
+        func_002E0130,
+    },
 };

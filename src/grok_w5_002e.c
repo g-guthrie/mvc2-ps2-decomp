@@ -24,7 +24,7 @@ extern u32 D_0045ADC0[];
 extern u8 D_0045AEC0[];
 extern u8 D_0045AED0[];
 
-void func_002E0060(u8 *p)
+void func_002E0060(u8 *p, u8 *state_unused)
 {
     p[6]++;
     p[525] = 0;
@@ -38,7 +38,7 @@ void func_002E0060(u8 *p)
     func_001757E0(p, 20, 2);
 }
 
-void func_002E00D0(u8 *p)
+void func_002E00D0(u8 *p, u8 *state_unused)
 {
     func_00175700(p);
     if (--*(s16 *)(p + 28) == 0) {

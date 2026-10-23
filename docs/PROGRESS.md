@@ -5386,3 +5386,30 @@ full hybrid linkage/packing pass. CODE is 2,683,960 / 3,293,696 bytes
 DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+
+
+## 2026-10-22 — Launch initialization and complete capture sequences
+
+Recovered three complete functions for 1,476 additional exact CODE bytes:
+`001A8D70` (168) initializes inherited launch state and enters the mode
+selector; `002DF5E0` (728) handles airborne capture, failure motion, and landing;
+`0026D340` (580) implements a complete four-phase ground-capture sequence.
+The initializer matches MWCCPS2 3.0-011126 -O3,p; both capture routines match
+MWCCPS2 3.0.3 -O3,p. All use their actual native callback interfaces.
+
+The 44-byte owner at 0045AD80 has four unary entry callbacks followed by
+seven callbacks receiving actor-local scratch state through the 0045AD90 alias.
+Its shared C layout now represents those two protocols. The initial dispatcher
+remains unary; the context dispatcher still supplies actor+0x2B8. Existing
+callbacks that ignore this provided context expose that input explicitly.
+The capture branch records its target in context+8 and uses the retail
+player-side selection. Shared height assignment preserves the native single
+load and ordered stores. Original callback addresses and owner bytes remain
+unchanged; DATA receives no new credit.
+
+Catalog/build checks, all 126 tests, whole compiler-object verification, and
+full hybrid linkage/packing pass. CODE is 2,685,436 / 3,293,696 bytes
+(81.5326%), with 18,831 matching functions among 20,369 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.

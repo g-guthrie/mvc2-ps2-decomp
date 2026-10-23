@@ -1,3 +1,4 @@
+#include "capture_state_bank.h"
 typedef unsigned char u8;
 typedef void (*DispatchFn)(u8 *);
 typedef void (*DispatchFn2)(u8 *, void *);
@@ -53,7 +54,7 @@ extern DispatchFn jtbl_00459410[];
 extern DispatchFn jtbl_0045A7A0[];
 extern DispatchFn jtbl_0045ACF8[];
 extern DispatchFn jtbl_0045AD40[];
-extern DispatchFn jtbl_0045AD80[];
+
 extern DispatchFn jtbl_0045B270[];
 extern DispatchFn jtbl_0045BF88[];
 extern DispatchFn jtbl_0045D1D0[];
@@ -259,7 +260,7 @@ void func_002DDE50(u8 *p) { jtbl_0045ACF8[p[6]](p); }
 
 void func_002DE940(u8 *p) { jtbl_0045AD40[p[7]](p); }
 
-void func_002DF390(u8 *p) { jtbl_0045AD80[p[7]](p); }
+void func_002DF390(u8 *p) { jtbl_0045AD80.entry[p[7]](p); }
 
 void func_002E5EE0(u8 *p) { jtbl_0045B270[p[6]](p); }
 
