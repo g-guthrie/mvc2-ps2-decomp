@@ -18917,3 +18917,13 @@ func_00221F60,0x00221F60,0xB0,src/direction_flip_entry_00221f60.c,complete
 func_001ABE90,0x001ABE90,0xB4,src/owner_distance_entry_001abe90.c,complete
 func_001ABCC0,0x001ABCC0,0x12C,src/owner_range_entry_001abcc0.c,complete
 func_003250F0,0x003250F0,0x28,src/contact_lane_entry_00325120.c,complete
+func_001A8320,0x001A8320,0x12C,src/offset_child_entry_001a8320.c,complete
+func_0020AE50,0x0020AE50,0x1A0,src/ground_lane_init_0020ae50.c,complete
+func_0020A9A0,0x0020A9A0,0x170,src/action_choice_0020a9a0.c,complete
+func_002415E0,0x002415E0,0x140,src/center_launch_init_002415e0.c,complete
+func_0022EC90,0x0022EC90,0x14C,src/recovery_choice_init_0022ec90.c,complete
+func_0026EAC0,0x0026EAC0,0x150,src/air_capture_update_0026eac0.c,complete
+func_002B1E20,0x002B1E20,0x17C,src/capture_release_gate_002b1e20.c,complete
+func_0034E3C0,0x0034E3C0,0x130,src/owner_ground_effect_0034e3c0.c,complete
+func_00306B80,0x00306B80,0x198,src/slowdown_lane_entry_00306b80.c,complete
+func_00396A70,0x00396A70,0x154,src/owner_motion_decay_00396a70.c,complete

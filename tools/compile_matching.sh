@@ -20326,4 +20326,44 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_range_entry_001abcc0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_range_entry_001abcc0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_range_entry_001abcc0.o" private/SLUS_204.86.rom --source src/owner_range_entry_001abcc0.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/offset_child_entry_001a8320.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/offset_child_entry_001a8320.o"
+"$PYTHON" tools/verify_object.py "$BUILD/offset_child_entry_001a8320.o" private/SLUS_204.86.rom --source src/offset_child_entry_001a8320.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/ground_lane_init_0020ae50.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/ground_lane_init_0020ae50.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ground_lane_init_0020ae50.o" private/SLUS_204.86.rom --source src/ground_lane_init_0020ae50.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/action_choice_0020a9a0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/action_choice_0020a9a0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/action_choice_0020a9a0.o" private/SLUS_204.86.rom --source src/action_choice_0020a9a0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/center_launch_init_002415e0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/center_launch_init_002415e0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/center_launch_init_002415e0.o" private/SLUS_204.86.rom --source src/center_launch_init_002415e0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/recovery_choice_init_0022ec90.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/recovery_choice_init_0022ec90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/recovery_choice_init_0022ec90.o" private/SLUS_204.86.rom --source src/recovery_choice_init_0022ec90.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/air_capture_update_0026eac0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/air_capture_update_0026eac0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/air_capture_update_0026eac0.o" private/SLUS_204.86.rom --source src/air_capture_update_0026eac0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/capture_release_gate_002b1e20.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/capture_release_gate_002b1e20.o"
+"$PYTHON" tools/verify_object.py "$BUILD/capture_release_gate_002b1e20.o" private/SLUS_204.86.rom --source src/capture_release_gate_002b1e20.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_ground_effect_0034e3c0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_ground_effect_0034e3c0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_ground_effect_0034e3c0.o" private/SLUS_204.86.rom --source src/owner_ground_effect_0034e3c0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/slowdown_lane_entry_00306b80.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/slowdown_lane_entry_00306b80.o"
+"$PYTHON" tools/verify_object.py "$BUILD/slowdown_lane_entry_00306b80.o" private/SLUS_204.86.rom --source src/slowdown_lane_entry_00306b80.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_motion_decay_00396a70.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_motion_decay_00396a70.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_motion_decay_00396a70.o" private/SLUS_204.86.rom --source src/owner_motion_decay_00396a70.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

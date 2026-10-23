@@ -258,7 +258,7 @@ void func_00293330(u8 *p) {
 
 
 
-void func_001A8140(u8 *p) {
+void func_001A8140(u8 *p, u8 *owner) {
     if ((*(u8 **)(p + 8))[4] >= 2) {
         p[4]++;
         p[316] = 0;

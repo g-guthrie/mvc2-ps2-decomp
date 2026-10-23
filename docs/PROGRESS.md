@@ -5613,3 +5613,32 @@ full hybrid linkage/packing pass. CODE is 2,694,052 / 3,293,696 bytes
 DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+
+
+## 2026-10-22 — Child events, recovery choices, and motion phases
+
+Recovered ten complete functions, adding 3,504 exact CODE bytes:
+`001A8320` (300), `0020AE50` (416), `0020A9A0` (368), `002415E0` (320),
+`0022EC90` (332), `0026EAC0` (336), `002B1E20` (380), `0034E3C0` (304),
+`00306B80` (408), and `00396A70` (340). These cover child-event creation,
+input/action selection, grounded and center-directed launches, recovery
+choices, capture/release conditions, and owner-relative motion decay.
+The action selector matches MWCCPS2 3.0-011126 -O3,p; the remaining entries
+match 3.0.3 -O3,p. All use -sdatathreshold 0.
+
+The three work-context entries receive actor+0x2B8 through the existing
+0020AE20, 002415B0, and 00306B50 dispatchers. The owner-motion entry uses
+the existing actor/opaque-owner callback contract. The child-event routine
+preserves the typed unary callback installed on its successor. Its downstream
+001A8140 helper now explicitly accepts the supplied, unused owner argument;
+the existing 004BF790 code view declares its actual 14-entry extent and
+GP-relative addressing. Existing bodies and all pointer bytes remain exact.
+No DATA credit is added, and alignment gaps remain uncredited. The investigated
+0036BDD0 scale update remains a whole-function mismatch and receives no credit.
+
+Catalog/build checks, all 126 tests, whole compiler-object verification, and
+full hybrid linkage/packing pass. CODE is 2,697,556 / 3,293,696 bytes
+(81.9006%), with 18,864 matching functions among 20,393 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.

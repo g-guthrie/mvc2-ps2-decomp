@@ -16,7 +16,7 @@ extern u8 D_004C1258[8];
 extern u16 D_004C1260[4];
 extern void (*D_004BFE30[2])(u8 *, u8 *);
 extern void (*D_004BFE20[2])(u8 *);
-extern void (*D_004BF790[2])(u8 *, u8 *);
+extern void (*D_004BF790[14])(u8 *, u8 *) __attribute__((section(".sdata")));
 extern void (*D_004771B0[])(void);
 extern s32 (*D_0045E930[])(u8 *);
 extern s32 D_004F1CB4[];
