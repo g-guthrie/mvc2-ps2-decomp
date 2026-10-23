@@ -15224,7 +15224,7 @@ func_00340290,0x00340290,0x20,0x003402B0,code,matching-c-head-split
 func_003402B0,0x003402B0,0x54,0x00340304,code,independent-callback-entry-table-prologue-return
 func_00340310,0x00340310,0x654,0x00340964,code,spimdisasm-explicit-size-before-first-data
 func_00340970,0x00340970,0xD0,0x00340A40,code,spimdisasm-explicit-size-before-first-data
-func_00340A40,0x00340A40,0xA0,0x00340AE0,code,native-caller-and-prologue-boundary
+func_00340A40,0x00340A40,0xA0,0x00340AE0,code,verified-complete-c-function
 func_00340AE0,0x00340AE0,0x8,0x00340AE8,code,spimdisasm-explicit-size-before-first-data
 func_00340AF0,0x00340AF0,0x14,0x00340B04,code,spimdisasm-explicit-size-before-first-data
 func_00340B10,0x00340B10,0x8,0x00340B18,code,spimdisasm-explicit-size-before-first-data

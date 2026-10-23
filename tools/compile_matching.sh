@@ -20438,4 +20438,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/owner_spark_copy_00348800.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_spark_copy_00348800.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_spark_copy_00348800.o" private/SLUS_204.86.rom --source src/owner_spark_copy_00348800.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/bounce_damping_00340a40.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/bounce_damping_00340a40.o"
+"$PYTHON" tools/verify_object.py "$BUILD/bounce_damping_00340a40.o" private/SLUS_204.86.rom --source src/bounce_damping_00340a40.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

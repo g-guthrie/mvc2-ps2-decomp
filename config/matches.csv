@@ -18947,3 +18947,4 @@ func_003D3B40,0x003D3B40,0x290,src/menu_strip_render_003d3b40.c,complete
 func_00348550,0x00348550,0x158,src/owner_spark_entry_00348550.c,complete
 func_0033F260,0x0033F260,0x154,src/cycle_rotation_0033f260.c,complete
 func_00348800,0x00348800,0xDC,src/owner_spark_copy_00348800.c,complete
+func_00340A40,0x00340A40,0xA0,src/bounce_damping_00340a40.c,complete
