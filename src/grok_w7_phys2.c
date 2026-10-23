@@ -157,7 +157,7 @@ void func_00239400(u8 *p)
     }
 }
 
-void func_00242C60(u8 *p)
+void func_00242C60(u8 *p, u8 *state_unused)
 {
     f32 *vx = (f32 *)(p + 92);
     f32 *vz = (f32 *)(p + 96);

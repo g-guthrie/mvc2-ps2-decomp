@@ -948,7 +948,7 @@ void func_003CD100(u8 *p) { jtbl_00476650[p[4]](p, *(void **)(p + 24)); }
 
 void func_003CD720(u8 *p) { jtbl_00476680[p[4]](p, *(void **)(p + 24)); }
 
-extern DispatchFn2 jtbl_0044B100[];
+extern void (*const jtbl_0044B100[3])(u8 *, u8 *);
 extern DispatchFn2 jtbl_0044C0C0[];
 extern DispatchFn2 jtbl_00450800[];
 extern DispatchFn2 jtbl_00452A40[];

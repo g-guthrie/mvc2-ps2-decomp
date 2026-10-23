@@ -7,7 +7,7 @@ typedef signed int s32;
 typedef float f32;
 
 extern s16 D_004C27A4;
-void func_001A59C0(u8 *a, s32 b) {
+void func_001A59C0(u8 *a, u8 *b) {
     extern u8 *func_003DA750();
     extern void func_001A5600();
     s32 i;
@@ -21,7 +21,7 @@ void func_001A59C0(u8 *a, s32 b) {
                 o[0x21] = (i >> 1) | ((i & 1) << 7);
                 o[0x23] = a[0x23];
                 *(void**)(o+0x10) = func_001A5600;
-                *(s32*)(o+0x18) = b;
+                *(u8**)(o+0x18) = b;
                 *(u8**)(o+0x14) = a;
             }
             i++;

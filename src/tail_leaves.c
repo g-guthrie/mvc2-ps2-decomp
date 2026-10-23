@@ -356,7 +356,7 @@ void func_001A3940(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_001A3A00(u8 *p, u8 *owner) { p[316] = 0; func_003DAA40((struct Object *)(p)); }
 
-void func_001A3DE0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_001A3DE0(u8 *actor, u8 *owner_unused) { func_003DAA40((struct Object *)actor); }
 
 void func_001A3F30(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 

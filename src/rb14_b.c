@@ -8,12 +8,12 @@ typedef float f32;
 
 extern void func_00175700(u8 *);
 extern void func_001E3210(u8 *, s32);
-extern void func_001A59C0(u8 *, s32);
+extern void func_001A59C0(u8 *, u8 *);
 extern s32 func_00182D30(u8 *);
 extern void func_00182C30(u8 *, s32);
 extern void func_001843A0(u8 *);
 
-void func_001A5880(u8 *a, s32 b, u8 *c) {
+void func_001A5880(u8 *a, u8 *b, u8 *c) {
     func_00175700(a);
     switch (*(s8 *)(c + 0x1B3)) {
     case 0: break;

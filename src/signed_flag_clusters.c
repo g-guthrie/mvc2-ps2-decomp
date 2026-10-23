@@ -51,7 +51,7 @@ void func_001C2330(u8 *p) {
     if ((s8)p[337] != 0)
         p[7]++;
 }
-void func_001C3790(u8 *p) {
+void func_001C3790(u8 *p, u8 *owner_unused) {
     func_00175700(p);
     if ((s8)p[337] != 0)
         p[7]++;

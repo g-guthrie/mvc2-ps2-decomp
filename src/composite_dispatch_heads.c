@@ -4208,7 +4208,7 @@ extern void func_002430A0(u8 *);
 extern void func_002E8440(u8 *);
 typedef int (*ContextResultDispatchFn)(u8 *, void *);
 extern ContextResultDispatchFn jtbl_00445C20[];
-extern ContextDispatchFn jtbl_00452A98[];
+extern void (*const jtbl_00452A98[3])(u8 *, u8 *);
 void func_00133950(u8 *p) { jtbl_0043E918[p[5]](p); }
 void func_001F2D60(u8 *p) { jtbl_0044F8E0[p[6]](p); }
 void func_0020F5F0(u8 *p) { jtbl_004509E0[p[6]](p); }

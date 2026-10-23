@@ -144,7 +144,7 @@ void func_001C3140(u8 *p)
         p[4]++;
 }
 
-void func_001C37D0(u8 *p)
+void func_001C37D0(u8 *p, u8 *owner_unused)
 {
     F(p, 56) += F(p, 96);
     F(p, 96) += F(p, 108);

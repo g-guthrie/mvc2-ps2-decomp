@@ -22929,3 +22929,10 @@ func_0032AF60 = 0x0032AF60;
 func_0032AFB0 = 0x0032AFB0;
 
 jtbl_0045E2B0 = 0x0045E2B0;
+
+// Native callees used by the recovered effect and context entries.
+func_001A3C00 = 0x001A3C00;
+func_001A5D80 = 0x001A5D80;
+
+jtbl_004BF750 = 0x004BF750;
+jtbl_0044CB60 = 0x0044CB60;

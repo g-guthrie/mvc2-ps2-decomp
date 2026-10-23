@@ -5278,3 +5278,29 @@ functions among 20,352 cataloged spans. DATA remains 468,869 / 648,064
 bytes; these interface corrections add no DATA credit. Retail ELF SHA-256
 remains `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+
+
+## 2026-10-22 — Owner and context entry callbacks
+
+Recovered eight complete functions for 1,036 additional exact CODE bytes:
+`001A3AE0` (280), `001A57C0` (80), `001A5810` (104), `001C3430` (72),
+`001C3480` (136), `00242A20` (124), `0026CA30` (96), and `002FDBC0` (144).
+The two dispatchers are separate native functions from their entry callbacks;
+32 bytes of intervening/prefix alignment remain uncredited.
+
+The callbacks reconstruct inherited effect state, related-object animation
+responses, facing selection, context initialization, and randomized animation
+entries. Six callback owners now declare the native callable argument lists.
+The related-object protocol supplies actor, owner, and related actor; the owner
+pointer is retained through the existing callback and object constructor rather
+than represented as an integer. Existing cleanup callbacks explicitly accept
+the owner/context arguments their dispatchers supply. The small related-object
+table uses the native GP-relative code view without changing its DATA owner.
+
+Whole-object verification and full hybrid linkage reproduce the retail ROM and
+packed ELF. Catalog/build checks and all 126 tests pass. CODE is now
+2,681,580 / 3,293,696 bytes (81.4155%), with 18,818 matched functions among
+20,359 cataloged spans. DATA remains 468,869 / 648,064 bytes; no new DATA
+credit is claimed. The retail ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.

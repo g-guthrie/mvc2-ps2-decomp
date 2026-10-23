@@ -18873,3 +18873,11 @@ func_0030A9D0,0x0030A9D0,0x4C,src/label_motion_callbacks.c,complete
 func_0032AFB0,0x0032AFB0,0x4C,src/label_motion_callbacks.c,complete
 func_002FFE70,0x002FFE70,0x7C,src/label_motion_callbacks.c,complete
 func_0032AF60,0x0032AF60,0x48,src/label_motion_callbacks.c,complete
+func_001A3AE0,0x001A3AE0,0x118,src/inherited_effect_entry.c,complete
+func_001A57C0,0x001A57C0,0x50,src/related_state_dispatch.c,complete
+func_001A5810,0x001A5810,0x68,src/label_state_entries.c,complete
+func_001C3430,0x001C3430,0x48,src/related_state_dispatch.c,complete
+func_001C3480,0x001C3480,0x88,src/label_state_entries.c,complete
+func_00242A20,0x00242A20,0x7C,src/label_state_entries.c,complete
+func_0026CA30,0x0026CA30,0x60,src/label_state_entries.c,complete
+func_002FDBC0,0x002FDBC0,0x90,src/label_state_entries.c,complete

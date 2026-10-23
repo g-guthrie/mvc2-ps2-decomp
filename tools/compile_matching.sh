@@ -20201,4 +20201,17 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/label_motion_callbacks.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/label_motion_callbacks.o"
 "$PYTHON" tools/verify_object.py "$BUILD/label_motion_callbacks.o" private/SLUS_204.86.rom --source src/label_motion_callbacks.c
 
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/label_state_entries.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/label_state_entries.o"
+"$PYTHON" tools/verify_object.py "$BUILD/label_state_entries.o" private/SLUS_204.86.rom --source src/label_state_entries.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/inherited_effect_entry.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/inherited_effect_entry.o"
+"$PYTHON" tools/verify_object.py "$BUILD/inherited_effect_entry.o" private/SLUS_204.86.rom --source src/inherited_effect_entry.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/related_state_dispatch.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/related_state_dispatch.o"
+"$PYTHON" tools/verify_object.py "$BUILD/related_state_dispatch.o" private/SLUS_204.86.rom --source src/related_state_dispatch.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
