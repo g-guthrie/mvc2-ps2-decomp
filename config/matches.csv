@@ -18936,3 +18936,5 @@ func_001C5DE0,0x001C5DE0,0x48,src/opposite_edge_entry_001c5e30.c,complete
 func_002C8C20,0x002C8C20,0x1AC,src/air_input_landing_002c8c20.c,complete
 func_001FAD10,0x001FAD10,0x2AC,src/stage_wrap_motion_001fad10.c,complete
 func_003539D0,0x003539D0,0x2A8,src/linked_trail_update_003539d0.c,complete
+func_002AF510,0x002AF510,0x140,src/rise_contact_update_002af510.c,complete
+func_00319480,0x00319480,0x140,src/target_search_transition_00319480.c,complete

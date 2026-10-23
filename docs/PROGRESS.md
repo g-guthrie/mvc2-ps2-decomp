@@ -5701,3 +5701,28 @@ DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
 Investigated controller-slot and roster selectors, hit-motion branches,
 input-motion lanes, and the repeat-jump transition remain uncredited.
+
+
+## 2026-10-23 — Rising motion and three-slot target search
+
+Recovered two complete 320-byte functions, adding 640 exact CODE bytes.
+`002AF510` handles the rise event, motion-sign changes, and the descending
+transition. It matches MWCCPS2 3.0.3 -O3,p -sdatathreshold 0 with its real
+`002ADC20` motion helper present in the compiler unit. That complete 76-byte
+helper independently matches retail and receives no additional credit.
+`00319480` searches the three native target slots, initializes pursuit motion,
+and retains the original rejection/default-action path. It matches
+3.0-011126 -O3,p -sdatathreshold 0. Its work pointer is established before
+the phase change, preserving the native lifetime and addressing.
+
+Both entries retain their unary actor callback interfaces and use typed
+views of the actual fields accessed. No DATA credit is added. Larger pose,
+clipping, initializer, and fade/dash candidates remain compiler mismatches
+and are retained privately without credit.
+
+Catalog/build checks, all 126 tests, whole compiler-object verification, and
+full hybrid linkage/packing pass. CODE is 2,701,316 / 3,293,696 bytes
+(82.0147%), with 18,875 matching functions among 20,400 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.

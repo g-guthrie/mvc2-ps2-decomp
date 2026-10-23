@@ -20394,4 +20394,12 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/linked_trail_update_003539d0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/linked_trail_update_003539d0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/linked_trail_update_003539d0.o" private/SLUS_204.86.rom --source src/linked_trail_update_003539d0.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/rise_contact_update_002af510.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/rise_contact_update_002af510.o"
+"$PYTHON" tools/verify_object.py "$BUILD/rise_contact_update_002af510.o" private/SLUS_204.86.rom --source src/rise_contact_update_002af510.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/target_search_transition_00319480.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/target_search_transition_00319480.o"
+"$PYTHON" tools/verify_object.py "$BUILD/target_search_transition_00319480.o" private/SLUS_204.86.rom --source src/target_search_transition_00319480.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
