@@ -5818,3 +5818,19 @@ verification, and full hybrid linkage/packing pass. CODE is 2,709,104 /
 DATA remains 468,869 / 648,064 bytes. The reconstructed ELF retains retail
 SHA-256 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes.
+
+## Inherited motion and linked effect entries
+
+Ten whole functions add 2,688 bytes across inherited drift, owner-state
+dispatch, facing setup, ground/velocity placement, linked effect entries,
+and parameter-driven initialization. The state-dispatch span is split at
+its two real function boundaries, leaving its four alignment bytes uncredited.
+The complete local copy of `func_001CFEA0` is independently verified at its
+native address (196 bytes); it adds no extra CODE credit. DATA is unchanged.
+
+All 126 tests, catalog and source/build coverage checks, whole-object
+verification, and full hybrid linkage/packing pass. CODE is 2,711,792 /
+3,293,696 bytes (82.3328%), with 18,915 matches among 20,407 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF retains retail
+SHA-256 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes.

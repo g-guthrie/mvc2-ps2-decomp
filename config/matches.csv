@@ -18968,3 +18968,13 @@ func_001A0BD0,0x001A0BD0,0xBC,src/owner_ground_entry_001a0bd0.c,complete
 func_001A1110,0x001A1110,0x120,src/owner_drift_setup_001a1110.c,complete
 func_001A4650,0x001A4650,0x114,src/owner_acceleration_entry_001a4650.c,complete
 func_001A5A90,0x001A5A90,0xF0,src/owner_direction_offset_001a5a90.c,complete
+func_001A6C90,0x001A6C90,0x124,src/owner_inherited_drift_001a6c90.c,complete
+func_001CEB70,0x001CEB70,0xBC,src/owner_phase_dispatch_001ceb70.c,complete
+func_001CEC30,0x001CEC30,0x44,src/owner_phase_dispatch_001ceb70.c,complete
+func_001CFF90,0x001CFF90,0x120,src/owner_facing_setup_001cff90.c,complete
+func_001D2CC0,0x001D2CC0,0x110,src/owner_ground_velocity_001d2cc0.c,complete
+func_001D6BE0,0x001D6BE0,0xF0,src/owner_context_entry_001d6be0.c,complete
+func_001BB530,0x001BB530,0x11C,src/linked_owner_effect_entries.c,complete
+func_001BB710,0x001BB710,0x11C,src/linked_owner_effect_entries.c,complete
+func_001A5650,0x001A5650,0x164,src/linked_control_entry_001a5650.c,complete
+func_001AC860,0x001AC860,0x1A0,src/owner_parameter_entry_001ac860.c,complete

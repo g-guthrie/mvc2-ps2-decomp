@@ -20514,4 +20514,36 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/owner_direction_offset_001a5a90.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_direction_offset_001a5a90.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_direction_offset_001a5a90.o" private/SLUS_204.86.rom --source src/owner_direction_offset_001a5a90.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_inherited_drift_001a6c90.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_inherited_drift_001a6c90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_inherited_drift_001a6c90.o" private/SLUS_204.86.rom --source src/owner_inherited_drift_001a6c90.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_phase_dispatch_001ceb70.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_phase_dispatch_001ceb70.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_phase_dispatch_001ceb70.o" private/SLUS_204.86.rom --source src/owner_phase_dispatch_001ceb70.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_facing_setup_001cff90.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_facing_setup_001cff90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_facing_setup_001cff90.o" private/SLUS_204.86.rom --source src/owner_facing_setup_001cff90.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_ground_velocity_001d2cc0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_ground_velocity_001d2cc0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_ground_velocity_001d2cc0.o" private/SLUS_204.86.rom --source src/owner_ground_velocity_001d2cc0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_context_entry_001d6be0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_context_entry_001d6be0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_context_entry_001d6be0.o" private/SLUS_204.86.rom --source src/owner_context_entry_001d6be0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/linked_owner_effect_entries.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/linked_owner_effect_entries.o"
+"$PYTHON" tools/verify_object.py "$BUILD/linked_owner_effect_entries.o" private/SLUS_204.86.rom --source src/linked_owner_effect_entries.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/linked_control_entry_001a5650.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/linked_control_entry_001a5650.o"
+"$PYTHON" tools/verify_object.py "$BUILD/linked_control_entry_001a5650.o" private/SLUS_204.86.rom --source src/linked_control_entry_001a5650.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_parameter_entry_001ac860.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_parameter_entry_001ac860.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_parameter_entry_001ac860.o" private/SLUS_204.86.rom --source src/owner_parameter_entry_001ac860.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
