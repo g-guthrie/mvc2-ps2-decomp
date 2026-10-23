@@ -20402,4 +20402,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/target_search_transition_00319480.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/target_search_transition_00319480.o"
 "$PYTHON" tools/verify_object.py "$BUILD/target_search_transition_00319480.o" private/SLUS_204.86.rom --source src/target_search_transition_00319480.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/boundary_snap_update_002645d0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/boundary_snap_update_002645d0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/boundary_snap_update_002645d0.o" private/SLUS_204.86.rom --source src/boundary_snap_update_002645d0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

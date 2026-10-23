@@ -5726,3 +5726,20 @@ full hybrid linkage/packing pass. CODE is 2,701,316 / 3,293,696 bytes
 DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+
+
+## 2026-10-23 — Boundary snap update
+
+Recovered the complete 316-byte `002645D0` with MWCCPS2 3.0.3 -O3,p
+-sdatathreshold 0. It updates motion, preserves the retail marker assignment
+and subsequent clear, and snaps to the stored boundary using the distinct
+team-zero and other-team float comparisons. The latter retains native
+unordered/NaN behavior. Its actor callback interface remains unary.
+No DATA credit is added.
+
+Catalog/build checks, all 126 tests, whole compiler-object verification, and
+full hybrid linkage/packing pass. CODE is 2,701,632 / 3,293,696 bytes
+(82.0243%), with 18,876 matching functions among 20,400 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
