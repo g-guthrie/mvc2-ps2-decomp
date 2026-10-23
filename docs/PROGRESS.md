@@ -5834,3 +5834,19 @@ verification, and full hybrid linkage/packing pass. CODE is 2,711,792 /
 DATA remains 468,869 / 648,064 bytes. The reconstructed ELF retains retail
 SHA-256 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes.
+
+## Owner-relative movement and scatter initialization
+
+Four whole functions add 1,848 bytes: saved-mode velocity setup (324),
+circular-motion initialization (504), signed table-offset animation setup
+(468), and randomized scatter initialization (552). Their original owner
+reads, floating-point calculations, and animation-call order are preserved.
+The twelve-byte velocity view models the two consumed floats and leaves
+its remaining word opaque; it adds no DATA credit.
+
+All 126 tests, catalog and source/build coverage checks, whole-object
+verification, and full hybrid linkage/packing pass. CODE is 2,713,640 /
+3,293,696 bytes (82.3889%), with 18,919 matches among 20,407 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF retains retail
+SHA-256 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes.

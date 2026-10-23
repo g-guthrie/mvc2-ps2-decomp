@@ -18978,3 +18978,7 @@ func_001BB530,0x001BB530,0x11C,src/linked_owner_effect_entries.c,complete
 func_001BB710,0x001BB710,0x11C,src/linked_owner_effect_entries.c,complete
 func_001A5650,0x001A5650,0x164,src/linked_control_entry_001a5650.c,complete
 func_001AC860,0x001AC860,0x1A0,src/owner_parameter_entry_001ac860.c,complete
+func_0019B7D0,0x0019B7D0,0x144,src/owner_saved_mode_entry_0019b7d0.c,complete
+func_00193BA0,0x00193BA0,0x1F8,src/owner_circular_entry_00193ba0.c,complete
+func_0019C240,0x0019C240,0x1D4,src/owner_offset_animation_0019c240.c,complete
+func_0019BAF0,0x0019BAF0,0x228,src/owner_random_scatter_0019baf0.c,complete
