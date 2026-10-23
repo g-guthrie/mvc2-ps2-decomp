@@ -18944,3 +18944,6 @@ func_00242AA0,0x00242AA0,0x1B4,src/direction_exit_motion_00242aa0.c,complete
 func_00239240,0x00239240,0x1B8,src/owner_direction_exit_00239240.c,complete
 func_0032BB70,0x0032BB70,0x278,src/selection_confirm_phases_0032bb70.c,complete
 func_003D3B40,0x003D3B40,0x290,src/menu_strip_render_003d3b40.c,complete
+func_00348550,0x00348550,0x158,src/owner_spark_entry_00348550.c,complete
+func_0033F260,0x0033F260,0x154,src/cycle_rotation_0033f260.c,complete
+func_00348800,0x00348800,0xDC,src/owner_spark_copy_00348800.c,complete

@@ -5756,3 +5756,18 @@ pass. CODE is 2,704,104 / 3,293,696 bytes (82.0994%), with 18,881 matching
 functions among 20,400 cataloged spans. The reconstructed ELF retains retail
 SHA-256 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,706,313 bytes.
+
+## Owner spark setup and cycle rotation
+
+Recovered three whole functions: owner-relative spark initialization
+(`00348550`, 344 bytes), cycle rotation (`0033F260`, 340 bytes), and owner-state
+copy/dispatch (`00348800`, 220 bytes). The owner argument in the last function
+is supplied by native caller `00348520` and forwarded to the selected callback.
+The four alignment bytes after its return remain uncredited.
+
+All 126 tests, build/source coverage, catalog validation, and full hybrid
+linkage/packing pass. CODE is 2,705,008 / 3,293,696 bytes (82.1268%), with
+18,884 matches among 20,401 cataloged spans. DATA remains 468,869 / 648,064
+bytes. The full reconstructed ELF retains retail SHA-256
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,706,313 bytes, 1,305 bytes away.

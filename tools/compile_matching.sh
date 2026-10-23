@@ -20426,4 +20426,16 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/menu_strip_render_003d3b40.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/menu_strip_render_003d3b40.o"
 "$PYTHON" tools/verify_object.py "$BUILD/menu_strip_render_003d3b40.o" private/SLUS_204.86.rom --source src/menu_strip_render_003d3b40.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_spark_entry_00348550.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_spark_entry_00348550.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_spark_entry_00348550.o" private/SLUS_204.86.rom --source src/owner_spark_entry_00348550.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/cycle_rotation_0033f260.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/cycle_rotation_0033f260.o"
+"$PYTHON" tools/verify_object.py "$BUILD/cycle_rotation_0033f260.o" private/SLUS_204.86.rom --source src/cycle_rotation_0033f260.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_spark_copy_00348800.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_spark_copy_00348800.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_spark_copy_00348800.o" private/SLUS_204.86.rom --source src/owner_spark_copy_00348800.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
