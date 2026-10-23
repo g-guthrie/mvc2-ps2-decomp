@@ -5673,3 +5673,31 @@ DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
 The investigated input selector, inherited entries, global-request update,
 and controller-slot selector remain whole-function mismatches and uncredited.
+
+
+## 2026-10-22 — Typed actor motion and linked-trail recovery
+
+Recovered three complete functions, adding 1,792 exact CODE bytes:
+`002C8C20` (428) handles airborne input, horizontal movement, and landing;
+`001FAD10` (684) handles context-matched motion, landing, and stage wrapping;
+`003539D0` (680) updates linked trails, their native work fields, and spawned
+callbacks. All match MWCCPS2 3.0-011126 -O3,p -sdatathreshold 0.
+
+Partial actor views name the actual native fields accessed by each function.
+They replace raw address casts and the mismatched timer views that prevented
+the original scheduling and complete compiler matches. The trail's vertical
+offset is initialized after its horizontal adjustment, preserving the native
+order. The first two entries retain the existing actor/work callback contract:
+001FA8F0 and 002C83B0 explicitly supply actor+0x2B8 through 0044FD60 and
+00459EE0. The linked-trail entry remains unary, copies the actual callback,
+and uses the allocator's pointer return. Unordered comparisons, full extents,
+and existing bank bytes remain intact. No DATA credit is added.
+
+Catalog/build checks, all 126 tests, whole compiler-object verification, and
+full hybrid linkage/packing pass. CODE is 2,700,676 / 3,293,696 bytes
+(81.9953%), with 18,873 matching functions among 20,400 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+Investigated controller-slot and roster selectors, hit-motion branches,
+input-motion lanes, and the repeat-jump transition remain uncredited.

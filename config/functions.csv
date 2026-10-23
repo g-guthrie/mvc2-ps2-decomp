@@ -5867,7 +5867,7 @@ func_001FA8F0,0x001FA8F0,0x24,0x001FA914,code,matching-c-head-split
 residual_001FA914,0x001FA914,0x100,0x001FAA14,assembly_residual,verified-boundary-after-matching-head
 func_001FAA20,0x001FAA20,0xA4,0x001FAAC4,code,spimdisasm-explicit-size-before-first-data
 func_001FAAD0,0x001FAAD0,0x240,0x001FAD10,code,spimdisasm-explicit-size-before-first-data
-func_001FAD10,0x001FAD10,0x2AC,0x001FAFBC,code,spimdisasm-explicit-size-before-first-data
+func_001FAD10,0x001FAD10,0x2AC,0x001FAFBC,code,verified-complete-c-function
 func_001FAFC0,0x001FAFC0,0x3C,0x001FAFFC,code,spimdisasm-explicit-size-before-first-data
 func_001FB000,0x001FB000,0xD0,0x001FB0D0,code,spimdisasm-explicit-size-before-first-data
 func_001FB0D0,0x001FB0D0,0x3C,0x001FB10C,code,spimdisasm-explicit-size-before-first-data
@@ -11850,7 +11850,7 @@ func_002C88D0,0x002C88D0,0x54,0x002C8924,code,spimdisasm-explicit-size-before-fi
 func_002C8930,0x002C8930,0xD0,0x002C8A00,code,spimdisasm-explicit-size-before-first-data
 func_002C8A00,0x002C8A00,0x10C,0x002C8B0C,code,spimdisasm-explicit-size-before-first-data
 func_002C8B10,0x002C8B10,0x108,0x002C8C18,code,spimdisasm-explicit-size-before-first-data
-func_002C8C20,0x002C8C20,0x1AC,0x002C8DCC,code,spimdisasm-explicit-size-before-first-data
+func_002C8C20,0x002C8C20,0x1AC,0x002C8DCC,code,verified-complete-c-function
 func_002C8DD0,0x002C8DD0,0x8C,0x002C8E5C,code,spimdisasm-explicit-size-before-first-data
 func_002C8E60,0x002C8E60,0x118,0x002C8F78,code,spimdisasm-explicit-size-before-first-data
 func_002C8F80,0x002C8F80,0x4C,0x002C8FCC,code,spimdisasm-explicit-size-before-first-data
@@ -15683,7 +15683,8 @@ func_00353730,0x00353730,0x60,0x00353790,code,spimdisasm-explicit-size-before-fi
 func_00353790,0x00353790,0x20,0x003537B0,code,matching-c-head-split
 residual_003537B0,0x003537B0,0x1E8,0x00353998,assembly_residual,verified-boundary-after-matching-head
 func_003539A0,0x003539A0,0x2C,0x003539CC,code,exact-MWCC-C-entry-table-bounded
-residual_003539CC,0x003539CC,0x2AC,0x00353C78,assembly_residual,uncredited remainder after exact recovered entry
+residual_003539CC,0x003539CC,0x4,0x003539D0,assembly_residual,native-prefix-before-verified-c-body
+func_003539D0,0x003539D0,0x2A8,0x00353C78,code,verified-complete-c-function
 func_00353C80,0x00353C80,0x204,0x00353E84,code,spimdisasm-explicit-size-before-first-data
 func_00353E90,0x00353E90,0xF4,0x00353F84,code,spimdisasm-explicit-size-before-first-data
 func_00353F90,0x00353F90,0x70,0x00354000,code,spimdisasm-explicit-size-before-first-data

@@ -20382,4 +20382,16 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/small_control_entries.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/small_control_entries.o"
 "$PYTHON" tools/verify_object.py "$BUILD/small_control_entries.o" private/SLUS_204.86.rom --source src/small_control_entries.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/air_input_landing_002c8c20.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/air_input_landing_002c8c20.o"
+"$PYTHON" tools/verify_object.py "$BUILD/air_input_landing_002c8c20.o" private/SLUS_204.86.rom --source src/air_input_landing_002c8c20.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/stage_wrap_motion_001fad10.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/stage_wrap_motion_001fad10.o"
+"$PYTHON" tools/verify_object.py "$BUILD/stage_wrap_motion_001fad10.o" private/SLUS_204.86.rom --source src/stage_wrap_motion_001fad10.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/linked_trail_update_003539d0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/linked_trail_update_003539d0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/linked_trail_update_003539d0.o" private/SLUS_204.86.rom --source src/linked_trail_update_003539d0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
