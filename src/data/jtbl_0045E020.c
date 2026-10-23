@@ -1,10 +1,12 @@
-typedef const unsigned char *Mvc2Address;
-extern const unsigned char func_00325230[];
-extern const unsigned char func_00325380[];
-extern const unsigned char func_003253F0[];
-extern const unsigned char lbl_00325120[];
-Mvc2Address const jtbl_0045E020[4] = {
-    lbl_00325120,
+/* Four native unary contact-lane phases. */
+typedef unsigned char u8;
+typedef void (*ContactLanePhase)(u8 *);
+extern void func_00325120(u8 *);
+extern void func_00325230(u8 *);
+extern void func_00325380(u8 *);
+extern void func_003253F0(u8 *);
+ContactLanePhase const jtbl_0045E020[4] = {
+    func_00325120,
     func_00325230,
     func_00325380,
     func_003253F0,

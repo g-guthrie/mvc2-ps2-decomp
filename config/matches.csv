@@ -18911,3 +18911,9 @@ func_002B4E90,0x002B4E90,0x214,src/variant_motion_entry_002b4e90.c,complete
 func_002FDF60,0x002FDF60,0x1E4,src/motion_lane_entry_002fdf60.c,complete
 func_0029F170,0x0029F170,0x1E4,src/collision_transition_0029f170.c,complete
 func_002F1870,0x002F1870,0x340,src/weighted_position_phases_002f1870.c,complete
+func_002FB6C0,0x002FB6C0,0x118,src/grounded_capture_002fb6c0.c,complete
+func_00325120,0x00325120,0x108,src/contact_lane_entry_00325120.c,complete
+func_00221F60,0x00221F60,0xB0,src/direction_flip_entry_00221f60.c,complete
+func_001ABE90,0x001ABE90,0xB4,src/owner_distance_entry_001abe90.c,complete
+func_001ABCC0,0x001ABCC0,0x12C,src/owner_range_entry_001abcc0.c,complete
+func_003250F0,0x003250F0,0x28,src/contact_lane_entry_00325120.c,complete

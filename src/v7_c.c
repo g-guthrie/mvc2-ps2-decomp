@@ -6,7 +6,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-extern void (*D_004BF7E0[2])(u8 *, u8 *);
+extern void (*D_004BF7E0[16])(u8 *, u8 *) __attribute__((section(".sdata")));
 
 void func_001A9D20(u8 *p, u8 *q) {
     D_004BF7E0[p[7]](p, q);

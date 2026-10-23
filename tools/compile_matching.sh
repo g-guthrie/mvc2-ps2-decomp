@@ -20306,4 +20306,24 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/weighted_position_phases_002f1870.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/weighted_position_phases_002f1870.o"
 "$PYTHON" tools/verify_object.py "$BUILD/weighted_position_phases_002f1870.o" private/SLUS_204.86.rom --source src/weighted_position_phases_002f1870.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/grounded_capture_002fb6c0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/grounded_capture_002fb6c0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/grounded_capture_002fb6c0.o" private/SLUS_204.86.rom --source src/grounded_capture_002fb6c0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/contact_lane_entry_00325120.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/contact_lane_entry_00325120.o"
+"$PYTHON" tools/verify_object.py "$BUILD/contact_lane_entry_00325120.o" private/SLUS_204.86.rom --source src/contact_lane_entry_00325120.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/direction_flip_entry_00221f60.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/direction_flip_entry_00221f60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/direction_flip_entry_00221f60.o" private/SLUS_204.86.rom --source src/direction_flip_entry_00221f60.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_distance_entry_001abe90.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_distance_entry_001abe90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_distance_entry_001abe90.o" private/SLUS_204.86.rom --source src/owner_distance_entry_001abe90.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_range_entry_001abcc0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_range_entry_001abcc0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_range_entry_001abcc0.o" private/SLUS_204.86.rom --source src/owner_range_entry_001abcc0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

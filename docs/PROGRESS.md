@@ -5585,3 +5585,31 @@ full hybrid linkage/packing pass. CODE is 2,692,812 / 3,293,696 bytes
 DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
+
+
+## 2026-10-22 — Contact lanes, grounded capture, and owner motion
+
+Recovered six complete functions, adding 1,240 exact CODE bytes:
+`002FB6C0` (280) grounds a captured target, applies the hit offset, and releases
+it on timeout; `00325120` (264) initializes contact-lane motion and visibility;
+`003250F0` (40) dispatches the four contact-lane phases; `00221F60` (176)
+sets the facing-dependent offset and restarts the animation; `001ABE90` (180)
+and `001ABCC0` (300) select owner-relative motion and transition by distance.
+The first three match MWCCPS2 3.0-011126 -O3,p; the remaining three match
+3.0.3 -O3,p. All use -sdatathreshold 0.
+
+The contact-lane caller tests the allocation returned by `001E0A60`. Its
+existing wrapper now explicitly returns its actual event pointer, preserving
+all 92 native bytes. The four-entry contact-lane table names its verified
+unary callbacks. The existing owner dispatcher now declares the actual
+16-entry callback bank instead of a two-entry array. These interface repairs
+add no DATA credit. Owner arguments are forwarded through the existing
+`001A9D20` dispatcher; unordered float comparisons retain the native branch
+behavior. Alignment gaps remain uncredited.
+
+Catalog/build checks, all 126 tests, whole compiler-object verification, and
+full hybrid linkage/packing pass. CODE is 2,694,052 / 3,293,696 bytes
+(81.7942%), with 18,854 matching functions among 20,383 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed full-percentage checkpoint remains 2,706,313 CODE bytes.
