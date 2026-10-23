@@ -20470,4 +20470,28 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/visible_owner_animation_entries.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/visible_owner_animation_entries.o"
 "$PYTHON" tools/verify_object.py "$BUILD/visible_owner_animation_entries.o" private/SLUS_204.86.rom --source src/visible_owner_animation_entries.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_animation_table_0019b190.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_animation_table_0019b190.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_animation_table_0019b190.o" private/SLUS_204.86.rom --source src/owner_animation_table_0019b190.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/hidden_owner_copy_0035afd0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/hidden_owner_copy_0035afd0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/hidden_owner_copy_0035afd0.o" private/SLUS_204.86.rom --source src/hidden_owner_copy_0035afd0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/visible_layer_owner_0037b780.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/visible_layer_owner_0037b780.o"
+"$PYTHON" tools/verify_object.py "$BUILD/visible_layer_owner_0037b780.o" private/SLUS_204.86.rom --source src/visible_layer_owner_0037b780.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_hidden_layer_001a6ed0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_hidden_layer_001a6ed0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_hidden_layer_001a6ed0.o" private/SLUS_204.86.rom --source src/owner_hidden_layer_001a6ed0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_first_animation_001d46a0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_first_animation_001d46a0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_first_animation_001d46a0.o" private/SLUS_204.86.rom --source src/owner_first_animation_001d46a0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_second_animation_001d4850.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_second_animation_001d4850.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_second_animation_001d4850.o" private/SLUS_204.86.rom --source src/owner_second_animation_001d4850.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

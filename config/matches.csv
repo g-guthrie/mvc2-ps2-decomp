@@ -18956,3 +18956,9 @@ func_001A0F60,0x001A0F60,0xFC,src/owner_facing_offset_001a0f60.c,complete
 func_001BA0B0,0x001BA0B0,0xF4,src/owner_follow_effect_001ba0b0.c,complete
 func_001BA6B0,0x001BA6B0,0xC8,src/visible_owner_animation_entries.c,complete
 func_001BABC0,0x001BABC0,0xC8,src/visible_owner_animation_entries.c,complete
+func_0019B190,0x0019B190,0xD0,src/owner_animation_table_0019b190.c,complete
+func_0035AFD0,0x0035AFD0,0xC8,src/hidden_owner_copy_0035afd0.c,complete
+func_0037B780,0x0037B780,0xC8,src/visible_layer_owner_0037b780.c,complete
+func_001A6ED0,0x001A6ED0,0xB4,src/owner_hidden_layer_001a6ed0.c,complete
+func_001D46A0,0x001D46A0,0xA8,src/owner_first_animation_001d46a0.c,complete
+func_001D4850,0x001D4850,0xC0,src/owner_second_animation_001d4850.c,complete
