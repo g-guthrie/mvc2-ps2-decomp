@@ -70,13 +70,14 @@ void func_00387330(int pool, u8 mode) {
         event->field20 = mode;
     }
 }
-void func_00387C40(int pool, u8 mode) {
+Event *func_00387C40(int pool, u8 mode) {
     Event *event = func_003DA750(pool, 1, 2);
     if (event != 0) {
         event->callback = func_00387C90;
         event->arg = (void *)pool;
         event->field20 = mode;
     }
+    return event;
 }
 
 void func_003A8B10(u8 *arg) {

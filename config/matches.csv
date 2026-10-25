@@ -19079,3 +19079,7 @@ func_0032FC00,0x0032FC00,0x228,src/actor_bounce_rotation_cycle_0032fc00.c,comple
 func_0034C450,0x0034C450,0x144,src/actor_distance_animation_step_0034c450.c,complete
 func_00370990,0x00370990,0x114,src/actor_owner_action_launch_00370990.c,complete
 func_0037ED50,0x0037ED50,0x1AC,src/actor_owner_frame_follow_0037ed50.c,complete
+func_00386620,0x00386620,0x114,src/actor_owner_child_copy_00386620.c,complete
+func_00384D80,0x00384D80,0x148,src/actor_owner_animation_copy_00384d80.c,complete
+func_00387D30,0x00387D30,0x16C,src/actor_spawn_mask_init_00387d30.c,complete
+func_00397FC0,0x00397FC0,0x100,src/actor_owner_ground_transition_00397fc0.c,complete

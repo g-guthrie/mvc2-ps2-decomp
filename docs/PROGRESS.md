@@ -6226,3 +6226,22 @@ with 19,017 matches among 20,434 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (25,791 bytes away).
+
+## Owner record copying and bounded event spawning
+
+Four complete functions add 1,224 verified CODE bytes: owner-record child
+initialization (276), owner animation initialization (328), bounded event
+spawn initialization (364), and owner-ground transition (256). The record
+initializers copy the complete 49-word native block and preserve the following
+field updates. Child initialization passes the actual owner argument to its
+helper. The spawn loop retains its signed 16-bit index, byte-sized remaining
+count, allocation-failure exit, and per-success mask update. Its allocator
+at 0x00387C40 now returns the actual event pointer; its whole object remains
+exact. No DATA credit is added.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,747,620 / 3,293,696 bytes (83.4206%),
+with 19,021 matches among 20,434 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (24,567 bytes away).
