@@ -18995,3 +18995,8 @@ func_001ACE50,0x001ACE50,0x25C,src/linked_rotated_entry_001ace50.c,complete
 func_001DC210,0x001DC210,0x140,src/owner_random_drift_001dc210.c,complete
 func_001DF670,0x001DF670,0x17C,src/owner_script_emitter_001df670.c,complete
 func_001E1700,0x001E1700,0x210,src/owner_offset_interpolation_001e1700.c,complete
+func_0034A890,0x0034A890,0xB4,src/owner_inherited_dispatch_0034a890.c,complete
+func_00347B10,0x00347B10,0x15C,src/owner_scale_growth_00347b10.c,complete
+func_0034CCE0,0x0034CCE0,0x18C,src/owner_side_offset_0034cce0.c,complete
+func_00349510,0x00349510,0xC4,src/owner_scaled_dispatch_00349510.c,complete
+func_003495E0,0x003495E0,0x114,src/owner_linked_follow_003495e0.c,complete

@@ -5903,3 +5903,19 @@ verification, and full hybrid linkage/packing pass. CODE is 2,718,732 /
 DATA remains 468,869 / 648,064 bytes. The reconstructed ELF retains retail
 SHA-256 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes.
+
+## Owner dispatch, scale growth, and linked following
+
+Five complete functions add 1,396 verified CODE bytes: owner inheritance and
+callback dispatch (180), scaled callback dispatch (196), owner-relative scale
+growth (348), side-offset setup (396), and linked-effect following (276).
+The callback entries preserve the native owner argument. The follower retains
+the allocation failure check and updates both links only on success. The two
+12-byte alignment gaps remain uncredited. No DATA credit is added.
+
+All 126 tests, catalog and build coverage checks, whole-object verification,
+and full hybrid linkage/packing pass. CODE is 2,720,128 / 3,293,696 bytes
+(82.5859%), with 18,937 matches among 20,410 cataloged spans. DATA remains
+468,869 / 648,064 bytes. The reconstructed ELF retains retail SHA-256
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes (19,122 bytes away).

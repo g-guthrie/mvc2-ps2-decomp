@@ -20586,4 +20586,24 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/owner_offset_interpolation_001e1700.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_offset_interpolation_001e1700.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_offset_interpolation_001e1700.o" private/SLUS_204.86.rom --source src/owner_offset_interpolation_001e1700.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_inherited_dispatch_0034a890.c -c -lang c -O3,p -sdatathreshold 0 -i src -o "$BUILD/owner_inherited_dispatch_0034a890.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_inherited_dispatch_0034a890.o" private/SLUS_204.86.rom --source src/owner_inherited_dispatch_0034a890.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_scale_growth_00347b10.c -c -lang c -O3,p -sdatathreshold 0 -i src -o "$BUILD/owner_scale_growth_00347b10.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_scale_growth_00347b10.o" private/SLUS_204.86.rom --source src/owner_scale_growth_00347b10.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_side_offset_0034cce0.c -c -lang c -O3,p -sdatathreshold 0 -i src -o "$BUILD/owner_side_offset_0034cce0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_side_offset_0034cce0.o" private/SLUS_204.86.rom --source src/owner_side_offset_0034cce0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_scaled_dispatch_00349510.c -c -lang c -O3,p -sdatathreshold 0 -i src -o "$BUILD/owner_scaled_dispatch_00349510.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_scaled_dispatch_00349510.o" private/SLUS_204.86.rom --source src/owner_scaled_dispatch_00349510.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_linked_follow_003495e0.c -c -lang c -O3,p -sdatathreshold 0 -i src -o "$BUILD/owner_linked_follow_003495e0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_linked_follow_003495e0.o" private/SLUS_204.86.rom --source src/owner_linked_follow_003495e0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
