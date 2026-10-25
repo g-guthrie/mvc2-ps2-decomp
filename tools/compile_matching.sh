@@ -21083,4 +21083,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/align_segment_chain_001a6690.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/align_segment_chain_001a6690.o"
 "$PYTHON" tools/verify_object.py "$BUILD/align_segment_chain_001a6690.o" private/SLUS_204.86.rom --source src/align_segment_chain_001a6690.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_position_follow_003c0b30.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_position_follow_003c0b30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_position_follow_003c0b30.o" private/SLUS_204.86.rom --source src/owner_position_follow_003c0b30.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

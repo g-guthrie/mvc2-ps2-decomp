@@ -6621,3 +6621,22 @@ with 19,056 matches among 20,432 spans. DATA remains 468,873 / 648,064 bytes.
 Retail ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (15,527 bytes away).
+
+
+### Owner-position following callback
+
+Recovered `func_003C0B30` as 176 bytes of exact compiled C. The callback
+uses the attachment at actor+0xD8, reverses a 40-unit horizontal offset for
+the owner's facing, and eases each coordinate one quarter of the way toward
+the owner-relative target. The vertical target includes 342.85711669921875.
+When animation status is negative, it clears visibility and releases the actor.
+The existing allocation path already installs this unary callback. Its genuine
+animation and release helper interfaces are retained; no helper or DATA credit
+is added.
+
+The Metrowerks 3.0-011126 whole-object comparison, source/build coverage, all
+130 tests, and complete hybrid linkage and packing pass. The retail ELF hash
+remains `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+CODE is 2,756,836 / 3,293,696 bytes (83.7004%), with 19,057 matches among
+20,432 spans. DATA remains 468,873 / 648,064 bytes (72.3498%). The fixed next
+CODE checkpoint remains 2,772,187 bytes, now 15,351 bytes away.
