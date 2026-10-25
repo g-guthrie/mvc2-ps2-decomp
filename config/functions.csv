@@ -12069,7 +12069,7 @@ func_002CF940,0x002CF940,0x98,0x002CF9D8,code,spimdisasm-explicit-size-before-fi
 func_002CF9E0,0x002CF9E0,0x3C,0x002CFA1C,code,spimdisasm-explicit-size-before-first-data
 func_002CFA20,0x002CFA20,0x48,0x002CFA68,code,spimdisasm-explicit-size-before-first-data
 func_002CFA70,0x002CFA70,0x20,0x002CFA90,code,matching-c-head-split
-residual_002CFA90,0x002CFA90,0xE8,0x002CFB78,assembly_residual,verified-boundary-after-matching-head
+func_002CFA90,0x002CFA90,0xE8,0x002CFB78,code,verified-pointer-entry-and-whole-function
 func_002CFB80,0x002CFB80,0xA4,0x002CFC24,code,spimdisasm-explicit-size-before-first-data
 func_002CFC30,0x002CFC30,0x174,0x002CFDA4,code,spimdisasm-explicit-size-before-first-data
 func_002CFDB0,0x002CFDB0,0x188,0x002CFF38,code,spimdisasm-explicit-size-before-first-data

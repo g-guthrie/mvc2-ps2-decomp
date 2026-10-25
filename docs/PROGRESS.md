@@ -7037,3 +7037,52 @@ retail-exact linkage/packing pass. No new CODE or DATA bytes are credited:
 CODE remains 2,760,708 / 3,293,696 bytes (83.8179%); DATA remains 468,873 /
 648,064 bytes (72.3498%). The interpolation callback body remains uncredited
 until its complete compiler comparison passes.
+
+
+## Actor motion transitions with verified helper bodies (+696 CODE bytes)
+
+Recovered four whole functions with Metrowerks 3.0.3, -O3,p and small-data
+threshold zero:
+
+- func_001BF860, 52 bytes: advances the phase, sets a ten-tick timer and restores
+  vertical scale when the owner's signed timer expires, then runs the actual
+  frame-clock continuation.
+- func_00299A20, 204 bytes: integrates unfrozen motion, performs the landing
+  transition, selects the byte-wrapped animation event, and consumes any queued
+  command through its real continuation.
+- func_002B09B0, 208 bytes: consumes a queued command, updates motion, clamps a
+  horizontal reversal using new velocity times old velocity, and changes phase
+  and animation when vertical velocity becomes negative.
+- func_002CFA90, 232 bytes: initializes a ground-level launch, including the
+  special mode flags, facing-dependent velocity, counter update, animation and
+  pending-command continuation.
+
+Making genuine callee bodies visible resolves compiler register differences
+without fake parameters, stand-ins, register pinning or opcode edits. The
+complete helpers at 0x001BF550 (100 bytes), 0x00296FB0 (72 bytes), 0x002ADC20
+(76 bytes), and 0x002CFA20 (72 bytes) each independently match their own native
+address. They were already credited and receive no additional credit here.
+The normal build checks these copies as well as each new caller.
+
+The formerly residual 0x002CFA90 span has a real 32-byte stack frame, complete
+return at 0x002CFB70 with stack restoration in its delay slot, and a retail
+function-pointer entry in slot zero of jtbl_0045A260. The pinned image word at
+0x0045A260 is 0x002CFA90, and the existing phase dispatcher indexes that table.
+Its catalog span is promoted without changing its 232-byte extent or crediting
+neighboring alignment.
+
+Host fixtures execute all four new bodies and their real static helper bodies.
+They check owner/frame-clock gates, timer and byte rollover, freeze behavior,
+landing/event selection, horizontal reversal, falling transitions, both launch
+orientations, command consumption, and exact counter increments. A reversed
+horizontal clamp fails. The host harness widens only address arithmetic and
+relocates the owner pointer slot to accommodate host pointer width; separate
+whole-object comparisons validate the unchanged PS2 layouts and ABI.
+
+All 155 tests, source/build coverage, complete compiler comparisons and full
+retail-exact hybrid linkage/packing pass. CODE is 2,761,404 / 3,293,696 bytes
+(83.8391%), with 19,077 matches among 20,438 catalog spans. DATA remains
+468,873 / 648,064 bytes; its documented ownership issue remains unresolved.
+The next fixed CODE checkpoint remains 2,772,187 bytes (10,783 bytes away).
+The retail ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.

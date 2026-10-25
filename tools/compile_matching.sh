@@ -21135,4 +21135,20 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/model_curvature_callback_00331350.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/model_curvature_callback_00331350.o"
 "$PYTHON" tools/verify_object.py "$BUILD/model_curvature_callback_00331350.o" private/SLUS_204.86.rom --source src/model_curvature_callback_00331350.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_owner_timer_001bf860.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_owner_timer_001bf860.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_timer_001bf860.o" private/SLUS_204.86.rom --source src/actor_owner_timer_001bf860.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_landing_command_00299a20.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_landing_command_00299a20.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_landing_command_00299a20.o" private/SLUS_204.86.rom --source src/actor_landing_command_00299a20.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_rise_cancel_002b09b0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_rise_cancel_002b09b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_rise_cancel_002b09b0.o" private/SLUS_204.86.rom --source src/actor_rise_cancel_002b09b0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_ground_launch_002cfa90.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_ground_launch_002cfa90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_ground_launch_002cfa90.o" private/SLUS_204.86.rom --source src/actor_ground_launch_002cfa90.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

@@ -19135,3 +19135,7 @@ func_001C3F40,0x001C3F40,0xC4,src/actor_owner_entry_setups.c,complete
 func_001B5A40,0x001B5A40,0x98,src/frame_attribute_update_001b5a40.c,complete
 func_0021D280,0x0021D280,0x180,src/frame_palette_update_0021d280.c,complete
 func_00331350,0x00331350,0x180,src/model_curvature_callback_00331350.c,complete
+func_001BF860,0x001BF860,0x34,src/actor_owner_timer_001bf860.c,complete
+func_00299A20,0x00299A20,0xCC,src/actor_landing_command_00299a20.c,complete
+func_002B09B0,0x002B09B0,0xD0,src/actor_rise_cancel_002b09b0.c,complete
+func_002CFA90,0x002CFA90,0xE8,src/actor_ground_launch_002cfa90.c,complete

@@ -12,9 +12,9 @@ for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
 
 | | Matched | Total | |
 | --- | ---: | ---: | ---: |
-| Code | 2,760,708 bytes | 3,293,696 bytes | **83.82%** |
+| Code | 2,761,404 bytes | 3,293,696 bytes | **83.84%** |
 | Initialized data | 468,873 bytes | 648,064 bytes | **72.35%** |
-| Catalog spans | 19,073 | 20,438 | |
+| Catalog spans | 19,077 | 20,438 | |
 
 Every matched function is C compiled with a period toolchain (Metrowerks
 MWCC 2.4/3.0/3.0.3, SN GCC 2.95.2, EE GCC 2.96, or Sony EE GCC 2.9) and
@@ -223,9 +223,9 @@ Verified code is pushed at least after each additional full percentage point.
 The latest checkpoint also publishes the EE GCC sibling-call profile described
 in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 
-The latest verified CODE checkpoint is 2,760,708 / 3,293,696 bytes
-(83.8179%). The latest change recovers the 384-byte model curvature callback
-using its actual registered context interface. The six-effect wrapper also
-forwards a correctly typed three-float position pointer. The model interpolation
-registration now shares the walker's actual three-input callback contract. All 153 tests and full
-retail-exact linkage pass. DATA is 468,873 / 648,064 bytes (72.3498%).
+The latest verified CODE checkpoint is 2,761,404 / 3,293,696 bytes
+(83.8391%). The latest matched additions recover four actor timer, landing,
+rise, and ground-launch functions, adding 696 CODE bytes. Complete native
+helper bodies are independently verified and receive no duplicate credit.
+All 155 tests and full retail-exact linkage pass. DATA remains 468,873 /
+648,064 bytes (72.3498%).
