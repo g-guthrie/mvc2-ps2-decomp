@@ -19066,3 +19066,10 @@ func_002CE3A0,0x002CE3A0,0x124,src/actor_direction_adjust_002ce3a0.c,complete
 func_002CF6C0,0x002CF6C0,0x128,src/actor_air_launch_brake_002cf6c0.c,complete
 func_002D4BE0,0x002D4BE0,0x174,src/actor_boundary_launch_002d4be0.c,complete
 func_002D0950,0x002D0950,0x1A0,src/actor_linked_effect_transition_002d0950.c,complete
+func_002EF2D0,0x002EF2D0,0x108,src/actor_completion_event_state_002ef2d0.c,complete
+func_002EFD00,0x002EFD00,0x12C,src/actor_midpoint_launch_002efd00.c,complete
+func_00305DE0,0x00305DE0,0x1F4,src/actor_state_workflow_00305de0.c,complete
+func_00305FE0,0x00305FE0,0x1F4,src/actor_state_workflow_00305fe0.c,complete
+func_0030AD50,0x0030AD50,0x134,src/actor_palette_animation_reset_0030ad50.c,complete
+func_00331EB0,0x00331EB0,0x124,src/actor_parent_anchor_transition_00331eb0.c,complete
+func_00325FE0,0x00325FE0,0xFC,src/actor_throw_position_delta_00325fe0.c,complete

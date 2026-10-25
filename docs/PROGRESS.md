@@ -6175,3 +6175,21 @@ with 19,004 matches among 20,434 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (30,311 bytes away).
+
+## Actor workflows, parent anchors, and throw velocity
+
+Seven complete functions add 2,416 verified CODE bytes: completion-event
+state handling (264), midpoint launch (300), two state workflows (500 each),
+palette and animation setup (308), parent-anchor transition (292), and throw
+velocity setup (252). The workflows retain their distinct action, callback
+mode, and animation constants. Parent-anchor changes copy the full native
+position vectors and use the actual matrix helper interfaces. Throw setup
+preserves the original position snapshots across both attachment calls.
+No DATA credit is added.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,744,292 / 3,293,696 bytes (83.3195%),
+with 19,011 matches among 20,434 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (27,895 bytes away).

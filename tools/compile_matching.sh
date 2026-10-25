@@ -20875,4 +20875,32 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_linked_effect_transition_002d0950.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_linked_effect_transition_002d0950.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_linked_effect_transition_002d0950.o" private/SLUS_204.86.rom --source src/actor_linked_effect_transition_002d0950.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_completion_event_state_002ef2d0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_completion_event_state_002ef2d0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_completion_event_state_002ef2d0.o" private/SLUS_204.86.rom --source src/actor_completion_event_state_002ef2d0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_midpoint_launch_002efd00.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_midpoint_launch_002efd00.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_midpoint_launch_002efd00.o" private/SLUS_204.86.rom --source src/actor_midpoint_launch_002efd00.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_state_workflow_00305de0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_state_workflow_00305de0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_state_workflow_00305de0.o" private/SLUS_204.86.rom --source src/actor_state_workflow_00305de0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_state_workflow_00305fe0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_state_workflow_00305fe0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_state_workflow_00305fe0.o" private/SLUS_204.86.rom --source src/actor_state_workflow_00305fe0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_palette_animation_reset_0030ad50.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_palette_animation_reset_0030ad50.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_palette_animation_reset_0030ad50.o" private/SLUS_204.86.rom --source src/actor_palette_animation_reset_0030ad50.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_parent_anchor_transition_00331eb0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_parent_anchor_transition_00331eb0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_parent_anchor_transition_00331eb0.o" private/SLUS_204.86.rom --source src/actor_parent_anchor_transition_00331eb0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_throw_position_delta_00325fe0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_throw_position_delta_00325fe0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_throw_position_delta_00325fe0.o" private/SLUS_204.86.rom --source src/actor_throw_position_delta_00325fe0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
