@@ -19059,3 +19059,10 @@ func_002AFC90,0x002AFC90,0x158,src/actor_variant_air_launch_002afc90.c,complete
 func_002AFFE0,0x002AFFE0,0x118,src/actor_direction_speed_adjust_002affe0.c,complete
 func_002BD330,0x002BD330,0xE0,src/actor_height_phase_transition_002bd330.c,complete
 func_002BC680,0x002BC680,0x124,src/actor_palette_ground_reset_002bc680.c,complete
+func_002B9C80,0x002B9C80,0x1D4,src/actor_random_state_select_002b9c80.c,complete
+func_002CDF20,0x002CDF20,0x110,src/actor_ground_speed_launch_002cdf20.c,complete
+func_002C19F0,0x002C19F0,0x150,src/actor_landing_response_002c19f0.c,complete
+func_002CE3A0,0x002CE3A0,0x124,src/actor_direction_adjust_002ce3a0.c,complete
+func_002CF6C0,0x002CF6C0,0x128,src/actor_air_launch_brake_002cf6c0.c,complete
+func_002D4BE0,0x002D4BE0,0x174,src/actor_boundary_launch_002d4be0.c,complete
+func_002D0950,0x002D0950,0x1A0,src/actor_linked_effect_transition_002d0950.c,complete

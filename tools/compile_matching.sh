@@ -20847,4 +20847,32 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_palette_ground_reset_002bc680.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_palette_ground_reset_002bc680.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_palette_ground_reset_002bc680.o" private/SLUS_204.86.rom --source src/actor_palette_ground_reset_002bc680.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_random_state_select_002b9c80.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_random_state_select_002b9c80.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_random_state_select_002b9c80.o" private/SLUS_204.86.rom --source src/actor_random_state_select_002b9c80.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_ground_speed_launch_002cdf20.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_ground_speed_launch_002cdf20.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_ground_speed_launch_002cdf20.o" private/SLUS_204.86.rom --source src/actor_ground_speed_launch_002cdf20.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_landing_response_002c19f0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_landing_response_002c19f0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_landing_response_002c19f0.o" private/SLUS_204.86.rom --source src/actor_landing_response_002c19f0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_direction_adjust_002ce3a0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_direction_adjust_002ce3a0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_direction_adjust_002ce3a0.o" private/SLUS_204.86.rom --source src/actor_direction_adjust_002ce3a0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_air_launch_brake_002cf6c0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_air_launch_brake_002cf6c0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_air_launch_brake_002cf6c0.o" private/SLUS_204.86.rom --source src/actor_air_launch_brake_002cf6c0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_boundary_launch_002d4be0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_boundary_launch_002d4be0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_boundary_launch_002d4be0.o" private/SLUS_204.86.rom --source src/actor_boundary_launch_002d4be0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_linked_effect_transition_002d0950.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_linked_effect_transition_002d0950.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_linked_effect_transition_002d0950.o" private/SLUS_204.86.rom --source src/actor_linked_effect_transition_002d0950.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

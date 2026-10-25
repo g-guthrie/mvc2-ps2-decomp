@@ -12,7 +12,8 @@ extern int func_001757E0(u8 *, int, int);
 extern void func_00183D10(u8 *);
 extern void func_001E3210(u8 *, int);
 extern u8 D_004D18E6;
-extern int func_001CE4A0(u8 *, int);
+typedef struct CallbackEntry CallbackEntry;
+extern CallbackEntry *func_001CE4A0(void *, u8);
 extern void func_002B9E60(u8 *);
 
 void func_002B9F60(u8 *p)

@@ -223,8 +223,9 @@ Verified code is pushed at least after each additional full percentage point.
 The latest checkpoint also publishes the EE GCC sibling-call profile described
 in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 
-The latest verified CODE checkpoint is 2,739,424 / 3,293,696 bytes
-(83.1717%). Eight full actor functions recover motion-bank launches,
-linked work setup, direction-sensitive speed adjustment, ground resets,
-and a height-triggered phase transition. All 126 tests and full retail-exact
-linkage pass. DATA remains 468,869 / 648,064 bytes (72.3492%).
+The latest verified CODE checkpoint is 2,741,876 / 3,293,696 bytes
+(83.2462%). Seven full actor functions recover random state selection,
+landing response, speed adjustments, air launches, and linked effect
+transitions. The callback allocator and its callers now agree on its pointer
+return type. All 126 tests and full retail-exact linkage pass. DATA remains
+468,869 / 648,064 bytes (72.3492%).

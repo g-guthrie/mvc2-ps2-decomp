@@ -6157,3 +6157,21 @@ with 18,997 matches among 20,434 cataloged spans. DATA remains 468,869 /
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The fixed 2,739,250-byte CODE checkpoint is passed; the next is 2,772,187
 bytes (32,763 bytes away).
+
+## Actor movement, landing, and effect transitions
+
+Seven complete functions add 2,452 verified CODE bytes: random state
+selection (468), ground speed launch (272), landing response (336),
+direction-sensitive speed adjustment (292), air launch and braking (296),
+boundary launch (372), and linked effect transition (416). The effect paths
+retain their distinct position vectors and the helper's four actual arguments.
+The callback allocator at 0x001CE4A0 now returns its allocated entry; all
+three callers use the matching pointer return declaration. The allocator
+object and both existing caller objects remain exact. No DATA credit is added.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,741,876 / 3,293,696 bytes (83.2462%),
+with 19,004 matches among 20,434 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (30,311 bytes away).
