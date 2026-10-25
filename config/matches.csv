@@ -19085,3 +19085,6 @@ func_00387D30,0x00387D30,0x16C,src/actor_spawn_mask_init_00387d30.c,complete
 func_00397FC0,0x00397FC0,0x100,src/actor_owner_ground_transition_00397fc0.c,complete
 func_0039CCE0,0x0039CCE0,0x138,src/actor_ancestor_position_init_0039cce0.c,complete
 func_003AF300,0x003AF300,0x1B0,src/actor_recursive_chain_position_003af300.c,complete
+func_003B25D0,0x003B25D0,0x174,src/actor_position_samples_init_003b25d0.c,complete
+func_003B39C0,0x003B39C0,0x1EC,src/actor_table_offset_init_003b39c0.c,complete
+func_003C7D20,0x003C7D20,0x138,src/actor_facing_offset_init_003c7d20.c,complete

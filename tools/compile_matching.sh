@@ -20951,4 +20951,16 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_recursive_chain_position_003af300.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_recursive_chain_position_003af300.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_recursive_chain_position_003af300.o" private/SLUS_204.86.rom --source src/actor_recursive_chain_position_003af300.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_position_samples_init_003b25d0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_position_samples_init_003b25d0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_position_samples_init_003b25d0.o" private/SLUS_204.86.rom --source src/actor_position_samples_init_003b25d0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_table_offset_init_003b39c0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_table_offset_init_003b39c0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_table_offset_init_003b39c0.o" private/SLUS_204.86.rom --source src/actor_table_offset_init_003b39c0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_facing_offset_init_003c7d20.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_facing_offset_init_003c7d20.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_facing_offset_init_003c7d20.o" private/SLUS_204.86.rom --source src/actor_facing_offset_init_003c7d20.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

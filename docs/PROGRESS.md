@@ -6263,3 +6263,20 @@ with 19,023 matches among 20,434 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (23,823 bytes away).
+
+## Position samples and inherited offsets
+
+Three complete functions add 1,176 verified CODE bytes: four-sample position
+initialization (372), table-driven offset initialization (492), and inherited
+facing-offset initialization (312). A four-iteration C loop reproduces all
+eight native float-to-integer conversions and sample writes. Offset setup
+retains both signed short components, native facing handling, and the action
+sentinel. The inherited-position routine preserves its initial coordinate
+writes before the facing-dependent update. No DATA credit is added.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,749,540 / 3,293,696 bytes (83.4789%),
+with 19,026 matches among 20,434 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (22,647 bytes away).

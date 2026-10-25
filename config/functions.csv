@@ -17950,7 +17950,7 @@ func_003B2380,0x003B2380,0x154,0x003B24D4,code,spimdisasm-explicit-size-before-f
 func_003B24E0,0x003B24E0,0x74,0x003B2554,code,spimdisasm-explicit-size-before-first-data
 func_003B2560,0x003B2560,0x50,0x003B25B0,code,spimdisasm-explicit-size-before-first-data
 func_003B25B0,0x003B25B0,0x20,0x003B25D0,code,matching-c-head-split
-residual_003B25D0,0x003B25D0,0x174,0x003B2744,assembly_residual,verified-boundary-after-matching-head
+func_003B25D0,0x003B25D0,0x174,0x003B2744,code,whole-function-compiler-verified
 func_003B2750,0x003B2750,0xDC,0x003B282C,code,spimdisasm-explicit-size-before-first-data
 func_003B2830,0x003B2830,0x14,0x003B2844,code,spimdisasm-explicit-size-before-first-data
 func_003B2850,0x003B2850,0x8,0x003B2858,code,spimdisasm-explicit-size-before-first-data
@@ -17987,7 +17987,7 @@ func_003B3880,0x003B3880,0x64,0x003B38E4,code,spimdisasm-explicit-size-before-fi
 func_003B38F0,0x003B38F0,0x7C,0x003B396C,code,spimdisasm-explicit-size-before-first-data
 func_003B3970,0x003B3970,0x24,0x003B3994,code,matching-c-head-split
 func_003B39A0,0x003B39A0,0x20,0x003B39C0,code,verified-complete-c-function
-residual_003B39C0,0x003B39C0,0x1EC,0x003B3BAC,assembly_residual,native-suffix-after-verified-c-body
+func_003B39C0,0x003B39C0,0x1EC,0x003B3BAC,code,whole-function-compiler-verified
 func_003B3BB0,0x003B3BB0,0x118,0x003B3CC8,code,spimdisasm-explicit-size-before-first-data
 func_003B3CD0,0x003B3CD0,0x20,0x003B3CF0,code,matching-c-head-split
 residual_003B3CF0,0x003B3CF0,0x1DC,0x003B3ECC,assembly_residual,verified-boundary-after-matching-head
@@ -18470,7 +18470,7 @@ func_003C7B90,0x003C7B90,0x74,0x003C7C04,code,spimdisasm-explicit-size-before-fi
 func_003C7C10,0x003C7C10,0x48,0x003C7C58,code,spimdisasm-explicit-size-before-first-data
 func_003C7C60,0x003C7C60,0x90,0x003C7CF0,code,spimdisasm-explicit-size-before-first-data
 func_003C7CF0,0x003C7CF0,0x30,0x003C7D20,code,exact-MWCC-C-entry-table-bounded
-residual_003C7D20,0x003C7D20,0x138,0x003C7E58,assembly_residual,uncredited remainder after exact recovered entry
+func_003C7D20,0x003C7D20,0x138,0x003C7E58,code,whole-function-compiler-verified
 func_003C7E60,0x003C7E60,0xE4,0x003C7F44,code,spimdisasm-explicit-size-before-first-data
 func_003C7F50,0x003C7F50,0x20,0x003C7F70,code,matching-c-head-split
 residual_003C7F70,0x003C7F70,0xA4,0x003C8014,assembly_residual,verified-boundary-after-matching-head
