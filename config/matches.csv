@@ -19145,3 +19145,5 @@ func_001C0C60,0x001C0C60,0x60,src/actor_depth_animation_001c0c60.c,complete
 func_001CA5C0,0x001CA5C0,0x5C,src/actor_random_start_001ca5c0.c,complete
 func_00197490,0x00197490,0x84,src/actor_owner_gate_00197490.c,complete
 func_001C0E40,0x001C0E40,0x1C,src/actor_follow_start_001c0e40.c,complete
+func_0019D860,0x0019D860,0x10C,src/actor_owner_copy_start_0019d860.c,complete
+func_00133970,0x00133970,0xC0,src/menu_player_round_gate_00133970.c,complete

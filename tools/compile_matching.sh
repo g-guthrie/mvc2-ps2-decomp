@@ -21175,4 +21175,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/actor_follow_start_001c0e40.c -c -lang c -O3,p -sdatathreshold 0 -i src -o "$BUILD/actor_follow_start_001c0e40.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_follow_start_001c0e40.o" private/SLUS_204.86.rom --source src/actor_follow_start_001c0e40.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_owner_copy_start_0019d860.c -c -lang c -O3,p -sdatathreshold 0 -i src -o "$BUILD/actor_owner_copy_start_0019d860.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_copy_start_0019d860.o" private/SLUS_204.86.rom --source src/actor_owner_copy_start_0019d860.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/menu_player_round_gate_00133970.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/menu_player_round_gate_00133970.o"
+"$PYTHON" tools/verify_object.py "$BUILD/menu_player_round_gate_00133970.o" private/SLUS_204.86.rom --source src/menu_player_round_gate_00133970.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

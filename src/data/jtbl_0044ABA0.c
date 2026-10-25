@@ -23,8 +23,8 @@ extern void func_0019D5D0(u8 *);
 extern void func_0019D680(u8 *);
 extern void func_0019D720(u8 *);
 extern void func_0019D730(u8 *);
-extern void func_0019D860(u8 *);
-extern void func_0019D970(u8 *);
+extern void func_0019D860(u8 *, u8 *);
+extern void func_0019D970(u8 *, u8 *);
 extern void func_0019DAD0(u8 *);
 extern void func_0019DAE0(u8 *);
 extern void func_0019DBB0(u8 *);
@@ -40,7 +40,8 @@ extern void func_00200380(u8 *);
 extern void func_00300380(u8 *);
 extern void func_00400300(u8 *);
 
-const Mvc2StateCallback jtbl_0044ABA0[36] = {
+const ActorCopyCallbackTables jtbl_0044ABA0 = {
+  {
     func_0019C510,
     func_0019C610,
     func_0019C750,
@@ -61,8 +62,12 @@ const Mvc2StateCallback jtbl_0044ABA0[36] = {
     func_0019D680,
     func_0019D720,
     func_0019D730,
+  },
+  {
     func_0019D860,
     func_0019D970,
+  },
+  {
     func_0019DAD0,
     func_0019DAE0,
     func_0019DBB0,
@@ -77,4 +82,5 @@ const Mvc2StateCallback jtbl_0044ABA0[36] = {
     func_00200300,
     func_00400300,
     func_00200380,
+  }
 };

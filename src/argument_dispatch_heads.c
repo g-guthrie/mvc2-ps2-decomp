@@ -1,4 +1,5 @@
 #include "owned_actor_states_0044c770.h"
+#include "actor_effect_work_callbacks.h"
 typedef unsigned char u8;
 typedef void (*DispatchFn1)(u8 *);
 typedef void (*DispatchFn2)(u8 *, void *);
@@ -12,7 +13,7 @@ extern void func_002F6450(u8 *);
 
 extern DispatchFn2 jtbl_0044ABD0[];
 extern DispatchFn2 jtbl_0044ABE0[];
-extern DispatchFn2 jtbl_0044ABF0[];
+extern const ActorEffectWorkCallback jtbl_0044ABF0[2];
 extern DispatchFn2 jtbl_0044AC00[];
 extern DispatchFn2 jtbl_0044AD60[];
 extern DispatchFn2 jtbl_0044AF70[];
@@ -294,7 +295,7 @@ void func_0019D2D0(u8 *p) { jtbl_0044ABD0[p[4]](p, *(void **)(p + 24)); }
 
 void func_0019D5A0(u8 *p) { jtbl_0044ABE0[p[4]](p, *(void **)(p + 24)); }
 
-void func_0019D830(u8 *p) { jtbl_0044ABF0[p[4]](p, *(void **)(p + 212)); }
+void func_0019D830(u8 *p) { jtbl_0044ABF0[p[4]](p, *(u8 **)(p + 212)); }
 
 void func_0019DB80(u8 *p) { jtbl_0044AC00[p[4]](p, *(void **)(p + 24)); }
 

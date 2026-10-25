@@ -7268,3 +7268,43 @@ with ELF SHA-256
 CODE is 2,762,352 / 3,293,696 bytes (83.8678%), with 19,083 matches among
 20,441 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%). The
 next fixed CODE checkpoint remains 2,772,187 bytes, 9,835 bytes away.
+
+
+## Owner copy startup and bounded player round gate (+460 CODE bytes)
+
+Recovered func_0019D860 (268 bytes, Metrowerks 3.0) and func_00133970
+(192 bytes, Metrowerks 3.0.3), both at -O3,p with small-data threshold zero.
+Both match as complete compiler functions. The copy startup has a real
+pointer at 0x0044ABF0, selected by func_0019D830 from actor phase; its twelve
+preceding alignment bytes remain uncredited. The menu gate is referenced at
+0x0043E918 and selected by func_00133950 from subphase. Its native frame and
+return occupy the complete former 192-byte residual.
+
+The copy startup advances phase, hides and resets inactive actors, or copies
+all 196 owner-state bytes plus position, scale, identity and facing fields.
+It adjusts depth and animation state, selecting animation 28 only for signed
+owner selectors at least 32. The real two-entry copy phase pair now has
+actor/owner signatures in the physical table, and the dispatcher uses those
+types. Neighboring legacy DATA ownership issues remain unresolved and receive
+no new credit here.
+
+The menu gate checks scene mode and round state, reads the nonzero player
+selection, and either resets to an alternate state or advances phase, sets up
+position, tests current sound flags and clears the timer. The bit shift uses
+the actual player-slot contract: func_00133720 calls the constructor for slots
+0 and 1, and func_00133760 stores that slot at actor byte 2. The menu phase
+dispatcher now forwards the owner to all three handlers; their real native
+bodies consume that input. No unused argument was added to force a match.
+
+Tests compare the complete actor buffer for active/inactive owner copying,
+check signed animation selection and reject a shortened state copy or wrong
+owner. The menu tests cover every byte selection value, both constructed
+player slots, round guards and flags changed across the helper call. Wrong
+owner forwarding and caching flags before the helper both fail.
+
+All 172 tests, source/build/catalog checks and compiler objects pass. The
+full linked image and packed executable remain retail-exact; ELF SHA-256 is
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+CODE is 2,762,812 / 3,293,696 bytes (83.8818%), with 19,085 matches among
+20,442 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%). The
+next fixed CODE checkpoint remains 2,772,187 bytes, 9,375 bytes away.
