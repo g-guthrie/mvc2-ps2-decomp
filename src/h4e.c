@@ -5,8 +5,10 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
-extern void func_00380160(u8 *, u32, u32, u32);
-void func_003801F0(u8 *a, u32 b, u32 c) {
+/* Both effect paths consume the complete three-float position. */
+typedef struct { f32 x, y, z; } V3;
+extern void func_00380160(void *, V3 *, s32, s32);
+void func_003801F0(void *a, V3 *b, s32 c) {
     u32 i;
     for (i = 0; (u8)i < 6; i = (i + 1) & 0xFF) func_00380160(a, b, c, i);
 }

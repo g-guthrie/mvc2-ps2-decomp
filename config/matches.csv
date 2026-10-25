@@ -19134,3 +19134,4 @@ func_001BE590,0x001BE590,0xAC,src/actor_owner_entry_setups.c,complete
 func_001C3F40,0x001C3F40,0xC4,src/actor_owner_entry_setups.c,complete
 func_001B5A40,0x001B5A40,0x98,src/frame_attribute_update_001b5a40.c,complete
 func_0021D280,0x0021D280,0x180,src/frame_palette_update_0021d280.c,complete
+func_00331350,0x00331350,0x180,src/model_curvature_callback_00331350.c,complete

@@ -6975,3 +6975,44 @@ CODE is 2,760,324 / 3,293,696 bytes (83.8063%), with 19,072 matching spans among
 0x0044AC20 ownership issue remains pending. The retail ELF SHA-256 remains
 48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
 The next fixed CODE checkpoint remains 2,772,187 bytes (11,863 bytes away).
+
+
+## Correct the six-effect position interface (no new byte credit)
+
+The native func_00380160 reads three floats from its second input and copies
+all three into the allocated effect. Its already matched six-spawn wrapper,
+func_003801F0, incorrectly declared that input as a 32-bit integer. The wrapper
+now takes a three-float position pointer and declares the actual callee's
+pointer and signed-integer inputs consistently with its definition. Whole-object
+comparison preserves every existing h4e.c match; no new function is credited.
+
+A host fixture executes the actual wrapper and actual allocation body, checking
+six calls, owner/callback pointers, all XYZ coordinates, child indices, neighboring
+bytes, and each possible failed allocation. This also exercises full host-width
+pointers, exposing the previous integer declaration. All 153 tests and complete
+retail-exact hybrid linkage/packing pass. CODE remains 2,760,324 / 3,293,696 bytes
+(83.8063%); DATA remains 468,873 / 648,064 bytes (72.3498%).
+
+
+## Model curvature callback (+384 CODE bytes)
+
+Recovered the complete func_00331350 callback with Metrowerks 3.0, -O4,p,
+and small-data threshold zero. It reads and writes model samples through
+their actual callbacks, deforming only negative-Y samples along Z. The
+angle uses the actor phase plus separately truncated Y and half-X components,
+then the native double-precision turn conversion. Curvature multiplies the
+squared Y coordinate and one plus the sine term. Both iterator state pairs
+are cleared before the destination iterator is released.
+
+The registering func_00330EF0 supplies the actor through the callback's signed
+32-bit context input. Using that actual interface, then converting the context
+to the actor pointer, resolves the saved-register differences that remained
+under a guessed pointer formal. The complete 384-byte compiler object matches;
+no forced registers, padding, substitute callees or duplicate credit is used.
+
+All 153 tests, source/build coverage, whole-object comparisons and full
+retail-exact hybrid linkage/packing pass. CODE is 2,760,708 / 3,293,696 bytes
+(83.8179%), with 19,073 matches among 20,438 catalog spans. DATA remains
+468,873 / 648,064 bytes. The next fixed CODE checkpoint remains 2,772,187 bytes
+(11,479 bytes away). The retail ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.

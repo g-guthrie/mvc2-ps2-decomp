@@ -21131,4 +21131,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/frame_palette_update_0021d280.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/frame_palette_update_0021d280.o"
 "$PYTHON" tools/verify_object.py "$BUILD/frame_palette_update_0021d280.o" private/SLUS_204.86.rom --source src/frame_palette_update_0021d280.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/model_curvature_callback_00331350.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/model_curvature_callback_00331350.o"
+"$PYTHON" tools/verify_object.py "$BUILD/model_curvature_callback_00331350.o" private/SLUS_204.86.rom --source src/model_curvature_callback_00331350.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
