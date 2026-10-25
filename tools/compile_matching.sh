@@ -20779,4 +20779,24 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_draw_work_init_0027c660.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_draw_work_init_0027c660.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_draw_work_init_0027c660.o" private/SLUS_204.86.rom --source src/actor_draw_work_init_0027c660.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_event_launch_0027f0b0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_event_launch_0027f0b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_event_launch_0027f0b0.o" private/SLUS_204.86.rom --source src/actor_event_launch_0027f0b0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_full_motion_bank_00283510.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_full_motion_bank_00283510.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_full_motion_bank_00283510.o" private/SLUS_204.86.rom --source src/actor_full_motion_bank_00283510.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_ground_launch_bank_00283970.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_ground_launch_bank_00283970.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_ground_launch_bank_00283970.o" private/SLUS_204.86.rom --source src/actor_ground_launch_bank_00283970.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_npc_work_timeout_00283fe0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_npc_work_timeout_00283fe0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_npc_work_timeout_00283fe0.o" private/SLUS_204.86.rom --source src/actor_npc_work_timeout_00283fe0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_facing_velocity_launch_00284470.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_facing_velocity_launch_00284470.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_facing_velocity_launch_00284470.o" private/SLUS_204.86.rom --source src/actor_facing_velocity_launch_00284470.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

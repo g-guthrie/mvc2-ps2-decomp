@@ -6105,3 +6105,21 @@ with 18,980 matches among 20,428 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes (5,294 bytes away).
+
+## Event launch and movement-bank variants
+
+Five complete functions add 1,748 verified CODE bytes: pending-event launch
+(436), full movement-bank selection (440), ground launch-bank setup (328),
+NPC-dependent work timeout (240), and facing-dependent launch velocity (304).
+The event routine preserves the native effect target and scaled position
+snapshot. The work initializer retains both the reset and subsequent 0x40
+action-word write. The effect helper declaration uses its reconstructed
+integer argument type. The leading 12-byte gap before 0x00283FE0 remains
+uncredited. No DATA credit is added.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,735,704 / 3,293,696 bytes (83.0588%),
+with 18,985 matches among 20,429 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes (3,546 bytes away).
