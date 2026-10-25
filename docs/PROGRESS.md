@@ -6820,3 +6820,50 @@ with 19,064 matches among 20,434 catalog spans. DATA remains 468,873 / 648,064
 bytes. The retail ELF SHA-256 remains
 48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
 The fixed next CODE checkpoint remains 2,772,187 bytes (13,471 bytes away).
+
+
+## Three vector-cycle callbacks and explicit height-helper input
+
+Recovered complete 160-byte callbacks at 0x00161530, 0x00161780 and
+0x001619D0, adding 480 CODE bytes. Each begins four bytes after the start of
+its former residual catalog span and is named by the existing callback table.
+The four-byte native alignment before each entry remains uncredited. Boundaries
+now separate each alignment word from the independently verified full function.
+The CODE denominator is unchanged.
+
+The callbacks increment an eight-bit key, then reduce the wrapped byte modulo
+three. They select a complete three-float target from the existing bounded
+three-row tables at 0x004B3ED0, 0x004B3F80 and 0x004B3FB0. A typed object view
+models the current vector, primary delta vector, alternate delta fields at
+0x5C/0x60/0x68, phase byte and 32-bit timer. Each prepares a 20-update transition,
+advances phase, and tail calls its genuine update helper. That first update is
+included in the 20 updates: the timer is 19 when the callback returns. No fixed
+registers, assembly, manual padding or fake helper bodies are used.
+
+The existing 112-byte func_001C1590 caller now explicitly passes actor to
+func_001C1630 through its typed one-input declaration. The caller remains exact;
+the still-unreconstructed helper body receives no new credit. A host fixture
+checks the actual caller and detects substituting owner for actor.
+
+A separate fixture executes all three real callbacks, their actual callback
+table, the real update helpers and the canonical DATA C tables. It checks
+selectors 0/1/2/255, all 20 updates, phase reset, and preservation of the unused
+slot at offset 0x64. Its negative control detects moving remainder before the
+eight-bit wrap. Both fixtures include positive and negative controls.
+
+All 144 tests, source/build coverage, whole-object comparisons and complete
+hybrid linkage/packing pass. CODE is 2,759,196 / 3,293,696 bytes (83.7720%),
+with 19,067 matches among 20,437 catalog spans. DATA remains 468,873 / 648,064
+bytes. The retail ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+The fixed next CODE checkpoint remains 2,772,187 bytes (12,991 bytes away).
+
+### Outstanding DATA ownership issue found during this CODE work
+
+The pre-existing catalog partly labels 0x0044AC20..0x0044ACA0 as callback
+pointers. The actual consumer, func_0019E0F0, masks its random selector to
+0..15 and reads four signed shorts per eight-byte record through
+D_0044AC20/22/24/26. That proves a 128-byte velocity/acceleration table,
+including the last 16 bytes currently attached to jtbl_0044ABA0. The DATA
+owner split and pointer interpretations need repair. They are unchanged in
+this CODE batch; byte equality alone does not validate those existing C types.

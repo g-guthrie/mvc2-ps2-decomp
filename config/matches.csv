@@ -19126,3 +19126,6 @@ func_00348F50,0x00348F50,0xE8,src/interaction_high_launch_00348f50.c,complete
 func_003611D0,0x003611D0,0x13C,src/inherited_effect_entry_003611d0.c,complete
 func_00351060,0x00351060,0x34,src/actor_work_dispatch_setup_00351060.c,complete
 func_003510A0,0x003510A0,0x16C,src/actor_work_dispatch_setup_00351060.c,complete
+func_00161530,0x00161530,0xA0,src/vector_cycle_transitions.c,complete
+func_00161780,0x00161780,0xA0,src/vector_cycle_transitions.c,complete
+func_001619D0,0x001619D0,0xA0,src/vector_cycle_transitions.c,complete

@@ -21111,4 +21111,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_work_dispatch_setup_00351060.c -c -lang c -O3,p -sdatathreshold 8 -o "$BUILD/actor_work_dispatch_setup_00351060.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_work_dispatch_setup_00351060.o" private/SLUS_204.86.rom --source src/actor_work_dispatch_setup_00351060.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/vector_cycle_transitions.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/vector_cycle_transitions.o"
+"$PYTHON" tools/verify_object.py "$BUILD/vector_cycle_transitions.o" private/SLUS_204.86.rom --source src/vector_cycle_transitions.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

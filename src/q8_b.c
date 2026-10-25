@@ -5,9 +5,9 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
-extern void func_001C1630();
 
-extern void func_001C1630();
+
+extern void func_001C1630(u8 *);
 void func_001C1590(u8 *p) {
     u8 *q = *(u8 **)(p + 0x18);
     if (q[6] > 2) {
@@ -18,7 +18,7 @@ void func_001C1590(u8 *p) {
         if (p[0x20] == 0) {
             *(f32 *)(p + 0x38) = 304.2857055664f + *(f32 *)(q + 0x38);
         } else {
-            func_001C1630();
+            func_001C1630(p);
         }
     }
 }
