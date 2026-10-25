@@ -21063,4 +21063,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/initialize_selected_mask_callbacks_0013ca00.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/initialize_selected_mask_callbacks_0013ca00.o"
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_selected_mask_callbacks_0013ca00.o" private/SLUS_204.86.rom --source src/initialize_selected_mask_callbacks_0013ca00.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_owner_offset_initializer_0017ff30.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_owner_offset_initializer_0017ff30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_offset_initializer_0017ff30.o" private/SLUS_204.86.rom --source src/actor_owner_offset_initializer_0017ff30.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

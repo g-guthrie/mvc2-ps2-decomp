@@ -6508,3 +6508,25 @@ with 19,051 matches among 20,432 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (17,623 bytes away).
+
+
+## Owner-relative actor placement and launch initialization
+
+The complete initializer at 0x0017FF30 adds 296 verified CODE bytes. It
+preserves byte-state increments, the preceding state update, visibility,
+angle and scale setup, animation arguments, velocity and acceleration,
+the signed timer, owner-position copy, and both facing-dependent X-offset
+branches. Its exported opaque byte-pointer input agrees with the native
+callback table. No helper or DATA credit is added.
+
+The former `residual_0017FF30` catalog row is now the complete callback
+`func_0017FF30`. The retail table at 0x00448CE8 points directly to this entry,
+which owns its stack frame and return. The adjacent 32-byte dispatcher and
+the catalog span count remain unchanged.
+
+All 128 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,754,860 / 3,293,696 bytes (83.6404%),
+with 19,052 matches among 20,432 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (17,327 bytes away).
