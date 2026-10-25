@@ -19099,3 +19099,5 @@ func_002E5FC0,0x002E5FC0,0x78,src/actor_stage_gate_002e5fc0.c,complete
 func_002CFF40,0x002CFF40,0x88,src/actor_pending_phase_002cff40.c,complete
 func_003BBB10,0x003BBB10,0x64,src/actor_contact_dispatch_003bbb10.c,complete
 func_0030A590,0x0030A590,0x88,src/actor_event_animation_phase_0030a590.c,complete
+func_0037E0A0,0x0037E0A0,0x80,src/effect_single_spawn_0037e0a0.c,complete
+func_0039C8B0,0x0039C8B0,0xAC,src/actor_owner_animation_sync_0039c8b0.c,complete

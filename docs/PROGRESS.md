@@ -6350,3 +6350,20 @@ with 19,037 matches among 20,434 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (20,935 bytes away).
+
+## Single-event spawning and owner-frame synchronization
+
+Two complete functions add 300 verified CODE bytes: single-event spawning
+(128) and owner-frame synchronization (172). The constructor preserves its
+allocation-failure behavior, callback, owner, mode bytes, and native loop.
+The synchronizer uses an opaque object input with a byte-record view, copies
+the owner's position and palette, handles hide and release signals, and
+advances animation until the masked frame matches. No extra inputs, padding,
+assembly, or DATA credit are introduced.
+
+All 128 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,751,552 / 3,293,696 bytes (83.5400%),
+with 19,039 matches among 20,434 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (20,635 bytes away).
