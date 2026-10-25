@@ -226,5 +226,6 @@ in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 The latest verified CODE checkpoint is 2,761,764 / 3,293,696 bytes
 (83.8500%). The latest matched addition recovers the 360-byte actor approach
 transition, including its strict target interval, timer fallback, contact
-handling and render-queue handoff. All 157 tests and full retail-exact linkage
-pass. DATA remains 468,873 / 648,064 bytes (72.3498%).
+handling and render-queue handoff. The capture constructor also returns its
+allocated entry or null, matching the native caller contract. All 158 tests and
+full retail-exact linkage pass. DATA remains 468,873 / 648,064 bytes (72.3498%).

@@ -56,9 +56,9 @@ typedef struct {
 typedef struct { u8 pad[0x168]; u16 h168; u8 pad16a[0x4B]; u8 b1B5; u8 pad1b6[0xE]; u32 w1C4; } Src;
 extern void func_001D7D70(void);
 extern void func_001D8160(void);
-extern Obj *func_003DA750(s32 a, s32 b, s32 c);
+extern void *func_003DA750(void *pool, s32 kind, s32 flags);
 
-void func_001D7CE0(Src *a, s32 b) {
+Obj *func_001D7CE0(Src *a, s32 b) {
     Obj *o;
     if ((o = func_003DA750(0, 3, 0)) != 0) {
         void *f = (void *)func_001D7D70;
@@ -72,6 +72,7 @@ void func_001D7CE0(Src *a, s32 b) {
         o->b21 = b - 1;
         o->fD8 = a->w1C4;
     }
+    return o;
 }
 
 extern void func_001CCD40(void);

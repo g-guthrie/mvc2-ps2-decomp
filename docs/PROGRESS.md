@@ -7121,3 +7121,30 @@ retail-exact hybrid linkage/packing pass. CODE is 2,761,764 / 3,293,696 bytes
 468,873 / 648,064 bytes (72.3498%). The next fixed CODE checkpoint remains
 2,772,187 bytes (10,423 bytes away). The retail ELF SHA-256 remains
 48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+
+
+## Correct the capture constructor's pointer result (no new byte credit)
+
+The native func_001D7CE0 leaves the allocated object pointer in V0, including
+null when allocation fails. The uncredited caller at 0x003A98C0 tests that
+result before advancing its phase and emitting the next event. Its reconstructed
+definition had incorrectly returned void, so a correctly typed C caller could
+not observe the result despite the existing object passing byte comparison.
+
+The constructor now returns Obj* explicitly on every path. Its allocator
+declaration also uses the existing allocator's pointer input and result types.
+All five previously credited functions in q7_a.c retain their exact bytes;
+no new function or data span is credited by this correction.
+
+The host fixture calls the real constructor and checks pointer identity on
+success, null on failure, no source/object writes on failed allocation, capture
+of the owner and source fields, zero extension of the 16-bit and byte inputs,
+and callback selection from the full mode value before narrowing its stored
+byte fields. A null source is also safe when allocation fails. The old void
+result fails this fixture's C type checking. Native whole-object comparisons
+separately prove the unchanged PS2 layouts and register-level interface.
+
+All 158 tests, source/build coverage and full retail-exact hybrid linkage and
+packing pass. CODE remains 2,761,764 / 3,293,696 bytes (83.8500%); DATA remains
+468,873 / 648,064 bytes (72.3498%). The new 0x003A98C0 caller remains uncredited
+because its complete compiler comparison has not passed.
