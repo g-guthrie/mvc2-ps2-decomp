@@ -19123,3 +19123,4 @@ func_0015BD40,0x0015BD40,0x148,src/actor_rotation_return_0015bd40.c,complete
 func_001C6AE0,0x001C6AE0,0x108,src/owner_height_edge_entry_001c6ae0.c,complete
 func_00216760,0x00216760,0x144,src/input_branch_setup_00216760.c,complete
 func_00348F50,0x00348F50,0xE8,src/interaction_high_launch_00348f50.c,complete
+func_003611D0,0x003611D0,0x13C,src/inherited_effect_entry_003611d0.c,complete

@@ -1042,7 +1042,7 @@ void func_00360970(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40((s
 
 void func_00361060(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40((struct Object *)(p)); }
 
-void func_00361870(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40((struct Object *)(p)); }
+void func_00361870(u8 *p,u8 *owner_unused) { p[316] = 0; func_003DAA40((struct Object *)p); }
 
 void func_00361F80(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40((struct Object *)(p)); }
 

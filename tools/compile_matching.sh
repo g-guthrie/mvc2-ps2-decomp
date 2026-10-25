@@ -15113,7 +15113,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_ka_152560.c -c -la
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_ka_1ad260.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_ka_1ad260.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_ka_1ad260.o" private/SLUS_204.86.rom --source src/grok_ka_1ad260.c
 
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_ic_361310.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_ic_361310.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_ic_361310.c -i src -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_ic_361310.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_ic_361310.o" private/SLUS_204.86.rom --source src/grok_ic_361310.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_ic_36f9e0.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_ic_36f9e0.o"
@@ -21102,5 +21102,9 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/interaction_high_launch_00348f50.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/interaction_high_launch_00348f50.o"
 "$PYTHON" tools/verify_object.py "$BUILD/interaction_high_launch_00348f50.o" private/SLUS_204.86.rom --source src/interaction_high_launch_00348f50.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/inherited_effect_entry_003611d0.c -c -lang c -O3,p -sdatathreshold 8 -o "$BUILD/inherited_effect_entry_003611d0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/inherited_effect_entry_003611d0.o" private/SLUS_204.86.rom --source src/inherited_effect_entry_003611d0.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

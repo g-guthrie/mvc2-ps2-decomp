@@ -163,7 +163,7 @@ void func_0035DE40(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 
 void func_0035E730(u8 *p, void *owner_unused) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 
-void func_00361830(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
+void func_00361830(u8 *p,u8 *owner_unused) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 
 void func_00361850(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 

@@ -271,5 +271,67 @@ int main(void) {
         self.assertNotEqual(self.run_interaction_dispatch(drop_owner=True), 0)
 
 
+    def run_inherited_effect(self, drop_owner=False):
+        table = (ROOT / "src/data/jtbl_004634F0.c").read_text()
+        phases = (ROOT / "src/grok_ic_361310.c").read_text()
+        bodies = [function(phases, name) for name in ("func_00361310", "func_00361340")]
+        if drop_owner:
+            changed = bodies[1].replace("func_00361880(p,owner)",
+                                       "func_00361880(p,wrong_owner)")
+            self.assertNotEqual(bodies[1], changed)
+            bodies[1] = changed
+        code = '#include "inherited_effect_phase_tables.h"\n#include "jtbl_004634F0.c"\n'
+        code += '#include "inherited_effect_entry_003611d0.c"\n'
+        code += "static _Alignas(16) u8 stats[0x100]; G3c *D_004C2794=(G3c *)stats;\n"
+        code += "u8 wrong_owner[0x600]; static u8 *seen_actor;\n"
+        code += "int func_001757E0(u8 *p,int a,int b){return 0;}\n"
+        code += "void func_003610F0(u8 *p,int a,int b){seen_actor=p;}\n"
+        code += "void func_00361880(u8 *,u8 *);\n"
+        actual = {"func_003611D0", "func_00361310", "func_00361340"}
+        for name in re.findall(r"extern void (func_[0-9A-F]+)\(", table):
+            if name not in actual:
+                code += f"void {name}(u8 *p,u8 *owner) {{}}\n"
+        code += "\n".join(bodies)
+        code += function((ROOT / "src/pw24_a.c").read_text(), "func_00361880")
+        code += function((ROOT / "src/composite_dispatch_heads.c").read_text(), "func_003611B0")
+        code += """
+int main(void) {
+    _Alignas(16) u8 actor[0x600]={0},owner[0x600]={0};
+    *(float *)(owner+0x34)=100;
+    *(float *)(owner+0x38)=50;
+    *(float *)(owner+0x3C)=123;
+    *(float *)(owner+0x50)=2;
+    *(float *)(owner+0x54)=3;
+    *(float *)(owner+0x58)=4;
+    *(short *)(owner+0x140)=1;
+    owner[0x24]=7;
+    func_003611B0(actor,owner);
+    return !(seen_actor==actor && actor[4]==1 && actor[5]==1
+             && actor[0x24]==7 && actor[0x31]==255 && actor[0x1B5]==14
+             && *(short *)(stats+0x7C)==1 && *(float *)(actor+0x3C)==123
+             && *(float *)(actor+0x34)>311.66f && *(float *)(actor+0x34)<311.67f
+             && *(float *)(actor+0x38)>255.71f && *(float *)(actor+0x38)<255.72f
+             && *(float *)(actor+0x54)==3 && *(float *)(actor+0x58)==4);
+}
+"""
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary)
+            fixture, binary = path / "inherited.c", path / "inherited"
+            fixture.write_text(code)
+            built = subprocess.run(
+                [self.cc, "-std=c11", "-Werror", "-I", str(ROOT / "src"),
+                 "-I", str(ROOT / "src/data"), str(fixture), "-o", str(binary)],
+                capture_output=True, text=True, timeout=30,
+            )
+            self.assertEqual(built.returncode, 0, built.stderr)
+            return subprocess.run([str(binary)], timeout=10).returncode
+
+    def test_inherited_effect_owner_reaches_position_helper(self):
+        self.assertEqual(self.run_inherited_effect(), 0)
+
+    def test_inherited_effect_substituted_owner_is_detected(self):
+        self.assertNotEqual(self.run_inherited_effect(drop_owner=True), 0)
+
+
 if __name__ == "__main__":
     unittest.main()

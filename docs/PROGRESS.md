@@ -6746,3 +6746,40 @@ with 19,061 matches among 20,432 spans. DATA remains 468,873 / 648,064 bytes.
 The retail ELF SHA-256 remains
 48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
 The fixed next CODE checkpoint remains 2,772,187 bytes (14,203 bytes away).
+
+
+## Inherited-effect entry and nested owner flow
+
+Recovered func_003611D0 as 316 bytes of complete exact C. A dedicated frame,
+return and incoming callback-table slot establish the function boundary after
+the existing 32-byte dispatcher at 0x003611B0; the residual catalog entry is
+promoted without changing the span or following alignment gap. The callback
+copies the complete 196-byte inherited state, team, kind, scale and mode fields,
+copies depth and Z, sets the signed depth offset to minus one, initializes
+action 14, clears animation counters, increments the team counter, sets both
+interaction bytes to 0x42, chooses animation (23,20), sets timer one and calls
+the genuine owner-aware continuation at 0x00361310.
+
+The native copy-loop scheduling matches Metrowerks 3.0-011126 at -O3,p with
+small-data threshold eight. The team counter uses a partial record view with
+a flexible trailing array, avoiding the inherited template's artificial
+one-element bound; no DATA extent or additional DATA credit is claimed.
+
+The 28-byte table at 0x004634F0 holds four lifecycle callbacks followed by
+three phase callbacks beginning at 0x00463500. The root dispatcher and nested
+phase dispatcher now explicitly forward owner through both groups. The first
+phase at 0x00361340 now supplies owner to the actual two-input positioning
+helper at 0x00361880; its complete 64 bytes remain exact. The handlers that
+ignore owner declare the same callback contract, and the release tail drops
+its former four-argument placeholder signature. All modified existing bodies
+and table bytes remain exact and receive no additional credit.
+
+A host fixture executes the real root dispatcher, entry callback, nested
+phase dispatcher, first phase and positioning helper. Its negative control
+substitutes owner immediately before the positioning call and is detected.
+All 138 tests, source/build coverage, whole-object comparisons and complete
+hybrid linkage/packing pass. CODE is 2,758,300 / 3,293,696 bytes (83.7448%),
+with 19,062 matches among 20,432 spans. DATA remains 468,873 / 648,064 bytes.
+The retail ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+The fixed next CODE checkpoint remains 2,772,187 bytes (13,887 bytes away).
