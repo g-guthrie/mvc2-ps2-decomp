@@ -2,7 +2,7 @@
 typedef unsigned char u8;
 typedef struct {float x,y,z;} Vec3;
 extern void func_003C5420(u8 *,u8 *);
-extern void func_001D7E50(u8 *, u8 *);
+extern void func_001D7E50(u8 *, void *);
 void func_003C5370(u8 *p,u8 *owner) {
  int count;unsigned int *dst,*src;
  src=(unsigned int *)(owner+0xec);dst=(unsigned int *)(p+0xec);count=49;

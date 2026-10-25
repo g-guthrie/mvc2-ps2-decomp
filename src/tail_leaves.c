@@ -596,7 +596,7 @@ void func_001D7790(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40((s
 
 void func_001D7CD0(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40((struct Object *)(p)); }
 
-void func_001D8570(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_001D8570(u8 *p,void *owner_context_unused) { func_003DAA40((struct Object *)p); }
 
 void func_001D8A20(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 

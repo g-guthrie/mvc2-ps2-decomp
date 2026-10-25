@@ -6,10 +6,10 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-void func_001D8000(u8 *p)
+void func_001D8000(u8 *p,void *owner_context_unused)
 {
-    extern void func_00175670();
-    extern void func_001754A0(u8 *, s32, s32);
+    extern int func_00175670(u8 *);
+    extern int func_001754A0(u8 *, s32, s32);
     u8 *o;
     f32 a, b;
     u32 k, c, d;

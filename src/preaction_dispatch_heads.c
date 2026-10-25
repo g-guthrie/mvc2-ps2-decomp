@@ -20,7 +20,7 @@ extern Fn jtbl_004515C0[];
 extern Fn jtbl_00451BA0[];
 extern Fn jtbl_004520A0[];
 typedef void (*ContextFn)(u8 *, u8 *);
-extern ContextFn jtbl_00452358[];
+extern ContextFn const jtbl_00452358[3];
 extern Fn jtbl_004523B8[];
 extern Fn jtbl_00452440[];
 extern Fn jtbl_00452850[];

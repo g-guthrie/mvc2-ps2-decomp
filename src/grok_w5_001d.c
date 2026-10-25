@@ -200,7 +200,7 @@ void func_001D70C0(u8 *p)
     }
 }
 
-void func_001D8100(u8 *p)
+void func_001D8100(u8 *p,void *owner_context_unused)
 {
     if (func_00175670(p) < 0 || func_00175670(p) < 0) {
         p[4]++;

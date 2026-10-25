@@ -12,9 +12,9 @@ for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
 
 | | Matched | Total | |
 | --- | ---: | ---: | ---: |
-| Code | 2,765,196 bytes | 3,293,696 bytes | **83.95%** |
+| Code | 2,765,664 bytes | 3,293,696 bytes | **83.97%** |
 | Initialized data | 468,873 bytes | 648,064 bytes | **72.35%** |
-| Catalog spans | 19,091 | 20,447 | |
+| Catalog spans | 19,093 | 20,449 | |
 
 Every matched function is C compiled with a period toolchain (Metrowerks
 MWCC 2.4/3.0/3.0.3, SN GCC 2.95.2, EE GCC 2.96, or Sony EE GCC 2.9) and
@@ -47,7 +47,7 @@ The generated graphic above shows the current catalog's matching code coverage.
 function counts and reconstructed-data coverage. Whole-object compiler
 verification and full-image linkage are separate private build checks.
 Assembly placeholders never count as decompiled source. The current inventory
-contains **20,447 cataloged text spans** after boundary corrections and splitting
+contains **20,449 cataloged text spans** after boundary corrections and splitting
 oversized dispatcher entries. Retained assembly residuals, text gaps and
 initialized data remain separately visible in the progress report.
 
@@ -223,8 +223,8 @@ Verified code is pushed at least after each additional full percentage point.
 The latest checkpoint also publishes the EE GCC sibling-call profile described
 in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 
-The latest verified CODE checkpoint is 2,765,196 / 3,293,696 bytes
-(83.9542%). Two complete handlers add 784 CODE bytes: countdown-driven
-owner relaunch and actor-local direction shifting. All 190 tests and
-full retail-exact linkage pass. DATA remains 468,873 / 648,064 bytes
-(72.3498%).
+The latest verified CODE checkpoint is 2,765,664 / 3,293,696 bytes
+(83.9684%). Two complete handlers add 468 CODE bytes: owner-state wait
+initialization and motion/contact response. Their real callback contracts
+and work-record helper are verified. All 196 tests and full retail-exact
+linkage pass. DATA remains 468,873 / 648,064 bytes (72.3498%).

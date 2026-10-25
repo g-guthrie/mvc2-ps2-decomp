@@ -7455,3 +7455,45 @@ packed ELF SHA-256 remains
 CODE is 2,765,196 / 3,293,696 bytes (83.9542%), with 19,091 matches among
 20,447 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%). The
 next fixed CODE checkpoint remains 2,772,187 bytes, 6,991 bytes away.
+
+
+## Owner wait initialization and motion/contact response (+468 CODE bytes)
+
+Recovered func_001D8190 (280 bytes, Metrowerks 3.0) and func_002361F0
+(188 bytes, Metrowerks 3.0.3), both at -O3,p with small-data threshold zero.
+Retail pointers at 0x0044E6B0 and 0x00452358 select these complete functions
+through func_001D8160 and func_002361C0. Twelve and eight preceding alignment
+bytes remain uncredited. No partial function or padding is counted.
+
+The wait initializer copies owner state, initializes hidden wait state or a
+bounded random animation, then always calls func_001D7E50 with actor and
+owner. Corrected that shared dispatcher's omitted owner: its first child
+at 0x001D7E70 reads owner directly. The actual three-entry table now uses
+its actor/owner callback interface; the other two C children explicitly
+accept that interface while ignoring unused context. The related four-entry
+root table's C lifecycle bodies use the existing actor/context contract,
+replacing a fabricated four-integer release signature. Frame and animation
+helper declarations use their actual integer results. Previously credited
+complete functions retain their original bytes.
+
+The contact handler integrates position and velocity, advances animation,
+and reads the resulting contact flag. It advances subphase, calls the real
+floating-point work helper, then requests eight or ten effects according to
+the current marker. A zero result advances the actor to phase two. Helper
+prototypes match the actual float-work pointer and byte effect-mode input;
+the callback keeps its real actor/byte-work interface. The readonly table
+view has its actual three entries. No DATA credit changes.
+
+Tests cover copied buffers, hidden/animated modes, random frame bounds, all
+three nested phases and the two actual C children. Contact tests use the
+actual work helper and all 44 existing table rows, both contact outcomes,
+current marker values, direction, phase wrap and effect-allocation results.
+Wrong owner/work forwarding, stale pre-animation contact and widening the
+random selector fail negative controls. All 196 tests and source/build/
+catalog checks pass; all compiler and data objects compare exactly.
+
+The full linked image and packed executable remain retail-exact. ELF SHA-256
+is 48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+CODE is 2,765,664 / 3,293,696 bytes (83.9684%); there are 19,093 matches
+among 20,449 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
+The next fixed CODE checkpoint remains 2,772,187 bytes, 6,523 bytes away.
