@@ -219,5 +219,57 @@ int main(void) {
         self.assertNotEqual(self.run_edge_dispatch(drop_owner=True), 0)
 
 
+    def run_interaction_dispatch(self, drop_owner=False):
+        table = (ROOT / "src/data/jtbl_00461F00.c").read_text()
+        controller = (ROOT / "src/grok_ke_348f20.c").read_text()
+        if drop_owner:
+            changed = controller.replace("(p,q)", "(p,wrong_owner)")
+            self.assertNotEqual(controller, changed)
+            controller = "extern unsigned char wrong_owner[];\n" + changed
+        code = '#include "interaction_state_callbacks.h"\n#include "jtbl_00461F00.c"\n'
+        code += "u8 wrong_owner[0x600]; static u8 *seen_actor,*seen_owner;\n"
+        code += "static u8 counters[0x100]; u8 *D_004C2794=counters;\n"
+        code += "int func_001757E0(u8 *p,int a,int b){return 0;}\n"
+        for name in re.findall(r"extern void (func_[0-9A-F]+)\(", table):
+            if name != "func_00348F50":
+                code += (f"void {name}(u8 *p,u8 *owner) {{"
+                         "seen_actor=p;seen_owner=owner;}\n")
+        code += "void func_00348F20(u8 *);\n"
+        code += """
+int main(void) {
+    _Alignas(16) u8 actor[0x600]={0},owner[0x600]={0};
+    *(u8 **)(actor+0x18)=owner;
+    *(unsigned short *)(owner+0x168)=0x1234;
+    actor[4]=4;
+    func_00348F20(actor);
+    return !(seen_actor==actor && seen_owner==owner
+             && *(unsigned short *)(actor+0x88)==0x1234
+             && actor[0x1B5]==0x45 && actor[0x168]==0x1D
+             && actor[0x31]==252 && *(short *)(counters+0x7C)==1
+             && *(float *)(actor+0x5C)<-146.66f
+             && *(float *)(actor+0x60)>100.71f);
+}
+"""
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary)
+            fixture, head, binary = path / "interaction.c", path / "head.c", path / "interaction"
+            fixture.write_text(code)
+            head.write_text(controller)
+            built = subprocess.run(
+                [self.cc, "-std=c11", "-Werror", "-I", str(ROOT / "src"),
+                 "-I", str(ROOT / "src/data"), str(fixture), str(head),
+                 str(ROOT / "src/interaction_high_launch_00348f50.c"),
+                 "-o", str(binary)], capture_output=True, text=True, timeout=30,
+            )
+            self.assertEqual(built.returncode, 0, built.stderr)
+            return subprocess.run([str(binary)], timeout=10).returncode
+
+    def test_interaction_owner_reaches_the_real_launch(self):
+        self.assertEqual(self.run_interaction_dispatch(), 0)
+
+    def test_interaction_substituted_owner_is_detected(self):
+        self.assertNotEqual(self.run_interaction_dispatch(drop_owner=True), 0)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -15158,7 +15158,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_jr_2ebb50.c -c -la
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_ke_348520.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_ke_348520.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_ke_348520.o" private/SLUS_204.86.rom --source src/grok_ke_348520.c
 
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_ke_348f20.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_ke_348f20.o"
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_ke_348f20.c -i src -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_ke_348f20.o"
 "$PYTHON" tools/verify_object.py "$BUILD/grok_ke_348f20.o" private/SLUS_204.86.rom --source src/grok_ke_348f20.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_ke_346820.c -c -lang c -O4,p -sdatathreshold 8 -o "$BUILD/grok_ke_346820.o"
@@ -21094,5 +21094,13 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_height_edge_entry_001c6ae0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_height_edge_entry_001c6ae0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_height_edge_entry_001c6ae0.o" private/SLUS_204.86.rom --source src/owner_height_edge_entry_001c6ae0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/input_branch_setup_00216760.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/input_branch_setup_00216760.o"
+"$PYTHON" tools/verify_object.py "$BUILD/input_branch_setup_00216760.o" private/SLUS_204.86.rom --source src/input_branch_setup_00216760.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/interaction_high_launch_00348f50.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/interaction_high_launch_00348f50.o"
+"$PYTHON" tools/verify_object.py "$BUILD/interaction_high_launch_00348f50.o" private/SLUS_204.86.rom --source src/interaction_high_launch_00348f50.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

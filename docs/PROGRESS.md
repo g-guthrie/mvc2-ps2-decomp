@@ -6707,3 +6707,42 @@ with 19,059 matches among 20,432 spans. DATA remains 468,873 / 648,064 bytes.
 The retail ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The fixed next CODE checkpoint remains 2,772,187 bytes (14,759 bytes away).
+
+
+## Input-branch setup and high interaction launch
+
+Recovered two complete compiler-exact functions, adding 556 CODE bytes.
+func_00216760 (324 bytes) selects the existing signed-byte script rows
+at 0x004BFED0, 0x004BFED4, and 0x004BFED8 for selector cases 0..2.
+The third case distinguishes the 0x800 flag: the special branch sets the
+substate and command 18, clears motion, chooses strength 5 and skips the
+ordinary animation helper. The ordinary branch uses command 8 and a
+facing-dependent horizontal velocity of five. No default values or extra
+resets are introduced. The existing unary caller already supplies the actor.
+The 12-byte script owner retains its existing signed-byte DATA credit.
+
+func_00348F50 (232 bytes) is a separate framed function referenced by slot
+four of jtbl_00461F00, following the already credited 44-byte controller
+and its separate four-byte alignment gap. The residual label is promoted
+without changing boundaries. The callback initializes the collision extents
+and action 69, applies horizontal speed 146.666656494140625 and vertical
+speed 100.71427917480469, reverses horizontal direction for facing, saves
+the owner's 16-bit type, selects animation (22,29), sets depth offset minus
+four and calls the genuine two-input continuation. The velocity constants
+retain the verified sibling's integer-bit store representation. They are
+floating-point data values, not instruction encodings.
+
+The actual controller at 0x00348F20 loads owner from actor+0x18 and passes
+actor and owner through a typed callback table, replacing the integer-array
+function-pointer cast. The two handlers that ignore owner now declare the
+same phase contract; the release tail's previous four-argument placeholder
+is removed. All modified existing functions and all 40 table bytes remain
+exact, receiving no additional credit. Host tests exercise the real controller,
+table and launch callback and detect owner substitution before dispatch.
+
+All 136 tests, source/build coverage, whole-object comparisons and complete
+hybrid linkage/packing pass. CODE is 2,757,984 / 3,293,696 bytes (83.7352%),
+with 19,061 matches among 20,432 spans. DATA remains 468,873 / 648,064 bytes.
+The retail ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+The fixed next CODE checkpoint remains 2,772,187 bytes (14,203 bytes away).

@@ -37,7 +37,7 @@ void func_001A78A0(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 void func_001D91B0(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 void func_001D9D50(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 void func_001DF4B0(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
-void func_0034A0A0(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
+void func_0034A0A0(u8 *p, u8 *owner_unused) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 
 void func_001484A0(void) {}
 void func_001B3FA0(void) {}
