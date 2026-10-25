@@ -6954,3 +6954,24 @@ bytes; the previously documented 0x0044AC20 ownership issue remains pending.
 The retail ELF SHA-256 remains
 48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
 The fixed next CODE checkpoint remains 2,772,187 bytes (12,247 bytes away).
+
+
+## Two-frame palette update (+384 CODE bytes)
+
+Recovered func_0021D280 as a complete 384-byte Metrowerks 3.0.3 function.
+It selects the frame after the actor's signed frame index. If that frame's
+first editable attribute already has palette nibble C, it returns without
+writing. Otherwise it sets the actor's work flag and dirties both adjacent
+48-byte frames, replacing the high nibble of attributes 1 through 15 with C
+while preserving their low twelve bits. Attribute zero and neighboring fields
+are untouched. This adds no initialized DATA or BSS credit.
+
+The host fixture checks signed frame selection, both adjacent records, every
+attribute, neighboring fields and the no-write early exit. A negative control
+that retains the previous high bits fails. All 152 tests, source/build coverage,
+whole-object comparisons and full retail-exact hybrid linkage/packing pass.
+CODE is 2,760,324 / 3,293,696 bytes (83.8063%), with 19,072 matching spans among
+20,438 catalog spans. DATA remains 468,873 / 648,064 bytes; the documented
+0x0044AC20 ownership issue remains pending. The retail ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+The next fixed CODE checkpoint remains 2,772,187 bytes (11,863 bytes away).
