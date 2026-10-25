@@ -1,3 +1,4 @@
+#include "model_callback_api.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -6,8 +7,6 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-typedef struct { s32 id; u8 pad[0x8C]; u8 data[0x24]; } EL_d;
-typedef struct ND_d { u8 pad0[0xC]; struct ND_d *next; struct ND_d *child; u8 pad1[0x180 - 0x14]; s32 idx; } ND_d;
 
 static ND_d *func_00170E10(ND_d *a0)
 {

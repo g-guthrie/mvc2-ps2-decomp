@@ -226,5 +226,6 @@ in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 The latest verified CODE checkpoint is 2,760,708 / 3,293,696 bytes
 (83.8179%). The latest change recovers the 384-byte model curvature callback
 using its actual registered context interface. The six-effect wrapper also
-forwards a correctly typed three-float position pointer. All 153 tests and full
+forwards a correctly typed three-float position pointer. The model interpolation
+registration now shares the walker's actual three-input callback contract. All 153 tests and full
 retail-exact linkage pass. DATA is 468,873 / 648,064 bytes (72.3498%).

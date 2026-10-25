@@ -1,3 +1,4 @@
+#include "model_callback_api.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -5,19 +6,24 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
-typedef struct { s32 a; s32 b; s32 c; f32 d; } L0033A700;
+/* Raw frame address, two frame indices, and their interpolation fraction. */
+typedef struct { s32 framesAddress,first,second; f32 blend; } L0033A700;
 extern u8 *D_004C283C;
 extern s32 D_004C28AC;
-extern void func_00170E60(s32, s32, s32, s32, void (*)(void *), void *);
-extern void func_0033A760(void *);
+extern void func_0033A760(u8 *, u8 *, s32);
 void func_0033A700(u8 *p, s32 a1, s32 a2, f32 f) {
     L0033A700 l;
     u8 *o = *(u8 **)(p + 0x84);
-    l.a = D_004C28AC + 0x41000;
-    l.b = a1;
-    l.c = a2;
-    l.d = f;
-    func_00170E60(*(s32 *)(D_004C283C + 0x14), *(s32 *)(*(u8 **)(o + 0x1C) + 4), *(s32 *)(o + 0x14), *(s32 *)(*(u8 **)(o + 0x1C) + 4), func_0033A760, &l);
+    l.framesAddress = D_004C28AC + 0x41000;
+    l.first = a1;
+    l.second = a2;
+    l.blend = f;
+    func_00170E60(
+        (EL_d *)(u32)*(s32 *)(D_004C283C + 0x14),
+        (ND_d *)(u32)*(s32 *)(*(u8 **)(o + 0x1C) + 4),
+        (EL_d *)(u32)*(s32 *)(o + 0x14),
+        (ND_d *)(u32)*(s32 *)(*(u8 **)(o + 0x1C) + 4),
+        func_0033A760, (s32)&l);
 }
 extern u8 *D_004C2794;
 void func_0031DEC0(u8 *p) {

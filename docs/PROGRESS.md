@@ -7016,3 +7016,24 @@ retail-exact hybrid linkage/packing pass. CODE is 2,760,708 / 3,293,696 bytes
 468,873 / 648,064 bytes. The next fixed CODE checkpoint remains 2,772,187 bytes
 (11,479 bytes away). The retail ELF SHA-256 remains
 48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+
+
+## Correct the model interpolation registration contract (no new byte credit)
+
+The actual func_00170E60 walker invokes callbacks with two model-node data
+regions and a signed 32-bit context. The func_0033A700 registration had instead
+declared its callback as a one-argument function and its context as a pointer.
+It now uses the engine's actual callback and descriptor-pointer types, passing
+the stack context through the explicit 32-bit address conversion. The context
+fields are identified as the frame-block address, two frame indices, and the
+interpolation fraction.
+
+The registration and walker share one header containing their existing element
+and node definitions and function contract. Their record layouts are unchanged.
+Both build stanzas include the header search path. Whole-object verification
+preserves all previously credited functions in h1b.c and w1910_f.c, including
+the real static node helper. All 153 tests, source/build coverage and full
+retail-exact linkage/packing pass. No new CODE or DATA bytes are credited:
+CODE remains 2,760,708 / 3,293,696 bytes (83.8179%); DATA remains 468,873 /
+648,064 bytes (72.3498%). The interpolation callback body remains uncredited
+until its complete compiler comparison passes.

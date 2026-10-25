@@ -5452,7 +5452,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/h1.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/h1.o"
 "$PYTHON" tools/verify_object.py "$BUILD/h1.o" private/SLUS_204.86.rom --source src/h1.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/h1b.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/h1b.o"
+    src/h1b.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/h1b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/h1b.o" private/SLUS_204.86.rom --source src/h1b.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/h1c.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/h1c.o"
@@ -10573,7 +10573,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/w1910_e.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/w1910_e.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w1910_e.o" private/SLUS_204.86.rom --source src/w1910_e.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/w1910_f.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/w1910_f.o"
+    src/w1910_f.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/w1910_f.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w1910_f.o" private/SLUS_204.86.rom --source src/w1910_f.c
 "$WIBO" "$SNCPP" -P src/w1910_g.c "$BUILD/w1910_g.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/w1910_g.i" "$BUILD/w1910_g.s"
