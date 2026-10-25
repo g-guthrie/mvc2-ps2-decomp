@@ -6463,3 +6463,29 @@ with 19,048 matches among 20,432 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (18,443 bytes away).
+
+
+## Animation-table selection and command-flag gating
+
+Two complete functions add 484 verified CODE bytes. The 220-byte animation
+selector uses the native mode-dependent byte tables and masked frame index,
+then preserves each timer, state and animation path. Its inventory entry was
+still named `residual_002C7640`; it is now the complete `func_002C7640` callback.
+The native table at 0x00459E00 points directly to its own stack-frame entry.
+The adjacent 32-byte tail dispatcher and catalog span count are unchanged.
+
+The 264-byte flag gate preserves its mode cases, signed flag checks, mask
+lookup and flag updates, including the native negation-before-mask expression.
+Its call explicitly forwards the input kind. The existing 8-byte tail wrapper
+at 0x0016B240 now declares the actual two inputs and returns the mask from
+0x0016A210, replacing a void four-argument declaration. The lookup's object
+tag agrees with that opaque declaration. Both existing bodies remain exact;
+neither receives additional CODE credit. This does not audit all historical
+callers of that wrapper.
+
+All 128 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,754,228 / 3,293,696 bytes (83.6212%),
+with 19,050 matches among 20,432 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (17,959 bytes away).

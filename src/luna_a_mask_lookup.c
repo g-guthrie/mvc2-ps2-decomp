@@ -2,7 +2,7 @@ typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;
 
-typedef struct {
+typedef struct Object {
     u8 pad[5];
     u8 disabled;
     u8 pad2[0x1E4 - 0x06];

@@ -19110,3 +19110,5 @@ func_0018D030,0x0018D030,0x8C,src/actor_scripted_position_step_0018d030.c,comple
 func_0014C280,0x0014C280,0x104,src/menu_position_transition_0014c280.c,complete
 func_0018E350,0x0018E350,0xAC,src/actor_owner_state_setup_0018e350.c,complete
 func_00287A30,0x00287A30,0x7C,src/actor_animation_event_dispatch_00287a30.c,complete
+func_002C7640,0x002C7640,0xDC,src/actor_animation_table_selection_002c7640.c,complete
+func_0016B250,0x0016B250,0x108,src/actor_command_flag_gate_0016b250.c,complete

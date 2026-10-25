@@ -21051,4 +21051,12 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_animation_event_dispatch_00287a30.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_animation_event_dispatch_00287a30.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_animation_event_dispatch_00287a30.o" private/SLUS_204.86.rom --source src/actor_animation_event_dispatch_00287a30.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_animation_table_selection_002c7640.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_animation_table_selection_002c7640.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_animation_table_selection_002c7640.o" private/SLUS_204.86.rom --source src/actor_animation_table_selection_002c7640.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_command_flag_gate_0016b250.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_command_flag_gate_0016b250.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_command_flag_gate_0016b250.o" private/SLUS_204.86.rom --source src/actor_command_flag_gate_0016b250.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
