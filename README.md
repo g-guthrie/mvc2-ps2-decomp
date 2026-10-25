@@ -223,9 +223,9 @@ Verified code is pushed at least after each additional full percentage point.
 The latest checkpoint also publishes the EE GCC sibling-call profile described
 in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 
-The latest verified CODE checkpoint is 2,749,884 / 3,293,696 bytes
-(83.4893%). The latest change recovers a palette/motion initializer and fixes
-owner-context forwarding through three callback tables. A host regression
-fixture checks the real dispatch chain and rejects a dropped owner argument.
+The latest verified CODE checkpoint is 2,750,588 / 3,293,696 bytes
+(83.5107%). Five full functions recover fixed-point speed setup, animation
+reset, control-mode selection, ground setup, and a floor-motion transition.
+The transition uses an independently verified copy of its real floor helper.
 All 128 tests and full retail-exact linkage pass. DATA remains 468,869 /
 648,064 bytes (72.3492%).

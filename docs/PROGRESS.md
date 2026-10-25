@@ -6308,3 +6308,24 @@ with 19,027 matches among 20,434 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (22,303 bytes away).
+
+## Fixed-point movement and floor transition phases
+
+Five complete functions add 704 verified CODE bytes: fixed-point speed setup
+(176), facing-dependent animation reset (136), control-mode selection (128),
+palette and ground-phase setup (132), and a floor-motion transition (132).
+The transition passes the actual actor argument to its event allocator.
+
+The transition object also contains the real 100-byte floor-integration
+helper at 0x00270B60. Compiling that body locally supplies its actual register
+preservation behavior; the entire helper is independently verified at its
+own retail address on every normal build. It adds no extra progress credit.
+The helper and caller both match without stand-ins, assembly, or inserted
+padding. No DATA credit is added.
+
+All 128 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,750,588 / 3,293,696 bytes (83.5107%),
+with 19,032 matches among 20,434 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (21,599 bytes away).

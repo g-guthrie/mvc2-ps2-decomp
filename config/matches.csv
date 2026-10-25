@@ -19089,3 +19089,8 @@ func_003B25D0,0x003B25D0,0x174,src/actor_position_samples_init_003b25d0.c,comple
 func_003B39C0,0x003B39C0,0x1EC,src/actor_table_offset_init_003b39c0.c,complete
 func_003C7D20,0x003C7D20,0x138,src/actor_facing_offset_init_003c7d20.c,complete
 func_003C8A70,0x003C8A70,0x158,src/actor_palette_motion_init_003c8a70.c,complete
+func_00219A20,0x00219A20,0xB0,src/actor_fixed_speed_phase_00219a20.c,complete
+func_00230360,0x00230360,0x88,src/actor_facing_animation_reset_00230360.c,complete
+func_00234B80,0x00234B80,0x80,src/actor_control_mode_select_00234b80.c,complete
+func_00251140,0x00251140,0x84,src/actor_palette_ground_phase_00251140.c,complete
+func_00270D30,0x00270D30,0x84,src/actor_floor_motion_transition_00270d30.c,complete

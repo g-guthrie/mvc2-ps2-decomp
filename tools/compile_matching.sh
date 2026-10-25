@@ -20967,4 +20967,24 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_palette_motion_init_003c8a70.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_palette_motion_init_003c8a70.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_palette_motion_init_003c8a70.o" private/SLUS_204.86.rom --source src/actor_palette_motion_init_003c8a70.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_fixed_speed_phase_00219a20.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_fixed_speed_phase_00219a20.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_fixed_speed_phase_00219a20.o" private/SLUS_204.86.rom --source src/actor_fixed_speed_phase_00219a20.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_facing_animation_reset_00230360.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_facing_animation_reset_00230360.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_facing_animation_reset_00230360.o" private/SLUS_204.86.rom --source src/actor_facing_animation_reset_00230360.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_control_mode_select_00234b80.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_control_mode_select_00234b80.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_control_mode_select_00234b80.o" private/SLUS_204.86.rom --source src/actor_control_mode_select_00234b80.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_palette_ground_phase_00251140.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_palette_ground_phase_00251140.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_palette_ground_phase_00251140.o" private/SLUS_204.86.rom --source src/actor_palette_ground_phase_00251140.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_floor_motion_transition_00270d30.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_floor_motion_transition_00270d30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_floor_motion_transition_00270d30.o" private/SLUS_204.86.rom --source src/actor_floor_motion_transition_00270d30.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
