@@ -6053,3 +6053,20 @@ with 18,967 matches among 20,421 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes (8,898 bytes away).
+
+## Launch variants and timed event cloning
+
+Five complete functions add 1,392 verified CODE bytes: mode-specific air
+launch (392), timed launch (232), timed event cloning (240), offset-effect
+setup (296), and facing-reversal launch (232). The event-clone call preserves
+its third native argument, confirmed against the reconstructed callee. The
+offset-effect position uses vector and floating-array views of the same
+local object to agree with the effect helper's input type. Four leading
+12-byte alignment gaps remain uncredited. No DATA credit is added.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,731,744 / 3,293,696 bytes (82.9386%),
+with 18,972 matches among 20,425 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes (7,506 bytes away).

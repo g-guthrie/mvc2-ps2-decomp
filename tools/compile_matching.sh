@@ -20726,4 +20726,24 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_spawn_result_init_00250ec0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_spawn_result_init_00250ec0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_spawn_result_init_00250ec0.o" private/SLUS_204.86.rom --source src/actor_spawn_result_init_00250ec0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_mode_air_launch_002651d0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_mode_air_launch_002651d0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_mode_air_launch_002651d0.o" private/SLUS_204.86.rom --source src/actor_mode_air_launch_002651d0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_timer_launch_00265540.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_timer_launch_00265540.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_timer_launch_00265540.o" private/SLUS_204.86.rom --source src/actor_timer_launch_00265540.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_timed_clone_00266190.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_timed_clone_00266190.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_timed_clone_00266190.o" private/SLUS_204.86.rom --source src/actor_timed_clone_00266190.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_offset_effect_setup_00266a30.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_offset_effect_setup_00266a30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_offset_effect_setup_00266a30.o" private/SLUS_204.86.rom --source src/actor_offset_effect_setup_00266a30.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_facing_reverse_launch_00267f30.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_facing_reverse_launch_00267f30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_facing_reverse_launch_00267f30.o" private/SLUS_204.86.rom --source src/actor_facing_reverse_launch_00267f30.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

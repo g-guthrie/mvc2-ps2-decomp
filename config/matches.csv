@@ -19030,3 +19030,8 @@ func_0024A940,0x0024A940,0x118,src/actor_stage_edge_0024a940.c,complete
 func_0024B060,0x0024B060,0xF0,src/actor_ground_air_reset_0024b060.c,complete
 func_0024F880,0x0024F880,0x104,src/actor_clock_animation_choice_0024f880.c,complete
 func_00250EC0,0x00250EC0,0x124,src/actor_spawn_result_init_00250ec0.c,complete
+func_002651D0,0x002651D0,0x188,src/actor_mode_air_launch_002651d0.c,complete
+func_00265540,0x00265540,0xE8,src/actor_timer_launch_00265540.c,complete
+func_00266190,0x00266190,0xF0,src/actor_timed_clone_00266190.c,complete
+func_00266A30,0x00266A30,0x128,src/actor_offset_effect_setup_00266a30.c,complete
+func_00267F30,0x00267F30,0xE8,src/actor_facing_reverse_launch_00267f30.c,complete
