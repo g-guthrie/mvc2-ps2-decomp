@@ -6036,3 +6036,20 @@ with 18,965 matches among 20,420 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes (9,450 bytes away).
+
+## Clock-based choice and allocation-result initialization
+
+Two complete functions add 552 verified CODE bytes: clock-based animation
+choice (260) and allocation-result initialization (292). The event allocator
+at 0x00367F90 now returns its allocated Event pointer or null, matching the
+native caller's success test. All 30 functions in its object remain exact;
+this return-type correction adds no separate CODE credit. The leading
+12-byte alignment gap before 0x00250EC0 remains uncredited. No DATA credit
+is added.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,730,352 / 3,293,696 bytes (82.8963%),
+with 18,967 matches among 20,421 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes (8,898 bytes away).

@@ -20718,4 +20718,12 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_ground_air_reset_0024b060.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_ground_air_reset_0024b060.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_ground_air_reset_0024b060.o" private/SLUS_204.86.rom --source src/actor_ground_air_reset_0024b060.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_clock_animation_choice_0024f880.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_clock_animation_choice_0024f880.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_clock_animation_choice_0024f880.o" private/SLUS_204.86.rom --source src/actor_clock_animation_choice_0024f880.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_spawn_result_init_00250ec0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_spawn_result_init_00250ec0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_spawn_result_init_00250ec0.o" private/SLUS_204.86.rom --source src/actor_spawn_result_init_00250ec0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

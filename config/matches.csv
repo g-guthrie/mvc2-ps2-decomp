@@ -19028,3 +19028,5 @@ func_00240E10,0x00240E10,0x124,src/actor_float_work_init_00240e10.c,complete
 func_00245780,0x00245780,0x1B4,src/actor_input_choice_00245780.c,complete
 func_0024A940,0x0024A940,0x118,src/actor_stage_edge_0024a940.c,complete
 func_0024B060,0x0024B060,0xF0,src/actor_ground_air_reset_0024b060.c,complete
+func_0024F880,0x0024F880,0x104,src/actor_clock_animation_choice_0024f880.c,complete
+func_00250EC0,0x00250EC0,0x124,src/actor_spawn_result_init_00250ec0.c,complete
