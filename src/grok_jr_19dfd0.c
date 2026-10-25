@@ -2,7 +2,7 @@ typedef unsigned char u8;
 typedef signed char s8;
 typedef void (*DispatchFn)(u8 *, u8 *);
 
-extern DispatchFn jtbl_0044AC10[];
+extern DispatchFn const jtbl_0044AC10[4];
 
 void func_0019DFD0(u8 *p)
 {

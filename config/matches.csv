@@ -19129,3 +19129,4 @@ func_003510A0,0x003510A0,0x16C,src/actor_work_dispatch_setup_00351060.c,complete
 func_00161530,0x00161530,0xA0,src/vector_cycle_transitions.c,complete
 func_00161780,0x00161780,0xA0,src/vector_cycle_transitions.c,complete
 func_001619D0,0x001619D0,0xA0,src/vector_cycle_transitions.c,complete
+func_0019E670,0x0019E670,0xE0,src/actor_work_inherit_dispatch_0019e670.c,complete

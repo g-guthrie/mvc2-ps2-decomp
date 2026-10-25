@@ -150,7 +150,7 @@ void func_0019D720(void) {}
 
 void func_0019DAD0(void) {}
 
-void func_0019E500(void) {}
+void func_0019E500(u8 *actor_unused,u8 *work_unused) {}
 
 void func_0019F040(void) {}
 

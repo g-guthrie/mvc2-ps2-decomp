@@ -49,7 +49,7 @@ void func_003327F0(u8 *p) {
     *(u32 *)(*(u8 **)(p + 0x14) + 0xD8) = *(u32 *)(p + 0xD8);
     *(u32 *)(*(u8 **)(p + 0x14) + 0xDC) = *(u32 *)(p + 0xDC);
 }
-void func_0019E510(u8 *p) {
+void func_0019E510(u8 *p,u8 *work_unused) {
     u8 *o = *(u8 **)(p + 0x18);
     p[5] = 0;
     p[0x13C] = 0;

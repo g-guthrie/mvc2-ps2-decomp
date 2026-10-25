@@ -12,7 +12,7 @@ extern s32 func_00175700(u8 *);
 extern u8 D_0044ACA0[], D_0044ACA2[], D_0044ACA4[];
 extern void func_001757E0(u8 *, s32, s32);
 
-void func_0019E2E0(u8 *p) {
+void func_0019E2E0(u8 *p,u8 *work_unused) {
     u8 *q = *(u8 **)(p + 0x18);
     p[0x13C] = 0;
     p[5] = 0;

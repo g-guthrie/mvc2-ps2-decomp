@@ -91,7 +91,7 @@ void func_001874A0(u8 *p) {
     func_001757E0(p, 1, 9);
 }
 
-void func_0019E4D0(u8 *p) {
+void func_0019E4D0(u8 *p,u8 *work_unused) {
     p[5] = 0;
     *(u32 *)(p + 92) = 0x42695555u;
     *(u32 *)(p + 96) = 0x438E8000u;

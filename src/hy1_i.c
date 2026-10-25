@@ -13,7 +13,7 @@ extern s16 D_0044AC26[];
 extern f32 D_004F1FC8[];
 extern f32 D_004F1FCC[];
 
-void func_0019E0F0(u8 *p) {
+void func_0019E0F0(u8 *p,u8 *work_unused) {
     extern s32 func_00417A40(void);
     extern void func_001757E0(u8 *, s32, s32);
     u8 *s0;

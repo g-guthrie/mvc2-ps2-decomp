@@ -6867,3 +6867,38 @@ D_0044AC20/22/24/26. That proves a 128-byte velocity/acceleration table,
 including the last 16 bytes currently attached to jtbl_0044ABA0. The DATA
 owner split and pointer interpretations need repair. They are unchanged in
 this CODE batch; byte equality alone does not validate those existing C types.
+
+
+## Inheritance dispatcher with the actual work-context input
+
+Recovered func_0019E670 as a complete 224-byte C function. It increments
+lifecycle state, copies 196 inherited bytes and the explicit identity, scale,
+mode, shade and depth fields, then dispatches one of eleven effect phases.
+Its second input is the supplied work pointer, not the owner pointer used
+for inheritance. The existing 48-byte caller at 0x0019DFD0 explicitly supplies
+actor+0x88 through the last four-entry view at 0x0044AC10. That native caller
+and the complete new body are independently exact.
+
+The phase table at 0x0044ACC0 now declares the two-input actor/work contract.
+Nine already credited C phases now expose that shared contract even when
+work is unused; their full bodies remain exact and receive no extra credit.
+The remaining existing two-input C phase already consumes work, and the
+unreconstructed first phase has the same external call contract. These are
+actual inputs supplied by the native caller, not unused parameters inserted
+to influence register allocation. The legacy heterogeneous parent address
+owner retains an explicit function-address conversion for the two-input
+entry; its separate velocity-record ownership error remains pending.
+
+A host fixture executes the actual work-pointer producer and inheritance
+body, uses the real phase table and checks all eleven phase-boundary calls.
+Its negative control detects substituting owner for actor+0x88. The fixture
+checks argument flow and inherited fields; full compiler-object verification
+covers the actual existing phase implementations.
+
+All 146 tests, source/build coverage, whole-object comparisons and complete
+hybrid linkage/packing pass. CODE is 2,759,420 / 3,293,696 bytes (83.7788%),
+with 19,068 matches among 20,437 catalog spans. DATA remains 468,873 / 648,064
+bytes. No DATA credit is added for the callback declarations. The retail ELF
+SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+The fixed next CODE checkpoint remains 2,772,187 bytes (12,767 bytes away).

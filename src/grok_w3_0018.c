@@ -33,7 +33,7 @@ void func_00194D10(u8 *p) {
     if (p[0x21] < 4) func_00194C30(p);
 }
 
-void func_0019E0B0(u8 *p) {
+void func_0019E0B0(u8 *p,u8 *work_unused) {
     u8 *q = *(u8 **)(p + 0x14);
     p[0x13C] = 0;
     p[5] = 0;

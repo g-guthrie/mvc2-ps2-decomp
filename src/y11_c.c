@@ -313,7 +313,7 @@ void func_002F9B20(u8 *p, u8 *q) {
 
 
 
-void func_0019E3F0(u8 *p) {
+void func_0019E3F0(u8 *p,u8 *work_unused) {
     extern u8 *func_003DA750();
     extern void func_001757E0();
     extern void func_0019DFD0();

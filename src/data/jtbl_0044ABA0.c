@@ -1,6 +1,7 @@
 /* Typed callback entries recovered from the exact dispatch callers. */
 /* Consumer: src/composite_dispatch_heads.c (jtbl_0044ABA0). */
 #include "mvc2_state_callbacks.h"
+#include "actor_effect_work_callbacks.h"
 
 extern void func_0019C510(u8 *);
 extern void func_0019C610(u8 *);
@@ -30,7 +31,7 @@ extern void func_0019DBB0(u8 *);
 extern void func_0019DD00(u8 *);
 extern void func_0019DDF0(u8 *);
 extern void func_0019DE40(u8 *);
-extern void func_0019E670(u8 *);
+extern void func_0019E670(u8 *, u8 *);
 extern void func_0019F310(u8 *);
 extern void func_0019F370(u8 *);
 extern void func_0019F390(u8 *);
@@ -68,7 +69,7 @@ const Mvc2StateCallback jtbl_0044ABA0[36] = {
     func_0019DD00,
     func_0019DDF0,
     func_0019DE40,
-    func_0019E670,
+    (Mvc2StateCallback)func_0019E670,
     func_0019F310,
     func_0019F370,
     func_0019F390,

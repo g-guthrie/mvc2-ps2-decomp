@@ -156,7 +156,7 @@ void func_0026A070(u8 *p)
     func_001E3210(p, 3);
 }
 
-void func_0019E580(u8 *p)
+void func_0019E580(u8 *p,u8 *work_unused)
 {
     u8 *q = *(u8 **)(p + 0x18);
     p[5] = 0;
