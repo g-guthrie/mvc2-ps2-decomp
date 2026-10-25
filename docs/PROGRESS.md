@@ -6489,3 +6489,22 @@ with 19,050 matches among 20,432 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (17,959 bytes away).
+
+
+## Initial selection-mask callback creation
+
+The complete initializer at 0x0013CA00 adds 336 verified CODE bytes. It
+preserves allocation failure, installs the real callback, clears two saved
+mask words, combines the selected players' masks, and visits exactly two
+words and 32 bits per word. Set bits dispatch indices 0..63 to the native
+byte-index helper. Unsigned shifts preserve bit 31 without signed-shift
+undefined behavior. The mask-array declarations and signed read casts agree
+with the already verified sibling update routine. No helper or DATA credit
+is added.
+
+All 128 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,754,564 / 3,293,696 bytes (83.6314%),
+with 19,051 matches among 20,432 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (17,623 bytes away).
