@@ -19141,3 +19141,5 @@ func_002B09B0,0x002B09B0,0xD0,src/actor_rise_cancel_002b09b0.c,complete
 func_002CFA90,0x002CFA90,0xE8,src/actor_ground_launch_002cfa90.c,complete
 func_00377390,0x00377390,0x168,src/actor_approach_transition_00377390.c,complete
 func_0035F270,0x0035F270,0xF0,src/actor_animation_signal_0035f270.c,complete
+func_001C0C60,0x001C0C60,0x60,src/actor_depth_animation_001c0c60.c,complete
+func_001CA5C0,0x001CA5C0,0x5C,src/actor_random_start_001ca5c0.c,complete

@@ -7187,3 +7187,50 @@ retail-exact hybrid linkage/packing pass. CODE is 2,762,004 / 3,293,696 bytes
 468,873 / 648,064 bytes (72.3498%). The next fixed CODE checkpoint remains
 2,772,187 bytes (10,183 bytes away). The retail ELF SHA-256 remains
 48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+
+
+## Referenced handlers recovered from residual spans (+188 CODE bytes)
+
+Recovered func_001C0C60 (96 bytes) and func_001CA5C0 (92 bytes) with
+Metrowerks 3.0.3, -O3,p and small-data threshold zero. Both have complete
+native stack frames and returns, plus real callback-table references.
+The pinned words at 0x0044C7E8 and 0x0044C7F4 reference the depth/animation
+handler. Six slots in jtbl_0044D8C0 reference the random-start handler.
+Twelve no-op bytes at 0x001C0C54..0x001C0C60 remain uncredited alignment;
+only the complete 96-byte body is promoted. No neighboring padding is credited.
+
+The depth handler runs the actual owner-relative position helper, copies its
+owner's signed depth byte, and advances phase and hides the actor on a negative
+frame-advance result. The random-start handler initializes only subphase zero,
+sets its timer from the random low nibble, runs direction/angle initialization,
+and always invokes its updater.
+
+The physical owner at 0x0044C770 now represents four unary lifecycle callbacks
+followed by 57 actor/owner mode callbacks. Its mode alias and the three-entry
+subphase table at 0x0044C868 use that real two-input contract. Dispatchers now
+forward owner explicitly; the nested GP-relative pair remains unary because
+it does not consume the outer owner context. Shared mode callbacks that ignore
+owner declare that interface explicitly. The lifecycle release tail now takes
+its real actor pointer instead of four fabricated integer inputs.
+
+Also repaired func_001C0CC0's omitted owner argument to func_001C1330. Frame
+advance declarations in the affected source use the actual integer result,
+with explicit signed-byte tests where native code narrows it. Every modified
+old body and both complete callback objects retain their exact bytes. Their
+existing CODE/DATA credit is unchanged.
+
+Fixtures use actual tables, lifecycle/mode/subphase dispatchers, the new depth
+handler, owner-position helper and motion/release bodies. They check owner
+identity, mirrored offsets, depth extremes, phase rollover and cleanup; passing
+actor in place of owner fails. The random fixture checks all six callback
+bindings, initial/repeated entry, helper ordering, low-nibble bounds and the
+always-run updater; widening the random mask fails.
+
+All 164 tests, source/build coverage and complete compiler/data comparisons
+pass. The full hybrid relink and packed ELF remain retail-exact. CODE is
+2,762,192 / 3,293,696 bytes (83.8630%), with 19,081 matches among 20,439 catalog
+spans. The extra catalog span explicitly separates the uncredited alignment;
+the conservative text denominator is unchanged. DATA remains 468,873 / 648,064
+bytes (72.3498%). The next fixed CODE checkpoint remains 2,772,187 bytes
+(9,995 bytes away). The retail ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.

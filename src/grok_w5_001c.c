@@ -1,3 +1,4 @@
+#include "owned_actor_states_0044c770.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef signed short s16;
@@ -33,12 +34,12 @@ typedef struct EventState {
 } EventState;
 
 extern int func_00175700(u8 *);
-extern s8 func_00175670(u8 *);
+extern int func_00175670(u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_001754A0(u8 *, s32, s32);
 extern void func_001CF6F0(u8 *);
 extern void func_001C4830(u8 *, s32);
-extern void func_001C1330();
+extern void func_001C1330(u8 *,u8 *);
 extern void func_001C9360(u8 *);
 extern void func_001CADB0(u8 *);
 extern void func_001CAD90(u8 *);
@@ -116,10 +117,10 @@ void func_001C12B0(u8 *p, u8 *q) {
     p[36] = (u8)*(s8 *)(q + 36);
 }
 
-void func_001C0CC0(u8 *p) {
-    func_001C1330(p);
+void func_001C0CC0(u8 *p,u8 *owner) {
+    func_001C1330(p,owner);
     p[36] = 8;
-    if (func_00175670(p) < 0) {
+    if ((s8)func_00175670(p) < 0) {
         p[4]++;
         p[316] = 0;
     }
@@ -130,7 +131,7 @@ void func_001C1250(u8 *p, u8 *q) {
     S(p, 318) = S(P(q, 24), 318);
     func_001C1330(p, q);
     p[36] = (u8)*(s8 *)(q + 36);
-    func_00175670(p);
+    (s8)func_00175670(p);
 }
 
 void func_001C1A80(u8 *p, u8 *q) {
@@ -147,7 +148,7 @@ void func_001C1AE0(u8 *p, u8 *q) {
     p[36] = (u8)*(s8 *)(q + 36);
     func_001C1BC0(p);
     func_001C1D40(p, q);
-    func_00175670(p);
+    (s8)func_00175670(p);
 }
 
 void func_001C31A0(u8 *p, u8 *q) {
@@ -183,7 +184,7 @@ void func_001C4EC0(u8 *p) {
     }
     *(V3 *)(p + 52) = *(V3 *)(q + 52);
     p[316] = (u8)*(s8 *)(q + 316);
-    func_00175670(p);
+    (s8)func_00175670(p);
 }
 
 void func_001C4890(s32 a0, u8 mode) {

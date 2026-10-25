@@ -1,3 +1,4 @@
+#include "owned_actor_states_0044c770.h"
 #include "owner_effect_callbacks.h"
 #include "rotation_state_callbacks.h"
 /* GP-relative code view; the complete native owner remains in .data. */
@@ -508,7 +509,7 @@ void func_001BDD90(u8 *p, void *owner) { jtbl_004BF9A0[p[5]](p, owner); }
 
 void func_001C05B0(u8 *p) { jtbl_004BF9C8[p[5]](p); }
 
-void func_001C0E20(u8 *p) { jtbl_004BF9D0[p[5]](p); }
+void func_001C0E20(u8 *p,u8 *owner_unused) { jtbl_004BF9D0[p[5]](p); }
 
 void func_001C23D0(u8 *p) { jtbl_004BF9E0[p[7]](p); }
 

@@ -180,7 +180,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     "$BUILD/func_001794A0.o" private/SLUS_204.86.rom \
     --source src/func_001794A0.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/argument_dispatch_heads.c -c -lang c -O3 -sdatathreshold 8 \
+    src/argument_dispatch_heads.c -c -lang c -i src -O3 -sdatathreshold 8 \
     -o "$BUILD/argument_dispatch_heads.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/preaction_dispatch_heads.c -c -lang c -i src -O3 -sdatathreshold 8 \
@@ -586,7 +586,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w6_pairs.c -c -lang c $MATCH_FLAGS \
     -o "$BUILD/grok_w6_pairs.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/grok_w7_001c.c -c -lang c -O3 -sdatathreshold 8 \
+    src/grok_w7_001c.c -c -lang c -i src -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w7_001c.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w4_szc0.c -c -lang c $MATCH_FLAGS \
@@ -632,7 +632,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_001b.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_001b.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/grok_w5_001c.c -c -lang c -O3 -sdatathreshold 8 \
+    src/grok_w5_001c.c -c -lang c -i src -O3 -sdatathreshold 8 \
     -o "$BUILD/grok_w5_001c.o"
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/grok_w5_0017.c -c -lang c -O3 -sdatathreshold 8 \
@@ -21158,5 +21158,13 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_animation_signal_0035f270.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_animation_signal_0035f270.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_animation_signal_0035f270.o" private/SLUS_204.86.rom --source src/actor_animation_signal_0035f270.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_depth_animation_001c0c60.c -c -lang c -O3,p -sdatathreshold 0 -i src -o "$BUILD/actor_depth_animation_001c0c60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_depth_animation_001c0c60.o" private/SLUS_204.86.rom --source src/actor_depth_animation_001c0c60.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_random_start_001ca5c0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_random_start_001ca5c0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_random_start_001ca5c0.o" private/SLUS_204.86.rom --source src/actor_random_start_001ca5c0.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

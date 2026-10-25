@@ -1,3 +1,4 @@
+#include "owned_actor_states_0044c770.h"
 #include "mvc2_record_triplet.h"
 struct Object;
 typedef unsigned char u8;
@@ -484,7 +485,7 @@ void func_001BFAB0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Obje
 
 void func_001BFC90(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
-void func_001C1320(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_001C1320(unsigned char *p) { func_003DAA40((struct Object *)p); }
 
 void func_001C1620(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 

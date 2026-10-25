@@ -1,3 +1,4 @@
+#include "owned_actor_states_0044c770.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef signed short s16;
@@ -81,7 +82,7 @@ void func_001DC1A0(u8 *p)
         func_001DC440(p, q);
 }
 
-void func_001C1100(u8 *p)
+void func_001C1100(u8 *p,u8 *owner_unused)
 {
     F(p, 52) += F(p, 92);
     F(p, 92) += F(p, 104);

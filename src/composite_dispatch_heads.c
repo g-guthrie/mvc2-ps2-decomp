@@ -1,3 +1,4 @@
+#include "owned_actor_states_0044c770.h"
 #include "owner_effect_callbacks.h"
 #include "edge_owner_phase_tables.h"
 #include "inherited_effect_phase_tables.h"
@@ -189,8 +190,6 @@ extern DispatchFn jtbl_0044C4F0[];
 extern DispatchFn jtbl_0044C500[];
 extern DispatchFn jtbl_0044C510[];
 extern DispatchFn jtbl_0044C520[];
-extern DispatchFn jtbl_0044C770[];
-extern DispatchFn jtbl_0044C868[];
 extern DispatchFn jtbl_0044C880[];
 extern DispatchFn jtbl_0044CAA0[];
 extern DispatchFn jtbl_0044CB00[];
@@ -1727,9 +1726,9 @@ void func_001C0390(u8 *p) { jtbl_0044C510[p[4]](p); }
 
 void func_001C06D0(u8 *p) { jtbl_0044C520[p[4]](p); }
 
-void func_001C0A70(u8 *p) { jtbl_0044C770[p[4]](p); }
+void func_001C0A70(u8 *p) { jtbl_0044C770.lifecycle[p[4]](p); }
 
-void func_001C0FF0(u8 *p) { jtbl_0044C868[p[5]](p); }
+void func_001C0FF0(u8 *p,u8 *owner) { jtbl_0044C868[p[5]](p,owner); }
 
 void func_001C1450(u8 *p) { jtbl_0044C880[p[4]](p); }
 

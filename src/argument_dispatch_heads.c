@@ -1,3 +1,4 @@
+#include "owned_actor_states_0044c770.h"
 typedef unsigned char u8;
 typedef void (*DispatchFn1)(u8 *);
 typedef void (*DispatchFn2)(u8 *, void *);
@@ -30,7 +31,6 @@ extern DispatchFn2 jtbl_0044C0A0[];
 extern DispatchFn2 jtbl_0044C0D0[];
 extern DispatchFn2 jtbl_0044C1C0[];
 extern DispatchFn2 jtbl_0044C430[];
-extern DispatchFn2 jtbl_0044C780[];
 extern DispatchFn2 jtbl_0044CCB0[];
 extern DispatchFn2 jtbl_0044DF50[];
 extern DispatchFn2 jtbl_0044DF60[];
