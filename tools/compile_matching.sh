@@ -20678,4 +20678,24 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_air_event_motion_0022de70.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_air_event_motion_0022de70.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_air_event_motion_0022de70.o" private/SLUS_204.86.rom --source src/actor_air_event_motion_0022de70.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_random_animation_00235180.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_random_animation_00235180.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_random_animation_00235180.o" private/SLUS_204.86.rom --source src/actor_random_animation_00235180.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_mode_launch_00235d20.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_mode_launch_00235d20.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_mode_launch_00235d20.o" private/SLUS_204.86.rom --source src/actor_mode_launch_00235d20.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_entry_mode_00236070.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_entry_mode_00236070.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_entry_mode_00236070.o" private/SLUS_204.86.rom --source src/actor_entry_mode_00236070.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_linked_work_init_00236d90.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_linked_work_init_00236d90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_linked_work_init_00236d90.o" private/SLUS_204.86.rom --source src/actor_linked_work_init_00236d90.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_landing_clamp_002388c0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_landing_clamp_002388c0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_landing_clamp_002388c0.o" private/SLUS_204.86.rom --source src/actor_landing_clamp_002388c0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

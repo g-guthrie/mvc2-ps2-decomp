@@ -6001,3 +6001,21 @@ with 18,955 matches among 20,416 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes (12,382 bytes away).
+
+## Animation choice, entry setup, and landing clamp
+
+Five complete functions add 1,436 verified CODE bytes: animation choice
+(232), mode-dependent launch (280), entry-mode setup (324), linked-work
+initialization (332), and landing clamp (268). The launch preserves facing
+reversal of velocity and acceleration, including signed zero. The landing
+routine stops horizontal reversal and selects the native animation after
+landing. Its integer selectors are narrowed to bytes at the call boundary.
+The leading 12-byte gap before 0x00236070 remains uncredited. No DATA credit
+is added.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,728,304 / 3,293,696 bytes (82.8341%),
+with 18,960 matches among 20,417 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes (10,946 bytes away).
