@@ -6139,3 +6139,21 @@ with 18,989 matches among 20,431 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes (2,186 bytes away).
+
+## Motion-bank launches and actor phase transitions
+
+Eight complete functions add 2,360 verified CODE bytes: launch motion-bank
+selection (428), palette/work reset (216), linked-work launch (268), contact
+and motion-bank setup (308), variant air launch (344), direction-dependent
+speed adjustment (280), height-triggered phase transition (224), and palette
+and ground reset (292). Helper declarations retain the reconstructed integer
+and pointer return types. Three leading 12-byte alignment gaps remain
+uncredited. No DATA credit is added.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,739,424 / 3,293,696 bytes (83.1717%),
+with 18,997 matches among 20,434 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The fixed 2,739,250-byte CODE checkpoint is passed; the next is 2,772,187
+bytes (32,763 bytes away).

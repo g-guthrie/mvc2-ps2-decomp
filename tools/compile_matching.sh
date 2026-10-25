@@ -20815,4 +20815,36 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_npc_work_reset_002995f0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_npc_work_reset_002995f0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_npc_work_reset_002995f0.o" private/SLUS_204.86.rom --source src/actor_npc_work_reset_002995f0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_launch_motion_bank_002a9150.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_launch_motion_bank_002a9150.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_launch_motion_bank_002a9150.o" private/SLUS_204.86.rom --source src/actor_launch_motion_bank_002a9150.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_palette_work_reset_002a95c0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_palette_work_reset_002a95c0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_palette_work_reset_002a95c0.o" private/SLUS_204.86.rom --source src/actor_palette_work_reset_002a95c0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_linked_work_launch_002aa190.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_linked_work_launch_002aa190.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_linked_work_launch_002aa190.o" private/SLUS_204.86.rom --source src/actor_linked_work_launch_002aa190.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_contact_motion_bank_002af050.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_contact_motion_bank_002af050.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_contact_motion_bank_002af050.o" private/SLUS_204.86.rom --source src/actor_contact_motion_bank_002af050.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_variant_air_launch_002afc90.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_variant_air_launch_002afc90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_variant_air_launch_002afc90.o" private/SLUS_204.86.rom --source src/actor_variant_air_launch_002afc90.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_direction_speed_adjust_002affe0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_direction_speed_adjust_002affe0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_direction_speed_adjust_002affe0.o" private/SLUS_204.86.rom --source src/actor_direction_speed_adjust_002affe0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_height_phase_transition_002bd330.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_height_phase_transition_002bd330.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_height_phase_transition_002bd330.o" private/SLUS_204.86.rom --source src/actor_height_phase_transition_002bd330.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_palette_ground_reset_002bc680.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_palette_ground_reset_002bc680.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_palette_ground_reset_002bc680.o" private/SLUS_204.86.rom --source src/actor_palette_ground_reset_002bc680.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

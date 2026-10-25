@@ -19051,3 +19051,11 @@ func_00289620,0x00289620,0x1DC,src/actor_ground_launch_fixed_00289620.c,complete
 func_002972B0,0x002972B0,0x164,src/actor_mode_air_launch_002972b0.c,complete
 func_00297A10,0x00297A10,0x130,src/actor_speed_adjust_clone_00297a10.c,complete
 func_002995F0,0x002995F0,0xE0,src/actor_npc_work_reset_002995f0.c,complete
+func_002A9150,0x002A9150,0x1AC,src/actor_launch_motion_bank_002a9150.c,complete
+func_002A95C0,0x002A95C0,0xD8,src/actor_palette_work_reset_002a95c0.c,complete
+func_002AA190,0x002AA190,0x10C,src/actor_linked_work_launch_002aa190.c,complete
+func_002AF050,0x002AF050,0x134,src/actor_contact_motion_bank_002af050.c,complete
+func_002AFC90,0x002AFC90,0x158,src/actor_variant_air_launch_002afc90.c,complete
+func_002AFFE0,0x002AFFE0,0x118,src/actor_direction_speed_adjust_002affe0.c,complete
+func_002BD330,0x002BD330,0xE0,src/actor_height_phase_transition_002bd330.c,complete
+func_002BC680,0x002BC680,0x124,src/actor_palette_ground_reset_002bc680.c,complete
