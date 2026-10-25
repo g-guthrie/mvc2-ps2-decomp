@@ -1,4 +1,5 @@
 #include "owner_effect_callbacks.h"
+#include "edge_owner_phase_tables.h"
 #include "character_owner_callbacks.h"
 typedef unsigned short u16;
 typedef unsigned int u32;
@@ -202,8 +203,6 @@ extern DispatchFn jtbl_0044CC40[];
 extern DispatchFn jtbl_0044CC50[];
 extern DispatchFn jtbl_0044CC60[];
 extern DispatchFn jtbl_0044CCA0[];
-extern DispatchFn jtbl_0044CD60[];
-extern DispatchFn jtbl_0044CD70[];
 extern DispatchFn jtbl_0044CD90[];
 extern DispatchFn jtbl_0044CDA0[];
 extern DispatchFn jtbl_0044CDC0[];
@@ -1762,9 +1761,9 @@ void func_001C5580(u8 *p) { jtbl_0044CC60[p[4]](p); }
 
 void func_001C5870(u8 *p) { jtbl_0044CCA0[p[4]](p); }
 
-void func_001C67F0(u8 *p) { jtbl_0044CD60[p[7]](p); }
+void func_001C67F0(u8 *p,u8 *owner) { jtbl_0044CD60.first[p[7]](p,owner); }
 
-void func_001C6AC0(u8 *p) { jtbl_0044CD70[p[7]](p); }
+void func_001C6AC0(u8 *p,u8 *owner) { jtbl_0044CD60.second[p[7]](p,owner); }
 
 void func_001C6F20(u8 *p) { jtbl_0044CD90[p[7]](p); }
 

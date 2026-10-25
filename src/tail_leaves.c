@@ -500,7 +500,7 @@ void func_001C50A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Obje
 
 void func_001C57A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
-void func_001C6A20(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
+void func_001C6A20(u8 *actor, u8 *owner_unused) { func_00175700(actor); }
 
 void func_001C74A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 

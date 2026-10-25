@@ -6675,3 +6675,35 @@ with 19,058 matches among 20,432 spans. DATA remains 468,873 / 648,064 bytes.
 The retail ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The fixed next CODE checkpoint remains 2,772,187 bytes (15,023 bytes away).
+
+
+## Owner-height opposite-edge entry
+
+Recovered `func_001C6AE0` as a complete 264-byte C callback. It has its own
+stack frame, return and callback-table reference, immediately after the
+32-byte dispatcher at `0x001C6AC0`; its former residual catalog label is now
+promoted without changing either boundary or the surrounding gap. The body
+increments phase, initializes the four extent bytes, clears depth, reverses
+the owner's facing, chooses the opposite screen edge and horizontal velocity,
+and places the actor at owner+0x430 plus 4.285714149475098. It initializes
+zero acceleration/vertical velocity, selects animation (25,21), then calls
+the genuine owner-aware continuation at `0x001C6BF0`. The new symbol-map entry
+for that already credited continuation resolves the direct relocation.
+
+The physical 36-byte callback owner at `0x0044CD60` contains a four-state
+group and the five-state group beginning at `0x0044CD70`. Both native tail
+dispatchers preserve the owner argument, and their C now explicitly forwards
+it. The table signatures reflect that shared calling contract, including the
+handlers that ignore owner. The eight-byte animation tail drops its former
+four-argument placeholder signature in favor of the actual two-input phase
+contract. All changed existing functions remain whole-object exact; no extra
+credit is added for these interface repairs or for the unchanged table bytes.
+A host fixture exercises both real dispatch heads and the complete new entry
+callback; its negative control detects substituting the owner before dispatch.
+
+All 134 tests, source/build coverage, whole-object verification and full
+hybrid linkage/packing pass. CODE is 2,757,428 / 3,293,696 bytes (83.7184%),
+with 19,059 matches among 20,432 spans. DATA remains 468,873 / 648,064 bytes.
+The retail ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The fixed next CODE checkpoint remains 2,772,187 bytes (14,759 bytes away).

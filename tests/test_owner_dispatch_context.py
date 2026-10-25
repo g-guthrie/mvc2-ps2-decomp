@@ -166,5 +166,58 @@ int main(void) {
         self.assertNotEqual(self.run_character_dispatch(drop_owner=True), 0)
 
 
+    def run_edge_dispatch(self, drop_owner=False):
+        table = (ROOT / "src/data/jtbl_0044CD60.c").read_text()
+        source = (ROOT / "src/composite_dispatch_heads.c").read_text()
+        heads = [function(source, name) for name in ("func_001C67F0", "func_001C6AC0")]
+        if drop_owner:
+            changed = heads[1].replace("(p,owner)", "(p,wrong_owner)")
+            self.assertNotEqual(heads[1], changed)
+            heads[1] = changed
+        code = '#include "edge_owner_phase_tables.h"\n#include "jtbl_0044CD60.c"\n'
+        code += "static u8 *seen_actor,*seen_owner; u8 wrong_owner[0x600];\n"
+        code += "float D_004F1FC8=800,D_004F1FCC=0,D_004F1FD0=0;\n"
+        code += "int func_001757E0(u8 *p,int a,int b){return 0;}\n"
+        code += "void func_0015E630(u8 *p){}\n"
+        for name in re.findall(r"extern void (func_[0-9A-F]+)\(", table):
+            if name != "func_001C6AE0":
+                code += (f"void {name}(u8 *p,u8 *owner) {{"
+                         "seen_actor=p;seen_owner=owner;}\n")
+        code += "\n".join(heads)
+        code += """
+int main(void) {
+    _Alignas(16) u8 actor[0x600]={0},owner[0x600]={0};
+    *(float *)(owner+0x430)=100;
+    func_001C67F0(actor,owner);
+    if(seen_actor!=actor || seen_owner!=owner)return 1;
+    seen_actor=seen_owner=0;
+    func_001C6AC0(actor,owner);
+    return !(seen_actor==actor && seen_owner==owner && actor[7]==1
+             && *(short *)(actor+0x140)==1 && actor[0x24]==0
+             && *(float *)(actor+0x34)==720.0f
+             && *(float *)(actor+0x38)>104.28f
+             && *(float *)(actor+0x38)<104.29f);
+}
+"""
+        with tempfile.TemporaryDirectory() as temporary:
+            path = Path(temporary)
+            fixture, binary = path / "edge.c", path / "edge"
+            fixture.write_text(code)
+            built = subprocess.run(
+                [self.cc, "-std=c11", "-Werror", "-I", str(ROOT / "src"),
+                 "-I", str(ROOT / "src/data"), str(fixture),
+                 str(ROOT / "src/owner_height_edge_entry_001c6ae0.c"),
+                 "-o", str(binary)], capture_output=True, text=True, timeout=30,
+            )
+            self.assertEqual(built.returncode, 0, built.stderr)
+            return subprocess.run([str(binary)], timeout=10).returncode
+
+    def test_edge_owner_reaches_both_native_phase_groups(self):
+        self.assertEqual(self.run_edge_dispatch(), 0)
+
+    def test_edge_substituted_owner_is_detected(self):
+        self.assertNotEqual(self.run_edge_dispatch(drop_owner=True), 0)
+
+
 if __name__ == "__main__":
     unittest.main()
