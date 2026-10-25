@@ -7415,3 +7415,43 @@ The next fixed CODE checkpoint remains 2,772,187 bytes, 7,775 bytes away.
 A separate 532-byte fixed-point motion candidate remains uncredited: two
 branch-scheduling instructions still differ. Its whole native body, failed
 compiler variants and table evidence remain private frontier material.
+
+
+## Countdown relaunch and actor-local direction shift (+784 CODE bytes)
+
+Recovered func_0019BE90 (616 bytes, Metrowerks 3.0) and func_0020A6F0
+(168 bytes, Metrowerks 3.0.3), both at -O3,p and small-data threshold zero.
+Retail pointers at 0x0044A8D0 and 0x00450720 are selected by func_0019BE70
+and func_0020A6C0. Both complete frames and returns are verified. The twelve
+alignment bytes preceding the direction handler remain uncredited.
+
+The relaunch handler decrements its signed timer, wraps its unsigned byte
+counter, releases exhausted actors, or copies owner state and applies its
+slot-dependent motion. It invokes the actual movement updater immediately.
+The constructor at func_0019BDD0 attempts nine slots, numbered 0 through 8.
+Slot 8 reads a ninth halfword at 0x0044A8B0, overlapping the low half of the
+first float velocity. That native read is retained explicitly; the source
+view covers nine halfwords and the moving subset uses four float pairs for
+slots 4 through 7. No DATA credit or ownership change accompanies those code
+views. The release leaf now takes its actual actor pointer, replacing four
+fabricated integer inputs; all previously credited bodies remain exact.
+
+The direction handler saves its original position into the actor-local work
+record, shifts horizontally, toggles the direction bit, copies the result to
+facing, sets the work flag and schedules animation. Its existing callback
+interface is actor plus opaque work context; the actual dispatcher supplies
+actor + 0x2B8. The helper declaration uses its real byte mode parameter.
+
+Tests exercise all nine relaunch slots, signed timer wrapping, unsigned
+counter wrapping, actual movement/release bodies, and the ninth-halfword read.
+Direction tests cover every byte direction, phase wrapping, both shifts,
+complete actor/work bytes and helper ordering. Wrong owner/work forwarding,
+signed counter interpretation and a missing direction toggle fail negative
+controls. All 190 tests and build/source/catalog checks pass.
+
+Whole compiler/data objects and the full linked image remain exact. The
+packed ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+CODE is 2,765,196 / 3,293,696 bytes (83.9542%), with 19,091 matches among
+20,447 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%). The
+next fixed CODE checkpoint remains 2,772,187 bytes, 6,991 bytes away.
