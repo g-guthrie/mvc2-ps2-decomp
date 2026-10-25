@@ -19094,3 +19094,8 @@ func_00230360,0x00230360,0x88,src/actor_facing_animation_reset_00230360.c,comple
 func_00234B80,0x00234B80,0x80,src/actor_control_mode_select_00234b80.c,complete
 func_00251140,0x00251140,0x84,src/actor_palette_ground_phase_00251140.c,complete
 func_00270D30,0x00270D30,0x84,src/actor_floor_motion_transition_00270d30.c,complete
+func_002BED10,0x002BED10,0xAC,src/actor_delayed_launch_002bed10.c,complete
+func_002E5FC0,0x002E5FC0,0x78,src/actor_stage_gate_002e5fc0.c,complete
+func_002CFF40,0x002CFF40,0x88,src/actor_pending_phase_002cff40.c,complete
+func_003BBB10,0x003BBB10,0x64,src/actor_contact_dispatch_003bbb10.c,complete
+func_0030A590,0x0030A590,0x88,src/actor_event_animation_phase_0030a590.c,complete

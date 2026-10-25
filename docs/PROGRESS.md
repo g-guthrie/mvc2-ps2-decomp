@@ -6329,3 +6329,24 @@ with 19,032 matches among 20,434 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (21,599 bytes away).
+
+## Delayed launch, animation phases, and contact dispatch
+
+Five complete functions add 664 verified CODE bytes: delayed launch (172),
+stage gating (120), queued-command phase (136), animation-event phase (136),
+and contact dispatch (100). The launch keeps its one-frame initial gate and
+native velocities. The stage gate retains both native paths and work updates.
+
+Three callers compile with their real helper bodies: the 72-byte queued
+command consumer, 92-byte signed animation-event offset handler, and 32-byte
+state transition. The normal build verifies every complete helper at its own
+retail address. These copies supply actual register behavior and add no extra
+progress credit. The contact table's two targets require the actor argument;
+no extra owner parameter is introduced. No DATA credit is added.
+
+All 128 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,751,252 / 3,293,696 bytes (83.5308%),
+with 19,037 matches among 20,434 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (20,935 bytes away).

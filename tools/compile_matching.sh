@@ -20987,4 +20987,24 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_floor_motion_transition_00270d30.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_floor_motion_transition_00270d30.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_floor_motion_transition_00270d30.o" private/SLUS_204.86.rom --source src/actor_floor_motion_transition_00270d30.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_delayed_launch_002bed10.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_delayed_launch_002bed10.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_delayed_launch_002bed10.o" private/SLUS_204.86.rom --source src/actor_delayed_launch_002bed10.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_stage_gate_002e5fc0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_stage_gate_002e5fc0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_stage_gate_002e5fc0.o" private/SLUS_204.86.rom --source src/actor_stage_gate_002e5fc0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_pending_phase_002cff40.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_pending_phase_002cff40.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_pending_phase_002cff40.o" private/SLUS_204.86.rom --source src/actor_pending_phase_002cff40.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_contact_dispatch_003bbb10.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_contact_dispatch_003bbb10.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_contact_dispatch_003bbb10.o" private/SLUS_204.86.rom --source src/actor_contact_dispatch_003bbb10.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_event_animation_phase_0030a590.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_event_animation_phase_0030a590.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_event_animation_phase_0030a590.o" private/SLUS_204.86.rom --source src/actor_event_animation_phase_0030a590.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
