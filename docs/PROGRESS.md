@@ -6568,3 +6568,25 @@ linkage/packing pass. CODE is 2,755,592 / 3,293,696 bytes (83.6626%), with
 Retail ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (16,595 bytes away).
+
+
+## Relative-motion transfer with original-coordinate snapshots
+
+The complete callback at 0x00253A20 adds 204 verified CODE bytes. It advances
+the phase, captures the original X separation and both original X positions,
+invokes the real two-input repositioning helper, restores those positions,
+clears both actors' velocity/acceleration fields, and applies opposite X
+velocities with the native timer. Capturing the separation before the individual
+coordinates preserves all three native float saves across the helper call.
+The exported unary signature agrees with the callback table at 0x004534E0.
+
+Its former residual catalog label is now the complete callback. The adjacent
+32-byte tail dispatcher, alignment gap, and catalog span count are unchanged.
+No helper or DATA credit is added.
+
+All 130 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,755,796 / 3,293,696 bytes (83.6688%),
+with 19,054 matches among 20,432 spans. DATA remains 468,873 / 648,064 bytes.
+Retail ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (16,391 bytes away).

@@ -8463,7 +8463,7 @@ func_002537F0,0x002537F0,0xF8,0x002538E8,code,spimdisasm-explicit-size-before-fi
 func_002538F0,0x002538F0,0xC0,0x002539B0,code,spimdisasm-explicit-size-before-first-data
 func_002539B0,0x002539B0,0x4C,0x002539FC,code,spimdisasm-explicit-size-before-first-data
 func_00253A00,0x00253A00,0x20,0x00253A20,code,matching-c-head-split
-residual_00253A20,0x00253A20,0xCC,0x00253AEC,assembly_residual,verified-boundary-after-matching-head
+func_00253A20,0x00253A20,0xCC,0x00253AEC,code,verified-complete-state-callback
 func_00253AF0,0x00253AF0,0xCC,0x00253BBC,code,spimdisasm-explicit-size-before-first-data
 func_00253BC0,0x00253BC0,0xBC,0x00253C7C,code,spimdisasm-explicit-size-before-first-data
 func_00253C80,0x00253C80,0xBC,0x00253D3C,code,spimdisasm-explicit-size-before-first-data

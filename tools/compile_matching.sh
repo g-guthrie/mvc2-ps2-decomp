@@ -21071,4 +21071,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/owner_state_scaled_motion_00193500.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_state_scaled_motion_00193500.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_state_scaled_motion_00193500.o" private/SLUS_204.86.rom --source src/owner_state_scaled_motion_00193500.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_relative_motion_transfer_00253a20.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_relative_motion_transfer_00253a20.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_relative_motion_transfer_00253a20.o" private/SLUS_204.86.rom --source src/actor_relative_motion_transfer_00253a20.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
