@@ -7148,3 +7148,42 @@ All 158 tests, source/build coverage and full retail-exact hybrid linkage and
 packing pass. CODE remains 2,761,764 / 3,293,696 bytes (83.8500%); DATA remains
 468,873 / 648,064 bytes (72.3498%). The new 0x003A98C0 caller remains uncredited
 because its complete compiler comparison has not passed.
+
+
+## Animation signal handler and allocation result (+240 CODE bytes)
+
+Recovered func_0035F270 as a complete 240-byte Metrowerks 3.0 function with
+-O3,p and small-data threshold zero. A selected bit in the 16-bit frame-phase
+mask suppresses its state updates, while normal paths always enqueue the
+actor. An unmasked update runs the real timer helper and frame advance,
+consumes any new animation command, updates the counter and clears its timer.
+An animation marker advances the byte subphase and creates the next object.
+Failed allocation sets only the signed status byte at context offset four.
+
+The frame driver func_00172760 normalizes D_004D18DB with AND 15 at
+0x00172840 and stores it at 0x00172844 before actor updates. The handler uses
+that 0..15 engine invariant for its shift; no speculative wider table or DATA
+extent is credited.
+
+Native callers test the pointer returned by func_0035EF90, but its definition
+had incorrectly returned void. It now explicitly returns the allocated object
+or null and accepts the promoted mode value before narrowing the stored byte.
+The allocator and existing caller declarations are consistent with that
+interface. All 40 previously credited functions across m6.c and grok_w5_0024.c
+retain their exact bytes; the already credited 128-byte constructor gets no
+additional credit.
+
+Fixtures execute the handler with its actual timer, creation and queue bodies.
+They cover all sixteen clock phases, selected/unrelated mask bits, helper order,
+fresh animation commands and markers, timer clearing, exact counter updates,
+subphase rollover, allocation success/failure, copied position/context and the
+single-byte failure marker. Inverting the phase-mask gate fails the negative
+control. Host-only address calculations are widened while native-width stores
+remain unchanged; compiler comparisons independently check the PS2 ABI.
+
+All 160 tests, source/build coverage, whole-object comparisons and complete
+retail-exact hybrid linkage/packing pass. CODE is 2,762,004 / 3,293,696 bytes
+(83.8573%), with 19,079 matches among 20,438 catalog spans. DATA remains
+468,873 / 648,064 bytes (72.3498%). The next fixed CODE checkpoint remains
+2,772,187 bytes (10,183 bytes away). The retail ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
