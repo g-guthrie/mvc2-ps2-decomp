@@ -30,8 +30,8 @@ extern void func_001BF860(u8 *);
 extern void func_001BF8A0(u8 *);
 extern void func_001C05D0(u8 *);
 extern void func_001C0650(u8 *);
-extern void func_001C0E40(u8 *);
-extern void func_001C0E60(u8 *);
+extern void func_001C0E40(u8 *, u8 *);
+extern void func_001C0E60(u8 *, u8 *);
 
 const OwnerEffectSmallTables jtbl_004BF960 = {
     {
@@ -72,7 +72,6 @@ const OwnerEffectSmallTables jtbl_004BF960 = {
         func_001BF8A0,
         func_001C05D0,
         func_001C0650,
-        func_001C0E40,
-        func_001C0E60,
-    }
+    },
+    {func_001C0E40, func_001C0E60}
 };

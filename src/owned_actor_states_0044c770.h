@@ -29,4 +29,7 @@ void func_001C1010(unsigned char *, unsigned char *);
 void func_001C1080(unsigned char *, unsigned char *);
 void func_001C1100(unsigned char *, unsigned char *);
 void func_001C1330(unsigned char *, unsigned char *);
+void func_001C1390(unsigned char *, unsigned char *);
+void func_001C0E40(unsigned char *, unsigned char *);
+void func_001C0E60(unsigned char *, unsigned char *);
 #endif

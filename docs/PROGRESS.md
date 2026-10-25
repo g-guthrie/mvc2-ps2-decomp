@@ -7234,3 +7234,37 @@ the conservative text denominator is unchanged. DATA remains 468,873 / 648,064
 bytes (72.3498%). The next fixed CODE checkpoint remains 2,772,187 bytes
 (9,995 bytes away). The retail ELF SHA-256 remains
 48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+
+
+## Owner-action gate and follow startup (+160 CODE bytes)
+
+Recovered func_00197490 (132 bytes) and func_001C0E40 (28 bytes), each
+compiled with Metrowerks 3.0.3, -O3,p and small-data threshold zero. The
+retail pointer at 0x0044A210 selects the owner-action gate through
+func_00194AA0. The follow pair at 0x004BF9D0 contains the startup and
+func_001C0E60; func_001C0E20 selects them using actor subphase. Two four-byte
+alignment gaps remain uncredited. No padding or partial bodies are counted.
+
+Corrected the previous entry's claim that the nested follow pair is unary:
+func_001C0E60 consumes the owner, so both its dispatcher and startup now
+forward that input. The actual startup resets its timer, sets depth to 15,
+advances subphase and invokes that updater. The typed physical table retains
+all original bytes. The owner-action gate compares signed owner identifiers,
+clears changed identifiers, or selects the normal/alternate phase table.
+Those phase tables now forward actor and owner explicitly; the normal table
+has four entries. Removed the unused third argument from the real acceleration
+handler and its leading dispatcher interface. Every affected old function
+retains its complete native bytes.
+
+Native tests exercise the real startup, follow update, owner-position helper,
+identifier helper, phase dispatchers and acceleration handler. They cover all
+four normal and two alternate routes, signed identifier extremes, parent
+lifecycle state, phase rollover and timer visibility. Wrong owner forwarding
+fails a negative control. All 166 tests, catalog/source/build checks and whole
+compiler objects pass. The hybrid loaded image and packed ELF remain exact,
+with ELF SHA-256
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+
+CODE is 2,762,352 / 3,293,696 bytes (83.8678%), with 19,083 matches among
+20,441 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%). The
+next fixed CODE checkpoint remains 2,772,187 bytes, 9,835 bytes away.

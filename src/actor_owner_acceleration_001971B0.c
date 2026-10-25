@@ -18,8 +18,8 @@ typedef struct {
 typedef struct { u8 prefix[0x34]; f32 x, y; } OwnerPosition;
 extern int func_00175670(u8 *);
 extern void func_001975C0(u8 *, u8 *);
-/* D_004BF538 dispatcher supplies the common owner-state byte in a2. */
-void func_001971B0(u8 *p, u8 *q, u8 ownerState)
+/* The GP phase group at 0x004BF598 consumes actor and owner. */
+void func_001971B0(u8 *p, u8 *q)
 {
     MotionState *m = (MotionState *)p;
     u8 *bounds;

@@ -1,3 +1,4 @@
+#include "owned_actor_states_0044c770.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -239,8 +240,8 @@ void func_00196D00(u8 *p, u8 *q) {
     func_001754A0(p, 0x1B, 0x13);
 }
 
-extern void func_001C1390(void *, void *);
-extern void func_00175670(void *);
+extern void func_001C1390(u8 *, u8 *);
+extern int func_00175670(u8 *);
 void func_001C0E60(u8 *p, u8 *q) {
     s16 h;
     func_001C1390(p, q);

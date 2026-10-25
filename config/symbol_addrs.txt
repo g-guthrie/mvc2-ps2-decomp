@@ -23255,3 +23255,7 @@ func_001BE640 = 0x001BE640;
 func_001C4010 = 0x001C4010;
 
 func_003777B0 = 0x003777B0; // existing verified contact transition
+
+func_00197860 = 0x00197860; // verified native helper
+
+func_001C0E60 = 0x001C0E60; // verified native helper

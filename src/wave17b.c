@@ -7,9 +7,9 @@ typedef signed int s32;
 typedef float f32;
 
 extern int func_001757E0(u8 *, int, int);
-extern void (*D_004BF538[2])(u8 *, u8 *, u8);
+extern void (*D_004BF538[2])(u8 *, u8 *);
 void func_00193B20(u8 *a, u8 *b) {
-  if (b[5] != 0 || b[0x1E4] != 0x1D) { a[4]++; a[0x13C] = 0; } else { D_004BF538[a[5]](a, b, b[0x1E4]); }
+  if (b[5] != 0 || b[0x1E4] != 0x1D) { a[4]++; a[0x13C] = 0; } else { D_004BF538[a[5]](a, b); }
 }
 
 

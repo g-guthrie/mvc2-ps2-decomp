@@ -5036,7 +5036,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/wave28d.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/wave28d.o"
 "$PYTHON" tools/verify_object.py "$BUILD/wave28d.o" private/SLUS_204.86.rom --source src/wave28d.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/wave31.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/wave31.o"
+    src/wave31.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/wave31.o"
 "$PYTHON" tools/verify_object.py "$BUILD/wave31.o" private/SLUS_204.86.rom --source src/wave31.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/initialize_stage_actor_001804F0.c -c -lang c -O3 -sdatathreshold 8 \
@@ -21166,5 +21166,13 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/actor_random_start_001ca5c0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_random_start_001ca5c0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_random_start_001ca5c0.o" private/SLUS_204.86.rom --source src/actor_random_start_001ca5c0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_owner_gate_00197490.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_owner_gate_00197490.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_gate_00197490.o" private/SLUS_204.86.rom --source src/actor_owner_gate_00197490.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_follow_start_001c0e40.c -c -lang c -O3,p -sdatathreshold 0 -i src -o "$BUILD/actor_follow_start_001c0e40.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_follow_start_001c0e40.o" private/SLUS_204.86.rom --source src/actor_follow_start_001c0e40.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh
