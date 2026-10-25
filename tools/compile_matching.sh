@@ -20903,4 +20903,20 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_throw_position_delta_00325fe0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_throw_position_delta_00325fe0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_throw_position_delta_00325fe0.o" private/SLUS_204.86.rom --source src/actor_throw_position_delta_00325fe0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_air_motion_damping_00323670.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_air_motion_damping_00323670.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_air_motion_damping_00323670.o" private/SLUS_204.86.rom --source src/actor_air_motion_damping_00323670.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_input_target_select_0031a350.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_input_target_select_0031a350.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_input_target_select_0031a350.o" private/SLUS_204.86.rom --source src/actor_input_target_select_0031a350.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_bounce_rotation_cycle_0032fc00.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_bounce_rotation_cycle_0032fc00.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_bounce_rotation_cycle_0032fc00.o" private/SLUS_204.86.rom --source src/actor_bounce_rotation_cycle_0032fc00.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_distance_animation_step_0034c450.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_distance_animation_step_0034c450.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_distance_animation_step_0034c450.o" private/SLUS_204.86.rom --source src/actor_distance_animation_step_0034c450.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

@@ -19073,3 +19073,7 @@ func_00305FE0,0x00305FE0,0x1F4,src/actor_state_workflow_00305fe0.c,complete
 func_0030AD50,0x0030AD50,0x134,src/actor_palette_animation_reset_0030ad50.c,complete
 func_00331EB0,0x00331EB0,0x124,src/actor_parent_anchor_transition_00331eb0.c,complete
 func_00325FE0,0x00325FE0,0xFC,src/actor_throw_position_delta_00325fe0.c,complete
+func_00323670,0x00323670,0x10C,src/actor_air_motion_damping_00323670.c,complete
+func_0031A350,0x0031A350,0x100,src/actor_input_target_select_0031a350.c,complete
+func_0032FC00,0x0032FC00,0x228,src/actor_bounce_rotation_cycle_0032fc00.c,complete
+func_0034C450,0x0034C450,0x144,src/actor_distance_animation_step_0034c450.c,complete

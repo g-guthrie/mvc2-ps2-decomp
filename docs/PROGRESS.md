@@ -6193,3 +6193,20 @@ with 19,011 matches among 20,434 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (27,895 bytes away).
+
+## Target selection and movement cycles
+
+Four complete functions add 1,400 verified CODE bytes: input target
+selection (256), air-motion damping (268), bounce and rotation cycle (552),
+and distance-driven animation stepping (324). Target selection returns the
+actual actor pointer. The bounce cycle uses the reconstructed signed integer
+to double conversion and preserves the native signed remainder and angle
+arithmetic. Movement stepping retains the distance accumulated after the
+absolute-value helper call. No DATA credit is added.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,745,692 / 3,293,696 bytes (83.3620%),
+with 19,015 matches among 20,434 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (26,495 bytes away).
