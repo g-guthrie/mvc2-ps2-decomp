@@ -19102,3 +19102,5 @@ func_0030A590,0x0030A590,0x88,src/actor_event_animation_phase_0030a590.c,complet
 func_0037E0A0,0x0037E0A0,0x80,src/effect_single_spawn_0037e0a0.c,complete
 func_0039C8B0,0x0039C8B0,0xAC,src/actor_owner_animation_sync_0039c8b0.c,complete
 func_00343770,0x00343770,0x1E4,src/effect_descriptor_burst_00343770.c,complete
+func_00134C60,0x00134C60,0xC4,src/menu_model_constructor_00134c60.c,complete
+func_00185080,0x00185080,0xCC,src/actor_recovery_timer_00185080.c,complete

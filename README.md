@@ -12,9 +12,9 @@ for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
 
 | | Matched | Total | |
 | --- | ---: | ---: | ---: |
-| Code | 2,737,064 bytes | 3,293,696 bytes | **83.10%** |
+| Code | 2,752,436 bytes | 3,293,696 bytes | **83.57%** |
 | Initialized data | 468,869 bytes | 648,064 bytes | **72.35%** |
-| Functions | 18,989 | 20,431 | |
+| Functions | 19,042 | 20,432 | |
 
 Every matched function is C compiled with a period toolchain (Metrowerks
 MWCC 2.4/3.0/3.0.3, SN GCC 2.95.2, EE GCC 2.96, or Sony EE GCC 2.9) and
@@ -47,7 +47,7 @@ The generated graphic above shows the current catalog's matching code coverage.
 function counts and reconstructed-data coverage. Whole-object compiler
 verification and full-image linkage are separate private build checks.
 Assembly placeholders never count as decompiled source. The current inventory
-contains **20,344 cataloged text spans** after boundary corrections and splitting
+contains **20,432 cataloged text spans** after boundary corrections and splitting
 oversized dispatcher entries. Retained assembly residuals, text gaps and
 initialized data remain separately visible in the progress report.
 
@@ -223,7 +223,7 @@ Verified code is pushed at least after each additional full percentage point.
 The latest checkpoint also publishes the EE GCC sibling-call profile described
 in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 
-The latest verified CODE checkpoint is 2,752,036 / 3,293,696 bytes
-(83.5546%). The latest change recovers a complete 484-byte descriptor-driven
-spawn routine and corrects two false function splits. All 128 tests and full
+The latest verified CODE checkpoint is 2,752,436 / 3,293,696 bytes
+(83.5668%). The latest change recovers a complete 196-byte menu-model
+constructor and a 204-byte actor recovery routine. All 128 tests and full
 retail-exact linkage pass. DATA remains 468,869 / 648,064 bytes (72.3492%).

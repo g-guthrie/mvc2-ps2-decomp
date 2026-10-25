@@ -21019,4 +21019,12 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/effect_descriptor_burst_00343770.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/effect_descriptor_burst_00343770.o"
 "$PYTHON" tools/verify_object.py "$BUILD/effect_descriptor_burst_00343770.o" private/SLUS_204.86.rom --source src/effect_descriptor_burst_00343770.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/menu_model_constructor_00134c60.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/menu_model_constructor_00134c60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/menu_model_constructor_00134c60.o" private/SLUS_204.86.rom --source src/menu_model_constructor_00134c60.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_recovery_timer_00185080.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_recovery_timer_00185080.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_recovery_timer_00185080.o" private/SLUS_204.86.rom --source src/actor_recovery_timer_00185080.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

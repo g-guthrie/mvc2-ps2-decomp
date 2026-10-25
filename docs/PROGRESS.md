@@ -6391,3 +6391,21 @@ with 19,040 matches among 20,432 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (20,151 bytes away).
+
+
+## Menu-model construction and actor recovery
+
+Two complete functions add 400 verified CODE bytes: the menu-model
+constructor at 0x00134C60 (196) and the actor recovery routine at 0x00185080
+(204). The constructor preserves allocation failure, model/position selection,
+and the alternate callback path. The recovery routine preserves signed
+16-bit countdown narrowing, input masks, randomized transition, and its
+zero return value. Typed partial record views recover native field-access
+code generation without padding instructions or register forcing.
+
+All 128 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,752,436 / 3,293,696 bytes (83.5668%),
+with 19,042 matches among 20,432 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (19,751 bytes away).
