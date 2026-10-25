@@ -19006,3 +19006,9 @@ func_001EB8A0,0x001EB8A0,0x118,src/owner_speed_adjust_001eb8a0.c,complete
 func_001EBE90,0x001EBE90,0x114,src/owner_motion_reset_001ebe90.c,complete
 func_001EFE60,0x001EFE60,0x144,src/owner_air_motion_001efe60.c,complete
 func_001F3EF0,0x001F3EF0,0x120,src/owner_velocity_bank_001f3ef0.c,complete
+func_00203FB0,0x00203FB0,0x1FC,src/actor_button_action_00203fb0.c,complete
+func_00206A80,0x00206A80,0x26C,src/actor_centered_control_00206a80.c,complete
+func_0020C830,0x0020C830,0x150,src/actor_mode_launch_0020c830.c,complete
+func_0020D820,0x0020D820,0xDC,src/actor_action_reset_0020d820.c,complete
+func_0020BC60,0x0020BC60,0x190,src/actor_center_jump_0020bc60.c,complete
+func_00205A00,0x00205A00,0x20C,src/actor_spawn_effect_00205a00.c,complete

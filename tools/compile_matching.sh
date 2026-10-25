@@ -20630,4 +20630,28 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/owner_velocity_bank_001f3ef0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_velocity_bank_001f3ef0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_velocity_bank_001f3ef0.o" private/SLUS_204.86.rom --source src/owner_velocity_bank_001f3ef0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_button_action_00203fb0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_button_action_00203fb0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_button_action_00203fb0.o" private/SLUS_204.86.rom --source src/actor_button_action_00203fb0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_centered_control_00206a80.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_centered_control_00206a80.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_centered_control_00206a80.o" private/SLUS_204.86.rom --source src/actor_centered_control_00206a80.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_mode_launch_0020c830.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_mode_launch_0020c830.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_mode_launch_0020c830.o" private/SLUS_204.86.rom --source src/actor_mode_launch_0020c830.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_action_reset_0020d820.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_action_reset_0020d820.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_action_reset_0020d820.o" private/SLUS_204.86.rom --source src/actor_action_reset_0020d820.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_center_jump_0020bc60.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_center_jump_0020bc60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_center_jump_0020bc60.o" private/SLUS_204.86.rom --source src/actor_center_jump_0020bc60.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_spawn_effect_00205a00.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_spawn_effect_00205a00.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_spawn_effect_00205a00.o" private/SLUS_204.86.rom --source src/actor_spawn_effect_00205a00.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

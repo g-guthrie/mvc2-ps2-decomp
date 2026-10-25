@@ -5950,3 +5950,20 @@ with 18,943 matches among 20,412 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes (17,410 bytes away).
+
+## Button-selected movement and effect initialization
+
+Six complete functions add 2,608 verified CODE bytes: action selection (508),
+center-following movement (620), mode-dependent launch (336), action reset
+(220), center-relative jump (400), and spawned-effect initialization (524).
+The movement controller uses the native signed 32-bit integer conversion
+helpers, confirmed against their reconstructed implementations. The jump
+preserves the shared double-to-float rounding point before computing velocity.
+Two leading 12-byte alignment gaps remain uncredited. No DATA credit is added.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,724,448 / 3,293,696 bytes (82.7170%),
+with 18,949 matches among 20,414 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes (14,802 bytes away).
