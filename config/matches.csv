@@ -19047,3 +19047,7 @@ func_00283510,0x00283510,0x1B8,src/actor_full_motion_bank_00283510.c,complete
 func_00283970,0x00283970,0x148,src/actor_ground_launch_bank_00283970.c,complete
 func_00283FE0,0x00283FE0,0xF0,src/actor_npc_work_timeout_00283fe0.c,complete
 func_00284470,0x00284470,0x130,src/actor_facing_velocity_launch_00284470.c,complete
+func_00289620,0x00289620,0x1DC,src/actor_ground_launch_fixed_00289620.c,complete
+func_002972B0,0x002972B0,0x164,src/actor_mode_air_launch_002972b0.c,complete
+func_00297A10,0x00297A10,0x130,src/actor_speed_adjust_clone_00297a10.c,complete
+func_002995F0,0x002995F0,0xE0,src/actor_npc_work_reset_002995f0.c,complete

@@ -20799,4 +20799,20 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_facing_velocity_launch_00284470.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_facing_velocity_launch_00284470.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_facing_velocity_launch_00284470.o" private/SLUS_204.86.rom --source src/actor_facing_velocity_launch_00284470.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_ground_launch_fixed_00289620.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_ground_launch_fixed_00289620.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_ground_launch_fixed_00289620.o" private/SLUS_204.86.rom --source src/actor_ground_launch_fixed_00289620.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_mode_air_launch_002972b0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_mode_air_launch_002972b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_mode_air_launch_002972b0.o" private/SLUS_204.86.rom --source src/actor_mode_air_launch_002972b0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_speed_adjust_clone_00297a10.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_speed_adjust_clone_00297a10.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_speed_adjust_clone_00297a10.o" private/SLUS_204.86.rom --source src/actor_speed_adjust_clone_00297a10.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_npc_work_reset_002995f0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_npc_work_reset_002995f0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_npc_work_reset_002995f0.o" private/SLUS_204.86.rom --source src/actor_npc_work_reset_002995f0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

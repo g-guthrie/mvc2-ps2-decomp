@@ -6123,3 +6123,19 @@ with 18,985 matches among 20,429 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes (3,546 bytes away).
+
+## Fixed-point launch and cloned speed-adjustment variants
+
+Four complete functions add 1,360 verified CODE bytes: fixed-point ground
+launch (476), mode-dependent air launch (356), speed adjustment with event
+cloning (304), and NPC-dependent work reset (224). Ground and air paths keep
+their separate callbacks. The launch and adjustment variants preserve their
+own velocity constants, sign reversals, event counters, and timer increments.
+Two leading 12-byte alignment gaps remain uncredited. No DATA credit is added.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,737,064 / 3,293,696 bytes (83.1001%),
+with 18,989 matches among 20,431 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes (2,186 bytes away).
