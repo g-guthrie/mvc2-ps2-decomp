@@ -18993,3 +18993,5 @@ func_001AF560,0x001AF560,0x20C,src/owner_side_launch_entries.c,complete
 func_001AFA70,0x001AFA70,0x168,src/owner_velocity_launch_entries.c,complete
 func_001ACE50,0x001ACE50,0x25C,src/linked_rotated_entry_001ace50.c,complete
 func_001DC210,0x001DC210,0x140,src/owner_random_drift_001dc210.c,complete
+func_001DF670,0x001DF670,0x17C,src/owner_script_emitter_001df670.c,complete
+func_001E1700,0x001E1700,0x210,src/owner_offset_interpolation_001e1700.c,complete

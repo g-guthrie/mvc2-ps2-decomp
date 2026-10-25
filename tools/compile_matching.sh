@@ -20578,4 +20578,12 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/owner_random_drift_001dc210.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_random_drift_001dc210.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_random_drift_001dc210.o" private/SLUS_204.86.rom --source src/owner_random_drift_001dc210.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_script_emitter_001df670.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_script_emitter_001df670.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_script_emitter_001df670.o" private/SLUS_204.86.rom --source src/owner_script_emitter_001df670.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_offset_interpolation_001e1700.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_offset_interpolation_001e1700.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_offset_interpolation_001e1700.o" private/SLUS_204.86.rom --source src/owner_offset_interpolation_001e1700.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

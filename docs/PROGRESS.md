@@ -5887,3 +5887,19 @@ verification, and full hybrid linkage/packing pass. CODE is 2,717,824 /
 DATA remains 468,869 / 648,064 bytes. The reconstructed ELF retains retail
 SHA-256 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes.
+
+## Counted emission and offset interpolation
+
+Two whole functions add 908 bytes: the counted emission-stream controller
+(380) and owner-offset interpolation setup (528). The controller preserves
+the unsigned stream header and the signed running-count interpretation.
+The interpolation routine snapshots its two offset rows into the same
+40-byte, sixteen-byte-aligned local object used by the native code.
+No additional DATA credit is added.
+
+All 126 tests, catalog and source/build coverage checks, whole-object
+verification, and full hybrid linkage/packing pass. CODE is 2,718,732 /
+3,293,696 bytes (82.5435%), with 18,932 matches among 20,407 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF retains retail
+SHA-256 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes.
