@@ -19116,3 +19116,5 @@ func_0013CA00,0x0013CA00,0x150,src/initialize_selected_mask_callbacks_0013ca00.c
 func_0017FF30,0x0017FF30,0x128,src/actor_owner_offset_initializer_0017ff30.c,complete
 func_00193500,0x00193500,0x2DC,src/owner_state_scaled_motion_00193500.c,complete
 func_00253A20,0x00253A20,0xCC,src/actor_relative_motion_transfer_00253a20.c,complete
+func_001F2D80,0x001F2D80,0xB8,src/actor_facing_launch_001f2d80.c,complete
+func_001A6690,0x001A6690,0x2A8,src/align_segment_chain_001a6690.c,complete

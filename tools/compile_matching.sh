@@ -21075,4 +21075,12 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_relative_motion_transfer_00253a20.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_relative_motion_transfer_00253a20.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_relative_motion_transfer_00253a20.o" private/SLUS_204.86.rom --source src/actor_relative_motion_transfer_00253a20.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_facing_launch_001f2d80.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_facing_launch_001f2d80.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_facing_launch_001f2d80.o" private/SLUS_204.86.rom --source src/actor_facing_launch_001f2d80.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/align_segment_chain_001a6690.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/align_segment_chain_001a6690.o"
+"$PYTHON" tools/verify_object.py "$BUILD/align_segment_chain_001a6690.o" private/SLUS_204.86.rom --source src/align_segment_chain_001a6690.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

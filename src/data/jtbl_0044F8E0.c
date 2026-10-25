@@ -1,30 +1,30 @@
-typedef void (*Mvc2Callback)(void);
-extern void func_001F2E40(void);
-extern void func_001F3040(void);
-extern void func_001F30A0(void);
-extern void func_001F31E0(void);
-extern void func_001F3320(void);
-extern void func_001F33C0(void);
-extern void func_001F34F0(void);
-extern void func_001F3610(void);
-extern void func_001F36C0(void);
-extern void func_001F36F0(void);
-extern void func_001F3800(void);
-extern void func_001F3850(void);
-extern void func_001F38C0(void);
-extern void func_001F3AE0(void);
-extern void func_001F3BB0(void);
-extern void func_001F3D70(void);
-extern void func_001F3E00(void);
-extern void func_001F3E50(void);
-extern void func_001F3E90(void);
-extern void func_001F4010(void);
-extern void func_001F4070(void);
-extern void func_001F41C0(void);
-extern void residual_001F2D80(void);
-extern void residual_001F3EF0(void);
-const Mvc2Callback jtbl_0044F8E0[24] = {
-    residual_001F2D80,
+#include "mvc2_state_callbacks.h"
+extern void func_001F2E40(u8 *);
+extern void func_001F3040(u8 *);
+extern void func_001F30A0(u8 *);
+extern void func_001F31E0(u8 *);
+extern void func_001F3320(u8 *);
+extern void func_001F33C0(u8 *);
+extern void func_001F34F0(u8 *);
+extern void func_001F3610(u8 *);
+extern void func_001F36C0(u8 *);
+extern void func_001F36F0(u8 *);
+extern void func_001F3800(u8 *);
+extern void func_001F3850(u8 *);
+extern void func_001F38C0(u8 *);
+extern void func_001F3AE0(u8 *);
+extern void func_001F3BB0(u8 *);
+extern void func_001F3D70(u8 *);
+extern void func_001F3E00(u8 *);
+extern void func_001F3E50(u8 *);
+extern void func_001F3E90(u8 *);
+extern void func_001F4010(u8 *);
+extern void func_001F4070(u8 *);
+extern void func_001F41C0(u8 *);
+extern void func_001F2D80(u8 *);
+extern void residual_001F3EF0(u8 *);
+const Mvc2StateCallback jtbl_0044F8E0[24] = {
+    func_001F2D80,
     func_001F2E40,
     func_001F3E50,
     func_001F3E90,

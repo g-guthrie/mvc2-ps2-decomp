@@ -6590,3 +6590,34 @@ with 19,054 matches among 20,432 spans. DATA remains 468,873 / 648,064 bytes.
 Retail ELF SHA-256 remains
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (16,391 bytes away).
+
+
+## Facing-dependent launch and complete segment-chain positioning
+
+Two complete functions add 864 verified CODE bytes. The 184-byte launch state
+at 0x001F2D80 preserves subtype-specific byte setup, state advancement, facing-
+dependent velocity and acceleration, the timer, and both animation/effect calls.
+The launch table's declarations now reflect the unary actor input instead of
+asserting zero arguments. Its former residual label is the complete callback;
+the neighboring dispatcher, native alignment and span count are unchanged.
+
+The 680-byte routine at 0x001A6690 computes the planar target, rounds wrapped
+headings, walks the linked segments, applies signed-short endpoint offsets and
+facing, then places the owner relative to the tail. The already verified sibling
+0x001A2F20 has the same instruction/branch/register structure. Only seven native
+immediate fields differ: owner-work coordinates, endpoint table address and
+final coordinate offsets. The new C applies those semantic changes to the real
+algorithm. The angle helper is declared with its actual signed-word return and
+two byte-pointer inputs; the sibling source declarations are corrected too.
+
+The direct caller at 0x001A5F10 now explicitly passes actor and owner to the
+new routine and the actor to its visibility helper. It remains byte-exact and
+receives no extra credit. No callee stand-ins, opcode emission, fixed registers,
+manual padding, helper credit or DATA credit are introduced.
+
+All 130 tests, catalog/build coverage, whole-object verification and full
+hybrid linkage/packing pass. CODE is 2,756,660 / 3,293,696 bytes (83.6950%),
+with 19,056 matches among 20,432 spans. DATA remains 468,873 / 648,064 bytes.
+Retail ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (15,527 bytes away).

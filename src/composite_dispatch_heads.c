@@ -4132,7 +4132,7 @@ void func_0041A4A0(u8 *p) { jtbl_004A6D30[p[5]](p); }
 void func_0041ACC0(u8 *p) { jtbl_004A6D40[p[4]](p); }
 
 extern DispatchFn jtbl_0043E918[];
-extern DispatchFn jtbl_0044F8E0[];
+extern const DispatchFn jtbl_0044F8E0[];
 extern DispatchFn jtbl_004509E0[];
 extern DispatchFn jtbl_00450D70[];
 extern DispatchFn jtbl_00451410[];

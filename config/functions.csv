@@ -5653,7 +5653,7 @@ func_001F2C50,0x001F2C50,0x90,0x001F2CE0,code,spimdisasm-explicit-size-before-fi
 func_001F2CE0,0x001F2CE0,0x3C,0x001F2D1C,code,spimdisasm-explicit-size-before-first-data
 func_001F2D20,0x001F2D20,0x34,0x001F2D54,code,verified-complete-c-function
 func_001F2D60,0x001F2D60,0x20,0x001F2D80,code,verified-complete-c-function
-residual_001F2D80,0x001F2D80,0xB8,0x001F2E38,assembly_residual,native-suffix-after-verified-c-body
+func_001F2D80,0x001F2D80,0xB8,0x001F2E38,code,verified-complete-state-callback
 func_001F2E40,0x001F2E40,0x200,0x001F3040,code,spimdisasm-explicit-size-before-first-data
 func_001F3040,0x001F3040,0x60,0x001F30A0,code,spimdisasm-explicit-size-before-first-data
 func_001F30A0,0x001F30A0,0x138,0x001F31D8,code,spimdisasm-explicit-size-before-first-data

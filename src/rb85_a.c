@@ -9,7 +9,7 @@ typedef float f32;
 extern s16 D_0044AE00[];
 
 void func_001A2F20(u8 *a, u8 *b) {
-    extern u8 func_001748C0(f32 *, u8 *);
+    extern s32 func_001748C0(u8 *, u8 *);
     f32 v[4];
     u8 *c;
     u8 *nxt;
@@ -23,7 +23,7 @@ void func_001A2F20(u8 *a, u8 *b) {
     c = b + 0x2B8;
     v[0] = *(f32 *)(b + 0x34) + *(f32 *)(b + 0x2DC);
     v[1] = *(f32 *)(b + 0x38) + *(f32 *)(b + 0x2E0);
-    k = (u8)func_001748C0(v, a + 0x34);
+    k = (u8)func_001748C0((u8 *)v, a + 0x34);
     if (b[0x1E6] != 0) {
         k = (u8)(0x100 - (s8)k);
     }
@@ -33,7 +33,7 @@ void func_001A2F20(u8 *a, u8 *b) {
     if (n > 1) {
         do {
             nxt = *(u8 **)(a + 8);
-            k = (u8)func_001748C0(v, a + 0x34);
+            k = (u8)func_001748C0((u8 *)v, a + 0x34);
             if (b[0x1E6] != 0) {
                 k = (u8)(0x100 - (s8)k);
             }
@@ -70,7 +70,7 @@ void func_001A2F20(u8 *a, u8 *b) {
 }
 
 void func_001A1C50(u8 *a, u8 *b) {
-    extern u8 func_001748C0(f32 *, u8 *);
+    extern s32 func_001748C0(u8 *, u8 *);
     f32 v[4];
     u8 *c;
     u8 *nxt;
@@ -84,7 +84,7 @@ void func_001A1C50(u8 *a, u8 *b) {
     c = b + 0x2B8;
     v[0] = *(f32 *)(b + 0x34) + *(f32 *)(b + 0x2DC);
     v[1] = *(f32 *)(b + 0x38) + *(f32 *)(b + 0x2E0);
-    k = (u8)func_001748C0(v, a + 0x34);
+    k = (u8)func_001748C0((u8 *)v, a + 0x34);
     if (b[0x1E6] != 0) {
         k = (u8)(0x100 - (s8)k);
     }
@@ -94,7 +94,7 @@ void func_001A1C50(u8 *a, u8 *b) {
     if (n > 1) {
         do {
             nxt = *(u8 **)(a + 8);
-            k = (u8)func_001748C0(v, a + 0x34);
+            k = (u8)func_001748C0((u8 *)v, a + 0x34);
             if (b[0x1E6] != 0) {
                 k = (u8)(0x100 - (s8)k);
             }
