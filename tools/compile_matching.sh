@@ -20606,4 +20606,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/owner_linked_follow_003495e0.c -c -lang c -O3,p -sdatathreshold 0 -i src -o "$BUILD/owner_linked_follow_003495e0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_linked_follow_003495e0.o" private/SLUS_204.86.rom --source src/owner_linked_follow_003495e0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_facing_velocity_001c2c70.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_facing_velocity_001c2c70.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_facing_velocity_001c2c70.o" private/SLUS_204.86.rom --source src/owner_facing_velocity_001c2c70.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

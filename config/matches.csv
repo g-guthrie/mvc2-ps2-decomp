@@ -19000,3 +19000,4 @@ func_00347B10,0x00347B10,0x15C,src/owner_scale_growth_00347b10.c,complete
 func_0034CCE0,0x0034CCE0,0x18C,src/owner_side_offset_0034cce0.c,complete
 func_00349510,0x00349510,0xC4,src/owner_scaled_dispatch_00349510.c,complete
 func_003495E0,0x003495E0,0x114,src/owner_linked_follow_003495e0.c,complete
+func_001C2C70,0x001C2C70,0xB4,src/owner_facing_velocity_001c2c70.c,complete

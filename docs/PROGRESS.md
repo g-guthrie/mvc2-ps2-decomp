@@ -5919,3 +5919,18 @@ and full hybrid linkage/packing pass. CODE is 2,720,128 / 3,293,696 bytes
 468,869 / 648,064 bytes. The reconstructed ELF retains retail SHA-256
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes (19,122 bytes away).
+
+## Owner-relative facing and queue-status return
+
+The complete 180-byte facing initializer now matches: it selects horizontal
+velocity from the owner-relative target and preserves the animation transition.
+The queue-status wrapper at 0x001E5700 now returns its native signed status
+instead of declaring it void. Its caller tests that status; all 19 functions
+in the wrapper's object remain byte-exact. This ABI correction adds no credit.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,720,308 / 3,293,696 bytes (82.5914%),
+with 18,938 matches among 20,410 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes (18,942 bytes away).

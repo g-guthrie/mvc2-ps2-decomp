@@ -13,7 +13,7 @@ extern void func_001CDEF0(u8 *);
 extern void func_001EA840(u8 *);
 extern void func_001E1430(u8 *);
 extern void func_001CADD0(u8 *, int);
-extern void func_00423990(void *, int);
+extern s32 func_00423990(s32, s32);
 extern void func_003DAA40(u8 *);
 extern int func_001C3E60(u8 *);
 extern int func_001C8570(u8 *);
@@ -58,8 +58,8 @@ void func_001CAD90(u8 *p) {
     func_001CADD0(p, (u8)((q[347] + 2) >> 1));
 }
 
-void func_001E5700(void) {
-    func_00423990((void *)0x8000000C, 1);
+s32 func_001E5700(void) {
+    return func_00423990(-2147483636, 1);
 }
 
 void func_001CE030(u8 *p) {
