@@ -6019,3 +6019,20 @@ with 18,960 matches among 20,417 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes (10,946 bytes away).
+
+## Input choice, offset placement, and ground reset
+
+Five complete functions add 1,496 verified CODE bytes: input-dependent offset
+placement (248), floating work initialization (292), input-based action choice
+(436), stage-edge movement selection (280), and ground/air reset dispatch
+(240). The offset routine reads both coordinates from one native table entry.
+The new call declarations agree with the reconstructed unary reset dispatcher
+and byte-argument allocator helper. Leading alignment gaps of 12, 12, and 8
+bytes remain uncredited. No DATA credit is added.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,729,800 / 3,293,696 bytes (82.8795%),
+with 18,965 matches among 20,420 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes (9,450 bytes away).

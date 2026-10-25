@@ -20698,4 +20698,24 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_landing_clamp_002388c0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_landing_clamp_002388c0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_landing_clamp_002388c0.o" private/SLUS_204.86.rom --source src/actor_landing_clamp_002388c0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_input_offset_002395f0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_input_offset_002395f0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_input_offset_002395f0.o" private/SLUS_204.86.rom --source src/actor_input_offset_002395f0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_float_work_init_00240e10.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_float_work_init_00240e10.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_float_work_init_00240e10.o" private/SLUS_204.86.rom --source src/actor_float_work_init_00240e10.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_input_choice_00245780.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_input_choice_00245780.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_input_choice_00245780.o" private/SLUS_204.86.rom --source src/actor_input_choice_00245780.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_stage_edge_0024a940.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_stage_edge_0024a940.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_stage_edge_0024a940.o" private/SLUS_204.86.rom --source src/actor_stage_edge_0024a940.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_ground_air_reset_0024b060.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_ground_air_reset_0024b060.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_ground_air_reset_0024b060.o" private/SLUS_204.86.rom --source src/actor_ground_air_reset_0024b060.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

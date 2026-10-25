@@ -19023,3 +19023,8 @@ func_00235D20,0x00235D20,0x118,src/actor_mode_launch_00235d20.c,complete
 func_00236070,0x00236070,0x144,src/actor_entry_mode_00236070.c,complete
 func_00236D90,0x00236D90,0x14C,src/actor_linked_work_init_00236d90.c,complete
 func_002388C0,0x002388C0,0x10C,src/actor_landing_clamp_002388c0.c,complete
+func_002395F0,0x002395F0,0xF8,src/actor_input_offset_002395f0.c,complete
+func_00240E10,0x00240E10,0x124,src/actor_float_work_init_00240e10.c,complete
+func_00245780,0x00245780,0x1B4,src/actor_input_choice_00245780.c,complete
+func_0024A940,0x0024A940,0x118,src/actor_stage_edge_0024a940.c,complete
+func_0024B060,0x0024B060,0xF0,src/actor_ground_air_reset_0024b060.c,complete
