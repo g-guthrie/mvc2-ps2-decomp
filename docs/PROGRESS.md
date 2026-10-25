@@ -6088,3 +6088,20 @@ with 18,977 matches among 20,426 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes (6,302 bytes away).
+
+## Ground-work and draw-attribute initialization
+
+Three complete functions add 1,008 verified CODE bytes: grounded work
+initialization (232), draw-attribute initialization (408), and draw/work setup
+(368). The draw routines preserve the native attribute index ranges and mask
+updates using ordinary C loops. Unsigned 16-bit attributes and the inclusive
+loop bound reproduce the compiler-generated unrolling without manual expansion.
+The signed duration calculation and work-context callback are preserved.
+Two leading 12-byte alignment gaps remain uncredited. No DATA credit is added.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,733,956 / 3,293,696 bytes (83.0057%),
+with 18,980 matches among 20,428 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes (5,294 bytes away).

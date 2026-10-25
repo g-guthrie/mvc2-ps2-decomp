@@ -19039,3 +19039,6 @@ func_0040A378,0x0040A378,0xC4,src/runtime_object_query_0040a378.c,complete
 func_0026A1B0,0x0026A1B0,0x12C,src/actor_linked_phase_effect_0026a1b0.c,complete
 func_00270F80,0x00270F80,0x154,src/actor_launch_table_snapshot_00270f80.c,complete
 func_00272090,0x00272090,0xFC,src/actor_air_entry_00272090.c,complete
+func_00279B20,0x00279B20,0xE8,src/actor_ground_work_init_00279b20.c,complete
+func_0027BD90,0x0027BD90,0x198,src/actor_draw_attribute_init_0027bd90.c,complete
+func_0027C660,0x0027C660,0x170,src/actor_draw_work_init_0027c660.c,complete

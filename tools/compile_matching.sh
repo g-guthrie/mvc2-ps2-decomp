@@ -20767,4 +20767,16 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_air_entry_00272090.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_air_entry_00272090.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_air_entry_00272090.o" private/SLUS_204.86.rom --source src/actor_air_entry_00272090.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_ground_work_init_00279b20.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_ground_work_init_00279b20.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_ground_work_init_00279b20.o" private/SLUS_204.86.rom --source src/actor_ground_work_init_00279b20.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_draw_attribute_init_0027bd90.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_draw_attribute_init_0027bd90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_draw_attribute_init_0027bd90.o" private/SLUS_204.86.rom --source src/actor_draw_attribute_init_0027bd90.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_draw_work_init_0027c660.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_draw_work_init_0027c660.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_draw_work_init_0027c660.o" private/SLUS_204.86.rom --source src/actor_draw_work_init_0027c660.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
