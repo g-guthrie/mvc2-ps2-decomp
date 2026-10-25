@@ -7069,7 +7069,8 @@ func_002255C0,0x002255C0,0xA0,0x00225660,code,verified-exact-c-table-callback
 func_00225660,0x00225660,0x8,0x00225668,code,spimdisasm-explicit-size-before-first-data
 func_00225670,0x00225670,0x94,0x00225704,code,spimdisasm-explicit-size-before-first-data
 func_00225710,0x00225710,0x24,0x00225734,code,matching-c-head-split
-residual_00225734,0x00225734,0x100,0x00225834,assembly_residual,verified-boundary-after-matching-head
+residual_00225734,0x00225734,0xC,0x00225740,assembly_residual,uncredited-native-alignment
+func_00225740,0x00225740,0xF4,0x00225834,code,whole-function-compiler-verified
 func_00225840,0x00225840,0x120,0x00225960,code,spimdisasm-explicit-size-before-first-data
 func_00225960,0x00225960,0x84,0x002259E4,code,spimdisasm-explicit-size-before-first-data
 func_002259F0,0x002259F0,0x2C,0x00225A1C,code,matching-c-head-split
@@ -7137,7 +7138,7 @@ func_00227A10,0x00227A10,0xD4,0x00227AE4,code,spimdisasm-explicit-size-before-fi
 func_00227AF0,0x00227AF0,0x58,0x00227B48,code,spimdisasm-explicit-size-before-first-data
 func_00227B50,0x00227B50,0x38,0x00227B88,code,spimdisasm-explicit-size-before-first-data
 func_00227B90,0x00227B90,0x68,0x00227BF8,code,spimdisasm-explicit-size-before-first-data
-func_00227C00,0x00227C00,0x230,0x00227E30,code,spimdisasm-explicit-size-before-first-data
+func_00227C00,0x00227C00,0x230,0x00227E30,code,whole-function-compiler-verified
 func_00227E30,0x00227E30,0x20,0x00227E50,code,matching-c-head-split
 func_00227E50,0x00227E50,0x8,0x00227E58,code,verified-exact-one-argument-callback
 func_00227E60,0x00227E60,0x8,0x00227E68,code,spimdisasm-explicit-size-before-first-data
@@ -7249,7 +7250,8 @@ func_0022B540,0x0022B540,0x98,0x0022B5D8,code,spimdisasm-explicit-size-before-fi
 func_0022B5E0,0x0022B5E0,0x3C,0x0022B61C,code,spimdisasm-explicit-size-before-first-data
 func_0022B620,0x0022B620,0x88,0x0022B6A8,code,spimdisasm-explicit-size-before-first-data
 func_0022B6B0,0x0022B6B0,0x24,0x0022B6D4,code,matching-c-head-split
-residual_0022B6D4,0x0022B6D4,0xE8,0x0022B7BC,assembly_residual,verified-boundary-after-matching-head
+residual_0022B6D4,0x0022B6D4,0xC,0x0022B6E0,assembly_residual,uncredited-native-alignment
+func_0022B6E0,0x0022B6E0,0xDC,0x0022B7BC,code,whole-function-compiler-verified
 func_0022B7C0,0x0022B7C0,0xC,0x0022B7CC,code,spimdisasm-explicit-size-before-first-data
 func_0022B7D0,0x0022B7D0,0x98,0x0022B868,code,spimdisasm-explicit-size-before-first-data
 func_0022B870,0x0022B870,0x70,0x0022B8E0,code,spimdisasm-explicit-size-before-first-data
@@ -7321,7 +7323,7 @@ func_0022DD70,0x0022DD70,0x70,0x0022DDE0,code,spimdisasm-explicit-size-before-fi
 func_0022DDE0,0x0022DDE0,0x34,0x0022DE14,code,spimdisasm-explicit-size-before-first-data
 func_0022DE20,0x0022DE20,0x2C,0x0022DE4C,code,spimdisasm-explicit-size-before-first-data
 func_0022DE50,0x0022DE50,0x20,0x0022DE70,code,matching-c-head-split
-residual_0022DE70,0x0022DE70,0x164,0x0022DFD4,assembly_residual,verified-boundary-after-matching-head
+func_0022DE70,0x0022DE70,0x164,0x0022DFD4,code,whole-function-compiler-verified
 func_0022DFE0,0x0022DFE0,0x20,0x0022E000,code,matching-c-head-split
 func_0022E000,0x0022E000,0xAC,0x0022E0AC,code,typed-callback-table-entry
 func_0022E0B0,0x0022E0B0,0x80,0x0022E130,code,spimdisasm-explicit-size-before-first-data

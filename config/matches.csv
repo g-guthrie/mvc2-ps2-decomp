@@ -19014,3 +19014,7 @@ func_0020BC60,0x0020BC60,0x190,src/actor_center_jump_0020bc60.c,complete
 func_00205A00,0x00205A00,0x20C,src/actor_spawn_effect_00205a00.c,complete
 func_00212990,0x00212990,0x210,src/actor_direction_pair_00212990.c,complete
 func_0021F4F0,0x0021F4F0,0x200,src/actor_linked_velocity_bank_0021f4f0.c,complete
+func_00225740,0x00225740,0xF4,src/actor_linked_ground_place_00225740.c,complete
+func_00227C00,0x00227C00,0x230,src/actor_air_landing_00227c00.c,complete
+func_0022B6E0,0x0022B6E0,0xDC,src/actor_linked_height_0022b6e0.c,complete
+func_0022DE70,0x0022DE70,0x164,src/actor_air_event_motion_0022de70.c,complete

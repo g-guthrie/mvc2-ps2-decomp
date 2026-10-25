@@ -5983,3 +5983,21 @@ with 18,951 matches among 20,414 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes (13,762 bytes away).
+
+## Linked placement and landing state transitions
+
+Four complete functions add 1,380 verified CODE bytes: linked ground
+placement (244), airborne landing control (560), linked height adjustment
+(220), and airborne event integration (356). The placement calls use the
+native offset helper's two-float input; its implementation and native loads
+confirm that the unused third local float is never read. Landing preserves
+the separate cancellation paths, phase initialization, motion, and completion
+callbacks. Two leading 12-byte alignment gaps remain uncredited. No DATA
+credit is added.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,726,868 / 3,293,696 bytes (82.7905%),
+with 18,955 matches among 20,416 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes (12,382 bytes away).

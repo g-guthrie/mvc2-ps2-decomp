@@ -20662,4 +20662,20 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_linked_velocity_bank_0021f4f0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_linked_velocity_bank_0021f4f0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_linked_velocity_bank_0021f4f0.o" private/SLUS_204.86.rom --source src/actor_linked_velocity_bank_0021f4f0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_linked_ground_place_00225740.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_linked_ground_place_00225740.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_linked_ground_place_00225740.o" private/SLUS_204.86.rom --source src/actor_linked_ground_place_00225740.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_air_landing_00227c00.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_air_landing_00227c00.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_air_landing_00227c00.o" private/SLUS_204.86.rom --source src/actor_air_landing_00227c00.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_linked_height_0022b6e0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_linked_height_0022b6e0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_linked_height_0022b6e0.o" private/SLUS_204.86.rom --source src/actor_linked_height_0022b6e0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_air_event_motion_0022de70.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_air_event_motion_0022de70.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_air_event_motion_0022de70.o" private/SLUS_204.86.rom --source src/actor_air_event_motion_0022de70.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
