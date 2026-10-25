@@ -5967,3 +5967,19 @@ with 18,949 matches among 20,414 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes (14,802 bytes away).
+
+## Facing-relative direction pair and linked velocity bank
+
+Two complete functions add 1,040 verified CODE bytes: the position-pair
+controller (528) and linked velocity-bank initializer (512). The controller
+uses a contiguous pair of native 12-byte vectors and preserves the unsigned
+direction byte and signed interpretation during facing reversal. The bank
+initializer preserves both action-reset paths and the native velocity and
+acceleration tables. No DATA credit is added.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,725,488 / 3,293,696 bytes (82.7486%),
+with 18,951 matches among 20,414 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes (13,762 bytes away).

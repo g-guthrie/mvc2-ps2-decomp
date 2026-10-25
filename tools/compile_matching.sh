@@ -20654,4 +20654,12 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_spawn_effect_00205a00.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_spawn_effect_00205a00.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_spawn_effect_00205a00.o" private/SLUS_204.86.rom --source src/actor_spawn_effect_00205a00.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_direction_pair_00212990.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_direction_pair_00212990.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_direction_pair_00212990.o" private/SLUS_204.86.rom --source src/actor_direction_pair_00212990.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_linked_velocity_bank_0021f4f0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_linked_velocity_bank_0021f4f0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_linked_velocity_bank_0021f4f0.o" private/SLUS_204.86.rom --source src/actor_linked_velocity_bank_0021f4f0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

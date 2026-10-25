@@ -19012,3 +19012,5 @@ func_0020C830,0x0020C830,0x150,src/actor_mode_launch_0020c830.c,complete
 func_0020D820,0x0020D820,0xDC,src/actor_action_reset_0020d820.c,complete
 func_0020BC60,0x0020BC60,0x190,src/actor_center_jump_0020bc60.c,complete
 func_00205A00,0x00205A00,0x20C,src/actor_spawn_effect_00205a00.c,complete
+func_00212990,0x00212990,0x210,src/actor_direction_pair_00212990.c,complete
+func_0021F4F0,0x0021F4F0,0x200,src/actor_linked_velocity_bank_0021f4f0.c,complete
