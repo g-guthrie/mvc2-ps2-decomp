@@ -1,6 +1,7 @@
 #include "owner_effect_callbacks.h"
 #include "edge_owner_phase_tables.h"
 #include "inherited_effect_phase_tables.h"
+#include "actor_owner_mode_callbacks.h"
 #include "character_owner_callbacks.h"
 typedef unsigned short u16;
 typedef unsigned int u32;
@@ -195,10 +196,6 @@ extern DispatchFn jtbl_0044CAA0[];
 extern DispatchFn jtbl_0044CB00[];
 extern DispatchFn jtbl_0044CB10[];
 extern DispatchFn jtbl_0044CB20[];
-extern DispatchFn jtbl_0044CB90[];
-extern DispatchFn jtbl_0044CBB8[];
-extern DispatchFn jtbl_0044CBC8[];
-extern DispatchFn jtbl_0044CBD8[];
 extern DispatchFn jtbl_0044CBF0[];
 extern DispatchFn jtbl_0044CC40[];
 extern DispatchFn jtbl_0044CC50[];
@@ -1744,13 +1741,13 @@ void func_001C22A0(u8 *p) { jtbl_0044CB10[p[7]](p); }
 
 void func_001C2DB0(u8 *p) { jtbl_0044CB20[p[7]](p); }
 
-void func_001C3F20(u8 *p) { jtbl_0044CB90[p[4]](p); }
+void func_001C3F20(u8 *p) { jtbl_0044CB90.lifecycle[p[4]](p); }
 
-void func_001C40B0(u8 *p) { jtbl_0044CBB8[p[7]](p); }
+void func_001C40B0(u8 *p,u8 *owner) { jtbl_0044CBB8[p[7]](p,owner); }
 
-void func_001C42D0(u8 *p) { jtbl_0044CBC8[p[7]](p); }
+void func_001C42D0(u8 *p,u8 *owner) { jtbl_0044CBC8[p[7]](p,owner); }
 
-void func_001C4690(u8 *p) { jtbl_0044CBD8[p[7]](p); }
+void func_001C4690(u8 *p,u8 *owner) { jtbl_0044CBD8[p[7]](p,owner); }
 
 void func_001C48E0(u8 *p) { jtbl_0044CBF0[p[32]](p); }
 

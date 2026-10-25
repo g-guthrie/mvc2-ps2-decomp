@@ -476,7 +476,7 @@ void func_001BDFB0(u8 *p) { func_003DAA40((struct Object *)p); }
 
 void func_001BE410(u8 *p) { func_003DAA40((struct Object *)p); }
 
-void func_001BE7D0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_001BE7D0(u8 *actor) { func_003DAA40((struct Object *)actor); }
 
 void func_001BF340(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
@@ -494,7 +494,7 @@ void func_001C32E0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
 
 void func_001C39E0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
-void func_001C47C0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_001C47C0(u8 *actor) { func_003DAA40((struct Object *)actor); }
 
 void func_001C50A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 

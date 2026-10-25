@@ -6902,3 +6902,55 @@ bytes. No DATA credit is added for the callback declarations. The retail ELF
 SHA-256 remains
 48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
 The fixed next CODE checkpoint remains 2,772,187 bytes (12,767 bytes away).
+
+
+## Owner-derived initializers, owner handoff and frame attributes
+
+Recovered two full inherited-state entry bodies: func_001BE590 (172 bytes)
+and func_001C3F40 (196 bytes). Both increment lifecycle state, set the native
+kind identifier (0x1802 or 0x1C04), cache owner from actor+0x18, copy all 196
+inherited bytes and the explicit identity/scale/mode/signed fields, and tail
+call their actual continuations. The first starts hidden. The second sets
+collision extents (24,24,16,16) and clears depth before continuation. Incoming
+table references and complete entry/return flow prove both former residuals
+are whole functions; no neighboring bytes are credited.
+
+The continuations at 0x001BE640 and 0x001C4010 had exposed overwritten owner
+and scratch parameters as inputs. Those are now real locals. Their actual
+inputs are unary; they derive owner internally and explicitly supply it to
+the outgoing two-input phase calls. This real argument flow reproduces all
+80 and 152 bytes, without keeping fake incoming formals to constrain registers.
+Five mode dispatch heads now forward owner through their 3/3/2/2/3 phase
+groups. The relevant callback tables expose that shared contract, including
+phases that ignore owner. Both lifecycle release tails now declare their
+actual unary input. Every modified old body remains exact and gets no new
+credit. Local GP access attributes preserve native small-table addressing;
+the actual read-only DATA objects remain in their original sections.
+
+The physical callback owner at 0x0044CB90 now represents four lifecycle
+entries followed by five owner-mode entries. The already typed owner at
+0x004BF960 separates its two owner-aware inherited callbacks from the ten
+following unary callbacks. Their byte layouts and existing DATA credit are
+unchanged. No new initialized DATA values are introduced.
+
+Also recovered func_001B5A40 as a full 152-byte entry after its separate
+four-byte alignment word. It advances an eight-bit counter, hides the actor,
+selects the 48-byte frame record at owner.frame+2, sets its dirty word, then
+updates three 16-bit attributes. Their low 12 bits are preserved and their
+high nibble becomes nine. The typed frame view follows the native record
+stride and observed fields; no BSS or DATA extent is credited.
+
+Host fixtures run the real lifecycle initializers, continuations, dispatch
+heads, callback tables and release tails. They check both owner-dependent
+families, all five modes and their phase entries, cancellation and release,
+and detect substituting actor for owner. The frame fixture checks signed
+frame indices, byte-counter rollover, untouched neighboring records and
+fields, and detects a wrong keep mask.
+
+All 150 tests, source/build coverage, whole-object comparisons and complete
+hybrid linkage/packing pass. CODE is 2,759,940 / 3,293,696 bytes (83.7946%),
+with 19,071 matches among 20,438 catalog spans. DATA remains 468,873 / 648,064
+bytes; the previously documented 0x0044AC20 ownership issue remains pending.
+The retail ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+The fixed next CODE checkpoint remains 2,772,187 bytes (12,247 bytes away).

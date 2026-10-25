@@ -1,4 +1,4 @@
-typedef unsigned char u8;
+#include "actor_owner_mode_callbacks.h"
 typedef signed char s8;
 typedef unsigned short u16;
 typedef signed short s16;
@@ -45,9 +45,10 @@ s32 func_002C52D0(u8 *p) {
     return 1;
 }
 
-extern u8 *D_0044CBA0[];
 
-void func_001C4010(u8 *p, u8 *q, u32 t) {
+void func_001C4010(u8 *p) {
+    u8 *q;
+    u32 t;
     q = *(u8 **)(p + 0x18);
     if (q[0x1E4] == 0x15) {
         t = q[0x1FD];
@@ -63,7 +64,7 @@ void func_001C4010(u8 *p, u8 *q, u32 t) {
         }
     }
     p[0x13C] = ((s8 *)q)[0x13C];
-    ((void (*)(void *))D_0044CBA0[p[6]])(p);
+    jtbl_0044CB90.mode[p[6]](p,q);
 }
 
 extern void func_001E7F60();

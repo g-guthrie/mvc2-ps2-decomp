@@ -16,12 +16,13 @@ typedef struct {
 extern const OwnerEffectPhaseTables jtbl_0044C270;
 extern const OwnerEffectPhaseTables jtbl_0044B850;
 
+typedef void (*ControllerEffectCallback)(u8 *, u8 *);
 typedef struct {
     Mvc2StateCallback before[12];
     Mvc2OwnerStateCallback owner[3][2];
-    Mvc2StateCallback after[12];
+    ControllerEffectCallback inherited[2];
+    Mvc2StateCallback after[10];
 } OwnerEffectSmallTables;
-typedef void (*ControllerEffectCallback)(u8 *, u8 *);
 typedef struct {
     Mvc2StateCallback unary[3][4];
     ControllerEffectCallback controller[5];

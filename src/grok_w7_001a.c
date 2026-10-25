@@ -11,7 +11,8 @@ extern DispatchFn jtbl_004BF838[2];
 extern DispatchFn jtbl_004BF84C[2];
 extern DispatchFn jtbl_004BF850[2];
 extern DispatchFn jtbl_004BF858[2];
-extern DispatchFn jtbl_004BF9A8[2];
+typedef void (*OwnerPhase)(u8 *,u8 *);
+extern OwnerPhase const jtbl_004BF9A8[2] __attribute__((section(".sdata")));
 extern void func_001AC3F0(u8 *);
 extern void func_00175C00(u8 *, int);
 
@@ -90,11 +91,12 @@ void func_001B0E60(u8 *p)
     }
 }
 
-void func_001BE640(u8 *p, u8 *q)
+void func_001BE640(u8 *p)
 {
+    u8 *q;
     if ((q = *(u8 **)(p + 0x18))[4] >= 2) {
         p[4] = 2;
         p[0x13c] = 0;
     } else
-        jtbl_004BF9A8[p[5]](p);
+        jtbl_004BF9A8[p[5]](p,q);
 }

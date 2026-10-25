@@ -174,7 +174,7 @@ void func_00398500(u8 *p) {
     }
 }
 
-void func_001C4760(u8 *p) {
+void func_001C4760(u8 *p,u8 *owner_unused) {
     if ((s8)func_00175700(p) < 0) {
         p[6] = 1;
         p[7] = 0;

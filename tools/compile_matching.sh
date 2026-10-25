@@ -6113,7 +6113,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/n10.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/n10.o"
 "$PYTHON" tools/verify_object.py "$BUILD/n10.o" private/SLUS_204.86.rom --source src/n10.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/n10b.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/n10b.o"
+    src/n10b.c -i src -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/n10b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/n10b.o" private/SLUS_204.86.rom --source src/n10b.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/n10c.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/n10c.o"
@@ -21118,5 +21118,13 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_work_inherit_dispatch_0019e670.c -c -lang c -O3,p -sdatathreshold 0 -i src -o "$BUILD/actor_work_inherit_dispatch_0019e670.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_work_inherit_dispatch_0019e670.o" private/SLUS_204.86.rom --source src/actor_work_inherit_dispatch_0019e670.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_owner_entry_setups.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_owner_entry_setups.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_entry_setups.o" private/SLUS_204.86.rom --source src/actor_owner_entry_setups.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/frame_attribute_update_001b5a40.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/frame_attribute_update_001b5a40.o"
+"$PYTHON" tools/verify_object.py "$BUILD/frame_attribute_update_001b5a40.o" private/SLUS_204.86.rom --source src/frame_attribute_update_001b5a40.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh
