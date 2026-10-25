@@ -15659,7 +15659,9 @@ func_00350F90,0x00350F90,0x40,0x00350FD0,code,spimdisasm-explicit-size-before-fi
 func_00350FD0,0x00350FD0,0x10,0x00350FE0,code,spimdisasm-explicit-size-before-first-data
 func_00350FE0,0x00350FE0,0x8,0x00350FE8,code,spimdisasm-explicit-size-before-first-data
 func_00350FF0,0x00350FF0,0x6C,0x0035105C,code,spimdisasm-explicit-size-before-first-data
-func_00351060,0x00351060,0x1AC,0x0035120C,code,spimdisasm-explicit-size-before-first-data
+func_00351060,0x00351060,0x34,0x00351094,code,verified-complete-c-function
+residual_00351094,0x00351094,0xC,0x003510A0,assembly_residual,uncredited-native-alignment
+func_003510A0,0x003510A0,0x16C,0x0035120C,code,verified-complete-c-function
 func_00351210,0x00351210,0x54,0x00351264,code,spimdisasm-explicit-size-before-first-data
 func_00351270,0x00351270,0xA4,0x00351314,code,spimdisasm-explicit-size-before-first-data
 func_00351320,0x00351320,0x88,0x003513A8,code,spimdisasm-explicit-size-before-first-data

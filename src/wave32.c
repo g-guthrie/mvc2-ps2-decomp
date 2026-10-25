@@ -5,17 +5,17 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
-extern u8 *func_003DA750(int, int, int);
-extern void func_00351060(void);
+extern void *func_003DA750(void *, int, int);
+extern void func_00351060(u8 *);
 
-void func_00350FF0(u32 a) {
+void func_00350FF0(u8 *owner) {
     int i;
     i = 0;
     do {
         u8 *p = func_003DA750(0, 1, 0);
         if (p) {
-            *(void **)(p + 0x10) = func_00351060;
-            *(u32 *)(p + 0x18) = a;
+            *(void (**)(u8 *))(p + 0x10) = func_00351060;
+            *(u8 **)(p + 0x18) = owner;
             p[0x20] = i;
             *(s16 *)(p + 0x26) = 0x504;
         }

@@ -6783,3 +6783,40 @@ with 19,062 matches among 20,432 spans. DATA remains 468,873 / 648,064 bytes.
 The retail ELF SHA-256 remains
 48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
 The fixed next CODE checkpoint remains 2,772,187 bytes (13,887 bytes away).
+
+
+## Work-context dispatcher and four-selector initializer
+
+The previous 428-byte catalog entry at 0x00351060 contained two functions
+and intervening alignment. Recovered the 52-byte dispatcher at 0x00351060
+and the separate 364-byte initializer at 0x003510A0. Both whole functions
+are independently exact under Metrowerks 3.0-011126 at -O3,p, small-data
+threshold eight. The 12 bytes from 0x00351094 to 0x003510A0 remain a separate,
+uncredited native-alignment span. The total CODE denominator is unchanged.
+
+The dispatcher stores actor+0xD0 in D_004C2960 and owner+0x2B8 in D_004C295C,
+then selects the second four-state group of jtbl_004624C0 using actor+4.
+The initializer increments that state, copies 196 inherited bytes and the
+explicit team, kind, scale, mode, shade and depth fields, then initializes
+visibility, facing, interaction bytes, X/Y position, collision extents,
+timers and motion. It selects the X/Y velocity pair by actor+0x20 and tail
+calls the genuine animation helper with group 21 and animation 29+selector.
+
+The already credited constructor at 0x00350FF0 makes four allocation attempts
+and assigns selectors 0..3. Its owner parameter and callback store now use
+pointer types, matching the actual native interface; all 108 constructor
+bytes remain exact. The allocator declaration uses its actual pointer-first
+contract. The existing eight-float DATA owner at 0x004624E0 supplies four
+interleaved velocity pairs. The component aliases used by native code are
+added to the symbol map; no DATA bytes receive additional credit.
+
+A host fixture runs the actual constructor, dispatcher and initializer across
+all four selectors, sourcing velocity values from the canonical DATA C. It
+also verifies that a failed allocation does not prevent later attempts. A
+negative control detects an owner-work pointer displaced by four bytes.
+All 140 tests, source/build coverage, whole-object comparisons and complete
+hybrid linkage/packing pass. CODE is 2,758,716 / 3,293,696 bytes (83.7575%),
+with 19,064 matches among 20,434 catalog spans. DATA remains 468,873 / 648,064
+bytes. The retail ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+The fixed next CODE checkpoint remains 2,772,187 bytes (13,471 bytes away).

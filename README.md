@@ -12,7 +12,7 @@ for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
 
 | | Matched | Total | |
 | --- | ---: | ---: | ---: |
-| Code | 2,756,660 bytes | 3,293,696 bytes | **83.70%** |
+| Code | 2,758,716 bytes | 3,293,696 bytes | **83.76%** |
 | Initialized data | 468,873 bytes | 648,064 bytes | **72.35%** |
 | Functions | 19,056 | 20,432 | |
 
@@ -223,7 +223,7 @@ Verified code is pushed at least after each additional full percentage point.
 The latest checkpoint also publishes the EE GCC sibling-call profile described
 in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 
-The latest verified CODE checkpoint is 2,758,300 / 3,293,696 bytes
-(83.7448%). The latest change recovers an inherited-effect entry callback,
-adding 316 matching CODE bytes and repairing its nested owner argument flow. All 138 tests and full
+The latest verified CODE checkpoint is 2,758,716 / 3,293,696 bytes
+(83.7575%). The latest change recovers a work-context dispatcher and its
+initializer, adding 416 matching CODE bytes while preserving the native alignment gap. All 140 tests and full
 retail-exact linkage pass. DATA is 468,873 / 648,064 bytes (72.3498%).
