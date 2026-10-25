@@ -1,14 +1,14 @@
 typedef unsigned char u8;
-typedef void (*DispatchFn)(u8 *);
+typedef void (*DispatchFn)(u8 *,void *);
 
-extern DispatchFn jtbl_004761D0[];
+extern const DispatchFn jtbl_004761D0[];
 
 void func_003C81C0(u8 *p)
 {
     u8 *q = *(u8 **)(p + 0x18);
     q[0x2BF] = 2;
     q[0x205] = 2;
-    jtbl_004761D0[p[4]](p);
+    jtbl_004761D0[p[4]](p,q);
 }
 
 typedef unsigned int u32x;

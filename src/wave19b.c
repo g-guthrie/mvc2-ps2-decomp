@@ -61,7 +61,7 @@ void func_0036A140(u8 *p) {
 extern void func_001757E0();
 extern void func_003C9200();
 extern u8 D_004C2178[4][2];
-void func_003C9170(u8 *p) {
+void func_003C9170(u8 *p,void *owner_unused) {
     u8 *q = *(u8 **)(p + 0x18);
     if (*(s8 *)(q + 0x2BC) == 3) {
         u32 t = p[7];

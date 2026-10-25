@@ -20963,4 +20963,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_facing_offset_init_003c7d20.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_facing_offset_init_003c7d20.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_facing_offset_init_003c7d20.o" private/SLUS_204.86.rom --source src/actor_facing_offset_init_003c7d20.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_palette_motion_init_003c8a70.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_palette_motion_init_003c8a70.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_palette_motion_init_003c8a70.o" private/SLUS_204.86.rom --source src/actor_palette_motion_init_003c8a70.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

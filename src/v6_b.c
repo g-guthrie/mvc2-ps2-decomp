@@ -117,7 +117,7 @@ void func_00234820(u8 *o) {
 }
 
 void func_003C86E0(u8 *p, u8 *o) {
-    void func_003C8650(); void func_003C8A50(u8*,u8*,u8*);
+    void func_003C8650(); void func_003C8A50(u8*,void*);
     s32 v;
     u8 *q;
     if (o[5] != 0 || o[0x1E4] != 0x1D) {
@@ -134,7 +134,7 @@ void func_003C86E0(u8 *p, u8 *o) {
         *(u8**)(p + 0xD0) = q;
         p[5] = 3;
         p[6] = 0;
-        func_003C8A50(p, o, q);
+        func_003C8A50(p, o);
     }
 }
 

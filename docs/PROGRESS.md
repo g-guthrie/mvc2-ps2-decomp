@@ -6280,3 +6280,31 @@ with 19,026 matches among 20,434 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (22,647 bytes away).
+
+## Owner-context callback contract and palette/motion initialization
+
+The lifecycle and nested state tables at 0x004761D0, 0x004761F0, and
+0x00476220 were declared with zero- or one-argument callbacks, although
+states in this family consume the owner context. The lifecycle dispatcher
+now explicitly binds the owner from actor field 0x18 and forwards it through
+both nested dispatchers. The tables and ignored-owner state signatures use
+the existing owner-state callback contract. The direct caller at 0x003C86E0
+also uses the same two-argument interface. Every affected code object and
+all three complete tables remain byte-exact.
+
+A host C fixture compiles the actual table sources and dispatcher bodies,
+then checks that a leaf receives the original actor and owner. A negative
+control deliberately drops the owner and must fail that check. This catches
+an interface error that retail-byte comparisons alone cannot detect.
+
+The palette/motion initializer at 0x003C8A70 adds 344 verified CODE bytes.
+It retains the 16-byte descriptor stride, all four palette channels, facing
+update, velocity components, animation selector, and timer setup. No DATA
+credit is added for the callback type correction.
+
+All 128 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,749,884 / 3,293,696 bytes (83.4893%),
+with 19,027 matches among 20,434 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (22,303 bytes away).

@@ -11,7 +11,7 @@ extern u16 D_004D18DC;
 extern u8 D_004D18DB;
 extern u8 D_004D18A6;
 
-void func_003C8FC0(u8 *p)
+void func_003C8FC0(u8 *p,void *owner_unused)
 {
     extern s32 func_00174240();
     extern void func_001E7F60();

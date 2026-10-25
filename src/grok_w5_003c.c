@@ -91,7 +91,7 @@ void func_003F0310(void)
     } while (index < 1024);
 }
 
-void func_003C9210(u8 *object)
+void func_003C9210(u8 *object,void *owner_unused)
 {
     if (!D_004D18A6)
         func_003DAA40(object);

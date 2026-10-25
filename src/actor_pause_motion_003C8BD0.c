@@ -11,7 +11,7 @@ extern u16 D_004D18DC;
 extern s16 D_004C2170[] __attribute__((section(".sdata")));
 extern int func_00175700(u8 *);
 extern int func_00174240(u8 *);
-void func_003C8BD0(u8 *p)
+void func_003C8BD0(u8 *p,void *owner_unused)
 {
  ActorPosition *position=(ActorPosition *)p;
  ActorMotion *motion=(ActorMotion *)p;
