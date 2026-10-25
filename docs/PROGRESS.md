@@ -6446,3 +6446,20 @@ with 19,046 matches among 20,432 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (18,739 bytes away).
+
+
+## Owner-state initialization and animation event dispatch
+
+Two complete functions add 296 verified CODE bytes. The 172-byte owner-state
+initializer preserves its eight-byte clear, owner field copy, byte-state
+comparison, mode-dependent transition, and timed animation path. The 124-byte
+dispatcher preserves signed animation-result handling, the single mode-2
+case, the signed frame flag, and the flag clear before event creation. Both
+event helpers receive their actual required mode argument, 2.
+
+All 128 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,753,744 / 3,293,696 bytes (83.6065%),
+with 19,048 matches among 20,432 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (18,443 bytes away).
