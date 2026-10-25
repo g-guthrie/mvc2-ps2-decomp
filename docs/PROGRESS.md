@@ -7337,3 +7337,35 @@ CODE is 2,763,152 / 3,293,696 bytes (83.8921%); 19,086 matches are recorded
 among 20,443 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
 The next fixed CODE checkpoint is unchanged at 2,772,187 bytes, 9,035 bytes
 away. Decompilation remains incomplete.
+
+
+## Mirrored owner offsets and native address-derived depth (+412 CODE bytes)
+
+Recovered func_00195490, all 412 bytes, with Metrowerks 3.0.3 at -O3,p and
+small-data threshold zero. Its real pointer at 0x004BF560 is selected by
+func_00195990. The separate func_00195470 uses 0x004BF558 and is unchanged.
+The four-byte gap before the new function remains uncredited alignment.
+
+The handler copies owner facing and position, applies mirrored horizontal
+and vertical table offsets, and selects an animation frame from random low
+two bits. Its table selector is produced by func_00194A20's eight-iteration
+construction loop and stored at actor byte 0x21. The eight rows at 0x0044A270
+have six-byte stride. Column aliases add no DATA credit.
+
+Preserved an unusual native operation: at 0x001955F8 the row address is
+computed, and the delay slot at 0x00195600 stores its low byte into actor
+field 0x31. There is no intervening row-content load. The source therefore
+stores the low byte of the row address, rather than substituting the signed
+third column. The actual phase dispatcher now forwards both actor and owner.
+
+Tests cover all eight native rows, both facing directions, signed facing,
+subphase rollover and random frame selection. An aligned host fixture retains
+the retail table's low address byte so the resulting depth bytes are checked
+explicitly. Replacing the address byte with table contents or forwarding the
+wrong owner fails. All 178 tests, build/catalog/source checks and whole
+compiler objects pass; the linked image and executable remain retail-exact.
+ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+CODE is 2,763,564 / 3,293,696 bytes (83.9046%), with 19,087 matches among
+20,444 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%). The
+next fixed CODE checkpoint remains 2,772,187 bytes, 8,623 bytes away.
