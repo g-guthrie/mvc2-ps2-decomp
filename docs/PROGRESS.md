@@ -6530,3 +6530,41 @@ with 19,052 matches among 20,432 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (17,327 bytes away).
+
+
+## Complete owner-state initialization and mixed callback contracts
+
+The complete callback at 0x00193500 adds 732 verified CODE bytes. It copies
+49 state words, inherits the native fields, initializes animation and palette
+state, applies the five signed-short table scales, handles facing, and updates
+owner-relative position. Typed position and velocity views preserve native
+field access and floating-point order without forced registers or padding.
+Its residual catalog entry is now the complete callback; span count is unchanged.
+
+The 20 stored pointers at 0x004492D0 are five distinct four-entry ranges,
+selected through native aliases at +0x10, +0x20, +0x30 and +0x40. The first
+four ranges take one input; only the last takes actor and owner. The readonly
+record at 0x004BF520 similarly contains two unary controller callbacks, two
+owner callbacks and a four-short cooldown table. The binder at 0x001934B0
+loads the owner from actor+0x18. Both owner dispatch heads and the seven-entry
+table at 0x00449400 now preserve that contract; unary paths stay unary.
+Shared ignored-owner leaves use the correct owner signature, and three unary
+release leaves no longer declare spurious extra arguments. All previously
+credited C bodies remain credited and byte-exact.
+
+The apparent pointer at 0x004BF530 was actually the first two cooldowns.
+The complete signed-short table is `{16,16,12,10}` at 0x004BF530..0x004BF538.
+The initializer sets the work selector to 3; 0x00193970 resets it to zero or
+decrements it while nonzero, establishing indices 0..3. Reconstructing its
+whole eight-byte span adds the previously uncredited final four DATA bytes.
+The backing data stays readonly; native GP-relative consumers retain their
+addressing form. No callback-pointer bytes change.
+
+A host fixture compiles the actual tables and dispatch heads, exercises all
+logical ranges, and rejects a negative control that drops the owner. All 130
+tests, catalog/build coverage, whole-object verification and full hybrid
+linkage/packing pass. CODE is 2,755,592 / 3,293,696 bytes (83.6626%), with
+19,053 matches among 20,432 spans. DATA is 468,873 / 648,064 bytes (72.3498%).
+Retail ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (16,595 bytes away).

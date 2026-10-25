@@ -1,9 +1,7 @@
-typedef unsigned char u8;
+#include "character_owner_callbacks.h"
 typedef void (*DispatchFn)(u8 *);
 
 extern DispatchFn jtbl_00442870[];
-extern DispatchFn jtbl_004492D0[];
-extern DispatchFn jtbl_00449300[];
 extern DispatchFn jtbl_0044ABC0[];
 extern DispatchFn jtbl_0044ACF0[];
 extern DispatchFn jtbl_0044BEE0[];
@@ -58,9 +56,9 @@ extern DispatchFn jtbl_00464140[];
 
 void func_00146BD0(u8 *p) { jtbl_00442870[p[35]](p); }
 
-void func_00192580(u8 *p) { jtbl_004492D0[p[6]](p); }
+void func_00192580(u8 *p) { jtbl_004492D0.state[p[6]](p); }
 
-void func_00193160(u8 *p) { jtbl_00449300[p[4]](p); }
+void func_00193160(u8 *p) { jtbl_004492D0.phase[p[4]](p); }
 
 void func_0019CB50(u8 *p) { jtbl_0044ABC0[p[4]](p); }
 

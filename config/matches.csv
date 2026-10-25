@@ -19114,3 +19114,4 @@ func_002C7640,0x002C7640,0xDC,src/actor_animation_table_selection_002c7640.c,com
 func_0016B250,0x0016B250,0x108,src/actor_command_flag_gate_0016b250.c,complete
 func_0013CA00,0x0013CA00,0x150,src/initialize_selected_mask_callbacks_0013ca00.c,complete
 func_0017FF30,0x0017FF30,0x128,src/actor_owner_offset_initializer_0017ff30.c,complete
+func_00193500,0x00193500,0x2DC,src/owner_state_scaled_motion_00193500.c,complete

@@ -1,10 +1,11 @@
-typedef unsigned char u8;
+#include "character_owner_callbacks.h"
 typedef signed char s8;
 typedef unsigned short u16;
 typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
-extern s16 D_004BF530[4];
+/* Native code uses the GP-addressable view of the readonly backing record. */
+extern const CharacterControllerTables jtbl_004BF520 __attribute__((section(".sdata")));
 
 void func_00193970(u8 *a, u8 *b)
 {
@@ -28,7 +29,7 @@ void func_00193970(u8 *a, u8 *b)
         v = *(s16 *)(a + 0x1E) - 1;
         *(s16 *)(a + 0x1E) = v;
         if (v == 0) {
-            *(s16 *)(a + 0x1E) = D_004BF530[c[0x1C]];
+            *(s16 *)(a + 0x1E) = jtbl_004BF520.cooldown[c[0x1C]];
             if (c[0x1C] != 0) {
                 c[0x1C] = c[0x1C] - 1;
                 *(s16 *)(a + 0x1C) = 4;

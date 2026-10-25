@@ -192,7 +192,7 @@ void func_00190690(u8 *p, s16 a1, u8 a2) {
     }
 }
 
-void func_00193FD0(u8 *p) {
+void func_00193FD0(u8 *p, u8 *owner) {
     if ((*(s16 *)(p + 28))-- == 0) {
         p[4]++;
         p[316] = 0;

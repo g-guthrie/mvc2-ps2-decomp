@@ -1,4 +1,5 @@
 #include "owner_effect_callbacks.h"
+#include "character_owner_callbacks.h"
 typedef unsigned short u16;
 typedef unsigned int u32;
 typedef void (*DispatchFn)(u8 *);
@@ -82,8 +83,6 @@ extern DispatchFn jtbl_00448CD0[];
 extern DispatchFn jtbl_00448CE8[];
 extern DispatchFn jtbl_004492B0[];
 extern DispatchFn jtbl_004492C0[];
-extern DispatchFn jtbl_004492E0[];
-extern DispatchFn jtbl_00449400[];
 extern DispatchFn jtbl_00449430[];
 extern DispatchFn jtbl_00449450[];
 extern ControllerEffectCallback const jtbl_0044A370[3];
@@ -1515,9 +1514,9 @@ void func_00192090(u8 *p) { jtbl_004492B0[p[6]](p); }
 
 void func_00192340(u8 *p) { jtbl_004492C0[p[6]](p); }
 
-void func_00192BD0(u8 *p) { jtbl_004492E0[p[4]](p); }
+void func_00192BD0(u8 *p) { jtbl_004492D0.inherited[p[4]](p); }
 
-void func_00193B80(u8 *p) { jtbl_00449400[p[4]](p); }
+void func_00193B80(u8 *p, u8 *owner) { jtbl_00449400[p[4]](p,owner); }
 
 void func_00194440(u8 *p) { jtbl_00449430[p[5]](p); }
 
@@ -4144,7 +4143,6 @@ extern DispatchFn jtbl_00452AD8[];
 extern DispatchFn jtbl_004534C0[];
 extern DispatchFn jtbl_00454490[];
 extern DispatchFn jtbl_00454A50[];
-extern DispatchFn jtbl_00449310[];
 extern DispatchFn jtbl_00449420[];
 extern DispatchFn jtbl_0044AF80[];
 extern DispatchFn jtbl_0044B3A0[];
@@ -4221,7 +4219,7 @@ void func_00243060(u8 *p) { jtbl_00452AD8[p[6]](p); }
 void func_00253600(u8 *p) { jtbl_004534C0[p[6]](p); }
 void func_0026A190(u8 *p) { jtbl_00454490[p[6]](p); }
 void func_00272E70(u8 *p) { jtbl_00454A50[p[6]](p); }
-void func_001934E0(u8 *p) { jtbl_00449310[p[4]](p); }
+void func_001934E0(u8 *p, u8 *owner) { jtbl_004492D0.owner[p[4]](p,owner); }
 void func_001941A0(u8 *p) { jtbl_00449420[p[4]](p); }
 void func_001A0BB0(u8 *p) { jtbl_0044AF80[p[4]](p); }
 void func_001A5630(u8 *p) { jtbl_0044B3A0[p[4]](p); }

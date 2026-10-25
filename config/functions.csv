@@ -2962,7 +2962,7 @@ func_00193430,0x00193430,0x7C,0x001934AC,code,spimdisasm-explicit-size-before-fi
 func_001934B0,0x001934B0,0x28,0x001934D8,code,verified-source-recovery
 residual_001934D8,0x001934D8,0x8,0x001934E0,assembly_residual,uncredited-native-alignment
 func_001934E0,0x001934E0,0x20,0x00193500,code,verified-complete-c-function
-residual_00193500,0x00193500,0x2DC,0x001937DC,assembly_residual,native-suffix-after-verified-c-body
+func_00193500,0x00193500,0x2DC,0x001937DC,code,verified-complete-owner-state-callback
 func_001937E0,0x001937E0,0x90,0x00193870,code,spimdisasm-explicit-size-before-first-data
 func_00193870,0x00193870,0xFC,0x0019396C,code,spimdisasm-explicit-size-before-first-data
 func_00193970,0x00193970,0x108,0x00193A78,code,spimdisasm-explicit-size-before-first-data

@@ -53,9 +53,9 @@ extern void func_001843A0();
 extern void func_00184540();
 extern void func_0018C4B0();
 extern void func_00191D40();
-extern void func_00192D50();
-extern void func_00193080();
-extern void func_001933A0();
+extern void func_00192D50(u8 *);
+extern void func_00193080(u8 *);
+extern void func_001933A0(u8 *);
 extern void func_00197560();
 extern void func_0019BDC0();
 extern void func_0019C1B0();
@@ -269,17 +269,17 @@ void func_0018C6E0(void *actor) {
 
 void func_00192D30(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; func_00192D50(p); }
 
-void func_00192D50(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_00192D50(u8 *p) { func_003DAA40((struct Object *)p); }
 
 void func_00193060(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; func_00193080(p); }
 
-void func_00193080(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_00193080(u8 *p) { func_003DAA40((struct Object *)p); }
 
 void func_00193380(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; func_001933A0(p); }
 
-void func_001933A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_001933A0(u8 *p) { func_003DAA40((struct Object *)p); }
 
-void func_00194090(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_00194090(u8 *p, u8 *owner) { func_003DAA40((struct Object *)p); }
 
 void func_00194980(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 

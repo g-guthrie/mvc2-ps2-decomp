@@ -1,11 +1,12 @@
-typedef unsigned char u8;
+#include "character_owner_callbacks.h"
+/* Native consumers address this readonly backing table through the GP window. */
+extern const CharacterControllerTables jtbl_004BF520 __attribute__((section(".sdata")));
 typedef void (*DispatchFn)(u8 *);
 typedef unsigned int ContextTableWord;
 typedef void (*ContextByteCallback)(u8 *,u8 *);
 extern const ContextTableWord jtbl_004C19A0[32] __attribute__((section(".sdata")));
 
 
-extern DispatchFn jtbl_004BF520[2];
 extern DispatchFn jtbl_004BF550[2];
 extern DispatchFn jtbl_004BF818[2];
 extern DispatchFn jtbl_004BF970[2];
@@ -24,7 +25,7 @@ extern DispatchFn jtbl_004C1B20[2];
 extern DispatchFn jtbl_004C1B28[2];
 extern DispatchFn jtbl_004C1B30[2];
 
-void func_00190B30(u8 *p) { jtbl_004BF520[p[661]](p); }
+void func_00190B30(u8 *p) { jtbl_004BF520.controller[p[661]](p); }
 
 void func_00195230(u8 *p) { jtbl_004BF550[p[5]](p); }
 
