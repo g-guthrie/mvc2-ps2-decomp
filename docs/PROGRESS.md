@@ -6245,3 +6245,21 @@ with 19,021 matches among 20,434 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (24,567 bytes away).
+
+## Ancestor initialization and recursive chain positioning
+
+Two complete functions add 744 verified CODE bytes: ancestor-based position
+initialization (312) and recursive chain positioning (432). The initializer
+copies the complete native 49-word inherited record, uses the second ancestor,
+and retains the facing-dependent position adjustment. The recursive routine
+updates both linked positions, preserves the signed byte countdown and signed
+short flip, and passes all three required inputs to its final helper. Its
+partial record views retain the native field offsets without assembly or
+register constraints. No DATA credit is added.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,748,364 / 3,293,696 bytes (83.4432%),
+with 19,023 matches among 20,434 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (23,823 bytes away).

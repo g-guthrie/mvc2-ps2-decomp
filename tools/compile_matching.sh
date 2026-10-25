@@ -20943,4 +20943,12 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_owner_ground_transition_00397fc0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_owner_ground_transition_00397fc0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_owner_ground_transition_00397fc0.o" private/SLUS_204.86.rom --source src/actor_owner_ground_transition_00397fc0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_ancestor_position_init_0039cce0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_ancestor_position_init_0039cce0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_ancestor_position_init_0039cce0.o" private/SLUS_204.86.rom --source src/actor_ancestor_position_init_0039cce0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_recursive_chain_position_003af300.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_recursive_chain_position_003af300.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_recursive_chain_position_003af300.o" private/SLUS_204.86.rom --source src/actor_recursive_chain_position_003af300.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
