@@ -1,4 +1,5 @@
 #include "owner_effect_callbacks.h"
+#include "rotation_state_callbacks.h"
 /* GP-relative code view; the complete native owner remains in .data. */
 extern const OwnerEffectSmallTables jtbl_004BF960
     __attribute__((section(".sdata")));
@@ -14,7 +15,7 @@ extern DispatchFn jtbl_004BF360[2];
 extern DispatchFn jtbl_004BF370[2];
 extern DispatchFn jtbl_004BF388[2];
 extern DispatchFn jtbl_004BF3F8[2];
-extern DispatchFn jtbl_004BF450[2];
+extern const RotationStateTables jtbl_004BF450 __attribute__((section(".sdata")));
 extern DispatchFn jtbl_004BF468[2];
 extern DispatchFn jtbl_004BF470[2];
 extern DispatchFn jtbl_004BF478[2];
@@ -397,7 +398,7 @@ void func_00145160(u8 *p) { jtbl_004BF388[p[5]](p); }
 
 void func_0014E0E0(u8 *p) { jtbl_004BF3F8[p[5]](p); }
 
-void func_0015AED0(u8 *p) { jtbl_004BF450[p[4]](p); }
+void func_0015AED0(u8 *p) { jtbl_004BF450.lifecycle[p[4]](p); }
 
 void func_00161510(u8 *p) { jtbl_004BF468[p[35]](p); }
 

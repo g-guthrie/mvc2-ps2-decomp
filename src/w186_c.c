@@ -6,11 +6,11 @@ typedef unsigned int u32;
 typedef signed int s32;
 
 void func_0015B7F0(u8 *p, u8 *q) {
-    extern s32 func_0015BA00();
-    extern void func_0015B8B0();
+    extern s32 func_0015BA00(u8 *,u8 *);
+    extern void func_0015B8B0(u8 *,u8 *);
     double degrees;
     p[0x13C] = 1;
-    if (func_0015BA00(p) != 0) {
+    if (func_0015BA00(p,q) != 0) {
         { u32 t = p[4]; p[4] = t + 1; }
         func_0015B8B0(p, q);
     } else {

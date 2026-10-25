@@ -6640,3 +6640,38 @@ remains `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 CODE is 2,756,836 / 3,293,696 bytes (83.7004%), with 19,057 matches among
 20,432 spans. DATA remains 468,873 / 648,064 bytes (72.3498%). The fixed next
 CODE checkpoint remains 2,772,187 bytes, now 15,351 bytes away.
+
+
+## Rotation return and owner callback interfaces
+
+Recovered the complete 328-byte `func_0015BD40`, which approaches a target
+rotation in ten-degree steps, clamps the signed degree accumulator at zero
+or minus 180, and converts it to the native unsigned 16-bit turn angle. The
+existing 328-byte sibling at `func_0015B8B0` has the same algorithm; only two
+prologue instructions differ in order. Keeping the actual facing-state helper
+with the caller reproduces the native register preservation and instruction
+order. Its complete 52-byte body is independently byte-exact at `0x0015BA00`;
+no helper credit is added. A signed-short/byte union models the two native
+views of the owner's facing field without fabricated register constraints.
+
+The already credited caller at `0x0015BC90` now explicitly passes actor and
+owner to the recovered routine, and its real helper copy is also independently
+exact. The sibling initializer at `0x0015B7F0` now explicitly supplies both
+helper arguments. Both existing whole callers remain exact.
+
+The physical 48-byte callback owner at `0x004BF450` is six adjacent two-state
+tables: one unary lifecycle pair, two owner-aware rotation pairs, and three
+unary meter pairs. Native producers at `0x0015B730` and `0x0015BBD0` select
+the owner pointers at `0x004D18B8` and `0x004D18C4` before calling the two
+rotation groups at `0x004BF458` and `0x004BF460`. The C table now preserves
+these distinct signatures and its existing byte layout. The lifecycle GP
+dispatcher still matches in full. A host fixture links the real table, caller,
+callee and helper and detects replacing the owner between caller and callee.
+This adds two tests; no DATA bytes or old callers receive extra credit.
+
+All 132 tests, source/build coverage, whole-object verification and full
+hybrid linkage/packing pass. CODE is 2,757,164 / 3,293,696 bytes (83.7103%),
+with 19,058 matches among 20,432 spans. DATA remains 468,873 / 648,064 bytes.
+The retail ELF SHA-256 remains
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The fixed next CODE checkpoint remains 2,772,187 bytes (15,023 bytes away).

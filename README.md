@@ -223,7 +223,7 @@ Verified code is pushed at least after each additional full percentage point.
 The latest checkpoint also publishes the EE GCC sibling-call profile described
 in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 
-The latest verified CODE checkpoint is 2,756,836 / 3,293,696 bytes
-(83.7004%). The latest change recovers the complete owner-position following
-callback, adding 176 matching CODE bytes. All 130 tests and full
+The latest verified CODE checkpoint is 2,757,164 / 3,293,696 bytes
+(83.7103%). The latest change recovers a complete rotation-return callback,
+adding 328 matching CODE bytes and correcting its owner argument interfaces. All 132 tests and full
 retail-exact linkage pass. DATA is 468,873 / 648,064 bytes (72.3498%).
