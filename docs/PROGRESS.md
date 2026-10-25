@@ -6428,3 +6428,21 @@ with 19,045 matches among 20,432 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (18,999 bytes away).
+
+
+## Menu-position transitions with a verified real helper
+
+The complete routine at 0x0014C280 adds 260 verified CODE bytes. It snapshots
+three complete 12-byte tables into native-aligned local records, queries the
+current menu position, selects the next signed-byte state and optional reset
+position, and installs the callback and state bytes. A static copy of the real
+176-byte helper at 0x0014C1D0 independently matches its own retail body; the
+normal build verifies that copy too. The helper and table references add no
+extra CODE or DATA credit.
+
+All 128 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,753,448 / 3,293,696 bytes (83.5975%),
+with 19,046 matches among 20,432 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (18,739 bytes away).
