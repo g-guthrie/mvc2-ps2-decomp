@@ -3696,7 +3696,7 @@ func_001ACBE0,0x001ACBE0,0x160,0x001ACD40,code,spimdisasm-explicit-size-before-f
 func_001ACD40,0x001ACD40,0x74,0x001ACDB4,code,spimdisasm-explicit-size-before-first-data
 func_001ACDC0,0x001ACDC0,0x64,0x001ACE24,code,spimdisasm-explicit-size-before-first-data
 func_001ACE30,0x001ACE30,0x20,0x001ACE50,code,matching-c-head-split
-residual_001ACE50,0x001ACE50,0x25C,0x001AD0AC,assembly_residual,verified-boundary-after-matching-head
+func_001ACE50,0x001ACE50,0x25C,0x001AD0AC,code,verified-complete-c-function
 func_001AD0B0,0x001AD0B0,0x88,0x001AD138,code,spimdisasm-explicit-size-before-first-data
 func_001AD140,0x001AD140,0x14,0x001AD154,code,spimdisasm-explicit-size-before-first-data
 func_001AD160,0x001AD160,0x8,0x001AD168,code,spimdisasm-explicit-size-before-first-data
@@ -3767,7 +3767,7 @@ func_001AF840,0x001AF840,0x20,0x001AF860,code,matching-c-head-split
 func_001AF860,0x001AF860,0x14C,0x001AF9AC,code,verified-complete-c-function
 func_001AF9B0,0x001AF9B0,0xA0,0x001AFA50,code,spimdisasm-explicit-size-before-first-data
 func_001AFA50,0x001AFA50,0x20,0x001AFA70,code,matching-c-head-split
-residual_001AFA70,0x001AFA70,0x168,0x001AFBD8,assembly_residual,verified-boundary-after-matching-head
+func_001AFA70,0x001AFA70,0x168,0x001AFBD8,code,verified-complete-c-function
 func_001AFBE0,0x001AFBE0,0xB0,0x001AFC90,code,spimdisasm-explicit-size-before-first-data
 func_001AFC90,0x001AFC90,0x10,0x001AFCA0,code,spimdisasm-explicit-size-before-first-data
 func_001AFCA0,0x001AFCA0,0x8,0x001AFCA8,code,spimdisasm-explicit-size-before-first-data
@@ -5128,7 +5128,7 @@ func_001DC0D0,0x001DC0D0,0x14,0x001DC0E4,code,spimdisasm-explicit-size-before-fi
 func_001DC0F0,0x001DC0F0,0xAC,0x001DC19C,code,spimdisasm-explicit-size-before-first-data
 func_001DC1A0,0x001DC1A0,0x4C,0x001DC1EC,code,spimdisasm-explicit-size-before-first-data
 func_001DC1F0,0x001DC1F0,0x20,0x001DC210,code,matching-c-head-split
-residual_001DC210,0x001DC210,0x140,0x001DC350,assembly_residual,verified-boundary-after-matching-head
+func_001DC210,0x001DC210,0x140,0x001DC350,code,verified-complete-c-function
 func_001DC350,0x001DC350,0xE4,0x001DC434,code,spimdisasm-explicit-size-before-first-data
 func_001DC440,0x001DC440,0x20,0x001DC460,code,matching-c-head-split
 func_001DC460,0x001DC460,0x19C,0x001DC5FC,code,verified-native-table-callback-complete-c

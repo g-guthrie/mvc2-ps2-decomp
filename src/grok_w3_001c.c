@@ -14,7 +14,7 @@ typedef struct {
     f32 x, y, z;
 } V3;
 
-typedef struct {
+typedef struct Mvc2SpawnEntry {
     u8 pad[16];
     void (*callback)(void);
     u8 pad20[4];
@@ -96,12 +96,13 @@ void func_001C16B0(u8 *p) {
     }
 }
 
-void func_001C1DA0(u8 *p) {
+Entry *func_001C1DA0(u8 *p) {
     Entry *e = func_003DA750(0, 4, 0);
     if (e) {
         e->callback = func_001C1DF0;
         e->arg = p;
     }
+    return e;
 }
 
 void func_001C1B40(u8 *p, u8 *q) {

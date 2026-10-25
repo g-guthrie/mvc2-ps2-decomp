@@ -5867,3 +5867,23 @@ verification, and full hybrid linkage/packing pass. CODE is 2,716,540 /
 DATA remains 468,869 / 648,064 bytes. The reconstructed ELF retains retail
 SHA-256 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes.
+
+## Rotated attachment and randomized drift entries
+
+Three whole functions add 1,284 bytes: a side-launch variant (360), a rotated
+linked-actor attachment initializer (604), and bounded random drift (320).
+The attachment retains its facing snapshot and its signed six-byte parameter
+row view. The drift preserves the original fixed-point calculation while
+expressing its bounded integer scaling without a negative signed shift.
+DATA credit is unchanged.
+
+`func_001C1DA0` now explicitly returns the allocation pointer that its native
+caller tests. All thirteen functions in its object still match retail exactly;
+this API correction adds no extra CODE credit.
+
+All 126 tests, catalog and source/build coverage checks, whole-object
+verification, and full hybrid linkage/packing pass. CODE is 2,717,824 /
+3,293,696 bytes (82.5159%), with 18,930 matches among 20,407 cataloged spans.
+DATA remains 468,869 / 648,064 bytes. The reconstructed ELF retains retail
+SHA-256 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes.
