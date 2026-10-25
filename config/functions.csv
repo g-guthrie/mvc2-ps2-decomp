@@ -3028,7 +3028,8 @@ func_00195AC0,0x00195AC0,0x1C,0x00195ADC,code,matching-c-head-split
 func_00195AE0,0x00195AE0,0x5C,0x00195B3C,code,verified-complete-c-function
 func_00195B40,0x00195B40,0x1D0,0x00195D10,code,spimdisasm-explicit-size-before-first-data
 func_00195D10,0x00195D10,0x1C,0x00195D2C,code,matching-c-head-split
-residual_00195D2C,0x00195D2C,0x158,0x00195E84,assembly_residual,verified-boundary-after-matching-head
+residual_00195D2C,0x00195D2C,0x4,0x00195D30,alignment_padding,verified-nop-gap-after-dispatch-delay-slot
+func_00195D30,0x00195D30,0x154,0x00195E84,code,verified-pointer-entry-and-whole-function
 func_00195E90,0x00195E90,0xAC,0x00195F3C,code,spimdisasm-explicit-size-before-first-data
 func_00195F40,0x00195F40,0x1C,0x00195F5C,code,matching-c-head-split
 residual_00195F5C,0x00195F5C,0x1C4,0x00196120,assembly_residual,verified-boundary-after-matching-head

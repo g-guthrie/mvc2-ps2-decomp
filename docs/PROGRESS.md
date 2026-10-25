@@ -7308,3 +7308,32 @@ full linked image and packed executable remain retail-exact; ELF SHA-256 is
 CODE is 2,762,812 / 3,293,696 bytes (83.8818%), with 19,085 matches among
 20,442 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%). The
 next fixed CODE checkpoint remains 2,772,187 bytes, 9,375 bytes away.
+
+
+## Owner-relative velocity setup (+340 CODE bytes)
+
+Recovered func_00195D30, a complete 340-byte function compiled with
+Metrowerks 3.0.3, -O3,p and small-data threshold zero. Its retail pointer is
+at 0x004BF578; the native GP-relative consumer is func_00195F40. Four bytes
+before the entry remain uncredited alignment. The neighboring func_00195D10
+uses the different pair at 0x004BF570 and is unchanged.
+
+The handler advances subphase and accepts only selectors below four. It calls
+the real no-input func_00197600, copies owner facing and position, computes
+velocity from signed table coordinates with the native floating-point order,
+and selects a random frame from the low two bits. The table consists of four
+six-byte rows at 0x00449FC0; signed X/Y columns and the signed depth byte are
+accessed through their native aliases. These aliases add no DATA credit.
+The phase consumer now explicitly forwards actor and owner to both entries.
+The helper's declaration retains its real zero-input contract.
+
+Tests cover all four rows, every invalid byte selector, zero/positive/negative
+facing, helper order and all low random bits. They compare every actor byte;
+wrong owner forwarding and a widened random mask both fail. All 175 tests,
+catalog/build/source checks and complete compiler objects pass. The complete
+loaded image and packed ELF remain retail-exact, with ELF SHA-256
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+CODE is 2,763,152 / 3,293,696 bytes (83.8921%); 19,086 matches are recorded
+among 20,443 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
+The next fixed CODE checkpoint is unchanged at 2,772,187 bytes, 9,035 bytes
+away. Decompilation remains incomplete.

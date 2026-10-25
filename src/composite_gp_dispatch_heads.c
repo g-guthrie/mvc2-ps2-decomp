@@ -26,7 +26,7 @@ extern DispatchFn jtbl_004BF558[2];
 extern DispatchFn jtbl_004BF560[2];
 extern DispatchFn jtbl_004BF568[2];
 extern DispatchFn jtbl_004BF570[2];
-extern DispatchFn jtbl_004BF578[2];
+extern void (*const jtbl_004BF578[2])(u8 *,u8 *) __attribute__((section(".sdata")));
 /* Four real phase entries use native GP-relative access. */
 extern const ControllerEffectCallback jtbl_004BF598[4] __attribute__((section(".sdata")));
 extern const ControllerEffectCallback jtbl_004BF5A8[2] __attribute__((section(".sdata")));
@@ -420,7 +420,7 @@ void func_00195AC0(u8 *p) { jtbl_004BF568[p[5]](p); }
 
 void func_00195D10(u8 *p) { jtbl_004BF570[p[5]](p); }
 
-void func_00195F40(u8 *p) { jtbl_004BF578[p[5]](p); }
+void func_00195F40(u8 *p,u8 *owner) { jtbl_004BF578[p[5]](p,owner); }
 
 void func_00196E30(u8 *p,u8 *owner) { jtbl_004BF598[p[5]](p,owner); }
 

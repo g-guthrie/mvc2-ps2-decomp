@@ -12,9 +12,9 @@ for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
 
 | | Matched | Total | |
 | --- | ---: | ---: | ---: |
-| Code | 2,762,812 bytes | 3,293,696 bytes | **83.88%** |
+| Code | 2,763,152 bytes | 3,293,696 bytes | **83.89%** |
 | Initialized data | 468,873 bytes | 648,064 bytes | **72.35%** |
-| Catalog spans | 19,085 | 20,442 | |
+| Catalog spans | 19,086 | 20,443 | |
 
 Every matched function is C compiled with a period toolchain (Metrowerks
 MWCC 2.4/3.0/3.0.3, SN GCC 2.95.2, EE GCC 2.96, or Sony EE GCC 2.9) and
@@ -47,7 +47,7 @@ The generated graphic above shows the current catalog's matching code coverage.
 function counts and reconstructed-data coverage. Whole-object compiler
 verification and full-image linkage are separate private build checks.
 Assembly placeholders never count as decompiled source. The current inventory
-contains **20,442 cataloged text spans** after boundary corrections and splitting
+contains **20,443 cataloged text spans** after boundary corrections and splitting
 oversized dispatcher entries. Retained assembly residuals, text gaps and
 initialized data remain separately visible in the progress report.
 
@@ -223,9 +223,8 @@ Verified code is pushed at least after each additional full percentage point.
 The latest checkpoint also publishes the EE GCC sibling-call profile described
 in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 
-The latest verified CODE checkpoint is 2,762,812 / 3,293,696 bytes
-(83.8818%). Two complete handlers recovered from residual assembly add
-460 CODE bytes: an owner-state initializer and a player round-state gate.
-Their phase dispatchers retain the real owner input. All 172 tests and
-full retail-exact linkage pass. DATA remains 468,873 / 648,064 bytes
-(72.3498%).
+The latest verified CODE checkpoint is 2,763,152 / 3,293,696 bytes
+(83.8921%). The latest complete handler adds 340 CODE bytes for owner-relative
+velocity setup, with its actual four-row table bound and owner forwarding.
+All 175 tests and full retail-exact linkage pass. DATA remains 468,873 /
+648,064 bytes (72.3498%).

@@ -19147,3 +19147,4 @@ func_00197490,0x00197490,0x84,src/actor_owner_gate_00197490.c,complete
 func_001C0E40,0x001C0E40,0x1C,src/actor_follow_start_001c0e40.c,complete
 func_0019D860,0x0019D860,0x10C,src/actor_owner_copy_start_0019d860.c,complete
 func_00133970,0x00133970,0xC0,src/menu_player_round_gate_00133970.c,complete
+func_00195D30,0x00195D30,0x154,src/owner_velocity_start_00195d30.c,complete

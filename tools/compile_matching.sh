@@ -21183,4 +21183,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/menu_player_round_gate_00133970.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/menu_player_round_gate_00133970.o"
 "$PYTHON" tools/verify_object.py "$BUILD/menu_player_round_gate_00133970.o" private/SLUS_204.86.rom --source src/menu_player_round_gate_00133970.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_velocity_start_00195d30.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_velocity_start_00195d30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_velocity_start_00195d30.o" private/SLUS_204.86.rom --source src/owner_velocity_start_00195d30.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
