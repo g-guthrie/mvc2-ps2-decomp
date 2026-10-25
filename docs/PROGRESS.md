@@ -5934,3 +5934,19 @@ with 18,938 matches among 20,410 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes (18,942 bytes away).
+
+## Launch, speed adjustment, and airborne movement
+
+Five complete functions add 1,532 verified CODE bytes: launch setup (364),
+signed speed adjustment (280), movement reset (276), airborne integration
+(324), and fixed-point velocity-bank selection (288). Mode-dependent event
+counts, acceleration reversal, animation completion, and the existing action
+reset behavior are preserved. The two 12-byte leading alignment gaps remain
+uncredited. The external tables add no DATA credit.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,721,840 / 3,293,696 bytes (82.6379%),
+with 18,943 matches among 20,412 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes (17,410 bytes away).

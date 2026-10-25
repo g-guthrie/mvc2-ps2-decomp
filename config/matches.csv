@@ -19001,3 +19001,8 @@ func_0034CCE0,0x0034CCE0,0x18C,src/owner_side_offset_0034cce0.c,complete
 func_00349510,0x00349510,0xC4,src/owner_scaled_dispatch_00349510.c,complete
 func_003495E0,0x003495E0,0x114,src/owner_linked_follow_003495e0.c,complete
 func_001C2C70,0x001C2C70,0xB4,src/owner_facing_velocity_001c2c70.c,complete
+func_001EB160,0x001EB160,0x16C,src/owner_air_launch_001eb160.c,complete
+func_001EB8A0,0x001EB8A0,0x118,src/owner_speed_adjust_001eb8a0.c,complete
+func_001EBE90,0x001EBE90,0x114,src/owner_motion_reset_001ebe90.c,complete
+func_001EFE60,0x001EFE60,0x144,src/owner_air_motion_001efe60.c,complete
+func_001F3EF0,0x001F3EF0,0x120,src/owner_velocity_bank_001f3ef0.c,complete

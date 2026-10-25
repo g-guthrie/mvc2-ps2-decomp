@@ -20610,4 +20610,24 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/owner_facing_velocity_001c2c70.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_facing_velocity_001c2c70.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_facing_velocity_001c2c70.o" private/SLUS_204.86.rom --source src/owner_facing_velocity_001c2c70.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_air_launch_001eb160.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_air_launch_001eb160.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_air_launch_001eb160.o" private/SLUS_204.86.rom --source src/owner_air_launch_001eb160.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_speed_adjust_001eb8a0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_speed_adjust_001eb8a0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_speed_adjust_001eb8a0.o" private/SLUS_204.86.rom --source src/owner_speed_adjust_001eb8a0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_motion_reset_001ebe90.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_motion_reset_001ebe90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_motion_reset_001ebe90.o" private/SLUS_204.86.rom --source src/owner_motion_reset_001ebe90.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_air_motion_001efe60.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_air_motion_001efe60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_air_motion_001efe60.o" private/SLUS_204.86.rom --source src/owner_air_motion_001efe60.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_velocity_bank_001f3ef0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_velocity_bank_001f3ef0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_velocity_bank_001f3ef0.o" private/SLUS_204.86.rom --source src/owner_velocity_bank_001f3ef0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
