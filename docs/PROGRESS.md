@@ -6409,3 +6409,22 @@ with 19,042 matches among 20,432 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (19,751 bytes away).
+
+
+## Indexed menu-model spawning and scripted position steps
+
+Three complete functions add 752 verified CODE bytes. The 296-byte indexed
+constructor preserves the alternate-mode flag, 36-byte position-record stride,
+model and scale selection, and timer expression. The 316-byte pair constructor
+preserves both allocation-failure exits, the two signed-short loop iterations,
+owner/context/attachment pointers, selector-dependent positions, and scale.
+The 140-byte scripted position step preserves the preceding update call,
+owner-state change, signed-byte script read, positive-step gate, conditional
+cursor advance, facing, and floating-point position calculation.
+
+All 128 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,753,188 / 3,293,696 bytes (83.5896%),
+with 19,045 matches among 20,432 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (18,999 bytes away).

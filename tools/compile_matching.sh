@@ -21027,4 +21027,16 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_recovery_timer_00185080.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_recovery_timer_00185080.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_recovery_timer_00185080.o" private/SLUS_204.86.rom --source src/actor_recovery_timer_00185080.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/menu_positioned_model_0013dbe0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/menu_positioned_model_0013dbe0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/menu_positioned_model_0013dbe0.o" private/SLUS_204.86.rom --source src/menu_positioned_model_0013dbe0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/menu_model_pair_0013a890.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/menu_model_pair_0013a890.o"
+"$PYTHON" tools/verify_object.py "$BUILD/menu_model_pair_0013a890.o" private/SLUS_204.86.rom --source src/menu_model_pair_0013a890.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_scripted_position_step_0018d030.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_scripted_position_step_0018d030.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_scripted_position_step_0018d030.o" private/SLUS_204.86.rom --source src/actor_scripted_position_step_0018d030.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

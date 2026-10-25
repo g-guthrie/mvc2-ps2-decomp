@@ -19104,3 +19104,6 @@ func_0039C8B0,0x0039C8B0,0xAC,src/actor_owner_animation_sync_0039c8b0.c,complete
 func_00343770,0x00343770,0x1E4,src/effect_descriptor_burst_00343770.c,complete
 func_00134C60,0x00134C60,0xC4,src/menu_model_constructor_00134c60.c,complete
 func_00185080,0x00185080,0xCC,src/actor_recovery_timer_00185080.c,complete
+func_0013DBE0,0x0013DBE0,0x128,src/menu_positioned_model_0013dbe0.c,complete
+func_0013A890,0x0013A890,0x13C,src/menu_model_pair_0013a890.c,complete
+func_0018D030,0x0018D030,0x8C,src/actor_scripted_position_step_0018d030.c,complete
