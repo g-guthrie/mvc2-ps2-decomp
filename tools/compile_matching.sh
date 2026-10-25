@@ -21015,4 +21015,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_owner_animation_sync_0039c8b0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_owner_animation_sync_0039c8b0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_owner_animation_sync_0039c8b0.o" private/SLUS_204.86.rom --source src/actor_owner_animation_sync_0039c8b0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/effect_descriptor_burst_00343770.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/effect_descriptor_burst_00343770.o"
+"$PYTHON" tools/verify_object.py "$BUILD/effect_descriptor_burst_00343770.o" private/SLUS_204.86.rom --source src/effect_descriptor_burst_00343770.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

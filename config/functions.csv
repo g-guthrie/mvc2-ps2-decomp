@@ -15293,11 +15293,9 @@ func_00342D40,0x00342D40,0x488,0x003431C8,code,spimdisasm-explicit-size-before-f
 func_003431D0,0x003431D0,0x74,0x00343244,code,spimdisasm-explicit-size-before-first-data
 func_00343250,0x00343250,0xD4,0x00343324,code,spimdisasm-explicit-size-before-first-data
 func_00343330,0x00343330,0x64,0x00343394,code,spimdisasm-explicit-size-before-first-data
-func_003433A0,0x003433A0,0x98,0x00343438,code,spimdisasm-explicit-size-before-first-data
-func_00343438,0x00343438,0x2C0,0x003436F8,code,spimdisasm-explicit-size-before-first-data
+func_003433A0,0x003433A0,0x358,0x003436F8,code,native-cfg-verified-boundary
 func_00343700,0x00343700,0x64,0x00343764,code,spimdisasm-explicit-size-before-first-data
-func_00343770,0x00343770,0xCC,0x0034383C,code,spimdisasm-explicit-size-before-first-data
-func_0034383C,0x0034383C,0x118,0x00343954,code,spimdisasm-explicit-size-before-first-data
+func_00343770,0x00343770,0x1E4,0x00343954,code,whole-function-compiler-verified
 func_00343960,0x00343960,0x64,0x003439C4,code,spimdisasm-explicit-size-before-first-data
 func_003439D0,0x003439D0,0x88,0x00343A58,code,spimdisasm-explicit-size-before-first-data
 func_00343A60,0x00343A60,0xAC,0x00343B0C,code,spimdisasm-explicit-size-before-first-data

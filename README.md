@@ -223,8 +223,7 @@ Verified code is pushed at least after each additional full percentage point.
 The latest checkpoint also publishes the EE GCC sibling-call profile described
 in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 
-The latest verified CODE checkpoint is 2,751,552 / 3,293,696 bytes
-(83.5400%). Two full functions recover single-event spawning and owner-frame
-synchronization, including native hide and release paths. All 128 tests and
-full retail-exact linkage pass. DATA remains 468,869 / 648,064 bytes
-(72.3492%).
+The latest verified CODE checkpoint is 2,752,036 / 3,293,696 bytes
+(83.5546%). The latest change recovers a complete 484-byte descriptor-driven
+spawn routine and corrects two false function splits. All 128 tests and full
+retail-exact linkage pass. DATA remains 468,869 / 648,064 bytes (72.3492%).

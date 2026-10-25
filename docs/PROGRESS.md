@@ -6367,3 +6367,27 @@ with 19,039 matches among 20,434 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (20,635 bytes away).
+
+## Whole-function boundaries and descriptor-driven spawning
+
+Two catalog entries ended in the middle of their native control-flow graphs.
+The ranges 0x003433A0–0x003436F8 and 0x00343770–0x00343954 each have one
+entry stack frame and one shared return. Their former interior labels
+0x00343438 and 0x0034383C use that frame and saved registers. No external
+references to those labels were found in the decoded retail listing or
+aligned pointer words. Each pair is now one function. The adjacent alignment gaps remain
+uncredited.
+
+The complete second function adds 484 verified CODE bytes. Its ordinary C
+loops visit ten 16-byte descriptors and preserve the four- or five-emission
+paths, the position threshold, timer gate, and lifecycle states. The complete
+856-byte candidate for the first function remains private and uncredited:
+seven register-choice differences are unresolved. No matching credit is
+awarded for correcting its catalog boundary.
+
+All 128 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,752,036 / 3,293,696 bytes (83.5546%),
+with 19,040 matches among 20,432 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (20,151 bytes away).
