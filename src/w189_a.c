@@ -6,40 +6,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-/* EE GCC 2.96: ./tryee.sh src/w189_a.c sn */
-extern s32 func_0040A2F8();
-extern s32 func_0040A310();
-extern s32 func_0040A338();
-extern s32 func_0040A350();
-/* Uncredited legacy body: helper object arguments are still omitted.
- * The typed, explicit-argument C candidate has not matched retail yet. */
-s32 func_0040A378(s32 a, s32 b) {
-    s32 r = 0;
-    if (a != 0) {
-        switch (b) {
-        case 0xC8:
-            r = func_0040A2F8();
-            break;
-        case 0xC9:
-            r = func_0040A310();
-            break;
-        case 0xCA:
-        case 0xCC:
-            r = func_0040A338();
-            break;
-        case 0xCB:
-        case 0xCD:
-            r = func_0040A350();
-            break;
-        case 0x12B:
-            r = 1;
-            break;
-        }
-        return r;
-    }
-    return 0;
-}
-
+/* func_0040A378 is recovered in runtime_object_query_0040a378.c. */
 
 typedef struct V404 { s32 *vt; } V404;
 typedef struct P404 {

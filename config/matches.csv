@@ -15218,7 +15218,6 @@ func_00327750,0x00327750,0x164,src/w1812_g.c,complete
 func_003ECBE0,0x003ECBE0,0x118,src/w1812_h.c,complete
 func_003F89D8,0x003F89D8,0x120,src/w1812_i.c,complete
 func_00407770,0x00407770,0xF4,src/w1812_i.c,complete
-func_0040A378,0x0040A378,0xC4,src/w189_a.c,placeholder
 func_00404968,0x00404968,0x140,src/w189_a.c,complete
 func_002E29D0,0x002E29D0,0xD4,src/w189_b.c,complete
 func_002CEAB0,0x002CEAB0,0xE4,src/w189_b.c,complete
@@ -19035,3 +19034,8 @@ func_00265540,0x00265540,0xE8,src/actor_timer_launch_00265540.c,complete
 func_00266190,0x00266190,0xF0,src/actor_timed_clone_00266190.c,complete
 func_00266A30,0x00266A30,0x128,src/actor_offset_effect_setup_00266a30.c,complete
 func_00267F30,0x00267F30,0xE8,src/actor_facing_reverse_launch_00267f30.c,complete
+func_002BF790,0x002BF790,0x74,src/actor_linked_phase_follow_002bf790.c,complete
+func_0040A378,0x0040A378,0xC4,src/runtime_object_query_0040a378.c,complete
+func_0026A1B0,0x0026A1B0,0x12C,src/actor_linked_phase_effect_0026a1b0.c,complete
+func_00270F80,0x00270F80,0x154,src/actor_launch_table_snapshot_00270f80.c,complete
+func_00272090,0x00272090,0xFC,src/actor_air_entry_00272090.c,complete

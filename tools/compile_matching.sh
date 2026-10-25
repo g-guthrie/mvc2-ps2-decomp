@@ -20746,4 +20746,25 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_facing_reverse_launch_00267f30.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_facing_reverse_launch_00267f30.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_facing_reverse_launch_00267f30.o" private/SLUS_204.86.rom --source src/actor_facing_reverse_launch_00267f30.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_linked_phase_follow_002bf790.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/actor_linked_phase_follow_002bf790.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_linked_phase_follow_002bf790.o" private/SLUS_204.86.rom --source src/actor_linked_phase_follow_002bf790.c
+
+"$WIBO" "$SNCPP" -P src/runtime_object_query_0040a378.c "$BUILD/runtime_object_query_0040a378.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/runtime_object_query_0040a378.i" "$BUILD/runtime_object_query_0040a378.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/runtime_object_query_0040a378.o" "$BUILD/runtime_object_query_0040a378.s"
+"$PYTHON" tools/verify_object.py "$BUILD/runtime_object_query_0040a378.o" private/SLUS_204.86.rom --source src/runtime_object_query_0040a378.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_linked_phase_effect_0026a1b0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_linked_phase_effect_0026a1b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_linked_phase_effect_0026a1b0.o" private/SLUS_204.86.rom --source src/actor_linked_phase_effect_0026a1b0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_launch_table_snapshot_00270f80.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_launch_table_snapshot_00270f80.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_launch_table_snapshot_00270f80.o" private/SLUS_204.86.rom --source src/actor_launch_table_snapshot_00270f80.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_air_entry_00272090.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_air_entry_00272090.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_air_entry_00272090.o" private/SLUS_204.86.rom --source src/actor_air_entry_00272090.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

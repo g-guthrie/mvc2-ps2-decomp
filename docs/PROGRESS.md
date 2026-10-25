@@ -6070,3 +6070,21 @@ with 18,972 matches among 20,425 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,739,250 bytes (7,506 bytes away).
+
+## Verified duplicate, object queries, and launch snapshot
+
+Five complete functions add 1,204 verified CODE bytes: linked-phase following
+(116), SDK object-query dispatch (196), linked-phase effects (300), launch-table
+snapshot setup (340), and airborne entry (252). The object-query routine and
+its existing counterpart explicitly forward their object to the reconstructed
+getters. Their compiler output remains exact. The superseded placeholder and
+unmatched legacy body were retired; a private recovery copy is preserved.
+The 12-byte alignment gap before 0x002BF790 remains uncredited. No DATA credit
+is added.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,732,948 / 3,293,696 bytes (82.9751%),
+with 18,977 matches among 20,426 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,739,250 bytes (6,302 bytes away).
