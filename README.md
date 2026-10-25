@@ -12,9 +12,9 @@ for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
 
 | | Matched | Total | |
 | --- | ---: | ---: | ---: |
-| Code | 2,761,404 bytes | 3,293,696 bytes | **83.84%** |
+| Code | 2,761,764 bytes | 3,293,696 bytes | **83.85%** |
 | Initialized data | 468,873 bytes | 648,064 bytes | **72.35%** |
-| Catalog spans | 19,077 | 20,438 | |
+| Catalog spans | 19,078 | 20,438 | |
 
 Every matched function is C compiled with a period toolchain (Metrowerks
 MWCC 2.4/3.0/3.0.3, SN GCC 2.95.2, EE GCC 2.96, or Sony EE GCC 2.9) and
@@ -223,9 +223,8 @@ Verified code is pushed at least after each additional full percentage point.
 The latest checkpoint also publishes the EE GCC sibling-call profile described
 in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 
-The latest verified CODE checkpoint is 2,761,404 / 3,293,696 bytes
-(83.8391%). The latest matched additions recover four actor timer, landing,
-rise, and ground-launch functions, adding 696 CODE bytes. Complete native
-helper bodies are independently verified and receive no duplicate credit.
-All 155 tests and full retail-exact linkage pass. DATA remains 468,873 /
-648,064 bytes (72.3498%).
+The latest verified CODE checkpoint is 2,761,764 / 3,293,696 bytes
+(83.8500%). The latest matched addition recovers the 360-byte actor approach
+transition, including its strict target interval, timer fallback, contact
+handling and render-queue handoff. All 157 tests and full retail-exact linkage
+pass. DATA remains 468,873 / 648,064 bytes (72.3498%).

@@ -23253,3 +23253,5 @@ jtbl_0044ACC0 = 0x0044ACC0;
 
 func_001BE640 = 0x001BE640;
 func_001C4010 = 0x001C4010;
+
+func_003777B0 = 0x003777B0; // existing verified contact transition

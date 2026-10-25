@@ -19139,3 +19139,4 @@ func_001BF860,0x001BF860,0x34,src/actor_owner_timer_001bf860.c,complete
 func_00299A20,0x00299A20,0xCC,src/actor_landing_command_00299a20.c,complete
 func_002B09B0,0x002B09B0,0xD0,src/actor_rise_cancel_002b09b0.c,complete
 func_002CFA90,0x002CFA90,0xE8,src/actor_ground_launch_002cfa90.c,complete
+func_00377390,0x00377390,0x168,src/actor_approach_transition_00377390.c,complete

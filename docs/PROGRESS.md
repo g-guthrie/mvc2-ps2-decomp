@@ -7086,3 +7086,38 @@ retail-exact hybrid linkage/packing pass. CODE is 2,761,404 / 3,293,696 bytes
 The next fixed CODE checkpoint remains 2,772,187 bytes (10,783 bytes away).
 The retail ELF SHA-256 remains
 48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+
+
+## Actor approach transition (+360 CODE bytes)
+
+Recovered func_00377390 as a complete 360-byte Metrowerks 3.0.3 function with
+-O3,p and small-data threshold zero. It decrements the signed timer on a
+negative frame-advance result, delegates contact handling, and returns immediately when
+that helper handles a hit. An active animation marker selects motion
+integration. Otherwise, the actor advances its subphase when its X position
+is strictly inside (target.X-80, target.X+80) and the target is not airborne,
+or when the timer equals one. The owner variant selects animation event eight
+or nine. The other path sets the native vertical velocity and acceleration;
+normal paths then enqueue the actor.
+
+The snapshots of actor/target X and their shared half-width reproduce the
+native floating-point comparison and addition order. Merely reversing the
+lower comparison's C operands had produced a different instruction, despite
+ordinary finite arithmetic looking equivalent. The recovered body requires
+no forced registers, artificial parameters, stand-ins or manual padding.
+The already matched contact helper at 0x003777B0 is added to the symbol map
+so the new direct call resolves under normal object verification.
+
+Fixtures execute the new body with the actual contact and queue helpers,
+using controlled animation and event calls. They cover both strict interval
+boundaries, airborne-target rejection, timer fallback after frame advancement,
+both owner variants, marker-driven motion, contact early return, hit effects,
+queue suppression and saturation at 94 entries. Making the lower bound
+inclusive fails the negative control.
+
+All 157 tests, source/build coverage, whole-object comparisons and full
+retail-exact hybrid linkage/packing pass. CODE is 2,761,764 / 3,293,696 bytes
+(83.8500%), with 19,078 matches among 20,438 catalog spans. DATA remains
+468,873 / 648,064 bytes (72.3498%). The next fixed CODE checkpoint remains
+2,772,187 bytes (10,423 bytes away). The retail ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
