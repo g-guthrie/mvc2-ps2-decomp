@@ -15,8 +15,8 @@ extern void func_0019CBC0(u8 *);
 extern void func_0019CCE0(u8 *);
 extern void func_0019CD40(u8 *);
 extern void func_0019CD60(u8 *);
-extern void func_0019D300(u8 *);
-extern void func_0019D4A0(u8 *);
+extern void func_0019D300(u8 *,u8 *);
+extern void func_0019D4A0(u8 *,u8 *);
 extern void func_0019D510(u8 *);
 extern void func_0019D520(u8 *);
 extern void func_0019D5D0(u8 *);
@@ -54,8 +54,12 @@ const ActorCopyCallbackTables jtbl_0044ABA0 = {
     func_0019CCE0,
     func_0019CD40,
     func_0019CD60,
+  },
+  {
     func_0019D300,
     func_0019D4A0,
+  },
+  {
     func_0019D510,
     func_0019D520,
     func_0019D5D0,

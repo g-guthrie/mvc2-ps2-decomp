@@ -7369,3 +7369,49 @@ ELF SHA-256 remains
 CODE is 2,763,564 / 3,293,696 bytes (83.9046%), with 19,087 matches among
 20,444 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%). The
 next fixed CODE checkpoint remains 2,772,187 bytes, 8,623 bytes away.
+
+
+## Randomized owner copy and descriptor-driven offsets (+848 CODE bytes)
+
+Recovered func_0019D300 (416 bytes, Metrowerks 3.0) and func_00194E40
+(432 bytes, Metrowerks 3.0.3), both at -O3,p and small-data threshold zero.
+The retail pointers at 0x0044ABD0 and 0x004BF550 select these entries through
+func_0019D2D0 and func_00195230 respectively. Twelve and four preceding
+alignment bytes remain uncredited; only the complete function bodies count.
+
+The random initializer copies all 196 owner-state bytes and identity, scale,
+facing and depth fields. Active copies use two calls to the real two-byte
+random generator to select bounded mirrored horizontal and vertical offsets,
+adjust depth and select animation state. Inactive copies preserve random
+state and use zero offsets. The copied owner frame identity is retained for
+the actual second-phase handler. The physical callback pair and dispatcher
+now consistently use their real actor/owner interface; complete table bytes
+and all previously credited functions remain exact.
+
+The descriptor initializer advances subphase, accepts only selectors below
+four, copies owner facing/position, and reads four sixteen-byte rows at
+0x0044A220. It stores offset values, a sample index, a real eight-byte sample
+record pointer, index step and index mask in actor work. Horizontal offset
+is mirrored before applying both offsets to position. The pointer field is
+typed from the actual second-phase consumer, rather than represented as an
+integer address. GP access remains local to the code declaration. The table
+column aliases add no DATA credit or ownership claims.
+
+Tests run every state of the actual two-byte random generator with inactive
+and active copies and signed facing, compare the complete actor buffer, and
+run the real second-phase handler and owner-sensitive cleanup. Other tests
+cover every descriptor selector byte, all four rows, pointer bits, signed
+step/mask values and subphase rollover. Wrong owner forwarding, a widened
+random-offset mask and the wrong descriptor column each fail a negative
+control. All 184 tests and build/source/catalog checks pass.
+
+Whole compiler objects and complete data objects pass byte comparison; the
+loaded image and packed executable remain retail-exact, with ELF SHA-256
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+CODE is 2,764,412 / 3,293,696 bytes (83.9304%); 19,089 matches are recorded
+among 20,446 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
+The next fixed CODE checkpoint remains 2,772,187 bytes, 7,775 bytes away.
+
+A separate 532-byte fixed-point motion candidate remains uncredited: two
+branch-scheduling instructions still differ. Its whole native body, failed
+compiler variants and table evidence remain private frontier material.

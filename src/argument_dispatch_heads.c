@@ -11,7 +11,7 @@ extern void func_00184540(u8 *);
 extern void func_001E3A40(u8 *);
 extern void func_002F6450(u8 *);
 
-extern DispatchFn2 jtbl_0044ABD0[];
+extern const ActorEffectWorkCallback jtbl_0044ABD0[2];
 extern DispatchFn2 jtbl_0044ABE0[];
 extern const ActorEffectWorkCallback jtbl_0044ABF0[2];
 extern DispatchFn2 jtbl_0044AC00[];
@@ -291,7 +291,7 @@ extern DispatchFn2 jtbl_004C1FD0[2];
 extern DispatchFn2 jtbl_004C1FE0[2];
 extern DispatchFn2 jtbl_004C212C[2];
 
-void func_0019D2D0(u8 *p) { jtbl_0044ABD0[p[4]](p, *(void **)(p + 24)); }
+void func_0019D2D0(u8 *p) { jtbl_0044ABD0[p[4]](p, *(u8 **)(p + 24)); }
 
 void func_0019D5A0(u8 *p) { jtbl_0044ABE0[p[4]](p, *(void **)(p + 24)); }
 

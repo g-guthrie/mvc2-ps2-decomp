@@ -7,7 +7,7 @@ typedef void (*ContextByteCallback)(u8 *,u8 *);
 extern const ContextTableWord jtbl_004C19A0[32] __attribute__((section(".sdata")));
 
 
-extern DispatchFn jtbl_004BF550[2];
+extern void (*const jtbl_004BF550[2])(u8 *,u8 *) __attribute__((section(".sdata")));
 extern DispatchFn jtbl_004BF818[2];
 extern DispatchFn jtbl_004BF970[2];
 extern DispatchFn jtbl_004BFA18[2];
@@ -27,7 +27,7 @@ extern DispatchFn jtbl_004C1B30[2];
 
 void func_00190B30(u8 *p) { jtbl_004BF520.controller[p[661]](p); }
 
-void func_00195230(u8 *p) { jtbl_004BF550[p[5]](p); }
+void func_00195230(u8 *p,u8 *owner) { jtbl_004BF550[p[5]](p,owner); }
 
 void func_001ABE70(u8 *p) { jtbl_004BF818[p[7]](p); }
 

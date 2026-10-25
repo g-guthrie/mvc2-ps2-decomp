@@ -21191,4 +21191,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_offset_start_00195490.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_offset_start_00195490.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_offset_start_00195490.o" private/SLUS_204.86.rom --source src/owner_offset_start_00195490.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_random_offset_start_0019d300.c -c -lang c -O3,p -sdatathreshold 0 -i src -o "$BUILD/owner_random_offset_start_0019d300.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_random_offset_start_0019d300.o" private/SLUS_204.86.rom --source src/owner_random_offset_start_0019d300.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_descriptor_offset_start_00194e40.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_descriptor_offset_start_00194e40.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_descriptor_offset_start_00194e40.o" private/SLUS_204.86.rom --source src/owner_descriptor_offset_start_00194e40.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
