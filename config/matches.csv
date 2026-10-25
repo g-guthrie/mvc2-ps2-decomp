@@ -19077,3 +19077,5 @@ func_00323670,0x00323670,0x10C,src/actor_air_motion_damping_00323670.c,complete
 func_0031A350,0x0031A350,0x100,src/actor_input_target_select_0031a350.c,complete
 func_0032FC00,0x0032FC00,0x228,src/actor_bounce_rotation_cycle_0032fc00.c,complete
 func_0034C450,0x0034C450,0x144,src/actor_distance_animation_step_0034c450.c,complete
+func_00370990,0x00370990,0x114,src/actor_owner_action_launch_00370990.c,complete
+func_0037ED50,0x0037ED50,0x1AC,src/actor_owner_frame_follow_0037ed50.c,complete

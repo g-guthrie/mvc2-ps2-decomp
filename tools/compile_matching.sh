@@ -20919,4 +20919,12 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_distance_animation_step_0034c450.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_distance_animation_step_0034c450.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_distance_animation_step_0034c450.o" private/SLUS_204.86.rom --source src/actor_distance_animation_step_0034c450.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_owner_action_launch_00370990.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_owner_action_launch_00370990.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_action_launch_00370990.o" private/SLUS_204.86.rom --source src/actor_owner_action_launch_00370990.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_owner_frame_follow_0037ed50.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_owner_frame_follow_0037ed50.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_frame_follow_0037ed50.o" private/SLUS_204.86.rom --source src/actor_owner_frame_follow_0037ed50.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

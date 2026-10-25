@@ -6210,3 +6210,19 @@ with 19,015 matches among 20,434 cataloged spans. DATA remains 468,869 /
 648,064 bytes. Retail ELF SHA-256 is unchanged:
 `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
 The next fixed CODE checkpoint remains 2,772,187 bytes (26,495 bytes away).
+
+## Owner-dependent launch and frame following
+
+Two complete functions add 704 verified CODE bytes: owner-dependent launch
+(276) and frame-dependent owner following (428). The launch retains both
+owner-action paths, their facing-dependent velocities, timers, and separate
+work resets. Following copies the owner's facing, uses the native signed
+frame selector and six-byte table stride, and preserves the callback's actual
+pointer return type. No DATA credit is added.
+
+All 126 tests, catalog/build coverage, whole-object verification, and full
+hybrid linkage/packing pass. CODE is 2,746,396 / 3,293,696 bytes (83.3834%),
+with 19,017 matches among 20,434 cataloged spans. DATA remains 468,869 /
+648,064 bytes. Retail ELF SHA-256 is unchanged:
+`48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
+The next fixed CODE checkpoint remains 2,772,187 bytes (25,791 bytes away).
