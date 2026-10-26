@@ -19161,3 +19161,6 @@ func_00323250,0x00323250,0xDC,src/scene_random_launch_00323250.c,complete
 func_001DD520,0x001DD520,0x134,src/owner_parent_depth_start_001dd520.c,complete
 func_001D2F80,0x001D2F80,0x124,src/owner_edge_start_001d2f80.c,complete
 func_001FA920,0x001FA920,0xF4,src/player_dash_counter_start_001fa920.c,complete
+func_00395A30,0x00395A30,0xF4,src/owner_variant_start_00395a30.c,complete
+func_00396200,0x00396200,0x30,src/owner_depth_phase_00396200.c,complete
+func_00396230,0x00396230,0xAC,src/owner_event_offset_00396230.c,complete

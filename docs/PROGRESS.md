@@ -7631,3 +7631,53 @@ full linked image and executable remain retail-exact, with ELF SHA-256
 CODE is 2,767,208 / 3,293,696 bytes (84.0153%), with 19,099 matches among
 20,452 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%). The
 next fixed CODE checkpoint remains 2,772,187 bytes, 4,979 bytes away.
+
+
+## Variant initialization, depth dispatch and event positioning (+464 CODE bytes)
+
+Recovered func_00395A30 (244 bytes, Metrowerks 3.0), func_00396200
+(48 bytes) and func_00396230 (172 bytes), the latter two under Metrowerks
+3.0.3. All use -O3,p and small-data threshold zero. Their retail pointers
+are at 0x00472410, 0x00472440 and 0x00472460. The twelve bytes before the
+initializer remain uncredited alignment. The other residual is split into
+its two complete live functions.
+
+The initializer advances phase, copies 196 owner-state bytes plus identity,
+scale and depth fields, invokes the selected variant initializer and always
+runs the selected main handler with the supplied owner. The main dispatcher
+now explicitly forwards that owner. The 23-entry physical callback object
+contains four lifecycle entries, eight initializers, eight main handlers and
+three event phases; code aliases use the actual subrange extents. Its whole
+object and all old modified functions retain their exact bytes.
+
+A raw scan of the entire conservative text finds eight direct calls to the
+three factories that install this callback. They supply modes 0 through 7.
+The mode-two call inherits A1=2 from the preceding conditional branch delay
+slot; the alternate path calls with 3 and then skips it. Constructor bodies
+store that mode at actor byte 0x20. No DATA bytes or ownership are credited.
+
+The depth wrapper combines signed owner depth and actor group, then forwards
+both inputs to its selected phase. The event handler copies current owner
+position, advances animation, consumes the resulting signed event byte and
+advances subphase when it fires. Mode zero applies the native mirrored
+horizontal and vertical offsets. The footer runs regardless of the event.
+The shared lifecycle callbacks now use their actual actor/context interface,
+replacing a fabricated four-integer release signature.
+
+Tests compare complete records across all eight variants and all three
+nested phases, signed depth wrap, facing, zero/positive/negative event flags
+and phase wrap. State-changing variant callbacks check that the originally
+supplied owner survives a changed parent pointer and lifecycle state. Wrong
+owner forwarding, omitted depth group, stale event flags and reloading the
+changed parent each fail a negative control. Actual lifecycle bodies are
+exercised; other existing variant bodies are explicit callback boundaries.
+All 220 tests and source/build/catalog checks pass.
+
+Whole compiler/data objects and the complete loaded image and executable
+remain retail-exact. ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+CODE is 2,767,672 / 3,293,696 bytes (84.0294%), with 19,102 matches among
+20,454 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%). The
+next fixed CODE checkpoint remains 2,772,187 bytes, 4,515 bytes away.
+A larger 724-byte variant model remains private and uncredited because its
+compiler output still differs from retail.

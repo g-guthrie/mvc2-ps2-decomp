@@ -21239,4 +21239,16 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/player_dash_counter_start_001fa920.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/player_dash_counter_start_001fa920.o"
 "$PYTHON" tools/verify_object.py "$BUILD/player_dash_counter_start_001fa920.o" private/SLUS_204.86.rom --source src/player_dash_counter_start_001fa920.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_variant_start_00395a30.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_variant_start_00395a30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_variant_start_00395a30.o" private/SLUS_204.86.rom --source src/owner_variant_start_00395a30.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_depth_phase_00396200.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_depth_phase_00396200.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_depth_phase_00396200.o" private/SLUS_204.86.rom --source src/owner_depth_phase_00396200.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_event_offset_00396230.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_event_offset_00396230.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_event_offset_00396230.o" private/SLUS_204.86.rom --source src/owner_event_offset_00396230.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

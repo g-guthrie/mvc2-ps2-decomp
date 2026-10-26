@@ -106,7 +106,7 @@ void func_00396940(u8 *p, u8 *q) {
     extern int func_00174470(const void *);
     extern void func_001757E0(u8 *, s32, s32);
     extern void func_001E7F60(u8 *);
-    extern void func_00396C50(u8 *, u8 *);
+    extern void func_00396C50(u8 *, void *);
     *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
     if (p[5] == 0) {
         func_00175700(p);
