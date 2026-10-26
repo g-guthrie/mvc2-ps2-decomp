@@ -7760,3 +7760,32 @@ is 48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
 CODE is 2,769,712 / 3,293,696 bytes (84.0913%); 19,108 matches among
 20,460 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
 The next fixed CODE checkpoint remains 2,772,187 bytes, 2,475 bytes away.
+
+
+## Owner-relative near-target state
+
+Recovered func_001C2AA0 (300 bytes) with MWCCPS2 3.0.3, -O3,p and
+small-data threshold zero. The full function matches retail. Four bytes of
+alignment remain uncredited and the conservative text denominator is unchanged.
+
+The handler selects facing from the owner-relative target position, transfers
+immediately to the far-target state at the native threshold, or initializes
+near-target velocity and advances the real nested frame handler. Both float
+comparisons retain their native unordered behavior. The mode dispatcher and
+both distance-phase dispatchers now forward their real owner input explicitly.
+Their complete existing bodies still match. Mixed physical callback tables
+retain unary slots and type only the four known distance handlers and two
+known distance dispatchers with their actual second input. Both complete DATA
+objects remain byte-exact; this type repair adds no DATA credit.
+
+Tests exercise both owner facing directions and noncanonical signed facing,
+exact threshold equality, unordered input, animation selection, nested frame
+motion and timer expiry. Wrong owner forwarding, a changed threshold and a
+wrong unordered branch all fail negative controls. All 240 tests and catalog,
+source-credit and build-coverage gates pass. Whole compiler/data verification,
+the loaded image and packed ELF remain retail-exact. ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+
+CODE is 2,770,012 / 3,293,696 bytes (84.1004%), with 19,109 matches among
+20,461 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
+The next fixed CODE checkpoint remains 2,772,187 bytes, 2,175 bytes away.

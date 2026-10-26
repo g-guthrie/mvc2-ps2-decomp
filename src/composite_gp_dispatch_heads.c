@@ -79,7 +79,7 @@ extern DispatchFn jtbl_004BF9F0[2];
 extern DispatchFn jtbl_004BF9F8[2];
 extern DispatchFn jtbl_004BFA00[2];
 extern DispatchFn jtbl_004BFA08[2];
-extern DispatchFn jtbl_004BFA10[2];
+extern ContextByteCallback const jtbl_004BFA10[2] __attribute__((section(".sdata")));
 extern const ControllerEffectCallback jtbl_004BFA28[4] __attribute__((section(".sdata")));
 extern const ControllerEffectCallback jtbl_004BFA30[2] __attribute__((section(".sdata")));
 extern DispatchFn jtbl_004BFA58[2];
@@ -525,7 +525,7 @@ void func_001C2840(u8 *p) { jtbl_004BFA00[p[7]](p); }
 
 void func_001C2960(u8 *p) { jtbl_004BFA08[p[7]](p); }
 
-void func_001C2A80(u8 *p) { jtbl_004BFA10[p[7]](p); }
+void func_001C2A80(u8 *p,u8 *owner) { jtbl_004BFA10[p[7]](p,owner); }
 
 void func_001C4420(u8 *p,u8 *owner) { jtbl_004BFA28[p[7]](p,owner); }
 

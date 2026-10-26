@@ -10,7 +10,7 @@ extern const ContextTableWord jtbl_004C19A0[32] __attribute__((section(".sdata")
 extern void (*const jtbl_004BF550[2])(u8 *,u8 *) __attribute__((section(".sdata")));
 extern DispatchFn jtbl_004BF818[2];
 extern DispatchFn jtbl_004BF970[2];
-extern DispatchFn jtbl_004BFA18[2];
+extern void (*const jtbl_004BFA18[2])(u8 *,u8 *) __attribute__((section(".sdata")));
 extern DispatchFn jtbl_004BFD40[2];
 extern DispatchFn jtbl_004C0128[2];
 extern DispatchFn jtbl_004C0138[2];
@@ -33,7 +33,7 @@ void func_001ABE70(u8 *p) { jtbl_004BF818[p[7]](p); }
 
 void func_001B85F0(u8 *p) { jtbl_004BF970[p[32]](p); }
 
-void func_001C2C50(u8 *p) { jtbl_004BFA18[p[7]](p); }
+void func_001C2C50(u8 *p,u8 *owner) { jtbl_004BFA18[p[7]](p,owner); }
 
 void func_00200490(u8 *p) { jtbl_004BFD40[p[32]](p); }
 

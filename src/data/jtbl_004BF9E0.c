@@ -14,12 +14,17 @@ extern void func_001C2860(u8 *);
 extern void func_001C2900(u8 *);
 extern void func_001C2980(u8 *);
 extern void func_001C2A20(u8 *);
-extern void func_001C2AA0(u8 *);
-extern void func_001C2BD0(u8 *);
-extern void func_001C2C70(u8 *);
-extern void func_001C2D30(u8 *);
+extern void func_001C2AA0(u8 *,u8 *);
+extern void func_001C2BD0(u8 *,u8 *);
+extern void func_001C2C70(u8 *,u8 *);
+extern void func_001C2D30(u8 *,u8 *);
 
-const Mvc2StateCallback jtbl_004BF9E0[16] = {
+typedef struct {
+    Mvc2StateCallback earlier[12];
+    void (*near_target[2])(u8 *,u8 *);
+    void (*far_target[2])(u8 *,u8 *);
+} OwnerDistancePhaseTables;
+const OwnerDistancePhaseTables jtbl_004BF9E0 = {{
     func_001C23F0,
     func_001C24C0,
     func_001C2540,
@@ -32,8 +37,10 @@ const Mvc2StateCallback jtbl_004BF9E0[16] = {
     func_001C2900,
     func_001C2980,
     func_001C2A20,
+}, {
     func_001C2AA0,
     func_001C2BD0,
+}, {
     func_001C2C70,
     func_001C2D30,
-};
+}};
