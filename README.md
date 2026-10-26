@@ -12,9 +12,9 @@ for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
 
 | | Matched | Total | |
 | --- | ---: | ---: | ---: |
-| Code | 2,778,164 bytes | 3,293,696 bytes | **84.35%** |
+| Code | 2,778,588 bytes | 3,293,696 bytes | **84.36%** |
 | Initialized data | 468,873 bytes | 648,064 bytes | **72.35%** |
-| Catalog spans | 19,139 | 20,474 | |
+| Catalog spans | 19,140 | 20,474 | |
 
 Every matched function is C compiled with a period toolchain (Metrowerks
 MWCC 2.4/3.0/3.0.3, SN GCC 2.95.2, EE GCC 2.96, or Sony EE GCC 2.9) and
@@ -223,9 +223,9 @@ Verified code is pushed at least after each additional full percentage point.
 The latest checkpoint also publishes the EE GCC sibling-call profile described
 in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 
-The latest verified CODE checkpoint is 2,778,164 / 3,293,696 bytes
-(84.3479%). The actor spatial setup adds 360 CODE bytes and uses the
-complete existing owner-relative position helper. The rebuilt executable
-remains retail-exact.
+The latest verified CODE checkpoint is 2,778,588 / 3,293,696 bytes
+(84.3608%). The owner offset initializer adds 424 CODE bytes and uses the
+existing native offset table without claiming new DATA credit. The rebuilt
+executable remains retail-exact.
 The catalog reports 468,873 / 648,064 DATA bytes (72.3498%); some table
 ownership classifications still need repair.

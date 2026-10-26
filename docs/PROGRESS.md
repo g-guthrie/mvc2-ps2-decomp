@@ -8327,3 +8327,22 @@ bytes (84.3479%), with 19,139 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 26,960 bytes away.
+
+
+## Owner offset initializer
+
+Recovered func_00380300 (424 bytes) with MWCCPS2 3.0, -O3,p and
+small-data threshold zero. Its complete compiler output matches retail.
+The handler copies owner state, applies a direction-dependent offset,
+initializes action and motion fields, and enters the existing update. The
+three direct native callers of its constructor supply offset indices 0, 1
+and 2. The table at 0x004C1D48 is a read-only code view of native bytes;
+its storage remains a DATA gap and receives no new DATA credit. Focused
+tests cover those indices, both facing directions, action flags and callback
+order, with negative controls.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,778,588 / 3,293,696
+bytes (84.3608%), with 19,140 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 26,536 bytes away.

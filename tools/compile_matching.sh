@@ -21399,4 +21399,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/actor_spatial_setup_00357c80.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_spatial_setup_00357c80.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_spatial_setup_00357c80.o" private/SLUS_204.86.rom --source src/actor_spatial_setup_00357c80.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_offset_start_00380300.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_offset_start_00380300.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_offset_start_00380300.o" private/SLUS_204.86.rom --source src/owner_offset_start_00380300.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
