@@ -8270,3 +8270,23 @@ bytes (84.3196%), with 19,136 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 27,892 bytes away.
+
+
+## Actor motion event
+
+Recovered func_00319D90 (220 bytes) with MWCCPS2 3.0.3, -O3,p and
+small-data threshold zero. Its complete compiler output matches retail.
+It updates motion, responds to the animation event, resets the action and
+team counter, and applies the corresponding existing velocity record. The
+compiler-visible static helper is the complete real func_00319D40 body,
+independently verified against all 80 retail bytes; it is already credited
+and receives no additional CODE credit. The velocity view points into the
+existing DATA unit and does not claim new DATA bytes. Focused tests cover
+motion, event gating, both velocity records, facing and counter wrap, with
+negative controls for event gating, row selection and facing.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,777,452 / 3,293,696
+bytes (84.3263%), with 19,137 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 27,672 bytes away.
