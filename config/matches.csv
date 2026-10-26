@@ -19159,3 +19159,5 @@ func_0030AAA0,0x0030AAA0,0xB4,src/player_idle_counter_start_0030aaa0.c,complete
 func_001E1930,0x001E1930,0x12C,src/owner_target_crossing_001e1930.c,complete
 func_00323250,0x00323250,0xDC,src/scene_random_launch_00323250.c,complete
 func_001DD520,0x001DD520,0x134,src/owner_parent_depth_start_001dd520.c,complete
+func_001D2F80,0x001D2F80,0x124,src/owner_edge_start_001d2f80.c,complete
+func_001FA920,0x001FA920,0xF4,src/player_dash_counter_start_001fa920.c,complete

@@ -1,3 +1,4 @@
+#include "owner_edge_motion.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -6,7 +7,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-typedef struct {
+struct P1D3 {
     u8 p0[5];
     u8 b5;
     u8 p6[0x34 - 6];
@@ -20,9 +21,9 @@ typedef struct {
     f32 f6c;
     u8 p70[0x151 - 0x70];
     s8 b151;
-} P1D3;
+};
 
-typedef struct {
+struct Q1D3 {
     u8 p0[0x21];
     u8 b21;
     u8 p22[0x34 - 0x22];
@@ -31,11 +32,11 @@ typedef struct {
     s8 b151;
     u8 p152[0x1E6 - 0x152];
     u8 b1E6;
-} Q1D3;
+};
 
 void func_001D30B0(P1D3 *p, Q1D3 *q) {
-    extern void func_00175700();
-    extern void func_001757E0();
+    extern int func_00175700(u8 *);
+    extern int func_001757E0(u8 *,int,int);
     f32 *s0;
     f32 *s1;
     f32 d, thr;
@@ -45,7 +46,7 @@ void func_001D30B0(P1D3 *p, Q1D3 *q) {
         s1 = &p->f68;
         p->f34 += p->f5c;
         p->f5c += p->f68;
-        func_00175700(p);
+        func_00175700((u8*)p);
         d = p->f34 - q->f34;
         if (d < 0.0f) d = -d;
         thr = 106.66666412353516f;
@@ -54,16 +55,16 @@ void func_001D30B0(P1D3 *p, Q1D3 *q) {
             p->b5 = t + 1;
             if (q->b1E6 != 0) thr = -thr;
             p->f34 = q->f34 + thr;
-            *(u32 *)s0 = 0;
+            *s0 = 0.0f;
             p->f60 = 0;
-            *(u32 *)s1 = 0;
+            *s1 = 0.0f;
             p->f6c = 0;
-            func_001757E0(p, 0x17, 0x1D);
+            func_001757E0((u8*)p, 0x17, 0x1D);
         }
         break;
     case 1:
         if (q->b151 == 0) {
-            func_00175700();
+            func_00175700((u8*)p);
             if (p->b151 != 0) {
                 u32 t = p->b5;
                 p->b5 = t + 1;
@@ -74,7 +75,7 @@ void func_001D30B0(P1D3 *p, Q1D3 *q) {
         }
         break;
     case 2:
-        func_00175700();
+        func_00175700((u8*)p);
         break;
     }
 }

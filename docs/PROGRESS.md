@@ -7587,3 +7587,47 @@ coverage remains just below 84%. DATA remains 468,873 / 648,064 bytes
 (72.3498%). The next fixed CODE checkpoint remains 2,772,187 bytes, 5,515
 bytes away. The four handlers recovered in this continuation total 1,008
 new CODE bytes; no duplicate helper credit is counted.
+
+
+## Edge-motion initialization and player dash setup (+536 CODE bytes)
+
+Recovered func_001D2F80 (292 bytes, Metrowerks 3.0) and func_001FA920
+(244 bytes, Metrowerks 3.0.3), both at -O3,p with small-data threshold zero.
+Their retail pointers are at 0x004BFA80 and 0x0044FD60. The actual dispatchers
+select actor phase and action subphase respectively. Four and twelve
+preceding alignment bytes remain uncredited.
+
+The edge initializer copies all 196 owner-state bytes plus identity, scale
+and facing, advances phase, applies depth eleven and owner-relative ground
+height, chooses its edge coordinate and horizontal velocity, and invokes the
+effect/animation helpers. Its GP dispatcher now forwards the actual owner.
+The initializer and updater share the updater's genuine record-pointer
+interface through opaque named records; the complete record views remain in
+the implementation. Keeping those real types preserves native register
+allocation without fabricated unused arguments. The GP section hint applies
+only to the code view of the readonly two-entry table.
+
+The existing 360-byte updater now passes its actor explicitly in all three
+frame-update cases. It also clears float fields through their actual float
+pointers. The complete updater remains byte-exact and gains no new credit.
+Its constructor and real update cases are tested together, including owner
+frame gating, threshold clamping and owner flag handoff.
+
+The dash initializer applies character-specific flags, increments the proper
+player counter before its real orientation helper, clears motion state,
+copies a parent marker into its actual work record, initializes its timer
+and selects velocity using the updated direction. A typed counter-bank view
+and the floating-point conditional result match the native address and
+register flow. No object bytes, register assignments or padding were edited.
+
+Tests compare complete actor/owner/work/counter buffers, signed counter wrap,
+phase wrap, both edge choices, all update phases, and helper order. Wrong
+owner/work forwarding, missing actor frame arguments and caching direction
+before orientation each fail a negative control. All 215 tests and source/
+build/catalog checks pass. Whole compiler and data objects match, and the
+full linked image and executable remain retail-exact, with ELF SHA-256
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+
+CODE is 2,767,208 / 3,293,696 bytes (84.0153%), with 19,099 matches among
+20,452 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%). The
+next fixed CODE checkpoint remains 2,772,187 bytes, 4,979 bytes away.

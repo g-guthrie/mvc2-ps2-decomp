@@ -9825,7 +9825,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/w186_p.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/w186_p.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w186_p.o" private/SLUS_204.86.rom --source src/w186_p.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/w186_q.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/w186_q.o"
+    src/w186_q.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/w186_q.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w186_q.o" private/SLUS_204.86.rom --source src/w186_q.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/w186_r.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/w186_r.o"
@@ -21230,5 +21230,13 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/owner_parent_depth_start_001dd520.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_parent_depth_start_001dd520.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_parent_depth_start_001dd520.o" private/SLUS_204.86.rom --source src/owner_parent_depth_start_001dd520.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_edge_start_001d2f80.c -c -lang c -O3,p -sdatathreshold 0 -i src -o "$BUILD/owner_edge_start_001d2f80.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_edge_start_001d2f80.o" private/SLUS_204.86.rom --source src/owner_edge_start_001d2f80.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/player_dash_counter_start_001fa920.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/player_dash_counter_start_001fa920.o"
+"$PYTHON" tools/verify_object.py "$BUILD/player_dash_counter_start_001fa920.o" private/SLUS_204.86.rom --source src/player_dash_counter_start_001fa920.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

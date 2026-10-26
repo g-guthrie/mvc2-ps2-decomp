@@ -1,3 +1,4 @@
+#include "owner_edge_motion.h"
 #include "owned_actor_states_0044c770.h"
 #include "owner_effect_callbacks.h"
 #include "rotation_state_callbacks.h"
@@ -83,7 +84,7 @@ extern const ControllerEffectCallback jtbl_004BFA28[4] __attribute__((section(".
 extern const ControllerEffectCallback jtbl_004BFA30[2] __attribute__((section(".sdata")));
 extern DispatchFn jtbl_004BFA58[2];
 extern DispatchFn jtbl_004BFA60[2];
-extern DispatchFn jtbl_004BFA80[2];
+extern OwnerEdgeMotionCallback const jtbl_004BFA80[2] __attribute__((section(".sdata")));
 extern DispatchFn jtbl_004BFB40[2];
 extern DispatchFn jtbl_004BFB68[2];
 extern DispatchFn jtbl_004BFBB8[2];
@@ -534,7 +535,7 @@ void func_001CE050(u8 *p) { jtbl_004BFA58[p[5]](p); }
 
 void func_001CE310(u8 *p) { jtbl_004BFA60[p[5]](p); }
 
-void func_001D2F60(u8 *p) { jtbl_004BFA80[p[4]](p); }
+void func_001D2F60(u8 *p,void *owner_context) { jtbl_004BFA80[p[4]]((P1D3*)p,(Q1D3*)owner_context); }
 
 void func_001EAD10(u8 *p) { jtbl_004BFB40[p[6]](p); }
 
