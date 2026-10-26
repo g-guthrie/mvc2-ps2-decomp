@@ -16903,7 +16903,7 @@ func_00382F30,0x00382F30,0x20,0x00382F50,code,matching-c-head-split
 residual_00382F50,0x00382F50,0x294,0x003831E4,assembly_residual,verified-boundary-after-matching-head
 func_003831F0,0x003831F0,0x364,0x00383554,code,spimdisasm-explicit-size-before-first-data
 func_00383560,0x00383560,0x20,0x00383580,code,matching-c-head-split
-residual_00383580,0x00383580,0x18C,0x0038370C,assembly_residual,verified-boundary-after-matching-head
+func_00383580,0x00383580,0x18C,0x0038370C,code,verified-pointer-entry-and-whole-function
 func_00383710,0x00383710,0x1B8,0x003838C8,code,spimdisasm-explicit-size-before-first-data
 func_003838D0,0x003838D0,0x14,0x003838E4,code,spimdisasm-explicit-size-before-first-data
 func_003838F0,0x003838F0,0x8,0x003838F8,code,spimdisasm-explicit-size-before-first-data

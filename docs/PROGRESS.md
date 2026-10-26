@@ -8253,3 +8253,20 @@ bytes (84.3076%), with 19,135 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 28,288 bytes away.
+
+
+## Owner scale initializer
+
+Recovered func_00383580 (396 bytes) with MWCCPS2 3.0, -O3,p and
+small-data threshold zero. The complete compiler output matches retail.
+The handler copies its owner's state, runs the animation setup, then scales
+the current values, resets the action, increments the current team counter
+and enters the existing update. Focused tests cover owner fields, animation
+callback mutation, both teams and counter wrap, with negative controls for
+team selection, scale and owner-field selection.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,777,232 / 3,293,696
+bytes (84.3196%), with 19,136 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 27,892 bytes away.
