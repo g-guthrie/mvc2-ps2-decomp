@@ -8362,3 +8362,21 @@ bytes (84.3682%), with 19,141 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 26,292 bytes away.
+
+
+## Actor landing update
+
+Recovered func_0025A3F0 (192 bytes) with MWCCPS2 3.0.3, -O3,p and
+small-data threshold zero. Its complete compiler output matches retail.
+It applies the existing state reset, handles a landing below the ground
+height, runs animation and then integrates movement. Its compiler-visible
+static func_00255620 is the complete real helper, independently verified
+against all 56 retail bytes; it is already credited and receives no new
+CODE credit. Focused tests cover landing boundaries, airborne motion, both
+helper paths and callback order, with negative controls.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,779,024 / 3,293,696
+bytes (84.3740%), with 19,142 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 26,100 bytes away.

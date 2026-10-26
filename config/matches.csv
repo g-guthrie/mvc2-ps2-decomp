@@ -19203,3 +19203,4 @@ func_00384670,0x00384670,0x160,src/owner_velocity_start_00384670.c,complete
 func_00357C80,0x00357C80,0x168,src/actor_spatial_setup_00357c80.c,complete
 func_00380300,0x00380300,0x1A8,src/owner_offset_start_00380300.c,complete
 func_003BBA10,0x003BBA10,0xF4,src/owner_dash_entry_003bba10.c,complete
+func_0025A3F0,0x0025A3F0,0xC0,src/actor_landing_update_0025a3f0.c,complete
