@@ -19171,3 +19171,6 @@ func_001964A0,0x001964A0,0x190,src/owner_mixed_motion_start_001964a0.c,complete
 func_001B82B0,0x001B82B0,0x1D4,src/owner_variant_offset_start_001b82b0.c,complete
 func_001B9930,0x001B9930,0x150,src/timed_spin_scale_001b9930.c,complete
 func_001C2AA0,0x001C2AA0,0x12C,src/owner_near_distance_start_001c2aa0.c,complete
+func_001A9EF0,0x001A9EF0,0xE8,src/owner_turn_start_001a9ef0.c,complete
+func_001BBE60,0x001BBE60,0x154,src/owner_variant_animation_start_001bbe60.c,complete
+func_001D7150,0x001D7150,0x1E4,src/owner_table_child_start_001d7150.c,complete

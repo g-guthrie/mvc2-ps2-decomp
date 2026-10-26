@@ -125,7 +125,7 @@ extern ContextDispatchFn jtbl_0044B460[];
 extern DispatchFn jtbl_0044B4E0[];
 
 extern ControllerEffectCallback const jtbl_0044B670[7];
-extern DispatchFn jtbl_0044B690[];
+extern void (*const jtbl_0044B690[])(u8 *,u8 *);
 extern DispatchFn jtbl_0044B6F0[];
 extern DispatchFn jtbl_0044B700[];
 extern DispatchFn jtbl_0044B710[];
@@ -1590,7 +1590,7 @@ void func_001A8D50(u8 *p) { jtbl_0044B620.lifecycle[p[4]](p); }
 
 void func_001A9170(u8 *p, u8 *owner) { jtbl_0044B670[p[5]](p, owner); }
 
-void func_001A9700(u8 *p) { jtbl_0044B690[p[4]](p); }
+void func_001A9700(u8 *p,u8 *owner) { jtbl_0044B690[p[4]](p,owner); }
 
 void func_001A9900(u8 *p) { jtbl_0044B6F0[p[7]](p); }
 

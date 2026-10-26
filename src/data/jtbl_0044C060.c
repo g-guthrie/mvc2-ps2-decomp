@@ -15,7 +15,7 @@ extern void func_001BBC20(u8 *);
 extern void func_001BBD10(u8 *);
 extern void func_001BBD30(u8 *);
 extern void func_001BBE30(u8 *);
-extern void func_001BBE60(u8 *);
+extern void func_001BBE60(u8 *,u8 *);
 extern void func_001BBFC0(u8 *);
 extern void func_001BC1E0(u8 *);
 extern void func_001BC210(u8 *);
@@ -23,7 +23,12 @@ extern void func_001BC4C0(u8 *);
 extern void func_001BC630(u8 *);
 extern void func_001BC650(u8 *);
 
-const Mvc2StateCallback jtbl_0044C060[32] = {
+typedef struct {
+    Mvc2StateCallback earlier[24];
+    void (*variant_start)(u8 *,u8 *);
+    Mvc2StateCallback later[7];
+} OwnerVariantModeTables;
+const OwnerVariantModeTables jtbl_0044C060 = {{
     func_001BB530,
     func_001BB650,
     func_001BB8B0,
@@ -48,7 +53,7 @@ const Mvc2StateCallback jtbl_0044C060[32] = {
     func_001BC1E0,
     func_001BC1E0,
     func_001BBE30,
-    func_001BBE60,
+}, func_001BBE60, {
     func_001BBFC0,
     func_001BC630,
     func_001BC650,
@@ -56,4 +61,4 @@ const Mvc2StateCallback jtbl_0044C060[32] = {
     func_001BC4C0,
     func_001BC630,
     func_001BC650,
-};
+}};

@@ -21279,4 +21279,16 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_near_distance_start_001c2aa0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_near_distance_start_001c2aa0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_near_distance_start_001c2aa0.o" private/SLUS_204.86.rom --source src/owner_near_distance_start_001c2aa0.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_turn_start_001a9ef0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_turn_start_001a9ef0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_turn_start_001a9ef0.o" private/SLUS_204.86.rom --source src/owner_turn_start_001a9ef0.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_variant_animation_start_001bbe60.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_variant_animation_start_001bbe60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_variant_animation_start_001bbe60.o" private/SLUS_204.86.rom --source src/owner_variant_animation_start_001bbe60.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_table_child_start_001d7150.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_table_child_start_001d7150.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_table_child_start_001d7150.o" private/SLUS_204.86.rom --source src/owner_table_child_start_001d7150.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

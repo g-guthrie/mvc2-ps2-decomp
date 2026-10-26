@@ -37,7 +37,7 @@ extern f32 D_004F1FCC;
 /* func_0025A820: not yet matched without a stand-in callee. */
 
 extern void func_001754A0();
-extern s8 func_00175670();
+extern int func_00175670(u8 *);
 extern void func_001D7510();
 
 void func_001D7450(u8 *a, u8 *b) {
@@ -48,7 +48,7 @@ void func_001D7450(u8 *a, u8 *b) {
             func_001754A0(a, 0x1B, (u8)(a[0x21] + 10));
         }
     } else {
-        if (func_00175670(a) < 0) {
+        if ((s8)func_00175670(a) < 0) {
             func_001D7510(a, b);
             return;
         }

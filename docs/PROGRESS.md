@@ -7789,3 +7789,46 @@ the loaded image and packed ELF remain retail-exact. ELF SHA-256 remains
 CODE is 2,770,012 / 3,293,696 bytes (84.1004%), with 19,109 matches among
 20,461 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
 The next fixed CODE checkpoint remains 2,772,187 bytes, 2,175 bytes away.
+
+
+## Owner turns, variant animation and bounded child placement
+
+Recovered func_001A9EF0 (232 bytes, MWCCPS2 3.0.3), func_001BBE60
+(340 bytes, MWCCPS2 3.0-011126), and func_001D7150 (484 bytes,
+MWCCPS2 3.0-011126). All three complete functions match at -O3,p with
+small-data threshold zero. Four, twelve and twelve alignment bytes remain
+uncredited; no denominator change.
+
+The turn initializer clears motion, compares facing with the owner's
+relative position, saves the incremented subphase before entering the turn
+state, or starts an unsigned random animation modulo three. The variant
+initializer copies exactly 196 state bytes and owner position, assigns the
+native depth and timer, and recognizes only selectors 0, 1, 2 and 7.
+
+The third initializer distinguishes a hidden controller from visible children.
+The controller clears three work words. Children use eight six-byte records
+at 0x0044E630 for signed horizontal/vertical offsets and animation selection.
+The actual controller starts at index zero, spawns a child with the current
+index, increments it and stops spawning at eight. Column aliases add no DATA
+credit; the existing complete 48-byte backing object remains byte-exact.
+
+Mode and phase dispatchers now pass the real owner input. The child update
+wrapper forwards it to both actual branches. Its frame result retains the
+native signed low-byte test with the helper's real integer return type.
+Mixed physical callback records type the recovered entries and retain the
+other entries' prior interfaces or raw form. Existing whole functions and
+complete callback DATA objects remain exact; no DATA credit is added.
+
+Behavior checks compare full buffers and helper order, signed facing and
+unordered coordinates, saved phase wrap, unsigned random values, all 256
+variant selectors, all eight child rows, hidden controller resets and both
+child owner-signal states. Negative controls reject wrong owner flow, the
+old subphase, signed modulo, a wrong variant case, a short state copy, a
+wrong vertical column and a wrong hidden-controller reset. All 252 tests
+and source/build/catalog gates pass. Whole compiler/data objects and the
+complete loaded image and packed ELF remain retail-exact. ELF SHA-256 is
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+
+CODE is 2,771,068 / 3,293,696 bytes (84.1325%); 19,112 matches among
+20,464 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
+The next fixed CODE checkpoint remains 2,772,187 bytes, 1,119 bytes away.

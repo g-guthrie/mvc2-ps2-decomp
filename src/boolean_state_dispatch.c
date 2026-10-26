@@ -1,7 +1,7 @@
 typedef unsigned char u8;
 
-extern void func_001D7380(u8 *);
-extern void func_001D7450(u8 *);
+extern void func_001D7380(u8 *,u8 *);
+extern void func_001D7450(u8 *,u8 *);
 extern void func_001DCA90(u8 *, void *);
 extern void func_001DCC80(u8 *, void *);
 extern void func_001EADD0(u8 *);
@@ -29,7 +29,7 @@ extern void func_00329450(u8 *);
 extern void func_00352990(u8 *,u8 *);
 extern void func_00352C90(u8 *,u8 *);
 
-void func_001D7340(u8 *p) { if (!p[0x20]) func_001D7380(p); else func_001D7450(p); }
+void func_001D7340(u8 *p,u8 *owner) { if (!p[0x20]) func_001D7380(p,owner); else func_001D7450(p,owner); }
 void func_001DCA50(u8 *p, void *owner) { if (!p[0x20]) func_001DCA90(p, owner); else func_001DCC80(p, owner); }
 void func_001EAD90(u8 *p) { if (!p[0x6]) func_001EADD0(p); else func_001EAE40(p); }
 void func_00216AF0(u8 *p) { if (!p[0x212]) func_00216B30(p); else func_00216C30(p); }

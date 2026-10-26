@@ -12,9 +12,9 @@ for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
 
 | | Matched | Total | |
 | --- | ---: | ---: | ---: |
-| Code | 2,770,012 bytes | 3,293,696 bytes | **84.10%** |
+| Code | 2,771,068 bytes | 3,293,696 bytes | **84.13%** |
 | Initialized data | 468,873 bytes | 648,064 bytes | **72.35%** |
-| Catalog spans | 19,109 | 20,461 | |
+| Catalog spans | 19,112 | 20,464 | |
 
 Every matched function is C compiled with a period toolchain (Metrowerks
 MWCC 2.4/3.0/3.0.3, SN GCC 2.95.2, EE GCC 2.96, or Sony EE GCC 2.9) and
@@ -47,7 +47,7 @@ The generated graphic above shows the current catalog's matching code coverage.
 function counts and reconstructed-data coverage. Whole-object compiler
 verification and full-image linkage are separate private build checks.
 Assembly placeholders never count as decompiled source. The current inventory
-contains **20,461 cataloged text spans** after boundary corrections and splitting
+contains **20,464 cataloged text spans** after boundary corrections and splitting
 oversized dispatcher entries. Retained assembly residuals, text gaps and
 initialized data remain separately visible in the progress report.
 
@@ -223,9 +223,9 @@ Verified code is pushed at least after each additional full percentage point.
 The latest checkpoint also publishes the EE GCC sibling-call profile described
 in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 
-The latest verified CODE checkpoint is 2,770,012 / 3,293,696 bytes
-(84.1004%). A complete 300-byte handler adds owner-relative near-target
-motion and immediate transfer to the far-target state. Native owner flow,
-unordered float comparisons and nested frame callbacks are preserved.
-All 240 tests pass, and full-image linkage remains retail-exact. DATA remains
+The latest verified CODE checkpoint is 2,771,068 / 3,293,696 bytes
+(84.1325%). Three complete handlers add 1,056 CODE bytes for owner-facing
+turns, variant animation initialization and bounded child placement. Native
+owner flow, signed state and unsigned random selection are preserved.
+All 252 tests pass, and full-image linkage remains retail-exact. DATA remains
 468,873 / 648,064 bytes (72.3498%).
