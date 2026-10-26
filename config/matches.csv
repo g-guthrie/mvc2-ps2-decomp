@@ -19155,3 +19155,6 @@ func_0019BE90,0x0019BE90,0x268,src/owner_countdown_relaunch_0019be90.c,complete
 func_0020A6F0,0x0020A6F0,0xA8,src/actor_direction_shift_0020a6f0.c,complete
 func_001D8190,0x001D8190,0x118,src/owner_wait_start_001d8190.c,complete
 func_002361F0,0x002361F0,0xBC,src/actor_motion_contact_002361f0.c,complete
+func_0030AAA0,0x0030AAA0,0xB4,src/player_idle_counter_start_0030aaa0.c,complete
+func_001E1930,0x001E1930,0x12C,src/owner_target_crossing_001e1930.c,complete
+func_00323250,0x00323250,0xDC,src/scene_random_launch_00323250.c,complete

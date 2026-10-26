@@ -276,9 +276,9 @@ extern DispatchFn jtbl_0044EE90[];
 extern DispatchFn jtbl_0044EFC0[];
 extern DispatchFn jtbl_0044EFD0[];
 extern DispatchFn jtbl_0044EFE0[];
-extern DispatchFn jtbl_0044EFF0[];
-extern DispatchFn jtbl_0044F028[];
-extern DispatchFn jtbl_0044F040[];
+extern ControllerEffectCallback const jtbl_0044EFF0[4];
+extern ControllerEffectCallback const jtbl_0044F028[3];
+extern ControllerEffectCallback const jtbl_0044F040[4];
 extern DispatchFn jtbl_0044F350[];
 extern DispatchFn jtbl_0044F360[];
 extern DispatchFn jtbl_0044F370[];
@@ -1077,7 +1077,7 @@ extern DispatchFn jtbl_0045DC48[];
 extern DispatchFn jtbl_0045DC68[];
 extern DispatchFn jtbl_0045DC78[];
 extern DispatchFn jtbl_0045DEC0[];
-extern DispatchFn jtbl_0045DED0[];
+extern DispatchFn const jtbl_0045DED0[3];
 extern DispatchFn jtbl_0045DF98[];
 extern DispatchFn jtbl_0045DFB0[];
 extern DispatchFn jtbl_0045E040[];
@@ -1914,11 +1914,11 @@ void func_001E1220(u8 *p) { jtbl_0044EFD0[p[4]](p); }
 
 void func_001E13F0(u8 *p) { jtbl_0044EFE0[p[4]](p); }
 
-void func_001E16E0(u8 *p) { jtbl_0044EFF0[p[4]](p); }
+void func_001E16E0(u8 *p,u8 *owner) { jtbl_0044EFF0[p[4]](p,owner); }
 
-void func_001E1910(u8 *p) { jtbl_0044F028[p[5]](p); }
+void func_001E1910(u8 *p,u8 *owner) { jtbl_0044F028[p[5]](p,owner); }
 
-void func_001E1C40(u8 *p) { jtbl_0044F040[p[4]](p); }
+void func_001E1C40(u8 *p,u8 *owner) { jtbl_0044F040[p[4]](p,owner); }
 
 void func_001E9710(u8 *p) { jtbl_0044F350[p[531]](p); }
 

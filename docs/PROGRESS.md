@@ -7497,3 +7497,53 @@ is 48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
 CODE is 2,765,664 / 3,293,696 bytes (83.9684%); there are 19,093 matches
 among 20,449 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
 The next fixed CODE checkpoint remains 2,772,187 bytes, 6,523 bytes away.
+
+
+## Idle setup, owner crossing and scene launch (+700 CODE bytes)
+
+Recovered func_0030AAA0 (180 bytes), func_001E1930 (300 bytes) and
+func_00323250 (220 bytes), each complete under Metrowerks 3.0.3 at -O3,p
+and small-data threshold zero. Retail entries at 0x0045CEF0, 0x0044F028 and
+0x0045DED0 select them through their real phase dispatchers. Their existing
+residual extents contain exactly the complete bodies; the catalog does not
+gain padding credit or change its text denominator.
+
+The idle initializer handles the special character flags, advances phase,
+uses the actual orientation helper, clears movement state, increments its
+player counter and applies ground-relative effects and animation. Its five
+callback entries now have their real actor signatures instead of zero-input
+declarations. Also repaired func_0030A680's omitted actor arguments. A local
+copy of the actual func_0030A450 supplies the compiler's callee information;
+the entire 92-byte helper and 36-byte caller match independently. Neither
+existing function gains duplicate credit. The frame-result callback keeps
+its real actor pointer and signed-byte result test.
+
+The crossing handler observes its signed launch delay, invokes the actual
+owner-state gate, integrates horizontal motion, detects passing the mirrored
+target, and advances animation when the timer or crossing condition fires.
+The native stepwise floating-point calculation and field reads are retained.
+Both owner roots and the three-entry nested phase table now forward owner
+explicitly. Their shared lifecycle entries take that same interface. The
+alternate callback's fabricated integer return is removed; it performs its
+state change and returns normally. All changed old functions and complete
+callback objects retain their original bytes.
+
+The launch handler hides actors until the scene is active, consumes the real
+random generator, and overrides its choice with the player slot for character
+58. Its grounded branch schedules an event; its airborne branch initializes
+height, velocity and gravity. The readonly phase alias has three entries.
+
+Tests exercise both counters and signed wrap, the real orientation and ground
+helpers, explicit actor forwarding through the real helper/frame child,
+signed delays, both owner gates and shared lifecycle roots. Scene tests run
+every two-byte random state, including the character override that still
+consumes random state. Wrong counters, actor/owner forwarding, crossing sign,
+missing override and missing random consumption fail negative controls.
+All 206 tests and source/build/catalog checks pass.
+
+Complete compiler and data objects match, and the whole loaded image and
+packed executable remain retail-exact. ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+CODE is 2,766,364 / 3,293,696 bytes (83.9897%), with 19,096 matches among
+20,449 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%). The
+next fixed CODE checkpoint remains 2,772,187 bytes, 5,823 bytes away.

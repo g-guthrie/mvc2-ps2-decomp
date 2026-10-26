@@ -6,7 +6,7 @@ extern DispatchFn jtbl_0045CE20[12];
 extern DispatchFn jtbl_0045CE80[7];
 extern DispatchFn jtbl_0045CEA0[5];
 extern DispatchFn jtbl_0045CEC0[11];
-extern DispatchFn jtbl_0045CEF0[5];
+extern DispatchFn const jtbl_0045CEF0[5];
 
 void func_0030A2A0(u8 *p)
 {

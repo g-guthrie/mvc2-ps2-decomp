@@ -21215,4 +21215,16 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/actor_motion_contact_002361f0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_motion_contact_002361f0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_motion_contact_002361f0.o" private/SLUS_204.86.rom --source src/actor_motion_contact_002361f0.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/player_idle_counter_start_0030aaa0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/player_idle_counter_start_0030aaa0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/player_idle_counter_start_0030aaa0.o" private/SLUS_204.86.rom --source src/player_idle_counter_start_0030aaa0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_target_crossing_001e1930.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_target_crossing_001e1930.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_target_crossing_001e1930.o" private/SLUS_204.86.rom --source src/owner_target_crossing_001e1930.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/scene_random_launch_00323250.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/scene_random_launch_00323250.o"
+"$PYTHON" tools/verify_object.py "$BUILD/scene_random_launch_00323250.o" private/SLUS_204.86.rom --source src/scene_random_launch_00323250.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

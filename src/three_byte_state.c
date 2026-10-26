@@ -12,7 +12,7 @@ void func_001E1570(u8 *state) {
     state[0x13c] = 0;
 }
 
-void func_001E1FC0(u8 *state) {
+void func_001E1FC0(u8 *state,u8 *owner_unused) {
     state[4] = 3;
     state[0] = 0;
     state[0x13c] = 0;

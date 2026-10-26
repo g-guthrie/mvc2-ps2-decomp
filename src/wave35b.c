@@ -38,11 +38,11 @@ void func_00132810(u8 *a0) {
     func_00132B00(a0, *(u8 **)(a0 + 0x18));
 }
 
-extern s32 func_00175700();
+extern s32 func_00175700(u8 *);
 extern int func_00174470(const void *);
 extern void func_001E1FC0(u8 *a, u8 *b);
 void func_001E1B00(u8 *a0, u8 *a1) {
-    func_00175700(a0, a1);
+    func_00175700(a0);
     *(f32 *)(a0 + 0x34) += *(f32 *)(a0 + 0x5C);
     *(f32 *)(a0 + 0x5C) += *(f32 *)(a0 + 0x68);
     if (func_00174470(a0) == 0) func_001E1FC0(a0, a1);

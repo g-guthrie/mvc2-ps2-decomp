@@ -4,8 +4,8 @@ typedef signed short s16;
 typedef signed int s32;
 typedef float f32;
 
-extern void func_00309310(void);
-extern void func_0030A450(void);
+extern void func_00309310(u8 *);
+
 extern void func_00337BA0(int);
 extern void func_00337ED0(void);
 extern void func_00337F30(int);
@@ -22,9 +22,24 @@ extern void func_0036EB40(u8 *);
 extern void func_003DAA40(u8 *);
 extern void func_003C1250(u8 *, int, int);
 
-void func_0030A680(void) {
-    func_0030A450();
-    func_00309310();
+typedef unsigned int u32;
+extern f32 D_0045CE50[];
+typedef struct {u8 prefix[0x151];s8 frame;} FrameFlag;
+static void func_0030A450(u8 *p) {
+    FrameFlag *flag=(FrameFlag*)p;
+    if (flag->frame < 0) {
+        u32 i; p[0x209] = 1; i = flag->frame & 0x7F;
+        if (i != 0) {
+            f32 x; flag->frame = -0x80; x = D_0045CE50[i & 0xFF];
+            if (p[0x1E6] == 0) x = -x;
+            *(f32 *)(p + 0x34) += x;
+        }
+    }
+}
+
+void func_0030A680(u8 *p) {
+    func_0030A450(p);
+    func_00309310(p);
 }
 
 void func_00337630(u8 *p) {

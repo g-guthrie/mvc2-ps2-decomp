@@ -10,8 +10,8 @@ extern void func_001E1330(void);
 extern const unsigned char lbl_001E1410[];
 extern void func_001E1430(void);
 extern const unsigned char lbl_001E1700[];
-extern void func_001E1910(void);
-extern void func_001E1FC0(void);
+extern void func_001E1910(unsigned char *,unsigned char *);
+extern void func_001E1FC0(unsigned char *,unsigned char *);
 extern const unsigned char lbl_001E1FE0[];
 extern const unsigned char lbl_00200000[];
 /* Compiler jump table; entries are code addresses. */

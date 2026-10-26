@@ -38,11 +38,11 @@ void func_002FA2C0(u8 *a, u8 *b) {
     *(s32 *)(b + 0x5C) = 0;
 }
 
-extern void func_00175670();
-extern s32 func_00174240();
-extern s32 func_001E1FC0();
+extern int func_00175670(u8 *);
+extern s32 func_00174240(u8 *);
+extern void func_001E1FC0(u8 *,u8 *);
 
-s32 func_001E1F30(u8 *a, u8 *b) {
+void func_001E1F30(u8 *a, u8 *b) {
     func_00175670(a);
     a[0x159] = 0;
     *(f32 *)(a + 0x34) += *(f32 *)(a + 0x5C);
@@ -50,7 +50,8 @@ s32 func_001E1F30(u8 *a, u8 *b) {
     *(f32 *)(a + 0x38) += *(f32 *)(a + 0x60);
     *(f32 *)(a + 0x60) += *(f32 *)(a + 0x6C);
     if (func_00174240(a) == 0) {
-        return func_001E1FC0(a, b);
+        func_001E1FC0(a,b);
+        return;
     }
 }
 

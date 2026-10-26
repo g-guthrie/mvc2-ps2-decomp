@@ -21,9 +21,9 @@ void func_003D7D50(u8 *a, u8 *b, u8 *c) {
     *(f32 *)(a + 0x38) = *(f32 *)(c + 0x38);
 }
 
-extern s32 func_001E1B70();
-extern s32 func_00175670();
-extern void func_001E1FC0();
+extern s32 func_001E1B70(u8 *,u8 *);
+extern s32 func_00175670(u8 *);
+extern void func_001E1FC0(u8 *,u8 *);
 
 void func_001E1A60(u8 *a, u8 *b) {
     if (func_001E1B70(a, b) == 0) {

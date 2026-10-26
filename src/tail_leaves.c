@@ -634,7 +634,7 @@ void func_001E0CA0(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; func_0
 
 void func_001E1590(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
-void func_001E1FE0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_001E1FE0(u8 *p,u8 *owner_unused) { func_003DAA40((struct Object *)p); }
 
 void func_001E4140(void) { func_001E5F30(); }
 
