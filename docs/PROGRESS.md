@@ -8453,3 +8453,22 @@ bytes (84.4004%), with 19,146 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 25,232 bytes away.
+
+
+## Actor tail updates
+
+Recovered func_002E07B0 (36 bytes) and func_00214D60 (108 bytes) with
+MWCCPS2 3.0.3, -O3,p and small-data threshold zero. Both complete compiler
+outputs match retail, including their tail calls. They initialize motion
+and enter the existing updates. Focused tests exercise both real dispatch
+heads and downstream update bodies, facing, signed frame results and
+phase wrap, with negative controls. The existing func_00365F50 release
+helper now declares its actual unary interface; every credited function in
+its object remains byte-exact, and this correction adds no CODE credit.
+Existing callback-table storage is unchanged.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,780,036 / 3,293,696
+bytes (84.4048%), with 19,148 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 25,088 bytes away.

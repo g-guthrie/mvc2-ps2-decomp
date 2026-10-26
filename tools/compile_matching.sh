@@ -21427,4 +21427,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/actor_trajectory_update_003ae4a0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_trajectory_update_003ae4a0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_trajectory_update_003ae4a0.o" private/SLUS_204.86.rom --source src/actor_trajectory_update_003ae4a0.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_motion_tail_002e07b0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_motion_tail_002e07b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_motion_tail_002e07b0.o" private/SLUS_204.86.rom --source src/actor_motion_tail_002e07b0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_launch_tail_00214d60.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_launch_tail_00214d60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_launch_tail_00214d60.o" private/SLUS_204.86.rom --source src/actor_launch_tail_00214d60.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
