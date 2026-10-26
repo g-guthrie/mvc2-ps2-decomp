@@ -21403,4 +21403,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/owner_offset_start_00380300.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_offset_start_00380300.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_offset_start_00380300.o" private/SLUS_204.86.rom --source src/owner_offset_start_00380300.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_dash_entry_003bba10.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_dash_entry_003bba10.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_dash_entry_003bba10.o" private/SLUS_204.86.rom --source src/owner_dash_entry_003bba10.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

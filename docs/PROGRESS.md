@@ -8346,3 +8346,19 @@ bytes (84.3608%), with 19,140 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 26,536 bytes away.
+
+
+## Owner dash initializer
+
+Recovered func_003BBA10 (244 bytes) with MWCCPS2 3.0.3, -O3,p and
+small-data threshold zero. Its complete compiler output matches retail.
+It captures its owner, invokes the existing owner-copy helper, initializes
+direction-dependent position and speed, and runs the existing state-copy
+and animation helpers. Focused tests use both real copy helpers and cover
+both directions, teams and counter wrap, with negative controls.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,778,832 / 3,293,696
+bytes (84.3682%), with 19,141 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 26,292 bytes away.
