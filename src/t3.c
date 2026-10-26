@@ -241,7 +241,7 @@ s32 func_00168810(A_00168810 *a, B_00168810 *b) {
     return 1;
 }
 
-void func_00147870(s8 a, u8 b) {
+u8 *func_00147870(s8 a, s8 b) {
     u8 *o;
     if (a == 2 || a == 6) {
         o = func_003DA750(0, 0xD, 1);
@@ -256,6 +256,7 @@ void func_00147870(s8 a, u8 b) {
         *(V3 *)(o + 0x50) = D_00442AA0;
         *(s32 *)(o + 0xD0) = 0x431;
     }
+    return o;
 }
 
 void func_0025EB90(u8 *actor) {

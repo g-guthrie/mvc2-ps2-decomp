@@ -52,7 +52,7 @@ void func_002466E0(u8 *p) {
         p[6] = t + 1;
     }
 }
-extern u8 *func_00147870(s32, s32);
+extern u8 *func_00147870(s8, s8);
 u8 *func_00148AA0(s32 x) {
     u8 *o = 0;
     if (x == 13) {

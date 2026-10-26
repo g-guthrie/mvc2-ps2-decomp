@@ -5,7 +5,7 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
-extern void func_00147870(s32 a, s8 b);
+extern u8 *func_00147870(s8, s8);
 extern void func_001E7F60(u8 *p);
 extern struct { s32 pad0; s32 n; s32 pad[2]; f32 f[129]; } D_004F1D20;
 

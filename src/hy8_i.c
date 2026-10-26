@@ -57,7 +57,7 @@ void func_00147E50(u8 *p)
 {
     extern void func_00147920(u8 *, s32, s32);
     extern void func_00147AB0(s32, s32);
-    extern void func_00147870(s32, s32);
+    extern u8 *func_00147870(s8, s8);
     H8E *e;
     s32 t;
     p[4]++;
