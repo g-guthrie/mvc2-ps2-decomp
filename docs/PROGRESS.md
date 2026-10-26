@@ -7913,3 +7913,34 @@ ELF SHA-256 remains
 CODE is 2,772,684 / 3,293,696 bytes (84.1815%); 19,118 matches among
 20,468 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
 The next fixed CODE threshold remains 2,805,124 bytes, 32,440 bytes away.
+
+
+## Owner direction events and placement after setup
+
+Recovered func_0023EB90 (152 bytes) and func_00242E50 (156 bytes) with
+MWCCPS2 3.0.3, -O3,p and small-data threshold zero. Both complete bodies
+match retail. Twelve alignment bytes before each body remain uncredited;
+the conservative text denominator is unchanged.
+
+The direction handler flips signed facing and releases on a negative frame
+low byte. Any nonzero signed event updates the current owner, copies the
+actor's direction to the owner, flips the actor's direction and passes the
+owner to the actual parent-reading sound helper. That helper selects its
+cue from the owner's parent; substituting the actor would change behavior.
+The placement handler runs setup before reading its turn flag, applies the
+native offset through the actual placement helper, then clears both phase
+bytes and selects its animation after the effect callbacks.
+
+Tests compare complete actor and owner buffers, signed frame/event values,
+noncanonical direction bytes, owner replacement during the frame callback,
+parent cue selection and callback-time flag/facing changes. Negative controls
+reject passing the actor into the owner helper, accepting only event one,
+omitting the terminal facing flip, flipping before setup and omitting the
+subphase reset. All 276 tests and source/build/catalog gates pass. Whole
+compiler/data objects, the loaded image and packed executable remain exact.
+ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+
+CODE is 2,772,992 / 3,293,696 bytes (84.1909%); 19,120 matches among
+20,470 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
+The next fixed CODE threshold remains 2,805,124 bytes, 32,132 bytes away.

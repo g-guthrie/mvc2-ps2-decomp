@@ -21315,4 +21315,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/player_work_counter_start_002c7c20.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/player_work_counter_start_002c7c20.o"
 "$PYTHON" tools/verify_object.py "$BUILD/player_work_counter_start_002c7c20.o" private/SLUS_204.86.rom --source src/player_work_counter_start_002c7c20.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_owner_direction_event_0023eb90.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_owner_direction_event_0023eb90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_direction_event_0023eb90.o" private/SLUS_204.86.rom --source src/actor_owner_direction_event_0023eb90.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_late_turn_offset_00242e50.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_late_turn_offset_00242e50.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_late_turn_offset_00242e50.o" private/SLUS_204.86.rom --source src/actor_late_turn_offset_00242e50.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
