@@ -19205,3 +19205,4 @@ func_00380300,0x00380300,0x1A8,src/owner_offset_start_00380300.c,complete
 func_003BBA10,0x003BBA10,0xF4,src/owner_dash_entry_003bba10.c,complete
 func_0025A3F0,0x0025A3F0,0xC0,src/actor_landing_update_0025a3f0.c,complete
 func_0030DDF0,0x0030DDF0,0xF8,src/actor_table_motion_entry_0030ddf0.c,complete
+func_002EF8D0,0x002EF8D0,0xE8,src/actor_action_timer_entry_002ef8d0.c,complete

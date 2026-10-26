@@ -8398,3 +8398,21 @@ bytes (84.3816%), with 19,143 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 25,852 bytes away.
+
+
+## Actor action-timer entry
+
+Recovered func_002EF8D0 (232 bytes) with MWCCPS2 3.0.3, -O3,p and
+small-data threshold zero. Its complete compiler output matches retail.
+It resets an action, applies facing and placement, selects a timer and
+animation from actor state, then stores the signed animation byte after
+the animation call. The byte view is into an existing DATA unit and adds
+no DATA credit. Focused tests exercise the real facing and placement
+helpers, timer cases, action rows and signed animation results, with
+negative controls for timer, row and signedness.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,779,504 / 3,293,696
+bytes (84.3886%), with 19,144 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 25,620 bytes away.

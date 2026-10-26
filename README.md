@@ -12,9 +12,9 @@ for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
 
 | | Matched | Total | |
 | --- | ---: | ---: | ---: |
-| Code | 2,779,272 bytes | 3,293,696 bytes | **84.38%** |
+| Code | 2,779,504 bytes | 3,293,696 bytes | **84.39%** |
 | Initialized data | 468,873 bytes | 648,064 bytes | **72.35%** |
-| Catalog spans | 19,143 | 20,474 | |
+| Catalog spans | 19,144 | 20,474 | |
 
 Every matched function is C compiled with a period toolchain (Metrowerks
 MWCC 2.4/3.0/3.0.3, SN GCC 2.95.2, EE GCC 2.96, or Sony EE GCC 2.9) and
@@ -223,9 +223,8 @@ Verified code is pushed at least after each additional full percentage point.
 The latest checkpoint also publishes the EE GCC sibling-call profile described
 in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 
-The latest verified CODE checkpoint is 2,779,272 / 3,293,696 bytes
-(84.3816%). The actor table-motion entry adds 248 CODE bytes and uses
-existing velocity and action-table views. The rebuilt executable remains
-retail-exact.
+The latest verified CODE checkpoint is 2,779,504 / 3,293,696 bytes
+(84.3886%). The actor action-timer entry adds 232 CODE bytes and uses an
+existing action-table view. The rebuilt executable remains retail-exact.
 The catalog reports 468,873 / 648,064 DATA bytes (72.3498%); some table
 ownership classifications still need repair.
