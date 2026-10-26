@@ -19178,3 +19178,5 @@ func_001CC440,0x001CC440,0x1C4,src/actor_timed_jitter_001cc440.c,complete
 func_001D7E70,0x001D7E70,0x190,src/owner_partner_release_001d7e70.c,complete
 func_00202400,0x00202400,0x9C,src/actor_turn_offset_start_00202400.c,complete
 func_00213CD0,0x00213CD0,0x9C,src/player_action_counter_start_00213cd0.c,complete
+func_0024D1E0,0x0024D1E0,0xC0,src/actor_reverse_owner_link_0024d1e0.c,complete
+func_002C7C20,0x002C7C20,0x104,src/player_work_counter_start_002c7c20.c,complete

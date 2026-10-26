@@ -7873,3 +7873,43 @@ CODE is 2,772,232 / 3,293,696 bytes (84.1678%); 19,116 matches among
 20,466 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
 The fixed CODE threshold of 2,772,187 is crossed by 45 bytes. The next fixed
 threshold is 2,805,124 bytes, 32,892 bytes away.
+
+
+## Signed frame events, owner linking and player work initialization
+
+Recovered func_0024D1E0 (192 bytes) and func_002C7C20 (260 bytes) with
+MWCCPS2 3.0.3, -O3,p and small-data threshold zero. Both complete bodies
+match retail. Four and twelve alignment bytes remain uncredited; the
+conservative text denominator is unchanged.
+
+A negative signed low byte from the frame helper immediately releases the
+first actor. Only event value one triggers either subsequent action. The
+first event clears its flag, calls the real facing-dependent offset helper
+and sets the actor's state byte. The second clears its flag, reloads the
+current owner after the effect call, links the actor into that owner,
+reverses direction and sets the owner's phase fields. It then calls the
+real zero-input global-state helper with its actual void(void) interface.
+
+The second handler receives the real work pointer from its native dispatcher.
+It calls the setup helpers, places the actor at the reference height, clears
+motion, selects the native character/variant-specific action, clears exact
+work fields and increments the current team's signed counter. After its
+position helper, it clears only work byte two and selects the animation.
+The complete physical callback table retains other entries' prior types
+and gives this slot its real context interface. No DATA credit is added.
+
+Tests compare complete actor, owner and counter buffers using the actual
+nested offset, facing, position and global-state helper bodies. They cover
+signed frame low bytes, noncanonical event values, signed facing, owner
+replacement during an effect call, global selector priorities, setup-time
+team/character/variant changes, counter wrap and phase wrap. Negative controls
+reject arbitrary nonzero events, a stale owner, omission of the global-state
+helper, clearing a neighboring work byte and incrementing the wrong team.
+All 269 tests and source/build/catalog gates pass. Whole compiler/data
+objects, the loaded image and packed executable remain retail-exact.
+ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+
+CODE is 2,772,684 / 3,293,696 bytes (84.1815%); 19,118 matches among
+20,468 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
+The next fixed CODE threshold remains 2,805,124 bytes, 32,440 bytes away.

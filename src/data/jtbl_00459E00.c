@@ -12,7 +12,7 @@ extern void func_002C78B0(u8 *);
 extern void func_002C7960(u8 *);
 extern void func_002C7A70(u8 *);
 extern void func_002C7BD0(u8 *);
-extern void func_002C7C20(u8 *);
+extern void func_002C7C20(u8 *,void *);
 extern void func_002C7D30(u8 *);
 extern void func_002C7E50(u8 *);
 extern void func_002C8010(u8 *);
@@ -27,7 +27,12 @@ extern void func_002CAFE0(u8 *);
 extern void func_002CB140(u8 *);
 extern void func_002CB1D0(u8 *);
 
-const Mvc2StateCallback jtbl_00459E00[28] = {
+typedef struct {
+    Mvc2StateCallback earlier[24];
+    Mvc2OwnerStateCallback work_start;
+    Mvc2StateCallback later[3];
+} PlayerWorkPhaseTables;
+const PlayerWorkPhaseTables jtbl_00459E00 = {{
     func_002C7640,
     func_002C7720,
     func_002C7780,
@@ -52,8 +57,8 @@ const Mvc2StateCallback jtbl_00459E00[28] = {
     func_002C7A70,
     func_002CAFE0,
     func_002CB1D0,
-    func_002C7C20,
+}, func_002C7C20, {
     func_002C7D30,
     func_002C7E50,
     func_002C8010,
-};
+}};
