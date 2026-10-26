@@ -8041,3 +8041,34 @@ ELF SHA-256 remains
 CODE is 2,774,672 / 3,293,696 bytes (84.2419%); 19,125 matches among
 20,472 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
 The next fixed CODE threshold remains 2,805,124 bytes, 30,452 bytes away.
+
+
+## Owner identity, event flags and palette updates
+
+Recovered func_001CF0B0 (196 bytes) with MWCCPS2 3.0.3, -O3,p and
+small-data threshold zero. The complete body matches retail and replaces
+one full residual span. No alignment bytes or DATA are newly credited.
+
+The handler first follows its owner's position and signed depth, sets the
+signed depth offset, then checks the stored owner identity. A mismatch resets
+the owner's frame and terminates the effect. With a matching identity, any
+nonzero signed event flag is cleared before the frame callback. A negative
+signed frame low byte resets the current owner and terminates; otherwise the
+actual helper updates the current owner's palette entry using the current
+global frame parity. Owner and parity changes during the frame callback are
+preserved. The cleanup leaf's unused integer placeholders are replaced with
+its actual unary actor-pointer interface; its whole body remains exact.
+
+Tests compare complete actor and both owner buffers using the real follow,
+palette and cleanup helpers. They cover identity mismatch, signed event
+values, signed frame-byte interpretation, phase wrap, owner replacement,
+global-frame pointer replacement and palette arithmetic. Negative controls
+reject a cached owner reset, unsigned frame interpretation and accepting only
+event one. All 298 tests and source/build/catalog gates pass. Whole compiler/
+DATA objects, the loaded image and the packed executable remain retail-exact.
+ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+
+CODE is 2,774,868 / 3,293,696 bytes (84.2478%); 19,126 matches among
+20,472 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
+The next fixed CODE threshold remains 2,805,124 bytes, 30,256 bytes away.

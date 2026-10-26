@@ -21343,4 +21343,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/descriptor_chain_start_0034a1e0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/descriptor_chain_start_0034a1e0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/descriptor_chain_start_0034a1e0.o" private/SLUS_204.86.rom --source src/descriptor_chain_start_0034a1e0.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_colour_flag_step_001cf0b0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_colour_flag_step_001cf0b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_colour_flag_step_001cf0b0.o" private/SLUS_204.86.rom --source src/owner_colour_flag_step_001cf0b0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

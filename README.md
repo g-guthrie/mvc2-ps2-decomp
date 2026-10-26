@@ -12,9 +12,9 @@ for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
 
 | | Matched | Total | |
 | --- | ---: | ---: | ---: |
-| Code | 2,774,672 bytes | 3,293,696 bytes | **84.24%** |
+| Code | 2,774,868 bytes | 3,293,696 bytes | **84.25%** |
 | Initialized data | 468,873 bytes | 648,064 bytes | **72.35%** |
-| Catalog spans | 19,125 | 20,472 | |
+| Catalog spans | 19,126 | 20,472 | |
 
 Every matched function is C compiled with a period toolchain (Metrowerks
 MWCC 2.4/3.0/3.0.3, SN GCC 2.95.2, EE GCC 2.96, or Sony EE GCC 2.9) and
@@ -223,9 +223,9 @@ Verified code is pushed at least after each additional full percentage point.
 The latest checkpoint also publishes the EE GCC sibling-call profile described
 in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 
-The latest verified CODE checkpoint is 2,774,672 / 3,293,696 bytes
-(84.2419%). Three complete handlers add 1,008 CODE bytes for player action
-chains and bounded descriptor-based initialization. Work inputs, actual
-tick behavior, allocation returns and the five-row producer chain are preserved.
-All 294 tests pass, and the full rebuilt executable remains retail-exact.
-DATA remains 468,873 / 648,064 bytes (72.3498%).
+The latest verified CODE checkpoint is 2,774,868 / 3,293,696 bytes
+(84.2478%). A complete 196-byte handler adds owner identity/flag handling,
+signed frame termination and current-owner palette updates. The cleanup
+interface now takes its actual actor pointer. All 298 tests pass, and the
+full rebuilt executable remains retail-exact. DATA remains
+468,873 / 648,064 bytes (72.3498%).

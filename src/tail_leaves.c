@@ -80,7 +80,7 @@ extern void func_001C8CD0();
 extern void func_001C8FC0();
 extern void func_001C9410();
 extern int func_001CB5D0(u8 *);
-extern void func_001CF6C0();
+extern void func_001CF6C0(u8 *);
 extern void func_001CFA50();
 extern void func_001CFDF0();
 extern void func_001D0120();
@@ -547,7 +547,7 @@ void func_001CE9F0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Obje
 
 void func_001CF6A0(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; func_001CF6C0(p); }
 
-void func_001CF6C0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_001CF6C0(u8 *p) { func_003DAA40((struct Object *)p); }
 
 void func_001CFA30(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; func_001CFA50(p); }
 
