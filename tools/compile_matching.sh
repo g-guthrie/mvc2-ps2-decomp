@@ -21291,4 +21291,20 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/owner_table_child_start_001d7150.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_table_child_start_001d7150.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_table_child_start_001d7150.o" private/SLUS_204.86.rom --source src/owner_table_child_start_001d7150.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_timed_jitter_001cc440.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_timed_jitter_001cc440.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_timed_jitter_001cc440.o" private/SLUS_204.86.rom --source src/actor_timed_jitter_001cc440.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_partner_release_001d7e70.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_partner_release_001d7e70.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_partner_release_001d7e70.o" private/SLUS_204.86.rom --source src/owner_partner_release_001d7e70.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_turn_offset_start_00202400.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_turn_offset_start_00202400.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_turn_offset_start_00202400.o" private/SLUS_204.86.rom --source src/actor_turn_offset_start_00202400.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/player_action_counter_start_00213cd0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/player_action_counter_start_00213cd0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/player_action_counter_start_00213cd0.o" private/SLUS_204.86.rom --source src/player_action_counter_start_00213cd0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

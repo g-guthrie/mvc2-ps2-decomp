@@ -7832,3 +7832,44 @@ complete loaded image and packed ELF remain retail-exact. ELF SHA-256 is
 CODE is 2,771,068 / 3,293,696 bytes (84.1325%); 19,112 matches among
 20,464 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
 The next fixed CODE checkpoint remains 2,772,187 bytes, 1,119 bytes away.
+
+
+## Timed jitter, partner release and player initialization checkpoint
+
+Recovered four complete functions with MWCCPS2 3.0.3 at -O3,p and small-data
+threshold zero: func_001CC440 (452 bytes), func_001D7E70 (400 bytes),
+func_00202400 (156 bytes), and func_00213CD0 (156 bytes). Every full body
+matches retail. The first two replace entire residual entries; the other
+two retain twelve uncredited alignment bytes each. No denominator change.
+
+The jitter handler captures the owner before the frame call, emits bounded
+random offsets at its byte countdown, cycles through five positive durations
+and a negative reset sentinel, and advances state from the original owner
+or global mode. The partner handler checks the owner identity and four
+partner conditions before releasing an effect. Its horizontal acceleration
+uses native unsigned wraparound below 32; it is deliberately not changed to
+a signed calculation. It then enters the real position-following handler.
+
+The placement initializer flips facing only for the native 0x400 flag,
+resets state, and uses the real offset-effect helper after its initial state
+callback. The counter initializer uses the current team after all setup
+callbacks, clears the exact native work fields and increments the signed
+team counter. Its native dispatcher passes actor+0x2B8 as context; this
+initializer leaves that input unused. The callback tables retain prior
+unknown entries and type the recovered handlers without new DATA credit.
+
+Tests compare full buffers and actual nested helper behavior, unsigned
+random masks and wraparound, signed timer and counter wrap, all five timer
+positions, cached owner flow, each partner gate, four nonzero partner widths,
+turn flag and facing combinations, post-callback placement and post-callback
+team selection. Negative controls reject reloading the owner, the wrong
+sentinel reset, signed acceleration, inverted identity, the wrong turn flag
+and the wrong team. All 262 tests and source/build/catalog gates pass.
+Whole compiler/data objects, the loaded image and packed executable remain
+retail-exact. ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+
+CODE is 2,772,232 / 3,293,696 bytes (84.1678%); 19,116 matches among
+20,466 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
+The fixed CODE threshold of 2,772,187 is crossed by 45 bytes. The next fixed
+threshold is 2,805,124 bytes, 32,892 bytes away.

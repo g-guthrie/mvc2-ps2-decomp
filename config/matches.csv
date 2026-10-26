@@ -19174,3 +19174,7 @@ func_001C2AA0,0x001C2AA0,0x12C,src/owner_near_distance_start_001c2aa0.c,complete
 func_001A9EF0,0x001A9EF0,0xE8,src/owner_turn_start_001a9ef0.c,complete
 func_001BBE60,0x001BBE60,0x154,src/owner_variant_animation_start_001bbe60.c,complete
 func_001D7150,0x001D7150,0x1E4,src/owner_table_child_start_001d7150.c,complete
+func_001CC440,0x001CC440,0x1C4,src/actor_timed_jitter_001cc440.c,complete
+func_001D7E70,0x001D7E70,0x190,src/owner_partner_release_001d7e70.c,complete
+func_00202400,0x00202400,0x9C,src/actor_turn_offset_start_00202400.c,complete
+func_00213CD0,0x00213CD0,0x9C,src/player_action_counter_start_00213cd0.c,complete
