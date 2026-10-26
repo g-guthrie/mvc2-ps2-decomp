@@ -8557,3 +8557,20 @@ bytes (84.4346%), with 19,153 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 24,104 bytes away.
+
+
+## Actor owner spawn
+
+Recovered func_00399C10 (472 bytes) with MWCCPS2 3.0, -O3,p and
+small-data threshold zero. The full function matches retail: it copies
+the owner's state, sets position and motion according to owner state and
+facing, signals the actor and owner work areas, and starts animation.
+Focused tests run through all three upstream dispatchers across both facing
+and owner-state paths, with negative controls. The existing callback
+table is unchanged.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,781,492 / 3,293,696
+bytes (84.4490%), with 19,154 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 23,632 bytes away.
