@@ -8201,3 +8201,21 @@ bytes (84.2906%), with 19,132 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 28,848 bytes away.
+
+
+## Frame palette cancel
+
+Recovered func_0021D400 (184 bytes) with MWCCPS2 3.0.3, -O3,p and
+small-data threshold zero. Its complete compiler output matches retail. The
+handler applies the existing palette operation, checks the actor state and
+input guards, invokes the real input helper and clears velocity and decrements
+the work counter when the resulting direction flag is set. Its static copy of
+the complete 384-byte func_0021D280 helper is independently verified and
+receives no additional credit. Tests exercise every guard, both input results
+and the real input helper, with negative controls for the guard and counter.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,776,460 / 3,293,696
+bytes (84.2962%), with 19,133 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 28,664 bytes away.

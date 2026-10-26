@@ -21371,4 +21371,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/frame_palette_phase_0021ed90.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/frame_palette_phase_0021ed90.o"
 "$PYTHON" tools/verify_object.py "$BUILD/frame_palette_phase_0021ed90.o" private/SLUS_204.86.rom --source src/frame_palette_phase_0021ed90.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/frame_palette_cancel_0021d400.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/frame_palette_cancel_0021d400.o"
+"$PYTHON" tools/verify_object.py "$BUILD/frame_palette_cancel_0021d400.o" private/SLUS_204.86.rom --source src/frame_palette_cancel_0021d400.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
