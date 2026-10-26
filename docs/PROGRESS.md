@@ -8646,3 +8646,19 @@ bytes (84.4671%), with 19,158 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 23,036 bytes away.
+
+
+## SDK RNA status reporting
+
+Recovered func_00401050 (252 bytes) with EE GCC 2.96, -O2 and small-data
+threshold zero. The complete function matches retail. It reads two counts
+from the native virtual interface and two from the IOP helper, then prints
+three existing diagnostic formats with their totals. Focused tests check
+call order, signed status, each pair and the final total with negative
+controls. Existing strings are reused; no new DATA is credited.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,782,340 / 3,293,696
+bytes (84.4747%), with 19,159 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 22,784 bytes away.

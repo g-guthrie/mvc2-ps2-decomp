@@ -12,9 +12,9 @@ for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
 
 | | Matched | Total | |
 | --- | ---: | ---: | ---: |
-| Code | 2,782,088 bytes | 3,293,696 bytes | **84.47%** |
+| Code | 2,782,340 bytes | 3,293,696 bytes | **84.47%** |
 | Initialized data | 468,873 bytes | 648,064 bytes | **72.35%** |
-| Catalog spans | 19,158 | 20,474 | |
+| Catalog spans | 19,159 | 20,474 | |
 
 Every matched function is C compiled with a period toolchain (Metrowerks
 MWCC 2.4/3.0/3.0.3, SN GCC 2.95.2, EE GCC 2.96, or Sony EE GCC 2.9) and
@@ -223,8 +223,8 @@ Verified code is pushed at least after each additional full percentage point.
 The latest checkpoint also publishes the EE GCC sibling-call profile described
 in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 
-The latest verified CODE checkpoint is 2,782,088 / 3,293,696 bytes
-(84.4671%). The SDK pan-setting routine adds 108 CODE bytes. The rebuilt
+The latest verified CODE checkpoint is 2,782,340 / 3,293,696 bytes
+(84.4747%). The SDK RNA status routine adds 252 CODE bytes. The rebuilt
 executable remains retail-exact. The prior effect-start handler retains its
 retail uninitialized stack component as documented in [progress](docs/PROGRESS.md#actor-effect-start).
 The catalog reports 468,873 / 648,064 DATA bytes (72.3498%); some table

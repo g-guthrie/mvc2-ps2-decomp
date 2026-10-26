@@ -21478,4 +21478,9 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_adxt_pan_00402028
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_adxt_pan_00402028.o" "$BUILD/sdk_adxt_pan_00402028.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sdk_adxt_pan_00402028.o" private/SLUS_204.86.rom --source src/sdk_adxt_pan_00402028.c
 
+"$WIBO" "$SNCPP" -P src/sdk_rna_status_00401050.c "$BUILD/sdk_rna_status_00401050.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_rna_status_00401050.i" "$BUILD/sdk_rna_status_00401050.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_rna_status_00401050.o" "$BUILD/sdk_rna_status_00401050.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sdk_rna_status_00401050.o" private/SLUS_204.86.rom --source src/sdk_rna_status_00401050.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
