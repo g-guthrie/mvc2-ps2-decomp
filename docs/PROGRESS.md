@@ -8702,3 +8702,14 @@ as well. All affected credited functions remain byte-exact. Focused tests
 exercise the real downstream allocator calculation, both pool modes,
 insufficient capacity and recovery, including negative controls. This
 interface correction adds no new CODE or DATA credit.
+
+
+## Pool allocation chain interfaces
+
+Corrected the compiled duplicate func_003DB9B0 and func_003DCFE0 sources
+to take byte sizes and return handles, matching their native callers. The
+func_003F0C50 declaration of func_003F0C60 now uses the real unsigned size,
+alignment, result and arena types. Both duplicate native bodies and all
+affected credited objects remain byte-exact. Focused tests exercise the
+retry wrapper through the real allocation calculation in both directions,
+including full and recovered pools. No new CODE or DATA is credited.

@@ -149,7 +149,9 @@ extern s32 func_003DB9E0(s32 handle);
 extern void func_003DE890();
 extern void func_003ECD00();
 extern void func_003ED2E0();
-extern s32 func_003F0C60(u8 *, s32, s32);
+typedef struct { u32 addr, size; s32 owner, z; } PoolEntryNative;
+typedef struct { s32 n, f4; PoolEntryNative *tab; s32 dir; u32 cur; s32 f14, f18; u32 total; } PoolArenaNative;
+extern u32 func_003F0C60(PoolArenaNative *, u32, u32);
 extern void func_003F5440();
 extern void func_004121B0();
 extern void func_00423240();
@@ -1402,7 +1404,7 @@ float func_003DE7D0(float angle) { return func_00117328(angle); }
 
 void func_003DE880(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DE890(a0, a1, 0, a3); }
 
-s32 func_003F0C50(u8 *pool, s32 size) { return func_003F0C60(pool, size, *(s32 *)(pool + 24)); }
+s32 func_003F0C50(u8 *pool, s32 size) { return (s32)func_003F0C60((PoolArenaNative *)pool, (u32)size, (u32)*(s32 *)(pool + 24)); }
 
 void func_003F5080(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003F5440(a0, 0, a2, a3); }
 

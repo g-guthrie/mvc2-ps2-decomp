@@ -29,7 +29,7 @@ extern void func_003D7B50(u8 *, s32);
 extern void func_003DA6F0(s32);
 extern void func_003DAA40(u8 *);
 extern void func_003DAC50(u8 *, s32);
-extern s32 func_003DB9B0(u8 *);
+extern s32 func_003DB9B0(s32);
 extern void func_003DB9F0(void);
 extern void func_003DC9C0(void);
 extern s16 *func_003DD030(void);
@@ -153,12 +153,12 @@ void func_003C9330(u8 *p)
         func_003C9A20(p, *(s32 *)(p + 0x18), *(s32 *)(p + 8));
 }
 
-s32 func_003DCFE0(u8 *p)
+s32 func_003DCFE0(s32 size, s32 ignored_hint)
 {
-    s32 r = func_003DB9B0(p);
+    s32 r = func_003DB9B0(size);
     if (r == 0) {
         func_003DD040();
-        r = func_003DB9B0(p);
+        r = func_003DB9B0(size);
     }
     return r;
 }
