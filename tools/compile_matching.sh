@@ -21359,4 +21359,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/ground_setup_00250580.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/ground_setup_00250580.o"
 "$PYTHON" tools/verify_object.py "$BUILD/ground_setup_00250580.o" private/SLUS_204.86.rom --source src/ground_setup_00250580.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_dash_setup_002f0110.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_dash_setup_002f0110.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_dash_setup_002f0110.o" private/SLUS_204.86.rom --source src/actor_dash_setup_002f0110.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

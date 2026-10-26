@@ -41,11 +41,11 @@ typedef struct SS {
 } SS;
 
 extern GG *D_004C2794;
-extern void func_001E3710(SS *, s32);
-extern void func_001757E0(SS *, s32, s32);
+extern void func_001E3710(u8 *, u8);
+extern int func_001757E0(u8 *, s32, s32);
 
 void func_002F01E0(SS *p) {
-    extern s8 func_00175700(SS *);
+    extern int func_00175700(u8 *);
     s32 t;
     u32 st;
     u32 c;
@@ -55,11 +55,11 @@ void func_002F01E0(SS *p) {
     p->w2EC = t;
     if (t < 0) {
         p->w2EC = 8;
-        func_001E3710(p, 0x1A);
+        func_001E3710((u8 *)p, 0x1A);
     }
     p->f34 += p->f5C;
     p->f5C += p->f68;
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700((u8 *)p) < 0) {
         st = p->b6;
         p->b6 = st + 1;
         a = -6.666666507720947f;
@@ -74,7 +74,7 @@ void func_002F01E0(SS *p) {
         p->b1B2 = p->h1C0 = 0;
         p->w1D8 = 0;
         D_004C2794->h7C[p->b2]++;
-        func_001757E0(p, 0x15, 0x40);
+        func_001757E0((u8 *)p, 0x15, 0x40);
     }
     t15 = p->b15B;
     if (t15 != 0) {

@@ -8146,3 +8146,22 @@ CODE is 2,775,888 / 3,293,696 bytes (84.2788%), with 19,129 matches among
 20,474 catalog spans. The DATA catalog reports 468,873 / 648,064 bytes
 (72.3498%); some ownership classifications still need repair. The next fixed
 CODE threshold remains 2,805,124 bytes, 29,236 bytes away.
+
+
+## Dash setup and update helper signatures
+
+Recovered func_002F0110 (208 bytes) with MWCCPS2 3.0.3, -O3,p and
+small-data threshold zero. The complete compiled function matches retail.
+The setup resets the action, initializes movement, selects its animation,
+allocates an event, runs setup and enters the existing update function. The
+existing update now declares its frame and effect helpers with their actual
+signatures and explicitly checks the signed low byte of the frame result.
+Its complete 324-byte compiled function remains exact. Focused tests exercise
+setup order, signed frame data, both facing values and both team counters,
+with negative controls for the facing field and signed conversion.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,776,096 / 3,293,696
+bytes (84.2851%), with 19,130 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 29,028 bytes away.
