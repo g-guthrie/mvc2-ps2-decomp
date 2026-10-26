@@ -16560,7 +16560,7 @@ func_00374000,0x00374000,0x144,0x00374144,code,spimdisasm-explicit-size-before-f
 func_00374150,0x00374150,0x8C,0x003741DC,code,spimdisasm-explicit-size-before-first-data
 func_003741E0,0x003741E0,0x2C,0x0037420C,code,verified-source-recovery
 residual_0037420C,0x0037420C,0x4,0x00374210,assembly_residual,uncredited-native-alignment
-residual_00374210,0x00374210,0x94,0x003742A4,assembly_residual,native-remainder-after-verified-c-entry
+func_00374210,0x00374210,0x94,0x003742A4,code,verified-pointer-entry-and-whole-function
 func_003742B0,0x003742B0,0x6C,0x0037431C,code,spimdisasm-explicit-size-before-first-data
 func_00374320,0x00374320,0x70,0x00374390,code,spimdisasm-explicit-size-before-first-data
 func_00374390,0x00374390,0x78,0x00374408,code,spimdisasm-explicit-size-before-first-data

@@ -8416,3 +8416,19 @@ bytes (84.3886%), with 19,144 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 25,620 bytes away.
+
+
+## Actor ground bounce
+
+Recovered func_00374210 (148 bytes) with MWCCPS2 3.0.3, -O3,p and
+small-data threshold zero. Its complete compiler output matches retail.
+The handler integrates motion and starts a bounce when the native ground
+comparison does not branch away. Tests cover its real dispatcher, the ground
+boundary, unordered floating-point input and phase wrap, with negative controls.
+The existing callback-table storage remains unchanged.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,779,652 / 3,293,696
+bytes (84.3931%), with 19,145 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 25,472 bytes away.
