@@ -11,7 +11,8 @@ extern int func_001757E0(u8 *, int, int);
 extern void func_00416A50(void *);
 extern void func_003F0E60(void *);
 extern void func_003F0C50(void *, void *);
-extern void func_003F0A60(void *, void *);
+typedef struct {s32 f0;u32 f4;s32 f8,fC,f10;u32 f14,f18;} S3F;
+extern u32 func_003F0A60(S3F *,u32);
 extern void func_003F0DB0(void *, void *);
 extern s32 func_003F0DF0(void *, s32);
 extern void func_003F0A40(void *, void *);
@@ -87,7 +88,7 @@ void func_003DB9F0(void) { func_003F0E60(D_005BF280); }
 
 void func_003DB9B0(void *p) { func_003F0C50(D_005BF280, p); }
 
-void func_003DB9C0(void *p) { func_003F0A60(D_005BF280, p); }
+u32 func_003DB9C0(u32 size) { return func_003F0A60((S3F *)D_005BF280, size); }
 
 void func_003DB9D0(void *p) { func_003F0DB0(D_005BF280, p); }
 

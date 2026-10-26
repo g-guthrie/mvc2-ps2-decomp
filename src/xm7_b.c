@@ -13,7 +13,7 @@ s32 func_003EABA0(Ab *a, Bb *b, s32 c)
 {
     extern s32 func_003DCFE0(s32, s32);
     extern s32 func_003DD030(s32);
-    extern s32 func_003DB9C0(s32);
+    extern u32 func_003DB9C0(u32);
     extern void func_003DCDC0(s32, s32, s32);
     extern void func_003EB210(s32, s32, s32, s32, s32);
     extern void func_003EAEF0(Ab *, Rb *, s32, s32);

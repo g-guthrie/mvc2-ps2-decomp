@@ -8690,3 +8690,15 @@ alignment 0x10, and the downstream native code uses them in size and
 alignment arithmetic. The entire source object, including the 40-byte
 wrapper, remains byte-exact. The 220-byte downstream function remains
 unmatched and receives no new credit.
+
+
+## Pool availability return interface
+
+Corrected func_003DB9C0 and its caller to use the native unsigned byte-size
+argument and returned pool value. The wrapper is a native tail jump to the
+existing func_003F0A60; its earlier C declaration discarded that value and
+treated the size as a pointer. The duplicate compiled source was corrected
+as well. All affected credited functions remain byte-exact. Focused tests
+exercise the real downstream allocator calculation, both pool modes,
+insufficient capacity and recovery, including negative controls. This
+interface correction adds no new CODE or DATA credit.
