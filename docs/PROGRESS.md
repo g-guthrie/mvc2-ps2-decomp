@@ -8472,3 +8472,19 @@ bytes (84.4048%), with 19,148 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 25,088 bytes away.
+
+
+## Owner-copy tail
+
+Recovered func_00363CD0 (168 bytes) with MWCCPS2 3.0, -O3,p and
+small-data threshold zero. The complete compiler output matches retail,
+including its tail call. It copies the owner's state and enters the existing
+owner dispatcher. Focused tests exercise both dispatch heads, all 196 copied
+bytes, the forwarded owner and phase wrap, with negative controls. Existing
+callback-table storage is unchanged.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,780,204 / 3,293,696
+bytes (84.4099%), with 19,149 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 24,920 bytes away.

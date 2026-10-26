@@ -16204,7 +16204,7 @@ func_00363BC0,0x00363BC0,0x8,0x00363BC8,code,spimdisasm-explicit-size-before-fir
 func_00363BD0,0x00363BD0,0x54,0x00363C24,code,spimdisasm-explicit-size-before-first-data
 func_00363C30,0x00363C30,0x74,0x00363CA4,code,spimdisasm-explicit-size-before-first-data
 func_00363CB0,0x00363CB0,0x20,0x00363CD0,code,matching-c-head-split
-residual_00363CD0,0x00363CD0,0xA8,0x00363D78,assembly_residual,verified-boundary-after-matching-head
+func_00363CD0,0x00363CD0,0xA8,0x00363D78,code,verified-pointer-entry-and-whole-function
 func_00363D80,0x00363D80,0x24,0x00363DA4,code,matching-c-head-split
 func_00363DB0,0x00363DB0,0x20,0x00363DD0,code,verified-complete-c-function
 residual_00363DD0,0x00363DD0,0x194,0x00363F64,assembly_residual,native-suffix-after-verified-c-body
