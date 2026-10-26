@@ -52,7 +52,7 @@ extern s32 func_003DD030(s32);
 extern s32 func_003DA750(s32, s32, s32);
 extern int func_00175910(u8 *, s32, s32, s32);
 extern s32 func_00118FA8(f32);
-extern void func_003F0B70(void *, void *, s32, u8 *, u8 *, u8 *, s32);
+extern void func_003F0B70(void *, void *, s32, u8 *, u32, u32, s32);
 extern void func_003D77C0(void);
 
 void func_003DD040(void);
@@ -236,9 +236,10 @@ void func_003C3D60(u8 *p, u8 *q)
     S(p, 0xd0) = (s16)func_00118FA8((f32)S(p, 0xd0) + F(p, 0x5c));
 }
 
-void func_003DB980(u8 *a, u8 *b, u8 *c)
+/* The retail caller supplies a base address, byte length, and alignment. */
+void func_003DB980(u8 *base, u32 length, u32 alignment)
 {
-    func_003F0B70(D_005BF280, D_0058F280, 0x3000, a, b, c, 1);
+    func_003F0B70(D_005BF280, D_0058F280, 0x3000, base, length, alignment, 1);
 }
 
 void func_003D7770(u8 *p)

@@ -8679,3 +8679,14 @@ bytes (84.4800%), with 19,160 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 22,608 bytes away.
+
+
+## Native pool initialization interface
+
+Corrected the existing func_003DB980 interface and its func_003F0B70
+declaration: the final two forwarded inputs are byte length and alignment,
+not pointers. The native call at 0x003EC1F0 supplies length 0x600000 and
+alignment 0x10, and the downstream native code uses them in size and
+alignment arithmetic. The entire source object, including the 40-byte
+wrapper, remains byte-exact. The 220-byte downstream function remains
+unmatched and receives no new credit.
