@@ -390,7 +390,7 @@ extern DispatchFn jtbl_004C2020[2];
 extern DispatchFn jtbl_004C2028[2];
 extern DispatchFn jtbl_004C2048[2];
 extern DispatchFn jtbl_004C2068[2];
-extern DispatchFn jtbl_004C2518[2];
+extern void (*const jtbl_004C2518[2])(u8 *, u8 *) __attribute__((section(".sdata")));
 extern DispatchFn jtbl_004C2520[2];
 
 void func_001363D0(u8 *p) { jtbl_004BF360[p[5]](p); }
@@ -1169,7 +1169,7 @@ void func_003B9050(u8 *p) { jtbl_004C2048[p[6]](p); }
 
 void func_003BA9C0(u8 *p) { jtbl_004C2068[p[5]](p); }
 
-void func_0041A840(u8 *p) { jtbl_004C2518[p[5]](p); }
+void func_0041A840(u8 *p, u8 *owner) { jtbl_004C2518[p[5]](p, owner); }
 
 void func_0041AA90(u8 *p) { jtbl_004C2520[p[5]](p); }
 
