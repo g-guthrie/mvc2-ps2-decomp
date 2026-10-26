@@ -16,7 +16,7 @@ extern u8 D_004C1258[8];
 extern u16 D_004C1260[4];
 extern void (*D_004BFE30[2])(u8 *, u8 *);
 extern void (*D_004BFE20[2])(u8 *);
-extern void (*D_004BF790[14])(u8 *, u8 *) __attribute__((section(".sdata")));
+extern void (*const D_004BF790[14])(u8 *, void *) __attribute__((section(".sdata")));
 extern void (*D_004771B0[])(void);
 extern s32 (*D_0045E930[])(u8 *);
 extern s32 D_004F1CB4[];
@@ -73,7 +73,8 @@ extern s32 func_003D92F0(u8 *);
 extern void func_001843A0(u8 *);
 
 
-void func_001A72C0(u8 *a, u8 *b) {
+void func_001A72C0(u8 *a,void *owner_context) {
+    u8 *b=owner_context;
     *(s8 *)(a + 0x24) = *(s8 *)(b + 0x24);
     if (b[0x169] != 0x13) a[4]++;
     else D_004BF790[a[5]](a, b);

@@ -1,6 +1,6 @@
 typedef const unsigned char *Mvc2Address;
 extern const unsigned char lbl_001A72B0[];
-extern void func_001A74B0(void);
+extern void func_001A74B0(unsigned char *,void *);
 extern void func_001A7EE0(void);
 extern void func_001A7FA0(void);
 extern void func_001A8020(void);

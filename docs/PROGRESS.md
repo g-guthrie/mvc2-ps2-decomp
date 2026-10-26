@@ -7681,3 +7681,53 @@ CODE is 2,767,672 / 3,293,696 bytes (84.0294%), with 19,102 matches among
 next fixed CODE checkpoint remains 2,772,187 bytes, 4,515 bytes away.
 A larger 724-byte variant model remains private and uncredited because its
 compiler output still differs from retail.
+
+
+## Side initialization and fixed-point owner motion (+1,236 CODE bytes)
+
+Recovered func_001A7160 (328 bytes, Metrowerks 3.0), func_00195F60
+(448 bytes), func_00196460 (60 bytes) and func_001964A0 (400 bytes), the
+latter three under Metrowerks 3.0.3. All use -O3,p and small-data threshold
+zero. Native table pointers and complete returns verify each entry. The
+old 464-byte catalog span at 0x00196460 contained two independent functions
+and a four-byte gap; both complete functions are now reconstructed. Twelve,
+four and four alignment bytes remain uncredited. No denominator changes.
+
+The side initializer copies 196 owner-state bytes, identity, scale and
+position, sets facing from its side selector, applies the signed side offset,
+and calls the real owner update. The mode-zero constructor callers pass only
+side zero or one; the factory's other modes use different callback roots and
+may pass other selector values. The two-entry signed offset view therefore
+retains its actual mode-specific bounds. Its primary dispatcher now forwards
+owner explicitly. Shared lifecycle/frame wrappers use their actual callback
+interface and actor argument rather than fabricated integer inputs. The
+complete old functions and callback objects remain byte-exact.
+
+The 448-byte initializer uses eight fixed-point rows at 0x00449F00, selected
+by the eight-iteration constructor at func_00194A20. It copies owner facing
+and position, applies the native gain/division order to three horizontal and
+three vertical values, sets its timer and selects a random frame from the
+low two bits. The 60-byte dispatcher clears one owner-work byte and one
+actor-work byte when the owner state differs from 22, then always dispatches
+the current phase with both actual inputs.
+
+The 400-byte initializer accepts only style selectors below two. Its native
+vertical coordinate lookup uses actor byte 0x20, while the horizontal offset,
+velocity and depth use byte 0x21. That mixed indexing is retained explicitly.
+It applies facing to horizontal values, clears acceleration and starts its
+random animation frame. Column aliases add no DATA credit or ownership claim.
+
+Tests compare full actor/owner buffers, side offsets, facing independent of
+owner facing, signed frame results and real nested frame/lifecycle callbacks.
+They check all eight fixed-point rows, all three dispatch phases, one-byte
+reset extents, random masks and all byte style values for the mixed selector
+guard. Wrong owner flow, omitted owner reset, the wrong extra-acceleration
+column, substituting style for the vertical selector and skipping style one
+all fail negative controls. All 230 tests and source/build/catalog gates pass.
+
+Whole compiler/data objects and the complete loaded image and executable
+remain retail-exact. ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+CODE is 2,768,908 / 3,293,696 bytes (84.0669%), with 19,106 matches among
+20,458 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%). The
+next fixed CODE checkpoint remains 2,772,187 bytes, 3,279 bytes away.

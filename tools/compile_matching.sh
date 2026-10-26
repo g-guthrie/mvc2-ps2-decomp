@@ -21251,4 +21251,20 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_event_offset_00396230.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_event_offset_00396230.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_event_offset_00396230.o" private/SLUS_204.86.rom --source src/owner_event_offset_00396230.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_side_start_001a7160.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_side_start_001a7160.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_side_start_001a7160.o" private/SLUS_204.86.rom --source src/owner_side_start_001a7160.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_fixed_step_start_00195f60.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_fixed_step_start_00195f60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_fixed_step_start_00195f60.o" private/SLUS_204.86.rom --source src/owner_fixed_step_start_00195f60.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_state_phase_00196460.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_state_phase_00196460.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_state_phase_00196460.o" private/SLUS_204.86.rom --source src/owner_state_phase_00196460.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_mixed_motion_start_001964a0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_mixed_motion_start_001964a0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_mixed_motion_start_001964a0.o" private/SLUS_204.86.rom --source src/owner_mixed_motion_start_001964a0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

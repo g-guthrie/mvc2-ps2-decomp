@@ -12,9 +12,9 @@ for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
 
 | | Matched | Total | |
 | --- | ---: | ---: | ---: |
-| Code | 2,767,672 bytes | 3,293,696 bytes | **84.03%** |
+| Code | 2,768,908 bytes | 3,293,696 bytes | **84.07%** |
 | Initialized data | 468,873 bytes | 648,064 bytes | **72.35%** |
-| Catalog spans | 19,102 | 20,454 | |
+| Catalog spans | 19,106 | 20,458 | |
 
 Every matched function is C compiled with a period toolchain (Metrowerks
 MWCC 2.4/3.0/3.0.3, SN GCC 2.95.2, EE GCC 2.96, or Sony EE GCC 2.9) and
@@ -47,7 +47,7 @@ The generated graphic above shows the current catalog's matching code coverage.
 function counts and reconstructed-data coverage. Whole-object compiler
 verification and full-image linkage are separate private build checks.
 Assembly placeholders never count as decompiled source. The current inventory
-contains **20,454 cataloged text spans** after boundary corrections and splitting
+contains **20,458 cataloged text spans** after boundary corrections and splitting
 oversized dispatcher entries. Retained assembly residuals, text gaps and
 initialized data remain separately visible in the progress report.
 
@@ -223,9 +223,9 @@ Verified code is pushed at least after each additional full percentage point.
 The latest checkpoint also publishes the EE GCC sibling-call profile described
 in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 
-The latest verified CODE checkpoint is 2,767,672 / 3,293,696 bytes
-(84.0294%). Three complete handlers add 464 CODE bytes for variant
-initialization, signed depth dispatch and owner/event-driven positioning.
-Their owner flow and lifecycle interfaces are repaired. All 220 tests pass,
-and the full executable remains identical to retail. DATA remains 468,873 /
-648,064 bytes (72.3498%).
+The latest verified CODE checkpoint is 2,768,908 / 3,293,696 bytes
+(84.0669%). Four complete handlers add 1,236 CODE bytes for side-dependent
+initialization, fixed-point motion and owner-state dispatch. The native
+mixed selectors and owner-work resets are preserved. All 230 tests pass,
+and full-image linkage remains retail-exact. DATA remains 468,873 / 648,064
+bytes (72.3498%).

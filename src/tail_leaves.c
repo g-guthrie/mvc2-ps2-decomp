@@ -371,11 +371,11 @@ void func_001A5D70(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Obje
 
 void func_001A70A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
-void func_001A72B0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175670(a0, a1, a2, a3); }
+void func_001A72B0(u8 *p,void *owner_context_unused) { func_00175670(p); }
 
-void func_001A7810(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175700((u8 *)a0); }
+void func_001A7810(u8 *p,void *owner_context_unused) { func_00175700(p); }
 
-void func_001A78C0(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40((struct Object *)(p)); }
+void func_001A78C0(u8 *p,void *owner_context_unused) { p[316] = 0; func_003DAA40((struct Object *)p); }
 
 void func_001A7CC0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00175670(a0, a1, a2, a3); }
 

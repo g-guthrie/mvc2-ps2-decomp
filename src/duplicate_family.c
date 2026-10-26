@@ -33,7 +33,7 @@ void func_003113E0(void *p) { if ((s8)func_00175700(p) < 0) { func_00184540(p); 
 void func_00194960(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 void func_0019FC00(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 void func_001A39E0(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
-void func_001A78A0(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
+void func_001A78A0(u8 *p,void *owner_context_unused) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 void func_001D91B0(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 void func_001D9D50(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 void func_001DF4B0(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }

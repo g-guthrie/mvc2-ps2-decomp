@@ -44,7 +44,7 @@ extern void func_001BFB10(void);
 extern void func_001B6FA0(void);
 extern void func_001B73B0(u8 *);
 
-void func_001A7720(u8 *p) {
+void func_001A7720(u8 *p,void *owner_unused) {
     s16 t = S(p, 0x1c);
     S(p, 0x1c) = t - 1;
     if (t == 0) {

@@ -3034,10 +3034,13 @@ residual_00195D2C,0x00195D2C,0x4,0x00195D30,alignment_padding,verified-nop-gap-a
 func_00195D30,0x00195D30,0x154,0x00195E84,code,verified-pointer-entry-and-whole-function
 func_00195E90,0x00195E90,0xAC,0x00195F3C,code,spimdisasm-explicit-size-before-first-data
 func_00195F40,0x00195F40,0x1C,0x00195F5C,code,matching-c-head-split
-residual_00195F5C,0x00195F5C,0x1C4,0x00196120,assembly_residual,verified-boundary-after-matching-head
+residual_00195F5C,0x00195F5C,0x4,0x00195F60,alignment_padding,verified-nop-gap-after-dispatch-delay-slot
+func_00195F60,0x00195F60,0x1C0,0x00196120,code,verified-pointer-entry-and-whole-function
 func_00196120,0x00196120,0x134,0x00196254,code,spimdisasm-explicit-size-before-first-data
 func_00196260,0x00196260,0x1F8,0x00196458,code,spimdisasm-explicit-size-before-first-data
-func_00196460,0x00196460,0x1D0,0x00196630,code,spimdisasm-explicit-size-before-first-data
+func_00196460,0x00196460,0x3C,0x0019649C,code,verified-pointer-entry-and-whole-function
+residual_0019649C,0x0019649C,0x4,0x001964A0,alignment_padding,verified-nop-gap-before-independent-frame-entry
+func_001964A0,0x001964A0,0x190,0x00196630,code,verified-pointer-entry-and-whole-function
 func_00196630,0x00196630,0x88,0x001966B8,code,spimdisasm-explicit-size-before-first-data
 func_001966C0,0x001966C0,0x38,0x001966F8,code,verified-source-recovery
 residual_001966F8,0x001966F8,0x8,0x00196700,assembly_residual,uncredited-native-alignment
@@ -3522,7 +3525,8 @@ func_001A6F90,0x001A6F90,0x104,0x001A7094,code,spimdisasm-explicit-size-before-f
 func_001A70A0,0x001A70A0,0x8,0x001A70A8,code,spimdisasm-explicit-size-before-first-data
 func_001A70B0,0x001A70B0,0x74,0x001A7124,code,spimdisasm-explicit-size-before-first-data
 func_001A7130,0x001A7130,0x24,0x001A7154,code,matching-c-head-split
-residual_001A7154,0x001A7154,0x154,0x001A72A8,assembly_residual,verified-boundary-after-matching-head
+residual_001A7154,0x001A7154,0xC,0x001A7160,alignment_padding,verified-nop-gap-after-dispatch-delay-slot
+func_001A7160,0x001A7160,0x148,0x001A72A8,code,verified-pointer-entry-and-whole-function
 func_001A72B0,0x001A72B0,0x8,0x001A72B8,code,spimdisasm-explicit-size-before-first-data
 func_001A72C0,0x001A72C0,0x58,0x001A7318,code,spimdisasm-explicit-size-before-first-data
 func_001A7320,0x001A7320,0x20,0x001A7340,code,matching-c-head-split

@@ -120,7 +120,7 @@ extern ContextDispatchFn jtbl_0044B150[];
 extern DispatchFn jtbl_0044B3B0[];
 extern DispatchFn jtbl_0044B3C0[];
 extern DispatchFn jtbl_0044B410[];
-extern DispatchFn jtbl_0044B430[];
+extern Mvc2OwnerStateCallback const jtbl_0044B430[11];
 extern ContextDispatchFn jtbl_0044B460[];
 extern DispatchFn jtbl_0044B4E0[];
 
@@ -1580,7 +1580,7 @@ void func_001A5BC0(u8 *p) { jtbl_0044B3C0[p[4]](p); }
 
 void func_001A6EB0(u8 *p) { jtbl_0044B410[p[4]](p); }
 
-void func_001A7320(u8 *p) { jtbl_0044B430[p[4]](p); }
+void func_001A7320(u8 *p,void *owner_context) { jtbl_0044B430[p[4]](p,owner_context); }
 
 void func_001A7880(u8 *p, void *owner) { jtbl_0044B460[p[4]](p, owner); }
 

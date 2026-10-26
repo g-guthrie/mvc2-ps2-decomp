@@ -1,7 +1,7 @@
 typedef unsigned char u8;
 typedef void (*DispatchFn2)(u8 *, u8 *);
 
-extern DispatchFn2 jtbl_004BF580[2] __attribute__((section(".sdata")));
+extern DispatchFn2 const jtbl_004BF580[2] __attribute__((section(".sdata")));
 
 void func_001966C0(u8 *p, u8 *q)
 {
