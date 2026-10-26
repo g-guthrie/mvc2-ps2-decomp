@@ -8521,3 +8521,23 @@ bytes (84.4208%), with 19,151 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 24,560 bytes away.
+
+
+## Actor effect start
+
+Recovered func_0024AD30 (216 bytes) with MWCCPS2 3.0.3, -O3,p and
+small-data threshold zero. The complete function matches retail. It resets
+motion, initializes an effect position, starts animation and sound, and
+executes the existing update. Focused tests exercise the native dispatch
+entry, both facing cases and the call sequence with negative controls.
+
+The native function writes only x and y of its stack position before passing
+it to func_0015B200; the effect path may copy the unwritten z component. The
+C reflects that omission. The z value is indeterminate, and reading it has
+undefined behavior in C; the test does not assert a value for it.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,780,780 / 3,293,696
+bytes (84.4273%), with 19,152 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 24,344 bytes away.

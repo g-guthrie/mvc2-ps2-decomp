@@ -8232,7 +8232,7 @@ func_0024AC50,0x0024AC50,0x50,0x0024ACA0,code,spimdisasm-explicit-size-before-fi
 func_0024ACA0,0x0024ACA0,0x58,0x0024ACF8,code,spimdisasm-explicit-size-before-first-data
 func_0024AD00,0x0024AD00,0xC,0x0024AD0C,code,spimdisasm-explicit-size-before-first-data
 func_0024AD10,0x0024AD10,0x20,0x0024AD30,code,matching-c-head-split
-residual_0024AD30,0x0024AD30,0xD8,0x0024AE08,assembly_residual,verified-boundary-after-matching-head
+func_0024AD30,0x0024AD30,0xD8,0x0024AE08,code,verified-pointer-entry-and-whole-function
 func_0024AE10,0x0024AE10,0xC0,0x0024AED0,code,spimdisasm-explicit-size-before-first-data
 func_0024AED0,0x0024AED0,0x8,0x0024AED8,code,spimdisasm-explicit-size-before-first-data
 func_0024AEE0,0x0024AEE0,0x11C,0x0024AFFC,code,spimdisasm-explicit-size-before-first-data
