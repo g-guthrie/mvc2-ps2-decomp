@@ -19195,3 +19195,4 @@ func_002F0110,0x002F0110,0xD0,src/actor_dash_setup_002f0110.c,complete
 func_0036D7D0,0x0036D7D0,0x68,src/owner_phase_update_0036d7d0.c,complete
 func_0021ED90,0x0021ED90,0x4C,src/frame_palette_phase_0021ed90.c,complete
 func_0021D400,0x0021D400,0xB8,src/frame_palette_cancel_0021d400.c,complete
+func_003718B0,0x003718B0,0xA0,src/owner_fade_phase_003718b0.c,complete

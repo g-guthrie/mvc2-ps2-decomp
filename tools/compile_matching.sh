@@ -21375,4 +21375,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/frame_palette_cancel_0021d400.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/frame_palette_cancel_0021d400.o"
 "$PYTHON" tools/verify_object.py "$BUILD/frame_palette_cancel_0021d400.o" private/SLUS_204.86.rom --source src/frame_palette_cancel_0021d400.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_fade_phase_003718b0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_fade_phase_003718b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_fade_phase_003718b0.o" private/SLUS_204.86.rom --source src/owner_fade_phase_003718b0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

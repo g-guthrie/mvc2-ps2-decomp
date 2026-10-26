@@ -8219,3 +8219,20 @@ bytes (84.2962%), with 19,133 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 28,664 bytes away.
+
+
+## Owner fade phase
+
+Recovered func_003718B0 (160 bytes) with MWCCPS2 3.0.3, -O3,p and
+small-data threshold zero. The complete compiler output matches retail.
+The handler advances when its owner is in another state; otherwise it
+reduces a nonzero fade value and clamps it at zero, then either advances
+its subphase on a negative signed animation flag or updates animation.
+Tests cover owner states, both sides of the clamp, signed flag values and
+phase wrap, with negative controls for each branch.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,776,620 / 3,293,696
+bytes (84.3010%), with 19,134 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 28,504 bytes away.
