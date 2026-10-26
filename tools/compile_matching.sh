@@ -21498,4 +21498,7 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --extra-flags=-fno-optimize-s
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_clear_bytes_00102548.o" "$BUILD/sony29_clear_bytes_00102548.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_clear_bytes_00102548.o" private/SLUS_204.86.rom --source src/sony29_clear_bytes_00102548.c
 
+MWCIncludes=$(dirname "$MWCCPS2_24") "$WIBO" "$MWCCPS2_24" src/scene_category_select_00143860.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/scene_category_select_00143860.o"
+"$PYTHON" tools/verify_object.py "$BUILD/scene_category_select_00143860.o" private/SLUS_204.86.rom --source src/scene_category_select_00143860.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
