@@ -8505,3 +8505,19 @@ bytes (84.4158%), with 19,150 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 24,724 bytes away.
+
+
+## Actor motion start
+
+Recovered func_002F8470 (164 bytes) with MWCCPS2 3.0.3, -O3,p and
+small-data threshold zero. The entire function matches retail: it advances
+the phase, initializes a timer and motion fields, selects horizontal speed
+from facing, and updates position. Focused tests cover the first-state
+dispatch, nonzero facing values and phase wrap, with negative controls.
+The existing callback-table storage is unchanged.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,780,564 / 3,293,696
+bytes (84.4208%), with 19,151 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 24,560 bytes away.

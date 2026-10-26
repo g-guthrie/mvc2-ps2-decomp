@@ -19212,3 +19212,4 @@ func_002E07B0,0x002E07B0,0x24,src/actor_motion_tail_002e07b0.c,complete
 func_00214D60,0x00214D60,0x6C,src/actor_launch_tail_00214d60.c,complete
 func_00363CD0,0x00363CD0,0xA8,src/owner_copy_tail_00363cd0.c,complete
 func_0035DFC0,0x0035DFC0,0xC4,src/owner_context_copy_tail_0035dfc0.c,complete
+func_002F8470,0x002F8470,0xA4,src/actor_motion_start_002f8470.c,complete
