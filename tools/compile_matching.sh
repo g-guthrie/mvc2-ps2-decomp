@@ -21493,4 +21493,9 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --extra-flags=-fno-optimize-s
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_rpc_busy_00107058.o" "$BUILD/sony29_rpc_busy_00107058.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_rpc_busy_00107058.o" private/SLUS_204.86.rom --source src/sony29_rpc_busy_00107058.c
 
+"$WIBO" "$SNCPP" -P src/sony29_clear_bytes_00102548.c "$BUILD/sony29_clear_bytes_00102548.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_clear_bytes_00102548.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_clear_bytes_00102548.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_clear_bytes_00102548.o" "$BUILD/sony29_clear_bytes_00102548.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_clear_bytes_00102548.o" private/SLUS_204.86.rom --source src/sony29_clear_bytes_00102548.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

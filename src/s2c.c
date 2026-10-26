@@ -1,21 +1,5 @@
 /* Hand-written SDK assembly (VU0 helpers, delay loops). */
 #define FN(name, body) __asm__(".section .text." #name ",\"ax\",@progbits\n.p2align 3\n.globl " #name "\n.ent " #name "\n" #name ":\n.set noreorder\n.set noat\n" body ".set reorder\n.end " #name "\n")
-FN(func_00102548,
-  "beqz $5,2f\n"
-  "addiu $2,$5,-1\n"
-  "addiu $3,$0,-1\n"
-  "nop\n"
-  "1:\n"
-  "sb $0,0($4)\n"
-  "addiu $2,$2,-1\n"
-  "addiu $4,$4,1\n"
-  "nop\nnop\n"
-  "bne $2,$3,1b\n"
-  "nop\n"
-  "2:\n"
-  "jr $31\n"
-  "nop\n"
-  );
 FN(func_00103868,
   ".word 0x4BE0012C /* vsub.xyzw  $vf4, $vf0, $vf0 */\n"
   ".word 0x3C024580 /* lui        $v0, (0x45800000 >> 16) */\n"
