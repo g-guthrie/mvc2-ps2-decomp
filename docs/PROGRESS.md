@@ -8307,3 +8307,23 @@ bytes (84.3370%), with 19,138 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 27,320 bytes away.
+
+
+## Actor spatial setup
+
+Recovered func_00357C80 (360 bytes) with MWCCPS2 3.0, -O3,p and
+small-data threshold zero. Its complete compiler output matches retail.
+It copies owner state, computes an owner-relative position, initializes
+actor state and dispatches the existing effect and sound helpers. The
+compiler-visible static position helper is the complete real func_003578A0
+body, independently verified against all 156 retail bytes; it is already
+credited and receives no additional CODE credit. The table views refer to
+existing DATA units and claim no new DATA bytes. Focused tests cover the
+four exercised table rows, facing, copied fields and callback order, with
+negative controls.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,778,164 / 3,293,696
+bytes (84.3479%), with 19,139 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 26,960 bytes away.

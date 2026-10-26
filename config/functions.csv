@@ -15852,7 +15852,7 @@ func_00357A40,0x00357A40,0xE8,0x00357B28,code,spimdisasm-explicit-size-before-fi
 func_00357B30,0x00357B30,0x110,0x00357C40,code,spimdisasm-explicit-size-before-first-data
 func_00357C40,0x00357C40,0x20,0x00357C60,code,matching-c-head-split
 residual_00357C60,0x00357C60,0x20,0x00357C80,assembly_residual,verified-boundary-after-matching-head
-residual_00357C80,0x00357C80,0x168,0x00357DE8,assembly_residual,verified-boundary-after-matching-head
+func_00357C80,0x00357C80,0x168,0x00357DE8,code,verified-pointer-entry-and-whole-function
 func_00357DF0,0x00357DF0,0x12C,0x00357F1C,code,spimdisasm-explicit-size-before-first-data
 func_00357F20,0x00357F20,0x13C,0x0035805C,code,spimdisasm-explicit-size-before-first-data
 func_00358060,0x00358060,0x20,0x00358080,code,matching-c-head-split
