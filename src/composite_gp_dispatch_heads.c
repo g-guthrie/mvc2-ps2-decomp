@@ -151,7 +151,7 @@ extern DispatchFn jtbl_004C0300[2];
 extern DispatchFn jtbl_004C0308[2];
 extern DispatchFn jtbl_004C0310[2];
 extern DispatchFn jtbl_004C0368[2];
-extern DispatchFn jtbl_004C0378[2];
+extern ContextDispatchFn const jtbl_004C0378[2] __attribute__((section(".sdata")));
 extern DispatchFn jtbl_004C0380[2];
 extern DispatchFn jtbl_004C0398[2];
 extern DispatchFn jtbl_004C03A0[2];
@@ -667,7 +667,7 @@ void func_00242580(u8 *p) { jtbl_004C0310[p[6]](p); }
 
 void func_00245F10(u8 *p) { jtbl_004C0368[p[7]](p); }
 
-void func_002462E0(u8 *p) { jtbl_004C0378[p[7]](p); }
+void func_002462E0(u8 *p,void *work) { jtbl_004C0378[p[7]](p,work); }
 
 void func_002464C0(u8 *p) { jtbl_004C0380[p[7]](p); }
 

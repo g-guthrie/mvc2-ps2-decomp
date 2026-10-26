@@ -46,7 +46,7 @@ void func_002482C0(u8 *p)
     }
 }
 
-void func_002465F0(u8 *p)
+void func_002465F0(u8 *p,void *work_context_unused)
 {
     func_00175700(p);
     if (!*(s8 *)(p + 337)) {

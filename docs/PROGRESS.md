@@ -7994,3 +7994,50 @@ integer inputs. The shared release slot in 0x00472D80 is typed separately,
 retaining the other slots' existing contracts. All complete function objects,
 both complete DATA objects and the full retail executable still match.
 This interface correction adds no CODE or DATA credit.
+
+
+## Player action chains and bounded descriptor initialization
+
+Recovered func_00246180 (208 bytes), func_00246510 (216 bytes), and
+func_0034A1E0 (584 bytes). The two player initializers use MWCCPS2 3.0.3;
+the descriptor initializer uses 3.0-011126. All use -O3,p and small-data
+threshold zero. Every complete body matches retail. Twelve alignment bytes
+before the descriptor initializer remain uncredited; the denominator is unchanged.
+
+The player handlers run their actual setup sequence, clear motion and command
+fields, increment the current team's counter and enter the real tick handler.
+The first preserves the supplied work context through its tick call. The second
+clears exactly work byte nine before forwarding it. Native callers deliberately
+save and forward this input across setup calls. Immediate dispatch and tick
+interfaces now retain that context explicitly. The complete inlined reset
+operation follows the existing repository pattern without fake volatility,
+register assignments, padding or a substituted external callee.
+
+The descriptor initializer distinguishes its manager from its owner, copies
+196 owner-state bytes, places X using the manager's facing and carried offset,
+uses the owner's reference height and initializes timers and vertical motion
+from the four real stride-eight columns. The initial producer creates selector
+zero. The update only spawns below selector four, and its producer increments
+the selector, establishing the five-row normal chain. The existing 40-byte
+DATA object remains unchanged and byte-exact; no DATA credit is added.
+
+The child producer now explicitly returns its allocation pointer and its
+consumer declares that pointer result, matching the native non-null check.
+Both complete old bodies remain exact. Successful child allocation increments
+the owner's work counter; failure does not. Callback-address declarations
+also retain their actual unary actor input.
+
+Tests compare full actor, counter and work buffers with actual setup/tick
+bodies, workspace forwarding, signed frame bytes, noncanonical variants/events,
+phase/counter wrap, ten-child emissions, every descriptor row, independent
+manager/owner facing, both allocation outcomes and the terminal row guard.
+Negative controls reject the wrong context, neighboring work bytes, doubled
+counters, unsigned frame interpretation, the wrong facing input or column and
+a missing allocation return. All 294 tests and source/build/catalog gates pass.
+Whole compiler/data objects, the loaded image and packed executable remain exact.
+ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+
+CODE is 2,774,672 / 3,293,696 bytes (84.2419%); 19,125 matches among
+20,472 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
+The next fixed CODE threshold remains 2,805,124 bytes, 30,452 bytes away.

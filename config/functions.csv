@@ -8081,7 +8081,7 @@ func_00246030,0x00246030,0xA4,0x002460D4,code,spimdisasm-explicit-size-before-fi
 func_002460E0,0x002460E0,0x44,0x00246124,code,spimdisasm-explicit-size-before-first-data
 func_00246130,0x00246130,0x20,0x00246150,code,matching-c-head-split
 residual_00246150,0x00246150,0x30,0x00246180,code,verified-grok-source-recovery
-residual_00246180,0x00246180,0xD0,0x00246250,assembly_residual,native-remainder-after-verified-c-entry
+func_00246180,0x00246180,0xD0,0x00246250,code,verified-pointer-entry-and-whole-function
 func_00246250,0x00246250,0x8C,0x002462DC,code,spimdisasm-explicit-size-before-first-data
 func_002462E0,0x002462E0,0x1C,0x002462FC,code,matching-c-head-split
 func_00246300,0x00246300,0xF4,0x002463F4,code,verified-complete-c-function
@@ -8089,7 +8089,7 @@ func_00246400,0x00246400,0xC0,0x002464C0,code,spimdisasm-explicit-size-before-fi
 func_002464C0,0x002464C0,0x1C,0x002464DC,code,matching-c-head-split
 residual_002464DC,0x002464DC,0x4,0x002464E0,assembly_residual,native-prefix-before-verified-c-entry
 func_002464E0,0x002464E0,0x30,0x00246510,code,verified-grok-source-recovery
-residual_00246510,0x00246510,0xD8,0x002465E8,assembly_residual,native-remainder-after-verified-c-entry
+func_00246510,0x00246510,0xD8,0x002465E8,code,verified-pointer-entry-and-whole-function
 func_002465F0,0x002465F0,0x58,0x00246648,code,spimdisasm-explicit-size-before-first-data
 func_00246650,0x00246650,0x90,0x002466E0,code,spimdisasm-explicit-size-before-first-data
 func_002466E0,0x002466E0,0x6C,0x0024674C,code,spimdisasm-explicit-size-before-first-data
@@ -15498,7 +15498,8 @@ func_0034A0C0,0x0034A0C0,0x8,0x0034A0C8,code,spimdisasm-explicit-size-before-fir
 func_0034A0D0,0x0034A0D0,0x68,0x0034A138,code,spimdisasm-explicit-size-before-first-data
 func_0034A140,0x0034A140,0x70,0x0034A1B0,code,spimdisasm-explicit-size-before-first-data
 func_0034A1B0,0x0034A1B0,0x24,0x0034A1D4,code,matching-c-head-split
-residual_0034A1D4,0x0034A1D4,0x254,0x0034A428,assembly_residual,verified-boundary-after-matching-head
+residual_0034A1D4,0x0034A1D4,0xC,0x0034A1E0,alignment_padding,verified-nop-gap-after-dispatch-delay-slot
+func_0034A1E0,0x0034A1E0,0x248,0x0034A428,code,verified-pointer-entry-and-whole-function
 func_0034A430,0x0034A430,0x74,0x0034A4A4,code,spimdisasm-explicit-size-before-first-data
 func_0034A4B0,0x0034A4B0,0x9C,0x0034A54C,code,spimdisasm-explicit-size-before-first-data
 func_0034A550,0x0034A550,0x40,0x0034A590,code,spimdisasm-explicit-size-before-first-data

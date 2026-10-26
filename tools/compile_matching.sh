@@ -21331,4 +21331,16 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/inherited_action_start_003a50e0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/inherited_action_start_003a50e0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/inherited_action_start_003a50e0.o" private/SLUS_204.86.rom --source src/inherited_action_start_003a50e0.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/player_action_chain_start_00246180.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/player_action_chain_start_00246180.o"
+"$PYTHON" tools/verify_object.py "$BUILD/player_action_chain_start_00246180.o" private/SLUS_204.86.rom --source src/player_action_chain_start_00246180.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/player_work_chain_start_00246510.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/player_work_chain_start_00246510.o"
+"$PYTHON" tools/verify_object.py "$BUILD/player_work_chain_start_00246510.o" private/SLUS_204.86.rom --source src/player_work_chain_start_00246510.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/descriptor_chain_start_0034a1e0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/descriptor_chain_start_0034a1e0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/descriptor_chain_start_0034a1e0.o" private/SLUS_204.86.rom --source src/descriptor_chain_start_0034a1e0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

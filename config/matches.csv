@@ -19184,3 +19184,6 @@ func_0023EB90,0x0023EB90,0x98,src/actor_owner_direction_event_0023eb90.c,complet
 func_00242E50,0x00242E50,0x9C,src/actor_late_turn_offset_00242e50.c,complete
 func_002CDB90,0x002CDB90,0x164,src/actor_mode_air_launch_002cdb90.c,complete
 func_003A50E0,0x003A50E0,0x13C,src/inherited_action_start_003a50e0.c,complete
+func_00246180,0x00246180,0xD0,src/player_action_chain_start_00246180.c,complete
+func_00246510,0x00246510,0xD8,src/player_work_chain_start_00246510.c,complete
+func_0034A1E0,0x0034A1E0,0x248,src/descriptor_chain_start_0034a1e0.c,complete

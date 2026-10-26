@@ -12,7 +12,7 @@ extern void func_001843A0(u8 *);
 extern void func_00248320(u8 *);
 extern void func_00360530(u8 *, s32, s32);
 
-void func_00246250(u8 *p) {
+void func_00246250(u8 *p,void *work_context_unused) {
     s32 i;
     if ((s8)func_00175700(p) < 0) {
         func_001843A0(p);

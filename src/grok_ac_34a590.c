@@ -5,7 +5,7 @@ typedef signed short s16;
 typedef signed int s32;
 
 extern void (*D_00461F88[])(u8 *, u8 *);
-extern s32 func_0034A140(u8 *);
+extern u8 *func_0034A140(u8 *);
 extern void func_001E7F60(u8 *);
 
 void func_0034A590(u8 *p, u8 *q)

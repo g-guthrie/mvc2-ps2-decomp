@@ -10,7 +10,7 @@ extern void func_00156E10(void);
 extern void func_00157740(void);
 extern void func_00158170(void);
 extern void func_003B75E0(void);
-extern void func_0034A1B0(void);
+extern void func_0034A1B0(u8 *);
 extern void func_001DB410(void);
 extern void func_0033D5F0(void);
 extern void func_001D4650(void);
@@ -119,7 +119,7 @@ void func_0033D580(u8 *src)
     }
 }
 
-void func_0034A140(u8 *src)
+u8 *func_0034A140(u8 *src)
 {
     u8 *p = func_003DA750((s32)src, 1, 2);
     if (p != 0) {
@@ -132,6 +132,7 @@ void func_0034A140(u8 *src)
         S(p, 38) = 0x302;
         F(p, 92) = F(src, 52);
     }
+    return p;
 }
 
 void func_001D45D0(u8 *src, u8 mode)
