@@ -23437,3 +23437,4 @@ func_0040EF70 = 0x0040EF70;
 gAdxRnaTempCountsFormat_004BBF48 = 0x004BBF48;
 gAdxRnaIopTempCountsFormat_004BBF68 = 0x004BBF68;
 gAdxRnaStatusTotalsFormat_004BBF88 = 0x004BBF88;
+func_003FCD80 = 0x003FCD80;
