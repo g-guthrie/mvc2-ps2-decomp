@@ -56,18 +56,18 @@ void func_0019EC90(u8 *p)
 
 s32 func_003F3770(s32 *d, u16 *s)
 {
-    extern void func_003F5540(void *);
+    extern int func_003F5540(const char *, ...);
     extern u8 D_004BACB0[];
     extern u8 D_004BACF0[];
     s32 w;
     if (s[0] != 0x4D42) {
-        func_003F5540(D_004BACB0);
+        func_003F5540((const char *)D_004BACB0);
         return 0;
     }
     d[1] = s[9] | (s[10] << 16);
     d[2] = s[11] | (s[12] << 16);
     if (s[14] != 0x18) {
-        func_003F5540(D_004BACF0);
+        func_003F5540((const char *)D_004BACF0);
         return 0;
     }
     d[5] = 3;

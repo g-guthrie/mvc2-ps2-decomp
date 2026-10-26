@@ -8574,3 +8574,21 @@ bytes (84.4490%), with 19,154 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 23,632 bytes away.
+
+
+## SDK formatted-message helper
+
+Recovered func_003F5540 (112 bytes) with MWCCPS2 3.0.3, -O3,p and
+small-data threshold zero. The whole function matches retail, including
+the PS2 EABI variadic argument setup. It forwards a format and argument list
+to the existing formatter, writes to the native shared buffer at 0x0062C7E0,
+and returns 1. Both existing BMP call sites now declare the variadic function
+with its correct return type and remain byte-exact.
+
+The native formatter does not enforce an output length, and the backing
+buffer's full extent has not been reconstructed; no new DATA is credited.
+The rebuilt loaded image and ELF match retail. CODE is 2,781,604 / 3,293,696
+bytes (84.4524%), with 19,155 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 23,520 bytes away.
