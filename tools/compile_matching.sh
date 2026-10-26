@@ -21347,4 +21347,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_colour_flag_step_001cf0b0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_colour_flag_step_001cf0b0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_colour_flag_step_001cf0b0.o" private/SLUS_204.86.rom --source src/owner_colour_flag_step_001cf0b0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/paired_arc_start_001e1c60.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/paired_arc_start_001e1c60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/paired_arc_start_001e1c60.o" private/SLUS_204.86.rom --source src/paired_arc_start_001e1c60.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

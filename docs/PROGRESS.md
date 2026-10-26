@@ -8072,3 +8072,40 @@ ELF SHA-256 remains
 CODE is 2,774,868 / 3,293,696 bytes (84.2478%); 19,126 matches among
 20,472 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
 The next fixed CODE threshold remains 2,805,124 bytes, 30,256 bytes away.
+
+
+## Paired arc initialization
+
+Recovered func_001E1C60 (708 bytes) with MWCCPS2 3.0-011126, -O3,p and
+small-data threshold zero. Its entire body matches retail; its existing
+residual span is replaced without changing the text denominator. Its object
+contains only this function and no separately emitted helper.
+
+The initializer copies owner state, snapshots four tables, sets orientation
+for paired selectors, and initializes position, velocity, angle, sprite
+fields and animation. The parent-facing input controls horizontal motion;
+the child's facing toggles for even selectors. The renderer sees the new
+lifecycle flags after the animation callback. The producer for this path assigns selectors 0 through 9, matching the ten
+position, velocity and frame entries and the five paired angles. A sibling
+producer uses the same range but selects a different handler. The source uses typed external views;
+it adds no DATA storage or DATA credit.
+
+The table bytes occupy 0x0044F050..0x0044F0C2, with alignment gaps between
+some tables. Existing catalog units split this area at 0x0044F058 and
+0x0044F060; the 0x0044F058 unit describes position-pair bits as pointers.
+The linked bytes still match retail, but the ownership/type classification
+needs separate repair. The reported DATA percentage is therefore a catalog
+figure, not proof that every credited DATA type is correct.
+
+Tests exercise all ten producer selectors, sparse and complete allocation
+failure, paired angles, signed facing, counter wrap, owner data, and frame/
+lifecycle ordering. Negative controls reject the wrong angle pairing, using
+child instead of owner facing, and setting lifecycle flags before animation.
+All 302 tests and source/build/catalog gates pass. Whole compiler/data
+objects, the loaded image and packed ELF remain retail-exact. ELF SHA-256:
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+
+CODE is 2,775,576 / 3,293,696 bytes (84.2693%), with 19,127 matches among
+20,472 catalog spans. The DATA catalog reports 468,873 / 648,064 bytes
+(72.3498%). The next fixed CODE threshold remains 2,805,124 bytes, 29,548
+bytes away.
