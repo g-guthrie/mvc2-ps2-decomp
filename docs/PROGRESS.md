@@ -7944,3 +7944,42 @@ ELF SHA-256 remains
 CODE is 2,772,992 / 3,293,696 bytes (84.1909%); 19,120 matches among
 20,470 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
 The next fixed CODE threshold remains 2,805,124 bytes, 32,132 bytes away.
+
+
+## Mode-dependent launch and inherited action initialization
+
+Recovered func_002CDB90 (356 bytes, MWCCPS2 3.0.3) and func_003A50E0
+(316 bytes, MWCCPS2 3.0-011126), both at -O3,p with small-data threshold
+zero. Both complete bodies match retail. Twelve alignment bytes before the
+launch body remain uncredited; the text denominator is unchanged.
+
+The launch handler uses setup-time mode and direction values, initializes
+motion with native horizontal acceleration +/-0.7291666269, increments the
+team counter and writes two work bytes from the actual stride-two column
+views. Its table-backed DATA bytes remain uncredited; no storage footprint
+or new DATA reconstruction is claimed.
+
+The inherited initializer copies 196 owner-state bytes, selects depth offset
+-2 and action 53, resets command fields and the team counter, and enters the
+real owner update. Its constructor does not copy Z. The update computes a
+signed byte depth and clamps it, then either transitions to cleanup or
+copies position and dispatches the owner-dependent phase. The complete
+inlined reset operation follows an existing repository C pattern. The
+compiled object contains only the 316-byte constructor, with no extra helper
+body or helper credit. The main dispatcher now passes its actual owner input;
+the complete callback object and all previous bodies remain byte-exact.
+
+Tests compare full actor/counter buffers, work-byte extents, changed setup
+inputs, native launch constants, both resident column rows and perturbed
+column values, phase/counter wrap, signed depth wrap/clamping and both owner
+update paths with actual nested helper bodies. Negative controls reject the
+sibling launch acceleration, the wrong column or work byte, stale facing,
+the sibling depth, unconditional Z copying and the actor passed as owner.
+All 285 tests and source/build/catalog gates pass. Complete compiler/data
+objects, the loaded image and the packed executable remain retail-exact.
+ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+
+CODE is 2,773,664 / 3,293,696 bytes (84.2113%); 19,122 matches among
+20,471 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
+The next fixed CODE threshold remains 2,805,124 bytes, 31,460 bytes away.

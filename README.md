@@ -12,9 +12,9 @@ for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
 
 | | Matched | Total | |
 | --- | ---: | ---: | ---: |
-| Code | 2,772,992 bytes | 3,293,696 bytes | **84.19%** |
+| Code | 2,773,664 bytes | 3,293,696 bytes | **84.21%** |
 | Initialized data | 468,873 bytes | 648,064 bytes | **72.35%** |
-| Catalog spans | 19,120 | 20,470 | |
+| Catalog spans | 19,122 | 20,471 | |
 
 Every matched function is C compiled with a period toolchain (Metrowerks
 MWCC 2.4/3.0/3.0.3, SN GCC 2.95.2, EE GCC 2.96, or Sony EE GCC 2.9) and
@@ -47,7 +47,7 @@ The generated graphic above shows the current catalog's matching code coverage.
 function counts and reconstructed-data coverage. Whole-object compiler
 verification and full-image linkage are separate private build checks.
 Assembly placeholders never count as decompiled source. The current inventory
-contains **20,470 cataloged text spans** after boundary corrections and splitting
+contains **20,471 cataloged text spans** after boundary corrections and splitting
 oversized dispatcher entries. Retained assembly residuals, text gaps and
 initialized data remain separately visible in the progress report.
 
@@ -223,9 +223,9 @@ Verified code is pushed at least after each additional full percentage point.
 The latest checkpoint also publishes the EE GCC sibling-call profile described
 in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 
-The latest verified CODE checkpoint is 2,772,992 / 3,293,696 bytes
-(84.1909%). Two complete handlers add 308 CODE bytes for owner direction
-events and facing-dependent placement after setup. Their actual helper
-inputs and callback ordering are preserved. All 276 tests pass, and the
-full rebuilt executable remains retail-exact. DATA remains
-468,873 / 648,064 bytes (72.3498%).
+The latest verified CODE checkpoint is 2,773,664 / 3,293,696 bytes
+(84.2113%). Two complete handlers add 672 CODE bytes for mode-dependent
+air launch and inherited action initialization. Actual work/owner inputs,
+byte-column reads and conditional position updates are preserved.
+All 285 tests pass, and the full rebuilt executable remains retail-exact.
+DATA remains 468,873 / 648,064 bytes (72.3498%).

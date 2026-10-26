@@ -19182,3 +19182,5 @@ func_0024D1E0,0x0024D1E0,0xC0,src/actor_reverse_owner_link_0024d1e0.c,complete
 func_002C7C20,0x002C7C20,0x104,src/player_work_counter_start_002c7c20.c,complete
 func_0023EB90,0x0023EB90,0x98,src/actor_owner_direction_event_0023eb90.c,complete
 func_00242E50,0x00242E50,0x9C,src/actor_late_turn_offset_00242e50.c,complete
+func_002CDB90,0x002CDB90,0x164,src/actor_mode_air_launch_002cdb90.c,complete
+func_003A50E0,0x003A50E0,0x13C,src/inherited_action_start_003a50e0.c,complete

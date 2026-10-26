@@ -21323,4 +21323,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/actor_late_turn_offset_00242e50.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_late_turn_offset_00242e50.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_late_turn_offset_00242e50.o" private/SLUS_204.86.rom --source src/actor_late_turn_offset_00242e50.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_mode_air_launch_002cdb90.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_mode_air_launch_002cdb90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_mode_air_launch_002cdb90.o" private/SLUS_204.86.rom --source src/actor_mode_air_launch_002cdb90.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/inherited_action_start_003a50e0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/inherited_action_start_003a50e0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/inherited_action_start_003a50e0.o" private/SLUS_204.86.rom --source src/inherited_action_start_003a50e0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
