@@ -66,7 +66,7 @@ double func_00119568(double a, double b) {
 
 extern int D_0047C5B0, D_0047C5B4;
 extern int func_003FD530(void);
-extern void func_003FD138(int);
+extern s32 func_003FD138(void *);
 extern void func_003FBFD8(void);
 
 #include "HtciFileRequest.h"

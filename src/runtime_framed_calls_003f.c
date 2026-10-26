@@ -49,7 +49,7 @@ void func_003FD2A0(void)
 
 struct T3FCCF0 { char b0; signed char b1; char pad[2]; s32 f4; };
 extern void func_003FB510(s32, s32, s32, s32, s32);
-extern void func_003FD138(void *);
+extern s32 func_003FD138(void *);
 extern void func_004005F8(u8 *);
 extern void func_0011D8F8(void *, s32, s32);
 void func_003FCCF0(struct T3FCCF0 *p)

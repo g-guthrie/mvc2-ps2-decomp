@@ -8610,3 +8610,21 @@ bytes (84.4566%), with 19,156 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 23,380 bytes away.
+
+
+## SDK ADX stop routine
+
+Recovered func_003FD138 (236 bytes) with EE GCC 2.96, -O2 and small-data
+threshold zero. The complete function matches retail. It validates the
+object and stream, handles already-stopped states, stops and closes the
+active stream, and returns its current position. Existing callers now use
+the function's pointer argument and signed return type. Focused tests cover
+null input, missing stream, state shortcuts, the full stop sequence and
+return values. The two error messages are existing reconstructed DATA;
+no new DATA is credited.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,781,980 / 3,293,696
+bytes (84.4638%), with 19,157 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 23,144 bytes away.

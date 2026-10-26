@@ -9,7 +9,7 @@ extern u8 D_004BB3D0[];
 extern u8 D_004BB3F8[];
 extern void func_003FB510(s32, s32, u8 *, s32, s32);
 extern void func_003FB128(u8 *);
-extern void func_003FD138(u8 *);
+extern s32 func_003FD138(void *);
 
 s32 func_003FD308(u8 *p, s32 a, s32 b) {
     s32 v;
