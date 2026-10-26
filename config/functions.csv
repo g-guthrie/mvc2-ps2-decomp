@@ -16037,7 +16037,7 @@ func_0035DE70,0x0035DE70,0x74,0x0035DEE4,code,spimdisasm-explicit-size-before-fi
 func_0035DEF0,0x0035DEF0,0x7C,0x0035DF6C,code,spimdisasm-explicit-size-before-first-data
 func_0035DF70,0x0035DF70,0x24,0x0035DF94,code,matching-c-head-split
 func_0035DFA0,0x0035DFA0,0x20,0x0035DFC0,code,verified-complete-c-function
-residual_0035DFC0,0x0035DFC0,0xC4,0x0035E084,assembly_residual,native-suffix-after-verified-c-body
+func_0035DFC0,0x0035DFC0,0xC4,0x0035E084,code,verified-pointer-entry-and-whole-function
 func_0035E090,0x0035E090,0x50,0x0035E0E0,code,spimdisasm-explicit-size-before-first-data
 func_0035E0E0,0x0035E0E0,0x8C,0x0035E16C,code,spimdisasm-explicit-size-before-first-data
 func_0035E170,0x0035E170,0x20,0x0035E190,code,matching-c-head-split
