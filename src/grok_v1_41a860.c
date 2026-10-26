@@ -11,7 +11,7 @@ typedef struct V3 { f32 x, y, z; } V3;
 
 extern H *D_004C2794;
 extern Pair D_004A6AA8[];
-extern u8 *D_004A6C94[];
+extern const u8 *const jtbl_004A6CA0[12];
 extern int func_001757E0(u8 *, s32, s32);
 extern s32 func_0041ABD0(u8 *, u8 *);
 extern void func_0041A040(u8 *, s32);
@@ -39,7 +39,7 @@ void func_0041A860(u8 *p, u8 *q)
     D_004C2794->h7C[p[2]]++;
     func_001757E0(p, 0x17, 0xB);
     p[0x22] = (u8)func_0041ABD0(p, q);
-    *(u8 **)(p + 0x14) = D_004A6C94[p[0x20]];
+    *(u8 **)(p + 0x14) = (u8 *)jtbl_004A6CA0[p[0x20] - 3];
     *(s16 *)(p + 0x1C) = 1;
     func_0041A040(p, 0xF);
     func_0041AA10(p, q);
