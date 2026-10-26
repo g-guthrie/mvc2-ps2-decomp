@@ -8432,3 +8432,24 @@ bytes (84.3931%), with 19,145 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 25,472 bytes away.
+
+
+## Actor trajectory update
+
+Recovered func_003AE4A0 (240 bytes) with MWCCPS2 3.0.3, -O3,p and
+small-data threshold zero. The complete compiler output matches retail.
+It advances the trajectory timer, optionally creates an event, handles the
+terminal owner transition, and runs the existing position and animation
+updates. Its static copies of the complete real func_003AE2C0 (172 bytes)
+and func_003AE370 (28 bytes) were independently verified; both were already
+credited and receive no additional CODE credit. The native mode-7 constructor
+call sites pass modes 0 and 1, and the existing four-entry timer table ends
+the sequence at its fourth value. Existing DATA storage is unchanged. Focused
+tests cover both modes and directions, the countdown sequence, allocation
+success and failure, event fields and terminal transition, with negative controls.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,779,892 / 3,293,696
+bytes (84.4004%), with 19,146 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 25,232 bytes away.

@@ -19207,3 +19207,4 @@ func_0025A3F0,0x0025A3F0,0xC0,src/actor_landing_update_0025a3f0.c,complete
 func_0030DDF0,0x0030DDF0,0xF8,src/actor_table_motion_entry_0030ddf0.c,complete
 func_002EF8D0,0x002EF8D0,0xE8,src/actor_action_timer_entry_002ef8d0.c,complete
 func_00374210,0x00374210,0x94,src/actor_ground_bounce_00374210.c,complete
+func_003AE4A0,0x003AE4A0,0xF0,src/actor_trajectory_update_003ae4a0.c,complete
