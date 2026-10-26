@@ -488,7 +488,8 @@ func_0010E5E0,0x0010E5E0,0x24,0x0010E604,code,spimdisasm-explicit-size-before-fi
 func_0010E608,0x0010E608,0x68,0x0010E670,code,spimdisasm-explicit-size-before-first-data
 func_0010E670,0x0010E670,0x5C,0x0010E6CC,code,spimdisasm-explicit-size-before-first-data
 func_0010E6D0,0x0010E6D0,0xA0,0x0010E770,code,spimdisasm-explicit-size-before-first-data
-func_0010E770,0x0010E770,0x194,0x0010E904,code,spimdisasm-explicit-size-before-first-data
+func_0010E770,0x0010E770,0xBC,0x0010E82C,code,verified-native-infinite-loop-boundary
+func_0010E830,0x0010E830,0xD4,0x0010E904,code,verified-native-frame-entry-boundary
 func_0010E908,0x0010E908,0xA0,0x0010E9A8,code,spimdisasm-explicit-size-before-first-data
 func_0010E9A8,0x0010E9A8,0x94,0x0010EA3C,code,spimdisasm-explicit-size-before-first-data
 func_0010EA40,0x0010EA40,0x94,0x0010EAD4,code,spimdisasm-explicit-size-before-first-data
