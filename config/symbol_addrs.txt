@@ -23428,3 +23428,6 @@ gAdxDiagnostic_004BB240 = 0x004BB240;
 gAdxDiagnostic_004BB270 = 0x004BB270;
 gAdxDiagnostic_004BB378 = 0x004BB378;
 gAdxDiagnostic_004BB3A0 = 0x004BB3A0;
+func_00402028 = 0x00402028;
+gAdxtDiagnostic_004BC188 = 0x004BC188;
+gAdxtDiagnostic_004BC1B8 = 0x004BC1B8;

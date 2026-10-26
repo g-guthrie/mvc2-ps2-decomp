@@ -67,7 +67,7 @@ typedef union { u32 u; float f; } UF;
 typedef struct { u8 b0, b1, b2; signed char n; s32 p4, p8; s32 w; char pad[0x32]; s16 v[1]; } S4028;
 extern char D_004BC188[], D_004BC1B8[];
 extern void func_003FB128(void *);
-extern void func_003FF270(s32);
+extern void func_003FF270(s32 *, s32, s32);
 
 typedef struct Cell { struct Cell *next; s32 x4; s32 x8; s32 xC; } Cell;
 typedef struct { s32 x0, x4, x8; Cell *cells; s32 n; Cell *head; s32 tab[4]; } Pool;

@@ -8628,3 +8628,21 @@ bytes (84.4638%), with 19,157 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 23,144 bytes away.
+
+
+## SDK output pan setter
+
+Recovered func_00402028 (108 bytes) with EE GCC 2.96, -O2 and small-data
+threshold zero. The complete function matches retail, including both error
+paths and the native store-before-channel-check ordering. The existing
+func_003FF270 wrapper now declares and forwards its three actual arguments
+to func_0040EE00; the wrapper and its existing callers remain byte-exact.
+Focused tests cover null input, the signed channel comparison, store ordering and
+the real downstream pan clamp, with negative controls. Existing diagnostic
+strings are reused; no new DATA is credited.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,782,088 / 3,293,696
+bytes (84.4671%), with 19,158 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 23,036 bytes away.

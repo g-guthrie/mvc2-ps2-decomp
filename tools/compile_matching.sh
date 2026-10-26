@@ -21473,4 +21473,9 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_adx_stop_003fd138
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_adx_stop_003fd138.o" "$BUILD/sdk_adx_stop_003fd138.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sdk_adx_stop_003fd138.o" private/SLUS_204.86.rom --source src/sdk_adx_stop_003fd138.c
 
+"$WIBO" "$SNCPP" -P src/sdk_adxt_pan_00402028.c "$BUILD/sdk_adxt_pan_00402028.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_adxt_pan_00402028.i" "$BUILD/sdk_adxt_pan_00402028.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_adxt_pan_00402028.o" "$BUILD/sdk_adxt_pan_00402028.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sdk_adxt_pan_00402028.o" private/SLUS_204.86.rom --source src/sdk_adxt_pan_00402028.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
