@@ -18498,7 +18498,8 @@ residual_003C71D0,0x003C71D0,0xDC,0x003C72AC,code,exact-old-mwcc-padloop-on
 func_003C72B0,0x003C72B0,0x74,0x003C7324,code,spimdisasm-explicit-size-before-first-data
 func_003C7330,0x003C7330,0x28,0x003C7358,code,exact-MWCC-C-entry-table-bounded
 residual_003C7358,0x003C7358,0x124,0x003C747C,assembly_residual,uncredited remainder after exact recovered entry
-func_003C7480,0x003C7480,0xF0,0x003C7570,code,spimdisasm-explicit-size-before-first-data
+func_003C7480,0x003C7480,0x28,0x003C74A8,code,verified-native-dispatch-head-boundary
+func_003C74B0,0x003C74B0,0xC0,0x003C7570,code,verified-native-callback-entry-boundary
 func_003C7570,0x003C7570,0x150,0x003C76C0,code,spimdisasm-explicit-size-before-first-data
 func_003C76C0,0x003C76C0,0x80,0x003C7740,code,spimdisasm-explicit-size-before-first-data
 func_003C7740,0x003C7740,0x10C,0x003C784C,code,spimdisasm-explicit-size-before-first-data
