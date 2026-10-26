@@ -6916,7 +6916,7 @@ func_0021EBB0,0x0021EBB0,0xB8,0x0021EC68,code,compiler-matched-entry-with-callba
 func_0021EC70,0x0021EC70,0x98,0x0021ED08,code,spimdisasm-explicit-size-before-first-data
 func_0021ED10,0x0021ED10,0x5C,0x0021ED6C,code,spimdisasm-explicit-size-before-first-data
 func_0021ED70,0x0021ED70,0x20,0x0021ED90,code,matching-c-head-split
-residual_0021ED90,0x0021ED90,0x4C,0x0021EDDC,assembly_residual,verified-boundary-after-matching-head
+func_0021ED90,0x0021ED90,0x4C,0x0021EDDC,code,verified-pointer-entry-and-whole-function
 func_0021EDE0,0x0021EDE0,0xC0,0x0021EEA0,code,spimdisasm-explicit-size-before-first-data
 func_0021EEA0,0x0021EEA0,0xB0,0x0021EF50,code,spimdisasm-explicit-size-before-first-data
 func_0021EF50,0x0021EF50,0x40,0x0021EF90,code,spimdisasm-explicit-size-before-first-data

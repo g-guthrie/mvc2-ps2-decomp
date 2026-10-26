@@ -8183,3 +8183,21 @@ bytes (84.2883%), with 19,131 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 28,924 bytes away.
+
+
+## Frame palette phase
+
+Recovered func_0021ED90 (76 bytes) with MWCCPS2 3.0.3, -O3,p and
+small-data threshold zero. The function calls the existing frame-palette
+operation, then clears the active flag or advances the phase according to
+the global mode. Its compiler-visible static helper is the complete real
+func_0021D280 body, independently verified against all 384 retail bytes;
+that helper is already credited and receives no additional CODE credit.
+Focused tests cover both palette paths, the mode threshold, and phase wrap,
+with negative controls for the threshold and palette mask.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,776,276 / 3,293,696
+bytes (84.2906%), with 19,132 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 28,848 bytes away.
