@@ -19222,3 +19222,4 @@ func_003FD138,0x003FD138,0xEC,src/sdk_adx_stop_003fd138.c,complete
 func_00402028,0x00402028,0x6C,src/sdk_adxt_pan_00402028.c,complete
 func_00401050,0x00401050,0xFC,src/sdk_rna_status_00401050.c,complete
 func_003FB460,0x003FB460,0xB0,src/sdk_adx_cleanup_003fb460.c,complete
+func_00107058,0x00107058,0x3C,src/sony29_rpc_busy_00107058.c,complete
