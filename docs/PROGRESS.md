@@ -8592,3 +8592,21 @@ bytes (84.4524%), with 19,155 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 23,520 bytes away.
+
+
+## SDK ADX read wrapper
+
+Recovered func_003FCEE0 (140 bytes) with EE GCC 2.96, -O2 and small-data
+threshold zero. The complete function matches retail: it checks the object,
+count and read handle, reports the appropriate existing diagnostic, and
+otherwise returns the existing reader's result while setting the state byte.
+Focused tests exercise error priority, the already-active path, and positive
+and negative downstream results through the existing forwarding wrapper.
+The three diagnostic strings are existing reconstructed DATA; no new DATA
+is credited.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,781,744 / 3,293,696
+bytes (84.4566%), with 19,156 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 23,380 bytes away.

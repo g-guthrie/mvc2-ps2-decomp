@@ -21463,4 +21463,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/sdk_format_message_003f5540.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/sdk_format_message_003f5540.o"
 "$PYTHON" tools/verify_object.py "$BUILD/sdk_format_message_003f5540.o" private/SLUS_204.86.rom --source src/sdk_format_message_003f5540.c
 
+"$WIBO" "$SNCPP" -P src/sdk_adx_read_003fcee0.c "$BUILD/sdk_adx_read_003fcee0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_adx_read_003fcee0.i" "$BUILD/sdk_adx_read_003fcee0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_adx_read_003fcee0.o" "$BUILD/sdk_adx_read_003fcee0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sdk_adx_read_003fcee0.o" private/SLUS_204.86.rom --source src/sdk_adx_read_003fcee0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

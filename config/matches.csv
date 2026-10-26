@@ -19217,3 +19217,4 @@ func_0024AD30,0x0024AD30,0xD8,src/actor_effect_start_0024ad30.c,complete
 func_0030A6D0,0x0030A6D0,0xF0,src/actor_palette_start_0030a6d0.c,complete
 func_00399C10,0x00399C10,0x1D8,src/actor_owner_spawn_00399c10.c,complete
 func_003F5540,0x003F5540,0x70,src/sdk_format_message_003f5540.c,complete
+func_003FCEE0,0x003FCEE0,0x8C,src/sdk_adx_read_003fcee0.c,complete
