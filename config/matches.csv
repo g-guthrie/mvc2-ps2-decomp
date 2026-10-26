@@ -19192,3 +19192,4 @@ func_001E1C60,0x001E1C60,0x2C4,src/paired_arc_start_001e1c60.c,complete
 func_0025B560,0x0025B560,0xB4,src/parent_frame_start_0025b560.c,complete
 func_00250580,0x00250580,0x84,src/ground_setup_00250580.c,complete
 func_002F0110,0x002F0110,0xD0,src/actor_dash_setup_002f0110.c,complete
+func_0036D7D0,0x0036D7D0,0x68,src/owner_phase_update_0036d7d0.c,complete

@@ -8165,3 +8165,21 @@ bytes (84.2851%), with 19,130 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 29,028 bytes away.
+
+
+## Owner phase update
+
+Recovered func_0036D7D0 (104 bytes) with MWCCPS2 3.0, -O3,p and
+small-data threshold zero. The complete compiler output matches retail.
+The handler snapshots the actor's owner, dispatches one of the three
+existing callbacks at 0x00463D68, and then checks the owner's work flag.
+When set, it advances the actor's phase and clears the active and work bytes.
+The callback table is a view into the existing 0x00463D00 data unit; no
+new DATA bytes are claimed. Tests cover all three callback slots, flag values,
+phase wrap and owner replacement during the callback, with negative controls.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,776,200 / 3,293,696
+bytes (84.2883%), with 19,131 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 28,924 bytes away.
