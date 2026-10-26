@@ -12,9 +12,9 @@ for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
 
 | | Matched | Total | |
 | --- | ---: | ---: | ---: |
-| Code | 2,775,576 bytes | 3,293,696 bytes | **84.27%** |
+| Code | 2,775,888 bytes | 3,293,696 bytes | **84.28%** |
 | Initialized data | 468,873 bytes | 648,064 bytes | **72.35%** |
-| Catalog spans | 19,127 | 20,472 | |
+| Catalog spans | 19,129 | 20,474 | |
 
 Every matched function is C compiled with a period toolchain (Metrowerks
 MWCC 2.4/3.0/3.0.3, SN GCC 2.95.2, EE GCC 2.96, or Sony EE GCC 2.9) and
@@ -47,7 +47,7 @@ The generated graphic above shows the current catalog's matching code coverage.
 function counts and reconstructed-data coverage. Whole-object compiler
 verification and full-image linkage are separate private build checks.
 Assembly placeholders never count as decompiled source. The current inventory
-contains **20,472 cataloged text spans** after boundary corrections and splitting
+contains **20,474 cataloged text spans** after boundary corrections and splitting
 oversized dispatcher entries. Retained assembly residuals, text gaps and
 initialized data remain separately visible in the progress report.
 
@@ -223,8 +223,9 @@ Verified code is pushed at least after each additional full percentage point.
 The latest checkpoint also publishes the EE GCC sibling-call profile described
 in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 
-The latest verified CODE checkpoint is 2,775,576 / 3,293,696 bytes
-(84.2693%). A complete 708-byte handler initializes paired projectile arcs
-from ten bounded descriptor rows. All 302 tests pass, and the full rebuilt
-executable remains retail-exact. The catalog reports 468,873 / 648,064 DATA
-bytes (72.3498%); some table ownership classifications still need repair.
+The latest verified CODE checkpoint is 2,775,888 / 3,293,696 bytes
+(84.2788%). Two complete handlers add 312 CODE bytes for parent animation
+and ground setup. A related action reset no longer requires a forced volatile
+read. All 310 tests pass, and the rebuilt executable remains retail-exact.
+The catalog reports 468,873 / 648,064 DATA bytes (72.3498%); some table
+ownership classifications still need repair.

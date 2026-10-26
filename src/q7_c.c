@@ -6,19 +6,22 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-extern u8 D_004C04A0[4];
-typedef struct { u8 pad[0x7C]; s16 h7C[1]; } S794;
+extern u8 D_004C04A0[] __attribute__((section(".sdata")));
+typedef struct { u8 pad[0x7C]; s16 h7C[]; } S794;
 extern S794 *D_004C2794;
 
+/* Complete inlined action reset; the table view does not claim a storage extent. */
+typedef struct {u8 prefix[0x1B5];u8 action;} ActionActor;
+static inline void reset_action(u8 *p,u8 action) {
+    ((ActionActor*)p)->action=action;
+    p[0x1B2]=*(u16*)(p+0x1C0)=0;
+    *(u32*)(p+0x1D8)=0;
+    D_004C2794->h7C[p[2]]++;
+}
 void func_00250940(u8 *p, s32 a) {
-    u8 *q;
-    s32 idx;
-    idx = (p[0x269] == 3) ? 3 : 0;
+    s32 idx = (p[0x269] == 3) ? 3 : 0;
     p[0x1B5] = D_004C04A0[(u8)(a + (u8)idx)];
-    p[0x1B5] = *(volatile u8 *)(p + 0x1B5);
-    p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
-    *(u32 *)(p + 0x1D8) = 0;
-    D_004C2794->h7C[p[2]] += 1;
+    reset_action(p,p[0x1B5]);
 }
 
 typedef struct { u8 pad0[7]; u8 b7; f32 f8; } S974;

@@ -8109,3 +8109,40 @@ CODE is 2,775,576 / 3,293,696 bytes (84.2693%), with 19,127 matches among
 20,472 catalog spans. The DATA catalog reports 468,873 / 648,064 bytes
 (72.3498%). The next fixed CODE threshold remains 2,805,124 bytes, 29,548
 bytes away.
+
+
+## Parent animation and ground setup
+
+Recovered func_0025B560 (180 bytes) and func_00250580 (132 bytes) with
+MWCCPS2 3.0.3, -O3,p and small-data threshold zero. Each complete body
+matches retail. Twelve alignment bytes before each body remain uncredited;
+the text denominator is unchanged.
+
+The first handler applies the native turn flag and offset, performs setup,
+allocates the real event, then animates the current parent before the actor.
+The parent pointer is read after the earlier callbacks, including on event
+allocation failure. The second performs the real action reset, setup and
+facing helpers, clears motion at the reference height, then selects its frame.
+
+The existing func_00250940 now expresses its complete action-reset operation
+with an ordinary inlined C helper instead of a forced volatile self-read. Its
+whole 112-byte body and every other function in its object still match retail;
+the helper is fully inlined and receives no additional credit. Native call
+sites use modes 0, 1 or 2, with the selector base 0 or 3. The six accessed
+bytes at 0x004C04A0 are exposed as an incomplete code view: this change does
+not claim storage ownership or add DATA credit. The previously noted DATA
+table ownership issue also remains open.
+
+Tests cover both offset/facing paths, event allocation success and failure,
+parent replacement, animation order, the known mode/selector combinations,
+team counter wrap and real setup helpers. Negative controls reject an actor
+in place of the parent, a wrong turn flag or animation order, a wrong table
+index or frame, and a doubled counter. All 310 tests and source/build/catalog
+gates pass. Whole compiler/data objects, the loaded image and packed ELF
+remain retail-exact. ELF SHA-256:
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+
+CODE is 2,775,888 / 3,293,696 bytes (84.2788%), with 19,129 matches among
+20,474 catalog spans. The DATA catalog reports 468,873 / 648,064 bytes
+(72.3498%); some ownership classifications still need repair. The next fixed
+CODE threshold remains 2,805,124 bytes, 29,236 bytes away.

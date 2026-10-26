@@ -21351,4 +21351,12 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/paired_arc_start_001e1c60.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/paired_arc_start_001e1c60.o"
 "$PYTHON" tools/verify_object.py "$BUILD/paired_arc_start_001e1c60.o" private/SLUS_204.86.rom --source src/paired_arc_start_001e1c60.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/parent_frame_start_0025b560.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/parent_frame_start_0025b560.o"
+"$PYTHON" tools/verify_object.py "$BUILD/parent_frame_start_0025b560.o" private/SLUS_204.86.rom --source src/parent_frame_start_0025b560.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/ground_setup_00250580.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/ground_setup_00250580.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ground_setup_00250580.o" private/SLUS_204.86.rom --source src/ground_setup_00250580.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
