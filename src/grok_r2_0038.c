@@ -103,7 +103,7 @@ void func_0039D3B0(u8 *p) {
         func_0039E450(p);
 }
 
-void func_003A53A0(u8 *p) {
+void func_003A53A0(u8 *p, u8 *owner_context_unused) {
     func_003A5000(p, 2, 0, 0);
     p[5]++;
 }

@@ -1257,7 +1257,7 @@ void func_003A48C0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Obje
 
 void func_003A4E40(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
-void func_003A5920(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40((struct Object *)(p)); }
+void func_003A5920(u8 *p, u8 *owner_context_unused) { p[316] = 0; func_003DAA40((struct Object *)(p)); }
 
 void func_003A5D80(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40((struct Object *)(p)); }
 

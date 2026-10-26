@@ -7983,3 +7983,14 @@ ELF SHA-256 remains
 CODE is 2,773,664 / 3,293,696 bytes (84.2113%); 19,122 matches among
 20,471 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
 The next fixed CODE threshold remains 2,805,124 bytes, 31,460 bytes away.
+
+
+### Inherited-action callback interface follow-through
+
+The seven callbacks at 0x00472D60 now consistently accept actor and owner.
+Existing phase, cleanup and release bodies that ignore the owner retain that
+callback input explicitly; the release no longer advertises three placeholder
+integer inputs. The shared release slot in 0x00472D80 is typed separately,
+retaining the other slots' existing contracts. All complete function objects,
+both complete DATA objects and the full retail executable still match.
+This interface correction adds no CODE or DATA credit.
