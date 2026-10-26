@@ -16930,7 +16930,7 @@ func_003844A0,0x003844A0,0x20,0x003844C0,code,matching-c-head-split
 func_003844C0,0x003844C0,0x11C,0x003845DC,code,verified-complete-c-function
 func_003845E0,0x003845E0,0x70,0x00384650,code,spimdisasm-explicit-size-before-first-data
 func_00384650,0x00384650,0x20,0x00384670,code,matching-c-head-split
-residual_00384670,0x00384670,0x160,0x003847D0,assembly_residual,verified-boundary-after-matching-head
+func_00384670,0x00384670,0x160,0x003847D0,code,verified-pointer-entry-and-whole-function
 func_003847D0,0x003847D0,0xA4,0x00384874,code,spimdisasm-explicit-size-before-first-data
 func_00384880,0x00384880,0x20,0x003848A0,code,matching-c-head-split
 func_003848A0,0x003848A0,0x120,0x003849C0,code,verified-complete-c-function

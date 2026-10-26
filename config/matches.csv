@@ -19199,3 +19199,4 @@ func_003718B0,0x003718B0,0xA0,src/owner_fade_phase_003718b0.c,complete
 func_00198FC0,0x00198FC0,0xD8,src/owner_follow_animation_00198fc0.c,complete
 func_00383580,0x00383580,0x18C,src/owner_scale_start_00383580.c,complete
 func_00319D90,0x00319D90,0xDC,src/actor_motion_event_00319d90.c,complete
+func_00384670,0x00384670,0x160,src/owner_velocity_start_00384670.c,complete

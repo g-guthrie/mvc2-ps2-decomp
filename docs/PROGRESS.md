@@ -8290,3 +8290,20 @@ bytes (84.3263%), with 19,137 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 27,672 bytes away.
+
+
+## Owner velocity initializer
+
+Recovered func_00384670 (352 bytes) with MWCCPS2 3.0, -O3,p and
+small-data threshold zero. Its complete compiler output matches retail.
+It copies owner state, initializes the existing shared handle and offset,
+sets velocity according to facing, then calls animation and the existing
+update. Focused tests cover copied fields, both directions, the shared
+state and callback order, with negative controls for direction, handle
+and shared-offset initialization.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,777,804 / 3,293,696
+bytes (84.3370%), with 19,138 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 27,320 bytes away.
