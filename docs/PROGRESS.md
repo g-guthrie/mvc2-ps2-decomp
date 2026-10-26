@@ -8541,3 +8541,19 @@ bytes (84.4273%), with 19,152 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 24,344 bytes away.
+
+
+## Actor palette start
+
+Recovered func_0030A6D0 (240 bytes) with MWCCPS2 3.0.3, -O3,p and
+small-data threshold zero. The entire function matches retail: it sets up
+the actor work pointer, position and motion, selects two palette records,
+spawns an effect and starts animation. Focused tests cover both palette
+paths and their downstream calls, with negative controls. The existing
+callback table is unchanged.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,781,020 / 3,293,696
+bytes (84.4346%), with 19,153 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 24,104 bytes away.
