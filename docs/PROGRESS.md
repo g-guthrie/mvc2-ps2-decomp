@@ -8380,3 +8380,21 @@ bytes (84.3740%), with 19,142 matches among 20,474 catalog spans. The DATA
 catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
 ownership issue remains open. The next fixed CODE threshold is 2,805,124
 bytes, 26,100 bytes away.
+
+
+## Actor table-motion entry
+
+Recovered func_0030DDF0 (248 bytes) with MWCCPS2 3.0.3, -O3,p and
+small-data threshold zero. Its complete compiler output matches retail.
+It applies the existing facing and placement helpers, reads the velocity
+record, copies an animation frame and selects an action. The velocity view
+uses an existing float DATA unit; the action-byte view at 0x004C1658 remains
+a DATA gap and receives no new DATA credit. Focused tests exercise the three
+table entries, both facing directions, placement gating and the real
+facing, placement and frame-copy helpers, with negative controls.
+
+The rebuilt loaded image and ELF match retail. CODE is 2,779,272 / 3,293,696
+bytes (84.3816%), with 19,143 matches among 20,474 catalog spans. The DATA
+catalog reports 468,873 / 648,064 bytes (72.3498%); the previously noted
+ownership issue remains open. The next fixed CODE threshold is 2,805,124
+bytes, 25,852 bytes away.
