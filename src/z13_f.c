@@ -11,7 +11,7 @@ extern u16 *D_004C26DC;
 void func_001B8610(u8 *p)
 {
     extern void func_001B87B0(u8 *);
-    extern void func_00175670(u8 *);
+    extern int func_00175670(u8 *);
     f32 c, d;
     if (*D_004C26DC != *(u16 *)(*(u8 **)(p + 0x18) + 0x168)) {
         func_001B87B0(p);

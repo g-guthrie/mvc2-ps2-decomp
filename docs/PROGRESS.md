@@ -7731,3 +7731,32 @@ remain retail-exact. ELF SHA-256 remains
 CODE is 2,768,908 / 3,293,696 bytes (84.0669%), with 19,106 matches among
 20,458 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%). The
 next fixed CODE checkpoint remains 2,772,187 bytes, 3,279 bytes away.
+
+
+## Variant owner initialization and timed spin growth
+
+Recovered func_001B82B0 (468 bytes, MWCCPS2 3.0-011126) and
+func_001B9930 (336 bytes, MWCCPS2 3.0.3), both at -O3,p with small-data
+threshold zero. Each full body matches retail after relocation. Two
+four-byte alignment gaps remain uncredited; the denominator is unchanged.
+
+The initializer copies owner fields and selects its variant offset and
+animation. It reloads the owner after the animation call before saving the
+owner ID, then calls the real follow helper. The follow helper's alternate
+horizontal offset differs from the initializer's offset; both are retained.
+The spin handler uses the old signed timer for quadratic scale growth and
+the incremented signed timer for expiry. It changes camera flags after the
+animation and sound callbacks. Local callback table views retain their
+native pointer placement and the frame callback receives the actor.
+
+Behavior checks cover owner replacement, both variants, signed facing,
+byte counter wrap, signed timer wrap and helper ordering. Four negative
+controls reject omitted follow-up, stale owner IDs, growth from the new
+timer and prematurely changed camera flags. All 236 tests and catalog,
+source-credit and build-coverage gates pass. Complete compiler/data objects,
+the loaded image and the packed executable remain retail-exact; ELF SHA-256
+is 48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+
+CODE is 2,769,712 / 3,293,696 bytes (84.0913%); 19,108 matches among
+20,460 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%).
+The next fixed CODE checkpoint remains 2,772,187 bytes, 2,475 bytes away.

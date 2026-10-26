@@ -21267,4 +21267,12 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_mixed_motion_start_001964a0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_mixed_motion_start_001964a0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_mixed_motion_start_001964a0.o" private/SLUS_204.86.rom --source src/owner_mixed_motion_start_001964a0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_variant_offset_start_001b82b0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_variant_offset_start_001b82b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_variant_offset_start_001b82b0.o" private/SLUS_204.86.rom --source src/owner_variant_offset_start_001b82b0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/timed_spin_scale_001b9930.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/timed_spin_scale_001b9930.o"
+"$PYTHON" tools/verify_object.py "$BUILD/timed_spin_scale_001b9930.o" private/SLUS_204.86.rom --source src/timed_spin_scale_001b9930.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

@@ -19168,3 +19168,5 @@ func_001A7160,0x001A7160,0x148,src/owner_side_start_001a7160.c,complete
 func_00195F60,0x00195F60,0x1C0,src/owner_fixed_step_start_00195f60.c,complete
 func_00196460,0x00196460,0x3C,src/owner_state_phase_00196460.c,complete
 func_001964A0,0x001964A0,0x190,src/owner_mixed_motion_start_001964a0.c,complete
+func_001B82B0,0x001B82B0,0x1D4,src/owner_variant_offset_start_001b82b0.c,complete
+func_001B9930,0x001B9930,0x150,src/timed_spin_scale_001b9930.c,complete
