@@ -184,7 +184,7 @@ void func_001D9D20(void) {}
 
 void func_001DD440(void) {}
 
-void func_001DD880(void) {}
+void func_001DD880(u8 *actor_unused,u8 *owner_unused) {}
 
 void func_001E1030(void) {}
 

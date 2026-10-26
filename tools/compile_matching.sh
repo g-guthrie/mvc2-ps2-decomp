@@ -21227,4 +21227,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/scene_random_launch_00323250.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/scene_random_launch_00323250.o"
 "$PYTHON" tools/verify_object.py "$BUILD/scene_random_launch_00323250.o" private/SLUS_204.86.rom --source src/scene_random_launch_00323250.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_parent_depth_start_001dd520.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_parent_depth_start_001dd520.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_parent_depth_start_001dd520.o" private/SLUS_204.86.rom --source src/owner_parent_depth_start_001dd520.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

@@ -7547,3 +7547,43 @@ packed executable remain retail-exact. ELF SHA-256 remains
 CODE is 2,766,364 / 3,293,696 bytes (83.9897%), with 19,096 matches among
 20,449 catalog spans. DATA remains 468,873 / 648,064 bytes (72.3498%). The
 next fixed CODE checkpoint remains 2,772,187 bytes, 5,823 bytes away.
+
+
+## Parent-depth owner initialization (+308 CODE bytes)
+
+Recovered all 308 bytes of func_001DD520 under Metrowerks 3.0 at -O3,p and
+small-data threshold zero. The retail pointer at 0x0044ECD0 is selected by
+func_001DD4F0. The preceding twelve-byte no-op gap remains uncredited.
+
+The initializer copies all 196 owner-state bytes, identity, scale, facing and
+position. It advances phase, sets its signed depth group, uses default depth
+eight or reads the separate parent's depth for mode one, selects animation
+27 from the mode table and invokes the owner updater. The native repeated
+depth assignment is retained. A real typed depth field and the existing byte
+view preserve the compiler's field-address lifetimes without padding,
+register forcing or added arguments.
+
+A raw scan of the entire conservative text finds thirteen direct calls to
+func_001DD470. Their delay slots pass only modes 0, 1, 2, 4, 5, 6 and 8;
+the constructor stores that mode at actor byte 0x20. The code view at
+0x0044ECE0 therefore covers nine byte entries. This adds no DATA credit or
+owner-boundary change. The actual root/table interface now consistently
+passes actor and owner to all four callbacks. Its no-op and release bodies
+use that real interface; the release no longer declares fabricated integer
+inputs. Every modified old function retains its exact bytes.
+
+Tests check all nine table positions, signed parent depths, complete copied
+buffers, phase wrapping, the actual dispatcher/no-op/release, and the complex
+updater's input boundary. Separate parent and owner pointers catch replacing
+the parent-depth read with the owner, and forwarding the wrong updater owner
+fails. All 209 tests and source/build/catalog checks pass. Whole compiler and
+data objects match; the linked image and packed executable remain exact.
+ELF SHA-256 remains
+48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7.
+
+CODE is 2,766,672 / 3,293,696 bytes (83.9990%), with 19,097 matches among
+20,450 catalog spans. The rounded two-decimal display is 84.00%; exact code
+coverage remains just below 84%. DATA remains 468,873 / 648,064 bytes
+(72.3498%). The next fixed CODE checkpoint remains 2,772,187 bytes, 5,515
+bytes away. The four handlers recovered in this continuation total 1,008
+new CODE bytes; no duplicate helper credit is counted.

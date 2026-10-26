@@ -5165,7 +5165,8 @@ func_001DD440,0x001DD440,0x8,0x001DD448,code,spimdisasm-explicit-size-before-fir
 func_001DD450,0x001DD450,0x14,0x001DD464,code,spimdisasm-explicit-size-before-first-data
 func_001DD470,0x001DD470,0x80,0x001DD4F0,code,spimdisasm-explicit-size-before-first-data
 func_001DD4F0,0x001DD4F0,0x24,0x001DD514,code,matching-c-head-split
-residual_001DD514,0x001DD514,0x140,0x001DD654,assembly_residual,verified-boundary-after-matching-head
+residual_001DD514,0x001DD514,0xC,0x001DD520,alignment_padding,verified-nop-gap-after-dispatch-delay-slot
+func_001DD520,0x001DD520,0x134,0x001DD654,code,verified-pointer-entry-and-whole-function
 func_001DD660,0x001DD660,0x21C,0x001DD87C,code,spimdisasm-explicit-size-before-first-data
 func_001DD880,0x001DD880,0x8,0x001DD888,code,spimdisasm-explicit-size-before-first-data
 func_001DD890,0x001DD890,0x8,0x001DD898,code,spimdisasm-explicit-size-before-first-data

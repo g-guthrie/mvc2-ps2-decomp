@@ -12,9 +12,9 @@ for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
 
 | | Matched | Total | |
 | --- | ---: | ---: | ---: |
-| Code | 2,766,364 bytes | 3,293,696 bytes | **83.99%** |
+| Code | 2,766,672 bytes | 3,293,696 bytes | **84.00%** |
 | Initialized data | 468,873 bytes | 648,064 bytes | **72.35%** |
-| Catalog spans | 19,096 | 20,449 | |
+| Catalog spans | 19,097 | 20,450 | |
 
 Every matched function is C compiled with a period toolchain (Metrowerks
 MWCC 2.4/3.0/3.0.3, SN GCC 2.95.2, EE GCC 2.96, or Sony EE GCC 2.9) and
@@ -47,7 +47,7 @@ The generated graphic above shows the current catalog's matching code coverage.
 function counts and reconstructed-data coverage. Whole-object compiler
 verification and full-image linkage are separate private build checks.
 Assembly placeholders never count as decompiled source. The current inventory
-contains **20,449 cataloged text spans** after boundary corrections and splitting
+contains **20,450 cataloged text spans** after boundary corrections and splitting
 oversized dispatcher entries. Retained assembly residuals, text gaps and
 initialized data remain separately visible in the progress report.
 
@@ -223,9 +223,8 @@ Verified code is pushed at least after each additional full percentage point.
 The latest checkpoint also publishes the EE GCC sibling-call profile described
 in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
 
-The latest verified CODE checkpoint is 2,766,364 / 3,293,696 bytes
-(83.9897%). Three complete handlers add 700 CODE bytes for idle setup,
-owner-target crossing and scene-dependent launch. Actor/owner callback
-contracts and a previously omitted actor argument are repaired. All 206
-tests and full retail-exact linkage pass. DATA remains 468,873 / 648,064
-bytes (72.3498%).
+The latest verified CODE checkpoint is 2,766,672 / 3,293,696 bytes
+(83.9990%). The latest complete handler adds 308 CODE bytes for copying
+owner state and selecting parent-relative depth. Its nine animation entries
+are bounded by native factory calls. All 209 tests and full retail-exact
+linkage pass. DATA remains 468,873 / 648,064 bytes (72.3498%).
