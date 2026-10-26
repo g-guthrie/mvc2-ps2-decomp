@@ -23,15 +23,15 @@ static void func_00396F90(TimerActor *p, s8 *q) {
     }
 }
 
-void func_00397250(u8 *a, u8 *b, s8 *c) {
+void func_00397250(u8 *a, u8 *b, u8 *c) {
     if (b[0x169] != 0x16) {
         u32 t = a[4];
         a[4] = t + 1;
         a[0x13C] = 0;
     } else {
         c[7] = 0;
-        func_00396F90((TimerActor *)a, c);
-        if (c[0] < 0) {
+        func_00396F90((TimerActor *)a, (s8 *)c);
+        if ((s8)c[0] < 0) {
             u32 t = a[4];
             a[4] = t + 1;
         }

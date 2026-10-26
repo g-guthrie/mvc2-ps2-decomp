@@ -51,10 +51,10 @@ static void func_00396EC0(u8 *d, u8 *s, u8 *a) {
     F(d, 52) += F(a, 8);
     F(d, 56) += F(a, 12);
 }
-extern void (*D_004C1E40[2])(u8 *);
+extern void (*D_004C1E40[2])(u8 *, u8 *, u8 *);
 
 void func_00397140(u8 *p, u8 *q, u8 *r) {
     *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
     func_00396EC0(p, q, r);
-    D_004C1E40[p[5]](p);
+    D_004C1E40[p[5]](p, q, r);
 }

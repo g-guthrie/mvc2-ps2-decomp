@@ -8,7 +8,6 @@ typedef signed int s32;
 
 extern s8 D_004C2860;
 extern u8 *D_004C2840;
-extern void (*D_004C1E40[2])(u8 *);
 extern void (*D_004BFE38[2])(void);
 extern s32 func_0012ABC0(s32, s32);
 extern s32 func_0012A990(s32, s32, s32, s32);
