@@ -6,7 +6,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-extern s32 func_00175700();
+extern int func_00175700(u8 *);
 extern void func_00126400();
 extern void func_002F1DF0();
 extern void func_00197610(u8 *, u8 *, u8 *);
@@ -45,7 +45,7 @@ extern void func_0018C4B0();
 void func_002F0090(u8 *p) {
     p[0x40C] = 2;
     p[0x33C] = 5;
-    if ((s8)func_00175700() < 0) {
+    if ((s8)func_00175700(p) < 0) {
         p[0x40D] = 0;
         p[0x40C] = 0;
         p[0x33B] = 0;

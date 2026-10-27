@@ -15,14 +15,14 @@ void func_002A9BA0(u8 *p)
     u32 t;
     f32 v;
     f32 w;
-    extern s8 func_00175700(void);
+    extern int func_00175700(u8 *);
     extern void func_002AA0E0(u8 *);
     extern void func_00394780(u8 *, s32, s32);
     extern s32 func_001757E0(u8 *, s32, s32);
 
     p[0x40C] = 2;
     p[0x33C] = 5;
-    r = func_00175700();
+    r = func_00175700(p);
     if (r >= 0) {
         func_002AA0E0(p);
         if (*(s8 *)(p + 0x161) & 1)

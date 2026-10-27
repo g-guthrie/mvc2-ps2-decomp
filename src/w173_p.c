@@ -8,11 +8,11 @@ typedef float f32;
 
 void func_002A48D0(u8 *p)
 {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     f32 v, a, z = 0.0f;
     p[0x40C] = 2;
     p[0x33C] = 5;
-    func_00175700();
+    func_00175700(p);
     if (*(s8 *)(p + 0x151) == 0) {
         v = (f32)(u32)p[0x15B];
         if (v != z) {

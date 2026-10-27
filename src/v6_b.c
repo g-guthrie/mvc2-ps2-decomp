@@ -41,7 +41,7 @@ s32 func_003082F0(u8 *o) {
 extern u8 D_004F1F45[];
 extern u8 D_004F1F46[];
 void func_00269420(u8 *o) {
-    s32 func_00269B80(); s32 func_00269D30(); s32 func_00269CD0(); void func_00269D10(); void func_00175700(); void func_001E3710();
+    s32 func_00269B80(); s32 func_00269D30(); s32 func_00269CD0(); void func_00269D10(); int func_00175700(u8 *); void func_001E3710();
     if (func_00269B80(o) != 0) return;
     if (func_00269D30(o) != 0) return;
     if (func_00269CD0(o, 0) == 0) func_00269D10(o);
@@ -61,13 +61,13 @@ void func_00269420(u8 *o) {
 }
 
 void func_00264440(u8 *o) {
-    void func_00175700(); s32 func_00174240(); void func_001E3210();
+    int func_00175700(u8 *); s32 func_00174240(); void func_001E3210();
     s32 v;
     *(f32*)(o + 0x34) += *(f32*)(o + 0x5C);
     *(f32*)(o + 0x5C) += *(f32*)(o + 0x68);
     *(f32*)(o + 0x38) += *(f32*)(o + 0x60);
     *(f32*)(o + 0x60) += *(f32*)(o + 0x6C);
-    func_00175700();
+    func_00175700(o);
     if ((v = (*(s8*)(o + 0x151) = 2)) != 0) *(s8*)(o + 0x151) = 0;
     if (func_00174240(o) != 0) {
         u32 t = o[6]; o[6] = t + 1;
@@ -76,9 +76,9 @@ void func_00264440(u8 *o) {
 }
 
 void func_003B9E00(u8 *o) {
-    void func_00175700(); void func_003B9310(); void func_001E3710();
+    int func_00175700(u8 *); void func_003B9310(); void func_001E3710();
     if ((*(u8**)(o + 0x14))[5] == 0) {
-        func_00175700();
+        func_00175700(o);
         if (*(s8*)(o + 0x151) != 0) {
             u32 t = o[5]; o[5] = t + 1;
             o[0x151] = 0;
@@ -97,7 +97,7 @@ void func_003B9E00(u8 *o) {
 }
 
 void func_00234820(u8 *o) {
-    void func_00175700(); void func_001757E0();
+    int func_00175700(u8 *); void func_001757E0();
     f32 *s0, *s1;
     s1 = (f32*)(o + 0x6C);
     s0 = (f32*)(o + 0x60);
@@ -105,7 +105,7 @@ void func_00234820(u8 *o) {
     *(f32*)(o + 0x5C) += *(f32*)(o + 0x68);
     *(f32*)(o + 0x38) += *(f32*)(o + 0x60);
     *(f32*)(o + 0x60) += *(f32*)(o + 0x6C);
-    func_00175700();
+    func_00175700(o);
     if (*(f32*)(o + 0x38) <= *(f32*)(o + 0x430)) {
         u32 t = o[6]; o[6] = t + 1;
         *(f32*)(o + 0x38) = *(f32*)(o + 0x430);
@@ -151,7 +151,7 @@ s32 func_002810D0(u8 *o) {
 }
 
 void func_003BA6F0(u8 *o) {
-    void func_003BD0A0(u8 *); void func_003BD160(); s32 func_00175700(); void func_003BD4A0(); void func_001E7F60(u8*);
+    void func_003BD0A0(u8 *); void func_003BD160(); int func_00175700(u8 *); void func_003BD4A0(); void func_001E7F60(u8*);
     u8 *s0 = *(u8**)(o + 0x18);
     *(f32*)(o + 0x34) += *(f32*)(o + 0x5C);
     *(f32*)(o + 0x5C) += *(f32*)(o + 0x68);
@@ -172,7 +172,7 @@ void func_003BA6F0(u8 *o) {
 }
 
 void func_0021E8A0(u8 *o) {
-    s32 func_00175700(); void func_001757E0();
+    int func_00175700(u8 *); void func_001757E0();
     u32 *s0, *s1, *s2, *s3;
     s3 = (u32*)(o + 0x6C);
     s2 = (u32*)(o + 0x68);
@@ -182,7 +182,7 @@ void func_0021E8A0(u8 *o) {
     *(f32*)(o + 0x5C) += *(f32*)(o + 0x68);
     *(f32*)(o + 0x38) += *(f32*)(o + 0x60);
     *(f32*)(o + 0x60) += *(f32*)(o + 0x6C);
-    if ((s8)func_00175700() < 0) {
+    if ((s8)func_00175700(o) < 0) {
         u32 t = o[6]; o[6] = t + 1;
         func_001757E0(o, 2, 2);
         *s0 = 0;
