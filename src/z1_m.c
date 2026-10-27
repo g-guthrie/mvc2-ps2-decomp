@@ -46,9 +46,10 @@ void func_0017A790(S17A *p) {
     func_001860D0(p);
 }
 
-s32 func_0012A990(u16 a, s32 pos, s32 max, u32 fl) {
+s32 func_0012A990(s32 a, s32 pos, s32 max, u32 fl) {
     extern void func_001E3CE0(s32);
-    u32 m = a & 0x3C00;
+    u16 input = a;
+    u32 m = input & 0x3C00;
     if (m == 0x800) {
         pos--;
         if (fl & 1) {

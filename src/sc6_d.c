@@ -54,7 +54,7 @@ void func_0012ADE0(void)
     extern void func_00151640();
     extern s32 func_001315F0();
     extern s32 func_001316D0();
-    extern u8 func_0012AA90(s32, s32, s32);
+    extern s32 func_0012AA90(s32, s32, s32);
     extern s32 func_00419730(s32, s32);
     extern s32 func_001317B0();
     extern s32 func_0038B2E0(s32, s32, s32);
