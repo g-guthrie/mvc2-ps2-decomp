@@ -12,7 +12,7 @@ void func_00257100(u8 *p)
     extern void func_00257D60();
     extern void func_00257E30();
     extern void func_00258070();
-    extern s32 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001843A0(u8 *);
     switch (p[0x1FC]) {
     case 3:
@@ -52,7 +52,7 @@ void func_00257100(u8 *p)
     case 2:
     case 1:
     case 0:
-        if ((s8)func_00175700() < 0) {
+        if ((s8)func_00175700(p) < 0) {
             func_001843A0(p);
         }
         break;
