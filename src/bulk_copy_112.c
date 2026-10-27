@@ -36,7 +36,7 @@ extern u32 D_00457D60[];
 extern u32 D_004580D0[];
 extern u32 D_004583B0[];
 extern u32 D_00458790[];
-extern u32 D_00458BA0[];
+extern const Mvc2CharacterActionRecord112View D_00458BA0;
 extern u32 D_00458F50[];
 extern u32 D_00459300[];
 extern u32 D_00459920[];
@@ -98,7 +98,7 @@ void func_0029B080(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; 
 void func_002A0BB0(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_004583B0[i]; }
 void func_002A7140(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00458790[i]; }
 /* Provisional: the complete 112-byte source record and destination lifetime need proof. */
-void func_002AB8F0(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00458BA0[i]; }
+void func_002AB8F0(u8 *p) { Mvc2CharacterActionRecord112View *dst = *(Mvc2CharacterActionRecord112View **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst->copy_words[i] = D_00458BA0.copy_words[i]; }
 /* Provisional: the 28-word native record spans multiple data objects. */
 void func_002B2630(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00458F50[i]; }
 void func_002B8140(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00459300[i]; }
