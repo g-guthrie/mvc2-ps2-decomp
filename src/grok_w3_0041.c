@@ -18,9 +18,9 @@ extern void func_0041A090(void);
 extern void func_0041ACC0(void);
 extern s32 func_003DD020(s32 handle);
 extern s32 func_003299D0(void);
-extern void (*D_0043CD0C)(void);
-extern void func_0041C2F0(void);
-extern void func_0041C220(void);
+extern void (*D_0043CD0C)(s32, s32);
+extern void func_0041C2F0(s32, s32);
+extern void func_0041C220(s32, s32);
 extern void func_0012ACC0(s32);
 extern void func_00422DB0(void);
 extern void func_004238A0(s32, s32);
@@ -69,7 +69,7 @@ void func_0041B6C0(void **p)
     }
 }
 
-void func_0041C2C0(void)
+void func_0041C2C0(s32 state_unused, s32 mode_unused)
 {
     if (func_003299D0() == 0)
         D_0043CD0C = func_0041C2F0;
