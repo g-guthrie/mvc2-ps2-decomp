@@ -14643,7 +14643,7 @@ func_00324CB0,0x00324CB0,0x124,src/q4_p.c,complete
 func_0017AF30,0x0017AF30,0x124,src/q4_q.c,complete
 func_0017C5E0,0x0017C5E0,0x128,src/q4_r.c,complete
 func_001F23F0,0x001F23F0,0x130,src/q4_s.c,complete
-func_00359710,0x00359710,0x128,src/q4_t.c,complete
+func_00359710,0x00359710,0x128,src/q4_t.c,placeholder
 func_003D7640,0x003D7640,0x128,src/q4_u.c,complete
 func_003A2250,0x003A2250,0x70,src/q5_g.c,complete
 func_001D4750,0x001D4750,0xD4,src/q5_g.c,complete

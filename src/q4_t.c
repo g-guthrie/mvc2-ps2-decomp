@@ -6,7 +6,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-typedef struct { u8 pad0[0x7C]; s16 f7c[1]; } G4t;
+typedef struct { u8 pad0[0x7C]; s16 f7c[2]; } G4t;
 extern G4t *D_004C2794;
 extern u8 D_00463090[];
 extern u8 D_00463092[];
@@ -14,6 +14,7 @@ extern u8 D_00463094[];
 extern u8 D_00463096[];
 extern u8 D_00463098[];
 
+/* Provisional: the split table aliases and native index bounds need reconciliation. */
 void func_00359710(u8 *p, s32 a1, u8 idx)
 {
     s32 o = idx * 10;
