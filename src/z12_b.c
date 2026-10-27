@@ -63,14 +63,14 @@ void func_00241B50(PH *p) {
 }
 
 void func_0039AA40(PH *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001757E0(PH *, s32, s32);
     extern void func_001E7F60(PH *);
     p->f34 += p->f5c;
     p->f5c += p->f68;
     p->f38 += p->f60;
     p->f60 += p->f6c;
-    func_00175700();
+    func_00175700((u8 *)p);
     if (((s8 *)p)[0x1B2] != 0) {
         ((u8 *)p)[0x1B5] = 0x48;
         *(u8 *)((s32)p + 0x1B2) = *(u16 *)((u8 *)p + 0x1C0) = 0;

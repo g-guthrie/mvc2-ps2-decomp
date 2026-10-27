@@ -164,13 +164,13 @@ typedef struct { u8 pad6[0x6]; u8 b6; u8 pad34[0x2D]; f32 f34; f32 f38; f32 f3c;
 typedef struct { f32 x, y, z; } V3_w;
 extern u8 D_004F1F45, D_004F1F46;
 void func_0020FEC0(S19_w *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_00158C70();
     extern void func_001E3A40();
     extern void func_001757E0();
     u32 t;
     V3_w v;
-    func_00175700();
+    func_00175700((u8 *)p);
     p->f38 += p->f60;
     p->f60 += p->f6c;
     if (p->f38 <= p->f430) {

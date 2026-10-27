@@ -29,11 +29,11 @@ void func_003CCFE0(u8 *o) {
 }
 
 void func_00324B60(u8 *o) {
-    void func_00175700(); void func_00175C00(); void func_00176160(); void func_001830D0();
+    int func_00175700(u8 *); void func_00175C00(); void func_00176160(); void func_001830D0();
     f32 v[4];
     s32 t;
     o[0x33C] = 5;
-    func_00175700();
+    func_00175700(o);
     t = *(s8*)(o + 0x150);
     if (t != 0) {
         if ((s8)t < 0) {
