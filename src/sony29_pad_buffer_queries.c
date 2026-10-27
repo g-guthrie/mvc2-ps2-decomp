@@ -1,7 +1,6 @@
 /* Complete Sony pad double-buffer access and actuator/status queries. */
 typedef unsigned char u8;
-typedef struct { u8 *buffer; int reserved[3]; int enabled; int tail[2]; } BufferSlot;
-extern BufferSlot D_004C83D0[][4];
+#include "sony_pad_slot.h"
 extern void func_001046D8(void *,void *);
 extern void *func_0011D740(void *,const void *,unsigned int);
 extern int func_0010E1B0(int,int,int);

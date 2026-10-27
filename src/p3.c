@@ -10,7 +10,6 @@ extern int *D_004C892C;
 extern int *D_004C8930;
 typedef char *va_list;
 extern void func_00120A30(void *, s32, char *, va_list);
-extern u8 D_004C83D0[];
 extern s32 func_0010E0F8(s32);
 extern void func_0040EE28(void *, s32);
 extern void func_0011EB60();

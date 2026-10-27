@@ -1,7 +1,6 @@
 /* Complete native Sony pad actuator query. */
 typedef unsigned char u8;
-typedef struct { u8 *buffer,*command; int reserved[2]; int enabled; int tail[2]; } BufferSlot;
-extern BufferSlot D_004C83D0[][4];
+#include "sony_pad_slot.h"
 extern u8 *func_0010D860(int port,int slot);
 /* Native 128-byte DMA view, corroborated by historical libpad.
  * The 32-byte payload has overlapping actuator and combination views; the

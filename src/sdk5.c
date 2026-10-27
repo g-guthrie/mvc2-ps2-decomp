@@ -65,7 +65,6 @@ extern long long func_00120838(const char *, char **, int);
 s32 func_00119DA0(const char *s) { return (s32)func_00120838(s, 0, 10); }
 extern char D_004C3570[];
 typedef struct Ent { char pad[0x10]; int f10; char pad2[0xC]; } Ent;
-extern char D_004C83D0[];
 extern char *func_0010D860(int);
 typedef struct S1073 { int p0; int f4; int p8; struct S1073b *fC; } S1073;
 typedef struct S1073b { char pad[0x3C]; struct S1073b *f3C; } S1073b;

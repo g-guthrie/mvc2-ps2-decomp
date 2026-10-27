@@ -1,8 +1,8 @@
 /* Complete native Sony pad port close RPC. */
 typedef unsigned char u8;
-typedef struct {u8 *buffer;int reserved[3];int enabled;int tail[2];} BufferSlot;
+#include "sony_pad_slot.h"
 typedef struct {int command,port,slot,result,flags;} ClosePacket;
-extern BufferSlot D_004C83D0[][4];
+
 extern u8 D_004C85C0[],D_004C8380[];
 extern int func_00106E68(void *,int,int,void *,int,void *,int,void (*)(void *),void *);
 int func_0010D7A8(int port,int slot)

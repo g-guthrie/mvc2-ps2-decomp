@@ -32,18 +32,6 @@ extern int D_00438260;
 extern unsigned char D_004C3980[];
 extern void func_00104FF8(unsigned char *);
 
-typedef struct {
-    int f0;
-    int f4;
-    int f8;
-    int fC;
-    int f10;
-    int pad2[2];
-} E1C;
-typedef struct {
-    E1C e[4];
-} E70;
-extern E1C D_004C83D0[][4];
 extern unsigned char *func_0010D860(int);
 
 
