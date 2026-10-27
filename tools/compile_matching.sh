@@ -20551,7 +20551,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$PYTHON" tools/verify_object.py "$BUILD/owner_saved_mode_entry_0019b7d0.o" private/SLUS_204.86.rom --source src/owner_saved_mode_entry_0019b7d0.c
 
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/owner_circular_entry_00193ba0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_circular_entry_00193ba0.o"
+    src/owner_circular_entry_00193ba0.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/owner_circular_entry_00193ba0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_circular_entry_00193ba0.o" private/SLUS_204.86.rom --source src/owner_circular_entry_00193ba0.c
 
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
@@ -20559,7 +20559,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$PYTHON" tools/verify_object.py "$BUILD/owner_offset_animation_0019c240.o" private/SLUS_204.86.rom --source src/owner_offset_animation_0019c240.c
 
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/owner_random_scatter_0019baf0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_random_scatter_0019baf0.o"
+    src/owner_random_scatter_0019baf0.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/owner_random_scatter_0019baf0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_random_scatter_0019baf0.o" private/SLUS_204.86.rom --source src/owner_random_scatter_0019baf0.c
 
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \

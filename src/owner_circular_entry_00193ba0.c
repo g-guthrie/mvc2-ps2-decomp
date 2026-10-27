@@ -1,3 +1,4 @@
+#include "actor_inherited_state.h"
 /* Initialize the owner-relative circular motion state and its first velocity components. */
 #pragma padloop on
 typedef unsigned char u8;
@@ -17,11 +18,9 @@ void func_00193BA0(u8 *actor,u8 *parent) {
  OrbitWork *work=(OrbitWork*)(actor+0x88);
  Actor *p=(Actor*)actor,*owner=(Actor*)parent;
  f32 component;
- s32 parameter,count;
- s32 *to,*from;
+ s32 parameter;
  ++p->phase;
- from=(s32*)((u8*)owner+0xEC);to=(s32*)((u8*)p+0xEC);count=49;
- do {*to++=*from++;}while(--count>0);
+ *(ActorState *)((u8 *)p+0xEC)=*(ActorState *)((u8 *)owner+0xEC);
  p->visible=1;p->team=owner->team;p->kind=owner->kind;
  p->scale.x=owner->scale.x;p->scale.y=owner->scale.y;
  p->mode=owner->mode;p->variant=owner->variant;p->group=owner->group;

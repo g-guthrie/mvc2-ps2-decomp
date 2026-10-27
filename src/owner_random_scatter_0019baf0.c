@@ -1,3 +1,4 @@
+#include "actor_inherited_state.h"
 /* Initialize a randomly offset effect with inherited or reflected motion. */
 #pragma padloop on
 typedef unsigned char u8;
@@ -15,13 +16,11 @@ extern void func_0019BD20(u8 *);
 extern u8 *D_004C2840 __attribute__((section(".sdata")));
 void func_0019BAF0(u8 *actor) {
  Actor *p=(Actor*)actor,*owner;
- s32 count;
- s32 *to,*from;
+
  int random;
  ++p->phase;
  owner=*(Actor**)(actor+0x18);
- from=(s32*)((u8*)owner+0xEC);to=(s32*)((u8*)p+0xEC);count=49;
- do {*to++=*from++;}while(--count>0);
+ *(ActorState *)((u8 *)p+0xEC)=*(ActorState *)((u8 *)owner+0xEC);
     p->visible = 1;
     actor[2] = (*(u8 **)(actor + 0x18))[2];
     actor[1] = (*(u8 **)(actor + 0x18))[1];
