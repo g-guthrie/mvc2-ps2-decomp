@@ -6,8 +6,9 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 
-void func_001D4DB0(u8 *p, u8 *q) {
-    extern void func_00175700();
+void func_001D4DB0(u8 *p, void *context) {
+    u8 *q = context;
+    extern int func_00175700(u8 *);
     u8 *s2 = q + 0x2B8;
     f32 d;
     func_00175700(p);
