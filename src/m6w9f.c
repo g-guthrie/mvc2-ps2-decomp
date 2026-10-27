@@ -14,7 +14,7 @@ extern u32 D_004773F0[];
 u32 func_003D6850(s32 i) {
     u32 f = 0;
     InputDeviceView *devices = (InputDeviceView *)D_004C2A68;
-    s16 x = devices[i].axis_3a;
+    s16 x = devices[i].second.y;
     u32 old;
     if (x < -0x32) { f |= 0x2000; }
     if (x > 0x32) { f |= 0x1000; }
