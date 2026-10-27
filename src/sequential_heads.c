@@ -1,11 +1,11 @@
 typedef unsigned char u8;
 extern void func_00183D90(u8 *);
-extern void func_001EA040(u8 *); void residual_001EA010(u8 *p) { func_00183D90(p); func_001EA040(p); }
-extern void func_001F84D0(u8 *); void residual_001F84A0(u8 *p) { func_00183D90(p); func_001F84D0(p); }
-extern void func_002095C0(u8 *); void residual_00209590(u8 *p) { func_00183D90(p); func_002095C0(p); }
-extern void func_00211570(u8 *); void residual_00211540(u8 *p) { func_00183D90(p); func_00211570(p); }
-extern void func_00216DF0(u8 *); void residual_00216DC0(u8 *p) { func_00183D90(p); func_00216DF0(p); }
-extern void func_0021DF40(u8 *); void residual_0021DF10(u8 *p) { func_00183D90(p); func_0021DF40(p); }
+extern void func_001EA040(u8 *); void func_001EA010(u8 *p) { func_00183D90(p); func_001EA040(p); }
+extern void func_001F84D0(u8 *); void func_001F84A0(u8 *p) { func_00183D90(p); func_001F84D0(p); }
+extern void func_002095C0(u8 *); void func_00209590(u8 *p) { func_00183D90(p); func_002095C0(p); }
+extern void func_00211570(u8 *); void func_00211540(u8 *p) { func_00183D90(p); func_00211570(p); }
+extern void func_00216DF0(u8 *); void func_00216DC0(u8 *p) { func_00183D90(p); func_00216DF0(p); }
+extern void func_0021DF40(u8 *); void func_0021DF10(u8 *p) { func_00183D90(p); func_0021DF40(p); }
 extern void func_00223A60(u8 *); void func_00223A30(u8 *p) { func_00183D90(p); func_00223A60(p); }
 extern void func_00234330(u8 *); void func_00234300(u8 *p) { func_00183D90(p); func_00234330(p); }
 extern void func_0023ADC0(u8 *); void func_0023AD90(u8 *p) { func_00183D90(p); func_0023ADC0(p); }
@@ -38,4 +38,4 @@ extern void func_002FD100(u8 *); void func_002FD0D0(u8 *p) { func_00183D90(p); f
 extern void func_003015F0(u8 *); void func_003015C0(u8 *p) { func_00183D90(p); func_003015F0(p); }
 extern void func_00305D10(u8 *); void func_00305CE0(u8 *p) { func_00183D90(p); func_00305D10(p); }
 extern void func_00310880(u8 *); void func_00310850(u8 *p) { func_00183D90(p); func_00310880(p); }
-extern void func_0031C1E0(u8 *); void residual_0031C1B0(u8 *p) { func_00183D90(p); func_0031C1E0(p); }
+extern void func_0031C1E0(u8 *); void func_0031C1B0(u8 *p) { func_00183D90(p); func_0031C1E0(p); }

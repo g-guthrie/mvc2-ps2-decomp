@@ -4440,12 +4440,12 @@ residual_0031B9D0,0x0031B9D0,0x8,src/tail_recheck.c,complete
 residual_003C6F90,0x003C6F90,0x8,src/tail_recheck.c,complete
 residual_003C6FD0,0x003C6FD0,0x8,src/tail_recheck.c,complete
 residual_003C7010,0x003C7010,0x8,src/tail_recheck.c,complete
-residual_001EA010,0x001EA010,0x2C,src/sequential_heads.c,complete
-residual_001F84A0,0x001F84A0,0x2C,src/sequential_heads.c,complete
-residual_00209590,0x00209590,0x2C,src/sequential_heads.c,complete
-residual_00211540,0x00211540,0x2C,src/sequential_heads.c,complete
-residual_00216DC0,0x00216DC0,0x2C,src/sequential_heads.c,complete
-residual_0021DF10,0x0021DF10,0x2C,src/sequential_heads.c,complete
+func_001EA010,0x001EA010,0x2C,src/sequential_heads.c,complete
+func_001F84A0,0x001F84A0,0x2C,src/sequential_heads.c,complete
+func_00209590,0x00209590,0x2C,src/sequential_heads.c,complete
+func_00211540,0x00211540,0x2C,src/sequential_heads.c,complete
+func_00216DC0,0x00216DC0,0x2C,src/sequential_heads.c,complete
+func_0021DF10,0x0021DF10,0x2C,src/sequential_heads.c,complete
 func_00223A30,0x00223A30,0x2C,src/sequential_heads.c,complete
 func_00234300,0x00234300,0x2C,src/sequential_heads.c,complete
 func_0023AD90,0x0023AD90,0x2C,src/sequential_heads.c,complete
@@ -4478,7 +4478,7 @@ func_002FD0D0,0x002FD0D0,0x2C,src/sequential_heads.c,complete
 func_003015C0,0x003015C0,0x2C,src/sequential_heads.c,complete
 func_00305CE0,0x00305CE0,0x2C,src/sequential_heads.c,complete
 func_00310850,0x00310850,0x2C,src/sequential_heads.c,complete
-residual_0031C1B0,0x0031C1B0,0x2C,src/sequential_heads.c,complete
+func_0031C1B0,0x0031C1B0,0x2C,src/sequential_heads.c,complete
 func_001ED680,0x001ED680,0x58,src/three_checks.c,complete
 func_001F7900,0x001F7900,0x58,src/three_checks.c,complete
 func_001FC920,0x001FC920,0x58,src/three_checks.c,complete
