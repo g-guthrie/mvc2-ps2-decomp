@@ -27,10 +27,10 @@ void func_0034D200(u8 *p) {
 #define P(t,o) (*(t*)(p+(o)))
 #define Q(t,o) (*(t*)(*(u8**)(p+0x18)+(o)))
 
-extern s32 func_00175700();
-extern void func_003CAB20(u8 *, s32, s32);
-void func_003CC820(u8 *p, s32 b) {
-    func_00175700(p, b);
+extern s32 func_00175700(u8 *);
+extern void func_003CAB20(u8 *, u8 *, u32);
+void func_003CC820(u8 *p, u8 *b) {
+    func_00175700(p);
     {
         s16 v = P(s16,0x1C) - 1;
         P(s16,0x1C) = v;
@@ -219,7 +219,7 @@ void func_00274650(u8 *p) {
 
 extern void func_001757E0();
 void func_00252090(u8 *p) {
-    func_00175700();
+    func_00175700(p);
     P(f32,0x34) += P(f32,0x5C);
     P(f32,0x5C) += P(f32,0x68);
     P(f32,0x38) += P(f32,0x60);

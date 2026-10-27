@@ -155,12 +155,12 @@ void func_0020E290(u8 *p)
     }
 }
 
-void func_003CC2E0(u8 *p, s32 a1)
+void func_003CC2E0(u8 *p, u8 *a1)
 {
     extern void func_00175700(u8 *);
-    extern void func_003CC420(u8 *, s32);
+    extern void func_003CC420(u8 *, u8 *);
     extern s32 func_00182C90(u8 *);
-    extern void func_003CAB20(u8 *, s32, s32);
+    extern void func_003CAB20(u8 *, u8 *, u32);
     extern void func_001843A0(u8 *);
     extern void func_001845F0(u8 *);
     u8 *s0;

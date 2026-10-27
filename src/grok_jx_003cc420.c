@@ -3,7 +3,7 @@ typedef signed short s16;
 typedef signed int s32;
 typedef float f32;
 
-void func_003CC420(u8 *p)
+void func_003CC420(u8 *p, u8 *owner)
 {
     u8 *q = *(u8 **)(p + 0x1C4);
     f32 x = 1.66666662693023681640625f * (f32)((s32)q[0x14E] >> 2);
