@@ -7,6 +7,7 @@ typedef signed int s32;
 typedef float f32;
 
 extern void func_0035AE70();
+/* Provisional: helper arguments and exact call sequence require reconciliation. */
 void func_00358FD0(u8 *a, s32 b) {
     u8 *s = *(u8 **)(a + 0x18);
     if (s[5] != 0) {

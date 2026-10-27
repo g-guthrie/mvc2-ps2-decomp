@@ -10493,7 +10493,7 @@ func_0039BAF0,0x0039BAF0,0x80,src/g11b.c,complete
 func_003BD160,0x003BD160,0x68,src/g11c.c,complete
 func_00277880,0x00277880,0x78,src/g11c.c,complete
 func_0013E070,0x0013E070,0x7C,src/g11c.c,complete
-func_00358FD0,0x00358FD0,0x80,src/g11d.c,complete
+func_00358FD0,0x00358FD0,0x80,src/g11d.c,placeholder
 func_0016B360,0x0016B360,0x80,src/g11d.c,complete
 func_0022B240,0x0022B240,0x74,src/g5.c,complete
 func_00138690,0x00138690,0x78,src/g5.c,complete
