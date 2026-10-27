@@ -45,12 +45,12 @@ void func_001C6560(u8 *d, u8 *s) {
     }
 }
 
-extern s32 func_001E7FD0();
-s32 func_00214960(u8 *p) {
+extern u8 *func_001E7FD0(u8 *);
+u8 *func_00214960(u8 *p) {
     s32 v = (*(u16 *)(p + 0x20E) & 0xC00) >> 10;
     p[0x22] = v;
     if ((u8)v != 0 && p[0x212] == 1 && p[0x1B7] == 1) {
-        s32 r = func_001E7FD0();
+        u8 *r = func_001E7FD0(p);
         if (r) {
             p[0x20B] = 1;
             return r;

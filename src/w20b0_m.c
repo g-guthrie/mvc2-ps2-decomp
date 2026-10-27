@@ -6,9 +6,9 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-s32 func_001F6160(u8 *a) {
-    extern s32 func_001E7FD0();
-    s32 r;
+u8 *func_001F6160(u8 *a) {
+    extern u8 *func_001E7FD0(u8 *);
+    u8 *r;
     u16 *s0;
     s0 = (u16 *)(a + 0x2B8);
     switch (a[0x20D]) {
