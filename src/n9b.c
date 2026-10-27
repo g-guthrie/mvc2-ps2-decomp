@@ -14,12 +14,12 @@ extern s32 D_004C28BC;
 extern s32 D_004C28B8;
 extern s32 D_004C28AC;
 extern void func_0012DA40();
-extern void func_00176230();
+extern void func_00176230(s16 *, s16 *);
 void func_0016F810(void) {
     *(s32 *)(D_004C2840 + 0x98) = D_004C28BC + 0x3F0000;
     if (*(s8 *)(D_004C2840 + 0x88) == 1) *(s32 *)(D_004C2840 + 0x98) = D_004C28BC;
     func_0012DA40(0x3E, D_004C28B8, 2);
-    func_00176230(D_004C28B8, *(s32 *)(D_004C2840 + 0x98));
+    func_00176230((s16 *)D_004C28B8, *(s16 **)(D_004C2840 + 0x98));
     func_0012DA40(0x34B, D_004C28AC, 2);
     func_0012DA40(0x34C, D_004C28B8, 2);
 }

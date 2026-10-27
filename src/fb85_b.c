@@ -30,7 +30,7 @@ void func_00170170(s32 a, s32 b)
     extern void func_0016F430(s32, s32);
     extern void func_0016F5B0(s32, s32, s32, s32, s32, s32);
     extern void func_0016F530(s32, s32, s32, s32, s32, s32);
-    extern void func_00176230(s32, s32);
+    extern void func_00176230(s16 *, s16 *);
     extern void memcpy(s32, s32, s32);
     extern void func_0016FAA0(void);
     extern void func_00170B30(s32);
@@ -74,7 +74,7 @@ void func_00170170(s32 a, s32 b)
         func_0012DA40(0x320, D_004C28B8, 2);
         A1 = D_004C28B0;
         A0 = D_004C28B8;
-        func_00176230(A0, A1);
+        func_00176230((s16 *)A0, (s16 *)A1);
         A2 = D_004C28AC + 0x61000;
         A0 = 0xC50;
         A3 = D_004C28B0;
@@ -256,7 +256,7 @@ void func_00170170(s32 a, s32 b)
     case 24:
         D_004C2B34 = 4;
         D_004C2B30 = 1;
-        func_00176230(D_004C28B8 + 0x18A000, D_004C28B0);
+        func_00176230((s16 *)(D_004C28B8 + 0x18A000), (s16 *)D_004C28B0);
         A2 = D_004C28AC + 0x61000;
         A0 = 0xC50;
         A3 = D_004C28B0;

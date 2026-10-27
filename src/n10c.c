@@ -60,7 +60,7 @@ extern s32 D_004C28AC;
 extern s32 D_004C28B8;
 extern s8 *D_004C2840;
 extern void func_0012DA40(s32 a, s32 b, s32 c);
-extern void func_00176230(s32 a, s32 b);
+extern void func_00176230(s16 *a, s16 *b);
 
 void func_0016FA10(void) {
     if (D_004C2840[0x29] == 0) {
@@ -70,7 +70,7 @@ void func_0016FA10(void) {
         func_0012DA40(0x355, D_004C28AC, 2);
         func_0012DA40(0x356, D_004C28B8 + 0x100000, 2);
     }
-    func_00176230(D_004C28B8 + 0x100000, D_004C28B8);
+    func_00176230((s16 *)(D_004C28B8 + 0x100000), (s16 *)D_004C28B8);
 }
 
 typedef struct {

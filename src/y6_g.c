@@ -14,7 +14,7 @@ extern s32 D_004C28AC;
 extern s32 D_004C28B0;
 
 void func_0016F640(void) {
-    extern void func_00176230();
+    extern void func_00176230(s16 *, s16 *);
     extern void *func_0011D740(void *, const void *, unsigned int);
     extern void func_0012DA40();
     G6F *g;
@@ -27,7 +27,7 @@ void func_0016F640(void) {
         g->f98 = D_004C28BC + 0x3F0000;
         break;
     }
-    func_00176230(D_004C28B8, D_004C2840->f98);
+    func_00176230((s16 *)D_004C28B8, (s16 *)D_004C2840->f98);
     func_0011D740((void *)D_004C28AC, (const void *)(D_004C28B8 + 0x185000), 0x4A000);
     func_0012DA40(0x346, D_004C28B8, 2);
     if (D_004C2840->f29 != 0) {

@@ -17,7 +17,7 @@ extern T3 D_004468F0[2];
 void func_0016FC80(void) {
     extern void func_0016F5B0(s32, s32, s32, s32, s32, s32);
     extern void func_0012DA40(s32, s32, s32);
-    extern void func_00176230(s32, s32);
+    extern void func_00176230(s16 *, s16 *);
     extern s32 func_00416180(s32, s32);
     extern void func_00415140(s32, T3 *);
     T3 *q;
@@ -29,7 +29,7 @@ void func_0016FC80(void) {
     if (D_004C2840[0x4C] == 1) {
         func_0012DA40(0x96, D_004C28B8 + 0xFF000, 2);
         t1 = D_004C28B8;
-        func_00176230(t1 + 0xFF000, t1 + 0x67000);
+        func_00176230((s16 *)(t1 + 0xFF000), (s16 *)(t1 + 0x67000));
         q = &D_004468D0[1];
         q->f4 = 0x10000;
         q->f8 = func_00416180(D_004C28B8 + 0x67000, 0x12);
