@@ -11,10 +11,10 @@ extern s16 D_0045AA12[];
 
 void func_002DA3F0(u8 *p)
 {
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001757E0(u8 *, s32, s32);
     s32 i, a, b;
-    if (func_00175700() < 0) {
+    if ((s8)func_00175700(p) < 0) {
         p[6]++;
         func_001757E0(p, 0, 0);
         return;
