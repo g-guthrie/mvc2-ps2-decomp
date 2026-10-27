@@ -124,7 +124,7 @@ void func_00223690(u8 *p)
         p[0x1BB] = 2;
         break;
     }
-    t0 = *(volatile u8 *)(p + 0x1B5);
+    t0 = *(u8 *)(p + 0x1B5);
     p[0x1B5] = t0;
     p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
     *(u32 *)(p + 0x1D8) = 0;
@@ -182,7 +182,7 @@ void func_00296060(u8 *p)
         p[0x1BB] = 2;
         break;
     }
-    t0 = *(volatile u8 *)(p + 0x1B5);
+    t0 = *(u8 *)(p + 0x1B5);
     p[0x1B5] = t0;
     p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
     *(u32 *)(p + 0x1D8) = 0;
@@ -244,7 +244,7 @@ void func_002F7AD0(u8 *p)
         }
         break;
     }
-    t0 = *(volatile u8 *)(p + 0x1B5);
+    t0 = *(u8 *)(p + 0x1B5);
     p[0x1B5] = t0;
     p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
     *(u32 *)(p + 0x1D8) = 0;
@@ -318,7 +318,7 @@ void func_001F7DC0(u8 *p)
         p[0x1BB] = 2;
         break;
     }
-    t0 = *(volatile u8 *)(p + 0x1B5);
+    t0 = *(u8 *)(p + 0x1B5);
     p[0x1B5] = t0;
     p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
     *(u32 *)(p + 0x1D8) = 0;
