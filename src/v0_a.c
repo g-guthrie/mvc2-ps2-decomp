@@ -181,12 +181,12 @@ void func_003A9540(u8 *p) {
 
 void func_0034E1C0(u8 *p) {
     extern u8 *func_003DA750(s32, s32, s32);
-    extern void func_0034E290();
+    extern void func_0034E290(u8 *);
     s32 i;
     u8 *o;
     for (i = 0; i < 8; i++) {
         if ((o = func_003DA750(0, 1, 0)) == 0) break;
-        *(u32 *)(o + 0x10) = (u32)func_0034E290;
+        *(void (**)(u8 *))(o + 0x10) = func_0034E290;
         *(u8 **)(o + 0x18) = p;
         o[0x20] = 2;
         o[0x21] = i;
@@ -194,7 +194,7 @@ void func_0034E1C0(u8 *p) {
     }
     for (i = 0; i < 8; i++) {
         if ((o = func_003DA750(0, 1, 0)) == 0) break;
-        *(u32 *)(o + 0x10) = (u32)func_0034E290;
+        *(void (**)(u8 *))(o + 0x10) = func_0034E290;
         *(u8 **)(o + 0x18) = p;
         o[0x20] = 1;
         o[0x21] = i;

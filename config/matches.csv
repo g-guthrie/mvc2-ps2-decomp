@@ -19354,3 +19354,4 @@ func_00351BF0,0x00351BF0,0x34,src/owner_phase_pair_00351bf0.c,placeholder
 func_00351C30,0x00351C30,0xE4,src/owner_phase_pair_00351bf0.c,placeholder
 func_0034D5C0,0x0034D5C0,0x34,src/owner_dispatch_0034d5c0.c,placeholder
 func_0034E2D0,0x0034E2D0,0xEC,src/owner_phase_init_0034e2d0.c,placeholder
+func_0034E290,0x0034E290,0x34,src/owner_dispatch_0034e290.c,placeholder
