@@ -15932,7 +15932,8 @@ func_00358C50,0x00358C50,0xD8,0x00358D28,code,spimdisasm-explicit-size-before-fi
 func_00358D30,0x00358D30,0x8,0x00358D38,code,spimdisasm-explicit-size-before-first-data
 func_00358D40,0x00358D40,0x8,0x00358D48,code,spimdisasm-explicit-size-before-first-data
 func_00358D50,0x00358D50,0x74,0x00358DC4,code,spimdisasm-explicit-size-before-first-data
-func_00358DD0,0x00358DD0,0x160,0x00358F30,code,spimdisasm-explicit-size-before-first-data
+func_00358DD0,0x00358DD0,0x54,0x00358E24,code,verified-native-dispatch-boundary
+func_00358E30,0x00358E30,0x100,0x00358F30,code,verified-native-callback-boundary
 func_00358F30,0x00358F30,0x84,0x00358FB4,code,spimdisasm-explicit-size-before-first-data
 func_00358FC0,0x00358FC0,0x8,0x00358FC8,code,spimdisasm-explicit-size-before-first-data
 func_00358FD0,0x00358FD0,0x80,0x00359050,code,spimdisasm-explicit-size-before-first-data
