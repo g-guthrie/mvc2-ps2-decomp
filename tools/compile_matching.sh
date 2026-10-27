@@ -3624,10 +3624,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py "$BUILD/initialize_runtime_menu_notice_00420560.o" \
     private/SLUS_204.86.rom --source src/initialize_runtime_menu_notice_00420560.c
 
-"$WIBO" "$SNCPP" -P src/sdk_write_character_0011B9D0.c "$BUILD/sdk_write_character_0011B9D0.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_write_character_0011B9D0.i" "$BUILD/sdk_write_character_0011B9D0.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_write_character_0011B9D0.o" "$BUILD/sdk_write_character_0011B9D0.s"
-"$PYTHON" tools/verify_object.py "$BUILD/sdk_write_character_0011B9D0.o" private/SLUS_204.86.rom --source src/sdk_write_character_0011B9D0.c
+"$WIBO" "$SNCPP" -P src/sdk_open_file_0011B9D0.c "$BUILD/sdk_open_file_0011B9D0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_open_file_0011B9D0.i" "$BUILD/sdk_open_file_0011B9D0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_open_file_0011B9D0.o" "$BUILD/sdk_open_file_0011B9D0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sdk_open_file_0011B9D0.o" private/SLUS_204.86.rom --source src/sdk_open_file_0011B9D0.c
 
 "$WIBO" "$SNCPP" -P src/sdk_buffered_character_0011B9F8.c "$BUILD/sdk_buffered_character_0011B9F8.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_buffered_character_0011B9F8.i" "$BUILD/sdk_buffered_character_0011B9F8.s"

@@ -28,7 +28,7 @@ extern s32 func_0011FA30();
 extern s32 func_0011FAB0();
 extern s32 func_0011FB18();
 
-F *func_0011B8F0(s32 ptr, s32 name, s32 mode) {
+F *func_0011B8F0(void *ptr, const char *name, const char *mode) {
     F *fp;
     s32 f;
     s32 flags;
