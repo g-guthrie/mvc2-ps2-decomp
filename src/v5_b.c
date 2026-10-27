@@ -81,7 +81,8 @@ void func_003C0020(u8 *p, u8 *q) {
 
 typedef struct { f32 x, y, z; } V3;
 
-void func_00354F80(u8 *p, u8 *q) {
+void func_00354F80(u8 *p, void *owner) {
+    u8 *q = owner;
     extern u16 D_004D18DC[];
     extern u8 D_004D18DB[];
     extern G7C *D_004C2794;
