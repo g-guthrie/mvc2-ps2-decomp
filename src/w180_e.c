@@ -21,7 +21,7 @@ typedef struct F {
 
 extern s32 func_0011B838();
 extern F *func_0011B670();
-extern s32 func_0011EAA0();
+extern int func_0011EAA0(void *, const char *, int, int);
 extern s32 func_0011BF48();
 extern s32 func_0011F9C8();
 extern s32 func_0011FA30();

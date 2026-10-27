@@ -16,7 +16,7 @@ void func_001067C8(void) {
 }
 
 extern s32 *func_0011B370(void);
-s32 func_001044A0(void) {
+s32 func_001044A0(const char *path, int flags, int mode) {
     s32 *p;
     do { p = func_0011B370(); } while (0);
     *p = 5;
