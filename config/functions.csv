@@ -15670,7 +15670,8 @@ func_0034DC30,0x0034DC30,0x40,0x0034DC70,code,spimdisasm-explicit-size-before-fi
 func_0034DC70,0x0034DC70,0xF0,0x0034DD60,code,spimdisasm-explicit-size-before-first-data
 func_0034DD60,0x0034DD60,0x64,0x0034DDC4,code,spimdisasm-explicit-size-before-first-data
 func_0034DDD0,0x0034DDD0,0x34,0x0034DE04,code,verified-grok-source-recovery
-residual_0034DE04,0x0034DE04,0x14C,0x0034DF50,assembly_residual,native-remainder-after-verified-c-entry
+residual_0034DE04,0x0034DE04,0xFC,0x0034DF00,assembly_residual,native-remainder-before-verified-c-entry
+func_0034DF00,0x0034DF00,0x50,0x0034DF50,code,verified-native-table-entry-boundary
 func_0034DF50,0x0034DF50,0xB8,0x0034E008,code,spimdisasm-explicit-size-before-first-data
 func_0034E010,0x0034E010,0x1C,0x0034E02C,code,matching-c-head-split
 func_0034E030,0x0034E030,0x58,0x0034E088,code,verified-complete-c-function

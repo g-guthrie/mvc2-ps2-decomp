@@ -21765,4 +21765,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/child_event_state_0020d310.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/child_event_state_0020d310.o"
 "$PYTHON" tools/verify_object.py "$BUILD/child_event_state_0020d310.o" private/SLUS_204.86.rom --source src/child_event_state_0020d310.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_state_init_0034df00.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/owner_state_init_0034df00.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_state_init_0034df00.o" private/SLUS_204.86.rom --source src/owner_state_init_0034df00.c
 PYTHON="$PYTHON" tools/compile_matching_data.sh

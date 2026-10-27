@@ -19341,3 +19341,4 @@ func_0036C120,0x0036C120,0x68,src/actor_dispatch_0036c120.c,placeholder
 func_002B43B0,0x002B43B0,0x54,src/controller_action_002b43b0.c,placeholder
 func_002F9240,0x002F9240,0x98,src/context_action_init_002f9240.c,placeholder
 func_0020D310,0x0020D310,0x38,src/child_event_state_0020d310.c,placeholder
+func_0034DF00,0x0034DF00,0x50,src/owner_state_init_0034df00.c,placeholder
