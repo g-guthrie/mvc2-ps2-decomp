@@ -14,7 +14,7 @@ extern void func_0019A3D0();
 extern void func_00352670();
 extern void func_001845F0();
 extern void func_00183d50();
-extern void func_001843A0();
+extern void func_001843A0(u8 *);
 extern void func_001830D0();
 extern void func_0036BFF0();
 extern void func_001B0F40();
@@ -83,7 +83,7 @@ void func_002204C0(u8 *p) {
         *(u32 *)(p + 0x60) = 0;
         *(u32 *)(p + 0x68) = 0;
         *(u32 *)(p + 0x6C) = 0;
-        func_001843A0();
+        func_001843A0(p);
     }
 }
 

@@ -151,7 +151,7 @@ void func_00212BA0(u8 *p, u8 *q) {
 }
 
 void func_0017EE80(u8 *p) {
-    extern void func_001843A0();
+    extern void func_001843A0(u8 *);
     extern void func_00184540();
     s32 a, b;
     if (p[6] == 0) {
@@ -168,7 +168,7 @@ void func_0017EE80(u8 *p) {
     if (*(s8 *)(p + 0x24D) != 0 || *(s16 *)(p + 0x1C) != 0)
         return;
     if (p[0x20D] != 2)
-        func_001843A0();
+        func_001843A0(p);
     else
         func_00184540();
 }

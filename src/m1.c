@@ -92,7 +92,7 @@ extern void func_0018ED20();
 extern int func_00175700(u8 *);
 extern void func_0018EB00();
 extern void func_001757E0(void *, s32, s32);
-extern void func_001843A0();
+extern void func_001843A0(u8 *);
 
 void func_00299B50(u8 *p) {
     if (p[6] == 0) {
@@ -103,7 +103,7 @@ void func_00299B50(u8 *p) {
         s16 v = *(s16 *)(p + 0x1C) - 1;
         *(s16 *)(p + 0x1C) = v;
         if (v <= 0) {
-            func_001843A0();
+            func_001843A0(p);
         } else {
             func_00175700(p);
         }

@@ -10,7 +10,7 @@ typedef struct { u8 pad[0x7C]; s16 f7c[1]; } G31F;
 extern G31F *D_004C2794;
 
 void func_0031F5E0(u8 *p, u8 *q) {
-    extern void func_001843A0();
+    extern void func_001843A0(u8 *);
     extern s32 func_00175700();
     extern void func_001E3210();
     extern void func_00126400();
@@ -25,7 +25,7 @@ void func_0031F5E0(u8 *p, u8 *q) {
     *(s16 *)(q + 8) = *(s16 *)(q + 8) + 1;
     p[0x209] = 2;
     if (*(s8 *)(p + 0x1B2) == 0) {
-        func_001843A0();
+        func_001843A0(p);
         return;
     }
     r = func_00175700(p);

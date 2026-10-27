@@ -9,7 +9,7 @@ typedef float f32;
 extern s16 D_00448B30[];
 
 void func_0017B800(u8 *a) {
-    extern void func_001843A0();
+    extern void func_001843A0(u8 *);
     u8 *o = *(u8 **)(a + 0x1CC);
     s16 h;
     f32 z = 0.0f;
@@ -19,7 +19,7 @@ void func_0017B800(u8 *a) {
     h = *(s16 *)(a + 0x1C);
     v = 1.6666666269302368f * (f32)D_00448B30[h] / 256.0f;
     if (z == v) {
-        func_001843A0();
+        func_001843A0(a);
         return;
     }
     *(s16 *)(a + 0x1C) = h + 1;
