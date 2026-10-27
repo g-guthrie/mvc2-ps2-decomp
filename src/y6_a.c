@@ -22,10 +22,11 @@ void func_0025F3E0(u8 *p) {
     func_00175700(p);
 }
 
-extern const u32 jtbl_00475DD0[11];
+extern void (*const jtbl_00475DD0[11])(u8 *, void *);
+/* Provisional: callback-table ABI and state bounds remain unresolved. */
 void func_003C4140(u8 *p, u8 *q) {
     s8 v;
-    ((void (*)(u8 *, u8 *))jtbl_00475DD0[8 + p[6]])(p, q);
+    jtbl_00475DD0[8 + p[6]](p, q);
     p[0x24] = *(s8 *)(q + 0x24) + *(s8 *)(p + 0x31);
     if (*(s8 *)(p + 0x24) > 7) p[0x24] = 7;
     if (*(s8 *)(p + 0x24) < 0) p[0x24] = 0;
