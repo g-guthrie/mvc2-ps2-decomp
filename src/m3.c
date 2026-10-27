@@ -21,18 +21,18 @@ extern void func_003B9310(u8 *, s32, s32);
 extern void func_00390BE0(u8 *, s32);
 extern u8 D_004D18A0;
 extern s32 func_00189310(u8 *, u8 *, u8 *);
-extern s32 func_003DA750(s32, s32, s32);
-extern void func_0035E7C0();
+extern void *func_003DA750(void *, s32, s32);
+extern void func_0035E7C0(u8 *);
 extern u8 D_0045DDA0[];
 extern void (*D_004649D0[])(u8 *);
 
-void func_0035E760(s32 a, s32 b) {
-    u8 *r = (u8 *)func_003DA750(0, 1, 1);
+void func_0035E760(u8 *a, u8 *b) {
+    u8 *r = func_003DA750(0, 1, 1);
     if (r) {
         *(s16 *)(r + 0x26) = 0xE00;
-        *(u32 *)(r + 0x10) = (u32)func_0035E7C0;
-        *(s32 *)(r + 0x14) = a;
-        *(s32 *)(r + 0x18) = b;
+        *(void (**)(u8 *))(r + 0x10) = func_0035E7C0;
+        *(u8 **)(r + 0x14) = a;
+        *(u8 **)(r + 0x18) = b;
     }
 }
 

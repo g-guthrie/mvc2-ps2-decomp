@@ -15,7 +15,7 @@ extern void func_00164E90();
 extern s32 func_00175670();
 extern void func_001B93D0();
 extern void func_001754A0();
-extern void func_0035E760();
+extern void func_0035E760(u8 *, u8 *);
 
 extern s32 D_004C283C;
 extern V3 D_004B7B20;
@@ -205,7 +205,7 @@ void func_001A41E0(u8 *p, u8 *q) {
     if (t == 0) {
         u32 c = p[5];
         p[5] = c + 1;
-        func_0035E760();
+        func_0035E760(p, q);
     }
     *(f32 *)(p + 0x60) = *(f32 *)(p + 0x5C) / (f32)(u32)p[0x21];
 }
