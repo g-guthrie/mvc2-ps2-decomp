@@ -11,7 +11,7 @@ extern s32 jtbl_004CA000[];
 
 extern s32 func_003299D0(void);
 extern void func_003298B0(s32, s32, s32);
-extern void func_0012E5E0(s32, u16, s32);
+extern void func_0012E5E0(u16, u16, s32);
 extern void func_0012CB90(void);
 extern void func_0012C8E0(void);
 extern void func_0012D4F0(void);

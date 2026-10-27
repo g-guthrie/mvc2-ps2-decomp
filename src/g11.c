@@ -20,11 +20,11 @@ void func_001669F0(u8 *a0, s32 a1) {
     func_00166C80(a0, a1, *(s32 *)(a0 + 0x4C8) < *(s8 *)(a0 + 0x4BD));
 }
 
-typedef struct { s16 a; s16 b; s32 c; } Ent8;
+typedef struct { u16 a; u16 b; s32 c; } Ent8;
 extern u8 D_004CAB5C;
 extern u8 D_004CAB5B;
 extern Ent8 D_004CA6F0[];
-void func_0012E5E0(s16 a0, s16 a1, s32 a2) {
+void func_0012E5E0(u16 a0, u16 a1, s32 a2) {
     u32 t;
     Ent8 *e;
     u32 u;
