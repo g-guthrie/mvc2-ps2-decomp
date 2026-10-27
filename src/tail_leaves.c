@@ -10,7 +10,7 @@ typedef signed int s32;
 
 extern void func_00103E10();
 extern int func_0010C480(void);
-extern void func_00116CD0();
+extern float func_00116CD0(float);
 extern float func_00116FA0(float);
 extern void func_001170A0();
 extern float func_00117240(float);
@@ -1390,7 +1390,7 @@ s32 func_003DD020(s32 handle) { return func_003DB9E0(handle); }
 
 s32 func_003DD030(s32 handle) { return func_003DB9D0(handle); }
 
-void func_003DE6F0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00116CD0(a0, a1, a2, a3); }
+float func_003DE6F0(float angle) { return func_00116CD0(angle); }
 
 float func_003DE700(float y, float x) { return func_001173E8(y,x); }
 
