@@ -13,6 +13,7 @@ extern const s8 D_004ACD90[]; /* byte table interior at 0x004ACD90 */
 extern const f32 data_f32_004ACD30[6];
 extern u8 D_004D18E5[];
 
+/* Provisional: palette and character selector bounds and table ownership require proof. */
 void func_001804F0(u8 *p)
 {
     *(s8 *)(p + 0x13D) = -1;
