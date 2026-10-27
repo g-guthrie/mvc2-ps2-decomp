@@ -104,12 +104,12 @@ typedef struct S_0040ED28 { u8 pad[0x28]; s32 w28; } S_0040ED28;
 void func_0040ED28(S_0040ED28 *p, s32 rate) {
   if (48000 % rate != 0) {
     func_0011EB60(D_004BE888, rate);
-    for (;;) { __asm__ volatile("nop"); }
+    for (;;) {}
   }
   if (rate != 48000) {
     if ((48000 / rate) & 1) {
       func_0011EB60(D_004BE888, rate);
-      for (;;) { __asm__ volatile("nop"); }
+      for (;;) {}
     }
   }
   p->w28 = rate;
