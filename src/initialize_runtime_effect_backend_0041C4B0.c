@@ -24,7 +24,7 @@ typedef unsigned char u8;
 extern void func_0041C550(u8 *, u8 *);
 
 
-void func_0041C4B0(struct MenuNoticeData *data)
+void func_0041C4B0(struct MenuNoticeData *data, u8 *owner_unused)
 {
     if (func_0012E560(data) == 0)
         return;

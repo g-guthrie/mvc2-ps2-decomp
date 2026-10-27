@@ -75,7 +75,7 @@ void func_0041C2C0(void)
         D_0043CD0C = func_0041C2F0;
 }
 
-void func_0041CA00(void)
+void func_0041CA00(u8 *state_unused, u8 *owner_unused)
 {
     if (func_003299D0() == 0) {
         func_0012ACC0(0);
