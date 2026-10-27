@@ -378,7 +378,7 @@ extern DispatchFn jtbl_004C1D98[2];
 extern DispatchFn jtbl_004C1DA0[2];
 extern DispatchFn jtbl_004C1DA8[2];
 extern DispatchFn jtbl_004C1DB8[2];
-extern DispatchFn jtbl_004C1DD8[2];
+extern const Mvc2StateCallback jtbl_004C1DD8[10] __attribute__((section(".sdata")));
 extern DispatchFn jtbl_004C1DF8[2];
 extern DispatchFn jtbl_004C1E08[2];
 extern DispatchFn jtbl_004C1E80[2];
