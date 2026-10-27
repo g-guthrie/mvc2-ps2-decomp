@@ -12,6 +12,7 @@ extern u8 *D_004C2840 __attribute__((section(".sdata")));
 extern s16 D_004F7F7C,D_004F7F7A;
 extern float D_004F7FD0,D_004F7FD4;
 extern void func_00417AE0(int,int *);
+/* Provisional: player selector, resource extent, and nonzero count need proof. */
 void func_003D3B40(void)
 {
  u8 *graphics=D_004771D0;
