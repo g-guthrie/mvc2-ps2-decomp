@@ -11612,6 +11612,7 @@ D_004C1E40 = 0x004C1E40;
 D_004F1FDC = 0x004F1FDC;
 D_0045DFD0 = 0x0045DFD0;
 D_00475CB0 = 0x00475CB0;
+jtbl_00475CB0 = 0x00475CB0;
 residual_0029F450 = 0x0029F450; // allow_duplicated:True
 residual_002FA000 = 0x002FA000; // allow_duplicated:True
 residual_00301CF0 = 0x00301CF0; // allow_duplicated:True
