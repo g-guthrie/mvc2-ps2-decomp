@@ -99,7 +99,7 @@ void func_00161410(P61 *p)
         p->f80 += p->f58;
     }
 }
-extern const u32 jtbl_004C20F8[16] __attribute__((section(".sdata")));
+extern void (*const jtbl_004C20F8[16])(u8 *, void *) __attribute__((section(".sdata")));
 
 /* Provisional: callback-table ABI and state bounds remain unresolved. */
 void func_003C3DE0(u8 *p, u8 *q)
@@ -113,7 +113,7 @@ void func_003C3DE0(u8 *p, u8 *q)
         return;
     }
     p[0x24] = 0xC;
-    ((void (*)(u8 *, u8 *))jtbl_004C20F8[14 + p[5]])(p, q);
+    jtbl_004C20F8[14 + p[5]](p, q);
     *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24) + *(s8 *)(p + 0x31);
     if (*(s8 *)(p + 0x24) > 7)
         *(s8 *)(p + 0x24) = 7;
