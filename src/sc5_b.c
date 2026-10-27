@@ -7,10 +7,10 @@ typedef signed int s32;
 typedef float f32;
 
 typedef struct { f32 x, y, z; } V3;
-extern u32 D_004C2838;
+extern void *D_004C2838;
 extern s8 D_004D1900[];
-extern void func_00162D20(void);
-extern u8 *func_003DA750(s32, u8, s32);
+extern void func_00162D20(u8 *);
+extern void *func_003DA750(void *, s32, s32);
 
 void func_00162BB0(V3 *pos, s32 flag, s32 type, s32 unused, u8 k) {
     u8 *o;
@@ -19,11 +19,11 @@ void func_00162BB0(V3 *pos, s32 flag, s32 type, s32 unused, u8 k) {
         s32 t = D_004D1900[0];
         D_004D1900[0] = t + 1;
         o[0x13C] = 1;
-        *(u32 *)(o + 0x10) = (u32)func_00162D20;
+        *(void (**)(u8 *))(o + 0x10) = func_00162D20;
         *(V3 *)(o + 0x34) = *pos;
         *(u32 *)(o + 0xD0) = 0x800419;
         *(s16 *)(o + 0xCC) = 0x5F;
-        *(u32 *)(o + 0x84) = D_004C2838;
+        *(void **)(o + 0x84) = D_004C2838;
         switch (type) {
         case 9:
             *(s32 *)(o + 0x48) = flag ? 0x8000 : 0;
