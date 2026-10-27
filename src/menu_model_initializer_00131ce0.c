@@ -5,7 +5,8 @@ typedef struct { f32 x,y,z; } V3;
 extern void *func_003DA750(void *,s32,s32);
 extern void func_00132BD0(u8 *);
 extern void func_00131E20(u8 *,u8 *,s32);
-extern u8 D_004BF330[] __attribute__((section(".sdata")));
+typedef struct { u8 map[2][3]; u8 unread_tail[26]; } PlayerSlotMap;
+extern PlayerSlotMap data_u8_004BF328 __attribute__((section(".sdata")));
 extern V3 D_0043DF58;
 extern u8 D_004F20B0[], D_004F24D5[], D_004F24E4[];
 extern u8 *D_004C2834 __attribute__((section(".sdata")));
@@ -14,7 +15,7 @@ void func_00131CE0(u8 *parent,s32 n) {
  if(o) {
   u8 *res; EL_d *elements; ND_d *node;
   o[0x13c]=1;*(void (**)(u8 *))(o+0x10)=func_00132BD0;
-  *(u16 *)(o+0xcc)=D_004BF330[n];
+  *(u16 *)(o+0xcc)=data_u8_004BF328.unread_tail[n+2];
   *(u8 **)(o+0x84)=D_004C2834;
   *(V3 *)(o+0x50)=D_0043DF58;
   *(u32 *)(o+0xd0)=0x10c10;
