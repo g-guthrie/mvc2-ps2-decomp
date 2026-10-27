@@ -45,22 +45,6 @@ extern void func_00346AC0(u8 *);
 extern void func_00390D00(u8 *);
 extern void func_003B6AA0(u8 *);
 
-void func_003290B0(void *arg) {
-    Event *event = func_003DA750(0, 12, 1);
-    if (event != 0) {
-        event->value = 5;
-        event->callback = func_00329100;
-        event->arg = arg;
-    }
-}
-void func_00329700(void *arg) {
-    Event *event = func_003DA750(0, 12, 1);
-    if (event != 0) {
-        event->value = 9;
-        event->callback = func_00329750;
-        event->arg = arg;
-    }
-}
 
 void func_00387330(int pool, u8 mode) {
     Event *event = func_003DA750(pool, 1, 2);
@@ -100,52 +84,7 @@ void func_001C8B10(s8 *arg) {
     }
 }
 
-void func_003297B0(u8 *arg) {
-    Event *event = func_003DA750(0, 12, 0);
-    if (event != 0) {
-        event->callback = func_00329810;
-        event->arg = arg;
-        event->field1 = arg[1];
-        event->value = 0xa;
-    }
-}
 
-void func_00328990(s8 *arg) {
-    Event *event = func_003DA750(0, 12, 0);
-    if (event != 0) {
-        event->callback = func_003289F0;
-        event->arg = arg;
-        event->value = 0x200;
-        arg[0x23d]++;
-    }
-}
-void func_00328C10(s8 *arg) {
-    Event *event = func_003DA750(0, 12, 0);
-    if (event != 0) {
-        event->callback = func_00328C70;
-        event->arg = arg;
-        event->value = 0x300;
-        arg[0x23d]++;
-    }
-}
-void func_00328E60(s8 *arg) {
-    Event *event = func_003DA750(0, 12, 0);
-    if (event != 0) {
-        event->callback = func_00328EC0;
-        event->arg = arg;
-        event->value = 0x400;
-        arg[0x23d]++;
-    }
-}
-void func_003294B0(s8 *arg) {
-    Event *event = func_003DA750(0, 12, 0);
-    if (event != 0) {
-        event->callback = func_00329510;
-        event->arg = arg;
-        event->value = 0x700;
-        arg[0x23d]++;
-    }
-}
 
 Event *func_001E0A60(void *arg, u8 mode) {
     Event *event = func_003DA750(0, 3, 1);

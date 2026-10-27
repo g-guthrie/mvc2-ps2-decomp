@@ -130,46 +130,10 @@ void func_00177F80(u8 *p) {
     }
 }
 
-void func_00172370(s32 a0) {
-    if (a0 & 1) {
-        func_00172320(0);
-    }
-    if (a0 & 2) {
-        func_00172320(1);
-    }
-}
 
-void func_0017DD40(u8 *p) {
-    p[0x1FF] = 2;
-    if ((s8)func_00175700(p) < 0) {
-        func_00186CE0(p, 0);
-    }
-}
 
-void func_0017E460(u8 *p) {
-    p[0x1FF] = 2;
-    if ((s8)func_00175700(p) < 0) {
-        func_00186CE0(p, 0x17);
-    }
-}
 
-void func_0017C450(u8 *p) {
-    p[0x208] = 2;
-    if ((s8)func_00175700(p) < 0) {
-        p[0x26A] = 2;
-        p[7] = 0;
-        p[6] = 0;
-    }
-}
 
-void func_00177F30(u8 *p) {
-    s16 t = *(s16 *)(p + 0x1C) - 1;
-    *(s16 *)(p + 0x1C) = t;
-    if (t < 0) {
-        p[6] += 1;
-        func_001757E0(p, 0x11, 0);
-    }
-}
 
 extern void func_00178050(u8 *);
 void func_00178010(u8 *p) {

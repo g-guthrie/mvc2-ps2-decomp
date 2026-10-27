@@ -49,16 +49,6 @@ void func_003B6340(u8 *p, u8 *q)
     func_003B6230(p);
 }
 
-void func_003A8B10(u8 *p)
-{
-    Event *e = func_003DA750(0, 1, 0);
-    if (e != 0) {
-        e->callback = func_003A8B70;
-        e->arg = p;
-        e->field38 = 0x2f01;
-        *(s32 *)((u8 *)e + 0xd0) = *(u16 *)(p + 0x168);
-    }
-}
 
 void *func_003AA280(u8 *p)
 {
@@ -74,17 +64,6 @@ void *func_003AA280(u8 *p)
     return e;
 }
 
-void func_003B69D0(u8 *p, u8 q)
-{
-    Event *e = func_003DA750(0, 1, 0);
-    if (e != 0) {
-        e->callback = func_003B6AA0;
-        e->arg = p;
-        e->field32 = q;
-        e->field33 = 0;
-        e->field38 = 0x3403;
-    }
-}
 
 void func_003BFD30(u8 *p)
 {
