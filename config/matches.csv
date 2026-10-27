@@ -19296,3 +19296,4 @@ func_00328AA0,0x00328AA0,0xE4,src/owner_effect_update_00328aa0.c,complete
 func_003DC120,0x003DC120,0x64,src/packet_initializer_003dc120.c,complete
 func_00150830,0x00150830,0x94,src/sort_probability_entries_00150830.c,complete
 func_0013ED10,0x0013ED10,0x74,src/actor_scale_dispatch_0013ed10.c,complete
+lbl_0035CFA0,0x0035CFA0,0x34,src/owner_timer_state_0035cfa0.c,complete

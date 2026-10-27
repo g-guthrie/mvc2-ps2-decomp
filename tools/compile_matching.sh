@@ -21603,4 +21603,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/sort_probability_
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_scale_dispatch_0013ed10.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_scale_dispatch_0013ed10.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_scale_dispatch_0013ed10.o" private/SLUS_204.86.rom --source src/actor_scale_dispatch_0013ed10.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/owner_timer_state_0035cfa0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_timer_state_0035cfa0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_timer_state_0035cfa0.o" private/SLUS_204.86.rom --source src/owner_timer_state_0035cfa0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
