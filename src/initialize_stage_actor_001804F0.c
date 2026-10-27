@@ -8,7 +8,7 @@ typedef float f32;
 
 typedef struct { u8 pad[0x7C]; s16 slot7c[2]; s16 slot80[2]; } G2794;
 extern G2794 *D_004C2794;
-extern const s8 data_s8_004ACD08[6];
+extern s8 data_s8_004ACD08[6] __attribute__((section(".data")));
 extern const s8 D_004ACD90[]; /* byte table interior at 0x004ACD90 */
 extern const f32 data_f32_004ACD30[6];
 extern u8 D_004D18E5[];
