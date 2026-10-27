@@ -10,9 +10,9 @@ typedef struct {
     s8 state;
     s8 b2;
     s8 n;
-    s32 f4;
+    u8 *f4;
     s32 f8;
-    s32 list[(0x90 - 0xC) / 4];
+    u8 *list[(0x90 - 0xC) / 4];
     s32 list2[16];
     u8 pad[0x1A8 - 0xD0];
     s8 b1a8;
@@ -34,16 +34,16 @@ void func_00404E90(T404 *p) {
     extern s8 func_004052F0(void *);
     extern void func_004028E0(void *, s32);
     extern void func_00401760(u8 *, s32);
-    extern s32 func_00401920(s32);
-    extern s32 func_00402550(s32);
+    extern s32 func_00401920(s8 *);
+    extern s32 func_00402550(s16 *);
     s32 x[2];
     s32 i, r, c;
     u8 *s;
-    s32 *l, *a, *b, k5;
+    u8 **l, **a; s32 *b, k5;
     register s32 n __asm__("$17");
 
     l = p->list;
-    s = (u8 *)p->f4;
+    s = p->f4;
     if (p->state == 1) {
         if (func_004052B8(s) == 2) {
             p->f1b0 = p->f1b4;
@@ -61,8 +61,8 @@ void func_00404E90(T404 *p) {
                 b = p->list2;
                 a = l;
                 do {
-                    func_004028E0((void *)*a, 1);
-                    func_00401760((u8 *)*a, *b);
+                    func_004028E0(*a, 1);
+                    func_00401760(*a, *b);
                     b++;
                     a++;
                 } while (--n);
@@ -75,7 +75,7 @@ void func_00404E90(T404 *p) {
             k5 = 5;
             a = l;
             for (; i < p->n; i++) {
-                c = func_00401920(*a++);
+                c = func_00401920((s8 *)*a++);
                 if (c != k5 && c != 0) break;
             }
             if (i == p->n) p->state = 3;
@@ -83,7 +83,7 @@ void func_00404E90(T404 *p) {
     }
     a = l;
     for (i = 0; i < p->n; i++) {
-        if (func_00402550(*a++) == -1) {
+        if (func_00402550((s16 *)*a++) == -1) {
             p->state = 4;
             break;
         }
