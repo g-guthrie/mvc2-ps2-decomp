@@ -18,7 +18,8 @@ u8 *func_003DBA00(u8 *a0, u32 a1, s32 a2) {
     return a0 + 0x10;
 }
 
-u8 *func_003DBAF0(u8 *a0, u32 a1, s32 a2) {
+/* Native callers also supply a fourth packet parameter. */
+u8 *func_003DBAF0(u8 *a0, u32 a1, s32 a2, s32 a3) {
     *(s128 *)a0 = 0;
     *(u32 *)a0 = a1 + 0x70000000;
     if (a2 == 1) *(u32 *)a0 |= 0x80000000;

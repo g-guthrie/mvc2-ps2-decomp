@@ -21594,4 +21594,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_owner_follo
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/owner_effect_update_00328aa0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_effect_update_00328aa0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_effect_update_00328aa0.o" private/SLUS_204.86.rom --source src/owner_effect_update_00328aa0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/packet_initializer_003dc120.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/packet_initializer_003dc120.o"
+"$PYTHON" tools/verify_object.py "$BUILD/packet_initializer_003dc120.o" private/SLUS_204.86.rom --source src/packet_initializer_003dc120.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
