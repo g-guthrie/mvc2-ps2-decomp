@@ -19311,3 +19311,4 @@ func_00166EC0,0x00166EC0,0x78,src/script_random_select_00166ec0.c,placeholder
 func_00167060,0x00167060,0xD8,src/script_weighted_select_00167060.c,placeholder
 func_0012F0B0,0x0012F0B0,0x324,src/input_update_0012f0b0.c,placeholder
 func_001C6250,0x001C6250,0x48,src/owner_phase_dispatch_001c6250.c,placeholder
+func_003C7480,0x003C7480,0x28,src/owner_copy_dispatch_003c7480.c,placeholder
