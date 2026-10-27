@@ -19255,3 +19255,7 @@ func_001B2C50,0x001B2C50,0x34,src/actor_motion_callbacks_batch.c,complete
 func_002E7BD0,0x002E7BD0,0x34,src/actor_motion_callbacks_batch.c,complete
 func_002C7370,0x002C7370,0x3C,src/actor_motion_callbacks_batch.c,complete
 func_0027E8D0,0x0027E8D0,0x50,src/actor_motion_callbacks_batch.c,complete
+func_001F0220,0x001F0220,0x18,src/actor_state_transitions_batch.c,complete
+func_002B9A40,0x002B9A40,0x20,src/actor_state_transitions_batch.c,complete
+func_0037EFE0,0x0037EFE0,0x20,src/actor_state_transitions_batch.c,complete
+func_0027F9E0,0x0027F9E0,0x34,src/actor_state_transitions_batch.c,complete
