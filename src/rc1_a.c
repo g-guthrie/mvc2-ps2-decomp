@@ -52,7 +52,7 @@ void func_004035D8(C43 *p)
     extern void func_003FFF50(s32, s32);
     extern void func_003FFF40(s32, s32);
     extern void func_003FFF20(s32, void *, C43 *);
-    extern s32 func_003FFFF0(s32);
+    extern s32 func_003FFFF0(StreamGroup *);
     extern s32 func_003FFFA8(s32);
     extern void func_003FF288(void *, s32);
     typedef struct S_0040ED28 S_0040ED28;
@@ -114,14 +114,14 @@ void func_004035D8(C43 *p)
         func_003FFF20(h, func_00403020, p);
     } else {
         if (p->w8) func_004007A0(p->w8, 0x7FFFFFFF);
-        func_003FFF30(h, func_003FFFF0(h));
+        func_003FFF30(h, func_003FFFF0((StreamGroup *)h));
         func_003FFF50(h, 0);
         func_003FFF40(h, 0);
         func_003FFF20(h, func_00403308, p);
     }
     a = func_003FFF78((void *)h);
     b = func_003FFF90((void *)h);
-    c = func_003FFFF0(h);
+    c = func_003FFFF0((StreamGroup *)h);
     v = func_003FFFA8(h);
     func_003FF288((void *)p->wC, v);
     func_003FF240((S_0040ED28 *)p->wC, a);

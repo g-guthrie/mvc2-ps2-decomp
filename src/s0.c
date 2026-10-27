@@ -1,3 +1,4 @@
+typedef struct StreamGroup StreamGroup;
 typedef signed int s32;
 typedef unsigned int u32;
 typedef unsigned char u8;
@@ -27,8 +28,8 @@ int func_0040B9F0(int *p) { if (p == 0) { func_0040AF58(p, D_004BE080); return 0
 
 extern char D_004BC098[];
 extern void func_003FB128(void *);
-extern s32 func_003FFFF0(int);
-typedef struct { char a; signed char b; short c; int w; } S01;
+extern s32 func_003FFFF0(StreamGroup *);
+typedef struct { char a; signed char b; short c; StreamGroup *w; } S01;
 s32 func_00401E98(S01 *p) {
     if (p == 0) { func_003FB128(D_004BC098); return -1; }
     if (p->b >= 2) return func_003FFFF0(p->w);

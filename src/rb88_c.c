@@ -1,3 +1,4 @@
+typedef struct StreamGroup StreamGroup;
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -18,7 +19,7 @@ void func_00401B78(u8 *o, s32 *a, s32 *b)
     extern void func_003FB128(u8 *);
     extern void func_00401A48(u8 *, s32 *, s32 *);
     extern void func_00401B68(void);
-    extern s32 func_003FFFF0(s32);
+    extern s32 func_003FFFF0(StreamGroup *);
     extern s32 func_003FFF78(void *);
     extern s32 func_003FFFA8(s32);
     s32 w, h;
@@ -61,7 +62,7 @@ void func_00401B78(u8 *o, s32 *a, s32 *b)
             *(s32 *)(o + 0xA0) = g;
         }
     } else if ((s8)ty == 5) {
-        w = func_003FFFF0(*(s32 *)(o + 4));
+        w = func_003FFFF0(*(StreamGroup **)(o + 4));
         h = func_003FFF78(*(void **)(o + 4));
         r = func_003FFFA8(*(s32 *)(o + 4));
         w = w * (16 / r);

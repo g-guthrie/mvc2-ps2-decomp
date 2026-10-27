@@ -1,3 +1,4 @@
+typedef struct StreamGroup StreamGroup;
 typedef unsigned char u8;typedef signed char s8;typedef unsigned short u16;typedef signed short s16;typedef unsigned int u32;typedef signed int s32;
 typedef struct { s32 cls; s32 sign; s32 normal_exp; u32 fraction; } fp_t;
 typedef union { float value; u32 word; struct { u32 fraction : 23; u32 exp : 8; u32 sign : 1; } bits; } flo_t;
@@ -95,9 +96,10 @@ void func_00405DF0(void) {
     }
     D_004872EC++;
 }
-typedef struct { u8 f0; s8 k; u8 pad[2]; void *f4; s32 pad8; s32 fC; u8 pad2[0x78]; s32 f88; } O;
+typedef struct { u8 f0; s8 k; u8 pad[2]; StreamGroup *f4; s32 pad8; s32 fC; u8 pad2[0x78]; s32 f88; } O;
 extern void func_003FF178(s32);
-extern s32 func_003FFFF0(void *), func_003FFF78(void *), func_003FFFA8(void *);
+extern s32 func_003FFFF0(StreamGroup *);
+extern s32 func_003FFF78(void *), func_003FFFA8(void *);
 void func_00401980(O *a, s32 *b, s32 *c) {
     if ((u8)(a->k - 3) < 2) {
         func_003FF178(a->fC);
