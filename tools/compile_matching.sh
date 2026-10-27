@@ -21661,4 +21661,20 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_height_landing_003c74b0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/owner_height_landing_003c74b0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_height_landing_003c74b0.o" private/SLUS_204.86.rom --source src/owner_height_landing_003c74b0.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_step_00335a20.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/actor_step_00335a20.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_step_00335a20.o" private/SLUS_204.86.rom --source src/actor_step_00335a20.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/actor_acceleration_00335c30.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/actor_acceleration_00335c30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_acceleration_00335c30.o" private/SLUS_204.86.rom --source src/actor_acceleration_00335c30.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/event_scale_cycle_00337710.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/event_scale_cycle_00337710.o"
+"$PYTHON" tools/verify_object.py "$BUILD/event_scale_cycle_00337710.o" private/SLUS_204.86.rom --source src/event_scale_cycle_00337710.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_phase_dispatch_001c36e0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/owner_phase_dispatch_001c36e0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_phase_dispatch_001c36e0.o" private/SLUS_204.86.rom --source src/owner_phase_dispatch_001c36e0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

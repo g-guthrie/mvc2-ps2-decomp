@@ -19313,3 +19313,7 @@ func_0012F0B0,0x0012F0B0,0x324,src/input_update_0012f0b0.c,placeholder
 func_001C6250,0x001C6250,0x48,src/owner_phase_dispatch_001c6250.c,placeholder
 func_003C7480,0x003C7480,0x28,src/owner_copy_dispatch_003c7480.c,placeholder
 func_003C74B0,0x003C74B0,0xC0,src/owner_height_landing_003c74b0.c,placeholder
+func_00335A20,0x00335A20,0x38,src/actor_step_00335a20.c,placeholder
+func_00335C30,0x00335C30,0x1C,src/actor_acceleration_00335c30.c,placeholder
+func_00337710,0x00337710,0xE8,src/event_scale_cycle_00337710.c,placeholder
+func_001C36E0,0x001C36E0,0x40,src/owner_phase_dispatch_001c36e0.c,placeholder
