@@ -42,7 +42,7 @@ void func_0027A570(u8 *p) {
     }
 }
 
-extern void func_00183D90();
+extern void func_00183D90(u8 *);
 extern void func_001861B0(u8 *);
 extern void func_0018C4B0(u8 *, s32);
 extern void func_001757E0(u8 *, s32, s32);
@@ -52,7 +52,7 @@ extern void func_001863F0(u8 *);
 extern void func_001843A0(u8 *);
 
 void func_00317AD0(u8 *p) {
-    if (p[0x213] == 3) func_00183D90();
+    if (p[0x213] == 3) func_00183D90(p);
     if (p[6] == 0) {
         u32 t = p[6];
         p[6] = t + 1;

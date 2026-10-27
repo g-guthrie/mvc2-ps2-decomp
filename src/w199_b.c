@@ -36,10 +36,10 @@ void func_0017C7F0(u8 *p) {
 
 void func_0023B4C0(u8 *p) {
     extern int func_00175700(u8 *);
-    extern void func_00183D90();
+    extern void func_00183D90(u8 *);
     extern void func_001863F0();
     extern void func_001843A0();
-    if (p[0x213] == 3) func_00183D90();
+    if (p[0x213] == 3) func_00183D90(p);
     *(float *)(p + 0x34) += *(float *)(p + 0x5C);
     *(float *)(p + 0x5C) += *(float *)(p + 0x68);
     *(float *)(p + 0x38) += *(float *)(p + 0x60);

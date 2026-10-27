@@ -10,13 +10,13 @@ typedef struct { u8 pad[0x1C]; u32 f1c; } G2840;
 extern G2840 *D_004C2840;
 
 void func_0031F060(u8 *p) {
-    extern void func_00183D90(void);
+    extern void func_00183D90(u8 *);
     extern s8 func_00175700(u8 *);
     extern void func_001757E0(u8 *, s32, u8);
     f32 z = 0.0f;
     if (z != *(f32 *)(p + 0x5C)) {
         if (D_004C2840->f1c & 1) {
-            func_00183D90();
+            func_00183D90(p);
         }
         p[0x206] = 3;
     }

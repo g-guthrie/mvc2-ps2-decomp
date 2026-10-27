@@ -58,11 +58,11 @@ void func_003AF650(u8 *p) {
 
 /* 0x003119B0 */
 extern void (*D_004C16D8[2])();
-extern void func_00183D90();
+extern void func_00183D90(u8 *);
 extern void func_001863F0(u8 *);
 void func_003119B0(u8 *p) {
     if (p[0x213] == 3) {
-        func_00183D90();
+        func_00183D90(p);
     }
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);

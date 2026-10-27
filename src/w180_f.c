@@ -14,12 +14,12 @@ void func_0031EF60(u8 *p) {
     u32 c;
     f32 a;
     f32 b;
-    extern void func_00183D90();
+    extern void func_00183D90(u8 *);
     extern void func_00175700();
     extern void func_001757E0();
     extern void func_001E3210();
     if (p[0x1B7] != 0 && (D_004C2840->f1c & 1) != 0) {
-        func_00183D90();
+        func_00183D90(p);
     }
     p[0x209] = 2;
     p[0x206] = 3;

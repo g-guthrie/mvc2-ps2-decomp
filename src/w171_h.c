@@ -10,7 +10,7 @@ extern u8 *D_004C2840;
 
 void func_00219AD0(u8 *p)
 {
-    extern void func_00183D90(void);
+    extern void func_00183D90(u8 *);
     extern void func_00175700();
     extern void func_001757E0(u8 *, s32, s32);
     extern void func_001E3210(u8 *, s32);
@@ -18,7 +18,7 @@ void func_00219AD0(u8 *p)
     u32 t;
     if (p[0x1B7] != 0) {
         if ((*(u32 *)(D_004C2840 + 0x1C) & 1) != 0) {
-            func_00183D90();
+            func_00183D90(p);
         }
     }
     p[0x206] = 3;
