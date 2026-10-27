@@ -10,7 +10,7 @@ typedef struct { u8 pad[0x7C]; s16 f7c[1]; } GQ;
 extern GQ *D_004C2794;
 
 void func_002F7F30(u8 *p) {
-    extern void func_002FA200();
+    extern void func_002FA200(u8 *);
     extern s32 func_00175700();
     extern void func_001843A0();
     s8 r;

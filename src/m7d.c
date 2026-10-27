@@ -23,7 +23,7 @@ void func_00325A70(u8 *p) {
     }
 }
 
-extern void func_002FA200();
+extern void func_002FA200(u8 *);
 extern void func_001843A0();
 void func_002F8070(u8 *p) {
     if (p[0x2CE]) {
