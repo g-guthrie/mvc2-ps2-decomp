@@ -55,7 +55,7 @@ typedef struct { u8 pad0[0xC]; f32 f0c; f32 f10; } C_001A4CB0;
 extern s32 D_004BF740[2];
 extern void func_001A4E80( void *);
 extern void func_001A5420( void *);
-extern void func_001A52F0( void *, void *);
+extern int func_001A52F0(void *, void *);
 extern void func_001A5090( void *, void *);
 extern void func_001A4FB0( void *, void *);
 void func_001A4CB0(u8 *a, u8 *b) {

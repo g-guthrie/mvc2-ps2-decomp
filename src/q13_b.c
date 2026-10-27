@@ -25,7 +25,7 @@ extern u16 D_004F7FAC;
 extern u8 D_004F7FAF;
 extern u8 D_004F7FB0;
 extern u8 D_004F7FB1;
-extern void func_001A52F0(void *p, void *q);
+extern int func_001A52F0(void *, void *);
 extern void func_001A5090(void *p, void *q);
 extern void func_001A4FB0(void *p, void *q);
 extern void func_001A4E10(void *p, void *q);
