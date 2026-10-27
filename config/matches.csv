@@ -13432,7 +13432,7 @@ func_00323F30,0x00323F30,0xD0,src/v7_d.c,complete
 func_002B9A60,0x002B9A60,0xCC,src/v7_e.c,complete
 func_001C3610,0x001C3610,0xCC,src/v7_e.c,complete
 func_001450C0,0x001450C0,0xA0,src/v7_e.c,complete
-func_001444D0,0x001444D0,0xD0,src/v7_e.c,complete
+func_001444D0,0x001444D0,0xD0,src/scene_model_event_00144630.c,complete
 func_0014FDC0,0x0014FDC0,0xC4,src/v7_f.c,complete
 func_001EE260,0x001EE260,0xBC,src/v7_g.c,complete
 func_002F6D00,0x002F6D00,0xD0,src/v7_g.c,complete
@@ -19376,3 +19376,4 @@ func_00168690,0x00168690,0xF0,src/script_mask_update_00168690.c,placeholder
 func_00129080,0x00129080,0x1C,src/menu_callback_invoke_00129080.c,placeholder
 func_002B1DE0,0x002B1DE0,0x34,src/actor_action_dispatch_002b1de0.c,placeholder
 func_0037D900,0x0037D900,0x18,src/actor_finish_0037d900.c,placeholder
+func_00144630,0x00144630,0xB8,src/scene_model_event_00144630.c,placeholder

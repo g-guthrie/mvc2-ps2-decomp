@@ -21859,4 +21859,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py "$BUILD/owner_effect_create_0014fca0.o" private/SLUS_204.86.rom --source src/owner_effect_create_0014fca0.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_finish_0037d900.c -c -lang c -O3,p -sdatathreshold 0 -i src -o "$BUILD/actor_finish_0037d900.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_finish_0037d900.o" private/SLUS_204.86.rom --source src/actor_finish_0037d900.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/scene_model_event_00144630.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/scene_model_event_00144630.o"
+"$PYTHON" tools/verify_object.py "$BUILD/scene_model_event_00144630.o" private/SLUS_204.86.rom --source src/scene_model_event_00144630.c
 PYTHON="$PYTHON" tools/compile_matching_data.sh
