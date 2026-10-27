@@ -4738,7 +4738,8 @@ func_001CDEC0,0x001CDEC0,0x20,0x001CDEE0,code,matching-c-head-split
 residual_001CDEE0,0x001CDEE0,0x10,0x001CDEF0,assembly_residual,verified-boundary-after-matching-head
 func_001CDEF0,0x001CDEF0,0x20,0x001CDF10,code,matching-c-head-split
 residual_001CDF10,0x001CDF10,0x1C,0x001CDF2C,assembly_residual,verified-boundary-after-matching-head
-residual_001CDF2C,0x001CDF2C,0xFC,0x001CE028,assembly_residual,verified-boundary-after-matching-head
+residual_001CDF2C,0x001CDF2C,0x4,0x001CDF30,assembly_residual,uncredited-native-alignment
+func_001CDF30,0x001CDF30,0xF8,0x001CE028,code,verified-native-table-entry-boundary
 func_001CE030,0x001CE030,0x20,0x001CE050,code,spimdisasm-explicit-size-before-first-data
 func_001CE050,0x001CE050,0x1C,0x001CE06C,code,matching-c-head-split
 func_001CE1E0,0x001CE1E0,0x20,0x001CE200,code,matching-c-head-split

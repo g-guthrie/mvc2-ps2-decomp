@@ -19278,3 +19278,4 @@ func_00307920,0x00307920,0xD0,src/actor_context_action_entries.c,complete
 func_003072D0,0x003072D0,0xC4,src/actor_context_action_entries.c,complete
 func_00227940,0x00227940,0xCC,src/actor_air_entry_00227940.c,complete
 func_0024D2C0,0x0024D2C0,0xC4,src/actor_ground_event_0024d2c0.c,complete
+func_001CDF30,0x001CDF30,0xF8,src/owner_follow_init_001cdf30.c,complete
