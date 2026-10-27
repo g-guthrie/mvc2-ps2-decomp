@@ -9,14 +9,14 @@ typedef struct { u8 pad[0x18]; s8 b18; u8 pad2[0x10]; s8 b29; } G2840;
 extern G2840 *D_004C2840;
 extern u8 D_0043E8E0[];
 
-/* Provisional: the check and sound helper declarations remain mismatched. */
+/* Provisional: the indexed sound lookup spans separate data owners. */
 void func_00133CE0(u8 *p, u8 *q)
 {
     extern void func_001347D0(u8 *, u8 *);
-    extern void func_00134230(u8 *, u8 *);
+    extern s32 func_00134230(u8 *, u8 *);
     extern void func_001345B0(u8 *, u8 *);
     extern void func_00134610(u8 *, u8 *);
-    extern void func_001E3CE0(u8);
+    extern void func_001E3CE0(int);
     s16 v;
     s16 h;
     s16 t;
@@ -63,5 +63,5 @@ void func_00133CE0(u8 *p, u8 *q)
     func_00134610(p, q);
     func_001345B0(p, q);
     x = D_0043E8E0[p[0x14C] & 0xF];
-    if (x != 0) func_001E3CE0(x);
+    if (x != 0) func_001E3CE0((u8)x);
 }
