@@ -19266,3 +19266,6 @@ func_0030A2D0,0x0030A2D0,0x5C,src/actor_scale_animation_updates.c,complete
 func_001E0AF0,0x001E0AF0,0x9C,src/owner_effect_init_001e0af0.c,complete
 func_0029D200,0x0029D200,0x78,src/actor_slide_init_0029d200.c,complete
 func_0027F3D0,0x0027F3D0,0x90,src/actor_target_launch_0027f3d0.c,complete
+func_00214AA0,0x00214AA0,0x60,src/actor_effect_state_entries.c,complete
+func_00269F50,0x00269F50,0x78,src/actor_effect_state_entries.c,complete
+func_0024D060,0x0024D060,0x58,src/actor_effect_state_entries.c,complete
