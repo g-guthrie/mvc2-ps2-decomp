@@ -7,7 +7,7 @@ typedef unsigned int u32;
 extern int func_00175700(u8 *);
 extern void func_001843A0(u8 *);
 extern void func_001AC7E0(u8 *, u8);
-extern int func_00364EC0(u8 *, int);
+extern void *func_00364EC0(void *, u8);
 extern void func_001A78D0(u8 *, int);
 extern int func_001757E0(u8 *, int, int);
 extern void func_0024AB80(u8 *);

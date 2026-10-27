@@ -42,7 +42,7 @@ void func_001FA520(u8 *p) {
 }
 
 void func_00246FA0(u8 *p, u8 *q) {
-    extern void func_00175700(); extern s32 func_0035F9E0(); extern void func_001843A0(); extern void func_001757E0();
+    extern void func_00175700(); extern void *func_0035F9E0(u8 *, u8, u8); extern void func_001843A0(); extern void func_001757E0();
     p[0x40C] = 2;
     p[0x33C] = 5;
     func_00175700(p);
