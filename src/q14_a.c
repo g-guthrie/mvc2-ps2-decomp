@@ -7,11 +7,11 @@ typedef signed int s32;
 typedef float f32;
 
 extern void *func_003DA750(void *p, s32 a, s32 b);
-extern void func_0036C120(void);
+extern void func_0036C120(u8 *);
 void func_0036C0B0(u8 *p, s32 b, s32 c) {
     u8 *o;
     if ((o = func_003DA750(p, 1, 2)) != 0) {
-        *(void**)(o+0x10) = (void*)func_0036C120;
+        *(void (**)(u8 *))(o+0x10) = func_0036C120;
         *(u32*)(o+0x18) = *(u32*)(p+0x18);
         *(u8**)(o+0x14) = p;
         *(u8*)(o+0x20) = b;
