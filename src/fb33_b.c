@@ -1,3 +1,4 @@
+struct Object;
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -18,11 +19,11 @@ extern u8 D_004D18A6[];
     }\
     if (D_004D18A6[0] == 0) {\
         p[0x13C] = 0;\
-        func_003DAA40();\
+        func_003DAA40((struct Object *)p);\
     }
 
 void func_00135B70(u8 *p) {
-    extern void func_003DAA40(void);
+    extern void func_003DAA40(struct Object *);
     s16 v;
     if (p[0x20] == 0) {
         if (p[5] == 0) {

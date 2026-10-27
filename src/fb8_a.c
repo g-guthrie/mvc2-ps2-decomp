@@ -1,3 +1,4 @@
+struct Object;
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -23,9 +24,9 @@ extern s32 D_004C283C;
 
 void func_003D09E0(u8 *p)
 {
-    extern void func_003DAA40();
+    extern void func_003DAA40(struct Object *);
     if (D_004F7F30[0] != 2) {
-        func_003DAA40();
+        func_003DAA40((struct Object *)p);
         return;
     }
     *(V4_a *)(p + 0x74) = D_00476B80;
