@@ -37,9 +37,6 @@ extern void func_00175C00(u8 *, s32);
 extern s8 func_00175670(u8 *);
 extern void func_001CF6A0(u8 *);
 
-void func_001CCF40(u8 *p, s32 a1) {
-    func_001757E0(p, 23, data_u8_0044DDA0[(u8)a1]);
-}
 
 void func_001C4D30(u8 *p) {
     if (S(p, 28) < 61)
@@ -52,12 +49,6 @@ void func_001D6CD0(u8 *p, u8 *q) {
     func_001757E0(p, 21, 1);
 }
 
-void func_001C4760(u8 *p) {
-    if ((s8)func_00175700(p) < 0) {
-        p[6] = 1;
-        p[7] = 0;
-    }
-}
 
 void func_001DDB60(u8 *p, u8 *q) {
     F(p, 52) = F(q, 52);
@@ -84,9 +75,6 @@ void func_001D6DC0(u8 *p, u8 *owner_unused) {
     p[316] = 0;
 }
 
-void func_001CB180(u8 *p) {
-    func_001CB5A0(p, 27, D_0044DAC0[I(p, 208) >> 1]);
-}
 
 void func_001C16B0(u8 *p) {
     Entry *e = func_003DA750(0, 3, 0);

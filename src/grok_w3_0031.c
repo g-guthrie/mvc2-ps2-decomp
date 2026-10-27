@@ -183,22 +183,7 @@ void func_00232FC0(u8 *p)
     func_00186A60(p, 21);
 }
 
-void func_00317700(u8 *p)
-{
-    if (p[530] == 0) {
-        if ((*(s8 *)(p + 490) & 0xf) != 0)
-            func_003175D0(p);
-    } else if ((*(s8 *)(p + 490) & 0xf0) != 0)
-        func_003175D0(p);
-}
 
-void func_00318230(u8 *p)
-{
-    func_003182F0(p);
-    p[6]++;
-    func_001757E0(p, 18, 1);
-    func_00175C00(p, 0);
-}
 
 void func_00319CE0(u8 *p)
 {
@@ -233,17 +218,6 @@ void func_0031C8F0(u8 *p)
         func_0031CB00(p);
 }
 
-void func_00311310(u8 *p)
-{
-    func_001820A0(p);
-    func_00182300(p);
-    if (p[530] == 1)
-        func_003113C0(p);
-    else
-        func_00311380(p);
-    if (func_001864A0(p))
-        func_001865B0(p);
-}
 
 void func_003124C0(u8 *p)
 {
@@ -393,18 +367,4 @@ s32 func_0031B410(u8 *p)
     p[509] = 0;
     func_00186A60(p, 21);
     return 1;
-}
-
-void func_0031B9E0(u8 *p)
-{
-    func_001861B0(p);
-    if (p[530] == 0) {
-        if (p[525] == 0)
-            func_0031BA60(p);
-        else
-            func_0031BB50(p);
-    } else if (p[525] == 0)
-        func_0031BCA0(p);
-    else
-        func_0031BD90(p);
 }

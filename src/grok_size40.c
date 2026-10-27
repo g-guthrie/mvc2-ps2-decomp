@@ -41,11 +41,6 @@ int func_0023F480(u8 *p) {
     return func_0023F520(p) != 0;
 }
 
-int func_00248850(u8 *p) {
-    if (func_00248890(p))
-        return 1;
-    return func_002488F0(p) != 0;
-}
 
 int func_0026B4F0(u8 *p) {
     if (func_0026B590(p))
@@ -104,19 +99,7 @@ void func_0022DA50(u8 *p) {
     }
 }
 
-void func_00249BB0(u8 *p) {
-    if ((signed char)func_00175700(p) < 0) {
-        func_00184540(p);
-        return;
-    }
-}
 
-void func_002760B0(u8 *p) {
-    if ((signed char)func_00175700(p) < 0) {
-        func_001843A0(p);
-        return;
-    }
-}
 
 void func_0028EFA0(u8 *p) {
     if ((signed char)func_00175700(p) < 0) {
@@ -181,12 +164,6 @@ void func_001C4760(u8 *p,u8 *owner_unused) {
     }
 }
 
-void func_00269B40(u8 *p) {
-    if ((s8)func_00175700(p) < 0) {
-        p[6] = 8;
-        p[7] = 0;
-    }
-}
 
 void func_0035BE30(u8 *p, void *owner) {
     if ((s8)func_00175700(p) < 0) {

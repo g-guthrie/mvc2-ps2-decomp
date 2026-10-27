@@ -82,17 +82,8 @@ typedef struct {
     f32 f32;
 } MixDiv;
 
-void func_0032D110(DivDupX *s) {
-    s->lo = s->hi = s->source / (f32)s->count;
-}
 
-void func_0032D130(DivDupY *s) {
-    s->lo = s->hi = s->source / (f32)s->count;
-}
 
-void func_0032D150(DivDupZ *s) {
-    s->lo = s->hi = s->source / (f32)s->count;
-}
 
 void func_0032D170(DivNegX *s) {
     s->r = s->src / (f32)s->c1;
@@ -121,18 +112,7 @@ void func_00389920(u8 *d, u8 *s) {
     *(V3 *)(d + 52) = *(V3 *)(s + 52);
 }
 
-void func_0034CF30(u8 *p) {
-    u8 *q = *(u8 **)(p + 24);
-    F(p, 52) = F(q, 52) + F(p, 100);
-    F(p, 56) = F(q, 56) + F(p, 112);
-}
 
-void func_0034B040(u8 *d, u8 *s) {
-    u8 *q = *(u8 **)(s + 696);
-    f32 a = F(q, 52);
-    F(d, 52) = a + (a - F(s, 52));
-    F(d, 56) = F(s, 56);
-}
 
 f32 func_002ADC20(u8 *p) {
     f32 v = F(p, 92);

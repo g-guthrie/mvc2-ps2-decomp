@@ -26,12 +26,6 @@ void func_00128380(void) {
     D_004C2784 += 512;
 }
 
-void func_0012F040(s32 v) {
-    if (v == 0) {
-        v = 1024;
-    }
-    D_004C2618 = v;
-}
 
 void func_001422E0(u8 *p, s32 a1) {
     p[35] = a1 + 55;
@@ -45,20 +39,7 @@ void func_001422E0(u8 *p, s32 a1) {
     *(s32 *)(p + 72) = 0;
 }
 
-void func_0016C480(u8 *p) {
-    if (D_004C2668) {
-        p[4]++;
-        *(s16 *)(p + 28) = 32;
-    }
-}
 
-void func_0032EE50(u8 *p) {
-    if (!D_004C27D0) {
-        *(s32 *)(p + 68) += 512;
-    } else {
-        *(s32 *)(p + 68) += 256;
-    }
-}
 
 void func_003D92D0(u8 *p) {
     u8 v = *(&D_004C21EC + ((s8 *)D_004C2840)[70]);
@@ -66,11 +47,6 @@ void func_003D92D0(u8 *p) {
     p[65] = v;
 }
 
-void func_0041DB80(void) {
-    D_004C2840[3] = 0;
-    D_004C2840[4] = 0;
-    D_004C2840[5] = 0;
-}
 
 void func_003F0070(s32 present, u64 *first, u64 *second)
 {

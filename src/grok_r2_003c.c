@@ -30,42 +30,12 @@ extern void func_003CAB20(u8 *, u8 *, unsigned int);
 extern void func_001E3210(s32, s32);
 extern void func_0018D930(u8 *);
 
-void func_003D9080(void) {
-    D_004D18D3 = 0;
-    D_004D1901 = 0;
-}
-
-s32 func_003F0A20(u8 *p, s32 i, s32 *out) {
-    out[0] = *(s32 *)((i << 2) + (s32)p + 12);
-    out[1] = i;
-    return 1;
-}
 
 
 
-void func_003D2020(void) {
-    D_004F1F47 = 0;
-    D_004F1F48 = 0;
-    D_004F1F40 = 1;
-}
 
-void func_003D6AC0(void) {
-    D_004F7F7C = 0;
-    D_004F7D1E[0] = 0;
-    D_004F7D2E = 0;
-    D_004F7F7A = 0;
-}
 
-void func_003C3910(u8 *p) {
-    s16 t = S(p, 0x1C);
-    S(p, 0x1C) = t - 1;
-    if (t == 0) {
-        u32 v = p[5];
-        v += 1;
-        p[5] = v;
-        p[0x13C] = 1;
-    }
-}
+
 
 void func_003D6820(s32 idx) {
     s16 v = *(s16 *)((u8 *)D_004F7D1E + ((u8)idx * 16));

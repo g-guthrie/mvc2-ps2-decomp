@@ -107,28 +107,8 @@ void func_002E4690(u8 *p, u8 *q)
     func_00175C00(p, 0);
 }
 
-void func_00195690(u8 *p, u8 *q) {
-    if (*(s8 *)(q + 0x151)) {
-        func_00175670(p);
-        func_001975C0(p, q);
-    }
-}
 
-void func_0019C420(u8 *p) {
-    if ((s8)func_00175700(p) < 0) {
-        p[4]++;
-        func_0019C470(p);
-    }
-}
 
-void func_00192B00(u8 *p) {
-    Entry *e = func_003DA750(0, 4, 0);
-    if (e) {
-        e->callback = func_00192BD0;
-        e->arg = p;
-        e->value = 0;
-    }
-}
 
 void func_00193DA0(u8 *p, u8 *q) {
     u8 *blk = p + 0x88;
