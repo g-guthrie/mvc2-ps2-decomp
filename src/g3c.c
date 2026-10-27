@@ -10,13 +10,13 @@ extern void func_00338100(int);
 
 typedef float f32;
 extern void func_003DAA40(struct Object *);
-extern void func_0032E690();
+extern void func_0032E690(void *);
 void func_001553B0(u8 *a0) {
     *(s16*)(a0+0x1C) += 1;
     if (*(s16*)(a0+0x1C) > 0x1E) {
         func_003DAA40((struct Object *)a0);
     } else {
-        func_0032E690();
+        func_0032E690(a0);
         *(f32*)(a0+0x74) -= 0.01666666754f;
     }
 }
