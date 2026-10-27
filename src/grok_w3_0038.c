@@ -157,7 +157,7 @@ void func_0039CAB0(u8 *p)
         func_0039E450(p);
 }
 
-void func_00386DF0(u8 *p)
+void func_00386DF0(u8 *p, u8 *owner_unused)
 {
     s16 t = *(s16 *)(p + 0x1c) - 1;
     *(s16 *)(p + 0x1c) = t;
