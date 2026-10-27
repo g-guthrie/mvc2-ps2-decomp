@@ -19303,3 +19303,4 @@ func_0039C110,0x0039C110,0x194,src/owner_fall_state_0039c110.c,complete
 func_0041A0B0,0x0041A0B0,0xB4,src/owner_effect_init_0041a0b0.c,complete
 func_0041ACE0,0x0041ACE0,0x180,src/owner_dual_effect_init_0041ace0.c,complete
 func_003537B0,0x003537B0,0x1E8,src/owner_linked_effect_init_003537b0.c,complete
+func_003D9000,0x003D9000,0x80,src/actor_active_check_003d9000.c,complete

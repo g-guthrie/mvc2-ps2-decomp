@@ -12,7 +12,7 @@ typedef struct { u8 pad[0xAF]; s8 bAF; } G2840;
 extern G2840 *D_004C2840;
 
 void func_003D8DD0(u8 *p) {
-    extern s32 func_003D9000(E5B8 *);
+    extern s32 func_003D9000(void *);
     extern void func_003D91B0(void);
     extern void func_00180640(s32);
     extern void func_001E42D0(s32);

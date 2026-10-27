@@ -21624,4 +21624,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/owner_dual_effect
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/owner_linked_effect_init_003537b0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_linked_effect_init_003537b0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_linked_effect_init_003537b0.o" private/SLUS_204.86.rom --source src/owner_linked_effect_init_003537b0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_active_check_003d9000.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_active_check_003d9000.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_active_check_003d9000.o" private/SLUS_204.86.rom --source src/actor_active_check_003d9000.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
