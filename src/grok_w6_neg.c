@@ -108,7 +108,7 @@ void func_001D00B0(u8 *p)
     }
 }
 
-void func_0037F000(u8 *p)
+void func_0037F000(u8 *p, void *owner)
 {
     if ((s8)func_00175700(p) < 0) {
         p[4]++;

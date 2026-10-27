@@ -21531,4 +21531,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_motion_call
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_state_transitions_batch.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_state_transitions_batch.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_state_transitions_batch.o" private/SLUS_204.86.rom --source src/actor_state_transitions_batch.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_owner_scale_init_0037e870.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_owner_scale_init_0037e870.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_scale_init_0037e870.o" private/SLUS_204.86.rom --source src/actor_owner_scale_init_0037e870.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
