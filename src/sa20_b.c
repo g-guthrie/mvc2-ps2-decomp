@@ -7,11 +7,12 @@ typedef signed int s32;
 typedef float f32;
 typedef struct { f32 x, y, z; } V3;
 typedef struct { s32 w[0x31]; } B3c;
-typedef struct { u8 pad[0x7C]; s16 f7c[1]; } G3c;
+typedef struct { u8 pad[0x7C]; s16 f7c[2]; } G3c;
 extern G3c *D_004C2794;
 
+/* Provisional: callback-table ABI and state bounds remain unresolved. */
 void func_003C3B80(u8 *a, u8 *b) {
-    extern void func_001757E0(u8 *, s32, s32);
+    extern int func_001757E0(u8 *, s32, s32);
     extern void func_003C3DE0(u8 *, u8 *);
     u32 t;
     t = a[4];

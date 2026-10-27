@@ -101,6 +101,7 @@ void func_00161410(P61 *p)
 }
 extern const u32 jtbl_004C20F8[16] __attribute__((section(".sdata")));
 
+/* Provisional: callback-table ABI and state bounds remain unresolved. */
 void func_003C3DE0(u8 *p, u8 *q)
 {
     if (q[5] != 0) {

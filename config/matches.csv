@@ -14340,7 +14340,7 @@ func_001A4770,0x001A4770,0x80,src/z0_a.c,complete
 func_00378A00,0x00378A00,0xAC,src/z0_b.c,complete
 func_00300D40,0x00300D40,0xF4,src/z0_b.c,complete
 func_00161410,0x00161410,0xFC,src/z0_b.c,complete
-func_003C3DE0,0x003C3DE0,0xB8,src/z0_b.c,complete
+func_003C3DE0,0x003C3DE0,0xB8,src/z0_b.c,placeholder
 func_00262600,0x00262600,0xB4,src/z0_c.c,complete
 func_003B1AA0,0x003B1AA0,0xD0,src/z0_d.c,complete
 func_001FDF90,0x001FDF90,0xE0,src/z0_d.c,complete
@@ -16378,7 +16378,7 @@ func_003BAF50,0x003BAF50,0xA8,src/grok_sb_3baf50.c,complete
 func_003BB470,0x003BB470,0xB4,src/grok_sb_3bb470.c,complete
 func_003BC3C0,0x003BC3C0,0xC0,src/grok_sb_3bc3c0.c,complete
 func_003BC5D0,0x003BC5D0,0x78,src/grok_s7_3bc5d0.c,complete
-func_003C3B00,0x003C3B00,0x7C,src/grok_y5_3c3b00.c,complete
+func_003C3B00,0x003C3B00,0x7C,src/grok_y5_3c3b00.c,placeholder
 func_003D6AF0,0x003D6AF0,0x20,src/grok_u3_3d6af0.c,complete
 func_003D90A0,0x003D90A0,0x18,src/grok_u3_3d90a0.c,complete
 func_0041A860,0x0041A860,0x1AC,src/grok_v1_41a860.c,placeholder
@@ -18035,7 +18035,7 @@ func_002A7B60,0x002A7B60,0x178,src/sa24_b.c,complete
 func_00289AE0,0x00289AE0,0x1A8,src/sa24_c.c,complete
 func_00406220,0x00406220,0xD4,src/sa20_a.c,complete
 func_0040BA28,0x0040BA28,0x190,src/sa20_a.c,complete
-func_003C3B80,0x003C3B80,0x154,src/sa20_b.c,complete
+func_003C3B80,0x003C3B80,0x154,src/sa20_b.c,placeholder
 func_00323780,0x00323780,0x164,src/sa20_c.c,complete
 func_003AC580,0x003AC580,0x164,src/sa20_c.c,complete
 func_0013BF80,0x0013BF80,0x188,src/sa20_d.c,complete
