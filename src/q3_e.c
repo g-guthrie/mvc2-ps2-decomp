@@ -8,7 +8,7 @@ typedef signed int s32;
 typedef float f32;
 extern int func_00175700(u8 *);
 extern int func_00175670(u8 *);
-extern void func_0032E690();
+extern void func_0032E690(void *);
 extern void func_003DAA40(struct Object *);
 extern void func_001BB8D0(u8 *, u8 *);
 extern void func_0037D1B0(u8 *);
@@ -19,7 +19,7 @@ void func_001597D0(u8 *p) {
         func_003DAA40((struct Object *)p);
         return;
     }
-    func_0032E690();
+    func_0032E690(p);
     *(f32 *)(p + 0x74) -= 0.03333333507f;
 }
 
