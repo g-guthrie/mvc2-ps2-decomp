@@ -44,10 +44,10 @@ void func_00291150(u8 *p) {
 
 typedef void (*Fn_0036E6F0)(u8 *, u8 *, u8 *);
 extern Fn_0036E6F0 D_00463DA0[];
-extern s32 func_00372260(u8 *);
-s32 func_0036E6F0(u8 *p) {
+extern void func_00372260(u8 *);
+void func_0036E6F0(u8 *p) {
     D_00463DA0[p[5]](p, *(u8 **)(p + 0x18), p + 0x88);
-    if (p[1] != (*(u8 **)(p + 0x18))[1]) return func_00372260(p);
+    if (p[1] != (*(u8 **)(p + 0x18))[1]) { func_00372260(p); return; }
 }
 
 void func_001B66C0(u8 *p) {
