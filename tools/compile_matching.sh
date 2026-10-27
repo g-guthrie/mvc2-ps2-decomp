@@ -21768,4 +21768,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_state_init_0034df00.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/owner_state_init_0034df00.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_state_init_0034df00.o" private/SLUS_204.86.rom --source src/owner_state_init_0034df00.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_dispatch_0029f130.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/owner_dispatch_0029f130.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_dispatch_0029f130.o" private/SLUS_204.86.rom --source src/owner_dispatch_0029f130.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/context_dispatch_003037c0.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/context_dispatch_003037c0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/context_dispatch_003037c0.o" private/SLUS_204.86.rom --source src/context_dispatch_003037c0.c
 PYTHON="$PYTHON" tools/compile_matching_data.sh
