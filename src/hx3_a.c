@@ -7,14 +7,14 @@ typedef signed int s32;
 typedef float f32;
 
 void func_00244F20(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_00184540(u8 *);
     extern void func_001757E0(u8 *, s32, s32);
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
-    func_00175700();
+    func_00175700(p);
     if (p[0x1E6] == 0) {
         if ((s8)p[0x211] == 2) {
             func_00184540(p);
@@ -51,7 +51,7 @@ void func_00244F20(u8 *p) {
 }
 
 void func_00277100(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern f32 func_00117078(f32);
     extern void func_001757E0(u8 *, s32, s32);
     f32 prod;
@@ -63,7 +63,7 @@ void func_00277100(u8 *p) {
     f32 *pa;
     f32 *pb;
 
-    func_00175700();
+    func_00175700(p);
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
     pa = (f32 *)(p + 0x5C);
     t = *(f32 *)(p + 0x68);

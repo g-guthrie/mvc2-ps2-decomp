@@ -9,11 +9,11 @@ typedef float f32;
 typedef struct { u8 pad[0x7C]; s16 f7c[16]; } G1;
 extern G1 *D_004C2794;
 void func_001FD5B0(u8 *p) {
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_00183d50();
     extern void func_001757E0();
     s32 r;
-    if (func_00175700() < 0) {
+    if ((s8)func_00175700(p) < 0) {
         u32 t = p[7]; p[7] = t + 1;
         func_00183d50(p);
         p[0x20D] = 0;
@@ -37,7 +37,7 @@ void func_001FD5B0(u8 *p) {
 
 extern Mvc2ActionRecord D_00455EF0[];
 void func_0028C810(u8 *p) {
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_0028D810(u8 *, u8 *);
     extern void func_0041AC70();
     extern void func_001E3710();
@@ -47,7 +47,7 @@ void func_0028C810(u8 *p) {
     p[0x40C] = 2;
     q = p + 0x2B8;
     p[0x33C] = 5;
-    if (func_00175700() < 0) {
+    if ((s8)func_00175700(p) < 0) {
         p[6]++;
         *(s16 *)(p + 0x1E) = 0x12;
         p[7] = 0;
@@ -106,11 +106,11 @@ void func_002E94E0(u8 *p) {
 }
 
 void func_002B08B0(u8 *p) {
-    extern s32 func_00175700();
+    extern int func_00175700(u8 *);
     u32 t;
     p[0x40C] = 2;
     p[0x33C] = 5;
-    func_00175700();
+    func_00175700(p);
     t = p[0x15B];
     if (t != 0) {
         p[0x1B5] = t;
