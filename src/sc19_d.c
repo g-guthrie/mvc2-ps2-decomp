@@ -5,6 +5,7 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 
+/* Provisional: target helper argument and pointer return require correction. */
 s32 func_00242D50(u8 *p)
 {
     extern s32 func_001E7FD0();
