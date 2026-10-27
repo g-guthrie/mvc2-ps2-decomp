@@ -18,9 +18,3 @@ void func_00298FC0(u8 *p) {
  *(float *)(p+0x60)+=*(float *)(p+0x6c);
  if (previous * *(float *)(p+0x60)<0.0f) *(float *)(p+0x6c)=-1.205357074737548828125f;
 }
-void func_002CEC40(u8 *p) {
- float previous=*(float *)(p+0x60);
- *(float *)(p+0x38)+=previous;
- *(float *)(p+0x60)+=*(float *)(p+0x6c);
- if (previous * *(float *)(p+0x60)<0.0f) *(float *)(p+0x6c)=-1.205357074737548828125f;
-}

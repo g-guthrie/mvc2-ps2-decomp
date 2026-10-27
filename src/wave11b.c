@@ -31,16 +31,7 @@ void func_00219260(u8 *p) {
     p[0x2BA] = p[0x286];
 }
 
-void func_002CEC90(u8 *p) {
-    s8 v = *(s8 *)(p + 0x150);
-    if (v) {
-                p[0x1B5] = v;
-        p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
-        *(s32 *)(p + 0x1D8) = 0;
-        { u32 offset = p[2] * 2; offset += (u32)D_004C2794; ++*(s16 *)(offset + 0x7C); }
-        p[0x150] = 0;
-    }
-}
+
 
 extern void func_001757E0(u8 *, s32, u8);
 void func_002E76A0(u8 *p) {

@@ -7896,7 +7896,7 @@ func_001519E0,0x001519E0,0x3C,src/dupcluster_001519E0.c,complete
 func_001822B0,0x001822B0,0x44,src/float_state_limits.c,complete
 func_001BDA10,0x001BDA10,0x44,src/float_state_limits.c,complete
 func_00298FC0,0x00298FC0,0x4C,src/float_motion_transitions.c,complete
-func_002CEC40,0x002CEC40,0x4C,src/float_motion_transitions.c,complete
+func_002CEC40,0x002CEC40,0x4C,src/actor_motion_callbacks_002cec40.c,complete
 func_00184110,0x00184110,0x40,src/dupcluster_00184110.c,complete
 func_001A9650,0x001A9650,0x48,src/dupcluster_001A9650.c,complete
 func_0026ECA0,0x0026ECA0,0xC,src/tail12.c,complete
@@ -9681,7 +9681,7 @@ func_00336360,0x00336360,0x4C,src/wave11.c,complete
 func_0015D310,0x0015D310,0x58,src/wave11.c,complete
 func_00173FF0,0x00173FF0,0x34,src/wave11.c,complete
 func_00219260,0x00219260,0x44,src/wave11b.c,complete
-func_002CEC90,0x002CEC90,0x48,src/wave11b.c,complete
+func_002CEC90,0x002CEC90,0x48,src/actor_motion_callbacks_002cec40.c,complete
 func_002E76A0,0x002E76A0,0x58,src/wave11b.c,complete
 func_00334B40,0x00334B40,0x50,src/wave11b.c,complete
 func_001A72C0,0x001A72C0,0x58,src/wave11b.c,complete
@@ -10680,7 +10680,7 @@ func_001F64B0,0x001F64B0,0x78,src/g6b.c,complete
 func_0021B900,0x0021B900,0x7C,src/g6b.c,complete
 func_001DAF30,0x001DAF30,0x7C,src/g6b.c,complete
 func_00207E90,0x00207E90,0x7C,src/g6b.c,complete
-func_002CF110,0x002CF110,0x80,src/g6b.c,placeholder
+func_002CF110,0x002CF110,0x80,src/actor_motion_callbacks_002cec40.c,complete
 func_00386570,0x00386570,0x84,src/g6b.c,complete
 func_001665C0,0x001665C0,0x68,src/g6b.c,complete
 func_002C4F50,0x002C4F50,0x64,src/g6b.c,complete
@@ -11656,7 +11656,7 @@ func_002024A0,0x002024A0,0x5C,src/n10.c,complete
 func_003CA780,0x003CA780,0x60,src/n10.c,complete
 func_0039DA50,0x0039DA50,0x68,src/n10.c,complete
 func_002A5D80,0x002A5D80,0x70,src/n10.c,complete
-func_002CF010,0x002CF010,0x78,src/n10.c,placeholder
+func_002CF010,0x002CF010,0x78,src/actor_motion_callbacks_002cec40.c,complete
 func_00284650,0x00284650,0x90,src/n10.c,complete
 func_00314AB0,0x00314AB0,0x90,src/n10.c,complete
 func_002FE960,0x002FE960,0x94,src/n10.c,complete
@@ -15080,7 +15080,7 @@ func_0039B570,0x0039B570,0xF4,src/w182_f.c,complete
 func_001D3370,0x001D3370,0x100,src/w182_f.c,complete
 func_00267980,0x00267980,0x138,src/w182_f.c,complete
 func_003B9930,0x003B9930,0x154,src/w182_f.c,complete
-func_002CEEB0,0x002CEEB0,0x160,src/w182_f.c,complete
+func_002CEEB0,0x002CEEB0,0x160,src/actor_motion_callbacks_002cec40.c,complete
 func_0039CB60,0x0039CB60,0x130,src/w182_g.c,complete
 func_001D0A70,0x001D0A70,0x144,src/w182_g.c,complete
 func_003464A0,0x003464A0,0x16C,src/w182_g.c,complete

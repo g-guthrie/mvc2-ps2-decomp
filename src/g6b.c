@@ -147,24 +147,6 @@ void func_00207E90(u8 *p) {
     func_00178F20(q, p);
     if (r[1] == 0x24) *(f32 *)(p + 0x34) += *(f32 *)(q + 0x64);
 }
-extern void func_002CEC90(u8 *);
-extern void func_002CEC40();
-extern void func_00183d50();
-extern void func_002CF190(u8 *);
-/* Provisional: three helper calls still omit the actor argument. */
-void func_002CF110(u8 *p) {
-    func_002CEC90(p);
-    func_002CEC40();
-    if (*(f32 *)(p + 0x38) < *(f32 *)(p + 0x430)) {
-        u32 t = p[6];
-        p[6] = t + 1;
-        *(f32 *)(p + 0x38) = *(f32 *)(p + 0x430);
-        func_00183d50();
-        func_002CF190(p);
-    } else if (*(s8 *)(p + 0x151) == 0) {
-        func_00175700();
-    }
-}
 extern void func_0015B200(u8 *, f32 *, s32, s32);
 extern void func_001E3710(u8 *, s32);
 void func_00386570(u8 *p, u8 *q) {
