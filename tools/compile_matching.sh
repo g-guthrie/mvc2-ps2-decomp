@@ -21585,4 +21585,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/actor_animation_state_0
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_random_animation_00240710.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_random_animation_00240710.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_random_animation_00240710.o" private/SLUS_204.86.rom --source src/actor_random_animation_00240710.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_offset_effect_init_002ff410.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_offset_effect_init_002ff410.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_offset_effect_init_002ff410.o" private/SLUS_204.86.rom --source src/actor_offset_effect_init_002ff410.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

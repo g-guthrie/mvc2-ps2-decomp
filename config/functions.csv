@@ -13574,7 +13574,7 @@ residual_002FF2D0,0x002FF2D0,0xA0,0x002FF370,assembly_residual,verified-boundary
 func_002FF370,0x002FF370,0x70,0x002FF3E0,code,spimdisasm-explicit-size-before-first-data
 func_002FF3E0,0x002FF3E0,0x8,0x002FF3E8,code,spimdisasm-explicit-size-before-first-data
 func_002FF3F0,0x002FF3F0,0x20,0x002FF410,code,matching-c-head-split
-residual_002FF410,0x002FF410,0xC0,0x002FF4D0,assembly_residual,verified-boundary-after-matching-head
+func_002FF410,0x002FF410,0xC0,0x002FF4D0,code,verified-native-table-entry-boundary
 func_002FF4D0,0x002FF4D0,0xA8,0x002FF578,code,spimdisasm-explicit-size-before-first-data
 func_002FF580,0x002FF580,0x98,0x002FF618,code,spimdisasm-explicit-size-before-first-data
 func_002FF620,0x002FF620,0x70,0x002FF690,code,spimdisasm-explicit-size-before-first-data
