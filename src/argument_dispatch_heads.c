@@ -979,6 +979,7 @@ void func_002CA020(u8 *p) { jtbl_00459F70[p[7]](p, p + 696); }
 void func_00306B50(u8 *p) { jtbl_0045CC80[p[6]](p, p + 696); }
 void func_002ED090(u8 *p) { jtbl_0045B650[p[509]](p, p + 696); }
 void func_00304230(u8 *p) { jtbl_0045CA70[p[509]](p, p + 696); }
+/* Provisional: callback table ownership and selector bounds require proof. */
 void func_00312950(u8 *p) { jtbl_0045D450[p[509]](p, p + 696); }
 void func_00354AD0(u8 *p) { jtbl_00462B90[p[4]](p, *(void **)(p + 24)); }
 void func_001EAEB0(u8 *p) { jtbl_004BFB58[p[6]](p, p + 696); }

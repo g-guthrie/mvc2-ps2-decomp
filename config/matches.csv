@@ -2842,7 +2842,7 @@ func_00312600,0x00312600,0x20,src/composite_dispatch_heads.c,complete
 func_003128F0,0x003128F0,0x3c,src/signed_result_handlers.c,complete
 func_00312930,0x00312930,0x20,src/composite_dispatch_heads.c,complete
 func_00312D60,0x00312D60,0x4c,src/reset_on_negative.c,complete
-func_00312DB0,0x00312DB0,0x20,src/composite_dispatch_heads.c,complete
+func_00312DB0,0x00312DB0,0x20,src/composite_dispatch_heads.c,placeholder
 func_003130C0,0x003130C0,0x3c,src/signed_result_handlers.c,complete
 func_00313100,0x00313100,0x20,src/indirect_dispatch.c,complete
 func_00313820,0x00313820,0x20,src/composite_dispatch_heads.c,placeholder
@@ -16997,7 +16997,7 @@ func_002CA020,0x002CA020,0x24,src/argument_dispatch_heads.c,complete
 func_00306B50,0x00306B50,0x24,src/argument_dispatch_heads.c,complete
 func_002ED090,0x002ED090,0x24,src/argument_dispatch_heads.c,complete
 func_00304230,0x00304230,0x24,src/argument_dispatch_heads.c,complete
-func_00312950,0x00312950,0x24,src/argument_dispatch_heads.c,complete
+func_00312950,0x00312950,0x24,src/argument_dispatch_heads.c,placeholder
 func_00354AD0,0x00354AD0,0x24,src/argument_dispatch_heads.c,complete
 func_0035CF70,0x0035CF70,0x24,src/owner_callback_dispatch_prefixes.c,placeholder
 func_003616A0,0x003616A0,0x24,src/owner_callback_dispatch_prefixes.c,complete

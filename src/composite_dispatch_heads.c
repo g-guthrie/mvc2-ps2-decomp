@@ -1037,7 +1037,7 @@ extern DispatchFn jtbl_0045D3D0[];
 extern DispatchFn jtbl_0045D3F8[];
 extern DispatchFn jtbl_0045D408[];
 extern DispatchFn jtbl_0045D438[];
-extern DispatchFn jtbl_0045D490[];
+extern ContextDispatchFn jtbl_0045D490[];
 extern ContextDispatchFn jtbl_0045D4B0[];
 extern ContextDispatchFn jtbl_0045D4D0[];
 extern DispatchFn jtbl_0045D4F0[];
@@ -3505,7 +3505,8 @@ void func_00312600(u8 *p) { jtbl_0045D408[p[33]](p); }
 
 void func_00312930(u8 *p) { jtbl_0045D438[p[6]](p); }
 
-void func_00312DB0(u8 *p) { jtbl_0045D490[p[6]](p); }
+/* Provisional: callback table ownership and selector bounds require proof. */
+void func_00312DB0(u8 *p, void *context) { jtbl_0045D490[p[6]](p, context); }
 
 /* Provisional: callback table ABI and selector bounds need reconciliation. */
 void func_00313820(u8 *p, void *context) { jtbl_0045D4B0[p[7]](p, context); }
