@@ -157,7 +157,7 @@ Event *func_00367F90(void *arg, u8 first, u8 second) {
     }
     return event;
 }
-void func_00383B80(void *arg, u8 first, u8 second) {
+u8 *func_00383B80(void *arg, u8 first, u8 second) {
     Event *event = func_003DA750(0, 1, 0);
     if (event != 0) {
         event->callback = func_00383C90;
@@ -166,6 +166,7 @@ void func_00383B80(void *arg, u8 first, u8 second) {
         event->field21 = second;
         event->value = 0x1b00;
     }
+    return (u8 *)event;
 }
 void func_00390C40(void *arg, u8 first, u8 second) {
     Event *event = func_003DA750(0, 1, 0);

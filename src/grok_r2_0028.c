@@ -14,7 +14,7 @@ extern s32 func_00280EC0(u8 *);
 extern void func_00280F80(u8 *);
 extern void func_0028D810(u8 *, u8 *);
 extern Mvc2ActionRecord D_00456520[];
-extern void func_00383B80(u8 *, s32, s32);
+extern u8 *func_00383B80(void *, u8, u8);
 extern void func_00397580(u8 *, s32);
 extern void func_001DAF30(u8 *, u8);
 extern void func_00296CE0(u8 *);

@@ -71,7 +71,7 @@ void func_00285020(P_e *p) {
     extern s32 func_00185980(P_e *);
     extern void func_001757E0(P_e *, s32, s32);
     extern void func_00185770(P_e *, s32);
-    extern void func_00383B80(P_e *, s32, s32);
+    extern u8 *func_00383B80(void *, u8, u8);
     extern void func_00184540(P_e *);
     p->b40c = 2;
     p->b33c = 5;

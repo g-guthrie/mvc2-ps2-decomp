@@ -26,7 +26,7 @@ void func_002849E0(u8 *a, u8 *b)
     extern void func_00185490(u8 *);
     extern void func_00183D10(u8 *);
     extern void func_001757E0(u8 *, s32, s32);
-    extern void func_00383B80(u8 *, s32, s32);
+    extern u8 *func_00383B80(void *, u8, u8);
     a[6]++;
     a[0x1B5] = 0x4D;
     a[0x1B2] = *(u16 *)(a + 0x1C0) = 0;

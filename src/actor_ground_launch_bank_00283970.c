@@ -7,7 +7,8 @@ typedef unsigned int u32;
 typedef struct {u8 pad[0x5C];float vx,vy,vz,ax,ay;} Motion;
 extern u8 *D_004C2794 __attribute__((section(".sdata")));
 extern float D_00455AF0[][2],D_00455AF4[][2];
-extern void func_0018C4B0(u8 *,int),func_00185490(u8 *),func_00183D10(u8 *),func_00383B80(void *,u8,u8);
+extern void func_0018C4B0(u8 *,int),func_00185490(u8 *),func_00183D10(u8 *);
+extern u8 *func_00383B80(void *, u8, u8);
 extern int func_001757E0(u8 *,int,int);
 void func_00283970(u8 *p)
 {

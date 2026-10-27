@@ -42,7 +42,7 @@ extern GG *D_004C2794;
 void func_00281C80(O *p) {
     extern void func_001757E0(O *, s32, s32);
     extern void func_001E3710(O *, s32);
-    extern void func_00383B80(O *, s32, s32);
+    extern u8 *func_00383B80(void *, u8, u8);
     u32 t;
     f32 k;
     switch (p->b1FC) {

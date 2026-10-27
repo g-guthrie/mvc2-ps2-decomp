@@ -106,7 +106,7 @@ void func_00230500(Se *a) {
 
 void func_002840D0(Se *a) {
     extern s8 func_00175700();
-    extern void func_00383B80();
+    extern u8 *func_00383B80(void *, u8, u8);
     extern void func_001830D0();
     u32 v[3];
     ((u8 *)a)[0x40C] = 2;

@@ -7,7 +7,8 @@ typedef short s16;
 typedef unsigned int u32;
 extern u8 *D_004C2794 __attribute__((section(".sdata"))),*D_004C2840 __attribute__((section(".sdata")));
 extern float D_00455AA0[][4],D_00455AA4[][4],D_00455AA8[][4],D_00455AAC[][4];
-extern void func_0018C4B0(u8 *,int),func_00185490(u8 *),func_001E3210(u8 *,int),func_00183D10(u8 *),func_00383B80(void *,u8,u8);
+extern void func_0018C4B0(u8 *,int),func_00185490(u8 *),func_001E3210(u8 *,int),func_00183D10(u8 *);
+extern u8 *func_00383B80(void *, u8, u8);
 extern int func_001757E0(u8 *,int,int);
 void func_00283510(u8 *p)
 {

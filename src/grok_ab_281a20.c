@@ -18,7 +18,7 @@ extern s32 D_004C0898, D_004C089C, D_004C08A0;
 extern GG *D_004C2794;
 extern void func_001E3710(u8 *, s32);
 extern s32 func_001757E0(u8 *, s32, s32);
-extern void func_00383B80(u8 *, s32, s32);
+extern u8 *func_00383B80(void *, u8, u8);
 
 void func_00281A20(O *p)
 {

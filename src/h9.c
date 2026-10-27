@@ -44,7 +44,7 @@ int func_00166A50(u8 *p, void *q) {
 }
 extern s32 func_00175700(void *);
 extern void func_001843A0(void *);
-extern void func_00383B80(void *, s32, s32);
+extern u8 *func_00383B80(void *, u8, u8);
 void func_00283480(u8 *p) {
     if ((s8)func_00175700(p) < 0) {
         func_001843A0(p);

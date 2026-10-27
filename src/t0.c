@@ -210,7 +210,7 @@ void func_0029FFE0(u8 *p) {
 }
 extern int func_00175700(u8 *p);
 extern void func_001757E0(u8 *p, s32 a, s32 b);
-extern u8 *func_00383B80(u8 *p, s32 a, s32 b);
+extern u8 *func_00383B80(void *, u8, u8);
 void func_00283DF0(u8 *p, u8 *q) {
     u32 t;
     u8 *r;

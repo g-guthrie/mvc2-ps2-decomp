@@ -425,7 +425,7 @@ void func_00290240(u8 *p) {
     func_00290290(p);
 }
 
-extern void func_00383B80(u8 *, int, int);
+extern u8 *func_00383B80(void *, u8, u8);
 void func_00282490(u8 *p) {
     func_00175700(p);
     if (*(s8 *)(p + 337)) {
