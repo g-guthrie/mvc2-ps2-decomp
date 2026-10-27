@@ -182,7 +182,7 @@ void func_003CCBF0(u8 *p, u8 *q) {
     extern s32 func_00175700(u8 *);
     extern void func_001757E0(u8 *, s32, s32);
     extern void func_003CDB90(u8 *, s32);
-    extern void func_003CAB20(u8 *, u8 *, s32);
+    extern void func_003CAB20(u8 *, u8 *, unsigned int);
     if (p[6] == 0) {
         *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
         *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);

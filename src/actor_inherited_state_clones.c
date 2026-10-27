@@ -185,7 +185,7 @@ void func_003C09C0(u8 *owner)
 }
 
 extern void func_003CAA20(u8 *);
-extern void func_003CAB20(u8 *, u8 *, s32);
+extern void func_003CAB20(u8 *, u8 *, unsigned int);
 
 u8 *func_003CA7E0(u8 *owner, u8 kind)
 {

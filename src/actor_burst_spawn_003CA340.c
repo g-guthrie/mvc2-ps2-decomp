@@ -11,7 +11,7 @@ typedef struct { f32 x, y, z; } V3;
 
 extern u8 *func_003DA750(u8 *, s32, s32);
 extern void func_003CAA20(u8 *);
-extern void func_003CAB20(u8 *, u8 *, s32);
+extern void func_003CAB20(u8 *, u8 *, unsigned int);
 
 typedef struct { u8 prefix[0x38]; f32 y; u8 gap[0x20]; f32 vx,vy; u32 unused64; f32 ax,ay; } ActorMotion;
 typedef struct { u8 prefix[0x430]; f32 ground; } ActorGround;

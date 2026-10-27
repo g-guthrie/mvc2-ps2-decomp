@@ -184,7 +184,7 @@ void func_002BF5B0(u8 *p) {
 
 extern int func_00174470(const void *);
 extern void func_003CAB00(u8 *, u8 *);
-extern void func_003CAB20(u8 *, u8 *, int);
+extern void func_003CAB20(u8 *, u8 *, unsigned int);
 
 void func_003CC5A0(u8 *p, u8 *q) {
     if (func_00174470(p) == 0) {

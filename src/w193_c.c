@@ -57,7 +57,7 @@ void func_0033D490(u8 *p)
     }
 }
 
-extern void func_003CAB20(u8 *, u8 *, s32);
+extern void func_003CAB20(u8 *, u8 *, unsigned int);
 extern void func_003CAB00(u8 *, u8 *);
 extern int func_00174470(const void *);
 extern void func_001E3210(u8 *, s32);

@@ -10,7 +10,7 @@ typedef struct { u8 pad[0x7C]; s16 h7c[8]; } G;
 extern G *D_004C2794;
 
 void func_003CBAB0(u8 *p, u8 *q) {
-    extern void func_003CAB20(u8 *, u8 *, s32);
+    extern void func_003CAB20(u8 *, u8 *, unsigned int);
     extern void func_003CAB00(u8 *, u8 *);
     extern s32 func_00174780(u8 *);
     extern int func_00174470(const void *);
