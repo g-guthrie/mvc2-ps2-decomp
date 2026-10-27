@@ -1,3 +1,4 @@
+struct Object;
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -15,7 +16,7 @@ extern u8 D_00457490[];
 extern void (*D_00473B10[])(u8 *);
 extern void func_001360C0(u8 *);
 extern void func_001CA7E0(u8 *);
-extern void func_003DAA40(void);
+extern void func_003DAA40(struct Object *);
 extern void func_001E3710();
 extern void func_0034CF30(u8 *, u8 *);
 extern void func_0034D080(u8 *);
@@ -54,7 +55,7 @@ void func_00136070(u8 *p) {
 
 void func_00154B10(u8 *p) {
     if (*(s16 *)(p + 28) > 10) {
-        func_003DAA40();
+        func_003DAA40((struct Object *)p);
         D_004D1900[0] = D_004D1900[0] - 1;
     } else {
         *(s16 *)(p + 28) += 1;

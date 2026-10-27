@@ -1,3 +1,4 @@
+struct Object;
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -441,7 +442,7 @@ void func_001A8A10(u8 *p, u8 *q) {
 extern u8 *D_004CAB90[];
 
 void func_001331E0(u8 *p) {
-    extern void func_003DAA40();
+    extern void func_003DAA40(struct Object *);
     u8 *a;
     u8 *q;
     u8 *o;
@@ -463,5 +464,5 @@ reset:
     *(s16 *)(p + 0x1C) = 0;
     p[0x13C] = 0;
     D_004CAB90[q[0x1B8]] = 0;
-    func_003DAA40();
+    func_003DAA40((struct Object *)p);
 }

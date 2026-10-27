@@ -1,3 +1,4 @@
+struct Object;
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -20,12 +21,12 @@ typedef struct {
 } S335;
 
 extern double func_00119058(f32);
-extern void func_003DAA40(void);
+extern void func_003DAA40(struct Object *);
 
 void func_00335830(S335 *p) {
     u8 *owner = *(u8 **)((u8 *)p + 0x18);
     if (owner[4] == 2)
-        func_003DAA40();
+        func_003DAA40((struct Object *)p);
     p->h1C++;
     p->w44 = (u32)(s32)(0.5 + 65536.0 * func_00119058(p->f60) / 360.0) & 0xFFFF;
     p->w44 += (u32)(s32)(0.5 + 65536.0 * func_00119058(p->f54 * (f32)p->h1C) / 360.0) & 0xFFFF;
