@@ -19279,3 +19279,7 @@ func_003072D0,0x003072D0,0xC4,src/actor_context_action_entries.c,complete
 func_00227940,0x00227940,0xCC,src/actor_air_entry_00227940.c,complete
 func_0024D2C0,0x0024D2C0,0xC4,src/actor_ground_event_0024d2c0.c,complete
 func_001CDF30,0x001CDF30,0xF8,src/owner_follow_init_001cdf30.c,complete
+func_0026AC30,0x0026AC30,0xC,src/actor_state_forwarders.c,complete
+func_002A0970,0x002A0970,0xC,src/actor_state_forwarders.c,complete
+func_00277D30,0x00277D30,0x10,src/actor_state_forwarders.c,complete
+func_00279040,0x00279040,0x10,src/actor_state_forwarders.c,complete
