@@ -21633,4 +21633,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$PYTHON" tools/verify_object.py "$BUILD/owner_pose_phase_0013ddc0.o" private/SLUS_204.86.rom --matches config/local_helper_matches.csv --source src/owner_pose_phase_0013ddc0.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/linked_actor_active_00210170.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/linked_actor_active_00210170.o"
 "$PYTHON" tools/verify_object.py "$BUILD/linked_actor_active_00210170.o" private/SLUS_204.86.rom --source src/linked_actor_active_00210170.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/script_threshold_select_00166fc0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/script_threshold_select_00166fc0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/script_threshold_select_00166fc0.o" private/SLUS_204.86.rom --source src/script_threshold_select_00166fc0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

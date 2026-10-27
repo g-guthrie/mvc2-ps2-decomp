@@ -19306,3 +19306,4 @@ func_003537B0,0x003537B0,0x1E8,src/owner_linked_effect_init_003537b0.c,complete
 func_003D9000,0x003D9000,0x80,src/actor_active_check_003d9000.c,complete
 func_0013DDC0,0x0013DDC0,0xFC,src/owner_pose_phase_0013ddc0.c,complete
 func_00210170,0x00210170,0x34,src/linked_actor_active_00210170.c,complete
+func_00166FC0,0x00166FC0,0x98,src/script_threshold_select_00166fc0.c,placeholder
