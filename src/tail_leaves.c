@@ -183,9 +183,9 @@ void func_001391A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001391E0(a0, a1, a2, 
 
 void func_00139B90(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
-void func_0013A3E0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_0013A3E0(u8 *p) { func_003DAA40((struct Object *)p); }
 
-void func_0013A600(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_0013A600(u8 *p) { func_003DAA40((struct Object *)p); }
 
 void func_0013ABC0(u8 *p) { func_003DAA40((struct Object *)(p)); }
 
