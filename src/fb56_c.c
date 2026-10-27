@@ -11,7 +11,7 @@ typedef struct { s32 a, b; } PR;
 void func_00403B20(u8 *p)
 {
     extern s32 func_003FF190(s32);
-    extern s32 func_003FFF90(s32);
+    extern s32 func_003FFF90(void *);
     extern void func_003F9630(void);
     extern void func_003F9660(void);
     extern void func_004104E0(PR *, s32, PR *, PR *);
@@ -31,7 +31,7 @@ void func_00403B20(u8 *p)
     r = func_003FF190(*(s32 *)(p + 0xC));
     a = *(s32 *)(p + 4);
     D_004C240C = r;
-    n = func_003FFF90(a);
+    n = func_003FFF90((void *)a);
     func_003F9630();
     mn = *(u32 *)(p + 0x48);
     if (n > 0) {

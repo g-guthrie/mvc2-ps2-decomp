@@ -21,7 +21,7 @@ void func_00404680(void) {
 }
 
 extern s32 func_003FF5C8(s32);
-extern s32 func_003FFF90(s32);
+extern s32 func_003FFF90(void *);
 extern s32 D_004C2404;
 extern s32 D_004C2408;
 typedef struct VO { s32 (**vt)(struct VO *, s32); } VO;
@@ -31,7 +31,7 @@ void func_00403A70(Q3A70 *q) {
     s32 r, n, i; VO **pp;
     if (func_003FF5C8(q->f4) == 3) {
         i = 0;
-        n = func_003FFF90(q->f4);
+        n = func_003FFF90((void *)q->f4);
         pp = q->objs;
         D_004C2404 = n;
         for (; i < n; i++) {

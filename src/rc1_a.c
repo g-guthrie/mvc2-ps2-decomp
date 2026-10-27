@@ -35,7 +35,7 @@ typedef struct {
 void func_004035D8(C43 *p)
 {
     extern s32 func_003FF5C8(s32);
-    extern s32 func_003FFF90(s32);
+    extern s32 func_003FFF90(void *);
     extern void func_003FB2E8(s32, s32, u8 *, s32);
     extern void func_003FB178(u8 *, u8 *);
     extern void func_00401868(C43 *);
@@ -72,7 +72,7 @@ void func_004035D8(C43 *p)
     s32 a, h, b, c, n, v, w, x;
     h = p->h;
     if (func_003FF5C8(h) != 2) return;
-    b = func_003FFF90(h);
+    b = func_003FFF90((void *)h);
     if (p->b3 < b) {
         func_003FB2E8(b, p->b3, buf, 16);
         func_003FB178(D_004BC7C0, buf);
@@ -118,7 +118,7 @@ void func_004035D8(C43 *p)
         func_003FFF20(h, func_00403308, p);
     }
     a = func_003FFF78(h);
-    b = func_003FFF90(h);
+    b = func_003FFF90((void *)h);
     c = func_003FFFF0(h);
     v = func_003FFFA8(h);
     func_003FF288(p->wC, v);

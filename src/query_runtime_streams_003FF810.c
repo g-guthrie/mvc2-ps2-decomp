@@ -7,7 +7,7 @@ struct QueryStreamOps {
     void (*request)(QueryStream *, int, int, struct RuntimeSpan *);
 };
 struct QueryStream { struct QueryStreamOps *ops; };
-extern s8 func_003F8130(void *);
+extern s32 func_003F8130(void *);
 extern int func_0040FCD0(QueryStream *);
 extern int func_003F8118(void *);
 int func_003FF810(u8 *opaque, int *position, int *available, int *remaining)

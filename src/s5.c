@@ -3,8 +3,9 @@ typedef unsigned int u32;
 typedef unsigned char u8;
 typedef unsigned long long u64;
 
-extern void func_003F8130(s32);
-void func_003FFF90(s32 *p) { func_003F8130(p[1]); }
+typedef struct { u8 prefix[4]; void *engine; } RuntimeStreamHandle;
+extern s32 func_003F8130(void *);
+s32 func_003FFF90(void *object) { RuntimeStreamHandle *p = (RuntimeStreamHandle *)object; return func_003F8130(p->engine); }
 
 extern char D_004BE8D8[];
 extern void func_0011EB60(void *);
