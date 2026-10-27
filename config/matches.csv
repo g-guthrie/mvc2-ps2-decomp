@@ -4873,7 +4873,7 @@ func_0029B080,0x0029B080,0xA8,src/bulk_copy_112.c,complete
 func_002A0BB0,0x002A0BB0,0xA8,src/bulk_copy_112.c,complete
 func_002A7140,0x002A7140,0xA8,src/bulk_copy_112.c,complete
 func_002AB8F0,0x002AB8F0,0xA8,src/bulk_copy_112.c,complete
-func_002B2630,0x002B2630,0xA8,src/bulk_copy_112.c,complete
+func_002B2630,0x002B2630,0xA8,src/bulk_copy_112.c,placeholder
 func_002B8140,0x002B8140,0xA8,src/bulk_copy_112.c,complete
 func_002BFB10,0x002BFB10,0xA8,src/bulk_copy_112.c,complete
 func_002C50F0,0x002C50F0,0xA8,src/bulk_copy_112.c,complete
