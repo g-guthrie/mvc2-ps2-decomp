@@ -140,10 +140,10 @@ void func_001DEEB0(u8 *p) {
     *q = func_00118FA8((float)*q + *(float *)(p + 0x5C));
 }
 
-extern void func_0020D2A0(u8 *p, u8 *q, u8 a);
+extern void func_0020D2A0(u8 *p, u8 *q);
 void func_0020D250(u8 *p, u8 *q, u8 a) {
     if (q[9] || !q[0xB]) {
-        func_0020D2A0(p, q, a);
+        func_0020D2A0(p, q);
     } else {
         *(s16 *)(p + 0x1E) = a;
         p[7] = 0;

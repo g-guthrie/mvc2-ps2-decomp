@@ -24,7 +24,7 @@ extern void func_003D3750(void);
 extern void func_0016DCB0(s32, s32);
 extern u8 *func_0012ABC0(s32, s32);
 extern s32 func_0012A990(u8 *, s32, s32, s32);
-extern void func_0020D2A0(void);
+extern void func_0020D2A0(u8 *, u8 *);
 extern void func_001757E0(u8 *, s32, s32);
 extern void func_0018C4B0(u8 *, s16);
 extern void func_001E5F30(void);
@@ -45,8 +45,8 @@ void func_0012A1C0(u8 *p) {
 }
 
 void func_0020C460(u8 *a, u8 *b) {
-    if (b[9] != 0) func_0020D2A0();
-    else ((void (*)(void))D_004BFE40[a[7]])();
+    if (b[9] != 0) func_0020D2A0(a, b);
+    else ((void (*)(u8 *, u8 *))D_004BFE40[a[7]])(a, b);
 }
 
 void func_0034B310(u8 *p) {
