@@ -14770,7 +14770,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/grok_gl_002df140.c -c -
 "$PYTHON" tools/verify_object.py "$BUILD/grok_gl_002df140.o" private/SLUS_204.86.rom --source src/grok_gl_002df140.c
 
 # Whole native state-handler windows with independently identified entries.
-MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/clone_state_0036c190.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/clone_state_0036c190.o"
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/clone_state_0036c190.c -c -lang c -O3 -sdatathreshold 0 -i src -o "$BUILD/clone_state_0036c190.o"
 "$PYTHON" tools/verify_object.py "$BUILD/clone_state_0036c190.o" private/SLUS_204.86.rom --source src/clone_state_0036c190.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/clone_state_00321390.c -c -lang c -O3,p -Op -sdatathreshold 8 -o "$BUILD/clone_state_00321390.o"
 "$PYTHON" tools/verify_object.py "$BUILD/clone_state_00321390.o" private/SLUS_204.86.rom --source src/clone_state_00321390.c

@@ -1,4 +1,5 @@
 #pragma padloop on
+#include "actor_inherited_state.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned int u32;
@@ -12,24 +13,11 @@ extern void func_0036D7B0(u8 *);
 
 void func_0036C190(u8 *p)
 {
-    s32 n;
-    s32 *d;
-    s32 *s;
     u8 *q;
     u32 t = p[4];
     p[4] = t + 1;
-    n = 0x31;
     q = *(u8 **)(p + 0x18);
-    s = (s32 *)(q + 0xEC);
-    d = (s32 *)(p + 0xEC);
-    do {
-        *d = *s;
-        n--;
-        s++;
-        d++;
-
-
-    } while (n > 0);
+    *(ActorState *)(p + 0xec) = *(ActorState *)(q + 0xec);
     p[0x13C] = 1;
     p[2] = (*(u8 **)(p + 0x18))[2];
     p[1] = (*(u8 **)(p + 0x18))[1];
