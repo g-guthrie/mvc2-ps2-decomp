@@ -11,10 +11,10 @@ extern f32 D_004C2B68;
 extern f32 data_f32_004C2530;
 extern f32 D_004C2B5C;
 extern f32 D_004C2B60;
-extern void (*D_0043CD0C[])();
+extern void (*D_0043CD0C[])(u8 *, u8 *);
 
-void func_0041C710(void) {
-    extern void D_0041C890();
+void func_0041C710(u8 *state, u8 *owner) {
+    extern void D_0041C890(u8 *, u8 *);
     f32 x, y, a, b;
     x = D_004C2B64;
     y = D_004C2B68;
@@ -25,7 +25,7 @@ void func_0041C710(void) {
         data_f32_004C2530 = 3.0f;
         D_004C2B5C = x;
         D_004C2B60 = y;
-        D_0043CD0C[0]();
+        D_0043CD0C[0](state, owner);
     } else {
         data_f32_004C2530 += 0.03999999911f;
         D_004C2B5C += a;
