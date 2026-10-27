@@ -16,7 +16,7 @@ void func_0041C2F0(s32 a, s32 b) {
     extern s32 func_00131720();
     extern s32 func_0041CB30();
     extern void func_001E3CE0(s32);
-    extern s32 func_0041CE80(s32);
+    extern s32 func_0041CE80(u8);
     extern void func_0012E780(s32);
     extern void func_003298B0(s32, s32, s32);
     extern void D_0041C400(s32, s32);
