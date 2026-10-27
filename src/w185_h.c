@@ -13,7 +13,7 @@ extern u8 D_004F1F46[];
 
 void func_00269530(u8 *p)
 {
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_00269D10();
     extern void func_001757E0();
     extern u8 *func_001B3E30(u8 *, int, int);
@@ -34,7 +34,7 @@ void func_00269530(u8 *p)
         D_004F1F46[0] = 1;
         return;
     }
-    r = func_00175700();
+    r = func_00175700(p);
     if (r < 0) {
         func_00269D10(p);
         return;
@@ -57,7 +57,7 @@ void func_00269530(u8 *p)
 
 void func_002DF8C0(u8 *p, u8 *q)
 {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_00126400();
     extern void func_001843A0();
     extern void func_003A1280();
@@ -163,7 +163,7 @@ void func_00373E90(u8 *p)
     extern int func_00174470(const void *);
     extern s32 func_00185980();
     extern void func_00374150();
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001E7F60();
     f32 one;
     if (func_00174470(p) == 0) {
