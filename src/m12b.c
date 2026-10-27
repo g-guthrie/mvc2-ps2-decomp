@@ -215,19 +215,21 @@ void func_002BFA70(u8 *p) {
     }
 }
 
-extern void func_0037E970(u8 *p, s32 b);
+struct S_0037E970;
+struct Q_0037E970;
+extern void func_0037E970(struct S_0037E970 *, struct Q_0037E970 *);
 extern void func_00174910(u8 *p, s32 b);
 extern s32 func_00174240(u8 *p);
 extern void func_001E7F60(u8 *p);
 
-void func_0037E7B0(u8 *p, s32 b) {
+void func_0037E7B0(u8 *p, void *owner) {
     if (*(s8 *)(p + 0x1B2) != 0 || *(s8 *)(p + 0x1B3) != 0) {
         u32 t = p[5];
         p[5] = t + 1;
         p[6] = 0;
     } else {
         func_00175700(p);
-        func_0037E970(p, b);
+        func_0037E970((struct S_0037E970 *)p, (struct Q_0037E970 *)owner);
         func_00174910(p, 0x12C);
         if (func_00174240(p) == 0) {
             u32 t = p[4];

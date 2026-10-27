@@ -7,8 +7,8 @@ typedef signed int s32;
 typedef float f32;
 
 extern s32 func_001748C0(void *, void *);
-typedef struct { u8 p0[0x220]; u8 *w220; } Q_0037E970;
-typedef struct { u8 p0[0x1C]; s16 h1C; s16 h1E; u8 p1[2]; u8 b22; u8 p2[0x11]; u8 f34[1]; } S_0037E970;
+typedef struct Q_0037E970 { u8 p0[0x220]; u8 *w220; } Q_0037E970;
+typedef struct S_0037E970 { u8 p0[0x1C]; s16 h1C; s16 h1E; u8 p1[2]; u8 b22; u8 p2[0x11]; u8 f34[1]; } S_0037E970;
 void func_0037E970(S_0037E970 *p, Q_0037E970 *q) {
     s16 h = p->h1C - 1;
     s32 r, d; u8 t;
