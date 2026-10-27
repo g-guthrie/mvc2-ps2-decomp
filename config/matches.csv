@@ -19228,3 +19228,4 @@ func_003867E0,0x003867E0,0xC8,src/actor_init_003867e0.c,complete
 func_003C04A0,0x003C04A0,0x9C,src/owner_position_follow_003c04a0.c,complete
 func_003B8A10,0x003B8A10,0x94,src/actor_owner_aim_003b8a10.c,complete
 func_001338B0,0x001338B0,0x3C,src/actor_owner_init_001338b0.c,complete
+func_0013A5E0,0x0013A5E0,0x1C,src/actor_owner_follow_0013a5e0.c,complete
