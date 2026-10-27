@@ -16626,8 +16626,8 @@ func_0030E790,0x0030E790,0x28,src/composite_dispatch_heads.c,complete
 func_0030EAF0,0x0030EAF0,0x28,src/composite_dispatch_heads.c,complete
 func_00316A20,0x00316A20,0x28,src/grok_w5_disp.c,complete
 func_00316A50,0x00316A50,0xC,src/grok_u3_316a50.c,complete
-func_0031A6E0,0x0031A6E0,0x2C,src/grok_u3_31a6_dispatches.c,complete
-func_0031A710,0x0031A710,0x20,src/grok_u3_31a6_dispatches.c,complete
+func_0031A6E0,0x0031A6E0,0x2C,src/grok_u3_31a6_dispatches.c,placeholder
+func_0031A710,0x0031A710,0x20,src/grok_u3_31a6_dispatches.c,placeholder
 func_00348C60,0x00348C60,0x14,src/composite_gp_dispatch_heads.c,complete
 func_003539A0,0x003539A0,0x2C,src/composite_dispatch_heads.c,complete
 func_00383CD0,0x00383CD0,0x20,src/composite_dispatch_heads.c,complete
