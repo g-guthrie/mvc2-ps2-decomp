@@ -21576,4 +21576,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_state_frame
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_animation_select_callbacks.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_animation_select_callbacks.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_animation_select_callbacks.o" private/SLUS_204.86.rom --source src/actor_animation_select_callbacks.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/owner_effect_position_00354e90.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_effect_position_00354e90.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_effect_position_00354e90.o" private/SLUS_204.86.rom --source src/owner_effect_position_00354e90.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

@@ -15840,7 +15840,8 @@ func_00354C70,0x00354C70,0x118,0x00354D88,code,spimdisasm-explicit-size-before-f
 func_00354D90,0x00354D90,0x34,0x00354DC4,code,spimdisasm-explicit-size-before-first-data
 func_00354DD0,0x00354DD0,0x88,0x00354E58,code,spimdisasm-explicit-size-before-first-data
 func_00354E60,0x00354E60,0x24,0x00354E84,code,matching-c-head-split
-residual_00354E84,0x00354E84,0xF4,0x00354F78,assembly_residual,verified-boundary-after-matching-head
+residual_00354E84,0x00354E84,0xC,0x00354E90,assembly_residual,uncredited-native-alignment
+func_00354E90,0x00354E90,0xE8,0x00354F78,code,verified-native-table-entry-boundary
 func_00354F80,0x00354F80,0xC4,0x00355044,code,spimdisasm-explicit-size-before-first-data
 func_00355050,0x00355050,0x8,0x00355058,code,spimdisasm-explicit-size-before-first-data
 func_00355060,0x00355060,0x64,0x003550C4,code,spimdisasm-explicit-size-before-first-data

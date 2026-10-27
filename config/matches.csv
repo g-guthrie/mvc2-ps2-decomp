@@ -19287,3 +19287,4 @@ func_002541A0,0x002541A0,0x34,src/actor_state_frame_callbacks.c,complete
 func_002F3BB0,0x002F3BB0,0x34,src/actor_state_frame_callbacks.c,complete
 func_002180B0,0x002180B0,0x88,src/actor_animation_select_callbacks.c,complete
 func_0031D590,0x0031D590,0x88,src/actor_animation_select_callbacks.c,complete
+func_00354E90,0x00354E90,0xE8,src/owner_effect_position_00354e90.c,complete
