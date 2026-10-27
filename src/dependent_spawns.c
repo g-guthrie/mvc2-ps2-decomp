@@ -1,7 +1,7 @@
 /* Create active callback objects with a reference to the parent data. */
 typedef unsigned char u8;
-extern u8 *func_003DA750(void *,int,int);
-extern int D_004C2838;
+extern void *func_003DA750(void *,int,int);
+extern void *D_004C2838;
 extern void func_00154BF0(u8 *);
 extern void func_00154CF0(u8 *);
 extern void func_00156830(u8 *);
@@ -23,7 +23,7 @@ u8 *name(u8 *parent,int source_kind) { \
   object[0x13c]=1; \
   *(void (**)(u8 *))(object+0x10)=callback; \
   *(unsigned short *)(object+0xcc)=tag; \
-  *(int *)(object+0x84)=D_004C2838; \
+  *(void **)(object+0x84)=D_004C2838; \
   *(unsigned int *)(object+0xd0)=flags; \
   *(u8 **)(object+0xc8)=parent+0x88; \
  } \

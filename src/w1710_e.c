@@ -9,18 +9,18 @@ typedef float f32;
 typedef struct { f32 x, y, z; } V3;
 extern s8 D_004D1900;
 void func_00154A20(V3 *v, s32 unused, s32 c, s32 d, s32 e) {
-    extern u8 *func_003DA750();
-    extern void func_00154B10();
-    extern void func_00154B60();
-    extern void func_00154C60();
-    extern void func_00154D60();
-    extern void func_00154F10();
+    extern void *func_003DA750(void *, int, int);
+    extern void func_00154B10(u8 *);
+    extern u8 *func_00154B60(u8 *, int);
+    extern u8 *func_00154C60(u8 *, int);
+    extern void func_00154D60(u8 *, int);
+    extern void func_00154F10(u8 *, int);
     extern void func_001550D0(f32 *, s32, s32, s32);
     u8 *o;
     if ((o = func_003DA750(0, e, 1)) != 0) {
         D_004D1900 = D_004D1900 + 1;
         o[0x13C] = 0;
-        *(void **)(o + 0x10) = func_00154B10;
+        *(void (**)(u8 *))(o + 0x10) = func_00154B10;
         *(V3 *)(o + 0x34) = *v;
         *(u32 *)(o + 0xD0) = 0x800181;
         func_00154B60(o, e);
