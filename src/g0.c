@@ -18,7 +18,7 @@ extern int func_001757E0(u8 *, int, int);
 extern void func_0034B040(u8 *);
 extern int func_00346A60(u8 *);
 extern void func_001843A0(u8 *);
-extern void *func_003DA750(int, int, int);
+extern void *func_003DA750(void *, int, int);
 extern void func_001CCD40();
 extern void func_001BAE90();
 extern void func_0018C6E0(void *);
@@ -39,7 +39,7 @@ extern int func_00416730(u8 *);
 extern int func_004166B0(u8 *);
 extern void func_0015D010(u8 *, u32 *);
 extern void func_00179160(u8 *, u8 *);
-extern void func_003C4A20();
+extern void func_003C4A20(u8 *);
 extern void func_00390CB0(u8 *, u8 *);
 extern void func_00391620(u8 *, u8 *);
 extern void func_001830D0(u8 *, u32 *, int);
@@ -241,10 +241,10 @@ void func_003C4910(u8 *a, u8 b, u8 c)
 {
     u8 *r = func_003DA750(0, 1, 0);
     if (r) {
-        *(u32 *)(r + 0x10) = (u32)func_003C4A20;
+        *(void (**)(u8 *))(r + 0x10) = func_003C4A20;
         r[0x20] = b;
         r[0x21] = c;
-        *(u32 *)(r + 0x18) = (u32)a;
+        *(u8 **)(r + 0x18) = a;
         r[1] = a[1];
         *(s16 *)(r + 0x26) = r[0x20] | 0x3800;
         *(u16 *)(r + 0xD8) = *(u16 *)(a + 0x168);

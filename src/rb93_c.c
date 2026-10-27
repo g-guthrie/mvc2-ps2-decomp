@@ -11,7 +11,7 @@ extern G93 *D_004C2794;
 
 void func_003C5840(u8 *p, u8 *q) {
     extern s32 func_00175700(u8 *);
-    extern void func_003C4990(u8 *, s32, s32);
+    extern u8 *func_003C4990(u8 *, u8, u8);
     extern void func_001E3210(u8 *, s32);
     extern void func_003C57E0(u8 *);
     extern void func_00183C40(u8 *);

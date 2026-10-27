@@ -95,7 +95,7 @@ void func_001AB2E0(u8 *a, u8 *owner) {
     }
 }
 
-s32 func_003C4990(u8 *a, s32 b, s32 c);
+u8 *func_003C4990(u8 *a, u8 b, u8 c);
 void func_001E3710(u8 *a, s32 b);
 void func_003C6340(u8 *a, u8 *b) {
     func_00175700(a);

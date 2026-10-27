@@ -15,7 +15,7 @@ extern f32 D_00475F70[];
 
 void func_003C4D30(u8 *p, u8 *q)
 {
-    extern void func_003C4990();
+    extern u8 *func_003C4990(u8 *, u8, u8);
     extern void func_001757E0(u8 *, s32, s32);
     extern void func_003C4FB0(u8 *, u8 *);
     extern s32 fptosi(f32);

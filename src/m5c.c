@@ -45,7 +45,7 @@ void func_003933A0(u8 *p) {
 }
 
 extern void func_001E3710(void *p, s32 a);
-extern void func_003C4990(void *p, s32 a, s32 b);
+extern u8 *func_003C4990(u8 *p, u8 a, u8 b);
 void func_003C7B90(u8 *p, u8 *q) {
     if (*(f32 *)(q + 0x38) - *(f32 *)(q + 0x430) < 205.7142792f) {
         u32 t = p[5];

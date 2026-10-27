@@ -72,7 +72,7 @@ void func_001F41C0(u8 *p) {
 void func_003C4FB0(u8 *p, u8 *q) {
     extern s32 func_00175700();
     extern void func_003DAA40();
-    extern void func_003C4990();
+    extern u8 *func_003C4990(u8 *, u8, u8);
     extern void func_001E7F60();
     extern s32 func_00174240();
     p[0x24] = *(s8 *)(q + 0x24);
