@@ -28,7 +28,8 @@ s32 func_004025C0(u8 *p) {
 
 extern char D_004BE8A8[];
 extern void func_0011EB60(char *s);
-void func_0040EE28(s32 a, s32 b) {
+void func_0040EE28(void *a, s32 b) {
+    (void)a;
     if (b != 0x10) {
         func_0011EB60(D_004BE8A8);
     }

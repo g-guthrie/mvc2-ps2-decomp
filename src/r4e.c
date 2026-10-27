@@ -100,7 +100,7 @@ void func_00409A10(void) {
 /* 0040ED28 */
 
 extern u8 D_004BE888[];
-typedef struct { u8 pad[0x28]; s32 w28; } S_0040ED28;
+typedef struct S_0040ED28 { u8 pad[0x28]; s32 w28; } S_0040ED28;
 void func_0040ED28(S_0040ED28 *p, s32 rate) {
   if (48000 % rate != 0) {
     func_0011EB60(D_004BE888, rate);

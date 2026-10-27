@@ -4,8 +4,8 @@ typedef unsigned int u32;
 typedef unsigned char u8;
 typedef signed char s8;
 
-extern void func_0040EDE0(void);
-void func_003FF258(void){ func_0040EDE0(); }
+extern void func_0040EDE0(s32 *, s32);
+void func_003FF258(s32 *state, s32 value){ func_0040EDE0(state, value); }
 
 typedef struct S64 S64;
 typedef struct { s32 state; S64 *reference; void *input; } Decoder;

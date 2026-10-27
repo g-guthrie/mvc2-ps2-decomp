@@ -1,8 +1,9 @@
 typedef signed int s32;
 extern void func_0011D8F8(void *, int, int);
 typedef unsigned int u32;
-extern void func_0040ED28(void);
-void func_003FF240(void) { func_0040ED28(); }
+typedef struct S_0040ED28 S_0040ED28;
+extern void func_0040ED28(S_0040ED28 *, s32);
+void func_003FF240(S_0040ED28 *state, s32 rate) { func_0040ED28(state, rate); }
 extern void func_0011EB60(void *);
 extern char D_004BE928[];
 void func_0040EED8(void) { func_0011EB60(D_004BE928); }

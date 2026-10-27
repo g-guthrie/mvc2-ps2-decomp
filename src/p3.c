@@ -12,7 +12,7 @@ typedef char *va_list;
 extern void func_00120A30(void *, s32, char *, va_list);
 extern u8 D_004C83D0[];
 extern s32 func_0010E0F8(s32);
-extern void func_0040EE28(void);
+extern void func_0040EE28(void *, s32);
 extern void func_0011EB60();
 extern u8 D_004BE860[];
 extern void func_00103BA0(void);
@@ -23,7 +23,7 @@ extern s32 D_00438268;
 extern void func_0011D8F8(void *, s32, s32);
 extern s32 D_004C24D8;
 
-void func_003FF288(void) { func_0040EE28(); }
+void func_003FF288(void *state, s32 value) { func_0040EE28(state, value); }
 
 void func_0040ED00(void) { func_0011EB60(D_004BE860); }
 
