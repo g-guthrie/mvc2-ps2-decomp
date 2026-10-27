@@ -1,3 +1,4 @@
+#include "actor_inherited_state.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef signed int s32;
@@ -21,21 +22,13 @@ u8 *func_001C8FD0(u8 *owner, s32 clone)
 {
     EventRecord *record = (EventRecord *)func_003DA750(0, 3, 0);
     u8 *event = (u8 *)record;
-    s32 count;
-    u32 *dst;
-    u32 *src;
     if (record != 0) {
         record->owner = owner;
         *(u16 *)(event + 38) = 0x1E04;
         record->callback = func_001C9100;
         if (clone != 0) {
             record->callback = func_001C92F0;
-            dst = (u32 *)(event + 236);
-            src = (u32 *)(record->owner + 236);
-            count = 49;
-            do {
-                *dst++ = *src++;
-            } while (--count > 0);
+            *(ActorState *)(event + 236) = *(ActorState *)(record->owner + 236);
             event[316] = 1;
             event[2] = record->owner[2];
             event[1] = record->owner[1];

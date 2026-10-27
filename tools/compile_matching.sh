@@ -12045,7 +12045,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     private/SLUS_204.86.rom --source src/grok_noph_303f20.c
 
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/event_clone_001b3e30.c -c -lang c -O3 -Op -sdatathreshold 0 \
+    src/event_clone_001b3e30.c -c -lang c -i src -O3 -Op -sdatathreshold 0 \
     -o "$BUILD/event_clone_001b3e30.o"
 "$PYTHON" tools/verify_object.py "$BUILD/event_clone_001b3e30.o" \
     private/SLUS_204.86.rom --source src/event_clone_001b3e30.c
@@ -12104,13 +12104,13 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py "$BUILD/grok_q4_320500.o" \
     private/SLUS_204.86.rom --source src/grok_q4_320500.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/event_clone_001b53e0.c -c -lang c -O3 -Op -sdatathreshold 0 \
+    src/event_clone_001b53e0.c -c -lang c -i src -O3 -Op -sdatathreshold 0 \
     -o "$BUILD/event_clone_001b53e0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/event_clone_001b53e0.o" \
     private/SLUS_204.86.rom --source src/event_clone_001b53e0.c
 
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/event_clone_001c8fd0.c -c -lang c -O3 -Op -sdatathreshold 0 \
+    src/event_clone_001c8fd0.c -c -lang c -i src -O3 -Op -sdatathreshold 0 \
     -o "$BUILD/event_clone_001c8fd0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/event_clone_001c8fd0.o" \
     private/SLUS_204.86.rom --source src/event_clone_001c8fd0.c
@@ -12169,19 +12169,19 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py "$BUILD/launch_motion_002192b0.o" \
     private/SLUS_204.86.rom --source src/launch_motion_002192b0.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/event_clone_001b6860.c -c -lang c -O3,p -Op -sdatathreshold 8 \
+    src/event_clone_001b6860.c -c -lang c -i src -O3,p -Op -sdatathreshold 8 \
     -o "$BUILD/event_clone_001b6860.o"
 "$PYTHON" tools/verify_object.py "$BUILD/event_clone_001b6860.o" \
     private/SLUS_204.86.rom --source src/event_clone_001b6860.c
 
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/event_clone_001b69d0.c -c -lang c -O3,p -Op -sdatathreshold 8 \
+    src/event_clone_001b69d0.c -c -lang c -i src -O3,p -Op -sdatathreshold 8 \
     -o "$BUILD/event_clone_001b69d0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/event_clone_001b69d0.o" \
     private/SLUS_204.86.rom --source src/event_clone_001b69d0.c
 
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/event_clone_001b6da0.c -c -lang c -O3,p -Op -sdatathreshold 8 \
+    src/event_clone_001b6da0.c -c -lang c -i src -O3,p -Op -sdatathreshold 8 \
     -o "$BUILD/event_clone_001b6da0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/event_clone_001b6da0.o" \
     private/SLUS_204.86.rom --source src/event_clone_001b6da0.c
@@ -12210,7 +12210,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     private/SLUS_204.86.rom --source src/event_clone_001b61c0.c
 
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/event_clone_001d88c0.c -c -lang c -O3,p -Op -sdatathreshold 8 \
+    src/event_clone_001d88c0.c -c -lang c -i src -O3,p -Op -sdatathreshold 8 \
     -o "$BUILD/event_clone_001d88c0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/event_clone_001d88c0.o" \
     private/SLUS_204.86.rom --source src/event_clone_001d88c0.c

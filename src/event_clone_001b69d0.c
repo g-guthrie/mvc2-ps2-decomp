@@ -1,3 +1,4 @@
+#include "actor_inherited_state.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned int u32;
@@ -14,14 +15,10 @@ void func_001B69D0(u8 *p)
     switch (p[4]) {
     case 0: {
         u8 *q;
-        s32 n;
-        u32 *d;
-        u32 *r;
         u32 t;
         t = p[4]; p[4] = t + 1;
         q = *(u8 **)(p + 0x18);
-        d = (u32 *)(p + 0xEC); r = (u32 *)(q + 0xEC); n = 49;
-        for (; n > 0; --n) *d++ = *r++;
+        *(ActorState *)(p + 0xEC) = *(ActorState *)(q + 0xEC);
         p[0x13C] = 1;
         p[2] = (*(u8 **)(p + 0x18))[2];
         p[1] = (*(u8 **)(p + 0x18))[1];
