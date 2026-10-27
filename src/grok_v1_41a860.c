@@ -17,6 +17,7 @@ extern s32 func_0041ABD0(u8 *, u8 *);
 extern void func_0041A040(u8 *, s32);
 extern void func_0041AA10(u8 *, u8 *);
 
+/* Provisional: the indexed pair view and counter extent need data-owner proof. */
 void func_0041A860(u8 *p, u8 *q)
 {
     p[5]++;

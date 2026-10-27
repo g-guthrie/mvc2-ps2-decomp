@@ -3974,7 +3974,7 @@ func_00418900,0x00418900,0x8,src/simple_leaves.c,complete
 func_0041A090,0x0041A090,0x20,src/composite_dispatch_heads.c,complete
 func_0041A1D0,0x0041A1D0,0x20,src/composite_dispatch_heads.c,complete
 func_0041A4A0,0x0041A4A0,0x20,src/composite_dispatch_heads.c,complete
-func_0041A840,0x0041A840,0x1c,src/composite_gp_dispatch_heads.c,complete
+func_0041A840,0x0041A840,0x1c,src/composite_gp_dispatch_heads.c,placeholder
 func_0041AA90,0x0041AA90,0x1c,src/composite_gp_dispatch_heads.c,complete
 func_0041ABA0,0x0041ABA0,0x14,src/straight_leaves.c,complete
 func_0041ABC0,0x0041ABC0,0x8,src/tail_leaves.c,complete
@@ -16381,7 +16381,7 @@ func_003BC5D0,0x003BC5D0,0x78,src/grok_s7_3bc5d0.c,complete
 func_003C3B00,0x003C3B00,0x7C,src/grok_y5_3c3b00.c,complete
 func_003D6AF0,0x003D6AF0,0x20,src/grok_u3_3d6af0.c,complete
 func_003D90A0,0x003D90A0,0x18,src/grok_u3_3d90a0.c,complete
-func_0041A860,0x0041A860,0x1AC,src/grok_v1_41a860.c,complete
+func_0041A860,0x0041A860,0x1AC,src/grok_v1_41a860.c,placeholder
 func_0041AAB0,0x0041AAB0,0x74,src/grok_nopd_41aab0.c,complete
 func_0041AB30,0x0041AB30,0x6C,src/grok_q5_41ab30.c,complete
 func_001AD450,0x001AD450,0xE0,src/grok_y8_1ad450.c,complete
