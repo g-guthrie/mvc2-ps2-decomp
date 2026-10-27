@@ -19260,3 +19260,4 @@ func_002B9A40,0x002B9A40,0x20,src/actor_state_transitions_batch.c,complete
 func_0037EFE0,0x0037EFE0,0x20,src/actor_state_transitions_batch.c,complete
 func_0027F9E0,0x0027F9E0,0x34,src/actor_state_transitions_batch.c,complete
 func_0037E870,0x0037E870,0x28,src/actor_owner_scale_init_0037e870.c,complete
+func_002D30B0,0x002D30B0,0x60,src/label_state_entries.c,complete

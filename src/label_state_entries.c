@@ -59,3 +59,10 @@ void func_002FDBC0(u8 *p)
   func_00175C00(p,0);
  } else func_00175700(p);
 }
+
+void func_002D30B0(u8 *p)
+{
+ p[7]++;
+ if(func_00417A40()&1)func_001757E0(p,0x13,0);
+ else func_001757E0(p,0x13,1);
+}

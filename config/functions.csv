@@ -12229,7 +12229,8 @@ func_002D2EE0,0x002D2EE0,0x11C,0x002D2FFC,code,verified-grok-source-recovery
 func_002D3000,0x002D3000,0x58,0x002D3058,code,spimdisasm-explicit-size-before-first-data
 func_002D3060,0x002D3060,0x1C,0x002D307C,code,matching-c-head-split
 func_002D3080,0x002D3080,0x2C,0x002D30AC,code,verified-complete-c-function
-residual_002D30AC,0x002D30AC,0x64,0x002D3110,assembly_residual,native-suffix-after-verified-c-body
+residual_002D30AC,0x002D30AC,0x4,0x002D30B0,assembly_residual,uncredited-native-alignment
+func_002D30B0,0x002D30B0,0x60,0x002D3110,code,verified-native-table-entry-boundary
 func_002D3110,0x002D3110,0xC,0x002D311C,code,spimdisasm-explicit-size-before-first-data
 func_002D3120,0x002D3120,0xC,0x002D312C,code,spimdisasm-explicit-size-before-first-data
 func_002D3130,0x002D3130,0x5C,0x002D318C,code,spimdisasm-explicit-size-before-first-data
