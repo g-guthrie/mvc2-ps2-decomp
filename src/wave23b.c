@@ -1,3 +1,4 @@
+struct Object;
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -82,7 +83,7 @@ void func_002F5530(S_002F5530 *p) {
 
 typedef struct { u8 p0[0x1C]; s16 h1C, h1E; u8 p1[0x54]; f32 f74; u8 p2[0xC]; s32 w84; u8 p3[0x44]; s16 hCC; } S_0015DF20;
 typedef struct { s16 v; s16 pad; } E_0015DF20;
-extern void func_003DAA40(void);
+extern void func_003DAA40(struct Object *);
 extern E_0015DF20 D_004453E0[];
 extern f32 D_004453B0[];
 extern s32 D_004C2838;
@@ -90,7 +91,7 @@ void func_0015DF20(S_0015DF20 *a) {
     if (a->h1C < 9) {
         a->h1C = a->h1C + 1;
     } else if (a->h1E > 10) {
-        func_003DAA40();
+        func_003DAA40((struct Object *)a);
     } else {
         a->hCC = D_004453E0[a->h1E].v;
         a->w84 = D_004C2838;

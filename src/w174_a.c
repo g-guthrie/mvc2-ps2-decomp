@@ -1,3 +1,4 @@
+struct Object;
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -256,11 +257,11 @@ extern s32 D_004F1CDC[];
 extern s32 D_004C283C;
 
 void func_003451F0(u8 *p) {
-    extern void func_003DAA40(void);
+    extern void func_003DAA40(struct Object *);
     extern s32 func_00417A40(void);
     s16 v;
     if (D_004F1CDC[0] > 0) {
-        func_003DAA40();
+        func_003DAA40((struct Object *)p);
     }
     switch (p[4]) {
     case 0:
