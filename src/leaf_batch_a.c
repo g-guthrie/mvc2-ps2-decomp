@@ -120,8 +120,10 @@ u8 func_00127970(u8 a0) {
 }
 
 /* ---- func_00129060 ---- */
-extern s32 D_0043CC90[];
-void func_00129060(s32 a0, s32 a1) {
+/* Provisional: the complete writable callback table and valid indices need proof. */
+typedef void (*MenuCallback)(void);
+extern MenuCallback D_0043CC90[];
+void func_00129060(s32 a0, MenuCallback a1) {
     D_0043CC90[a0] = a1;
 }
 

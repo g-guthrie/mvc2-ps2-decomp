@@ -6,9 +6,10 @@ typedef void (*NoArgCallback)(void);
 extern int func_003299D0(void);
 extern int D_004C25D8 __attribute__((section(".sdata")));
 extern u8 *D_004C2840 __attribute__((section(".sdata")));
-extern NoArgCallback const D_0043CC90[];
+extern NoArgCallback D_0043CC90[];
 extern void func_0034B040(u8 *,u8 *);
 extern int func_00175700(u8 *),func_001757E0(u8 *,int,int);
+/* Provisional: the callback table extent and mode bounds remain unresolved. */
 void func_001290A0(void)
 {
  if(func_003299D0()==0) {

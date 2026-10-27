@@ -21,15 +21,15 @@ typedef struct {
 } G;
 extern S24 D_004F8020;
 extern G *D_004C2840;
-extern u8 D_0041DBA0[];
+extern void D_0041DBA0(void);
 extern u8 D_0043CC58[];
 
 void func_00128AE0(void)
 {
     extern void func_003DF850(s32, void *);
     extern void func_0012ACC0();
-    extern void func_00129060(s32, void *);
-    extern void func_0012D4A0();
+    extern void func_00129060(s32, void (*)(void));
+    extern void func_0012D4A0(void);
     extern void func_003D6D50();
     extern void func_003D6E20();
     extern void func_00170160(int);
@@ -61,7 +61,7 @@ void func_00128AE0(void)
     if (t == 0) {
         *pp = t + 1;
         func_0012ACC0(0);
-        func_00129060(8, (void *)func_0012D4A0);
+        func_00129060(8, func_0012D4A0);
         func_00129060(5, D_0041DBA0);
         func_003D6D50();
         func_003D6E20();

@@ -5121,7 +5121,7 @@ func_00123760,0x00123760,0x40,src/leaf_batch_a.c,complete
 func_00126000,0x00126000,0x34,src/leaf_batch_a.c,complete
 func_00126040,0x00126040,0x38,src/leaf_batch_a.c,complete
 func_00127970,0x00127970,0x18,src/leaf_batch_a.c,complete
-func_00129060,0x00129060,0x18,src/leaf_batch_a.c,complete
+func_00129060,0x00129060,0x18,src/leaf_batch_a.c,placeholder
 func_00129110,0x00129110,0x2C,src/leaf_batch_a.c,complete
 func_0012AC70,0x0012AC70,0x18,src/leaf_batch_a.c,complete
 func_0012F6F0,0x0012F6F0,0x14,src/leaf_batch_a.c,complete
@@ -18929,7 +18929,7 @@ func_00396A70,0x00396A70,0x154,src/owner_motion_decay_00396a70.c,complete
 func_001C5E30,0x001C5E30,0x108,src/opposite_edge_entry_001c5e30.c,complete
 func_002E6290,0x002E6290,0x1A8,src/selected_motion_launch_002e6290.c,complete
 func_003639B0,0x003639B0,0x160,src/target_crossing_update_003639b0.c,complete
-func_001290A0,0x001290A0,0x68,src/small_control_entries.c,complete
+func_001290A0,0x001290A0,0x68,src/small_control_entries.c,placeholder
 func_0034A950,0x0034A950,0x70,src/small_control_entries.c,complete
 func_001C5DE0,0x001C5DE0,0x48,src/opposite_edge_entry_001c5e30.c,complete
 func_002C8C20,0x002C8C20,0x1AC,src/air_input_landing_002c8c20.c,complete
