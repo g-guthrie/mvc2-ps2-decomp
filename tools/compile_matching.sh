@@ -21634,11 +21634,15 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/linked_actor_active_00210170.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/linked_actor_active_00210170.o"
 "$PYTHON" tools/verify_object.py "$BUILD/linked_actor_active_00210170.o" private/SLUS_204.86.rom --source src/linked_actor_active_00210170.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/script_threshold_select_00166fc0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/script_threshold_select_00166fc0.o"
+    src/script_threshold_select_00166fc0.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/script_threshold_select_00166fc0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/script_threshold_select_00166fc0.o" private/SLUS_204.86.rom --source src/script_threshold_select_00166fc0.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/script_random_select_00166ec0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/script_random_select_00166ec0.o"
+    src/script_random_select_00166ec0.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/script_random_select_00166ec0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/script_random_select_00166ec0.o" private/SLUS_204.86.rom --source src/script_random_select_00166ec0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/script_weighted_select_00167060.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/script_weighted_select_00167060.o"
+"$PYTHON" tools/verify_object.py "$BUILD/script_weighted_select_00167060.o" private/SLUS_204.86.rom --source src/script_weighted_select_00167060.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh

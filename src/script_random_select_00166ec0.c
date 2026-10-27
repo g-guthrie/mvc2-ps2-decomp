@@ -1,7 +1,6 @@
 /* Placeholder: actor ownership, script bounds, and DATA callback type remain unproved. */
 typedef unsigned char u8; typedef unsigned short u16;
-typedef struct SA37_J0 SA37_J0;
-typedef struct SA37_R {u8 *buf;u16 pos;u8 pad6,b7;} SA37_R;
+#include "script_actor_view.h"
 extern void func_0016B0C0(SA37_J0 *,SA37_R *,int);
 extern int func_00174170(void);
 int func_00166EC0(u8 *p,u8 *q) {

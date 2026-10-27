@@ -6,19 +6,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-typedef struct SA37_R {
-    u8 *buf;
-    u16 pos;
-    u8 pad6;
-    u8 b7;
-} SA37_R;
-
-typedef struct SA37_J0 {
-    u8 pad0[0x454];
-    u8 b454;
-    u8 pad455[0x4C8 - 0x455];
-    union { s32 integer; f32 real; } w4c8;
-} SA37_J0;
+#include "script_actor_view.h"
 
 void func_0016B0C0(SA37_J0 *p, SA37_R *r, s32 op) {
     extern void func_0016B0B0(SA37_J0 *);
