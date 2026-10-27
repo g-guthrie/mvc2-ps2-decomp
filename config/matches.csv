@@ -11263,7 +11263,7 @@ func_00226E60,0x00226E60,0x68,src/m5.c,complete
 func_002120D0,0x002120D0,0x70,src/m5.c,complete
 func_0021CFD0,0x0021CFD0,0x74,src/m5.c,complete
 func_003C1930,0x003C1930,0x78,src/m5.c,complete
-func_0035ACA0,0x0035ACA0,0x7C,src/m5.c,complete
+func_0035ACA0,0x0035ACA0,0x7C,src/m5.c,placeholder
 func_00228400,0x00228400,0x84,src/m5.c,complete
 func_00169210,0x00169210,0x88,src/m5.c,complete
 func_0027C4D0,0x0027C4D0,0x94,src/m5.c,complete
@@ -14714,7 +14714,7 @@ func_003B3140,0x003B3140,0x124,src/q1_o.c,complete
 func_003A9600,0x003A9600,0x124,src/q1_o.c,complete
 func_00388780,0x00388780,0x130,src/q1_o.c,complete
 func_0038CCA0,0x0038CCA0,0x130,src/q1_q.c,complete
-func_00358F30,0x00358F30,0x84,src/q2_a.c,complete
+func_00358F30,0x00358F30,0x84,src/q2_a.c,placeholder
 func_0016F720,0x0016F720,0xAC,src/q2_a.c,complete
 func_00362B00,0x00362B00,0xBC,src/q2_a.c,complete
 func_002B2050,0x002B2050,0xDC,src/q2_a.c,complete
@@ -15488,7 +15488,7 @@ func_002FFB30,0x002FFB30,0x134,src/w195_n.c,complete
 func_003532F0,0x003532F0,0x140,src/w195_p.c,complete
 func_002F01E0,0x002F01E0,0x144,src/w195_q.c,complete
 func_00269B80,0x00269B80,0x148,src/w195_r.c,complete
-func_00359840,0x00359840,0x14C,src/w195_s.c,complete
+func_00359840,0x00359840,0x14C,src/w195_s.c,placeholder
 func_0010DA08,0x0010DA08,0x34,src/w195_a2.c,complete
 func_00119510,0x00119510,0x58,src/w1911_a.c,complete
 func_004166B0,0x004166B0,0x3C,src/w1911_b.c,complete
