@@ -5780,7 +5780,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/m3h.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/m3h.o"
 "$PYTHON" tools/verify_object.py "$BUILD/m3h.o" private/SLUS_204.86.rom --source src/m3h.c
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/m3i.c -c -lang c -O3,p -sdatathreshold 0 -i src -o "$BUILD/m3i.o"
 "$PYTHON" tools/verify_object.py "$BUILD/m3i.o" private/SLUS_204.86.rom --source src/m3i.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
