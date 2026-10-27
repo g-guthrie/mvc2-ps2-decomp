@@ -6654,7 +6654,7 @@ func_0039BA00,0x0039BA00,0x20,src/grok_w3_0038.c,complete
 func_00399BA0,0x00399BA0,0x28,src/grok_w3_0038.c,complete
 func_00396F90,0x00396F90,0x34,src/q7_d.c,complete
 func_0038E700,0x0038E700,0x38,src/grok_w3_0038.c,complete
-func_00396F00,0x00396F00,0x40,src/grok_w3_0038.c,complete
+func_00396F00,0x00396F00,0x40,src/actor_work_state_00397180.c,complete
 func_003851D0,0x003851D0,0x44,src/grok_w3_0038.c,complete
 func_003816C0,0x003816C0,0x4C,src/grok_w3_0038.c,complete
 func_0039CC90,0x0039CC90,0x24,src/grok_w3_0038.c,complete
@@ -13164,7 +13164,7 @@ func_002ED2C0,0x002ED2C0,0x94,src/v1_a.c,complete
 func_003362A0,0x003362A0,0xbc,src/v1_a.c,complete
 func_003D83C0,0x003D83C0,0x80,src/v1_a.c,complete
 func_002BFF70,0x002BFF70,0xc4,src/v1_b.c,complete
-func_00396F40,0x00396F40,0x48,src/v1_b.c,complete
+func_00396F40,0x00396F40,0x48,src/actor_work_state_00397180.c,complete
 func_003ACC30,0x003ACC30,0x80,src/v1_c.c,complete
 func_001875A0,0x001875A0,0xac,src/v1_d.c,complete
 func_00265D80,0x00265D80,0xbc,src/v1_d.c,complete
@@ -19378,3 +19378,4 @@ func_002B1DE0,0x002B1DE0,0x34,src/actor_action_dispatch_002b1de0.c,placeholder
 func_0037D900,0x0037D900,0x18,src/actor_finish_0037d900.c,placeholder
 func_00144630,0x00144630,0xB8,src/scene_model_event_00144630.c,placeholder
 func_001053B0,0x001053B0,0xD0,src/sony29_console_read_001053b0.c,placeholder
+func_00397180,0x00397180,0xC8,src/actor_work_state_00397180.c,placeholder

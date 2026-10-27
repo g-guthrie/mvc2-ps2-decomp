@@ -21865,4 +21865,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/scene_model_event_00144
 "$WIBO" "$EE29CC1" "$BUILD/sony29_console_read_001053b0.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_console_read_001053b0.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_console_read_001053b0.o" "$BUILD/sony29_console_read_001053b0.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sony29_console_read_001053b0.o" private/SLUS_204.86.rom --source src/sony29_console_read_001053b0.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_work_state_00397180.c -c -lang c -O3,p -sdatathreshold 0 -i src -o "$BUILD/actor_work_state_00397180.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_work_state_00397180.o" private/SLUS_204.86.rom --source src/actor_work_state_00397180.c
 PYTHON="$PYTHON" tools/compile_matching_data.sh

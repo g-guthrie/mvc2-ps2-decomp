@@ -22,14 +22,3 @@ s32 func_002BFF70(u8 *p) {
     func_0011D8F8(p + 0x3C0, 0, 8);
     return 1;
 }
-
-typedef struct { s8 i; } Q;
-typedef struct { u8 pad[0x1C]; s16 c; } P;
-void func_00396F40(P *p, Q *q) {
-    if (--p->c <= 0) {
-        p->c = 2;
-        q->i++;
-        if (q->i >= 8) q->i = 5;
-    }
-}
-
