@@ -1,13 +1,13 @@
 /* Decode the input state and accept an airborne transition above the limit. */
 typedef unsigned char u8;
-extern int func_001E7FD0(u8 *);
+extern u8 *func_001E7FD0(u8 *);
 
 #define HEIGHT_INPUT_GATE(name, mask, transition) \
-int name(u8 *p) { \
+u8 *name(u8 *p) { \
     if ((p[0x22] = (*(unsigned short *)(p + 0x20e) & (mask)) >> 10) && \
         !p[0x212] && p[0x1b7] == 1 && \
         !(*(float *)(p + 0x38) <= 137.142852783203125f)) { \
-        int result = func_001E7FD0(p); \
+        u8 *result = func_001E7FD0(p); \
         if (result) { p[0x20b] = (transition); return result; } \
     } \
     return 0; \
