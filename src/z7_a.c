@@ -66,11 +66,11 @@ typedef struct { f32 x, y, z; } V3;
 extern u8 D_004D18A5;
 extern void (*D_00448E50[])(u8 *);
 s32 func_00186CE0(u8 *p, u8 q) {
-    extern void func_00186A60();
-    extern void func_00191210();
+    extern void func_00186A60(u8 *, u8);
+    extern void func_00191210(u8 *);
     u8 z;
     p[0x13C] = 1;
-    func_00186A60(p);
+    func_00186A60(p, q);
     p[7] = 0;
     p[6] = 0;
     p[5] = 0;
