@@ -14335,7 +14335,7 @@ func_002BC490,0x002BC490,0xE4,src/z0_a.c,complete
 func_0021A340,0x0021A340,0xE8,src/z0_a.c,complete
 func_003BEA80,0x003BEA80,0xF0,src/z0_a.c,complete
 func_003134E0,0x003134E0,0xF0,src/z0_a.c,complete
-func_002774C0,0x002774C0,0xF8,src/z0_a.c,complete
+func_002774C0,0x002774C0,0xF8,src/z0_a.c,placeholder
 func_001BE470,0x001BE470,0xFC,src/z0_a.c,complete
 func_001A4770,0x001A4770,0x80,src/z0_a.c,complete
 func_00378A00,0x00378A00,0xAC,src/z0_b.c,complete

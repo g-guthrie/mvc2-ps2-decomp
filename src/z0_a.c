@@ -195,10 +195,11 @@ void func_003134E0(u8 *p, u8 *q)
     }
 }
 
+/* Provisional: animation call omits its actor argument in source. */
 void func_002774C0(u8 *p)
 {
     u8 a;
-    extern void func_00275A40(u8 *);
+    extern int func_00275A40(u8 *);
     extern s8 func_00175700();
     extern void func_00184540(u8 *);
     extern void func_001843A0(u8 *);
