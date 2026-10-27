@@ -19276,3 +19276,4 @@ func_00269320,0x00269320,0x64,src/actor_timed_motion_callbacks.c,complete
 func_0039E080,0x0039E080,0x8C,src/actor_timed_motion_callbacks.c,complete
 func_00307920,0x00307920,0xD0,src/actor_context_action_entries.c,complete
 func_003072D0,0x003072D0,0xC4,src/actor_context_action_entries.c,complete
+func_00227940,0x00227940,0xCC,src/actor_air_entry_00227940.c,complete

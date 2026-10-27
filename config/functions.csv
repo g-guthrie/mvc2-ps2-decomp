@@ -7175,7 +7175,7 @@ func_00227750,0x00227750,0x74,0x002277C4,code,verified-complete-c-function
 func_002277D0,0x002277D0,0xBC,0x0022788C,code,spimdisasm-explicit-size-before-first-data
 func_00227890,0x00227890,0x90,0x00227920,code,spimdisasm-explicit-size-before-first-data
 func_00227920,0x00227920,0x20,0x00227940,code,matching-c-head-split
-residual_00227940,0x00227940,0xCC,0x00227A0C,assembly_residual,verified-boundary-after-matching-head
+func_00227940,0x00227940,0xCC,0x00227A0C,code,verified-native-table-entry-boundary
 func_00227A10,0x00227A10,0xD4,0x00227AE4,code,spimdisasm-explicit-size-before-first-data
 func_00227AF0,0x00227AF0,0x58,0x00227B48,code,spimdisasm-explicit-size-before-first-data
 func_00227B50,0x00227B50,0x38,0x00227B88,code,spimdisasm-explicit-size-before-first-data
