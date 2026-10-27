@@ -8,6 +8,7 @@ typedef float f32;
 typedef struct { f32 x, y, z; } V3;
 
 extern s32 (*D_0045E940[])(void *);
+/* Provisional: state callbacks have unresolved mixed return contracts. */
 s32 func_00334F00(u8 *p) {
     if (D_0045E940[p[6]](p)) {
         p[6] = 0;

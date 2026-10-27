@@ -11309,7 +11309,7 @@ func_00337850,0x00337850,0x90,src/m6c.c,complete
 func_00337900,0x00337900,0x90,src/m6c.c,complete
 func_00139760,0x00139760,0x90,src/m6c.c,complete
 func_00138100,0x00138100,0x84,src/m6d.c,complete
-func_00334F00,0x00334F00,0x4C,src/m6e.c,complete
+func_00334F00,0x00334F00,0x4C,src/m6e.c,placeholder
 func_001DB260,0x001DB260,0x7C,src/m6e.c,complete
 func_0034FAE0,0x0034FAE0,0x5C,src/m7.c,complete
 func_0038CFB0,0x0038CFB0,0x60,src/m7.c,complete
