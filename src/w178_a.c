@@ -20,7 +20,7 @@ void func_0038A5A0(u8 *d, u8 *s) {
 extern f32 D_004F1FC8;
 extern f32 D_004F1FCC;
 void func_0035A560(u8 *p, s32 q) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_0035A7B0();
     func_00175700(p);
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
@@ -41,7 +41,7 @@ void func_0035A560(u8 *p, s32 q) {
 }
 
 void func_00217EA0(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern s32 func_001864A0();
     extern void func_001757E0();
     extern void func_00183D50();
@@ -100,7 +100,7 @@ void func_001508D0(u8 *a, s16 b, s32 c, f32 x, f32 y, f32 z) {
 extern u8 D_004F1F45;
 extern u8 D_004F1F46;
 void func_001F4950(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern s32 func_001864A0();
     extern void func_001E3210();
     extern void func_001F72E0();
@@ -173,7 +173,7 @@ void func_00186800(u8 *p) {
     *(f32 *)(p + 0x60) = (*(f32 *)(p + 0x430) - *(f32 *)(p + 0x38)) / 20.0f - (20.0f * *(f32 *)(p + 0x6C)) / 2.0f;
 }
 void func_0038F300(u8 *p) {
-    extern s32 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_0038F2D0();
     extern void func_001E7F60();
     extern void func_0038F410();
@@ -202,7 +202,7 @@ void func_0038F300(u8 *p) {
 }
 
 void func_001FA260(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_00183D50();
     extern void func_001757E0();
     u32 *d, *c, *b, *a;
@@ -216,7 +216,7 @@ void func_001FA260(u8 *p) {
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
     d = (u32 *)(p + 0x5C);
-    if (*(s8 *)(p + 0x161) >= 0) func_00175700();
+    if (*(s8 *)(p + 0x161) >= 0) func_00175700(p);
     if (*(f32 *)(p + 0x38) <= *(f32 *)(p + 0x430)) {
         p[6]++;
         *(f32 *)(p + 0x38) = *(f32 *)(p + 0x430);
@@ -236,7 +236,7 @@ void func_0025BD90(u8 *p) {
     extern void func_001266A0();
     extern void func_00154940();
     extern void func_001E3A40();
-    extern s32 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001843A0();
     f32 v[4];
     u8 *q;
@@ -277,7 +277,7 @@ void func_00225AD0(u8 *p) {
     extern void func_001266A0();
     extern void func_00154790();
     extern void func_001E3710();
-    extern s32 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001843A0();
     f32 v[4];
     u8 *q;
@@ -314,7 +314,7 @@ void func_00225AD0(u8 *p) {
 }
 
 void func_0024F2E0(u8 *p) {
-    extern s32 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001757E0();
     u32 *d, *c, *b, *a;
     f32 v;
@@ -348,7 +348,7 @@ void func_00377B30(u8 *p, u8 *q) {
     extern void func_001757E0();
     extern void func_00185870();
     extern void func_00178F20();
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001E7F60();
     u8 *r;
     if (*(u16 *)(q + 0x168) != *(u16 *)(p + 0x1E)) {
@@ -421,7 +421,7 @@ void func_001945D0(u8 *p, u8 *q) {
 void func_00378300(u8 *p, u8 *q) {
     extern void func_003785F0();
     extern void func_001E7F60();
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     u8 *r = (u8 *)((s32)q + 0x2B8);
     s16 t;
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
@@ -449,7 +449,7 @@ void func_00378300(u8 *p, u8 *q) {
 
 
 void func_001F4D20(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern s32 func_001864A0();
     extern void func_001E3210();
     extern void func_001F72E0();

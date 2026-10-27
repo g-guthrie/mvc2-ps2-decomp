@@ -10821,7 +10821,7 @@ func_0029B690,0x0029B690,0x80,src/h4c.c,complete
 func_00365EE0,0x00365EE0,0x6C,src/h4d.c,complete
 func_0012A210,0x0012A210,0x7C,src/h4d.c,complete
 func_0016CB50,0x0016CB50,0x80,src/h4d.c,complete
-func_003C18B0,0x003C18B0,0x7C,src/h4d.c,complete
+func_003C18B0,0x003C18B0,0x7C,src/h4d.c,placeholder
 func_0035A2C0,0x0035A2C0,0x78,src/h4d.c,complete
 func_0035F1F0,0x0035F1F0,0x80,src/h4d.c,complete
 func_00228A60,0x00228A60,0x8C,src/h4d.c,complete
