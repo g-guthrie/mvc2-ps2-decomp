@@ -6,9 +6,9 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef unsigned long long u64;
 
-extern s32 func_003F13E0(s32 a);
-extern s32 func_003F1470(s32 a, s32 b);
-s32 func_003F16D0(s32 a, s32 b) {
+extern s32 func_003F13E0(void *a);
+extern s32 func_003F1470(u8 *a, s32 b);
+s32 func_003F16D0(u8 *a, s32 b) {
     if (b >= func_003F13E0(a)) {
         return 0;
     }

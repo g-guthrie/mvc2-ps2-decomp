@@ -18,11 +18,11 @@ typedef struct {
 } S36c;
 
 s32 func_003F1730(V4_36c *out, V4_36c *buf, u8 *ctx, s32 n) {
-    extern s32 func_003F13E0(u8 *);
+    extern s32 func_003F13E0(void *);
     extern s32 func_003F16D0(u8 *, s32);
     extern s32 func_003F1470(u8 *, s32);
     extern s32 func_003F1410(u8 *, s32);
-    extern S36c *func_003F1620(u8 *, s32);
+    extern u8 *func_003F1620(u8 *, u32);
     S36c *src; /*D*/
     s32 cnt; /*D*/
     s32 base; /*D*/
@@ -43,7 +43,7 @@ s32 func_003F1730(V4_36c *out, V4_36c *buf, u8 *ctx, s32 n) {
     }
     base = func_003F1410(ctx, n);
     for (i = 0; i < cnt; i++) {
-        src = func_003F1620(ctx, i + base);
+        src = (S36c *)func_003F1620(ctx, i + base);
         e->f0 = src->f0;
         e->f2 = src->f44;
         e->f6 = src->f8;

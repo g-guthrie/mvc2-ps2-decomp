@@ -1,5 +1,6 @@
 typedef unsigned char u8;
 typedef signed int s32;
+typedef unsigned int u32;
 
 extern void func_001049F8(s32);
 extern void func_00402498(void);
@@ -10,7 +11,7 @@ extern void func_00411AB8(void);
 extern void func_00411AD0(void);
 extern void func_00411AE8(void);
 extern s32 *func_003F1540(void *, s32);
-extern s32 *func_003F15A0(void);
+extern u8 *func_003F15A0(u8 *, u32);
 extern s32 *func_003F1F90(void *, s32);
 
 void func_003F04D0(void)
@@ -37,11 +38,11 @@ s32 func_003F13E0(void *p)
     return 0;
 }
 
-s32 func_003F1620(void)
+u8 *func_003F1620(u8 *file, u32 index)
 {
-    u8 *r = (u8 *)func_003F15A0();
+    u8 *r = func_003F15A0(file, index);
     if (r != 0)
-        return (s32)(r + 12);
+        return r + 12;
     return 0;
 }
 
