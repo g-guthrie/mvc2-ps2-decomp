@@ -6,7 +6,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-void func_00230020(u8 *p) {
+void func_00230020(u8 *p, u8 *work_unused) {
     f32 a = 5.0f;
     f32 b = -0.1041666641831398f;
     if (*(s16 *)(p + 320) == 0) {
@@ -28,7 +28,7 @@ void func_0013F7A0(u8 *p) {
     *(f32 *)(p + 228) = -0.005f * *(s16 *)(p + 30);
 }
 
-extern void func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern void func_001757E0(u8 *, s32, u8);
 
 void func_001F4BE0(u8 *p) {

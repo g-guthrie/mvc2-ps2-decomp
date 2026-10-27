@@ -287,12 +287,12 @@ void func_002DD710(u8 *p) {
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60); \
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
 
-/* Provisional: the motion reset helper consumes only the actor argument. */
-void func_002322C0(u8 *p, s32 a1) {
-    extern s8 func_00175700();
-    extern void func_001757E0();
-    extern void func_00230020();
-    if (func_00175700(p) >= 0) {
+/* Provisional: the data-owned callback tables still declare no arguments. */
+void func_002322C0(u8 *p, u8 *work) {
+    extern int func_00175700(u8 *);
+    extern int func_001757E0(u8 *, int, int);
+    extern void func_00230020(u8 *, u8 *);
+    if ((s8)func_00175700(p) >= 0) {
         ADDS
     } else {
         p[0x40D] = 0;
@@ -304,7 +304,7 @@ void func_002322C0(u8 *p, s32 a1) {
         p[0x168] = 0xB;
         func_001757E0(p, p[0x169], p[0x168]);
         ADDS
-        func_00230020(p, a1);
+        func_00230020(p, work);
     }
 }
 
