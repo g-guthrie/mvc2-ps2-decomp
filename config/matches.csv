@@ -19226,3 +19226,4 @@ func_00107058,0x00107058,0x3C,src/sony29_rpc_busy_00107058.c,complete
 func_00143860,0x00143860,0xB4,src/scene_category_select_00143860.c,complete
 func_003867E0,0x003867E0,0xC8,src/actor_init_003867e0.c,complete
 func_003C04A0,0x003C04A0,0x9C,src/owner_position_follow_003c04a0.c,complete
+func_003B8A10,0x003B8A10,0x94,src/actor_owner_aim_003b8a10.c,complete
