@@ -3803,6 +3803,7 @@ void func_00378D30(u8 *p) { jtbl_00464100[p[4]](p); }
 
 void func_00379170(u8 *p) { jtbl_00464120[p[32]](p); }
 
+/* Provisional: incoming callback context and table bounds are unproved. */
 void func_0037B9C0(u8 *p) { jtbl_00464170[p[4]](p); }
 
 void func_0037BF40(u8 *p) { jtbl_00464180[p[4]](p); }

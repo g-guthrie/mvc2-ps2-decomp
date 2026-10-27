@@ -3350,7 +3350,7 @@ func_0037A800,0x0037A800,0x8,src/tail_leaves.c,complete
 func_0037B3E0,0x0037B3E0,0x14,src/straight_leaves.c,complete
 func_0037B490,0x0037B490,0x20,src/argument_dispatch_heads.c,complete
 func_0037B760,0x0037B760,0x20,src/argument_dispatch_heads.c,complete
-func_0037B9C0,0x0037B9C0,0x20,src/composite_dispatch_heads.c,complete
+func_0037B9C0,0x0037B9C0,0x20,src/composite_dispatch_heads.c,placeholder
 func_0037BDB0,0x0037BDB0,0x14,src/straight_leaves.c,complete
 func_0037BDD0,0x0037BDD0,0x8,src/tail_leaves.c,complete
 func_0037BF40,0x0037BF40,0x20,src/composite_dispatch_heads.c,complete
@@ -17203,7 +17203,7 @@ func_003992C0,0x003992C0,0x34,src/grok_kk_3992c0.c,complete
 func_00399790,0x00399790,0x34,src/grok_kk_399790.c,complete
 func_0039AD80,0x0039AD80,0x2C,src/grok_kk_39ad80.c,complete
 func_0039B840,0x0039B840,0x38,src/grok_kk_39b840.c,complete
-func_0037D8D0,0x0037D8D0,0x30,src/grok_kk_37d8d0.c,complete
+func_0037D8D0,0x0037D8D0,0x30,src/grok_kk_37d8d0.c,placeholder
 func_003A8380,0x003A8380,0x2C,src/grok_kk_3a8380.c,complete
 func_0039E550,0x0039E550,0x30,src/grok_kk_39e550.c,complete
 func_003AE960,0x003AE960,0x34,src/grok_kk_3ae960.c,complete
