@@ -144,9 +144,9 @@ void func_00212630(u8 *p, u8 *q)
     }
 }
 
-void func_003B24E0(u8 *p)
+void func_003B24E0(u8 *p, u8 *owner_unused)
 {
-    func_00175700();
+    func_00175700(p);
     {
         s16 v = *(s16 *)(p + 0x1C) - 1;
         *(s16 *)(p + 0x1C) = v;
@@ -255,7 +255,7 @@ void func_003914C0(u8 *p, u8 *q)
 {
     if (*(s32 *)(p + 0xD0) == 0) {
         s16 v;
-        func_00175700();
+        func_00175700(p);
         v = *(s16 *)(p + 0x1C) - 1;
         *(s16 *)(p + 0x1C) = v;
         if (v >= 0)

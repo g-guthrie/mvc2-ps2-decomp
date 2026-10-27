@@ -10393,7 +10393,7 @@ func_003FB5C0,0x003FB5C0,0x2C,src/sdk5b.c,placeholder
 func_0040DFA8,0x0040DFA8,0x5C,src/sdk5b.c,placeholder
 func_00103958,0x00103958,0x5C,src/sdk5b.c,placeholder
 func_003FDDE8,0x003FDDE8,0x28,src/sdk5c.c,complete
-func_0019EAA0,0x0019EAA0,0x5C,src/g0.c,complete
+func_0019EAA0,0x0019EAA0,0x5C,src/g0.c,placeholder
 func_0020FE60,0x0020FE60,0x5C,src/g0.c,complete
 func_001BEB60,0x001BEB60,0x64,src/g0.c,complete
 func_0034AE40,0x0034AE40,0x64,src/g0.c,complete
@@ -19357,3 +19357,4 @@ func_0034E2D0,0x0034E2D0,0xEC,src/owner_phase_init_0034e2d0.c,placeholder
 func_0034E290,0x0034E290,0x34,src/owner_dispatch_0034e290.c,placeholder
 func_001C5980,0x001C5980,0x48,src/owner_phase_dispatch_001c5980.c,placeholder
 func_002EC3B0,0x002EC3B0,0x30,src/work_dispatch_002ec3b0.c,placeholder
+func_003B2380,0x003B2380,0x28,src/owner_dispatch_003b2380.c,placeholder
