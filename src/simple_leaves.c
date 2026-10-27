@@ -556,7 +556,7 @@ s8 func_003F8138(void *p) { return *(s8 *)((u8 *)p + 13); }
 
 s32 func_003F81A0(void *p) { return *(s32 *)((u8 *)p + 16); }
 
-s8 func_003F81A8(void *p) { return *(s8 *)((u8 *)p + 15); }
+s32 func_003F81A8(void *p) { return *(s8 *)((u8 *)p + 15); }
 
 s32 func_003F81B0(void *p) { return *(s32 *)((u8 *)p + 24); }
 
