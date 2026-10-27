@@ -6,7 +6,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-extern void func_00184540();
+extern void func_00184540(void *);
 extern u8 D_00448DF0[];
 extern u32 func_00174170();
 void func_00182C30(u8 *p, s32 a) {
@@ -191,6 +191,6 @@ u8 func_00186120(u8 *p) {
     if (*(f32 *)(p + 0x38) == *(f32 *)(p + 0x430)) {
         return *(s8 *)(p + 0x224) = 0;
     }
-    func_00184540();
+    func_00184540(p);
     return 1;
 }

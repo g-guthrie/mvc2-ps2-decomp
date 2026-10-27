@@ -366,7 +366,7 @@ void func_002C3780(u8 *p) {
     }
 }
 
-extern void func_00184540();
+extern void func_00184540(void *);
 void func_0017BBC0(u8 *a0) {
     u8 *a2 = *(u8 **)(a0 + 0x1CC);
     s16 v;
@@ -374,7 +374,7 @@ void func_0017BBC0(u8 *a0) {
     v = *(s16 *)(a0 + 0x1C) - 1;
     *(s16 *)(a0 + 0x1C) = v;
     if (v <= 0) {
-        func_00184540();
+        func_00184540(a0);
     } else {
         s16 d = *(s16 *)(a2 + 0x140);
         f32 c = 5.0f;
