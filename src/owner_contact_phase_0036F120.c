@@ -17,8 +17,7 @@ extern u8 *D_004C2794 __attribute__((section(".sdata")));
 
 extern f32 D_00463B80[];
 extern s32 func_0036F5A0(u8 *,u8 *,s32 *);
-void func_0036F120(u8 *p,u8 *context,u8 *contactBytes) {
- s32 *contact=(s32 *)contactBytes;
+void func_0036F120(u8 *p,u8 *context,s32 *contact) {
  Motion *m=(Motion *)p;f32 *offsets=D_00463B80;
  u8 *owner=m->owner;
  if(((s8 *)owner)[0x151]==12) {

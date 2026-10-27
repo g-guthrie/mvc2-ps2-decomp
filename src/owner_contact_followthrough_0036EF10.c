@@ -19,17 +19,17 @@ extern void func_001E3210(u8 *,int);
 
 extern f32 D_00463B80[];
 extern u8 D_00463BB0[];
-extern void func_0036F120(u8 *,u8 *,u8 *);
+extern void func_0036F120(u8 *,u8 *,s32 *);
 extern void func_0036F4A0(u8 *,u8 *,s32 *);
 extern void func_0036F560(u8 *,u8 *,s32 *);
 extern void func_0036C0B0(u8 *,s32,s32);
 void func_0036EF10(u8 *p,u8 *context,s32 *contact) {
  f32 *offsets=D_00463B80;u8 *target=*(u8 **)(context+0x220);Motion *m=(Motion *)p;u8 *owner;s8 *phase=&((Motion *)m->owner)->animPhase;f32 offset;
- if(*phase==11){*phase=0;p[5]++;func_0036F120(p,context,(u8 *)contact);return;}
+ if(*phase==11){*phase=0;p[5]++;func_0036F120(p,context,contact);return;}
  if(((s8 *)p)[0x1b2]<0){
   func_0036F4A0(p,context,contact);func_0036F560(p,context,contact);
   if(*contact){
-   m->owner[0x23]=((s8 *)p)[0x23]+1;p[5]++;func_001757E0(p,23,(u8)(D_00463BB0[target[1]]+37));func_0036F120(p,context,(u8 *)contact);return;
+   m->owner[0x23]=((s8 *)p)[0x23]+1;p[5]++;func_001757E0(p,23,(u8)(D_00463BB0[target[1]]+37));func_0036F120(p,context,contact);return;
   }
   func_001E3210(p,35);
  }
