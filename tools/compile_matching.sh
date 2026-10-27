@@ -21677,4 +21677,28 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_phase_dispatch_001c36e0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/owner_phase_dispatch_001c36e0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_phase_dispatch_001c36e0.o" private/SLUS_204.86.rom --source src/owner_phase_dispatch_001c36e0.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/linked_actor_00239c60.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/linked_actor_00239c60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/linked_actor_00239c60.o" private/SLUS_204.86.rom --source src/linked_actor_00239c60.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/linked_actor_002435f0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/linked_actor_002435f0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/linked_actor_002435f0.o" private/SLUS_204.86.rom --source src/linked_actor_002435f0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/linked_actor_002e8b10.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/linked_actor_002e8b10.o"
+"$PYTHON" tools/verify_object.py "$BUILD/linked_actor_002e8b10.o" private/SLUS_204.86.rom --source src/linked_actor_002e8b10.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/linked_actor_002fbbc0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/linked_actor_002fbbc0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/linked_actor_002fbbc0.o" private/SLUS_204.86.rom --source src/linked_actor_002fbbc0.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_phase_0030a560.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/actor_phase_0030a560.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_phase_0030a560.o" private/SLUS_204.86.rom --source src/actor_phase_0030a560.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_velocity_003363d0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/actor_velocity_003363d0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_velocity_003363d0.o" private/SLUS_204.86.rom --source src/actor_velocity_003363d0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

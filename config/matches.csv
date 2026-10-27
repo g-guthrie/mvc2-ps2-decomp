@@ -19317,3 +19317,9 @@ func_00335A20,0x00335A20,0x38,src/actor_step_00335a20.c,placeholder
 func_00335C30,0x00335C30,0x1C,src/actor_acceleration_00335c30.c,placeholder
 func_00337710,0x00337710,0xE8,src/event_scale_cycle_00337710.c,placeholder
 func_001C36E0,0x001C36E0,0x40,src/owner_phase_dispatch_001c36e0.c,placeholder
+func_00239C60,0x00239C60,0x10,src/linked_actor_00239c60.c,placeholder
+func_002435F0,0x002435F0,0x10,src/linked_actor_002435f0.c,placeholder
+func_002E8B10,0x002E8B10,0x10,src/linked_actor_002e8b10.c,placeholder
+func_002FBBC0,0x002FBBC0,0xC,src/linked_actor_002fbbc0.c,placeholder
+func_0030A560,0x0030A560,0x28,src/actor_phase_0030a560.c,placeholder
+func_003363D0,0x003363D0,0x20,src/actor_velocity_003363d0.c,placeholder
