@@ -8,12 +8,12 @@ typedef float f32;
 
 extern u8 D_004C2B58;
 extern u8 *D_004C2840;
-extern void (*D_0043CD0C[])();
-extern void D_0041C4B0();
-extern void D_0041C710();
-extern void func_0041CA00();
+extern void (*D_0043CD0C[])(s32, s32);
+extern void D_0041C4B0(s32, s32);
+extern void D_0041C710(s32, s32);
+extern void func_0041CA00(s32, s32);
 
-void func_0041C5B0(u8 *a, u8 *b) {
+void func_0041C5B0(s32 a, s32 b) {
     u32 v;
     extern u32 func_0012ABC0(s32, s32);
     extern u8 func_0041D020(u8, s32, s32);

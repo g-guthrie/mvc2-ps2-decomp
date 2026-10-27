@@ -11,10 +11,10 @@ extern f32 D_004C2B68;
 extern f32 D_004C2B5C;
 extern f32 D_004C2B60;
 extern f32 data_f32_004C2530;
-extern void (*D_0043CD0C[])(u8 *, u8 *);
-extern void func_0041C5B0(u8 *, u8 *);
+extern void (*D_0043CD0C[])(s32, s32);
+extern void func_0041C5B0(s32, s32);
 
-void func_0041C7D0(u8 *state, u8 *owner) {
+void func_0041C7D0(s32 state, s32 owner) {
     f32 a, b;
     a = D_004C2B64 / 50.0f;
     b = D_004C2B68 / 50.0f;
