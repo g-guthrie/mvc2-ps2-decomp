@@ -1011,6 +1011,7 @@ void func_003353E0(u8 *p) { jtbl_004C1868[p[4]](p); }
 
 void func_003356D0(u8 *p) { jtbl_004C1870[p[4]](p); }
 
+/* Provisional: overlapping table ownership and selector bounds remain unresolved. */
 void func_00335C10(u8 *p) { jtbl_004C1888[p[7]](p); }
 
 void func_00335D80(u8 *p) { jtbl_004C1890[p[7]](p); }
@@ -1019,6 +1020,7 @@ void func_00335F40(u8 *p) { jtbl_004C1898[p[7]](p); }
 
 void func_00336120(u8 *p) { jtbl_004C18A0[p[7]](p); }
 
+/* Provisional: overlapping table ownership and selector bounds remain unresolved. */
 void func_003363B0(u8 *p) { jtbl_004C18A8[p[7]](p); }
 
 void func_00336530(u8 *p) { jtbl_004C18B0[p[5]](p); }

@@ -2995,12 +2995,12 @@ func_003353E0,0x003353E0,0x1c,src/composite_gp_dispatch_heads.c,complete
 func_003356D0,0x003356D0,0x1c,src/composite_gp_dispatch_heads.c,complete
 func_003359E0,0x003359E0,0x20,src/composite_dispatch_heads.c,complete
 func_00335A60,0x00335A60,0x20,src/composite_dispatch_heads.c,complete
-func_00335C10,0x00335C10,0x1c,src/composite_gp_dispatch_heads.c,complete
+func_00335C10,0x00335C10,0x1c,src/composite_gp_dispatch_heads.c,placeholder
 func_00335D80,0x00335D80,0x1c,src/composite_gp_dispatch_heads.c,complete
 func_00335F40,0x00335F40,0x1c,src/composite_gp_dispatch_heads.c,complete
 func_00336120,0x00336120,0x1c,src/composite_gp_dispatch_heads.c,complete
 func_003361F0,0x003361F0,0x20,src/composite_dispatch_heads.c,complete
-func_003363B0,0x003363B0,0x1c,src/composite_gp_dispatch_heads.c,complete
+func_003363B0,0x003363B0,0x1c,src/composite_gp_dispatch_heads.c,placeholder
 func_00336530,0x00336530,0x1c,src/composite_gp_dispatch_heads.c,complete
 func_003365E0,0x003365E0,0x20,src/composite_dispatch_heads.c,complete
 func_00336670,0x00336670,0x20,src/indirect_dispatch.c,complete
