@@ -8,7 +8,7 @@ typedef signed int s32;
 extern u8 D_004BAD68[];
 extern u8 D_004BAD88[];
 
-s32 func_003F7D98(u8 *p, s32 a, s32 b)
+s32 func_003F7D98(u8 *p, u8 *a, s32 b)
 {
     s8 *p0c = (s8 *)(p + 0xC);
     s8 *p0d = (s8 *)(p + 0xD);
