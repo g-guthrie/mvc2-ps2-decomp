@@ -5,14 +5,14 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
-extern u8 *func_003DA750(s32, s32, s32);
-extern void func_003A3050();
+extern void *func_003DA750(void *, s32, s32);
+extern void func_003A3050(u8 *);
 void func_003A2FB0(u8 *p) {
     s32 i = 0;
     u8 *o;
     do {
         if ((o = func_003DA750(0, 1, 0)) == 0) break;
-        *(void **)(o + 0x10) = func_003A3050;
+        *(void (**)(u8 *))(o + 0x10) = func_003A3050;
         o[0x21] = i;
         *(s32 *)(o + 0xD8) = (u8)i;
         o[0x20] = i;

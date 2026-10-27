@@ -16,7 +16,7 @@ typedef struct {u8 prefix[0x7c];s16 count[2];} GameState;
 extern GameState *D_004C2794 __attribute__((section(".sdata")));
 typedef struct {f32 x,y;} PositionOffset;
 extern PositionOffset D_00472B80[];
-extern const u32 jtbl_00472BB0[];
+extern void (*const jtbl_00472BB0[])(u8 *, u8 *);
 extern int func_001757E0(u8 *,int,int);
 extern int func_00175700(u8 *);
 extern int func_00174470(const void *);
@@ -74,7 +74,7 @@ void func_003A3050(u8 *p)
  func_001757E0(p,21,2);
  case 1:
  ((s8 *)p)[0x24]=((s8 *)q)[0x24];
- ((void (*)(u8 *,u8 *))jtbl_00472BB0[p[5]])(p,q);
+ jtbl_00472BB0[p[5]](p,q);
  if(timer->timer==0) {
  if(!func_00174470(p))func_003A3880(p,q);
  } else --timer->timer;
