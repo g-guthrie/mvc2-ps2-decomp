@@ -6,7 +6,7 @@ typedef float f32;
 
 typedef struct {
     u8 pad0[16];
-    void *callback;
+    void (*callback)(u8 *);
     void *arg;
     u8 pad18[0x60];
     f32 f78;
@@ -26,8 +26,8 @@ extern s32 func_0016B250(u8 *, s32);
 extern s32 func_0016B0C0(u8 *, u8 *, s32);
 extern s32 func_00165C90(u8 *, u8 *);
 extern Event80 *func_003DA750(int, int, int);
-extern void func_00140C70(void);
-extern void func_00140DC0(void);
+extern void func_00140C70(u8 *);
+extern void func_00140DC0(u8 *);
 extern u32 D_004C2818;
 
 s32 func_00165B80(u8 *p, u8 *q)
