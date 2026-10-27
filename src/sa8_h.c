@@ -12,7 +12,7 @@ extern s32 D_004C239C;
 extern s32 D_004C22D0;
 typedef struct { s32 f0, f4, f8, fc, f10, f14, f18; } T3FED28;
 extern T3FED28 D_0047D0E0;
-extern void func_003FDC70(void);
+extern void func_003FDC70(void *);
 extern void func_003FDCD0(void);
 extern void func_003FDDE8(void);
 extern void func_003FDE10(void);

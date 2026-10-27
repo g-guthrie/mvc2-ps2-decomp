@@ -10,7 +10,7 @@ typedef unsigned long long u64;
 typedef struct { s32 cls; s32 sign; s32 exp; s32 pad; u64 frac; } FP;
 typedef struct E18 { s32 a0; s32 a1; s32 **a2; s32 a3; s32 a4; s32 a5; } E18;
 
-void func_003FDC70(void)
+void func_003FDC70(void *context)
 {
     extern s32 D_004C22D4, D_004C2394, D_004C2398;
     extern volatile s32 D_004C2320;
@@ -19,6 +19,7 @@ void func_003FDC70(void)
     extern s32 func_00103C70();
     extern void func_003FE190();
     s32 h;
+    (void)context;
     if (D_004C22D4 == 0) {
         h = func_00103CD0();
         D_004C2394 = func_00103C70(h, D_0047D0E0[0]);

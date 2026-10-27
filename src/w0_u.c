@@ -23,7 +23,7 @@ void func_003FE5D8(P *a) {
     extern void func_003FE3E0();
     extern void func_00103C70();
     extern void func_004117C0();
-    extern void func_003FDC70();
+    extern void func_003FDC70(void *);
     extern void func_003FDCD0();
     extern void func_003FDDE8();
     s32 buf[12]; s32 k;
