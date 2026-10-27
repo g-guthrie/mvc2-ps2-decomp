@@ -11,7 +11,8 @@ extern int func_00174470(const void *);
 extern s32 func_001AFC90();
 extern void func_00186A60();
 extern void func_001757E0();
-extern void func_0014A700(f32, u16, s32, void *, s32, f32, f32, f32);
+typedef struct SA37_V3 SA37_V3;
+extern void func_0014A700(s32, s32, SA37_V3 *, s32, f32, f32, f32, f32);
 extern volatile u16 D_004F7F92;
 extern u8 D_00443E78[];
 extern void *func_003DA750();
@@ -71,5 +72,5 @@ void func_001C6120(u8 *p, u8 *q) {
 }
 
 void func_0014A640(void) {
-    func_0014A700(0.7f, D_004F7F92, 4, D_00443E78, 0, 1.0f, 0.0f, 0.0f);
+    func_0014A700(D_004F7F92, 4, (SA37_V3 *)D_00443E78, 0, 0.7f, 1.0f, 0.0f, 0.0f);
 }
