@@ -87,7 +87,7 @@ extern void func_001CFA50();
 extern void func_001CFDF0();
 extern void func_001D0120();
 extern void func_001E5F30(void);
-extern void func_001E8310();
+extern s32 func_001E8310(void *, void *, int, int);
 extern void func_001EEE30();
 extern void func_001FCF30();
 extern void func_00219260(u8 *);
@@ -646,7 +646,7 @@ void func_001E46D0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00423240(a0 & 65535, 
 
 void func_001E5F30(void) { func_00423650(); }
 
-void func_001E8300(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001E8310(a0, a1, a2, a3); }
+s32 func_001E8300(void *p, void *q, int i, int j) { return func_001E8310(p, q, i, j); }
 
 void func_001EF420(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001EEE30(a0, a1, a2, a3); }
 

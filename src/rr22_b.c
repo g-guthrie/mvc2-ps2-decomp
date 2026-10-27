@@ -6,7 +6,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-typedef struct {
+typedef struct O1E8310 {
     u8 p0[0x34];
     f32 f34;
     f32 f38;
@@ -19,10 +19,11 @@ typedef struct {
     s16 (*tab)[4];
 } O1E8310;
 
-s32 func_001E8310(O1E8310 *a, O1E8310 *b, s16 i, s16 j) {
+s32 func_001E8310(void *ap, void *bp, int i, int j) {
+    O1E8310 *a = ap, *b = bp;
     f32 x, y, d, e, g, z;
-    s16 *ta = (s16 *)((u8 *)a->tab + i * 8);
-    s16 *tb = (s16 *)((u8 *)b->tab + j * 8);
+    s16 *ta = (s16 *)((u8 *)a->tab + (s16)i * 8);
+    s16 *tb = (s16 *)((u8 *)b->tab + (s16)j * 8);
     z = 0.0f;
     x = 1.6666666269302368f * (f32)ta[0] * a->f50;
     if (a->h140 != 0) x = -x;

@@ -10,7 +10,7 @@ extern Row17 D_004D18B8[];
 
 s32 func_00252C80(u8 *a)
 {
-    extern s32 func_001E8310(u8 *, u8 *, s16, s16);
+    extern s32 func_001E8310(void *, void *, int, int);
     u8 *s0, *s1, *s2, *s3;
     u32 v;
     s2 = a;
@@ -28,7 +28,7 @@ s32 func_00252C80(u8 *a)
     }
     v = *(u16 *)(s3 + 0xA);
     if (v != 0) {
-        if (func_001E8310(s2, s0, (s16)(s32)s1[2], (u32)(u16)v & 0x1FFF) != 0) {
+        if (func_001E8310(s2, s0, (s16)(s32)s1[2], (s16)((u32)(u16)v & 0x1FFF)) != 0) {
             return 1;
         }
     }

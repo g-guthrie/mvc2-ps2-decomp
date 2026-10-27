@@ -6,7 +6,8 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-extern s32 func_001E81C0();
+struct PW;
+extern s32 func_001E81C0(u8 *, struct PW *, int);
 
 s32 func_001E8110(u8 *a, u8 *b, s32 c)
 {
@@ -29,5 +30,5 @@ s32 func_001E8110(u8 *a, u8 *b, s32 c)
             return 0;
         }
     }
-    return func_001E81C0(a, b, c);
+    return func_001E81C0(a, (struct PW *)b, c);
 }

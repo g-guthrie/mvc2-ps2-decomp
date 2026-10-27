@@ -15,7 +15,8 @@ u8 *func_001E7FD0(u8 *p) {
     return 0;
 }
 
-extern int func_001E81C0(u8 *, u8 *, int);
+struct PW;
+extern int func_001E81C0(u8 *, struct PW *, int);
 u8 *func_001E8070(u8 *p)
 {
     short request;
@@ -28,7 +29,7 @@ u8 *func_001E8070(u8 *p)
     if (D_004D18A0 != 4)
         return 0;
     if (!*(signed char *)(p + 0x24B)) {
-        if (func_001E81C0(p, *(u8 **)(p + 0x220), request & 0x1FFF))
+        if (func_001E81C0(p, *(struct PW **)(p + 0x220), request & 0x1FFF))
             return *(u8 **)(p + 0x220);
     }
     return 0;
