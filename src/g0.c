@@ -10,9 +10,15 @@ typedef struct { f32 x, y, z; } V3;
 extern V3 D_004F1F4C[], D_004F1F58[], D_004F1F94[], D_004F1FA0[];
 extern u8 D_004F1F48;
 extern void func_001234D0(u8);
-extern int func_00175700();
+extern int func_00175700(u8 *);
 extern int func_00175670(u8 *, u8 *);
-extern void func_0019EA00(u8 *, u8 *);
+static void func_0019EA00(u8 *a0, u8 *owner_unused) {
+    u8 *v1 = *(u8 **)(a0 + 20);
+    *(s16 *)(a0 + 320) = *(s16 *)(v1 + 320);
+    *(s8 *)(a0 + 49) = -2;
+    *(f32 *)(a0 + 52) = *(f32 *)(v1 + 52);
+    *(f32 *)(a0 + 56) = *(f32 *)(v1 + 56);
+}
 extern void func_0019F3A0(u8 *, u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_0034B040(u8 *);
@@ -50,7 +56,7 @@ extern f32 func_00119C90(double);
 void func_0019EAA0(u8 *p, u8 *q)
 {
     func_0019EA00(p, q);
-    if ((s8)func_00175700() < 0) {
+    if ((s8)func_00175700(p) < 0) {
         p[5] = 0;
         p[0x13C] = 0;
     } else {

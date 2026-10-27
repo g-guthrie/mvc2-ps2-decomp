@@ -5079,7 +5079,7 @@ func_001740A0,0x001740A0,0x20,src/field_block_leaves.c,complete
 func_0017C4A0,0x0017C4A0,0x18,src/leaf_batch_b.c,complete
 func_00185960,0x00185960,0x18,src/leaf_batch_b.c,complete
 func_00198930,0x00198930,0x14,src/leaf_batch_b.c,complete
-func_0019EA00,0x0019EA00,0x28,src/leaf_batch_b.c,complete
+func_0019EA00,0x0019EA00,0x28,src/g0.c,complete
 func_001C0950,0x001C0950,0x1C,src/leaf_batch_b.c,complete
 func_001CF6F0,0x001CF6F0,0x24,src/leaf_batch_b.c,complete
 func_002C40F0,0x002C40F0,0x20,src/leaf_batch_b.c,complete
