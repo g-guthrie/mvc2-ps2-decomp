@@ -11,12 +11,13 @@ void func_00105EE0(const Record *record, Context *context) {
 
 #include "sony_console_ring.h"
 typedef SonyConsoleRing State;
-extern State D_004C35C0;
+typedef struct { State ring; char storage[256]; } ConsoleRingStorage;
+extern ConsoleRingStorage D_004C35C0;
 State *func_00105020(u32 value) {
-    State *state = &D_004C35C0;
+    State *state = &D_004C35C0.ring;
     state->size = value;
     state->count = 0;
-    state->tail = (char *)(state + 1);
-    state->head = (char *)(state + 1);
+    state->tail = D_004C35C0.storage;
+    state->head = D_004C35C0.storage;
     return state;
 }
