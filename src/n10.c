@@ -69,6 +69,7 @@ extern s32 func_00175700(void *p);
 extern void func_002CEC90(void *p);
 extern void func_00186A20();
 
+/* Provisional: func_00186A20 requires the actor argument. */
 void func_002CF010(u8 *p) {
     p[0x40C] = 2;
     p[0x33C] = 5;
