@@ -10089,7 +10089,7 @@ func_0022E130,0x0022E130,0x90,src/wave31.c,complete
 func_00235760,0x00235760,0x90,src/wave31.c,complete
 func_003B0CD0,0x003B0CD0,0x94,src/wave31.c,complete
 func_00313690,0x00313690,0x9C,src/wave31.c,complete
-func_00126080,0x00126080,0x60,src/wave31b.c,complete
+func_00126080,0x00126080,0x60,src/wave31b.c,placeholder
 func_0012D4F0,0x0012D4F0,0x7C,src/wave31b.c,complete
 func_00304500,0x00304500,0x9C,src/wave31c.c,complete
 func_00123470,0x00123470,0x60,src/wave33.c,complete
