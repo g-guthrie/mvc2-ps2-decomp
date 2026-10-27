@@ -4,16 +4,16 @@ typedef signed int s32;
 
 typedef struct Event {
     u8 pad00[16];
-    void *callback;
+    void (*callback)(u8 *);
     u8 pad14[4];
     void *arg;
 } Event;
 
 extern Event *func_003DA750(s32, s32, s32);
-extern void func_00344180(void);
-extern void func_00346E70(void);
-extern void func_00347AF0(void);
-extern void func_00347DD0(void);
+extern void func_00344180(u8 *);
+extern void func_00346E70(u8 *);
+extern void func_00347AF0(u8 *);
+extern void func_00347DD0(u8 *);
 extern void func_0034CF30(void);
 extern void func_0034CF60(void);
 extern void func_003422F0(s32);

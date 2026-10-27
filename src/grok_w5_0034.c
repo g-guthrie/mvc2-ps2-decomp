@@ -15,7 +15,7 @@ typedef void (*DispatchFn)(u8 *);
 
 typedef struct {
     u8 pad00[16];
-    void *callback;
+    void (*callback)(u8 *);
     u8 pad14[4];
     void *arg;
     u16 extra;
@@ -40,10 +40,10 @@ extern void func_00357680(u8 *);
 extern void func_001E3210(u8 *, s32);
 extern void func_00356AB0(u8 *);
 extern void func_00357650(u8 *);
-extern void func_003584D0(void);
-extern void func_0035BF00(void);
-extern void func_0035C490(void);
-extern void func_0035F4C0(void);
+extern void func_003584D0(u8 *);
+extern void func_0035BF00(u8 *);
+extern void func_0035C490(u8 *);
+extern void func_0035F4C0(u8 *);
 extern void func_001E7F60(u8 *, u8 *);
 
 extern u8 *D_004C2840;
