@@ -21737,4 +21737,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/linked_actor_motion_0017e0d0.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/linked_actor_motion_0017e0d0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/linked_actor_motion_0017e0d0.o" private/SLUS_204.86.rom --source src/linked_actor_motion_0017e0d0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_event_init_003a7c60.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/owner_event_init_003a7c60.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_event_init_003a7c60.o" private/SLUS_204.86.rom --source src/owner_event_init_003a7c60.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
