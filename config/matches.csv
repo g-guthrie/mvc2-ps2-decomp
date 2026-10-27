@@ -817,7 +817,7 @@ func_001D7E50,0x001D7E50,0x20,src/composite_dispatch_heads.c,complete
 func_001D8160,0x001D8160,0x24,src/argument_dispatch_heads.c,complete
 func_001D8550,0x001D8550,0x14,src/straight_leaves.c,complete
 func_001D8570,0x001D8570,0x8,src/tail_leaves.c,complete
-func_001D85F0,0x001D85F0,0x20,src/composite_dispatch_heads.c,complete
+func_001D85F0,0x001D85F0,0x20,src/composite_dispatch_heads.c,placeholder
 func_001D8A00,0x001D8A00,0x14,src/straight_leaves.c,complete
 func_001D8A20,0x001D8A20,0x8,src/tail_leaves.c,complete
 func_001D8B30,0x001D8B30,0x24,src/argument_dispatch_heads.c,complete
@@ -7279,7 +7279,7 @@ residual_001BFEA0,0x001BFEA0,0x20,src/grok_w5_disp.c,complete
 residual_001C4900,0x001C4900,0x20,src/grok_w5_disp.c,complete
 residual_001CA580,0x001CA580,0x20,src/grok_w5_disp.c,complete
 residual_001CDF10,0x001CDF10,0x1C,src/grok_w5_disp.c,complete
-residual_001D8610,0x001D8610,0x20,src/grok_w5_disp.c,complete
+residual_001D8610,0x001D8610,0x20,src/grok_w5_disp.c,placeholder
 residual_00201DD0,0x00201DD0,0x1C,src/grok_w5_disp.c,complete
 func_0020D2F0,0x0020D2F0,0x1C,src/grok_w5_disp.c,complete
 residual_00218290,0x00218290,0x20,src/grok_w5_disp.c,complete
@@ -16907,7 +16907,7 @@ func_001CE530,0x001CE530,0x20,src/composite_dispatch_heads.c,complete
 func_001D2CA0,0x001D2CA0,0x20,src/composite_dispatch_heads.c,complete
 func_001D4680,0x001D4680,0x20,src/composite_dispatch_heads.c,complete
 func_001D5B60,0x001D5B60,0x20,src/composite_dispatch_heads.c,complete
-func_001D8DF0,0x001D8DF0,0x20,src/composite_dispatch_heads.c,complete
+func_001D8DF0,0x001D8DF0,0x20,src/composite_dispatch_heads.c,placeholder
 func_001DA270,0x001DA270,0x20,src/composite_dispatch_heads.c,complete
 func_001E0D70,0x001E0D70,0x20,src/composite_dispatch_heads.c,complete
 func_001A7B80,0x001A7B80,0x20,src/composite_dispatch_heads.c,complete
