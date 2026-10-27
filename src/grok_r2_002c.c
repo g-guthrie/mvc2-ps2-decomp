@@ -109,7 +109,7 @@ void func_002F0F20(u8 *p)
     }
 }
 
-void func_002F92E0(u8 *p)
+void func_002F92E0(u8 *p, void *context_unused)
 {
     if ((s8)func_00175700(p) < 0) {
         p[7]++;
