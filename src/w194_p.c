@@ -14,7 +14,7 @@ extern void func_001269F0(u8 *, u8 *);
 extern void func_001262C0(s32, s32);
 extern void func_00126380(s32, s32);
 
-void func_00125AF0(void) {
+void func_00125AF0(s32 mode_unused) {
     u32 x = D_004C25D4->f14c;
     f32 f = (f32)x;
     f32 g = 2.142857f * f;

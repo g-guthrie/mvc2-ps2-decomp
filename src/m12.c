@@ -7,11 +7,11 @@ typedef float f32;
 typedef signed int s32;
 
 extern u8 *D_004C25D4;
-extern s32 func_00125AF0(s32 a);
-extern s32 func_00125C90(s32 a);
-s32 func_00125F40(void) {
-    if (D_004C25D4[0x25C] != 0) { return func_00125AF0(2); }
-    return func_00125C90(2);
+extern void func_00125AF0(s32 a);
+extern void func_00125C90(s32 a);
+void func_00125F40(void) {
+    if (D_004C25D4[0x25C] != 0) func_00125AF0(2);
+    else func_00125C90(2);
 }
 typedef struct { s16 v; s16 pad; } S16P;
 extern S16P D_00445410[];
