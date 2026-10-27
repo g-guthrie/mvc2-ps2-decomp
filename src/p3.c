@@ -48,14 +48,14 @@ void func_0011EB00(s32 *obj, char *fmt, ...) {
     func_00120A30(obj, obj[2], fmt, ap);
 }
 
-typedef struct { s32 f0, f4, f8, fC, f10; } S400E40;
+typedef struct { char *path; s32 f4, f8, fC, f10; } S400E40;
 extern void func_0040ADF0(s32, s32, s32, s32);
-extern void func_0040AE10(s32);
+extern void func_0040AE10(char *);
 
 void func_00400E40(S400E40 *p) {
     if (p) {
         func_0040ADF0(p->f8, p->fC, p->f10, p->f4);
-        func_0040AE10(p->f0);
+        func_0040AE10(p->path);
     } else {
         func_0040ADF0(0, 0, 0, 0);
         func_0040AE10(0);

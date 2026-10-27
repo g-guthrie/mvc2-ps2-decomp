@@ -12,7 +12,7 @@ extern void func_00103B60(u32 a, void *b, s32 c);
 extern s32 func_00103D00();
 extern void func_00110748(void);
 extern s32 func_00104990(s32 v);
-extern void func_0040AE10(s32 a);
+extern void func_0040AE10(char *path);
 extern char D_00488328[];
 extern void func_003F88E0(void *p);
 extern s16 D_004791F8[];

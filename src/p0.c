@@ -56,14 +56,15 @@ extern void func_00405FC0(void *, void *, s32);
 extern void func_00409870(void);
 extern void func_004062F8(void *);
 extern void func_0040ADF0(s32, s32, s32, s32);
-extern void func_0040AE10(s32);
-void func_00400D38(s32 *p) {
+extern void func_0040AE10(char *);
+typedef struct { char *path; s32 f4, f8, fC, f10; } PathConfig;
+void func_00400D38(PathConfig *p) {
     func_004075B8(func_00400D20, 0);
     func_00405FC0(D_004C23B8, func_00409870, 0);
     func_004062F8(D_004C23B8);
     if (p) {
-        func_0040ADF0(p[2], p[3], p[4], p[1]);
-        func_0040AE10(p[0]);
+        func_0040ADF0(p->f8, p->fC, p->f10, p->f4);
+        func_0040AE10(p->path);
     } else {
         func_0040ADF0(0, 0, 0, 0);
         func_0040AE10(0);
