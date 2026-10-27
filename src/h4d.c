@@ -74,7 +74,7 @@ void func_0035F1F0(u8 *p, u8 *q) {
         D_004633D0[p[5]](p, q, r);
     }
 }
-extern void func_00183D10();
+extern void func_00183D10(u8 *);
 extern void func_0022C700(u8 *);
 extern void func_00228D50(u8 *);
 extern void func_0018C4B0(u8 *, s32);
@@ -83,7 +83,7 @@ extern u16 D_004C0098[4];
 void func_00228A60(u8 *p) {
     { u32 t = p[6]; p[6] = t + 1; }
     p[0x20D] = 1;
-    func_00183D10();
+    func_00183D10(p);
     func_0022C700(p);
     func_00228D50(p);
     func_0018C4B0(p, 0x10);

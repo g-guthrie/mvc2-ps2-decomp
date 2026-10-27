@@ -9,7 +9,7 @@ extern void func_00175700();
 extern void func_001757E0();
 
 extern void func_00186A20();
-extern void func_00183D10();
+extern void func_00183D10(u8 *);
 void func_002D4D60(u8 *p) {
     u32 t;
     *(u8 *)(p + 0x40C) = 2;
@@ -83,6 +83,6 @@ void func_002B0F60(u8 *p) {
     *(s16 *)(p + 0x1C) = *(s16 *)(p + 0x1C) + 1;
     v = *(s16 *)(p + 0x1C) & 0xF;
     *(s16 *)(p + 0x1C) = v;
-    if (v == 0) func_00183D10();
+    if (v == 0) func_00183D10(p);
     func_00175700(p);
 }
