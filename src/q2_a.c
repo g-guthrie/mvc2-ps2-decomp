@@ -32,7 +32,7 @@ extern s32 D_004CB1F0[];
 
 void func_0016F720(void)
 {
-    extern void func_0011D740(s32, s32, s32);
+    extern void *func_0011D740(void *, const void *, unsigned int);
     s32 i = 0;
     s32 off = 0;
     do {
@@ -43,7 +43,7 @@ void func_0016F720(void)
         j = i;
         if (*(s32 *)(D_004C2840 + 0x98) == D_004C28BC + 0x3F0000) j = i + 6;
         o = D_004CB1F0[j];
-        if (o != 0) func_0011D740(e->f194, o, 0xF000);
+        if (o != 0) func_0011D740((void *)e->f194, (const void *)o, 0xF000);
         i++;
         off += 0x5B8;
     } while (i < 6);

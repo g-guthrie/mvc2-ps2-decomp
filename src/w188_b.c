@@ -41,7 +41,7 @@ void func_003EB5D0(s32 w, s32 h, u8 *src, u8 *dst) {
     u8 *p;
     u8 *q;
     s32 off;
-    extern void func_0011D740(u8 *, u8 *, s32);
+    extern void *func_0011D740(void *, const void *, unsigned int);
     extern void func_003EB720(u8 *, u8 *, s32);
     bw = (w - 1) / 128 + 1;
     bh = (h - 1) / 64 + 1;

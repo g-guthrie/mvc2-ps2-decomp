@@ -42,7 +42,7 @@ extern void func_00405DC8(void *);
 extern s32 func_0011FFA0(char *);
 extern void func_004061C0(u8 *);
 extern s32 func_004063B0(s32, s32);
-extern void func_0011D740(void *, const void *, s32);
+extern void *func_0011D740(void *, const void *, unsigned int);
 extern u8 D_004BC950[], D_004BC978[];
 extern s8 D_0062FD48[];
 void func_004062F8(void *a) {
