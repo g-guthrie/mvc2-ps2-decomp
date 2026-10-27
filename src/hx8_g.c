@@ -9,7 +9,7 @@ typedef float f32;
 extern u8 D_004F1FD0[];
 extern u8 D_004F1F45, D_004F1F46;
 
-extern s32 func_00175700();
+extern int func_00175700(u8 *);
 extern int func_00174470(const void *);
 extern u8 *func_003CA900(u8 *, unsigned int);
 extern void func_003CAB20(u8 *, u8 *, unsigned int);
@@ -23,7 +23,7 @@ void func_003CC9C0(u8 *p, u8 *q) {
     if (p[0x6] != 0) goto L3CCBA8;
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
-    func_00175700();
+    func_00175700(p);
     v = *(s16 *)(p + 0x1E) - 1;
     *(s16 *)(p + 0x1E) = v;
     if (v != 0) goto L3CCAA4;
@@ -72,7 +72,7 @@ L3CCB98:
     func_001E7F60(p);
     return;
 L3CCBA8:
-    v = (s8)func_00175700();
+    v = (s8)func_00175700(p);
     if ((s8)v >= 0) return;
     func_003CAB20(p, q, p[0x7]);
 }
