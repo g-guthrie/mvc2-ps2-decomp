@@ -222,9 +222,10 @@ void func_00348A80(u8 *p, u8 *q) {
     func_001E7F60(p);
 }
 
-s32 func_00232840(u8 *p) {
-    extern s32 func_001E7FD0();
-    s32 t, r;
+u8 *func_00232840(u8 *p) {
+    extern u8 *func_001E7FD0(u8 *);
+    s32 t;
+    u8 *r;
     if ((*(u16 *)(p + 0x20E) & 0xC00) == 0) return 0;
     t = p[0x20D];
     if (t == 1) return 0;
@@ -249,10 +250,10 @@ s32 func_00232840(u8 *p) {
     return 0;
 }
 
-s32 func_002E80A0(u8 *p) {
-    extern s32 func_001E7FD0();
+u8 *func_002E80A0(u8 *p) {
+    extern u8 *func_001E7FD0(u8 *);
     u8 *c = p + 0x2B8;
-    s32 r;
+    u8 *r;
     if (*(s8 *)(p + 0x2C1) != 0) return 0;
     if (*(s8 *)(c + 0xC) != 0) return 0;
     if ((*(u16 *)(p + 0x20E) & 0xC00) == 0) return 0;

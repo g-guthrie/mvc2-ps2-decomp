@@ -32,11 +32,11 @@ s32 func_001697B0(u8 *p) {
     }
 }
 
-extern s32 func_001E7FD0();
+extern u8 *func_001E7FD0(u8 *);
 
-s32 func_00247960(u8 *p) {
+u8 *func_00247960(u8 *p) {
     s32 x = (*(u16 *)(p + 0x20E) & 0xC00) >> 10;
-    s32 r;
+    u8 *r;
     u32 a;
     p[0x22] = x;
     if ((u8)x != 0) {
@@ -92,9 +92,9 @@ void func_003440E0(s32 n) {
     }
 }
 
-s32 residual_002FF2D0(u8 *p) {
+u8 *residual_002FF2D0(u8 *p) {
     s32 x = (*(u16 *)(p + 0x20E) & 0xC00) >> 10;
-    s32 r;
+    u8 *r;
     u32 a;
     p[0x22] = x;
     if ((u8)x != 0) {
