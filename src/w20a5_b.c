@@ -51,7 +51,7 @@ void func_003C5DD0(P3C5DD0 *p, u8 *q)
     extern void func_001757E0();
     extern void func_0018D930();
     extern void func_003C5780();
-    extern void func_001E7F60();
+    extern void func_001E7F60(u8 *);
     extern int func_00175700(u8 *);
     extern void func_003C80A0();
     s32 v;
@@ -71,7 +71,7 @@ void func_003C5DD0(P3C5DD0 *p, u8 *q)
     if (p->b1B4 != 0) {
         s32 t = p->b1B4 - 1;
         p->b1B4 = t;
-        func_001E7F60();
+        func_001E7F60((u8 *)p);
         return;
     }
     func_00175700((u8 *)p);
@@ -95,5 +95,5 @@ void func_003C5DD0(P3C5DD0 *p, u8 *q)
         if (!(D_004F1FC8[0] - 106.666664f < p->f34)) v = 1;
     }
     if (v) func_003C80A0(p, q);
-    else func_001E7F60(p);
+    else func_001E7F60((u8 *)p);
 }

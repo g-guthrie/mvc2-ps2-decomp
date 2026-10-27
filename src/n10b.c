@@ -67,7 +67,7 @@ void func_001C4010(u8 *p) {
     jtbl_0044CB90.mode[p[6]](p,q);
 }
 
-extern void func_001E7F60();
+extern void func_001E7F60(u8 *);
 
 void func_003B1020(u8 *p) {
     s8 *sb = (s8 *)p;
@@ -76,7 +76,7 @@ void func_003B1020(u8 *p) {
         p[6] = 1;
         p[7] = 0;
     } else {
-        func_001E7F60();
+        func_001E7F60(p);
         if (sb[0x1B2] != 0) {
             s32 w = (sb[0x1B2] << 24) >> 24;
             if ((w & 1) || (w & 0x10)) {

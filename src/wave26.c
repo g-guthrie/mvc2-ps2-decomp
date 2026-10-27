@@ -127,12 +127,12 @@ void func_00203170(u8 *p) {
     func_00186A60(p, 0x15);
 }
 
-extern void func_001E7F60();
+extern void func_001E7F60(u8 *);
 extern s32 func_001745B0(void *p);
 extern void func_003B56B0(void *p, u32 b);
 
 void func_003B5560(u8 *a0, u32 a1) {
-    if (a0[0x22] == 0) func_001E7F60();
+    if (a0[0x22] == 0) func_001E7F60(a0);
     func_00175700(a0);
     a0[0x13c] = func_001745B0(a0);
     func_003B56B0(a0, a1);

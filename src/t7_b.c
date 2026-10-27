@@ -46,7 +46,7 @@ extern void func_001A7990();
 extern f32 func_001A8CB0();
 extern void func_001A8610();
 extern void func_001498E0();
-extern void func_001E7F60();
+extern void func_001E7F60(u8 *);
 extern void func_0036A8A0();
 extern void func_003DE720();
 extern void func_00254100();
@@ -440,7 +440,7 @@ void func_0036A1D0(u8 *p) {
         func_001757E0(p, 0x17, 0x1F);
         return;
     }
-    func_001E7F60();
+    func_001E7F60(p);
     {
         s16 v = *(s16 *)(p + 0x1C) - 1;
         *(s16 *)(p + 0x1C) = v;

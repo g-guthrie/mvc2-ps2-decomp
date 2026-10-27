@@ -10,12 +10,12 @@ extern u16 D_004F4498;
 extern u32 D_004636B0[];
 
 void func_003C33B0(u8 *p, u8 *q) {
-    extern void func_001E7F60();
+    extern void func_001E7F60(u8 *);
     extern void func_001757E0();
     if (*(s16 *)(p + 0x1C) == 0) {
         { u32 t = p[4]; p[4] = t + 1; }
     } else {
-        func_001E7F60();
+        func_001E7F60(p);
         if (*(s8 *)(p + 0x1B2) != 0) {
             { u32 t = p[5]; p[5] = t + 1; }
             p[0x13C] = 1;

@@ -20,7 +20,7 @@ typedef struct {
 void func_00365C30(Sa *p) {
     extern void func_001757E0();
     extern void func_001AD1E0();
-    extern void func_001E7F60();
+    extern void func_001E7F60(u8 *);
     p->f34 += p->f5c;
     p->f5c += p->f68;
     p->f38 += p->f60;
@@ -32,7 +32,7 @@ void func_00365C30(Sa *p) {
         func_001AD1E0(p, 0x11, 0);
         func_001AD1E0(p, 0x11, 0);
     } else {
-        func_001E7F60();
+        func_001E7F60((u8 *)p);
     }
 }
 
