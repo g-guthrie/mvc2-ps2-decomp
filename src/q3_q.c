@@ -40,7 +40,7 @@ void func_001FCAC0(u8 *p) {
         p[0x1BB] = 2;
         break;
     }
-    p[0x1B5] = *(volatile u8 *)(p + 0x1B5);
+    p[0x1B5] = *(u8 *)(p + 0x1B5);
     p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
     *(u32 *)(p + 0x1D8) = 0;
     q = (u8 *)((p[2] << 1) + (u32)D_004C2794);
@@ -82,7 +82,7 @@ void func_0026F650(u8 *p) {
         p[0x1BB] = 2;
         break;
     }
-    p[0x1B5] = *(volatile u8 *)(p + 0x1B5);
+    p[0x1B5] = *(u8 *)(p + 0x1B5);
     p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
     *(u32 *)(p + 0x1D8) = 0;
     q = (u8 *)((p[2] << 1) + (u32)D_004C2794);
