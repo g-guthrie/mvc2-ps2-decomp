@@ -5,8 +5,8 @@ typedef unsigned short u16;
 typedef unsigned char u8;
 typedef signed char s8;
 
-extern void func_0040ED20(void);
-void func_003FF228(void) { func_0040ED20(); }
+extern void func_0040ED20(void *, s32);
+void func_003FF228(void *group, s32 count) { func_0040ED20(group, count); }
 
 extern s32 D_0048831C;
 extern void func_0010EC08(s32, s32, s32);
