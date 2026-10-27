@@ -12,7 +12,7 @@ typedef struct __sbuf {
 typedef struct __sFILE FILE;
 struct _Bigint;
 
-/* Prefix through dtoa's verified _result_k access; this is not a full _reent. */
+/* Verified prefix through the cached powers-of-five pointer; this is not a full _reent. */
 typedef struct _reent {
     int _errno;
     FILE *_stdin;
@@ -26,6 +26,7 @@ typedef struct _reent {
     void (*__cleanup)(struct _reent *);
     struct _Bigint *_result;
     int _result_k;
+    struct _Bigint *_p5s;
 } Reent;
 
 struct __sFILE {
