@@ -14168,7 +14168,7 @@ func_00170C30,0x00170C30,0xFC,src/z2_b.c,placeholder
 func_0014EB20,0x0014EB20,0x104,src/z2_b.c,complete
 func_002687B0,0x002687B0,0xE4,src/z2_c.c,complete
 func_0035A340,0x0035A340,0xF8,src/z2_c.c,complete
-func_00312A70,0x00312A70,0xF8,src/z2_c.c,complete
+func_00312A70,0x00312A70,0xF8,src/z2_c.c,placeholder
 func_002772A0,0x002772A0,0xEC,src/z2_d.c,complete
 func_0018DAC0,0x0018DAC0,0xA4,src/z2_d.c,complete
 func_001AFE30,0x001AFE30,0x108,src/z2_e.c,complete
