@@ -9,6 +9,7 @@ extern void func_00175700(u8 *);
 extern int func_00174470(const void *);
 extern s32 func_00394760(u8 *);
 extern u8 *D_004C29D4;
+/* Provisional: callback result is not a proven C return value. */
 s32 func_00392F70(u8 *p) {
     func_00175700(p);
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
