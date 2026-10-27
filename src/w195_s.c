@@ -25,17 +25,17 @@ typedef struct PS {
 
 extern void func_0019DF50(PS *, s32, s32);
 extern void func_001E7F60(PS *);
-extern void func_0035A7B0(PS *, u8 *);
+extern s32 func_0035A7B0(u8 *, u8 *);
 extern void func_0035AE70(PS *, u8 *);
 extern void func_0035ACA0(PS *, u8 *);
 extern s32 func_0035AD40(PS *, u8 *);
-extern void func_00175700(PS *);
+extern s32 func_00175700(u8 *);
 
 void func_00359840(PS *p, u8 *q) {
     if (p->b1B2 < 0) {
         func_0019DF50(p, 0xA, p->b21);
         func_001E7F60(p);
-        func_0035A7B0(p, q);
+        func_0035A7B0((u8 *)p, q);
         p->b21 = 7;
         func_0035AE70(p, q);
         func_0035ACA0(p, q);
@@ -44,19 +44,19 @@ void func_00359840(PS *p, u8 *q) {
     if (p->b1B3 != 0) {
         func_0019DF50(p, 0xA, p->b21);
     } else {
-        func_00175700(p);
+        func_00175700((u8 *)p);
         p->f34 += p->f5C;
         p->f5C += p->f68;
         p->f38 += p->f60;
         p->f60 += p->f6C;
         if (func_0035AD40(p, q) == 0) {
             func_001E7F60(p);
-            func_0035A7B0(p, q);
+            func_0035A7B0((u8 *)p, q);
             return;
         }
     }
     func_001E7F60(p);
-    func_0035A7B0(p, q);
+    func_0035A7B0((u8 *)p, q);
     p->b21 = 7;
     func_0035AE70(p, q);
     func_0035ACA0(p, q);
