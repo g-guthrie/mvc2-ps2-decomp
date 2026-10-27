@@ -5,7 +5,7 @@ typedef unsigned short u16;
 typedef signed int s32;
 typedef unsigned int u32;
 
-extern s8 D_004B55E0[];
+extern s8 gNameEntryComparisons_004B55E0[20][3];
 extern int func_00173590(u8 *);
 extern int func_00173600(u8 *, s8);
 void func_00173650(u8 *p)
@@ -18,7 +18,7 @@ void func_00173650(u8 *p)
         m = 0;
         if (i >= 16) {
             for (j = 0; j < 3; j++) {
-                if (*(s8 *)(p + 0x544 + j) != D_004B55E0[off + j]) break;
+                if (*(s8 *)(p + 0x544 + j) != ((s8 *)gNameEntryComparisons_004B55E0)[off + j]) break;
                 m++;
             }
             if (m == 3) {
@@ -27,7 +27,7 @@ void func_00173650(u8 *p)
             }
         } else {
             for (j = 0; j < 3; j++) {
-                if (*(s8 *)(p + 0x544 + j) != D_004B55E0[off + j]) break;
+                if (*(s8 *)(p + 0x544 + j) != ((s8 *)gNameEntryComparisons_004B55E0)[off + j]) break;
                 m++;
             }
             if (m == 3) {
