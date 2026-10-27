@@ -205,9 +205,9 @@ void func_0034E1C0(u8 *p) {
 void func_002139A0(u8 *p) {
     extern s8 func_00175700(u8 *);
     extern void func_001843A0(u8 *);
-    extern s32 func_001E7FD0(u8 *);
-    extern void func_00185640(u8 *, s32);
-    s32 v;
+    extern u8 *func_001E7FD0(u8 *);
+    extern void func_00185640(u8 *, u8 *);
+    u8 *v;
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);

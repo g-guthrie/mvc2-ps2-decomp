@@ -60,11 +60,11 @@ s32 func_0027E820(u8 *p) {
     }
 }
 
-extern s32 func_001E7FD0();
+extern u8 *func_001E7FD0(u8 *);
 extern s32 *D_00451AF0[];
 
-s32 func_0022B620(u8 *p) {
-    s32 r = 0;
+u8 *func_0022B620(u8 *p) {
+    u8 *r = 0;
     if (D_00451AF0[p[0x20D]]) {
         u32 t = *(u16 *)(p + 0x20E) & 0xC00;
         if (t) {

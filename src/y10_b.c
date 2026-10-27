@@ -30,9 +30,9 @@ u8 *func_001461F0(u8 *a, u8 b, s16 c) {
     return o;
 }
 
-s32 func_002394F0(u8 *p) {
-    extern s32 func_001E7FD0();
-    s32 r;
+u8 *func_002394F0(u8 *p) {
+    extern u8 *func_001E7FD0(u8 *);
+    u8 *r;
     if ((*(u16 *)(p + 0x20E) & 0xC00) == 0) {
         return 0;
     }
@@ -49,17 +49,17 @@ s32 func_002394F0(u8 *p) {
                 if (p[0x20D] == 2) {
                     return r;
                 }
-                r = func_001E7FD0();
+                r = func_001E7FD0(p);
                 if (r != 0) {
                     p[0x20B] = 0;
                 }
             } else if (p[0x20D] != 2) {
-                r = func_001E7FD0();
+                r = func_001E7FD0(p);
                 if (r != 0) {
                     p[0x20B] = 1;
                 }
             } else {
-                r = func_001E7FD0();
+                r = func_001E7FD0(p);
                 if (r != 0) {
                     p[0x20B] = 2;
                 }

@@ -118,7 +118,7 @@ void func_00133B20(u8 *p, u8 *b) {
     }
 }
 
-extern s32 func_001E7FD0();
+extern u8 *func_001E7FD0(u8 *);
 extern s32 func_0016A130();
 extern s32 func_0016A1F0();
 
