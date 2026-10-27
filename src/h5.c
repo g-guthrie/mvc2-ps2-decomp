@@ -6,7 +6,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 extern u8 D_004F2603[];
-extern void func_0012F060(s32, u8 *, s32, u8 *);
+extern void func_0012F060(s32);
 void func_00172320(s32 i) {
     u8 *b = D_004F2603;
     u8 *p0 = b + i * 0x5B8;
@@ -15,5 +15,5 @@ void func_00172320(s32 i) {
     *p0 = 0;
     *p1 = 1;
     *p2 = 2;
-    func_0012F060(i, p1, 1, p0);
+    func_0012F060(i);
 }
