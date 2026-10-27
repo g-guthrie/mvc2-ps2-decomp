@@ -9483,7 +9483,7 @@ func_00297EC0,0x00297EC0,0x54,src/grok_w5_0028.c,complete
 func_00293630,0x00293630,0x58,src/grok_w5_0028.c,complete
 func_00197560,0x00197560,0x58,src/wave7.c,complete
 func_003AE590,0x003AE590,0x58,src/wave7.c,complete
-func_00359050,0x00359050,0x40,src/wave7.c,complete
+func_00359050,0x00359050,0x40,src/wave7.c,placeholder
 func_00191430,0x00191430,0x44,src/wave7.c,complete
 func_00169BE0,0x00169BE0,0x4C,src/wave7b.c,complete
 func_00327C20,0x00327C20,0x50,src/wave7b.c,complete

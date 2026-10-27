@@ -145,6 +145,7 @@ extern void func_0035AE70(u8 *, u8 *);
 extern u8 D_004D18A2;
 extern void func_001917F0(u8 *, s32, s32);
 
+/* Provisional: helper argument type and call sequence require reconciliation. */
 void func_00359050(u8 *p, u8 *r) {
     u8 *q = *(u8 **)(p + 0x18);
     if (q[0x169] != 0x13 || q[0x168] != 4) {

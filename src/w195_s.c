@@ -31,6 +31,7 @@ extern void func_0035ACA0(PS *, u8 *);
 extern s32 func_0035AD40(PS *, u8 *);
 extern s32 func_00175700(u8 *);
 
+/* Provisional: helper argument type and call sequence require reconciliation. */
 void func_00359840(PS *p, u8 *q) {
     if (p->b1B2 < 0) {
         func_0019DF50(p, 0xA, p->b21);
