@@ -37,7 +37,7 @@ extern void func_00186A60(void *p, s32 a);
 extern u8 D_00450AB0[];
 
 extern u8 *D_004C2794;
-void func_00230670(u8 *p) {
+void func_00230670(u8 *p, u8 *context) {
     s8 v = p[0x151];
     u32 low = (u8)v & 0xF;
     if (low) {
