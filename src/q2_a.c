@@ -93,8 +93,8 @@ void func_002B2050(u8 *actor)
 {
     P2B2 *p = (P2B2 *)actor;
     extern int func_00175700(u8 *);
-    extern void func_00185490();
-    extern void func_001757E0(P2B2 *, s32, s32);
+    extern void func_00185490(u8 *);
+    extern int func_001757E0(u8 *, s32, s32);
     f32 z = 0.0f;
     func_00175700((u8 *)p);
     p->f34 += p->f5c;
@@ -107,10 +107,10 @@ void func_002B2050(u8 *actor)
             p->f6 = t + 1;
             p->f38 = p->f430;
             if (p->f20b == 0) {
-                func_00185490(p);
-                func_001757E0(p, 0xF, 2);
+                func_00185490(actor);
+                func_001757E0(actor, 0xF, 2);
             } else {
-                func_001757E0(p, 0xF, 4);
+                func_001757E0(actor, 0xF, 4);
             }
         }
     }
