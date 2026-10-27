@@ -15,7 +15,6 @@ extern void func_001E7F60(u8 *);
 extern void func_00386780(u8 *, u8 *);
 extern void func_00386E40(u8 *, u8 *);
 extern void func_0039E450(u8 *);
-extern void func_00396EC0(u8 *, u8 *, u8 *);
 extern void func_003A5000(u8 *, int, int, int);
 extern void func_003B1130(u8 *, int, int, int);
 extern void func_003BA140(u8 *);
@@ -76,13 +75,6 @@ void func_00395FF0(u8 *p, u8 *q) {
     S(p, 28) = 2;
     *(s8 *)(p + 49) = -8;
     func_001757E0(p, 23, 10);
-}
-
-void func_00396EC0(u8 *p, u8 *q, u8 *r) {
-    F(p, 52) = F(q, 52);
-    F(p, 56) = F(q, 56);
-    F(p, 52) += F(r, 8);
-    F(p, 56) += F(r, 12);
 }
 
 void func_00397CD0(u8 *p) {

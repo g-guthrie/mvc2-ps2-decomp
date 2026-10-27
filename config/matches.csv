@@ -6209,7 +6209,7 @@ func_003890E0,0x003890E0,0x34,src/grok_r2_0038.c,complete
 func_00389660,0x00389660,0x30,src/grok_r2_0038.c,complete
 func_003897C0,0x003897C0,0x30,src/grok_r2_0038.c,complete
 func_00395FF0,0x00395FF0,0x38,src/grok_r2_0038.c,complete
-func_00396EC0,0x00396EC0,0x34,src/grok_r2_0038.c,complete
+func_00396EC0,0x00396EC0,0x34,src/q6_m.c,complete
 func_00397CD0,0x00397CD0,0x40,src/grok_r2_0038.c,complete
 func_0039D130,0x0039D130,0x28,src/grok_r2_0038.c,complete
 func_0039D3B0,0x0039D3B0,0x28,src/grok_r2_0038.c,complete
@@ -11521,7 +11521,7 @@ func_003F1540,0x003F1540,0x58,src/s2m.c,complete
 func_003EB900,0x003EB900,0x5C,src/s2m.c,complete
 func_003E9420,0x003E9420,0xA8,src/s2m.c,complete
 func_0041FFD0,0x0041FFD0,0x94,src/s2m.c,complete
-func_00397140,0x00397140,0x3C,src/r0.c,placeholder
+func_00397140,0x00397140,0x3C,src/q6_m.c,placeholder
 func_00420A50,0x00420A50,0x54,src/r0d.c,complete
 func_00405320,0x00405320,0x30,src/r0b.c,complete
 func_001067C8,0x001067C8,0x24,src/r0b.c,complete
