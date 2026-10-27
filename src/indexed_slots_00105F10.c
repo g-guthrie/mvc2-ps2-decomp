@@ -9,13 +9,14 @@ void func_00105EE0(const Record *record, Context *context) {
     context->values[record->index] = record->value;
 }
 
-typedef struct { u32 value; u32 zero; unsigned char *head; unsigned char *tail; } State;
+#include "sony_console_ring.h"
+typedef SonyConsoleRing State;
 extern State D_004C35C0;
 State *func_00105020(u32 value) {
     State *state = &D_004C35C0;
-    state->value = value;
-    state->zero = 0;
-    state->tail = (unsigned char *)(state + 1);
-    state->head = (unsigned char *)(state + 1);
+    state->size = value;
+    state->count = 0;
+    state->tail = (char *)(state + 1);
+    state->head = (char *)(state + 1);
     return state;
 }

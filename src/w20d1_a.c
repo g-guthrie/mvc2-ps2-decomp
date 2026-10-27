@@ -82,7 +82,6 @@ extern char D_004C3840[];
 extern void func_00104060(int);
 extern int func_00104E40(int, void *, void *);
 extern void func_001050C8(void);
-extern int func_00105020(int);
 
 
 typedef struct {
