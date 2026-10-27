@@ -5,7 +5,7 @@ typedef float f32;
 
 extern int func_001757E0(u8 *, s32, s32);
 extern void func_0028D910(u8 *, s32);
-extern s32 func_001C13F0(u8 *, s32);
+extern void *func_001C13F0(void *, u8);
 extern void func_00288140(u8 *);
 
 void func_00288040(u8 *p)
@@ -26,6 +26,6 @@ void func_00288040(u8 *p)
     func_001C13F0(p, 6);
     func_001C13F0(p, 7);
     func_001C13F0(p, 8);
-    *(s32 *)(p + 0x14) = func_001C13F0(p, 0);
+    *(void **)(p + 0x14) = func_001C13F0(p, 0);
     func_00288140(p);
 }

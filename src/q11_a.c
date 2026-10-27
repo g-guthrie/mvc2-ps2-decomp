@@ -100,7 +100,7 @@ void func_00202C00(R *p) {
 
 extern void func_001830D0();
 extern void func_00194990(void *a, void *b);
-extern s32 func_00194100(void *a);
+extern void *func_00194100(u8 *a);
 extern void func_00178F20(void *a, void *b);
 extern u8 *func_003DA750(s32 a, s32 b, s32 c);
 extern void func_003B2FC0();

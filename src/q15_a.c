@@ -177,7 +177,7 @@ void func_00282790(Obj *o) {
     }
 }
 
-extern s32 func_00194100();
+extern void *func_00194100(u8 *);
 extern void func_00194990();
 void func_00194710(u8 *p, u8 *q) {
     u8 *a = *(u8 **)(q + 0x1DC);
@@ -192,7 +192,7 @@ void func_00194710(u8 *p, u8 *q) {
         u32 t = p[5];
         p[5] = t + 1;
     }
-    if (func_00194100(p, q) == 0) {
+    if (func_00194100(p) == 0) {
         p[0x21] |= 0x80;
         p[5] = 3;
         func_00194990(p, q);

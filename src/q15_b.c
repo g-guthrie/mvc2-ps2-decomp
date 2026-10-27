@@ -75,7 +75,7 @@ extern void func_00186A60();
 
 extern void func_00183d50();
 
-extern s32 func_00194100();
+extern void *func_00194100(u8 *);
 
 extern void func_00194990();
 
