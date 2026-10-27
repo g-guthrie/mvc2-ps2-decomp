@@ -281,7 +281,7 @@ extern DispatchFn2 jtbl_004C1D08[2];
 extern DispatchFn2 jtbl_004C1D20[2];
 extern DispatchFn2 jtbl_004C1D68[2];
 extern DispatchFn2 jtbl_004C1D88[2];
-extern DispatchFn2 jtbl_004C1ED8[2];
+extern DispatchFn2 const jtbl_004C1ED8[14] __attribute__((section(".sdata")));
 extern DispatchFn2 jtbl_004C1EE0[2];
 extern DispatchFn2 jtbl_004C1EF8[2];
 extern DispatchFn2 jtbl_004C1F78;
