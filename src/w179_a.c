@@ -92,7 +92,7 @@ void func_002E74E0(u8 *p) {
     extern s32 func_00175700();
     extern void func_00185490();
     extern void func_001757E0();
-    extern void func_001D45D0();
+    extern u8 *func_001D45D0(u8 *, u8);
     extern void func_001E32C0();
     u8 *q = p + 0x2B8;
     s16 v;

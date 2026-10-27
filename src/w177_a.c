@@ -31,7 +31,7 @@ void func_002E82F0(PB *p) {
     extern void func_001266A0(PB *, s32, s32);
     extern void func_0018C6E0(void *);
     extern void func_0015D010(PB *, f32 *);
-    extern void func_001D45D0(PB *, s32);
+    extern u8 *func_001D45D0(u8 *, u8);
     extern void func_00182C30(s32, s32);
     extern void func_00182DB0(PB *, s32);
     extern void func_001757E0(PB *, s32, s32);
@@ -46,7 +46,7 @@ void func_002E82F0(PB *p) {
     *(u32 *)&v[1] = 0x42CDB6DB;
     func_0015D010(p, v);
     p->b1b4 = 10;
-    func_001D45D0(p, 2);
+    func_001D45D0((u8 *)p, 2);
     func_00182C30(p->w1dc, 0x32);
     func_00182DB0(p, 3);
     p->b6 = 0;
