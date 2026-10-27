@@ -8,7 +8,7 @@ typedef float f32;
 
 typedef struct { f32 x, y, z; } V3_6D700;
 void func_0026D700(u8 *p) {
-    extern s32 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001843A0();
     f32 z = 0.0f;
     s8 r;
@@ -31,7 +31,7 @@ void func_0026D700(u8 *p) {
 }
 
 void func_00359C70(u8 *p, s32 q) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_0035ADE0();
     extern void func_0035AE70();
     extern void func_0035A7B0();
@@ -99,7 +99,7 @@ void func_001448E0(u8 *p) {
 }
 
 void func_0024F570(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001757E0();
     s16 v;
     f32 a, b;
@@ -107,7 +107,7 @@ void func_0024F570(u8 *p) {
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
-    func_00175700();
+    func_00175700(p);
     v = *(s16 *)(p + 0x1C) - 1;
     *(s16 *)(p + 0x1C) = v;
     if (v == 0) {
@@ -132,7 +132,7 @@ void func_0024F570(u8 *p) {
 typedef struct { f32 x, y, z; } V3_299E80;
 extern V3_299E80 D_00583B80;
 void func_00299E80(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_00186A20();
     extern u8 *func_001C8FD0(u8 *, s32);
     extern void func_001830D0();

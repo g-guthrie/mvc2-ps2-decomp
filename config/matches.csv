@@ -9508,7 +9508,7 @@ func_001CA780,0x001CA780,0x54,src/wave5.c,complete
 func_0036CBD0,0x0036CBD0,0x54,src/wave5.c,complete
 func_003DDEC0,0x003DDEC0,0x54,src/wave5.c,complete
 func_001CB0D0,0x001CB0D0,0x58,src/wave5.c,complete
-func_0028C2C0,0x0028C2C0,0x58,src/wave5.c,complete
+func_0028C2C0,0x0028C2C0,0x58,src/grok_w5_0028.c,complete
 func_003ADA10,0x003ADA10,0x58,src/wave5.c,complete
 func_00170DA0,0x00170DA0,0x44,src/wave5b.c,complete
 func_001259C0,0x001259C0,0x54,src/wave5b.c,complete
