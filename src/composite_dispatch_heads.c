@@ -1141,7 +1141,7 @@ extern DispatchFn jtbl_00463110[];
 extern DispatchFn jtbl_00463120[];
 extern DispatchFn jtbl_004631C0[];
 extern ControllerEffectCallback const jtbl_00463218[3];
-extern DispatchFn jtbl_004632E0[];
+extern ContextDispatchFn jtbl_004632E0[];
 extern void (*const jtbl_004632F0[])(u8 *, u8 *);
 extern DispatchFn jtbl_00463320[];
 extern void (*const jtbl_00463330[])(u8 *, u8 *);
@@ -3720,7 +3720,8 @@ void func_0035B7E0(u8 *p) { jtbl_004631C0[p[5]](p); }
 
 void func_0035C090(u8 *p, void *owner) { jtbl_00463218[p[5]](p, owner); }
 
-void func_0035CCA0(u8 *p) { jtbl_004632E0[p[4]](p); }
+/* Provisional: the separately owned state table still has a unary callback type. */
+void func_0035CCA0(u8 *p, void *owner) { jtbl_004632E0[p[4]](p, owner); }
 
 void func_0035D080(u8 *p, u8 *owner) { jtbl_004632F0[p[4]](p, owner); }
 

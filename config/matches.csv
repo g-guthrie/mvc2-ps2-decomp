@@ -3193,7 +3193,7 @@ func_0035C430,0x0035C430,0x8,src/tail_leaves.c,complete
 func_0035C490,0x0035C490,0x24,src/argument_dispatch_heads.c,complete
 func_0035C7A0,0x0035C7A0,0x8,src/tail_leaves.c,complete
 func_0035C830,0x0035C830,0x24,src/argument_dispatch_heads.c,complete
-func_0035CCA0,0x0035CCA0,0x20,src/composite_dispatch_heads.c,complete
+func_0035CCA0,0x0035CCA0,0x20,src/composite_dispatch_heads.c,placeholder
 func_0035D080,0x0035D080,0x20,src/composite_dispatch_heads.c,complete
 func_0035D340,0x0035D340,0x14,src/straight_leaves.c,complete
 func_0035D360,0x0035D360,0x8,src/tail_leaves.c,complete
@@ -16998,7 +16998,7 @@ func_002ED090,0x002ED090,0x24,src/argument_dispatch_heads.c,complete
 func_00304230,0x00304230,0x24,src/argument_dispatch_heads.c,complete
 func_00312950,0x00312950,0x24,src/argument_dispatch_heads.c,complete
 func_00354AD0,0x00354AD0,0x24,src/argument_dispatch_heads.c,complete
-func_0035CF70,0x0035CF70,0x24,src/owner_callback_dispatch_prefixes.c,complete
+func_0035CF70,0x0035CF70,0x24,src/owner_callback_dispatch_prefixes.c,placeholder
 func_003616A0,0x003616A0,0x24,src/owner_callback_dispatch_prefixes.c,complete
 func_00396A40,0x00396A40,0x24,src/owner_callback_dispatch_prefixes.c,complete
 func_003A8150,0x003A8150,0x24,src/owner_callback_dispatch_prefixes.c,complete

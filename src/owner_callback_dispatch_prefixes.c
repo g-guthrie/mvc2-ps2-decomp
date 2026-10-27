@@ -94,6 +94,7 @@ void func_0035E660(u8 *p, void *owner) {
     p[0x24] = *(s8 *)(q + 0x24) + *(s8 *)(p + 0x31);
     jtbl_004C1B98[p[5]](p, owner);
 }
+/* Provisional: upstream callback table and state bounds require reconciliation. */
 void func_0035CF70(u8 *p, void *owner) {
     u8 *q = owner;
     *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
