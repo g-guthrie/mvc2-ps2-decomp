@@ -4,6 +4,7 @@ struct Object;
 typedef unsigned char u8;
 typedef signed char s8;
 typedef signed short s16;
+typedef unsigned short u16;
 typedef unsigned int u32;
 typedef signed int s32;
 
@@ -23,7 +24,7 @@ extern void func_00127590();
 extern void func_001283C0();
 extern void func_00128A30();
 extern s32 func_0012A990(s32, s32, s32, u32);
-extern void func_0012AAA0();
+extern s32 func_0012AAA0(u16, s32, s32, u32);
 extern void func_0012AD00();
 extern void func_0012DA40();
 extern void func_0012E780();
@@ -162,9 +163,9 @@ void func_0010CFD0(void) { func_0010C480(); }
 
 s32 func_0012AA90(s32 input, s32 position, s32 maximum) { return func_0012A990(input, position, maximum, 0); }
 
-void func_0012ABA0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0012AAA0(a0, a1, a2, 0); }
+s32 func_0012ABA0(u16 a0, s32 a1, s32 a2) { return func_0012AAA0(a0, a1, a2, 0); }
 
-void func_0012ABB0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0012AAA0(a0, a1, a2, 1); }
+s32 func_0012ABB0(u16 a0, s32 a1, s32 a2) { return func_0012AAA0(a0, a1, a2, 1); }
 
 void func_001341A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 

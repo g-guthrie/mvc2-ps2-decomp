@@ -27,8 +27,8 @@ void func_00129620(void)
     extern void func_0012FC40();
     extern s32 func_001315F0();
     extern s32 func_001316D0();
-    extern s32 func_0012ABC0(s32, s32);
-    extern s16 func_0012ABA0(s32, s32, s32);
+    extern u16 func_0012ABC0(s32, s32);
+    extern s32 func_0012ABA0(u16, s32, s32);
     switch (D_004C2840->f3) {
     case 0:
         if (func_003299D0() != 0) {

@@ -19,8 +19,8 @@ void func_0012A420(u8 *p) {
     extern s32 func_003299D0();
     extern s32 func_001316D0();
     extern void func_00129870();
-    extern s32 func_0012ABC0(s32, s32);
-    extern s32 func_0012ABA0(s32, s32, s32);
+    extern u16 func_0012ABC0(s32, s32);
+    extern s32 func_0012ABA0(u16, s32, s32);
     s32 t;
     u16 m;
     t = *(s8 *)(D_004C2840 + 5);
