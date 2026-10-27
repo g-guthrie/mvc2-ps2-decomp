@@ -19380,3 +19380,4 @@ func_00144630,0x00144630,0xB8,src/scene_model_event_00144630.c,placeholder
 func_001053B0,0x001053B0,0xD0,src/sony29_console_read_001053b0.c,placeholder
 func_00397180,0x00397180,0xC8,src/actor_work_state_00397180.c,placeholder
 func_00148200,0x00148200,0x190,src/menu_record_initialization_00148200.c,placeholder
+func_00149690,0x00149690,0x188,src/button_config_render_00149690.c,placeholder

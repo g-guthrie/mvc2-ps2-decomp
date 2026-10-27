@@ -21866,4 +21866,6 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_work_state_
 "$PYTHON" tools/verify_object.py "$BUILD/actor_work_state_00397180.o" private/SLUS_204.86.rom --source src/actor_work_state_00397180.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/menu_record_initialization_00148200.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/menu_record_initialization_00148200.o"
 "$PYTHON" tools/verify_object.py "$BUILD/menu_record_initialization_00148200.o" private/SLUS_204.86.rom --source src/menu_record_initialization_00148200.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/button_config_render_00149690.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/button_config_render_00149690.o"
+"$PYTHON" tools/verify_object.py "$BUILD/button_config_render_00149690.o" private/SLUS_204.86.rom --source src/button_config_render_00149690.c
 PYTHON="$PYTHON" tools/compile_matching_data.sh
