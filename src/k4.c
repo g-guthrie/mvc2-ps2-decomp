@@ -8,8 +8,8 @@ void func_00104260(void) { D_00438250 = 0; }
 
 void func_0040EA48(s32 a, s32 *b, s32 *c) { *b = 0; *c = 0xBB80; }
 
-extern void func_0040EA98(void);
-void func_003FF1A8(void) { func_0040EA98(); }
+extern int func_0040EA98(u8 *);
+int func_003FF1A8(void *p) { return func_0040EA98((u8 *)p); }
 
 extern s32 func_003F81E8(void *);
 s32 func_00400098(void *object) { return func_003F81E8(*(void **)((u8 *)object + 4)); }

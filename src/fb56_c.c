@@ -10,7 +10,7 @@ typedef struct { s32 a, b; } PR;
 
 void func_00403B20(u8 *p)
 {
-    extern s32 func_003FF190(s32);
+    extern s32 func_003FF190(void *);
     extern s32 func_003FFF90(void *);
     extern void func_003F9630(void);
     extern void func_003F9660(void);
@@ -28,7 +28,7 @@ void func_00403B20(u8 *p)
     s32 *o;
 
     i = 0;
-    r = func_003FF190(*(s32 *)(p + 0xC));
+    r = func_003FF190(*(void **)(p + 0xC));
     a = *(s32 *)(p + 4);
     D_004C240C = r;
     n = func_003FFF90((void *)a);
@@ -72,7 +72,7 @@ void func_00403B20(u8 *p)
             if ((s32)(v >> 1) >= mx) mx = v >> 1;
         } while (--i != 0);
     }
-    if (mx + func_003FF190(*(s32 *)(p + 0xC)) - *(s32 *)(p + 0xA8) <= 0) {
+    if (mx + func_003FF190(*(void **)(p + 0xC)) - *(s32 *)(p + 0xA8) <= 0) {
         func_003FF148(*(s8 **)(p + 0xC), 0);
         func_003FF160(*(s32 *)(p + 0xC), 0);
         func_0040EA00(*(s32 *)(p + 0xC), 1);

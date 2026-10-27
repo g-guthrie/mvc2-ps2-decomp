@@ -1,5 +1,6 @@
 extern volatile int D_00487348;
-extern void func_0040EA58(void);
+struct Outer;
+extern int func_0040EA58(struct Outer *);
 extern void func_0040EEA8(void);
 extern void func_0040E288(void);
 extern void func_0040EE00(int *,int,int);
@@ -8,7 +9,7 @@ extern void func_0011EB60(void *);
 extern char D_004BE810[];
 
 int func_00408948(void) { return D_00487348; }
-void func_003FF190(void) { func_0040EA58(); }
+int func_003FF190(void *p) { return func_0040EA58((struct Outer *)p); }
 void func_003FF2E8(void) { func_0040EEA8(); }
 void func_003FF098(void) { func_0040E288(); }
 void func_003FF270(int *object,int index,int value) { func_0040EE00(object,index,value); }

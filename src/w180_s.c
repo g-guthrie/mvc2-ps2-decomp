@@ -17,7 +17,7 @@ void func_00401A48(u8 *p, s32 *a, s32 *b) {
     u8 raw;
     extern s32 func_003FFF78(void *);
     extern s32 func_003FFEC8(s32);
-    extern s32 func_003FF190(s32);
+    extern s32 func_003FF190(void *);
     extern s32 func_00402298(u8 *, s32);
     extern s32 func_003FFFF0(StreamGroup *);
     raw = p[1];
@@ -26,7 +26,7 @@ void func_00401A48(u8 *p, s32 *a, s32 *b) {
         arg = *(s32 *)(p + 4);
         *b = r1;
         r2 = func_003FFEC8(arg);
-        r3 = func_003FF190(*(s32 *)(p + 0xC));
+        r3 = func_003FF190(*(void **)(p + 0xC));
         r4 = func_00402298(p, 0);
         *a = r2 - (r3 + r4) + *(s32 *)(p + 0xA4);
     } else if ((s8)raw == 5) {

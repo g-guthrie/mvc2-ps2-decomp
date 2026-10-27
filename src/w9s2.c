@@ -8,8 +8,8 @@ extern char D_004BE7F0[];
 extern s32 func_0011EB60(void *);
 void func_0040E930(void) { func_0011EB60(D_004BE7F0); }
 
-extern s32 func_0010B970(s32, s32, s32, void *, s32);
-void func_0010BB98(s32 a, s32 b, s32 c) { char buf[16]; func_0010B970(a, b, c, buf, 0); }
+extern int func_0010B970(const char *, int, const void *, int *, int);
+int func_0010BB98(const char *a, int b, const void *c) { int buf[4]; return func_0010B970(a, b, c, buf, 0); }
 
 typedef struct { u8 b0, b1, b2, b3; s32 w4, w8, wC, w10, w14, w18, w1C, w20, w24, w28, w2C; } T3FC978;
 extern T3FC978 *func_003FC918(void);

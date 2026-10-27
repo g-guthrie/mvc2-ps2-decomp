@@ -1,12 +1,12 @@
 #include "stream_group_types.h"
 #include "runtime_stream_query.h"
 
-extern void func_0040EF00(void);
+extern int func_0040EF00(void);
 extern s32 func_0010F148(s32);
 extern void func_003F7B78(void);
 extern void *func_0011D8F8(void *, s32, s32);
 
-void func_003FF300(void) { func_0040EF00(); }
+int func_003FF300(int unused) { return func_0040EF00(); }
 int func_00400038(void *object) { return func_003F81C0(*(void **)((u8 *)object + 4)); }
 int func_003FFFA8(void *object) { return func_003F8140(*(void **)((u8 *)object + 4)); }
 
