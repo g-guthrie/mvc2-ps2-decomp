@@ -4866,7 +4866,7 @@ func_00278250,0x00278250,0xA8,src/bulk_copy_112.c,complete
 func_0027AC60,0x0027AC60,0xA8,src/bulk_copy_112.c,complete
 func_0027CFC0,0x0027CFC0,0xA8,src/bulk_copy_112.c,complete
 func_00281160,0x00281160,0xA8,src/bulk_copy_112.c,complete
-func_002861D0,0x002861D0,0xA8,src/bulk_copy_112.c,complete
+func_002861D0,0x002861D0,0xA8,src/bulk_copy_112.c,placeholder
 func_0028DAA0,0x0028DAA0,0xA8,src/bulk_copy_112.c,complete
 func_00294DB0,0x00294DB0,0xA8,src/bulk_copy_112.c,complete
 func_0029B080,0x0029B080,0xA8,src/bulk_copy_112.c,complete

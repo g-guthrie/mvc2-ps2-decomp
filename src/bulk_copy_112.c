@@ -90,6 +90,7 @@ void func_00278250(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; 
 void func_0027AC60(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00454F70[i]; }
 void func_0027CFC0(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00455290[i]; }
 void func_00281160(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00455960[i]; }
+/* Provisional: the 28-word source spans several separately defined data objects. */
 void func_002861D0(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00456670[i]; }
 void func_0028DAA0(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00457610[i]; }
 void func_00294DB0(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00457D60[i]; }
