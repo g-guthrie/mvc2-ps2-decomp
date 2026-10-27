@@ -2,7 +2,7 @@ typedef unsigned char u8;
 typedef signed char s8;
 typedef signed int s32;
 
-extern s32 func_00175700();
+extern int func_00175700(u8 *);
 extern void func_001843A0(u8 *);
 extern void func_001ECF90(u8 *);
 extern void func_00368FB0(u8 *);
@@ -16,8 +16,6 @@ extern void func_003A58E0(u8 *, u8 *);
 extern void func_003B1A50(u8 *, u8 *);
 extern void func_003B3810(u8 *, u8 *);
 extern void func_003B3860(u8 *, u8 *);
-extern void func_001CFEA0(u8 *);
-extern void func_001D0100(u8 *);
 
 void func_00361420(u8 *p, u8 *q)
 {
@@ -85,7 +83,7 @@ void func_003B37B0(u8 *p, u8 *q)
 
 void func_001ECDC0(u8 *p)
 {
-    if ((s8)func_00175700() < 0)
+    if ((s8)func_00175700(p) < 0)
         func_001843A0(p);
     else
         func_001ECF90(p);
@@ -93,20 +91,13 @@ void func_001ECDC0(u8 *p)
 
 void func_00368BE0(u8 *p)
 {
-    if ((s8)func_00175700() < 0)
+    if ((s8)func_00175700(p) < 0)
         func_00368FB0(p);
     else
         func_001E7F60(p);
 }
 
-void func_001D00B0(u8 *p)
-{
-    func_001CFEA0(p);
-    if ((s8)func_00175700() < 0) {
-        p[4]++;
-        func_001D0100(p);
-    }
-}
+
 
 void func_0037F000(u8 *p, void *owner)
 {

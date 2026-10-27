@@ -61,3 +61,14 @@ void func_001CFF90(u8 *p)
     func_001757E0(p,23,36);
     func_001D00B0(p);
 }
+
+extern int func_00175700(u8 *);
+extern void func_001D0100(u8 *);
+void func_001D00B0(u8 *p)
+{
+    func_001CFEA0(p);
+    if ((s8)func_00175700(p) < 0) {
+        p[4]++;
+        func_001D0100(p);
+    }
+}

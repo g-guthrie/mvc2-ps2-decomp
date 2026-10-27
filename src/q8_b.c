@@ -79,7 +79,7 @@ void func_00220420(u8 *p) {
     }
 }
 
-extern s32 func_00175700();
+extern int func_00175700(u8 *);
 extern void func_001843A0();
 void func_00275060(u8 *p) {
     f32 *a = (f32 *)(p + 0x5C);
@@ -97,7 +97,7 @@ void func_00275060(u8 *p) {
     }
 }
 
-extern s32 func_00175700();
+extern int func_00175700(u8 *);
 void func_001F4C70(u8 *p) {
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
@@ -127,7 +127,7 @@ s32 func_00174810(u8 *p) {
 
 typedef struct { f32 x, y, z; } V3;
 extern void func_001830D0();
-extern s32 func_00175700();
+extern int func_00175700(u8 *);
 void func_002C3520(u8 *p) {
     V3 v;
     p[0x40C] = 2;
@@ -147,12 +147,12 @@ void func_002C3520(u8 *p) {
     }
 }
 
-extern s32 func_00175700();
+extern int func_00175700(u8 *);
 extern void func_001843A0();
 extern void func_00183920();
 void func_001ECEE0(u8 *p) {
     f32 v[4];
-    if ((s8)func_00175700() < 0) {
+    if ((s8)func_00175700(p) < 0) {
         func_001843A0(p);
         return;
     }

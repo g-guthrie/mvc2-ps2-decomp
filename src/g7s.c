@@ -66,20 +66,20 @@ void func_0032C320(void) {
 
 extern u16 *D_004C29AC;
 extern u8 *D_004C29A8;
-extern void func_003859F0();
-extern void func_00175700();
+extern void func_003859F0(u8 *);
+extern int func_00175700(u8 *);
 
 void func_00385970(u8 *a0) {
     u8 *a1 = *(u8 **)(a0 + 0x18);
     if (*D_004C29AC != *(u16 *)(a1 + 0x168)) {
-        func_003859F0();
+        func_003859F0(a0);
     } else {
         *(float *)(a0 + 0x34) = *(float *)(a1 + 0x34);
         *(float *)(a0 + 0x38) = *(float *)(a1 + 0x38);
         if (D_004C29A8[1] != 0) {
-            func_00175700();
+            func_00175700(a0);
         } else {
-            func_003859F0();
+            func_003859F0(a0);
         }
     }
 }
