@@ -10,6 +10,7 @@ typedef struct { u8 pad0[0x1C]; s16 h; u8 pad1e[2]; u8 idx; u8 pad21[0x13]; f32 
 extern V13F5F0 D_004406E0[];
 extern V13F5F0 D_004407A0[];
 
+/* Provisional: the coordinate table extents and actor selector need proof. */
 void func_0013F5F0(P13F5F0 *p) {
     V13F5F0 *a = &D_004406E0[p->idx];
     V13F5F0 *b = &D_004407A0[p->idx];
