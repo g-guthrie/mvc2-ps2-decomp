@@ -1,5 +1,4 @@
-typedef unsigned char u8;
-typedef unsigned int u32;
+#include "stream_group_types.h"
 typedef unsigned long long u64;
 
 extern int func_003F81B0(void *);
@@ -21,7 +20,7 @@ int func_00104598(int a, char *b) {
     *(int *)(b + 4) = 0x2000;
     return 0;
 }
-int func_003FFFF0(int *p) { return func_003F81B0((void *)p[1]); }
+int func_003FFFF0(StreamGroup *p) { return func_003F81B0(p->engine); }
 int func_003FFFD8(int *p) { return func_003F81A8((void *)p[1]); }
 
 

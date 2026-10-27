@@ -1,6 +1,4 @@
-typedef signed int s32;
-typedef unsigned int u32;
-typedef unsigned char u8;
+#include "stream_group_types.h"
 typedef unsigned long long u64;
 
 typedef struct { u8 prefix[4]; void *engine; } RuntimeStreamHandle;
@@ -11,9 +9,9 @@ extern char D_004BE8D8[];
 extern void func_0011EB60(void *);
 s32 func_0040EE60(void) { func_0011EB60(D_004BE8D8); return 0; }
 
-extern void func_003F83C0(s32);
-typedef struct { u8 a, b; u8 pad[2]; s32 v; } B;
-void func_003FF658(B *p) { func_003F83C0(p->v); p->b = 0; }
+struct H;
+extern void func_003F83C0(struct H *);
+void func_003FF658(StreamGroup *p) { func_003F83C0(p->engine); p->lifecycle = 0; }
 
 
 
