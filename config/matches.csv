@@ -7895,7 +7895,7 @@ func_00316940,0x00316940,0x34,src/height_limits.c,complete
 func_001519E0,0x001519E0,0x3C,src/dupcluster_001519E0.c,complete
 func_001822B0,0x001822B0,0x44,src/float_state_limits.c,complete
 func_001BDA10,0x001BDA10,0x44,src/float_state_limits.c,complete
-func_00298FC0,0x00298FC0,0x4C,src/float_motion_transitions.c,complete
+func_00298FC0,0x00298FC0,0x4C,src/actor_landing_motion_00298fc0.c,complete
 func_002CEC40,0x002CEC40,0x4C,src/actor_motion_callbacks_002cec40.c,complete
 func_00184110,0x00184110,0x40,src/dupcluster_00184110.c,complete
 func_001A9650,0x001A9650,0x48,src/dupcluster_001A9650.c,complete
@@ -11557,7 +11557,7 @@ func_001E9160,0x001E9160,0x98,src/n2d.c,complete
 func_00188430,0x00188430,0x90,src/n2e.c,complete
 func_002806C0,0x002806C0,0x90,src/n3.c,complete
 func_00289980,0x00289980,0x7C,src/n3.c,complete
-func_00299500,0x00299500,0x80,src/n3.c,complete
+func_00299500,0x00299500,0x80,src/actor_landing_motion_00298fc0.c,complete
 func_003A2CE0,0x003A2CE0,0x80,src/n3.c,complete
 func_0024D3E0,0x0024D3E0,0x80,src/n3.c,complete
 func_00313B00,0x00313B00,0x80,src/n3.c,complete

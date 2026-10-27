@@ -12,9 +12,3 @@ void func_0013C9A0(u8 *p) {
  *(float *)(p+0x74)=value;
  if (value<=0.0f) { ++p[4];*(float *)(p+0x74)=0.0f;p[0x13c]=0; }
 }
-void func_00298FC0(u8 *p) {
- float previous=*(float *)(p+0x60);
- *(float *)(p+0x38)+=previous;
- *(float *)(p+0x60)+=*(float *)(p+0x6c);
- if (previous * *(float *)(p+0x60)<0.0f) *(float *)(p+0x6c)=-1.205357074737548828125f;
-}

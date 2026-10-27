@@ -92,22 +92,7 @@ void func_00289980(u8 *p) {
     }
 }
 
-extern void func_00298FC0(u8 *);
-extern void func_00183d50(void);
-extern void func_00299580(u8 *);
-extern void func_00299010(u8 *);
-void func_00299500(u8 *p) {
-    func_00298FC0(p);
-    if (*(f32 *)(p + 0x38) < *(f32 *)(p + 0x430)) {
-        p[6]++;
-        *(f32 *)(p + 0x38) = *(f32 *)(p + 0x430);
-        func_00183d50();
-        func_00299580(p);
-    } else if (*(s8 *)(p + 0x151) == 0) {
-        func_00175700();
-        func_00299010(p);
-    }
-}
+
 
 extern void func_001843A0(u8 *);
 void func_002ACF70(u8 *p) {
