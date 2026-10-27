@@ -744,7 +744,7 @@ void func_00416A50(void) {}
 
 s32 func_00416A60(void) { return 0; }
 
-void func_00416AA0(void) {}
+void func_00416AA0(float value, s32 a, s32 b, s32 c) {}
 
 void func_00417FC0(void) {}
 
