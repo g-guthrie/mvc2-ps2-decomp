@@ -68,7 +68,7 @@ void func_001C44D0(u8 *p, u8 *q) {
         }
     }
 }
-extern void func_0018D580();
+extern void func_0018D580(u8 *, u8 *);
 void func_0018D930(u8 *p) {
     u8 *q = *(u8 **)(p + 0x1C8);
     if (q) {
@@ -76,7 +76,7 @@ void func_0018D930(u8 *p) {
         if (t == 0 || t == 1) {
             u32 i = p[0x1B6] & 0x7F;
             *(u8 **)(p + 0x1D0) = *(u8 **)(q + 0x184) + i * 28;
-            if (*(u32 *)(p + 0x1D0)) func_0018D580(p, q);
+            if (*(u8 **)(p + 0x1D0)) func_0018D580(p, q);
         }
     }
 }
