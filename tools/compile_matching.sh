@@ -5111,7 +5111,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/wave35.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/wave35.o"
 "$PYTHON" tools/verify_object.py "$BUILD/wave35.o" private/SLUS_204.86.rom --source src/wave35.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/wave35b.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/wave35b.o"
+    src/wave35b.c -c -lang c -O3 -sdatathreshold 8 -i src -o "$BUILD/wave35b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/wave35b.o" private/SLUS_204.86.rom --source src/wave35b.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/wave35d.c -c -lang c -O3 -Op -o "$BUILD/wave35d.o"
@@ -6564,7 +6564,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/m7g.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/m7g.o"
 "$PYTHON" tools/verify_object.py "$BUILD/m7g.o" private/SLUS_204.86.rom --source src/m7g.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/m7i.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/m7i.o"
+    src/m7i.c -c -lang c -O3 -sdatathreshold 8 -i src -o "$BUILD/m7i.o"
 "$PYTHON" tools/verify_object.py "$BUILD/m7i.o" private/SLUS_204.86.rom --source src/m7i.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/m7j.c -c -lang c -O3 -Op -o "$BUILD/m7j.o"
@@ -8283,7 +8283,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/y3_h.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/y3_h.o"
 "$PYTHON" tools/verify_object.py "$BUILD/y3_h.o" private/SLUS_204.86.rom --source src/y3_h.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/y4_a.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/y4_a.o"
+    src/y4_a.c -c -lang c -O3 -Op -sdatathreshold 8 -i src -o "$BUILD/y4_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/y4_a.o" private/SLUS_204.86.rom --source src/y4_a.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/y4_b.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/y4_b.o"

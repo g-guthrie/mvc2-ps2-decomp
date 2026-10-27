@@ -1,3 +1,4 @@
+#include "queue_request_api.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -12,7 +13,7 @@ extern u8 D_004CD1E6[];
 extern void func_00418090();
 extern void func_0012DA40();
 extern void *func_003DA750(s32, s32, s32);
-extern s32 func_001E5870();
+
 extern void func_003DCD40();
 void func_001E23A0(void) {
     s32 a;
@@ -21,7 +22,7 @@ void func_001E23A0(void) {
     if (D_004CD1D8[0] != 0x3D) {
         func_0012DA40(0x3D, a, 1);
         D_004CD1D8[0] = 0x3D;
-        D_004CD1E6[0] = func_001E5870(a, 5);
+        D_004CD1E6[0] = func_001E5870((const void *)(u32)a, 5);
         func_003DCD40(D_004C287C, 0, 4);
     }
 }

@@ -1,3 +1,4 @@
+#include "queue_request_api.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -163,7 +164,7 @@ void func_001E2050(void) {
     extern void func_001E46B0(void);
     extern void func_001E4560(void);
     extern void func_0012DA40(s32, s32, s32);
-    extern u8 func_001E5870(s32, s32);
+
     extern void func_003DCD40(s32, s32, s32);
     extern void func_001E3D10(void);
     extern void func_001E4260(s32);
@@ -172,10 +173,10 @@ void func_001E2050(void) {
     func_001E4560();
     s = (D_004C287C + 0x3F) & -0x40;
     func_0012DA40(0x3B, s, 1);
-    D_004CD1FA[0] = func_001E5870(s, 6);
+    D_004CD1FA[0] = func_001E5870((const void *)(u32)s, 6);
     func_003DCD40(D_004C287C, 0, 4);
     func_0012DA40(0x3C, s, 1);
-    D_004CD20E[0] = func_001E5870(s, 7);
+    D_004CD20E[0] = func_001E5870((const void *)(u32)s, 7);
     func_003DCD40(D_004C287C, 0, 4);
     func_001E3D10();
     if (D_004BFAE0 != 0) {

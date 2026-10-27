@@ -1,3 +1,4 @@
+#include "queue_request_api.h"
 #include "actor_motion_node.h"
 typedef unsigned char u8;
 typedef signed char s8;
@@ -10,12 +11,12 @@ extern s32 D_004CD1D8[];
 extern u8 D_004CD1E6[];
 extern s32 D_004C28B8;
 extern void func_0012DA40(s32, s32, s32);
-extern s32 func_001E5870(s32, s32);
+
 void func_001E2330(void) {
     if (D_004CD1D8[0] != 0x3E) {
         func_0012DA40(0x3E, D_004C28B8 + 0x160000, 1);
         D_004CD1D8[0] = 0x3E;
-        D_004CD1E6[0] = func_001E5870(D_004C28B8 + 0x160000, 5);
+        D_004CD1E6[0] = func_001E5870((const void *)(u32)(D_004C28B8 + 0x160000), 5);
     }
 }
 

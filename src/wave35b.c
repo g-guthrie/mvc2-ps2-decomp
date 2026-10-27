@@ -1,3 +1,4 @@
+#include "queue_request_api.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -52,7 +53,7 @@ extern s32 D_004CD1D8[];
 extern u8 D_004CD1E6[];
 extern u8 *D_004C287C;
 extern void func_0012DA40(s32 a, u8 *b, s32 c);
-extern s32 func_001E5870(u8 *a, s32 b);
+
 extern void func_003DCD40(u8 *a, s32 b, s32 c);
 void func_001E22C0(void) {
     u8 *p = D_004C287C;
