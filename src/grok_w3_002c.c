@@ -24,38 +24,6 @@ typedef void (*DispatchFn)(u8 *);
 extern DispatchFn jtbl_00459DA0[];
 extern DispatchFn jtbl_0045A590[];
 
-void func_002C29D0(u8 *p)
-{
-    if (D_004C28D8[2])
-        p[6]++;
-}
-
-void func_002C2BA0(u8 *p)
-{
-    if (D_004C28D8[2])
-        p[6]++;
-}
-
-void func_002C40D0(u8 *p)
-{
-    p[533] = 0;
-    *(u32 *)(p + 92) = 0;
-    *(u32 *)(p + 104) = 0;
-    *(u32 *)(p + 96) = 0;
-    *(u32 *)(p + 108) = 0xBF4DB6DBu;
-    func_00184540(p);
-}
-
-void func_002CAFA0(u8 *p)
-{
-    p[533] = 0;
-    *(u32 *)(p + 96) = 0;
-    *(u32 *)(p + 104) = 0;
-    *(u32 *)(p + 92) = 0;
-    *(u32 *)(p + 108) = 0xBF4DB6DBu;
-    func_00184540(p);
-}
-
 void func_002C2980(u8 *p)
 {
     func_00175700(p);

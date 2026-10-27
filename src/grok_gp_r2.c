@@ -52,18 +52,6 @@ void func_0016C480(u8 *p) {
     }
 }
 
-void func_002C29D0(u8 *p) {
-    if (D_004C28D8[2]) {
-        p[6]++;
-    }
-}
-
-void func_002C2BA0(u8 *p) {
-    if (D_004C28D8[2]) {
-        p[6]++;
-    }
-}
-
 void func_0032EE50(u8 *p) {
     if (!D_004C27D0) {
         *(s32 *)(p + 68) += 512;

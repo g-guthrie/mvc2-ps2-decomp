@@ -43,24 +43,6 @@ void func_0037B400(u8 *p, u8 *q) {
     func_003DAA40(p, q);
 }
 
-void func_002C40D0(u8 *p) {
-    p[533] = 0;
-    *(s32 *)(p + 92) = 0;
-    *(s32 *)(p + 104) = 0;
-    *(s32 *)(p + 96) = 0;
-    *(s32 *)(p + 108) = 0xBF4DB6DB;
-    func_00184540(p);
-}
-
-void func_002CAFA0(u8 *p) {
-    p[533] = 0;
-    *(s32 *)(p + 96) = 0;
-    *(s32 *)(p + 104) = 0;
-    *(s32 *)(p + 92) = 0;
-    *(s32 *)(p + 108) = 0xBF4DB6DB;
-    func_00184540(p);
-}
-
 void func_00329890(void) { func_0011D8F8(D_004F1CC0, 0, 20); }
 
 void func_0013C5A0(void) {
