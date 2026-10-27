@@ -66,13 +66,13 @@ void func_002B1340(u8 *p) {
 extern char D_004BA508[];
 extern char D_004BA510[];
 
-s32 func_003DCBB0(char *a0, s32 a1, s32 a2) {
+s32 func_003DCBB0(char *a0, const void *a1, s32 a2) {
     extern void func_0011FE88();
     extern s32 func_0011FFA0();
     extern void func_0011FC10();
     extern void func_00120868();
     extern s32 func_00107E90();
-    extern void func_00108730();
+    extern s32 func_00108730(s32, const void *, s32);
     extern void func_00108118();
     char buf[0x800];
     char *s;

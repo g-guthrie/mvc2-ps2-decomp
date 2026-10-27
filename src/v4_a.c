@@ -264,7 +264,7 @@ void func_0034CE70(u8 *p) {
     }
 }
 
-s32 func_003DCC70(s32 a, s32 b, s32 c) {
+s32 func_003DCC70(const char *a, const void *b, s32 c) {
     extern u8 D_004BA508[], D_004BA510[];
     extern void func_0011FE88();
     extern s32 func_0011FFA0();
@@ -272,7 +272,7 @@ s32 func_003DCC70(s32 a, s32 b, s32 c) {
     extern void func_00120868();
     extern s32 func_00107E90();
     extern void func_00108298();
-    extern void func_00108730();
+    extern s32 func_00108730(s32, const void *, s32);
     extern void func_00108118();
     char buf[0x800];
     char *end;
