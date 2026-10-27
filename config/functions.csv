@@ -15809,7 +15809,7 @@ func_00353670,0x00353670,0x1C,0x0035368C,code,spimdisasm-explicit-size-before-fi
 func_00353690,0x00353690,0x9C,0x0035372C,code,spimdisasm-explicit-size-before-first-data
 func_00353730,0x00353730,0x60,0x00353790,code,spimdisasm-explicit-size-before-first-data
 func_00353790,0x00353790,0x20,0x003537B0,code,matching-c-head-split
-residual_003537B0,0x003537B0,0x1E8,0x00353998,assembly_residual,verified-boundary-after-matching-head
+func_003537B0,0x003537B0,0x1E8,0x00353998,code,verified-source-recovery
 func_003539A0,0x003539A0,0x2C,0x003539CC,code,exact-MWCC-C-entry-table-bounded
 residual_003539CC,0x003539CC,0x4,0x003539D0,assembly_residual,native-prefix-before-verified-c-body
 func_003539D0,0x003539D0,0x2A8,0x00353C78,code,verified-complete-c-function
