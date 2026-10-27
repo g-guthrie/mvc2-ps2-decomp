@@ -19335,3 +19335,4 @@ func_0017E0D0,0x0017E0D0,0xDC,src/linked_actor_motion_0017e0d0.c,placeholder
 func_003A7C60,0x003A7C60,0xB0,src/owner_event_init_003a7c60.c,placeholder
 func_00326930,0x00326930,0x100,src/frame_lists_00326930.c,placeholder
 func_003C7F70,0x003C7F70,0xA4,src/owner_init_003c7f70.c,placeholder
+func_003B8980,0x003B8980,0x88,src/owner_state_dispatch_003b8980.c,placeholder
