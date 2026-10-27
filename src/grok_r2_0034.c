@@ -8,13 +8,13 @@ typedef float f32;
 
 extern void func_003422F0(s32);
 extern void func_0034DC20(u8 *);
-extern void func_0034FA60(void);
+extern void func_0034FA60(u8 *);
 extern void func_00359A90(u8 *);
 extern void func_00359AE0(u8 *);
 extern void func_00359B80(u8 *);
 extern void func_00359BD0(u8 *);
 extern void func_00359C20(u8 *);
-extern void func_0036A8B0(void);
+extern void func_0036A8B0(u8 *);
 extern void func_0037F920(u8 *);
 extern void func_003DAA40(u8 *);
 extern void func_001E3240(u8 *, s32);
@@ -49,16 +49,16 @@ void func_00371450(u8 *p)
     }
 }
 
-void func_0034F7D0(void)
+void func_0034F7D0(u8 *p)
 {
     D_004C294C[1] = 0;
-    func_0034FA60();
+    func_0034FA60(p);
 }
 
-void func_0036A8A0(void)
+void func_0036A8A0(u8 *p)
 {
     D_004C2988[9] = 0;
-    func_0036A8B0();
+    func_0036A8B0(p);
 }
 
 void func_0034DC00(u8 *p)
