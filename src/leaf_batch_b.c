@@ -29,7 +29,7 @@ void func_00198930(u8 *a0) {
     a0[316] = 0;
 }
 
-void func_0019EA00(u8 *a0) {
+void func_0019EA00(u8 *a0, u8 *owner_unused) {
     u8 *v1 = *(u8 **)(a0 + 20);
     *(s16 *)(a0 + 320) = *(s16 *)(v1 + 320);
     *(s8 *)(a0 + 49) = -2;
