@@ -12,7 +12,10 @@ extern int func_001757E0(u8 *,int,int);
 typedef struct {u8 pad0,kind,team,pad3,phase,pad5[0x1B],choice,pathIndex,pad22[2];s8 layer;u8 pad25[0xB];s8 group;u8 pad31[3];V3 position;u8 pad40[0x10];V3 scale;f32 vx,vy,targetOffsetX,ax,ay;u8 pad70[0xCC],visible,pad13D[3];short facing;u8 pad142[0x75],mode,variant;} Actor;
 typedef signed short s16;
 typedef struct {s16 startX[10],targetX[10];} OffsetTables;
-typedef struct {s32 word[49];} State;
+
+#include "actor_inherited_state.h"
+typedef ActorState State;
+
 extern OffsetTables D_0044F000 __attribute__((aligned(16)));
 extern f32 D_004F1FC8,D_004F1FCC;
 extern int func_00174170(void),func_001754A0(u8 *,int,int);

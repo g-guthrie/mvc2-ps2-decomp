@@ -2,7 +2,10 @@
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned int u32;
-typedef struct {u32 words[49];} Fields;
+
+#include "actor_inherited_state.h"
+typedef ActorState Fields;
+
 typedef struct {float x,y,z;} V3;
 typedef struct {u8 prefix[0x31];s8 depth;} Depth;
 /* Native factory call sites pass modes no greater than eight. */

@@ -8,7 +8,10 @@ typedef float f32;
 
 typedef struct { f32 x, y, z; } V3;
 
-typedef struct {s32 word[49];} State;
+
+#include "actor_inherited_state.h"
+typedef ActorState State;
+
 typedef void (*OwnerCallback)(u8 *,u8 *);
 extern OwnerCallback jtbl_004BFA90[2] __attribute__((section(".sdata")));
 extern void func_001D6D10(u8 *);

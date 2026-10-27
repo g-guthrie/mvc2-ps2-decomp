@@ -1,6 +1,9 @@
 #pragma padloop on
 typedef unsigned char u8;typedef signed char s8;typedef short s16;typedef unsigned int u32;
-typedef struct {u32 word[49];} State;
+
+#include "actor_inherited_state.h"
+typedef ActorState State;
+
 typedef struct {float x,y,z;} V3;
 typedef struct {s16 x,y; s8 animation;u8 pad;} Row;
 /* Eight native six-byte records; the parent emits indices zero through seven. */
