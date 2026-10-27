@@ -61,7 +61,7 @@ void func_00303B40(u8 *p, void *context)
     }
 }
 
-extern void *func_003A6790(u8 *, int, int);
+extern void *func_003A6790(u8 *, u8, u8);
 extern void func_002EC750(u8 *, void *);
 void func_002EC660(u8 *p, void *context)
 {

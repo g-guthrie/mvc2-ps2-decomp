@@ -89,7 +89,7 @@ void func_00392F00(u8 *p) {
     }
 }
 
-extern s32 func_003996C0(void *p, s32 a);
+extern void *func_003996C0(void *p, u8 a);
 s32 func_002CB3A0(u8 *p) {
     p[0x40C] = 2;
     p[0x33C] = 5;

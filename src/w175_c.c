@@ -117,7 +117,7 @@ void func_003132E0(u8 *a, u8 *b)
     extern void func_00175700(u8 *);
     extern void func_001DD920(u8 *, s32, s32);
     extern void func_001830D0(u8 *, f32 *, s32);
-    extern u8 *func_003C11D0(u8 *, s32, s32);
+    extern void *func_003C11D0(u8 *, u8, u8);
     extern void func_001843A0(u8 *);
     extern void func_001266A0(u8 *, s32, s32);
     f32 v[3];

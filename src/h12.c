@@ -181,7 +181,7 @@ s32 func_0028B9C0(u8 *p) {
 
 extern void func_001843A0(void *p);
 extern void func_001CEA00(void *p, s32 a);
-extern void func_003996C0(void *p, s32 a);
+extern void *func_003996C0(void *p, u8 a);
 
 extern u8 D_00454AB0[];
 extern s32 func_00189310(void *p, void *a, void *b);

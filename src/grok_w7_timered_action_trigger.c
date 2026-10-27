@@ -19,7 +19,7 @@ void func_00303D70(u8 *p)
     }
 }
 
-extern void *func_003A6790(u8 *, int, int);
+extern void *func_003A6790(u8 *, u8, u8);
 void func_002EC980(u8 *p)
 {
     s16 timer;

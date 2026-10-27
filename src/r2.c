@@ -79,7 +79,7 @@ u8 *func_0022B620(u8 *p) {
 }
 
 extern void func_001CEA00();
-extern void func_003996C0();
+extern void *func_003996C0(void *, u8);
 
 void func_002C7B40(u8 *p) {
     if ((s8)func_00175700(p) < 0) {
