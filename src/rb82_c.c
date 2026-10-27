@@ -65,7 +65,7 @@ void func_003F6150(Ctx *ctx)
                     }
                     ctx->a[c]->vt->f18(ctx->a[c], 0, 0x10, &b2);
                     if (b2.n == 0) {
-                        for (;;) __asm__ volatile("nop");
+                        for (;;) {}
                     }
                     ((s32 *)b2.p)[0] = mx;
                     ((s32 *)b2.p)[1] = ctx->pos[c];
