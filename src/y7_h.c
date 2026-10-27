@@ -41,7 +41,7 @@ void func_00380770(u8 *a, u8 *b) {
 }
 
 void func_002FAAC0(u8 *a, u8 *b) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001D8AB0();
     extern void func_001830D0();
     u32 v[3];
@@ -72,11 +72,11 @@ void func_002FAAC0(u8 *a, u8 *b) {
 }
 
 void func_002ED4C0(u8 *a) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001843A0();
     extern void func_003A6DC0();
     s16 v;
-    func_00175700();
+    func_00175700(a);
     v = *(s16 *)(a + 0x1C) - 1;
     *(s16 *)(a + 0x1C) = v;
     if (v == 0) {

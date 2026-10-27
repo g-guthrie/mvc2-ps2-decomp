@@ -12,7 +12,7 @@ extern s32 D_0044F570[];
 extern s32 D_0044F530[];
 extern s32 D_0044F550[];
 
-extern void func_00175700();
+extern int func_00175700(u8 *);
 extern s32 func_0018AAC0(u8 *);
 extern s32 func_001864a0(u8 *);
 extern s32 func_001F72E0(u8 *);
@@ -31,7 +31,7 @@ void func_001F51B0(u8 *p) {
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
-    func_00175700();
+    func_00175700(p);
     if (func_0018AAC0(s5)) {
         if ((s8)p[0x539] != 0) {
             if ((s8)p[0x151] != 0) {

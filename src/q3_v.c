@@ -11,7 +11,7 @@ void func_002364A0(u8 *p, u8 *q) {
     extern void func_00185490();
     extern void func_00183D50();
     extern void func_001757E0();
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_002365D0();
     extern void func_001843A0();
     f32 lim;
@@ -35,10 +35,10 @@ void func_002364A0(u8 *p, u8 *q) {
             }
             return;
         } else {
-            func_00175700();
+            func_00175700(p);
             if (*(s8 *)(p + 0x151) != 0) func_002365D0(p, q);
         }
     } else {
-        if (func_00175700(p) < 0) func_001843A0(p);
+        if ((s8)func_00175700(p) < 0) func_001843A0(p);
     }
 }

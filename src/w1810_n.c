@@ -10,13 +10,13 @@ typedef struct {
     u8 p70[0x60]; s32 wd0; u8 pd4[0x7C]; u8 p150; s8 b151; u8 p152[0x94]; u8 b1e6;
 } P;
 void func_002ACD40(P *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001757E0(P *, s32, s32);
     f32 c;
     f32 z;
     s32 k;
     if (p->wd0 == 0) {
-        func_00175700();
+        func_00175700((u8 *)p);
         p->f34 += p->f5c;
         p->f5c += p->f68;
         p->f38 += p->f60;
@@ -38,7 +38,7 @@ void func_002ACD40(P *p) {
             p->b6 += 2;
             func_001757E0(p, 2, 6);
         } else {
-            func_00175700();
+            func_00175700((u8 *)p);
         }
     }
 }

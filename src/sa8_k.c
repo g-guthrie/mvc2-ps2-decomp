@@ -10,7 +10,7 @@ typedef struct { f32 x, y, z; } V3k;
 
 void func_002AB590(u8 *p)
 {
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001E3210(u8 *, s32);
     extern void func_001757E0(u8 *, s32, s32);
     extern void func_001E3A40(u8 *);
@@ -28,7 +28,7 @@ void func_002AB590(u8 *p)
         *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
         *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
         *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
-        if (*(s8 *)(p + 0x151) == 0) func_00175700();
+        if (*(s8 *)(p + 0x151) == 0) func_00175700(p);
         a = p[7];
         if (a == 0 && *(f32 *)(p + 0x38) <= 342.85711669921875f) {
             p[7] = a + 1;
@@ -42,7 +42,7 @@ void func_002AB590(u8 *p)
             return;
         }
     } else {
-        r = func_00175700();
+        r = func_00175700(p);
         if (r >= 0) {
             v = *(s8 *)(p + 0x151);
             if (v < 0) {
