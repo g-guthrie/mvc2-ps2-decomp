@@ -24,7 +24,7 @@ void func_00416110(s32 a, s32 b, s32 *c) {
     }
 }
 
-extern void func_001001E0(u64 a);
-void func_00100230(u32 a) {
-    func_001001E0((u64)a);
+extern double func_001001E0(u64 a);
+double func_00100230(u32 a) {
+    return func_001001E0((u64)a);
 }
