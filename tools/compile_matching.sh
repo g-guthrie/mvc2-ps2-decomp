@@ -21561,4 +21561,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_context_act
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_air_entry_00227940.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_air_entry_00227940.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_air_entry_00227940.o" private/SLUS_204.86.rom --source src/actor_air_entry_00227940.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/actor_ground_event_0024d2c0.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/actor_ground_event_0024d2c0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_ground_event_0024d2c0.o" private/SLUS_204.86.rom --source src/actor_ground_event_0024d2c0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
