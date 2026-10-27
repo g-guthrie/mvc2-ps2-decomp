@@ -1,9 +1,10 @@
 typedef unsigned char u8;
 typedef float f32;
 
-extern void func_001551A0(u8 *, int, f32, int);
+extern void func_001551A0(f32 *, int, f32, int);
 
-void func_001550D0(u8 *a0, int kind, int a2, int a3)
+/* Provisional: child argument order and the kind domain need reconciliation. */
+void func_001550D0(f32 *a0, int kind, int a2, int a3)
 {
     f32 f;
     int i;

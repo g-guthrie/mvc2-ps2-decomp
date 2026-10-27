@@ -482,7 +482,7 @@ void func_00156520(V3 *v, s32 unused, s32 flag, s32 c, s32 e)
     extern void func_001568A0(u8 *, s32);
     extern void func_001569C0(u8 *, s32);
     extern void func_00156AD0(u8 *, s32);
-    extern void func_001550D0(V3 *, s32, s32, s32);
+    extern void func_001550D0(f32 *, s32, s32, s32);
     u8 *o;
     if ((o = func_003DA750(0, e, 1)) != 0) {
         D_004D1900[0] = D_004D1900[0] + 1;
@@ -498,6 +498,6 @@ void func_00156520(V3 *v, s32 unused, s32 flag, s32 c, s32 e)
         func_001568A0(o, e);
         func_001569C0(o, e);
         func_00156AD0(o, e);
-        func_001550D0(v, flag, c, e);
+        func_001550D0(&v->x, flag, c, e);
     }
 }

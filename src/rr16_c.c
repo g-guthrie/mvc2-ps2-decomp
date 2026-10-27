@@ -8,7 +8,7 @@ typedef float f32;
 typedef double f64;
 typedef struct { f32 x, y, z; } V3;
 
-extern s32 D_004C2838;
+extern void *D_004C2838;
 typedef struct DB {
     u8 _p0[0x4];
     u8 b4;
@@ -28,6 +28,7 @@ extern f32 D_00583C48[];
 extern f32 D_00583C4C[];
 extern f32 D_00583C50[];
 
+/* Provisional: this unrelated duplicate affects compiler allocation. */
 static void func_00338670(DB *p)
 {
     p->h1c = p->h1c + 1;
@@ -47,9 +48,9 @@ static void func_00338670(DB *p)
 static void (*keep_00338670)(DB *) = func_00338670;
 
 
-void func_001551A0(f32 *pos, u32 n, u8 type, f32 scale) {
+void func_001551A0(f32 *pos, u32 n, int type, f32 scale) {
     extern u8 *func_003DA750(s32, u8, s32);
-    extern void func_001553B0();
+    extern void func_001553B0(u8 *);
     extern s32 func_00417A40();
     extern f32 func_00417440(u32);
     extern f32 func_00417500(u32);
@@ -57,11 +58,11 @@ void func_001551A0(f32 *pos, u32 n, u8 type, f32 scale) {
     u8 *o;
     u16 ang;
     f32 k, r, t;
-    if ((o = func_003DA750(0, (type == 9) ? 0x18 : 0x3C, 1)) != 0) {
+    if ((o = func_003DA750(0, ((u8)type == 9) ? 0x18 : 0x3C, 1)) != 0) {
         o[0x13C] = 1;
-        *(s32 *)(o + 0x10) = (s32)func_001553B0;
+        *(void (**)(u8 *))(o + 0x10) = func_001553B0;
         *(s16 *)(o + 0xCC) = func_00417A40() % 3 + 0x60;
-        *(s32 *)(o + 0x84) = D_004C2838;
+        *(void **)(o + 0x84) = D_004C2838;
         *(V3 *)(o + 0x34) = *(V3 *)pos;
         ang = (u16)(s32)(0.5 + 65536.0 * (double)(11.25f * (f32)n) / 360.0);
         k = 0.5f * func_00417440(ang);
