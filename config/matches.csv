@@ -10932,7 +10932,7 @@ func_002048D0,0x002048D0,0x80,src/h8h.c,complete
 func_00156B50,0x00156B50,0x84,src/h8h.c,complete
 func_00191770,0x00191770,0x7C,src/h8q.c,complete
 func_003868B0,0x003868B0,0x84,src/h8p.c,complete
-func_003C2510,0x003C2510,0x7C,src/h8r.c,placeholder
+func_003C2510,0x003C2510,0x7C,src/h8r.c,complete
 func_00193180,0x00193180,0x88,src/h8r.c,complete
 func_001B5F00,0x001B5F00,0x5c,src/h9.c,complete
 func_0038EDE0,0x0038EDE0,0x60,src/h9.c,complete

@@ -7,11 +7,11 @@ typedef signed int s32;
 typedef float f32;
 typedef struct { f32 x, y, z; } V3;
 
-/* Provisional: retail conversion helper returns s32; this declaration needs matching C. */
-extern s16 func_00118FA8(f32);
+extern s32 fptosi(f32);
 s32 func_003C2510(u8 *p) {
-    s16 d = func_00118FA8(*(f32 *)(p + 0x34) - (f32)*(s16 *)(p + 0xD0));
-    if (d < 0) d = -d; return (f32)d < 26.666666f ? 1 : 0;
+    s16 d = (s16)fptosi(*(f32 *)(p + 0x34) - (f32)*(s16 *)(p + 0xD0));
+    if (d < 0) d = -d;
+    return (f32)d < 26.666666f ? 1 : 0;
 }
 
 void func_00193180(u8 *p) {
