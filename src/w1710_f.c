@@ -8,8 +8,9 @@ typedef float f32;
 
 
 typedef struct { u8 pad0[0x22]; u8 b22; u8 pad23[0x15]; f32 f38; u8 pad3c[0x17B]; u8 b1b7; u8 pad1b8[0x56]; u16 h20e; u8 pad210[2]; u8 b212; } S6;
-s32 func_002BE610(S6 *p) {
-    extern s32 func_001E7FD0();
+u8 *func_002BE610(u8 *actor) {
+    S6 *p = (S6 *)actor;
+    extern u8 *func_001E7FD0(u8 *);
     u8 a;
     s32 v = (p->h20e & 0xC00) >> 10;
     p->b22 = v;
@@ -17,9 +18,9 @@ s32 func_002BE610(S6 *p) {
         a = p->b212;
         if (a == 0) {
             if (p->b1b7 == 1 && !(p->f38 <= 137.14285278320312f)) {
-                s32 r;
+                u8 *r;
                 { u32 t = *(u8 *)((u8 *)p + 0x22); p->b22 = t ^ 3; }
-                if ((r = func_001E7FD0(p)) != 0) {
+                if ((r = func_001E7FD0((u8 *)p)) != 0) {
                     *(u8 *)((u8 *)p + 0x20B) = 2;
                     return r;
                 }
@@ -28,8 +29,8 @@ s32 func_002BE610(S6 *p) {
         }
         if (a == 1) {
             if (p->b1b7 == 1 && !(p->f38 <= 137.14285278320312f)) {
-                s32 r;
-                if ((r = func_001E7FD0(p)) != 0) {
+                u8 *r;
+                if ((r = func_001E7FD0((u8 *)p)) != 0) {
                     *(u8 *)((u8 *)p + 0x20B) = 1;
                     return r;
                 }
