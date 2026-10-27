@@ -1,16 +1,16 @@
 /* Preserve the two accepted input modes and their distinct transition kinds. */
 typedef unsigned char u8;
-extern int func_001E7FD0(u8 *);
+extern u8 *func_001E7FD0(u8 *);
 
 #define MODE_INPUT_GATE(name, kind) \
-int name(u8 *p) { \
+u8 *name(u8 *p) { \
     if ((p[0x22] = (*(unsigned short *)(p + 0x20e) & 0xc00) >> 10)) { \
         int mode = p[0x212]; \
         if (!mode && p[0x1b7] == 1) { \
-            int result = func_001E7FD0(p); \
+            u8 *result = func_001E7FD0(p); \
             if (result) { p[0x20b] = 0; return result; } \
         } else if (mode == 1 && p[0x1b7] == 1) { \
-            int result = func_001E7FD0(p); \
+            u8 *result = func_001E7FD0(p); \
             if (result) { p[0x20b] = kind; return result; } \
         } \
     } \
@@ -29,14 +29,14 @@ MODE_INPUT_GATE(func_0030BB60, 1)
 
 MODE_INPUT_GATE(residual_002B7940, 2)
 /* Native table entry 0x0044F490 uses the opposite two input transition results. */
-int func_001ED000(u8 *p) {
+u8 *func_001ED000(u8 *p) {
     if ((p[0x22] = (*(unsigned short *)(p + 0x20e) & 0xc00) >> 10)) {
         int mode = p[0x212];
         if (!mode && p[0x1b7] == 1) {
-            int result = func_001E7FD0(p);
+            u8 *result = func_001E7FD0(p);
             if (result) { p[0x20b] = 1; return result; }
         } else if (mode == 1 && p[0x1b7] == 1) {
-            int result = func_001E7FD0(p);
+            u8 *result = func_001E7FD0(p);
             if (result) { p[0x20b] = 0; return result; }
         }
     }
