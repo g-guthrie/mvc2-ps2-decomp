@@ -26,10 +26,11 @@ void func_00411270(u16 *p) {
     p[1] = v;
 }
 
-extern void func_003F64D0(s32 a);
+typedef struct S3F6 S3F6;
+extern void func_003F64D0(S3F6 *, s32);
 void func_003FF600(s32 *p, s32 v) {
     p[14] = v;
-    func_003F64D0(p[1]);
+    func_003F64D0((S3F6 *)p[1], v);
 }
 
 extern char D_004BB448[];
