@@ -19224,3 +19224,4 @@ func_00401050,0x00401050,0xFC,src/sdk_rna_status_00401050.c,complete
 func_003FB460,0x003FB460,0xB0,src/sdk_adx_cleanup_003fb460.c,complete
 func_00107058,0x00107058,0x3C,src/sony29_rpc_busy_00107058.c,complete
 func_00143860,0x00143860,0xB4,src/scene_category_select_00143860.c,complete
+func_003867E0,0x003867E0,0xC8,src/actor_init_003867e0.c,complete
