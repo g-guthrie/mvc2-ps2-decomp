@@ -115,9 +115,9 @@ typedef struct FD {
 } FD;
 
 void func_002C23F0(FD *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     s16 v;
-    func_00175700();
+    func_00175700((u8 *)p);
     if (p->b151 != 0) {
         if (p->b20 == 0) {
             u32 t = p->b6;
@@ -259,51 +259,7 @@ void func_001F00E0(FF *p) {
     }
 }
 
-typedef struct FG {
-    u8 pad0[6];
-    u8 b6;
-    u8 pad1[0x1E - 7];
-    s16 h1e;
-    u8 pad1b[0x34 - 0x20];
-    f32 f34;
-    f32 f38;
-    u8 pad2[0x5C - 0x3C];
-    f32 f5c;
-    f32 f60;
-    u8 pad3[0x68 - 0x64];
-    f32 f68;
-    f32 f6c;
-    u8 pad4[0x168 - 0x70];
-    u8 b168;
-    u8 pad5[0x20D - 0x169];
-    u8 b20d;
-} FG;
 
-void func_00276B80(FG *p) {
-    extern void func_00275A40();
-    extern void func_00175700();
-    extern void func_001757E0();
-    s16 v;
-    p->f34 += p->f5c;
-    p->f5c += p->f68;
-    p->f38 += p->f60;
-    p->f60 += p->f6c;
-    func_00275A40();
-    func_00175700();
-    v = p->h1e - 1;
-    p->h1e = v;
-    if (v < 0) {
-        u32 t = p->b6;
-        p->b6 = t + 1;
-        if (p->b20d == 2) {
-            p->b168 = 9;
-            p->f6c = -0.803571403f;
-        } else {
-            p->b168 = 5;
-        }
-        func_001757E0(p, 0x15, p->b168);
-    }
-}
 
 void func_00364060(u8 *a0, u8 *a1) {
     extern void func_00364270();

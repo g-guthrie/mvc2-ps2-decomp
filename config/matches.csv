@@ -13500,7 +13500,7 @@ func_002C23F0,0x002C23F0,0xC8,src/v13_e.c,complete
 func_001F1340,0x001F1340,0xC8,src/v13_e.c,complete
 func_001C3830,0x001C3830,0xCC,src/v13_e.c,complete
 func_001F00E0,0x001F00E0,0xCC,src/v13_e.c,complete
-func_00276B80,0x00276B80,0xD0,src/v13_e.c,complete
+func_00276B80,0x00276B80,0xD0,src/w176_q.c,complete
 func_00364060,0x00364060,0xD0,src/v13_e.c,complete
 func_001640A0,0x001640A0,0xD4,src/v13_e.c,complete
 func_00289130,0x00289130,0x70,src/v14_a.c,complete
