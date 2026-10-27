@@ -89,13 +89,14 @@ typedef struct {
     u8 p4[0x20B - 0x70]; u8 f20b; u8 p5[0x430 - 0x20C]; f32 f430;
 } P2B2;
 
-void func_002B2050(P2B2 *p)
+void func_002B2050(u8 *actor)
 {
-    extern void func_00175700();
+    P2B2 *p = (P2B2 *)actor;
+    extern int func_00175700(void *);
     extern void func_00185490();
     extern void func_001757E0(P2B2 *, s32, s32);
     f32 z = 0.0f;
-    func_00175700();
+    func_00175700(p);
     p->f34 += p->f5c;
     p->f5c += p->f68;
     p->f38 += p->f60;
