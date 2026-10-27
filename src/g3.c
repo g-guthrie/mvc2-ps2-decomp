@@ -96,13 +96,13 @@ void func_00272DD0(u8 *a0) {
     func_001757E0(a0, 15, 2);
 }
 
-extern s8 func_00175700();
+extern int func_00175700(u8 *);
 void func_0036D8B0(u8 *a0) {
     if (*(u8*)(*(u8**)(a0+0x18)+5) != 0) {
         a0[5] = 2;
         *(s16*)(a0+0x1C) = 10;
     } else {
-        func_00175700();
+        func_00175700(a0);
         if (*(s8*)(a0+0x153) < 0) {
             u32 t = a0[4]; a0[4] = t + 1;
             a0[0x13C] = 0;
@@ -161,7 +161,7 @@ void func_00279170(u8 *a0) {
 extern u8 D_004F1F45[];
 extern u8 D_004F1F46[];
 void func_002D81A0(u8 *a0) {
-    s32 r = func_00175700(a0);
+    s32 r = (s8)func_00175700(a0);
     if (r < 0) {
         func_001843A0(a0);
     } else {

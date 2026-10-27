@@ -5,7 +5,7 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
-extern s32 func_00175700();
+extern int func_00175700(u8 *);
 extern s32 func_001843A0();
 extern void func_001863F0();
 extern int func_00174470(const void *);
@@ -50,7 +50,7 @@ s32 func_0027E820(u8 *p) {
         if (v == 0) r = func_001757E0(p, 3, 2);
         return r;
     } else {
-        if ((s8)func_00175700() < 0) {
+        if ((s8)func_00175700(p) < 0) {
             *(s32 *)(p + 0x5C) = 0;
             *(s32 *)(p + 0x60) = 0;
             *(s32 *)(p + 0x68) = 0;
