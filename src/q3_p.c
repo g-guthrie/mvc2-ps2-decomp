@@ -12,7 +12,7 @@ extern W D_0043E330[];
 extern V3 D_0043E360[];
 extern u8 D_004F20B0[];
 extern u8 D_004F20B1[];
-extern void func_00133860();
+extern void func_00133860(u8 *);
 
 void func_00133760(s32 idx) {
     extern u8 *func_003DA750();
@@ -21,7 +21,7 @@ void func_00133760(s32 idx) {
     u32 *r;
     if ((o = func_003DA750(0, 0xF, 1)) != 0) {
         o[0x13C] = 1;
-        *(void **)(o + 0x10) = func_00133860;
+        *(void (**)(u8 *))(o + 0x10) = func_00133860;
         *(u32 *)(o + 0x84) = 0;
         *(u32 *)(o + 0xD0) = 0;
         o[2] = idx;
