@@ -35,16 +35,6 @@ static void func_0014E770(u8 *p) {
     }
 }
 
-static void func_00137860(u8 *a, s8 *b, u32 *c) {
-    if (a[0x21] >= 0x20) {
-        *c = D_00583BA4 | D_00583BAC;
-        *b = *(s8 *)(a + 0x21) - 0x20;
-    } else {
-        *c = D_00583BA0 | D_00583BA8;
-        *b = a[0x21];
-    }
-}
-
 void func_00123060(void) {
     func_004142F0(D_004F1F40);
     func_00417770(0.0f, D_004F1FC0);
@@ -62,17 +52,6 @@ void func_00133EE0(u8 *p, u8 *q) {
         func_00134230(p, q);
     } else {
         *(s16 *)(p + 0x1C) = v + 1;
-    }
-}
-
-void func_001378C0(u8 *p) {
-    s8 c;
-    u32 m;
-    func_00137860(p, &c, &m);
-    if ((m & (1 << c)) == 0) {
-        p[0x13C] = 0;
-    } else {
-        p[0x13C] = 1;
     }
 }
 

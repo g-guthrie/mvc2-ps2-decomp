@@ -229,7 +229,7 @@ u32 func_00131870(s16 i) {
 }
 extern u32 D_00583BA0, D_00583BA4, D_00583BA8, D_00583BAC;
 
-void func_00137860(u8 *p, s8 *o1, u32 *o2) {
+static void func_00137860(u8 *p, s8 *o1, u32 *o2) {
     if (p[0x21] >= 0x20) {
         *o2 = D_00583BA4 | D_00583BAC;
         *o1 = *(s8 *)(p + 0x21) - 0x20;
@@ -255,4 +255,15 @@ void func_0012E640(s32 a, s32 b, s32 c) {
     e[0] = a;
     e[1] = b;
     e[2] = c;
+}
+
+void func_001378C0(u8 *p) {
+    s8 c;
+    u32 m;
+    func_00137860(p, &c, &m);
+    if ((m & (1 << c)) == 0) {
+        p[0x13C] = 0;
+    } else {
+        p[0x13C] = 1;
+    }
 }
