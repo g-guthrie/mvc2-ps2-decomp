@@ -35,10 +35,10 @@ void func_0040E288(void)
     extern void func_0011EB60(char *, ...);
     extern s32 func_00409250(s32, s32, s32, s32);
     extern void func_00409450(s32, void *, s32);
-    extern void func_00409460(s32, void *, s32);
+    extern void func_00409460(u8 *, void (*)(void *, u8 *, s32), void *);
     extern void func_00409708(s32, void *, s32, s32, s32);
     extern void func_0040DFA8(void);
-    extern void func_0040E008(void);
+    extern void func_0040E008(void *, u8 *, s32);
     u32 s0;
     s32 v[3];
 
@@ -69,7 +69,7 @@ void func_0040E288(void)
             for (;;) __asm__ volatile("nop");
         }
         func_00409450(D_004C24B8, func_0040DFA8, 0);
-        func_00409460(D_004C24B8, func_0040E008, 0);
+        func_00409460((u8 *)D_004C24B8, func_0040E008, 0);
         if (D_004C2494 == 0) {
             D_004C249C = D_004C247C;
             D_004C2490 = (D_004C247C << 10) + 0x40;

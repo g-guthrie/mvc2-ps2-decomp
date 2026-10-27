@@ -346,7 +346,7 @@ void func_00406678(RuntimeFileEntry *p) { p->r = 0; p->res = 0; }
 
 void func_00409450(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 36) = value2; *(s32 *)(p + 32) = value1; }
 
-void func_00409460(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 44) = value2; *(s32 *)(p + 40) = value1; }
+void func_00409460(u8 *p, void (*fill)(void *, u8 *, s32), void *context) { *(void **)(p + 44) = context; *(void (**)(void *, u8 *, s32))(p + 40) = fill; }
 
 void func_0040F1C0(SJ_OBJ *object, CriSjErrorCallback callback, void *context) { CriSjMemory *p = (CriSjMemory *)object; p->error_context = context; p->error_callback = callback; }
 

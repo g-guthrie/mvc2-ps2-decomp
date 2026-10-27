@@ -11,7 +11,7 @@ typedef struct Obj { VT *vt; } Obj;
 typedef struct { s8 b0; u8 pad1; u16 h2; Obj *obj; u8 pad8[4]; u32 wC; u32 w10; } InE;
 extern InE D_00495BB8[];
 
-void func_00410CB8(s32 unused, u8 *out)
+void func_00410CB8(void *context, u8 *out, s32 capacity)
 {
     extern void func_0040EFE0();
     extern void func_0040EFF8();

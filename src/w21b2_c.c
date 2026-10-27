@@ -23,10 +23,10 @@ void func_00410F80(void)
     extern s32 func_0011EB60();
     extern s32 func_00409250(s32, u32, u32, s32);
     extern void func_00409450(s32, void *, s32);
-    extern void func_00409460(s32, void *, s32);
+    extern void func_00409460(u8 *, void (*)(void *, u8 *, s32), void *);
     extern void func_00409708(s32, s32, s32, s32, s32);
     extern void func_00410C18();
-    extern void func_00410CB8();
+    extern void func_00410CB8(void *, u8 *, s32);
     u8 *buf;
     u32 sz;
     if (D_004C24E4 == 0) {
@@ -51,7 +51,7 @@ void func_00410F80(void)
             for (;;) __asm__ volatile("nop");
         }
         func_00409450(D_004C24F4, func_00410C18, 0);
-        func_00409460(D_004C24F4, func_00410CB8, 0);
+        func_00409460((u8 *)D_004C24F4, func_00410CB8, 0);
         func_00409708(3, 0, 0, 0, 0);
     }
     D_004C24E4++;
