@@ -10139,7 +10139,7 @@ func_0028C770,0x0028C770,0x94,src/wave34c.c,complete
 func_0029A560,0x0029A560,0x74,src/wave34d.c,complete
 func_0029D280,0x0029D280,0x88,src/wave34d.c,complete
 func_001B7BB0,0x001B7BB0,0x8C,src/wave34d.c,complete
-func_003C17A0,0x003C17A0,0x8C,src/wave34e.c,complete
+func_003C17A0,0x003C17A0,0x8C,src/m12b.c,complete
 func_0026D260,0x0026D260,0x64,src/wave26.c,complete
 func_0038A380,0x0038A380,0x6C,src/wave26.c,complete
 func_001E0CC0,0x001E0CC0,0x74,src/wave26.c,complete
@@ -10758,7 +10758,7 @@ func_003348C0,0x003348C0,0x78,src/h2.c,complete
 func_00211640,0x00211640,0x78,src/h2.c,complete
 func_00265D00,0x00265D00,0x7c,src/h2.c,complete
 func_002C4D80,0x002C4D80,0x7c,src/h2.c,complete
-func_003C1830,0x003C1830,0x80,src/h2.c,complete
+func_003C1830,0x003C1830,0x80,src/m12b.c,complete
 func_00235020,0x00235020,0x84,src/h2.c,complete
 func_003A8D20,0x003A8D20,0x84,src/h2.c,complete
 func_00363B10,0x00363B10,0x84,src/h2.c,complete
