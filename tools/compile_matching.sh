@@ -21830,4 +21830,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/actor_context_dispatch_0035a720.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/actor_context_dispatch_0035a720.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_context_dispatch_0035a720.o" private/SLUS_204.86.rom --source src/actor_context_dispatch_0035a720.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/context_state_dispatch_003874f0.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/context_state_dispatch_003874f0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/context_state_dispatch_003874f0.o" private/SLUS_204.86.rom --source src/context_state_dispatch_003874f0.c
 PYTHON="$PYTHON" tools/compile_matching_data.sh
