@@ -5,6 +5,7 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 
+typedef struct StreamGroup StreamGroup;
 struct _sj_vtbl;
 typedef struct { signed char *data; signed int len; } SJCK;
 typedef struct SJ_OBJ { struct _sj_vtbl *vtbl; } SJ_OBJ;
@@ -22,7 +23,7 @@ struct _sj_vtbl {
 
 typedef struct {
     u8 pad0[4];
-    s32 f4;
+    StreamGroup *f4;
     u8 pad8[0xC];
     SJ_OBJ *sj;
     u8 pad18[0x30];
@@ -36,22 +37,23 @@ typedef struct {
 extern s32 func_003F9F80(s8 *, s32, s16 *);
 extern s32 func_003F98C8(s8 *, s32, s16 *);
 extern void func_004104E0(SJCK *, s32, SJCK *, SJCK *);
-extern s32 func_003FFEC8(s32);
+extern s32 func_003FFEC8(void *);
 extern void func_003FF658(s32);
-extern void func_003FF628(s32);
-extern void func_003FFE20(s32);
-extern s32 func_003FF5C8(s32);
+extern void func_003FF628(void *);
+extern void func_003FFE20(StreamGroup *);
+extern s8 func_003FF5C8(void *);
 extern void func_003FF600(s32 *, s32);
 extern s32 func_003FFFF0(s32);
-extern void func_003FFF30(s32, s32);
-extern void func_003FFF50(s32, s32);
-extern void func_003FFF40(s32, s32);
+extern void func_003FFF30(void *, s32);
+extern void func_003FFF50(void *, s32);
+extern void func_003FFF40(void *, s32);
 
 void func_00403308(Obj *a)
 {
     SJCK c1, c3, c2, c4;
     s16 n, m;
-    s32 h, r, v1, s0, s6, tot;
+    s32 r, v1, s0, s6, tot;
+    StreamGroup *h;
     SJ_OBJ *sj;
     h = a->f4;
     sj = a->sj;
@@ -89,14 +91,14 @@ void func_00403308(Obj *a)
         sj->vtbl->UngetChunk(sj, 1, &c4);
     }
     a->fA4 += func_003FFEC8(h);
-    func_003FF658(h);
+    func_003FF658((s32)h);
     func_003FF628(h);
     func_003FFE20(h);
     if (func_003FF5C8(h) != 2) {
         a->f98 = 0;
     } else {
         func_003FF600((s32 *)h, a->f48);
-        func_003FFF30(h, func_003FFFF0(h));
+        func_003FFF30(h, func_003FFFF0((s32)h));
         func_003FFF50(h, 0);
         func_003FFF40(h, 0);
     }
