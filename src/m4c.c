@@ -66,13 +66,13 @@ s32 func_002779A0(u8 *p) {
 }
 
 extern void func_0016B0C0(void *p, void *q, s32 n);
-extern void func_00166C80(void *p, void *q, s32 n);
-void func_001682B0(u8 *a, u8 *b) {
+extern int func_00166C80(void *p, void *q, s32 n);
+int func_001682B0(u8 *a, u8 *b) {
     s16 y;
     func_0016B0C0(a, b, 0);
     func_0016B0C0(a, b, 2);
     y = *(s32 *)(a + 0x4C8) * 144 / 200;
-    func_00166C80(a, b, y >= *(s16 *)(a + 0x434));
+    return func_00166C80(a, b, y >= *(s16 *)(a + 0x434));
 }
 
 u32 func_003DBD20(u32 x) {

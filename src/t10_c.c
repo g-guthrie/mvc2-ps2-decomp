@@ -22,7 +22,7 @@ extern void func_001757E0();
 extern int func_00174470(const void *);
 extern void func_003B3870();
 extern void func_0016B0C0();
-extern void func_00166C80();
+extern int func_00166C80();
 extern void func_001830D0();
 extern void func_001863F0();
 extern void func_0022FFB0();
@@ -32,7 +32,7 @@ extern u8 D_004C2688[2];
 extern P8 D_004F4420[];
 extern s32 func_0010DF60(s32 i, s32 z, u8 *p);
 
-void func_001681A0(u8 *p, u8 *a1) {
+int func_001681A0(u8 *p, u8 *a1) {
     s32 a2;
     func_0016B0C0(p, a1, 0);
     func_0016B0C0(p, a1, 1);
@@ -43,7 +43,7 @@ void func_001681A0(u8 *p, u8 *a1) {
     case 0x22: a2 = *(s32 *)(p + 0xD0); break;
     case 0x2D: a2 = *(s8 *)(p + 0x2C1); break;
     }
-    func_00166C80(p, a1, a2 == *(s32 *)(p + 0x4C8));
+    return func_00166C80(p, a1, a2 == *(s32 *)(p + 0x4C8));
 }
 
 void func_0016EE50(void) {

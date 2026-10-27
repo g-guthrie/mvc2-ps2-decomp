@@ -10,7 +10,7 @@ extern void func_00175700(void *p);
 extern s32 func_00174170(void);
 extern void func_001E3210(void *p, s32 n);
 extern void func_0016B0C0(void *p, void *q, s32 n);
-extern void func_00166C80(void *p, void *q, s32 n);
+extern int func_00166C80(void *p, void *q, s32 n);
 extern void func_00228400(void *p);
 extern void func_0022C700(void *p);
 
@@ -25,10 +25,10 @@ void func_001ABAD0(u8 *p, u8 *owner) {
     }
 }
 
-void func_001687A0(u8 *p, u8 *q) {
+int func_001687A0(u8 *p, u8 *q) {
     func_0016B0C0(p, q, 0);
     func_0016B0C0(p, q, 1);
-    func_00166C80(p, q, (*(s8 *)(*(u8 **)(p + 0x220) + 0x1E7)) == (*(s8 *)(p + 0x4C8)));
+    return func_00166C80(p, q, (*(s8 *)(*(u8 **)(p + 0x220) + 0x1E7)) == (*(s8 *)(p + 0x4C8)));
 }
 
 void func_00228350(u8 *p) {

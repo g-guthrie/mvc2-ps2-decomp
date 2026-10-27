@@ -75,11 +75,11 @@ s32 func_001E1FF0(s32 a0) {
 }
 
 extern void func_0016B0C0(void *, void *, int);
-extern void func_00166C80(void *, void *, int);
-void func_00168250(u8 *a0, void *a1) {
+extern int func_00166C80(void *, void *, int);
+int func_00168250(u8 *a0, void *a1) {
     func_0016B0C0(a0, a1, 0);
     func_0016B0C0(a0, a1, 1);
-    func_00166C80(a0, a1, a0[0x2B8] == *(s32*)(a0+0x4C8));
+    return func_00166C80(a0, a1, a0[0x2B8] == *(s32*)(a0+0x4C8));
 }
 
 extern void func_001266A0(void *, int, int);

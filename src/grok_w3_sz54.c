@@ -2,7 +2,7 @@ typedef unsigned char u8;
 typedef signed char s8;
 
 extern void func_0016B0C0(u8 *, u8 *, int);
-extern void func_00166C80(u8 *, u8 *, int);
+extern int func_00166C80(u8 *, u8 *, int);
 extern int func_003D92F0(u8 *);
 extern void func_001843A0(u8 *);
 extern int func_00175700(u8 *);
@@ -10,18 +10,18 @@ extern void func_0020D2F0(u8 *, u8 *);
 extern void func_0020D250(u8 *, u8 *, int);
 extern void func_00186A60(u8 *, int);
 
-void func_001683F0(u8 *p, u8 *q)
+int func_001683F0(u8 *p, u8 *q)
 {
     func_0016B0C0(p, q, 0);
     func_0016B0C0(p, q, 2);
-    func_00166C80(p, q, 0);
+    return func_00166C80(p, q, 0);
 }
 
-void func_00168450(u8 *p, u8 *q)
+int func_00168450(u8 *p, u8 *q)
 {
     func_0016B0C0(p, q, 0);
     func_0016B0C0(p, q, 2);
-    func_00166C80(p, q, 0);
+    return func_00166C80(p, q, 0);
 }
 
 void func_001FEB90(u8 *p)

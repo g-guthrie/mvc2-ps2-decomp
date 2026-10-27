@@ -36,11 +36,11 @@ void func_003C9370(u8 *p) {
 }
 extern s8 D_004D1926;
 extern void func_0016B0C0(void *, void *, s32);
-extern void func_00166C80(void *, void *, s32);
-void func_00166A50(u8 *p, void *q) {
+extern int func_00166C80(void *, void *, s32);
+int func_00166A50(u8 *p, void *q) {
     func_0016B0C0(p, q, 0);
     func_0016B0C0(p, q, 1);
-    func_00166C80(p, q, *(s32 *)(p + 0x4C8) <= 99 - D_004D1926);
+    return func_00166C80(p, q, *(s32 *)(p + 0x4C8) <= 99 - D_004D1926);
 }
 extern s32 func_00175700(void *);
 extern void func_001843A0(void *);

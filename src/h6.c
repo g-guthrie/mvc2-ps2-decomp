@@ -47,11 +47,11 @@ void func_0036D920(u8 *p) {
     }
 }
 extern void func_0016B0C0(u8 *, void *, s32);
-extern void func_00166C80(u8 *, void *, s32);
-void func_00168130(u8 *p, void *q) {
+extern int func_00166C80(u8 *, void *, s32);
+int func_00168130(u8 *p, void *q) {
     func_0016B0C0(p, q, 0);
     func_0016B0C0(p, q, 1);
-    func_00166C80(p, q, (*(u8 **)(p + 0x220))[0x20D] == *(s32 *)(p + 0x4C8));
+    return func_00166C80(p, q, (*(u8 **)(p + 0x220))[0x20D] == *(s32 *)(p + 0x4C8));
 }
 extern void func_001928E0(u8 *, s32, s32);
 void func_00192420(u8 *p) {

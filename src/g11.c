@@ -13,11 +13,11 @@ extern E16 D_004D1820[];
 extern void func_00396F90();
 
 extern void func_0016B0C0();
-extern void func_00166C80();
-void func_001669F0(u8 *a0, s32 a1) {
+extern int func_00166C80();
+int func_001669F0(u8 *a0, u8 *a1) {
     func_0016B0C0(a0, a1, 0);
     func_0016B0C0(a0, a1, 1);
-    func_00166C80(a0, a1, *(s32 *)(a0 + 0x4C8) < *(s8 *)(a0 + 0x4BD));
+    return func_00166C80(a0, a1, *(s32 *)(a0 + 0x4C8) < *(s8 *)(a0 + 0x4BD));
 }
 
 typedef struct { u16 a; u16 b; s32 c; } Ent8;
