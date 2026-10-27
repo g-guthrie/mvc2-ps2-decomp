@@ -86,7 +86,7 @@ void func_0014F490(u8 *p, s32 b, s32 flag)
 
 void func_00311E90(u8 *p, u8 *q)
 {
-    extern s16 func_00118FA8(f32);
+    extern s32 func_00118FA8(f32);
     extern void func_001757E0(u8 *, s32, s32);
     extern void func_001DD8A0(u8 *, s32, s32);
     u32 t = p[6];

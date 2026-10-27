@@ -61,7 +61,7 @@ void func_0016CCA0(void) {
 
 extern f32 D_004F1FC8;
 extern f32 D_004F1FCC;
-s16 func_00118FA8(f32 x);
+s32 func_00118FA8(f32 x);
 void func_003C1530(u8 *a0) {
     s16 *s0 = (s16 *)(a0 + 208);
     if (*(s16 *)(a0 + 320) == 0) {

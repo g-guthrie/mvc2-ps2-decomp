@@ -30,7 +30,7 @@ extern void func_003D77C0(void *p);
 
 extern f32 D_004F1FC8;
 extern f32 D_004F1FD4;
-extern s16 func_00118FA8(f32 x);
+extern s32 func_00118FA8(f32 x);
 
 extern u8 *D_004C2794;
 extern u8 D_004BFCB0[8];

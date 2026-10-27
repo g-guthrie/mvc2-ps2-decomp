@@ -134,7 +134,7 @@ u8 func_0032D620(u32 *p, s8 n) {
     return t;
 }
 
-extern s16 func_00118FA8(float f);
+extern s32 func_00118FA8(float f);
 void func_001DEEB0(u8 *p) {
     s16 *q = (s16 *)(p + 0xD8);
     *q = func_00118FA8((float)*q + *(float *)(p + 0x5C));

@@ -154,7 +154,7 @@ void func_001DEF80(A_001DEF80 *a, u8 *b)
     extern void func_001DEE30(A_001DEF80 *);
     extern void func_001DEEB0(A_001DEF80 *, u8 *);
     extern void func_001DEEF0(A_001DEF80 *, u8 *);
-    extern s16 func_00118FA8(f32);
+    extern s32 func_00118FA8(f32);
     extern void func_00163F00(f32 *, s32);
     u8 *s1;
     f32 v[4];

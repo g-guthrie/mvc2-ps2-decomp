@@ -40,7 +40,7 @@ void func_003A6650(u8 *a, u8 *b) {
     u8 *s1;
     u8 *s2;
     extern s32 func_00175700(u8 *);
-    extern s16 func_00118FA8(f32);
+    extern s32 func_00118FA8(f32);
     s1 = *(u8 **)(a + 8);
     s2 = *(u8 **)(a + 0x14);
     *(s8 *)(a + 0x24) = *(s8 *)(b + 0x24) + *(s8 *)(a + 0x31);

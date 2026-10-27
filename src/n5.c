@@ -49,7 +49,7 @@ extern u8 D_00463860[];
 extern u8 D_00463864[];
 extern int func_00174470(const void *);
 extern void func_001741D0(u8 *p, f32 *v);
-extern s16 func_00118FA8(f32 f);
+extern s32 func_00118FA8(f32 f);
 
 u8 *func_0039E470(u8 *p, s32 n) {
     u8 *r = func_003DA750(0, 1, 0);
@@ -285,7 +285,7 @@ s32 func_003535B0(u8 *p) {
         return 0;
     }
     func_001741D0(p + 0x34, v);
-    return !(func_00118FA8(v[1] + 2.14285707f * (f32)(u32)p[0x14D]) <= 0);
+    return !((s16)func_00118FA8(v[1] + 2.14285707f * (f32)(u32)p[0x14D]) <= 0);
 }
 
 void func_00187160(u8 *p) {

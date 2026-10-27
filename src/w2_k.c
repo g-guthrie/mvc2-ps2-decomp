@@ -18,7 +18,7 @@ void func_003EE530(Q *p, s16 lim)
 {
     extern double func_001173A0(double, double);
     extern double func_001173D0(double);
-    extern s16 func_00118FA8(f32);
+    extern s32 func_00118FA8(f32);
     extern double litodp(s32);
     extern double dpadd(double, double);
     extern u32 dptoul(double);
