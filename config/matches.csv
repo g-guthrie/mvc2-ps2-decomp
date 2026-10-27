@@ -13008,7 +13008,7 @@ func_001B91D0,0x001B91D0,0xBC,src/t11_a.c,complete
 func_001A41E0,0x001A41E0,0xC0,src/t11_a.c,complete
 func_00164C50,0x00164C50,0xBC,src/t11_a.c,complete
 func_0025C620,0x0025C620,0x98,src/t11_b.c,complete
-func_001C8EF0,0x001C8EF0,0xAC,src/t11_c.c,complete
+func_001C8EF0,0x001C8EF0,0xAC,src/t11_c.c,placeholder
 func_00372640,0x00372640,0xAC,src/t11_c.c,complete
 func_002D2AD0,0x002D2AD0,0xAC,src/t11_c.c,complete
 func_003B5090,0x003B5090,0xB0,src/t11_c.c,complete
@@ -13370,7 +13370,7 @@ func_002C7060,0x002C7060,0xBC,src/v5_a.c,complete
 func_00236820,0x00236820,0xBC,src/v5_a.c,complete
 func_0027A370,0x0027A370,0xBC,src/v5_a.c,complete
 func_0034F0F0,0x0034F0F0,0xC0,src/v5_a.c,complete
-func_002214E0,0x002214E0,0xC4,src/v5_a.c,complete
+func_002214E0,0x002214E0,0xC4,src/v5_a.c,placeholder
 func_0039DD40,0x0039DD40,0xC4,src/v5_a.c,complete
 func_00193090,0x00193090,0xCC,src/v5_a.c,complete
 func_002E6D30,0x002E6D30,0xD0,src/v5_a.c,complete

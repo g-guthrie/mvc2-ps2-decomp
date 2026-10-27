@@ -25,7 +25,7 @@ typedef struct {
 } OK;
 
 void func_00377650(PK *p, OK *o) {
-    extern s32 func_00175700();
+    extern s32 func_00175700(u8 *);
     extern void func_001757E0(PK *, s32, s32);
     extern void func_00377860(PK *, OK *);
     extern void func_003DAA40(PK *);
@@ -35,7 +35,7 @@ void func_00377650(PK *p, OK *o) {
         t = p->b1B4;
         if (t != 0) {
             p->b1B4 = t - 1;
-            func_00175700();
+            func_00175700((u8 *)p);
             return;
         }
     case 5:
@@ -57,7 +57,7 @@ void func_00377650(PK *p, OK *o) {
         break;
     case 2:
     case 3:
-        if ((s8)func_00175700() < 0) {
+        if ((s8)func_00175700((u8 *)p) < 0) {
             p->f5 = 4;
             func_00377860(p, o);
         }
