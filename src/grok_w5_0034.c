@@ -42,7 +42,6 @@ extern void func_00356AB0(u8 *);
 extern void func_00357650(u8 *);
 extern void func_003584D0(u8 *);
 extern void func_0035BF00(u8 *);
-extern void func_0035C490(u8 *);
 extern void func_0035F4C0(u8 *);
 extern void func_001E7F60(u8 *, u8 *);
 
@@ -151,16 +150,6 @@ void func_0035BEB0(void *arg)
     if (e) {
         e->callback = func_0035BF00;
         e->value = 0xC01;
-        e->arg = arg;
-    }
-}
-
-void func_0035C440(void *arg)
-{
-    Entry *e = func_003DA750(0, 1, 0);
-    if (e) {
-        e->callback = func_0035C490;
-        e->value = 0xC02;
         e->arg = arg;
     }
 }

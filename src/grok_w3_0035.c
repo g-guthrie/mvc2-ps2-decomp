@@ -117,7 +117,7 @@ void func_0035BEB0(u8 *arg)
     }
 }
 
-void func_0035C440(u8 *arg)
+void *func_0035C440(u8 *arg)
 {
     Entry *e = func_003DA750(0, 1, 0);
     if (e != 0) {
@@ -125,6 +125,7 @@ void func_0035C440(u8 *arg)
         e->value = 0xC02;
         e->arg = arg;
     }
+    return e;
 }
 
 void func_0035F470(u8 *arg)
