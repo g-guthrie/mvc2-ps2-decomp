@@ -17,7 +17,7 @@ extern s16 D_004F3BC4;
 extern s16 D_004F3BC8;
 extern s16 D_004F417C;
 extern s16 D_004F4180;
-extern s8 D_004D18DB;
+extern u8 D_004D18DB;
 extern void func_003D9080(void);
 extern void func_001E8CD0(void);
 extern void func_001E76D0(void);
@@ -53,7 +53,7 @@ void func_00172760(void)
     if (*slot != -1)
         *slot = *slot + 1;
     func_003D9080();
-    D_004D18DB = (s8)((D_004D18DB + 1) & 0xF);
+    D_004D18DB = (s8)(((s8)D_004D18DB + 1) & 0xF);
     if (*(s16 *)(D_004C2840 + 8) != 0) {
         func_001E8CD0();
         func_001E76D0();
