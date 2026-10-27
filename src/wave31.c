@@ -78,11 +78,11 @@ void func_003C4260(u8 *p, u8 *q) {
 }
 
 extern u8 *func_003DA750(s32, s32, s32);
-extern void func_0034DDD0(void);
+extern void func_0034DDD0(u8 *);
 void func_0034DD60(u8 *p, u8 b) {
     u8 *r = func_003DA750(0, 1, 0);
     if (r != 0) {
-        *(void **)(r + 0x10) = (void *)func_0034DDD0;
+        *(void (**)(u8 *))(r + 0x10) = func_0034DDD0;
         *(s32 *)(r + 0x18) = *(s32 *)(p + 0x18);
         *(u8 **)(r + 0x14) = p;
         r[0x20] = b;
