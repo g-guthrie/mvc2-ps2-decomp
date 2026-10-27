@@ -25,7 +25,7 @@ extern unsigned char D_004AA750[];
 extern unsigned char D_004AA780[];
 extern unsigned char D_004AA800[];
 extern unsigned char D_004AA850[];
-extern void func_004220B0(float,void *,int,int);
+extern int func_004220B0(float,void *,int,int);
 
 #define FLOAT_CALLBACK(name,callback,value,data,mode) \
 void name(void) { callback(value,data,0,mode); }
