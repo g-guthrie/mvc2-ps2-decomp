@@ -256,8 +256,3 @@ typedef struct {
 typedef struct {
     EN1C e[4];
 } EN70;
-
-extern int D_0043991C;
-extern char D_004AB268[];
-extern int func_00104180(void);
-extern int func_001046D8(int *, int *, int);

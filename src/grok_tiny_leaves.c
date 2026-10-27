@@ -874,11 +874,14 @@ void func_00104170(void) {
     }
 }
 
-void func_00104180(void) {
+int func_00104180(int request_id) {
+    int result;
     asm {
         addiu v1, r0, 118
         syscall 0
+        move result, v0
     }
+    return result;
 }
 
 void func_00104190(void) {
