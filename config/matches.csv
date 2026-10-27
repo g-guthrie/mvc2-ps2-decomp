@@ -19375,3 +19375,4 @@ func_0016F2D0,0x0016F2D0,0xEC,src/actor_resource_setup_0016f2d0.c,placeholder
 func_00168690,0x00168690,0xF0,src/script_mask_update_00168690.c,placeholder
 func_00129080,0x00129080,0x1C,src/menu_callback_invoke_00129080.c,placeholder
 func_002B1DE0,0x002B1DE0,0x34,src/actor_action_dispatch_002b1de0.c,placeholder
+func_0037D900,0x0037D900,0x18,src/actor_finish_0037d900.c,placeholder
