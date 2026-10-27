@@ -9,7 +9,7 @@ extern u32 D_00455458[];
 extern s32 func_001757E0();
 extern s32 func_00280E70(u8 *);
 extern void func_0032D5F0(u8 *);
-extern s32 func_001E7FD0(u8 *);
+extern u8 *func_001E7FD0(u8 *);
 extern void func_00185490(u8 *);
 extern s32 func_00178B00(u8 *);
 extern void func_00178D80(u8 *, s32);
@@ -168,13 +168,13 @@ void func_002E7130(u8 *p) {
     }
 }
 
-s32 func_0030BC10(u8 *p) {
+u8 *func_0030BC10(u8 *p) {
     u8 v = (*(u16 *)(p + 0x20E) & 0x1C00) >> 10;
     p[0x22] = v;
     if (v != 0) {
         if (p[0x1B7] == 1) {
             if (*(float *)(p + 0x38) > 137.142853f) {
-                s32 r = func_001E7FD0(p);
+                u8 *r = func_001E7FD0(p);
                 if (r != 0) {
                     p[0x20B] = 2;
                     return r;

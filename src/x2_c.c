@@ -89,12 +89,12 @@ void func_003D6D50(void)
 
 void func_002060B0(u8 *p)
 {
-    extern s32 func_001E7FD0();
+    extern u8 *func_001E7FD0(u8 *);
     extern s8 func_00175700();
-    extern void func_00185640();
+    extern void func_00185640(u8 *, u8 *);
     extern void func_001843A0();
     extern void func_00184540();
-    s32 o;
+    u8 *o;
     if (*(u8 *)(*(u8 **)(p + 0x220) + 0x20D) != 1 && *(s8 *)(p + 0x151) != 0 && (o = func_001E7FD0(p)) != 0) {
         p[6] = 0;
         p[0x22] = 1;
