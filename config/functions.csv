@@ -6136,7 +6136,7 @@ func_00202CA0,0x00202CA0,0xDC,0x00202D7C,code,spimdisasm-explicit-size-before-fi
 func_00202D80,0x00202D80,0x88,0x00202E08,code,spimdisasm-explicit-size-before-first-data
 func_00202E10,0x00202E10,0x28,0x00202E38,code,spimdisasm-explicit-size-before-first-data
 func_00202E40,0x00202E40,0x20,0x00202E60,code,matching-c-head-split
-residual_00202E60,0x00202E60,0x48,0x00202EA8,assembly_residual,verified-boundary-after-matching-head
+func_00202E60,0x00202E60,0x48,0x00202EA8,code,verified-native-entry-boundary
 func_00202EB0,0x00202EB0,0x18,0x00202EC8,code,spimdisasm-explicit-size-before-first-data
 func_00202ED0,0x00202ED0,0x8,0x00202ED8,code,spimdisasm-explicit-size-before-first-data
 func_00202EE0,0x00202EE0,0x88,0x00202F68,code,spimdisasm-explicit-size-before-first-data
@@ -6347,7 +6347,7 @@ func_0020A430,0x0020A430,0xAC,0x0020A4DC,code,spimdisasm-explicit-size-before-fi
 func_0020A4E0,0x0020A4E0,0x88,0x0020A568,code,spimdisasm-explicit-size-before-first-data
 func_0020A570,0x0020A570,0x40,0x0020A5B0,code,spimdisasm-explicit-size-before-first-data
 func_0020A5B0,0x0020A5B0,0x20,0x0020A5D0,code,matching-c-head-split
-residual_0020A5D0,0x0020A5D0,0x4C,0x0020A61C,assembly_residual,verified-boundary-after-matching-head
+func_0020A5D0,0x0020A5D0,0x4C,0x0020A61C,code,verified-native-entry-boundary
 func_0020A620,0x0020A620,0x5C,0x0020A67C,code,spimdisasm-explicit-size-before-first-data
 func_0020A680,0x0020A680,0x40,0x0020A6C0,code,spimdisasm-explicit-size-before-first-data
 func_0020A6C0,0x0020A6C0,0x24,0x0020A6E4,code,matching-c-head-split
@@ -6588,7 +6588,7 @@ func_00211D60,0x00211D60,0x50,0x00211DB0,code,callback-table-entry-and-whole-fun
 func_00211DB0,0x00211DB0,0x7C,0x00211E2C,code,spimdisasm-explicit-size-before-first-data
 func_00211E30,0x00211E30,0x3C,0x00211E6C,code,spimdisasm-explicit-size-before-first-data
 func_00211E70,0x00211E70,0x20,0x00211E90,code,matching-c-head-split
-residual_00211E90,0x00211E90,0x4C,0x00211EDC,assembly_residual,verified-boundary-after-matching-head
+func_00211E90,0x00211E90,0x4C,0x00211EDC,code,verified-native-entry-boundary
 func_00211EE0,0x00211EE0,0x48,0x00211F28,code,spimdisasm-explicit-size-before-first-data
 func_00211F30,0x00211F30,0x50,0x00211F80,code,spimdisasm-explicit-size-before-first-data
 func_00211F80,0x00211F80,0x60,0x00211FE0,code,spimdisasm-explicit-size-before-first-data
