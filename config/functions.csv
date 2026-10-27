@@ -6439,7 +6439,7 @@ func_0020D210,0x0020D210,0x3C,0x0020D24C,code,spimdisasm-explicit-size-before-fi
 func_0020D250,0x0020D250,0x44,0x0020D294,code,spimdisasm-explicit-size-before-first-data
 func_0020D2A0,0x0020D2A0,0x50,0x0020D2F0,code,spimdisasm-explicit-size-before-first-data
 func_0020D2F0,0x0020D2F0,0x1C,0x0020D30C,code,matching-c-head-split
-residual_0020D30C,0x0020D30C,0x3C,0x0020D348,assembly_residual,verified-boundary-after-matching-head
+func_0020D310,0x0020D310,0x38,0x0020D348,code,verified-native-table-entry-boundary
 func_0020D350,0x0020D350,0x4C,0x0020D39C,code,spimdisasm-explicit-size-before-first-data
 func_0020D3A0,0x0020D3A0,0x1C,0x0020D3BC,code,matching-c-head-split
 func_0020D3C0,0x0020D3C0,0xE8,0x0020D4A8,code,verified-complete-c-function
