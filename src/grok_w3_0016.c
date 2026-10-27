@@ -16,8 +16,8 @@ extern s32 D_00446C04;
 extern Vec3 D_004F1CA0;
 
 extern s32 func_0016B0C0(u8 *, s32, s32);
-extern void func_00166DF0(u8 *);
-extern void func_00167270(u8 *);
+extern s32 func_00166DF0(u8 *);
+extern s32 func_00167270(u8 *);
 extern void func_003DF7A0(void);
 extern void func_003DF850(s32, s32);
 extern void func_00414C30(void);
@@ -67,9 +67,9 @@ s32 func_001672E0(u8 *p, s32 a1) {
     return 1;
 }
 
-void func_00166DC0(u8 *p, s32 a1) {
-    func_0016B0C0(p, a1, 0);
-    func_00166DF0(p);
+s32 func_00166DC0(u8 *p, u8 *a1) {
+    func_0016B0C0(p, (s32)a1, 0);
+    return func_00166DF0(p);
 }
 
 void func_00167240(u8 *p, s32 a1) {
@@ -88,14 +88,14 @@ void func_0016F090(Vec3 *p) {
     func_00414C30();
 }
 
-s32 func_00166D80(u8 *p, s32 a1) {
-    func_0016B0C0(p, a1, 0);
+s32 func_00166D80(u8 *p, u8 *a1) {
+    func_0016B0C0(p, (s32)a1, 0);
     func_00169E50(p, 0, 0);
     return 0;
 }
 
-s32 func_00167140(u8 *p, s32 a1) {
-    func_0016B0C0(p, a1, 0);
+s32 func_00167140(u8 *p, u8 *a1) {
+    func_0016B0C0(p, (s32)a1, 0);
     p[1172] = 0;
     p[1105] = 1;
     p[1106] = 0;
@@ -173,12 +173,12 @@ void func_00167180(u8 *p, s32 a1) {
     }
 }
 
-void func_001671E0(u8 *p, s32 a1) {
-    func_0016B0C0(p, a1, 0);
+s32 func_001671E0(u8 *p, u8 *a1) {
+    func_0016B0C0(p, (s32)a1, 0);
     if (func_00169CE0(p, 1, 1)) {
-        func_00167270(p);
+        return func_00167270(p);
     } else {
-        func_00166DF0(p);
+        return func_00166DF0(p);
     }
 }
 

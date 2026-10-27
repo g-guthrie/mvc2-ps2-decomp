@@ -10,10 +10,10 @@ extern u8 D_00445840[];
 
 s32 func_001689F0(u8 *o, u8 *s)
 {
-    extern s32 func_00166D80();
-    extern s32 func_00166DC0();
-    extern s32 func_00167140();
-    extern s32 func_001671E0();
+    extern s32 func_00166D80(u8 *, u8 *);
+    extern s32 func_00166DC0(u8 *, u8 *);
+    extern s32 func_00167140(u8 *, u8 *);
+    extern s32 func_001671E0(u8 *, u8 *);
     u8 *buf;
     u8 *tab;
     u32 pos;
