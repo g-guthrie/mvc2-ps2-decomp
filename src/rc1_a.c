@@ -42,7 +42,7 @@ void func_004035D8(C43 *p)
     extern s32 func_003FFF78(s32);
     extern s32 func_00400020(s32);
     extern s32 func_003FFFC0(s32);
-    extern void func_003FF600(s32);
+    extern void func_003FF600(s32 *, s32);
     extern s32 func_00400098(s32);
     extern void func_004007A0(s32, s32);
     extern void func_00400790(s32, void *, C43 *);
@@ -88,11 +88,11 @@ void func_004035D8(C43 *p)
     }
     w = func_003FFFC0(h) * 2;
     {
-        register s32 t __asm__("$5");
+        s32 t;
         t = p->w48 + w;
         p->w48 = t / w * w;
     }
-    func_003FF600(h);
+    func_003FF600((s32 *)h, p->w48);
     if (b > 0) {
         if (p->b2 == 2) {
             p->w50 = 0;
