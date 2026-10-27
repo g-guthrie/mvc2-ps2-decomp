@@ -19230,3 +19230,4 @@ func_003B8A10,0x003B8A10,0x94,src/actor_owner_aim_003b8a10.c,complete
 func_001338B0,0x001338B0,0x3C,src/actor_owner_init_001338b0.c,complete
 func_0013A5E0,0x0013A5E0,0x1C,src/actor_owner_follow_0013a5e0.c,complete
 func_0013A5B0,0x0013A5B0,0x24,src/actor_owner_dispatch_0013a5b0.c,complete
+func_003B6620,0x003B6620,0x10,src/actor_owner_release_003b6620.c,complete
