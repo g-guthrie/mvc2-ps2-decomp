@@ -12,7 +12,7 @@ extern int func_00103E10(s32);
 extern int func_0010C480(void);
 extern float func_00116CD0(float);
 extern float func_00116FA0(float);
-extern void func_001170A0();
+extern float func_001170A0(float);
 extern float func_00117240(float);
 extern float func_00117328(float);
 extern float func_001173E8(float,float);
@@ -1396,7 +1396,7 @@ float func_003DE700(float y, float x) { return func_001173E8(y,x); }
 
 float func_003DE710(float angle) { return func_00116FA0(angle); }
 
-void func_003DE770(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001170A0(a0, a1, a2, a3); }
+float func_003DE770(float value) { return func_001170A0(value); }
 
 float func_003DE780(float base, float exponent) { return func_00117418(base, exponent); }
 
