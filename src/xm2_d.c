@@ -7,7 +7,7 @@ typedef struct {
     char pad[0x24];
     int f24;
 } S8840;
-typedef struct {
+typedef struct S24 {
     char b[0x24];
 } S24;
 typedef struct {

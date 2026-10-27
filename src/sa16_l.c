@@ -17,7 +17,7 @@ extern u8 D_004BDC90[];
 s32 func_0040A838(u8 *buf, s32 n) {
     extern void func_0040A440(u8 *, u8 *);
     extern void func_0010F148(s32);
-    extern s32 func_004098D8(u32 *, u8 *);
+    extern s32 func_004098D8(void *, u8 *);
     extern void func_0011EB60(u8 *, s32);
     s32 i;
     s32 ok = 0;

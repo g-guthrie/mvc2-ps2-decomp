@@ -10,8 +10,9 @@ extern void func_0040ED20(void *, s32);
 void func_003FF228(void *group, s32 count) { func_0040ED20(group, count); }
 
 extern s32 D_0048831C;
-extern void func_0010EC08(s32, s32, s32);
-void func_004098D8(s32 a, s32 b) { func_0010EC08(a, b, D_0048831C); }
+struct S24;
+extern int func_0010EC08(struct S24 *, u8 *, int);
+int func_004098D8(void *a, u8 *b) { return func_0010EC08((struct S24 *)a, b, D_0048831C); }
 
 extern void func_0011EB60(void *);
 extern char D_004BE950[];

@@ -31,7 +31,7 @@ extern u8 D_00488ED0[];
 extern s32 func_0040AAB8(s32, T *);
 extern void func_0040A440(s32, u8 *);
 extern void func_0010F148(s32);
-extern s32 func_004098D8(T *, u8 *);
+extern s32 func_004098D8(void *, u8 *);
 s32 func_00409B58(s32 a) {
     T t;
     s32 r = 0;

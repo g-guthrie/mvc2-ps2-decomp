@@ -18,7 +18,7 @@ s32 func_0040A740(u8 *a, s32 b) {
     extern void func_0011D8F8(u8 *, s32, s32);
     extern void func_0040A440(u8 *, u8 *);
     extern void func_0010F148(s32);
-    extern s32 func_004098D8(s32 *, u8 *);
+    extern s32 func_004098D8(void *, u8 *);
     extern s32 func_0010F968(s32, s32, s32, u8 *);
     extern s32 func_0040C2C0(u8 *, s32);
     s32 w[12];

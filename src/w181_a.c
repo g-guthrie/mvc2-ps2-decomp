@@ -35,7 +35,7 @@ s32 func_00409BD0(s32 p)
     extern s32 func_0040AAB8();
     extern void func_0040A440();
     extern void func_0010F148();
-    extern s32 func_004098D8();
+    extern s32 func_004098D8(void *, u8 *);
     extern void func_0011EB60();
     extern void func_004098A8();
     s32 buf[12];
@@ -77,7 +77,7 @@ R_o *func_00409CE8(u8 *a0, s32 a1, s32 a2)
     extern void func_0040A440();
     extern void func_0011EB60();
     extern void func_0010F148();
-    extern s32 func_004098D8();
+    extern s32 func_004098D8(void *, u8 *);
     extern void func_004098A8();
     extern void func_00409CC8();
     R_o *s0;
