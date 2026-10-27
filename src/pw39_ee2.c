@@ -8,7 +8,7 @@ extern void func_00408EA0(s32);
 extern void func_0040DFA0(s32);
 extern s32 func_00409708(s32, s32 *, s32, s32 *, s32);
 extern s32 D_00632140[3];
-extern s32 D_00632240[2];
+extern s32 D_00632240[];
 
 void func_0040E868(u8 *p) {
     s32 i;

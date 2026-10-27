@@ -7,18 +7,18 @@ typedef signed int s32;
 
 typedef struct { s32 a, b; } P8_a;
 extern s32 D_00632140[3];
-extern P8_a D_00632240;
+extern s32 D_00632240[];
 
 void func_004109C0(s32 a, s32 b, s32 c, P8_a *out)
 {
-    extern s32 func_00409708(s32, s32 *, s32, P8_a *, s32);
+    extern s32 func_00409708(s32, s32 *, s32, s32 *, s32);
     s32 y, x;
     D_00632140[0] = a;
     D_00632140[1] = b;
     D_00632140[2] = c;
-    func_00409708(0x26, D_00632140, 3, &D_00632240, 2);
-    x = D_00632240.a;
-    y = D_00632240.b;
+    func_00409708(0x26, D_00632140, 3, D_00632240, 2);
+    x = D_00632240[0];
+    y = D_00632240[1];
     out->a = x;
     __asm__ volatile("");
     out->b = y;
