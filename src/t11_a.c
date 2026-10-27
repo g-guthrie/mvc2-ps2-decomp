@@ -24,7 +24,7 @@ extern u8 D_00453980[];
 extern u8 D_004571B0[];
 extern s16 D_004BF788[4];
 extern void func_001830D0();
-extern s32 func_00175700();
+extern int func_00175700(u8 *);
 extern void func_001843A0();
 extern void func_0024EDA0();
 extern s32 func_00189310();
@@ -106,7 +106,7 @@ void func_00292790(u8 *p) {
     p[0x40C] = 2;
     q = p + 0x2B8;
     p[0x33C] = 5;
-    func_00175700();
+    func_00175700(p);
     if (*(s8 *)(p + 0x151) == 0) {
         u32 t = p[6] + 1;
         p[6] = t;

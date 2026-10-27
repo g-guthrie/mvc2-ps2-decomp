@@ -52,7 +52,7 @@ void func_003C5DD0(P3C5DD0 *p, u8 *q)
     extern void func_0018D930();
     extern void func_003C5780();
     extern void func_001E7F60();
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_003C80A0();
     s32 v;
     s16 h;
@@ -74,7 +74,7 @@ void func_003C5DD0(P3C5DD0 *p, u8 *q)
         func_001E7F60();
         return;
     }
-    func_00175700();
+    func_00175700((u8 *)p);
     p->f34 += p->f5c;
     p->f5c += p->f68;
     p->f38 += p->f60;

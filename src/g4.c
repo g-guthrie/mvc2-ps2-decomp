@@ -5,7 +5,7 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
-extern s32 func_00175700();
+extern int func_00175700(u8 *);
 extern s32 func_003D92F0(void *);
 extern s32 func_001843A0(void *);
 s32 func_002246E0(void *p) {
@@ -137,7 +137,7 @@ void func_0036B2F0(u8 *p) {
 extern void func_0037EA30(void *, void *, s32);
 
 void func_0037EF00(u8 *p, u8 *q) {
-    func_00175700(p, q);
+    func_00175700(p);
     if (*(s8 *)(p + 0x151)) {
         u32 t = p[5];
         p[5] = t + 1;
@@ -180,7 +180,7 @@ extern void func_002F8EB0(void *);
 extern void func_002F8E40(void *);
 
 void func_002F9160(u8 *p, u8 *q) {
-    if ((s8)func_00175700(p, q) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         func_002F8EB0(p);
     } else {
         if (*(s8 *)(p + 0x151)) {
@@ -260,7 +260,7 @@ extern void func_003B93A0(void *);
 
 void func_0030B320(u8 *p) {
     s16 v;
-    func_00175700();
+    func_00175700(p);
     v = *(s16 *)(p + 0x1C) - 1;
     *(s16 *)(p + 0x1C) = v;
     if (v != 0) {
@@ -285,7 +285,7 @@ void func_00252DB0(u8 *p) {
     if (t == 0) {
         p[6] = t + 1;
         func_001757E0(p, 0x14, 2);
-    } else if ((s8)func_00175700() < 0) {
+    } else if ((s8)func_00175700(p) < 0) {
         func_00175C00(p, 0);
         *(s32 *)(p + 0x5C) = 0;
         *(s32 *)(p + 0x60) = 0;
@@ -300,7 +300,7 @@ extern void func_001830D0(void *, void *, s32);
 
 void func_002B6EA0(u8 *p) {
     u32 v[3];
-    func_00175700();
+    func_00175700(p);
     if (*(s8 *)(p + 0x151)) {
         u32 t = p[6];
         p[6] = t + 1;
@@ -350,7 +350,7 @@ void func_0020BFB0(u8 *p, u8 *q) {
 }
 
 void func_00204B70(u8 *p) {
-    func_00175700();
+    func_00175700(p);
     if (*(s8 *)(p + 0x151)) {
         u32 t = p[6];
         p[6] = t + 1;

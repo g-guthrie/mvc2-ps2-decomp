@@ -2,7 +2,7 @@ typedef unsigned char u8; typedef signed char s8; typedef unsigned int u32; type
 
 void func_001757E0(u8 *, s32, s32);
 void func_00183D50();
-void func_00175700();
+int func_00175700(u8 *);
 
 void func_002577D0(u8 *p) {
     u8 *v3, *a1, *a2, *a3;
@@ -40,6 +40,6 @@ void func_002577D0(u8 *p) {
         func_00183D50();
         func_001757E0(p, 0x14, 0x15);
     } else {
-        func_00175700();
+        func_00175700(p);
     }
 }

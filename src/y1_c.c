@@ -8,13 +8,13 @@ typedef float f32;
 
 void func_002DE770(u8 *p)
 {
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_00126400();
     extern void func_001757E0();
     u8 *o;
     p[0x206] = 3;
     p[0x1FE] = 1;
-    if (func_00175700(p) >= 0) return;
+    if ((s8)func_00175700(p) >= 0) return;
     o = *(u8 **)(p + 0x1DC);
     *(u8 **)(o + 0x1C8) = p;
     o[0x20A] = 1;
@@ -77,7 +77,7 @@ void func_001788E0(u8 *p)
 }
 void func_002EF6A0(u8 *p)
 {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_00175C00();
     extern void func_001830D0();
     u32 v[4];
@@ -156,7 +156,7 @@ void func_002ADD30(u8 *p)
     extern void func_00185490();
     extern void func_00183D10();
     extern void func_001757E0();
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001843A0();
     extern void func_001830D0();
     u32 v[4];
@@ -175,7 +175,7 @@ void func_002ADD30(u8 *p)
         func_001757E0(p, 0x16, 0x13);
         return;
     }
-    if (func_00175700() < 0) {
+    if ((s8)func_00175700(p) < 0) {
         func_001843A0(p);
         return;
     }
@@ -188,7 +188,7 @@ void func_002ADD30(u8 *p)
 }
 void func_002E2BD0(u8 *p)
 {
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001757E0();
     extern void func_003A22C0();
     extern void func_001830D0();
@@ -196,7 +196,7 @@ void func_002E2BD0(u8 *p)
     p[0x40C] = 2;
     p[0x33C] = 5;
     p[0x405] = (p[0x269] == 6) ? 2 : 0;
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         *(s16 *)(p + 0x1C) = 0x18;
         *(s16 *)(p + 0x1E) = 0;
         func_001757E0(p, 0x16, 1);
