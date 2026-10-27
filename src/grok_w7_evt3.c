@@ -135,7 +135,7 @@ u8 *func_0034A140(u8 *src)
     return p;
 }
 
-void func_001D45D0(u8 *src, u8 mode)
+u8 *func_001D45D0(u8 *src, u8 mode)
 {
     u8 *p = func_003DA750(0, 3, 1);
     if (p != 0) {
@@ -145,6 +145,7 @@ void func_001D45D0(u8 *src, u8 mode)
         P(p, 16) = func_001D4650;
         P(p, 24) = src;
     }
+    return p;
 }
 
 void func_00373A90(u8 *src, u8 mode)
