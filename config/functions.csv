@@ -15660,7 +15660,8 @@ func_0034D420,0x0034D420,0xC8,0x0034D4E8,code,spimdisasm-explicit-size-before-fi
 func_0034D4F0,0x0034D4F0,0x14,0x0034D504,code,spimdisasm-explicit-size-before-first-data
 func_0034D510,0x0034D510,0x8,0x0034D518,code,spimdisasm-explicit-size-before-first-data
 func_0034D520,0x0034D520,0xA0,0x0034D5C0,code,spimdisasm-explicit-size-before-first-data
-func_0034D5C0,0x0034D5C0,0x25C,0x0034D81C,code,spimdisasm-explicit-size-before-first-data
+func_0034D5C0,0x0034D5C0,0x34,0x0034D5F4,code,verified-native-dispatch-boundary
+residual_0034D600,0x0034D600,0x21C,0x0034D81C,assembly_residual,native-remainder-after-verified-c-entry
 func_0034D820,0x0034D820,0x64,0x0034D884,code,spimdisasm-explicit-size-before-first-data
 func_0034D890,0x0034D890,0x1C4,0x0034DA54,code,spimdisasm-explicit-size-before-first-data
 func_0034DA60,0x0034DA60,0x7C,0x0034DADC,code,spimdisasm-explicit-size-before-first-data
