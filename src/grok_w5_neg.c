@@ -13,7 +13,14 @@ extern void func_00289570(u8 *);
 extern void func_00290E30(u8 *);
 extern void func_00297D50(u8 *);
 extern void func_00297F90(u8 *);
-extern void func_002CE6E0(u8 *);
+static void func_002CE6E0(u8 *p) {
+    *(float *)(p + 52) += *(float *)(p + 92);
+    *(float *)(p + 92) += *(float *)(p + 104);
+    *(float *)(p + 56) += *(float *)(p + 96);
+    *(float *)(p + 96) += *(float *)(p + 108);
+    if (*(float *)(p + 56) <= *(float *)(p + 1072))
+        *(float *)(p + 56) = *(float *)(p + 1072);
+}
 
 void func_0024D390(u8 *p)
 {
@@ -109,8 +116,9 @@ void func_00297F20(u8 *p)
 
 void func_002CE8B0(u8 *p)
 {
+    extern int func_00175700(u8 *);
     func_002CE6E0(p);
-    if ((s8)func_00175700() < 0) {
+    if ((s8)func_00175700(p) < 0) {
         *(s32 *)(p + 96) = 0;
         *(s32 *)(p + 108) = 0;
         func_00184540(p);
