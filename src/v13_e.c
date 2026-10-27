@@ -232,22 +232,22 @@ typedef struct FF {
 } FF;
 
 void func_001F00E0(FF *p) {
-    extern void func_00175700();
-    extern s32 func_001E7FD0();
-    extern void func_00185640();
+    extern int func_00175700(u8 *);
+    extern u8 *func_001E7FD0(u8 *);
+    extern void func_00185640(u8 *, u8 *);
     extern void func_001757E0();
-    s32 r;
+    u8 *r;
     s16 v;
     p->f34 += p->f5c;
     p->f5c += p->f68;
     p->f38 += p->f60;
     p->f60 += p->f6c;
-    func_00175700();
-    if ((r = func_001E7FD0(p)) != 0) {
+    func_00175700((u8 *)p);
+    if ((r = func_001E7FD0((u8 *)p)) != 0) {
         p->b7 = 0;
         p->b6 = 0;
         p->b20b = 7;
-        func_00185640(p, r);
+        func_00185640((u8 *)p, r);
     } else {
         v = p->h1c - 1;
         p->h1c = v;

@@ -60,9 +60,9 @@ void func_0021A6F0(u8 *p) {
     func_001757E0(p, 0x16, 7);
 }
 
-s32 func_002B1B70(u8 *p) {
-    extern s32 func_001E7FD0();
-    s32 r = 0;
+u8 *func_002B1B70(u8 *p) {
+    extern u8 *func_001E7FD0(u8 *);
+    u8 *r = 0;
     if ((*(u16 *)(p + 0x20E) & 0xC00) != 0 && p[0x1B7] != 0 && p[0x20D] != 1) {
         r = func_001E7FD0(p);
         if (r != 0) {
@@ -504,9 +504,9 @@ void func_001821D0(u8 *p) {
     }
 }
 
-s32 func_002022F0(u8 *p) {
-    extern s32 func_001E7FD0();
-    s32 r;
+u8 *func_002022F0(u8 *p) {
+    extern u8 *func_001E7FD0(u8 *);
+    u8 *r;
     if ((*(u16 *)(p + 0x20E) & 0xC00) == 0) {
         return 0;
     }

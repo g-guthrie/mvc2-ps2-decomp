@@ -4,12 +4,12 @@ typedef unsigned short u16;
 typedef unsigned int u32;
 typedef signed int s32;
 
-extern s32 func_001E7FD0();
+extern u8 *func_001E7FD0(u8 *);
 
-s32 func_00315250(u8 *p)
+u8 *func_00315250(u8 *p)
 {
     s32 x = (*(u16 *)(p + 0x20E) & 0xC00) >> 10;
-    s32 r;
+    u8 *r;
     u32 a;
     p[0x22] = x;
     if ((u8)x != 0) {
