@@ -1,6 +1,7 @@
 typedef signed int s32;
 typedef unsigned int u32;
 typedef unsigned short u16;
+typedef signed short s16;
 typedef signed char s8;
 typedef unsigned char u8;
 #include "HtciFileRequest.h"
@@ -11,7 +12,7 @@ extern void func_003FB128(void *p);
 extern char D_004BC3D0[], D_004BC128[], D_004BB4A8[];
 extern s32 func_004000B0(s32 v);
 extern s32 func_001089F0(s32 a, s32 b, s32 *c);
-extern void func_003F79A8(s32 a, u16 *x, u16 *y, u16 *z);
+extern void func_003F79A8(s8 *a, s16 *x, s16 *y, s16 *z);
 
 s32 func_00400C70(s32 unused, s32 *out) { *out = func_00406B50(); return 1; }
 s32 func_00400C28(s32 unused, s32 *out) { *out = (func_00406B50() + 2047) / 2048; return 1; }
@@ -33,9 +34,10 @@ s32 func_0040AFD8(HtciFileRequest *p) {
     if (func_001089F0(p->file_handle_18, 1, &p->result_14) < 0) return 0;
     return p->result_14 != 1;
 }
-void func_003F81F0(u8 *s, s32 a) {
-    u16 t[3];
-    func_003F79A8(a, &t[0], &t[1], &t[2]);
+void func_003F81F0(void *state, void *input) {
+    u8 *s = state;
+    s16 t[3];
+    func_003F79A8((s8 *)input, &t[0], &t[1], &t[2]);
     *(u16 *)(s + 0x9C) = t[0];
     *(u16 *)(s + 0x9E) = t[1];
     *(u16 *)(s + 0xA0) = t[2];
