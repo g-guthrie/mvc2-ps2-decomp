@@ -5263,7 +5263,8 @@ func_001E0A30,0x001E0A30,0x14,0x001E0A44,code,spimdisasm-explicit-size-before-fi
 func_001E0A50,0x001E0A50,0x8,0x001E0A58,code,spimdisasm-explicit-size-before-first-data
 func_001E0A60,0x001E0A60,0x5C,0x001E0ABC,code,spimdisasm-explicit-size-before-first-data
 func_001E0AC0,0x001E0AC0,0x24,0x001E0AE4,code,matching-c-head-split
-residual_001E0AE4,0x001E0AE4,0xA8,0x001E0B8C,assembly_residual,verified-boundary-after-matching-head
+residual_001E0AE4,0x001E0AE4,0xC,0x001E0AF0,assembly_residual,uncredited-native-alignment
+func_001E0AF0,0x001E0AF0,0x9C,0x001E0B8C,code,verified-native-table-entry-boundary
 func_001E0B90,0x001E0B90,0x110,0x001E0CA0,code,spimdisasm-explicit-size-before-first-data
 func_001E0CA0,0x001E0CA0,0x14,0x001E0CB4,code,spimdisasm-explicit-size-before-first-data
 func_001E0CC0,0x001E0CC0,0x74,0x001E0D34,code,spimdisasm-explicit-size-before-first-data
