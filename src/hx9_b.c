@@ -29,7 +29,7 @@ extern u32 D_004C27F4;
 void func_001517C0(s32 a, s32 b)
 {
     extern void func_003DA650(s32);
-    extern O *func_00151780();
+    extern void *func_00151780(void);
     extern void func_00151720();
     u32 *s0;
     f32 *s1;

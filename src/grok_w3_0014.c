@@ -166,11 +166,12 @@ void func_0014A4E0(void) {
     }
 }
 
-void func_00151780(void) {
+void *func_00151780(void) {
     u8 *p = func_003DA750(0, 13, 1);
     if (p) {
         p[316] = 1;
         *(char **)(p + 16) = D_00151710;
         *(s32 *)(p + 208) = 1;
     }
+    return p;
 }
