@@ -13,7 +13,7 @@ extern int func_001757E0(u8 *, int, int);
 
 extern void func_00239870(u8 *);
 
-extern DispatchFn jtbl_0043E930[];
+extern ContextDispatchFn jtbl_0043E930[];
 extern DispatchFn jtbl_0043E940[];
 extern DispatchFn jtbl_0043EB40[];
 extern DispatchFn jtbl_0043EE00[];
@@ -1344,7 +1344,8 @@ extern DispatchFn jtbl_004A6D20[];
 extern DispatchFn jtbl_004A6D30[];
 extern DispatchFn jtbl_004A6D40[];
 
-void func_00133BA0(u8 *p) { jtbl_0043E930[p[5]](p); }
+/* Provisional: the data-owned state table still declares unary callbacks. */
+void func_00133BA0(u8 *p, void *owner) { jtbl_0043E930[p[5]](p, owner); }
 
 void func_00133F20(u8 *p) { jtbl_0043E940[p[5]](p); }
 

@@ -25,14 +25,6 @@ s32 func_0013BCE0(u8 *p) {
     return p[0x21] == *(s8 *)(*(u8 **)(p + 0x14) + 0x4DD);
 }
 
-void func_00134120(u8 *p) {
-    if (D_004D18A0) {
-        p[5] = 0;
-        p[0x20] = 0;
-        p[0x21] = 0;
-    }
-}
-
 s32 func_001045B8(s32 a, u8 *p) {
     if (a == 1) func_0010D090(p);
     return 0;

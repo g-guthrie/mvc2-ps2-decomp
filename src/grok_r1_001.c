@@ -31,7 +31,7 @@ void func_00150520(u8 *p, float a, float b, float c) {
     *(float *)(p + 0x80) = c;
 }
 
-void func_00134120(u8 *p) {
+void func_00134120(u8 *p, u8 *owner_unused) {
     if (D_004D18A0) {
         p[5] = 0;
         p[0x20] = 0;
