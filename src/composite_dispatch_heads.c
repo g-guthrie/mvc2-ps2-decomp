@@ -1038,8 +1038,8 @@ extern DispatchFn jtbl_0045D3F8[];
 extern DispatchFn jtbl_0045D408[];
 extern DispatchFn jtbl_0045D438[];
 extern DispatchFn jtbl_0045D490[];
-extern DispatchFn jtbl_0045D4B0[];
-extern DispatchFn jtbl_0045D4D0[];
+extern ContextDispatchFn jtbl_0045D4B0[];
+extern ContextDispatchFn jtbl_0045D4D0[];
 extern DispatchFn jtbl_0045D4F0[];
 extern DispatchFn jtbl_0045D510[];
 extern DispatchFn jtbl_0045D528[];
@@ -3506,9 +3506,11 @@ void func_00312930(u8 *p) { jtbl_0045D438[p[6]](p); }
 
 void func_00312DB0(u8 *p) { jtbl_0045D490[p[6]](p); }
 
-void func_00313820(u8 *p) { jtbl_0045D4B0[p[7]](p); }
+/* Provisional: callback table ABI and selector bounds need reconciliation. */
+void func_00313820(u8 *p, void *context) { jtbl_0045D4B0[p[7]](p, context); }
 
-void func_00313AA0(u8 *p) { jtbl_0045D4D0[p[7]](p); }
+/* Provisional: callback table ABI and selector bounds need reconciliation. */
+void func_00313AA0(u8 *p, void *context) { jtbl_0045D4D0[p[7]](p, context); }
 
 void func_003140D0(u8 *p) { jtbl_0045D4F0[p[6]](p); }
 

@@ -2845,8 +2845,8 @@ func_00312D60,0x00312D60,0x4c,src/reset_on_negative.c,complete
 func_00312DB0,0x00312DB0,0x20,src/composite_dispatch_heads.c,complete
 func_003130C0,0x003130C0,0x3c,src/signed_result_handlers.c,complete
 func_00313100,0x00313100,0x20,src/indirect_dispatch.c,complete
-func_00313820,0x00313820,0x20,src/composite_dispatch_heads.c,complete
-func_00313AA0,0x00313AA0,0x20,src/composite_dispatch_heads.c,complete
+func_00313820,0x00313820,0x20,src/composite_dispatch_heads.c,placeholder
+func_00313AA0,0x00313AA0,0x20,src/composite_dispatch_heads.c,placeholder
 func_003140D0,0x003140D0,0x20,src/composite_dispatch_heads.c,complete
 func_00314530,0x00314530,0x4c,src/reset_on_negative.c,complete
 func_00314580,0x00314580,0x20,src/composite_dispatch_heads.c,complete
@@ -7334,7 +7334,7 @@ func_00302070,0x00302070,0x1C,src/grok_w5_disp.c,complete
 func_0030DDD0,0x0030DDD0,0x20,src/grok_w5_disp.c,complete
 residual_00311A70,0x00311A70,0x20,src/grok_w5_disp.c,complete
 residual_00312620,0x00312620,0x1C,src/grok_w5_disp.c,complete
-residual_00313AC0,0x00313AC0,0x1C,src/grok_w5_disp.c,complete
+residual_00313AC0,0x00313AC0,0x1C,src/grok_w5_disp.c,placeholder
 residual_0031D760,0x0031D760,0x20,src/grok_w5_disp.c,complete
 residual_0031F1B0,0x0031F1B0,0x20,src/grok_w5_disp.c,complete
 residual_0031F9F0,0x0031F9F0,0x20,src/grok_w5_disp.c,complete

@@ -105,7 +105,7 @@ extern DispatchFn jtbl_004C0E78[2];
 extern DispatchFn jtbl_004C1178[2];
 extern DispatchFn jtbl_004C14B8[2];
 extern DispatchFn jtbl_004C16E0[2];
-extern DispatchFn jtbl_004C16E8[2];
+extern DispatchFn2 jtbl_004C16E8[2];
 extern DispatchFn jtbl_004C1780[2];
 extern DispatchFn jtbl_004C1878[2];
 extern DispatchFn jtbl_004C1880[2];
@@ -276,7 +276,8 @@ void residual_00311A70(u8 *p) { jtbl_0045D3C0[p[6]](p); }
 
 void residual_00312620(u8 *p) { jtbl_004C16E0[p[6]](p); }
 
-void residual_00313AC0(u8 *a0, u8 *p) { jtbl_004C16E8[p[13]](a0); }
+/* Provisional: callback table ABI and selector bounds need reconciliation. */
+void residual_00313AC0(u8 *a0, u8 *p) { jtbl_004C16E8[p[13]](a0, p); }
 
 void residual_0031D760(u8 *p) { jtbl_0045DB78[p[6]](p); }
 
