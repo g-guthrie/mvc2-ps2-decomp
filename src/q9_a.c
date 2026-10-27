@@ -197,19 +197,20 @@ void func_001DA020(P_8 *a, B_8 *b) {
 }
 
 
-extern s32 func_001E7FD0();
+extern u8 *func_001E7FD0(u8 *);
 typedef struct {
     u8 p0[0x1B7]; u8 f1b7; u8 p1b8[0x53]; u8 f20b; u8 p20c; u8 f20d; u16 f20e_; u8 p210[2]; u8 f212;
 } P_9;
-s32 func_002D8900(P_9 *a) {
-    s32 r = 0;
+u8 *func_002D8900(u8 *actor) {
+    P_9 *a = (P_9 *)actor;
+    u8 *r = 0;
     if ((*(u16*)((u8*)a + 0x20E) & 0xC00) != 0 && a->f1b7 != 0) {
         if (a->f20d == 2) {
             if (a->f212 == 0) {
-                if ((r = func_001E7FD0(a)) != 0) a->f20b = 2;
+                if ((r = func_001E7FD0((u8 *)a)) != 0) a->f20b = 2;
             }
         } else {
-            if ((r = func_001E7FD0(a)) != 0) {
+            if ((r = func_001E7FD0((u8 *)a)) != 0) {
                 if (a->f212 == 0) a->f20b = 1; else a->f20b = 0;
             }
         }
