@@ -8,13 +8,14 @@ typedef float f32;
 
 extern u8 D_00463BB0[];
 
+/* Provisional: parent table ABI and actor context bounds remain unresolved. */
 void func_0036E750(u8 *p, u8 *q, s32 *r)
 {
     extern void func_0036EA50(u8 *, u8 *, u8 *);
     extern void func_0036EAA0(u8 *, u8 *, u8 *);
     extern void func_0036EAE0(u8 *, u8 *, u8 *);
-    extern void func_00175700(u8 *);
-    extern void func_001757E0(u8 *, s32, s32);
+    extern int func_00175700(u8 *);
+    extern int func_001757E0(u8 *, s32, s32);
     extern void func_001E7F60(u8 *);
     u8 *s;
     s32 v;
