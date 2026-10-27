@@ -12,7 +12,7 @@ extern void *func_0011D8F8(void *, int, unsigned int);
 extern s32 func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_00175C00();
-extern void func_00184540();
+extern void func_00184540(u8 *);
 extern void func_00176160(u8 *, s32, s32, s32);
 extern s32 func_002803A0();
 extern void func_00299010();
@@ -195,3 +195,21 @@ void func_00290FD0(u8 *p)
 }
 
 
+
+void func_0028D580(u8 *p)
+{
+    u8 *q;
+    func_00289570(p);
+    func_00175700(p);
+    if ((s8)p[0x151] != 0) {
+        p[6]++;
+        q = *(u8 **)(p + 0x1DC);
+        *(u8 **)(q + 0x1C8) = p;
+        q[0x20A] = 1;
+        q[0x20D] = 2;
+        q[0x1B5] = 0x21;
+        q[0x1E6] = (s8)p[0x1E6] ^ 1;
+        if (*(u16 *)(p + 0x160) == 0)
+            func_00184540(p);
+    }
+}

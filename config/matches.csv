@@ -16178,7 +16178,7 @@ func_0028BD20,0x0028BD20,0xBC,src/grok_s9_28bd20.c,complete
 func_0028C070,0x0028C070,0xBC,src/grok_s9_28c070.c,complete
 func_0028C1E0,0x0028C1E0,0xD8,src/grok_sd_28c1e0.c,complete
 func_0028CF70,0x0028CF70,0xB8,src/grok_s9_28cf70.c,complete
-func_0028D580,0x0028D580,0x84,src/grok_s1_28d580.c,placeholder
+func_0028D580,0x0028D580,0x84,src/grok_w5_0028.c,placeholder
 func_0028F7E0,0x0028F7E0,0x50,src/grok_nopc_28f7e0.c,complete
 func_002900A0,0x002900A0,0x4C,src/grok_nops_2900a0.c,complete
 func_00290820,0x00290820,0x6C,src/grok_nopc_290820.c,complete
