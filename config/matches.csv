@@ -19327,3 +19327,4 @@ func_00179C00,0x00179C00,0x248,src/actor_update_00179c00.c,placeholder
 func_0035D9A0,0x0035D9A0,0x124,src/event_init_0035d9a0.c,placeholder
 func_0035C4C0,0x0035C4C0,0x150,src/event_init_0035c4c0.c,placeholder
 func_0035C880,0x0035C880,0x150,src/event_init_0035c880.c,placeholder
+func_0035BDF0,0x0035BDF0,0x3C,src/linked_contact_cleanup_0035bdf0.c,placeholder
