@@ -35,6 +35,7 @@ extern int func_00415320(void *a, u32 *b, s32 c);
 extern void func_00415590(void *a, u32 *b, s32 c, s32 d);
 
 
+/* Provisional: callback and callee return contracts are unresolved. */
 s32 func_0036EA50(void *a, s32 b, s32 *c) {
     s32 r;
     if (func_00185980(a, b)) {
