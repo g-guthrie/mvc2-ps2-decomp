@@ -21612,4 +21612,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/owner_state_00198
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/phase_callback_00152570.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/phase_callback_00152570.o"
 "$PYTHON" tools/verify_object.py "$BUILD/phase_callback_00152570.o" private/SLUS_204.86.rom --source src/phase_callback_00152570.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/owner_fall_state_0039c110.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_fall_state_0039c110.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_fall_state_0039c110.o" private/SLUS_204.86.rom --source src/owner_fall_state_0039c110.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
