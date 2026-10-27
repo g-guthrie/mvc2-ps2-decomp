@@ -16,7 +16,7 @@ extern void func_001347D0(u8 *, u8 *);
 extern void func_00133EE0(u8 *, u8 *);
 extern void func_00133CE0(u8 *, u8 *);
 extern void func_00134230(u8 *);
-extern void func_001345B0(u8 *);
+extern void func_001345B0(u8 *, u8 *);
 extern void func_001345C0(u8 *, u8 *, s32);
 extern void func_00133FA0(u8 *, u8 *);
 extern void func_00134710(u8 *, u8 *);
@@ -99,7 +99,7 @@ void residual_00133F40(u8 *p, u8 *q) {
     p[5]++;
     S(p, 0x1c) = 0;
     p[0x21] = 0;
-    func_001345B0(p);
+    func_001345B0(p, q);
     func_001345C0(p, q, p[0x14c]);
     func_00133FA0(p, q);
 }
