@@ -56,8 +56,8 @@ void func_0033E600(u8 *p) {
     }
 }
 
-extern void func_00220840();
-extern void func_002207B0();
+extern void func_00220840(u8 *);
+extern void func_002207B0(u8 *);
 void func_00220420(u8 *p) {
     f32 v;
     p[0x40C] = 2;
@@ -70,12 +70,12 @@ void func_00220420(u8 *p) {
         u32 t = p[0x2C7];
         p[0x2C7] = t + 1;
         if (p[0x2C0] == 2) {
-            func_00220840();
+            func_00220840(p);
         } else {
-            func_002207B0();
+            func_002207B0(p);
         }
     } else {
-        func_00220840();
+        func_00220840(p);
     }
 }
 
