@@ -12,12 +12,12 @@ extern void (*D_00455458[])(u8 *);
 extern void (*D_00463DB0[])(u8 *, u8 *, u8 *);
 
 void func_0034AD90(u8 *p, u8 *q) {
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001757E0();
     extern void func_00198170();
     extern void func_0034B040();
     s8 c;
-    s8 r = func_00175700();
+    s8 r = func_00175700(p);
     if (r < 0) {
         u32 t = p[5];
         p[5] = t + 1;

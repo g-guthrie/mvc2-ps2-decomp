@@ -6,11 +6,11 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 void func_002FB860(f32 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001757E0();
     u8 *q = (u8 *)p;
     f32 *a1, *a2;
-    func_00175700();
+    func_00175700((u8 *)p);
     a1 = &p[0x18];
     a2 = &p[0x1B];
     p[0xE] += p[0x18];
@@ -39,14 +39,14 @@ void func_002FB860(f32 *p) {
 
 typedef struct { f32 x, y, z, w; } V4d;
 void func_00183C40(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     u32 u, w;
     u8 *q;
     s8 v = *(s8 *)(p + 0x150);
     u = v & 0xFF;
     if (v < 0) {
         q = *(u8 **)(p + 0x164);
-        func_00175700();
+        func_00175700(p);
         w = u & 0xFF;
         if (w != *(s8 *)(p + 0x150)) {
             if ((w & 0x40) == 0) {
