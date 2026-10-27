@@ -66,7 +66,7 @@ int func_001757E0(u8 *p,int animation,int strength) {
 
 /* Dispatch the encoded command in the supported low and high ranges. */
 extern void func_001E24E0(u8 *,int);
-extern void func_001E3710(u8 *,int);
+extern void func_001E3710(u8 *,u8);
 void func_001E3370(u8 *p) {
  int command=p[0x15c];
  if (command) {

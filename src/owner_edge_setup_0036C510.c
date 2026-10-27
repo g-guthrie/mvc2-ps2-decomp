@@ -11,7 +11,7 @@ typedef struct {u8 prefix[0x34];f32 x,y,z;u8 gap40[0x10];f32 scaleX,scaleY;u8 ga
 extern int func_00175700(u8 *);
 extern int func_001757E0(u8 *,int,int);
 extern void func_001E7F60(u8 *);
-extern void func_001E3710(u8 *,s32);
+extern void func_001E3710(u8 *,u8);
 extern u8 *D_004C2794 __attribute__((section(".sdata")));
 extern u8 *D_004C2840 __attribute__((section(".sdata")));
 #define RESET_ACTION(p,code) do {u32 counterAddress; (p)[0x1b5]=(code);(p)[0x1b2]=*(u16 *)((p)+0x1c0)=0;*(u32 *)((p)+0x1d8)=0;counterAddress=(p)[2]*2;counterAddress+=(u32)D_004C2794;counterAddress+=0x7c;++*(s16 *)counterAddress;}while(0)
