@@ -14,14 +14,14 @@ void func_00401A48(u8 *p, s32 *a, s32 *b) {
     s32 r4;
     s8 t;
     u8 raw;
-    extern s32 func_003FFF78(s32);
+    extern s32 func_003FFF78(void *);
     extern s32 func_003FFEC8(s32);
     extern s32 func_003FF190(s32);
     extern s32 func_00402298(u8 *, s32);
     extern s32 func_003FFFF0(s32);
     raw = p[1];
     if ((u32)raw - 3 < 2) {
-        r1 = func_003FFF78(*(s32 *)(p + 4));
+        r1 = func_003FFF78(*(void **)(p + 4));
         arg = *(s32 *)(p + 4);
         *b = r1;
         r2 = func_003FFEC8(arg);
@@ -32,7 +32,7 @@ void func_00401A48(u8 *p, s32 *a, s32 *b) {
         r1 = func_003FFFF0(*(s32 *)(p + 4));
         arg = *(s32 *)(p + 4);
         *a = r1;
-        r1 = func_003FFF78(arg);
+        r1 = func_003FFF78((void *)arg);
         arg = *(s32 *)(p + 4);
         *b = r1;
         r5 = func_003FFFA8((void *)arg);

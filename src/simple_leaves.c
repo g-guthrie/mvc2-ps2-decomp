@@ -564,7 +564,7 @@ s16 func_003F81B8(void *p) { return *(s16 *)((u8 *)p + 28); }
 
 s32 func_003F81C0(void *p) { return *(s32 *)((u8 *)p + 32); }
 
-s16 func_003F81C8(void *p) { return *(s16 *)((u8 *)p + 36); }
+s32 func_003F81C8(void *p) { return *(s16 *)((u8 *)p + 36); }
 
 s32 func_003F81D0(void *p) { return *(s32 *)((u8 *)p + 40); }
 

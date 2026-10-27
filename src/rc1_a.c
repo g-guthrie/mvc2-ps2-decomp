@@ -39,11 +39,11 @@ void func_004035D8(C43 *p)
     extern void func_003FB2E8(s32, s32, u8 *, s32);
     extern void func_003FB178(u8 *, u8 *);
     extern void func_00401868(C43 *);
-    extern s32 func_003FFF78(s32);
-    extern s32 func_00400020(s32);
-    extern s32 func_003FFFC0(s32);
+    extern s32 func_003FFF78(void *);
+    extern s32 func_00400020(void *);
+    extern s32 func_003FFFC0(void *);
     extern void func_003FF600(s32 *, s32);
-    extern s32 func_00400098(s32);
+    extern s32 func_00400098(void *);
     extern void func_004007A0(s32, s32);
     extern void func_00400790(s32, void *, C43 *);
     extern s32 func_00400080(s32);
@@ -80,14 +80,14 @@ void func_004035D8(C43 *p)
         func_00401868(p);
         return;
     }
-    a = func_003FFF78(h);
-    b = func_00400020(h);
+    a = func_003FFF78((void *)h);
+    b = func_00400020((void *)h);
     if (b > 0) {
         p->w48 = a / p->w38 * 3;
     } else {
         p->w48 = a / p->w38 * 3 / 2;
     }
-    w = func_003FFFC0(h) * 2;
+    w = func_003FFFC0((void *)h) * 2;
     {
         s32 t;
         t = p->w48 + w;
@@ -98,7 +98,7 @@ void func_004035D8(C43 *p)
         if (p->b2 == 2) {
             p->w50 = 0;
         } else {
-            v = func_00400098(h);
+            v = func_00400098((void *)h);
             p->w50 = unit - v % unit;
             p->w50 = p->w50 % unit;
             n = (v + 0x7FF) / unit;
@@ -118,7 +118,7 @@ void func_004035D8(C43 *p)
         func_003FFF40(h, 0);
         func_003FFF20(h, func_00403308, p);
     }
-    a = func_003FFF78(h);
+    a = func_003FFF78((void *)h);
     b = func_003FFF90((void *)h);
     c = func_003FFFF0(h);
     v = func_003FFFA8(h);

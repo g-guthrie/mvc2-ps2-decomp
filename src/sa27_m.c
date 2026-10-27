@@ -8,7 +8,7 @@ typedef signed int s32;
 extern s32 D_004C22C4;
 extern s32 func_003FF190(s32);
 extern s32 func_003FF1A8(s32);
-extern s32 func_003FFFC0(s32);
+extern s32 func_003FFFC0(void *);
 extern s32 func_003FF5C8(s32);
 extern void func_003FF160(s32, s32);
 extern s32 func_00401F38(u8 *);
@@ -22,7 +22,7 @@ void func_00403900(u8 *p)
     s32 d;
     c = func_003FF190(a);
     d = func_003FF1A8(a);
-    if (!(c < *(s32 *)(p + 0x48) * 2) || !(func_003FFFC0(b) < d) || func_003FF5C8(*(s32 *)(p + 4)) == 3) {
+    if (!(c < *(s32 *)(p + 0x48) * 2) || !(func_003FFFC0((void *)b) < d) || func_003FF5C8(*(s32 *)(p + 4)) == 3) {
         if (*(s8 *)(p + 0x70) == 0) {
             if (*(s8 *)(p + 0x72) == 0) {
                 func_003FF160(a, 1);

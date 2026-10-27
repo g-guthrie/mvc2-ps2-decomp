@@ -11,8 +11,8 @@ void func_0040EA48(s32 a, s32 *b, s32 *c) { *b = 0; *c = 0xBB80; }
 extern void func_0040EA98(void);
 void func_003FF1A8(void) { func_0040EA98(); }
 
-extern void func_003F81E8(s32);
-void func_00400098(s32 *p) { func_003F81E8(p[1]); }
+extern s32 func_003F81E8(void *);
+s32 func_00400098(void *object) { return func_003F81E8(*(void **)((u8 *)object + 4)); }
 
 extern void func_00103B90(void);
 void func_00104A80(void) { func_00103B90(); __asm__ volatile("sync"); }

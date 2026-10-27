@@ -5,7 +5,7 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 
-void func_003FFFC0(u8 *p) {
-    extern void func_003F81A0();
-    func_003F81A0(*(s32 *)(p + 4));
+s32 func_003FFFC0(void *object) {
+    extern s32 func_003F81A0(void *);
+    return func_003F81A0(*(void **)((u8 *)object + 4));
 }

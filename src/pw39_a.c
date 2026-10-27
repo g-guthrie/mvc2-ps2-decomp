@@ -11,8 +11,8 @@ typedef unsigned long u64;
 /* EE GCC 2.96: ./tryee.sh src/pw39_a.c sn */
 typedef struct { s32 a; s32 b; s32 c[10]; } T;
 
-extern void func_003F81C8(s32 a);
-void func_00400020(s32 *p) { func_003F81C8(p[1]); }
+extern s32 func_003F81C8(void *);
+s32 func_00400020(void *object) { return func_003F81C8(*(void **)((u8 *)object + 4)); }
 
 s32 func_0040F1E0(SJ_OBJ *object, s32 n) {
     s32 *p = (s32 *)object;
