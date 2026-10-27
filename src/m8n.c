@@ -6,15 +6,16 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-extern void func_0018D6F0(void *p, s32 x, void *buf);
-extern void func_00154790(void *buf, s32 a, s32 b, s32 c);
-extern void func_00156E80(void *buf, s32 a);
+extern void func_0018D6F0(u8 *p, u8 *other, f32 *buf);
+extern void func_00154790(f32 *buf, s32 a, s32 b, s32 c);
+/* Provisional: the second argument is unused by the known callee body. */
+extern void func_00156E80(f32 *buf, s32 a);
 extern void func_001E38B0(void *p);
 
-void func_0018D580(u8 *p, s32 x) {
+void func_0018D580(u8 *p, u8 *x) {
     u8 *q = *(u8 **)(p + 0x1D0);
     if (*(s8 *)(q + 0xB) >= 0) {
-        u32 buf[4];
+        f32 buf[4];
         u32 c;
         func_0018D6F0(p, x, buf);
         c = q[8];
