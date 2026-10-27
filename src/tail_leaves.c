@@ -50,7 +50,7 @@ extern void func_00174A40();
 extern int func_00175670();
 extern int func_00175700(u8 *);
 extern void func_001765C0();
-extern void func_00178F20();
+extern void func_00178F20(u8 *, u8 *);
 extern void func_00179170(void *, void *, s32);
 extern void func_001843A0();
 extern void func_00184540();
@@ -678,11 +678,11 @@ void func_0020ADF0(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_00175700(p)
 
 void func_00219250(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00219260(a0, a1, a2, a3); }
 
-void func_0021BBE0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00178F20(a0, a1, a2, a3); }
+void func_0021BBE0(u8 *actor, u8 *owner) { func_00178F20(actor, owner); }
 
 void func_0021BBF0(void *a0, void *a1) { func_00179160(a0, a1); }
 
-void func_0021C0D0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00178F20(a0, a1, a2, a3); }
+void func_0021C0D0(u8 *actor, u8 *owner) { func_00178F20(actor, owner); }
 
 void func_0021C5E0(void *a0, void *a1) { func_00179160(a0, a1); }
 
@@ -883,11 +883,11 @@ void func_0030FE60(u8 *p) { func_0030FE70(p); }
 
 void func_0031E710(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0031E720(a0, a1, a2, a3); }
 
-void func_00321490(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00178F20(a0, a1, a2, a3); }
+void func_00321490(u8 *actor, u8 *owner) { func_00178F20(actor, owner); }
 
 void func_003214A0(void *a0, void *a1) { func_00179160(a0, a1); }
 
-void func_00321980(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00178F20(a0, a1, a2, a3); }
+void func_00321980(u8 *actor, u8 *owner) { func_00178F20(actor, owner); }
 
 void func_00321E90(void *a0, void *a1) { func_00179160(a0, a1); }
 
