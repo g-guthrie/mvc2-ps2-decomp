@@ -372,7 +372,7 @@ extern DispatchFn jtbl_004C1CD0[2];
 extern DispatchFn jtbl_004C1CE8[2];
 extern DispatchFn jtbl_004C1CF0[2];
 extern DispatchFn jtbl_004C1CF8[2];
-extern DispatchFn jtbl_004C1D30[2];
+extern const Mvc2OwnerStateCallback jtbl_004C1D20[10] __attribute__((section(".sdata")));
 extern DispatchFn jtbl_004C1D38[2];
 extern DispatchFn jtbl_004C1D98[2];
 extern DispatchFn jtbl_004C1DA0[2];
@@ -1133,7 +1133,7 @@ void func_00375550(u8 *p) { jtbl_004C1CF0[p[5]](p); }
 
 void func_00377CE0(u8 *p) { jtbl_004C1CF8[p[6]](p); }
 
-void func_0037E850(u8 *p) { jtbl_004C1D30[p[6]](p); }
+void func_0037E850(u8 *p, void *owner) { jtbl_004C1D20[4 + p[6]](p, owner); }
 
 void func_0037EFC0(u8 *p) { jtbl_004C1D38[p[5]](p); }
 
