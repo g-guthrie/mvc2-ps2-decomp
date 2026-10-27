@@ -21649,4 +21649,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/input_update_0012f0b0.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/input_update_0012f0b0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/input_update_0012f0b0.o" private/SLUS_204.86.rom --source src/input_update_0012f0b0.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_phase_dispatch_001c6250.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/owner_phase_dispatch_001c6250.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_phase_dispatch_001c6250.o" private/SLUS_204.86.rom --source src/owner_phase_dispatch_001c6250.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
