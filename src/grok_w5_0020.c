@@ -29,7 +29,7 @@ extern void func_00212030(u8 *);
 extern void func_002174F0(u8 *);
 extern void func_00217650(u8 *);
 extern void func_0020C0E0(u8 *, u8 *);
-extern void func_0020D2F0(u8 *, u8 *);
+extern int func_0020D2F0(u8 *, u8 *);
 extern void func_0020D250(u8 *, u8 *, int);
 extern void func_0021C770(u8 *, u8 *);
 extern void func_00328740(u8 *);

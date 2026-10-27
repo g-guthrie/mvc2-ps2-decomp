@@ -7,7 +7,7 @@ extern void func_001843A0(u8 *);
 extern void func_001ECF90(u8 *);
 extern void func_00368FB0(u8 *);
 extern void func_001E7F60(u8 *);
-extern void func_0020D2F0(u8 *);
+extern s32 func_0020D2F0(u8 *, u8 *);
 
 extern void func_00361830(u8 *, u8 *);
 extern void func_00361850(u8 *, u8 *);
@@ -118,9 +118,9 @@ void func_0037F000(u8 *p, void *owner)
     }
 }
 
-void func_0020BF50(u8 *p)
+void func_0020BF50(u8 *p, u8 *q)
 {
-    func_0020D2F0(p);
+    func_0020D2F0(p, q);
     if ((s8)func_00175700(p) < 0) {
         p[6]++;
         *(short *)(p + 0x1c) = 0x12c;

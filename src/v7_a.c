@@ -174,11 +174,11 @@ void func_001B7970(u8 *p) {
 }
 
 void func_0020CF40(u8 *p, u8 *q) {
-    extern void func_0020D2F0();
+    extern s32 func_0020D2F0(u8 *, u8 *);
     extern void func_001757E0();
     s8 v;
     u32 *a, *b;
-    func_0020D2F0(p);
+    func_0020D2F0(p, q);
     func_00175700(p);
     if (*(s8 *)(p + 0x151) == 0) {
         a = (u32 *)(p + 0x60);

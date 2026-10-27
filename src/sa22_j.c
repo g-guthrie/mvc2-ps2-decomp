@@ -22,7 +22,7 @@ typedef struct S {
 } S;
 void func_0020C2F0(S *a, u8 *b)
 {
-    extern s32 func_0020D2F0();
+    extern s32 func_0020D2F0(S *, u8 *);
     extern void func_0020D250();
     extern s32 func_00175700();
     u32 h;

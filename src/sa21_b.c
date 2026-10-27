@@ -5,11 +5,11 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
-extern s32 func_0020D2F0(u8 *);
+extern s32 func_0020D2F0(u8 *, u8 *);
 extern void func_0020D250(u8 *, u8 *, u8);
 void func_0020C0E0(u8 *a, u8 *b) {
     u32 h;
-    if (func_0020D2F0(a) != 0) {
+    if (func_0020D2F0(a, b) != 0) {
         func_0020D250(a, b, 5); return;
     }
     h = *(u16 *)(a + 0x35E);
