@@ -8,7 +8,7 @@ typedef unsigned short u16;
 typedef unsigned int u32;
 typedef signed int s32;
 
-extern void func_00103E10();
+extern int func_00103E10(s32);
 extern int func_0010C480(void);
 extern float func_00116CD0(float);
 extern float func_00116FA0(float);
@@ -1424,7 +1424,7 @@ void func_0041B0D0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Obje
 
 void func_0041D6D0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0012AD00(a0, a1, a2, a3); }
 
-void func_00423890(s32 a0, s32 a1, s32 a2, s32 a3) {  func_00103E10(a0, a1, a2, a3); }
+void func_00423890(void *arg) { (void)func_00103E10((s32)arg); }
 
 /* Native secondary entries retained beside the state dispatchers. */
 extern void func_00359A70(u8 *);
