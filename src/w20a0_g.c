@@ -16,7 +16,7 @@ void func_00171700(void) {
     extern void func_003D6D50();
     extern void func_003D6E20();
     extern void func_00176300();
-    extern void func_0016F2D0();
+    extern void func_0016F2D0(u8 *, s32);
     extern void func_00174F50();
     extern void func_00170160(int);
     extern void func_001E2150();
