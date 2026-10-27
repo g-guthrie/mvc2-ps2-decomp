@@ -3,11 +3,11 @@ typedef unsigned char u8;
 typedef unsigned short u16;
 typedef struct Entry {
     u8 field0; u8 field1; u8 pad2[14];
-    void (*callback)(void); u8 pad20[4]; void *arg; u8 pad28[4];
+    void (*callback)(u8 *); u8 pad20[4]; void *arg; u8 pad28[4];
     u8 field32; u8 field33; u8 pad34[4]; u16 value;
 } Entry;
 extern Entry *func_003DA750(int, int, int);
-extern void func_001A7130(void);
+extern void func_001A7130(u8 *);
 void func_001A70B0(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 3, 0);
     if (entry != 0) {
@@ -20,7 +20,7 @@ void func_001A70B0(u8 *arg, u8 first, u8 second) {
     }
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_0035C830(void);
+extern void func_0035C830(u8 *);
 void func_0035C7B0(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 1, 0);
     if (entry != 0) {
@@ -33,7 +33,7 @@ void func_0035C7B0(u8 *arg, u8 first, u8 second) {
     }
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_0035D470(void);
+extern void func_0035D470(u8 *);
 void func_0035D370(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 1, 0);
     if (entry != 0) {
@@ -46,7 +46,7 @@ void func_0035D370(u8 *arg, u8 first, u8 second) {
     }
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_0035FA60(void);
+extern void func_0035FA60(u8 *);
 void func_0035F9E0(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 1, 0);
     if (entry != 0) {
@@ -59,7 +59,7 @@ void func_0035F9E0(u8 *arg, u8 first, u8 second) {
     }
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_00360100(void);
+extern void func_00360100(u8 *);
 void func_00360080(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 1, 0);
     if (entry != 0) {
@@ -72,7 +72,7 @@ void func_00360080(u8 *arg, u8 first, u8 second) {
     }
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_003A5090(void);
+extern void func_003A5090(u8 *);
 void func_003A4F80(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 1, 0);
     if (entry != 0) {
@@ -85,7 +85,7 @@ void func_003A4F80(u8 *arg, u8 first, u8 second) {
     }
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_003A5A80(void);
+extern void func_003A5A80(u8 *);
 void func_003A5A00(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 1, 0);
     if (entry != 0) {
@@ -98,7 +98,7 @@ void func_003A5A00(u8 *arg, u8 first, u8 second) {
     }
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_003A5E90(void);
+extern void func_003A5E90(u8 *);
 void func_003A5D90(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 1, 0);
     if (entry != 0) {
@@ -111,7 +111,7 @@ void func_003A5D90(u8 *arg, u8 first, u8 second) {
     }
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_003A6810(void);
+extern void func_003A6810(u8 *);
 void func_003A6790(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 2, 0);
     if (entry != 0) {
@@ -124,7 +124,7 @@ void func_003A6790(u8 *arg, u8 first, u8 second) {
     }
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_003A7C20(void);
+extern void func_003A7C20(u8 *);
 Entry *func_003A7B20(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 1, 0);
     if (entry != 0) {
@@ -138,7 +138,7 @@ Entry *func_003A7B20(u8 *arg, u8 first, u8 second) {
     return entry;
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_003AFA70(void);
+extern void func_003AFA70(u8 *);
 void func_003AF9F0(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 1, 0);
     if (entry != 0) {
@@ -151,7 +151,7 @@ void func_003AF9F0(u8 *arg, u8 first, u8 second) {
     }
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_003B08E0(void);
+extern void func_003B08E0(u8 *);
 void func_003B0860(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 1, 0);
     if (entry != 0) {
@@ -164,7 +164,7 @@ void func_003B0860(u8 *arg, u8 first, u8 second) {
     }
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_003B11C0(void);
+extern void func_003B11C0(u8 *);
 void func_003B10B0(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 1, 0);
     if (entry != 0) {
@@ -177,7 +177,7 @@ void func_003B10B0(u8 *arg, u8 first, u8 second) {
     }
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_003B1BF0(void);
+extern void func_003B1BF0(u8 *);
 void func_003B1B70(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 1, 0);
     if (entry != 0) {
@@ -190,7 +190,7 @@ void func_003B1B70(u8 *arg, u8 first, u8 second) {
     }
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_003B1FF0(void);
+extern void func_003B1FF0(u8 *);
 void func_003B1EF0(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 1, 0);
     if (entry != 0) {
@@ -203,7 +203,7 @@ void func_003B1EF0(u8 *arg, u8 first, u8 second) {
     }
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_003B28E0(void);
+extern void func_003B28E0(u8 *);
 Entry *func_003B2860(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 2, 0);
     if (entry != 0) {
@@ -217,7 +217,7 @@ Entry *func_003B2860(u8 *arg, u8 first, u8 second) {
     return entry;
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_003B2FC0(void);
+extern void func_003B2FC0(u8 *);
 Entry *func_003B2E90(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 1, 0);
     if (entry != 0) {
@@ -231,7 +231,7 @@ Entry *func_003B2E90(u8 *arg, u8 first, u8 second) {
     return entry;
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_003C0C60(void);
+extern void func_003C0C60(u8 *);
 void func_003C0BE0(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 1, 0);
     if (entry != 0) {
@@ -244,7 +244,7 @@ void func_003C0BE0(u8 *arg, u8 first, u8 second) {
     }
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_003C1350(void);
+extern void func_003C1350(u8 *);
 void func_003C11D0(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 1, 0);
     if (entry != 0) {
@@ -257,7 +257,7 @@ void func_003C11D0(u8 *arg, u8 first, u8 second) {
     }
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_003C3AE0(void);
+extern void func_003C3AE0(u8 *);
 void func_003C3A60(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 1, 0);
     if (entry != 0) {
@@ -270,7 +270,7 @@ void func_003C3A60(u8 *arg, u8 first, u8 second) {
     }
 }
 extern Entry *func_003DA750(int, int, int);
-extern void func_003C4350(void);
+extern void func_003C4350(u8 *);
 void func_003C42D0(u8 *arg, u8 first, u8 second) {
     Entry *entry = func_003DA750(0, 1, 0);
     if (entry != 0) {
