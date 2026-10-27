@@ -59,7 +59,7 @@ static void func_00297F90(u8 *p) {
         *w = 0;
     }
 }
-extern void func_0038A040();
+extern void func_0038A040(u8 *, s32);
 extern u8 D_00455C90[];
 extern u8 D_00456D80[];
 
@@ -211,5 +211,16 @@ void func_0028D580(u8 *p)
         q[0x1E6] = (s8)p[0x1E6] ^ 1;
         if (*(u16 *)(p + 0x160) == 0)
             func_00184540(p);
+    }
+}
+
+void func_00291150(u8 *p) {
+    u32 t;
+    func_00290E30(p);
+    func_00175700(p);
+    if (*(s8 *)(p + 0x151) == 0) {
+        t = p[7]; p[7] = t + 1;
+        p[0x151] = 0;
+        func_0038A040(p, (u8)(p[0x1B7] + 2));
     }
 }

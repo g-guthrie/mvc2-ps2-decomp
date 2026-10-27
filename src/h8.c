@@ -29,21 +29,7 @@ void func_001DBDF0(u8 *p) {
     *(f32 *)(p + 0x6C) = D_0044EB04[i * 2];
 }
 
-extern void func_00290E30(u8 *);
-extern s8 func_00175700();
-extern void func_0038A040(u8 *, s32);
-/* Provisional: the animation helper consumes p; the corrected call differs. */
-void func_00291150(u8 *p) {
-    u32 t;
-    func_00290E30(p);
-    func_00175700();
-    if (*(s8 *)(p + 0x151) == 0) {
-        t = p[7]; p[7] = t + 1;
-        p[0x151] = 0;
-        func_0038A040(p, (u8)(p[0x1B7] + 2));
-    }
-}
-
+extern int func_00175700(u8 *);
 typedef void (*Fn_0036E6F0)(u8 *, u8 *, s32 *);
 extern Fn_0036E6F0 D_00463DA0[];
 extern void func_00372260(u8 *);
@@ -54,7 +40,7 @@ void func_0036E6F0(u8 *p) {
 }
 
 void func_001B66C0(u8 *p) {
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         u32 t = p[4];
         p[4] = t + 1;
         p[0x13C] = 0;

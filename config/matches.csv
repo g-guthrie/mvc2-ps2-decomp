@@ -10907,7 +10907,7 @@ func_001FC1B0,0x001FC1B0,0x8C,src/h7c.c,complete
 func_002D9730,0x002D9730,0x6C,src/h7c.c,complete
 func_001B8030,0x001B8030,0x54,src/h8.c,placeholder
 func_001DBDF0,0x001DBDF0,0x5C,src/h8.c,complete
-func_00291150,0x00291150,0x5C,src/h8.c,placeholder
+func_00291150,0x00291150,0x5C,src/grok_w5_0028.c,complete
 func_0036E6F0,0x0036E6F0,0x60,src/h8.c,placeholder
 func_001B66C0,0x001B66C0,0x60,src/h8.c,complete
 func_00385220,0x00385220,0x60,src/h8.c,complete
