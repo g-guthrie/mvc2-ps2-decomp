@@ -9,13 +9,13 @@ typedef struct {
     u32 align;
 } AL;
 
-s32 func_003F09C0(AL *p, u32 n, s32 commit) {
+void *func_003F09C0(AL *p, u32 n, s32 commit) {
     u32 a, o, e;
     a = p->align; o = p->cur;
     n = (n + a - 1) & ~(a - 1);
     e = o + n;
     if (p->end < e) return 0;
-    if (commit != 0) { p->end -= n; return p->end; }
+    if (commit != 0) { p->end -= n; return (void *)p->end; }
     p->cur = e;
-    return o;
+    return (void *)o;
 }
