@@ -5,7 +5,7 @@ typedef float f32;
 
 extern int func_00175700(u8 *);
 extern void func_001830D0(u8 *, f32 *, int);
-extern int func_003778A0(u8 *, int);
+extern u8 *func_003778A0(u8 *, int);
 extern int func_001757E0(u8 *, int, int);
 
 void func_0026D960(u8 *p)
@@ -26,11 +26,11 @@ void func_0026D960(u8 *p)
     }
     if ((s8)p[0x150] != 0) {
         {
-            int r;
+            u8 *r;
             p[7]++;
             *(s16 *)(p + 0x1C) = 0x78;
             r = func_003778A0(p, 0);
-            *(int *)(p + 0x14) = r;
+            *(u8 **)(p + 0x14) = r;
             if (r == 0) {
                 p[6]++;
                 p[7] = 0;

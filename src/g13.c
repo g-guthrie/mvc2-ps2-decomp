@@ -221,7 +221,7 @@ void func_003B1530(u8 *p, u8 *q) {
     }
 }
 
-void func_003749E0(u8 *a, u8 b) {
+u8 *func_003749E0(u8 *a, u8 b) {
     u8 *o = func_003DA750(0, 1, 0);
     if (o) {
         *(void **)(o + 0x10) = func_00374A60;
@@ -233,6 +233,7 @@ void func_003749E0(u8 *a, u8 b) {
         o[0xD1] = a[0x169];
         o[0xD0] = a[0x168];
     }
+    return o;
 }
 
 void func_001FF120(u8 *p) {

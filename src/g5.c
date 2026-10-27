@@ -153,7 +153,7 @@ void func_00126970(f32 *a, f32 *b) {
 
 extern void func_0019A540(void);
 
-void func_0019A4C0(u8 *p, u8 b) {
+u8 *func_0019A4C0(u8 *p, u8 b) {
     u8 *r = func_003DA750(0, 3, 1);
     if (r != 0) {
         *(void **)(r + 0x10) = (void *)func_0019A540;
@@ -163,6 +163,7 @@ void func_0019A4C0(u8 *p, u8 b) {
         r[0x20] = b;
         *(s16 *)(r + 0x26) = 0x601;
     }
+    return r;
 }
 
 extern void func_00289E30(u8 *p);

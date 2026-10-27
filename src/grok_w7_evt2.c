@@ -205,7 +205,7 @@ void func_003A1280(void *arg, u8 mode) {
     }
 }
 
-void func_001940A0(u8 *arg) {
+u8 *func_001940A0(u8 *arg) {
     Event *event = func_003DA750(0, 3, 1);
     if (event != 0) {
         event->callback = func_00194170;
@@ -215,6 +215,7 @@ void func_001940A0(u8 *arg) {
         event->field21 = 0;
         event->value = 0x301;
     }
+    return (u8 *)event;
 }
 void func_001CAEA0(u8 *arg) {
     Event *event = func_003DA750(0, 3, 0);
