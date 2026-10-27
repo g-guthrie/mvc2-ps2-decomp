@@ -8,11 +8,11 @@ typedef signed int s32;
 #include "data/button_config_render.h"
 typedef ButtonConfigRenderRecord Ent;
 
-extern Ent D_004B36E0[];
+extern Ent data_button_config_render_004B36E0[42];
 extern void func_003D7350(u8, u8, u8, const char *, ...);
 
 void func_00148D40(u8 *p, s32 idx, s32 n) {
-    Ent *e = &D_004B36E0[idx];
+    Ent *e = &data_button_config_render_004B36E0[idx];
     s32 i;
     for (i = 0; i < n; i++) {
         func_003D7350(e->rendererArgs[0] + *(s8 *)(p + 1) * 0x35, e->rendererArgs[1], e->rendererArgs[3], (const char *)e->resource);
