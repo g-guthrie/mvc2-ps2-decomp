@@ -124,7 +124,7 @@ extern void func_00345BC0();
 extern void func_00346490(u8 *);
 extern void func_00351AD0();
 extern void func_00352160();
-extern void func_003562C0();
+extern void func_003562C0(u8 *);
 extern void func_00357670(u8 *);
 extern void func_00358880(u8 *);
 extern void func_00358D40();
@@ -997,9 +997,9 @@ void func_00355050(u8 *p, void *owner) { func_003DAA40((struct Object *)p); }
 
 void func_00355AD0(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40((struct Object *)(p)); }
 
-void func_003562B0(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003562C0(p, a1, a2, a3); }
+void func_003562B0(u8 *p) { p[316] = 0; func_003562C0(p); }
 
-void func_003562C0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_003562C0(u8 *p) { func_003DAA40((struct Object *)p); }
 
 void func_00356980(u8 *object) { extern void func_003DAA40(struct Object *); func_003DAA40((struct Object *)((struct Object *)object)); }
 
