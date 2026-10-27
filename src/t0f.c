@@ -1,3 +1,4 @@
+struct Object;
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -7,7 +8,7 @@ typedef signed int s32;
 typedef float f32;
 
 extern u8 *D_004C2840;
-extern void func_003DAA40(void);
+extern void func_003DAA40(struct Object *);
 void func_00140C70(u8 *p) {
     f32 z = 0.0f;
     u8 st = p[4];
@@ -29,7 +30,7 @@ void func_00140C70(u8 *p) {
         }
         break;
     case 2:
-        func_003DAA40();
+        func_003DAA40((struct Object *)p);
         break;
     }
 }

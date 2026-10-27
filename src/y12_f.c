@@ -1,3 +1,4 @@
+struct Object;
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -20,7 +21,7 @@ typedef struct LaunchRecord { s16 vx,vy,x,y; u8 animation,event; } T10;
 extern T10 D_004B8300[];
 
 void func_00154FF0(u8 *p) {
-    extern void func_003DAA40();
+    extern void func_003DAA40(struct Object *);
     s32 h;
     s16 hh;
     switch (p[4]) {
@@ -37,7 +38,7 @@ void func_00154FF0(u8 *p) {
     case 1:
         h = *(s16 *)(p + 0x1C);
         if (h > 5) {
-            func_003DAA40();
+            func_003DAA40((struct Object *)p);
         } else {
             *(s16 *)(p + 0xCC) = D_00444A40[h].a;
             *(s32 *)(p + 0x84) = D_004C2838;
