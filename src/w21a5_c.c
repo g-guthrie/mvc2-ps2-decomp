@@ -66,7 +66,7 @@ void func_001F82C0(u8 *p) {
     default:
         break;
     }
-    t = *(volatile u8 *)(p + 0x1B5);
+    t = *(u8 *)(p + 0x1B5);
     p[0x1B5] = t;
     p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
     *(s32 *)(p + 0x1D8) = 0;

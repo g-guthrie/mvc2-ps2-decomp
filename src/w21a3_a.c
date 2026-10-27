@@ -25,7 +25,7 @@ void func_002E95E0(u8 *p) {
         *(s32 **)(p + 0x408) = D_004C1128;
         p[0x1BB] = 0;
         func_001E3710(p, 0x14);
-        t = *(volatile u8 *)(p + 0x1B5);
+        t = *(u8 *)(p + 0x1B5);
         p[0x1B5] = t;
         p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
         *(s32 *)(p + 0x1D8) = 0;
@@ -38,7 +38,7 @@ void func_002E95E0(u8 *p) {
         *(s32 **)(p + 0x408) = D_004C112C;
         p[0x1BB] = 1;
         func_001E3710(p, 0x15);
-        t = *(volatile u8 *)(p + 0x1B5);
+        t = *(u8 *)(p + 0x1B5);
         p[0x1B5] = t;
         p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
         *(s32 *)(p + 0x1D8) = 0;

@@ -28,7 +28,7 @@ void func_002C1D30(u8 *p) {
         p[0x20D] = 0;
         func_001757E0(p, 0x14, 0x10);
         func_001E3710(p, 0x15);
-        t = *(volatile u8 *)(p + 0x1B5);
+        t = *(u8 *)(p + 0x1B5);
         p[0x1B5] = t;
         p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
         *(s32 *)(p + 0x1D8) = 0;
