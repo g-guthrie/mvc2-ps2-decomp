@@ -13190,7 +13190,7 @@ func_0030EE50,0x0030EE50,0xC4,src/v0_a.c,complete
 func_00194D50,0x00194D50,0xC8,src/v0_a.c,complete
 func_002B2130,0x002B2130,0xC8,src/v0_a.c,complete
 func_002F4E70,0x002F4E70,0xCC,src/v0_a.c,complete
-func_0014FCA0,0x0014FCA0,0xD4,src/v0_a.c,complete
+func_0014FCA0,0x0014FCA0,0xD4,src/owner_effect_create_0014fca0.c,complete
 func_002E13D0,0x002E13D0,0x90,src/v0_b.c,complete
 func_002ECBE0,0x002ECBE0,0xB4,src/v0_b.c,complete
 func_00275950,0x00275950,0xC4,src/v0_b.c,complete
