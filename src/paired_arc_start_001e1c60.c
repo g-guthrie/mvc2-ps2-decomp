@@ -4,7 +4,10 @@ typedef struct {s16 x,y;} Pair;
 typedef struct {Pair row[10];} PairTable;
 typedef struct {u8 frame[10];} Frames;
 typedef struct {s16 angle[5];} Angles;
-typedef struct {u32 words[49];} State;
+
+#include "actor_inherited_state.h"
+typedef ActorState State;
+
 typedef struct {float x,y,z;} V3;
 extern PairTable D_0044F050,D_0044F090;extern Frames D_0044F078;extern Angles D_0044F0B8;
 extern int func_001754A0(u8*,int,int);extern void func_0015E630(u8*);

@@ -3,7 +3,10 @@ typedef signed char s8;
 typedef unsigned int u32;
 typedef float f32;
 typedef struct { f32 x,y,z; } V3;
-typedef struct { u32 words[49]; } Payload;
+
+#include "actor_inherited_state.h"
+typedef ActorState Payload;
+
 typedef void (*Unary)(u8 *);
 /* GP-addressed alias of jtbl_004BF5B8[4..5]. */
 extern Unary const D_004BF5C8[] __attribute__((section(".sdata")));

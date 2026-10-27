@@ -7,7 +7,10 @@ typedef signed int s32;
 typedef float f32;
 
 typedef struct { f32 x, y, z; } V3;
-typedef struct {s32 word[49];} InheritedState;
+
+#include "actor_inherited_state.h"
+typedef ActorState InheritedState;
+
 
 extern int func_001754A0(u8 *,int,int);
 extern void func_001BB650(u8 *,u8 *),func_001BB830(u8 *,u8 *);

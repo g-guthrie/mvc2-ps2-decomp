@@ -1,6 +1,9 @@
 #pragma padloop on
 typedef unsigned char u8;typedef signed char s8;typedef unsigned short u16;typedef short s16;typedef unsigned int u32;
-typedef struct {u32 words[49];} Fields;typedef struct {float x,y,z;} V3;typedef struct {u8 pad[0x7C];s16 count[2];} Counters;
+
+#include "actor_inherited_state.h"
+typedef ActorState Fields;
+typedef struct {float x,y,z;} V3;typedef struct {u8 pad[0x7C];s16 count[2];} Counters;
 extern Counters *D_004C2794 __attribute__((section(".sdata")));extern s16 D_004C1D48[] __attribute__((section(".sdata")));extern float D_004F1F4C;
 extern int func_001757E0(u8*,int,int);extern void func_003804B0(u8*);
 void func_00380300(u8*p) {

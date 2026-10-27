@@ -5,7 +5,10 @@ typedef signed int s32;
 typedef unsigned int u32;
 typedef float f32;
 typedef struct { f32 x,y,z; } V3;
-typedef struct { u32 words[49]; } Payload;
+
+#include "actor_inherited_state.h"
+typedef ActorState Payload;
+
 typedef unsigned short u16;
 typedef struct Placement {s16 x,y;s8 pose;u8 animation;} Placement;
 extern Placement D_0044B470[],D_0044C0E0[];

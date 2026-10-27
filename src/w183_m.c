@@ -6,7 +6,10 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-typedef struct { s32 w[49]; } B196;
+
+#include "actor_inherited_state.h"
+typedef ActorState B196;
+
 typedef struct { f32 x, y, z; } V3;
 extern u8 *D_004C29C4;
 extern u8 *D_004C2938;

@@ -2,7 +2,10 @@
 typedef int s32;typedef unsigned char u8;typedef signed char s8;typedef short s16;typedef unsigned short u16;typedef unsigned int u32;
 typedef struct {float x,y,z;} V3;
 typedef struct {u8 prefix[0x34];float x;} Position;
-typedef struct {u32 words[49];} State;
+
+#include "actor_inherited_state.h"
+typedef ActorState State;
+
 typedef struct {u8 prefix[0x7C];s16 count[2];} Counters;
 typedef struct {s16 value,pad[3];} Column;
 extern Column D_00461F60[],D_00461F62[],D_00461F64[],D_00461F66[];

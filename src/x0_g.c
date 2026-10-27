@@ -5,7 +5,10 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
-typedef struct { s32 x[49]; } S983B0;
+
+#include "actor_inherited_state.h"
+typedef ActorState S983B0;
+
 typedef struct { f32 x, y, z; } V983B0;
 typedef struct { f32 x, y, z; } V343250;
 extern V343250 D_00460720[];

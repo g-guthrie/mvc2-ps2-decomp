@@ -14,7 +14,10 @@ typedef struct {s8 layer;u8 pad[3];f32 velocity;short duration,interval;} EntryP
 extern EntryParameters D_0044B7D0[];
 extern f32 D_004F1FC8,D_004F1FCC;
 extern void func_001ACA00(u8 *);
-typedef struct {s32 word[49];} State;
+
+#include "actor_inherited_state.h"
+typedef ActorState State;
+
 void func_001AC860(u8 *actor) {
  Actor *p=(Actor*)actor,*owner=*(Actor**)(actor+0x18);
  EntryParameters *r;

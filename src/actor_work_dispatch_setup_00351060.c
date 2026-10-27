@@ -1,7 +1,10 @@
 #pragma padloop on
 typedef unsigned char u8;typedef signed char s8;typedef short s16;typedef unsigned short u16;typedef unsigned int u32;
 typedef struct {float x,y,z;} V3;
-typedef struct {u32 words[49];} State;
+
+#include "actor_inherited_state.h"
+typedef ActorState State;
+
 extern float D_004624E0[][2],D_004624E4[][2];
 extern int func_001757E0(u8*,int,int);
 #define OWNER (*(u8**)(p+0x18))

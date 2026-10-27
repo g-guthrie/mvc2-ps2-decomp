@@ -1,7 +1,10 @@
 #include "actor_effect_work_callbacks.h"
 typedef signed char s8;typedef unsigned int u32;
 typedef struct {float x,y,z;} V3;
-typedef struct {u32 words[49];} State;
+
+#include "actor_inherited_state.h"
+typedef ActorState State;
+
 #define OWNER (*(u8**)(p+0x18))
 void func_0019E670(u8*p,u8*work){
  p[4]++;

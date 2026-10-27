@@ -8,7 +8,10 @@ typedef float f32;
 
 typedef struct { f32 x, y, z; } V3;
 
-typedef struct { s32 x[49]; } B9;
+
+#include "actor_inherited_state.h"
+typedef ActorState B9;
+
 
 
 

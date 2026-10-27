@@ -10,7 +10,10 @@ extern f32 D_004643BC[];
 extern void (*D_00455458[])(u8 *);
 extern void (*D_00463DB0[])(u8 *, u8 *, u8 *);
 
-typedef struct { s32 x[49]; } B_78DB0;
+
+#include "actor_inherited_state.h"
+typedef ActorState B_78DB0;
+
 typedef struct { f32 x, y, z; } V3_78DB0;
 void func_00378DB0(u8 *p) {
     extern void func_00379190();

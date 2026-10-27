@@ -13,7 +13,10 @@ extern GameState *D_004C2794 __attribute__((section(".sdata")));
 extern int func_001757E0(u8 *, s32, s32);
 extern void func_003C32F0(u8 *, u8 *);
 
-typedef struct { u32 words[49]; } Payload;
+
+#include "actor_inherited_state.h"
+typedef ActorState Payload;
+
 #pragma padloop on
 void func_003C3140(u8 *p, u8 *q)
 {
