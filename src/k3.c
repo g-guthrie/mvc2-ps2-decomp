@@ -100,11 +100,11 @@ s32 func_0040D398(S40D *p, s32 key) {
     return 0;
 }
 
-extern void func_00411438(s32, char *, unsigned long);
+extern void func_00411438(s64, char *, long);
 extern s32 func_0011FFA0(char *);
 extern void func_001200D8(char *, char *, s32);
 extern char D_004C2508[];
-void func_00411548(s32 a, s32 b, char *c, long d) {
+void func_00411548(s64 a, s64 b, char *c, long d) {
     char *e;
     func_00411438(a, c, d);
     func_001200D8(c, D_004C2508, (s32)d - func_0011FFA0(c) - 1);
