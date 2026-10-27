@@ -450,8 +450,8 @@ void func_00288EE0(u8 *p)
 
 void func_00156650(V3 *v, s32 b, s32 flag, s32 c, s32 e)
 {
-    extern u8 *func_003DA750(s32, s32, s32);
-    extern void func_00156750(void);
+    extern void *func_003DA750(void *, s32, s32);
+    extern void func_00156750(u8 *);
     extern void func_001567A0(u8 *, s32);
     extern void func_001568A0(u8 *, s32);
     extern void func_001569C0(u8 *, s32);
@@ -460,7 +460,7 @@ void func_00156650(V3 *v, s32 b, s32 flag, s32 c, s32 e)
     if ((o = func_003DA750(0, e, 1)) != 0) {
         D_004D1900[0] = D_004D1900[0] + 1;
         o[0x13C] = 0;
-        *(void (**)(void))(o + 0x10) = func_00156750;
+        *(void (**)(u8 *))(o + 0x10) = func_00156750;
         *(V3 *)(o + 0x34) = *v;
         *(s32 *)(o + 0xD0) = 0x181;
         if (flag == 1) {
@@ -476,7 +476,7 @@ void func_00156650(V3 *v, s32 b, s32 flag, s32 c, s32 e)
 
 void func_00156520(V3 *v, s32 unused, s32 flag, s32 c, s32 e)
 {
-    extern u8 *func_003DA750(s32, s32, s32);
+    extern void *func_003DA750(void *, s32, s32);
     extern void func_00156750(u8 *);
     extern void func_001567A0(u8 *, s32);
     extern void func_001568A0(u8 *, s32);
