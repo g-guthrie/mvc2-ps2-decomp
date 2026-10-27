@@ -21645,4 +21645,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/script_weighted_select_00167060.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/script_weighted_select_00167060.o"
 "$PYTHON" tools/verify_object.py "$BUILD/script_weighted_select_00167060.o" private/SLUS_204.86.rom --source src/script_weighted_select_00167060.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/input_update_0012f0b0.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/input_update_0012f0b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/input_update_0012f0b0.o" private/SLUS_204.86.rom --source src/input_update_0012f0b0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
