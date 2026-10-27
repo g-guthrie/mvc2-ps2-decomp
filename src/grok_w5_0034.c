@@ -117,14 +117,6 @@ void func_00356B50(u8 *p)
     D_00462D40[p[4]](p);
 }
 
-void func_00357340(u8 *p)
-{
-    p[5]++;
-    func_001E3210(p, 0x1f);
-    func_00356AB0(p);
-    S(p, 0x1e) = 10;
-}
-
 void func_003574E0(u8 *p)
 {
     if (--S(p, 0x1e) != 0)
@@ -144,49 +136,11 @@ void func_00358480(u8 *p)
     e->extra = H(p, 0x168);
 }
 
-void func_0035BEB0(void *arg)
-{
-    Entry *e = func_003DA750(0, 1, 0);
-    if (e) {
-        e->callback = func_0035BF00;
-        e->value = 0xC01;
-        e->arg = arg;
-    }
-}
-
-void func_0035F470(void *arg)
-{
-    Entry *e = func_003DA750(0, 1, 0);
-    if (e) {
-        e->callback = func_0035F4C0;
-        e->value = 0xE01;
-        e->arg = arg;
-    }
-}
-
 void func_0035CC50(u8 *p, u8 *q)
 {
     func_001E7F60(p, q);
     if (q[0x2b8])
         p[4]++;
-}
-
-void func_0035F3E0(u8 *p, u8 *q, u8 *r)
-{
-    if (--S(p, 0x1e) == 0) {
-        p[4] = 2;
-        p[0x13c] = 0;
-        r[4] = 1;
-    }
-}
-
-void func_00350F90(u8 *p)
-{
-    u8 *q;
-    func_00175700(p);
-    q = *(u8 **)(p + 0x18);
-    if (q[0x1e4] != 0x16)
-        func_00350FD0(p);
 }
 
 void func_0034ECE0(u8 *p)
