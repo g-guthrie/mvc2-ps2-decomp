@@ -104,7 +104,7 @@ extern u8 D_004B71E0[];
 
 void func_00220C00(u8 *p)
 {
-    extern u8 *func_0019B750();
+    extern u8 *func_0019B750(void *, u8);
     u8 *o;
     u8 *s;
     p[0x209] = 2;

@@ -7,7 +7,7 @@ typedef struct { float x, y, z; } V3;
 extern int func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_00178F20(u8 *, u8 *);
-extern void func_001B5FA0(void *, u8);
+extern u8 *func_001B5FA0(void *, u8);
 
 void func_0026DB70(u8 *p)
 {

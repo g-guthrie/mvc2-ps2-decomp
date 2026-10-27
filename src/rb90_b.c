@@ -13,7 +13,7 @@ extern GB *D_004C2794;
 extern void func_0026DF70(u8 *);
 extern void func_00175700();
 extern s32 func_001757E0(u8 *, s32, s32);
-extern u8 *func_001B5FA0(u8 *, s32);
+extern u8 *func_001B5FA0(void *, u8);
 
 void func_0026DFE0(u8 *p)
 {

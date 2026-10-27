@@ -48,7 +48,7 @@ void func_0019A010(void *arg, u8 mode) {
         entry->value = 0x600;
     }
 }
-void func_0019B750(void *arg, u8 mode) {
+u8 *func_0019B750(void *arg, u8 mode) {
     CallbackEntry *entry = func_003DA750(0, 3, 0);
     if (entry != 0) {
         entry->callback = func_0019B7B0;
@@ -56,6 +56,7 @@ void func_0019B750(void *arg, u8 mode) {
         entry->mode = mode;
         entry->value = 0x800;
     }
+    return (u8 *)entry;
 }
 void func_0019C1C0(void *arg, u8 mode) {
     CallbackEntry *entry = func_003DA750(0, 3, 0);
@@ -84,7 +85,7 @@ void func_0019D270(void *arg, u8 mode) {
         entry->value = 0xA00;
     }
 }
-void func_001B5FA0(void *arg, u8 mode) {
+u8 *func_001B5FA0(void *arg, u8 mode) {
     CallbackEntry *entry = func_003DA750(0, 3, 0);
     if (entry != 0) {
         entry->callback = func_001B6000;
@@ -92,6 +93,7 @@ void func_001B5FA0(void *arg, u8 mode) {
         entry->mode = mode;
         entry->value = 0x1500;
     }
+    return (u8 *)entry;
 }
 void func_001B7660(void *arg, u8 mode) {
     CallbackEntry *entry = func_003DA750(0, 3, 0);
