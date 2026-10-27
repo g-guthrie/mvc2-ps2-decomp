@@ -8,13 +8,12 @@ typedef signed int s32;
 typedef float f32;
 typedef struct { f32 x, y, z; } V3;
 
-extern s8 func_00175670();
-extern s32 func_001B81D0();
-/* Provisional: this callback and func_001B81D0 have void returns. */
-s32 func_001B8030(u8 *p) {
+extern int func_00175670(u8 *);
+extern void func_001B81D0(u8 *);
+void func_001B8030(u8 *p) {
     *(f32 *)(p + 0x34) = *(f32 *)(*(u8 **)(p + 0x18) + 0x34);
     *(f32 *)(p + 0x38) = *(f32 *)(*(u8 **)(p + 0x18) + 0x38);
-    if (func_00175670(p) < 0) return func_001B81D0(p);
+    if ((s8)func_00175670(p) < 0) { func_001B81D0(p); return; }
 }
 
 extern s32 func_00174170(void);
@@ -257,7 +256,7 @@ void func_0019B3D0(u8 *p) {
             return;
         }
     }
-    if (func_00175670(p) < 0) {
+    if ((s8)func_00175670(p) < 0) {
         func_0019B740(p);
     } else {
         *(V3 *)(p + 0x34) = *(V3 *)(*(u8 **)(p + 0x18) + 0x34);
