@@ -30,6 +30,7 @@ void func_001FF9D0(u8 *p)
 typedef struct { f32 x, y, z; } V13D8;
 extern V13D8 D_004B16A0[];
 typedef struct { u8 pad0[0x1C]; s16 s1c; u8 pad1[2]; u8 i20; u8 pad2[0x13]; f32 f34, f38, f3c; } P13D8;
+/* Provisional: the flat vector view differs from the six-pair data owner. */
 void func_0013D8E0(P13D8 *p)
 {
     V13D8 *a = &D_004B16A0[p->i20 * 2];
