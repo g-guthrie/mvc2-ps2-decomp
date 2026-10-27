@@ -1,3 +1,5 @@
+typedef struct SA37_J0 SA37_J0;
+typedef struct SA37_R SA37_R;
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -10,16 +12,16 @@ extern s8 D_004F7FC8[];
 extern u8 D_0045DA40[];
 typedef struct { f32 x, y, z; } V3;
 
-s32 func_001673D0(u8 *p, s32 b)
+s32 func_001673D0(u8 *p, u8 *b)
 {
     extern s32 func_0016B250(u8 *, s32);
-    extern s32 func_0016B360(u8 *, s32);
-    extern void func_0016B0C0(u8 *, s32, s32);
+    extern s32 func_0016B360(u8 *, u8 *);
+    extern void func_0016B0C0(SA37_J0 *, SA37_R *, s32);
     u16 v;
     if (func_0016B250(p, 2) == 0) return 0;
     if (func_0016B360(p, b) == 0) return 0;
-    func_0016B0C0(p, b, 0);
-    func_0016B0C0(p, b, 1);
+    func_0016B0C0((SA37_J0 *)p, (SA37_R *)b, 0);
+    func_0016B0C0((SA37_J0 *)p, (SA37_R *)b, 1);
     v = (*(s32 *)(p + 0x4C8) != 0) ? 0x20 : 0x40;
     if (*(s16 *)(p + 0x4C2) & v) *(u16 *)(p + 0x4C2) = v;
     else *(u16 *)(p + 0x4F0) = v;

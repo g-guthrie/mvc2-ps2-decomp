@@ -20,8 +20,8 @@ void func_00358FD0(u8 *a, s32 b) {
     }
 }
 
-extern void func_001688C0();
-s32 func_0016B360(u8 *a, s32 b) {
+extern s32 func_001688C0(u8 *, u8 *);
+s32 func_0016B360(u8 *a, u8 *b) {
     s32 v = *(s8 *)(a + 0x4A9);
     s8 w;
     if (v == 0) {
