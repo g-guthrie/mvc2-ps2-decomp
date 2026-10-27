@@ -21,7 +21,7 @@ typedef struct { u8 pad[0x38]; f32 f38; } SP;
 void func_003CAB20(u8 *p, u8 *q, u32 type) {
     extern u32 func_00174170();
     extern void func_001757E0();
-    extern u8 *func_003CA900();
+    extern u8 *func_003CA900(u8 *, unsigned int);
     extern void func_001E3210();
     extern void func_001548D0();
     extern void func_003CDB90();

@@ -12,7 +12,7 @@ extern void (*D_00455458[])(u8 *);
 extern void (*D_00463DB0[])(u8 *, u8 *, u8 *);
 
 void func_003258B0(u8 *p) {
-    extern u8 *func_003CA900();
+    extern u8 *func_003CA900(u8 *, unsigned int);
     extern void func_001757E0();
     extern void func_00325960();
     u8 *o;

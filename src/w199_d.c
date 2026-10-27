@@ -9,10 +9,10 @@ typedef float f32;
 typedef struct { s32 x[0x31]; } W199S;
 typedef struct { float x, y, z; } V3;
 
-u8 *func_003CA900(u8 *a, u8 *b) {
+u8 *func_003CA900(u8 *a, unsigned int b) {
     extern u8 *func_003DA750();
     extern void func_003CAA20();
-    extern void func_003CAB20();
+    extern void func_003CAB20(u8 *, u8 *, unsigned int);
     u8 *o;
     if ((o = func_003DA750(0, 1, 1)) != 0) {
         *(void **)(o + 0x10) = func_003CAA20;
