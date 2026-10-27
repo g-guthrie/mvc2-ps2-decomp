@@ -1,10 +1,6 @@
 /* EE GCC 2.96 -O2 -G0 (tryee.sh src/p1.c sn): thunks, a soft-float double
    ratio, and one uncredited VU0 routine written as assembly. */
-typedef signed int s32;
-typedef unsigned int u32;
-typedef unsigned short u16;
-typedef unsigned char u8;
-typedef signed char s8;
+#include "stream_group_types.h"
 
 #define FN(name, body) __asm__(".section .text." #name ",\"ax\",@progbits\n.p2align 3\n.globl " #name "\n.ent " #name "\n" #name ":\n.set noreorder\n.set noat\n" body ".set reorder\n.end " #name "\n")
 
@@ -28,9 +24,9 @@ void func_00411270(u16 *p) {
 
 typedef struct S3F6 S3F6;
 extern void func_003F64D0(S3F6 *, s32);
-void func_003FF600(s32 *p, s32 v) {
-    p[14] = v;
-    func_003F64D0((S3F6 *)p[1], v);
+void func_003FF600(StreamGroup *p, s32 v) {
+    p->maximum_available = v;
+    func_003F64D0((S3F6 *)p->engine, v);
 }
 
 extern char D_004BB448[];

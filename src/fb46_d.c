@@ -42,7 +42,7 @@ extern void func_003FF658(StreamGroup *);
 extern void func_003FF628(void *);
 extern void func_003FFE20(StreamGroup *);
 extern s8 func_003FF5C8(void *);
-extern void func_003FF600(s32 *, s32);
+extern void func_003FF600(StreamGroup *, s32);
 extern s32 func_003FFFF0(StreamGroup *);
 extern void func_003FFF30(void *, s32);
 extern void func_003FFF50(void *, s32);
@@ -97,7 +97,7 @@ void func_00403308(Obj *a)
     if (func_003FF5C8(h) != 2) {
         a->f98 = 0;
     } else {
-        func_003FF600((s32 *)h, a->f48);
+        func_003FF600(h, a->f48);
         func_003FFF30(h, func_003FFFF0(h));
         func_003FFF50(h, 0);
         func_003FFF40(h, 0);
