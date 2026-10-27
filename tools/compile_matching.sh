@@ -7958,7 +7958,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/x11_e.c -c -lang c -O3 -Op -fp off -sdatathreshold 0 -o "$BUILD/x11_e.o"
 "$PYTHON" tools/verify_object.py "$BUILD/x11_e.o" private/SLUS_204.86.rom --source src/x11_e.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/x11_f.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/x11_f.o"
+    src/x11_f.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/x11_f.o"
 "$PYTHON" tools/verify_object.py "$BUILD/x11_f.o" private/SLUS_204.86.rom --source src/x11_f.c
 "$WIBO" "$SNCPP" -P src/mmi_a.c "$BUILD/mmi_a.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/mmi_a.i" "$BUILD/mmi_a.s"
@@ -8286,7 +8286,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/y3_g.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/y3_g.o"
 "$PYTHON" tools/verify_object.py "$BUILD/y3_g.o" private/SLUS_204.86.rom --source src/y3_g.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/y3_h.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/y3_h.o"
+    src/y3_h.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/y3_h.o"
 "$PYTHON" tools/verify_object.py "$BUILD/y3_h.o" private/SLUS_204.86.rom --source src/y3_h.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/y4_a.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/y4_a.o"
@@ -8745,7 +8745,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/z12_h.c -c -lang c -O3 -Op -fp off -sdatathreshold 0 -o "$BUILD/z12_h.o"
 "$PYTHON" tools/verify_object.py "$BUILD/z12_h.o" private/SLUS_204.86.rom --source src/z12_h.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/z12_i.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/z12_i.o"
+    src/z12_i.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/z12_i.o"
 "$PYTHON" tools/verify_object.py "$BUILD/z12_i.o" private/SLUS_204.86.rom --source src/z12_i.c
 
 : "${EE29CC1:?run tools/setup_sony29.py and source private/sony29.env}"

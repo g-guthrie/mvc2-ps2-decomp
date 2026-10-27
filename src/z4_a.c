@@ -7,7 +7,7 @@ typedef signed int s32;
 typedef float f32;
 
 typedef struct { u8 pad0[0x7C]; s16 f7c[1]; } G4;
-typedef struct { s32 x[49]; } B49;
+
 typedef struct { f32 x, y, z; } V3;
 extern G4 *D_004C2794;
 extern u8 *D_004C2840;

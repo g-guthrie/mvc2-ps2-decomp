@@ -9,7 +9,7 @@ typedef float f32;
 typedef struct { u8 pad0[0x36]; s8 f36[8]; s8 f3e; u8 pad1[0x7C - 0x3F]; s16 f7c[1]; } G4;
 typedef struct { f32 x, y, z; } V3;
 typedef struct { f32 a, b; } V2;
-typedef struct { s32 x[49]; } B49;
+
 
 extern G4 *D_004C2794;
 extern u8 D_004C2A1C;

@@ -1,3 +1,4 @@
+#include "actor_inherited_state.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -6,7 +7,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-typedef struct { s32 x[49]; } B24;
+typedef ActorState B24;
 typedef struct { f32 x, y, z; } V3;
 extern void func_003AD6E0();
 void func_003AD600(u8 *p) {
@@ -30,7 +31,7 @@ void func_003AD600(u8 *p) {
     }
 }
 
-typedef struct { s32 x[49]; } B20;
+typedef ActorState B20;
 typedef struct S20 {
     u8 pad0; u8 b1; u8 b2; u8 pad3[0x15]; struct S20 *parent; u8 pad1c[4]; u8 b20;
 } S20;
