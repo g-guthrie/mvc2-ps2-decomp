@@ -5,10 +5,10 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 
-s32 func_003210D0(u8 *p)
+u8 *func_003210D0(u8 *p)
 {
-    extern s32 func_001E7FD0();
-    s32 r;
+    extern u8 *func_001E7FD0(u8 *);
+    u8 *r;
     s32 t;
     if (p[0x214] != 0) {
         return 0;
@@ -27,17 +27,17 @@ s32 func_003210D0(u8 *p)
         if (t == 2) {
             return 0;
         }
-        r = func_001E7FD0();
+        r = func_001E7FD0(p);
         if (r != 0) {
             p[0x20B] = 1;
         }
     } else if (t == 2) {
-        r = func_001E7FD0();
+        r = func_001E7FD0(p);
         if (r != 0) {
             p[0x20B] = 2;
         }
     } else {
-        r = func_001E7FD0();
+        r = func_001E7FD0(p);
         if (r != 0) {
             p[0x20B] = 0;
         }
