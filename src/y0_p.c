@@ -43,7 +43,7 @@ void func_0026B7C0(u8 *p)
         break;
     }
     {
-        u8 t = *(volatile u8 *)(p + 0x1B5);
+        u8 t = *(u8 *)(p + 0x1B5);
         p[0x1B5] = t;
     }
     p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;

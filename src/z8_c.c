@@ -241,7 +241,7 @@ void func_002C5EA0(u8 *p) {
     default:
         break;
     }
-    p[0x1B5] = *(volatile u8 *)(p + 0x1B5);
+    p[0x1B5] = *(u8 *)(p + 0x1B5);
     p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
     *(s32 *)(p + 0x1D8) = 0;
     D_004C2794->f7c[p[2]]++;

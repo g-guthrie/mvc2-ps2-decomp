@@ -55,7 +55,7 @@ void func_00262D70(u8 *p)
         func_001B53E0(p, 0, 2);
         break;
     }
-    p[0x1B5] = *(volatile u8 *)(p + 0x1B5);
+    p[0x1B5] = *(u8 *)(p + 0x1B5);
     p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
     *(u32 *)(p + 0x1D8) = 0;
     D_004C2794->f7c[p[2]]++;

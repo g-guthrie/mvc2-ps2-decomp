@@ -47,7 +47,7 @@ void func_00248C00(u8 *p) {
         p[0x1BB] = 2;
         break;
     }
-    reset_command(p, *(volatile u8 *)(p + 0x1B5));
+    reset_command(p, *(u8 *)(p + 0x1B5));
     func_001757E0(p, 8, p[0x168]);
 }
 

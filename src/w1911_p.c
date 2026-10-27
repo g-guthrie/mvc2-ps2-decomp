@@ -36,7 +36,7 @@ void func_00211040(u8 *p) {
         break;
     }
     func_001E3710(p, k);
-    t = *(volatile u8 *)(p + 0x1B5);
+    t = *(u8 *)(p + 0x1B5);
     p[0x1B5] = t;
     p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
     *(s32 *)(p + 0x1D8) = 0;
@@ -75,7 +75,7 @@ void func_00210F40(u8 *p) {
         break;
     }
     func_001E3710(p, k);
-    t = *(volatile u8 *)(p + 0x1B5);
+    t = *(u8 *)(p + 0x1B5);
     p[0x1B5] = t;
     p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
     *(s32 *)(p + 0x1D8) = 0;
