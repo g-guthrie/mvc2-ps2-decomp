@@ -1,13 +1,13 @@
 /* Provisional: callback table ABI, phase bounds and owner lifetime need proof. */
 typedef unsigned char u8;
-typedef void (*Phase)(u8 *,u8 *);
+typedef void (*Phase)(u8 *);
 extern u8 *D_004C2968 __attribute__((section(".sdata")));
 extern u8 *D_004C2964 __attribute__((section(".sdata")));
 extern Phase const jtbl_00462630[];
 void func_00351BF0(u8 *p) {
  u8 *owner=*(u8 **)(p+0x18);
  D_004C2968=p+0xd0; D_004C2964=owner+0x2b8;
- jtbl_00462630[p[4]](p,owner);
+ jtbl_00462630[p[4]](p);
 }
 
 #pragma padloop on
@@ -19,7 +19,7 @@ typedef struct {float x,y,z;} V3;
 typedef void (*StateFn)(u8 *);
 extern StateFn const jtbl_004C1A68[] __attribute__((section(".sdata")));
 #define OWNER (*(u8 **)(p+0x18))
-void func_00351C30(u8 *p, u8 *owner_unused) {
+void func_00351C30(u8 *p) {
  ++p[4]; *(ActorState *)(p+0xec)=*(ActorState *)(OWNER+0xec); p[0x13c]=1;
  p[2]=OWNER[2];p[1]=OWNER[1];
  *(float *)(p+0x50)=*(float *)(OWNER+0x50);*(float *)(p+0x54)=*(float *)(OWNER+0x54);
