@@ -114,6 +114,7 @@ void func_002E8C10(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; 
 void func_002ED940(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_0045B7A0[i]; }
 void func_002F1F90(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_0045BA80[i]; }
 void func_002F6930(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_0045BDA0[i]; }
+/* Provisional: the 28-word source spans separately defined data objects. */
 void func_002FBD80(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_0045C050[i]; }
 void func_00300600(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_0045C870[i]; }
 void func_00304AF0(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_0045CB70[i]; }
