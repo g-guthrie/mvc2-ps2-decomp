@@ -20,9 +20,9 @@ void func_003BB530(u8 *p) {
     }
 }
 typedef struct { f32 x, y, z; } V3;
-extern u8 *func_003DA750(s32 a, s32 b, s32 c);
+extern void *func_003DA750(void *, s32, s32);
 extern void func_00330CE0(void);
-extern u32 D_004C283C;
+extern u8 *D_004C283C;
 extern V3 D_0045E868;
 void func_00330C60(void) {
     u8 *o = func_003DA750(0, 6, 1);
@@ -30,7 +30,7 @@ void func_00330C60(void) {
         o[0x13C] = 1;
         *(void (**)(void))(o + 0x10) = func_00330CE0;
         *(s16 *)(o + 0xCC) = 5;
-        *(u32 *)(o + 0x84) = D_004C283C;
+        *(u8 **)(o + 0x84) = D_004C283C;
         *(u32 *)(o + 0xD0) = 0x805;
         *(V3 *)(o + 0x34) = D_0045E868;
         *(u32 *)(o + 0x44) = 0xDD29;
@@ -65,21 +65,21 @@ void func_0039EF90(u8 *p, s32 a, s32 b) {
         *(s16 *)(o + 0x26) = 0x2900;
     }
 }
-extern void func_003424F0(void);
-extern u32 D_004C283C;
+extern void func_003424F0(u8 *);
+extern u8 *D_004C283C;
 void func_00342880(V3 *p, s32 a) {
     u8 *o = func_003DA750(0, 6, 0);
     if (o) {
         o[0x13C] = 1;
-        *(void (**)(void))(o + 0x10) = func_003424F0;
+        *(void (**)(u8 *))(o + 0x10) = func_003424F0;
         *(s16 *)(o + 0xCC) = a + 1;
-        *(u32 *)(o + 0x84) = D_004C283C;
+        *(u8 **)(o + 0x84) = D_004C283C;
         *(u32 *)(o + 0xD0) = 0x80B;
         o[0x20] = a;
         *(V3 *)(o + 0x34) = *p;
     }
 }
-extern u8 *func_003DA750(s32 a, s32 b, s32 c);
+extern void *func_003DA750(void *, s32, s32);
 extern void func_0037D9C0(void);
 extern void func_0037DC60(void *o, void *p);
 u8 *func_0037D930(u8 *p, s32 a) {

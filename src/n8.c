@@ -260,18 +260,18 @@ extern u8 D_004C1380[4];
 extern void func_001E3710(void *p, s32 b);
 
 
-extern u8 *func_003DA750(s32 a, s32 b, s32 c);
-extern void func_00342910();
-extern s32 D_004C283C;
+extern void *func_003DA750(void *, s32, s32);
+extern void func_00342910(u8 *);
+extern u8 *D_004C283C;
 
 void func_00342CA0(V3 *p, s32 q)
 {
     u8 *o = func_003DA750(0, 6, 1);
     if (o != 0) {
         o[0x13C] = 1;
-        *(void **)(o + 0x10) = func_00342910;
+        *(void (**)(u8 *))(o + 0x10) = func_00342910;
         *(s16 *)(o + 0xCC) = q + 0x2A;
-        *(s32 *)(o + 0x84) = D_004C283C;
+        *(u8 **)(o + 0x84) = D_004C283C;
         *(u32 *)(o + 0xD0) = 0x80B;
         o[0x20] = q;
         *(f32 *)(o + 0x78) = 1.0f;
