@@ -33,8 +33,8 @@ void func_001CAC90(u8 *a) {
 }
 
 extern void func_00186CE0(u8 *p, s32 n);
-extern void func_001845F0(u8 *p, s32 n);
-extern void func_00186A60();
+extern void func_001845F0(u8 *p);
+extern void func_00186A60(u8 *, u8);
 extern void func_00184650(u8 *p);
 
 void func_00184570(u8 *a) {
@@ -42,9 +42,9 @@ void func_00184570(u8 *a) {
     if (a[533]) {
         func_00186CE0(a, 24);
     } else if (a[528]) {
-        func_001845F0(a, 3);
+        func_001845F0(a);
     } else {
-        func_00186A60(a);
+        func_00186A60(a, 3);
         a[6] = 1;
         func_00184650(a);
     }
