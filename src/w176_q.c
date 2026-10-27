@@ -153,3 +153,33 @@ void func_00276B80(FG *p) {
         func_001757E0((u8 *)p, 0x15, p->b168);
     }
 }
+
+typedef struct { u8 pad0[6]; u8 b6; u8 pad1[0x2D]; f32 f34, f38; u8 pad3[0x20]; f32 f5c, f60; u8 pad4[4]; f32 f68, f6c; } P276A80;
+void func_00276A80(P276A80 *p)
+{
+    extern int func_00175700(u8 *);
+    extern void func_001757E0();
+    extern void func_001B9AC0();
+    extern void func_00379850();
+    p->f34 += p->f5c;
+    p->f5c += p->f68;
+    p->f38 += p->f60;
+    p->f60 += p->f6c;
+    func_00275A40((u8 *)p);
+    if ((s8)func_00175700((u8 *)p) < 0) {
+        u8 *q = (u8 *)p;
+        u32 t = q[6];
+        q[6] = t + 1;
+        if (q[0x20D] == 2) {
+            func_001757E0(p, 0x15, 8);
+            func_001B9AC0(p, 1);
+        } else {
+            func_001757E0(p, 0x15, 4);
+            func_001B9AC0(p, 0);
+        }
+        func_00379850(p);
+        *(s16 *)(q + 0x1E) = (q[0x1B7] != 0) ? 0x28 : 0xE;
+        q[0x28E] = 0x10;
+        q[0x28F] = 0;
+    }
+}
