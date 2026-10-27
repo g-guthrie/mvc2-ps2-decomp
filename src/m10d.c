@@ -18,7 +18,7 @@ void func_00126A40(void) {
 }
 extern s32 func_00175700(void *p);
 extern void func_001757E0(void *p, s32 a, s32 b);
-extern void func_003C76C0(void *p, void *q);
+extern void func_003C76C0(u8 *p, u8 *q);
 void func_003C7C60(u8 *p, u8 *q) {
     s8 r = func_00175700(p);
     if (r < 0) {

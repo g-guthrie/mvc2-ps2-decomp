@@ -115,7 +115,7 @@ extern int func_00174470(const void *);
 extern void func_00350FD0();
 extern s32 func_00174240();
 extern void func_003C80A0();
-void func_003C76C0(u8 *a, s32 b) {
+void func_003C76C0(u8 *a, u8 *b) {
     *(f32 *)(a + 0x34) += *(f32 *)(a + 0x5C);
     *(f32 *)(a + 0x5C) += *(f32 *)(a + 0x68);
     *(f32 *)(a + 0x38) += *(f32 *)(a + 0x60);

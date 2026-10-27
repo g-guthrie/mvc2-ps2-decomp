@@ -9,9 +9,9 @@ typedef float f32;
 typedef struct { u8 pad[0x7C]; s16 f7c[1]; } G;
 extern G *D_004C2794;
 extern void func_001757E0();
-extern void func_003C76C0();
+extern void func_003C76C0(u8 *, u8 *);
 
-void func_003C7570(u8 *a, s32 b) {
+void func_003C7570(u8 *a, u8 *b) {
     u8 *t;
     if ((t = *(u8 **)(a + 0x14))[5] != 2) {
         f32 v;
