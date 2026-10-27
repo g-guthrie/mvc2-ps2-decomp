@@ -21,14 +21,14 @@ typedef struct {
     u8 pad0[2]; u8 b2; u8 pad3[3]; u8 b6; u8 pad7[0x1C - 7]; s16 h1c; s16 h1e;
     u8 pad20[0x151 - 0x20]; s8 b151; u8 pad152[0x15B - 0x152]; u8 b15b;
     u8 pad15c[0x1B2 - 0x15C]; u8 b1b2; u8 pad1b3[2]; u8 b1b5;
-    u8 pad1b6[0x1C0 - 0x1B6]; u16 h1c0; u8 pad1c2[0x1D8 - 0x1C2]; s32 w1d8; s32 w1dc;
+    u8 pad1b6[0x1C0 - 0x1B6]; u16 h1c0; u8 pad1c2[0x1D8 - 0x1C2]; s32 w1d8; u8 *w1dc;
 } P_g;
 
 void func_0031AD00(P_g *p) {
     extern s32 func_00182E20(P_g *);
-    extern s32 func_00182D30(s32);
+    extern s32 func_00182D30(u8 *);
     extern void func_00175700(P_g *);
-    extern void func_0018FC10(s32, s32);
+    extern void func_0018FC10(u8 *, s32);
     extern void func_001266A0(P_g *, s32, s32);
     extern void func_001757E0(P_g *, s32, s32);
     extern void func_00175C00(P_g *, s32);
