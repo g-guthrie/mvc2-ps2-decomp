@@ -23,7 +23,7 @@ void func_003A3D10(u8 *p, u8 *q, u8 *r) {
         p[0x23] = t;
         if ((t & 0xFF) == 0) {
             *(s16 *)(p + 0x1E) = (*(s16 *)(p + 0x1E) + *(s16 *)(p + 0x1C)) % 12;
-            if (*(volatile s16 *)(p + 0x1E) < 0) {
+            if (*(s16 *)(p + 0x1E) < 0) {
                 *(s16 *)(p + 0x1E) = 11;
             }
             func_003A4250(p);
