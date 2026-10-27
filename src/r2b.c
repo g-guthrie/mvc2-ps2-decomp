@@ -1,3 +1,4 @@
+struct Object;
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -10,7 +11,7 @@ extern u8 *D_004C2998;
 extern void (*D_004642E0[])(u8 *);
 extern void (*D_004642F0[])(u8 *);
 extern s8 *D_004C2840;
-extern void func_003DAA40();
+extern void func_003DAA40(struct Object *);
 
 /* Recipe 2: real bodies of the leaves, so the compiler keeps $a0 live. */
 static void func_0037F1D0(u8 *p) {
@@ -35,10 +36,10 @@ void func_00157290(u8 *p) {
     *(f32 *)(p + 0x54) -= 0.03333333507180214f;
     *(f32 *)(p + 0x58) -= 0.03333333507180214f;
     if (D_004C2840[0x91]) {
-        func_003DAA40();
+        func_003DAA40((struct Object *)p);
     } else {
         if (*(s16 *)(p + 0x1C) >= 0xF) {
-            func_003DAA40();
+            func_003DAA40((struct Object *)p);
         } else {
             *(s16 *)(p + 0x1C) += 1;
         }

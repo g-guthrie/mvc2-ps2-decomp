@@ -1,3 +1,4 @@
+struct Object;
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -8,7 +9,7 @@ typedef float f32;
 
 /* 0x0032F050 */
 extern u8 *D_004C2840;
-extern void func_003DAA40(void);
+extern void func_003DAA40(struct Object *);
 void func_0032F050(u8 *p) {
     switch (p[5]) {
     case 0:
@@ -34,7 +35,7 @@ void func_0032F050(u8 *p) {
         if (t >= 0xF) {
             p[4] = 0;
             p[0x13C] = 0;
-            if (*(u32 *)(D_004C2840 + 0x94) > 0x1194) func_003DAA40();
+            if (*(u32 *)(D_004C2840 + 0x94) > 0x1194) func_003DAA40((struct Object *)p);
         }
         }
         break;

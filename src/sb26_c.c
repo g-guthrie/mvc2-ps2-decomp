@@ -1,3 +1,4 @@
+struct Object;
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -8,7 +9,7 @@ typedef float f32;
 
 void func_00157A10(u8 *p)
 {
-    extern void func_003DAA40();
+    extern void func_003DAA40(struct Object *);
     s16 h;
 
     *(s32 *)(p + 0x48) += 0x333;
@@ -27,7 +28,7 @@ void func_00157A10(u8 *p)
         h = *(s16 *)(p + 0x1C) + 1;
         *(s16 *)(p + 0x1C) = h;
         if (h >= 0x14) {
-            func_003DAA40();
+            func_003DAA40((struct Object *)p);
             return;
         }
         break;
@@ -46,7 +47,7 @@ void func_00157A10(u8 *p)
         *(f32 *)(p + 0x78) -= 0.125f;
         *(f32 *)(p + 0x7C) -= 0.125f;
         *(f32 *)(p + 0x80) -= 0.125f;
-        if (*(s16 *)(p + 0x1C) >= 0x14) func_003DAA40();
+        if (*(s16 *)(p + 0x1C) >= 0x14) func_003DAA40((struct Object *)p);
         return;
     }
 }
