@@ -8,7 +8,7 @@ typedef float f32;
 extern s32 func_00175700(u8 *);
 extern void func_001843A0(u8 *);
 extern void func_0018FAA0(u8 *, s32);
-extern void func_0015F4B0(u8 *, s32);
+extern void func_0015F4B0(u8 *, s8);
 extern void func_001E3210(u8 *, s32);
 extern void func_001E3710(u8 *, s32);
 void func_00268F50(u8 *p) {

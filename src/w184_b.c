@@ -88,7 +88,7 @@ void func_00252AC0(u8 *p)
     extern s32 func_00252C80(u8 *);
     extern void func_001AD170(u8 *, s32, s32);
     extern void func_0018FAA0(u8 *, s16);
-    extern void func_0015F4B0(u8 *, s32);
+    extern void func_0015F4B0(u8 *, s8);
     extern void func_001757E0(u8 *, s32, u8);
     u8 *e;
     s16 v;

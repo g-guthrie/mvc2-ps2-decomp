@@ -2,6 +2,7 @@
 #include "mvc2_record_triplet.h"
 struct Object;
 typedef unsigned char u8;
+typedef signed char s8;
 typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
@@ -34,7 +35,7 @@ extern void func_0014C080();
 extern void func_0015E3A0(u8 *);
 extern void func_0015EAA0();
 extern void func_0015ED10(u8 *);
-extern void func_0015F3D0();
+extern void func_0015F3D0(u8 *, s8);
 extern void func_0015F840();
 extern void func_00160250();
 extern void func_001604C0(u8 *);
@@ -229,7 +230,7 @@ void func_0015ED10(u8 *actor) { func_0015EAA0(actor); }
 
 void func_0015EE50(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
-void func_0015F4B0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0015F3D0(a0, a1, a2, a3); }
+void func_0015F4B0(u8 *p, s8 index) { func_0015F3D0(p, index); }
 
 void func_0015F8C0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 

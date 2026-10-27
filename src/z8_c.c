@@ -411,7 +411,7 @@ void func_002CE4D0(u8 *p) {
 void func_003CE2D0(u8 *p, u8 *a1) {
     extern void func_001E7F60();
     extern void func_0018FAA0();
-    extern void func_0015F4B0();
+    extern void func_0015F4B0(u8 *, s8);
     extern void func_001E3710();
     extern void func_003CE3D0();
     u8 *q;

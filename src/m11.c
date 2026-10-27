@@ -201,7 +201,7 @@ extern void func_00191F20();
 /* func_00192490: not yet matched without a stand-in callee. */
 
 extern void func_0018FAA0(u8 *, s32);
-extern void func_0015F4B0();
+extern void func_0015F4B0(u8 *, s8);
 
 void func_00374D10(u8 *a) {
     u8 *s = *(u8 **)(a + 0x18);
@@ -210,7 +210,7 @@ void func_00374D10(u8 *a) {
     if (*(s8 *)(a + 0x1B2) != 0) {
         a[4] = 2;
         func_0018FAA0(*(u8 **)(a + 0x1C4), 0x14);
-        func_0015F4B0(*(u32 *)(a + 0x1C4), 4);
+        func_0015F4B0(*(u8 **)(a + 0x1C4), 4);
         func_001E3210(a, 0x1F);
     } else {
         func_00175700(a);
