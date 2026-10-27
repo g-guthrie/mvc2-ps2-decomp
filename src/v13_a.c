@@ -40,7 +40,7 @@ typedef struct P379 { u8 pad[0x18]; Q379 *q; u8 pad2[0x13C-0x1C]; u8 b13c; } P37
 void func_00379350(P379 *pp) {
     u8 *p = (u8 *)pp;
     extern void func_001757E0();
-    extern s32 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_003793F0();
     f32 t;
     ((Q379 *)p)->f34 = pp->q->f34;
@@ -52,7 +52,7 @@ void func_00379350(P379 *pp) {
             p[0x13C] = 1;
             return;
         }
-        if ((s8)func_00175700(p) < 0) {
+        if ((s8)func_00175700((u8 *)p) < 0) {
             func_003793F0(p);
             return;
         }
@@ -74,11 +74,11 @@ typedef struct F5C {
 } F5C;
 
 void func_002FDE50(F5C *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern s32 func_001864a0();
     extern void func_001757E0();
     extern void func_00183d50();
-    func_00175700();
+    func_00175700((u8 *)p);
     p->f34 += p->f5c;
     p->f5c += p->f68;
     p->f38 += p->f60;

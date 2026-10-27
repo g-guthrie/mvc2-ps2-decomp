@@ -51,14 +51,14 @@ typedef struct {
 } HB2;
 
 void func_00235F20(HB2 *p) {
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001843A0(HB2 *);
     extern void func_00184540(HB2 *);
     extern void func_001865B0(HB2 *);
     f32 k;
 
     if (p->b20D != 2) {
-        if (func_00175700(p) >= 0) return;
+        if ((s8)func_00175700((u8 *)p) >= 0) return;
         func_001843A0(p);
         return;
     }
@@ -72,7 +72,7 @@ void func_00235F20(HB2 *p) {
         func_001865B0(p);
         return;
     }
-    if (func_00175700(p) < 0) func_00184540(p);
+    if ((s8)func_00175700((u8 *)p) < 0) func_00184540(p);
     if ((p->b151 & 1) == 0) return;
     p->b151 = 0;
     k = 0.8035714030265808f;
@@ -86,7 +86,7 @@ typedef struct {
 } HB3;
 
 void func_001F16C0(HB3 *p) {
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001757E0(HB3 *, s32, s32);
     extern u8 *func_001E8070(u8 *);
     extern void func_001E3210(HB3 *, s32);
@@ -96,7 +96,7 @@ void func_001F16C0(HB3 *p) {
     u8 *u;
     u32 v[3];
 
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700((u8 *)p) < 0) {
         p->b7 = 9;
         p->f5c = p->f5c / 16.0f;
         p->f68 = 0.0f;
@@ -135,7 +135,7 @@ typedef struct {
 void func_002BA1C0(HA1 *p) {
     extern void func_002BA590(HA1 *);
     extern void func_00186A20(HA1 *);
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     u32 t;
 
     if (p->b1B2 != 0) {
@@ -144,7 +144,7 @@ void func_002BA1C0(HA1 *p) {
         func_002BA590(p);
         return;
     }
-    func_00175700();
+    func_00175700((u8 *)p);
     if (p->b151 != 0) {
         t = p->b6;
         p->b6 = t + 1;

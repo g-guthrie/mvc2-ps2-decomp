@@ -9,7 +9,7 @@ typedef struct { u8 pad2[0x2]; u8 b2; u8 pad6[0x3]; u8 b6; u8 pad34[0x2D]; f32 f
 typedef struct { u8 pad[0x7C]; s16 f7c[16]; } G13;
 extern G13 *D_004C2794;
 void func_00213B60(S13_q *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001757E0();
     u32 t;
     u8 a;
@@ -18,7 +18,7 @@ void func_00213B60(S13_q *p) {
     p->f38 += p->f60;
     p->f60 += p->f6c;
     if (!(p->f38 <= p->f430)) {
-        func_00175700();
+        func_00175700((u8 *)p);
     } else {
         t = p->b6;
         p->b6 = t + 1;
@@ -62,7 +62,7 @@ void func_00132120(u8 *p, s32 idx) {
 }
 
 void func_002EE9F0(u8 *p) {
-    extern s32 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_002F1DF0();
     extern void func_001757E0();
     extern void func_002F1D90();

@@ -17,7 +17,7 @@ static s32 func_0028A490(u8 *p) {
 }
 
 void func_0028A530(u8 *p, u8 *q) {
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001757E0(u8 *, s32, s32);
     extern void func_0028B0B0(u8 *);
     if (q[0x18] == 0) {
@@ -31,7 +31,7 @@ void func_0028A530(u8 *p, u8 *q) {
         q[0x18] = 0;
         func_0028A530(p, q);
     } else {
-        if ((s8)func_00175700() < 0) {
+        if ((s8)func_00175700((u8 *)p) < 0) {
             p[7] = 0;
             q[0x18] = 0;
             q[0x19] = 0;

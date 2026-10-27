@@ -41,7 +41,7 @@ void func_001BD6C0(u8 *p, void *q_context) {
 }
 
 void func_00224E90(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_00224BB0(u8 *);
     extern void func_00356330();
     extern s32 func_0018AB10(u8 *);
@@ -49,7 +49,7 @@ void func_00224E90(u8 *p) {
     s16 v;
     p[0x40C] = 2;
     p[0x33C] = 5;
-    func_00175700();
+    func_00175700((u8 *)p);
     func_00224BB0(p);
     if (*(s8 *)(p + 0x151) != 0) {
         p[0x151] = 0;
