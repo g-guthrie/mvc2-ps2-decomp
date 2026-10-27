@@ -1,3 +1,4 @@
+#include "runtime_entry_table.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -25,16 +26,15 @@ extern s32 func_00400650(s32);
 extern s32 func_004006A0(s32);
 extern void func_0040D5A0(void *);
 extern u8 D_004BE430[];
-typedef struct { u8 b0; s8 b1; u8 pad[0x1E]; s32 w20; u8 pad24[4]; s32 w28; s32 w2c; } S_0040D848;
-void func_0040D848(S_0040D848 *p) {
+void func_0040D848(RuntimeEntrySlot *p) {
   u8 *q;
   s32 v;
-  if (p->w28 == 0) { func_0040D5A0(D_004BE430); return; }
-  q = (u8 *)p + (p->w20 << 6) + 0x38;
-  v = func_00400650(p->w28);
-  if (v == 4) p->b1 = 3;
-  else if (v == 2) *(s32 *)(q + 0x3C) = func_004006A0(p->w28);
-  else if (v == 3) { s32 t = p->w2c; *(s32 *)(q + 0x38) = 2; *(s32 *)(q + 0x3C) = t; }
+  if (p->handle == 0) { func_0040D5A0(D_004BE430); return; }
+  q = (u8 *)p + (p->record_index << 6) + 0x38;
+  v = func_00400650(p->handle);
+  if (v == 4) p->reserved_01 = 3;
+  else if (v == 2) *(s32 *)(q + 0x3C) = func_004006A0(p->handle);
+  else if (v == 3) { s32 t = p->scaled_size; *(s32 *)(q + 0x38) = 2; *(s32 *)(q + 0x3C) = t; }
 }
 
 /* 004062F8 */
