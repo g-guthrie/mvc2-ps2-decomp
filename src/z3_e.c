@@ -45,8 +45,8 @@ u8 func_00189FB0(u8 *a, u16 *b, u8 *c) {
 }
 
 void func_00244E40(u8 *p) {
-    extern s32 func_00175700();
-    func_00175700();
+    extern int func_00175700(u8 *);
+    func_00175700(p);
     if (*(s8 *)(p + 0x151) != 0) {
         p[0x151] = 0;
         { u32 t = p[7]; p[7] = t + 1; }
@@ -123,21 +123,21 @@ s32 func_001C5110(u8 *a) {
 }
 
 void func_0019DD00(u8 *a, u8 *b) {
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_0019DE40(u8 *, u8 *);
     extern void func_001E7F60(u8 *);
     extern void func_001757E0(u8 *, s32, s32);
     s16 v;
     a[0x24] = *(s8 *)(b + 0x24);
     if (a[0x22] == 0) {
-        if (func_00175700() < 0) {
+        if ((s8)func_00175700(a) < 0) {
             func_0019DE40(a, b);
             return;
         } else {
             func_001E7F60(a);
         }
     } else {
-        func_00175700();
+        func_00175700(a);
         v = *(s16 *)(a + 0x1E) - 1;
         *(s16 *)(a + 0x1E) = v;
         if (v <= 0) {
@@ -155,13 +155,13 @@ void func_0019DD00(u8 *a, u8 *b) {
 }
 
 void func_003BC9E0(u8 *p) {
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001757E0(u8 *, s32, s32);
     extern void func_001E7F60(u8 *);
     extern void func_003BD830(u8 *);
     s16 v;
     if (p[6] == 0) {
-        func_00175700();
+        func_00175700(p);
         *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
         *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
         *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
@@ -176,22 +176,22 @@ void func_003BC9E0(u8 *p) {
         func_001E7F60(p);
         return;
     }
-    if (func_00175700() < 0) func_003BD830(p);
+    if ((s8)func_00175700(p) < 0) func_003BD830(p);
 }
 
 void func_002DE820(u8 *p) {
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001843A0();
     extern void func_001865B0();
     f32 *v1, *a1, *a2, *a3;
     f32 z;
     if (p[7] == 0) {
-        s8 r = func_00175700();
+        s8 r = func_00175700(p);
         if (r >= 0) return;
         func_001843A0(p);
         return;
     }
-    func_00175700();
+    func_00175700(p);
     v1 = (f32 *)(p + 0x5C);
     a2 = (f32 *)(p + 0x68);
     a1 = (f32 *)(p + 0x60);

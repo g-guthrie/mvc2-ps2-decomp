@@ -18,12 +18,12 @@ typedef struct {
 } A1;
 
 void func_00360410(A1 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001E7F60();
     s16 v;
     p->f38 += p->f60;
     p->f60 += p->f6c;
-    func_00175700();
+    func_00175700((u8 *)p);
     func_001E7F60(p);
     if ((p->s1c & 7) == 0) {
         p->b1b5 = 0x3C;

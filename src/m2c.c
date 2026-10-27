@@ -10,7 +10,7 @@ extern s8 *D_004C2840;
 extern void func_003DA2A0();
 extern void func_00122840(s32 a);
 extern void func_003C8650();
-extern void func_00175700();
+extern int func_00175700(u8 *);
 extern u8 *D_004C25D4;
 extern u8 *D_004C25D0;
 extern u8 D_004F1F41[];
@@ -45,7 +45,7 @@ void func_003C8660(s8 *p, s8 *q) {
         p[0x24] = q[0x24];
         p[0x31] = p[0x1E];
         if (*(u8 *)(q + 0x15B)) {
-            func_00175700();
+            func_00175700((u8 *)p);
         }
     }
 }
