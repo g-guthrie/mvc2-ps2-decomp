@@ -10,9 +10,9 @@ struct Entry;
 
 
 void func_002EC810(u8 *p) {
-    extern s32 func_00175700();
+    extern s32 func_00175700(u8 *);
     extern struct Entry *func_003A7B20(u8 *, u8, u8);
-    extern void func_001843A0();
+    extern void func_001843A0(u8 *);
     extern void func_001830D0();
     s32 t;
     u32 v[3];
@@ -40,9 +40,9 @@ void func_002EC810(u8 *p) {
 }
 
 void func_00303C00(u8 *p) {
-    extern s32 func_00175700();
+    extern s32 func_00175700(u8 *);
     extern struct Entry *func_003B2E90(u8 *, u8, u8);
-    extern void func_001843A0();
+    extern void func_001843A0(u8 *);
     extern void func_001830D0();
     s32 t;
     u32 v[3];
