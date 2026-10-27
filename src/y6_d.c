@@ -10,7 +10,7 @@ typedef struct { u8 pad0[0x34]; f32 f34; f32 f38; u8 pad1[0x20]; f32 f5c; f32 f6
 
 void func_00257F00(u8 *p) {
     extern void func_00183D50();
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     F57 *q = (F57 *)p;
     f32 *v1, *a1, *a2, *a3;
     v1 = &q->f5c;
@@ -38,7 +38,7 @@ void func_00257F00(u8 *p) {
 typedef struct { u8 pad0[0x34]; f32 f34; } F79;
 
 void func_002797B0(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_0037E4A0();
     u16 h;
     func_00175700(p);
@@ -88,7 +88,7 @@ typedef struct { f32 a, b, c, d; } T4;
 extern T4 D_004B7580[];
 
 void func_002B5610(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     F5B *q = (F5B *)p;
     T4 *t;
     s32 flag;
@@ -115,7 +115,7 @@ void func_002B5610(u8 *p) {
 }
 
 void func_002BD9B0(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001757E0();
     F57 *q = (F57 *)p;
     f32 *v1, *a3, *t0, *t1;
@@ -145,7 +145,7 @@ void func_002BD9B0(u8 *p) {
 }
 
 void func_001F8A70(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_00183D50();
     extern void func_001757E0();
     F57 *q = (F57 *)p;
@@ -158,7 +158,7 @@ void func_001F8A70(u8 *p) {
     q->f5c += q->f68;
     q->f38 += q->f60;
     q->f60 += q->f6c;
-    func_00175700();
+    func_00175700(p);
     if (q->f38 < q->f430) {
         u32 t = p[6];
         p[6] = t + 1;

@@ -10,7 +10,7 @@ extern G37 *D_004C2794;
 
 void func_0037D690(u8 *p, u8 *q) {
     extern void func_001BAE10();
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_0037D930(u8 *, s32);
     extern void func_001BBD80(u8 *, s32);
     extern void func_001E3210(u8 *, s32);
@@ -24,7 +24,7 @@ void func_0037D690(u8 *p, u8 *q) {
         p[0x13C] = 0;
         return;
     }
-    if (func_00175700() < 0) {
+    if ((s8)func_00175700(p) < 0) {
         func_001BAE10(p, q, 2);
         p[4] = 2;
         return;
