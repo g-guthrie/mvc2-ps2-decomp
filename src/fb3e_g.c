@@ -53,7 +53,7 @@ OE *func_003E1FD0(AE *a, u8 *b)
     extern void func_003DD260(MM *);
     extern void func_003DE0C0();
     extern void func_003DE230(MM *, MM *, u8 *);
-    extern void func_003DE530(V4M *);
+    extern void func_003DE530(f32 *);
     MM m2;
     V4M *p1;
     V4M *p2;
@@ -99,9 +99,9 @@ OE *func_003E1FD0(AE *a, u8 *b)
     m2.m[2][2] = -D_0061B3F4[0];
     m2.m[2][3] = 0.0f;
     func_003DE230(&m2, &m2, D_0061C720);
-    func_003DE530((V4M *)m2.m[0]);
-    func_003DE530(p1);
-    func_003DE530(p2);
+    func_003DE530((f32 *)m2.m[0]);
+    func_003DE530((f32 *)p1);
+    func_003DE530((f32 *)p2);
     func_003DE0C0(&m2);
     i = 0;
     do {
