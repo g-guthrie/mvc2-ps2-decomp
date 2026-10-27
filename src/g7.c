@@ -109,9 +109,9 @@ extern s32 func_001341B0();
 extern s32 func_00134230();
 extern s32 func_001342D0();
 extern s32 func_00134370();
-extern void func_001343E0();
+extern s32 func_001343E0();
 
-void func_00133B20(u8 *p, s32 b) {
+void func_00133B20(u8 *p, u8 *b) {
     *(s16 *)(p + 0x140) = 0;
     if (func_001341B0(p, b) && func_00134230(p, b) && func_001342D0(p, b) && func_00134370(p, b)) {
         func_001343E0(p, b);
