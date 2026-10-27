@@ -19283,3 +19283,5 @@ func_0026AC30,0x0026AC30,0xC,src/actor_state_forwarders.c,complete
 func_002A0970,0x002A0970,0xC,src/actor_state_forwarders.c,complete
 func_00277D30,0x00277D30,0x10,src/actor_state_forwarders.c,complete
 func_00279040,0x00279040,0x10,src/actor_state_forwarders.c,complete
+func_002541A0,0x002541A0,0x34,src/actor_state_frame_callbacks.c,complete
+func_002F3BB0,0x002F3BB0,0x34,src/actor_state_frame_callbacks.c,complete
