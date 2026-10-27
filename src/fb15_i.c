@@ -26,7 +26,7 @@ extern char D_004BC790[];
 
 void func_00403020(u8 *p)
 {
-    extern s32 func_00400050(s32);
+    extern s32 func_00400050(void *);
     extern s32 func_00400068(s32);
     extern s32 func_00400080(s32);
     extern void func_003FFF30(s32, s32);
@@ -38,7 +38,7 @@ void func_00403020(u8 *p)
     s32 s1 = *(s32 *)(p + 4);
     Obj *s0 = *(Obj **)(p + 0x14);
     s32 s3, s4, s5;
-    s3 = func_00400050(s1);
+    s3 = func_00400050((void *)s1);
     s5 = func_00400068(s1);
     s4 = func_00400080(s1);
     if (*(s32 *)(p + 8) == 0 && *(s8 *)(p + 0x6C) == 0) {
