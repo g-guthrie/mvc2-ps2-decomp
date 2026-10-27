@@ -25,7 +25,7 @@ extern void func_0012ACC0(s32);
 extern void func_00422DB0(void);
 extern void func_004238A0(s32, s32);
 extern void func_004232C0(s32, s32, s32);
-extern void func_00423750(s32);
+extern s32 func_00423750(s32);
 
 
 s32 func_0041B380(u16 *a, u16 *b)

@@ -3,7 +3,6 @@ typedef signed char s8;
 typedef signed int s32;
 
 extern s32 func_00119AB8(void);
-extern void func_00423750(void);
 extern void func_00184540(u8 *);
 extern void func_001CB5A0(u8 *, s32, s32);
 extern int func_001757E0(u8 *, int, int);
