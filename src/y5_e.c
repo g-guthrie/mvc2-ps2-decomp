@@ -379,7 +379,7 @@ void func_00210D60(u8 *p)
         p[0x1BB] = 2;
         break;
     }
-    { u8 t = *(volatile u8 *)(p + 0x1B5); p[0x1B5] = t; }
+    { u8 t = *(u8 *)(p + 0x1B5); p[0x1B5] = t; }
     p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
     *(u32 *)(p + 0x1D8) = 0;
     D_004C2794->f7c[p[2]]++;
