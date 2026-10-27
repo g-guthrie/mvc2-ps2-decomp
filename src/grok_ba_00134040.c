@@ -9,6 +9,7 @@ extern void func_001341B0(u8 *, u8 *);
 extern void func_001345B0(u8 *, u8 *);
 extern void func_00134120(u8 *, u8 *);
 
+/* Provisional: reset helpers are unary; a typed call still misses retail scheduling. */
 void func_00134040(u8 *p, u8 *q)
 {
     s16 t = *(s16 *)(p + 0x1C);

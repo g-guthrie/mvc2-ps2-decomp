@@ -16522,7 +16522,7 @@ func_00277A70,0x00277A70,0xCC,src/grok_av_277a70.c,complete
 func_001E3430,0x001E3430,0xE8,src/grok_bb_1e3430.c,complete
 func_003BF420,0x003BF420,0xDC,src/grok_bd_003BF420.c,complete
 func_003C61F0,0x003C61F0,0xC8,src/grok_bd_003C61F0.c,complete
-func_00134040,0x00134040,0xE0,src/grok_ba_00134040.c,complete
+func_00134040,0x00134040,0xE0,src/grok_ba_00134040.c,placeholder
 func_0013A4A0,0x0013A4A0,0x10C,src/grok_ba_0013A4A0.c,complete
 func_0013D9A0,0x0013D9A0,0xF8,src/grok_ba_0013D9A0.c,complete
 func_00166630,0x00166630,0xDC,src/grok_be_00166630.c,complete

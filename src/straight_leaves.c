@@ -4,7 +4,7 @@
 #include "cri_sj_ring_buffer_types.h"
 #include "cri_sj_memory_types.h"
 
-void func_001345B0(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 216) = 0; *(s32 *)(p + 220) = 0; }
+void func_001345B0(u8 *p) { *(s32 *)(p + 216) = 0; *(s32 *)(p + 220) = 0; }
 
 void func_00135D80(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 
