@@ -28,7 +28,7 @@ typedef struct {
 
 void func_002C7E50(u8 *p, u8 *q)
 {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001E3210(u8 *, s32);
     extern void func_00183D50(u8 *);
     extern void func_001757E0(u8 *, s32, s32);
@@ -41,7 +41,7 @@ void func_002C7E50(u8 *p, u8 *q)
     ((S7E *)p)->f5c += ((S7E *)p)->f68;
     ((S7E *)p)->f38 += ((S7E *)p)->f60;
     ((S7E *)p)->f60 += ((S7E *)p)->f6c;
-    func_00175700();
+    func_00175700(p);
     if (q[2] == 0 && *(s8 *)(p + 0x1B2) != 0) {
         q[2] = 1;
         func_001E3210(p, 3);

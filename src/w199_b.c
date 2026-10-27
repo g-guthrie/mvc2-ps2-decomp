@@ -9,7 +9,7 @@ typedef float f32;
 extern u8 *D_004C2794;
 
 void func_0017C7F0(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_0017C790();
     extern s32 func_001864a0();
     extern s32 func_00174240();
@@ -35,7 +35,7 @@ void func_0017C7F0(u8 *p) {
 }
 
 void func_0023B4C0(u8 *p) {
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_00183D90();
     extern void func_001863F0();
     extern void func_001843A0();
@@ -63,7 +63,7 @@ void func_0023B4C0(u8 *p) {
 
 void func_003B6110(u8 *p) {
     extern void func_003B6630();
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001E7F60();
     u8 *q = p + 0x88;
     if (*(s8 *)(p + 0x1B2) != 0) {
@@ -78,7 +78,7 @@ void func_003B6110(u8 *p) {
     *(float *)(p + 0x5C) += *(float *)(p + 0x68);
     *(float *)(p + 0x38) += *(float *)(p + 0x60);
     *(float *)(p + 0x60) += *(float *)(p + 0x6C);
-    if (func_00175700(p) < 0) {
+    if ((s8)func_00175700(p) < 0) {
         s16 v = *(s16 *)(p + 0x1C) - 1;
         *(s16 *)(p + 0x1C) = v;
         if (v == 0) {
@@ -149,7 +149,7 @@ void func_0029BDA0(u8 *p) {
 extern u32 D_004C2078[2];
 
 void func_002AFE40(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_00185490();
     extern void func_00183d50();
     u32 *a, *b, *c, *d;
@@ -162,7 +162,7 @@ void func_002AFE40(u8 *p) {
     *(float *)(p + 0x5C) += *(float *)(p + 0x68);
     *(float *)(p + 0x38) += *(float *)(p + 0x60);
     *(float *)(p + 0x60) += *(float *)(p + 0x6C);
-    func_00175700();
+    func_00175700(p);
     t = p[0x15B];
     if (t != 0) {
         p[0x1B5] = t;

@@ -7,7 +7,7 @@ typedef signed int s32;
 typedef float f32;
 
 void func_002384A0(u8 *p, u8 *q) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001266A0(u8 *, s32, s32);
     extern void func_00238B70(u8 *, u8 *);
     extern void func_001A1F00(u8 *, s32, s32);
@@ -16,7 +16,7 @@ void func_002384A0(u8 *p, u8 *q) {
     f32 d;
     p[0x40C] = 2;
     p[0x33C] = 5;
-    func_00175700();
+    func_00175700(p);
     if (*(s8 *)(q + 0x38) > 0) {
         u32 t;
         s8 x;
