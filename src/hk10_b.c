@@ -17,8 +17,8 @@ extern volatile s64 D_004C2370;
 extern s64 func_00411AD0();
 extern void func_003FE170();
 extern s32 func_003FE4F0();
-extern s32 func_003FE190();
-extern void func_003FE120();
+extern s32 func_003FE190(s32);
+extern void func_003FE120(s32);
 extern s32 func_00103C20();
 
 s32 func_003FDF78(void)

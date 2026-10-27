@@ -17,7 +17,7 @@ void func_003FDC70(void *context)
     extern s32 D_0047D0E0[];
     extern s32 func_00103CD0();
     extern s32 func_00103C70();
-    extern void func_003FE190();
+    extern s32 func_003FE190(s32);
     s32 h;
     (void)context;
     if (D_004C22D4 == 0) {

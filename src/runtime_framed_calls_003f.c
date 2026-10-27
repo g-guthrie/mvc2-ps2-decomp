@@ -64,16 +64,16 @@ void func_003FCCF0(struct T3FCCF0 *p)
 }
 
 extern volatile s32 D_004C2330;
-extern s32 func_003FE190(void *);
-extern void func_003FE120(void *);
+extern s32 func_003FE190(s32);
+extern void func_003FE120(s32);
 extern s32 func_003FE4F0(void);
 void func_003FEAE8(void)
 {
-    if (func_003FE190((void *)D_004C2330) == D_004C2330)
-        func_003FE120((void *)D_004C2330);
+    if (func_003FE190(D_004C2330) == D_004C2330)
+        func_003FE120(D_004C2330);
     if (func_003FE4F0() == 1) {
-        if (func_003FE190((void *)D_004C2334) == D_004C2334)
-            func_003FE120((void *)D_004C2334);
+        if (func_003FE190(D_004C2334) == D_004C2334)
+            func_003FE120(D_004C2334);
     }
 }
 

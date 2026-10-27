@@ -19,9 +19,9 @@ s32 func_0040D498(s32 *p)
     return p[5];
 }
 
-extern void func_00103CE0(void *, void *);
-extern void func_00103D10(void *);
-void func_003FE120(void *p)
+extern s32 func_00103CE0(s32, void *);
+extern s32 func_00103D10(s32);
+void func_003FE120(s32 p)
 {
     s32 t[12];
     if (p != 0) {

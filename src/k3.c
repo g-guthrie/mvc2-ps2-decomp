@@ -48,9 +48,9 @@ extern s32 func_0011FFA0(char *);
 extern void func_0011D740(char *, char *, s32);
 
 
-extern void func_00103CE0();
-extern s32 func_00103D70();
-s32 func_003FE190(void *p) {
+extern s32 func_00103CE0(s32, void *);
+extern s32 func_00103D70(s32);
+s32 func_003FE190(s32 p) {
     s32 buf[12]; s32 r = 0;
     if (p) {
         func_00103CE0(p, buf);

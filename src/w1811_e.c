@@ -12,10 +12,10 @@ extern u8 D_004BB618[];
 
 void func_003FDD28(s32 a, s32 b) {
     extern void func_00103C70(s32, s32);
-    extern void func_003FE120();
-    extern void func_003FE190();
+    extern void func_003FE120(s32);
+    extern s32 func_003FE190(s32);
     extern void func_00411380();
-    extern void func_003FE1F8(s32);
+    extern s32 func_003FE1F8(s32);
     s32 i;
     register s32 f __asm__("$3");
     register s32 one __asm__("$3");
