@@ -20,10 +20,10 @@ void func_0027E5D0(u8 *p) {
         if (h & 1) s0 = -s0;
         break;
     case 1:
-        s0 = (*(s16 *)(p + 0x1C) << 4) - 0xA0;
+        s0 = (*(s16 *)(p + 0x1C) * 16) - 0xA0;
         break;
     case 2:
-        s0 = 0xA0 - (*(s16 *)(p + 0x1C) << 4);
+        s0 = 0xA0 - (*(s16 *)(p + 0x1C) * 16);
         break;
     default:
         break;
