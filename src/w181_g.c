@@ -12,7 +12,7 @@ extern void (*D_004C1F00[2])(u8 *, u8 *);
 
 void func_003A7D10(u8 *p, u8 *q)
 {
-    extern void func_003A8290(u8 *, u8 *, s32);
+    extern void func_003A8290(u8 *, u8 *);
     s32 c;
     u32 t;
     f32 k;
@@ -20,13 +20,13 @@ void func_003A7D10(u8 *p, u8 *q)
     if (c != 0x16) {
         t = p[4];
         p[4] = t + 1;
-        func_003A8290(p, q, c);
+        func_003A8290(p, q);
         return;
     }
     if (q[5] != 0) {
         t = p[4];
         p[4] = t + 1;
-        func_003A8290(p, q, c);
+        func_003A8290(p, q);
         return;
     }
     *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);

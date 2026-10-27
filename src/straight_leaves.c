@@ -276,7 +276,7 @@ void func_003A6D90(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 
 void func_003A7AF0(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 
-void func_003A8290(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
+void func_003A8290(u8 *p, u8 *owner) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 
 void func_003A82B0(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 
