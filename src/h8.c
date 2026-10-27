@@ -10,6 +10,7 @@ typedef struct { f32 x, y, z; } V3;
 
 extern s8 func_00175670();
 extern s32 func_001B81D0();
+/* Provisional: this callback and func_001B81D0 have void returns. */
 s32 func_001B8030(u8 *p) {
     *(f32 *)(p + 0x34) = *(f32 *)(*(u8 **)(p + 0x18) + 0x34);
     *(f32 *)(p + 0x38) = *(f32 *)(*(u8 **)(p + 0x18) + 0x38);
@@ -31,6 +32,7 @@ void func_001DBDF0(u8 *p) {
 extern void func_00290E30(u8 *);
 extern s8 func_00175700();
 extern void func_0038A040(u8 *, s32);
+/* Provisional: the animation helper consumes p; the corrected call differs. */
 void func_00291150(u8 *p) {
     u32 t;
     func_00290E30(p);
