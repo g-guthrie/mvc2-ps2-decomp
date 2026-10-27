@@ -12,14 +12,14 @@ extern G2C9D80 *D_004C2794;
 
 void func_002C9D80(u8 *p, u8 *q)
 {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001E3710(u8 *, s32);
     s8 *r, *r1;
     s8 f;
     f32 v;
     p[0x40C] = 2;
     p[0x33C] = 5;
-    func_00175700();
+    func_00175700(p);
     r = ((S2C9D80 *)p)->b;
     f = r[1];
     r1 = r + 1;

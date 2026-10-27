@@ -10,7 +10,7 @@ extern u8 D_004D18A6[];
 
 void func_003967D0(u8 *p, u8 *q) {
     extern void func_003DAA40(u8 *);
-    extern s32 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001757E0(u8 *, s32, s32);
     extern void func_00395920(u8 *, s32, s32);
     u32 t;
@@ -27,14 +27,14 @@ void func_003967D0(u8 *p, u8 *q) {
     if (t == 0) {
         p[5] = t + 1;
     } else if ((u8)t == 1) {
-        func_00175700();
+        func_00175700(p);
         if ((D_004D18A6[0] & (1 << q[2])) == 0) {
             t = p[5];
             p[5] = t + 1;
             func_001757E0(p, 0x17, 0x1B);
         }
     } else {
-        r = func_00175700();
+        r = func_00175700(p);
         if ((s8)r < 0) {
             v = *(s16 *)(p + 0x1E) - 1;
             *(s16 *)(p + 0x1E) = v;

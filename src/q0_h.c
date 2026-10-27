@@ -38,7 +38,7 @@ void func_0015C190(u8 *p) {
 }
 
 void func_00271160(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_00271700(u8 *);
     extern void func_001757E0(u8 *, s32, u8);
     s16 v;
@@ -46,7 +46,7 @@ void func_00271160(u8 *p) {
     f32 a, b;
     *(f32 *)(p + 0x34) += D_004F1F4C - *q;
     *q = D_004F1F4C;
-    func_00175700();
+    func_00175700(p);
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
