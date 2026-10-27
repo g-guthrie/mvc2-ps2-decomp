@@ -19272,3 +19272,5 @@ func_0024D060,0x0024D060,0x58,src/actor_effect_state_entries.c,complete
 func_002C95C0,0x002C95C0,0xA0,src/actor_action_entry_callbacks.c,complete
 func_002CA6B0,0x002CA6B0,0x70,src/actor_action_entry_callbacks.c,complete
 func_002E81B0,0x002E81B0,0x9C,src/actor_action_entry_callbacks.c,complete
+func_00269320,0x00269320,0x64,src/actor_timed_motion_callbacks.c,complete
+func_0039E080,0x0039E080,0x8C,src/actor_timed_motion_callbacks.c,complete

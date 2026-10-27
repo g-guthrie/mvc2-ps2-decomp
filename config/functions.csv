@@ -9089,7 +9089,8 @@ func_00269100,0x00269100,0x70,0x00269170,code,spimdisasm-explicit-size-before-fi
 func_00269170,0x00269170,0xFC,0x0026926C,code,spimdisasm-explicit-size-before-first-data
 func_00269270,0x00269270,0x78,0x002692E8,code,spimdisasm-explicit-size-before-first-data
 func_002692F0,0x002692F0,0x24,0x00269314,code,matching-c-head-split
-residual_00269314,0x00269314,0x70,0x00269384,assembly_residual,verified-boundary-after-matching-head
+residual_00269314,0x00269314,0xC,0x00269320,assembly_residual,uncredited-native-alignment
+func_00269320,0x00269320,0x64,0x00269384,code,verified-native-table-entry-boundary
 func_00269390,0x00269390,0x84,0x00269414,code,spimdisasm-explicit-size-before-first-data
 func_00269420,0x00269420,0xBC,0x002694DC,code,spimdisasm-explicit-size-before-first-data
 func_002694E0,0x002694E0,0x44,0x00269524,code,spimdisasm-explicit-size-before-first-data
@@ -17618,7 +17619,8 @@ func_0039DE10,0x0039DE10,0x8,0x0039DE18,code,spimdisasm-explicit-size-before-fir
 func_0039DE20,0x0039DE20,0x64,0x0039DE84,code,spimdisasm-explicit-size-before-first-data
 func_0039DE90,0x0039DE90,0x1B8,0x0039E048,code,spimdisasm-explicit-size-before-first-data
 func_0039E050,0x0039E050,0x2C,0x0039E07C,code,exact-MWCC-C-entry-table-bounded
-residual_0039E07C,0x0039E07C,0x90,0x0039E10C,assembly_residual,uncredited remainder after exact recovered entry
+residual_0039E07C,0x0039E07C,0x4,0x0039E080,assembly_residual,uncredited-native-alignment
+func_0039E080,0x0039E080,0x8C,0x0039E10C,code,verified-native-table-entry-boundary
 func_0039E110,0x0039E110,0x1BC,0x0039E2CC,code,spimdisasm-explicit-size-before-first-data
 func_0039E2D0,0x0039E2D0,0xB4,0x0039E384,code,spimdisasm-explicit-size-before-first-data
 func_0039E390,0x0039E390,0xB8,0x0039E448,code,spimdisasm-explicit-size-before-first-data
