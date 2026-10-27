@@ -26,15 +26,15 @@ void func_002BE1B0(u8 *p) {
 }
 
 extern void func_0016B0C0();
-extern void func_00166C80();
-void func_00168350(u8 *p, u8 *q) {
+extern int func_00166C80(u8 *,u8 *,s32);
+int func_00168350(u8 *p, u8 *q) {
     s16 lim;
     s16 v;
-    func_0016B0C0(p, q, 0);
-    func_0016B0C0(p, q, 2);
+    func_0016B0C0(p,q,0);
+    func_0016B0C0(p,q,2);
     lim = *(s16 *)(*(u8 **)(p + 0x220) + 0x434);
     v = *(s32 *)(p + 0x4C8) * 144 / 200;
-    func_00166C80(p, q, v >= lim, lim);
+    return func_00166C80(p,q, lim <= v);
 }
 
 void func_0013FF00(u8 *p) {
