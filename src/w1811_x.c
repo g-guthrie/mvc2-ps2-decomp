@@ -1,3 +1,4 @@
+#include "actor_motion_node.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -6,9 +7,9 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-typedef struct O {
+typedef struct ActorMotionNode {
     u8 pad0[0x0C];
-    struct O *p0C;
+    struct ActorMotionNode *p0C;
     u8 pad10[0x14 - 0x10];
     s16 **p14;
     u8 pad18[0x1C - 0x18];

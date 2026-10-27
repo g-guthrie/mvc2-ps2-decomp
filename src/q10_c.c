@@ -1,3 +1,4 @@
+#include "actor_motion_node.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -54,7 +55,7 @@ void func_00156C50(u8 *p) {
 typedef struct { u8 pad0[0xC]; f32 f0c; f32 f10; } C_001A4CB0;
 extern s32 D_004BF740[2];
 extern void func_001A4E80( void *);
-extern void func_001A5420( void *);
+
 extern int func_001A52F0(void *, void *);
 extern void func_001A5090( void *, void *);
 extern void func_001A4FB0( void *, void *);
@@ -67,7 +68,7 @@ void func_001A4CB0(u8 *a, u8 *b) {
     *(f32 *)(a + 0x34) = *(f32 *)(b + 0x34) + c->f0c;
     *(f32 *)(a + 0x38) = *(f32 *)(b + 0x38) + c->f10;
     *(s32 *)(a + 0x14) = D_004BF740[a[0x20]];
-    func_001A5420(a);
+    func_001A5420((ActorMotionNode *)a);
     func_001A52F0(a, b);
     func_001A5090(a, b);
     func_001A4FB0(a, b);
