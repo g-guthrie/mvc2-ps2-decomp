@@ -10630,7 +10630,7 @@ func_00279170,0x00279170,0x68,src/g3.c,complete
 func_002D81A0,0x002D81A0,0x68,src/g3.c,complete
 func_00217780,0x00217780,0x6C,src/g3.c,complete
 func_001D50D0,0x001D50D0,0x70,src/g3.c,complete
-func_002CF430,0x002CF430,0x78,src/g3.c,complete
+func_002CF430,0x002CF430,0x78,src/y4_a.c,complete
 func_001A1440,0x001A1440,0x84,src/g3.c,complete
 func_001CDE40,0x001CDE40,0x7C,src/g3.c,complete
 func_0032A870,0x0032A870,0x64,src/g3b.c,complete

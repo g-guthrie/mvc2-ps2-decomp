@@ -568,3 +568,20 @@ void func_002CF350(u8 *p) {
     }
 }
 
+
+void func_002CF430(u8 *a0) {
+    extern int func_00175700(u8 *);
+    extern void func_00186A20(u8 *);
+    extern void func_001CFA60(void *);
+    a0[0x40C] = 2;
+    a0[0x33C] = 5;
+    func_00175700(a0);
+    func_002CF1D0(a0);
+    if (*(s8*)(a0+0x151) == 0) {
+        u32 t = a0[6]; a0[6] = t + 1;
+        func_00186A20(a0);
+        func_001CFA60(a0);
+        *(u32*)(a0+0x60) = 0x42092492;
+        *(u32*)(a0+0x6C) = 0xBF4DB6DB;
+    }
+}
