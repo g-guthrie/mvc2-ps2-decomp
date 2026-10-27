@@ -14,7 +14,7 @@ extern s32 D_004C2B78;
 extern s32 D_004C2B7C;
 extern s32 D_006336F0[];
 
-void func_0041DF70(u8 *p)
+void func_0041DF70(u16 input)
 {
     extern void func_0041DF20();
     extern void func_00418CC0();
@@ -27,10 +27,10 @@ void func_0041DF70(u8 *p)
     extern void func_00131540();
     extern s32 func_0041DE10();
     extern void func_00151640();
-    extern void func_00131550(u8 *);
+    extern void func_00131550(u16);
     extern s32 func_001315F0();
     extern s32 func_001316D0();
-    extern void func_0041E290(u8 *);
+    extern void func_0041E290(u16);
 
     if (D_004C2840->f5 != 4 && D_004C2840->f5 != 0) func_0041DF20();
     switch (D_004C2840->f5) {
@@ -68,7 +68,7 @@ void func_0041DF70(u8 *p)
             D_004D17CC[0] = -1;
             break;
         }
-        func_00131550(p);
+        func_00131550(input);
         if (func_001315F0() != 0) {
             D_004C2840->f5 = 4;
             D_004C2840->f6 = 0;
@@ -82,7 +82,7 @@ void func_0041DF70(u8 *p)
         }
         break;
     case 4:
-        func_0041E290(p);
+        func_0041E290(input);
         break;
     case 5:
         if (D_004D1788[0] != 0) {
