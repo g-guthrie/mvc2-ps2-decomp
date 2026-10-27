@@ -15,7 +15,7 @@ extern u8 D_004D18A7[];
 extern s32 D_004D18AC[];
 void func_0018FEB0(PM *p) {
     extern void func_00175C00(PM *, s32);
-    extern void func_00327CF0(PM *, s32);
+    extern u8 *func_00327CF0(u8 *, u8);
     extern void func_0016EDA0(s32, s32);
     p->h438 = 0;
     p->h434 = 0;
@@ -28,12 +28,12 @@ void func_0018FEB0(PM *p) {
     }
     if (D_004C2840->b58 != 0) {
         D_004C2794->b36[p->b2]++;
-        if (p->b427 == 0) func_00327CF0(p, 3);
+        if (p->b427 == 0) func_00327CF0((u8 *)p, 3);
     } else {
         s8 v;
         v = D_004C2794->b36[p->b2] + 1;
         D_004C2794->b36[p->b2] = v;
-        if (v < 3) func_00327CF0(p, 3);
+        if (v < 3) func_00327CF0((u8 *)p, 3);
     }
     func_0016EDA0(p->b2, 6);
 }

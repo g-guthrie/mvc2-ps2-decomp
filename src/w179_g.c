@@ -15,7 +15,7 @@ extern s32 D_004D18BC[];
 extern s32 D_004D18C0[];
 
 void func_00183630(u8 *p) {
-    extern s32 func_00327CF0();
+    extern u8 *func_00327CF0(u8 *, u8);
     extern void func_00183A70();
     extern void func_001E3710();
     extern void func_001E3210();

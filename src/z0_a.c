@@ -228,14 +228,13 @@ void func_002774C0(u8 *p)
     }
 }
 
-void func_001BE470(u8 *p, u8 *q, s32 n)
+void *func_001BE470(u8 *p, u8 *q, s32 n)
 {
     extern s32 func_00174170();
     extern void *func_001BC720(void *, void *, u8, int);
     u8 a, m;
     if ((p[0x23] & 3) == 3 || (func_00174170() & 3) != 0) {
-        func_001BC720(q, p, 1, n);
-        return;
+        return func_001BC720(q, p, 1, n);
     }
     if ((func_00174170() & 1)) {
         if (!(p[0x23] & 1)) {
@@ -254,8 +253,11 @@ void func_001BE470(u8 *p, u8 *q, s32 n)
             m = 1;
         }
     }
-    if (func_001BC720(q, p, a, n))
-        p[0x23] |= m;
+    {
+        void *result = func_001BC720(q, p, a, n);
+        if (result) p[0x23] |= m;
+        return result;
+    }
 }
 extern void (*D_0044B160[])(u8 *, u8 *, u8 *);
 

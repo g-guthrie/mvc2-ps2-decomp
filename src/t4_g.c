@@ -56,7 +56,7 @@ void func_003216C0(u8 *p) {
     }
 }
 
-extern s32 func_001BE470(void *p, void *q, s32 m);
+extern void *func_001BE470(u8 *p, u8 *q, s32 m);
 
 void func_001BE700(u8 *p, u8 *q) {
     u32 t;
