@@ -11342,7 +11342,7 @@ func_002674E0,0x002674E0,0x84,src/m8.c,complete
 func_00272ED0,0x00272ED0,0x78,src/m8.c,complete
 func_0012BDC0,0x0012BDC0,0x70,src/m8b.c,complete
 func_00152840,0x00152840,0x70,src/m8b.c,complete
-func_0036E220,0x0036E220,0x54,src/m8c.c,complete
+func_0036E220,0x0036E220,0x54,src/m8c.c,placeholder
 func_001DEE30,0x001DEE30,0x7C,src/m8d.c,complete
 func_00270ED0,0x00270ED0,0x84,src/m8e.c,complete
 func_001C0D90,0x001C0D90,0x84,src/m8f.c,complete
