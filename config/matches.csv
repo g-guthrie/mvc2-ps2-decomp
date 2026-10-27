@@ -13714,7 +13714,7 @@ func_0031DE00,0x0031DE00,0xBC,src/x4_a.c,complete
 func_00386D30,0x00386D30,0xBC,src/x4_a.c,complete
 func_002B3FE0,0x002B3FE0,0xC0,src/x4_a.c,complete
 func_003B4F10,0x003B4F10,0xCC,src/x4_a.c,complete
-func_00275E30,0x00275E30,0xD0,src/x4_a.c,complete
+func_00275E30,0x00275E30,0xD0,src/w176_q.c,complete
 func_00217390,0x00217390,0xD0,src/x4_a.c,complete
 func_002808F0,0x002808F0,0xD4,src/x4_a.c,complete
 func_002430A0,0x002430A0,0xD4,src/x4_a.c,complete

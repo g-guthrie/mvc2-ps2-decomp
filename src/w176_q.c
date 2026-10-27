@@ -56,3 +56,31 @@ void func_00275C20(u8 *p) {
         func_001830D0(p, v, 1);
     }
 }
+
+void func_00275E30(u8 *p) {
+
+    extern int func_00175700(u8 *);
+    extern void func_001843A0(u8 *);
+    extern void func_00184540(void *);
+    p[0x40D] = 0;
+    p[0x40C] = 0;
+    p[0x33B] = 0;
+    p[0x33C] = 0;
+    *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
+    *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
+    *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
+    *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
+    if (p[0x20D] != 2) {
+        func_00275A40(p);
+        if ((s8)func_00175700(p) < 0) {
+            func_001843A0(p);
+            *(s32 *)(p + 0xD8) = 0;
+        }
+    } else {
+        func_00175700(p);
+        if (func_00275A40(p) != 0) {
+            func_00184540(p);
+            *(s32 *)(p + 0xD8) = 0;
+        }
+    }
+}
