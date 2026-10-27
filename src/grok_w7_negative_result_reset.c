@@ -164,7 +164,7 @@ void func_002F9510(u8 *p)
     func_001843A0(p);
 }
 
-void func_002F9C00(u8 *p)
+void func_002F9C00(u8 *p, void *context)
 {
     s8 result = (s8)func_00175700(p);
     if (result < 0) {

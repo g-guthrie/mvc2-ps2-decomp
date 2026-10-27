@@ -278,7 +278,8 @@ s32 func_002E80A0(u8 *p) {
     return 0;
 }
 
-void func_002F9B20(u8 *p, u8 *q) {
+void func_002F9B20(u8 *p, void *context) {
+    u8 *q = (u8 *)context;
     extern void func_00175700();
     extern void func_001D8AB0();
     extern void func_00183210();

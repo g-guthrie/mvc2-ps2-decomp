@@ -63,7 +63,9 @@ typedef struct {
 } P_i;
 typedef struct { u8 pad0[0x16]; u8 b16; } Q_i;
 
-void func_002F9E60(P_i *p, Q_i *q) {
+void func_002F9E60(u8 *actor, void *context) {
+    Q_i *q = (Q_i *)context;
+    P_i *p = (P_i *)actor;
     extern s8 func_00175700(P_i *);
     extern void func_00175C00(P_i *, s32);
     extern void func_002F8EB0(P_i *);

@@ -31,8 +31,9 @@ void func_002804E0(u8 *p)
     }
 }
 
-void func_002F9D60(u8 *p, u8 *q)
+void func_002F9D60(u8 *p, void *context)
 {
+    u8 *q = (u8 *)context;
     extern s8 func_00175700(u8 *);
     extern void func_001757E0(u8 *, s32, s32);
     u32 t;
