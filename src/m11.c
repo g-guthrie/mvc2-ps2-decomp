@@ -40,11 +40,12 @@ void func_0019D740(u8 *a, s32 b) {
 }
 
 extern void func_00394780(void *p, s32 a, s32 b);
-extern u8 D_00458900[];
+/* Four frame rows, with two word-sized entries per row. */
+extern u32 data_u32_00458900[8];
 
 void func_002A9950(u8 *p, s32 n) {
     func_00394780(p, (u8)(*(s16 *)(p + 0x1C) + 3), 0);
-    *(s8 *)(p + 0x168) = *(s8 *)(D_00458900 + ((((s32)*(s16 *)(p + 0x1C) << 1) + (u8)n) << 2));
+    *(s8 *)(p + 0x168) = *(s8 *)((u8 *)&data_u32_00458900 + ((((u32)(s32)*(s16 *)(p + 0x1C) << 1) + (u8)n) << 2));
     func_001757E0(p, 0x15, p[0x168]);
 }
 
