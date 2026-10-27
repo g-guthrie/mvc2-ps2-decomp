@@ -133,7 +133,7 @@ void func_001D8C80(u8 *a0) {
 void func_0015B200(u8 *a, u8 *b, s32 c, s32 d);
 void func_00175910(u8 *a, s32 b, s32 c, s32 d);
 void func_003A4340(u8 *a);
-void func_003A4160(u8 *a0) {
+void func_003A4160(u8 *a0, u8 *owner, u8 *work) {
     if (*(s8 *)(a0 + 0x1B2)) {
         a0[4] = 2;
         a0[0x13C] = 0;

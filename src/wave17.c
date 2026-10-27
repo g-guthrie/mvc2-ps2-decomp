@@ -13,7 +13,7 @@ extern void func_003D3080(int);
 extern int func_003760D0(u8 *);
 
 
-void func_003A41E0(u8 *p) {
+void func_003A41E0(u8 *p, u8 *owner, u8 *work) {
   int r = (s8)func_00175700(p);
   if (r >= 0) {
     if ((s8)p[0x151] == 0) return;
