@@ -25,7 +25,6 @@ extern void func_00184540(u8 *);
 extern u8 *D_004C28D8;
 extern Event *func_003DA750(s32, s32, s32);
 extern void func_003DAA40(u8 *);
-extern void func_00399BA0(u8 *);
 extern void func_0039E450(u8 *);
 extern void func_0039A200(u8 *);
 extern void func_0039A620(u8 *);
@@ -41,14 +40,6 @@ extern u16 *D_004C2A08;
 extern u8 *D_004C29C4;
 extern u8 *D_004C2938;
 extern u8 *D_004C29A4;
-
-void func_00399BA0(u8 *p)
-{
-    p[316] = 0;
-    if (p[1] == (*(u8 **)(p + 24))[1])
-        D_004C29F8[0] = 0;
-    func_003DAA40(p);
-}
 
 void func_0039A1C0(u8 *p)
 {
