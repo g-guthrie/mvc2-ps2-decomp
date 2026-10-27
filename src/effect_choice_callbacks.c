@@ -1,7 +1,7 @@
 /* Choose an effect from the shared threshold or mode before dispatching. */
 extern int D_004C2B84;
 extern int D_006336F0[];
-extern void func_004220B0(float, void *, int, int);
+extern int func_004220B0(float, void *, int, int);
 extern void func_004212D0(int);
 extern unsigned char D_004A9060[], D_004A9120[], D_004AA5D0[], D_004AA690[];
 extern unsigned char D_004AA8A0[], D_004AA800[], D_004A9E10[];

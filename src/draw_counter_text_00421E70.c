@@ -4,7 +4,7 @@ typedef unsigned char u8;
 extern s32 D_004D17F8;
 extern char D_004BF158[];
 extern u8 D_004AA7B0[];
-extern void func_004220B0(float scale, void *data, s32 zero, s32 mode);
+extern int func_004220B0(float scale, void *data, s32 zero, s32 mode);
 extern s32 func_0011F938(char *destination, const char *format, ...);
 extern unsigned int func_0011FFA0(const char *text);
 extern void func_00422740(char *text, s32 width, s32 mode, s32 arg3,

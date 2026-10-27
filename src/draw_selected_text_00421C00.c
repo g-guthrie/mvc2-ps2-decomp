@@ -8,7 +8,7 @@ extern u8 D_004AA160[];
 extern u8 D_004AA1C8[];
 extern u8 D_004AA240[];
 extern u8 D_004AA2A8[];
-extern void func_004220B0(float scale, void *data, s32 zero, s32 mode);
+extern int func_004220B0(float scale, void *data, s32 zero, s32 mode);
 extern void func_004212D0(s32 value);
 
 void func_00421C00(void)

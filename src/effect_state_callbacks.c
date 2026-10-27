@@ -1,6 +1,6 @@
 /* Select the effect variant from shared state, then dispatch at scale 0.09. */
 extern signed char D_004D17CC;
-extern void func_004220B0(float, void *, int, int);
+extern int func_004220B0(float, void *, int, int);
 extern unsigned char D_004A8F80[], D_004A94A0[], D_004A95E0[];
 extern unsigned char D_004A9750[], D_004A9810[], D_004A98E0[];
 extern unsigned char D_004A9AF0[], D_004AA3B0[];
