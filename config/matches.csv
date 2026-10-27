@@ -5300,7 +5300,7 @@ func_0034AF60,0x0034AF60,0x40,src/signed_flag_clusters.c,complete
 func_0039AC90,0x0039AC90,0x40,src/signed_flag_clusters.c,complete
 func_003BF630,0x003BF630,0x40,src/signed_flag_clusters.c,complete
 func_003C24D0,0x003C24D0,0x40,src/signed_flag_clusters.c,complete
-func_003C3430,0x003C3430,0x40,src/signed_flag_clusters.c,complete
+func_003C3430,0x003C3430,0x40,src/signed_flag_clusters.c,placeholder
 func_0023BCD0,0x0023BCD0,0x44,src/signed_flag_clusters.c,complete
 func_00245AD0,0x00245AD0,0x44,src/signed_flag_clusters.c,complete
 func_002DA600,0x002DA600,0x44,src/signed_flag_clusters.c,complete
@@ -11202,7 +11202,7 @@ func_00131AB0,0x00131AB0,0x30,src/m1b.c,complete
 func_003D6340,0x003D6340,0x64,src/m1b.c,complete
 func_0012A3A0,0x0012A3A0,0x74,src/m1b.c,complete
 func_00335640,0x00335640,0x8c,src/m1b.c,complete
-func_003C3690,0x003C3690,0x68,src/m1c.c,complete
+func_003C3690,0x003C3690,0x68,src/m1c.c,placeholder
 func_002A6610,0x002A6610,0x68,src/m1c.c,complete
 func_00381650,0x00381650,0x70,src/m1c.c,complete
 func_00396E30,0x00396E30,0x8c,src/m1c.c,complete
@@ -13289,7 +13289,7 @@ func_00231E90,0x00231E90,0xC4,src/v12_c.c,complete
 func_0034DF50,0x0034DF50,0xB8,src/v12_d.c,complete
 func_0014AB60,0x0014AB60,0xCC,src/v12_e.c,complete
 func_0014D910,0x0014D910,0xCC,src/v12_f.c,complete
-func_003C33B0,0x003C33B0,0x74,src/v15_a.c,complete
+func_003C33B0,0x003C33B0,0x74,src/v15_a.c,placeholder
 func_00363900,0x00363900,0x8C,src/v15_a.c,complete
 func_001E43F0,0x001E43F0,0x90,src/v15_a.c,complete
 func_002A8BF0,0x002A8BF0,0xA8,src/v15_a.c,complete

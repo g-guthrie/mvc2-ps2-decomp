@@ -128,7 +128,7 @@ extern void func_001E7F60(u8 *);
 extern s8 D_00475DB0[];
 typedef struct { u8 pad0[0x4]; u8 f4; u8 f5; u8 pad6[0x16]; s16 f1C; s16 f1E; u8 pad20[0x14]; f32 f34; u8 pad38[0x108]; s16 f140; } P3C4;
 /* Provisional: callback-table ABI and state bounds remain unresolved. */
-void func_003C4090(u8 *p, u8 *q) {
+void func_003C4090(u8 *p, void *q) {
     P3C4 *actor = (P3C4 *)p;
     s32 v;
     func_003C3CE0(p, q);
@@ -284,7 +284,7 @@ extern u8 D_004F1F45 __attribute__((section(".bss")));
 extern u8 D_004F1F46 __attribute__((section(".bss")));
 extern void func_001266A0(u8 *,int,int);
 /* Provisional: table ABI, selector bounds and owner lifetime remain unresolved. */
-void func_003C3EA0(u8 *p,u8 *q){
+void func_003C3EA0(u8 *p,void *q){
 s16 *position=(s16 *)(p+0xd0);
  func_003C3CE0(p,q);
  if(*(s8 *)(p+0x1b4)!=0){s32 t=*(s8 *)(p+0x1b4);p[0x1b4]=t-1;}
@@ -298,7 +298,7 @@ s16 *position=(s16 *)(p+0xd0);
  }
  if(!((float)*position<600.0f)){
   *position=600;func_003C3DA0(p,q);
-  if(q[0x269]==4||q[0x269]==5){p[0x1b5]=75;p[0x1b2]=*(u16 *)(p+0x1c0)=0;*(u32 *)(p+0x1d8)=0;{u32 offset=p[2]*2;offset+=(u32)D_004C2794;++*(s16 *)(offset+0x7c);}}else{p[0x1b5]=56;p[0x1b2]=*(u16 *)(p+0x1c0)=0;*(u32 *)(p+0x1d8)=0;{u32 offset=p[2]*2;offset+=(u32)D_004C2794;++*(s16 *)(offset+0x7c);}}
+  if(((u8 *)q)[0x269]==4||((u8 *)q)[0x269]==5){p[0x1b5]=75;p[0x1b2]=*(u16 *)(p+0x1c0)=0;*(u32 *)(p+0x1d8)=0;{u32 offset=p[2]*2;offset+=(u32)D_004C2794;++*(s16 *)(offset+0x7c);}}else{p[0x1b5]=56;p[0x1b2]=*(u16 *)(p+0x1c0)=0;*(u32 *)(p+0x1d8)=0;{u32 offset=p[2]*2;offset+=(u32)D_004C2794;++*(s16 *)(offset+0x7c);}}
   func_001266A0(q,13,0);D_004F1F45=3;D_004F1F46=1;*(s16 *)(p+0x1c)=48;*(s16 *)(p+0x1e)=24;p[5]++;func_001E3210(p,30);
  }
 }
