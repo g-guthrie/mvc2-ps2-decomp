@@ -63,6 +63,7 @@ static void func_00396DD0(u8 *p, u8 *a) {
 typedef void (*CB3)(u8 *, u8 *, u8 *);
 extern CB3 D_00472490[], D_004724A0[];
 
+/* Provisional: callback table type and selector bounds require reconciliation. */
 void func_00396E30(u8 *p) {
     u8 *a = p + 0x88;
     if (p[0x20] == 0) {

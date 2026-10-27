@@ -53,6 +53,7 @@ static void func_00396EC0(u8 *d, u8 *s, u8 *a) {
 }
 extern void (*D_004C1E40[2])(u8 *, u8 *, u8 *);
 
+/* Provisional: callback table type and selector bounds require reconciliation. */
 void func_00397140(u8 *p, u8 *q, u8 *r) {
     *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
     func_00396EC0(p, q, r);

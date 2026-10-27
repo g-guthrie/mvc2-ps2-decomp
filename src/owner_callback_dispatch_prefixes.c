@@ -105,6 +105,7 @@ void func_003616A0(u8 *p, void *owner) {
     *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
     jtbl_004C1C00[p[5]](p, owner);
 }
+/* Provisional: callback table type and selector bounds require reconciliation. */
 void func_00396A40(u8 *p, void *owner) {
     u8 *q = owner;
     *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
