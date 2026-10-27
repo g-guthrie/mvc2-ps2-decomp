@@ -32,8 +32,8 @@ typedef struct P {
 } P;
 
 void func_0018CEA0(P *p) {
-    extern void func_0018D030();
-    extern void func_0018D0C0();
+    extern void func_0018D030(u8 *);
+    extern void func_0018D0C0(u8 *);
     Q *q;
     s32 h;
     P *o;
@@ -46,10 +46,10 @@ void func_0018CEA0(P *p) {
     if (q != 0) {
         h = p->h1C2;
         if (h & 0x10) {
-            func_0018D030();
+            func_0018D030((u8 *)p);
             return;
         } else if (h & 0x1000) {
-            func_0018D0C0();
+            func_0018D0C0((u8 *)p);
         } else {
             t = p->b1BA;
             if (h & 0x20) {
