@@ -8,7 +8,7 @@ typedef float f32;
 extern s8 func_00175700();
 extern void func_001757E0();
 
-void func_001C66E0(u8 *p) {
+void func_001C66E0(u8 *p, u8 *owner_unused) {
     u32 t;
     if (func_00175700(p) < 0) {
         t = p[7];

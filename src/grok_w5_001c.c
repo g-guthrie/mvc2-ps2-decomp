@@ -80,7 +80,7 @@ void func_001C4710(u8 *p,u8 *owner_unused) {
     }
 }
 
-void func_001C6690(u8 *p) {
+void func_001C6690(u8 *p, u8 *owner_unused) {
     func_00175700(p);
     if (*(s8 *)(p + 337) != 0) {
         p[7]++;
