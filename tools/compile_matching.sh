@@ -2112,7 +2112,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py "$BUILD/owner_facing_animation_gate.o" private/SLUS_204.86.rom --source src/owner_facing_animation_gate.c
 
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/owner_state_snapshot.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/owner_state_snapshot.o"
+    src/owner_state_snapshot.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/owner_state_snapshot.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_state_snapshot.o" private/SLUS_204.86.rom --source src/owner_state_snapshot.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -12193,7 +12193,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     private/SLUS_204.86.rom --source src/event_clone_001b65b0.c
 
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/event_clone_001b6410.c -c -lang c -O3,p -Op -sdatathreshold 8 \
+    src/event_clone_001b6410.c -c -lang c -i src -O3,p -Op -sdatathreshold 8 \
     -o "$BUILD/event_clone_001b6410.o"
 "$PYTHON" tools/verify_object.py "$BUILD/event_clone_001b6410.o" \
     private/SLUS_204.86.rom --source src/event_clone_001b6410.c
@@ -21576,7 +21576,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_state_frame
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_animation_select_callbacks.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_animation_select_callbacks.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_animation_select_callbacks.o" private/SLUS_204.86.rom --source src/actor_animation_select_callbacks.c
 
-MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/owner_effect_position_00354e90.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_effect_position_00354e90.o"
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/owner_effect_position_00354e90.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/owner_effect_position_00354e90.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_effect_position_00354e90.o" private/SLUS_204.86.rom --source src/owner_effect_position_00354e90.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/actor_animation_state_001ec660.c -c -lang c -O4,p -sdatathreshold 0 -o "$BUILD/actor_animation_state_001ec660.o"
