@@ -27,17 +27,18 @@ void func_001FF9D0(u8 *p)
     }
 }
 
-typedef struct { f32 x, y, z; } V13D8;
-extern V13D8 D_004B16A0[];
+typedef struct { f32 value[3]; } F32Vector3;
+typedef struct { F32Vector3 endpoints[2]; } F32VectorPair;
+extern F32VectorPair data_f32pair_004B16A0[6];
 typedef struct { u8 pad0[0x1C]; s16 s1c; u8 pad1[2]; u8 i20; u8 pad2[0x13]; f32 f34, f38, f3c; } P13D8;
-/* Provisional: the flat vector view differs from the six-pair data owner. */
 void func_0013D8E0(P13D8 *p)
 {
-    V13D8 *a = &D_004B16A0[p->i20 * 2];
-    V13D8 *b = &D_004B16A0[p->i20 * 2 + 1];
-    p->f34 = a->x + (f32)p->s1c * ((b->x - a->x) / 30.0f);
-    p->f38 = a->y + (f32)p->s1c * ((b->y - a->y) / 30.0f);
-    p->f3c = a->z + (f32)p->s1c * ((b->z - a->z) / 30.0f);
+    /* The event constructor selects one of six endpoint pairs. */
+    F32Vector3 *a = (F32Vector3 *)((u8 *)&data_f32pair_004B16A0 + (p->i20 * 2) * 12);
+    F32Vector3 *b = (F32Vector3 *)((u8 *)&data_f32pair_004B16A0 + (p->i20 * 2 + 1) * 12);
+    p->f34 = a->value[0] + (f32)p->s1c * ((b->value[0] - a->value[0]) / 30.0f);
+    p->f38 = a->value[1] + (f32)p->s1c * ((b->value[1] - a->value[1]) / 30.0f);
+    p->f3c = a->value[2] + (f32)p->s1c * ((b->value[2] - a->value[2]) / 30.0f);
 }
 
 typedef struct { u8 pad0[6]; u8 b6; u8 pad1[0x15]; s16 s1c; s16 s1e; u8 pad2[0x14]; f32 f34, f38; u8 pad3[0x20]; f32 f5c, f60; u8 pad4[4]; f32 f68, f6c; } P2E2070;

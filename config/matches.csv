@@ -14142,7 +14142,7 @@ func_00331730,0x00331730,0xF0,src/z4_e.c,complete
 func_001689F0,0x001689F0,0xF0,src/z4_f.c,complete
 func_002ABCA0,0x002ABCA0,0xF8,src/z4_g.c,complete
 func_001FF9D0,0x001FF9D0,0x94,src/z2_a.c,complete
-func_0013D8E0,0x0013D8E0,0xC0,src/z2_a.c,placeholder
+func_0013D8E0,0x0013D8E0,0xC0,src/z2_a.c,complete
 func_002E2070,0x002E2070,0xC8,src/z2_a.c,complete
 func_001F4E20,0x001F4E20,0xCC,src/z2_a.c,complete
 func_0018FDE0,0x0018FDE0,0xD0,src/z2_a.c,complete
