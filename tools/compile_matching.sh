@@ -21540,4 +21540,10 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_scale_anima
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/owner_effect_init_001e0af0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_effect_init_001e0af0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_effect_init_001e0af0.o" private/SLUS_204.86.rom --source src/owner_effect_init_001e0af0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_slide_init_0029d200.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_slide_init_0029d200.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_slide_init_0029d200.o" private/SLUS_204.86.rom --source src/actor_slide_init_0029d200.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_target_launch_0027f3d0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_target_launch_0027f3d0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_target_launch_0027f3d0.o" private/SLUS_204.86.rom --source src/actor_target_launch_0027f3d0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

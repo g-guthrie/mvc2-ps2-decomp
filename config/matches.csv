@@ -19264,3 +19264,5 @@ func_002D30B0,0x002D30B0,0x60,src/label_state_entries.c,complete
 func_001C05D0,0x001C05D0,0x74,src/actor_scale_animation_updates.c,complete
 func_0030A2D0,0x0030A2D0,0x5C,src/actor_scale_animation_updates.c,complete
 func_001E0AF0,0x001E0AF0,0x9C,src/owner_effect_init_001e0af0.c,complete
+func_0029D200,0x0029D200,0x78,src/actor_slide_init_0029d200.c,complete
+func_0027F3D0,0x0027F3D0,0x90,src/actor_target_launch_0027f3d0.c,complete
