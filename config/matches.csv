@@ -10680,7 +10680,7 @@ func_001F64B0,0x001F64B0,0x78,src/g6b.c,complete
 func_0021B900,0x0021B900,0x7C,src/g6b.c,complete
 func_001DAF30,0x001DAF30,0x7C,src/g6b.c,complete
 func_00207E90,0x00207E90,0x7C,src/g6b.c,complete
-func_002CF110,0x002CF110,0x80,src/g6b.c,complete
+func_002CF110,0x002CF110,0x80,src/g6b.c,placeholder
 func_00386570,0x00386570,0x84,src/g6b.c,complete
 func_001665C0,0x001665C0,0x68,src/g6b.c,complete
 func_002C4F50,0x002C4F50,0x64,src/g6b.c,complete

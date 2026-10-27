@@ -151,6 +151,7 @@ extern void func_002CEC90(u8 *);
 extern void func_002CEC40();
 extern void func_00183d50();
 extern void func_002CF190(u8 *);
+/* Provisional: three helper calls still omit the actor argument. */
 void func_002CF110(u8 *p) {
     func_002CEC90(p);
     func_002CEC40();
