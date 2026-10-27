@@ -242,7 +242,7 @@ extern ContextDispatchFn jtbl_0044E550[];
 extern DispatchFn jtbl_0044E570[];
 extern DispatchFn jtbl_0044E580[];
 extern DispatchFn jtbl_0044E590[];
-extern DispatchFn jtbl_0044E5C0[];
+extern ContextDispatchFn jtbl_0044E5C0[];
 extern DispatchFn jtbl_0044E5D0[];
 extern DispatchFn jtbl_0044E5F0[];
 extern const Mvc2OwnerStateCallback jtbl_0044E6A0[3];
@@ -1846,7 +1846,8 @@ void func_001D6310(u8 *p) { jtbl_0044E580[p[4]](p); }
 
 void func_001D64E0(u8 *p) { jtbl_0044E590[p[4]](p); }
 
-void func_001D6740(u8 *p) { jtbl_0044E5C0[p[4]](p); }
+/* Provisional: the shared state table still contains unary declarations. */
+void func_001D6740(u8 *p, void *owner) { jtbl_0044E5C0[p[4]](p, owner); }
 
 void func_001D6950(u8 *p) { jtbl_0044E5D0[p[4]](p); }
 

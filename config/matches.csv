@@ -793,7 +793,7 @@ func_001D5D70,0x001D5D70,0x20,src/composite_dispatch_heads.c,complete
 func_001D6040,0x001D6040,0x20,src/composite_dispatch_heads.c,complete
 func_001D6310,0x001D6310,0x20,src/composite_dispatch_heads.c,complete
 func_001D64E0,0x001D64E0,0x20,src/composite_dispatch_heads.c,complete
-func_001D6740,0x001D6740,0x20,src/composite_dispatch_heads.c,complete
+func_001D6740,0x001D6740,0x20,src/composite_dispatch_heads.c,placeholder
 func_001D6950,0x001D6950,0x20,src/composite_dispatch_heads.c,complete
 func_001D6B00,0x001D6B00,0x20,src/indirect_dispatch.c,complete
 func_001D6B20,0x001D6B20,0x14,src/straight_leaves.c,complete
