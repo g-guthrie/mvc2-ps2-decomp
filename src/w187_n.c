@@ -89,3 +89,21 @@ void func_00357F20(u8 *p) {
         func_001757E0(p, 0x15, D_004C1AC4[p[0x21]]);
     }
 }
+
+extern void func_00358430(u8 *);
+extern int func_00175700(u8 *);
+void func_003583A0(u8 *p) {
+    u8 *q = *(u8 **)(p + 24);
+    if (q[361] != 21 || q[360] < 6 || q[360] > 9) {
+        u32 t = p[4];
+        p[4] = t + 1;
+        func_00358430(p);
+    } else {
+        if (p[32] == 2) {
+            func_003578A0(p);
+        } else {
+            func_00357B30((O_357B30 *)p);
+        }
+        func_00175700(p);
+    }
+}

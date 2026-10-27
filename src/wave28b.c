@@ -8,7 +8,7 @@ typedef float f32;
 
 extern void func_0037DC50(u8 *a, u8 *b);
 extern void func_0037D9F0(u8 *a, u8 *b);
-extern s32 func_00175700();
+extern int func_00175700(u8 *);
 
 void func_0037DBC0(u8 *p, u8 *q) {
     if (p[1] != q[1]) {
@@ -173,25 +173,7 @@ void func_001F9140(u8 *p) {
     }
 }
 
-extern void func_00358430(void);
-extern void func_003578A0(void);
-extern void func_00357B30(void);
 
-void func_003583A0(u8 *p) {
-    u8 *q = *(u8 **)(p + 24);
-    if (q[361] != 21 || q[360] < 6 || q[360] > 9) {
-        u32 t = p[4];
-        p[4] = t + 1;
-        func_00358430();
-    } else {
-        if (p[32] == 2) {
-            func_003578A0();
-        } else {
-            func_00357B30();
-        }
-        func_00175700();
-    }
-}
 
 
 extern s32 func_0019B710(u8 *p, s32 a);
