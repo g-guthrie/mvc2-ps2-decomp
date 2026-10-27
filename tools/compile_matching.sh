@@ -21618,4 +21618,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/owner_fall_state_
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/owner_effect_init_0041a0b0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_effect_init_0041a0b0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_effect_init_0041a0b0.o" private/SLUS_204.86.rom --source src/owner_effect_init_0041a0b0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/owner_dual_effect_init_0041ace0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_dual_effect_init_0041ace0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_dual_effect_init_0041ace0.o" private/SLUS_204.86.rom --source src/owner_dual_effect_init_0041ace0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
