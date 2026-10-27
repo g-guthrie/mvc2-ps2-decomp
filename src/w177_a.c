@@ -161,9 +161,9 @@ typedef struct { u8 p0[0x20D]; u8 b20d; } PRo;
 void func_002F98F0(PR *p) {
     extern void func_00175700(PR *);
     extern void func_001757E0(PR *, s32, s32);
-    extern PRo *func_001E7FD0(PR *);
-    extern PRo *func_001E8070(PR *);
-    extern void func_00185640(PR *, PRo *);
+    extern u8 *func_001E7FD0(u8 *);
+    extern u8 *func_001E8070(u8 *);
+    extern void func_00185640(u8 *, u8 *);
     extern void func_002F8E40(PR *);
     PRo *o;
     s16 h = p->h1c;
@@ -176,22 +176,22 @@ void func_002F98F0(PR *p) {
     }
     func_00175700(p);
     if (p->b151 != 0) {
-        o = func_001E7FD0(p);
+        o = (PRo *)func_001E7FD0((u8 *)p);
         if (o != 0 && o->b20d == 2) {
             p->b20b = 3;
             p->b20b |= 0x40;
             p->b20b |= 0x80;
-            func_00185640(p, o);
+            func_00185640((u8 *)p, (u8 *)o);
             p->b7 = 0;
             p->b6 = 0;
             return;
         }
-        o = func_001E8070(p);
+        o = (PRo *)func_001E8070((u8 *)p);
         if (o != 0 && o->b20d == 2) {
             p->b20b = 3;
             p->b20b |= 0x40;
             p->b20b |= 0x80;
-            func_00185640(p, o);
+            func_00185640((u8 *)p, (u8 *)o);
             p->b7 = 0;
             p->b6 = 0;
             return;

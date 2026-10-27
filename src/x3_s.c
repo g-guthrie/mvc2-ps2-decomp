@@ -8,7 +8,7 @@ typedef signed int s32;
 
 void func_001F0F10(u8 *p) {
     extern s8 func_00175700();
-    extern void *func_001E8070();
+    extern u8 *func_001E8070(u8 *);
     extern void func_001757E0();
     extern void func_001266A0();
     extern void func_001E3210();
