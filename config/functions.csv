@@ -20290,7 +20290,7 @@ func_00419FC0,0x00419FC0,0x20,0x00419FE0,code,spimdisasm-explicit-size-before-fi
 func_00419FE0,0x00419FE0,0x54,0x0041A034,code,spimdisasm-explicit-size-before-first-data
 func_0041A040,0x0041A040,0x50,0x0041A090,code,spimdisasm-explicit-size-before-first-data
 func_0041A090,0x0041A090,0x20,0x0041A0B0,code,matching-c-head-split
-residual_0041A0B0,0x0041A0B0,0xB4,0x0041A164,assembly_residual,verified-boundary-after-matching-head
+func_0041A0B0,0x0041A0B0,0xB4,0x0041A164,code,verified-source-recovery
 func_0041A170,0x0041A170,0x5C,0x0041A1CC,code,spimdisasm-explicit-size-before-first-data
 func_0041A1D0,0x0041A1D0,0x20,0x0041A1F0,code,matching-c-head-split
 residual_0041A1F0,0x0041A1F0,0x1C8,0x0041A3B8,assembly_residual,verified-boundary-after-matching-head

@@ -19300,3 +19300,4 @@ lbl_0035CFA0,0x0035CFA0,0x34,src/owner_timer_state_0035cfa0.c,complete
 lbl_001980D0,0x001980D0,0x14,src/owner_state_001980d0.c,complete
 func_00152570,0x00152570,0x88,src/phase_callback_00152570.c,complete
 func_0039C110,0x0039C110,0x194,src/owner_fall_state_0039c110.c,complete
+func_0041A0B0,0x0041A0B0,0xB4,src/owner_effect_init_0041a0b0.c,complete
