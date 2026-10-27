@@ -12,6 +12,7 @@ extern s32 func_001843A0();
 extern s32 func_001E7FD0();
 extern s32 func_001E8070();
 extern s32 func_002FA2C0();
+/* Provisional: callback return and downstream helper interfaces require correction. */
 s32 func_002FA200(u8 *p) {
     s32 o;
     s8 r = func_00175700(p);
