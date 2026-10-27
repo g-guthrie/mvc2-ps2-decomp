@@ -16,7 +16,7 @@ extern s32 func_0016A8B0(void *, s32, s32);
 extern s32 func_00166C80(void *, void *, s32);
 extern void func_0018DB70(void *);
 extern void func_0018DA70(void *);
-extern void func_0018EA00(void *);
+extern void func_0018EA00(u8 *, u8 *);
 extern void func_0018E810(void *, void *);
 extern s32 func_00184B30(void *);
 extern s32 func_00184720(void *);
@@ -55,7 +55,7 @@ void func_0018E1C0(u8 *a, void *b)
         }
     } else {
         a[0x247] = 0x17;
-        func_0018EA00(a);
+        func_0018EA00(a, b);
         func_0018E810(a, b);
         a[0x20D] = 2;
         func_001757E0(a, 0xD, 0);

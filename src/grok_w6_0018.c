@@ -15,7 +15,7 @@ extern void func_00191210(u8 *);
 extern int func_0018ABB0(u8 *);
 extern void func_0018C970(u8 *);
 extern void func_0018E810(u8 *, u8 *);
-extern void func_0018EA00(u8 *);
+extern void func_0018EA00(u8 *, u8 *);
 extern void func_0018C8A0(u8 *);
 extern u8 D_004D18A1;
 
@@ -102,7 +102,7 @@ void func_0018E2E0(u8 *p, u8 *q)
 {
     p[0x248] = 1;
     p[0x247] = 11;
-    func_0018EA00(p);
+    func_0018EA00(p, q);
     func_0018E810(p, q);
     func_001757E0(p, 0xD, 0x1D);
 }

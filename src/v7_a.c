@@ -258,7 +258,7 @@ void func_00315B70(u8 *p) {
     }
 }
 
-void func_0018EE50(u8 *p, u8 *q) {
+void func_0018EE50(u8 *p, s32 q) {
     extern void func_00185550();
     extern void func_0018F1A0();
     struct { f32 x, y; } t;

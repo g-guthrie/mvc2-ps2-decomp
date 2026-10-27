@@ -269,7 +269,7 @@ void func_002EB9D0(u8 *a, u8 *b) {
 typedef struct { f32 x, y; } V2_0018ED90;
 extern void func_00185550();
 extern void func_0018F1A0();
-void func_0018ED90(u8 *a, u8 *b) {
+void func_0018ED90(u8 *a, s32 b) {
     V2_0018ED90 v;
     f32 z = 0.0f;
     s16 h;
