@@ -2,7 +2,7 @@ typedef unsigned char u8;
 typedef unsigned int u32;
 typedef unsigned long long u64;
 
-extern void func_003F81B0(int);
+extern int func_003F81B0(void *);
 extern void func_003F81A8(int);
 extern void func_0010B970(int, int, int, int, int);
 extern void func_001061D8(void);
@@ -21,7 +21,7 @@ int func_00104598(int a, char *b) {
     *(int *)(b + 4) = 0x2000;
     return 0;
 }
-void func_003FFFF0(int *p) { func_003F81B0(p[1]); }
+int func_003FFFF0(int *p) { return func_003F81B0((void *)p[1]); }
 void func_003FFFD8(int *p) { func_003F81A8(p[1]); }
 
 
