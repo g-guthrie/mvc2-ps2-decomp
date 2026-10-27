@@ -91,13 +91,34 @@ typedef struct {
     u8 b24;
 } Pdummy;
 
+typedef struct {
+    u8 unknown00[0x34];
+    float x;
+    u8 unknown38[0x108];
+    s16 facing;
+} HorizontalBoundsActor;
+extern float D_004F1FD8 __attribute__((section(".bss")));
+extern float D_004F1FDC __attribute__((section(".bss")));
+
+static int func_003797D0(u8 *actor_data)
+{
+    HorizontalBoundsActor *actor = (HorizontalBoundsActor *)actor_data;
+    if (actor->facing == 0) {
+        if (!(D_004F1FD8 - 146.666656494140625f <= actor->x))
+            return 1;
+    } else {
+        if (146.666656494140625f + D_004F1FDC < actor->x)
+            return 1;
+    }
+    return 0;
+}
+
 void func_00379FA0(u8 *p)
 {
     extern void func_0037A800(u8 *);
-    extern s32 func_003797D0(u8 *);
     extern void func_0037A1D0(u8 *);
-    extern void func_00175700(u8 *);
-    extern void func_001E7F60(void);
+    extern int func_00175700(u8 *);
+    extern void func_001E7F60(u8 *);
     u8 *q = *(u8 **)(p + 0x18);
     ST *st;
     u32 t;
@@ -142,7 +163,7 @@ void func_00379FA0(u8 *p)
     }
     if (p[0x23] % 2 == 0) {
         if (func_003797D0(p) == 0 && *(s8 *)(p + 0x1B2) == 0) {
-            func_001E7F60();
+            func_001E7F60(p);
         }
     }
     if (func_003797D0(p) == 0) {

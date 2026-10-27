@@ -10,18 +10,7 @@ typedef struct {
 extern float D_004F1FD8;
 extern float D_004F1FDC;
 
-int func_003797D0(u8 *actor_data)
-{
-    HorizontalBoundsActor *actor = (HorizontalBoundsActor *)actor_data;
-    if (actor->facing == 0) {
-        if (!(D_004F1FD8 - 146.666656494140625f <= actor->x))
-            return 1;
-    } else {
-        if (146.666656494140625f + D_004F1FDC < actor->x)
-            return 1;
-    }
-    return 0;
-}
+
 
 int func_0037BDE0(u8 *actor_data)
 {
