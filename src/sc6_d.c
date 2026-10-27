@@ -41,7 +41,7 @@ extern void *D_004C25FC;
 void func_0012ADE0(void)
 {
     extern u16 func_0012ABC0(s32, s32);
-    extern s32 func_0012ABA0(s32, s32, s32);
+    extern s32 func_0012ABA0(u16, s32, s32);
     extern void func_003DA410();
     extern void func_00146C80(s32);
     extern void func_00146BF0();
@@ -74,14 +74,15 @@ void func_0012ADE0(void)
     extern void func_0041C200();
     GC *g;
     s8 *pb;
-    u32 s0;
+    u16 buttons;
+    u32 wide_buttons;
     s32 x;
     s32 y;
     s32 r;
 
     r = func_003299D0();
     if (r != 0) return;
-    if (r == 0) s0 = func_0012ABC0(3, 0);
+    if (r == 0) { buttons = func_0012ABC0(3, 0); wide_buttons = buttons; }
     switch ((g = D_004C2840)->b3) {
     case 0:
         func_003D6D50();
@@ -113,7 +114,7 @@ void func_0012ADE0(void)
         D_004C2840->b3 = D_004C2840->b3 + 1;
         break;
     case 3:
-        D_004C2840->b4 = func_0012ABA0(s0, g->b4, 3);
+        D_004C2840->b4 = func_0012ABA0(buttons, g->b4, 3);
         if (func_001315F0() != 0) {
             func_003298B0(0xFF000000, 0xA, 1);
             g = D_004C2840;
@@ -135,7 +136,7 @@ void func_0012ADE0(void)
         D_004C2840->b3 = D_004C2840->b3 + 1;
         break;
     case 6:
-        D_0043CD08[g->b4](s0, 0);
+        D_0043CD08[g->b4](wide_buttons, 0);
         break;
     case 7:
         pb = &g->b6;
@@ -239,7 +240,7 @@ void func_0012ADE0(void)
                 D_004C2840->b7 = D_004C2840->b7 + 1;
                 break;
             case 1:
-                D_004D17CA[0] = func_0012AA90(s0, D_004D17CA[0], 1);
+                D_004D17CA[0] = func_0012AA90(wide_buttons, D_004D17CA[0], 1);
                 if (func_001315F0() == 0) break;
                 if (D_004D17CA[0] != 0) {
                     D_004C2840->b6 = 9;
