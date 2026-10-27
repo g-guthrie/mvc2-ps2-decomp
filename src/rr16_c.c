@@ -49,16 +49,17 @@ static void (*keep_00338670)(DB *) = func_00338670;
 
 
 void func_001551A0(f32 *pos, u32 n, f32 scale, int type) {
-    extern u8 *func_003DA750(s32, u8, s32);
+    extern void *func_003DA750(void *, int, int);
     extern void func_001553B0(u8 *);
-    extern s32 func_00417A40();
+    extern s32 func_00417A40(void);
     extern f32 func_00417440(u32);
     extern f32 func_00417500(u32);
-    extern f32 func_00417F60();
+    extern f32 func_00417F60(void);
     u8 *o;
     u16 ang;
     f32 k, r, t;
-    if ((o = func_003DA750(0, ((u8)type == 9) ? 0x18 : 0x3C, 1)) != 0) {
+    u8 effect_kind = ((u8)type == 9) ? 0x18 : 0x3C;
+    if ((o = func_003DA750(0, effect_kind, 1)) != 0) {
         o[0x13C] = 1;
         *(void (**)(u8 *))(o + 0x10) = func_001553B0;
         *(s16 *)(o + 0xCC) = func_00417A40() % 3 + 0x60;
