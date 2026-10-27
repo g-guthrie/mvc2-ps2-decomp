@@ -20,7 +20,7 @@ static void cp3(u8 *d, s8 *s) {
 
 extern void *func_003DA750(s32, s32, s32);
 extern void func_0034FB40(u8 *);
-void func_0034FAE0(u8 *p) {
+u8 *func_0034FAE0(u8 *p) {
     u8 *r = func_003DA750(0, 1, 0);
     if (r) {
         *(void (**)(u8 *))(r + 0x10) = func_0034FB40;
@@ -29,6 +29,7 @@ void func_0034FAE0(u8 *p) {
         r[0x20] = 2;
         *(s16 *)(r + 0x26) = 0x503;
     }
+    return r;
 }
 
 extern u8 D_00584B50[], D_004B85C0[], D_004B85A0[], D_004B85D0[];
