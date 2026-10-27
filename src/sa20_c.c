@@ -58,7 +58,7 @@ void func_00323780(u8 *p) {
 void func_003AC580(u8 *a, u8 *b) {
     extern void func_00182C30(u8 *, s32);
     extern void func_00182DB0(u8 *, s32);
-    extern u8 *func_003AD580(u8 *, u8 *, u8 *);
+    extern u8 *func_003AD580(u8 *, u8 *, s16 *);
     extern void func_001D8580(u8 *, s32, s32);
     extern void func_00329220(u8 *, s32, s32);
     extern void func_003AC6F0(u8 *, u8 *);
@@ -83,7 +83,7 @@ void func_003AC580(u8 *a, u8 *b) {
     for (s1 = 0; *(s8 *)(b + 0xF) >= s1; s1++) {
         *(s16 *)(q + 0xA) = s3;
         if (s3 != 0 && ((s16)s3 & 1) == 0) {
-            r = func_003AD580(s2, a, b + 8);
+            r = func_003AD580(s2, a, (s16 *)(b + 8));
             if (r != 0) {
                 *(s16 *)(r + 0x1C) = 2;
                 *(s16 *)(r + 0x1E) = *(s8 *)(b + 0xF) - s1;

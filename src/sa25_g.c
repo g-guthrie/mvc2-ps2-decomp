@@ -12,7 +12,7 @@ void func_001E0EA0(u8 *p, u8 *q) {
     extern void func_0015B200(u8 *, V3 *, s32, s32);
     extern void func_003CDB90(u8 *, u32);
     extern void func_001E3710(u8 *, s32);
-    extern u8 *func_001E0CC0(u8 *, s32);
+    extern u8 *func_001E0CC0(u8 *, u32);
     extern void func_001E1570(u8 *, u8 *);
     V3 vec;
     s16 h;

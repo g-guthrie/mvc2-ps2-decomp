@@ -12,7 +12,7 @@ typedef struct { s32 pad0[0x1C / 4]; s32 f1C; } HP;
 extern HP *D_004C2840;
 extern u8 D_004BFAD8[8];
 void func_001E1430(u8 *p, u8 *q) {
-    extern u8 *func_001E0CC0();
+    extern u8 *func_001E0CC0(u8 *, u32);
     extern s32 func_00174170();
     extern void func_001E1570();
     s16 h = *(s16 *)(q + 0x434);

@@ -60,7 +60,7 @@ void func_00197CA0(u8 *p, u8 *owner_unused) {
 extern u8 *func_003DA750(u32 a, u32 b, u32 c);
 extern void func_001E0D40(void);
 
-void func_001E0CC0(u8 *a0, u32 a1) {
+u8 *func_001E0CC0(u8 *a0, u32 a1) {
     u8 *o = func_003DA750(0, 3, 0);
     if (o) {
         *(void **)(o + 0x10) = func_001E0D40;
@@ -71,6 +71,7 @@ void func_001E0CC0(u8 *a0, u32 a1) {
         o[0x20] = a1;
         o[0x21] = a1 >> 8;
     }
+    return o;
 }
 
 void func_002FDC50(u8 *p) {

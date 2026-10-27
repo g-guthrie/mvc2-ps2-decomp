@@ -21,7 +21,7 @@ void func_00362460(u8 *p, s32 b) {
 
 extern void func_001DA860(void);
 
-void func_001DA7F0(u8 *p, s32 b) {
+u8 *func_001DA7F0(u8 *p, s32 b) {
     u8 *r = func_003DA750(0, 3, 0);
     if (r != 0) {
         *(void **)(r + 0x10) = func_001DA860;
@@ -30,6 +30,7 @@ void func_001DA7F0(u8 *p, s32 b) {
         r[0x20] = b;
         *(s16 *)(r + 0x26) = 0x3400;
     }
+    return r;
 }
 
 extern void func_001757E0(void *p, s32 a, s32 b);

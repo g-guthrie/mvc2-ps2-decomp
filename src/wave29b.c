@@ -195,7 +195,7 @@ void func_003AD6E0(void);
 void func_001D0580(void);
 u8 *func_003DA750b(s32 a, s32 b, s32 c);
 
-void func_003AD580(u8 *a, u8 *b, u32 c) {
+u8 *func_003AD580(u8 *a, u8 *b, s16 *c) {
     u8 *n = (u8 *)func_003DA750(0, 1, 1);
     if (n != 0) {
         W(n, 0x10) = (u32)func_003AD6E0;
@@ -203,9 +203,10 @@ void func_003AD580(u8 *a, u8 *b, u32 c) {
         W(n, 0x18) = (u32)a;
         W(n, 0x14) = (u32)b;
         W(n, 0xD0) = W(b, 0x18);
-        W(n, 0xD4) = c;
+        W(n, 0xD4) = (u32)c;
         H(n, 0x26) = 0x3002;
     }
+    return n;
 }
 
 void func_001D0500(u8 *a, u8 b) {

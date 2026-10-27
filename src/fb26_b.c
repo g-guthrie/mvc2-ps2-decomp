@@ -14,7 +14,7 @@ void func_00328560(Pb *p)
     extern u8 func_00174240(Pb *);
     extern void func_00199460();
     extern void func_001C5390();
-    extern void func_001E0CC0();
+    extern u8 *func_001E0CC0(u8 *, u32);
     extern void func_0015B200(u8 *, V3 *, s32, s32);
     u32 t;
     if (p->b5 == 0) {
