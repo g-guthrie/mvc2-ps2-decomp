@@ -250,21 +250,7 @@ void func_00259C60(P259 *p, s32 a1, s32 a2) {
     func_00175700(p);
 }
 
-typedef struct { u8 pad0[0x6]; u8 f6; u8 pad7[0x15]; s16 f1C; u8 pad1E[0x133]; s8 f151; u8 pad152[0x117]; u8 f269; u8 pad26A[0xd2]; u8 f33C; u8 pad33D[0xc7]; u8 f404; u8 f405; u8 pad406[0x6]; u8 f40C; } P323;
-void func_00323C80(P323 *p) {
-    u32 v[3];
-    u32 t;
-    p->f40C = 2;
-    p->f33C = 5;
-    p->f405 = (p->f269 == 6) ? 2 : 0;
-    func_00175700(p);
-    if (p->f151 != 0) {
-        p->f404 = 0;
-        p->f405 = 0;
-        t = p->f6; p->f6 = t + 1; p->f151 = 0; p->f1C = 0xF0; v[1] = 0x425EDB6D; v[0] = 0;
-        func_001830D0(p, v, 1);
-    }
-}
+
 
 extern void func_003C3D60(u8 *, u8 *);
 /* Provisional: callback-table ABI and state bounds remain unresolved. */
@@ -291,4 +277,28 @@ void func_003C41F0(u8 *a, u8 *b) {
         t = a[6];
         a[6] = t + 1;
     }
+}
+
+extern u8 *D_004C2794 __attribute__((section(".sdata")));
+extern u8 D_004F1F45 __attribute__((section(".bss")));
+extern u8 D_004F1F46 __attribute__((section(".bss")));
+extern void func_001266A0(u8 *,int,int);
+/* Provisional: table ABI, selector bounds and owner lifetime remain unresolved. */
+void func_003C3EA0(u8 *p,u8 *q){
+s16 *position=(s16 *)(p+0xd0);
+ func_003C3CE0(p,q);
+ if(*(s8 *)(p+0x1b4)!=0){s32 t=*(s8 *)(p+0x1b4);p[0x1b4]=t-1;}
+ {P3C4 *actor=(P3C4 *)p;s32 t=actor->f1C;if(t)actor->f1C=t-1;}
+ if(*(s8 *)(p+0x1b4)==0){
+  func_003C3D60(p,q);func_003C3DA0(p,q);
+  if(*(s16 *)(p+0x1c)==0){func_001E7F60(p);if(*(s8 *)(p+0x1b2)!=0){
+   *(s16 *)(p+0x1c)=8;p[0x1b5]=55;p[0x1b2]=*(u16 *)(p+0x1c0)=0;*(u32 *)(p+0x1d8)=0;
+   {u32 offset=p[2]*2;offset+=(u32)D_004C2794;++*(s16 *)(offset+0x7c);}
+  }}
+ }
+ if(!((float)*position<600.0f)){
+  *position=600;func_003C3DA0(p,q);
+  if(q[0x269]==4||q[0x269]==5){p[0x1b5]=75;p[0x1b2]=*(u16 *)(p+0x1c0)=0;*(u32 *)(p+0x1d8)=0;{u32 offset=p[2]*2;offset+=(u32)D_004C2794;++*(s16 *)(offset+0x7c);}}else{p[0x1b5]=56;p[0x1b2]=*(u16 *)(p+0x1c0)=0;*(u32 *)(p+0x1d8)=0;{u32 offset=p[2]*2;offset+=(u32)D_004C2794;++*(s16 *)(offset+0x7c);}}
+  func_001266A0(q,13,0);D_004F1F45=3;D_004F1F46=1;*(s16 *)(p+0x1c)=48;*(s16 *)(p+0x1e)=24;p[5]++;func_001E3210(p,30);
+ }
 }

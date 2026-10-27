@@ -12684,7 +12684,7 @@ func_0031FBA0,0x0031FBA0,0xa4,src/q4_c.c,complete
 func_001D6430,0x001D6430,0xa8,src/q4_c.c,complete
 func_0025A260,0x0025A260,0xa0,src/q4_c.c,complete
 func_00259C60,0x00259C60,0xa4,src/q4_c.c,complete
-func_00323C80,0x00323C80,0xa0,src/q4_c.c,complete
+func_00323C80,0x00323C80,0xa0,src/actor_motion_00323c80.c,complete
 func_001B9610,0x001B9610,0xb0,src/q4_d.c,complete
 func_00266950,0x00266950,0xa8,src/q4_e.c,complete
 func_00137750,0x00137750,0x84,src/q6_1.c,complete
@@ -19362,3 +19362,4 @@ func_001D4BC0,0x001D4BC0,0x48,src/owner_dispatch_001d4bc0.c,placeholder
 func_001D4E90,0x001D4E90,0x48,src/owner_dispatch_001d4e90.c,placeholder
 func_0041C220,0x0041C220,0x94,src/runtime_callback_0041c220.c,complete
 func_0041C890,0x0041C890,0x170,src/runtime_menu_pan_0041c890.c,complete
+func_003C3EA0,0x003C3EA0,0x1E8,src/q4_c.c,placeholder
