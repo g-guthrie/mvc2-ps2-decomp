@@ -277,7 +277,7 @@ void func_0036FA80(u8 *p) {
 }
 
 extern u8 D_00445840[];
-extern s32 func_001688C0();
+extern s32 func_001688C0(u8 *, u8 *);
 s32 func_00166C80(u8 *a, u8 *b, s32 c) {
     s32 t;
     u32 h;
@@ -290,7 +290,7 @@ s32 func_00166C80(u8 *a, u8 *b, s32 c) {
     t = a[0x472];
     if (t == 0) {
         a[0x472] = 0;
-        return func_001688C0(a);
+        return func_001688C0(a, b);
     }
     a[0x472] = t - 1;
     if (*(s8 *)(a + 0x1B4) != 0) {
