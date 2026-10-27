@@ -27,7 +27,7 @@ typedef struct {
 void func_002DFB90(A *p)
 {
     extern void func_00183D90(void);
-    extern s32 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001757E0(A *, s32, s32);
     extern void func_00183d50(A *);
     extern void func_001843A0(A *);
@@ -46,7 +46,7 @@ void func_002DFB90(A *p)
         p->f60 += p->f6c;
         s4 = &p->f6c;
         if (p->f5c > z) func_00183D90();
-        func_00175700(p);
+        func_00175700((u8 *)p);
         if (p->b151 != 0) {
             p->st = 2;
             p->b151 = 0;
@@ -62,7 +62,7 @@ void func_002DFB90(A *p)
         p->f5c += p->f68;
         p->f38 += p->f60;
         p->f60 += p->f6c;
-        func_00175700(p);
+        func_00175700((u8 *)p);
         if (p->f38 < p->f430) {
             u32 t = p->st;
             p->st = t + 1;
@@ -74,7 +74,7 @@ void func_002DFB90(A *p)
         }
         break;
     case 2:
-        if ((s8)func_00175700() < 0) func_001843A0(p);
+        if ((s8)func_00175700((u8 *)p) < 0) func_001843A0(p);
         break;
     }
 }

@@ -71,13 +71,13 @@ u8 *func_002394F0(u8 *p) {
 
 typedef struct { f32 x, y, z; } V3e;
 void func_0034F6F0(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern int func_00174470(const void *);
     extern void func_0034F7D0(u8 *);
     extern void func_0015B200();
     extern void func_001E7F60();
     V3e v;
-    func_00175700();
+    func_00175700(p);
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
@@ -121,14 +121,14 @@ void func_00321BE0(u8 *p, u8 *q) {
 }
 
 void func_0029D7C0(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001CB610();
     extern void func_00176160();
     extern void func_001757E0();
     s16 v;
     p[0x40C] = 2;
     p[0x33C] = 5;
-    func_00175700();
+    func_00175700(p);
     if (*(s16 *)(p + 0x1C) == 0xF) {
         func_001CB610(p, 4);
         func_00176160(p, 3, 2, 1);
@@ -152,10 +152,10 @@ void func_0029D7C0(u8 *p) {
 }
 
 void func_002641D0(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001757E0();
     u32 *a1, *a2;
-    func_00175700();
+    func_00175700(p);
     a1 = (u32 *)(p + 0x60);
     a2 = (u32 *)(p + 0x6C);
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
@@ -184,10 +184,10 @@ void func_002641D0(u8 *p) {
 typedef struct { u8 pad[0x7C]; s16 f7c[16]; } Gh;
 extern Gh *D_004C2794;
 void func_00311580(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     s32 v;
     s16 d, e;
-    func_00175700();
+    func_00175700(p);
     v = *(s8 *)(p + 0x151);
     if (v & 1) {
         p[0x151] = v & -2;
@@ -315,7 +315,7 @@ void func_002D1C50(u8 *p) {
 }
 
 void func_00284320(u8 *p) {
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001757E0();
     u32 *q5c, *q60, *q68, *q6c;
     q6c = (u32 *)(p + 0x6C);
@@ -328,7 +328,7 @@ void func_00284320(u8 *p) {
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
-    if (func_00175700() < 0) {
+    if ((s8)func_00175700(p) < 0) {
         u32 t = p[6];
         p[6] = t + 1;
         *q5c = 0;
