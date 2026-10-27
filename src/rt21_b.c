@@ -58,7 +58,7 @@ void func_0040E288(void)
             if (D_004C24B0 == 0) {
                 func_0011EB60(D_004BE698, 0x8D0);
                 func_0011EB60(D_004BE6E0);
-                for (;;) __asm__ volatile("nop");
+                for (;;) {}
             }
         }
         func_0011EB60(D_004BE560, 0x8D0, D_004C24B0);
@@ -66,7 +66,7 @@ void func_0040E288(void)
         D_004C24B8 = func_00409250(1, D_004C24AC, t, D_004C24BC); }
         if (D_004C24B8 == 0) {
             func_0011EB60(D_004BE710);
-            for (;;) __asm__ volatile("nop");
+            for (;;) {}
         }
         func_00409450(D_004C24B8, func_0040DFA8, 0);
         func_00409460((u8 *)D_004C24B8, func_0040E008, 0);
@@ -76,7 +76,7 @@ void func_0040E288(void)
             D_004C2494 = func_0010ACD0(D_004C2490);
             if (D_004C2494 == 0) {
                 func_0011EB60(D_004BE738, D_004C2490);
-                for (;;) __asm__ volatile("nop");
+                for (;;) {}
             }
             func_0011EB60(D_004BE560, D_004C2490, D_004C2494);
         }

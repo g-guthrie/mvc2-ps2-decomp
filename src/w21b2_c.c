@@ -40,7 +40,7 @@ void func_00410F80(void)
             D_004C24EC = func_0010ACD0(0x8D0);
             if (D_004C24EC == 0) {
                 func_0011EB60(D_004BEA90);
-                for (;;) __asm__ volatile("nop");
+                for (;;) {}
             }
         }
         sz = ((u32)D_004C24EC + 0x40) & -0x40;
@@ -48,7 +48,7 @@ void func_00410F80(void)
         D_004C24F4 = func_00409250(0, D_004C24E8, sz, D_004C24F8);
         if (D_004C24F4 == 0) {
             func_0011EB60(D_004BEAC0);
-            for (;;) __asm__ volatile("nop");
+            for (;;) {}
         }
         func_00409450(D_004C24F4, func_00410C18, 0);
         func_00409460((u8 *)D_004C24F4, func_00410CB8, 0);

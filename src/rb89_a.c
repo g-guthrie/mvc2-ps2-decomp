@@ -41,7 +41,7 @@ void func_0040DBB0(void)
         D_004C2484 = func_0010ACD0(D_004C2480 + 0x40);
         if (D_004C2484 == 0) {
             func_0011EB60(D_004BE518, D_004C2480 + 0x40);
-            for (;;) __asm__ volatile("nop");
+            for (;;) {}
         }
         func_0011EB60(D_004BE560, D_004C2480 + 0x40, D_004C2484);
         { register s32 q __asm__("$3"); q = D_004C2484; q += 0x40; D_004C248C = 1; q &= -0x40; D_004C2488 = q; }
@@ -53,22 +53,22 @@ void func_0040DBB0(void)
         e->f0 = 0;
         if (s1 & 0x3F) {
             func_0011EB60(D_004BE590);
-            for (;;) __asm__ volatile("nop");
+            for (;;) {}
         }
         e->f4 = func_00410898(1, s1, 0x100);
         s1 += 0x100;
         if (e->f4 == 0) {
             func_0011EB60(D_004BE5C0);
-            for (;;) __asm__ volatile("nop");
+            for (;;) {}
         }
         if (s1 & 0x3F) {
             func_0011EB60(D_004BE5F8);
-            for (;;) __asm__ volatile("nop");
+            for (;;) {}
         }
         e->f8 = (s32 **)func_0040FDC0(1, &D_0048ECB8[i << 8], 0x100);
         if (e->f8 == 0) {
             func_0011EB60(D_004BE628);
-            for (;;) __asm__ volatile("nop");
+            for (;;) {}
         }
         e->f14 = 0x4000;
         vt = (s32 **)*e->f8;
@@ -79,7 +79,7 @@ void func_0040DBB0(void)
         e->fC = func_00411130((s32)e->f8, e->f4, 1);
         if (e->fC == 0) {
             func_0011EB60(D_004BE660);
-            for (;;) __asm__ volatile("nop");
+            for (;;) {}
         }
     }
 }
