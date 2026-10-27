@@ -21861,4 +21861,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_finish_0037
 "$PYTHON" tools/verify_object.py "$BUILD/actor_finish_0037d900.o" private/SLUS_204.86.rom --source src/actor_finish_0037d900.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/scene_model_event_00144630.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/scene_model_event_00144630.o"
 "$PYTHON" tools/verify_object.py "$BUILD/scene_model_event_00144630.o" private/SLUS_204.86.rom --source src/scene_model_event_00144630.c
+"$WIBO" "$SNCPP" -P src/sony29_console_read_001053b0.c "$BUILD/sony29_console_read_001053b0.i"
+"$WIBO" "$EE29CC1" "$BUILD/sony29_console_read_001053b0.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/sony29_console_read_001053b0.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sony29_console_read_001053b0.o" "$BUILD/sony29_console_read_001053b0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sony29_console_read_001053b0.o" private/SLUS_204.86.rom --source src/sony29_console_read_001053b0.c
 PYTHON="$PYTHON" tools/compile_matching_data.sh

@@ -77,16 +77,6 @@ int func_0010FBE0(void) {
     return res;
 }
 
-typedef struct {
-    volatile int f0;
-    int f4;
-    int f8;
-    int fC;
-    char *f10;
-    char *f14;
-    int f18;
-} S36D0;
-extern S36D0 D_004C36D0;
 extern char D_004C3700[];
 extern char D_004C3840[];
 extern void func_00104060(int);

@@ -19377,3 +19377,4 @@ func_00129080,0x00129080,0x1C,src/menu_callback_invoke_00129080.c,placeholder
 func_002B1DE0,0x002B1DE0,0x34,src/actor_action_dispatch_002b1de0.c,placeholder
 func_0037D900,0x0037D900,0x18,src/actor_finish_0037d900.c,placeholder
 func_00144630,0x00144630,0xB8,src/scene_model_event_00144630.c,placeholder
+func_001053B0,0x001053B0,0xD0,src/sony29_console_read_001053b0.c,placeholder
