@@ -546,13 +546,13 @@ s32 func_003F6478(void *p) { return *(s32 *)((u8 *)p + 32); }
 
 s32 func_003F8118(void *p) { return *(s32 *)((u8 *)p + 60); }
 
-s16 func_003F8120(void *p) { return *(s16 *)((u8 *)p + 152); }
+s32 func_003F8120(void *p) { return *(s16 *)((u8 *)p + 152); }
 
 s32 func_003F8128(void *p) { return *(s32 *)((u8 *)p + 20); }
 
 s32 func_003F8130(void *p) { return *(s8 *)((u8 *)p + 14); }
 
-s8 func_003F8138(void *p) { return *(s8 *)((u8 *)p + 13); }
+s32 func_003F8138(void *p) { return *(s8 *)((u8 *)p + 13); }
 
 s32 func_003F81A0(void *p) { return *(s32 *)((u8 *)p + 16); }
 
@@ -560,7 +560,7 @@ s32 func_003F81A8(void *p) { return *(s8 *)((u8 *)p + 15); }
 
 s32 func_003F81B0(void *p) { return *(s32 *)((u8 *)p + 24); }
 
-s16 func_003F81B8(void *p) { return *(s16 *)((u8 *)p + 28); }
+s32 func_003F81B8(void *p) { return *(s16 *)((u8 *)p + 28); }
 
 s32 func_003F81C0(void *p) { return *(s32 *)((u8 *)p + 32); }
 

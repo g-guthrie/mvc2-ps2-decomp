@@ -4,13 +4,13 @@ typedef unsigned int u32;
 typedef signed int s32;
 
 extern void func_0040CA48();
-extern void func_003F81D8();
+extern s32 func_003F81D8(void *);
 extern void func_0011D8F8();
 extern void func_0011EB60();
 extern char D_004BE978[];
 
 void func_00400FE8(void) { func_0040CA48(); }
-void func_00400068(s32 *p) { func_003F81D8(p[1]); }
+s32 func_00400068(s32 *p) { return func_003F81D8((void *)p[1]); }
 void func_00409CC8(void *p) { func_0011D8F8(p, 0, 0x48); }
 void func_0040EF28(void) { func_0011EB60(D_004BE978); }
 

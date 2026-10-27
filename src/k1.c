@@ -1,8 +1,8 @@
 #include "stream_group_types.h"
 typedef long long s64;
-extern void func_003F81B8(s32);
+extern s32 func_003F81B8(void *);
 extern s32 func_003F8128(void *);
-void func_00400008(s32 *p) { func_003F81B8(p[1]); }
+s32 func_00400008(s32 *p) { return func_003F81B8((void *)p[1]); }
 s32 func_003FFF78(void *object) { return func_003F8128(*(void **)((u8 *)object + 4)); }
 extern void func_00408628(void);
 extern volatile s32 D_0048733C;

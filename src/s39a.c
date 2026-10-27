@@ -6,8 +6,8 @@ typedef unsigned int u32;
 typedef unsigned long long u64;
 typedef signed long long s64;
 typedef signed int s32;
-extern void func_003F8138(s32);
-void func_004000B8(s32 *p) { func_003F8138(p[1]); }
+extern s32 func_003F8138(void *);
+s32 func_004000B8(s32 *p) { return func_003F8138((void *)p[1]); }
 extern void (*D_004C245C)(s32, s32);
 extern s32 D_004C2460, D_004C2464;
 void func_0040D4F0(void) { if (D_004C245C) D_004C245C(D_004C2460, D_004C2464); }
