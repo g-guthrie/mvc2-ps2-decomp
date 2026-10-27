@@ -1,3 +1,4 @@
+#include "runtime_file_entry.h"
 #include "stream_group_types.h"
 #include "runtime_stream_query.h"
 #include "cri_sj_ring_buffer_types.h"
@@ -341,7 +342,7 @@ void func_003FFF20(StreamGroup *p, StreamGroupObserver observer, void *context) 
 
 void func_00400790(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 60) = value2; *(s32 *)(p + 56) = value1; }
 
-void func_00406678(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 0) = 0; *(s32 *)(p + 4) = 0; }
+void func_00406678(RuntimeFileEntry *p) { p->r = 0; p->res = 0; }
 
 void func_00409450(u8 *p, s32 value1, s32 value2) { *(s32 *)(p + 36) = value2; *(s32 *)(p + 32) = value1; }
 

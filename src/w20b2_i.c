@@ -1,3 +1,4 @@
+#include "runtime_file_entry.h"
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -7,8 +8,8 @@ typedef signed int s32;
 typedef float f32;
 
 /* EE GCC 2.96: ./tryee.sh src/w20b2_i.c sn */
-typedef struct { u8 pad[0x10]; s32 (*fn)(s8 *, s32, s32); } R_i;
-typedef struct { R_i *r; s32 res; } S_i;
+typedef struct RuntimeFileOps { u8 pad[0x10]; s32 (*fn)(s8 *, s32, s32); } R_i;
+typedef RuntimeFileEntry S_i;
 extern char D_004BC9A0[], D_004BC9C0[], D_004BCA08[], D_004BCA28[], D_004BCA40[];
 extern void func_00406688(u8 *, s8 *, void *);
 extern S_i *func_00406610(void);
