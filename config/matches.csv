@@ -12245,6 +12245,7 @@ func_0015E2F0,0x0015E2F0,0xA4,src/m6w9d.c,complete
 func_00252790,0x00252790,0xA4,src/m6w9d.c,complete
 func_00122398,0x00122398,0x54,src/m6w9e.c,complete
 func_003D6850,0x003D6850,0x58,src/m6w9f.c,complete
+func_003D68B0,0x003D68B0,0xEC,src/m6w9f.c,placeholder
 func_00147320,0x00147320,0xA0,src/m6w9g.c,complete
 func_0034AAA0,0x0034AAA0,0x84,src/m6w9h.c,complete
 func_0040D548,0x0040D548,0x1C,src/ee96_o1_wrappers.c,complete
