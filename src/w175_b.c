@@ -7,6 +7,7 @@ typedef signed int s32;
 typedef float f32;
 
 typedef struct { f32 x, y, z; } V3;
+typedef struct { f32 value[3]; } ArrayV3;
 extern V3 D_004B18F0;
 extern s32 D_004C282C;
 extern void func_0013E070();
@@ -31,11 +32,11 @@ extern s32 D_004C00DC[2];
 extern s32 D_004C00E0[2];
 extern s32 D_004C0B5C, D_004C0B60, D_004C0B64;
 
-void func_0013DFB0(s32 a, V3 *src)
+void func_0013DFB0(s32 a, ArrayV3 *src)
 {
     extern u8 *func_003DA750(s32, s32, s32);
     u8 *o;
-    V3 v;
+    ArrayV3 v;
     v = *src;
     if ((o = func_003DA750(0, 6, 1)) != 0) {
         o[0x13C] = 1;
@@ -44,7 +45,7 @@ void func_0013DFB0(s32 a, V3 *src)
         *(s16 *)(o + 0xCC) = a + 0x13;
         *(s32 *)(o + 0x84) = D_004C282C;
         *(V3 *)(o + 0x50) = D_004B18F0;
-        *(V3 *)(o + 0x34) = v;
+        *(ArrayV3 *)(o + 0x34) = v;
         *(s32 *)(o + 0xD0) = 0x811;
         *(s16 *)(o + 0x1C) = 0;
     }

@@ -5,3 +5,4 @@ func_00291800,0x00291800,0x58,src/t11_e.c,matching
 func_003F1F90,0x003F1F90,0x5C,src/file_record_uniformity_003F3700.c,matching
 func_003F1FF0,0x003F1FF0,0x34,src/file_record_uniformity_003F3700.c,matching
 func_003F2060,0x003F2060,0x40,src/file_record_uniformity_003F3700.c,matching
+func_0013DB00,0x0013DB00,0xDC,src/owner_pose_phase_0013ddc0.c,complete
