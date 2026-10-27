@@ -1,6 +1,6 @@
 typedef signed int s32;
 
-extern void func_0011D740(void *, void *, s32);
+extern void *func_0011D740(void *, const void *, unsigned int);
 
 void func_00143CA0(void **arr, void *src, s32 count)
 {

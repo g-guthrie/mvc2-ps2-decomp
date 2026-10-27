@@ -51,7 +51,7 @@ extern s32 D_004C2608;
 
 s32 func_0012E1A0(u8 *p) {
     extern s32 func_00418020();
-    extern void func_0011D740(s32, s32, s32);
+    extern void *func_0011D740(void *, const void *, unsigned int);
     s32 s;
     s32 v;
     u8 *e;
@@ -88,7 +88,7 @@ s32 func_0012E1A0(u8 *p) {
             *(s32 *)(p + 8) = *(s32 *)(p + 8) - s;
         }
         *(s32 *)(p + 0xC) = *(s32 *)(p + 0xC) + s;
-        func_0011D740(*(s32 *)p, *(s32 *)(p + 4), s);
+        func_0011D740(*(void **)p, *(const void **)(p + 4), s);
         *(s32 *)(p + 4) = *(s32 *)(p + 4) + s;
         *(s32 *)p = *(s32 *)p + s;
         break;
