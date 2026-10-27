@@ -16,7 +16,7 @@ extern V4_47 D_004439B0;
 extern void *func_003DA750();
 extern u8 residual_001487B0[];
 
-void func_00147AB0(u8 a, u8 b) {
+void func_00147AB0(u8 a, s8 b) {
     u8 *o;
     if ((o = func_003DA750(0, 15, 0)) != 0) {
         o[0x13C] = 0;
