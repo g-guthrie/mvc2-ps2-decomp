@@ -20,7 +20,7 @@ extern int func_00189310(u8 *, u8 *, u8 *);
 extern int func_00189EE0(u8 *, u8 *, u8 *);
 extern int func_00174170(void);
 extern int func_001757E0(u8 *, int, int);
-extern int func_001E7FD0(u8 *);
+extern u8 *func_001E7FD0(u8 *);
 
 int func_001ED760(u8 *p) {
     int condition;
@@ -108,9 +108,9 @@ void func_0023BBF0(u8 *p) {
     p[6]++;
 }
 
-int func_00277920(u8 *p) {
+u8 *func_00277920(u8 *p) {
     u8 count;
-    int result;
+    u8 *result;
     count = ((*(unsigned short *)(p + 526) & 0x0C00) >> 10);
     p[34] = count;
     if (count != 0) {
