@@ -16,14 +16,14 @@ extern u8 D_004F20B0[];
 void func_0016FF20(void) {
     extern void func_0016F4D0(s32, s32);
     extern s32 func_00416180(s32, s32);
-    extern void func_0016F4B0(s32, s32, s32);
+    extern void func_0016F4B0(int, void *, void *);
     extern void func_0016F530(s32, s32, s32, s32, s32, s32);
     s32 i, off, x, y, z;
     func_0016F4D0(D_004C28AC, D_004C28B8);
     i = 0;
     off = 0;
     do {
-        func_0016F4B0(D_004BF4A0[i] + 2, func_00416180(*(s32 *)(D_004F20B0 + off + 0x194), 1), D_004C28B8);
+        func_0016F4B0(D_004BF4A0[i] + 2, (void *)func_00416180(*(s32 *)(D_004F20B0 + off + 0x194), 1), (void *)D_004C28B8);
         i++;
         off += 0x5B8;
     } while (i < 6);
