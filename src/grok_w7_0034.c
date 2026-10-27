@@ -147,7 +147,7 @@ void func_00347220(u8 *a0, s32 a1)
     }
 }
 
-void func_00348E40(u8 *a0)
+u8 *func_00348E40(u8 *a0)
 {
     u8 *p = func_003DA750((s32)a0, 1, 2);
     if (p) {
@@ -159,9 +159,10 @@ void func_00348E40(u8 *a0)
         p[33] = 0;
         *(s16 *)(p + 38) = 0x301;
     }
+    return p;
 }
 
-void func_00348EB0(u8 *a0)
+u8 *func_00348EB0(u8 *a0)
 {
     u8 *p = func_003DA750((s32)a0, 1, 2);
     if (p) {
@@ -173,6 +174,7 @@ void func_00348EB0(u8 *a0)
         p[33] = 0;
         *(s16 *)(p + 38) = 0x301;
     }
+    return p;
 }
 
 void func_0034A0D0(u8 *a0)

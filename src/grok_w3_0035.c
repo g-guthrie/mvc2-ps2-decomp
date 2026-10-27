@@ -58,7 +58,7 @@ void func_00355060(u8 *arg, u8 mode)
     }
 }
 
-void func_003556D0(u8 *arg, u8 mode)
+u8 *func_003556D0(u8 *arg, u8 mode)
 {
     Entry *e = func_003DA750(0, 1, 0);
     if (e != 0) {
@@ -68,6 +68,7 @@ void func_003556D0(u8 *arg, u8 mode)
         *(s16 *)((u8 *)e + 0x140) = *(s16 *)(arg + 0x140);
         e->value = 0x801;
     }
+    return (u8 *)e;
 }
 
 void func_003569A0(u8 *arg, u8 mode)
