@@ -9479,8 +9479,8 @@ func_001227F0,0x001227F0,0x50,src/wave7.c,complete
 func_001378C0,0x001378C0,0x48,src/wave7.c,complete
 func_00178E60,0x00178E60,0x50,src/wave7.c,complete
 func_001CA890,0x001CA890,0x54,src/wave7.c,complete
-func_00297EC0,0x00297EC0,0x54,src/wave7.c,complete
-func_00293630,0x00293630,0x58,src/wave7.c,complete
+func_00297EC0,0x00297EC0,0x54,src/grok_w5_0028.c,complete
+func_00293630,0x00293630,0x58,src/grok_w5_0028.c,complete
 func_00197560,0x00197560,0x58,src/wave7.c,complete
 func_003AE590,0x003AE590,0x58,src/wave7.c,complete
 func_00359050,0x00359050,0x40,src/wave7.c,complete
