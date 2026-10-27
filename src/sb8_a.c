@@ -5,10 +5,10 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 
-s32 func_002FB340(u8 *p) {
-    extern s32 func_001E7FD0();
+u8 *func_002FB340(u8 *p) {
+    extern u8 *func_001E7FD0(u8 *);
     u8 *q;
-    s32 r;
+    u8 *r;
     u8 v;
     v = (s32)(*(u16 *)(p + 0x20E) & 0xC00) >> 10;
     q = p + 0x2B8;

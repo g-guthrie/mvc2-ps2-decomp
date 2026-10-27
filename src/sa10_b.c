@@ -9,12 +9,12 @@ typedef float f32;
 void func_002C3820(u8 *p) {
     f32 *a, *b, *c, *d;
     u32 vec[4];
-    s32 v;
+    u8 *v;
     extern void func_00175700(u8 *);
     extern s32 func_001864a0(u8 *);
     extern void func_001757E0(u8 *, s32, s32);
-    extern s32 func_001E7FD0(u8 *);
-    extern void func_00185770(u8 *, s32);
+    extern u8 *func_001E7FD0(u8 *);
+    extern void func_00185770(u8 *, u8 *);
     extern void func_0015D010(u8 *, u32 *);
     extern void func_0018C6E0(void *);
     p[0x40C] = 2;
@@ -25,8 +25,8 @@ void func_002C3820(u8 *p) {
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
     a = (f32 *)(p + 0x5C);
-    b = (f32 *)(p + 0x60);
     c = (f32 *)(p + 0x68);
+    b = (f32 *)(p + 0x60);
     d = (f32 *)(p + 0x6C);
     if (func_001864a0(p)) {
         u32 t;
