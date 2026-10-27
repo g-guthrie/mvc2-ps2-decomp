@@ -961,7 +961,8 @@ func_00133720,0x00133720,0x38,0x00133758,code,spimdisasm-explicit-size-before-fi
 func_00133760,0x00133760,0xF8,0x00133858,code,spimdisasm-explicit-size-before-first-data
 func_00133860,0x00133860,0x48,0x001338A8,code,verified-native-dispatch-head-boundary
 func_001338B0,0x001338B0,0x3C,0x001338EC,code,verified-native-table-entry-boundary
-func_001338F0,0x001338F0,0x60,0x00133950,assembly_residual,native-prefix-before-verified-c-entry
+func_001338F0,0x001338F0,0x58,0x00133948,code,verified-native-function-boundary
+residual_00133948,0x00133948,0x8,0x00133950,assembly_residual,native-padding-after-verified-c-entry
 func_00133950,0x00133950,0x20,0x00133970,code,verified-complete-c-function
 func_00133970,0x00133970,0xC0,0x00133A30,code,verified-pointer-entry-and-whole-function
 func_00133A30,0x00133A30,0x3C,0x00133A6C,code,spimdisasm-explicit-size-before-first-data

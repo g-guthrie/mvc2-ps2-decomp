@@ -21839,4 +21839,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/effect_particle_init_0041a4c0.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/effect_particle_init_0041a4c0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/effect_particle_init_0041a4c0.o" private/SLUS_204.86.rom --source src/effect_particle_init_0041a4c0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_owner_state_001338f0.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/actor_owner_state_001338f0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_owner_state_001338f0.o" private/SLUS_204.86.rom --source src/actor_owner_state_001338f0.c
 PYTHON="$PYTHON" tools/compile_matching_data.sh
