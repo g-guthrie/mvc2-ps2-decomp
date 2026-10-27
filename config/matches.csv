@@ -19350,3 +19350,5 @@ func_0017BD80,0x0017BD80,0x10,src/character_action_dispatch_0017bd80.c,placehold
 func_0017BD90,0x0017BD90,0x10,src/character_action_dispatch_0017bd80.c,placeholder
 func_00386780,0x00386780,0x5C,src/owner_dispatch_00386780.c,placeholder
 func_0034DE10,0x0034DE10,0xE8,src/owner_phase_init_0034de10.c,placeholder
+func_00351BF0,0x00351BF0,0x34,src/owner_phase_pair_00351bf0.c,placeholder
+func_00351C30,0x00351C30,0xE4,src/owner_phase_pair_00351bf0.c,placeholder
