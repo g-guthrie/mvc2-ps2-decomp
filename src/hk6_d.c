@@ -1,7 +1,7 @@
 typedef unsigned char u8; typedef signed char s8; typedef unsigned int u32; typedef signed int s32; typedef float f32;
 
 void func_001757E0(u8 *, s32, s32);
-void func_00183D50();
+void func_00183D50(u8 *);
 int func_00175700(u8 *);
 
 void func_002577D0(u8 *p) {
@@ -37,7 +37,7 @@ void func_002577D0(u8 *p) {
         *(u32 *)a2 = 0;
         *(u32 *)a3 = 0;
         *(f32 *)(p + 0x38) = *(f32 *)(p + 0x430);
-        func_00183D50();
+        func_00183D50(p);
         func_001757E0(p, 0x14, 0x15);
     } else {
         func_00175700(p);

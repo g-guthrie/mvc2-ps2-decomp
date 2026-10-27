@@ -11,7 +11,7 @@ typedef float f32;
 void func_003238F0(u8 *p) {
     s32 r;
     u32 *v0, *v1, *a1, *a2;
-    extern void func_00183d50(void);
+    extern void func_00183D50(u8 *);
     extern s32 func_00175700(u8 *);
     extern void func_003266E0(u8 *);
     extern void func_00184540(u8 *);
@@ -27,7 +27,7 @@ void func_003238F0(u8 *p) {
         *v1 = 0;
         *a1 = 0;
         *a2 = 0;
-        func_00183d50();
+        func_00183D50(p);
     }
     if ((s8)func_00175700(p) < 0) {
         if (p[0x20D] != 2) func_003266E0(p);

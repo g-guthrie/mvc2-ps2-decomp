@@ -15,7 +15,7 @@ extern s32 func_00175700();
 extern s32 func_00174240(void *p);
 extern void func_001E7F60(void *p);
 extern u8 *func_003DA750();
-extern void func_00183d50();
+extern void func_00183D50(u8 *);
 extern void func_0019F4F0(void);
 extern void func_001843A0();
 extern void func_00183920(void *p, f32 *v);
@@ -354,7 +354,7 @@ void func_00258500(S_00258500 *p) {
     if (p->b151 != 0) {
         u32 t = p->b6;
         p->b6 = t + 1;
-        func_00183d50();
+        func_00183D50((u8 *)p);
         p->b151 = 0;
     }
     p->f34 += p->f5c;

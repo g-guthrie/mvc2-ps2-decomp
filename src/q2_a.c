@@ -125,7 +125,7 @@ typedef struct {
 void func_0022E700(P22E7 *p)
 {
     extern int func_00175700(u8 *);
-    extern void func_00183d50();
+    extern void func_00183D50(u8 *);
     extern void func_001757E0(P22E7 *, s32, s32);
     s16 *q = p->f2b8;
     if (p->f151 < 0) {
@@ -142,7 +142,7 @@ void func_0022E700(P22E7 *p)
     }
     p->f34 = q[4];
     p->f38 = p->f430;
-    func_00183d50();
+    func_00183D50((u8 *)p);
     {
         u32 t = p->f7;
         p->f7 = t + 1;

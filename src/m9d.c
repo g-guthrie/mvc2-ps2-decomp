@@ -101,7 +101,7 @@ void *func_001BC720(void *a, void *b, u8 c, int d) {
 }
 
 extern int func_00175700(u8 *);
-extern void func_00183d50();
+extern void func_00183D50(u8 *);
 void func_002CF570(u8 *p) {
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
@@ -109,7 +109,7 @@ void func_002CF570(u8 *p) {
         u32 t = p[6];
         p[6] = t + 1;
         *(f32 *)(p + 0x38) = *(f32 *)(p + 0x430);
-        func_00183d50();
+        func_00183D50(p);
     } else if (*(s8 *)(p + 0x151) == 0) {
         func_00175700(p);
     }

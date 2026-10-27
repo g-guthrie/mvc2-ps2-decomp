@@ -218,7 +218,7 @@ void func_0013C510(u8 *p) {
     }
 }
 
-extern void func_00183D50();
+extern void func_00183D50(u8 *);
 
 void func_002DA510(u8 *p) {
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5c);
@@ -230,7 +230,7 @@ void func_002DA510(u8 *p) {
         p[5] = c + 1;
         *(f32 *)(p + 0x34) = *(f32 *)(p + 0x64);
         *(f32 *)(p + 0x38) = *(f32 *)(p + 0x430);
-        func_00183D50();
+        func_00183D50(p);
     }
 }
 

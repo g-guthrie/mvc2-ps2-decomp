@@ -164,7 +164,7 @@ void func_003B8F40(u8 *p)
 
 void func_002C25D0(u8 *p)
 {
-    extern void func_00183d50(void);
+    extern void func_00183D50(u8 *);
     if (p[0x20D] == 2) {
         *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
         *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
@@ -173,7 +173,7 @@ void func_002C25D0(u8 *p)
         if (*(f32 *)(p + 0x38) <= *(f32 *)(p + 0x430)) {
             *(f32 *)(p + 0x38) = *(f32 *)(p + 0x430);
             if (p[0x21] == 0) {
-                func_00183d50();
+                func_00183D50(p);
                 p[0x21] = 1;
             }
         }
