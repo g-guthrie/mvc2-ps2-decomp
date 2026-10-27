@@ -10,7 +10,7 @@ typedef struct { s16 x, y; } HY7T;
 extern HY7G *D_004C2794;
 extern HY7T D_00475B60[];
 
-void func_003BED80(u8 *p) {
+void func_003BED80(u8 *p, void *owner) {
     extern void func_00175700(u8 *);
     extern void func_001E3210(u8 *, s32);
     extern void func_001DC0F0(u8 *, u16, f32, f32);

@@ -137,7 +137,7 @@ void func_0021A340(u8 *p)
     }
 }
 
-void func_003BEA80(u8 *p)
+void func_003BEA80(u8 *p, void *owner)
 {
     extern void func_00175700(u8 *);
     extern void func_001757E0(u8 *, s32, s32);

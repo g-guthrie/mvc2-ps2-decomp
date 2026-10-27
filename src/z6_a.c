@@ -154,7 +154,7 @@ void func_00194850(u8 *p) {
     }
 }
 
-void func_003BEB70(u8 *p) {
+void func_003BEB70(u8 *p, void *owner) {
     extern void func_00175700(u8 *);
     extern void func_001757E0(u8 *, s32, s32);
     extern void func_001E7F60(u8 *);

@@ -33,7 +33,8 @@ extern void func_00175700(Q *);
 extern void func_001E3710(Q *, s32);
 extern void func_001E7F60(Q *);
 
-void func_003BEC60(Q *p) {
+void func_003BEC60(u8 *actor, void *owner) {
+    Q *p = (Q *)actor;
     f32 d;
     f32 z;
     f32 k;

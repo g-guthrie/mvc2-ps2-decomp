@@ -25,7 +25,7 @@ extern u8 *func_003DA750();
 extern void func_0032FA60();
 extern void func_00170DF0(u32);
 
-void func_003BEA00(u8 *p) {
+void func_003BEA00(u8 *p, void *owner) {
     s16 v = *(s16 *)(p + 0x1C) - 1;
     *(s16 *)(p + 0x1C) = v;
     if (v < 0) {
