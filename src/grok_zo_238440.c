@@ -4,8 +4,9 @@ typedef signed char s8;
 extern int func_00175700(u8 *);
 extern void *func_0035C440(u8 *);
 
-void func_00238440(u8 *p)
+void func_00238440(u8 *p, void *work)
 {
+    (void)work;
     p[0x40C] = 2;
     p[0x33C] = 5;
     func_00175700(p);
