@@ -8,9 +8,7 @@ typedef float f32;
 
 s32 func_004000D0(s32 a0) { return a0 + 0x58; }
 
-s32 func_001044C8(s32 descriptor) { return -1; }
 
-s32 func_001044D0(void) { return -1; }
 extern u8 D_004B38B0[];
 typedef struct { u8 b[24]; } R24;
 extern R24 D_004F7D3C[];

@@ -8,9 +8,7 @@ typedef float f32;
 
 s32 func_004000D0(s32 a0) { return a0 + 0x58; }
 
-s32 func_001044C8(s32 descriptor) { return -1; }
 
-s32 func_001044D0(void) { return -1; }
 
 void func_0013FFC0(u8 *p) {
     f32 a = 0.004999999888241291f;
