@@ -23,5 +23,5 @@ s32 func_001044A0(const char *path, int flags, int mode) {
     return -1;
 }
 
-extern void func_0010B970(s32, s32, s32, s32, s32);
-void func_0010BBB8(s32 a, s32 b, s32 c, s32 d) { do { func_0010B970(a, b, c, d, 0); } while (0); }
+extern int func_0010B970(const char *, int, const void *, int *, int);
+void func_0010BBB8(const char *a, int b, const void *c, int *d) { do { func_0010B970(a, b, c, d, 0); } while (0); }

@@ -58,8 +58,9 @@ void func_00406E88(S4006 *p) {
     if (p == 0) { func_00405DC8(D_004BCDB0); return; }
     if (p->vt->f) p->vt->f(p->arg); else func_00405DC8(D_004BCDD0);
 }
-extern void func_0010EC08(int, int, int);
-void func_0010EF20(int a, int b) { do { func_0010EC08(a, b, 0); } while (0); }
+struct S24;
+extern int func_0010EC08(struct S24 *, unsigned char *, int);
+void func_0010EF20(struct S24 *a, unsigned char *b) { do { func_0010EC08(a, b, 0); } while (0); }
 extern long long func_00120838(const char *, char **, int);
 s32 func_00119DA0(const char *s) { return (s32)func_00120838(s, 0, 10); }
 extern char D_004C3570[];
