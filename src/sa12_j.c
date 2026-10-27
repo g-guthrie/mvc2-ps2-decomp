@@ -11,12 +11,12 @@ extern s16 D_004BFC1C[2];
 
 void func_001F1F60(u8 *p) {
     extern void func_00175700(u8 *);
-    extern s32 func_001E7FD0(u8 *);
+    extern u8 *func_001E7FD0(u8 *);
     extern void func_0015D010(u8 *, f32 *);
     extern void func_001266A0(u8 *, s32, s32);
     extern void func_001757E0(u8 *, s32, s32);
-    extern void func_00185770(u8 *, s32);
-    s32 r;
+    extern void func_00185770(u8 *, u8 *);
+    u8 *r;
     f32 v[4];
     *(s16 *)(p + 0x3F8) = 2;
     if (*(s8 *)(p + 0x161) != 0) {

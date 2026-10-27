@@ -28,8 +28,8 @@ extern void func_0015D010(u8 *p, u32 *v);
 extern void func_001266A0(u8 *p, s32 a, s32 b);
 extern void func_001757E0(u8 *p, s32 a, s32 b);
 extern void func_0022C5D0(u8 *p);
-extern s32 func_001E7FD0(u8 *p);
-extern void func_00185640(u8 *p, s32 a);
+extern u8 *func_001E7FD0(u8 *p);
+extern void func_00185640(u8 *p, u8 *a);
 extern void func_003859F0(u8 *p);
 extern void func_00357650(u8 *p);
 extern void func_001E16A0();
@@ -89,7 +89,7 @@ void func_00227160(u8 *p) {
 }
 
 void func_00259AD0(u8 *p) {
-    s32 r;
+    u8 *r;
     func_00175700(p);
     if (S8(p, 0x153) < 0) {
         u32 t = p[6];

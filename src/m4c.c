@@ -44,10 +44,10 @@ void func_0013BEF0(s32 a0) {
     }
 }
 
-extern s32 func_001E7FD0(void *p);
-s32 func_002779A0(u8 *p) {
+extern u8 *func_001E7FD0(u8 *p);
+u8 *func_002779A0(u8 *p) {
     s32 v = (*(u16 *)(p + 0x20E) & 0x1C00) >> 10;
-    s32 r;
+    u8 *r;
     p[0x22] = v;
     if ((u8)v != 0) {
         if (p[0x212] == 1) {
