@@ -1,0 +1,5 @@
+typedef unsigned char u8;typedef unsigned short u16;typedef signed short s16;typedef float f32;
+extern void func_00185490(u8 *);extern void func_00183D10(u8 *);extern void func_001E3210(u8 *,int);extern int func_001757E0(u8 *,int,int);extern void func_001266A0(u8 *,int,int);extern void func_0018C6E0(void *);extern void func_0015D010(u8 *,const float *);
+void func_002C95C0(u8 *p,void *context) {u8 *q=context; if(p[0x269]==6){p[0x404]=255;p[0x405]=16;}p[6]++;func_00185490(p);*(f32 *)(p+0x38)=*(f32 *)(p+0x430);p[0x20d]=0;*(f32 *)(p+0x5c)=0;*(f32 *)(p+0x60)=0;*(f32 *)(p+0x68)=0;*(f32 *)(p+0x6c)=0;func_001E3210(p,22);func_00183D10(p);q[12]=0;func_001757E0(p,21,16);}
+void func_002CA6B0(u8 *p,void *context) {u8 *q=context;if(p[0x269]==6){p[0x404]=255;p[0x405]=16;}p[7]++;q[8]=0;q[6]=0;q[7]=0;q[9]=0;func_00185490(p);func_001757E0(p,21,24);}
+void func_002E81B0(u8 *p) {f32 offset[3];func_001266A0(p,5,5);if(*(u16 *)(p+0x20e)&0x800){*(s16 *)(p+0x140)^=1;p[0x1e6]^=1;}func_0018C6E0(p);offset[0]=-40.0f;offset[1]=137.142852783203125f;func_0015D010(p,offset);p[0x1b4]=10;p[6]=0;p[7]=0;func_001757E0(p,15,0);}

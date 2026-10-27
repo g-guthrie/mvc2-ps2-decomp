@@ -19269,3 +19269,6 @@ func_0027F3D0,0x0027F3D0,0x90,src/actor_target_launch_0027f3d0.c,complete
 func_00214AA0,0x00214AA0,0x60,src/actor_effect_state_entries.c,complete
 func_00269F50,0x00269F50,0x78,src/actor_effect_state_entries.c,complete
 func_0024D060,0x0024D060,0x58,src/actor_effect_state_entries.c,complete
+func_002C95C0,0x002C95C0,0xA0,src/actor_action_entry_callbacks.c,complete
+func_002CA6B0,0x002CA6B0,0x70,src/actor_action_entry_callbacks.c,complete
+func_002E81B0,0x002E81B0,0x9C,src/actor_action_entry_callbacks.c,complete
