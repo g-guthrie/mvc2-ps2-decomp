@@ -147,7 +147,7 @@ void func_00359C30(u8 *p) {
     func_00359C20(p);
 }
 
-void func_0036E9C0(u8 *p, u8 *q) {
+void func_0036E9C0(u8 *p, u8 *q, s32 *contact_unused) {
     u8 *r = *(u8 **)(q + 0x1DC);
     *(f32 *)(p + 0x38) = *(f32 *)(q + 0x430) + (*(f32 *)(p + 0x38) - *(f32 *)(r + 0x38));
     func_0036EB40(p);

@@ -42,11 +42,12 @@ void func_00291150(u8 *p) {
     }
 }
 
-typedef void (*Fn_0036E6F0)(u8 *, u8 *, u8 *);
+typedef void (*Fn_0036E6F0)(u8 *, u8 *, s32 *);
 extern Fn_0036E6F0 D_00463DA0[];
 extern void func_00372260(u8 *);
+/* Provisional: the data-owned callback table still declares no arguments. */
 void func_0036E6F0(u8 *p) {
-    D_00463DA0[p[5]](p, *(u8 **)(p + 0x18), p + 0x88);
+    D_00463DA0[p[5]](p, *(u8 **)(p + 0x18), (s32 *)(p + 0x88));
     if (p[1] != (*(u8 **)(p + 0x18))[1]) { func_00372260(p); return; }
 }
 

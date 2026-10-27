@@ -8,7 +8,7 @@ typedef float f32;
 
 extern u8 D_00463BB0[];
 
-void func_0036E750(u8 *p, u8 *q, u8 *r)
+void func_0036E750(u8 *p, u8 *q, s32 *r)
 {
     extern void func_0036EA50(u8 *, u8 *, u8 *);
     extern void func_0036EAA0(u8 *, u8 *, u8 *);
@@ -24,11 +24,11 @@ void func_0036E750(u8 *p, u8 *q, u8 *r)
     v = *(s8 *)(p + 0x1B2);
     if (v < 0 && (v & 0x80) != 0) {
         p[0x1B2] = v | -0x80;
-        func_0036EA50(p, q, r);
-        if (*(s32 *)(r + 4) != 0) {
+        func_0036EA50(p, q, (u8 *)r);
+        if (r[1] != 0) {
             t = p[5];
             p[5] = t + 1;
-            func_0036EAA0(p, q, r);
+            func_0036EAA0(p, q, (u8 *)r);
             *(s32 *)(p + 0x5C) = 0;
             *(s32 *)(p + 0x60) = 0;
             *(s32 *)(p + 0x68) = 0;
@@ -36,7 +36,7 @@ void func_0036E750(u8 *p, u8 *q, u8 *r)
             *(u32 *)(p + 0x6C) = 0xBECDB6DB;
             *(s16 *)(p + 0x140) = *(s16 *)(q + 0x140) ^ 1;
             func_001757E0(p, 0x17, (u8)(D_00463BB0[s[1]] + 0x25));
-            func_0036EAE0(p, q, r);
+            func_0036EAE0(p, q, (u8 *)r);
             return;
         }
         p[5] = 3;

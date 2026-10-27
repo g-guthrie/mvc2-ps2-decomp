@@ -90,7 +90,7 @@ void func_0034DD60(u8 *p, u8 b) {
     }
 }
 
-void func_0036E9E0(u8 *p) {
+void func_0036E9E0(u8 *p, u8 *owner_unused, s32 *contact_unused) {
     s16 h = *(s16 *)(p + 0x1C);
     *(s16 *)(p + 0x1C) = h - 1;
     if (h == 0) {
