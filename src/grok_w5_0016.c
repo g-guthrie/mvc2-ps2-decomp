@@ -61,7 +61,7 @@ void func_00163F00(u8 *p, s32 a1)
     func_00163E60(p, a1);
 }
 
-void residual_00163260(u8 *p)
+void func_00163260(u8 *p)
 {
     if (*(s32 *)(p + 0xd4) != 0) {
         (*(s32 *)(p + 0xd4))--;
@@ -71,7 +71,7 @@ void residual_00163260(u8 *p)
     }
 }
 
-void residual_001633D0(u8 *p)
+void func_001633D0(u8 *p)
 {
     if (*(s32 *)(p + 0xd4) != 0) {
         (*(s32 *)(p + 0xd4))--;
@@ -81,7 +81,7 @@ void residual_001633D0(u8 *p)
     }
 }
 
-void residual_00163540(u8 *p)
+void func_00163540(u8 *p)
 {
     if (*(s32 *)(p + 0xd4) != 0) {
         (*(s32 *)(p + 0xd4))--;
@@ -91,7 +91,7 @@ void residual_00163540(u8 *p)
     }
 }
 
-void residual_001636B0(u8 *p)
+void func_001636B0(u8 *p)
 {
     if (*(s32 *)(p + 0xd4) != 0) {
         (*(s32 *)(p + 0xd4))--;
@@ -101,7 +101,7 @@ void residual_001636B0(u8 *p)
     }
 }
 
-void residual_00163840(u8 *p)
+void func_00163840(u8 *p)
 {
     if (*(s32 *)(p + 0xd4) != 0) {
         (*(s32 *)(p + 0xd4))--;
@@ -111,7 +111,7 @@ void residual_00163840(u8 *p)
     }
 }
 
-void residual_00163AC0(u8 *p)
+void func_00163AC0(u8 *p)
 {
     if (*(s32 *)(p + 0xd4) != 0) {
         (*(s32 *)(p + 0xd4))--;
@@ -121,7 +121,7 @@ void residual_00163AC0(u8 *p)
     }
 }
 
-void residual_00163C90(u8 *p)
+void func_00163C90(u8 *p)
 {
     if (*(s32 *)(p + 0xd4) != 0) {
         (*(s32 *)(p + 0xd4))--;
@@ -131,7 +131,7 @@ void residual_00163C90(u8 *p)
     }
 }
 
-void residual_0016C520(u8 *p)
+void func_0016C520(u8 *p)
 {
     p[4]++;
     *(s16 *)(p + 0x1c) = 0x20;
@@ -143,7 +143,7 @@ void residual_0016C520(u8 *p)
     *(s32 *)(p + 0x118) = 0;
 }
 
-void residual_0016C7F0(u8 *p)
+void func_0016C7F0(u8 *p)
 {
     p[4]++;
     *(s16 *)(p + 0x1c) = 0x10;
@@ -155,7 +155,7 @@ void residual_0016C7F0(u8 *p)
     *(s32 *)(p + 0x118) = 0;
 }
 
-void residual_0016C8B0(u8 *p)
+void func_0016C8B0(u8 *p)
 {
     p[4]++;
     *(s16 *)(p + 0x1c) = 0x10;
@@ -167,7 +167,7 @@ void residual_0016C8B0(u8 *p)
     *(s32 *)(p + 0x118) = 0;
 }
 
-void residual_0016C970(u8 *p)
+void func_0016C970(u8 *p)
 {
     p[4]++;
     *(s16 *)(p + 0x1c) = 0x10;
@@ -232,7 +232,7 @@ void func_00161A70(u8 *p)
     }
 }
 
-void residual_001620A0(u8 *p)
+void func_001620A0(u8 *p)
 {
     p[0x13c] = 1;
     p[4]++;
