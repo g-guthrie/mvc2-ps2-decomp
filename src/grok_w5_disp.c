@@ -332,7 +332,7 @@ void residual_003A5EB0(u8 *p) { jtbl_00472DF0[p[4]](p); }
 
 void residual_003A6830(u8 *p) { jtbl_00472E20[p[4]](p); }
 
-void residual_003A7C40(u8 *p, u8 *owner) { jtbl_00472F20[p[4]](p, owner); }
+void residual_003A7C40(u8 *p, void *owner) { jtbl_00472F20[p[4]](p, owner); }
 
 void residual_003AFA90(u8 *p) { jtbl_00473C40[p[4]](p); }
 
