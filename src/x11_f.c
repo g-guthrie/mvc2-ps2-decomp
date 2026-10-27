@@ -10,7 +10,7 @@ typedef float f32;
 typedef ActorState B24;
 typedef struct { f32 x, y, z; } V3;
 extern void func_003AD6E0();
-void func_003AD600(u8 *p) {
+void *func_003AD600(u8 *p) {
     extern u8 *func_003DA750();
     u8 *o;
     if ((o = func_003DA750(0, 1, 1)) != 0) {
@@ -29,6 +29,7 @@ void func_003AD600(u8 *p) {
         *(V3 *)(o + 0x50) = *(V3 *)(p + 0x50);
         *(s8 *)(o + 0x24) = *(s8 *)(p + 0x24);
     }
+    return o;
 }
 
 typedef ActorState B20;

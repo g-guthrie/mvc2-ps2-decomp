@@ -13,7 +13,7 @@ extern u8 D_00459B60[];
 void func_002C3200(u8 *p)
 {
     extern void func_00175700(u8 *);
-    extern s32 func_00399240(u8 *, s32, s32);
+    extern void *func_00399240(u8 *, s32, s32);
     extern void func_001757E0(u8 *, s32, s32);
     u8 r;
     s32 t;

@@ -5,7 +5,7 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 
-extern s32 func_003A23F0(void *p, s32 n, u8 i);
+extern void *func_003A23F0(u8 *p, u8 n, u8 i);
 void func_003A26F0(u8 *p) {
     s16 v = *(s16 *)(p + 0x1C) - 1;
     *(s16 *)(p + 0x1C) = v;

@@ -8,7 +8,7 @@ typedef signed int s32;
 extern u8 *D_004C2840;
 extern s32 D_004C25FC;
 extern s32 D_004CA040[];
-extern s32 D_004CA044[];
+extern void *D_004CA044[];
 extern s32 D_004CA048[];
 extern s32 D_004CA04C[];
 extern s16 D_004CA050[];
@@ -34,7 +34,7 @@ void func_0012C8E0(s32 a, s32 b) {
     extern s32 func_0014C910(void);
     extern void func_0014CF20(s32, s32, s32);
     extern void func_0014D1C0(s32, s32, void *);
-    extern s32 func_0014D630(void);
+    extern void *func_0014D630(void);
     extern s32 func_0014D410(void);
     extern s32 func_0014D570(void);
     extern s32 func_0012C5C0(void *, s32, s32);

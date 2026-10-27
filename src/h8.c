@@ -77,7 +77,7 @@ void func_00385220(u8 *p) {
 
 extern u8 *func_003DA750();
 extern void func_001E0280();
-void func_001E0020(u8 *p) {
+void *func_001E0020(u8 *p) {
     u8 *o = func_003DA750(0, 4, 0);
     if (o) {
         *(void **)(o + 0x10) = (void *)func_001E0280;
@@ -88,6 +88,7 @@ void func_001E0020(u8 *p) {
         *(s16 *)(o + 0x26) = 0x3801;
         *(u32 *)(o + 0xD0) = *(u16 *)(p + 0x168);
     }
+    return o;
 }
 
 void func_0036A4C0(u8 *p) {

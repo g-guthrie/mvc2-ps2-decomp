@@ -36,7 +36,7 @@ extern void func_0018A990();
 extern void func_00186A60();
 extern u8 D_004F1F40[];
 extern void func_00183d50();
-extern s32 func_0034A0D0();
+extern void *func_0034A0D0(u8 *);
 extern void func_00137E60();
 extern void func_00137DF0();
 typedef struct { u8 *ptr; u8 pad[0x5B8 - 4]; } T5B8;

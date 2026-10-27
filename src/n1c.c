@@ -14,7 +14,7 @@ extern void func_003A2540(void);
 extern u16 D_004D18DC;
 extern u8 D_004D18DB;
 
-void func_003A23F0(u8 *a, u8 b, u8 c) {
+void *func_003A23F0(u8 *a, u8 b, u8 c) {
     u8 *r = func_003DA750(0, 1, 0);
     if (r) {
         *(u32 *)(r + 0x10) = (u32)func_003A2540;
@@ -25,6 +25,7 @@ void func_003A23F0(u8 *a, u8 b, u8 c) {
         *(s16 *)(r + 0x26) = 0x2C01;
         r[0x21] = c;
     }
+    return r;
 }
 
 void func_00354990(u8 *p) {

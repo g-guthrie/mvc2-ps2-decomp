@@ -268,7 +268,7 @@ void func_003A9AB0(u8 *a0, u8 *a1) {
 
 extern s32 func_003C9240(u8 *);
 extern void func_001843A0(u8 *);
-extern s32 func_001E0020(u8 *);
+extern void *func_001E0020(u8 *);
 extern void func_001E3210(u8 *, s32);
 void func_003186C0(s8 *a0) {
     u8 *p = (u8 *)a0;

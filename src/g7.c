@@ -93,7 +93,7 @@ extern void func_003933A0();
 
 extern void func_003992C0();
 
-void func_00399240(u8 *a0, s32 a1, s32 a2) {
+void *func_00399240(u8 *a0, s32 a1, s32 a2) {
     u8 *r = func_003DA750(0, 1, 0);
     if (r != 0) {
         *(void **)(r + 0x10) = func_003992C0;
@@ -103,6 +103,7 @@ void func_00399240(u8 *a0, s32 a1, s32 a2) {
         r[0xD3] = a1;
         *(u16 *)(r + 0xD0) = *(u16 *)(a0 + 0x168);
     }
+    return r;
 }
 
 extern s32 func_001341B0();

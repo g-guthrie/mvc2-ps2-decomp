@@ -33,13 +33,14 @@ void func_0014E770(u8 *p) {
     }
 }
 
-void func_0014D630(void) {
+void *func_0014D630(void) {
     u8 *p = func_003DA750(0, 13, 1);
     if (p) {
         p[316] = 1;
         *(char **)(p + 16) = D_0014C3D0;
         *(s32 *)(p + 208) = 0;
     }
+    return p;
 }
 
 void func_0014A380(u8 *p) {

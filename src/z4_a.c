@@ -183,7 +183,7 @@ void func_003AB180(u8 *p, u8 *q)
     extern void func_003AADA0(u8 *, u8 *);
     extern void func_001266A0(u8 *, s32, s32);
     extern void func_00185870(u8 *, s32);
-    extern s32 func_003AD600(u8 *);
+    extern void *func_003AD600(u8 *);
     extern void func_003AB270(u8 *, u8 *);
     u8 *o;
     s32 r;
@@ -208,7 +208,7 @@ void func_003AB180(u8 *p, u8 *q)
     if (o[0x1FD] == 10)
         o[0x20B] = 0xC0;
     func_00185870(p, r);
-    *(s32 *)(q + 0x28) = func_003AD600(o);
+    *(void **)(q + 0x28) = func_003AD600(o);
     func_003AB270(p, q);
 }
 

@@ -177,7 +177,7 @@ u8 *func_00348EB0(u8 *a0)
     return p;
 }
 
-void func_0034A0D0(u8 *a0)
+void *func_0034A0D0(u8 *a0)
 {
     u8 *p = func_003DA750(0, 1, 0);
     if (p) {
@@ -190,6 +190,7 @@ void func_0034A0D0(u8 *a0)
         *(s16 *)(p + 38) = 0x302;
         *(float *)(p + 92) = *(float *)(a0 + 52);
     }
+    return p;
 }
 
 void func_003460D0(u8 *p)
