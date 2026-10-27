@@ -1,3 +1,4 @@
+struct Object;
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -205,12 +206,12 @@ void func_001D3750(u8 *p, u8 b, u8 c) {
     }
 }
 
-extern void func_003DAA40();
+extern void func_003DAA40(struct Object *);
 
 void func_0032EC30(u8 *p) {
     u8 *q = *(u8 **)(p + 0x14);
     if (q[4] == 1) {
-        func_003DAA40();
+        func_003DAA40((struct Object *)p);
         return;
     }
     *(s8 *)(p + 0x13C) = *(s8 *)(q + 0x13C);

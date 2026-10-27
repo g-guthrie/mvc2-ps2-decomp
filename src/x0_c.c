@@ -1,3 +1,4 @@
+struct Object;
 typedef struct SA37_J0 SA37_J0;
 typedef struct SA37_R SA37_R;
 typedef unsigned char u8;
@@ -31,7 +32,7 @@ s32 func_00167480(u8 *p, u8 *q) {
 
 void func_001BA1B0(u8 *p) {
     extern void func_001B9D40();
-    extern void func_003DAA40();
+    extern void func_003DAA40(struct Object *);
     extern void func_00175580();
     u8 *r, *q;
     s32 v;
@@ -44,7 +45,7 @@ void func_001BA1B0(u8 *p) {
         return;
     }
     if (q[0x169] != 0x16 || (q[0x15B] & 0x80) != 0) {
-        func_003DAA40();
+        func_003DAA40((struct Object *)p);
         return;
     }
     v = q[0x15B];

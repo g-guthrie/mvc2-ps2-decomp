@@ -1,3 +1,4 @@
+struct Object;
 #include "runtime_resource_record.h"
 typedef unsigned char u8;
 typedef signed char s8;
@@ -24,14 +25,14 @@ void func_00152720(void) {
         func_001520E0(6);
     }
 }
-extern void func_003DAA40();
+extern void func_003DAA40(struct Object *);
 extern s16 D_00445690[][2];
 extern f32 D_004456F0[];
 extern s32 D_004C2838;
 void func_00160F90(u8 *a) {
     s16 i = *(s16 *)(a + 0x1C);
     if (i >= 0x16) {
-        func_003DAA40();
+        func_003DAA40((struct Object *)a);
     } else {
         *(s16 *)(a + 0xCC) = D_00445690[i][0];
         *(s32 *)(a + 0x84) = D_004C2838;
