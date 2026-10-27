@@ -65,6 +65,16 @@ def validate_codegen_forcing(name, body, source):
         cursor = index + 1
         if cursor < len(values) and values[cursor] in {"volatile", "__volatile__"}:
             cursor += 1
+        if cursor < len(values) and values[cursor] == "{":
+            depth = 1
+            cursor += 1
+            while cursor < len(values) and depth:
+                value = values[cursor]
+                if value == "nop":
+                    raise SystemExit(f"manual asm nop credited as C: {name} ({source})")
+                depth += (value == "{") - (value == "}")
+                cursor += 1
+            continue
         if cursor >= len(values) or values[cursor] != "(":
             continue
         cursor += 1

@@ -31,6 +31,17 @@ class ProgressCatalogTest(unittest.TestCase):
             with self.assertRaisesRegex(SystemExit, "empty asm codegen barrier"):
                 validate_source_credit({"bad": {"source": "mixed.c"}}, root)
 
+    def test_manual_metrowerks_nop_cannot_receive_credit(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "mixed.c").write_text(
+                'void good(void) { /* asm { nop } */ }\n'
+                'void bad(void) { asm { div.s r, d, nf; nop; nop } }\n'
+            )
+            validate_source_credit({"good": {"source": "mixed.c"}}, root)
+            with self.assertRaisesRegex(SystemExit, "manual asm nop"):
+                validate_source_credit({"bad": {"source": "mixed.c"}}, root)
+
     def test_unused_fixed_register_destination_cannot_receive_credit(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
