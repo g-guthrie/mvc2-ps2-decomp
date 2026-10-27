@@ -19289,3 +19289,4 @@ func_002180B0,0x002180B0,0x88,src/actor_animation_select_callbacks.c,complete
 func_0031D590,0x0031D590,0x88,src/actor_animation_select_callbacks.c,complete
 func_00354E90,0x00354E90,0xE8,src/owner_effect_position_00354e90.c,complete
 func_001EC660,0x001EC660,0x98,src/actor_animation_state_001ec660.c,complete
+func_00240710,0x00240710,0x94,src/actor_random_animation_00240710.c,complete
