@@ -30,7 +30,7 @@ typedef struct {
     u8 field0;
     u8 field1;
     u8 pad2[14];
-    void (*callback)(void);
+    void (*callback)(u8 *);
     u8 pad20[4];
     void *arg;
     u8 pad28[4];
@@ -40,8 +40,8 @@ typedef struct {
     u16 value;
 } Entry;
 extern Entry *func_003DA750(s32, s32, s32);
-extern void func_00192BD0(void);
-extern void func_001981E0(void);
+extern void func_00192BD0(u8 *);
+extern void func_001981E0(u8 *);
 
 void func_001906C0(u8 *p, s16 a1, u8 a2, u8 a3) {
     S(p, 0x3F8) = a1;

@@ -28,17 +28,17 @@ extern void func_003BA220(u8 *);
 extern void func_003BD920(u8 *);
 extern void func_003B7FC0(u8 *);
 extern void func_001E7F60(u8 *);
-extern void func_003A4440(void);
-extern void func_003A9B50(void);
-extern void func_003AE900(void);
-extern void func_003BF700(void);
-extern void func_003B6680(void);
+extern void func_003A4440(u8 *);
+extern void func_003A9B50(u8 *);
+extern void func_003AE900(u8 *);
+extern void func_003BF700(u8 *);
+extern void func_003B6680(u8 *);
 
 typedef struct {
     u8 field0;
     u8 field1;
     u8 pad2[14];
-    void (*callback)(void);
+    void (*callback)(u8 *);
     u8 pad20[4];
     void *arg;
     u8 pad28[4];

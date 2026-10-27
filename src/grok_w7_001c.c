@@ -15,7 +15,7 @@ typedef struct {
 
 typedef struct {
     u8 pad[16];
-    void (*callback)(void);
+    void (*callback)(u8 *);
     void *field20;
     void *arg;
     u8 pad28[4];
@@ -26,8 +26,8 @@ extern int func_00174470(const void *);
 extern s32 func_001745B0(u8 *);
 extern int func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
-extern void func_001C48E0(void);
-extern void func_001C0A70(void);
+extern void func_001C48E0(u8 *);
+extern void func_001C0A70(u8 *);
 extern Entry *func_003DA750(s32, s32, s32);
 extern void func_001C1CA0(u8 *, u8 *, void *);
 extern void func_001C3DC0(u8 *, u8 *, void *);
