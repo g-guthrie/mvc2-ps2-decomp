@@ -21522,4 +21522,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_owner_dispa
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_owner_release_003b6620.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/actor_owner_release_003b6620.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_owner_release_003b6620.o" private/SLUS_204.86.rom --source src/actor_owner_release_003b6620.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/linked_actor_forwarders_003001a0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/linked_actor_forwarders_003001a0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/linked_actor_forwarders_003001a0.o" private/SLUS_204.86.rom --source src/linked_actor_forwarders_003001a0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
