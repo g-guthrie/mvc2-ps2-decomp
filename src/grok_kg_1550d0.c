@@ -1,9 +1,9 @@
 typedef unsigned char u8;
 typedef float f32;
 
-extern void func_001551A0(f32 *, int, f32, int);
+extern void func_001551A0(f32 *, unsigned int, f32, int);
 
-/* Provisional: child argument order and the kind domain need reconciliation. */
+/* Provisional: the kind domain and initialization path need proof. */
 void func_001550D0(f32 *a0, int kind, int a2, int a3)
 {
     f32 f;
@@ -24,5 +24,5 @@ void func_001550D0(f32 *a0, int kind, int a2, int a3)
         break;
     }
     for (i = 0; i < 10; i++)
-        func_001551A0(a0, a2, f, a3);
+        func_001551A0(a0, (unsigned int)a2, f, a3);
 }

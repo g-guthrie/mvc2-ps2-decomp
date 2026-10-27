@@ -48,7 +48,7 @@ static void func_00338670(DB *p)
 static void (*keep_00338670)(DB *) = func_00338670;
 
 
-void func_001551A0(f32 *pos, u32 n, int type, f32 scale) {
+void func_001551A0(f32 *pos, u32 n, f32 scale, int type) {
     extern u8 *func_003DA750(s32, u8, s32);
     extern void func_001553B0(u8 *);
     extern s32 func_00417A40();
