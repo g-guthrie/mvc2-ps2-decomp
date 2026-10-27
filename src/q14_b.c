@@ -20,7 +20,7 @@ void func_001947C0(u8 *a) {
     *(f32*)(o + 0x34) = *(f32*)(a + 0x34) + 1.6666666f * (f32)v / 256.0f;
 }
 
-extern void func_00175700(u8 *p);
+extern int func_00175700(u8 *p);
 extern Mvc2ActionRecord D_00456240[];
 extern void func_0028D810(u8 *, u8 *);
 extern void func_001830D0(u8 *p, f32 *v, s32 n);
@@ -45,7 +45,7 @@ void func_0028B420(u8 *p) {
 }
 
 extern void func_001830D0(u8 *p, f32 *v, s32 n);
-extern void func_00175700(u8 *p);
+extern int func_00175700(u8 *p);
 void func_0021A640(u8 *p) {
     f32 v[4];
     p[0x40C] = 2;
@@ -65,7 +65,7 @@ void func_0021A640(u8 *p) {
     }
 }
 
-extern void func_00175700(u8 *p);
+extern int func_00175700(u8 *p);
 extern void func_001266A0(u8 *p, s32 a, s32 b);
 extern void func_001549B0(u8 *p, f32 *v);
 void func_002B1FA0(u8 *p) {
