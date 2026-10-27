@@ -48,10 +48,10 @@ s32 func_0036EA50(void *a, s32 b, s32 *c) {
 void func_00179F60(u8 *p) {
     switch (p[1]) {
     case 0xA:
-        (*(void (**)())(*(u8 **)(p + 0x43C) + 0x60))();
+        (*(void (**)(u8 *))(*(u8 **)(p + 0x43C) + 0x60))(p);
         break;
     case 0x38:
-        (*(void (**)())(*(u8 **)(p + 0x43C) + 0x60))();
+        (*(void (**)(u8 *))(*(u8 **)(p + 0x43C) + 0x60))(p);
         break;
     }
 }
