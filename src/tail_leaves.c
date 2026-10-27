@@ -28,7 +28,7 @@ extern s32 func_0012AAA0(u16, s32, s32, u32);
 extern void func_0012AD00();
 extern void func_0012DA40();
 extern void func_0012E780();
-extern void func_001391E0();
+extern void func_001391E0(u8 *);
 extern void func_00143C60();
 extern void func_00146F50();
 extern void func_00147D20();
@@ -181,7 +181,7 @@ void func_00138270(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Obje
 
 void func_001388F0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
-void func_001391A0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_001391E0(a0, a1, a2, a3); }
+void func_001391A0(u8 *p) { func_001391E0(p); }
 
 void func_00139B90(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
