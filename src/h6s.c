@@ -6,10 +6,10 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 typedef struct { f32 x, y, z; } V3;
-extern void func_00154A20(u8 *, s32, s32, s32, s32);
-extern void func_00156520(u8 *, s32, s32, s32, s32);
-extern void func_00162FE0(u8 *, s32, s32, s32, s32);
-void func_00154850(u8 *a0, s32 a1, s32 a2, s32 a3) {
+extern void func_00154A20(V3 *, s32, s32, s32, s32);
+extern void func_00156520(V3 *, s32, s32, s32, s32);
+extern void func_00162FE0(V3 *, s32, s32, s32, u8);
+void func_00154850(V3 *a0, s32 a1, s32 a2, s32 a3) {
     switch (a2) {
     case 0:
         func_00154A20(a0, a1, a2, a3, 10);

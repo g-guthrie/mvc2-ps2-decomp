@@ -6,10 +6,11 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-extern void func_00162DF0();
-extern void func_00162BB0();
-void func_00162FE0(s32 a, s32 b, s32 c, s32 d, s32 e) {
-    func_00162DF0();
+typedef struct { f32 x, y, z; } Position3;
+extern void func_00162DF0(Position3 *, s32, s32, s32, u8);
+extern void func_00162BB0(Position3 *, s32, s32, s32, u8);
+void func_00162FE0(Position3 *a, s32 b, s32 c, s32 d, u8 e) {
+    func_00162DF0(a, b, c, d, e);
     func_00162BB0(a, b, c, d, e);
 }
 extern s32 func_00189310();
