@@ -7,8 +7,6 @@ typedef signed int s32;
 typedef float f32;
 typedef struct { f32 x, y, z; } V3;
 
-extern s32 func_001345B0();
-extern s32 func_00134120();
 typedef struct { u8 pad[5]; u8 f5; } S134;
 
 

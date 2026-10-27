@@ -80,7 +80,6 @@ extern s32 func_00134230(u8 *p, u8 *q);
 extern s32 func_001342D0(u8 *p, u8 *q);
 extern s32 func_001341B0(u8 *p, u8 *q);
 extern s32 func_00134370(u8 *p, u8 *q);
-extern void func_001345B0(u8 *p, u8 *q);
 
 void func_00311FA0(u8 *p) {
     f32 v;

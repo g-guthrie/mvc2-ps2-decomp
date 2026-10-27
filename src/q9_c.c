@@ -14,6 +14,7 @@ typedef struct {
     u8 p0[5]; u8 f5; u8 p6[0x16]; s16 f1c; u8 p1e[2]; u8 f20;
 } P_0;
 extern void func_001345B0(P_0 *a, u8 *b);
+/* Provisional: the reset helper call still uses a mismatched signature. */
 s32 func_00134230(P_0 *a, u8 *b) {
     if (D_004D18A0 != 5) return 1;
     if (D_004D18A3 == 0 && D_004D18DE == b[2] && D_004D18A8 != 0) {

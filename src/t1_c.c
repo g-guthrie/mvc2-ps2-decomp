@@ -15,6 +15,7 @@ extern s32 func_001341B0(u8 *p, u8 *q);
 extern s32 func_00134370(u8 *p, u8 *q);
 extern void func_001345B0(u8 *p, u8 *q);
 
+/* Provisional: the reset helper call still uses a mismatched signature. */
 void func_00133A70(u8 *p, u8 *q) {
     s16 v;
     func_00134710(p, q);
