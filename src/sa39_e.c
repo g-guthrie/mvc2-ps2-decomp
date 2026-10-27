@@ -15,7 +15,7 @@ void func_00191D40(u8 *p)
     u32 t;
     s32 v;
     extern void func_00191ED0(u8 *);
-    extern void func_00185490();
+    extern void func_00185490(u8 *);
     extern s32 func_00184720(u8 *);
     extern s32 func_00185A90(u8 *);
     extern s32 func_00188110(u8 *);
@@ -30,7 +30,7 @@ void func_00191D40(u8 *p)
         func_00191ED0(p);
         return;
     }
-    func_00185490();
+    func_00185490(p);
     if (func_00184720(p) != 0) return;
     if (func_00185A90(p) != 0) return;
     if (func_00188110(p) != 0) return;

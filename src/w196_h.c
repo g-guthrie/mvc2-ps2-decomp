@@ -7,7 +7,7 @@ typedef signed int s32;
 
 void func_00324EA0(u8 *p)
 {
-    extern void func_00185490();
+    extern void func_00185490(u8 *);
     extern void func_00183D10(u8 *);
     extern void func_0018C4B0(u8 *, s32);
     extern void func_001757E0(u8 *, s32, s32);
@@ -19,7 +19,7 @@ void func_00324EA0(u8 *p)
     if (p[6] == 0) {
         t = p[6];
         p[6] = t + 1;
-        func_00185490();
+        func_00185490(p);
         func_00183D10(p);
         func_0018C4B0(p, 5);
         *(s32 *)(p + 0x5C) = 0;

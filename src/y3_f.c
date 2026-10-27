@@ -68,13 +68,13 @@ void func_0037D0D0(S37_n *p, u8 *q) {
 
 typedef struct { u8 pad6[0x6]; u8 b6; u8 pad34[0x2D]; f32 f34; f32 f38; u8 pad5C[0x20]; f32 f5c; f32 f60; u8 pad68[0x4]; f32 f68; f32 f6c; u8 pad1E6[0x176]; u8 b1e6; u8 pad209[0x22]; u8 b209; u8 pad211[0x7]; s8 b211; } S14_r;
 void func_002ADEA0(S14_r *p) {
-    extern void func_00185490();
+    extern void func_00185490(u8 *);
     extern void func_002ADE20();
     extern double func_00119058(f32);
     extern void func_00175700();
     extern void func_001757E0();
     u32 t;
-    func_00185490();
+    func_00185490((u8 *)p);
     func_002ADE20(p);
     p->b209 = 2;
     p->f34 += p->f5c;

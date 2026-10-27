@@ -8,12 +8,12 @@ typedef float f32;
 typedef struct { u8 p0[2]; u8 b2; u8 p3; u8 b4; u8 b5; u8 b6; u8 b7; u8 p8[0x1C-8]; s16 h1c; u8 p1e[0x34-0x1E]; f32 f34; f32 f38; u8 p3c[0x5C-0x3C]; f32 f5c; f32 f60; u8 p64[4]; f32 f68; f32 f6c; } PH;
 
 void func_00298550(PH *p) {
-    extern void func_00185490();
+    extern void func_00185490(u8 *);
     extern void func_00298390(PH *);
     extern double func_00119058(f32);
     extern void func_00175700(PH *);
     extern void func_001757E0(PH *, s32, s32);
-    func_00185490();
+    func_00185490((u8 *)p);
     func_00298390(p);
     ((u8 *)p)[0x209] = 2;
     p->f34 += p->f5c;
