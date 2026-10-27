@@ -1,0 +1,5 @@
+typedef unsigned char u8;typedef unsigned short u16;typedef signed short s16;typedef unsigned int u32;typedef float f32;
+extern u8 *D_004C2794 __attribute__((section(".sdata")));
+extern void func_00185490(u8 *),func_00183D10(u8 *),func_0018C4B0(u8 *,int),func_003079F0(u8 *,void *),func_003073A0(u8 *,void *);extern int func_001757E0(u8 *,int,int);
+void func_00307920(u8 *p,void *context) {if(p[0x269]==6){p[0x404]=255;p[0x405]=16;}p[6]++;func_00185490(p);*(f32 *)(p+0x5c)=0;*(f32 *)(p+0x60)=0;*(f32 *)(p+0x68)=0;*(f32 *)(p+0x6c)=0;p[0x20d]=0;*(f32 *)(p+0x38)=*(f32 *)(p+0x430);func_00183D10(p);p[0x1b5]=57;p[0x1b2]=*(u16 *)(p+0x1c0)=0;*(u32 *)(p+0x1d8)=0;{u32 a=p[2]*2;a+=(u32)D_004C2794;a+=0x7c;++*(s16 *)a;}func_001757E0(p,22,3);func_003079F0(p,context);}
+void func_003072D0(u8 *p,void *context) {p[6]++;func_00185490(p);*(f32 *)(p+0x5c)=0;*(f32 *)(p+0x60)=0;*(f32 *)(p+0x68)=0;*(f32 *)(p+0x6c)=0;p[0x20d]=0;*(f32 *)(p+0x38)=*(f32 *)(p+0x430);func_00183D10(p);func_0018C4B0(p,5);p[0x1b5]=33;p[0x1b2]=*(u16 *)(p+0x1c0)=0;*(u32 *)(p+0x1d8)=0;{u32 a=p[2]*2;a+=(u32)D_004C2794;a+=0x7c;++*(s16 *)a;}func_001757E0(p,21,22);*(s16 *)(p+0x1c)=72;func_003073A0(p,context);}
