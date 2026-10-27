@@ -188,7 +188,7 @@ void func_00269B40(u8 *p) {
     }
 }
 
-void func_0035BE30(u8 *p) {
+void func_0035BE30(u8 *p, void *owner) {
     if ((s8)func_00175700(p) < 0) {
         p[4] = 3;
         p[316] = 0;

@@ -12,8 +12,8 @@ extern void func_00418010(void);
 extern s8 D_004F1D20[];
 extern u8 D_004F1D30[];
 
-void func_0035BE70(u8 *p, u8 *q) {
-    u8 *r = q + 0x2B8;
+void func_0035BE70(u8 *p, void *q) {
+    u8 *r = (u8 *)q + 0x2B8;
     r = (u8 *)(p[0x23] + (u32)r);
     r[1] &= 0xFD;
     p[4] = 3;
