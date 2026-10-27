@@ -18257,7 +18257,7 @@ func_0029E620,0x0029E620,0x2F8,src/fb29_a.c,complete
 func_002CA8F0,0x002CA8F0,0x35C,src/fb29_b.c,complete
 func_003E5FF0,0x003E5FF0,0x380,src/fb29_c.c,complete
 func_003E4B20,0x003E4B20,0x22C,src/fb30_d.c,complete
-func_0032AA40,0x0032AA40,0x288,src/fb30_f.c,placeholder
+func_0032AA40,0x0032AA40,0x288,src/fb30_f.c,complete
 func_00183E30,0x00183E30,0x2DC,src/fb30_g.c,complete
 func_00157F00,0x00157F00,0x1d0,src/fb33_a.c,complete
 func_00135B70,0x00135B70,0x208,src/fb33_b.c,complete

@@ -9,12 +9,13 @@ extern s8 *D_004C2840;
 extern s8 D_004C292C;
 extern s16 D_00583BDC[];
 extern u8 D_00583B9D[];
-extern u8 D_0045E220[];
+/* Each selection ID occupies the low byte of one word in the owned table. */
+typedef struct {u32 mask[2][3];u32 pad0[2];u32 id[2][3];u32 pad1[2];} Data45E200;
+extern Data45E200 data_u32_0045E200;
 extern u8 D_004F20B0[];
 typedef struct { u8 b0; s8 b1; u8 pad2[0x4DB]; u8 b4DD; u8 pad4DE[0x540 - 0x4DE]; s8 b540; u8 pad541[0x553 - 0x541]; u8 b553; } E;
 #define EL(k) ((E *)(D_004F20B0 + ((s8)p[0x538] + (k)) * 0x5B8))
 
-/* Provisional: the selection bytes belong to the structured data owner. */
 void func_0032AA40(u8 *p) {
     extern s32 func_00417A40(void);
     extern void func_0032E600();
@@ -48,7 +49,7 @@ void func_0032AA40(u8 *p) {
         i = 0;
         j = 0;
         for (; i < 3; i++) {
-            EL(j)->b540 = D_0045E220[(s8)p[0x538] * 12];
+            EL(j)->b540 = ((u8 *)&data_u32_0045E200.id)[(s8)p[0x538] * 12];
             EL(j)->b1 = EL(j)->b540;
             EL(j)->b4DD = 0;
             EL(j)->b553 = i;
@@ -60,7 +61,7 @@ void func_0032AA40(u8 *p) {
         k2 = 0;
         j2 = 0;
         for (; i2 < 3; i2++) {
-            EL(j2)->b540 = (D_0045E220 + (s8)p[0x538] * 12)[k2];
+            EL(j2)->b540 = ((const u8 *)((u8 *)&data_u32_0045E200.id + (s8)p[0x538] * 12))[k2];
             EL(j2)->b1 = EL(j2)->b540;
             EL(j2)->b4DD = 0;
             EL(j2)->b553 = i2;
