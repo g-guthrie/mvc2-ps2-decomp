@@ -76,12 +76,12 @@ void func_00220B90(u8 *a) {
 
 extern s16 D_004D1802;
 void func_0016B0C0(u8 *a, u8 *b, s32 c);
-void func_00166C80(u8 *a, u8 *b, s32 c);
-void func_00166550(u8 *a, u8 *b) {
+s32 func_00166C80(u8 *a, u8 *b, s32 c);
+s32 func_00166550(u8 *a, u8 *b) {
     func_0016B0C0(a, b, 0);
     func_0016B0C0(a, b, 1);
     *(s32*)(a + 0x460) = *(s32*)(a + 0x4C8);
-    func_00166C80(a, b, *(s32*)(a + 0x460) <= D_004D1802);
+    return func_00166C80(a, b, *(s32*)(a + 0x460) <= D_004D1802);
 }
 
 void func_001AB2E0(u8 *a, u8 *owner) {
