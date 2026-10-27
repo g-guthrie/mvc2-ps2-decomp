@@ -5,9 +5,9 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 
-extern s32 func_003F6908(s32, s32, s16 *, u8 *, u8 *, u8 *, u8 *, u8 *, u8 *, u8 *);
+extern s32 func_003F6908(u8 *, s32, s16 *, s8 *, s8 *, s8 *, s8 *, s32 *, s32 *, s32 *);
 
-s32 func_003F6A18(u8 *p, s32 a, s32 b)
+s32 func_003F6A18(u8 *p, u8 *a, s32 b)
 {
     s16 v;
     u8 *q1;
@@ -19,7 +19,7 @@ s32 func_003F6A18(u8 *p, s32 a, s32 b)
     q3 = p + 0x10;
     q4 = p + 0xD;
     *(s16 *)(p + 2) = 1;
-    if (func_003F6908(a, b, &v, p + 0xC, q4, q2, q1, p + 0x14, p + 0x18, q3) < 0) return 0;
+    if (func_003F6908(a, b, &v, (s8 *)(p + 0xC), (s8 *)q4, (s8 *)q2, (s8 *)q1, (s32 *)(p + 0x14), (s32 *)(p + 0x18), (s32 *)q3) < 0) return 0;
     *(s32 *)(p + 0x34) = 0;
     *(s32 *)(p + 0x30) = 0;
     *(s32 *)(p + 0x2C) = 0;
