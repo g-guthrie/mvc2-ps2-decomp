@@ -1244,7 +1244,7 @@ func_0013E760,0x0013E760,0xC0,0x0013E820,code,spimdisasm-explicit-size-before-fi
 func_0013E820,0x0013E820,0x1D8,0x0013E9F8,code,spimdisasm-explicit-size-before-first-data
 func_0013EA00,0x0013EA00,0xC8,0x0013EAC8,code,spimdisasm-explicit-size-before-first-data
 func_0013EAD0,0x0013EAD0,0x240,0x0013ED10,code,spimdisasm-explicit-size-before-first-data
-func_0013ED10,0x0013ED10,0x80,0x0013ED90,assembly_residual,native-prefix-before-verified-c-entry
+func_0013ED10,0x0013ED10,0x74,0x0013ED84,code,verified-complete-c-function
 func_0013ED90,0x0013ED90,0x78,0x0013EE08,code,verified-complete-c-function
 func_0013EE10,0x0013EE10,0x78,0x0013EE88,code,spimdisasm-explicit-size-before-first-data
 func_0013EE90,0x0013EE90,0x268,0x0013F0F8,code,spimdisasm-explicit-size-before-first-data
