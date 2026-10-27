@@ -19370,3 +19370,4 @@ func_003874F0,0x003874F0,0x90,src/context_state_dispatch_003874f0.c,placeholder
 func_0041A1F0,0x0041A1F0,0x1C8,src/effect_particle_init_0041a1f0.c,placeholder
 func_0041A4C0,0x0041A4C0,0x1D4,src/effect_particle_init_0041a4c0.c,placeholder
 func_001338F0,0x001338F0,0x58,src/actor_owner_state_001338f0.c,placeholder
+func_0016F2D0,0x0016F2D0,0xEC,src/actor_resource_setup_0016f2d0.c,placeholder
