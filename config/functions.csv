@@ -16912,7 +16912,7 @@ func_00380A90,0x00380A90,0xB0,0x00380B40,code,spimdisasm-explicit-size-before-fi
 func_00380B40,0x00380B40,0x114,0x00380C54,code,spimdisasm-explicit-size-before-first-data
 func_00380C60,0x00380C60,0x54,0x00380CB4,code,spimdisasm-explicit-size-before-first-data
 func_00380CC0,0x00380CC0,0x20,0x00380CE0,code,matching-c-head-split
-residual_00380CE0,0x00380CE0,0x128,0x00380E08,assembly_residual,verified-boundary-after-matching-head
+func_00380CE0,0x00380CE0,0x128,0x00380E08,code,verified-native-table-entry-boundary
 func_00380E10,0x00380E10,0x16C,0x00380F7C,code,spimdisasm-explicit-size-before-first-data
 func_00380F80,0x00380F80,0x44,0x00380FC4,code,spimdisasm-explicit-size-before-first-data
 func_00380FD0,0x00380FD0,0x8,0x00380FD8,code,spimdisasm-explicit-size-before-first-data
