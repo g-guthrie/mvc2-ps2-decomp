@@ -21657,4 +21657,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/owner_copy_dispatch_003c7480.c -c -lang c -O3 -Op -sdatathreshold 0 -o "$BUILD/owner_copy_dispatch_003c7480.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_copy_dispatch_003c7480.o" private/SLUS_204.86.rom --source src/owner_copy_dispatch_003c7480.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/owner_height_landing_003c74b0.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/owner_height_landing_003c74b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_height_landing_003c74b0.o" private/SLUS_204.86.rom --source src/owner_height_landing_003c74b0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
