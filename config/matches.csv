@@ -18563,7 +18563,7 @@ func_00145780,0x00145780,0x140,src/sf0_c.c,complete
 func_0013D6F0,0x0013D6F0,0x1A4,src/sf0_d.c,complete
 func_00159840,0x00159840,0x1A4,src/sf0_e.c,complete
 func_0013E820,0x0013E820,0x1D8,src/sf0_f.c,complete
-func_0013F400,0x0013F400,0x1EC,src/sf0_g.c,complete
+func_0013F400,0x0013F400,0x1EC,src/sf0_g.c,placeholder
 func_0013EAD0,0x0013EAD0,0x240,src/sf0_h.c,complete
 func_0013F880,0x0013F880,0x23C,src/sf0_i.c,complete
 func_00330FF0,0x00330FF0,0x1A4,src/sd8_a.c,complete

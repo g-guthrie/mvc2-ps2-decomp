@@ -7,10 +7,8 @@ typedef signed int s32;
 typedef float f32;
 typedef double f64;
 
-/* MW 3.0.3: ./try.sh SRC "-O3 -Op -fp off -sdatathreshold 8"
-   The three static functions below are verified copies of retail
-   func_00338670/func_00338FE0/func_003388E0 (same flags); they prime the
-   register allocator exactly as in src/rt20_a.c. */
+/* Provisional: the unused helper below affects compiler register allocation;
+   selector bounds and coordinate-table ownership also require proof. */
 typedef struct { f32 x, y, z; } V3;
 typedef struct DB {
     u8 _p0[0x4];
@@ -59,12 +57,12 @@ extern u8 *func_003DA750(s32, s32, s32);
 void func_0013F400(s32 a, s32 b) {
     u8 *o;
     double k;
-    extern void func_0013F6B0();
+    extern void func_0013F6B0(u8 *);
     extern void func_00170DF0(u32);
     if ((o = func_003DA750(0, 6, 1)) != 0) {
         o[0x13C] = 0;
         o[0x20] = a;
-        *(void **)(o + 0x10) = func_0013F6B0;
+        *(void (**)(u8 *))(o + 0x10) = func_0013F6B0;
         o[0x22] = D_004406C8[b];
         *(s16 *)(o + 0xCC) = o[0x22];
         *(s32 *)(o + 0x84) = D_004C281C;
