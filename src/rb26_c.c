@@ -7,10 +7,11 @@ typedef signed int s32;
 
 extern u8 D_004CC150[];
 
-s32 func_001E5710(s32 a, u32 n)
+s32 func_001E5710(const void *request, u32 n)
 {
-    extern void func_0011D8F8(u8 *, s32, s32);
-    extern s32 func_00423480(u32, u8 *, s32, u8 *, s32, u8 *, s32);
+    u32 a=(u32)request;
+    extern void *func_0011D8F8(void *, s32, u32);
+    extern s32 func_00423480(u32, s32, s32, s32, s32, s32, s32);
     extern s32 func_00423750(s32);
     u8 *q;
     u8 *p;
@@ -38,7 +39,7 @@ s32 func_001E5710(s32 a, u32 n)
         src += 0x10;
         d += 4;
     }
-    r = func_00423480(n, q + *(s32 *)p, *(s32 *)(p + 4), q + *(s32 *)(p + 8), *(s32 *)(p + 0xC), q + *(s32 *)(p + 0x10), *(s32 *)(p + 0x14));
+    r = func_00423480(n, (s32)(u32)(q + *(s32 *)p), *(s32 *)(p + 4), (s32)(u32)(q + *(s32 *)(p + 8)), *(s32 *)(p + 0xC), (s32)(u32)(q + *(s32 *)(p + 0x10)), *(s32 *)(p + 0x14));
     if (r < 0) {
         func_0011D8F8(e, 0, 0x200);
         return r;
