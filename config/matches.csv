@@ -19336,3 +19336,6 @@ func_003A7C60,0x003A7C60,0xB0,src/owner_event_init_003a7c60.c,placeholder
 func_00326930,0x00326930,0x100,src/frame_lists_00326930.c,placeholder
 func_003C7F70,0x003C7F70,0xA4,src/owner_init_003c7f70.c,placeholder
 func_003B8980,0x003B8980,0x88,src/owner_state_dispatch_003b8980.c,placeholder
+func_003D80E0,0x003D80E0,0xD8,src/scene_init_003d80e0.c,placeholder
+func_0036C120,0x0036C120,0x68,src/actor_dispatch_0036c120.c,placeholder
+func_002B43B0,0x002B43B0,0x54,src/controller_action_002b43b0.c,placeholder

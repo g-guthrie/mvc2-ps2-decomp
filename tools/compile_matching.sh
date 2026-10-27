@@ -21750,4 +21750,13 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/owner_state_dispatch_003b8980.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/owner_state_dispatch_003b8980.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_state_dispatch_003b8980.o" private/SLUS_204.86.rom --source src/owner_state_dispatch_003b8980.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/scene_init_003d80e0.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/scene_init_003d80e0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/scene_init_003d80e0.o" private/SLUS_204.86.rom --source src/scene_init_003d80e0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_dispatch_0036c120.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/actor_dispatch_0036c120.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_dispatch_0036c120.o" private/SLUS_204.86.rom --source src/actor_dispatch_0036c120.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/controller_action_002b43b0.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/controller_action_002b43b0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/controller_action_002b43b0.o" private/SLUS_204.86.rom --source src/controller_action_002b43b0.c
 PYTHON="$PYTHON" tools/compile_matching_data.sh
