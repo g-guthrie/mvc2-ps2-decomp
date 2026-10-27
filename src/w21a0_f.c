@@ -12,7 +12,7 @@ extern u8 D_004D18A0[];
 
 void func_003A3F80(u8 *p, u8 *q, u8 *r)
 {
-    extern void func_003A4340(u8 *, u8 *, u8 *);
+    extern void func_003A4340(u8 *);
     extern void func_00175910(u8 *, s32, s32, s32);
     extern void func_001E7F60(u8 *);
     u8 *o;
@@ -20,7 +20,7 @@ void func_003A3F80(u8 *p, u8 *q, u8 *r)
     u32 t;
 
     o = *(u8 **)(p + 0x1C4);
-    func_003A4340(p, q, r);
+    func_003A4340(p);
     if (*(s8 *)(p + 0x1B3) == 0) {
         if (*(s16 *)(q + 0x434) != 0 && *(s16 *)(o + 0x434) != 0 && q[5] == 0 && D_004D18A0[0] != 5) goto cont;
     }
