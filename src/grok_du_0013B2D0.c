@@ -7,7 +7,7 @@ extern u8 D_00583B92[];
 extern u8 D_004B1221[];
 extern u32 D_004C2830 __attribute__((section(".sdata")));
 
-void residual_0013B2D0(u8 *p)
+void func_0013B2D0(u8 *p)
 {
     if (p[0x20] != 0)
         *(s32 *)(p + 0x48) = *(s32 *)(p + 0x48) - 0x400;

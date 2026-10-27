@@ -364,7 +364,7 @@ void func_00258500(S_00258500 *p) {
     func_00175700(p);
 }
 
-void residual_002CF2A0(u8 *p) {
+void func_002CF2A0(u8 *p) {
     u32 t = p[6];
     s16 *e;
     p[6] = t + 1;

@@ -35,7 +35,7 @@ void func_001FEB90(u8 *p)
     }
 }
 
-void residual_001FEC80(u8 *p)
+void func_001FEC80(u8 *p)
 {
     u8 *r = p + 0x2b8;
     if (func_003D92F0(p)) {

@@ -34,7 +34,7 @@ s32 func_0020D350(u8 *p, u8 *q)
     return 1;
 }
 
-void residual_00217D80(u8 *p)
+void func_00217D80(u8 *p)
 {
     if (D_004D18A0 < 2)
         p[316] = 0;
@@ -69,7 +69,7 @@ void residual_0020AC10(u8 *p)
     }
 }
 
-void residual_0020F9F0(u8 *p)
+void func_0020F9F0(u8 *p)
 {
     func_00175700(p);
     if (*(s8 *)(p + 337)) {
@@ -81,7 +81,7 @@ void residual_0020F9F0(u8 *p)
     }
 }
 
-void residual_0020FD60(u8 *p)
+void func_0020FD60(u8 *p)
 {
     func_00175700(p);
     if (*(s8 *)(p + 337)) {

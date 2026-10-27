@@ -29,7 +29,7 @@ typedef struct {
     f32 a, b, c, d;
 } Vec4;
 
-void residual_00139560(u8 *p) {
+void func_00139560(u8 *p) {
     S(p, 0x1c) = S(p, 0x1c) - 1;
     if (S(p, 0x1c) <= 0) {
         p[4]++;
@@ -51,7 +51,7 @@ void func_0013B380(u8 *p) {
     }
 }
 
-void residual_0013A410(u8 *p) {
+void func_0013A410(u8 *p) {
     p[4]++;
     D_00583B90[p[0x20]] = 4;
 }

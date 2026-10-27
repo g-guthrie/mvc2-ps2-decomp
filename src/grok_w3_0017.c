@@ -97,7 +97,7 @@ void func_00176E20(u8 *p) {
     }
 }
 
-void residual_00177E90(u8 *p) {
+void func_00177E90(u8 *p) {
     p[6]++;
     *(s16 *)(p + 28) = 16;
     func_001E3A10(p);

@@ -10,7 +10,7 @@ extern float D_0043EDB0[];
 extern u32 D_0043ED70[];
 extern u8 D_0043EDF0[];
 
-void residual_00135E40(u8 *p)
+void func_00135E40(u8 *p)
 {
     if (func_0016D130(p) != 0)
         return;

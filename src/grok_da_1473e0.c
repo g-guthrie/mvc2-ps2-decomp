@@ -6,7 +6,7 @@ typedef unsigned int u32;
 extern u8 *D_004C2840;
 extern void func_0012AD00(u8 *);
 
-void residual_001473E0(u8 *p)
+void func_001473E0(u8 *p)
 {
     u8 *g;
     u32 b;

@@ -499,7 +499,7 @@ void func_00245940(u8 *p)
 extern u8 D_004C2A20;
 extern f32 D_00474360[], D_00474364[], D_004743A0[], D_004743A4[];
 
-void residual_003B8DE0(u8 *p)
+void func_003B8DE0(u8 *p)
 {
     extern s32 func_00174170(void);
     p[6]++;

@@ -203,7 +203,7 @@ void func_001C7A80(u8 *p, u8 *q) {
     }
 }
 
-void residual_001C9310(u8 *p) {
+void func_001C9310(u8 *p) {
     p[4]++;
     p[316] = 1;
     p[36] = 0;
@@ -212,7 +212,7 @@ void residual_001C9310(u8 *p) {
     func_001C9360(p);
 }
 
-void residual_001CA730(u8 *p) {
+void func_001CA730(u8 *p) {
     p[5]++;
     p[6] = 1;
     func_001CADB0(p);

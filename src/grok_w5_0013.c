@@ -24,7 +24,7 @@ extern void func_00134040(u8 *, u8 *);
 
 #define S(p, o) (*(s16 *)((u8 *)(p) + (o)))
 
-void residual_001380C0(u8 *p) {
+void func_001380C0(u8 *p) {
     if (D_00583B92[p[0x20]] & (1 << p[0x21])) {
         p[4]++;
     }

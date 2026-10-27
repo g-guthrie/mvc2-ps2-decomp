@@ -109,7 +109,7 @@ s32 func_002B8720(u8 *p) {
     return 1;
 }
 
-void residual_001F69C0(u8 *p) {
+void func_001F69C0(u8 *p) {
     extern s8 func_00175700();
     extern void func_001843A0();
     extern void func_001549B0();

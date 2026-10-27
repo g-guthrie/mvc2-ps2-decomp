@@ -332,7 +332,7 @@ void func_002E6D30(u8 *p) {
     }
 }
 
-void residual_00282D60(u8 *p) {
+void func_00282D60(u8 *p) {
     extern void func_00175700();
     f32 f;
     func_00175700(p);
