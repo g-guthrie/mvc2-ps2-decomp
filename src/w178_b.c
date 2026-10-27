@@ -7,11 +7,11 @@ typedef signed int s32;
 typedef float f32;
 
 void func_00191F90(u8 *p) {
-    extern void func_00192340();
-    extern void func_00192580();
-    extern void func_001926F0();
-    extern void func_001925A0();
-    extern void func_00192090();
+    extern void func_00192340(u8 *);
+    extern void func_00192580(u8 *);
+    extern void func_001926F0(u8 *);
+    extern void func_001925A0(u8 *);
+    extern void func_00192090(u8 *);
     switch (p[1]) {
     case 0x3:
     case 0xC:
@@ -19,26 +19,26 @@ void func_00191F90(u8 *p) {
     case 0x10:
     case 0x14:
     case 0x30:
-        (*(void (**)())(*(u8 **)(p + 0x43C) + 0x54))();
+        (*(void (**)(u8 *))(*(u8 **)(p + 0x43C) + 0x54))(p);
         return;
     case 0xA:
-        func_00192340();
+        func_00192340(p);
         break;
     case 0xF:
     case 0x2E:
     case 0x33:
-        func_00192580();
+        func_00192580(p);
         break;
     case 0x2A:
     case 0x2C:
     case 0x25:
-        func_001926F0();
+        func_001926F0(p);
         break;
     case 0x35:
-        func_001925A0();
+        func_001925A0(p);
         break;
     default:
-        func_00192090();
+        func_00192090(p);
         break;
     }
 }
