@@ -21591,4 +21591,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_offset_effe
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_owner_follow_entry_00380ce0.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/actor_owner_follow_entry_00380ce0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_owner_follow_entry_00380ce0.o" private/SLUS_204.86.rom --source src/actor_owner_follow_entry_00380ce0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/owner_effect_update_00328aa0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_effect_update_00328aa0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_effect_update_00328aa0.o" private/SLUS_204.86.rom --source src/owner_effect_update_00328aa0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
