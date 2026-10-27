@@ -1,3 +1,4 @@
+struct Object;
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
@@ -27,7 +28,7 @@ extern s32 D_004B1D18[];
 extern V3_140110 D_00440920[];
 extern V3_140110 D_00440AD0[];
 extern G_140110 *D_004C2840;
-extern void func_003DAA40(void);
+extern void func_003DAA40(struct Object *);
 
 void func_00140110(O_140110 *p)
 {
@@ -73,7 +74,7 @@ void func_00140110(O_140110 *p)
         p->f7c -= 0.02500000037252903f;
         p->f80 -= 0.02500000037252903f;
         if (D_004C2840->s0a < 0x186) return;
-        func_003DAA40();
+        func_003DAA40((struct Object *)p);
         break;
     }
 }

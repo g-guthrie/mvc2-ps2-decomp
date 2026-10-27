@@ -1,3 +1,4 @@
+struct Object;
 typedef unsigned char u8; typedef signed char s8; typedef unsigned short u16; typedef signed short s16; typedef unsigned int u32; typedef signed int s32; typedef float f32;
 
 extern u8 D_004D1820[];
@@ -106,11 +107,11 @@ s32 func_001AFBE0(S_FBE0 *p) {
 typedef struct { u8 p0[4]; s16 h4, h6; u8 p8[0x14]; s16 h1c; u8 p1e[0x16]; f32 f34; u8 p38[4]; f32 f3c; u8 p40[0x10]; f32 f50, f54, f58; f32 f5c; u8 p60[4]; f32 f64; u8 p68[0x10]; f32 f78, f7c, f80; } S_9CD0;
 extern u8 D_00444EB0[], D_00444EC0[];
 void func_00159CD0(S_9CD0 *p) {
-    extern void func_003DAA40();
+    extern void func_003DAA40(struct Object *);
     extern f32 func_00154710();
     f32 v;
     if (p->h1c >= 0xC) {
-        func_003DAA40();
+        func_003DAA40((struct Object *)p);
         return;
     }
     p->f34 += p->f5c;

@@ -1,3 +1,4 @@
+struct Object;
 #include "action_record.h"
 typedef unsigned char u8;
 typedef signed char s8;
@@ -244,7 +245,7 @@ void func_00351630(u8 *p) {
 }
 
 extern void (*D_0044EEF0[])(u8 *, u8 *);
-extern void func_003DAA40();
+extern void func_003DAA40(struct Object *);
 
 void func_001DF5C0(u8 *p) {
     u8 *q = *(u8 **)(p + 0x18);
@@ -254,7 +255,7 @@ void func_001DF5C0(u8 *p) {
     } else if (st == 2) {
         p[4] = 3;
     } else {
-        func_003DAA40();
+        func_003DAA40((struct Object *)p);
     }
     p[0x24] = *(s8 *)(q + 0x24) + *(s8 *)(p + 0x31);
     if (*(s8 *)(p + 0x24) > 7) {
