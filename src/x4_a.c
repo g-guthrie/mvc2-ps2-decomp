@@ -175,13 +175,13 @@ void func_0031DE00(u8 *p, s32 idx) {
 }
 
 void func_00386D30(u8 *p, u8 *q) {
-    extern void func_00386570();
+    extern void func_00386570(u8 *, u8 *);
     extern s32 func_00174240();
     extern void func_00175700();
     extern void func_001E7F60();
     u8 *r = q + 0x2B8;
     if (*(s8 *)(p + 0x1B3) != 0) {
-        func_00386570(p);
+        func_00386570(p, q);
         return;
     }
     if (func_00174240() == 0) {
