@@ -8,7 +8,7 @@ typedef float f32;
 
 typedef struct { u8 a[0x5B8]; } E;
 extern E D_004F20B0[6];
-extern s8 D_004B5430[4][6];
+extern u8 D_004B5430[4][6];
 extern u8 *D_004C2840;
 extern u8 D_004C27D0;
 
