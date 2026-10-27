@@ -8,7 +8,7 @@ typedef signed int s32;
 extern u8 D_004D1570[], D_004D1370[], D_004F7D30[], D_004F2603[][0x5B8], D_00473B70[], D_004F4484[];
 extern void func_0014E770(u8 *);
 extern void func_00127BB0(u8 *);
-extern void func_00175700(u8 *, u8 *);
+extern int func_00175700(u8 *);
 extern void func_0012F060(void);
 extern float func_00117240(float);
 extern float func_00116FA0(float);
@@ -38,7 +38,7 @@ void func_003B8AB0(u8 *p) {
     if (*(u8 *)(q + 0x1E6) == 0) f = -f;
     *(float *)(p + 0x34) = *(float *)(q + 0x34) + f;
     *(float *)(p + 0x38) = *(float *)(q + 0x38) + *(float *)(r + 8);
-    func_00175700(p, r);
+    func_00175700(p);
 }
 
 void func_003DE720(float x, float *a, float *b) {
