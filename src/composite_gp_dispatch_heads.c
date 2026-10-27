@@ -44,7 +44,7 @@ extern ContextByteCallback const jtbl_004BF7E8[2] __attribute__((section(".sdata
 extern ContextByteCallback const jtbl_004BF7F0[2] __attribute__((section(".sdata")));
 extern DispatchFn jtbl_004BF800[2];
 extern DispatchFn jtbl_004BF810[2];
-extern DispatchFn jtbl_004BF828[2];
+extern DispatchFn const jtbl_004BF828[11] __attribute__((section(".sdata")));
 extern DispatchFn jtbl_004BF830[2];
 extern DispatchFn jtbl_004BF83C[2];
 extern DispatchFn jtbl_004BF840[2];
