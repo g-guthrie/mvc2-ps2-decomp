@@ -19324,3 +19324,4 @@ func_002FBBC0,0x002FBBC0,0xC,src/linked_actor_002fbbc0.c,placeholder
 func_0030A560,0x0030A560,0x28,src/actor_phase_0030a560.c,placeholder
 func_003363D0,0x003363D0,0x20,src/actor_velocity_003363d0.c,placeholder
 func_00179C00,0x00179C00,0x248,src/actor_update_00179c00.c,placeholder
+func_0035D9A0,0x0035D9A0,0x124,src/event_init_0035d9a0.c,placeholder
