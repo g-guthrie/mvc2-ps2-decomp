@@ -307,10 +307,10 @@ void func_002322C0(u8 *p, s32 a1) {
     }
 }
 
-typedef struct { u8 pad0[0x10]; void *cb; u8 pad14[4]; u8 *owner; u8 pad1c[4]; u8 b20; u8 b21; u8 pad22[4]; s16 h26; } ENT;
+typedef struct { u8 pad0[0x10]; void (*cb)(u8 *); u8 pad14[4]; u8 *owner; u8 pad1c[4]; u8 b20; u8 b21; u8 pad22[4]; s16 h26; } ENT;
 void func_00351AE0(u8 *p, u8 q) {
     extern ENT *func_003DA750(s32, s32, s32);
-    extern void func_00351BF0();
+    extern void func_00351BF0(u8 *);
     ENT *o;
     if ((o = func_003DA750(0, 1, 0)) != 0) {
         o->cb = func_00351BF0;
