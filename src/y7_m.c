@@ -6,7 +6,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-s32 func_004000D0(s32 a0) { return a0 + 0x58; }
+extern s32 func_004000D0(s32 a0);
 
 
 extern f32 D_00463A40[];

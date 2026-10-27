@@ -6,7 +6,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-s32 func_004000D0(s32 a0) { return a0 + 0x58; }
+extern s32 func_004000D0(s32 a0);
 
 
 extern struct { u8 pad[0x1C]; u32 f1c; } *D_004C2840;
