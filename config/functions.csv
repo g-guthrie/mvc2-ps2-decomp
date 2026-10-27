@@ -12994,7 +12994,7 @@ func_002EC1F0,0x002EC1F0,0x1C,0x002EC20C,code,matching-c-head-split
 func_002EC210,0x002EC210,0xB4,0x002EC2C4,code,verified-complete-c-function
 func_002EC2D0,0x002EC2D0,0xBC,0x002EC38C,code,spimdisasm-explicit-size-before-first-data
 func_002EC390,0x002EC390,0x1C,0x002EC3AC,code,matching-c-head-split
-residual_002EC3AC,0x002EC3AC,0x34,0x002EC3E0,assembly_residual,native-prefix-before-verified-c-entry
+func_002EC3B0,0x002EC3B0,0x30,0x002EC3E0,code,verified-native-table-entry-boundary
 func_002EC3E0,0x002EC3E0,0xD8,0x002EC4B8,code,verified-complete-c-function
 func_002EC4C0,0x002EC4C0,0x98,0x002EC558,code,spimdisasm-explicit-size-before-first-data
 func_002EC560,0x002EC560,0x24,0x002EC584,code,spimdisasm-explicit-size-before-first-data

@@ -135,7 +135,7 @@ void func_0035A640(u8 *p, u8 *q) {
     func_0035A560(p, q);
 }
 
-void func_002EC2D0(u8 *p) {
+void func_002EC2D0(u8 *p, u8 *context_unused) {
     s8 f;
     if (func_00175700(p) < 0) {
         func_00184540(p);

@@ -35,7 +35,7 @@ void func_00303720(u8 *p, void *context)
 }
 
 extern void func_003A5D90(u8 *, u8, u8);
-void func_002EC180(u8 *p)
+void func_002EC180(u8 *p, u8 *context_unused)
 {
     if ((s8)func_00175700(p) < 0) {
         func_001843A0(p);
