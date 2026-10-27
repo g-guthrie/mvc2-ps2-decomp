@@ -19333,3 +19333,4 @@ func_00180090,0x00180090,0xFC,src/landing_actor_update_00180090.c,placeholder
 func_002BE550,0x002BE550,0xA8,src/target_select_002be550.c,placeholder
 func_0017E0D0,0x0017E0D0,0xDC,src/linked_actor_motion_0017e0d0.c,placeholder
 func_003A7C60,0x003A7C60,0xB0,src/owner_event_init_003a7c60.c,placeholder
+func_00326930,0x00326930,0x100,src/frame_lists_00326930.c,placeholder
