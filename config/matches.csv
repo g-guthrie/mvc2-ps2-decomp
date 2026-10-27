@@ -19345,3 +19345,4 @@ func_0034DF00,0x0034DF00,0x50,src/owner_state_init_0034df00.c,placeholder
 func_0029F130,0x0029F130,0x40,src/owner_dispatch_0029f130.c,placeholder
 func_003037C0,0x003037C0,0x30,src/context_dispatch_003037c0.c,placeholder
 func_001D8DB0,0x001D8DB0,0x3C,src/actor_phase_dispatch_001d8db0.c,placeholder
+func_00358DD0,0x00358DD0,0x54,src/event_dispatch_00358dd0.c,placeholder
