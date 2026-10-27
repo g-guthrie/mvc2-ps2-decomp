@@ -21,14 +21,15 @@ s32 func_00364E20(S_00364E20 *p, f32 lim) {
     return n;
 }
 
-extern s32 func_001E7FD0();
+extern u8 *func_001E7FD0(u8 *);
 typedef struct { u8 p0[0x22]; u8 b22; u8 p1[0x1B7-0x23]; u8 b1B7; u8 p2[0x20B-0x1B8]; u8 b20B; u8 p3[2]; u16 h20E; u8 p4[2]; u8 b212; } S_0025B4C0;
-s32 func_0025B4C0(S_0025B4C0 *p) {
+u8 *func_0025B4C0(u8 *actor) {
+    S_0025B4C0 *p = (S_0025B4C0 *)actor;
     s32 b = (p->h20E & 0xC00) >> 10;
     p->b22 = b;
     if ((u8)b != 0) {
         if (p->b212 == 1 && p->b1B7 == 1) {
-            s32 r = func_001E7FD0();
+            u8 *r = func_001E7FD0(actor);
             if (r != 0) { p->b20B = 2; return r; }
         }
     }

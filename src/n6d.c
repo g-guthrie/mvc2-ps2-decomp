@@ -16,15 +16,15 @@ typedef float f32;
 #define PTR(p, o) (*(u8 **)((u8 *)(p) + (o)))
 
 
-extern s32 func_001E7FD0(void);
-s32 func_0026E8B0(u8 *a0) {
+extern u8 *func_001E7FD0(u8 *);
+u8 *func_0026E8B0(u8 *a0) {
     u8 t = (U16(a0, 0x20E) & 0xC00) >> 10;
-    s32 r;
+    u8 *r;
     U8(a0, 0x22) = t;
     if (t != 0 && U8(a0, 0x212) == 0) {
         if (U8(a0, 0x1B7) == 1) {
             if (!(F32(a0, 0x38) <= 137.14285f)) {
-                r = func_001E7FD0();
+                r = func_001E7FD0(a0);
                 if (r != 0) {
                     U8(a0, 0x20B) = 0;
                     return r;
