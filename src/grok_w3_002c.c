@@ -24,41 +24,9 @@ typedef void (*DispatchFn)(u8 *);
 extern DispatchFn jtbl_00459DA0[];
 extern DispatchFn jtbl_0045A590[];
 
-void func_002C2980(u8 *p)
-{
-    func_00175700(p);
-    if (*(s8 *)(p + 337)) {
-        p[6]++;
-        p[337] = 0;
-        D_004C28D8[2] = 0;
-        func_00398570(p);
-    }
-}
 
-void func_002C2B50(u8 *p)
-{
-    func_00175700(p);
-    if (*(s8 *)(p + 337)) {
-        p[6]++;
-        p[337] = 0;
-        D_004C28D8[2] = 0;
-        func_00398D30(p);
-    }
-}
 
-void func_002C6F60(u8 *p)
-{
-    func_00183D90(p);
-    jtbl_00459DA0[p[6]](p);
-}
 
-void func_002D0900(u8 *p)
-{
-    p[6]++;
-    func_00182C30(*(u8 **)(p + 476), 30);
-    func_00182DB0(p, 3);
-    *(s16 *)(p + 28) = 64;
-}
 
 void func_002C7960(u8 *p)
 {
@@ -70,21 +38,7 @@ void func_002C7960(u8 *p)
     *(f32 *)(p + 56) += *(f32 *)(p + 96);
 }
 
-void func_002D7210(u8 *p)
-{
-    func_00175700(p);
-    if (*(s16 *)(p + 28) == 0)
-        p[5]++;
-    else
-        --*(s16 *)(p + 28);
-}
 
-void func_002D7F10(u8 *p)
-{
-    func_00175700(p);
-    if (--*(s8 *)(p + 698) == 0)
-        func_001843A0(p);
-}
 
 void func_002DB0E0(u8 *p)
 {
