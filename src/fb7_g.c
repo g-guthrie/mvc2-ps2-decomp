@@ -17,6 +17,7 @@ extern P3g D_0043F1C0[];
 extern u8 *D_004C2924;
 extern u8 *D_004C2830;
 
+/* Provisional: helper ABI and dependent data bounds require reconciliation. */
 void func_00136DA0(s32 a) {
     extern u8 *func_003DA750(s32, s32, s32);
     extern void func_001371E0();

@@ -10,6 +10,7 @@ extern void func_0013A5B0(u8 *);
 extern void func_0032DE90(u8 *, s16, float, float);
 extern u32 D_004C2830 __attribute__((section(".sdata")));
 
+/* Provisional: helper ABI and dependent data bounds require reconciliation. */
 void func_0013A4A0(u8 *owner, u8 mode)
 {
     u8 *p;

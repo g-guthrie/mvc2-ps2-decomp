@@ -229,7 +229,7 @@ u32 func_00131870(s16 i) {
 }
 extern u32 D_00583BA0, D_00583BA4, D_00583BA8, D_00583BAC;
 
-void func_00137860(u8 *p, u8 *o1, u32 *o2) {
+void func_00137860(u8 *p, s8 *o1, u32 *o2) {
     if (p[0x21] >= 0x20) {
         *o2 = D_00583BA4 | D_00583BAC;
         *o1 = *(s8 *)(p + 0x21) - 0x20;

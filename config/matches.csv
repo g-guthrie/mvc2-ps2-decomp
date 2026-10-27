@@ -16524,7 +16524,7 @@ func_001E3430,0x001E3430,0xE8,src/grok_bb_1e3430.c,complete
 func_003BF420,0x003BF420,0xDC,src/grok_bd_003BF420.c,complete
 func_003C61F0,0x003C61F0,0xC8,src/grok_bd_003C61F0.c,complete
 func_00134040,0x00134040,0xE0,src/grok_ba_00134040.c,complete
-func_0013A4A0,0x0013A4A0,0x10C,src/grok_ba_0013A4A0.c,complete
+func_0013A4A0,0x0013A4A0,0x10C,src/grok_ba_0013A4A0.c,placeholder
 func_0013D9A0,0x0013D9A0,0xF8,src/grok_ba_0013D9A0.c,complete
 func_00166630,0x00166630,0xDC,src/grok_be_00166630.c,complete
 func_00169AE0,0x00169AE0,0xD4,src/grok_be_00169AE0.c,complete
@@ -18145,7 +18145,7 @@ func_003ACA80,0x003ACA80,0x1AC,src/fb7_b.c,complete
 func_003D6E20,0x003D6E20,0x1D0,src/fb7_c.c,complete
 func_001D40F0,0x001D40F0,0x304,src/fb7_d.c,complete
 func_003AC6F0,0x003AC6F0,0x320,src/fb7_e.c,complete
-func_00136DA0,0x00136DA0,0x398,src/fb7_g.c,complete
+func_00136DA0,0x00136DA0,0x398,src/fb7_g.c,placeholder
 func_0039FAC0,0x0039FAC0,0x15C,src/sa39_a.c,complete
 func_001A2BE0,0x001A2BE0,0x178,src/sa39_b.c,complete
 func_00274730,0x00274730,0x180,src/sa39_c.c,complete
