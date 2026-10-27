@@ -14,6 +14,7 @@ extern u8 D_004F20B0[];
 typedef struct { u8 b0; s8 b1; u8 pad2[0x4DB]; u8 b4DD; u8 pad4DE[0x540 - 0x4DE]; s8 b540; u8 pad541[0x553 - 0x541]; u8 b553; } E;
 #define EL(k) ((E *)(D_004F20B0 + ((s8)p[0x538] + (k)) * 0x5B8))
 
+/* Provisional: the selection bytes belong to the structured data owner. */
 void func_0032AA40(u8 *p) {
     extern s32 func_00417A40(void);
     extern void func_0032E600();
