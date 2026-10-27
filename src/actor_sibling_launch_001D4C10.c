@@ -49,7 +49,7 @@ void func_001D4C10(u8 *p,void *owner) {
 
 extern const u8 D_0044E3E0[];
 extern int func_00175910(u8 *,int,int,int);
-int func_001D4EE0(u8 *p,void *owner) {
+void func_001D4EE0(u8 *p,void *owner) {
  u8 *q=owner;
  *(ActorState *)(p+0xEC)=*(ActorState *)(q+0xEC);
  p[0x13C]=1;
@@ -62,5 +62,5 @@ int func_001D4EE0(u8 *p,void *owner) {
  *(s8 *)(p+0x24)=*(s8 *)(q+0x24);
  p[4]++;p[0x24]=7;
  *(f32 *)(p+0x34)=*(f32 *)(q+0x34);
- return func_00175910(p,23,7,D_0044E3E0[p[0x21]]);
+ func_00175910(p,23,7,D_0044E3E0[p[0x21]]);
 }

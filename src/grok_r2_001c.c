@@ -73,7 +73,8 @@ void func_001CB5A0(u8 *p, int a1, int a2) {
     p[345] = 224;
 }
 
-void func_001D4FB0(u8 *p, u8 *q) {
+void func_001D4FB0(u8 *p, void *context) {
+    u8 *q = context;
     F(p, 52) = F(q, 52);
     F(p, 56) = F(*(u8 **)(p + 8), 56) + F(*(u8 **)(p + 20), 108);
 }

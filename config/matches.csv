@@ -19359,3 +19359,4 @@ func_001C5980,0x001C5980,0x48,src/owner_phase_dispatch_001c5980.c,placeholder
 func_002EC3B0,0x002EC3B0,0x30,src/work_dispatch_002ec3b0.c,placeholder
 func_003B2380,0x003B2380,0x28,src/owner_dispatch_003b2380.c,placeholder
 func_001D4BC0,0x001D4BC0,0x48,src/owner_dispatch_001d4bc0.c,placeholder
+func_001D4E90,0x001D4E90,0x48,src/owner_dispatch_001d4e90.c,placeholder
