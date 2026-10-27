@@ -113,7 +113,7 @@ void func_003B9100(u8 *p) {
 extern void func_003C1530(u8 *);
 extern void func_003C15B0(u8 *, u8 *);
 extern void func_003C15F0(u8 *, u8 *);
-void func_003C19B0(u8 *p, u8 *a) {
+void func_003C19B0(u8 *p, void *a) {
     s16 v;
     func_003C1530(p);
     func_003C15B0(p, a);

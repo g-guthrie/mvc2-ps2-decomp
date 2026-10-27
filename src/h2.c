@@ -174,7 +174,7 @@ void func_002C4D80(u8 *p) {
     }
 }
 
-void func_003C1830(u8 *p, u8 *q) {
+void func_003C1830(u8 *p, void *q) {
     extern void func_003C1530(u8 *);
     extern void func_003C15F0(u8 *, u8 *);
     extern void func_00175700();
@@ -183,7 +183,7 @@ void func_003C1830(u8 *p, u8 *q) {
     func_003C1530(p);
     func_003C15F0(p, q);
     func_00175700();
-    if (*(s8 *)(q + 0x13C) == 0) {
+    if (*((s8 *)q + 0x13C) == 0) {
         u32 t = p[5];
         p[5] = t + 1;
         func_001757E0(p, 0x16, 2);

@@ -173,7 +173,7 @@ static void func_003C15F0(u8 *p, u8 *owner) {
     *(f32 *)(p + 0x34) = (f32)(x + position[1]);
 }
 
-void func_003C1700(u8 *p, u8 *b) {
+void func_003C1700(u8 *p, void *b) {
     s16 *q = (s16 *)(p + 0xD0);
     func_003C1530(p);
     func_003C15B0(p, b);

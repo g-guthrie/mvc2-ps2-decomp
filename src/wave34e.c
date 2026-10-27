@@ -11,7 +11,7 @@ void func_001757E0(u8 *a, s32 b, s32 c);
 void func_003C1530(u8 *a);
 void func_003C15F0(u8 *a, u8 *b);
 void func_003C12D0(u8 *a, s32 b, s32 c);
-void func_003C17A0(u8 *a, u8 *b) {
+void func_003C17A0(u8 *a, void *b) {
     func_003C1530(a);
     func_003C15F0(a, b);
     func_00175700();

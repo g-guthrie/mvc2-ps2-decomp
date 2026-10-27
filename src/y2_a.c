@@ -181,8 +181,9 @@ void func_003C7AC0(u8 *p, u8 *q)
     }
 }
 
-void func_003C1630(u8 *p, u8 *q)
+void func_003C1630(u8 *p, void *context)
 {
+    u8 *q = context;
     extern void (*const jtbl_00475CE0[10])(u8 *, void *);
     u8 *r = (u8 *)((s32)q + 0x2B8);
     if (q[5] != 0) { p[4]++; return; }

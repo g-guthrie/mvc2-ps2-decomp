@@ -147,7 +147,7 @@ end:
     return;
 }
 
-extern void func_003C3A50(u8 *, u8 *);
+extern void func_003C3A50(u8 *, void *);
 extern void (*D_00475CB0[])(u8 *, u8 *);
 
 void func_003C1350(u8 *p) {
