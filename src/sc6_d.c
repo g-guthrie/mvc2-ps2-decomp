@@ -40,8 +40,8 @@ extern void *D_004C25FC;
 
 void func_0012ADE0(void)
 {
-    extern u32 func_0012ABC0(s32, s32);
-    extern u8 func_0012ABA0(s32, s32, s32);
+    extern u16 func_0012ABC0(s32, s32);
+    extern s32 func_0012ABA0(s32, s32, s32);
     extern void func_003DA410();
     extern void func_00146C80(s32);
     extern void func_00146BF0();
@@ -81,7 +81,7 @@ void func_0012ADE0(void)
 
     r = func_003299D0();
     if (r != 0) return;
-    if (r == 0) s0 = func_0012ABC0(3, 0) & 0xFFFF;
+    if (r == 0) s0 = func_0012ABC0(3, 0);
     switch ((g = D_004C2840)->b3) {
     case 0:
         func_003D6D50();
