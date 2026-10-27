@@ -4,7 +4,10 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef float f32;
 typedef struct { f32 x,y,z; } V3;
-typedef struct { u32 words[49]; } Payload;
+
+#include "actor_inherited_state.h"
+typedef ActorState Payload;
+
 typedef struct { u8 gap0[0x34]; V3 position; u8 gap40[0x1C]; f32 velocityX; u8 gap60[8]; f32 accelerationX; } MotionView;
 extern void func_001757E0(u8 *,int,int);
 /* The 00194170 event head supplies the owner in a1; its inner dispatchers preserve it. */

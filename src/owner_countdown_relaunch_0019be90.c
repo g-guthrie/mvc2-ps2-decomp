@@ -3,7 +3,10 @@ typedef unsigned char u8;
 typedef signed char s8;
 typedef short s16;
 typedef unsigned int u32;
-typedef struct {u32 words[49];} Fields;
+
+#include "actor_inherited_state.h"
+typedef ActorState Fields;
+
 typedef struct {float x,y,z;} V3;
 /* Native constructor creates slots 0..8. Slot 8 reads the low
  * halfword of the first neighboring velocity value. */

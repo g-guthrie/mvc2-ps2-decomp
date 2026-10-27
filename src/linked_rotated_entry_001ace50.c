@@ -12,7 +12,10 @@ extern int func_001757E0(u8 *,int,int);
 typedef struct {u8 pad0,kind,team,pad3,phase,pad5[0x1B],choice,savedFacing,pad22[2];s8 layer;u8 pad25[0xB];s8 group;u8 pad31[3];V3 position;u8 pad40[8];u32 angle;u8 pad4C[4];V3 scale;f32 vx,vy,vz,ax,ay;u8 pad70[0xCC],visible,pad13D[3];short facing;u8 pad142[0x75],mode,variant;} Actor;
 typedef signed short s16;
 typedef struct {s16 x,y;s8 layer;u8 animation;} AttachmentRow;
-typedef struct {s32 word[49];} State;
+
+#include "actor_inherited_state.h"
+typedef ActorState State;
+
 extern AttachmentRow D_0044B900[];
 extern f32 func_00417500(u32),func_00417440(u32);
 extern int func_001754A0(u8 *,int,int);

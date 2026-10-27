@@ -5,7 +5,10 @@ typedef signed int s32;
 typedef unsigned int u32;
 typedef float f32;
 typedef struct { f32 x,y,z; } V3;
-typedef struct { u32 words[49]; } Payload;
+
+#include "actor_inherited_state.h"
+typedef ActorState Payload;
+
 extern int func_001754A0(u8*,int,int);
 extern void func_001BB020(u8*,u8*);
 void func_001BAEE0(u8*p,u8*q){p[4]=1;p[0x13c]=1;

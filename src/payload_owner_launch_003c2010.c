@@ -7,7 +7,10 @@ typedef signed int s32;
 typedef float f32;
 
 typedef struct { f32 x, y, z; } V3;
-typedef struct { u32 words[49]; } Payload;
+
+#include "actor_inherited_state.h"
+typedef ActorState Payload;
+
 #pragma padloop on
 
 typedef struct { u8 prefix[0x7C]; s16 count[2]; } GameState;

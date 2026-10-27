@@ -3,7 +3,10 @@ typedef signed char s8;
 typedef unsigned short u16;
 typedef signed short s16;
 typedef unsigned int u32;
-typedef struct {u32 words[49];} Payload;
+
+#include "actor_inherited_state.h"
+typedef ActorState Payload;
+
 typedef struct {float x,y,z;} Vec3;
 typedef struct {s16 x,y;s8 pose;u8 animation;} Placement;
 extern Placement D_0044C290[26];

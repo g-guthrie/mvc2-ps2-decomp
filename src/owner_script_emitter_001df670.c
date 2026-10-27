@@ -11,7 +11,10 @@ typedef struct { f32 x, y, z; } V3;
 extern int func_001757E0(u8 *,int,int);
 typedef struct {u8 pad0[4],phase,pad5[0x17];short timer;unsigned short remaining;u8 choice,savedFacing,pad22[2];s8 layer;u8 pad25[0xB];s8 group;u8 pad31[3];V3 position;u8 pad40[0x10];V3 scale;f32 vx,vy,vz,ax,ay;u8 pad70[0xCC],visible,pad13D[3];short facing;u8 pad142[0x75],mode,variant;} Actor;
 typedef unsigned short u16;
-typedef struct {s32 word[49];} State;
+
+#include "actor_inherited_state.h"
+typedef ActorState State;
+
 extern u16 D_0044EEA0[];
 extern u8 *func_001DF540(u8 *,s32);
 extern void func_003DAA40(u8 *);

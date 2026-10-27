@@ -4,7 +4,10 @@ typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned int u32;
 typedef short s16;
-typedef struct {u32 words[49];} Fields;
+
+#include "actor_inherited_state.h"
+typedef ActorState Fields;
+
 typedef struct {float x,y,z;} V3;
 typedef struct {u8 prefix[0x5C];float vx;} Motion;
 extern float D_004F1FC8,D_004F1FCC;

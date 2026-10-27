@@ -3,7 +3,10 @@ typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
 typedef unsigned int u32;
-typedef struct {u32 words[49];} Fields;
+
+#include "actor_inherited_state.h"
+typedef ActorState Fields;
+
 typedef struct {float x,y,z;} V3;
 extern u8 D_004648D0[];
 extern void func_00386EC0(u8*,u32),func_00386740(u8*);

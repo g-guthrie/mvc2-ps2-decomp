@@ -8,7 +8,10 @@ typedef struct { f32 x, y, z; } V3;
 
 extern int func_001754A0(u8 *, int, int);
 
-typedef struct { u32 words[49]; } Payload;
+
+#include "actor_inherited_state.h"
+typedef ActorState Payload;
+
 #pragma padloop on
 void func_001BA8A0(u8 *p, u8 *q)
 {

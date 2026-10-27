@@ -12,7 +12,10 @@ typedef struct {u8 pad0[4],phase,pad5[0x1B],choice,entryIndex,pad22[2];s8 layer;
 typedef signed short s16;
 extern int func_001754A0(u8 *,int,int);
 extern f32 D_0044BAD0[];
-typedef struct {s32 word[49];} State;
+
+#include "actor_inherited_state.h"
+typedef ActorState State;
+
 extern int func_00174170(void);
 extern void func_00175580(u8 *,s32,s32,s32);
 void func_001AD2C0(u8 *actor)
