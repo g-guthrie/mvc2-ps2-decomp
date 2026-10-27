@@ -10,7 +10,7 @@ typedef struct Event {
     u8 field0;
     u8 field1;
     u8 pad02[14];
-    void *callback;
+    void (*callback)(u8 *);
     u8 pad14[4];
     void *arg;
     u8 pad1c[4];
@@ -24,33 +24,33 @@ typedef struct Event {
 
 extern Event *func_003DA750(int, int, int);
 
-extern void func_001AD260(void);
-extern void func_001B7CD0(void);
+extern void func_001AD260(u8 *);
+extern void func_001B7CD0(u8 *);
 extern void func_001B8260(u8 *);
 extern void func_001B8840(u8 *);
-extern void func_001C8D40(void);
-extern void func_001CBE90(void);
-extern void func_001D1000(void);
-extern void func_001A3250(void);
-extern void func_001D56F0(void);
-extern void func_001D8B30(void);
-extern void func_001D9260(void);
-extern void func_001D9E00(void);
-extern void func_001DD9A0(void);
-extern void func_001E07C0(void);
-extern void func_00347280(void);
+extern void func_001C8D40(u8 *);
+extern void func_001CBE90(u8 *);
+extern void func_001D1000(u8 *);
+extern void func_001A3250(u8 *);
+extern void func_001D56F0(u8 *);
+extern void func_001D8B30(u8 *);
+extern void func_001D9260(u8 *);
+extern void func_001D9E00(u8 *);
+extern void func_001DD9A0(u8 *);
+extern void func_001E07C0(u8 *);
+extern void func_00347280(u8 *);
 extern void func_00368000(u8 *);
 extern void func_00378D30(u8 *event);
-extern void func_00383C90(void);
-extern void func_00390D00(void);
-extern void func_003947F0(void);
-extern void func_00395A00(void);
-extern void func_003605B0(void);
-extern void func_00360A00(void);
-extern void func_00361180(void);
-extern void func_003619C0(void);
-extern void func_003A6E40(void);
-extern void func_003B3970(void);
+extern void func_00383C90(u8 *);
+extern void func_00390D00(u8 *);
+extern void func_003947F0(u8 *);
+extern void func_00395A00(u8 *);
+extern void func_003605B0(u8 *);
+extern void func_00360A00(u8 *);
+extern void func_00361180(u8 *);
+extern void func_003619C0(u8 *);
+extern void func_003A6E40(u8 *);
+extern void func_003B3970(u8 *);
 
 void func_001B7C70(void *arg, u8 mode) {
     Event *event = func_003DA750(0, 3, 0);

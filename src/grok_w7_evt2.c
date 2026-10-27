@@ -7,7 +7,7 @@ typedef struct Event {
     u8 field0;
     u8 field1;
     u8 pad02[14];
-    void *callback;
+    void (*callback)(u8 *);
     u8 pad14[4];
     void *arg;
     u8 pad1c[4];
@@ -21,29 +21,29 @@ typedef struct Event {
 
 extern Event *func_003DA750(int, int, int);
 
-extern void func_00329100(void);
-extern void func_00329750(void);
-extern void func_00387380(void);
-extern void func_00387C90(void);
-extern void func_003A8B70(void);
-extern void func_001C8B70(void);
-extern void func_00329810(void);
+extern void func_00329100(u8 *);
+extern void func_00329750(u8 *);
+extern void func_00387380(u8 *);
+extern void func_00387C90(u8 *);
+extern void func_003A8B70(u8 *);
+extern void func_001C8B70(u8 *);
+extern void func_00329810(u8 *);
 extern void func_003289F0(u8 *);
-extern void func_00328C70(void);
-extern void func_00328EC0(void);
-extern void func_00329510(void);
-extern void func_001E0AC0(void);
-extern void func_0019BAD0(void);
-extern void func_001BF460(void);
-extern void func_0019B170(void);
-extern void func_003A08F0(void);
-extern void func_003A12E0(void);
-extern void func_00194170(void);
+extern void func_00328C70(u8 *);
+extern void func_00328EC0(u8 *);
+extern void func_00329510(u8 *);
+extern void func_001E0AC0(u8 *);
+extern void func_0019BAD0(u8 *);
+extern void func_001BF460(u8 *);
+extern void func_0019B170(u8 *);
+extern void func_003A08F0(u8 *);
+extern void func_003A12E0(u8 *);
+extern void func_00194170(u8 *);
 extern void func_001CAF00(u8 *);
-extern void func_00346820(void);
-extern void func_00346AC0(void);
-extern void func_00390D00(void);
-extern void func_003B6AA0(void);
+extern void func_00346820(u8 *);
+extern void func_00346AC0(u8 *);
+extern void func_00390D00(u8 *);
+extern void func_003B6AA0(u8 *);
 
 void func_003290B0(void *arg) {
     Event *event = func_003DA750(0, 12, 1);
