@@ -18,7 +18,7 @@ void func_00361880(u8 *a, u8 *b) {
     *(f32 *)(a + 0x50) = 1.2f;
 }
 
-extern void func_00185770();
+extern void func_00185770(u8 *, u8 *);
 extern void func_00186A60();
 
 void func_002FA2C0(u8 *a, u8 *b) {
@@ -28,7 +28,7 @@ void func_002FA2C0(u8 *a, u8 *b) {
     a[0x20B] = 4;
     a[0x20B] |= 0x40;
     a[0x20B] |= 0x80;
-    func_00185770(a);
+    func_00185770(a, b);
     a[0x1FD] = 4;
     func_00186A60(a, 0x1D);
     b[6] = 0;
