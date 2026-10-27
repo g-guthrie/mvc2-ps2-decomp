@@ -21848,4 +21848,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/script_mask_update_00168690.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/script_mask_update_00168690.o"
 "$PYTHON" tools/verify_object.py "$BUILD/script_mask_update_00168690.o" private/SLUS_204.86.rom --source src/script_mask_update_00168690.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/menu_callback_invoke_00129080.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/menu_callback_invoke_00129080.o"
+"$PYTHON" tools/verify_object.py "$BUILD/menu_callback_invoke_00129080.o" private/SLUS_204.86.rom --source src/menu_callback_invoke_00129080.c
 PYTHON="$PYTHON" tools/compile_matching_data.sh

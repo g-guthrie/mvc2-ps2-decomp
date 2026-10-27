@@ -19372,3 +19372,4 @@ func_0041A4C0,0x0041A4C0,0x1D4,src/effect_particle_init_0041a4c0.c,placeholder
 func_001338F0,0x001338F0,0x58,src/actor_owner_state_001338f0.c,placeholder
 func_0016F2D0,0x0016F2D0,0xEC,src/actor_resource_setup_0016f2d0.c,placeholder
 func_00168690,0x00168690,0xF0,src/script_mask_update_00168690.c,placeholder
+func_00129080,0x00129080,0x1C,src/menu_callback_invoke_00129080.c,placeholder

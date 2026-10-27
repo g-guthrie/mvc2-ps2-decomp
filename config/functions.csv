@@ -802,7 +802,8 @@ func_00128AE0,0x00128AE0,0x1B4,0x00128C94,code,spimdisasm-explicit-size-before-f
 func_00128CA0,0x00128CA0,0x30,0x00128CD0,code,spimdisasm-explicit-size-before-first-data
 func_00128CD0,0x00128CD0,0x390,0x00129060,code,spimdisasm-explicit-size-before-first-data
 func_00129060,0x00129060,0x18,0x00129078,code,spimdisasm-explicit-size-before-first-data
-residual_00129080,0x00129080,0x20,0x001290A0,assembly_residual,native-prefix-before-verified-c-body
+func_00129080,0x00129080,0x1C,0x0012909C,code,verified-native-function-boundary
+residual_0012909C,0x0012909C,0x4,0x001290A0,assembly_residual,native-padding-after-verified-c-entry
 func_001290A0,0x001290A0,0x68,0x00129108,code,verified-complete-c-function
 func_00129110,0x00129110,0x2C,0x0012913C,code,spimdisasm-explicit-size-before-first-data
 func_00129140,0x00129140,0x388,0x001294C8,code,spimdisasm-explicit-size-before-first-data
