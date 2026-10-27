@@ -109,7 +109,7 @@ void *func_00399240(u8 *a0, s32 a1, s32 a2) {
 extern s32 func_001341B0();
 extern s32 func_00134230();
 extern s32 func_001342D0();
-extern s32 func_00134370();
+extern s32 func_00134370(u8 *, u8 *);
 extern s32 func_001343E0();
 
 void func_00133B20(u8 *p, u8 *b) {

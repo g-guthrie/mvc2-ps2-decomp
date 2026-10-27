@@ -251,8 +251,8 @@ void func_0027F760(u8 *a) {
 }
 
 extern u8 D_004D18A0;
-extern void func_001E3CE0();
-s32 func_00134370(u8 *a) {
+extern void func_001E3CE0(int);
+s32 func_00134370(u8 *a, u8 *owner_unused) {
     if (D_004D18A0 != 4) return 1;
     if (!a[0x14F]) return 1;
     a[0x14F] = 0;

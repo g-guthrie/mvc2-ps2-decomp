@@ -9,10 +9,10 @@ typedef float f32;
 extern u8 D_004B1130[];
 extern u8 D_0043E3D0[];
 
-void func_001347D0(u8 *p) {
+void func_001347D0(u8 *p, u8 *owner_unused) {
     extern void func_0011F938();
     s8 buf[4];
-    volatile u8 *d;
+    u8 *d;
     s32 i;
     func_0011F938(buf, D_004B1130, *(s16 *)(p + 0x13E));
     d = p + 0x1B0;

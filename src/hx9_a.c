@@ -9,7 +9,7 @@ typedef struct { u8 pad[0x18]; s8 b18; u8 pad2[0x10]; s8 b29; } G2840;
 extern G2840 *D_004C2840;
 extern u8 D_0043E8E0[];
 
-/* Provisional: the reset helper call still uses a mismatched signature. */
+/* Provisional: the check and sound helper declarations remain mismatched. */
 void func_00133CE0(u8 *p, u8 *q)
 {
     extern void func_001347D0(u8 *, u8 *);
