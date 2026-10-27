@@ -10,7 +10,7 @@ extern void *D_004C2818;
 extern char D_0014C3D0[];
 extern char D_00148DE0[];
 extern char D_001444C0[];
-extern char D_00141130[];
+extern void func_00141130(u8 *);
 extern u8 D_004D17CA[];
 extern void (*D_00442570[])(u8 *);
 
@@ -105,7 +105,7 @@ void func_001410D0(void) {
     u8 *p = func_003DA750(0, 13, 1);
     if (p) {
         p[316] = 1;
-        *(char **)(p + 16) = D_00141130;
+        *(void (**)(u8 *))(p + 16) = func_00141130;
         *(s16 *)(p + 204) = 9;
         *(void **)(p + 132) = D_004C2818;
         *(s32 *)(p + 208) = 0x800C00;
