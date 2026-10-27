@@ -2571,7 +2571,7 @@ func_002EB310,0x002EB310,0x1c,src/composite_gp_dispatch_heads.c,complete
 func_002EB5B0,0x002EB5B0,0x3c,src/signed_result_handlers.c,complete
 func_002EB5F0,0x002EB5F0,0x20,src/composite_dispatch_heads.c,complete
 func_002EB810,0x002EB810,0x3c,src/signed_result_handlers.c,complete
-func_002EB850,0x002EB850,0x20,src/composite_dispatch_heads.c,complete
+func_002EB850,0x002EB850,0x20,src/composite_dispatch_heads.c,placeholder
 func_002EBAE0,0x002EBAE0,0x20,src/indirect_dispatch.c,complete
 func_002EBD90,0x002EBD90,0x3c,src/signed_result_handlers.c,complete
 func_002EBDD0,0x002EBDD0,0x20,src/composite_dispatch_heads.c,complete
@@ -17182,7 +17182,7 @@ func_001934B0,0x001934B0,0x28,src/grok_jr_1934b0.c,complete
 func_00194170,0x00194170,0x28,src/grok_jr_194170.c,complete
 func_001981E0,0x001981E0,0x2C,src/grok_jr_1981e0.c,complete
 func_0019DFD0,0x0019DFD0,0x30,src/grok_jr_19dfd0.c,complete
-func_002EBB50,0x002EBB50,0x30,src/grok_jr_2ebb50.c,complete
+func_002EBB50,0x002EBB50,0x30,src/grok_jr_2ebb50.c,placeholder
 func_00348520,0x00348520,0x2C,src/grok_ke_348520.c,complete
 func_00348F20,0x00348F20,0x2C,src/grok_ke_348f20.c,complete
 func_00346820,0x00346820,0x30,src/grok_ke_346820.c,complete
