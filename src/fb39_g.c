@@ -7,7 +7,8 @@ typedef signed int s32;
 typedef float f32;
 
 typedef struct { u8 pad[0x7C]; s16 f7c[1]; } G39;
-typedef struct { s32 x[49]; } S49;
+#include "actor_inherited_state.h"
+typedef ActorState S49;
 typedef struct { f32 x, y, z; } V3;
 extern G39 *D_004C2794;
 

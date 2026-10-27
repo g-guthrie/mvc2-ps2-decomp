@@ -58,7 +58,8 @@ void func_00229670(u8 *p) {
     func_001757E0(p, 0x16, 2);
 }
 
-typedef struct { s32 w[49]; } S49;
+#include "actor_inherited_state.h"
+typedef ActorState S49;
 
 void func_001BB140(u8 *p, u8 *q) {
     extern void func_001754A0(u8 *, s32, s32);

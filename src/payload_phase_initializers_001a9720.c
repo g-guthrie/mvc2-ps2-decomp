@@ -5,7 +5,8 @@ typedef signed int s32;
 typedef unsigned int u32;
 typedef float f32;
 typedef struct { f32 x,y,z; } V3;
-typedef struct { u32 words[49]; } Payload;
+#include "actor_inherited_state.h"
+typedef ActorState Payload;
 extern u8 *D_004C2840;
 extern int func_001757E0(u8*,int,int);
 extern void func_0015E630(u8*);
