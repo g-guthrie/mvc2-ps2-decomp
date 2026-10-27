@@ -27,9 +27,9 @@ void func_00344180(u8 *p)
     extern s32 func_00417A40(void);
     extern void func_00343A60(V3 *, s32);
     extern void func_001E3710(u8 *, s32);
-    extern void func_00343E80(s32 *, s32 *, s32);
+    extern void func_00343E80(f32 *, f32 *, s32);
     s32 i;
-    s32 o1, o2;
+    f32 o1, o2;
     V3 v;
 
     switch (p[4]) {
