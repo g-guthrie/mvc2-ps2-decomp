@@ -1335,7 +1335,7 @@ void func_003BD830(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Obje
 
 void func_003BEF00(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
-void func_003BF690(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_003BF690(u8 *p, void *owner_unused) { func_003DAA40((struct Object *)p); }
 
 void func_003BFC80(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
