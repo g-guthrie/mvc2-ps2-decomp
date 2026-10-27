@@ -300,7 +300,7 @@ void func_003C18B0(u8 *p, void *q) {
     }
 }
 
-extern void func_003C12D0(u8 *, s32, s32);
+extern void func_003C12D0(u8 *, u32, u32);
 void func_003C17A0(u8 *a, void *b) {
     func_003C1530(a);
     func_003C15F0(a, b);

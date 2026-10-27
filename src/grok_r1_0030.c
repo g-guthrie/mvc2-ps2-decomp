@@ -20,7 +20,7 @@ extern void func_00359BD0(u8 *);
 extern void func_00359C20(u8 *);
 extern void func_0036EB40(u8 *);
 extern void func_003DAA40(u8 *);
-extern void func_003C1250(u8 *, int, int);
+extern void func_003C1250(u8 *, u8, u8);
 
 typedef unsigned int u32;
 extern f32 D_0045CE50[];
