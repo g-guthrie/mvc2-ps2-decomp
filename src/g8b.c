@@ -108,12 +108,12 @@ void func_0025B760(u8 *p) {
     func_001757E0(p, 0xF, 3);
 }
 
-extern s32 func_00175700();
+extern int func_00175700(u8 *);
 extern void func_00175C00();
 extern void func_00183920();
 void func_002F1100(u8 *p) {
     f32 v[3];
-    func_00175700();
+    func_00175700(p);
     if (*(s8 *)(p + 0x151) != 0) {
         u32 t = p[6];
         p[6] = t + 1;
@@ -125,10 +125,10 @@ void func_002F1100(u8 *p) {
     }
 }
 
-extern s32 func_00175700();
+extern int func_00175700(u8 *);
 extern void func_0022C5D0();
 void func_002270E0(u8 *p) {
-    if ((s8)func_00175700() < 0) {
+    if ((s8)func_00175700(p) < 0) {
         func_0022C5D0(p);
     } else if (*(s8 *)(p + 0x151) != 0) {
         f32 d;

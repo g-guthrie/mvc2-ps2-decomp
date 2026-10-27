@@ -34,7 +34,7 @@ u8 *func_0034B5A0(u8 *a, s32 b) {
 }
 
 void func_0039F650(u8 *a) {
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001E7F60();
     if (a[1] != (*(u8 **)(a + 0x18))[1]) {
         a[4]++;
@@ -49,7 +49,7 @@ void func_0039F650(u8 *a) {
         }
     } else {
         a[0x13C] = 1;
-        if (*(s8 *)(a + 0x1B3) != 0 || func_00175700() < 0) {
+        if (*(s8 *)(a + 0x1B3) != 0 || (s8)func_00175700(a) < 0) {
             a[4]++;
             a[0x13C] = 0;
         } else {

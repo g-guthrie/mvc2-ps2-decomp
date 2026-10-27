@@ -27,7 +27,7 @@ void func_00329050(u8 *p, u8 *q) {
     func_003DAA40(p);
 }
 
-extern s32 func_00175700();
+extern int func_00175700(u8 *);
 extern void func_003DBAF0(u8 *, s32, s32, s32);
 
 void func_00349C30(u8 *p,u8 *context) {
@@ -58,7 +58,7 @@ extern void func_001757E0();
 void func_00325960(u8 *p) {
     p[0x40C] = 2;
     p[0x33C] = 5;
-    func_00175700();
+    func_00175700(p);
     {
         s16 v = *(s16 *)(p + 0x1C) - 1;
         *(s16 *)(p + 0x1C) = v;
@@ -150,7 +150,7 @@ void func_002D7E00(u8 *p) {
 extern void func_003A5000();
 void func_003A53E0(u8 *p, u8 *q) {
     s32 v;
-    func_00175700();
+    func_00175700(p);
     *(s16 *)(p + 0x1C) = *(s16 *)(p + 0x1C) + 1;
     v = *(s16 *)(p + 0x1C);
     func_003A5000(p, 1, v & 1, v & 3);
