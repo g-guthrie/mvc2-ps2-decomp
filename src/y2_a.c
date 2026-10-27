@@ -183,12 +183,12 @@ void func_003C7AC0(u8 *p, u8 *q)
 
 void func_003C1630(u8 *p, u8 *q)
 {
-    extern void (*D_00475CF0[])(u8 *, u8 *);
+    extern void (*const jtbl_00475CE0[10])(u8 *, void *);
     u8 *r = (u8 *)((s32)q + 0x2B8);
     if (q[5] != 0) { p[4]++; return; }
     if (q[0x169] != 0x16) { p[4]++; return; }
     if (r[0xE] != 0) p[0x13C] = 0;
-    D_00475CF0[p[5]](p, q);
+    jtbl_00475CE0[p[5] + 4](p, q);
     *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24) + *(s8 *)(p + 0x31);
     if (*(s8 *)(p + 0x24) > 7) *(s8 *)(p + 0x24) = 7;
     if (*(s8 *)(p + 0x24) < 0) *(s8 *)(p + 0x24) = 0;
