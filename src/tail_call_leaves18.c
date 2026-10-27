@@ -2,12 +2,13 @@ typedef unsigned char u8;
 typedef signed short s16;
 typedef signed int s32;
 
-extern void func_003DAA40();
+struct Object;
+extern void func_003DAA40(struct Object *);
 extern void func_003928C0(u8 *);
 extern void func_00394770(u8 *);
 extern int func_001757E0(u8 *, int, int);
 
-void func_0037D920(void *p, u8 *q) { q[517] = 0; func_003DAA40(p, q); }
+void func_0037D920(void *p, u8 *q) { q[517] = 0; func_003DAA40((struct Object *)p); }
 
 void func_003928B0(u8 *p) { p[4] = 3; p[316] = 0; func_003928C0(p); }
 
