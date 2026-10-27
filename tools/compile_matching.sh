@@ -21606,4 +21606,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_scale_dispa
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/owner_timer_state_0035cfa0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_timer_state_0035cfa0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/owner_timer_state_0035cfa0.o" private/SLUS_204.86.rom --source src/owner_timer_state_0035cfa0.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/owner_state_001980d0.c -c -lang c -O3,p -sdatathreshold 0 -o "$BUILD/owner_state_001980d0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_state_001980d0.o" private/SLUS_204.86.rom --source src/owner_state_001980d0.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

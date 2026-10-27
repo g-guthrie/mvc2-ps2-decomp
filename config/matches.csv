@@ -19297,3 +19297,4 @@ func_003DC120,0x003DC120,0x64,src/packet_initializer_003dc120.c,complete
 func_00150830,0x00150830,0x94,src/sort_probability_entries_00150830.c,complete
 func_0013ED10,0x0013ED10,0x74,src/actor_scale_dispatch_0013ed10.c,complete
 lbl_0035CFA0,0x0035CFA0,0x34,src/owner_timer_state_0035cfa0.c,complete
+lbl_001980D0,0x001980D0,0x14,src/owner_state_001980d0.c,complete
