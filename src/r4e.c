@@ -39,20 +39,20 @@ void func_0040D848(RuntimeEntrySlot *p) {
 
 /* 004062F8 */
 extern void func_00405DC8(void *);
-extern s32 func_0011FFA0(void);
-extern void func_004061C0(s32);
+extern s32 func_0011FFA0(char *);
+extern void func_004061C0(u8 *);
 extern s32 func_004063B0(s32, s32);
-extern void func_0011D740(void *, s32, s32);
+extern void func_0011D740(void *, const void *, s32);
 extern u8 D_004BC950[], D_004BC978[];
 extern s8 D_0062FD48[];
-void func_004062F8(s32 a) {
+void func_004062F8(void *a) {
   s32 n;
   if (a == 0) { func_00405DC8(D_004BC950); return; }
-  n = func_0011FFA0();
+  n = func_0011FFA0((char *)a);
   if (n == 0) D_0062FD48[0] = 0;
   else {
-    func_004061C0(a);
-    if (func_004063B0(a, n) == 1) { func_0011D740(D_0062FD48, a, n + 1); return; }
+    func_004061C0((u8 *)a);
+    if (func_004063B0((s32)a, n) == 1) { func_0011D740(D_0062FD48, a, n + 1); return; }
     func_00405DC8(D_004BC978);
   }
 }
