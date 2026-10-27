@@ -1,5 +1,7 @@
-extern int D_004C2B10[2];
-void func_00411898(int a, int b) { D_004C2B10[0] = a; D_004C2B10[1] = b; }
+typedef void (*RuntimeSlotCallback)(void *);
+struct RuntimeSlotPair { RuntimeSlotCallback callback; void *context; };
+extern struct RuntimeSlotPair D_004C2B10;
+void func_00411898(RuntimeSlotCallback callback, void *context) { D_004C2B10.callback = callback; D_004C2B10.context = context; }
 extern int D_004C2B20[2];
 extern void func_00411288(void);
 extern void func_004112B0(void);

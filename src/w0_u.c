@@ -14,7 +14,7 @@ extern s32 D_004C239C;
 extern P D_0047D0E0;
 void func_003FE5D8(P *a) {
     extern s32 func_00411B98();
-    extern void func_00411898();
+    extern void func_00411898(void (*)(void *), void *);
     extern void func_004118A8();
     extern s32 func_00103CD0();
     extern s32 func_00103CE0();

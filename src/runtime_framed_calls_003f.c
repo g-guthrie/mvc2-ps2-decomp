@@ -85,7 +85,7 @@ extern void func_003FE860(void);
 extern void func_003FE8D0(void);
 extern void func_003FE940(void);
 extern void func_00103C70(s32, s32);
-extern void func_00411898(s32, s32);
+extern void func_00411898(void (*)(void *), void *);
 extern s32 func_004118A8(s32, s32);
 extern void func_00411BC8(void);
 void func_003FEEA8(void)
