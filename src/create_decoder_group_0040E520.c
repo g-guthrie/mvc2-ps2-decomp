@@ -6,7 +6,8 @@ typedef signed int s32;
 typedef struct Input Input;
 typedef struct {u8 pad[0x24];s32 (*size)(Input *,s32);} InputVtable;
 struct Input {InputVtable *vtable;};
-typedef struct {s8 active;u8 pad[3];s32 id,value;u8 rest[12];} Resource;
+typedef struct {s8 used;u8 pad_01[3];void *resource;void *interface;void *stream;unsigned int streamOffset,streamSize;} Resource;
+typedef struct RuntimeBinding RuntimeBinding;
 typedef struct {
  s8 active;u8 pad[3];s32 count;Resource *resources[2];void *bindings[2];Input *inputs[2];s32 remote;
  u8 flags24[4];s32 field28,field2C,field30,field34; s32 offsets[2],counts[2];u8 flag48,flag49,flag4A,flag4B;s32 field4C,total,maximum;
@@ -15,7 +16,7 @@ extern DecoderGroup D_0048FD38[8];
 extern void *func_0011D8F8(void *,s32,unsigned int);
 extern Resource *func_0040DF28(void);
 extern void func_0040DFA0(Resource *);
-extern void *func_00408DB0(Input *,s32);
+extern RuntimeBinding *func_00408DB0(void *,void *);
 extern void func_00408EA0(void *);
 extern s32 func_00409708(s32,s32 *,s32,s32 *,s32);
 extern s32 func_0011EB60(const char *,...);
@@ -35,11 +36,11 @@ void *func_0040E520(Input **inputs,s32 count){
   }
  }
  args[0]=count;args[1]=0;
- for(i=0;i<count;i++)args[i+2]=p->resources[i]->id;
+ for(i=0;i<count;i++)args[i+2]=(s32)p->resources[i]->resource;
  p->remote=func_00409708(8,args,4,&response,1);
  if(!p->remote){func_0011EB60(D_004BE7A0);return 0;}
  for(i=0;i<count;i++){
-  p->bindings[i]=func_00408DB0(inputs[i],p->resources[i]->value);
+  p->bindings[i]=func_00408DB0(inputs[i],p->resources[i]->interface);
   if(!p->bindings[i]){s32 j;
    func_0011EB60(D_004BE7C8);
    for(j=0;j<count;j++){
