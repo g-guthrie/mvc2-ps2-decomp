@@ -42,14 +42,14 @@ typedef struct VO { VT *vt; } VO;
 typedef struct { s8 a; s8 b1; s8 b2; s8 pad; StreamGroup *w4; s32 w8; s32 wc; s32 w10; VO *obj; s32 w18; } R2;
 extern void func_003F9630(R2 *);
 extern void func_003F9660(void);
-extern void func_003FF148(s32, s32);
+extern void func_003FF148(s8 *, s32);
 extern void func_003FF160(s32, s32);
 extern void func_0040EA00(s32, s32);
 extern void func_003FF658(StreamGroup *);
 void func_004017E0(void *owner) {
     R2 *p = owner;
     func_003F9630(p);
-    func_003FF148(p->wc, 0);
+    func_003FF148((s8 *)p->wc, 0);
     func_003FF160(p->wc, 0);
     func_0040EA00(p->wc, 1);
     func_003FF658(p->w4);

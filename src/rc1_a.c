@@ -65,7 +65,7 @@ void func_004035D8(C43 *p)
     extern s32 func_003FFF60(s32);
     extern s32 func_004000D0(s32);
     extern void func_003FF338(s32, s32);
-    extern void func_003FF148(s32, s32);
+    extern void func_003FF148(s8 *, s32);
     extern void func_004031A8();
     extern void func_00403020();
     extern void func_00403308();
@@ -134,6 +134,6 @@ void func_004035D8(C43 *p)
     if (func_003FFF60(h) == unit) {
         func_003FF338(p->wC, func_004000D0(h));
     }
-    func_003FF148(p->wC, 1);
+    func_003FF148((s8 *)p->wC, 1);
     p->b1 = unit;
 }

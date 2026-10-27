@@ -23,7 +23,7 @@ struct Obj { VT *vt; };
 
 extern void func_003F9630();
 extern void func_003F9660();
-extern void func_003FF148();
+extern void func_003FF148(s8 *, s32);
 extern void func_003FF160();
 extern void func_003FF658(StreamGroup *);
 extern void func_00400740();
@@ -35,7 +35,7 @@ void func_00403D30(u8 *p) {
     Obj **q;
     s32 i;
     func_003F9630();
-    func_003FF148(*(s32 *)(p + 0xC), 0);
+    func_003FF148(*(s8 **)(p + 0xC), 0);
     func_003FF160(*(s32 *)(p + 0xC), 0);
     func_003FF658(*(StreamGroup **)(p + 4));
     func_003F9660();

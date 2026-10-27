@@ -16,7 +16,7 @@ void func_00403B20(u8 *p)
     extern void func_003F9660(void);
     extern void func_004104E0(PR *, s32, PR *, PR *);
     extern void func_0011D8F8(s32, s32, s32);
-    extern void func_003FF148(s32, s32);
+    extern void func_003FF148(s8 *, s32);
     extern void func_003FF160(s32, s32);
     extern void func_0040EA00(s32, s32);
     PR A[2];
@@ -73,7 +73,7 @@ void func_00403B20(u8 *p)
         } while (--i != 0);
     }
     if (mx + func_003FF190(*(s32 *)(p + 0xC)) - *(s32 *)(p + 0xA8) <= 0) {
-        func_003FF148(*(s32 *)(p + 0xC), 0);
+        func_003FF148(*(s8 **)(p + 0xC), 0);
         func_003FF160(*(s32 *)(p + 0xC), 0);
         func_0040EA00(*(s32 *)(p + 0xC), 1);
         p[1] = 5;
