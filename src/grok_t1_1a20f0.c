@@ -4,7 +4,7 @@ typedef unsigned short u16;
 
 extern u16 D_004D18DC;
 extern u8 D_004D18DB;
-extern void func_001A0880(u8 *, u8 *);
+extern int func_001A0880(void *, void *);
 extern void func_001A23D0(u8 *, u8 *);
 extern void func_001A2310(u8 *, u8 *);
 

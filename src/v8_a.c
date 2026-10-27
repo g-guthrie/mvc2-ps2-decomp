@@ -459,7 +459,7 @@ void func_001C19A0(u8 *p, u8 *o) {
 
 void func_001A02B0(u8 *p, u8 *o) {
     extern void func_001A0390();
-    extern s32 func_001A0880(u8 *, u8 *);
+    extern int func_001A0880(void *, void *);
     extern void func_001A0620();
     extern void func_001A0540();
     extern u16 D_004D18DC;

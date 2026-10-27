@@ -205,7 +205,7 @@ void func_0035DE70(u8 *a, s32 b, s32 c) {
 
 extern void func_001A2960();
 extern void func_001A09B0();
-extern void func_001A0880();
+extern int func_001A0880(void *, void *);
 extern void func_001A2BE0();
 extern void func_001A2B40();
 extern u8 D_0044B000[];

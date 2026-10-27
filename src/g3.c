@@ -209,7 +209,7 @@ void func_001D50D0(u8 *a0, u8 *a1) {
 extern u8 D_0044AFC0[];
 extern void func_001A16D0(void *, void *);
 extern void func_001A09B0(void *);
-extern void func_001A0880(void *, void *);
+extern int func_001A0880(void *, void *);
 extern void func_001A17C0(void *, void *, int);
 extern void func_001A1910(void *, void *);
 extern void func_001A1860(void *, void *);

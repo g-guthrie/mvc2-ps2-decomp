@@ -14,7 +14,7 @@ void func_001A5F10(u8 *a, u8 *b) {
     extern void func_001A6690(u8 *, u8 *);
     extern void func_001A62B0(u8 *, u8 *);
     extern void func_001A61B0(u8 *);
-    extern void func_001A6940(u8 *, u8 *);
+    extern int func_001A6940(void *, void *);
     extern void func_001A64D0(u8 *, u8 *);
     u8 *c = b + 0x2B8;
     u32 t;

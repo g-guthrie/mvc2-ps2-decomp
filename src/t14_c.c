@@ -34,7 +34,7 @@ void func_002FABA0(u8 *p) {
 extern s32 D_004BF630[2];
 extern void func_001A0400(void *, void *);
 extern void func_001A09B0(void *);
-extern void func_001A0880(void *, void *);
+extern int func_001A0880(void *, void *);
 extern void func_001A0620(void *, void *);
 extern void func_001A0540(void *, void *);
 typedef struct { u8 p0[4]; u8 b4; u8 p1[0x1B]; u8 b20; u8 p2[0x13]; f32 f34; f32 f38; u8 p3[0x188]; s32 w1C4; } A_001A0200;

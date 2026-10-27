@@ -13,7 +13,7 @@ void func_001A14D0(u8 *p, u8 *q)
     extern void func_001A1910(u8 *, u8 *);
     extern void func_001A1860(u8 *, u8 *);
     extern void func_001A1C50(u8 *, u8 *);
-    extern void func_001A0880(u8 *, u8 *);
+    extern int func_001A0880(void *, void *);
     extern void func_001A1A90(u8 *, u8 *);
     u8 *r = q + 0x2B8;
 
