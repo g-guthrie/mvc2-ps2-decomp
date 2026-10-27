@@ -16193,7 +16193,7 @@ func_00293090,0x00293090,0xBC,src/grok_s9_293090.c,complete
 func_002933E0,0x002933E0,0xBC,src/grok_s9_2933e0.c,complete
 func_00293550,0x00293550,0xD8,src/grok_sd_293550.c,complete
 func_002942C0,0x002942C0,0xB8,src/grok_s9_2942c0.c,complete
-func_00294890,0x00294890,0x84,src/grok_s1_294890.c,complete
+func_00294890,0x00294890,0x84,src/grok_w5_0028.c,placeholder
 func_00297020,0x00297020,0x98,src/grok_q3_297020.c,complete
 func_00298970,0x00298970,0xB8,src/grok_x3_298970.c,complete
 func_00299DD0,0x00299DD0,0xB0,src/grok_s9_299dd0.c,complete

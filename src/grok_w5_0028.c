@@ -246,3 +246,22 @@ void func_00293630(u8 *p) {
         q[9] = 1;
     }
 }
+
+/* Provisional: linked-actor lifetime and dispatch bounds remain under review. */
+void func_00294890(u8 *p)
+{
+    u8 *q;
+    func_00290E30(p);
+    func_00175700(p);
+    if ((s8)p[0x151] != 0) {
+        p[6]++;
+        q = *(u8 **)(p + 0x1DC);
+        *(u8 **)(q + 0x1C8) = p;
+        q[0x20A] = 1;
+        q[0x20D] = 2;
+        q[0x1B5] = 0x21;
+        q[0x1E6] = (s8)p[0x1E6] ^ 1;
+        if (*(u16 *)(p + 0x160) == 0)
+            func_00184540(p);
+    }
+}
