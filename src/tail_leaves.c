@@ -588,11 +588,11 @@ void func_001D36D0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Obje
 
 void func_001D5660(u8 *actor, void *owner) { func_003DAA40((struct Object *)actor); }
 
-void func_001D6B40(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40((struct Object *)(p)); }
+void func_001D6B40(u8 *p, u8 *owner_unused) { p[316] = 0; func_003DAA40((struct Object *)(p)); }
 
-void func_001D6E00(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
+void func_001D6E00(u8 *p, u8 *owner_unused) {  func_003DAA40((struct Object *)(p)); }
 
-void func_001D7060(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40((struct Object *)(p)); }
+void func_001D7060(u8 *p, u8 *owner_unused) { p[316] = 0; func_003DAA40((struct Object *)(p)); }
 
 void func_001D7510(u8 *p, s32 a1, s32 a2, s32 a3) { p[316] = 0; func_003DAA40((struct Object *)(p)); }
 

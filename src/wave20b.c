@@ -28,7 +28,7 @@ void func_002D3A10(u8 *p) {
 }
 
 extern s32 func_00175670();
-extern void func_001D7060();
+extern void func_001D7060(u8 *, u8 *);
 
 void func_001D6FD0(u8 *p, u8 *q) {
     s8 r;

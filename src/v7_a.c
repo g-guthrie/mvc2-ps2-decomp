@@ -116,7 +116,7 @@ void func_00313F10(u8 *p, u8 *q) {
 
 void func_001D6680(u8 *p, u8 *q) {
     extern s32 func_001745B0();
-    extern void func_001D6B20();
+    extern void func_001D6B20(u8 *, u8 *);
     *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24) + *(s8 *)(p + 0x31);
     if (*(s8 *)(p + 0x24) > 7) *(s8 *)(p + 0x24) = 7;
     if (*(s8 *)(p + 0x24) < 0) *(s8 *)(p + 0x24) = 0;

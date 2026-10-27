@@ -174,7 +174,7 @@ void func_001D0F60(void) {}
 
 void func_001D1530(void) {}
 
-void func_001D7050(void) {}
+void func_001D7050(u8 *p_unused, u8 *owner_unused) {}
 
 void func_001D7780(void) {}
 
