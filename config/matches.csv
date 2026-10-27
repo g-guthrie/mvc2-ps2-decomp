@@ -14580,7 +14580,7 @@ func_00349040,0x00349040,0xF4,src/q9_d.c,complete
 func_00324FF0,0x00324FF0,0xF8,src/q9_d.c,complete
 func_00382AC0,0x00382AC0,0xF8,src/q9_d.c,complete
 func_002DD710,0x002DD710,0xE0,src/q9_d.c,complete
-func_002322C0,0x002322C0,0x10C,src/q9_d.c,complete
+func_002322C0,0x002322C0,0x10C,src/q9_d.c,placeholder
 func_00351AE0,0x00351AE0,0x108,src/q9_d.c,complete
 func_00319650,0x00319650,0x118,src/q9_d.c,complete
 func_002C6950,0x002C6950,0x118,src/q9_d.c,complete

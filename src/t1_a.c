@@ -95,7 +95,6 @@ void func_002FB580(u8 *p) {
     *(s32 *)(p + 0x6C) = 0;
 }
 
-extern void func_00230020(u8 *p, u8 *q);
 
 extern void func_001266A0(u8 *p, s32 a, s32 b);
 

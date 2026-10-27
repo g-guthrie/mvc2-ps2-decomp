@@ -287,6 +287,7 @@ void func_002DD710(u8 *p) {
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60); \
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
 
+/* Provisional: the motion reset helper consumes only the actor argument. */
 void func_002322C0(u8 *p, s32 a1) {
     extern s8 func_00175700();
     extern void func_001757E0();
