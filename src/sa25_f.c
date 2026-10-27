@@ -12,7 +12,7 @@ extern f32 D_004F1F4C[];
 void func_0027EF00(u8 *p) {
     extern int func_00174470(const void *);
     extern void func_00185490(u8 *);
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001757E0();
     extern void func_001E3210(u8 *, s32);
     f32 k;
@@ -33,7 +33,7 @@ void func_0027EF00(u8 *p) {
         }
         break;
     case 1:
-        if (func_00175700() < 0) {
+        if ((s8)func_00175700(p) < 0) {
             t = p[6];
             p[6] = t + 1;
         }
@@ -43,7 +43,7 @@ void func_0027EF00(u8 *p) {
         func_001757E0(p, 0x13, 1);
         break;
     case 3:
-        if (func_00175700() < 0) {
+        if ((s8)func_00175700(p) < 0) {
             t = p[6];
             p[6] = t + 1;
             func_001757E0(p, 0x13, 2);

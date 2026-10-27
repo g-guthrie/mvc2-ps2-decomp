@@ -10,11 +10,11 @@ extern u8 D_004F1F45;
 extern u8 D_004F1F46;
 
 void func_002BF340(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_00185490();
     u8 *q;
     f32 f;
-    func_00175700();
+    func_00175700(p);
     if (*(s8 *)(p + 0x151) != 0) {
         u32 t = p[6];
         p[6] = t + 1;

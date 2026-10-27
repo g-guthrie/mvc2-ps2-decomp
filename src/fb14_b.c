@@ -59,7 +59,7 @@ s32 func_0025C6C0(u8 *p) {
 
 /* 0x002918A0 */
 extern void func_001757E0(u8 *, s32, s32);
-extern s8 func_00175700();
+extern int func_00175700(u8 *);
 void func_002918A0(u8 *a, u8 *b) {
     u32 t = b[0x18];
     if (t == 0) {
@@ -74,7 +74,7 @@ void func_002918A0(u8 *a, u8 *b) {
         func_002918A0(a, b);
         return;
     }
-    if (func_00175700() < 0) {
+    if ((s8)func_00175700(a) < 0) {
         a[7] = 0;
         b[0x18] = 0;
         b[0x19] = 0;

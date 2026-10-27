@@ -5,7 +5,7 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 
-extern s32 func_00175700();
+extern int func_00175700(u8 *);
 extern void func_00178F20();
 extern void func_001C88F0();
 extern void func_001C8AE0();
@@ -13,7 +13,7 @@ extern void func_001C8AE0();
 void func_00258990(u8 *p) {
     *(float *)(p + 0x38) += *(float *)(p + 0x60);
     *(float *)(p + 0x60) += *(float *)(p + 0x6C);
-    func_00175700();
+    func_00175700(p);
     {
         s16 o = *(s16 *)(p + 0x1C);
         *(s16 *)(p + 0x1C) = o - 1;
@@ -79,7 +79,7 @@ extern void func_001E7F60();
 void func_0034F890(u8 *p) {
     *(float *)(p + 0x34) += *(float *)(p + 0x5C);
     *(float *)(p + 0x5C) += *(float *)(p + 0x68);
-    func_00175700();
+    func_00175700(p);
     if (func_00174470(p) == 0) {
         func_0034FA60(p);
     } else {
@@ -159,7 +159,7 @@ void func_003C7130(u8 *a0, u8 *a1) {
         *(float *)(a0 + 0x38) = *(float *)(a2 + 0x38);
         *(s8 *)(a0 + 0x24) = *(s8 *)(a2 + 0x24);
         *(s8 *)(a0 + 0x31) = *(s8 *)(a2 + 0x31);
-        func_00175700();
+        func_00175700(a0);
     }
 }
 
@@ -240,7 +240,7 @@ void func_001F0FF0(u8 *a0) {
     a0[0x201] = 2;
     a0[0x209] = 2;
     a0[0x206] = 3;
-    if ((s8)func_00175700() < 0) {
+    if ((s8)func_00175700(a0) < 0) {
         u32 t = a0[7];
         a0[7] = t + 1;
         q[2] = 0;
@@ -268,7 +268,7 @@ void func_001C1910(u8 *a0, u8 *a1) {
 void func_003259E0(u8 *p) {
     p[0x40C] = 2;
     p[0x33C] = 5;
-    func_00175700();
+    func_00175700(p);
     {
         s16 v = *(s16 *)(p + 0x1C) - 1;
         *(s16 *)(p + 0x1C) = v;

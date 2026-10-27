@@ -8,7 +8,7 @@ typedef float f32;
 
 s32 func_001DCC80(u8 *p, u8 *q)
 {
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_003BEF10(u8 *, s32);
     extern void func_001757E0(u8 *, s32, s32);
     extern s32 func_001DCDA0(u8 *, u8 *);
@@ -16,7 +16,7 @@ s32 func_001DCC80(u8 *p, u8 *q)
     s16 h;
     u8 t;
     if (*(s16 *)(p + 0x1C) != 0) {
-        func_00175700();
+        func_00175700(p);
         v = 7;
         if (*(s8 *)(p + 0x151) != 0) v = 0;
         p[0x24] = v;
@@ -40,5 +40,5 @@ s32 func_001DCC80(u8 *p, u8 *q)
         func_001757E0(p, 0x16, 0x48);
         return;
     }
-    if (func_00175700() < 0) return func_001DCDA0(p, q);
+    if ((s8)func_00175700(p) < 0) return func_001DCDA0(p, q);
 }

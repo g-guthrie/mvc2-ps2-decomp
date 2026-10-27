@@ -7,14 +7,14 @@ typedef signed int s32;
 typedef float f32;
 
 void func_002379D0(u8 *p, u8 *q) {
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_00184540(u8 *);
     extern void func_001865B0(u8 *);
     extern void func_00183d50(u8 *);
     extern void func_001757E0(u8 *, s32, s32);
     extern void func_001843A0(u8 *);
     if (q[0x19] != 0) {
-        if (func_00175700() < 0) {
+        if ((s8)func_00175700(p) < 0) {
             func_00184540(p);
             return;
         }
@@ -30,7 +30,7 @@ void func_002379D0(u8 *p, u8 *q) {
         }
     } else if (p[7] == 0) {
         f32 z = 0.0f;
-        func_00175700();
+        func_00175700(p);
         *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
         *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
         *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
@@ -46,7 +46,7 @@ void func_002379D0(u8 *p, u8 *q) {
             }
         }
     } else {
-        if (func_00175700() >= 0) return;
+        if ((s8)func_00175700(p) >= 0) return;
         func_001843A0(p);
     }
 }
