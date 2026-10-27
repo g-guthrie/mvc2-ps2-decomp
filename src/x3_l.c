@@ -7,7 +7,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 
 void func_003653F0(u8 *p) {
-    extern void func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_001757E0();
     extern void func_001E7F60();
     u32 *s0, *s1;
@@ -17,7 +17,7 @@ void func_003653F0(u8 *p) {
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
-    func_00175700();
+    func_00175700(p);
     if (*(f32 *)(p + 0x38) <= *(f32 *)(*(u8 **)(p + 0x18) + 0x430)) {
         u32 t = p[5];
         p[5] = t + 1;

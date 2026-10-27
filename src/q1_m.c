@@ -89,7 +89,7 @@ void func_002402A0(u8 *p)
     extern void func_001757E0();
     extern void func_00183D90();
     extern void func_001863F0();
-    extern s32 func_00175700();
+    extern s32 func_00175700(u8 *);
     extern void func_001843A0();
     unsigned int offset;
     if (p[6] == 0) {
@@ -112,7 +112,7 @@ void func_002402A0(u8 *p)
 
 void func_002DD230(u8 *p)
 {
-    extern s32 func_00175700();
+    extern s32 func_00175700(u8 *);
     extern void func_001843A0();
     extern void func_001E3710();
     unsigned int offset;
@@ -178,7 +178,7 @@ void func_0029CBE0(u8 *p)
     extern void func_001757E0();
     extern void func_00183D90();
     extern void func_001863F0();
-    extern s32 func_00175700();
+    extern s32 func_00175700(u8 *);
     extern void func_001843A0();
     unsigned int offset;
     if (p[6] == 0) {
@@ -207,7 +207,7 @@ void func_0029CBE0(u8 *p)
 
 void func_0029C720(u8 *p)
 {
-    extern s32 func_00175700();
+    extern s32 func_00175700(u8 *);
     extern void func_001843A0();
     unsigned int offset;
     switch (p[0x1FC]) {
@@ -231,7 +231,7 @@ void func_0029C720(u8 *p)
 
 void func_002A9360(u8 *p)
 {
-    extern s32 func_00175700();
+    extern s32 func_00175700(u8 *);
     extern void func_001757E0();
     unsigned int offset;
     f32 z;
@@ -240,7 +240,7 @@ void func_002A9360(u8 *p)
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
     if (*(s8 *)(p + 0x161) >= 0) {
-        func_00175700();
+        func_00175700(p);
         if (*(s8 *)(p + 0x151) != 0) {
             *(s8 *)(p + 0x151) = 0;
             if (p[0x269] == 3) {

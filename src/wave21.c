@@ -74,7 +74,7 @@ void func_00233B70(u8 *a0, u8 *a1) {
     }
 }
 
-s32 func_00175700();
+s32 func_00175700(u8 *);
 void func_003266E0(u8 *a);
 void func_00323E60(u8 *a0) {
     if (a0[6] == 0) {
@@ -82,7 +82,7 @@ void func_00323E60(u8 *a0) {
         a0[0x20D] = 0;
         func_001757E0(a0, 0x14, 0);
     } else {
-        s8 r = func_00175700();
+        s8 r = (s8)func_00175700(a0);
         if (r < 0) {
             func_003266E0(a0);
         }
