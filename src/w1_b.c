@@ -1,3 +1,4 @@
+#include "runtime_decode_descriptor.h"
 #include "runtime_stream_query.h"
 typedef unsigned char u8;
 typedef signed char s8;
@@ -85,7 +86,7 @@ void func_003F8810(u8 *p)
 {
     extern s32 func_00404400();
     extern void func_003F84E8();
-    extern void func_004044E0();
+    extern void func_004044E0(RuntimeDecodeDescriptor *);
     extern void func_003F8690();
     extern void func_004044B0();
     s32 r;
@@ -97,7 +98,7 @@ void func_003F8810(u8 *p)
         }
     }
     if (*(s32 *)(p + 4) == 2) {
-        func_004044E0(*(s32 *)(p + 8));
+        func_004044E0(*(RuntimeDecodeDescriptor **)(p + 8));
         r = func_00404400(*(s32 *)(p + 8));
         if (r == 3) {
             func_003F8690(p);
