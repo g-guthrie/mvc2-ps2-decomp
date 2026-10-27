@@ -9,7 +9,7 @@ extern GameState_hk4a *D_004C2794 __attribute__((section(".sdata")));
 extern f32 D_004F1FD0[];
 extern void func_00175700(u8 *);
 extern void func_001E7F60(u8 *);
-extern void func_003C80A0(u8 *,void *);
+extern void func_003C80A0(u8 *,u8 *);
 
 void func_003C7740(u8 *p,void *a1)
 {

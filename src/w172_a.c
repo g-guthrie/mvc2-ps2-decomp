@@ -108,7 +108,7 @@ void func_003919F0(u8 *s0) {
 void func_003C6700(u8 *s1, u8 *s0) {
     extern void func_00175700(void *);
     extern s32 func_00118FA8(f32);
-    extern void func_003C80B0(void *, void *);
+    extern void func_003C80B0(u8 *, u8 *);
     s32 s2;
     f32 *s3, *s4;
     s16 v;

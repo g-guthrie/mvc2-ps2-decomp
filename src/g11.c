@@ -114,7 +114,7 @@ void func_0039BC90(u8 *a) {
 extern int func_00174470(const void *);
 extern void func_00350FD0();
 extern s32 func_00174240();
-extern void func_003C80A0();
+extern void func_003C80A0(u8 *, u8 *);
 void func_003C76C0(u8 *a, u8 *b) {
     *(f32 *)(a + 0x34) += *(f32 *)(a + 0x5C);
     *(f32 *)(a + 0x5C) += *(f32 *)(a + 0x68);

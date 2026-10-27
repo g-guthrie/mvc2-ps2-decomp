@@ -49,8 +49,9 @@ void func_00324130(u8 *p) {
 
 typedef struct { u8 pad0[0x34]; f32 f34; f32 f38; u8 pad1[0x20]; f32 f5c; f32 f60; u8 pad2[4]; f32 f68; f32 f6c; u8 pad3[0xCC]; u8 b13C; u8 pad4[0x77]; s8 b1B4; } O_003C5B20;
 extern s32 func_00174240( void *);
-extern void func_003C80A0( void *, s32);
-void func_003C5B20(O_003C5B20 *p, s32 b) {
+extern void func_003C80A0(u8 *, u8 *);
+void func_003C5B20(u8 *actor, u8 *b) {
+    O_003C5B20 *p = (O_003C5B20 *)actor;
     s8 c = p->b1B4;
     if (c != 0) {
         p->b1B4 = c - 1;
@@ -62,7 +63,7 @@ void func_003C5B20(O_003C5B20 *p, s32 b) {
         if (func_00174240(p) != 0) {
             p->b13C = 1;
         } else {
-            func_003C80A0(p, b);
+            func_003C80A0(actor, b);
         }
     }
 }
