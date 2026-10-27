@@ -14,12 +14,12 @@ extern u8 D_004D18A3;
 
 s32 func_002803A0(u8 *p, u8 m)
 {
-    extern void func_00186A60(u8 *);
+    extern void func_00186A60(u8 *, u8);
     extern void func_001757E0(u8 *, s32, s32);
     s32 v;
     u8 a;
     p[0x13C] = 1;
-    func_00186A60(p);
+    func_00186A60(p, m);
     p[7] = 0;
     p[6] = 0;
     p[5] = 0;
