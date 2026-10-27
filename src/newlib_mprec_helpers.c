@@ -19,11 +19,6 @@
 
 typedef signed int __Long;
 typedef unsigned int __ULong;
-typedef struct _Bigint {
-    struct _Bigint *_next;
-    int _k, _maxwds, _sign, _wds;
-    __ULong _x[1];
-} _Bigint;
 #define Pack_32 1
 #define Sign_Extend(a, b) ((void)0)
 typedef unsigned short u16;

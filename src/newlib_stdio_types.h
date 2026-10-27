@@ -10,7 +10,11 @@ typedef struct __sbuf {
 } SBuf;
 
 typedef struct __sFILE FILE;
-struct _Bigint;
+typedef struct _Bigint {
+    struct _Bigint *_next;
+    int _k, _maxwds, _sign, _wds;
+    unsigned int _x[1];
+} _Bigint;
 
 /* Verified prefix through the cached powers-of-five pointer; this is not a full _reent. */
 typedef struct _reent {

@@ -24,11 +24,6 @@ typedef unsigned int __ULong;
 typedef unsigned int __uint32_t;
 typedef unsigned short u16;
 
-typedef struct _Bigint {
-    struct _Bigint *_next;
-    int _k, _maxwds, _sign, _wds;
-    __ULong _x[1];
-} _Bigint;
 
 union double_union {
     double d;
