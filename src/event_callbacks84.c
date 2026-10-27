@@ -171,13 +171,14 @@ void func_0036A8D0(void *arg, u8 mode) {
         event->mode = mode;
     }
 }
-void func_0036BFF0(void *arg, u8 mode) {
+Event *func_0036BFF0(void *arg, u8 mode) {
     Event *event = func_003DA750(0, 1, 0);
     if (event != 0) {
         event->callback = func_0036C120;
         event->arg = arg;
         event->mode = mode;
     }
+    return event;
 }
 void func_0037E4A0(void *arg, u8 mode) {
     Event *event = func_003DA750(0, 1, 0);
