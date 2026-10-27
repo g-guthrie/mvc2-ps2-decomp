@@ -47,20 +47,7 @@ void func_0016CB50() {
         *(f32 *)(v + 0x58) = 0.00999999977648258f;
     }
 }
-extern void func_003C1530(u8 *);
-extern void func_003C15F0(u8 *, u8 *);
-void func_003C18B0(u8 *p, u8 *q) {
-    u8 *s1 = p + 0xD0;
-    func_003C1530(p);
-    func_003C15F0(p, q);
-    func_00175700();
-    if (q[0x2C4] == 0) {
-        u32 t = p[5]; p[5] = t + 1;
-        p[0x13C] = 1;
-        s1[4] = 0;
-        *(s16 *)(p + 0x1C) = 0x18;
-    }
-}
+
 extern void func_0035ACA0();
 void func_0035A2C0(u8 *p, u8 *q) {
     s32 v = *(u16 *)(q + 8);

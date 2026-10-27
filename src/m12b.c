@@ -7,7 +7,7 @@ typedef signed int s32;
 typedef float f32;
 
 extern f32 D_004F1F4C;
-extern void func_00175700(u8 *p);
+extern int func_00175700(u8 *p);
 extern void func_00186A20(u8 *p);
 
 void func_002710E0(u8 *p) {
@@ -284,4 +284,18 @@ void func_0034D520(u8 *p) {
         *(s16 *)(r + 0x26) = 0x500;
     }
     *q = 1;
+}
+
+/* Provisional: owner lifetime and dispatch bounds remain under review. */
+void func_003C18B0(u8 *p, void *q) {
+    u8 *s1 = p + 0xD0;
+    func_003C1530(p);
+    func_003C15F0(p, q);
+    func_00175700(p);
+    if (((u8 *)q)[0x2C4] == 0) {
+        u32 t = p[5]; p[5] = t + 1;
+        p[0x13C] = 1;
+        s1[4] = 0;
+        *(s16 *)(p + 0x1C) = 0x18;
+    }
 }
