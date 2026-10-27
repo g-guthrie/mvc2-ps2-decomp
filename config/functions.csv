@@ -4506,7 +4506,7 @@ func_001C5810,0x001C5810,0x54,0x001C5864,code,spimdisasm-explicit-size-before-fi
 func_001C5870,0x001C5870,0x20,0x001C5890,code,matching-c-head-split
 func_001C5890,0x001C5890,0xB8,0x001C5948,code,verified-native-callback-entry
 func_001C5950,0x001C5950,0x24,0x001C5974,code,matching-c-head-split
-residual_001C5974,0x001C5974,0x5C,0x001C59D0,assembly_residual,native-prefix-before-verified-c-body
+func_001C5980,0x001C5980,0x48,0x001C59C8,code,verified-native-table-entry-boundary
 func_001C59D0,0x001C59D0,0xFC,0x001C5ACC,code,verified-complete-c-function
 func_001C5AD0,0x001C5AD0,0x78,0x001C5B48,code,spimdisasm-explicit-size-before-first-data
 func_001C5B50,0x001C5B50,0x68,0x001C5BB8,code,spimdisasm-explicit-size-before-first-data
