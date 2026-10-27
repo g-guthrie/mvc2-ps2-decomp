@@ -16,7 +16,7 @@ static void func_0037F440(u8 *p) {
     }
 }
 
-void func_0037F8A0(u8 *p) {
+void func_0037F8A0(u8 *p, void *owner) {
     D_004C299C[7] = 0;
     func_0037F440(p);
     if (*D_004C299C < 0) {

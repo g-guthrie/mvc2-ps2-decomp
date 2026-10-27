@@ -27,7 +27,8 @@ static void func_0037F3F0(u8 *p) {
 }
 typedef struct { u8 b0; u8 b1; u8 pad2[2]; u8 b4; u8 b5; u8 pad6[0x12]; u8 *q18; s16 h1C; u8 pad1E[0x11E]; u8 b13C; } PS;
 typedef struct { u8 pad[0x168]; u16 h168; } QS;
-void func_0037F7C0(PS *p) {
+void func_0037F7C0(u8 *actor, void *owner) {
+    PS *p = (PS *)actor;
     u32 t;
     if (p->b1 != p->q18[1]) {
         t = p->b4;
