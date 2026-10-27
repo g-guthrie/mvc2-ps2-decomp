@@ -19,12 +19,12 @@ static void cp3(u8 *d, s8 *s) {
 
 
 extern void *func_003DA750(s32, s32, s32);
-extern void func_0034FB40();
+extern void func_0034FB40(u8 *);
 void func_0034FAE0(u8 *p) {
     u8 *r = func_003DA750(0, 1, 0);
     if (r) {
-        *(void **)(r + 0x10) = func_0034FB40;
-        *(u32 *)(r + 0x18) = *(u32 *)(p + 0x18);
+        *(void (**)(u8 *))(r + 0x10) = func_0034FB40;
+        *(u8 **)(r + 0x18) = *(u8 **)(p + 0x18);
         *(u8 **)(r + 0x14) = p;
         r[0x20] = 2;
         *(s16 *)(r + 0x26) = 0x503;
