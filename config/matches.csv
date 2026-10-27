@@ -19330,3 +19330,4 @@ func_0035C880,0x0035C880,0x150,src/event_init_0035c880.c,placeholder
 func_0035BDF0,0x0035BDF0,0x3C,src/linked_contact_cleanup_0035bdf0.c,placeholder
 func_003C7360,0x003C7360,0x11C,src/owner_entry_003c7360.c,placeholder
 func_00180090,0x00180090,0xFC,src/landing_actor_update_00180090.c,placeholder
+func_002BE550,0x002BE550,0xA8,src/target_select_002be550.c,placeholder
