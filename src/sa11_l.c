@@ -17,7 +17,7 @@ extern T_l D_00446790[];
 extern M_l *D_004C2840;
 extern X_l D_004F20B0[];
 extern s8 D_004F7F50[];
-extern Y_l *D_004C2A68;
+extern void *D_004C2A68;
 extern u8 D_004C2688[2];
 
 void func_0016EEC0(void) {
@@ -28,7 +28,7 @@ void func_0016EEC0(void) {
         if (D_004F4420[i].t < 0) {
             D_004F4420[i].t = D_00446790[idx].t;
             if ((D_004C2840->mode == 2 && D_004F20B0[i].f539 == 0) || D_004C2840->mode == 3 || D_004F7F50[0] != 0) {
-                if (D_004C2A68[i].b == 1) {
+                if (((Y_l *)D_004C2A68)[i].b == 1) {
                     idx = D_004F4420[i].idx;
                     D_004F4420[i].t = D_00446790[idx].t;
                     D_004C2688[0] = D_00446790[idx].a;
