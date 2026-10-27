@@ -7,8 +7,8 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-extern s32 func_00185980(void *a, s32 b);
-extern s32 func_001E3210(void *a, s32 b);
+extern s32 func_00185980(u8 *a);
+extern void func_001E3210(u8 *a, int b);
 static void func_002B5100(u8 *p) {
     f32 v;
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
@@ -35,13 +35,12 @@ extern int func_00415320(void *a, u32 *b, s32 c);
 extern void func_00415590(void *a, u32 *b, s32 c, s32 d);
 
 
-/* Provisional: callback and callee return contracts are unresolved. */
-s32 func_0036EA50(void *a, s32 b, s32 *c) {
-    s32 r;
-    if (func_00185980(a, b)) {
-        r = func_001E3210(a, 0x24);
-        c[1] = 1;
-        return r;
+/* Provisional: parent callback table and actor context bounds remain unresolved. */
+void func_0036EA50(u8 *actor, u8 *owner, u8 *work) {
+    if (func_00185980(actor)) {
+        func_001E3210(actor, 0x24);
+        *(s32 *)(work + 4) = 1;
+        return;
     }
 }
 
