@@ -182,3 +182,14 @@ void func_003A20A0(u8 *p)
         func_001757E0(p, 21, (p[33] + 8) & 0xff);
     }
 }
+
+extern void func_00345830(u8 *, s32);
+void func_001EBDB0(u8 *p) {
+    func_001EBBD0(p);
+    func_00175700((u8 *)p);
+    if (*(s8 *)(p + 0x151) != 0) {
+        *(s8 *)(p + 0x151) = 0;
+        p[6]++;
+        func_00345830(p, 1);
+    }
+}

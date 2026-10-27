@@ -7,14 +7,14 @@ typedef signed int s32;
 typedef float f32;
 
 extern void func_0035F430();
-extern s32 func_00175700();
+extern int func_00175700(u8 *);
 extern void func_001E7F60();
 extern u16 D_004D18DC;
 extern u8 D_004D18DB;
 void func_0035F360(u8 *p, s32 b) {
     if ((D_004D18DC & (1 << D_004D18DB)) == 0) {
         func_0035F430(p, b);
-        if ((s8)func_00175700(p) < 0) {
+        if ((s8)func_00175700((u8 *)p) < 0) {
             p[4] = 2;
             p[0x13C] = 0;
             return;
@@ -73,38 +73,17 @@ void func_002448B0(u8 *p, s32 b) {
     switch (p[0x1FC]) {
     case 0:
     case 1:
-        if ((s8)func_00175700(p) < 0) func_001843A0(p);
+        if ((s8)func_00175700((u8 *)p) < 0) func_001843A0(p);
         break;
     case 2:
         func_00248330(p);
-        if ((s8)func_00175700(p) < 0) func_001843A0(p);
+        if ((s8)func_00175700((u8 *)p) < 0) func_001843A0(p);
         break;
     }
 }
 
 
-typedef struct O_00276C50 {
-    u8 p0[0x34]; f32 f34; f32 f38; u8 p3[0x20]; f32 f5c; f32 f60; u8 p4[4]; f32 f68; f32 f6c;
-    u8 p5[0x68]; u32 wD8;
-} O_00276C50;
-extern void func_00275A40();
-extern void func_00184540();
-void func_00276C50(O_00276C50 *p) {
-    p->f34 += p->f5c;
-    p->f5c += p->f68;
-    p->f38 += p->f60;
-    p->f60 += p->f6c;
-    func_00275A40(p);
-    if ((s8)func_00175700() < 0) {
-        if (*((u8 *)p + 0x20D) != 2) {
-            func_001843A0(p);
-            p->wD8 = 0;
-        } else {
-            func_00184540(p);
-            p->wD8 = 0;
-        }
-    }
-}
+
 
 
 typedef struct O_003900C0 {
@@ -112,7 +91,7 @@ typedef struct O_003900C0 {
 } O_003900C0;
 extern void func_001E3210();
 void func_003900C0(O_003900C0 *p) {
-    if (*(s8 *)((u8 *)p + 0x151) == 0) func_00175700(p);
+    if (*(s8 *)((u8 *)p + 0x151) == 0) func_00175700((u8 *)p);
     p->f34 += p->f5c;
     p->f5c += p->f68;
     p->f38 += p->f60;
@@ -132,7 +111,7 @@ typedef struct O_00243500 {
 } O_00243500;
 void func_00243500(O_00243500 *p) {
     u32 *a, *b, *c, *d;
-    func_00175700();
+    func_00175700((u8 *)p);
     a = (u32 *)&p->f5c;
     c = (u32 *)&p->f68;
     b = (u32 *)&p->f60;
@@ -157,7 +136,7 @@ extern void func_00355BE0();
 void func_00223CA0(u8 *p, s32 b) {
     switch (p[0x1FC]) {
     case 2:
-        if ((s8)func_00175700(p) < 0) {
+        if ((s8)func_00175700((u8 *)p) < 0) {
             func_001843A0(p);
         } else if (*(s8 *)(p + 0x151) != 0) {
             *(s8 *)(p + 0x151) = 0;
@@ -166,7 +145,7 @@ void func_00223CA0(u8 *p, s32 b) {
         break;
     case 0:
     case 1:
-        if ((s8)func_00175700(p) < 0) func_001843A0(p);
+        if ((s8)func_00175700((u8 *)p) < 0) func_001843A0(p);
         break;
     }
 }
@@ -193,7 +172,7 @@ void func_003257F0(u8 *p) {
     p[0x40C] = 2;
     p[0x33C] = 5;
     p[0x405] = (p[0x269] == 6) ? 2 : 0;
-    func_00175700(p);
+    func_00175700((u8 *)p);
     h = *(s16 *)(p + 0x1C) - 1;
     *(s16 *)(p + 0x1C) = h;
     if (h <= 0) {
@@ -227,7 +206,7 @@ void func_00214F40(u8 *p) {
         *(s16 *)(q + 0x140) = x;
         func_001E3A40(q);
     } else {
-        if ((s8)func_00175700(p) < 0) {
+        if ((s8)func_00175700((u8 *)p) < 0) {
             u32 t = p[6];
             p[6] = t + 1;
             *(u32 *)(p + 0x5C) = 0;
@@ -246,7 +225,7 @@ void func_002EB9D0(u8 *a, u8 *b) {
     s16 h;
     s16 g;
     func_002EBB00(a);
-    func_00175700(a);
+    func_00175700((u8 *)a);
     if (*(s8 *)(b + 8) != 0) {
         h = *(s16 *)(a + 0x1C);
         *(s16 *)(a + 0x1C) = h - 1;
@@ -294,7 +273,7 @@ typedef struct O_002AACB0 {
 } O_002AACB0;
 void func_002AACB0(O_002AACB0 *p) {
     u32 *a, *b, *c, *d;
-    if (*(s8 *)((u8 *)p + 0x151) == 0) func_00175700(p);
+    if (*(s8 *)((u8 *)p + 0x151) == 0) func_00175700((u8 *)p);
     a = (u32 *)&p->f5c;
     c = (u32 *)&p->f68;
     b = (u32 *)&p->f60;

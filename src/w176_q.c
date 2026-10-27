@@ -84,3 +84,27 @@ void func_00275E30(u8 *p) {
         }
     }
 }
+
+typedef struct O_00276C50 {
+    u8 p0[0x34]; f32 f34; f32 f38; u8 p3[0x20]; f32 f5c; f32 f60; u8 p4[4]; f32 f68; f32 f6c;
+    u8 p5[0x68]; u32 wD8;
+} O_00276C50;
+
+extern void func_00184540(void *);
+void func_00276C50(u8 *actor) {
+    O_00276C50 *p = (O_00276C50 *)actor;
+    p->f34 += p->f5c;
+    p->f5c += p->f68;
+    p->f38 += p->f60;
+    p->f60 += p->f6c;
+    func_00275A40((u8 *)p);
+    if ((s8)func_00175700((u8 *)p) < 0) {
+        if (*((u8 *)p + 0x20D) != 2) {
+            func_001843A0(p);
+            p->wD8 = 0;
+        } else {
+            func_00184540(p);
+            p->wD8 = 0;
+        }
+    }
+}

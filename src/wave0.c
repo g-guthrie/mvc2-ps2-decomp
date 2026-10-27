@@ -19,15 +19,13 @@ extern s32 func_0028A490();
 extern void func_0028A530();
 extern void func_0028B0B0();
 extern u8 *func_0019A4C0(u8 *, u8);
-extern s32 func_00175700();
+extern int func_00175700(u8 *);
 extern void func_00126400();
 extern s32 D_004D3690[];
 extern void func_00123060();
 extern void func_00151A20(u8);
 extern void func_001520E0(u8);
 extern void func_001754A0();
-extern void func_001EBBD0();
-extern void func_00345830();
 
 void func_001230C0(void) {
     func_00414720(D_004F1F40);
@@ -98,15 +96,7 @@ void func_00199330(u8 *p) {
     func_001754A0(p, 0x1B, (u8)(p[0x21] * 2 + 0x10));
 }
 
-void func_001EBDB0(u8 *p) {
-    func_001EBBD0(p);
-    func_00175700();
-    if (*(s8 *)(p + 0x151) != 0) {
-        *(s8 *)(p + 0x151) = 0;
-        p[6]++;
-        func_00345830(p, 1);
-    }
-}
+
 
 void func_00186EA0(u8 *p) {
     u8 v;
