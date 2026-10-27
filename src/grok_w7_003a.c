@@ -6,7 +6,7 @@ typedef float f32;
 
 typedef struct Event {
     u8 pad00[16];
-    void *callback;
+    void (*callback)(u8 *);
     void *extra;
     void *arg;
     u8 pad1c[4];
@@ -19,13 +19,13 @@ typedef struct Event {
 } Event;
 
 extern Event *func_003DA750(s32, s32, s32);
-extern void func_003A8B70(void);
-extern void func_003AA4D0(void);
-extern void func_003B6AA0(void);
-extern void func_003BFD90(void);
-extern void func_003B4240(void);
-extern void func_003B75E0(void);
-extern void func_003BDA40(void);
+extern void func_003A8B70(u8 *);
+extern void func_003AA4D0(u8 *);
+extern void func_003B6AA0(u8 *);
+extern void func_003BFD90(u8 *);
+extern void func_003B4240(u8 *);
+extern void func_003B75E0(u8 *);
+extern void func_003BDA40(u8 *);
 extern void func_003B6230(u8 *);
 
 void func_003A7E30(u8 *p)
