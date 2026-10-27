@@ -22,7 +22,7 @@ extern int func_001CB5D0(u8 *);
 extern void func_001E7750(int);
 extern void func_001E46E0(void);
 extern void func_001E5230(void);
-extern void func_003FEAD0(void);
+extern s32 func_003FEAD0(void);
 extern void func_004236C0(int);
 extern void func_001E16E0(u8 *, u8 *);
 extern void func_001E1C40(u8 *, u8 *);

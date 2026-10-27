@@ -5,8 +5,8 @@ typedef unsigned short u16;
 typedef unsigned char u8;
 typedef float f32;
 
-extern void func_003FEAD0(void);
-extern void func_003FEBD8(void);
+extern s32 func_003FEAD0(void);
+extern s32 func_003FEBD8(void);
 void func_00418B10(void) {
     asm { nop; nop; nop; nop; nop; nop; nop }
     func_003FEAD0();
