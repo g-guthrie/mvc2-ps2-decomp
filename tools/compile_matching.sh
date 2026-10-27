@@ -21833,4 +21833,10 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/context_state_dispatch_003874f0.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/context_state_dispatch_003874f0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/context_state_dispatch_003874f0.o" private/SLUS_204.86.rom --source src/context_state_dispatch_003874f0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/effect_particle_init_0041a1f0.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/effect_particle_init_0041a1f0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/effect_particle_init_0041a1f0.o" private/SLUS_204.86.rom --source src/effect_particle_init_0041a1f0.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/effect_particle_init_0041a4c0.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/effect_particle_init_0041a4c0.o"
+"$PYTHON" tools/verify_object.py "$BUILD/effect_particle_init_0041a4c0.o" private/SLUS_204.86.rom --source src/effect_particle_init_0041a4c0.c
 PYTHON="$PYTHON" tools/compile_matching_data.sh
