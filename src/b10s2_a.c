@@ -5,16 +5,15 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 
-typedef struct { s32 a; s32 b; } P2;
-extern P2 D_00632140;
-extern s32 D_00632240;
+extern s32 D_00632140[];
+extern s32 D_00632240[];
 extern void func_00409708(s32, void *, s32, void *, s32);
 
 s32 func_00410AD0(s32 a, s32 b) {
-    D_00632140.a = a;
-    D_00632140.b = b;
-    func_00409708(0x29, &D_00632140, 2, &D_00632240, 1);
-    return D_00632240;
+    D_00632140[0] = a;
+    D_00632140[1] = b;
+    func_00409708(0x29, D_00632140, 2, D_00632240, 1);
+    return D_00632240[0];
 }
 
 typedef struct Obj Obj;
