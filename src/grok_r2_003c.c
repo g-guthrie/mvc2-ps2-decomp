@@ -75,14 +75,7 @@ void func_003D6820(s32 idx) {
 
 
 
-void func_003C3DA0(u8 *p, u8 *ignored) {
-    s16 flag = S(p, 0x140);
-    s16 x = S(p, 0xD0);
-    s16 *q = (s16 *)(p + 0xD0);
-    if (flag == 0)
-        x = -x;
-    F(p, 0x34) = (f32)(x + q[1]);
-}
+
 
 void func_003ED8E0(s32 i, s16 a, s16 b, s16 c) {
     s32 o = i << 2;

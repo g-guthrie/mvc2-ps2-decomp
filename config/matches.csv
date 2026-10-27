@@ -6383,7 +6383,7 @@ func_00292110,0x00292110,0x54,src/grok_w4_sz54.c,complete
 func_003F7C18,0x003F7C18,0x1C,src/stream_engine_default_commit_003F7C18.c,complete
 func_003D6820,0x003D6820,0x2C,src/grok_r2_003c.c,complete
 func_003C15F0,0x003C15F0,0x40,src/m12b.c,complete
-func_003C3DA0,0x003C3DA0,0x40,src/grok_r2_003c.c,complete
+func_003C3DA0,0x003C3DA0,0x40,src/q4_c.c,complete
 func_003ED8E0,0x003ED8E0,0x38,src/grok_r2_003c.c,complete
 func_003C64C0,0x003C64C0,0x3C,src/grok_r2_003c.c,complete
 func_003C7C10,0x003C7C10,0x48,src/grok_r2_003c.c,complete
@@ -10071,7 +10071,7 @@ func_00180490,0x00180490,0x5C,src/wave31.c,complete
 func_001804F0,0x001804F0,0x150,src/initialize_stage_actor_001804F0.c,complete
 func_00180890,0x00180890,0x194,src/initialize_stage_actor_00180890.c,complete
 func_00180F20,0x00180F20,0x22C,src/dispatch_stage_actor_00180F20.c,complete
-func_003C4260,0x003C4260,0x60,src/wave31.c,complete
+func_003C4260,0x003C4260,0x60,src/q4_c.c,placeholder
 func_0034DD60,0x0034DD60,0x64,src/wave31.c,complete
 func_0036E9E0,0x0036E9E0,0x6C,src/wave31.c,complete
 func_00318810,0x00318810,0x70,src/wave31.c,complete
@@ -12105,7 +12105,7 @@ func_0032F4A0,0x0032F4A0,0xa0,src/m14b.c,complete
 func_00265B30,0x00265B30,0xa4,src/m14g.c,complete
 func_002E4CB0,0x002E4CB0,0xa4,src/m14g.c,complete
 func_001B28C0,0x001B28C0,0x50,src/m7g.c,complete
-func_003C41F0,0x003C41F0,0x6C,src/m7g.c,complete
+func_003C41F0,0x003C41F0,0x6C,src/q4_c.c,placeholder
 func_002D61C0,0x002D61C0,0x74,src/m7g.c,complete
 func_00259730,0x00259730,0x74,src/m7g.c,complete
 func_003AD480,0x003AD480,0x74,src/m7g.c,complete
@@ -12679,7 +12679,7 @@ func_00205280,0x00205280,0xac,src/q4_c.c,complete
 func_0019ADE0,0x0019ADE0,0xac,src/q4_c.c,complete
 func_00306980,0x00306980,0xb0,src/q4_c.c,complete
 func_00154650,0x00154650,0xb4,src/q4_c.c,complete
-func_003C4090,0x003C4090,0xb0,src/q4_c.c,complete
+func_003C4090,0x003C4090,0xb0,src/q4_c.c,placeholder
 func_0031FBA0,0x0031FBA0,0xa4,src/q4_c.c,complete
 func_001D6430,0x001D6430,0xa8,src/q4_c.c,complete
 func_0025A260,0x0025A260,0xa0,src/q4_c.c,complete

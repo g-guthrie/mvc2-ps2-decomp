@@ -120,10 +120,14 @@ void func_00154650(P154 *p) {
 }
 
 extern void func_003C3CE0(u8 *, u8 *);
-extern void func_003C3DA0(u8 *, u8 *);
-extern void func_001E7F60();
+static void func_003C3DA0(u8 *p, u8 *ignored) {
+ s16 flag=*(s16 *)(p+0x140);s16 x=*(s16 *)(p+0xD0);s16 *q=(s16 *)(p+0xD0);
+ if(flag==0)x=-x;*(f32 *)(p+0x34)=(f32)(x+q[1]);
+}
+extern void func_001E7F60(u8 *);
 extern s8 D_00475DB0[];
 typedef struct { u8 pad0[0x4]; u8 f4; u8 f5; u8 pad6[0x16]; s16 f1C; s16 f1E; u8 pad20[0x14]; f32 f34; u8 pad38[0x108]; s16 f140; } P3C4;
+/* Provisional: callback-table ABI and state bounds remain unresolved. */
 void func_003C4090(u8 *p, u8 *q) {
     P3C4 *actor = (P3C4 *)p;
     s32 v;
@@ -131,7 +135,7 @@ void func_003C4090(u8 *p, u8 *q) {
     func_003C3DA0(p, q);
     if (actor->f1E != 0) {
         actor->f1E = actor->f1E - 1;
-        func_001E7F60();
+        func_001E7F60(p);
     }
     v = D_00475DB0[actor->f1E];
     if (actor->f140 != 0) v = (s8)-v;
@@ -259,5 +263,32 @@ void func_00323C80(P323 *p) {
         p->f405 = 0;
         t = p->f6; p->f6 = t + 1; p->f151 = 0; p->f1C = 0xF0; v[1] = 0x425EDB6D; v[0] = 0;
         func_001830D0(p, v, 1);
+    }
+}
+
+extern void func_003C3D60(u8 *, u8 *);
+/* Provisional: callback-table ABI and state bounds remain unresolved. */
+void func_003C4260(u8 *p, u8 *q) {
+    func_003C3CE0(p, q);
+    func_003C3D60(p, q);
+    func_003C3DA0(p, q);
+    if (*(s16 *)(p + 0xD0) < 0) {
+        u32 t = p[4];
+        p[4] = t + 1;
+    }
+}
+/* Provisional: callback-table ABI and state bounds remain unresolved. */
+void func_003C41F0(u8 *a, u8 *b) {
+    u8 *s = b + 0x2B8;
+    s16 v;
+    func_003C3CE0(a, b);
+    func_003C3DA0(a, b);
+    v = *(s16 *)(a + 0x1C);
+    *(s16 *)(a + 0x1C) = v - 1;
+    if (v == 0) {
+        u32 t;
+        s[0x12] = 1;
+        t = a[6];
+        a[6] = t + 1;
     }
 }

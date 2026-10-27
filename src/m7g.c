@@ -20,22 +20,7 @@ void func_001B28C0(u8 *p) {
     }
 }
 
-extern void func_003C3CE0(u8 *, u8 *);
-extern void func_003C3DA0(u8 *, u8 *);
-void func_003C41F0(u8 *a, u8 *b) {
-    u8 *s = b + 0x2B8;
-    s16 v;
-    func_003C3CE0(a, b);
-    func_003C3DA0(a, b);
-    v = *(s16 *)(a + 0x1C);
-    *(s16 *)(a + 0x1C) = v - 1;
-    if (v == 0) {
-        u32 t;
-        s[0x12] = 1;
-        t = a[6];
-        a[6] = t + 1;
-    }
-}
+
 
 extern u8 D_0045A640[];
 extern s32 func_00189310();
