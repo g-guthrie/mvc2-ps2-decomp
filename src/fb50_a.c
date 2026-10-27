@@ -6,7 +6,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-void func_0018ED20(u8 *p);
+void func_0018ED20(u8 *p, s32);
 void func_0018F1A0(u8 a, s32 b, f32 *v);
 
 void func_0018EB00(u8 *p, s32 a1)
@@ -18,7 +18,7 @@ void func_0018EB00(u8 *p, s32 a1)
     s0 = *(u8 **)(p + 0x1CC);
     if (s0 == 0) s0 = *(u8 **)(p + 0x220);
     if (s0[5] >= 2) {
-        func_0018ED20(p);
+        func_0018ED20(p, a1);
         return;
     }
     func_0018F1A0(p[0x242], a1, v);
