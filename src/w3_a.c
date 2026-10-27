@@ -19,13 +19,14 @@ void func_0011C970(s32 a, s32 b)
 
 void func_0040E980(s8 *p, s32 flag)
 {
-    extern void func_00408ED8(s32);
+    struct StreamState;
+    extern void func_00408ED8(struct StreamState *);
     s32 i, n;
     p[0x48] = flag;
     n = p[0x26];
     if (flag != 1) {
         for (i = 0; i < n; i++) {
-            func_00408ED8(((s32 *)(p + 0x10))[i]);
+            func_00408ED8(((struct StreamState **)(p + 0x10))[i]);
             p[0x49] = 1;
             p[0x48] = 0;
         }
