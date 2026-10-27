@@ -5,7 +5,7 @@ typedef float f32;
 typedef struct { f32 x, y, z; } V3;
 
 typedef void (*DispatchFn)(u8 *);
-extern DispatchFn jtbl_00448BC0[];
+extern DispatchFn const jtbl_00448BC0[25];
 extern void func_00175C00(u8 *, s32);
 extern void func_001E3210(u8 *, s32);
 extern void func_001757E0(u8 *, s32, s32);
