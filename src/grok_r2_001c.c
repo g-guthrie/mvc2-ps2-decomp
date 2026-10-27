@@ -62,11 +62,6 @@ s32 func_001E5700(void) {
     return func_00423990(-2147483636, 1);
 }
 
-void func_001CE030(u8 *p) {
-    u8 *q = *(u8 **)(p + 24);
-    if (H(p, 208) != H(q, 360))
-        p[4] = 2;
-}
 
 void func_001CB5A0(u8 *p, int a1, int a2) {
     func_001754A0(p, a1, a2);
@@ -90,13 +85,6 @@ void func_001EE9E0(u8 *p) {
         p[537] = 0;
 }
 
-void func_001C0970(u8 *p) {
-    if (p[32] == 1) {
-        s8 *q = *(s8 **)(p + 24);
-        q[698]--;
-    }
-    func_003DAA40(p);
-}
 
 void func_001C2180(u8 *p) {
     if (!func_001C3E60(p))

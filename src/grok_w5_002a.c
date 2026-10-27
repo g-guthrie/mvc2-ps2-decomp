@@ -31,11 +31,6 @@ extern DispatchFn jtbl_00458850[];
 extern DispatchFn jtbl_00459050[];
 extern DispatchFn jtbl_00459390[];
 
-void func_002BD610(u8 *p, u8 *out)
-{
-    F(out, 4) = D_004F1F4C[0] - F(p, 0x34);
-    F(out, 8) = D_004F1FE8[0] - F(p, 0x38);
-}
 
 void func_002B23B0(u8 *p)
 {

@@ -10,16 +10,6 @@ extern s32 D_004C2B40;
 extern u8 D_006327B0[];
 extern u8 D_00632770[];
 
-void func_00417350(u16 a) {
-    extern void func_003DDB70(u8 *, f32);
-    extern double litodp(s32);
-    double d = (double)(s32)a;
-    f32 r;
-    d = d * 6.283185307179586;
-    d = d / 65536.0;
-    r = (f32)d;
-    func_003DDB70(D_006327B0 + (D_004C2B40 << 6), r);
-}
 
 typedef struct { f32 x, y, z; } V3b;
 

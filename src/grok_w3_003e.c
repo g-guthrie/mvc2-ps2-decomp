@@ -13,28 +13,8 @@ extern f32 D_00632770[];
 extern void func_003DF850(s32, void *);
 extern void func_003DD260(f32 *);
 
-f32 func_003E0C20(f32 x)
-{
-    f32 t = (f32)D_0062BF8C;
-    x = x - t;
-    return x;
-}
 
-f32 func_003E0C40(f32 x)
-{
-    f32 t = (f32)D_0062BF90;
-    x = x - t;
-    if (D_0062BC00 == 0)
-        x = x * 0.5f;
-    return x;
-}
 
-s32 func_003F0B20(s32 *p)
-{
-    if (p[3])
-        return (p[5] + p[1]) - p[4] - p[8];
-    return (p[4] - (p[5] - p[1])) - p[8];
-}
 
 void func_00414C30(f32 *p)
 {

@@ -10,12 +10,6 @@ typedef float f32;
 extern void func_00136DA0(s32 i);
 extern u8 D_004C262C;
 extern u8 D_004C2630;
-void func_00136D50(void) {
-    s32 i = 0;
-    D_004C262C = 0;
-    D_004C2630 = 0;
-    do { func_00136DA0(i); i++; } while (i < 0x3B);
-}
 
 extern s32 func_00174170();
 extern void func_001757E0();

@@ -100,17 +100,7 @@ void func_00347A70(u8 *p) {
     p[0x13C] = 0;
 }
 
-void func_00359310(u8 *p, u8 *q) {
-    p[5]++;
-    *(unsigned short *)(q + 8) = 0xFFFF;
-    func_00359260(p, q);
-}
 
-void func_003593B0(u8 *p, u8 *q) {
-    p[5]++;
-    *(unsigned short *)(q + 8) = 0xFFFF;
-    func_00359350(p, q);
-}
 
 void func_00359AA0(u8 *p) {
     p[5]++;

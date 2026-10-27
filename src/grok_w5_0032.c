@@ -258,21 +258,7 @@ void func_00320A50(u8 *p)
     }
 }
 
-void func_00321230(u8 *p, u8 *q)
-{
-    func_00182C30(q, 0x38);
-    func_00182DB0(p, 2);
-    func_001266A0(p, 6, 6);
-    func_001757E0(p, 15, 0);
-}
 
-void func_00321300(u8 *p, u8 *q)
-{
-    func_00182C30(q, 0x38);
-    func_00182DB0(p, 2);
-    func_001266A0(p, 5, 5);
-    func_001757E0(p, 15, 4);
-}
 
 void func_00321290(u8 *p, u8 *q)
 {

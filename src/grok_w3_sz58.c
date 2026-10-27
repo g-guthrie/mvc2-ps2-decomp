@@ -106,13 +106,6 @@ int func_002A76A0(u8 *p)
     return 1;
 }
 
-void func_0021B980(u8 *p, u8 *q)
-{
-    func_00182C30(q, 56);
-    func_00182DB0(p, 2);
-    func_001266A0(p, 6, 6);
-    func_001757E0(p, 15, 0);
-}
 void func_00321230(u8 *p, u8 *q)
 {
     func_00182C30(q, 56);
@@ -121,13 +114,6 @@ void func_00321230(u8 *p, u8 *q)
     func_001757E0(p, 15, 0);
 }
 
-void func_0021BA50(u8 *p, u8 *q)
-{
-    func_00182C30(q, 56);
-    func_00182DB0(p, 2);
-    func_001266A0(p, 5, 5);
-    func_001757E0(p, 15, 4);
-}
 void func_00321300(u8 *p, u8 *q)
 {
     func_00182C30(q, 56);

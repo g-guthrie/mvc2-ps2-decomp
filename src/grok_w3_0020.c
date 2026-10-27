@@ -36,20 +36,7 @@ extern void func_00204AB0(u8 *);
 extern void func_00209BB0(u8 *);
 extern void func_00209B70(u8 *);
 
-void func_00203040(u8 *p) {
-    u8 *q = *(u8 **)(p + 476);
-    if (!*(s8 *)(q + 336))
-        func_00178F20(q, p);
-    else
-        func_00179150(q, p);
-}
 
-void func_0020A7A0(u8 *p) {
-    if (--S(p, 28) == 0) {
-        p[7]++;
-        func_001757E0(p, 21, 2);
-    }
-}
 
 void func_0020A880(u8 *p) {
     if ((s8)func_00175700(p) < 0) {

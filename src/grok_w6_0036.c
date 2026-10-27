@@ -150,13 +150,6 @@ void func_00374630(u8 *p)
     (*(u8 **)(p + 24))[510] = 1;
 }
 
-void func_00368BE0(u8 *p)
-{
-    if ((s8)func_00175700(p) < 0)
-        func_00368FB0(p);
-    else
-        func_001E7F60(p);
-}
 
 void func_00360FE0(u8 *p)
 {
@@ -186,14 +179,6 @@ void func_00376660(u8 *p)
     jtbl_00463FB0[p[5]](p);
 }
 
-void func_0037F000(u8 *p)
-{
-    if ((s8)func_00175700(p) < 0) {
-        p[4]++;
-        p[316] = 0;
-    } else
-        func_001E7F60(p);
-}
 
 void func_00372E70(u8 *p)
 {

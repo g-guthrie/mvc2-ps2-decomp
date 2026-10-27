@@ -18,40 +18,6 @@ typedef struct {
 } P_h;
 extern u8 D_0045DA10[];
 
-s32 func_0031B480(P_h *p) {
-    extern s32 func_0018AA50(P_h *, s32, u16 *, s32);
-    extern s32 func_0018A580(P_h *);
-    extern void func_00186A60(P_h *, s32);
-    u16 s;
-    s32 a1;
-    if (p->b2b8 != 0) return 0;
-    if (func_0018AA50(p, 0x140, &s, 1) == 0) return 0;
-    if (func_0018A580(p) == 0) return 0;
-    if (p->b539 != 0) {
-        s = p->h20e;
-        if (p->b1e6 != 0) {
-            if ((s & 0xC00) != 0) s = s ^ 0xC00;
-        }
-    } else {
-        s = p->h354;
-    }
-    s = (s & 0x3C00) >> 10;
-    if (s == 0) s = 2 - p->b1e6;
-    if (p->b20d == 2) s += 0x10;
-    a1 = D_0045DA10[s];
-    if (a1 == 0) return 0;
-    if (p->b20d != 2) {
-        if ((s & (1 << p->b1e6)) != 0) return 0;
-    }
-    p->b22 = a1 - 1;
-    p->b5 = 0;
-    p->b6 = 0;
-    p->b7 = 0;
-    p->b1b7 = 1;
-    p->b1fd = 1;
-    func_00186A60(p, 0x15);
-    return 1;
-}
 
 typedef struct {
     u8 pad0[2]; u8 b2; u8 pad3[0x150 - 3]; s8 b150; s8 b151;

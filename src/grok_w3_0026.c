@@ -43,12 +43,6 @@ extern DispatchFn jtbl_00454CB0[];
 extern DispatchFn jtbl_004553D0[];
 extern DispatchFn jtbl_00454620[];
 
-int func_0026B4F0(u8 *p)
-{
-    if (func_0026B590(p))
-        return 1;
-    return func_0026B530(p) != 0;
-}
 
 void func_0026B6C0(u8 *p)
 {
@@ -64,12 +58,6 @@ void func_0026EDC0(u8 *p)
     *q = saved;
 }
 
-int func_0026F460(u8 *p)
-{
-    if (func_0026F4A0(p))
-        return 1;
-    return func_0026F520(p) != 0;
-}
 
 void func_00270A00(u8 *p)
 {
@@ -81,12 +69,6 @@ void func_00270A00(u8 *p)
     }
 }
 
-int func_00273C70(u8 *p)
-{
-    if (func_00273CB0(p))
-        return 1;
-    return func_00273D10(p) != 0;
-}
 
 void func_00260020(u8 *p)
 {

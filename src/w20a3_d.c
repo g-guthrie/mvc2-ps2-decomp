@@ -13,34 +13,6 @@ extern f32 D_004CBE8C[];
 extern f32 D_004CBE90[];
 extern s32 D_004C2720;
 
-void func_001E5070(s32 a, s32 b, s32 c, f32 f) {
-    extern s32 func_00422FB0(s32);
-    s32 t;
-    s32 r;
-    s32 o;
-    t = D_004C2720;
-    o = t * 20;
-    if (D_004CBE80[o] != 0) {
-        if (D_004CBE80[o] >= 4) {
-            r = func_00422FB0((t & 0x7F) | (((D_004CBE84[t * 5] & 0x7F) << 16) | ((D_004CBE88[t * 5] & 0x7F) << 8)));
-        } else {
-            r = func_00422FB0(((D_004CBE84[t * 5] & 0x7F) << 16) | ((D_004CBE88[t * 5] & 0x7F) << 8) | 1);
-        }
-        if (r < 0) {
-            D_004C2720 = D_004C2720 + 1;
-            if (D_004C2720 >= 36) D_004C2720 = 0;
-            return;
-        }
-    }
-    t = D_004C2720;
-    D_004CBE80[t * 20] = 3;
-    D_004CBE84[t * 5] = (u8)a;
-    D_004CBE88[t * 5] = (u8)b;
-    D_004CBE8C[t * 5] = (f32)c;
-    D_004CBE90[t * 5] = f;
-    D_004C2720 = D_004C2720 + 1;
-    if (D_004C2720 >= 36) D_004C2720 = 0;
-}
 
 typedef struct {
     u8 b0, b1, b2, b3, b4, b5;

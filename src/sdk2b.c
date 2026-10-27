@@ -15,11 +15,6 @@ extern void func_003FB128(void *);
 extern void func_0040E980(void *, int);
 extern int func_0040E9F8(void *, int);
 
-int func_00104598(int a, char *b) {
-    *(u64 *)(b + 0x48) = 0;
-    *(int *)(b + 4) = 0x2000;
-    return 0;
-}
 int func_003FFFF0(StreamGroup *p) { return func_003F81B0(p->engine); }
 int func_003FFFD8(int *p) { return func_003F81A8((void *)p[1]); }
 

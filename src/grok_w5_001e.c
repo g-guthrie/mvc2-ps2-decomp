@@ -37,11 +37,6 @@ void func_001E7F40(void)
 }
 
 
-void func_001E3240(u8 *p, s32 a1)
-{
-    if ((u8)a1 < 0x40)
-        func_001E2420(p, a1);
-}
 
 
 

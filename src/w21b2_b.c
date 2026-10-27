@@ -7,51 +7,6 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 
-void func_002E7A10(u8 *p)
-{
-    extern s8 func_00175700(u8 *);
-    extern void func_001830D0(u8 *, u32 *, s32);
-    extern void func_003A43F0(u8 *);
-    extern void func_001757E0(u8 *, s32, s32);
-    u32 v[4];
-    u32 t;
-    s32 r;
-    if (p[7] == 0) {
-        p[0x40C] = 2;
-        p[0x33C] = 5;
-        p[0x405] = (p[0x269] == 6) ? 2 : 0;
-        func_00175700(p);
-        if ((*(s8 *)(p + 0x151) & 1) != 0) {
-            p[0x404] = 0;
-            p[0x405] = 0;
-            t = p[7];
-            p[7] = t + 1;
-            *(s8 *)((s32)p + 0x151) ^= 1;
-            v[0] = 0x42855555;
-            v[1] = 0xC304DB6D;
-            func_001830D0(p, v, 1);
-        }
-    } else {
-        p[0x40C] = 2;
-        p[0x33C] = 5;
-        if ((r = func_00175700(p)) >= 0) {
-            if ((*(s8 *)(p + 0x151) & 2) != 0) {
-                { s32 q = *(s8 *)(p + 0x151); p[0x151] = q ^ 2; }
-                func_003A43F0(p);
-            }
-        } else {
-            s16 h = *(s16 *)(p + 0x1C) - 1;
-            *(s16 *)(p + 0x1C) = h;
-            if (h == 0) {
-                p[0x40D] = 0;
-                p[0x40C] = 0;
-                p[6]++;
-                p[7] = 0;
-                func_001757E0(p, 22, 9);
-            }
-        }
-    }
-}
 
 extern s32 D_00445A00[];
 

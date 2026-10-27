@@ -71,12 +71,6 @@ void func_001E3320(u8 *p, int a1, float scale) {
         func_001E5070(D_004CD183[p[440] * 20], a1, 128, scale);
 }
 
-void func_001FD3F0(u8 *p) {
-    if ((s8)func_00175700(p) < 0) {
-        func_001843A0(p);
-        return;
-    }
-}
 
 void func_001E7430(u8 *p) {
     u8 *r = func_00416180(*(u8 **)(p + 404), 0);

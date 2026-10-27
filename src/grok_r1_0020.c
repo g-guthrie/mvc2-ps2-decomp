@@ -222,11 +222,6 @@ void func_0027C340(u8 *p)
     }
 }
 
-void func_00229DE0(u8 *p) {
-    func_0022C5C0(p);
-    if ((s8)func_00175700(p) < 0)
-        func_0022C5D0(p);
-}
 
 void func_00229F80(u8 *p) {
     func_00175700(p);
@@ -236,11 +231,6 @@ void func_00229F80(u8 *p) {
     }
 }
 
-void func_002460E0(u8 *p) {
-    func_002482C0(p);
-    if ((s8)func_00175700(p) < 0)
-        func_00184540(p);
-}
 
 void func_00279230(u8 *p) {
     func_00186CE0(p, 21);

@@ -23,14 +23,6 @@ extern void func_00378CD0(u8 *, s32);
 typedef void (*DispatchFn)(u8 *);
 extern DispatchFn jtbl_00454850[];
 
-void func_00278F00(u8 *p)
-{
-    if (--*(s16 *)(p + 28) == 0) {
-        p[6]++;
-        p[316] = 1;
-        func_001E3210(p, 4);
-    }
-}
 
 void func_0027C100(u8 *p)
 {

@@ -69,12 +69,6 @@ void func_001396A0(u8 *p) {
     }
 }
 
-void func_00132F70(u8 *p) {
-    u8 *q = P(p, 0x14);
-    ((s8 *)p)[0x13c] = ((s8 *)q)[0x13c];
-    q = P(p, 0x14);
-    *(Vec4 *)(p + 0x74) = *(Vec4 *)(q + 0x74);
-}
 
 void func_0012ACD0(void) {
     if (D_004C25DC) {
@@ -82,12 +76,6 @@ void func_0012ACD0(void) {
     }
 }
 
-void func_00128380(void) {
-    D_004C2790 += 0x1000;
-    D_004C278C += 0x800;
-    D_004C2788 += 0x400;
-    D_004C2784 += 0x200;
-}
 
 void func_00138A20(u8 *p) {
     p[4]++;

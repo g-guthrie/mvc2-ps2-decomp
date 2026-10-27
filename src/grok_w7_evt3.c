@@ -64,33 +64,7 @@ void func_00158220(f32 *src)
     }
 }
 
-void func_003B7570(u8 *src)
-{
-    u8 *p = func_003DA750(0, 1, 0);
-    if (p != 0) {
-        P(p, 16) = func_003B75E0;
-        F(p, 52) = F(src, 52);
-        F(p, 56) = F(src, 56);
-        P(p, 24) = src;
-        p[1] = src[1];
-        S(p, 38) = 0x3500;
-    }
-}
 
-void func_0034A0D0(u8 *src)
-{
-    u8 *p = func_003DA750(0, 1, 0);
-    if (p != 0) {
-        P(p, 16) = func_0034A1B0;
-        P(p, 24) = src;
-        P(p, 20) = src;
-        p[1] = src[1];
-        p[32] = 0;
-        p[33] = 0;
-        S(p, 38) = 0x302;
-        F(p, 92) = F(src, 52);
-    }
-}
 
 void func_001DB320(u8 *src)
 {

@@ -251,28 +251,6 @@ s32 func_00354460(u8 *a, s32 b) {
 
 extern void func_001E7F60(u8 *p);
 
-void func_003B07D0(u8 *a) {
-    s8 t;
-    if (*(s8 *)(a + 435)) {
-        a[4] = 2;
-        a[6] = 1;
-        a[7] = 0;
-    } else {
-        func_001E7F60(a);
-        t = *(s8 *)(a + 434);
-        if (t) {
-            if ((t & 1) || (t & 16)) {
-                a[4] = 2;
-                a[6] = 1;
-                a[7] = 0;
-            } else {
-                a[4] = 2;
-                a[6] = 2;
-                a[7] = 0;
-            }
-        }
-    }
-}
 
 extern void func_001843A0(u8 *p);
 extern void func_00183920(u8 *p, f32 *v);
@@ -328,15 +306,6 @@ void func_001BCAC0(u8 *a, void *b_context) {
 
 extern struct { s32 pad0; s32 n; s32 pad[2]; f32 f[129]; } D_004F1D20;
 
-void func_0016D1C0(void) {
-    s32 i;
-    for (i = 0; i < D_004F1D20.n; i++) {
-        D_004F1D20.f[i] = 1.0f - (f32)i / (f32)D_004F1D20.n;
-    }
-    for (; i < 129; i++) {
-        *(s32 *)&D_004F1D20.f[i] = 0;
-    }
-}
 
 extern s32 func_0016B250(u8 *a, s32 n);
 extern void func_0016B0C0(u8 *a, u8 *b, s32 n);
