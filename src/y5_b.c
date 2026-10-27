@@ -31,10 +31,10 @@ void func_0015DB20(V3_5db *pos, s16 val)
     }
 }
 
-s32 func_002F6120(u8 *p)
+u8 *func_002F6120(u8 *p)
 {
-    extern s32 func_001E7FD0();
-    s32 r;
+    extern u8 *func_001E7FD0(u8 *);
+    u8 *r;
     if (p[0x20D] == 1) return 0;
     if ((*(u16 *)(p + 0x20E) & 0xC00) == 0) return 0;
     if (p[0x1B7] == 0) return 0;

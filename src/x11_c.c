@@ -114,9 +114,9 @@ void func_0028D4B0(S5 *p) {
     }
 }
 
-s32 func_002E0530(u8 *p) {
-    extern s32 func_001E7FD0();
-    s32 r = 0;
+u8 *func_002E0530(u8 *p) {
+    extern u8 *func_001E7FD0(u8 *);
+    u8 *r = 0;
     f32 c;
     if (p[0x1B7] == 0 || p[0x212] != 0) {
         return 0;

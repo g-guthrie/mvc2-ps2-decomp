@@ -10,13 +10,13 @@ void func_001F2E40(u8 *p) {
     extern void func_001830D0(u8 *, u32 *, s32);
     extern void func_00183D90(u8 *);
     extern void func_00175700(u8 *);
-    extern s32 func_001E7FD0(u8 *);
+    extern u8 *func_001E7FD0(u8 *);
     extern void func_001266A0(u8 *, s32, s32);
     extern void func_0015D010(u8 *, u32 *);
     extern void func_001757E0(u8 *, s32, s32);
-    extern void func_00185770(u8 *, s32);
+    extern void func_00185770(u8 *, u8 *);
     u32 v[3];
-    s32 s0;
+    u8 *s0;
     *(s16 *)(p + 0x3F8) = 2;
     p[0x40C] = 2;
     p[0x33C] = 5;
