@@ -17955,7 +17955,7 @@ func_0014B470,0x0014B470,0x1E4,src/hz13_a.c,complete
 func_00404B08,0x00404B08,0xC4,src/sa11_b.c,complete
 func_002BBF00,0x002BBF00,0x10C,src/sa11_f.c,complete
 func_00187A70,0x00187A70,0x13C,src/sa11_i.c,complete
-func_0016EEC0,0x0016EEC0,0x17C,src/sa11_l.c,complete
+func_0016EEC0,0x0016EEC0,0x17C,src/sa11_l.c,placeholder
 func_003B5300,0x003B5300,0x1B0,src/sa11_m.c,complete
 func_001FDAE0,0x001FDAE0,0x100,src/sa4_a.c,complete
 func_001BDE30,0x001BDE30,0x160,src/sa2_h.c,complete
