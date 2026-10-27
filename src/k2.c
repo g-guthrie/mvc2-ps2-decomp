@@ -1,3 +1,4 @@
+typedef struct StreamGroup StreamGroup;
 typedef signed int s32;
 #include "cri_sj_ring_buffer_types.h"
 typedef unsigned int u32;
@@ -38,13 +39,13 @@ void func_0040B098(void) { u32 i; for (i = 0; func_0040B028() != 1; i++) { if (i
 struct VO;
 typedef struct VT { char pad[0xC]; void (*fn)(struct VO *); } VT;
 typedef struct VO { VT *vt; } VO;
-typedef struct { s8 a; s8 b1; s8 b2; s8 pad; s32 w4; s32 w8; s32 wc; s32 w10; VO *obj; s32 w18; } R2;
+typedef struct { s8 a; s8 b1; s8 b2; s8 pad; StreamGroup *w4; s32 w8; s32 wc; s32 w10; VO *obj; s32 w18; } R2;
 extern void func_003F9630(R2 *);
 extern void func_003F9660(void);
 extern void func_003FF148(s32, s32);
 extern void func_003FF160(s32, s32);
 extern void func_0040EA00(s32, s32);
-extern void func_003FF658(s32);
+extern void func_003FF658(StreamGroup *);
 void func_004017E0(void *owner) {
     R2 *p = owner;
     func_003F9630(p);
