@@ -147,7 +147,7 @@ extern void func_003DAA40(struct Object *);
 extern s32 func_003DB9D0(s32);
 extern s32 func_003DB9E0(s32 handle);
 extern void func_003DE890();
-extern void func_003ECD00();
+extern void func_003ECD00(s32);
 extern void func_003ED2E0();
 typedef struct { u32 addr, size; s32 owner, z; } PoolEntryNative;
 typedef struct { s32 n, f4; PoolEntryNative *tab; s32 dir; u32 cur; s32 f14, f18; u32 total; } PoolArenaNative;
@@ -1414,7 +1414,7 @@ int func_00417A40(void) { return func_0011F5D8(); }
 
 void func_00417FA0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_0011F5C0(a0, a1, a2, a3); }
 
-void func_00417FB0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003ECD00(0, a1, a2, a3); }
+void func_00417FB0(void) { func_003ECD00(0); }
 
 void func_0041ABC0(s32 a0, s32 a1, s32 a2, s32 a3) {  func_003DAA40((struct Object *)(a0)); }
 
