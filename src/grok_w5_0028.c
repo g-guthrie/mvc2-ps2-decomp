@@ -13,7 +13,7 @@ extern s32 func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_00175C00();
 extern void func_00184540();
-extern s32 func_00176160();
+extern void func_00176160(u8 *, s32, s32, s32);
 extern s32 func_002803A0();
 extern void func_00299010();
 extern void func_0029C1E0();
@@ -172,16 +172,16 @@ void func_00298320(u8 *p)
         func_00184540(p);
 }
 
-s32 func_0028D910(u8 *p, s32 idx)
+void func_0028D910(u8 *p, s32 idx)
 {
     u8 *t = D_00455C90 + (idx << 3);
-    return func_00176160(p, t[1], t[2] + p[0x25] * 0x57, t[3]);
+    func_00176160(p, t[1], t[2] + p[0x25] * 0x57, t[3]);
 }
 
-s32 func_00294C20(u8 *p, s32 idx)
+void func_00294C20(u8 *p, s32 idx)
 {
     u8 *t = D_00456D80 + (idx << 3);
-    return func_00176160(p, t[1], t[2] + p[0x25] * 0x57, t[3]);
+    func_00176160(p, t[1], t[2] + p[0x25] * 0x57, t[3]);
 }
 
 void func_00290FD0(u8 *p)
