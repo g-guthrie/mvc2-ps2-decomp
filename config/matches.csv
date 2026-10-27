@@ -18138,7 +18138,7 @@ func_0041D640,0x0041D640,0x80,src/fb6_h.c,complete
 func_003FCF88,0x003FCF88,0x170,src/fb6_j.c,complete
 func_00195B40,0x00195B40,0x1D0,src/fb5_a.c,complete
 func_001EFA70,0x001EFA70,0x208,src/fb5_c.c,complete
-func_00404E90,0x00404E90,0x20C,src/fb5_d.c,complete
+func_00404E90,0x00404E90,0x20C,src/fb5_d.c,placeholder
 func_003911A0,0x003911A0,0x1A8,src/fb7_a.c,complete
 func_003ACA80,0x003ACA80,0x1AC,src/fb7_b.c,complete
 func_003D6E20,0x003D6E20,0x1D0,src/fb7_c.c,complete

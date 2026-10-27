@@ -22,6 +22,7 @@ typedef struct {
     s32 f1b4;
 } T404;
 
+/* Provisional: the body forces a register and is not credited as reconstructed C. */
 void func_00404E90(T404 *p) {
     extern s8 func_004052B8(void *);
     extern void func_00405350(u8 *, s32, s32 *, s32 *);
