@@ -13,7 +13,7 @@ typedef struct {
     u8 *f4;
     s32 f8;
     u8 *list[(0x90 - 0xC) / 4];
-    s32 list2[16];
+    void *list2[16];
     u8 pad[0x1A8 - 0xD0];
     s8 b1a8;
     s8 b1a9;
@@ -33,13 +33,13 @@ void func_00404E90(T404 *p) {
     extern void func_004052E8(void *, s32);
     extern s8 func_004052F0(void *);
     extern void func_004028E0(void *, s32);
-    extern void func_00401760(u8 *, s32);
+    extern void func_00401760(u8 *, void *);
     extern s32 func_00401920(s8 *);
     extern s32 func_00402550(s16 *);
     s32 x[2];
     s32 i, r, c;
     u8 *s;
-    u8 **l, **a; s32 *b, k5;
+    u8 **l, **a; void **b; s32 k5;
     register s32 n __asm__("$17");
 
     l = p->list;

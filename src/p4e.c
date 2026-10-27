@@ -19,11 +19,11 @@ void func_00407BC0(void) {
 
 extern void func_00401868();
 extern void func_003F9630();
-extern void func_00401640();
+extern void func_00401640(void *, void *);
 extern void func_003F9660();
 extern void func_003FB128();
 extern char D_004BBFF8[];
-void func_00401760(u8 *p, s32 b) {
+void func_00401760(u8 *p, void *b) {
     if (p == 0 || b == 0) {
         func_003FB128(D_004BBFF8);
         return;
