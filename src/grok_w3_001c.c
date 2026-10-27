@@ -78,7 +78,7 @@ void func_001D6D80(u8 *p, u8 *q) {
     func_00175700(p);
 }
 
-void func_001D6DC0(u8 *p) {
+void func_001D6DC0(u8 *p, u8 *owner_unused) {
     func_001E3240(p, 31);
     p[4]++;
     p[316] = 0;

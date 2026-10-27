@@ -15,7 +15,7 @@ typedef ActorState State;
 typedef void (*OwnerCallback)(u8 *,u8 *);
 extern OwnerCallback jtbl_004BFA90[2] __attribute__((section(".sdata")));
 extern void func_001D6D10(u8 *);
-void func_001D6BE0(u8 *p)
+void func_001D6BE0(u8 *p, u8 *owner_unused)
 {
     u8 *q;
     ++p[4];p[0x13C]=1;
