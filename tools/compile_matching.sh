@@ -19997,9 +19997,6 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 "$PYTHON" tools/verify_object.py "$BUILD/rb89_c.o" private/SLUS_204.86.rom --source src/rb89_c.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/rb90_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/rb90_b.o"
-"$PYTHON" tools/verify_object.py "$BUILD/rb90_b.o" private/SLUS_204.86.rom --source src/rb90_b.c
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/rb90_c.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/rb90_c.o"
 "$PYTHON" tools/verify_object.py "$BUILD/rb90_c.o" private/SLUS_204.86.rom --source src/rb90_c.c
 
