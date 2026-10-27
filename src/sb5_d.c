@@ -17,8 +17,8 @@ extern R36h D_0043FA30[];
 extern u8 D_00583BC3[];
 
 void func_00138AA0(u8 *p) {
-    extern void func_0032D450(u8 *, s32, s32, f32);
-    extern void func_0032D4E0(u8 *, s32, s32, f32);
+    extern void func_0032D450(u8 *, s32, u8, f32);
+    extern void func_0032D4E0(u8 *, s32, f32, u8);
     extern void func_0032D570(u8 *, s32);
     extern void func_0032D5F0(u8 *);
     extern void func_001E3CE0(s32);
@@ -38,19 +38,19 @@ void func_00138AA0(u8 *p) {
         case 0:
             func_001E3CE0((u8)(p[0x20] + 0x3A));
             func_0032D450(p, *(s16 *)(p + 0x1C), 2, D_0043FA28[p[0x20]].q[x].f[0]);
-            func_0032D4E0(p, *(s16 *)(p + 0x1C), 2, D_0043FA30[p[0x20]].q[x].f[0]);
+            func_0032D4E0(p, *(s16 *)(p + 0x1C), D_0043FA30[p[0x20]].q[x].f[0], 2);
             *(u32 *)(p + 0x6C) = 0x3F9A4924;
             func_0032D570(p, *(s16 *)(p + 0x1C));
             *(s32 *)(p + 0xD4) = 2;
             break;
         case 1:
             func_0032D450(p, *(s16 *)(p + 0x1C), 2, D_0043FA10[p[0x20]].q[x].f[0]);
-            func_0032D4E0(p, *(s16 *)(p + 0x1C), 2, D_0043FA18[p[0x20]].q[x].f[0]);
+            func_0032D4E0(p, *(s16 *)(p + 0x1C), D_0043FA18[p[0x20]].q[x].f[0], 2);
             *(s32 *)(p + 0xD4) = 0;
             break;
         case 2:
             func_0032D450(p, *(s16 *)(p + 0x1C), 2, D_0043FA1C[p[0x20]].q[x].f[0]);
-            func_0032D4E0(p, *(s16 *)(p + 0x1C), 2, D_0043FA24[p[0x20]].q[x].f[0]);
+            func_0032D4E0(p, *(s16 *)(p + 0x1C), D_0043FA24[p[0x20]].q[x].f[0], 2);
             *(s32 *)(p + 0xD4) = 1;
             break;
         }

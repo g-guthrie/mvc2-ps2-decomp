@@ -20,7 +20,7 @@ void func_0013C110(u8 *a)
     extern void func_0013C7A0(u8 *);
     extern void func_0013C7E0(u8 *);
     extern void func_0032D390(u8 *, s32, int, int, f32, f32);
-    extern void func_0032D4E0(u8 *, s32, f32, int);
+    extern void func_0032D4E0(u8 *, s32, f32, u8);
     extern void func_001E3CE0(s32);
 
     if ((r = func_003DA750(0, 6, 1)) == 0)
