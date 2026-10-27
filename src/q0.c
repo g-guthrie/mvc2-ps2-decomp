@@ -28,7 +28,7 @@ extern u32 *func_003F1F90(u32 *p, u32 key);
 
 /* func_003F2510: not yet matched without a stand-in callee. */
 
-u16 func_00220260(s32 a, s32 b) {
+u16 func_00220260(u8 *actor, s32 b) {
     u16 t = b & 0x3C00;
     u16 hi = (t & 0x3000) / 0x1000;
     u16 lo = (t & 0xC00) / 0x100;
