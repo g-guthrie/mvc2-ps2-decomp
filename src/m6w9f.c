@@ -8,13 +8,13 @@ typedef float f32;
 typedef struct { f32 x, y, z; } V3;
 
 
-typedef struct { u8 pad[0x3A]; s16 x; u8 pad2[0x88 - 0x3C]; } E;
+#include "input_device_view.h"
 extern void *D_004C2A68;
 extern u32 D_004773F0[];
 u32 func_003D6850(s32 i) {
     u32 f = 0;
-    E *devices = (E *)D_004C2A68;
-    s16 x = devices[i].x;
+    InputDeviceView *devices = (InputDeviceView *)D_004C2A68;
+    s16 x = devices[i].axis_3a;
     u32 old;
     if (x < -0x32) { f |= 0x2000; }
     if (x > 0x32) { f |= 0x1000; }

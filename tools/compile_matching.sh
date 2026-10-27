@@ -6646,7 +6646,7 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -G0 -o "$BUILD/m6w9e.o" "$BUILD/m6w9e.s"
 "$PYTHON" tools/verify_object.py "$BUILD/m6w9e.o" private/SLUS_204.86.rom --source src/m6w9e.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/m6w9f.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/m6w9f.o"
+    src/m6w9f.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/m6w9f.o"
 "$PYTHON" tools/verify_object.py "$BUILD/m6w9f.o" private/SLUS_204.86.rom --source src/m6w9f.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/m6w9g.c -c -lang c -O3 -Op -sdatathreshold 8 -o "$BUILD/m6w9g.o"
