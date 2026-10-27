@@ -1,3 +1,4 @@
+#include "runtime_decode_descriptor.h"
 typedef signed int s32;
 typedef unsigned int u32;
 typedef unsigned char u8;
@@ -27,15 +28,15 @@ extern u32 func_00410AD0(s32, s32);
 u32 func_003FF060(HolderF *h, s32 i){ return func_00410AD0(((ObjF *)h->tbl->items[i])->f, 0) >> 1; }
 
 
-typedef struct { s32 f0; s32 pad[4]; s32 f5; s32 pad2[2]; s32 f8; } Q48;
-typedef struct { s32 pad[2]; s32 h; } P48b;
-extern void func_00404408(s32, s32, s32, s32);
-extern void func_00404468(s32);
+typedef struct { const void *f0; s32 pad[4]; short *f5; s32 pad2[2]; s32 f8; } Q48;
+typedef struct { s32 pad[2]; RuntimeDecodeDescriptor *h; } P48b;
+extern s32 func_00404408(RuntimeDecodeDescriptor *, const void *, s32, short *);
+extern void func_00404468(s32 *);
 void func_003F8448(P48b *p, s32 x){
     Q48 *q = (Q48 *)((char *)p + 0x48);
-    s32 h = p->h;
-    func_00404408(h, q->f0, x, q->f5 + q->f8 * 2);
-    func_00404468(h);
+    RuntimeDecodeDescriptor *h = p->h;
+    func_00404408(h, q->f0, x, q->f5 + q->f8);
+    func_00404468((s32 *)h);
 }
 
 
