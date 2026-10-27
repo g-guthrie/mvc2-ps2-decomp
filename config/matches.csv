@@ -19361,3 +19361,4 @@ func_003B2380,0x003B2380,0x28,src/owner_dispatch_003b2380.c,placeholder
 func_001D4BC0,0x001D4BC0,0x48,src/owner_dispatch_001d4bc0.c,placeholder
 func_001D4E90,0x001D4E90,0x48,src/owner_dispatch_001d4e90.c,placeholder
 func_0041C220,0x0041C220,0x94,src/runtime_callback_0041c220.c,placeholder
+func_0041C890,0x0041C890,0x170,src/runtime_menu_pan_0041c890.c,complete
