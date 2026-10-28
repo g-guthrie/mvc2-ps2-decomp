@@ -23235,4 +23235,131 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/rt4_e.c -c -lang c -i src -O4,p -fp off -sdatathreshold 8 -o "$BUILD/rt4_e.o"
 "$PYTHON" tools/verify_object.py "$BUILD/rt4_e.o" private/SLUS_204.86.rom --source src/rt4_e.c
 
+mkdir -p "build/warm/sf8_a" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sc14_a.c src/sf8_a.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/sf8_a" && \
+    mv "build/warm/sf8_a/sf8_a.o" "$BUILD/sf8_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf8_a.o" private/SLUS_204.86.rom --source src/sf8_a.c
+mkdir -p "build/warm/sf8_b" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sb22_a.c src/sf8_b.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/sf8_b" && \
+    mv "build/warm/sf8_b/sf8_b.o" "$BUILD/sf8_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf8_b.o" private/SLUS_204.86.rom --source src/sf8_b.c
+mkdir -p "build/warm/sf8_c" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sb13_a.c src/sf8_c.c -c -lang c -i src -O3,p -Op -fp off -sdatathreshold 0 -o "build/warm/sf8_c" && \
+    mv "build/warm/sf8_c/sf8_c.o" "$BUILD/sf8_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf8_c.o" private/SLUS_204.86.rom --source src/sf8_c.c
+mkdir -p "build/warm/sf8_d" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sb16_a.c src/sf8_d.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/sf8_d" && \
+    mv "build/warm/sf8_d/sf8_d.o" "$BUILD/sf8_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf8_d.o" private/SLUS_204.86.rom --source src/sf8_d.c
+mkdir -p "build/warm/sf8_e" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/wrm1_l.c src/sf8_e.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/sf8_e" && \
+    mv "build/warm/sf8_e/sf8_e.o" "$BUILD/sf8_e.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf8_e.o" private/SLUS_204.86.rom --source src/sf8_e.c
+mkdir -p "build/warm/sf8_f" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/dp5_a.c src/sf8_f.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/sf8_f" && \
+    mv "build/warm/sf8_f/sf8_f.o" "$BUILD/sf8_f.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf8_f.o" private/SLUS_204.86.rom --source src/sf8_f.c
+mkdir -p "build/warm/sf7_a" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sa38_c.c src/sf7_a.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/sf7_a" && \
+    mv "build/warm/sf7_a/sf7_a.o" "$BUILD/sf7_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf7_a.o" private/SLUS_204.86.rom --source src/sf7_a.c
+mkdir -p "build/warm/sf7_b" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sa38_c.c src/sf7_b.c -c -lang c -i src -O3,p -fp off -sdatathreshold 0 -o "build/warm/sf7_b" && \
+    mv "build/warm/sf7_b/sf7_b.o" "$BUILD/sf7_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf7_b.o" private/SLUS_204.86.rom --source src/sf7_b.c
+mkdir -p "build/warm/sf7_c" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/rb42_a.c src/sf7_c.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/sf7_c" && \
+    mv "build/warm/sf7_c/sf7_c.o" "$BUILD/sf7_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf7_c.o" private/SLUS_204.86.rom --source src/sf7_c.c
+mkdir -p "build/warm/sf11_a" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq200_b.c src/sf11_a.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/sf11_a" && \
+    mv "build/warm/sf11_a/sf11_a.o" "$BUILD/sf11_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf11_a.o" private/SLUS_204.86.rom --source src/sf11_a.c
+mkdir -p "build/warm/sf11_b" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sf11_a.c src/sf11_b.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/sf11_b" && \
+    mv "build/warm/sf11_b/sf11_b.o" "$BUILD/sf11_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf11_b.o" private/SLUS_204.86.rom --source src/sf11_b.c
+mkdir -p "build/warm/sf11_c" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sf11_b.c src/sf11_c.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/sf11_c" && \
+    mv "build/warm/sf11_c/sf11_c.o" "$BUILD/sf11_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf11_c.o" private/SLUS_204.86.rom --source src/sf11_c.c
+
+"$WIBO" "$SNCPP" -P src/sf1_a.c "$BUILD/sf1_a.i"
+"$WIBO" "$EE29CC1" "$BUILD/sf1_a.i" -O2 -G0 -ffunction-sections -msoft-float -quiet -o "$BUILD/sf1_a.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/sf1_a.o" "$BUILD/sf1_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/sf1_a.o" private/SLUS_204.86.rom --source src/sf1_a.c
+mkdir -p "build/warm/sf1_c" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/x10_a.c src/sf1_c.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/sf1_c" && \
+    mv "build/warm/sf1_c/sf1_c.o" "$BUILD/sf1_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf1_c.o" private/SLUS_204.86.rom --source src/sf1_c.c
+mkdir -p "build/warm/sf3_a" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/v12_f.c src/sf3_a.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/sf3_a" && \
+    mv "build/warm/sf3_a/sf3_a.o" "$BUILD/sf3_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf3_a.o" private/SLUS_204.86.rom --source src/sf3_a.c
+mkdir -p "build/warm/sf3_b" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/v12_f.c src/sf3_b.c -c -lang c -i src -O3,p -fp off -sdatathreshold 0 -o "build/warm/sf3_b" && \
+    mv "build/warm/sf3_b/sf3_b.o" "$BUILD/sf3_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf3_b.o" private/SLUS_204.86.rom --source src/sf3_b.c
+mkdir -p "build/warm/sf3_c" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/dp2_b.c src/sf3_c.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/sf3_c" && \
+    mv "build/warm/sf3_c/sf3_c.o" "$BUILD/sf3_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf3_c.o" private/SLUS_204.86.rom --source src/sf3_c.c
+mkdir -p "build/warm/sf3_d" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/dp5_b.c src/sf3_d.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/sf3_d" && \
+    mv "build/warm/sf3_d/sf3_d.o" "$BUILD/sf3_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf3_d.o" private/SLUS_204.86.rom --source src/sf3_d.c
+mkdir -p "build/warm/sf3_e" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nq239_a.c src/sf3_e.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/sf3_e" && \
+    mv "build/warm/sf3_e/sf3_e.o" "$BUILD/sf3_e.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf3_e.o" private/SLUS_204.86.rom --source src/sf3_e.c
+mkdir -p "build/warm/sf4_a" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/w183_n.c src/sf4_a.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/sf4_a" && \
+    mv "build/warm/sf4_a/sf4_a.o" "$BUILD/sf4_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf4_a.o" private/SLUS_204.86.rom --source src/sf4_a.c
+mkdir -p "build/warm/sf4_b" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/actor_rotation_return_0015bd40.c src/sf4_b.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/sf4_b" && \
+    mv "build/warm/sf4_b/sf4_b.o" "$BUILD/sf4_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf4_b.o" private/SLUS_204.86.rom --source src/sf4_b.c
+mkdir -p "build/warm/sf10_b" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq207_b.c src/sf10_b.c -c -lang c -i src -O3 -sdatathreshold 8 -fp off -o "build/warm/sf10_b" && \
+    mv "build/warm/sf10_b/sf10_b.o" "$BUILD/sf10_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf10_b.o" private/SLUS_204.86.rom --source src/sf10_b.c
+mkdir -p "build/warm/sf6_c" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/hy3_c.c src/sf6_c.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/sf6_c" && \
+    mv "build/warm/sf6_c/sf6_c.o" "$BUILD/sf6_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf6_c.o" private/SLUS_204.86.rom --source src/sf6_c.c
+
+mkdir -p "build/warm/sf2_a" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nq228_a.c src/sf2_a.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/sf2_a" && \
+    mv "build/warm/sf2_a/sf2_a.o" "$BUILD/sf2_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf2_a.o" private/SLUS_204.86.rom --source src/sf2_a.c
+mkdir -p "build/warm/sf2_b" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sf2_a.c src/sf2_b.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/sf2_b" && \
+    mv "build/warm/sf2_b/sf2_b.o" "$BUILD/sf2_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf2_b.o" private/SLUS_204.86.rom --source src/sf2_b.c
+mkdir -p "build/warm/sf2_e" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nq226_c.c src/sf2_e.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/sf2_e" && \
+    mv "build/warm/sf2_e/sf2_e.o" "$BUILD/sf2_e.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf2_e.o" private/SLUS_204.86.rom --source src/sf2_e.c
+mkdir -p "build/warm/sf2_f" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sf2_e.c src/sf2_f.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/sf2_f" && \
+    mv "build/warm/sf2_f/sf2_f.o" "$BUILD/sf2_f.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf2_f.o" private/SLUS_204.86.rom --source src/sf2_f.c
+mkdir -p "build/warm/sf12_a" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/q1h.c src/sf12_a.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/sf12_a" && \
+    mv "build/warm/sf12_a/sf12_a.o" "$BUILD/sf12_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf12_a.o" private/SLUS_204.86.rom --source src/sf12_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sf9_a.c -c -lang c -i src -O4,p -sdatathreshold 8 -o "$BUILD/sf9_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf9_a.o" private/SLUS_204.86.rom --source src/sf9_a.c
+mkdir -p "build/warm/sf9_b" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sa29_g.c src/sf9_b.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/sf9_b" && \
+    mv "build/warm/sf9_b/sf9_b.o" "$BUILD/sf9_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf9_b.o" private/SLUS_204.86.rom --source src/sf9_b.c
+mkdir -p "build/warm/sf9_d" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/bobbing_position_003421e0.c src/sf9_d.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/sf9_d" && \
+    mv "build/warm/sf9_d/sf9_d.o" "$BUILD/sf9_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sf9_d.o" private/SLUS_204.86.rom --source src/sf9_d.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
