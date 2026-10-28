@@ -9263,7 +9263,7 @@ func_00303FF0,0x00303FF0,0xB8,src/grok_w7_context_timer_flag_position.c,complete
 func_004154C0,0x004154C0,0xC8,src/reset_runtime_service_pool_004154C0.c,complete
 func_00415450,0x00415450,0x64,src/clear_runtime_service_workspace_00415450.c,complete
 func_0040ADF0,0x0040ADF0,0x20,src/set_runtime_option_fields_0040ADF0.c,complete
-func_0040AF58,0x0040AF58,0x30,src/dispatch_runtime_parameter_callback_0040AF58.c,complete
+func_0040AF58,0x0040AF58,0x30,src/s5a_a.c,complete
 func_004098A8,0x004098A8,0x30,src/dispatch_runtime_message_004098A8.c,complete
 func_00408EA0,0x00408EA0,0x28,src/release_runtime_record_handle_00408EA0.c,complete
 func_0040CA70,0x0040CA70,0x30,src/set_runtime_status_mode_0040CA70.c,complete
@@ -11079,7 +11079,7 @@ func_004108F0,0x004108F0,0x30,src/k2.c,complete
 func_003F83F0,0x003F83F0,0x40,src/k2.c,complete
 func_0011DA38,0x0011DA38,0x4c,src/k2.c,complete
 func_0040BE90,0x0040BE90,0x70,src/k2.c,complete
-func_0040B098,0x0040B098,0x74,src/k2.c,complete
+func_0040B098,0x0040B098,0x74,src/s5a_a.c,complete
 func_004017E0,0x004017E0,0x84,src/k2.c,complete
 func_0040F2E8,0x0040F2E8,0x98,src/k2.c,complete
 func_0040EFE0,0x0040EFE0,0x18,src/k2b.c,complete
@@ -13143,7 +13143,7 @@ func_004084E8,0x004084E8,0x120,src/u3_v.c,complete
 func_00409708,0x00409708,0x108,src/pw39_ee.c,complete
 func_0011DE18,0x0011DE18,0xBC,src/pw39_ee.c,complete
 func_00402DE0,0x00402DE0,0xD4,src/pw39_ee.c,complete
-func_0040B110,0x0040B110,0xAC,src/pw39_ee.c,complete
+func_0040B110,0x0040B110,0xAC,src/s5a_a.c,complete
 func_0040BBB8,0x0040BBB8,0x100,src/pw39_ee.c,complete
 func_0040E868,0x0040E868,0xC8,src/pw39_ee2.c,complete
 func_00410B20,0x00410B20,0x68,src/pw39_ee2.c,complete
@@ -15217,7 +15217,7 @@ func_00145CD0,0x00145CD0,0x16C,src/w1812_e.c,complete
 func_0041D070,0x0041D070,0x158,src/w1812_f.c,complete
 func_00327750,0x00327750,0x164,src/w1812_g.c,complete
 func_003ECBE0,0x003ECBE0,0x118,src/w1812_h.c,complete
-func_003F89D8,0x003F89D8,0x120,src/w1812_i.c,complete
+func_003F89D8,0x003F89D8,0x120,src/s5a_c.c,complete
 func_00407770,0x00407770,0xF4,src/w1812_i.c,complete
 func_00404968,0x00404968,0x140,src/w189_a.c,complete
 func_002E29D0,0x002E29D0,0xD4,src/w189_b.c,complete
@@ -19982,3 +19982,8 @@ func_001A52F0,0x001A52F0,0x12C,src/s5c_b.c,complete
 func_001A6940,0x001A6940,0x12C,src/s5c_c.c,complete
 func_001A0880,0x001A0880,0x12C,src/s5c_d.c,complete
 func_0018F8C0,0x0018F8C0,0x11C,src/s5c_f.c,complete
+func_0040B458,0x0040B458,0x1C0,src/s5a_a.c,complete
+func_0040B700,0x0040B700,0x1A8,src/s5a_a.c,complete
+func_00409250,0x00409250,0x198,src/s5a_b.c,complete
+func_003F8AF8,0x003F8AF8,0xF4,src/s5a_c.c,complete
+func_003F8FB8,0x003F8FB8,0xFC,src/s5a_d.c,complete

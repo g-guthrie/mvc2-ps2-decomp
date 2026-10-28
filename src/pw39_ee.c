@@ -18,9 +18,6 @@ extern void func_003F9630(void);
 extern s32 func_0040F0B8();
 extern void func_00401640();
 extern void func_003F9660(void);
-extern char D_004BDDD8[];
-extern char D_004BDDB0[];
-extern s32 func_001089F0();
 extern s32 func_0011EB60();
 extern char D_004BE0E0[];
 extern char D_004BE0F8[];
@@ -101,23 +98,6 @@ void func_00402DE0(u8 *a, s32 b, s32 c) {
     a[2] = 2;
     a[0x98] = 0;
     func_003F9660();
-}
-
-s32 func_0040B110(s32 h) {
-    u32 i = 0;
-    s32 buf;
-    s32 r;
-    while (1) {
-        r = func_001089F0(h, 1, &buf);
-        if (r < 0) {
-            func_0011EB60(D_004BDDB0, h, r);
-            return 0;
-        }
-        if (buf == 0) break;
-        if (i > 0x29810) func_0011EB60(D_004BDDD8);
-        i++;
-    }
-    return 1;
 }
 
 void func_0040BBB8(u8 *p) {

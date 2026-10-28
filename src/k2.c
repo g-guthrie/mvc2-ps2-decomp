@@ -33,9 +33,6 @@ void func_0011DA38(void) { if (--D_0043BB64 == 0) { D_0043BB60 = -1; func_00103E
 extern u32 func_0011FFA0(char *);
 s32 func_0040BE90(char *s) { u32 n = func_0011FFA0(s); u32 i; if (n > 0x10) n = 0x10; for (i = 0; i < n; i++) if (s[i] == 0x3A) return 1; return 0; }
 
-extern s32 func_0040B028(void);
-extern char D_004BDD88[];
-void func_0040B098(void) { u32 i; for (i = 0; func_0040B028() != 1; i++) { if (i > 0x29810) func_0011EB60(D_004BDD88); } }
 
 struct VO;
 typedef struct VT { char pad[0xC]; void (*fn)(struct VO *); } VT;

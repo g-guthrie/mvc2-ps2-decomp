@@ -2279,15 +2279,6 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
 "$PYTHON" tools/verify_object.py "$BUILD/set_runtime_option_fields_0040ADF0.o" \
     private/SLUS_204.86.rom --source src/set_runtime_option_fields_0040ADF0.c
 
-"$WIBO" "$SNCPP" -P src/dispatch_runtime_parameter_callback_0040AF58.c \
-    "$BUILD/dispatch_runtime_parameter_callback_0040AF58.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py \
-    "$BUILD/dispatch_runtime_parameter_callback_0040AF58.i" \
-    "$BUILD/dispatch_runtime_parameter_callback_0040AF58.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/dispatch_runtime_parameter_callback_0040AF58.o" \
-    "$BUILD/dispatch_runtime_parameter_callback_0040AF58.s"
-"$PYTHON" tools/verify_object.py "$BUILD/dispatch_runtime_parameter_callback_0040AF58.o" \
-    private/SLUS_204.86.rom --source src/dispatch_runtime_parameter_callback_0040AF58.c
 
 "$WIBO" "$SNCPP" -P src/dispatch_runtime_message_004098A8.c \
     "$BUILD/dispatch_runtime_message_004098A8.i"
@@ -23764,5 +23755,22 @@ mkdir -p "build/warm/s5c_f" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MW
     src/e080_b.c src/s5c_f.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/s5c_f" && \
     mv "build/warm/s5c_f/s5c_f.o" "$BUILD/s5c_f.o"
 "$PYTHON" tools/verify_object.py "$BUILD/s5c_f.o" private/SLUS_204.86.rom --source src/s5c_f.c
+
+"$WIBO" "$SNCPP" -P src/s5a_a.c "$BUILD/s5a_a.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 "$BUILD/s5a_a.i" "$BUILD/s5a_a.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/s5a_a.o" "$BUILD/s5a_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/s5a_a.o" private/SLUS_204.86.rom --source src/s5a_a.c
+"$WIBO" "$SNCPP" -P src/s5a_b.c "$BUILD/s5a_b.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 "$BUILD/s5a_b.i" "$BUILD/s5a_b.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/s5a_b.o" "$BUILD/s5a_b.s"
+"$PYTHON" tools/verify_object.py "$BUILD/s5a_b.o" private/SLUS_204.86.rom --source src/s5a_b.c
+"$WIBO" "$SNCPP" -P src/s5a_c.c "$BUILD/s5a_c.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 "$BUILD/s5a_c.i" "$BUILD/s5a_c.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/s5a_c.o" "$BUILD/s5a_c.s"
+"$PYTHON" tools/verify_object.py "$BUILD/s5a_c.o" private/SLUS_204.86.rom --source src/s5a_c.c
+"$WIBO" "$SNCPP" -P src/s5a_d.c "$BUILD/s5a_d.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 "$BUILD/s5a_d.i" "$BUILD/s5a_d.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/s5a_d.o" "$BUILD/s5a_d.s"
+"$PYTHON" tools/verify_object.py "$BUILD/s5a_d.o" private/SLUS_204.86.rom --source src/s5a_d.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh
