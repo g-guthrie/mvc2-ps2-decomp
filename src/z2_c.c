@@ -63,7 +63,7 @@ void func_0035A340(P35A340 *p, u8 *q)
 
 extern u8 D_0045D480[], D_0045D484[];
 /* Provisional: vector-table ownership and selector bounds are unresolved. */
-void func_00312A70(u8 *p)
+void func_00312A70(u8 *p, u8 *owner_unused)
 {
     extern int func_00175700(u8 *);
     extern int func_001757E0(u8 *, s32, s32);

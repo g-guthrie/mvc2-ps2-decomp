@@ -21987,4 +21987,48 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/nf6_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nf6_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/nf6_a.o" private/SLUS_204.86.rom --source src/nf6_a.c
 
+"$WIBO" "$SNCPP" -P src/no3_a.c "$BUILD/no3_a.i"
+"$WIBO" "$EE29CC1" "$BUILD/no3_a.i" -O2 -G0 -ffunction-sections  -quiet -o "$BUILD/no3_a.s"
+"${AS:-mipsel-linux-gnu-as}" -EL -march=r5900 -mabi=eabi -G0 -o "$BUILD/no3_a.o" "$BUILD/no3_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/no3_a.o" private/SLUS_204.86.rom --source src/no3_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/no5_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/no5_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/no5_a.o" private/SLUS_204.86.rom --source src/no5_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/ns5_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/ns5_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ns5_a.o" private/SLUS_204.86.rom --source src/ns5_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/ns5_b.c -c -lang c -i src -O3 -Op -o "$BUILD/ns5_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ns5_b.o" private/SLUS_204.86.rom --source src/ns5_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/ns5_c.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/ns5_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ns5_c.o" private/SLUS_204.86.rom --source src/ns5_c.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/ns0_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/ns0_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ns0_a.o" private/SLUS_204.86.rom --source src/ns0_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/ns0_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/ns0_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ns0_b.o" private/SLUS_204.86.rom --source src/ns0_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/ns1_a.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/ns1_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ns1_a.o" private/SLUS_204.86.rom --source src/ns1_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/ns1_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/ns1_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ns1_b.o" private/SLUS_204.86.rom --source src/ns1_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/ns4_b.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/ns4_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ns4_b.o" private/SLUS_204.86.rom --source src/ns4_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/ns3_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/ns3_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ns3_a.o" private/SLUS_204.86.rom --source src/ns3_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/ns3_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/ns3_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ns3_b.o" private/SLUS_204.86.rom --source src/ns3_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/ns2_c.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/ns2_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/ns2_c.o" private/SLUS_204.86.rom --source src/ns2_c.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

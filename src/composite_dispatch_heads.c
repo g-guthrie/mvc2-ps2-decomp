@@ -14,7 +14,7 @@ extern int func_001757E0(u8 *, int, int);
 
 extern void func_00239870(u8 *);
 
-extern ContextDispatchFn jtbl_0043E930[];
+extern OwnerByteCallback jtbl_0043E930[];
 extern DispatchFn jtbl_0043E940[];
 extern DispatchFn jtbl_0043EB40[];
 extern DispatchFn jtbl_0043EE00[];
@@ -119,7 +119,7 @@ extern DispatchFn jtbl_0044B080[];
 extern DispatchFn jtbl_0044B110[];
 extern ContextDispatchFn jtbl_0044B150[];
 extern DispatchFn jtbl_0044B3B0[];
-extern ContextDispatchFn jtbl_0044B3C0[];
+extern OwnerByteCallback jtbl_0044B3C0[];
 extern DispatchFn jtbl_0044B410[];
 extern Mvc2OwnerStateCallback const jtbl_0044B430[11];
 extern ContextDispatchFn jtbl_0044B460[];
@@ -1038,9 +1038,9 @@ extern DispatchFn jtbl_0045D3D0[];
 extern DispatchFn jtbl_0045D3F8[];
 extern DispatchFn jtbl_0045D408[];
 extern DispatchFn jtbl_0045D438[];
-extern ContextDispatchFn jtbl_0045D490[];
-extern ContextDispatchFn jtbl_0045D4B0[];
-extern ContextDispatchFn jtbl_0045D4D0[];
+extern OwnerByteCallback jtbl_0045D490[];
+extern OwnerByteCallback jtbl_0045D4B0[];
+extern OwnerByteCallback jtbl_0045D4D0[];
 extern DispatchFn jtbl_0045D4F0[];
 extern DispatchFn jtbl_0045D510[];
 extern DispatchFn jtbl_0045D528[];
@@ -1325,14 +1325,14 @@ extern DispatchFn jtbl_00475E90[];
 extern DispatchFn jtbl_00475FE0[];
 extern DispatchFn jtbl_00476010[];
 extern DispatchFn jtbl_00476020[];
-extern ContextDispatchFn jtbl_00476030[];
+extern OwnerByteCallback jtbl_00476030[];
 extern DispatchFn jtbl_00476040[];
 extern DispatchFn jtbl_00476050[];
 extern DispatchFn jtbl_00476060[];
 extern DispatchFn jtbl_00476070[];
 extern DispatchFn jtbl_00476080[];
 extern DispatchFn jtbl_004760C0[];
-extern ContextDispatchFn jtbl_004760F0[];
+extern OwnerByteCallback jtbl_004760F0[];
 extern const ContextDispatchFn jtbl_004761F0[];
 extern const ContextDispatchFn jtbl_00476220[];
 extern DispatchFn jtbl_004762C0[];
@@ -1345,8 +1345,7 @@ extern DispatchFn jtbl_004A6D20[];
 extern DispatchFn jtbl_004A6D30[];
 extern DispatchFn jtbl_004A6D40[];
 
-/* Provisional: the data-owned state table still declares unary callbacks. */
-void func_00133BA0(u8 *p, void *owner) { jtbl_0043E930[p[5]](p, owner); }
+void func_00133BA0(u8 *p, u8 *owner) { jtbl_0043E930[p[5]](p, owner); }
 
 void func_00133F20(u8 *p) { jtbl_0043E940[p[5]](p); }
 
@@ -1578,7 +1577,7 @@ void func_001A4630(u8 *p, void *owner) { jtbl_0044B150[p[4]](p, owner); }
 
 void func_001A5A70(u8 *p) { jtbl_0044B3B0[p[4]](p); }
 
-void func_001A5BC0(u8 *p, void *owner) { jtbl_0044B3C0[p[4]](p, owner); }
+void func_001A5BC0(u8 *p, void *owner) { jtbl_0044B3C0[p[4]](p, (u8 *)owner); }
 
 void func_001A6EB0(u8 *p) { jtbl_0044B410[p[4]](p); }
 
@@ -3248,7 +3247,6 @@ void func_002EB280(u8 *p) { jtbl_0045B560[p[6]](p); }
 
 void func_002EB5F0(u8 *p) { jtbl_0045B598[p[6]](p); }
 
-/* Provisional: callback table ownership and selector bounds remain unresolved. */
 void func_002EB850(u8 *p, u8 *context) { jtbl_0045B5B0[p[7]](p, context); }
 
 void func_002EBDD0(u8 *p) { jtbl_0045B5D0[p[6]](p); }
@@ -3506,14 +3504,11 @@ void func_00312600(u8 *p) { jtbl_0045D408[p[33]](p); }
 
 void func_00312930(u8 *p) { jtbl_0045D438[p[6]](p); }
 
-/* Provisional: callback table ownership and selector bounds require proof. */
-void func_00312DB0(u8 *p, void *context) { jtbl_0045D490[p[6]](p, context); }
+void func_00312DB0(u8 *p, u8 *owner) { jtbl_0045D490[p[6]](p, owner); }
 
-/* Provisional: callback table ABI and selector bounds need reconciliation. */
-void func_00313820(u8 *p, void *context) { jtbl_0045D4B0[p[7]](p, context); }
+void func_00313820(u8 *p, u8 *owner) { jtbl_0045D4B0[p[7]](p, owner); }
 
-/* Provisional: callback table ABI and selector bounds need reconciliation. */
-void func_00313AA0(u8 *p, void *context) { jtbl_0045D4D0[p[7]](p, context); }
+void func_00313AA0(u8 *p, u8 *owner) { jtbl_0045D4D0[p[7]](p, owner); }
 
 void func_003140D0(u8 *p) { jtbl_0045D4F0[p[6]](p); }
 
@@ -4098,7 +4093,7 @@ void func_003C65B0(u8 *p) { jtbl_00476010[p[4]](p); }
 
 void func_003C6820(u8 *p) { jtbl_00476020[p[4]](p); }
 
-void func_003C6D60(u8 *p, void *owner) { jtbl_00476030[p[4]](p, owner); }
+void func_003C6D60(u8 *p, void *owner) { jtbl_00476030[p[4]](p, (u8 *)owner); }
 
 void func_003C6F70(u8 *p) { jtbl_00476040[p[4]](p); }
 
@@ -4112,7 +4107,7 @@ void func_003C71B0(u8 *p) { jtbl_00476080[p[4]](p); }
 
 void func_003C79E0(u8 *p) { jtbl_004760C0[p[5]](p); }
 
-void func_003C7F50(u8 *p, void *owner) { jtbl_004760F0[p[4]](p, owner); }
+void func_003C7F50(u8 *p, void *owner) { jtbl_004760F0[p[4]](p, (u8 *)owner); }
 
 void func_003C8310(u8 *p,void *owner) { jtbl_004761F0[p[5]](p,owner); }
 

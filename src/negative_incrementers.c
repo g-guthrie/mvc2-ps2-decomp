@@ -63,6 +63,6 @@ void func_00386490(u8 *p) { if ((s8)func_00175700(p) < 0) { u32 v = p[4]; v++; p
 
 void func_00389DB0(u8 *p) { if ((s8)func_00175700(p) < 0) { u32 v = p[4]; v++; p[4] = v; p[316] = 0; } }
 
-void func_003A4870(u8 *p) { if ((s8)func_00175700(p) < 0) { u32 v = p[4]; v++; p[4] = v; p[316] = 0; } }
+void func_003A4870(u8 *p, u8 *owner_unused) { if ((s8)func_00175700(p) < 0) { u32 v = p[4]; v++; p[4] = v; p[316] = 0; } }
 
 void func_003A94E0(u8 *p) { if ((s8)func_00175700(p) < 0) { u32 v = p[4]; v++; p[4] = v; p[316] = 0; } }

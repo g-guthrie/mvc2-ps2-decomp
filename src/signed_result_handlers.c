@@ -734,11 +734,11 @@ void func_002EAE70(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); 
 
 void func_002EB5B0(void *p) { if ((s8)func_00175700(p) < 0) { func_001846B0(p); } }
 
-void func_002EB810(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
+void func_002EB810(u8 *p, u8 *owner_unused) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
-void func_002EBD90(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
+void func_002EBD90(u8 *p, u8 *owner_unused) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
-void func_002EC050(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
+void func_002EC050(u8 *p, u8 *owner_unused) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
 void func_002EC9F0(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
@@ -852,7 +852,7 @@ void func_00311380(void *p) { if ((s8)func_00175700(p) < 0) { func_00184540(p); 
 
 void func_003128F0(void *p) { if ((s8)func_00175700(p) < 0) { func_001846B0(p); } }
 
-void func_003130C0(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
+void func_003130C0(u8 *p, u8 *owner_unused) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 
 void func_003146D0(void *p) { if ((s8)func_00175700(p) < 0) { func_001843A0(p); } }
 

@@ -4,10 +4,13 @@
 
 extern void func_001A5A90(u8 *);
 extern void func_001A5B80(u8 *);
-extern void func_001A5D70(u8 *);
+extern void func_001A5D70(u8 *, u8 *);
 
-const Mvc2StateCallback jtbl_0044B3B0[3] = {
+typedef struct {
+    Mvc2StateCallback earlier[2];
+    void (*shared_release)(u8 *, u8 *);
+} StateReleaseTables_0044B3B0;
+const StateReleaseTables_0044B3B0 jtbl_0044B3B0 = {{
     func_001A5A90,
     func_001A5B80,
-    func_001A5D70,
-};
+}, func_001A5D70};

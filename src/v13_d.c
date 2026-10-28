@@ -53,7 +53,7 @@ void func_0026C300(u8 *p) {
     }
 }
 
-void func_003A47A0(u8 *p) {
+void func_003A47A0(u8 *p, u8 *owner_unused) {
     extern s32 func_00175700();
     extern void func_003A48D0();
     extern void func_001757E0();

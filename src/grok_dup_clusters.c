@@ -59,7 +59,7 @@ void func_00290C00(u8 *p) {
     if ((s8)func_00175700(p) < 0)
         func_001843A0(p);
 }
-void func_002EBA90(u8 *p) {
+void func_002EBA90(u8 *p, u8 *owner_unused) {
     func_002EBB00(p);
     if ((s8)func_00175700(p) < 0)
         func_00184540(p);

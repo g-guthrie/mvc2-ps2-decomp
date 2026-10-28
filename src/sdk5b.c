@@ -20,37 +20,30 @@ FN(func_00102D08,
   ".word 0x03E00008 /* jr         $31 */\n"
   ".word 0x00000000 /* nop */\n"
   );
-FN(func_003FB5C0,
-  "ori $2,$0,0xC350\n"
-  "addiu $2,$2,-1\n"
-  "1:\n"
-  "nop\nnop\nnop\nnop\nnop\n"
-  "bnel $2,$0,1b\n"
-  "addiu $2,$2,-1\n"
-  "jr $31\n"
-  "nop\n"
-  );
-FN(func_0040DFA8,
-  "bnel $5,$0,2f\n"
-  "lw $5,0($5)\n"
-  "1:\n"
-  "nop\nnop\nnop\nnop\nnop\n"
-  "b 1b\n"
-  "nop\n"
-  "nop\n"
-  "2:\n"
-  "blez $5,4f\n"
-  "nop\n"
-  "addiu $5,$5,-1\n"
-  "nop\n"
-  "3:\n"
-  "nop\nnop\nnop\nnop\nnop\n"
-  "bnel $5,$0,3b\n"
-  "addiu $5,$5,-1\n"
-  "4:\n"
-  "jr $31\n"
-  "nop\n"
-  );
+/* Busy-wait: 50000 rounds of one nop; GCC pads the short loop to five. */
+void func_003FB5C0(void)
+{
+    int i = 50000;
+    while (--i, 1) {
+        __asm__ volatile("nop");
+        if (i == 0) break;
+    }
+}
+/* Busy-wait for *count rounds; spins forever when count is NULL. */
+void func_0040DFA8(int unused, int *count)
+{
+    int n;
+    if (count == 0) {
+        for (;;) __asm__ volatile("nop");
+    }
+    n = *count;
+    if (n > 0) {
+        while (--n, 1) {
+            __asm__ volatile("nop");
+            if (n == 0) break;
+        }
+    }
+}
 FN(func_00103958,
   "lui $2,0x1000\n"
   "lui $4,0x1000\n"

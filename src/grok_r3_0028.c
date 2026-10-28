@@ -269,7 +269,7 @@ void func_002EA120(u8 *p)
     }
 }
 
-void func_002EB710(u8 *p)
+void func_002EB710(u8 *p, u8 *owner_unused)
 {
     func_00175700(p);
     if (*(s8 *)(p + 0x151)) {
@@ -280,7 +280,7 @@ void func_002EB710(u8 *p)
     }
 }
 
-void func_002EB970(u8 *p)
+void func_002EB970(u8 *p, u8 *owner_unused)
 {
     func_002EBB00(p);
     func_00175700(p);
@@ -292,7 +292,7 @@ void func_002EB970(u8 *p)
     }
 }
 
-void func_002EBC90(u8 *p)
+void func_002EBC90(u8 *p, u8 *owner_unused)
 {
     func_00175700(p);
     if (*(s8 *)(p + 0x151)) {

@@ -7,19 +7,19 @@ typedef signed int s32;
 typedef float f32;
 
 
-typedef struct { u8 pad[0x7C]; s16 h7c[2]; } G1;
+/* Game state: per-index signed halfword counters at 0x7C (flexible, no invented bound). */
+typedef struct { u8 pad[0x7C]; s16 h7c[]; } G1;
 extern G1 *D_004C2794;
 
-/* Provisional: actor team index bounds and game-state ownership need proof. */
 void func_002F34E0(u8 *p) {
     extern void func_001861B0(u8 *);
-    extern void func_001757E0();
-    extern void func_0018C4B0();
-    extern void func_001E3710();
-    extern void func_00183D90();
-    extern void func_001863F0();
-    extern s8 func_00175700();
-    extern void func_001843A0();
+    extern int func_001757E0(u8 *, int, int);
+    extern void func_0018C4B0(u8 *, s32);
+    extern void func_001E3710(u8 *, u8);
+    extern void func_00183D90(u8 *);
+    extern void func_001863F0(u8 *);
+    extern int func_00175700(u8 *);
+    extern void func_001843A0(u8 *);
     if (p[6] == 0) {
         u32 t;
         func_001861B0(p);
@@ -40,19 +40,18 @@ void func_002F34E0(u8 *p) {
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
     func_001863F0(p);
-    if (func_00175700(p) < 0) func_001843A0(p);
+    if ((s8)func_00175700(p) < 0) func_001843A0(p);
 }
 
-/* Provisional: team bounds, state ownership and volatile read need proof. */
 void func_002F8330(u8 *p) {
     extern void func_001861B0(u8 *);
-    extern void func_001757E0();
-    extern void func_0018C4B0();
-    extern void func_001E3710();
-    extern void func_00183D90();
-    extern void func_001863F0();
-    extern s8 func_00175700();
-    extern void func_001843A0();
+    extern int func_001757E0(u8 *, int, int);
+    extern void func_0018C4B0(u8 *, s32);
+    extern void func_001E3710(u8 *, u8);
+    extern void func_00183D90(u8 *);
+    extern void func_001863F0(u8 *);
+    extern int func_00175700(u8 *);
+    extern void func_001843A0(u8 *);
     if (p[6] == 0) {
         u32 t;
         func_001861B0(p);
@@ -62,7 +61,7 @@ void func_002F8330(u8 *p) {
         p[0x1B5] = 0x19;
         p[0x20D] = 1;
         func_001757E0(p, 0x14, 5);
-        p[0x1B5] = *(volatile u8 *)(p + 0x1B5);
+        { u32 t2 = p[0x1B5]; p[0x1B5] = t2; }
         p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
         *(u32 *)(p + 0x1D8) = 0;
         D_004C2794->h7c[p[2]]++;
@@ -73,19 +72,18 @@ void func_002F8330(u8 *p) {
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
     func_001863F0(p);
-    if (func_00175700(p) < 0) func_001843A0(p);
+    if ((s8)func_00175700(p) < 0) func_001843A0(p);
 }
 
-/* Provisional: actor team index bounds and game-state ownership need proof. */
 void func_002D6BA0(u8 *p) {
     extern void func_001861B0(u8 *);
-    extern void func_001757E0();
-    extern void func_0018C4B0();
-    extern void func_001E3710();
-    extern void func_00183D90();
-    extern void func_001863F0();
-    extern s8 func_00175700();
-    extern void func_001843A0();
+    extern int func_001757E0(u8 *, int, int);
+    extern void func_0018C4B0(u8 *, s32);
+    extern void func_001E3710(u8 *, u8);
+    extern void func_00183D90(u8 *);
+    extern void func_001863F0(u8 *);
+    extern int func_00175700(u8 *);
+    extern void func_001843A0(u8 *);
     if (p[6] == 0) {
         u32 t;
         func_001861B0(p);
@@ -106,5 +104,5 @@ void func_002D6BA0(u8 *p) {
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
     func_001863F0(p);
-    if (func_00175700(p) < 0) func_001843A0(p);
+    if ((s8)func_00175700(p) < 0) func_001843A0(p);
 }

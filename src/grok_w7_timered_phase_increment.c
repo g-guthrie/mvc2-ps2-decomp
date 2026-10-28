@@ -37,7 +37,7 @@ countdown:
 }
 
 extern void func_003A5A00(u8 *, int, int);
-void func_002EBF40(u8 *p)
+void func_002EBF40(u8 *p, u8 *owner_unused)
 {
     s16 timer;
     u8 frame;

@@ -35,7 +35,7 @@ void func_00285790(u8 *p)
     }
 }
 
-void func_002EBFF0(u8 *p)
+void func_002EBFF0(u8 *p, u8 *owner_unused)
 {
     func_00175700(p);
     if ((s16)(--*(s16 *)(p + 28)) == 0) {

@@ -92,7 +92,7 @@ void func_002D0900(u8 *p)
     *(s16 *)(p + 28) = 64;
 }
 
-void func_002EBEF0(u8 *p)
+void func_002EBEF0(u8 *p, u8 *owner_unused)
 {
     if ((s8)func_00175700(p) < 0) {
         p[6]++;

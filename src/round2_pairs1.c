@@ -147,13 +147,13 @@ void func_002C2190(u8 *p) {
     }
 }
 
-void func_003137D0(u8 *p) {
+void func_003137D0(u8 *p, u8 *owner_unused) {
     if ((s8)p[337] != 0)
         p[337] = 0;
     if ((s8)func_00175700(p) < 0)
         func_001843A0(p);
 }
-void func_00313A50(u8 *p) {
+void func_00313A50(u8 *p, u8 *owner_unused) {
     if ((s8)p[337] != 0)
         p[337] = 0;
     if ((s8)func_00175700(p) < 0)

@@ -61,10 +61,11 @@ void func_002C7250(u8 *p) {
     }
 }
 
-void func_002EBCE0(u8 *p, s8 *q) {
+void func_002EBCE0(u8 *p, u8 *owner) {
     extern void func_00175700();
     extern void func_003A6DC0();
     extern void func_001757E0();
+    s8 *q = (s8 *)owner;
     s16 v;
     s16 w;
     func_00175700(p);
