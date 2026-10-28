@@ -2,15 +2,8 @@
    ratio, and one uncredited VU0 routine written as assembly. */
 #include "stream_group_types.h"
 
-#define FN(name, body) __asm__(".section .text." #name ",\"ax\",@progbits\n.p2align 3\n.globl " #name "\n.ent " #name "\n" #name ":\n.set noreorder\n.set noat\n" body ".set reorder\n.end " #name "\n")
 
 /* VU0: convert four fixed-point (4.12) words to floats. */
-FN(func_00102F78,
-  ".word 0xD8A40000 /* lqc2       $vf4, 0x0($5) */\n"
-  ".word 0x4BE5213D /* vitof4.xyzw $vf5, $vf4 */\n"
-  ".word 0x03E00008 /* jr         $31 */\n"
-  ".word 0xF8850000 /* sqc2      $vf5, 0x0($4) */\n"
-  );
 
 /* Instruction-cache scrub over 0x1000 bytes using cache ops and mfc0 $28. */
 

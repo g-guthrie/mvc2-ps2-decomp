@@ -6,25 +6,6 @@ FN(func_00102F20,
   ".word 0x03E00008 /* jr $ra */\n"
   ".word 0x7C860000 /* sq $a2, 0x0($a0) */\n"
   );
-FN(func_00103770,
-  ".word 0xD8A40000 /* lqc2 $vf4, 0x0($a1) */\n"
-  ".word 0xD8A50010 /* lqc2 $vf5, 0x10($a1) */\n"
-  ".word 0xD8A60020 /* lqc2 $vf6, 0x20($a1) */\n"
-  ".word 0xD8A70030 /* lqc2 $vf7, 0x30($a1) */\n"
-  ".word 0xD8C80000 /* lqc2 $vf8, 0x0($a2) */\n"
-  ".word 0x4BE821BC /* vmulax.xyzw $ACC, $vf4, $vf8x */\n"
-  ".word 0x4BE828BD /* vmadday.xyzw $ACC, $vf5, $vf8y */\n"
-  ".word 0x4BE830BE /* vmaddaz.xyzw $ACC, $vf6, $vf8z */\n"
-  ".word 0x4BE83A4B /* vmaddw.xyzw $vf9, $vf7, $vf8w */\n"
-  ".word 0x4BE903BC /* vdiv $Q, $vf0w, $vf9w */\n"
-  ".word 0x4A0003BF /* vwaitq */\n"
-  ".word 0x4BC04A5C /* vmulq.xyz $vf9, $vf9, $Q */\n"
-  ".word 0x10E00002 /* beqz $a3, .L001037AC */\n"
-  ".word 0x4BEA497D /* vftoi4.xyzw $vf10, $vf9 */\n"
-  ".word 0x4A6A497C /* vftoi0.zw $vf10, $vf9 */\n"
-  ".word 0x03E00008 /* jr $ra */\n"
-  ".word 0xF88A0000 /* sqc2 $vf10, 0x0($a0) */\n"
-  );
 FN(func_001038C8,
   ".word 0xD8E80000 /* lqc2 $vf8, 0x0($a3) */\n"
   ".word 0xD8C40000 /* lqc2 $vf4, 0x0($a2) */\n"

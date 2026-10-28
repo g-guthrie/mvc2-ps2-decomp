@@ -28,21 +28,6 @@ s32 func_003FD530(signed char *p) {
     return p[1];
 }
 
-/* Hand-written: call, then a nop-padded spin loop that never returns. */
-#define FN(name, body) __asm__(".section .text." #name ",\"ax\",@progbits
-.p2align 3\n.globl " #name "\n.ent " #name "\n" #name ":\n.set noreorder\n.set noat\n" body ".set reorder\n.end " #name "\n")
-FN(func_003FF1C0,
-  "lui $4,%hi(D_004BBE88)\n"
-  "addiu $29,$29,-16\n"
-  "sd $31,0($29)\n"
-  "jal func_0011EB60\n"
-  "addiu $4,$4,%lo(D_004BBE88)\n"
-  ".p2align 3\n"
-  "1:\n"
-  "nop\nnop\nnop\nnop\nnop\n"
-  "b 1b\n"
-  "nop\n"
-  );
 
 struct T028Item { s32 pad[1]; s32 f4; };
 struct T028Tbl { s32 pad[2]; struct T028Item *items[1]; };

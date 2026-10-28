@@ -6,8 +6,6 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-typedef struct { f32 x, y, z, w; } V4;
-typedef struct { s32 m[16]; } M4;
 extern u32 D_00457860[];
 extern u8 D_00457040[];
 typedef struct { u8 *ptr; s32 b; s32 c; } E12;
@@ -19,34 +17,6 @@ typedef struct {
     f32 f68, f6c;
 } S;
 
-
-void func_003DE3D0(V4 *out, V4 *in, M4 *mat)
-{
-    V4 a;
-    V4 r;
-    M4 m;
-    M4 *pm;
-    V4 *pa;
-    V4 *pr;
-    a = *in;
-    m = *mat;
-    pm = &m;
-    pa = &a;
-    pr = &r;
-    asm {
-        lqc2 vf4, 0(pa)
-        lqc2 vf5, 0(pm)
-        lqc2 vf6, 0x10(pm)
-        lqc2 vf7, 0x20(pm)
-        lqc2 vf8, 0x30(pm)
-        vmulax.xyzw ACC, vf5, vf4x
-        vmadday.xyzw ACC, vf6, vf4y
-        vmaddaz.xyzw ACC, vf7, vf4z
-        vmaddw.xyzw vf4, vf8, vf4w
-        sqc2 vf4, 0(pr)
-    }
-    *out = r;
-}
 
 void func_00291610(u8 *p)
 {

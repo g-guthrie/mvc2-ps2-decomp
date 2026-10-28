@@ -4,30 +4,6 @@ typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned long long u64;
 typedef long long s64;
-#define FN(name, body) __asm__(".section .text." #name ",\"ax\",@progbits
-.p2align 3\n.globl " #name "\n.ent " #name "\n" #name ":\n.set noreorder\n.set noat\n" body ".set reorder\n.end " #name "\n")
-FN(func_00102E48,
-  ".word 0xD8A40000 /* lqc2       $vf4, 0x0($5) */\n"
-  ".word 0x44086000 /* mfc1       $8, $f12 */\n"
-  ".word 0x48A82800 /* qmtc2.ni   $8, $vf5 */\n"
-  ".word 0x4A6503BC /* vdiv       $Q, $vf0w, $vf5x */\n"
-  ".word 0x4A0003BF /* vwaitq */\n"
-  ".word 0x4BC0211C /* vmulq.xyz  $vf4, $vf4, $Q */\n"
-  ".word 0x03E00008 /* jr         $31 */\n"
-  ".word 0xF8840000 /* sqc2      $vf4, 0x0($4) */\n"
-  );
-FN(func_00102E68,
-  ".word 0xD8A40000 /* lqc2       $vf4, 0x0($5) */\n"
-  ".word 0xD8C50000 /* lqc2       $vf5, 0x0($6) */\n"
-  ".word 0x44086000 /* mfc1       $8, $f12 */\n"
-  ".word 0x48A83000 /* qmtc2.ni   $8, $vf6 */\n"
-  ".word 0x4B0001C3 /* vaddw.x    $vf7, $vf0, $vf0w */\n"
-  ".word 0x4B063A2C /* vsub.x     $vf8, $vf7, $vf6 */\n"
-  ".word 0x4BE621BC /* vmulax.xyzw $ACC, $vf4, $vf6x */\n"
-  ".word 0x4BE82A48 /* vmaddx.xyzw $vf9, $vf5, $vf8x */\n"
-  ".word 0x03E00008 /* jr         $31 */\n"
-  ".word 0xF8890000 /* sqc2      $vf9, 0x0($4) */\n"
-  );
 
 
 typedef struct S40BD { u8 p0[8]; u64 a; u8 p1[0x18]; s32 n; } S40BD;

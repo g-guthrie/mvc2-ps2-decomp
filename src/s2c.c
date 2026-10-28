@@ -1,31 +1,5 @@
 /* Hand-written SDK assembly (VU0 helpers, delay loops). */
 #define FN(name, body) __asm__(".section .text." #name ",\"ax\",@progbits\n.p2align 3\n.globl " #name "\n.ent " #name "\n" #name ":\n.set noreorder\n.set noat\n" body ".set reorder\n.end " #name "\n")
-FN(func_00103868,
-  ".word 0x4BE0012C /* vsub.xyzw  $vf4, $vf0, $vf0 */\n"
-  ".word 0x3C024580 /* lui        $v0, (0x45800000 >> 16) */\n"
-  ".word 0x00021438 /* dsll       $v0, $v0, 16 */\n"
-  ".word 0x34424580 /* ori        $v0, $v0, 0x4580 */\n"
-  ".word 0x00021438 /* dsll       $v0, $v0, 16 */\n"
-  ".word 0xD8860000 /* lqc2       $vf6, 0x0($a0) */\n"
-  ".word 0xD8A80000 /* lqc2       $vf8, 0x0($a1) */\n"
-  ".word 0xD8C90000 /* lqc2       $vf9, 0x0($a2) */\n"
-  ".word 0x48A23800 /* qmtc2.ni   $v0, $vf7 */\n"
-  ".word 0x48C08000 /* ctc2.ni    $zero, $vi16 */\n"
-  ".word 0x4BA4316C /* vsub.xyw   $vf5, $vf6, $vf4 */\n"
-  ".word 0x4B86396C /* vsub.xy    $vf5, $vf7, $vf6 */\n"
-  ".word 0x4BA4416C /* vsub.xyw   $vf5, $vf8, $vf4 */\n"
-  ".word 0x4B88396C /* vsub.xy    $vf5, $vf7, $vf8 */\n"
-  ".word 0x4BA4496C /* vsub.xyw   $vf5, $vf9, $vf4 */\n"
-  ".word 0x4B89396C /* vsub.xy    $vf5, $vf7, $vf9 */\n"
-  ".word 0x4A0002FF /* vnop */\n"
-  ".word 0x4A0002FF /* vnop */\n"
-  ".word 0x4A0002FF /* vnop */\n"
-  ".word 0x4A0002FF /* vnop */\n"
-  ".word 0x4A0002FF /* vnop */\n"
-  ".word 0x48428000 /* cfc2.ni    $v0, $vi16 */\n"
-  ".word 0x03E00008 /* jr         $ra */\n"
-  ".word 0x304200C0 /* andi      $v0, $v0, 0xC0 */\n"
-  );
 FN(func_00102FC0,
   "lui $8,%hi(D_00438210)\n"
   "addiu $8,$8,%lo(D_00438210)\n"
