@@ -24027,4 +24027,14 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/sLa0_b.c -c -lang c -i src -O3,p -Op -sdatathreshold 8 -o "$BUILD/sLa0_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/sLa0_b.o" private/SLUS_204.86.rom --source src/sLa0_b.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sLa2_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/sLa2_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sLa2_a.o" private/SLUS_204.86.rom --source src/sLa2_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sLa2_b.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/sLa2_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sLa2_b.o" private/SLUS_204.86.rom --source src/sLa2_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sLa2_c.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/sLa2_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/sLa2_c.o" private/SLUS_204.86.rom --source src/sLa2_c.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
