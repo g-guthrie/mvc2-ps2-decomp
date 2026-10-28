@@ -40,7 +40,7 @@ void func_003CC820(u8 *p, u8 *b) {
 }
 
 
-extern void func_00126400();
+extern void func_00126400(void);
 
 
 extern void func_00158220(V3 *);
@@ -111,7 +111,7 @@ void func_00311420(u8 *p) {
 extern void func_003AAE20();
 void func_003AADA0(u8 *p, u8 *q) {
     u8 *s = *(u8 **)(p + 0x18);
-    func_00126400(p, q);
+    func_00126400();
     *(s16 *)(s + 0x366) = 0;
     P(u8,5) = 2;
     *(s8 *)(q + 9) = *(s8 *)(q + 0xF);

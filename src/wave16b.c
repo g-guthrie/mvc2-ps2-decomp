@@ -154,7 +154,7 @@ void func_002EE2E0(u8 *p) {
 }
 
 extern u8 *func_001B3E30(u8 *, int, int);
-extern void func_00126400(u8 *);
+extern void func_00126400(void);
 extern void func_001843A0(u8 *);
 
 void func_0026A7C0(u8 *p) {
@@ -175,7 +175,7 @@ void func_0026A7C0(u8 *p) {
             *(f32 *)(q + 84) = 1.0f;
             *(u8 **)(q + 456) = p;
             q[522] = 1;
-            func_00126400(q);
+            func_00126400();
             func_001843A0(p);
         }
     }

@@ -37,7 +37,7 @@ void func_00260730(u8 *p) {
 void func_0022BC10(u8 *p) {
     extern s8 func_00175700();
     extern void func_00184540();
-    extern void func_00126400();
+    extern void func_00126400(void);
     u8 *q;
     if (func_00175700(p) < 0) {
         func_00184540(p);
@@ -56,7 +56,7 @@ void func_0022BC10(u8 *p) {
         q[0x20A] = 2;
         q[0x1B5] = 0x26;
         q[0x1E6] = *(s8 *)(p + 0x1E6) ^ 1;
-        func_00126400(q);
+        func_00126400();
     }
 }
 

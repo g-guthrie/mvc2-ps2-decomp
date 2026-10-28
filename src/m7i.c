@@ -29,7 +29,7 @@ void func_001E23A0(void) {
 
 extern s32 func_00175700();
 extern void func_00184540();
-extern void func_00126400();
+extern void func_00126400(void);
 extern u16 D_004C11C0[2];
 void func_002F1CD0(u8 *a) {
     s8 r = func_00175700(a);
@@ -46,7 +46,7 @@ void func_002F1CD0(u8 *a) {
             o[0x20A] = 1;
             o[0x1E6] = a[0x1E6];
             o[0x1B5] = 0x22;
-            func_00126400(o);
+            func_00126400();
         }
     }
 }

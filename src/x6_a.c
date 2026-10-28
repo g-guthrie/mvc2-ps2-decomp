@@ -204,7 +204,7 @@ void func_0025DE00(u8 *p) {
 
 void func_00239A90(u8 *p) {
     extern void func_00175700(u8 *);
-    extern void func_00126400(u32);
+    extern void func_00126400(void);
     func_00175700(p);
     if (p[0x15B] != 0) {
         u8 *q;
@@ -224,7 +224,7 @@ void func_00239A90(u8 *p) {
             u32 w = q[0x1E6];
             q[0x1E6] = w ^ 1;
         }
-        func_00126400(v);
+        func_00126400();
         *(u32 *)(p + 0x5C) = 0x40D55555;
         *(u32 *)(p + 0x68) = 0xBE555555;
         if (p[0x1E6] != 0) {

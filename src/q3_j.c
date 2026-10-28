@@ -7,13 +7,13 @@ typedef signed int s32;
 typedef float f32;
 
 void func_0021C0F0(u8 *p, u8 *q) {
-    extern void func_00126400();
+    extern void func_00126400(void);
     extern void func_001E3710();
     extern void func_001E3210();
     extern void func_001548D0();
     extern void func_001E3A40();
     u32 v[4];
-    func_00126400(p);
+    func_00126400();
     p[0x151] = 0x10;
     *(u32 *)(p + 0x5C) = 0x41555555;
     *(u32 *)(p + 0x68) = 0;

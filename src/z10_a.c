@@ -145,7 +145,7 @@ void func_0026DD40(u8 *p) {
     extern int func_00175700(u8 *);
     extern void func_00178F20();
     extern void func_0018FDB0();
-    extern void func_00126400();
+    extern void func_00126400(void);
     u8 *s1;
     u8 *q;
     u32 t;
@@ -183,7 +183,7 @@ void func_0026DD40(u8 *p) {
         q[0x20A] = 1;
         q[0x1B5] = 0x3F;
         q[0x13C] = 1;
-        func_00126400(q);
+        func_00126400();
     }
 }
 
@@ -227,7 +227,7 @@ void func_002E0840(u8 *p) {
     extern void func_00158C70();
     extern void func_001E3A40();
     extern void func_0018FDB0();
-    extern void func_00126400();
+    extern void func_00126400(void);
     s8 r;
     s32 t;
     u8 *s1;
@@ -261,6 +261,6 @@ void func_002E0840(u8 *p) {
         q[0x1B5] = 0x20;
         *(s16 *)(q + 0x140) = *(s16 *)(p + 0x140) ^ 1;
         q[0x1E6] = *(s8 *)(q + 0x140);
-        func_00126400(q);
+        func_00126400();
     }
 }

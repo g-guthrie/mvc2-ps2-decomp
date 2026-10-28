@@ -215,7 +215,7 @@ void func_00268990(S_00268990 *p) {
 typedef struct { u8 pad[0x34]; f32 f34, f38; u8 pad2[0x1C]; f32 f58, f5c, f60, f64, f68, f6c; } S_0022BE90;
 extern int func_00175700();
 extern void func_00184540();
-extern void func_00126400();
+extern void func_00126400(void);
 void func_0022BE90(u8 *p) {
     ((S_0022BE90 *)p)->f34 += ((S_0022BE90 *)p)->f5c;
     ((S_0022BE90 *)p)->f5c += ((S_0022BE90 *)p)->f68;
@@ -237,7 +237,7 @@ void func_0022BE90(u8 *p) {
         e = *(s8 *)(p + 0x1E6) ^ 1;
         q[0x1E6] = e;
         *(s16 *)(q + 0x140) = (u8)e;
-        func_00126400(1, q);
+        func_00126400();
     }
 }
 

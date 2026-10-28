@@ -3,7 +3,7 @@ typedef signed char s8;
 
 extern int func_00175700(u8 *);
 extern void func_001843A0(u8 *);
-extern void func_00126400(int);
+extern void func_00126400(void);
 
 void func_002B7D10(u8 *p)
 {
@@ -20,6 +20,6 @@ void func_002B7D10(u8 *p)
         v = p[0x1e6];
         (*(u8 **)(p + 0x220))[0x1e6] = v;
         (*(u8 **)(p + 0x220))[0x1b5] = 0x20;
-        func_00126400(v);
+        func_00126400();
     }
 }

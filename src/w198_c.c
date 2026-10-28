@@ -66,7 +66,7 @@ extern u16 D_004C11C0[4];
 void func_002F1BB0(u8 *p) {
     extern s8 func_00175700(u8 *);
     extern void func_002F1DF0(u8 *);
-    extern void func_00126400(u8 *);
+    extern void func_00126400(void);
     u8 *q;
     if (p[6] == 0) {
         f32 c;
@@ -97,7 +97,7 @@ void func_002F1BB0(u8 *p) {
         q[0x20A] = 1;
         q[0x1E6] = p[0x1E6];
         q[0x1B5] = 0x20;
-        func_00126400(q);
+        func_00126400();
     }
 }
 

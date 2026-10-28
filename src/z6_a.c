@@ -303,7 +303,7 @@ u8 *func_003BE5F0(u8 *p) {
 void func_00222630(u8 *p) {
     extern s32 func_00175700(u8 *);
     extern void func_001843A0(u8 *);
-    extern void func_00126400();
+    extern void func_00126400(void);
     u32 t;
     s32 x;
     if ((s8)func_00175700(p) < 0) {
@@ -319,7 +319,7 @@ void func_00222630(u8 *p) {
         x = *(s8 *)(p + 0x1E6) ^ 1;
         (*(u8 **)(p + 0x220))[0x1E6] = x;
         (*(u8 **)(p + 0x220))[0x1B5] = 0x22;
-        func_00126400(x);
+        func_00126400();
         (*(u8 **)(p + 0x220))[0x1B4] = 8;
         p[0x1B4] = 8;
         if (p[0x1E6] != 0) {

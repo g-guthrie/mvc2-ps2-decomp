@@ -4,7 +4,7 @@ typedef signed short s16;
 typedef float f32;
 
 extern int func_00175700(u8 *);
-extern void func_00126400(int);
+extern void func_00126400(void);
 extern void func_0022C580(u8 *);
 
 void func_0022C070(u8 *p)
@@ -33,6 +33,6 @@ void func_0022C070(u8 *p)
     *(int *)(p + 0x68) = 0;
     *(int *)(p + 0x6C) = 0;
     *(unsigned int *)(p + 0x6C) = 0xBF4DB6DB;
-    func_00126400((int)q);
+    func_00126400();
     func_0022C580(p);
 }

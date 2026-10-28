@@ -5,7 +5,7 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
-extern void func_00126400(u8 *);
+extern void func_00126400(void);
 void func_00205520(u8 *p) {
     s16 v;
     p[0x208] = 3;
@@ -18,6 +18,6 @@ void func_00205520(u8 *p) {
         p[6] = t + 1;
         *(s16 *)(p + 0x1C) = 0x14;
         p[0x201] = 0;
-        func_00126400(p);
+        func_00126400();
     }
 }
