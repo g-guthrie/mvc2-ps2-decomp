@@ -18563,7 +18563,7 @@ func_003C6820,0x003C6820,0x20,0x003C6840,code,matching-c-head-split
 residual_003C6840,0x003C6840,0x1EC,0x003C6A2C,assembly_residual,verified-boundary-after-matching-head
 func_003C6A30,0x003C6A30,0x328,0x003C6D58,code,spimdisasm-explicit-size-before-first-data
 func_003C6D60,0x003C6D60,0x20,0x003C6D80,code,matching-c-head-split
-residual_003C6D80,0x003C6D80,0x12C,0x003C6EAC,assembly_residual,verified-boundary-after-matching-head
+func_003C6D80,0x003C6D80,0x12C,0x003C6EAC,code,verified-indirect-callback-entry
 func_003C6EB0,0x003C6EB0,0xB8,0x003C6F68,code,spimdisasm-explicit-size-before-first-data
 func_003C6F70,0x003C6F70,0x20,0x003C6F90,code,matching-c-head-split
 residual_003C6F90,0x003C6F90,0x8,0x003C6F98,assembly_residual,verified-boundary-after-matching-head

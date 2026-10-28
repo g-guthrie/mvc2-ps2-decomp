@@ -3763,7 +3763,7 @@ func_003C4A20,0x003C4A20,0x24,src/argument_dispatch_heads.c,complete
 func_003C61D0,0x003C61D0,0x20,src/composite_dispatch_heads.c,complete
 func_003C65B0,0x003C65B0,0x20,src/composite_dispatch_heads.c,complete
 func_003C6820,0x003C6820,0x20,src/composite_dispatch_heads.c,complete
-func_003C6D60,0x003C6D60,0x20,src/composite_dispatch_heads.c,complete
+func_003C6D60,0x003C6D60,0x20,src/composite_dispatch_heads.c,placeholder
 func_003C6F70,0x003C6F70,0x20,src/composite_dispatch_heads.c,complete
 func_003C6FA0,0x003C6FA0,0x8,src/tail_leaves.c,complete
 func_003C6FB0,0x003C6FB0,0x20,src/composite_dispatch_heads.c,complete
@@ -19390,3 +19390,4 @@ func_001BB9C0,0x001BB9C0,0xC0,src/actor_inherit_start_001bb9c0.c,placeholder
 func_001BBB60,0x001BBB60,0xBC,src/actor_inherit_start_001bb9c0.c,placeholder
 func_003A4470,0x003A4470,0x11C,src/actor_inherit_start_003a4470.c,placeholder
 func_0037CF70,0x0037CF70,0x160,src/actor_inherit_start_0037cf70.c,placeholder
+func_003C6D80,0x003C6D80,0x12C,src/actor_inherit_start_003c6d80.c,placeholder

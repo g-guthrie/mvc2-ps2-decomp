@@ -21886,4 +21886,6 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_inherit_sta
 "$PYTHON" tools/verify_object.py "$BUILD/actor_inherit_start_003a4470.o" private/SLUS_204.86.rom --source src/actor_inherit_start_003a4470.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_inherit_start_0037cf70.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/actor_inherit_start_0037cf70.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_inherit_start_0037cf70.o" private/SLUS_204.86.rom --source src/actor_inherit_start_0037cf70.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_inherit_start_003c6d80.c -c -lang c -i src -O4,p -sdatathreshold 8 -o "$BUILD/actor_inherit_start_003c6d80.o"
+"$PYTHON" tools/verify_object.py "$BUILD/actor_inherit_start_003c6d80.o" private/SLUS_204.86.rom --source src/actor_inherit_start_003c6d80.c
 PYTHON="$PYTHON" tools/compile_matching_data.sh
