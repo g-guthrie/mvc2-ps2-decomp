@@ -20071,3 +20071,9 @@ func_004220B0,0x004220B0,0x98,src/s9a_b.c,complete
 func_00418200,0x00418200,0x20C,src/s9a_c.c,complete
 func_00420BF0,0x00420BF0,0x60C,src/s9a_d.c,complete
 func_0018FC10,0x0018FC10,0x84,src/s9f_a.c,complete
+func_002AC590,0x002AC590,0x114,src/sLa1_a.c,complete
+func_002FC750,0x002FC750,0xFC,src/sLa1_a.c,complete
+func_0029EEF0,0x0029EEF0,0x23C,src/sLa1_a.c,complete
+func_0027FF50,0x0027FF50,0x260,src/sLa1_a.c,complete
+func_00376FC0,0x00376FC0,0x2D4,src/sLa1_b.c,complete
+func_00330380,0x00330380,0x254,src/sLa1_c.c,complete
