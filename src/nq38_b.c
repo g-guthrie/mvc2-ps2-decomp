@@ -1,0 +1,42 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
+typedef signed int s32;
+typedef float f32;
+extern u8 *D_004C2840;
+extern f32 D_004F1F54[];
+extern f32 D_004F1FAC[];
+extern f32 D_004F1FF4[];
+extern u8 D_00477148[];
+void residual_003D1810(void)
+{
+    extern void func_003D6D50();
+    extern void func_003D6E20();
+    extern void func_003DA410();
+    extern void func_00122DA0();
+    extern f32 func_004175C0(u16);
+    extern void func_001230C0();
+    extern void func_0016CDA0();
+    extern void func_0016D160();
+    extern void func_0016F090(u8 *);
+    extern void func_0016F0C0(f32);
+    extern void func_00122840(s32);
+    extern void func_003298B0(s32, s32, s32);
+    ((s8 *)D_004C2840)[2]++;
+    *(s16 *)(D_004C2840 + 8) = 0x3C;
+    func_003D6D50();
+    func_003D6E20();
+    func_003DA410();
+    func_00122DA0();
+    D_004F1F54[0] = 320.0f / func_004175C0(0x3FA5);
+    D_004F1FAC[0] = 179.0f;
+    D_004F1FF4[0] = 320.0f / func_004175C0(0x3FA5);
+    func_001230C0();
+    func_0016CDA0();
+    func_0016D160();
+    func_0016F090(D_00477148);
+    func_0016F0C0(1.0f);
+    func_00122840(0);
+    func_003298B0(-1, 0x14, 0);
+}
