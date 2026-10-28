@@ -6,8 +6,6 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-extern double func_00119B08(s32);
-extern s32 dptoli(double);
 
 void func_00155FA0(u8 *p)
 {
@@ -18,8 +16,8 @@ void func_00155FA0(u8 *p)
     p[0x13C] = 1;
     func_00156480(p);
     *(s16 *)(p + 0x1C) = *(s16 *)(p + 0x1C) + 1;
-    *(u32 *)(p + 0x44) = (u32)dptoli(0.5 + 65536.0 * func_00119B08(*(s16 *)(p + 0x1C) * 2) / 360.0) & 0xFFFFu;
-    *(u32 *)(p + 0x48) = (u32)dptoli(0.5 + 65536.0 * func_00119B08(*(s16 *)(p + 0x1C) * 3) / 360.0) & 0xFFFFu;
+    *(u32 *)(p + 0x44) = (u32)(int)(0.5 + 65536.0 * (double)(*(s16 *)(p + 0x1C) * 2) / 360.0) & 0xFFFFu;
+    *(u32 *)(p + 0x48) = (u32)(int)(0.5 + 65536.0 * (double)(*(s16 *)(p + 0x1C) * 3) / 360.0) & 0xFFFFu;
     if (p[5] == 0) {
         h = *(s16 *)(p + 0x1E) - 1;
         *(s16 *)(p + 0x1E) = h;

@@ -13,9 +13,6 @@ extern u8 *D_004C2794;
 extern s8 *D_004C2960;
 extern u8 D_00462540[];
 
-extern f64 func_00119058(f32);
-extern f64 func_00119858(f64, f64);
-extern f32 func_00119C90(f64);
 
 void func_00351870(u8 *p) {
     extern void func_003519E0(u8 *);

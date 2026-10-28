@@ -11,9 +11,7 @@ extern f32 D_004F1FE8[];
 
 void func_002BC7B0(u8 *p)
 {
-    extern double func_00119058(f32);
     extern void func_00175700(u8 *);
-    extern f32 dptofp(double);
     u32 t;
     double x, k;
     f32 g;
@@ -27,13 +25,13 @@ void func_002BC7B0(u8 *p)
     p[6] = t + 1;
     p[0x152] = p[0x152] + 1;
     if (p[0x1E6] != 0) {
-        x = func_00119058(D_004F1F4C[0]) - 320.0;
+        x = (double)D_004F1F4C[0] - 320.0;
     } else {
         k = 320.0;
-        x = (k += func_00119058(D_004F1F4C[0]));
+        x = (k += (double)D_004F1F4C[0]);
     }
-    *(f32 *)(p + 0x5C) = (f32)(func_00119058(dptofp(x) - *(f32 *)(p + 0x34)) / 32.0);
+    *(f32 *)(p + 0x5C) = (f32)((double)((g = x) - *(f32 *)(p + 0x34)) / 32.0);
     k = 240.0;
-    x = (k += func_00119058(D_004F1FE8[0])) - 102.85713958740234;
-    *(f32 *)(p + 0x60) = (f32)(func_00119058(dptofp(x) - *(f32 *)(p + 0x38)) / 32.0);
+    x = (k += (double)D_004F1FE8[0]) - 102.85713958740234;
+    *(f32 *)(p + 0x60) = (f32)((double)((g = x) - *(f32 *)(p + 0x38)) / 32.0);
 }

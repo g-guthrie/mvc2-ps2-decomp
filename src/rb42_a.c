@@ -13,10 +13,6 @@ extern G42 *D_004C2794;
 extern f32 D_004F1F4C[];
 extern T42 D_004548E0[];
 extern T42 D_004548E4[];
-extern f64 func_00119058(f32);
-extern f64 func_00119510(f64, f64);
-extern f64 func_00119568(f64, f64);
-extern f32 dptofp(f64);
 
 void func_00271280(u8 *p)
 {

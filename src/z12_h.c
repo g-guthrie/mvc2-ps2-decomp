@@ -9,16 +9,15 @@ typedef struct { u8 p0[2]; u8 b2; u8 p3; u8 b4; u8 b5; u8 b6; u8 b7; u8 p8[0x1C-
 
 typedef struct { u8 pad[0x54]; f32 f54; } PW;
 void func_0036BCB0(PH *p) {
-    extern double func_00119058(f32);
     *(f32 *)((u8 *)p + 0x118) -= 0.07999999821186066f;
-    if (func_00119058(*(f32 *)((u8 *)p + 0x118)) < 0.1) {
+    if ((double)(*(f32 *)((u8 *)p + 0x118)) < 0.1) {
         *(u32 *)((s32)p + 0x118) = 0x3DCCCCCD;
     }
     p->f34 += p->f5c;
     p->f5c += p->f68;
     ((PW *)p)->f54 += p->f60;
     p->f60 += p->f6c;
-    if (func_00119058(((PW *)p)->f54) < 0.01) {
+    if ((double)(((PW *)p)->f54) < 0.01) {
         p->b4++;
         ((u8 *)p)[0x13C] = 0;
         *(u32 *)((u8 *)p + 0x54) = 0x3C23D70A;

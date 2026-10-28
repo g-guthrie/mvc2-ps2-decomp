@@ -10,7 +10,6 @@ typedef double f64;
 
 
 
-extern double func_00119058(f32);
 
 typedef struct P {
     u8 pad0[0x1C];
@@ -26,7 +25,7 @@ typedef struct P {
 
 static s32 func_00332580(P *p) {
     p->h1c += 1;
-    p->w40 += (u16)((u32)(s32)(0.5 + 65536.0 * func_00119058(p->f54 * (f32)p->h1c) / 360.0));
+    p->w40 += (u16)((u32)(s32)(0.5 + 65536.0 * (double)(p->f54 * (f32)p->h1c) / 360.0));
     if (p->h1c > p->wd4) {
         p->h1c = 0;
         return 1;

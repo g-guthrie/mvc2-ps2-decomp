@@ -11,7 +11,6 @@ extern u8 D_0044F290[];
 s32 func_001E92E0(u8 *p)
 {
     extern s32 func_00189310();
-    extern double func_00119058(f32);
     extern void func_0018A990();
     extern void func_00186A60();
     s32 v;
@@ -20,7 +19,7 @@ s32 func_001E92E0(u8 *p)
     if (r == 0)
         return 0;
 
-    if (func_00119058(*(f32 *)(p + 0x60)) < 0.0) {
+    if ((double)(*(f32 *)(p + 0x60)) < 0.0) {
         if (*(f32 *)(p + 0x38) - *(f32 *)(p + 0x430) < 102.85713958740234f)
             return 1;
     }

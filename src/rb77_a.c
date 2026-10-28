@@ -32,8 +32,6 @@ extern SH2 D_0045F880[];
 extern f32 D_0045F8B0[];
 extern s32 D_004C283C;
 extern s32 func_00417A40(void);
-extern f64 func_00119B08(s32);
-extern s32 dptoli(f64);
 extern f32 func_00417440(u32);
 extern f32 func_00417500(u32);
 extern void func_0033EE60(V3 *);
@@ -54,8 +52,8 @@ void func_0033F030(DA *p)
             func_0033EE60(&p->v34);
         }
         if (p->h1c == 5) {
-            p->v34.x += 50.0f * func_00417440((u32)(s32)(0.5 + 65536.0 * func_00119B08(func_00417A40() % 360) / 360.0) & 0xFFFF);
-            p->v34.z += 50.0f * func_00417500((u32)(s32)(0.5 + 65536.0 * func_00119B08(func_00417A40() % 360) / 360.0) & 0xFFFF);
+            p->v34.x += 50.0f * func_00417440((u32)(s32)(0.5 + 65536.0 * (double)(func_00417A40() % 360) / 360.0) & 0xFFFF);
+            p->v34.z += 50.0f * func_00417500((u32)(s32)(0.5 + 65536.0 * (double)(func_00417A40() % 360) / 360.0) & 0xFFFF);
         }
         p->hcc = D_0045F880[p->h1c].v;
         p->w84 = D_004C283C;

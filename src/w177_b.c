@@ -8,12 +8,11 @@ typedef float f32;
 typedef struct { u8 p0[7]; u8 b7; u8 p8[0x22-8]; u8 b22; u8 p23[0x38-0x23]; f32 f38; u8 p3c[0x430-0x3C]; f32 f430; } PA;
 extern f32 D_004F1FE8;
 s32 func_002BD410(PA *p, f32 *q) {
-    extern double func_00119058(f32);
     extern void func_002BD610(PA *, f32 *);
     extern void func_001757E0(PA *, s32, s32);
     f32 t;
     if (p->b22 == 8) return 0;
-    t = func_00119058(D_004F1FE8) - 240.0;
+    t = (double)D_004F1FE8 - 240.0;
     if (p->f38 > p->f430 && p->f38 > t) return 0;
     p->b7 = 2;
     func_002BD610(p, q);

@@ -9,8 +9,6 @@ typedef struct { f32 x, y, z; } V3;
 
 extern f32 D_0044B8B8[];
 extern f32 D_0044B8D0[];
-extern double func_00119B08(s32);
-extern s32 dptoli(double);
 
 void func_001ACBE0(f32 *a, s32 unused, s32 b, s32 c)
 {
@@ -29,7 +27,7 @@ void func_001ACBE0(f32 *a, s32 unused, s32 b, s32 c)
         *(s32 *)(o + 0x10) = (s32)func_001ACB50;
         *(s32 *)(o + 0xD0) = 0x109;
         *(V3 *)(o + 0x34) = *(V3 *)a;
-        ang = (u32)dptoli(0.5 + 65536.0 * func_00119B08(c * 60) / 360.0) & 0xFFFF;
+        ang = (u32)(s32)(0.5 + 65536.0 * (double)(c * 60) / 360.0) & 0xFFFF;
         t = func_00417440(ang);
         k = &D_0044B8B8[b];
         *(f32 *)(o + 0x5C) = *k * t;

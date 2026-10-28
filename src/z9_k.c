@@ -15,8 +15,8 @@ extern u8 D_00444A30[];
 void func_00154E10(u8 *p) {
     extern void func_003DAA40(struct Object *);
     extern f32 func_00154710(u8 *, u8 *, s16);
-    extern double func_00119058(f32);
     f32 f;
+    double d;
     if (*(s16 *)(p + 0x1C) > 10) {
         func_003DAA40((struct Object *)p);
         return;
@@ -24,7 +24,8 @@ void func_00154E10(u8 *p) {
     *(f32 *)(p + 0x54) = func_00154710(D_004449E0, p + 4, *(s16 *)(p + 0x1C));
     *(f32 *)(p + 0x58) = func_00154710(D_00444A00, p + 5, *(s16 *)(p + 0x1C));
     f = func_00154710(D_00444A20, p + 6, *(s16 *)(p + 0x1C));
-    *(u32 *)(p + 0x40) = (u16)((u32)(s32)(65536.0 * func_00119058(f) / 360.0 + 0.5));
+    d = f;
+    *(u32 *)(p + 0x40) = (u16)((u32)(s32)(65536.0 * d / 360.0 + 0.5));
     f = func_00154710(D_00444A30, p + 7, *(s16 *)(p + 0x1C));
     *(f32 *)(p + 0x78) = f;
     *(f32 *)(p + 0x7C) = f;

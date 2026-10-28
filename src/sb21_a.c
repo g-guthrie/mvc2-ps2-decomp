@@ -5,7 +5,6 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-extern double func_00119058(f32);
 
 typedef struct P {
     u8 pad0[0x1C];
@@ -20,7 +19,7 @@ typedef struct P {
 
 s32 func_00334440(P *p) {
     p->h1c += 1;
-    p->w44 += (u16)((u32)(s32)(0.5 + 65536.0 * func_00119058(p->f60 * (f32)p->h1c) / 360.0));
+    p->w44 += (u16)((u32)(s32)(0.5 + 65536.0 * (double)(p->f60 * (f32)p->h1c) / 360.0));
     if (p->wd4 <= p->h1c) { p->h1c = 0; return 1; }
     return 0;
 }

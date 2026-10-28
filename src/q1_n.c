@@ -12,7 +12,6 @@ typedef struct { u8 pad[0x184]; E28 *tab; } T184;
 void func_0020A320(u8 *p, u8 *q)
 {
     extern void func_00175700();
-    extern double func_00119058(f32);
     extern void func_0034FA80();
     extern void func_001757E0();
     s16 v;
@@ -26,7 +25,7 @@ void func_0020A320(u8 *p, u8 *q)
     if (v == 0) {
         u32 t = p[7];
         p[7] = t + 1;
-        *(f32 *)(p + 0x5C) = func_00119058(*(f32 *)(q + 0x10) - *(f32 *)(p + 0x34)) / 32.0;
+        *(f32 *)(p + 0x5C) = (double)(*(f32 *)(q + 0x10) - *(f32 *)(p + 0x34)) / 32.0;
         *(s32 *)(p + 0x68) = 0;
         *(u32 *)(p + 0x60) = 0x41092492;
         *(u32 *)(p + 0x6C) = 0xBF2B6DB6;

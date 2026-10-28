@@ -22935,4 +22935,24 @@ mkdir -p "build/warm/wrm2_f" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$M
     mv "build/warm/wrm2_f/wrm2_f.o" "$BUILD/wrm2_f.o"
 "$PYTHON" tools/verify_object.py "$BUILD/wrm2_f.o" private/SLUS_204.86.rom --source src/wrm2_f.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq190_c.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nq190_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq190_c.o" private/SLUS_204.86.rom --source src/nq190_c.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq197_c.c -c -lang c -i src -O4,p -Op -fp off -sdatathreshold 8 -o "$BUILD/nq197_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq197_c.o" private/SLUS_204.86.rom --source src/nq197_c.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq193_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nq193_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq193_a.o" private/SLUS_204.86.rom --source src/nq193_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq193_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nq193_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq193_b.o" private/SLUS_204.86.rom --source src/nq193_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq192_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nq192_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq192_b.o" private/SLUS_204.86.rom --source src/nq192_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq194_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nq194_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq194_a.o" private/SLUS_204.86.rom --source src/nq194_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

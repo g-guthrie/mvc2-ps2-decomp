@@ -10,7 +10,6 @@ typedef float f32;
 extern u8 D_00444FB0[];
 extern u8 D_00444FC0[];
 extern f32 func_00154710(void *, void *, s32);
-extern double func_00119058(f32);
 extern void func_003DAA40(struct Object *);
 
 void func_0015A330(u8 *p) {
@@ -21,7 +20,7 @@ void func_0015A330(u8 *p) {
     }
     {
         f32 f = func_00154710(D_00444FB0, p + 4, *(s16 *)(p + 0x1C));
-        double d = func_00119058(f);
+        double d = (double)f;
         *(u32 *)(p + 0x40) = (u16)((u32)(s32)(65536.0 * d / 360.0 + 0.5));
     }
     g = func_00154710(D_00444FC0, p + 5, *(s16 *)(p + 0x1C));

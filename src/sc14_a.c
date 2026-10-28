@@ -14,7 +14,6 @@ extern f32 D_004B7984[];
 /* MW 3.0: ./try30.sh SRC "-O3 -Op -sdatathreshold 8"
    func_00333950 is the real function immediately before func_00333A00 in
    retail address order (verified exact at its own address). */
-extern double func_00119058(f32);
 
 typedef struct P {
     u8 pad0[0x1C];
@@ -30,7 +29,7 @@ typedef struct P {
 
 static s32 func_00333950(P *p) {
     p->h1c += 1;
-    p->w44 += (u16)((u32)(s32)(0.5 + 65536.0 * func_00119058(p->f54 * (f32)p->h1c) / 360.0));
+    p->w44 += (u16)((u32)(s32)(0.5 + 65536.0 * (double)(p->f54 * (f32)p->h1c) / 360.0));
     if (p->h1c > p->wd4) {
         p->h1c = 0;
         return 1;

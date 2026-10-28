@@ -12,7 +12,6 @@ extern f32 D_004452A0[];
 
 void func_0015D810(u8 *p)
 {
-    extern double func_00119058(f32);
     extern void func_003DAA40(struct Object *);
     s32 n = *(s16 *)(p + 0x1C);
     if (n > 14) {
@@ -24,7 +23,7 @@ void func_0015D810(u8 *p)
         *(f32 *)(p + 0x50) += 0.25f;
         *(f32 *)(p + 0x54) -= 0.1f;
     }
-    if (func_00119058(*(f32 *)(p + 0x54)) < 0.1)
+    if ((double)(*(f32 *)(p + 0x54)) < 0.1)
         *(u32 *)(p + 0x54) = 0x3DCCCCCD;
     *(s16 *)(p + 0x1C) = *(s16 *)(p + 0x1C) + 1;
 }

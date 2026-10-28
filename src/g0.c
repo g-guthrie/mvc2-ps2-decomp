@@ -53,7 +53,6 @@ extern void func_00391620(u8 *, u8 *);
 extern void func_001830D0(u8 *, u32 *, int);
 extern void func_00299500(u8 *);
 
-extern f32 func_00119C90(double);
 
 void func_0019EAA0(u8 *p, u8 *q)
 {
@@ -329,7 +328,7 @@ void func_00135FF0(u8 *p)
         u32 t = p[5];
         p[5] = t + 1;
         *(s16 *)(p + 0x1C) = 12;
-        *(f32 *)(p + 0x64) = func_00119C90(-(double)*(f32 *)(p + 0x3C) / 12.0);
+        *(f32 *)(p + 0x64) = (f32)(-(double)*(f32 *)(p + 0x3C) / 12.0);
     }
 }
 

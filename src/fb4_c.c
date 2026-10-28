@@ -43,8 +43,6 @@ typedef struct {
     f32 f7C;
 } PL;
 
-extern double func_00119B08(s32);
-extern s32 dptoli(double);
 extern s32 fptosi(f32);
 extern f32 func_00417440(u32);
 extern f32 func_00417500(u32);
@@ -62,11 +60,11 @@ void func_0015FB30(PL *p) {
     p->f38 += 222.8571319580078f * p->o->f54;
     if (p->o->b1B4 == 0) {
         p->h1C = p->h1C + 1;
-        p->w44 = (u32)dptoli(0.5 + 65536.0 * func_00119B08((p->h1C + p->h1E) * 2) / 360.0) & 0xFFFF;
-        p->w48 = (u32)dptoli(0.5 + 65536.0 * func_00119B08((p->h1C + p->h1E) * 3) / 360.0) & 0xFFFF;
-        r = func_00417440((u32)dptoli(0.5 + 65536.0 * func_00119B08(p->h1C % 360) / 360.0) & 0xFFFF);
+        p->w44 = (u32)(s32)(0.5 + 65536.0 * (double)((p->h1C + p->h1E) * 2) / 360.0) & 0xFFFF;
+        p->w48 = (u32)(s32)(0.5 + 65536.0 * (double)((p->h1C + p->h1E) * 3) / 360.0) & 0xFFFF;
+        r = func_00417440((u32)(s32)(0.5 + 65536.0 * (double)(p->h1C % 360) / 360.0) & 0xFFFF);
         p->f78 = 0.5f + 0.5f * r;
-        r = func_00417500((u32)dptoli(0.5 + 65536.0 * func_00119B08(p->h1C % 360) / 360.0) & 0xFFFF);
+        r = func_00417500((u32)(s32)(0.5 + 65536.0 * (double)(p->h1C % 360) / 360.0) & 0xFFFF);
         p->f7C = 0.5f + 0.5f * r;
     }
     if (p->o->b4 != 0) func_003DAA40(p);

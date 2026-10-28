@@ -23,36 +23,27 @@ extern f32 D_0043E9B4[];
 extern f32 D_0043E9B8[];
 extern f32 D_0043E9BC[];
 extern f32 func_00417440(s32);
-extern f64 func_00119058(f32);
-extern f64 func_00119510(f64, f64);
-extern f32 dptofp(f64);
 extern s32 fptosi(f32);
 
 void func_00134EA0(u8 *p)
 {
     s32 s0;
     f32 t;
-    f64 r;
     f32 a, lo;
 
     s0 = D_004D18FA[p[0x20]];
     if (s0 >= 5) s0 = 5;
     if (s0 >= 5) {
-        t = func_00417440(D_004C2788) / 16.0f;
-        *(f32 *)(p + 0x50) = *(f32 *)(p + 0x54) = dptofp(func_00119510(1.25, func_00119058(t)));
+        *(f32 *)(p + 0x50) = *(f32 *)(p + 0x54) = (f32)(1.25 + (f64)(func_00417440(D_004C2788) / 16.0f));
     } else {
         *(V3b *)(p + 0x50) = D_0043E988[0];
     }
     if (s0 >= 5) {
-        t = func_00417440(D_004C2788 + fptosi(*(f32 *)(p + 0x68))) / 2.0f;
-        r = func_00119058(t);
-        *(f32 *)(p + 0x78) = dptofp(func_00119510(0.5, r));
-        t = func_00417440(D_004C2788 + fptosi(*(f32 *)(p + 0x6C))) / 2.0f;
-        *(f32 *)(p + 0x7C) = dptofp(func_00119510(0.5, func_00119058(t)));
-        t = func_00417440(D_004C2788 + fptosi(*(f32 *)(p + 0x70))) / 2.0f;
-        *(f32 *)(p + 0x80) = dptofp(func_00119510(0.5, func_00119058(t)));
+        *(f32 *)(p + 0x78) = (f32)(0.5 + (f64)(func_00417440(D_004C2788 + fptosi(*(f32 *)(p + 0x68))) / 2.0f));
+        *(f32 *)(p + 0x7C) = (f32)(0.5 + (f64)(func_00417440(D_004C2788 + fptosi(*(f32 *)(p + 0x6C))) / 2.0f));
+        *(f32 *)(p + 0x80) = (f32)(0.5 + (f64)(func_00417440(D_004C2788 + fptosi(*(f32 *)(p + 0x70))) / 2.0f));
     } else {
-        t = dptofp(func_00119510(0.5, func_00119058(func_00417440(D_004C2790) / 2.0f)));
+        t = (f32)(0.5 + (f64)(func_00417440(D_004C2790) / 2.0f));
         lo = *(volatile f32 *)D_0043E9B4; a = D_0043E9A4[0] - lo; a *= t;
         *(f32 *)(p + 0x78) = lo + a;
         lo = *(volatile f32 *)D_0043E9B8; a = D_0043E9A8[0] - lo; a *= t;

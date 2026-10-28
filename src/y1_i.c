@@ -8,9 +8,9 @@ typedef float f32;
 void func_0033F470(u8 *p)
 {
     extern f32 func_00417440();
-    extern double func_00119058(f32);
     u16 a;
     f32 c;
+    double d;
     switch (p[4]) {
     default: return;
     case 0:
@@ -18,16 +18,17 @@ void func_0033F470(u8 *p)
         if (*(s16 *)(p + 0x1C) >= 360) *(s16 *)(p + 0x1C) = 0;
         a = (u16)((u32)(s32)(0.5 + 65536.0 * (double)*(s16 *)(p + 0x1C) / 360.0));
         c = 45.0f * func_00417440(a);
-        *(u32 *)(p + 0x40) = (u16)((u32)(s32)(0.5 + 65536.0 * func_00119058(c) / 360.0));
+        d = c;
+        *(u32 *)(p + 0x40) = (u16)((u32)(s32)(0.5 + 65536.0 * d / 360.0));
     }
 }
 
 void func_0033F630(u8 *p)
 {
     extern f32 func_00417440();
-    extern double func_00119058(f32);
     u16 a;
     f32 c;
+    double d;
     switch (p[4]) {
     default: return;
     case 0:
@@ -35,6 +36,7 @@ void func_0033F630(u8 *p)
         if (*(s16 *)(p + 0x1C) >= 360) *(s16 *)(p + 0x1C) = 0;
         a = (u16)((u32)(s32)(0.5 + 65536.0 * (double)*(s16 *)(p + 0x1C) / 360.0));
         c = 20.0f * func_00417440(a);
-        *(u32 *)(p + 0x40) = (u16)((u32)(s32)(0.5 + 65536.0 * func_00119058(c) / 360.0));
+        d = c;
+        *(u32 *)(p + 0x40) = (u16)((u32)(s32)(0.5 + 65536.0 * d / 360.0));
     }
 }

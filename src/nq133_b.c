@@ -11,7 +11,6 @@ typedef struct { u8 pad[0x1C]; s16 h1c; } P3b;
 
 void residual_0037B4B0(u8 *o, u8 *q) {
     extern s32 func_00417A40(void);
-    extern double func_00119B08(s32);
     extern void func_001754A0(u8 *, s32, s32);
     u32 t;
     s32 v;
@@ -38,7 +37,7 @@ void residual_0037B4B0(u8 *o, u8 *q) {
     *(V3 *)(o + 0x34) = *(V3 *)(q + 0x34);
     *(s32 *)(o + 0xD4) = func_00417A40();
     *(s32 *)(o + 0xD4) = *(s32 *)(o + 0xD4) % 360;
-    *(u32 *)(o + 0x48) = (u32)(s32)(0.5 + 65536.0 * func_00119B08(*(s32 *)(o + 0xD4)) / 360.0) & 0xFFFF;
+    *(u32 *)(o + 0x48) = (u32)(s32)(0.5 + 65536.0 * (double)(*(s32 *)(o + 0xD4)) / 360.0) & 0xFFFF;
     *(u32 *)(o + 0x54) = *(u32 *)(o + 0x50) = 0x3F800000;
     if (*(s32 *)(o + 0xD4) % 2 != 0) {
         func_001754A0(o, 0x1B, 0xE);

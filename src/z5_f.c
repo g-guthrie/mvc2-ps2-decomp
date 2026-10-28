@@ -8,12 +8,11 @@ typedef float f32;
 
 s32 func_002CC0A0(u8 *p) {
     extern s32 func_00189310();
-    extern double func_00119058(f32);
     extern void func_0018A990();
     extern void func_00186A60();
     extern u8 D_0045A020[];
     if (func_00189310(p, D_0045A020, p + 0x390) == 0) return 0;
-    if (func_00119058(*(f32 *)(p + 0x60)) < 0.0) {
+    if ((double)(*(f32 *)(p + 0x60)) < 0.0) {
         if (*(f32 *)(p + 0x38) - *(f32 *)(p + 0x430) < 102.857140f) return 1;
     }
     if (p[0x210] == 0) {

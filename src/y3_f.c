@@ -70,7 +70,6 @@ typedef struct { u8 pad6[0x6]; u8 b6; u8 pad34[0x2D]; f32 f34; f32 f38; u8 pad5C
 void func_002ADEA0(S14_r *p) {
     extern void func_00185490(u8 *);
     extern void func_002ADE20();
-    extern double func_00119058(f32);
     extern void func_00175700();
     extern void func_001757E0();
     u32 t;
@@ -81,7 +80,7 @@ void func_002ADEA0(S14_r *p) {
     p->f5c += p->f68;
     p->f38 += p->f60;
     p->f60 += p->f6c;
-    if (func_00119058(p->f68 * p->f5c) < 0.0) {
+    if ((double)(p->f68 * p->f5c) < 0.0) {
         if ((p->b211 & (1 << (p->b1e6 ^ 1))) == 0) {
             func_00175700(p);
             return;

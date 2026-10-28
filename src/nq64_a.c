@@ -9,7 +9,6 @@ typedef float f32;
 void func_0036BDD0(u8 *p)
 {
     extern void func_00175700(u8 *);
-    extern double func_00119058(f32);
     extern void func_001757E0(u8 *, s32, s32);
     s16 h;
     u32 t;
@@ -18,7 +17,7 @@ void func_0036BDD0(u8 *p)
     *(f32 *)(p + 0x50) += *(f32 *)(p + 0x5C);
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
     if (*(s16 *)(p + 0x1C) < 3) {
-        switch (func_00119058(*(f32 *)(p + 0x118) -= 0.20000000298023224f) < 0.1) {
+        switch ((double)(*(f32 *)(p + 0x118) -= 0.20000000298023224f) < 0.1) {
         case 0: break;
         default: *(f32 *)(p + 0x118) = 0.10000000149011612f; break;
         }

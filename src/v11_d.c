@@ -8,7 +8,6 @@ typedef float f32;
 
 void func_002F8740(u8 *p) {
     extern int func_00175700(u8 *);
-    extern double func_00119058(f32);
     extern void func_001757E0();
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
@@ -19,7 +18,7 @@ void func_002F8740(u8 *p) {
         { u32 t = p[6]; p[6] = t + 1; }
         p[0x20D] = 0;
         *(f32 *)(p + 0x38) = *(f32 *)(p + 0x430);
-        *(f32 *)(p + 0x68) = -(func_00119058(*(f32 *)(p + 0x5C)) / 8.0);
+        *(f32 *)(p + 0x68) = -((double)(*(f32 *)(p + 0x5C)) / 8.0);
         func_001757E0(p, 2, 3);
     }
 }

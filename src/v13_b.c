@@ -9,17 +9,18 @@ typedef float f32;
 
 void func_0015A1C0(u8 *p) {
     extern f32 func_00154710();
-    extern double func_00119058(f32);
     extern void func_003DAA40(struct Object *);
     extern u8 D_00444F80[], D_00444F90[];
     s16 h = *(s16 *)(p + 0x1C);
     f32 r;
+    double d;
     if (h >= 13) {
         func_003DAA40((struct Object *)p);
         return;
     }
     r = func_00154710(D_00444F80, p + 4, h);
-    *(u32 *)(p + 0x40) = (u16)((u32)(s32)(func_00119058(r) * 65536.0 / 360.0 + 0.5));
+    d = r;
+    *(u32 *)(p + 0x40) = (u16)((u32)(s32)(d * 65536.0 / 360.0 + 0.5));
     r = func_00154710(D_00444F90, p + 5, *(s16 *)(p + 0x1C));
     *(f32 *)(p + 0x78) = r;
     *(f32 *)(p + 0x7C) = r;
@@ -46,7 +47,6 @@ typedef struct FH {
 } FH;
 
 void func_00297740(FH *p) {
-    extern double func_00119058(f32);
     extern void func_00175700();
     extern u8 *func_001C8FD0(u8 *, s32);
     extern void func_001757E0();
@@ -56,7 +56,7 @@ void func_00297740(FH *p) {
     p->f5c += p->f68;
     p->f38 += p->f60;
     p->f60 += p->f6c;
-    if (func_00119058(old * p->f60) > 0.0) {
+    if ((double)(old * p->f60) > 0.0) {
         func_00175700(p);
         return;
     }

@@ -13,8 +13,6 @@ extern void func_0041BAD0(A41B *);
 extern u8 *func_0041BBB0(A41B *);
 extern void func_0041BB30(A41B *);
 extern f32 func_00417440(u32);
-extern double func_00119B08(s32);
-extern s32 dptoli(double);
 typedef struct {f32 x,y,z;} Point3;
 typedef struct {u8 *actor;s32 phase;} WaveContext;
 void func_001446F0(u8 *p,u8 *q,s32 context) {
@@ -30,7 +28,7 @@ void func_001446F0(u8 *p,u8 *q,s32 context) {
  while((point=(Point3 *)func_0041BBB0((A41B *)p))!=0 && func_0041BBB0((A41B *)q)!=0) {
   f32 y=point->y;
   f32 z=point->z;
-  f32 c=func_00417440((u32)dptoli(0.5+65536.0*func_00119B08(*(s16 *)(actor+0x1e)+phase)/360.0)&0xFFFF);
+  f32 c=func_00417440((u32)(s32)(0.5+65536.0*(double)(*(s16 *)(actor+0x1e)+phase)/360.0)&0xFFFF);
   f32 k=0.019999999552965164f*y*y;
   z+=k*c;
   phase+=20;

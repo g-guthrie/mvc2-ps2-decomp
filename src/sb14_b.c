@@ -47,8 +47,6 @@ extern f32 D_0045ED0C[];
 extern f32 D_0045ED10[];
 
 extern f32 D_0045ECD0[3];
-extern double func_00119B08(s32);
-extern s32 dptoli(double);
 extern f32 func_00417440(u32);
 extern f32 func_00417500(u32);
 extern void func_0033C250();
@@ -63,11 +61,11 @@ static void func_0033C300(u8 *p) {
     SO *sa = (SO *)p;
     if (*(s16 *)(p + 0x1C) >= 300)
         sa->h1c = 180;
-    angle = (u32)dptoli(0.5 + 65536.0 * func_00119B08((s32)*(s16 *)(p + 0x1C) + 90) / 360.0) & 0xFFFFu;
+    angle = (u32)(int)(0.5 + 65536.0 * (double)((s32)*(s16 *)(p + 0x1C) + 90) / 360.0) & 0xFFFFu;
     *(u32 *)(p + 0x44) = angle;
-    angle = (u32)dptoli(0.5 + 65536.0 * func_00119B08((s32)*(s16 *)(p + 0x1C)) / 360.0) & 0xFFFFu;
+    angle = (u32)(int)(0.5 + 65536.0 * (double)((s32)*(s16 *)(p + 0x1C)) / 360.0) & 0xFFFFu;
     *(f32 *)(p + 0x34) = D_0045ECD0[0] + 850.0f * func_00417440(angle);
-    angle = (u32)dptoli(0.5 + 65536.0 * func_00119B08((s32)*(s16 *)(p + 0x1C)) / 360.0) & 0xFFFFu;
+    angle = (u32)(int)(0.5 + 65536.0 * (double)((s32)*(s16 *)(p + 0x1C)) / 360.0) & 0xFFFFu;
     *(f32 *)(p + 0x3C) = D_0045ECD0[2] + 850.0f * func_00417500(angle);
     *(s16 *)(p + 0x1C) = *(s16 *)(p + 0x1C) + 1;
 }

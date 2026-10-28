@@ -32,11 +32,10 @@ extern s16 D_004B7F70[][2];
 extern s32 D_004C283C;
 
 void func_00335400(S335400 *p) {
-    extern double func_00119058(f32);
     extern void func_00335540(S335400 *);
     f32 k;
     u32 t;
-    p->w44 = (u32)(s32)(0.5 + 65536.0 * func_00119058(p->f60 = D_004B7F68[p->b5]) / 360.0) & 0xFFFF;
+    p->w44 = (u32)(s32)(0.5 + 65536.0 * (double)(p->f60 = D_004B7F68[p->b5]) / 360.0) & 0xFFFF;
     k = 200.0f;
     t = p->b5;
     p->b5 = t + 1;
@@ -57,11 +56,10 @@ void func_00335400(S335400 *p) {
 }
 
 void func_003356F0(S335400 *p) {
-    extern double func_00119058(f32);
     extern void func_00335830(S335400 *);
     f32 k;
     u32 t;
-    p->w44 = (u32)(s32)(0.5 + 65536.0 * func_00119058(p->f60 = D_004B7F68[p->b5]) / 360.0) & 0xFFFF;
+    p->w44 = (u32)(s32)(0.5 + 65536.0 * (double)(p->f60 = D_004B7F68[p->b5]) / 360.0) & 0xFFFF;
     k = 200.0f;
     t = p->b5;
     p->b5 = t + 1;

@@ -14,7 +14,6 @@ void func_00298830(S298830 *p)
 {
     extern void func_00185490();
     extern void func_00298390();
-    extern double func_00119058(f32);
     extern void func_00175700();
     extern void func_001757E0();
     func_00185490(p);
@@ -24,7 +23,7 @@ void func_00298830(S298830 *p)
     p->f5c += p->f68;
     p->f38 += p->f60;
     p->f60 += p->f6c;
-    if (func_00119058(p->f68 * p->f5c) < 0.0
+    if ((double)(p->f68 * p->f5c) < 0.0
         && !((*(s8 *)((u8 *)p + 0x211)) & (1 << *((u8 *)p + 0x1E6)))) {
         func_00175700(p);
     } else {

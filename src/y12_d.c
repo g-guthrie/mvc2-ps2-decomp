@@ -9,7 +9,6 @@ typedef float f32;
 
 
 void func_001EB5E0(u8 *p) {
-    extern double func_00119058(f32);
     extern void func_00175700();
     extern void func_001757E0();
     extern void func_001EB470();
@@ -18,7 +17,7 @@ void func_001EB5E0(u8 *p) {
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
-    if (func_00119058(o * *(f32 *)(p + 0x60)) > 0.0) {
+    if ((double)(o * *(f32 *)(p + 0x60)) > 0.0) {
         func_00175700(p);
     } else {
         u32 t = p[6];

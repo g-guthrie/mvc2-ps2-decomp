@@ -10,7 +10,6 @@ extern f32 D_004452A0[];
 
 void func_0015D730(u8 *p) {
     extern void func_003DAA40();
-    extern double func_00119058(f32);
     if (*(s16 *)(p + 0x1C) > 0xE) {
         func_003DAA40(p);
         return;
@@ -20,7 +19,7 @@ void func_0015D730(u8 *p) {
         *(f32 *)(p + 0x50) -= 0.10000000149011612f;
         *(f32 *)(p + 0x54) += 0.25f;
     }
-    if (func_00119058(*(f32 *)(p + 0x50)) < 0.1) {
+    if ((double)(*(f32 *)(p + 0x50)) < 0.1) {
         *(f32 *)(p + 0x50) = 0.10000000149011612f;
     }
     *(s16 *)(p + 0x1C) = *(s16 *)(p + 0x1C) + 1;
