@@ -21909,4 +21909,52 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/actor_inherit_sta
 "$PYTHON" tools/verify_object.py "$BUILD/actor_inherit_start_001a4020.o" private/SLUS_204.86.rom --source src/actor_inherit_start_001a4020.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/actor_position_reset_001beb00.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/actor_position_reset_001beb00.o"
 "$PYTHON" tools/verify_object.py "$BUILD/actor_position_reset_001beb00.o" private/SLUS_204.86.rom --source src/actor_position_reset_001beb00.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nf11_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nf11_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nf11_a.o" private/SLUS_204.86.rom --source src/nf11_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nf0_b.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/nf0_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nf0_b.o" private/SLUS_204.86.rom --source src/nf0_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nf3_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/nf3_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nf3_a.o" private/SLUS_204.86.rom --source src/nf3_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nf4_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/nf4_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nf4_a.o" private/SLUS_204.86.rom --source src/nf4_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nf8_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/nf8_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nf8_a.o" private/SLUS_204.86.rom --source src/nf8_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nf8_c.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nf8_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nf8_c.o" private/SLUS_204.86.rom --source src/nf8_c.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nf9_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/nf9_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nf9_a.o" private/SLUS_204.86.rom --source src/nf9_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nf10_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nf10_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nf10_a.o" private/SLUS_204.86.rom --source src/nf10_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nf10_b.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/nf10_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nf10_b.o" private/SLUS_204.86.rom --source src/nf10_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nh1_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/nh1_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nh1_a.o" private/SLUS_204.86.rom --source src/nh1_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nh3_b.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/nh3_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nh3_b.o" private/SLUS_204.86.rom --source src/nh3_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nh5_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/nh5_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nh5_a.o" private/SLUS_204.86.rom --source src/nh5_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nh6_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/nh6_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nh6_a.o" private/SLUS_204.86.rom --source src/nh6_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nh6_c.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/nh6_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nh6_c.o" private/SLUS_204.86.rom --source src/nh6_c.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nh7_b.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/nh7_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nh7_b.o" private/SLUS_204.86.rom --source src/nh7_b.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

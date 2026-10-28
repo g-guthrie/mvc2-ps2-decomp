@@ -1,0 +1,44 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
+typedef unsigned int u32;
+typedef signed int s32;
+typedef float f32;
+typedef double f64;
+typedef struct { f32 x, y, z; } V10b;
+
+void func_0020F610(u8 *p) {
+    extern void func_00179150(u8 *, u8 *);
+    u32 t = p[6];
+    u8 *q;
+    f32 buf[12];
+    f32 *pv1;
+    V10b *pw;
+    p[6] = t + 1;
+    *(f32 *)(p + 0x68) = 0;
+    *(f32 *)(p + 0x6C) = 0;
+    q = *(u8 **)(p + 0x1DC);
+    *(f32 *)(p + 0x5C) = 0;
+    *(f32 *)(p + 0x60) = 0;
+    *(f32 *)(p + 0x68) = 0;
+    *(f32 *)(p + 0x6C) = 0;
+    *(f32 *)(q + 0x5C) = 0;
+    *(f32 *)(q + 0x60) = 0;
+    *(f32 *)(q + 0x68) = 0;
+    *(f32 *)(q + 0x6C) = 0;
+    pw = (V10b *)(buf + 3);
+    *pw = *(V10b *)(p + 0x34);
+    *(V10b *)buf = *pw;
+    func_00179150(p, q);
+    pv1 = buf + 1;
+    buf[0] = *(f32 *)(p + 0x34) - buf[0];
+    *pv1 = *(f32 *)(p + 0x38) - *pv1;
+    *(V10b *)(p + 0x34) = *pw;
+    *(f32 *)(p + 0x5C) = (f32)((f64)buf[0] / 16.0);
+    *(f32 *)(p + 0x60) = (f32)((f64)*pv1 / 16.0);
+    *(f32 *)(p + 0x68) = 0;
+    *(f32 *)(p + 0x60) += 8.571428298950195f;
+    *(f32 *)(p + 0x6C) = -0.5357142686843872f;
+    *(s16 *)(p + 0x1C) = 0x10;
+}

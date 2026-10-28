@@ -558,3 +558,5 @@ dg10,18,sonnet,medium,data,40,11,140,,,3 ptrs symbolized; 28 pad bytes
 dg10,18,sonnet,medium,data,40,11,140,115353,3.1,lost: worktree reset before integration
 dg1,18,sonnet,medium,data,40,32,645,169959,7.2,
 dg9,18,sonnet,medium,data,40,37,1876,173228,7.8,4 code ptrs symbolized
+nf-wave,19,sonnet,medium,code-fresh,36,12,,,,"mostly residual tails; 3 batches all boundary artifacts"
+nh-wave,19,opus,low,code-hard,24,9,,,,"4 bnel-wall near misses"

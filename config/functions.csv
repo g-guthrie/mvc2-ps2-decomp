@@ -3577,7 +3577,8 @@ func_001A8300,0x001A8300,0x1C,0x001A831C,code,matching-c-head-split
 residual_001A831C,0x001A831C,0x4,0x001A8320,assembly_residual,native-prefix-before-verified-c-body
 func_001A8320,0x001A8320,0x12C,0x001A844C,code,verified-complete-c-function
 func_001A8450,0x001A8450,0x1C,0x001A846C,code,matching-c-head-split
-residual_001A846C,0x001A846C,0x80,0x001A84EC,assembly_residual,verified-boundary-after-matching-head
+gap_001A846C,0x001A846C,0x4,0x001A8470,alignment_padding,split-before-matched-function
+func_001A8470,0x001A8470,0x7C,0x001A84EC,code,split-after-leading-padding
 func_001A84F0,0x001A84F0,0x54,0x001A8544,code,spimdisasm-explicit-size-before-first-data
 func_001A8550,0x001A8550,0xB8,0x001A8608,code,spimdisasm-explicit-size-before-first-data
 func_001A8610,0x001A8610,0x60,0x001A8670,code,spimdisasm-explicit-size-before-first-data
@@ -4202,7 +4203,8 @@ residual_001BBE54,0x001BBE54,0xC,0x001BBE60,alignment_padding,verified-nop-gap-a
 func_001BBE60,0x001BBE60,0x154,0x001BBFB4,code,verified-pointer-entry-and-whole-function
 func_001BBFC0,0x001BBFC0,0x214,0x001BC1D4,code,spimdisasm-explicit-size-before-first-data
 func_001BC1E0,0x001BC1E0,0x24,0x001BC204,code,matching-c-head-split
-residual_001BC204,0x001BC204,0x2B0,0x001BC4B4,assembly_residual,verified-boundary-after-matching-head
+gap_001BC204,0x001BC204,0xC,0x001BC210,alignment_padding,split-before-matched-function
+func_001BC210,0x001BC210,0x2A4,0x001BC4B4,code,split-after-leading-padding
 func_001BC4C0,0x001BC4C0,0x164,0x001BC624,code,spimdisasm-explicit-size-before-first-data
 func_001BC630,0x001BC630,0x14,0x001BC644,code,spimdisasm-explicit-size-before-first-data
 func_001BC650,0x001BC650,0x8,0x001BC658,code,spimdisasm-explicit-size-before-first-data
@@ -5794,7 +5796,7 @@ func_001F69C0,0x001F69C0,0xC4,0x001F6A84,code,verified-native-entry-boundary
 func_001F6A90,0x001F6A90,0x154,0x001F6BE4,code,spimdisasm-explicit-size-before-first-data
 func_001F6BF0,0x001F6BF0,0x54,0x001F6C44,code,spimdisasm-explicit-size-before-first-data
 func_001F6C50,0x001F6C50,0x20,0x001F6C70,code,matching-c-head-split
-residual_001F6C70,0x001F6C70,0x174,0x001F6DE4,assembly_residual,verified-boundary-after-matching-head
+func_001F6C70,0x001F6C70,0x174,0x001F6DE4,assembly_residual,verified-boundary-after-matching-head
 func_001F6DF0,0x001F6DF0,0x78,0x001F6E68,code,spimdisasm-explicit-size-before-first-data
 func_001F6E70,0x001F6E70,0x20,0x001F6E90,code,matching-c-head-split
 func_001F6E90,0x001F6E90,0x80,0x001F6F10,code,callback-table-and-prologue-verified-entry
@@ -6517,7 +6519,7 @@ func_0020F490,0x0020F490,0x74,0x0020F504,code,spimdisasm-explicit-size-before-fi
 func_0020F510,0x0020F510,0xA4,0x0020F5B4,code,spimdisasm-explicit-size-before-first-data
 func_0020F5C0,0x0020F5C0,0x2C,0x0020F5EC,code,matching-c-head-split
 func_0020F5F0,0x0020F5F0,0x20,0x0020F610,code,verified-complete-c-function
-residual_0020F610,0x0020F610,0x158,0x0020F768,assembly_residual,native-suffix-after-verified-c-body
+func_0020F610,0x0020F610,0x158,0x0020F768,assembly_residual,native-suffix-after-verified-c-body
 func_0020F770,0x0020F770,0x110,0x0020F880,code,spimdisasm-explicit-size-before-first-data
 func_0020F880,0x0020F880,0xAC,0x0020F92C,code,spimdisasm-explicit-size-before-first-data
 func_0020F930,0x0020F930,0x98,0x0020F9C8,code,spimdisasm-explicit-size-before-first-data
@@ -6641,7 +6643,7 @@ func_002138D0,0x002138D0,0x98,0x00213968,code,independent-callback-entry-table-r
 func_00213970,0x00213970,0x30,0x002139A0,code,spimdisasm-explicit-size-before-first-data
 func_002139A0,0x002139A0,0xB0,0x00213A50,code,spimdisasm-explicit-size-before-first-data
 func_00213A50,0x00213A50,0x20,0x00213A70,code,matching-c-head-split
-residual_00213A70,0x00213A70,0xE8,0x00213B58,assembly_residual,verified-boundary-after-matching-head
+func_00213A70,0x00213A70,0xE8,0x00213B58,assembly_residual,verified-boundary-after-matching-head
 func_00213B60,0x00213B60,0xE4,0x00213C44,code,spimdisasm-explicit-size-before-first-data
 func_00213C50,0x00213C50,0x4C,0x00213C9C,code,spimdisasm-explicit-size-before-first-data
 func_00213CA0,0x00213CA0,0x24,0x00213CC4,code,matching-c-head-split

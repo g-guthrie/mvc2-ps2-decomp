@@ -1,0 +1,3 @@
+typedef unsigned char u8; typedef unsigned short u16; typedef signed short s16; typedef signed int s32; typedef unsigned int u32; typedef float f32;
+void func_002C05F0(u8 *p){ extern void func_002C40D0(); u8 *q = p + 0x2B8; s16 v; if (p[0x215] == 0) return; if (p[5] != 0) return; v = *(s16 *)(q + 8) - 1; *(s16 *)(q + 8) = v; if (v > 0) return; if (p[0x1E4] == 0x1D || p[0x1E4] == 0x15) return; func_002C40D0(p); }
+void func_00183050(u8 *p){ u16 m; f32 d; if (*(s16 *)(p + 0x434) == 0 || p[0x248] == 0) return; m = *(s16 *)(p + 0x35E) & 0xC00; if (m == 0) return; d = 0.0520833320915699f; if (p[0x1E6] != 0) d = -d; if ((u16)m & 0x800) d = -d; *(f32 *)(p + 0x5C) += d; }
