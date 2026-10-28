@@ -21870,4 +21870,8 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/button_config_ren
 "$PYTHON" tools/verify_object.py "$BUILD/button_config_render_00149690.o" private/SLUS_204.86.rom --source src/button_config_render_00149690.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/menu_model_initializer_00131ce0.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/menu_model_initializer_00131ce0.o"
 "$PYTHON" tools/verify_object.py "$BUILD/menu_model_initializer_00131ce0.o" private/SLUS_204.86.rom --source src/menu_model_initializer_00131ce0.c
+"$WIBO" "$SNCPP" -P src/stream_decode_003ff688.c "$BUILD/stream_decode_003ff688.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 "$BUILD/stream_decode_003ff688.i" "$BUILD/stream_decode_003ff688.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/stream_decode_003ff688.o" "$BUILD/stream_decode_003ff688.s"
+"$PYTHON" tools/verify_object.py "$BUILD/stream_decode_003ff688.o" private/SLUS_204.86.rom --source src/stream_decode_003ff688.c
 PYTHON="$PYTHON" tools/compile_matching_data.sh

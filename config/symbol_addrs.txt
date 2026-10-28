@@ -23651,3 +23651,5 @@ data_button_config_render_004B36E0 = 0x004B36E0;
 gPlayerFormat_004B3890 = 0x004B3890;
 
 data_u8_004BF328 = 0x004BF328;
+
+func_003F7FC8 = 0x003F7FC8;

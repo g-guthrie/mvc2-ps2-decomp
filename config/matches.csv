@@ -19382,3 +19382,4 @@ func_00397180,0x00397180,0xC8,src/actor_work_state_00397180.c,placeholder
 func_00148200,0x00148200,0x190,src/menu_record_initialization_00148200.c,placeholder
 func_00149690,0x00149690,0x188,src/button_config_render_00149690.c,placeholder
 func_00131CE0,0x00131CE0,0x138,src/menu_model_initializer_00131ce0.c,placeholder
+func_003FF688,0x003FF688,0x188,src/stream_decode_003ff688.c,placeholder
