@@ -1,4 +1,4 @@
-/* Provisional: callback table ABI, dispatcher bounds and owner lifetime need proof. */
+/* jtbl_0044C080 entries called as (p, owner) by residual_001BB990. */
 #pragma padloop on
 typedef unsigned char u8;
 typedef signed char s8;
@@ -11,7 +11,7 @@ typedef float f32;
 typedef struct { f32 x, y, z; } V3;
 #include "actor_inherited_state.h"
 
-extern int func_001754A0(u8 *, int, int);
+extern s32 func_001754A0(u8 *, s32, s32);
 void func_001BB9C0(u8 *p,u8 *q)
 {
  p[4]=1; p[0x13c]=1;

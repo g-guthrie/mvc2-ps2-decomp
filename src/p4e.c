@@ -4,18 +4,9 @@ typedef unsigned int u32;
 typedef signed int s32;
 
 extern s32 func_003F1F90();
-extern void func_0011D8F8();
 extern void func_0010CFD0();
 extern void func_00103A20();
 extern void func_00102F20();
-extern volatile s32 D_00487328;
-extern char D_004872F0[];
-
-void func_00407BC0(void) {
-    (void)D_00487328;
-    func_0011D8F8(D_004872F0, 0, 0x38);
-    __asm__ volatile("");
-}
 
 extern void func_00401868();
 extern void func_003F9630();

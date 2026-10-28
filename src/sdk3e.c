@@ -14,7 +14,6 @@ void func_00410B88(void) {
     if (n == 0) { func_004095C8(); n = D_00495BB4; }
     D_00495BB4 = n + 1;
 }
-/* Provisional: stream and buffer extents remain unproved. */
 void func_003F8490(RuntimeStreamDecoder *p, s32 idx) {
     RuntimeStreamChunk *q = &p->chunk;
     RuntimeDecodeDescriptor *h = p->descriptor;

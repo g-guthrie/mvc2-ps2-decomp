@@ -9,8 +9,7 @@ typedef float f32;
 extern u8 D_004ACC08[];
 extern s8 D_004F1F46[];
 extern u8 D_004C25C8;
-/* Provisional: callback signatures and selector bounds span separate data owners. */
-extern void (*D_004BF310[4])(u32) __attribute__((section(".sdata")));
+extern void (*D_004BF310[4])() __attribute__((section(".sdata")));
 
 void func_00126080(u32 a) {
     u8 *tbl = D_004ACC08;

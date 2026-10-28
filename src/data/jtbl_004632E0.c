@@ -1,29 +1,29 @@
-/* Typed callback entries recovered from the exact dispatch callers. */
+/* Two-argument entries: func_0035CCA0 dispatches (actor, owner). */
 /* Consumer: src/composite_dispatch_heads.c (jtbl_004632E0). */
 #include "mvc2_state_callbacks.h"
 
-extern void func_0035CCC0(u8 *);
-extern void func_0035CF70(u8 *);
-extern void func_0035D0A0(u8 *);
-extern void func_0035D240(u8 *);
-extern void func_0035D340(u8 *);
-extern void func_0035D360(u8 *);
-extern void func_0035D4A0(u8 *);
-extern void func_0035D4C0(u8 *);
-extern void func_0035D600(u8 *);
-extern void func_0035D6D0(u8 *);
-extern void func_0035D6F0(u8 *);
-extern void func_0035D850(u8 *);
-extern void func_0035D980(u8 *);
-extern void func_0035D9A0(u8 *);
-extern void func_0035DAD0(u8 *);
-extern void func_0035DB90(u8 *);
-extern void func_0035DBB0(u8 *);
-extern void func_0035DD10(u8 *);
-extern void func_0035DE40(u8 *);
-extern void func_0035DE60(u8 *);
+extern void func_0035CCC0(u8 *, void *);
+extern void func_0035CF70(u8 *, void *);
+extern void func_0035D0A0(u8 *, void *);
+extern void func_0035D240(u8 *, void *);
+extern void func_0035D340(u8 *, void *);
+extern void func_0035D360(u8 *, void *);
+extern void func_0035D4A0(u8 *, void *);
+extern void func_0035D4C0(u8 *, void *);
+extern void func_0035D600(u8 *, void *);
+extern void func_0035D6D0(u8 *, void *);
+extern void func_0035D6F0(u8 *, void *);
+extern void func_0035D850(u8 *, void *);
+extern void func_0035D980(u8 *, void *);
+extern void func_0035D9A0(u8 *, void *);
+extern void func_0035DAD0(u8 *, void *);
+extern void func_0035DB90(u8 *, void *);
+extern void func_0035DBB0(u8 *, void *);
+extern void func_0035DD10(u8 *, void *);
+extern void func_0035DE40(u8 *, void *);
+extern void func_0035DE60(u8 *, void *);
 
-const Mvc2StateCallback jtbl_004632E0[28] = {
+const Mvc2OwnerStateCallback jtbl_004632E0[28] = {
     func_0035CCC0,
     func_0035CF70,
     func_0035D340,

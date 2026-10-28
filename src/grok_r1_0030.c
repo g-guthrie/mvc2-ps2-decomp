@@ -171,7 +171,7 @@ void func_00313C40(u8 *p) {
         func_003C1250(p, 3, 0);
 }
 
-void func_0035AE70(u8 *p) {
+void func_0035AE70(u8 *p, s32 x) {
     u8 *q = *(u8 **)(p + 0x18) + 0x2B8;
     if (p[0x20] == 0)
         p[0x21] = 0;

@@ -261,3 +261,16 @@ class AlignmentPaddingCreditTest(unittest.TestCase):
             self.assertEqual(pc.code_progress(only_a, root), (16, 16))
             only_b = {"func_b": {"address": 0x00100010, "size": 16, "complete": False}}
             self.assertEqual(pc.code_progress(only_b, root), (20, 0))
+
+
+class DataAlignmentPaddingCreditTest(unittest.TestCase):
+    def test_padding_unit_follows_adjacent_owner(self):
+        from tools import progress_catalog as pc
+        base = pc.DATA_BEGIN
+        rows = {
+            "obj": {"address": base, "size": 8, "complete": True, "progress": "reconstructed"},
+            "pad": {"address": base + 8, "size": 8, "complete": True, "progress": "alignment_padding"},
+            "raw": {"address": base + 16, "size": 4, "complete": True, "progress": "placeholder"},
+            "pad2": {"address": base + 20, "size": 4, "complete": True, "progress": "alignment_padding"},
+        }
+        self.assertEqual(pc.data_progress(rows), (16, 16))

@@ -37,13 +37,13 @@ void func_00118F48(u32 *src, Unp *o) {
 
 extern char D_004BCA58[], D_004BCA78[];
 extern void func_00405DC8(void *);
-extern s32 func_00406678(void *);
+extern void func_00406678(void *);
 typedef struct { char pad[0x14]; void (*fn)(s32); } Ops2;
 typedef struct { Ops2 *ops; s32 arg; } Obj2;
-s32 func_00406818(Obj2 *p) {
+void func_00406818(Obj2 *p) {
     if (p == 0) { func_00405DC8(D_004BCA58); return; }
-    if (p->ops->fn) { p->ops->fn(p->arg); return func_00406678(p); }
-    else { func_00405DC8(D_004BCA78); __asm__ volatile(""); }
+    if (p->ops->fn) { p->ops->fn(p->arg); func_00406678(p); return; }
+    do { func_00405DC8(D_004BCA78); } while (0);
 }
 
 s32 func_003F98C8(char *p, s32 n, short *out) {

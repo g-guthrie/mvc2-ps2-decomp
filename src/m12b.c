@@ -286,13 +286,12 @@ void func_0034D520(u8 *p) {
     *q = 1;
 }
 
-/* Provisional: owner lifetime and dispatch bounds remain under review. */
-void func_003C18B0(u8 *p, void *q) {
+void func_003C18B0(u8 *p, u8 *q) {
     u8 *s1 = p + 0xD0;
     func_003C1530(p);
     func_003C15F0(p, q);
     func_00175700(p);
-    if (((u8 *)q)[0x2C4] == 0) {
+    if (q[0x2C4] == 0) {
         u32 t = p[5]; p[5] = t + 1;
         p[0x13C] = 1;
         s1[4] = 0;

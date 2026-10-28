@@ -34,7 +34,7 @@ typedef struct Vec3 {
 #define I(p, o) (*(s32 *)((u8 *)(p) + (o)))
 #define S(p, o) (*(u16 *)((u8 *)(p) + (o)))
 
-void func_00156E80(f32 *src)
+void func_00156E80(f32 *src, s32 unused)
 {
     u8 *p = func_003DA750(0, 8, 1);
     if (p != 0) {

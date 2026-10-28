@@ -198,10 +198,24 @@ def data_progress(matches: dict[str, dict]) -> tuple[int, int]:
         require_span(name, match["address"], match["size"], DATA_BEGIN, DATA_END, "data")
     # Placeholder replacements still participate in all catalog validation.
     # Their byte identity alone does not establish source reconstruction.
-    matches = {
-        name: match for name, match in matches.items()
-        if match.get("progress") == "reconstructed"
-    }
+    # Unaddressed all-zero units classified as alignment padding belong to the
+    # nearest preceding non-padding unit and are credited exactly when it is.
+    owner_reconstructed = False
+    previous_end = None
+    credited = {}
+    for name, match in sorted(matches.items(), key=lambda item: item[1]["address"]):
+        progress = match.get("progress")
+        adjacent = match["address"] == previous_end
+        previous_end = match["address"] + match["size"]
+        if progress == "alignment_padding":
+            owner_reconstructed = owner_reconstructed and adjacent
+            if owner_reconstructed:
+                credited[name] = match
+            continue
+        owner_reconstructed = progress == "reconstructed"
+        if owner_reconstructed:
+            credited[name] = match
+    matches = credited
     matched = unique_covered_bytes(
         [(match["address"], match["size"]) for match in matches.values()],
         DATA_BEGIN,

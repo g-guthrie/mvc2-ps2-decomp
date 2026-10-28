@@ -91,8 +91,9 @@ void func_003C24D0(u8 *p) {
     if ((s8)func_00175700(p) < 0)
         p[4]++;
 }
-/* Provisional: callback-table ABI and state bounds remain unresolved. */
-void func_003C3430(u8 *p, void *q) {
+/* Partner-action handler, slot 1 of D_004C2120 (jtbl_004C20F8[11]); called by
+ * func_003C32F0 as handler(p, owner).  The owner is not used here. */
+void func_003C3430(u8 *p, u8 *owner_unused) {
     if ((s8)func_00175700(p) < 0)
         p[4]++;
 }

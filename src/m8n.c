@@ -7,10 +7,10 @@ typedef signed int s32;
 typedef float f32;
 
 extern void func_0018D6F0(u8 *p, u8 *other, f32 *buf);
-extern void func_00154790(f32 *buf, s32 a, s32 b, s32 c);
-/* Provisional: the second argument is unused by the known callee body. */
-extern void func_00156E80(f32 *buf, s32 a);
-extern void func_001E38B0(void *p);
+extern void func_00154790(f32 *buf, s32 a, u32 b, s32 c);
+/* Both retail callers pass 0 in $a1; the callee's definition takes an unused second parameter. */
+extern void func_00156E80(f32 *src, s32 unused);
+extern void func_001E38B0(u8 *p);
 
 void func_0018D580(u8 *p, u8 *x) {
     u8 *q = *(u8 **)(p + 0x1D0);

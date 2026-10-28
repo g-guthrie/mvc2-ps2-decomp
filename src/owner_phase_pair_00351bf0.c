@@ -1,9 +1,11 @@
-/* Provisional: callback table ABI, phase bounds and owner lifetime need proof. */
+/* Owner-paired actor: phase dispatch through jtbl_00462630 (13 void(u8*)
+ * handlers, src/data/jtbl_00462630.c) and the 2-entry state table jtbl_004C1A68
+ * (residual_00351D20, func_00351DB0, both void(u8*)). */
 typedef unsigned char u8;
 typedef void (*Phase)(u8 *);
 extern u8 *D_004C2968 __attribute__((section(".sdata")));
 extern u8 *D_004C2964 __attribute__((section(".sdata")));
-extern Phase const jtbl_00462630[];
+extern Phase const jtbl_00462630[13];
 void func_00351BF0(u8 *p) {
  u8 *owner=*(u8 **)(p+0x18);
  D_004C2968=p+0xd0; D_004C2964=owner+0x2b8;
@@ -17,7 +19,7 @@ typedef signed char s8;
 typedef signed short s16;
 typedef struct {float x,y,z;} V3;
 typedef void (*StateFn)(u8 *);
-extern StateFn const jtbl_004C1A68[] __attribute__((section(".sdata")));
+extern StateFn const jtbl_004C1A68[2] __attribute__((section(".sdata")));
 #define OWNER (*(u8 **)(p+0x18))
 void func_00351C30(u8 *p) {
  ++p[4]; *(ActorState *)(p+0xec)=*(ActorState *)(OWNER+0xec); p[0x13c]=1;

@@ -71,7 +71,7 @@ extern OwnerCallback jtbl_004C1B94[] __attribute__((section(".sdata")));
 extern OwnerCallback jtbl_004C1B98[] __attribute__((section(".sdata")));
 extern void (*const jtbl_004C1B58[7])(u8 *, u8 *) __attribute__((section(".sdata")));
 extern OwnerCallback jtbl_004C1C00[] __attribute__((section(".sdata")));
-extern OwnerCallback jtbl_004C1E38[] __attribute__((section(".sdata")));
+extern void (*const jtbl_004C1E38[6])(u8 *, u8 *) __attribute__((section(".sdata")));
 extern OwnerCallback jtbl_004C1F08[] __attribute__((section(".sdata")));
 extern OwnerCallback jtbl_004C20E8[] __attribute__((section(".sdata")));
 void func_0035D850(u8 *p, void *owner) {
@@ -94,7 +94,6 @@ void func_0035E660(u8 *p, void *owner) {
     p[0x24] = *(s8 *)(q + 0x24) + *(s8 *)(p + 0x31);
     jtbl_004C1B98[p[5]](p, owner);
 }
-/* Provisional: upstream callback table and state bounds require reconciliation. */
 void func_0035CF70(u8 *p, void *owner) {
     u8 *q = owner;
     *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
@@ -105,7 +104,6 @@ void func_003616A0(u8 *p, void *owner) {
     *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
     jtbl_004C1C00[p[5]](p, owner);
 }
-/* Provisional: callback table type and selector bounds require reconciliation. */
 void func_00396A40(u8 *p, void *owner) {
     u8 *q = owner;
     *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);

@@ -113,10 +113,13 @@ void func_0020EC90(u8 *p)
     }
 }
 
-/* Provisional: dispatcher bounds and context lifetime need proof. */
-void func_0020CB20(u8 *p, void *work)
+/* State 0 of the 7-entry jtbl_004508C0 table (dispatched by func_0020CB00 as
+ * jtbl_004508C0[p[7]](p, context)): advance p[7] to state 1, drop the
+ * context counter, start animation 20/7 and run state 1 (func_0020CB80)
+ * immediately with the same context. */
+void func_0020CB20(u8 *p, void *state)
 {
-    u8 *q = work;
+    u8 *q = state;
     p[7]++;
     q[11]--;
     func_001757E0(p, 20, 7);

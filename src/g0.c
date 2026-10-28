@@ -20,7 +20,8 @@ static void func_0019EA00(u8 *a0, u8 *owner_unused) {
     *(f32 *)(a0 + 52) = *(f32 *)(v1 + 52);
     *(f32 *)(a0 + 56) = *(f32 *)(v1 + 56);
 }
-extern void func_0019F3A0(u8 *, u8 *);
+/* func_0019F3A0 (src/grok_w5_0019.c) takes (u8 *, u8 *); its second argument is unused. */
+extern int func_0019F3A0(u8 *, u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_0034B040(u8 *);
 extern void *func_00346A60(u8 *);

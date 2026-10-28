@@ -30,7 +30,6 @@ u32 func_003FF060(HolderF *h, s32 i){ return func_00410AD0(((ObjF *)h->tbl->item
 
 extern s32 func_00404408(RuntimeDecodeDescriptor *, const void *, s32, short *);
 extern void func_00404468(RuntimeDecodeDescriptor *);
-/* Provisional: stream and buffer extents remain unproved. */
 void func_003F8448(RuntimeStreamDecoder *p, s32 x){
     RuntimeStreamChunk *q = &p->chunk;
     RuntimeDecodeDescriptor *h = p->descriptor;
@@ -40,7 +39,6 @@ void func_003F8448(RuntimeStreamDecoder *p, s32 x){
 
 
 #include "cri_sj_ring_buffer_types.h"
-/* Provisional: not all callers use the same chunk type or proved bounds. */
 void func_004104E0(SJCK *src, s32 max, SJCK *out, SJCK *res){
     *out = *src;
     res->len = out->len;

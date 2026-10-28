@@ -46,9 +46,10 @@ void func_00397030(u8 *p, u8 *q, u8 *r) {
     *(u32 *)(p + 0x50) = 0x3F866666;
 }
 
+/* Two-entry handler table at 0x004C1E40: { func_00397180, func_00397250 },
+ * both void (u8 *, u8 *, u8 *); p[5] selects the entry. */
 extern void (*D_004C1E40[2])(u8 *, u8 *, u8 *) __attribute__((section(".sdata")));
 
-/* Provisional: callback table type and selector bounds require reconciliation. */
 void func_00397140(u8 *p, u8 *q, u8 *r) {
     *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
     func_00396EC0(p, q, r);

@@ -184,7 +184,7 @@ void func_003656B0(T *p) {
     }
 }
 
-void func_003B2F10(u8 *a, s32 b, s32 c, s32 d, s32 e) {
+void func_003B2F10(u8 *a, s32 b, u8 c, s32 d, u8 e) {
     u8 *o = func_003DA750(0, 1, 1);
     if (o != 0) {
         *(void **)(o + 0x10) = (void *)func_003B2FC0;
@@ -195,7 +195,7 @@ void func_003B2F10(u8 *a, s32 b, s32 c, s32 d, s32 e) {
         o[0x20] = b;
         o[0x21] = c;
         *(f32 *)(o + 0x5C) = (f32)d;
-        *(s16 *)(o + 0x1E) = (u8)e;
+        *(s16 *)(o + 0x1E) = e;
     }
 }
 

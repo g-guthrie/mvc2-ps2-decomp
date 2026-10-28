@@ -5,11 +5,10 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
-extern void func_00175700(u8 *);
+extern int func_00175700(u8 *);
 extern int func_00174470(const void *);
 extern void func_00394760(u8 *);
 extern u8 *D_004C29D4;
-/* Provisional: surrounding callback-table types and bounds remain unresolved. */
 void func_00392F70(u8 *p) {
     func_00175700(p);
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);

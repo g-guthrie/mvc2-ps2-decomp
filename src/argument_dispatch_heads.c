@@ -191,7 +191,7 @@ extern DispatchFn2 jtbl_00475BB0[];
 extern DispatchFn1 jtbl_00475BD0[3];
 extern DispatchFn2 jtbl_00475BE0[];
 extern const DispatchFn1 jtbl_00476010[50];
-extern DispatchFn2 jtbl_004760E0[8];
+extern void (*const jtbl_004760E0[8])(u8 *, u8 *);
 extern DispatchFn2 jtbl_00475F50[4];
 extern DispatchFn2 jtbl_00475EF0[];
 extern DispatchFn2 jtbl_00476530[];
@@ -962,7 +962,7 @@ extern void (*const jtbl_00459F70[5])(u8 *, u8 *);
 extern DispatchFn2 jtbl_0045CC80[];
 extern DispatchFn2 jtbl_0045B650[];
 extern DispatchFn2 jtbl_0045CA70[];
-extern DispatchFn2 jtbl_0045D450[];
+extern void (*const jtbl_0045D450[11])(u8 *, u8 *);
 extern DispatchFn2 jtbl_00462B90[];
 extern DispatchFn2 jtbl_004BFB58[] __attribute__((section(".sdata")));
 extern DispatchFn2 jtbl_004C0F18[] __attribute__((section(".sdata")));
@@ -979,7 +979,6 @@ void func_002CA020(u8 *p) { jtbl_00459F70[p[7]](p, p + 696); }
 void func_00306B50(u8 *p) { jtbl_0045CC80[p[6]](p, p + 696); }
 void func_002ED090(u8 *p) { jtbl_0045B650[p[509]](p, p + 696); }
 void func_00304230(u8 *p) { jtbl_0045CA70[p[509]](p, p + 696); }
-/* Provisional: callback table ownership and selector bounds require proof. */
 void func_00312950(u8 *p) { jtbl_0045D450[p[509]](p, p + 696); }
 void func_00354AD0(u8 *p) { jtbl_00462B90[p[4]](p, *(void **)(p + 24)); }
 void func_001EAEB0(u8 *p) { jtbl_004BFB58[p[6]](p, p + 696); }

@@ -120,9 +120,11 @@ u8 func_00127970(u8 a0) {
 }
 
 /* ---- func_00129060 ---- */
-/* Provisional: the complete writable callback table and valid indices need proof. */
+/* Install a menu callback: D_0043CC90 is a writable 10-entry .data table of
+ * void(void) handlers (func_001294D0, func_00129620, ...), invoked by
+ * func_00129080/func_001290A0; callers pass indices 5 and 8. */
 typedef void (*MenuCallback)(void);
-extern MenuCallback D_0043CC90[];
+extern MenuCallback D_0043CC90[10];
 void func_00129060(s32 a0, MenuCallback a1) {
     D_0043CC90[a0] = a1;
 }

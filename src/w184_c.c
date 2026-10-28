@@ -24,7 +24,7 @@ f32 func_00417500(u32 a)
     return 0.0f;
 }
 
-s32 func_0035AB80(u8 *p)
+s32 func_0035AB80(u8 *p, s32 x)
 {
     extern s32 func_001E8310(void *, void *, int, int);
     u8 *s0;

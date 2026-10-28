@@ -8,10 +8,10 @@ typedef float f32;
 
 
 extern f32 D_004F1FC8, D_004F1FCC, D_004F1FD0;
-extern s32 func_00175700(void *);
-extern void func_001757E0(void *, s32, s32);
+extern s32 func_00175700(u8 *);
+extern s32 func_001757E0(u8 *, s32, s32);
 
-/* Provisional: callback-table ABI and state bounds remain unresolved. */
+/* Dispatched from jtbl_004C20F8 as (u8 *, void *); q is unused here. */
 void func_003C3690(u8 *p, void *q) {
     func_00175700(p);
     if (p[0x21] == 0) {
@@ -61,9 +61,9 @@ static void func_00396DD0(u8 *p, u8 *a) {
 }
 
 typedef void (*CB3)(u8 *, u8 *, u8 *);
-extern CB3 D_00472490[], D_004724A0[];
+/* Two 4-entry halves of jtbl_00472490, indexed by the state byte p[4]. */
+extern CB3 D_00472490[4], D_004724A0[4];
 
-/* Provisional: callback table type and selector bounds require reconciliation. */
 void func_00396E30(u8 *p) {
     u8 *a = p + 0x88;
     if (p[0x20] == 0) {
@@ -85,7 +85,7 @@ static f32 func_002ADC20(u8 *p) {
     return *(f32 *)(p + 0x5C) * a;
 }
 extern void func_00183DF0(void *, s32);
-extern void func_001757E0(void *, s32, s32);
+extern s32 func_001757E0(u8 *, s32, s32);
 
 void func_002B0B40(u8 *p) {
     p[0x40C] = 2;

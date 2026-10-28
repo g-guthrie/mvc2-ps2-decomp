@@ -6,6 +6,8 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
+/* Provisional: func_0035AE70 really takes only (u8 *); retail keeps $a1 live
+ * as if a second argument were passed. Table callees take (u8 *, u8 *). */
 extern void (*D_004C1AD0[2])(u8 *, s32);
 
 void func_00358F30(u8 *p, s32 n)
@@ -150,16 +152,16 @@ void func_0022E700(P22E7 *p)
     func_001757E0(p, 0x12, 4);
 }
 
-typedef struct { u8 pad[0x7C]; s16 f7c[2]; } G3B33;
-extern G3B33 *D_004C2794;
+/* Unsized .sdata pointer view; the halfword counters at +0x7C are indexed
+ * by the owner byte p[2] without a guessed array bound. */
+extern u8 *D_004C2794;
 
-/* Provisional: team index bounds and game-state ownership require proof. */
 void func_003B3370(u8 *p, u8 *a)
 {
     extern int func_00175700(u8 *);
     extern void func_001E7F60(u8 *);
     extern void func_003B2F10(u8 *, s32, u8, s32, u8);
-    extern void func_001757E0(u8 *, s32, s32);
+    extern int func_001757E0(u8 *, int, int);
     u8 *q = a + 0x2B8;
     func_00175700((u8 *)p);
     func_001E7F60(p);
@@ -168,7 +170,12 @@ void func_003B3370(u8 *p, u8 *a)
         p[0x1B5] = 0x34;
         p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
         *(s32 *)(p + 0x1D8) = 0;
-        D_004C2794->f7c[p[2]]++;
+        {
+            u32 off = p[2] * 2;
+            off += (u32)D_004C2794;
+            off += 0x7C;
+            ++*(s16 *)off;
+        }
     }
     {
         u32 e = p[0x1E];
@@ -386,17 +393,16 @@ typedef struct {
     u8 p4[0x1B2 - 0x70]; u8 f1b2; u8 p5[2]; u8 f1b5; u8 p6[0x1C0 - 0x1B6]; u16 f1c0; u8 p7[0x1D8 - 0x1C2]; s32 f1d8; u8 p8[0x20D - 0x1DC]; u8 f20d; u8 p9[0x213 - 0x20E]; u8 f213;
 } P2E1C;
 
-/* Provisional: team index bounds and game-state ownership require proof. */
 void func_002E1CF0(P2E1C *p)
 {
     extern void func_001861B0(u8 *);
-    extern void func_0018C4B0(P2E1C *, s32);
-    extern void func_001757E0(P2E1C *, s32, s32);
-    extern void func_001E3710(P2E1C *, s32);
-    extern void func_00183D90(P2E1C *);
-    extern void func_001863F0(P2E1C *);
+    extern void func_0018C4B0(u8 *, s32);
+    extern int func_001757E0(u8 *, int, int);
+    extern void func_001E3710(u8 *, u8);
+    extern void func_00183D90(u8 *);
+    extern void func_001863F0(u8 *);
     extern int func_00175700(u8 *);
-    extern void func_001843A0(P2E1C *);
+    extern void func_001843A0(u8 *);
     if (p->f6 == 0) {
         u32 t;
         func_001861B0((u8 *)p);
@@ -405,19 +411,24 @@ void func_002E1CF0(P2E1C *p)
         p->f1b5 = 0x41;
         p->f1b2 = p->f1c0 = 0;
         p->f1d8 = 0;
-        D_004C2794->f7c[p->f2]++;
+        {
+            u32 off = p->f2 * 2;
+            off += (u32)D_004C2794;
+            off += 0x7C;
+            ++*(s16 *)off;
+        }
         p->f20d = 0;
-        func_0018C4B0(p, 5);
-        func_001757E0(p, 0x14, 7);
-        func_001E3710(p, 0x16);
+        func_0018C4B0((u8 *)p, 5);
+        func_001757E0((u8 *)p, 0x14, 7);
+        func_001E3710((u8 *)p, 0x16);
     }
-    if (p->f213 == 3) func_00183D90(p);
+    if (p->f213 == 3) func_00183D90((u8 *)p);
     p->f34 += p->f5c;
     p->f5c += p->f68;
     p->f38 += p->f60;
     p->f60 += p->f6c;
-    func_001863F0(p);
-    if ((s8)func_00175700((u8 *)p) < 0) func_001843A0(p);
+    func_001863F0((u8 *)p);
+    if ((s8)func_00175700((u8 *)p) < 0) func_001843A0((u8 *)p);
 }
 
 

@@ -137,7 +137,7 @@ def load_data_matches(units_path: Path, matches_path: Path) -> dict[str, dict]:
                 continue
             if row["name"] in result:
                 raise SystemExit(f"duplicate data match: {row['name']}")
-            if row.get("progress") not in {"reconstructed", "placeholder"}:
+            if row.get("progress") not in {"reconstructed", "placeholder", "alignment_padding"}:
                 raise SystemExit(f"data progress classification missing or invalid: {row['name']}")
             expected = units.get(row["name"])
             found = (int(row["address"], 0), int(row["size"], 0))

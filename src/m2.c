@@ -35,11 +35,11 @@ extern int func_00415320(void *a, u32 *b, s32 c);
 extern void func_00415590(void *a, u32 *b, s32 c, s32 d);
 
 
-/* Provisional: parent callback table and actor context bounds remain unresolved. */
-void func_0036EA50(u8 *actor, u8 *owner, u8 *work) {
+/* Called directly by func_0036E750 as (actor, owner, state), state an s32 array. */
+void func_0036EA50(u8 *actor, u8 *owner, s32 *state) {
     if (func_00185980(actor)) {
         func_001E3210(actor, 0x24);
-        *(s32 *)(work + 4) = 1;
+        state[1] = 1;
         return;
     }
 }

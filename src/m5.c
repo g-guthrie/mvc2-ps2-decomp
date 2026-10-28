@@ -108,9 +108,9 @@ void func_003C1930(u8 *p, void *x) {
     }
 }
 
-extern s32 func_0035AB80(void *p, s32 x);
-extern void func_0035AE70(void *p, s32 x);
-extern void func_001E3210(void *p, s32 a);
+extern s32 func_0035AB80(u8 *p, s32 x);
+extern void func_0035AE70(u8 *p, s32 x);
+extern void func_001E3210(u8 *p, s32 a);
 void func_0035ACA0(u8 *p, s32 x) {
     if (func_0035AB80(p, x) != 0) {
         if (func_0035AB80(p, x) < 0) {

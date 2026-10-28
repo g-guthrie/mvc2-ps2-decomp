@@ -148,7 +148,7 @@ void func_0019C420(u8 *p)
     }
 }
 
-int func_0019F3A0(u8 *p)
+int func_0019F3A0(u8 *p, u8 *unused)
 {
     if (F(p, 0x34) < D_004F1FC8)
         p[0x13c] = 0;

@@ -12,7 +12,7 @@ extern void *func_0011D8F8(void *, int, unsigned int);
 extern s32 func_00175700(u8 *);
 extern int func_001757E0(u8 *, int, int);
 extern void func_00175C00();
-extern void func_00184540(u8 *);
+extern void func_00184540(void *);
 extern void func_00176160(u8 *, s32, s32, s32);
 extern s32 func_002803A0();
 extern void func_00299010();
@@ -247,7 +247,6 @@ void func_00293630(u8 *p) {
     }
 }
 
-/* Provisional: linked-actor lifetime and dispatch bounds remain under review. */
 void func_00294890(u8 *p)
 {
     u8 *q;

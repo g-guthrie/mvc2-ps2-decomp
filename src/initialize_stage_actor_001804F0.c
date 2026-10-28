@@ -8,12 +8,11 @@ typedef float f32;
 
 typedef struct { u8 pad[0x7C]; s16 slot7c[2]; s16 slot80[2]; } G2794;
 extern G2794 *D_004C2794;
-extern s8 data_s8_004ACD08[6] __attribute__((section(".data")));
-extern const s8 D_004ACD90[]; /* byte table interior at 0x004ACD90 */
-extern const f32 data_f32_004ACD30[6];
+extern s8 data_s8_004ACD08[]; /* entries 0..5 here, 6..7 in data_raw_004ACD0E */
+extern s8 D_004ACD90[]; /* s8 table continued by data_u32_004ACDA4 and data_raw_004ACDBC */
+extern f32 data_f32_004ACD30[6];
 extern u8 D_004D18E5[];
 
-/* Provisional: palette and character selector bounds and table ownership require proof. */
 void func_001804F0(u8 *p)
 {
     *(s8 *)(p + 0x13D) = -1;

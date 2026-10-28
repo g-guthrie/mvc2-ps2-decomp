@@ -107,22 +107,6 @@ void func_003B6380(u8 *p) {
     }
 }
 
-extern void func_00299010(void *);
-extern void func_00186A20();
-/* Provisional: func_00186A20 still lacks its actor argument. */
-void func_00299400(u8 *p) {
-    p[0x40C] = 2;
-    p[0x33C] = 5;
-    *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
-    *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);
-    func_00175700(p);
-    func_00299010(p);
-    if (*(s8 *)(p + 0x151) == 0) {
-        { u32 t = p[6]; p[6] = t + 1; }
-        func_00186A20();
-    }
-}
-
 extern u8 D_0045A690[];
 extern s32 func_00189310(void *, void *, void *);
 extern void func_0018A990(void *, void *);
