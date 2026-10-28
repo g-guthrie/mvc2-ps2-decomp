@@ -1,4 +1,4 @@
-/* Provisional: selector bounds, shared data views and resource lifetime need proof. */
+/* Provisional: selector bounds, vector aliasing and resource lifetime need proof. */
 typedef unsigned char u8;typedef signed char s8;typedef short s16;typedef unsigned short u16;typedef unsigned int u32;typedef int s32;typedef float f32;
 #include "model_callback_api.h"
 typedef struct { f32 x,y,z; } V3;
@@ -7,7 +7,7 @@ extern void func_00132BD0(u8 *);
 extern void func_00131E20(u8 *,u8 *,s32);
 typedef struct { u8 map[2][3]; u8 unread_tail[26]; } PlayerSlotMap;
 extern PlayerSlotMap data_u8_004BF328 __attribute__((section(".sdata")));
-extern V3 D_0043DF58;
+extern f32 data_f32_one_0043DF58[3];
 extern u8 D_004F20B0[], D_004F24D5[], D_004F24E4[];
 extern u8 *D_004C2834 __attribute__((section(".sdata")));
 void func_00131CE0(u8 *parent,s32 n) {
@@ -17,7 +17,7 @@ void func_00131CE0(u8 *parent,s32 n) {
   o[0x13c]=1;*(void (**)(u8 *))(o+0x10)=func_00132BD0;
   *(u16 *)(o+0xcc)=data_u8_004BF328.unread_tail[n+2];
   *(u8 **)(o+0x84)=D_004C2834;
-  *(V3 *)(o+0x50)=D_0043DF58;
+  *(V3 *)(o + 0x50) = *(const V3 *)(const void *)data_f32_one_0043DF58;
   *(u32 *)(o+0xd0)=0x10c10;
   *(u8 **)(o+0xc8)=parent+0x88;
   o[2]=parent[2];o[0x20]=(u8)n;
