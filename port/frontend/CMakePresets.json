@@ -1,0 +1,23 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": { "major": 3, "minor": 21, "patch": 0 },
+  "configurePresets": [
+    {
+      "name": "native",
+      "displayName": "Native debug (SDL2 + GL ES 3 / GL 3.3 core)",
+      "binaryDir": "${sourceDir}/../../build/port-native",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "RelWithDebInfo" }
+    },
+    {
+      "name": "web",
+      "displayName": "Web / PWA (Emscripten, WebGL2) - emcmake equivalent",
+      "binaryDir": "${sourceDir}/../../build/port-web",
+      "toolchainFile": "$env{EMSDK}/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
+      "cacheVariables": { "CMAKE_BUILD_TYPE": "Release" }
+    }
+  ],
+  "buildPresets": [
+    { "name": "native", "configurePreset": "native" },
+    { "name": "web", "configurePreset": "web" }
+  ]
+}

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="theme-color" content="#000000">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>MvC2 port viewer</title>
+<style>
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden;
+               overscroll-behavior: none; touch-action: none; -webkit-user-select: none; user-select: none; }
+  canvas { display: block; width: 100vw; height: 100vh; touch-action: none; outline: none; }
+  #ui { position: fixed; left: 50%; top: 40%; transform: translate(-50%, -50%); max-width: 90vw;
+        font: 15px/1.4 system-ui, sans-serif; color: #eee; text-align: center;
+        background: rgba(20, 20, 28, .92); padding: 18px 22px; border-radius: 12px; }
+  #ui.hidden, [hidden] { display: none !important; }
+  #ui button, #pick { display: inline-block; margin: 10px 6px 0; padding: 10px 16px; border-radius: 8px;
+        border: 0; background: #3a6df0; color: #fff; font: inherit; cursor: pointer; }
+  #forget { background: #555; }
+  #status { white-space: pre-line; }
+  #menu { position: fixed; right: 8px; top: 8px; padding: 6px 10px; font: 13px system-ui, sans-serif;
+          background: rgba(40,40,50,.6); color: #ddd; border: 0; border-radius: 6px; }
+</style>
+</head>
+<body>
+<canvas id="canvas" oncontextmenu="event.preventDefault()" tabindex="-1"></canvas>
+<div id="ui">
+  <div id="status">Loading...</div>
+  <label id="pick" hidden>Choose disc image (.iso)
+    <input type="file" id="file" accept=".iso,.bin,application/octet-stream,application/x-iso9660-image" hidden>
+  </label>
+  <button id="forget" hidden>Forget cached disc</button>
+  <div style="font-size:12px;opacity:.7;margin-top:10px">The image stays on this device (IndexedDB); nothing is uploaded.</div>
+</div>
+<button id="menu" hidden>Disc</button>
+<script>
+'use strict';
+const ui = document.getElementById('ui'), statusEl = document.getElementById('status');
+const pick = document.getElementById('pick'), fileEl = document.getElementById('file');
+const forget = document.getElementById('forget'), menu = document.getElementById('menu');
+function status(t) { statusEl.textContent = t; }
+function showUi(on) { ui.classList.toggle('hidden', !on); menu.hidden = on; }
+
+/* IndexedDB cache of the user's disc image: picked once, reused on later visits. */
+const DB = 'mvc2-port', STORE = 'disc', KEY = 'iso';
+function idb() {
+  return new Promise((res, rej) => {
+    const r = indexedDB.open(DB, 1);
+    r.onupgradeneeded = () => r.result.createObjectStore(STORE);
+    r.onsuccess = () => res(r.result);
+    r.onerror = () => rej(r.error);
+  });
+}
+async function idbOp(mode, fn) {
+  const db = await idb();
+  return new Promise((res, rej) => {
+    const tx = db.transaction(STORE, mode), req = fn(tx.objectStore(STORE));
+    tx.oncomplete = () => res(req.result);
+    tx.onerror = tx.onabort = () => rej(tx.error);
+  });
+}
+const idbGet = () => idbOp('readonly', s => s.get(KEY));
+const idbPut = v => idbOp('readwrite', s => s.put(v, KEY));
+const idbDel = () => idbOp('readwrite', s => s.delete(KEY));
+
+async function openDisc(blob, label) {
+  status('Reading ' + label + ' (' + (blob.size / 1048576).toFixed(0) + ' MB)...');
+  const buf = new Uint8Array(await blob.arrayBuffer());
+  try { Module.FS.unlink('/disc.iso'); } catch (e) {}
+  Module.FS.writeFile('/disc.iso', buf, { canOwn: true });   /* MEMFS keeps the JS buffer */
+  const r = Module.ccall('viewer_open_js', 'number', ['string'], ['/disc.iso']);
+  if (r === 0) { showUi(false); document.getElementById('canvas').focus(); return true; }
+  status('That file is not a usable MvC2 disc image.');
+  return false;
+}
+
+async function startDisc() {
+  try {
+    if (Module.FS.analyzePath('/disc.iso').exists) {        /* --preload-file (local testing) */
+      Module.ccall('viewer_open_js', 'number', ['string'], ['/disc.iso']);
+      showUi(false);
+      return;
+    }
+  } catch (e) {}
+  let cached = null;
+  try { cached = await idbGet(); } catch (e) { console.warn('IndexedDB unavailable', e); }
+  if (cached && await openDisc(cached, 'cached disc image')) return;
+  status('Choose your Marvel vs. Capcom 2 (PS2) disc image.');
+  pick.hidden = false;
+  forget.hidden = !cached;
+}
+
+fileEl.addEventListener('change', async () => {
+  const f = fileEl.files[0];
+  if (!f) return;
+  pick.hidden = true;
+  try { status('Caching disc image on this device...'); await idbPut(f); forget.hidden = false; }
+  catch (e) { console.warn('could not cache disc image', e); }
+  if (!await openDisc(f, f.name)) pick.hidden = false;
+});
+forget.addEventListener('click', async () => { await idbDel(); forget.hidden = true; status('Cached image removed.'); });
+menu.addEventListener('click', () => { pick.hidden = false; status('Choose a different disc image.'); showUi(true); });
+
+var Module = {
+  canvas: document.getElementById('canvas'),
+  print: t => console.log(t),
+  printErr: t => console.log(t),
+  setStatus: t => { if (t) status(t); },
+  postRun: [startDisc],   /* after main(): the GL context and renderer exist */
+};
+if ('serviceWorker' in navigator && location.protocol !== 'file:')
+  navigator.serviceWorker.register('sw.js').catch(e => console.warn('sw', e));
+</script>
+{{{ SCRIPT }}}
+</body>
+</html>
