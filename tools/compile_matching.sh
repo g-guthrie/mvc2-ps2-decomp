@@ -21957,4 +21957,34 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/nh7_b.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/nh7_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/nh7_b.o" private/SLUS_204.86.rom --source src/nh7_b.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nh12_b.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/nh12_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nh12_b.o" private/SLUS_204.86.rom --source src/nh12_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nh9_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/nh9_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nh9_a.o" private/SLUS_204.86.rom --source src/nh9_a.c
+"$WIBO" "$SNCPP" -P src/nh8_a.c "$BUILD/nh8_a.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 --extra-flags="" "$BUILD/nh8_a.i" "$BUILD/nh8_a.s"
+"$WIBO" "$SNAS" -G8 -o "$BUILD/nh8_a.o" "$BUILD/nh8_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/nh8_a.o" private/SLUS_204.86.rom --source src/nh8_a.c
+"$WIBO" "$SNCPP" -P src/nh8_b.c "$BUILD/nh8_b.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/nh8_b.i" "$BUILD/nh8_b.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/nh8_b.o" "$BUILD/nh8_b.s"
+"$PYTHON" tools/verify_object.py "$BUILD/nh8_b.o" private/SLUS_204.86.rom --source src/nh8_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nh13_b.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/nh13_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nh13_b.o" private/SLUS_204.86.rom --source src/nh13_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nh11_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nh11_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nh11_b.o" private/SLUS_204.86.rom --source src/nh11_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nh11_c.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/nh11_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nh11_c.o" private/SLUS_204.86.rom --source src/nh11_c.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nf6_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nf6_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nf6_a.o" private/SLUS_204.86.rom --source src/nf6_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

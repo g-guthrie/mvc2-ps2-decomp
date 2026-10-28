@@ -19412,3 +19412,12 @@ func_00183050,0x00183050,0x78,src/nh5_a.c,complete
 func_0041ABF0,0x0041ABF0,0x78,src/nh6_a.c,complete
 func_0041C180,0x0041C180,0x78,src/nh6_c.c,complete
 func_001C1630,0x001C1630,0x7C,src/nh7_b.c,complete
+func_00185F90,0x00185F90,0xA0,src/nh12_b.c,complete
+func_004238A0,0x004238A0,0x88,src/nh9_a.c,complete
+func_003FE3E0,0x003FE3E0,0x88,src/nh8_a.c,complete
+func_003FE468,0x003FE468,0x88,src/nh8_a.c,complete
+func_00407BF8,0x00407BF8,0x84,src/nh8_b.c,complete
+func_001EC5B0,0x001EC5B0,0xA8,src/nh13_b.c,complete
+func_00146AE0,0x00146AE0,0x9C,src/nh11_b.c,complete
+func_002301C0,0x002301C0,0x9C,src/nh11_c.c,complete
+residual_0019E000,0x0019E000,0xA8,src/nf6_a.c,complete

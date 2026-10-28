@@ -241,3 +241,23 @@ class ProgressCatalogTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class AlignmentPaddingCreditTest(unittest.TestCase):
+    def test_padding_follows_its_owner(self):
+        import tempfile
+        from tools import progress_catalog as pc
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "config").mkdir()
+            (root / "config/functions.csv").write_text(
+                "name,address,size,end,classification,confidence\n"
+                "func_a,0x00100000,0x8,0x00100008,code,x\n"
+                "pad_a,0x00100008,0x8,0x00100010,alignment_padding,x\n"
+                "func_b,0x00100010,0x10,0x00100020,code,x\n"
+            )
+            (root / "config/gaps.csv").write_text("start,end,size\n0x00100020,0x00100024,0x4\n")
+            only_a = {"func_a": {"address": 0x00100000, "size": 8, "complete": True}}
+            self.assertEqual(pc.code_progress(only_a, root), (16, 16))
+            only_b = {"func_b": {"address": 0x00100010, "size": 16, "complete": False}}
+            self.assertEqual(pc.code_progress(only_b, root), (20, 0))

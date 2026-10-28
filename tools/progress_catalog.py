@@ -127,11 +127,52 @@ def validate_data_catalog(
         raise SystemExit(f"linked data {covered} exceeds span {DATA_SIZE}")
 
 
-def code_progress(matches: dict[str, dict]) -> tuple[int, int]:
+PADDING_CLASSES = {"padding", "alignment_padding"}
+
+
+def alignment_padding(root: Path = Path(".")) -> list[tuple[int, int, int]]:
+    """Zero alignment padding as (address, size, owner_address).
+
+    The owner is the nearest preceding non-padding function. The padding is the
+    alignment tail emitted after that function, so it is credited exactly when
+    its owner is. Sources: config/gaps.csv (bytes in no inventory row) and
+    inventory rows classified as padding."""
+    functions_path = root / "config/functions.csv"
+    if not functions_path.is_file():
+        return []
+    spans = {}
+    for row in load_csv_rows(functions_path):
+        spans[int(row["address"], 0)] = (
+            int(row["size"], 0), row.get("classification") in PADDING_CLASSES
+        )
+    gaps_path = root / "config/gaps.csv"
+    if gaps_path.is_file():
+        for row in load_csv_rows(gaps_path):
+            spans.setdefault(int(row["start"], 0), (int(row["size"], 0), True))
+    by_end = {start + size: start for start, (size, _) in spans.items()}
+    result = []
+    for start, (size, is_padding) in spans.items():
+        if not is_padding:
+            continue
+        owner = by_end.get(start)
+        while owner is not None and spans[owner][1]:
+            owner = by_end.get(owner)
+        if owner is not None:
+            result.append((start, size, owner))
+    return result
+
+
+def code_progress(matches: dict[str, dict], root: Path = Path(".")) -> tuple[int, int]:
     for name, match in matches.items():
         require_span(name, match["address"], match["size"], BASE_ADDRESS, TEXT_END, "function")
+    padding = alignment_padding(root)
+    matched_owners = {match["address"] for match in matches.values()}
+    complete_owners = {
+        match["address"] for match in matches.values() if match.get("complete")
+    }
     matched = unique_covered_bytes(
-        [(match["address"], match["size"]) for match in matches.values()],
+        [(match["address"], match["size"]) for match in matches.values()]
+        + [(start, size) for start, size, owner in padding if owner in matched_owners],
         BASE_ADDRESS,
         TEXT_END,
     )
@@ -140,7 +181,8 @@ def code_progress(matches: dict[str, dict]) -> tuple[int, int]:
             (match["address"], match["size"])
             for match in matches.values()
             if match.get("complete")
-        ],
+        ]
+        + [(start, size) for start, size, owner in padding if owner in complete_owners],
         BASE_ADDRESS,
         TEXT_END,
     )
