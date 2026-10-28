@@ -580,3 +580,4 @@ nq-wave14,27,opus,low,code-hard,42,25,11128,,,"nq134-147; parent-copy residuals 
 rem-static-00338670,28,opus,low,remediation,40,22,-10048,,,"unrelated static func_00338670 copies removed; 22 re-matched with honest predecessor/callee statics, 15 credits dropped"
 rem-static-general,29,opus,low,remediation,12,10,-768,,,"other unrelated statics (func_003395E0 etc.) removed; 10 re-matched honestly, 2 credits dropped; validator now rejects such statics"
 nq-wave15-16,30,opus,low,code-hard,60,32,14904,,,"nq148-167; honesty rule in brief; parent-copy residuals dominate; remaining misses: soft-float file position, slot fill, reg naming"
+nq-wave17,31,opus,low,code-hard,30,19,11008,,,"nq166-177 + sfc chain (func_00340310 via honest soft-float predecessor run); MW2.4 dead end for non-leaves"
