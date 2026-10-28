@@ -20051,3 +20051,5 @@ func_002E6670,0x002E6670,0x110,src/s8h_a.c,complete
 func_001260E0,0x001260E0,0xCC,src/s8e_a.c,complete
 func_001261B0,0x001261B0,0xCC,src/s8e_a.c,complete
 func_00136A10,0x00136A10,0x148,src/s8e_b.c,complete
+func_003FD748,0x003FD748,0x194,src/s8i_a.c,complete
+func_003F84E8,0x003F84E8,0xE8,src/s8i_a.c,complete
