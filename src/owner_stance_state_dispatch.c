@@ -10,11 +10,12 @@ void func_003A5A80(u8 *p) {
  else D_004C1EC4[p[0x20]](p,owner);
 }
 extern void func_003B1EE0(u8 *,u8 *);
-extern OwnerState D_004C1FB4[2];
+extern OwnerState const jtbl_004C1FB4[2] __attribute__((section(".sdata")));
+/* Provisional: selector bounds and owner lifetime need proof. */
 void func_003B1BF0(u8 *p) {
  u8 *owner=*(u8 **)(p+0x18);
  if (owner[0x169]!=21) func_003B1EE0(p,owner);
- else D_004C1FB4[p[0x20]](p,owner);
+ else jtbl_004C1FB4[p[0x20]](p,owner);
 }
 extern void func_003C11C0(u8 *,u8 *);
 extern OwnerState D_004C20E0[2];
