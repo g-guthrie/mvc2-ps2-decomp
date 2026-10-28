@@ -19889,3 +19889,7 @@ func_00414AA0,0x00414AA0,0x190,src/gr27_g.c,complete
 func_003A7280,0x003A7280,0xDC,src/gr22_a.c,complete
 func_003DC3C0,0x003DC3C0,0x358,src/gr22_d.c,complete
 func_003A01C0,0x003A01C0,0x264,src/gr19_e.c,complete
+func_0040EAD0,0x0040EAD0,0x1BC,src/gr23_f.c,complete
+func_0032D970,0x0032D970,0x140,src/gr29_c.c,complete
+func_003BC0C0,0x003BC0C0,0x1D4,src/gr29_d.c,complete
+func_0037D420,0x0037D420,0x268,src/gr29_e.c,complete

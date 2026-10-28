@@ -23524,4 +23524,19 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/gr19_e.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/gr19_e.o"
 "$PYTHON" tools/verify_object.py "$BUILD/gr19_e.o" private/SLUS_204.86.rom --source src/gr19_e.c
 
+"$WIBO" "$SNCPP" -P src/gr23_f.c "$BUILD/gr23_f.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/gr23_f.i" "$BUILD/gr23_f.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/gr23_f.o" "$BUILD/gr23_f.s"
+"$PYTHON" tools/verify_object.py "$BUILD/gr23_f.o" private/SLUS_204.86.rom --source src/gr23_f.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/gr29_c.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/gr29_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/gr29_c.o" private/SLUS_204.86.rom --source src/gr29_c.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/gr29_d.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/gr29_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/gr29_d.o" private/SLUS_204.86.rom --source src/gr29_d.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/gr29_e.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/gr29_e.o"
+"$PYTHON" tools/verify_object.py "$BUILD/gr29_e.o" private/SLUS_204.86.rom --source src/gr29_e.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
