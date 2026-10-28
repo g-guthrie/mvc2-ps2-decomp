@@ -17067,7 +17067,7 @@ func_0019A560,0x0019A560,0xE4,src/owner_state_copy_setup_0019a560.c,complete
 func_001684B0,0x001684B0,0xEC,src/team_health_script_test_001684b0.c,complete
 func_001685A0,0x001685A0,0xF0,src/team_health_script_test_001684b0.c,complete
 func_001487D0,0x001487D0,0xE0,src/object_phase_setup_001487d0.c,complete
-func_0013DB00,0x0013DB00,0xDC,src/interpolate_pose_0013db00.c,complete
+func_0013DB00,0x0013DB00,0xDC,src/interpolate_pose_0013db00.c,placeholder
 func_002BF040,0x002BF040,0xC4,src/t1_b.c,complete
 func_00235C40,0x00235C40,0xBC,src/motion_profile_00235c40.c,complete
 func_00368060,0x00368060,0xDC,src/grok_368060.c,complete
@@ -19305,7 +19305,7 @@ func_0041A0B0,0x0041A0B0,0xB4,src/owner_effect_init_0041a0b0.c,complete
 func_0041ACE0,0x0041ACE0,0x180,src/owner_dual_effect_init_0041ace0.c,complete
 func_003537B0,0x003537B0,0x1E8,src/owner_linked_effect_init_003537b0.c,complete
 func_003D9000,0x003D9000,0x80,src/actor_active_check_003d9000.c,complete
-func_0013DDC0,0x0013DDC0,0xFC,src/owner_pose_phase_0013ddc0.c,complete
+func_0013DDC0,0x0013DDC0,0xFC,src/owner_pose_phase_0013ddc0.c,placeholder
 func_00210170,0x00210170,0x34,src/linked_actor_active_00210170.c,complete
 func_00166FC0,0x00166FC0,0x98,src/script_threshold_select_00166fc0.c,placeholder
 func_00166EC0,0x00166EC0,0x78,src/script_random_select_00166ec0.c,placeholder

@@ -2,6 +2,7 @@ typedef unsigned char u8;typedef short s16;typedef float f32;typedef struct {f32
 typedef struct {u8 pad0[5];u8 phase;u8 pad6[0x1c-6];s16 timer;u8 pad1e[2];u8 selector,alt,pad22,group;u8 pad24[0x10];V3 pos;u8 pad40[0x10];V3 scale;} Object;
 extern Row data_f32v3x3_004B1730[];extern f32 data_f32_one_004B18E0[3];
 extern void func_0013DFB0(int,V3 *),func_001E3CE0(int);
+/* Provisional: this independently matched local copy duplicates the global helper. */
 static void func_0013DB00(u8 *owner, int duration, int segment)
 {
     V3 *start, *end;
