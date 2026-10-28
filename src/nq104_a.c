@@ -1,0 +1,62 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
+typedef unsigned int u32;
+typedef signed int s32;
+typedef float f32;
+typedef struct { f32 x, y, z; } V3;
+
+typedef struct { s16 pad[0x3E]; s16 cnt[1]; } G1;
+extern G1 *D_004C2794;
+extern f32 D_00476540[];
+
+void func_003C9FE0(u8 *a, u8 *b) {
+    extern void func_001757E0(u8 *, s32, s32);
+    extern void func_003CA150(u8 *, u8 *);
+    s32 i;
+    u32 *d, *s;
+    u32 t;
+    f32 f;
+    s32 v;
+    u8 *q;
+    t = a[4];
+    a[4] = t + 1;
+    i = 0x31;
+    s = (u32 *)(b + 0xEC);
+    d = (u32 *)(a + 0xEC);
+    do {
+        *d = *s;
+        i--;
+        s++;
+        d++;
+    } while (i > 0);
+    a[0x13C] = 1;
+    a[2] = b[2];
+    a[1] = b[1];
+    *(f32 *)(a + 0x50) = *(f32 *)(b + 0x50);
+    *(f32 *)(a + 0x54) = *(f32 *)(b + 0x54);
+    a[0x1B7] = b[0x1B7];
+    a[0x1B8] = b[0x1B8];
+    ((s8 *)a)[0x30] = ((s8 *)b)[0x30];
+    *(V3 *)(a + 0x50) = *(V3 *)(b + 0x50);
+    ((s8 *)a)[0x24] = ((s8 *)b)[0x24];
+    a[0] = 1;
+    *(s8 *)(a + 0x31) = -1;
+    f = D_00476540[*(s16 *)(a + 0x1C)];
+    *(f32 *)(a + 0x54) = f;
+    *(f32 *)(a + 0x50) = f;
+    q = a + 2;
+    v = *(s16 *)(a + 0x1C);
+    if (v == 0) v = 1;
+    *(s16 *)(a + 0x1E) = v;
+    a[0x22] = 0;
+    a[0x1B0] = 0x42;
+    a[0x1B1] = 0x42;
+    a[0x1B5] = ((s8 *)a)[0x20] + 0x7E;
+    a[0x1B2] = *(u16 *)(a + 0x1C0) = 0;
+    *(s32 *)(a + 0x1D8) = 0;
+    D_004C2794->cnt[*q] += 1;
+    func_001757E0(a, 0x17, a[0x20]);
+    func_003CA150(a, b);
+}
