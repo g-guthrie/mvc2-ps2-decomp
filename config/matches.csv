@@ -20027,3 +20027,9 @@ func_0024A3A0,0x0024A3A0,0x100,src/s7h_a.c,complete
 func_002BCA80,0x002BCA80,0x154,src/s7h_b.c,complete
 func_002AD820,0x002AD820,0x3D8,src/s7h_c.c,complete
 func_001C5200,0x001C5200,0x190,src/s7h_d.c,complete
+func_00108298,0x00108298,0x238,src/s7g_a.c,complete
+func_0010A430,0x0010A430,0x238,src/s7g_a.c,complete
+func_001084D0,0x001084D0,0x260,src/s7g_a.c,complete
+func_00108730,0x00108730,0x2C0,src/s7g_a.c,complete
+func_00105F58,0x00105F58,0x280,src/s7g_a.c,complete
+func_0010F6A8,0x0010F6A8,0x1F8,src/s7g_a.c,complete

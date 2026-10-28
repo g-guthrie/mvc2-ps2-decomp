@@ -23897,4 +23897,9 @@ mkdir -p "build/warm/s7h_d" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCP
     mv "build/warm/s7h_d/s7h_d.o" "$BUILD/s7h_d.o"
 "$PYTHON" tools/verify_object.py "$BUILD/s7h_d.o" private/SLUS_204.86.rom --source src/s7h_d.c
 
+"$WIBO" "$SNCPP" -P src/s7g_a.c "$BUILD/s7g_a.i"
+"$WIBO" "$EE29CC1" "$BUILD/s7g_a.i" -O2 -G0 -ffunction-sections  -quiet -o "$BUILD/s7g_a.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/s7g_a.o" "$BUILD/s7g_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/s7g_a.o" private/SLUS_204.86.rom --source src/s7g_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
