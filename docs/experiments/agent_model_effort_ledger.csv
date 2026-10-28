@@ -574,3 +574,4 @@ nq-wave7,22,opus,low,code-hard,18,10,,,,"nq28-33; bnel wall and MW register nami
 nq-wave8,23,opus,low,code-hard,60,22,4800,,,"nq33-52"
 nq-wave9,23,opus,low,code-hard,57,30,7100,,,"nq53-71; control-flow shape and try30 fixes; register naming dominates misses"
 nq-wave10-11,24,opus,low,code-hard,,,12080,,,"nq72-106; break-not-return, variable-role reuse, decl-order sweeps; MW register naming still dominates misses"
+nq-wave12,25,opus,low,code-hard,36,18,7008,,,"nq107-119 minus nq115; sibling templates + try30 dominate; residual case-0 bodies of dispatch heads landed well"
