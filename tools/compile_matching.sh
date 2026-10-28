@@ -21874,4 +21874,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" src/menu_model_initializer_
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 "$BUILD/stream_decode_003ff688.i" "$BUILD/stream_decode_003ff688.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/stream_decode_003ff688.o" "$BUILD/stream_decode_003ff688.s"
 "$PYTHON" tools/verify_object.py "$BUILD/stream_decode_003ff688.o" private/SLUS_204.86.rom --source src/stream_decode_003ff688.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" src/owner_phase_initialize_00358e30.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/owner_phase_initialize_00358e30.o"
+"$PYTHON" tools/verify_object.py "$BUILD/owner_phase_initialize_00358e30.o" private/SLUS_204.86.rom --source src/owner_phase_initialize_00358e30.c
 PYTHON="$PYTHON" tools/compile_matching_data.sh
