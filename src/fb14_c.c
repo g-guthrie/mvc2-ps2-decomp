@@ -13,8 +13,8 @@ extern f32 data_f32_004B1940[8][2][3];
 /* Provisional: independently matched local helper duplicates the global body. */
 static void func_0013E760(u8 *p)
 {
-    F32Vec *a = (F32Vec *)(void *)data_f32_004B1940 + p[0x20] * 2;
-    F32Vec *b = (F32Vec *)(void *)data_f32_004B1940 + (p[0x20] * 2 + 1);
+    F32Vec *a = (F32Vec *)((u8 *)&data_f32_004B1940 + (p[0x20]*sizeof(data_f32_004B1940[0])));
+    F32Vec *b = (F32Vec *)((u8 *)&data_f32_004B1940 + ((p[0x20]*2+1)*sizeof(F32Vec)));
     f32 d, e;
     e = (*a)[0];
     d = ((*b)[0] - e) / 30.0f;
