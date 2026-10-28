@@ -1,11 +1,10 @@
+/* Provisional: node span storage and SJCK require a shared representation. */
 #include "runtime_span_types.h"
 #include "cri_sj_ring_buffer_types.h"
 
 extern void func_0040EFE0(void);
 extern void func_0040EFF8(void);
-extern void func_004104E0(const struct RuntimeSpan *source, s32 maximum,
-                          struct RuntimeSpan *span,
-                          struct RuntimeSpan *remainder);
+extern void func_004104E0(SJCK *source, s32 maximum, SJCK *span, SJCK *remainder);
 
 void func_00410000(SJ_OBJ *object, s32 index,
                    s32 length, SJCK *chunk)
@@ -44,7 +43,7 @@ void func_00410000(SJ_OBJ *object, s32 index,
         }
         else if (context->mode == 1)
         {
-            func_004104E0(&range, length, &range, &remainder);
+            func_004104E0((SJCK *)&range, length, (SJCK *)&range, (SJCK *)&remainder);
             *result = range;
             node->span = remainder;
         }
