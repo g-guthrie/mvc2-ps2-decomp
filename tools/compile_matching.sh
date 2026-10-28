@@ -23806,4 +23806,40 @@ mkdir -p "build/warm/s5d_j" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCP
     mv "build/warm/s5d_j/s5d_j.o" "$BUILD/s5d_j.o"
 "$PYTHON" tools/verify_object.py "$BUILD/s5d_j.o" private/SLUS_204.86.rom --source src/s5d_j.c
 
+"$WIBO" "$SNCPP" -P src/s6a_h.c "$BUILD/s6a_h.i"
+"$WIBO" "$EE29CC1" "$BUILD/s6a_h.i" -O2 -G0 -ffunction-sections  -quiet -o "$BUILD/s6a_h.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/s6a_h.o" "$BUILD/s6a_h.s"
+"$PYTHON" tools/verify_object.py "$BUILD/s6a_h.o" private/SLUS_204.86.rom --source src/s6a_h.c
+"$WIBO" "$SNCPP" -P src/s6a_j.c "$BUILD/s6a_j.i"
+"$WIBO" "$EE29CC1" "$BUILD/s6a_j.i" -O2 -G0 -ffunction-sections  -quiet -o "$BUILD/s6a_j.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/s6a_j.o" "$BUILD/s6a_j.s"
+"$PYTHON" tools/verify_object.py "$BUILD/s6a_j.o" private/SLUS_204.86.rom --source src/s6a_j.c
+"$WIBO" "$SNCPP" -P src/s6a_k.c "$BUILD/s6a_k.i"
+"$WIBO" "$EE29CC1" "$BUILD/s6a_k.i" -O2 -G0 -ffunction-sections  -quiet -o "$BUILD/s6a_k.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/s6a_k.o" "$BUILD/s6a_k.s"
+"$PYTHON" tools/verify_object.py "$BUILD/s6a_k.o" private/SLUS_204.86.rom --source src/s6a_k.c
+"$WIBO" "$SNCPP" -P src/s6a_c.c "$BUILD/s6a_c.i"
+"$WIBO" "$EE29CC1" "$BUILD/s6a_c.i" -O2 -G0 -ffunction-sections -fno-strict-aliasing -quiet -o "$BUILD/s6a_c.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/s6a_c.o" "$BUILD/s6a_c.s"
+"$PYTHON" tools/verify_object.py "$BUILD/s6a_c.o" private/SLUS_204.86.rom --source src/s6a_c.c
+
+"$WIBO" "$SNCPP" -P src/s6b_a.c "$BUILD/s6b_a.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 --extra-flags="" "$BUILD/s6b_a.i" "$BUILD/s6b_a.s"
+"$WIBO" "$SNAS" -G8 -o "$BUILD/s6b_a.o" "$BUILD/s6b_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/s6b_a.o" private/SLUS_204.86.rom --source src/s6b_a.c
+"$WIBO" "$SNCPP" -P src/s6b_e.c "$BUILD/s6b_e.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="-fno-strength-reduce -fno-optimize-sibling-calls" "$BUILD/s6b_e.i" "$BUILD/s6b_e.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/s6b_e.o" "$BUILD/s6b_e.s"
+"$PYTHON" tools/verify_object.py "$BUILD/s6b_e.o" private/SLUS_204.86.rom --source src/s6b_e.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/s6c_c.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/s6c_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s6c_c.o" private/SLUS_204.86.rom --source src/s6c_c.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/s6c_e.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/s6c_e.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s6c_e.o" private/SLUS_204.86.rom --source src/s6c_e.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/s6c_d.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/s6c_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s6c_d.o" private/SLUS_204.86.rom --source src/s6c_d.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

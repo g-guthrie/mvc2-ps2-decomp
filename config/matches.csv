@@ -19998,3 +19998,12 @@ func_00358C50,0x00358C50,0xD8,src/s5d_h.c,complete
 func_0025ECA0,0x0025ECA0,0x198,src/s5d_i.c,complete
 func_0013AAC0,0x0013AAC0,0x100,src/s5d_j.c,complete
 func_0013AC90,0x0013AC90,0x104,src/s5d_j.c,complete
+func_001089F0,0x001089F0,0x374,src/s6a_h.c,complete
+func_00105260,0x00105260,0x150,src/s6a_j.c,complete
+func_00105480,0x00105480,0xBC,src/s6a_k.c,complete
+func_00106E68,0x00106E68,0x1EC,src/s6a_c.c,complete
+func_003F8D90,0x003F8D90,0x224,src/s6b_a.c,complete
+func_00406688,0x00406688,0x130,src/s6b_e.c,complete
+func_00173C80,0x00173C80,0x238,src/s6c_c.c,complete
+func_0037C2A0,0x0037C2A0,0x278,src/s6c_e.c,complete
+func_0016FAA0,0x0016FAA0,0x1D8,src/s6c_d.c,complete
