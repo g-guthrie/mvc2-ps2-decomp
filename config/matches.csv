@@ -19842,3 +19842,5 @@ func_00342910,0x00342910,0x390,src/sf9_d.c,complete
 func_0012D830,0x0012D830,0x11C,src/gr6_a.c,complete
 func_0010D248,0x0010D248,0x114,src/gr5_c.c,complete
 func_0012D570,0x0012D570,0xFC,src/gr4_b.c,complete
+func_0016D4B0,0x0016D4B0,0x578,src/chA_a.c,complete
+func_00392000,0x00392000,0x3CC,src/chF_b.c,complete

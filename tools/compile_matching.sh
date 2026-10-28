@@ -23375,4 +23375,14 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/gr4_b.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/gr4_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/gr4_b.o" private/SLUS_204.86.rom --source src/gr4_b.c
 
+mkdir -p "build/warm/chA_a" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/fb50_e.c src/chA_a.c -c -lang c -i src -O3,p -fp off -sdatathreshold 8 -o "build/warm/chA_a" && \
+    mv "build/warm/chA_a/chA_a.o" "$BUILD/chA_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/chA_a.o" private/SLUS_204.86.rom --source src/chA_a.c
+
+mkdir -p "build/warm/chF_b" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sf11_a.c src/chF_b.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/chF_b" && \
+    mv "build/warm/chF_b/chF_b.o" "$BUILD/chF_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/chF_b.o" private/SLUS_204.86.rom --source src/chF_b.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
