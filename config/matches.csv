@@ -19769,3 +19769,7 @@ func_003D94B0,0x003D94B0,0x4D0,src/nq234_a.c,complete
 func_003EA130,0x003EA130,0x52C,src/nq235_a.c,complete
 residual_0039E580,0x0039E580,0x40,src/nq227_b.c,complete
 func_0039E5C0,0x0039E5C0,0x374,src/nq227_c.c,complete
+func_0013CDE0,0x0013CDE0,0x30C,src/wc1_c.c,complete
+func_0013D350,0x0013D350,0x394,src/nq226_c.c,complete
+func_003E96A0,0x003E96A0,0x9D0,src/nq242_a.c,complete
+func_0041E290,0x0041E290,0xBE8,src/nq242_c.c,complete
