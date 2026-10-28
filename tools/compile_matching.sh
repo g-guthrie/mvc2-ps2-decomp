@@ -23362,4 +23362,17 @@ mkdir -p "build/warm/sf9_d" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCP
     mv "build/warm/sf9_d/sf9_d.o" "$BUILD/sf9_d.o"
 "$PYTHON" tools/verify_object.py "$BUILD/sf9_d.o" private/SLUS_204.86.rom --source src/sf9_d.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/gr6_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/gr6_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/gr6_a.o" private/SLUS_204.86.rom --source src/gr6_a.c
+
+"$WIBO" "$SNCPP" -P src/gr5_c.c "$BUILD/gr5_c.i"
+"$WIBO" "$EE29CC1" "$BUILD/gr5_c.i" -O2 -G0 -ffunction-sections -fno-cse-skip-blocks -quiet -o "$BUILD/gr5_c.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/gr5_c.o" "$BUILD/gr5_c.s"
+"$PYTHON" tools/verify_object.py "$BUILD/gr5_c.o" private/SLUS_204.86.rom --source src/gr5_c.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/gr4_b.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/gr4_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/gr4_b.o" private/SLUS_204.86.rom --source src/gr4_b.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
