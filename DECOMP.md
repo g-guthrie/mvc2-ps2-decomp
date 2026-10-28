@@ -95,3 +95,15 @@ flag that reproduces it, so these are left unmatched rather than hand-written.
 The reverse case (retail `bgtzl`) in func_00406CE0 is reproduced per object by
 `-fasynchronous-exceptions`; that flag breaks other EE objects and is never set
 globally.
+
+## Metrowerks 3.0 build 22 (mwcps2-3.0b22-020926)
+
+A fourth Metrowerks build, "Version 3.0 build 22" dated 2002-09-26, is part of
+the toolchain (`MWCCPS2_30B22`). It is a separate code line from 3.0-011126,
+3.0.1-020123 and 3.0.3-020716 and reproduces register allocation those builds
+do not (func_00200BD0, where 3.0/3.0.3 swap $s0/$s1). It does not replace 3.0
+or 3.0.3 in general: rebuilding every credited 3.0 source with it reproduces
+119 of 1718 functions. Use it per object only. 3.0.1-020123, 2.3.3 and 2.3 were
+also tested against every known wall and matched nothing new; 2.3/2.3.3 save
+$ra with `sq` like 2.4, so they are not the missing "2.4 scheduling with `sd
+$ra`" build either.

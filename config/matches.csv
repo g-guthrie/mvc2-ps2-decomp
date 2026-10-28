@@ -19928,3 +19928,4 @@ func_0040CE38,0x0040CE38,0x160,src/r3_21_b.c,complete
 func_00423370,0x00423370,0x110,src/r3_39_g.c,complete
 func_003F5F88,0x003F5F88,0x124,src/r3_33_a.c,complete
 func_0041DBA0,0x0041DBA0,0x270,src/r3_33_c.c,complete
+func_00200BD0,0x00200BD0,0x144,src/mw30b22_a.c,complete

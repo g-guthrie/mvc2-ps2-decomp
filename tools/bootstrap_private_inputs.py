@@ -66,6 +66,7 @@ def configure():
         "WIBO": str(toolchain / runner),
         "MWCCPS2": str(toolchain / "compilers/mwcps2-3.0.3-020716/mwccps2.exe"),
         "MWCCPS2_30": str(toolchain / "compilers/mwcps2-3.0-011126/mwccps2.exe"),
+        "MWCCPS2_30B22": str(toolchain / "compilers/mwcps2-3.0b22-020926/mwccps2.exe"),
         "EE96CC1": str(toolchain / "compilers/ee-gcc2.96/cc1"),
         "SNCPP": str(toolchain / "compilers/sn-gcc-2.95.2/cpp.exe"),
         "SNCC1": str(toolchain / "compilers/sn-gcc-2.95.2/cc1.exe"),
@@ -76,7 +77,7 @@ def configure():
     with tempfile.TemporaryDirectory(prefix="mvc2-compiler-") as directory:
         source = Path(directory) / "smoke.c"
         source.write_text("int compiler_smoke(void) { return 42; }\n")
-        for key in ("MWCCPS2", "MWCCPS2_30"):
+        for key in ("MWCCPS2", "MWCCPS2_30", "MWCCPS2_30B22"):
             output = Path(directory) / (key + ".o")
             subprocess.run(
                 [values["WIBO"], values[key], str(source), "-c", "-lang", "c", "-O3", "-o", str(output)],

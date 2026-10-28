@@ -11,6 +11,7 @@ The bundle `mvc2-ps2-build-inputs.tar.gz` is expected to contain:
     private/extracted/SLUS_204.86      the same image, extracted
     private/toolchain/compilers/mwcps2-3.0-011126/    Metrowerks CodeWarrior
     private/toolchain/compilers/mwcps2-3.0.3-020716/  Metrowerks CodeWarrior
+    private/toolchain/compilers/mwcps2-3.0b22-020926/ Metrowerks CodeWarrior
     private/toolchain/compilers/sn-gcc-2.95.2/        SN Systems GCC
     private/toolchain/compilers/ee-gcc2.96/           EE GCC
     private/toolchain/wibo-x86_64, wibo-macos         wibo (MIT)

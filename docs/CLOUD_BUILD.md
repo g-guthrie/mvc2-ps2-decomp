@@ -13,7 +13,7 @@ The checksum-pinned bundle contains:
 - `private/extracted/SLUS_204.86`: a deterministic reconstruction of the complete
   retail ELF, with SHA-256
   `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7`.
-- MWCCPS2 `mwcps2-3.0.3-020716` and `mwcps2-3.0-011126`, including their DLLs.
+- MWCCPS2 `mwcps2-3.0.3-020716`, `mwcps2-3.0-011126` and `mwcps2-3.0b22-020926`, including their DLLs.
 - SN GCC 2.95.2 compiler, preprocessor, and assembler for runtime leaves.
 - Linux EE GCC 2.96 compiler for the early math wrappers.
 - Wibo 1.2.0 for Linux x86-64 and macOS, from the official
