@@ -23385,4 +23385,55 @@ mkdir -p "build/warm/chF_b" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MW
     mv "build/warm/chF_b/chF_b.o" "$BUILD/chF_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/chF_b.o" private/SLUS_204.86.rom --source src/chF_b.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/gr15_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/gr15_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/gr15_a.o" private/SLUS_204.86.rom --source src/gr15_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fr1_a.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "$BUILD/fr1_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/fr1_a.o" private/SLUS_204.86.rom --source src/fr1_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/gr9_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/gr9_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/gr9_a.o" private/SLUS_204.86.rom --source src/gr9_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/gr9_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/gr9_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/gr9_b.o" private/SLUS_204.86.rom --source src/gr9_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/gr11_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/gr11_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/gr11_a.o" private/SLUS_204.86.rom --source src/gr11_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/gr11_b.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/gr11_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/gr11_b.o" private/SLUS_204.86.rom --source src/gr11_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/gr11_d.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/gr11_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/gr11_d.o" private/SLUS_204.86.rom --source src/gr11_d.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/gr10_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/gr10_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/gr10_a.o" private/SLUS_204.86.rom --source src/gr10_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/gr10_b.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/gr10_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/gr10_b.o" private/SLUS_204.86.rom --source src/gr10_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/gr16_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/gr16_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/gr16_a.o" private/SLUS_204.86.rom --source src/gr16_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/gr16_b.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/gr16_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/gr16_b.o" private/SLUS_204.86.rom --source src/gr16_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/gr8_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/gr8_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/gr8_a.o" private/SLUS_204.86.rom --source src/gr8_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/gr8_b.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/gr8_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/gr8_b.o" private/SLUS_204.86.rom --source src/gr8_b.c
+
+mkdir -p "build/warm/wc2_a" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fr1_a.c src/wc2_a.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/wc2_a" && \
+    mv "build/warm/wc2_a/wc2_a.o" "$BUILD/wc2_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/wc2_a.o" private/SLUS_204.86.rom --source src/wc2_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/gr13_c.c -c -lang c -i src -O4 -Op -sdatathreshold 0 -o "$BUILD/gr13_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/gr13_c.o" private/SLUS_204.86.rom --source src/gr13_c.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
