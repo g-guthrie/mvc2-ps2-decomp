@@ -6,7 +6,8 @@ typedef unsigned int u32;
 typedef signed int s32;
 
 extern s32 D_004C240C;
-typedef struct { s32 a, b; } PR;
+#include "cri_sj_ring_buffer_types.h"
+typedef SJCK PR;
 
 void func_00403B20(u8 *p)
 {
@@ -15,7 +16,7 @@ void func_00403B20(u8 *p)
     extern void func_003F9630(void);
     extern void func_003F9660(void);
     extern void func_004104E0(PR *, s32, PR *, PR *);
-    extern void func_0011D8F8(s32, s32, s32);
+    extern void *func_0011D8F8(void *, int, unsigned int);
     extern void func_003FF148(s8 *, s32);
     extern void func_003FF160(s32, s32);
     extern void func_0040EA00(s32, s32);
@@ -39,7 +40,7 @@ void func_00403B20(u8 *p)
         do {
             o = *q++;
             (*(void (**)(s32 *, s32, s32, PR *))(*(s32 *)o + 0x18))(o, 0, mn * 2, &A[i]);
-            v = (u32)A[i].b >> 1;
+            v = (u32)A[i].len >> 1;
             i++;
             if (v < mn) mn = v;
         } while (i < n);
@@ -52,7 +53,7 @@ void func_00403B20(u8 *p)
             pa = &A[i];
             pb = &B[i];
             func_004104E0(pa, fp, pa, pb);
-            func_0011D8F8(pa->a, 0, A[i].b);
+            func_0011D8F8(pa->data, 0, A[i].len);
             i++;
             o = *q2;
             (*(void (**)(s32 *, s32, PR *))(*(s32 *)o + 0x20))(o, 1, pa);
