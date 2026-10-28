@@ -244,12 +244,12 @@ extern DispatchFn jtbl_0044E570[];
 extern DispatchFn jtbl_0044E580[];
 extern DispatchFn jtbl_0044E590[];
 extern ContextDispatchFn jtbl_0044E5C0[];
-extern DispatchFn jtbl_0044E5D0[];
+extern ContextDispatchFn jtbl_0044E5D0[];
 extern DispatchFn jtbl_0044E5F0[];
 extern const Mvc2OwnerStateCallback jtbl_0044E6A0[3];
 extern DispatchFn jtbl_0044E790[];
 extern ContextDispatchFn jtbl_0044E7E0[];
-extern DispatchFn jtbl_0044E7F0[];
+extern ContextDispatchFn jtbl_0044E7F0[];
 extern ContextDispatchFn jtbl_0044E840[];
 extern ContextDispatchFn jtbl_0044E850[];
 extern ContextDispatchFn jtbl_0044E860[];
@@ -1137,16 +1137,16 @@ extern DispatchFn jtbl_00462DA0[];
 extern DispatchFn jtbl_00462DC0[];
 extern DispatchFn jtbl_00463070[];
 extern DispatchFn jtbl_00463080[];
-extern DispatchFn jtbl_004630E0[];
+extern OwnerByteCallback jtbl_004630E0[];
 extern DispatchFn jtbl_00463110[];
 extern DispatchFn jtbl_00463120[];
 extern DispatchFn jtbl_004631C0[];
 extern ControllerEffectCallback const jtbl_00463218[3];
 extern ContextDispatchFn jtbl_004632E0[];
 extern void (*const jtbl_004632F0[])(u8 *, u8 *);
-extern DispatchFn jtbl_00463320[];
+extern ContextDispatchFn jtbl_00463320[];
 extern void (*const jtbl_00463330[])(u8 *, u8 *);
-extern DispatchFn jtbl_00463340[];
+extern ContextDispatchFn jtbl_00463340[];
 extern void (*const jtbl_00463380[])(u8 *, void *);
 extern void (*const jtbl_00463390[])(u8 *, void *);
 extern ControllerEffectCallback const jtbl_00463418[3];
@@ -1287,7 +1287,7 @@ extern DispatchFn jtbl_00473B20[];
 extern DispatchFn jtbl_00473B40[];
 extern DispatchFn jtbl_00473C70[];
 extern DispatchFn jtbl_00473CC0[];
-extern DispatchFn jtbl_00473D00[];
+extern ContextDispatchFn jtbl_00473D00[];
 extern OwnerByteCallback jtbl_00473D10[];
 extern DispatchFn jtbl_00473D90[];
 extern DispatchFn jtbl_00473DB0[];
@@ -1847,10 +1847,9 @@ void func_001D6310(u8 *p) { jtbl_0044E580[p[4]](p); }
 
 void func_001D64E0(u8 *p) { jtbl_0044E590[p[4]](p); }
 
-/* Provisional: the shared state table still contains unary declarations. */
 void func_001D6740(u8 *p, void *owner) { jtbl_0044E5C0[p[4]](p, owner); }
 
-void func_001D6950(u8 *p) { jtbl_0044E5D0[p[4]](p); }
+void func_001D6950(u8 *p, void *owner) { jtbl_0044E5D0[p[4]](p, owner); }
 
 void func_001D6BC0(u8 *p) { jtbl_0044E5F0[p[4]](p); }
 
@@ -1860,7 +1859,7 @@ void func_001D85F0(u8 *p) { jtbl_0044E790[p[32]](p); }
 
 void func_001D8FF0(u8 *p, void *owner) { jtbl_0044E7E0[p[4]](p, owner); }
 
-void func_001D9190(u8 *p) { jtbl_0044E7F0[p[4]](p); }
+void func_001D9190(u8 *p, void *owner) { jtbl_0044E7F0[p[4]](p, owner); }
 
 void func_001D9530(u8 *p, void *owner) { jtbl_0044E840[p[4]](p, owner); }
 
@@ -3708,7 +3707,7 @@ void func_003584D0(u8 *p) { jtbl_00463070[p[4]](p); }
 
 void func_00358A70(u8 *p) { jtbl_00463080[p[4]](p); }
 
-void func_003593F0(u8 *p) { jtbl_004630E0[p[33]](p); }
+void func_003593F0(u8 *p, u8 *work) { jtbl_004630E0[p[33]](p, work); }
 
 void func_0035A0D0(u8 *p) { jtbl_00463110[p[5]](p); }
 
@@ -3718,16 +3717,15 @@ void func_0035B7E0(u8 *p) { jtbl_004631C0[p[5]](p); }
 
 void func_0035C090(u8 *p, void *owner) { jtbl_00463218[p[5]](p, owner); }
 
-/* Provisional: the separately owned state table still has a unary callback type. */
 void func_0035CCA0(u8 *p, void *owner) { jtbl_004632E0[p[4]](p, owner); }
 
 void func_0035D080(u8 *p, u8 *owner) { jtbl_004632F0[p[4]](p, owner); }
 
-void func_0035D6D0(u8 *p) { jtbl_00463320[p[4]](p); }
+void func_0035D6D0(u8 *p, void *owner) { jtbl_00463320[p[4]](p, owner); }
 
 void func_0035D980(u8 *p, u8 *owner) { jtbl_00463330[p[4]](p, owner); }
 
-void func_0035DB90(u8 *p) { jtbl_00463340[p[4]](p); }
+void func_0035DB90(u8 *p, void *owner) { jtbl_00463340[p[4]](p, owner); }
 
 void func_0035E170(u8 *p, void *owner) { jtbl_00463380[p[4]](p, owner); }
 
@@ -3805,7 +3803,7 @@ void func_00378D30(u8 *p) { jtbl_00464100[p[4]](p); }
 
 void func_00379170(u8 *p) { jtbl_00464120[p[32]](p); }
 
-/* Provisional: incoming callback context and table bounds are unproved. */
+/* Task callback installed by func_0037B930; states 0-3 advance p[4] and state 3 frees the task. */
 void func_0037B9C0(u8 *p) { jtbl_00464170[p[4]](p); }
 
 void func_0037BF40(u8 *p) { jtbl_00464180[p[4]](p); }
@@ -4017,7 +4015,7 @@ void func_003B0520(u8 *p) { jtbl_00473C70[p[6]](p); }
 
 void func_003B0D70(u8 *p) { jtbl_00473CC0[p[6]](p); }
 
-void func_003B1610(u8 *p) { jtbl_00473D00[p[4]](p); }
+void func_003B1610(u8 *p, void *owner) { jtbl_00473D00[p[4]](p, owner); }
 
 void func_003B1C50(u8 *p, u8 *owner) { jtbl_00473D10[p[4]](p, owner); }
 
@@ -4156,7 +4154,7 @@ extern DispatchFn jtbl_0044DDF0[];
 extern DispatchFn jtbl_0044E080[];
 extern DispatchFn jtbl_0044E470[];
 extern DispatchFn jtbl_0044E540[];
-extern DispatchFn jtbl_0044E7D0[];
+extern ContextDispatchFn jtbl_0044E7D0[];
 extern DispatchFn jtbl_0044E8C0[];
 extern DispatchFn jtbl_0044EFB0[];
 extern DispatchFn jtbl_0044B538[];
@@ -4177,13 +4175,13 @@ extern DispatchFn jtbl_00459700[];
 extern DispatchFn jtbl_0045ADE0[];
 extern DispatchFn jtbl_0045B358[];
 extern DispatchFn jtbl_0045CF90[];
-extern DispatchFn jtbl_0045D4E0[];
+extern OwnerByteCallback jtbl_0045D4E0[];
 extern DispatchFn jtbl_0045DF88[];
 extern DispatchFn jtbl_0045E0B0[];
 extern ContextDispatchFn jtbl_0045BF10[];
 extern DispatchFn jtbl_00461E70[];
 extern void (*const jtbl_004632C0[])(u8 *, u8 *);
-extern DispatchFn jtbl_00463310[];
+extern ContextDispatchFn jtbl_00463310[];
 extern void (*const jtbl_00463370[])(u8 *, void *);
 extern DispatchFn jtbl_00463780[];
 extern DispatchFn jtbl_004637E0[];
@@ -4232,7 +4230,7 @@ void func_001CE530(u8 *p) { jtbl_0044DDF0[p[4]](p); }
 void func_001D2CA0(u8 *p) { jtbl_0044E080[p[4]](p); }
 void func_001D4680(u8 *p) { jtbl_0044E470[p[4]](p); }
 void func_001D5B60(u8 *p) { jtbl_0044E540[p[4]](p); }
-void func_001D8DF0(u8 *p) { jtbl_0044E7D0[p[4]](p); }
+void func_001D8DF0(u8 *p, void *owner) { jtbl_0044E7D0[p[4]](p, owner); }
 void func_001DA270(u8 *p) { jtbl_0044E8C0[p[4]](p); }
 void func_001E0D70(u8 *p) { jtbl_0044EFB0[p[4]](p); }
 void func_001A7B80(u8 *p) { jtbl_0044B538[p[5]](p); }
@@ -4253,13 +4251,13 @@ void func_002BECF0(u8 *p) { jtbl_00459700[p[6]](p); }
 void func_002E0790(u8 *p) { jtbl_0045ADE0[p[6]](p); }
 void func_002E8400(u8 *p) { jtbl_0045B358[p[6]](p); }
 void func_0030BFC0(u8 *p) { jtbl_0045CF90[p[6]](p); }
-void func_00313AE0(u8 *p) { jtbl_0045D4E0[p[6]](p); }
+void func_00313AE0(u8 *p, u8 *work) { jtbl_0045D4E0[p[6]](p, work); }
 void func_00323650(u8 *p) { jtbl_0045DF88[p[6]](p); }
 void func_00325FC0(u8 *p) { jtbl_0045E0B0[p[6]](p); }
 void func_002F9220(u8 *p, void *context) { jtbl_0045BF10[p[7]](p, context); }
 void func_003472A0(u8 *p) { jtbl_00461E70[p[4]](p); }
 void func_0035C860(u8 *p, u8 *owner) { jtbl_004632C0[p[4]](p, owner); }
-void func_0035D4A0(u8 *p) { jtbl_00463310[p[4]](p); }
+void func_0035D4A0(u8 *p, void *owner) { jtbl_00463310[p[4]](p, owner); }
 void func_0035DFA0(u8 *p, void *owner) { jtbl_00463370[p[4]](p, owner); }
 void func_003611B0(u8 *p,u8 *owner) { jtbl_004634F0.lifecycle[p[4]](p,owner); }
 void func_00364F50(u8 *p) { jtbl_00463780[p[4]](p); }

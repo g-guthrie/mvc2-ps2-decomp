@@ -1,12 +1,13 @@
 #include "character_owner_callbacks.h"
 typedef void (*DispatchFn)(u8 *);
+typedef void (*ContextDispatchFn)(u8 *, void *);
 
 extern DispatchFn jtbl_00442870[];
 extern DispatchFn jtbl_0044ABC0[];
 extern DispatchFn jtbl_0044ACF0[];
 extern DispatchFn jtbl_0044BEE0[];
 extern DispatchFn jtbl_0044CE90[];
-extern DispatchFn jtbl_0044E5E0[];
+extern ContextDispatchFn jtbl_0044E5E0[];
 extern DispatchFn jtbl_0044E8E0[];
 extern DispatchFn jtbl_0044F450[];
 extern DispatchFn jtbl_0044F6E0[];
@@ -68,7 +69,7 @@ void func_001B8010(u8 *p) { jtbl_0044BEE0[p[32]](p); }
 
 void func_001C8D40(u8 *p) { jtbl_0044CE90[p[4]](p); }
 
-void func_001D6B00(u8 *p) { jtbl_0044E5E0[p[4]](p); }
+void func_001D6B00(u8 *p, void *owner) { jtbl_0044E5E0[p[4]](p, owner); }
 
 void func_001DA740(u8 *p) { jtbl_0044E8E0[p[4]](p); }
 

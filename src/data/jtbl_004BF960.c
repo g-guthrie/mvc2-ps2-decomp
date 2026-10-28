@@ -22,10 +22,10 @@ extern void func_001BDDB0(u8 *, void *);
 extern void func_001BDDE0(u8 *, void *);
 extern void func_001BE690(u8 *, u8 *);
 extern void func_001BE700(u8 *, u8 *);
-extern void func_001BEB00(u8 *);
-extern void func_001BEB60(u8 *);
-extern void func_001BEDB0(u8 *);
-extern void func_001BEDE0(u8 *);
+extern void func_001BEB00(u8 *, u8 *);
+extern void func_001BEB60(u8 *, u8 *);
+extern void func_001BEDB0(u8 *, u8 *);
+extern void func_001BEDE0(u8 *, u8 *);
 extern void func_001BF860(u8 *);
 extern void func_001BF8A0(u8 *);
 extern void func_001C05D0(u8 *);
@@ -64,10 +64,10 @@ const OwnerEffectSmallTables jtbl_004BF960 = {
     },
     {func_001BE690, func_001BE700},
     {
-        func_001BEB00,
-        func_001BEB60,
-        func_001BEDB0,
-        func_001BEDE0,
+        {func_001BEB00, func_001BEB60},
+        {func_001BEDB0, func_001BEDE0},
+    },
+    {
         func_001BF860,
         func_001BF8A0,
         func_001C05D0,

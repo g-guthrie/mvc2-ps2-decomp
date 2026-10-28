@@ -1,4 +1,4 @@
-/* Provisional: callback table ABI and phase bounds require proof. */
+/* Task callback installed by func_00358D50 (object+0x10); dispatches jtbl_004630D0 with the work block at object+0x88. */
 typedef unsigned char u8;
 typedef signed char s8;
 typedef void (*EventPhase)(u8 *, u8 *);

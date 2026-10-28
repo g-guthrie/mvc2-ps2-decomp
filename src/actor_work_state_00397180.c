@@ -3,7 +3,7 @@ extern u16 D_004D18DC; extern u8 D_004D18DB;
 typedef struct {s8 i; u8 b1,b2,b3; u8 gap[3];u8 b7;} Q; typedef struct {u8 pad[0x1c];s16 c;} P;
 static void func_00396F00(u8 *p,u8 *q) { if(q[2]<12){u32 v=q[3]-1;q[3]=v;if((u8)v<=0){q[3]=2;q[2]++;}} }
 static void func_00396F40(P *p,Q *q) { if(--p->c<=0){p->c=2;q->i++;if(q->i>=8)q->i=5;} }
-/* Provisional: dispatch ownership, selector bounds, and shift count are unproved. */
+/* D_004C1E40 state reached from func_00397140 with (actor, owner, work = actor+0x88). */
 void func_00397180(u8 *p,u8 *owner,u8 *work_arg) {
  Q *work=(Q *)work_arg;
  if(owner[0x169]!=22) {p[4]++;p[0x13c]=0;}

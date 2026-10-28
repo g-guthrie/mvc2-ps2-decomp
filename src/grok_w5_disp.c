@@ -276,8 +276,9 @@ void residual_00311A70(u8 *p) { jtbl_0045D3C0[p[6]](p); }
 
 void residual_00312620(u8 *p) { jtbl_004C16E0[p[6]](p); }
 
-/* Provisional: callback table ABI and selector bounds need reconciliation. */
-void residual_00313AC0(u8 *a0, u8 *p) { jtbl_004C16E8[p[13]](a0, p); }
+/* jtbl_0045D4E0 state: func_00313AE0 forwards the actor and its work block
+ * (p + 0x2B8, loaded by func_00312950); work[13] selects the sub-state. */
+void residual_00313AC0(u8 *p, u8 *work) { jtbl_004C16E8[work[13]](p, work); }
 
 void residual_0031D760(u8 *p) { jtbl_0045DB78[p[6]](p); }
 

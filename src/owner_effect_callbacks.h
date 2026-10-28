@@ -21,7 +21,8 @@ typedef struct {
     Mvc2StateCallback before[12];
     Mvc2OwnerStateCallback owner[3][2];
     ControllerEffectCallback inherited[2];
-    Mvc2StateCallback after[8];
+    ControllerEffectCallback owner_state[2][2];
+    Mvc2StateCallback after[4];
     ControllerEffectCallback follow[2];
 } OwnerEffectSmallTables;
 typedef struct {

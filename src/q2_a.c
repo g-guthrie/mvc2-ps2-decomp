@@ -6,23 +6,24 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-/* Provisional: func_0035AE70 really takes only (u8 *); retail keeps $a1 live
- * as if a second argument were passed. Table callees take (u8 *, u8 *). */
-extern void (*D_004C1AD0[2])(u8 *, s32);
+/* jtbl_004630D0 state reached from the first state of func_00358DD0 with
+ * work = p + 0x88. func_0035AE70 (src/grok_r1_0030.c) ignores its second
+ * argument but is called with the live work pointer, as in src/gr18_b.c. */
+extern void (*D_004C1AD0[2])(u8 *, u8 *);
 
-void func_00358F30(u8 *p, s32 n)
+void func_00358F30(u8 *p, u8 *work)
 {
-    extern void func_0035AE70(u8 *, s32);
+    extern void func_0035AE70();
     u8 *q = *(u8 **)(p + 0x18);
     u8 *r = q + 0x2B8;
     q[0x2C8] = p[0x20];
     if (p[0x20] != q[0x2C6]) {
         p[0x20] = q[0x2C6];
         p[0x21] = r[0xF];
-        func_0035AE70(p, n);
+        func_0035AE70(p, work);
     }
     p[0x13C] = ((s8 *)*(u8 **)(p + 0x18))[0x13C];
-    D_004C1AD0[p[0x20]](p, n);
+    D_004C1AD0[p[0x20]](p, work);
 }
 
 typedef struct { u8 pad0[0x194]; s32 f194; u8 pad1[0x570 - 0x198]; u8 f570; u8 pad2[0x5B8 - 0x571]; } E16F;
