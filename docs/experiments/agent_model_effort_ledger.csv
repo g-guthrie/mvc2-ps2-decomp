@@ -571,3 +571,5 @@ va,21,opus,low,data-vu1,10,10,81760,,,"VU1 microcode DMA/VIF packets -> tools/vu
 ea,21,opus,low,data-ee-blob,5,5,4520,,,"kernel patch code blobs -> src/data_asm/*.s"
 dr-wave,22,opus,low,data-region,468,420,24000,,,"region batches: merge fragments, split at %lo/pointer targets, padding; ~35 left with no reader"
 nq-wave7,22,opus,low,code-hard,18,10,,,,"nq28-33; bnel wall and MW register naming dominate misses"
+nq-wave8,23,opus,low,code-hard,60,22,4800,,,"nq33-52"
+nq-wave9,23,opus,low,code-hard,57,30,7100,,,"nq53-71; control-flow shape and try30 fixes; register naming dominates misses"
