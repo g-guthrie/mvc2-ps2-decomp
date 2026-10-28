@@ -15,8 +15,8 @@ void func_003FDC70(void *context)
     extern s32 D_004C22D4, D_004C2394, D_004C2398;
     extern volatile s32 D_004C2320;
     extern s32 D_0047D0E0[];
-    extern s32 func_00103CD0();
-    extern s32 func_00103C70();
+    extern s32 func_00103CD0(void);      /* syscall 47, GetThreadId */
+    extern s32 func_00103C70(s32, s32);  /* syscall 41, ChangeThreadPriority */
     extern s32 func_003FE190(s32);
     s32 h;
     (void)context;
@@ -25,7 +25,7 @@ void func_003FDC70(void *context)
         D_004C2394 = func_00103C70(h, D_0047D0E0[0]);
         D_004C2398 = h;
         func_003FE190(D_004C2320);
-        { register s32 j __asm__("$3"); j = D_004C2320; }
+        (void)D_004C2320;
     }
     D_004C22D4++;
 }

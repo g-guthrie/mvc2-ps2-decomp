@@ -9,10 +9,10 @@ extern u16 D_004F4484;
 extern u16 D_004F4498;
 extern u32 D_004636B0[];
 
-/* Provisional: callback-table ABI and state bounds remain unresolved. */
+/* Dispatched from jtbl_004C20F8[10 + p[5]] as (u8 *, void *); q is unused here. */
 void func_003C33B0(u8 *p, void *q) {
     extern void func_001E7F60(u8 *);
-    extern void func_001757E0();
+    extern s32 func_001757E0(u8 *, s32, s32);
     if (*(s16 *)(p + 0x1C) == 0) {
         { u32 t = p[4]; p[4] = t + 1; }
     } else {

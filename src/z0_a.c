@@ -195,12 +195,23 @@ void func_003134E0(u8 *p, u8 *q)
     }
 }
 
-/* Provisional: animation call omits its actor argument in source. */
+static int func_00275A40(u8 *p)
+{
+    if (*(f32 *)(p + 56) < *(f32 *)(p + 1072)) {
+        *(s32 *)(p + 92) = 0;
+        *(s32 *)(p + 96) = 0;
+        *(s32 *)(p + 104) = 0;
+        *(s32 *)(p + 108) = 0;
+        *(f32 *)(p + 56) = *(f32 *)(p + 1072);
+        return 1;
+    }
+    return 0;
+}
+
 void func_002774C0(u8 *p)
 {
     u8 a;
-    extern int func_00275A40(u8 *);
-    extern s8 func_00175700();
+    extern int func_00175700(u8 *);
     extern void func_00184540(u8 *);
     extern void func_001843A0(u8 *);
     extern void func_0037A810(u8 *, u8);
@@ -209,7 +220,7 @@ void func_002774C0(u8 *p)
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60);
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
     func_00275A40(p);
-    if (func_00175700() < 0) {
+    if ((s8)func_00175700(p) < 0) {
         if (p[0x20D] != 2)
             func_001843A0(p);
         else

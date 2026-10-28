@@ -295,7 +295,7 @@ void func_0023EC30(u8 *p) {
 extern f32 D_004F1FC8[];
 extern f32 D_004F1FCC[];
 extern f32 D_004F1FD0[];
-s32 func_0035AD40(u8 *p) {
+s32 func_0035AD40(u8 *p, u8 *owner) {
     u8 *q = *(u8 **)(p + 0x18);
     s32 r = 0;
     if (D_004F1FC8[0] >= *(f32 *)(p + 0x34)) {

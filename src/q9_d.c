@@ -287,7 +287,6 @@ void func_002DD710(u8 *p) {
     *(f32 *)(p + 0x38) += *(f32 *)(p + 0x60); \
     *(f32 *)(p + 0x60) += *(f32 *)(p + 0x6C);
 
-/* Provisional: the data-owned callback tables still declare no arguments. */
 void func_002322C0(u8 *p, u8 *work) {
     extern int func_00175700(u8 *);
     extern int func_001757E0(u8 *, int, int);

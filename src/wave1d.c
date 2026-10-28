@@ -17,7 +17,7 @@ u32 func_001879C0(u8 *a0)
     return 1;
 }
 
-void func_00380A40(u8 *a0)
+void func_00380A40(u8 *a0, u8 *a1)
 {
     u8 *p = *(u8 **)(a0 + 0x1C4);
     *(float *)(a0 + 0x34) = *(float *)(p + 0x34);

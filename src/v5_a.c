@@ -228,14 +228,36 @@ void func_0034F0F0(u8 *p) {
     else func_001E7F60(p);
 }
 
-/* Provisional: animation call omits its actor argument in source. */
+/* Real body of func_00221440 (src/n10.c); a leaf that leaves $a0 intact. */
+static void func_00221440(u8 *p) {
+    s8 a = -8;
+    s8 b = -4;
+    u8 *q = *(u8 **)(p + 0x220);
+    s8 c;
+    if (q[0x1E6] == 0) {
+        if (!(*(f32 *)(p + 0x34) < *(f32 *)(q + 0x34))) {
+            a = 8;
+            b = 4;
+        }
+    } else {
+        if (*(f32 *)(p + 0x34) <= *(f32 *)(q + 0x34)) {
+            a = 8;
+            b = 4;
+        }
+    }
+    c = a + 0x10;
+    if (*(f32 *)(q + 0x38) <= 102.8571396f + *(f32 *)(p + 0x38)) {
+        c = c + b;
+    }
+    p[0x22] = c;
+}
+
 void func_002214E0(u8 *p) {
-    extern void func_00221440(u8 *);
-    extern void func_00175700();
+    extern s32 func_00175700(u8 *);
     extern void func_001830D0(u8 *, f32 *, s32);
     f32 v[3];
     func_00221440(p);
-    func_00175700();
+    func_00175700(p);
     p[0x40C] = 2;
     p[0x33C] = 5;
     p[0x405] = (p[0x269] == 6) ? 2 : 0;

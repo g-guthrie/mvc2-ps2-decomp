@@ -8,25 +8,20 @@ typedef float f32;
 
 typedef struct { u8 pad0[0x7C]; s16 f7c[2]; } G4t;
 extern G4t *D_004C2794;
-extern u8 D_00463090[];
-extern u8 D_00463092[];
-extern u8 D_00463094[];
-extern u8 D_00463096[];
-extern u8 D_00463098[];
+typedef struct { u8 b0; u8 pad1; s16 a; s16 b; s16 c; s16 d; } T4t;
+extern T4t D_00463090[];
 
-/* Provisional: the split table aliases and native index bounds need reconciliation. */
 void func_00359710(u8 *p, s32 a1, u8 idx)
 {
-    s32 o = idx * 10;
     s16 a, b, c, d;
-    p[0x1B5] = D_00463090[o];
+    p[0x1B5] = D_00463090[idx].b0;
     p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
     *(u32 *)(p + 0x1D8) = 0;
     D_004C2794->f7c[p[2]]++;
-    a = *(s16 *)(D_00463092 + o);
-    b = *(s16 *)(D_00463094 + o);
-    c = *(s16 *)(D_00463096 + o);
-    d = *(s16 *)(D_00463098 + o);
+    a = D_00463090[idx].a;
+    b = D_00463090[idx].b;
+    c = D_00463090[idx].c;
+    d = D_00463090[idx].d;
     if (*(s16 *)(p + 0x140) == 0) {
         a = -a;
         c = -c;

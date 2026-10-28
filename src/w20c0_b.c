@@ -11,7 +11,8 @@ extern G *D_004C2840;
 extern s8 D_004C2868, D_004C2860, D_004C2858, D_004C2854;
 extern u8 D_004434B0[], D_00443500[], D_00443530[], D_00443580[];
 
-/* Provisional: selectors outside 0, 2, 5, 6 leave loop inputs uninitialized. */
+/* Retail behaviour: for selectors other than 0, 2, 5 and 6 the loop inputs
+ * (n, lim, dst) are left uninitialised, exactly as in the original object. */
 void func_001485C0(u8 *p) {
     u32 t; u8 *dst; s32 n; s32 lim; s32 i;
     if (p[0x20] == D_004C2840->h8) {

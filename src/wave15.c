@@ -53,7 +53,7 @@ extern u8 func_00186CE0();
 extern void func_00175700();
 extern s32 func_004235D0();
 
-void func_0032DE90(u8 *p, float a, float b) {
+void func_0032DE90(u8 *p, s16 id, float a, float b) {
     s16 s;
     *(u32 *)(p + 0xD0) |= 0x20000;
     s = *(s16 *)(p + 0xCC);

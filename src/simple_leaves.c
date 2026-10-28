@@ -594,7 +594,7 @@ void func_003FF330(void) {}
 
 s8 func_003FF5C8(void *p) { return *(s8 *)((u8 *)p + 1); }
 
-void func_003FF620(void) {}
+void func_003FF620(s32 a) {}
 
 s32 func_003FFEC0(void *p) { return *(s32 *)((u8 *)p + 48); }
 

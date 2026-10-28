@@ -5,16 +5,15 @@ typedef unsigned int u32;
 
 typedef struct { float x, y, z; } Float3;
 
-extern u8 *func_003DA750(s32, s32, s32);
+extern void *func_003DA750(void *, s32, s32);
 extern void func_0013A5B0(u8 *);
 extern void func_0032DE90(u8 *, s16, float, float);
 extern u32 D_004C2830 __attribute__((section(".sdata")));
 
-/* Provisional: helper ABI and dependent data bounds require reconciliation. */
 void func_0013A4A0(u8 *owner, u8 mode)
 {
     u8 *p;
-    if ((p = func_003DA750(0, 6, 1)) != 0) {
+    if ((p = (u8 *)func_003DA750(0, 6, 1)) != 0) {
         *(u8 **)(p + 0x18) = owner;
         *(u8 **)(p + 0x14) = *(u8 **)(owner + 0x14);
         p[0x13C] = 1;

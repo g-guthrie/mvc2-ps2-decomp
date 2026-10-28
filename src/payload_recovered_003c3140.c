@@ -11,7 +11,7 @@ typedef struct { f32 x, y, z; } V3;
 typedef struct { u8 prefix[0x7C]; s16 count[2]; } GameState;
 extern GameState *D_004C2794 __attribute__((section(".sdata")));
 extern int func_001757E0(u8 *, s32, s32);
-extern void func_003C32F0(u8 *, u8 *);
+extern void func_003C32F0(u8 *, void *);
 
 
 #include "actor_inherited_state.h"

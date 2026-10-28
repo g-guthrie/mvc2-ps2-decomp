@@ -23,42 +23,41 @@ typedef struct PS {
     s8 b1B3;
 } PS;
 
-extern void func_0019DF50(PS *, s32, s32);
-extern void func_001E7F60(PS *);
+extern void func_0019DF50(u8 *, s32, s32);
+extern void func_001E7F60(u8 *);
 extern s32 func_0035A7B0(u8 *, u8 *);
-extern void func_0035AE70(PS *, u8 *);
-extern void func_0035ACA0(PS *, u8 *);
-extern s32 func_0035AD40(PS *, u8 *);
+extern void func_0035AE70(u8 *, s32);
+extern void func_0035ACA0(u8 *, s32);
+extern s32 func_0035AD40(u8 *, u8 *);
 extern s32 func_00175700(u8 *);
 
-/* Provisional: helper argument type and call sequence require reconciliation. */
 void func_00359840(PS *p, u8 *q) {
     if (p->b1B2 < 0) {
-        func_0019DF50(p, 0xA, p->b21);
-        func_001E7F60(p);
+        func_0019DF50((u8 *)p, 0xA, p->b21);
+        func_001E7F60((u8 *)p);
         func_0035A7B0((u8 *)p, q);
         p->b21 = 7;
-        func_0035AE70(p, q);
-        func_0035ACA0(p, q);
+        func_0035AE70((u8 *)p, (s32)q);
+        func_0035ACA0((u8 *)p, (s32)q);
         return;
     }
     if (p->b1B3 != 0) {
-        func_0019DF50(p, 0xA, p->b21);
+        func_0019DF50((u8 *)p, 0xA, p->b21);
     } else {
         func_00175700((u8 *)p);
         p->f34 += p->f5C;
         p->f5C += p->f68;
         p->f38 += p->f60;
         p->f60 += p->f6C;
-        if (func_0035AD40(p, q) == 0) {
-            func_001E7F60(p);
+        if (func_0035AD40((u8 *)p, q) == 0) {
+            func_001E7F60((u8 *)p);
             func_0035A7B0((u8 *)p, q);
             return;
         }
     }
-    func_001E7F60(p);
+    func_001E7F60((u8 *)p);
     func_0035A7B0((u8 *)p, q);
     p->b21 = 7;
-    func_0035AE70(p, q);
-    func_0035ACA0(p, q);
+    func_0035AE70((u8 *)p, (s32)q);
+    func_0035ACA0((u8 *)p, (s32)q);
 }

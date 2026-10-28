@@ -33,14 +33,15 @@ typedef struct {
     s32 w2F8;
 } Q380;
 
-/* Provisional: callback table ABI and helper signatures need reconciliation. */
+typedef struct { u8 p0[0x20]; u8 a, b; u8 pad[0x2E]; f32 f50, f54; u8 pad2[0xC]; f32 f64; u8 pad3[8]; f32 f70; } S_80A90;
+
 void func_00380650(P380 *a, Q380 *b)
 {
     extern s32 func_00185980(u8 *);
-    extern void func_00380A40(P380 *, Q380 *);
+    extern void func_00380A40(u8 *, u8 *);
     extern void func_00380B40(u8 *, u8 *);
-    extern void func_00380A90(P380 *);
-    extern void func_001E7F60(P380 *);
+    extern void func_00380A90(S_80A90 *);
+    extern void func_001E7F60(u8 *);
     u32 t;
 
     if (b->b5 != 0 || a->b1B3 != 0 || b->w2F8 != 0) {
@@ -53,7 +54,7 @@ void func_00380650(P380 *a, Q380 *b)
         t = a->b5;
         a->b5 = t + 1;
         b->w2F8 = b->w2F8 + 1;
-        func_00380A40(a, b);
+        func_00380A40((u8 *)a, (u8 *)b);
     } else {
         a->f34 += a->f5c;
         a->f5c += a->f68;
@@ -63,8 +64,8 @@ void func_00380650(P380 *a, Q380 *b)
             goto fail;
         }
         func_00380B40((u8 *)a, (u8 *)b);
-        func_00380A90(a);
-        func_001E7F60(a);
+        func_00380A90((S_80A90 *)a);
+        func_001E7F60((u8 *)a);
     }
     return;
 fail:

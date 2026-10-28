@@ -161,32 +161,28 @@ void func_0031C6B0(u8 *p) {
     }
 }
 
-/* Provisional: team bounds and volatile store require proof. */
 void func_00263DB0(u8 *p) {
     extern void func_001861B0(u8 *);
-    extern void func_001757E0();
-    extern void func_001E3710();
-    extern void func_0018C4B0();
+    extern s32 func_001757E0(u8 *, s32, s32);
+    extern void func_001E3710(u8 *, u8);
+    extern void func_0018C4B0(u8 *, s32);
     extern u8 *func_001B53E0(u8 *, s32, s32);
-    extern void func_00183D90();
-    extern void func_001863F0();
-    extern s32 func_00175700();
-    extern void func_001843A0();
+    extern void func_00183D90(u8 *);
+    extern void func_001863F0(u8 *);
+    extern s32 func_00175700(u8 *);
+    extern void func_001843A0(u8 *);
     u32 t;
-    u32 offset;
     u8 command;
     if (p[6] == 0) {
         func_001861B0(p);
         t = p[6];
         p[6] = t + 1;
         p[0x1B5] = 0x1D;
-        command = p[0x1B5];
-        *(volatile u8 *)(p + 0x1B5) = command;
+        command = *(volatile u8 *)(p + 0x1B5);
+        p[0x1B5] = command;
         p[0x1B2] = *(u16 *)(p + 0x1C0) = 0;
         *(s32 *)(p + 0x1D8) = 0;
-        offset = p[2] * 2;
-        offset += (u32)D_004C2794;
-        ++*(s16 *)(offset + 0x7C);
+        ((s16 *)(D_004C2794 + 0x7C))[p[2]]++;
         p[0x20D] = 0;
         func_001757E0(p, 0x14, 3);
         func_001E3710(p, 0x16);

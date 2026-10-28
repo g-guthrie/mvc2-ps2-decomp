@@ -66,8 +66,8 @@ typedef struct VT2 VT2;
 typedef struct Inner { VT2 *vt; } Inner;
 struct VT2 { u8 pad[0x20]; void (*fn)(Inner *, s32, void *); };
 typedef struct { s32 pad; Inner *in; } Obj2;
-extern void func_0040EFE0();
-extern void func_0040EFF8();
+extern void func_0040EFE0(void);
+extern void func_0040EFF8(void);
 
 void func_00410C18(s32 a0, u8 *a1) {
     u8 *p;

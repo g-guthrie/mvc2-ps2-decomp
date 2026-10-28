@@ -5,9 +5,12 @@ typedef signed int s32;
 
 extern void (*const jtbl_004C20F8[16])(u8 *, void *) __attribute__((section(".sdata")));
 
-/* Provisional: callback-table ABI and state bounds remain unresolved. */
-void func_003C32F0(u8 *p, u8 *q)
+/* Partner-action state handler, entry of jtbl_00475D10 called as (actor, owner).
+ * Slots 10-11 of jtbl_004C20F8 (D_004C2120) are the handlers it forwards to;
+ * they share the same (u8 *, void *) signature (func_003C33B0, func_003C3430). */
+void func_003C32F0(u8 *p, void *owner)
 {
+    u8 *q = owner;
     u32 t;
     s32 v;
     if (q[5] != 0) {

@@ -54,17 +54,17 @@ void func_00404070(O404 *p){
 
 
 typedef struct { u8 a; u8 b; s8 sel; u8 pad; s32 f4; s32 f8; } S4040;
-extern s32 func_00401920(S4040 *);
+extern s32 func_00401920(s8 *);
 extern void func_003FF620(s32);
 void func_004040F0(S4040 *p){
-    if (func_00401920(p)) {
+    if (func_00401920((s8 *)p)) {
         switch (p->sel) {
         case 0:
         case 1:
-            if (func_00400650(p->f8) == 2) { func_003FF620(p->f4); __asm__ volatile(""); }
+            if (func_00400650(p->f8) == 2) { do { func_003FF620(p->f4); } while (0); }
             break;
         case 2:
-            func_003FF620(p->f4); __asm__ volatile("");
+            do { func_003FF620(p->f4); } while (0);
             break;
         case 3:
         case 4:

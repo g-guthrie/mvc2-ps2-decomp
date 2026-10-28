@@ -57,7 +57,6 @@ void func_001D1A60(u8 *p, u8 *q) {
 typedef struct { f32 value[3]; } PoseVector;
 typedef struct { PoseVector values[3]; } PoseRow;
 extern PoseRow data_f32v3x3_004B1730[12];
-/* Provisional: row selector and interpolation helper linkage need proof. */
 void func_0013DF10(u8 *p) {
     extern void func_0013DB00(u8 *, s32, s32);
     s16 v = *(s16 *)(p + 0x1C);

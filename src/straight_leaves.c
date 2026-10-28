@@ -290,7 +290,7 @@ void func_003AEE90(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; }
 
 void func_003B1A70(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 
-void func_003B1EC0(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
+void func_003B1EC0(u8 *p, u8 *q) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 
 void func_003B2830(u8 *p) { u32 v = p[4]; v += (1); p[4] = v; p[316] = 0; }
 

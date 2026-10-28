@@ -560,3 +560,7 @@ dg1,18,sonnet,medium,data,40,32,645,169959,7.2,
 dg9,18,sonnet,medium,data,40,37,1876,173228,7.8,4 code ptrs symbolized
 nf-wave,19,sonnet,medium,code-fresh,36,12,,,,"mostly residual tails; 3 batches all boundary artifacts"
 nh-wave,19,opus,low,code-hard,24,9,,,,"4 bnel-wall near misses"
+hb-wave5,20,opus,low,code-held,40,31,,,,"held-row honesty fixes; 3 reverted (asm nop busy-wait), VU0/div.s/table-ABI left held"
+nq-wave5,20,opus,low,code-hard,18,12,,,,"recipe 2 static real-body copies landed most; 2 replaced non-matching placeholders"
+dk-wave5,20,sonnet,medium,data,206,32,2110,,,"most dk units are fragments of larger tables or code blobs"
+dm-wave1,20,opus|sonnet,low|medium,data-merge,13,9,5900,,,"whole-table merges; 284 fragment units -> 9 typed record arrays"

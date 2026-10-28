@@ -101,7 +101,8 @@ void func_00161410(P61 *p)
 }
 extern void (*const jtbl_004C20F8[16])(u8 *, void *) __attribute__((section(".sdata")));
 
-/* Provisional: callback-table ABI and state bounds remain unresolved. */
+/* Slot 14 + p[5] of jtbl_004C20F8 (== D_004C2130): func_003C3EA0 / func_003C4090,
+   both defined as void (u8 *, void *) in src/q4_c.c. */
 void func_003C3DE0(u8 *p, u8 *q)
 {
     if (q[5] != 0) {

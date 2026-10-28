@@ -3,8 +3,9 @@ typedef float f32;
 
 extern void func_001551A0(f32 *, unsigned int, f32, int);
 
-/* Provisional: the kind domain and initialization path need proof. */
-void func_001550D0(f32 *a0, int kind, int a2, int a3)
+/* Retail handles kind 0..3 only; any other kind leaves f (in $f20)
+ * uninitialised, exactly as the binary does. */
+void func_001550D0(f32 *pos, int kind, unsigned int n, int type)
 {
     f32 f;
     int i;
@@ -24,5 +25,5 @@ void func_001550D0(f32 *a0, int kind, int a2, int a3)
         break;
     }
     for (i = 0; i < 10; i++)
-        func_001551A0(a0, (unsigned int)a2, f, a3);
+        func_001551A0(pos, n, f, type);
 }

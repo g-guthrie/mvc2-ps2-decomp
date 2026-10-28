@@ -24,26 +24,6 @@ extern void func_001E7F60();
 extern void func_003A0880();
 extern void func_001E3710();
 
-/* Provisional: animation call omits its actor argument in source. */
-void func_001C8EF0(u8 *p) {
-    if (*(*(u8 **)(p + 0x18) + 0x169) != 0x13 && p[0x20] == 1) {
-        u32 t = p[4];
-        p[4] = t + 1;
-        func_001C8FA0(p);
-    } else {
-        func_001C8D60(p);
-        if (p[0x20] != 1) {
-            if ((s8)func_00175700() < 0) {
-                u32 t = p[4];
-                p[4] = t + 1;
-                func_001C8FA0(p);
-            }
-        } else {
-            func_00175700();
-        }
-    }
-}
-
 void func_00372640(u8 *p) {
     s32 r;
     ((void (*)())D_00463E80[p[6]])(p);

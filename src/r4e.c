@@ -8,17 +8,16 @@ typedef signed int s32;
 typedef float f32;
 
 /* 00408078 */
-extern void func_00411288();
+extern void func_00411288(void);
 extern void func_004112B0(void);
-extern void func_0011EB60();
-extern u8 D_004BD598[], D_004BD5B8[];
+extern void func_0011EB60(const char *fmt, ...);
+extern const char D_004BD598[], D_004BD5B8[];
 typedef struct { s32 w0; s32 w4; } S_00408078;
 void func_00408078(S_00408078 *p) {
-  func_00411288((s32)p);
+  func_00411288();
   if (p == 0) { func_0011EB60(D_004BD598); func_004112B0(); return; }
   if (p->w4 == 1) func_0011EB60(D_004BD5B8); else p->w4 = 1;
-  func_004112B0();
-  __asm__ volatile("");
+  do { func_004112B0(); } while (0);
 }
 
 /* 0040D848 */

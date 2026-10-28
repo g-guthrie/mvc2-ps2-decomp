@@ -28,22 +28,18 @@ typedef struct {
     s8 s2B8[0x20];
 } P2E5;
 
-typedef struct {
-    u8 pad[0x106];
-    u16 h106[1];
-} T2E5;
+/* Match-state block; the u16 at +0x106 is indexed by the object's team
+ * (p->b2, 0 or 1), as in src/hk5_b.c and src/m14g.c. */
+extern u8 *D_004C2840;
 
-extern T2E5 *D_004C2840;
-
-/* Provisional: team index bounds and state ownership require proof. */
 void func_002E50C0(P2E5 *p)
 {
     extern void func_001863F0(u8 *);
-    extern void func_002E7740(P2E5 *);
-    extern void func_002E51F0(P2E5 *);
-    extern void func_002E5230(P2E5 *);
-    extern void func_002E52E0(P2E5 *);
-    extern void func_002E5390(P2E5 *);
+    extern void func_002E7740(u8 *);
+    extern void func_002E51F0(void *);
+    extern void func_002E5230(u8 *);
+    extern void func_002E52E0(u8 *);
+    extern void func_002E5390(void *);
     s8 *q = p->s2B8;
 
     p->f34 += p->f5c;
@@ -54,11 +50,11 @@ void func_002E50C0(P2E5 *p)
     if (q[9] != 0 && p->b1B7 != 0) {
         if (*(u16 *)((p->b2 << 1) + (u32)D_004C2840 + 0x106) != 0) {
             if (q[0x11] != 0) {
-                func_002E7740(p);
+                func_002E7740((u8 *)p);
                 return;
             }
         } else {
-            func_002E7740(p);
+            func_002E7740((u8 *)p);
             return;
         }
     }
@@ -66,11 +62,11 @@ void func_002E50C0(P2E5 *p)
         if (p->b20D == 0) {
             func_002E51F0(p);
         } else {
-            func_002E5230(p);
+            func_002E5230((u8 *)p);
         }
     } else {
         if (p->b20D == 0) {
-            func_002E52E0(p);
+            func_002E52E0((u8 *)p);
         } else {
             func_002E5390(p);
         }

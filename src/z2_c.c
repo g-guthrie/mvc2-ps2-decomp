@@ -61,8 +61,10 @@ void func_0035A340(P35A340 *p, u8 *q)
     }
 }
 
-extern u8 D_0045D480[], D_0045D484[];
-/* Provisional: vector-table ownership and selector bounds are unresolved. */
+/* Two {x, y} launch vectors at 0x0045D480, directly before jtbl_0045D490;
+   selected by p[0x1B7] (0 or 1). */
+typedef struct { s32 x; s32 y; } LaunchVec312A70;
+extern LaunchVec312A70 D_0045D480[2];
 void func_00312A70(u8 *p, u8 *owner_unused)
 {
     extern int func_00175700(u8 *);
@@ -76,8 +78,8 @@ void func_00312A70(u8 *p, u8 *owner_unused)
         p[6] = t + 1;
         func_001757E0(p, 0x15, (u8)(p[0x1B7] + 2));
         *(s16 *)(p + 0x1C) = *(s8 *)(p + 0x151);
-        *(f32 *)(p + 0x5C) = 1.6666666269302368f * (f32)*(s32 *)(D_0045D480 + (p[0x1B7] << 3)) / 65536.0f;
-        *(f32 *)(p + 0x68) = 1.6666666269302368f * (f32)*(s32 *)(D_0045D484 + (p[0x1B7] << 3)) / 65536.0f;
+        *(f32 *)(p + 0x5C) = 1.6666666269302368f * (f32)D_0045D480[p[0x1B7]].x / 65536.0f;
+        *(f32 *)(p + 0x68) = 1.6666666269302368f * (f32)D_0045D480[p[0x1B7]].y / 65536.0f;
         if (p[0x1E6] != 0) {
             *(f32 *)(p + 0x5C) = -*(f32 *)(p + 0x5C);
             *(f32 *)(p + 0x68) = -*(f32 *)(p + 0x68);

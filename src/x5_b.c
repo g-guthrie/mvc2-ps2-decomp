@@ -103,9 +103,9 @@ s32 func_001A2610(u32 a, s32 n, u32 c) {
 }
 
 extern u16 *D_004C29DC;
-extern void func_00395890();
-extern s8 func_00175700();
 void func_00394CD0(u8 *p) {
+    extern void func_00395890(u8 *);
+    extern s32 func_00175700(u8 *);
     s32 t;
     s8 v;
     s8 w;

@@ -72,13 +72,28 @@ void func_001D0710(u8 *d, u8 *s) {
     }
 }
 
-extern u8 *D_004C299C;
+typedef struct { s8 b0; u8 b1; u8 b2; u8 b3; u8 pad4[3]; u8 b7; f32 f8, fC; } G;
+extern G *D_004C299C;
+extern s16 D_00464300[];
+
+typedef struct { u8 pad[0x18]; u8 *src; u8 pad1c[0x34 - 0x1C]; f32 f34, f38; } A37;
+
+static void func_0037F2C0(u8 *p) {
+    A37 *a = (A37 *)p;
+    *(f32 *)(p + 0x34) = *(f32 *)(*(u8 **)(p + 0x18) + 0x34);
+    *(f32 *)(p + 0x38) = *(f32 *)(*(u8 **)(p + 0x18) + 0x38);
+    *(f32 *)(p + 0x34) += D_004C299C->f8;
+    *(f32 *)(p + 0x38) += D_004C299C->fC;
+    if (*(s16 *)(p + 0x140) == 0) {
+        a->f34 += 1.6666666269302368f * (f32)D_00464300[D_004C299C->b0];
+    } else {
+        a->f34 -= 1.6666666269302368f * (f32)D_00464300[D_004C299C->b0];
+    }
+}
 
 #define SRC (*(u8 **)(p + 0x18))
-/* Provisional: func_0037F120 needs the actor argument. */
 void func_0037F630(u8 *p) {
-    extern void func_0037F2C0();
-    extern void func_0037F120();
+    extern void func_0037F120(u8 *);
     u32 t = p[4];
     p[4] = t + 1;
     *(W199S *)(p + 0xEC) = *(W199S *)(SRC + 0xEC);
@@ -98,16 +113,16 @@ void func_0037F630(u8 *p) {
     } else {
         p[0x13C] = 0;
         p[0x24] = 0;
-        D_004C299C[7] = 0;
-        D_004C299C[0] = 0;
+        D_004C299C->b7 = 0;
+        D_004C299C->b0 = 0;
         *(s16 *)(p + 0x1C) = 1;
         p[0x22] = 0xC;
         p[0x1B0] = 0x42;
         p[0x1B1] = 0x42;
-        D_004C299C[2] = 1;
-        D_004C299C[3] = 1;
+        D_004C299C->b2 = 1;
+        D_004C299C->b3 = 1;
         func_0037F2C0(p);
-        func_0037F120();
+        func_0037F120(p);
     }
 }
 #undef SRC
