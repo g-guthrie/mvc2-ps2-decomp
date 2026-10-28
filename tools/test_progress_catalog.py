@@ -4,7 +4,7 @@ from pathlib import Path
 
 from tools.objdiff_report import load_matches
 from tools.verify_object import load_matches as load_compiler_matches
-from tools.validate_progress_catalog import validate_source_credit
+from tools.validate_progress_catalog import validate_source_credit, validate_static_copies
 
 from tools.progress_catalog import (
     DATA_BEGIN,
@@ -274,3 +274,39 @@ class DataAlignmentPaddingCreditTest(unittest.TestCase):
             "pad2": {"address": base + 20, "size": 4, "complete": True, "progress": "alignment_padding"},
         }
         self.assertEqual(pc.data_progress(rows), (16, 16))
+
+
+class StaticCopyHonestyTest(unittest.TestCase):
+    def _root(self, directory):
+        root = Path(directory)
+        (root / "config").mkdir()
+        (root / "config/functions.csv").write_text(
+            "name,address,size,end,classification,note\n"
+            "func_00100000,0x00100000,0x10,0x00100010,code,x\n"
+            "gap_00100010,0x00100010,0x10,0x00100020,alignment_padding,x\n"
+            "func_00100020,0x00100020,0x10,0x00100030,code,x\n"
+            "func_00100030,0x00100030,0x10,0x00100040,code,x\n"
+            "func_00100040,0x00100040,0x10,0x00100050,code,x\n"
+        )
+        return root
+
+    def test_predecessor_and_callee_statics_are_allowed(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = self._root(directory)
+            (root / "a.c").write_text(
+                "static void func_00100000(void) { }\n"
+                "static void func_00100040(void) { }\n"
+                "void func_00100020(void) { func_00100040(); }\n"
+            )
+            validate_static_copies({"func_00100020": {"source": "a.c"}}, root)
+
+    def test_unrelated_static_is_rejected(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = self._root(directory)
+            (root / "a.c").write_text(
+                "static void func_00100000(void) { }\n"
+                "static void (*keep)(void) = func_00100000;\n"
+                "void func_00100030(void) { }\n"
+            )
+            with self.assertRaisesRegex(SystemExit, "static copy neither callee"):
+                validate_static_copies({"func_00100030": {"source": "a.c"}}, root)

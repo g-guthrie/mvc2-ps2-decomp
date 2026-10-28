@@ -144,6 +144,61 @@ def validate_source_credit(matches, root=Path(".")):
                 raise SystemExit(f"assembly instruction stream credited as C: {name} ({source})")
 
 
+PADDING_CLASSES = {"padding", "alignment_padding"}
+
+
+def validate_static_copies(matches, root=Path(".")):
+    """Reject static copies of retail functions placed only to steer codegen.
+
+    A static named after a retail function is honest when a credited function
+    (or another honest static) in the same file calls it, or when it belongs to
+    the contiguous run of retail functions immediately before a credited
+    function, in address order. Anything else only primes the allocator."""
+    order = []
+    with (root / "config/functions.csv").open(newline="", encoding="utf-8") as stream:
+        for row in csv.DictReader(stream):
+            order.append((int(row["address"], 0), row["name"],
+                          row.get("classification") in PADDING_CLASSES))
+    order.sort()
+    position = {name: index for index, (_, name, _) in enumerate(order)}
+    by_source = {}
+    for name, row in matches.items():
+        by_source.setdefault(row["source"], set()).add(name)
+    for source, credited in by_source.items():
+        text = (root / source).read_text()
+        statics = set(re.findall(
+            r"^static\s+(?!inline\b)[^;=(]*?\b((?:func|residual)_[0-9A-Fa-f]{8})\s*\(",
+            text, re.MULTILINE,
+        )) - credited
+        if not statics:
+            continue
+        bodies = {}
+        for name, body in function_bodies(text, credited | statics):
+            bodies.setdefault(name, body)
+        honest = set(credited)
+        changed = True
+        while changed:
+            changed = False
+            for name in statics - honest:
+                called = any(
+                    re.search(r"\b" + re.escape(name) + r"\s*\(", bodies.get(other, ""))
+                    for other in honest
+                )
+                follows = False
+                if name in position:
+                    index = position[name] + 1
+                    while index < len(order) and order[index][2]:
+                        index += 1
+                    follows = index < len(order) and order[index][1] in honest
+                if called or follows:
+                    honest.add(name)
+                    changed = True
+        for name in sorted(statics - honest):
+            raise SystemExit(
+                f"static copy neither callee nor address-order predecessor: {name} ({source})"
+            )
+
+
 def main() -> None:
     root = Path(".")
     functions = load_functions(root / "config/functions.csv")
@@ -165,6 +220,7 @@ def main() -> None:
         if not Path(source).is_file():
             raise SystemExit(f"catalog source missing: {source}")
     validate_source_credit(matches)
+    validate_static_copies(matches)
     print(
         f"catalog ok: linked code {complete_code}/{TEXT_SIZE} "
         f"({complete_code * 100.0 / TEXT_SIZE:.4f}%), "

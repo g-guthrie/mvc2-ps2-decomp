@@ -22,24 +22,22 @@ extern f32 D_004B3428[];
 extern f32 D_004B342C[];
 extern f32 D_004B3430[];
 
-static void func_003395E0(u8 *p)
-{
-    s32 t;
+
+static void func_00339770(u8 *p) {
     switch (p[4]) {
-    case 0:
-        *(u32 *)(p + 0x40) = ((u32)(s32)((double)*(s16 *)(p + 0x1C) * 0.5 * 65536.0 / 360.0 + 0.5) & 0xFFFFu);
-        t = *(s16 *)(p + 0x1C) + 1;
-        *(s16 *)(p + 0x1C) = (s16)t;
-        if (!((s16)t < 0x2D0))
-            *(s16 *)(p + 0x1C) = 0;
+    case 0: {
+        double degrees = *(short *)(p+0x1c);
+        *(int *)(p+0x40) = (int)((unsigned int)(int)(0.5 + 65536.0 * degrees / 360.0) & 0xFFFFu);
+        *(short *)(p+0x1c) += 0x3;
+        if (*(short *)(p+0x1c) >= 360) *(short *)(p+0x1c) %= 360;
         break;
+    }
     }
 }
 
 void func_00339820(void)
 {
     extern u8 *func_003DA750();
-    extern void func_00339770();
     u8 *o;
     double k;
     if ((o = func_003DA750(0, 5, 1)) != 0) {

@@ -15,9 +15,10 @@ extern u8 D_00444A00[];
 extern u8 D_00444A20[];
 extern u8 D_00444A30[];
 
-/* Verified copy of retail func_00154E10 (src/z9_k.c), the address-order
-   neighbour three functions before func_001551A0; exact at 0x00154E10 under
-   this file's flags. Kept referenced so MWCC compiles it first. */
+/* Static copies of the real contiguous address-order predecessor run
+   0x00154E10, 0x00154F10, 0x00154FF0, 0x001550D0 (the last calls
+   func_001551A0). Each verifies exact at its own retail address under this
+   file's flags. */
 static void func_00154E10(u8 *p) {
     extern void func_003DAA40(struct Object *);
     extern f32 func_00154710(u8 *, u8 *, s16);
@@ -38,6 +39,84 @@ static void func_00154E10(u8 *p) {
     *(s16 *)(p + 0x1C) += 1;
 }
 static void (*keep_00154E10)(u8 *) = func_00154E10;
+
+
+static void func_00154FF0(u8 *p);
+static void func_00154F10(u8 *p, int k)
+{
+    extern void *func_003DA750(void *, int, int);
+    extern s32 func_00417A40(void);
+    u8 *o;
+    u8 t;
+    t = ((u8)k == 9) ? 0x17 : 0x3B;
+    if ((o = func_003DA750(0, t, 1)) != 0) {
+        o[0x13C] = 0;
+        *(void (**)(u8 *))(o + 0x10) = func_00154FF0;
+        *(u32 *)(o + 0x48) = (u16)((u32)(s32)(65536.0 * (double)(func_00417A40() % 90) / 360.0 + 0.5));
+        *(u32 *)(o + 0xD0) = 0x800408;
+        *(u8 **)(o + 0xC8) = p + 0x88;
+    }
+}
+static void (*keep_00154F10)(u8 *, int) = func_00154F10;
+
+typedef struct { s16 a, b; } SP;
+extern SP D_00444A40[];
+extern f32 D_00444A60[];
+static void func_00154FF0(u8 *p) {
+    extern void func_003DAA40(struct Object *);
+    s32 h;
+    s16 hh;
+    switch (p[4]) {
+    case 0:
+        hh = *(s16 *)(p + 0x1C) + 1;
+        *(s16 *)(p + 0x1C) = hh;
+        if (hh > 2) {
+            u32 t = p[4];
+            p[4] = t + 1;
+            *(s16 *)(p + 0x1C) = 0;
+            p[0x13C] = 1;
+        }
+        break;
+    case 1:
+        h = *(s16 *)(p + 0x1C);
+        if (h > 5) {
+            func_003DAA40((struct Object *)p);
+        } else {
+            *(s16 *)(p + 0xCC) = D_00444A40[h].a;
+            *(void **)(p + 0x84) = D_004C2838;
+            *(f32 *)(p + 0x78) = D_00444A60[*(s16 *)(p + 0x1C)];
+            *(f32 *)(p + 0x7C) = *(f32 *)(p + 0x78);
+            *(f32 *)(p + 0x80) = *(f32 *)(p + 0x78);
+            *(s16 *)(p + 0x1C) += 1;
+        }
+        break;
+    }
+}
+
+void func_001551A0(f32 *pos, u32 n, f32 scale, int type);
+static void func_001550D0(f32 *pos, int kind, unsigned int n, int type)
+{
+    f32 f;
+    int i;
+
+    switch (kind) {
+    case 0:
+        f = 10.0f;
+        break;
+    case 1:
+        f = 20.0f;
+        break;
+    case 2:
+        f = 30.0f;
+        break;
+    case 3:
+        f = 40.0f;
+        break;
+    }
+    for (i = 0; i < 10; i++)
+        func_001551A0(pos, n, f, type);
+}
+static void (*keep_001550D0)(f32 *, int, unsigned int, int) = func_001550D0;
 
 void func_001551A0(f32 *pos, u32 n, f32 scale, int type) {
     extern void *func_003DA750(void *, int, int);

@@ -11,41 +11,34 @@ extern s32 D_004C283C[2];
 extern V3 D_004B7970;
 extern f32 D_004B7984[];
 
-extern V3 D_004B8240;
-extern f32 D_004B8254[];
+/* MW 3.0: ./try30.sh SRC "-O3 -Op -sdatathreshold 8"
+   func_00333950 is the real function immediately before func_00333A00 in
+   retail address order (verified exact at its own address). */
+extern double func_00119058(f32);
 
-static void func_003395E0(u8 *p)
-{
-    s32 t;
-    switch (p[4]) {
-    case 0:
-        *(u32 *)(p + 0x40) = ((u32)(s32)((double)*(s16 *)(p + 0x1C) * 0.5 * 65536.0 / 360.0 + 0.5) & 0xFFFFu);
-        t = *(s16 *)(p + 0x1C) + 1;
-        *(s16 *)(p + 0x1C) = (s16)t;
-        if (!((s16)t < 0x2D0))
-            *(s16 *)(p + 0x1C) = 0;
-        break;
+typedef struct P {
+    u8 pad0[0x1C];
+    s16 h1c;
+    u8 pad1[0x40 - 0x1E];
+    u32 w40;
+    u32 w44;
+    u8 pad2[0x54 - 0x48];
+    f32 f54;
+    u8 pad3[0xD4 - 0x58];
+    s32 wd4;
+} P;
+
+static s32 func_00333950(P *p) {
+    p->h1c += 1;
+    p->w44 += (u16)((u32)(s32)(0.5 + 65536.0 * func_00119058(p->f54 * (f32)p->h1c) / 360.0));
+    if (p->h1c > p->wd4) {
+        p->h1c = 0;
+        return 1;
     }
+    return 0;
 }
 
-
-static void func_0033A4B0(void)
-{
-    extern u8 *func_003DA750();
-    extern void func_0033A590();
-    u8 *o;
-    double k;
-    if ((o = func_003DA750(0, 6, 1)) != 0) {
-        o[0x13C] = 1;
-        *(void **)(o + 0x10) = (void *)func_0033A590;
-        *(s16 *)(o + 0xCC) = 1;
-        *(s32 *)(o + 0x84) = D_004C283C[0];
-        *(s32 *)(o + 0xD0) = 0x807;
-        *(V3 *)(o + 0x34) = D_004B8240;
-        k = 65536.0;
-        *(s32 *)(o + 0x44) = (u32)(s32)(0.5 + k * (double)D_004B8254[0] / 360.0) & 0xFFFF;
-    }
-}
+static s32 (*keep_00333950)(P *) = func_00333950;
 
 void func_00333A00(void)
 {

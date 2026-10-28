@@ -31,10 +31,6 @@ void func_0039C790(u8 *p) {
 
 
 
-extern s16 D_004C1F50;
-static void func_003AE370(u8 *p) {
-    *(s16 *)(p + 30) = (&D_004C1F50)[*(s32 *)(p + 208)];
-}
 
 
 
