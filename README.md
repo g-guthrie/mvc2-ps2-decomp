@@ -12,7 +12,7 @@ for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
 
 | | Matched | Total | |
 | --- | ---: | ---: | ---: |
-| Code | 2,921,924 bytes | 3,293,696 bytes | **88.71%** |
+| Code | 2,923,388 bytes | 3,293,696 bytes | **88.76%** |
 | Initialized data | 621,565 bytes | 648,064 bytes | **95.91%** |
 | Catalog spans | 19,160 | 20,474 | |
 
