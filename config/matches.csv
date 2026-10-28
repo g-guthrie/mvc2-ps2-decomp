@@ -13919,7 +13919,7 @@ func_00380770,0x00380770,0xD8,src/y7_h.c,complete
 func_002FAAC0,0x002FAAC0,0xDC,src/y7_h.c,complete
 func_002ED4C0,0x002ED4C0,0xDC,src/y7_h.c,complete
 func_0027E920,0x0027E920,0xE0,src/y7_i.c,complete
-func_0014FFF0,0x0014FFF0,0xE4,src/y7_k.c,complete
+func_0014FFF0,0x0014FFF0,0xE4,src/y7_k.c,placeholder
 func_001C2E80,0x001C2E80,0xE8,src/y7_l.c,complete
 func_00165900,0x00165900,0xE8,src/y7_l.c,complete
 func_0026A2E0,0x0026A2E0,0xE8,src/y7_m.c,complete

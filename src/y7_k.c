@@ -16,6 +16,8 @@ extern R24 D_004D157C[];
 extern struct { u8 pad[4]; s8 f4; u8 pad2; s8 f6; } *D_004C2840;
 extern s32 D_004C27FC;
 
+/* Provisional: the shared native helper has one argument; this local copy
+ * currently uses extra arguments to preserve the caller register layout. */
 static void func_0014E770(u8 *a, s32 b, s32 c, u8 *d) {
     u8 *q = *(u8 **)(a + 24);
     if (*(s32 *)(q + 220) != 0) {
