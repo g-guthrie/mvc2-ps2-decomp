@@ -23880,4 +23880,21 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/s7d_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/s7d_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/s7d_b.o" private/SLUS_204.86.rom --source src/s7d_b.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/s7h_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/s7h_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s7h_a.o" private/SLUS_204.86.rom --source src/s7h_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/s7h_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/s7h_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s7h_b.o" private/SLUS_204.86.rom --source src/s7h_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/s7h_c.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/s7h_c.o"
+"${OBJCOPY:-mipsel-linux-gnu-objcopy}" \
+    --redefine-sym @89=jtbl_004B7550 \
+    "$BUILD/s7h_c.o" "$BUILD/s7h_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s7h_c.o" private/SLUS_204.86.rom --source src/s7h_c.c
+mkdir -p "build/warm/s7h_d" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sa38_c.c src/s7h_d.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/s7h_d" && \
+    mv "build/warm/s7h_d/s7h_d.o" "$BUILD/s7h_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s7h_d.o" private/SLUS_204.86.rom --source src/s7h_d.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
