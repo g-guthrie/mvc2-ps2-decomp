@@ -1178,7 +1178,7 @@ void func_0041AA90(u8 *p) { jtbl_004C2520[p[5]](p); }
 
 void func_001FF1C0(u8 *p) { jtbl_004500B0[p[7]](p); }
 
-extern DispatchFn jtbl_004BF9B0[] __attribute__((section(".sdata")));
+extern ContextByteCallback jtbl_004BF9B0[] __attribute__((section(".sdata")));
 extern DispatchFn const jtbl_004BF968[2] __attribute__((section(".sdata")));
 extern DispatchFn jtbl_004C07D8[] __attribute__((section(".sdata")));
 extern DispatchFn jtbl_004BFBE0[] __attribute__((section(".sdata")));
@@ -1191,7 +1191,7 @@ extern DispatchFn jtbl_004C0178[] __attribute__((section(".sdata")));
 extern DispatchFn jtbl_004C0708[] __attribute__((section(".sdata")));
 extern ContextDispatchFn jtbl_004C1398[] __attribute__((section(".sdata")));
 extern DispatchFn jtbl_004C16F8[] __attribute__((section(".sdata")));
-void func_001BEAE0(u8 *p) { jtbl_004BF9B0[p[5]](p); }
+void func_001BEAE0(u8 *p, u8 *owner) { jtbl_004BF9B0[p[5]](p, owner); }
 void func_001B8290(u8 *p) { jtbl_004BF968[p[32]](p); }
 void func_002753C0(u8 *p) { jtbl_004C07D8[p[32]](p); }
 void func_001F0490(u8 *p) { jtbl_004BFBE0[p[7]](p); }

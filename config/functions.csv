@@ -4276,7 +4276,8 @@ func_001BE8F0,0x001BE8F0,0x20,0x001BE910,code,matching-c-head-split
 func_001BE910,0x001BE910,0x194,0x001BEAA4,code,verified-complete-c-function
 func_001BEAB0,0x001BEAB0,0x24,0x001BEAD4,code,matching-c-head-split
 func_001BEAE0,0x001BEAE0,0x1C,0x001BEAFC,code,verified-complete-c-function
-residual_001BEAFC,0x001BEAFC,0x64,0x001BEB60,assembly_residual,native-suffix-after-verified-c-body
+residual_001BEAFC,0x001BEAFC,0x4,0x001BEB00,assembly_residual,native-padding-before-indirect-callback
+func_001BEB00,0x001BEB00,0x60,0x001BEB60,code,verified-indirect-callback-entry
 func_001BEB60,0x001BEB60,0x64,0x001BEBC4,code,spimdisasm-explicit-size-before-first-data
 func_001BEBD0,0x001BEBD0,0x150,0x001BED20,code,spimdisasm-explicit-size-before-first-data
 func_001BED20,0x001BED20,0x90,0x001BEDB0,code,spimdisasm-explicit-size-before-first-data

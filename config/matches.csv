@@ -16949,7 +16949,7 @@ func_003A50C0,0x003A50C0,0x20,src/composite_dispatch_heads.c,complete
 func_003A6E70,0x003A6E70,0x20,src/composite_dispatch_heads.c,complete
 func_003B11F0,0x003B11F0,0x20,src/composite_dispatch_heads.c,complete
 func_003B39A0,0x003B39A0,0x20,src/composite_dispatch_heads.c,complete
-func_001BEAE0,0x001BEAE0,0x1C,src/composite_gp_dispatch_heads.c,complete
+func_001BEAE0,0x001BEAE0,0x1C,src/composite_gp_dispatch_heads.c,placeholder
 func_001B8290,0x001B8290,0x1C,src/composite_gp_dispatch_heads.c,complete
 func_002753C0,0x002753C0,0x1C,src/composite_gp_dispatch_heads.c,complete
 func_001F0490,0x001F0490,0x1C,src/composite_gp_dispatch_heads.c,complete
@@ -19392,3 +19392,4 @@ func_003A4470,0x003A4470,0x11C,src/actor_inherit_start_003a4470.c,placeholder
 func_0037CF70,0x0037CF70,0x160,src/actor_inherit_start_0037cf70.c,placeholder
 func_003C6D80,0x003C6D80,0x12C,src/actor_inherit_start_003c6d80.c,placeholder
 func_001A4020,0x001A4020,0x118,src/actor_inherit_start_001a4020.c,placeholder
+func_001BEB00,0x001BEB00,0x60,src/actor_position_reset_001beb00.c,placeholder
