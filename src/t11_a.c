@@ -12,7 +12,7 @@ extern s32 func_0016B240();
 extern void func_0016B0C0();
 extern s32 func_00174170();
 extern void func_00164E90();
-extern s32 func_00175670();
+extern int func_00175670(u8 *);
 extern void func_001B93D0();
 extern void func_001754A0();
 extern void func_0035E760(u8 *, u8 *);
@@ -180,7 +180,7 @@ void func_001B91D0(u8 *p) {
         func_001B93D0(p);
         return;
     }
-    if ((s8)func_00175670() < 0) {
+    if ((s8)func_00175670(p) < 0) {
         p[0x13C] = 0;
     }
     p[0x24] = 0;

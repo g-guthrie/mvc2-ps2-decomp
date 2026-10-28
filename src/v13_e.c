@@ -81,10 +81,10 @@ typedef struct FC {
 } FC;
 
 void func_001AF770(FC *p) {
-    extern void func_00175670();
+    extern int func_00175670(u8 *);
     extern void func_001AFC90();
     if (p->b5 == 0) {
-        func_00175670();
+        func_00175670((u8 *)p);
         p->f38 += p->f60;
         p->f60 += p->f6c;
         if (p->f38 <= p->q->f430) {

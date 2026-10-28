@@ -9,10 +9,10 @@ typedef struct { f32 x, y, z; } V3;
 
 
 void func_002D33E0(u8 *p) {
-    extern void func_001820A0();
+    extern void func_001820A0(u8 *);
     extern u32 D_004C0F80[2];
     if (p[0x20D] == 2) {
-        func_001820A0();
+        func_001820A0(p);
         if (*(f32 *)(p + 0x38) < *(f32 *)(p + 0x430)) {
             *(f32 *)(p + 0x38) = *(f32 *)(p + 0x430);
         }

@@ -129,7 +129,7 @@ s32 func_0022CD30(u8 *p) {
 }
 
 extern void func_002C40D0();
-extern void func_001820A0();
+extern void func_001820A0(u8 *);
 extern void (*D_004582A0[])(u8 *);
 
 void func_00222950(u8 *p) {
@@ -154,7 +154,7 @@ void func_00222950(u8 *p) {
 
 void func_0029F690(u8 *p) {
     if (p[0x20D] == 2) {
-        func_001820A0();
+        func_001820A0(p);
         if (*(f32 *)(p + 0x38) < *(f32 *)(p + 0x430)) *(f32 *)(p + 0x38) = *(f32 *)(p + 0x430);
     }
     D_004582A0[p[6]](p);

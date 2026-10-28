@@ -54,7 +54,7 @@ extern s32 func_0018AB10();
 extern void func_0018F6B0();
 extern u8 *D_004C2710;
 extern void func_001CCB50();
-extern void func_00175670();
+extern int func_00175670(u8 *);
 extern void func_001754A0();
 extern void func_001E3210();
 extern void func_0039E450();
@@ -334,7 +334,7 @@ void func_001CC1B0(u8 *p) {
         s8 *q = (s8 *)(D_004C2710 + 2);
         s8 v;
         if (*q == (v = *(s8 *)(*(u8 **)(p + 0x18) + 0x150))) {
-            func_00175670();
+            func_00175670(p);
         } else {
             *q = v;
             func_001754A0(p, 0x1B, D_004C2710[2]);
