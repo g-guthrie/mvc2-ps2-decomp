@@ -23663,4 +23663,32 @@ MWCIncludes=$(dirname "$MWCCPS2_30B22") "$WIBO" "$MWCCPS2_30B22" \
     src/mw30b22_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/mw30b22_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/mw30b22_a.o" private/SLUS_204.86.rom --source src/mw30b22_a.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/r4_8_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/r4_8_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r4_8_a.o" private/SLUS_204.86.rom --source src/r4_8_a.c
+mkdir -p "build/warm/r4_11_a" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/q6_ad.c src/r4_11_a.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/r4_11_a" && \
+    mv "build/warm/r4_11_a/r4_11_a.o" "$BUILD/r4_11_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r4_11_a.o" private/SLUS_204.86.rom --source src/r4_11_a.c
+mkdir -p "build/warm/r4_19_b" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nf10_b.c src/r4_19_b.c -c -lang c -i src -O3 -sdatathreshold 0 -fp off -o "build/warm/r4_19_b" && \
+    mv "build/warm/r4_19_b/r4_19_b.o" "$BUILD/r4_19_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r4_19_b.o" private/SLUS_204.86.rom --source src/r4_19_b.c
+
+"$WIBO" "$SNCPP" -P src/r4_2_a.c "$BUILD/r4_2_a.i"
+"$WIBO" "$EE29CC1" "$BUILD/r4_2_a.i" -O2 -G0 -ffunction-sections  -quiet -o "$BUILD/r4_2_a.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r4_2_a.o" "$BUILD/r4_2_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r4_2_a.o" private/SLUS_204.86.rom --source src/r4_2_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/r4_23_e.c -c -lang c -i src -O3,p -Op -sdatathreshold 8 -o "$BUILD/r4_23_e.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r4_23_e.o" private/SLUS_204.86.rom --source src/r4_23_e.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/r4_22_b.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/r4_22_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r4_22_b.o" private/SLUS_204.86.rom --source src/r4_22_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/r4_22_c.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/r4_22_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r4_22_c.o" private/SLUS_204.86.rom --source src/r4_22_c.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

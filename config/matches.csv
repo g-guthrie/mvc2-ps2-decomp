@@ -19950,3 +19950,10 @@ func_0040DA50,0x0040DA50,0xBC,src/finish_runtime_entry_0040D8F8.c,complete
 func_0011E120,0x0011E120,0xFC,src/newlib_mprec_helpers.c,complete
 func_003F78B0,0x003F78B0,0x40,src/sb28_b.c,complete
 func_00404178,0x00404178,0xC4,src/stream_player_states_004035D8.c,complete
+func_0013DAA0,0x0013DAA0,0x60,src/r4_8_a.c,complete
+func_0015B730,0x0015B730,0xBC,src/r4_11_a.c,complete
+func_00260070,0x00260070,0x134,src/r4_19_b.c,complete
+func_001050C8,0x001050C8,0x194,src/r4_2_a.c,complete
+func_00373130,0x00373130,0x274,src/r4_23_e.c,complete
+residual_00358080,0x00358080,0x120,src/r4_22_b.c,complete
+func_003581A0,0x003581A0,0x1F8,src/r4_22_c.c,complete
