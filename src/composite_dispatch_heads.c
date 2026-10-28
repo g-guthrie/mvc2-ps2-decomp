@@ -8,6 +8,7 @@ typedef unsigned short u16;
 typedef unsigned int u32;
 typedef void (*DispatchFn)(u8 *);
 typedef void (*ContextDispatchFn)(u8 *, void *);
+typedef void (*OwnerByteCallback)(u8 *, u8 *);
 
 extern int func_001757E0(u8 *, int, int);
 
@@ -1270,7 +1271,7 @@ extern DispatchFn jtbl_00472840[];
 extern DispatchFn jtbl_00472AE8[];
 extern DispatchFn jtbl_00472AF8[];
 extern void (*const jtbl_00472CD0[])(u8 *, u8 *, u8 *);
-extern DispatchFn jtbl_00472D20[];
+extern OwnerByteCallback jtbl_00472D20[];
 extern DispatchFn jtbl_00472D80[];
 extern DispatchFn jtbl_00472D90[];
 extern DispatchFn jtbl_00472E10[];
@@ -1287,7 +1288,6 @@ extern DispatchFn jtbl_00473B40[];
 extern DispatchFn jtbl_00473C70[];
 extern DispatchFn jtbl_00473CC0[];
 extern DispatchFn jtbl_00473D00[];
-typedef void (*OwnerByteCallback)(u8 *, u8 *);
 extern OwnerByteCallback jtbl_00473D10[];
 extern DispatchFn jtbl_00473D90[];
 extern DispatchFn jtbl_00473DB0[];
@@ -3990,7 +3990,7 @@ void func_003A12E0(u8 *p) { jtbl_00472AF8[p[4]](p); }
 
 void func_003A3B70(u8 *p, u8 *owner, u8 *work) { jtbl_00472CD0[p[5]](p, owner, work); }
 
-void func_003A4590(u8 *p) { jtbl_00472D20[p[5]](p); }
+void func_003A4590(u8 *p, void *owner) { jtbl_00472D20[p[5]](p, (u8 *)owner); }
 
 void func_003A54C0(u8 *p) { jtbl_00472D80[p[4]](p); }
 

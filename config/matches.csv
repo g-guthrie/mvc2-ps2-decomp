@@ -3589,7 +3589,7 @@ func_003A12E0,0x003A12E0,0x20,src/composite_dispatch_heads.c,complete
 func_003A15D0,0x003A15D0,0x8,src/tail_leaves.c,complete
 func_003A3B70,0x003A3B70,0x20,src/composite_dispatch_heads.c,complete
 func_003A4440,0x003A4440,0x24,src/argument_dispatch_heads.c,complete
-func_003A4590,0x003A4590,0x20,src/composite_dispatch_heads.c,complete
+func_003A4590,0x003A4590,0x20,src/composite_dispatch_heads.c,placeholder
 func_003A48C0,0x003A48C0,0x8,src/tail_leaves.c,complete
 func_003A4B50,0x003A4B50,0x24,src/argument_dispatch_heads.c,complete
 func_003A4E40,0x003A4E40,0x8,src/tail_leaves.c,complete
