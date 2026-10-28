@@ -7,9 +7,9 @@ typedef signed int s32;
 
 typedef struct { u8 pad[0x18]; s8 b18; u8 pad2[0x10]; s8 b29; } G2840;
 extern G2840 *D_004C2840;
-extern u8 D_0043E8E0[];
+extern u8 D_0043E8E0[16];
 
-/* Provisional: the indexed sound lookup spans separate data owners. */
+/* D_0043E8E0 is a 16-entry u8 table (0x0043E8E0..0x0043E8EF; jtbl_0043E8F0 follows), indexed by p[0x14C] & 0xF. */
 void func_00133CE0(u8 *p, u8 *q)
 {
     extern void func_001347D0(u8 *, u8 *);

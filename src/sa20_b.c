@@ -10,7 +10,8 @@ typedef struct { s32 w[0x31]; } B3c;
 typedef struct { u8 pad[0x7C]; s16 f7c[2]; } G3c;
 extern G3c *D_004C2794;
 
-/* Provisional: callback-table ABI and state bounds remain unresolved. */
+/* State handler slot 4 of jtbl_00475DD0 (dispatched by func_003C3B00 as void (u8 *, u8 *)).
+   D_004C2794->f7c is the per-side s16 counter pair indexed by a[2]. */
 void func_003C3B80(u8 *a, u8 *b) {
     extern int func_001757E0(u8 *, s32, s32);
     extern void func_003C3DE0(u8 *, u8 *);

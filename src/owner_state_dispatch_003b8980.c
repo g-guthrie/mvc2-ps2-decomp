@@ -1,4 +1,4 @@
-/* Provisional: state bounds, callback table ownership and owner lifetime remain open. */
+/* jtbl_00474320 holds the three void(u8 *) state handlers func_003B8A10, func_003B8AB0, func_003B8AF0; p[5] selects one of those three states. */
 typedef unsigned char u8;
 typedef void (*ActorCallback)(u8 *);
 extern const ActorCallback jtbl_00474320[3];

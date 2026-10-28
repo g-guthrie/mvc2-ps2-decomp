@@ -7,10 +7,9 @@ typedef signed int s32;
 typedef float f32;
 typedef struct { u8 pad[0xD0]; s8 b[8]; } OBc;
 
-/* Provisional: func_003A2AE0 requires the actor argument. */
 void func_003A28F0(u8 *p, u8 *q)
 {
-    extern void func_003A2AE0();
+    extern void func_003A2AE0(u8 *, u8 *);
     extern void func_001757E0(u8 *, s32, s32);
     extern s32 func_00175700(u8 *);
     extern void func_003DAA40(u8 *);
@@ -20,7 +19,7 @@ void func_003A28F0(u8 *p, u8 *q)
     s8 r;
     u32 t;
     if (p[4] == 0) {
-        func_003A2AE0();
+        func_003A2AE0(p, q);
         p[0x13C] = 1;
         *(s8 *)(p + 0x24) = *(s8 *)(q + 0x24);
         *(s8 *)(p + 0x31) = -4;

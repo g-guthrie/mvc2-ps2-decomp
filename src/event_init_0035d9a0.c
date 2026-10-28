@@ -1,4 +1,3 @@
-/* Provisional: phase selector and parent callback table ABI remain unresolved. */
 #include "actor_inherited_state.h"
 typedef unsigned char u8;
 typedef signed char s8;

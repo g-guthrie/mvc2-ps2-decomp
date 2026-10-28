@@ -1,12 +1,11 @@
-/* Provisional: resource record extent, selector bounds, and owner lifetime remain unresolved. */
 typedef struct { unsigned char bytes[28]; } Frame;
-typedef unsigned char u8; typedef unsigned short u16; typedef unsigned int u32;
+typedef unsigned char u8; typedef unsigned short u16; typedef unsigned int u32; typedef signed int s32;
 extern int func_00175700(u8 *);
-extern int func_001864A0(u8 *);
+extern s32 func_001864A0(u8 *);
 extern void func_0018F730(u8 *);
 extern void func_001E3A10(u8 *);
 extern void func_00158C70(u8 *, int);
-extern int func_00186CE0(u8 *, u8);
+extern s32 func_00186CE0(u8 *, u8);
 extern u8 D_004F1F45, D_004F1F46;
 void func_00180090(u8 *p) {
     func_00175700(p);

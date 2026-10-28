@@ -1,4 +1,5 @@
-/* Provisional: native callback ownership and selector bounds remain unresolved. */
+/* Same phase-reset body as func_0030A2D0 (src/actor_scale_animation_updates.c),
+ * then tail-calls func_0030A590 (src/actor_event_animation_phase_0030a590.c). */
 typedef unsigned char u8;
 typedef float f32;
 extern u8 *D_004C28DC __attribute__((section(".sdata")));

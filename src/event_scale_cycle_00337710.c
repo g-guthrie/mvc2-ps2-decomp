@@ -1,4 +1,5 @@
-/* Placeholder: entry path, bounds, and DATA callback contracts remain unproved. */
+/* One-argument state callback: dispatched as jtbl_004C18D8[p[4]](p) in func_003376F0 (table words at 0x004C18D8/0x004C18E0).
+ * Starts after the dispatcher's alignment nop and ends at its own jr ra. */
 typedef unsigned char u8; typedef signed short s16;
 void func_00337710(u8 *p) {
  s16 *timer=(s16 *)(p+0x1c);

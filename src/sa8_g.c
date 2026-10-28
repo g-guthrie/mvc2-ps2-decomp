@@ -6,14 +6,13 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 
-extern u8 D_00463BB0[];
+extern u8 D_00463BB0[59]; /* defined in src/data/data_actor_state_offsets_00463BB0.c */
 
-/* Provisional: parent table ABI and actor context bounds remain unresolved. */
 void func_0036E750(u8 *p, u8 *q, s32 *r)
 {
-    extern void func_0036EA50(u8 *, u8 *, u8 *);
-    extern void func_0036EAA0(u8 *, u8 *, u8 *);
-    extern void func_0036EAE0(u8 *, u8 *, u8 *);
+    extern void func_0036EA50(u8 *, u8 *, s32 *);
+    extern void func_0036EAA0(u8 *, u8 *, s32 *);
+    extern s32 func_0036EAE0(u8 *, u8 *, u8 *);
     extern int func_00175700(u8 *);
     extern int func_001757E0(u8 *, s32, s32);
     extern void func_001E7F60(u8 *);
@@ -25,11 +24,11 @@ void func_0036E750(u8 *p, u8 *q, s32 *r)
     v = *(s8 *)(p + 0x1B2);
     if (v < 0 && (v & 0x80) != 0) {
         p[0x1B2] = v | -0x80;
-        func_0036EA50(p, q, (u8 *)r);
+        func_0036EA50(p, q, r);
         if (r[1] != 0) {
             t = p[5];
             p[5] = t + 1;
-            func_0036EAA0(p, q, (u8 *)r);
+            func_0036EAA0(p, q, r);
             *(s32 *)(p + 0x5C) = 0;
             *(s32 *)(p + 0x60) = 0;
             *(s32 *)(p + 0x68) = 0;

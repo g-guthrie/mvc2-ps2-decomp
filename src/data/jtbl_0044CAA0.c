@@ -19,7 +19,7 @@ extern void func_001C2DB0(u8 *);
 extern void func_001C31A0(u8 *);
 extern void func_001C32F0(u8 *);
 extern void func_001C3430(u8 *);
-extern void func_001C36E0(u8 *);
+extern void func_001C36E0(u8 *,u8 *);
 extern void func_001C39C0(u8 *);
 extern void func_001C39E0(u8 *);
 
@@ -48,7 +48,7 @@ const OwnerDistanceModeTables jtbl_0044CAA0 = {{
     func_001C2840,
     func_001C2520,
     func_001C3430,
-    func_001C36E0,
+    (Mvc2StateCallback)func_001C36E0,
     func_001C3430,
     func_001C2960,
     func_001C32F0,

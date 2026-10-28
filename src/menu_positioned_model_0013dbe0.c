@@ -1,4 +1,5 @@
-/* Provisional: selector reachability, scale aliasing and object lifetime need proof. */
+/* Spawn a menu model object (type 6) at pose row selector+group*6 of
+   data_f32v3x3_004B1730[12]; scale copies the f32[3] unit vector as one V3. */
 #pragma padloop on
 typedef unsigned char u8;typedef short s16;typedef unsigned int u32;
 typedef struct {float value[3];} V3;

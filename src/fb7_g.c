@@ -13,25 +13,24 @@ extern u8 D_004B1220[];
 extern u8 D_004B1221[];
 extern s8 D_0043F960[][8];
 extern P2g D_0043F760[];
-extern P3g D_0043F1C0[];
+extern P3g D_0043F1C0[24];
 extern u8 *D_004C2924;
 extern u8 *D_004C2830;
 
-/* Provisional: helper ABI and dependent data bounds require reconciliation. */
 void func_00136DA0(s32 a) {
-    extern u8 *func_003DA750(s32, s32, s32);
-    extern void func_001371E0();
+    extern void *func_003DA750(void *, s32, s32);
+    extern void func_001371E0(u8 *);
     extern void func_0032DE90(u8 *, s16, f32, f32);
     extern void func_001377F0(u8 *);
     extern s32 func_00417A40(void);
-    extern void func_00137140(u8 *, s32);
+    extern void func_00137140(u8 *, u32);
     extern void func_001378C0(u8 *);
     extern void func_00137910(u8 *);
-    extern void func_0013AEA0(u8 *);
+    extern u8 *func_0013AEA0(u8 *);
     u8 *o;
     s32 idx, r;
     if (a >= 0x18 && a <= 0x1A) return;
-    if ((o = func_003DA750(0, 6, 1)) == 0) return;
+    if ((o = (u8 *)func_003DA750(0, 6, 1)) == 0) return;
     if (a >= 0x1B) o[0x20] = a - 3;
     else o[0x20] = a;
     o[0x13C] = 1;

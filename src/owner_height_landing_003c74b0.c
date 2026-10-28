@@ -1,4 +1,6 @@
-/* Placeholder: owner path, phase bounds, and DATA callback signatures remain unproved. */
+/* Entry 36 of jtbl_00476010, reached from func_003C7480 as (p, owner) via
+ * jtbl_00476010[36 + p[5]](p, q); bounds 0x003C74B0..0x003C7570 (own prologue,
+ * jr ra, next function at 0x003C7570). */
 typedef unsigned char u8;
 typedef unsigned int u32;
 extern int func_001757E0(u8 *, int, int);

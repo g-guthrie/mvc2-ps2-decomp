@@ -1,9 +1,10 @@
-/* Placeholder: actor ownership, script bounds, and DATA callback type remain unproved. */
+/* Script handler from the gMvc2Dispatch_00445A20 table; same s32 (actor, cursor)
+   signature as its matched siblings func_00163F90 and func_00166630. Scans three
+   (value, threshold) byte pairs and advances the cursor by 7. */
 #pragma padloop on
 typedef unsigned char u8; typedef unsigned short u16;
 #include "script_actor_view.h"
 extern void func_0016B0C0(SA37_J0 *,SA37_R *,int);
-extern int func_00174170(void);
 extern short D_004D1802;
 int func_00166FC0(u8 *actor,u8 *cursor) {
  SA37_J0 *p=(SA37_J0 *)actor; SA37_R *script=(SA37_R *)cursor;

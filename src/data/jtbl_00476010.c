@@ -22,7 +22,7 @@ extern void func_003C71D0(u8 *);
 extern void func_003C72B0(u8 *);
 extern void func_003C7360(u8 *);
 extern void func_003C7480(u8 *);
-extern void func_003C74B0(u8 *);
+extern void func_003C74B0(u8 *, void *);
 extern void func_003C7570(u8 *);
 extern void func_003C76C0(u8 *);
 extern void func_003C7740(u8 *);
@@ -73,7 +73,7 @@ const Mvc2StateCallback jtbl_00476010[50] = {
     func_003C7480,
     func_003C80A0,
     func_003C80B0,
-    func_003C74B0,
+    (Mvc2StateCallback)func_003C74B0,
     func_003C7570,
     func_003C76C0,
     func_003C7740,

@@ -2,21 +2,21 @@
 typedef unsigned char u8;
 typedef unsigned short u16;
 typedef signed short s16;
-typedef unsigned int Address;
 typedef struct {float x,y;u8 opaque[8];} Vertex;
 typedef struct {Vertex v[4];} Quad;
 extern u8 D_004771D0[];
-/* This native GP slot contains a 32-bit address. */
-extern Address *D_004C2794 __attribute__((section(".sdata")));
+/* D_004C2794: $gp pointer to a table of object pointers, three slots per player. */
+extern u8 **D_004C2794 __attribute__((section(".sdata")));
 extern u8 *D_004C2840 __attribute__((section(".sdata")));
 extern s16 D_004F7F7C,D_004F7F7A;
 extern float D_004F7FD0,D_004F7FD4;
 extern void func_00417AE0(int,int *);
-/* Provisional: player selector, resource extent, and nonzero count need proof. */
+/* D_004F7F7C is the 1-based player number; resource[0] is the entry count and
+   resource+2 holds u16 offsets to each entry, read cyclically from D_004F7F7A. */
 void func_003D3B40(void)
 {
  u8 *graphics=D_004771D0;
- u8 *resource=*(u8**)((u8*)D_004C2794[(D_004F7F7C-1)*3+6]+0x1AC);
+ u8 *resource=*(u8**)(D_004C2794[(D_004F7F7C-1)*3+6]+0x1AC);
  s16 count=resource[0];
  int row=0;
  int index=D_004F7F7A;

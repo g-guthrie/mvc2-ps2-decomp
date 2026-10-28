@@ -69,7 +69,7 @@ void func_003654D0(u8 *p)
     func_001E7F60(p);
 }
 
-void func_0036EAA0(u8 *p, u8 *q)
+void func_0036EAA0(u8 *p, u8 *q, s32 *state)
 {
     u8 *s = *(u8 **)(p + 452);
     s[523] = 194;

@@ -1,4 +1,3 @@
-/* Provisional: native callback ownership and selector bounds remain unresolved. */
 typedef unsigned char u8;typedef float f32;
 void func_003363D0(u8 *p){
  p[7]++;

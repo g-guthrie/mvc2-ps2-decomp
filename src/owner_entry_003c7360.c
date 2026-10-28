@@ -1,4 +1,3 @@
-/* Provisional: owner lifetime, callback ABI, and selector bounds remain unresolved. */
 #include "actor_inherited_state.h"
 typedef unsigned char u8; typedef signed char s8; typedef short s16; typedef unsigned int u32;
 typedef struct {float x,y,z;} V3;

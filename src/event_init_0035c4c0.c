@@ -1,4 +1,3 @@
-/* Provisional: actor side bounds and event ownership require proof. */
 #include "actor_inherited_state.h"
 typedef unsigned char u8;typedef signed char s8;typedef unsigned short u16;typedef signed short s16;typedef int s32;typedef float f32;
 typedef struct {f32 x,y,z;} V3;typedef struct {u8 pad[0x7c];s16 counts[2];} Game;

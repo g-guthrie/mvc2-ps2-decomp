@@ -1,4 +1,3 @@
-/* Provisional: live character action record ownership and callback ABI remain unresolved. */
 typedef struct { unsigned char pad[0x38]; float y; } PositionView;
 typedef unsigned char u8; typedef signed char s8; typedef unsigned short u16;
 extern u8 D_004D18A0[];

@@ -1,4 +1,3 @@
-/* Provisional: state-table ABI, selector bounds and owner lifetime remain unresolved. */
 typedef unsigned char u8;
 typedef struct { u8 pad0[0x34]; float x,y,z; u8 pad40[0x1c]; float vx,vy; u8 pad64[4]; float ax,ay; u8 pad70[0x430-0x70]; float ground; } Motion;
 extern int func_00175700(u8 *);

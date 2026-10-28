@@ -1,20 +1,22 @@
-/* Placeholder: input BSS ownership, aliases, and device lifetime remain unproved. */
+/* Per-frame pad update: latch each port's connection status, then remap the
+ * device button word into the game's two Input records (held/pressed/released). */
 typedef unsigned char u8; typedef signed char s8; typedef unsigned short u16; typedef short s16; typedef unsigned int u32;
 #include "input_device_view.h"
 typedef struct {u16 buttons,previous,pressed,released;u8 gap08[4];s16 x,y;u8 gap10[4];} Input;
-typedef struct {s8 active,previous,aux;u8 gap;} Status;
+/* Per-port connection status record. */
+typedef struct {s8 active,previous,aux;u8 pad;} Status;
 extern void *D_004C2A68 __attribute__((section(".sdata")));
 #define DEVICES ((InputDeviceView *)D_004C2A68)
-extern Input D_004F4480[2]; extern int D_004F8010[4];
+extern Input D_004F4480[2]; extern Status D_004F8010[4];
 extern void func_003DAE90(void);
 void func_0012F0B0(void) {
  u8 i; u32 raw; u16 flags;
  func_003DAE90();
  for(i=0;i<4;i++) {
-  ((s8 *)&D_004F8010[i])[1]=((s8 *)&D_004F8010[i])[0];
-  if(DEVICES[i].state==1) ((s8 *)&D_004F8010[i])[0]=(DEVICES[i].mode&3)?1:0;
-  else ((s8 *)&D_004F8010[i])[0]=0;
-  ((s8 *)&D_004F8010[i])[2]=0;
+  D_004F8010[i].previous=D_004F8010[i].active;
+  if(DEVICES[i].state==1) D_004F8010[i].active=(DEVICES[i].mode&3)?1:0;
+  else D_004F8010[i].active=0;
+  D_004F8010[i].aux=0;
  }
  for(i=0;i<2;i++) {
   if(DEVICES[i].state==1) {

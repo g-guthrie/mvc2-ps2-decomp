@@ -10,11 +10,11 @@ typedef struct { f32 x, y, z; } V3;
 typedef f32 F32Vec[3];
 extern f32 data_f32_004B1940[8][2][3];
 
-/* Provisional: independently matched local helper duplicates the global body. */
+/* Static copy of func_0013E760 (src/y1_e.c), same body, so the caller sees its real register use. */
 static void func_0013E760(u8 *p)
 {
-    F32Vec *a = (F32Vec *)((u8 *)&data_f32_004B1940 + (p[0x20]*sizeof(data_f32_004B1940[0])));
-    F32Vec *b = (F32Vec *)((u8 *)&data_f32_004B1940 + ((p[0x20]*2+1)*sizeof(F32Vec)));
+    F32Vec *a = &data_f32_004B1940[p[0x20]][0];
+    F32Vec *b = &data_f32_004B1940[0][0] + (p[0x20] * 2 + 1);
     f32 d, e;
     e = (*a)[0];
     d = ((*b)[0] - e) / 30.0f;

@@ -1,7 +1,5 @@
-/* Provisional: captured target lifetime and slot bounds require proof. */
 typedef unsigned char u8; typedef signed char s8;
-void func_0035BDF0(u8 *p, void *context) {
-u8 *owner=context;
+void func_0035BDF0(u8 *p, u8 *owner) {
 u8 *work = owner + 0x2b8;
  u8 *parent = *(u8 **)(p + 0x14);
  parent[0x13c]=1;
