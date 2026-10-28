@@ -20033,3 +20033,5 @@ func_001084D0,0x001084D0,0x260,src/s7g_a.c,complete
 func_00108730,0x00108730,0x2C0,src/s7g_a.c,complete
 func_00105F58,0x00105F58,0x280,src/s7g_a.c,complete
 func_0010F6A8,0x0010F6A8,0x1F8,src/s7g_a.c,complete
+func_0016A5A0,0x0016A5A0,0x12C,src/s8f_b.c,complete
+func_0018C1A0,0x0018C1A0,0x310,src/s8f_c.c,complete
