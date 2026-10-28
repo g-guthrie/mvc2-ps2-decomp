@@ -20070,3 +20070,4 @@ func_00420070,0x00420070,0xD8,src/s9a_a.c,complete
 func_004220B0,0x004220B0,0x98,src/s9a_b.c,complete
 func_00418200,0x00418200,0x20C,src/s9a_c.c,complete
 func_00420BF0,0x00420BF0,0x60C,src/s9a_d.c,complete
+func_0018FC10,0x0018FC10,0x84,src/s9f_a.c,complete
