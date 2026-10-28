@@ -349,3 +349,13 @@ void func_003F93C8(u8 *p)
         *(s32 *)(p + 4) = 3;
     }
 }
+
+/* After its callees in this unit: EE GCC 2.96 treats calls to functions it has
+   already compiled as non-throwing, which retail's plain bne depends on. */
+void func_003F95D0(u8 *p)
+{
+    s16 v = *(s16 *)(p + 0x9A);
+    if (v == 2) func_003F93C8(p);
+    else if (v == 1) func_003F9230(p);
+    else if (v == 0) func_003F90B8(p);
+}

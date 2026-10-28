@@ -84,17 +84,30 @@ a subject, take the nearest preceding retail function that calls one of the
 four arithmetic helpers and use the credited source that contains it, written
 with native C double expressions.
 
-## EE GCC 2.96 branch-likely residue
+## EE GCC 2.96 branch-likely residue: define the callee first
 
-About twenty EE GCC functions differ from retail by a single delay slot: our
-`2.96-ee-001003-1` cc1 emits a branch-likely (`bnel`/`bnezl`) where retail
-has a plain branch with an instruction stolen from the target, because retail's
-compiler treated the stolen register as dead on a fall-through path that ends in
-a call. A sweep of every option in this cc1, Sony 2.9 and SN 2.95.2 found no
-flag that reproduces it, so these are left unmatched rather than hand-written.
-The reverse case (retail `bgtzl`) in func_00406CE0 is reproduced per object by
-`-fasynchronous-exceptions`; that flag breaks other EE objects and is never set
-globally.
+Where our `2.96-ee-001003-1` cc1 emitted a branch-likely (`bnel`/`bnezl`) and
+retail has a plain branch with an instruction stolen from the target, the
+cause is file order, not a flag. `reorg` fills a plain branch only if the
+stolen register is dead on the other path, and `resource.c`
+(`find_dead_or_set_registers`) stops its liveness scan at any insn for which
+`can_throw()` is true. A call can throw unless it carries a `REG_EH_REGION`
+note of 0 or less. That note is added when the callee is `TREE_NOTHROW`, and
+with exceptions off `nothrow_function_p()` sets `TREE_NOTHROW` on every
+function cc1 has already compiled in the same translation unit. So:
+
+- Define the called function earlier in the same `.c` file (retail address
+  order), as in src/newlib_mprec_balloc.c, src/hb9_a.c and src/s0b.c.
+- A callee compiled with different flags cannot share the unit. Find a form
+  that matches with the caller's flags (func_00407BC0 keeps its `jal` with
+  sibling calls on when its body is a `do { } while (0)` statement).
+- The cvFs device wrappers (src/cvfs_device_calls.c) also need the full
+  `if (device->fn != 0) { result = device->fn(name); } else { error; return
+  -1; } return result;` shape with `-fno-optimize-sibling-calls`.
+- Sony 2.9 objects (func_0010E770) do not have this mechanism.
+
+The reverse case (retail `bgtzl`) used to need `-fasynchronous-exceptions`;
+func_00406CE0 now matches without it, from the same callee-first file.
 
 ## Metrowerks 3.0 build 22 (mwcps2-3.0b22-020926)
 
@@ -106,4 +119,6 @@ or 3.0.3 in general: rebuilding every credited 3.0 source with it reproduces
 119 of 1718 functions. Use it per object only. 3.0.1-020123, 2.3.3 and 2.3 were
 also tested against every known wall and matched nothing new; 2.3/2.3.3 save
 $ra with `sq` like 2.4, so they are not the missing "2.4 scheduling with `sd
-$ra`" build either.
+$ra`" build either. Build 22, like 3.0b38, b50 and b52, never emits the
+hazard `nop` between `c.cond.s` and `bc1t`/`bc1f`, so a retail function with
+`c.xx.s; nop; bc1x` is not from these builds.

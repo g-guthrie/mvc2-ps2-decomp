@@ -13,13 +13,6 @@ extern char *func_0011FC10(char *, const char *);
 extern s32 func_0011FD40(const char *, const char *);
 extern u32 func_0011FFA0(const char *);
 
-extern void *D_004872E8;
-extern void func_00405D98(void *, const char *, s32);
-void func_00405DC8(const char *message)
-{
-    func_00405D98(&D_004872E8, message, 0);
-}
-
 extern char D_0062FD48[];
 void func_004067B8(char *destination)
 {

@@ -74,3 +74,19 @@ void func_004040F0(S4040 *p){
 }
 
 
+
+/* Follows func_00409148 in this unit: EE GCC 2.96 treats calls to functions
+   it has already compiled as non-throwing, which lets reorg put li s1,1 in
+   the bne slot as retail does. */
+extern void func_00409810();
+extern void func_0011D8F8(void *, s32, s32);
+void func_004093E8(u8 *p)
+{
+    p[2] = 0;
+    if (*(s8 *)(p + 1) == 1)
+        do {
+            func_00409810();
+        } while (*(s8 *)(p + 1) == 1);
+    func_00409148(*(s32 *)(p + 4));
+    func_0011D8F8(p, 0, 0x44);
+}

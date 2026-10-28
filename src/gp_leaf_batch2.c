@@ -11,7 +11,6 @@ extern u8 D_004C2AFB;
 extern u8 D_004C2AFC;
 extern s32 D_004C23AC;
 extern s32 D_004C23A8;
-extern s32 D_004C2410;
 extern s32 D_004C2B3C;
 extern s32 D_004C2B48;
 extern s32 D_004C2B38;
@@ -33,8 +32,6 @@ void func_003ED2E0(u8 v) {
 }
 
 s32 func_004000E0(s32 v) { D_004C23AC = v; return D_004C23A8 = 40 - v; }
-
-s32 func_004044D0(void) { return D_004C2410 = 1; }
 
 s32 func_00416AC0(s32 a, s32 b) {
     D_004C2B3C = b;

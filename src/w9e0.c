@@ -131,6 +131,19 @@ void func_003FFD88(StreamGroup *p)
     }
 }
 
+/* Defined after func_003FFD88 in the same unit: EE GCC 2.96 then knows that
+   callee cannot throw, so reorg sees $v0 dead after the tail call and uses a
+   plain bne (an extern callee leaves bnel). */
+extern void func_003FF688(StreamGroup *);
+void func_003FFE20(StreamGroup *p)
+{
+    s8 lifecycle = p->lifecycle;
+    if (lifecycle == 2)
+        func_003FFD88(p);
+    else if (lifecycle == 1)
+        func_003FF688(p);
+}
+
 
 
 typedef struct {

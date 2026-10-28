@@ -121,3 +121,17 @@ void func_00405848(u8 *a)
     *(s32 *)(a + 8) += n;
     a[1] = 2;
 }
+
+/* Follows func_00405848 in this unit: EE GCC 2.96 treats calls to functions
+   it has already compiled as non-throwing, which retail's plain bne at +0x18
+   depends on. */
+extern s32 func_00405968();
+void func_00405CC0(s8 *p)
+{
+    if (p[1] == 1)
+        func_00405848((u8 *)p);
+    else if (p[1] == 2) {
+        if (p[3] == 0 && func_00405968() == -1)
+            func_00405968(p);
+    }
+}

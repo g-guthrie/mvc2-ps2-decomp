@@ -3591,21 +3591,16 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_parse_integer64_0
 "$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_parse_integer64_00120838.o" "$BUILD/sdk_parse_integer64_00120838.s"
 "$PYTHON" tools/verify_object.py "$BUILD/sdk_parse_integer64_00120838.o" private/SLUS_204.86.rom --source src/sdk_parse_integer64_00120838.c
 
-"$WIBO" "$SNCPP" -P src/sdk_return_size_class_node_0011DB30.c "$BUILD/sdk_return_size_class_node_0011DB30.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_return_size_class_node_0011DB30.i" "$BUILD/sdk_return_size_class_node_0011DB30.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_return_size_class_node_0011DB30.o" "$BUILD/sdk_return_size_class_node_0011DB30.s"
-"$PYTHON" tools/verify_object.py "$BUILD/sdk_return_size_class_node_0011DB30.o" private/SLUS_204.86.rom --source src/sdk_return_size_class_node_0011DB30.c
+"$WIBO" "$SNCPP" -P src/newlib_mprec_balloc.c "$BUILD/newlib_mprec_balloc.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="-msoft-float" "$BUILD/newlib_mprec_balloc.i" "$BUILD/newlib_mprec_balloc.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/newlib_mprec_balloc.o" "$BUILD/newlib_mprec_balloc.s"
+"$PYTHON" tools/verify_object.py "$BUILD/newlib_mprec_balloc.o" private/SLUS_204.86.rom --source src/newlib_mprec_balloc.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/transform_runtime_point_00417E30.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/transform_runtime_point_00417E30.o"
 "$PYTHON" tools/verify_object.py "$BUILD/transform_runtime_point_00417E30.o" \
     private/SLUS_204.86.rom --source src/transform_runtime_point_00417E30.c
-
-"$WIBO" "$SNCPP" -P src/sdk_allocate_size_class_node_0011DA88.c "$BUILD/sdk_allocate_size_class_node_0011DA88.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_allocate_size_class_node_0011DA88.i" "$BUILD/sdk_allocate_size_class_node_0011DA88.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_allocate_size_class_node_0011DA88.o" "$BUILD/sdk_allocate_size_class_node_0011DA88.s"
-"$PYTHON" tools/verify_object.py "$BUILD/sdk_allocate_size_class_node_0011DA88.o" private/SLUS_204.86.rom --source src/sdk_allocate_size_class_node_0011DA88.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/compose_runtime_matrix_translation_004173C0.c -c -lang c -O3 -sdatathreshold 8 \
@@ -5861,7 +5856,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/hb7_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/hb7_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/hb7_a.o" private/SLUS_204.86.rom --source src/hb7_a.c
 "$WIBO" "$SNCPP" -P src/hb9_a.c "$BUILD/hb9_a.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="-fno-optimize-sibling-calls" "$BUILD/hb9_a.i" "$BUILD/hb9_a.s"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 "$BUILD/hb9_a.i" "$BUILD/hb9_a.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/hb9_a.o" "$BUILD/hb9_a.s"
 "$PYTHON" tools/verify_object.py "$BUILD/hb9_a.o" private/SLUS_204.86.rom --source src/hb9_a.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -11148,6 +11143,21 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -G0 -o "$BUILD/runtime_framed_calls_0040.o" "$BUILD/runtime_framed_calls_0040.s"
 "$PYTHON" tools/verify_object.py "$BUILD/runtime_framed_calls_0040.o" private/SLUS_204.86.rom \
     --source src/runtime_framed_calls_0040.c
+
+# The error reporter must precede its callers in this unit (see the source).
+"$WIBO" "$SNCPP" -P src/cvfs_device_calls.c "$BUILD/cvfs_device_calls.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 \
+    --extra-flags=-fno-optimize-sibling-calls "$BUILD/cvfs_device_calls.i" "$BUILD/cvfs_device_calls.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/cvfs_device_calls.o" "$BUILD/cvfs_device_calls.s"
+"$PYTHON" tools/verify_object.py "$BUILD/cvfs_device_calls.o" private/SLUS_204.86.rom \
+    --source src/cvfs_device_calls.c
+
+"$WIBO" "$SNCPP" -P src/runtime_query_completion_004044D0.c "$BUILD/runtime_query_completion_004044D0.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 \
+    "$BUILD/runtime_query_completion_004044D0.i" "$BUILD/runtime_query_completion_004044D0.s"
+"$WIBO" "$SNAS" -G8 -o "$BUILD/runtime_query_completion_004044D0.o" "$BUILD/runtime_query_completion_004044D0.s"
+"$PYTHON" tools/verify_object.py "$BUILD/runtime_query_completion_004044D0.o" private/SLUS_204.86.rom \
+    --source src/runtime_query_completion_004044D0.c
 
 "$WIBO" "$SNCPP" -P src/runtime_object_storage.c "$BUILD/runtime_object_storage.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 \
@@ -23597,10 +23607,6 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/r3_18_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/r3_18_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/r3_18_a.o" private/SLUS_204.86.rom --source src/r3_18_a.c
-"$WIBO" "$SNCPP" -P src/eeae_a.c "$BUILD/eeae_a.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="-fasynchronous-exceptions" "$BUILD/eeae_a.i" "$BUILD/eeae_a.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/eeae_a.o" "$BUILD/eeae_a.s"
-"$PYTHON" tools/verify_object.py "$BUILD/eeae_a.o" private/SLUS_204.86.rom --source src/eeae_a.c
 
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/r3_22_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/r3_22_a.o"
