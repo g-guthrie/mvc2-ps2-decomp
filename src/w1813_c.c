@@ -10,17 +10,17 @@ extern char D_004BBF18[];
 
 s32 func_00400468(s32 a, s32 b, s32 c)
 {
-    extern s32 func_00406B50();
-    extern s32 func_00406C10();
+    extern s32 func_00406B50(void *);
+    extern s32 func_00406C10(void *, s32);
     extern s32 func_004064E8(s32, s32, s32);
     extern s32 func_00400258(s32, s32, s32, s32);
     extern void func_00400658(s32, s32);
     extern void func_003FB178(char *, s32);
     s32 r, v, w;
     if (b == 0) {
-        v = func_00406B50();
+        v = func_00406B50((void *)(u32)a);
     } else {
-        v = func_00406C10();
+        v = func_00406C10((void *)(u32)a, b);
     }
     r = func_004064E8(a, b, 0);
     if (r == 0) {
