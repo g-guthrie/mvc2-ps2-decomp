@@ -14511,9 +14511,9 @@ func_001A8B70,0x001A8B70,0x108,src/q7_o.c,complete
 func_001659F0,0x001659F0,0x10C,src/q7_p.c,complete
 func_00295500,0x00295500,0x114,src/q7_q.c,complete
 func_0031E2C0,0x0031E2C0,0x118,src/q7_r.c,complete
-func_002F34E0,0x002F34E0,0x11C,src/q7_t.c,complete
-func_002F8330,0x002F8330,0x11C,src/q7_t.c,complete
-func_002D6BA0,0x002D6BA0,0x11C,src/q7_t.c,complete
+func_002F34E0,0x002F34E0,0x11C,src/q7_t.c,placeholder
+func_002F8330,0x002F8330,0x11C,src/q7_t.c,placeholder
+func_002D6BA0,0x002D6BA0,0x11C,src/q7_t.c,placeholder
 func_00200E40,0x00200E40,0x124,src/q7_v.c,complete
 func_00150FD0,0x00150FD0,0x130,src/q7_w.c,complete
 func_001500E0,0x001500E0,0x130,src/q7_x.c,complete
