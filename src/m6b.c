@@ -22,7 +22,7 @@ void func_0016C770(u8 *p) {
 }
 
 extern f32 D_004F1FC8;
-extern void func_00175670();
+extern int func_00175670(u8 *);
 void func_001BF200(u8 *p, u8 *q) {
     if (q[0x1E4] != 0x16) {
         u32 t = p[4];
@@ -36,7 +36,7 @@ void func_001BF200(u8 *p, u8 *q) {
         *(f32 *)(p + 0x118) = 0.75f;
         *(f32 *)(p + 0x34) = D_004F1FC8 - 106.66666412353516f;
         *(f32 *)(p + 0x38) = *(f32 *)(q + 0x430);
-        func_00175670();
+        func_00175670(p);
     }
 }
 

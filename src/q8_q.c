@@ -8,7 +8,7 @@ typedef float f32;
 
 void func_001BFFB0(u8 *p) {
     extern void func_001754A0();
-    extern void func_00175670();
+    extern int func_00175670(u8 *);
     f32 one = 1.0f;
     f32 z = 0.0f;
     f32 d;
@@ -27,7 +27,7 @@ void func_001BFFB0(u8 *p) {
         func_001754A0(p, 0x1B, 0);
         break;
     case 1:
-        func_00175670();
+        func_00175670(p);
         if (*(s8 *)(p + 0x151) != 0) {
             t = p[5];
             p[5] = t + 1;

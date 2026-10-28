@@ -24,10 +24,10 @@ void func_0035F360(u8 *p, s32 b) {
 }
 
 
-extern s32 func_00175670();
+extern int func_00175670(u8 *);
 void func_001993A0(u8 *p) {
     if (p[5] == 0) {
-        func_00175670();
+        func_00175670(p);
         if (*(s8 *)(p + 0x150) != 0) {
             if (*(u8 *)(*(u8 **)(p + 0x18) + 0x1E4) != 0x16) {
                 u32 t = p[5];
@@ -35,7 +35,7 @@ void func_001993A0(u8 *p) {
             }
         }
     } else {
-        if ((s8)func_00175670() < 0) {
+        if ((s8)func_00175670(p) < 0) {
             u32 t = p[4];
             p[4] = t + 1;
             p[0x13C] = 0;

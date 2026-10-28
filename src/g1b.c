@@ -17,7 +17,7 @@ extern void *func_003DA750();
 extern void func_00381050();
 extern void func_00185490();
 extern void func_00184540();
-extern void func_001DB2E0();
+extern void func_001DB2E0(u8 *);
 extern void func_00358DD0();
 extern u8 D_0044DA60[];
 extern u8 *D_004C283C;
@@ -94,7 +94,7 @@ void func_001DB1F0(u8 *p) {
         s32 v = *(s8 *)(q + 0x151);
         s8 c = v;
         if (v == 0) {
-            func_001DB2E0();
+            func_001DB2E0(p);
         } else if (p[0x22] == c) {
             p[0x22] = c & 1;
             p[0x152] = 1;

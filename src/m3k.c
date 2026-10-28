@@ -120,10 +120,10 @@ void func_003721C0(u8 *p) {
 }
 
 extern void func_00186A60(u8 *, s32);
-extern void func_00175670();
+extern int func_00175670(u8 *);
 void func_001BB360(u8 *p) {
     s16 v;
-    func_00175670();
+    func_00175670(p);
     *(s32 *)(p + 0x48) += 0x2000;
     v = *(s16 *)(p + 0x1C) - 1;
     *(s16 *)(p + 0x1C) = v;
