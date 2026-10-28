@@ -11447,7 +11447,7 @@ func_00104608,0x00104608,0x28,src/sony29_status_resets.c,complete
 func_00400BE8,0x00400BE8,0x2C,src/s4.c,complete
 func_003FF060,0x003FF060,0x34,src/s4.c,complete
 func_003F8448,0x003F8448,0x48,src/s4.c,complete
-func_004104E0,0x004104E0,0x5C,src/s4.c,complete
+func_004104E0,0x004104E0,0x5C,src/s4.c,placeholder
 func_00401428,0x00401428,0x1A0,src/s4.c,complete
 func_004015C8,0x004015C8,0x60,src/s4.c,complete
 func_00404D18,0x00404D18,0x88,src/s4.c,complete

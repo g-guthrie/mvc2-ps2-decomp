@@ -40,13 +40,14 @@ void func_003F8448(P48b *p, s32 x){
 }
 
 
-typedef struct { s32 a; s32 n; } RP;
-void func_004104E0(RP *src, s32 max, RP *out, RP *res){
+#include "cri_sj_ring_buffer_types.h"
+/* Provisional: not all callers use the same chunk type or proved bounds. */
+void func_004104E0(SJCK *src, s32 max, SJCK *out, SJCK *res){
     *out = *src;
-    res->n = out->n;
-    if (out->n > max) out->n = max;
-    res->n = res->n - out->n;
-    if (res->n == 0) res->a = 0; else { s32 n = out->n; s32 a = out->a; res->a = a + n; }
+    res->len = out->len;
+    if (out->len > max) out->len = max;
+    res->len = res->len - out->len;
+    if (res->len == 0) res->data = 0; else { s32 n = out->len; s8 *a = out->data; res->data = a + n; }
 }
 
 typedef struct { u8 pad[0xC]; void (*callback)(void *); } SlotVtable;

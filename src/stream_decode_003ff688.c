@@ -1,4 +1,4 @@
-/* Provisional: input extent and chunk-helper interface are not fully reconciled. */
+/* Provisional: input extent and remaining chunk-helper callers need proof. */
 #include "stream_group_types.h"
 #include "cri_sj_ring_buffer_types.h"
 extern s32 func_003F7FC8(u8 *,u16 *,s32);
