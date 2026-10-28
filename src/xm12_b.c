@@ -5,20 +5,7 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 
-struct _sj_vtbl;
-typedef struct { signed char *data; signed int len; } SJCK;
-typedef struct SJ_OBJ { struct _sj_vtbl *vtbl; } SJ_OBJ;
-struct _sj_vtbl {
-    void (*QueryInterface)(void);
-    void (*AddRef)(void);
-    void (*Release)(void);
-    void (*Destroy)(SJ_OBJ *object);
-    void *(*GetUuid)(SJ_OBJ *object);
-    void (*Reset)(SJ_OBJ *object);
-    void (*GetChunk)(SJ_OBJ *object, signed int id, signed int nbyte, SJCK *chunk);
-    void (*UngetChunk)(SJ_OBJ *object, signed int id, SJCK *chunk);
-    void (*PutChunk)(SJ_OBJ *object, signed int id, SJCK *chunk);
-};
+#include "cri_sj_ring_buffer_types.h"
 
 typedef struct {
     s8 pad0;
