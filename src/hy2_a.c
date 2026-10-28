@@ -196,13 +196,13 @@ extern u32 D_004C1368, D_004C1350, D_004C136C, D_004C1354, D_004C1370, D_004C135
 
 void func_002F7AD0(u8 *p)
 {
-    extern void func_002FA150(void);
+    extern void func_002FA150(u8 *);
     extern void func_001E3710(u8 *, s32);
     extern void func_001757E0(u8 *, s32, s32);
     s8 t;
     u8 t0;
     if (p[0x2CE] != 0) {
-        func_002FA150();
+        func_002FA150(p);
         return;
     }
     switch (p[0x1FC]) {

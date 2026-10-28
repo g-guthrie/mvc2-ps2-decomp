@@ -75,6 +75,7 @@ void func_001D0710(u8 *d, u8 *s) {
 extern u8 *D_004C299C;
 
 #define SRC (*(u8 **)(p + 0x18))
+/* Provisional: func_0037F120 needs the actor argument. */
 void func_0037F630(u8 *p) {
     extern void func_0037F2C0();
     extern void func_0037F120();
