@@ -211,10 +211,17 @@ def verify_static_copies(argv: list[str]) -> tuple[bool, str]:
         return True, ""
     import csv
     import tempfile
+    # Also select the source's own registered rows: a readonly section such as
+    # the caller's jump table must resolve inside a selected whole function.
+    copied = {row[0] for row in rows}
+    with open("config/matches.csv", newline="", encoding="utf-8") as stream:
+        own = [[r["name"], r["address"], r["size"], r["source"], r["status"]]
+               for r in csv.DictReader(stream)
+               if r["source"] == source and r["name"] not in copied]
     with tempfile.NamedTemporaryFile("w", suffix=".csv", delete=False, newline="") as stream:
         writer = csv.writer(stream)
         writer.writerow(["name", "address", "size", "source", "status"])
-        writer.writerows(rows)
+        writer.writerows(rows + own)
         path = stream.name
     try:
         ok, output = build_runner.run_tool_main("verify_object", [argv[0], argv[1], "--matches", path, "--source", source])

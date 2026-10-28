@@ -20035,3 +20035,12 @@ func_00105F58,0x00105F58,0x280,src/s7g_a.c,complete
 func_0010F6A8,0x0010F6A8,0x1F8,src/s7g_a.c,complete
 func_0016A5A0,0x0016A5A0,0x12C,src/s8f_b.c,complete
 func_0018C1A0,0x0018C1A0,0x310,src/s8f_c.c,complete
+residual_003C96D0,0x003C96D0,0x17C,src/s8d_a.c,complete
+func_0032DAB0,0x0032DAB0,0x3D8,src/s8d_b.c,complete
+func_0037C520,0x0037C520,0x5EC,src/s8d_c.c,complete
+func_00153AB0,0x00153AB0,0x268,src/s8c_a.c,complete
+func_00149380,0x00149380,0x30C,src/s8c_b.c,complete
+func_003D4630,0x003D4630,0x1B0,src/s8b_a.c,complete
+func_003F0940,0x003F0940,0x7C,src/s8b_a.c,complete
+func_0018EA00,0x0018EA00,0x100,src/s8f_a.c,complete
+func_00175C00,0x00175C00,0x48C,src/s8f_d.c,complete

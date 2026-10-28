@@ -23909,4 +23909,33 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/s8f_c.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/s8f_c.o"
 "$PYTHON" tools/verify_object.py "$BUILD/s8f_c.o" private/SLUS_204.86.rom --source src/s8f_c.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/s8d_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/s8d_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s8d_a.o" private/SLUS_204.86.rom --source src/s8d_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/s8d_b.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/s8d_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s8d_b.o" private/SLUS_204.86.rom --source src/s8d_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/s8d_c.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/s8d_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s8d_c.o" private/SLUS_204.86.rom --source src/s8d_c.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/s8c_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/s8c_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s8c_a.o" private/SLUS_204.86.rom --source src/s8c_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/s8c_b.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/s8c_b.o"
+"${OBJCOPY:-mipsel-linux-gnu-objcopy}" \
+    --redefine-sym @47=jtbl_004B3860 \
+    "$BUILD/s8c_b.o" "$BUILD/s8c_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s8c_b.o" private/SLUS_204.86.rom --source src/s8c_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/s8b_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/s8b_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s8b_a.o" private/SLUS_204.86.rom --source src/s8b_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/s8f_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/s8f_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s8f_a.o" private/SLUS_204.86.rom --source src/s8f_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/s8f_d.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/s8f_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s8f_d.o" private/SLUS_204.86.rom --source src/s8f_d.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

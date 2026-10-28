@@ -22,3 +22,4 @@ src/actor_launch_variant_003B47C0.c,.rodata,0x004B8780,0x18
 src/actor_inherited_setups_001D9290.c,.rodata,0x004B5B30,0x18
 src/fb56_g.c,.rodata,0x004BADB0,0x8
 src/sf1_a.c,.rodata,0x004AAFE8,0x18
+src/s8f_d.c,.rodata,0x004B5680,0x2C
