@@ -19987,3 +19987,14 @@ func_0040B700,0x0040B700,0x1A8,src/s5a_a.c,complete
 func_00409250,0x00409250,0x198,src/s5a_b.c,complete
 func_003F8AF8,0x003F8AF8,0xF4,src/s5a_c.c,complete
 func_003F8FB8,0x003F8FB8,0xFC,src/s5a_d.c,complete
+func_00185EC0,0x00185EC0,0xD0,src/s5d_a.c,complete
+func_00144BF0,0x00144BF0,0xBC,src/s5d_b.c,complete
+func_001925A0,0x001925A0,0x144,src/s5d_c.c,complete
+func_003CB790,0x003CB790,0x1A8,src/s5d_d.c,complete
+func_0018EF20,0x0018EF20,0xDC,src/s5d_e.c,complete
+func_00220D50,0x00220D50,0xF0,src/s5d_f.c,complete
+func_002E1520,0x002E1520,0x9C,src/s5d_g.c,complete
+func_00358C50,0x00358C50,0xD8,src/s5d_h.c,complete
+func_0025ECA0,0x0025ECA0,0x198,src/s5d_i.c,complete
+func_0013AAC0,0x0013AAC0,0x100,src/s5d_j.c,complete
+func_0013AC90,0x0013AC90,0x104,src/s5d_j.c,complete

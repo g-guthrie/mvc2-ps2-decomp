@@ -23650,7 +23650,7 @@ mkdir -p "build/warm/r4_11_a" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWC
     mv "build/warm/r4_11_a/r4_11_a.o" "$BUILD/r4_11_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/r4_11_a.o" private/SLUS_204.86.rom --source src/r4_11_a.c
 mkdir -p "build/warm/r4_19_b" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
-    src/nf10_b.c src/r4_19_b.c -c -lang c -i src -O3 -sdatathreshold 0 -fp off -o "build/warm/r4_19_b" && \
+    src/owner_reposition_0020E790.c src/r4_19_b.c -c -lang c -i src -O3 -sdatathreshold 0 -fp off -o "build/warm/r4_19_b" && \
     mv "build/warm/r4_19_b/r4_19_b.o" "$BUILD/r4_19_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/r4_19_b.o" private/SLUS_204.86.rom --source src/r4_19_b.c
 
@@ -23772,5 +23772,38 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 "$BUILD/s5a_d.i" "$BUILD/s5a_d.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/s5a_d.o" "$BUILD/s5a_d.s"
 "$PYTHON" tools/verify_object.py "$BUILD/s5a_d.o" private/SLUS_204.86.rom --source src/s5a_d.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/s5d_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/s5d_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s5d_a.o" private/SLUS_204.86.rom --source src/s5d_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/s5d_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/s5d_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s5d_b.o" private/SLUS_204.86.rom --source src/s5d_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/s5d_c.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/s5d_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s5d_c.o" private/SLUS_204.86.rom --source src/s5d_c.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/s5d_d.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/s5d_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s5d_d.o" private/SLUS_204.86.rom --source src/s5d_d.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/s5d_e.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/s5d_e.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s5d_e.o" private/SLUS_204.86.rom --source src/s5d_e.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/s5d_f.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/s5d_f.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s5d_f.o" private/SLUS_204.86.rom --source src/s5d_f.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/s5d_g.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/s5d_g.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s5d_g.o" private/SLUS_204.86.rom --source src/s5d_g.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/s5d_h.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/s5d_h.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s5d_h.o" private/SLUS_204.86.rom --source src/s5d_h.c
+mkdir -p "build/warm/s5d_i" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_reposition_0020E790.c src/s5d_i.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -fp off -o "build/warm/s5d_i" && \
+    mv "build/warm/s5d_i/s5d_i.o" "$BUILD/s5d_i.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s5d_i.o" private/SLUS_204.86.rom --source src/s5d_i.c
+mkdir -p "build/warm/s5d_j" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sf2_b.c src/s5d_j.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/s5d_j" && \
+    mv "build/warm/s5d_j/s5d_j.o" "$BUILD/s5d_j.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s5d_j.o" private/SLUS_204.86.rom --source src/s5d_j.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh
