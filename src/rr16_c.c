@@ -9,44 +9,35 @@ typedef double f64;
 typedef struct { f32 x, y, z; } V3;
 
 extern void *D_004C2838;
-typedef struct DB {
-    u8 _p0[0x4];
-    u8 b4;
-    u8 _p1[0x17];
-    s16 h1c;
-    u8 _p2[0x22];
-    u32 w40;
-    u32 w44;
-    u32 w48;
-    u8 _p3[0x10];
-    f32 f5c;
-    f32 f60;
-    f32 f64;
-} DB;
 
-extern f32 D_00583C48[];
-extern f32 D_00583C4C[];
-extern f32 D_00583C50[];
+extern u8 D_004449E0[];
+extern u8 D_00444A00[];
+extern u8 D_00444A20[];
+extern u8 D_00444A30[];
 
-/* Provisional: this unrelated duplicate affects compiler allocation. */
-static void func_00338670(DB *p)
-{
-    p->h1c = p->h1c + 1;
-    if (p->h1c > 150) {
-        p->b4 = 0;
-        p->h1c = 0;
+/* Verified copy of retail func_00154E10 (src/z9_k.c), the address-order
+   neighbour three functions before func_001551A0; exact at 0x00154E10 under
+   this file's flags. Kept referenced so MWCC compiles it first. */
+static void func_00154E10(u8 *p) {
+    extern void func_003DAA40(struct Object *);
+    extern f32 func_00154710(u8 *, u8 *, s16);
+    extern double func_00119058(f32);
+    f32 f;
+    if (*(s16 *)(p + 0x1C) > 10) {
+        func_003DAA40((struct Object *)p);
         return;
     }
-    p->w40 = (u32)(s32)(0.5 + 65536.0 * (f64)p->f5c / 360.0) & 0xFFFF;
-    p->w44 = (u32)(s32)(0.5 + 65536.0 * (f64)p->f60 / 360.0) & 0xFFFF;
-    p->w48 = (u32)(s32)(0.5 + 65536.0 * (f64)p->f64 / 360.0) & 0xFFFF;
-    p->w40 += (u32)(s32)(0.5 + 65536.0 * (f64)(D_00583C48[0] * (f32)p->h1c) / 360.0) & 0xFFFF;
-    p->w44 += (u32)(s32)(0.5 + 65536.0 * (f64)(D_00583C4C[0] * (f32)p->h1c) / 360.0) & 0xFFFF;
-    p->w48 += (u32)(s32)(0.5 + 65536.0 * (f64)(D_00583C50[0] * (f32)p->h1c) / 360.0) & 0xFFFF;
+    *(f32 *)(p + 0x54) = func_00154710(D_004449E0, p + 4, *(s16 *)(p + 0x1C));
+    *(f32 *)(p + 0x58) = func_00154710(D_00444A00, p + 5, *(s16 *)(p + 0x1C));
+    f = func_00154710(D_00444A20, p + 6, *(s16 *)(p + 0x1C));
+    *(u32 *)(p + 0x40) = (u16)((u32)(s32)(65536.0 * func_00119058(f) / 360.0 + 0.5));
+    f = func_00154710(D_00444A30, p + 7, *(s16 *)(p + 0x1C));
+    *(f32 *)(p + 0x78) = f;
+    *(f32 *)(p + 0x7C) = f;
+    *(f32 *)(p + 0x80) = *(f32 *)(p + 0x78);
+    *(s16 *)(p + 0x1C) += 1;
 }
-
-static void (*keep_00338670)(DB *) = func_00338670;
-
+static void (*keep_00154E10)(u8 *) = func_00154E10;
 
 void func_001551A0(f32 *pos, u32 n, f32 scale, int type) {
     extern void *func_003DA750(void *, int, int);

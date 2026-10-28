@@ -18606,7 +18606,7 @@ func_00403E20,0x00403E20,0x24C,src/rr12_b.c,complete
 func_002DC070,0x002DC070,0x134,src/rr14_a.c,complete
 func_0016A3F0,0x0016A3F0,0x1A8,src/rr14_d.c,complete
 func_0036A290,0x0036A290,0x230,src/rr16_b.c,complete
-func_001551A0,0x001551A0,0x20C,src/rr16_c.c,placeholder
+func_001551A0,0x001551A0,0x20C,src/rr16_c.c,complete
 func_00422740,0x00422740,0x4A0,src/xl10_a.c,complete
 func_0012DF30,0x0012DF30,0x270,src/rr17_a.c,complete
 func_00124660,0x00124660,0xE84,src/xl0_a.c,complete
@@ -18923,7 +18923,7 @@ func_0020A9A0,0x0020A9A0,0x170,src/action_choice_0020a9a0.c,complete
 func_002415E0,0x002415E0,0x140,src/center_launch_init_002415e0.c,complete
 func_0022EC90,0x0022EC90,0x14C,src/recovery_choice_init_0022ec90.c,complete
 func_0026EAC0,0x0026EAC0,0x150,src/air_capture_update_0026eac0.c,complete
-func_002B1E20,0x002B1E20,0x17C,src/capture_release_gate_002b1e20.c,placeholder
+func_002B1E20,0x002B1E20,0x17C,src/capture_release_gate_002b1e20.c,complete
 func_0034E3C0,0x0034E3C0,0x130,src/owner_ground_effect_0034e3c0.c,complete
 func_00306B80,0x00306B80,0x198,src/slowdown_lane_entry_00306b80.c,complete
 func_00396A70,0x00396A70,0x154,src/owner_motion_decay_00396a70.c,complete

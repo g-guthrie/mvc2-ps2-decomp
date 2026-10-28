@@ -5,7 +5,7 @@ typedef signed short s16;
 extern int func_00175700(u8 *),func_00182E20(u8 *),func_00182D30(u8 *),func_001757E0(u8 *,int,int);
 typedef struct {float x,y,z;} Position3;
 extern void func_0018FDB0(u8 *),func_00154790(Position3 *,int,unsigned int,int);
-/* Provisional: the third position component is not initialized on this path. */
+/* Retail stores only x and y here (sp+0x20/0x24); z is passed through uninitialized, as in the original. */
 void func_002B1E20(u8 *p)
 {
  union {Position3 v;float pad[4];} position;

@@ -36,15 +36,44 @@ def init_worker(settings: dict) -> None:
     build_runner.install_verifier_memo()
 
 
+VU_ASM = Path(__file__).resolve().parent / "vu_asm.py"
+GNU_AS = os.environ.get("AS", "mipsel-linux-gnu-as")
+
+
+def assemble_vu_unit(unit: dict, object_path: Path) -> subprocess.CompletedProcess:
+    """Assemble hand-written VU microcode (src/vu/*.vsm) into a data object."""
+    name, size = unit["name"], int(unit["size"], 0)
+    binary = object_path.with_suffix(".bin")
+    wrapper = object_path.with_suffix(".s")
+    result = subprocess.run(
+        [sys.executable, str(VU_ASM), "asm", unit["source"], "-o", str(binary)],
+        text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+    )
+    if result.returncode:
+        return result
+    wrapper.write_text(
+        f'.section {unit["section"]}, "aw"\n.p2align 4\n.globl {name}\n'
+        f'.type {name}, @object\n.size {name}, {size}\n{name}:\n'
+        f'.incbin "{binary.resolve()}"\n'
+    )
+    return subprocess.run(
+        [GNU_AS, "-EL", "-march=r5900", "-mabi=eabi", "-G0", "-o", str(object_path), str(wrapper)],
+        text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+    )
+
+
 def compile_and_verify(unit: dict) -> tuple[bool, str, bool]:
     source = Path(unit["source"])
     name = unit["name"]
     wibo, mwcc, target = _settings["wibo"], _settings["mwcc"], _settings["target"]
     # Match generate_hybrid_relink.py's object naming convention.
-    object_path = Path(_settings["build"], "data", source.stem + ".o")
+    object_path = Path(_settings["build"]) / source.relative_to("src").with_suffix(".o")
+    object_path.parent.mkdir(parents=True, exist_ok=True)
     digest = hashlib.sha256(f"{build_runner.CACHE_VERSION}\0data\0{wibo}\0{mwcc}\0".encode())
     digest.update(" ".join(FLAGS).encode() + b"\0" + str(source).encode())
     digest.update(build_runner.file_digest(source, (Path("src/data"), Path("src"))))
+    if source.suffix == ".vsm":
+        digest.update(VU_ASM.read_bytes())
     stat = os.stat(mwcc)
     digest.update(f"{stat.st_size}:{stat.st_mtime_ns}".encode())
     key = digest.hexdigest()
@@ -54,11 +83,14 @@ def compile_and_verify(unit: dict) -> tuple[bool, str, bool]:
     if not cached:
         if object_path.exists():
             object_path.unlink()
-        env = dict(os.environ, MWCIncludes=str(Path(mwcc).parent))
-        result = subprocess.run(
-            [wibo, mwcc, str(source), *FLAGS, "-o", str(object_path)],
-            env=env, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
-        )
+        if source.suffix == ".vsm":
+            result = assemble_vu_unit(unit, object_path)
+        else:
+            env = dict(os.environ, MWCIncludes=str(Path(mwcc).parent))
+            result = subprocess.run(
+                [wibo, mwcc, str(source), *FLAGS, "-o", str(object_path)],
+                env=env, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+            )
         if result.returncode:
             return False, (
                 f"compile failed for {name} from {source} "
