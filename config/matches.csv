@@ -20045,3 +20045,6 @@ func_003F0940,0x003F0940,0x7C,src/s8b_a.c,complete
 func_0018EA00,0x0018EA00,0x100,src/s8f_a.c,complete
 func_00175C00,0x00175C00,0x48C,src/s8f_d.c,complete
 func_003F2BF0,0x003F2BF0,0x2C0,src/s7i_a.c,complete
+func_001D6890,0x001D6890,0xB4,src/s8h_a.c,complete
+func_001D7800,0x001D7800,0x138,src/s8h_a.c,complete
+func_002E6670,0x002E6670,0x110,src/s8h_a.c,complete
