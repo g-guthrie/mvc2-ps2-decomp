@@ -64,10 +64,10 @@ int func_00222D80(u8 *p) {
     return 1;
 }
 
-extern unsigned int data_u32_00452B20[];
+extern unsigned int data_rec_00452B20[];
 int func_00243800(u8 *p) {
     int result = 0;
-    if (!func_00189310(p, (u8 *)data_u32_00452B20, p + 0x380)) return result;
+    if (!func_00189310(p, (u8 *)data_rec_00452B20, p + 0x380)) return result;
     if (p[0x20d] == 2) {
         if (!p[0x210]) {
             if (*(signed char *)(p + 0x1e8)) return result;
