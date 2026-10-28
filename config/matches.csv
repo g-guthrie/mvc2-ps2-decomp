@@ -11691,7 +11691,7 @@ func_00405FC0,0x00405FC0,0x90,src/p1.c,complete
 func_003FCB20,0x003FCB20,0xA0,src/p1.c,complete
 func_003FD928,0x003FD928,0x80,src/p1b.c,complete
 func_00417CB0,0x00417CB0,0xA0,src/p1c.c,complete
-func_003F1F10,0x003F1F10,0x78,src/p1d.c,complete
+func_003F1F10,0x003F1F10,0x78,src/p1d.c,placeholder
 func_00417DA0,0x00417DA0,0x90,src/p1e.c,complete
 func_003FF288,0x003FF288,0x14,src/p3.c,complete
 func_0040ED00,0x0040ED00,0x1C,src/p3.c,complete

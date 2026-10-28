@@ -13,7 +13,8 @@ typedef struct {
     s32 size;
 } E;
 
-/* Native identity accessor: return the supplied format header. */
+/* Provisional: this static duplicate must be replaced by the shared helper;
+ * the format buffer extent and entry sizes are also unproved. */
 static H *func_003F1F00(void *file) { return (H *)file; }
 
 E *func_003F1F10(E *e, u32 m) {
