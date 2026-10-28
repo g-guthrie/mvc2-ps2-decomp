@@ -196,10 +196,10 @@ void func_00389590(u8 *a0, u8 *a1) {
     }
 }
 
-extern s32 func_00175670();
+extern int func_00175670(u8 *);
 
 void func_001C1080(u8 *a0, u8 *a1) {
-    if ((s8)func_00175670() < 0) {
+    if ((s8)func_00175670(a0) < 0) {
         u32 t = a0[5];
         a0[5] = t + 1;
         if (*(s32 *)(a1 + 0xD0) == 0) {

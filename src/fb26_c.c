@@ -7,6 +7,7 @@ typedef signed int s32;
 typedef float f32;
 typedef struct { u8 pad[0xD0]; s8 b[8]; } OBc;
 
+/* Provisional: func_003A2AE0 requires the actor argument. */
 void func_003A28F0(u8 *p, u8 *q)
 {
     extern void func_003A2AE0();

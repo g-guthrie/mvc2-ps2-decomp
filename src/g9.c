@@ -9,7 +9,7 @@ typedef signed int s32;
 
 extern void func_0014E770();
 extern void func_003DAA40(struct Object *);
-extern void func_00175670();
+extern int func_00175670(u8 *);
 
 void func_0016C830(u8 *p) {
     *(float *)(p + 0x104) += 0.0005208333604969084f;
@@ -50,7 +50,7 @@ void func_001B3270(u8 *p) {
     *(float *)(p + 0x5C) += *(float *)(p + 0x68);
     *(float *)(p + 0x38) += *(float *)(p + 0x60);
     *(float *)(p + 0x60) += *(float *)(p + 0x6C);
-    func_00175670();
+    func_00175670(p);
 }
 
 extern void func_00321BE0();

@@ -18383,7 +18383,7 @@ func_003E2B70,0x003E2B70,0x65C,src/fb78_a.c,complete
 func_00254EE0,0x00254EE0,0x404,src/fb80_a.c,complete
 func_00374AC0,0x00374AC0,0x1A8,src/fb26_a.c,complete
 func_00328560,0x00328560,0x1B0,src/fb26_b.c,complete
-func_003A28F0,0x003A28F0,0x1F0,src/fb26_c.c,complete
+func_003A28F0,0x003A28F0,0x1F0,src/fb26_c.c,placeholder
 func_003F4C10,0x003F4C10,0x260,src/fb26_e.c,complete
 func_0038B2E0,0x0038B2E0,0x5D4,src/fb77_b.c,complete
 func_00255FE0,0x00255FE0,0x594,src/fb83_b.c,complete

@@ -12,7 +12,7 @@ typedef struct { s16 a[8]; } T36b;
 extern T36b D_0044E680;
 
 void func_001D7AB0(u8 *p, u8 *q) {
-    extern s8 func_00175670();
+    extern int func_00175670(u8 *);
     extern s32 func_00174170();
     extern void func_001D7800(u8 *, u8 *);
     extern void func_001D7CD0(u8 *, u8 *);
@@ -52,7 +52,7 @@ void func_001D7AB0(u8 *p, u8 *q) {
             func_001D7800(p, q);
         }
     } else {
-        if (func_00175670() < 0) goto err;
+        if ((s8)func_00175670(p) < 0) goto err;
         p[0x13C] = (p[0x22] + D_004C2840->f1c) & 1;
         if (*(s8 *)(p + 0x13C) == 0) return;
         *(s8 *)(p + 0x24) = 8;
