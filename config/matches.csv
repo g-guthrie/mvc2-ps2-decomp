@@ -19711,3 +19711,7 @@ residual_0038A0C0,0x0038A0C0,0x23C,src/nq181_c.c,complete
 func_0030D080,0x0030D080,0x244,src/nq182_b.c,complete
 residual_00383CF0,0x00383CF0,0x244,src/nq182_c.c,complete
 func_0035B590,0x0035B590,0x248,src/nq183_b.c,complete
+residual_003660F0,0x003660F0,0x25C,src/wrm2_c.c,complete
+func_003502D0,0x003502D0,0x1DC,src/wrm2_d.c,complete
+func_003504B0,0x003504B0,0x1CC,src/wrm2_e.c,complete
+residual_00364F70,0x00364F70,0x234,src/wrm2_f.c,complete

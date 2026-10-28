@@ -22918,4 +22918,21 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/nq183_b.c -c -lang c -i src -O4,p -Op -sdatathreshold 8 -o "$BUILD/nq183_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/nq183_b.o" private/SLUS_204.86.rom --source src/nq183_b.c
 
+mkdir -p "build/warm/wrm2_c" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/owner_entry_motion_00365870.c src/wrm2_c.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/wrm2_c" && \
+    mv "build/warm/wrm2_c/wrm2_c.o" "$BUILD/wrm2_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/wrm2_c.o" private/SLUS_204.86.rom --source src/wrm2_c.c
+mkdir -p "build/warm/wrm2_d" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/wrm1_a.c src/wrm2_d.c -c -lang c -i src -O3 -Op -fp off -o "build/warm/wrm2_d" && \
+    mv "build/warm/wrm2_d/wrm2_d.o" "$BUILD/wrm2_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/wrm2_d.o" private/SLUS_204.86.rom --source src/wrm2_d.c
+mkdir -p "build/warm/wrm2_e" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/wrm2_d.c src/wrm2_e.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/wrm2_e" && \
+    mv "build/warm/wrm2_e/wrm2_e.o" "$BUILD/wrm2_e.o"
+"$PYTHON" tools/verify_object.py "$BUILD/wrm2_e.o" private/SLUS_204.86.rom --source src/wrm2_e.c
+mkdir -p "build/warm/wrm2_f" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/sa29_g.c src/wrm2_f.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "build/warm/wrm2_f" && \
+    mv "build/warm/wrm2_f/wrm2_f.o" "$BUILD/wrm2_f.o"
+"$PYTHON" tools/verify_object.py "$BUILD/wrm2_f.o" private/SLUS_204.86.rom --source src/wrm2_f.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
