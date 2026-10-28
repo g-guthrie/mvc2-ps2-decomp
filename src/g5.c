@@ -205,7 +205,7 @@ void func_0028C6F0(u8 *p) {
     }
 }
 
-extern void func_001B8F80();
+extern void func_001B8F80(u8 *);
 extern void func_00175580(u8 *p, s32 a, s32 b, s32 c);
 
 void func_001B8F20(u8 *p) {
@@ -216,7 +216,7 @@ void func_001B8F20(u8 *p) {
     p[0x24] = 0;
     n = q[0x15B] - 1;
     if (n < 0) {
-        func_001B8F80();
+        func_001B8F80(p);
     } else {
         func_00175580(p, 0x1B, 0xB, (s8)n);
     }

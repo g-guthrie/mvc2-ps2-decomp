@@ -34,12 +34,12 @@ void func_00254E80(u8 *p) {
     func_00255660(p);
 }
 
-extern void func_002EE2E0();
+extern void func_002EE2E0(u8 *);
 extern void func_002EE360(void *);
 
 void func_002EE280(u8 *p) {
     if (*(s32 *)(p + 0x2CC)) {
-        func_002EE2E0();
+        func_002EE2E0(p);
     }
     if (*(s32 *)(p + 0x308)) {
         *(s32 *)(p + 0x308) = *(s32 *)(p + 0x308) - 1;
