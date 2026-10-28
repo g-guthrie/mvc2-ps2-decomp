@@ -1,4 +1,6 @@
-/* Provisional: speed-table extent, selectors and callback ABI need proof. */
+/* Provisional: modes 1 and 2 read beyond this two-float owner. Retail uses
+ * three adjacent pairs, currently split across data owners. Dispatcher bounds,
+ * callback ABI and owner lifetime also remain unresolved. */
 typedef unsigned char u8; typedef float f32;
 typedef struct { f32 x,y,z; } V3;
 extern f32 data_u32_0044C470[2];
