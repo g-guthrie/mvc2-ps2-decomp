@@ -51,3 +51,21 @@ bounded ownership rules. Raw arrays, untyped fills, and numeric-address tables r
 uncredited placeholders even when physically included by the hybrid linker.
 See [progress rules](docs/PROGRESS.md) for the catalog policy. The split
 residual spans remain assembly and count as zero.
+
+## Metrowerks compiler-process state (soft-float warm-up)
+
+mwccps2 3.0 and 3.0.3 keep one piece of state for the life of the compiler
+process. The first time the backend lowers a C double-arithmetic operation
+(add, sub, mul, div or compare under `-fp off`) into a runtime call, it stops
+handing out `$a0`/`$a1` as temporaries, and every function compiled later in
+the same invocation uses `$a2`/`$a3`/`$t0` instead. No declaration, pragma or
+option reproduces it; only compiling such an operation does. Retail built many
+functions in a compiler run that had already compiled one.
+
+A stanza may reproduce that by compiling, in the same invocation and before the
+subject, the credited project source that contains the nearest preceding
+retail function with double arithmetic, then keeping only the subject's object
+(see the `build/warm/` stanzas in tools/compile_matching.sh). Nothing extra is
+placed in the subject's own source. Enabling the warm-up globally is wrong: it
+breaks functions in 0x3A0000-0x3C8000 that retail compiled in the default
+state.
