@@ -1,0 +1,2 @@
+/* 0x002B23B4 (gp_rel, src/grok_w5_002a.c): [(s8)actor byte +0x4DD + (actor word +0xD0) * 3] -> actor +0x1FD. */
+unsigned char D_004C0CB0[2][3] = { { 0x0E, 0x08, 0x06 }, { 0x0E, 0x0B, 0x06 } };

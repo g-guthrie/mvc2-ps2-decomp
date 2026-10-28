@@ -14,10 +14,10 @@ typedef struct {
     f32 floats[3];
     u32 head_word;
     data_raw_004768AC_entry entries[8];
-    u8 tail[5];
+    u8 tail[4];
 } data_raw_004768AC_layout;
 #pragma pack()
-typedef char data_raw_004768AC_size_check[(sizeof(data_raw_004768AC_layout) == 149) ? 1 : -1];
+typedef char data_raw_004768AC_size_check[(sizeof(data_raw_004768AC_layout) == 148) ? 1 : -1];
 data_raw_004768AC_layout data_raw_004768AC = {
     { 0.026f, -0.952f, -12.99f },
     0u,
@@ -31,5 +31,5 @@ data_raw_004768AC_layout data_raw_004768AC = {
         { 0u, 1u, 4u, 0u, 0u },
         { 0u, 255u, 0u, 0u, 0u },
     },
-    { 0, 0, 0, 0, 1 },
+    { 0, 0, 0, 0 },
 };

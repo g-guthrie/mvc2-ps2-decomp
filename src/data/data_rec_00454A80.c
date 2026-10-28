@@ -1,0 +1,23 @@
+/* Descriptors for the move handlers at 0x00273780-0x00273D10 (all passed to
+ * func_00189310). */
+#include "mvc2_input_script.h"
+typedef struct {
+    InputScript16 d_454A80; /* 0x00454A80 */
+    InputScript16 d_454A90; /* 0x00454A90 */
+    InputScript16 d_454AA0; /* 0x00454AA0 */
+    InputScript16 d_454AB0; /* 0x00454AB0 */
+    InputScript16 d_454AC0; /* 0x00454AC0 */
+    InputScript16 d_454AD0; /* 0x00454AD0 */
+    InputScript32 d_454AE0; /* 0x00454AE0 */
+} Data00454A80;
+typedef char data_rec_00454A80_size_check[(sizeof(Data00454A80) == 0x80) ? 1 : -1];
+
+Data00454A80 data_rec_00454A80 = {
+    { 0x0003, 0x8100, 0, { 0, 0, 0 }, { 0x1000, 0x1800, 0x0800, 0x0300 } },
+    { 0x0003, 0x9100, 1, { 0, 0, 0 }, { 0x1000, 0x1800, 0x0800, 0x0060 } },
+    { 0x0003, 0x1000, 3, { 0, 0, 0 }, { 0x0800, 0x1000, 0x1800, 0x0300 } },
+    { 0x0003, 0x0000, 4, { 0, 0, 0 }, { 0x1000, 0x1800, 0x0800, 0x0300 } },
+    { 0x0003, 0x1000, 5, { 0, 0, 0 }, { 0x1000, 0x1800, 0x0800, 0x0060 } },
+    { 0x0003, 0x0000, 6, { 0, 0, 0 }, { 0x1000, 0x1400, 0x0400, 0x0060 } },
+    { 0x0005, 0x1000, 2, { 0, 0, 0 }, { 0x0800, 0x1800, 0x1000, 0x1400, 0x0400, 0x0300, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000 } }
+};

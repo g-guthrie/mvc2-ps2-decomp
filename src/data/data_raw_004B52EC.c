@@ -1,1 +1,0 @@
-unsigned char data_raw_004B52EC[4] = { 0x77, 0x77, 0x77, 0xFF };

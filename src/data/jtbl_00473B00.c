@@ -1,23 +1,14 @@
-/* Source-safe reconstruction of the compiler jump table. */
-const unsigned int jtbl_00473B00[20] = {
-    (unsigned int)0x003AD7A0,
-    (unsigned int)0x003AD910,
-    (unsigned int)0x003AE880,
-    (unsigned int)0x003AE8A0,
-    (unsigned int)0x003ADA70,
-    (unsigned int)0x003ADB80,
-    (unsigned int)0x003AE880,
-    (unsigned int)0x003AE8A0,
-    (unsigned int)0x003ADC90,
-    (unsigned int)0x003ADE90,
-    (unsigned int)0x003AE880,
-    (unsigned int)0x003AE8A0,
-    (unsigned int)0x00400000,
-    (unsigned int)0x0010FFD0,
-    (unsigned int)0x0020FFC0,
-    (unsigned int)0x0030FFF0,
-    (unsigned int)0x003AE020,
-    (unsigned int)0x003AE160,
-    (unsigned int)0x003AE880,
-    (unsigned int)0x003AE8A0,
+/* func_003AD700 (src/grok_y5_3ad700.c): lbu p[4], sll 2, lw, jalr with p in $a0. */
+#include "mvc2_state_callbacks.h"
+
+extern void func_003AD7A0(u8 *);
+extern void func_003AD910(u8 *);
+extern void func_003AE880(u8 *);
+extern void func_003AE8A0(u8 *);
+
+const Mvc2StateCallback jtbl_00473B00[4] = {
+    func_003AD7A0,
+    func_003AD910,
+    func_003AE880,
+    func_003AE8A0,
 };

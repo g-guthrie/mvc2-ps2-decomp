@@ -1,8 +1,13 @@
 typedef unsigned char u8;
-/* u8 table indexed by the selector in y11_g.c (switch on D_004461A0[a1]). */
-u8 data_u32_004461A0[40] = {
-    0, 0, 0, 1, 1, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 2,
-    2, 2, 63, 128, 63, 128, 26, 0, 158, 128,
+typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
+typedef unsigned int u32;
+typedef signed int s32;
+typedef float f32;
+/* u8 selector table indexed by a1 in func_00169CE0 (src/y11_g.c), switch on
+ * D_004461A0[a1]. It ends where D_004461C0 starts. */
+u8 data_u32_004461A0[32] = {
+    0x00u, 0x00u, 0x00u, 0x01u, 0x01u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
+    0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x02u, 0x02u, 0x02u
 };

@@ -1,4 +1,3 @@
 typedef unsigned int u32;
-u32 data_u32_0045D544[7] = {
-    0x00000000u, 0x00000000u, 0x00000000u, 0x00000000u, 0x02010201u, 0x04030403u, 0x05050505u, 
-};
+/* Unread zero alignment tail after jtbl_0045D538 (3 callbacks) up to D_0045D550. */
+u32 data_u32_0045D544[3] = { 0u, 0u, 0u };

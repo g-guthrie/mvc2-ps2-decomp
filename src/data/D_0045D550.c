@@ -1,0 +1,9 @@
+typedef unsigned char u8;
+/* Frame offsets indexed [a1[0x1F]][counter & 3] (lbu at 0x00314F9C in
+ * func_00314F40, wave24.c); row 0 is reachable only as the array base. */
+u8 D_0045D550[4][4] = {
+    { 0x00u, 0x00u, 0x00u, 0x00u },
+    { 0x01u, 0x02u, 0x01u, 0x02u },
+    { 0x03u, 0x04u, 0x03u, 0x04u },
+    { 0x05u, 0x05u, 0x05u, 0x05u },
+};

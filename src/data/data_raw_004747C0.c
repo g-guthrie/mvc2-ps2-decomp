@@ -1,4 +1,0 @@
-typedef unsigned char u8;
-u8 data_raw_004747C0[0x4] = {
-    0x08u, 0x04u, 0x04u, 0x02u,
-};

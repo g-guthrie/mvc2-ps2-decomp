@@ -46,7 +46,10 @@ extern const Mvc2F670Slots0To4 jtbl_0044F670;
 extern const Mvc2F670Slots6To8 data_callback_fields_0044F688;
 extern const Mvc2F670Slots10To14 data_callback_fields_0044F698;
 extern const Mvc2F670Slots16To19 data_callback_fields_0044F6B0;
-extern unsigned char data_callback_raw_0044F684[4];
-extern unsigned char data_callback_raw_0044F694[4];
-extern unsigned char data_callback_raw_0044F6AC[4];
+/* Slots 5, 9 and 15 sit in .data between the .rodata runs, so each is its own
+ * pointer object: func_001F01F0 tail-jumps to func_001843A0(u8 *),
+ * func_001F6160 returns u8 *, func_001EFE60 is void(u8 *). */
+extern void (*data_callback_slot_0044F684)(unsigned char *);
+extern unsigned char *(*data_callback_slot_0044F694)(unsigned char *);
+extern void (*data_callback_slot_0044F6AC)(unsigned char *);
 #endif

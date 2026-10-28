@@ -1,0 +1,14 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
+typedef unsigned int u32;
+typedef signed int s32;
+typedef float f32;
+/* func_0016A250 (src/x5_g.c) loads D_00446230[(n / 10) * 2 + (n % 10 > 4)]
+ * (lbu) for the s8 timer n = D_004D1926[0]; n up to 99 reads index 19
+ * (0x00446243), past the old 16-byte split. Sized to D_00446250. */
+u8 D_00446230[32] = {
+    0x07u, 0x07u, 0x07u, 0x06u, 0x06u, 0x06u, 0x05u, 0x05u, 0x04u, 0x04u, 0x03u, 0x03u, 0x02u, 0x02u, 0x01u, 0x01u,
+    0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u
+};
