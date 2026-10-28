@@ -19976,3 +19976,9 @@ func_001825F0,0x001825F0,0x1B8,src/e080_d.c,complete
 func_001827B0,0x001827B0,0x1C0,src/e080_e.c,complete
 residual_0019C890,0x0019C890,0x188,src/e080_f.c,complete
 func_0019FAB0,0x0019FAB0,0xE4,src/e080_g.c,complete
+func_003F2350,0x003F2350,0x180,src/s5b_a.c,complete
+func_001745B0,0x001745B0,0x118,src/s5c_a.c,complete
+func_001A52F0,0x001A52F0,0x12C,src/s5c_b.c,complete
+func_001A6940,0x001A6940,0x12C,src/s5c_c.c,complete
+func_001A0880,0x001A0880,0x12C,src/s5c_d.c,complete
+func_0018F8C0,0x0018F8C0,0x11C,src/s5c_f.c,complete

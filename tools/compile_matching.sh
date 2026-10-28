@@ -23741,4 +23741,28 @@ mkdir -p "build/warm/e080_g" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$M
     mv "build/warm/e080_g/e080_g.o" "$BUILD/e080_g.o"
 "$PYTHON" tools/verify_object.py "$BUILD/e080_g.o" private/SLUS_204.86.rom --source src/e080_g.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/s5b_a.c -c -lang c -i src -O4,p -sdatathreshold 0 -o "$BUILD/s5b_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s5b_a.o" private/SLUS_204.86.rom --source src/s5b_a.c
+mkdir -p "build/warm/s5c_a" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/chA_a.c src/s5c_a.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/s5c_a" && \
+    mv "build/warm/s5c_a/s5c_a.o" "$BUILD/s5c_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s5c_a.o" private/SLUS_204.86.rom --source src/s5c_a.c
+mkdir -p "build/warm/s5c_b" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/e080_b.c src/s5c_b.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/s5c_b" && \
+    mv "build/warm/s5c_b/s5c_b.o" "$BUILD/s5c_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s5c_b.o" private/SLUS_204.86.rom --source src/s5c_b.c
+mkdir -p "build/warm/s5c_c" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/e080_b.c src/s5c_c.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/s5c_c" && \
+    mv "build/warm/s5c_c/s5c_c.o" "$BUILD/s5c_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s5c_c.o" private/SLUS_204.86.rom --source src/s5c_c.c
+mkdir -p "build/warm/s5c_d" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/e080_b.c src/s5c_d.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/s5c_d" && \
+    mv "build/warm/s5c_d/s5c_d.o" "$BUILD/s5c_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s5c_d.o" private/SLUS_204.86.rom --source src/s5c_d.c
+mkdir -p "build/warm/s5c_f" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/e080_b.c src/s5c_f.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/s5c_f" && \
+    mv "build/warm/s5c_f/s5c_f.o" "$BUILD/s5c_f.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s5c_f.o" private/SLUS_204.86.rom --source src/s5c_f.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
