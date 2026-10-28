@@ -19743,3 +19743,15 @@ func_001737A0,0x001737A0,0x2B0,src/nq204_b.c,complete
 residual_003A7700,0x003A7700,0x2AC,src/nq204_c.c,complete
 residual_00394DC0,0x00394DC0,0x280,src/nq198_b.c,complete
 residual_00385AA0,0x00385AA0,0x294,src/nq201_b.c,complete
+residual_003B2030,0x003B2030,0x350,src/nq219_a.c,complete
+func_001712F0,0x001712F0,0x350,src/nq219_b.c,complete
+residual_003A5ED0,0x003A5ED0,0x368,src/nq222_b.c,complete
+func_00132C70,0x00132C70,0x2F8,src/nq214_a.c,complete
+residual_00348010,0x00348010,0x344,src/nq218_b.c,complete
+residual_0037BF60,0x0037BF60,0x33C,src/nq218_c.c,complete
+func_0014AC30,0x0014AC30,0x380,src/nq224_a.c,complete
+func_003AAE20,0x003AAE20,0x35C,src/nq221_b.c,complete
+func_001352A0,0x001352A0,0x358,src/nq220_c.c,complete
+func_001EEEC0,0x001EEEC0,0x2EC,src/nq213_a.c,complete
+residual_003550F0,0x003550F0,0x2E8,src/nq212_a.c,complete
+residual_003786C0,0x003786C0,0x334,src/nq217_b.c,complete

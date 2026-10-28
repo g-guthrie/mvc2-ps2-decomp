@@ -69,3 +69,6 @@ retail function with double arithmetic, then keeping only the subject's object
 placed in the subject's own source. Enabling the warm-up globally is wrong: it
 breaks functions in 0x3A0000-0x3C8000 that retail compiled in the default
 state.
+
+The state only changes functions that themselves contain C double arithmetic;
+a function without any is compiled identically warm or cold.
