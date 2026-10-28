@@ -86,6 +86,16 @@ async function startDisc() {
       return;
     }
   } catch (e) {}
+  /* Personal single-file build (port/tools/pack_personal.py): the disc image is
+     embedded in this page as gzip+base64, so no picker or cache is needed. */
+  const emb = document.getElementById('embedded-disc');
+  if (emb) {
+    status('Unpacking game data...');
+    const gz = await (await fetch('data:application/octet-stream;base64,' + emb.textContent.trim())).blob();
+    emb.remove();
+    const iso = await new Response(gz.stream().pipeThrough(new DecompressionStream('gzip'))).blob();
+    if (await openDisc(iso, 'embedded game data')) { menu.remove(); return; }
+  }
   let cached = null;
   try { cached = await idbGet(); } catch (e) { console.warn('IndexedDB unavailable', e); }
   if (cached && await openDisc(cached, 'cached disc image')) return;

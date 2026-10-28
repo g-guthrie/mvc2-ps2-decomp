@@ -95,6 +95,21 @@ so their hash goes into the handshake.
 - A native iOS/Android wrapper around the same web build, or the native
   build with a Metal or GLES backend.
 
+## Personal single-file build
+
+For your own use only: one `.html` file containing the game code and the
+data from your own disc. Double-click it to open it in any modern browser,
+offline. Do not share or publish it.
+```
+source /home/user/emsdk/emsdk_env.sh; export EMCC_LOCAL_PORTS=sdl2=<SDL2 clone>
+emcmake cmake -S port/frontend -B build/port-web-single -DCMAKE_BUILD_TYPE=Release -DPORT_SINGLE_FILE=ON
+cmake --build build/port-web-single
+python3 port/tools/pack_personal.py build/port-web-single/viewer.html private/disc/mvc2.iso private/MvC2.html
+```
+The output is about 170 MB: a gzip of the image (about 126 MB) as base64.
+The page needs `DecompressionStream`, so Chrome/Edge 80+, Firefox 113+ or
+Safari 16.4+.
+
 ## Ground rules
 
 - The matching build stays byte-exact. All host glue lives under `port/`,

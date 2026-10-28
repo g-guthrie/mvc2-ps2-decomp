@@ -38,6 +38,11 @@ if(EMSCRIPTEN)
     -sEXPORTED_RUNTIME_METHODS=ccall,cwrap,FS
     --shell-file ${PORT_ROOT}/web/shell.html)
   set_property(TARGET viewer APPEND PROPERTY LINK_DEPENDS ${PORT_ROOT}/web/shell.html)
+  # One .html with the wasm and JS inlined (input to port/tools/pack_personal.py).
+  option(PORT_SINGLE_FILE "inline wasm/js into the .html" OFF)
+  if(PORT_SINGLE_FILE)
+    target_link_options(viewer PRIVATE -sSINGLE_FILE=1)
+  endif()
   # Local testing only: bake a file from private/ into viewer.data as /disc.iso.
   set(PORT_PRELOAD "" CACHE STRING "file to --preload-file as /disc.iso (local testing only)")
   if(PORT_PRELOAD)
