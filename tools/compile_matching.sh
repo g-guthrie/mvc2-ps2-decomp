@@ -22644,4 +22644,77 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/nq133_c.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/nq133_c.o"
 "$PYTHON" tools/verify_object.py "$BUILD/nq133_c.o" private/SLUS_204.86.rom --source src/nq133_c.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq135_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nq135_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq135_a.o" private/SLUS_204.86.rom --source src/nq135_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nq135_c.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/nq135_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq135_c.o" private/SLUS_204.86.rom --source src/nq135_c.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq134_a.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/nq134_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq134_a.o" private/SLUS_204.86.rom --source src/nq134_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nq137_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/nq137_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq137_a.o" private/SLUS_204.86.rom --source src/nq137_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq137_b.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/nq137_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq137_b.o" private/SLUS_204.86.rom --source src/nq137_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq141_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nq141_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq141_a.o" private/SLUS_204.86.rom --source src/nq141_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq141_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nq141_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq141_b.o" private/SLUS_204.86.rom --source src/nq141_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq141_c.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nq141_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq141_c.o" private/SLUS_204.86.rom --source src/nq141_c.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq145_b.c -c -lang c -i src -O3,p -Op -sdatathreshold 8 -o "$BUILD/nq145_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq145_b.o" private/SLUS_204.86.rom --source src/nq145_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nq136_b.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/nq136_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq136_b.o" private/SLUS_204.86.rom --source src/nq136_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq144_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/nq144_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq144_a.o" private/SLUS_204.86.rom --source src/nq144_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nq144_b.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/nq144_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq144_b.o" private/SLUS_204.86.rom --source src/nq144_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq144_c.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/nq144_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq144_c.o" private/SLUS_204.86.rom --source src/nq144_c.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nq142_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/nq142_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq142_a.o" private/SLUS_204.86.rom --source src/nq142_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq142_b.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/nq142_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq142_b.o" private/SLUS_204.86.rom --source src/nq142_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq140_c.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nq140_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq140_c.o" private/SLUS_204.86.rom --source src/nq140_c.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq146_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nq146_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq146_a.o" private/SLUS_204.86.rom --source src/nq146_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq146_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nq146_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq146_b.o" private/SLUS_204.86.rom --source src/nq146_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq147_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nq147_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq147_a.o" private/SLUS_204.86.rom --source src/nq147_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq147_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nq147_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq147_b.o" private/SLUS_204.86.rom --source src/nq147_b.c
+"$WIBO" "$SNCPP" -P src/nq147_c.c "$BUILD/nq147_c.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/nq147_c.i" "$BUILD/nq147_c.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/nq147_c.o" "$BUILD/nq147_c.s"
+"$PYTHON" tools/verify_object.py "$BUILD/nq147_c.o" private/SLUS_204.86.rom --source src/nq147_c.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nq139_a.c -c -lang c -i src -O3,p -Op -sdatathreshold 0 -o "$BUILD/nq139_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq139_a.o" private/SLUS_204.86.rom --source src/nq139_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq139_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/nq139_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq139_b.o" private/SLUS_204.86.rom --source src/nq139_b.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

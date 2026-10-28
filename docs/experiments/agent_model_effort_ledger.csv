@@ -576,3 +576,4 @@ nq-wave9,23,opus,low,code-hard,57,30,7100,,,"nq53-71; control-flow shape and try
 nq-wave10-11,24,opus,low,code-hard,,,12080,,,"nq72-106; break-not-return, variable-role reuse, decl-order sweeps; MW register naming still dominates misses"
 nq-wave12,25,opus,low,code-hard,36,18,7008,,,"nq107-119 minus nq115; sibling templates + try30 dominate; residual case-0 bodies of dispatch heads landed well"
 nq-wave13,26,opus,low,code-hard,45,25,10216,,,"nq115,120-133; parent-copy residuals on try30 + typed alias pointers; misses remain register naming"
+nq-wave14,27,opus,low,code-hard,42,25,11128,,,"nq134-147; parent-copy residuals on try30, typed alias pointers, named q=o+2 placement"
