@@ -20017,3 +20017,6 @@ func_001861B0,0x001861B0,0x23C,src/s7f_b.c,complete
 func_0016DA30,0x0016DA30,0x280,src/s7f_c.c,complete
 func_00149020,0x00149020,0x360,src/s7c_a.c,complete
 func_00414720,0x00414720,0x19C,src/s7a_a.c,complete
+func_0012C470,0x0012C470,0x144,src/s7e_d.c,complete
+func_003870C0,0x003870C0,0x218,src/s7d_a.c,complete
+residual_00389370,0x00389370,0x194,src/s7d_b.c,complete
