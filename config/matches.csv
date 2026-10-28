@@ -20054,3 +20054,7 @@ func_00136A10,0x00136A10,0x148,src/s8e_b.c,complete
 func_003FD748,0x003FD748,0x194,src/s8i_a.c,complete
 func_003F84E8,0x003F84E8,0xE8,src/s8i_a.c,complete
 func_00105660,0x00105660,0x90,src/s8g_a.c,complete
+func_001262C0,0x001262C0,0x74,src/s9e_a.c,complete
+func_00126380,0x00126380,0x74,src/s9e_a.c,complete
+func_00127990,0x00127990,0x220,src/s9e_a.c,complete
+func_001288A0,0x001288A0,0x190,src/s9e_b.c,complete
