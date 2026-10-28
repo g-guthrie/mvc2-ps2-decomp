@@ -1,5 +1,4 @@
-/* Provisional: the shared DECI2 state and ring ownership require full linkage proof.
- * The count is updated by the registered DECI2 receive callback. */
+/* The count is updated by the registered DECI2 receive callback. */
 #include "sony_console_ring.h"
 typedef SonyConsoleRing RingCursor;
 typedef struct { int f0,f4,f8,fC; char *f10,*f14; RingCursor *ring; } DebugState;

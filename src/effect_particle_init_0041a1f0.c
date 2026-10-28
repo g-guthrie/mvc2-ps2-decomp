@@ -1,4 +1,3 @@
-/* Provisional: parameter table ownership, callback ABI and selector bounds remain unresolved. */
 typedef unsigned char u8;typedef signed char s8;typedef unsigned short u16;typedef short s16;typedef int s32;
 typedef struct {float x,y,z;} V3;
 typedef struct {s32 vx,vy;s16 dx,dy;u8 animation,palette;u8 pad[2];} EffectParams;
@@ -6,7 +5,7 @@ typedef struct {u8 pad[0x7c];s16 count[2];} Game;
 extern EffectParams D_004A6A90[];
 extern Game *D_004C2794 __attribute__((section(".sdata")));
 extern int func_001757E0(u8 *,int,int);
-extern void func_0041A3C0(u8 *,u8 *);
+extern void func_0041A3C0(); /* real definition: void func_0041A3C0(u8 *p); retail passes owner in $a1 */
 void func_0041A1F0(u8 *p,u8 *owner)
 {
  EffectParams *v;

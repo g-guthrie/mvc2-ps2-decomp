@@ -564,3 +564,8 @@ hb-wave5,20,opus,low,code-held,40,31,,,,"held-row honesty fixes; 3 reverted (asm
 nq-wave5,20,opus,low,code-hard,18,12,,,,"recipe 2 static real-body copies landed most; 2 replaced non-matching placeholders"
 dk-wave5,20,sonnet,medium,data,206,32,2110,,,"most dk units are fragments of larger tables or code blobs"
 dm-wave1,20,opus|sonnet,low|medium,data-merge,13,9,5900,,,"whole-table merges; 284 fragment units -> 9 typed record arrays"
+hb-wave6,21,opus,low,code-held,90,77,,,,"held rows mostly needed sized externs and real callee types; asm-nop/div.s/table-ABI rows stay held"
+nq-wave6,21,opus,low,code-hard,36,16,,,,"nq16-21 0/18 (bnel wall, MW dead-leftover/slot fills); nq22-27 16/18"
+dm-wave2,21,sonnet,medium,data-merge,18,14,4100,,,"split at pointer-table targets where a span holds several objects"
+va,21,opus,low,data-vu1,10,10,81760,,,"VU1 microcode DMA/VIF packets -> tools/vu_asm.py + src/vu/*.vsm"
+ea,21,opus,low,data-ee-blob,5,5,4520,,,"kernel patch code blobs -> src/data_asm/*.s"

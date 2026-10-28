@@ -20,7 +20,6 @@ static void func_001444D0(u8 *p) {
 }
 
 extern void func_001446F0(u8 *,u8 *,int);
-/* Provisional: model resource lifetime and node bounds require complete path proof. */
 void func_00144630(u8 *p)
 {
     Resource *r;

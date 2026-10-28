@@ -1,5 +1,3 @@
-/* Provisional: selector bounds and overlapping data views remain unproved.
- * Non-case selectors leave the native loop inputs unresolved. */
 typedef unsigned char u8;typedef signed char s8;typedef short s16;typedef unsigned int u32;typedef int s32;typedef float f32;
 typedef struct {f32 x,y,z;} V3;
 typedef struct {u32 v[7];} Mapping;

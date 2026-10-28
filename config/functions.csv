@@ -16525,7 +16525,8 @@ func_0036BFE0,0x0036BFE0,0x8,0x0036BFE8,code,spimdisasm-explicit-size-before-fir
 func_0036BFF0,0x0036BFF0,0x54,0x0036C044,code,spimdisasm-explicit-size-before-first-data
 func_0036C050,0x0036C050,0x5C,0x0036C0AC,code,spimdisasm-explicit-size-before-first-data
 func_0036C0B0,0x0036C0B0,0x68,0x0036C118,code,spimdisasm-explicit-size-before-first-data
-func_0036C120,0x0036C120,0x70,0x0036C190,assembly_residual,native-prefix-before-verified-c-entry
+func_0036C120,0x0036C120,0x68,0x0036C188,code,verified-table-tail-call-dispatch
+gap_0036C188,0x0036C188,0x8,0x0036C190,alignment_padding,verified-all-zero-words
 func_0036C190,0x0036C190,0x108,0x0036C298,code,verified-complete-c-function
 func_0036C2A0,0x0036C2A0,0xE0,0x0036C380,code,spimdisasm-explicit-size-before-first-data
 func_0036C380,0x0036C380,0x190,0x0036C510,code,spimdisasm-explicit-size-before-first-data

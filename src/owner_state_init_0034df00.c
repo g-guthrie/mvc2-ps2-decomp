@@ -1,4 +1,5 @@
-/* Provisional: state-table bounds and callback ownership require proof. */
+/* Entry 0 of the handler table at 0x004C1A28: copy the owner's position,
+ * spawn the 0x0034DD60 child and set animation 23/7 (func_001757E0). */
 typedef unsigned char u8;typedef float f32;
 extern void func_0034DD60(u8 *,u8);
 extern int func_001757E0(u8 *,int,int);

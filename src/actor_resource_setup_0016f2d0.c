@@ -1,4 +1,6 @@
-/* Provisional: resource-table ownership, character and palette indices require proof. */
+/* Callee prototypes match their matched definitions: func_0012E770 (gp_small_accessors.c),
+   func_0016F1B0 (resource_section_bind_0016f1b0.c), func_00174E90 (q14_g.c),
+   func_00176340 (grok_r2_0014.c). jtbl_004CA000 is a .bss pointer table. */
 typedef unsigned char u8;typedef signed char s8;typedef unsigned short u16;typedef short s16;typedef unsigned int u32;
 typedef struct {u8 a[0x30];s8 type;u8 b[0x10c];u8 active;s16 palette;u8 c[2];s16 stride;u8 d[0x30];u16 *palettes;u8 e[0x18];u32 unknown;u8 f[0x3a4];s8 region;u8 g[3];u8 *resource;s8 character,variant;} Actor;
 extern u8 *jtbl_004CA000[];

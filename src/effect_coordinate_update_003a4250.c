@@ -1,4 +1,3 @@
-/* Provisional: coordinate-table ownership and initial selector bounds are unresolved. */
 typedef unsigned char u8; typedef short s16; typedef struct {s16 x,y;} Point;
 extern Point D_00472BC0[];
 void func_003A4250(u8 *p)

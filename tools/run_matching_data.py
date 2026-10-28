@@ -38,6 +38,11 @@ def init_worker(settings: dict) -> None:
 
 VU_ASM = Path(__file__).resolve().parent / "vu_asm.py"
 GNU_AS = os.environ.get("AS", "mipsel-linux-gnu-as")
+GAS_FLAGS = ["-EL", "-march=r5900", "-mabi=eabi", "-G0", "-no-pad-sections"]
+# Hand-written sources per kind: ee_code_blob units are EE machine code kept in
+# .data (kernel patches copied to their runtime address) as GNU as sources;
+# VU1 microcode packets are VU assembly (tools/vu_asm.py).
+ASM_KINDS = {".s": "ee_code_blob", ".vsm": "vu1_microcode_dma_packets"}
 
 
 def assemble_vu_unit(unit: dict, object_path: Path) -> subprocess.CompletedProcess:
@@ -57,7 +62,7 @@ def assemble_vu_unit(unit: dict, object_path: Path) -> subprocess.CompletedProce
         f'.incbin "{binary.resolve()}"\n'
     )
     return subprocess.run(
-        [GNU_AS, "-EL", "-march=r5900", "-mabi=eabi", "-G0", "-o", str(object_path), str(wrapper)],
+        [GNU_AS, *GAS_FLAGS, "-o", str(object_path), str(wrapper)],
         text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
     )
 
@@ -69,6 +74,9 @@ def compile_and_verify(unit: dict) -> tuple[bool, str, bool]:
     # Match generate_hybrid_relink.py's object naming convention.
     object_path = Path(_settings["build"]) / source.relative_to("src").with_suffix(".o")
     object_path.parent.mkdir(parents=True, exist_ok=True)
+    expected_kind = ASM_KINDS.get(source.suffix)
+    if expected_kind and unit["kind"] != expected_kind:
+        return False, f"{source.suffix} data source requires kind {expected_kind}: {name}\n", False
     digest = hashlib.sha256(f"{build_runner.CACHE_VERSION}\0data\0{wibo}\0{mwcc}\0".encode())
     digest.update(" ".join(FLAGS).encode() + b"\0" + str(source).encode())
     digest.update(build_runner.file_digest(source, (Path("src/data"), Path("src"))))
@@ -85,6 +93,11 @@ def compile_and_verify(unit: dict) -> tuple[bool, str, bool]:
             object_path.unlink()
         if source.suffix == ".vsm":
             result = assemble_vu_unit(unit, object_path)
+        elif source.suffix == ".s":
+            result = subprocess.run(
+                [GNU_AS, *GAS_FLAGS, "-o", str(object_path), str(source)],
+                text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+            )
         else:
             env = dict(os.environ, MWCIncludes=str(Path(mwcc).parent))
             result = subprocess.run(

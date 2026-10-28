@@ -1,9 +1,11 @@
-/* Provisional: side index bounds and action table ownership require proof. */
+/* Entry 0 of the action table at 0x004C0D08 (void(u8 *)). p[2] is the side
+ * index into the two 20-byte Input records at D_004F4480 (input_update_0012f0b0.c). */
 typedef unsigned char u8;
 typedef signed char s8;
 typedef unsigned short u16;
-typedef struct {u16 buttons;u8 remainder[18];} ControllerInput;
-extern ControllerInput D_004F4480[];
+typedef short s16;
+typedef struct {u16 buttons,previous,pressed,released;u8 gap08[4];s16 x,y;u8 gap10[4];} Input;
+extern Input D_004F4480[2];
 void func_002B43B0(u8 *p)
 {
     p[7]++;

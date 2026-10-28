@@ -24,3 +24,11 @@ typedef struct {
     u16 postAcceptFlags;
     u16 masks[6];
 } InteractionSequencePayload5;
+
+/* One whole descriptor as a single object: the header, the unread byte +5,
+ * and the payload that starts at +6 (16 bytes in total). */
+typedef struct {
+    InteractionSequenceHeader header;
+    u8 unread_05;
+    InteractionSequencePayload3 payload;
+} InteractionSequenceRecord3;

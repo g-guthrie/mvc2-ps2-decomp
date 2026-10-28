@@ -12,8 +12,8 @@ for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
 
 | | Matched | Total | |
 | --- | ---: | ---: | ---: |
-| Code | 2,907,140 bytes | 3,293,696 bytes | **88.26%** |
-| Initialized data | 590,281 bytes | 648,064 bytes | **91.08%** |
+| Code | 2,917,012 bytes | 3,293,696 bytes | **88.56%** |
+| Initialized data | 596,006 bytes | 648,064 bytes | **91.97%** |
 | Catalog spans | 19,160 | 20,474 | |
 
 Every matched function is C compiled with a period toolchain (Metrowerks

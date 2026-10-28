@@ -1,4 +1,3 @@
-/* Provisional: callback-table ownership and phase bounds require proof. */
 typedef unsigned char u8;
 typedef signed short s16;
 typedef void (*ActorCallback)(u8 *, u8 *);

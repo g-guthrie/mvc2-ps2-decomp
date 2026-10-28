@@ -1,4 +1,5 @@
-/* Provisional: parent table ABI and phase bounds require proof. */
+/* Phase dispatch on p[7] through jtbl_0044CCF0 (6 void(u8 *, u8 *) entries,
+ * see src/data/jtbl_0044CCF0.c). */
 typedef unsigned char u8;
 typedef void (*Callback)(u8 *,u8 *);
 extern Callback const jtbl_0044CCF0[6];

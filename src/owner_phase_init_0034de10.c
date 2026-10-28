@@ -1,4 +1,5 @@
-/* Provisional: callback ABI, selector bounds and owner lifetime need proof. */
+/* Phase-init: inherit state from the owner at +0x18, then dispatch on p[0x20]
+ * through jtbl_004C1A28 (28 void(u8 *) state entries, see src/data/jtbl_004C1A28.c). */
 #pragma padloop on
 #include "actor_inherited_state.h"
 typedef unsigned char u8;
@@ -6,7 +7,7 @@ typedef signed char s8;
 typedef signed short s16;
 typedef struct {float x,y,z;} V3;
 typedef void (*StateFn)(u8 *);
-extern StateFn const jtbl_004C1A28[] __attribute__((section(".sdata")));
+extern StateFn const jtbl_004C1A28[28] __attribute__((section(".sdata")));
 #define OWNER (*(u8 **)(p+0x18))
 void func_0034DE10(u8 *p) {
  ++p[4]; *(ActorState *)(p+0xec)=*(ActorState *)(OWNER+0xec); p[0x13c]=1;

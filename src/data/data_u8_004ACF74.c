@@ -1,3 +1,0 @@
-/* func_00127990 reads this four-byte label field at row offset +12 with lbu and maps each byte through func_00127970. */
-typedef unsigned char u8;
-u8 data_u8_004ACF74[4] = { 0x57u, 0x41u, 0x4Eu, 0x20u };

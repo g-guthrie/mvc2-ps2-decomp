@@ -18,6 +18,7 @@ mkdir -p "$BUILD/data"
 from pathlib import Path
 import subprocess, sys
 sources = sorted(str(path) for path in Path('src/data').glob('*.c'))
+sources += sorted(str(path) for path in Path('src/data_asm').glob('*.s'))
 subprocess.check_call(
     [sys.executable, 'tools/generate_data_symbol_addrs.py', *sources, 'config/data_symbol_addrs.txt']
 )

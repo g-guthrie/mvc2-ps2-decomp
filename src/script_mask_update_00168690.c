@@ -1,4 +1,4 @@
-/* Provisional: script shift count bounds and callback table ABI remain unresolved. */
+/* func_0016B0C0 and func_0016B240 are declared as in y2_a.c and tail_leaves.c. */
 typedef unsigned char u8;typedef signed char s8;typedef unsigned short u16;typedef short s16;typedef int s32;
 typedef struct {u8 a[0x20e];s16 h20e;u8 b[0x244];u8 mode;u8 c[0x6a];u8 f4bf;s16 h4c0,h4c2;u8 d[4];s32 w4c8;u8 e[0x24];u16 h4f0;} Actor;
 struct Object;

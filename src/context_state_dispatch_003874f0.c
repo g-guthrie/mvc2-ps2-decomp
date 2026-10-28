@@ -1,4 +1,3 @@
-/* Provisional: forwarded context provenance, owner lifetime and selector bounds require proof. */
 typedef unsigned char u8;
 extern void (*jtbl_00464990[])(u8 *,u8 *);
 void func_003874F0(u8 *p,u8 *q) {

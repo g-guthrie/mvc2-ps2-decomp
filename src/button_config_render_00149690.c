@@ -1,4 +1,3 @@
-/* Provisional: menu start table ownership and all render indexes need bounds proof. */
 typedef unsigned char u8;typedef signed char s8;typedef int s32;
 #include "data/button_config_render.h"
 extern ButtonConfigRenderRecord data_button_config_render_004B36E0[];
