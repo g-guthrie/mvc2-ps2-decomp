@@ -6428,7 +6428,7 @@ func_0020C980,0x0020C980,0x4C,0x0020C9CC,code,spimdisasm-explicit-size-before-fi
 func_0020C9D0,0x0020C9D0,0xE8,0x0020CAB8,code,spimdisasm-explicit-size-before-first-data
 func_0020CAC0,0x0020CAC0,0x3C,0x0020CAFC,code,spimdisasm-explicit-size-before-first-data
 func_0020CB00,0x0020CB00,0x20,0x0020CB20,code,matching-c-head-split
-residual_0020CB20,0x0020CB20,0x5C,0x0020CB7C,assembly_residual,verified-boundary-after-matching-head
+func_0020CB20,0x0020CB20,0x5C,0x0020CB7C,code,verified-indirect-callback-entry
 func_0020CB80,0x0020CB80,0x15C,0x0020CCDC,code,spimdisasm-explicit-size-before-first-data
 func_0020CCE0,0x0020CCE0,0x124,0x0020CE04,code,spimdisasm-explicit-size-before-first-data
 func_0020CE10,0x0020CE10,0x5C,0x0020CE6C,code,spimdisasm-explicit-size-before-first-data

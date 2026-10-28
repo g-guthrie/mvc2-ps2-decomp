@@ -113,8 +113,10 @@ void func_0020EC90(u8 *p)
     }
 }
 
-void residual_0020CB20(u8 *p, u8 *q)
+/* Provisional: dispatcher bounds and context lifetime need proof. */
+void func_0020CB20(u8 *p, void *work)
 {
+    u8 *q = work;
     p[7]++;
     q[11]--;
     func_001757E0(p, 20, 7);
