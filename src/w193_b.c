@@ -90,33 +90,34 @@ void func_00405EB8(void)
     }
 }
 
-typedef struct { u32 *vt; } Obj;
-extern s32 func_004053E8(s32, s32, u8 *);
-extern void func_004104E0(u8 *, s32, u8 *, u8 *);
+#include "cri_sj_ring_buffer_types.h"
+typedef SJ_OBJ Obj;
+extern s32 func_004053E8(s8 *, s32, u8 *);
+extern void func_004104E0(SJCK *, s32, SJCK *, SJCK *);
 
 void func_00405848(u8 *a)
 {
-    s32 buf[4];
-    s32 buf2[4];
+    SJCK buf;
+    SJCK buf2;
     Obj *o;
     u8 *s0;
     s32 n;
     o = *(Obj **)(a + 0x1C);
     s0 = a + 0xA0;
-    ((void (*)(Obj *, s32, s32, s32 *))o->vt[6])(o, 1, 0x1800, buf);
-    n = func_004053E8(buf[0], buf[1], s0);
+    o->vtbl->GetChunk(o, 1, 0x1800, &buf);
+    n = func_004053E8(buf.data, buf.len, s0);
     if (n == 0) {
-        ((void (*)(Obj *, s32, s32 *))o->vt[7])(o, 1, buf);
+        o->vtbl->UngetChunk(o, 1, &buf);
         return;
     }
-    if (n != buf[1]) {
+    if (n != buf.len) {
         for (;;) {
             __asm__ volatile("nop");
         }
     }
-    func_004104E0((u8 *)buf, n, (u8 *)buf, (u8 *)buf2);
-    ((void (*)(Obj *, s32, s32 *))o->vt[8])(o, 0, buf);
-    ((void (*)(Obj *, s32, s32 *))o->vt[7])(o, 1, buf2);
+    func_004104E0(&buf, n, &buf, &buf2);
+    o->vtbl->PutChunk(o, 0, &buf);
+    o->vtbl->UngetChunk(o, 1, &buf2);
     *(s32 *)(a + 8) += n;
     a[1] = 2;
 }
