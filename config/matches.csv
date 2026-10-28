@@ -3660,8 +3660,8 @@ func_003B11C0,0x003B11C0,0x24,src/argument_dispatch_heads.c,complete
 func_003B1610,0x003B1610,0x20,src/composite_dispatch_heads.c,complete
 func_003B1A70,0x003B1A70,0x14,src/straight_leaves.c,complete
 func_003B1A90,0x003B1A90,0x8,src/tail_leaves.c,complete
-func_003B1C50,0x003B1C50,0x20,src/composite_dispatch_heads.c,complete
-func_003B1DE0,0x003B1DE0,0x1c,src/composite_gp_dispatch_heads.c,complete
+func_003B1C50,0x003B1C50,0x20,src/composite_dispatch_heads.c,placeholder
+func_003B1DE0,0x003B1DE0,0x1c,src/composite_gp_dispatch_heads.c,placeholder
 func_003B1EC0,0x003B1EC0,0x14,src/straight_leaves.c,complete
 func_003B1EE0,0x003B1EE0,0x8,src/tail_leaves.c,complete
 func_003B1FF0,0x003B1FF0,0x20,src/argument_dispatch_heads.c,complete

@@ -1287,7 +1287,8 @@ extern DispatchFn jtbl_00473B40[];
 extern DispatchFn jtbl_00473C70[];
 extern DispatchFn jtbl_00473CC0[];
 extern DispatchFn jtbl_00473D00[];
-extern DispatchFn jtbl_00473D10[];
+typedef void (*OwnerByteCallback)(u8 *, u8 *);
+extern OwnerByteCallback jtbl_00473D10[];
 extern DispatchFn jtbl_00473D90[];
 extern DispatchFn jtbl_00473DB0[];
 extern DispatchFn jtbl_00473DE0[];
@@ -4023,7 +4024,7 @@ void func_003B0D70(u8 *p) { jtbl_00473CC0[p[6]](p); }
 
 void func_003B1610(u8 *p) { jtbl_00473D00[p[4]](p); }
 
-void func_003B1C50(u8 *p) { jtbl_00473D10[p[4]](p); }
+void func_003B1C50(u8 *p, u8 *owner) { jtbl_00473D10[p[4]](p, owner); }
 
 void func_003B25B0(u8 *p) { jtbl_00473D90[p[4]](p); }
 
