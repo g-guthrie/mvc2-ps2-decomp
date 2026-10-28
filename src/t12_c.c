@@ -8,7 +8,7 @@ typedef float f32;
 
 extern s32 func_00189150(u8 *p);
 extern void func_00186A60(u8 *p, s32 n);
-extern u8 func_0018E970(u8 *p);
+#include "actor_selector_api.h"
 extern void func_0018CC30(u8 *p, u8 r);
 extern void func_0018CCD0(u8 *p, u8 r);
 extern void func_0018CD70(u8 *p, u8 r);
@@ -35,7 +35,7 @@ void func_0018C970(u8 *p, u8 *q) {
     u32 f;
     u8 r;
     *(u16 *)(p + 0x1C2) = *(u16 *)(q + 0x1C0);
-    r = func_0018E970(p);
+    r = func_0018E970((G18E970 *)p);
     f = *(u16 *)(q + 0x1C0);
     if (f & 0x10) {
         func_0018CC30(p, r);

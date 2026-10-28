@@ -199,7 +199,7 @@ s32 func_002D94E0(u8 *p) {
 }
 
 extern s8 D_00446D40[];
-typedef struct G18E970 { u8 p0[0x1CC]; struct G18E970 *w1cc; u8 *w1d0; u8 p1[0x47]; u8 b21b; u8 p2[4]; struct G18E970 *w220; u8 p3[0x1F]; s8 b243; } G18E970;
+#include "actor_selector_api.h"
 u8 func_0018E970(G18E970 *p) {
     s8 n = p->b243;
     if ((p->w1d0[0x12] & 4) == 0) {
