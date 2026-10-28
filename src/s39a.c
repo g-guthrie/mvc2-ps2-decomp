@@ -40,10 +40,10 @@ extern RuntimeObjectStorage *func_00400468(void *, s32, s32);
 extern s32 func_00400BE0(void *);
 extern void func_003FB128(void *);
 extern char D_004BB190[], D_004BB1C8[];
-s32 func_003FC9C8(s32 *p, s32 a, s32 b) {
+s32 func_003FC9C8(s32 *p, void *a, s32 b) {
     RuntimeObjectStorage *r; s32 x;
     if (a == 0) { func_003FB128(D_004BB190); return -1; }
-    r = func_00400468((void *)(u32)a, b, 0);
+    r = func_00400468(a, b, 0);
     if (r == 0) { func_003FB128(D_004BB1C8); return -1; }
     p[1] = (s32)(u32)r;
     x = func_00400BE0(r);

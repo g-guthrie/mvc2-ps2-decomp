@@ -12,14 +12,14 @@ s32 func_003FCA60(s32 a, s32 b)
     extern void func_003F9630(void);
     extern void func_003F9660(void);
     extern s32 func_003FC978(void);
-    extern s32 func_003FC9C8(s32, s32, s32);
+    extern s32 func_003FC9C8(s32 *, void *, s32);
     extern void func_003FCCF0(s32);
     s32 r;
     func_003FB510(1, 0, a, b, -1);
     func_003F9630();
     r = func_003FC978();
     if (r != 0) {
-        if (func_003FC9C8(r, a, b) < 0) {
+        if (func_003FC9C8((s32 *)(u32)r, (void *)(u32)a, b) < 0) {
             func_003F9660();
             func_003FCCF0(r);
             r = 0;
