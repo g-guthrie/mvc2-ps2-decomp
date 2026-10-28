@@ -6,22 +6,23 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 typedef struct { f32 x, y, z; } V3;
-/* Provisional: this vector view differs from the owned float[8][2][3] table. */
-extern V3 D_004B1940[];
+typedef f32 F32Vec[3];
+/* Provisional: flattened vector access and selector bounds need proof. */
+extern f32 data_f32_004B1940[8][2][3];
 
 void func_0013E760(u8 *p)
 {
-    V3 *a = &D_004B1940[p[0x20] * 2];
-    V3 *b = &D_004B1940[p[0x20] * 2 + 1];
+    F32Vec *a = (F32Vec *)(void *)data_f32_004B1940 + p[0x20] * 2;
+    F32Vec *b = (F32Vec *)(void *)data_f32_004B1940 + (p[0x20] * 2 + 1);
     f32 d, e;
-    e = a->x;
-    d = (b->x - e) / 30.0f;
+    e = (*a)[0];
+    d = ((*b)[0] - e) / 30.0f;
     *(f32 *)(p + 0x34) = e + (f32)*(s16 *)(p + 0x1C) * d;
-    e = a->y;
-    d = (b->y - e) / 30.0f;
+    e = (*a)[1];
+    d = ((*b)[1] - e) / 30.0f;
     *(f32 *)(p + 0x38) = e + (f32)*(s16 *)(p + 0x1C) * d;
-    e = a->z;
-    d = (b->z - e) / 30.0f;
+    e = (*a)[2];
+    d = ((*b)[2] - e) / 30.0f;
     *(f32 *)(p + 0x3C) = e + (f32)*(s16 *)(p + 0x1C) * d;
 }
 extern f32 *D_004F1F4C;
