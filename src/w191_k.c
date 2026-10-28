@@ -33,9 +33,10 @@ typedef struct {
     s32 w2F8;
 } Q380;
 
+/* Provisional: unresolved two-argument helper call require proof. */
 void func_00380650(P380 *a, Q380 *b)
 {
-    extern s32 func_00185980(void);
+    extern s32 func_00185980(u8 *);
     extern void func_00380A40(P380 *, Q380 *);
     extern void func_00380B40(void);
     extern void func_00380A90(P380 *);
@@ -46,7 +47,7 @@ void func_00380650(P380 *a, Q380 *b)
         goto fail;
     }
     if (a->b1B2 != 0) {
-        if (func_00185980() == 0) {
+        if (func_00185980((u8 *)a) == 0) {
             goto fail;
         }
         t = a->b5;

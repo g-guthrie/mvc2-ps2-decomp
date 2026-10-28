@@ -150,9 +150,10 @@ void func_0022E700(P22E7 *p)
     func_001757E0(p, 0x12, 4);
 }
 
-typedef struct { u8 pad[0x7C]; s16 f7c[8]; } G3B33;
+typedef struct { u8 pad[0x7C]; s16 f7c[2]; } G3B33;
 extern G3B33 *D_004C2794;
 
+/* Provisional: team index bounds and game-state ownership require proof. */
 void func_003B3370(u8 *p, u8 *a)
 {
     extern int func_00175700(u8 *);
@@ -316,7 +317,7 @@ typedef struct { u8 p0[4]; u8 f4; u8 p1[0x14 - 5]; Q1C9C *f14; u8 p2[0x34 - 0x18
 
 void func_001C9CD0(R1C9C *p)
 {
-    extern void func_00175670();
+    extern int func_00175670(u8 *);
     Q1C9C *q = p->f14;
     s16 v;
     if (q->f4 < 2) {
@@ -333,7 +334,7 @@ void func_001C9CD0(R1C9C *p)
             if (v != 0) p->f34 = -p->f34;
             p->f34 += q->f34;
             p->f38 += q->f38;
-            func_00175670();
+            func_00175670((u8 *)p);
             return;
         }
     }
@@ -385,9 +386,10 @@ typedef struct {
     u8 p4[0x1B2 - 0x70]; u8 f1b2; u8 p5[2]; u8 f1b5; u8 p6[0x1C0 - 0x1B6]; u16 f1c0; u8 p7[0x1D8 - 0x1C2]; s32 f1d8; u8 p8[0x20D - 0x1DC]; u8 f20d; u8 p9[0x213 - 0x20E]; u8 f213;
 } P2E1C;
 
+/* Provisional: team index bounds and game-state ownership require proof. */
 void func_002E1CF0(P2E1C *p)
 {
-    extern void func_001861B0();
+    extern void func_001861B0(u8 *);
     extern void func_0018C4B0(P2E1C *, s32);
     extern void func_001757E0(P2E1C *, s32, s32);
     extern void func_001E3710(P2E1C *, s32);
@@ -397,7 +399,7 @@ void func_002E1CF0(P2E1C *p)
     extern void func_001843A0(P2E1C *);
     if (p->f6 == 0) {
         u32 t;
-        func_001861B0();
+        func_001861B0((u8 *)p);
         t = p->f6;
         p->f6 = t + 1;
         p->f1b5 = 0x41;

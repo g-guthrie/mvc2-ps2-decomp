@@ -8,6 +8,7 @@ typedef float f32;
 
 extern s16 D_00447050[];
 
+/* Provisional: func_00185490 requires the actor argument. */
 s32 func_00184B30(u8 *p) {
     extern void func_00191210();
     extern s32 func_00185E40(u8 *);

@@ -7,13 +7,13 @@ typedef signed int s32;
 typedef float f32;
 
 void func_00363F70(u8 *p, u8 *q) {
-    extern s32 func_00185980();
+    extern s32 func_00185980(u8 *);
     extern int func_00174470(const void *);
     extern void func_00364E70();
     extern void func_001E7F60();
     if (q[5] == 0 && *(s8 *)(p + 0x1B3) == 0) {
         if (*(s8 *)(p + 0x1B2) != 0) {
-            if (func_00185980() == 0) goto fail;
+            if (func_00185980(p) == 0) goto fail;
             {
                 u32 t = p[5];
                 p[5] = t + 1;

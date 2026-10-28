@@ -161,8 +161,9 @@ void func_0031C6B0(u8 *p) {
     }
 }
 
+/* Provisional: team bounds and volatile store require proof. */
 void func_00263DB0(u8 *p) {
-    extern void func_001861B0();
+    extern void func_001861B0(u8 *);
     extern void func_001757E0();
     extern void func_001E3710();
     extern void func_0018C4B0();
@@ -175,7 +176,7 @@ void func_00263DB0(u8 *p) {
     u32 offset;
     u8 command;
     if (p[6] == 0) {
-        func_001861B0();
+        func_001861B0(p);
         t = p[6];
         p[6] = t + 1;
         p[0x1B5] = 0x1D;

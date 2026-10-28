@@ -14720,13 +14720,13 @@ func_0016F720,0x0016F720,0xAC,src/q2_a.c,complete
 func_00362B00,0x00362B00,0xBC,src/q2_a.c,complete
 func_002B2050,0x002B2050,0xDC,src/q2_a.c,complete
 func_0022E700,0x0022E700,0xE0,src/q2_a.c,complete
-func_003B3370,0x003B3370,0xEC,src/q2_a.c,complete
+func_003B3370,0x003B3370,0xEC,src/q2_a.c,placeholder
 func_001464D0,0x001464D0,0xF8,src/q2_a.c,complete
 func_00225210,0x00225210,0xFC,src/q2_a.c,complete
 func_00399A50,0x00399A50,0x100,src/q2_a.c,complete
 func_001C9CD0,0x001C9CD0,0x100,src/q2_a.c,complete
 func_00285ED0,0x00285ED0,0x118,src/q2_a.c,complete
-func_002E1CF0,0x002E1CF0,0x11C,src/q2_a.c,complete
+func_002E1CF0,0x002E1CF0,0x11C,src/q2_a.c,placeholder
 func_00359140,0x00359140,0xDC,src/q2_b.c,complete
 func_002C54F0,0x002C54F0,0xEC,src/q2_b.c,complete
 func_002C9430,0x002C9430,0x110,src/q2_b.c,complete
@@ -14817,7 +14817,7 @@ func_003147B0,0x003147B0,0x100,src/w179_b.c,complete
 func_00250390,0x00250390,0x10C,src/w179_b.c,complete
 func_00305780,0x00305780,0x10C,src/w179_b.c,complete
 func_0031C6B0,0x0031C6B0,0x128,src/w179_b.c,complete
-func_00263DB0,0x00263DB0,0x134,src/w179_b.c,complete
+func_00263DB0,0x00263DB0,0x134,src/w179_b.c,placeholder
 func_00316400,0x00316400,0x10C,src/w179_c.c,complete
 func_003159D0,0x003159D0,0x10C,src/w179_c.c,complete
 func_002594F0,0x002594F0,0x110,src/w179_c.c,complete
@@ -15113,7 +15113,7 @@ func_003B8830,0x003B8830,0x104,src/w183_f.c,complete
 func_002673D0,0x002673D0,0x110,src/w183_g.c,complete
 func_00241800,0x00241800,0x118,src/w183_h.c,complete
 func_0031D620,0x0031D620,0x120,src/w183_i.c,complete
-func_00184B30,0x00184B30,0x12C,src/w183_j.c,complete
+func_00184B30,0x00184B30,0x12C,src/w183_j.c,placeholder
 func_00374830,0x00374830,0x134,src/w183_k.c,complete
 func_003648A0,0x003648A0,0x13C,src/w183_l.c,complete
 func_0038E7B0,0x0038E7B0,0x140,src/w183_m.c,complete
@@ -15435,8 +15435,8 @@ func_001E8110,0x001E8110,0xA8,src/w191_b.c,complete
 func_00234E00,0x00234E00,0xEC,src/w191_e.c,complete
 func_0026A6B0,0x0026A6B0,0x104,src/w191_h.c,complete
 func_00328160,0x00328160,0x10C,src/w191_i.c,complete
-func_00380650,0x00380650,0x11C,src/w191_k.c,complete
-func_002E50C0,0x002E50C0,0x12C,src/w191_l.c,complete
+func_00380650,0x00380650,0x11C,src/w191_k.c,placeholder
+func_002E50C0,0x002E50C0,0x12C,src/w191_l.c,placeholder
 func_002140C0,0x002140C0,0x134,src/w191_m.c,complete
 func_00214200,0x00214200,0x134,src/w191_m.c,complete
 func_002EE480,0x002EE480,0x138,src/w191_n.c,complete

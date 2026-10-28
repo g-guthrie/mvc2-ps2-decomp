@@ -35,9 +35,10 @@ typedef struct {
 
 extern T2E5 *D_004C2840;
 
+/* Provisional: team index bounds and state ownership require proof. */
 void func_002E50C0(P2E5 *p)
 {
-    extern void func_001863F0(void);
+    extern void func_001863F0(u8 *);
     extern void func_002E7740(P2E5 *);
     extern void func_002E51F0(P2E5 *);
     extern void func_002E5230(P2E5 *);
@@ -49,7 +50,7 @@ void func_002E50C0(P2E5 *p)
     p->f5c += p->f68;
     p->f38 += p->f60;
     p->f60 += p->f6c;
-    func_001863F0();
+    func_001863F0((u8 *)p);
     if (q[9] != 0 && p->b1B7 != 0) {
         if (*(u16 *)((p->b2 << 1) + (u32)D_004C2840 + 0x106) != 0) {
             if (q[0x11] != 0) {
