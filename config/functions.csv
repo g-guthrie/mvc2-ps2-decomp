@@ -17659,7 +17659,9 @@ func_0039B7D0,0x0039B7D0,0x8,0x0039B7D8,code,spimdisasm-explicit-size-before-fir
 func_0039B7E0,0x0039B7E0,0x60,0x0039B840,code,spimdisasm-explicit-size-before-first-data
 func_0039B840,0x0039B840,0x38,0x0039B878,code,verified-source-recovery
 residual_0039B878,0x0039B878,0x8,0x0039B880,alignment_padding,verified-all-zero-words
-residual_0039B880,0x0039B880,0x15C,0x0039B9DC,assembly_residual,native-remainder-after-verified-c-entry
+residual_0039B880,0x0039B880,0xF8,0x0039B978,assembly_residual,native-remainder-after-verified-c-entry
+gap_0039B978,0x0039B978,0x8,0x0039B980,alignment_padding,zero-fill-between-functions
+func_0039B980,0x0039B980,0x5C,0x0039B9DC,code,verified-source-recovery
 func_0039B9E0,0x0039B9E0,0x20,0x0039BA00,code,spimdisasm-explicit-size-before-first-data
 func_0039BA00,0x0039BA00,0x20,0x0039BA20,code,spimdisasm-explicit-size-before-first-data
 func_0039BA20,0x0039BA20,0x20,0x0039BA40,code,matching-c-head-split
