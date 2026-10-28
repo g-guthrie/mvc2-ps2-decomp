@@ -2459,7 +2459,8 @@ residual_0017949C,0x0017949C,0x4,0x001794A0,alignment_padding,verified-all-zero-
 func_001794A0,0x001794A0,0x54,0x001794F4,code,verified-callback-entry
 func_00179500,0x00179500,0x8C,0x0017958C,code,spimdisasm-explicit-size-before-first-data
 func_00179590,0x00179590,0x600,0x00179B90,code,spimdisasm-explicit-size-before-first-data
-func_00179B90,0x00179B90,0x70,0x00179C00,code,spimdisasm-explicit-size-before-first-data
+func_00179B90,0x00179B90,0x6C,0x00179BFC,code,spimdisasm-explicit-size-before-first-data
+gap_00179BFC,0x00179BFC,0x4,0x00179C00,alignment_padding,split-trailing-padding
 func_00179C00,0x00179C00,0x248,0x00179E48,code,verified-split-standalone-prologue
 func_00179E50,0x00179E50,0x110,0x00179F60,code,spimdisasm-explicit-size-before-first-data
 func_00179F60,0x00179F60,0x5C,0x00179FBC,code,spimdisasm-explicit-size-before-first-data
