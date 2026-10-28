@@ -89,6 +89,10 @@ retail compiled them in one process. When the nearest earlier
 double-arithmetic function was built by a different Metrowerks build, use the
 nearest one built by the subject's compiler (func_00174F60, MW 3.0, warms
 after src/chA_a.c; func_0016E080 between them is MW 3.0.3 and matches cold).
+`python3 tools/nearwarm.py ADDR [MWCCPS2|MWCCPS2_30]` lists the candidates.
+Two MW 3.0 files have no earlier double-arithmetic function built by 3.0
+anywhere below them (src/nq214_a.c, src/nq228_a.c); they are still warmed by
+3.0.3 sources and are the only cross-compiler warm builds left.
 
 ## EE GCC 2.96 branch-likely residue: define the callee first
 
