@@ -1,4 +1,4 @@
-#include "runtime_decode_descriptor.h"
+#include "runtime_stream_decoder.h"
 typedef signed int s32;
 typedef unsigned int u32;
 typedef unsigned char u8;
@@ -28,15 +28,14 @@ extern u32 func_00410AD0(s32, s32);
 u32 func_003FF060(HolderF *h, s32 i){ return func_00410AD0(((ObjF *)h->tbl->items[i])->f, 0) >> 1; }
 
 
-typedef struct { const void *f0; s32 pad[4]; short *f5; s32 pad2[2]; s32 f8; } Q48;
-typedef struct { s32 pad[2]; RuntimeDecodeDescriptor *h; } P48b;
 extern s32 func_00404408(RuntimeDecodeDescriptor *, const void *, s32, short *);
-extern void func_00404468(s32 *);
-void func_003F8448(P48b *p, s32 x){
-    Q48 *q = (Q48 *)((char *)p + 0x48);
-    RuntimeDecodeDescriptor *h = p->h;
-    func_00404408(h, q->f0, x, q->f5 + q->f8);
-    func_00404468((s32 *)h);
+extern void func_00404468(RuntimeDecodeDescriptor *);
+/* Provisional: stream and buffer extents remain unproved. */
+void func_003F8448(RuntimeStreamDecoder *p, s32 x){
+    RuntimeStreamChunk *q = &p->chunk;
+    RuntimeDecodeDescriptor *h = p->descriptor;
+    func_00404408(h, q->input, x, q->output + q->start);
+    func_00404468(h);
 }
 
 

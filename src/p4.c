@@ -1,3 +1,4 @@
+#include "runtime_decode_descriptor.h"
 typedef unsigned char u8;
 typedef signed short s16;
 typedef unsigned int u32;
@@ -22,4 +23,4 @@ extern void func_00402498();
 extern void func_003FD928();
 extern s32 D_004C2388;
 
-void func_00404468(s32 *p) { if (p[3] == 0) { p[4] = 0; p[3] = 1; } }
+void func_00404468(RuntimeDecodeDescriptor *p) { if (p->state == 0) { p->result = 0; p->state = 1; } }

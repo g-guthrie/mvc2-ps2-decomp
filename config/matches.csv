@@ -10286,7 +10286,7 @@ func_00409C90,0x00409C90,0x34,src/sdk3d.c,complete
 func_00409870,0x00409870,0x34,src/sdk3d.c,complete
 func_003F8978,0x003F8978,0x60,src/sdk3d.c,complete
 func_00410B88,0x00410B88,0x50,src/sdk3e.c,complete
-func_003F8490,0x003F8490,0x58,src/sdk3e.c,complete
+func_003F8490,0x003F8490,0x58,src/sdk3e.c,placeholder
 func_003F5F40,0x003F5F40,0x44,src/sdk3f.c,complete
 func_003FDE40,0x003FDE40,0x44,src/sdk3f.c,complete
 func_003F7970,0x003F7970,0x38,src/sdk3f.c,complete
@@ -11446,7 +11446,7 @@ func_003FF5D0,0x003FF5D0,0x1C,src/s4.c,complete
 func_00104608,0x00104608,0x28,src/sony29_status_resets.c,complete
 func_00400BE8,0x00400BE8,0x2C,src/s4.c,complete
 func_003FF060,0x003FF060,0x34,src/s4.c,complete
-func_003F8448,0x003F8448,0x48,src/s4.c,complete
+func_003F8448,0x003F8448,0x48,src/s4.c,placeholder
 func_004104E0,0x004104E0,0x5C,src/s4.c,placeholder
 func_00401428,0x00401428,0x1A0,src/s4.c,complete
 func_004015C8,0x004015C8,0x60,src/s4.c,complete
