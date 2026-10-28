@@ -19384,3 +19384,4 @@ func_00149690,0x00149690,0x188,src/button_config_render_00149690.c,placeholder
 func_00131CE0,0x00131CE0,0x138,src/menu_model_initializer_00131ce0.c,placeholder
 func_003FF688,0x003FF688,0x188,src/stream_decode_003ff688.c,placeholder
 lbl_00358E30,0x00358E30,0x100,src/owner_phase_initialize_00358e30.c,placeholder
+func_003BE8A0,0x003BE8A0,0x5C,src/actor_effect_dispatch_003be8a0.c,placeholder
