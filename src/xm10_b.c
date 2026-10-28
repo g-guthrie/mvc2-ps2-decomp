@@ -5,15 +5,8 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 
-typedef struct Obj Obj;
-typedef struct {
-    void *f[6];
-    s32 (*f18)(Obj *, s32, s32, void *);
-    s32 (*f1C)(Obj *, s32, void *);
-    s32 (*f20)(Obj *, s32, void *);
-    s32 (*f24)(Obj *, s32);
-} VT;
-struct Obj { VT *vt; };
+#include "cri_sj_ring_buffer_types.h"
+typedef SJ_OBJ Obj;
 
 typedef struct {
     u32 magic;
@@ -39,17 +32,15 @@ typedef struct {
     s8 bAC;
 } P;
 
-extern void *memcpy(void *, void *, u32);
+extern void *memcpy(void *, const void *, u32);
 
 s32 func_00405968(P *p) {
-    extern s32 func_00405778(s32, s32, Hdr *);
-    extern void func_004104E0();
+    extern s32 func_00405778(s8 *, s32, Hdr *);
+    extern void func_004104E0(SJCK *, s32, SJCK *, SJCK *);
     extern void func_00405100();
     extern void func_00405118();
     Hdr T;
-    s32 U[2];
-    s32 W[2];
-    s32 X[2];
+    SJCK U, W, X;
     Obj **q;
     s32 n;
     s32 i;
@@ -64,49 +55,49 @@ s32 func_00405968(P *p) {
     n = p->bAC;
     o = p->f1C;
     for (i = 0; i < n; i++) {
-        o->vt->f18(o, 1, 0x7FFFFFFF, U);
-        if (func_00405778(U[0], U[1], &T) == 0) {
-            o->vt->f1C(o, 1, U);
+        o->vtbl->GetChunk(o, 1, 0x7FFFFFFF, &U);
+        if (func_00405778(U.data, U.len, &T) == 0) {
+            o->vtbl->UngetChunk(o, 1, &U);
             return ret;
         }
-        if (U[1] < T.len + 8) {
-            o->vt->f1C(o, 1, U);
+        if (U.len < T.len + 8) {
+            o->vtbl->UngetChunk(o, 1, &U);
             return ret;
         }
         if (T.magic == 0x41495845) {
             idx = T.b8;
-            func_004104E0(U, T.len + 8, U, W);
-            o->vt->f20(o, 0, U);
-            o->vt->f1C(o, 1, W);
-            r = o->vt->f24(o, 1);
+            func_004104E0(&U, T.len + 8, &U, &W);
+            o->vtbl->PutChunk(o, 0, &U);
+            o->vtbl->UngetChunk(o, 1, &W);
+            r = o->vtbl->GetNumData(o, 1);
             if (r <= 0) p->b4 = 0;
             if (p->b4 == 0) p->b1 = 3;
             return ret;
         }
         idx = T.b8;
         if (!(idx < p->b2)) for (;;) ;
-        if (q[idx]->vt->f24(q[idx], 0) < T.hA) {
-            o->vt->f1C(o, 1, U);
+        if (q[idx]->vtbl->GetNumData(q[idx], 0) < T.hA) {
+            o->vtbl->UngetChunk(o, 1, &U);
             return ret;
         }
         func_00405100();
         ret = T.fC;
-        func_004104E0(U, T.len + 8, U, W);
-        o->vt->f1C(o, 1, W);
-        func_004104E0(U, 0x10, U, W);
-        if (W[1] < T.hA) for (;;) ;
+        func_004104E0(&U, T.len + 8, &U, &W);
+        o->vtbl->UngetChunk(o, 1, &W);
+        func_004104E0(&U, 0x10, &U, &W);
+        if (W.len < T.hA) for (;;) ;
         j = 0;
         if (T.hA > 0) {
             do {
-                q[idx]->vt->f18(q[idx], 0, W[1] - j, X);
-                memcpy((void *)X[0], (void *)(W[0] + j), X[1]);
-                q[idx]->vt->f20(q[idx], 1, X);
-                j += X[1];
+                q[idx]->vtbl->GetChunk(q[idx], 0, W.len - j, &X);
+                memcpy(X.data, W.data + j, X.len);
+                q[idx]->vtbl->PutChunk(q[idx], 1, &X);
+                j += X.len;
             } while (j < T.hA);
         }
-        o->vt->f20(o, 0, U);
-        o->vt->f20(o, 0, W);
-        p->f8 += U[1] + W[1];
+        o->vtbl->PutChunk(o, 0, &U);
+        o->vtbl->PutChunk(o, 0, &W);
+        p->f8 += U.len + W.len;
         func_00405118(p->f8);
     }
     return ret;
