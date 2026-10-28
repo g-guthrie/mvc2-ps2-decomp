@@ -23643,4 +23643,24 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/r3_30_d.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/r3_30_d.o"
 "$PYTHON" tools/verify_object.py "$BUILD/r3_30_d.o" private/SLUS_204.86.rom --source src/r3_30_d.c
 
+"$WIBO" "$SNCPP" -P src/r3_21_b.c "$BUILD/r3_21_b.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/r3_21_b.i" "$BUILD/r3_21_b.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r3_21_b.o" "$BUILD/r3_21_b.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r3_21_b.o" private/SLUS_204.86.rom --source src/r3_21_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/r3_39_g.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/r3_39_g.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r3_39_g.o" private/SLUS_204.86.rom --source src/r3_39_g.c
+
+"$WIBO" "$SNCPP" -P src/r3_33_a.c "$BUILD/r3_33_a.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 --extra-flags="" "$BUILD/r3_33_a.i" "$BUILD/r3_33_a.s"
+"$WIBO" "$SNAS" -G8 -o "$BUILD/r3_33_a.o" "$BUILD/r3_33_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r3_33_a.o" private/SLUS_204.86.rom --source src/r3_33_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/r3_33_c.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/r3_33_c.o"
+"${OBJCOPY:-mipsel-linux-gnu-objcopy}" \
+    --redefine-sym @39=jtbl_004BF040 \
+    "$BUILD/r3_33_c.o" "$BUILD/r3_33_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r3_33_c.o" private/SLUS_204.86.rom --source src/r3_33_c.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

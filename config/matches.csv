@@ -19924,3 +19924,7 @@ func_0039B980,0x0039B980,0x5C,src/r3_32_e.c,complete
 residual_003899D0,0x003899D0,0x244,src/r3_28_a.c,complete
 func_002B0550,0x002B0550,0x258,src/r3_28_b.c,complete
 func_0038B8C0,0x0038B8C0,0x944,src/r3_30_d.c,complete
+func_0040CE38,0x0040CE38,0x160,src/r3_21_b.c,complete
+func_00423370,0x00423370,0x110,src/r3_39_g.c,complete
+func_003F5F88,0x003F5F88,0x124,src/r3_33_a.c,complete
+func_0041DBA0,0x0041DBA0,0x270,src/r3_33_c.c,complete
