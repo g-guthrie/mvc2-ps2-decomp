@@ -72,3 +72,14 @@ state.
 
 The state only changes functions that themselves contain C double arithmetic;
 a function without any is compiled identically warm or cold.
+
+What counts as double arithmetic, as measured: a double add, subtract,
+multiply or divide (retail calls `dpadd`/`dpsub`/`dpmul`/`dpdiv`). A function
+that only converts (`fptodp`/`dptofp`, or a double constant narrowed to float)
+does not change the state, and neither does C that calls the helpers
+explicitly; the compiler has to lower the operation itself. A float-to-int cast
+that 3.0 lowers to an `fptosi` call under `-fp off` makes the *subject* a
+soft-float function, so it is affected by the state. To find the warm source for
+a subject, take the nearest preceding retail function that calls one of the
+four arithmetic helpers and use the credited source that contains it, written
+with native C double expressions.
