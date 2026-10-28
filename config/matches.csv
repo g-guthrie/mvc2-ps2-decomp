@@ -14080,7 +14080,7 @@ func_002A6760,0x002A6760,0xDC,src/y1_d.c,complete
 func_0034F4B0,0x0034F4B0,0xE8,src/y1_d.c,complete
 func_00280D80,0x00280D80,0xEC,src/y1_d.c,complete
 func_002177F0,0x002177F0,0xF0,src/y1_d.c,complete
-func_0013E760,0x0013E760,0xC0,src/y1_e.c,complete
+func_0013E760,0x0013E760,0xC0,src/y1_e.c,placeholder
 func_0013FB40,0x0013FB40,0xD4,src/y1_e.c,complete
 func_0021CBD0,0x0021CBD0,0xC4,src/y1_f.c,complete
 func_00281640,0x00281640,0xC0,src/y1_f.c,complete
@@ -18197,7 +18197,7 @@ func_003F2510,0x003F2510,0x40,src/fb14_a.c,complete
 func_00291860,0x00291860,0x40,src/fb14_b.c,complete
 func_0025C6C0,0x0025C6C0,0x9C,src/fb14_b.c,complete
 func_002918A0,0x002918A0,0xC4,src/fb14_b.c,complete
-func_0013EA00,0x0013EA00,0xC8,src/fb14_c.c,complete
+func_0013EA00,0x0013EA00,0xC8,src/fb14_c.c,placeholder
 func_0032F050,0x0032F050,0x108,src/fb14_d.c,complete
 func_001C8960,0x001C8960,0x12C,src/fb14_e.c,complete
 func_0029EAF0,0x0029EAF0,0x174,src/fb14_f.c,complete

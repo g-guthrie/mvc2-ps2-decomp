@@ -18145,6 +18145,7 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/fb14_c.c -c -lang c -i src -O4 -Op -sdatathreshold 0 -o "$BUILD/fb14_c.o"
 "$PYTHON" tools/verify_object.py "$BUILD/fb14_c.o" private/SLUS_204.86.rom --source src/fb14_c.c
+"$PYTHON" tools/verify_object.py "$BUILD/fb14_c.o" private/SLUS_204.86.rom --matches config/local_helper_matches.csv --source src/fb14_c.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/fb14_d.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/fb14_d.o"
 "$PYTHON" tools/verify_object.py "$BUILD/fb14_d.o" private/SLUS_204.86.rom --source src/fb14_d.c

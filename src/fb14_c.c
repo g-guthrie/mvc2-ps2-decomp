@@ -9,7 +9,7 @@ typedef float f32;
 typedef struct { f32 x, y, z; } V3;
 extern V3 D_004B1940[];
 
-/* 0x0013E760 static copy (real body, verified in src/y1_e.c) */
+/* Provisional: independently matched local helper duplicates the global body. */
 static void func_0013E760(u8 *p)
 {
     V3 *a = &D_004B1940[p[0x20] * 2];

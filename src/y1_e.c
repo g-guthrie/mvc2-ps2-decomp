@@ -6,6 +6,7 @@ typedef unsigned int u32;
 typedef signed int s32;
 typedef float f32;
 typedef struct { f32 x, y, z; } V3;
+/* Provisional: this vector view differs from the owned float[8][2][3] table. */
 extern V3 D_004B1940[];
 
 void func_0013E760(u8 *p)
