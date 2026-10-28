@@ -19388,3 +19388,4 @@ func_003BE8A0,0x003BE8A0,0x5C,src/actor_effect_dispatch_003be8a0.c,placeholder
 func_0019D5D0,0x0019D5D0,0xA8,src/actor_inherit_start_0019d5d0.c,placeholder
 func_001BB9C0,0x001BB9C0,0xC0,src/actor_inherit_start_001bb9c0.c,placeholder
 func_001BBB60,0x001BBB60,0xBC,src/actor_inherit_start_001bb9c0.c,placeholder
+func_003A4470,0x003A4470,0x11C,src/actor_inherit_start_003a4470.c,placeholder
