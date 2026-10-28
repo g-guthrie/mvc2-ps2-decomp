@@ -20077,3 +20077,6 @@ func_0029EEF0,0x0029EEF0,0x23C,src/sLa1_a.c,complete
 func_0027FF50,0x0027FF50,0x260,src/sLa1_a.c,complete
 func_00376FC0,0x00376FC0,0x2D4,src/sLa1_b.c,complete
 func_00330380,0x00330380,0x254,src/sLa1_c.c,complete
+func_001489E0,0x001489E0,0xB8,src/sLa0_a.c,complete
+func_00146D80,0x00146D80,0x1B4,src/sLa0_a.c,complete
+func_0016B7C0,0x0016B7C0,0x2FC,src/sLa0_b.c,complete
