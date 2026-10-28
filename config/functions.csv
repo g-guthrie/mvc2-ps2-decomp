@@ -4184,10 +4184,12 @@ func_001BB8D0,0x001BB8D0,0x8,0x001BB8D8,code,spimdisasm-explicit-size-before-fir
 func_001BB8E0,0x001BB8E0,0x88,0x001BB968,code,spimdisasm-explicit-size-before-first-data
 func_001BB970,0x001BB970,0x20,0x001BB990,code,matching-c-head-split
 residual_001BB990,0x001BB990,0x24,0x001BB9B4,assembly_residual,verified-boundary-after-matching-head
-residual_001BB9B4,0x001BB9B4,0xCC,0x001BBA80,assembly_residual,verified-boundary-after-matching-head
+residual_001BB9B4,0x001BB9B4,0xC,0x001BB9C0,assembly_residual,native-padding-before-indirect-callback
+func_001BB9C0,0x001BB9C0,0xC0,0x001BBA80,code,verified-indirect-callback-entry
 func_001BBA80,0x001BBA80,0xB0,0x001BBB30,code,spimdisasm-explicit-size-before-first-data
 func_001BBB30,0x001BBB30,0x24,0x001BBB54,code,matching-c-head-split
-residual_001BBB54,0x001BBB54,0xC8,0x001BBC1C,assembly_residual,verified-boundary-after-matching-head
+residual_001BBB54,0x001BBB54,0xC,0x001BBB60,assembly_residual,native-padding-before-indirect-callback
+func_001BBB60,0x001BBB60,0xBC,0x001BBC1C,code,verified-indirect-callback-entry
 func_001BBC20,0x001BBC20,0xE8,0x001BBD08,code,spimdisasm-explicit-size-before-first-data
 func_001BBD10,0x001BBD10,0x14,0x001BBD24,code,spimdisasm-explicit-size-before-first-data
 func_001BBD30,0x001BBD30,0x8,0x001BBD38,code,spimdisasm-explicit-size-before-first-data
