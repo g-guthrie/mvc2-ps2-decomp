@@ -20066,3 +20066,7 @@ func_00260B20,0x00260B20,0x1d0,src/s9h_b.c,complete
 func_001C1780,0x001C1780,0x118,src/s9h_c.c,complete
 func_001FE0D0,0x001FE0D0,0x17c,src/s9h_d.c,complete
 func_003EA660,0x003EA660,0x328,src/s9b_a.c,complete
+func_00420070,0x00420070,0xD8,src/s9a_a.c,complete
+func_004220B0,0x004220B0,0x98,src/s9a_b.c,complete
+func_00418200,0x00418200,0x20C,src/s9a_c.c,complete
+func_00420BF0,0x00420BF0,0x60C,src/s9a_d.c,complete
