@@ -20058,3 +20058,11 @@ func_001262C0,0x001262C0,0x74,src/s9e_a.c,complete
 func_00126380,0x00126380,0x74,src/s9e_a.c,complete
 func_00127990,0x00127990,0x220,src/s9e_a.c,complete
 func_001288A0,0x001288A0,0x190,src/s9e_b.c,complete
+func_00158280,0x00158280,0x1EC,src/s9c_a.c,complete
+func_00158510,0x00158510,0x1FC,src/s9c_a.c,complete
+func_001434A0,0x001434A0,0x3BC,src/s9c_b.c,complete
+func_00230770,0x00230770,0x170,src/s9h_a.c,complete
+func_00260B20,0x00260B20,0x1d0,src/s9h_b.c,complete
+func_001C1780,0x001C1780,0x118,src/s9h_c.c,complete
+func_001FE0D0,0x001FE0D0,0x17c,src/s9h_d.c,complete
+func_003EA660,0x003EA660,0x328,src/s9b_a.c,complete
