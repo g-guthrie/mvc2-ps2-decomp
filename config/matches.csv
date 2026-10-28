@@ -20048,3 +20048,6 @@ func_003F2BF0,0x003F2BF0,0x2C0,src/s7i_a.c,complete
 func_001D6890,0x001D6890,0xB4,src/s8h_a.c,complete
 func_001D7800,0x001D7800,0x138,src/s8h_a.c,complete
 func_002E6670,0x002E6670,0x110,src/s8h_a.c,complete
+func_001260E0,0x001260E0,0xCC,src/s8e_a.c,complete
+func_001261B0,0x001261B0,0xCC,src/s8e_a.c,complete
+func_00136A10,0x00136A10,0x148,src/s8e_b.c,complete
