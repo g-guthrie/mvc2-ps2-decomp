@@ -23842,4 +23842,31 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/s6c_d.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/s6c_d.o"
 "$PYTHON" tools/verify_object.py "$BUILD/s6c_d.o" private/SLUS_204.86.rom --source src/s6c_d.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/s7b_a.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/s7b_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s7b_a.o" private/SLUS_204.86.rom --source src/s7b_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/s7b_b.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/s7b_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s7b_b.o" private/SLUS_204.86.rom --source src/s7b_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/s7f_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/s7f_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s7f_a.o" private/SLUS_204.86.rom --source src/s7f_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/s7f_b.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/s7f_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s7f_b.o" private/SLUS_204.86.rom --source src/s7f_b.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/s7f_c.c -c -lang c -i src -O4 -Op -sdatathreshold 8 -o "$BUILD/s7f_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s7f_c.o" private/SLUS_204.86.rom --source src/s7f_c.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/s7c_a.c -c -lang c -i src -O4 -Op -sdatathreshold 8 -o "$BUILD/s7c_a.o"
+"${OBJCOPY:-mipsel-linux-gnu-objcopy}" \
+    --redefine-sym @48=jtbl_004B3830 \
+    "$BUILD/s7c_a.o" "$BUILD/s7c_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s7c_a.o" private/SLUS_204.86.rom --source src/s7c_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/s7a_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/s7a_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/s7a_a.o" private/SLUS_204.86.rom --source src/s7a_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

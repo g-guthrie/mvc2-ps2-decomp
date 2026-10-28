@@ -20007,3 +20007,13 @@ func_00406688,0x00406688,0x130,src/s6b_e.c,complete
 func_00173C80,0x00173C80,0x238,src/s6c_c.c,complete
 func_0037C2A0,0x0037C2A0,0x278,src/s6c_e.c,complete
 func_0016FAA0,0x0016FAA0,0x1D8,src/s6c_d.c,complete
+func_003DD160,0x003DD160,0x6C,src/s7b_a.c,complete
+func_003ED300,0x003ED300,0x514,src/s7b_b.c,complete
+func_0018F320,0x0018F320,0x134,src/s7f_a.c,complete
+func_001A23D0,0x001A23D0,0x240,src/s7f_b.c,complete
+func_001A5090,0x001A5090,0x260,src/s7f_b.c,complete
+func_001A0620,0x001A0620,0x260,src/s7f_b.c,complete
+func_001861B0,0x001861B0,0x23C,src/s7f_b.c,complete
+func_0016DA30,0x0016DA30,0x280,src/s7f_c.c,complete
+func_00149020,0x00149020,0x360,src/s7c_a.c,complete
+func_00414720,0x00414720,0x19C,src/s7a_a.c,complete
