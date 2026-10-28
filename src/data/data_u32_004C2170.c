@@ -1,5 +1,3 @@
-typedef unsigned int u32;
-u32 data_u32_004C2170[16] = {
-    0x00060016u, 0x00000026u, 0x00090003u, 0x0000000Fu, 0x05040302u, 0x00080706u, 0xFF000000u, 0x00FFFFFFu, 
-    0x12000201u, 0x00000013u, 0x06050403u, 0x00000000u, 0x100F0E0Eu, 0x00001111u, 0xFFFFFFFFu, 0x00000000u, 
-};
+typedef short s16;
+/* Timer table: func_003C8BD0 reads lh [p[0x20]*2] into +0x1C. */
+s16 data_u32_004C2170[4] = { 22, 6, 38, 0 };

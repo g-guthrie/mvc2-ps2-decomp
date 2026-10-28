@@ -1,27 +1,21 @@
 typedef const unsigned char *Mvc2Address;
-extern const unsigned char D_004C11E8[];
-extern const unsigned char D_004C11F4[];
-extern const unsigned char D_004C11FC[];
-extern const unsigned char D_004C1200[];
-extern const unsigned char D_004C1204[];
-extern const unsigned char D_004C1208[];
-extern const unsigned char D_004C120C[];
-extern const unsigned char data_ff_004C11E4[];
-extern const unsigned char data_ff_004C11F0[];
-extern const unsigned char data_u32_004C11E0[];
-extern const unsigned char data_u32_004C11EC[];
-extern const unsigned char data_u32_004C11F8[];
+/* Script-list targets (s8[4] each) of sa33_i's selector table. */
+extern signed char data_u32_004C11E0[1][4];
+extern signed char data_ff_004C11E4[2][4];
+extern signed char data_u32_004C11EC[1][4];
+extern signed char data_ff_004C11F0[2][4];
+extern signed char data_u32_004C11F8[6][4];
 Mvc2Address const jtbl_0045B6F0[12] = {
-    data_u32_004C11E0,
-    data_ff_004C11E4,
-    D_004C11E8,
-    data_u32_004C11EC,
-    data_ff_004C11F0,
-    D_004C11F4,
-    data_u32_004C11F8,
-    D_004C11FC,
-    D_004C1200,
-    D_004C1204,
-    D_004C1208,
-    D_004C120C,
+    (Mvc2Address)data_u32_004C11E0[0],
+    (Mvc2Address)data_ff_004C11E4[0],
+    (Mvc2Address)data_ff_004C11E4[1],
+    (Mvc2Address)data_u32_004C11EC[0],
+    (Mvc2Address)data_ff_004C11F0[0],
+    (Mvc2Address)data_ff_004C11F0[1],
+    (Mvc2Address)data_u32_004C11F8[0],
+    (Mvc2Address)data_u32_004C11F8[1],
+    (Mvc2Address)data_u32_004C11F8[2],
+    (Mvc2Address)data_u32_004C11F8[3],
+    (Mvc2Address)data_u32_004C11F8[4],
+    (Mvc2Address)data_u32_004C11F8[5],
 };

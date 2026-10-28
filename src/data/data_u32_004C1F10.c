@@ -1,5 +1,3 @@
-typedef unsigned int u32;
-u32 data_u32_004C1F10[12] = {
-    0x1A100600u, 0x00000000u, 0x00300038u, 0x00000028u, 0x06030106u, 0x0C050506u, 0x36353433u, 0x00000037u, 
-    0x23222120u, 0x00262524u, 0x03020100u, 0x0D0A0704u, 
-};
+typedef unsigned char u8;
+/* Local u8[4] image: func_003A8380 copies it (lwc1/swc1) to sp+0x4C and reads lbu [p[0x20]] into p[0x22]. */
+u8 data_u32_004C1F10[4] = { 0x00, 0x06, 0x10, 0x1A };

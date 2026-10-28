@@ -1,0 +1,13 @@
+typedef signed short s16;
+typedef float f32;
+/* Keyframe track, event category 5 (position + scale x/y): func_001415B0 switches on object +0x20
+ * (jtbl_004B1E50, case 0x001418B0), steps 0x18-byte keys from the pointer at object +0x10
+ * and compares the next key's s16 time against -1 to end the track. */
+typedef struct { s16 time; s16 pad; f32 pos[3]; f32 scale[2]; } PosScaleKey;
+typedef char PosScaleKey_size_check[(sizeof(PosScaleKey) == 24) ? 1 : -1];
+PosScaleKey data_track_00441890[4] = {
+    { 0, 0, { 25.0f, -3.0f, -12.0f }, { 1.0f, 0.1f } },
+    { 10, 0, { 0.0f, -3.0f, -12.0f }, { 1.0f, 0.1f } },
+    { 20, 0, { 0.0f, -3.0f, -12.0f }, { 1.0f, 1.0f } },
+    { -1, 0, { 25.0f, -3.0f, -12.0f }, { 1.0f, 0.1f } },
+};

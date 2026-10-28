@@ -185,7 +185,7 @@ void func_002F7460(u8 *a, u8 *p) {
 
 typedef struct { f32 x, y, z; } V_72B0;
 typedef struct { u8 p0[4]; u8 b4; u8 p5[2]; u8 b7; u8 p8[0x14]; s16 h1c; u8 p1e[0x16]; V_72B0 v34; u8 p40[0x1C]; f32 f5c, f60, f64, f68, f6c, f70; } S_72B0;
-extern V_72B0 D_0043F1C0[24];
+extern V_72B0 D_0043F1C0[59];
 extern u8 D_00583B9B;
 void func_001372B0(S_72B0 *p) {
     V_72B0 *row;

@@ -1,4 +1,3 @@
-typedef unsigned int u32;
-u32 data_u32_004C1E10[8] = {
-    0x44383736u, 0x00000000u, 0x40855555u, 0x40F00000u, 0x00180808u, 0x00000000u, 0x001E000Au, 0x0032001Eu, 
-};
+typedef unsigned char u8;
+/* Byte table indexed by p[0x20] in func_00390870 (lbu); value -> p[0x1B5]. Sized to the next referenced symbol. */
+u8 data_u32_004C1E10[8] = { 0x36, 0x37, 0x38, 0x44, 0x00, 0x00, 0x00, 0x00 };

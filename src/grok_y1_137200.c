@@ -4,7 +4,7 @@ typedef signed short s16;
 typedef float f32;
 
 typedef struct { f32 x, y, z; } Position3;
-extern Position3 D_0043F1C0[24];
+extern Position3 D_0043F1C0[59];
 extern f32 D_0043F1C4;
 extern f32 D_0043F1C8;
 extern void func_0032D390(u8 *, s16, int, int, f32, f32);

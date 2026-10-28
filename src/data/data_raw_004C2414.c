@@ -1,3 +1,3 @@
-/* Unclassified initialized word retained without reconstruction credit. */
-typedef unsigned char u8;
-u8 data_raw_004C2414[4] = { 0x48u, 0xC8u, 0x4Bu, 0x00u };
+/* AIXP version-banner pointer; func_00404638 loads it (lw) before bumping the D_004C2418 reference count. */
+extern char data_cstr_004BC848[];
+char *data_raw_004C2414 = data_cstr_004BC848;

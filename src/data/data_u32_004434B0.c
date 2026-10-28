@@ -11,17 +11,15 @@ typedef struct {
     u32 pad0[3];
     S16Pair pairs[10];
     u32 pad1[2];
-    f32 c;
-    f32 d;
-    f32 e;
 } Tab004434B0Tail;
-typedef char Tab004434B0Tail_size_check[(sizeof(Tab004434B0Tail) == 80) ? 1 : -1];
+typedef char Tab004434B0Tail_size_check[(sizeof(Tab004434B0Tail) == 68) ? 1 : -1];
+/* Ends at 0x00443610, where the first func_00147B70 record list (data_rec_00443610) begins. */
 typedef struct {
     Tab004434B0Item items[35];
     u32 pad;
     Tab004434B0Tail tail;
 } Tab004434B0;
-typedef char Tab004434B0_size_check[(sizeof(Tab004434B0) == 364) ? 1 : -1];
+typedef char Tab004434B0_size_check[(sizeof(Tab004434B0) == 352) ? 1 : -1];
 Tab004434B0 data_u32_004434B0 = {
     {
     { 0x0001u, 0x0064u, 0.0f },
@@ -76,7 +74,6 @@ Tab004434B0 data_u32_004434B0 = {
             { 38, 66 },
             { 292, 7 }
         },
-        { 0x0u, 0x0u },
-        -9.14f, 6.5f, -13.0f
+        { 0x0u, 0x0u }
     }
 };

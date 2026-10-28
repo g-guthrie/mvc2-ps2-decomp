@@ -13,7 +13,7 @@ extern u8 D_004B1220[];
 extern u8 D_004B1221[];
 extern s8 D_0043F960[][8];
 extern P2g D_0043F760[];
-extern P3g D_0043F1C0[24];
+extern P3g D_0043F1C0[59];
 extern u8 *D_004C2924;
 extern u8 *D_004C2830;
 

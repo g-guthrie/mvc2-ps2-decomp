@@ -22130,4 +22130,31 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/nq23_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/nq23_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/nq23_a.o" private/SLUS_204.86.rom --source src/nq23_a.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nq31_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/nq31_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq31_a.o" private/SLUS_204.86.rom --source src/nq31_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq31_b.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/nq31_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq31_b.o" private/SLUS_204.86.rom --source src/nq31_b.c
+"$WIBO" "$SNCPP" -P src/nq31_c.c "$BUILD/nq31_c.i"
+"$WIBO" "$EE29CC1" "$BUILD/nq31_c.i" -O2 -G0 -ffunction-sections  -quiet -o "$BUILD/nq31_c.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/nq31_c.o" "$BUILD/nq31_c.s"
+"$PYTHON" tools/verify_object.py "$BUILD/nq31_c.o" private/SLUS_204.86.rom --source src/nq31_c.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nq30_b.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/nq30_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq30_b.o" private/SLUS_204.86.rom --source src/nq30_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nq32_b.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/nq32_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq32_b.o" private/SLUS_204.86.rom --source src/nq32_b.c
+"$WIBO" "$SNCPP" -P src/nq32_c.c "$BUILD/nq32_c.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/nq32_c.i" "$BUILD/nq32_c.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/nq32_c.o" "$BUILD/nq32_c.s"
+"$PYTHON" tools/verify_object.py "$BUILD/nq32_c.o" private/SLUS_204.86.rom --source src/nq32_c.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/nq28_a.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/nq28_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/nq28_a.o" private/SLUS_204.86.rom --source src/nq28_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

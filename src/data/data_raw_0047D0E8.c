@@ -1,3 +1,0 @@
-/* Unreconstructed bytes; retained without source credit. */
-typedef unsigned char u8;
-u8 data_raw_0047D0E8[0x4] = { 0 };

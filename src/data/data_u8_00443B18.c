@@ -1,1 +1,0 @@
-unsigned char data_u8_00443B18[4] = { 0x14, 0xAE, 0x6F, 0x41 };
