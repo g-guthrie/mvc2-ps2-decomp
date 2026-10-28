@@ -83,3 +83,15 @@ soft-float function, so it is affected by the state. To find the warm source for
 a subject, take the nearest preceding retail function that calls one of the
 four arithmetic helpers and use the credited source that contains it, written
 with native C double expressions.
+
+## EE GCC 2.96 branch-likely residue
+
+About twenty EE GCC functions differ from retail by a single delay slot: our
+`2.96-ee-001003-1` cc1 emits a branch-likely (`bnel`/`bnezl`) where retail
+has a plain branch with an instruction stolen from the target, because retail's
+compiler treated the stolen register as dead on a fall-through path that ends in
+a call. A sweep of every option in this cc1, Sony 2.9 and SN 2.95.2 found no
+flag that reproduces it, so these are left unmatched rather than hand-written.
+The reverse case (retail `bgtzl`) in func_00406CE0 is reproduced per object by
+`-fasynchronous-exceptions`; that flag breaks other EE objects and is never set
+globally.

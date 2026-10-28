@@ -23539,4 +23539,67 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/gr29_e.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/gr29_e.o"
 "$PYTHON" tools/verify_object.py "$BUILD/gr29_e.o" private/SLUS_204.86.rom --source src/gr29_e.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/r3_17_e.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/r3_17_e.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r3_17_e.o" private/SLUS_204.86.rom --source src/r3_17_e.c
+
+mkdir -p "build/warm/r3_11_a" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/fb25_d.c src/r3_11_a.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/r3_11_a" && \
+    mv "build/warm/r3_11_a/r3_11_a.o" "$BUILD/r3_11_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r3_11_a.o" private/SLUS_204.86.rom --source src/r3_11_a.c
+"$WIBO" "$SNCPP" -P src/r3_14_d.c "$BUILD/r3_14_d.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/r3_14_d.i" "$BUILD/r3_14_d.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r3_14_d.o" "$BUILD/r3_14_d.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r3_14_d.o" private/SLUS_204.86.rom --source src/r3_14_d.c
+mkdir -p "build/warm/r3_15_a" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/nf10_b.c src/r3_15_a.c -c -lang c -i src -O3 -sdatathreshold 0 -fp off -o "build/warm/r3_15_a" && \
+    mv "build/warm/r3_15_a/r3_15_a.o" "$BUILD/r3_15_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r3_15_a.o" private/SLUS_204.86.rom --source src/r3_15_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/r3_8_a.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/r3_8_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r3_8_a.o" private/SLUS_204.86.rom --source src/r3_8_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/r3_12_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/r3_12_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r3_12_a.o" private/SLUS_204.86.rom --source src/r3_12_a.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/r3_12_b.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/r3_12_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r3_12_b.o" private/SLUS_204.86.rom --source src/r3_12_b.c
+"$WIBO" "$SNCPP" -P src/r3_3_a.c "$BUILD/r3_3_a.i"
+"$WIBO" "$EE29CC1" "$BUILD/r3_3_a.i" -O2 -G0 -ffunction-sections -fno-gcse -quiet -o "$BUILD/r3_3_a.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r3_3_a.o" "$BUILD/r3_3_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r3_3_a.o" private/SLUS_204.86.rom --source src/r3_3_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/r3_3_c.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/r3_3_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r3_3_c.o" private/SLUS_204.86.rom --source src/r3_3_c.c
+mkdir -p "build/warm/r3_9_c" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/sf9_d.c src/r3_9_c.c -c -lang c -i src -O4 -Op -fp off -sdatathreshold 0 -o "build/warm/r3_9_c" && \
+    mv "build/warm/r3_9_c/r3_9_c.o" "$BUILD/r3_9_c.o"
+"${OBJCOPY:-mipsel-linux-gnu-objcopy}" \
+    --redefine-sym @60=jtbl_004B82D0 \
+    "$BUILD/r3_9_c.o" "$BUILD/r3_9_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r3_9_c.o" private/SLUS_204.86.rom --source src/r3_9_c.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/r3_2_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/r3_2_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r3_2_a.o" private/SLUS_204.86.rom --source src/r3_2_a.c
+
+"$WIBO" "$SNCPP" -P src/r3_6_a.c "$BUILD/r3_6_a.i"
+"$WIBO" "$EE29CC1" "$BUILD/r3_6_a.i" -O2 -G0 -ffunction-sections  -quiet -o "$BUILD/r3_6_a.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r3_6_a.o" "$BUILD/r3_6_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r3_6_a.o" private/SLUS_204.86.rom --source src/r3_6_a.c
+"$WIBO" "$SNCPP" -P src/r3_16_a.c "$BUILD/r3_16_a.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="-fno-schedule-insns" "$BUILD/r3_16_a.i" "$BUILD/r3_16_a.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r3_16_a.o" "$BUILD/r3_16_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r3_16_a.o" private/SLUS_204.86.rom --source src/r3_16_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/r3_1_b.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/r3_1_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r3_1_b.o" private/SLUS_204.86.rom --source src/r3_1_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/r3_18_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/r3_18_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r3_18_a.o" private/SLUS_204.86.rom --source src/r3_18_a.c
+"$WIBO" "$SNCPP" -P src/eeae_a.c "$BUILD/eeae_a.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="-fasynchronous-exceptions" "$BUILD/eeae_a.i" "$BUILD/eeae_a.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/eeae_a.o" "$BUILD/eeae_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/eeae_a.o" private/SLUS_204.86.rom --source src/eeae_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

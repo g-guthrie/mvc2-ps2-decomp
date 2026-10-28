@@ -2,7 +2,9 @@ name,address,size,end,classification,confidence
 func_00100000,0x00100000,0x4,0x00100004,alignment_padding,verified-all-zero-words
 _start,0x00100008,0x1C0,0x001001C8,code,spimdisasm-explicit-size-before-first-data
 func_001001C8,0x001001C8,0x8,0x001001D0,code,spimdisasm-explicit-size-before-first-data
-func_001001D0,0x001001D0,0x54,0x00100224,code,spimdisasm-explicit-size-before-first-data
+func_001001D0,0x001001D0,0x8,0x001001D8,code,spimdisasm-explicit-size-before-first-data
+gap_001001D8,0x001001D8,0x8,0x001001E0,alignment_padding,zero-fill-between-functions
+func_001001E0,0x001001E0,0x44,0x00100224,code,verified-source-recovery
 func_00100230,0x00100230,0xC,0x0010023C,code,spimdisasm-explicit-size-before-first-data
 func_00100240,0x00100240,0x20,0x00100260,code,spimdisasm-explicit-size-before-first-data
 func_00100260,0x00100260,0x24,0x00100284,code,spimdisasm-explicit-size-before-first-data
