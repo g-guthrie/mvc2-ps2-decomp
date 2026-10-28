@@ -39,3 +39,18 @@ void func_003F7708(u8 *p)
         *(s32 *)(p + 4) = 3;
     }
 }
+
+/* Follows func_003F7708 in this unit: EE GCC 2.96 treats calls to functions
+   it has already compiled as non-throwing, so reorg sees $v0 dead after the
+   tail call and keeps retail's plain bne. */
+extern void func_003F7588(u8 *);
+extern void func_003F73F0(u8 *);
+void func_003F78B0(u8 *p)
+{
+    if (*(s16 *)(p + 0x9A) == 2)
+        func_003F7708(p);
+    else if (*(s16 *)(p + 0x9A) == 1)
+        func_003F7588(p);
+    else
+        func_003F73F0(p);
+}

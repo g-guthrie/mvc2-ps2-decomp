@@ -43,7 +43,9 @@ union double_union {
 #define s2b func_0011DC68
 #define hi0bits func_0011DD98
 #define lo0bits func_0011DE18
+#define i2b func_0011DED8
 #define mult func_0011DF10
+#define pow5mult func_0011E120
 #define lshift func_0011E220
 #define cmp func_0011E378
 #define diff func_0011E3E0
@@ -66,6 +68,9 @@ extern double func_0011E640(_Bigint *, int *);
 extern _Bigint *func_0011E7D8(struct _reent *, double, int *, int *);
 extern void func_0011DB30(Reent *, _Bigint *);
 extern __ULong func_0011DE18(__ULong *);
+/* p05[3] = { 5, 25, 125 } */
+extern const int D_004AC8B8[];
+#define p05 D_004AC8B8
 
 
 
@@ -136,6 +141,20 @@ func_0011DD98(__ULong x)
 	return 32;
     }
   return k;
+}
+
+/* i2b and pow5mult sit here in retail order. pow5mult's plain bnez after
+   the i2b call needs i2b compiled earlier in this unit: EE GCC 2.96 then
+   treats the call as non-throwing, so reorg sees the slot register die. */
+_Bigint *
+i2b(Reent *ptr, int i)
+{
+  _Bigint *b;
+
+  b = Balloc (ptr, 1);
+  b->_x[0] = i;
+  b->_wds = 1;
+  return b;
 }
 
 _Bigint *
@@ -231,6 +250,43 @@ func_0011DF10(Reent *ptr, _Bigint *a, _Bigint *b)
 }
 
 
+
+_Bigint *
+pow5mult(Reent *ptr, _Bigint *b, int k)
+{
+  _Bigint *b1, *p5, *p51;
+  int i;
+
+  if ((i = k & 3) != 0)
+    b = multadd (ptr, b, p05[i - 1], 0);
+
+  if (!(k >>= 2))
+    return b;
+  if (!(p5 = ptr->_p5s))
+    {
+      /* first time */
+      p5 = ptr->_p5s = i2b (ptr, 625);
+      p5->_next = 0;
+    }
+  for (;;)
+    {
+      if (k & 1)
+	{
+	  b1 = mult (ptr, b, p5);
+	  Bfree (ptr, b);
+	  b = b1;
+	}
+      if (!(k >>= 1))
+	break;
+      if (!(p51 = p5->_next))
+	{
+	  p51 = p5->_next = mult (ptr, p5, p5);
+	  p51->_next = 0;
+	}
+      p5 = p51;
+    }
+  return b;
+}
 
 _Bigint *
 func_0011E220(Reent *ptr, _Bigint *b, int k)

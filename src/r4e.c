@@ -20,22 +20,6 @@ void func_00408078(S_00408078 *p) {
   do { func_004112B0(); } while (0);
 }
 
-/* 0040D848 */
-extern s32 func_00400650(s32);
-extern s32 func_004006A0(s32);
-extern void func_0040D5A0(void *);
-extern u8 D_004BE430[];
-void func_0040D848(RuntimeEntrySlot *p) {
-  u8 *q;
-  s32 v;
-  if (p->handle == 0) { func_0040D5A0(D_004BE430); return; }
-  q = (u8 *)p + (p->record_index << 6) + 0x38;
-  v = func_00400650(p->handle);
-  if (v == 4) p->reserved_01 = 3;
-  else if (v == 2) *(s32 *)(q + 0x3C) = func_004006A0(p->handle);
-  else if (v == 3) { s32 t = p->scaled_size; *(s32 *)(q + 0x38) = 2; *(s32 *)(q + 0x3C) = t; }
-}
-
 /* 004062F8 */
 extern void func_00405DC8(void *);
 extern s32 func_0011FFA0(char *);

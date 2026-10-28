@@ -3608,11 +3608,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py "$BUILD/compose_runtime_matrix_translation_004173C0.o" \
     private/SLUS_204.86.rom --source src/compose_runtime_matrix_translation_004173C0.c
 
-"$WIBO" "$SNCPP" -P src/sdk_initialize_single_word_0011DED8.c "$BUILD/sdk_initialize_single_word_0011DED8.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py "$BUILD/sdk_initialize_single_word_0011DED8.i" "$BUILD/sdk_initialize_single_word_0011DED8.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/sdk_initialize_single_word_0011DED8.o" "$BUILD/sdk_initialize_single_word_0011DED8.s"
-"$PYTHON" tools/verify_object.py "$BUILD/sdk_initialize_single_word_0011DED8.o" private/SLUS_204.86.rom --source src/sdk_initialize_single_word_0011DED8.c
-
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     -i src src/initialize_runtime_menu_notice_00420560.c -c -lang c -O3 -sdatathreshold 8 \
     -o "$BUILD/initialize_runtime_menu_notice_00420560.o"
@@ -7097,6 +7092,14 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 --extra-flags="" "$BUILD/r5_c.i" "$BUILD/r5_c.s"
 "$WIBO" "$SNAS" -G8 -o "$BUILD/r5_c.o" "$BUILD/r5_c.s"
 "$PYTHON" tools/verify_object.py "$BUILD/r5_c.o" private/SLUS_204.86.rom --source src/r5_c.c
+
+# Handlers precede their dispatcher here so its calls are non-throwing.
+"$WIBO" "$SNCPP" -P src/stream_player_states_004035D8.c "$BUILD/stream_player_states_004035D8.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 \
+    "$BUILD/stream_player_states_004035D8.i" "$BUILD/stream_player_states_004035D8.s"
+"$WIBO" "$SNAS" -G8 -o "$BUILD/stream_player_states_004035D8.o" "$BUILD/stream_player_states_004035D8.s"
+"$PYTHON" tools/verify_object.py "$BUILD/stream_player_states_004035D8.o" private/SLUS_204.86.rom \
+    --source src/stream_player_states_004035D8.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/r5_d.c -c -lang c -O3 -Op -fp off -sdatathreshold 8 -o "$BUILD/r5_d.o"
 "$PYTHON" tools/verify_object.py "$BUILD/r5_d.o" private/SLUS_204.86.rom --source src/r5_d.c
@@ -11778,7 +11781,7 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$PYTHON" tools/verify_object.py "$BUILD/close_runtime_directory_0040C578.o" private/SLUS_204.86.rom --source src/close_runtime_directory_0040C578.c
 
 "$WIBO" "$SNCPP" -P src/finish_runtime_entry_0040D8F8.c "$BUILD/finish_runtime_entry_0040D8F8.i"
-"$PYTHON" tools/compile_ee96.py --extra-flags=-fno-optimize-sibling-calls "$BUILD/finish_runtime_entry_0040D8F8.i" "$BUILD/finish_runtime_entry_0040D8F8.s"
+"$PYTHON" tools/compile_ee96.py "$BUILD/finish_runtime_entry_0040D8F8.i" "$BUILD/finish_runtime_entry_0040D8F8.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/finish_runtime_entry_0040D8F8.o" "$BUILD/finish_runtime_entry_0040D8F8.s"
 "$PYTHON" tools/verify_object.py "$BUILD/finish_runtime_entry_0040D8F8.o" private/SLUS_204.86.rom --source src/finish_runtime_entry_0040D8F8.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
@@ -17626,11 +17629,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/sa27_k.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/sa27_k.o"
 "$PYTHON" tools/verify_object.py "$BUILD/sa27_k.o" private/SLUS_204.86.rom --source src/sa27_k.c
-"$WIBO" "$SNCPP" -P src/sa27_m.c "$BUILD/sa27_m.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 --extra-flags="" "$BUILD/sa27_m.i" "$BUILD/sa27_m.s"
-"$WIBO" "$SNAS" -G8 -o "$BUILD/sa27_m.o" "$BUILD/sa27_m.s"
-"$PYTHON" tools/verify_object.py "$BUILD/sa27_m.o" private/SLUS_204.86.rom --source src/sa27_m.c
-
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/sa24_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/sa24_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/sa24_a.o" private/SLUS_204.86.rom --source src/sa24_a.c
@@ -18646,10 +18644,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/fb56_b.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/fb56_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/fb56_b.o" private/SLUS_204.86.rom --source src/fb56_b.c
-"$WIBO" "$SNCPP" -P src/fb56_c.c "$BUILD/fb56_c.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 --extra-flags="" "$BUILD/fb56_c.i" "$BUILD/fb56_c.s"
-"$WIBO" "$SNAS" -G8 -o "$BUILD/fb56_c.o" "$BUILD/fb56_c.s"
-"$PYTHON" tools/verify_object.py "$BUILD/fb56_c.o" private/SLUS_204.86.rom --source src/fb56_c.c
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/fb56_d.c -c -lang c -i src -O3 -o "$BUILD/fb56_d.o"
 "$PYTHON" tools/verify_object.py "$BUILD/fb56_d.o" private/SLUS_204.86.rom --source src/fb56_d.c
@@ -20005,10 +19999,6 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/rb102_a.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/rb102_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/rb102_a.o" private/SLUS_204.86.rom --source src/rb102_a.c
 
-"$WIBO" "$SNCPP" -P src/rc1_a.c "$BUILD/rc1_a.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/rc1_a.i" "$BUILD/rc1_a.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/rc1_a.o" "$BUILD/rc1_a.s"
-"$PYTHON" tools/verify_object.py "$BUILD/rc1_a.o" private/SLUS_204.86.rom --source src/rc1_a.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/rc1_b.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "$BUILD/rc1_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/rc1_b.o" private/SLUS_204.86.rom --source src/rc1_b.c
