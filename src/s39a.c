@@ -35,16 +35,17 @@ s32 func_003FE1F8(s32 a) {
     if (a) { func_00103CE0(a, buf); if (buf[0] != 8 && buf[0] != 0xC) r = func_00103D50(a); }
     return r;
 }
-extern s32 func_00400468(s32, s32, s32);
-extern s32 func_00400BE0(s32);
+#include "runtime_object_storage.h"
+extern RuntimeObjectStorage *func_00400468(void *, s32, s32);
+extern s32 func_00400BE0(void *);
 extern void func_003FB128(void *);
 extern char D_004BB190[], D_004BB1C8[];
 s32 func_003FC9C8(s32 *p, s32 a, s32 b) {
-    s32 r, x;
+    RuntimeObjectStorage *r; s32 x;
     if (a == 0) { func_003FB128(D_004BB190); return -1; }
-    r = func_00400468(a, b, 0);
+    r = func_00400468((void *)(u32)a, b, 0);
     if (r == 0) { func_003FB128(D_004BB1C8); return -1; }
-    p[1] = r;
+    p[1] = (s32)(u32)r;
     x = func_00400BE0(r);
     p[4] = x;
     p[3] = (x + 0x7FF) / 0x800;
