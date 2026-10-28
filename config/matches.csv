@@ -20083,3 +20083,6 @@ func_0016B7C0,0x0016B7C0,0x2FC,src/sLa0_b.c,complete
 residual_003A8EF0,0x003A8EF0,0x2C4,src/sLa2_a.c,complete
 func_003BE900,0x003BE900,0x100,src/sLa2_b.c,complete
 func_00422FB0,0x00422FB0,0x100,src/sLa2_c.c,complete
+func_0027A160,0x0027A160,0x210,src/sLb1_a.c,complete
+func_0032B800,0x0032B800,0x370,src/sLb1_b.c,complete
+residual_0034D600,0x0034D600,0x21C,src/sLb1_c.c,complete
