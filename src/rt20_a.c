@@ -8,6 +8,7 @@ typedef float f32;
 typedef double f64;
 
 /* MW 3.0.3: ./try.sh src/rt20_a.c "-O3 -Op -fp off -sdatathreshold 8" */
+
 typedef struct DB {
     u8 _p0[0x4];
     u8 b4;
@@ -63,26 +64,6 @@ extern V3 D_004B80E8;
 extern f32 D_004B8100[];
 extern f32 D_004B8104[];
 
-void func_00338FE0(u8 *a) {
-    u8 *o;
-    V3 *q;
-    double k;
-    if ((o = func_003DA750(0, 5, 1)) != 0) {
-        o[0x13C] = 1;
-        *(void **)(o + 0x10) = func_00338C70;
-        *(s16 *)(o + 0xCC) = 14;
-        *(s32 *)(o + 0x84) = D_004C283C;
-        *(s32 *)(o + 0xD0) = 0x807;
-        *(V3 *)(o + 0x34) = D_004B80E8;
-        k = 65536.0;
-        *(s32 *)(o + 0x40) = (u32)(s32)(0.5 + (k *= D_004B8100[0]) / 360.0) & 0xFFFF;
-        k = 65536.0;
-        *(s32 *)(o + 0x44) = (u32)(s32)(0.5 + (k *= D_004B8104[0]) / 360.0) & 0xFFFF;
-        *(u8 **)(o + 0x14) = a;
-        *(u8 **)(o + 0xC8) = a + 0x88;
-    }
-}
-
 void func_003388E0(u8 *a) {
     u8 *o;
     V3 *q;
@@ -103,6 +84,26 @@ void func_003388E0(u8 *a) {
     }
 }
 
+
+void func_00338FE0(u8 *a) {
+    u8 *o;
+    V3 *q;
+    double k;
+    if ((o = func_003DA750(0, 5, 1)) != 0) {
+        o[0x13C] = 1;
+        *(void **)(o + 0x10) = func_00338C70;
+        *(s16 *)(o + 0xCC) = 14;
+        *(s32 *)(o + 0x84) = D_004C283C;
+        *(s32 *)(o + 0xD0) = 0x807;
+        *(V3 *)(o + 0x34) = D_004B80E8;
+        k = 65536.0;
+        *(s32 *)(o + 0x40) = (u32)(s32)(0.5 + (k *= D_004B8100[0]) / 360.0) & 0xFFFF;
+        k = 65536.0;
+        *(s32 *)(o + 0x44) = (u32)(s32)(0.5 + (k *= D_004B8104[0]) / 360.0) & 0xFFFF;
+        *(u8 **)(o + 0x14) = a;
+        *(u8 **)(o + 0xC8) = a + 0x88;
+    }
+}
 
 void func_001449E0(s32 a) {
     u8 *o;

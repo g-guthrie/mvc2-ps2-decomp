@@ -7,45 +7,48 @@ typedef signed int s32;
 typedef float f32;
 typedef double f64;
 
-/* MW 3.0.3: ./try.sh SRC "-O3 -Op -fp off -sdatathreshold 8"
-   The three static functions below are verified copies of retail
-   func_00338670/func_00338FE0/func_003388E0 (same flags); they prime the
-   register allocator exactly as in src/rt20_a.c. */
+/* MW 3.0.3: ./try.sh src/sf0_c.c "-O3 -Op -fp off -sdatathreshold 8"
+   func_00145560 is a static copy of the real function immediately before
+   func_00145780 in retail address order (soft-float; it also stores
+   func_00145780 as its callback). It verifies exact at its own address under
+   these flags. */
+
 typedef struct { f32 x, y, z; } V3;
-typedef struct DB {
-    u8 _p0[0x4];
-    u8 b4;
-    u8 _p1[0x17];
-    s16 h1c;
-    u8 _p2[0x22];
-    u32 w40;
-    u32 w44;
-    u32 w48;
-    u8 _p3[0x10];
-    f32 f5c;
-    f32 f60;
-    f32 f64;
-} DB;
 
-extern f32 D_00583C48[];
-extern f32 D_00583C4C[];
-extern f32 D_00583C50[];
+extern u8 *func_003DA750(s32, s32, s32);
+void func_00145780(u8 *p);
+extern u32 D_004C2808;
+extern V3 D_004B33C0;
+extern f32 data_f32_004B33D8[3];
 
-static void func_00338670(DB *p)
+static void func_00145560(u8 *owner)
 {
-    p->h1c = p->h1c + 1;
-    if (p->h1c > 150) {
-        p->b4 = 0;
-        p->h1c = 0;
-        return;
+    s32 i;
+    u8 *p;
+    double k = 65536.0;
+    u32 mask = 0xFFFF;
+
+    for (i = 0; i < 2; i++) {
+        if ((p = func_003DA750(0, 0xD, 1)) == 0)
+            return;
+        *(u8 **)(p + 0x18) = owner;
+        p[0x23] = (u8)i;
+        p[0x13C] = 1;
+        *(void (**)(u8 *))(p + 0x10) = func_00145780;
+        *(s16 *)(p + 0xCC) = 8;
+        *(u32 *)(p + 0x84) = D_004C2808;
+        *(V3 *)(p + 0x34) = D_004B33C0;
+        *(u32 *)(p + 0x40) = ((u32)(s32)(0.5 + k * (double)data_f32_004B33D8[0] / 360.0) & mask);
+        *(u32 *)(p + 0x44) = ((u32)(s32)(0.5 + k * (double)data_f32_004B33D8[1] / 360.0) & mask);
+        *(u32 *)(p + 0x48) = ((u32)(s32)(0.5 + k * (double)data_f32_004B33D8[2] / 360.0) & mask);
+        *(u32 *)(p + 0xD0) = 0x80082F;
+        *(s16 *)(p + 0x1C) = 0;
+        *(f32 *)(p + 0x74) = (f32)(1.0 - 0.2 * (double)(p[0x23] + 1));
+        *(V3 *)(p + 0x50) = *(V3 *)(p + 0x34);
     }
-    p->w40 = (u32)(s32)(0.5 + 65536.0 * (f64)p->f5c / 360.0) & 0xFFFF;
-    p->w44 = (u32)(s32)(0.5 + 65536.0 * (f64)p->f60 / 360.0) & 0xFFFF;
-    p->w48 = (u32)(s32)(0.5 + 65536.0 * (f64)p->f64 / 360.0) & 0xFFFF;
-    p->w40 += (u32)(s32)(0.5 + 65536.0 * (f64)(D_00583C48[0] * (f32)p->h1c) / 360.0) & 0xFFFF;
-    p->w44 += (u32)(s32)(0.5 + 65536.0 * (f64)(D_00583C4C[0] * (f32)p->h1c) / 360.0) & 0xFFFF;
-    p->w48 += (u32)(s32)(0.5 + 65536.0 * (f64)(D_00583C50[0] * (f32)p->h1c) / 360.0) & 0xFFFF;
 }
+static void (*keep_00145560)(u8 *) = func_00145560;
+
 
 extern V3 D_004B80B8;
 extern V3 D_004B3200[];
@@ -53,13 +56,11 @@ extern f32 D_004B3350[];
 extern f32 D_004B3354[];
 extern f32 D_004B3358[];
 extern s8 D_004B3368[];
-extern s32 D_004C2808;
 extern void func_00144BF0();
 extern void func_00170DF0(u32);
 extern f32 D_004B80A0[];
 extern f32 D_004B80A4[];
 extern s32 D_004C283C;
-extern u8 *func_003DA750(s32, s32, s32);
 extern void func_00338570();
 extern void func_00338C70();
 extern V3 D_004B80E8;

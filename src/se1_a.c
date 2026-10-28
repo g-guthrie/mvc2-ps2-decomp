@@ -29,29 +29,29 @@ extern f32 D_00583C48[];
 extern f32 D_00583C4C[];
 extern f32 D_00583C50[];
 
-static void func_00338670(DB *p)
-{
-    p->h1c = p->h1c + 1;
-    if (p->h1c > 150) {
-        p->b4 = 0;
-        p->h1c = 0;
-        return;
-    }
-    p->w40 = (u32)(s32)(0.5 + 65536.0 * (f64)p->f5c / 360.0) & 0xFFFF;
-    p->w44 = (u32)(s32)(0.5 + 65536.0 * (f64)p->f60 / 360.0) & 0xFFFF;
-    p->w48 = (u32)(s32)(0.5 + 65536.0 * (f64)p->f64 / 360.0) & 0xFFFF;
-    p->w40 += (u32)(s32)(0.5 + 65536.0 * (f64)(D_00583C48[0] * (f32)p->h1c) / 360.0) & 0xFFFF;
-    p->w44 += (u32)(s32)(0.5 + 65536.0 * (f64)(D_00583C4C[0] * (f32)p->h1c) / 360.0) & 0xFFFF;
-    p->w48 += (u32)(s32)(0.5 + 65536.0 * (f64)(D_00583C50[0] * (f32)p->h1c) / 360.0) & 0xFFFF;
-}
 
-static void (*keep_00338670)(DB *) = func_00338670;
+
+/* func_0033A920: static copy of the real address-order predecessor (and the
+   callback installed below), verbatim from src/sf0_b.c. */
+extern f32 func_00417440(u16);
+
+static void func_0033A920(u8 *p)
+{
+    f32 s, v;
+    s32 sign;
+    s16 h = *(s16 *)(p + 0x1C) + 1;
+    *(s16 *)(p + 0x1C) = h;
+    if (!(h < 360)) *(s16 *)(p + 0x1C) = 0;
+    s = func_00417440((s32)(0.5 + 65536.0 * (f64)*(s16 *)(p + 0x1C) / 360.0));
+    sign = (p[0x20] != 0) ? 1 : -1;
+    v = 14.0f * (f32)sign * s;
+    *(u32 *)(p + 0x40) = (u32)(s32)(0.5 + 65536.0 * (f64)v / 360.0) & 0xFFFF;
+}
 
 extern V3 D_0045EB20[];
 extern f32 D_004C1920[2];
 extern s32 D_004C283C;
 extern u8 *func_003DA750(s32, s32, s32);
-extern void func_0033A920();
 
 void func_0033AA20(s32 a) {
     u8 *o;

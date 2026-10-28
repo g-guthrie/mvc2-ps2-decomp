@@ -7,46 +7,67 @@ typedef signed int s32;
 typedef float f32;
 typedef double f64;
 
-
-
-typedef struct DB {
-    u8 _p0[0x4];
-    u8 b4;
-    u8 _p1[0x17];
-    s16 h1c;
-    u8 _p2[0x22];
-    u32 w40;
-    u32 w44;
-    u32 w48;
-    u8 _p3[0x10];
-    f32 f5c;
-    f32 f60;
-    f32 f64;
-} DB;
-
-extern f32 D_00583C48[];
-extern f32 D_00583C4C[];
-extern f32 D_00583C50[];
-
-static void func_00338670(DB *p)
-{
-    p->h1c = p->h1c + 1;
-    if (p->h1c > 150) {
-        p->b4 = 0;
-        p->h1c = 0;
-        return;
-    }
-    p->w40 = (u32)(s32)(0.5 + 65536.0 * (f64)p->f5c / 360.0) & 0xFFFF;
-    p->w44 = (u32)(s32)(0.5 + 65536.0 * (f64)p->f60 / 360.0) & 0xFFFF;
-    p->w48 = (u32)(s32)(0.5 + 65536.0 * (f64)p->f64 / 360.0) & 0xFFFF;
-    p->w40 += (u32)(s32)(0.5 + 65536.0 * (f64)(D_00583C48[0] * (f32)p->h1c) / 360.0) & 0xFFFF;
-    p->w44 += (u32)(s32)(0.5 + 65536.0 * (f64)(D_00583C4C[0] * (f32)p->h1c) / 360.0) & 0xFFFF;
-    p->w48 += (u32)(s32)(0.5 + 65536.0 * (f64)(D_00583C50[0] * (f32)p->h1c) / 360.0) & 0xFFFF;
-}
-static void (*keep_00338670)(DB *) = func_00338670;
-
+/* MW 3.0: ./try30.sh src/se2_b.c "-O3 -Op -fp off -sdatathreshold 8"
+   func_0032FC00, func_0032FE30 and func_0032FEB0 are static copies of the
+   real contiguous run of functions immediately before func_0032FF00 in retail
+   address order (func_0032FEB0 is also its callee); each verifies exact at its
+   own address under these flags. The soft-float code in func_0032FC00 sets the
+   register allocation that func_0032FF00 has in retail. */
+typedef struct { u8 prefix[0x38]; f32 y; u8 pad3C[0x24]; f32 vy; } Motion;
 typedef struct E28 { f32 v; u8 pad[24]; } E28;
-extern E28 D_0045E488[], D_0045E48C[], D_0045E490[], D_0045E494[], D_0045E498[], D_0045E49C[];
+extern E28 D_0045E48C[];
+
+static void func_0032FC00(u8 *p)
+{
+    extern s32 func_003D90A0(s32);
+    extern s32 func_00417A40(void);
+    Motion *motion = (Motion *)p;
+    switch (p[4]) {
+    case 0:
+        if (func_003D90A0(0)) {
+            ++p[4];
+            motion->vy = 20.0f;
+            *(u32 *)(p + 0x40) = (u16)(s32)(0.5 + 65536.0 * (f64)(func_00417A40() % 5) / 360.0);
+            *(s32 *)(p + 0x48) = *(s32 *)(p + 0x40) / 30;
+        }
+        break;
+    case 1:
+        motion->y += motion->vy;
+        if (motion->vy <= 0.0f) motion->vy += -0.4000000059604645f;
+        else { motion->vy += -2.0f; *(s32 *)(p + 0x44) += *(s32 *)(p + 0x40); *(s32 *)(p + 0x40) -= *(s32 *)(p + 0x48); }
+        if (motion->y < 50.0f + D_0045E48C[0].v && motion->vy < 0.0f) { ++p[4]; motion->y = 50.0f + D_0045E48C[0].v; motion->vy = 0.0f; }
+        break;
+    case 2:
+        motion->y += motion->vy;
+        motion->vy += -0.4000000059604645f;
+        if (motion->y < D_0045E48C[0].v) { motion->y = D_0045E48C[0].v; p[4] = 0; }
+        break;
+    }
+}
+
+typedef struct { f32 x, y, z; } Vec3;
+extern E28 D_0045E488[];
+extern void *D_004C283C;
+static void func_0032FE30(void)
+{
+    extern u8 *func_003DA750(s32, s32, s32);
+    u8 *p = func_003DA750(0, 0x6, 0x1);
+    if (p) {
+        p[0x13c] = 1; *(void (**)(u8 *))(p + 0x10) = func_0032FC00;
+        *(s16 *)(p + 0xcc) = 0x3; *(void **)(p + 0x84) = D_004C283C; *(u32 *)(p + 0xd0) = 0x805;
+        *(Vec3 *)(p + 0x34) = *(Vec3 *)D_0045E488;
+    }
+}
+static void (*keep_0032FE30)(void) = func_0032FE30;
+
+static void func_0032FEB0(f32 t, f32 *a, f32 *b, f32 *c) {
+    f32 u = 1.0f - t;
+    *a = 0.5f * u * u;
+    *b = 0.5f + u * t;
+    *c = 0.5f * t * t;
+}
+
+extern E28 D_0045E490[], D_0045E494[], D_0045E498[], D_0045E49C[];
 extern E28 D_0045E4A0[], D_0045E4A4[], D_0045E4A8[], D_0045E4AC[], D_0045E4B0[], D_0045E4B4[], D_0045E4B8[];
 extern E28 D_0045E4BC[], D_0045E4C0[], D_0045E4C4[], D_0045E4C8[], D_0045E4CC[], D_0045E4D0[], D_0045E4D4[];
 
@@ -65,7 +86,6 @@ typedef struct P {
 
 void func_0032FF00(P *p)
 {
-    extern void func_0032FEB0(f32, f32 *, f32 *, f32 *);
     extern void func_003302E0(P *);
     f32 vx, vy, vz;
     s16 i;

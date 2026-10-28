@@ -577,3 +577,4 @@ nq-wave10-11,24,opus,low,code-hard,,,12080,,,"nq72-106; break-not-return, variab
 nq-wave12,25,opus,low,code-hard,36,18,7008,,,"nq107-119 minus nq115; sibling templates + try30 dominate; residual case-0 bodies of dispatch heads landed well"
 nq-wave13,26,opus,low,code-hard,45,25,10216,,,"nq115,120-133; parent-copy residuals on try30 + typed alias pointers; misses remain register naming"
 nq-wave14,27,opus,low,code-hard,42,25,11128,,,"nq134-147; parent-copy residuals on try30, typed alias pointers, named q=o+2 placement"
+rem-static-00338670,28,opus,low,remediation,40,22,-10048,,,"unrelated static func_00338670 copies removed; 22 re-matched with honest predecessor/callee statics, 15 credits dropped"

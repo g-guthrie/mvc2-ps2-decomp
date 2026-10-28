@@ -7,43 +7,32 @@ typedef signed int s32;
 typedef float f32;
 typedef double f64;
 
-typedef struct DB {
-    u8 _p0[0x4];
-    u8 b4;
-    u8 _p1[0x17];
+
+
+
+extern double func_00119058(f32);
+
+typedef struct P {
+    u8 pad0[0x1C];
     s16 h1c;
-    u8 _p2[0x22];
+    u8 pad1[0x40 - 0x1E];
     u32 w40;
     u32 w44;
-    u32 w48;
-    u8 _p3[0x10];
-    f32 f5c;
-    f32 f60;
-    f32 f64;
-} DB;
+    u8 pad2[0x54 - 0x48];
+    f32 f54;
+    u8 pad3[0xD4 - 0x58];
+    s32 wd4;
+} P;
 
-extern f32 D_00583C48[];
-extern f32 D_00583C4C[];
-extern f32 D_00583C50[];
-
-static void func_00338670(DB *p)
-{
-    p->h1c = p->h1c + 1;
-    if (p->h1c > 150) {
-        p->b4 = 0;
+static s32 func_00332580(P *p) {
+    p->h1c += 1;
+    p->w40 += (u16)((u32)(s32)(0.5 + 65536.0 * func_00119058(p->f54 * (f32)p->h1c) / 360.0));
+    if (p->h1c > p->wd4) {
         p->h1c = 0;
-        return;
+        return 1;
     }
-    p->w40 = (u32)(s32)(0.5 + 65536.0 * (f64)p->f5c / 360.0) & 0xFFFF;
-    p->w44 = (u32)(s32)(0.5 + 65536.0 * (f64)p->f60 / 360.0) & 0xFFFF;
-    p->w48 = (u32)(s32)(0.5 + 65536.0 * (f64)p->f64 / 360.0) & 0xFFFF;
-    p->w40 += (u32)(s32)(0.5 + 65536.0 * (f64)(D_00583C48[0] * (f32)p->h1c) / 360.0) & 0xFFFF;
-    p->w44 += (u32)(s32)(0.5 + 65536.0 * (f64)(D_00583C4C[0] * (f32)p->h1c) / 360.0) & 0xFFFF;
-    p->w48 += (u32)(s32)(0.5 + 65536.0 * (f64)(D_00583C50[0] * (f32)p->h1c) / 360.0) & 0xFFFF;
+    return 0;
 }
-
-
-static void (*keep_00338670)(DB *) = func_00338670;
 
 typedef struct PB PB;
 typedef struct PQ { u8 _p[0xD8]; s32 wD8; } PQ;
@@ -73,7 +62,6 @@ struct PB {
 extern s32 D_004C283C;
 extern s32 func_00153AA0(PB *);
 extern void func_00170DA0(s32, s32, s32, s16);
-extern s32 func_00332580(PB *);
 
 void func_00332420(PB *p) {
     s32 v;
@@ -98,7 +86,7 @@ void func_00332420(PB *p) {
         break;
     }
     p->w40 = (u32)(s32)(0.5 + 65536.0 * (f64)p->f50 / 360.0) & 0xFFFF;
-    if (func_00332580(p) != 0) {
+    if (func_00332580((P *)p) != 0) {
         p->b5 = 1;
         { u32 t = p->b6; p->b6 = t + 1; }
     }
