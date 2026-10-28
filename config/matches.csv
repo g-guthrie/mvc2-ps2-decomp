@@ -19966,3 +19966,13 @@ func_003DE530,0x003DE530,0x60,src/vu0_b.c,complete
 func_003DE5C0,0x003DE5C0,0x74,src/vu0_b.c,complete
 func_0037A1D0,0x37A1D0,0x5EC,src/r4_24_a.c,complete
 func_00413E60,0x00413E60,0xEC,src/r4_38_a.c,complete
+func_003C6A30,0x003C6A30,0x328,src/r4_27_c.c,complete
+residual_003CDF00,0x003CDF00,0x258,src/r4_28_a.c,complete
+func_0016E080,0x0016E080,0x86C,src/e080_a.c,complete
+func_00174F60,0x00174F60,0x538,src/e080_b.c,complete
+func_00179170,0x00179170,0x238,src/e080_b.c,complete
+func_001823C0,0x001823C0,0x22C,src/e080_c.c,complete
+func_001825F0,0x001825F0,0x1B8,src/e080_d.c,complete
+func_001827B0,0x001827B0,0x1C0,src/e080_e.c,complete
+residual_0019C890,0x0019C890,0x188,src/e080_f.c,complete
+func_0019FAB0,0x0019FAB0,0xE4,src/e080_g.c,complete

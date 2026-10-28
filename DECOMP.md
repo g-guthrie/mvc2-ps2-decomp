@@ -84,6 +84,12 @@ a subject, take the nearest preceding retail function that calls one of the
 four arithmetic helpers and use the credited source that contains it, written
 with native C double expressions.
 
+The warm source must be compiled by the same compiler as the subject, since
+retail compiled them in one process. When the nearest earlier
+double-arithmetic function was built by a different Metrowerks build, use the
+nearest one built by the subject's compiler (func_00174F60, MW 3.0, warms
+after src/chA_a.c; func_0016E080 between them is MW 3.0.3 and matches cold).
+
 ## EE GCC 2.96 branch-likely residue: define the callee first
 
 Where our `2.96-ee-001003-1` cc1 emitted a branch-likely (`bnel`/`bnezl`) and

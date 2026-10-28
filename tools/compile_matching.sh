@@ -23706,4 +23706,39 @@ MWCIncludes=$(dirname "$MWCCPS2_30B22") "$WIBO" "$MWCCPS2_30B22" \
     src/r4_38_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/r4_38_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/r4_38_a.o" private/SLUS_204.86.rom --source src/r4_38_a.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/r4_27_c.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/r4_27_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r4_27_c.o" private/SLUS_204.86.rom --source src/r4_27_c.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/r4_28_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/r4_28_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r4_28_a.o" private/SLUS_204.86.rom --source src/r4_28_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/e080_a.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "$BUILD/e080_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/e080_a.o" private/SLUS_204.86.rom --source src/e080_a.c
+mkdir -p "build/warm/e080_b" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/chA_a.c src/e080_b.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/e080_b" && \
+    mv "build/warm/e080_b/e080_b.o" "$BUILD/e080_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/e080_b.o" private/SLUS_204.86.rom --source src/e080_b.c
+mkdir -p "build/warm/e080_c" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/e080_b.c src/e080_c.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/e080_c" && \
+    mv "build/warm/e080_c/e080_c.o" "$BUILD/e080_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/e080_c.o" private/SLUS_204.86.rom --source src/e080_c.c
+mkdir -p "build/warm/e080_d" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/e080_b.c src/e080_d.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/e080_d" && \
+    mv "build/warm/e080_d/e080_d.o" "$BUILD/e080_d.o"
+"$PYTHON" tools/verify_object.py "$BUILD/e080_d.o" private/SLUS_204.86.rom --source src/e080_d.c
+mkdir -p "build/warm/e080_e" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/e080_b.c src/e080_e.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/e080_e" && \
+    mv "build/warm/e080_e/e080_e.o" "$BUILD/e080_e.o"
+"$PYTHON" tools/verify_object.py "$BUILD/e080_e.o" private/SLUS_204.86.rom --source src/e080_e.c
+mkdir -p "build/warm/e080_f" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/e080_b.c src/e080_f.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/e080_f" && \
+    mv "build/warm/e080_f/e080_f.o" "$BUILD/e080_f.o"
+"$PYTHON" tools/verify_object.py "$BUILD/e080_f.o" private/SLUS_204.86.rom --source src/e080_f.c
+mkdir -p "build/warm/e080_g" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/e080_b.c src/e080_g.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/e080_g" && \
+    mv "build/warm/e080_g/e080_g.o" "$BUILD/e080_g.o"
+"$PYTHON" tools/verify_object.py "$BUILD/e080_g.o" private/SLUS_204.86.rom --source src/e080_g.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
