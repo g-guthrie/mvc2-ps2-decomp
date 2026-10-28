@@ -8,7 +8,7 @@ typedef float f32;
 
 typedef struct { u8 pad[0x34]; f32 f34; f32 f38; } HK3D_S;
 
-s32 func_00174170(u8 *a0);
+int func_00174170(void);
 
 void func_001B5CD0(u8 *a0) {
     u8 *a2;
@@ -29,7 +29,7 @@ void func_001B5CD0(u8 *a0) {
         return;
     }
     s0 = *(HK3D_S **)(a2 + 0x1DC);
-    r = func_00174170(a0) & 3;
+    r = func_00174170() & 3;
     switch (r) {
     case 0:
         s0->f34 = s0->f34 + c1;

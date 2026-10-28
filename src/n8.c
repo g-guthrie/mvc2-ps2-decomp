@@ -114,7 +114,7 @@ void func_0034F330(u8 *p)
 }
 
 typedef struct { f32 x, y, z; } V3;
-extern u32 func_00174170(void *p);
+extern int func_00174170(void);
 
 
 extern void func_001548D0(void *p, V3 *v, s32 b, s32 c);

@@ -2,13 +2,13 @@
 typedef unsigned char u8;
 typedef signed short s16;
 
-extern int func_00174170(u8 *);
+extern int func_00174170(void);
 extern int func_001757E0(u8 *, int, int);
 
 void func_00283230(u8 *p)
 {
     p[6]++;
-    *(s16 *)(p + 28) = func_00174170(p) & 3;
+    *(s16 *)(p + 28) = func_00174170() & 3;
     switch (*(s16 *)(p + 28)) {
     case 0:
         func_001757E0(p, 19, 0);

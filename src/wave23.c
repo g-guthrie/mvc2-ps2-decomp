@@ -166,11 +166,11 @@ void func_0036A810(void *unused, S_0036A810 *p) {
 }
 
 typedef struct { u8 p0[0x20]; u8 c20; u8 p1[0x13]; f32 f34, f38; u8 p2[0x104]; s16 h140; } S_001DBD60;
-extern s32 func_00174170(S_001DBD60 *);
+extern int func_00174170(void);
 extern f32 D_0044EA40[][4];
 extern f32 D_0044EAD0[];
 void func_001DBD60(S_001DBD60 *p) {
-    f32 v = D_0044EA40[p->c20][func_00174170(p) & 3];
+    f32 v = D_0044EA40[p->c20][func_00174170() & 3];
     if (p->h140 != 0) v = -v;
     p->f34 = p->f34 + v;
     p->f38 = p->f38 - D_0044EAD0[p->c20];

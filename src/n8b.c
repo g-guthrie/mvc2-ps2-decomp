@@ -10,7 +10,7 @@ extern s8 *D_004C2840;
 extern void func_00172B50();
 extern void func_001757E0(void *p, s32 b, s32 c);
 extern void func_00175C00(void *p, s32 b);
-extern u32 func_00174170(void *p);
+extern int func_00174170(void);
 extern u8 D_004F20B0[];
 extern u8 D_004F2668[];
 
@@ -29,7 +29,7 @@ void func_002FDB10(u8 *p)
 {
     u8 *q = p + 0x2B8;
     u32 t;
-    if ((func_00174170(p) & 1) == 0) {
+    if ((func_00174170() & 1) == 0) {
         p[0x168] = 0;
     } else {
         p[0x168] = 1;

@@ -19,7 +19,7 @@ extern void *func_003996C0(void *p, u8 a);
 extern void func_0019B110(void *p, s32 a);
 extern void func_001CEA00(void *p, s32 a);
 typedef struct { f32 x, y, z; } V3;
-extern s32 func_00174170(void *p);
+extern int func_00174170(void);
 extern s32 func_003D92F0(void *p);
 extern void func_002F1DF0(void *p);
 extern u8 D_004C1248[8];

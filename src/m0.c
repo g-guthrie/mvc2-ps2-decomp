@@ -157,7 +157,7 @@ void func_002C7460(u8 *p) {
 
 typedef struct { f32 x, y, z; } V3;
 
-extern s32 func_00174170(void *p);
+extern int func_00174170(void);
 extern s32 func_003D92F0(void *p);
 extern void func_002F1DF0(void *p);
 extern u8 D_004C1248[8];
@@ -166,7 +166,7 @@ void func_002EF220(u8 *p) {
     if (t == 0) {
         s32 b;
         p[6] = t + 1;
-        b = func_00174170(p) & 1;
+        b = func_00174170() & 1;
         func_001757E0(p, 0x13, (u8)(D_004C1248[p[0x20]] + b));
     } else {
         func_00175700(p);

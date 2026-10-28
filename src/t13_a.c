@@ -115,8 +115,8 @@ extern s8 D_004F7FC8[];
 extern s8 D_00448FE0[];
 
 void func_0018A920(u8 *p, u8 *q) {
-    extern s32 func_00174170(void *);
-    q[1] = D_004F7FC8[p[2]] * 10 + D_00448FE0[func_00174170(p) & 0x1F];
+    extern int func_00174170(void);
+    q[1] = D_004F7FC8[p[2]] * 10 + D_00448FE0[func_00174170() & 0x1F];
 }
 
 void func_00243210(u8 *p) {
