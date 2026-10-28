@@ -86,7 +86,7 @@ void func_0014EC30(u8 *p, f32 x, f32 y, f32 z) {
 
 typedef struct { u16 h0; u8 pad2[2]; f32 f4; } S9AC;
 extern S9AC *D_004C29AC;
-extern void func_003859F0(void);
+extern void func_003859F0(u8 *);
 extern s32 func_00175700(void *p);
 
 typedef struct Ent3847 Ent3847;
@@ -97,7 +97,7 @@ struct Ent3847 {
 
 void func_003847D0(Ent3847 *p) {
     if (D_004C29AC->h0 != p->f18->h168) {
-        func_003859F0();
+        func_003859F0((u8 *)p);
     } else {
         p->f34 = p->f18->f34;
         p->f38 = p->f18->f38;
@@ -105,7 +105,7 @@ void func_003847D0(Ent3847 *p) {
         D_004C29AC->f4 += p->f5C;
         p->f34 += D_004C29AC->f4;
         if (p->f18->h1E <= 0) {
-            func_003859F0();
+            func_003859F0((u8 *)p);
         } else {
             func_00175700(p);
         }

@@ -33,12 +33,12 @@ typedef struct {
     s32 w2F8;
 } Q380;
 
-/* Provisional: unresolved two-argument helper call require proof. */
+/* Provisional: callback table ABI and helper signatures need reconciliation. */
 void func_00380650(P380 *a, Q380 *b)
 {
     extern s32 func_00185980(u8 *);
     extern void func_00380A40(P380 *, Q380 *);
-    extern void func_00380B40(void);
+    extern void func_00380B40(u8 *, u8 *);
     extern void func_00380A90(P380 *);
     extern void func_001E7F60(P380 *);
     u32 t;
@@ -62,7 +62,7 @@ void func_00380650(P380 *a, Q380 *b)
         if (--a->h1C == 0) {
             goto fail;
         }
-        func_00380B40();
+        func_00380B40((u8 *)a, (u8 *)b);
         func_00380A90(a);
         func_001E7F60(a);
     }

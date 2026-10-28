@@ -11,6 +11,7 @@ extern void func_001863F0();
 extern int func_00174470(const void *);
 extern s32 func_00350FD0();
 
+/* Provisional: missing actor argument and incorrect return contract. */
 s32 func_00278C70(u8 *p) {
     *(f32 *)(p + 0x34) += *(f32 *)(p + 0x5C);
     *(f32 *)(p + 0x5C) += *(f32 *)(p + 0x68);

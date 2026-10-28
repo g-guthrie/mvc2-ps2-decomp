@@ -9,7 +9,7 @@ extern int func_001757E0(u8 *, int, int);
 extern void func_00126400(void);
 extern void func_00175C00(u8 *, int);
 extern void func_001821D0(u8 *);
-extern void func_00182380(void);
+extern void func_00182380(u8 *);
 extern void func_001843A0(u8 *);
 extern void func_00184540(u8 *);
 extern void func_001846B0(u8 *);
@@ -87,7 +87,7 @@ void func_002EA570(u8 *p)
     if (p[533] != 0)
         func_002EA5C0(p);
     else {
-        func_00182380();
+        func_00182380(p);
         func_001821D0(p);
         func_002EA5C0(p);
     }

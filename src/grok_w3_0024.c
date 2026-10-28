@@ -12,7 +12,7 @@ extern void func_00178F20(u8 *, u8 *);
 extern void func_001843A0(u8 *);
 extern void *func_0011D8F8(void *, int, unsigned int);
 extern void func_001821D0(u8 *);
-extern void func_00182380(void);
+extern void func_00182380(u8 *);
 extern void func_001A78D0(u8 *, int);
 extern void func_001B0F40(u8 *, int);
 extern void func_00244450(u8 *);
@@ -46,7 +46,7 @@ void func_00244B40(u8 *p)
     if (p[533] != 0)
         func_00244B90(p);
     else {
-        func_00182380();
+        func_00182380(p);
         func_001821D0(p);
         func_00244B90(p);
     }

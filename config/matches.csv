@@ -11470,7 +11470,7 @@ func_00346410,0x00346410,0x64,src/r1g.c,complete
 func_0038EA30,0x0038EA30,0x64,src/r1g.c,complete
 func_001BB0D0,0x001BB0D0,0x64,src/r1h.c,complete
 func_00282680,0x00282680,0x80,src/r2.c,complete
-func_00278C70,0x00278C70,0x84,src/r2.c,complete
+func_00278C70,0x00278C70,0x84,src/r2.c,placeholder
 func_0027E820,0x0027E820,0x84,src/r2.c,complete
 func_0022B620,0x0022B620,0x88,src/r2.c,complete
 func_002C7B40,0x002C7B40,0x8C,src/r2.c,complete
