@@ -24273,4 +24273,10 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -mips4 -G0 -o "$BUILD/r13_10_d.o" "$BUILD/r13_10_d.s"
 "$PYTHON" tools/verify_object.py "$BUILD/r13_10_d.o" private/SLUS_204.86.rom --source src/r13_10_d.c
 
+"$WIBO" "$SNCPP" -P src/r14_11_a.c "$BUILD/r14_11_a.i"
+"$WIBO" "$EE29CC1" "$BUILD/r14_11_a.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/r14_11_a.s"
+"$PYTHON" -c 'import re, sys; from pathlib import Path; p = Path(sys.argv[1]); p.write_text(re.sub(r"%(hi|lo)\(\$L[0-9]+\)", r"%\1(jtbl_004AADD0)", p.read_text()))' "$BUILD/r14_11_a.s"
+"$EEAS210" -G0 -o "$BUILD/r14_11_a.o" "$BUILD/r14_11_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r14_11_a.o" private/SLUS_204.86.rom --source src/r14_11_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
