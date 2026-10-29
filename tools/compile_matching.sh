@@ -24301,4 +24301,9 @@ MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/r14_07_a.c -c -lang c -i src -O3 -Op -sdatathreshold 0 -o "$BUILD/r14_07_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/r14_07_a.o" private/SLUS_204.86.rom --source src/r14_07_a.c
 
+"$WIBO" "$SNCPP" -P src/r14_04_a.c "$BUILD/r14_04_a.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 --extra-flags="" "$BUILD/r14_04_a.i" "$BUILD/r14_04_a.s"
+"$WIBO" "$SNAS" -mips4 -G8 -o "$BUILD/r14_04_a.o" "$BUILD/r14_04_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r14_04_a.o" private/SLUS_204.86.rom --source src/r14_04_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
