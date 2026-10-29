@@ -24238,4 +24238,8 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -G0 -o "$BUILD/r13_08_a.o" "$BUILD/r13_08_a.s"
 "$PYTHON" tools/verify_object.py "$BUILD/r13_08_a.o" private/SLUS_204.86.rom --source src/r13_08_a.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/r13_07_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/r13_07_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r13_07_a.o" private/SLUS_204.86.rom --source src/r13_07_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
