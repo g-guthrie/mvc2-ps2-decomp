@@ -35,10 +35,6 @@ extern void func_0019E670(u8 *, u8 *);
 extern void func_0019F310(u8 *);
 extern void func_0019F370(u8 *);
 extern void func_0019F390(u8 *);
-extern void func_00200300(u8 *);
-extern void func_00200380(u8 *);
-extern void func_00300380(u8 *);
-extern void func_00400300(u8 *);
 
 const ActorCopyCallbackTables jtbl_0044ABA0 = {
   {
@@ -82,9 +78,5 @@ const ActorCopyCallbackTables jtbl_0044ABA0 = {
     func_0019F310,
     func_0019F370,
     func_0019F390,
-    func_00300380,
-    func_00200300,
-    func_00400300,
-    func_00200380,
   }
 };

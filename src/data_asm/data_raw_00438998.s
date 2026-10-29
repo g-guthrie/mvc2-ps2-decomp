@@ -4,7 +4,7 @@
  *   (syscall 0x5A, kernel Copy) with a0=0x80074000, a1=&D_00438998, a2=0x7A8,
  *   then FlushCache(0)/FlushCache(2) and SetSyscall (func_0010CCE8, syscall 0x74)
  *   using the D_00439140 table (0x5B -> 0x80074000, ...).
- * The 0x7A8-byte image continues through data_zero_00439020, data_u32_00439090
+ * The 0x7A8-byte image continues through data_zero_00439020
  * (runtime variables at 0x80074688..0x80074728) and the first 0x80 bytes of
  * data_u32_004390C0 (pointer/handler tables at 0x80074728..0x800747A8).
  * Whole unit is code; the trailing words are nop padding.

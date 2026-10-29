@@ -6,7 +6,7 @@
  *   (func_00104060, syscall 0x64) and registers the handlers via SetSyscall
  *   (func_0010C2E8, syscall 0x74) from the D_004386A8 table.
  * Only 0x2D8 of the 0x330 copied bytes live in this unit; the rest is in
- * data_zero_00438600 / data_u32_00438630 (lookup table at runtime 0x80075300).
+ * data_zero_00438600 / data_u32_00438628 (lookup table at runtime 0x80075300).
  * The first 0x18 bytes are not copied: D_00438310..D_00438324 are read/written
  * directly by EE code (func at 0x00107E08, 0x0010ACB0, 0x0010B1A0, 0x0010B2D8).
  */

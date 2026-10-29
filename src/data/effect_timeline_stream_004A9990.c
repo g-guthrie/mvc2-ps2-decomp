@@ -1,4 +1,5 @@
-/* Complete native count-prefixed effect-text stream; inter-root gap excluded. */
+/* Complete native count-prefixed effect-text stream, then the zero tail to the next
+ * 0xB0-spaced stream: the caller writes a glyph byte at +0xAA, past the terminator. */
 typedef unsigned char u8;
 typedef struct {
     u8 record_count_004A9990; /* native record count 0x01 */
@@ -89,6 +90,7 @@ typedef struct {
     u8 body_opcode_0D_004A9A33; /* native body control/command opcode 0x0D */
     u8 body_glyph_native_codes_004A9A34_004A9A35[2]; /* natively read consecutive body glyph/native-code bytes */
     u8 body_opcode_00_004A9A36; /* native body control/command opcode 0x00 */
+    u8 tail_004A9A37[9]; /* zero tail to 0x004A9A40; func_00421920 stores a glyph byte at stream +0xAA (0x004A9A3A) */
 } EffectTimelineStream_004A9990;
 EffectTimelineStream_004A9990 data_effect_timeline_stream_004A9990 = {
     0x01,
@@ -179,4 +181,5 @@ EffectTimelineStream_004A9990 data_effect_timeline_stream_004A9990 = {
     0x0D,
     { 0x19, 0x8E },
     0x00,
+    { 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 },
 };

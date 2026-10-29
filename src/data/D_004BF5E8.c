@@ -1,7 +1,8 @@
-typedef const unsigned char *Mvc2Address;
-extern const unsigned char data_u32_0044ADA0[];
-extern const unsigned char jtbl_0044ADA8[];
-Mvc2Address const D_004BF5E8[2] = {
-    data_u32_0044ADA0,
-    jtbl_0044ADA8 + 0x18,
+typedef short s16;
+/* Per-variant (x, y) offset tables read by func_0019FCE0 (see D_0044ADA0). */
+extern const s16 D_0044ADA0[];
+extern const s16 D_0044ADC0[];
+const s16 *const D_004BF5E8[2] = {
+    D_0044ADA0,
+    D_0044ADC0,
 };

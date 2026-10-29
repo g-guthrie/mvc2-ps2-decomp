@@ -10,7 +10,7 @@ typedef struct {
     ActorEffectWorkCallback randomOffset[2];
     Mvc2StateCallback middle[6];
     ActorEffectWorkCallback copy[2];
-    Mvc2StateCallback after[14];
+    Mvc2StateCallback after[10];
 } ActorCopyCallbackTables;
 void func_0019D300(u8 *, u8 *);
 void func_0019D4A0(u8 *, u8 *);
