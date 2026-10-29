@@ -20179,3 +20179,4 @@ func_00120440,0x00120440,0x1BC,src/newlib_r5900.S,complete
 func_003DE160,0x003DE160,0xCC,src/vu0_macro_math.S,complete
 func_003DE230,0x003DE230,0xE4,src/vu0_macro_math.S,complete
 func_003DE7A0,0x003DE7A0,0x28,src/vu0_macro_math.S,complete
+func_003BFDC0,0x003BFDC0,0x260,src/r18_01_a.c,complete

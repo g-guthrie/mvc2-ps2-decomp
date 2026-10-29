@@ -193,9 +193,8 @@ def code_progress(matches: dict[str, dict], root: Path = Path(".")) -> tuple[int
     return matched, complete
 
 
-def data_progress(matches: dict[str, dict]) -> tuple[int, int]:
-    for name, match in matches.items():
-        require_span(name, match["address"], match["size"], DATA_BEGIN, DATA_END, "data")
+def credited_data_units(matches: dict[str, dict]) -> dict[str, dict]:
+    """The data units that count toward progress, by name."""
     # Placeholder replacements still participate in all catalog validation.
     # Their byte identity alone does not establish source reconstruction.
     # Unaddressed all-zero units classified as alignment padding belong to the
@@ -215,7 +214,13 @@ def data_progress(matches: dict[str, dict]) -> tuple[int, int]:
         owner_reconstructed = progress == "reconstructed"
         if owner_reconstructed:
             credited[name] = match
-    matches = credited
+    return credited
+
+
+def data_progress(matches: dict[str, dict]) -> tuple[int, int]:
+    for name, match in matches.items():
+        require_span(name, match["address"], match["size"], DATA_BEGIN, DATA_END, "data")
+    matches = credited_data_units(matches)
     matched = unique_covered_bytes(
         [(match["address"], match["size"]) for match in matches.values()],
         DATA_BEGIN,

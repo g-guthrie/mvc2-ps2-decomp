@@ -86,7 +86,7 @@ int main(void) {
             source.write_text(code)
             built = subprocess.run(
                 [cc, "-std=c11", "-Werror", "-Wno-unknown-pragmas",
-                 "-I", str(ROOT / "src/data"), str(source), "-o", str(binary)],
+                 "-I", str(ROOT / "src"), "-I", str(ROOT / "src/data"), str(source), "-o", str(binary)],
                 capture_output=True, text=True, timeout=30,
             )
             self.assertEqual(built.returncode, 0, built.stderr)

@@ -4,11 +4,11 @@ import test_owned_actor_states as states
 
 class PoolAllocationChain003db9b0Tests(unittest.TestCase):
     def run_case(self, mutation=None):
-        retry=states.function('src/grok_w3_003c.c','func_003DCFE0')
-        wrapper=states.function('src/grok_tail_r2.c','func_003DB9B0')
+        retry=states.function('src/grok_w5_003c.c','func_003DCFE0')
+        wrapper=states.function('src/grok_r1_0038.c','func_003DB9B0')
         if mutation:
-            old='return func_003F0C50((u8 *)D_005BF280, size);'
-            new={'result':'return 0;', 'size':'return func_003F0C50((u8 *)D_005BF280, size+1);'}[mutation]
+            old='return func_003F0C50(D_005BF280, size);'
+            new={'result':'return 0;', 'size':'return func_003F0C50(D_005BF280, size+1);'}[mutation]
             self.assertIn(old,wrapper);wrapper=wrapper.replace(old,new,1)
         bridge=states.function('src/tail_leaves.c','func_003F0C50')
         allocator=states.function('src/w20b1_f.c','func_003F0C60')

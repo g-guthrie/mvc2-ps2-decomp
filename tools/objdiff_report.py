@@ -19,6 +19,7 @@ from tools.progress_catalog import (
     TEXT_END,
     TEXT_SIZE,
     code_progress,
+    credited_data_units,
     data_progress,
     validate_code_catalog,
     validate_data_catalog,
@@ -261,13 +262,19 @@ def build_report(
     }
     validate_data_catalog(units_by_name, data_matches)
     matched_data, complete_data = data_progress(data_matches)
+    # Padding is credited through its owner, which may live in another source.
+    credited = credited_data_units(data_matches)
     # Like conventional objdiff reports, expose individual source objects.
     data_sources = defaultdict(dict)
     for name, row in data_matches.items():
         data_sources[row["source"]][name] = row
     for source, rows in sorted(data_sources.items()):
         size = sum(row["size"] for row in rows.values())
-        matched, complete = data_progress(rows)
+        matched = sum(row["size"] for name, row in rows.items() if name in credited)
+        complete = sum(
+            row["size"] for name, row in rows.items()
+            if name in credited and row.get("complete")
+        )
         units.append({
             "name": "main/" + str(Path(source).with_suffix("")).removeprefix("src/"),
             "measures": progress_measures(
@@ -277,7 +284,7 @@ def build_report(
             "sections": [{
                 "name": name, "size": str(row["size"]),
                 "fuzzy_match_percent": (
-                    100.0 if row.get("progress") == "reconstructed" else 0.0
+                    100.0 if name in credited else 0.0
                 ),
                 "metadata": {"virtual_address": str(row["address"])},
             } for name, row in sorted(rows.items())],

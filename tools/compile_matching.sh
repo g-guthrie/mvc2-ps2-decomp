@@ -24352,4 +24352,8 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$SNCPP" -P src/vu0_macro_math.S "$BUILD/vu0_macro_math.s"
 "$EEAS210" -G0 -o "$BUILD/vu0_macro_math.o" "$BUILD/vu0_macro_math.s"
 "$PYTHON" tools/verify_object.py "$BUILD/vu0_macro_math.o" private/SLUS_204.86.rom --source src/vu0_macro_math.S
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/r18_01_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/r18_01_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r18_01_a.o" private/SLUS_204.86.rom --source src/r18_01_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

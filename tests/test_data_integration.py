@@ -88,7 +88,23 @@ class DataIntegrationTest(unittest.TestCase):
         # Compare the report against declarations, excluding linked raw placeholders.
         with (ROOT / "config/data_matches.csv").open() as stream:
             declarations = list(csv.DictReader(stream))
-        reconstructed = [row for row in declarations if row["progress"] == "reconstructed"]
+        # Reconstructed units count, plus all-zero alignment padding that
+        # directly follows (possibly through more padding) a reconstructed unit.
+        reconstructed = []
+        owner = False
+        previous_end = None
+        for row in sorted(declarations, key=lambda row: int(row["address"], 0)):
+            address, size = int(row["address"], 0), int(row["size"], 0)
+            adjacent = address == previous_end
+            previous_end = address + size
+            if row["progress"] == "alignment_padding":
+                owner = owner and adjacent
+                if owner:
+                    reconstructed.append(row)
+                continue
+            owner = row["progress"] == "reconstructed"
+            if owner:
+                reconstructed.append(row)
         expected_matched = sum(int(row["size"], 0) for row in reconstructed)
         expected_complete = sum(
             int(row["size"], 0) for row in reconstructed if row["status"] == "complete"

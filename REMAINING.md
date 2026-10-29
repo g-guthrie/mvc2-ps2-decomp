@@ -1,8 +1,8 @@
 # What is left
 
-Snapshot after matching rounds 11–17. Code is 3,290,876 of 3,293,696 bytes
-(99.91%) and data is 647,546 of 648,064 bytes (99.92%). The spans below are code that no credited C or
-`.S` source covers yet: 2,820 bytes. Each one has a blocker class.
+Snapshot after matching rounds 11–17. Code is 3,291,484 of 3,293,696 bytes
+(99.93%) and data is 647,546 of 648,064 bytes (99.92%). The spans below are code that no credited C or
+`.S` source covers yet: 2,212 bytes. Each one has a blocker class.
 For classes (a), (c) and (d), the best near-miss source and notes are in the
 session scratch folders (`r11_*` … `r17_*`).
 
@@ -10,7 +10,6 @@ session scratch folders (`r11_*` … `r17_*`).
 
 | Span | Bytes | Evidence |
 |---|---:|---|
-| residual func_003BFDC0 | 608 | It needs MW 3.0's short-loop padding (loops of ≤7 instructions padded to 8; 3.0.3/b22/2.4 pad ≤6 to 7) together with 3.0.3's float scheduling. No single build does both. The best 3.0.3 build is exact except for that padding nop. |
 | func_001E7CB0 | 612 | Floats allocated before scheduling. The register picture matches `#pragma schedule off`, yet loads are still hoisted. |
 | func_003F5630, func_003F5710 | 712 | Retail keeps a per-copy register for each unrolled `*s++` with one source register. On 3.0/3.0.3/b22 the post-increment never reaches the backend (pass-by-pass dumps). The MH1 decomp of the same Capcom `fl` library hits the same wall. |
 

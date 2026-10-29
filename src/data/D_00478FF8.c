@@ -1,12 +1,7 @@
 typedef unsigned short u16;
-/* u16 lookup table indexed by a byte (lhu [byte*2] from D_00478FF8) in func_003F7708,
-   preceded by 8 unread bytes. */
-typedef struct Mv_00478FF0 {
-    u16 pad_00[4];
-    u16 tbl_08[244];
-} Mv_00478FF0;
-typedef char Mv_00478FF0_size_check[(sizeof(Mv_00478FF0) == 496) ? 1 : -1];
-Mv_00478FF0 data_u32_00478FF0 = { { 0x0000, 0x0000, 0x0000, 0x0000 }, {
+/* u16 lookup table indexed by a byte (lhu [byte*2]) in func_003F7708
+   (src/sb28_b.c). The 8 zero bytes before it are the tail of D_00478E78[7]. */
+u16 D_00478FF8[244] = {
     0x8284, 0x8684, 0x8A84, 0x8E84, 0x9284, 0x9684, 0x9A84, 0x9E84,
     0xA284, 0xA684, 0xAA84, 0xAE84, 0xB284, 0xB684, 0xBA84, 0xBE84,
     0xC184, 0xC384, 0xC584, 0xC784, 0xC984, 0xCB84, 0xCD84, 0xCF84,
@@ -38,4 +33,4 @@ Mv_00478FF0 data_u32_00478FF0 = { { 0x0000, 0x0000, 0x0000, 0x0000 }, {
     0x0174, 0x0164, 0x0154, 0x0144, 0x0134, 0x0124, 0x0114, 0x0104,
     0x00F4, 0x00E4, 0x00D4, 0x00C4, 0x00B4, 0x00A4, 0x0094, 0x0084,
     0x0078, 0x0070, 0x0068, 0x0060,
-} };
+};

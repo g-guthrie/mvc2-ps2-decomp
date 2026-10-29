@@ -13,7 +13,7 @@ class OwnerCopyStartTests(unittest.TestCase):
             changed=dispatch.replace('*(u8 **)(p + 212)','p')
             self.assertNotEqual(changed,dispatch);dispatch=changed
         if short_copy:
-            changed=source.replace('words[49]','words[48]')
+            changed=source.replace('typedef ActorState Fields;','typedef struct { unsigned char b[0xC0]; } Fields;')
             self.assertNotEqual(changed,source);source=changed
         code=r'''
 #include <string.h>
