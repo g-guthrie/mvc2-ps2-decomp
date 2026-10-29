@@ -1,34 +1,5 @@
-/* Hand-written SDK assembly: VU0 matrix helper, interrupt-disable primitive; cache range algorithm recovered separately. */
+/* Hand-written SDK assembly: interrupt-disable primitive. */
 #define FN(name, body) __asm__(".section .text." #name ",\"ax\",@progbits\n.p2align 3\n.globl " #name "\n.ent " #name "\n" #name ":\n.set noreorder\n.set noat\n" body ".set reorder\n.end " #name "\n")
-FN(func_00102DB8,
-  ".word 0x78A80000 /* lq $t0, 0x0($a1) */\n"
-  ".word 0x78A90010 /* lq $t1, 0x10($a1) */\n"
-  ".word 0x78AA0020 /* lq $t2, 0x20($a1) */\n"
-  ".word 0xD8A40030 /* lqc2 $vf4, 0x30($a1) */\n"
-  ".word 0x4BE5233C /* vmove.xyzw $vf5, $vf4 */\n"
-  ".word 0x4BC4212C /* vsub.xyz $vf4, $vf4, $vf4 */\n"
-  ".word 0x4BE9233C /* vmove.xyzw $vf9, $vf4 */\n"
-  ".word 0x482B2000 /* qmfc2.ni $t3, $vf4 */\n"
-  ".word 0x71286488 /* pextlw $t4, $t1, $t0 */\n"
-  ".word 0x71286CA8 /* pextuw $t5, $t1, $t0 */\n"
-  ".word 0x716A7488 /* pextlw $t6, $t3, $t2 */\n"
-  ".word 0x716A7CA8 /* pextuw $t7, $t3, $t2 */\n"
-  ".word 0x71CC4389 /* pcpyld $t0, $t6, $t4 */\n"
-  ".word 0x718E4BA9 /* pcpyud $t1, $t4, $t6 */\n"
-  ".word 0x71ED5389 /* pcpyld $t2, $t7, $t5 */\n"
-  ".word 0x48A83000 /* qmtc2.ni $t0, $vf6 */\n"
-  ".word 0x48A93800 /* qmtc2.ni $t1, $vf7 */\n"
-  ".word 0x48AA4000 /* qmtc2.ni $t2, $vf8 */\n"
-  ".word 0x4BC531BC /* vmulax.xyz $ACC, $vf6, $vf5x */\n"
-  ".word 0x4BC538BD /* vmadday.xyz $ACC, $vf7, $vf5y */\n"
-  ".word 0x4BC5410A /* vmaddz.xyz $vf4, $vf8, $vf5z */\n"
-  ".word 0x4BC4492C /* vsub.xyz $vf4, $vf9, $vf4 */\n"
-  ".word 0x7C880000 /* sq $t0, 0x0($a0) */\n"
-  ".word 0x7C890010 /* sq $t1, 0x10($a0) */\n"
-  ".word 0x7C8A0020 /* sq $t2, 0x20($a0) */\n"
-  ".word 0x03E00008 /* jr $ra */\n"
-  ".word 0xF8840030 /* sqc2 $vf4, 0x30($a0) */\n"
-  );
 FN(func_0010CA20,
   "mfc0 $3,$12\n"
   "lui $2,1\n"

@@ -1,26 +1,10 @@
 # What is left
 
-Snapshot after matching rounds 11–17. Code is 3,284,148 of 3,293,696 bytes
-(99.71%) and data is 647,546 of 648,064 bytes (99.92%). The spans below are code that no credited C or
-`.S` source covers yet: 45 spans, 9,548 bytes. Each one has a blocker class.
+Snapshot after matching rounds 11–17. Code is 3,290,876 of 3,293,696 bytes
+(99.91%) and data is 647,546 of 648,064 bytes (99.92%). The spans below are code that no credited C or
+`.S` source covers yet: 2,820 bytes. Each one has a blocker class.
 For classes (a), (c) and (d), the best near-miss source and notes are in the
 session scratch folders (`r11_*` … `r17_*`).
-
-## Hand-written assembly in the original (cannot be C)
-
-These are policy questions, not matching problems. They can be credited only
-as `.S` files, like the kernel and DECI2 stubs that are already credited.
-
-| Span(s) | Bytes | What it is |
-|---|---:|---|
-| `_start` | 448 | crt0 startup (padduw clears, mthi1/mtsah, sync.p, syscall, ei) |
-| func_001001D0, func_00106624 | 12 | syscall stub, and a lone `jr $ra` boundary stub |
-| func_0010C6C0 | 860 | exception handler ($k0 save area, eret) |
-| func_00102CA0, func_00102D70, func_00102DB8, func_00102EF0, func_00102F20, func_00102FC0, func_00103038, func_001030E0, func_00103188, func_00103718, func_001038C8 | 1,224 | libvu0 VU0/MMI fixed-register kernels (sceVu0*) |
-| func_00106578 | 172 | cache-flush loop (`cache 0x18` + sync) |
-| func_003DE160, func_003DE230, func_003DE7A0 | 472 | VU0 macro-mode matrix product and sqrt |
-| func_0011D740, func_0011D7F0, func_0011D8F8 | 628 | newlib `libc/machine/r5900` memcpy/memmove/memset (`.S`). memcpy has been rebuilt byte-exact as `.S` |
-| func_0011D5C8, func_0011D6A8, func_0011FC10, func_0011FD40, func_0011FE88, func_0011FFA0, func_001200D8, func_00120288, func_00120440 | 2,896 | newlib r5900 MMI string routines: memchr, memcmp, strcat, strcmp, strcpy, strlen, strncat, strncmp, strncpy |
 
 ## Needs a compiler build that does not exist publicly (class a)
 
