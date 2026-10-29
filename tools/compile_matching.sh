@@ -6682,9 +6682,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/w9s2m30.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/w9s2m30.o"
 "$PYTHON" tools/verify_object.py "$BUILD/w9s2m30.o" private/SLUS_204.86.rom --source src/w9s2m30.c
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/w9s2m.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/w9s2m.o"
-"$PYTHON" tools/verify_object.py "$BUILD/w9s2m.o" private/SLUS_204.86.rom --source src/w9s2m.c
 "$WIBO" "$SNCPP" -P src/w9e0.c "$BUILD/w9e0.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/w9e0.i" "$BUILD/w9e0.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/w9e0.o" "$BUILD/w9e0.s"
@@ -17056,9 +17053,6 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/hk2_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/hk2_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/hk2_b.o" private/SLUS_204.86.rom --source src/hk2_b.c
 
-MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
-    src/hm7_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/hm7_a.o"
-"$PYTHON" tools/verify_object.py "$BUILD/hm7_a.o" private/SLUS_204.86.rom --source src/hm7_a.c
 
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/hm5_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/hm5_a.o"
@@ -24067,5 +24061,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/r11_08_a.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/r11_08_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/r11_08_a.o" private/SLUS_204.86.rom --source src/r11_08_a.c
+
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/r11_14_a.c -c -lang c -i src -O3 -sdatathreshold 0 -o "$BUILD/r11_14_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r11_14_a.o" private/SLUS_204.86.rom --source src/r11_14_a.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh
