@@ -24120,4 +24120,16 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -G0 -o "$BUILD/r11_15_b.o" "$BUILD/r11_15_b.s"
 "$PYTHON" tools/verify_object.py "$BUILD/r11_15_b.o" private/SLUS_204.86.rom --source src/r11_15_b.c
 
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/r12_02_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/r12_02_a.o"
+"${OBJCOPY:-mipsel-linux-gnu-objcopy}" \
+    --redefine-sym @110=jtbl_004B10A0 \
+    "$BUILD/r12_02_a.o" "$BUILD/r12_02_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r12_02_a.o" private/SLUS_204.86.rom --source src/r12_02_a.c
+
+mkdir -p "build/warm/r12_01_b" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/r3_2_a.c src/r12_01_b.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/r12_01_b" && \
+    mv "build/warm/r12_01_b/r12_01_b.o" "$BUILD/r12_01_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r12_01_b.o" private/SLUS_204.86.rom --source src/r12_01_b.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
