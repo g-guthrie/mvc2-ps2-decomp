@@ -1,3 +1,4 @@
+/* (Mvc2Address)0x... entries are literal words (no code reads them as addresses), not code labels. */
 typedef const unsigned char *Mvc2Address;
 extern const unsigned char func_00359140[];
 extern const unsigned char func_00359220[];
@@ -25,8 +26,6 @@ extern const unsigned char func_00359D50[];
 extern const unsigned char func_0035A1E0[];
 extern const unsigned char func_0035A340[];
 extern const unsigned char func_0035A440[];
-extern const unsigned char lbl_002EFFD8[];
-extern const unsigned char lbl_0038FFC8[];
 extern const unsigned char residual_0035A0F0[];
 extern const unsigned char residual_0035A720[];
 Mvc2Address const jtbl_004C1AD0[30] = {
@@ -58,6 +57,6 @@ Mvc2Address const jtbl_004C1AD0[30] = {
     residual_0035A0F0,
     func_0035A440,
     func_0035A340,
-    lbl_002EFFD8,
-    lbl_0038FFC8,
+    (Mvc2Address)0x002EFFD8u,
+    (Mvc2Address)0x0038FFC8u,
 };

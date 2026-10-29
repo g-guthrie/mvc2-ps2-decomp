@@ -1,7 +1,7 @@
-/* Jump table: 5 code addresses. */
+/* (const void *)0x... entries are literal words (no code reads them as addresses), not code labels. */
+/* Jump table: 4 code addresses, then one literal word. */
 extern char func_003A3420[];
 extern char func_003A37F0[];
-extern char lbl_00240000[];
 extern char lbl_003A3340[];
 extern char lbl_003A3620[];
 const void * const jtbl_00472BB0[5] = {
@@ -9,5 +9,5 @@ const void * const jtbl_00472BB0[5] = {
     func_003A3420,
     lbl_003A3620,
     func_003A37F0,
-    lbl_00240000,
+    (const void *)0x00240000u,
 };

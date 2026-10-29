@@ -1,6 +1,6 @@
+/* (Mvc2Address)0x... entries are literal words (no code reads them as addresses), not code labels. */
 typedef const unsigned char *Mvc2Address;
-extern const unsigned char lbl_0020FFE0[];
 Mvc2Address const jtbl_0044873C[2] = {
-    lbl_0020FFE0,
-    lbl_0020FFE0,
+    (Mvc2Address)0x0020FFE0u,
+    (Mvc2Address)0x0020FFE0u,
 };
