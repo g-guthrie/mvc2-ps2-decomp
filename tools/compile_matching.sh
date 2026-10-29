@@ -24111,4 +24111,13 @@ sed -i -E 's/%(hi|lo)\(\$L[0-9]+\)/%\1(jtbl_004AB000)/' "$BUILD/r11_01_g.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/r11_01_g.o" "$BUILD/r11_01_g.s"
 "$PYTHON" tools/verify_object.py "$BUILD/r11_01_g.o" private/SLUS_204.86.rom --source src/r11_01_g.c
 
+"$WIBO" "$SNCPP" -P src/r11_15_a.c "$BUILD/r11_15_a.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/r11_15_a.i" "$BUILD/r11_15_a.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r11_15_a.o" "$BUILD/r11_15_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r11_15_a.o" private/SLUS_204.86.rom --source src/r11_15_a.c
+"$WIBO" "$SNCPP" -P src/r11_15_b.c "$BUILD/r11_15_b.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/r11_15_b.i" "$BUILD/r11_15_b.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r11_15_b.o" "$BUILD/r11_15_b.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r11_15_b.o" private/SLUS_204.86.rom --source src/r11_15_b.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

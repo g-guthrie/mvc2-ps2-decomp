@@ -20101,3 +20101,7 @@ func_00412260,0x00412260,0x12B0,src/r11_13_b.c,complete
 func_003F0E60,0x003F0E60,0x458,src/r11_11_e.c,complete
 func_0010C4C0,0x0010C4C0,0x1F4,src/r11_01_e.c,complete
 func_00105858,0x00105858,0x5EC,src/r11_01_g.c,complete
+func_003F9D20,0x003F9D20,0x260,src/r11_15_a.c,complete
+func_003FC090,0x003FC090,0x2A8,src/r11_15_a.c,complete
+func_003FC338,0x003FC338,0x2B0,src/r11_15_a.c,complete
+func_003FC5E8,0x003FC5E8,0x318,src/r11_15_b.c,complete
