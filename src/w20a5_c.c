@@ -15,24 +15,16 @@ extern f32 D_004F1F4C[], D_004F1F50[], D_004F1F54[];
 
 void func_001237E0(s32 a0, s32 n)
 {
-    f32 z;
     f32 d;
     f32 r;
     if (D_004F2034[0] == 0) {
         D_004F2034[0] = 1;
         D_004C25BC = 0;
-        z = 0.0f;
-        r = z;
-        d = D_004F1FEC[0] - D_004C9F50[0];
-        if (d != z) { f32 nf = (f32)n; asm { div.s r, d, nf; nop; nop; nop } }
+        if ((d = D_004F1FEC[0] - D_004C9F50[0])) r = d / (f32)n; else r = 0.0f;
         D_004F201C[0] = r;
-        r = z;
-        d = D_004F1FF0[0] - D_004C9F54[0];
-        if (d != z) { f32 nf = (f32)n; asm { div.s r, d, nf; nop; nop; nop } }
+        if ((d = D_004F1FF0[0] - D_004C9F54[0])) r = d / (f32)n; else r = 0.0f;
         D_004F2020[0] = r;
-        r = z;
-        d = D_004F1FF4[0] - D_004C9F58[0];
-        if (d != z) { f32 nf = (f32)n; asm { div.s r, d, nf; nop; nop; nop } }
+        if ((d = D_004F1FF4[0] - D_004C9F58[0])) r = d / (f32)n; else r = 0.0f;
         D_004F2024[0] = r;
     }
     if (D_004C25BC < n - 1) {

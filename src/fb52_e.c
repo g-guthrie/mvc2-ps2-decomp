@@ -22,24 +22,16 @@ extern f32 D_004F1F98[];
 extern f32 D_004F1F9C[];
 
 void func_001239E0(s32 a0, s32 n) {
-    f32 z;
     f32 d;
     f32 r;
     if (D_004F2035[0] == 0) {
         D_004F2035[0] = 1;
         D_004C25B8 = 0;
-        z = 0.0f;
-        r = z;
-        d = D_004F1FF8[0] - D_004C9F40[0];
-        if (d != z) { f32 nf = (f32)n; asm { div.s r, d, nf; nop; nop; nop } }
+        if ((d = D_004F1FF8[0] - D_004C9F40[0])) r = d / (f32)n; else r = 0.0f;
         D_004F2028[0] = r;
-        r = z;
-        d = D_004F1FFC[0] - D_004C9F44[0];
-        if (d != z) { f32 nf = (f32)n; asm { div.s r, d, nf; nop; nop; nop } }
+        if ((d = D_004F1FFC[0] - D_004C9F44[0])) r = d / (f32)n; else r = 0.0f;
         D_004F202C[0] = r;
-        r = z;
-        d = D_004F2000[0] - D_004C9F48[0];
-        if (d != z) { f32 nf = (f32)n; asm { div.s r, d, nf; nop; nop; nop } }
+        if ((d = D_004F2000[0] - D_004C9F48[0])) r = d / (f32)n; else r = 0.0f;
         D_004F2030[0] = r;
     }
     if (D_004C25B8 < n - 1) {
