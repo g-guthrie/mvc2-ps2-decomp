@@ -24311,4 +24311,23 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --op
 "$WIBO" "$SNAS" -G0 -o "$BUILD/r15_08_a.o" "$BUILD/r15_08_a.s"
 "$PYTHON" tools/verify_object.py "$BUILD/r15_08_a.o" private/SLUS_204.86.rom --source src/r15_08_a.c
 
+"$WIBO" "$SNCPP" -P src/r15_07_a.c "$BUILD/r15_07_a.i"
+"$WIBO" "$EE29CC1" "$BUILD/r15_07_a.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/r15_07_a.s"
+"$EEAS210" -G0 -o "$BUILD/r15_07_a.o" "$BUILD/r15_07_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r15_07_a.o" private/SLUS_204.86.rom --source src/r15_07_a.c
+"$WIBO" "$SNCPP" -P src/r15_06_a.c "$BUILD/r15_06_a.i"
+"$WIBO" "$EE29CC1" "$BUILD/r15_06_a.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/r15_06_a.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r15_06_a.o" "$BUILD/r15_06_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r15_06_a.o" private/SLUS_204.86.rom --source src/r15_06_a.c
+"$WIBO" "$SNCPP" -P src/r15_06_b.c "$BUILD/r15_06_b.i"
+"$WIBO" "$EE29CC1" "$BUILD/r15_06_b.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/r15_06_b.s"
+test "$(grep -c '%hi(\$L[0-9]*)' "$BUILD/r15_06_b.s")" = 1
+sed -i -E 's/%(hi|lo)\(\$L[0-9]+\)/%\1(jtbl_004AB130)/' "$BUILD/r15_06_b.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r15_06_b.o" "$BUILD/r15_06_b.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r15_06_b.o" private/SLUS_204.86.rom --source src/r15_06_b.c
+
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/r15_03_a.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "$BUILD/r15_03_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r15_03_a.o" private/SLUS_204.86.rom --source src/r15_03_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

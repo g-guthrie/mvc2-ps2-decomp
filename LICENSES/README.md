@@ -31,3 +31,16 @@ and its contributors.
 (github.com/lombyte-project/Lombyte, `src/sdk/dma/sce_gs_set_def_disp_env.c`)
 and is licensed under the GNU General Public License version 3, like its
 source. The complete license text is in `GPL-3.0.txt`.
+
+`src/r15_06_b.c` (`_sceFs_Rcv_Intr`) is adapted from OpenRAC's rac1-decomp
+(github.com/OpenRAC/rac1-decomp, `src/core/00119D88.c`) and is licensed under
+the GNU General Public License version 3 (`GPL-3.0.txt`).
+
+`src/r15_07_a.c` (`sceCdInit`) is adapted from the ICO decompilation
+(github.com/nathanialf/ico, `sce/libcdvd/cdvd000.c`), MIT License; the
+copyright and permission notice are in `MIT-ico-decomp.txt`.
+
+`src/r15_06_a.c` (`scePadPortOpen`) is adapted from
+devin-thomas/guilty-gear-x-plus (`src/sdk/sce/libpad.c`), released under
+CC0 1.0 Universal.
+
