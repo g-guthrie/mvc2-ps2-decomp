@@ -20161,3 +20161,5 @@ func_001076E0,0x001076E0,0x384,src/r15_06_b.c,complete
 func_00341DF0,0x00341DF0,0x2F4,src/r15_03_a.c,complete
 func_00319980,0x00319980,0xD0,src/r15_02_a.c,complete
 func_0012D6B0,0x0012D6B0,0x178,src/r15_00_a.c,complete
+func_00188860,0x00188860,0x40C,src/r16_00_a.c,complete
+func_001E5870,0x001E5870,0x108,src/r16_01_a.c,complete
