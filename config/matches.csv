@@ -20129,3 +20129,6 @@ func_0038AA30,0x0038AA30,0x8B0,src/r12_07_c.c,complete
 func_003F01B0,0x003F01B0,0x158,src/r12_10_a.c,complete
 func_00422150,0x00422150,0x5F0,src/r13_12_a.c,complete
 func_0040E008,0x0040E008,0x280,src/r13_11_a.c,complete
+func_0036D550,0x0036D550,0x164,src/r13_06_a.c,complete
+func_00352740,0x00352740,0x208,src/r13_06_b.c,complete
+func_0035A820,0x0035A820,0x274,src/r13_06_c.c,complete

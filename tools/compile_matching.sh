@@ -24213,4 +24213,15 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -G0 -o "$BUILD/r13_11_a.o" "$BUILD/r13_11_a.s"
 "$PYTHON" tools/verify_object.py "$BUILD/r13_11_a.o" private/SLUS_204.86.rom --source src/r13_11_a.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/r13_06_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/r13_06_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r13_06_a.o" private/SLUS_204.86.rom --source src/r13_06_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/r13_06_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/r13_06_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r13_06_b.o" private/SLUS_204.86.rom --source src/r13_06_b.c
+mkdir -p "build/warm/r13_06_c" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/wrm2_e.c src/r13_06_c.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 0 -o "build/warm/r13_06_c" && \
+    mv "build/warm/r13_06_c/r13_06_c.o" "$BUILD/r13_06_c.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r13_06_c.o" private/SLUS_204.86.rom --source src/r13_06_c.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
