@@ -20139,3 +20139,5 @@ func_00100478,0x00100478,0x68,src/rc_a_a.c,complete
 func_00100F00,0x00100F00,0x314,src/rc_a_a.c,complete
 func_00103480,0x00103480,0x104,src/rc_a_b.c,complete
 func_00103588,0x00103588,0x190,src/rc_a_b.c,complete
+func_002801B0,0x002801B0,0xFC,src/r13_05_a.c,complete
+func_0032DF90,0x0032DF90,0x3C0,src/r13_05_b.c,complete
