@@ -20149,3 +20149,5 @@ func_001016C0,0x001016C0,0x68C,src/r14_11_a.c,complete
 func_001428E0,0x001428E0,0x8BC,src/r14_09_a.c,complete
 func_00127FA0,0x00127FA0,0x390,src/r14_08_a.c,complete
 func_0010E770,0x0010E770,0xBC,src/r14_03_b.c,complete
+func_0010E9A8,0x0010E9A8,0x94,src/r14_01_a.c,complete
+func_0010F968,0x0010F968,0x1E0,src/r14_01_a.c,complete
