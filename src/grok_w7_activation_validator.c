@@ -6,7 +6,7 @@ extern u8 D_004D18D6[];
 extern int func_0018A580(u8 *);
 extern void func_00186A60(u8 *, int);
 extern void func_001DD920(u8 *, u8, u8);
-/* jtbl_0045D2D0[0] is the one-argument actor callback for this gate. */
+/* D_0045D2D0[0] is the one-argument actor callback for this gate. */
 void func_0030FE70(u8 *p)
 {
     u8 *state = p + 0x2B8;

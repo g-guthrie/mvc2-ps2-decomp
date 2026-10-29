@@ -136,7 +136,6 @@ void func_0012ADE0(void)
         D_004C2840->b3 = D_004C2840->b3 + 1;
         break;
     case 6:
-        /* Provisional: this indexed view spans separately defined callback slots. */
         D_0043CD08[g->b4](wide_buttons, 0);
         break;
     case 7:

@@ -90,16 +90,13 @@ void func_00278250(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; 
 void func_0027AC60(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00454F70[i]; }
 void func_0027CFC0(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00455290[i]; }
 void func_00281160(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00455960[i]; }
-/* Provisional: the 28-word source spans several separately defined data objects. */
 void func_002861D0(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00456670[i]; }
 void func_0028DAA0(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00457610[i]; }
 void func_00294DB0(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00457D60[i]; }
 void func_0029B080(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_004580D0[i]; }
 void func_002A0BB0(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_004583B0[i]; }
 void func_002A7140(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00458790[i]; }
-/* Provisional: the complete 112-byte source record and destination lifetime need proof. */
 void func_002AB8F0(u8 *p) { Mvc2CharacterActionRecord112View *dst = *(Mvc2CharacterActionRecord112View **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst->copy_words[i] = D_00458BA0.copy_words[i]; }
-/* Provisional: the 28-word native record spans multiple data objects. */
 void func_002B2630(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00458F50[i]; }
 void func_002B8140(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00459300[i]; }
 void func_002BFB10(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_00459920[i]; }
@@ -115,7 +112,6 @@ void func_002E8C10(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; 
 void func_002ED940(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_0045B7A0[i]; }
 void func_002F1F90(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_0045BA80[i]; }
 void func_002F6930(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_0045BDA0[i]; }
-/* Provisional: the 28-word source spans separately defined data objects. */
 void func_002FBD80(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_0045C050[i]; }
 void func_00300600(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_0045C870[i]; }
 void func_00304AF0(u8 *p) { u32 *dst = *(u32 **)(p + 0x43C); int i; for (i = 0; i < 28; i++) dst[i] = D_0045CB70[i]; }

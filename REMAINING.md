@@ -1,8 +1,8 @@
 # What is left
 
-Snapshot after matching rounds 11–17. Code is 3,280,116 of 3,293,696 bytes
-(99.59%) and data is 647,546 of 648,064 bytes (99.92%). The spans below are code that no credited C or
-`.S` source covers yet: 54 spans, 13,396 bytes. Each one has a blocker class.
+Snapshot after matching rounds 11–17. Code is 3,284,148 of 3,293,696 bytes
+(99.71%) and data is 647,546 of 648,064 bytes (99.92%). The spans below are code that no credited C or
+`.S` source covers yet: 45 spans, 9,548 bytes. Each one has a blocker class.
 For classes (a), (c) and (d), the best near-miss source and notes are in the
 session scratch folders (`r11_*` … `r17_*`).
 
@@ -21,15 +21,6 @@ as `.S` files, like the kernel and DECI2 stubs that are already credited.
 | func_003DE160, func_003DE230, func_003DE7A0 | 472 | VU0 macro-mode matrix product and sqrt |
 | func_0011D740, func_0011D7F0, func_0011D8F8 | 628 | newlib `libc/machine/r5900` memcpy/memmove/memset (`.S`). memcpy has been rebuilt byte-exact as `.S` |
 | func_0011D5C8, func_0011D6A8, func_0011FC10, func_0011FD40, func_0011FE88, func_0011FFA0, func_001200D8, func_00120288, func_00120440 | 2,896 | newlib r5900 MMI string routines: memchr, memcmp, strcat, strcmp, strcpy, strlen, strncat, strncmp, strncpy |
-
-## Held by the owner (C already matches byte-exact)
-
-| Span | Bytes | Why it is held |
-|---|---:|---|
-| func_0012ADE0 | 2,800 | Indexes a 3-entry callback table that the data catalog splits into separate units (`data_callback_slot_0043CD08`, `…0C`, plus the first word of `data_u32_0043CD10`). Merging those into one `D_0043CD08[3]` unit would release it. |
-| func_002861D0, func_002AB8F0, func_002B2630, func_002FBD80 | 672 | Each 112-byte source record is split across several data units. Each record needs one data unit. |
-| func_00335C10, func_003363B0, func_00334F00 | 132 | The recorded reasons (overlapping table ownership, mixed return contracts) look resolved now. Re-check and flip. |
-| func_0016EEC0 | 380 | Retail reads the caller's `$s1` before assigning it on the first iteration, so no C without an uninitialised read reproduces it. |
 
 ## Needs a compiler build that does not exist publicly (class a)
 

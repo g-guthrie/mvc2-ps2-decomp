@@ -20,7 +20,8 @@ extern s8 D_004F7F50[];
 extern void *D_004C2A68;
 extern u8 D_004C2688[2];
 
-/* Placeholder: the retail body reads incoming s1 before assigning its index. */
+/* As in retail, idx is read before its first assignment on the first pass
+ * (the original reads whatever the caller left in $s1). */
 void func_0016EEC0(void) {
     extern void func_0010DF60();
     s32 i;
