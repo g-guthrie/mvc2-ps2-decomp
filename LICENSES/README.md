@@ -26,3 +26,8 @@ formatter and its five neighboring helpers. It retains the original
 1990 Berkeley four-clause redistribution notice in full. This product
 includes software developed by the University of California, Berkeley
 and its contributors.
+
+`src/r15_08_a.c` (sceGsSetDefDispEnv) is adapted from the Lombyte project
+(github.com/lombyte-project/Lombyte, `src/sdk/dma/sce_gs_set_def_disp_env.c`)
+and is licensed under the GNU General Public License version 3, like its
+source. The complete license text is in `GPL-3.0.txt`.

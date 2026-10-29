@@ -24306,4 +24306,9 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --op
 "$WIBO" "$SNAS" -mips4 -G8 -o "$BUILD/r14_04_a.o" "$BUILD/r14_04_a.s"
 "$PYTHON" tools/verify_object.py "$BUILD/r14_04_a.o" private/SLUS_204.86.rom --source src/r14_04_a.c
 
+"$WIBO" "$SNCPP" -P src/r15_08_a.c "$BUILD/r15_08_a.i"
+"$WIBO" "$EE29CC1" "$BUILD/r15_08_a.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/r15_08_a.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r15_08_a.o" "$BUILD/r15_08_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r15_08_a.o" private/SLUS_204.86.rom --source src/r15_08_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

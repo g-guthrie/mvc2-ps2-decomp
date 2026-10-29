@@ -20154,3 +20154,4 @@ func_0010F968,0x0010F968,0x1E0,src/r14_01_a.c,complete
 residual_0035D0A0,0x0035D0A0,0x198,src/r14_07_a.c,complete
 func_003FA1B0,0x003FA1B0,0x294,src/r14_04_a.c,complete
 func_003FA448,0x003FA448,0x298,src/r14_04_a.c,complete
+func_00100590,0x00100590,0x374,src/r15_08_a.c,complete
