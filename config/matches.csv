@@ -9871,7 +9871,7 @@ func_003453C0,0x003453C0,0x8C,src/wave20.c,complete
 func_0034B240,0x0034B240,0x88,src/wave20.c,complete
 func_00201370,0x00201370,0x9C,src/wave20.c,complete
 func_002E3880,0x002E3880,0x94,src/wave20.c,complete
-func_003DC950,0x003DC950,0x64,src/wave20.c,placeholder
+func_003DC950,0x003DC950,0x64,src/wave20.c,complete
 func_002D3A10,0x002D3A10,0x78,src/wave20b.c,complete
 func_001D6FD0,0x001D6FD0,0x7C,src/wave20b.c,complete
 func_00362C20,0x00362C20,0x7C,src/wave20b.c,complete
@@ -14085,7 +14085,7 @@ func_00281640,0x00281640,0xC0,src/y1_f.c,complete
 func_0028DD20,0x0028DD20,0xD4,src/y1_f.c,complete
 func_0021C4A0,0x0021C4A0,0xE8,src/y1_f.c,complete
 func_00161690,0x00161690,0xCC,src/y1_g.c,complete
-func_003DCAD0,0x003DCAD0,0xD4,src/y1_h.c,placeholder
+func_003DCAD0,0x003DCAD0,0xD4,src/y1_h.c,complete
 func_0033F470,0x0033F470,0xF0,src/y1_i.c,complete
 func_0033F630,0x0033F630,0xF0,src/y1_i.c,complete
 func_002F7940,0x002F7940,0xF0,src/y1_j.c,complete
@@ -18644,7 +18644,7 @@ func_0039D900,0x0039D900,0x150,src/rb22_b.c,complete
 func_0027E5D0,0x0027E5D0,0x150,src/rb22_c.c,complete
 func_00418410,0x00418410,0x154,src/rb24_a.c,complete
 func_00167B10,0x00167B10,0x158,src/rb24_b.c,complete
-func_0012DA40,0x0012DA40,0x158,src/rb24_c.c,placeholder
+func_0012DA40,0x0012DA40,0x158,src/rb24_c.c,complete
 func_00191A00,0x00191A00,0x15C,src/rb26_a.c,complete
 func_00326230,0x00326230,0x160,src/rb26_b.c,complete
 func_001E5710,0x001E5710,0x15C,src/rb26_c.c,complete
@@ -20096,3 +20096,5 @@ func_0015AEF0,0x0015AEF0,0x98,src/r11_06_b.c,complete
 func_0014B660,0x0014B660,0x73C,src/r11_06_c.c,complete
 func_0014CB10,0x0014CB10,0x304,src/r11_06_d.c,complete
 func_003F72F0,0x003F72F0,0xFC,src/r11_12_b.c,complete
+func_00413600,0x00413600,0x478,src/r11_13_a.c,complete
+func_00412260,0x00412260,0x12B0,src/r11_13_b.c,complete

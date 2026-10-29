@@ -16,9 +16,9 @@ void func_003DCAD0(const char *a, int b, const void *c, s32 n)
     if (n == 0) {
         goto test;
     body:
-        asm { nop; nop; nop; nop; nop; nop }
+        __asm__("nop;nop;nop;nop;nop;nop");
     test:
-        asm { nop; nop }
+        __asm__("nop;nop");
         if (func_0010BB98(a, b, c) < 0) goto body;
         return;
     }

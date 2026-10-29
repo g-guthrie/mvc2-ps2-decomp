@@ -18,7 +18,7 @@ s32 func_0012DA40(s32 a, s32 b, s32 c) {
     s1 = 0;
     for (;;) {
         while (func_00418AA0() == 0) {
-            asm { nop; nop; nop; nop; nop; nop }
+            __asm__("nop;nop;nop;nop;nop;nop");
             func_00418B10();
         }
         s0 = func_003FCBC0(c, a);
@@ -33,7 +33,7 @@ s32 func_0012DA40(s32 a, s32 b, s32 c) {
                     break;
                 }
                 s3 = func_003FD530(s0);
-                asm { nop; nop; nop; nop; nop; nop }
+                __asm__("nop;nop;nop;nop;nop;nop");
                 func_00418B10();
                 if (s3 == 2) continue;
                 func_003FCCF0(s0);

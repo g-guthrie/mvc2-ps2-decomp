@@ -381,7 +381,7 @@ extern s32 D_0062BBB4[];
 s32 func_003DC950(void) {
     s32 i = D_0062BFD8[0] ^ 1;
     while (D_0062BBE4[i] != 0 || D_0062BBB4[i] != 0) {
-        asm { nop; nop; nop; nop; nop; nop }
+        __asm__("nop;nop;nop;nop;nop;nop");
     }
     return 1;
 }
