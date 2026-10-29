@@ -11,7 +11,7 @@ session scratch folders (`r11_*` … `r17_*`).
 | Span | Bytes | Evidence |
 |---|---:|---|
 | func_001E7CB0 | 612 | Floats allocated before scheduling. The register picture matches `#pragma schedule off`, yet loads are still hoisted. |
-| func_003F5630, func_003F5710 | 712 | Retail keeps a per-copy register for each unrolled `*s++` with one source register. On 3.0/3.0.3/b22 the post-increment never reaches the backend (pass-by-pass dumps). The MH1 decomp of the same Capcom `fl` library hits the same wall. |
+| func_003F5630, func_003F5710 | 712 | Retail needs `*s++` to reach IRO as a post-increment whose value is used: each unrolled copy then gets its own temp, while `d++` folds into store offsets 0..7. The PS2 MW front end pulls every post-increment out of an expression statement before IRO (MW 3.0 IRO phase dumps, round 18), so `*d++ = *s++` can never produce it. It survives only in a condition or call argument: `if ((*d = *s++) != 0) { } d++;` is byte-exact on 3.0 and 3.0.3, but an empty `if` used to steer is not credited. The MH1 decomp's flMemcpy/plMemmove stop at the same wall. |
 
 ## Structural, not solved (class d)
 
