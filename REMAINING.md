@@ -17,7 +17,7 @@ session scratch folders (`r11_*` … `r17_*`).
 
 | Span | Bytes | Evidence |
 |---|---:|---|
-| func_003D6530 | 740 | The beqz target's first instruction is a HI16 `lui` with several predecessors, so the MW delay-slot filler (same rule in every build) emits a nop and never tries the fall-through. Retail stole from the fall-through. A dead store or a run-once loop would reproduce it, but both are disallowed steering. |
+| func_003D6530 | 740 | One word: retail moves `lui s0,%hi(D_004B91E0)` from the fall-through into the `beqz` slot at +0x21C; the best source (3.0.3, `-O3 -Op`, `opt_propagation off`) emits a `nop` there. The beqz targets the outer join, whose first instruction is a relocated `lui` and has three predecessors; the MW filler then emits `nop` without trying the fall-through, unless the target block is empty (gdb trace of the filler, round 18). An empty inner-join block needs a statement that survives to the backend and emits nothing: `assign_labels` merges adjacent labels and `COpt_Optimize` drops no-op statements, so only a kept dead assignment (`opt_dead_assignments off`) or an allocator-removed copy does it, and nothing after the join reads a variable. Same-TU sibling func_003D44E0 shows the `nop`, as the rule predicts. |
 
 ## Data placeholders
 
