@@ -24255,4 +24255,17 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/r13_05_b.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/r13_05_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/r13_05_b.o" private/SLUS_204.86.rom --source src/r13_05_b.c
 
+"$WIBO" "$SNCPP" -P src/r13_10_a.c "$BUILD/r13_10_a.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/r13_10_a.i" "$BUILD/r13_10_a.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r13_10_a.o" "$BUILD/r13_10_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r13_10_a.o" private/SLUS_204.86.rom --source src/r13_10_a.c
+"$WIBO" "$SNCPP" -P src/r13_10_b.c "$BUILD/r13_10_b.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/r13_10_b.i" "$BUILD/r13_10_b.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r13_10_b.o" "$BUILD/r13_10_b.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r13_10_b.o" private/SLUS_204.86.rom --source src/r13_10_b.c
+"$WIBO" "$SNCPP" -P src/r13_10_c.c "$BUILD/r13_10_c.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/r13_10_c.i" "$BUILD/r13_10_c.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r13_10_c.o" "$BUILD/r13_10_c.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r13_10_c.o" private/SLUS_204.86.rom --source src/r13_10_c.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
