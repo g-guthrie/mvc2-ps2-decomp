@@ -10,7 +10,7 @@ session scratch folders (`r11_*` … `r17_*`).
 
 | Span | Bytes | Evidence |
 |---|---:|---|
-| func_001E7CB0 | 612 | Floats allocated before scheduling. The register picture matches `#pragma schedule off`, yet loads are still hoisted. |
+| func_001E7CB0 | 612 | 10 of 153 words, all in block 0's integer part (+0x34..+0x74); everything after is exact (MW 3.0.3 `-O3 -Op`, round 18 near miss). A gdb harness that feeds block 0 a chosen pcode order with the pre-RA schedule skipped gives a byte-exact function, but only if the `p->f50`/`x->f50` loads come after `lh a->v[0]`. The real pre-RA scheduler runs in register-pressure mode (always on: class 2/6 limits are 0) and puts those loads in the idle load slots first, whatever the IR order (best reachable 11 words). Retail's block-0 IR therefore carried a dependence that no tried source shape, volatile, pragma or any of 24 MW builds reproduces. |
 | func_003F5630, func_003F5710 | 712 | Retail needs `*s++` to reach IRO as a post-increment whose value is used: each unrolled copy then gets its own temp, while `d++` folds into store offsets 0..7. The PS2 MW front end pulls every post-increment out of an expression statement before IRO (MW 3.0 IRO phase dumps, round 18), so `*d++ = *s++` can never produce it. It survives only in a condition or call argument: `if ((*d = *s++) != 0) { } d++;` is byte-exact on 3.0 and 3.0.3, but an empty `if` used to steer is not credited. The MH1 decomp's flMemcpy/plMemmove stop at the same wall. |
 
 ## Structural, not solved (class d)
