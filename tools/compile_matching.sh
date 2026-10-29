@@ -24268,4 +24268,9 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 "$WIBO" "$SNAS" -G0 -o "$BUILD/r13_10_c.o" "$BUILD/r13_10_c.s"
 "$PYTHON" tools/verify_object.py "$BUILD/r13_10_c.o" private/SLUS_204.86.rom --source src/r13_10_c.c
 
+"$WIBO" "$SNCPP" -P src/r13_10_d.c "$BUILD/r13_10_d.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/r13_10_d.i" "$BUILD/r13_10_d.s"
+"$WIBO" "$SNAS" -mips4 -G0 -o "$BUILD/r13_10_d.o" "$BUILD/r13_10_d.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r13_10_d.o" private/SLUS_204.86.rom --source src/r13_10_d.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

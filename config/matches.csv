@@ -20144,3 +20144,4 @@ func_0032DF90,0x0032DF90,0x3C0,src/r13_05_b.c,complete
 func_00404720,0x00404720,0x244,src/r13_10_a.c,complete
 func_003FA910,0x003FA910,0x3D4,src/r13_10_b.c,complete
 func_003FACE8,0x003FACE8,0x354,src/r13_10_c.c,complete
+func_003FA040,0x003FA040,0x170,src/r13_10_d.c,complete
