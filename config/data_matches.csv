@@ -10762,10 +10762,11 @@ data_zero_004AB194,0x004AB194,0x4,src/data/data_zero_004AB194.c,complete,alignme
 data_u8_004AB198,0x004AB198,0x8,src/data/data_u8_004AB198.c,complete,reconstructed
 data_zero_004AC154,0x004AC154,0x4,src/data/data_zero_004AC154.c,complete,alignment_padding
 data_zero_004AC19C,0x004AC19C,0x4,src/data/data_zero_004AC19C.c,complete,alignment_padding
-data_u32_004AC250,0x004AC250,0x8,src/data/data_u32_004AC250.c,complete,placeholder
+data_f64_004AC250,0x004AC250,0x8,src/data/data_f64_004AC250.c,complete,reconstructed
 data_u32_004AC258,0x004AC258,0x8,src/data/data_u32_004AC258.c,complete,reconstructed
 D_004AC6E8,0x004AC6E8,0x8,src/data/D_004AC6E8.c,complete,reconstructed
-data_u32_004AC868,0x004AC868,0x8,src/data/data_u32_004AC868.c,complete,placeholder
+D_004AC868,0x004AC868,0x2,src/data/D_004AC868.c,complete,reconstructed
+data_zero_004AC86A,0x004AC86A,0x6,src/data/data_zero_004AC86A.c,complete,alignment_padding
 data_zero_004ACBE4,0x004ACBE4,0x4,src/data/data_zero_004ACBE4.c,complete,alignment_padding
 D_004ACBE8,0x004ACBE8,0x8,src/data/D_004ACBE8.c,complete,reconstructed
 data_zero_004AD118,0x004AD118,0x8,src/data/data_zero_004AD118.c,complete,alignment_padding
