@@ -1,7 +1,7 @@
 # What is left
 
 Snapshot after matching rounds 11–17. Code is 3,291,484 of 3,293,696 bytes
-(99.93%) and data is 647,546 of 648,064 bytes (99.92%). The spans below are code that no credited C or
+(99.93%) and data is 647,972 of 648,064 bytes (99.99%). The spans below are code that no credited C or
 `.S` source covers yet: 2,212 bytes. Each one has a blocker class.
 For classes (a), (c) and (d), the best near-miss source and notes are in the
 session scratch folders (`r11_*` … `r17_*`).
@@ -21,11 +21,18 @@ session scratch folders (`r11_*` … `r17_*`).
 
 ## Data placeholders
 
-Every byte of the data range is now owned by a catalogued unit that verifies
-byte-exact. 57 small units (514 bytes) stay `placeholder` in
-`config/data_matches.csv` because no code or data reads them, so their type is
-unknown, and the catalogue does not credit byte identity alone. 48 of them
-(406 bytes, at most 16 bytes each) sit directly after a table and look like
-its unread tail, for example s16 pairs that continue the pattern of the
-previous unit. Each could be credited by folding it into the preceding unit's
-source, but only once that unit's real element count is established.
+Every byte of the data range is owned by a catalogued unit that verifies
+byte-exact. Nine small units (92 bytes) stay `placeholder` in
+`config/data_matches.csv`, because no code or data reads them, so their type
+and owner are unproven, and the catalogue does not credit byte identity alone:
+
+| Unit | Why it is unproven |
+|---|---|
+| data_u32_00446BD0, data_ff_00446BE0 | No reader and no pointer to them. |
+| data_u32_00445758 | Follows the fade curve, which func_00160F90 reads only while its index is below 22. |
+| data_u32_00451230 | Follows input descriptor D_00451220; how far its state callbacks read it is not traced. |
+| data_u32_0045ECCC | func_0033B9D0 reads D_0045ECBC+12*i at +0 only (i = 0..1), so this word is never read. |
+| data_u32_00464EE0 | Floats before gIdentity3x3_00464EEC; no reader or pointer. |
+| data_u32_004AC250 | 1.0e300, likely `s_floor.c`'s `static const double huge`, but nothing reads this copy. |
+| data_u32_004AC868 | "C" in 8 bytes, pointed to only by the unread word at 0x0043B43C. |
+| data_raw_004B57F0 | No reader. |
