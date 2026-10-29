@@ -20,7 +20,7 @@ extern s32 func_00104990(s32);
 void func_003F0470(void)
 {
     while ((func_00104990(2) | func_00104990(1)) != 0) {
-        asm { nop; nop; nop; nop; nop; nop }
+        __asm__("nop;nop;nop;nop;nop;nop");
     }
 }
 

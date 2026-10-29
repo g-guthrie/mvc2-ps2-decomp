@@ -12289,7 +12289,7 @@ func_00117078,0x00117078,0x28,src/w9e1.c,complete
 func_0040F070,0x0040F070,0x44,src/w9e8.c,complete
 func_0040AF28,0x0040AF28,0x2C,src/vu0_e.c,complete
 func_0041CEB0,0x0041CEB0,0x30,src/w9m0.c,complete
-func_003F0470,0x003F0470,0x58,src/w9m0.c,placeholder
+func_003F0470,0x003F0470,0x58,src/w9m0.c,complete
 func_003EA070,0x003EA070,0x54,src/w9m0.c,complete
 func_003EB960,0x003EB960,0x5C,src/w9m8.c,complete
 func_004121B0,0x004121B0,0xA4,src/w9m3.c,complete
@@ -20098,3 +20098,4 @@ func_0014CB10,0x0014CB10,0x304,src/r11_06_d.c,complete
 func_003F72F0,0x003F72F0,0xFC,src/r11_12_b.c,complete
 func_00413600,0x00413600,0x478,src/r11_13_a.c,complete
 func_00412260,0x00412260,0x12B0,src/r11_13_b.c,complete
+func_003F0E60,0x003F0E60,0x458,src/r11_11_e.c,complete
