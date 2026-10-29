@@ -102,41 +102,6 @@ s32 func_001A2610(u32 a, s32 n, u32 c) {
     return i;
 }
 
-extern u16 *D_004C29DC;
-void func_00394CD0(u8 *p) {
-    extern void func_00395890(u8 *);
-    extern s32 func_00175700(u8 *);
-    s32 t;
-    s8 v;
-    s8 w;
-    u16 a = *D_004C29DC;
-    if (a != *(u16 *)(*(u8 **)(p + 0x18) + 0x168)) {
-        func_00395890(p);
-        return;
-    }
-    p[0x24] = 0;
-    *(f32 *)(p + 0x34) = *(f32 *)(*(u8 **)(p + 0x18) + 0x34);
-    *(f32 *)(p + 0x38) = *(f32 *)(*(u8 **)(p + 0x18) + 0x38);
-    p[0x13C] = 0;
-    t = (s8)(*(s8 *)(*(u8 **)(p + 0x18) + 0x161) & ~1);
-    v = t;
-    if (t != 0) {
-        if (v < 0) {
-            func_00395890(p);
-            return;
-        }
-        p[0x13C] = 1;
-        goto test;
-        do {
-            func_00175700(p);
-test:
-            asm { nop }
-            w = *(volatile s8 *)(p + 0x161);
-            asm { nop; nop; nop }
-        } while (v != w);
-    }
-}
-
 typedef struct { u8 pad[0x7C]; s16 f7c[1]; } GE;
 extern GE *D_004C2794;
 extern s8 func_00175700();

@@ -24057,4 +24057,15 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/r11_04_c.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/r11_04_c.o"
 "$PYTHON" tools/verify_object.py "$BUILD/r11_04_c.o" private/SLUS_204.86.rom --source src/r11_04_c.c
 
+"$WIBO" "$SNCPP" -P src/r11_00_b.c "$BUILD/r11_00_b.i"
+"$WIBO" "$EE29CC1" "$BUILD/r11_00_b.i" -O2 -G0 -ffunction-sections  -quiet -o "$BUILD/r11_00_b.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r11_00_b.o" "$BUILD/r11_00_b.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r11_00_b.o" private/SLUS_204.86.rom --source src/r11_00_b.c
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/r11_05_a.c -c -lang c -i src -O3 -sdatathreshold 8 -o "$BUILD/r11_05_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r11_05_a.o" private/SLUS_204.86.rom --source src/r11_05_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/r11_08_a.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/r11_08_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r11_08_a.o" private/SLUS_204.86.rom --source src/r11_08_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

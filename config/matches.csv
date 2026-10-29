@@ -13750,7 +13750,6 @@ func_00360BD0,0x00360BD0,0x80,src/x5_b.c,complete
 func_0013B060,0x0013B060,0xC0,src/x5_b.c,complete
 func_00173EC0,0x00173EC0,0xC8,src/x5_b.c,complete
 func_001A2610,0x001A2610,0xD0,src/x5_b.c,complete
-func_00394CD0,0x00394CD0,0xD0,src/x5_b.c,placeholder
 func_001FD430,0x001FD430,0xD8,src/x5_b.c,complete
 func_001B9290,0x001B9290,0xB8,src/x5_b.c,complete
 func_00163CD0,0x00163CD0,0x6C,src/x5_b.c,complete
@@ -20089,3 +20088,7 @@ residual_0034D600,0x0034D600,0x21C,src/sLb1_c.c,complete
 func_003C06A0,0x003C06A0,0x154,src/r11_09_a.c,complete
 func_003B56B0,0x003B56B0,0x384,src/r11_09_b.c,complete
 func_00127C50,0x00127C50,0x350,src/r11_04_c.c,complete
+func_00102688,0x00102688,0x1D8,src/r11_00_b.c,complete
+func_0014A530,0x0014A530,0x108,src/r11_05_a.c,complete
+func_0012DC00,0x0012DC00,0x188,src/r11_05_a.c,complete
+func_00394CD0,0x00394CD0,0xD0,src/r11_08_a.c,complete
