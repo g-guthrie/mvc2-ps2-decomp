@@ -82,6 +82,11 @@ void fl_char_set_palette_1555(FlCharBank *b, int dst, const uint16_t *c)
     r_pal_write(b->pal_row + (dst & 15), 0, 16, rgba);
 }
 
+void fl_char_set_palette_rgba(FlCharBank *b, int dst, const uint8_t *rgba)
+{
+    r_pal_write(b->pal_row + (dst & 15), 0, 16, rgba);
+}
+
 void fl_char_load_palette(FlCharBank *b, int dst, int src)
 {
     if (src < 0 || src >= b->n_pals) return;

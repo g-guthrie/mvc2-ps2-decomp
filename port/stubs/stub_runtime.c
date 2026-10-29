@@ -46,7 +46,10 @@ void mvc2_stub_hit_slot(int *cache, const char *name, unsigned ee_addr, const ch
         *cache = (int)slot(name, ee_addr, kind);
     i = (unsigned)*cache;
     seen[i].hits++;
-    if (!quiet && seen[i].hits <= MVC2_STUB_LOG_LIMIT)
+    /* libc forwards, syscalls and kernel wrappers are working host code:
+     * counted (mvc2_stub_report) but not logged */
+    if (!quiet && seen[i].hits <= MVC2_STUB_LOG_LIMIT && strncmp(kind, "libc", 4) != 0 &&
+        strncmp(kind, "syscall", 7) != 0 && strncmp(kind, "kernel", 6) != 0)
         fprintf(stderr, "[stub] %s (EE 0x%08X, %s)%s\n", name, ee_addr, kind,
                 seen[i].hits == MVC2_STUB_LOG_LIMIT ? " [further hits counted silently]" : "");
     if (trap && strcmp(trap, name) == 0) {

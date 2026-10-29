@@ -1,0 +1,224 @@
+# Functions the port implements on the host (Port J).  The one list:
+#   hostify R17 makes the credited definitions of these weak (+ name__game alias),
+#   gen_link_glue.py lists them in mvc2_fakes[]/stubs.csv and writes their
+#   canonical prototypes to glue/mvc2_host_protos.h (generated stubs are weak).
+# ret: return type override for a credited void function whose callers use $v0 (MIPS tail call)
+# group: core = port/host/*.c (mvc2_host and mvc2); frontend = port/host/fe/*.c (mvc2 only)
+symbol,group,file,what,ret
+func_003EC160,core,boot.c,flInitialize: C port of the asm; arena + handle pool + video/VRAM bookkeeping + DMA queues; no IOP/GS
+func_001044E0,core,boot.c,sbrk over a 28 MB host block (EE heap end)
+func_003ECBE0,core,boot.c,vsync handler: vsync count + pending flip toggle; no GS registers
+func_003DC720,core,boot.c,DMA kick: the built chain is complete at once (queue counters cleared)
+func_003ECD00,core,boot.c,flip: vsync + buffer swap + packet heap reset; frontend presents the frame
+func_00106C98,core,iop.c,sceSifBindRpc: binds succeed (no IOP)
+func_00106E68,core,iop.c,sceSifCallRpc: returns at once (no IOP)
+func_0010D360,core,iop.c,scePadInit
+func_0010D5C0,core,iop.c,scePadPortOpen
+func_0010D990,core,iop.c,scePadGetState: ports 0/1 stable
+func_0010DD70,core,iop.c,scePadInfoMode: DualShock
+func_0010DEA8,core,iop.c,scePadSetMainMode
+func_0010DAA8,core,iop.c,scePadGetReqState: complete
+func_0010E260,core,iop.c,scePadInfoAct: no actuators
+func_0010E2C0,core,iop.c,scePadSetActAlign
+func_0010E020,core,iop.c,scePadSetActDirect (rumble ignored)
+func_0010DF60,core,iop.c,pad actuator values (rumble ignored)
+func_0010E4A8,core,iop.c,scePadGetSlotMax: 1
+func_0010D910,core,iop.c,scePadRead: host pad state (frontend input)
+func_0010FC98,core,iop.c,sceCdReadClock: host localtime in BCD
+func_00418CC0,core,iop.c,memory card wrapper init (C port of the asm; no sceMcInit)
+func_003FBE88,core,cri.c,ADXF_LoadPartitionNw: AFS partition from the disc image
+func_003FC090,core,cri.c,ADXF_GetPtStat: 3 (loaded)
+func_003FCBC0,core,cri.c,ADXF_OpenAfs (locked): AFS entry handle
+func_003FCA60,core,cri.c,ADXF_Open (locked): loose ISO file or AFS02 entry by name
+func_003FCCF0,core,cri.c,ADXF_Close
+func_003FD450,core,cri.c,ADXF_GetFsizeSct
+func_003FD0F8,core,cri.c,ADXF_ReadNw: synchronous sector read from the image
+func_003FD530,core,cri.c,ADXF_GetStat: 3 (READEND) after a read
+func_003FDAA0,core,cri.c,ADXT_Init: nothing
+func_003FE5D8,core,cri.c,CRI server setup: nothing
+func_003FE9E8,core,cri.c,CRI vsync server: nothing
+func_00400D18,core,cri.c,CRI setup: nothing
+func_00400D38,core,cri.c,DVCI file system setup: nothing
+func_00400DE0,core,cri.c,DVCI cache setup: nothing
+func_00400F08,core,cri.c,cvFsInit: nothing
+func_00402818,core,cri.c,ADXERR_EntryErrFunc: nothing
+func_0010F148,core,cri.c,sceCdSync: idle
+func_00401150,core,cri.c,ADXT_Create: one host ADXT
+func_00402208,core,cri.c,ADXT_SetReloadSct: nothing
+func_00402458,core,cri.c,ADXT stall-recovery mode: nothing
+func_00402C20,core,cri.c,ADXT_StartAfs: frontend ADX player (or PREP->PLAYING state machine)
+func_00401868,core,cri.c,ADXT_Stop
+func_00401920,core,cri.c,ADXT_GetStat
+func_004020D8,core,cri.c,ADXT_SetOutVol
+func_004026B0,core,cri.c,ADXT_Pause
+func_00402BC0,core,cri.c,ADXT_SetOutputMono
+func_00402498,core,cri.c,ADXT_ExecServer
+func_003FEAD0,core,cri.c,ADXM/SVM server exec: nothing
+func_003FEBD8,core,cri.c,CRI server exec: nothing
+func_0012DC00,core,game_cless.c,file-destination table (C from the asm)
+func_001E5870,core,game_cless.c,sound bank upload + wait (C from the asm)
+func_00422BE0,core,tsd_host.c,Tamsoft stub (empty)
+func_00422C70,core,tsd_host.c,Tamsoft lock/unlock: nothing (single-threaded)
+func_00422CC0,core,tsd_host.c,Tamsoft queue reset -> port/audio tsd_client
+func_00422DB0,core,tsd_host.c,Tamsoft bind -> tsd_client
+func_00422EA0,core,tsd_host.c,Tamsoft play -> tsd_client
+func_00422FB0,core,tsd_host.c,Tamsoft stop -> tsd_client
+func_004230B0,core,tsd_host.c,Tamsoft change -> tsd_client
+func_004231D0,core,tsd_host.c,Tamsoft stop all TQ -> tsd_client
+func_00423240,core,tsd_host.c,Tamsoft master volume -> tsd_client
+func_004232C0,core,tsd_host.c,Tamsoft cmd 0x77 -> tsd_client
+func_00423480,core,tsd_host.c,Tamsoft load bank -> tsd_client
+func_004235D0,core,tsd_host.c,Tamsoft unload bank -> tsd_client
+func_00423650,core,tsd_host.c,Tamsoft stop all -> tsd_client
+func_004236C0,core,tsd_host.c,Tamsoft stereo -> tsd_client
+func_00423750,core,tsd_host.c,Tamsoft flush -> tsd_client (frontend sink plays it)
+func_00423990,core,tsd_host.c,Tamsoft status -> tsd_client
+func_004238A0,core,tsd_host.c,Tamsoft driver thread setup: nothing
+func_003F5070,core,game_fix.c,TIM2 image pointer: the credited C is void but tail-calls func_003F5270 and callers use $v0,int
+func_003F5080,core,game_fix.c,TIM2 CLUT pointer: credited void K&R wrapper tail-calls func_003F5440; callers use $v0,int
+func_003916B0,core,game_fix.c,spawn helper (src/h2.c) returning the object in $v0 as its caller expects,void *
+func_003F0E60,core,game_cless.c,handle heap compaction (C from the asm)
+func_0010BB98,core,iop.c,sceSifLoadModule: reported loaded
+func_00100E68,core,boot.c,sceGsSyncV: host vsync + field
+func_004148C0,core,game_fix.c,camera compare: the credited C reads literal EE BSS addresses
+func_003DF7B0,core,render_core.c,end of scene: T0 sample from the host frame count
+func_003DBBF0,core,render_core.c,immediate GIF send: nothing (no GS)
+func_003DF490,core,render_core.c,textured sprite: original texture check + frontend draw
+func_003DB020,core,game_cless.c,button config remap: APPROXIMATION (copy unmapped) until the asm is ported
+func_00130040,core,game_cless.c,boot memory-card screen (front-end 1/8; C from the asm)
+func_00418D70,core,mc.c,memory card request/sync/retry state machine (C from the asm)
+func_0010FD90,core,mc.c,sceMcInit
+func_001107B8,core,mc.c,sceMcSync: requests complete at once
+func_001108F0,core,mc.c,sceMcGetInfo: port 0 = formatted 8 MB PS2 card (host dir); port 1 empty
+func_00110CB0,core,mc.c,sceMcChdir (host dir)
+func_00110260,core,mc.c,sceMcMkdir (host dir)
+func_00110138,core,mc.c,sceMcOpen (host file)
+func_00110298,core,mc.c,sceMcClose
+func_00110350,core,mc.c,sceMcSeek
+func_001104B8,core,mc.c,sceMcRead
+func_001105D0,core,mc.c,sceMcWrite
+func_00110FD8,core,mc.c,sceMcFlush
+func_00110DF0,core,mc.c,sceMcFormat
+func_00110EC0,core,mc.c,sceMcDelete
+func_00111480,core,mc.c,sceMcGetEntSpace
+func_00110AE0,core,mc.c,sceMcGetDir (host dir listing)
+func_00120A30,core,libc_host.c,newlib _vfprintf_r: host vsnprintf (EE %l = 64-bit); string streams as newlib fills them
+func_00415590,core,game_cless.c,POL pack: meshes (clay handles) + node trees (C from the asm)
+func_00100580,core,kernel.c,syscall 128 kernel call 128: returns 0 (callers use $v0),int
+func_001039E0,core,kernel.c,syscall 2 SetGsCrt: returns 0 (callers use $v0),int
+func_00103A00,core,kernel.c,syscall 4 Exit: returns 0 (callers use $v0),int
+func_00103A20,core,kernel.c,syscall 6 LoadExecPS2: returns 0 (callers use $v0),int
+func_00103A90,core,kernel.c,syscall 13 syscall 13: returns 0 (callers use $v0),int
+func_00103AA0,core,kernel.c,syscall 14 syscall 14: returns 0 (callers use $v0),int
+func_00103AC0,core,kernel.c,syscall 16 AddIntcHandler: returns 1 (callers use $v0),int
+func_00103AE0,core,kernel.c,syscall 17 RemoveIntcHandler: returns 0 (callers use $v0),int
+func_00103AF0,core,kernel.c,syscall 18 AddDmacHandler: returns 1 (callers use $v0),int
+func_00103B10,core,kernel.c,syscall 19 RemoveDmacHandler: returns 0 (callers use $v0),int
+func_00103B60,core,kernel.c,syscall 252 SetAlarm: returns 1 (callers use $v0),int
+func_00103B80,core,kernel.c,syscall -26 iEnableIntc: returns 0 (callers use $v0),int
+func_00103B90,core,kernel.c,syscall -27 iDisableIntc: returns 0 (callers use $v0),int
+func_00103BA0,core,kernel.c,syscall -28 iEnableDmac: returns 0 (callers use $v0),int
+func_00103BB0,core,kernel.c,syscall -29 iDisableDmac: returns 0 (callers use $v0),int
+func_00103BE0,core,kernel.c,syscall 32 CreateThread: returns next_thread() (callers use $v0),int
+func_00103C00,core,kernel.c,syscall 34 StartThread: returns 0 (callers use $v0),int
+func_00103C20,core,kernel.c,syscall 36 ExitDeleteThread: returns 0 (callers use $v0),int
+func_00103C70,core,kernel.c,syscall 41 ChangeThreadPriority: returns 0 (callers use $v0),int
+func_00103C90,core,kernel.c,syscall 43 RotateThreadReadyQueue: returns 0 (callers use $v0),int
+func_00103CD0,core,kernel.c,syscall 47 GetThreadId: returns 1 (callers use $v0),int
+func_00103CE0,core,kernel.c,syscall 48 ReferThreadStatus: returns 0 (callers use $v0),int
+func_00103CF0,core,kernel.c,syscall -49 iReferThreadStatus: returns 0 (callers use $v0),int
+func_00103D00,core,kernel.c,syscall 50 SleepThread: returns 0 (callers use $v0),int
+func_00103D10,core,kernel.c,syscall 51 WakeupThread: returns 0 (callers use $v0),int
+func_00103D50,core,kernel.c,syscall 55 SuspendThread: returns 0 (callers use $v0),int
+func_00103D70,core,kernel.c,syscall 57 ResumeThread: returns 0 (callers use $v0),int
+func_00103E80,core,kernel.c,syscall 74 syscall 74: returns 0 (callers use $v0),int
+func_00103E90,core,kernel.c,syscall 75 syscall 75: returns 0 (callers use $v0),int
+func_001040B0,core,kernel.c,syscall 107 syscall 107: returns 0 (callers use $v0),int
+func_00104100,core,kernel.c,syscall 112 GsGetIMR: returns 0 (callers use $v0),int
+func_00104120,core,kernel.c,syscall 113 GsPutIMR: returns 0 (callers use $v0),int
+func_001041C0,core,kernel.c,syscall 120 SifSetReg: returns 0 (callers use $v0),int
+func_001041D0,core,kernel.c,syscall -120 iSifSetReg: returns 0 (callers use $v0),int
+func_001041E0,core,kernel.c,syscall 121 SifGetReg: returns 0 (callers use $v0),int
+func_001041F0,core,kernel.c,syscall 122 syscall 122: returns 0 (callers use $v0),int
+func_00104200,core,kernel.c,syscall 123 syscall 123: returns 0 (callers use $v0),int
+func_00104240,core,kernel.c,syscall 127 syscall 127: returns 0 (callers use $v0),int
+func_00104250,core,kernel.c,syscall 130 syscall 130: returns 0 (callers use $v0),int
+func_0010C290,core,kernel.c,syscall 90 kernel patch 90: returns 0 (callers use $v0),int
+func_0010C2D8,core,kernel.c,syscall 91 kernel patch 91: returns 0 (callers use $v0),int
+func_0010C2E8,core,kernel.c,syscall 116 kernel patch 116: returns 0 (callers use $v0),int
+func_00103B20,core,kernel.c,syscall 20 _EnableIntc,
+func_00103B30,core,kernel.c,syscall 21 _DisableIntc,
+func_00103B40,core,kernel.c,syscall 22 _EnableDmac,
+func_00103B50,core,kernel.c,syscall 23 _DisableDmac,
+func_00103D20,core,kernel.c,syscall -52 iWakeupThread,
+func_00103D60,core,kernel.c,syscall -56 iResumeThread,
+func_00103E30,core,kernel.c,syscall 69 PollSema,
+func_00104180,core,kernel.c,syscall 118 SifDmaStat,
+func_001041A0,core,kernel.c,syscall 119 SifSetDma,
+func_001041B0,core,kernel.c,syscall -119 iSifSetDma,
+func_003DF850,frontend,fe/fe_render.c,render state: game body + port/render fl_set_render_state (+ texture sync for 4..7)
+func_003DF7D0,frontend,fe/fe_render.c,default render state: game body + fl_default_state
+func_003E00D0,frontend,fe/fe_render.c,scissor: game body + fl_set_scissor (frame buffer y doubled)
+func_003E00B0,frontend,fe/fe_render.c,clear colour: game body + fl_set_clear_color
+func_00170D30,frontend,fe/fe_render.c,begin scene: fl_frame_begin + game body
+func_00170D70,frontend,fe/fe_render.c,end scene: game body + fl_frame_end
+func_003EA660,frontend,fe/fe_render.c,texture residency: game body (VRAM bookkeeping) + GL upload of changed records
+func_003EA070,frontend,fe/fe_render.c,texture unlock: game body + GL re-upload
+func_003EA0D0,frontend,fe/fe_render.c,palette unlock: game body + GL re-upload
+func_003DF0C0,frontend,fe/fe_render.c,textured triangle: game body + fl_tri_tex
+func_003DEE00,frontend,fe/fe_render.c,untextured triangle: game body + fl_tri
+func_003ED1C0,frontend,fe/fe_render.c,screen fill: game body + fl_fill_screen
+func_00420BF0,frontend,fe/fe_render.c,batch-writer quad (text): game body + fl_quad_tex
+func_003DE230,core,game_cless.c,VU0 3x3 matrix product (C from the asm)
+func_00422150,core,game_cless.c,menu text byte code: one record (glyphs via func_00421FB0) (C from the asm)
+func_003F2B70,frontend,fe/fe_mesh.c,POL mesh chunk -> clay: game body + remember the chunk
+func_003EE6F0,frontend,fe/fe_mesh.c,clay handle: game body + GL mesh (port/render fl_clay_build)
+func_003F0500,frontend,fe/fe_mesh.c,mesh draw: game body + fl_clay_draw (rebuild when the format word changed)
+func_003F0860,frontend,fe/fe_mesh.c,clay release: game body + GL release
+func_003DE160,core,vu0_host.c,VU0 4x4 matrix product (C for the inline COP2 asm),
+func_003DE3D0,core,vu0_host.c,VU0 apply matrix to V4,
+func_003DE530,core,vu0_host.c,VU0 normalise V3 (vrsqrt),
+func_003DE5C0,core,vu0_host.c,VU0 cross product V3,
+func_003DE7A0,core,vu0_host.c,VU0 vsqrt,
+func_004135D0,core,vu0_host.c,VU0 apply matrix + FTOI4 xy,
+func_00102C70,core,vu0_host.c,sceVu0ApplyMatrix,
+func_00102CE8,core,vu0_host.c,sceVu0OuterProduct,
+func_00102D08,core,vu0_host.c,sceVu0InnerProduct,
+func_00102D30,core,vu0_host.c,sceVu0Normalize,
+func_00102D70,core,vu0_host.c,sceVu0TransposeMatrix,
+func_00102DB8,core,vu0_host.c,sceVu0InversMatrix,
+func_00102E28,core,vu0_host.c,sceVu0DivVector,
+func_00102E48,core,vu0_host.c,sceVu0DivVectorXYZ,
+func_00102E68,core,vu0_host.c,sceVu0InterVector,
+func_00102E90,core,vu0_host.c,sceVu0AddVector,
+func_00102EA8,core,vu0_host.c,sceVu0SubVector,
+func_00102EC0,core,vu0_host.c,sceVu0MulVector,
+func_00102ED8,core,vu0_host.c,sceVu0ScaleVector,
+func_00102EF0,core,vu0_host.c,sceVu0TransMatrix,
+func_00102F20,core,vu0_host.c,sceVu0CopyVector,
+func_00102F58,core,vu0_host.c,sceVu0FTOI4Vector,
+func_00102F68,core,vu0_host.c,sceVu0FTOI0Vector,
+func_00102F78,core,vu0_host.c,sceVu0ITOF4Vector,
+func_00102F88,core,vu0_host.c,sceVu0ITOF0Vector,
+func_00102F98,core,vu0_host.c,sceVu0UnitMatrix,
+func_00103038,core,vu0_host.c,sceVu0RotMatrixZ,
+func_001030E0,core,vu0_host.c,sceVu0RotMatrixX,
+func_00103188,core,vu0_host.c,sceVu0RotMatrixY,
+func_00103280,core,vu0_host.c,sceVu0ClampVector,
+func_00103770,core,vu0_host.c,sceVu0RotTransPers,
+func_001037D8,core,vu0_host.c,sceVu0InterVectorXYZ,
+func_00103808,core,vu0_host.c,sceVu0ScaleVectorXYZ,
+func_00103820,core,vu0_host.c,sceVu0ClipScreen,
+func_00103868,core,vu0_host.c,sceVu0ClipScreen3,
+func_001428E0,core,game_cless.c,intro event timeline (front-end 1/2; C from the asm),
+func_003F01B0,core,game_cless.c,clay texture upload list (C from the asm),
+func_00411C10,frontend,fe/fe_char.c,character bank slot setup: game body + port/render FlCharBank,
+func_004120A0,frontend,fe/fe_char.c,character slot release: game body + FlCharBank destroy,
+func_00412260,frontend,fe/fe_char.c,character sprite draw (asm VU1/GIF builder) -> fl_char_draw with the game's CLUTs,
+func_00176360,core,game_cless.c,character palette animation -> CLUT upload (C from the asm),
+func_003EBF30,core,game_cless.c,VRAM placement search over the block list (C from the asm),
+func_003F59C0,core,game_cless.c,put pixel into an image of a given format (C from the asm),
+func_001E7CB0,core,game_cless.c,character box overlap test (C from the asm),
+func_00188860,core,game_cless.c,assist / tag-in request (C from the asm),
+func_00122960,core,game_cless.c,stage light colours (C from the asm),
+func_0032DF90,core,game_cless.c,CPU team pick (C from the asm),

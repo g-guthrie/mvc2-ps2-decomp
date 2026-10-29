@@ -55,6 +55,72 @@ def matches():
 
 
 @functools.lru_cache(None)
+def host_impl():
+    """port/host/host_impl.csv: functions the port implements on the host
+    (name -> row with symbol, group, file, what).  The one list of host
+    replacements: hostify R17 makes the credited definitions of these weak,
+    gen_link_glue.py lists them in mvc2_fakes[] and writes their canonical
+    prototypes to glue/mvc2_host_protos.h."""
+    p = ROOT / "port/host/host_impl.csv"
+    if not p.exists():
+        return {}
+    with open(p, newline="") as f:
+        rows = [r for r in csv.DictReader(l for l in f if l.strip() and not l.startswith("#"))]
+    return {r["symbol"]: r for r in rows}
+
+
+WASM_TYPE = {"void": "void", "float": "f32", "double": "f64", "long long": "i64",
+             "unsigned long long": "i64"}
+
+
+def _load_widen():
+    """port/tools/r12_widen.csv (gen_regpass.py): functions whose credited C
+    declares fewer parameters than the EE passes through them (the body
+    calls a callee with a missing argument that is this function's own
+    incoming register, e.g. a float in $f12 forwarded to a matrix builder).
+    name -> full parameter type list."""
+    p = ROOT / "port/tools/r12_widen.csv"
+    out = {}
+    if p.exists():
+        with open(p, newline="") as f:
+            for r in csv.DictReader(l for l in f if l.strip() and not l.startswith("#")):
+                out[r["function"]] = [x.strip() for x in r["params"].split(";") if x.strip()]
+    return out
+
+
+WIDEN = _load_widen()
+WASM_PARAM = {"float": "f32", "double": "f64", "long long": "i64", "unsigned long long": "i64"}
+
+
+def apply_host_sig_overrides(canon):
+    """host_impl.csv column `ret`: the return type the host gives a function
+    whose credited C says void but whose callers use $v0 (a MIPS tail call
+    returns the callee's value).  Applied on top of host_sigs.json by hostify
+    (R12) and gen_link_glue.py, so callers keep the value."""
+    for n, r in host_impl().items():
+        ret = (r.get("ret") or "").strip()
+        if not ret or n not in canon:
+            continue
+        c = dict(canon[n])
+        c["ret"] = ret
+        w = c.get("wasm", "()->void")
+        c["wasm"] = w[:w.rindex("->") + 2] + WASM_TYPE.get(ret, "i32")
+        c["from"] = c.get("from", "") + "+host_impl.csv"
+        canon[n] = c
+    for n, ps in WIDEN.items():
+        if n not in canon or len(ps) <= len(canon[n]["params"]):
+            continue
+        c = dict(canon[n])
+        c["params"] = list(ps)
+        w = c.get("wasm", "()->void")
+        c["wasm"] = "(" + ",".join(WASM_PARAM.get(x, "i32") for x in ps) + ")" + w[w.rindex("->"):]
+        c["from"] = c.get("from", "") + "+r12_widen.csv"
+        c["widened"] = len(canon[n]["params"])
+        canon[n] = c
+    return canon
+
+
+@functools.lru_cache(None)
 def credited_at():
     """address -> name of the credited (`complete`, C source) function."""
     out = {}
@@ -122,6 +188,51 @@ def unit_aliases():
             nxt = cuts[bisect.bisect_right(cuts, a)]
             res.append((n, a - u[0], nxt - a))
         out[u[2]] = res
+    return out
+
+
+@functools.lru_cache(None)
+def code_sources():
+    with open(ROOT / "config/matches.csv", newline="") as f:
+        return frozenset(r["source"] for r in csv.DictReader(f))
+
+
+@functools.lru_cache(None)
+def layout_units():
+    """Data units that are laid out on the host in EE address order: the C
+    sources of config/data_matches.csv (not the 3 code TUs that also own a
+    switch table).  [(address, size, name, source)] sorted by address."""
+    cs = code_sources()
+    return [u[:4] for u in data_units() if u[3].endswith(".c") and u[3] not in cs]
+
+
+@functools.lru_cache(None)
+def data_holes():
+    """EE data image layout (Port J): the host links every layout unit in EE
+    address order, each followed by a zero "hole" that runs to the next
+    layout unit (alignment padding, data with no C, non-C units such as the
+    VU microcode, code-TU switch tables), so the EE data image is one
+    contiguous block and a table read past the end of its unit sees what
+    the EE saw next.  -> {key: (hole_address, hole_size, [(name, offset, size)])}
+    with key = unit name, or None for the hole before the first unit."""
+    lu = layout_units()
+    starts = [TEXT_END] + [u[0] + u[1] for u in lu]
+    ends = [u[0] for u in lu] + [DATA_END]
+    keys = [None] + [u[2] for u in lu]
+    defined = {u[2] for u in lu}
+    names = sorted((a, n) for n, a in symbol_addrs().items() if TEXT_END <= a < DATA_END)
+    addrs = [a for a, _ in names]
+    out = {}
+    for k, lo, hi in zip(keys, starts, ends):
+        if hi < lo:
+            hi = lo
+        i, j = bisect.bisect_left(addrs, lo), bisect.bisect_left(addrs, hi)
+        inside = [(n, a) for a, n in names[i:j] if n not in defined]
+        lst = []
+        for q, (n, a) in enumerate(inside):
+            nxt = inside[q + 1][1] if q + 1 < len(inside) and inside[q + 1][1] > a else hi
+            lst.append((n, a - lo, max(nxt - a, 1)))
+        out[k] = (lo, hi - lo, lst)
     return out
 
 

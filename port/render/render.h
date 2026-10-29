@@ -60,6 +60,12 @@ void fl_tex_update(uint32_t handle, int x, int y, int w, int h, const void *pixe
 uint32_t fl_pal_create(int ncolors, const uint8_t *rgba);
 void fl_pal_update(uint32_t handle, int first, int n, const uint8_t *rgba);
 void fl_tex_release(uint32_t handle);   /* releases both halves present */
+/* Port J: define slot `handle` itself (the game's handle numbering). */
+int fl_tex_define(uint32_t handle, int w, int h, int fmt, const void *pixels);
+int fl_pal_define(uint32_t handle /* pal << 16 */, int ncolors, const uint8_t *rgba);
+int fl_tex_defined(uint32_t handle);
+/* Port J: take the game's mode words D_004C2AD0 / D_004C2AD4 as they are. */
+void fl_sync_mode_words(uint32_t ad0, uint32_t ad4);
 int fl_tex_info(uint32_t handle, int *w, int *h, int *fmt);
 /* func_00418200: TIM2 picture `pic` -> (palette<<16)|texture, 0 on error. */
 uint32_t fl_tex_load_tim2(const uint8_t *data, size_t size, int pic);
@@ -75,6 +81,8 @@ int fl_char_tile_count(const FlCharBank *b);
 void fl_char_load_palette(FlCharBank *b, int dst, int src);
 /* Overwrite slot palette dst with 16 ARGB1555 colours (palette animation). */
 void fl_char_set_palette_1555(FlCharBank *b, int dst, const uint16_t *argb1555);
+/* Port J: slot palette dst from 16 RGBA8 colours (the game's CLUT record). */
+void fl_char_set_palette_rgba(FlCharBank *b, int dst, const uint8_t *rgba);
 /* Draw frame: m = row-major 4x4 (VU0 layout, translation m[12..14]) mapping
  * bank pixels (origin = feet, y down) to 640x480 space; argb 0xFFFFFFFF = identity. */
 int fl_char_draw(FlCharBank *b, int frame, const float m[16], uint32_t argb, int palette);
@@ -112,6 +120,13 @@ int fl_model_draw(FlModel *m, int root, const float objm[16], uint32_t obj_flags
 /* func_003F0500: one mesh with matrix slot 0x19 as its world matrix and the
  * current view (0x16), projection (0x17), viewport (0x18), 0x66, 0x1A, fog, blend. */
 int fl_mesh_draw(FlModel *m, int mesh);
+/* Port J: one GL mesh per game clay handle (func_003EE6F0 / func_003F0500).
+ * chunk = the POL mesh chunk the game built the clay from (func_003F2B70). */
+int fl_clay_build(int handle, const uint8_t *chunk, size_t avail, uint32_t draw_flags);
+uint32_t fl_clay_fmt(int handle);
+int fl_clay_textures(int handle, uint32_t *out, int max);
+int fl_clay_draw(int handle);
+void fl_clay_release(int handle);
 /* fl_get_render_state: func_003DFF80 for ids 1, 0x15, 4..7, 0x14, matrices, materials */
 uintptr_t fl_get_render_state(int id);
 

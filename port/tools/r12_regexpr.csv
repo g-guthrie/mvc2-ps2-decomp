@@ -1,0 +1,6 @@
+# R12 sites the dataflow cannot explain (the argument register held a caller
+# local).  Each row is checked against the retail asm by hand; expr is the C
+# variable of the caller that the asm keeps in that register at the call.
+#   gen_regpass.py --unresolved FILE lists the remaining candidates.
+source,caller,callee,arg,expr
+src/v4_a.c,func_00141C90,func_001415B0,0,o
