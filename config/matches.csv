@@ -20117,3 +20117,7 @@ func_003ECD00,0x003ECD00,0x2FC,src/r12_09_a.c,complete
 func_003EC160,0x003EC160,0xA7C,src/r12_09_b.c,complete
 func_0033A760,0x0033A760,0x1C0,src/r12_05_a.c,complete
 func_00423E30,0x00423E30,0x36C,src/r12_14_a.c,complete
+func_001D82B0,0x001D82B0,0x294,src/r12_04_a.c,complete
+func_00193E10,0x00193E10,0x1BC,src/r12_04_b.c,complete
+func_00176360,0x00176360,0x260,src/r12_04_c.c,complete
+func_00106450,0x00106450,0x128,src/r12_00_c.c,complete
