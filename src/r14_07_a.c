@@ -1,0 +1,44 @@
+typedef unsigned char u8;
+typedef signed char s8;
+typedef unsigned short u16;
+typedef signed short s16;
+typedef unsigned int u32;
+typedef signed int s32;
+typedef float f32;
+typedef struct { s32 w[0x31]; } W31;
+typedef struct { f32 x, y, z; } V3;
+extern s16 D_004632A0[];
+extern s16 D_004632A2[];
+void residual_0035D0A0(u8 *p, u8 *o) {
+    extern void func_001757E0();
+    extern void func_0035D240();
+    s32 i;
+    s32 a, b;
+    u32 t = p[4]; p[4] = t + 1;
+    *(W31 *)(p + 0xEC) = *(W31 *)(o + 0xEC);
+    p[0x13C] = 1;
+    p[2] = o[2];
+    p[1] = o[1];
+    *(f32 *)(p + 0x50) = *(f32 *)(o + 0x50);
+    *(f32 *)(p + 0x54) = *(f32 *)(o + 0x54);
+    p[0x1B7] = o[0x1B7];
+    p[0x1B8] = o[0x1B8];
+    *(s8 *)(p + 0x30) = *(s8 *)(o + 0x30);
+    *(V3 *)(p + 0x50) = *(V3 *)(o + 0x50);
+    *(s8 *)(p + 0x24) = *(s8 *)(o + 0x24);
+    *(s8 *)(p + 0x31) = -1;
+    p[0x13C] = 0;
+    *(f32 *)(p + 0x34) = *(f32 *)(o + 0x34);
+    *(f32 *)(p + 0x38) = *(f32 *)(o + 0x38);
+    *(f32 *)(p + 0x3C) = *(f32 *)(o + 0x3C);
+    i = p[0x21];
+    a = *(volatile s16 *)&D_004632A0[i * 2];
+    b = D_004632A2[i * 2];
+    *(f32 *)(p + 0x5C) = 1.666666626930237f * (f32)(a << 16) / 65536.0f;
+    *(f32 *)(p + 0x60) = 2.142857074737549f * (f32)(b << 16) / 65536.0f;
+    if (o[0x20] == 1)
+        *(s16 *)(p + 0x140) ^= 1;
+    func_001757E0(p, 0x17, 0x13);
+    *(s16 *)(p + 0x1C) = 0;
+    func_0035D240(p, o);
+}
