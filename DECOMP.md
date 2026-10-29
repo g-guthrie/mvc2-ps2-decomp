@@ -132,3 +132,21 @@ $ra with `sq` like 2.4, so they are not the missing "2.4 scheduling with `sd
 $ra`" build either. Build 22, like 3.0b38, b50 and b52, never emits the
 hazard `nop` between `c.cond.s` and `bc1t`/`bc1f`, so a retail function with
 `c.xx.s; nop; bc1x` is not from these builds.
+
+## Extra GNU EE tools (round 13)
+
+Two tools from decomp.me's PS2 compiler packages, never tried before, cover
+SDK code that no other build reproduces:
+
+- `EEAS210`: GNU as `2.10-ee-001003-1` (`ee/bin/as` from `ee-gcc2.96.tar.xz`).
+  In `.set reorder` code it swaps instructions into `jr`/`jal` delay slots,
+  volatile MMIO accesses included, and writes `move` as `daddu`. None of the
+  2.9-ee assemblers (SN `ee-as`, Sony `as.exe`) do this. A Sony 2.9 near miss
+  whose only fault is a volatile access missing from a jump slot needs it
+  (`func_00100478`, `func_00100F00`, `func_00105540`).
+- `EE29_01CC1`: cc1 `2.9-ee-991111-01`, the Sony 2.9 that puts `nop; nop`
+  before each `div.s` and pads short loops itself (`func_00103480`,
+  `func_00103588`).
+
+Both are 32-bit Linux binaries run directly (not through `$WIBO`); set their
+paths in `private/build.env`.

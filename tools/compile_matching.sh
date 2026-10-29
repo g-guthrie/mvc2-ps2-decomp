@@ -5959,10 +5959,6 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --op
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 "$BUILD/s5.i" "$BUILD/s5.s"
 "$WIBO" "$SNAS" -G0 -o "$BUILD/s5.o" "$BUILD/s5.s"
 "$PYTHON" tools/verify_object.py "$BUILD/s5.o" private/SLUS_204.86.rom --source src/s5.c
-"$WIBO" "$SNCPP" -P src/s5a.c "$BUILD/s5a.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 "$BUILD/s5a.i" "$BUILD/s5a.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/s5a.o" "$BUILD/s5a.s"
-"$PYTHON" tools/verify_object.py "$BUILD/s5a.o" private/SLUS_204.86.rom --source src/s5a.c
 "$WIBO" "$SNCPP" -P src/s5b.c "$BUILD/s5b.i"
 EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 8 --opt O2 "$BUILD/s5b.i" "$BUILD/s5b.s"
 "$WIBO" "$SNAS" -G8 -o "$BUILD/s5b.o" "$BUILD/s5b.s"
@@ -6869,10 +6865,6 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/pw39_d.c -c -lang c -O3 -sdatathreshold 0 -o "$BUILD/pw39_d.o"
 "$PYTHON" tools/verify_object.py "$BUILD/pw39_d.o" private/SLUS_204.86.rom --source src/pw39_d.c
-"$WIBO" "$SNCPP" -P src/pw39_e.c "$BUILD/pw39_e.i"
-EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/pw39_e.i" "$BUILD/pw39_e.s"
-"$WIBO" "$SNAS" -G0 -o "$BUILD/pw39_e.o" "$BUILD/pw39_e.s"
-"$PYTHON" tools/verify_object.py "$BUILD/pw39_e.o" private/SLUS_204.86.rom --source src/pw39_e.c
 MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/b10s_0_a.c -c -lang c -O3 -sdatathreshold 8 -o "$BUILD/b10s_0_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/b10s_0_a.o" private/SLUS_204.86.rom --source src/b10s_0_a.c
@@ -24241,5 +24233,19 @@ EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --op
 MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
     src/r13_07_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/r13_07_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/r13_07_a.o" private/SLUS_204.86.rom --source src/r13_07_a.c
+
+# Sony EE GCC 2.9-ee-991111 + GNU as 2.10-ee-001003-1 (fills jr/jal slots
+# with volatile MMIO accesses, writes move as daddu). Both from decomp.me's
+# ee-gcc2.96 / ee-gcc2.9-991111-01 packages; paths in private/build.env.
+: "${EEAS210:?set EEAS210 (GNU as 2.10-ee-001003-1) in private/build.env}"
+: "${EE29_01CC1:?set EE29_01CC1 (cc1 2.9-ee-991111-01) in private/build.env}"
+"$WIBO" "$SNCPP" -P src/rc_a_a.c "$BUILD/rc_a_a.i"
+"$WIBO" "$EE29CC1" "$BUILD/rc_a_a.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/rc_a_a.s"
+"$EEAS210" -G0 -o "$BUILD/rc_a_a.o" "$BUILD/rc_a_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/rc_a_a.o" private/SLUS_204.86.rom --source src/rc_a_a.c
+"$WIBO" "$SNCPP" -P src/rc_a_b.c "$BUILD/rc_a_b.i"
+"$EE29_01CC1" "$BUILD/rc_a_b.i" -O2 -G0 -ffunction-sections -quiet -o "$BUILD/rc_a_b.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/rc_a_b.o" "$BUILD/rc_a_b.s"
+"$PYTHON" tools/verify_object.py "$BUILD/rc_a_b.o" private/SLUS_204.86.rom --source src/rc_a_b.c
 
 PYTHON="$PYTHON" tools/compile_matching_data.sh
