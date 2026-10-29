@@ -1,7 +1,7 @@
 # What is left
 
 Snapshot after matching rounds 11–17. Code is 3,280,116 of 3,293,696 bytes
-(99.59%) and data is 98.13%. The spans below are code that no credited C or
+(99.59%) and data is 647,956 of 648,064 bytes (99.98%). The spans below are code that no credited C or
 `.S` source covers yet: 54 spans, 13,396 bytes. Each one has a blocker class.
 For classes (a), (c) and (d), the best near-miss source and notes are in the
 session scratch folders (`r11_*` … `r17_*`).
@@ -47,6 +47,6 @@ as `.S` files, like the kernel and DECI2 stubs that are already credited.
 
 ## Data placeholders
 
-There are 9 tiny units (108 bytes) at 0x00439090–0x004B57F0, all at least 4
-bytes and most 16 or less, that are still placeholders in
-`config/data_matches.csv`.
+Every byte of the data range is now owned by a catalogued unit. The only data
+not credited is 9 tiny units (108 bytes) at 0x00439090–0x004B57F0 that are
+still placeholders in `config/data_matches.csv`.
