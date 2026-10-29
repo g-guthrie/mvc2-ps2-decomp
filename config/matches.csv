@@ -20107,3 +20107,5 @@ func_003FC338,0x003FC338,0x2B0,src/r11_15_a.c,complete
 func_003FC5E8,0x003FC5E8,0x318,src/r11_15_b.c,complete
 func_00130040,0x00130040,0x7D8,src/r12_02_a.c,complete
 func_00122960,0x00122960,0x36C,src/r12_01_b.c,complete
+func_0014D7A0,0x0014D7A0,0x170,src/r12_03_a.c,complete
+func_0014A8B0,0x0014A8B0,0x144,src/r12_03_b.c,complete

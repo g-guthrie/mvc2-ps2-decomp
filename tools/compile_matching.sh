@@ -24132,4 +24132,11 @@ mkdir -p "build/warm/r12_01_b" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "
     mv "build/warm/r12_01_b/r12_01_b.o" "$BUILD/r12_01_b.o"
 "$PYTHON" tools/verify_object.py "$BUILD/r12_01_b.o" private/SLUS_204.86.rom --source src/r12_01_b.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/r12_03_a.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -o "$BUILD/r12_03_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r12_03_a.o" private/SLUS_204.86.rom --source src/r12_03_a.c
+MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "$MWCCPS2_30" \
+    src/r12_03_b.c -c -lang c -i src -O3 -Op -sdatathreshold 8 -fp off -o "$BUILD/r12_03_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r12_03_b.o" private/SLUS_204.86.rom --source src/r12_03_b.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
