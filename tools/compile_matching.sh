@@ -24201,4 +24201,11 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/r12_10_a.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/r12_10_a.o"
 "$PYTHON" tools/verify_object.py "$BUILD/r12_10_a.o" private/SLUS_204.86.rom --source src/r12_10_a.c
 
+MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/r13_12_a.c -c -lang c -i src -O3,p -sdatathreshold 8 -o "$BUILD/r13_12_a.o"
+"${OBJCOPY:-mipsel-linux-gnu-objcopy}" \
+    --redefine-sym @76=jtbl_004BF160 \
+    "$BUILD/r13_12_a.o" "$BUILD/r13_12_a.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r13_12_a.o" private/SLUS_204.86.rom --source src/r13_12_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
