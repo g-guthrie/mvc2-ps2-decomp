@@ -24100,4 +24100,15 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
     src/r11_11_e.c -c -lang c -i src -O3,p -sdatathreshold 0 -o "$BUILD/r11_11_e.o"
 "$PYTHON" tools/verify_object.py "$BUILD/r11_11_e.o" private/SLUS_204.86.rom --source src/r11_11_e.c
 
+"$WIBO" "$SNCPP" -P src/r11_01_e.c "$BUILD/r11_01_e.i"
+"$WIBO" "$EE29CC1" "$BUILD/r11_01_e.i" -O2 -G0 -ffunction-sections  -quiet -o "$BUILD/r11_01_e.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r11_01_e.o" "$BUILD/r11_01_e.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r11_01_e.o" private/SLUS_204.86.rom --source src/r11_01_e.c
+"$WIBO" "$SNCPP" -P src/r11_01_g.c "$BUILD/r11_01_g.i"
+"$WIBO" "$EE29CC1" "$BUILD/r11_01_g.i" -O2 -G0 -ffunction-sections  -quiet -o "$BUILD/r11_01_g.s"
+test "$(grep -c '%hi(\$L[0-9]*)' "$BUILD/r11_01_g.s")" = 1
+sed -i -E 's/%(hi|lo)\(\$L[0-9]+\)/%\1(jtbl_004AB000)/' "$BUILD/r11_01_g.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r11_01_g.o" "$BUILD/r11_01_g.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r11_01_g.o" private/SLUS_204.86.rom --source src/r11_01_g.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
