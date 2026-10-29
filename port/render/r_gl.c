@@ -39,6 +39,10 @@ static struct {
     float fog_a, fog_b;
     float matrices[0x60][16];
     uint32_t matrix_dirty;
+    uint8_t materials[32][76]; /* 0x39..0x58: D_0061B420 + 76 * n (func_003F1C10 layout) */
+    uint8_t lights[3][100];    /* 0x59..0x5B: 0x0061B2F0 + 100 * n, direction at +0x34 normalised */
+    int vp_i[4];               /* 0x18: func_003DD5D0 {x, y, w, h} */
+    float vp_f[2];             /*        {fa, fb} */
     int ztest;             /* D_004C2A7C */
     int zwrite;
     int blend_ok; GLenum bl_eq, bl_src, bl_dst;
@@ -209,12 +213,20 @@ int r_init(void)
     }
     if (make_canvas()) return -1;
     R.cur_tex = R.white_tex;
+    /* viewport default {0, 0, 640, 480, 0.0, 1.0} (D_004F8040, func_00413000 role) */
+    R.vp_i[2] = FL_SCREEN_W; R.vp_i[3] = FL_SCREEN_H; R.vp_f[1] = 1.f;
+    for (int i = 0x16; i < 0x39; i++)
+        for (int k = 0; k < 16; k++) R.matrices[i][k] = (k % 5) == 0 ? 1.f : 0.f;
+    R.global_mod = 0xFFFFFFFFu;
+    { float big = 10000000.f; R.fog_a = big; R.fog_b = big; } /* func_0016D460: fog off */
     fl_default_state();
+    if (r_mesh_init()) return -1;
     return 0;
 }
 
 void r_shutdown(void)
 {
+    r_mesh_shutdown();
     for (int i = 0; i < MAX_TEX; i++)
         if (R.tex[i].used) glDeleteTextures(1, &R.tex[i].gl);
 }
@@ -419,7 +431,20 @@ int fl_set_render_state(int id, uintptr_t val)
         }
         return 1;
     }
-    if (id >= 0x39 && id < 0x5C) return 1; /* materials / lights: consumed by the mesh path (TODO) */
+    if (id >= 0x39 && id < 0x59) { /* material slots, read by the mesh build (r_mesh.c) */
+        if (val) memcpy(R.materials[id - 0x39], (const void *)val, 76);
+        return 1;
+    }
+    if (id >= 0x59 && id < 0x5C) { /* lights; func_003DE530 normalises the direction */
+        uint8_t *l = R.lights[id - 0x59];
+        float d[3];
+        if (val) memcpy(l, (const void *)val, 100);
+        memcpy(d, l + 0x34, 12);
+        float n = sqrtf(d[0] * d[0] + d[1] * d[1] + d[2] * d[2]);
+        if (n > 0.f) { d[0] /= n; d[1] /= n; d[2] /= n; }
+        memcpy(l + 0x34, d, 12);
+        return 1;
+    }
     switch (id) {
     case 0xE: R.material_color = v; break;
     case 0xF: R.fog_color = v; break;
@@ -455,7 +480,15 @@ int fl_set_render_state(int id, uintptr_t val)
     case 0x14: fl_set_clear_color(v); break;
     case 0x16: memcpy(R.matrices[0x16], (const void *)val, 64); R.matrix_dirty = 0xFFFFFFFFu; break;
     case 0x17: memcpy(R.matrices[0x17], (const void *)val, 64); R.matrix_dirty = 0xFFFFFFFFu; break;
-    case 0x18: R.matrix_dirty = 0xFFFFFFFFu; break; /* viewport params: mesh path (TODO) */
+    case 0x18: /* func_003DD4E0(0x22, x, y, w, h, fa, fb): viewport matrix + scissor */
+        if (val) {
+            const int32_t *q = (const int32_t *)val;
+            memcpy(R.vp_i, q, 16);
+            memcpy(R.vp_f, q + 4, 8);
+            fl_set_scissor(R.vp_i[0], R.vp_i[1], R.vp_i[2], R.vp_i[3]);
+        }
+        R.matrix_dirty = 0xFFFFFFFFu;
+        break;
     case 0x15:
         R.state_ad4 &= 0xFFFFFFFC;
         if (v == 2) R.state_ad4 |= 2;
@@ -490,6 +523,39 @@ int fl_set_render_state(int id, uintptr_t val)
     }
     return 1;
 }
+
+/* func_003DFF80 (the getter), for the ids the mesh path and its callers use */
+uintptr_t fl_get_render_state(int id)
+{
+    switch (id) {
+    case 1:
+        switch (R.state_ad4 & 0x380) { case 0x100: return 1; case 0x80: return 2; default: return 0; }
+    case 0x15:
+        switch (R.state_ad4 & 3) { case 0: return 1; case 2: return 2; default: return 0; }
+    case 4: case 5: case 6: case 7: return R.tex_slots[id - 4];
+    case 0x14: return R.clear_color;
+    default:
+        if (id >= 0x16 && id < 0x39) return (uintptr_t)R.matrices[id];
+        if (id >= 0x39 && id < 0x59) return (uintptr_t)R.materials[id - 0x39];
+        return 0;
+    }
+}
+
+/* ---- accessors for r_mesh.c ---- */
+const float *r_matrix(int id) { return R.matrices[id]; }
+uint32_t r_state_ad0(void) { return R.state_ad0; }
+uint32_t r_state_ad4(void) { return R.state_ad4; }
+uint32_t r_global_mod(void) { return R.global_mod; }
+uint32_t r_material_color(void) { return R.material_color; }
+uint32_t r_fog_color(void) { return R.fog_color; }
+void r_fog_params(float *near_10, float *far_11) { *near_10 = R.fog_a; *far_11 = R.fog_b; }
+void r_viewport(int vi[4], float vf[2]) { memcpy(vi, R.vp_i, 16); memcpy(vf, R.vp_f, 8); }
+const uint8_t *r_material_slot(int i) { return R.materials[i]; }
+const uint8_t *r_light(int i) { return R.lights[i]; }
+GLuint r_pal_texture(void) { return R.pal_tex; }
+GLuint r_white_texture(void) { return R.white_tex; }
+void r_count_draw(int verts) { R.draws++; R.frame_verts += verts; }
+void r_apply_state(void) { apply_blend_depth(); }
 
 void fl_default_state(void)
 {

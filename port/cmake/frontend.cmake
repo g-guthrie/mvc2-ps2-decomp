@@ -2,7 +2,7 @@
 #
 # Additive to Port A's port/CMakeLists.txt (target mvc2_game): it only defines
 #   port_platform  (static)  port/platform/*.c
-#   port_render    (static)  port/render/*.c
+#   port_render    (static)  port/render/*.c (2D, characters, meshes)
 #   viewer         (exe)     port/apps/viewer.c   (-> viewer.html/.js/.wasm on Emscripten)
 #   port_audio     (static)  port/audio/*.c        (Port I: music, SE/voice driver, SDL output)
 #   soundtest      (exe)     port/apps/soundtest.c (-> soundtest.html on Emscripten)
@@ -18,7 +18,8 @@ add_library(port_platform STATIC
   ${PORT_ROOT}/platform/gl_load.c ${PORT_ROOT}/platform/fs.c ${PORT_ROOT}/platform/pad.c
   ${PORT_ROOT}/platform/touch.c ${PORT_ROOT}/platform/platform_sdl.c ${PORT_ROOT}/platform/png_write.c)
 add_library(port_render STATIC
-  ${PORT_ROOT}/render/r_gl.c ${PORT_ROOT}/render/r_char.c ${PORT_ROOT}/render/decode.c)
+  ${PORT_ROOT}/render/r_gl.c ${PORT_ROOT}/render/r_char.c ${PORT_ROOT}/render/r_mesh.c
+  ${PORT_ROOT}/render/decode.c)
 set_property(TARGET port_platform port_render PROPERTY C_STANDARD 11)
 # Port I audio: ADX / VAG decoders, HD bank, hsyn-style synth, Tamsoft driver,
 # the game's TSD client boundary, ADXT-shaped BGM player, SDL output.

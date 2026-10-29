@@ -20,6 +20,7 @@ symlink out of the tree).
 | `tim2.py` | TIM2 → RGBA (4/8-bit with CSM1/CSM2 CLUTs, 16/24/32-bit) |
 | `textures.py` | `font` (`/FONT8_8.TM2`) or `afs ID...`: TIM2 files, LZ16/raw TEX packs (16-byte records), 12-byte tables (`func_00416180` containers) |
 | `adx.py` | AFS00 CRI ADX → 16-bit WAV with an `smpl` loop chunk |
+| `mesh.py` | POL mesh packs (§6): structure dump, OBJ + MTL + texture PNGs, and an independent software render with the battle camera |
 | `hdbd.py` | AFS01 Sony HD/BD bank → one WAV per VAG and a `bank.txt` summary |
 | `../mvc2_lz16.py` | LZ16 (`func_00176230`), reused by `textures.py` |
 
@@ -31,6 +32,8 @@ python3 textures.py $ISO $OUT/tex font
 python3 textures.py $ISO $OUT/tex afs 0 149 150 802
 python3 adx.py $ISO $OUT/audio 17 15
 python3 hdbd.py $ISO $OUT/audio 59      # common SE bank;  0 = Ryu bank
+python3 mesh.py $ISO $OUT/mesh 0 --info # STG00POL structure
+python3 mesh.py $ISO $OUT/mesh 0 --roots 0 --render   # OBJ/MTL/PNG + stg00pol_ref.png
 ```
 
 ## 1. Containers
@@ -241,4 +244,124 @@ Sanity: no clipping, plausible RMS. Short SFX are noise-like (lag-1 0.5–0.9).
   bit-exactness matters.
 - HD `Smpl`/`Sset`/`Prog` field layout, and the BD-side blocks [2]/[3] (likely
   the TSD sound-ID → program map) are needed for the software mixer.
-- POL meshes are untouched (see RENDER_PATH §7).
+- POL meshes: decoded, see §6. Open: chunk type `0x3DF00` (`func_003F3190`, no C
+  yet) and the `0x2000` sub-chunk never occur in the 17 stages; the type-0x40000001
+  node records carry more fields after +0x46 (filled with 0xCC) that nothing reads.
+
+## 6. POL mesh packs (`STGxxPOL`, `DMxxPOL`, `DCxxPOL`, `EFKYPOL`) [verified]
+
+Loaded by `func_0016F430` (stages: `func_00170170` case 1 → AFS02 `801 + 2s` /
+`802 + 2s`, i.e. `D_00446860[s]` / `D_00446810[s]`) or `func_0016F530` (menus,
+effects). The file is used in place; `func_0016F4D0` only relocates the first
+three words. Checked on all 17 stages: every chunk walks to its declared size,
+every strip index is in range, and the textures line up with the TEX pack.
+
+### 6.1 Header and containers
+```
+u32 off[3];   // + file base (func_0016F4D0)
+  off[0] -> model container     (func_003F1F10 masks: 1 meshes, 2 materials, 4 texture table)
+  off[1] -> node container      (chunk type 0 = root list, other chunks = nodes)
+  off[2] -> u32 drawFlags[nMeshes]   (read by func_00415590 -> func_00415A00, and at draw time)
+container / chunk header: { u32 type_or_mask, u32 count, u32 size }  // size includes the 12 bytes
+```
+A container lists `count` chunks back to back (`func_003F1F10` matches the mask,
+`func_003F1F90` matches an exact type). `func_003F13A0`: when the node container's
+mask has bit 31 set, the reported count is `count - 1`.
+
+### 6.2 Mesh chunk (`func_003F19B0`; parsed by `func_003F2EB0` / `func_003F2BF0`)
+`type & 0xFF == 2`; `type & 0xFFC3FF00` names the sub-chunks present:
+`0xDF00` = strips + materials + per-strip material + positions + normals + UV +
+colour (vertex kind 0x35, 36 bytes in the build), `0x9F00` = the same without UV
+(kind 0x25). `0x3DF00` goes to `func_003F3190` (not seen on the stage discs).
+Sub-chunks, each `{u32 type, u32 count, u32 size}` + data:
+
+| type | data | reader |
+|---|---|---|
+| 0x100 | `count` strips: `u32 n | flag<<31`, then `n` u32 vertex indices | `func_003F20A0` (n), `func_003F21F0` (flag), `func_003F2350` (index) |
+| 0x200 | `count` u32 material indices (into the material table) | `func_003F1E10` / `func_003F1E70` |
+| 0x400 | `count` u32 per-strip local material slots | `func_003F2060` |
+| 0x800 | `count` x {f32 x, y, z} | `func_003F24D0` |
+| 0x1000 | `count` x {f32 nx, ny, nz} | `func_003F2510` |
+| 0x4000 | `count` x {f32 u, v} (GS ST, top-left origin) | `func_003F2550` |
+| 0x8000 | `count` x {f32 r, g, b, a}, 0..255 | `func_003F2590` |
+
+- Strips are **triangle strips**, `n - 2` triangles each. The strip flag becomes
+  0x8000/0x4000 in the build but `func_003EEC30` ignores it (it uses `w & 0x3FFF`),
+  and the GS does no culling, so winding does not matter. Each strip is its own
+  GS strip: the first two vertices carry ADC (`0x8000` in the position w).
+- Per-strip material slots are used only when they differ (`func_003F3700` → flag
+  0x400000); otherwise every strip uses slot 0. A strip's material is
+  `matlist[slot]`, loaded into render state `0x39 + slot` by `func_00415590`.
+- Colour: `func_003F2EB0` packs `fixunssf(a)<<24 | r<<16 | g<<8 | b` without masking;
+  `func_003EEC30` unpacks bytes and stores **byte * 0.5** for textured meshes (255 →
+  127.5, `ftoi0` → 127) and byte (alpha * 0.5) for untextured ones.
+- Values: positions are world units (1 unit ≈ 1 pixel at z = 0 under the battle
+  camera); floors are at y = 0, y up, the set extends towards -z.
+
+### 6.3 Material (mask-2 chunk, record + 0xC; `func_003F1C10` → 76-byte slot)
+```
+f32 c0[4]      +0x00 -> slot+0x24  (multiplies ambient in the lit programs)
+f32 diffuse[4] +0x10 -> slot+0x04  (material colour programs: min(128, d*128), alpha d.a*128)
+f32 c2[4]      +0x20 -> slot+0x14
+f32 power      +0x30 -> slot+0x48 (int)
+u32 textured   +0x34
+...                    (0xCC fill)
+u32 texIndex   +0x100 -> index into the texture table (mask-4 chunk)
+```
+Texture table chunk: `{u32 id, u32 w, u32 h, ...}`; `id` is the record index in the
+matching TEX pack (`func_00415320`: `D_0057ED70[0xC10 + id]` → handle). On STG00 all
+12 ids/sizes match STG00TEX records 0..11.
+
+### 6.4 Node trees (`func_003F1730`, `func_003DEAF0`, walked by `func_001538B0`)
+Root list: chunk type 0, `count` u32 node indices (16 on STG00, up to 83).
+Node record (chunk type 0x40000001, record + 0xC):
+```
+u16 id; u16; u16; u16;
+s32 child;         +0x08  (-1 none)
+s32 sibling;       +0x0C
+f32 scale[4];      +0x10
+f32 rot[4];        +0x20  radians; rotate X, then Y, then Z (func_003F3BE0)
+f32 trans[4];      +0x30
+u16 mesh;          +0x40  index into the mesh list (0xFFFF none) -> node+0x180
+u16 ?;             +0x44  -> node+6
+```
+Local = scale * Rx * Ry * Rz, translation in row 3 (row vectors, `v' = v * M`).
+The draw walk (`func_001538B0`) is not a full hierarchy walk: the first node uses
+the object matrix as is, a child uses `local * previous`, and a node without a
+child continues at its sibling with `local * object matrix` (it never climbs back).
+On the stages all locals are identity. **Root 0 is the static set in world
+coordinates**; the other roots are object-local models that per-stage scripts
+place and animate (`func_003D0FA0`: `D_00477010[stage]` lists indices into the
+handler table `D_00476DB0[stage][]`) - not reproduced by the viewer.
+
+### 6.5 Per-mesh draw flags (`off[2]`)
+| bit | effect | where |
+|---|---|---|
+| 0x1 | vertex colour (state 0x15 = 1); else material colour (0x15 = 2) | `func_00415A00` |
+| 0x2 | UV matrix (state 0x61 → format 0x4000, matrix slot 0x1A); scrolled by `o+0xE0/E4` when the object has 0x20000 | `func_00415A00`, `func_001537D0` |
+| 0x4 | fog (format 0x8000) when bit 1 is set and `D_004C2B34 & 4` | `func_00415A00` |
+| 0x1 + 0x2 | clipping program (format 0x40, plus fog) when `D_004C2B30` | `func_00415A00` |
+| 0x100 | blend from bits 16-18 / 19-21 via `D_00444880` / `D_004448A0` (0x2C0106 → 0x32, 0xC0102 → 0x12); without it blend 0x01 (opaque) | `func_001537D0` → `func_00153A40` |
+| 0x200 | halves the alpha of state 0x66 while drawing | `func_001538B0` |
+
+Always: state 0x65 = 1 (format 0x20000, global modulate). States 1 and 2 are 0
+at stage load, so **stage meshes are unlit**: format 0x2C040 (flags 7) → desc 45,
+0x2C002 (flags 6 / 0x2C0106) → desc 41, 0x24002 (0xC0102) → desc 33, 0x20002
+(flags 0) → desc 17/18, untextured vertex-colour meshes → desc 16. Across the 17
+stages (`mesh.py --info`): desc 45 everywhere (37-156 meshes per stage), 41 on
+STG00/02/0B, 33 on STG00 only, 16/18 for the untextured meshes (some are empty).
+Descriptors 11/12 and the lit 0 are never used by stage geometry. An untextured mesh
+with a clipping/fog format has no descriptor and is not drawn.
+
+### 6.6 Per-stage tables read from `SLUS_204.86`
+- Fog `D_00477060[stage]`, 12 bytes `{s32 id, f32 far, u8 pad, r, g, b}`
+  (`func_003D1040` → `func_0016D2A0`): id -1 = off; else state 0x11 = far,
+  0x10 = far / (((id & 0xF) + 16) * 2^(id >> 4) / 16), 0xF = id<<24 | rgb.
+- Far plane: 2 200 000 for stages 1 and 0xA, else 120 000 (`func_00122FE0`).
+
+### 6.7 Output [verified]
+`private/converted/mesh/stgNNpol/`: `stgNNpol.obj` (+ vertex colours as `v x y z r g b`),
+`.mtl`, `texNNN.png`, `stgNNpol_ref.png` (pure-Python render: battle camera,
+near-plane clipping, GS colour maths, no fog, nearest). All 17 stages render to
+coherent scenes; STG00 = the airship deck (SELSTG thumbnail 000), STG01/0A = the
+desert, STG06/0F = the clock tower, STG0B = the grid stage, STG10 = the river.

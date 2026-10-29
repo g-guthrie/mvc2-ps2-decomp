@@ -21,6 +21,7 @@ the user's own disc image.
 | `port/render/render.h` | Public fl API (the table below) |
 | `port/render/r_gl.c` | State (`func_003DF850`), blend mapping, texture and palette handle tables, batching, 2D prims, canvas, present, window-space overlay |
 | `port/render/r_char.c` | Character banks: `func_00411C10` and `func_00412260` on an index-texture atlas |
+| `port/render/r_mesh.c` | 3D mesh path (VU1 replacement): POL load (`func_00415320`/`func_00415590`/`func_003EE6F0`), descriptor selection (`func_003E0F60`), draw (`func_003F0500` + setup callbacks) with one uber-shader, node walk (`func_001538B0`), battle camera (`func_00413F50`) and the VU0 matrix helpers |
 | `port/render/decode.c`, `decode.h` | LZ16 (`func_00176230`), tile LZ (`func_00413A80`), TEX-pack records, TIM2 (CSM1 unswizzle), ARGB1555 |
 | `port/apps/viewer.c` | The viewer app |
 | `port/web/` | `shell.html` (file picker, IndexedDB cache, visibility), `manifest.webmanifest`, `sw.js`, procedural icons (no game art) |
@@ -36,6 +37,11 @@ SDL_VIDEODRIVER=offscreen ../../build/port-native/viewer --iso ../../private/dis
     --frame 200 --screenshot ../../private/converted/viewer_pl00_f200.png --frames 5
 #   other options: --char N --pal P --stage-tex N --plain (character only, on black)
 #   --desktop-gl --present integer|sharp --touch --size WxH --window-shot OUT.png
+#   3D stage (default stage 0; --stage -1 = the old texture backdrop):
+#   --stage N (0..16 = STG00..STG10) --stage-only (no 2D layers) --roots 0|world|all
+#   --nearest --fog (per-stage fog from D_00477060) --lit (desc 0 demo) --cam-x X
+SDL_VIDEODRIVER=offscreen ../../build/port-native/viewer --iso ../../private/disc/mvc2.iso \
+    --stage 1 --screenshot ../../private/converted/mesh/viewer_stage01.png --frames 2
 
 # web build (an emcmake equivalent through the preset's toolchain file)
 source /home/user/emsdk/emsdk_env.sh
@@ -129,11 +135,56 @@ SDL2 is installed.
   texture or mode changes, when blend, depth, filter, wrap or scissor state
   changes, or on texture uploads. The viewer frame is 6-7 draw calls.
 
+### Mesh path (`r_mesh.c`, format in `ASSET_FORMATS.md` §6, notes in `MESH_NOTES.md`)
+
+- **Load** (`fl_model_load`, the role of `func_00415320` + `func_00415590`): for
+  each mesh it applies `func_00415A00` (render states 0x65, 0x15, 0x61, 0x1A,
+  0x12, 0xC from the per-mesh flags), loads the mesh's materials into slots
+  0x39+j, does the state-1 dance, and then builds the mesh the way
+  `func_003EE6F0` does: the format word is `D_004C2AD4` at that moment, the key
+  is `0x21000 | multi<<22 | kind`, and `func_003E0F60` is ported as
+  `desc_select`. A mesh without a descriptor is not drawn, as on the PS2.
+  Strips become a static `GL_TRIANGLES` IBO (zero-area triangles dropped; no
+  culling, as the GS has none). The VBO holds pos/normal/colour bytes/UV.
+  Consecutive strips that share a material slot form one draw range, which
+  captures that slot's material colour and texture handle (the
+  `func_003EFA40` packet).
+- **Draw** (`fl_mesh_draw` = `func_003F0500` + setup callback): MVP =
+  slot 0x19 × view 0x16 × projection 0x17. The viewport (state 0x18,
+  `func_003DD5D0`: x scale `(w/2)/1.333333`, y scale `-h/2`, origin
+  `(x + w/2, y + h/2)`, depth `-(fb - fa)`) is applied in the vertex shader, so a
+  mesh lands in the same 640x480 canvas and depth convention as the 2D prims.
+  One program, with feature flags taken from the format word:
+  - vertex colour `ftoi0(byte * 0.5 * mod)` or material colour
+    `ftoi0(min(128, d * 128) * mod)`;
+  - `mod` = state 0x66 when the format has 0x20000;
+  - UV matrix slot 0x1A (0x4000);
+  - fog (0x8000) `F = (far - w) / (far - near) * 255` with states 0x10/0x11/0xF;
+  - lit (0x100) with three directional lights brought into model space as the
+    `func_003E1B20` setup does.
+
+  The fragment stage does GS MODULATE (`tex * c / 128`), FOG, alpha test
+  `a != 0`, the blend from 0x5D and Z GEQUAL. Colour and fog are interpolated
+  **affinely in screen space**, as on the GS: GLSL ES 3.00 has no
+  `noperspective`, so the shader interpolates `c * w` and `w` and divides. Only
+  UV is perspective-correct. The texture filter (0x62) and wrap (0x63) are read
+  at draw time, as `func_003EFF10` does.
+- **Walk** (`fl_model_draw` = `func_00152180` + `func_001538B0` + `func_001537D0`):
+  the game's exact (non-recursive) node walk, per-mesh blend from flag 0x100,
+  UV scroll from flag 2 + object flag 0x20000, and flag 0x200 (half alpha in
+  0x66). It also handles the object-flag Z and clamp overrides.
+- **Camera** (`fl_camera_apply` = `func_00413F50`, defaults `func_00122DA0`):
+  - eye (0, 95, 320 / tan 21.5°), target (0, 95 + 98.4, 0) with `n = 1`;
+  - horizontal FOV 43° over 640 px, near 1, far 120000 (2200000 on stages 1/0xA);
+  - viewport {0, -16, 640, 480, 0, 1}.
+
+  With this camera 1 world unit is 1 pixel at z = 0, and y = 0 is the floor line.
+
 ### Entry point mapping
 
 | Render-library entry point | Port (`port/render/render.h`) | Notes |
 |---|---|---|
-| `func_003DF850(id, v)` state setter | `fl_set_render_state(id, uintptr_t v)` | Same switch, with storage mirrored. 4-7 hold the texture handle `(pal<<16)\|tex`. 0x5D and 0xD set blend; 0x62 filter; 0x63 wrap; 0x6B/0x6C Z write/test (**the original 0x6C falls through into 0x6B; kept**); 0x14 clear colour; 0x19-0x38 matrices; 0xE, 0xF, 0x10, 0x11, 0x66, 0x5F and the mode flags are stored. Materials and lights (0x39-0x5B) are accepted and ignored (mesh path TODO). |
+| `func_003DF850(id, v)` state setter | `fl_set_render_state(id, uintptr_t v)` | Same switch, with storage mirrored. 4-7 hold the texture handle `(pal<<16)\|tex`. 0x5D and 0xD set blend; 0x62 filter; 0x63 wrap; 0x6B/0x6C Z write/test (**the original 0x6C falls through into 0x6B; kept**); 0x14 clear colour; 0x19-0x38 matrices; 0xE, 0xF, 0x10, 0x11, 0x66, 0x5F and the mode flags are stored. Materials (0x39-0x58, 76 bytes) and lights (0x59-0x5B, 100 bytes, direction normalised) are stored for the mesh path; 0x18 stores the viewport `{x, y, w, h, fa, fb}` and sets the scissor as `func_003DD4E0` does. `fl_get_render_state` = `func_003DFF80` (ids 1, 0x15, 4-7, 0x14, matrices, materials). |
 | `func_003E06D0` blend packet | `set_blend_from_state()` | Each accepted src\|dst pair is decoded from the GS ALPHA value it emits, so GL gives the GS result. Rejected pairs keep the previous blend, as on the PS2. Two deviations from the RENDER_PATH table, following the actual ALPHA values: 0x31 = `Cs - Cd*As` (FUNC_SUBTRACT, ONE, SRC_ALPHA) and 0x51 = `Cs - Cd*Ad`. 0x11 with 0x400 = `Cs - Cd`. For 0x11 with 0x800 the PS2 register value is undefined; the port uses ONE, ONE. |
 | `func_003DF7D0` defaults | `fl_default_state()` | `D_004C2AD4=0x102`, `D_004C2AD0=0x38B032`, Z GEQUAL (+ write via the fall-through), bilinear, full scissor |
 | `func_00170D30` / `func_00170D70` frame begin/end | `fl_frame_begin()` / `fl_frame_end()` | begin binds the canvas, clears colour (state 0x14) and Z=0, sets blend 0x32 and nearest |
@@ -154,7 +205,10 @@ SDL2 is installed.
 | `func_00411C10` character slot setup | `fl_char_bank_create()` | 16 consecutive palette rows = `slot.d[0..15]`, converted from ARGB1555 (`<<3`, A = bit15) |
 | `func_00412260` character draw | `fl_char_draw(bank, frame, m[16], argb, palette)` | Tiles are decoded lazily into 1024x1024 R8 atlas pages (shelf packer, 1 px gutter), replacing the 26-page PSMT4 LRU. Placement is cumulative `pos -= (dx,dy)`; a flip anchors at `fw8*8 - size` (equivalent to the per-sub-block placement). Palette = `((flags>>4)+palette)&15`. Colour `(c+1)>>1`. Corners are transformed by the row-major matrix (translation `m[12..13]`, depth `m[14]`). Negative scale mirrors; axis-aligned results are integer-snapped. |
 | palette animation (`func_00174BC0`, `D_004F54D0`) | `fl_char_set_palette_1555()` / `fl_char_load_palette()` | One row upload |
-| `func_003F0500` mesh draw, `func_00415590` mesh build | **not done** | See remaining work. |
+| `func_00415590` mesh build (+ `func_00415320`, `func_00415A00`, `func_003EE6F0`, `func_003E0F60`) | `fl_model_load(pol, size, &{tex[], ntex, b34, b30, keep_state})` | `tex[i]` = handle of TEX record i. `b34`/`b30` = `D_004C2B34`/`D_004C2B30` (4 / 1 for stages). |
+| `func_003F0500` mesh draw (+ setup callbacks, `func_003EFA40`) | `fl_mesh_draw(model, mesh)` | All 49 descriptors map to one program. Clip variants rely on GL clipping. Lit+modulate variants multiply the lit colour by 0x66 (not checked against their microcode). |
+| `func_00152180` / `func_001538B0` / `func_001537D0` object draw | `fl_model_draw(model, root, objm, objflags, u, v)` | The caller sets 0x66 (`func_00152400`). |
+| `func_00413F50`, `func_003DD2E0`/`DD360`, `func_003DD5D0`, `func_003DDF20`, `func_003DE160`, `func_003DD260` | `fl_camera_apply`, `fl_mat_perspective`, state 0x18, `fl_mat_look_at`, `fl_mat_mul`, `fl_mat_identity` | |
 
 ## Evidence (all files under `private/converted/`, gitignored)
 
@@ -183,6 +237,21 @@ SDL2 is installed.
   changed the palette to 1 and tapping the d-pad's right edge advanced to frame 201.
   The overlay is drawn in the letterbox.
 - **Native portrait capture** with the overlay: `native_touch_portrait.png`.
+- **Mesh path** (`private/converted/mesh/`, details in `MESH_NOTES.md`):
+  - All 17 stages, root 0, were rendered by the GL path
+    (`c_root0_nearest_NN.png`) and by the independent pure-Python rasteriser in
+    `mesh.py` (`stgNNpol/stgNNpol_ref.png`), both with nearest sampling and no fog.
+    In 16 stages, 99.6-100 % of pixels agree within 2 levels (most of the rest
+    are texel-edge sampling differences). STG0D agrees on 97.2 %; the band of
+    differences there looks like coplanar or translucent overlap (unresolved).
+    The numbers are in `compare_c_vs_python.txt` and the diff images are
+    `diff_NN.png`.
+  - The full composition (`viewer_stage00_full.png`) puts the stage, Z clear,
+    HUD and two characters on the projected floor line. STG00 matches the
+    stage-select thumbnail 000 (airship) and STG01 matches thumbnail 001 (desert).
+  - Web (headless Chromium, SwiftShader WebGL2): `web_stage00.png`, and
+    `web_stage01_world.png` after pressing W (R2, next stage).
+  - The lit program (desc 0) demo is `c_stg00_lit_desc0.png`. Stages never use it.
 
 ## Done / remaining
 
@@ -193,12 +262,37 @@ Done:
 - Renderer: render state with blend, depth, filter and wrap; texture and palette
   handle tables; TIM2; all five 2D prim entry points; fill; character
   bank + draw; integer and sharp-fit present; window overlay.
-- Viewer: native and web/PWA, headless capture, IndexedDB-cached disc.
+- Mesh path: POL load → GL buffers, descriptor selection, one uber-shader
+  (vertex or material colour, modulate, UV matrix, fog, lit), the game's node
+  walk and the battle camera.
+- Viewer: native and web/PWA, headless capture, IndexedDB-cached disc, 3D stages
+  with stage select (HP / R2 / L2) and 2D layers on top.
 
 Remaining / next steps:
-1. **Mesh path** (`func_003F0500`, `func_00415590`, the 49 VU1 descriptors):
-   VBO/IBO conversion of STGxxPOL strips and one uber-shader. Start with the
-   unlit prelit descriptors 11/12 (most stage geometry), then lit 0.
+1. **Mesh path follow-ups.** The VBO/IBO conversion and the uber-shader are done
+   (above, `MESH_NOTES.md`). Stage geometry turned out to use descs 45/41/33/16/18,
+   not 11/12. Open items:
+   - **Stage objects:** only root 0 (the static set) is placed faithfully. The
+     other roots are positioned by the per-stage scripts
+     (`func_003D0FA0` → `D_00476DB0[stage][]`). The viewer's default
+     "world roots" mode is a heuristic. This resolves itself once Port A runs the
+     scripts and calls `fl_model_draw` per object.
+   - **Fog:** decoded from `D_00477060` and implemented, but off by default in the
+     viewer. With the decoded parameters the STG00 sky (z ≈ -100000, far 12000)
+     would be fully fogged, which contradicts its UV-matrix (scroll) flag. One link
+     in the fog chain, probably who enables `D_004F1D20` in battle, is unverified.
+   - **Lit programs:** desc 0 is implemented from its microcode but untested
+     against the game. The lit+modulate, specular (0x106) and extra-attribute
+     (0x121235, 0x06xxxxxx) variants approximate or are not covered. The clip
+     variants rely on GL clipping. Triangles that cross the guard band are
+     dropped by ADC on the PS2 but kept here.
+   - **Alpha above 0x80:** GL clamps the source alpha to 1.0, while the GS
+     over-brightens (seen in neither the stages nor the tests).
+   - **Battle stage filter:** `func_00152720` sets bilinear before list 6, but
+     the other battle draw paths keep nearest. The viewer uses bilinear.
+   - **2D path:** `fl_tri_tex` interpolates colours perspective-correctly when
+     w != 1. The GS interpolates them affinely (the mesh path's `c * w / w`
+     trick applies).
 2. Hook the API into the game once Port A links: the `func_XXXXXXXX` symbols
    become thin wrappers around `fl_*`. The prims take the game's structs as is;
    pointers in render states are host pointers (`uintptr_t`).

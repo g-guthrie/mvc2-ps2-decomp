@@ -81,6 +81,58 @@ int fl_char_draw(FlCharBank *b, int frame, const float m[16], uint32_t argb, int
 /* Bounds of a frame in bank pixels (for tools). */
 int fl_char_frame_bounds(FlCharBank *b, int frame, int *x0, int *y0, int *x1, int *y1);
 
+/* ---- 3D meshes: the VU1 path (func_00415590, func_003EE6F0, func_003F0500, func_001538B0) ----
+ * POL packs (STGxxPOL, DMxxPOL, EFKYPOL ...) are converted to GL vertex/index
+ * buffers at load time and drawn with one uber-shader whose feature flags come
+ * from the format word the game builds (D_004C2AD4 at build time). */
+typedef struct FlModel FlModel;
+typedef struct FlModelLoad {
+    const uint32_t *tex; /* tex[i] = handle of TEX-pack record i (D_0057FB70[D_0057ED70[slot + i]]) */
+    int ntex;
+    int b34;             /* D_004C2B34: bit 2 lets func_00415A00 enable fog (stage loads set 4) */
+    int b30;             /* D_004C2B30: lets func_00415A00 pick the clipping programs (stage loads set 1) */
+    int keep_state;      /* 1: skip func_00415A00 and the state-1 dance and build every mesh with the
+                          * current format word (the bare func_003EE6F0 path; e.g. 0x102 -> desc 0, lit) */
+} FlModelLoad;
+/* func_00415320 + func_00415590 (+ func_003EE6F0 per mesh). The buffer is read
+ * only and may be freed afterwards. Uses and changes render states 1, 0xC, 0x12,
+ * 0x15, 0x1A, 0x39.., 0x61, 0x65 exactly as the original does; set states 1 and 2
+ * to 0 first for a stage (func_00170170). */
+FlModel *fl_model_load(const uint8_t *pol, size_t size, const FlModelLoad *ld);
+void fl_model_destroy(FlModel *m);
+int fl_model_roots(const FlModel *m);
+int fl_model_meshes(const FlModel *m);
+/* flags = POL per-mesh draw flags, fmt = format word, desc = VU1 descriptor index (-1 = none) */
+int fl_model_mesh_info(const FlModel *m, int mesh, uint32_t *flags, uint32_t *fmt, int *desc);
+/* World bounds of a root tree under an identity object matrix; returns its drawable mesh count. */
+int fl_model_root_bounds(const FlModel *m, int root, float bmin[3], float bmax[3]);
+/* func_00152180 + func_001538B0: draw root tree `root` with object matrix objm,
+ * object flags (o+0xD0) and UV scroll (o+0xE0/E4). Set 0x66 first (func_00152400). */
+int fl_model_draw(FlModel *m, int root, const float objm[16], uint32_t obj_flags, float uv_u, float uv_v);
+/* func_003F0500: one mesh with matrix slot 0x19 as its world matrix and the
+ * current view (0x16), projection (0x17), viewport (0x18), 0x66, 0x1A, fog, blend. */
+int fl_mesh_draw(FlModel *m, int mesh);
+/* fl_get_render_state: func_003DFF80 for ids 1, 0x15, 4..7, 0x14, matrices, materials */
+uintptr_t fl_get_render_state(int id);
+
+/* VU0 matrix maths (row-major, v' = v * M, translation in m[12..14]) */
+void fl_mat_identity(float m[16]);                                        /* func_003DD260 */
+void fl_mat_mul(float out[16], const float a[16], const float b[16]);     /* func_003DE160: a * b */
+void fl_mat_look_at(float m[16], const float eye[3], const float at[3], const float up[3]); /* func_003DDF20 */
+void fl_mat_perspective(float m[16], float far_plane, float near_plane, float fov_rad, float aspect); /* func_003DD360 */
+/* The camera object D_004F1F40 as func_00413F50 reads it. */
+typedef struct FlCamera {
+    float eye[3];   /* +0x0C */
+    float at[3];    /* +0x54 */
+    float target_dy;/* +0x80 (-0.41): target.y -= 240 * n * target_dy */
+    int roll;       /* +0x84 */
+    float fov_deg;  /* +0x6C, horizontal over 640 px */
+} FlCamera;
+void fl_camera_battle_default(FlCamera *c);          /* func_00122DA0 */
+/* func_00413F50(cam, far, n): states 0x17 (func_003DD2E0), 0x18 (viewport, y - 16) and 0x16.
+ * vx/vy = the D_004F8020 shake offset (0 normally). Battle: far 120000, n = 1. */
+void fl_camera_apply(const FlCamera *c, float far_plane, int n, int vx, int vy);
+
 /* ---- window-space overlay (touch pad, debug) ---- */
 void r_overlay_begin(int win_w, int win_h);
 void r_overlay_disc(float cx, float cy, float r, uint32_t argb);

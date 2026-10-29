@@ -32,4 +32,22 @@ float r_snap_x(float x);              /* origin + integer truncation, as fptosi 
 float r_snap_y(float y);
 
 #define R_PAL_ROWS 1024
+
+/* ---- state the mesh path (r_mesh.c) reads from r_gl.c ---- */
+const float *r_matrix(int id);          /* 0x16 view, 0x17 projection, 0x19.. slots (row-major, v' = v * M) */
+uint32_t r_state_ad0(void);             /* D_004C2AD0 */
+uint32_t r_state_ad4(void);             /* D_004C2AD4 */
+uint32_t r_global_mod(void);            /* 0x66, D_004C2ABC */
+uint32_t r_material_color(void);        /* 0xE, D_004C2AC0 */
+uint32_t r_fog_color(void);             /* 0xF */
+void r_fog_params(float *near_10, float *far_11); /* 0x10 / 0x11 */
+void r_viewport(int vi[4], float vf[2]);/* 0x18 */
+const uint8_t *r_material_slot(int i);  /* 0x39 + i, 76 bytes */
+const uint8_t *r_light(int i);          /* 0x59 + i, 100 bytes */
+GLuint r_pal_texture(void);
+GLuint r_white_texture(void);
+void r_count_draw(int verts);
+void r_apply_state(void);               /* blend + depth from the fl state */
+int r_mesh_init(void);
+void r_mesh_shutdown(void);
 #endif

@@ -8,7 +8,7 @@ does, so keep it private (never commit or publish it).
 SINGLE_FILE_HTML is the web build linked with -DPORT_SINGLE_FILE=ON (wasm and
 JS inlined). The ISO is embedded as gzip+base64 in <script id="embedded-disc">,
 which port/web/shell.html unpacks with DecompressionStream at start-up. Files
-the native port never reads (IOP modules, the EE executable) are zeroed first
+the native port never reads (the IOP modules) are zeroed first
 so they compress away; the ISO9660 directory stays intact.
 """
 import base64, gzip, os, sys
@@ -16,7 +16,7 @@ import base64, gzip, os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'convert'))
 from iso import Iso  # noqa: E402
 
-UNUSED_PREFIXES = ('/MODULES/', '/SLUS_')
+UNUSED_PREFIXES = ('/MODULES/',)  # SLUS_204.86 stays: tables are read from it
 
 
 def strip_iso(path):

@@ -392,7 +392,7 @@ ambient, times material and vertex colour. The 0x106 programs add `RSQRT`
 | 6 | 0x00428510 | 003E24B0 | 0x106 / 0x121235 | Y + spec | | |
 | 7,8 | 0x00428E60, 0x004291D0 | 003E1B20 | 0x100 | Y | +vertex colour | |
 | 9,10 | 0x00429510, 0x0042A460 | 003E5090 | 0x20100 | Y | | |
-| 11,12 | 0x0042B210, 0x0042B4D0 | 003E31D0 | 0x000 | N | pos,col,uv | **unlit prelit** (most stage geometry) |
+| 11,12 | 0x0042B210, 0x0042B4D0 | 003E31D0 | 0x000 | N | pos,col,uv | unlit prelit (stages use 45/41 instead: `ASSET_FORMATS.md` §6.5) |
 | 13,14 | 0x0042B780, 0x0042BA90 | 003E31D0 | 0x002 | N | pos,uv | unlit, material colour |
 | 15-18 | 0x0042BD80..0x0042C630 | 003E5680 | 0x20000/0x20002 | N | | + modulate |
 | 19 | 0x0042C950 | 003E7FD0 | 0x142 | Y | | **clipping** |
@@ -418,6 +418,11 @@ Six packets are not in the descriptor table (`0x00426100`, `0x00426950`,
 `0x004298D0`, `0x0042A7C0`, `0x00432D00`, `0x00433980`). They use
 `.resume_mpg`/split uploads, are probably second halves or alternates, and
 need tracing. The whole table is `src/data/data_mcdesc_004779F0.c`.
+
+Stage geometry is built with state 0x65 always set and state 1 = 0, so it uses
+desc 45 (0x2C040: vertex colour, fog, UV matrix, clip) and 41 (0x2C002, material
+colour), plus a few 33/16/18. The decoded POL format and draw flags are in
+`ASSET_FORMATS.md` §6, and the port is `port/render/r_mesh.c` (`RENDERER.md`).
 
 **Port:** do not emulate VU1. Instead:
 - At load time, convert each mesh's strips into a GL VBO/IBO (positions,

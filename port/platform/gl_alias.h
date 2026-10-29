@@ -58,3 +58,14 @@
 #define glReadPixels p_glReadPixels
 #define glReadBuffer p_glReadBuffer
 #define glFinish p_glFinish
+#define glUniform1f p_glUniform1f
+#define glUniform2fv p_glUniform2fv
+#define glUniform3fv p_glUniform3fv
+#define glUniform4fv p_glUniform4fv
+#define glUniformMatrix4fv p_glUniformMatrix4fv
+#define glDrawElements p_glDrawElements
+#define glDeleteBuffers p_glDeleteBuffers
+#define glDeleteVertexArrays p_glDeleteVertexArrays
+#define glDisableVertexAttribArray p_glDisableVertexAttribArray
+#define glVertexAttrib4f p_glVertexAttrib4f
+#define glDeleteProgram p_glDeleteProgram

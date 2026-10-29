@@ -80,7 +80,18 @@
     X(PFNGLBLITFRAMEBUFFERPROC, glBlitFramebuffer) \
     X(PFNGLREADPIXELSPROC, glReadPixels) \
     X(PFNGLREADBUFFERPROC, glReadBuffer) \
-    X(PFNGLFINISHPROC, glFinish)
+    X(PFNGLFINISHPROC, glFinish) \
+    X(PFNGLUNIFORM1FPROC, glUniform1f) \
+    X(PFNGLUNIFORM2FVPROC, glUniform2fv) \
+    X(PFNGLUNIFORM3FVPROC, glUniform3fv) \
+    X(PFNGLUNIFORM4FVPROC, glUniform4fv) \
+    X(PFNGLUNIFORMMATRIX4FVPROC, glUniformMatrix4fv) \
+    X(PFNGLDRAWELEMENTSPROC, glDrawElements) \
+    X(PFNGLDELETEBUFFERSPROC, glDeleteBuffers) \
+    X(PFNGLDELETEVERTEXARRAYSPROC, glDeleteVertexArrays) \
+    X(PFNGLDISABLEVERTEXATTRIBARRAYPROC, glDisableVertexAttribArray) \
+    X(PFNGLVERTEXATTRIB4FPROC, glVertexAttrib4f) \
+    X(PFNGLDELETEPROGRAMPROC, glDeleteProgram)
 
 #ifndef GL_DIRECT
 #define PORT_GL_DECL(type, name) extern type p_##name;
