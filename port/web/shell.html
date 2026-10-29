@@ -9,7 +9,7 @@
 <meta name="theme-color" content="#000000">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-192.png">
-<title>MvC2 port viewer</title>
+<title>Marvel vs. Capcom 2</title>
 <style>
   html, body { margin: 0; height: 100%; background: #000; overflow: hidden;
                overscroll-behavior: none; touch-action: none; -webkit-user-select: none; user-select: none; }
@@ -115,7 +115,15 @@ fileEl.addEventListener('change', async () => {
 forget.addEventListener('click', async () => { await idbDel(); forget.hidden = true; status('Cached image removed.'); });
 menu.addEventListener('click', () => { pick.hidden = false; status('Choose a different disc image.'); showUi(true); });
 
+/* ?nounlock (or ?unlock=0): the game's own unlock state (no "unlock
+   everything"); ?args=... passes further command-line options to main(). */
+const query = new URLSearchParams(location.search);
+const mainArgs = [];
+if (query.has('nounlock') || query.get('unlock') === '0') mainArgs.push('--no-unlock');
+if (query.get('args')) mainArgs.push(...query.get('args').split(/\s+/).filter(Boolean));
+
 var Module = {
+  arguments: mainArgs,
   canvas: document.getElementById('canvas'),
   print: t => console.log(t),
   printErr: t => console.log(t),

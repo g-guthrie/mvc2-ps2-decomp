@@ -543,6 +543,18 @@ uintptr_t fl_get_render_state(int id)
 
 /* ---- accessors for r_mesh.c ---- */
 const float *r_matrix(int id) { return R.matrices[id]; }
+/* Port J: the game's own mode words (D_004C2AD0 / D_004C2AD4) are
+ * authoritative: the game also writes them directly, not only through
+ * func_003DF850. */
+void fl_sync_mode_words(uint32_t ad0, uint32_t ad4)
+{
+    if (ad0 == R.state_ad0 && ad4 == R.state_ad4) return;
+    r_flush();
+    R.state_ad0 = ad0;
+    R.state_ad4 = ad4;
+    set_blend_from_state();
+}
+
 uint32_t r_state_ad0(void) { return R.state_ad0; }
 uint32_t r_state_ad4(void) { return R.state_ad4; }
 uint32_t r_global_mod(void) { return R.global_mod; }
@@ -753,6 +765,68 @@ uint32_t fl_tex_create(int w, int h, int fmt, const void *pixels)
         return (uint32_t)(i + 1);
     }
     return 0;
+}
+
+/* Port J: (re)define texture slot `handle` (low 16 bits, 1-based) so the
+ * port's handles are the game's own (D_006207A0 records). */
+int fl_tex_define(uint32_t handle, int w, int h, int fmt, const void *pixels)
+{
+    int i = (int)(handle & 0xFFFF) - 1;
+    if (i < 0 || i >= MAX_TEX || w <= 0 || h <= 0) return -1;
+    TexRec *t = &R.tex[i];
+    r_flush();
+    if (!t->used || t->w != w || t->h != h || t->fmt != fmt) {
+        if (t->used && t->gl) {
+            if (R.cur_tex == t->gl) R.cur_tex = R.white_tex;
+            glDeleteTextures(1, &t->gl);
+        }
+        memset(t, 0, sizeof *t);
+        t->used = 1;
+        t->w = w;
+        t->h = h;
+        t->fmt = fmt;
+        glGenTextures(1, &t->gl);
+        glBindTexture(GL_TEXTURE_2D, t->gl);
+        if (fmt == FL_TEX_IDX4 || fmt == FL_TEX_IDX8)
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_R8, w, h, 0, GL_RED, GL_UNSIGNED_BYTE, pixels);
+        else
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    } else {
+        glBindTexture(GL_TEXTURE_2D, t->gl);
+        if (fmt == FL_TEX_IDX4 || fmt == FL_TEX_IDX8)
+            glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, w, h, GL_RED, GL_UNSIGNED_BYTE, pixels);
+        else
+            glTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, w, h, GL_RGBA, GL_UNSIGNED_BYTE, pixels);
+    }
+    glBindTexture(GL_TEXTURE_2D, R.cur_tex);
+    return 0;
+}
+
+/* Port J: (re)define palette slot `handle` (high 16 bits, 1-based). */
+int fl_pal_define(uint32_t handle, int ncolors, const uint8_t *rgba)
+{
+    int i = (int)(handle >> 16) - 1;
+    if (i < 0 || i >= MAX_PAL) return -1;
+    PalRec *pr = &R.pal[i];
+    if (!pr->used) {
+        int row = r_pal_alloc_rows(1);
+        if (row < 0) return -1;
+        pr->used = 1;
+        pr->row = row;
+    }
+    pr->ncolors = ncolors;
+    if (rgba) r_pal_write(pr->row, 0, ncolors > 256 ? 256 : ncolors, rgba);
+    return 0;
+}
+
+int fl_tex_defined(uint32_t handle)
+{
+    int i = (int)(handle & 0xFFFF) - 1;
+    return i >= 0 && i < MAX_TEX && R.tex[i].used;
 }
 
 void fl_tex_update(uint32_t handle, int x, int y, int w, int h, const void *pixels)

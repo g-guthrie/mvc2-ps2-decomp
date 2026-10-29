@@ -68,6 +68,10 @@ Rewrites (evidence in port/docs/HOST_BUILD_ISSUES.md):
                 asm-label alias of the function.
   R14 return    `return 0;` where a non-void function falls off the end or
                 says `return;` (sites from the raw build's diagnostics).
+  R17 replaced  a credited function listed in port/host/host_impl.csv (the
+                port implements it on the host): `#pragma weak name` at the
+                top of its TU, so the port's strong definition wins at link
+                time, and a `name__game` alias of the original body.
   R16 null      a symbol whose catalog address is 0 (func_00000000 in a
                 callback table) is declared weak, so it stays undefined and
                 its address is NULL on the host, as on the PS2.
@@ -819,9 +823,380 @@ def owned_functions(path):
     return _OWNED.get(path, ())
 
 
+def _arg_regs(params):
+    """EE EABI argument registers: ints in $a0-$a3,$t0-$t3, floats in $f12-$f19."""
+    out, ni, nf = [], 0, 0
+    for t in params:
+        if t in ("float", "double"):
+            out.append("f%d" % (12 + nf))
+            nf += 1
+        else:
+            out.append("a%d" % ni)
+            ni += 1
+    return out
+
+
+def _load_regpass():
+    import csv
+    from pathlib import Path
+    f = Path(__file__).resolve().parent / "r12_regpass.csv"
+    out = {}
+    if f.exists():
+        for r in csv.DictReader(open(f, newline="")):
+            out[(r["source"], r["caller"], r["callee"], int(r["arg"]))] = int(r["caller_param"])
+    return out
+
+
+REGPASS = _load_regpass()
+
+
+def _load_regexpr():
+    """port/tools/r12_regexpr.csv: hand-checked R12 sites where the register
+    held a caller local, not a parameter (the asm says which C variable)."""
+    import csv
+    from pathlib import Path
+    f = Path(__file__).resolve().parent / "r12_regexpr.csv"
+    out = {}
+    if f.exists():
+        for r in csv.DictReader(l for l in open(f, newline="") if not l.startswith("#")):
+            out[(r["source"], r["caller"], r["callee"], int(r["arg"]))] = r["expr"]
+    return out
+
+
+REGEXPR = _load_regexpr()
+
+
+def _pad_log(path, name, have, want, ks=None):
+    """HOSTIFY_PAD_LOG=file: record R12 calls that get missing arguments as 0
+    (the EE passed whatever the argument registers held); ks = the canonical
+    indices padded (default have..want-1)."""
+    import os
+    f = os.environ.get("HOSTIFY_PAD_LOG")
+    if f:
+        ks = list(range(have, want)) if ks is None else ks
+        with open(f, "a") as o:
+            o.write(f"{path},{name},{have},{want},{';'.join(map(str, ks))}\n")
+
+
+def hole_text(key):
+    """The zero hole after layout unit `key` (link_catalog.data_holes) with
+    aliases for the catalog names inside it."""
+    import link_catalog as L
+    lo, size, names = L.data_holes()[key]
+    if size <= 0:
+        return ""
+    h = f"mvc2_hole_{lo:08X}"
+    al = 512 if key is None else 1  # the image start: EE 0x00424200 is 512-aligned
+    lines = [f'__attribute__((section(".data.ee_{lo:08X}.1"), aligned({al}))) unsigned char {h}[{size:#x}] = {{0}};']
+    lines += [f"PS2_DATA_ALIAS({n}, {h}, {off:#x}, {sz:#x})" for n, off, sz in names]
+    return "\n".join(lines) + "\n"
+
+
+def section_units(toks, path):
+    """R18: `__attribute__((section(".data.ee_<addr>.0")))` on the definition
+    of each layout unit of this TU (before its `=` or `;`).  One section name
+    for const and writable units alike: a named section is data on ELF and on
+    wasm, so zero-initialised units do not drift into .bss."""
+    import link_catalog as L
+    units = {u[2]: u[0] for u in L.layout_units() if u[3] == path}
+    out = list(toks)
+    br = Braces()
+    i = 0
+    stmt_start = 0
+    while i < len(out):
+        t = out[i]
+        if t[0] == "pp":
+            br.pp(t[1])
+        elif t[0] == "punct":
+            if t[1] in "{}":
+                br.punct(t[1])
+            if t[1] in ";{}" and br.depth == 0:
+                stmt_start = i + 1
+        if t[0] == "ident" and t[1] in units and br.depth == 0:
+            words = [x[1] for x in out[stmt_start:i] if x[0] == "ident"]
+            if "extern" not in words and "typedef" not in words:
+                # nesting of the declarator around the name: `void (*name)(...)`
+                base = sum(1 if x[1] == "(" else -1 if x[1] == ")" else 0 for x in out[stmt_start:i])
+                j, pd = i + 1, base
+                while j < len(out):
+                    x = out[j]
+                    if x[1] in "([":
+                        pd += 1
+                    elif x[1] in ")]":
+                        pd -= 1
+                    elif pd == 0 and x[1] in ("=", ";", ","):
+                        break
+                    j += 1
+                seg = text_of(out[i + 1:j])
+                if "section(" not in seg:
+                    # explicit alignment = the EE address's: wasm clang over-aligns
+                    # arrays >= 16 bytes to 16 (preferred alignment) otherwise
+                    a = units[t[1]]
+                    al = min(a & -a, 16) if a else 16
+                    out.insert(j, ("punct", f' __attribute__((section(".data.ee_{a:08X}.0"), aligned({al}))) '))
+                del units[t[1]]
+        i += 1
+    return out
+
+
+def data_layout(toks, path):
+    """R18 layout: a data TU's unit goes to section .data.ee_<addr>.0x and the
+    hole after it to .data.ee_<addr+size>.1, so the host link (sections
+    sorted by name on ELF, objects in address order on wasm) lays the EE data
+    image out contiguously (link_catalog.data_holes)."""
+    import link_catalog as L
+    lu = [u for u in L.layout_units() if u[3] == path]
+    if not lu:
+        return "", ""
+    a = lu[0][0]
+    pre = f"/* host R18: EE data layout, section .data.ee_{a:08X}.0 */\n"
+    tail = '\n/* host R18: EE data layout */\n'
+    defined = defined_names(toks)
+    for u in lu:
+        tail += f"_Static_assert(sizeof({u[2]}) == {u[1]:#x}, \"{u[2]}: host size differs from the EE\");\n" \
+            if u[2] in defined else ""
+    tail += hole_text(lu[-1][2])
+    return pre, tail
+
+
+FNDROP = re.compile(r"#[ \t]*define[ \t]+(\w+)[ \t]*\([^)]*\)[ \t]*PS2_TOPLEVEL_ASM_DROPPED")
+
+
+def host_replaced(toks, path):
+    """R17: credited functions of this TU that port/host/host_impl.csv replaces."""
+    import link_catalog as L
+    hi = L.host_impl()
+    if not hi:
+        return []
+    ids = {t[1] for t in toks if t[0] == "ident"}
+    pp = " ".join(t[1] for t in toks if t[0] == "pp")  # `#define name func_X` definitions
+    # FN(name, body) assembly placeholders are dropped on the host (R6): no body to weaken
+    fnm = {m.group(1) for t in toks if t[0] == "pp"
+           for m in [FNDEF.search(t[1]) or FNDROP.search(t[1])] if m}
+    sig = [t for t in toks if t[0] not in ("ws", "comment", "nl")]
+    dropped = {sig[i + 2][1] for i in range(len(sig) - 2)
+               if sig[i][1] in fnm and sig[i + 1][1] == "("}
+    return sorted(n for n in hi if owners().get(n) == path and n not in dropped
+                  and (n in ids or n in pp))
+
+
 def owners_rows():
     import link_catalog as L
     return L.matches()
+
+
+def _sig_list(toks):
+    return [(n, x) for n, x in enumerate(toks) if x[0] not in ("ws", "comment")]
+
+
+def _param_written(sig, i):
+    """sig[i] is an identifier: is it written here (=, op=, ++/--, unary &)?"""
+    nx = [sig[k][1][1] for k in range(i + 1, min(i + 4, len(sig)))]
+    pv = [sig[k][1][1] for k in range(max(0, i - 2), i)]
+    if i + 1 < len(sig) and sig[i + 1][1][0] == "punct":
+        if nx[:1] == ["="] and nx[1:2] != ["="]:
+            return True
+        if len(nx) >= 2 and nx[0] in "+-*/%&|^" and nx[1] == "=":
+            return True
+        if len(nx) >= 3 and nx[0] == nx[1] and nx[0] in "<>" and nx[2] == "=":
+            return True
+        if len(nx) >= 2 and nx[0] == nx[1] and nx[0] in "+-":
+            return True
+    if len(pv) == 2 and pv[0] == pv[1] and pv[0] in ("+", "-"):
+        return True
+    if pv[-1:] == ["&"]:
+        b = sig[i - 2][1] if i >= 2 else ("punct", "(")
+        if b[0] == "punct" and b[1] not in (")", "]"):
+            return True
+    return False
+
+
+UNCACHED = {"0x20000000", "0x30000000"}
+
+
+def rewrite_uncached(toks):
+    """R21: `(T *)(addr | 0x20000000)` (the EE's uncached / uncached-
+    accelerated mirror of main RAM) is the same memory: on the host the OR
+    makes a different (wasm: out of range) address, so it is dropped where
+    the result is cast to a pointer."""
+    sig = _sig_list(toks)
+    drop = set()
+    for s in range(1, len(sig) - 1):
+        n, x = sig[s]
+        if x[0] != "number" or x[1].lower() not in UNCACHED or sig[s - 1][1][1] != "|":
+            continue
+        if sig[s + 1][1][1] != ")":
+            continue
+        # the "(" that this ")" closes
+        d, k = 0, s + 1
+        while k >= 0:
+            v = sig[k][1][1]
+            if v == ")":
+                d += 1
+            elif v == "(":
+                d -= 1
+                if d == 0:
+                    break
+            k -= 1
+        # preceded by a pointer cast `( ... * )`
+        if k >= 2 and sig[k - 1][1][1] == ")" and sig[k - 2][1][1] == "*":
+            drop.add(sig[s - 1][0])
+            drop.add(n)
+    if not drop:
+        return toks
+    return [x for i, x in enumerate(toks) if i not in drop]
+
+
+def widen_definitions(toks, path):
+    """R20: the definition of a function r12_widen.csv widens gets the extra
+    parameters (`__rpN`) its canonical prototype now has, so R12 can pass
+    them on where the body's calls miss them."""
+    if SIGS is None:
+        return toks
+    canon = SIGS["canon"]
+    sig = _sig_list(toks)
+    depth = 0
+    ins = {}
+    for s in range(len(sig)):
+        n, x = sig[s]
+        if x[0] == "pp":
+            continue
+        if x[1] == "{":
+            if depth == 0 and s >= 1 and sig[s - 1][1][1] == ")":
+                d, k = 0, s - 1
+                while k >= 0:
+                    v = sig[k][1][1]
+                    if v == ")":
+                        d += 1
+                    elif v == "(":
+                        d -= 1
+                        if d == 0:
+                            break
+                    k -= 1
+                name = sig[k - 1][1][1] if k >= 1 and sig[k - 1][1][0] == "ident" else None
+                c = canon.get(name or "")
+                if c and "widened" in c and owners().get(name) == path:
+                    inner = [sig[q][1][1] for q in range(k + 1, s - 1)]
+                    have, dd = 0 if not inner or inner == ["void"] else 1, 0
+                    for v in inner:
+                        dd += v in "([" and 1 or v in ")]" and -1 or 0
+                        have += 1 if (v == "," and dd == 0) else 0
+                    extra = c["params"][have:]
+                    txt = ", ".join(f"{ty} __rp{have + i}" for i, ty in enumerate(extra))
+                    if have == 0:
+                        ins[sig[k][0]] = ("open", txt, sig[s - 1][0])
+                    else:
+                        ins[sig[s - 1][0]] = ("close", ", " + txt, None)
+            depth += 1
+        elif x[1] == "}":
+            depth -= 1
+    if not ins:
+        return toks
+    out, skip_to = [], -1
+    for i, x in enumerate(toks):
+        if i <= skip_to:
+            continue
+        e = ins.get(i)
+        if e and e[0] == "open":
+            out.append(x)
+            out += lex(e[1], pp=False)
+            out.append(toks[e[2]])
+            skip_to = e[2]
+            continue
+        if e and e[0] == "close":
+            out += lex(e[1], pp=False)
+        out.append(x)
+    return out
+
+
+def copy_written_params(toks):
+    """R19 (i386 cdecl): a function that writes one of its parameters (the
+    decomp idiom of parameters used as locals) writes into the caller's
+    argument area; when the EE called it through a pointer with fewer
+    arguments (dispatch tables) that area is the caller's own frame.  The
+    written parameters become locals initialised from a renamed parameter."""
+    sig = _sig_list(toks)
+    depth = 0
+    edits = []  # (token index, new text) replacements, (index, insert text after)
+    s = 0
+    while s < len(sig):
+        n, x = sig[s]
+        if x[0] == "pp":
+            s += 1
+            continue
+        if x[1] == "{":
+            if depth == 0 and s >= 1 and sig[s - 1][1][1] == ")":
+                # find the matching "(" of the head
+                d, k = 0, s - 1
+                while k >= 0:
+                    v = sig[k][1][1]
+                    if v == ")":
+                        d += 1
+                    elif v == "(":
+                        d -= 1
+                        if d == 0:
+                            break
+                    k -= 1
+                if k >= 1 and sig[k - 1][1][0] == "ident":
+                    # body extent
+                    d2, e = 0, s
+                    while e < len(sig):
+                        v = sig[e][1][1]
+                        if v == "{":
+                            d2 += 1
+                        elif v == "}":
+                            d2 -= 1
+                            if d2 == 0:
+                                break
+                        e += 1
+                    # parameters: split the head at top-level commas
+                    params, cur, dd = [], [], 0
+                    for q in range(k + 1, s - 1):
+                        v = sig[q][1][1]
+                        if v in "([":
+                            dd += 1
+                        elif v in ")]":
+                            dd -= 1
+                        if v == "," and dd == 0:
+                            params.append(cur)
+                            cur = []
+                        else:
+                            cur.append(q)
+                    if cur:
+                        params.append(cur)
+                    decls = []
+                    for pq in params:
+                        ids = [q for q in pq if sig[q][1][0] == "ident"]
+                        if not ids or any(sig[q][1][1] in ("[", "(", "...") for q in pq):
+                            continue
+                        nm = sig[ids[-1]][1][1]
+                        if nm in ("void", "int", "char", "short", "long", "float", "double", "unsigned",
+                                  "signed", "u8", "s8", "u16", "s16", "u32", "s32", "f32", "u64", "s64"):
+                            continue
+                        hit = any(sig[q][1][0] == "ident" and sig[q][1][1] == nm and _param_written(sig, q)
+                                  and not (q + 1 < len(sig) and sig[q + 1][1][1] == "(")
+                                  and not (q >= 1 and sig[q - 1][1][1] in (".", ">"))
+                                  for q in range(s + 1, e))
+                        if hit:
+                            typ = "".join(sig[q][1][1] + " " for q in pq if q != ids[-1])
+                            edits.append((sig[ids[-1]][0], nm + "__arg", None))
+                            decls.append(f"{typ}{nm} = {nm}__arg; ")
+                    if decls:
+                        edits.append((n, None, " " + "".join(decls)))
+            depth += 1
+        elif x[1] == "}":
+            depth -= 1
+        s += 1
+    if not edits:
+        return toks
+    rep = {i: r for i, r, a in edits if r is not None}
+    ins = {i: a for i, r, a in edits if a is not None}
+    out = []
+    for i, x in enumerate(toks):
+        out.append(("ident", rep[i]) if i in rep else x)
+        if i in ins:
+            out.append(("punct", ins[i]))
+    return out
 
 
 def rewrite_next_arg(toks):
@@ -1152,9 +1527,11 @@ class SigRewriter:
             for w, x in zip(iw, a_txt):
                 pools[wclass(w)].append(x)
             new = []
-            for w in cw:
+            for k, w in enumerate(cw):
                 pool = pools[wclass(w)]
-                new.append(pool.pop(0) if pool else "0")
+                if not pool:
+                    _pad_log(self.path, name, len(a_txt), m, [k])
+                new.append(pool.pop(0) if pool else self.regpass(name, k))
             rest = pools["i"] + pools["f"]
             if c.get("variadic"):
                 new += rest
@@ -1169,14 +1546,67 @@ class SigRewriter:
                     if conv and a_txt[q].strip():
                         a_txt[q] = f"{conv}({a_txt[q]})"
             if len(a_txt) < m:
-                a_txt = a_txt + ["0"] * (m - len(a_txt))
+                _pad_log(self.path, name, len(a_txt), m)
+                a_txt = a_txt + [self.regpass(name, k) for k in range(len(a_txt), m)]
             elif len(a_txt) > m and not c.get("variadic"):
                 pre = a_txt[m:]
                 a_txt = a_txt[:m]
         return a_txt, pre
 
+    def regpass(self, name, k):
+        """R12 missing argument k of a call to `name`: the EE passed what the
+        argument register held.  When that is the caller's own parameter
+        (dataflow over the asm, port/tools/r12_regpass.csv) pass it; else 0."""
+        cp = REGPASS.get((self.path, getattr(self, "cur_fn", None), name, k))
+        params = getattr(self, "cur_params", [])
+        ex = REGEXPR.get((self.path, getattr(self, "cur_fn", None), name, k))
+        if ex is not None:
+            ct = self.canon[name]["params"][k]
+            return f"PS2_TO_PTR({ex})" if ct.endswith("*") else f"(({ct})({ex}))"
+        if cp is None:
+            # the decomp idiom `f(a0, a1, a2) { ... a2 = buf; ... g(x, y); }`: the C
+            # assigns the caller's parameter that lives in the register the callee
+            # reads, so the EE passed that variable
+            fc = self.canon.get(getattr(self, "cur_fn", None) or "")
+            if fc:
+                r = _arg_regs(self.canon[name]["params"])[k]
+                fr = _arg_regs(fc["params"])
+                if r in fr:
+                    q = fr.index(r)
+                    if q < len(params) and params[q] in getattr(self, "cur_assigned", ()):
+                        cp = q
+        if cp is None or cp >= len(params) or not params[cp]:
+            return "0"
+        ct = self.canon[name]["params"][k]
+        if ct.endswith("*"):
+            return f"PS2_TO_PTR({params[cp]})"
+        return f"(({ct})({params[cp]}))"
+
     # -- calls and data-declared code addresses
     def rewrite_uses(self, toks, in_pp=False):
+        self._nest = getattr(self, "_nest", 0) + 1
+        try:
+            return self._rewrite_uses(toks, in_pp)
+        finally:
+            self._nest -= 1
+
+    def _head_params(self, stmt):
+        """(function name, parameter names) of a definition head at depth 0."""
+        k = next((n for n, x in enumerate(stmt) if x[1] == "("), None)
+        if k is None or k == 0 or stmt[k - 1][0] != "ident":
+            return None, []
+        e = match_close(stmt, k, "(", ")")
+        names = []
+        for a in split_top(stmt[k + 1:e], ","):
+            ids = [x[1] for x in a if x[0] == "ident"]
+            if ids and ids[-1] not in ("void", "int", "char", "short", "long", "float", "double",
+                                       "unsigned", "signed", "u8", "s8", "u16", "s16", "u32", "s32", "f32"):
+                names.append(ids[-1])
+            elif ids:
+                names.append(None)
+        return stmt[k - 1][1], names
+
+    def _rewrite_uses(self, toks, in_pp=False):
         out = []
         i = 0
         func_void = False
@@ -1191,6 +1621,12 @@ class SigRewriter:
                     words = [x[1] for x in stmt if x[0] == "ident"]
                     w = [x for x in words if x not in ("static", "extern", "inline", "__inline", "__inline__")]
                     func_void = bool(w) and w[0] == "void" and not any(x[1] == "*" for x in stmt[:3])
+                    if self._nest == 1:
+                        self.cur_fn, self.cur_params = self._head_params(stmt)
+                        e = match_close(toks, i, "{", "}")
+                        body = [x for x in toks[i:e] if x[0] not in ("ws", "comment")]
+                        self.cur_assigned = {body[q][1] for q in range(len(body) - 1)
+                                             if body[q][0] == "ident" and body[q + 1][1] == "="}
                 if t[1] in "{};":
                     stmt = []
                 br.punct(t[1])
@@ -1270,6 +1706,11 @@ class SigRewriter:
         lines = [f"#define PS2_CALL_{n} {n}" for n in sorted(self.callee_args - self.macro_callees)]
         for n in sorted(self.macro_callees):
             imp = self.imports.get(n)
+            c = self.canon.get(n, {})
+            if imp is None and "widened" in c:  # R20: the TU passes the old count
+                pad = ", ".join("0" for _ in c["params"][c["widened"]:])
+                lines.append(f"#define PS2_CALL_{n}(...) {n}(__VA_ARGS__, {pad})")
+                continue
             if imp is None:
                 lines.append(f"#define PS2_CALL_{n} {n}")
                 continue
@@ -1430,6 +1871,17 @@ def configure(sigs_path=None):
     import os
     sigs_path = sigs_path or os.environ.get("MVC2_HOST_SIGS")
     SIGS = json.load(open(sigs_path)) if sigs_path else None
+    if SIGS is not None:
+        import link_catalog as L
+        L.apply_host_sig_overrides(SIGS["canon"])
+        # every declaration of an overridden function must take the new type
+        over = [n for n, r in L.host_impl().items() if (r.get("ret") or "").strip()]
+        wid = [n for n, c in SIGS["canon"].items() if "widened" in c]
+        SIGS["rewrite"] = sorted(set(SIGS["rewrite"]) | set(over) | set(wid))
+        for n in over:  # callers that use the value now get it (no (f(), 0) wrap)
+            for v in SIGS["wrap"].values():
+                if n in v:
+                    v.remove(n)
 
 
 def transform(text, path="?"):
@@ -1440,6 +1892,9 @@ def transform(text, path="?"):
     toks = rewrite_asm(toks)
     toks = rewrite_long(toks)
     toks = rewrite_next_arg(toks)
+    toks = rewrite_uncached(toks)  # R21
+    if path.endswith(".c"):
+        toks = widen_definitions(toks, path)  # R20
     statics = set(static_defs(toks)) if path.endswith(".c") else set()
     sr = None
     if SIGS is not None:
@@ -1458,6 +1913,7 @@ def transform(text, path="?"):
         toks = [("ident", t[1] + "__hs") if t[0] == "ident" and t[1] in statics else t
                 for t in toks]
     toks = [("pp", rewrite_pp(t[1], statics)) if t[0] == "pp" else t for t in toks]
+    toks = copy_written_params(toks)  # R19
     head = [f'extern void ps2_alias_{n}(void) __asm__("{n}");' for n in sorted(aliases)]
     if sr is not None:
         head = sr.prelude(toks) + head
@@ -1465,10 +1921,32 @@ def transform(text, path="?"):
             hd = header_declared()
             head = [f"#define PS2_DEF_{n} 1" for n in sorted(defined_names(toks))
                     if n in hd and n in sr.R] + head
+    lay_pre, lay_tail = data_layout(toks, path) if path.endswith(".c") else ("", "")
+    # R17 only in the real build: the raw build (no SIGS) must see the original
+    # definitions, it is where host_sigs.json learns the canonical prototypes
+    weak = host_replaced(toks, path) if path.endswith(".c") and SIGS is not None else []
+    # a replacement whose return type differs (host_impl.csv `ret`) cannot be
+    # a weak twin on wasm (signature mismatch): the original is renamed
+    import link_catalog as L
+    renamed = [n for n in weak if (L.host_impl()[n].get("ret") or "").strip()]
+    weak = [n for n in weak if n not in renamed]
+    head = [f"#pragma weak {n}" for n in weak] + head
+    pre_ren = "".join(f"#define {n} {n}__game\n" for n in renamed)
     pre = "\n".join(head) + "\n" if head else ""
     tail = alias_tail(toks, path, statics) if path.endswith(".c") else ""
+    if weak:  # R17: the original stays callable as name__game
+        tail += "\n/* host R17: replaced by port/host (port/host/host_impl.csv) */\n" + "".join(
+            f'extern __typeof__({n}) {n}__game __attribute__((alias("{n}")));\n' for n in weak)
     pre += null_tail(toks) if path.endswith(".c") else ""
-    return pre + f'#line 1 "{path}"\n' + text_of(toks) + tail
+    if lay_pre:
+        toks = section_units(toks, path)
+    body = text_of(toks)
+    if lay_pre:  # R18: an explicit data section in a layout TU would escape the layout
+        sec = lay_pre.split()[-2]
+        a = int(sec.split("_")[1].split(".")[0], 16)
+        al = min(a & -a, 16) if a else 16
+        body = re.sub(r'section\(\s*"\.s?(?:data|bss|rodata)[^"]*"\s*\)', f'section("{sec}"), aligned({al})', body)
+    return lay_pre + pre + pre_ren + f'#line 1 "{path}"\n' + body + tail + lay_tail
 
 
 if __name__ == "__main__":

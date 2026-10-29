@@ -645,6 +645,70 @@ FlModel *fl_model_load(const uint8_t *data, size_t size, const FlModelLoad *ld)
     return mdl;
 }
 
+/* ---------------- Port J: meshes built per game "clay" handle ----------------
+ * The game builds its meshes itself (func_00415590 -> func_003F2A50 ->
+ * func_003F2B70 -> func_003EE6F0, one clay handle per POL mesh chunk) and
+ * draws them one by one (func_003F0500).  These keep one GL mesh per clay
+ * handle, built from the same POL mesh chunk with the format word current
+ * at build time, and draw it with the current render state. */
+#define MAX_CLAY 0x402
+static FlModel CLAY;
+
+static void clay_free(int h)
+{
+    MMesh *me = &CLAY.mesh[h];
+    if (me->vao) glDeleteVertexArrays(1, &me->vao);
+    if (me->vbo) glDeleteBuffers(1, &me->vbo);
+    if (me->ibo) glDeleteBuffers(1, &me->ibo);
+    free(me->range);
+    memset(me, 0, sizeof *me);
+    me->desc = -1;
+}
+
+int fl_clay_build(int h, const uint8_t *chunk, size_t avail, uint32_t draw_flags)
+{
+    Pol P = { chunk, avail };
+    if (!M.ok || h <= 0 || h >= MAX_CLAY || !chunk) return 0;
+    if (!CLAY.mesh) {
+        CLAY.mesh = (MMesh *)calloc(MAX_CLAY, sizeof *CLAY.mesh);
+        CLAY.nmesh = MAX_CLAY;
+    }
+    r_flush();
+    clay_free(h);
+    CLAY.mesh[h].flags = draw_flags;
+    build_mesh(&CLAY, h, &P, 0);
+    return CLAY.mesh[h].desc >= 0;
+}
+
+/* the material texture handles a clay's ranges draw with (to sync them) */
+int fl_clay_textures(int h, uint32_t *out, int max)
+{
+    int n = 0;
+    if (!CLAY.mesh || h <= 0 || h >= MAX_CLAY || CLAY.mesh[h].desc < 0) return 0;
+    for (int r = 0; r < CLAY.mesh[h].nrange && n < max; r++)
+        if (CLAY.mesh[h].range[r].tex) out[n++] = CLAY.mesh[h].range[r].tex;
+    return n;
+}
+
+uint32_t fl_clay_fmt(int h)
+{
+    return (CLAY.mesh && h > 0 && h < MAX_CLAY) ? CLAY.mesh[h].fmt : 0;
+}
+
+int fl_clay_draw(int h)
+{
+    if (!CLAY.mesh || h <= 0 || h >= MAX_CLAY || CLAY.mesh[h].desc < 0) return 0;
+    return fl_mesh_draw(&CLAY, h);
+}
+
+void fl_clay_release(int h)
+{
+    if (CLAY.mesh && h > 0 && h < MAX_CLAY) {
+        r_flush();
+        clay_free(h);
+    }
+}
+
 void fl_model_destroy(FlModel *m)
 {
     if (!m) return;
