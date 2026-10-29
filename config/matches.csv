@@ -20111,3 +20111,5 @@ func_0014D7A0,0x0014D7A0,0x170,src/r12_03_a.c,complete
 func_0014A8B0,0x0014A8B0,0x144,src/r12_03_b.c,complete
 func_003EBF30,0x003EBF30,0x230,src/r12_08_a.c,complete
 func_003DB020,0x003DB020,0x75C,src/r12_08_a.c,complete
+func_00418CC0,0x00418CC0,0xA8,src/r12_13_a.c,complete
+func_00415590,0x00415590,0x46C,src/r12_13_b.c,complete
