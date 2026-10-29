@@ -20164,3 +20164,4 @@ func_0012D6B0,0x0012D6B0,0x178,src/r15_00_a.c,complete
 func_00188860,0x00188860,0x40C,src/r16_00_a.c,complete
 func_001E5870,0x001E5870,0x108,src/r16_01_a.c,complete
 func_0014BDA0,0x0014BDA0,0x28C,src/r16_03_a.c,complete
+func_003F59C0,0x003F59C0,0x23C,src/r16_02_a.c,complete
