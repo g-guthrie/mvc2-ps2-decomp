@@ -24224,4 +24224,13 @@ mkdir -p "build/warm/r13_06_c" && MWCIncludes=$(dirname "$MWCCPS2_30") "$WIBO" "
     mv "build/warm/r13_06_c/r13_06_c.o" "$BUILD/r13_06_c.o"
 "$PYTHON" tools/verify_object.py "$BUILD/r13_06_c.o" private/SLUS_204.86.rom --source src/r13_06_c.c
 
+"$WIBO" "$SNCPP" -P src/r13_09_a.c "$BUILD/r13_09_a.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/r13_09_a.i" "$BUILD/r13_09_a.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r13_09_a.o" "$BUILD/r13_09_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r13_09_a.o" private/SLUS_204.86.rom --source src/r13_09_a.c
+mkdir -p "build/warm/r13_04_b" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
+    src/motion_state_callbacks.c src/r13_04_b.c -c -lang c -i src -O3 -Op -fp off -sdatathreshold 8 -o "build/warm/r13_04_b" && \
+    mv "build/warm/r13_04_b/r13_04_b.o" "$BUILD/r13_04_b.o"
+"$PYTHON" tools/verify_object.py "$BUILD/r13_04_b.o" private/SLUS_204.86.rom --source src/r13_04_b.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
