@@ -20124,3 +20124,5 @@ func_00106450,0x00106450,0x128,src/r12_00_c.c,complete
 func_003F6510,0x003F6510,0x38C,src/r12_11_a.c,complete
 func_0036C380,0x0036C380,0x190,src/r12_06_a.c,complete
 func_0036C2A0,0x0036C2A0,0xE0,src/r12_06_b.c,complete
+func_003D63B0,0x003D63B0,0x178,src/r12_07_a.c,complete
+func_0038AA30,0x0038AA30,0x8B0,src/r12_07_c.c,complete
