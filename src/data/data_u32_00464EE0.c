@@ -1,3 +1,4 @@
+/* Placeholder: no code or data reads these bytes, so their type is unknown. */
 typedef unsigned int u32;
 u32 data_u32_00464EE0[3] = {
     0x41700000u, 0x41F00000u, 0xC1F00000u,
