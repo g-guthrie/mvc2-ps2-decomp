@@ -24178,4 +24178,9 @@ MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MWCCPS2" \
 "$WIBO" "$SNAS" -G0 -o "$BUILD/r12_00_c.o" "$BUILD/r12_00_c.s"
 "$PYTHON" tools/verify_object.py "$BUILD/r12_00_c.o" private/SLUS_204.86.rom --source src/r12_00_c.c
 
+"$WIBO" "$SNCPP" -P src/r12_11_a.c "$BUILD/r12_11_a.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/r12_11_a.i" "$BUILD/r12_11_a.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r12_11_a.o" "$BUILD/r12_11_a.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r12_11_a.o" private/SLUS_204.86.rom --source src/r12_11_a.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh
