@@ -38,6 +38,7 @@ The host build turns each of them into an explicit platform-layer hook.
   macro: `func_001048B0` (COP0 Status read, `src/k2s.c`), `func_0010CA68`
   (`src/k5h.c`) and `func_0010CA20` (`src/s0h.c`). Hostify R6 drops them, and
   `port/tools/host_link_check.py` reports them as "no global definition".
+  The host link supplies them in `port/stubs/ps2_kernel.c` (LINK_NOTES.md).
 - There are 238 inline-asm statement sites in 26 files, which become
   `ps2_asm_stmt(file, line, tmpl)` calls:
   - 156 sit in `src/grok_tiny_leaves.c`, mostly `addiu v1,r0,N; syscall`
@@ -49,9 +50,8 @@ The host build turns each of them into an explicit platform-layer hook.
 - 10 files walk the EE varargs register save area by hand with
   `__builtin_next_arg` or `__builtin_args_info`, for example `k5b.c`, `p3.c`,
   `nq32_b.c`, `sdk_format_message_003f5540.c` and
-  `sony29_varargs_handler_00105E80.c`. They compile, but they leave an undefined
-  `__builtin_next_arg`. Each one needs a host version that uses `va_list`
-  (these are printf-style SDK and debug helpers).
+  `sony29_varargs_handler_00105E80.c`. hostify R15 turns the walk into a host
+  `va_start` (`PS2_VA_START_HERE`); see HOST_BUILD_ISSUES.md.
 
 ## Functions with no honest C
 

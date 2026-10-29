@@ -45,6 +45,32 @@ Rewrites (evidence in port/docs/HOST_BUILD_ISSUES.md):
                 (static copies elsewhere stay private as name__hs).
   R10 override  per-file exact replacements in host_overrides.py for the few
                 constructs no rule can carry (each one documented there).
+  R11 alias     the TU that owns a credited data unit also defines every
+                catalog name (symbol_addrs) that falls inside the unit, as a
+                weak `unit + offset` alias (file-scope `.set`; wasm32 has no
+                cross-object symbol+offset, so the alias must live in the
+                unit's own object).  The TU that owns a credited function
+                defines the function's other catalog names as weak
+                `__attribute__((alias))`es.  Host runtime names (memcpy,
+                __udivdi3, ...) and names the TU itself mentions are skipped.
+  R15 varargs   the EE varargs walkers rebuild a pointer into the EE register
+                save area by hand: `[(T *)]__builtin_next_arg(last) - K`.
+                That whole expression becomes PS2_VA_START_HERE(last), a host
+                va_start whose va_list (a plain pointer on i386 and wasm32)
+                the game's own vfprintf reads with __builtin_va_arg.
+  R12 sigs      (needs host_sigs.json, see configure()) one canonical
+                prototype per function whose callers disagree with its
+                definition: declarations replaced, calls given the callee's
+                arity and argument classes (EE EABI: floats and ints are
+                assigned to registers independently), void calls used as
+                values become (f(), 0).
+  R13 codeaddr  code addresses declared as data become ps2_code_F, an
+                asm-label alias of the function.
+  R14 return    `return 0;` where a non-void function falls off the end or
+                says `return;` (sites from the raw build's diagnostics).
+  R16 null      a symbol whose catalog address is 0 (func_00000000 in a
+                callback table) is declared weak, so it stays undefined and
+                its address is NULL on the host, as on the PS2.
 """
 import re
 import sys
@@ -496,8 +522,9 @@ def looks_like_type(ret, typenames):
         any(t[1] in CTYPES or t[1] in typenames for t in ret)
 
 
-def rewrite_block_externs(toks):
-    """R7."""
+def rewrite_block_externs(toks, statics=()):
+    """R7.  Names with a file-scope static definition are skipped: a
+    block-scope extern after it refers to the static (internal linkage)."""
     typenames = set(re.findall(r"\b([us](?:8|16|32|64|128)|f32|f64)\b", text_of(toks)))
     typenames |= set(re.findall(r"typedef[^;]*?\b(\w+)\s*(?:\[[^;]*\])?;", text_of(toks)))
     decls = []   # (start, end, depth, path, ret, name, args, storage)
@@ -542,11 +569,12 @@ def rewrite_block_externs(toks):
         return any(x[0] != y[0] and paths_compatible(x[1], y[1])
                    for i, x in enumerate(lst) for y in lst[i + 1:])
     # a #define'd name is not a symbol: an asm-label alias to it would be wrong
-    conflicted = {n for n, s in sigs.items() if n in blocks and n not in macros and conflict(s)}
+    conflicted = {n for n, s in sigs.items() if n in blocks and n not in macros and conflict(s)
+                  and n not in statics}
     # implicit declaration (use before any declaration) + later block extern
     for k, t in enumerate(toks):
         if t[0] == "ident" and t[1] in blocks and t[1] not in file_level \
-                and t[1] not in macros and k < first_decl[t[1]]:
+                and t[1] not in macros and t[1] not in statics and k < first_decl[t[1]]:
             conflicted.add(t[1])
     if not conflicted:
         return toks, set()
@@ -556,12 +584,12 @@ def rewrite_block_externs(toks):
         if dep > 0 and name in conflicted:
             r = join(ret)
             ar = join(args)
-            nl = text_of(toks[a:b + 1]).count("\n")
-            rep = (f"{r} (*const {name})({ar}) = ({r} (*)({ar}))ps2_alias_{name};"
-                   f" /* host R7 */" + "\n" * nl)
             lead = 0
             while toks[a + lead][0] in ("ws", "comment"):
                 lead += 1
+            nl = text_of(toks[a + lead:b + 1]).count("\n")   # keep line numbers
+            rep = (f"{r} (*const {name})({ar}) = ({r} (*)({ar}))ps2_alias_{name};"
+                   f" /* host R7 */" + "\n" * nl)
             out[a + lead:b + 1] = [("punct", rep)]
             aliases.add(name)
     return out, aliases
@@ -691,14 +719,736 @@ def apply_overrides(text, path):
     return text
 
 
+def defined_names(toks):
+    """Names a TU defines at file scope (variables without `extern`, and
+    function definitions).  Struct members and initializers are skipped."""
+    out = set()
+    br = Braces()
+    stmt = []
+    infunc = False
+
+    def declarators(stmt):
+        words = [x[1] for x in stmt if x[0] == "ident"]
+        if not words or "typedef" in words or "extern" in words:
+            return ()
+        chunk, depth = [], 0
+        for x in stmt:
+            if x[1] in "([":
+                depth += 1
+            elif x[1] in ")]":
+                depth -= 1
+            if x[1] == "=" and depth == 0:
+                break
+            chunk.append(x)
+        # a name directly followed by '(' is a function declarator (a
+        # prototype, not a definition)
+        return [x[1] for k, x in enumerate(chunk) if x[0] == "ident"
+                and not (k + 1 < len(chunk) and chunk[k + 1][1] == "(")]
+
+    for t in toks:
+        if t[0] == "pp":
+            br.pp(t[1])
+            continue
+        if t[0] in ("ws", "comment"):
+            continue
+        if t[0] == "punct" and t[1] in "{}":
+            if t[1] == "{" and br.depth == 0:
+                sig = [x for x in stmt]
+                top_eq = any(x[1] == "=" for x in sig)
+                if not top_eq and sig and (sig[-1][1] == ")" or sig[-1][1] == ";"):
+                    for k in range(len(sig) - 1):   # function definition
+                        if sig[k][0] == "ident" and sig[k + 1][1] == "(":
+                            out.add(sig[k][1])
+                            break
+                    infunc = True
+            br.punct(t[1])
+            if br.depth == 0 and t[1] == "}" and infunc:
+                infunc = False
+                stmt = []
+            continue
+        if br.depth != 0:
+            continue
+        if t[1] == ";":
+            out.update(declarators(stmt))
+            stmt = []
+            continue
+        stmt.append(t)
+    return out
+
+
+def alias_tail(toks, path, statics):
+    """R11: weak aliases for catalog names inside this TU's data units and
+    for other names of the functions this TU is credited for."""
+    import link_catalog as L
+    ids = {t[1] for t in toks if t[0] == "ident"}
+    defs = defined_names(toks)
+    host = L.host_runtime_names()
+    unit_names = {u[2] for u in L.data_units()}
+    lines = []
+    for u in L.units_by_source().get(path, ()):
+        base = u[2] + "__hs" if u[2] in statics else u[2]
+        if base not in defs:
+            continue
+        for name, off, size in L.unit_aliases().get(u[2], ()):
+            if name in defs or name in host or name in unit_names:
+                continue
+            lines.append(f"PS2_DATA_ALIAS({name}, {base}, {off:#x}, {size:#x})")
+    for f in owned_functions(path):
+        if f not in ids:
+            continue
+        for alt in L.text_alt_names().get(f, ()):
+            if alt in ids or alt in host:
+                continue
+            lines.append(f"PS2_TEXT_ALIAS({alt}, {f})")
+    if not lines:
+        return ""
+    return "\n/* host R11: catalog aliases (port/tools/link_catalog.py) */\n" + "\n".join(lines) + "\n"
+
+
+_OWNED = None
+
+
+def owned_functions(path):
+    """credited (`complete`, C) functions whose source is `path`."""
+    global _OWNED
+    if _OWNED is None:
+        _OWNED = {}
+        for n, r in owners_rows().items():
+            if r["status"] == "complete" and r["source"].endswith(".c"):
+                _OWNED.setdefault(r["source"], []).append(n)
+    return _OWNED.get(path, ())
+
+
+def owners_rows():
+    import link_catalog as L
+    return L.matches()
+
+
+def rewrite_next_arg(toks):
+    """R15."""
+    out = []
+    i = 0
+    while i < len(toks):
+        t = toks[i]
+        if t[0] == "ident" and t[1] == "__builtin_next_arg":
+            j = sig_next(toks, i)
+            if j < len(toks) and toks[j][1] == "(":
+                e = match_close(toks, j, "(", ")")
+                arg = text_of(toks[j + 1:e]).strip()
+                k = sig_next(toks, e)
+                if k < len(toks) and toks[k][1] == "-":
+                    m = sig_next(toks, k)
+                    if m < len(toks) and toks[m][0] == "number":
+                        e = m
+                    elif m < len(toks) and toks[m][1] == "(":
+                        e = match_close(toks, m, "(", ")")
+                nl = text_of(toks[i:e + 1]).count("\n")
+                out.append(("punct", f"PS2_VA_START_HERE({arg}) /* host R15 */" + "\n" * nl))
+                i = e + 1
+                continue
+        out.append(t)
+        i += 1
+    return out
+
+
+def null_tail(toks):
+    """R16."""
+    import link_catalog as L
+    names = sorted({t[1] for t in toks if t[0] == "ident" and t[1].startswith(("func_", "D_"))
+                    and L.ADDR_SUFFIX.search(t[1]) and L.address_of(t[1]) == 0})
+    if not names:
+        return ""
+    return "/* host R16: address 0 on the PS2 -> weak, NULL on the host */\n" + \
+        "".join(f"#pragma weak {n}\n" for n in names)
+
+
+# ---------------------------------------------------------------- R12-R14
+SPEC_WORDS = {"extern", "static", "inline", "__inline", "__inline__", "const", "volatile",
+              "register", "unsigned", "signed", "struct", "union", "enum", "void", "char",
+              "short", "int", "long", "float", "double", "_Bool", "long long"}
+NOT_SPEC = {"return", "goto", "case", "else", "do", "if", "while", "for", "switch", "sizeof",
+            "typedef", "default", "break", "continue"}
+
+
+def proto_text(name, c, label=None):
+    ps = list(c["params"])
+    if c.get("variadic"):
+        ptxt = ", ".join(ps + ["..."]) if ps else "..."
+    else:
+        ptxt = ", ".join(ps) or "void"
+    asm = f' __asm__("{label}")' if label else ""
+    return f"extern {c['ret']} {name}({ptxt}){asm};"
+
+
+def decl_parts(seg):
+    """Split a declaration statement (tokens before ';') into
+    (spec_tokens, [declarator token lists]) or None if it is not a plain
+    declaration.  Declarators keep their own leading '*'s."""
+    sig = [t for t in seg if t[0] not in ("ws", "comment")]
+    if not sig or sig[0][0] != "ident" or sig[0][1] in NOT_SPEC:
+        return None
+    depth = 0
+    for t in sig:
+        if t[1] in "([{":
+            depth += 1
+        elif t[1] in ")]}":
+            depth -= 1
+        elif depth == 0 and t[1] == "=":
+            return None
+        if t[1] in ("__attribute__", "__asm__", "asm", "typedef"):
+            return None
+    parts = split_top(sig, ",")
+    first = parts[0]
+    # specifiers: leading idents (keywords, typedef names, tags), then the
+    # first declarator starts at the last ident before '(' / '[' / end,
+    # including the '*'s before it.
+    k = 0
+    while k < len(first) and first[k][0] == "ident":
+        k += 1
+    # first[:k] are idents; the declarator name is the last of them unless
+    # '*' or '(' follows
+    if k < len(first) and first[k][1] == "*":
+        spec = first[:k]
+        decl0 = first[k:]
+    else:
+        if k == 0:
+            return None
+        spec = first[:k - 1]
+        decl0 = first[k - 1:]
+    if not spec:
+        return None
+    return spec, [decl0] + parts[1:]
+
+
+def declarator_name(d):
+    """(name, kind) of a simple declarator: kind 'func' for `*NAME(...)`,
+    'array' for `*NAME[...]`, 'object' for `*NAME`; None otherwise."""
+    j = 0
+    while j < len(d) and d[j][1] == "*":
+        j += 1
+    if j >= len(d) or d[j][0] != "ident":
+        return None
+    name = d[j][1]
+    rest = d[j + 1:]
+    if not rest:
+        return name, "object", d[:j]
+    if rest[0][1] == "(" and match_close(rest, 0, "(", ")") == len(rest) - 1:
+        return name, "func", d[:j]
+    if rest[0][1] == "[" and all(t[1] != "(" for t in rest):
+        return name, "array", d[:j]
+    return None
+
+
+def wclass(w):
+    """MIPS EE EABI argument class: f32 travels in $f12-$f19, everything else
+    (ints, pointers, 64-bit ints, soft-float doubles) in $a0-$a7/$t0-$t3."""
+    return "f" if w == "f32" else "i"
+
+
+def pp_head_split(text):
+    """('#define NAME(params)', params, body) of a #define line."""
+    m = re.match(r"(#\s*define\s+\w+)(\(([^)]*)\))?", text)
+    if not m:
+        return text, None, ""
+    params = [x.strip() for x in m.group(3).split(",")] if m.group(2) else None
+    return text[:m.end()], params, text[m.end():]
+
+
+class SigRewriter:
+    """R12 (canonical prototypes, call arguments, void-call values) and R13
+    (code addresses declared as data) for one TU or header."""
+
+    def __init__(self, path, skip, macros, toks):
+        self.path = path
+        self.is_header = path.endswith(".h")
+        self.canon = SIGS["canon"]
+        self.skip = set(skip) | set(SIGS.get("defines", {}).get(path, ())) | macros
+        self.wrap = set(SIGS["wrap"].get(path, ()))
+        self.imports = SIGS.get("imports", {}).get(path, {})
+        self.dcode = {n: f for n, f in SIGS["data_code"].get(path, {}).items() if n not in self.skip}
+        self.code_repl = {}     # data name -> (elem type text, kind, function)
+        self.used_code = set()
+        self.removed = set()
+        self.mentioned = set()
+        self.R = _rewrite_set()
+        self.alias = {a: n for a, n in alias_macros(toks).items()
+                      if n in self.canon and n not in self.skip}
+        r7 = rewrite_block_externs(toks, skip)[1]
+        self.R = self.R | {n for n in r7 if n in self.canon}
+        self.callee_macros = {}   # macro -> (params, {called param index})
+        self.macro_callees = set()
+        self.callee_args = set()
+        self.find_callee_macros(toks)
+        self.R = self.R | self.macro_callees
+
+    def target(self, n):
+        n = self.alias.get(n, n)
+        return n in self.R and n in self.canon and n not in self.skip
+
+    # -- function-like macros that call one of their parameters
+    def find_callee_macros(self, toks):
+        cand = {}
+        for t in toks:
+            if t[0] != "pp":
+                continue
+            head, params, body = pp_head_split(t[1])
+            if not params:
+                continue
+            b = [x for x in lex(body, pp=False) if x[0] not in ("ws", "comment")]
+            inside, outside = set(), set()
+            depth = 0
+            for k, x in enumerate(b):
+                if x[1] == "{":
+                    depth += 1
+                elif x[1] == "}":
+                    depth -= 1
+                if x[0] == "ident" and x[1] in params and k + 1 < len(b) and b[k + 1][1] == "(":
+                    e = match_close(b, k + 1, "(", ")")
+                    if e + 1 < len(b) and b[e + 1][1] == "{":
+                        continue                     # defines the function
+                    (inside if depth > 0 else outside).add(params.index(x[1]))
+            if inside or outside:
+                m = re.match(r"#\s*define\s+(\w+)", t[1])
+                cand[m.group(1)] = (params, inside, outside)
+        if not cand:
+            return
+        # a call at the macro body's top level is a call only where the
+        # macro is used inside a function (`_DEFUN(name, ...)` at file scope
+        # is a definition head)
+        br = Braces()
+        sig = []
+        for x in toks:
+            if x[0] == "pp":
+                br.pp(x[1])
+                continue
+            if x[0] == "punct":
+                br.punct(x[1])
+            if x[0] not in ("ws", "comment"):
+                sig.append((x, br.depth))
+        uses = []
+        for k, (x, d) in enumerate(sig):
+            if x[0] == "ident" and x[1] in cand and k + 1 < len(sig) and sig[k + 1][0][1] == "(":
+                uses.append((k, x[1], d))
+        for k, m, d in uses:
+            params, inside, outside = cand[m]
+            if d == 0 and not inside:
+                continue
+            called = inside | (outside if d > 0 else set())
+            self.callee_macros.setdefault(m, (params, set()))[1].update(called)
+            toks_only = [y for y, _ in sig]
+            e = match_close(toks_only, k + 1, "(", ")")
+            args = split_top(toks_only[k + 2:e], ",")
+            for q in called:
+                if q < len(args) and len(args[q]) == 1 and args[q][0][0] == "ident":
+                    n = args[q][0][1]
+                    self.callee_args.add(n)
+                    if n in self.canon and n not in self.skip:
+                        self.macro_callees.add(n)
+        # a macro whose top-level parameter call is only ever a definition
+        # head keeps its body unchanged
+        for m in list(self.callee_macros):
+            if not self.callee_macros[m][1]:
+                del self.callee_macros[m]
+
+    # -- declarations
+    def rewrite_decls(self, toks, in_pp=False, params=()):
+        out = list(toks)
+        br = Braces()
+        stmt_start = 0
+        edits = []
+        for k, t in enumerate(toks):
+            if t[0] == "pp":
+                br.pp(t[1])
+                stmt_start = k + 1
+                continue
+            if t[0] != "punct" or t[1] not in "{};":
+                continue
+            if t[1] == ";":
+                seg = toks[stmt_start:k]
+                e = self.decl_edit(seg, params)
+                if e is not None:
+                    edits.append((stmt_start, k, e))
+            br.punct(t[1])
+            stmt_start = k + 1
+        for a, b, rep in reversed(edits):
+            lead = 0
+            while toks[a + lead][0] in ("ws", "comment"):
+                lead += 1
+            nl = text_of(toks[a + lead:b + 1]).count("\n")
+            if in_pp:
+                rep = rep.replace("\n", " ")
+            # keep a real ';' token so later passes (R7) still see the
+            # statement boundary
+            body = rep.rstrip()
+            nlt = ("ws", ("\\\n" if in_pp else "\n") * nl)
+            if body.endswith("#endif"):
+                out[a + lead:b + 1] = [("punct", body + "\n"), nlt]
+                continue
+            if body.endswith(";"):
+                body = body[:-1]
+            out[a + lead:b + 1] = [("punct", body), ("punct", ";"), nlt]
+        return out
+
+    def decl_edit(self, seg, params=()):
+        dp = decl_parts(seg)
+        if not dp:
+            return None
+        spec, decls = dp
+        keep, changed, header_canon = [], False, []
+        for d in decls:
+            dn = declarator_name([t for t in d if t[0] not in ("ws", "comment")])
+            if dn is None:
+                keep.append(d)
+                continue
+            name, kind, stars = dn
+            if kind == "func" and name in params:
+                changed = True       # a called macro parameter: the caller's prototype goes
+                continue
+            if kind == "func" and self.target(name):
+                changed = True
+                name = self.alias.get(name, name)
+                self.removed.add(name)
+                header_canon.append(name)
+                sw = [t[1] for t in spec if t[1] not in ("extern", "static", "inline", "const")]
+                if (sw != ["void"] or stars) and self.canon[name]["ret"] == "void":
+                    self.wrap.add(name)
+                continue
+            if kind in ("array", "object") and name in self.dcode and not self.is_header:
+                f = self.dcode[name]
+                elem = " ".join(t[1] for t in spec if t[1] not in ("extern", "static")) + \
+                    " " + "".join("*" for _ in stars)
+                self.code_repl[name] = (elem.strip(), kind, f)
+                changed = True
+                continue
+            keep.append(d)
+        if not changed:
+            return None
+        rep = ""
+        if keep:
+            rep = " ".join(t[1] for t in spec) + " " + ", ".join(text_of(d).strip() for d in keep) + ";"
+        if self.is_header and header_canon:
+            orig = text_of(seg).strip() + ";"
+            for n in header_canon:
+                rep += (f"\n#ifndef PS2_DEF_{n}\n{proto_text(n, self.canon[n])}"
+                        f" /* host R12 */\n#else\n{orig}\n#endif\n")
+            return rep
+        return (rep + " /* host R12/R13 */") if rep else "/* host R12/R13: declaration replaced */"
+
+    # -- arguments of one call
+    def call_args(self, name, a_txt):
+        c = self.canon[name]
+        cw, _ = _parse_wsig(c["wasm"])
+        m = len(c["params"])
+        cw = cw[:m]
+        pre = []
+        imp = self.imports.get(name)
+        iw = _parse_wsig(imp)[0] if imp else None
+        if iw is not None and len(iw) == len(a_txt) and \
+                [wclass(x) for x in iw[:m]] != [wclass(x) for x in cw]:
+            # caller and callee disagree on which arguments are floats: pass
+            # them as the EE did, ints in order to int parameters, floats in
+            # order to float parameters
+            pools = {"i": [], "f": []}
+            for w, x in zip(iw, a_txt):
+                pools[wclass(w)].append(x)
+            new = []
+            for w in cw:
+                pool = pools[wclass(w)]
+                new.append(pool.pop(0) if pool else "0")
+            rest = pools["i"] + pools["f"]
+            if c.get("variadic"):
+                new += rest
+            else:
+                pre = rest
+            a_txt = new
+        else:
+            if name in self.imports:
+                for q, ct in enumerate(c["params"][:len(a_txt)]):
+                    conv = ("PS2_TO_PTR" if ct.endswith("*") else "PS2_TO_F32" if ct == "float"
+                            else "PS2_TO_F64" if ct == "double" else None)
+                    if conv and a_txt[q].strip():
+                        a_txt[q] = f"{conv}({a_txt[q]})"
+            if len(a_txt) < m:
+                a_txt = a_txt + ["0"] * (m - len(a_txt))
+            elif len(a_txt) > m and not c.get("variadic"):
+                pre = a_txt[m:]
+                a_txt = a_txt[:m]
+        return a_txt, pre
+
+    # -- calls and data-declared code addresses
+    def rewrite_uses(self, toks, in_pp=False):
+        out = []
+        i = 0
+        func_void = False
+        br = Braces()
+        stmt = []
+        while i < len(toks):
+            t = toks[i]
+            if t[0] == "pp":
+                br.pp(t[1])
+            elif t[0] == "punct":
+                if t[1] == "{" and br.depth == 0:
+                    words = [x[1] for x in stmt if x[0] == "ident"]
+                    w = [x for x in words if x not in ("static", "extern", "inline", "__inline", "__inline__")]
+                    func_void = bool(w) and w[0] == "void" and not any(x[1] == "*" for x in stmt[:3])
+                if t[1] in "{};":
+                    stmt = []
+                br.punct(t[1])
+            if t[0] not in ("ws", "comment", "pp") and br.depth == 0:
+                stmt.append(t)
+            if t[0] == "ident" and t[1] in self.code_repl:
+                p = sig_prev(out, len(out))
+                elem, kind, f = self.code_repl[t[1]]
+                self.used_code.add(f)
+                fp = f"ps2_code_{f}"
+                if p >= 0 and out[p][1] == "&":
+                    out[p] = ("punct", f"((void *){fp})")
+                    i += 1
+                    continue
+                if kind == "array":
+                    out.append(("punct", f"(({elem} *)(void *){fp})"))
+                else:
+                    out.append(("punct", f"(*({elem} *)(void *){fp})"))
+                i += 1
+                continue
+            if t[0] == "ident" and self.target(t[1]):
+                if t[1] in self.alias:
+                    t = ("ident", self.alias[t[1]])
+                self.mentioned.add(t[1])
+                j = sig_next(toks, i)
+                p = sig_prev(toks, i)
+                if j < len(toks) and toks[j][1] == "(" and not (p >= 0 and toks[p][1] in (".", "->")):
+                    e = match_close(toks, j, "(", ")")
+                    inner = toks[j + 1:e]
+                    args = split_top(inner, ",")
+                    if len(args) == 1 and not text_of(args[0]).strip():
+                        args = []
+                    inner_new = self.rewrite_uses(inner, in_pp)
+                    args_new = split_top(inner_new, ",") if args else []
+                    c = self.canon[t[1]]
+                    a_txt, pre = self.call_args(t[1], [text_of(a) for a in args_new])
+                    pre_txt = "".join(f"(void)({x}), " for x in pre)
+                    call = f"{t[1]}({','.join(a_txt)})"
+                    nl = text_of(toks[i:e + 1]).count("\n")
+                    prev_ret = p >= 0 and toks[p][1] == "return"
+                    need_val = t[1] in self.wrap and c["ret"] == "void" and not (prev_ret and func_void)
+                    if need_val:
+                        call = f"({pre_txt}{call}, 0)"
+                    elif pre_txt:
+                        call = f"({pre_txt}{call})"
+                    out.append(("punct", call + ("\\\n" if in_pp else "\n") * nl))
+                    i = e + 1
+                    continue
+            out.append(t)
+            i += 1
+        return out
+
+    def rewrite_pp(self, text):
+        if not re.match(r"#\s*define\b", text):
+            return text
+        head, params, body = pp_head_split(text)
+        t = lex(body, pp=False)
+        name = re.match(r"#\s*define\s+(\w+)", text).group(1)
+        called = ()
+        if name in self.callee_macros:
+            ps, idx = self.callee_macros[name]
+            called = [ps[q] for q in idx]
+        if not self.is_header:
+            t = self.rewrite_decls(t, in_pp=True, params=called)
+        t = self.rewrite_uses(t, in_pp=True)
+        if called:   # route calls of a callee parameter through PS2_CALL_<name>
+            sig = [k for k, x in enumerate(t) if x[0] not in ("ws", "comment")]
+            for a, b in zip(sig, sig[1:]):
+                if t[a][0] == "ident" and t[a][1] in called and t[b][1] == "(":
+                    t[a] = ("ident", f"PS2_CALL_##{t[a][1]}")
+        return head + text_of(t)
+
+    def callee_defines(self):
+        """`#define PS2_CALL_<f>(...)` for every function passed to a macro
+        parameter the macro calls: the call with this TU's argument
+        convention mapped onto the canonical prototype."""
+        lines = [f"#define PS2_CALL_{n} {n}" for n in sorted(self.callee_args - self.macro_callees)]
+        for n in sorted(self.macro_callees):
+            imp = self.imports.get(n)
+            if imp is None:
+                lines.append(f"#define PS2_CALL_{n} {n}")
+                continue
+            iw = _parse_wsig(imp)[0]
+            names = [f"ps2_a{k}" for k in range(len(iw))]
+            a_txt, pre = self.call_args(n, list(names))
+            pre_txt = "".join(f"(void)({x}), " for x in pre)
+            body = f"{n}({', '.join(a_txt)})"
+            if n in self.wrap or (self.canon[n]["ret"] == "void" and _parse_wsig(imp)[1] != "void"):
+                body = f"({pre_txt}{body}, 0)"
+            elif pre_txt:
+                body = f"({pre_txt}{body})"
+            lines.append(f"#define PS2_CALL_{n}({', '.join(names)}) {body}")
+        return lines
+
+    def prelude(self, toks):
+        ids = {t[1] for t in toks if t[0] == "ident"} | self.mentioned | self.removed | self.macro_callees
+        for t in toks:
+            if t[0] == "pp" and re.match(r"#\s*define\b", t[1]):
+                ids.update(IDENT.findall(t[1]))
+        lines = []
+        if not self.is_header:
+            for n in sorted({self.alias.get(x, x) for x in ids}):
+                if self.target(n):
+                    lines.append(proto_text(n, self.canon[n]))
+            lines += self.callee_defines()
+        for f in sorted(self.used_code):
+            lines.append(proto_text(f"ps2_code_{f}", self.canon[f], label=f))
+        if not self.is_header:
+            for n in SIGS.get("implicit", {}).get(self.path, ()):
+                c = self.canon.get(n)
+                if c and n in self.skip and not c["ret"].endswith("*"):
+                    # used before its own definition in this TU: the implicit
+                    # `int n()` made explicit, with the definition's return type
+                    lines.append(f"extern {c['ret']} {n}();")
+        if lines:
+            lines.insert(0, "/* host R12/R13: canonical prototypes (host_sigs.json) */")
+        return lines
+
+
+def _parse_wsig(s):
+    p, r = s[1:].split(")->")
+    return [x for x in p.split(",") if x], r
+
+
+_RSET = None
+
+
+def _rewrite_set():
+    global _RSET
+    if _RSET is None or _RSET[0] is not SIGS:
+        _RSET = (SIGS, set(SIGS["rewrite"]))
+    return _RSET[1]
+
+
+_HDR_DECL = None
+
+
+def header_declared():
+    """function names some project header declares (for PS2_DEF_ guards)."""
+    global _HDR_DECL
+    if _HDR_DECL is None:
+        from pathlib import Path
+        root = Path(__file__).resolve().parents[2]
+        s = set()
+        for d in ("src", "src/data"):
+            for h in (root / d).glob("*.h"):
+                s.update(re.findall(r"\b(\w+_[0-9A-Fa-f]{8})\s*\(", h.read_text(encoding="latin-1")))
+        _HDR_DECL = s
+    return _HDR_DECL
+
+
+def alias_macros(toks):
+    """`#define A B` object-like aliases: {A: B}."""
+    out = {}
+    for t in toks:
+        if t[0] == "pp":
+            m = re.match(r"#\s*define\s+(\w+)\s+(\w+)\s*$", t[1])
+            if m:
+                out[m.group(1)] = m.group(2)
+    return out
+
+
+def macro_skips(toks):
+    """Names a TU defines through a function-generating macro
+    (`#define STEP(name, ...) void name(u8 *p) { ... }` + `STEP(func_X, ...)`)
+    and names reached through an alias macro (`#define memset func_0011D8F8`):
+    R12 leaves those to the TU's own declarations."""
+    fmacros = {}
+    skip = set()
+    for t in toks:
+        if t[0] != "pp":
+            continue
+        m = re.match(r"#\s*define\s+(\w+)\(([^)]*)\)(.*)$", t[1], re.S)
+        if not m:
+            continue
+        params = [x.strip() for x in m.group(2).split(",")]
+        body = [x for x in lex(m.group(3), pp=False) if x[0] not in ("ws", "comment")]
+        pos = set()
+        for k, x in enumerate(body):
+            if x[0] == "ident" and k + 1 < len(body) and body[k + 1][1] == "(":
+                e = match_close(body, k + 1, "(", ")")
+                if e + 1 < len(body) and body[e + 1][1] == "{":
+                    if x[1] in params:
+                        pos.add(params.index(x[1]))
+                    else:
+                        skip.add(x[1])
+        if pos:
+            fmacros[m.group(1)] = pos
+    if fmacros:
+        sig = [x for x in toks if x[0] not in ("ws", "comment")]
+        for k, x in enumerate(sig):
+            if x[0] == "ident" and x[1] in fmacros and k + 1 < len(sig) and sig[k + 1][1] == "(":
+                e = match_close(sig, k + 1, "(", ")")
+                args = split_top(sig[k + 2:e], ",")
+                for q in fmacros[x[1]]:
+                    if q < len(args):
+                        skip.update(a[1] for a in args[q] if a[0] == "ident")
+    return skip
+
+
+def add_returns(toks, path):
+    """R14: `return 0;` before the closing brace of each non-void function
+    that the raw build reported as falling off the end, and `return;` in a
+    non-void function becomes `return 0;`."""
+    lines = set(SIGS["noreturn"].get(path, ())) if SIGS else set()
+    bare = set(SIGS.get("bare_return", {}).get(path, ())) if SIGS else set()
+    if not lines and not bare:
+        return toks
+    out = []
+    line = 1
+    br = Braces()
+    for k, t in enumerate(toks):
+        if t[0] == "pp":
+            br.pp(t[1])
+        if t[0] == "punct" and t[1] == "}" and br.depth == 1 and line in lines:
+            out.append(("punct", " return 0; /* host R14 */ "))
+        if t[0] == "ident" and t[1] == "return" and line in bare:
+            j = sig_next(toks, k)
+            if j < len(toks) and toks[j][1] == ";":
+                out.append(("punct", "return 0 /* host R14 */"))
+                line += t[1].count("\n")
+                continue
+        if t[0] == "punct":
+            br.punct(t[1])
+        out.append(t)
+        line += t[1].count("\n")
+    return out
+
+
+SIGS = None   # host_sigs.json contents (R12-R14); None = rules off
+
+
+def configure(sigs_path=None):
+    """Load host_sigs.json (gen_link_glue.py sigs) for R12-R14."""
+    global SIGS
+    import json
+    import os
+    sigs_path = sigs_path or os.environ.get("MVC2_HOST_SIGS")
+    SIGS = json.load(open(sigs_path)) if sigs_path else None
+
+
 def transform(text, path="?"):
     text = apply_overrides(text, path)
     text = drop_fn_macros(text)
     toks = lex(text)
+    toks = add_returns(toks, path)
     toks = rewrite_asm(toks)
     toks = rewrite_long(toks)
-    toks, aliases = rewrite_block_externs(toks)
+    toks = rewrite_next_arg(toks)
     statics = set(static_defs(toks)) if path.endswith(".c") else set()
+    sr = None
+    if SIGS is not None:
+        macros = set(re.findall(r"^[ \t]*#[ \t]*define[ \t]+(\w+)", text, re.M))
+        sr = SigRewriter(path, statics | defined_names(toks) | macro_skips(toks), macros, toks)
+        toks = sr.rewrite_decls(toks)
+        toks = sr.rewrite_uses(toks)
+        toks = [("pp", sr.rewrite_pp(t[1])) if t[0] == "pp" else t for t in toks]
+    toks, aliases = rewrite_block_externs(toks, statics)
     alias = dict(re.findall(r"^[ \t]*#[ \t]*define[ \t]+(\w+)[ \t]+(\w+)[ \t]*$", text, re.M))
     owned = {n for n in statics if owners().get(alias.get(n, n)) == path}
     if owned:  # R9: the credited copy is the program-wide definition
@@ -709,8 +1459,16 @@ def transform(text, path="?"):
                 for t in toks]
     toks = [("pp", rewrite_pp(t[1], statics)) if t[0] == "pp" else t for t in toks]
     head = [f'extern void ps2_alias_{n}(void) __asm__("{n}");' for n in sorted(aliases)]
+    if sr is not None:
+        head = sr.prelude(toks) + head
+        if not sr.is_header:
+            hd = header_declared()
+            head = [f"#define PS2_DEF_{n} 1" for n in sorted(defined_names(toks))
+                    if n in hd and n in sr.R] + head
     pre = "\n".join(head) + "\n" if head else ""
-    return pre + f'#line 1 "{path}"\n' + text_of(toks)
+    tail = alias_tail(toks, path, statics) if path.endswith(".c") else ""
+    pre += null_tail(toks) if path.endswith(".c") else ""
+    return pre + f'#line 1 "{path}"\n' + text_of(toks) + tail
 
 
 if __name__ == "__main__":

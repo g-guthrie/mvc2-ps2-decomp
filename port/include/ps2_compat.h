@@ -48,6 +48,40 @@ void ps2_asm_stmt(const char *file, int line, const char *tmpl);
  * a harmless declaration so `FN(...);` stays valid at file scope. */
 #define PS2_TOPLEVEL_ASM_DROPPED(name) extern int ps2_dropped_asm_##name
 
+/* ---- link aliases (hostify R11) --------------------------------------- */
+/* A catalog name inside a credited data unit is a weak data symbol at
+ * unit+offset in the unit's own object (wasm32 cannot express symbol+offset
+ * across objects).  Other names of a credited function are weak function
+ * aliases in the owning object. */
+#if defined(__wasm__)
+#define PS2_DATA_ALIAS(name, base, off, size) \
+    __asm__(".weak " #name "\n.set " #name ", " #base "+" #off "\n");
+#else
+#define PS2_DATA_ALIAS(name, base, off, size) \
+    __asm__(".weak " #name "\n.type " #name ",@object\n.set " #name ", " #base "+" #off \
+            "\n.size " #name ", " #size "\n");
+#endif
+#define PS2_TEXT_ALIAS(name, target) \
+    extern __typeof__(target) name __attribute__((weak, alias(#target)));
+
+/* ---- call arguments of a disagreeing caller (hostify R12) ------------ */
+/* Where a caller passed a float to a pointer parameter (or the reverse) the
+ * MIPS callee read an unrelated register; on the host the value is
+ * converted so the call still compiles with the callee's real prototype. */
+#define PS2_TO_PTR(x) _Generic((x), float: (void *)(int)(x), double: (void *)(int)(x), \
+                               long double: (void *)(int)(x), default: (x))
+#define PS2_TO_F32(x) _Generic((x), float: (x), double: (x), long double: (x), \
+                               default: (float)(long long)(x))
+#define PS2_TO_F64(x) _Generic((x), float: (x), double: (x), long double: (x), \
+                               default: (double)(long long)(x))
+
+/* ---- EE varargs walkers (hostify R15) -------------------------------- */
+/* `(T *)__builtin_next_arg(last) - K` (a pointer into the EE register save
+ * area) becomes a host va_start; va_list is a plain pointer on i386 and
+ * wasm32, and the game's vfprintf reads it with __builtin_va_arg. */
+#define PS2_VA_START_HERE(last) \
+    ({ __builtin_va_list ps2_va_; __builtin_va_start(ps2_va_, last); (void *)ps2_va_; })
+
 /* ---- Metrowerks / EE GCC extensions ---------------------------------- */
 /* EE GCC varargs save-area builtin (sdk_format_message_003f5540.c). */
 #ifndef __builtin_args_info

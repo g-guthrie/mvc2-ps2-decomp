@@ -54,6 +54,12 @@ header handles everything a macro can: it refuses LP64 targets, maps
 | R8 | TU-local `static` copies of functions that headers declare extern | renamed `name__hs` in that TU | 270 files |
 | R9 | the credited copy itself is `static` (incl. K&R heads, `_PARAMS` prototypes, `#define name func_X`) | `static` dropped in the owning TU (per `matches.csv`), so the one credited copy is the global definition | 25 |
 | R10 | constructs no rule can carry | exact per-file replacements in `port/tools/host_overrides.py` (raises if stale) | 1 file |
+| R11 | the link resolves catalog names by EE address (`D_x` inside a unit, `func_X`/`residual_X` for one function) | the TU that owns a credited data unit also defines every catalog name inside it as a weak `unit + offset` alias (`PS2_DATA_ALIAS`: file-scope `.set`); the TU credited for a function defines its other catalog names as weak `__attribute__((alias))` (`PS2_TEXT_ALIAS`) | 6,108 data aliases in 2,988 units; 541 text aliases |
+| R12 | K&R / per-block / table prototypes that disagree with the definition (MIPS ignores this; wasm traps) | every declaration of a function whose callers disagree is replaced by one canonical prototype (from the definition, basic C types, `host_sigs.json`); calls get the callee's arity (missing args `0`, extra args evaluated and dropped), float/int arguments are re-assigned by class as the EE EABI passes them, a void call used as a value becomes `(f(), 0)`; headers keep the original declaration for the owning TU (`PS2_DEF_<f>`); macros that call a parameter go through `PS2_CALL_<f>` | 6,115 functions; 9,466 mismatching imports → 0 |
+| R13 | a code address declared as data (`extern u8 D_0013B010[];` stored as a callback) | the declaration goes, uses become `((T *)ps2_code_F)` with `ps2_code_F` the asm-label alias of the function (wasm has no data symbol at a function) | 682 declarations |
+| R14 | non-void function that falls off the end (MIPS returns `$v0`) | `return 0;` before the closing brace (sites from the raw build's `-Wreturn-type`) | 48 |
+| R15 | EE varargs walkers (`__builtin_next_arg(last) - K` into the register save area) | the expression becomes `PS2_VA_START_HERE(last)`, a host `va_start` whose `va_list` the game's vfprintf reads with `__builtin_va_arg` | 10 files |
+| R16 | a callback table entry at EE address 0 (`func_00000000`) | `#pragma weak` so the host address is NULL | 1 |
 
 The brace-depth and statement scanner is preprocessor-aware (the `Braces` and
 `file_scope_heads` helpers). Every `#if` branch restarts from the state at its
@@ -92,7 +98,61 @@ The next step for wasm is a signature audit. Link with
 `-Wl,--fatal-warnings`, then generate one real prototype per symbol from the
 credited definitions into a force-included header.
 
-## Link level (nm over all objects; `port/tools/host_link_check.py`)
+## Link (Port G): `mvc2_host`
+
+`ninja mvc2_host` links the game into an executable on both targets, with
+**zero undefined symbols**, and on Emscripten with `-Wl,--fatal-warnings`
+(**zero signature mismatches**).  Full notes, design choices and the run log
+are in `LINK_NOTES.md`.
+
+| Target | Build | Result |
+|---|---|---|
+| Emscripten | `emcmake cmake -S port -B build/port-em -G Ninja && ninja -C build/port-em mvc2_host` | `mvc2_host.js` + `.wasm` (5.4 MB); runs under node |
+| i386 | `cmake ... -DCMAKE_TOOLCHAIN_FILE=$PWD/port/cmake/i386-clang.cmake && ninja -C build/port-i386 mvc2_host` | `mvc2_host` (needs `apt-get install gcc-multilib` for crt/libgcc/libc headers) |
+
+Pipeline (all generated, nothing written per symbol):
+
+1. `gen_link_glue.py sigs --raw-build build/<tree>/sigs_raw`: a wasm build
+   with R12–R14 off (`probe_host_build.py --diag`), wasm objects of
+   `port/stubs`, and a scan of every object's function symbols
+   (`port/tools/wasm_obj.py`) → `host_sigs.json` (canonical prototype per
+   function, per-TU mismatches, data-declared code addresses, missing returns,
+   implicit declarations).  About 2 minutes; `-DMVC2_HOST_SIGS=<json>` reuses a
+   table (the i386 tree's works for Emscripten and vice versa).
+2. hostify with `--sigs` (R11–R16) → `mvc2_game`.  The Emscripten game TUs
+   compile through `port/cmake/emcc-direct.sh` (emsdk clang directly; 1.5
+   minutes instead of about 48).
+3. `gen_link_glue.py glue` (nm over `libmvc2_game.a` + the catalogs) →
+   `glue/mvc2_glue_{data,stubs,table}.c`, `stubs.csv`, `link_glue.csv`.
+4. `port/stubs/*.c` + glue + `mvc2_game` → `mvc2_host`.
+
+How each class of undefined symbol is resolved now (Emscripten; i386 is the
+same):
+
+| Class (HOST_BUILD_ISSUES 2026-10-28) | Was | Now |
+|---|---:|---|
+| data inside a credited data unit | 5,751 | R11 aliases in the unit's own object; 60 names in non-C units (`src/vu/*.vsm`, `src/data_asm/*.s`) get a zero stand-in of the unit |
+| bss | 1,700 | one zero blob `mvc2_ee_bss` covering `0x004C2580..0x00634380` (layout kept), 1,697 aliases incl. `_gp` and the end-of-BSS marker |
+| text: other name of a credited function | 434 | R11 weak function aliases; data-declared ones via R13 |
+| text: label/table inside code | 635 | 603 taken as data → distinct slots in `mvc2_ee_code_labels` (+ EE address table); 38 taken as functions → logging stubs; label at a function start → R13 |
+| data with no data unit | 178 | zero bytes in one blob per gap between units (values unknown on the host) |
+| text: C-less / placeholder / `.S` / `FN()` | 95 + 17 + 8 + 3 | 127 generated logging stubs, 22 hand-written (`port/stubs`) |
+| host runtime | 4 | `ps2_asm_stmt` (port/stubs), `__builtin_next_arg` gone (R15), libc/compiler-rt from the host |
+| outside image | 2 | scratchpad array `mvc2_ee_scratchpad`, end-of-BSS alias |
+
+Run: both targets get through the platform-init stub and stop in
+`func_0012F4C0` (game init), where `func_00414CB0` cannot allocate its heaps:
+the C-less platform init `func_003EC160` would have created the 22 MB arena
+`D_0062C020` (and the handle pool).  That is the first missing platform piece.
+
+The warnings survey items are closed for the link: implicit declarations and
+missing returns are 0 in the R12/R14 build (`probe_host_build.py --diag`),
+and the wasm signature audit is the R12 table.  Indirect calls through
+callback tables still use the table's element type, so the Emscripten link
+enables `-sEMULATE_FUNCTION_POINTER_CASTS=1` (CMake option
+`MVC2_EMULATE_FPCASTS`, default ON) until those calls are audited.
+
+### Link level before Port G (nm over all objects; `port/tools/host_link_check.py`)
 
 - **Duplicate strong definitions: 0** on both i386 and Emscripten. There are
   30,153 global definitions. Static copies are private (R8) and the credited
@@ -154,6 +214,11 @@ freestanding setup carry over unchanged.
 - `port/tools/host_flags.py`, `probe_host_build.py`: per-TU probe with failure classes and resume
 - `port/tools/host_link_check.py`: nm duplicate and undefined-symbol classification
 - `port/tools/list_c_less.py`: spans with no honest C (C_COVERAGE.md)
+- `port/tools/link_catalog.py`: catalog view of the EE image (addresses, units, aliases, host runtime names)
+- `port/tools/gen_link_glue.py`: `sigs` (signature table) and `glue` (link glue) generator
+- `port/tools/host_sigs.py`, `wasm_obj.py`: canonical prototypes; wasm object/archive symbol reader
+- `port/stubs/`: hand-written stubs (kernel, semaphores, libc forwards, `ps2_asm_stmt`) and `host_main.c`
+- `port/cmake/emcc-direct.sh`: emsdk clang launcher for the Emscripten game TUs
 
 ## Progress log (restart-safe notes)
 
@@ -173,3 +238,5 @@ freestanding setup carry over unchanged.
   - All three targets now compile 16,477/16,477. The CMake builds for i386 and
     for emcmake both complete.
   - Ran the warnings survey and the link classification.
+- run 3 (Port G): R11–R16, the signature table, the glue generator, the
+  stubs and `mvc2_host`; links on both targets (see LINK_NOTES.md).

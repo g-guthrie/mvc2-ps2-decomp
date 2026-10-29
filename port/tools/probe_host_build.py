@@ -4,8 +4,11 @@ classify the failures.  Fast standalone counterpart of port/CMakeLists.txt
 (same flags, same filter) for iterating on ps2_compat.h / hostify.py.
 
 usage: python3 port/tools/probe_host_build.py [--target emscripten|i386|wasm32] [--jobs N]
-           [--out DIR] [--only FILE...] [--no-hostify]
+           [--out DIR] [--only FILE...] [--no-hostify] [--resume]
+           [--diag] [--sigs host_sigs.json]
 Writes DIR/results.csv (source,ok,class,first_error) and prints a summary.
+--diag records implicit declarations and missing returns in DIR/diag.csv
+(input of `gen_link_glue.py sigs`); --sigs turns on hostify R12-R14.
 """
 import argparse, csv, os, re, subprocess, sys, collections
 from concurrent.futures import ThreadPoolExecutor
@@ -49,11 +52,35 @@ def classify(err):
     return "other"
 
 
-def compile_one(src, target, outdir, use_hostify):
+DIAG_FLAGS = ["-Wno-everything", "-Wimplicit-function-declaration", "-Wreturn-type",
+              "-Wreturn-mismatch"]
+DIAG_RE = re.compile(r"^(?P<file>[^:\s]+):(?P<line>\d+):(?P<col>\d+): warning: (?P<msg>.*?)(?: \[-W[\w-]+\])?$")
+
+
+def diag_rows(src, stderr):
+    rows = []
+    for l in stderr.splitlines():
+        m = DIAG_RE.match(l)
+        if not m:
+            continue
+        msg = m.group("msg")
+        k = re.search(r"(?:call to undeclared function|implicit declaration of function) '(\w+)'", msg)
+        if k:
+            rows.append((src, m.group("file"), m.group("line"), "implicit", k.group(1)))
+        elif "does not return a value" in msg:
+            rows.append((src, m.group("file"), m.group("line"), "noreturn", ""))
+        elif "should return a value" in msg:
+            rows.append((src, m.group("file"), m.group("line"), "bare-return", ""))
+    return rows
+
+
+def compile_one(src, target, outdir, use_hostify, diag=False):
     srcp = ROOT / src
     obj = outdir / "obj" / (src.replace("/", "__") + ".o")
     obj.parent.mkdir(parents=True, exist_ok=True)
     cmd = [compiler(target)] + TARGETS[target] + common_flags(ROOT)
+    if diag:
+        cmd = [c for c in cmd if c != "-w"] + DIAG_FLAGS
     if use_hostify:
         text = hostify.transform(srcp.read_text(encoding="latin-1"), src)
         hsrc = outdir / "hsrc" / src
@@ -67,6 +94,12 @@ def compile_one(src, target, outdir, use_hostify):
     cmd += ["-c", "-o", str(obj)]
     p = subprocess.run(cmd, capture_output=True, text=True, errors="replace")
     errs = [l for l in p.stderr.splitlines() if ": error:" in l or "fatal error" in l]
+    if diag:
+        (outdir / "diag").mkdir(exist_ok=True)
+        dp = outdir / "diag" / (src.replace("/", "__") + ".csv")
+        rows = diag_rows(src, p.stderr)
+        with open(dp, "w", newline="") as f:
+            csv.writer(f).writerows(rows)
     if p.returncode == 0:
         return src, True, "", ""
     first = errs[0] if errs else p.stderr.strip().splitlines()[-1:] and p.stderr.strip().splitlines()[-1] or "?"
@@ -95,11 +128,16 @@ def main():
     ap.add_argument("--no-hostify", action="store_true")
     ap.add_argument("--resume", action="store_true",
                     help="keep earlier ok rows whose object is newer than the filtered source")
+    ap.add_argument("--diag", action="store_true",
+                    help="record implicit declarations and missing returns (diag/*.csv, diag.csv)")
+    ap.add_argument("--sigs", default=None,
+                    help="host_sigs.json for hostify R12-R14 (gen_link_glue.py sigs)")
     ap.add_argument("--chunk", type=int, default=1000,
                     help="results.csv is rewritten after every CHUNK TUs (restart-safe)")
     a = ap.parse_args()
     out = Path(a.out or ROOT / "build/port_probe" / a.target)
     out.mkdir(parents=True, exist_ok=True)
+    hostify.configure(a.sigs)
     code, data = credited_sources()
     allsrc = a.only or sorted(set(code) | set(data))
     if not a.no_hostify:
@@ -112,9 +150,14 @@ def main():
                 prev[r["source"]] = (r["source"], r["ok"] == "True", r["class"], r["first_error"])
     done = {}
 
+    diag_marker = out / "diag" / ".flags"
+    diag_same = (not a.diag) or (diag_marker.exists() and diag_marker.read_text() == " ".join(DIAG_FLAGS))
+
     def fresh(s):
         r = prev.get(s)
-        if not a.resume or not r or not r[1]:
+        if not a.resume or not r or not r[1] or not diag_same:
+            return False
+        if a.diag and not (out / "diag" / (s.replace("/", "__") + ".csv")).exists():
             return False
         obj = out / "obj" / (s.replace("/", "__") + ".o")
         hs = out / "hsrc" / s
@@ -141,11 +184,21 @@ def main():
 
     with ThreadPoolExecutor(a.jobs) as ex:
         for i in range(0, len(todo), a.chunk):
-            for r in ex.map(lambda s: compile_one(s, a.target, out, not a.no_hostify), todo[i:i + a.chunk]):
+            for r in ex.map(lambda s: compile_one(s, a.target, out, not a.no_hostify, a.diag), todo[i:i + a.chunk]):
                 done[r[0]] = r
             flush()
             print(f"  .. {min(i + a.chunk, len(todo))}/{len(todo)} compiled", flush=True)
     flush()
+    if a.diag:
+        diag_marker.parent.mkdir(exist_ok=True)
+        diag_marker.write_text(" ".join(DIAG_FLAGS))
+        with open(out / "diag.csv", "w", newline="") as f:
+            w = csv.writer(f)
+            w.writerow(["source", "file", "line", "kind", "name"])
+            for s_ in allsrc:
+                dp = out / "diag" / (s_.replace("/", "__") + ".csv")
+                if dp.exists():
+                    w.writerows(csv.reader(open(dp)))
     res = [done[s] for s in allsrc]
     ok = sum(1 for r in res if r[1])
     cs = set(code)

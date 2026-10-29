@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Write hostify.py-filtered copies of decomp sources into a build tree.
 
-usage: hostify_tree.py OUTDIR SRC...      (SRC relative to the repo root)
-       hostify_tree.py OUTDIR --headers   (every src/*.h and src/data/*.h)
+usage: hostify_tree.py OUTDIR [--sigs host_sigs.json] SRC...   (SRC relative to the repo root)
+       hostify_tree.py OUTDIR [--sigs host_sigs.json] --headers (every src/*.h and src/data/*.h)
+--sigs turns on hostify R12-R14 (gen_link_glue.py sigs).
 Files are rewritten only when their filtered text changes.
 """
 import sys
@@ -26,6 +27,10 @@ def emit(out, rel):
 def main():
     out = Path(sys.argv[1])
     args = sys.argv[2:]
+    sigs = None
+    if args[:1] == ["--sigs"]:
+        sigs, args = args[1], args[2:]
+    hostify.configure(sigs or None)
     if args == ["--headers"]:
         args = [str(p.relative_to(ROOT)) for p in sorted((ROOT / "src").glob("*.h"))]
         args += [str(p.relative_to(ROOT)) for p in sorted((ROOT / "src/data").glob("*.h"))]
