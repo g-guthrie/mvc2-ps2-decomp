@@ -24084,4 +24084,9 @@ mkdir -p "build/warm/r11_06_d" && MWCIncludes=$(dirname "$MWCCPS2") "$WIBO" "$MW
     mv "build/warm/r11_06_d/r11_06_d.o" "$BUILD/r11_06_d.o"
 "$PYTHON" tools/verify_object.py "$BUILD/r11_06_d.o" private/SLUS_204.86.rom --source src/r11_06_d.c
 
+"$WIBO" "$SNCPP" -P src/r11_12_b.c "$BUILD/r11_12_b.i"
+EE96CC1="$EE96CC1" "$PYTHON" tools/compile_ee96.py --small-data-threshold 0 --opt O2 --extra-flags="" "$BUILD/r11_12_b.i" "$BUILD/r11_12_b.s"
+"$WIBO" "$SNAS" -G0 -o "$BUILD/r11_12_b.o" "$BUILD/r11_12_b.s"
+"$PYTHON" tools/verify_object.py "$BUILD/r11_12_b.o" private/SLUS_204.86.rom --source src/r11_12_b.c
+
 PYTHON="$PYTHON" tools/compile_matching_data.sh

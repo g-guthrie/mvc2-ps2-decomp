@@ -22,7 +22,6 @@ typedef struct {
     s32 f1b4;
 } T404;
 
-/* Provisional: the body forces a register and is not credited as reconstructed C. */
 void func_00404E90(T404 *p) {
     extern s8 func_004052B8(void *);
     extern void func_00405350(u8 *, s32, s32 *, s32 *);
@@ -41,7 +40,6 @@ void func_00404E90(T404 *p) {
     s32 i, r, c;
     u8 *s;
     u8 **l, **a; void **b; s32 k5;
-    register s32 n __asm__("$17");
 
     l = p->list;
     s = p->f4;
@@ -58,7 +56,7 @@ void func_00404E90(T404 *p) {
             }
             r = func_004052F0(s);
             if (r > 0) {
-                n = r;
+                i = r;
                 b = p->list2;
                 a = l;
                 do {
@@ -66,7 +64,7 @@ void func_00404E90(T404 *p) {
                     func_00401760(*a, *b);
                     b++;
                     a++;
-                } while (--n);
+                } while (--i);
             }
             p->state = 2;
         }

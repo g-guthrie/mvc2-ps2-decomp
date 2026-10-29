@@ -14999,7 +14999,7 @@ func_00181150,0x00181150,0x12C,src/w174_j.c,complete
 func_0039E940,0x0039E940,0x124,src/w174_k.c,complete
 func_002BD190,0x002BD190,0x134,src/w174_l.c,complete
 func_00149FA0,0x00149FA0,0x138,src/w174_m.c,complete
-func_004109C0,0x004109C0,0x6C,src/w181_a.c,placeholder
+func_004109C0,0x004109C0,0x6C,src/w181_a.c,complete
 func_00409BD0,0x00409BD0,0xC0,src/w181_a.c,complete
 func_00409CE8,0x00409CE8,0x174,src/w181_a.c,complete
 func_003F00E0,0x003F00E0,0xD0,src/w181_c.c,complete
@@ -15557,7 +15557,7 @@ func_00233C90,0x00233C90,0xE8,src/deferred_move_setup.c,complete
 func_0023F6E0,0x0023F6E0,0xE8,src/deferred_move_setup.c,complete
 func_00271410,0x00271410,0x210,src/motion_speed_transition.c,complete
 func_004007A0,0x004007A0,0x40,src/set_runtime_sector_count_004007A0.c,complete
-func_004007F0,0x004007F0,0x2E0,src/process_runtime_object_004007F0.c,placeholder
+func_004007F0,0x004007F0,0x2E0,src/process_runtime_object_004007F0.c,complete
 func_003FF810,0x003FF810,0x120,src/query_runtime_streams_003FF810.c,complete
 func_0041A730,0x0041A730,0x98,src/m5j.c,complete
 func_002340F0,0x002340F0,0xFC,src/w171_i.c,complete
@@ -18133,7 +18133,7 @@ func_0041D640,0x0041D640,0x80,src/fb6_h.c,complete
 func_003FCF88,0x003FCF88,0x170,src/fb6_j.c,complete
 func_00195B40,0x00195B40,0x1D0,src/fb5_a.c,complete
 func_001EFA70,0x001EFA70,0x208,src/fb5_c.c,complete
-func_00404E90,0x00404E90,0x20C,src/fb5_d.c,placeholder
+func_00404E90,0x00404E90,0x20C,src/fb5_d.c,complete
 func_003911A0,0x003911A0,0x1A8,src/fb7_a.c,complete
 func_003ACA80,0x003ACA80,0x1AC,src/fb7_b.c,complete
 func_003D6E20,0x003D6E20,0x1D0,src/fb7_c.c,complete
@@ -20095,3 +20095,4 @@ func_00170C30,0x00170C30,0xFC,src/r11_06_a.c,complete
 func_0015AEF0,0x0015AEF0,0x98,src/r11_06_b.c,complete
 func_0014B660,0x0014B660,0x73C,src/r11_06_c.c,complete
 func_0014CB10,0x0014CB10,0x304,src/r11_06_d.c,complete
+func_003F72F0,0x003F72F0,0xFC,src/r11_12_b.c,complete

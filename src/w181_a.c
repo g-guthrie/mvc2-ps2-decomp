@@ -5,23 +5,22 @@ typedef signed short s16;
 typedef unsigned int u32;
 typedef signed int s32;
 
-typedef struct { s32 a, b; } P8_a;
+/* Two-word reply record: the reply words are handles/addresses.  Pointer
+ * members put the stores in a different alias set from the s32 reply buffer,
+ * so sched2 keeps them ahead of the epilogue restores. */
+typedef struct { void *a; void *b; } P8_a;
 extern s32 D_00632140[3];
 extern s32 D_00632240[];
 
 void func_004109C0(s32 a, s32 b, s32 c, P8_a *out)
 {
     extern s32 func_00409708(s32, s32 *, s32, s32 *, s32);
-    s32 y, x;
     D_00632140[0] = a;
     D_00632140[1] = b;
     D_00632140[2] = c;
     func_00409708(0x26, D_00632140, 3, D_00632240, 2);
-    x = D_00632240[0];
-    y = D_00632240[1];
-    out->a = x;
-    __asm__ volatile("");
-    out->b = y;
+    out->a = (void *)D_00632240[0];
+    out->b = (void *)D_00632240[1];
 }
 
 extern u8 D_004BDA48[];
