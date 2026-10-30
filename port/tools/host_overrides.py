@@ -26,6 +26,34 @@ OVERRIDES = {
     # uses $v0 as the struct address, so retail copies 10 bytes from EE
     # address 0 (kernel RAM). Clang rejects the address of an rvalue, and the
     # host has no RAM at 0: read a zeroed stand-in after making the call.
+    # func_00417EB0(V3 *) (normalise in place, return the length) is called
+    # with a V3 by value: MWCC passes a by-value struct as the address of a
+    # caller-made copy, so the callee normalises that copy.  i386 pushes the
+    # struct itself (the callee reads x as a pointer: SIGSEGV on the stage
+    # whose effect calls func_00330380).  Host form: pass the copy's address.
+    "src/sLa1_c.c": [
+        ("extern f32 func_00417EB0(V3_b);", "extern f32 func_00417EB0(V3_b *); /* host R10: by-value struct = address of a copy */"),
+        ("r = func_00417EB0(w);", "r = func_00417EB0(&w); /* host R10 */"),
+    ],
+    # The gallery's state hook D_0043CD0C (a .data word: sc6_d.c writes it as
+    # D_0043CD0C[0]) is stored through its literal EE address here; on the
+    # host that address is not the variable (SIGSEGV entering the gallery).
+    "src/initialize_runtime_effect_backend_0041C4B0.c": [
+        ("    *(void (**)(s32, s32))0x0043CD0C = func_0041C550;",
+         "    { extern void (*D_0043CD0C[])(); D_0043CD0C[0] = (void (*)())func_0041C550; } /* host R10: EE address 0x0043CD0C */"),
+    ],
+    "src/initialize_runtime_animation_backend_0041C400.c": [
+        ("    *(void (**)(s32, s32))0x0043CD0C = func_0041C460;",
+         "    { extern void (*D_0043CD0C[])(); D_0043CD0C[0] = (void (*)())func_0041C460; } /* host R10: EE address 0x0043CD0C */"),
+    ],
+    # func_0016EEC0 (pad vibration timers) reads `idx` before setting it
+    # when a timer is armed (< 0) but the pad is not in the vibrating mode:
+    # retail keeps idx in $s1, so it reads the caller's $s1, which is 0 all
+    # the way down from crt0 (src/ee_crt0.S clears $17; the main loop and
+    # its callees save and restore it).  Host: start idx at 0, as retail.
+    "src/sa11_l.c": [
+        ("    s32 idx;\n", "    s32 idx = 0; /* host R10: retail's $s1 from the main loop (0) */\n"),
+    ],
     "src/r12_07_c.c": [
         ("sb = &func_004180E0();",
          "{ static S10 ee_page0; func_004180E0(); sb = &ee_page0; } /* host R10: EE address 0 */"),
