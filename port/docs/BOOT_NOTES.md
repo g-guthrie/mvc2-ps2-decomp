@@ -387,3 +387,15 @@ a PROFILE_DIR keeps IndexedDB between runs (card persistence).  Native,
 xvfb: `xvfb-run -a ./build/port-i386/mvc2 --hidden --size 640x480
 --shot-dir D --script S private/disc/mvc2.iso` (start skips the intros, so
 the menu is reached in ~600 frames).
+
+### Integration of the fidelity, arcade and UX branches (2026-10-30)
+
+Merged on main. Browser runs of the merged single file (`fight.js`: title →
+menu → character select → VERSUS → fight, overlays, scanlines, CRT, stretch):
+7 of 8 reached the end; one renderer crash ("Target crashed") right after the
+fight began, with no Chromium error line. Renderer memory peaks at about
+800 MB, so it is not memory pressure. It has only been seen in headless
+Chromium with SwiftShader (software GL); it did not reproduce in the arcade
+sweep (15 fights, all 59 characters) or the fidelity mode runs. Open: get a
+crash dump from a failing run (`--enable-crash-reporter`) and check on a
+real GPU.
