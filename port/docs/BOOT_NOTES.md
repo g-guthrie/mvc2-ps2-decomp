@@ -200,7 +200,7 @@ Still faked / open (honest list):
   --unresolved`); one was hand-fixed (`r12_regexpr.csv`), the rest are
   checked as they are reached.
 - Memory card: a host directory natively; on the web it lives in MEMFS
-  (lost on reload).
+  (lost on reload).  Fixed: IDBFS, see "Fidelity pass" below.
 - Web: SwiftShader (headless) runs at ~25 fps.
 
 ### Session 1, part 5: the CPU-team crash (regression report from the lead)
@@ -313,3 +313,77 @@ Port-side only (`port/platform`, `port/render`, `port/audio`, `port/host/fe`,
 - Watch for this: it may be memory pressure in the renderer with a 180 MB
   page, or a game-side issue.
 
+
+### Fidelity pass (2026-10-30, branch port-fidelity)
+
+**Inventory of what the port still fakes** (host_impl.csv + glue stubs.csv):
+- Game logic replaced although credited C exists: none left.  Removed this
+  pass: `func_00418CC0` (memory-card wrapper init; the host copy returned 0
+  where the game returns 1) and `func_00418D70` (card request/sync/retry
+  state machine): the credited C runs on top of the host libmc.
+  `func_0032DF90` (CPU team pick) runs `func_0032DF90__game`; the host
+  wrapper only applies `--cpu-team` afterwards (testing; it had silently
+  stopped working when the stand-in was dropped).
+- Kept, with reasons: `func_003DE230` (VU0 macro code, `.S` in the decomp),
+  `func_001E7CB0` (not matched, REMAINING.md); `func_003F5070/5080`,
+  `func_003916B0` (credited C, transcribed only to return `$v0` as callers
+  expect), `func_004148C0` (credited C reads literal EE BSS addresses; same
+  compare on the host BSS).  Leftover dead stand-in code removed from
+  game_cless.c.
+- Platform (kept, host by design): kernel syscalls, SIF/IOP, libpad, libmc
+  (host directory), sceCd, CRI ADXF/ADXT (port ADX player), Tamsoft (port
+  sound driver), GS/DMA/VU1 entry points bound to GL (`fe_render.c`,
+  `fe_mesh.c`, `fe_char.c`), VU0 macros, newlib vfprintf.
+- Generated logging stubs: 30 code labels, 3 C-less functions
+  (`func_003D6530`, `func_003F5630`, `func_003F5710`), 2 credited `.S`
+  (`func_00102CA0`, `func_00106578`): none logged a hit in any run below
+  (only `ps2_asm_stmt`, the inline-asm hook, does).
+
+**Fixes, with evidence** (native: `--script`, below; web: `port/tools/web_script.js`;
+screenshots under `private/converted/boot/web/`):
+
+| What a player saw | Cause | Fix | Evidence |
+|---|---|---|---|
+| Crash at the fight load (native SIGSEGV in func_003F1AB0 / func_00176230 / func_00415320 from func_0016FAA0; web: silent) | "unlock everything" wrote 0xFFFFFFFF to g+0x30/+0x34; the credited CPU pick draws from those words, so the CPU took an Abyss form (bits 24..26) or a non-existent id (0x3B..0x3F, e.g. 62) | write exactly the game's own "all bought" values (func_00329AC0 tests 0xF8FFFFFF / 0x07FFFFFF; same for the colour words), assigned so a card saved by an older build is repaired | native fights with CPU 0x1d/0x31/0xd and 0x25/0xc/0x9; `fid_arcade/` |
+| Crash on VS stage list entry 2 (stage 1) a few seconds into the fight (i386) | `func_00417EB0(V3 *)` called with a by-value V3 in sLa1_c.c: MWCC passes the address of a copy, i386 pushes the struct | R10 override: pass `&w` (a scan of src/ finds no other by-value struct argument) | `fid_vs2/fight_b.png` |
+| Crash opening a picture in Secret Factor -> Gallery (native SIGSEGV in func_0041C4B0; web: a stray write into the wasm heap) | two credited functions store the gallery hook through the literal EE address `0x0043CD0C` | R10 overrides write `D_0043CD0C[0]` | `fid_gallery/g1.png`, `g4.png` |
+| Crash in Score Ranking -> Character Ranking | R12 padded argument: `func_00150670()` gets `$a0 = &D_004CA080` in retail | `r12_regexpr.csv` row | `fid_rank/`, native `rank/r3` |
+| Crash after turning VIBRATE on in Button Config | `func_0016EEC0` reads `idx` before setting it; retail reads the caller's `$s1`, which is 0 from crt0 down | R10 override `idx = 0` | `fid_btncfg/b5.png` .. `d1.png` |
+| (preventive) 9 more padded arguments whose register holds a constant or a symbol address at the call | extended dataflow (constants, `%hi/%lo` addresses, `%gp_rel` loads) | `r12_regexpr.csv` rows | built; not all reached |
+| Saves, options and unlocks lost on reload (web) | card directory in MEMFS | `/mvc2_memcard` is IDBFS (shell.html): loaded before main(), written back 250 ms after each close/mkdir/delete (`Module.mcPersist`, called from mc.c) and on pagehide | `fid_mc1/saved.png` then `fid_mc2/boot_mc_a.png` ("Autoload successful" after a reload) |
+
+**Music cut-out ("one stage's music stops after the fight starts")**: not
+reproduced.  `MVC2_TRACE_ADXT=1` logs every ADXT call and player status
+change.  VS mode on all 16 stage-list entries (BGM AFS00 fids 0-7, 11, 0, 1,
+3-7): the stage BGM starts paused at the battle setup, is unpaused at the
+round start (`func_001718D0` -> `func_001E3FE0`), and no Stop/Pause/status
+change follows for 20 s of fight; stages 0 and 1 (whose loops span the whole
+file) keep playing through their loop points (61 s / 92 s, rendered audio
+RMS stays up).  Every stage track loops (ARCADE_DIFF.md).  So the retail
+cut-out is the IOP stream starving (ADXT error state under CD contention),
+which the port's in-memory ADX player cannot hit; no code change.
+
+**Still open**:
+- 1/2 attract intro actors (VU1 vertices deformed in place, `func_001412D0`
+  -> `func_0041C010`): not started (renderer work: rebuild or skin the GL
+  mesh per frame).
+- `func_00100590` GS environment stub: not started (GS register setup has no
+  GL meaning beyond what fe_render already applies).
+- R12: 292 padded arguments still unresolved where the register holds a
+  caller local (`gen_regpass.py --unresolved`; 504 more are widened-tail
+  entries); the ones on the paths above are fixed.
+- Not driven yet: a full arcade run to the ending (and the Abyss stage 8 /
+  its BGM fid 8), Score Attack, Survival-like modes, the shop purchase flow
+  with `--no-unlock`, score-ranking entry after a finished run
+  (`func_00127C50` is credited C and runs; never reached in these runs).
+
+**Test tooling**: `mvc2 --script FILE` (native) and `?script=` (web page,
+lines separated by `;`, shots to `/shots`) run a state-driven script:
+`state S [MAX]`, `wait N`, `press B[+B] [LEN]` (`p2:` for pad 2),
+`until S B [GAP]`, `shot NAME`, `quit` (see fe_main.c).  Scripts used here:
+`port/tools/scripts/`.  `node port/tools/web_script.js URL OUTDIR SCRIPT
+[PROFILE_DIR]` runs one in headless Chromium and copies the shots out;
+a PROFILE_DIR keeps IndexedDB between runs (card persistence).  Native,
+xvfb: `xvfb-run -a ./build/port-i386/mvc2 --hidden --size 640x480
+--shot-dir D --script S private/disc/mvc2.iso` (start skips the intros, so
+the menu is reached in ~600 frames).

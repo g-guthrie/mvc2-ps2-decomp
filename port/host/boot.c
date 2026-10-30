@@ -22,6 +22,7 @@
 #include <stdarg.h>
 #include "host.h"
 
+extern int func_00418CC0(void); /* memory card wrapper init (credited C) */
 extern void func_003DCD40(void *, unsigned char, int);
 extern void *func_0011CB70(int);
 extern void func_003F12C0(void *, ...);

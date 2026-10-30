@@ -52,13 +52,20 @@ static void unlock_everything(void)
         const char *e = getenv("MVC2_UNLOCK_PARTS");
         parts = e ? atoi(e) : 15;
     }
+    /* Exactly the game's own "everything bought" values (func_00329AC0 and
+     * func_0032D730 test w30 == 0xF8FFFFFF, w34 == 0x07FFFFFF): bits 24..26
+     * are the three Abyss forms (never selectable) and ids above 0x3A do not
+     * exist.  The CPU team pick (func_0032DF90) draws from these words, so a
+     * stray bit gives the CPU Abyss or a non-existent character (crash at
+     * the fight load).  Assigned, not ORed: this also repairs a card saved by
+     * an older port build that wrote 0xFFFFFFFF. */
     if (parts & 1) {
-        *(u32 *)(g + 0x30) = 0xFFFFFFFFu;
-        *(u32 *)(g + 0x34) = 0xFFFFFFFFu;
+        *(u32 *)(g + 0x30) = 0xF8FFFFFFu;
+        *(u32 *)(g + 0x34) = 0x07FFFFFFu; /* ids 0x20..0x3A */
     }
     if (parts & 2) {
-        *(u32 *)(g + 0x38) = 0xFFFFFFFFu;
-        *(u32 *)(g + 0x3C) = 0x07FFFFFFu; /* ids 0x20..0x3A */
+        *(u32 *)(g + 0x38) = 0xF8FFFFFFu;
+        *(u32 *)(g + 0x3C) = 0x07FFFFFFu;
     }
     if (parts & 4) {
         EE_BSS(u32, 0x004F7FB4) = 0xFFFFFFFFu;

@@ -5,6 +5,8 @@
  * callers use $v0 (found by following $v0 after every `jal` in the asm).
  * The other 18 such functions are kernel syscall stubs (handled as stubs).
  */
+#include <stdio.h>
+#include <stdlib.h>
 #include "host.h"
 
 extern int func_003F5270(void *, int, int);
@@ -54,3 +56,5 @@ int func_004148C0(void *av, void *bv, void *cv, float marker)
            c[0] == last[0] && c[1] == last[1] && c[2] == last[2] &&
            marker == EE_BSS(float, 0x004C2B28);
 }
+
+/* func_0032DF90 (CPU team pick + --cpu-team test forcing): see arcade.c. */

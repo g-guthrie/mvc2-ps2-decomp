@@ -7,7 +7,7 @@
  * keyboard / controller / touch overlay into the game's libpad (iop.c).
  *
  *   mvc2 [--iso DISC.iso] [--frames N] [--shot F:FILE.png ...] [--shot-every N --shot-dir D]
- *        [--press F:BUTTON[:LEN] ...] [--hidden] [--size WxH] [--desktop-gl] [-v]
+ *        [--press F:BUTTON[:LEN] ...] [--script FILE] [--hidden] [--size WxH] [--desktop-gl] [-v]
  *        [--config FILE] [--set KEY=VALUE ...] [--fullscreen] [--no-unlock]
  *        [--wshot F:FILE.png ...] [--key F:KEYNAME[:LEN] ...]
  *        [--arcade abc --naomi mvsc2.zip] [--arcade-trace] [--cpu-team a,b,c]
@@ -16,7 +16,7 @@
  * canvas after game frame F.  --press F:start (or cross, circle, square,
  * triangle, up, down, left, right, l1, r1, l2, r2, select) holds that button
  * on pad 1 from frame F for LEN frames (default 6): scripted input for
- * headless runs.  Web: the page's file picker / embedded disc calls
+ * headless runs.  --script FILE: state-driven input (see script_step).  Web: the page's file picker / embedded disc calls
  * viewer_open_js(path) and the game boots then.
  *
  * Settings (port/docs/USER_GUIDE.md): natively SDL_GetPrefPath("mvc2-port",
@@ -76,6 +76,126 @@ static const struct { const char *n; u16 bit; } BTN[] = {
     {"r2", PS2_R2},
 };
 
+/* --script FILE (testing): state-driven scripted input for headless runs.
+ * One command per line ('#' comments):
+ *   state S [MAX]          wait until the game state (g[0..2] as "a/b/c",
+ *                          a prefix such as "2/1" is enough) matches; give
+ *                          up after MAX frames (default 7200) with a log line
+ *   wait N                 let N frames pass
+ *   press B[+B..] [LEN]    hold buttons on pad 1 for LEN frames (default 6),
+ *                          then release for 6 frames; "p2:" before a button
+ *                          name puts it on pad 2
+ *   until S B[+B..] [GAP]  press B every GAP frames (default 30) until the
+ *                          state matches S (at most 200 presses)
+ *   shot NAME              write NAME.png into --shot-dir
+ *   quit                   end the run */
+static struct {
+    char **line;
+    int n, pc, timer, phase, count;
+    u16 hold0, hold1;
+} S;
+
+static int state_match(const char *want)
+{
+    char cur[32];
+    int st = mvc2_game_state();
+    snprintf(cur, sizeof cur, "%d/%d/%d", st >> 16, (st >> 8) & 0xFF, st & 0xFF);
+    return strncmp(cur, want, strlen(want)) == 0 &&
+           (cur[strlen(want)] == 0 || cur[strlen(want)] == '/' || want[strlen(want) - 1] == '/');
+}
+
+static void script_buttons(const char *spec, u16 *b0, u16 *b1)
+{
+    char buf[128], *t, *save = NULL;
+    int k;
+    *b0 = *b1 = 0;
+    snprintf(buf, sizeof buf, "%s", spec);
+    for (t = strtok_r(buf, "+", &save); t; t = strtok_r(NULL, "+", &save)) {
+        int p2 = !strncmp(t, "p2:", 3);
+        const char *nm = p2 ? t + 3 : t;
+        for (k = 0; k < (int)(sizeof BTN / sizeof BTN[0]); k++)
+            if (!strcmp(nm, BTN[k].n))
+                *(p2 ? b1 : b0) |= BTN[k].bit;
+    }
+}
+
+static void write_shot(const char *path);
+
+static int script_load(const char *path)
+{
+    FILE *f = fopen(path, "r");
+    char ln[256];
+    if (!f)
+        return -1;
+    while (fgets(ln, sizeof ln, f)) {
+        char *c = strchr(ln, '#');
+        if (c) *c = 0;
+        for (c = ln + strlen(ln); c > ln && (c[-1] == '\n' || c[-1] == ' ' || c[-1] == '\r' || c[-1] == '\t'); c--)
+            c[-1] = 0;
+        for (c = ln; *c == ' ' || *c == '\t'; c++)
+            ;
+        if (!*c)
+            continue;
+        S.line = (char **)realloc(S.line, sizeof(char *) * (S.n + 1));
+        S.line[S.n++] = strdup(c);
+    }
+    fclose(f);
+    return 0;
+}
+
+/* one frame of the script: sets the buttons to hold this frame */
+static void script_step(u16 *b0, u16 *b1)
+{
+    static const char *shot_dir;
+    char cmd[32] = "", a1[160] = "", a2[64] = "", a3[32] = "";
+    *b0 = *b1 = 0;
+    if (!shot_dir)
+        shot_dir = A.shot_dir ? A.shot_dir : ".";
+    while (S.pc < S.n) {
+        sscanf(S.line[S.pc], "%31s %159s %63s %31s", cmd, a1, a2, a3);
+        if (!strcmp(cmd, "state")) {
+            int max = a2[0] ? atoi(a2) : 7200;
+            if (state_match(a1)) { S.pc++; S.timer = 0; continue; }
+            if (++S.timer > max) {
+                host_log("script: line %d: state %s not reached in %d frames (now %06X)", S.pc + 1, a1, max, mvc2_game_state());
+                S.pc++; S.timer = 0; continue;
+            }
+            return;
+        } else if (!strcmp(cmd, "wait")) {
+            if (S.timer++ < atoi(a1)) return;
+            S.pc++; S.timer = 0; continue;
+        } else if (!strcmp(cmd, "press")) {
+            int len = a2[0] ? atoi(a2) : 6;
+            if (S.timer < len) { script_buttons(a1, b0, b1); S.timer++; return; }
+            if (S.timer++ < len + 6) return;
+            S.pc++; S.timer = 0; continue;
+        } else if (!strcmp(cmd, "until")) {
+            int gap = a3[0] ? atoi(a3) : 30;
+            if (S.timer == 0 && state_match(a1)) { S.pc++; S.count = 0; continue; }
+            if (S.count > 200) {
+                host_log("script: line %d: state %s not reached after 200 presses (now %06X)", S.pc + 1, a1, mvc2_game_state());
+                S.pc++; S.count = 0; S.timer = 0; continue;
+            }
+            if (S.timer < 6) script_buttons(a2, b0, b1);
+            if (++S.timer >= gap) { S.timer = 0; S.count++; }
+            return;
+        } else if (!strcmp(cmd, "shot")) {
+            char path[512];
+            snprintf(path, sizeof path, "%s/%s.png", shot_dir, a1);
+            write_shot(path);
+            S.pc++; continue;
+        } else if (!strcmp(cmd, "quit")) {
+            host_log("script: done at frame %ld", mvc2_host_frame);
+            plat_request_quit();
+            S.pc = S.n;
+            return;
+        } else {
+            host_log("script: line %d: unknown command %s", S.pc + 1, cmd);
+            S.pc++;
+        }
+    }
+}
+
 static int boot_game(const char *iso)
 {
     if (host_disc_open(iso) != 0)
@@ -129,6 +249,12 @@ static void update(void *u)
     for (i = 0; i < A.npress; i++)
         if (mvc2_host_frame >= A.press[i].frame && mvc2_host_frame < A.press[i].frame + A.press[i].len)
             p0.buttons |= A.press[i].bits;
+    if (S.n && mvc2_host_frame >= 0) {
+        u16 b0, b1;
+        script_step(&b0, &b1);
+        p0.buttons |= b0;
+        p1.buttons |= b1;
+    }
     p0.connected = p1.connected = 1;
     host_pad_set(0, &p0);
     host_pad_set(1, &p1);
@@ -244,6 +370,9 @@ int main(int argc, char **argv)
                         A.press[A.npress].bits = BTN[k].bit;
                         A.npress++;
                     }
+            i++;
+        } else if (!strcmp(a, "--script") && n) {
+            if (script_load(n)) { fprintf(stderr, "mvc2: cannot read script %s\n", n); return 2; }
             i++;
         } else if (!strcmp(a, "--hidden")) hidden = 1;
         else if (!strcmp(a, "--desktop-gl")) desktop_gl = 1;
