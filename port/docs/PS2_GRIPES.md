@@ -6,7 +6,7 @@ against the PS2 code/data and the NAOMI decomp before acting on it).
 
 | Gripe | Likely cause on PS2 | Port plan |
 |---|---|---|
-| Downsampled, muffled audio; one stage's music cuts out after the fight starts (some copies) | Lower-quality audio storage; SPU2/IOP playback | Clean ADX/VAG decode and resampling through SDL; fix the music-stop bug in code; optional override that loads the player's own Dreamcast/NAOMI audio. |
+| Downsampled, muffled audio; one stage's music cuts out after the fight starts (some copies) | Lower-quality audio storage; SPU2/IOP playback | Clean ADX/VAG decode and resampling through SDL; fix the music-stop bug in code (checked 2026-10-30: not reproduced on any VS stage; the port's in-memory ADX player cannot starve like the IOP stream, BOOT_NOTES "Fidelity pass"); optional override that loads the player's own Dreamcast/NAOMI audio. |
 | Muddy / blurry / pixelated visuals | 640x224 field rendering, interlaced NTSC output, bilinear sprites | Progressive output at native resolution, nearest/integer sprite scaling, optional CRT/pixel filters. |
 | Slowdown | PS2 performance limits | Fixed 60 Hz logic step on modern hardware; optional "arcade slowdown" toggle. |
 | Longer loading | CD streaming | AFS entries read from local files; near-instant. |
