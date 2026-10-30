@@ -260,7 +260,7 @@ if(MVC2_APP)
       -sUSE_SDL=2 -sMAX_WEBGL_VERSION=2 -sMIN_WEBGL_VERSION=2 -sFULL_ES3
       -sALLOW_MEMORY_GROWTH=1 -sINITIAL_MEMORY=268435456 -sMAXIMUM_MEMORY=2GB -sSTACK_SIZE=1048576
       -sFORCE_FILESYSTEM=1 -sEXPORTED_FUNCTIONS=_main,_viewer_open_js
-      -sEXPORTED_RUNTIME_METHODS=ccall,cwrap,FS --profiling-funcs
+      -sEXPORTED_RUNTIME_METHODS=ccall,cwrap,FS,IDBFS,addRunDependency,removeRunDependency -lidbfs.js --profiling-funcs
       --shell-file ${PORT_DIR}/web/shell.html)
     if(MVC2_EMULATE_FPCASTS)
       target_link_options(mvc2 PRIVATE -sEMULATE_FUNCTION_POINTER_CASTS=1)

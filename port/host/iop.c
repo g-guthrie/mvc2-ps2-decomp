@@ -18,8 +18,6 @@
 #include "host.h"
 #include "pad.h"
 
-extern void func_003DCD40(void *, unsigned char, int);
-
 /* ---- SIF RPC (libkernl) -------------------------------------------------
  * sceSifBindRpc(client, rpc_number, mode): the client struct gets a non-zero
  * server pointer at +0x24, which is what the callers poll for. */
@@ -160,21 +158,6 @@ int func_0010FC98(void *clock)
     c[6] = bcd(tm->tm_mon + 1);
     c[7] = bcd(tm->tm_year % 100);
     return 1;
-}
-
-/* ---- memory card init (func_00418CC0, C-less) ------------------------
- * The asm: retry sceMcInit while it returns -101, clear the wrapper state
- * (0x84 bytes at D_00633690, two 12-byte port records at D_00633670) and set
- * the two "last result" halfwords to 0xFFFF. */
-int func_00418CC0(void)
-{
-    int i;
-    func_003DCD40(EE_BSS_PTR(0x00633690), 0, 0x84);
-    for (i = 0; i < 2; i++)
-        func_003DCD40(EE_BSS_PTR(0x00633670 + 12 * i), 0, 0xC);
-    EE_BSS(u16, 0x006336FE) = 0xFFFF;
-    EE_BSS(u16, 0x00633706) = 0xFFFF;
-    return 0;
 }
 
 /* ---- module loading: sceSifLoadModule --------------------------------
