@@ -26,6 +26,15 @@ OVERRIDES = {
     # uses $v0 as the struct address, so retail copies 10 bytes from EE
     # address 0 (kernel RAM). Clang rejects the address of an rvalue, and the
     # host has no RAM at 0: read a zeroed stand-in after making the call.
+    # func_00417EB0(V3 *) (normalise in place, return the length) is called
+    # with a V3 by value: MWCC passes a by-value struct as the address of a
+    # caller-made copy, so the callee normalises that copy.  i386 pushes the
+    # struct itself (the callee reads x as a pointer: SIGSEGV on the stage
+    # whose effect calls func_00330380).  Host form: pass the copy's address.
+    "src/sLa1_c.c": [
+        ("extern f32 func_00417EB0(V3_b);", "extern f32 func_00417EB0(V3_b *); /* host R10: by-value struct = address of a copy */"),
+        ("r = func_00417EB0(w);", "r = func_00417EB0(&w); /* host R10 */"),
+    ],
     "src/r12_07_c.c": [
         ("sb = &func_004180E0();",
          "{ static S10 ee_page0; func_004180E0(); sb = &ee_page0; } /* host R10: EE address 0 */"),
