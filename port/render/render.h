@@ -33,8 +33,29 @@ void fl_frame_end(void);          /* flush pending batches (func_00170D70 role) 
 enum { R_PRESENT_INTEGER = 0, R_PRESENT_SHARP_FIT = 1 };
 void r_present(int win_w, int win_h, int mode); /* func_003ECD00 role: canvas -> window */
 void r_canvas_rect(int win_w, int win_h, int mode, int *x, int *y, int *w, int *h);
+/* Present with the player's display options (port/host/fe/fe_ui.c settings). */
+enum { R_SCALE_FIT = 0, R_SCALE_INTEGER = 1, R_SCALE_STRETCH = 2 };
+enum { R_FILTER_NEAREST = 0, R_FILTER_SHARP = 1, R_FILTER_SMOOTH = 2 };
+enum { R_CRT_OFF = 0, R_CRT_SCANLINES = 1, R_CRT_FULL = 2 };
+typedef struct RPresent {
+    int scale, filter, crt;
+    float crt_strength;  /* 0..1 */
+    float crt_mask;      /* 0..1 aperture-grille mask strength (R_CRT_FULL) */
+    int valign_top;      /* portrait + touch pad: picture at the top */
+    int top_margin;      /* pixels above the picture when valign_top */
+} RPresent;
+void r_present_ex(int win_w, int win_h, const RPresent *p);
+void r_present_rect(int win_w, int win_h, const RPresent *p, int *x, int *y, int *w, int *h);
+/* Frame skip: while on, batches and meshes are dropped (textures and state
+ * still update), so a slow device can run several logic steps per display
+ * frame and draw only the last. */
+void r_set_discard(int on);
+/* Sprite (2D texture) sampling: -1 as the game asks (state 0x62), 0 nearest, 1 smooth. */
+void r_set_sprite_filter(int f);
 /* Read the 640x480 canvas as top-down RGBA8. */
 int r_read_canvas(uint8_t *rgba);
+/* Read the window (default framebuffer, after present + overlay) as top-down RGBA8. */
+int r_read_window(int w, int h, uint8_t *rgba);
 void r_stats(int *draw_calls, int *verts); /* last frame */
 
 /* ---- render state: func_003DF850(id, value) ---- */
@@ -154,6 +175,9 @@ void r_overlay_disc(float cx, float cy, float r, uint32_t argb);
 void r_overlay_ring(float cx, float cy, float r, float width, uint32_t argb);
 void r_overlay_rect(float x, float y, float w, float h, uint32_t argb);
 void r_overlay_end(void);
+/* 5x7 bitmap text (ASCII; lower case drawn as upper case). px = pixel size. */
+float r_overlay_text(float x, float y, float px, uint32_t argb, const char *s); /* returns end x */
+float r_overlay_text_width(float px, const char *s);
 
 /* ---- asset helpers (decoders shared with the tools) ---- */
 /* LZ16 (func_00176230). Returns malloc'd buffer. */

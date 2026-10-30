@@ -26,10 +26,15 @@ typedef struct TouchPad {
     TouchButton b[TB_COUNT];
     struct { long long id; int down; float x, y; } f[TOUCH_MAX_FINGERS];
     int visible;              /* shown once a touch was seen (or forced) */
+    float scale;              /* size multiplier (touch.size setting), 0 = 1 */
+    int portrait;             /* layout built for a portrait screen (picture at the top) */
+    float picture_bottom;     /* portrait: controls start below this y */
     uint16_t latched;         /* bits hit by a finger-down since the last poll (taps shorter than a frame) */
 } TouchPad;
 
 void touch_layout(TouchPad *t, int w, int h);
+/* Same, keeping the controls clear of a picture that ends at y = picture_bottom (portrait). */
+void touch_layout_ex(TouchPad *t, int w, int h, float picture_bottom);
 void touch_finger(TouchPad *t, long long id, int down, float x, float y); /* pixels */
 void touch_release_all(TouchPad *t);
 uint16_t touch_buttons(TouchPad *t); /* recompute held state; PS2 bits */

@@ -6,46 +6,133 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-title" content="MvC2 Port">
+<meta name="theme-color" content="#0b0d18">
+<meta name="description" content="Marvel vs. Capcom 2 (PS2) decompiled and running natively in the browser, with your own disc image.">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="icon-32.png">
+<link rel="apple-touch-icon" href="icon-180.png">
 <title>Marvel vs. Capcom 2</title>
 <style>
-  html, body { margin: 0; height: 100%; background: #000; overflow: hidden;
-               overscroll-behavior: none; touch-action: none; -webkit-user-select: none; user-select: none; }
-  canvas { display: block; width: 100vw; height: 100vh; touch-action: none; outline: none; }
-  #ui { position: fixed; left: 50%; top: 40%; transform: translate(-50%, -50%); max-width: 90vw;
-        font: 15px/1.4 system-ui, sans-serif; color: #eee; text-align: center;
-        background: rgba(20, 20, 28, .92); padding: 18px 22px; border-radius: 12px; }
-  #ui.hidden, [hidden] { display: none !important; }
-  #ui button, #pick { display: inline-block; margin: 10px 6px 0; padding: 10px 16px; border-radius: 8px;
-        border: 0; background: #3a6df0; color: #fff; font: inherit; cursor: pointer; }
-  #forget { background: #555; }
-  #status { white-space: pre-line; }
-  #menu { position: fixed; right: 8px; top: 8px; padding: 6px 10px; font: 13px system-ui, sans-serif;
-          background: rgba(40,40,50,.6); color: #ddd; border: 0; border-radius: 6px; }
+  :root { --bg: #0b0d18; --panel: rgba(18, 20, 34, .97); --line: #2a2f4a; --text: #e8e9f2; --dim: #9aa0b8;
+          --accent: #3a6df0; --accent2: #ffd060; --warn: #e06040; color-scheme: dark; }
+  html, body { margin: 0; height: 100%; background: #000; overflow: hidden; color: var(--text);
+               overscroll-behavior: none; touch-action: none; -webkit-user-select: none; user-select: none;
+               font: 15px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  canvas { display: block; width: 100vw; height: 100vh; height: 100dvh; touch-action: none; outline: none; }
+  [hidden] { display: none !important; }
+  button, select, input { font: inherit; color: inherit; }
+  .btn { display: inline-block; margin: 6px 4px 0; padding: 9px 15px; border-radius: 8px; border: 0;
+         background: var(--accent); color: #fff; cursor: pointer; }
+  .btn.grey { background: #3a3d52; }
+  .btn:focus-visible, .chip:focus-visible, select:focus-visible { outline: 2px solid var(--accent2); outline-offset: 2px; }
+
+  /* disc picker / loading card */
+  #ui { position: fixed; left: 50%; top: 42%; transform: translate(-50%, -50%); width: min(440px, 90vw);
+        text-align: center; background: var(--panel); padding: 20px 22px; border-radius: 14px; box-sizing: border-box;
+        box-shadow: 0 10px 40px rgba(0,0,0,.6); border: 1px solid var(--line); }
+  #ui h1 { font-size: 19px; margin: 0 0 8px; }
+  #status { white-space: pre-line; color: var(--dim); }
+  #progress { height: 4px; background: #222538; border-radius: 2px; margin: 12px 0 2px; overflow: hidden; }
+  #progress > i { display: block; height: 100%; width: 30%; background: var(--accent); animation: slide 1.2s infinite ease-in-out; }
+  @keyframes slide { 0% { margin-left: -30%; } 100% { margin-left: 100%; } }
+  .note { font-size: 12px; color: var(--dim); margin-top: 12px; }
+
+  /* top-right buttons */
+  #bar { position: fixed; right: max(8px, env(safe-area-inset-right)); top: max(8px, env(safe-area-inset-top));
+         display: flex; gap: 6px; transition: opacity .4s; z-index: 5; }
+  #bar.idle { opacity: 0; }
+  #bar button { width: 40px; height: 40px; border-radius: 10px; border: 0; background: rgba(30,32,48,.72);
+                color: #ddd; cursor: pointer; display: grid; place-items: center; padding: 0; }
+  #bar button svg { width: 22px; height: 22px; fill: currentColor; }
+
+  /* settings panel */
+  #panel { position: fixed; inset: 0; z-index: 10; display: flex; align-items: center; justify-content: center;
+           background: rgba(0,0,0,.55); touch-action: pan-y; }
+  #sheet { width: min(760px, 100vw); height: min(640px, 100dvh); background: var(--panel); border: 1px solid var(--line);
+           border-radius: 14px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.7);
+           box-sizing: border-box; }
+  @media (max-width: 600px), (max-height: 500px) { #sheet { border-radius: 0; height: 100dvh; } }
+  #sheet header { display: flex; align-items: center; gap: 10px; padding: 12px 14px 0; }
+  #sheet header h2 { flex: 1; margin: 0; font-size: 18px; }
+  #close { width: 36px; height: 36px; border-radius: 8px; border: 0; background: #2a2d42; cursor: pointer; font-size: 18px; }
+  #tabs { display: flex; gap: 4px; padding: 10px 12px 0; overflow-x: auto; border-bottom: 1px solid var(--line); flex: none; }
+  #tabs button { border: 0; background: none; padding: 8px 12px; border-radius: 8px 8px 0 0; cursor: pointer;
+                 color: var(--dim); white-space: nowrap; }
+  #tabs button[aria-selected="true"] { color: #fff; background: #23273e; box-shadow: inset 0 -2px 0 var(--accent); }
+  #body { flex: 1; overflow-y: auto; padding: 8px 16px 16px; touch-action: pan-y; }
+  .row { display: grid; grid-template-columns: 1fr auto; gap: 4px 14px; align-items: center; padding: 10px 0;
+         border-bottom: 1px solid #1f2238; }
+  .row .help { grid-column: 1 / -1; }
+  .help { font-size: 12.5px; color: var(--dim); white-space: pre-line; }
+  .row label { font-weight: 500; }
+  .tag { font-size: 11px; color: var(--accent2); margin-left: 6px; }
+  .seg { display: inline-flex; background: #1b1e30; border-radius: 9px; padding: 3px; flex-wrap: wrap; justify-content: flex-end; }
+  .seg button { border: 0; background: none; padding: 6px 11px; border-radius: 7px; cursor: pointer; color: var(--dim); }
+  .seg button.on { background: var(--accent); color: #fff; }
+  .range { display: flex; align-items: center; gap: 8px; }
+  .range input { width: min(220px, 40vw); accent-color: var(--accent); }
+  .range output { min-width: 44px; text-align: right; color: var(--accent2); font-variant-numeric: tabular-nums; }
+  .empty { color: var(--dim); padding: 18px 0; }
+  table.binds { width: 100%; border-collapse: collapse; margin-top: 6px; }
+  table.binds th { text-align: left; font-weight: 500; color: var(--dim); font-size: 12.5px; padding: 6px 4px; }
+  table.binds td { padding: 4px; border-bottom: 1px solid #1f2238; font-size: 14px; }
+  .chip { display: inline-block; min-width: 84px; max-width: 150px; padding: 6px 10px; text-align: left;
+          border-radius: 8px; border: 1px solid #343957; background: #1b1e30; cursor: pointer; color: var(--accent2);
+          overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle; }
+  .chip.cap { background: var(--warn); color: #fff; border-color: var(--warn); animation: pulse 1s infinite; }
+  @keyframes pulse { 50% { opacity: .65; } }
+  .x { border: 0; background: none; color: var(--dim); cursor: pointer; font-size: 14px; padding: 2px 6px; vertical-align: middle; }
+  .players { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin: 8px 0; }
+  .kv { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; font-size: 13.5px; margin: 10px 0; }
+  .kv b { color: var(--dim); font-weight: 500; }
+  #toast { position: fixed; left: 50%; bottom: max(18px, env(safe-area-inset-bottom)); transform: translateX(-50%);
+           background: rgba(20,22,36,.94); padding: 9px 16px; border-radius: 10px; z-index: 20; font-size: 14px;
+           border: 1px solid var(--line); transition: opacity .3s; pointer-events: none; max-width: 86vw; text-align: center; }
 </style>
 </head>
 <body>
 <canvas id="canvas" oncontextmenu="event.preventDefault()" tabindex="-1"></canvas>
-<div id="ui">
+
+<div id="ui" role="dialog" aria-live="polite">
+  <h1>Marvel vs. Capcom 2</h1>
   <div id="status">Loading...</div>
-  <label id="pick" hidden>Choose disc image (.iso)
+  <div id="progress"><i></i></div>
+  <label id="pick" class="btn" hidden tabindex="0">Choose disc image (.iso)
     <input type="file" id="file" accept=".iso,.bin,application/octet-stream,application/x-iso9660-image" hidden>
   </label>
-  <button id="forget" hidden>Forget cached disc</button>
-  <div style="font-size:12px;opacity:.7;margin-top:10px">The image stays on this device (IndexedDB); nothing is uploaded.</div>
+  <button id="forget" class="btn grey" hidden>Forget cached disc</button>
+  <div class="note">Your own PS2 disc image (SLUS_204.86). It stays on this device (IndexedDB); nothing is uploaded.</div>
 </div>
-<button id="menu" hidden>Disc</button>
+
+<div id="bar" hidden>
+  <button id="fsbtn" title="Fullscreen" aria-label="Fullscreen"><svg viewBox="0 0 24 24"><path d="M4 4h6v2H6v4H4zm10 0h6v6h-2V6h-4zM4 14h2v4h4v2H4zm14 0h2v6h-6v-2h4z"/></svg></button>
+  <button id="gear" title="Settings (F1 in game)" aria-label="Settings"><svg viewBox="0 0 24 24"><path d="M19.4 13a7.6 7.6 0 0 0 0-2l2.1-1.6-2-3.5-2.5 1a7.4 7.4 0 0 0-1.7-1L14.9 3h-4l-.4 2.7a7.4 7.4 0 0 0-1.7 1l-2.5-1-2 3.5L6.6 11a7.6 7.6 0 0 0 0 2l-2.1 1.6 2 3.5 2.5-1a7.4 7.4 0 0 0 1.7 1l.4 2.7h4l.4-2.7a7.4 7.4 0 0 0 1.7-1l2.5 1 2-3.5zM12.9 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/></svg></button>
+</div>
+
+<div id="panel" hidden role="dialog" aria-modal="true" aria-labelledby="ptitle">
+  <div id="sheet">
+    <header><h2 id="ptitle">Settings</h2><button id="close" aria-label="Close settings">&#x2715;</button></header>
+    <nav id="tabs" role="tablist"></nav>
+    <div id="body"></div>
+  </div>
+</div>
+<div id="toast" hidden></div>
+
 <script>
 'use strict';
-const ui = document.getElementById('ui'), statusEl = document.getElementById('status');
-const pick = document.getElementById('pick'), fileEl = document.getElementById('file');
-const forget = document.getElementById('forget'), menu = document.getElementById('menu');
+const $ = id => document.getElementById(id);
+const ui = $('ui'), statusEl = $('status'), pick = $('pick'), fileEl = $('file'), forget = $('forget');
+const bar = $('bar'), panel = $('panel'), tabsEl = $('tabs'), bodyEl = $('body');
+let booted = false, singleFile = false;
 function status(t) { statusEl.textContent = t; }
-function showUi(on) { ui.classList.toggle('hidden', !on); menu.hidden = on; }
+function showUi(on) { ui.hidden = !on; bar.hidden = on; }
+function toast(t, ms = 2200) {
+  const e = $('toast'); e.textContent = t; e.hidden = false; e.style.opacity = 1;
+  clearTimeout(toast.t); toast.t = setTimeout(() => { e.style.opacity = 0; setTimeout(() => e.hidden = true, 300); }, ms);
+}
 
-/* IndexedDB cache of the user's disc image: picked once, reused on later visits. */
+/* ---------------- disc image (IndexedDB cache) ---------------- */
 const DB = 'mvc2-port', STORE = 'disc', KEY = 'iso';
 function idb() {
   return new Promise((res, rej) => {
@@ -69,12 +156,14 @@ const idbDel = () => idbOp('readwrite', s => s.delete(KEY));
 
 async function openDisc(blob, label) {
   status('Reading ' + label + ' (' + (blob.size / 1048576).toFixed(0) + ' MB)...');
+  $('progress').hidden = false;
   const buf = new Uint8Array(await blob.arrayBuffer());
   try { Module.FS.unlink('/disc.iso'); } catch (e) {}
   Module.FS.writeFile('/disc.iso', buf, { canOwn: true });   /* MEMFS keeps the JS buffer */
   const r = Module.ccall('viewer_open_js', 'number', ['string'], ['/disc.iso']);
-  if (r === 0) { showUi(false); document.getElementById('canvas').focus(); return true; }
+  if (r === 0) { booted = true; showUi(false); $('canvas').focus(); hint(); wake(); return true; }
   status('That file is not a usable MvC2 disc image.');
+  $('progress').hidden = true;
   return false;
 }
 
@@ -82,25 +171,26 @@ async function startDisc() {
   try {
     if (Module.FS.analyzePath('/disc.iso').exists) {        /* --preload-file (local testing) */
       Module.ccall('viewer_open_js', 'number', ['string'], ['/disc.iso']);
-      showUi(false);
-      return;
+      booted = true; showUi(false); return;
     }
   } catch (e) {}
   /* Personal single-file build (port/tools/pack_personal.py): the disc image is
      embedded in this page as gzip+base64, so no picker or cache is needed. */
-  const emb = document.getElementById('embedded-disc');
+  const emb = $('embedded-disc');
   if (emb) {
     status('Unpacking game data...');
     const gz = await (await fetch('data:application/octet-stream;base64,' + emb.textContent.trim())).blob();
     emb.remove();
     const iso = await new Response(gz.stream().pipeThrough(new DecompressionStream('gzip'))).blob();
-    if (await openDisc(iso, 'embedded game data')) { menu.remove(); return; }
+    singleFile = true;
+    if (await openDisc(iso, 'embedded game data')) return;
   }
   let cached = null;
   try { cached = await idbGet(); } catch (e) { console.warn('IndexedDB unavailable', e); }
   if (cached && await openDisc(cached, 'cached disc image')) return;
   status('Choose your Marvel vs. Capcom 2 (PS2) disc image.');
   pick.hidden = false;
+  $('progress').hidden = true;
   forget.hidden = !cached;
 }
 
@@ -113,21 +203,221 @@ fileEl.addEventListener('change', async () => {
   if (!await openDisc(f, f.name)) pick.hidden = false;
 });
 forget.addEventListener('click', async () => { await idbDel(); forget.hidden = true; status('Cached image removed.'); });
-menu.addEventListener('click', () => { pick.hidden = false; status('Choose a different disc image.'); showUi(true); });
 
-/* ?nounlock (or ?unlock=0): the game's own unlock state (no "unlock
-   everything"); ?args=... passes further command-line options to main(). */
+function hint() {
+  const touch = matchMedia('(pointer: coarse)').matches;
+  toast(touch ? 'Touch the screen for the on-screen pad. The gear opens the settings.'
+              : 'Arrows + A S D / Z X C, Enter = Start. F1 or the gear: settings.', 4000);
+}
+
+/* ---------------- fullscreen ---------------- */
+function toggleFullscreen() {
+  const d = document, e = d.documentElement;
+  try {
+    if (d.fullscreenElement || d.webkitFullscreenElement) (d.exitFullscreen || d.webkitExitFullscreen).call(d);
+    else {
+      const p = (e.requestFullscreen || e.webkitRequestFullscreen).call(e, { navigationUI: 'hide' });
+      if (p && p.then) p.catch(() => {});
+    }
+  } catch (err) { toast('Fullscreen is not available here (iPhone: Share, Add to Home Screen).'); }
+}
+$('fsbtn').addEventListener('click', toggleFullscreen);
+if (!document.fullscreenEnabled && !document.webkitFullscreenEnabled) $('fsbtn').hidden = true;
+
+/* the buttons fade while playing; pointer movement or a touch brings them back */
+let idleT = 0;
+function wake() { bar.classList.remove('idle'); clearTimeout(idleT); idleT = setTimeout(() => { if (panel.hidden) bar.classList.add('idle'); }, 3000); }
+['pointermove', 'pointerdown', 'touchstart'].forEach(t => window.addEventListener(t, wake, { passive: true }));
+
+/* ---------------- settings panel ----------------
+   Generated from the game's option table (mvc2_settings_json): every option
+   registered in C, including the "Arcade accuracy" section another module
+   fills, shows up here.  The C side stores the values (localStorage). */
+const C = {
+  json: fn => JSON.parse(Module.ccall(fn, 'string', [], [])),
+  set: (k, v) => Module.ccall('mvc2_setting_set', null, ['string', 'string'], [k, String(v)]),
+  call: (fn, ...a) => Module.ccall(fn, null, a.map(() => 'number'), a),
+};
+const SECTIONS = ['Video', 'Audio', 'Input', 'Controls', 'Game', 'Arcade accuracy', 'About'];
+let tab = 'Video', ctlPlayer = 0, capPoll = 0;
+try { tab = localStorage.getItem('mvc2-tab') || tab; } catch (e) {}
+if (!SECTIONS.includes(tab)) tab = 'Video';
+
+function openPanel(on) {
+  if (!booted && on) return;
+  panel.hidden = !on;
+  try { C.call('mvc2_ui_hold', on ? 1 : 0); } catch (e) {}
+  if (on) { renderTabs(); renderBody(); $('close').focus(); }
+  else { stopCapture(); $('canvas').focus(); wake(); }
+}
+$('gear').addEventListener('click', () => openPanel(true));
+$('close').addEventListener('click', () => openPanel(false));
+panel.addEventListener('click', e => { if (e.target === panel) openPanel(false); });
+window.addEventListener('keydown', e => {
+  if (!panel.hidden && e.key === 'Escape' && !capPoll) { openPanel(false); e.stopPropagation(); }
+}, true);
+
+function renderTabs() {
+  tabsEl.innerHTML = '';
+  for (const s of SECTIONS) {
+    const b = el('button', { role: 'tab', 'aria-selected': s === tab }, s);
+    b.onclick = () => { tab = s; try { localStorage.setItem('mvc2-tab', s); } catch (e) {} stopCapture(); renderTabs(); renderBody(); };
+    tabsEl.appendChild(b);
+  }
+}
+
+function el(tag, attrs = {}, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === 'class') e.className = v; else if (k.startsWith('on')) e[k] = v; else e.setAttribute(k, v);
+  }
+  for (const k of kids) e.append(k);
+  return e;
+}
+
+const fmt = (o, v) => o.min >= 0 && (o.max === 100 || o.key.startsWith('touch.')) ? v + ' %' : String(v);
+function optionRow(o) {
+  const row = el('div', { class: 'row' });
+  const lab = el('label', {}, o.label);
+  if (o.flags & 1) lab.append(el('span', { class: 'tag' }, 'next start'));
+  row.append(lab);
+  let ctl;
+  if (o.type === 'bool' || o.type === 'enum') {
+    const choices = o.type === 'bool' ? ['Off', 'On'] : o.choices;
+    ctl = el('div', { class: 'seg', role: 'radiogroup', 'aria-label': o.label });
+    choices.forEach((c, i) => {
+      const b = el('button', { class: i === o.value ? 'on' : '', role: 'radio', 'aria-checked': i === o.value }, c);
+      b.onclick = () => {
+        C.set(o.key, o.type === 'bool' ? i : c);
+        if (o.flags & 1) toast('Takes effect the next time the game starts.');
+        renderBody();
+      };
+      ctl.append(b);
+    });
+  } else if (o.type === 'int') {
+    const out = el('output', {}, fmt(o, o.value));
+    const r = el('input', { type: 'range', min: o.min, max: o.max, step: o.step, value: o.value, 'aria-label': o.label });
+    r.oninput = () => { out.textContent = fmt(o, +r.value); C.set(o.key, r.value); };
+    ctl = el('div', { class: 'range' }, r, out);
+  } else {
+    ctl = el('button', { class: 'btn grey', onclick: () => C.set(o.key, 1) }, o.label);
+  }
+  row.append(ctl);
+  if (o.help) row.append(el('div', { class: 'help' }, o.help));
+  return row;
+}
+
+function renderBody() {
+  const keep = bodyEl.scrollTop;
+  bodyEl.innerHTML = '';
+  if (tab === 'Controls') renderControls();
+  else if (tab === 'About') renderAbout();
+  else {
+    /* flags: 2 native only, 8 hidden */
+    const opts = C.json('mvc2_settings_json').options.filter(o => o.section === tab && !(o.flags & (2 | 8)));
+    if (tab === 'Video' && !$('fsbtn').hidden)
+      bodyEl.append(el('div', { class: 'row' }, el('label', {}, 'Fullscreen'),
+        el('button', { class: 'btn grey', onclick: () => { toggleFullscreen(); setTimeout(renderBody, 300); } },
+           document.fullscreenElement ? 'Leave fullscreen' : 'Enter fullscreen')));
+    for (const o of opts) bodyEl.append(optionRow(o));
+    if (!opts.length) bodyEl.append(el('div', { class: 'empty' }, tab === 'Arcade accuracy'
+      ? 'No arcade-accuracy options in this build yet. They appear here once the arcade data mode registers them.'
+      : 'Nothing here.'));
+    if (tab === 'Game') bodyEl.append(el('div', { class: 'help', style: 'margin-top:10px' },
+      'Add ?nounlock to the page address to start once with the game\'s own unlock state without changing this setting.'));
+  }
+  bodyEl.scrollTop = keep;
+}
+
+const STYLE = ['Xbox', 'PlayStation', 'Nintendo'];
+function renderControls() {
+  const b = C.json('mvc2_bind_json');
+  const sel = el('div', { class: 'players' });
+  [0, 1].forEach(p => sel.append(el('button', { class: 'btn' + (p === ctlPlayer ? '' : ' grey'),
+    onclick: () => { ctlPlayer = p; stopCapture(); renderBody(); } }, 'Player ' + (p + 1))));
+  sel.append(el('button', { class: 'btn grey', onclick: () => {
+    C.call('mvc2_bind_reset', ctlPlayer); toast('Player ' + (ctlPlayer + 1) + ' controls reset'); renderBody(); } }, 'Reset to defaults'));
+  bodyEl.append(sel);
+  const pads = b.pads.map((p, i) => `Gamepad ${i + 1}: ${p.name} (${STYLE[p.style]} labels), plays as player ${p.player + 1}`);
+  bodyEl.append(el('div', { class: 'help' }, pads.length ? pads.join('\n')
+    : 'No gamepad yet: press a button on it so the browser reports it.'));
+  bodyEl.append(el('div', { class: 'help', style: 'margin-top:6px' },
+    'Select a binding, then press the key or gamepad button (Esc cancels, Backspace clears). Gamepad buttons are ' +
+    'positional (south / east / west / north), so Xbox, PlayStation and Switch pads share one layout. ' +
+    'The game\'s own OPTION > BUTTON CONFIG still applies on top. Player 2\'s keyboard set and stick, macro and ' +
+    'gamepad-to-player options: Input tab.'));
+  const t = el('table', { class: 'binds' }, el('tr', {}, el('th', {}, 'Action'), el('th', {}, 'Keyboard'), el('th', {}, 'Gamepad')));
+  const P = b.players[ctlPlayer];
+  b.actions.forEach(([name, label], a) => {
+    const cell = kind => {
+      const capping = b.capture && b.capture[0] === ctlPlayer && b.capture[1] === kind && b.capture[2] === a;
+      const txt = (kind ? P.pad : P.kb)[a];
+      const chip = el('button', { class: 'chip' + (capping ? ' cap' : ''), title: txt, 'data-act': name, 'data-kind': kind,
+        onclick: () => startCapture(ctlPlayer, kind, a) }, capping ? (kind ? 'Press a button' : 'Press a key') : txt);
+      const x = el('button', { class: 'x', title: 'Clear', 'aria-label': 'Clear ' + label,
+        onclick: () => { C.call('mvc2_bind_clear', ctlPlayer, kind, a); renderBody(); } }, '✕');
+      return el('td', {}, chip, x);
+    };
+    t.append(el('tr', {}, el('td', {}, label), cell(0), cell(1)));
+  });
+  bodyEl.append(t);
+}
+function startCapture(p, kind, a) {
+  C.call('mvc2_bind_capture', p, kind, a);
+  renderBody();
+  clearInterval(capPoll);
+  capPoll = setInterval(() => { if (!C.json('mvc2_bind_json').capture) { clearInterval(capPoll); capPoll = 0; renderBody(); } }, 100);
+}
+function stopCapture() {
+  if (capPoll) { clearInterval(capPoll); capPoll = 0; try { C.call('mvc2_bind_cancel'); } catch (e) {} }
+}
+
+function renderAbout() {
+  const s = C.json('mvc2_stats_json'), wa = Module.__wa;
+  const kv = el('div', { class: 'kv' });
+  const add = (k, v) => kv.append(el('b', {}, k), el('span', {}, v));
+  add('Display', `${s.render_fps.toFixed(0)} fps on a ${s.refresh_hz.toFixed(0)} Hz screen; game logic ${s.logic_fps.toFixed(0)} Hz`);
+  add('Input latency', s.lat_samples
+    ? `${s.lat_avg_ms.toFixed(1)} ms on average (${s.lat_avg_frames.toFixed(2)} frames), worst ${s.lat_max_frames.toFixed(2)} frames, last ${s.lat_samples} presses (event to the game step that reads it)`
+    : 'press some buttons in the game first');
+  add('Audio', wa ? `${wa.mode === 'worklet' ? 'AudioWorklet' : wa.mode}, ${wa.ctx.sampleRate} Hz, ${wa.ctx.state}` +
+    (wa.under ? `, ${wa.under} underruns` : '') : 'off');
+  add('Offline', location.protocol === 'file:' ? 'single file: always offline'
+    : navigator.serviceWorker && navigator.serviceWorker.controller ? 'yes (installed app shell)' : 'after the next load');
+  bodyEl.append(kv);
+  if (installEvt) bodyEl.append(el('button', { class: 'btn', onclick: () => { installEvt.prompt(); installEvt = null; renderBody(); } }, 'Install as an app'));
+  if (!singleFile) bodyEl.append(el('button', { class: 'btn grey', onclick: async () => {
+    try { await idbDel(); toast('Cached disc removed; the page asks for it on the next start.'); } catch (e) {} } }, 'Forget cached disc'));
+  bodyEl.append(el('div', { class: 'help', style: 'margin-top:12px' },
+    'F1 opens the same settings inside the game (gamepad: Back + Start, or Guide). Everything is stored on this device only. ' +
+    'Player guide: port/docs/USER_GUIDE.md.'));
+}
+
+/* settings changed from the in-game menu while the panel is open */
+let refreshT = 0;
+function onSettingChanged() { if (!panel.hidden && !capPoll) { clearTimeout(refreshT); refreshT = setTimeout(renderBody, 50); } }
+window.addEventListener('gamepadconnected', e => { if (booted) toast('Gamepad: ' + e.gamepad.id.replace(/\s*\(.*$/, '')); });
+
+/* ---------------- install (PWA) ---------------- */
+let installEvt = null;
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); installEvt = e; });
+
+/* ?nounlock (or ?unlock=0): the game's own unlock state for this run;
+   ?KEY=VALUE for any dotted setting key overrides it for this run (?video.crt=crt);
+   ?args=... passes further command-line options to main(). */
 const query = new URLSearchParams(location.search);
 const mainArgs = [];
 if (query.has('nounlock') || query.get('unlock') === '0') mainArgs.push('--no-unlock');
+for (const [k, v] of query) if (/^[a-z0-9_]+\.[a-z0-9_.]+$/.test(k)) mainArgs.push('--set', k + '=' + v);
 if (query.get('args')) mainArgs.push(...query.get('args').split(/\s+/).filter(Boolean));
 
 var Module = {
   arguments: mainArgs,
-  canvas: document.getElementById('canvas'),
+  canvas: $('canvas'),
   print: t => console.log(t),
   printErr: t => console.log(t),
-  setStatus: t => { if (t) status(t); },
+  setStatus: t => { if (t && !booted) status(t); },
+  onSettingChanged,
   postRun: [startDisc],   /* after main(): the GL context and renderer exist */
 };
 if ('serviceWorker' in navigator && location.protocol !== 'file:')

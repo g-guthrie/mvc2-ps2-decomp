@@ -10,8 +10,10 @@
  *  - Music: CRI ADXT (cri.c) calls host_adxt_ops = the engine's padx_*
  *    player, which streams the AFS entry (loaded through the disc).
  *
- * Natively and on the web the SDL audio device renders; without one (the
- * headless captures) fe_audio_frame() renders one frame's worth of samples
+ * Natively the SDL audio device renders; on the web the engine's Web Audio
+ * output (AudioWorklet) is fed by fe_audio_pump() once per display frame.
+ * Without either (the headless captures, or a web page still waiting for
+ * the first click) fe_audio_frame() renders one frame's worth of samples
  * itself, so the music player's status still advances as on hardware.
  */
 #include <math.h>
@@ -58,7 +60,7 @@ int fe_audio_init(int open_device)
     audio_set_loader(afs_loader, NULL);
     host_adxt_ops = &ops;
     host_log("audio: port engine bound (TSD sink + ADXT -> padx), %s",
-             have_device ? "SDL device" : "headless");
+             have_device ? "audio device" : "headless");
     return 0;
 }
 
@@ -71,8 +73,8 @@ void fe_audio_frame(void)
 {
     static float buf[(AUDIO_RATE / 60 + 1) * 2];
     static int rec_on = -1;
-    if (host_adxt_ops != &ops || have_device)
-        return;
+    if (host_adxt_ops != &ops || !audio_needs_manual_render())
+        return; /* a device (SDL callback / Web Audio pump) pulls the samples */
     audio_render(buf, AUDIO_RATE / 60);
     if (rec_on < 0)
         rec_on = getenv("MVC2_AUDIO_WAV") != NULL;
@@ -97,6 +99,12 @@ void fe_audio_shutdown(void)
         wav_write_float_stereo(p, rec, rec_frames, AUDIO_RATE);
         host_log("audio: wrote %s (%d frames, rms %.4f)", p, rec_frames, rec_frames ? sqrt(e / (rec_frames * 2)) : 0.0);
     }
+}
+
+void fe_audio_pump(double ahead_s)
+{
+    if (host_adxt_ops == &ops)
+        audio_pump(ahead_s);
 }
 
 void fe_audio_pause(int paused)

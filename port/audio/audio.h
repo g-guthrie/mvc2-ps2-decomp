@@ -7,10 +7,12 @@
  * device lock, so the game thread can call them at any time. With no device
  * (headless) call audio_render() yourself.
  *
- * Web: an AudioContext starts suspended until a user gesture. audio_init()
- * installs pointer/touch/key listeners that resume it (and play one silent
- * buffer, which iOS needs) on the first gesture; audio_set_paused() maps the
- * platform's on_pause callback to suspend/resume.
+ * Web: no SDL audio.  audio_init() opens an AudioContext (48 kHz) with an
+ * AudioWorklet output (ScriptProcessorNode fallback); audio_pump() renders
+ * ahead on the main thread.  The context starts suspended until a user
+ * gesture: pointer/touch/key listeners resume it (and play one silent
+ * buffer, which iOS needs); audio_set_paused() maps the platform's on_pause
+ * callback (tab hidden, settings open) to suspend/resume.
  */
 #ifndef PORT_AUDIO_AUDIO_H
 #define PORT_AUDIO_AUDIO_H
@@ -33,6 +35,15 @@ void audio_unlock(void);
 /* Render `frames` stereo frames at 48 kHz (headless / tests). */
 void audio_render(float *out, int frames);
 void audio_set_master(float gain);       /* final gain (user option), default 1 */
+void audio_set_music_volume(float gain); /* BGM (ADXT) gain, user option, default 1 */
+void audio_set_sfx_volume(float gain);   /* SE / voice (TSD) gain, user option, default 1 */
+/* Web: render ahead so about ahead_s seconds stay queued (call once per
+ * display frame; no-op natively, where the SDL callback pulls). */
+void audio_pump(double ahead_s);
+/* 1 when nothing pulls samples (headless, or the web context still waits for
+ * a gesture): the caller renders one frame's worth per game frame itself so
+ * the music player's status advances as on hardware. */
+int audio_needs_manual_render(void);
 
 /* ---- ADXT-shaped music player (the BGM boundary, AUDIO.md section 2) ----
  * stat values as CRI's: 0 STOP 1 DECINFO 2 PREP 3 PLAYING 4 DECEND 5 PLAYEND 6 ERROR */

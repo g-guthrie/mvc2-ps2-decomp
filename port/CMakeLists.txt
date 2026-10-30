@@ -238,9 +238,10 @@ if(MVC2_APP)
   set(MVC2_APP_STUBS ${MVC2_STUB_SRCS})
   list(FILTER MVC2_APP_STUBS EXCLUDE REGEX "host_main\\.c$")
   set(MVC2_FE_PLATFORM ${PORT_DIR}/platform/gl_load.c ${PORT_DIR}/platform/touch.c
-    ${PORT_DIR}/platform/platform_sdl.c ${PORT_DIR}/platform/png_write.c)
+    ${PORT_DIR}/platform/platform_sdl.c ${PORT_DIR}/platform/png_write.c
+    ${PORT_DIR}/platform/settings.c ${PORT_DIR}/platform/input.c)
   set(MVC2_FE_RENDER ${PORT_DIR}/render/r_gl.c ${PORT_DIR}/render/r_char.c
-    ${PORT_DIR}/render/r_mesh.c ${PORT_DIR}/render/decode.c)
+    ${PORT_DIR}/render/r_mesh.c ${PORT_DIR}/render/decode.c ${PORT_DIR}/render/r_font.c)
   set(MVC2_FE_AUDIO ${PORT_DIR}/audio/adx.c ${PORT_DIR}/audio/vag.c ${PORT_DIR}/audio/hdbank.c
     ${PORT_DIR}/audio/resample.c ${PORT_DIR}/audio/synth.c ${PORT_DIR}/audio/tsd.c
     ${PORT_DIR}/audio/audio.c ${PORT_DIR}/audio/wav.c)
@@ -260,7 +261,7 @@ if(MVC2_APP)
       -sUSE_SDL=2 -sMAX_WEBGL_VERSION=2 -sMIN_WEBGL_VERSION=2 -sFULL_ES3
       -sALLOW_MEMORY_GROWTH=1 -sINITIAL_MEMORY=268435456 -sMAXIMUM_MEMORY=2GB -sSTACK_SIZE=1048576
       -sFORCE_FILESYSTEM=1 -sEXPORTED_FUNCTIONS=_main,_viewer_open_js
-      -sEXPORTED_RUNTIME_METHODS=ccall,cwrap,FS --profiling-funcs
+      -sEXPORTED_RUNTIME_METHODS=ccall,cwrap,FS,UTF8ToString,stringToUTF8,lengthBytesUTF8 --profiling-funcs
       --shell-file ${PORT_DIR}/web/shell.html)
     if(MVC2_EMULATE_FPCASTS)
       target_link_options(mvc2 PRIVATE -sEMULATE_FUNCTION_POINTER_CASTS=1)
@@ -270,7 +271,7 @@ if(MVC2_APP)
     if(PORT_SINGLE_FILE)
       target_link_options(mvc2 PRIVATE -sSINGLE_FILE=1)
     endif()
-    foreach(f manifest.webmanifest sw.js icon-192.png icon-512.png)
+    foreach(f manifest.webmanifest sw.js icon-32.png icon-180.png icon-192.png icon-512.png icon-maskable-512.png)
       configure_file(${PORT_DIR}/web/${f} ${CMAKE_CURRENT_BINARY_DIR}/${f} COPYONLY)
     endforeach()
   else()
