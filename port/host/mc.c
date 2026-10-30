@@ -1,7 +1,8 @@
 /*
- * Memory card (Port J): libmc at its API, backed by a host directory, and
- * the game's request/sync state machine func_00418D70 (C-less; C from the
- * asm).
+ * Memory card (Port J): libmc at its API, backed by a host directory.  The
+ * game's own wrapper (init func_00418CC0, request/sync/retry state machine
+ * func_00418D70, the request functions func_004194xx) is credited C and runs
+ * unchanged on top of it.
  *
  * The card in port 0 is an 8 MB PS2 card, formatted, stored under
  * $MVC2_MEMCARD (default ./mvc2_memcard/), one host file per card file
@@ -17,6 +18,20 @@
 #include <sys/types.h>
 #include <dirent.h>
 #include "host.h"
+#ifdef __EMSCRIPTEN__
+#include <emscripten.h>
+#endif
+
+/* The web page keeps the card directory in IndexedDB (IDBFS mounted at
+ * /mvc2_memcard by port/web/shell.html): after a change reaches the card,
+ * ask the page to write it back (Module.mcPersist, debounced there).
+ * Natively the directory is already on disk. */
+static void mc_persist(void)
+{
+#ifdef __EMSCRIPTEN__
+    EM_ASM({ if (Module.mcPersist) Module.mcPersist(); });
+#endif
+}
 
 #define MC_FD_MAX 8
 static struct { FILE *f; int used; } mc_fd[MC_FD_MAX];
@@ -141,6 +156,7 @@ int func_00110260(int port, int slot, int name) /* sceMcMkdir */
 #else
     mc_done(11, mkdir(hp, 0755) == 0 ? 0 : -4);
 #endif
+    mc_persist();
     return 0;
 }
 
@@ -183,6 +199,7 @@ int func_00110298(int fd) /* sceMcClose */
         fclose(mc_fd[fd].f);
         mc_fd[fd].used = 0;
         mc_done(3, 0);
+        mc_persist();
     } else {
         mc_done(3, -4);
     }
@@ -242,6 +259,7 @@ int func_00110EC0(int port, int slot, void *name) /* sceMcDelete */
     (void)slot;
     mc_path(hp, sizeof hp, (const char *)name);
     mc_done(15, port == 0 && (remove(hp) == 0) ? 0 : -4);
+    mc_persist();
     return 0;
 }
 
@@ -325,95 +343,4 @@ int func_00110AE0(int port, int slot, void *name, unsigned int mode, int maxent,
     }
     mc_done(13, n);
     return 0;
-}
-
-/* ---- func_00418D70(wait): the game's request/sync state machine --------
- * D_00633694 = libmc function of the outstanding request (0 = none),
- * D_00633698 = its result, D_00633690 = retries left; the request's
- * arguments are kept at D_0063369C.. so a failed one can be re-issued.
- * Returns 0 = done (or nothing pending), 1 = failed after the retries,
- * -1 = still busy (wait == 0) or re-issued. */
-extern int func_00419420(int, int, int);
-extern int func_00419520(int, int, int);
-extern int func_00419610(int, int, int, int, int);
-extern int func_00419730(int, int);
-extern int func_00419840(int, int, int, int);
-extern int func_00419950(int);
-extern int func_004199F0(int, int, int);
-extern int func_00419AC0(int, int, int);
-extern int func_00419B90(int, int, int);
-extern int func_00419C60(int);
-extern int func_00419D00(int, int, int);
-extern int func_00419DF0(int, int, int);
-
-#define MC_W(a) EE_BSS(s32, a)
-int func_00418D70(int wait)
-{
-    for (;;) {
-        s32 res, v = 0;
-        int ok;
-        if (MC_W(0x00633694) == 0)
-            return 0;
-        if (func_001107B8(1, EE_BSS_PTR(0x00633694), EE_BSS_PTR(0x00633698)) != 1) {
-            if (!wait)
-                return -1;
-            continue;
-        }
-        res = MC_W(0x00633698);
-        switch (MC_W(0x00633694)) {
-        case 1:  /* GetInfo: never retried */
-            MC_W(0x00633694) = 0;
-            ok = 1;
-            break;
-        case 2: ok = res >= 0; break;    /* Open */
-        case 3: ok = res == 0; break;    /* Close */
-        case 4: ok = res >= 0; break;    /* Seek */
-        case 5: ok = res >= 0; break;    /* Read */
-        case 6: ok = res >= 0; break;    /* Write */
-        case 10: ok = res == 0; break;   /* Flush */
-        case 11: ok = res >= 0; break;   /* Mkdir */
-        case 12: ok = res >= 0; break;   /* Chdir */
-        case 13: ok = res >= 0; break;   /* GetDir */
-        case 15: ok = res == 0; break;   /* Delete */
-        case 16: ok = res == 0; break;   /* Format */
-        case 18: ok = res >= 0; break;   /* GetEntSpace */
-        default: ok = 1; break;
-        }
-        if (!ok) {
-            s32 cmd = MC_W(0x00633694);
-            MC_W(0x00633690) -= 1;
-            MC_W(0x00633694) = 0;
-            if (MC_W(0x00633690) == 0) {
-                v = 1;
-            } else {
-                s32 a = MC_W(0x0063369C), b = MC_W(0x006336A0), c = MC_W(0x006336A4);
-                s32 fd = MC_W(0x006336B4);
-                switch (cmd) {
-                case 2: func_00419840(a, b, c, MC_W(0x006336B0)); break;
-                case 3: func_00419950(fd); break;
-                case 4: func_004199F0(fd, MC_W(0x006336B8), MC_W(0x006336BC)); break;
-                case 5: func_00419AC0(fd, MC_W(0x006336C0), MC_W(0x006336C4)); break;
-                case 6: func_00419B90(fd, MC_W(0x006336C0), MC_W(0x006336C4)); break;
-                case 10: func_00419C60(fd); break;
-                case 11: func_00419520(a, b, c); break;
-                case 12: func_00419420(a, b, c); break;
-                case 13: func_00419610(a, b, c, MC_W(0x006336A8), MC_W(0x006336AC)); break;
-                case 15: func_00419D00(a, b, c); break;
-                case 16: func_00419730(a, b); break;
-                case 18: func_00419DF0(a, b, c); break;
-                }
-                v = -1;
-            }
-        }
-        if (v == -1) {
-            if (wait == 1)
-                continue;
-            return -1;
-        }
-        if (v == 1)
-            return 1;
-        MC_W(0x00633694) = 0;
-        MC_W(0x00633690) = 0;
-        return 0;
-    }
 }

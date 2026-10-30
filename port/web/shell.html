@@ -121,6 +121,10 @@ const query = new URLSearchParams(location.search);
 const mainArgs = [];
 if (query.has('nounlock') || query.get('unlock') === '0') mainArgs.push('--no-unlock');
 if (query.get('args')) mainArgs.push(...query.get('args').split(/\s+/).filter(Boolean));
+/* ?script=TEXT (testing): the app's --script input (port/host/fe/fe_main.c),
+   lines separated by ';'.  Shots go to /shots in the page's file system. */
+const scriptText = query.get('script');
+if (scriptText) mainArgs.push('--script', '/script.txt', '--shot-dir', '/shots');
 
 var Module = {
   arguments: mainArgs,
@@ -128,8 +132,47 @@ var Module = {
   print: t => console.log(t),
   printErr: t => console.log(t),
   setStatus: t => { if (t) status(t); },
+  preRun: [mountMemcard, () => {
+    if (!scriptText) return;
+    Module.FS.writeFile('/script.txt', scriptText.split(';').join('\n'));
+    Module.FS.mkdir('/shots');
+  }],
   postRun: [startDisc],   /* after main(): the GL context and renderer exist */
+  mcPersist: persistMemcard,
 };
+
+/* Memory card: the game's card directory (port/host/mc.c, /mvc2_memcard)
+   lives in IndexedDB (IDBFS), so saves, options and unlocks survive a reload.
+   It is loaded before main() runs (the boot memory-card check reads it) and
+   written back shortly after each change the game makes (mc.c calls
+   Module.mcPersist after a close, mkdir or delete). */
+function mountMemcard() {
+  try {
+    Module.FS.mkdir('/mvc2_memcard');
+    Module.FS.mount(Module.IDBFS, {}, '/mvc2_memcard');
+  } catch (e) { console.warn('memory card: no IndexedDB, saves last until reload', e); return; }
+  Module.addRunDependency('memcard');
+  Module.FS.syncfs(true, err => {
+    if (err) console.warn('memory card: load failed', err);
+    else console.log('memory card: loaded from IndexedDB');
+    Module.removeRunDependency('memcard');
+  });
+}
+let mcTimer = 0, mcBusy = false, mcAgain = false;
+function persistMemcard() {
+  clearTimeout(mcTimer);
+  mcTimer = setTimeout(function save() {
+    if (mcBusy) { mcAgain = true; return; }
+    mcBusy = true;
+    Module.FS.syncfs(false, err => {
+      mcBusy = false;
+      if (err) console.warn('memory card: save failed', err);
+      else console.log('memory card: saved to IndexedDB');
+      if (mcAgain) { mcAgain = false; save(); }
+    });
+  }, 250);
+}
+addEventListener('pagehide', () => { if (mcTimer) { clearTimeout(mcTimer); try { Module.FS.syncfs(false, () => {}); } catch (e) {} } });
 if ('serviceWorker' in navigator && location.protocol !== 'file:')
   navigator.serviceWorker.register('sw.js').catch(e => console.warn('sw', e));
 </script>
