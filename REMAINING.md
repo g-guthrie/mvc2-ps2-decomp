@@ -1,5 +1,9 @@
 # What is left
 
+**Owner decision (2026-10-30):** the empty-`if` match for func_003F5630/5710,
+the dead-store match for func_003D6530 and crediting unread data as raw tables
+are all declined. These spans stay uncredited unless honest source is found.
+
 Snapshot after matching rounds 11–17. Code is 3,291,484 of 3,293,696 bytes
 (99.93%) and data is 647,988 of 648,064 bytes (99.99%). The spans below are code that no credited C or
 `.S` source covers yet: 2,212 bytes. Each one has a blocker class.
