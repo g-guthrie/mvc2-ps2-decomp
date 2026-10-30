@@ -76,6 +76,10 @@ int mvc2_boot(int run_platform_init)
     extern int host_fill_ee_holes(void);
     mvc2_host_frame = -1;
     host_fill_ee_holes();  /* EE data without C, from the disc's executable */
+    {
+        extern void arcade_init(void);
+        arcade_init();     /* optional NAOMI tables (MVC2_ARCADE / MVC2_NAOMI) */
+    }
     if (run_platform_init) {
         STEP("func_003EC160 platform init (640x480)", r = func_003EC160());
         if (r == 0)

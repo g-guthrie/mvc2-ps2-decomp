@@ -8,6 +8,7 @@
  *
  *   mvc2 [--iso DISC.iso] [--frames N] [--shot F:FILE.png ...] [--shot-every N --shot-dir D]
  *        [--press F:BUTTON[:LEN] ...] [--hidden] [--size WxH] [--desktop-gl] [-v]
+ *        [--arcade abc --naomi mvsc2.zip] [--arcade-trace] [--cpu-team a,b,c]
  *
  * --frames N quits after N game frames.  --shot F:path writes the 640x480
  * canvas after game frame F.  --press F:start (or cross, circle, square,
@@ -15,6 +16,12 @@
  * on pad 1 from frame F for LEN frames (default 6): scripted input for
  * headless runs.  Web: the page's file picker / embedded disc calls
  * viewer_open_js(path) and the game boots then.
+ *
+ * --arcade abc (any of a = frames + boxes, b = damage / hit data, c = CPU AI)
+ * splices the user's own NAOMI tables from --naomi PATH (mvsc2.zip, MAME
+ * Rev A set; web: /mvsc2.zip, written by the page) into each character
+ * (port/host/arcade.c, port/docs/ARCADE_DIFF.md section 5).  Off by default.
+ * --arcade-trace logs every player script run and hit (for checking it).
  */
 #include <SDL.h>
 #include <stdio.h>
@@ -176,6 +183,11 @@ int main(int argc, char **argv)
         else if (!strcmp(a, "-q")) mvc2_trace_state = 0;
         else if (!strcmp(a, "--no-unlock")) mvc2_unlock_all = 0;
         else if (!strcmp(a, "--cpu-team") && n) { setenv("MVC2_CPU_TEAM", n, 1); i++; } /* testing */
+        else if (!strcmp(a, "--p1-team") && n) { setenv("MVC2_P1_TEAM", n, 1); i++; }   /* testing */
+        else if (!strcmp(a, "--arcade") && n) { setenv("MVC2_ARCADE", n, 1); i++; }      /* ARCADE_DIFF.md 5 */
+        else if (!strcmp(a, "--naomi") && n) { setenv("MVC2_NAOMI", n, 1); i++; }
+        else if (!strcmp(a, "--arcade-trace")) setenv("MVC2_ARCADE_TRACE", "1", 1);
+        else if (!strcmp(a, "--arcade-play") && n) { setenv("MVC2_ARCADE_PLAY", n, 1); i++; } /* testing */
         else if (a[0] != '-') iso = a;
         else { fprintf(stderr, "unknown option %s\n", a); return 2; }
     }

@@ -34,6 +34,13 @@
     <input type="file" id="file" accept=".iso,.bin,application/octet-stream,application/x-iso9660-image" hidden>
   </label>
   <button id="forget" hidden>Forget cached disc</button>
+  <div id="arcbox" hidden style="margin-top:12px;font-size:13px">
+    Arcade accuracy (<span id="arcflags"></span>): your own NAOMI <code>mvsc2.zip</code>
+    <span id="arcstate"></span><br>
+    <label id="arcpick" style="display:inline-block;margin-top:6px;padding:6px 12px;border-radius:8px;background:#555;cursor:pointer">Choose mvsc2.zip
+      <input type="file" id="arcfile" accept=".zip,application/zip" hidden></label>
+    <button id="arcforget" hidden style="background:#555">Forget</button>
+  </div>
   <div style="font-size:12px;opacity:.7;margin-top:10px">The image stays on this device (IndexedDB); nothing is uploaded.</div>
 </div>
 <button id="menu" hidden>Disc</button>
@@ -63,9 +70,35 @@ async function idbOp(mode, fn) {
     tx.onerror = tx.onabort = () => rej(tx.error);
   });
 }
-const idbGet = () => idbOp('readonly', s => s.get(KEY));
-const idbPut = v => idbOp('readwrite', s => s.put(v, KEY));
-const idbDel = () => idbOp('readwrite', s => s.delete(KEY));
+const idbGet = (k = KEY) => idbOp('readonly', s => s.get(k));
+const idbPut = (v, k = KEY) => idbOp('readwrite', s => s.put(v, k));
+const idbDel = (k = KEY) => idbOp('readwrite', s => s.delete(k));
+
+/* Arcade accuracy (?arcade=abc; port/docs/ARCADE_DIFF.md section 5): the
+   user's own NAOMI set is written to /mvsc2.zip before the game boots, from
+   the personal build's embedded copy, the IndexedDB cache, or the picker. */
+const NAOMI_KEY = 'naomi';
+let naomiReady = false;
+const naomiWaiters = [];
+async function putNaomi(blob) {
+  const buf = new Uint8Array(await blob.arrayBuffer());
+  try { Module.FS.unlink('/mvsc2.zip'); } catch (e) {}
+  Module.FS.writeFile('/mvsc2.zip', buf, { canOwn: true });
+  naomiReady = true;
+  document.getElementById('arcstate').textContent = ' - loaded (' + (blob.size / 1048576).toFixed(1) + ' MB)';
+  naomiWaiters.splice(0).forEach(r => r());
+}
+async function prepareNaomi() {
+  if (!arcadeFlags) return;
+  const emb = document.getElementById('embedded-naomi');
+  if (emb) {
+    await putNaomi(await (await fetch('data:application/zip;base64,' + emb.textContent.trim())).blob());
+    emb.remove();
+    return;
+  }
+  try { const c = await idbGet(NAOMI_KEY); if (c) { await putNaomi(c); document.getElementById('arcforget').hidden = false; } }
+  catch (e) { console.warn('IndexedDB unavailable', e); }
+}
 
 async function openDisc(blob, label) {
   status('Reading ' + label + ' (' + (blob.size / 1048576).toFixed(0) + ' MB)...');
@@ -79,6 +112,13 @@ async function openDisc(blob, label) {
 }
 
 async function startDisc() {
+  await prepareNaomi();
+  if (arcadeFlags && !naomiReady) {
+    status('Arcade accuracy (?arcade=' + arcadeFlags + ') reads your own NAOMI mvsc2.zip (MAME set, Rev A).\n' +
+           'Choose it below; it stays on this device. Open the page without ?arcade for the PS2 data.');
+    showUi(true);
+    await new Promise(r => naomiWaiters.push(r));
+  }
   try {
     if (Module.FS.analyzePath('/disc.iso').exists) {        /* --preload-file (local testing) */
       Module.ccall('viewer_open_js', 'number', ['string'], ['/disc.iso']);
@@ -112,6 +152,16 @@ fileEl.addEventListener('change', async () => {
   catch (e) { console.warn('could not cache disc image', e); }
   if (!await openDisc(f, f.name)) pick.hidden = false;
 });
+document.getElementById('arcfile').addEventListener('change', async ev => {
+  const f = ev.target.files[0];
+  if (!f) return;
+  try { await idbPut(f, NAOMI_KEY); document.getElementById('arcforget').hidden = false; } catch (e) { console.warn(e); }
+  await putNaomi(f);
+});
+document.getElementById('arcforget').addEventListener('click', async () => {
+  await idbDel(NAOMI_KEY); document.getElementById('arcforget').hidden = true;
+  document.getElementById('arcstate').textContent = ' - removed';
+});
 forget.addEventListener('click', async () => { await idbDel(); forget.hidden = true; status('Cached image removed.'); });
 menu.addEventListener('click', () => { pick.hidden = false; status('Choose a different disc image.'); showUi(true); });
 
@@ -121,6 +171,14 @@ const query = new URLSearchParams(location.search);
 const mainArgs = [];
 if (query.has('nounlock') || query.get('unlock') === '0') mainArgs.push('--no-unlock');
 if (query.get('args')) mainArgs.push(...query.get('args').split(/\s+/).filter(Boolean));
+/* ?arcade=abc: a = frames + boxes, b = damage / hit data, c = CPU AI (all off by default) */
+const arcadeFlags = (query.get('arcade') || '').replace(/[^abc]/g, '');
+if (arcadeFlags) {
+  mainArgs.push('--arcade', arcadeFlags, '--naomi', '/mvsc2.zip');
+  document.getElementById('arcbox').hidden = false;
+  document.getElementById('arcflags').textContent = arcadeFlags;
+}
+if (query.has('arcadetrace')) mainArgs.push('--arcade-trace');
 
 var Module = {
   arguments: mainArgs,
