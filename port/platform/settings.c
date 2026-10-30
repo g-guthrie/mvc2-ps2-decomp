@@ -143,7 +143,8 @@ const char *settings_value_label(const SetDesc *d, int v)
     case SET_BOOL: return v ? "On" : "Off";
     case SET_ENUM: v = clampv(d, v); return d->choices[v];
     case SET_INT:
-        snprintf(buf, sizeof buf, "%d%s", v, d->max == 100 && d->min >= 0 ? " %" : "");
+        snprintf(buf, sizeof buf, "%d%s", v, d->min >= 0 && (d->max == 100 || !strncmp(d->key, "touch.", 6) ||
+                 strstr(d->key, "deadzone")) ? " %" : "");
         return buf;
     case SET_ACTION: return "";
     }

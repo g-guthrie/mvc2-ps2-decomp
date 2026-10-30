@@ -275,7 +275,7 @@ function el(tag, attrs = {}, ...kids) {
   return e;
 }
 
-const fmt = (o, v) => o.min >= 0 && (o.max === 100 || o.key.startsWith('touch.')) ? v + ' %' : String(v);
+const fmt = (o, v) => o.min >= 0 && (o.max === 100 || o.key.startsWith('touch.') || o.key.includes('deadzone')) ? v + ' %' : String(v);
 function optionRow(o) {
   const row = el('div', { class: 'row' });
   const lab = el('label', {}, o.label);

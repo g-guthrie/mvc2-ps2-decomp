@@ -70,18 +70,20 @@ game's init path and N frames headless (under node and natively).
 3. Use the C-less functions and the remaining placeholders (C_COVERAGE.md)
    to set the order of matching work that matters for gameplay.
 
-### Phase 4: fixes for PS2 gripes ⬜
+### Phase 4: fixes for PS2 gripes (platform side done; game-side items open)
 See PS2_GRIPES.md. In order:
-| Fix | Cost |
-|---|---|
-| Progressive 60 fps output, clean scaling | falls out of phase 2 |
-| Low-latency input (poll right before the logic step), full remapping | small |
-| No load times | falls out of phase 2 |
-| Clean audio resampling; check whether the music cut-out still happens with the port's own ADX player | small |
-| "Unlock everything" option | small |
-| **Arcade accuracy** toggles: frame data and boxes, damage and hit data, CPU AI, loaded from the user's own `mvsc2.zip` (ARCADE_DIFF.md §5) | medium |
-| Assist invulnerability and the counter glitch: locate both in code and diff against the NAOMI decomp | medium |
-| Optional "arcade slowdown" toggle | small |
+| Fix | Cost | Status |
+|---|---|---|
+| Progressive 60 fps output, clean scaling | falls out of phase 2 | done: fit / integer / stretch, nearest / sharp / smooth, sprite filtering, scanline / CRT shader (USER_GUIDE.md, Video) |
+| Low-latency input (poll right before the logic step), full remapping | small | done: input is latched and polled before every step, latency is measured and shown, keyboard and gamepad remapping for 2 players, touch pad (USER_GUIDE.md, Controls) |
+| Frame pacing: fixed 60 Hz logic on any display | small | done: refresh snapping, a draw only when a step ran, frame skip (draws only), pause when hidden |
+| No load times | falls out of phase 2 | |
+| Clean audio resampling; check whether the music cut-out still happens with the port's own ADX player | small | output: 48 kHz AudioWorklet on the web, music and effects volumes (AUDIO.md section 5) |
+| "Unlock everything" option | small | done (`game.unlock_all`, `?nounlock`) |
+| **Arcade accuracy** toggles: frame data and boxes, damage and hit data, CPU AI, loaded from the user's own `mvsc2.zip` (ARCADE_DIFF.md §5) | medium | the menus' "Arcade accuracy" section is ready: register options in that section (USER_GUIDE.md, For developers) |
+| Assist invulnerability and the counter glitch: locate both in code and diff against the NAOMI decomp | medium | |
+| Optional "arcade slowdown" toggle | small | |
+| PWA: installable, offline after the first load | small | done (manifest, icons, service worker for `mvc2.*`) |
 
 ### Phase 5: online ⬜
 Rollback netcode over WebRTC on the web and UDP natively. It relies on the
