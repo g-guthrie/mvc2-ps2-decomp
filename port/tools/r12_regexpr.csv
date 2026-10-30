@@ -4,3 +4,14 @@
 #   gen_regpass.py --unresolved FILE lists the remaining candidates.
 source,caller,callee,arg,expr
 src/v4_a.c,func_00141C90,func_001415B0,0,o
+src/r15_00_a.c,func_0012D6B0,func_00150670,0,D_004CA080
+src/fb62_a.c,func_0014E2F0,func_0014FDC0,1,1
+src/inhibit_owner_motion_sync.c,func_003A69B0,func_003A6DB0,3,1
+src/inhibit_owner_motion_sync.c,func_003B2A80,func_003B2E80,3,1
+src/q7_r.c,func_0031E2C0,func_0031E710,1,1
+src/t11_a.c,func_00332B90,func_003349D0,1,2051
+src/t11_a.c,func_00332B90,func_003349D0,2,D_004C283C
+src/t11_a.c,func_00332B90,func_003349D0,3,1
+src/w179_c.c,func_002A0760,func_001757E0,2,1
+src/w188_a.c,func_00402C20,func_003FB2E8,3,16
+src/w1913_c.c,func_001E4560,func_001E46D0,1,D_004CD170
