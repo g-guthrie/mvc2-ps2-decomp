@@ -16,10 +16,11 @@ endif()
 
 add_library(port_platform STATIC
   ${PORT_ROOT}/platform/gl_load.c ${PORT_ROOT}/platform/fs.c ${PORT_ROOT}/platform/pad.c
-  ${PORT_ROOT}/platform/touch.c ${PORT_ROOT}/platform/platform_sdl.c ${PORT_ROOT}/platform/png_write.c)
+  ${PORT_ROOT}/platform/touch.c ${PORT_ROOT}/platform/platform_sdl.c ${PORT_ROOT}/platform/png_write.c
+  ${PORT_ROOT}/platform/settings.c ${PORT_ROOT}/platform/input.c)
 add_library(port_render STATIC
   ${PORT_ROOT}/render/r_gl.c ${PORT_ROOT}/render/r_char.c ${PORT_ROOT}/render/r_mesh.c
-  ${PORT_ROOT}/render/decode.c)
+  ${PORT_ROOT}/render/decode.c ${PORT_ROOT}/render/r_font.c)
 set_property(TARGET port_platform port_render PROPERTY C_STANDARD 11)
 # Port I audio: ADX / VAG decoders, HD bank, hsyn-style synth, Tamsoft driver,
 # the game's TSD client boundary, ADXT-shaped BGM player, SDL output.
@@ -48,7 +49,7 @@ if(EMSCRIPTEN)
     -sALLOW_MEMORY_GROWTH=1 -sINITIAL_MEMORY=64MB -sMAXIMUM_MEMORY=2GB
     -sFORCE_FILESYSTEM=1
     -sEXPORTED_FUNCTIONS=_main,_viewer_open_js
-    -sEXPORTED_RUNTIME_METHODS=ccall,cwrap,FS
+    -sEXPORTED_RUNTIME_METHODS=ccall,cwrap,FS,UTF8ToString,stringToUTF8,lengthBytesUTF8
     --shell-file ${PORT_ROOT}/web/shell.html)
   set_target_properties(viewer PROPERTIES SUFFIX ".html")
   target_link_options(viewer PRIVATE
@@ -56,7 +57,7 @@ if(EMSCRIPTEN)
     -sALLOW_MEMORY_GROWTH=1 -sINITIAL_MEMORY=64MB -sMAXIMUM_MEMORY=2GB
     -sFORCE_FILESYSTEM=1
     -sEXPORTED_FUNCTIONS=_main,_viewer_open_js
-    -sEXPORTED_RUNTIME_METHODS=ccall,cwrap,FS
+    -sEXPORTED_RUNTIME_METHODS=ccall,cwrap,FS,UTF8ToString,stringToUTF8,lengthBytesUTF8
     --shell-file ${PORT_ROOT}/web/shell.html)
   set_property(TARGET viewer APPEND PROPERTY LINK_DEPENDS ${PORT_ROOT}/web/shell.html)
   # One .html with the wasm and JS inlined (input to port/tools/pack_personal.py).
@@ -69,7 +70,7 @@ if(EMSCRIPTEN)
   if(PORT_PRELOAD)
     target_link_options(viewer PRIVATE --preload-file ${PORT_PRELOAD}@/disc.iso)
   endif()
-  foreach(f manifest.webmanifest sw.js icon-192.png icon-512.png)
+  foreach(f manifest.webmanifest sw.js icon-32.png icon-180.png icon-192.png icon-512.png icon-maskable-512.png)
     configure_file(${PORT_ROOT}/web/${f} ${CMAKE_CURRENT_BINARY_DIR}/${f} COPYONLY)
   endforeach()
 else()

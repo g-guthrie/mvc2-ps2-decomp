@@ -43,7 +43,7 @@
 #define A_DAMAGE 2
 #define A_AI 4
 
-int mvc2_arcade_flags;      /* A_* requested */
+int mvc2_arcade_flags;      /* A_* requested (settings arcade.* via fe_arcade.c, or MVC2_ARCADE) */
 int mvc2_arcade_trace;
 static int arc_ok;          /* NAOMI tables loaded */
 static unsigned long long arc_hash;

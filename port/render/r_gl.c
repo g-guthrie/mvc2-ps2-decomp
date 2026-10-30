@@ -49,6 +49,10 @@ static struct {
     int scissor[4];
     int origin_x, origin_y;
     int in_overlay;
+    int discard;           /* r_set_discard: frame skip */
+    int sprite_filter;     /* r_set_sprite_filter: -1 game, 0 nearest, 1 smooth */
+    GLuint pp_prog, pp_vao;/* present pass */
+    GLint pu_src, pu_src_size, pu_dst_size, pu_filter, pu_crt, pu_strength, pu_mask;
     int draws, last_draws, last_verts, frame_verts;
 } R;
 
@@ -145,9 +149,12 @@ static int make_canvas(void)
     return 0;
 }
 
+static int make_present(void);
+
 int r_init(void)
 {
     memset(&R, 0, sizeof R);
+    R.sprite_filter = -1;
     GLuint vs = compile(GL_VERTEX_SHADER, k_vs), fs = compile(GL_FRAGMENT_SHADER, k_fs);
     if (!vs || !fs) return -1;
     R.prog = glCreateProgram();
@@ -221,6 +228,7 @@ int r_init(void)
     { float big = 10000000.f; R.fog_a = big; R.fog_b = big; } /* func_0016D460: fog off */
     fl_default_state();
     if (r_mesh_init()) return -1;
+    if (make_present()) return -1;
     return 0;
 }
 
@@ -259,9 +267,14 @@ static void apply_blend_depth(void)
     glDepthMask(R.zwrite ? GL_TRUE : GL_FALSE);
 }
 
+void r_set_discard(int on) { r_flush(); R.discard = on != 0; }
+int r_discarding(void) { return R.discard && !R.in_overlay; }
+void r_set_sprite_filter(int f) { R.sprite_filter = f; }
+
 void r_flush(void)
 {
     if (!R.nverts) return;
+    if (R.discard && !R.in_overlay) { R.nverts = 0; return; }
     glUseProgram(R.prog);
     glBindVertexArray(R.vao);
     glUniform2f(R.u_view, (float)R.view_w, (float)R.view_h);
@@ -309,7 +322,11 @@ RVtx *r_verts(int n)
     return v;
 }
 
-int r_texture_filter_linear(void) { return (R.state_ad0 & 0x10000) ? 0 : 1; }
+int r_texture_filter_linear(void)
+{
+    if (R.sprite_filter >= 0 && !R.in_overlay) return R.sprite_filter;
+    return (R.state_ad0 & 0x10000) ? 0 : 1;
+}
 
 static uint8_t gs_to_unorm(unsigned g) { unsigned v = (g * 255 + 64) / 128; return (uint8_t)(v > 255 ? 255 : v); }
 static unsigned halve(unsigned t) { return t == 0xFF ? 0x80 : t ? ((t >> 1) ? (t >> 1) : 1) : 0; }
@@ -627,11 +644,106 @@ void fl_frame_end(void) { r_flush(); }
 
 void r_stats(int *d, int *v) { if (d) *d = R.last_draws; if (v) *v = R.last_verts; }
 
-void r_canvas_rect(int W, int H, int mode, int *x, int *y, int *w, int *h)
+/* ---------------- present: canvas -> window ----------------
+ * One shader pass over the destination rectangle: nearest / sharp bilinear
+ * (nearest to the integer multiple above, linear between, done analytically)
+ * / bilinear, then optional scanlines (240 lines, like the 15 kHz picture the
+ * game was drawn for) or a CRT look (scanlines + aperture-grille mask +
+ * slight curvature + vignette). */
+static const char *k_pp_vs =
+    "out vec2 v_uv;\n"
+    "void main() {\n"
+    "  vec2 p = vec2(float((gl_VertexID & 1) * 2 - 1), float((gl_VertexID >> 1) * 2 - 1));\n"
+    "  v_uv = p * 0.5 + 0.5;\n"
+    "  gl_Position = vec4(p, 0.0, 1.0);\n"
+    "}\n";
+static const char *k_pp_fs =
+    "uniform sampler2D u_src;\n"
+    "uniform vec2 u_src_size, u_dst_size;\n"
+    "uniform int u_filter;   /* 0 nearest, 1 sharp, 2 smooth */\n"
+    "uniform int u_crt;      /* 0 off, 1 scanlines, 2 crt */\n"
+    "uniform float u_strength;\n"
+    "uniform float u_mask;\n"
+    "in vec2 v_uv;\n"
+    "out vec4 o_col;\n"
+    "vec3 fetch(vec2 uv) {\n"
+    "  if (u_filter == 1) {\n"
+    "    vec2 texel = uv * u_src_size;\n"
+    "    vec2 scale = max(floor(u_dst_size / u_src_size + 0.01), vec2(1.0));\n"
+    "    vec2 tf = floor(texel), cd = fract(texel) - 0.5;\n"
+    "    vec2 rr = 0.5 - 0.5 / scale;\n"
+    "    vec2 f = (cd - clamp(cd, -rr, rr)) * scale + 0.5;\n"
+    "    return texture(u_src, (tf + f) / u_src_size).rgb;\n"
+    "  }\n"
+    "  return texture(u_src, uv).rgb;\n"
+    "}\n"
+    "void main() {\n"
+    "  vec2 uv = v_uv;\n"
+    "  float vig = 1.0;\n"
+    "  if (u_crt == 2) {\n"
+    "    vec2 c = uv * 2.0 - 1.0;\n"
+    "    c *= 1.0 + 0.035 * u_strength * vec2(c.y * c.y, c.x * c.x);\n"
+    "    uv = c * 0.5 + 0.5;\n"
+    "    if (uv.x < 0.0 || uv.y < 0.0 || uv.x > 1.0 || uv.y > 1.0) { o_col = vec4(0.0, 0.0, 0.0, 1.0); return; }\n"
+    "    vec2 e = smoothstep(vec2(0.0), vec2(0.02), uv) * smoothstep(vec2(0.0), vec2(0.02), 1.0 - uv);\n"
+    "    vig = e.x * e.y * (1.0 - 0.18 * u_strength * dot(c, c) * 0.5);\n"
+    "  }\n"
+    "  vec3 col = fetch(uv);\n"
+    "  if (u_crt >= 1) {\n"
+    "    float lines = u_src_size.y * 0.5;\n"
+    "    float k = clamp((u_dst_size.y / lines - 1.2) / 1.3, 0.0, 1.0) * u_strength;\n"
+    "    float d = fract(uv.y * lines) - 0.5;\n"
+    "    float lum = dot(col, vec3(0.299, 0.587, 0.114));\n"
+    "    float w = mix(0.30, 0.12, lum);\n"
+    "    float beam = exp(-d * d / (2.0 * w * w)) * 1.25;\n"
+    "    col *= mix(1.0, beam, k);\n"
+    "    if (u_crt == 2) {\n"
+    "      int px = int(mod(gl_FragCoord.x, 3.0));\n"
+    "      vec3 m = px == 0 ? vec3(1.0, 0.7, 0.7) : px == 1 ? vec3(0.7, 1.0, 0.7) : vec3(0.7, 0.7, 1.0);\n"
+    "      col *= mix(vec3(1.0), m * 1.18, u_mask * k);\n"
+    "      col *= vig;\n"
+    "    }\n"
+    "  }\n"
+    "  o_col = vec4(clamp(col, 0.0, 1.0), 1.0);\n"
+    "}\n";
+
+static int make_present(void)
 {
-    int k = W / FL_SCREEN_W < H / FL_SCREEN_H ? W / FL_SCREEN_W : H / FL_SCREEN_H;
+    GLuint vs = compile(GL_VERTEX_SHADER, k_pp_vs), fs = compile(GL_FRAGMENT_SHADER, k_pp_fs);
+    if (!vs || !fs) return -1;
+    R.pp_prog = glCreateProgram();
+    glAttachShader(R.pp_prog, vs);
+    glAttachShader(R.pp_prog, fs);
+    glLinkProgram(R.pp_prog);
+    GLint ok = 0;
+    glGetProgramiv(R.pp_prog, GL_LINK_STATUS, &ok);
+    glDeleteShader(vs);
+    glDeleteShader(fs);
+    if (!ok) {
+        char log[2048];
+        glGetProgramInfoLog(R.pp_prog, sizeof log, NULL, log);
+        fprintf(stderr, "present link failed:\n%s\n", log);
+        return -1;
+    }
+    R.pu_src = glGetUniformLocation(R.pp_prog, "u_src");
+    R.pu_src_size = glGetUniformLocation(R.pp_prog, "u_src_size");
+    R.pu_dst_size = glGetUniformLocation(R.pp_prog, "u_dst_size");
+    R.pu_filter = glGetUniformLocation(R.pp_prog, "u_filter");
+    R.pu_crt = glGetUniformLocation(R.pp_prog, "u_crt");
+    R.pu_strength = glGetUniformLocation(R.pp_prog, "u_strength");
+    R.pu_mask = glGetUniformLocation(R.pp_prog, "u_mask");
+    glGenVertexArrays(1, &R.pp_vao);
+    return 0;
+}
+
+void r_present_rect(int W, int H, const RPresent *p, int *x, int *y, int *w, int *h)
+{
     int cw, ch;
-    if (mode == R_PRESENT_INTEGER && k >= 1) {
+    int k = W / FL_SCREEN_W < H / FL_SCREEN_H ? W / FL_SCREEN_W : H / FL_SCREEN_H;
+    if (p->scale == R_SCALE_STRETCH) {
+        cw = W;
+        ch = H;
+    } else if (p->scale == R_SCALE_INTEGER && k >= 1) {
         cw = FL_SCREEN_W * k;
         ch = FL_SCREEN_H * k;
     } else {
@@ -640,51 +752,87 @@ void r_canvas_rect(int W, int H, int mode, int *x, int *y, int *w, int *h)
         else { ch = H; cw = H * FL_SCREEN_W / FL_SCREEN_H; }
     }
     *x = (W - cw) / 2;
-    *y = (H - ch) / 2;
+    *y = p->valign_top ? 0 : (H - ch) / 2;
+    if (p->valign_top && p->top_margin > 0 && ch + p->top_margin <= H) *y = p->top_margin;
     *w = cw;
     *h = ch;
 }
 
-void r_present(int W, int H, int mode)
+void r_present_ex(int W, int H, const RPresent *p)
 {
     r_flush();
     int x, y, w, h;
-    r_canvas_rect(W, H, mode, &x, &y, &w, &h);
+    r_present_rect(W, H, p, &x, &y, &w, &h);
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
     glDisable(GL_SCISSOR_TEST);
+    glDisable(GL_BLEND);
+    glDisable(GL_DEPTH_TEST);
+    glDepthMask(GL_TRUE);
     glViewport(0, 0, W, H);
     glClearColor(0, 0, 0, 1);
     glClear(GL_COLOR_BUFFER_BIT);
     int gy = H - (y + h); /* GL origin is bottom-left */
     int exact = (w % FL_SCREEN_W) == 0 && (h % FL_SCREEN_H) == 0 && w / FL_SCREEN_W == h / FL_SCREEN_H;
-    glBindFramebuffer(GL_READ_FRAMEBUFFER, R.canvas_fbo);
-    if (exact || mode == R_PRESENT_INTEGER) {
-        glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
-        glBlitFramebuffer(0, 0, FL_SCREEN_W, FL_SCREEN_H, x, gy, x + w, gy + h, GL_COLOR_BUFFER_BIT, GL_NEAREST);
-    } else {
-        /* sharp fit: nearest to the next integer multiple, then linear down */
-        int k = (w + FL_SCREEN_W - 1) / FL_SCREEN_W;
-        int kh = (h + FL_SCREEN_H - 1) / FL_SCREEN_H;
-        if (kh > k) k = kh;
-        if (k < 1) k = 1;
-        if (!R.sharp_fbo || R.sharp_w != FL_SCREEN_W * k) {
-            if (!R.sharp_fbo) { glGenFramebuffers(1, &R.sharp_fbo); glGenTextures(1, &R.sharp_tex); }
-            R.sharp_w = FL_SCREEN_W * k;
-            R.sharp_h = FL_SCREEN_H * k;
-            glBindTexture(GL_TEXTURE_2D, R.sharp_tex);
-            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, R.sharp_w, R.sharp_h, 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
-            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-            glBindFramebuffer(GL_DRAW_FRAMEBUFFER, R.sharp_fbo);
-            glFramebufferTexture2D(GL_DRAW_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, R.sharp_tex, 0);
-        }
-        glBindFramebuffer(GL_DRAW_FRAMEBUFFER, R.sharp_fbo);
-        glBlitFramebuffer(0, 0, FL_SCREEN_W, FL_SCREEN_H, 0, 0, R.sharp_w, R.sharp_h, GL_COLOR_BUFFER_BIT, GL_NEAREST);
-        glBindFramebuffer(GL_READ_FRAMEBUFFER, R.sharp_fbo);
-        glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);
-        glBlitFramebuffer(0, 0, R.sharp_w, R.sharp_h, x, gy, x + w, gy + h, GL_COLOR_BUFFER_BIT, GL_LINEAR);
-    }
+    int filter = p->filter;
+    if (exact && filter != R_FILTER_SMOOTH) filter = R_FILTER_NEAREST; /* identical, cheaper */
+    glViewport(x, gy, w, h);
+    glUseProgram(R.pp_prog);
+    glActiveTexture(GL_TEXTURE0);
+    glBindTexture(GL_TEXTURE_2D, R.canvas_tex);
+    GLint f = filter == R_FILTER_NEAREST ? GL_NEAREST : GL_LINEAR;
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, f);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, f);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    glUniform1i(R.pu_src, 0);
+    glUniform2f(R.pu_src_size, (float)FL_SCREEN_W, (float)FL_SCREEN_H);
+    glUniform2f(R.pu_dst_size, (float)w, (float)h);
+    glUniform1i(R.pu_filter, filter);
+    glUniform1i(R.pu_crt, p->crt);
+    glUniform1f(R.pu_strength, p->crt_strength > 0 ? p->crt_strength : 0.f);
+    glUniform1f(R.pu_mask, p->crt_mask);
+    glBindVertexArray(R.pp_vao);
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
+    glBindVertexArray(R.vao);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    glViewport(0, 0, W, H);
+    R.view_w = W;
+    R.view_h = H;
+}
+
+/* legacy entry points (viewer, soundtest) */
+static RPresent legacy(int mode)
+{
+    RPresent p;
+    memset(&p, 0, sizeof p);
+    p.scale = mode == R_PRESENT_INTEGER ? R_SCALE_INTEGER : R_SCALE_FIT;
+    p.filter = mode == R_PRESENT_INTEGER ? R_FILTER_NEAREST : R_FILTER_SHARP;
+    return p;
+}
+
+void r_canvas_rect(int W, int H, int mode, int *x, int *y, int *w, int *h)
+{
+    RPresent p = legacy(mode);
+    r_present_rect(W, H, &p, x, y, w, h);
+}
+
+void r_present(int W, int H, int mode)
+{
+    RPresent p = legacy(mode);
+    r_present_ex(W, H, &p);
+}
+
+int r_read_window(int W, int H, uint8_t *rgba)
+{
+    r_flush();
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    uint8_t *tmp = (uint8_t *)malloc((size_t)W * H * 4);
+    glReadPixels(0, 0, W, H, GL_RGBA, GL_UNSIGNED_BYTE, tmp);
+    for (int y = 0; y < H; y++)
+        memcpy(rgba + (size_t)y * W * 4, tmp + (size_t)(H - 1 - y) * W * 4, (size_t)W * 4);
+    free(tmp);
+    return glGetError() == GL_NO_ERROR ? 0 : -1;
 }
 
 int r_read_canvas(uint8_t *rgba)

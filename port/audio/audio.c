@@ -30,6 +30,12 @@ static struct {
     Tsd tsd;
     Bgm bgm;
     float master;
+    float music, sfx;      /* user volumes (audio.music / audio.sfx) */
+    int web;               /* web: own Web Audio output (AudioWorklet / ScriptProcessor fallback) */
+    int web_rate;
+    int user_paused;
+    float *wbuf;
+    int wcap;
     SDL_AudioDeviceID dev;
     int dev_rate;
     RsStream out_rs;       /* 48 kHz -> device rate */
@@ -100,8 +106,8 @@ static void bgm_render(Bgm *b, float *out, int frames)
         }
         float l = s[2 * i], r = s[2 * i + 1];
         if (b->mono) l = r = 0.5f * (l + r);
-        out[2 * i] += l * b->cur;
-        out[2 * i + 1] += r * b->cur;
+        out[2 * i] += l * b->cur * A.music;
+        out[2 * i + 1] += r * b->cur * A.music;
     }
     b->played += (uint32_t)frames;
 }
@@ -175,6 +181,8 @@ void audio_render(float *out, int frames)
 {
     memset(out, 0, sizeof(float) * 2 * frames);
     tsd_render(&A.tsd, out, frames);
+    if (A.sfx != 1.0f)
+        for (int i = 0; i < 2 * frames; i++) out[i] *= A.sfx;
     bgm_render(&A.bgm, out, frames);
     float g = A.master;
     for (int i = 0; i < 2 * frames; i++) {
@@ -200,46 +208,146 @@ static void SDLCALL device_cb(void *ud, Uint8 *stream, int len)
 }
 
 void audio_set_master(float g) { audio_lock(); A.master = g; audio_unlock(); }
-int audio_device_rate(void) { return A.dev ? A.dev_rate : 0; }
+void audio_set_music_volume(float g) { audio_lock(); A.music = g; audio_unlock(); }
+void audio_set_sfx_volume(float g) { audio_lock(); A.sfx = g; audio_unlock(); }
+int audio_device_rate(void) { return A.dev ? A.dev_rate : A.web ? A.web_rate : 0; }
 
 #ifdef __EMSCRIPTEN__
-/* SDL2 creates Module.SDL2.audioContext; browsers start it 'suspended' until a
- * user gesture. Resume it from the first pointer/touch/key event (inside the
- * event handler, which iOS requires) and start a 1-sample silent buffer. */
-EM_JS(void, web_install_unlock, (void), {
-    if (Module.__audioUnlock) return;
+/* Web output (no SDL audio, whose ScriptProcessorNode is deprecated and runs
+ * on the main thread): an AudioContext at 48 kHz feeding an AudioWorklet
+ * that plays interleaved stereo blocks posted from the main thread.  The main
+ * thread renders ahead (audio_pump, once per display frame) to keep a target
+ * amount queued, measured against the context clock (ctx.currentTime), so
+ * the queue survives 25-60 fps frame rates without gaps.  Without
+ * AudioWorklet (older browsers, non-secure http) a ScriptProcessorNode plays
+ * the same queue.  The context starts suspended until a user gesture:
+ * pointer/touch/key listeners resume it (and play a silent buffer, which iOS
+ * needs). */
+EM_JS(int, wa_open, (int want_rate), {
+    if (Module.__wa) return Module.__wa.ctx.sampleRate | 0;
+    var AC = window.AudioContext || window.webkitAudioContext;
+    if (!AC) return 0;
+    var ctx;
+    try { ctx = new AC({ sampleRate: want_rate, latencyHint: 'interactive' }); }
+    catch (e) { try { ctx = new AC(); } catch (e2) { return 0; } }
+    var wa = Module.__wa = { ctx: ctx, end: 0, q: [], off: 0, node: null, mode: 'none', under: 0, userPaused: false };
+    var gain = ctx.createGain();
+    gain.connect(ctx.destination);
+    wa.gain = gain;
+    function useScript() {
+        if (wa.node) return;
+        var sp = ctx.createScriptProcessor(1024, 0, 2);
+        sp.onaudioprocess = function(ev) {
+            var L = ev.outputBuffer.getChannelData(0), R = ev.outputBuffer.getChannelData(1), n = L.length, i = 0;
+            while (i < n) {
+                if (!wa.q.length) { for (; i < n; i++) { L[i] = 0; R[i] = 0; } wa.under++; break; }
+                var b = wa.q[0], avail = (b.length >> 1) - wa.off, k = Math.min(avail, n - i);
+                for (var j = 0; j < k; j++) { L[i + j] = b[(wa.off + j) * 2]; R[i + j] = b[(wa.off + j) * 2 + 1]; }
+                i += k; wa.off += k;
+                if (wa.off >= (b.length >> 1)) { wa.q.shift(); wa.off = 0; }
+            }
+        };
+        sp.connect(gain);
+        wa.node = sp;
+        wa.mode = 'scriptprocessor';
+        console.log('audio: ScriptProcessorNode fallback, ' + ctx.sampleRate + ' Hz');
+    }
+    var src = "class O extends AudioWorkletProcessor{constructor(){super();this.q=[];this.off=0;this.under=0;" +
+        "this.got=0;this.port.onmessage=e=>{if(e.data==='flush'){this.q=[];this.off=0;}else{this.q.push(e.data);this.got=1;}};}" +
+        "process(i,o){const L=o[0][0],R=o[0][1]||L,n=L.length;let k=0;while(k<n){if(!this.q.length){L.fill(0,k);R.fill(0,k);if(!this.got)break;this.under++;" +
+        "if((this.under&255)==1)this.port.postMessage(this.under);break;}const b=this.q[0],a=(b.length>>1)-this.off,m=Math.min(a,n-k);" +
+        "for(let j=0;j<m;j++){L[k+j]=b[(this.off+j)*2];R[k+j]=b[(this.off+j)*2+1];}k+=m;this.off+=m;" +
+        "if(this.off>=(b.length>>1)){this.q.shift();this.off=0;}}return true;}}registerProcessor('mvc2-out',O);";
+    if (ctx.audioWorklet && typeof AudioWorkletNode !== 'undefined') {
+        /* blob: URL (http/https); a file:// page needs a data: URL */
+        var blobUrl = URL.createObjectURL(new Blob([src], { type: 'application/javascript' }));
+        var dataUrl = 'data:application/javascript;base64,' + btoa(src);
+        wa.mode = 'loading';
+        var first = location.protocol === 'file:' ? dataUrl : blobUrl, second = first === dataUrl ? blobUrl : dataUrl;
+        ctx.audioWorklet.addModule(first).catch(function() { return ctx.audioWorklet.addModule(second); }).then(function() {
+            var node = new AudioWorkletNode(ctx, 'mvc2-out', { numberOfInputs: 0, numberOfOutputs: 1, outputChannelCount: [2] });
+            node.port.onmessage = function(e) { wa.under = e.data; };
+            node.connect(gain);
+            /* blocks queued while the module loaded */
+            for (var i = 0; i < wa.q.length; i++) node.port.postMessage(wa.q[i]);
+            wa.q = [];
+            wa.node = node;
+            wa.mode = 'worklet';
+            console.log('audio: AudioWorklet, ' + ctx.sampleRate + ' Hz');
+        }).catch(function(e) { console.log('audio: AudioWorklet failed (' + e + ')'); wa.mode = 'none'; useScript(); });
+    } else {
+        useScript();
+    }
     var unlock = function() {
-        var s = Module['SDL2'];
-        var ctx = s && s.audioContext;
-        if (!ctx || ctx.state === 'running') return;
+        if (wa.userPaused || ctx.state === 'running') return;
         ctx.resume();
         try {
-            var buf = ctx.createBuffer(1, 1, ctx.sampleRate);
-            var src = ctx.createBufferSource();
-            src.buffer = buf;
-            src.connect(ctx.destination);
-            src.start(0);
+            var buf = ctx.createBuffer(1, 1, ctx.sampleRate), s = ctx.createBufferSource();
+            s.buffer = buf; s.connect(ctx.destination); s.start(0);
         } catch (e) {}
     };
-    Module.__audioUnlock = unlock;
+    wa.unlock = unlock;
     ['pointerdown', 'touchend', 'mousedown', 'keydown'].forEach(function(t) {
         window.addEventListener(t, unlock, { capture: true, passive: true });
     });
+    return ctx.sampleRate | 0;
+});
+
+/* frames still queued ahead of the output */
+EM_JS(int, wa_queued, (void), {
+    var wa = Module.__wa;
+    if (!wa) return 0;
+    var q = (wa.end - wa.ctx.currentTime) * wa.ctx.sampleRate;
+    return q > 0 ? q | 0 : 0;
+});
+
+EM_JS(void, wa_push, (const float *p, int frames), {
+    var wa = Module.__wa;
+    if (!wa || frames <= 0) return;
+    var b = new Float32Array(HEAPF32.buffer, p, frames * 2).slice();
+    var now = wa.ctx.currentTime;
+    if (wa.end < now) wa.end = now;
+    wa.end += frames / wa.ctx.sampleRate;
+    if (wa.mode === 'worklet') wa.node.port.postMessage(b, [b.buffer]);
+    else wa.q.push(b);
 });
 
 EM_JS(int, web_running, (void), {
-    var s = Module['SDL2'];
-    return (s && s.audioContext && s.audioContext.state === 'running') ? 1 : 0;
+    var wa = Module.__wa;
+    return (wa && wa.ctx.state === 'running' && (wa.mode === 'worklet' || wa.mode === 'scriptprocessor')) ? 1 : 0;
 });
 
 EM_JS(void, web_suspend, (int paused), {
-    var s = Module['SDL2'];
-    var ctx = s && s.audioContext;
-    if (!ctx) return;
-    if (paused) { ctx.suspend(); return; }
+    var wa = Module.__wa;
+    if (!wa) return;
+    wa.userPaused = !!paused;
+    if (paused) { wa.ctx.suspend(); return; }
     var ua = navigator.userActivation;
-    if (ua === undefined || ua.hasBeenActive) ctx.resume();
+    if (ua === undefined || ua.hasBeenActive) wa.ctx.resume();
 });
+
+void audio_pump(double ahead_s)
+{
+    if (!A.web || A.user_paused || !web_running()) return;
+    int target = (int)(ahead_s * A.web_rate);
+    int queued = wa_queued();
+    int need = target - queued;
+    if (need < 128) return;
+    if (need > A.web_rate / 4) need = A.web_rate / 4;
+    if (A.wcap < need) {
+        free(A.wbuf);
+        A.wbuf = (float *)malloc(sizeof(float) * 2 * (size_t)need);
+        A.wcap = need;
+    }
+    if (A.web_rate == AUDIO_RATE) audio_render(A.wbuf, need);
+    else rs_stream_run(&A.out_rs, pull48, NULL, A.wbuf, need);
+    wa_push(A.wbuf, need);
+}
+
+int audio_needs_manual_render(void) { return !A.web ? !A.dev : (!A.user_paused && !web_running()); }
+#else
+void audio_pump(double ahead_s) { (void)ahead_s; }
+int audio_needs_manual_render(void) { return !A.dev; }
 #endif
 
 int audio_unlocked(void)
@@ -253,11 +361,12 @@ int audio_unlocked(void)
 
 void audio_set_paused(int paused)
 {
+    A.user_paused = paused != 0;
+#ifdef __EMSCRIPTEN__
+    if (A.web) web_suspend(paused);
+#endif
     if (!A.dev) return;
     SDL_PauseAudioDevice(A.dev, paused);
-#ifdef __EMSCRIPTEN__
-    web_suspend(paused);
-#endif
 }
 
 void audio_set_loader(AudioAfsLoader fn, void *ctx) { A.loader = fn; A.loader_ctx = ctx; }
@@ -270,6 +379,7 @@ int audio_init(int open_device)
     tsd_init(&A.tsd);
     A.tsd.resolve = tsdc_resolve;
     A.master = 1.0f;
+    A.music = A.sfx = 1.0f;
     A.bgm.loop = 1;
     A.bgm.gain = A.bgm.cur = 1.0f;
     TsdcSink sink = { sink_rpc, sink_status, NULL };
@@ -277,6 +387,14 @@ int audio_init(int open_device)
     tsdc_init();
     A.init = 1;
     if (!open_device) return 0;
+#ifdef __EMSCRIPTEN__
+    A.web_rate = wa_open(AUDIO_RATE);
+    if (A.web_rate <= 0) { A.web_rate = 0; return -1; }
+    A.web = 1;
+    rs_stream_init(&A.out_rs, AUDIO_RATE, A.web_rate);
+    SDL_Log("audio: Web Audio %d Hz%s", A.web_rate, A.web_rate == AUDIO_RATE ? "" : " (resampled from 48 kHz)");
+    return 0;
+#endif
     if (SDL_InitSubSystem(SDL_INIT_AUDIO) != 0) {
         SDL_Log("audio: SDL_InitSubSystem(AUDIO): %s", SDL_GetError());
         return -1;
@@ -286,11 +404,7 @@ int audio_init(int open_device)
     want.freq = AUDIO_RATE;
     want.format = AUDIO_F32SYS;
     want.channels = 2;
-#ifdef __EMSCRIPTEN__
-    want.samples = 2048; /* ScriptProcessorNode runs on the main thread: keep headroom */
-#else
     want.samples = 512;
-#endif
     want.callback = device_cb;
     A.dev = SDL_OpenAudioDevice(NULL, 0, &want, &have, SDL_AUDIO_ALLOW_FREQUENCY_CHANGE);
     if (!A.dev) {
@@ -299,9 +413,6 @@ int audio_init(int open_device)
     }
     A.dev_rate = have.freq;
     rs_stream_init(&A.out_rs, AUDIO_RATE, have.freq);
-#ifdef __EMSCRIPTEN__
-    web_install_unlock();
-#endif
     SDL_PauseAudioDevice(A.dev, 0);
     SDL_Log("audio: %d Hz, %d frames/buffer%s", have.freq, have.samples,
             have.freq == AUDIO_RATE ? "" : " (resampled from 48 kHz)");

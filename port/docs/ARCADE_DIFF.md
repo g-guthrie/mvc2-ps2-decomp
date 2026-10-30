@@ -218,8 +218,8 @@ Examples. N = NAOMI and P = PS2 frame durations in 60 Hz ticks.
 |---|---|
 | "Frames of animation removed" | **Confirmed, but mixed.** About 6% of scripts are retimed. 288 lose frames (for example Cyclops 09/02 loses 5 frames / 14 ticks, Cable 15/13 loses 19 ticks, Storm 14/02 goes from 35 to 10 ticks), and about as many gain frames. Many changed scripts are specials, supers and their recoveries, so combo timing changes are plausible. |
 | "Altered hitboxes" | **Confirmed for many characters, but not all.** Ryu has none. Magneto has a much smaller body box. Cable, Storm and Cyclops have a few rects each. Sentinel has 51 rects. Across the cast 350 rects differ. |
-| "Anti-air assists not invincible at startup on PS2" | **Not found in data for the characters checked.** Cyclops has 0 invulnerability-status differences, and none of the 6 characters loses startup invulnerability on PS2 in an aligned script. Invulnerability can also come from code (the player immunity timers, NAOMI `+0x1ED`, set by assist/tag routines), so the remaining place to look is the assist entry code. This is open. |
-| "Counter glitch hits both characters on PS2" | **Not verified.** The variable-counter path was not located in either binary within this pass. The next step is to find the tag-in handler that sets the partner's immunity and compare it with NAOMI. |
+| "Anti-air assists not invincible at startup on PS2" | **The code is the same; the data differs.** The assist request, the partner entry and the attack-immunity timer behave identically on both builds (§7.1). Startup invulnerability that comes from hurtboxes differs in 139 scripts of 22 characters, in both directions (§7.1). `arcade.frame_data` restores the arcade tables. Which of those scripts are each character's anti-air assist was not mapped. |
+| "Counter glitch hits both characters on PS2" | **No PS2 code difference.** The variable-counter request and the routine that brings the partner in match the NAOMI routines instruction for instruction (§7.2). Any remaining difference is in the counter attacks' frame, box and hit data, which `arcade.frame_data` and `arcade.damage` replace. The glitch itself was not reproduced. |
 | "One stage's music stops" | **Not a data defect.** All 23 AFS00 ADX streams have sane headers. Every stage-length track has its loop flag set with valid loop points. The 5 non-looping files are 2.6 to 108 s jingles, endings and fanfares. The cut-out is therefore in playback code (ADXT/IOP streaming contending with AFS reads, or a stop call), not in the stream. |
 | (Not in the list) **damage** | **Arcade base damage is higher for about 71% of attack records**, and the scaling pipeline is identical. This is the largest gameplay difference found. |
 
@@ -231,36 +231,173 @@ Without a Dreamcast image these cannot be told apart. Before shipping an
 "arcade" label, check one move in MAME against PCSX2: first-hit damage and
 frame count of, for example, Cyclops script 09/02.
 
-## 5. "Arcade accuracy" option: plan
+## 5. "Arcade accuracy" option (implemented)
 
-1. **Runtime source:** the user points the port at their own `mvsc2.zip`.
-   Verify the ROM CRCs or SHA-1s listed in the decomp's
-   `config/target.json`. Build the cart image in memory (§1 layout), read the
-   file table at cart `0x2085D4`, and take files 256+c, 315+c, 374+c and
-   433+c (and optionally the AI tables at 492+, 551+, 610+, 669+ and 728+).
-   Nothing is redistributed.
-2. **Splice:** after `func_0016F1B0` binds the PS2 PAK, repoint player
-   `+0x178` (TBL), `+0x17C` (HIT), `+0x180` (HIT_FM) and `+0x184` (HIT_DT) to
-   buffers that hold the NAOMI files. Their formats are identical (offsets are
-   relative to the file base, little-endian). Pad HIT_DT to 128 x 28 bytes
-   with zeros, as the PS2 does.
-   - Sprite ids must stay valid for the PS2 sprite bank. Check that every
-     NAOMI frame's `sprite` value exists in the PS2 bank's frame table, and
-     fall back per script to PS2 frames that are missing (Sentinel will need
-     this).
-   - Keep the PS2 `p+0x142` top-table offset logic. Sentinel's NAOMI TBL
-     uses 0x100, so set `+0x142` from the loaded TBL with the same scan the
-     tool uses.
-3. **Granularity:** use separate toggles for (a) frame data and boxes
-   (TBL/HIT/HIT_FM), (b) damage and hit properties (HIT_DT), and (c) CPU AI.
-   Netplay requires both sides to have the same toggles, so hash the loaded
-   tables into the session handshake.
-4. **Code-side items:** assist invulnerability, the counter glitch and
-   music. Locate the PS2 assist entry and variable-counter routines, diff
-   them against the NAOMI decomp, and patch them in C behind the same option.
-   For music, the port's own ADX player removes the IOP streaming path, so
-   check the cut-out on the port before patching anything.
-5. **Validation:** for each character, run `arcade_diff.py --json` against
-   the port's live tables. They should report 0 differences when the option
-   is on. Spot-check in MAME and in the port, comparing damage and frame
-   counts for the scripts listed in §4.1.
+Code: `port/host/arcade.c` (loader, splice, hooks), `port/host/inflate.c`
+(raw DEFLATE + CRC-32, so neither build needs zlib), `port/host/fe/fe_arcade.c`
+(settings), `port/web/shell.html` (zip intake), `port/tools/pack_personal.py
+--naomi`. All toggles are off by default; with all off the game runs the PS2
+tables untouched.
+
+| Toggle | Setting / option | What is repointed after `func_0016F2D0` binds the PS2 PAK |
+|---|---|---|
+| (a) frames + boxes | `arcade.frame_data`, `--arcade a`, `?arcade=a` | `+0x178` TBL, `+0x17C` HIT, `+0x180` HIT_FM, `+0x142` top-table offset |
+| (b) damage / hit | `arcade.damage`, `--arcade b` | `+0x184` HIT_DT (NAOMI records, padded to 128 x 28 with the PS2 records beyond them, which are zero) |
+| (c) CPU AI | `arcade.cpu_ai`, `--arcade c` | `+0x198` TAIKI, `+0x19C` ATCK, `+0x1A0` WARI, `+0x1A4` YOK, `+0x1A8` LIB |
+
+**Loading.**
+- The user's zip is read at boot (`arcade_init`, called from `mvc2_boot`).
+  The source is `--naomi PATH` / `arcade.naomi` on the desktop, and
+  `/mvsc2.zip` on the web, which the page writes from its picker, its
+  IndexedDB cache or the personal build's embedded copy.
+- Every member that is present must match the Rev A CRC-32 and size.
+  `epr-23085a.ic11` (the file table at cart `0x2085D4`) and `mpr-23058.ic27s`
+  are inflated and checked. All 9 x 59 table files live in `mpr-23058.ic27s`,
+  so the personal build embeds only those two members (5.6 MB).
+- On failure the toggles are cleared and the log says why.
+
+**Splice.** This is a wrapper on `func_0016F2D0` (host_impl.csv); the game's
+own body runs first. The merged tables are built once per character and
+cached.
+- **TBL:** the NAOMI file is used unchanged at offset 0, so all its offsets
+  and gotos stay valid. Its top table is rewritten to point at new group
+  arrays (each as long as the longer of the two builds' arrays), and the PS2
+  TBL is appended.
+- **Per-script fallback to the PS2 script:** a (group, strength) entry uses
+  the PS2 script when NAOMI has none (PS2-only variants: Sentinel's 11 and
+  character 0x0A's 50, for example), when a displayed NAOMI frame's sprite id is not
+  in the PS2 sprite bank, or when the NAOMI chain is malformed (its goto
+  leaves the file, as in Ryu 0b/00 and 0b/03, or its selection index is
+  outside HIT).
+  - A fallback is taken only if the PS2 chain itself passes the same check.
+    Groups 0x1D+ (effect formats) never fall back.
+  - Groups 0x1B/0x1C use the 8-byte record format (`func_001754A0`). The
+    others use 20-byte records.
+  - Fallback chains are relocated: their gotos move by the PS2 copy's offset,
+    and their selections move by the NAOMI HIT count, because the PS2 HIT
+    entries are appended after NAOMI's.
+  - Rect indices stay as they are, because several readers take them as u8.
+    So a fallback frame uses the NAOMI rect of the same index. The log counts
+    the PS2 selections whose rects differ.
+- **`+0x142`:** set from the scan of the NAOMI TBL (0x100 for all 59,
+  Sentinel included).
+- **Copies of the player:** effect actors copy the player's
+  `[0xEC, 0x1B0)` (ActorState), so they inherit the new pointers and
+  `+0x142` together.
+
+**Hash.**
+- `arcade_hash()`: FNV-1a 64 over the toggles and every NAOMI table they
+  select, for all 59 characters. It is logged as the "session hash" for the
+  future netplay handshake.
+- Each binding also logs a per-player hash of the merged tables.
+
+**Test hooks.** These are app options, and on the web they go in `?args=`.
+- `--arcade-trace` logs every player script run (frames, ticks, and the bound
+  table's own count) and every hit (attack id, base damage, health).
+- `--arcade-play GG/SS` makes player 0 start that script through the game's
+  `func_001757E0` while standing.
+- `--p1-team ID` forces side 0's point character as its PAK is queued
+  (`func_0012EF50/80`). The HUD keeps the menu's names.
+- `--cpu-team a,b,c` works again: the game's credited pick runs, then the ids
+  are forced.
+
+## 6. Verification (browser build, headless Chromium)
+
+Screenshots are under `private/converted/boot/web/arc*`.
+
+| Check | Arcade toggles on | PS2 data (toggles off) | Tool (NAOMI / PS2) |
+|---|---|---|---|
+| Cyclops 09/02 (a), started on player 0 with `--arcade-play 09/02` | 17 frames, 52 ticks (bound table: 17 records, 51 ticks) | 12 frames, 38 ticks (table: 12 / 37) | 17/51, 12/37 |
+| Ryu's attack 0x30 (b), CPU Ryu's first hit on Cyclops | base 28, health 144 -> 123 | base 14, 126 -> 116 | 28 / 14 |
+| Ryu's attack 0x0b (b) | base 15 | base 13 | 15 / 13 |
+| Game-started scripts, all toggles on | e.g. Cyclops 08/02 11 frames / 31 ticks = table | | |
+| Settings path (`?arcade.frame_data=1&arcade.damage=1&arcade.cpu_ai=1`, no `?arcade`) | same results, same session hash `9f9cc9ad0ddbb266` | | |
+| Zip picker (page without an embedded set, `?arcade=ab`) | asks for mvsc2.zip, then loads the full 85 MB zip and boots | | |
+| Sweep, all toggles on, CPU teams of three plus a forced P1 point, 15 fights of 20 s | all 59 characters bound and fought; no crash or abort (`arc_sweep/run0..14`) | | |
+
+Notes:
+- The scripted start lands mid-tick, so its counts are one tick above the
+  table. Scripts the game itself starts match the table exactly.
+- With arcade data, Sentinel draws and fights normally (`arc_sweep/run13`).
+
+## 7. The two code claims
+
+**Field mapping.** NAOMI `0x1ED` (attack immunity, PLAYER.md) is PS2
+`+0x201`; in this region of the struct PS2 = NAOMI + 0x14. This is shown by
+twin routines:
+- NAOMI `0x0c03f1b0` (src/verified/func_0c03f15c.c) is PS2 `func_001769F0`
+  (g2.c). Both have `if (phase < 5 && [0x1dc|0x1F0] && [0x238|0x24C])
+  immunity = 2`.
+- NAOMI health `0x420` is PS2 `0x434`.
+
+### 7.1 Assist / tag-in startup invulnerability
+Compared, NAOMI asm (decomp `tools/inspect_rom.py`) against PS2 C:
+
+| Routine | NAOMI | PS2 | Result |
+|---|---|---|---|
+| Per-frame player update: timers count down unless in hitstop (`0x1A0`/`0x1B4`), and the "hurtable" flag `0x19D`/`0x1B1` = 0x80 unless immunity != 0, state 1, or state 2 with `0x1F6`/`0x20A` == 0 | `0x0c039af4`, `0x0c039d52` | `func_0027FBB0` (w21a5_m.c) | same |
+| Immunity on being hit = HIT_DT byte 0x16 & 0x3F, copied to the partner | `0x0c048412` | `func_0018B500` (xm14_b.c) | same |
+| Assist / tag request (A1/A2, counter variants 3/4) | `0x0c046700` | `func_00188860` (r16_00_a.c) | same structure, masks and conditions |
+| Partner entry / tag-in checks: sets immunity 2 in three places | `0x0c03b74c` | `func_0017BDA0` (nq184_b.c) | same |
+| Immunity 3 when the special entry check fails | `0x0c039244` | `func_003D92F0` (w194_n.c) | same |
+| Immunity 1 x3, 4 x2, 16 (Abyss) | `0x0c03afb6..`, `0x0c044216/4a`, `0x0c043760` | `func_0017B300/B3B0/B410`, `func_00185290/85380`, `func_001841E0` | same values |
+
+**Code verdict:** no PS2 change to assist or tag-in immunity, so there is no
+host code fix to make.
+
+**Data:** a per-script scan (`startup invulnerable ticks` = ticks before the
+first frame with a live hurtbox, groups 0x00..0x1A, all 59 characters) finds
+139 scripts in 22 characters that differ. They differ in both directions.
+For example:
+- Storm 14/00: NAOMI 56 ticks, PS2 0.
+- Hulk 18/01: 32 against 0.
+- Amingo 15/01: 34 against 0.
+- Psylocke 15/0f: 3 against 6.
+- Sentinel 15/0a..11: mixed.
+
+These come from the TBL/HIT/HIT_FM tables, so `arcade.frame_data` restores
+them. This is broader than §4.3's aligned-only count, which found none for
+the six characters. Which script is each character's anti-air assist was not
+mapped, so the claim is "plausible for some characters, data-side" rather
+than confirmed for a named assist.
+
+### 7.2 Variable counter "hits both characters"
+- **Request:** the variable counter is request kinds 3/4 of the assist
+  request (`*q` at `0x25E/0x25F`, PS2; `0x24A/0x24B`, NAOMI). It sets
+  `+0x26B` and `+0x2B0 = -1`.
+- **Consumer:** the per-frame team routine (q3_s.c) calls `func_00327570`
+  for a point character with `+0x2B0` set.
+- **Partner entry:** `func_00327570` activates the partner. It requires
+  health > 0 and no snap-out timer, and then sets the active flags, state
+  0x1C, `0x26A = 7` and `0x269 = 8`, copies the facing and position, clears
+  the input words, ORs the side mask and sets the point's `0x26D`.
+- **Comparison:** NAOMI `0x0c036dc0` does exactly the same stores with the
+  same constants (`0x256 = 7`, `0x255 = 8`, state 28 through `0x0c045248`,
+  `0x259 = 1`).
+
+**Verdict:** no PS2 code difference in the variable-counter path. Any
+difference in how a counter connects comes from the counter attacks' data,
+which (a) and (b) replace. The glitch was not reproduced in either build.
+
+## 8. Arcade slowdown
+
+Not implemented, because it is not identifiable as code.
+- No routine was found in the NAOMI program that slows the logic step on
+  purpose.
+- Arcade slowdown is a by-product of load: when a frame's SH-4 and PowerVR
+  work overruns the vblank wait, the next logic step runs a frame late. This
+  is inferred from the main-loop structure (one step per frame, gated on
+  vblank), not traced.
+- Reproducing it would need a per-frame cost model of the NAOMI hardware.
+  Hit stop, super freeze and KO slow motion are ordinary game logic, so the
+  port already runs them.
+
+## 9. Open
+- Map each character's assist types (`+0x4DD`, `D_004405A0`) to their
+  scripts, to name which anti-air assists lose or gain invulnerability.
+- Check one move in MAME against the port (the Rev A against Dreamcast-data
+  caveat in §4.3).
+- Fallback frames use NAOMI rects of the same index (the count is logged per
+  character).
+- An `--p1-team` partner cannot be forced (its PAK is already resident from
+  the menu).

@@ -8,6 +8,8 @@
  *
  *   mvc2 [--iso DISC.iso] [--frames N] [--shot F:FILE.png ...] [--shot-every N --shot-dir D]
  *        [--press F:BUTTON[:LEN] ...] [--hidden] [--size WxH] [--desktop-gl] [-v]
+ *        [--config FILE] [--set KEY=VALUE ...] [--fullscreen] [--no-unlock]
+ *        [--wshot F:FILE.png ...] [--key F:KEYNAME[:LEN] ...]
  *        [--arcade abc --naomi mvsc2.zip] [--arcade-trace] [--cpu-team a,b,c]
  *
  * --frames N quits after N game frames.  --shot F:path writes the 640x480
@@ -17,6 +19,10 @@
  * headless runs.  Web: the page's file picker / embedded disc calls
  * viewer_open_js(path) and the game boots then.
  *
+ * Settings (port/docs/USER_GUIDE.md): natively SDL_GetPrefPath("mvc2-port",
+ * "mvc2")/settings.ini (or --config FILE), on the web localStorage; --set
+ * KEY=VALUE overrides one for this run.  Headless runs (--hidden) ignore the
+ * user's file unless --config is given and never write it.
  * --arcade abc (any of a = frames + boxes, b = damage / hit data, c = CPU AI)
  * splices the user's own NAOMI tables from --naomi PATH (mvsc2.zip, MAME
  * Rev A set; web: /mvsc2.zip, written by the page) into each character
@@ -35,6 +41,11 @@
 #include "../../platform/platform.h"
 #include "../../platform/png_write.h"
 #include "../../render/render.h"
+#include "../../platform/settings.h"
+
+void fe_ui_register(void);
+int fe_ui_step(void);
+void fe_ui_render(int w, int h);
 
 void fe_render_init(void);
 int fe_audio_init(int open_device);
@@ -45,12 +56,17 @@ void fe_audio_frame(void);
 #define MAX_SHOTS 64
 #define MAX_PRESS 64
 static struct {
-    int booted, frames_limit, present_mode, shot_every;
+    int booted, frames_limit, shot_every;
     const char *shot_dir;
     struct { long frame; const char *path; } shot[MAX_SHOTS];
     int nshot;
     struct { long frame; int len; u16 bits; } press[MAX_PRESS];
     int npress;
+    struct { long frame; const char *path; } wshot[MAX_SHOTS];
+    int nwshot;
+    struct { long frame; int len; int sc; } key[MAX_PRESS];
+    int nkey;
+    long ticks; /* display frames (counts while the menu holds the game) */
 } A;
 
 static const struct { const char *n; u16 bit; } BTN[] = {
@@ -106,6 +122,8 @@ static void update(void *u)
     (void)u;
     if (!A.booted)
         return;
+    if (fe_ui_step())
+        return; /* the settings menu opened: this step's buttons were for it */
     p0 = *plat_pad(0);
     p1 = *plat_pad(1);
     for (i = 0; i < A.npress; i++)
@@ -115,7 +133,10 @@ static void update(void *u)
     host_pad_set(0, &p0);
     host_pad_set(1, &p1);
     memset(fe_cnt, 0, sizeof fe_cnt);
+    /* frame skip: when several steps run in one display frame only the last is drawn */
+    r_set_discard(!plat_step_is_last() && A.nshot == 0 && A.shot_every == 0);
     mvc2_frame();
+    r_set_discard(0);
     fe_audio_frame();
     for (i = 0; i < A.nshot; i++)
         if (A.shot[i].frame == mvc2_host_frame)
@@ -129,12 +150,43 @@ static void update(void *u)
         plat_request_quit();
 }
 
+/* --key F:NAME[:LEN]: a real key event (through SDL's queue, so the menu and the
+ * remapping see it) at display frame F; --wshot F:PATH: the window after present. */
+static void scripted_keys(void)
+{
+    int i;
+    for (i = 0; i < A.nkey; i++) {
+        SDL_Event e;
+        int down = A.ticks == A.key[i].frame, up = A.ticks == A.key[i].frame + A.key[i].len;
+        if (!down && !up)
+            continue;
+        memset(&e, 0, sizeof e);
+        e.type = down ? SDL_KEYDOWN : SDL_KEYUP;
+        e.key.timestamp = SDL_GetTicks();
+        e.key.state = down ? SDL_PRESSED : SDL_RELEASED;
+        e.key.keysym.scancode = (SDL_Scancode)A.key[i].sc;
+        SDL_PushEvent(&e);
+    }
+}
+
 static void render(void *u)
 {
-    int W, H;
+    int W, H, i;
     (void)u;
     plat_drawable_size(&W, &H);
-    r_present(W, H, A.present_mode);
+    fe_ui_render(W, H);
+    for (i = 0; i < A.nwshot; i++)
+        if (A.wshot[i].frame == A.ticks) {
+            uint8_t *rgba = (uint8_t *)malloc((size_t)W * H * 4);
+            r_read_window(W, H, rgba);
+            png_write_rgba(A.wshot[i].path, W, H, rgba);
+            free(rgba);
+            host_log("wrote %s (window %dx%d, display frame %ld)", A.wshot[i].path, W, H, A.ticks);
+        }
+    A.ticks++;
+    scripted_keys();
+    if (A.frames_limit > 0 && A.ticks >= A.frames_limit + 3600)
+        plat_request_quit(); /* --frames safety while the menu holds the game */
 }
 
 static void on_pause(void *u, int paused)
@@ -146,12 +198,11 @@ static void on_pause(void *u, int paused)
 int main(int argc, char **argv)
 {
     const char *iso = getenv("MVC2_ISO");
-    int w = 1280, h = 960, hidden = 0, desktop_gl = 0, i;
+    int w = 1280, h = 960, hidden = 0, desktop_gl = 0, fullscreen = -1, i;
+    const char *config = NULL;
+    const char *sets[64];
+    int nsets = 0, no_unlock = 0;
     static PlatApp app = { NULL, update, render, on_pause };
-    A.present_mode = R_PRESENT_INTEGER;
-#ifdef __EMSCRIPTEN__
-    A.present_mode = R_PRESENT_SHARP_FIT;
-#endif
     for (i = 1; i < argc; i++) {
         const char *a = argv[i], *n = i + 1 < argc ? argv[i + 1] : NULL;
         if (!strcmp(a, "--iso") && n) { iso = n; i++; }
@@ -160,6 +211,24 @@ int main(int argc, char **argv)
             A.shot[A.nshot].frame = strtol(n, 0, 0);
             A.shot[A.nshot].path = strchr(n, ':') ? strchr(n, ':') + 1 : "shot.png";
             A.nshot++;
+            i++;
+        } else if (!strcmp(a, "--wshot") && n && A.nwshot < MAX_SHOTS) {
+            A.wshot[A.nwshot].frame = strtol(n, 0, 0);
+            A.wshot[A.nwshot].path = strchr(n, ':') ? strchr(n, ':') + 1 : "wshot.png";
+            A.nwshot++;
+            i++;
+        } else if (!strcmp(a, "--key") && n && A.nkey < MAX_PRESS) {
+            char nm[40] = "";
+            long f = 0;
+            int len = 4;
+            if (sscanf(n, "%ld:%39[^:]:%d", &f, nm, &len) >= 2 && SDL_GetScancodeFromName(nm) != SDL_SCANCODE_UNKNOWN) {
+                A.key[A.nkey].frame = f;
+                A.key[A.nkey].len = len;
+                A.key[A.nkey].sc = SDL_GetScancodeFromName(nm);
+                A.nkey++;
+            } else {
+                fprintf(stderr, "mvc2: --key %s: unknown key\n", n);
+            }
             i++;
         } else if (!strcmp(a, "--shot-every") && n) { A.shot_every = atoi(n); i++; }
         else if (!strcmp(a, "--shot-dir") && n) { A.shot_dir = n; i++; }
@@ -181,7 +250,10 @@ int main(int argc, char **argv)
         else if (!strcmp(a, "--size") && n) { sscanf(n, "%dx%d", &w, &h); i++; }
         else if (!strcmp(a, "-v")) host_verbose++;
         else if (!strcmp(a, "-q")) mvc2_trace_state = 0;
-        else if (!strcmp(a, "--no-unlock")) mvc2_unlock_all = 0;
+        else if (!strcmp(a, "--no-unlock")) no_unlock = 1;
+        else if (!strcmp(a, "--config") && n) { config = n; i++; }
+        else if (!strcmp(a, "--set") && n) { if (nsets < 64) sets[nsets++] = n; i++; }
+        else if (!strcmp(a, "--fullscreen")) fullscreen = 1;
         else if (!strcmp(a, "--cpu-team") && n) { setenv("MVC2_CPU_TEAM", n, 1); i++; } /* testing */
         else if (!strcmp(a, "--p1-team") && n) { setenv("MVC2_P1_TEAM", n, 1); i++; }   /* testing */
         else if (!strcmp(a, "--arcade") && n) { setenv("MVC2_ARCADE", n, 1); i++; }      /* ARCADE_DIFF.md 5 */
@@ -191,8 +263,39 @@ int main(int argc, char **argv)
         else if (a[0] != '-') iso = a;
         else { fprintf(stderr, "unknown option %s\n", a); return 2; }
     }
+    /* options: registered first, then the stored values, then this run's overrides */
+    fe_ui_register();
+#ifdef __EMSCRIPTEN__
+    settings_load_web();
+#else
+    if (!config && !hidden) {
+        static char path[1024];
+        char *pref = SDL_GetPrefPath("mvc2-port", "mvc2");
+        if (pref) {
+            snprintf(path, sizeof path, "%ssettings.ini", pref);
+            SDL_free(pref);
+            config = path;
+        }
+    }
+    if (hidden && !config)
+        settings_set_autosave(0);
+    if (config) {
+        if (settings_load_file(config) == 0)
+            host_log("mvc2: settings from %s", config);
+        else
+            host_log("mvc2: settings will be saved to %s", config);
+    }
+#endif
+    for (i = 0; i < nsets; i++)
+        if (settings_parse_assignment(sets[i], 1) != 0)
+            fprintf(stderr, "mvc2: --set %s: expected KEY=VALUE\n", sets[i]);
+    if (no_unlock)
+        settings_override("game.unlock_all", "0");
+    if (fullscreen >= 0)
+        settings_override("video.fullscreen", "1");
     {
-        PlatConfig cfg = { "Marvel vs. Capcom 2", w, h, hidden, !hidden, desktop_gl };
+        PlatConfig cfg = { "Marvel vs. Capcom 2", w, h, hidden, !hidden && settings_get_int("video.vsync"),
+                           desktop_gl, !hidden && settings_get_int("video.fullscreen") };
         if (plat_init(&cfg))
             return 1;
     }
@@ -201,6 +304,11 @@ int main(int argc, char **argv)
         return 1;
     fe_render_init();
     fe_audio_init(!hidden);
+    {
+        extern void fe_arcade_register(void);
+        fe_arcade_register();   /* "Arcade accuracy" options (fe_arcade.c) */
+    }
+    settings_apply_all();
     if (hidden)
         plat_set_fixed_step(1);
 #ifndef __EMSCRIPTEN__

@@ -779,6 +779,7 @@ int fl_mesh_draw(FlModel *mdl, int i)
     MMesh *me = &mdl->mesh[i];
     if (me->desc < 0 || !me->nidx) return 0;
     r_flush(); /* keep the order with the 2D batches */
+    if (r_discarding()) return 1; /* frame skip (r_set_discard): the logic ran, nothing is drawn */
     uint32_t fmt = me->fmt;
     int lit = (fmt & 0x100) != 0, matcol = (fmt & 2) != 0, mod = (fmt & 0x20000) != 0;
     int flags = (lit ? 4 : matcol ? 2 : 1) | ((fmt & 0x4000) ? 8 : 0) |

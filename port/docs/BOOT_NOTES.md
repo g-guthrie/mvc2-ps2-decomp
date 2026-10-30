@@ -210,7 +210,10 @@ Still faked / open (honest list):
 | 32 | web: renderer "Target crashed" at the fight load; native: SIGSEGV in `func_001757E0` from `func_001A0BD0(p, q = garbage)` | with the real CPU team pick (`func_0032DF90`, part 4) the CPU can now get Spider-Man / Hulk / Venom (ids 0x0C–0x0E; reproduced with `--cpu-team 12,13,14`; every other id fought fine in a 20-team browser sweep).  One of their effect objects is updated through `func_001A0B80(p)` → `jtbl_0044AF70[..](p, owner)` → `func_001A0BB0(u8 *p) { jtbl_0044AF80[p[4]](p); }`: the asm of that dispatch head tail-jumps (`jr $v0`) with `$a1` (owner) untouched, the C passes only `p`, so `func_001A0BD0` read its owner from stack garbage.  The earlier build never reached it because the stubbed pick never chose those characters | **R22 tail forwarding**: `gen_regpass.py` finds dispatch heads (the entry block loads from a table whose every entry is a known function, and ends in `jr $reg`; switch tables point at code labels and are left alone) whose `$a1..$a3` still hold their entry values at the jump; those are widened (R20) and listed in `port/tools/r12_tailfwd.csv` (2,050 heads), and hostify passes the head's remaining parameters through the table call with an unprototyped function-pointer cast.  Headers that declare a widened function keep an unprototyped declaration in its defining TU (no conflicting types).  Widened functions 144 → 2,258; R12 passthrough rows 542 → 722; host code that declared a now-widened game function (`func_00391710` in game_fix.c) takes the new prototype |
 
 `--cpu-team a,b,c` (app; `?args=--cpu-team%20a,b,c` on the web page) or
-`MVC2_CPU_TEAM` forces the CPU's characters, for testing.  The browser sweep
+`MVC2_CPU_TEAM` forces the CPU's characters, for testing.  Since the pick
+became credited C this is a wrapper in port/host/arcade.c: the game's pick
+runs, then the ids are forced (`--p1-team ID` does the same for side 0's
+point character).  The browser sweep
 over all 59 ids (20 teams, Playwright, `scratchpad/pw/team.js`) is in
 `private/converted/boot/web/teams/`.
 
@@ -245,3 +248,68 @@ merges, hand-written asm as `.S`). Changes needed to rebuild:
   (not matched) keep host C.
 Browser run on the repacked single file: title → menu → character select →
 VERSUS → fight with attacks and an assist (`private/converted/boot/web/rebuild1/`).
+
+### Phase 4, platform side: settings, input, pacing, audio, PWA (2026-10-30)
+
+Port-side only (`port/platform`, `port/render`, `port/audio`, `port/host/fe`,
+`port/web`). Players' description: USER_GUIDE.md.
+
+**New pieces**
+- `settings.c`: the option store and table, plus the extension point for
+  the arcade toggles.
+- `input.c`: bindings, the positional gamepad layout and capture.
+- `fe_ui.c`: the options, the in-game menu, the FPS / latency overlay, the
+  touch pad drawing and the web exports `mvc2_settings_json`,
+  `mvc2_setting_set`, `mvc2_bind_*`, `mvc2_ui_hold` and `mvc2_stats_json`.
+- `r_font.c`: a 5x7 overlay font.
+- The present pass is now a shader (`r_present_ex`): sharp bilinear,
+  scanlines and CRT.
+- `r_set_discard`: frame skip that still updates textures.
+- Web audio output: an AudioWorklet (AUDIO.md section 5).
+- `shell.html`: the settings panel, fullscreen and install.
+- `sw.js` now precaches `mvc2.*`. The icons come from `port/tools/gen_icons.py`.
+
+**Platform loop** (`platform_sdl.c`)
+- Runs from `emscripten_request_animation_frame_loop` with the vsync
+  timestamp. Frame times are snapped to common refresh intervals.
+- Up to 8 steps run per display frame, and only the last one is drawn.
+- It draws only when a step ran.
+- Pause is reported from `visibilitychange` itself.
+- Keys come from events, so taps shorter than a frame still count.
+- Keys used by the menus are swallowed until released.
+
+**Desktop app test hooks:** `--wshot F:png` (the window after present) and
+`--key F:NAME` (real SDL key events).
+
+**Checked**
+- Native headless (i386, offscreen): F1 menu, Video page changes, Controls
+  rebinding by key capture, the settings file written
+  (`video.scale = integer`, `input.p1.kb.up = U`), and the scripted flow to a
+  fight (frame 6700, state 02 01 02) with the FPS overlay.
+- Web, single file, headless Chromium + SwiftShader
+  (`private/converted/boot/web/ux*/`):
+  - Settings panel tabs.
+  - Two emulated standard-mapping pads, recognised as Xbox and DualSense
+    layouts: player 1 CROSS, player 2 SQUARE, stick to LEFT.
+  - Rebinding through the panel (keyboard LP to J, pad LK to north with a
+    swap) took effect in game and survived a reload (localStorage).
+  - Back + Start opened the in-game menu, and pad navigation worked.
+  - Measured latency: 0.5-6 frames, which is the display rate on a loaded
+    SwiftShader box (5-20 fps).
+  - Phone 390x844 portrait and 844x390 landscape: the touch pad drove the
+    game (title to menu with ST, d-pad moved the menu), and size changed at
+    140 %.
+  - Full flow title to fight with attacks and an assist, the FPS overlay,
+    scanlines, CRT, and stretch + smooth (`ux_fight/`).
+  - PWA over http://localhost: manifest, every shell file cached, and an
+    offline reload starts the page and offers the disc picker.
+
+**Open**
+- Two of three web runs on the loaded machine (load average 10-17) ended
+  with a renderer "Target crashed" at the fight load (state 2/1/2). The third
+  run, and native, fought fine.
+- The baseline build could not be compared under that load (its screenshots
+  timed out).
+- Watch for this: it may be memory pressure in the renderer with a 180 MB
+  page, or a game-side issue.
+

@@ -27,6 +27,7 @@ int r_pal_alloc_rows(int nrows);
 void r_pal_write(int row, int first, int n, const uint8_t *rgba);
 GLuint r_tex_gl(uint32_t handle, int *mode, int *pal_row);
 int r_texture_filter_linear(void);
+int r_discarding(void);              /* r_set_discard: drop draws this step */
 float r_depth_of(float z);           /* game z in [-1, 1] -> NDC depth */
 float r_snap_x(float x);              /* origin + integer truncation, as fptosi does */
 float r_snap_y(float y);

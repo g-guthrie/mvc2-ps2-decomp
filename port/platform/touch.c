@@ -9,41 +9,64 @@ static const struct { uint16_t bits; const char *label; } k_btn[TB_COUNT] = {
     { PS2_START, "ST" },
 };
 
-void touch_layout(TouchPad *t, int w, int h)
+void touch_layout(TouchPad *t, int w, int h) { touch_layout_ex(t, w, h, h > w ? w * 0.75f : 0.f); }
+
+void touch_layout_ex(TouchPad *t, int w, int h, float picture_bottom)
 {
     int visible = t->visible;
+    float scale = t->scale > 0 ? t->scale : 1.f;
     long long ids[TOUCH_MAX_FINGERS];
     int downs[TOUCH_MAX_FINGERS];
-    for (int i = 0; i < TOUCH_MAX_FINGERS; i++) { ids[i] = t->f[i].id; downs[i] = t->f[i].down; }
+    float fx[TOUCH_MAX_FINGERS], fy[TOUCH_MAX_FINGERS];
+    for (int i = 0; i < TOUCH_MAX_FINGERS; i++) {
+        ids[i] = t->f[i].id; downs[i] = t->f[i].down; fx[i] = t->f[i].x; fy[i] = t->f[i].y;
+    }
     memset(t, 0, sizeof *t);
     t->visible = visible;
-    for (int i = 0; i < TOUCH_MAX_FINGERS; i++) { t->f[i].id = ids[i]; t->f[i].down = downs[i]; }
+    t->scale = scale;
+    for (int i = 0; i < TOUCH_MAX_FINGERS; i++) {
+        t->f[i].id = ids[i]; t->f[i].down = downs[i]; t->f[i].x = fx[i]; t->f[i].y = fy[i];
+    }
     t->w = w;
     t->h = h;
-    float s = (float)(w < h ? w : h);
-    float r = s * 0.075f;                   /* button radius */
-    float base = (float)h - r * 1.6f;       /* bottom row centre */
-    if (h > w) base = (float)h - r * 2.2f;  /* portrait: below the picture */
-    t->dr = r * 2.2f;
-    t->dcx = t->dr + r * 0.6f;
-    t->dcy = base - r * 1.1f;
+    t->portrait = h > w;
+    t->picture_bottom = picture_bottom;
+    float r, base, dpad_k = 2.2f;
+    if (t->portrait) {
+        /* the picture sits at the top; the pad is centred in the space below it */
+        float room = (float)h - picture_bottom;
+        r = (float)w * 0.085f * scale;
+        if (r * 6.2f > room && room > 0) r = room / 6.2f;   /* d-pad + START must fit */
+        if (r < (float)w * 0.05f) r = (float)w * 0.05f;
+        dpad_k = 1.9f;                                    /* narrow screen: d-pad and buttons side by side */
+        base = picture_bottom + room * 0.5f + r * 2.2f;
+        if (base > (float)h - r * 1.6f) base = (float)h - r * 1.6f;
+        if (base - r * 3.4f < picture_bottom) base = picture_bottom + r * 3.4f;
+    } else {
+        r = (float)h * 0.085f * scale;
+        base = (float)h - r * 1.5f;
+    }
+    t->dr = r * dpad_k;
+    t->dcx = t->dr + r * 0.7f;
+    t->dcy = base - r * 1.15f;
     for (int i = 0; i < 6; i++) {
         int col = i % 3, row = i / 3;
         TouchButton *b = &t->b[i];
         b->r = r;
+        /* arcade layout: punches on the top row, kicks below, each row slanted */
         b->cx = (float)w - r * 1.3f - (2 - col) * r * 2.3f;
-        b->cy = base - (1 - row) * r * 2.3f;
+        b->cy = base - (1 - row) * r * 2.3f + (2 - col) * r * 0.25f;
         b->ps2_bits = k_btn[i].bits;
         b->label = k_btn[i].label;
     }
     TouchButton *st = &t->b[TB_START];
-    st->r = r * 0.6f;
-    if (h > w) {
-        /* portrait: centred above the button block, clear of the d-pad and buttons */
-        st->cx = (float)w * 0.5f;
-        st->cy = base - r * 2.3f - r * 2.0f;
+    st->r = r * 0.62f;
+    st->cx = (float)w * 0.5f;
+    if (t->portrait) {
+        /* between the picture and the pad */
+        st->cy = (picture_bottom + (t->dcy - t->dr - r * 1.2f)) * 0.5f;
+        if (st->cy < picture_bottom + st->r * 1.3f) st->cy = picture_bottom + st->r * 1.3f;
     } else {
-        st->cx = (float)w * 0.5f;
         st->cy = st->r * 1.5f;
     }
     st->ps2_bits = k_btn[TB_START].bits;

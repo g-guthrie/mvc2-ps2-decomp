@@ -229,11 +229,42 @@ The commands go into a 64 x 8-byte queue at `0x633E30` (`w0 < 0` means free).
 - **Declick** (on by default, `Synth.declick`). The data's ADSR2 release rate
   0 is a 2-sample cut and CC120 is a hard stop. The port ramps both over 64
   samples (1.3 ms). This is the one intentional deviation from the SPU2.
-- **Web.**
-  - SDL2 opens a Web Audio context through a ScriptProcessorNode.
-  - `audio_init` installs capture-phase `pointerdown`/`touchend`/`mousedown`/`keydown` listeners that call `audioContext.resume()` inside the gesture and start a 1-sample buffer (needed on iOS).
-  - `audio_set_paused` (wire it to `PlatApp.on_pause`) pauses the SDL device and suspends or resumes the context.
-  - Checked in headless Chromium (Playwright): an emulated locked context resumed on the first click, and hiding the page suspended it and showing it resumed it (`private/converted/audio_port/web_soundtest.png`). The device rate there was 44.1 kHz, so the converter ran. An AnalyserNode on SDL's output node read RMS 0.16 while track 1 played.
+- **Web.** The original text below describes the first web output. It was
+  replaced in phase 4 (see USER_GUIDE.md, Audio).
+  - **Output, now:** no SDL audio. `audio_init` opens its own AudioContext at
+    48 kHz, so no resampling is needed (the converter still runs if the
+    browser refuses that rate). The context feeds an **AudioWorkletNode**
+    that plays interleaved stereo blocks posted from the main thread.
+    - The module loads from a `blob:` URL, or a `data:` URL on `file://`
+      pages (the single-file build).
+    - Without AudioWorklet, a ScriptProcessorNode plays the same queue.
+    - `audio_pump(ahead)` runs once per display frame (`fe_ui_render`). It
+      keeps `ahead` seconds queued, measured against `ctx.currentTime`:
+      - Auto: 2.5 display frames, at least 50 ms, at most 300 ms.
+      - Otherwise `audio.latency` picks Low 40 ms, Normal 80 ms or High
+        150 ms.
+
+      This leaves no gaps at 25-60 fps.
+    - While the context is not running (before the first gesture, or while
+      the module loads), `fe_audio_frame` renders one frame of samples per
+      game step and discards them, as the headless build does, so the music
+      player's status keeps advancing.
+  - **Volumes:** `audio_set_music_volume` / `audio_set_sfx_volume` (settings
+    `audio.music` / `audio.sfx`, squared) scale the ADXT player and the TSD
+    mix separately, before the master gain.
+  - Capture-phase `pointerdown`/`touchend`/`mousedown`/`keydown` listeners
+    call `ctx.resume()` inside the gesture and start a 1-sample buffer, which
+    iOS needs.
+  - `audio_set_paused` suspends the context. It is wired to the platform's
+    pause (tab hidden, now called from the `visibilitychange` event itself)
+    and to the settings menu or panel.
+  - **Checked** in headless Chromium: the `AudioWorklet, 48000 Hz` mode runs
+    from `file://` and from http.
+  - (Before phase 4: SDL2 opened a Web Audio context through a
+    ScriptProcessorNode with 2048-frame buffers. An emulated locked context
+    resumed on the first click, hiding the page suspended it, and an
+    AnalyserNode read RMS 0.16 while track 1 played,
+    `private/converted/audio_port/web_soundtest.png`.)
 
 ## 6. Music cut-out gripe ("one stage's music stops after the fight starts")
 
