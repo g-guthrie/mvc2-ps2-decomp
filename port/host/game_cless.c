@@ -55,29 +55,7 @@ void func_0012DC00(void)
     EE_BSS(u32, 0x004CA1A4) = a3b;
 }
 
-/* func_001E5870(entry, slot): send an AFS01 sound bank to the driver
- * (func_001E5710) and wait until the driver's pending-load count (TSD\1
- * fno 0xC) changes, at most 0xF0 server ticks (else the slot's EE sound
- * table D_004CC150[slot] is cleared and -1 returned), then until the bank
- * queue func_001E5700 drains. */
-int func_001E5870(int entry, int slot)
-{
-    s32 before = func_00423990((int)0x8000000C, 1);
-    s32 r = func_001E5710((void *)(uintptr_t)entry, (u32)slot);
-    s32 n = 0xF0;
-    if (r < 0)
-        return r;
-    while (func_00423990((int)0x8000000C, 1) == before) {
-        func_00418B10();
-        if (--n < 0) {
-            memset((u8 *)EE_BSS_PTR(0x004CC150) + ((u32)slot << 9), 0, 0x200);
-            return -1;
-        }
-    }
-    while (func_001E5700() > 0)
-        func_00418B10();
-    return 0;
-}
+/* func_001E5870: now the credited C (see config/matches.csv). */
 
 /* func_003F0E60(heap): compaction of the handle heap (the 6 MB pool
  * D_005BF280 and the arena blocks).  Heap: +0 block count, +8 block table
@@ -94,46 +72,7 @@ static void heap_move(HBlk *b, u32 to)
     }
 }
 
-void func_003F0E60(int hp)
-{
-    s32 *h = (s32 *)(uintptr_t)hp;
-    HBlk *B = (HBlk *)(uintptr_t)h[2];
-    u16 *list = (u16 *)(uintptr_t)(h[3] ? (u32)h[5] - (u32)h[0] * 2 : (u32)h[5]);
-    s32 cnt = 0, i, k, n, pass;
-    for (i = 0; i < h[0]; i++)
-        if (B[i].size != 0)
-            list[cnt++] = (u16)i;
-    if (cnt == 0) {
-        h[4] = h[5];
-        return;
-    }
-    /* bubble sort: ascending addresses (upward heap) or descending */
-    for (pass = 0, n = cnt; pass < cnt; pass++, n--)
-        for (k = 0; k < n - 1; k++) {
-            u16 a = list[k], b = list[k + 1];
-            if (h[3] ? B[b].addr < B[a].addr : B[a].addr < B[b].addr) {
-                list[k + 1] = a;
-                list[k] = b;
-            }
-        }
-    if (h[3]) {
-        HBlk *f = &B[list[0]];
-        heap_move(f, ((u32)h[5] + f->align - 1) & ~(f->align - 1));
-        for (k = 1; k < cnt; k++) {
-            HBlk *p = &B[list[k - 1]], *c = &B[list[k]];
-            heap_move(c, (p->addr + p->size + c->align - 1) & ~(c->align - 1));
-        }
-        h[4] = (s32)(B[list[cnt - 1]].addr + B[list[cnt - 1]].size);
-    } else {
-        HBlk *f = &B[list[0]];
-        heap_move(f, ((u32)h[5] - f->size) & ~(f->align - 1));
-        for (k = 1; k < cnt; k++) {
-            HBlk *p = &B[list[k - 1]], *c = &B[list[k]];
-            heap_move(c, (p->addr - c->size) & ~(c->align - 1));
-        }
-        h[4] = (s32)B[list[cnt - 1]].addr;
-    }
-}
+/* func_003F0E60: now the credited C (see config/matches.csv). */
 
 /* func_003DB020: per-player button configuration (D_0058EEF0) applied to the
  * fl device records D_004C2A68 -> D_004C2A6C (5 x 0x88).  APPROXIMATION
@@ -175,7 +114,6 @@ extern int func_001317B0(void);
 extern void func_001E3CE0(int);
 extern void func_0012FC40(void);
 extern int func_0012FFD0(int);
-extern void func_00418CC0(void);
 
 #define MSG EE_BSS(u8, 0x004D17C9)
 #define YESNO EE_BSS(u8, 0x004D17CA)
@@ -426,104 +364,7 @@ extern void func_003DE880(int, int, int, int);
 extern int func_003DEC90(int);
 extern int func_003DE860(int);
 
-void func_00415590(int dsti, int poli, int fmt, int fmt_list)
-{
-    u8 *dst = (u8 *)(uintptr_t)dsti;
-    u32 *pol = (u32 *)(uintptr_t)poli;
-    s32 *fl = (s32 *)(uintptr_t)fmt_list;
-    int use_default = fl == 0, s6 = 0;
-    u32 s5 = pol[0];
-    s32 n = (s16)func_003F1950((int)s5), base, k, j, i;
-    u8 *meshes, *mats, clay[0x40], mark[8];
-    u32 tree;
-    s32 nn, nr;
-    u8 *nodes;
-    u32 *roots;
-
-    base = EE_BSS(s32, 0x004C2898);
-    if (base + n >= 0x340)
-        return;
-    *(s16 *)(dst + 0x12) = (s16)base;
-    *(s16 *)(dst + 0x10) = (s16)n;
-    meshes = (u8 *)EE_BSS_PTR(0x004F9170) + base * 0xB4;
-    *(u8 **)(dst + 0x14) = meshes;
-    EE_BSS(s32, 0x004C2898) = base + n;
-    mats = *(u8 **)(dst + 4);
-    for (i = 0; i < n; i++) {
-        *(s32 *)(meshes + i * 0xB4 + 0xC) = func_003F1E10((void *)(uintptr_t)s5, i);
-        func_003F1E70((void *)(uintptr_t)s5, i, meshes + i * 0xB4 + 0x10);
-    }
-    for (k = 0; k < n; k++) {
-        u8 *m = meshes + k * 0xB4;
-        s32 st1;
-        *(u32 *)(m + 4) = ((u32 *)(uintptr_t)pol[2])[k];
-        *(u32 *)(m + 8) = 0;
-        func_00415A00((int)*(u32 *)(m + 4));
-        for (j = 0; (u32)j < *(u32 *)(m + 0xC); j++)
-            func_003DF850(0x39 + j, (int)(uintptr_t)(mats + ((u32 *)(m + 0x10))[j] * 0x4C));
-        st1 = func_003DFF80(1);
-        if (st1 && func_003DFF80(0x15) == 1)
-            func_003DF850(1, 0);
-        func_003DCF90(mark);
-        if (func_003F2A50(clay, (int)s5, (u32)k)) {
-            int a1;
-            if (!use_default) {
-                a1 = fl[0];
-                if (++s6 >= fl[1]) {
-                    s6 = 0;
-                    fl += 2;
-                }
-                if (fl[1] < 0)
-                    use_default = 1;
-            } else {
-                a1 = fmt;
-            }
-            *(s32 *)m = func_003EE6F0(clay, (u32)a1);
-            func_0041B3C0(m + 0x90, clay, *(s32 *)m);
-        } else {
-            *(s32 *)m = -1;
-        }
-        func_003DCFB0(mark);
-        if (st1)
-            func_003DF850(1, st1);
-    }
-
-    tree = pol[1];
-    nn = (s16)func_003F13A0((void *)(uintptr_t)tree);
-    base = EE_BSS(s32, 0x004C289C);
-    if (base + nn >= 0x340)
-        return;
-    *(s16 *)(dst + 0xA) = (s16)base;
-    *(s16 *)(dst + 8) = (s16)nn;
-    nodes = (u8 *)EE_BSS_PTR(0x0051DA70) + base * 0x190;
-    *(u8 **)(dst + 0xC) = nodes;
-    EE_BSS(s32, 0x004C289C) = base + nn;
-    nr = (s16)func_003F13E0((void *)(uintptr_t)tree);
-    base = EE_BSS(s32, 0x004C2894);
-    if (base + nr >= 0x340)
-        return;
-    *(s32 *)(dst + 0x18) = nr;
-    roots = (u32 *)EE_BSS_PTR(0x004F8470) + base;
-    *(u32 **)(dst + 0x1C) = roots;
-    EE_BSS(s32, 0x004C2894) = base + nr;
-    for (k = 0; k < nr; k++) {
-        u8 st[0x10];
-        void *(*alloc)(int) = *(void *(**)(int))EE_BSS_PTR(0x004C2B0C);
-        int sz, s3, cnt;
-        void *buf;
-        func_003DCF90(mark);
-        sz = func_003F16D0((void *)(uintptr_t)tree, k);
-        buf = alloc(sz);
-        func_003F1730(st, buf, (void *)(uintptr_t)tree, k);
-        s3 = func_003DE7E0(st);
-        func_003DCFB0(mark);
-        func_003DE880((int)(uintptr_t)nodes, s3, 0, 0);
-        *roots++ = (u32)(uintptr_t)nodes;
-        cnt = func_003DEC90(s3);
-        nodes += cnt * 0x190;
-        func_003DE860(s3);
-    }
-}
+/* func_00415590: now the credited C (see config/matches.csv). */
 
 /* func_003DE230(out, a, b): VU0 3x3 product of the rotation parts,
  * out.row[i].xyz = a.row[i].x * b.row[0] + a.row[i].y * b.row[1] + a.row[i].z * b.row[2]
@@ -552,99 +393,7 @@ extern void func_00421FB0(float, int, void *, void *, int);
 extern void func_00422BE0(void);
 extern s32 data_s32x4_004A6F80[], data_s32x4_004A7F80[];
 
-void func_00422150(int strp, int posp, int x, int y, float scale)
-{
-    u8 *p = (u8 *)(uintptr_t)strp;
-    s32 *pos = (s32 *)(uintptr_t)posp;
-    int started = 0, sp_w = 0, ofs, texslot = 0;
-    u32 ca = 0xFF, cr = 0xFF, cg = 0xFF, cb = 0xFF;
-    s32 s0 = 0, s1 = 0;
-    float f20 = 0.f;
-#define NEXT() (p[(*pos)++])
-#define CUR(a) EE_BSS(s32, a)
-    ofs = NEXT();
-    while (!started) {
-        u32 c = NEXT(), t;
-        switch (c) {
-        case 1:
-            t = NEXT() << 8;
-            CUR(0x004C2BB0) = (s32)(t + NEXT());
-            s0 = CUR(0x004C2BB0);
-            t = NEXT() << 8;
-            CUR(0x004C2BAC) = (s32)(t + NEXT());
-            s1 = CUR(0x004C2BAC);
-            f20 = (float)NEXT() / 256.0f;
-            started = 1;
-            break;
-        case 5: sp_w = NEXT(); break;
-        case 6: ca = NEXT(); break;
-        case 7: cr = NEXT(); break;
-        case 8: cg = NEXT(); break;
-        case 9: cb = NEXT(); break;
-        case 11: texslot = NEXT(); break;
-        case 12: *pos += 2; break;
-        default: break;
-        }
-    }
-    s0 += x;
-    s1 += y;
-    if (f20 != -1.0f)
-        f20 = scale;
-    for (;;) {
-        u32 c = NEXT();
-        s32 *g, dy = 0, rect[4], w, h, color;
-        float uv[4];
-        if (c == 1) {
-            u32 t = NEXT() << 8;
-            CUR(0x004C2BB0) = (s32)(t + NEXT());
-            s0 = CUR(0x004C2BB0);
-            *pos += 3;
-            continue;
-        }
-        if (c == 5) { s0 += sp_w; continue; }
-        if (c == 13) { s0 += 8; continue; }
-        if (c == 0) {
-            CUR(0x004C2BA4) = 0;
-            CUR(0x004C2BA8) = 0;
-            CUR(0x004C2BAC) = 0;
-            CUR(0x004C2BB0) = 0;
-            return;
-        }
-        if (c == 4) {
-            s32 v = CUR(0x004C2BA8) + NEXT();
-            CUR(0x004C2BA4) = 0;
-            CUR(0x004C2BA8) = 0;
-            s1 += v;
-            continue;
-        }
-        if (c == 10) {
-            g = data_s32x4_004A7F80 + 4 * NEXT();
-        } else {
-            if (c == 0x3A)
-                dy = -2;
-            g = data_s32x4_004A6F80 + 4 * (c & 0xFF);
-        }
-        uv[0] = (float)g[0] / 512.0f;
-        uv[1] = (float)g[1] / 512.0f;
-        uv[2] = (float)g[2] / 512.0f;
-        uv[3] = (float)g[3] / 512.0f;
-        w = g[2] - g[0];
-        h = g[3] - g[1];
-        rect[0] = s0 + CUR(0x004C2BA4);
-        rect[1] = s1 + dy;
-        CUR(0x004C2BA4) += w + ofs;
-        rect[2] = rect[0] + w;
-        rect[3] = rect[1] + h;
-        if (CUR(0x004C2BA8) < h)
-            CUR(0x004C2BA8) = h;
-        color = (s32)((ca & 0xFF) << 24 | (cr & 0xFF) << 16 | (cg & 0xFF) << 8 | (cb & 0xFF));
-        if (EE_BSS(u8, 0x004F7F52) != 0)
-            func_00422BE0(); /* colour hook (empty in the retail build) */
-        func_00421FB0(f20, (int)((u32 *)EE_BSS_PTR(0x0057FB70))[texslot], rect, uv, color);
-    }
-#undef NEXT
-#undef CUR
-}
+/* func_00422150: now the credited C (see config/matches.csv). */
 
 /* func_001428E0: the intro's event timeline (front-end state 1/2), run once
  * per frame from func_001431A0.  On given values of the scene clock
@@ -838,45 +587,7 @@ void func_001428E0(void)
     }
 }
 
-/* func_003F01B0: the textures a clay still needs in VRAM.  For each of the
- * clay's materials (count +0x28, material numbers +0x50[]) it records the
- * material's texture handle (D_0061B420 + m * 0x4C, +0x44) in +0x70[], and
- * appends it once to the upload list +0xF0[] (count +0x2C) unless the
- * texture record (D_006207A0) and, for a paletted handle, the palette record
- * (D_0061C7A0) are both resident (state 3).  C from the asm. */
-void func_003F01B0(int a0, int a1)
-{
-    u8 *c = (u8 *)(uintptr_t)a0;
-    s32 i, k, n;
-    (void)a1;
-    *(s32 *)(c + 0x2C) = 0;
-    for (i = 0; i < *(s32 *)(c + 0x28); i++) {
-        u8 m = c[0x50 + i];
-        u32 h = *(u32 *)((u8 *)EE_BSS_PTR(0x0061B420) + m * 0x4C + 0x44);
-        u32 pal = h >> 16;
-        s32 ts;
-        *(u32 *)(c + 0x70 + 4 * i) = 0;
-        if (!h)
-            continue;
-        *(u32 *)(c + 0x70 + 4 * i) = h;
-        n = *(s32 *)(c + 0x2C);
-        for (k = 0; k < n; k++)
-            if (*(u32 *)(c + 0xF0 + 4 * k) == h)
-                break;
-        if (k < n)
-            continue;
-        ts = *(s32 *)((u8 *)EE_BSS_PTR(0x006207A0) + ((h & 0xFFFF) - 1) * 64);
-        if (pal == 0) {
-            if (ts == 3)
-                continue;
-        } else if (ts == 3 && *(s32 *)((u8 *)EE_BSS_PTR(0x0061C7A0) + (pal - 1) * 64) == 3) {
-            continue;
-        }
-        n = *(s32 *)(c + 0x2C);
-        *(s32 *)(c + 0x2C) = n + 1;
-        *(u32 *)(c + 0xF0 + 4 * n) = h;
-    }
-}
+/* func_003F01B0: now the credited C (see config/matches.csv). */
 
 /* func_00176360(index, argb4444[16], -): character palette animation.  The
  * palette index is split over six ranges (thresholds data_s8_004ACD08[0..5],
@@ -889,36 +600,7 @@ extern s8 data_s8_004ACD08[];
 extern s32 D_00446BF0[];
 extern int func_00413C00(int, int, int);
 
-void func_00176360(int a0, int a1, int a2)
-{
-    const u16 *src = (const u16 *)(uintptr_t)a1;
-    s32 slot = -1, d[18], i;
-    u32 col[16];
-    (void)a2;
-    for (i = 0; i < 6; i++) {
-        if (a0 < data_s8_004ACD08[i])
-            continue;
-        if (i < 5 && !(a0 < data_s8_004ACD08[i + 1]))
-            continue;
-        slot = D_00446BF0[i];
-        a0 -= data_s8_004ACD08[i];
-        break;
-    }
-    if (slot == -1)
-        return;
-    for (i = 0; i < 16; i++) {
-        u32 c = src[i], a = ((c & 0xF000) >> 12) << 28;
-        if (a == 0xF0000000u)
-            a = 0xFF000000u;
-        col[i] = a | (c & 0xF) << 4 | ((c & 0xF0) >> 4) << 12 | ((c & 0xF00) >> 8) << 20;
-    }
-    d[0] = 0;    d[1] = 0x10; d[2] = 1;    d[3] = 0x40;
-    d[4] = (s32)(uintptr_t)col;
-    d[5] = 4;    d[6] = 8;    d[7] = 0x10; d[8] = 0xFF;
-    d[9] = 8;    d[10] = 8;   d[11] = 0xFF; d[12] = 8;
-    d[13] = 0;   d[14] = 0xFF; d[15] = 8;   d[16] = 0x18; d[17] = 0xFF;
-    func_00413C00(*(s32 *)((u8 *)EE_BSS_PTR(0x0063248C) + slot * 20), a0, (int)(uintptr_t)d);
-}
+/* func_00176360: now the credited C (see config/matches.csv). */
 
 /* func_003EBF30(request, handles, n): VRAM placement search over the block
  * list D_004C2AB4 (node +0x4 next, +0x8 owner record, +0x10 kind (1, 4 =
@@ -940,50 +622,7 @@ static int vram_owned_by(u8 *node, const u32 *h, int n)
     return 0;
 }
 
-int func_003EBF30(int a0, int a1, int a2)
-{
-    u8 *req = (u8 *)(uintptr_t)a0, *v = EE_BSS(u8 *, 0x004C2AB4), *last = v;
-    const u32 *h = (const u32 *)(uintptr_t)a1;
-    s32 size = *(s16 *)(req + 0x10);
-    if (!v)
-        return 0;
-    for (; v; v = *(u8 **)(v + 4)) {
-        u8 *t1, *t5;
-        s32 kind = *(s32 *)(v + 0x10), start;
-        last = v;
-        if (kind != 1 && kind != 4)
-            continue;
-        if (vram_owned_by(v, h, a2))
-            continue;
-        t1 = v;
-        start = *(s16 *)(t1 + 0x14);
-        t5 = *(u8 **)(v + 4);
-        if (!t5) {
-            if (0x4000 - start < size)
-                continue;
-            return (int)(uintptr_t)v;
-        }
-        for (;;) {
-            s32 k5;
-            if (*(s16 *)(t5 + 0x14) - start >= size)
-                return (int)(uintptr_t)t1;
-            v = t5;                 /* the asm's $v0 follows the run */
-            last = v;
-            k5 = *(s32 *)(t5 + 0x10);
-            if (k5 != 1 && k5 != 4)
-                break;
-            if (vram_owned_by(t5, h, a2))
-                break;
-            t5 = *(u8 **)(t5 + 4);
-            if (!t5) {
-                if (0x4000 - start < size)
-                    break;
-                return (int)(uintptr_t)t1;
-            }
-        }
-    }
-    return 0x4000 - (*(s16 *)(last + 0x14) + *(s16 *)(last + 0x16)) < size ? -1 : 1;
-}
+/* func_003EBF30: now the credited C (see config/matches.csv). */
 
 /* func_003F59C0(fmt, pt): put one pixel {s16 x, s16 y, u32 colour} into the
  * image described by fmt (func_003F5900 gives the address).  Indexed formats
@@ -994,49 +633,7 @@ int func_003EBF30(int a0, int a1, int a2)
  * x * max / 255 truncated) and writes 4, 3 or 2 bytes.  C from the asm. */
 extern int func_003F5900(int, int, void *);
 
-void func_003F59C0(int a0, int a1)
-{
-    u8 *f = (u8 *)(uintptr_t)a0, *pt = (u8 *)(uintptr_t)a1, *d;
-    u32 flags, c;
-    s32 bpp;
-    d = (u8 *)(uintptr_t)func_003F5900(*(s16 *)pt, *(s16 *)(pt + 2), f);
-    if (!d)
-        return;
-    flags = *(u32 *)f;
-    bpp = *(s32 *)(f + 0x14);
-    c = *(u32 *)(pt + 4);
-    if (flags & 4) {
-        switch (bpp) {
-        case 4: *(u32 *)d = c; break;
-        case 2: *(u16 *)d = (u16)c; break;
-        case 1: *d = (u8)c; break;
-        case 0:
-            if (flags & 0x40)
-                *d = (u8)c;
-            else if (((*(s16 *)pt & 1) != 0) ^ ((flags & 0x10) != 0))
-                *d = (u8)((*d & 0xF0) | (c & 0xF));
-            else
-                *d = (u8)((*d & 0x0F) | (c & 0xF) << 4);
-            break;
-        }
-        return;
-    } else {
-        s32 g = (s32)(((c >> 8) & 0xFF) * *(u32 *)(f + 0x2C)) / 255;
-        s32 b = (s32)(((c >> 16) & 0xFF) * *(u32 *)(f + 0x20)) / 255;
-        s32 r = (s32)((c & 0xFF) * *(u32 *)(f + 0x38)) / 255;
-        s32 a = (s32)((c >> 24) * *(u32 *)(f + 0x44)) / 255;
-        u32 v = (u32)g << *(s32 *)(f + 0x28) | (u32)b << *(s32 *)(f + 0x1C) |
-                (u32)r << *(s32 *)(f + 0x34) | (u32)a << *(s32 *)(f + 0x40);
-        if (bpp == 4)
-            *(u32 *)d = v;
-        else if (bpp == 3) {
-            d[0] = (u8)v;
-            d[1] = (u8)(v >> 8);
-            d[2] = (u8)(v >> 16);
-        } else if (bpp == 2)
-            *(u16 *)d = (u16)v;
-    }
-}
+/* func_003F59C0: now the credited C (see config/matches.csv). */
 
 /* func_001E7CB0(A, B, boxA, boxB, out): overlap of two characters' boxes.
  * Boxes are s16 {x, w, y, h} at *(A + 0x180) + index * 8, in units scaled by
@@ -1101,91 +698,7 @@ void func_001E7CB0(int a0, int a1, int a2, int a3, int t0)
 extern void func_00186A60(void *, unsigned char);
 extern int func_0018A580(void *);
 
-int func_00188860(int a0, int a1)
-{
-    u8 *p = (u8 *)(uintptr_t)a0, *s3, *team, *q, *g;
-    u32 k = (u32)a1 & 0xFF, s4 = k, s1 = k, mask, side, any;
-    s8 c;
-    if (k == 1) { s3 = p + 0x26E; mask = 0x80; }
-    else if (k == 2) { s3 = p + 0x26F; mask = 0x10; }
-    else if (k == 3) { s3 = p + 0x25E; mask = 0x80; s4 = 1; }
-    else { s3 = p + 0x25F; mask = 0x10; s4 = (k - 2) & 0xFF; }
-    if (*(s8 *)(p + 0x539) == 0) {
-        c = *(s8 *)s3;
-        if (c == 0) {
-            if (k < 3) {
-                if (!(*(u16 *)(p + 0x35C) & mask))
-                    return 0;
-                if (!(*(u16 *)(p + 0x35E) & 0xC00))
-                    *s3 = 0x10;
-                return 0;
-            }
-            if (*(u16 *)(p + 0x35C) & mask)
-                *s3 = 0x10;
-            return 0;
-        }
-        c--;
-        *(s8 *)s3 = c;
-        if (c == 0)
-            return 0;
-        if (*(u16 *)(p + 0x354) & mask)
-            return 0;
-    }
-    if (p[5] != 0)
-        return 0;
-    if (k < 3) {
-        if (p[0x20D] == 3 || p[0x20D] == 2)
-            return 0;
-    } else {
-        if (p[0x20D] == 3)
-            return 0;
-        if (p[0x20D] == 2 && p[0x210] != 0)
-            return 0;
-        if (p[0x1E4] == 0x14 && p[0x213] == 2)
-            return 0;
-    }
-    side = p[2];
-    g = EE_BSS(u8 *, 0x004C2840);
-    team = EE_BSS(u8 *, 0x004C2794) + (side ^ 1) * 12;
-    any = (*(u8 **)(team + 0x18))[0x28B] | (*(u8 **)(team + 0x1C))[0x28B] | (*(u8 **)(team + 0x20))[0x28B];
-    if (*(s8 *)(g + 0xBA) == 0 && (any & 0xFF))
-        return 0;
-    if (EE_BSS(u8, 0x004D18A0) >= 5)
-        return 0;
-    if (*(s8 *)(g + 0xB9) != 0)
-        return 0;
-    if (*(s8 *)(g + 0xBA) == 0 && *(s8 *)((u8 *)EE_BSS_PTR(0x004D18D4) + side) >= 2)
-        return 0;
-    if (*(s8 *)(p + 0x205) != 0)
-        return 0;
-    team = EE_BSS(u8 *, 0x004C2794) + side * 12 + 0x18;
-    q = *(u8 **)(team + (s4 & 0xFF) * 4);
-    if (q[0] != 0 || *(s16 *)(q + 0x2B4) != 0)
-        return 0;
-    if (!func_0018A580(p))
-        return 0;
-    team = EE_BSS(u8 *, 0x004C2794) + p[2] * 12 + 0x18;
-    if (*(s16 *)(*(u8 **)(team + (s4 & 0xFF) * 4) + 0x434) == 0) {
-        /* that partner cannot come: try the other one */
-        s1 = (((k - 1) ^ 1) + 1) & 0xFF;
-        s4 = ((((u32)(s32)(s8)s4 - 1) ^ 1) + 1) & 0xFF;
-        q = *(u8 **)(team + s4 * 4);
-        if (q[0] != 0 || *(s16 *)(q + 0x2B4) != 0 || *(s16 *)(q + 0x434) == 0)
-            return 0;
-    }
-    if ((s1 & 0xFF) < 3) {
-        p[0x26B] = (u8)s4;
-        func_00186A60(p, 0x1C);
-        p[7] = 0;
-        p[6] = 0;
-        p[0x26A] = p[0x20D] == 2 ? 1 : 0;
-    } else {
-        p[0x26B] = (u8)s4;
-        p[0x2B0] = 0xFF;
-    }
-    *s3 = 0;
-    return 1;
-}
+/* func_00188860: now the credited C (see config/matches.csv). */
 
 /* func_00122960(x, y, z): the stage light colours for this frame.  Each is
  * 0xRRGGBB from three byte triples scaled by the floats D_004F1D0C/10/14:
@@ -1203,31 +716,7 @@ static u32 light_rgb(u32 a, u32 b, u32 c)
            ((u32)(s32)(f22 * (float)EE_BSS(u8, c)) & 0xFF);
 }
 
-void func_00122960(int a0, int a1, int a2)
-{
-    u32 *x = (u32 *)(uintptr_t)a0, *y = (u32 *)(uintptr_t)a1, *z = (u32 *)(uintptr_t)a2;
-    u8 *t;
-    s32 mode;
-    if (func_0016D130()) {
-        EE_BSS(s32, 0x004F1CF0) = 0;
-        *x = EE_BSS(u32, 0x004F1CBC);
-        return;
-    }
-    t = EE_BSS(u8 *, 0x004C2794);
-    if (t[0x76] && t[6]) {
-        EE_BSS(s32, 0x004F1CF0) = 0;
-        *x = 0;
-        return;
-    }
-    mode = EE_BSS(s32, 0x004F1CF0);
-    if (mode < 0 || mode > 3)
-        return;
-    if (mode == 3)
-        *z = light_rgb(0x004F1CFE, 0x004F1CFD, 0x004F1CFC);
-    if (mode >= 1)
-        *y = light_rgb(0x004F1CFA, 0x004F1CF9, 0x004F1CF8);
-    *x = light_rgb(0x004F1CF6, 0x004F1CF5, 0x004F1CF4);
-}
+/* func_00122960: now the credited C (see config/matches.csv). */
 
 /* func_0032DF90(side): the CPU picks its team of three.  Player records are
  * D_004F20B0 + (side + slot * 2) * 0x5B8 (+0x540 character, +1 copy,

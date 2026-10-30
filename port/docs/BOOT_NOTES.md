@@ -219,3 +219,22 @@ Venom); the web build with the same team and 3 others (`web/teams2/`); the
 full `run.js` (title → menu → character select → VERSUS → fight → assist,
 `web/final/`) on the repacked single file; native default flow with assists
 (`seq18/`); `check_data_layout.py`: 0 misplaced (ELF and wasm map).
+
+### Rebuild against the finished decomp (2026-10-30)
+
+The decomp moved on after the port was built (rounds 11-18, data catalogue
+merges, hand-written asm as `.S`). Changes needed to rebuild:
+- 10 hand-written stand-ins in `game_cless.c` (stage lights, palette
+  animation, assist request, sound bank upload, VRAM search, clay texture
+  list, heap compaction, put pixel, POL pack, menu text record) are now
+  credited C: the stand-ins and their `host_impl.csv` rows are removed, so
+  the game's own decompiled code runs.
+- Platform overrides kept, with the credited prototypes: `func_003EC160`
+  and `func_003ECD00` take no arguments, `func_00418CC0` returns int,
+  `func_0010D5C0` takes `void *`, `func_00412260` (sprite drawer, GL) takes
+  the credited 5 arguments.
+- `__I_nop` (MWCC intrinsic in two matches) is a host no-op in
+  `ps2_compat.h`; `&func_004180E0()` in r12_07_c.c (EE address 0) gets an R10
+  override.
+Browser run on the repacked single file: title → menu → character select →
+VERSUS → fight with attacks and an assist (`private/converted/boot/web/rebuild1/`).

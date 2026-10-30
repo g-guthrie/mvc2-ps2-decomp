@@ -35,7 +35,6 @@ extern void func_003DC250(void *, int, int);
 extern int func_003DC3C0(int);
 extern void func_001020E0(void *, short, short, short, short, short, short);
 extern void func_003EB900(void);
-extern void func_00418CC0(void);
 extern int func_00419F70(void);
 extern int func_00418B80(void);
 extern int func_003DAD60(void);
@@ -87,14 +86,12 @@ void *func_001044E0(int increment)
  * send (func_003DC720).  Plain memory on the host. */
 static u8 host_dmac[10][0x100] __attribute__((aligned(16)));
 
-s32 func_003EC160(s32 w, s32 h)
+s32 func_003EC160(void)
 {
     void *arena;
     s32 s2, s1, a2, t2;
     u32 bc68;
     int i;
-    (void)w;
-    (void)h;
 
     func_003DCD40(EE_BSS_PTR(0x0062BC00), 0, 0x420);
     arena = func_0011CB70(0x1600000);
@@ -252,9 +249,8 @@ void func_003DC720(void)
  * (instant here), wait for a vsync, mark the flip pending, write the display
  * registers, swap the draw buffer index, kick the built chain and reset the
  * packet heap.  The host presents the picture here (frontend hook). */
-void func_003ECD00(s32 a0)
+s32 func_003ECD00(void)
 {
-    (void)a0;
     func_00419FC0(1);
     if (EE_BSS(s32, 0x0062BC40) == 0)
         host_vsync_irq();
@@ -270,6 +266,7 @@ void func_003ECD00(s32 a0)
     EE_BSS(s32, 0x0062BFC8) = 0;
     EE_BSS(s32, 0x0062BFC4) = -1;
     host_frame_count++;
+    return 0;
 }
 
 /* sceGsSyncV(0): wait for a vsync, return the field (GS CSR.FIELD). */

@@ -77,7 +77,7 @@ int mvc2_boot(int run_platform_init)
     mvc2_host_frame = -1;
     host_fill_ee_holes();  /* EE data without C, from the disc's executable */
     if (run_platform_init) {
-        STEP("func_003EC160 platform init (640x480)", r = func_003EC160(0x280, 0x1E0));
+        STEP("func_003EC160 platform init (640x480)", r = func_003EC160());
         if (r == 0)
             host_log("platform init returned 0 (the PS2 main retries forever); continuing");
     }
@@ -121,7 +121,7 @@ void mvc2_frame(void)
     STEP("func_003D7640 render pass 2", func_003D7640());
     STEP("func_0012DD90 file loader tick", func_0012DD90());
     STEP("func_00170D70 end scene", func_00170D70());
-    STEP("func_003ECD00 vsync/flip", func_003ECD00(0));
+    STEP("func_003ECD00 vsync/flip", func_003ECD00());
     mvc2_host_frame++;
 }
 

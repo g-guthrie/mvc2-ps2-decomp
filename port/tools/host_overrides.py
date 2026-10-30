@@ -22,4 +22,12 @@ OVERRIDES = {
         ("p->cEC = q->cEC;",
          "__builtin_memmove((u8 *)p + 0xEC, (u8 *)q + 0xEC, sizeof(C)); /* host R10 */"),
     ],
+    # func_0038AA30 takes `&func_004180E0()`: the callee returns 0 and MWCC
+    # uses $v0 as the struct address, so retail copies 10 bytes from EE
+    # address 0 (kernel RAM). Clang rejects the address of an rvalue, and the
+    # host has no RAM at 0: read a zeroed stand-in after making the call.
+    "src/r12_07_c.c": [
+        ("sb = &func_004180E0();",
+         "{ static S10 ee_page0; func_004180E0(); sb = &ee_page0; } /* host R10: EE address 0 */"),
+    ],
 }

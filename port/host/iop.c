@@ -59,7 +59,7 @@ int func_0010D360(int mode) /* scePadInit */
     return 1;
 }
 
-int func_0010D5C0(int port, int slot, int dma_buf) /* scePadPortOpen */
+int func_0010D5C0(int port, int slot, void *dma_buf) /* scePadPortOpen */
 {
     (void)port; (void)slot; (void)dma_buf;
     return 1;
@@ -166,7 +166,7 @@ int func_0010FC98(void *clock)
  * The asm: retry sceMcInit while it returns -101, clear the wrapper state
  * (0x84 bytes at D_00633690, two 12-byte port records at D_00633670) and set
  * the two "last result" halfwords to 0xFFFF. */
-void func_00418CC0(void)
+int func_00418CC0(void)
 {
     int i;
     func_003DCD40(EE_BSS_PTR(0x00633690), 0, 0x84);
@@ -174,6 +174,7 @@ void func_00418CC0(void)
         func_003DCD40(EE_BSS_PTR(0x00633670 + 12 * i), 0, 0xC);
     EE_BSS(u16, 0x006336FE) = 0xFFFF;
     EE_BSS(u16, 0x00633706) = 0xFFFF;
+    return 0;
 }
 
 /* ---- module loading: sceSifLoadModule --------------------------------

@@ -56,7 +56,6 @@ func_00402498,core,cri.c,ADXT_ExecServer
 func_003FEAD0,core,cri.c,ADXM/SVM server exec: nothing
 func_003FEBD8,core,cri.c,CRI server exec: nothing
 func_0012DC00,core,game_cless.c,file-destination table (C from the asm)
-func_001E5870,core,game_cless.c,sound bank upload + wait (C from the asm)
 func_00422BE0,core,tsd_host.c,Tamsoft stub (empty)
 func_00422C70,core,tsd_host.c,Tamsoft lock/unlock: nothing (single-threaded)
 func_00422CC0,core,tsd_host.c,Tamsoft queue reset -> port/audio tsd_client
@@ -77,7 +76,6 @@ func_004238A0,core,tsd_host.c,Tamsoft driver thread setup: nothing
 func_003F5070,core,game_fix.c,TIM2 image pointer: the credited C is void but tail-calls func_003F5270 and callers use $v0,int
 func_003F5080,core,game_fix.c,TIM2 CLUT pointer: credited void K&R wrapper tail-calls func_003F5440; callers use $v0,int
 func_003916B0,core,game_fix.c,spawn helper (src/h2.c) returning the object in $v0 as its caller expects,void *
-func_003F0E60,core,game_cless.c,handle heap compaction (C from the asm)
 func_0010BB98,core,iop.c,sceSifLoadModule: reported loaded
 func_00100E68,core,boot.c,sceGsSyncV: host vsync + field
 func_004148C0,core,game_fix.c,camera compare: the credited C reads literal EE BSS addresses
@@ -103,7 +101,6 @@ func_00110EC0,core,mc.c,sceMcDelete
 func_00111480,core,mc.c,sceMcGetEntSpace
 func_00110AE0,core,mc.c,sceMcGetDir (host dir listing)
 func_00120A30,core,libc_host.c,newlib _vfprintf_r: host vsnprintf (EE %l = 64-bit); string streams as newlib fills them
-func_00415590,core,game_cless.c,POL pack: meshes (clay handles) + node trees (C from the asm)
 func_00100580,core,kernel.c,syscall 128 kernel call 128: returns 0 (callers use $v0),int
 func_001039E0,core,kernel.c,syscall 2 SetGsCrt: returns 0 (callers use $v0),int
 func_00103A00,core,kernel.c,syscall 4 Exit: returns 0 (callers use $v0),int
@@ -170,7 +167,6 @@ func_003DEE00,frontend,fe/fe_render.c,untextured triangle: game body + fl_tri
 func_003ED1C0,frontend,fe/fe_render.c,screen fill: game body + fl_fill_screen
 func_00420BF0,frontend,fe/fe_render.c,batch-writer quad (text): game body + fl_quad_tex
 func_003DE230,core,game_cless.c,VU0 3x3 matrix product (C from the asm)
-func_00422150,core,game_cless.c,menu text byte code: one record (glyphs via func_00421FB0) (C from the asm)
 func_003F2B70,frontend,fe/fe_mesh.c,POL mesh chunk -> clay: game body + remember the chunk
 func_003EE6F0,frontend,fe/fe_mesh.c,clay handle: game body + GL mesh (port/render fl_clay_build)
 func_003F0500,frontend,fe/fe_mesh.c,mesh draw: game body + fl_clay_draw (rebuild when the format word changed)
@@ -211,14 +207,8 @@ func_00103808,core,vu0_host.c,sceVu0ScaleVectorXYZ,
 func_00103820,core,vu0_host.c,sceVu0ClipScreen,
 func_00103868,core,vu0_host.c,sceVu0ClipScreen3,
 func_001428E0,core,game_cless.c,intro event timeline (front-end 1/2; C from the asm),
-func_003F01B0,core,game_cless.c,clay texture upload list (C from the asm),
 func_00411C10,frontend,fe/fe_char.c,character bank slot setup: game body + port/render FlCharBank,
 func_004120A0,frontend,fe/fe_char.c,character slot release: game body + FlCharBank destroy,
 func_00412260,frontend,fe/fe_char.c,character sprite draw (asm VU1/GIF builder) -> fl_char_draw with the game's CLUTs,
-func_00176360,core,game_cless.c,character palette animation -> CLUT upload (C from the asm),
-func_003EBF30,core,game_cless.c,VRAM placement search over the block list (C from the asm),
-func_003F59C0,core,game_cless.c,put pixel into an image of a given format (C from the asm),
 func_001E7CB0,core,game_cless.c,character box overlap test (C from the asm),
-func_00188860,core,game_cless.c,assist / tag-in request (C from the asm),
-func_00122960,core,game_cless.c,stage light colours (C from the asm),
 func_0032DF90,core,game_cless.c,CPU team pick (C from the asm),

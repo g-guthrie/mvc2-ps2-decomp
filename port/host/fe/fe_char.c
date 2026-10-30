@@ -54,23 +54,23 @@ int func_004120A0(int n)
     return func_004120A0__game(n);
 }
 
-void func_00412260(int slot, int frame, int m, int rgba, int palette, int flag)
+int func_00412260(int slot, int frame, void *mp, unsigned int urgba, int palette)
 {
+    int m = (int)(uintptr_t)mp, rgba = (int)urgba;
     u8 *s;
     int i, *t;
-    (void)flag;
     if ((unsigned)(slot - 1) >= 16)
-        return;
+        return 0;
     s = (u8 *)EE_BSS_PTR(0x00632610) + (slot - 1) * 16;
     if (*(u32 *)s == 0)
-        return;
+        return 0;
     i = slot - 1;
     if (!S[i].fb || S[i].bank != (const u8 *)(uintptr_t)*(u32 *)s) {
         slot_free(i);
         S[i].bank = (const u8 *)(uintptr_t)*(u32 *)s;
         S[i].fb = fl_char_bank_create(S[i].bank, 16u << 20);
         if (!S[i].fb)
-            return;
+            return 0;
     }
     /* the slot's 16 CLUT records (s->d) */
     t = (int *)(uintptr_t)func_003DD030(*(s32 *)(s + 0xC));
@@ -88,4 +88,5 @@ void func_00412260(int slot, int frame, int m, int rgba, int palette, int flag)
     }
     fe_sync_state();
     fl_char_draw(S[i].fb, frame, (const float *)(uintptr_t)m, (u32)rgba, palette);
+    return 0;
 }

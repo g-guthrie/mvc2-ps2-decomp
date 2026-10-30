@@ -88,4 +88,9 @@ void ps2_asm_stmt(const char *file, int line, const char *tmpl);
 #define __builtin_args_info(n) 0
 #endif
 
+/* MWCC intrinsic: a schedulable `nop`. No effect on the host. Sources
+   declare it (`extern int __I_nop(void);`), so it is a function here. */
+static inline int mvc2_host_I_nop(void) { return 0; }
+#define __I_nop mvc2_host_I_nop
+
 #endif /* PS2_COMPAT_H */
