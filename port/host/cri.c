@@ -21,6 +21,7 @@
 #include "host.h"
 #include "fs.h"
 #include "host_cri.h"
+#include "host_loop.h"
 
 static GameDisc disc;
 static int disc_ok;
@@ -224,6 +225,18 @@ int func_00402818(void *f, void *o) { (void)f; (void)o; return 0; } /* ADXERR_En
 int func_0010F148(int mode) { (void)mode; return 0; } /* sceCdSync: idle */
 
 /* ---- ADXT ---------------------------------------------------------------- */
+/* MVC2_TRACE_ADXT=1: log every ADXT call the game makes and every status
+ * change the player reports (frame-stamped), to follow the music. */
+static int adxt_trace = -1;
+static int adxt_tracing(void)
+{
+    if (adxt_trace < 0) {
+        const char *e = getenv("MVC2_TRACE_ADXT");
+        adxt_trace = e && *e && *e != '0';
+    }
+    return adxt_trace;
+}
+#define ADXT_TRACE(...) do { if (adxt_tracing()) host_log(__VA_ARGS__); } while (0)
 static struct {
     int created, stat, paused, vol, mono, ptid, fid, ticks;
 } adxt;
@@ -245,6 +258,7 @@ void func_00402C20(void *a, int ptid, int fid) /* ADXT_StartAfs */
     adxt.ptid = ptid;
     adxt.fid = fid;
     adxt.ticks = 0;
+    ADXT_TRACE("ADXT_StartAfs(%d, %d) frame %ld", ptid, fid, mvc2_host_frame);
     if (host_adxt_ops && host_adxt_ops->start_afs) {
         host_adxt_ops->start_afs(ptid, fid);
         return;
@@ -255,6 +269,7 @@ void func_00402C20(void *a, int ptid, int fid) /* ADXT_StartAfs */
 void func_00401868(void *a) /* ADXT_Stop */
 {
     (void)a;
+    ADXT_TRACE("ADXT_Stop frame %ld", mvc2_host_frame);
     if (host_adxt_ops && host_adxt_ops->stop)
         host_adxt_ops->stop();
     adxt.stat = 0;
@@ -272,6 +287,7 @@ void func_004020D8(void *a, int vol) /* ADXT_SetOutVol */
 {
     (void)a;
     adxt.vol = vol;
+    ADXT_TRACE("ADXT_SetOutVol(%d) frame %ld", vol, mvc2_host_frame);
     if (host_adxt_ops && host_adxt_ops->set_out_vol)
         host_adxt_ops->set_out_vol(vol);
 }
@@ -280,6 +296,7 @@ void func_004026B0(void *a, int sw) /* ADXT_Pause */
 {
     (void)a;
     adxt.paused = sw;
+    ADXT_TRACE("ADXT_Pause(%d) frame %ld", sw, mvc2_host_frame);
     if (host_adxt_ops && host_adxt_ops->pause)
         host_adxt_ops->pause(sw);
 }
@@ -293,6 +310,13 @@ void func_00402BC0(int mono) /* ADXT_SetOutputMono */
 
 void func_00402498(void) /* ADXT_ExecServer (once per frame) */
 {
+    static int last = -1;
+    if (adxt_tracing()) {
+        int st = func_00401920(&adxt);
+        if (st != last)
+            host_log("ADXT status %d -> %d frame %ld", last, st, mvc2_host_frame);
+        last = st;
+    }
     if (host_adxt_ops && host_adxt_ops->exec) {
         host_adxt_ops->exec();
         return;

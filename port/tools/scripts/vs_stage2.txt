@@ -1,0 +1,23 @@
+state 1/8
+wait 30
+until 1/7 start 40
+wait 30
+until 3/1/1 start 30
+wait 40
+press right
+press cross
+wait 150
+press down
+press down
+wait 20
+shot stage
+press cross
+wait 30
+press p2:cross
+wait 60
+until 2/1/2 cross+p2:cross 40
+wait 500
+shot fight_a
+wait 600
+shot fight_b
+quit

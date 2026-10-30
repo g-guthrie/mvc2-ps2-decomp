@@ -1,0 +1,41 @@
+state 1/8
+wait 30
+until 1/7 start 40
+wait 30
+until 3/1/1 start 30
+wait 40
+press down
+press right
+press right
+press cross
+wait 120
+press down
+press cross
+wait 90
+shot g0
+press cross
+wait 120
+shot g1
+press right
+wait 30
+shot g2
+press cross
+wait 120
+shot g3
+press circle
+wait 60
+shot g4
+press circle
+wait 90
+shot g5
+press up
+wait 20
+press cross
+wait 90
+shot g6
+press down
+wait 20
+press cross
+wait 90
+shot g7
+quit

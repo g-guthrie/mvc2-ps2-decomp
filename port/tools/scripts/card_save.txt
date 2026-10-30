@@ -1,0 +1,19 @@
+state 1/8
+wait 30
+until 1/7 start 40
+wait 30
+until 3/1/1 start 30
+wait 40
+shot menu
+press down
+press right
+press right
+press right
+press cross
+wait 90
+press cross
+wait 90
+press cross
+wait 90
+shot saved
+quit
