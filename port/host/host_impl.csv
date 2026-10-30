@@ -25,7 +25,6 @@ func_0010DF60,core,iop.c,pad actuator values (rumble ignored)
 func_0010E4A8,core,iop.c,scePadGetSlotMax: 1
 func_0010D910,core,iop.c,scePadRead: host pad state (frontend input)
 func_0010FC98,core,iop.c,sceCdReadClock: host localtime in BCD
-func_00418CC0,core,iop.c,memory card wrapper init (C port of the asm; no sceMcInit)
 func_003FBE88,core,cri.c,ADXF_LoadPartitionNw: AFS partition from the disc image
 func_003FC090,core,cri.c,ADXF_GetPtStat: 3 (loaded)
 func_003FCBC0,core,cri.c,ADXF_OpenAfs (locked): AFS entry handle
@@ -81,7 +80,6 @@ func_004148C0,core,game_fix.c,camera compare: the credited C reads literal EE BS
 func_003DF7B0,core,render_core.c,end of scene: T0 sample from the host frame count
 func_003DBBF0,core,render_core.c,immediate GIF send: nothing (no GS)
 func_003DF490,core,render_core.c,textured sprite: original texture check + frontend draw
-func_00418D70,core,mc.c,memory card request/sync/retry state machine (C from the asm)
 func_0010FD90,core,mc.c,sceMcInit
 func_001107B8,core,mc.c,sceMcSync: requests complete at once
 func_001108F0,core,mc.c,sceMcGetInfo: port 0 = formatted 8 MB PS2 card (host dir); port 1 empty
@@ -207,3 +205,4 @@ func_00411C10,frontend,fe/fe_char.c,character bank slot setup: game body + port/
 func_004120A0,frontend,fe/fe_char.c,character slot release: game body + FlCharBank destroy,
 func_00412260,frontend,fe/fe_char.c,character sprite draw (asm VU1/GIF builder) -> fl_char_draw with the game's CLUTs,
 func_001E7CB0,core,game_cless.c,character box overlap test (C from the asm),
+func_0032DF90,core,game_fix.c,CPU team pick: the game's own C (func_0032DF90__game); then --cpu-team / MVC2_CPU_TEAM overrides the picks (testing only),

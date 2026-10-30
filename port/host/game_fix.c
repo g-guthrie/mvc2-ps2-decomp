@@ -5,6 +5,8 @@
  * callers use $v0 (found by following $v0 after every `jal` in the asm).
  * The other 18 such functions are kernel syscall stubs (handled as stubs).
  */
+#include <stdio.h>
+#include <stdlib.h>
 #include "host.h"
 
 extern int func_003F5270(void *, int, int);
@@ -53,4 +55,32 @@ int func_004148C0(void *av, void *bv, void *cv, float marker)
            b[0] == last[4] && b[1] == last[5] && b[2] == last[6] &&
            c[0] == last[0] && c[1] == last[1] && c[2] == last[2] &&
            marker == EE_BSS(float, 0x004C2B28);
+}
+
+/* func_0032DF90(side): the CPU team pick is the game's own C
+ * (src/r13_05_b.c).  Testing hook only: with --cpu-team a,b,c
+ * (MVC2_CPU_TEAM) the picks are then replaced the way the game writes them
+ * (+0x540 character, +1 copy, +0x4DD = D_004405A0[character]); without it
+ * nothing changes. */
+extern s8 D_004405A0[];
+void func_0032DF90(int side)
+{
+    const char *force = getenv("MVC2_CPU_TEAM");
+    func_0032DF90__game(side);
+    if (force && *force) {
+        int ids[3] = { -1, -1, -1 }, t;
+        u8 *base = (u8 *)EE_BSS_PTR(0x004F20B0);
+        sscanf(force, "%i,%i,%i", &ids[0], &ids[1], &ids[2]);
+        for (t = 0; t < 3; t++) {
+            u8 *rec = base + ((s8)side + t * 2) * 0x5B8;
+            if (ids[t] < 0 || ids[t] > 0x3A)
+                continue;
+            rec[0x540] = (u8)ids[t];
+            rec[1] = (u8)ids[t];
+            rec[0x4DD] = (u8)D_004405A0[ids[t]];
+        }
+    }
+    for (int t = 0; t < 3; t++)
+        host_log("CPU pick %d: character %#x", t,
+                 ((u8 *)EE_BSS_PTR(0x004F20B0))[((s8)side + t * 2) * 0x5B8 + 0x540]);
 }
