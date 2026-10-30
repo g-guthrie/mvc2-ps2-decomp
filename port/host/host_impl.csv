@@ -55,7 +55,6 @@ func_00402BC0,core,cri.c,ADXT_SetOutputMono
 func_00402498,core,cri.c,ADXT_ExecServer
 func_003FEAD0,core,cri.c,ADXM/SVM server exec: nothing
 func_003FEBD8,core,cri.c,CRI server exec: nothing
-func_0012DC00,core,game_cless.c,file-destination table (C from the asm)
 func_00422BE0,core,tsd_host.c,Tamsoft stub (empty)
 func_00422C70,core,tsd_host.c,Tamsoft lock/unlock: nothing (single-threaded)
 func_00422CC0,core,tsd_host.c,Tamsoft queue reset -> port/audio tsd_client
@@ -82,8 +81,6 @@ func_004148C0,core,game_fix.c,camera compare: the credited C reads literal EE BS
 func_003DF7B0,core,render_core.c,end of scene: T0 sample from the host frame count
 func_003DBBF0,core,render_core.c,immediate GIF send: nothing (no GS)
 func_003DF490,core,render_core.c,textured sprite: original texture check + frontend draw
-func_003DB020,core,game_cless.c,button config remap: APPROXIMATION (copy unmapped) until the asm is ported
-func_00130040,core,game_cless.c,boot memory-card screen (front-end 1/8; C from the asm)
 func_00418D70,core,mc.c,memory card request/sync/retry state machine (C from the asm)
 func_0010FD90,core,mc.c,sceMcInit
 func_001107B8,core,mc.c,sceMcSync: requests complete at once
@@ -206,9 +203,7 @@ func_001037D8,core,vu0_host.c,sceVu0InterVectorXYZ,
 func_00103808,core,vu0_host.c,sceVu0ScaleVectorXYZ,
 func_00103820,core,vu0_host.c,sceVu0ClipScreen,
 func_00103868,core,vu0_host.c,sceVu0ClipScreen3,
-func_001428E0,core,game_cless.c,intro event timeline (front-end 1/2; C from the asm),
 func_00411C10,frontend,fe/fe_char.c,character bank slot setup: game body + port/render FlCharBank,
 func_004120A0,frontend,fe/fe_char.c,character slot release: game body + FlCharBank destroy,
 func_00412260,frontend,fe/fe_char.c,character sprite draw (asm VU1/GIF builder) -> fl_char_draw with the game's CLUTs,
 func_001E7CB0,core,game_cless.c,character box overlap test (C from the asm),
-func_0032DF90,core,game_cless.c,CPU team pick (C from the asm),

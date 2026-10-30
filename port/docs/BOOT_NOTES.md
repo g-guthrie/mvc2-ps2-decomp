@@ -236,5 +236,12 @@ merges, hand-written asm as `.S`). Changes needed to rebuild:
 - `__I_nop` (MWCC intrinsic in two matches) is a host no-op in
   `ps2_compat.h`; `&func_004180E0()` in r12_07_c.c (EE address 0) gets an R10
   override.
+- Five more stand-ins are credited C now and are removed: the file
+  destination table (`func_0012DC00`), the **button configuration remap**
+  (`func_003DB020`, so a changed OPTION layout now applies: the old
+  approximation is gone), the boot memory-card screen (`func_00130040`), the
+  intro timeline (`func_001428E0`) and the CPU team pick (`func_0032DF90`).
+  `func_003DE230` (VU0 macro code, `.S` in the decomp) and `func_001E7CB0`
+  (not matched) keep host C.
 Browser run on the repacked single file: title → menu → character select →
 VERSUS → fight with attacks and an assist (`private/converted/boot/web/rebuild1/`).
