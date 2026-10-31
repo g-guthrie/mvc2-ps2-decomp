@@ -183,8 +183,12 @@ static void script_step(u16 *b0, u16 *b1)
             return;
         } else if (!strcmp(cmd, "shot")) {
             char path[512];
-            if (A.draw_every > 1 && !S.phase) {
-                A.force_draw = 1; /* draw this frame, write it at the next step */
+            if (!S.phase) {
+                /* draw this step, write it at the next one: with frame skip
+                 * (several steps per display frame, --draw-every) the step
+                 * before would otherwise be a discarded one, whose canvas
+                 * holds only the clear (black web shots) */
+                A.force_draw = 1;
                 S.phase = 1;
                 return;
             }
@@ -268,8 +272,9 @@ static void update(void *u)
     host_pad_set(1, &p1);
     memset(fe_cnt, 0, sizeof fe_cnt);
     /* frame skip: when several steps run in one display frame only the last is drawn */
-    r_set_discard((!plat_step_is_last() && A.nshot == 0 && A.shot_every == 0) ||
-                  (A.draw_every > 1 && (mvc2_host_frame + 1) % A.draw_every != 0 && !A.force_draw));
+    r_set_discard(!A.force_draw &&
+                  ((!plat_step_is_last() && A.nshot == 0 && A.shot_every == 0) ||
+                   (A.draw_every > 1 && (mvc2_host_frame + 1) % A.draw_every != 0)));
     mvc2_frame();
     r_set_discard(0);
     fe_audio_frame();
