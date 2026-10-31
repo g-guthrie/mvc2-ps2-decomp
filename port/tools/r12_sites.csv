@@ -1,0 +1,970 @@
+source,caller,callee,arg,nth,reg,holds,status,expr,why
+src/L0_h.c,func_003D9CE0,func_0013D6F0,0,0,$a0,A:D_00632710:0,auto,0x632710,
+src/L1_a.c,func_0032CB40,func_0032E600,0,0,$a0,,harmless,,callee never reads $a0
+src/L1_a.c,func_0032CB40,func_0032E600,1,0,$a1,,harmless,,callee never reads $a1
+src/L1_a.c,func_0032CB40,func_0032E600,2,0,$a2,,harmless,,callee never reads $a2
+src/L1_a.c,func_0032CB40,func_0032E600,3,0,$a3,,harmless,,callee never reads $a3
+src/actor_emission_cycles_001CCF60.c,func_001C03B0,func_001C05B0,1,0,$a1,,harmless,,callee never reads $a1
+src/actor_emission_cycles_001CCF60.c,func_001C03B0,func_001C05B0,2,0,$a2,,harmless,,callee never reads $a2
+src/actor_ground_air_reset_0024b060.c,func_0024B060,func_0024B500,1,0,$a1,,harmless,,callee never reads $a1
+src/actor_owner_animation_sync_0039c8b0.c,func_0039C8B0,func_0039E450,1,0,$a1,,harmless,,callee never reads $a1
+src/actor_owner_animation_sync_0039c8b0.c,func_0039C8B0,func_0039E450,2,0,$a2,,harmless,,callee never reads $a2
+src/actor_owner_animation_sync_0039c8b0.c,func_0039C8B0,func_0039E450,3,0,$a3,,harmless,,callee never reads $a3
+src/actor_owner_gate_00197490.c,func_00197490,func_00196E30,2,0,$a2,,harmless,,callee never reads $a2
+src/actor_owner_gate_00197490.c,func_00197490,func_00197470,2,0,$a2,,harmless,,callee never reads $a2
+src/actor_owner_inherit_001C5890.c,func_001C5890,func_001C5950,1,0,$a1,,harmless,,callee never reads $a1
+src/actor_owner_inherit_001C5890.c,func_001C5890,func_001C5950,2,0,$a2,,harmless,,callee never reads $a2
+src/actor_owner_inherit_001C5890.c,func_001C5890,func_001C5950,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/actor_owner_start_profiles_001D7970.c,func_001D7970,func_001D7AB0,2,0,$a2,,harmless,,callee never reads $a2
+src/actor_spawn_mask_init_00387d30.c,func_00387D30,func_00387EA0,1,0,$a1,,harmless,,callee never reads $a1
+src/actor_table_offset_init_003b39c0.c,func_003B39C0,func_003B3BB0,2,0,$a2,,harmless,,callee never reads $a2
+src/actor_table_offset_init_003b39c0.c,func_003B39C0,func_003B3BB0,3,0,$a3,,harmless,,callee never reads $a3
+src/character_state_entries_30.c,func_00288AB0,func_00288400,1,0,$a1,,harmless,,callee never reads $a1
+src/character_state_entries_30.c,func_00288AB0,func_00288400,2,0,$a2,,harmless,,callee never reads $a2
+src/character_state_entries_30.c,func_00288AB0,func_00288400,3,0,$a3,,harmless,,callee never reads $a3
+src/character_state_entries_30.c,func_00288BF0,func_00288400,1,0,$a1,,harmless,,callee never reads $a1
+src/character_state_entries_30.c,func_00288BF0,func_00288400,2,0,$a2,,harmless,,callee never reads $a2
+src/character_state_entries_30.c,func_00288BF0,func_00288400,3,0,$a3,,harmless,,callee never reads $a3
+src/character_state_entries_30.c,func_002903A0,func_00290080,1,0,$a1,,harmless,,callee never reads $a1
+src/character_state_entries_30.c,func_002903A0,func_00290080,2,0,$a2,,harmless,,callee never reads $a2
+src/character_state_entries_30.c,func_002903A0,func_00290080,3,0,$a3,,harmless,,callee never reads $a3
+src/character_state_entries_30.c,func_00290590,func_00290080,1,0,$a1,,harmless,,callee never reads $a1
+src/character_state_entries_30.c,func_00290590,func_00290080,2,0,$a2,,harmless,,callee never reads $a2
+src/character_state_entries_30.c,func_00290590,func_00290080,3,0,$a3,,harmless,,callee never reads $a3
+src/character_state_entries_30.c,func_002906F0,func_00290080,1,0,$a1,,harmless,,callee never reads $a1
+src/character_state_entries_30.c,func_002906F0,func_00290080,2,0,$a2,,harmless,,callee never reads $a2
+src/character_state_entries_30.c,func_002906F0,func_00290080,3,0,$a3,,harmless,,callee never reads $a3
+src/clone_state_0036c190.c,func_0036C190,func_0036D7B0,1,0,$a1,,harmless,,the host callee never uses argument 1
+src/clone_state_0036c190.c,func_0036C190,func_0036D7B0,2,0,$a2,,harmless,,the host callee never uses argument 2
+src/clone_state_0036c190.c,func_0036C190,func_0036D7B0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/contact_motion_sequence_00369EE0.c,func_00369EE0,func_0036A620,1,0,$a1,,harmless,,callee never reads $a1
+src/contact_motion_sequence_00369EE0.c,func_00369EE0,func_0036A620,2,0,$a2,,harmless,,callee never reads $a2
+src/contact_motion_sequence_00369EE0.c,func_00369EE0,func_0036A620,3,0,$a3,,harmless,,callee never reads $a3
+src/contact_motion_sequence_00369EE0.c,func_00369EE0,func_0036A620,1,1,$a1,,harmless,,callee never reads $a1
+src/contact_motion_sequence_00369EE0.c,func_00369EE0,func_0036A620,2,1,$a2,,harmless,,callee never reads $a2
+src/contact_motion_sequence_00369EE0.c,func_00369EE0,func_0036A620,3,1,$a3,,harmless,,callee never reads $a3
+src/contact_offset_sequence_00369BF0.c,func_00369BF0,func_0036A620,1,0,$a1,,harmless,,callee never reads $a1
+src/contact_offset_sequence_00369BF0.c,func_00369BF0,func_0036A620,2,0,$a2,,harmless,,callee never reads $a2
+src/contact_offset_sequence_00369BF0.c,func_00369BF0,func_0036A620,3,0,$a3,,harmless,,callee never reads $a3
+src/contact_pulse_sequence_003698E0.c,func_003698E0,func_0036A620,1,0,$a1,,harmless,,callee never reads $a1
+src/contact_pulse_sequence_003698E0.c,func_003698E0,func_0036A620,2,0,$a2,,harmless,,callee never reads $a2
+src/contact_pulse_sequence_003698E0.c,func_003698E0,func_0036A620,3,0,$a3,,harmless,,callee never reads $a3
+src/contact_pulse_sequence_003698E0.c,func_003698E0,func_0036A620,1,1,$a1,,harmless,,callee never reads $a1
+src/contact_pulse_sequence_003698E0.c,func_003698E0,func_0036A620,2,1,$a2,,harmless,,callee never reads $a2
+src/contact_pulse_sequence_003698E0.c,func_003698E0,func_0036A620,3,1,$a3,,harmless,,callee never reads $a3
+src/copy_owner_chain_001a2960.c,func_00198730,func_00198960,1,0,$a1,,harmless,,callee never reads $a1
+src/copy_owner_chain_001a2960.c,func_00198730,func_00198960,2,0,$a2,,harmless,,the host callee never uses argument 2
+src/copy_owner_chain_001a2960.c,func_00198730,func_00198960,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/copy_owner_chain_001a2960.c,func_001DDA20,func_001DDC30,2,0,$a2,,harmless,,callee never reads $a2
+src/copy_owner_chain_001a2960.c,func_001DDA20,func_001DDC30,3,0,$a3,,harmless,,callee never reads $a3
+src/descending_event_contacts.c,func_00393960,func_00394760,1,0,$a1,,harmless,,callee never reads $a1
+src/descending_event_contacts.c,func_00393960,func_00394760,2,0,$a2,,harmless,,callee never reads $a2
+src/descending_event_contacts.c,func_00393960,func_00394760,3,0,$a3,,harmless,,callee never reads $a3
+src/descending_event_contacts.c,func_00393FC0,func_00394760,1,0,$a1,,harmless,,callee never reads $a1
+src/descending_event_contacts.c,func_00393FC0,func_00394760,2,0,$a2,,harmless,,callee never reads $a2
+src/descending_event_contacts.c,func_00393FC0,func_00394760,3,0,$a3,,harmless,,callee never reads $a3
+src/descending_event_contacts.c,func_00394640,func_00394760,1,0,$a1,,harmless,,callee never reads $a1
+src/descending_event_contacts.c,func_00394640,func_00394760,2,0,$a2,,harmless,,callee never reads $a2
+src/descending_event_contacts.c,func_00394640,func_00394760,3,0,$a3,,harmless,,callee never reads $a3
+src/dp3_b.c,func_001AD530,func_001AFC90,1,0,$a1,,harmless,,callee never reads $a1
+src/dp3_b.c,func_001AD530,func_001AFC90,2,0,$a2,,harmless,,callee never reads $a2
+src/dp3_b.c,func_001AD530,func_001AFC90,3,0,$a3,,harmless,,callee never reads $a3
+src/dp4_b.c,func_001AD8B0,func_001AFC90,1,0,$a1,,harmless,,callee never reads $a1
+src/event_clone_001b6410.c,func_001B6410,func_001B6740,1,0,$a1,,harmless,,callee never reads $a1
+src/event_clone_001b6410.c,func_001B6410,func_001B6740,2,0,$a2,,harmless,,callee never reads $a2
+src/event_clone_001b6410.c,func_001B6410,func_001B6740,3,0,$a3,,harmless,,callee never reads $a3
+src/event_clone_001d88c0.c,func_001D88C0,func_001D8A20,1,0,$a1,,harmless,,callee never reads $a1
+src/fb13_h.c,func_0028A600,func_0028B0B0,1,0,$a1,,harmless,,callee never reads $a1
+src/fb13_h.c,func_0028A600,func_0028B0B0,2,0,$a2,,harmless,,callee never reads $a2
+src/fb13_h.c,func_0028A600,func_0028B0B0,3,0,$a3,,harmless,,callee never reads $a3
+src/fb14_b.c,func_002918A0,func_00292420,1,0,$a1,,harmless,,callee never reads $a1
+src/fb14_b.c,func_002918A0,func_00292420,2,0,$a2,,harmless,,callee never reads $a2
+src/fb14_b.c,func_002918A0,func_00292420,3,0,$a3,,harmless,,callee never reads $a3
+src/fb23_d.c,func_00379FA0,func_0037A800,1,0,$a1,,harmless,,callee never reads $a1
+src/fb23_d.c,func_00379FA0,func_0037A800,2,0,$a2,,harmless,,callee never reads $a2
+src/fb23_d.c,func_00379FA0,func_0037A800,3,0,$a3,,harmless,,callee never reads $a3
+src/fb26_b.c,func_00328560,func_00199460,0,0,$a0,L:lw:24:24:E$a0,auto,(void *)((*(int *)((char *)(p) + 24))),
+src/fb26_b.c,func_00328560,func_001C5390,0,0,$a0,L:lw:24:24:E$a0,auto,(void *)(q),
+src/fb30_f.c,func_0032AA40,func_0032E600,0,0,$a0,,harmless,,callee never reads $a0
+src/fb30_f.c,func_0032AA40,func_0032E600,1,0,$a1,,harmless,,callee never reads $a1
+src/fb30_f.c,func_0032AA40,func_0032E600,2,0,$a2,,harmless,,callee never reads $a2
+src/fb30_f.c,func_0032AA40,func_0032E600,3,0,$a3,,harmless,,callee never reads $a3
+src/fb34_c.c,func_00190710,func_0018DAC0,2,0,$a2,,harmless,,callee never reads $a2
+src/fb38_c.c,func_0012F4C0,func_0016F1A0,2,0,$a2,,harmless,,callee never reads $a2
+src/fb38_c.c,func_0012F4C0,func_0016F1A0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/fb38_c.c,func_0012F4C0,func_0016F1A0,2,1,$a2,,harmless,,callee never reads $a2
+src/fb38_c.c,func_0012F4C0,func_0016F1A0,3,1,$a3,,harmless,,the host callee never uses argument 3
+src/fb38_c.c,func_0012F4C0,func_0016F1A0,2,2,$a2,,harmless,,callee never reads $a2
+src/fb38_c.c,func_0012F4C0,func_0016F1A0,3,2,$a3,,harmless,,the host callee never uses argument 3
+src/fb38_c.c,func_0012F4C0,func_0016F1A0,2,3,$a2,,harmless,,callee never reads $a2
+src/fb38_c.c,func_0012F4C0,func_0016F1A0,3,3,$a3,,harmless,,the host callee never uses argument 3
+src/fb38_c.c,func_0012F4C0,func_001E46D0,1,0,$a1,,harmless,,callee never reads $a1
+src/fb38_c.c,func_0012F4C0,func_001E46D0,2,0,$a2,,harmless,,callee never reads $a2
+src/fb38_c.c,func_0012F4C0,func_001E46D0,3,0,$a3,,harmless,,callee never reads $a3
+src/fb38_c.c,func_0012F4C0,func_003DB970,1,0,$a1,,harmless,,callee never reads $a1
+src/fb38_c.c,func_0012F4C0,func_003DB970,2,0,$a2,,harmless,,callee never reads $a2
+src/fb38_c.c,func_0012F4C0,func_003DB970,3,0,$a3,,harmless,,callee never reads $a3
+src/fb50_e.c,func_00161C40,func_00161380,1,0,$a1,,harmless,,callee never reads $a1
+src/fb50_e.c,func_00161C40,func_00161380,2,0,$a2,,harmless,,callee never reads $a2
+src/fb50_e.c,func_00161C40,func_00161380,3,0,$a3,,harmless,,callee never reads $a3
+src/fb53_a.c,func_001BBFC0,func_001BC650,2,0,$a2,,harmless,,callee never reads $a2
+src/fb53_a.c,func_001BBFC0,func_001BC650,2,1,$a2,,harmless,,callee never reads $a2
+src/fb53_a.c,func_001BBFC0,func_001BC650,2,2,$a2,,harmless,,callee never reads $a2
+src/fb53_a.c,func_001BBFC0,func_001BC650,2,3,$a2,,harmless,,callee never reads $a2
+src/fb62_a.c,func_0014E2F0,func_0014FDC0,1,0,$a1,,hand,1,
+src/fb6_h.c,func_0041D640,func_0041D6D0,1,0,$a1,,harmless,,callee never reads $a1
+src/fb80_a.c,func_00254EE0,func_002552F0,2,0,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,0,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,1,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,1,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,10,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,10,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,11,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,11,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,12,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,12,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,13,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,13,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,14,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,14,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,15,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,15,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,16,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,16,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,17,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,17,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,18,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,18,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,19,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,19,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,2,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,2,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,20,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,20,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,21,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,21,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,3,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,3,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,4,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,4,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,5,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,5,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,6,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,6,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,7,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,7,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,8,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,8,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_002552F0,2,9,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_002552F0,3,9,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_00255300,2,0,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_00255300,3,0,$a3,,harmless,,callee never reads $a3
+src/fb80_a.c,func_00254EE0,func_00255300,2,1,$a2,,harmless,,callee never reads $a2
+src/fb80_a.c,func_00254EE0,func_00255300,3,1,$a3,,harmless,,callee never reads $a3
+src/func_00155620.c,func_00155620,func_00155AB0,1,0,$a1,,harmless,,callee never reads $a1
+src/func_00155620.c,func_00155620,func_00155AB0,2,0,$a2,,harmless,,the host callee never uses argument 2
+src/func_00155620.c,func_00155620,func_00155AB0,3,0,$a3,,harmless,,callee never reads $a3
+src/g10b.c,func_003A8C90,func_003A8D10,2,0,$a2,,harmless,,callee never reads $a2
+src/g10b.c,func_003A8C90,func_003A8D10,3,0,$a3,,harmless,,callee never reads $a3
+src/g12g.c,func_00178870,func_00178B00,1,0,$a1,,harmless,,callee never reads $a1
+src/g12g.c,func_00178870,func_00178B00,2,0,$a2,,harmless,,callee never reads $a2
+src/g12g.c,func_00178870,func_00178B00,3,0,$a3,,harmless,,callee never reads $a3
+src/g12g.c,func_00178870,func_00178D80,2,0,$a2,,harmless,,callee never reads $a2
+src/g12g.c,func_00178870,func_00178D80,3,0,$a3,,harmless,,callee never reads $a3
+src/g4.c,func_00178800,func_00178B00,1,0,$a1,,harmless,,callee never reads $a1
+src/g4.c,func_00178800,func_00178D80,2,0,$a2,,harmless,,callee never reads $a2
+src/g4.c,func_00178800,func_00178D80,3,0,$a3,,harmless,,callee never reads $a3
+src/g4.c,func_00178800,func_00178D80,2,1,$a2,,harmless,,callee never reads $a2
+src/g4.c,func_00178800,func_00178D80,3,1,$a3,,harmless,,callee never reads $a3
+src/g5.c,func_00369730,func_0036A620,1,0,$a1,,harmless,,callee never reads $a1
+src/gr26_d.c,func_003A98C0,func_003A9A50,2,0,$a2,,harmless,,callee never reads $a2
+src/gr26_d.c,func_003A98C0,func_003A9A50,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_ab_282970.c,func_00282970,func_00282A60,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_ac_34b0f0.c,residual_0034B0F0,func_0034B360,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_ac_34b0f0.c,residual_0034B0F0,func_0034B360,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_ac_34b0f0.c,residual_0034B0F0,func_0034B360,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_ah_36abb0.c,residual_0036ABB0,func_0036B3D0,1,0,$a1,,harmless,,the host callee never uses argument 1
+src/grok_ah_36abb0.c,residual_0036ABB0,func_0036B3D0,2,0,$a2,,harmless,,the host callee never uses argument 2
+src/grok_ah_36abb0.c,residual_0036ABB0,func_0036B3D0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/grok_aj_256e20.c,func_00256E20,func_00257100,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_aj_256e20.c,func_00256E20,func_00257100,2,0,$a2,,harmless,,the host callee never uses argument 2
+src/grok_aj_256e20.c,func_00256E20,func_00257100,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/grok_aj_256e20.c,func_00256E20,func_00257370,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_aj_256e20.c,func_00256E20,func_00257370,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_aj_256e20.c,func_00256E20,func_00257370,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_ao_28beb0.c,func_0028BEB0,func_0028C050,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_ao_28beb0.c,func_0028BEB0,func_0028C1C0,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_ar_293220.c,func_00293220,func_002933C0,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_ar_293220.c,func_00293220,func_00293530,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_ax_003AEF10.c,func_003AEF10,func_003AEFE0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_ax_003AEF10.c,func_003AEF10,func_003AEFE0,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_ax_003AEF10.c,func_003AEF10,func_003AF6D0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_ax_003AEF10.c,func_003AEF10,func_003AF6D0,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_be_00169AE0.c,func_00169AE0,func_00163F40,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_ci_31dfa0.c,func_0031DFA0,func_0031E710,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_ci_31dfa0.c,func_0031DFA0,func_0031E710,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_ci_31dfa0.c,func_0031DFA0,func_0031E710,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_dup_clusters.c,func_0039FC20,func_0039FC70,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_dup_clusters.c,func_0039FC20,func_0039FC70,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_dx_17d260.c,func_0017D270,func_0017D390,1,0,$a1,,harmless,,the host callee never uses argument 1
+src/grok_dx_17d260.c,func_0017D270,func_0017D390,2,0,$a2,,harmless,,the host callee never uses argument 2
+src/grok_dx_17d260.c,func_0017D270,func_0017D390,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/grok_ef_350030.c,func_00350030,func_00350680,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_ef_350030.c,func_00350030,func_00350680,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_ef_350030.c,func_00350030,func_00350680,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/grok_ef_350190.c,func_00350190,func_00350680,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_ef_350190.c,func_00350190,func_00350680,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_ef_350190.c,func_00350190,func_00350680,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/grok_fx_001CC0A0.c,func_001CC0A0,func_001CC1B0,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_fx_001CC0A0.c,func_001CC0A0,func_001CC1B0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_jz_00290EE0.c,residual_00290EE0,func_00291060,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_jz_00290EE0.c,residual_00290EE0,func_00291060,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_jz_00290EE0.c,residual_00290EE0,func_00291060,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/grok_luna_oct19_callbacks_b2.c,func_00199CF0,func_00199DC0,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_luna_oct19_callbacks_b2.c,func_00199CF0,func_00199DC0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_luna_oct19_callbacks_b2.c,func_00199CF0,func_00199DC0,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_m_69850.c,func_00169850,func_00169AE0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_m_69850.c,func_00169850,func_00169BC0,2,0,$a2,,harmless,,the host callee never uses argument 2
+src/grok_nop_20a1b0.c,func_0020A1B0,func_0020A210,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_nop_20a1b0.c,func_0020A1B0,func_0020A210,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_nop_20a1b0.c,func_0020A1B0,func_0020A210,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/grok_nopb_0c720.c,func_0020C720,func_0020C7B0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_nopb_0c720.c,func_0020C720,func_0020C7B0,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_nopb_24a890.c,func_0024A890,func_0024A900,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_nopb_24a890.c,func_0024A890,func_0024A900,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_nopb_24a890.c,func_0024A890,func_0024A900,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_nopb_2758e0.c,func_002758E0,func_00275940,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_nopb_2758e0.c,func_002758E0,func_00275940,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_nopb_2758e0.c,func_002758E0,func_00275940,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_nopc_288420.c,func_00288420,func_002884A0,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_nopc_288420.c,func_00288420,func_002884A0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_nopc_288420.c,func_00288420,func_002884A0,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_nopc_288d40.c,func_00288D40,func_00288DC0,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_nopc_288d40.c,func_00288D40,func_00288DC0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_nopc_288d40.c,func_00288D40,func_00288DC0,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_nopc_290820.c,func_00290820,func_00290890,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_nopc_290820.c,func_00290820,func_00290890,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_nopc_290820.c,func_00290820,func_00290890,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_nopc_2908c0.c,func_002908C0,func_00290930,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_nopc_2908c0.c,func_002908C0,func_00290930,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_nopc_2908c0.c,func_002908C0,func_00290930,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_nopd_336550.c,func_00336550,func_003359E0,1,0,$a1,,harmless,,the host callee never uses argument 1
+src/grok_nopd_38f270.c,func_0038F270,func_0038F410,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_nopd_38f270.c,func_0038F270,func_0038F410,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_nopd_38f270.c,func_0038F270,func_0038F410,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_nops_2900a0.c,func_002900A0,func_002900F0,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_nops_2900a0.c,func_002900A0,func_002900F0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_nops_2900a0.c,func_002900A0,func_002900F0,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_r1_0020.c,func_00279230,func_00279270,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_r1_0020.c,func_00279230,func_00279270,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_r1_0020.c,func_00279230,func_00279270,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/grok_r1_0020.c,func_0027BC10,func_0027BD50,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_r1_0020.c,func_0027BC10,func_0027BD50,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_r1_0020.c,func_0027BC10,func_0027BD50,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/grok_r1_0028.c,func_002C1670,func_002C17C0,1,0,$a1,,harmless,,the host callee never uses argument 1
+src/grok_r1_0028.c,func_002C1670,func_002C17C0,2,0,$a2,,harmless,,the host callee never uses argument 2
+src/grok_r1_0028.c,func_002C1670,func_002C17C0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/grok_r1_0028.c,func_002C1670,func_002C17C0,1,1,$a1,,harmless,,the host callee never uses argument 1
+src/grok_r1_0028.c,func_002C1670,func_002C17C0,2,1,$a2,,harmless,,the host callee never uses argument 2
+src/grok_r1_0028.c,func_002C1670,func_002C17C0,3,1,$a3,,harmless,,the host callee never uses argument 3
+src/grok_r2_0010.c,func_00100240,func_00119AB8,0,0,$f12,,harmless,,callee never reads $f12
+src/grok_r2_0010.c,func_00100240,func_00119AB8,1,0,$f13,,harmless,,callee never reads $f13
+src/grok_r2_0010.c,func_00100260,func_00119AB8,0,0,$f12,,harmless,,callee never reads $f12
+src/grok_r2_0010.c,func_00100260,func_00119AB8,1,0,$f13,,harmless,,callee never reads $f13
+src/grok_r2_0010.c,func_00100290,func_00119AB8,0,0,$f12,,harmless,,callee never reads $f12
+src/grok_r2_0010.c,func_00100290,func_00119AB8,1,0,$f13,,harmless,,callee never reads $f13
+src/grok_r2_0010.c,func_001002B0,func_00119AB8,0,0,$f12,,harmless,,callee never reads $f12
+src/grok_r2_0010.c,func_001002B0,func_00119AB8,1,0,$f13,,harmless,,callee never reads $f13
+src/grok_r2_0028.c,func_002B4DE0,func_00397580,2,0,$a2,U:3:func_00175700,left,,opaque U
+src/grok_size40.c,func_003692E0,func_0036A8B0,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_size40.c,func_003692E0,func_0036A8B0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_size40.c,func_003692E0,func_0036A8B0,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_size40.c,func_003696F0,func_0036A8A0,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_size40.c,func_003696F0,func_0036A8A0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_size40.c,func_003696F0,func_0036A8A0,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_t9_368e90.c,func_00368E90,func_00368FB0,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_t9_368e90.c,func_00368E90,func_00368FB0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_t9_368e90.c,func_00368E90,func_00368FB0,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_u2_2fbc0.c,func_0022FBC0,func_0022FB80,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_u2_2fbc0.c,func_0022FBC0,func_0022FB80,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/grok_u2_2fbc0.c,func_0022FBC0,func_0022FBA0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_u2_2fbc0.c,func_0022FBC0,func_0022FBA0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/grok_u2_2fe50.c,func_0022FE50,func_00230300,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_u2_2fe50.c,func_0022FE50,func_00230300,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/grok_v9_274ef0.c,func_00274EF0,func_0015F8D0,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_v9_274ef0.c,func_00274EF0,func_0015F8D0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_v9_274ef0.c,func_00274EF0,func_0015F8D0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/grok_w1b_0ce90.c,func_0020CE90,func_0020CF40,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_w1b_0ce90.c,func_0020CE90,func_0020CF40,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_w3_001a.c,func_001AEBC0,func_001AFC90,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_w3_0020.c,func_00204A40,func_00204D50,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_w3_0020.c,func_00204A40,func_00204D50,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_w3_0020.c,func_00204A40,func_00204D50,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_w3_002a.c,func_002B5A00,func_00397580,2,0,$a2,U:7:func_00175700,left,,opaque U
+src/grok_w3_0035.c,func_00350F90,func_00350FD0,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_w3_0035.c,func_00350F90,func_00350FD0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_w3_0035.c,func_00350F90,func_00350FD0,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_w3_0038.c,func_0039CAB0,func_0039E450,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_w3_0038.c,func_0039CAB0,func_0039E450,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_w3_0038.c,func_0039CAB0,func_0039E450,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_w5_0014.c,func_00149A70,func_00149AD0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_w5_0017.c,func_0017C170,func_00191F90,1,0,$a1,,harmless,,the host callee never uses argument 1
+src/grok_w5_0017.c,func_0017C170,func_00191F90,2,0,$a2,,harmless,,the host callee never uses argument 2
+src/grok_w5_0017.c,func_0017C170,func_00191F90,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/grok_w5_001a.c,func_001A9B00,func_001AA040,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_w5_001a.c,func_001A9B00,func_001AA040,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_w5_0020.c,func_0020C090,func_0020C0E0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_w5_0020.c,func_0020C090,func_0020C0E0,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_w5_002e.c,func_002E0960,func_002E09B0,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_w5_002e.c,func_002E0960,func_002E09B0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_w5_002e.c,func_002E0960,func_002E09B0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/grok_w5_0038.c,func_0039A1C0,func_0039A200,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_w5_0038.c,func_0039A1C0,func_0039A200,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_w5_0038.c,func_0039A1C0,func_0039A200,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_w5_0038.c,func_0039A5E0,func_0039A620,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_w5_0038.c,func_0039A5E0,func_0039A620,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_w5_0038.c,func_0039A5E0,func_0039A620,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_w5b_0039d280.c,func_0039D280,func_0039D300,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_w5b_0039d280.c,func_0039D280,func_0039D300,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_w5b_0039d280.c,func_0039D280,func_0039D300,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_w5b_0039d280.c,func_0039D280,func_0039D300,1,1,$a1,,harmless,,callee never reads $a1
+src/grok_w5b_0039d280.c,func_0039D280,func_0039D300,2,1,$a2,,harmless,,callee never reads $a2
+src/grok_w5b_0039d280.c,func_0039D280,func_0039D300,3,1,$a3,,harmless,,callee never reads $a3
+src/grok_w6_neg.c,func_00368BE0,func_00368FB0,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_w6_neg.c,func_00368BE0,func_00368FB0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_w6_neg.c,func_00368BE0,func_00368FB0,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_w6_neg.c,func_003B3460,func_003B3810,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_w6_neg.c,func_003B3460,func_003B3810,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_w6_neg.c,func_003B37B0,func_003B3860,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_w6_neg.c,func_003B37B0,func_003B3860,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_w7_0026.c,func_00279650,func_0037E080,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/grok_w7_0038.c,func_0039B780,func_0039B7D0,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_w7_0038.c,func_0039B780,func_0039B7D0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_w7_0038.c,func_0039B780,func_0039B7D0,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_y4_359410.c,func_00359410,func_003593F0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_y4_359410.c,func_00359410,func_003593F0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/grok_y5_3ad700.c,func_003AD700,func_003AE8A0,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_y5_3ad700.c,func_003AD700,func_003AE8A0,1,1,$a1,,harmless,,callee never reads $a1
+src/grok_z1_1a3470.c,residual_001A3470,func_001A35F0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_z1_1a3470.c,residual_001A3470,func_001A35F0,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_zs_3ad910.c,func_003AD910,func_003AE8A0,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_zs_3ad910.c,func_003AD910,func_003AE8A0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_zs_3ad910.c,func_003AD910,func_003AE8A0,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_zs_3ad910.c,func_003AD910,func_003AE8A0,1,1,$a1,,harmless,,callee never reads $a1
+src/grok_zs_3ad910.c,func_003AD910,func_003AE8A0,2,1,$a2,,harmless,,callee never reads $a2
+src/grok_zs_3ad910.c,func_003AD910,func_003AE8A0,3,1,$a3,,harmless,,callee never reads $a3
+src/h11.c,func_00350820,func_00350FD0,1,0,$a1,,harmless,,callee never reads $a1
+src/h11.c,func_00350820,func_00350FD0,2,0,$a2,,harmless,,callee never reads $a2
+src/h11.c,func_00350820,func_00350FD0,3,0,$a3,,harmless,,callee never reads $a3
+src/h12.c,func_00374150,func_00185870,1,0,$a1,L:lw:452:7:E$a0,auto,(void *)((*(int *)((char *)(p) + 452))),
+src/h12.c,func_00391990,func_003928B0,1,0,$a1,,harmless,,callee never reads $a1
+src/h12.c,func_00391990,func_003928B0,2,0,$a2,,harmless,,callee never reads $a2
+src/h12.c,func_00391990,func_003928B0,3,0,$a3,,harmless,,callee never reads $a3
+src/h1c.c,func_00350CC0,func_00350FD0,1,0,$a1,,harmless,,callee never reads $a1
+src/h1c.c,func_00350CC0,func_00350FD0,2,0,$a2,,harmless,,callee never reads $a2
+src/h1c.c,func_00350CC0,func_00350FD0,3,0,$a3,,harmless,,callee never reads $a3
+src/h1i.c,func_00392F70,func_00394760,1,0,$a1,,harmless,,callee never reads $a1
+src/h1i.c,func_00392F70,func_00394760,2,0,$a2,,harmless,,callee never reads $a2
+src/h1i.c,func_00392F70,func_00394760,3,0,$a3,,harmless,,callee never reads $a3
+src/h5b.c,func_00226D10,func_00226DA0,1,0,$a1,,harmless,,callee never reads $a1
+src/h5b.c,func_00226D10,func_00226DA0,2,0,$a2,,harmless,,callee never reads $a2
+src/h5b.c,func_00226D10,func_00226DA0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/h5b.c,func_0036A530,func_0036A8A0,1,0,$a1,,harmless,,callee never reads $a1
+src/h5b.c,func_0036A530,func_0036A8A0,2,0,$a2,,harmless,,callee never reads $a2
+src/h5b.c,func_0036A530,func_0036A8A0,3,0,$a3,,harmless,,callee never reads $a3
+src/h9c.c,func_003AF6D0,func_003AF760,2,0,$a2,,harmless,,callee never reads $a2
+src/hy3_c.c,func_001AE6B0,func_001AFC90,1,0,$a1,,harmless,,callee never reads $a1
+src/hy3_c.c,func_001AE6B0,func_001AFC90,2,0,$a2,,harmless,,callee never reads $a2
+src/hy3_c.c,func_001AE6B0,func_001AFC90,3,0,$a3,,harmless,,callee never reads $a3
+src/inhibit_owner_motion_sync.c,func_003A69B0,func_003A6DB0,2,0,$a2,,harmless,,callee never reads $a2
+src/inhibit_owner_motion_sync.c,func_003A69B0,func_003A6DB0,3,0,$a3,,hand,1,callee never reads $a3
+src/inhibit_owner_motion_sync.c,func_003A69B0,func_003A6DB0,2,1,$a2,,harmless,,callee never reads $a2
+src/inhibit_owner_motion_sync.c,func_003A69B0,func_003A6DB0,3,1,$a3,,hand,1,callee never reads $a3
+src/inhibit_owner_motion_sync.c,func_003B2A80,func_003B2E80,2,0,$a2,,harmless,,callee never reads $a2
+src/inhibit_owner_motion_sync.c,func_003B2A80,func_003B2E80,3,0,$a3,,hand,1,callee never reads $a3
+src/inhibit_owner_motion_sync.c,func_003B2A80,func_003B2E80,2,1,$a2,,harmless,,callee never reads $a2
+src/inhibit_owner_motion_sync.c,func_003B2A80,func_003B2E80,3,1,$a3,,hand,1,callee never reads $a3
+src/initialize_interaction_variant_00349320.c,func_00349320,func_0034A080,2,0,$a2,,harmless,,callee never reads $a2
+src/initialize_interaction_variant_00349320.c,func_00349320,func_0034A080,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/interaction_high_launch_00348f50.c,func_00348F50,func_0034A080,2,0,$a2,,harmless,,callee never reads $a2
+src/interaction_high_launch_00348f50.c,func_00348F50,func_0034A080,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/interaction_launch_00349240.c,func_00349240,func_0034A080,2,0,$a2,,harmless,,callee never reads $a2
+src/interaction_launch_00349240.c,func_00349240,func_0034A080,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/k4.c,func_00401000,func_0040CA70,0,1,$a0,E$a0,auto,p,
+src/k6.c,func_0040B3B8,func_004086B8,0,0,$a0,,harmless,,callee never reads $a0
+src/k6.c,func_0040B3B8,func_004086B8,1,0,$a1,,harmless,,the host callee never uses argument 1
+src/k6.c,func_0040B3B8,func_004086B8,0,1,$a0,,harmless,,callee never reads $a0
+src/k6.c,func_0040B3B8,func_004086B8,1,1,$a1,,harmless,,the host callee never uses argument 1
+src/launch_initializer_001a8d70.c,func_001A8D70,func_001A8E20,1,0,$a1,,harmless,,callee never reads $a1
+src/launch_initializer_001a8d70.c,func_001A8D70,func_001A8E20,2,0,$a2,,harmless,,callee never reads $a2
+src/launch_initializer_001a8d70.c,func_001A8D70,func_001A8E20,3,0,$a3,,harmless,,callee never reads $a3
+src/m1.c,func_00350790,func_00350FD0,1,0,$a1,,harmless,,callee never reads $a1
+src/m1.c,func_00350790,func_00350FD0,2,0,$a2,,harmless,,callee never reads $a2
+src/m1.c,func_00350790,func_00350FD0,3,0,$a3,,harmless,,callee never reads $a3
+src/m10.c,func_00350E40,func_00350FD0,1,0,$a1,,harmless,,callee never reads $a1
+src/m10.c,func_00350E40,func_00350FD0,2,0,$a2,,harmless,,callee never reads $a2
+src/m10.c,func_00350E40,func_00350FD0,3,0,$a3,,harmless,,callee never reads $a3
+src/m1b.c,func_0012A3A0,func_001E46D0,1,0,$a1,,harmless,,callee never reads $a1
+src/m1b.c,func_0012A3A0,func_001E46D0,2,0,$a2,,harmless,,callee never reads $a2
+src/m1b.c,func_0012A3A0,func_001E46D0,3,0,$a3,,harmless,,callee never reads $a3
+src/m1d.c,func_003ADF90,func_003AE8A0,1,0,$a1,,harmless,,callee never reads $a1
+src/m1d.c,func_003ADF90,func_003AE8A0,2,0,$a2,,harmless,,callee never reads $a2
+src/m3.c,func_00257370,func_002579D0,1,0,$a1,,harmless,,callee never reads $a1
+src/m3e.c,func_00391F50,func_003928B0,1,0,$a1,,harmless,,callee never reads $a1
+src/m3e.c,func_00391F50,func_003928B0,2,0,$a2,,harmless,,callee never reads $a2
+src/m3e.c,func_00391F50,func_003928B0,3,0,$a3,,harmless,,callee never reads $a3
+src/m3e.c,func_00391F50,func_003928B0,1,1,$a1,,harmless,,callee never reads $a1
+src/m3e.c,func_00391F50,func_003928B0,2,1,$a2,,harmless,,callee never reads $a2
+src/m3e.c,func_00391F50,func_003928B0,3,1,$a3,,harmless,,callee never reads $a3
+src/m5.c,func_002098E0,func_00209960,1,0,$a1,,harmless,,callee never reads $a1
+src/m5b.c,func_001CC000,func_001CCB50,1,0,$a1,,harmless,,callee never reads $a1
+src/m5b.c,func_001CC000,func_001CCB50,2,0,$a2,,harmless,,callee never reads $a2
+src/m5c.c,func_0020C280,func_0020C2F0,2,0,$a2,,harmless,,callee never reads $a2
+src/m5c.c,func_0020C280,func_0020C2F0,3,0,$a3,,harmless,,callee never reads $a3
+src/m5c.c,func_0020C4B0,func_0020C520,2,0,$a2,,harmless,,callee never reads $a2
+src/m5c.c,func_0020C4B0,func_0020C520,3,0,$a3,,harmless,,callee never reads $a3
+src/m5j.c,func_001B9C80,func_001B9D40,1,0,$a1,,harmless,,callee never reads $a1
+src/m6.c,func_0039A9C0,func_0039ACD0,1,0,$a1,,harmless,,callee never reads $a1
+src/m6.c,func_0039A9C0,func_0039ACD0,2,0,$a2,,harmless,,callee never reads $a2
+src/m6.c,func_0039A9C0,func_0039ACD0,3,0,$a3,,harmless,,callee never reads $a3
+src/m6.c,func_0039A9C0,func_0039ACD0,1,1,$a1,,harmless,,callee never reads $a1
+src/m6.c,func_0039A9C0,func_0039ACD0,2,1,$a2,,harmless,,callee never reads $a2
+src/m6.c,func_0039A9C0,func_0039ACD0,3,1,$a3,,harmless,,callee never reads $a3
+src/m7c.c,func_0034DB80,func_0034DC00,1,0,$a1,,harmless,,callee never reads $a1
+src/m7c.c,func_0034DB80,func_0034DC00,2,0,$a2,,harmless,,callee never reads $a2
+src/m7c.c,func_0034DB80,func_0034DC00,3,0,$a3,,harmless,,callee never reads $a3
+src/mode_motion_updates.c,func_00244B90,func_00244C20,1,0,$a1,,harmless,,callee never reads $a1
+src/mode_motion_updates.c,func_00244B90,func_00244C20,2,0,$a2,,harmless,,callee never reads $a2
+src/mode_motion_updates.c,func_00244B90,func_00244C20,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/mode_motion_updates.c,func_00244B90,func_00244D60,1,0,$a1,,harmless,,callee never reads $a1
+src/mode_motion_updates.c,func_00244B90,func_00244D60,2,0,$a2,,harmless,,callee never reads $a2
+src/mode_motion_updates.c,func_00244B90,func_00244D60,3,0,$a3,,harmless,,callee never reads $a3
+src/mode_motion_updates.c,func_002EA5C0,func_002EA650,1,0,$a1,,harmless,,callee never reads $a1
+src/mode_motion_updates.c,func_002EA5C0,func_002EA650,2,0,$a2,,harmless,,callee never reads $a2
+src/mode_motion_updates.c,func_002EA5C0,func_002EA650,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/mode_motion_updates.c,func_002EA5C0,func_002EA770,1,0,$a1,,harmless,,callee never reads $a1
+src/mode_motion_updates.c,func_002EA5C0,func_002EA770,2,0,$a2,,harmless,,callee never reads $a2
+src/mode_motion_updates.c,func_002EA5C0,func_002EA770,3,0,$a3,,harmless,,callee never reads $a3
+src/mode_motion_updates.c,func_00301C40,func_00301CD0,1,0,$a1,,harmless,,callee never reads $a1
+src/mode_motion_updates.c,func_00301C40,func_00301CD0,2,0,$a2,,harmless,,callee never reads $a2
+src/mode_motion_updates.c,func_00301C40,func_00301CD0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/mode_motion_updates.c,func_00301C40,func_00301DF0,1,0,$a1,,harmless,,callee never reads $a1
+src/mode_motion_updates.c,func_00301C40,func_00301DF0,2,0,$a2,,harmless,,callee never reads $a2
+src/mode_motion_updates.c,func_00301C40,func_00301DF0,3,0,$a3,,harmless,,callee never reads $a3
+src/n0g.c,func_00161880,func_001619B0,1,0,$a1,,harmless,,callee never reads $a1
+src/n2.c,func_001AED10,func_001AFC90,1,0,$a1,,harmless,,callee never reads $a1
+src/n4e.c,func_001697B0,func_00169AE0,2,0,$a2,,harmless,,callee never reads $a2
+src/n4e.c,func_001697B0,func_00169AE0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/n5.c,func_00187160,func_0015F8D0,1,0,$a1,,harmless,,callee never reads $a1
+src/n5.c,func_00187160,func_0015F8D0,2,0,$a2,,harmless,,callee never reads $a2
+src/n5.c,func_00187160,func_0015F8D0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/nq103_a.c,func_003AA8F0,func_003ACC30,2,0,$a2,,harmless,,callee never reads $a2
+src/nq103_a.c,func_003AA8F0,func_003ACC30,3,0,$a3,,harmless,,callee never reads $a3
+src/nq105_b.c,residual_003B1C70,func_003B1DE0,2,0,$a2,,harmless,,callee never reads $a2
+src/nq105_b.c,residual_003B1C70,func_003B1DE0,3,0,$a3,,harmless,,callee never reads $a3
+src/nq105_c.c,residual_003B34E0,func_003B3650,2,0,$a2,,harmless,,callee never reads $a2
+src/nq105_c.c,residual_003B34E0,func_003B3650,3,0,$a3,,harmless,,callee never reads $a3
+src/nq108_a.c,residual_003A5B00,func_003A5C80,2,0,$a2,,harmless,,callee never reads $a2
+src/nq108_a.c,residual_003A5B00,func_003A5C80,3,0,$a3,,harmless,,callee never reads $a3
+src/nq141_a.c,residual_0037E140,func_0037E310,1,0,$a1,,harmless,,callee never reads $a1
+src/nq141_a.c,residual_0037E140,func_0037E310,2,0,$a2,,harmless,,callee never reads $a2
+src/nq141_a.c,residual_0037E140,func_0037E310,3,0,$a3,,harmless,,callee never reads $a3
+src/nq151_c.c,residual_00375EC0,func_003760B0,1,0,$a1,,harmless,,callee never reads $a1
+src/nq151_c.c,residual_00375EC0,func_003760B0,2,0,$a2,,harmless,,callee never reads $a2
+src/nq151_c.c,residual_00375EC0,func_003760B0,3,0,$a3,,harmless,,callee never reads $a3
+src/nq157_a.c,func_003E8C00,func_003EAA80,1,0,$a1,K:1,auto,1,
+src/nq159_b.c,func_003A05D0,func_003A07D0,2,0,$a2,,harmless,,callee never reads $a2
+src/nq159_b.c,func_003A05D0,func_003A07D0,3,0,$a3,,harmless,,callee never reads $a3
+src/nq162_a.c,residual_003AFAB0,func_003AFCB0,2,0,$a2,,harmless,,callee never reads $a2
+src/nq162_a.c,residual_003AFAB0,func_003AFCB0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/nq163_c.c,residual_0037B9E0,func_0037BBF0,1,0,$a1,,harmless,,callee never reads $a1
+src/nq163_c.c,residual_0037B9E0,func_0037BBF0,2,0,$a2,,harmless,,callee never reads $a2
+src/nq163_c.c,residual_0037B9E0,func_0037BBF0,3,0,$a3,,harmless,,callee never reads $a3
+src/nq166_c.c,residual_0035E190,func_0035E3A0,2,0,$a2,,harmless,,callee never reads $a2
+src/nq166_c.c,residual_0035E190,func_0035E3A0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/nq192_b.c,residual_003B0920,func_003B0B90,2,0,$a2,,harmless,,callee never reads $a2
+src/nq192_b.c,residual_003B0920,func_003B0B90,3,0,$a3,,harmless,,callee never reads $a3
+src/nq201_b.c,residual_00385AA0,func_00385D40,1,0,$a1,,harmless,,callee never reads $a1
+src/nq201_b.c,residual_00385AA0,func_00385D40,2,0,$a2,,harmless,,callee never reads $a2
+src/nq201_b.c,residual_00385AA0,func_00385D40,3,0,$a3,,harmless,,callee never reads $a3
+src/nq203_b.c,residual_0035CCC0,func_0035CF70,2,0,$a2,,harmless,,callee never reads $a2
+src/nq203_b.c,residual_0035CCC0,func_0035CF70,3,0,$a3,,harmless,,callee never reads $a3
+src/nq209_b.c,residual_003C0CE0,func_003C0FC0,2,0,$a2,,harmless,,callee never reads $a2
+src/nq209_b.c,residual_003C0CE0,func_003C0FC0,3,0,$a3,,harmless,,callee never reads $a3
+src/nq212_a.c,residual_003550F0,func_003553E0,1,0,$a1,,harmless,,callee never reads $a1
+src/nq212_a.c,residual_003550F0,func_003553E0,2,0,$a2,,harmless,,callee never reads $a2
+src/nq212_a.c,residual_003550F0,func_003553E0,3,0,$a3,,harmless,,callee never reads $a3
+src/nq219_a.c,residual_003B2030,func_003B2380,2,0,$a2,,harmless,,callee never reads $a2
+src/nq219_a.c,residual_003B2030,func_003B2380,3,0,$a3,,harmless,,callee never reads $a3
+src/nq42_c.c,step_nq42c,func_00169A50,1,0,$a1,,harmless,,callee never reads $a1
+src/nq42_c.c,step_nq42c,func_00169A50,2,0,$a2,,harmless,,the host callee never uses argument 2
+src/nq42_c.c,step_nq42c,func_00169A50,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/nq79_a.c,residual_0035D4C0,func_0035D600,2,0,$a2,,harmless,,callee never reads $a2
+src/nq79_a.c,residual_0035D4C0,func_0035D600,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/nq79_c.c,residual_003B3000,func_003B3140,2,0,$a2,,harmless,,callee never reads $a2
+src/nq79_c.c,residual_003B3000,func_003B3140,3,0,$a3,,harmless,,callee never reads $a3
+src/nq82_b.c,func_003BF900,func_003BFC80,2,0,$a2,,harmless,,callee never reads $a2
+src/nq82_b.c,func_003BF900,func_003BFC80,3,0,$a3,,harmless,,callee never reads $a3
+src/nq88_c.c,residual_003D1A30,func_003D1F90,0,0,$a0,,harmless,,callee never reads $a0
+src/nq88_c.c,residual_003D1A30,func_003D1F90,1,0,$a1,,harmless,,callee never reads $a1
+src/nq88_c.c,residual_003D1A30,func_003D1F90,2,0,$a2,,harmless,,the host callee never uses argument 2
+src/nq88_c.c,residual_003D1A30,func_003D1F90,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/nq98_a.c,residual_0035D6F0,func_0035D850,2,0,$a2,,harmless,,callee never reads $a2
+src/nq98_a.c,residual_0035D6F0,func_0035D850,3,0,$a3,,harmless,,callee never reads $a3
+src/owner_copy_tail_00363cd0.c,func_00363CD0,func_00363D80,1,0,$a1,,harmless,,callee never reads $a1
+src/owner_copy_tail_00363cd0.c,func_00363CD0,func_00363D80,2,0,$a2,,harmless,,the host callee never uses argument 2
+src/owner_copy_tail_00363cd0.c,func_00363CD0,func_00363D80,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/owner_linked_effect_init_003537b0.c,func_003537B0,func_003539A0,1,0,$a1,,harmless,,callee never reads $a1
+src/owner_linked_effect_init_003537b0.c,func_003537B0,func_003539A0,2,0,$a2,,harmless,,callee never reads $a2
+src/owner_linked_effect_init_003537b0.c,func_003537B0,func_003539A0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/owner_position_copy_00199e70.c,func_00199E70,func_00199F50,1,0,$a1,,harmless,,callee never reads $a1
+src/owner_position_copy_00199e70.c,func_00199E70,func_00199F50,2,0,$a2,,harmless,,callee never reads $a2
+src/owner_position_copy_00199e70.c,func_00199E70,func_00199F50,3,0,$a3,,harmless,,callee never reads $a3
+src/owner_projectile_launch_00368160.c,func_00368160,func_00368FB0,1,0,$a1,,harmless,,callee never reads $a1
+src/owner_projectile_launch_00368160.c,func_00368160,func_00368FB0,2,0,$a2,,harmless,,callee never reads $a2
+src/owner_stance_state_dispatch.c,func_003B1BF0,func_003B1EE0,1,0,$a1,,harmless,,callee never reads $a1
+src/owner_state_copy_setup_0019a560.c,func_0019A560,func_0019A940,1,0,$a1,,harmless,,callee never reads $a1
+src/owner_state_copy_setup_0019a560.c,func_0019A560,func_0019A940,2,0,$a2,,harmless,,callee never reads $a2
+src/owner_state_copy_setup_0019a560.c,func_0019A560,func_0019A940,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/owner_table_child_start_001d7150.c,func_001D7150,func_001D7340,2,0,$a2,,harmless,,callee never reads $a2
+src/owner_table_child_start_001d7150.c,func_001D7150,func_001D7340,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/owner_variant_start_00395a30.c,func_00395A30,func_003961E0,2,0,$a2,,harmless,,the host callee never uses argument 2
+src/owner_variant_start_00395a30.c,func_00395A30,func_003961E0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/p3.c,func_0040B8A8,func_004086B8,0,0,$a0,,harmless,,callee never reads $a0
+src/p3.c,func_0040B8A8,func_004086B8,1,0,$a1,,harmless,,the host callee never uses argument 1
+src/p3m.c,func_003F5E60,func_003F5C30,3,0,$a3,,harmless,,callee never reads $a3
+src/payload_placement_initializers_001a79b0.c,func_001A79B0,func_001A7B50,1,0,$a1,,harmless,,callee never reads $a1
+src/payload_placement_initializers_001a79b0.c,func_001A79B0,func_001A7B50,2,0,$a2,,harmless,,callee never reads $a2
+src/payload_placement_initializers_001a79b0.c,func_001A79B0,func_001A7B50,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/payload_placement_initializers_001a79b0.c,func_001BC7C0,func_001BC960,1,0,$a1,,harmless,,callee never reads $a1
+src/payload_placement_initializers_001a79b0.c,func_001BC7C0,func_001BC960,2,0,$a2,,harmless,,the host callee never uses argument 2
+src/payload_placement_initializers_001a79b0.c,func_001BC7C0,func_001BC960,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/payload_placement_initializers_001a79b0.c,func_001C0A90,func_001C0C30,1,0,$a1,,harmless,,callee never reads $a1
+src/payload_placement_initializers_001a79b0.c,func_001C0A90,func_001C0C30,2,0,$a2,,harmless,,callee never reads $a2
+src/payload_placement_initializers_001a79b0.c,func_001C0A90,func_001C0C30,3,0,$a3,,harmless,,callee never reads $a3
+src/payload_setup_callbacks_001cbef0.c,func_001CBEF0,func_001CC000,1,0,$a1,,harmless,,callee never reads $a1
+src/payload_setup_callbacks_001cbef0.c,func_001CBEF0,func_001CC000,2,0,$a2,,harmless,,callee never reads $a2
+src/payload_spawn_initializers_001baee0.c,func_001BAEE0,func_001BB020,2,0,$a2,,harmless,,callee never reads $a2
+src/priority_dispatch.c,name,func_001B9D40,1,,$a1,,harmless,,callee never reads $a1
+src/priority_dispatch.c,name,func_001B9D40,2,,$a2,,harmless,,callee never reads $a2
+src/priority_dispatch.c,name,func_001B9D40,3,,$a3,,harmless,,callee never reads $a3
+src/q13_a.c,func_00199F50,func_00199FF0,1,0,$a1,,harmless,,callee never reads $a1
+src/q13_a.c,func_00199F50,func_00199FF0,1,1,$a1,,harmless,,callee never reads $a1
+src/q15_d.c,func_0038A9C0,func_001E46D0,1,0,$a1,,harmless,,callee never reads $a1
+src/q15_d.c,func_0038A9C0,func_001E46D0,2,0,$a2,,harmless,,callee never reads $a2
+src/q15_d.c,func_0038A9C0,func_001E46D0,3,0,$a3,,harmless,,callee never reads $a3
+src/q1_o.c,func_003B3140,func_003B3810,2,0,$a2,,harmless,,callee never reads $a2
+src/q1_o.c,func_003B3140,func_003B3810,2,1,$a2,,harmless,,callee never reads $a2
+src/q3.c,func_001BBC20,func_001BBD30,3,0,$a3,,harmless,,callee never reads $a3
+src/q3.c,func_001BBC20,func_001BBD30,3,1,$a3,,harmless,,callee never reads $a3
+src/q3.c,func_001BBC20,func_001BBD30,3,2,$a3,,harmless,,callee never reads $a3
+src/q4_a.c,func_001ADF90,func_001AFC90,1,0,$a1,,harmless,,callee never reads $a1
+src/q5_f.c,func_001AF9B0,func_001AFC90,1,0,$a1,,harmless,,callee never reads $a1
+src/q5_f.c,func_001AF9B0,func_001AFC90,2,0,$a2,,harmless,,callee never reads $a2
+src/q6_3.c,func_00178770,func_00178B00,1,0,$a1,,harmless,,callee never reads $a1
+src/q6_3.c,func_00178770,func_00178D80,2,0,$a2,,harmless,,callee never reads $a2
+src/q6_3.c,func_00178770,func_00178D80,3,0,$a3,,harmless,,callee never reads $a3
+src/q6_3.c,func_00178770,func_00178D80,2,1,$a2,,harmless,,callee never reads $a2
+src/q6_3.c,func_00178770,func_00178D80,3,1,$a3,,harmless,,callee never reads $a3
+src/q6_3.c,func_00178770,func_00178D80,2,2,$a2,,harmless,,callee never reads $a2
+src/q6_3.c,func_00178770,func_00178D80,3,2,$a3,,harmless,,callee never reads $a3
+src/q7_a.c,func_002823F0,func_00282470,1,0,$a1,,harmless,,callee never reads $a1
+src/q7_r.c,func_0031E2C0,func_0031E710,1,0,$a1,,hand,1,callee never reads $a1
+src/q7_r.c,func_0031E2C0,func_0031E710,2,0,$a2,,harmless,,callee never reads $a2
+src/q7_r.c,func_0031E2C0,func_0031E710,3,0,$a3,,harmless,,callee never reads $a3
+src/q8_b.c,func_001C1590,func_001C1630,1,0,$a1,,harmless,,callee never reads $a1
+src/q8_h.c,func_001CA8F0,func_001CAD80,1,0,$a1,,harmless,,callee never reads $a1
+src/q8_h.c,func_001CA8F0,func_001CAD80,2,0,$a2,,harmless,,callee never reads $a2
+src/q8_h.c,func_001CA8F0,func_001CAD80,3,0,$a3,,harmless,,callee never reads $a3
+src/q9_d.c,func_00349040,func_0034A080,2,0,$a2,,harmless,,callee never reads $a2
+src/q9_d.c,func_00349040,func_0034A080,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/q9_f.c,func_001B9E30,func_001B9F60,1,0,$a1,,harmless,,callee never reads $a1
+src/q9_f.c,func_001B9E30,func_001B9F60,2,0,$a2,,harmless,,callee never reads $a2
+src/r12_13_b.c,func_00415590,func_003DE880,2,0,$a2,,harmless,,callee never reads $a2
+src/r12_13_b.c,func_00415590,func_003DE880,3,0,$a3,,harmless,,callee never reads $a3
+src/r15_00_a.c,func_0012D6B0,func_00150670,0,0,$a0,,hand,D_004CA080,
+src/r1h.c,func_001BB0D0,func_001BB8D0,2,0,$a2,,harmless,,callee never reads $a2
+src/r1h.c,func_001BB0D0,func_001BB8D0,3,0,$a3,,harmless,,callee never reads $a3
+src/r2.c,func_00282680,func_00282700,1,0,$a1,,harmless,,callee never reads $a1
+src/r3_30_d.c,func_0038B8C0,func_001E46D0,1,0,$a1,,harmless,,callee never reads $a1
+src/r3_30_d.c,func_0038B8C0,func_001E46D0,2,0,$a2,,harmless,,callee never reads $a2
+src/r3_30_d.c,func_0038B8C0,func_001E46D0,3,0,$a3,,harmless,,callee never reads $a3
+src/r3_33_c.c,func_0041DBA0,func_0041DF70,0,0,$a0,D:10,auto,k,
+src/r3_33_c.c,func_0041DBA0,func_0041EE80,0,0,$a0,D:10,auto,k,
+src/rb17_a.c,func_001CE650,func_001CE9E0,1,0,$a1,,harmless,,callee never reads $a1
+src/rb22_b.c,func_0039D900,func_0039DA50,1,0,$a1,,harmless,,callee never reads $a1
+src/rb22_b.c,func_0039D900,func_0039DA50,2,0,$a2,,harmless,,callee never reads $a2
+src/rb22_b.c,func_0039D900,func_0039DA50,3,0,$a3,,harmless,,callee never reads $a3
+src/rb22_b.c,func_0039D900,func_0039DA50,1,1,$a1,,harmless,,callee never reads $a1
+src/rb22_b.c,func_0039D900,func_0039DA50,2,1,$a2,,harmless,,callee never reads $a2
+src/rb22_b.c,func_0039D900,func_0039DA50,3,1,$a3,,harmless,,callee never reads $a3
+src/rb22_b.c,func_0039D900,func_0039E450,1,0,$a1,,harmless,,callee never reads $a1
+src/rb22_b.c,func_0039D900,func_0039E450,2,0,$a2,,harmless,,callee never reads $a2
+src/rb22_b.c,func_0039D900,func_0039E450,3,0,$a3,,harmless,,callee never reads $a3
+src/rb45_a.c,func_0037BBF0,func_0037BDD0,1,0,$a1,,harmless,,callee never reads $a1
+src/render_active_objects_00152AD0.c,func_00152AD0,func_00413DE0,0,0,$a0,,harmless,,callee never reads $a0
+src/render_active_objects_00152AD0.c,func_00152AD0,func_00413DE0,1,0,$a1,,harmless,,callee never reads $a1
+src/render_active_objects_00152AD0.c,func_00152AD0,func_00413DE0,2,0,$a2,,harmless,,callee never reads $a2
+src/render_active_objects_00152AD0.c,func_00152AD0,func_00413DE0,3,0,$a3,,harmless,,callee never reads $a3
+src/round3_0.c,func_0022E650,func_0022EA40,1,0,$a1,,harmless,,callee never reads $a1
+src/round3_0.c,func_0022E650,func_0022EA40,2,0,$a2,,harmless,,callee never reads $a2
+src/round3_0.c,func_0022E650,func_0022EA40,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/round3_0.c,func_0022E650,func_0022EC50,1,0,$a1,,harmless,,callee never reads $a1
+src/round3_0.c,func_0022E650,func_0022EC50,2,0,$a2,,harmless,,callee never reads $a2
+src/round3_0.c,func_0022E650,func_0022EC50,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/round4_3.c,func_001ADAE0,func_001AFC90,1,0,$a1,,harmless,,callee never reads $a1
+src/round4_3.c,func_001ADE30,func_001AFC90,1,0,$a1,,harmless,,callee never reads $a1
+src/round4_3.c,func_001AE310,func_001AFC90,1,0,$a1,,harmless,,callee never reads $a1
+src/round4_3.c,func_001AE4E0,func_001AFC90,1,0,$a1,,harmless,,callee never reads $a1
+src/round4_3.c,func_001AF0F0,func_001AFC90,1,0,$a1,,harmless,,callee never reads $a1
+src/round4_3.c,func_001AF290,func_001AFC90,1,0,$a1,,harmless,,callee never reads $a1
+src/round4_3.c,func_001CC6D0,func_001CCB50,1,0,$a1,,harmless,,callee never reads $a1
+src/round4_3.c,func_001CC860,func_001CCB50,1,0,$a1,,harmless,,callee never reads $a1
+src/rr15_a.c,func_00364130,func_00364270,2,0,$a2,,harmless,,callee never reads $a2
+src/rr16_b.c,func_0036A290,func_0036A8A0,1,0,$a1,,harmless,,callee never reads $a1
+src/rr16_b.c,func_0036A290,func_0036A8A0,2,0,$a2,,harmless,,callee never reads $a2
+src/rr16_b.c,func_0036A290,func_0036A8A0,3,0,$a3,,harmless,,callee never reads $a3
+src/rr3_a.c,func_001AEEA0,func_001AFC90,1,0,$a1,,harmless,,callee never reads $a1
+src/rr3_a.c,func_001AEEA0,func_001AFC90,2,0,$a2,,harmless,,callee never reads $a2
+src/rr3_a.c,func_001AEEA0,func_001AFC90,3,0,$a3,,harmless,,callee never reads $a3
+src/rt4_e.c,residual_003AE9A0,func_003AF760,2,0,$a2,,harmless,,callee never reads $a2
+src/rt4_e.c,residual_003AE9A0,func_003AF760,3,0,$a3,,harmless,,callee never reads $a3
+src/s5a_a.c,func_0040B458,func_004086B8,0,0,$a0,,harmless,,callee never reads $a0
+src/s5a_a.c,func_0040B458,func_004086B8,1,0,$a1,,harmless,,the host callee never uses argument 1
+src/s5a_a.c,func_0040B458,func_004086B8,0,1,$a0,,harmless,,callee never reads $a0
+src/s5a_a.c,func_0040B458,func_004086B8,1,1,$a1,,harmless,,the host callee never uses argument 1
+src/s5a_a.c,func_0040B458,func_004086B8,0,2,$a0,,harmless,,callee never reads $a0
+src/s5a_a.c,func_0040B458,func_004086B8,1,2,$a1,,harmless,,the host callee never uses argument 1
+src/s5a_a.c,func_0040B458,func_004086B8,0,3,$a0,,harmless,,callee never reads $a0
+src/s5a_a.c,func_0040B458,func_004086B8,1,3,$a1,,harmless,,the host callee never uses argument 1
+src/s5a_a.c,func_0040B700,func_004086B8,0,0,$a0,,harmless,,callee never reads $a0
+src/s5a_a.c,func_0040B700,func_004086B8,1,0,$a1,,harmless,,the host callee never uses argument 1
+src/s6c_e.c,func_0037C2A0,func_0037CB50,1,0,$a1,,harmless,,callee never reads $a1
+src/s6c_e.c,func_0037C2A0,func_0037CB50,2,0,$a2,,harmless,,callee never reads $a2
+src/s8f_c.c,func_0018C1A0,func_0018C8A0,2,0,$a2,,harmless,,callee never reads $a2
+src/s9a_c.c,func_00418200,func_003F5080,1,0,$a1,,harmless,,callee never reads $a1
+src/s9a_c.c,func_00418200,func_003F5080,2,0,$a2,,harmless,,callee never reads $a2
+src/s9a_c.c,func_00418200,func_003F5080,3,0,$a3,,harmless,,callee never reads $a3
+src/sLa0_b.c,func_0016B7C0,func_0016BF80,0,0,$a0,,hand,c,
+src/sLa2_a.c,residual_003A8EF0,func_003A91C0,1,0,$a1,,harmless,,callee never reads $a1
+src/sLa2_a.c,residual_003A8EF0,func_003A91C0,2,0,$a2,,harmless,,callee never reads $a2
+src/sLa2_a.c,residual_003A8EF0,func_003A91C0,3,0,$a3,,harmless,,callee never reads $a3
+src/sa12_h.c,func_0032A210,func_0032E600,0,0,$a0,,harmless,,callee never reads $a0
+src/sa12_h.c,func_0032A210,func_0032E600,1,0,$a1,,harmless,,callee never reads $a1
+src/sa12_h.c,func_0032A210,func_0032E600,2,0,$a2,,harmless,,callee never reads $a2
+src/sa12_h.c,func_0032A210,func_0032E600,3,0,$a3,,harmless,,callee never reads $a3
+src/sa20_c.c,func_003AC580,func_003AC6F0,2,0,$a2,,harmless,,callee never reads $a2
+src/sa20_c.c,func_003AC580,func_003AC6F0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/sa23_k.c,func_0028B5F0,func_0028B9C0,1,0,$a1,,harmless,,callee never reads $a1
+src/sa23_k.c,func_0028B5F0,func_0028B9C0,2,0,$a2,,harmless,,callee never reads $a2
+src/sa23_k.c,func_0028B5F0,func_0028B9C0,3,0,$a3,,harmless,,callee never reads $a3
+src/sa29_h.c,func_003923D0,func_003928B0,1,0,$a1,,harmless,,callee never reads $a1
+src/sa29_h.c,func_003923D0,func_003928B0,2,0,$a2,,harmless,,callee never reads $a2
+src/sa29_h.c,func_003923D0,func_003928B0,3,0,$a3,,harmless,,callee never reads $a3
+src/sa29_h.c,func_00392730,func_003928B0,1,0,$a1,,harmless,,callee never reads $a1
+src/sa29_h.c,func_00392730,func_003928B0,2,0,$a2,,harmless,,callee never reads $a2
+src/sa29_h.c,func_00392730,func_003928B0,3,0,$a3,,harmless,,callee never reads $a3
+src/sa30_d.c,func_0018A080,func_0018A380,3,0,$a3,,hand,k,
+src/sa30_d.c,func_0018A080,func_0018A380,3,1,$a3,,hand,k,
+src/sa30_d.c,func_0018A080,func_0018A460,3,0,$a3,,hand,k,
+src/sa32_b.c,func_003A79B0,func_003A7B10,2,0,$a2,,harmless,,callee never reads $a2
+src/sa32_b.c,func_003A79B0,func_003A7B10,3,0,$a3,,harmless,,callee never reads $a3
+src/sa34_e.c,func_001538B0,func_003DE160,2,0,$a2,,hand,a2,
+src/sa38_c.c,func_001BC4C0,func_001BC650,2,0,$a2,,harmless,,callee never reads $a2
+src/sa38_c.c,func_001BC4C0,func_001BC650,3,0,$a3,,harmless,,callee never reads $a3
+src/sa3_d.c,func_00189500,func_0018A380,3,0,$a3,,hand,m,
+src/sa3_d.c,func_00189500,func_0018A380,3,1,$a3,,hand,m,
+src/sa3_d.c,func_00189500,func_0018A460,3,0,$a3,,hand,m,
+src/sb18_a.c,func_003B3ED0,func_003B4030,2,0,$a2,,harmless,,callee never reads $a2
+src/sb18_a.c,func_003B3ED0,func_003B4030,3,0,$a3,,harmless,,callee never reads $a3
+src/sb18_b.c,func_00292960,func_00292D30,1,0,$a1,,harmless,,callee never reads $a1
+src/sb18_b.c,func_00292960,func_00292D30,2,0,$a2,,harmless,,callee never reads $a2
+src/sb18_b.c,func_00292960,func_00292D30,3,0,$a3,,harmless,,callee never reads $a3
+src/sb2_a.c,func_003932E0,func_00394760,1,0,$a1,,harmless,,callee never reads $a1
+src/sb2_a.c,func_003932E0,func_00394760,2,0,$a2,,harmless,,callee never reads $a2
+src/sb2_a.c,func_003932E0,func_00394760,3,0,$a3,,harmless,,callee never reads $a3
+src/scene_lifecycle_phases_003447E0.c,func_003447E0,func_003D90A0,1,0,$a1,,harmless,,callee never reads $a1
+src/scene_lifecycle_phases_003447E0.c,func_003447E0,func_003D90A0,2,0,$a2,,harmless,,callee never reads $a2
+src/scene_lifecycle_phases_003447E0.c,func_003447E0,func_003D90A0,3,0,$a3,,harmless,,callee never reads $a3
+src/sd0_a.c,func_003762B0,func_00376A40,1,0,$a1,,harmless,,callee never reads $a1
+src/sd0_a.c,func_003762B0,func_00376A40,2,0,$a2,,harmless,,callee never reads $a2
+src/sd0_a.c,func_003762B0,func_00376A40,3,0,$a3,,harmless,,callee never reads $a3
+src/sd0_a.c,func_003762B0,func_00376A40,1,1,$a1,,harmless,,callee never reads $a1
+src/sd0_a.c,func_003762B0,func_00376A40,2,1,$a2,,harmless,,callee never reads $a2
+src/sd0_a.c,func_003762B0,func_00376A40,3,1,$a3,,harmless,,callee never reads $a3
+src/se2_b.c,func_0032FC00,func_003D90A0,1,0,$a1,,harmless,,callee never reads $a1
+src/se2_b.c,func_0032FC00,func_003D90A0,2,0,$a2,,harmless,,callee never reads $a2
+src/se2_b.c,func_0032FC00,func_003D90A0,3,0,$a3,,harmless,,callee never reads $a3
+src/sequential_heads.c,func_00209590,func_002095C0,1,0,$a1,,harmless,,callee never reads $a1
+src/sequential_heads.c,func_00209590,func_002095C0,2,0,$a2,,harmless,,callee never reads $a2
+src/sequential_heads.c,func_00209590,func_002095C0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/sequential_heads.c,func_00223A30,func_00223A60,1,0,$a1,,harmless,,callee never reads $a1
+src/sequential_heads.c,func_002447B0,func_002447E0,1,0,$a1,,harmless,,callee never reads $a1
+src/sequential_heads.c,func_002822F0,func_00282320,1,0,$a1,,harmless,,callee never reads $a1
+src/sequential_heads.c,func_002822F0,func_00282320,2,0,$a2,,harmless,,callee never reads $a2
+src/sequential_heads.c,func_002822F0,func_00282320,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/sequential_heads.c,func_002A8170,func_002A81A0,1,0,$a1,,harmless,,callee never reads $a1
+src/sequential_heads.c,func_002A8170,func_002A81A0,2,0,$a2,,harmless,,callee never reads $a2
+src/sequential_heads.c,func_002A8170,func_002A81A0,3,0,$a3,,harmless,,callee never reads $a3
+src/sequential_heads.c,func_002E9E00,func_002E9E30,1,0,$a1,,harmless,,callee never reads $a1
+src/sequential_heads.c,func_002E9E00,func_002E9E30,2,0,$a2,,harmless,,callee never reads $a2
+src/sequential_heads.c,func_002E9E00,func_002E9E30,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/sequential_heads.c,func_003015C0,func_003015F0,1,0,$a1,,harmless,,callee never reads $a1
+src/sequential_heads.c,func_003015C0,func_003015F0,2,0,$a2,,harmless,,callee never reads $a2
+src/sequential_heads.c,func_003015C0,func_003015F0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/sequential_heads.c,func_00310850,func_00310880,1,0,$a1,,harmless,,callee never reads $a1
+src/sequential_heads.c,func_00310850,func_00310880,2,0,$a2,,harmless,,callee never reads $a2
+src/sequential_heads.c,func_00310850,func_00310880,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/sf11_a.c,func_00394760,func_00394770,1,0,$a1,,harmless,,callee never reads $a1
+src/sf11_a.c,func_00394760,func_00394770,2,0,$a2,,harmless,,callee never reads $a2
+src/sf11_a.c,func_00394760,func_00394770,3,0,$a3,,harmless,,callee never reads $a3
+src/sf11_b.c,residual_00393BA0,func_00394760,2,0,$a2,,harmless,,callee never reads $a2
+src/sf11_b.c,residual_00393BA0,func_00394760,3,0,$a3,,harmless,,callee never reads $a3
+src/sf11_b.c,residual_00393BA0,func_00394760,2,1,$a2,,harmless,,callee never reads $a2
+src/sf11_b.c,residual_00393BA0,func_00394760,3,1,$a3,,harmless,,callee never reads $a3
+src/sf11_b.c,residual_00393BA0,func_00394760,2,2,$a2,,harmless,,callee never reads $a2
+src/sf11_b.c,residual_00393BA0,func_00394760,3,2,$a3,,harmless,,callee never reads $a3
+src/sf11_b.c,residual_00394200,func_00394760,2,0,$a2,,harmless,,callee never reads $a2
+src/sf11_b.c,residual_00394200,func_00394760,3,0,$a3,,harmless,,callee never reads $a3
+src/sf11_b.c,residual_00394200,func_00394760,2,1,$a2,,harmless,,callee never reads $a2
+src/sf11_b.c,residual_00394200,func_00394760,3,1,$a3,,harmless,,callee never reads $a3
+src/sf11_b.c,residual_00394200,func_00394760,2,2,$a2,,harmless,,callee never reads $a2
+src/sf11_b.c,residual_00394200,func_00394760,3,2,$a3,,harmless,,callee never reads $a3
+src/sf11_c.c,residual_003A6E90,func_003A7070,2,0,$a2,,harmless,,the host callee never uses argument 2
+src/sf11_c.c,residual_003A6E90,func_003A7070,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/sf11_c.c,residual_003A73D0,func_003A75C0,2,0,$a2,,harmless,,callee never reads $a2
+src/sf11_c.c,residual_003A73D0,func_003A75C0,3,0,$a3,,harmless,,callee never reads $a3
+src/signed_result_handlers.c,func_001AE1C0,func_001AFC90,1,0,$a1,,harmless,,callee never reads $a1
+src/signed_result_handlers.c,func_00350B20,func_00350FD0,1,0,$a1,,harmless,,callee never reads $a1
+src/signed_result_handlers.c,func_00350B20,func_00350FD0,2,0,$a2,,harmless,,callee never reads $a2
+src/signed_result_handlers.c,func_00350B20,func_00350FD0,3,0,$a3,,harmless,,callee never reads $a3
+src/signed_result_handlers.c,func_00350D40,func_00350FD0,1,0,$a1,,harmless,,callee never reads $a1
+src/signed_result_handlers.c,func_00350D40,func_00350FD0,2,0,$a2,,harmless,,callee never reads $a2
+src/signed_result_handlers.c,func_00350D40,func_00350FD0,3,0,$a3,,harmless,,callee never reads $a3
+src/signed_result_handlers.c,func_003686D0,func_00368FB0,1,0,$a1,,harmless,,callee never reads $a1
+src/signed_result_handlers.c,func_003686D0,func_00368FB0,2,0,$a2,,harmless,,callee never reads $a2
+src/signed_result_handlers.c,func_003686D0,func_00368FB0,3,0,$a3,,harmless,,callee never reads $a3
+src/signed_result_handlers.c,func_00391B10,func_003928B0,1,0,$a1,,harmless,,callee never reads $a1
+src/signed_result_handlers.c,func_00391B10,func_003928B0,2,0,$a2,,harmless,,callee never reads $a2
+src/signed_result_handlers.c,func_00391B10,func_003928B0,3,0,$a3,,harmless,,callee never reads $a3
+src/t0e.c,func_0028A6B0,func_0028B0B0,1,0,$a1,,harmless,,callee never reads $a1
+src/t0e.c,func_0028A6B0,func_0028B0B0,2,0,$a2,,harmless,,callee never reads $a2
+src/t0e.c,func_0028A6B0,func_0028B0B0,3,0,$a3,,harmless,,callee never reads $a3
+src/t10_e.c,func_003B3700,func_003B3870,2,0,$a2,,harmless,,callee never reads $a2
+src/t10_e.c,func_003B3700,func_003B3870,3,0,$a3,,harmless,,callee never reads $a3
+src/t11_a.c,func_00332B90,func_003349D0,1,0,$a1,,hand,2051,callee never reads $a1
+src/t11_a.c,func_00332B90,func_003349D0,2,0,$a2,,hand,D_004C283C,callee never reads $a2
+src/t11_a.c,func_00332B90,func_003349D0,3,0,$a3,,hand,1,the host callee never uses argument 3
+src/t11_e.c,func_00291970,func_00292420,1,0,$a1,,harmless,,callee never reads $a1
+src/t11_e.c,func_00291970,func_00292420,2,0,$a2,,harmless,,callee never reads $a2
+src/t11_e.c,func_00291970,func_00292420,3,0,$a3,,harmless,,callee never reads $a3
+src/t13_a.c,func_00178990,func_00178D80,2,0,$a2,,harmless,,callee never reads $a2
+src/t13_a.c,func_00178990,func_00178D80,3,0,$a3,,harmless,,callee never reads $a3
+src/t13_c.c,func_003B3650,func_003B3860,2,0,$a2,,harmless,,callee never reads $a2
+src/t13_c.c,func_003B3650,func_003B3860,2,1,$a2,,harmless,,callee never reads $a2
+src/t1_a.c,func_001AE9E0,func_001AFC90,1,0,$a1,,harmless,,callee never reads $a1
+src/t1_a.c,func_001AE9E0,func_001AFC90,2,0,$a2,,harmless,,callee never reads $a2
+src/t1_a.c,func_001AE9E0,func_001AFC90,3,0,$a3,,harmless,,callee never reads $a3
+src/t3.c,func_001B9F60,func_001B9D40,1,0,$a1,,harmless,,callee never reads $a1
+src/t3.c,func_001B9F60,func_001B9D40,2,0,$a2,,harmless,,callee never reads $a2
+src/t3.c,func_001B9F60,func_001B9D40,1,1,$a1,,harmless,,callee never reads $a1
+src/t3.c,func_001B9F60,func_001B9D40,2,1,$a2,,harmless,,callee never reads $a2
+src/t5_c.c,func_001BAC90,func_001BAD70,2,0,$a2,,harmless,,callee never reads $a2
+src/t7_a.c,func_0039E2D0,func_0039E450,1,0,$a1,,harmless,,callee never reads $a1
+src/t7_b.c,func_001CC1B0,func_001CCB50,1,0,$a1,,harmless,,callee never reads $a1
+src/t7_b.c,func_001CC1B0,func_001CCB50,2,0,$a2,,harmless,,callee never reads $a2
+src/t7_b.c,func_0036A1D0,func_0036A8A0,1,0,$a1,,harmless,,callee never reads $a1
+src/t7_b.c,func_0036A1D0,func_0036A8A0,2,0,$a2,,harmless,,callee never reads $a2
+src/t7_b.c,func_0036A1D0,func_0036A8A0,3,0,$a3,,harmless,,callee never reads $a3
+src/t9_e.c,func_001BA4C0,func_001BA5C0,1,0,$a1,,harmless,,callee never reads $a1
+src/unl1_a.c,func_00340310,func_0032E690,0,0,$a0,E$a0,auto,(void *)(p),
+src/unl1_a.c,func_00340E70,func_003D90A0,1,0,$a1,,harmless,,callee never reads $a1
+src/unl1_a.c,func_00340E70,func_003D90A0,2,0,$a2,,harmless,,callee never reads $a2
+src/unl1_a.c,func_00340E70,func_003D90A0,3,0,$a3,,harmless,,callee never reads $a3
+src/v10_a.c,func_001AFBE0,func_001AFC90,1,0,$a1,,harmless,,callee never reads $a1
+src/v10_a.c,func_001AFBE0,func_001AFC90,2,0,$a2,,harmless,,callee never reads $a2
+src/v10_a.c,func_001AFBE0,func_001AFC90,3,0,$a3,,harmless,,callee never reads $a3
+src/v10_a.c,func_001AFBE0,func_001AFC90,1,1,$a1,,harmless,,callee never reads $a1
+src/v10_a.c,func_001AFBE0,func_001AFC90,2,1,$a2,,harmless,,callee never reads $a2
+src/v10_a.c,func_001AFBE0,func_001AFC90,3,1,$a3,,harmless,,callee never reads $a3
+src/v11_a.c,func_001696F0,func_00169AE0,2,0,$a2,,harmless,,callee never reads $a2
+src/v11_a.c,func_001696F0,func_00169AE0,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/v1_c.c,func_003ACC30,func_003ACCB0,2,0,$a2,,harmless,,callee never reads $a2
+src/v4_a.c,func_00141C90,func_001415B0,0,0,$a0,,hand,o,
+src/v5_a.c,func_0039DD40,func_0039E450,1,0,$a1,,harmless,,callee never reads $a1
+src/v5_a.c,func_0039DD40,func_0039E450,2,0,$a2,,harmless,,callee never reads $a2
+src/v5_a.c,func_0039DD40,func_0039E450,3,0,$a3,,harmless,,callee never reads $a3
+src/v5_a.c,func_0039DD40,func_0039E450,1,1,$a1,,harmless,,callee never reads $a1
+src/v5_a.c,func_0039DD40,func_0039E450,2,1,$a2,,harmless,,callee never reads $a2
+src/v5_a.c,func_0039DD40,func_0039E450,3,1,$a3,,harmless,,callee never reads $a3
+src/v5_d.c,func_0028A530,func_0028B0B0,1,0,$a1,,harmless,,callee never reads $a1
+src/v5_d.c,func_0028A530,func_0028B0B0,2,0,$a2,,harmless,,callee never reads $a2
+src/v5_d.c,func_0028A530,func_0028B0B0,3,0,$a3,,harmless,,callee never reads $a3
+src/v6_b.c,func_003C86E0,func_003C8A50,2,0,$a2,,harmless,,callee never reads $a2
+src/w170_a.c,func_001AF3F0,func_001AFC90,1,0,$a1,,harmless,,callee never reads $a1
+src/w170_a.c,func_001AF3F0,func_001AFC90,2,0,$a2,,harmless,,callee never reads $a2
+src/w170_a.c,func_001AF3F0,func_001AFC90,3,0,$a3,,harmless,,callee never reads $a3
+src/w170_a.c,func_001AF3F0,func_001AFC90,1,1,$a1,,harmless,,callee never reads $a1
+src/w170_a.c,func_001AF3F0,func_001AFC90,2,1,$a2,,harmless,,callee never reads $a2
+src/w170_a.c,func_001AF3F0,func_001AFC90,3,1,$a3,,harmless,,callee never reads $a3
+src/w1710_d.c,func_00349420,func_0034A080,2,0,$a2,,harmless,,callee never reads $a2
+src/w1710_d.c,func_00349420,func_0034A080,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/w1710_j.c,func_0039B670,func_0039B7D0,1,0,$a1,,harmless,,callee never reads $a1
+src/w1710_j.c,func_0039B670,func_0039B7D0,2,0,$a2,,harmless,,callee never reads $a2
+src/w1710_j.c,func_0039B670,func_0039B7D0,3,0,$a3,,harmless,,callee never reads $a3
+src/w1710_k.c,func_0037DA90,func_0037DBC0,2,0,$a2,,harmless,,callee never reads $a2
+src/w1710_k.c,func_0037DA90,func_0037DBC0,3,0,$a3,,harmless,,callee never reads $a3
+src/w171_m.c,func_00257100,func_00257D60,1,0,$a1,,harmless,,callee never reads $a1
+src/w171_m.c,func_00257100,func_00258070,1,0,$a1,,harmless,,callee never reads $a1
+src/w174_a.c,func_002B71E0,func_00397580,2,0,$a2,U:3:func_00175700,left,,opaque U
+src/w174_a.c,func_00353E90,func_00354000,1,0,$a1,P:136:E$a0,auto,(void *)(((char *)(p) + 136)),
+src/w175_a.c,func_0031E3E0,func_0031E710,1,0,$a1,,harmless,,callee never reads $a1
+src/w175_a.c,func_0031E3E0,func_0031E710,2,0,$a2,,harmless,,callee never reads $a2
+src/w175_a.c,func_0031E3E0,func_0031E710,3,0,$a3,,harmless,,callee never reads $a3
+src/w176_r.c,func_0028B0B0,func_0028B1E0,2,0,$a2,,harmless,,callee never reads $a2
+src/w176_r.c,func_00292420,func_00292550,2,0,$a2,,harmless,,callee never reads $a2
+src/w177_b.c,func_001BA780,func_001BAD70,2,0,$a2,,harmless,,callee never reads $a2
+src/w177_b.c,func_001BA780,func_001BAD70,3,0,$a3,,harmless,,callee never reads $a3
+src/w178_a.c,func_0038F300,func_0038F410,1,0,$a1,,harmless,,callee never reads $a1
+src/w178_a.c,func_0038F300,func_0038F410,2,0,$a2,,harmless,,callee never reads $a2
+src/w178_a.c,func_0038F300,func_0038F410,3,0,$a3,,harmless,,callee never reads $a3
+src/w179_a.c,func_00335B10,func_00336690,1,0,$a1,,harmless,,callee never reads $a1
+src/w179_c.c,func_002A0760,func_001757E0,2,0,$a2,,hand,1,
+src/w180_g.c,func_00256FC0,func_00257640,1,0,$a1,,harmless,,callee never reads $a1
+src/w180_g.c,func_00256FC0,func_00257D60,1,0,$a1,,harmless,,callee never reads $a1
+src/w180_g.c,func_00256FC0,func_00258070,1,0,$a1,,harmless,,callee never reads $a1
+src/w181_i.c,func_00391C80,func_003928B0,1,0,$a1,,harmless,,callee never reads $a1
+src/w181_i.c,func_00391C80,func_003928B0,2,0,$a2,,harmless,,callee never reads $a2
+src/w181_i.c,func_00391C80,func_003928B0,3,0,$a3,,harmless,,callee never reads $a3
+src/w183_s.c,func_00369580,func_0036A8A0,1,0,$a1,,harmless,,callee never reads $a1
+src/w183_s.c,func_00369580,func_0036A8A0,2,0,$a2,,harmless,,callee never reads $a2
+src/w183_s.c,func_00369580,func_0036A8A0,3,0,$a3,,harmless,,callee never reads $a3
+src/w184_g.c,func_003AE740,func_003AE8A0,3,0,$a3,,harmless,,callee never reads $a3
+src/w188_a.c,func_00402C20,func_003FB2E8,2,0,$a2,D:0,auto,buf,
+src/w188_a.c,func_00402C20,func_003FB2E8,3,0,$a3,,hand,16,
+src/w188_d.c,func_003A9CF0,func_003A9E50,2,0,$a2,,harmless,,callee never reads $a2
+src/w188_d.c,func_003A9CF0,func_003A9E50,3,0,$a3,,harmless,,callee never reads $a3
+src/w1910_t.c,func_003BCCF0,func_003BD830,1,0,$a1,,harmless,,callee never reads $a1
+src/w1910_t.c,func_003BCCF0,func_003BD830,2,0,$a2,,harmless,,callee never reads $a2
+src/w1910_t.c,func_003BCCF0,func_003BD830,3,0,$a3,,harmless,,callee never reads $a3
+src/w1912_g.c,func_001CA9F0,func_001CAD80,1,0,$a1,,harmless,,callee never reads $a1
+src/w1912_g.c,func_001CA9F0,func_001CAD80,2,0,$a2,,harmless,,callee never reads $a2
+src/w1912_g.c,func_001CA9F0,func_001CAD80,3,0,$a3,,harmless,,callee never reads $a3
+src/w1913_c.c,func_001E4560,func_001E46D0,1,0,$a1,,hand,D_004CD170,callee never reads $a1
+src/w1913_c.c,func_001E4560,func_001E46D0,2,0,$a2,,harmless,,callee never reads $a2
+src/w1913_c.c,func_001E4560,func_001E46D0,3,0,$a3,,harmless,,callee never reads $a3
+src/w192_l.c,func_003BC6F0,func_003BD830,1,0,$a1,,harmless,,callee never reads $a1
+src/w192_l.c,func_003BC6F0,func_003BD830,1,1,$a1,,harmless,,callee never reads $a1
+src/w194_o.c,func_00413C00,func_003F5C30,3,0,$a3,,harmless,,callee never reads $a3
+src/w197_q.c,func_003D7B50,func_003D7D50,2,0,$a2,,hand,b,
+src/w20a0_a.c,func_003CA150,func_003CA330,2,0,$a2,,harmless,,callee never reads $a2
+src/w20a0_a.c,func_003CA150,func_003CA330,3,0,$a3,,harmless,,callee never reads $a3
+src/w20a0_g.c,func_00171700,func_00417FA0,1,0,$a1,,harmless,,callee never reads $a1
+src/w20b1_c.c,func_00330CE0,func_003D90A0,1,0,$a1,,harmless,,callee never reads $a1
+src/w20b1_c.c,func_00330CE0,func_003D90A0,2,0,$a2,,harmless,,callee never reads $a2
+src/w20b1_c.c,func_00330CE0,func_003D90A0,3,0,$a3,,harmless,,callee never reads $a3
+src/w21a5_m.c,func_0027FBB0,func_00190B30,1,0,$a1,,harmless,,callee never reads $a1
+src/w21a5_m.c,func_0027FBB0,func_00190B30,2,0,$a2,,harmless,,callee never reads $a2
+src/w21a5_m.c,func_0027FBB0,func_00190B30,3,0,$a3,,harmless,,callee never reads $a3
+src/w21a7_d.c,func_00194FF0,func_00195470,2,0,$a2,,harmless,,callee never reads $a2
+src/w9e0.c,func_0040B618,func_004086B8,0,0,$a0,,harmless,,callee never reads $a0
+src/w9e0.c,func_0040B618,func_004086B8,1,0,$a1,,harmless,,the host callee never uses argument 1
+src/w9e0.c,func_0040B618,func_004086B8,0,1,$a0,,harmless,,callee never reads $a0
+src/w9e0.c,func_0040B618,func_004086B8,1,1,$a1,,harmless,,the host callee never uses argument 1
+src/w9m2c.c,func_00145FB0,func_00145160,1,0,$a1,F:28:$a1,left,,opaque F
+src/w9m2c.c,func_00145FB0,func_00145160,2,0,$a2,,harmless,,callee never reads $a2
+src/w9m2c.c,func_00145FB0,func_00145160,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/wave0b.c,func_00350AC0,func_00350FD0,1,0,$a1,,harmless,,callee never reads $a1
+src/wave0b.c,func_00350AC0,func_00350FD0,2,0,$a2,,harmless,,callee never reads $a2
+src/wave0b.c,func_00350AC0,func_00350FD0,3,0,$a3,,harmless,,callee never reads $a3
+src/wave11b.c,func_00350A60,func_00350FD0,1,0,$a1,,harmless,,callee never reads $a1
+src/wave11b.c,func_00350A60,func_00350FD0,2,0,$a2,,harmless,,callee never reads $a2
+src/wave11b.c,func_00350A60,func_00350FD0,3,0,$a3,,harmless,,callee never reads $a3
+src/wave13.c,func_001AB5A0,func_001AB600,2,0,$a2,,harmless,,callee never reads $a2
+src/wave13.c,func_001AB5A0,func_001AB600,3,0,$a3,,harmless,,callee never reads $a3
+src/wave13.c,func_0039DAC0,func_0039E450,1,0,$a1,,harmless,,callee never reads $a1
+src/wave13.c,func_0039DAC0,func_0039E450,2,0,$a2,,harmless,,callee never reads $a2
+src/wave13.c,func_0039DAC0,func_0039E450,3,0,$a3,,harmless,,callee never reads $a3
+src/wave18.c,func_001D76E0,func_001D7790,2,0,$a2,,harmless,,callee never reads $a2
+src/wave18.c,func_001D76E0,func_001D7790,3,0,$a3,,harmless,,callee never reads $a3
+src/wave24.c,func_001DB920,func_001DBE50,1,0,$a1,,harmless,,callee never reads $a1
+src/wave24.c,func_001DB920,func_001DBE50,2,0,$a2,,harmless,,callee never reads $a2
+src/wave24.c,func_001DB920,func_001DBE50,3,0,$a3,,harmless,,callee never reads $a3
+src/wave24.c,func_001DB920,func_001DBE50,1,1,$a1,,harmless,,callee never reads $a1
+src/wave24.c,func_001DB920,func_001DBE50,2,1,$a2,,harmless,,callee never reads $a2
+src/wave24.c,func_001DB920,func_001DBE50,3,1,$a3,,harmless,,callee never reads $a3
+src/wave24.c,func_001DBA70,func_001DBE50,1,0,$a1,,harmless,,callee never reads $a1
+src/wave24.c,func_001DBA70,func_001DBE50,2,0,$a2,,harmless,,callee never reads $a2
+src/wave24.c,func_001DBA70,func_001DBE50,3,0,$a3,,harmless,,callee never reads $a3
+src/wave24.c,func_001DBA70,func_001DBE50,1,1,$a1,,harmless,,callee never reads $a1
+src/wave24.c,func_001DBA70,func_001DBE50,2,1,$a2,,harmless,,callee never reads $a2
+src/wave24.c,func_001DBA70,func_001DBE50,3,1,$a3,,harmless,,callee never reads $a3
+src/wave25d.c,func_00199D60,func_00199DC0,1,0,$a1,,harmless,,callee never reads $a1
+src/wave25d.c,func_00199D60,func_00199DC0,2,0,$a2,,harmless,,callee never reads $a2
+src/wave25d.c,func_00199D60,func_00199DC0,3,0,$a3,,harmless,,callee never reads $a3
+src/wave30c.c,func_0030D350,func_0030D3E0,1,0,$a1,,harmless,,callee never reads $a1
+src/wave30c.c,func_0030D350,func_0030D3E0,2,0,$a2,,harmless,,callee never reads $a2
+src/wave30c.c,func_0030D350,func_0030D3E0,3,0,$a3,,harmless,,callee never reads $a3
+src/wave4.c,func_0039F020,func_0039F080,1,0,$a1,,hand,v,
+src/wave4.c,func_0039F020,func_0039F190,1,0,$a1,,hand,v,
+src/wave8.c,func_0012A290,func_001E46D0,1,0,$a1,,harmless,,callee never reads $a1
+src/wave8.c,func_0012A290,func_001E46D0,2,0,$a2,,harmless,,callee never reads $a2
+src/wave8.c,func_0012A290,func_001E46D0,3,0,$a3,,harmless,,callee never reads $a3
+src/x0_c.c,func_001BA1B0,func_001B9D40,1,0,$a1,,harmless,,callee never reads $a1
+src/x0_c.c,func_001BA1B0,func_001B9D40,2,0,$a2,,harmless,,callee never reads $a2
+src/x0_c.c,func_001BA1B0,func_001B9D40,3,0,$a3,,harmless,,callee never reads $a3
+src/x0_c.c,func_0039E390,func_0039E450,1,0,$a1,,harmless,,callee never reads $a1
+src/x10_a.c,func_00257430,func_00257520,1,0,$a1,,harmless,,callee never reads $a1
+src/x10_a.c,func_00257430,func_00257520,2,0,$a2,,harmless,,callee never reads $a2
+src/x10_a.c,func_00257430,func_00257520,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/x10_a.c,func_002A8350,func_002A8420,1,0,$a1,,harmless,,callee never reads $a1
+src/x10_a.c,func_002A8350,func_002A8420,2,0,$a2,,harmless,,callee never reads $a2
+src/x9_i.c,func_00230FC0,func_00231CA0,2,0,$a2,,harmless,,callee never reads $a2
+src/x9_i.c,func_00230FC0,func_00231CA0,3,0,$a3,,harmless,,callee never reads $a3
+src/x9_l.c,func_003BBE40,func_003BD7F0,1,0,$a1,,harmless,,callee never reads $a1
+src/x9_l.c,func_003BBE40,func_003BD7F0,1,1,$a1,,harmless,,callee never reads $a1
+src/xl2_a.c,func_00329C50,func_00417FA0,1,0,$a1,,harmless,,callee never reads $a1
+src/xl8_a.c,func_00179590,func_00190B30,1,0,$a1,,harmless,,callee never reads $a1
+src/xl8_a.c,func_00179590,func_00190B30,2,0,$a2,,harmless,,callee never reads $a2
+src/xl8_a.c,func_00179590,func_00190B30,3,0,$a3,,harmless,,callee never reads $a3
+src/xm4_a.c,func_0041DF70,func_00150ED0,0,0,$a0,K:1,auto,1,
+src/y13_c.c,func_00172450,func_00171700,0,0,$a0,,harmless,,callee never reads $a0
+src/y13_c.c,func_00172450,func_00171700,1,0,$a1,,harmless,,callee never reads $a1
+src/y13_c.c,func_00172450,func_00171700,2,0,$a2,,harmless,,callee never reads $a2
+src/y13_c.c,func_00172450,func_00171700,3,0,$a3,,harmless,,callee never reads $a3
+src/y1_c.c,func_001788E0,func_00178D80,2,0,$a2,,harmless,,callee never reads $a2
+src/y1_c.c,func_001788E0,func_00178D80,3,0,$a3,,harmless,,callee never reads $a3
+src/y1_c.c,func_001788E0,func_00178D80,2,1,$a2,,harmless,,callee never reads $a2
+src/y1_c.c,func_001788E0,func_00178D80,3,1,$a3,,harmless,,callee never reads $a3
+src/y1_c.c,func_001788E0,func_00178D80,2,2,$a2,,harmless,,callee never reads $a2
+src/y1_c.c,func_001788E0,func_00178D80,3,2,$a3,,harmless,,callee never reads $a3
+src/y3_f.c,func_0037D0D0,func_0037CF30,2,0,$a2,,harmless,,callee never reads $a2
+src/z13_c.c,func_001CCA50,func_001CCB50,1,0,$a1,,harmless,,callee never reads $a1
+src/z13_c.c,func_001CCA50,func_001CCB50,2,0,$a2,,harmless,,callee never reads $a2
+src/z13_c.c,func_001CCA50,func_001CCB50,3,0,$a3,,harmless,,callee never reads $a3
+src/z3_a.c,func_00291A20,func_00292420,1,0,$a1,,harmless,,callee never reads $a1
+src/z3_a.c,func_00291A20,func_00292420,2,0,$a2,,harmless,,callee never reads $a2
+src/z3_a.c,func_00291A20,func_00292420,3,0,$a3,,harmless,,callee never reads $a3
+src/z3_e.c,func_0019DD00,func_0019DE40,2,0,$a2,,harmless,,callee never reads $a2
+src/z3_e.c,func_0019DD00,func_0019DE40,3,0,$a3,,harmless,,callee never reads $a3
+src/z3_e.c,func_0019DD00,func_0019DE40,2,1,$a2,,harmless,,callee never reads $a2
+src/z3_e.c,func_0019DD00,func_0019DE40,3,1,$a3,,harmless,,callee never reads $a3
+src/z3_e.c,func_003BC9E0,func_003BD830,1,0,$a1,,harmless,,callee never reads $a1
+src/z3_e.c,func_003BC9E0,func_003BD830,2,0,$a2,,harmless,,callee never reads $a2
+src/z3_e.c,func_003BC9E0,func_003BD830,3,0,$a3,,harmless,,callee never reads $a3
+src/z4_a.c,func_003AB180,func_003AB270,2,0,$a2,,harmless,,callee never reads $a2
+src/z4_a.c,func_003AB180,func_003AB270,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/z5_i.c,func_00349140,func_0034A080,2,0,$a2,,harmless,,callee never reads $a2
+src/z5_i.c,func_00349140,func_0034A080,3,0,$a3,,harmless,,the host callee never uses argument 3
+src/z8_c.c,func_003BFB60,func_003BFC80,2,0,$a2,,harmless,,callee never reads $a2
+src/z8_c.c,func_003BFB60,func_003BFC80,3,0,$a3,,harmless,,callee never reads $a3
+src/z9_b.c,func_00178A40,func_00178B00,1,0,$a1,,harmless,,callee never reads $a1
+src/z9_b.c,func_00178A40,func_00178D80,2,0,$a2,,harmless,,callee never reads $a2
+src/z9_b.c,func_00178A40,func_00178D80,3,0,$a3,,harmless,,callee never reads $a3
+src/z9_b.c,func_00178A40,func_00178D80,2,1,$a2,,harmless,,callee never reads $a2
+src/z9_b.c,func_00178A40,func_00178D80,3,1,$a3,,harmless,,callee never reads $a3
+src/z9_b.c,func_00178A40,func_00178D80,2,2,$a2,,harmless,,callee never reads $a2
+src/z9_b.c,func_00178A40,func_00178D80,3,2,$a3,,harmless,,callee never reads $a3
+src/z9_m.c,func_0039D5F0,func_0039E450,1,0,$a1,,harmless,,callee never reads $a1
+src/z9_m.c,func_0039D5F0,func_0039E450,2,0,$a2,,harmless,,callee never reads $a2
+src/z9_m.c,func_0039D5F0,func_0039E450,3,0,$a3,,harmless,,callee never reads $a3

@@ -1,18 +1,34 @@
 # R12 sites the dataflow cannot explain (the argument register held a caller
 # local).  Each row is checked against the retail asm by hand; expr is the C
 # variable of the caller that the asm keeps in that register at the call.
-#   gen_regpass.py --unresolved FILE lists the remaining candidates.
-source,caller,callee,arg,expr
-src/v4_a.c,func_00141C90,func_001415B0,0,o
-src/r15_00_a.c,func_0012D6B0,func_00150670,0,D_004CA080
-src/fb62_a.c,func_0014E2F0,func_0014FDC0,1,1
-src/inhibit_owner_motion_sync.c,func_003A69B0,func_003A6DB0,3,1
-src/inhibit_owner_motion_sync.c,func_003B2A80,func_003B2E80,3,1
-src/q7_r.c,func_0031E2C0,func_0031E710,1,1
-src/t11_a.c,func_00332B90,func_003349D0,1,2051
-src/t11_a.c,func_00332B90,func_003349D0,2,D_004C283C
-src/t11_a.c,func_00332B90,func_003349D0,3,1
-src/w179_c.c,func_002A0760,func_001757E0,2,1
-src/w188_a.c,func_00402C20,func_003FB2E8,3,16
-src/w1913_c.c,func_001E4560,func_001E46D0,1,D_004CD170
-src/sLa0_b.c,func_0016B7C0,func_0016BF80,0,c
+# Rows the tool resolves itself are in r12_regauto.csv (gen_regpass.py
+# --sites); a row here wins over one there.  Optional column nth = which call
+# of callee in caller (0-based, inner calls first); empty = every call.
+#   gen_regpass.py --sites DIR classifies every padded argument (DIR/r12_sites.csv).
+source,caller,callee,arg,expr,nth
+src/v4_a.c,func_00141C90,func_001415B0,0,o,
+src/r15_00_a.c,func_0012D6B0,func_00150670,0,D_004CA080,
+src/fb62_a.c,func_0014E2F0,func_0014FDC0,1,1,
+src/inhibit_owner_motion_sync.c,func_003A69B0,func_003A6DB0,3,1,
+src/inhibit_owner_motion_sync.c,func_003B2A80,func_003B2E80,3,1,
+src/q7_r.c,func_0031E2C0,func_0031E710,1,1,
+src/t11_a.c,func_00332B90,func_003349D0,1,2051,
+src/t11_a.c,func_00332B90,func_003349D0,2,D_004C283C,
+src/t11_a.c,func_00332B90,func_003349D0,3,1,
+src/w179_c.c,func_002A0760,func_001757E0,2,1,
+src/w188_a.c,func_00402C20,func_003FB2E8,3,16,
+src/w1913_c.c,func_001E4560,func_001E46D0,1,D_004CD170,
+# robust pass (2026-10-31): $a0 = c (lbu of *D_004C2678 at the loop test, the loop's character)
+src/sLa0_b.c,func_0016B7C0,func_0016BF80,0,c,
+# $a3 = k / m (andi $a3, $v0, 0xFFFF: the masked button bits) on all three paths
+src/sa30_d.c,func_0018A080,func_0018A380,3,k,
+src/sa30_d.c,func_0018A080,func_0018A460,3,k,
+src/sa3_d.c,func_00189500,func_0018A380,3,m,
+src/sa3_d.c,func_00189500,func_0018A460,3,m,
+# $a2 = phi(entry a2, buf, q) at the loop head = the C variable a2 (same as the R12 assigned-parameter idiom)
+src/sa34_e.c,func_001538B0,func_003DE160,2,a2,
+# $a2 = b (lw $a2, 0x8($a0) at entry, untouched on the path to the call)
+src/w197_q.c,func_003D7B50,func_003D7D50,2,b,
+# $a1 = v (lw $a1, 0x18($a0) in the first branch's delay slot)
+src/wave4.c,func_0039F020,func_0039F080,1,v,
+src/wave4.c,func_0039F020,func_0039F190,1,v,

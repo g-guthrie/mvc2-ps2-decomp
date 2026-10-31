@@ -875,15 +875,22 @@ REGPASS = _load_regpass()
 
 
 def _load_regexpr():
-    """port/tools/r12_regexpr.csv: hand-checked R12 sites where the register
-    held a caller local, not a parameter (the asm says which C variable)."""
+    """R12 sites where the register held a caller local, a constant or a
+    symbol, not a parameter: (source, caller, callee, arg[, nth]) -> C expr."""
     import csv
     from pathlib import Path
-    f = Path(__file__).resolve().parent / "r12_regexpr.csv"
+    d = Path(__file__).resolve().parent
     out = {}
-    if f.exists():
+    # r12_regauto.csv: rows gen_regpass.py --sites resolved from the asm
+    # (constants, symbol addresses, loads, caller locals); r12_regexpr.csv:
+    # hand-checked rows, which win
+    for f in (d / "r12_regauto.csv", d / "r12_regexpr.csv"):
+        if not f.exists():
+            continue
         for r in csv.DictReader(l for l in open(f, newline="") if not l.startswith("#")):
-            out[(r["source"], r["caller"], r["callee"], int(r["arg"]))] = r["expr"]
+            nth = (r.get("nth") or "").strip()
+            key = (r["source"], r["caller"], r["callee"], int(r["arg"]))
+            out[key + ((int(nth),) if nth else ())] = r["expr"]
     return out
 
 
@@ -935,16 +942,18 @@ def _render_sym(tok, params, assigned):
     return f"({b} + {off})" if off else b
 
 
-def _pad_log(path, name, have, want, ks=None):
+def _pad_log(path, name, have, want, ks=None, fn=None, nth=None):
     """HOSTIFY_PAD_LOG=file: record R12 calls that get missing arguments as 0
     (the EE passed whatever the argument registers held); ks = the canonical
-    indices padded (default have..want-1)."""
+    indices padded (default have..want-1); fn = the calling function, nth =
+    which call of `name` in it (execution order of the C text, 0-based)."""
     import os
     f = os.environ.get("HOSTIFY_PAD_LOG")
     if f:
         ks = list(range(have, want)) if ks is None else ks
         with open(f, "a") as o:
-            o.write(f"{path},{name},{have},{want},{';'.join(map(str, ks))}\n")
+            o.write(f"{path},{name},{have},{want},{';'.join(map(str, ks))},"
+                    f"{fn or ''},{'' if nth is None else nth}\n")
 
 
 def hole_text(key):
@@ -1736,7 +1745,8 @@ class SigRewriter:
             for k, w in enumerate(cw):
                 pool = pools[wclass(w)]
                 if not pool:
-                    _pad_log(self.path, name, len(a_txt), m, [k])
+                    _pad_log(self.path, name, len(a_txt), m, [k],
+                             getattr(self, "cur_fn", None), getattr(self, "_nth", None))
                 new.append(pool.pop(0) if pool else self.regpass(name, k))
             rest = pools["i"] + pools["f"]
             if c.get("variadic"):
@@ -1752,7 +1762,8 @@ class SigRewriter:
                     if conv and a_txt[q].strip():
                         a_txt[q] = f"{conv}({a_txt[q]})"
             if len(a_txt) < m:
-                _pad_log(self.path, name, len(a_txt), m)
+                _pad_log(self.path, name, len(a_txt), m, None,
+                         getattr(self, "cur_fn", None), getattr(self, "_nth", None))
                 a_txt = a_txt + [self.regpass(name, k) for k in range(len(a_txt), m)]
             elif len(a_txt) > m and not c.get("variadic"):
                 pre = a_txt[m:]
@@ -1765,9 +1776,12 @@ class SigRewriter:
         (dataflow over the asm, port/tools/r12_regpass.csv) pass it; else 0."""
         cp = REGPASS.get((self.path, getattr(self, "cur_fn", None), name, k))
         params = getattr(self, "cur_params", [])
-        ex = REGEXPR.get((self.path, getattr(self, "cur_fn", None), name, k))
+        key = (self.path, getattr(self, "cur_fn", None), name, k)
+        nth = getattr(self, "_nth", None)
+        ex = REGEXPR.get(key + (nth,)) if nth is not None else None
+        ex = REGEXPR.get(key) if ex is None else ex
         if ex is None and cp is None:
-            sv = REGSYM.get((self.path, getattr(self, "cur_fn", None), name, k))
+            sv = REGSYM.get(key)
             if sv is not None:
                 ex = _render_sym(sv, params, getattr(self, "cur_modified", ()))
         if ex is not None:
@@ -1833,6 +1847,7 @@ class SigRewriter:
                     func_void = bool(w) and w[0] == "void" and not any(x[1] == "*" for x in stmt[:3])
                     if self._nest == 1:
                         self.cur_fn, self.cur_params = self._head_params(stmt)
+                        self._callno = {}
                         e = match_close(toks, i, "{", "}")
                         body = [x for x in toks[i:e] if x[0] not in ("ws", "comment")]
                         self.cur_assigned = {body[q][1] for q in range(len(body) - 1)
@@ -1878,7 +1893,16 @@ class SigRewriter:
                     inner_new = self.rewrite_uses(inner, in_pp)
                     args_new = split_top(inner_new, ",") if args else []
                     c = self.canon[t[1]]
+                    if in_pp:
+                        self._nth = None
+                    else:   # R12 per-call key: calls of t[1] in this function, inner first
+                        cn = getattr(self, "_callno", None)
+                        if cn is None:
+                            cn = self._callno = {}
+                        self._nth = cn.get(t[1], 0)
+                        cn[t[1]] = self._nth + 1
                     a_txt, pre = self.call_args(t[1], [text_of(a) for a in args_new])
+                    self._nth = None
                     pre_txt = "".join(f"(void)({x}), " for x in pre)
                     call = f"{t[1]}({','.join(a_txt)})"
                     nl = text_of(toks[i:e + 1]).count("\n")
