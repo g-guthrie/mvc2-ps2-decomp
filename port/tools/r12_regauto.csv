@@ -1,13 +1,9 @@
 source,caller,callee,arg,nth,expr
 src/L0_h.c,func_003D9CE0,func_0013D6F0,0,0,0x632710
-src/fb26_b.c,func_00328560,func_00199460,0,0,(void *)((*(int *)((char *)(p) + 24)))
-src/fb26_b.c,func_00328560,func_001C5390,0,0,(void *)(q)
-src/h12.c,func_00374150,func_00185870,1,0,(void *)((*(int *)((char *)(p) + 452)))
 src/k4.c,func_00401000,func_0040CA70,0,1,p
 src/nq157_a.c,func_003E8C00,func_003EAA80,1,0,1
 src/r3_33_c.c,func_0041DBA0,func_0041DF70,0,0,k
 src/r3_33_c.c,func_0041DBA0,func_0041EE80,0,0,k
 src/unl1_a.c,func_00340310,func_0032E690,0,0,(void *)(p)
-src/w174_a.c,func_00353E90,func_00354000,1,0,(void *)(((char *)(p) + 136))
 src/w188_a.c,func_00402C20,func_003FB2E8,2,0,buf
 src/xm4_a.c,func_0041DF70,func_00150ED0,0,0,1

@@ -1,0 +1,30 @@
+# Regression (R22 dispatch head func_0035B7E0): run with --cpu-team 0x25,0x0C,0x09
+# (Dhalsim / Spider-Man / Iceman); must reach frame ~3785 (it crashed at 2196).
+state 1/8
+wait 30
+until 1/7 start 40
+wait 30
+until 3/1/1 start 30
+wait 40
+press cross
+state 2/1/1
+wait 120
+shot charsel
+until 2/1/2 cross 50
+shot versus
+wait 400
+shot fight0
+press right 40
+press square
+press circle
+press square
+press circle
+press l1
+wait 30
+shot fight_assist
+wait 300
+shot fight2
+wait 1500
+shot fight3
+shot fight1
+quit

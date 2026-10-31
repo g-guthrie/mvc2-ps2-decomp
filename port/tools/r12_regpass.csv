@@ -30,6 +30,8 @@ src/dispatch_owner_mode_0039C960.c,func_0039C960,func_0039E450,0,0
 src/dispatch_owner_mode_0039C960.c,func_0039C960,func_0039E450,1,1
 src/dispatch_owner_mode_0039C960.c,func_0039C960,func_0039E450,2,2
 src/dispatch_owner_mode_0039C960.c,func_0039C960,func_0039E450,3,3
+src/dp3_b.c,func_001AD530,func_001AFC90,2,2
+src/dp3_b.c,func_001AD530,func_001AFC90,3,3
 src/dp3_e.c,func_0037AB50,func_00175700,0,0
 src/dp4_b.c,func_001AD8B0,func_001AFC90,2,2
 src/dp4_b.c,func_001AD8B0,func_001AFC90,3,3
@@ -51,6 +53,7 @@ src/fb23_h.c,func_001719E0,func_0016E960,3,3
 src/fb31_c.c,func_002C1010,func_00184110,0,0
 src/fb36_b.c,func_001D7AB0,func_001D7CD0,2,2
 src/fb36_b.c,func_001D7AB0,func_001D7CD0,3,3
+src/fb53_a.c,func_001BBFC0,func_001BC650,3,3
 src/fb58_e.c,func_001CB1A0,func_001CB0D0,0,0
 src/fb58_e.c,func_001CB1A0,func_001CB150,1,1
 src/fb6_h.c,func_0041D640,func_0041D6D0,2,2
@@ -120,6 +123,7 @@ src/grok_jz_00289040.c,residual_00289040,func_00289390,3,3
 src/grok_jz_00290AB0.c,residual_00290AB0,func_00290C50,1,1
 src/grok_jz_00290AB0.c,residual_00290AB0,func_00290C50,2,2
 src/grok_jz_00290AB0.c,residual_00290AB0,func_00290C50,3,3
+src/grok_m_69850.c,func_00169850,func_00169AE0,3,3
 src/grok_m_69850.c,func_00169850,func_00169BC0,3,3
 src/grok_nop_1959b0.c,func_001959B0,func_00194CA0,1,1
 src/grok_nopb_275350.c,func_00275350,func_002753A0,1,1
@@ -277,6 +281,9 @@ src/grok_w7_001c.c,func_001DC1A0,func_001DC1F0,2,2
 src/grok_w7_001c.c,func_001DC1A0,func_001DC1F0,3,3
 src/grok_w7_001c.c,func_001DC1A0,func_001DC440,2,2
 src/grok_w7_001c.c,func_001DC1A0,func_001DC440,3,3
+src/grok_w7_0020.c,func_00217D80,func_00217DD0,1,1
+src/grok_w7_0020.c,func_00217D80,func_00217DD0,2,2
+src/grok_w7_0020.c,func_00217D80,func_00217DD0,3,3
 src/grok_w7_003a.c,func_003B6340,func_003B6230,1,1
 src/grok_x1_3a07d0.c,func_003A07D0,func_003A0880,1,1
 src/grok_x1_3a07d0.c,func_003A07D0,func_003A0880,2,2
@@ -792,6 +799,10 @@ src/v7_e.c,func_001C3610,func_001C3A80,1,1
 src/w171_k.c,func_0032C880,func_0016E960,1,1
 src/w171_k.c,func_0032C880,func_0016E960,2,2
 src/w171_k.c,func_0032C880,func_0016E960,3,3
+src/w171_m.c,func_00257100,func_00257D60,2,2
+src/w171_m.c,func_00257100,func_00257D60,3,3
+src/w171_m.c,func_00257100,func_00258070,2,2
+src/w171_m.c,func_00257100,func_00258070,3,3
 src/w172_d.c,func_003AEFE0,func_003AF6D0,1,1
 src/w172_d.c,func_003AEFE0,func_003AF6D0,2,2
 src/w172_d.c,func_003AEFE0,func_003AF6D0,3,3
@@ -815,6 +826,12 @@ src/w178_e.c,func_001830D0,func_001581C0,0,0
 src/w178_e.c,func_001830D0,func_001581C0,1,1
 src/w179_a.c,func_00335B10,func_00336690,2,2
 src/w179_a.c,func_00335B10,func_00336690,3,3
+src/w180_g.c,func_00256FC0,func_00257640,2,2
+src/w180_g.c,func_00256FC0,func_00257640,3,3
+src/w180_g.c,func_00256FC0,func_00257D60,2,2
+src/w180_g.c,func_00256FC0,func_00257D60,3,3
+src/w180_g.c,func_00256FC0,func_00258070,2,2
+src/w180_g.c,func_00256FC0,func_00258070,3,3
 src/w180_t.c,func_0032B690,func_0032BEF0,0,0
 src/w1813_l.c,func_00357DF0,func_00357A40,0,0
 src/w181_k.c,func_0012FA40,func_0012FB90,0,0
@@ -852,7 +869,12 @@ src/w20a5_g.c,func_0033E8E0,func_003D90A0,2,2
 src/w20a5_g.c,func_0033E8E0,func_003D90A0,3,3
 src/w20b2_g.c,func_00370480,func_00370730,1,1
 src/w20b2_g.c,func_00370480,func_00370730,2,2
+src/w20c0_d.c,func_00335C50,func_00336690,1,1
+src/w20c0_d.c,func_00335C50,func_00336690,2,2
+src/w20c0_d.c,func_00335C50,func_00336690,3,3
 src/w20c2_j.c,func_00169960,func_00168E80,0,0
+src/w20c2_j.c,func_00169960,func_00169AE0,2,2
+src/w20c2_j.c,func_00169960,func_00169AE0,3,3
 src/w20c2_j.c,func_00169960,func_00169BC0,2,2
 src/w20c2_j.c,func_00169960,func_00169BC0,3,3
 src/w21a5_d.c,func_00195750,func_00175670,0,0
@@ -941,6 +963,12 @@ src/x0_c.c,func_0039E390,func_0039E450,3,3
 src/x10_a.c,func_002A8350,func_002A8420,3,3
 src/x4_a.c,func_002E2740,func_001863F0,0,0
 src/x4_a.c,func_00386D30,func_00174240,0,0
+src/x5_f.c,func_00256EF0,func_00256FC0,1,1
+src/x5_f.c,func_00256EF0,func_00256FC0,2,2
+src/x5_f.c,func_00256EF0,func_00256FC0,3,3
+src/x5_f.c,func_00256EF0,func_00257100,1,1
+src/x5_f.c,func_00256EF0,func_00257100,2,2
+src/x5_f.c,func_00256EF0,func_00257100,3,3
 src/x6_a.c,func_0014C100,func_0014C0E0,0,0
 src/x6_a.c,func_001D1A60,func_001D1AE0,1,1
 src/x6_a.c,func_001D1A60,func_001D1AE0,2,2

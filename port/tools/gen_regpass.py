@@ -28,6 +28,21 @@ COND = ("beq", "bne", "beqz", "bnez", "bgez", "bltz", "bgtz", "blez", "beql", "b
         "bgezl", "bltzl", "bgtzl", "blezl", "bc1t", "bc1f", "bc1tl", "bc1fl")
 
 
+def _starts():
+    """address -> name of every credited function (matches.csv), so code the
+    asm keeps inside another glabel (the residual_* functions) is split out."""
+    out = {}
+    try:
+        for r in csv.DictReader(open(ROOT / "config/matches.csv")):
+            try:
+                out[int(r["address"], 16)] = r["name"]
+            except (ValueError, KeyError):
+                pass
+    except OSError:
+        pass
+    return out
+
+
 def parse_asm(path, starts=None, targets=None):
     """glabel -> [("I", op, operands) | ("L", label, "")].  starts (address ->
     name, config/matches.csv) splits a glabel that holds several matched
@@ -35,9 +50,21 @@ def parse_asm(path, starts=None, targets=None):
     func_00197490)."""
     funcs, cur = {}, None
     starts = _starts() if starts is None else starts
+    ends = {}
+    for r in csv.DictReader(open(ROOT / "config/matches.csv")):
+        try:
+            ends[r["name"]] = int(r["address"], 16) + int(r["size"], 16)
+        except (ValueError, KeyError):
+            pass
     for l in open(path):
         m = re.match(r"glabel (\S+)", l)
         if m:
+            ma = re.search(r"_([0-9A-Fa-f]{8})$", m.group(1))
+            ad = int(ma.group(1), 16) if ma else None
+            if cur in ends and ad is not None and ad not in starts and ad < ends[cur] and funcs.get(cur):
+                # a glabel inside a matched function (main.s func_001AC870 is
+                # the tail of func_001AC860): keep one body
+                continue
             cur = m.group(1)
             funcs[cur] = []
             continue
@@ -161,10 +188,13 @@ def parse_jtbls(path):
     """jtbl_X -> entry addresses (0 for null/unknown)."""
     out, cur = {}, None
     for l in open(path):
-        m = re.match(r"(?:dlabel|glabel) (jtbl_[0-9A-Fa-f]+)", l)
+        m = re.match(r"(?:dlabel|glabel) (\S+)", l)
         if m:
-            cur = m.group(1)
-            out[cur] = []
+            # a table ends at the next label: main.s nests data labels inside
+            # an outer dlabel (jtbl_004631C0 runs on into D_004631D8)
+            cur = m.group(1) if m.group(1).startswith("jtbl_") else None
+            if cur:
+                out[cur] = []
             continue
         if cur and l.startswith(("enddlabel", "endlabel")):
             cur = None
@@ -1422,6 +1452,12 @@ def main():
             known.add(int(r["address"], 16))
         except ValueError:
             pass
+    # code entry points main.s marks inside a glabel (alabel func_0035B800):
+    # table targets as good as a matched function
+    for l in open(a.asm):
+        m = re.match(r"\s*alabel (\w+?)_?([0-9A-Fa-f]{8})\s*$", l)
+        if m:
+            known.add(int(m.group(2), 16))
     heads = dispatch_heads(funcs, parse_jtbls(a.asm), known)
     bysrc = collections.defaultdict(list)
     for r in csv.DictReader(open(ROOT / "config/matches.csv")):
