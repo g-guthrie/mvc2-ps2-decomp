@@ -42,6 +42,9 @@ SDL_VIDEODRIVER=offscreen ../../build/port-native/viewer --iso ../../private/dis
 #   --nearest --fog (per-stage fog from D_00477060) --lit (desc 0 demo) --cam-x X
 SDL_VIDEODRIVER=offscreen ../../build/port-native/viewer --iso ../../private/disc/mvc2.iso \
     --stage 1 --screenshot ../../private/converted/mesh/viewer_stage01.png --frames 2
+# soundtest: render 3 s of BGM track 3, or open it headless for 60 frames
+SDL_VIDEODRIVER=offscreen SDL_AUDIODRIVER=dummy ../../build/port-native/soundtest \
+    --iso ../../private/disc/mvc2.iso --track 3 --render /tmp/t3.wav --seconds 3
 
 # web build (an emcmake equivalent through the preset's toolchain file)
 source /home/user/emsdk/emsdk_env.sh
@@ -105,7 +108,18 @@ SDL2 is installed.
 ## Renderer design
 
 - **Canvas:** a 640x480 RGBA8 + DEPTH24 FBO. The PS2's 640x224 interlaced Y/2
-  is dropped: the game's 640x480 coordinates are used directly.
+  is dropped: the game's 640x480 coordinates are used directly.  The PS2
+  displays only rows 0..447 (DISPLAY DH = 447 for the 224-line FRAME buffer,
+  set by the game's `func_00100590`); the game frontend passes that to
+  `fl_set_display(640, 448)` and present shows only that part.
+- **Canvas binding and clear:** every draw entry binds the canvas first
+  (`r_canvas_bind`: FBO, viewport, scissor), because the game draws some
+  scenes from its logic step, before `func_00170D30`, and present binds the
+  window in between.  In the game frontend (`fl_set_flip_clear(1)`) the clear
+  colour (state 0x14) and Z are cleared at the first draw after each flip
+  (`fl_frame_flip`, `func_003ECD00`), as the PS2 fills the next draw buffer at
+  the flip before the frame's chain runs.  The viewer and soundtest keep the
+  clear in `fl_frame_begin`.
 - **Present** (`func_003ECD00` role): `glBlitFramebuffer` to the window.
   - `INTEGER` mode uses the largest integer scale with NEAREST (default on native).
   - `SHARP_FIT` mode (default on the web) does a NEAREST prescale to the next
@@ -290,9 +304,11 @@ Remaining / next steps:
      over-brightens (seen in neither the stages nor the tests).
    - **Battle stage filter:** `func_00152720` sets bilinear before list 6, but
      the other battle draw paths keep nearest. The viewer uses bilinear.
-   - **2D path:** `fl_tri_tex` interpolates colours perspective-correctly when
-     w != 1. The GS interpolates them affinely (the mesh path's `c * w / w`
-     trick applies).
+   - **2D path:** done: colours are interpolated affinely (`c * w / w`).
+   - **Packet vertex writes:** done: `fl_clay_vertices` keeps a CPU copy of
+     each clay mesh; the frontend re-reads the game's VU1 packet after a
+     write pass (`fe_mesh.c`, BOOT_NOTES renderer pass).
+   - **Colour scale:** done: untextured descriptors use 255 (D_004779F0 +0x28).
 2. Hook the API into the game once Port A links: the `func_XXXXXXXX` symbols
    become thin wrappers around `fl_*`. The prims take the game's structs as is;
    pointers in render states are host pointers (`uintptr_t`).
@@ -313,3 +329,14 @@ Remaining / next steps:
    IndexedDB.
 9. `-sMAXIMUM_MEMORY=2GB` and SDL2 2.32.10 from emsdk. The PWA service worker
    is network-first and caches the shell for offline start.
+
+## Debugging aids (game frontend)
+
+- `MVC2_MESH_DUMP=F`: at game frame F, log every clay draw (world matrix,
+  format, descriptor, texture, 0x66, material colour, screen bounds, NDC Z
+  range, the canvas pixel at the centre, scissor, blend and depth state) and
+  where `func_00170D30` falls among them.
+- `MVC2_LOG_STATE=1`: each distinct value of render states 0x5D, 0xD, 0x62,
+  0x63, 0x6B and 0x6C once, with the frame it first appeared.
+- `MVC2_NO_VTXWRITE=1`: ignore the game's packet vertex writes (A/B tests).
+- `-v`: also checks each new clay's packet against its GL mesh.

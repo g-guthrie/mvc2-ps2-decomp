@@ -260,7 +260,7 @@ static void update(void *u)
     host_pad_set(1, &p1);
     memset(fe_cnt, 0, sizeof fe_cnt);
     /* frame skip: when several steps run in one display frame only the last is drawn */
-    r_set_discard(!plat_step_is_last() && A.nshot == 0 && A.shot_every == 0);
+    r_set_discard(!plat_step_is_last() && A.nshot == 0 && A.shot_every == 0 && !S.n); /* shots see every step */
     mvc2_frame();
     r_set_discard(0);
     fe_audio_frame();

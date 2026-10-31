@@ -684,7 +684,7 @@ void fl_frame_begin(void)
     r_flush();
     if (!R.flip_clear) R.clear_pending = 1; /* viewer / soundtest: clear here */
     R.canvas_bound = 0;
-    r_canvas_bind();
+    if (!R.discard) r_canvas_bind(); /* a skipped step keeps the last drawn picture */
     /* func_00170D30: per-frame blend 0x32, nearest filtering */
     fl_set_render_state(0x5D, 0x32);
     fl_set_render_state(0x62, 0x10000);

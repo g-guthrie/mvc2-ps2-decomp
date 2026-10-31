@@ -192,10 +192,10 @@ Still faked / open (honest list):
   device records are copied unmapped.  The default layout works; a changed
   button configuration in OPTION is not applied.
 - `func_00127C50` (score-ranking record entry) is a stub: rankings are not recorded.
-- The 1/2 attract intro shows only its flat fades: its actors deform VU1
+- (Fixed in the renderer pass below.) The 1/2 attract intro shows only its flat fades: its actors deform VU1
   packet vertices in place (`func_001412D0` → `func_0041C010`), which the
   GL meshes built once at load do not follow.
-- IOP / GS / DMA setup is skipped (`boot.c`); `func_00100590` (GS env) stays a stub.
+- IOP / GS / DMA setup is skipped (`boot.c`). (`func_00100590` is not a stub: see the renderer pass below.)
 - 503 R12 padded arguments the dataflow cannot explain (`gen_regpass.py
   --unresolved`); one was hand-fixed (`r12_regexpr.csv`), the rest are
   checked as they are reached.
@@ -399,3 +399,57 @@ Chromium with SwiftShader (software GL); it did not reproduce in the arcade
 sweep (15 fights, all 59 characters) or the fidelity mode runs. Open: get a
 crash dump from a failing run (`--enable-crash-reporter`) and check on a
 real GPU.
+
+
+### Renderer pass (2026-10-31, branch port-render)
+
+Evidence under `private/converted/boot/rend/` (native) and
+`private/converted/boot/web/rend_*` (browser, single file).
+
+| What a player saw | Cause | Fix | Evidence |
+|---|---|---|---|
+| 1/2 attract intro: flat colour fades only, no actors | **Not** the vertex deformation: the intro draws its meshes from the logic step (`func_003D6FF0`), before `func_00170D30`.  The port bound the canvas and cleared it in `func_00170D30`, and after present the window framebuffer was still bound, so those draws went to the window and were then wiped.  On the PS2 every packet queued between two flips draws after the flip's clear (`func_003ECD00`: a SPRITE in `D_0062BF80` when it is not 0, then the chain) | `r_canvas_bind()` binds the canvas (FBO, viewport, scissor) at the first draw of any kind; the clear is done there once per flip (`fl_frame_flip`, from `host_present_hook` in `func_003ECD00`), so the finished frame stays readable for shots and present; a clear-colour change before anything was drawn still reaches the frame | `rend/intro2_m.png` (500-2500), web `rend_intro_m.png` |
+| Intro text/rings do not wave | effects rewrite VU1 packet vertices in place (`func_001412D0` -> `func_0041C010`, `func_0041BEC0`, and direct writers like `func_00341DF0`) | `fe_mesh.c`: `func_0041B3C0` (host wrapper) maps each POL vertex to its packet offset with the game's own `func_0041B7E0` / `func_0041B8B0`; `func_0041BB30` (end of a write pass = D-cache write-back) marks the clay; the next `func_003F0500` re-reads the packet into the GL buffer (`fl_clay_vertices`).  Checked: with `-v` every freshly built packet matches the GL mesh built from the POL chunk (0 differing vertices over 2600 frames); `MVC2_NO_VTXWRITE=1` turns it off for A/B | `rend/ab` pair: frame 1400 "THE 4th VS. INSTALLMENT!" waves only with it |
+| CAPCOM logo letters olive, plate on grey | untextured descriptors (2, 4, 8, 10, 12, 14, 16, 18) have colour scale 255 (`D_004779F0` +0x28, read by every setup callback); the shader used 128 | lit and material colours use the descriptor scale | `rend/intro2_m.png` frame 800-900: white plate, yellow letters |
+| Stage floor edge, other rows the PS2 never shows (bottom 32 rows) | the display circuit shows 448 lines (see `func_00100590` below); the port presented all 480 canvas rows | present shows canvas rows 0..447 (`fl_set_display`, from the game's DISPLAY register at each flip); integer scaling is in 640x448 steps | `rend/fight1/fight0.png` rows 448-479 vs window shots |
+| (latent) 2D triangles with w != 1 | colour was perspective-interpolated; the GS interpolates RGBA affinely | `c * w / w` as in the mesh path | |
+
+**`func_00100590` (GS display environment).**  It is not a stub: it is
+the credited `sceGsSetDefDispEnv` (src/r15_08_a.c) and runs at boot through
+`func_001020E0` (gdb: `D_0062BC50` = PMODE 0x66, SMODE2 3, DISPFB 640 wide
+PSMCT32, DISPLAY 0x001BF9FF0183227C = DX 636, DY 50, MAGH 3, DW 2559, DH
+447).  Readers: `func_001023C8` (sceGsPutDispEnv, privileged GS registers:
+no host meaning), and `func_003EC160`, which copies DX/DY to
+`D_0062BF94/98`, which nothing reads.  The draw environment
+(`func_00100A90`/`func_00101E78`: XYOFFSET 2048 - w/2, 2048 - h/2, scissor
+640x224, FRAME, ZBUF, TEST) matches what the port already applies
+(`D_0062BF84/88` offsets, scissor doubled to 448, Z GEQUAL/GREATER, alpha
+test "A != 0", `gIoDescriptorHeaderWords_004779D0`).  The one thing that
+matters on the host is the display size: DW/(MAGH+1) x (DH+1) = 640 x 448
+of the 224-line FRAME-mode buffer, i.e. canvas rows 0..447; `fe_render.c`
+reads it at each flip.
+
+**Checked unchanged** (code read against the PS2 drawing code): blend
+mapping (`MVC2_LOG_STATE=1` over the intro, menus, a fight with assists and
+a hyper: only 0x32, 0x01, 0x12, 0x11 occur; no destination-alpha mode, so
+the GL alpha channel content never matters), alpha test (TEST = 0x7000F /
+0x5000F...: ATST NOTEQUAL AREF 0, AFAIL KEEP, as the port), clear colour 0 =
+no clear on the PS2 (the port clears to black then; every screen covers the
+frame).
+
+**Open**
+- **Crash in a fight (i386, layout-dependent), for the robustness /
+  play-through work:** `func_0035B7E0(u8 *p) { jtbl_004631C0[p[5]](p); }`
+  (src/composite_dispatch_heads.c) is a MIPS tail-jump dispatch head whose
+  `$a1` (owner) is live at the `jr`, but it is not in
+  `port/tools/r12_tailfwd.csv` (its targets, e.g. `func_0035B800`, are
+  `alabel`s inside the head's range, so R22 does not see "every entry is a
+  known function").  `func_0035B800(p, owner)` then writes `owner[0x20B]`
+  through stack garbage: with this branch's link layout it hit the GOT entry
+  of `SDL_PollEvent` (frame 2196 of `arcade_fight.txt`, CPU Dhalsim /
+  Spider-Man / Iceman; gdb watchpoint).  Not fixed here (r12 csv /
+  gen_regpass.py belong to the other agents); runs above use
+  `--cpu-team 1,2,3`.
+- Alpha above 0x80 (GS over-bright) is still clamped to 1.0 by GL.
+- The PS2 draws into a 224-line buffer (every 2D/3D Y halved, then
+  line-doubled on the TV); the port renders at full 448-line resolution.
