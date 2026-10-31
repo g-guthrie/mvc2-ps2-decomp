@@ -660,7 +660,7 @@ FlModel *fl_model_load(const uint8_t *data, size_t size, const FlModelLoad *ld)
  * handle, built from the same POL mesh chunk with the format word current
  * at build time, and draw it with the current render state. */
 #define MAX_CLAY MAX_CLAY_MESH
-static FlModel CLAY = { 1 };
+static FlModel CLAY = { .keep_cpu = 1 };
 
 static void clay_free(int h)
 {
@@ -946,8 +946,9 @@ int fl_mesh_draw(FlModel *mdl, int i)
                 if (c[3] == 0.f) continue;
                 float sx = (c[0] * ax + c[3] * bx) / c[3], sy = (c[1] * ay + c[3] * by) / c[3];
                 sx = (sx + 1.f) * 320.f; sy = (1.f - sy) * 240.f;
-                if (sx < x0) x0 = sx; if (sx > x1) x1 = sx; if (sy < y0) y0 = sy; if (sy > y1) y1 = sy;
-                { float z = c[2] * -(vf[1] - vf[0]) / c[3]; if (z < w0) w0 = z; if (z > w1) w1 = z; }
+                float z = c[2] * -(vf[1] - vf[0]) / c[3];
+                x0 = fminf(x0, sx); x1 = fmaxf(x1, sx); y0 = fminf(y0, sy); y1 = fmaxf(y1, sy);
+                w0 = fminf(w0, z); w1 = fmaxf(w1, z);
             }
             GLint sb[4], bs = 0, bd = 0, be = 0, df = 0, bl = 0, dt = 0;
             glGetIntegerv(GL_SCISSOR_BOX, sb); glGetIntegerv(GL_BLEND_SRC_RGB, &bs); glGetIntegerv(GL_BLEND_DST_RGB, &bd);

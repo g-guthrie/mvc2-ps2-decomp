@@ -28,7 +28,7 @@
 extern int func_003E0DB0(unsigned int, void *, void *, unsigned int);
 extern int func_003DD030(int);
 
-static int fe_log_tex;
+static int fe_log_tex, fe_log_state;
 /* per-frame draw counters (MVC2_LOG_DRAW=1 or the shot log) */
 int fe_cnt[8]; /* tri_tex, tri, sprite, quad, fill, tri_tex rejected, sprite rejected, quad rejected */
 
@@ -222,6 +222,19 @@ void fe_sync_state(void)
 int func_003DF850(int id, int v)
 {
     int r = func_003DF850__game(id, v);
+    if (fe_log_state && (id == 0x5D || id == 0xD || id == 0x6C || id == 0x6B || id == 0x62 || id == 0x63)) {
+        /* MVC2_LOG_STATE=1: each distinct render-state value once, with the frame it was first set */
+        static u32 seen[512];
+        static int nseen;
+        u32 key = (u32)id << 24 ^ (u32)v, k;
+        extern volatile long mvc2_host_frame;
+        for (k = 0; k < (u32)nseen && seen[k] != key; k++)
+            ;
+        if (k == (u32)nseen && nseen < 512) {
+            seen[nseen++] = key;
+            host_log("state %#x = %#x first at frame %ld (D_004C2AD0 %08X)", id, v, mvc2_host_frame, EE_BSS(u32, 0x004C2AD0));
+        }
+    }
     fl_set_render_state(id, (uintptr_t)(u32)v);
     fl_sync_mode_words(EE_BSS(u32, 0x004C2AD0), EE_BSS(u32, 0x004C2AD4));
     if (id >= 4 && id <= 7)
@@ -377,12 +390,34 @@ int func_00420BF0(void *writer, void *quad) /* batch-writer textured quad (text)
 
 static const HostRenderOps fe_ops = { fe_sprite, 0, 0, 0, fe_fill, 0 };
 
-static void fe_flip(void) { fl_frame_flip(); }
+/* func_003ECD00 (flip).  The display size comes from the game's own display
+ * environment (D_0062BC50, built by sceGsSetDefDispEnv = func_00100590 in
+ * func_001020E0): DISPLAY.DW / (MAGH + 1) pixels by DH + 1 lines.  With the
+ * 640x224 FRAME-mode buffer drawn at Y/2, each display line is one canvas
+ * row, so the PS2 shows canvas rows 0..447 of the 640x480 canvas.  The rest
+ * of the environment (PMODE, SMODE2, DISPFB, DX/DY, BGCOLOR) only steers the
+ * TV encoder and has no host counterpart; nothing else reads it. */
+static void fe_flip(void)
+{
+    static unsigned long long last = ~0ull;
+    unsigned long long d = EE_BSS(unsigned long long, 0x0062BC68); /* disp[0].display */
+    if (d != last) {
+        int magh = (int)((d >> 23) & 0xF), dw = (int)((d >> 32) & 0xFFF), dh = (int)((d >> 44) & 0x7FF);
+        last = d;
+        if (d && dw && dh) {
+            fl_set_display((dw + 1) / (magh + 1), dh + 1);
+            if (host_verbose)
+                host_log("display: %dx%d (DISPLAY %016llX)", (dw + 1) / (magh + 1), dh + 1, d);
+        }
+    }
+    fl_frame_flip();
+}
 
 void fe_render_init(void)
 {
     fl_set_flip_clear(1);
     host_present_hook = fe_flip;
     fe_log_tex = getenv("MVC2_LOG_TEX") != 0;
+    fe_log_state = getenv("MVC2_LOG_STATE") != 0;
     host_render_ops = &fe_ops;
 }

@@ -121,6 +121,9 @@ void func_0041B3C0(void *a, void *b, int c)
     cap = n;
     if (*(s32 *)((u8 *)b + 0x14) + 1 > cap) cap = *(s32 *)((u8 *)b + 0x14) + 1;
     if (n <= 0 || cap > 0x100000) return;
+    /* func_0041B8B0 writes one entry per packet vertex whatever the count;
+     * the packet offsets are u16, so a packet holds at most 0x10000 / 0x10 */
+    if (cap < 0x1000) cap = 0x1000;
     pairs = (u16 *)calloc((size_t)cap + 16, 4);
     for (k = 0; k < cap; k++) pairs[2 * k] = 0xFFFF;
     func_0041B7E0(pairs, b);          /* .a = POL vertex index, packet order */
@@ -205,8 +208,11 @@ int func_003F0500(int h)
             if (cmap[h].ever) cmap[h].dirty = 1;  /* the packet still holds the game's writes */
         }
         if (cmap[h].dirty) {
+            static int off = -1;
+            if (off < 0) off = getenv("MVC2_NO_VTXWRITE") != 0; /* A/B testing */
             cmap[h].dirty = 0;
-            if (cmap[h].fmt == fmt) cmap_pull(h, 0);
+            if (off) ;
+            else if (cmap[h].fmt == fmt) cmap_pull(h, 0);
             else HOST_ONCE("clay %d: packet rebuilt with format %08X (map %08X); vertex writes not followed",
                            h, fmt, cmap[h].fmt);
         }

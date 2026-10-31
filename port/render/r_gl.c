@@ -52,13 +52,14 @@ static struct {
     int discard;           /* r_set_discard: frame skip */
     int sprite_filter;     /* r_set_sprite_filter: -1 game, 0 nearest, 1 smooth */
     GLuint pp_prog, pp_vao;/* present pass */
-    GLint pu_src, pu_src_size, pu_dst_size, pu_filter, pu_crt, pu_strength, pu_mask;
+    GLint pu_src, pu_src_size, pu_src_rect, pu_tex_size, pu_dst_size, pu_filter, pu_crt, pu_strength, pu_mask;
     int draws, last_draws, last_verts, frame_verts;
     /* canvas binding and the flip clear (fl_set_flip_clear) */
     int canvas_bound;      /* canvas FBO + its viewport/scissor are current */
     int flip_clear;        /* clear at the first draw after fl_frame_flip, not in fl_frame_begin */
     int clear_pending;     /* a clear is due before the next draw */
     int drawn;             /* something was drawn since the last clear */
+    int disp_w, disp_h;    /* the part of the canvas the display shows (fl_set_display), from the top left */
 } R;
 
 /* ---------------- shaders ---------------- */
@@ -69,12 +70,13 @@ static const char *k_vs =
     "in float a_pal;\n"
     "uniform vec2 u_view;\n"
     "out vec2 v_uv;\n"
-    "out vec4 v_col;\n"
+    "out vec4 v_colw;  /* colour * w, and w: the GS interpolates RGBA affinely in */\n"
+    "out float v_w;    /* screen space (only STQ is perspective-correct) */\n"
     "flat out float v_pal;\n"
     "void main() {\n"
     "  vec2 n = vec2(a_pos.x / u_view.x * 2.0 - 1.0, 1.0 - a_pos.y / u_view.y * 2.0);\n"
     "  gl_Position = vec4(n * a_pos.w, a_pos.z * a_pos.w, a_pos.w);\n"
-    "  v_uv = a_uv; v_col = a_col; v_pal = a_pal;\n"
+    "  v_uv = a_uv; v_colw = a_col * a_pos.w; v_w = a_pos.w; v_pal = a_pal;\n"
     "}\n";
 
 static const char *k_fs =
@@ -84,7 +86,8 @@ static const char *k_fs =
     "uniform sampler2D u_tex;\n"
     "uniform sampler2D u_pal;\n"
     "in vec2 v_uv;\n"
-    "in vec4 v_col;\n"
+    "in vec4 v_colw;\n"
+    "in float v_w;\n"
     "flat in float v_pal;\n"
     "out vec4 o_col;\n"
     "vec4 lut(ivec2 t, ivec2 sz) {\n"
@@ -95,6 +98,7 @@ static const char *k_fs =
     "}\n"
     "void main() {\n"
     "  vec4 t = vec4(1.0);\n"
+    "  vec4 v_col = v_colw / v_w;\n"
     "  if (u_mode == 1) {\n"
     "    t = texture(u_tex, v_uv);\n"
     "  } else if (u_mode == 2) {\n"
@@ -706,7 +710,9 @@ static const char *k_pp_vs =
     "}\n";
 static const char *k_pp_fs =
     "uniform sampler2D u_src;\n"
-    "uniform vec2 u_src_size, u_dst_size;\n"
+    "uniform vec2 u_src_size, u_dst_size;  /* the displayed part of the canvas, the window rect */\n"
+    "uniform vec4 u_src_rect;              /* that part in canvas texels: x0, y0, w, h */\n"
+    "uniform vec2 u_tex_size;              /* the canvas texture */\n"
     "uniform int u_filter;   /* 0 nearest, 1 sharp, 2 smooth */\n"
     "uniform int u_crt;      /* 0 off, 1 scanlines, 2 crt */\n"
     "uniform float u_strength;\n"
@@ -716,13 +722,14 @@ static const char *k_pp_fs =
     "vec3 fetch(vec2 uv) {\n"
     "  if (u_filter == 1) {\n"
     "    vec2 texel = uv * u_src_size;\n"
+    "    vec2 o = u_src_rect.xy;\n"
     "    vec2 scale = max(floor(u_dst_size / u_src_size + 0.01), vec2(1.0));\n"
     "    vec2 tf = floor(texel), cd = fract(texel) - 0.5;\n"
     "    vec2 rr = 0.5 - 0.5 / scale;\n"
     "    vec2 f = (cd - clamp(cd, -rr, rr)) * scale + 0.5;\n"
-    "    return texture(u_src, (tf + f) / u_src_size).rgb;\n"
+    "    return texture(u_src, (o + tf + f) / u_tex_size).rgb;\n"
     "  }\n"
-    "  return texture(u_src, uv).rgb;\n"
+    "  return texture(u_src, (u_src_rect.xy + uv * u_src_rect.zw) / u_tex_size).rgb;\n"
     "}\n"
     "void main() {\n"
     "  vec2 uv = v_uv;\n"
@@ -774,6 +781,8 @@ static int make_present(void)
     }
     R.pu_src = glGetUniformLocation(R.pp_prog, "u_src");
     R.pu_src_size = glGetUniformLocation(R.pp_prog, "u_src_size");
+    R.pu_src_rect = glGetUniformLocation(R.pp_prog, "u_src_rect");
+    R.pu_tex_size = glGetUniformLocation(R.pp_prog, "u_tex_size");
     R.pu_dst_size = glGetUniformLocation(R.pp_prog, "u_dst_size");
     R.pu_filter = glGetUniformLocation(R.pp_prog, "u_filter");
     R.pu_crt = glGetUniformLocation(R.pp_prog, "u_crt");
@@ -786,23 +795,41 @@ static int make_present(void)
 void r_present_rect(int W, int H, const RPresent *p, int *x, int *y, int *w, int *h)
 {
     int cw, ch;
-    int k = W / FL_SCREEN_W < H / FL_SCREEN_H ? W / FL_SCREEN_W : H / FL_SCREEN_H;
+    const int DW = R.disp_w > 0 ? R.disp_w : FL_SCREEN_W, DH = R.disp_h > 0 ? R.disp_h : FL_SCREEN_H;
+    int k = W / DW < H / DH ? W / DW : H / DH;
     if (p->scale == R_SCALE_STRETCH) {
         cw = W;
         ch = H;
     } else if (p->scale == R_SCALE_INTEGER && k >= 1) {
-        cw = FL_SCREEN_W * k;
-        ch = FL_SCREEN_H * k;
+        cw = DW * k;
+        ch = DH * k;
     } else {
         /* fit keeping 4:3 */
-        if ((long)W * FL_SCREEN_H < (long)H * FL_SCREEN_W) { cw = W; ch = W * FL_SCREEN_H / FL_SCREEN_W; }
-        else { ch = H; cw = H * FL_SCREEN_W / FL_SCREEN_H; }
+        if ((long)W * DH < (long)H * DW) { cw = W; ch = W * DH / DW; }
+        else { ch = H; cw = H * DW / DH; }
     }
     *x = (W - cw) / 2;
     *y = p->valign_top ? 0 : (H - ch) / 2;
     if (p->valign_top && p->top_margin > 0 && ch + p->top_margin <= H) *y = p->top_margin;
     *w = cw;
     *h = ch;
+}
+
+/* The PS2 shows only part of the frame buffer: the display circuit's DISPLAY
+ * register (sceGsSetDefDispEnv, func_00100590) gives 448 lines for the
+ * 224-line FRAME-mode buffer, i.e. canvas rows 0..447. */
+void fl_set_display(int w, int h)
+{
+    if (w <= 0 || w > FL_SCREEN_W) w = FL_SCREEN_W;
+    if (h <= 0 || h > FL_SCREEN_H) h = FL_SCREEN_H;
+    R.disp_w = w;
+    R.disp_h = h;
+}
+
+void fl_get_display(int *w, int *h)
+{
+    if (w) *w = R.disp_w > 0 ? R.disp_w : FL_SCREEN_W;
+    if (h) *h = R.disp_h > 0 ? R.disp_h : FL_SCREEN_H;
 }
 
 void r_present_ex(int W, int H, const RPresent *p)
@@ -820,7 +847,9 @@ void r_present_ex(int W, int H, const RPresent *p)
     glClearColor(0, 0, 0, 1);
     glClear(GL_COLOR_BUFFER_BIT);
     int gy = H - (y + h); /* GL origin is bottom-left */
-    int exact = (w % FL_SCREEN_W) == 0 && (h % FL_SCREEN_H) == 0 && w / FL_SCREEN_W == h / FL_SCREEN_H;
+    int DW, DH;
+    fl_get_display(&DW, &DH);
+    int exact = (w % DW) == 0 && (h % DH) == 0 && w / DW == h / DH;
     int filter = p->filter;
     if (exact && filter != R_FILTER_SMOOTH) filter = R_FILTER_NEAREST; /* identical, cheaper */
     glViewport(x, gy, w, h);
@@ -833,7 +862,13 @@ void r_present_ex(int W, int H, const RPresent *p)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
     glUniform1i(R.pu_src, 0);
-    glUniform2f(R.pu_src_size, (float)FL_SCREEN_W, (float)FL_SCREEN_H);
+    glUniform2f(R.pu_src_size, (float)DW, (float)DH);
+    /* GL rows run bottom-up: canvas rows 0..DH-1 are texture rows FL_SCREEN_H-DH..FL_SCREEN_H-1 */
+    {
+        float sr[4] = { 0.f, (float)(FL_SCREEN_H - DH), (float)DW, (float)DH };
+        glUniform4fv(R.pu_src_rect, 1, sr);
+    }
+    glUniform2f(R.pu_tex_size, (float)FL_SCREEN_W, (float)FL_SCREEN_H);
     glUniform2f(R.pu_dst_size, (float)w, (float)h);
     glUniform1i(R.pu_filter, filter);
     glUniform1i(R.pu_crt, p->crt);

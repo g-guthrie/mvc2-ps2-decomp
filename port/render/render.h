@@ -34,6 +34,10 @@ void fl_frame_end(void);          /* flush pending batches (func_00170D70 role) 
  * func_003ECD00) instead of in fl_frame_begin; the PS2 clears the draw buffer
  * at the flip, and some scenes draw before func_00170D30. */
 void fl_set_flip_clear(int on);
+/* The displayed part of the 640x480 canvas (top left), from the game's
+ * display environment; present and the window layout use it. */
+void fl_set_display(int w, int h);
+void fl_get_display(int *w, int *h);
 void fl_frame_flip(void);
 enum { R_PRESENT_INTEGER = 0, R_PRESENT_SHARP_FIT = 1 };
 void r_present(int win_w, int win_h, int mode); /* func_003ECD00 role: canvas -> window */
