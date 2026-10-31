@@ -58,3 +58,15 @@ int func_004148C0(void *av, void *bv, void *cv, float marker)
 }
 
 /* func_0032DF90 (CPU team pick + --cpu-team test forcing): see arcade.c. */
+
+/* src/nq*: an effect of Ruby Heart's (spawned by func_003A4F80, src/h3.c)
+ * never gets an owner at +0x14; its step (func_003A5790) still copies the
+ * owner's position from it, so the EE reads kernel memory at 0x34..0x3C and
+ * the web build reads zeros at wasm address 0x34.  Natively that is a
+ * SIGSEGV: read the same zeros here. */
+extern void func_003A5930__game(void *, void *);
+void func_003A5930(void *a, void *b)
+{
+    static u8 zero[0x40];
+    func_003A5930__game(a, b ? b : zero);
+}
