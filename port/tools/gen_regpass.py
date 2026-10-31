@@ -184,11 +184,42 @@ def dispatch_heads(funcs, jtbls, known):
     return out
 
 
+def leaf_writes(funcs):
+    """name -> registers a leaf function (no calls) may write.  The EE code
+    relies on such a callee leaving the other argument registers alone
+    (func_00173A50 calls func_001734D0(p), then func_00173650 with $a0 still
+    p)."""
+    out = {}
+    for F, body in funcs.items():
+        w, leaf = set(), True
+        for x in body:
+            if x[0] != "I":
+                continue
+            op, opr = x[1], x[2]
+            if op in ("jal", "jalr") or (op in ("j",) and not opr.startswith(".L")):
+                leaf = False
+                break
+            if op == "jr" and opr.strip() != "$ra":
+                leaf = False
+                break
+            rs = re.findall(r"\$\w+", opr)
+            if op in STORE or op in COND or op in ("b", "j", "jr", "nop", "sync", "sync.p", "mthi", "mtlo",
+                                                    "ctc1", "teq", "tne") or not rs:
+                continue
+            if op in ("mult", "multu", "div", "divu", "mult1", "multu1", "div1", "divu1") and len(rs) == 2:
+                continue
+            w.add(rs[1] if op in ("mtc1", "dmtc1") and len(rs) > 1 else rs[0])
+        if leaf:
+            out[F] = w
+    return out
+
+
 def flow(funcs, ind=None):
     """(caller, callee) -> {arg register: entry token 'E$aN' or 'X'} over all sites.
     ind: if a dict, also gets caller -> [(instruction index, snapshot)] for
     every indirect call (jalr, or a jr through a register other than $ra)."""
     result = {}
+    leaves = leaf_writes(funcs)
     for F, body in funcs.items():
         lab = {x[1]: k for k, x in enumerate(body) if x[0] == "L"}
         first_label = min(lab.values()) if lab else len(body)
@@ -226,8 +257,10 @@ def flow(funcs, ind=None):
                         snap = {r: st.get(r, "X") for r in ARGR}
                         prev = sites.get(k)
                         sites[k] = snap if prev is None else {r: (prev[r] if prev[r] == snap[r] else "X") for r in ARGR}
+                    lw = leaves.get(opr.strip()) if op == "jal" else None
                     for r in CALLER_SAVED:
-                        st[r] = "X"
+                        if lw is None or r in lw or r in ("$v0", "$v1", "$ra"):
+                            st[r] = "X"
                     k += 2
                     continue
                 if op in COND or op in ("b", "j", "jr"):

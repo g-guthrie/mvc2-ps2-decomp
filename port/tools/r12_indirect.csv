@@ -8,6 +8,7 @@ src/h1d.c,func_001AB040,D_004BF7F8[p[7]](),"p, q"
 src/h9.c,func_003C9370,D_004762B0[p[4]](),"p, (__UINTPTR_TYPE__)(*(unsigned int *)(__UINTPTR_TYPE__)(((__UINTPTR_TYPE__)(p) + 24)))"
 src/h9b.c,func_003A5700,D_004C1EA8[p[5]](),"p, q"
 src/m3g.c,func_0037F230,D_004642E0[p[4]](),p
+src/m3g.c,func_0037F230,D_004642F0[p[4]](),p
 src/menu_callback_invoke_00129080.c,func_00129080,D_0043CC90[index](),index
 src/q13_a.c,func_003B1850,D_004C1F98[p[5]](),"p, q"
 src/w9m2c.c,func_003A7070,D_004C1EF0[p[5]](),"p, q"
