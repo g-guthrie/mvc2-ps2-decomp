@@ -20,6 +20,7 @@ static struct {
     int paused, paused_reported;
     int hold;
     int fixed_step, step_last, max_steps, frame_skip, force_render;
+    int speed; /* plat_set_speed (testing): game steps per real 1/60 s */
     double last;            /* seconds */
     double acc;
     PlatApp *app;
@@ -197,6 +198,7 @@ void plat_set_hold(int on) { P.hold = on != 0; P.acc = 0; P.force_render = 1; }
 int plat_hold(void) { return P.hold; }
 int plat_step_is_last(void) { return P.step_last; }
 void plat_set_max_steps(int n) { P.max_steps = n < 1 ? 1 : n > 8 ? 8 : n; }
+void plat_set_speed(int n) { P.speed = n < 1 ? 1 : n > 16 ? 16 : n; }
 void plat_set_frame_skip(int on) { P.frame_skip = on != 0; }
 void plat_request_render(void) { P.force_render = 1; }
 TouchPad *plat_touch(void) { return &P.touch; }
@@ -571,11 +573,12 @@ static void frame_at(PlatApp *app, double now)
         dt = snap_dt(dt);
         if (dt > 0.25) dt = 0.25;  /* after a stall, do not spiral */
         if (dt < 0) dt = 0;
-        P.acc += dt;
+        P.acc += dt * (P.speed > 1 ? P.speed : 1);
         int n = (int)((P.acc + 1e-6) / step);
-        if (n > P.max_steps) {
-            P.st.slowed += n - P.max_steps;
-            n = P.max_steps;
+        if (n > P.max_steps * (P.speed > 1 ? P.speed : 1)) {
+            int cap = P.max_steps * (P.speed > 1 ? P.speed : 1);
+            P.st.slowed += n - cap;
+            n = cap;
             P.acc = 0;
         } else {
             P.acc -= n * step;

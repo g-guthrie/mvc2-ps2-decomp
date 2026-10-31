@@ -57,6 +57,7 @@ void plat_run(PlatApp *app);             /* returns when quit (native) */
 void plat_frame(PlatApp *app);           /* one host frame */
 void plat_request_quit(void);
 int plat_quit_requested(void);
+void plat_set_speed(int n);             /* testing: run the game n times faster than real time */
 void plat_set_fixed_step(int on);        /* 1 step per frame, ignores real time */
 int plat_paused(void);
 void plat_set_hold(int on);              /* settings UI open: logic stops, input + render go on */

@@ -10,7 +10,7 @@
  *        [--press F:BUTTON[:LEN] ...] [--script FILE] [--hidden] [--size WxH] [--desktop-gl] [-v]
  *        [--config FILE] [--set KEY=VALUE ...] [--fullscreen] [--no-unlock]
  *        [--wshot F:FILE.png ...] [--key F:KEYNAME[:LEN] ...]
- *        [--arcade abc --naomi mvsc2.zip] [--arcade-trace] [--cpu-team a,b,c] [--cpu-hp N] [--p1-hp N] [--draw-every N]
+ *        [--arcade abc --naomi mvsc2.zip] [--arcade-trace] [--cpu-team a,b,c] [--cpu-hp N] [--p1-hp N] [--draw-every N] [--speed N]
  *
  * --frames N quits after N game frames.  --shot F:path writes the 640x480
  * canvas after game frame F.  --press F:start (or cross, circle, square,
@@ -343,7 +343,7 @@ int main(int argc, char **argv)
     int w = 1280, h = 960, hidden = 0, desktop_gl = 0, fullscreen = -1, i;
     const char *config = NULL;
     const char *sets[64];
-    int nsets = 0, no_unlock = 0;
+    int nsets = 0, no_unlock = 0, speed = 1;
     static PlatApp app = { NULL, update, render, on_pause };
     for (i = 1; i < argc; i++) {
         const char *a = argv[i], *n = i + 1 < argc ? argv[i + 1] : NULL;
@@ -400,6 +400,7 @@ int main(int argc, char **argv)
         else if (!strcmp(a, "--set") && n) { if (nsets < 64) sets[nsets++] = n; i++; }
         else if (!strcmp(a, "--fullscreen")) fullscreen = 1;
         else if (!strcmp(a, "--cpu-team") && n) { setenv("MVC2_CPU_TEAM", n, 1); i++; } /* testing */
+        else if (!strcmp(a, "--speed") && n) { speed = atoi(n); i++; }                    /* testing */
         else if (!strcmp(a, "--draw-every") && n) { A.draw_every = atoi(n); i++; }      /* testing */
         else if (!strcmp(a, "--p1-hp") && n) { setenv("MVC2_P1_HP", n, 1); i++; }        /* testing */
         else if (!strcmp(a, "--cpu-hp") && n) { setenv("MVC2_CPU_HP", n, 1); i++; }      /* testing */
@@ -459,6 +460,7 @@ int main(int argc, char **argv)
     settings_apply_all();
     if (hidden)
         plat_set_fixed_step(1);
+    plat_set_speed(speed);
 #ifndef __EMSCRIPTEN__
     if (!iso)
         iso = "private/disc/mvc2.iso";
