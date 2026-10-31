@@ -423,7 +423,7 @@ char 05 gamma 15/11 55 -> 40, char 09 alpha 15/06 52 -> 68, 06 alpha 15/04
 Not observed (4): char 00 alpha, 1e beta, 27 alpha and 28 gamma. The first
 three are the shoto fireball assists (Ryu, Akuma, Ken: script 15/03): in
 these native runs the partner finishes 15/03 and then stays in state 0x15
-without exiting, so no further assists come (an open port bug, see 9).
+without exiting, so no further assists come (a port bug, since fixed: see 9).
 
 Per character (first script of each assist, `inv` = startup-invulnerable
 ticks NAOMI/PS2 where not 0):
@@ -511,10 +511,11 @@ Not implemented, because it is not identifiable as code.
   port (`D_004C2010`, a function table credited as the raw EE address
   0x003B5F30; host R10 override in host_overrides.py, BOOT_NOTES "R12 robust
   pass").
-- Shoto fireball assists hang (port bug, not data): Ryu alpha, Ken (0x27)
-  alpha and Akuma beta finish script 15/03, then the partner stays in state
-  0x15 (`+0x1E4`) and never exits, so no further assist can be called
-  (native, forced teams; Ryu's beta and gamma work). Not yet traced.
+- Fixed (2026-10-31, BOOT_NOTES "Play-through"): the shoto fireball
+  assists (Ryu alpha, Ken alpha, Akuma beta) hung after 15/03. The partner's
+  slide (`func_001EB330`) waits for its velocity to change sign through an
+  explicit call of the EE soft-double compare `_dpflt`, which was always
+  false on the host. They now exit (18/04, 18/02) and can be called again.
 - Check one move in MAME against the port (the Rev A against Dreamcast-data
   caveat in §4.3).
 - Fallback frames use NAOMI rects of the same index (the count is logged per

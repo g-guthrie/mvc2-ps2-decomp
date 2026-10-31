@@ -1,0 +1,29 @@
+# vs_two_pads (play-through pass; see BOOT_NOTES "Play-through")
+state 1/8
+wait 30
+until 1/7 start 40
+wait 30
+until 3/1/1 start 30
+wait 40
+press right
+wait 20
+shot v_menu
+press cross
+wait 150
+shot v_1
+press cross
+wait 30
+press p2:cross
+wait 60
+until 2/1/2 cross+p2:cross 40
+wait 600
+shot v_fight
+press right 30
+press square
+press p2:circle
+press l1
+wait 60
+shot v_fight2
+wait 300
+shot v_fight3
+quit

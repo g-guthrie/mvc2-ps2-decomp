@@ -481,3 +481,92 @@ Iceman, past frame 2196 to 3785: the R22 head `func_0035B7E0` regression),
 and the 35-run assist sweep (`private/converted/boot/native/assist_sweep/`).
 Open, found by the sweep: the shoto fireball assists (Ryu alpha, Ken alpha,
 Akuma beta) hang after script 15/03 (ARCADE_DIFF.md 9).
+
+### Play-through (2026-10-31, branch port-play, on port-robust)
+
+The whole game was played end to end. Native runs used `--script --hidden`
+and the new test options below; the web single file used `?script=` /
+`port/tools/web_script.js` and `fight.js`. Scripts:
+`port/tools/scripts/arcade_ending_rank.txt`, `score_attack.txt`,
+`training_pause.txt`, `vs_two_pads.txt`, `shop_buy_save.txt`, `charsel.txt`.
+Evidence: `private/converted/boot/play/`.
+
+**Test options added** (testing only; USER_GUIDE "Testing options"):
+- `--cpu-hp N` caps side 2's health (player records 1/3/5). KOs still go
+  through the game's own damage and KO code.
+- `--p1-hp N` tops up side 1's health.
+- `--draw-every N` draws one game frame in N. A script `shot` forces its own
+  frame to be drawn.
+- `--speed N` runs N game steps per real 1/60 s. Web: `?args=--speed%204`.
+
+Native headless arcade: about 300 fps with `--draw-every 30`. The full run
+to the credits takes about 3 minutes.
+
+**Fixed (each a separate commit, with its evidence dir):**
+
+| What a player saw | Cause | Fix | Evidence |
+|---|---|---|---|
+| Native SIGSEGVs, one fight after another, in arcade (KO of chars 0x1C/0x1D; func_003D7D50; func_00354000; Ruby Heart's effects; residual_* entries) | Padded arguments the R12 detector missed: function tables whose asm label runs on into data; `residual_*` table entries and code inside another glabel; registers holding `param + k` or a load through a param; table calls written `T[i]()` | R12 detector (dispatch-head leading run, residual parsing and splitting, `r12_regsym.csv`, `gen_indirect.py` / `r12_indirect.csv`); leaf callees keep `$a0..` | `play/arc4`..`arc12` |
+| Arcade name entry (state 2/1/5) crashed when the initials were confirmed | func_00173A50 calls func_00173650 with `$a0` still `p` after a leaf call | leaf-callee rule in gen_regpass | `play/arc12`, `arc20` |
+| Ending: the STAFF CREDIT roll had no text over the sea | func_0016BF80(glyph, x, y) gets the glyph in `$a0` while the floats go in FPRs; R12 padded the glyph with 0 | hand `r12_regexpr.csv` row (`c`) | before `play/arc16`, after `arc18` |
+| Native SIGSEGV with a Ruby Heart effect | func_003A4F80 spawns it without an owner; on the EE the step reads kernel RAM at 0x34 | host wrapper of func_003A5930: zeros for a NULL owner (same as the web) | `play/arc9`.. |
+| Every `?script=` screenshot on the web was black | frame skip: the step before a shot was a discarded one | a shot forces its step to be drawn | `play/web1` vs `web2` |
+| **Headless Chromium "Target crashed" at fight start, about 1 run in 8** | Thanos: `func_003BE300` is a tail-jump dispatch head whose entry `residual_003BE320(o, owner)` reads `$a1`. The old detector missed it, and under EMULATE_FUNCTION_POINTER_CASTS `owner` was 0. The effect then took its animation base from wasm address 0, and func_001754A0 loaded a script offset of 0x89bacdfe: a wasm out-of-bounds load. The headless shell's renderer dies on that SIGSEGV instead of throwing a RuntimeError, so there is no error line | the residual/dispatch-head detector fix above | see below |
+| Shoto fireball assists (Ryu alpha, Ken alpha, Akuma beta) never ended, so no more assists | explicit calls of the EE soft-double compares `_dpflt`/`_dpfgt` (func_00100240/00100290, `(void)` wrappers returning `$v0`) were always false on the host, so the post-fireball slide never saw its velocity change sign | R10 overrides do the compare in C (4 sites) | `play/shoto_*` |
+| Omega Red, tagging in mid-fight, froze in mid-air and Score Attack ran out the clock | hostify read `PHYS func_00175700(p);` (a statement macro, then a call) as a declaration and deleted both | `decl_parts` skips statement macros (`stmt_macros`) | `play/sa1`/`sa2` before, `sa4` after |
+
+**The renderer crash: how it was found.**
+- Chromium's renderer was run under gdb: `--no-sandbox --no-zygote
+  --renderer-cmd-prefix=<gdb wrapper>`, with `DEBUG=pw:browser` to capture
+  its output.
+- The crash was a SIGSEGV in JIT code at wasm memory base + 0x89bacdfe, the
+  same value in every run.
+- `--js-flags=--perf-basic-prof` mapped the pc to `func_001754A0`.
+- A temporary diagnostic wrapper in a scratch copy of the base printed the
+  wasm stack with `emscripten_log(EM_LOG_JS_STACK)`:
+  `func_001754A0 <- residual_003BE320 <- func_003BE300 <- func_003BDA40`.
+- The crashpad flags (`--enable-crash-reporter --crash-dumps-dir`) wrote no
+  minidump in the headless shell.
+- Base `b79bdb293`: crashed in 2 of 12 default `fight.js` runs and 4 of 6
+  with `?args=--cpu-team%2054,1,2` (54 = Thanos). 4 of the 5 crashing
+  default teams had Thanos.
+- This branch: 20 of 20 consecutive default `fight.js` runs clean
+  (`play/clean20/r1..r20`), plus 4 of 4 with Thanos forced (`play/fthn`).
+
+**Verified:**
+- ARCADE, native:
+  - every fight and all three Abyss forms;
+  - the BGM per stage (AFS fids 0..6) and Abyss 8 / 9 / 10;
+  - the ending (fid 14), the staff roll with its text, ADX logo and
+    "THANK YOU FOR PLAYING";
+  - GAME OVER with the initials entry (fid 18);
+  - SCORE RANKING > ARCADE MODE RANKING shows the new 1st place: BCD,
+    2387502400, 3 x Ruby Heart (`play/arc20/rk2.png`).
+  The "0 WIN" in that row is right: the field counts VS wins (`+0x53B`,
+  fb68_a.c).
+- Web (`play/w_*`):
+  - TRAINING: pause menu, TRAINING MENU, DUMMY;
+  - VS with two pads;
+  - SCORE ATTACK across fights.
+  Native, the same modes plus Score Attack to its ending.
+- No unlocks (`--no-unlock`, web `?args=--no-unlock`):
+  - arcade earns 2300 points;
+  - the Secret Factor shop sells Wolverine (856) and Ryu's colour (100);
+  - SAVE/LOAD writes the card (IndexedDB on the web);
+  - after a reload: "Autoload successful", 1444 points, and Wolverine's
+    portrait on the select screen where a fresh card shows "?"
+    (`play/w_shop_a`, `w_shop_b`, `w_cs_fresh` vs `w_cs_bought`; native
+    `play/shop3..5`, `cs_fresh` vs `cs_bought`).
+
+**Not in this game:** there is no SURVIVAL mode in the PS2 menu. Its
+modes are ARCADE, VS, TRAINING, OPTION, SCORE RANKING, SCORE ATTACK, SECRET
+FACTOR and SAVE/LOAD.
+
+**Open:**
+- 750+ padded arguments are still unresolved where the register held a
+  caller local (gen_regpass `--unresolved`).
+- The other `T[i]()` table calls (gen_indirect.py lists 15 skipped) were
+  not traced. Each of the bugs above was found by playing, so more of
+  these classes may remain on paths not yet played.
+- Training's first START right after "FIGHT!" does not pause. A later one
+  does. Not compared with the PS2.

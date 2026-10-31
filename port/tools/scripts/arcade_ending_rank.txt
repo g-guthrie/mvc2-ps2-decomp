@@ -1,0 +1,112 @@
+# arcade_ending_rank (play-through pass; see BOOT_NOTES "Play-through")
+state 1/8
+wait 30
+until 1/7 start 40
+wait 30
+until 3/1/1 start 30
+wait 40
+press cross
+state 2/1/1
+wait 120
+until 2/1/2 cross 50
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+state 2/1/5 20000
+wait 60
+shot entry0
+press right
+press cross
+wait 20
+press right
+press cross
+wait 20
+press right
+press cross
+wait 20
+shot entry2
+press cross
+wait 30
+press cross
+wait 30
+shot entry3
+state 1/ 3000
+shot after
+wait 60
+until 1/7 start 40
+wait 30
+until 3/1/1 start 30
+wait 60
+press down
+wait 30
+shot rk_menu
+press cross
+wait 120
+shot rk0
+press down
+wait 30
+shot rk1
+press cross
+wait 120
+shot rk2
+press down
+wait 60
+shot rk3
+quit

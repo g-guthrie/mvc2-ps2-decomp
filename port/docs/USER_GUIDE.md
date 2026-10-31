@@ -215,6 +215,13 @@ number is the display rate in that test environment, not the port.
   SDL key names such as `F1`, `Return`, `Down` or `U`. This is how the menu
   and remapping are tested headless.
 - `--press F:button[:LEN]` holds a PS2 button on pad 1 (unchanged).
+- `--script FILE` runs a state-driven input script (`port/tools/scripts/`;
+  in the browser `?script=` with `;` between lines).
+- `--cpu-hp N` / `--p1-hp N` cap side 2's health and top up side 1's, so a
+  script can play a whole ARCADE run to the ending.
+- `--draw-every N` draws one game frame in N (fast headless runs).
+- `--speed N` runs the game N times faster than real time (browser:
+  `?args=--speed%204`).
 
 ## For developers: adding options (arcade-accuracy toggles)
 Options are registered in C with the settings store in

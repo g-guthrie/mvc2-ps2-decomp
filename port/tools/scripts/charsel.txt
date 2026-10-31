@@ -1,0 +1,12 @@
+# charsel (play-through pass; see BOOT_NOTES "Play-through")
+state 1/8
+wait 30
+until 1/7 start 40
+wait 30
+until 3/1/1 start 30
+wait 60
+press cross
+state 2/1/1 600
+wait 200
+shot c_charsel
+quit

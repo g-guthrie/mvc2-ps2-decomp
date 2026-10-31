@@ -1,0 +1,31 @@
+# score_attack (play-through pass; see BOOT_NOTES "Play-through")
+state 1/8
+wait 30
+until 1/7 start 40
+wait 30
+until 3/1/1 start 30
+wait 40
+press down
+wait 20
+press right
+wait 20
+shot sa_menu
+press cross
+wait 120
+shot sa_1
+until 2/1/2 cross 50
+shot sa_versus
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+until 2/1/4 right+square 8
+shot sa_end
+quit
