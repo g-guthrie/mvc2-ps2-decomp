@@ -28,8 +28,24 @@ COND = ("beq", "bne", "beqz", "bnez", "bgez", "bltz", "bgtz", "blez", "beql", "b
         "bgezl", "bltzl", "bgtzl", "blezl", "bc1t", "bc1f", "bc1tl", "bc1fl")
 
 
+def _starts():
+    """address -> name of every credited function (matches.csv), so code the
+    asm keeps inside another glabel (the residual_* functions) is split out."""
+    out = {}
+    try:
+        for r in csv.DictReader(open(ROOT / "config/matches.csv")):
+            try:
+                out[int(r["address"], 16)] = r["name"]
+            except (ValueError, KeyError):
+                pass
+    except OSError:
+        pass
+    return out
+
+
 def parse_asm(path):
     funcs, cur = {}, None
+    starts = _starts()
     for l in open(path):
         m = re.match(r"glabel (\S+)", l)
         if m:
@@ -40,6 +56,10 @@ def parse_asm(path):
             continue
         m = re.match(r"\s*/\* [0-9A-F]+ ([0-9A-F]+) [0-9A-F]+ \*/\s+(\S+)\s*(.*)$", l)
         if m:
+            nm = starts.get(int(m.group(1), 16))
+            if nm and nm != cur and nm not in funcs and funcs[cur]:
+                cur = nm
+                funcs[cur] = []
             funcs[cur].append(("I", m.group(2), m.group(3).strip()))
             continue
         m = re.match(r"\s*(\.L[0-9A-Fa-f_]+):", l)
@@ -48,8 +68,36 @@ def parse_asm(path):
     return funcs
 
 
+LOADS = {"lw": "u32", "lh": "s16", "lhu": "u16", "lb": "s8", "lbu": "u8"}
+
+
+def sym_add(tok, k):
+    """tok + k for a symbolic token (an entry register, or a load from one:
+    "E$a0", "E$a0@136", "lw(E$a0@20)@8"); None if tok is not symbolic."""
+    if not tok or not tok.startswith(("E$", "lw(", "lh(", "lhu(", "lb(", "lbu(")):
+        return None
+    if "@" in tok and tok.rfind("@") > tok.rfind(")"):
+        base, off = tok.rsplit("@", 1)
+        k += int(off)
+    else:
+        base = tok
+    return base if k == 0 else "%s@%d" % (base, k)
+
+
 def transfer(st, op, opr):
     rs = re.findall(r"\$\w+", opr)
+    # symbolic values (R12 sites the register passthrough cannot explain):
+    # "entry register + constant" and loads through it, two levels deep
+    m = re.match(r"(\$\w+),\s*(\$\w+),\s*(-?(?:0x[0-9A-Fa-f]+|\d+))$", opr)
+    if op in ("addiu", "daddiu") and m:
+        t = sym_add(st.get(m.group(2), "X"), int(m.group(3), 0))
+        st[m.group(1)] = t if t else "X"
+        return
+    m = re.match(r"(\$\w+),\s*(-?(?:0x[0-9A-Fa-f]+|\d+))\((\$\w+)\)$", opr)
+    if op in LOADS and m:
+        base = sym_add(st.get(m.group(3), "X"), int(m.group(2), 0))
+        st[m.group(1)] = "%s(%s)" % (op, base) if base and base.count("(") < 2 else "X"
+        return
     if op in STORE or op in COND or op in ("b", "j", "jr", "nop", "sync", "sync.p", "syscall", "mthi",
                                             "mtlo", "ctc1", "teq", "tne") or not rs:
         return
@@ -96,8 +144,9 @@ def parse_jtbls(path):
             m = re.search(r"\.word\s+(\S+)", l)
             if m:
                 w = m.group(1)
-                if w.startswith("func_"):
-                    out[cur].append(int(w[5:], 16))
+                mm = re.fullmatch(r"(?:func|residual)_([0-9A-Fa-f]{8})", w)
+                if mm:
+                    out[cur].append(int(mm.group(1), 16))
                 elif w.startswith("0x"):
                     out[cur].append(int(w, 16))
                 else:
@@ -110,7 +159,7 @@ def dispatch_heads(funcs, jtbls, known):
     out = set()
     for F, body in funcs.items():
         try:
-            lo = int(F[5:], 16)
+            lo = int(F.rsplit("_", 1)[-1], 16)
         except ValueError:
             continue
         hi = lo + 4 * sum(1 for x in body if x[0] == "I")
@@ -120,22 +169,32 @@ def dispatch_heads(funcs, jtbls, known):
             m = re.search(r"(jtbl_[0-9A-Fa-f]+)", x[2])
             if m and m.group(1) in jtbls:
                 ent = [a for a in jtbls[m.group(1)] if a != 0]
-                # a switch table lists code labels; a dispatch table lists functions
-                if ent and all(a > 0 and a in known for a in ent):
+                # a switch table lists code labels; a dispatch table lists
+                # functions.  The asm's table label has no end marker when
+                # data follows directly, so take the leading run of known
+                # functions (a switch table starts with a code label: -1)
+                run = []
+                for a in ent:
+                    if a <= 0 or a not in known:
+                        break
+                    run.append(a)
+                if run and (len(run) == len(ent) or len(run) >= 2):
                     out.add(F)
                 break
     return out
 
 
-def flow(funcs):
-    """(caller, callee) -> {arg register: entry token 'E$aN' or 'X'} over all sites."""
+def flow(funcs, ind=None):
+    """(caller, callee) -> {arg register: entry token 'E$aN' or 'X'} over all sites.
+    ind: if a dict, also gets caller -> [(instruction index, snapshot)] for
+    every indirect call (jalr, or a jr through a register other than $ra)."""
     result = {}
     for F, body in funcs.items():
         lab = {x[1]: k for k, x in enumerate(body) if x[0] == "L"}
         first_label = min(lab.values()) if lab else len(body)
         IN = [None] * (len(body) + 1)
         IN[0] = {r: "E" + r for r in ARGR}
-        work, sites = [0], {}
+        work, sites, isites = [0], {}, {}
 
         def push(idx, st):
             n = join(IN[idx], st)
@@ -159,6 +218,10 @@ def flow(funcs):
                 if op in ("jal", "jalr"):
                     if d and d[0] == "I":
                         transfer(st, d[1], d[2])
+                    if op == "jalr" and ind is not None:
+                        snap = {r: st.get(r, "X") for r in ARGR}
+                        prev = isites.get(k)
+                        isites[k] = snap if prev is None else {r: (prev[r] if prev[r] == snap[r] else "X") for r in ARGR}
                     if op == "jal":
                         snap = {r: st.get(r, "X") for r in ARGR}
                         prev = sites.get(k)
@@ -177,6 +240,10 @@ def flow(funcs):
                         sites[k] = snap if prev is None else {r: (prev[r] if prev[r] == snap[r] else "X") for r in ARGR}
                         break
                     if op == "jr":
+                        if opr.strip() != "$ra" and ind is not None:
+                            snap = {r: st.get(r, "X") for r in ARGR}
+                            prev = isites.get(k)
+                            isites[k] = snap if prev is None else {r: (prev[r] if prev[r] == snap[r] else "X") for r in ARGR}
                         if opr.strip() != "$ra" and k < first_label:
                             # indirect tail call of a dispatch head (the jr ends the
                             # entry block, before any label): record what the argument registers
@@ -195,6 +262,8 @@ def flow(funcs):
                     break
                 transfer(st, op, opr)
                 k += 1
+        if ind is not None and isites:
+            ind[F] = sorted(isites.items())
         for k, snap in sites.items():
             key = (F, "*jr*" if body[k][1] == "jr" else body[k][2].split(",")[-1].strip())
             if key in result:
@@ -248,11 +317,13 @@ def main():
         os.environ["HOSTIFY_PAD_LOG"] = log
         hostify.REGPASS = {}
         hostify.REGEXPR = {}
+        hostify.REGSYM = {}
         hostify.configure(a.sigs)
         for s in srcs:
             hostify.transform((ROOT / s).read_text(encoding="latin-1"), s)
         canon = hostify.SIGS["canon"]
         rows = set()
+        syms = set()
         unres = set()
         widen = {}
         for line in open(log):
@@ -270,11 +341,20 @@ def main():
                 freg = regs(fc["params"])
                 for k in ks:
                     tok = agg.get(creg[k], "X")
-                    if tok.startswith("E") and tok[1:] in freg:
+                    if re.fullmatch(r"E\$\w+", tok) and tok[1:] in freg:
                         rows.add((src, F, callee, k, freg.index(tok[1:])))
+                    elif sym_add(tok, 0) and not re.fullmatch(r"E\$\w+", tok) and not creg[k].startswith("$f"):
+                        # "param + k" or a load through the caller's parameter
+                        # (hostify r12_regsym.csv); the base register must be a
+                        # parameter the caller's C declares
+                        bad = [r for r in re.findall(r"E(\$\w+)", tok) if r not in freg]
+                        if bad:
+                            unres.add((src, F, callee, k, tok))
+                        else:
+                            syms.add((src, F, callee, k, re.sub(r"E(\$\w+)", lambda mm: "P%d" % freg.index(mm.group(1)), tok)))
                     else:
                         unres.add((src, F, callee, k, tok))
-                        if tok.startswith("E") and owner.get(F) == src and not fc.get("variadic"):
+                        if re.fullmatch(r"E\$\w+", tok) and owner.get(F) == src and not fc.get("variadic"):
                             widen.setdefault(F, set()).add(tok[1:])
         os.unlink(log)
         # R22: a dispatch head `f(p) { table[i](p); }` whose asm tail-jumps
@@ -329,6 +409,13 @@ def main():
         for r in sorted(rows):
             w.writerow(r)
     print(f"{a.out}: {len(rows)} rows")
+    symf = HERE / "r12_regsym.csv" if a.out == str(HERE / "r12_regpass.csv") else a.out + ".regsym.csv"
+    with open(symf, "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["source", "caller", "callee", "arg", "value"])
+        for r in sorted(syms):
+            w.writerow(r)
+    print(f"{symf}: {len(syms)} symbolic rows (parameter + offset / loads through it)")
     if a.unresolved:
         with open(a.unresolved, "w", newline="") as f:
             w = csv.writer(f)

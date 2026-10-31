@@ -720,7 +720,31 @@ def apply_overrides(text, path):
         if text.count(old) != 1:
             raise ValueError(f"host override for {path} no longer applies: {old!r}")
         text = text.replace(old, new)
+    for old, args in _indirect().get(path, ()):
+        if text.count(old) != 1:
+            raise ValueError(f"r12_indirect.csv row for {path} no longer applies: {old!r}")
+        tgt = old[:old.rindex("(")].rstrip()
+        text = text.replace(old, f"((void (*)())({tgt}))({args}) /* host R12: registers at the indirect call */")
     return text
+
+
+_INDIRECT = None
+
+
+def _indirect():
+    """port/tools/r12_indirect.csv (gen_indirect.py): calls through a function
+    table written with no arguments whose entries read the argument
+    registers the EE code still held (the caller's values)."""
+    global _INDIRECT
+    if _INDIRECT is None:
+        import csv
+        from pathlib import Path
+        f = Path(__file__).resolve().parent / "r12_indirect.csv"
+        _INDIRECT = {}
+        if f.exists():
+            for r in csv.DictReader(open(f, newline="")):
+                _INDIRECT.setdefault(r["source"], []).append((r["call"], r["args"]))
+    return _INDIRECT
 
 
 def defined_names(toks):
@@ -864,6 +888,51 @@ def _load_regexpr():
 
 
 REGEXPR = _load_regexpr()
+
+
+def _load_regsym():
+    """port/tools/r12_regsym.csv (gen_regpass.py): R12 sites where the EE
+    register held the caller's parameter plus a constant, or a value loaded
+    through it ("lw(P0@20)@136" = *(u32 *)((u8 *)p0 + 20) + 136)."""
+    import csv
+    from pathlib import Path
+    f = Path(__file__).resolve().parent / "r12_regsym.csv"
+    out = {}
+    if f.exists():
+        for r in csv.DictReader(open(f, newline="")):
+            out[(r["source"], r["caller"], r["callee"], int(r["arg"]))] = r["value"]
+    return out
+
+
+REGSYM = _load_regsym()
+_SYM_T = {"lw": "unsigned int", "lh": "short", "lhu": "unsigned short", "lb": "signed char",
+          "lbu": "unsigned char"}
+
+
+def _render_sym(tok, params, assigned):
+    """C for a r12_regsym value; None when a base parameter is unnamed or the
+    C assigns it (then the call-time value may differ from the entry value)."""
+    import re as _re
+    if "@" in tok and tok.rfind("@") > tok.rfind(")"):
+        base, off = tok.rsplit("@", 1)
+        off = int(off)
+    else:
+        base, off = tok, 0
+    m = _re.fullmatch(r"P(\d+)", base)
+    if m:
+        q = int(m.group(1))
+        if q >= len(params) or not params[q] or params[q] in assigned:
+            return None
+        b = f"(__UINTPTR_TYPE__)({params[q]})"
+    else:
+        m = _re.fullmatch(r"(\w+)\((.*)\)", base)
+        if not m or m.group(1) not in _SYM_T:
+            return None
+        inner = _render_sym(m.group(2), params, assigned)
+        if inner is None:
+            return None
+        b = f"(__UINTPTR_TYPE__)(*({_SYM_T[m.group(1)]} *)({inner}))"
+    return f"({b} + {off})" if off else b
 
 
 def _pad_log(path, name, have, want, ks=None):
@@ -1697,6 +1766,10 @@ class SigRewriter:
         cp = REGPASS.get((self.path, getattr(self, "cur_fn", None), name, k))
         params = getattr(self, "cur_params", [])
         ex = REGEXPR.get((self.path, getattr(self, "cur_fn", None), name, k))
+        if ex is None and cp is None:
+            sv = REGSYM.get((self.path, getattr(self, "cur_fn", None), name, k))
+            if sv is not None:
+                ex = _render_sym(sv, params, getattr(self, "cur_modified", ()))
         if ex is not None:
             ct = self.canon[name]["params"][k]
             return f"PS2_TO_PTR({ex})" if ct.endswith("*") else f"(({ct})({ex}))"
@@ -1764,6 +1837,12 @@ class SigRewriter:
                         body = [x for x in toks[i:e] if x[0] not in ("ws", "comment")]
                         self.cur_assigned = {body[q][1] for q in range(len(body) - 1)
                                              if body[q][0] == "ident" and body[q + 1][1] == "="}
+                        ops = ("++", "--", "+=", "-=", "*=", "/=", "|=", "&=", "^=", "<<=", ">>=", "%=")
+                        self.cur_modified = self.cur_assigned | {
+                            body[q][1] for q in range(len(body)) if body[q][0] == "ident" and (
+                                (q + 1 < len(body) and (body[q + 1][1] in ops or (
+                                    q + 2 < len(body) and body[q + 1][1] in "+-*/|&^%" and body[q + 2][1] == "=")))
+                                or (q > 0 and body[q - 1][1] in ("++", "--", "&")))}
                 if t[1] in "{};":
                     stmt = []
                 br.punct(t[1])

@@ -53,6 +53,8 @@ set(HOSTIFY_DEPS "${MVC2_ROOT}/port/tools/hostify.py" "${MVC2_ROOT}/port/tools/h
   "${MVC2_ROOT}/port/tools/hostify_tree.py" "${MVC2_ROOT}/port/tools/link_catalog.py"
   "${MVC2_ROOT}/port/tools/r12_regpass.csv"
   "${MVC2_ROOT}/port/tools/r12_regexpr.csv"
+  "${MVC2_ROOT}/port/tools/r12_regsym.csv"
+  "${MVC2_ROOT}/port/tools/r12_indirect.csv"
   "${MVC2_ROOT}/port/tools/r12_widen.csv"
   "${MVC2_ROOT}/port/tools/r12_tailfwd.csv")
 set(MVC2_HOST_SIGS "" CACHE STRING "host_sigs.json for hostify R12-R14 (empty: generate; OFF: none)")
