@@ -627,3 +627,11 @@ frame).
 - Alpha above 0x80 (GS over-bright) is still clamped to 1.0 by GL.
 - The PS2 draws into a 224-line buffer (every 2D/3D Y halved, then
   line-doubled on the TV); the port renders at full 448-line resolution.
+
+### Final integration (2026-10-31)
+
+Play-through, robustness and renderer passes merged on main. The renderer
+crash noted above was Thanos (`func_003BE300`, a dispatch head the old R12
+detector missed; see "Play-through"). Merged single-file build, `fight.js`
+(title → fight with overlays, CRT, stretch): 13 of 13 clean, 10 with random
+CPU teams and 3 with Thanos forced (`private/converted/boot/web/final_r*`).
