@@ -30,6 +30,15 @@ int r_init(void);                 /* after the GL context exists */
 void r_shutdown(void);
 void fl_frame_begin(void);        /* func_00170D30 role: bind canvas, clear, blend 0x32 + nearest */
 void fl_frame_end(void);          /* flush pending batches (func_00170D70 role) */
+/* The game frontend: clear at the first draw after each flip (fl_frame_flip,
+ * func_003ECD00) instead of in fl_frame_begin; the PS2 clears the draw buffer
+ * at the flip, and some scenes draw before func_00170D30. */
+void fl_set_flip_clear(int on);
+/* The displayed part of the 640x480 canvas (top left), from the game's
+ * display environment; present and the window layout use it. */
+void fl_set_display(int w, int h);
+void fl_get_display(int *w, int *h);
+void fl_frame_flip(void);
 enum { R_PRESENT_INTEGER = 0, R_PRESENT_SHARP_FIT = 1 };
 void r_present(int win_w, int win_h, int mode); /* func_003ECD00 role: canvas -> window */
 void r_canvas_rect(int win_w, int win_h, int mode, int *x, int *y, int *w, int *h);
@@ -148,6 +157,12 @@ uint32_t fl_clay_fmt(int handle);
 int fl_clay_textures(int handle, uint32_t *out, int max);
 int fl_clay_draw(int handle);
 void fl_clay_release(int handle);
+/* a clay mesh vertex as the GL buffer holds it (POL vertex order) */
+typedef struct FlMeshVtx { float pos[3], nrm[3]; float col[4]; float uv[2]; } FlMeshVtx;
+/* (col: byte units; the shader multiplies by the func_003EEC30 packet scale:
+ * 0.5 for textured meshes, rgb 1 / alpha 0.5 for untextured ones) */
+FlMeshVtx *fl_clay_vertices(int handle, int *nverts);
+void fl_clay_vertices_changed(int handle);
 /* fl_get_render_state: func_003DFF80 for ids 1, 0x15, 4..7, 0x14, matrices, materials */
 uintptr_t fl_get_render_state(int id);
 

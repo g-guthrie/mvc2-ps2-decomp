@@ -29,6 +29,55 @@ With no `--iso` it looks for `private/disc/mvc2.iso`.
 The first click, tap or key press also turns the sound on: browsers keep audio
 off until the page gets a gesture.
 
+## Building the desktop app (Linux)
+
+The game itself is built for a 32-bit target (the game's data keeps
+pointers in 32-bit fields), so on Linux the app is an i386 binary. The
+viewer and sound test tools are plain C and build for any pointer size.
+
+Packages (Debian/Ubuntu): `clang`, `cmake`, `ninja-build`, `python3`, the
+SDL2 headers (`libsdl2-dev`), and the 32-bit runtime libraries:
+
+```sh
+sudo dpkg --add-architecture i386 && sudo apt-get update
+sudo apt-get install libsdl2-2.0-0:i386 libgl1-mesa-dri:i386 libegl1:i386 libgles2:i386
+```
+
+No 32-bit libc headers are needed: the build uses the x86-64 SDL2 headers
+through a small shim it writes into the build directory.
+
+```sh
+# the game (from the repository root; the toolchain path must be absolute)
+cmake -S port -B build/port-i386 -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+      -DCMAKE_TOOLCHAIN_FILE=$PWD/port/cmake/i386-clang.cmake
+ninja -C build/port-i386 mvc2            # about 10 minutes the first time
+./build/port-i386/mvc2 --iso /path/to/mvc2.iso
+
+# the viewer and the sound test (native pointer size)
+cd port/frontend && cmake --preset native && cmake --build --preset native
+../../build/port-native/viewer --iso /path/to/mvc2.iso --stage 1
+../../build/port-native/soundtest --iso /path/to/mvc2.iso --track 3
+```
+
+`-DMVC2_HOST_SIGS=FILE` reuses a signature table from an earlier build
+(otherwise the configure step makes one, about 2 minutes). The arcade
+toggles and every setting below work the same in the desktop app:
+`--naomi mvsc2.zip --arcade abc`, `--set KEY=VALUE`, the F1 menu.
+
+**Headless runs** (no window, for tests and CI): `SDL_VIDEODRIVER=offscreen`
+(Mesa's software GL; `dummy` has no GL and does not work for the game or
+the viewer) and `SDL_AUDIODRIVER=dummy`, plus `--hidden` (fixed 60 Hz steps,
+no settings file):
+
+```sh
+SDL_VIDEODRIVER=offscreen SDL_AUDIODRIVER=dummy ./build/port-i386/mvc2 --hidden \
+    --size 640x480 --shot-dir out --script port/tools/scripts/arcade_fight.txt mvc2.iso
+```
+
+`--shot F:file.png` and `--shot-every N --shot-dir D` save the game's
+640x480 canvas (all 480 rows); `--wshot F:file.png` saves the window as the
+player sees it.
+
 ## Default controls
 
 The port maps your keys and buttons to a PS2 pad. The game's own **OPTION >
@@ -84,7 +133,7 @@ marked "next start".
 | Option | Key | Values | Default | What it does |
 |---|---|---|---|---|
 | Fullscreen | `video.fullscreen` (desktop app) | Off / On | Off | Desktop fullscreen. In the browser use the fullscreen button or the menu's "Toggle fullscreen" (browsers only allow it after a click or key press). |
-| Scaling | `video.scale` | Fit / Integer / Stretch | Fit | Fit is the largest 4:3 picture. Integer uses only whole multiples of 640x480, so every pixel is the same size, and falls back to Fit when the window is smaller. Stretch fills the window. |
+| Scaling | `video.scale` | Fit / Integer / Stretch | Fit | The picture is the 640x448 area the PS2 shows on the TV (the game draws in 640x480, the PS2's display shows the top 448 lines). Fit is the largest such picture. Integer uses only whole multiples of 640x448, so every pixel is the same size, and falls back to Fit when the window is smaller. Stretch fills the window. |
 | Upscaling filter | `video.filter` | Nearest / Sharp / Smooth | Sharp | Nearest gives hard pixels, which can have uneven widths at non-integer sizes. Sharp gives crisp pixels with even widths (sharp bilinear). Smooth is bilinear. |
 | Sprite filtering | `video.sprite_filter` | As the game / Nearest / Smooth | As the game | How 2D sprites are sampled: as the game asks, always nearest (crisp), or always smooth (the PS2's soft look). |
 | CRT effect | `video.crt` | Off / Scanlines / CRT | Off | Scanlines draws 240 lines, like the 15 kHz picture the game was made for. CRT adds a shadow mask, slight curvature and a vignette. Both fade out on small windows, where they would cause moiré. |

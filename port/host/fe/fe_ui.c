@@ -93,7 +93,7 @@ static const char *const k_touch[] = { "Auto", "Always", "Never", NULL };
 
 static const SetDesc k_opts[] = {
     { "video.scale", "Scaling", SET_SECTION_VIDEO, SET_ENUM, 0, 0, 2, k_scale, NULL, ap_scale, 0,
-      "Fit: largest 4:3 picture. Integer: whole multiples of 640x480 only. Stretch: fill the window.", 0 },
+      "Fit: largest picture at the game's shape (640x448 shown, as on the PS2). Integer: whole multiples of 640x448 only. Stretch: fill the window.", 0 },
     { "video.filter", "Upscaling filter", SET_SECTION_VIDEO, SET_ENUM, 1, 0, 2, k_filter, NULL, ap_filter, 0,
       "Nearest: hard pixels. Sharp: crisp pixels without uneven widths. Smooth: bilinear.", 0 },
     { "video.sprite_filter", "Sprite filtering", SET_SECTION_VIDEO, SET_ENUM, 0, 0, 2, k_sprite, k_sprite_v,

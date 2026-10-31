@@ -18,6 +18,7 @@ void r_use(GLuint tex, int mode);
 /* Reserve n vertices in the current batch. */
 RVtx *r_verts(int n);
 void r_flush(void);
+void r_canvas_bind(void);            /* canvas FBO + viewport + pending flip clear; marks it drawn */
 /* GS colour conversions (func_003E0CB0): textured = all channels halved,
  * untextured = alpha only; output in the 255 = 1.0 convention. */
 void r_color_tex(uint32_t argb, uint8_t out[4]);

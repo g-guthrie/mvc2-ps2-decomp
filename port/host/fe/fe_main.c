@@ -272,7 +272,7 @@ static void update(void *u)
     host_pad_set(1, &p1);
     memset(fe_cnt, 0, sizeof fe_cnt);
     /* frame skip: when several steps run in one display frame only the last is drawn */
-    r_set_discard(!A.force_draw &&
+    r_set_discard(!A.force_draw && !S.n && /* shots and scripts see every step */
                   ((!plat_step_is_last() && A.nshot == 0 && A.shot_every == 0) ||
                    (A.draw_every > 1 && (mvc2_host_frame + 1) % A.draw_every != 0)));
     mvc2_frame();
