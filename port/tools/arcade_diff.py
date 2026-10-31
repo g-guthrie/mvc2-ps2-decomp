@@ -304,6 +304,68 @@ def print_rep(r, detail):
     print('  CPU AI tables:', r['cpu_ai_tables'])
 
 
+# ---------------------------------------------------------------- assists
+def startup_invuln(tbl, hit, fm, script):
+    """(ticks before the first frame with a live hurtbox, total ticks) of a
+    script, walked to its goto; None if the script does not exist."""
+    top, sc = scripts(tbl)
+    if script not in sc:
+        return None
+    recs, _ = chain(tbl, sc[script])
+    t, inv = 0, None
+    for r in recs:
+        b = boxes(hit, fm, r['sel'])
+        if inv is None and b is not None and b['hurt']:
+            inv = t
+        t += max(r['dur'], 0)
+    return (t if inv is None else inv), t
+
+
+def parse_assist_logs(paths):
+    """--arcade-trace logs of MVC2_ASSIST_CYCLE runs -> {(char, type): [scripts]}:
+    the scripts a side-0 partner (player 2/4) ran between its entry (01/01)
+    and its exit (18/04, 18/02), stand (00/00) and hit reactions (0x0d)
+    left out; the first episode per (char, type) is kept."""
+    import re
+    rx = re.compile(r"arcade-trace: player ([24]) char ([0-9a-f]{2}) script ([0-9a-f]{2})/([0-9a-f]{2}) \w+: "
+                    r".* assist type (-?\d)")
+    out, cur = {}, {}
+    for path in paths:
+        cur = {}
+        for l in open(path, errors='replace'):
+            m = rx.search(l)
+            if not m:
+                continue
+            pl, ch, g, st, ty = m.group(1), int(m.group(2), 16), int(m.group(3), 16), int(m.group(4), 16), int(m.group(5))
+            if (g, st) == (0x01, 0x01):     # the jump-in entry
+                cur[pl] = (ch, ty, [])
+                continue
+            if pl not in cur:
+                continue
+            if (g, st) in ((0x18, 0x04), (0x18, 0x02)):     # the exit
+                c, t, lst = cur.pop(pl)
+                if lst and (c, t) not in out:
+                    out[(c, t)] = lst
+                continue
+            if g in (0x00, 0x0d) or (g, st) in cur[pl][2]:
+                continue
+            cur[pl][2].append((g, st))
+    return out
+
+
+def assist_report(P, N, logs):
+    asg = parse_assist_logs(logs)
+    rows = []
+    for (ch, ty), lst in sorted(asg.items()):
+        tp, hp, fp = P.get('TBL', ch), P.get('HIT', ch), P.get('HIT_FM', ch)
+        tn, hn, fn = N.get('TBL', ch), N.get('HIT', ch), N.get('HIT_FM', ch)
+        for i, sc in enumerate(lst):
+            a, b = startup_invuln(tn, hn, fn, sc), startup_invuln(tp, hp, fp, sc)
+            rows.append(dict(char='%02x' % ch, type='abg'[ty] if 0 <= ty <= 2 else '?', script='%02x/%02x' % sc,
+                             first=i == 0, naomi=a, ps2=b))
+    return asg, rows
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('iso'); ap.add_argument('filelist'); ap.add_argument('naomi_zip')
@@ -311,8 +373,22 @@ def main():
     ap.add_argument('--detail', action='store_true')
     ap.add_argument('--summary', action='store_true', help='one line per character, all 59')
     ap.add_argument('--json')
+    ap.add_argument('--assists', nargs='+', metavar='LOG',
+                    help='--arcade-trace logs of MVC2_ASSIST_CYCLE runs: each assist type\'s scripts with '
+                         'their startup invulnerability (ticks before a live hurtbox), NAOMI vs PS2')
     a = ap.parse_args()
     P, N = PS2Data(a.iso, a.filelist), NaomiData(a.naomi_zip)
+    if a.assists:
+        asg, rows = assist_report(P, N, a.assists)
+        print('char type script  startup-invulnerable ticks NAOMI/PS2 (total ticks NAOMI/PS2)')
+        for r in rows:
+            n, p = r['naomi'], r['ps2']
+            diff = '' if (n and p and n[0] == p[0]) else '  <-- differs'
+            print('%s %s %s %s %s/%s (%s/%s)%s' % (r['char'], r['type'], r['script'], '*' if r['first'] else ' ',
+                  n[0] if n else '-', p[0] if p else '-', n[1] if n else '-', p[1] if p else '-', diff))
+        if a.json:
+            json.dump(rows, open(a.json, 'w'), indent=1)
+        return
     print('PS2 PAK sections that differ from loose AFS02 files: %d' % check_pak_sections(P))
     chars = range(59) if a.summary else [int(c, 16) for c in a.chars.split(',')]
     reps = [compare_char(P, N, c) for c in chars]

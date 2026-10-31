@@ -544,15 +544,17 @@ void arcade_init(void)
 }
 
 /* ---------------------------------------------------------------- hooks */
+static void force_assist(u8 *p);
 void func_0016F2D0(void *pv, int index)
 {
+    force_assist((u8 *)pv);
     func_0016F2D0__game(pv, index);
     if (arc_ok && mvc2_arcade_flags)
         bind_player((u8 *)pv);
 }
 
 /* trace: per player, the running script */
-static struct { int on, anim, str, frames, ticks, tab_recs, tab_ticks; u32 rec; } TR[6];
+static struct { int on, anim, str, frames, ticks, tab_recs, tab_ticks; u32 rec; unsigned long f0; } TR[6];
 
 /* the started script's length in the bound table (records and ticks to its goto) */
 static void tab_len(u8 *p, int anim, int str, int *recs, int *ticks)
@@ -574,9 +576,32 @@ static void tr_end(int i, u8 *p, const char *how)
 {
     if (!TR[i].on)
         return;
-    host_log("arcade-trace: player %d char %02x script %02x/%02x %s: %d frames %d ticks (table: %d records %d ticks)",
-             i, p[0x540], TR[i].anim, TR[i].str, how, TR[i].frames, TR[i].ticks, TR[i].tab_recs, TR[i].tab_ticks);
+    host_log("arcade-trace: player %d char %02x script %02x/%02x %s: %d frames %d ticks (table: %d records %d ticks)"
+             " from frame %lu assist type %d",
+             i, p[0x540], TR[i].anim, TR[i].str, how, TR[i].frames, TR[i].ticks, TR[i].tab_recs, TR[i].tab_ticks,
+             TR[i].f0, (s8)p[0x4DD]);
     TR[i].on = 0;
+}
+
+/* MVC2_ASSIST_CYCLE=1 (testing, with the trace): each time a side-0 partner
+ * (player 2 or 4) starts its exit (group 0x18) after an assist, its assist
+ * type (+0x4DD) moves to the next of 0..2, so one fight shows all three
+ * assists of both partners (ARCADE_DIFF.md section 7.3). */
+static void assist_cycle(u8 *p, int i, int anim)
+{
+    static int on = -1;
+    static unsigned long last[6];
+    if (on < 0) {
+        const char *e = getenv("MVC2_ASSIST_CYCLE");
+        on = e && *e && *e != '0';
+    }
+    if (!on || (i != 2 && i != 4) || anim != 0x18)
+        return;
+    if (last[i] && host_frame_count - last[i] < 120)
+        return;      /* the same exit's next script */
+    last[i] = host_frame_count;
+    p[0x4DD] = (u8)(((s8)p[0x4DD] + 1) % 3);
+    host_log("arcade-trace: assist-cycle: player %d char %02x next assist type %d", i, p[0x540], (s8)p[0x4DD]);
 }
 
 int func_001757E0(void *pv, int animation, int strength)
@@ -591,7 +616,9 @@ int func_001757E0(void *pv, int animation, int strength)
         TR[i].frames = 1;
         TR[i].ticks = 0;
         TR[i].rec = *(u32 *)(p + 0x164);
+        TR[i].f0 = host_frame_count;
         tab_len(p, (u8)animation, (u8)strength, &TR[i].tab_recs, &TR[i].tab_ticks);
+        assist_cycle(p, i, (u8)animation);
     }
     return r;
 }
@@ -651,25 +678,49 @@ void func_0018B500(void *pv, void *qv)
 
 /* --cpu-team a,b,c (testing): the game's own pick runs, then the forced ids
  * replace its choices (the old host stand-in did this before the pick was
- * credited C). */
+ * credited C).  --p1-team a,b,c forces side 0's team the same way.  Each
+ * entry may carry an assist type, ID:T (T = 0, 1, 2: alpha, beta, gamma),
+ * applied when the fight binds the PAK (func_0016F2D0); without one the CPU
+ * gets its default (D_004405A0) and the human keeps the menu's choice. */
 extern s8 D_004405A0[];
-static void force_rec(u8 *rec, int id, const char *who, int t)
+static void force_rec(u8 *rec, int id, const char *who, int t, int set_assist)
 {
     rec[0x540] = (u8)id;
     rec[1] = (u8)id;
-    rec[0x4DD] = (u8)D_004405A0[id];
+    if (set_assist)
+        rec[0x4DD] = (u8)D_004405A0[id];
     host_log("%s pick %d: character %#x (forced)", who, t, id);
 }
 
-static int forced_id(const char *env, int t)
+/* "a,b,c" with optional ":T" per entry -> id (or -1), assist type (or -1) */
+static int forced_id2(const char *env, int t, int *assist)
 {
     const char *f = getenv(env);
-    int ids[3] = {-1, -1, -1};
+    int k = 0;
+    if (assist)
+        *assist = -1;
     if (!f)
         return -1;
-    sscanf(f, "%i,%i,%i", &ids[0], &ids[1], &ids[2]);
-    return ids[t] >= 0 && ids[t] <= 58 ? ids[t] : -1;
+    while (k < t && (f = strchr(f, ',')) != NULL) {
+        f++;
+        k++;
+    }
+    if (!f || !*f || *f == ',')
+        return -1;
+    {
+        char *e;
+        long id = strtol(f, &e, 0);
+        if (e == f || id < 0 || id > 58)
+            return -1;
+        if (*e == ':' && assist) {
+            long a = strtol(e + 1, NULL, 0);
+            *assist = a >= 0 && a <= 2 ? (int)a : -1;
+        }
+        return (int)id;
+    }
 }
+
+static int forced_id(const char *env, int t) { return forced_id2(env, t, NULL); }
 
 void func_0032DF90(int a0)
 {
@@ -681,23 +732,39 @@ void func_0032DF90(int a0)
     for (t = 0; t < 3; t++) {
         int id = forced_id("MVC2_CPU_TEAM", t);
         if (id >= 0)
-            force_rec(PLAYERS + (side + t * 2) * PSTRIDE, id, "CPU", t);
+            force_rec(PLAYERS + (side + t * 2) * PSTRIDE, id, "CPU", t, 1);
     }
 }
 
-/* --p1-team a (testing): side 0's point character, forced as its PAK is
- * queued (func_0012EF50 / func_0012EF80, src/grok_w5_0012.c), after the
- * human's pick.  Only the point character: the partners' PAKs are already
- * resident from the menu, so forcing them would pair one character's code
- * with another's sprites.  The HUD keeps the menu's names. */
+/* --p1-team a,b,c (testing): side 0's characters (player records 0, 2, 4 =
+ * point and partners), each forced as the game queues its PAK
+ * (func_0012EF50 / func_0012EF80, src/grok_w5_0012.c).  The character
+ * select queues every pick through these as it is made (func_0012E780 cases
+ * 18/20/22, src/fb84_c.c) and only skips a pick whose character equals an
+ * earlier team member's, so a forced id loads its own PAK; the fight-load
+ * pass (case 3) dedupes on the forced ids too.  The HUD keeps the menu's
+ * names. */
 static void force_p1(u8 *p)
 {
     int i = player_index(p), id;
-    if (i != 0)
+    if (i < 0 || (i & 1))
         return;
     id = forced_id("MVC2_P1_TEAM", i / 2);
     if (id >= 0 && (s8)p[0x540] != id)
-        force_rec(p, id, "P1", i / 2);
+        force_rec(p, id, "P1", i / 2, 0);
+}
+
+/* the assist types of --cpu-team / --p1-team entries given as ID:T */
+static void force_assist(u8 *p)
+{
+    int i = player_index(p), a = -1, id;
+    if (i < 0)
+        return;
+    id = forced_id2((i & 1) ? "MVC2_CPU_TEAM" : "MVC2_P1_TEAM", i / 2, &a);
+    if (id >= 0 && a >= 0 && (s8)p[0x540] == id && p[0x4DD] != a) {
+        p[0x4DD] = (u8)a;
+        host_log("%s %d: assist type %d (forced)", (i & 1) ? "CPU" : "P1", i / 2, a);
+    }
 }
 
 void func_0012EF50(void *p)
