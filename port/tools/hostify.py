@@ -1464,12 +1464,29 @@ def proto_text(name, c, label=None):
     return f"extern {c['ret']} {name}({ptxt}){asm};"
 
 
+# Object-like macros of the current file whose body is a statement list
+# (`#define PHYS F(p, 52) += ...; \ ...`).  A use followed by a call,
+# `PHYS func_00175700(p);`, has the shape of a declaration; it is not one.
+STMT_MACROS = set()
+
+
+def stmt_macros(text):
+    out = set()
+    for m in re.finditer(r"^[ \t]*#[ \t]*define[ \t]+(\w+)([^\n]*)", text.replace("\\\n", " "), re.M):
+        body = m.group(2)
+        if body.startswith("("):
+            continue  # function-like
+        if ";" in body:
+            out.add(m.group(1))
+    return out
+
+
 def decl_parts(seg):
     """Split a declaration statement (tokens before ';') into
     (spec_tokens, [declarator token lists]) or None if it is not a plain
     declaration.  Declarators keep their own leading '*'s."""
     sig = [t for t in seg if t[0] not in ("ws", "comment")]
-    if not sig or sig[0][0] != "ident" or sig[0][1] in NOT_SPEC:
+    if not sig or sig[0][0] != "ident" or sig[0][1] in NOT_SPEC or sig[0][1] in STMT_MACROS:
         return None
     depth = 0
     for t in sig:
@@ -2125,7 +2142,9 @@ def configure(sigs_path=None):
 
 
 def transform(text, path="?"):
+    global STMT_MACROS
     text = apply_overrides(text, path)
+    STMT_MACROS = stmt_macros(text)
     text = drop_fn_macros(text)
     toks = lex(text)
     toks = add_returns(toks, path)
