@@ -75,6 +75,37 @@ static void unlock_everything(void)
         EE_BSS(u8, 0x004D179A) = 7;
 }
 
+/* --cpu-hp N / MVC2_CPU_HP (testing): side 2's characters (player records
+ * 1, 3, 5) never have more than N health, so a scripted run's next hits KO
+ * them through the game's own damage and KO code (used to drive a whole
+ * ARCADE run to the ending in a test).  --p1-hp N / MVC2_P1_HP: side 1's
+ * live characters are topped up to N health every frame.  Nothing else
+ * changes. */
+static void cpu_hp_cap(void)
+{
+    static int cap = -2, floor_ = -2;
+    u8 *pl = (u8 *)EE_BSS_PTR(0x004F20B0);
+    int i;
+    if (cap == -2) {
+        const char *e = getenv("MVC2_CPU_HP");
+        cap = e ? atoi(e) : -1;
+        e = getenv("MVC2_P1_HP");
+        floor_ = e ? atoi(e) : -1;
+    }
+    for (i = 0; floor_ > 0 && i < 6; i += 2) {
+        s16 *hp = (s16 *)(pl + i * 0x5B8 + 0x434);
+        if (*hp > 0 && *hp < floor_)
+            *hp = (s16)floor_;
+    }
+    if (cap < 0)
+        return;
+    for (i = 1; i < 6; i += 2) {
+        s16 *hp = (s16 *)(pl + i * 0x5B8 + 0x434);
+        if (*hp > cap)
+            *hp = (s16)cap;
+    }
+}
+
 #define STEP(name, call) do { mvc2_host_step = name; call; } while (0)
 
 int mvc2_boot(int run_platform_init)
@@ -126,6 +157,7 @@ void mvc2_frame(void)
     STEP("func_001E42A0 sound tick", func_001E42A0());
     EE_BSS(s32, 0x004C2848) = 0;
     EE_BSS(s32, 0x004C284C) = 0;
+    cpu_hp_cap();
     STEP("func_003D6FF0 game update", func_003D6FF0());
     STEP("func_00170D30 begin scene", func_00170D30());
     STEP("func_003D7400 render pass 1", func_003D7400());

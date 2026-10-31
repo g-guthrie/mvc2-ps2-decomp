@@ -10,7 +10,7 @@
  *        [--press F:BUTTON[:LEN] ...] [--script FILE] [--hidden] [--size WxH] [--desktop-gl] [-v]
  *        [--config FILE] [--set KEY=VALUE ...] [--fullscreen] [--no-unlock]
  *        [--wshot F:FILE.png ...] [--key F:KEYNAME[:LEN] ...]
- *        [--arcade abc --naomi mvsc2.zip] [--arcade-trace] [--cpu-team a,b,c]
+ *        [--arcade abc --naomi mvsc2.zip] [--arcade-trace] [--cpu-team a,b,c] [--cpu-hp N] [--p1-hp N] [--draw-every N]
  *
  * --frames N quits after N game frames.  --shot F:path writes the 640x480
  * canvas after game frame F.  --press F:start (or cross, circle, square,
@@ -66,6 +66,8 @@ static struct {
     int nwshot;
     struct { long frame; int len; int sc; } key[MAX_PRESS];
     int nkey;
+    int draw_every; /* --draw-every N (testing): draw one game frame in N */
+    int force_draw; /* the script's next shot needs this frame drawn */
     long ticks; /* display frames (counts while the menu holds the game) */
 } A;
 
@@ -181,6 +183,12 @@ static void script_step(u16 *b0, u16 *b1)
             return;
         } else if (!strcmp(cmd, "shot")) {
             char path[512];
+            if (A.draw_every > 1 && !S.phase) {
+                A.force_draw = 1; /* draw this frame, write it at the next step */
+                S.phase = 1;
+                return;
+            }
+            S.phase = 0;
             snprintf(path, sizeof path, "%s/%s.png", shot_dir, a1);
             write_shot(path);
             S.pc++; continue;
@@ -260,7 +268,8 @@ static void update(void *u)
     host_pad_set(1, &p1);
     memset(fe_cnt, 0, sizeof fe_cnt);
     /* frame skip: when several steps run in one display frame only the last is drawn */
-    r_set_discard(!plat_step_is_last() && A.nshot == 0 && A.shot_every == 0);
+    r_set_discard((!plat_step_is_last() && A.nshot == 0 && A.shot_every == 0) ||
+                  (A.draw_every > 1 && (mvc2_host_frame + 1) % A.draw_every != 0 && !A.force_draw));
     mvc2_frame();
     r_set_discard(0);
     fe_audio_frame();
@@ -300,7 +309,9 @@ static void render(void *u)
     int W, H, i;
     (void)u;
     plat_drawable_size(&W, &H);
-    fe_ui_render(W, H);
+    if (A.draw_every <= 1 || mvc2_host_frame % A.draw_every == 0 || A.force_draw)
+        fe_ui_render(W, H);
+    A.force_draw = 0;
     for (i = 0; i < A.nwshot; i++)
         if (A.wshot[i].frame == A.ticks) {
             uint8_t *rgba = (uint8_t *)malloc((size_t)W * H * 4);
@@ -384,6 +395,9 @@ int main(int argc, char **argv)
         else if (!strcmp(a, "--set") && n) { if (nsets < 64) sets[nsets++] = n; i++; }
         else if (!strcmp(a, "--fullscreen")) fullscreen = 1;
         else if (!strcmp(a, "--cpu-team") && n) { setenv("MVC2_CPU_TEAM", n, 1); i++; } /* testing */
+        else if (!strcmp(a, "--draw-every") && n) { A.draw_every = atoi(n); i++; }      /* testing */
+        else if (!strcmp(a, "--p1-hp") && n) { setenv("MVC2_P1_HP", n, 1); i++; }        /* testing */
+        else if (!strcmp(a, "--cpu-hp") && n) { setenv("MVC2_CPU_HP", n, 1); i++; }      /* testing */
         else if (!strcmp(a, "--p1-team") && n) { setenv("MVC2_P1_TEAM", n, 1); i++; }   /* testing */
         else if (!strcmp(a, "--arcade") && n) { setenv("MVC2_ARCADE", n, 1); i++; }      /* ARCADE_DIFF.md 5 */
         else if (!strcmp(a, "--naomi") && n) { setenv("MVC2_NAOMI", n, 1); i++; }
