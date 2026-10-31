@@ -54,6 +54,11 @@ static struct {
     GLuint pp_prog, pp_vao;/* present pass */
     GLint pu_src, pu_src_size, pu_dst_size, pu_filter, pu_crt, pu_strength, pu_mask;
     int draws, last_draws, last_verts, frame_verts;
+    /* canvas binding and the flip clear (fl_set_flip_clear) */
+    int canvas_bound;      /* canvas FBO + its viewport/scissor are current */
+    int flip_clear;        /* clear at the first draw after fl_frame_flip, not in fl_frame_begin */
+    int clear_pending;     /* a clear is due before the next draw */
+    int drawn;             /* something was drawn since the last clear */
 } R;
 
 /* ---------------- shaders ---------------- */
@@ -267,6 +272,49 @@ static void apply_blend_depth(void)
     glDepthMask(R.zwrite ? GL_TRUE : GL_FALSE);
 }
 
+/* Bind the canvas (FBO, viewport, scissor) before drawing into it, and do a
+ * pending clear.  Draws can come at any point between two flips (the game
+ * draws some scenes from its logic step, before func_00170D30), and the
+ * present pass binds the window in between. */
+void r_canvas_bind(void)
+{
+    if (R.in_overlay) return;
+    if (R.canvas_bound && !R.clear_pending) { R.drawn = 1; return; }
+    if (!R.canvas_bound) {
+        glBindFramebuffer(GL_FRAMEBUFFER, R.canvas_fbo);
+        glViewport(0, 0, FL_SCREEN_W, FL_SCREEN_H);
+        R.view_w = FL_SCREEN_W;
+        R.view_h = FL_SCREEN_H;
+        glEnable(GL_SCISSOR_TEST);
+        glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
+        R.canvas_bound = 1;
+    }
+    if (R.clear_pending) {
+        uint32_t c = R.clear_color;
+        glScissor(0, 0, FL_SCREEN_W, FL_SCREEN_H);
+        glDepthMask(GL_TRUE);
+        glClearColor(((c >> 16) & 0xFF) / 255.f, ((c >> 8) & 0xFF) / 255.f, (c & 0xFF) / 255.f, 1.f);
+        gl_clear_depth(0.f); /* GS Z 0 = farthest */
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+        R.clear_pending = 0;
+        R.drawn = 0;
+    }
+    glScissor(R.scissor[0], FL_SCREEN_H - (R.scissor[1] + R.scissor[3]), R.scissor[2], R.scissor[3]);
+    R.drawn = 1;
+}
+
+void fl_set_flip_clear(int on) { R.flip_clear = on != 0; }
+
+/* func_003ECD00 (flip): the PS2 fills the next draw buffer with the clear
+ * colour (D_0062BF80, when not 0) before the frame's DMA chain draws into
+ * it.  Here the clear is done at the first draw after the flip, so the
+ * frame just finished stays readable (screenshots, present). */
+void fl_frame_flip(void)
+{
+    r_flush();
+    R.clear_pending = 1;
+}
+
 void r_set_discard(int on) { r_flush(); R.discard = on != 0; }
 int r_discarding(void) { return R.discard && !R.in_overlay; }
 void r_set_sprite_filter(int f) { R.sprite_filter = f; }
@@ -275,6 +323,7 @@ void r_flush(void)
 {
     if (!R.nverts) return;
     if (R.discard && !R.in_overlay) { R.nverts = 0; return; }
+    r_canvas_bind();
     glUseProgram(R.prog);
     glBindVertexArray(R.vao);
     glUniform2f(R.u_view, (float)R.view_w, (float)R.view_h);
@@ -612,7 +661,13 @@ void fl_set_scissor(int x, int y, int w, int h)
     if (!R.in_overlay) glScissor(x, FL_SCREEN_H - (y + h), w, h);
 }
 
-void fl_set_clear_color(uint32_t argb) { R.clear_color = argb; }
+void fl_set_clear_color(uint32_t argb)
+{
+    /* the PS2 uses the value current at the flip; a change before anything
+     * was drawn in this frame still reaches this frame's clear */
+    if (R.flip_clear && argb != R.clear_color && R.canvas_bound && !R.drawn && !R.discard) R.clear_pending = 1;
+    R.clear_color = argb;
+}
 void fl_set_origin(int x, int y) { R.origin_x = x; R.origin_y = y; }
 
 /* ---------------- frame ---------------- */
@@ -622,18 +677,10 @@ void fl_frame_begin(void)
     R.last_verts = R.frame_verts;
     R.draws = 0;
     R.frame_verts = 0;
-    glBindFramebuffer(GL_FRAMEBUFFER, R.canvas_fbo);
-    glViewport(0, 0, FL_SCREEN_W, FL_SCREEN_H);
-    R.view_w = FL_SCREEN_W;
-    R.view_h = FL_SCREEN_H;
-    glEnable(GL_SCISSOR_TEST);
-    glScissor(0, 0, FL_SCREEN_W, FL_SCREEN_H);
-    glColorMask(GL_TRUE, GL_TRUE, GL_TRUE, GL_TRUE);
-    glDepthMask(GL_TRUE);
-    uint32_t c = R.clear_color;
-    glClearColor(((c >> 16) & 0xFF) / 255.f, ((c >> 8) & 0xFF) / 255.f, (c & 0xFF) / 255.f, 1.f);
-    gl_clear_depth(0.f); /* GS Z 0 = farthest */
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    r_flush();
+    if (!R.flip_clear) R.clear_pending = 1; /* viewer / soundtest: clear here */
+    R.canvas_bound = 0;
+    r_canvas_bind();
     /* func_00170D30: per-frame blend 0x32, nearest filtering */
     fl_set_render_state(0x5D, 0x32);
     fl_set_render_state(0x62, 0x10000);
@@ -763,6 +810,7 @@ void r_present_ex(int W, int H, const RPresent *p)
     r_flush();
     int x, y, w, h;
     r_present_rect(W, H, p, &x, &y, &w, &h);
+    R.canvas_bound = 0;
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
     glDisable(GL_SCISSOR_TEST);
     glDisable(GL_BLEND);
@@ -826,6 +874,7 @@ void r_present(int W, int H, int mode)
 int r_read_window(int W, int H, uint8_t *rgba)
 {
     r_flush();
+    R.canvas_bound = 0;
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
     uint8_t *tmp = (uint8_t *)malloc((size_t)W * H * 4);
     glReadPixels(0, 0, W, H, GL_RGBA, GL_UNSIGNED_BYTE, tmp);
@@ -838,6 +887,7 @@ int r_read_window(int W, int H, uint8_t *rgba)
 int r_read_canvas(uint8_t *rgba)
 {
     r_flush();
+    R.canvas_bound = 0; /* bound below without the pending clear */
     glBindFramebuffer(GL_FRAMEBUFFER, R.canvas_fbo);
     uint8_t *tmp = (uint8_t *)malloc(FL_SCREEN_W * FL_SCREEN_H * 4);
     glReadPixels(0, 0, FL_SCREEN_W, FL_SCREEN_H, GL_RGBA, GL_UNSIGNED_BYTE, tmp);
@@ -1139,6 +1189,8 @@ int fl_fill_screen(int mode, uint32_t c)
      * mode 1: ATST ALWAYS -> colour (A = 0) and Z. Scissor still applies. */
     if (mode != 0 && mode != 1) return 0;
     r_flush();
+    if (R.discard) return 0;
+    r_canvas_bind();
     glDepthMask(GL_TRUE);
     gl_clear_depth(0.f);
     if (mode == 1) {
@@ -1155,6 +1207,7 @@ void r_overlay_begin(int w, int h)
 {
     r_flush();
     R.in_overlay = 1;
+    R.canvas_bound = 0;
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
     glViewport(0, 0, w, h);
     glDisable(GL_SCISSOR_TEST);

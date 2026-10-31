@@ -212,3 +212,5 @@ func_0018B500,core,arcade.c,hit reaction / damage: the game's own body + optiona
 func_0032DF90,core,arcade.c,CPU team pick: the game's own body + --cpu-team forcing (testing),
 func_0012EF50,core,arcade.c,queue a character PAK: --p1-team forcing (testing) + the game's own body,
 func_0012EF80,core,arcade.c,queue a character PAK (second path): --p1-team forcing (testing) + the game's own body,
+func_0041B3C0,frontend,fe/fe_mesh.c,clay vertex-write tables: game body + POL vertex -> packet offset map for the GL mesh,
+func_0041BB30,frontend,fe/fe_mesh.c,end of a packet vertex write: game body + mark the clay's GL vertices for re-read,

@@ -264,6 +264,12 @@ void func_003E00B0(int v)
 /* ---------------- frame ---------------- */
 void func_00170D30(void)
 {
+    {   /* MVC2_MESH_DUMP=F (fe_mesh.c): mark where the frame's begin falls among the mesh draws */
+        extern volatile long mvc2_host_frame;
+        static long at = -2;
+        if (at == -2) at = getenv("MVC2_MESH_DUMP") ? atol(getenv("MVC2_MESH_DUMP")) : -1;
+        if (at == mvc2_host_frame) fprintf(stderr, "[mesh] frame begin %ld\n", mvc2_host_frame);
+    }
     fl_frame_begin();
     func_00170D30__game();
 }
@@ -371,8 +377,12 @@ int func_00420BF0(void *writer, void *quad) /* batch-writer textured quad (text)
 
 static const HostRenderOps fe_ops = { fe_sprite, 0, 0, 0, fe_fill, 0 };
 
+static void fe_flip(void) { fl_frame_flip(); }
+
 void fe_render_init(void)
 {
+    fl_set_flip_clear(1);
+    host_present_hook = fe_flip;
     fe_log_tex = getenv("MVC2_LOG_TEX") != 0;
     host_render_ops = &fe_ops;
 }

@@ -123,7 +123,9 @@ void fl_camera_apply(const FlCamera *c, float far_plane, int n, int vx, int vy)
 }
 
 /* ---------------- model data ---------------- */
-typedef struct MVtx { float pos[3], nrm[3]; uint8_t col[4]; float uv[2]; } MVtx; /* 36 bytes */
+/* col: colour in byte units (vertex colour byte; a packet colour divided by the
+ * func_003EEC30 scale), as floats so packet values above one byte survive */
+typedef struct MVtx { float pos[3], nrm[3]; float col[4]; float uv[2]; } MVtx; /* 48 bytes */
 
 typedef struct MRange {
     int first, count;       /* in indices */
@@ -141,11 +143,15 @@ typedef struct MMesh {
     float bmin[3], bmax[3]; /* vertex bounds (tools) */
     MRange *range;
     int nrange;
+    MVtx *cpu;              /* clay meshes: CPU copy of the VBO (vertex writes, fl_clay_vertices) */
+    int dirty;              /* cpu changed since the last upload */
 } MMesh;
 
 typedef struct MNode { int child, sibling, mesh; float local[16]; } MNode;
 
+#define MAX_CLAY_MESH 0x402
 struct FlModel {
+    int keep_cpu;           /* the clay model: keep a CPU copy of each vertex buffer */
     MMesh *mesh; int nmesh;
     MNode *node; int nnode;
     int *root; int nroot;
@@ -153,7 +159,7 @@ struct FlModel {
 
 static struct {
     GLuint prog;
-    GLint u_mvp, u_vp, u_vpz, u_flags, u_cscale, u_mod, u_matcol, u_uv0, u_uv1, u_uv3, u_fog,
+    GLint u_mvp, u_vp, u_vpz, u_flags, u_cscale, u_lclamp, u_mod, u_matcol, u_uv0, u_uv1, u_uv3, u_fog,
         u_fogcol, u_ldir, u_lcol, u_lamb, u_mode, u_linear, u_clamp, u_tex, u_pal, u_palrow;
     int ok;
 } M;
@@ -163,13 +169,14 @@ enum { MF_VCOL = 1, MF_MATCOL = 2, MF_LIT = 4, MF_UVX = 8, MF_FOG = 16, MF_TEX =
 static const char *k_mvs =
     "in vec3 a_pos;\n"
     "in vec3 a_nrm;\n"
-    "in vec4 a_col;   /* raw colour bytes 0..255 */\n"
+    "in vec4 a_col;   /* colour in byte units (0..255 for POL vertex colours) */\n"
     "in vec2 a_uv;\n"
     "uniform mat4 u_mvp;      /* world * view * projection (VU1 vf1..vf4 without the viewport) */\n"
     "uniform vec4 u_vp;       /* viewport to canvas NDC: x*ax + w*bx, y*ay + w*by */\n"
     "uniform float u_vpz;     /* -(fb - fa) */\n"
     "uniform int u_flags;\n"
     "uniform vec4 u_cscale;   /* vertex colour byte -> GS units (0.5 textured) */\n"
+    "uniform float u_lclamp;  /* lit colour clamp: the descriptor colour scale (128 / 255) */\n"
     "uniform vec4 u_mod;      /* 0x66 / 255, or 1 */\n"
     "uniform vec4 u_matcol;   /* material colour, GS units, final */\n"
     "uniform vec4 u_uv0, u_uv1, u_uv3; /* matrix slot 0x1A rows 0, 1, 3 */\n"
@@ -187,7 +194,7 @@ static const char *k_mvs =
     "  vec4 col;\n"
     "  if ((u_flags & 4) != 0) {\n"
     "    vec3 d = max(vec3(dot(a_nrm, u_ldir[0]), dot(a_nrm, u_ldir[1]), dot(a_nrm, u_ldir[2])), 0.0);\n"
-    "    col.rgb = min(u_lcol[0].rgb * d.x + u_lcol[1].rgb * d.y + u_lcol[2].rgb * d.z + u_lamb.rgb, 128.0);\n"
+    "    col.rgb = min(u_lcol[0].rgb * d.x + u_lcol[1].rgb * d.y + u_lcol[2].rgb * d.z + u_lamb.rgb, u_lclamp);\n"
     "    col = floor(vec4(col.rgb, u_lamb.a) * u_mod);\n"
     "  } else if ((u_flags & 2) != 0) {\n"
     "    col = u_matcol;\n"
@@ -290,7 +297,7 @@ int r_mesh_init(void)
         return -1;
     }
 #define U(n) M.n = glGetUniformLocation(M.prog, #n)
-    U(u_mvp); U(u_vp); U(u_vpz); U(u_flags); U(u_cscale); U(u_mod); U(u_matcol); U(u_uv0); U(u_uv1);
+    U(u_mvp); U(u_vp); U(u_vpz); U(u_flags); U(u_cscale); U(u_lclamp); U(u_mod); U(u_matcol); U(u_uv0); U(u_uv1);
     U(u_uv3); U(u_fog); U(u_fogcol); U(u_ldir); U(u_lcol); U(u_lamb); U(u_mode); U(u_linear);
     U(u_clamp); U(u_tex); U(u_pal); U(u_palrow);
 #undef U
@@ -482,8 +489,8 @@ static void build_mesh(FlModel *mdl, int mi, const Pol *p, size_t mo)
             uint32_t r = f2u(rdf(p, sc + 12 + 16 * i)), g = f2u(rdf(p, sc + 16 + 16 * i)),
                      b = f2u(rdf(p, sc + 20 + 16 * i)), a = f2u(rdf(p, sc + 24 + 16 * i));
             uint32_t argb = (a << 24) | (r << 16) | (g << 8) | b;
-            v[i].col[0] = (uint8_t)(argb >> 16); v[i].col[1] = (uint8_t)(argb >> 8);
-            v[i].col[2] = (uint8_t)argb; v[i].col[3] = (uint8_t)(argb >> 24);
+            v[i].col[0] = (float)(uint8_t)(argb >> 16); v[i].col[1] = (float)(uint8_t)(argb >> 8);
+            v[i].col[2] = (float)(uint8_t)argb; v[i].col[3] = (float)(uint8_t)(argb >> 24);
         }
     }
     /* strips -> triangle list, ranges of consecutive strips with the same material slot */
@@ -538,7 +545,7 @@ static void build_mesh(FlModel *mdl, int mi, const Pol *p, size_t mo)
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(MVtx), (void *)offsetof(MVtx, nrm));
     glEnableVertexAttribArray(2);
-    glVertexAttribPointer(2, 4, GL_UNSIGNED_BYTE, GL_FALSE, sizeof(MVtx), (void *)offsetof(MVtx, col));
+    glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, sizeof(MVtx), (void *)offsetof(MVtx, col));
     glEnableVertexAttribArray(3);
     glVertexAttribPointer(3, 2, GL_FLOAT, GL_FALSE, sizeof(MVtx), (void *)offsetof(MVtx, uv));
     glGenBuffers(1, &me->ibo);
@@ -554,7 +561,8 @@ static void build_mesh(FlModel *mdl, int mi, const Pol *p, size_t mo)
     }
     glBindVertexArray(0);
     free(idx);
-    free(v);
+    if (mdl->nmesh == MAX_CLAY_MESH && mdl->keep_cpu) me->cpu = v; /* clay: keep for vertex writes */
+    else free(v);
 }
 
 FlModel *fl_model_load(const uint8_t *data, size_t size, const FlModelLoad *ld)
@@ -651,8 +659,8 @@ FlModel *fl_model_load(const uint8_t *data, size_t size, const FlModelLoad *ld)
  * draws them one by one (func_003F0500).  These keep one GL mesh per clay
  * handle, built from the same POL mesh chunk with the format word current
  * at build time, and draw it with the current render state. */
-#define MAX_CLAY 0x402
-static FlModel CLAY;
+#define MAX_CLAY MAX_CLAY_MESH
+static FlModel CLAY = { 1 };
 
 static void clay_free(int h)
 {
@@ -661,6 +669,7 @@ static void clay_free(int h)
     if (me->vbo) glDeleteBuffers(1, &me->vbo);
     if (me->ibo) glDeleteBuffers(1, &me->ibo);
     free(me->range);
+    free(me->cpu);
     memset(me, 0, sizeof *me);
     me->desc = -1;
 }
@@ -693,6 +702,22 @@ int fl_clay_textures(int h, uint32_t *out, int max)
 uint32_t fl_clay_fmt(int h)
 {
     return (CLAY.mesh && h > 0 && h < MAX_CLAY) ? CLAY.mesh[h].fmt : 0;
+}
+
+/* The CPU copy of a clay's vertices (in POL vertex order); call
+ * fl_clay_vertices_changed after writing so the next draw uploads them. */
+FlMeshVtx *fl_clay_vertices(int h, int *nv)
+{
+    MMesh *me;
+    if (!CLAY.mesh || h <= 0 || h >= MAX_CLAY || CLAY.mesh[h].desc < 0 || !CLAY.mesh[h].cpu) return NULL;
+    me = &CLAY.mesh[h];
+    if (nv) *nv = me->nverts < 0 ? -me->nverts : me->nverts;
+    return (FlMeshVtx *)me->cpu;
+}
+
+void fl_clay_vertices_changed(int h)
+{
+    if (CLAY.mesh && h > 0 && h < MAX_CLAY) CLAY.mesh[h].dirty = 1;
 }
 
 int fl_clay_draw(int h)
@@ -773,14 +798,27 @@ int fl_model_root_bounds(const FlModel *mdl, int root, float bmin[3], float bmax
 /* ---------------- func_003F0500 ---------------- */
 static float gsf(uint32_t c, int sh) { return (float)((c >> sh) & 0xFF); }
 
+int fl_mesh_debug;
 int fl_mesh_draw(FlModel *mdl, int i)
 {
     if (!mdl || i < 0 || i >= mdl->nmesh || !M.ok) return 0;
     MMesh *me = &mdl->mesh[i];
     if (me->desc < 0 || !me->nidx) return 0;
     r_flush(); /* keep the order with the 2D batches */
+    if (me->dirty && me->cpu) { /* vertices the game rewrote in its VU1 packet (fl_clay_vertices) */
+        int nv = me->nverts < 0 ? -me->nverts : me->nverts;
+        glBindBuffer(GL_ARRAY_BUFFER, me->vbo);
+        glBufferSubData(GL_ARRAY_BUFFER, 0, (GLsizeiptr)(sizeof(MVtx) * (size_t)nv), me->cpu);
+        glBindBuffer(GL_ARRAY_BUFFER, 0);
+        me->dirty = 0;
+    }
     if (r_discarding()) return 1; /* frame skip (r_set_discard): the logic ran, nothing is drawn */
+    r_canvas_bind();
     uint32_t fmt = me->fmt;
+    /* descriptor colour scale (D_004779F0 +0x28, every setup callback reads it):
+     * 255 for the untextured programs, whose colours go to the GS unmodulated */
+    const float cscale = (me->desc == 2 || me->desc == 4 || me->desc == 8 || me->desc == 10 || me->desc == 12 ||
+                          me->desc == 14 || me->desc == 16 || me->desc == 18) ? 255.f : 128.f;
     int lit = (fmt & 0x100) != 0, matcol = (fmt & 2) != 0, mod = (fmt & 0x20000) != 0;
     int flags = (lit ? 4 : matcol ? 2 : 1) | ((fmt & 0x4000) ? 8 : 0) |
                 ((fmt & 0x18000) == 0x8000 ? 16 : 0) | (me->textured ? 32 : 0);
@@ -809,6 +847,7 @@ int fl_mesh_draw(FlModel *mdl, int i)
     float cs[4] = { 0.5f, 0.5f, 0.5f, 0.5f };
     if (!me->textured) cs[0] = cs[1] = cs[2] = 1.f; /* func_003EEC30 kind 0x25: rgb not halved */
     glUniform4fv(M.u_cscale, 1, cs);
+    glUniform1f(M.u_lclamp, cscale);
     const float *u1a = r_matrix(0x1A);
     glUniform4fv(M.u_uv0, 1, u1a + 0);
     glUniform4fv(M.u_uv1, 1, u1a + 4);
@@ -841,7 +880,7 @@ int fl_mesh_draw(FlModel *mdl, int i)
         for (int k = 0; k < 3; k++) {
             float a0, a1, a2;
             memcpy(&a0, l0 + 0x24 + 4 * k, 4); memcpy(&a1, l1 + 0x24 + 4 * k, 4); memcpy(&a2, l2 + 0x24 + 4 * k, 4);
-            lamb_base[k] = 128.f * (a2 + (a0 + a1)) + gsf(e, 16 - 8 * k) / 255.f * 128.f;
+            lamb_base[k] = cscale * (a2 + (a0 + a1)) + gsf(e, 16 - 8 * k) / 255.f * cscale;
         }
         glUniform3fv(M.u_ldir, 3, ldir);
     }
@@ -875,7 +914,7 @@ int fl_mesh_draw(FlModel *mdl, int i)
         glUniform1f(M.u_palrow, (float)palrow);
         /* material colour packet (func_003EFA40 case 0 + microcode): rgb clamped to 128 */
         float mc[4];
-        for (int k = 0; k < 3; k++) mc[k] = floorf(fminf(rg->diffuse[k] * 128.f, 128.f) * modv[k]);
+        for (int k = 0; k < 3; k++) mc[k] = floorf(fminf(rg->diffuse[k] * cscale, cscale) * modv[k]);
         mc[3] = floorf(rg->diffuse[3] * 128.f * modv[3]);
         glUniform4fv(M.u_matcol, 1, mc);
         if (lit) {
@@ -885,17 +924,48 @@ int fl_mesh_draw(FlModel *mdl, int i)
                 for (int c = 0; c < 3; c++) {
                     float lcol;
                     memcpy(&lcol, l + 0x04 + 4 * c, 4);
-                    lc[4 * k + c] = fminf(128.f, 128.f * rg->diffuse[c] * lcol);
+                    lc[4 * k + c] = fminf(cscale, cscale * rg->diffuse[c] * lcol);
                 }
                 lc[4 * k + 3] = 0.f;
             }
-            for (int c = 0; c < 3; c++) la[c] = fminf(128.f, lamb_base[c] * rg->c0[c]);
+            for (int c = 0; c < 3; c++) la[c] = fminf(cscale, lamb_base[c] * rg->c0[c]);
             la[3] = floorf(128.f * rg->diffuse[3]);
             glUniform4fv(M.u_lcol, 3, lc);
             glUniform4fv(M.u_lamb, 1, la);
         }
         glDrawElements(GL_TRIANGLES, rg->count, it, (void *)(uintptr_t)((size_t)rg->first * isz));
         r_count_draw(rg->count);
+        if (fl_mesh_debug) {
+            /* screen bounds of this mesh's vertices (CPU copy) and the draw state */
+            float x0 = 1e9f, y0 = 1e9f, x1 = -1e9f, y1 = -1e9f, w0 = 1e9f, w1 = -1e9f;
+            int nv = me->nverts < 0 ? -me->nverts : me->nverts;
+            for (int k = 0; me->cpu && k < nv; k++) {
+                const float *q = me->cpu[k].pos;
+                float c[4];
+                for (int j = 0; j < 4; j++) c[j] = q[0] * mvp[j] + q[1] * mvp[4 + j] + q[2] * mvp[8 + j] + mvp[12 + j];
+                if (c[3] == 0.f) continue;
+                float sx = (c[0] * ax + c[3] * bx) / c[3], sy = (c[1] * ay + c[3] * by) / c[3];
+                sx = (sx + 1.f) * 320.f; sy = (1.f - sy) * 240.f;
+                if (sx < x0) x0 = sx; if (sx > x1) x1 = sx; if (sy < y0) y0 = sy; if (sy > y1) y1 = sy;
+                { float z = c[2] * -(vf[1] - vf[0]) / c[3]; if (z < w0) w0 = z; if (z > w1) w1 = z; }
+            }
+            GLint sb[4], bs = 0, bd = 0, be = 0, df = 0, bl = 0, dt = 0;
+            glGetIntegerv(GL_SCISSOR_BOX, sb); glGetIntegerv(GL_BLEND_SRC_RGB, &bs); glGetIntegerv(GL_BLEND_DST_RGB, &bd);
+            glGetIntegerv(GL_BLEND_EQUATION_RGB, &be); glGetIntegerv(GL_DEPTH_FUNC, &df);
+            glGetIntegerv(GL_BLEND, &bl); glGetIntegerv(GL_DEPTH_TEST, &dt);
+            {
+                int cx = (int)((x0 + x1) / 2), cy = (int)((y0 + y1) / 2);
+                uint8_t px[4] = { 0 };
+                if (cx >= 0 && cx < 640 && cy >= 0 && cy < 480) glReadPixels(cx, 479 - cy, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, px);
+                fprintf(stderr, "[mesh]   pixel (%d,%d) = %d %d %d %d\n", cx, cy, px[0], px[1], px[2], px[3]);
+            }
+            fprintf(stderr, "[mesh]   scissor %d %d %d %d blend %d %x %x %x depth %d %x\n", sb[0], sb[1], sb[2], sb[3], bl, bs, bd, be, dt, df);
+            fprintf(stderr, "[mesh] %d r%d fmt %08X desc %d tex %08X mode %d n %d mod %.2f %.2f %.2f %.2f mat %.0f %.0f %.0f %.0f flags %d scr (%.0f,%.0f)-(%.0f,%.0f) ndcz %.3g..%.3g col0 %.0f %.0f %.0f %.0f\n",
+                    i, r, fmt, me->desc, rg->tex, mode, rg->count, modv[0], modv[1], modv[2], modv[3],
+                    mc[0], mc[1], mc[2], mc[3], flags, x0, y0, x1, y1, w0, w1,
+                    me->cpu ? me->cpu[0].col[0] : -1.f, me->cpu ? me->cpu[0].col[1] : -1.f,
+                    me->cpu ? me->cpu[0].col[2] : -1.f, me->cpu ? me->cpu[0].col[3] : -1.f);
+        }
     }
     glBindVertexArray(0);
     return 1;
