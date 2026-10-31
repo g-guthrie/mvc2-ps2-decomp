@@ -1,0 +1,33 @@
+state 1/8
+wait 30
+until 1/7 start 40
+wait 30
+until 3/1/1 start 30
+wait 40
+press right
+press cross
+wait 150
+press cross
+wait 30
+press p2:cross
+wait 60
+until 2/1/2 cross+p2:cross 40
+wait 700
+shot start
+press l1 4
+wait 125
+press l2 4
+wait 125
+press l1 4
+wait 125
+press l2 4
+wait 125
+press l1 4
+wait 125
+press l2 4
+wait 125
+press l1 4
+wait 125
+press l2 4
+wait 125
+quit

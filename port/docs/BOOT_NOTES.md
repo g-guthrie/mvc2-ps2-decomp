@@ -196,7 +196,7 @@ Still faked / open (honest list):
   packet vertices in place (`func_001412D0` → `func_0041C010`), which the
   GL meshes built once at load do not follow.
 - IOP / GS / DMA setup is skipped (`boot.c`); `func_00100590` (GS env) stays a stub.
-- 503 R12 padded arguments the dataflow cannot explain (`gen_regpass.py
+- (closed: "R12 robust pass") 503 R12 padded arguments the dataflow cannot explain (`gen_regpass.py
   --unresolved`); one was hand-fixed (`r12_regexpr.csv`), the rest are
   checked as they are reached.
 - Memory card: a host directory natively; on the web it lives in MEMFS
@@ -369,7 +369,7 @@ which the port's in-memory ADX player cannot hit; no code change.
   mesh per frame).
 - `func_00100590` GS environment stub: not started (GS register setup has no
   GL meaning beyond what fe_render already applies).
-- R12: 292 padded arguments still unresolved where the register holds a
+- R12: (closed by the "R12 robust pass" below) 292 padded arguments still unresolved where the register holds a
   caller local (`gen_regpass.py --unresolved`; 504 more are widened-tail
   entries); the ones on the paths above are fixed.
 - Not driven yet: a full arcade run to the ending (and the Abyss stage 8 /
@@ -399,3 +399,85 @@ Chromium with SwiftShader (software GL); it did not reproduce in the arcade
 sweep (15 fights, all 59 characters) or the fidelity mode runs. Open: get a
 crash dump from a failing run (`--enable-crash-reporter`) and check on a
 real GPU.
+
+### R12 robust pass (2026-10-31, branch port-robust)
+
+Goal: no padded argument whose EE value the host silently replaces by 0.
+`gen_regpass.py --sites DIR` (run with the default outputs as
+`gen_regpass.py --sigs host_sigs.json --sites port/tools`) classifies every
+padded argument that no caller parameter explains, over all credited
+sources, and writes `port/tools/r12_sites.csv` (source, caller, callee,
+arg, nth, register, what it held, status, expr, why):
+
+- **Value dataflow** (`vflow`): per register a token: constant, `%hi/%lo` /
+  `%gp_rel` symbol address, load from a symbol or through another token
+  (with the load's index), token + constant, call return, opaque def, or a
+  phi at a join.  A call keeps what its callee leaves alone: per-function
+  exit summaries computed bottom-up over the call graph (`func_00393390`
+  returns with `$a0` untouched, so `func_00393E60`'s `func_00394080()` gets p).
+  Entry tokens found this way feed the R12/R20 passthrough too.
+- **Naming a local**: a token the same function passes as a plain variable to
+  another call (ints-only callee, full argument list) or assigns from a call
+  (`k = func_0012ABC0(3, 0) & 0xFFFF`) is that variable, unless the C
+  reassigns it between the two calls or takes its address.  A load is only
+  re-evaluated at the call when no call, no label and no overlapping store
+  through the same base lies between.  Numeric parameters given a symbol
+  address get the EE address (`func_0013D6F0(u8)` gets `(u8)0x632710`).
+  Results: `port/tools/r12_regauto.csv` (source, caller, callee, arg, nth,
+  expr); hostify R12 reads it below `r12_regexpr.csv` (hand rows win).
+  hostify's pad log now records the calling function and the call's index
+  (`nth`, inner calls first) and R12 expression rows may name it.
+- **Proven harmless**: (1) asm liveness: the callee never reads the register
+  on any path (interprocedural, through tail calls and dispatch tables; a
+  call kills only what its callee writes on every path; unknown or indirect
+  targets read everything); (2) host usage: the credited C of the callee
+  never uses that parameter (it is only passed on to callees that drop or
+  ignore it; widened parameters follow the R12 rows and R22 tables; macro
+  generated functions are expanded with the file's own macros).
+- **Asm model fixes** found on the way: main.s glabels that hold several
+  matched functions are split by matches.csv, a glabel inside a matched
+  function stays in its body (`func_001AC870` in `func_001AC860`), jump
+  tables end at the next label (`jtbl_004631C0` ran on into `D_004631D8`),
+  raw-address switch cases get labels, `alabel` entry points and
+  `residual_`/`D_` table entries count as table targets.  With the play
+  agent's detector commit underneath: tailfwd 2,462 heads (39 more than it,
+  `func_0035B7E0` included), regpass 1,019 rows (28 more), regsym 75,
+  indirect 16, widen 2,763.
+
+Counts (913 padded arguments without a caller parameter):
+
+| | canonical parameter (the old "292") | widened (R20/R22) parameter |
+|---|---|---|
+| auto-resolved (`r12_regauto.csv`) | 8 | 0 |
+| hand rows (`r12_regexpr.csv`) | 22 (9 of them also provably unread) | 0 |
+| proven harmless | 293 (275 asm never reads, 18 host never uses) | 584 (513 / 71) |
+| left | 3 | 3 |
+
+Hand rows added (each read off the asm): `sLa0_b.c` staff-roll character
+`c`, `sa30_d.c`/`sa3_d.c` button masks `k`/`m`, `sa34_e.c` `a2` (loop phi),
+`w197_q.c` `b`, `wave4.c` `v` (x2).  The 12 fidelity rows were re-derived
+by the tool (constants, `&D_004CA080`; `o` in `v4_a.c` stays hand: the
+load's base register is reused before the call).
+
+Left (6), all "the register held what the previous callee left in it",
+path-dependent in retail too: `func_00397580` arg 2 after `func_00175700`
+(3 callers: `$a2` is the caller's own entry `$a2` unless an animation event
+called `func_001E3370`), `func_001ACA00` args 2/3 after `func_001757E0`
+(widened), `func_00145160` arg 1 (phi of the entry `$a1` and
+`func_001E3CE0`'s leftover; its callee overwrites the value for the only
+states the caller sets).  The host passes 0 there.
+
+Also fixed in this pass: `D_004C2010` (`func_003B6470`'s function table)
+was credited as the raw EE address 0x003B5F30, so the host jumped to that
+number (Sentinel's third assist, found by the ARCADE_DIFF.md 7.3 assist
+sweep): host R10 override; a scan of every credited data initializer finds
+no other literal code address.
+
+Verification: browser build (title -> menu -> character select -> fight,
+attacks and assist: `private/converted/boot/web/robust*`); native
+`arcade_fight.txt`, `vs_stage2.txt`, `gallery.txt`, `button_config.txt`,
+`long_fight.txt` with `--cpu-team 0x25,0x0C,0x09` (Dhalsim / Spider-Man /
+Iceman, past frame 2196 to 3785: the R22 head `func_0035B7E0` regression),
+and the 35-run assist sweep (`private/converted/boot/native/assist_sweep/`).
+Open, found by the sweep: the shoto fireball assists (Ryu alpha, Ken alpha,
+Akuma beta) hang after script 15/03 (ARCADE_DIFF.md 9).

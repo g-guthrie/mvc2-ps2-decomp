@@ -218,7 +218,7 @@ Examples. N = NAOMI and P = PS2 frame durations in 60 Hz ticks.
 |---|---|
 | "Frames of animation removed" | **Confirmed, but mixed.** About 6% of scripts are retimed. 288 lose frames (for example Cyclops 09/02 loses 5 frames / 14 ticks, Cable 15/13 loses 19 ticks, Storm 14/02 goes from 35 to 10 ticks), and about as many gain frames. Many changed scripts are specials, supers and their recoveries, so combo timing changes are plausible. |
 | "Altered hitboxes" | **Confirmed for many characters, but not all.** Ryu has none. Magneto has a much smaller body box. Cable, Storm and Cyclops have a few rects each. Sentinel has 51 rects. Across the cast 350 rects differ. |
-| "Anti-air assists not invincible at startup on PS2" | **The code is the same; the data differs.** The assist request, the partner entry and the attack-immunity timer behave identically on both builds (§7.1). Startup invulnerability that comes from hurtboxes differs in 139 scripts of 22 characters, in both directions (§7.1). `arcade.frame_data` restores the arcade tables. Which of those scripts are each character's anti-air assist was not mapped. |
+| "Anti-air assists not invincible at startup on PS2" | **The code is the same; the data differs.** The assist request, the partner entry and the attack-immunity timer behave identically on both builds (§7.1). Startup invulnerability that comes from hurtboxes differs in 139 scripts of 22 characters, in both directions (§7.1). `arcade.frame_data` restores the arcade tables. None of them is run by an assist: the assist sweep (§7.3) finds no assist whose startup invulnerability differs. |
 | "Counter glitch hits both characters on PS2" | **No PS2 code difference.** The variable-counter request and the routine that brings the partner in match the NAOMI routines instruction for instruction (§7.2). Any remaining difference is in the counter attacks' frame, box and hit data, which `arcade.frame_data` and `arcade.damage` replace. The glitch itself was not reproduced. |
 | "One stage's music stops" | **Not a data defect.** All 23 AFS00 ADX streams have sane headers. Every stage-length track has its loop flag set with valid loop points. The 5 non-looping files are 2.6 to 108 s jingles, endings and fanfares. The cut-out is therefore in playback code (ADXT/IOP streaming contending with AFS reads, or a stop call), not in the stream. |
 | (Not in the list) **damage** | **Arcade base damage is higher for about 71% of attack records**, and the scaling pipeline is identical. This is the largest gameplay difference found. |
@@ -296,10 +296,19 @@ cached.
   table's own count) and every hit (attack id, base damage, health).
 - `--arcade-play GG/SS` makes player 0 start that script through the game's
   `func_001757E0` while standing.
-- `--p1-team ID` forces side 0's point character as its PAK is queued
-  (`func_0012EF50/80`). The HUD keeps the menu's names.
+- `--p1-team a,b,c` forces side 0's characters (point and both partners)
+  as the character select queues their PAKs (`func_0012EF50/80`, called for
+  each pick by `func_0012E780` cases 18/20/22; a pick equal to an earlier
+  team member's character shares that PAK). The HUD keeps the menu's names.
 - `--cpu-team a,b,c` works again: the game's credited pick runs, then the ids
   are forced.
+- Either list takes `ID:T` entries (T = 0, 1, 2 for alpha, beta, gamma): the
+  assist type is set when the fight binds the PAK (`func_0016F2D0`). Without
+  it the CPU gets its default (`D_004405A0[id]`) and the human keeps the menu's.
+- `MVC2_ASSIST_CYCLE=1` (with `--arcade-trace`): each time a side-0 partner
+  starts its exit (18/04) after an assist, its type (`+0x4DD`) moves to the
+  next one, so one fight shows all three assists of both partners (7.3).
+  Trace lines carry the start frame and the assist type.
 
 ## 6. Verification (browser build, headless Chromium)
 
@@ -359,7 +368,8 @@ These come from the TBL/HIT/HIT_FM tables, so `arcade.frame_data` restores
 them. This is broader than §4.3's aligned-only count, which found none for
 the six characters. Which script is each character's anti-air assist was not
 mapped, so the claim is "plausible for some characters, data-side" rather
-than confirmed for a named assist.
+than confirmed for a named assist. The assist sweep (7.3) then mapped the
+assists: none of the differing scripts is an assist move.
 
 ### 7.2 Variable counter "hits both characters"
 - **Request:** the variable counter is request kinds 3/4 of the assist
@@ -379,6 +389,108 @@ than confirmed for a named assist.
 difference in how a counter connects comes from the counter attacks' data,
 which (a) and (b) replace. The glitch was not reproduced in either build.
 
+
+### 7.3 Which script each assist runs (assist sweep)
+Mapped by running the game, not by reading 59 characters' state code:
+`port/tools/scripts/assist_sweep.txt` (VS mode, the second pad idle, assist 1
+and 2 every 250 frames), `--p1-team 0,X,Y` (Guile on point when Ryu is a
+partner), `MVC2_ASSIST_CYCLE=1 --arcade-trace`, 28 native runs plus 7
+targeted ones (`ID:T` start types). `arcade_diff.py ... --assists LOG...`
+then lists, per character and type, the scripts the partner ran between its
+jump-in (01/01) and its exit (18/04, 18/02), without stand and hit
+reactions, and each script's startup invulnerability (ticks before its
+first frame with a live hurtbox) on both builds. Logs and report:
+`private/converted/boot/native/assist_sweep/`.
+
+Result: **164 of the 168 assist types (56 characters x 3) were observed; in
+none of them does the startup invulnerability differ between PS2 and NAOMI.**
+Most assist moves have a live hurtbox from their first frame on both builds
+(0/0); the ones with an invulnerable start are equal on both: e.g. char 02
+alpha 15/03 8/8, 06 beta 14/02 7/7, 0c beta 15/0c 10/10, 23 beta 15/27 28/28,
+24 alpha 15/02 21/21, 37 beta 15/07 13/13, 38 beta 16/08 9/9. The scripts the
+data scan of 7.1 found different (Storm 14/00 56/0, Hulk 18/01 32/0, Amingo
+15/01 34/0, ...) are not run by any assist: Storm's assists are 15/01
+(alpha), 16/00 16/07 15/14 (beta) and 15/15 (gamma); Hulk's 15/16, 15/00
+15/02, 15/09..0d; Amingo's 15/0e, 15/0e, 15/07 15/09. One script has no
+NAOMI counterpart (char 01 beta 0f/3d, a PS2-only variant).
+
+So, at the data level, no anti-air (or other) assist loses startup
+invulnerability on the PS2; with the code identical too (7.1), the claim is
+not supported. Assist *timing* (total ticks) does differ for a few, e.g.
+char 05 gamma 15/11 55 -> 40, char 09 alpha 15/06 52 -> 68, 06 alpha 15/04
+16 -> 30; `arcade.frame_data` restores those.
+
+Not observed (4): char 00 alpha, 1e beta, 27 alpha and 28 gamma. The first
+three are the shoto fireball assists (Ryu, Akuma, Ken: script 15/03): in
+these native runs the partner finishes 15/03 and then stays in state 0x15
+without exiting, so no further assists come (an open port bug, see 9).
+
+Per character (first script of each assist, `inv` = startup-invulnerable
+ticks NAOMI/PS2 where not 0):
+
+| Char | alpha | beta | gamma |
+|---|---|---|---|
+| 00 | not observed | 15/01 | 15/04 15/06 15/05 15/07 |
+| 01 | 15/00 (inv 15/00 3/3) | 0f/3d 0f/1d 0f/1e 0f/1f | 0f/2f 0f/30 01/09 01/03 |
+| 02 | 15/03 15/04 03/02 (inv 15/03 8/8) | 15/01 | 15/01 |
+| 03 | 15/06 15/09 15/0a | 15/01 | 15/01 |
+| 04 | 15/05 | 15/0a | 15/00 |
+| 05 | 15/00 15/01 | 15/1c 15/1f 15/23 15/2f (inv 15/1f 6/6, 15/23 12/12) | 15/11 |
+| 06 | 15/00 15/04 | 14/02 14/03 14/04 (inv 14/02 7/7) | 15/2d 15/2e |
+| 07 | 15/17 15/1a 15/1d 15/20 | 15/00 15/03 15/04 15/06 | 15/08 15/0e 15/0f 01/03 |
+| 08 | 15/0c 01/09 15/0e (inv 15/0c 3/3) | 15/00 | 15/00 |
+| 09 | 15/06 15/0a | 15/00 | 15/06 15/0a |
+| 0a | 15/34 15/0b | 15/02 15/04 | 15/16 15/17 |
+| 0b | 15/00 | 15/0a 15/0c | 15/0e |
+| 0c | 15/08 | 15/0c 15/0d 01/03 (inv 15/0c 10/10) | 15/01 15/03 15/06 (inv 15/01 5/5) |
+| 0d | 15/16 | 15/00 15/02 | 15/09 15/0a 15/0c 15/0d |
+| 0e | 15/00 15/04 03/02 | 15/0c 15/0e | 15/10 |
+| 0f | 15/03 | 15/05 | 15/00 |
+| 10 | 0f/02 | 15/08 | 15/09 |
+| 11 | 15/14 15/16 | 15/08 15/0a | 15/10 15/12 |
+| 12 | 15/01 | 15/03 | 15/01 |
+| 13 | 15/0a 15/0b | 15/0c 15/0d | 15/1e |
+| 14 | 15/12 | 15/00 | 15/1a |
+| 15 | 15/0e | 15/0e | 15/07 15/09 |
+| 16 | 15/01 | 15/04 | 15/0d 15/0f 15/11 15/13 |
+| 17 | 15/02 15/04 15/05 | 15/0a 15/0c 15/0d 15/0f (inv 15/0a 4/4) | 15/00 |
+| 1b | 15/00 | 15/03 15/1a 03/02 | 15/06 |
+| 1c | 15/00 | 15/04 15/07 | 15/00 |
+| 1d | 15/00 | 15/03 | 15/03 |
+| 1e | 15/01 | not observed | 15/04 15/06 15/05 15/07 |
+| 1f | 15/00 | 15/04 15/10 | 15/05 15/0a |
+| 20 | 15/01 15/03 15/07 | 15/11 | 15/13 15/16 |
+| 21 | 15/00 15/01 | 15/04 15/05 15/06 (inv 15/04 6/6) | 15/00 15/01 |
+| 22 | 15/01 15/07 15/09 15/0b | 15/12 15/14 | 15/0d 15/0f |
+| 23 | 15/00 | 15/27 15/05 (inv 15/27 28/28) | 15/1b 15/21 |
+| 24 | 15/02 15/03 15/05 03/02 (inv 15/02 21/21) | 15/06 15/07 | 15/0a |
+| 25 | 15/00 | 15/01 | 15/03 |
+| 26 | 15/00 | 15/1a | 15/01 15/02 |
+| 27 | not observed | 15/01 | 15/04 15/06 15/05 15/07 |
+| 28 | 15/02 | 15/0c | not observed |
+| 29 | 15/00 15/03 | 15/07 15/0a | 15/14 15/17 03/02 |
+| 2a | 15/01 | 16/00 16/07 15/14 01/09 | 15/15 |
+| 2b | 15/01 15/03 04/00 | 15/05 | 15/0b |
+| 2c | 15/00 | 15/01 | 15/17 |
+| 2d | 15/01 | 15/03 15/06 15/09 15/05 | 15/01 |
+| 2e | 15/00 15/02 | 15/0c 15/0e 15/0f | 15/10 |
+| 2f | 15/2b 15/2c | 15/38 | 14/07 03/02 |
+| 30 | 15/04 15/10 15/11 | 15/2b 15/2e 01/09 01/03 (inv 15/2b 4/4) | 15/3d 15/3e |
+| 31 | 15/0a 15/0b | 15/0a 15/0b | 07/02 |
+| 32 | 15/00 15/02 | 15/01 15/03 04/00 | 08/02 |
+| 33 | 15/00 15/02 | 15/07 15/08 15/09 | 08/02 |
+| 34 | 15/00 15/01 | 08/02 | 15/16 |
+| 35 | 15/01 15/02 | 15/00 | 15/1b |
+| 36 | 15/06 | 15/01 15/04 | 14/05 03/02 |
+| 37 | 15/00 15/02 15/04 | 15/07 15/09 03/02 (inv 15/07 13/13) | 07/01 |
+| 38 | 15/02 | 16/08 (inv 16/08 9/9) | 15/22 01/0a 15/25 |
+| 39 | 14/02 | 14/03 | 14/04 |
+| 3a | 15/05 15/06 | 15/04 15/0f | 15/03 15/0e |
+
+Some characters show the same script for two types (e.g. 02 beta and gamma
+15/01); those are what the trace recorded, not checked against the menu's
+move names.
+
 ## 8. Arcade slowdown
 
 Not implemented, because it is not identifiable as code.
@@ -393,11 +505,17 @@ Not implemented, because it is not identifiable as code.
   port already runs them.
 
 ## 9. Open
-- Map each character's assist types (`+0x4DD`, `D_004405A0`) to their
-  scripts, to name which anti-air assists lose or gain invulnerability.
+- Closed (2026-10-31): the assist-to-script map (7.3: no assist's startup
+  invulnerability differs); `--p1-team` partners can be forced (5).
+- Found by the assist sweep and fixed: Sentinel's third assist crashed the
+  port (`D_004C2010`, a function table credited as the raw EE address
+  0x003B5F30; host R10 override in host_overrides.py, BOOT_NOTES "R12 robust
+  pass").
+- Shoto fireball assists hang (port bug, not data): Ryu alpha, Ken (0x27)
+  alpha and Akuma beta finish script 15/03, then the partner stays in state
+  0x15 (`+0x1E4`) and never exits, so no further assist can be called
+  (native, forced teams; Ryu's beta and gamma work). Not yet traced.
 - Check one move in MAME against the port (the Rev A against Dreamcast-data
   caveat in §4.3).
 - Fallback frames use NAOMI rects of the same index (the count is logged per
   character).
-- An `--p1-team` partner cannot be forced (its PAK is already resident from
-  the menu).
