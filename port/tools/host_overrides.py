@@ -51,6 +51,15 @@ OVERRIDES = {
     # retail keeps idx in $s1, so it reads the caller's $s1, which is 0 all
     # the way down from crt0 (src/ee_crt0.S clears $17; the main loop and
     # its callees save and restore it).  Host: start idx at 0, as retail.
+    # D_004C2010 is a function table (func_003B6470: D_004C2010[p[5]](p, q))
+    # credited as the raw EE address 0x003B5F30: the host jumped to that
+    # number (SIGSEGV after Sentinel's third assist, assist sweep, ARCADE_DIFF.md
+    # 7.3).  The only literal code address in a credited data initializer
+    # (scan of src/ and src/data/).  Host form: the function's address.
+    "src/data/D_004C2010.c": [
+        ("u32 D_004C2010[2] = {\n    0x003B5F30u,",
+         "extern void func_003B5F30(); /* host R10: a function table */\nu32 D_004C2010[2] = {\n    (u32)func_003B5F30,"),
+    ],
     "src/sa11_l.c": [
         ("    s32 idx;\n", "    s32 idx = 0; /* host R10: retail's $s1 from the main loop (0) */\n"),
     ],
