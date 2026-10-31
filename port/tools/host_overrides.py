@@ -31,6 +31,30 @@ OVERRIDES = {
     # caller-made copy, so the callee normalises that copy.  i386 pushes the
     # struct itself (the callee reads x as a pointer: SIGSEGV on the stage
     # whose effect calls func_00330380).  Host form: pass the copy's address.
+    # Explicit calls of the EE soft-double compares (_dpflt = func_00100240
+    # "a < b", _dpfgt = func_00100290 "a > b"; libgcc-style, the double in
+    # $a0:$a1, the 0 in $a2).  Their credited bodies are `(void)` and
+    # tail-call the compare (func_00119AB8) whose result is in $v0, so on
+    # the host every such test was false: e.g. a dash or a projectile assist
+    # that waits for its velocity to change sign never advanced (Ryu alpha,
+    # Ken alpha, Akuma beta: the partner stayed in state 0x15 after 15/03, so
+    # no further assists).  Host form: the same compare in C.
+    "src/wave32.c": [
+        ("if (func_00100240(*(f32 *)(p + 0x5C) * v, 0)) {",
+         "if ((double)(*(f32 *)(p + 0x5C) * v) < 0.0) { /* host R10: _dpflt */"),
+    ],
+    "src/wave22.c": [
+        ("if (func_00100240((double)(nw * old), 0)) {",
+         "if ((double)(nw * old) < 0.0) { /* host R10: _dpflt */"),
+    ],
+    "src/wave27.c": [
+        ("    d = fptodp(*(f32 *)(a + 0x5C) * v);\n    if (func_00100240(d, 0) != 0) {",
+         "    d = 0;\n    if ((double)(*(f32 *)(a + 0x5C) * v) < 0.0) { /* host R10: fptodp + _dpflt */"),
+    ],
+    "src/grok_v3_residual_00368A40.c": [
+        ("if (func_00100290(func_00119058(d), 0)) {",
+         "if ((double)(d) > 0.0) { /* host R10: _dpfgt of the float widened to double */"),
+    ],
     "src/sLa1_c.c": [
         ("extern f32 func_00417EB0(V3_b);", "extern f32 func_00417EB0(V3_b *); /* host R10: by-value struct = address of a copy */"),
         ("r = func_00417EB0(w);", "r = func_00417EB0(&w); /* host R10 */"),
