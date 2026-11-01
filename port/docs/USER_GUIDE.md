@@ -212,6 +212,9 @@ the arcade ROM is in the port. Changes take effect on the next start.
 | NAOMI frame data + hitboxes | `arcade.frame_data` | Off | Animation timing (for example Cyclops' 09/02 is 17 frames / 51 ticks instead of 12 / 37) and hit, hurt and body boxes, including the startup invulnerability that comes from them. |
 | NAOMI damage + hit data | `arcade.damage` | Off | Base damage and the other hit properties (Ryu's attack 0x30: 28 instead of 14). |
 | NAOMI CPU AI | `arcade.cpu_ai` | Off | The CPU opponents' decision tables. |
+| Arcade flying-screen edge | `arcade.fs_edge` | Off | While the opponent is the flying-screen character, you stop 35 units from the stage edge as on the arcade (the PS2 stops 16 units further in). No zip needed; takes effect at once. |
+| Arcade Servbot hit-stop inputs | `arcade.servbot_hitstop` | Off | Servbot keeps the buttons you press during hit stop while his armor flag is set, as on the arcade (the PS2 clears them). No zip needed. |
+| Logic rate + input pipeline | `arcade.timing` | Port | **Port:** 60 Hz, a press counts in the next step. **Arcade:** 59.94 Hz and one frame of input delay, as the NAOMI (it reads the controls in V-blank from the previous transfer). **PS2:** 59.94 Hz and two frames, as the retail disc. Menus are never delayed. On a 60 Hz screen, 59.94 Hz repeats one frame about every 17 s. |
 
 Where the zip comes from:
 - **Browser:** when a toggle is on, the page asks for `mvsc2.zip` before the
@@ -221,6 +224,13 @@ Where the zip comes from:
   embeds the two ROM members the port reads (about 6 MB). Keep it private.
 - **Desktop app:** `--naomi PATH` (or the raw setting `arcade.naomi = PATH` in
   settings.ini), with `--arcade abc` or the settings above.
+
+The last three are code differences found by comparing the two programs
+(ARCADE_DIFF.md section 10); they need no zip. For one run in the browser:
+`?arcade.fs_edge=1&arcade.servbot_hitstop=1&arcade.timing=arcade` (`?arcade=`
+takes only a, b, c); desktop `--arcade de` (d = flying-screen edge,
+e = Servbot) and `--set arcade.timing=arcade` (or `MVC2_ARCADE_DELAY=1`, the
+input delay alone).
 
 The set is checked by CRC-32 (every member present must match Rev A). If it
 is missing or wrong, the log says so and the PS2 tables are used. Both
@@ -235,6 +245,12 @@ touch or gamepad button to the 60 Hz game step that reads it:
   until the next step.
 - On a 60 Hz display the time is below one frame (16.7 ms). It is typically
   half a frame, because a press waits for the next display refresh.
+
+The arcade machine reads the controls one frame before its logic step
+and the retail PS2 two frames before (ARCADE_DIFF.md 10.3), so the port
+answers one frame sooner than the arcade. Settings > Arcade accuracy >
+Logic rate + input pipeline adds that delay back (Arcade or PS2); the
+latency overlay does not include it.
 
 In headless Chromium with SwiftShader (a software GPU on a loaded machine)
 the display ran at 5-9 fps and the measured latency was about 6 frames. That

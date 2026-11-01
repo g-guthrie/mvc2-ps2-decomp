@@ -520,3 +520,104 @@ Not implemented, because it is not identifiable as code.
   caveat in §4.3).
 - Fallback frames use NAOMI rects of the same index (the count is logged per
   character).
+- Code comparison (section 10): the rest of the per-character state code
+  (NAOMI 0x0C04C000..0x0C18D000) and the second player-update variant
+  `func_0027FBB0` are not compared yet.
+
+## 10. Code comparison (gameplay code, NAOMI program against the PS2 game)
+
+Sections 5 to 7 cover the data. This section compares the code that runs
+the game: the frame loop, input, the player update, hit handling and the
+other gameplay routines. Tools (scratch, not in git): an SH-4 index of the
+NAOMI image (function starts from `config/mapping.json` and `units.json`,
+call targets, pointer tables) and a MIPS index of `asm/main.s`; functions
+are paired by call-graph propagation from known twins (section 7), by data
+references, and by address order inside each object file, scored by
+constants, size and call count.
+
+### 10.1 Coverage
+- **Paired automatically:** 2,063 NAOMI functions.
+  - The gameplay core (NAOMI 0x0C03F000..0x0C04C000, PS2
+    0x00176000..0x00191000): 346 of 443 NAOMI functions (78 %), 346 of 528
+    PS2 functions. The PS2 build splits and reorders some of it (for
+    example the player update below is one NAOMI function and two PS2 ones).
+  - Character and effect code, NAOMI 0x0C18D000..0x0C1E9000: 1,373 paired.
+  - NAOMI 0x0C04C000..0x0C18D000 (about 14,000 small functions, mostly
+    per-character state code): under 2 % paired. Not compared.
+- **Triage:** every pair was diffed by its float constants and its
+  player-field offsets (PS2 = NAOMI + 0x10/0x14). Most hits are compiler
+  forms (SH-4 folds `320 - 35` into 285, negates constants for `fsub`).
+  Each remaining hit was read on both sides.
+- **Read side by side** (NAOMI asm or C against PS2 C):
+
+  | Routine | NAOMI | PS2 | Result |
+  |---|---|---|---|
+  | Main loop | `0x0C028394` (C) | `func_00170C30` | same order: vsync, per-player repeat, sound, logic, render, loader; PS2 waits for vsync at the end of the loop, NAOMI at the start |
+  | Pad read, edges | `0x0C0210CC`, `0x0C0212A8` | `func_0012F0B0` | same record (20 bytes: held, previous, pressed, released, stick) and the same analog-to-direction step; NAOMI runs it in the V-blank interrupt |
+  | Button auto-repeat | `0x0C02156C` (C) | `func_0012F3E0` | same (30 / 35 frames) |
+  | Logic dispatch | `0x0C02AB50` | `func_003D7030` | same |
+  | Player update (input masks, hit stop, timers, state dispatch, edge clamps, hurtable flags) | `0x0C039928` | `func_00179590` | **two PS2-only clauses** (10.2 a, b) |
+  | Hit handler (hit stop on both, KO, hit sparks) | `0x0C04B61C` | `func_00190710` | same |
+  | Hit reaction (damage call, hitstun type, immunity, dizzy, pushback bytes) | `0x0C048274` | `func_0018B500` | **one PS2-only clause** (10.2 c) |
+  | Stage-edge clamps | `0x0C04221C`, `0x0C04231C` | `func_001823C0`, `func_001825F0` | same (35 and 26.67 units) |
+  | Flying-screen edge clamp | `0x0C042414` | `func_001827B0` | **different constant** (10.2 d) |
+  | Wall / landing velocity resets | `0x0C045CA4` and neighbours | `func_00187840` ... | same |
+  | RNG | `0x0C02849A` | `func_00174170` | same (`hi:lo * 3 >> 8`) |
+  | Damage scaling, assists, tag-in, counter, immunity | section 2, 7 | | same |
+
+### 10.2 Differences
+
+| | Where | PS2 | NAOMI | Player effect | Toggle |
+|---|---|---|---|---|---|
+| a | Player update, hit-stop branch: `func_00179590` (src/xl8_a.c) / `0x0C039AA2..` | `if (p[1] == 0x3A && (p[0x216] & 0x80))` clears all eight input words (`+0x354..+0x366`) | no such clause; hit stop only ORs the held buttons into `+0x364/+0x366` (NAOMI `+0x350/+0x352`) | Servbot (0x3A) cannot buffer inputs through hit stop while that flag (NAOMI `+0x202`, "hyper armor" byte in PLAYER.md) is set | `arcade.servbot_hitstop` |
+| b | Player update, after the timers: `func_00179590` / `0x0C039CAC..` | `if (g[0xB7] && !p[0x216] && !p[0x406]) p[0x406] = 2` | none | none offline: `g[0xB7]` is copied from the network-mode settings packet (`func_0041FD20`, called only by the mode-5 back end) | none (inactive) |
+| c | Hit reaction, health reaches 0: `func_0018B500` (src/xm14_b.c) / `0x0C048320` | KO unless HIT_DT byte 0x12 & 0x20 **or `g[0xAA]`** | KO unless byte 0x12 & 0x20 | none in VS or arcade: `g[0xAA]` = training mode (`g[0x4C] == 2`, y0_m.c), which also refills health (`func_00190130`); the arcade has no training mode | none (PS2 feature) |
+| d | Flying-screen edge clamp: `func_001827B0` (src/e080_e.c) / `0x0C042414` | `35 + 16 + bound[0x98]` and `bound[0x9C] - 16 - 35` | `35 + bound[0x98]` and `bound[0x9C] - 35` (only `0x420C0000` in the pool) | while the opponent is the flying-screen "camera follows" character (`+0x249`, NAOMI `+0x235`), the player stops 16 units (about 10 CPS2 pixels) further from each stage edge on the PS2 | `arcade.fs_edge` |
+| e | FPU mode: `0x0C028394` | the EE FPU rounds toward zero, no denormals | `fpscr &= ~3`: round to nearest (single precision) | rare 1-ulp float differences that grow into position differences (oracle pass) | the port's default (round to nearest) is the arcade's; `-DMVC2_PS2_FLOAT=ON` gives the PS2's |
+
+Checked and **not** different: the hit stop length (HIT_DT byte 5 on both
+players), hit stop input buffering, every per-frame timer of the player
+(the same counters with the same zero tests), hitstun and dizzy (the
+same random table `D_00446DA0` / `0x0C23C62E`), the stage-edge clamps, the
+RNG, the round/KO path and the immunity on hit.
+
+### 10.3 Timing and input lag
+
+| | NAOMI | PS2 retail | Port |
+|---|---|---|---|
+| Logic rate | 59.94 Hz: the SPG table the program writes (`0x0C215B82`, `0x0C216222`) is 858 x 525 (`0x020C0359`), at the 27 MHz VGA clock | 59.94 Hz (NTSC) | 60.00 Hz (`PLAT_HZ`) |
+| Where input is read | V-blank interrupt (`0x0C0215AC`): `pdExecPeripheralServer`, then `0x0C0212A8` -> `0x0C0210CC` (`pdGetPeripheral`) fills the input records; the main loop then returns from `nlWaitVSync` and runs the logic | top of the main loop, `func_0012F0B0` (`scePadRead`), after the previous frame's vsync wait | immediately before every logic step (`plat_poll_input`, `host_pad_set`) |
+| Pipeline before the logic sees a press | about 1 frame: the peripheral server parses the previous V-blank's Maple transfer [inferred from the SDK's structure] | 2 frames (the retail executable in the Play! oracle, BOOT_NOTES "Oracle pass"; the IOP pad module's poll plus the EE buffer) | 0 frames: a press is seen in the next step, a tap shorter than a frame is latched |
+| Extra buffering in the game | none (hit stop accumulates buttons on both) | none | none |
+
+`arcade.timing` (Port / Arcade / PS2) sets the logic rate (60 or 59.94 Hz)
+and delays the game's pads by 0, 1 or 2 steps (`arcade_pad_filter`, the
+menus are not delayed). On a 60 Hz display the 59.94 Hz setting repeats one
+display frame about every 17 s.
+
+**Verdicts on the community timing gripes:**
+- "The PS2 version has input lag": the game code does not add any (the
+  input record and its use are the same as the arcade's). The retail PS2
+  sees a press one frame later than the arcade (the pad pipeline), and an
+  interlaced TV adds display lag. The port reads input with no pipeline,
+  so it responds one frame sooner than the arcade and two sooner than the
+  PS2; `arcade.timing` restores either.
+- "The PS2 runs at a different speed": no. Both run one logic step per
+  59.94 Hz frame; the port runs 0.1 % faster at 60 Hz unless
+  `arcade.timing` is set.
+- "Arcade slowdown": still not code (section 8). Neither program has a
+  deliberate slowdown.
+
+### 10.4 Verification
+- Web build (headless Chromium), all three set
+  (`?arcade.timing=arcade&arcade.fs_edge=1&arcade.servbot_hitstop=1`): title,
+  menu, character select, versus, fight with attacks and an assist; the log
+  shows `arcade: code toggles d(...) e(...); input pipeline 1 frame(s)`
+  (`private/converted/boot/web/naomi_code1/`).
+- `func_001827B0` as the web build compiles it (hostified), in a native
+  harness with a bound of 100 / 700: left clamp 151, right 649 with the
+  toggle off (PS2); 135 and 665 with it on (NAOMI).
+- `arcade_pad_filter`: a press set at step 2 reaches the game at step 2, 3
+  or 4 for delays 0, 1, 2.
+- Not run in a fight: Servbot in hit stop with `+0x216 & 0x80` (the clause
+  is a single test; the hostified source shows it guarded).
