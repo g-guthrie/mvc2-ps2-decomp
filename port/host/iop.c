@@ -13,6 +13,7 @@
  * no frontend nothing is pressed).
  */
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <time.h>
 #include "host.h"
@@ -45,10 +46,40 @@ int func_00106E68(void *client, int fno, int mode, void *send, int ssize, void *
 /* ---- libpad ---------------------------------------------------------- */
 static PadRaw host_pads[2];
 
+/* MVC2_PAD_DELAY=N (testing, the oracle comparison): the game reads the
+ * buttons set N steps earlier.  The retail game in the Play! core sees a
+ * button two frames after it is set at the top of main's loop (the IOP pad
+ * module's poll and the EE libpad buffer), so the oracle runs use N = 2 and
+ * one script drives both the same way.  Default 0: read in the same step. */
+#define PAD_DELAY_MAX 8
+static PadRaw host_pads_set[2], host_pads_q[2][PAD_DELAY_MAX];
+static int pad_delay = -1;
+
 void host_pad_set(int port, const PadRaw *p)
 {
-    if (port >= 0 && port < 2)
+    int k;
+    if (pad_delay < 0) {
+        const char *e = getenv("MVC2_PAD_DELAY");
+        pad_delay = e ? atoi(e) : 0;
+        if (pad_delay < 0) pad_delay = 0;
+        if (pad_delay > PAD_DELAY_MAX) pad_delay = PAD_DELAY_MAX;
+    }
+    if (port < 0 || port >= 2)
+        return;
+    host_pads_set[port] = *p;
+    if (!pad_delay) {
         host_pads[port] = *p;
+        return;
+    }
+    host_pads[port] = host_pads_q[port][pad_delay - 1];
+    for (k = pad_delay - 1; k > 0; k--)
+        host_pads_q[port][k] = host_pads_q[port][k - 1];
+    host_pads_q[port][0] = *p;
+}
+
+unsigned host_pad_buttons(int port)
+{
+    return host_pads_set[port & 1].buttons;
 }
 
 int func_0010D360(int mode) /* scePadInit */

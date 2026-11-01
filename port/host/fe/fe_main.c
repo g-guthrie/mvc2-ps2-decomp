@@ -87,6 +87,8 @@ static const struct { const char *n; u16 bit; } BTN[] = {
  *   press B[+B..] [LEN]    hold buttons on pad 1 for LEN frames (default 6),
  *                          then release for 6 frames; "p2:" before a button
  *                          name puts it on pad 2
+ *   hold B[+B..] [LEN]     hold buttons for LEN frames (default 1), no release
+ *                          after (for motion inputs)
  *   until S B[+B..] [GAP]  press B every GAP frames (default 30) until the
  *                          state matches S (at most 200 presses)
  *   shot NAME              write NAME.png into --shot-dir
@@ -170,6 +172,12 @@ static void script_step(u16 *b0, u16 *b1)
             int len = a2[0] ? atoi(a2) : 6;
             if (S.timer < len) { script_buttons(a1, b0, b1); S.timer++; return; }
             if (S.timer++ < len + 6) return;
+            S.pc++; S.timer = 0; continue;
+        } else if (!strcmp(cmd, "hold")) {
+            /* hold B for LEN frames (default 1) with no release after:
+             * motion inputs (hold down 2, hold down+right 2, hold right+square 2) */
+            int len = a2[0] ? atoi(a2) : 1;
+            if (S.timer < len) { script_buttons(a1, b0, b1); S.timer++; return; }
             S.pc++; S.timer = 0; continue;
         } else if (!strcmp(cmd, "until")) {
             int gap = a3[0] ? atoi(a3) : 30;

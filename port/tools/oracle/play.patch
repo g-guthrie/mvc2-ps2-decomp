@@ -1,0 +1,21 @@
+diff --git a/Source/BasicBlock.cpp b/Source/BasicBlock.cpp
+index 4c460e6..ffa2146 100644
+--- a/Source/BasicBlock.cpp
++++ b/Source/BasicBlock.cpp
+@@ -487,8 +487,16 @@ bool CBasicBlock::HasBreakpoint() const
+ 	return m_context.HasBreakpointInRange(GetBeginAddress(), GetEndAddress());
+ }
+ 
++void (*g_oracleBreakHook)(CMIPS*) = nullptr;
++
+ uint32 CBasicBlock::BreakpointFilter(CMIPS* context)
+ {
++	//mvc2 oracle: a breakpoint is a per-frame hook that runs and continues
++	if(g_oracleBreakHook)
++	{
++		g_oracleBreakHook(context);
++		return 1;
++	}
+ 	return context->m_executor->FilterBreakpoint();
+ }
+ 
