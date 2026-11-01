@@ -613,7 +613,9 @@ display frame about every 17 s.
   (`?arcade.timing=arcade&arcade.fs_edge=1&arcade.servbot_hitstop=1`): title,
   menu, character select, versus, fight with attacks and an assist; the log
   shows `arcade: code toggles d(...) e(...); input pipeline 1 frame(s)`
-  (`private/converted/boot/web/naomi_code1/`).
+  (`private/converted/boot/web/naomi_code1/`). The same flow with the
+  defaults (all off) fights with an assist and logs no arcade line
+  (`naomi_code0/`).
 - `func_001827B0` as the web build compiles it (hostified), in a native
   harness with a bound of 100 / 700: left clamp 151, right 649 with the
   toggle off (PS2); 135 and 665 with it on (NAOMI).
