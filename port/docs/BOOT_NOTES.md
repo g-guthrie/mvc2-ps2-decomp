@@ -674,10 +674,18 @@ found; a differential run against retail (oracle) is the check left.
 Verification: native i386 and web single-file builds; native scripts
 `arcade_fight`, `long_fight` (`--cpu-team 0x25,0x0C,0x09`, frame 3792),
 `vs_stage2`, `gallery`, `button_config`, `charsel`, `training_pause`,
-`vs_two_pads`, `score_attack`, `shop_buy_save`, `arcade_ending_rank`,
-`assist_sweep` (`private/converted/boot/native/r12b/`); browser title ->
-menu -> character select -> VERSUS -> fight with attacks and assist
-(`private/converted/boot/web/r12_1/`).
+`vs_two_pads`, `score_attack` (same state timeline frame for frame as the
+play-through's `sa4`), `shop_buy_save`, `arcade_ending_rank` (under gdb: the
+whole run to the ending, staff roll and ranking), `assist_sweep`
+(`private/converted/boot/native/r12b/`); browser title -> menu ->
+character select -> VERSUS -> fight with attacks and assist, default team
+and `--cpu-team 54,12,13` (`private/converted/boot/web/r12_1`, `r12_2`).
+Open: one `arcade_ending_rank` run crashed (SIGSEGV, first fight) while a
+`shop_buy_save` run shared the same working directory (both read and
+write `mvc2_memcard/`; the two runs booted with different card states,
+1/8/3 vs 1/8/2).  The rerun under gdb completed; a rerun in its own
+directory (`r12b/arc_rerun`) and the same script on the main binary
+(`r12b/arc_base`) were started to separate a card race from a regression.
 
 ### Renderer pass (2026-10-31, branch port-render)
 
