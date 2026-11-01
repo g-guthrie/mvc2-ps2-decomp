@@ -65,6 +65,9 @@ LINKER_SYMBOLS = {"_GLOBAL_OFFSET_TABLE_", "__indirect_function_table", "__stack
 # defined by the generated glue itself (mvc2_glue_table.c)
 GLUE_SYMBOLS = {"mvc2_fakes", "mvc2_fake_count", "mvc2_ee_code_label_addr",
                 "mvc2_ee_code_label_count"}
+# EE float arithmetic (port/host/ps2_float.c), called by the rewritten game code
+GLUE_SYMBOLS |= {"ps2_fadd", "ps2_fsub", "ps2_fmul", "ps2_fdiv", "ps2_fsqrt",
+                 "ps2_i2f", "ps2_u2f", "ps2_l2f", "ps2_ul2f"}
 CTYPE = {"i32": "int", "i64": "long long", "f32": "float", "f64": "double", "void": "void"}
 
 
