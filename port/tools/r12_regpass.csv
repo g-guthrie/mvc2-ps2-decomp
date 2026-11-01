@@ -189,6 +189,7 @@ src/grok_r2_001c.c,residual_001CDEE0,func_001CDEF0,1,1
 src/grok_r2_001c.c,residual_001CDEE0,func_001CDEF0,2,2
 src/grok_r2_001c.c,residual_001CDEE0,func_001CDEF0,3,3
 src/grok_r2_001c.c,residual_001E1410,func_001E1430,1,1
+src/grok_r2_0028.c,func_002B4DE0,func_00397580,2,2
 src/grok_r2_0034.c,func_0034DC00,func_0034DC20,1,1
 src/grok_r2_0034.c,func_0034DC00,func_0034DC20,2,2
 src/grok_r2_0034.c,func_0034DC00,func_0034DC20,3,3
@@ -222,6 +223,7 @@ src/grok_w3_001a.c,func_001AEBC0,func_001AFC90,2,2
 src/grok_w3_001a.c,func_001AEBC0,func_001AFC90,3,3
 src/grok_w3_0024.c,func_00248E70,func_00248EC0,0,0
 src/grok_w3_0024.c,func_00248E70,func_00249010,0,0
+src/grok_w3_002a.c,func_002B5A00,func_00397580,2,2
 src/grok_w3_0030.c,func_00314EF0,func_00313120,1,1
 src/grok_w3_0034.c,func_0034D300,func_0034CF30,0,0
 src/grok_w3_0034.c,func_0034D300,func_0034CF60,0,0
@@ -255,6 +257,10 @@ src/grok_w5_003c.c,func_003CDC30,func_003CDC70,2,2
 src/grok_w5_003c.c,func_003CDC30,func_003CDC70,3,3
 src/grok_w5_003c.c,func_003CDC30,func_003CDEE0,2,2
 src/grok_w5_003c.c,func_003CDC30,func_003CDEE0,3,3
+src/grok_w5_003c.c,func_003D1F60,func_00172760,0,0
+src/grok_w5_003c.c,func_003D1F60,func_00172760,1,1
+src/grok_w5_003c.c,func_003D1F60,func_00172760,2,2
+src/grok_w5_003c.c,func_003D1F60,func_00172760,3,3
 src/grok_w5_003c.c,func_003DDB20,func_003DDA70,1,1
 src/grok_w5_003c.c,func_003DDB20,func_003DDA70,2,2
 src/grok_w5_003c.c,func_003DDB20,func_003DDA70,3,3
@@ -285,6 +291,8 @@ src/grok_w7_0020.c,func_00217D80,func_00217DD0,1,1
 src/grok_w7_0020.c,func_00217D80,func_00217DD0,2,2
 src/grok_w7_0020.c,func_00217D80,func_00217DD0,3,3
 src/grok_w7_003a.c,func_003B6340,func_003B6230,1,1
+src/grok_w7_003c.c,func_003D6FF0,func_003D7030,2,2
+src/grok_w7_003c.c,func_003D6FF0,func_003D7030,3,3
 src/grok_x1_3a07d0.c,func_003A07D0,func_003A0880,1,1
 src/grok_x1_3a07d0.c,func_003A07D0,func_003A0880,2,2
 src/grok_x1_3a07d0.c,func_003A07D0,func_003A0880,3,3
@@ -439,6 +447,8 @@ src/nq31_b.c,residual_002F9C80,func_001E3C40,0,0
 src/nq42_b.c,func_0013F6B0,func_003DAA40,0,0
 src/nq50_c.c,func_002FF790,func_002FFB30,1,1
 src/nq63_b.c,func_00380850,func_00380A40,1,1
+src/nq65_b.c,func_003D69A0,func_003D44E0,2,2
+src/nq65_b.c,func_003D69A0,func_003D44E0,3,3
 src/nq72_a.c,func_0038DF80,func_00174470,0,0
 src/nq75_a.c,func_0034F5C0,func_00175700,0,0
 src/nq83_b.c,residual_00369440,func_0036A8A0,1,1
@@ -767,6 +777,10 @@ src/tail_leaves.c,func_00359BD0,func_00359A70,3,3
 src/tail_leaves.c,func_00359C20,func_00359A70,1,1
 src/tail_leaves.c,func_00359C20,func_00359A70,2,2
 src/tail_leaves.c,func_00359C20,func_00359A70,3,3
+src/tail_leaves.c,func_003D2CA0,func_003299F0,0,0
+src/tail_leaves.c,func_003D2CA0,func_003299F0,1,1
+src/tail_leaves.c,func_003D2CA0,func_003299F0,2,2
+src/tail_leaves.c,func_003D2CA0,func_003299F0,3,3
 src/tail_leaves.c,func_003D2CB0,func_001712A0,0,0
 src/tail_leaves.c,func_003D2CB0,func_001712A0,1,1
 src/tail_leaves.c,func_003D2CB0,func_001712A0,2,2
@@ -806,6 +820,7 @@ src/w171_m.c,func_00257100,func_00258070,3,3
 src/w172_d.c,func_003AEFE0,func_003AF6D0,1,1
 src/w172_d.c,func_003AEFE0,func_003AF6D0,2,2
 src/w172_d.c,func_003AEFE0,func_003AF6D0,3,3
+src/w174_a.c,func_002B71E0,func_00397580,2,2
 src/w175_b.c,func_002F7630,func_002FA020,0,0
 src/w176_b.c,func_0018DE90,func_0018E810,1,1
 src/w176_g.c,func_003B3BB0,func_003B4030,3,3
@@ -887,6 +902,7 @@ src/w9m2a.c,func_0018E500,func_0018DA70,1,1
 src/w9m2a.c,func_0018E500,func_0018DA70,2,2
 src/w9m2a.c,func_0018E500,func_0018DB70,0,0
 src/w9m2a.c,func_0018E500,func_0018DB70,1,1
+src/w9m2c.c,func_00145FB0,func_00145160,1,1
 src/w9m2c.c,func_003A7070,func_003A7B10,0,0
 src/w9m2c.c,func_003A7070,func_003A7B10,1,1
 src/w9m2c.c,func_003A7070,func_003A7B10,2,2

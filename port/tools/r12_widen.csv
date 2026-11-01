@@ -3,7 +3,13 @@ func_0010AE38,int
 func_0010B950,int;int;int;int
 func_00122770,int;int;void *;int
 func_00127140,int;int;int;int
+func_001283C0,int;int;int;int
+func_00129080,int;int;int;int
+func_001290A0,int;int;int;int
+func_00129620,int;int;int;int
+func_0012AC90,int;int;int;int
 func_00133860,void *;int;int;int
+func_001338F0,void *;void *;int;int
 func_00133BA0,void *;void *;int;int
 func_00133F20,void *;int;int;int
 func_001358F0,void *;int;int;int
@@ -40,6 +46,7 @@ func_0013C5B0,void *;int;int;int
 func_0013C7E0,void *;int;int;int
 func_0013D300,void *;int;int;int
 func_00145160,void *;int;int;int
+func_00145FB0,void *;int
 func_00146BD0,void *;int;int;int
 func_001473C0,void *;int;int;int
 func_00147540,void *;int;int;int
@@ -98,6 +105,8 @@ func_001716D0,int;int;int;int
 func_00171700,int;int;int;int
 func_001719E0,int;int;int;int
 func_00172310,int;int;int;int
+func_00172760,int;int;int;int
+func_001765C0,int;int;int;int
 func_00176960,void *;int;int;int
 func_00176DC0,void *;int;int;int
 func_00177130,void *;int;int;int
@@ -110,7 +119,9 @@ func_00178800,void *;int;int;int
 func_00178A40,void *;int;int;int
 func_00178B00,void *;int;int;int
 func_00178D80,void *;unsigned int;int;int
+func_001793B0,void *;int;int;int
 func_00179480,void *;int;int;int
+func_00179B90,void *;int;int;int
 func_0017B2E0,void *;int;int;int
 func_0017B950,void *;int;int;int
 func_0017C340,void *;int;int;int
@@ -316,6 +327,7 @@ func_001B3430,void *;int;int;int
 func_001B3690,void *;int;int;int
 func_001B38B0,void *;int;int;int
 func_001B3F80,void *;int;int;int
+func_001B3FB0,void *;int;int;int
 func_001B4100,void *;int;int;int
 func_001B4420,void *;int;int;int
 func_001B4840,void *;int;int;int
@@ -975,6 +987,7 @@ func_00245F10,void *;int;int;int
 func_00246130,void *;int;int;int
 func_002462E0,void *;void *;int;int
 func_002464C0,void *;int;int;int
+func_002464E0,void *;int
 func_00246790,void *;void *;int;int
 func_00246AB0,void *;int;int;int
 func_00246DC0,void *;int;int;int
@@ -1510,10 +1523,12 @@ func_002B4990,void *;int;int;int
 func_002B4AE0,void *;int;int;int
 func_002B4CC0,void *;int;int;int
 func_002B4CE0,void *;int;int;int
+func_002B4DE0,void *;int;int
 func_002B4E70,void *;int;int;int
 func_002B5280,void *;int;int;int
 func_002B5570,void *;int;int;int
 func_002B5870,void *;int;int;int
+func_002B5A00,void *;int;int
 func_002B5AB0,void *;int;int;int
 func_002B5EC0,void *;int;int;int
 func_002B6410,void *;int;int;int
@@ -1522,6 +1537,7 @@ func_002B67A0,void *;int;int;int
 func_002B6850,void *;int;int;int
 func_002B6DF0,void *;int;int;int
 func_002B7050,void *;int;int;int
+func_002B71E0,void *;int;int
 func_002B72C0,void *;int;int;int
 func_002B7440,void *;int;int;int
 func_002B77D0,void *;int;int;int
@@ -2057,6 +2073,7 @@ func_00329290,void *;int;int;int
 func_003292D0,void *;int;int;int
 func_00329450,void *;int;int;int
 func_00329510,void *;int;int;int
+func_003299F0,int;int;int;int
 func_00329C50,int;int;int;int
 func_0032C230,int;int;int;int
 func_0032C880,int;int;int;int
@@ -2133,6 +2150,7 @@ func_0034ACD0,void *;int;int;int
 func_0034AD60,void *;int
 func_0034AE40,void *;int
 func_0034AFA0,void *;int;int;int
+func_0034AFC0,void *;int
 func_0034B0D0,void *;int;int;int
 func_0034B360,void *;int;int;int
 func_0034B670,void *;int;int;int
@@ -2301,6 +2319,7 @@ func_0036AB90,void *;int;int;int
 func_0036B3D0,void *;int;int;int
 func_0036B8F0,void *;int;int;int
 func_0036BDB0,void *;int;int;int
+func_0036C120,void *;int;int;int
 func_0036D7B0,void *;int;int;int
 func_0036E500,void *;int;int;int
 func_003702C0,void *;void *;int
@@ -2396,6 +2415,8 @@ func_00388EE0,void *;int;int;int
 func_00388FA0,void *;int;int;int
 func_00389060,void *;int;int;int
 func_00389350,void *;int;int;int
+func_00389610,void *;int
+func_00389770,void *;int
 func_003899B0,void *;int;int;int
 func_00389C80,void *;int;int;int
 func_00389E00,void *;int;int;int
@@ -2406,6 +2427,7 @@ func_0038D7F0,void *;int;int;int
 func_0038D9F0,void *;int;int;int
 func_0038DCA0,void *;int;int;int
 func_0038DF50,void *;int;int;int
+func_0038E570,void *;int;int;int
 func_0038EC30,void *;int;int;int
 func_0038F250,void *;int;int;int
 func_0038FD60,void *;int;int;int
@@ -2664,10 +2686,21 @@ func_003CD720,void *;int;int;int
 func_003CDC30,void *;int;int;int
 func_003CDC70,void *;int;int;int
 func_003CDEE0,void *;int;int;int
+func_003D1580,int;int;int;int
 func_003D17F0,int;int;int;int
 func_003D1A10,int;int;int;int
+func_003D1F60,int;int;int;int
+func_003D1FB0,int;int;int;int
+func_003D21F0,int;int;int;int
+func_003D2B30,int;int;int;int
+func_003D2CA0,int;int;int;int
 func_003D2CB0,int;int;int;int
+func_003D44E0,void *;int;int;int
+func_003D6340,void *;void *;int;int
+func_003D69A0,int;int;int;int
 func_003D6AF0,int;int;int;int
+func_003D6FF0,int;int;int;int
+func_003D7030,int;int;int;int
 func_003D77C0,void *;int;int;int
 func_003D90A0,int;int;int;int
 func_003D9C30,int;int;int;int
@@ -2693,7 +2726,10 @@ func_0041A4A0,void *;int;int;int
 func_0041A840,void *;void *;int;int
 func_0041ACC0,void *;int;int;int
 func_0041D640,void *;int;int;int
+func_004206D0,int;int;int;int
+func_00420920,int;int;int;int
 residual_001487B0,void *;int;int;int
+residual_0017D3B0,void *;int;int;int
 residual_00194460,void *;int;int;int
 residual_00198980,void *;int;int;int
 residual_001A44E0,void *;int;int;int
@@ -2716,6 +2752,8 @@ residual_0021F0F0,void *;int;int;int
 residual_0022EC70,void *;int;int;int
 residual_0023C8A0,void *;int;int;int
 residual_00245A60,void *;int;int;int
+residual_00246150,void *;int
+residual_00246DE0,void *;int
 residual_00289040,void *;int;int;int
 residual_00290AB0,void *;int;int;int
 residual_002D76E0,void *;int;int;int

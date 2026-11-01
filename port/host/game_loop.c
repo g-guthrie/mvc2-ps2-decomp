@@ -23,7 +23,11 @@ extern void func_0016EE50(void);
 extern void func_00417FB0(void);
 extern void func_0012F440(void);
 extern void func_001E42A0(void);
-extern void func_003D6FF0(void);
+/* R23-widened (r12_widen.csv): the game update forwards $a0..$a3 through its
+ * mode table (func_003D7030).  Retail func_00170C30 calls it with whatever
+ * func_001E42A0 (sound tick) left in them; the host passes 0 (r12_sites.csv
+ * rows func_00170C30 -> func_003D6FF0, BOOT_NOTES "R12 completion pass"). */
+extern void func_003D6FF0(int, int, int, int);
 extern void func_00170D30(void);
 extern void func_003D7400(void);
 extern void func_003D7640(void);
@@ -158,7 +162,7 @@ void mvc2_frame(void)
     EE_BSS(s32, 0x004C2848) = 0;
     EE_BSS(s32, 0x004C284C) = 0;
     cpu_hp_cap();
-    STEP("func_003D6FF0 game update", func_003D6FF0());
+    STEP("func_003D6FF0 game update", func_003D6FF0(0, 0, 0, 0));
     STEP("func_00170D30 begin scene", func_00170D30());
     STEP("func_003D7400 render pass 1", func_003D7400());
     STEP("func_003D7640 render pass 2", func_003D7640());

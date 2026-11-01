@@ -566,14 +566,118 @@ modes are ARCADE, VS, TRAINING, OPTION, SCORE RANKING, SCORE ATTACK, SECRET
 FACTOR and SAVE/LOAD.
 
 **Open:**
-- 750+ padded arguments are still unresolved where the register held a
-  caller local (gen_regpass `--unresolved`).
-- The other `T[i]()` table calls (gen_indirect.py lists 15 skipped) were
-  not traced. Each of the bugs above was found by playing, so more of
-  these classes may remain on paths not yet played.
+- (closed by the "R12 completion pass" below) 750+ padded arguments
+  unresolved (`--unresolved` lists every padded argument no caller
+  *parameter* explains; most of them were already classified in
+  `r12_sites.csv`), and the 15 skipped `T[i]()` table calls.
 - Training's first START right after "FIGHT!" does not pause. A later one
   does. Not compared with the PS2.
 
+
+### R12 completion pass (2026-11-01, branch port-r12)
+
+Goal: every register-passed argument the host does not take from the C is
+accounted for.  The "750+" of the play-through was the `--unresolved` list,
+which counts every padded argument no caller *parameter* explains (before
+the local/harmless classification); `r12_sites.csv` already classified
+those.  This pass made that classification sound, closed the 6 left sites,
+and added the missing class: calls through function tables that pass fewer
+arguments than the table entries read.
+
+Pipeline (order matters; outputs in `port/tools/`):
+```
+python3 port/tools/gen_regpass.py --sigs host_sigs.json --sites port/tools   # ~8 min
+python3 port/tools/gen_indirect.py --sigs host_sigs.json --report /tmp/ind.csv  # ~2.5 min
+```
+
+**Analysis fixes (soundness and precision of "callee never reads").**
+- *mustdef* (what a call surely overwrites) treated a tail jump through a
+  dispatch table as "writes every register", so liveness dropped reads
+  after calls of dispatch heads.  Now: a dispatch table returns through its
+  entries (intersection of what they write), an unknown jump writes nothing
+  more.  No earlier "harmless" verdict flipped.
+- Jump-table labels that run on into data (`jtbl_0044B860`: three functions,
+  then 0, 1, 2...; `D_00446BB0` ... `0x00100010`) counted as "unknown
+  targets, read everything".  An entry must now be a function/glabel/alabel
+  start (`text_entry`); any other word would crash the EE if dispatched.
+- `.word 0x46008024 # cvt.w.s $f0, $f16` (37 COP1 words the disassembler
+  left undecoded) made libm opaque (`sinf` "read every register"); they are
+  decoded from the comment now.
+- `D_` tables of functions (not named `jtbl_`) are recognized for `jr` and
+  `jalr` (`func_001237A0` through `D_004BF318`); a `jalr` through such a
+  table reads what its entries read instead of everything.
+- `VALUE_FREE_READS`: libgcc pack_d (`func_00119118`) reads `$a2` only to
+  mask all of its bits away.
+- Of the 893 harmless sites, 869 are now proved on the asm and
+  24 by host usage only (was 788 and 89).
+
+**Path-dependent sites (the 6 "left"), hand rows with expr `$aN`** (new
+`r12_regexpr.csv` form = the caller's own incoming register; gen_regpass
+turns it into a passthrough row and widens the caller, hostify skips it):
+- `func_00145FB0` -> `func_00145160` arg 1: the state-0 entry reads `$a1`
+  only when `p[6]` is not 0/1; the path through `func_001E3CE0` sets
+  `p[6] = 0`, so where it is read it is always the entry `$a1` (exact).
+- `func_002B4DE0`, `func_002B5A00`, `func_002B71E0` -> `func_00397580` arg
+  2: entry `$a2` unless `func_00175700` ran an animation event; the value
+  goes to the new object's byte `+0x21`, which no function of that object's
+  update tree loads (exact on every frame without an event).
+- `func_001AC860` -> `func_001ACA00` args 2/3: proven harmless after the
+  table fix (the head's three entries never read `$a2`/`$a3`).
+
+**R23 table-call forwarding** (`r12_tblfwd.csv`, `gen_indirect.py`).  A
+call through a table of functions (jalr, or a jr after the entry block,
+which R22 does not cover) whose entries read `$a0..$a3` the caller still
+holds from its own entry: the caller is widened to those registers (R20)
+and `r12_indirect.csv` passes them (`__rpN`), including on calls that
+already pass some arguments (`D_00464A10[p[5]](p)` -> `p, *(p + 24)`).
+gen_indirect now uses the value dataflow with callee summaries, skips
+stores between the table base and the jump, and `--report` lists every
+table call whose entries read more than the C passes: 370, of which 311
+are R22 heads (hostify forwards), 52 get an `r12_indirect.csv` row (16
+before), 7 are left (below).  357 functions are R23-widened (38 new
+widenings); host code that called one changed with it
+(`func_003D6FF0(0, 0, 0, 0)` in game_loop.c: retail passes what the sound
+tick left).
+
+**Final table** (padded direct-call arguments without a caller parameter,
+`r12_sites.csv`, plus table calls):
+
+| | count |
+|---|---|
+| fixed automatically: regpass rows (caller parameter, incl. R20/R22/R23) | 1,035 rows (was 1,019) |
+| fixed automatically: `r12_regauto.csv` / `r12_regsym.csv` | 9 / 75 |
+| fixed by hand row (`r12_regexpr.csv`) | 22 C-expression rows + 4 `$aN` rows |
+| proven harmless (asm liveness / host never uses) | 869 / 24 |
+| table calls: R22 forwarded / `r12_indirect.csv` rows | 311 / 52 |
+| remaining direct-call sites | 26 |
+| remaining table calls | 7 |
+
+The 33 remaining are all created by the R23 widening (before it, these
+registers were silently 0 at the indirect call and not counted); the host
+still passes 0, as before.  Each holds a path-dependent leftover in retail
+too (a phi of the entry value and an earlier call's leftover, or what the
+previous call left: `rr0_b.c` calls `func_001793B0` five times in a row),
+and for each, every read the asm liveness finds is one of:
+- only through an unknown indirect call (per-character method tables at
+  `+0x43C`, function-pointer fields): `func_001793B0` (10 sites),
+  `func_0036B3D0` (3), `func_0017D390` (3), `func_003D7030` (1); tables
+  `D_00448A00`, `D_00448A10`, `D_00448E50`, `D_0045E0F0`;
+- library register spills (`func_0040D5A0` save area, syscall stubs) or
+  may-paths through credited calls that pass an explicit value in that
+  register (e.g. `func_001415B0` -> `func_00141540`): `func_003D69A0` (3),
+  `func_00129080` (2), `func_003D6FF0` (2), `func_0032C880` (1),
+  `func_003D6340` (1); tables `D_004C21D0`, `D_00446290`, `D_0043CCB8`
+  (`func_00128A30`: the asm's table base is not found).
+No read of one of them by a credited instruction on a feasible path was
+found; a differential run against retail (oracle) is the check left.
+
+Verification: native i386 and web single-file builds; native scripts
+`arcade_fight`, `long_fight` (`--cpu-team 0x25,0x0C,0x09`, frame 3792),
+`vs_stage2`, `gallery`, `button_config`, `charsel`, `training_pause`,
+`vs_two_pads`, `score_attack`, `shop_buy_save`, `arcade_ending_rank`,
+`assist_sweep` (`private/converted/boot/native/r12b/`); browser title ->
+menu -> character select -> VERSUS -> fight with attacks and assist
+(`private/converted/boot/web/r12_1/`).
 
 ### Renderer pass (2026-10-31, branch port-render)
 

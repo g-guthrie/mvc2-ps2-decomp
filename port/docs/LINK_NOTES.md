@@ -114,6 +114,8 @@ ON).  Auditing those tables would allow turning it off.
 
 ## Files
 
+- R12 register-passing tables (`port/tools/r12_*.csv`): `gen_regpass.py` then
+  `gen_indirect.py`; see BOOT_NOTES "R12 robust pass" and "R12 completion pass".
 - `port/tools/link_catalog.py`: catalog view (addresses, units, unit
   aliases, alternate function names, host runtime names).
 - `port/tools/gen_link_glue.py`: `sigs` and `glue` (see its docstring).
