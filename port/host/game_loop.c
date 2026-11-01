@@ -146,6 +146,11 @@ void mvc2_frame(void)
     }
     if (mvc2_unlock_all)
         unlock_everything();
+    {
+        extern void host_state_dump_frame(long frame, unsigned b0, unsigned b1);
+        extern unsigned host_pad_buttons(int port);
+        host_state_dump_frame(mvc2_host_frame, host_pad_buttons(0), host_pad_buttons(1));
+    }
     STEP("func_0012F460 frame counters / CRI tick / pad", func_0012F460());
     STEP("func_0016ECC0 network stubs", func_0016ECC0());
     STEP("func_0012F3E0 auto-repeat P1", func_0012F3E0((u16 *)EE_BSS_PTR(0x004F4480)));

@@ -39,6 +39,28 @@ OVERRIDES = {
     # that waits for its velocity to change sign never advanced (Ryu alpha,
     # Ken alpha, Akuma beta: the partner stayed in state 0x15 after 15/03, so
     # no further assists).  Host form: the same compare in C.
+    # func_00185010 (the per-frame check of a player's special/hit state,
+    # func_0017D270) returns the state handler's $v0: the C falls off the
+    # end after `D_00448E30[p[7]](p);` (a jalr then jr $ra), and R14 made the
+    # host return 0, so a handler's "consumed" result (e.g. func_00185180 ->
+    # func_00185380) never stopped func_0017D270 and the player took a hit
+    # the PS2 skips (oracle: attract demo, player 1, +3481 frames).  Most
+    # handlers are int; for the void ones see the oracle notes in BOOT_NOTES.
+    "src/grok_w5_0018.c": [
+        ("    D_00448E30[p[7]](p);\n}",
+         "    return ((s32 (*)(u8 *))D_00448E30[p[7]])(p); /* host R10: the handler's $v0 */\n}"),
+    ],
+    # func_001E6490's `Obj o` is 6 words, but func_004161D0 (src/r4c.c, the
+    # TIM2 header parse) fills 7 (w18 at +0x18).  On the EE the extra word
+    # lands in an unused stack slot; on the host it overwrote the local `v`
+    # (the texture/CLUT handle pair), so func_003EA660 got a CLUT handle of 0
+    # and divided by zero in func_003DBD80 (character select, a portrait
+    # load; showed up with a different stack layout).  Host form: room for
+    # the seventh word.
+    "src/rb35_c.c": [
+        ("typedef struct { s32 f0, f4, f8, fC, f10, f14; } Obj;",
+         "typedef struct { s32 f0, f4, f8, fC, f10, f14, f18; } Obj; /* host R10: func_004161D0 writes +0x18 */"),
+    ],
     "src/wave32.c": [
         ("if (func_00100240(*(f32 *)(p + 0x5C) * v, 0)) {",
          "if ((double)(*(f32 *)(p + 0x5C) * v) < 0.0) { /* host R10: _dpflt */"),

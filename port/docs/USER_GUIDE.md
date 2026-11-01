@@ -271,6 +271,15 @@ number is the display rate in that test environment, not the port.
 - `--draw-every N` draws one game frame in N (fast headless runs).
 - `--speed N` runs the game N times faster than real time (browser:
   `?args=--speed%204`).
+- Script command `hold B[+B..] [LEN]`: hold buttons LEN frames with no
+  release after (motion inputs: `hold down 3`, `hold down+right 3`,
+  `hold right+square 3`).
+- Comparison with the retail game (port/tools/oracle, BOOT_NOTES "Oracle
+  pass"): `MVC2_STATE_DUMP=FILE` (per-frame state), `MVC2_STATE_SNAP=F:FILE`
+  (EE BSS + heap at frame F), `MVC2_RESYNC=STATE` (fixed RNG seeds and
+  counters at STATE), `MVC2_PAD_DELAY=N` (the game reads the buttons N
+  frames late), `MVC2_PS2FP_OFF=1` (with `-DMVC2_PS2_FLOAT=ON`: round to
+  nearest again, for A/B).
 
 ## For developers: adding options (arcade-accuracy toggles)
 Options are registered in C with the settings store in

@@ -82,6 +82,12 @@ void *func_001044E0(int increment)
     return old;
 }
 
+/* the first break (EE 0x00634380, the end of the BSS): state_dump.c */
+u8 *host_ee_heap_base(void)
+{
+    return ee_heap ? (u8 *)(((uintptr_t)ee_heap + 63) & ~(uintptr_t)63) : NULL;
+}
+
 /* ---- DMA channels (sceDmaGetChan results) -----------------------------
  * The render library writes CHCR-ish fields of the channel struct before a
  * send (func_003DC720).  Plain memory on the host. */

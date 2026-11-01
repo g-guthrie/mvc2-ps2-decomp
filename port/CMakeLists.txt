@@ -154,11 +154,24 @@ mvc2_object_lib(mvc2_game_code ${MVC2_GAME_HSRC})
 # Port J: data TUs in EE address order after the hole before the first unit
 # (hostify R18); mvc2_host links these objects directly, in this order.
 mvc2_object_lib(mvc2_game_data "${MVC2_DATA_START}" ${MVC2_DATA_HSRC})
+# EE float semantics (round toward zero, no denormals) for the game's code
+# and the host code that stands in for it: port/host/ps2_float.c.
+# Default OFF until verified in the browser build; the oracle comparisons
+# (port/tools/oracle) configure with -DMVC2_PS2_FLOAT=ON.
+option(MVC2_PS2_FLOAT "EE single-precision rounding for the game code" OFF)
+set(MVC2_FP_LAUNCHER "")
+if(MVC2_PS2_FLOAT)
+  set(MVC2_FP_LAUNCHER "${CMAKE_CURRENT_SOURCE_DIR}/cmake/ps2fp-cc.pl;")
+endif()
 if(EMSCRIPTEN)
   # emsdk clang directly for the 16k freestanding game TUs (emcc's Python
   # start-up per file would dominate the build).
-  set_target_properties(mvc2_game_code mvc2_game_data PROPERTIES
+  set_target_properties(mvc2_game_data PROPERTIES
     C_COMPILER_LAUNCHER "${CMAKE_CURRENT_SOURCE_DIR}/cmake/emcc-direct.sh")
+  set_target_properties(mvc2_game_code PROPERTIES
+    C_COMPILER_LAUNCHER "${MVC2_FP_LAUNCHER}${CMAKE_CURRENT_SOURCE_DIR}/cmake/emcc-direct.sh")
+elseif(MVC2_PS2_FLOAT)
+  set_target_properties(mvc2_game_code PROPERTIES C_COMPILER_LAUNCHER "${CMAKE_CURRENT_SOURCE_DIR}/cmake/ps2fp-cc.pl")
 endif()
 
 add_library(mvc2_game STATIC
@@ -199,6 +212,10 @@ add_library(mvc2_host_core OBJECT ${MVC2_HOST_CORE_SRCS} ${MVC2_PLATFORM_CORE_SR
 target_include_directories(mvc2_host_core PRIVATE "${MVC2_ROOT}/port/stubs" "${MVC2_ROOT}/port/host"
   "${MVC2_ROOT}/port/platform" "${GLUE}")
 target_compile_options(mvc2_host_core PRIVATE -fno-common -Wall -Wno-unused-function)
+if(MVC2_PS2_FLOAT)
+  set_target_properties(mvc2_host_core PROPERTIES C_COMPILER_LAUNCHER "${CMAKE_CURRENT_SOURCE_DIR}/cmake/ps2fp-cc.pl")
+endif()
+
 set_source_files_properties(${MVC2_HOST_CORE_SRCS} PROPERTIES OBJECT_DEPENDS "${GLUE}/mvc2_host_protos.h")
 
 add_executable(mvc2_host ${MVC2_STUB_SRCS} ${GLUE_SRCS} $<TARGET_OBJECTS:mvc2_host_core>
