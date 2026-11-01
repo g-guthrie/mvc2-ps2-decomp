@@ -635,3 +635,68 @@ crash noted above was Thanos (`func_003BE300`, a dispatch head the old R12
 detector missed; see "Play-through"). Merged single-file build, `fight.js`
 (title → fight with overlays, CRT, stretch): 13 of 13 clean, 10 with random
 CPU teams and 3 with Thanos forced (`private/converted/boot/web/final_r*`).
+
+### Oracle pass (2026-11-01, branch port-oracle)
+
+**The oracle.** `port/tools/oracle/`: the RETAIL executable (your own
+`mvc2.iso`) runs in the Play! emulator core (open source, HLE BIOS: no PS2
+BIOS), headless, through `mvc2_oracle` (build: `port/tools/oracle/build.sh`,
+~2 min, pinned Play! commit + `play.patch`, binary in
+`/tmp/oracle_src/build/mvc2_oracle`).  The breakpoint prolog of Play!'s JIT
+is turned into a hook: once per game frame at `func_0012F460` (the top of
+main's loop, the same point as the port's `mvc2_frame()`), plus optional
+`--trace ADDR` (print argument registers at a function entry) and
+`--snap-at ADDR:FRAME:FILE` (EE BSS + heap snapshot).  It runs the port's
+script language (`--script`, plus the new `hold B LEN` command for motion
+inputs), injects the pad bits into libpad's EE buffers at `scePadRead`,
+applies the same "unlock everything" writes, and `--resync STATE` sets the
+rand seed, the game RNG (`D_004C26AC/B0`) and the frame counters to fixed
+values on both sides at the first frame of STATE (loads take frames on the
+PS2 and none on the port).  ~100 frames/s.
+
+Port side (testing): `MVC2_STATE_DUMP=FILE`, `MVC2_STATE_SNAP=F:FILE`,
+`MVC2_RESYNC=STATE`, `MVC2_PAD_DELAY=N` (port/host/state_dump.c, iop.c);
+host pointers are written as EE addresses (BSS, data image, heap, game
+functions), and a word whose raw value equals the oracle's is not a
+difference.  `compare.py` prints the first diverging frame and field (six
+player records, game block, pads, both RNGs, newly differing 1 KB BSS
+blocks); `snapdiff.py` diffs snapshots with symbol names;
+`run_pair.sh OUT FRAMES RESYNC [SCRIPT]` does a whole pair (native i386).
+
+**Findings and fixes**
+
+| Divergence | Cause | Fix |
+|---|---|---|
+| attract demo +3481: player 1 takes a hit the PS2 never deals | `func_00185010` returns its handler's `$v0`; the C falls off the end and hostify R14 returned 0, so `func_0017D270` went on into the hit code | R10 override: return the handler's value |
+| fight scenario: SIGFPE at the character select (stack-layout dependent) | `func_004161D0` writes 7 words into `func_001E6490`'s 6-word `Obj`, overwriting the local `v` (texture/CLUT handles) on the host | R10 override: 7th field |
+| attract +3107 onwards: floats 1-2 ulp off (369.99997 vs 370.0), then positions, then hits | the EE FPU rounds toward zero with no denormals; the host rounds to nearest, and clang also folds float ops at compile time | `port/host/ps2_float.c` + `port/tools/ps2_fp_rewrite.pl` + `port/cmake/ps2fp-cc.pl`: the game TUs (and port/host) are emitted as LLVM IR at -O0, every float add/sub/mul/div/sqrt/int->float becomes a helper with EE rounding, then the IR is optimised. CMake option `MVC2_PS2_FLOAT` (**default OFF until verified in the browser build**; native verified) |
+| native i386 floats differ from wasm | clang i386 used x87 (excess precision) | `-msse2 -mfpmath=sse` in i386-clang.cmake |
+
+**Match lengths (native, `-DMVC2_PS2_FLOAT=ON`, resync at 1/1/0):**
+attract cycle (logo, intro, title, demo setup, demo fight): **4835 of 4835
+frames identical** (player records, game block, RNGs); without the float
+rewrite it diverges at +3107.  `scripts/fight_mix.txt` (ARCADE, default
+character, normals/specials/supers/assists/throws, CPU opponent): **6034
+frames identical** (about 5000 frames of fight).
+
+**Open**
+- fight_mix +6034: the oracle's input record takes `up+right` one frame
+  later than the port although the injected libpad buffer already holds it
+  (traced: `[pad]` debug lines with `MVC2_ORACLE_PADDBG=1`); `D_004D18A5`
+  differs at that frame.  Not resolved: either a game-side input gate or
+  the Play! pad model.
+- Render-only matrices (`D_004D3800` actor area, `func_00151A90` via the
+  VU0 helpers) differ by 1-2 ulp from Play!'s VU0; no gameplay effect seen.
+- The heap layout differs from the PS2 after ~0x0163xxxx (pointers shifted
+  by 0x284340) and a 0x30000-byte buffer stays zero on the port (CRI/ADX
+  host side); no gameplay effect seen.
+- hostify R14 (`return 0;` where a non-void function falls off the end) has
+  48 sites; the asm shows `$v0` = the last callee's result at most of them
+  (list from the oracle pass, reported to the R12 work).  Only
+  `func_00185010` is fixed; void dispatch-table entries whose `$v0` the
+  caller uses (`D_00448E30` entries 0, 8..42) still return 0 on wasm.
+- Characters other than the default/CPU picks (Thanos, Sentinel, shotos,
+  Abyss), the Training first-START check and the browser verification of
+  `MVC2_PS2_FLOAT` were not done.
+- Play! models the EE FPU as IEEE round-toward-zero + flush-to-zero; real
+  hardware differs from that in rare subtraction cases.

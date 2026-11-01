@@ -279,6 +279,8 @@ static struct
 static void ee_wr(uint32_t ee, uint32_t v) { wr32(ee, v); }
 static void ee_wr8(uint32_t ee, uint8_t v) { wr8(ee, v); }
 
+static void pad_inject(uint32 p);
+
 /* port/host/game_loop.c unlock_everything(), the same writes at the same point */
 static void unlock_everything()
 {
@@ -326,22 +328,9 @@ static void on_frame(CMIPS* ctx)
 	g_buttons[0] = b0;
 	g_buttons[1] = b1;
 	g_pad->Apply(ram());
-	/* and straight into libpad's two EE receive buffers (D_004C83D0[port][0]
-	 * .buffer, 2 x 0x80 bytes, buttons active low at +2/+3): the game reads
-	 * them in this frame's func_0012F460, as the port reads host_pad_set()'s
-	 * buttons (the IOP's own copy arrives one or two vblanks later, a number
-	 * that depends on how many vblanks the frame took) */
-	for(int p = 0; p < 2; p++)
-	{
-		uint32 buf = rd32(0x004C83D0 + p * 0x70);
-		uint16 inv = (uint16)~g_buttons[p];
-		if(!buf) continue;
-		for(uint32 h = 0; h < 0x100; h += 0x80)
-		{
-			wr8(buf + h + 2, (uint8)inv);
-			wr8(buf + h + 3, (uint8)(inv >> 8));
-		}
-	}
+	pad_inject(0);
+	pad_inject(1);
+
 	if(O.resync && !O.resynced && state_match(O.resync))
 	{
 		uint32 r = rd32(0x0043B6F8);
@@ -385,9 +374,65 @@ struct SnapAt
 };
 static std::vector<SnapAt> g_snapat;
 
+/* scePadRead (func_0010D910) entry: the frame's buttons go straight into
+ * libpad's two EE receive buffers (D_004C83D0[port][0].buffer, 2 x 0x80
+ * bytes, buttons active low at +2/+3) just before the game copies them, so
+ * it reads them in the frame they were set, as the port reads
+ * host_pad_set()'s buttons.  (Through the IOP pad module alone they arrive
+ * one or two frames later, depending on when its DMA lands.) */
+#define SCE_PAD_READ 0x0010D910
+static void pad_inject(uint32 p)
+{
+	uint32 buf = rd32(0x004C83D0 + p * 0x70);
+	uint16 inv = (uint16)~g_buttons[p];
+	if(!buf) return;
+	for(uint32 h = 0; h < 0x100; h += 0x80)
+	{
+		uint8 st = rd8(buf + h + 112);
+		wr8(buf + h + 0, 0); /* status ok */
+		/* the mode id the fl pad layer last saw (D_0062C094[i * 12],
+		 * func_003EDA60): a change makes it drop the frame's buttons and
+		 * re-query the pad, which Play!'s pad module triggers now and then */
+		if(rd8(0x0062C094 + p * 12)) wr8(buf + h + 1, rd8(0x0062C094 + p * 12));
+		wr8(buf + h + 2, (uint8)inv);
+		wr8(buf + h + 3, (uint8)(inv >> 8));
+		/* a pad that is up reads as stable (6) every frame, as the port's
+		 * libpad does: Play!'s pad module passes through other states for
+		 * a frame when its DMA is late, and the game then keeps the old
+		 * buttons */
+		if(st >= 1 && st <= 6) wr8(buf + h + 112, 6);
+	}
+}
+
+static void pad_read_hook(CMIPS* ctx)
+{
+	uint32 p = ctx->m_State.nGPR[CMIPS::A0].nV0 & 1;
+	if(g_frame >= g_trace_from && g_frame <= g_trace_to && getenv("MVC2_ORACLE_PADDBG"))
+	{
+		uint32 b = rd32(0x004C83D0 + p * 0x70);
+		fprintf(stderr, "[pad] f%ld port %u dst %08X buf %08X: %08X fr %d | %08X fr %d  want %04X\n", g_frame, p,
+		        ctx->m_State.nGPR[CMIPS::A2].nV0, b, rd32(b), (int)rd32(b + 0x58), rd32(b + 0x80), (int)rd32(b + 0xD8), g_buttons[p]);
+	}
+	uint32 buf = rd32(0x004C83D0 + p * 0x70);
+	uint16 inv = (uint16)~g_buttons[p];
+	if(!buf) return;
+	for(uint32 h = 0; h < 0x100; h += 0x80)
+	{
+		wr8(buf + h + 2, (uint8)inv);
+		wr8(buf + h + 3, (uint8)(inv >> 8));
+	}
+}
+
 static void hook(CMIPS* ctx)
 {
 	if(g_quit) return;
+	if(ctx->m_State.nPC == SCE_PAD_READ)
+	{
+		pad_read_hook(ctx);
+		for(uint32 a : g_trace)
+			if(a == ctx->m_State.nPC) trace(ctx);
+		return;
+	}
 	if(ctx->m_State.nPC != O.hook)
 	{
 		for(auto& s : g_snapat)
@@ -477,6 +522,7 @@ int main(int argc, char** argv)
 	vm.Reset();
 	vm.m_ee->m_os->BootFromCDROM();
 	vm.m_ee->m_EE.m_breakpoints.insert(O.hook);
+	vm.m_ee->m_EE.m_breakpoints.insert(SCE_PAD_READ);
 	for(uint32 a : g_trace) vm.m_ee->m_EE.m_breakpoints.insert(a);
 	for(auto& sa : g_snapat) vm.m_ee->m_EE.m_breakpoints.insert(sa.addr);
 	g_oracleBreakHook = &hook;
