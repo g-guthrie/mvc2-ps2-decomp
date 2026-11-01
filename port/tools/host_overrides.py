@@ -114,3 +114,31 @@ OVERRIDES = {
          "{ static S10 ee_page0; func_004180E0(); sb = &ee_page0; } /* host R10: EE address 0 */"),
     ],
 }
+
+# ---- Arcade-accuracy CODE toggles (ARCADE_DIFF.md section 10) ----------------
+# Not R10 fixes: each adds a test of `mvc2_arc_code` (port/host/arcade_code.c,
+# settings arcade.*) that selects the NAOMI program's behaviour; with the bit
+# clear (the default) the PS2 code runs unchanged.
+_ARC = {
+    # func_001827B0 (NAOMI 0x0C042414): flying-screen edge clamp.  PS2
+    # 35 + 16 units inside the camera bound, NAOMI 35 (0x420C0000 only).
+    # 0.0f + d == d exactly in every rounding mode.
+    "src/e080_e.c": [
+        ("void func_001827B0(u8 *p) {",
+         "extern int mvc2_arc_code __attribute__((weak)); /* host: arcade.fs_edge (arcade_code.c; weak: not game glue) */\nvoid func_001827B0(u8 *p) {"),
+        ("        t = 35.0f + (16.0f + d[0x98 / 4]);",
+         "        t = 35.0f + (((mvc2_arc_code & 1) ? 0.0f : 16.0f) + d[0x98 / 4]); /* host: arcade.fs_edge */"),
+        ("        t = (d[0x9C / 4] - 16.0f) - 35.0f;",
+         "        t = (d[0x9C / 4] - ((mvc2_arc_code & 1) ? 0.0f : 16.0f)) - 35.0f; /* host: arcade.fs_edge */"),
+    ],
+    # func_00179590 (NAOMI 0x0C039928): the hit-stop branch clears Servbot's
+    # (0x3A) input words when +0x216 & 0x80; the NAOMI branch has no clause.
+    "src/xl8_a.c": [
+        ("        if (p[1] == 0x3A) {\n            if ((p[0x216] & 0x80) != 0) {",
+         "        if (p[1] == 0x3A && !(mvc2_arc_code & 2)) { /* host: arcade.servbot_hitstop */\n"
+         "            if ((p[0x216] & 0x80) != 0) {"),
+        ("typedef unsigned char u8;\n", "typedef unsigned char u8;\nextern int mvc2_arc_code __attribute__((weak)); /* host: arcade.servbot_hitstop (arcade_code.c) */\n"),
+    ],
+}
+for _k, _v in _ARC.items():
+    OVERRIDES.setdefault(_k, []).extend(_v)

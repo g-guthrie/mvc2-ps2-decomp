@@ -117,6 +117,8 @@ int mvc2_boot(int run_platform_init)
     {
         extern void arcade_init(void);
         arcade_init();     /* optional NAOMI tables (MVC2_ARCADE / MVC2_NAOMI) */
+        extern void arcade_code_init(void);
+        arcade_code_init(); /* arcade code toggles + input pipeline (arcade_code.c) */
     }
     if (run_platform_init) {
         STEP("func_003EC160 platform init (640x480)", r = func_003EC160());

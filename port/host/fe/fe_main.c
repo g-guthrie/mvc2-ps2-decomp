@@ -276,6 +276,11 @@ static void update(void *u)
         p1.buttons |= b1;
     }
     p0.connected = p1.connected = 1;
+    {
+        extern void arcade_pad_filter(int port, PadRaw *p);
+        arcade_pad_filter(0, &p0);  /* arcade.timing: the arcade's / PS2's input pipeline */
+        arcade_pad_filter(1, &p1);
+    }
     host_pad_set(0, &p0);
     host_pad_set(1, &p1);
     memset(fe_cnt, 0, sizeof fe_cnt);

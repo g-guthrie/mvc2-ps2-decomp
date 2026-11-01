@@ -199,6 +199,9 @@ int plat_hold(void) { return P.hold; }
 int plat_step_is_last(void) { return P.step_last; }
 void plat_set_max_steps(int n) { P.max_steps = n < 1 ? 1 : n > 8 ? 8 : n; }
 void plat_set_speed(int n) { P.speed = n < 1 ? 1 : n > 16 ? 16 : n; }
+/* logic steps per second (PLAT_HZ; arcade.timing: 59.94, the NAOMI's and the PS2's rate) */
+static double logic_hz = PLAT_HZ;
+void plat_set_logic_hz(double hz) { logic_hz = hz >= 30 && hz <= 120 ? hz : PLAT_HZ; }
 void plat_set_frame_skip(int on) { P.frame_skip = on != 0; }
 void plat_request_render(void) { P.force_render = 1; }
 TouchPad *plat_touch(void) { return &P.touch; }
@@ -533,7 +536,7 @@ static void count_rates(double now, int steps, int presented)
 
 static void frame_at(PlatApp *app, double now)
 {
-    const double step = 1.0 / PLAT_HZ;
+    const double step = 1.0 / logic_hz;
     double dt = now - P.last;
     P.last = now;
     P.app = app;
