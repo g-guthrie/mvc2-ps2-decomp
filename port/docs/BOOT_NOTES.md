@@ -680,12 +680,18 @@ whole run to the ending, staff roll and ranking), `assist_sweep`
 (`private/converted/boot/native/r12b/`); browser title -> menu ->
 character select -> VERSUS -> fight with attacks and assist, default team
 and `--cpu-team 54,12,13` (`private/converted/boot/web/r12_1`, `r12_2`).
-Open: one `arcade_ending_rank` run crashed (SIGSEGV, first fight) while a
-`shop_buy_save` run shared the same working directory (both read and
-write `mvc2_memcard/`; the two runs booted with different card states,
-1/8/3 vs 1/8/2).  The rerun under gdb completed; a rerun in its own
-directory (`r12b/arc_rerun`) and the same script on the main binary
-(`r12b/arc_base`) were started to separate a card race from a regression.
+**Open (likely regression, not yet bisected):** `arcade_ending_rank.txt`
+(`--cpu-hp 1 --draw-every 30`) crashes with SIGSEGV in the first fight on
+this branch's binary when it starts from a fresh working directory (no
+`mvc2_memcard/`; `r12b/arc_rerun`) and in a run that raced a
+`shop_buy_save` run on the same card (`r12b/arcade_ending_rank`).  The same
+binary under gdb, starting from the card `shop_buy_save` wrote, played the
+whole run to the ranking (`r12b/arc_gdb`); the main binary from the same
+card also passed the first fights (`r12b/arc_base`).  Next step: the main
+binary from a fresh directory, then a gdb backtrace of the fresh-card crash;
+suspects are the new R23 rows / widenings on the character-state path
+(`func_001793B0`, `func_00179B90`, `residual_0017D3B0`; reverting
+`r12_indirect.csv` rows one by one isolates it).
 
 ### Renderer pass (2026-10-31, branch port-render)
 
