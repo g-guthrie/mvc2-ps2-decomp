@@ -2319,7 +2319,6 @@ func_0036AB90,void *;int;int;int
 func_0036B3D0,void *;int;int;int
 func_0036B8F0,void *;int;int;int
 func_0036BDB0,void *;int;int;int
-func_0036C120,void *;int;int;int
 func_0036D7B0,void *;int;int;int
 func_0036E500,void *;int;int;int
 func_003702C0,void *;void *;int
@@ -2427,7 +2426,6 @@ func_0038D7F0,void *;int;int;int
 func_0038D9F0,void *;int;int;int
 func_0038DCA0,void *;int;int;int
 func_0038DF50,void *;int;int;int
-func_0038E570,void *;int;int;int
 func_0038EC30,void *;int;int;int
 func_0038F250,void *;int;int;int
 func_0038FD60,void *;int;int;int

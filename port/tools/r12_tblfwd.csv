@@ -5,7 +5,6 @@ func_00129080,$a2;$a3
 func_001290A0,$a2;$a3
 func_00129620,$a3
 func_0012AC90,$a3
-func_00133860,$a0;$a3
 func_001338F0,$a0;$a1;$a3
 func_00133BA0,$a0;$a1;$a3
 func_00133F20,$a0;$a1
@@ -32,7 +31,6 @@ func_0017E9A0,$a0;$a1;$a2;$a3
 func_0017EF20,$a0;$a1;$a2;$a3
 func_0017F5E0,$a0;$a1;$a2;$a3
 func_0017FA60,$a0;$a1;$a2;$a3
-func_001934B0,$a0;$a3
 func_001934E0,$a0;$a1;$a3
 func_001941A0,$a0;$a1
 func_00194440,$a0;$a1
@@ -41,8 +39,6 @@ func_00194E20,$a0;$a1
 func_00195470,$a0;$a1
 func_00195D10,$a0;$a1
 func_00198210,$a0;$a1
-func_00198710,$a0;$a3
-func_0019A540,$a0;$a3
 func_0019A9C0,$a0;$a1
 func_0019F280,$a0;$a1
 func_0019FA80,$a0;$a1
@@ -50,14 +46,12 @@ func_0019FBE0,$a0;$a1
 func_001A0BB0,$a0;$a1
 func_001A0F40,$a0;$a1
 func_001A10F0,$a0;$a1
-func_001A3250,$a0;$a3
 func_001A37F0,$a0;$a1;$a3
 func_001A39C0,$a0;$a1;$a3
 func_001A5630,$a0;$a1
 func_001A5A70,$a0;$a1
 func_001A6C70,$a0;$a1
 func_001A6EB0,$a0;$a1
-func_001A7130,$a0;$a3
 func_001A7320,$a0;$a1;$a3
 func_001A7B80,$a0;$a1
 func_001A7EC0,$a0;$a1
@@ -72,9 +66,7 @@ func_001AB610,$a0;$a1
 func_001ABB30,$a0;$a1
 func_001ABE70,$a0;$a1
 func_001ABFD0,$a0;$a1
-func_001B1000,$a0;$a1;$a2;$a3
 func_001B26A0,$a0;$a1;$a2;$a3
-func_001B3F80,$a0;$a2;$a3
 func_001B3FB0,$a0;$a2;$a3
 func_001BA690,$a0;$a1
 func_001BA9F0,$a0;$a1
@@ -94,19 +86,16 @@ func_001C7820,$a0;$a1
 func_001C7B70,$a0;$a1
 func_001C7DF0,$a0;$a1
 func_001C8060,$a0;$a1
-func_001C9510,$a0;$a3
 func_001D2CA0,$a0;$a1
 func_001D4680,$a0;$a1
 func_001D5B60,$a0;$a1
 func_001D6040,$a0;$a1
 func_001D6310,$a0;$a1
 func_001D64E0,$a0;$a1
-func_001D6BC0,$a0;$a3
 func_001D9C50,$a0;$a1
 func_001D9D30,$a0;$a1
 func_001DA270,$a0;$a1
 func_001DA740,$a0;$a1
-func_001DB6D0,$a0;$a3
 func_001DDE10,$a0;$a1
 func_001DDFB0,$a0;$a1
 func_001DE150,$a0;$a1
@@ -238,7 +227,6 @@ func_0032C880,$a1;$a2;$a3
 func_0034ACD0,$a0;$a1
 func_0034AFA0,$a0;$a1
 func_0034AFC0,$a0;$a1
-func_003521D0,$a0;$a2;$a3
 func_00359240,$a0;$a1
 func_00359330,$a0;$a1
 func_003593D0,$a0;$a1
@@ -256,10 +244,7 @@ func_0035A4E0,$a0;$a1
 func_0035A700,$a0;$a1
 func_0035B7E0,$a0;$a1
 func_0035D600,$a0;$a1
-func_0035FA60,$a0;$a3
 func_0035FFA0,$a0;$a1
-func_003605B0,$a0;$a3
-func_00360A00,$a0;$a3
 func_00360CA0,$a0;$a1
 func_00361480,$a0;$a1
 func_00361C40,$a0;$a1
@@ -269,9 +254,7 @@ func_00363990,$a0;$a1
 func_00363DB0,$a0;$a1
 func_00364270,$a0;$a1
 func_003646C0,$a0;$a1
-func_0036AB90,$a0;$a1;$a2;$a3
 func_0036B3D0,$a0;$a1;$a2;$a3
-func_0036C120,$a0;$a2;$a3
 func_00377CE0,$a0;$a1
 func_0037E080,$a0;$a1;$a2
 func_0037ED30,$a0;$a1
@@ -286,8 +269,6 @@ func_00389770,$a0;$a1
 func_00389C80,$a0;$a1
 func_00389E00,$a0;$a1
 func_0038D7F0,$a0;$a1
-func_0038E570,$a0;$a2;$a3
-func_00395A00,$a0;$a3
 func_003A54C0,$a0;$a1
 func_003A5AE0,$a0;$a1
 func_003A5C80,$a0;$a1
@@ -307,9 +288,7 @@ func_003B2C70,$a0;$a1
 func_003B34C0,$a0;$a1
 func_003B39A0,$a0;$a1
 func_003B3CD0,$a0;$a1
-func_003B5B30,$a0;$a3
 func_003B6950,$a0;$a1
-func_003B6AA0,$a0;$a3
 func_003BE300,$a0;$a1
 func_003BF400,$a0;$a1
 func_003C0CC0,$a0;$a1
@@ -337,7 +316,6 @@ func_0041A1D0,$a0;$a1
 func_0041A4A0,$a0;$a1
 func_004206D0,$a2;$a3
 func_00420920,$a2;$a3
-residual_001487B0,$a0;$a1;$a2;$a3
 residual_0017D3B0,$a0;$a1;$a2;$a3
 residual_00194460,$a0;$a1
 residual_001A44E0,$a0;$a1

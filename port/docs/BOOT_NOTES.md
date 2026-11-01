@@ -633,8 +633,9 @@ already pass some arguments (`D_00464A10[p[5]](p)` -> `p, *(p + 24)`).
 gen_indirect now uses the value dataflow with callee summaries, skips
 stores between the table base and the jump, and `--report` lists every
 table call whose entries read more than the C passes: 370, of which 311
-are R22 heads (hostify forwards), 52 get an `r12_indirect.csv` row (16
-before), 7 are left (below).  357 functions are R23-widened (38 new
+are R22 heads (hostify forwards) and 59 get an `r12_indirect.csv` row (16
+before); in 9 of those a register an entry reads has no known value and
+is passed as 0 (below).  335 functions are R23-widened (36 new
 widenings); host code that called one changed with it
 (`func_003D6FF0(0, 0, 0, 0)` in game_loop.c: retail passes what the sound
 tick left).
@@ -648,11 +649,11 @@ tick left).
 | fixed automatically: `r12_regauto.csv` / `r12_regsym.csv` | 9 / 75 |
 | fixed by hand row (`r12_regexpr.csv`) | 22 C-expression rows + 4 `$aN` rows |
 | proven harmless (asm liveness / host never uses) | 869 / 24 |
-| table calls: R22 forwarded / `r12_indirect.csv` rows | 311 / 52 |
+| table calls: R22 forwarded / `r12_indirect.csv` rows | 311 / 59 |
 | remaining direct-call sites | 26 |
-| remaining table calls | 7 |
+| remaining table calls (row passes 0 for the unknown register) | 9 |
 
-The 33 remaining are all created by the R23 widening (before it, these
+The 35 remaining are all created by the R23 widening (before it, these
 registers were silently 0 at the indirect call and not counted); the host
 still passes 0, as before.  Each holds a path-dependent leftover in retail
 too (a phi of the entry value and an earlier call's leftover, or what the
@@ -680,18 +681,28 @@ whole run to the ending, staff roll and ranking), `assist_sweep`
 (`private/converted/boot/native/r12b/`); browser title -> menu ->
 character select -> VERSUS -> fight with attacks and assist, default team
 and `--cpu-team 54,12,13` (`private/converted/boot/web/r12_1`, `r12_2`).
-**Open (likely regression, not yet bisected):** `arcade_ending_rank.txt`
-(`--cpu-hp 1 --draw-every 30`) crashes with SIGSEGV in the first fight on
-this branch's binary when it starts from a fresh working directory (no
-`mvc2_memcard/`; `r12b/arc_rerun`) and in a run that raced a
-`shop_buy_save` run on the same card (`r12b/arcade_ending_rank`).  The same
-binary under gdb, starting from the card `shop_buy_save` wrote, played the
-whole run to the ranking (`r12b/arc_gdb`); the main binary from the same
-card also passed the first fights (`r12b/arc_base`).  Next step: the main
-binary from a fresh directory, then a gdb backtrace of the fresh-card crash;
-suspects are the new R23 rows / widenings on the character-state path
-(`func_001793B0`, `func_00179B90`, `residual_0017D3B0`; reverting
-`r12_indirect.csv` rows one by one isolates it).
+**Native crash found and fixed (arcade, fresh card).**
+`arcade_ending_rank.txt` from an empty card crashed natively (SIGSEGV, first
+fight; not under gdb, which turns address randomization off).  With
+randomization on, gdb showed `func_001754A0 <- func_001A79B0 <-
+func_003DA6F0 <- func_001E8CD0 <- func_001719E0 <- ... <- func_001712A0 <-
+func_003D2CB0 <- func_003D2B30 <- func_003D2770 <- func_003D7030 <-
+func_003D6FF0` (`r12f/gdb2`).  Cause: R23 had widened `func_003D2B30` (a
+table entry) to four parameters, but its caller's table call
+`D_004C21D0[...]()` got no `r12_indirect.csv` row (no register value known),
+so on i386 the callee read stack garbage for `__rp0..3` and forwarded it
+down to an effect object's owner (wasm passes 0 there, so the browser was
+not affected).  The same i386 hazard exists for any widened function
+called with fewer arguments.  Fix:
+- gen_indirect always writes the row and passes at least as many arguments
+  as the entries' (widened) prototypes take, 0 for an unknown register
+  (59 rows; none skipped);
+- gen_regpass does not R23-widen a function whose address is stored as a
+  callback (`%lo(F)`: `func_0036C120`, `func_0038E570`), because pointer
+  calls of it pass only the C arguments.
+Not related to the R14 / `(f(), 0)` return-value class: this is an
+argument-count problem.  The main binary from a fresh card got through
+the arcade fights (`r12f/base`).
 
 ### Renderer pass (2026-10-31, branch port-render)
 

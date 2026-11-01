@@ -1617,6 +1617,7 @@ def main():
                 if r in rd and snap.get(r) == "E" + r:
                     tbl_need.setdefault(F, set()).add(r)
     tblfwd = set()
+    addr_taken = set(re.findall(r"%lo\((\w+)\)", open(a.asm).read()))
     # the value dataflow also sees entry values that survive a call (callee
     # exit summaries): take its entry tokens where flow() lost them
     for F, sites in vf.items():
@@ -1719,6 +1720,11 @@ def main():
                     tailfwd.add(F)
         for F, rs in tbl_need.items():
             if F not in canon or canon[F].get("variadic") or owner.get(F) not in bysrc:
+                continue
+            if F in addr_taken:
+                # stored as a callback (`%lo(F)`): its callers through that
+                # pointer pass only the C arguments, so a widened F would read
+                # stack garbage on i386 (wasm: 0); keep the old prototype
                 continue
             freg = regs(L.WIDEN.get(F, canon[F]["params"]))
             for r in rs:

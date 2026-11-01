@@ -5,46 +5,8 @@ The decomp often writes a call through a function table with fewer
 arguments than the entries read, `D_004C1EA8[p[5]]();`, where the EE code
 jumps (jalr, or a tail `jr`) with $a0.. still holding the caller's values.
 A host compiler passes nothing, so the callee reads garbage (0 under
-EMULATE_FUNCTION_POINTER_CASTS).  This tool finds those sites: the asm
-liveness (gen_regpass.liveness) of the table's entries says which of
-$a0..$a3 they read beyond the C arguments, and the dataflow over the
-caller's asm (gen_regpass.flow + value tokens with callee summaries) says
-what each register holds at the indirect jump: the caller's parameter, a
-widened parameter (`__rpN`: R20, or R23 = gen_regpass widened the caller for
-this call, r12_tblfwd.csv), or a value derived from it ("p + k", loads
-through it).  One row per site:
-  source, caller, call (exact text), args (C, comma separated, all of them)
-hostify applies each row as a text replacement inside that source (like
-host_overrides.py) and casts the table entry to an unprototyped pointer.
-R22 dispatch heads are left to hostify's tail forwarding.  Run after
-gen_regpass.py (it reads r12_widen.csv / r12_tailfwd.csv).  --report CSV
-lists every table call whose entries read more than the C passes, with what
-was done (row / R22 / unresolved: the register's value token).
-
-usage: gen_indirect.py [--sigs host_sigs.json] [--asm asm/main.s] [--out CSV] [--report CSV]
-"""R12 for indirect calls (Port J): port/tools/r12_indirect.csv.
-
-The decomp often writes a call through a function table with no arguments,
-`D_004C1EA8[p[5]]();`, where the EE code jumps (jalr, or a tail `jr`) with
-$a0.. still holding the caller's values, and the table's entries read them
-(func_003A5790(p, q)).  A host compiler passes nothing, so the callee reads
-garbage.  This tool finds those sites: the call's table (asm/main.s) lists
-functions whose canonical prototypes take arguments, and the dataflow over
-the caller's asm (gen_regpass.flow) says what each argument register holds
-at the indirect jump: the caller's parameter, or a value derived from it
-("p + k", loads through it; see r12_regsym.csv).  One row per site:
-  source, caller, call (exact text), args (C, comma separated)
-hostify applies each row as a text replacement inside that source (like
-host_overrides.py) and casts the table entry to an unprototyped pointer.
-
-usage: gen_indirect.py [--sigs host_sigs.json] [--asm asm/main.s] [--out CSV]
-"""R12 for indirect calls (Port J): port/tools/r12_indirect.csv.
-
-The decomp often writes a call through a function table with fewer
-arguments than the entries read, `D_004C1EA8[p[5]]();`, where the EE code
-jumps (jalr, or a tail `jr`) with $a0.. still holding the caller's values.
-A host compiler passes nothing, so the callee reads garbage (0 under
-EMULATE_FUNCTION_POINTER_CASTS).  This tool finds those sites: the asm
+EMULATE_FUNCTION_POINTER_CASTS, stack garbage on i386; unknown registers
+are passed as 0).  This tool finds those sites: the asm
 liveness (gen_regpass.liveness) of the table's entries says which of
 $a0..$a3 they read beyond the C arguments, and the dataflow over the
 caller's asm (gen_regpass.flow + value tokens with callee summaries) says
@@ -109,54 +71,8 @@ def modified(body, name):
 
 
 def render(tok, names, body):
-    """R12 for indirect calls (Port J): port/tools/r12_indirect.csv.
-
-The decomp often writes a call through a function table with fewer
-arguments than the entries read, `D_004C1EA8[p[5]]();`, where the EE code
-jumps (jalr, or a tail `jr`) with $a0.. still holding the caller's values.
-A host compiler passes nothing, so the callee reads garbage (0 under
-EMULATE_FUNCTION_POINTER_CASTS).  This tool finds those sites: the asm
-liveness (gen_regpass.liveness) of the table's entries says which of
-$a0..$a3 they read beyond the C arguments, and the dataflow over the
-caller's asm (gen_regpass.flow + value tokens with callee summaries) says
-what each register holds at the indirect jump: the caller's parameter, a
-widened parameter (`__rpN`: R20, or R23 = gen_regpass widened the caller for
-this call, r12_tblfwd.csv), or a value derived from it ("p + k", loads
-through it).  One row per site:
-  source, caller, call (exact text), args (C, comma separated, all of them)
-hostify applies each row as a text replacement inside that source (like
-host_overrides.py) and casts the table entry to an unprototyped pointer.
-R22 dispatch heads are left to hostify's tail forwarding.  Run after
-gen_regpass.py (it reads r12_widen.csv / r12_tailfwd.csv).  --report CSV
-lists every table call whose entries read more than the C passes, with what
-was done (row / R22 / unresolved: the register's value token).
-
-usage: gen_indirect.py [--sigs host_sigs.json] [--asm asm/main.s] [--out CSV] [--report CSV]
-"""C for a token: 'E$aN' (index into the caller's registers) or a symbolic
-    value; None when not expressible."""R12 for indirect calls (Port J): port/tools/r12_indirect.csv.
-
-The decomp often writes a call through a function table with fewer
-arguments than the entries read, `D_004C1EA8[p[5]]();`, where the EE code
-jumps (jalr, or a tail `jr`) with $a0.. still holding the caller's values.
-A host compiler passes nothing, so the callee reads garbage (0 under
-EMULATE_FUNCTION_POINTER_CASTS).  This tool finds those sites: the asm
-liveness (gen_regpass.liveness) of the table's entries says which of
-$a0..$a3 they read beyond the C arguments, and the dataflow over the
-caller's asm (gen_regpass.flow + value tokens with callee summaries) says
-what each register holds at the indirect jump: the caller's parameter, a
-widened parameter (`__rpN`: R20, or R23 = gen_regpass widened the caller for
-this call, r12_tblfwd.csv), or a value derived from it ("p + k", loads
-through it).  One row per site:
-  source, caller, call (exact text), args (C, comma separated, all of them)
-hostify applies each row as a text replacement inside that source (like
-host_overrides.py) and casts the table entry to an unprototyped pointer.
-R22 dispatch heads are left to hostify's tail forwarding.  Run after
-gen_regpass.py (it reads r12_widen.csv / r12_tailfwd.csv).  --report CSV
-lists every table call whose entries read more than the C passes, with what
-was done (row / R22 / unresolved: the register's value token).
-
-usage: gen_indirect.py [--sigs host_sigs.json] [--asm asm/main.s] [--out CSV] [--report CSV]
-"""
+    """C for a token: 'E$aN' (index into the caller's registers) or a symbolic
+    value; None when not expressible."""
     if "@" in tok and tok.rfind("@") > tok.rfind(")"):
         base, off = tok.rsplit("@", 1)
         off = int(off)
@@ -182,53 +98,7 @@ usage: gen_indirect.py [--sigs host_sigs.json] [--asm asm/main.s] [--out CSV] [-
 
 
 def _args(txt, start):
-    """R12 for indirect calls (Port J): port/tools/r12_indirect.csv.
-
-The decomp often writes a call through a function table with fewer
-arguments than the entries read, `D_004C1EA8[p[5]]();`, where the EE code
-jumps (jalr, or a tail `jr`) with $a0.. still holding the caller's values.
-A host compiler passes nothing, so the callee reads garbage (0 under
-EMULATE_FUNCTION_POINTER_CASTS).  This tool finds those sites: the asm
-liveness (gen_regpass.liveness) of the table's entries says which of
-$a0..$a3 they read beyond the C arguments, and the dataflow over the
-caller's asm (gen_regpass.flow + value tokens with callee summaries) says
-what each register holds at the indirect jump: the caller's parameter, a
-widened parameter (`__rpN`: R20, or R23 = gen_regpass widened the caller for
-this call, r12_tblfwd.csv), or a value derived from it ("p + k", loads
-through it).  One row per site:
-  source, caller, call (exact text), args (C, comma separated, all of them)
-hostify applies each row as a text replacement inside that source (like
-host_overrides.py) and casts the table entry to an unprototyped pointer.
-R22 dispatch heads are left to hostify's tail forwarding.  Run after
-gen_regpass.py (it reads r12_widen.csv / r12_tailfwd.csv).  --report CSV
-lists every table call whose entries read more than the C passes, with what
-was done (row / R22 / unresolved: the register's value token).
-
-usage: gen_indirect.py [--sigs host_sigs.json] [--asm asm/main.s] [--out CSV] [--report CSV]
-"""(argument texts, end index) of the call whose '(' is at start."""R12 for indirect calls (Port J): port/tools/r12_indirect.csv.
-
-The decomp often writes a call through a function table with fewer
-arguments than the entries read, `D_004C1EA8[p[5]]();`, where the EE code
-jumps (jalr, or a tail `jr`) with $a0.. still holding the caller's values.
-A host compiler passes nothing, so the callee reads garbage (0 under
-EMULATE_FUNCTION_POINTER_CASTS).  This tool finds those sites: the asm
-liveness (gen_regpass.liveness) of the table's entries says which of
-$a0..$a3 they read beyond the C arguments, and the dataflow over the
-caller's asm (gen_regpass.flow + value tokens with callee summaries) says
-what each register holds at the indirect jump: the caller's parameter, a
-widened parameter (`__rpN`: R20, or R23 = gen_regpass widened the caller for
-this call, r12_tblfwd.csv), or a value derived from it ("p + k", loads
-through it).  One row per site:
-  source, caller, call (exact text), args (C, comma separated, all of them)
-hostify applies each row as a text replacement inside that source (like
-host_overrides.py) and casts the table entry to an unprototyped pointer.
-R22 dispatch heads are left to hostify's tail forwarding.  Run after
-gen_regpass.py (it reads r12_widen.csv / r12_tailfwd.csv).  --report CSV
-lists every table call whose entries read more than the C passes, with what
-was done (row / R22 / unresolved: the register's value token).
-
-usage: gen_indirect.py [--sigs host_sigs.json] [--asm asm/main.s] [--out CSV] [--report CSV]
-"""
+    """(argument texts, end index) of the call whose '(' is at start."""
     d, k, cur, out = 0, start, [], []
     while k < len(txt):
         c = txt[k]
@@ -334,11 +204,17 @@ def main():
                         break
                 if sym == t:
                     sites.append(snap)
+            # the call passes at least as many arguments as any entry's
+            # (widened) prototype takes and every register an entry reads:
+            # an i386 callee would otherwise read stack garbage for the rest
+            # (wasm EMULATE_FUNCTION_POINTER_CASTS passes 0)
+            npad = max([len(cargs)] + [G.ARGR.index(r) + 1 for r in need] +
+                       [min(4, sum(1 for x in widen.get(G.fname(e), canon.get(G.fname(e), {}).get("params", []))
+                                   if x not in ("float", "double"))) for e in ent])
             ncalls = sum(1 for f2, c2, t2, *_ in found if f2 == fn and t2 == t)
             if not sites or ncalls != 1:
-                skipped.append((s, fn, call, "%d asm sites, %d C calls" % (len(sites), ncalls)))
-                rep["status"] = "left: %d asm sites, %d C calls through %s" % (len(sites), ncalls, t)
-                continue
+                rep["status"] = "zeros: %d asm sites, %d C calls through %s" % (len(sites), ncalls, t)
+                sites = [{r: "X" for r in G.ARGR}]
             snap = {r: (sites[0][r] if all(x[r] == sites[0][r] for x in sites) else "X") for r in G.ARGR}
             params = widen.get(fn, canon[fn]["params"])
             freg = G.regs(params)
@@ -361,13 +237,13 @@ def main():
                 if c is None and r in need:
                     bad.append("%s=%s" % (r, snap.get(r, "X")))
                 extra.append(c if c else "0")
-            while extra and extra[-1] == "0":
+            while extra and extra[-1] == "0" and len(cargs) + len(extra) > npad:
                 extra.pop()
             if bad:
-                rep["status"] = "unresolved " + " ".join(bad)
+                rep["status"] = (rep["status"] + "; " if rep["status"] else "") + "unresolved (0) " + " ".join(bad)
             if not extra:
-                skipped.append((s, fn, call, "nothing known"))
-                rep["status"] = rep["status"] or "nothing known"
+                skipped.append((s, fn, call, "nothing to pass"))
+                rep["status"] = rep["status"] or "nothing to pass"
                 continue
             if txt.count(call) != 1:
                 skipped.append((s, fn, call, "text not unique"))
