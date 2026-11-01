@@ -39,6 +39,17 @@ OVERRIDES = {
     # that waits for its velocity to change sign never advanced (Ryu alpha,
     # Ken alpha, Akuma beta: the partner stayed in state 0x15 after 15/03, so
     # no further assists).  Host form: the same compare in C.
+    # func_00185010 (the per-frame check of a player's special/hit state,
+    # func_0017D270) returns the state handler's $v0: the C falls off the
+    # end after `D_00448E30[p[7]](p);` (a jalr then jr $ra), and R14 made the
+    # host return 0, so a handler's "consumed" result (e.g. func_00185180 ->
+    # func_00185380) never stopped func_0017D270 and the player took a hit
+    # the PS2 skips (oracle: attract demo, player 1, +3481 frames).  Most
+    # handlers are int; for the void ones see the oracle notes in BOOT_NOTES.
+    "src/grok_w5_0018.c": [
+        ("    D_00448E30[p[7]](p);\n}",
+         "    return ((s32 (*)(u8 *))D_00448E30[p[7]])(p); /* host R10: the handler's $v0 */\n}"),
+    ],
     "src/wave32.c": [
         ("if (func_00100240(*(f32 *)(p + 0x5C) * v, 0)) {",
          "if ((double)(*(f32 *)(p + 0x5C) * v) < 0.0) { /* host R10: _dpflt */"),
