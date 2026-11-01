@@ -888,6 +888,8 @@ def _load_regexpr():
         if not f.exists():
             continue
         for r in csv.DictReader(l for l in open(f, newline="") if not l.startswith("#")):
+            if r["expr"].strip().startswith("$"):
+                continue    # caller's incoming register: an r12_regpass.csv row (gen_regpass.py)
             nth = (r.get("nth") or "").strip()
             key = (r["source"], r["caller"], r["callee"], int(r["arg"]))
             out[key + ((int(nth),) if nth else ())] = r["expr"]
