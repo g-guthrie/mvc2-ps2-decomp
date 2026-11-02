@@ -1,34 +1,92 @@
-# Marvel vs. Capcom 2 PS2 decompilation
+# Marvel vs. Capcom 2 — PS2 decompilation and native port
 
 [![Progress report](https://github.com/g-guthrie/mvc2-ps2-decomp/actions/workflows/report.yml/badge.svg)](https://github.com/g-guthrie/mvc2-ps2-decomp/actions/workflows/report.yml)
 [![Code progress](https://decomp.dev/g-guthrie/mvc2-ps2-decomp.svg?mode=shield&measure=code&label=Code)](https://decomp.dev/g-guthrie/mvc2-ps2-decomp)
 
 [![Matching C progress](assets/progress.svg)](DECOMP.md)
 
-A matching decompilation of **Marvel vs. Capcom 2: New Age of Heroes**
-for PlayStation 2, targeting the NTSC-U executable `SLUS_204.86`.
+Two things live here:
+
+1. **A matching decompilation** of *Marvel vs. Capcom 2: New Age of Heroes* for
+   PlayStation 2 (NTSC-U `SLUS_204.86`): C source that compiles with the original
+   toolchains to the retail executable, byte for byte.
+2. **A native port** built from that source (`port/`): the game's own decompiled
+   code running on modern hardware with no emulator, in the browser today, with
+   desktop builds to follow. You bring your own copy of the game; no game data is
+   included.
 
 ## Status
 
-| | Matched | Total | |
-| --- | ---: | ---: | ---: |
-| Code | 3,291,484 bytes | 3,293,696 bytes | **99.93%** |
-| Initialized data | 647,988 bytes | 648,064 bytes | **99.99%** |
-| Functions | 20,181 | 20,678 | |
+| Track | Progress |
+| --- | --- |
+| Decompiled code | **99.93%** (3,291,484 / 3,293,696 bytes; 20,181 / 20,678 functions) |
+| Decompiled initialized data | **99.99%** (647,988 / 648,064 bytes) |
+| Retail ELF rebuild | Byte-exact (SHA-256 `48ebf907…6f13d7`) |
+| Port: web (WebAssembly + WebGL2, installable PWA) | Playable end to end |
+| Port: Windows / macOS / Linux 64-bit | Planned |
+
+What is left of the decomp, with the reason for each piece, is in
+[REMAINING.md](REMAINING.md).
+
+## The port
+
+The port compiles the decompiled C for a 32-bit host (WebAssembly) and replaces
+only the PS2 hardware layer: graphics (WebGL2), sound (ADX streams and sound
+banks through Web Audio), controllers, memory card and disc access. Everything
+the player does runs through the game's own code.
+
+**What works**
+
+- The whole game: arcade to the ending and staff roll (all Abyss forms), VS,
+  Training, Score Attack, the Secret Factor shop and gallery, options,
+  rankings, saves that survive a reload.
+- Checked frame by frame against the retail PS2 executable running in an
+  emulator: the attract cycle and scripted fights match for thousands of frames,
+  including the PS2's float rounding.
+- No load times, progressive output at native resolution with integer / smooth
+  scaling and optional scanline or CRT filters.
+- Full keyboard and gamepad remapping for two players, Xbox / PlayStation /
+  Switch pads, a resizable touch overlay for phones, low input latency.
+- Optional **arcade accuracy** settings, from a code comparison with the NAOMI
+  arcade version ([ARCADE_DIFF.md](port/docs/ARCADE_DIFF.md)): arcade timing
+  and input pipeline, super-freeze order, sine/cosine, float rounding,
+  flying-screen edge and Servbot hit-stop behaviour. The arcade game was also run
+  alongside the port to check them.
+- Optional "unlock everything".
+
+**Playing it**
+
+The web build asks for your own disc image (`SLUS-20486`), caches it in the
+browser, and runs offline afterwards. See the
+[player guide](port/docs/USER_GUIDE.md) for controls, settings and building it
+yourself, and [PORT_PLAN.md](port/docs/PORT_PLAN.md) for the roadmap.
+
+**Port documentation**
+
+| Document | Contents |
+| --- | --- |
+| [USER_GUIDE.md](port/docs/USER_GUIDE.md) | Controls, settings, building, test options |
+| [PORT_PLAN.md](port/docs/PORT_PLAN.md) | Phases and roadmap |
+| [BOOT_NOTES.md](port/docs/BOOT_NOTES.md) | How the port runs the game's code; every fix with its evidence |
+| [ARCADE_DIFF.md](port/docs/ARCADE_DIFF.md) | PS2 vs NAOMI arcade: data and code comparison, arcade options |
+| [PS2_GRIPES.md](port/docs/PS2_GRIPES.md) | Community complaints about the PS2 version and what the port does about each |
+| [RENDERER.md](port/docs/RENDERER.md), [AUDIO.md](port/docs/AUDIO.md) | Graphics and sound layers |
+
+## The decompilation
 
 Every matched function is C compiled with a period toolchain (Metrowerks
 MWCC 2.4/3.0/3.0.3, SN GCC 2.95.2, EE GCC 2.96, or Sony EE GCC 2.9) and
 checked byte for byte against retail. The few routines that were hand-written
 assembly in the original (crt0, the exception handler, libvu0 kernels, the
 cache flush, newlib's r5900 string routines) are `.S` sources assembled with
-GNU as 2.10-ee. The hybrid build links all of it with
-the remaining assembly and reproduces the retail ELF exactly. CI checks the
-catalog, the build script and the tools, but cannot compile, because the
-compilers are not redistributable.
+GNU as 2.10-ee. The hybrid build links all of it with the remaining assembly
+and reproduces the retail ELF exactly. CI checks the catalog, the build script
+and the tools, but cannot compile, because the compilers are not
+redistributable. See [DECOMP.md](DECOMP.md) for the workflow.
 
-This is a separate project from the Dreamcast decompilation. The PS2 port uses
-the Emotion Engine's MIPS R5900 instruction set and identifies its original
-compiler as `MW MIPS C Compiler (2.4.1.01)` / `PlayStation2`.
+This is a separate project from the Dreamcast and NAOMI decompilations. The PS2
+version runs on the Emotion Engine's MIPS R5900 and was built with
+`MW MIPS C Compiler (2.4.1.01)` / `PlayStation2`.
 
 ## Target
 
@@ -156,79 +214,18 @@ which is the artifact consumed by decomp.dev.
 
 ## Runtime testing
 
-The rebuilt ELF can eventually be inserted into a private disc image and tested
-with PCSX2, AetherSX2, or real PS2 hardware. Emulator files are not part of this
+The rebuilt ELF is retail-exact, so it runs anywhere the retail game does. The
+port (below) is tested frame by frame against the retail executable running in
+an emulator (`port/tools/oracle`); emulator files are not part of this
 repository.
 
 ## Legal
 
 Executable and period compiler build inputs must be supplied locally. Disc
 images, extracted game assets, generated retail assembly, and Sony SDK files
-are excluded from the repository. This research project is not
-affiliated with Capcom, Marvel, Sony, or their licensors.
+are excluded from the repository. The port contains no game data: it reads
+the player's own disc image at run time (and, for the optional arcade data
+study, the player's own NAOMI set). This research project is not affiliated
+with Capcom, Marvel, Sony, Sega, or their licensors.
 
-### Current coordination for Claude — October 18
-
-Sony EE GCC 2.9 is installed by `tools/setup_sony29.py`; source
-`private/sony29.env` after the normal build environment. The pinned download,
-smoke test, probe inventory and compiler recipes are documented in
-[docs/COMPILER.md](docs/COMPILER.md#reproducible-sony-setup-and-candidate-audit).
-The initial conservative 173-span audit recorded 40 available C definitions
-and 53 exact flag/source profiles; the claimed 196-function list was unavailable
-for that audit. Probe results do not automatically earn C credit.
-
-Current registered Sony 2.9 recipes cover 73 credited C functions / 7,040 bytes
-without opcode rewriting; the earlier Codex batch covered 62 functions / 5,544 bytes.
-The frozen complete compiler/data build and the later combined hybrid/packed
-image checks pass exactly. Unrecovered spans still use retail bytes. All
-registered source changes since the frozen build were separately recompiled.
-
-The progress audit removed algorithmic assembly and compiler-constraint credit;
-four former assembly copies now have exact C replacements. Three empty-barrier removals preserve exact objects; eight further functions
-now match without constraints under real compiler profiles. Remaining
-constraint-dependent functions stay placeholders. Required kernel/CPU operations retain their documented exception.
-See the initial audit dispositions in
-[docs/ASSEMBLY_CREDIT_AUDIT.csv](docs/ASSEMBLY_CREDIT_AUDIT.csv) and subsequent
-recoveries in [docs/PROGRESS.md](docs/PROGRESS.md). The generated graphic and
-successful decomp.dev report are the current progress authority.
-
-Earlier Codex follow-on batches added 32 genuine C functions / 8,364 bytes,
-independently compiled and checked in full. They include stage actor dispatch,
-motion/attachment state updates, actor launch variants, timed state setup and a
-440-byte damped-motion handler. One older 736-byte mesh-loader caller lost
-credit because its fabricated helper bodies only shaped register allocation.
-Those batches reached 43.0850% code. The newer waves 17–19 baseline is
-1,619,392 code bytes (49.1664%). Subsequent independently verified recovery is
-reflected in the generated graphic above and the latest decomp.dev report,
-which show current code and data coverage.
-The near-matching natural mesh-loader candidate remains uncredited.
-The latest source work also recovers the bounded forty-slot runtime-object
-pool with its shared layout and complete native initializer/allocator spans,
-plus the sixteen bounded runtime-entry record arrays. The latest whole-function
-recoveries include the 736-byte runtime stream processor, its sector-count
-setter, and three 148-byte record searches.
-
-The four 48-byte switch tables at 004B73E0–004B7470 now come from the
-compiled C owners in `src/w192_r.c`; their raw pointer-literal file is removed.
-The normal build reuses the code object and verifies each complete table,
-including its case-label relocations. The linker selects tables by symbol and
-section index because MWCC gives them identical `.rodata` section names.
-
-Keep genuine helper bodies with their callers when matching depends on known
-register preservation. Verify the helper itself and all affected original units.
-Invented stand-ins and omitted required arguments do not establish a C match.
-The motion/rebound and state-event helper groups now use verified real bodies;
-see [docs/PROGRESS.md](docs/PROGRESS.md) for their source ownership.
-
-Check the current catalog and recent commits before starting adjacent work.
-Use function evidence to choose compilers; the SDK address bands are mixed.
-Verified code is pushed at least after each additional full percentage point.
-The latest checkpoint also publishes the EE GCC sibling-call profile described
-in [docs/COMPILER.md](docs/COMPILER.md#framed-runtime-calls-with-ee-gcc-296).
-
-The latest verified CODE checkpoint is 2,782,516 / 3,293,696 bytes
-(84.4800%). The SDK ADX cleanup routine adds 176 CODE bytes. The rebuilt
-executable remains retail-exact. The prior effect-start handler retains its
-retail uninitialized stack component as documented in [progress](docs/PROGRESS.md#actor-effect-start).
-The catalog reports 468,873 / 648,064 DATA bytes (72.3498%); some table
-ownership classifications still need repair.
+Older progress notes are kept in [docs/HISTORY.md](docs/HISTORY.md).
