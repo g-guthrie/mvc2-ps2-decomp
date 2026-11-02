@@ -12,7 +12,7 @@
  *   (c) CPU AI           +0x198 TAIKI, +0x19C ATCK, +0x1A0 WARI, +0x1A4 YOK, +0x1A8 LIB
  *
  * Options (all off by default):
- *   MVC2_ARCADE=abc        any of the letters a, b, c ("all" = abc); app: --arcade abc
+ *   MVC2_ARCADE=abc        any of the letters a, b, c ("all" = none of them, see below); app: --arcade abc
  *   MVC2_NAOMI=PATH        the zip (web default /mvsc2.zip); app: --naomi PATH
  *   MVC2_ARCADE_TRACE=1    log every player animation script run (frames,
  *                          ticks) and every hit (base damage, health); app: --arcade-trace
@@ -32,6 +32,16 @@
  *
  * arcade_hash(): FNV-1a 64 over the toggles and every NAOMI table they
  * select (all 59 characters), for a future netplay handshake.
+
+ *
+ * NOT what the Rev A arcade plays (naomi_oracle, ARCADE_DIFF.md 11): the
+ * table files these toggles read (cart file table entries 256+c ... 728+c)
+ * are never loaded by the Rev A program.  It unpacks each character's tables
+ * from a packed block in RAM at 0x0DD00000 (0x0C027702: 16-bit LZ
+ * 0x0C02A762 into PAK + 0x130000), and the result is byte-identical to the
+ * PS2's TBL / HIT / HIT_FM / HIT_DT / TAIKI / ATCK / WARI / YOK / LIB for every
+ * character checked.  The arcade-accurate setting for (a)-(c) is therefore
+ * off; arcade_init() says so when one is on.
  */
 #include <stdio.h>
 #include <stdlib.h>
@@ -507,12 +517,16 @@ void arcade_init(void)
     int c, g;
     mvc2_arcade_trace = t && *t && *t != '0';
     if (e) {
+        /* "all" = the arcade as it plays: the Rev A program's tables are the
+         * PS2's (header), so it sets none of a, b, c (arcade_code.c reads d, e) */
         if (!strcmp(e, "all") || !strcmp(e, "1"))
-            e = "abc";
+            e = "";
         mvc2_arcade_flags = (strchr(e, 'a') ? A_FRAMES : 0) | (strchr(e, 'b') ? A_DAMAGE : 0) | (strchr(e, 'c') ? A_AI : 0);
     }
     if (!mvc2_arcade_flags || arc_ok)
         return;
+    host_log("arcade: note: toggles a/b/c use the mask-ROM table files, which the Rev A arcade program "
+             "does not load (its own tables equal the PS2's: ARCADE_DIFF.md 11); off is arcade-accurate");
 #ifdef __EMSCRIPTEN__
     if (!path)
         path = "/mvsc2.zip";

@@ -700,3 +700,86 @@ frames identical** (about 5000 frames of fight).
   `MVC2_PS2_FLOAT` were not done.
 - Play! models the EE FPU as IEEE round-toward-zero + flush-to-zero; real
   hardware differs from that in rare subtraction cases.
+
+### Arcade oracle (2026-11-02, branch port-naomi-oracle)
+
+**The oracle.** `port/tools/naomi_oracle/` (README there): the NAOMI arcade
+program (the user's MAME `mvsc2.zip`, Rev A, and `naomi.zip` BIOS) in the
+Flycast core (v2.5 pinned + `flycast.patch`), headless (null renderer, null
+audio, no frame limit), deterministic (two runs give byte-identical dumps),
+about 80 frames/s.  A guest-PC hook in the SH-4 dynarec's block decoder
+fires at 0x0C0283D6 (main loop, after the V-blank wait): the same point as
+the PS2 oracle's and the port's frame start.  It runs the port's `--script`
+language (PS2 pad names mapped to JVS buttons), forces teams
+(`--p1-team`/`--cpu-team` at the PAK load 0x0C02764C), resyncs the game RNG
+(0x0C283049/48) and counters at a state (`--resync`), pokes, snapshots RAM
+and dumps the player records, game block and RNG every frame.
+`naomi_compare.py` maps the NAOMI records to the PS2 layout (PS2 = NAOMI +0
+below 0x84, +0x10 for 0xEC..0x183, +0x14 from 0x19C, found by `--align`;
+world x/y identical, no scale) and skips fields that differ by design (each
+with its reason in the script).  `run_pair.sh` runs one scenario on both.
+State names take five levels now (`2/1/2/3` = a fight's first frame) in the
+port's script matcher and `MVC2_RESYNC`; `fe_main.c`'s script parser no
+longer keeps the previous line's words (a `state` after an `until` read the
+button name as its frame limit, 0, and passed at once).
+
+**Scenarios and match lengths** (native i386 port, Release, round to
+nearest = the NAOMI's; `MVC2_ARCADE_DELAY=2` = the oracle's JVS-to-logic
+pipeline; teams Ryu/Cable/Magneto (P1) against CPU Cyclops/Storm/Sentinel,
+alpha assists, the stage forced to the port's pick (NAOMI
+`--poke 2/1/2/0@0C2D703A:1:7`), resync at 2/1/2/3; the fight is
+`scripts/body_fight.txt` = fight_mix's moves against the CPU):
+
+| Port settings | First divergence (player records, mapped) | Cause |
+|---|---|---|
+| `--arcade abcde` (ROM-file tables + code toggles) | +330 | CPU Cyclops' special 15/00: the port runs the ROM file's script (2,2,2,2,4.. ticks, sprites 0x17D..), the arcade program 6,3,3,2,2 (0x179..) = the PS2's: the Rev A program does not use the ROM table files (ARCADE_DIFF 11.1) |
+| `--arcade de` (PS2 tables + code toggles d, e) | +503 | super-freeze countdown `+0x25D` one tick ahead on the PS2: the tick order (ARCADE_DIFF 11.2) |
+| `--arcade def` | +546 (core fields: +591) | hit pushback velocity `+0x22C/+0x230` a few ulps apart: the PS2's sine table against the NAOMI's computed sine (`func_0018F1A0`) |
+| `--arcade defg` | see the end of this section | |
+
+The intro (both teams' entrances, 140 frames) and the first exchanges
+(Ryu's walk, fireball, Cyclops' special and super, hits, damage, hit stop,
+the CPU's choices from the shared RNG) match frame for frame; the CPU AI on
+both sides makes the same decisions from the resynced RNG, which also shows
+that the AI tables match.
+
+**Attract:** the logo/intro/title states have the same lengths (1/2 481,
+1/4 841 frames) except 1/3 (+4 frames on the PS2) and the demo set-up 1/4
+(61 frames on the port, 181 on the arcade: the arcade loads); the demo then
+picks different characters (port 2 vs 0, arcade 0 vs 1; not investigated),
+so the demo fight is not comparable without forcing (the oracle can force
+it, the port's `--p1-team` does not reach the demo's pick).
+
+**Table sweep:** 36 characters loaded in the arcade program by forcing
+(0x00..0x0E, 0x12..0x1A, 0x2A..0x35): TBL, HIT, HIT_FM, HIT_DT and the
+five AI tables equal the PS2's, except Abyss' forms 0x18..0x1A (HIT from
+0x400/0x800 on and 0x1A's HIT_DT differ: the three forms forced into one
+team, not a normal load) and 7 trailing bytes of 0x0C's HIT (padding).
+Forcing 0x0F..0x11, 0x1B..0x29 and 0x36..0x3A in these team mixes hung
+the arcade program at the first fight frame or corrupted its game block,
+so they are not checked (a limit of the forcing, not seen with the game's
+own picks).
+
+**Fixes in the port's arcade mode**
+- `arcade.frame_data` / `damage` / `cpu_ai` (a, b, c): relabelled "NAOMI
+  ROM files" and documented as not what the arcade plays; `--arcade all`
+  no longer sets them (ARCADE_DIFF 11.1).
+- New `arcade.freeze_order` (f): the super-freeze countdown ticked first in
+  `func_001E8CD0`, as NAOMI 0x0C0382A4 (ARCADE_DIFF 11.2).
+- New `arcade.trig` (g): sine/cosine computed as NAOMI 0x0C1EC2C0 /
+  0x0C1EBD40 instead of the PS2's table (`arcade_code.c`
+  `mvc2_naomi_sin`).
+
+**Open**
+- The game block differs by design in g+0x10 (V-blank count on the NAOMI:
+  its first fight frame takes 29 V-blanks), g+0x24 (render sprite count),
+  g+0x30..0x3F (the port's unlocks) and a menu counter; the stage is picked
+  by `rand()` before the resync (forced in the scenario).
+- The arcade program's slowdown is real in the oracle (V-blanks per logic
+  step > 1 while loading); Flycast does not model SH-4 cache/bus timing, so
+  in-fight slowdown is not measured (ARCADE_DIFF 8 stands).
+- Thanos (0x29), Sentinel's full fight, Akuma/Ken fights: not run as
+  pairs for lack of time; the sweep covers Sentinel's, Ryu's and Ken's
+  tables (equal to the PS2's); Thanos and Akuma were in the hung group.
+- The new toggles f and g were verified in the native build against the
+  oracle only, not yet in the browser build.
