@@ -91,7 +91,14 @@ def parse_asm(path, starts=None, targets=None):
                     # a switch case the table names by raw address: give it a label
                     if not any(x[0] == "L" and x[1] == lb for x in funcs[cur][-3:]):
                         funcs[cur].append(("L", lb, ""))
-            funcs[cur].append(("I", m.group(2), m.group(3).strip()))
+            op, opr = m.group(2), m.group(3).strip()
+            if op == ".word":
+                # an instruction the disassembler left as a word, with its
+                # decoding in the comment (`.word 0x46008024 # cvt.w.s $f0, $f16 # ...`)
+                md = re.match(r"0x[0-9A-Fa-f]+\s+#\s*([a-z][\w.]*)\s+([^#]*?)\s*(?:#|$)", opr)
+                if md:
+                    op, opr = md.group(1), md.group(2).strip()
+            funcs[cur].append(("I", op, opr))
             continue
         m = re.match(r"\s*(\.L[0-9A-Fa-f_]+):", l)
         if m:
@@ -201,6 +208,13 @@ def parse_jtbls(path):
             continue
         if cur:
             m = re.search(r"\.word\s+(\S+)", l)
+            if not m:
+                # a table main.s disassembled as code (glabel jtbl_004BF7A0:
+                # `add $s0, $zero, $k0` = 0x001A8020): the raw word
+                mw = re.match(r"\s*/\* [0-9A-F]+ [0-9A-F]{8} ([0-9A-F]{8}) \*/", l)
+                if mw:
+                    b = mw.group(1)
+                    m = re.match(r"(.*)", "0x" + b[6:8] + b[4:6] + b[2:4] + b[0:2])
             if m:
                 w = m.group(1)
                 ms = re.fullmatch(r"[A-Za-z_]\w*_([0-9A-Fa-f]{8})", w)
@@ -520,8 +534,10 @@ def vtransfer(st, op, opr, k):
     st[d] = D
 
 
-def _vfunc(body, summ):
-    """one function: (sites {body index: (callee, {reg: token})}, exit tokens)."""
+def _vfunc(body, summ, raw_exits=None):
+    """one function: (sites {body index: (callee, {reg: token})}, exit tokens).
+    raw_exits: a list that gets (body index of the return, state) for every
+    `jr $ra` and tail call (gen_returns.py)."""
     lab = {x[1]: k for k, x in enumerate(body) if x[0] == "L"}
     IN = [None] * (len(body) + 1)
     IN[0] = {r: "E" + r for r in ARGR}
@@ -592,13 +608,20 @@ def _vfunc(body, summ):
                     sites[k] = (tgt, {r: st.get(r, "X") for r in ARGR})
                     call(st, tgt, k)
                     exits.append(st)
+                    if raw_exits is not None:
+                        raw_exits.append((k, dict(st)))
                     break
                 if op == "jr":
                     if opr.strip() != "$ra":
+                        if raw_exits is not None and k < min(list(lab.values()) or [len(body)]):
+                            # a dispatch head's tail jump: the entry's $v0
+                            raw_exits.append((k, dict(st, **{"$v0": "T:%d" % k})))
                         for idx in lab.values():
                             push(idx, st)
                     else:
                         exits.append(st)
+                        if raw_exits is not None:
+                            raw_exits.append((k, dict(st)))
                     break
                 if tgt in lab:
                     push(lab[tgt], st)
@@ -640,6 +663,25 @@ def _bottom_up(funcs):
                 seen.add(nxt)
                 stack.append((nxt, iter(calls[nxt])))
     return order
+
+
+def ind_vtokens(funcs, summ, names=None):
+    """F -> {body index: {reg: value token}} at every indirect call (jalr, or
+    jr through a register other than $ra), by the value dataflow with the
+    callee exit summaries (vflow.summ): an entry value that survives a call
+    whose callee leaves the register alone is still E$aN here."""
+    out = {}
+    for F in (names if names is not None else funcs):
+        body = funcs.get(F)
+        if not body or not any(x[0] == "I" and (x[1] == "jalr" or (x[1] == "jr" and x[2].strip() != "$ra"))
+                                for x in body):
+            continue
+        b2 = [("I", "jal", "__IND%d__" % k)
+              if x[0] == "I" and (x[1] == "jalr" or (x[1] == "jr" and x[2].strip() != "$ra")) else x
+              for k, x in enumerate(body)]
+        sites, _ = _vfunc(b2, summ)
+        out[F] = {k: snap for k, (c, snap) in sites.items() if c.startswith("__IND")}
+    return out
 
 
 def vflow(funcs, rounds=4):
@@ -689,32 +731,126 @@ def _ud(op, opr):
     return set(rs[1:]), {rs[0]}
 
 
-def _cfg(body, jtbls):
-    """instruction list, label -> index, and for every `jr $reg` the jump
-    table referenced last before it (None: unknown target)."""
-    ins, lab, jr_tab, last = [], {}, {}, None
-    for x in body:
-        if x[0] == "L":
-            lab[x[1]] = len(ins)
+DTABLES = {}
+
+
+def load_dtables(path):
+    """D_/data_ labels whose words start with a known function: tables of
+    functions the asm does not name jtbl_ (func_001237A0 dispatches through
+    D_004BF318).  The entries run to the next label."""
+    if not ADDRNAME:
+        load_starts()
+    out, cur = {}, None
+    for l in open(path):
+        mc = re.match(r"\s*(?:glabel|alabel) \w*?_?([0-9A-Fa-f]{8})\s*$", l)
+        if mc:
+            CODE_STARTS.add(int(mc.group(1), 16))
+        m = re.match(r"(?:dlabel|glabel) (\S+)", l)
+        if m:
+            cur = m.group(1) if m.group(1).startswith(("D_", "data_")) else None
+            if cur:
+                out[cur] = []
+            continue
+        if cur and l.startswith(("enddlabel", "endlabel")):
+            cur = None
+            continue
+        if cur:
+            m = re.search(r"\.word\s+(\S+)", l)
+            if not m:
+                mw = re.match(r"\s*/\* [0-9A-F]+ [0-9A-F]{8} ([0-9A-F]{8}) \*/", l)
+                if mw:      # a table disassembled as code: the raw word
+                    b = mw.group(1)
+                    m = re.match(r"(.*)", "0x" + b[6:8] + b[4:6] + b[2:4] + b[0:2])
+            if m:
+                w = m.group(1)
+                ms = re.fullmatch(r"[A-Za-z_]\w*_([0-9A-Fa-f]{8})", w)
+                out[cur].append(int(ms.group(1), 16) if ms else int(w, 16) if w.startswith("0x") else -1)
+            elif re.search(r"\.(byte|short|half|float|asciz|ascii)\b", l):
+                out[cur].append(-2)
+    DTABLES.clear()
+    DTABLES.update({k: v for k, v in out.items() if v and v[0] in ADDRNAME})
+    return DTABLES
+
+
+def jr_tables(body, jtbls):
+    """body index of every `jr $reg` (not $ra) -> the jump table it goes
+    through: the jtbl_ referenced last before it, else a D_ table of
+    functions whose address is formed in the same block (addiu %lo /
+    %gp_rel), else None (unknown target)."""
+    out, last = {}, None
+    for k, x in enumerate(body):
+        if x[0] != "I":
             continue
         m = re.search(r"(jtbl_[0-9A-Fa-f]+)", x[2])
         if m and m.group(1) in jtbls:
             last = jtbls[m.group(1)]
-        if x[1] == "jr" and x[2].strip() != "$ra":
-            jr_tab[len(ins)] = last
+        if (x[1] == "jr" and x[2].strip() != "$ra") or x[1] == "jalr":
+            t = last if x[1] == "jr" else None
+            if t is None:
+                for j in range(k - 1, max(-1, k - 16), -1):
+                    y = body[j]
+                    if y[0] == "L":
+                        break
+                    mm = re.search(r"%(?:lo|gp_rel)\(((?:D|data|jtbl)_\w+)\)", y[2])
+                    if mm and y[1] in ("addiu", "daddiu"):
+                        if mm.group(1) in DTABLES:
+                            t = [a if a >= 0 else 0 for a in DTABLES[mm.group(1)]]
+                        elif x[1] == "jalr" and mm.group(1) in jtbls:
+                            t = jtbls[mm.group(1)]
+                        break
+            if x[1] == "jalr" and t is not None and any(a == -1 for a in t):
+                t = None
+            out[k] = t
+    return out
+
+
+def _cfg(body, jtbls):
+    """instruction list, label -> index, and for every `jr $reg` the jump
+    table it goes through (jr_tables; None: unknown target)."""
+    ins, lab, jr_tab = [], {}, {}
+    jt = jr_tables(body, jtbls)
+    for k, x in enumerate(body):
+        if x[0] == "L":
+            lab[x[1]] = len(ins)
+            continue
+        if k in jt:
+            jr_tab[len(ins)] = jt[k]     # jr: dispatch/switch table; jalr: table of functions
         ins.append((x[1], x[2]))
     return ins, lab, jr_tab
 
 
-def mustdef(funcs, rounds=4):
+def text_entry(a):
+    """True if a jump-table word can be a code address the EE jumps to.  A
+    table label in main.s often runs on into data (jtbl_0044B860: three
+    functions, then 0, 1, 2, ...); jumping to 0..9 or outside the text
+    would crash the EE, so retail never dispatches through such a word."""
+    if not ADDRNAME:
+        load_starts()
+    if not TEXT_RANGE:
+        TEXT_RANGE.extend([min(ADDRNAME), max(ADDRNAME) + 4])
+    if not (a > 0 and TEXT_RANGE[0] <= a < TEXT_RANGE[1]):
+        return False
+    # a word in the text range that starts no function, glabel or alabel is
+    # data the label ran on into (D_00446BB0 ... 0x00100010)
+    return not CODE_STARTS or a in CODE_STARTS or a in ADDRNAME
+
+
+TEXT_RANGE = []
+CODE_STARTS = set()
+
+
+def mustdef(funcs, rounds=4, jtbls=None):
     """F -> argument registers F writes on every path to its return (so a
-    caller's value there does not survive the call)."""
+    caller's value there does not survive the call).  A tail jump through a
+    dispatch table returns through one of its entries: what every entry
+    must write; an unknown indirect tail jump adds nothing."""
     ALLA = set(ARGR)
     MD = {}
     for it in range(rounds):
         nmd = {}
         for F, body in funcs.items():
             lab = {x[1]: k for k, x in enumerate(body) if x[0] == "L"}
+            lastjt = jr_tables(body, jtbls or {})
             IN = [None] * (len(body) + 1)
             IN[0] = frozenset()
             work, exits = [0], []
@@ -763,11 +899,17 @@ def mustdef(funcs, rounds=4):
                             exits.append(st | MD.get(tgt, set()))
                             break
                         if op == "jr":
+                            tab = lastjt.get(k)
                             if opr.strip() == "$ra":
                                 exits.append(st)
-                            else:
-                                for idx in lab.values():
+                            elif tab is None:
+                                exits.append(st)     # unknown indirect target
+                            elif any(a == -1 or ".L%08X" % a in lab for a in tab):
+                                for idx in lab.values():    # a switch
                                     push(idx, frozenset(st))
+                            else:                           # a dispatch table
+                                ents = [MD.get(fname(a), set()) for a in tab if text_entry(a)]
+                                exits.append(st | (set.intersection(*ents) if ents else set()))
                             break
                         if tgt in lab:
                             push(lab[tgt], frozenset(st))
@@ -783,6 +925,13 @@ def mustdef(funcs, rounds=4):
     return MD
 
 
+# reads whose value cannot reach any result: libgcc pack_d (func_00119118)
+# builds the double in $a2 with `and $a2, $a2, 0xFFF0...` and then masks out
+# those 12 bits too (exponent cleared, then sign cleared); the credited C
+# (fp_number_type bit-field union) does not read it either
+VALUE_FREE_READS = {"func_00119118": {"$a2"}}
+
+
 def liveness(funcs, jtbls):
     """F -> set of argument registers F may read before writing (any path,
     through calls, tail calls and dispatch tables); an unknown or indirect
@@ -790,7 +939,9 @@ def liveness(funcs, jtbls):
     writes on every path (mustdef)."""
     known = set(funcs)
     ALLA = set(ARGR)
-    MD = mustdef(funcs)
+    if not DTABLES:
+        load_dtables(str(ROOT / "asm/main.s"))
+    MD = mustdef(funcs, jtbls=jtbls)
     prep = {F: _cfg(body, jtbls) for F, body in funcs.items()}
     live = {F: set() for F in funcs}
     # undecoded words between instructions: treat the function as unknown
@@ -824,8 +975,18 @@ def liveness(funcs, jtbls):
                 succ[k] = [k + 1]
                 if k + 1 < n:
                     U[k + 1], Dd[k + 1] = _ud(*ins[k + 1])
-                    extra[k + 1] = callee_uses(tgt) if op == "jal" else ALLA
-                    kill[k + 1] = MD.get(tgt, set()) if op == "jal" else set()
+                    if op == "jal":
+                        extra[k + 1] = callee_uses(tgt)
+                        kill[k + 1] = MD.get(tgt, set())
+                    elif jr_tab.get(k):
+                        # jalr through a table of functions: what any entry reads,
+                        # killed: what every entry writes
+                        ents = [fname(a) for a in jr_tab[k] if text_entry(a)]
+                        extra[k + 1] = set().union(*[callee_uses(e) for e in ents]) if ents else ALLA
+                        kill[k + 1] = set.intersection(*[set(MD.get(e, set())) for e in ents]) if ents else set()
+                    else:
+                        extra[k + 1] = ALLA
+                        kill[k + 1] = set()
                     succ[k + 1] = [k + 2] if k + 2 < n else []
                 k += 2
                 continue
@@ -841,7 +1002,7 @@ def liveness(funcs, jtbls):
                             targets = sorted(set(lab.values()))
                         else:                                # a dispatch table
                             for a in tab:
-                                if a:
+                                if text_entry(a):
                                     ex |= callee_uses(fname(a))
                 elif op == "j" and tgt not in lab:
                     ex = callee_uses(tgt)
@@ -876,7 +1037,7 @@ def liveness(funcs, jtbls):
                 if nin != LIN[k]:
                     LIN[k] = nin
                     changed = True
-        return (LIN[0] if n else set()) & ALLA
+        return ((LIN[0] if n else set()) & ALLA) - VALUE_FREE_READS.get(F, set())
 
     for it in range(50):
         grown = 0
@@ -1317,7 +1478,7 @@ def resolve_locals(a, funcs, canon, padlog, rows_set, jtbls, outdir, vf=None, sr
     for: auto-resolved expression, harmless (callee never reads the
     register), or left (with the reason)."""
     vf = vflow(funcs) if vf is None else vf
-    live = liveness(funcs, jtbls)
+    live = getattr(liveness, "cache", None) or liveness(funcs, jtbls)
     hand = {}
     for r in csv.DictReader(l for l in open(HERE / "r12_regexpr.csv") if not l.startswith("#")):
         hand[(r["source"], r["caller"], r["callee"], int(r["arg"]))] = r["expr"]
@@ -1419,6 +1580,22 @@ def resolve_locals(a, funcs, canon, padlog, rows_set, jtbls, outdir, vf=None, sr
     return res, live, vf
 
 
+def load_hand_entry():
+    """r12_regexpr.csv rows whose expr is a register name (`$a1`): the
+    argument register still holds the caller's incoming value of that
+    register where the callee reads it (path-dependent sites checked by
+    hand).  They become R12 passthrough rows (widening the caller, R20)
+    instead of C expressions; hostify skips them."""
+    out = {}
+    for r in csv.DictReader(l for l in open(HERE / "r12_regexpr.csv") if not l.startswith("#")):
+        if re.fullmatch(r"\$(a[0-3]|t[0-3]|f1[2-9])", r["expr"].strip()):
+            out[(r["source"], r["caller"], r["callee"], int(r["arg"]))] = r["expr"].strip()
+    return out
+
+
+HAND_ENTRY = load_hand_entry()
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--sigs", default=str(ROOT / "build/port-i386/host_sigs.json"))
@@ -1432,10 +1609,38 @@ def main():
     import link_catalog as L
     srcs = sorted({r["source"] for r in csv.DictReader(open(ROOT / "config/matches.csv")) if r["source"].endswith(".c")})
     funcs = parse_asm(a.asm, load_starts(), jtbl_targets(a.asm))
-    fl = flow(funcs)
+    ind = {}
+    fl = flow(funcs, ind)
+    # R23 table-call forwarding: a call through a table of functions (jalr,
+    # or a jr after the entry block) whose entries read $a0..$a3 that the
+    # caller still holds from its own entry: the caller is widened to them
+    # and gen_indirect.py passes them (r12_indirect.csv, `__rpN`)
+    jt_all = parse_jtbls(a.asm)
+    load_dtables(a.asm)
+    live_all = liveness(funcs, jt_all)
+    liveness.cache = live_all
+    vf = vflow(funcs)
+    tbl_need = {}
+    vind = ind_vtokens(funcs, vflow.summ, list(ind))
+    for F, sites in ind.items():
+        body = funcs[F]
+        jtab = jr_tables(body, jt_all)
+        labs = {x[1] for x in body if x[0] == "L"}
+        for k, snap in sites:
+            vs = vind.get(F, {}).get(k, {})
+            snap = {r: (vs.get(r, "X") if vs.get(r, "X").startswith("E$") else snap.get(r, "X")) for r in ARGR}
+            tab = jtab.get(k)
+            if not tab or any(e == -1 or ".L%08X" % e in labs for e in tab):
+                continue
+            ents = [fname(e) for e in tab if text_entry(e)]
+            rd = set().union(*[live_all.get(e, set(ARGR)) for e in ents]) if ents else set()
+            for r in ARGR[:4]:
+                if r in rd and snap.get(r) == "E" + r:
+                    tbl_need.setdefault(F, set()).add(r)
+    tblfwd = set()
+    addr_taken = set(re.findall(r"%lo\((\w+)\)", open(a.asm).read()))
     # the value dataflow also sees entry values that survive a call (callee
     # exit summaries): take its entry tokens where flow() lost them
-    vf = vflow(funcs)
     for F, sites in vf.items():
         agg = {}
         for _, callee, snap in sites:
@@ -1500,6 +1705,10 @@ def main():
                 freg = regs(fc["params"])
                 for k in ks:
                     tok = agg.get(creg[k], "X")
+                    if (src, F, callee, k) in HAND_ENTRY:
+                        # hand row: the register holds the caller's own incoming
+                        # register on every path where the callee reads it
+                        tok = "E" + HAND_ENTRY[(src, F, callee, k)]
                     if re.fullmatch(r"E\$\w+", tok) and tok[1:] in freg:
                         rows.add((src, F, callee, k, freg.index(tok[1:])))
                     elif sym_add(tok, 0) and not re.fullmatch(r"E\$\w+", tok) and not creg[k].startswith("$f"):
@@ -1530,6 +1739,19 @@ def main():
                 if snap.get(r) == "E" + r and r not in freg:
                     widen.setdefault(F, set()).add(r)
                     tailfwd.add(F)
+        for F, rs in tbl_need.items():
+            if F not in canon or canon[F].get("variadic") or owner.get(F) not in bysrc:
+                continue
+            if F in addr_taken:
+                # stored as a callback (`%lo(F)`): its callers through that
+                # pointer pass only the C arguments, so a widened F would read
+                # stack garbage on i386 (wasm: 0); keep the old prototype
+                continue
+            freg = regs(L.WIDEN.get(F, canon[F]["params"]))
+            for r in rs:
+                if r not in freg:
+                    widen.setdefault(F, set()).add(r)
+                    tblfwd.add(F)
         grown = 0
         for F, rs in widen.items():
             ps = list(L.WIDEN.get(F, canon[F]["params"]))
@@ -1562,6 +1784,13 @@ def main():
         for F in sorted(tailfwd):
             w.writerow([F])
     print(f"tail-forwarding dispatch heads: {len(tailfwd)}")
+    with open(HERE / "r12_tblfwd.csv" if a.out == str(HERE / "r12_regpass.csv") else a.out + ".tblfwd.csv",
+              "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["function", "registers"])
+        for F in sorted(tblfwd):
+            w.writerow([F, ";".join(sorted(tbl_need[F]))])
+    print(f"table-call forwarding functions (R23): {len(tblfwd)}")
     with open(a.out, "w", newline="") as f:
         w = csv.writer(f)
         w.writerow(["source", "caller", "callee", "arg", "caller_param"])
@@ -1580,7 +1809,9 @@ def main():
         if os.environ.get("REGPASS_DUMP"):
             import pickle
             pickle.dump((canon, padlog, rows), open(os.environ["REGPASS_DUMP"], "wb"))
-        res, live, _ = resolve_locals(a, funcs, canon, padlog, rows, jt, a.sites, vf, srcs, tailfwd, syms)
+        # an R23 function passes its widened parameters on through a table
+        # call (r12_indirect.csv): host_usage treats it as using every parameter
+        res, live, _ = resolve_locals(a, funcs, canon, padlog, rows, jt, a.sites, vf, srcs, tailfwd | tblfwd, syms)
         cnt = collections.Counter(r["status"] for r in res)
         print(f"{a.sites}/r12_sites.csv: {len(res)} padded arguments without a caller parameter: " +
               ", ".join(f"{k} {v}" for k, v in sorted(cnt.items())))

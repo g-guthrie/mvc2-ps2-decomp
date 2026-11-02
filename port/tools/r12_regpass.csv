@@ -10,6 +10,9 @@ src/actor_input_motion_003AABB0.c,func_003AB270,func_003AB400,3,3
 src/actor_owner_gate_00197490.c,func_00197490,func_00196E30,3,3
 src/actor_owner_gate_00197490.c,func_00197490,func_00197470,3,3
 src/actor_owner_start_profiles_001D7970.c,func_001D7970,func_001D7AB0,3,3
+src/actor_state_forwarders.c,func_00279040,func_00279050,1,1
+src/actor_state_forwarders.c,func_00279040,func_00279050,2,2
+src/actor_state_forwarders.c,func_00279040,func_00279050,3,3
 src/advance_global_phase.c,func_00171640,func_0032C880,0,0
 src/advance_global_phase.c,func_00171640,func_0032C880,2,2
 src/advance_global_phase.c,func_00171640,func_0032C880,3,3
@@ -86,6 +89,8 @@ src/global_phase_animation_steps.c,func_003944E0,func_00394700,0,0
 src/global_phase_events.c,func_00393910,func_00393A20,0,0
 src/global_phase_events.c,func_00393F70,func_00394080,0,0
 src/global_phase_events.c,func_003945F0,func_00394700,0,0
+src/glyph_and_owner_gate.c,func_00136390,func_001363D0,2,2
+src/glyph_and_owner_gate.c,func_00136390,func_001363D0,3,3
 src/gr11_a.c,func_001C9230,func_00175700,0,0
 src/gr16_a.c,func_00158A40,func_003DAA40,0,0
 src/gr16_b.c,func_00173A50,func_00173650,0,0
@@ -126,6 +131,9 @@ src/grok_jz_00290AB0.c,residual_00290AB0,func_00290C50,3,3
 src/grok_m_69850.c,func_00169850,func_00169AE0,3,3
 src/grok_m_69850.c,func_00169850,func_00169BC0,3,3
 src/grok_nop_1959b0.c,func_001959B0,func_00194CA0,1,1
+src/grok_nopb_2587c0.c,func_002587C0,func_00258810,1,1
+src/grok_nopb_2587c0.c,func_002587C0,func_00258810,2,2
+src/grok_nopb_2587c0.c,func_002587C0,func_00258810,3,3
 src/grok_nopb_275350.c,func_00275350,func_002753A0,1,1
 src/grok_nopb_275350.c,func_00275350,func_002753A0,2,2
 src/grok_nopb_275350.c,func_00275350,func_002753A0,3,3
@@ -141,6 +149,8 @@ src/grok_nopd_336710.c,func_00336710,func_003359E0,1,1
 src/grok_nopd_336710.c,func_00336710,func_003359E0,2,2
 src/grok_nopd_336710.c,func_00336710,func_003359E0,3,3
 src/grok_nopd_35a500.c,func_0035A500,func_0035AE70,1,1
+src/grok_nopf_1c23f0.c,func_001C23F0,func_001C2520,2,2
+src/grok_nopf_1c23f0.c,func_001C23F0,func_001C2520,3,3
 src/grok_r1_001.c,func_0010AE38,func_0010ADC0,0,0
 src/grok_r1_001.c,func_0010B950,func_0010B360,3,3
 src/grok_r1_0018.c,func_0018DD90,func_0018DDD0,1,1
@@ -189,6 +199,7 @@ src/grok_r2_001c.c,residual_001CDEE0,func_001CDEF0,1,1
 src/grok_r2_001c.c,residual_001CDEE0,func_001CDEF0,2,2
 src/grok_r2_001c.c,residual_001CDEE0,func_001CDEF0,3,3
 src/grok_r2_001c.c,residual_001E1410,func_001E1430,1,1
+src/grok_r2_0028.c,func_002B4DE0,func_00397580,2,2
 src/grok_r2_0034.c,func_0034DC00,func_0034DC20,1,1
 src/grok_r2_0034.c,func_0034DC00,func_0034DC20,2,2
 src/grok_r2_0034.c,func_0034DC00,func_0034DC20,3,3
@@ -222,6 +233,10 @@ src/grok_w3_001a.c,func_001AEBC0,func_001AFC90,2,2
 src/grok_w3_001a.c,func_001AEBC0,func_001AFC90,3,3
 src/grok_w3_0024.c,func_00248E70,func_00248EC0,0,0
 src/grok_w3_0024.c,func_00248E70,func_00249010,0,0
+src/grok_w3_0026.c,func_0026FEB0,func_0026FF10,1,1
+src/grok_w3_0026.c,func_0026FEB0,func_0026FF10,2,2
+src/grok_w3_0026.c,func_0026FEB0,func_0026FF10,3,3
+src/grok_w3_002a.c,func_002B5A00,func_00397580,2,2
 src/grok_w3_0030.c,func_00314EF0,func_00313120,1,1
 src/grok_w3_0034.c,func_0034D300,func_0034CF30,0,0
 src/grok_w3_0034.c,func_0034D300,func_0034CF60,0,0
@@ -255,6 +270,10 @@ src/grok_w5_003c.c,func_003CDC30,func_003CDC70,2,2
 src/grok_w5_003c.c,func_003CDC30,func_003CDC70,3,3
 src/grok_w5_003c.c,func_003CDC30,func_003CDEE0,2,2
 src/grok_w5_003c.c,func_003CDC30,func_003CDEE0,3,3
+src/grok_w5_003c.c,func_003D1F60,func_00172760,0,0
+src/grok_w5_003c.c,func_003D1F60,func_00172760,1,1
+src/grok_w5_003c.c,func_003D1F60,func_00172760,2,2
+src/grok_w5_003c.c,func_003D1F60,func_00172760,3,3
 src/grok_w5_003c.c,func_003DDB20,func_003DDA70,1,1
 src/grok_w5_003c.c,func_003DDB20,func_003DDA70,2,2
 src/grok_w5_003c.c,func_003DDB20,func_003DDA70,3,3
@@ -285,6 +304,8 @@ src/grok_w7_0020.c,func_00217D80,func_00217DD0,1,1
 src/grok_w7_0020.c,func_00217D80,func_00217DD0,2,2
 src/grok_w7_0020.c,func_00217D80,func_00217DD0,3,3
 src/grok_w7_003a.c,func_003B6340,func_003B6230,1,1
+src/grok_w7_003c.c,func_003D6FF0,func_003D7030,2,2
+src/grok_w7_003c.c,func_003D6FF0,func_003D7030,3,3
 src/grok_x1_3a07d0.c,func_003A07D0,func_003A0880,1,1
 src/grok_x1_3a07d0.c,func_003A07D0,func_003A0880,2,2
 src/grok_x1_3a07d0.c,func_003A07D0,func_003A0880,3,3
@@ -435,10 +456,15 @@ src/nq157_a.c,func_003E8C00,func_003EAA80,2,2
 src/nq172_b.c,func_003AFE10,func_00175700,0,0
 src/nq228_a.c,func_00137380,func_001378C0,0,0
 src/nq228_a.c,func_00137380,func_00137A00,0,0
+src/nq22_a.c,func_001620F0,func_00161630,1,1
+src/nq22_a.c,func_001620F0,func_00161630,2,2
+src/nq22_a.c,func_001620F0,func_00161630,3,3
 src/nq31_b.c,residual_002F9C80,func_001E3C40,0,0
 src/nq42_b.c,func_0013F6B0,func_003DAA40,0,0
 src/nq50_c.c,func_002FF790,func_002FFB30,1,1
 src/nq63_b.c,func_00380850,func_00380A40,1,1
+src/nq65_b.c,func_003D69A0,func_003D44E0,2,2
+src/nq65_b.c,func_003D69A0,func_003D44E0,3,3
 src/nq72_a.c,func_0038DF80,func_00174470,0,0
 src/nq75_a.c,func_0034F5C0,func_00175700,0,0
 src/nq83_b.c,residual_00369440,func_0036A8A0,1,1
@@ -453,6 +479,7 @@ src/owner_stance_state_dispatch.c,func_003C0C60,func_003C11C0,2,2
 src/owner_stance_state_dispatch.c,func_003C0C60,func_003C11C0,3,3
 src/owner_turn_start_001a9ef0.c,func_001A9EF0,func_001AA040,2,2
 src/owner_turn_start_001a9ef0.c,func_001A9EF0,func_001AA040,3,3
+src/owner_wait_start_001d8190.c,func_001D8190,func_001D7E50,3,3
 src/p2.c,func_00409E60,func_0040A118,0,0
 src/p3.c,func_0040B8A8,func_0040BBB8,0,0
 src/p4.c,func_00400FE8,func_0040CA48,0,0
@@ -467,6 +494,9 @@ src/physics_dispatchers.c,func_002095C0,func_002098E0,2,2
 src/physics_dispatchers.c,func_002095C0,func_002098E0,3,3
 src/physics_dispatchers.c,func_00223A60,func_00223CA0,1,1
 src/physics_dispatchers.c,func_002447E0,func_002448B0,1,1
+src/physics_dispatchers.c,func_0026FDE0,func_0026FEB0,1,1
+src/physics_dispatchers.c,func_0026FDE0,func_0026FEB0,2,2
+src/physics_dispatchers.c,func_0026FDE0,func_0026FEB0,3,3
 src/physics_dispatchers.c,func_00274580,func_00274650,1,1
 src/physics_dispatchers.c,func_00274580,func_00274650,2,2
 src/physics_dispatchers.c,func_00274580,func_00274650,3,3
@@ -479,6 +509,9 @@ src/physics_dispatchers.c,func_00282320,func_00282680,3,3
 src/physics_dispatchers.c,func_002A81A0,func_002A8350,1,1
 src/physics_dispatchers.c,func_002A81A0,func_002A8350,2,2
 src/physics_dispatchers.c,func_002A81A0,func_002A8350,3,3
+src/physics_dispatchers.c,func_002C12C0,func_002C1450,1,1
+src/physics_dispatchers.c,func_002C12C0,func_002C1450,2,2
+src/physics_dispatchers.c,func_002C12C0,func_002C1450,3,3
 src/physics_dispatchers.c,func_002C6670,func_002C6A70,1,1
 src/physics_dispatchers.c,func_002C6670,func_002C6A70,2,2
 src/physics_dispatchers.c,func_002C6670,func_002C6A70,3,3
@@ -568,6 +601,9 @@ src/q8_n.c,func_001F84D0,func_001F85D0,0,0
 src/q8_n.c,func_001F84D0,func_001F8610,0,0
 src/q8_n.c,func_001F84D0,func_001F8650,0,0
 src/q8_n.c,func_001F84D0,func_001F8690,0,0
+src/q8_n.c,func_001F84D0,func_001F8860,1,1
+src/q8_n.c,func_001F84D0,func_001F8860,2,2
+src/q8_n.c,func_001F84D0,func_001F8860,3,3
 src/q9_b.c,func_00388390,func_00388780,0,0
 src/q9_b.c,func_00388390,func_00388780,1,1
 src/q9_f.c,func_001B9E30,func_001B9F60,3,3
@@ -767,6 +803,10 @@ src/tail_leaves.c,func_00359BD0,func_00359A70,3,3
 src/tail_leaves.c,func_00359C20,func_00359A70,1,1
 src/tail_leaves.c,func_00359C20,func_00359A70,2,2
 src/tail_leaves.c,func_00359C20,func_00359A70,3,3
+src/tail_leaves.c,func_003D2CA0,func_003299F0,0,0
+src/tail_leaves.c,func_003D2CA0,func_003299F0,1,1
+src/tail_leaves.c,func_003D2CA0,func_003299F0,2,2
+src/tail_leaves.c,func_003D2CA0,func_003299F0,3,3
 src/tail_leaves.c,func_003D2CB0,func_001712A0,0,0
 src/tail_leaves.c,func_003D2CB0,func_001712A0,1,1
 src/tail_leaves.c,func_003D2CB0,func_001712A0,2,2
@@ -806,6 +846,7 @@ src/w171_m.c,func_00257100,func_00258070,3,3
 src/w172_d.c,func_003AEFE0,func_003AF6D0,1,1
 src/w172_d.c,func_003AEFE0,func_003AF6D0,2,2
 src/w172_d.c,func_003AEFE0,func_003AF6D0,3,3
+src/w174_a.c,func_002B71E0,func_00397580,2,2
 src/w175_b.c,func_002F7630,func_002FA020,0,0
 src/w176_b.c,func_0018DE90,func_0018E810,1,1
 src/w176_g.c,func_003B3BB0,func_003B4030,3,3
@@ -887,6 +928,7 @@ src/w9m2a.c,func_0018E500,func_0018DA70,1,1
 src/w9m2a.c,func_0018E500,func_0018DA70,2,2
 src/w9m2a.c,func_0018E500,func_0018DB70,0,0
 src/w9m2a.c,func_0018E500,func_0018DB70,1,1
+src/w9m2c.c,func_00145FB0,func_00145160,1,1
 src/w9m2c.c,func_003A7070,func_003A7B10,0,0
 src/w9m2c.c,func_003A7070,func_003A7B10,1,1
 src/w9m2c.c,func_003A7070,func_003A7B10,2,2
@@ -935,6 +977,8 @@ src/wave28b.c,func_002C6A70,func_002C6AF0,3,3
 src/wave28b.c,func_0037DBC0,func_0037DC50,2,2
 src/wave28b.c,func_0037DBC0,func_0037DC50,3,3
 src/wave29b.c,func_0027F330,func_00280340,0,0
+src/wave2b.c,func_00161630,func_00161760,2,2
+src/wave2b.c,func_00161630,func_00161760,3,3
 src/wave3.c,func_0018DC10,func_0018CDF0,1,1
 src/wave31.c,func_001FD2A0,func_001FCFC0,0,0
 src/wave31.c,func_001FD2A0,func_001FD110,0,0

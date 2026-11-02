@@ -350,6 +350,12 @@ def gen_glue(a):
         ad = L.address_of(n) or 0
         st = L.matches().get(n, {}).get("status", "")
         credited = st in ("complete", "placeholder") and n in defs
+        if sig and (sig.get("from") or "").startswith("callers") and n not in defs:
+            # no C definition (an .S unit, e.g. func_003DE160 in
+            # vu0_macro_math.S): the callers' guess (all int) would clash
+            # with the host definition's own types; the host file declares it
+            H.append(f"/* {n}: prototype from its port/host definition (canon only from callers) */")
+            continue
         H.append(f"{ret} {n}({ptxt});" + ("" if sig else "  /* no canonical signature */"))
         if credited and not (r.get("ret") or "").strip():
             H.append(f"{ret} {n}__game({ptxt});")

@@ -1,20 +1,28 @@
 #!/usr/bin/env python3
 """R12 for indirect calls (Port J): port/tools/r12_indirect.csv.
 
-The decomp often writes a call through a function table with no arguments,
-`D_004C1EA8[p[5]]();`, where the EE code jumps (jalr, or a tail `jr`) with
-$a0.. still holding the caller's values, and the table's entries read them
-(func_003A5790(p, q)).  A host compiler passes nothing, so the callee reads
-garbage.  This tool finds those sites: the call's table (asm/main.s) lists
-functions whose canonical prototypes take arguments, and the dataflow over
-the caller's asm (gen_regpass.flow) says what each argument register holds
-at the indirect jump: the caller's parameter, or a value derived from it
-("p + k", loads through it; see r12_regsym.csv).  One row per site:
-  source, caller, call (exact text), args (C, comma separated)
+The decomp often writes a call through a function table with fewer
+arguments than the entries read, `D_004C1EA8[p[5]]();`, where the EE code
+jumps (jalr, or a tail `jr`) with $a0.. still holding the caller's values.
+A host compiler passes nothing, so the callee reads garbage (0 under
+EMULATE_FUNCTION_POINTER_CASTS, stack garbage on i386; unknown registers
+are passed as 0).  This tool finds those sites: the asm
+liveness (gen_regpass.liveness) of the table's entries says which of
+$a0..$a3 they read beyond the C arguments, and the dataflow over the
+caller's asm (gen_regpass.flow + value tokens with callee summaries) says
+what each register holds at the indirect jump: the caller's parameter, a
+widened parameter (`__rpN`: R20, or R23 = gen_regpass widened the caller for
+this call, r12_tblfwd.csv), or a value derived from it ("p + k", loads
+through it).  One row per site:
+  source, caller, call (exact text), args (C, comma separated, all of them)
 hostify applies each row as a text replacement inside that source (like
 host_overrides.py) and casts the table entry to an unprototyped pointer.
+R22 dispatch heads are left to hostify's tail forwarding.  Run after
+gen_regpass.py (it reads r12_widen.csv / r12_tailfwd.csv).  --report CSV
+lists every table call whose entries read more than the C passes, with what
+was done (row / R22 / unresolved: the register's value token).
 
-usage: gen_indirect.py [--sigs host_sigs.json] [--asm asm/main.s] [--out CSV]
+usage: gen_indirect.py [--sigs host_sigs.json] [--asm asm/main.s] [--out CSV] [--report CSV]
 """
 import argparse, csv, json, re, sys
 from pathlib import Path
@@ -42,7 +50,15 @@ def tables(path):
             m = re.search(r"\.word\s+(\S+)", l)
             if m:
                 mm = re.fullmatch(r"(?:func|residual)_([0-9A-Fa-f]{8})", m.group(1))
+                if not mm and re.fullmatch(r"0x[0-9A-Fa-f]+", m.group(1)):
+                    out[cur].append(int(m.group(1), 16))
+                    continue
                 out[cur].append(int(mm.group(1), 16) if mm else -1)
+            else:
+                mw = re.match(r"\s*/\* [0-9A-F]+ [0-9A-F]{8} ([0-9A-F]{8}) \*/", l)
+                if mw:      # a table main.s disassembled as code: the raw word
+                    b = mw.group(1)
+                    out[cur].append(int(b[6:8] + b[4:6] + b[2:4] + b[0:2], 16))
     return out
 
 
@@ -89,11 +105,40 @@ def render(tok, names, body):
     return "(%s + %d)" % (b, off) if off else b
 
 
+def _args(txt, start):
+    """(argument texts, end index) of the call whose '(' is at start."""
+    d, k, cur, out = 0, start, [], []
+    while k < len(txt):
+        c = txt[k]
+        if c in "([":
+            d += 1
+            if d == 1:
+                k += 1
+                continue
+        elif c in ")]":
+            d -= 1
+            if d == 0:
+                break
+        elif c == "," and d == 1:
+            out.append("".join(cur).strip())
+            cur = []
+            k += 1
+            continue
+        cur.append(c)
+        k += 1
+    last = "".join(cur).strip()
+    if last or out:
+        out.append(last)
+    return out, k + 1
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--sigs", default=str(ROOT / "build/port-i386/host_sigs.json"))
     ap.add_argument("--asm", default=str(ROOT / "asm/main.s"))
     ap.add_argument("--out", default=str(HERE / "r12_indirect.csv"))
+    ap.add_argument("--report", help="also write every table call whose entries read more argument "
+                    "registers than the C passes, with what was done (csv)")
     a = ap.parse_args()
     canon = json.load(open(a.sigs))["canon"]
     byaddr = {}
@@ -101,53 +146,94 @@ def main():
         m = re.search(r"_([0-9A-Fa-f]{8})$", n)
         if m:
             byaddr[int(m.group(1), 16)] = n
+    widen = {r["function"]: r["params"].split(";") for r in csv.DictReader(open(HERE / "r12_widen.csv"))}
+    tailfwd = {r["function"] for r in csv.DictReader(open(HERE / "r12_tailfwd.csv"))}
     tabs = tables(a.asm)
-    funcs = G.parse_asm(a.asm)
+    funcs = G.parse_asm(a.asm, G.load_starts(), G.jtbl_targets(a.asm))
+    jt = G.parse_jtbls(a.asm)
+    G.load_dtables(a.asm)
+    live = G.liveness(funcs, jt)
     ind = {}
     G.flow(funcs, ind)
+    # entry values that survive a call (callee exit summaries)
+    G.vflow(funcs)
+    vind = G.ind_vtokens(funcs, G.vflow.summ, list(ind))
+    for F in ind:
+        ind[F] = [(k, {r: (vind.get(F, {}).get(k, {}).get(r, "X")
+                           if vind.get(F, {}).get(k, {}).get(r, "X").startswith("E$") else snap.get(r, "X"))
+                       for r in G.ARGR}) for k, snap in ind[F]]
     srcs = sorted({r["source"] for r in csv.DictReader(open(ROOT / "config/matches.csv")) if r["source"].endswith(".c")})
-    rows, skipped = [], []
+    rows, skipped, report = [], [], []
     for s in srcs:
         txt = (ROOT / s).read_text(encoding="latin-1")
         defs = [(m.start(), m.group(1), m.group(2)) for m in FDEF.finditer(txt)]
         found = []
-        for m in CALL.finditer(txt):
+        for m in CALL_ANY.finditer(txt):
             t = m.group(1)
-            ent = [x for x in tabs.get(t, []) if x in byaddr]
-            npar = max([len(canon[byaddr[x]]["params"]) for x in ent] or [0])
-            if npar == 0:
+            ent = [x for x in tabs.get(t, []) if x in byaddr and G.text_entry(x)]
+            if not ent:
                 continue
+            cargs, end = _args(txt, m.end() - 1)
             d = [x for x in defs if x[0] < m.start()]
             if not d:
                 continue  # a declaration at file scope
             st, fn, plist = d[-1]
             if fn not in funcs or fn not in canon:
                 continue
-            found.append((fn, m.group(0), npar, param_names(plist), st))
-        for fn, call, npar, names, st in found:
-            # this function's indirect jumps through a table of functions (not switches)
+            # argument registers some entry reads (asm liveness through its callees)
+            rd = set()
+            for x in ent:
+                rd |= live.get(G.fname(x), set(G.ARGR))
+            need = [r for r in G.ARGR[len(cargs):4] if r in rd]
+            if not need:
+                continue
+            found.append((fn, txt[m.start():end], t, cargs, need, param_names(plist), st))
+        for fn, call, t, cargs, need, names, st in found:
+            rep = dict(source=s, caller=fn, call=call, passes=len(cargs), entries_read=";".join(need),
+                       status="", args="")
+            report.append(rep)
+            if fn in tailfwd:
+                rep["status"] = "R22 tail forwarding (hostify passes the head's parameters)"
+                continue
+            # this function's indirect jumps through table t
             body = funcs[fn]
             sites = []
             for k, snap in ind.get(fn, []):
                 sym = None
-                for j in range(k - 1, max(-1, k - 12), -1):
+                for j in range(k - 1, max(-1, k - 16), -1):
                     x = body[j]
-                    mm = re.search(r"%(?:hi|lo|gp_rel)\(((?:D|jtbl|data)_\w+)\)", x[2]) if x[0] == "I" else None
-                    if mm:
-                        sym = mm.group(1)
+                    if x[0] == "L":
                         break
-                if sym and any(v in byaddr for v in tabs.get(sym, [])):
-                    sites.append((sym, snap))
-            same = [x for x in sites if x[0] == call.split("[")[0].strip()]
-            if len(same) != 1 or sum(1 for f2, c2, *_ in found if f2 == fn and c2.split("[")[0] == call.split("[")[0]) != 1:
-                skipped.append((s, fn, call, "%d asm sites" % len(same)))
-                continue
-            snap = same[0][1]
-            freg = G.regs(canon[fn]["params"])
+                    if x[1] in G.STORE:
+                        continue    # sw $v1, %gp_rel(D_004C29A4)($gp) between the table base and the jump
+                    mm = re.search(r"%(?:hi|lo|gp_rel)\(((?:D|jtbl|data)_\w+)\)", x[2])
+                    if mm and any(v in byaddr for v in tabs.get(mm.group(1), [])):
+                        sym = mm.group(1)   # the first symbol back that is a table of functions
+                        break
+                if sym == t:
+                    sites.append(snap)
+            # the call passes at least as many arguments as any entry's
+            # (widened) prototype takes and every register an entry reads:
+            # an i386 callee would otherwise read stack garbage for the rest
+            # (wasm EMULATE_FUNCTION_POINTER_CASTS passes 0)
+            npad = max([len(cargs)] + [G.ARGR.index(r) + 1 for r in need] +
+                       [min(4, sum(1 for x in widen.get(G.fname(e), canon.get(G.fname(e), {}).get("params", []))
+                                   if x not in ("float", "double"))) for e in ent])
+            ncalls = sum(1 for f2, c2, t2, *_ in found if f2 == fn and t2 == t)
+            if not sites or ncalls != 1:
+                rep["status"] = "zeros: %d asm sites, %d C calls through %s" % (len(sites), ncalls, t)
+                sites = [{r: "X" for r in G.ARGR}]
+            snap = {r: (sites[0][r] if all(x[r] == sites[0][r] for x in sites) else "X") for r in G.ARGR}
+            params = widen.get(fn, canon[fn]["params"])
+            freg = G.regs(params)
+            allnames = names + ["__rp%d" % i for i in range(len(names), len(params))]
             end = txt.find("\n}", st)
             fbody = txt[st:end]
-            args = []
-            for r in G.ARGR[:npar]:
+            extra, bad = [], []
+            for r in G.ARGR[len(cargs):4]:
+                # every register whose value is known is passed (the liveness
+                # behind `need` is conservative the other way: a register no
+                # entry reads is passed when known, 0 otherwise)
                 tok = snap.get(r, "X")
                 if re.fullmatch(r"E\$\w+", tok) and tok[1:] in freg:
                     tok = "P%d" % freg.index(tok[1:])
@@ -155,25 +241,43 @@ def main():
                     tok = re.sub(r"E(\$\w+)", lambda mm: "P%d" % freg.index(mm.group(1)), tok)
                 else:
                     tok = None
-                c = render(tok, names, fbody) if tok else None
-                args.append(c if c else "0")
-            while args and args[-1] == "0":
-                args.pop()
-            if not args:
-                skipped.append((s, fn, call, "nothing known"))
+                c = render(tok, allnames, fbody) if tok else None
+                if c is None and r in need:
+                    bad.append("%s=%s" % (r, snap.get(r, "X")))
+                extra.append(c if c else "0")
+            while extra and extra[-1] == "0" and len(cargs) + len(extra) > npad:
+                extra.pop()
+            if bad:
+                rep["status"] = (rep["status"] + "; " if rep["status"] else "") + "unresolved (0) " + " ".join(bad)
+            if not extra:
+                skipped.append((s, fn, call, "nothing to pass"))
+                rep["status"] = rep["status"] or "nothing to pass"
                 continue
             if txt.count(call) != 1:
                 skipped.append((s, fn, call, "text not unique"))
+                rep["status"] = "left: call text not unique"
                 continue
-            rows.append((s, fn, call, ", ".join(args)))
+            args = ", ".join(cargs + extra)
+            rows.append((s, fn, call, args))
+            rep["args"] = args
+            rep["status"] = rep["status"] or "row"
     with open(a.out, "w", newline="") as f:
         w = csv.writer(f)
         w.writerow(["source", "caller", "call", "args"])
-        for r in rows:
+        for r in sorted(rows):
             w.writerow(r)
     print(f"{a.out}: {len(rows)} indirect call sites; skipped {len(skipped)}")
     for x in skipped:
         print("  skipped", *x)
+    if a.report:
+        with open(a.report, "w", newline="") as f:
+            w = csv.DictWriter(f, fieldnames=list(report[0].keys()))
+            w.writeheader()
+            for r in sorted(report, key=lambda r: (r["source"], r["caller"], r["call"])):
+                w.writerow(r)
+
+
+CALL_ANY = re.compile(r"(\w+)\s*\[((?:[^\[\]]|\[[^\[\]]*\])*)\]\s*\(")
 
 
 if __name__ == "__main__":
