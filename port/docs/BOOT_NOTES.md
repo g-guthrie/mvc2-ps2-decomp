@@ -744,6 +744,25 @@ now return their values), `func_00164C50`, `func_003B8170` (a call or 0),
 `func_00174A40` / `func_003FB128` / `func_004112D8` / `func_003FE040`
 (SDK code whose callee returns through a load).
 
+**Verification (merge of main e693d9cfe + the above, native i386).**
+`arcade_ending_rank.txt` from an empty card twice, both to the SCORE
+RANKING (frame 28147, `private/converted/boot/native/r12l/arc1`, `arc2`);
+`long_fight` (`--cpu-team 0x25,0x0C,0x09`, frame 3792), `assist_sweep`,
+`score_attack` (frame 20487, same as before); browser title -> fight with
+assist (`web/r12_5`).  Oracle (`-DMVC2_PS2_FLOAT=ON` build, `run_pair.sh`,
+`--no-blocks`): attract cycle 4835 frames, 4370 compared after the 1/1/0
+resync, all identical; `fight_mix` 7000 frames, 6535 compared, all
+identical (`private/converted/boot/oracle_r12/`).
+
+**Kept from the oracle branch:** the R10 overrides for
+`func_002BCE90(p, q)` (w20a0_j.c) and `func_00405968(p)` (w193_b.c).  They
+are a class the R12 tables do not see: calls through a K&R declaration in
+the TU that also defines or fully declares the callee, which hostify R12
+leaves alone (no pad log entry).  A source scan finds 52 such calls with
+fewer arguments than the callee's canonical prototype (most in
+`tail_leaves.c`, `func_X(p)` to a `(s32 a0, ..., s32 a3)` leaf that only
+uses `a0`); not classified yet.
+
 ### Renderer pass (2026-10-31, branch port-render)
 
 Evidence under `private/converted/boot/rend/` (native) and
