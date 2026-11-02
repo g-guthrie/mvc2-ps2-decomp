@@ -1,3 +1,4 @@
+#include <stdlib.h>
 /*
  * Frontend: the character sprite path (Port J).
  *
@@ -87,6 +88,8 @@ int func_00412260(int slot, int frame, void *mp, unsigned int urgba, int palette
         }
     }
     fe_sync_state();
+    { extern volatile long mvc2_host_frame; static long df=-2; if(df==-2){const char*e=getenv("DBG_CHAR"); df=e?atol(e):-1;}
+      if (df==mvc2_host_frame) { const float *mm=(const float*)(uintptr_t)m; host_log("CHAR slot %d frame %d pal %d rgba %08X at %g %g t[pal]=%d", slot, frame, palette, (u32)rgba, mm[12], mm[13], t?t[palette&15]:-1);} }
     fl_char_draw(S[i].fb, frame, (const float *)(uintptr_t)m, (u32)rgba, palette);
     return 0;
 }

@@ -43,7 +43,10 @@ static u32 sample_sig(const u8 *p, u32 n, u32 seed)
     u32 h = 2166136261u ^ seed, i, step;
     if (!p || !n)
         return h;
-    step = n > 256 ? n / 256 : 1;
+    /* an odd stride, so every byte lane (R, G, B, A of 32-bit texels) is
+     * sampled: with n / 256 = 4 a 256-colour CT32 palette only had its red
+     * bytes checked and a G/B/A-only change (HUD colour cycling) was missed */
+    step = n > 1024 ? (n / 1024) | 1 : 1;
     for (i = 0; i < n; i += step)
         h = (h ^ p[i]) * 16777619u;
     h = (h ^ p[n - 1]) * 16777619u;
@@ -322,6 +325,14 @@ int func_003EA0D0(int pal) /* palette unlock */
 }
 
 /* ---------------- primitives ---------------- */
+static long dbg_prim_frame(void)
+{
+    static long df = -2;
+    extern volatile long mvc2_host_frame;
+    if (df == -2) { const char *e = getenv("DBG_PRIM"); df = e ? atol(e) : -1; }
+    return df == mvc2_host_frame;
+}
+
 static int tex_ok(void)
 {
     u8 t0[8], t1[8];
@@ -339,6 +350,7 @@ int func_003DF0C0(void *v) /* textured gouraud triangle */
     int r = func_003DF0C0__game(v);
     if (r && tex_ok()) {
         fl_tri_tex((const FlTri *)v);
+        if (dbg_prim_frame()) { const FlTri *t=(const FlTri*)v; host_log("TRI h %08X (%g,%g) argb %08X %08X %08X blend %X", EE_BSS(u32,0x004C2AEC), t->v[0].x, t->v[0].y, t->argb[0], t->argb[1], t->argb[2], EE_BSS(u32,0x004C2AD0)); }
         fe_cnt[0]++;
     } else
         fe_cnt[5]++;
@@ -361,6 +373,7 @@ static int fe_sprite(const void *v)
         return 0;
     }
     fe_cnt[2]++;
+    if (dbg_prim_frame()) { const FlSprite *t=(const FlSprite*)v; host_log("SPR h %08X (%g,%g)-(%g,%g) argb %08X", EE_BSS(u32,0x004C2AEC), t->v[0].x, t->v[0].y, t->v[1].x, t->v[1].y, t->argb); }
     return fl_sprite_tex((const FlSprite *)v);
 }
 
@@ -382,6 +395,7 @@ int func_00420BF0(void *writer, void *quad) /* batch-writer textured quad (text)
     int r = func_00420BF0__game(writer, quad);
     if (r && tex_ok()) {
         fl_quad_tex((const FlQuad *)quad);
+        if (dbg_prim_frame()) { const FlQuad *t=(const FlQuad*)quad; host_log("QUAD h %08X (%g,%g) argb %08X %08X", EE_BSS(u32,0x004C2AEC), t->t[0].v[0].x, t->t[0].v[0].y, t->t[0].argb[0], t->t[0].argb[1]); }
         fe_cnt[3]++;
     } else
         fe_cnt[7]++;

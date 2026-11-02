@@ -1,3 +1,4 @@
+#include <stdio.h>
 /*
  * Frontend: the 3D mesh path (the VU1 microcode path) on GL (Port J).
  *
@@ -169,6 +170,7 @@ void func_0041BB30(void *a)
 {
     int h = *(s32 *)a;
     func_0041BB30__game(a);
+    { extern volatile long mvc2_host_frame; static int o=-1; if(o<0) o=getenv("MVC2_CLAY_ORDER")!=0; if(o && h>0) host_log("ORD %ld write %d", mvc2_host_frame, h); }
     if (h > 0 && h < MAX_CLAY && cmap[h].off) cmap[h].dirty = cmap[h].ever = 1;
 }
 
@@ -199,6 +201,7 @@ int func_003EE6F0(void *clay, unsigned int flags)
 int func_003F0500(int h)
 {
     int r = func_003F0500__game(h);
+    { extern volatile long mvc2_host_frame; static int o=-1; if(o<0) o=getenv("MVC2_CLAY_ORDER")!=0; if(o) { const float *m=(const float*)EE_BSS_PTR(0x0061C760); const float *pj=(const float*)EE_BSS_PTR(0x0061C6E0); extern void r_viewport(int*,float*); int vi[4]; float vf[2]; r_viewport(vi,vf); host_log("ORD %ld draw %d diff %d scr %g %g %g %g %g %g | vp %d %d %d %d | pj %g %g %g %g", mvc2_host_frame, h, (h>0&&h<MAX_CLAY&&cmap[h].off)?cmap_pull(h,1):-1, m[0],m[5],m[10],m[12],m[13],m[14], vi[0],vi[1],vi[2],vi[3], pj[0],pj[5],pj[8],pj[9]); { const float *w=(const float*)EE_BSS_PTR(getenv("MVC2_CLAY_UVM")?0x0061BF20:0x0061BEE0); char b[600]; int k,n=0; for(k=0;k<16;k++) n+=snprintf(b+n,sizeof b-n," %.9g",w[k]); host_log("MAT %ld %d%s", mvc2_host_frame, h, b);} } }
     if (r && h > 0 && h < MAX_CLAY && clay_chunk[h]) {
         /* the format the game's packets were built with: slot +0xC */
         u32 fmt = *(u32 *)((u8 *)EE_BSS_PTR(0x005BF2F0) + (h - 1) * 0x170 + 0xC);
