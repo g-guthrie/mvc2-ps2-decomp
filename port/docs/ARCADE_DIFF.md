@@ -344,7 +344,7 @@ Compared, NAOMI asm (decomp `tools/inspect_rom.py`) against PS2 C:
 
 | Routine | NAOMI | PS2 | Result |
 |---|---|---|---|
-| Per-frame player update: timers count down unless in hitstop (`0x1A0`/`0x1B4`), and the "hurtable" flag `0x19D`/`0x1B1` = 0x80 unless immunity != 0, state 1, or state 2 with `0x1F6`/`0x20A` == 0 | `0x0c039af4`, `0x0c039d52` | `func_0027FBB0` (w21a5_m.c) | same |
+| Per-frame player update: timers count down unless in hitstop (`0x1A0`/`0x1B4`), and the "hurtable" flag `0x19D`/`0x1B1` = 0x80 unless immunity != 0, state 1, or state 2 with `0x1F6`/`0x20A` == 0 | `0x0c039af4`, `0x0c039d52` | `func_0027FBB0` (w21a5_m.c; this is Abyss' form-3 variant, twin `0x0C0BB598`; the generic update is `func_00179590`, 10.5) | same |
 | Immunity on being hit = HIT_DT byte 0x16 & 0x3F, copied to the partner | `0x0c048412` | `func_0018B500` (xm14_b.c) | same |
 | Assist / tag request (A1/A2, counter variants 3/4) | `0x0c046700` | `func_00188860` (r16_00_a.c) | same structure, masks and conditions |
 | Partner entry / tag-in checks: sets immunity 2 in three places | `0x0c03b74c` | `func_0017BDA0` (nq184_b.c) | same |
@@ -520,20 +520,22 @@ Not implemented, because it is not identifiable as code.
   caveat in §4.3).
 - Fallback frames use NAOMI rects of the same index (the count is logged per
   character).
-- Code comparison (section 10): the rest of the per-character state code
-  (NAOMI 0x0C04C000..0x0C18D000) and the second player-update variant
-  `func_0027FBB0` are not compared yet.
+- Code comparison (section 10): closed for `func_0027FBB0` (Abyss' third
+  form, the same as its NAOMI twin, 10.5) and for the CPU AI driver; the
+  per-character state code is paired and screened (10.5), with the leads
+  that were not read by hand listed there.
 
 ## 10. Code comparison (gameplay code, NAOMI program against the PS2 game)
 
 Sections 5 to 7 cover the data. This section compares the code that runs
 the game: the frame loop, input, the player update, hit handling and the
-other gameplay routines. Tools (scratch, not in git): an SH-4 index of the
-NAOMI image (function starts from `config/mapping.json` and `units.json`,
-call targets, pointer tables) and a MIPS index of `asm/main.s`; functions
-are paired by call-graph propagation from known twins (section 7), by data
-references, and by address order inside each object file, scored by
-constants, size and call count.
+other gameplay routines. The first pass (10.1 to 10.4) used scratch tools;
+the second pass (10.5) rebuilt them in `port/tools/naomi_pair/` (10.5 has
+the commands). An SH-4 index of the NAOMI image (function starts from
+`config/mapping.json` and `units.json`, call targets, pointer tables) and a
+MIPS index of `asm/main.s`; functions are paired by call-graph propagation
+from known twins (section 7), by data references, and by address order
+inside each object file, scored by constants, size and call count.
 
 ### 10.1 Coverage
 - **Paired automatically:** 2,063 NAOMI functions.
@@ -623,3 +625,209 @@ display frame about every 17 s.
   or 4 for delays 0, 1, 2.
 - Not run in a fight: Servbot in hit stop with `+0x216 & 0x80` (the clause
   is a single test; the hostified source shows it guarded).
+
+### 10.5 Second pass (2026-11-02)
+
+**Tools** (`port/tools/naomi_pair/`, committed; they read the user's
+`mvsc2.zip` through the NAOMI decomp checkout and the PS2 ELF at run time
+and write only addresses and derived numbers):
+
+```
+T=port/tools/naomi_pair; N=/home/user/mvc2-naomi-decomp; E=private/disc/x_SLUS_204.86
+python3 -I $T/sh4idx.py  $N naomi.pkl            # SH-4 index (21,729 entries)
+python3 -I $T/mipsidx.py asm/main.s ps2.pkl      # EE index (21,024 functions)
+python3 -I $T/pair.py    $N naomi.pkl ps2.pkl $E pairs.json
+python3 -I $T/screen.py  naomi.pkl ps2.pkl pairs.json $E screen.tsv
+python3 -I $T/coverage.py $N naomi.pkl ps2.pkl pairs.json screen.tsv [--hits 40]
+```
+
+- **Index.** NAOMI entries come from call targets, literal and table
+  pointers, `units.json` exports and the mapping's CFG-walk starts. About
+  66 KB of the image is unmapped; it is decoded only from an entry inside
+  it (several vtable targets live there, Abyss' update among them). EE
+  functions are the `glabel`s of `asm/main.s`, split where a data word
+  points just after an unconditional jump (the per-state handlers the asm
+  runs together after a dispatch `jr`). `$gp`-relative accesses count as
+  data references.
+- **Pairing** (`pair.py`), strongest first: the per-character init tables
+  (NAOMI `0x0C23BCD8`, PS2 `0x00448D00`, 59 entries) and 24 hand-read
+  seeds; table walks (a paired table address is walked in step, bounded by
+  the PS2 `dlabel`); call-graph alignment (callee sequences anchored on
+  known pairs); callee-set matching; and address order (a size-aligned DP
+  between consecutive pairs of the monotonic chain, since both compilers
+  kept each file's function order). Result: **12,700 function pairs**
+  (5,776 from tables, 4,372 address order, 1,916 call graph, 553 callee
+  sets, 59 init table, 24 seeds) and 2,640 data pairs. The player-struct
+  shift was measured from the pairs: NAOMI offsets below 0x108 are the same
+  on the PS2, 0x108..0x17B are +0x10, 0x19C and up +0x14 (0x17C..0x19B is
+  where the PS2 adds the AI table pointers).
+- **Screen** (`screen.py`): each pair, or the span between two consecutive
+  chain pairs when one build split a function (the EE asm splits switches
+  into case functions), is compared by float constants (0 and 1 ignored;
+  1e-5 relative; the PS2's 448-line scale k*2 against the arcade's k*15/7
+  and EE soft-double high words accepted), struct offsets after the shift,
+  callee sets, and small constants, with a similarity score of the two token
+  sets. A low similarity marks a doubtful pair, not a code difference.
+
+**Coverage by region** (functions of 4 bytes or more; Units = compared
+pairs or spans; Clean = no difference; Diff = a difference on a confident
+pair, similarity >= 0.8; Doubtful = similarity < 0.6):
+
+| Region | NAOMI | Functions | Paired | Bytes paired | Units | Clean | Diff | Doubtful |
+|---|---|---|---|---|---|---|---|---|
+| System, boot | 0x0C021000..0x0C028000 | 214 | 111 | 49 % | 101 | 41 | 3 | 52 |
+| Game flow, team, round | 0x0C028000..0x0C03F000 | 734 | 334 | 53 % | 305 | 148 | 45 | 78 |
+| Gameplay core | 0x0C03F000..0x0C04C000 | 437 | 323 | 84 % | 312 | 177 | 62 | 28 |
+| CPU AI, shared | 0x0C04C000..0x0C051C18 | 219 | 75 | 38 % | 70 | 38 | 13 | 9 |
+| Per-character state code | 0x0C051C18..0x0C131600 | 9,900 | 8,633 | 88 % | 8,544 | 6,232 | 1,370 | 474 |
+| Projectiles, effects | 0x0C131600..0x0C18D000 | 3,940 | 2,848 | 81 % | 2,784 | 1,704 | 329 | 333 |
+| Characters and effects (2) | 0x0C18D000..0x0C1E9000 | 4,363 | 324 | 10 % | 294 | 159 | 19 | 79 |
+| SDK, libraries | 0x0C1E9000.. | 1,800 | 32 | 2 % | 18 | 3 | 0 | 15 |
+
+Of all 12,428 units: 8,502 clean, 1,068 doubtful pairs, 1,403 whose only
+differences are compiler, library or sound forms (a library call inlined
+on one side, the NAOMI sound call `0x0C0344A0` against the PS2's own sound
+calls and its per-player sound handles at `+0x29C/+0x2A0`, constants the
+compilers materialise differently), and 1,455 leads.
+
+**Per character** (`coverage.py`; a character's range runs from its init
+function to the next one's):
+
+| Char | NAOMI range | Functions | Paired | Bytes paired | Units | Clean | Diff (sim>=0.8) | Doubtful |
+|---|---|---|---|---|---|---|---|---|
+| shared | 0x0C04C000 | 219 | 75 | 38 % | 70 | 38 | 13 | 9 |
+| 00 | 0x0C051C18 | 138 | 123 | 91 % | 121 | 86 | 22 | 8 |
+| 01 | 0x0C05505C | 285 | 242 | 84 % | 240 | 171 | 42 | 14 |
+| 02 | 0x0C05BBE8 | 142 | 129 | 88 % | 128 | 94 | 22 | 6 |
+| 03 | 0x0C05F2B0 | 233 | 182 | 78 % | 180 | 126 | 23 | 16 |
+| 04 | 0x0C0644E4 | 131 | 119 | 93 % | 116 | 87 | 15 | 8 |
+| 05 | 0x0C067BC4 | 262 | 237 | 92 % | 235 | 165 | 44 | 10 |
+| 06 | 0x0C06D5FC | 174 | 153 | 88 % | 153 | 110 | 22 | 14 |
+| 07 | 0x0C0713C0 | 192 | 164 | 90 % | 162 | 107 | 33 | 9 |
+| 08 | 0x0C07636C | 164 | 138 | 89 % | 135 | 84 | 25 | 13 |
+| 09 | 0x0C07A838 | 101 | 93 | 89 % | 92 | 65 | 16 | 4 |
+| 0a | 0x0C07CF9C | 228 | 194 | 90 % | 192 | 160 | 12 | 11 |
+| 0b | 0x0C081A6C | 226 | 203 | 90 % | 202 | 162 | 25 | 7 |
+| 0c | 0x0C08643C | 184 | 155 | 83 % | 153 | 112 | 20 | 8 |
+| 0d | 0x0C08B154 | 163 | 143 | 90 % | 142 | 100 | 28 | 9 |
+| 0e | 0x0C08EB38 | 135 | 115 | 81 % | 113 | 86 | 19 | 2 |
+| 0f | 0x0C091D98 | 169 | 148 | 86 % | 146 | 106 | 27 | 9 |
+| 10 | 0x0C0953CC | 159 | 147 | 94 % | 145 | 96 | 38 | 5 |
+| 11 | 0x0C098D54 | 208 | 184 | 93 % | 184 | 137 | 30 | 9 |
+| 12 | 0x0C09D874 | 230 | 196 | 91 % | 193 | 147 | 30 | 10 |
+| 13 | 0x0C0A2D9C | 193 | 170 | 87 % | 170 | 127 | 22 | 13 |
+| 14 | 0x0C0A70F0 | 231 | 204 | 92 % | 202 | 132 | 44 | 14 |
+| 15 | 0x0C0AD270 | 124 | 110 | 95 % | 108 | 82 | 15 | 5 |
+| 16 | 0x0C0AFF1C | 146 | 133 | 91 % | 132 | 107 | 15 | 5 |
+| 17 | 0x0C0B31B4 | 140 | 127 | 92 % | 124 | 85 | 22 | 9 |
+| 18 | 0x0C0B65F0 | 90 | 83 | 94 % | 82 | 60 | 16 | 3 |
+| 19 | 0x0C0B8180 | 88 | 82 | 92 % | 80 | 65 | 8 | 2 |
+| 1a | 0x0C0B98A0 | 123 | 100 | 86 % | 98 | 62 | 19 | 8 |
+| 1b | 0x0C0BC47C | 158 | 138 | 88 % | 137 | 107 | 17 | 4 |
+| 1c | 0x0C0BFD60 | 267 | 246 | 93 % | 244 | 161 | 51 | 15 |
+| 1d | 0x0C0C50D0 | 266 | 247 | 94 % | 245 | 168 | 42 | 15 |
+| 1e | 0x0C0C9FF0 | 183 | 165 | 91 % | 162 | 127 | 25 | 9 |
+| 1f | 0x0C0CE558 | 159 | 132 | 81 % | 130 | 94 | 26 | 3 |
+| 20 | 0x0C0D2724 | 183 | 166 | 90 % | 164 | 121 | 32 | 5 |
+| 21 | 0x0C0D6D68 | 133 | 121 | 91 % | 120 | 97 | 15 | 4 |
+| 22 | 0x0C0D9FC8 | 175 | 150 | 86 % | 149 | 110 | 32 | 2 |
+| 23 | 0x0C0DEF1C | 201 | 182 | 91 % | 182 | 149 | 21 | 8 |
+| 24 | 0x0C0E2F04 | 223 | 189 | 87 % | 188 | 138 | 30 | 5 |
+| 25 | 0x0C0E8450 | 166 | 145 | 90 % | 145 | 108 | 15 | 8 |
+| 26 | 0x0C0EC18C | 181 | 152 | 85 % | 151 | 98 | 29 | 13 |
+| 27 | 0x0C0F0DF8 | 163 | 141 | 85 % | 141 | 100 | 27 | 9 |
+| 28 | 0x0C0F4A0C | 159 | 137 | 91 % | 136 | 110 | 15 | 5 |
+| 29 | 0x0C0F8250 | 83 | 75 | 93 % | 74 | 59 | 10 | 0 |
+| 2a | 0x0C0FA384 | 94 | 85 | 91 % | 85 | 69 | 12 | 2 |
+| 2b | 0x0C0FCA10 | 140 | 125 | 85 % | 124 | 103 | 17 | 3 |
+| 2c | 0x0C0FFF24 | 88 | 77 | 89 % | 76 | 63 | 9 | 2 |
+| 2d | 0x0C1021E8 | 150 | 127 | 83 % | 124 | 85 | 20 | 10 |
+| 2e | 0x0C1058D4 | 211 | 166 | 79 % | 166 | 115 | 25 | 19 |
+| 2f | 0x0C108E1C | 161 | 111 | 71 % | 110 | 63 | 23 | 18 |
+| 30 | 0x0C10C2D8 | 171 | 141 | 81 % | 141 | 94 | 20 | 18 |
+| 31 | 0x0C10F5D0 | 172 | 144 | 88 % | 142 | 89 | 20 | 12 |
+| 32 | 0x0C113188 | 137 | 115 | 90 % | 113 | 79 | 21 | 7 |
+| 33 | 0x0C116480 | 164 | 150 | 88 % | 148 | 116 | 20 | 8 |
+| 34 | 0x0C119430 | 132 | 118 | 87 % | 117 | 74 | 29 | 4 |
+| 35 | 0x0C11C1B0 | 122 | 109 | 92 % | 106 | 91 | 6 | 5 |
+| 36 | 0x0C11EA20 | 98 | 85 | 88 % | 83 | 61 | 15 | 5 |
+| 37 | 0x0C120D2C | 236 | 209 | 90 % | 206 | 160 | 22 | 9 |
+| 38 | 0x0C1260D4 | 122 | 115 | 95 % | 113 | 89 | 19 | 3 |
+| 39 | 0x0C129208 | 202 | 174 | 89 % | 173 | 115 | 37 | 11 |
+| 3a | 0x0C12E38C | 141 | 122 | 91 % | 121 | 98 | 14 | 2 |
+| effects | 0x0C131600 | 3940 | 2848 | 81 % | 2784 | 1704 | 329 | 333 |
+| all | | 14059 | 11556 | 85 % | 11398 | 7974 | 1712 | 816 |
+
+The Diff column still includes the compiler, library and sound forms
+counted above; `coverage.py --hits N` lists the highest-scoring ones. The
+ones read (the tables below, and from the top of that list
+`func_0020E790`, `func_0020BC30`, `func_00179B90` and the `360.0` /
+`65536.0` angle constants that the EE build keeps as doubles) were all such
+forms, doubtful pairs or the PS2-only clauses f to h; the rest of the list
+was not read.
+
+**Read by hand in this pass** (NAOMI asm against PS2 C or asm):
+
+| Routine | NAOMI | PS2 | Result |
+|---|---|---|---|
+| Abyss form 3 (char 0x1A) per-frame update, vtable slot 24 (`p+0x43C`, NAOMI `+0x428`, offset 0x60); `func_00179590` jumps to it for char 0x1A | `0x0C0BB598` (unmapped bytes) | `func_0027FBB0` (w21a5_m.c) | **same**, including `p[0x159] = 0xFF` (NAOMI `0x149`, stored at `0x0C0BB76C`). The note that NAOMI lacks this store came from pairing it with the generic update `0x0C039928`, which stores it on neither build. |
+| Generic update, the char 0x18..0x1A head | `0x0C039928` | `func_00179590` | PS2-only: `p[0x24] = 0x1D; p[0x31] = 0x14` for Abyss (f) |
+| Draw-order sort of the actors | `0x0C041B8A` | `func_001817E0` | PS2-only Abyss clause (f) |
+| Per-frame team routine | `0x0C0362F4` | `func_00326700` | PS2-only calls `func_00327C20`, `func_00190130` (g) |
+| Red-health recovery (50 frames per point) | `0x0C04B236` | `func_00190070` | same, plus PS2-only network gates (h) |
+| CPU AI driver | `0x0C04CFB4` | `func_00168C10` | **same** (every store and test, with the +0x14 shift; `> 4` round state hands over to `0x0C04DA30` / `func_00169C30`) |
+| AI helpers | `0x0C04D0DA`, `0x0C04D17C`, `0x0C04D5E6`, `0x0C04D63C`, `0x0C04D81C`, `0x0C04D86E` | `func_00168D90`, `func_00168E80`, `func_001695A0`, `func_00169600`, `func_001698C0`, `func_00169960` | same (the PS2 duplicates two calls on a second path) |
+| Character init at fight start (scale, priority, palette, flags; Abyss scales) | `0x0C0411C8` | `func_00180A30` | same |
+| Throw attempt (throw buttons `0x1800` under the `0x3C00` mask, per-character throw-button mask, `func_00185E40` range check, state 0x22) | `0x0C043C66` | `func_00184B30` | **same**; the 59-entry mask tables (`0x0C23C94E`, `D_00447050`) are equal |
+| Advancing-guard check | `0x0C0464C4` | `func_001884C0` | same |
+| Variable counter request | `0x0C0469F4` | `func_00188C70` | same, plus a PS2-only training branch (g) |
+| Flying-screen edge clamp | `0x0C042414` | `func_001827B0` | confirms 10.2 d (the PS2's extra 16) |
+| Wake-up / dash entry positions | `0x0C045144`, `0x0C06C1A6` | `func_00186900`, `func_0020E790` | same values (the PS2 stores some floats as integer bit patterns) |
+| Sound effect by id (< 64) | `0x0C0344A0` -> `0x0C0343F4` | `func_001E3210` -> `func_001E24E0` | audio: the PS2 drives its own sound system (not gameplay) |
+
+Leads that turned out to be wrong pairs (similarity < 0.6, or a table
+walked across two adjacent tables, e.g. the `p[4]` dispatch table at
+`0x0C23B8B4` is followed by the `p[4] == 0` table at `0x0C23B8C4`, while
+`jtbl_00448A00` on the PS2 is laid out differently): `0x0C043C66` /
+`func_001853E0` (its twin is `func_00184B30`, above), `0x0C03AC52` / `func_0017A450` (its twin is
+`func_0017AF30`), `0x0C039DCC` / `func_00179B90`.
+
+**Differences added in this pass** (none is active in Arcade or VS mode,
+so none is a gameplay toggle):
+
+| | Where | PS2 | NAOMI | Effect | Toggle |
+|---|---|---|---|---|---|
+| f | `func_00179590` head, `func_001817E0`, `func_001793B0` | Abyss (0x18..0x1A): `p[0x24] = 0x1D` and `p[0x31] = 0x14` every frame, `p[0x24] = 7` in the draw sort and in the state dispatch | no such stores | draw priority (sprite layering) of the final boss only; not gameplay | none |
+| g | Training settings `g[0xAA..0xB2]` (`D_004C2840`, copied from the training menu by `func_003D51E0`) | read by `func_00327C20` (per-frame `func_0018C4B0(point, 4)` when `g[0xAE]`), `func_00190130` (training refill), `func_00188C70` (training variable counter, with the RNG), `func_0018AD80` (`g[0xAB]` 1/2), `func_00188430` (`g[0xAC]`), `func_0018B500`, `func_0018D340`, `func_0018FB70`, `func_0018FCA0`, `func_00190540`, `func_001719E0`, `func_0032B690`, `func_003D31A0`, `func_003D8080` (`g[0xAA]`), `func_00161380`, `func_00186A60` (`g[0xB0]`), menu drawing (`g[0xB2]`) | no training mode | training mode only | none |
+| h | Network-mode rules `g[0x52..0x58]`, `g[0xB7]` (written only by `func_0041FD20`, the mode-5 back end; `func_0012F860` clears them) | read by `func_00179590` (10.2 b), `func_00190070`, `func_00190130`, `func_001902F0`, `func_0018C510`, `func_0018D340`, `func_0018F8C0`, `func_0018FEB0`, `func_00180360`, `func_003D8440`, `func_003D8540`, `func_003D92F0`, `func_003D94B0` | none | network mode only | none |
+
+**Verdicts.** Priority 1: `func_0027FBB0` is Abyss' third-form update and
+matches the arcade; nothing to fix. Priority 2: in the core and game-flow
+code read so far (throw attempt, advancing guard, variable counter, assist
+and tag-in, hit reaction and hit stop, immunity, red-health recovery,
+stage and flying-screen clamps, the team routine and its round-state
+gates, the red-health and KO paths), the only gameplay differences are
+10.2 a and d (already toggles). Priority 3: the CPU AI driver and its
+helpers match; the AI differences are in the tables (`arcade.cpu_ai`).
+Priority 4: per-character code is 88 % paired by bytes; 73 % of its units
+are clean and none of the hand-read leads was a gameplay change.
+
+**Not done (what remains).**
+- 1,455 leads are listed by `screen.py` but not read (the most frequent
+  forms left: EE soft-double arithmetic in character code, case functions
+  the split did not separate, and PS2 sound and effect helpers).
+- Game flow and system code are 50 % paired; the timer and round-end
+  routines were not identified and read one by one (the round-state gates
+  they set, `D_004D18A0`, are tested identically in the code above).
+- Throw tech, super freeze, chip damage, pushback, air recovery,
+  snapback, DHC and crossover-counter state handlers were not located by
+  name (the throw attempt was, by hand, after its automatic pair proved
+  wrong); they
+  are among the core and per-character units above (paired and screened,
+  not each read).
+- The training settings `g[0xAB..0xB2]` are reset by `func_003D5260` only
+  when a training session or the whole game starts; whether a value chosen
+  in training survives into a later VS fight on the PS2 was not checked.
+- NAOMI 0x0C18D000..0x0C1E9000 is only 10 % paired by this pass (the
+  first pass paired 1,373 there by address order; its tables were not
+  kept).

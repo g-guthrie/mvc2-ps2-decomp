@@ -227,7 +227,12 @@ Where the zip comes from:
   settings.ini), with `--arcade abc` or the settings above.
 
 The last three are code differences found by comparing the two programs
-(ARCADE_DIFF.md section 10); they need no zip. For one run in the browser:
+(ARCADE_DIFF.md section 10); they need no zip. A second comparison
+(ARCADE_DIFF.md 10.5: the CPU AI driver, Abyss' update, the throw, guard,
+counter and team code, and an automatic screen of the per-character code)
+found no further gameplay differences in Arcade or VS mode; the other
+PS2-only code belongs to its training and network modes, so there are no
+more toggles. For one run in the browser:
 `?arcade.fs_edge=1&arcade.servbot_hitstop=1&arcade.timing=arcade` (`?arcade=`
 takes only a, b, c); desktop `--arcade de` (d = flying-screen edge,
 e = Servbot) and `--set arcade.timing=arcade` (or `MVC2_ARCADE_DELAY=1`, the
