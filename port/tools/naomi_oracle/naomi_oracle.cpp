@@ -334,13 +334,14 @@ static void on_frame()
 
 /* --p1-team / --cpu-team a,b,c (ID or ID:T, T = assist type 0..2), as the
  * port's (port/host/arcade.c): side 0 / side 1 records (0, 2, 4 / 1, 3, 5)
- * get the character id (+0x52C, PS2 +0x540; and +0x1, as the port) when the
+ * get the character id (+0x52C, PS2 +0x540) when the
  * game loads a player's PAK (0x0C02764C, r4 = the player: the twin of PS2
  * func_0012EF50) and at the fight's load pass over all six (0x0C0230C6);
  * the assist type (+0x4C9, PS2 +0x4DD) when given */
 #define HOOK_PAK 0x0C02764Cu
 #define HOOK_LOADALL 0x0C0230C6u
 static int team_id[2][3] = {{-1, -1, -1}, {-1, -1, -1}}, team_assist[2][3] = {{-1, -1, -1}, {-1, -1, -1}};
+static int team_pal[2][3] = {{-1, -1, -1}, {-1, -1, -1}};
 static int g_teams;
 static void parse_team(const char* s, int side)
 {
@@ -352,6 +353,9 @@ static void parse_team(const char* s, int side)
 		{
 			team_id[side][t] = (int)id;
 			if (*e == ':') team_assist[side][t] = (int)strtol(e + 1, &e, 0);
+			/* ID:T:P, P = palette (+0x52D, PS2 +0x541): the menus pick with
+			 * different buttons on the two sides; the port ignores ":P" */
+			if (*e == ':') team_pal[side][t] = (int)strtol(e + 1, &e, 0);
 		}
 		s = strchr(s, ',');
 		if (s) s++;
@@ -366,8 +370,8 @@ static void force_player(int i)
 	if (rd8(p + 0x52C) != team_id[side][t])
 		fprintf(stderr, "[naomi] %s pick %d: character %#x (forced) at frame %ld\n", side ? "CPU" : "P1", t, team_id[side][t], g_frame);
 	wr8(p + 0x52C, (u8)team_id[side][t]);
-	wr8(p + 1, (u8)team_id[side][t]);
 	if (team_assist[side][t] >= 0) wr8(p + 0x4C9, (u8)team_assist[side][t]);
+	if (team_pal[side][t] >= 0) wr8(p + 0x52D, (u8)team_pal[side][t]);
 }
 
 static void hook(u32 pc)
@@ -518,7 +522,7 @@ int naomi_oracle_main(int argc, char** argv)
 		}
 		if (g_frame == last)
 		{
-			if (++idle == 3600) { fprintf(stderr, "[naomi] no game frame in 3600 video frames (frame %ld)\n", g_frame); break; }
+			if (++idle == 36000) { fprintf(stderr, "[naomi] no game frame in 36000 video frames (frame %ld)\n", g_frame); break; }
 		}
 		else idle = 0;
 		last = g_frame;

@@ -20,10 +20,8 @@ What is compared (the NAOMI side translated to the PS2 layout):
 Fields that differ by design are mapped or skipped (BY_DESIGN below):
   - pointers (a word that is an EE address on the PS2 side or a NAOMI
     main-RAM address on the NAOMI side) are not compared;
-  - vertical world coordinates: the PS2 build scales the CPS2 y by 2
-    (448/224) where the NAOMI scales by 15/7 (480/224); y positions and
-    y velocities are compared as PS2 = NAOMI * 14/15 within 1e-4
-    (--strict-y: bit-exact after the scale is not expected);
+  - world coordinates are compared bit for bit (x and y: the PS2's
+    448-line projection is in the render state only);
   - fields in the PS2-only gaps of the record are not compared.
 --align prints, for each NAOMI player-record word that changes, the shift
 (0, 4, ... 0x24) under which it equals a PS2 word most often: the evidence
@@ -123,19 +121,47 @@ def match(t, want):
 # 7, 10) and --align over the attract cycle and fights (BOOT_NOTES "Arcade
 # oracle").  Ranges not listed are not compared.
 PLAYER_MAP = [
-    (0x000, 0x0C0, 0x00),
-    (0x0C0, 0x108, 0x00),
-    (0x108, 0x17C, 0x10),
-    (0x17C, 0x19C, 0x10),
+    (0x000, 0x084, 0x00),
+    # 0x084..0x0EC: the PS2 record inserts 16 bytes here (render state; NAOMI
+    # 0x0E0..0x0EB are screen-space x/y, which the PS2 computes for its own
+    # 640x448 projection): not compared
+    (0x0EC, 0x184, 0x10),
+    # 0x184..0x19C: the PAK section pointers (PS2 15 sections, NAOMI 4 + the
+    # separate table files): pointers, not compared
     (0x19C, 0x5A4, 0x14),
 ]
-# NAOMI offsets of float fields in world y units (compared after the scale)
-Y_FIELDS = {0x38, 0x60, 0x68, 0x6C}
-# NAOMI offsets (4-byte words) not compared, with the reason
+# NAOMI offsets of float fields compared after a y scale (--y-scale): none.
+# The world y is the same on both (jumps match bit for bit); only the render
+# projection differs, which is not compared
+Y_FIELDS = set()
+# NAOMI player bytes not compared (by design), with the reason
 BY_DESIGN = {
+    0x001: 'charid0: the port\'s --p1-team writes the character id here (arcade.c force_rec), the oracle does not',
+    0x52D: 'palette (the button that picked the character: the menus differ)',
+    0x55C: 'PS2 +0x570: the PS2 loader\'s PAK slot index (jtbl_004CA000); unused on the NAOMI',
+    0x4C0: 'PS2 +0x4D4/+0x4D6: the select / continue countdown (menus, src/fb19_c.c)',
+    0x510: 'PS2 +0x524: rand() % 4 drawn at the character select (src/fb30_f.c), before the resync',
 }
+for _o in range(0x4C1, 0x4C4):
+    BY_DESIGN[_o] = BY_DESIGN[0x4C0]
+# NAOMI +0x4DC..+0x503: the player's copy of its pad record (raw buttons in
+# the JVS bit layout on the NAOMI, the PS2 pad's on the PS2, and the menu
+# auto-repeat counter, which runs on from the character select); the game's
+# own input words (+0x340.., PS2 +0x354..) are compared
+for _o in range(0x4DC, 0x504):
+    BY_DESIGN[_o] = 'pad record copy (JVS vs PS2 pad bit layout, menu auto-repeat counter)'
 
-GAME_MAP = [(0x00, 0x100, 0x00)]
+# the game block g: PS2 = NAOMI up to 0x80, then the PS2 has one more word;
+# g+0x30..0x3F are the unlock bits (the port's unlock_everything, game_loop.c,
+# sets them all; the arcade keeps its own): not compared
+# g+0x10 counts V-blanks on the NAOMI (incremented in the V-blank interrupt,
+# 0x0C0215AC) and logic steps on the PS2 (func_0012F460): the arcade's first
+# fight frame alone takes 29 V-blanks (the fight's set-up), so it is not
+# compared
+G_BY_DESIGN = {
+    0x080: 'a frame counter of the menus (PS2 g+0x84), started before the resync',
+}
+GAME_MAP = [(0x00, 0x10, 0x00), (0x14, 0x30, 0x00), (0x40, 0x80, 0x00), (0x80, 0xFC, 0x04)]
 
 
 def is_naomi_ptr(v):
@@ -156,11 +182,13 @@ def cmp_words(pb, praw, nb, segs, yfields, strict_y, label, msgs, maxf, skip):
             p = n + sh
             if p + 4 > len(pb) or n + 4 > len(nb):
                 continue
-            if n in skip:
-                continue
-            nw = nb[n:n + 4]
-            pw = pb[p:p + 4]
-            if nw == pw or (praw is not None and praw[p:p + 4] == nw):
+            nw = bytearray(nb[n:n + 4])
+            pw = bytearray(pb[p:p + 4])
+            for b in range(4):
+                if n + b in skip:
+                    nw[b] = pw[b] = 0
+            nw, pw = bytes(nw), bytes(pw)
+            if nw == pw or (praw is not None and praw[p:p + 4] == nb[n:n + 4]):
                 continue
             nv, = struct.unpack('<I', nw)
             pv, = struct.unpack('<I', pw)
@@ -261,7 +289,7 @@ def main():
             cmp_words(pb, praw, nplayer(q, i), PLAYER_MAP, Y_FIELDS, a.strict_y, f'player[{i}]', msgs,
                       a.max_fields, skip)
         if not a.players_only:
-            cmp_words(pgame(p), None, ngame(q), GAME_MAP, set(), a.strict_y, 'g', msgs, a.max_fields, set())
+            cmp_words(pgame(p), None, ngame(q), GAME_MAP, set(), a.strict_y, 'g', msgs, a.max_fields, G_BY_DESIGN)
         if msgs:
             if first is None:
                 first = k

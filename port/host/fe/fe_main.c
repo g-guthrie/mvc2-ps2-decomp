@@ -159,6 +159,9 @@ static void script_step(u16 *b0, u16 *b1)
     if (!shot_dir)
         shot_dir = A.shot_dir ? A.shot_dir : ".";
     while (S.pc < S.n) {
+        /* clear the words a shorter line does not set (a "state" after an
+         * "until" took the until's button name as its frame limit, 0) */
+        cmd[0] = a1[0] = a2[0] = a3[0] = 0;
         sscanf(S.line[S.pc], "%31s %159s %63s %31s", cmd, a1, a2, a3);
         if (!strcmp(cmd, "state")) {
             int max = a2[0] ? atoi(a2) : 7200;
