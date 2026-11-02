@@ -103,7 +103,10 @@ static int state_match(const char *want)
 {
     char cur[32];
     int st = mvc2_game_state();
-    snprintf(cur, sizeof cur, "%d/%d/%d", st >> 16, (st >> 8) & 0xFF, st & 0xFF);
+    const u8 *g = (const u8 *)EE_BSS_PTR(0x004F4300);
+    /* g[3], g[4] too: "2/1/2/3" names a sub-state; shorter names match as
+     * prefixes, as before */
+    snprintf(cur, sizeof cur, "%d/%d/%d/%d/%d", st >> 16, (st >> 8) & 0xFF, st & 0xFF, g[3], g[4]);
     return strncmp(cur, want, strlen(want)) == 0 &&
            (cur[strlen(want)] == 0 || cur[strlen(want)] == '/' || want[strlen(want) - 1] == '/');
 }

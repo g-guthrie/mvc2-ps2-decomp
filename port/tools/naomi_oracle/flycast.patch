@@ -1,0 +1,179 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index f1cdda8..7174b8f 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -236,7 +236,7 @@ if(WINDOWS_STORE)
+ 	set(USE_VULKAN OFF)
+ endif()
+ 
+-set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_RELEASE -s)
++# naomi_oracle: keep symbols
+ if(MSVC)
+ 	target_compile_options(${PROJECT_NAME} PRIVATE /GR /GS-)
+ 	if(WINDOWS_STORE)
+@@ -1384,7 +1384,10 @@ target_sources(${PROJECT_NAME} PRIVATE
+ 		core/rend/TexCache.h
+ 		core/rend/texconv.cpp
+ 		core/rend/texconv.h
+-		core/rend/norend/norend.cpp)
++		core/rend/norend/norend.cpp
++		core/oracle/oracle_hook.cpp
++		core/oracle/naomi_oracle.cpp)
++target_compile_definitions(${PROJECT_NAME} PRIVATE NO_REND)
+ if(NOT LIBRETRO)
+ 	target_sources(${PROJECT_NAME} PRIVATE
+ 			core/ui/game_scanner.cpp
+diff --git a/core/audio/audiobackend_null.cpp b/core/audio/audiobackend_null.cpp
+index 95a6b56..f2d51d7 100644
+--- a/core/audio/audiobackend_null.cpp
++++ b/core/audio/audiobackend_null.cpp
+@@ -1,4 +1,5 @@
+ #include "audiostream.h"
++#include "oracle/oracle_hook.h"
+ 
+ #include <chrono>
+ #include <thread>
+@@ -19,7 +20,7 @@ public:
+ 
+ 	u32 push(const void* frame, u32 samples, bool wait) override
+ 	{
+-		if (wait && last_time.time_since_epoch() != the_clock::duration::zero())
++		if (wait && !oracle_nhooks && last_time.time_since_epoch() != the_clock::duration::zero())
+ 		{
+ 			auto fduration = std::chrono::nanoseconds(1'000'000'000LL * samples / 44100);
+ 			auto duration = fduration - (the_clock::now() - last_time);
+diff --git a/core/hw/maple/maple_jvs.cpp b/core/hw/maple/maple_jvs.cpp
+index 136fd50..1b9f24a 100644
+--- a/core/hw/maple/maple_jvs.cpp
++++ b/core/hw/maple/maple_jvs.cpp
+@@ -17,6 +17,7 @@
+ 	 along with flycast.  If not, see <https://www.gnu.org/licenses/>.
+  */
+ #include "maple_devs.h"
++#include "oracle/oracle_hook.h"
+ #include "hw/naomi/naomi_cart.h"
+ #include <xxhash.h>
+ #include "oslib/oslib.h"
+@@ -2155,6 +2156,9 @@ u32 jvs_io_board::handle_jvs_message(u8 *buffer_in, u32 length_in, u8 *buffer_ou
+ 					if ((mapleInputState[p].kcode & (1 << i)) == 0)
+ 						buttons[p] |= naomi_button_mapping[i];
+ #endif
++			if (oracle_jvs_override)
++				for (int p = 0; p < 4; p++)
++					buttons[p] = oracle_jvs_buttons[p];
+ 			for (u32& button : buttons)
+ 			{
+ 				if ((button & (NAOMI_UP_KEY | NAOMI_DOWN_KEY)) == (NAOMI_UP_KEY | NAOMI_DOWN_KEY))
+diff --git a/core/hw/sh4/dyna/decoder.cpp b/core/hw/sh4/dyna/decoder.cpp
+index cc4129c..fd62243 100644
+--- a/core/hw/sh4/dyna/decoder.cpp
++++ b/core/hw/sh4/dyna/decoder.cpp
+@@ -18,6 +18,7 @@
+ #include "hw/sh4/modules/mmu.h"
+ #include "decoder_opcodes.h"
+ #include "cfg/option.h"
++#include "oracle/oracle_hook.h"
+ 
+ #define BLOCK_MAX_SH_OPS_SOFT 500
+ #define BLOCK_MAX_SH_OPS_HARD 511
+@@ -959,6 +960,18 @@ bool dec_DecodeBlock(RuntimeBlockInfo* rbi,u32 max_cycles)
+ 	cycleCounter.reset();
+ 	// If full MMU, don't allow the block to extend past the end of the current 4K page
+ 	u32 max_pc = mmu_enabled() ? ((state.cpu.rpc >> 12) + 1) << 12 : 0xFFFFFFFF;
++	if (oracle_nhooks > 0 && oracle_is_hook(blk->vaddr))
++	{
++		// naomi_oracle: call the hook before the block's first instruction
++		shil_opcode opcd;
++		opcd.op = shop_ifb;
++		opcd.rs1 = shil_param(0u);
++		opcd.rs2 = shil_param(blk->vaddr);
++		opcd.rs3 = shil_param(0x10000u);
++		opcd.guest_offs = 0;
++		opcd.delay_slot = false;
++		blk->oplist.push_back(opcd);
++	}
+ 	
+ 	for(;;)
+ 	{
+@@ -970,7 +983,8 @@ bool dec_DecodeBlock(RuntimeBlockInfo* rbi,u32 max_cycles)
+ 			//there is no break here by design
+ 		case NDO_NextOp:
+ 			{
+-				if ((blk->oplist.size() >= BLOCK_MAX_SH_OPS_SOFT || blk->guest_cycles >= max_cycles || state.cpu.rpc >= max_pc)
++				if ((blk->oplist.size() >= BLOCK_MAX_SH_OPS_SOFT || blk->guest_cycles >= max_cycles || state.cpu.rpc >= max_pc
++						|| (oracle_nhooks > 0 && state.cpu.rpc != blk->vaddr && oracle_is_hook(state.cpu.rpc)))
+ 						&& !state.cpu.is_delayslot)
+ 				{
+ 					dec_End(state.cpu.rpc,BET_StaticJump,false);
+diff --git a/core/hw/sh4/interpr/sh4_interpreter.cpp b/core/hw/sh4/interpr/sh4_interpreter.cpp
+index 6b82646..a014517 100644
+--- a/core/hw/sh4/interpr/sh4_interpreter.cpp
++++ b/core/hw/sh4/interpr/sh4_interpreter.cpp
+@@ -13,6 +13,7 @@
+ #include "../sh4_cache.h"
+ #include "debug/gdb_server.h"
+ #include "../sh4_cycles.h"
++#include "oracle/oracle_hook.h"
+ 
+ Sh4ICache icache;
+ Sh4OCache ocache;
+@@ -49,6 +50,8 @@ void Sh4Interpreter::Run()
+ 			try {
+ 				do
+ 				{
++					if (oracle_nhooks > 0 && oracle_is_hook(ctx->pc))
++						oracle_call_hook(ctx->pc & 0x1FFFFFFF);
+ 					u32 op = ReadNexOp();
+ 
+ 					ExecuteOpcode(op);
+diff --git a/core/linux-dist/main.cpp b/core/linux-dist/main.cpp
+index 83a18bc..1013e52 100644
+--- a/core/linux-dist/main.cpp
++++ b/core/linux-dist/main.cpp
+@@ -12,6 +12,7 @@
+ #include "stdclass.h"
+ 
+ #include <csignal>
++#include <cstring>
+ #include <string>
+ #include <unistd.h>
+ #include <vector>
+@@ -229,8 +230,12 @@ static bool dumpCallback(const google_breakpad::MinidumpDescriptor& descriptor,
+ }
+ #endif
+ 
++int naomi_oracle_main(int argc, char** argv);
++
+ int main(int argc, char* argv[])
+ {
++	if (argc > 1 && !strcmp(argv[1], "--naomi-oracle"))
++		return naomi_oracle_main(argc - 1, argv + 1);
+ 	selfPath = argv[0];
+ #if defined(USE_BREAKPAD)
+ 	google_breakpad::MinidumpDescriptor descriptor("/tmp");
+diff --git a/core/rec-x64/rec_x64.cpp b/core/rec-x64/rec_x64.cpp
+index b78ffc9..4411dae 100644
+--- a/core/rec-x64/rec_x64.cpp
++++ b/core/rec-x64/rec_x64.cpp
+@@ -9,6 +9,7 @@
+ using namespace Xbyak::util;
+ 
+ #include "types.h"
++#include "oracle/oracle_hook.h"
+ #include "hw/sh4/sh4_opcode_list.h"
+ #include "hw/sh4/dyna/ngen.h"
+ #include "hw/sh4/modules/mmu.h"
+@@ -159,6 +160,13 @@ public:
+ 			switch (op.op)
+ 			{
+ 			case shop_ifb:
++				if (op.rs3._imm == 0x10000)
++				{
++					// naomi_oracle hook (decoder.cpp)
++					mov(call_regs[0], op.rs2._imm);
++					GenCall(oracle_call_hook);
++					break;
++				}
+ 				if (mmu_enabled())
+ 				{
+ 					mov(call_regs64[2], reinterpret_cast<uintptr_t>(*OpDesc[op.rs3._imm]->oph));	// op handler
