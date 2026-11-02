@@ -769,5 +769,9 @@ logic 13% slower in wasm (794 vs 911 frames/s headless).
   attract/fight runs above match before that; likely the port's
   `--p1-team` test forcing (assist type kept from the menu), not yet
   checked against a real character-select pick.
+- Abyss: `scripts/arcade_abyss.txt` (arcade_ending_rank with a logo
+  start, both sides `--cpu-hp 1`) did not get past the first fight on
+  either side within the time (both scripts stuck at `until 2/1/4`, at
+  different lines, so they had also diverged); not analysed.
 - hostify R14 class (48 + 60 sites, `$v0` of the last callee) is with the
   r12 work; `func_00185010` is the one fixed here.
