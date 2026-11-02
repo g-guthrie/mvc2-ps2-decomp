@@ -759,9 +759,12 @@ function to the next one's):
 | all | | 14059 | 11556 | 85 % | 11398 | 7974 | 1712 | 816 |
 
 The Diff column still includes the compiler, library and sound forms
-counted above; `coverage.py --hits N` lists the highest-scoring ones, and
-the ones read (10.5 tables below and the top 25 of that list) were all
-such forms, doubtful pairs or the PS2-only clauses f to h.
+counted above; `coverage.py --hits N` lists the highest-scoring ones. The
+ones read (the tables below, and from the top of that list
+`func_0020E790`, `func_0020BC30`, `func_00179B90` and the `360.0` /
+`65536.0` angle constants that the EE build keeps as doubles) were all such
+forms, doubtful pairs or the PS2-only clauses f to h; the rest of the list
+was not read.
 
 **Read by hand in this pass** (NAOMI asm against PS2 C or asm):
 
