@@ -720,7 +720,11 @@ def apply_overrides(text, path):
         if text.count(old) != 1:
             raise ValueError(f"host override for {path} no longer applies: {old!r}")
         text = text.replace(old, new)
-    for old, args in _indirect().get(path, ()):
+    # r12_indirect.csv rows name R20/R22/R23 parameters (`__rpN`) that only
+    # the real build adds (widen_definitions needs SIGS): the raw signature
+    # build keeps the credited calls, else those TUs fail to compile there
+    # and their definitions vanish from host_sigs.json
+    for old, args in (_indirect().get(path, ()) if SIGS is not None else ()):
         if text.count(old) != 1:
             raise ValueError(f"r12_indirect.csv row for {path} no longer applies: {old!r}")
         tgt = old[:old.rindex("(")].rstrip()
@@ -1127,6 +1131,27 @@ def rewrite_uncached(toks):
     return [x for i, x in enumerate(toks) if i not in drop]
 
 
+def _widened_params(canon, name):
+    """The full (R20/R22/R23) parameter list of a widened function, or None.
+    host_sigs.json's canon sets "widened" only for functions it lists (and
+    whose canonical prototype was shorter); a fresh signature table may not
+    list a function at all (one only reached through a table, or a
+    residual_ name whose canon entry is its func_ alias) or may already have
+    the longer list from its callers.  r12_widen.csv is the reference."""
+    if not name:
+        return None
+    import link_catalog as L
+    c = canon.get(name)
+    if c and "widened" in c:
+        return c["params"]
+    ps = L.WIDEN.get(name)
+    if not ps:
+        return None
+    if c and len(c["params"]) > len(ps):
+        return c["params"]
+    return ps
+
+
 def widen_definitions(toks, path):
     """R20: the definition of a function r12_widen.csv widens gets the extra
     parameters (`__rpN`) its canonical prototype now has, so R12 can pass
@@ -1154,14 +1179,14 @@ def widen_definitions(toks, path):
                             break
                     k -= 1
                 name = sig[k - 1][1][1] if k >= 1 and sig[k - 1][1][0] == "ident" else None
-                c = canon.get(name or "")
-                if c and "widened" in c and owners().get(name) == path:
+                full = _widened_params(canon, name)
+                if full and owners().get(name) == path:
                     inner = [sig[q][1][1] for q in range(k + 1, s - 1)]
                     have, dd = 0 if not inner or inner == ["void"] else 1, 0
                     for v in inner:
                         dd += v in "([" and 1 or v in ")]" and -1 or 0
                         have += 1 if (v == "," and dd == 0) else 0
-                    extra = c["params"][have:]
+                    extra = full[have:]
                     txt = ", ".join(f"{ty} __rp{have + i}" for i, ty in enumerate(extra))
                     if have == 0:
                         ins[sig[k][0]] = ("open", txt, sig[s - 1][0])
@@ -1236,9 +1261,16 @@ def tailfwd_calls(toks, path):
                 if v == "}" and d2 == 0:
                     break
                 e += 1
-            if name in TAILFWD and c and "widened" in c and owners().get(name) == path:
-                have = c["widened"]
-                extra = [f"__rp{i}" for i in range(have, len(c["params"]))]
+            full = _widened_params(canon, name)
+            if name in TAILFWD and full and owners().get(name) == path:
+                # the head's own parameters from the first one R20 added
+                inner = [sig[q][1][1] for q in range(k + 1, s - 1)]
+                have = len(full)
+                for v in inner:
+                    mrp = re.fullmatch(r"__rp(\d+)", v)
+                    if mrp:
+                        have = min(have, int(mrp.group(1)))
+                extra = [f"__rp{i}" for i in range(have, len(full))]
                 # the table call: `ident [ ... ] ( args )`, last one in the body
                 calls = []
                 for q in range(s + 1, e):
@@ -1294,7 +1326,7 @@ def tailfwd_calls(toks, path):
                         if v == "," and dd == 0:
                             nargs += 1
                     extra = names[nargs:]
-                    ret = c.get("ret", "void")
+                    ret = (c or {}).get("ret", "void")
                     edits[sig[b][0]] = (f"(({ret} (*)())(", "")
                     edits[sig[q - 1][0]] = ("", "))")
                     if extra:

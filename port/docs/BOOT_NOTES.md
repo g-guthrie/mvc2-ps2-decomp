@@ -763,6 +763,23 @@ fewer arguments than the callee's canonical prototype (most in
 `tail_leaves.c`, `func_X(p)` to a `(s32 a0, ..., s32 a3)` leaf that only
 uses `a0`); not classified yet.
 
+**Clean build with a fresh host_sigs.json (after merging main b2c6915e7).**
+A clean web build failed with 16 "undeclared identifier __rpN": the raw
+signature build (no SIGS, so no R20 widening) still applied the
+`r12_indirect.csv` rows, whose arguments name `__rpN`; those TUs failed to
+compile there, their definitions vanished from host_sigs.json
+(definitions 20,604 instead of 20,712), and the real build then neither
+widened them nor (in the data tables main added) knew them as functions
+("symbol type mismatch").  Fixes: hostify applies the indirect rows only
+with SIGS; `widen_definitions` / `tailfwd_calls` take the parameter list
+from r12_widen.csv when canon has no "widened" entry (a `residual_` name
+whose canon entry is its `func_` alias, or a canon list already as long
+from the callers); gen_link_glue does not emit a callers-only prototype for
+a host-implemented function with no C definition (`func_003DE160` is now
+credited to vu0_macro_math.S; the guess `(int, int, int)` clashed with
+vu0_host.c).  Verified: clean `-DMVC2_PS2_FLOAT=ON` web build, browser
+title -> fight with assist (`web/r12_6`).
+
 ### Renderer pass (2026-10-31, branch port-render)
 
 Evidence under `private/converted/boot/rend/` (native) and
