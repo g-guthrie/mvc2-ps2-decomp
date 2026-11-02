@@ -173,6 +173,11 @@ if(EMSCRIPTEN)
 elseif(MVC2_PS2_FLOAT)
   set_target_properties(mvc2_game_code PROPERTIES C_COMPILER_LAUNCHER "${CMAKE_CURRENT_SOURCE_DIR}/cmake/ps2fp-cc.pl")
 endif()
+if(MVC2_PS2_FLOAT)
+  # a change of the rewrite recompiles what it rewrote
+  set_source_files_properties(${MVC2_GAME_HSRC} PROPERTIES OBJECT_DEPENDS
+    "${CMAKE_CURRENT_SOURCE_DIR}/tools/ps2_fp_rewrite.pl;${CMAKE_CURRENT_SOURCE_DIR}/cmake/ps2fp-cc.pl")
+endif()
 
 add_library(mvc2_game STATIC
   $<TARGET_OBJECTS:mvc2_game_code> $<TARGET_OBJECTS:mvc2_game_data>)

@@ -24,6 +24,7 @@ my %proto = (
     ps2_u2f => 'float @ps2_u2f(i32)',
     ps2_l2f => 'float @ps2_l2f(i64)',
     ps2_ul2f => 'float @ps2_ul2f(i64)',
+    ps2_d2f => 'float @ps2_d2f(double)',
 );
 my $n = 0;
 for (@lines) {
@@ -45,6 +46,15 @@ for (@lines) {
         my $f = $op eq 'sitofp' ? ($ty eq 'i32' ? 'ps2_i2f' : 'ps2_l2f') : ($ty eq 'i32' ? 'ps2_u2f' : 'ps2_ul2f');
         $used{$f} = 1;
         $_ = "${lhs}call float \@$f($ty $v)$rest\n";
+        $n++;
+        next;
+    }
+    # %x = fptrunc double V to float: the game's dptofp (soft-float, the
+    # EE toolchain's fp-bit) truncates as well
+    if (/^(\s*%[-\w.]+ = )fptrunc double ([^ ]+) to float(.*)$/) {
+        my ($lhs, $v, $rest) = ($1, $2, $3);
+        $used{ps2_d2f} = 1;
+        $_ = "${lhs}call float \@ps2_d2f(double $v)$rest\n";
         $n++;
         next;
     }
