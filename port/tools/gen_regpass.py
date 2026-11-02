@@ -208,6 +208,13 @@ def parse_jtbls(path):
             continue
         if cur:
             m = re.search(r"\.word\s+(\S+)", l)
+            if not m:
+                # a table main.s disassembled as code (glabel jtbl_004BF7A0:
+                # `add $s0, $zero, $k0` = 0x001A8020): the raw word
+                mw = re.match(r"\s*/\* [0-9A-F]+ [0-9A-F]{8} ([0-9A-F]{8}) \*/", l)
+                if mw:
+                    b = mw.group(1)
+                    m = re.match(r"(.*)", "0x" + b[6:8] + b[4:6] + b[2:4] + b[0:2])
             if m:
                 w = m.group(1)
                 ms = re.fullmatch(r"[A-Za-z_]\w*_([0-9A-Fa-f]{8})", w)
@@ -527,8 +534,10 @@ def vtransfer(st, op, opr, k):
     st[d] = D
 
 
-def _vfunc(body, summ):
-    """one function: (sites {body index: (callee, {reg: token})}, exit tokens)."""
+def _vfunc(body, summ, raw_exits=None):
+    """one function: (sites {body index: (callee, {reg: token})}, exit tokens).
+    raw_exits: a list that gets (body index of the return, state) for every
+    `jr $ra` and tail call (gen_returns.py)."""
     lab = {x[1]: k for k, x in enumerate(body) if x[0] == "L"}
     IN = [None] * (len(body) + 1)
     IN[0] = {r: "E" + r for r in ARGR}
@@ -599,13 +608,20 @@ def _vfunc(body, summ):
                     sites[k] = (tgt, {r: st.get(r, "X") for r in ARGR})
                     call(st, tgt, k)
                     exits.append(st)
+                    if raw_exits is not None:
+                        raw_exits.append((k, dict(st)))
                     break
                 if op == "jr":
                     if opr.strip() != "$ra":
+                        if raw_exits is not None and k < min(list(lab.values()) or [len(body)]):
+                            # a dispatch head's tail jump: the entry's $v0
+                            raw_exits.append((k, dict(st, **{"$v0": "T:%d" % k})))
                         for idx in lab.values():
                             push(idx, st)
                     else:
                         exits.append(st)
+                        if raw_exits is not None:
+                            raw_exits.append((k, dict(st)))
                     break
                 if tgt in lab:
                     push(lab[tgt], st)
@@ -740,6 +756,11 @@ def load_dtables(path):
             continue
         if cur:
             m = re.search(r"\.word\s+(\S+)", l)
+            if not m:
+                mw = re.match(r"\s*/\* [0-9A-F]+ [0-9A-F]{8} ([0-9A-F]{8}) \*/", l)
+                if mw:      # a table disassembled as code: the raw word
+                    b = mw.group(1)
+                    m = re.match(r"(.*)", "0x" + b[6:8] + b[4:6] + b[2:4] + b[0:2])
             if m:
                 w = m.group(1)
                 ms = re.fullmatch(r"[A-Za-z_]\w*_([0-9A-Fa-f]{8})", w)

@@ -72,6 +72,8 @@ src/dp4_b.c,func_001AD8B0,func_001AFC90,1,0,$a1,,harmless,,callee never reads $a
 src/event_clone_001b6410.c,func_001B6410,func_001B6740,1,0,$a1,,harmless,,callee never reads $a1
 src/event_clone_001b6410.c,func_001B6410,func_001B6740,3,0,$a3,,harmless,,callee never reads $a3
 src/event_clone_001d88c0.c,func_001D88C0,func_001D8A20,1,0,$a1,,harmless,,callee never reads $a1
+src/event_init_0035d9a0.c,func_0035D9A0,func_0035DAD0,2,0,$a2,,harmless,,callee never reads $a2
+src/event_init_0035d9a0.c,func_0035D9A0,func_0035DAD0,3,0,$a3,,harmless,,callee never reads $a3
 src/fb13_h.c,func_0028A600,func_0028B0B0,1,0,$a1,,harmless,,callee never reads $a1
 src/fb13_h.c,func_0028A600,func_0028B0B0,2,0,$a2,,harmless,,callee never reads $a2
 src/fb13_h.c,func_0028A600,func_0028B0B0,3,0,$a3,,harmless,,callee never reads $a3
@@ -188,9 +190,12 @@ src/gr26_d.c,func_003A98C0,func_003A9A50,3,0,$a3,,harmless,,callee never reads $
 src/grok_ac_34b0f0.c,residual_0034B0F0,func_0034B360,1,0,$a1,,harmless,,callee never reads $a1
 src/grok_ac_34b0f0.c,residual_0034B0F0,func_0034B360,2,0,$a2,,harmless,,callee never reads $a2
 src/grok_ac_34b0f0.c,residual_0034B0F0,func_0034B360,3,0,$a3,,harmless,,callee never reads $a3
-src/grok_ah_36abb0.c,residual_0036ABB0,func_0036B3D0,1,0,$a1,U:59:jalr,left,,opaque U
-src/grok_ah_36abb0.c,residual_0036ABB0,func_0036B3D0,2,0,$a2,U:59:jalr,left,,opaque U
-src/grok_ah_36abb0.c,residual_0036ABB0,func_0036B3D0,3,0,$a3,U:59:jalr,left,,opaque U
+src/grok_ac_34b690.c,residual_0034B690,func_0034B990,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_ac_34b690.c,residual_0034B690,func_0034B990,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_ac_34b690.c,residual_0034B690,func_0034B990,3,0,$a3,,harmless,,callee never reads $a3
+src/grok_ah_36abb0.c,residual_0036ABB0,func_0036B3D0,1,0,$a1,,harmless,,callee never reads $a1
+src/grok_ah_36abb0.c,residual_0036ABB0,func_0036B3D0,2,0,$a2,,harmless,,callee never reads $a2
+src/grok_ah_36abb0.c,residual_0036ABB0,func_0036B3D0,3,0,$a3,,harmless,,callee never reads $a3
 src/grok_aj_256e20.c,func_00256E20,func_00257100,1,0,$a1,,harmless,,callee never reads $a1
 src/grok_aj_256e20.c,func_00256E20,func_00257100,2,0,$a2,,harmless,,callee never reads $a2
 src/grok_aj_256e20.c,func_00256E20,func_00257100,3,0,$a3,,harmless,,callee never reads $a3
@@ -510,6 +515,9 @@ src/nq98_a.c,residual_0035D6F0,func_0035D850,2,0,$a2,,harmless,,callee never rea
 src/nq98_a.c,residual_0035D6F0,func_0035D850,3,0,$a3,,harmless,,callee never reads $a3
 src/nq98_a.c,residual_0035DBB0,func_0035DD10,2,0,$a2,,harmless,,callee never reads $a2
 src/nq98_a.c,residual_0035DBB0,func_0035DD10,3,0,$a3,,harmless,,callee never reads $a3
+src/owner_context_entry_001d6be0.c,func_001D6BE0,func_001D6D10,1,0,$a1,,harmless,,callee never reads $a1
+src/owner_context_entry_001d6be0.c,func_001D6BE0,func_001D6D10,2,0,$a2,,harmless,,callee never reads $a2
+src/owner_context_entry_001d6be0.c,func_001D6BE0,func_001D6D10,3,0,$a3,,harmless,,callee never reads $a3
 src/owner_copy_tail_00363cd0.c,func_00363CD0,func_00363D80,1,0,$a1,,harmless,,callee never reads $a1
 src/owner_copy_tail_00363cd0.c,func_00363CD0,func_00363D80,2,0,$a2,,harmless,,callee never reads $a2
 src/owner_linked_effect_init_003537b0.c,func_003537B0,func_003539A0,1,0,$a1,,harmless,,callee never reads $a1
@@ -522,10 +530,13 @@ src/owner_projectile_launch_00368160.c,func_00368160,func_00368FB0,2,0,$a2,,harm
 src/owner_state_copy_setup_0019a560.c,func_0019A560,func_0019A940,1,0,$a1,,harmless,,callee never reads $a1
 src/owner_state_copy_setup_0019a560.c,func_0019A560,func_0019A940,2,0,$a2,,harmless,,callee never reads $a2
 src/owner_state_copy_setup_0019a560.c,func_0019A560,func_0019A940,3,0,$a3,,harmless,,callee never reads $a3
+src/owner_state_snapshot.c,func_001D7DA0,func_001D7E50,2,0,$a2,,harmless,,callee never reads $a2
+src/owner_state_snapshot.c,func_001D7DA0,func_001D7E50,3,0,$a3,,harmless,,callee never reads $a3
 src/owner_table_child_start_001d7150.c,func_001D7150,func_001D7340,2,0,$a2,,harmless,,callee never reads $a2
 src/owner_table_child_start_001d7150.c,func_001D7150,func_001D7340,3,0,$a3,,harmless,,callee never reads $a3
 src/owner_variant_start_00395a30.c,func_00395A30,func_003961E0,2,0,$a2,,harmless,,callee never reads $a2
 src/owner_variant_start_00395a30.c,func_00395A30,func_003961E0,3,0,$a3,,harmless,,callee never reads $a3
+src/owner_wait_start_001d8190.c,func_001D8190,func_001D7E50,2,0,$a2,,harmless,,callee never reads $a2
 src/p3.c,func_0040B8A8,func_004086B8,0,0,$a0,,harmless,,callee never reads $a0
 src/p3.c,func_0040B8A8,func_004086B8,1,0,$a1,,harmless,,the host callee never uses argument 1
 src/p3m.c,func_003F5E60,func_003F5C30,3,0,$a3,,harmless,,callee never reads $a3
@@ -703,11 +714,17 @@ src/sd0_a.c,func_003762B0,func_00376A40,3,1,$a3,,harmless,,callee never reads $a
 src/se2_b.c,func_0032FC00,func_003D90A0,1,0,$a1,,harmless,,callee never reads $a1
 src/se2_b.c,func_0032FC00,func_003D90A0,2,0,$a2,,harmless,,callee never reads $a2
 src/se2_b.c,func_0032FC00,func_003D90A0,3,0,$a3,,harmless,,callee never reads $a3
+src/sequential_heads.c,func_001F84A0,func_001F84D0,1,0,$a1,,harmless,,callee never reads $a1
+src/sequential_heads.c,func_001F84A0,func_001F84D0,2,0,$a2,,harmless,,callee never reads $a2
+src/sequential_heads.c,func_001F84A0,func_001F84D0,3,0,$a3,,harmless,,callee never reads $a3
 src/sequential_heads.c,func_00209590,func_002095C0,1,0,$a1,,harmless,,callee never reads $a1
 src/sequential_heads.c,func_00209590,func_002095C0,2,0,$a2,,harmless,,callee never reads $a2
 src/sequential_heads.c,func_00209590,func_002095C0,3,0,$a3,,harmless,,callee never reads $a3
 src/sequential_heads.c,func_00223A30,func_00223A60,1,0,$a1,,harmless,,callee never reads $a1
 src/sequential_heads.c,func_002447B0,func_002447E0,1,0,$a1,,harmless,,callee never reads $a1
+src/sequential_heads.c,func_0026FDB0,func_0026FDE0,1,0,$a1,,harmless,,callee never reads $a1
+src/sequential_heads.c,func_0026FDB0,func_0026FDE0,2,0,$a2,,harmless,,callee never reads $a2
+src/sequential_heads.c,func_0026FDB0,func_0026FDE0,3,0,$a3,,harmless,,callee never reads $a3
 src/sequential_heads.c,func_00274550,func_00274580,1,0,$a1,,harmless,,callee never reads $a1
 src/sequential_heads.c,func_00274550,func_00274580,2,0,$a2,,harmless,,callee never reads $a2
 src/sequential_heads.c,func_00274550,func_00274580,3,0,$a3,,harmless,,callee never reads $a3
@@ -717,6 +734,9 @@ src/sequential_heads.c,func_002822F0,func_00282320,3,0,$a3,,harmless,,callee nev
 src/sequential_heads.c,func_002A8170,func_002A81A0,1,0,$a1,,harmless,,callee never reads $a1
 src/sequential_heads.c,func_002A8170,func_002A81A0,2,0,$a2,,harmless,,callee never reads $a2
 src/sequential_heads.c,func_002A8170,func_002A81A0,3,0,$a3,,harmless,,callee never reads $a3
+src/sequential_heads.c,func_002C1290,func_002C12C0,1,0,$a1,,harmless,,callee never reads $a1
+src/sequential_heads.c,func_002C1290,func_002C12C0,2,0,$a2,,harmless,,callee never reads $a2
+src/sequential_heads.c,func_002C1290,func_002C12C0,3,0,$a3,,harmless,,callee never reads $a3
 src/sequential_heads.c,func_002C6640,func_002C6670,1,0,$a1,,harmless,,callee never reads $a1
 src/sequential_heads.c,func_002C6640,func_002C6670,2,0,$a2,,harmless,,callee never reads $a2
 src/sequential_heads.c,func_002C6640,func_002C6670,3,0,$a3,,harmless,,callee never reads $a3
@@ -894,6 +914,7 @@ src/wave24.c,func_001DBA70,func_001DBE50,3,1,$a3,,harmless,,callee never reads $
 src/wave25d.c,func_00199D60,func_00199DC0,1,0,$a1,,harmless,,callee never reads $a1
 src/wave25d.c,func_00199D60,func_00199DC0,2,0,$a2,,harmless,,callee never reads $a2
 src/wave25d.c,func_00199D60,func_00199DC0,3,0,$a3,,harmless,,callee never reads $a3
+src/wave2b.c,func_00161630,func_00161760,1,0,$a1,,harmless,,callee never reads $a1
 src/wave30c.c,func_0030D350,func_0030D3E0,1,0,$a1,,harmless,,callee never reads $a1
 src/wave30c.c,func_0030D350,func_0030D3E0,2,0,$a2,,harmless,,callee never reads $a2
 src/wave30c.c,func_0030D350,func_0030D3E0,3,0,$a3,,harmless,,callee never reads $a3

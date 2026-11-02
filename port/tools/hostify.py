@@ -2120,6 +2120,189 @@ def add_returns(toks, path):
     return out
 
 
+
+# ---------------------------------------------------------------- R24
+def _load_returns():
+    """port/tools/r12_returns.csv (gen_returns.py): functions whose EE return
+    value is the last callee's $v0 (action return-last) and functions that
+    never set $v0 (transparent)."""
+    import csv
+    from pathlib import Path
+    f = Path(__file__).resolve().parent / "r12_returns.csv"
+    ret, trans, const = set(), set(), {}
+    if f.exists():
+        for r in csv.DictReader(open(f, newline="")):
+            if r["action"] == "return-last":
+                ret.add(r["function"])
+            elif r["action"] == "transparent":
+                trans.add(r["function"])
+            elif r["action"].startswith("const:"):
+                const[r["function"]] = r["action"][6:]
+    return ret, trans, const
+
+
+RET24, TRANS24, CONST24 = _load_returns()
+_C_KW = {"if", "while", "for", "switch", "return", "sizeof", "do", "else", "case", "default", "goto",
+         "break", "continue"}
+
+
+def _skip_ws(t, i):
+    import re as _re
+    while True:
+        m = _re.match(r"\s+|/\*.*?\*/|//[^\n]*", t[i:], _re.S)
+        if not m or not m.group(0):
+            return i
+        i += len(m.group(0))
+
+
+def _close(t, i, o, c):
+    """index of the bracket closing the one at t[i]."""
+    d = 0
+    while i < len(t):
+        if t[i] == o:
+            d += 1
+        elif t[i] == c:
+            d -= 1
+            if d == 0:
+                return i
+        i += 1
+    return -1
+
+
+def return_values(text, path):
+    """R24: in a function of RET24 (its EE return is the $v0 of the last call
+    on every path, gen_returns.py) every call statement records its value in
+    `__v0`, and the function returns `__v0` where the C falls off the end or
+    says `return;` (R14 wrote `return 0`).  A callee that never sets $v0
+    (TRANS24), returns void or a float leaves `__v0` alone, like the EE.
+    A void definition becomes int (configure() changes the prototype)."""
+    import re as _re
+    if SIGS is None or not (RET24 or CONST24):
+        return text
+    canon = SIGS["canon"]
+    own = [n for n, sp in owners().items() if sp == path and (n in RET24 or n in CONST24)]
+    if not own:
+        return text
+
+    def eligible(x):
+        if x in TRANS24:
+            return False
+        r = canon.get(x, {}).get("ret")
+        return r is not None and r not in ("void", "float", "double")
+
+    for name in own:
+        m = _re.search(r"^([A-Za-z_][\w \t\*]*?)\b%s\s*\(([^;{}]*)\)\s*\{" % _re.escape(name), text, _re.M)
+        if not m:
+            continue
+        ob = text.index("{", m.end() - 1)
+        cb = _close(text, ob, "{", "}")
+        if cb < 0:
+            continue
+        body = text[ob + 1:cb]
+        rv = "(%s)(__v0)" % canon.get(name, {}).get("ret", "int")
+        out, i, start = [], 0, True
+        while i < len(body):
+            j = _skip_ws(body, i)
+            if j > i:
+                out.append(body[i:j])
+                i = j
+                continue
+            ch = body[i]
+            if start and name in RET24:
+                mm = _re.match(r"([A-Za-z_]\w*)\s*", body[i:])
+                if mm and mm.group(1) not in _C_KW and i + mm.end() < len(body):
+                    k = i + mm.end()
+                    if body[k] == "(":
+                        e = _close(body, k, "(", ")")
+                        e2 = _skip_ws(body, e + 1)
+                        if e > 0 and e2 < len(body) and body[e2] == ";" and eligible(mm.group(1)):
+                            out.append("__v0 = (int)(%s);" % body[i:e + 1])
+                            i = e2 + 1
+                            start = True
+                            continue
+                    elif body[k] == "[":
+                        e = _close(body, k, "[", "]")
+                        k2 = _skip_ws(body, e + 1)
+                        if e > 0 and k2 < len(body) and body[k2] == "(":
+                            e3 = _close(body, k2, "(", ")")
+                            e4 = _skip_ws(body, e3 + 1)
+                            if e3 > 0 and e4 < len(body) and body[e4] == ";":
+                                out.append("__v0 = ((int (*)())(%s))%s; /* host R24 */"
+                                           % (body[i:e + 1], body[k2:e3 + 1]))
+                                i = e4 + 1
+                                start = True
+                                continue
+                mc = _re.match(r"\(\(\s*\w[\w\s]*\(\s*\*\s*\)\s*\(\s*\)\s*\)", body[i:])
+                if mc:          # ((T (*)())(X))(args);  (R12 indirect / R22 forms)
+                    e = _close(body, i, "(", ")")
+                    k2 = _skip_ws(body, e + 1)
+                    if e > 0 and k2 < len(body) and body[k2] == "(":
+                        e3 = _close(body, k2, "(", ")")
+                        e4 = _skip_ws(body, e3 + 1)
+                        if e3 > 0 and e4 < len(body) and body[e4] == ";":
+                            inner = _re.sub(r"^\(\(\s*\w[\w\s]*\(", "((int (", body[i:e + 1], count=1)
+                            out.append("__v0 = %s%s;" % (inner, body[k2:e3 + 1]))
+                            i = e4 + 1
+                            start = True
+                            continue
+            mk = _re.match(r"(if|while|for|switch)\s*\(", body[i:])
+            if mk:
+                k = i + mk.end() - 1
+                e = _close(body, k, "(", ")")
+                out.append(body[i:e + 1])
+                i = e + 1
+                start = True
+                continue
+            mk = _re.match(r"(else|do)\b", body[i:])
+            if mk:
+                out.append(mk.group(0))
+                i += mk.end()
+                start = True
+                continue
+            mk = _re.match(r"(case\b[^:;]*|default\s*|[A-Za-z_]\w*\s*):(?!:)", body[i:]) if start else None
+            if mk and not _re.match(r"[A-Za-z_]\w*\s*:\s*:", body[i:]):
+                out.append(mk.group(0))
+                i += mk.end()
+                start = True
+                continue
+            mk = _re.match(r"return\s*(0\s*/\*\s*host R14\s*\*/\s*)?;", body[i:])
+            if mk:
+                out.append("return %s; /* host R24 */" % rv)
+                i += mk.end()
+                start = True
+                continue
+            mk = _re.match(r"return\s+0\s*;\s*/\*\s*host R14\s*\*/", body[i:])
+            if mk:
+                out.append("return %s; /* host R24 */" % rv)
+                i += mk.end()
+                start = True
+                continue
+            if ch in "{};":
+                start = True
+            elif ch == '"' or ch == "'":
+                mq = _re.match(r"'(\\.|[^'\\])*'|\"(\\.|[^\"\\])*\"", body[i:])
+                if mq:
+                    out.append(mq.group(0))
+                    i += mq.end()
+                    start = False
+                    continue
+            else:
+                start = False
+            out.append(ch)
+            i += 1
+        nb = "".join(out)
+        head = text[:m.start()] + _re.sub(r"\bvoid\b", "int", m.group(1), count=1) \
+            if canon.get(name, {}).get("ret_r24_from_void") else text[:m.start()] + m.group(1)
+        if canon.get(name, {}).get("ret_r24_from_void"):
+            # declarations in the defining TU (R12 leaves them alone there)
+            pre = _re.sub(r"\bvoid(\s+%s\s*\()" % _re.escape(name), r"int\1", head)
+            head = pre
+        text = head + text[m.start() + len(m.group(1)):ob + 1] + \
+            " int __v0 = %s; (void)__v0; /* host R24 */" % CONST24.get(name, "0") + nb + " return %s; /* host R24 */ }" % rv + \
+            (_re.sub(r"\bvoid(\s+%s\s*\()" % _re.escape(name), r"int\1", text[cb + 1:])
+             if canon.get(name, {}).get("ret_r24_from_void") else text[cb + 1:])
+    return text
+
 SIGS = None   # host_sigs.json contents (R12-R14); None = rules off
 
 
@@ -2141,6 +2324,15 @@ def configure(sigs_path=None):
             for v in SIGS["wrap"].values():
                 if n in v:
                     v.remove(n)
+        # R24: a credited void function whose EE $v0 is used returns int
+        r24 = [n for n in RET24 | set(CONST24) if SIGS["canon"].get(n, {}).get("ret") == "void"]
+        for n in r24:
+            SIGS["canon"][n]["ret"] = "int"
+            SIGS["canon"][n]["ret_r24_from_void"] = True
+            for v in SIGS["wrap"].values():
+                if n in v:
+                    v.remove(n)
+        SIGS["rewrite"] = sorted(set(SIGS["rewrite"]) | set(r24))
 
 
 def transform(text, path="?"):
@@ -2157,6 +2349,8 @@ def transform(text, path="?"):
     if path.endswith(".c"):
         toks = widen_definitions(toks, path)  # R20
         toks = tailfwd_calls(toks, path)  # R22
+        if RET24 or CONST24:
+            toks = lex(return_values(text_of(toks), path))  # R24
     statics = set(static_defs(toks)) if path.endswith(".c") else set()
     sr = None
     if SIGS is not None:

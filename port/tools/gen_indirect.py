@@ -50,7 +50,15 @@ def tables(path):
             m = re.search(r"\.word\s+(\S+)", l)
             if m:
                 mm = re.fullmatch(r"(?:func|residual)_([0-9A-Fa-f]{8})", m.group(1))
+                if not mm and re.fullmatch(r"0x[0-9A-Fa-f]+", m.group(1)):
+                    out[cur].append(int(m.group(1), 16))
+                    continue
                 out[cur].append(int(mm.group(1), 16) if mm else -1)
+            else:
+                mw = re.match(r"\s*/\* [0-9A-F]+ [0-9A-F]{8} ([0-9A-F]{8}) \*/", l)
+                if mw:      # a table main.s disassembled as code: the raw word
+                    b = mw.group(1)
+                    out[cur].append(int(b[6:8] + b[4:6] + b[2:4] + b[0:2], 16))
     return out
 
 

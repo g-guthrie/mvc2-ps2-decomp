@@ -1,0 +1,239 @@
+function,source,why,v0,used,action
+func_00100590,src/r15_08_a.c,wrap,"call func_00105E80;lui $v0, (0x800000 >> 16);or $v0, $v0, $v1;or $v0, $v1, $a3",no,harmless
+func_00103AC0,src/grok_tiny_leaves.c,wrap,syscall,yes,host
+func_00103AE0,src/grok_tiny_leaves.c,wrap,syscall,no,host
+func_00103AF0,src/grok_tiny_leaves.c,wrap,syscall,yes,host
+func_00103B10,src/grok_tiny_leaves.c,wrap,syscall,no,host
+func_00103B60,src/grok_tiny_leaves.c,wrap,syscall,yes,host
+func_00103BE0,src/grok_tiny_leaves.c,wrap,syscall,yes,host
+func_00103C00,src/grok_tiny_leaves.c,wrap,syscall,no,host
+func_00103C20,src/grok_tiny_leaves.c,wrap,syscall,yes,host
+func_00103C70,src/grok_tiny_leaves.c,wrap,syscall,yes,host
+func_00103C90,src/grok_tiny_leaves.c,wrap,syscall,no,host
+func_00103CD0,src/grok_tiny_leaves.c,wrap,syscall,yes,host
+func_00103CE0,src/grok_tiny_leaves.c,wrap,syscall,no,host
+func_00103D00,src/grok_tiny_leaves.c,wrap,syscall,yes,host
+func_00103D10,src/grok_tiny_leaves.c,wrap,syscall,yes,host
+func_00103D50,src/grok_tiny_leaves.c,wrap,syscall,yes,host
+func_00103D70,src/grok_tiny_leaves.c,wrap,syscall,yes,host
+func_00104100,src/grok_tiny_leaves.c,wrap,syscall,yes,host
+func_00104120,src/grok_tiny_leaves.c,wrap,syscall,yes,host
+func_001041D0,src/grok_tiny_leaves.c,wrap,syscall,no,host
+func_001041E0,src/grok_tiny_leaves.c,wrap,syscall,no,host
+func_001041F0,src/grok_tiny_leaves.c,wrap,syscall,yes,host
+func_00104240,src/grok_tiny_leaves.c,wrap,syscall,yes,host
+func_00104250,src/grok_tiny_leaves.c,wrap,syscall,no,host
+func_00105E80,src/sony29_varargs_handler_00105E80.c,wrap,call func_00105858,no,harmless
+func_0010C2D8,src/grok_tiny_leaves.c,wrap,syscall,yes,host
+func_0010CE68,src/grok_tiny_leaves.c,wrap,syscall,no,harmless
+func_00119AB8,src/sdk0g.c,wrap,call func_00119998,no,harmless
+func_0011EB60,src/p2.c,wrap,call func_001209B8,yes,return-last
+func_00126470,src/q3_a.c,void callee of func_001266A0,caller's $v0,yes,transparent
+func_001264D0,src/wave23b.c,void callee of func_001266A0,caller's $v0,yes,transparent
+func_001266A0,src/v11_e.c,wrap,caller's $v0 (through call func_00126470;call func_001264D0;call func_00126770;caller's $v0),yes,transparent
+func_00126770,src/global_accessors.c,void callee of func_001266A0,caller's $v0,yes,transparent
+func_00126AB0,src/fb49_b.c,wrap,caller's $v0,no,harmless
+func_00136DA0,src/fb7_g.c,wrap,call func_0013AEA0;call func_003DA750;caller's $v0,no,harmless
+func_0013D350,src/nq226_c.c,wrap,call func_00119BC0,yes,return-last
+func_0013D8A0,src/n8.c,r14,call func_0013D350;call func_003DAA40,callback,return-last
+func_00154220,src/w21b0_f.c,void callee of func_00154390,call func_003DA750;call func_00417A40,yes,return-last
+func_00154390,src/entry_group_updates.c,void callee of func_00183d50,call func_00154220;caller's $v0,yes,return-last
+func_00156B50,src/h8h.c,r14,caller's $v0 (through call func_003DAA40;caller's $v0),callback,transparent
+func_00157330,src/w21b2_a.c,r14,call func_003DA750,yes,return-last
+func_0015CF60,src/q1_f.c,r14,caller's $v0 (through call func_003DAA40;caller's $v0),callback,transparent
+func_00164C50,src/t11_a.c,r14,call func_00164E90;const 0,yes,left
+func_00169E50,src/gr10_a.c,wrap,call func_00169C90,no,harmless
+func_0016B0C0,src/sa37_c.c,wrap,call func_0016B0B0;caller's $v0,no,harmless
+func_00174A40,src/z0_d.c,wrap,call func_00417440; no host value from func_00417440,yes,left
+func_00175B40,src/copy_animation_records_00175B40.c,void callee of func_00175C00,caller's $v0,yes,transparent
+func_00175C00,src/s8f_d.c,wrap,call func_00175A30;call func_00175B40;caller's $v0,yes,return-last
+func_00176160,src/y11_d.c,wrap,caller's $v0,yes,transparent
+func_00176AB0,src/fb47_c.c,r14,call func_00163D70;call func_00175700;call func_001757E0;call func_00178E10;call func_00178E60;call func_001864a0;call func_00186CE0,no,harmless
+func_001780B0,src/sb6_b.c,r14,call func_00163D70;call func_00175700;call func_001757E0;call func_00178E60;call func_001864a0;call func_00186CE0,no,harmless
+func_00178990,src/t13_a.c,r14,call func_00163D70;call func_00175700;call func_001864a0;call func_00191210,no,harmless
+func_00178EB0,src/v12_a.c,bare,caller's $v0,yes,transparent
+func_00178F20,src/rr15_c.c,wrap,caller's $v0 (through call func_00178EB0),yes,transparent
+func_00180DD0,src/grok_w5_0018.c,void callee of func_00187710,call func_0011D8F8;icall,yes,return-last
+func_00181D90,src/sa40_k.c,void callee of func_00186F00;void callee of func_00187370,caller's $v0,yes,transparent
+func_001820A0,src/w195_l.c,wrap,caller's $v0,no,harmless
+func_00182300,src/t10_d.c,wrap,caller's $v0,no,harmless
+func_00183d50,,void callee of func_00187840,alias: no credited definition;call func_00154390,yes,left
+func_001843A0,src/grok_zg_1843a0.c,wrap,call func_00184720;call func_00184B30;call func_001853E0;call func_00185A90;call func_00186CE0,yes,return-last
+func_00184540,src/sequential_calls.c,wrap,call func_00184570,no,harmless
+func_001846B0,src/tail_call_leaves.c,wrap,call func_001843A0,no,harmless
+func_00185010,src/grok_w5_0018.c,r14,const 0;icall,yes,left
+func_00185060,src/tail_call_leaves.c,void table entry of func_00185010,call func_00185080,yes,return-last
+func_00185490,src/h11d.c,wrap,caller's $v0,no,harmless
+func_00185640,src/q6_x.c,wrap,call func_00190D50,no,harmless
+func_001865B0,src/w173_b.c,wrap,call func_001757E0,no,harmless
+func_00186A60,src/fb18_e.c,wrap,call func_0011D8F8;caller's $v0,yes,return-last
+func_00186DA0,src/w1710_g.c,void table entry of func_00185010,call func_001757E0;caller's $v0;icall,yes,return-last
+func_00186EA0,src/wave0.c,void table entry of func_00185010,call func_001757E0,yes,return-last
+func_00186F00,src/sa5_a.c,void table entry of func_00185010,call func_00181D90;call func_001879C0,yes,return-last
+func_00186FE0,src/grok_w6_0018.c,void table entry of func_00185010,call func_001757E0;call func_001879C0,yes,return-last
+func_00187050,src/grok_w6_0018.c,void table entry of func_00185010,call func_001757E0;call func_001879C0,yes,return-last
+func_001870A0,src/tail_call_leaves3.c,void table entry of func_00185010,call func_001757E0,yes,return-last
+func_001870C0,src/grok_w5_0018.c,void table entry of func_00185010,call func_001757E0,yes,return-last
+func_00187110,src/grok_w5_0018.c,void table entry of func_00185010,call func_001757E0,yes,return-last
+func_00187160,src/n5.c,void table entry of func_00185010,call func_001879C0;call func_001E3710,yes,return-last
+func_00187200,src/grok_w6_0018.c,void table entry of func_00185010,call func_001757E0,yes,return-last
+func_00187260,src/simple_leaves.c,void table entry of func_00185010,caller's $v0; entered through jalr/jr $v0,yes,const:0x187260
+func_00187270,src/pointer_field_setters.c,void table entry of func_00185010,caller's $v0; entered through jalr/jr $v0,yes,const:0x187270
+func_00187290,src/m14.c,void table entry of func_00185010,call func_001757E0;call func_001879C0;icall,yes,return-last
+func_00187320,src/grok_w3_0018.c,void table entry of func_00185010,call func_001757E0,yes,return-last
+func_00187370,src/sa12_b.c,void table entry of func_00185010,call func_00181D90;call func_001879C0,yes,return-last
+func_00187450,src/grok_w6_0018.c,void table entry of func_00185010,call func_00191210,yes,return-last
+func_001874A0,src/grok_r1_0018.c,void table entry of func_00185010,call func_001757E0,yes,return-last
+func_001874D0,src/v0_b.c,void table entry of func_00185010,call func_001757E0,yes,return-last
+func_001875A0,src/v1_d.c,void table entry of func_00185010,call func_001757E0;call func_001879C0,yes,return-last
+func_00187650,src/w9m2d.c,void table entry of func_00185010,call func_001757E0,yes,return-last
+func_001876F0,src/simple_leaves.c,void table entry of func_00185010,caller's $v0; entered through jalr/jr $v0,yes,const:0x1876F0
+func_00187700,src/simple_leaves.c,void table entry of func_00185010,caller's $v0; entered through jalr/jr $v0,yes,const:0x187700
+func_00187710,src/h2.c,void table entry of func_00185010,call func_00180DD0,yes,return-last
+func_00187780,src/t13_a.c,void table entry of func_00185010,call func_001757E0,yes,return-last
+func_00187840,src/actor_setup_00187840.c,void table entry of func_00185010,call func_001757E0;call func_00183d50; no host value from func_00183d50,yes,left
+func_001879A0,src/simple_leaves.c,void table entry of func_00185010,caller's $v0; entered through jalr/jr $v0,yes,const:0x1879A0
+func_001879B0,src/simple_leaves.c,void table entry of func_00185010,caller's $v0; entered through jalr/jr $v0,yes,const:0x1879B0
+func_0018A990,src/wave19.c,wrap,caller's $v0,no,harmless
+func_0018C4B0,src/wave2.c,wrap,call func_0018C510;caller's $v0,yes,return-last
+func_0018C510,src/sa7_l.c,void callee of func_0018C4B0,call func_001E3710;caller's $v0,yes,return-last
+func_0018C6F0,src/nq130_b.c,void callee of func_0018F730,call func_0018C4B0;call func_0018C510;caller's $v0,yes,return-last
+func_0018F730,src/x10_a.c,void callee of func_0018FDB0,call func_0018C6F0,yes,return-last
+func_0018FDB0,src/grok_w3_0018.c,wrap,call func_0018F730,yes,return-last
+func_00191210,src/w20a2_c.c,wrap,call func_001917F0;caller's $v0,yes,return-last
+func_001917F0,src/wave14b.c,void callee of func_00191210,call func_00191840;caller's $v0,yes,return-last
+func_00191840,src/x4_a.c,void callee of func_001917F0,call func_00191920,yes,return-last
+func_0019F3F0,src/wave33.c,wrap,call func_003DA750,no,harmless
+func_001ADF90,src/q4_a.c,r14,call func_001754A0;call func_00175670;call func_001AFC90,yes,return-last
+func_001AE9E0,src/t1_a.c,r14,call func_001745B0;call func_001AFC90,yes,return-last
+func_001AED10,src/n2.c,r14,call func_00175670;call func_001AFC90,yes,return-last
+func_001AF3F0,src/w170_a.c,r14,caller's $v0 (through call func_001AF4A0;call func_001AFC90),yes,transparent
+func_001AF4A0,src/t14_a.c,void callee of func_001AF3F0,caller's $v0,yes,transparent
+func_001AFBE0,src/v10_a.c,r14,call func_00174240;call func_001AFC90,yes,return-last
+func_001AFC90,src/tail_call_leaves2.c,void callee of func_001ADF90;void callee of func_001AE9E0;void callee of func_001AED10;void callee of func_001AF3F0;void callee of func_001AFBE0;wrap,caller's $v0 (through call func_001AFCA0),yes,transparent
+func_001AFCA0,src/tail_leaves.c,void callee of func_001AFC90,caller's $v0 (through call func_003DAA40),yes,transparent
+func_001B3980,src/q7_d.c,r14,call func_00175670;call func_001B3D90;caller's $v0,no,harmless
+func_001B8D90,src/tail_leaves.c,wrap,caller's $v0 (through call func_001B8DB0),yes,transparent
+func_001B8DB0,src/tail_leaves.c,void callee of func_001B8D90,caller's $v0 (through call func_003DAA40),yes,transparent
+func_001BB0D0,src/r1h.c,r14,call func_001BB8D0;icall; no host value from func_001BB8D0,yes,left
+func_001BB140,src/actor_inheritance_phases_001B2090.c,void table entry of func_001BB0D0,call func_001BB2B0,yes,return-last
+func_001BB2B0,src/q7_b.c,void callee of func_001BB140;void table entry of func_001BB0D0,call func_00175670,yes,return-last
+func_001BB360,src/m3k.c,void table entry of func_001BB0D0,call func_00175670,yes,return-last
+func_001BB3F0,src/y8_b.c,void table entry of func_001BB0D0,call func_00175670,yes,return-last
+func_001BB4A0,src/q11_a.c,void table entry of func_001BB0D0,call func_00175670,yes,return-last
+func_001BB8B0,src/straight_leaves.c,void table entry of func_001BB0D0,caller's $v0; entered through jalr/jr $v0,yes,const:0x1BB8B0
+func_001BB8D0,src/tail_leaves.c,void callee of func_001BB0D0;void table entry of func_001BB0D0;wrap,caller's $v0 (through call func_003DAA40),yes,transparent
+func_001C50B0,src/wave4b.c,wrap,call func_001C09A0,no,harmless
+func_001C5110,src/z3_e.c,r14,call func_001C50B0;call func_001C5200;caller's $v0,no,harmless
+func_001CB180,src/grok_tiny2.c,wrap,call func_001CB5A0,no,harmless
+func_001CB5A0,src/grok_r2_001c.c,wrap,call func_001754A0,yes,return-last
+func_001CCB50,src/tail_call_leaves4.c,wrap,caller's $v0 (through call func_001CCB60),yes,transparent
+func_001CCB60,src/tail_leaves.c,void callee of func_001CCB50,caller's $v0 (through call func_003DAA40),yes,transparent
+func_001CF6A0,src/tail_leaves.c,wrap,caller's $v0 (through call func_001CF6C0),yes,transparent
+func_001CF6C0,src/tail_leaves.c,void callee of func_001CF6A0,caller's $v0 (through call func_003DAA40),yes,transparent
+func_001CF720,src/h5b.c,wrap,caller's $v0 (through call func_00176160),yes,transparent
+func_001DAF30,src/g6b.c,wrap,call func_003DA750,no,harmless
+func_001DCC80,src/hy8_a.c,bare;r14,call func_00175700;call func_001757E0;call func_001DCDA0;call func_003BEF10,yes,return-last
+func_001DCDA0,src/straight_leaves.c,void callee of func_001DCC80;wrap,caller's $v0,yes,transparent
+func_001DD8A0,src/grok_w7_evt.c,wrap,call func_003DA750,no,harmless
+func_001E2420,src/h3.c,void callee of func_001E3240,call func_00422FB0,yes,return-last
+func_001E2490,src/wave14.c,wrap,call func_001E4EB0,yes,return-last
+func_001E24E0,src/fb85_c.c,void callee of func_001E3210,call fptosi;call func_001E3240;call func_001E3D20;call func_001E4A10;call func_001E4C40,yes,return-last
+func_001E3210,src/grok_w3_001e.c,wrap,call func_001E24E0;caller's $v0,yes,return-last
+func_001E3240,src/grok_w3_001e.c,void callee of func_001E24E0,call func_001E2420;caller's $v0,yes,return-last
+func_001E3710,src/rb37_a.c,wrap,call fptosi;call func_001E2490;call func_001E3D20;call func_001E48B0,yes,return-last
+func_001E3D20,src/rr21_b.c,void callee of func_001E24E0;void callee of func_001E3710,call func_001E4A10;call func_001E4C40;call func_001E59E0;caller's $v0,yes,return-last
+func_001E48B0,src/w188_b.c,void callee of func_001E3710,call func_0011EB60;call func_00422FB0,yes,return-last
+func_001E4A10,src/sb5_b.c,void callee of func_001E24E0;void callee of func_001E3D20,call func_00422EA0;call func_00422FB0,yes,return-last
+func_001E4C40,src/fb35_d.c,void callee of func_001E24E0;void callee of func_001E3D20,call func_00422EA0;call func_00422FB0,yes,return-last
+func_001E4EB0,src/sb21_b.c,void callee of func_001E2490,call func_00422FB0;caller's $v0,yes,return-last
+func_001E7F60,src/enqueue_actor_001e7f60.c,wrap,caller's $v0,yes,transparent
+func_001EA280,src/w21a2_f.c,r14,call func_00175700;call func_001757E0;call func_001843A0;call func_00186530;caller's $v0,no,harmless
+func_001F72E0,src/tail_call_leaves6.c,wrap,call func_001E3710,no,harmless
+func_001FD430,src/x5_b.c,r14,call func_00175700;call func_001843A0;caller's $v0,no,harmless
+func_0021E010,src/m13.c,r14,call func_00175700;call func_001843A0;caller's $v0,no,harmless
+func_002246E0,src/g4.c,r14,call func_001843A0;call func_003D92F0,no,harmless
+func_002271E0,src/dp7_b.c,r14,call fptosi;call func_00175700;call func_0022C5D0,no,harmless
+func_0022C5D0,src/grok_w3_0022.c,wrap,call func_001843A0;call func_00184540,no,harmless
+func_00265A10,src/w9a.c,r14,call func_00175700;call func_001843A0;call func_00184540;call func_00372BE0,no,harmless
+func_00267E20,src/tail_call_leaves8.c,wrap,call func_001757E0,no,harmless
+func_0027E820,src/r2.c,r14,call func_00175700;call func_001757E0;call func_00280330;caller's $v0,no,harmless
+func_0028B0B0,src/w176_r.c,wrap,call func_0028B1E0;caller's $v0,no,harmless
+func_0028BA50,src/composite_dispatch_heads.c,wrap,icall,yes,return-last
+func_0028D910,src/grok_w5_0028.c,wrap,call func_00176160,no,harmless
+func_00292DC0,src/composite_dispatch_heads.c,wrap,icall,yes,return-last
+func_0029B130,src/tail_call_leaves10.c,wrap,call func_001843A0,no,harmless
+func_002A46D0,src/x6_a.c,r14,call func_00175700;call func_001843A0;call func_00185640;call func_001E7FD0,no,harmless
+func_002BCF40,src/fb20_d.c,wrap,call func_002BD190,no,harmless
+func_002C73B0,src/x3_a.c,bare;r14,call func_00175700;call func_001757E0;call func_00175C00,no,harmless
+func_002CB3A0,src/m0.c,r14,call func_00175700;call func_001843A0;call func_003996C0,no,harmless
+func_002DC1B0,src/tail_call_leaves12.c,wrap,call func_001843A0,no,harmless
+func_002F1DF0,src/tail_call_leaves13.c,wrap,call func_001843A0,no,harmless
+func_002F8EB0,src/wave19.c,wrap,call func_001843A0;call func_001845F0,no,harmless
+func_00309310,src/signed_result_handlers.c,wrap,call func_00175700;call func_001843A0,no,harmless
+func_0030F650,src/tail_call_leaves14.c,wrap,call func_001843A0,no,harmless
+func_0031AF50,src/conditional_state_dispatch.c,wrap,call func_001843A0;call func_00184540,no,harmless
+func_0031CCD0,src/y0_r.c,r14,call func_00175700;call func_001757E0;call func_00184540,no,harmless
+func_003266E0,src/tail_call_leaves15.c,wrap,call func_001843A0,no,harmless
+func_0032C990,src/hy1_c.c,r14,call func_0012E560;call func_0012E780,no,harmless
+func_0032FEB0,src/h0b.c,wrap,caller's $v0,yes,transparent
+func_0033DAD0,src/w9agop.c,r14,call func_00170DA0;caller's $v0,callback,return-last
+func_00347F60,src/straight_leaves.c,wrap,caller's $v0,yes,transparent
+func_0034D520,src/m12b.c,wrap,call func_003DA750,no,harmless
+func_0034F2B0,src/h1c.c,r14,call func_00174470;call func_0034FA60,yes,return-last
+func_0034FA60,src/byte_setter_pairs.c,void callee of func_0034F2B0;wrap,caller's $v0,yes,transparent
+func_00350CC0,src/h1c.c,r14,call func_00174470;call func_00350FD0,yes,return-last
+func_00350E40,src/m10.c,r14,call func_00174470;call func_00350FD0,yes,return-last
+func_00350FD0,src/tail_call_leaves17.c,void callee of func_00350CC0;void callee of func_00350E40;wrap,caller's $v0 (through call func_00350FE0),yes,transparent
+func_00350FE0,src/tail_leaves.c,void callee of func_00350FD0,caller's $v0 (through call func_003DAA40),yes,transparent
+func_00368FB0,src/tail_call_leaves17.c,wrap,caller's $v0 (through call func_00368FC0),yes,transparent
+func_00368FC0,src/tail_leaves.c,void callee of func_00368FB0,caller's $v0 (through call func_003DAA40),yes,transparent
+func_0036AAF0,src/wave21.c,wrap,call func_003DA750,yes,return-last
+func_0036B970,src/q7_b.c,r14,call func_00175700;call func_001E7F60;call func_0036AAF0,yes,return-last
+func_003733B0,src/xl14_c.c,bare;r14,call func_001745B0;call func_001E3710;call func_001E7F60;caller's $v0,yes,return-last
+func_00378CA0,src/straight_leaves.c,wrap,caller's $v0,yes,transparent
+func_0037B400,src/grok_r1_0030.c,wrap,caller's $v0 (through call func_003DAA40),yes,transparent
+func_0037B710,src/allocator_callbacks76.c,wrap,call func_003DA750,yes,return-last
+func_0037D9F0,src/q1_b.c,r14,call func_003DAA40;caller's $v0,no,harmless
+func_0037DC60,src/y7_b.c,r14,call func_003DA750,no,harmless
+func_003916B0,src/h2.c,wrap,call func_003DA750,yes,host
+func_003928B0,src/tail_call_leaves18.c,wrap,caller's $v0 (through call func_003928C0),yes,transparent
+func_003928C0,src/tail_leaves.c,void callee of func_003928B0,caller's $v0 (through call func_003DAA40),yes,transparent
+func_003931C0,src/h8.c,r14,call func_00393390;call func_003933A0,yes,return-last
+func_003933A0,src/m5c.c,void callee of func_003931C0;wrap,call func_001757E0,yes,return-last
+func_00395890,src/byte_setter_pairs.c,wrap,caller's $v0,yes,transparent
+func_003A79B0,src/sa32_b.c,r14,call func_00174470;call func_00175700;call func_001E7F60;call func_003A7B10,yes,return-last
+func_003A7B10,src/tail_leaves.c,void callee of func_003A79B0;wrap,caller's $v0 (through call func_003DAA40),yes,transparent
+func_003A98C0,src/gr26_d.c,bare;r14,call func_001754A0;call func_00175670;call func_00175700;call func_001D7CE0;call func_001E3710;call func_001E7F60;call func_003A9A50;caller's $v0,yes,return-last
+func_003A9A50,src/tail_leaves.c,void callee of func_003A98C0;wrap,caller's $v0 (through call func_003DAA40),yes,transparent
+func_003B3700,src/t10_e.c,r14,call func_00174470;call func_003B3870,yes,return-last
+func_003B3870,src/tail_leaves.c,void callee of func_003B3700;wrap,caller's $v0 (through call func_003DAA40),yes,transparent
+func_003B3ED0,src/sb18_a.c,r14,call func_00174470;call func_00175700;call func_001E7F60;call func_003B4030,yes,return-last
+func_003B4030,src/tail_leaves.c,void callee of func_003B3ED0;wrap,caller's $v0 (through call func_003DAA40),yes,transparent
+func_003B8170,src/m8p.c,r14,call func_003DA750;const 0,yes,left
+func_003BD4A0,src/struct_field_leaves.c,wrap,caller's $v0,yes,transparent
+func_003BEF10,src/w193_c.c,void callee of func_001DCC80,call func_003DA750,yes,return-last
+func_003D44E0,src/w1911_t.c,wrap,call func_003D7310,no,harmless
+func_003D69A0,src/nq65_b.c,bare;r14,call func_003D3E10;call func_003D44E0;call func_003D5090;call func_003D6530;call func_003DA6F0;caller's $v0,no,harmless
+func_003D83C0,src/v1_a.c,bare;r14,call func_003D86F0;call func_003D91E0,no,harmless
+func_003D8540,src/rb18_a.c,wrap,call func_003D8680;call func_003D8690;call func_003D86A0,no,harmless
+func_003DAA40,src/object_pool.c,void callee of func_0013D8A0;void callee of func_00156B50;void callee of func_0015CF60;void callee of func_001BB8D0;void callee of func_0037B400;void callee of func_003A7B10;void callee of func_003A9A50;void callee of func_003B3870;void callee of func_003B4030;wrap,caller's $v0,yes,transparent
+func_003EAB40,src/b10s2_b.c,r14,caller's $v0;const 2;const 4,yes,left
+func_003F5070,src/tail_call_leaves20.c,wrap,call func_003F5270,yes,host
+func_003F5080,src/tail_leaves.c,wrap,call func_003F5440,yes,host
+func_003F55B0,src/s39b.c,wrap,caller's $v0,no,harmless
+func_003F6B30,src/nm6_a.c,wrap,const 2;const 3,no,harmless
+func_003F6CC8,src/sb28_a.c,wrap,const 2;const 3,no,harmless
+func_003F7970,src/sdk3f.c,r14,"addiu $v0, $v0, -0x1;call func_0011D8F8",no,harmless
+func_003F8240,src/sdk4c.c,wrap,call func_003F79A8,no,harmless
+func_003FB128,src/s5b.c,wrap,call func_004112D8; no host value from func_004112D8,yes,left
+func_003FE040,src/p3j.c,wrap,call func_00103C20; no host value from func_00103C20,callback,left
+func_003FEBB8,src/r3_a.c,wrap,call func_003FE170,no,harmless
+func_00404488,src/clear_runtime_record_buffer_004043C0.c,wrap,call func_0011D8F8,no,harmless
+func_004098A8,src/dispatch_runtime_message_004098A8.c,wrap,"icall;lui $v0, %hi(D_00488314)",no,harmless
+func_0040D580,src/s1f.c,wrap,caller's $v0,no,harmless
+func_0040E9F8,src/simple_leaves.c,wrap,caller's $v0,no,harmless
+func_004112D8,src/w0_e.c,void callee of func_003FB128,"icall;lw $v0, 0x0($v1)",yes,left
+func_00411818,src/dispatch_runtime_indexed_callback_00411818.c,wrap,"icall;lw $v0, 0x0($a0)",no,harmless
+func_00411858,src/k0b.c,wrap,call func_004112B0,no,harmless
+func_00411B98,src/manage_runtime_reference_00411B98.c,wrap,"addiu $v0, $v0, 0x1",no,harmless
