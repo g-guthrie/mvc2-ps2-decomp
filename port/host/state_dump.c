@@ -28,8 +28,10 @@ extern u8 *host_ee_heap_base(void);
 static FILE *dump_f;
 static long dump_from;
 static int dump_init;
-static long snap_frame = -1;
-static char snap_path[512];
+#define MAX_SNAPS 8
+static int nsnaps;
+static long snap_frame[MAX_SNAPS];
+static char snap_path[MAX_SNAPS][512];
 
 /* ---- game function addresses (host -> EE) ------------------------------- */
 typedef struct { uintptr_t host; u32 ee; } FnMap;
@@ -104,9 +106,33 @@ static void load_fn_map(void) {}
 static u32 fix(u32 w)
 {
     uintptr_t p = (uintptr_t)w;
-    u8 *heap = host_ee_heap_base();
+    static u8 *heap;
+    static uintptr_t lo_addr = 1, hi_addr;
     int lo, hi;
     if (sizeof(void *) != 4)
+        return w;
+    if (!heap)
+        heap = host_ee_heap_base();
+    if (hi_addr < lo_addr) {
+        /* every host address fix() translates lies in [lo_addr, hi_addr]:
+         * one compare rejects the small integers and floats of a dump */
+        uintptr_t b = (uintptr_t)mvc2_ee_bss, m = (uintptr_t)mvc2_hole_00424200;
+        lo_addr = b < m ? b : m;
+        hi_addr = b + (EE_BSS_END - EE_BSS_START);
+        if (m + (IMAGE_END - IMAGE_EE) > hi_addr)
+            hi_addr = m + (IMAGE_END - IMAGE_EE);
+        if (heap && (uintptr_t)heap < lo_addr)
+            lo_addr = (uintptr_t)heap;
+        if (heap && (uintptr_t)heap + HOST_EE_HEAP > hi_addr)
+            hi_addr = (uintptr_t)heap + HOST_EE_HEAP;
+        if (nfns && fns[0].host < lo_addr)
+            lo_addr = fns[0].host;
+        if (nfns && fns[nfns - 1].host > hi_addr)
+            hi_addr = fns[nfns - 1].host;
+        if (!heap)
+            hi_addr = 0, lo_addr = 1; /* recompute once the heap exists */
+    }
+    if (heap && (p < lo_addr || p > hi_addr))
         return w;
     if (p >= (uintptr_t)mvc2_ee_bss && p < (uintptr_t)mvc2_ee_bss + (EE_BSS_END - EE_BSS_START))
         return EE_BSS_START + (u32)(p - (uintptr_t)mvc2_ee_bss);
@@ -158,10 +184,18 @@ void host_state_dump_open(const char *path)
         host_log("state dump: cannot write %s", path);
         return;
     }
-    e = getenv("MVC2_STATE_SNAP"); /* F:FILE: the raw EE BSS at frame F */
-    if (e && strchr(e, ':')) {
-        snap_frame = atol(e);
-        snprintf(snap_path, sizeof snap_path, "%s", strchr(e, ':') + 1);
+    /* F:FILE[,F:FILE...]: the raw EE BSS and heap at frame F (up to 8) */
+    e = getenv("MVC2_STATE_SNAP");
+    while (e && *e && strchr(e, ':') && nsnaps < MAX_SNAPS) {
+        const char *c = strchr(e, ':') + 1, *end = strchr(c, ',');
+        size_t n = end ? (size_t)(end - c) : strlen(c);
+        if (n >= sizeof snap_path[0])
+            n = sizeof snap_path[0] - 1;
+        snap_frame[nsnaps] = atol(e);
+        memcpy(snap_path[nsnaps], c, n);
+        snap_path[nsnaps][n] = 0;
+        nsnaps++;
+        e = end ? end + 1 : NULL;
     }
     e = getenv("MVC2_STATE_DUMP_FROM");
     dump_from = e ? atol(e) : 0;
@@ -219,11 +253,15 @@ void host_state_dump_frame(long frame, unsigned b0, unsigned b1)
     memcpy(&reent, D_0043B6F8, sizeof reent);
     if (reent)
         memcpy(&seed, reent + 0xA8, 8);
-    if (snap_frame >= 0 && frame == snap_frame) {
-        char raw[600];
-        oracle_snap(snap_path, rd, fix);
-        snprintf(raw, sizeof raw, "%s.raw", snap_path); /* untranslated: snapdiff.py */
-        oracle_snap(raw, rd, NULL);
+    {
+        int k;
+        for (k = 0; k < nsnaps; k++)
+            if (frame == snap_frame[k]) {
+                char raw[600];
+                oracle_snap(snap_path[k], rd, fix);
+                snprintf(raw, sizeof raw, "%s.raw", snap_path[k]); /* untranslated: snapdiff.py */
+                oracle_snap(raw, rd, NULL);
+            }
     }
     oracle_dump_record(dump_f, (uint32_t)frame, (uint16_t)b0, (uint16_t)b1, rd, fix, seed);
 }
