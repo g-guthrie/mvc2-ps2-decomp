@@ -12,7 +12,8 @@
  *
  * Usage: mvc2_oracle --iso DISC.iso [--script FILE] [--frames N]
  *          [--dump FILE] [--dump-from N] [--no-unlock] [--cpu-team a,b,c]
- *          [--p1-team id] [--press F:BUTTON[:LEN]] [--srand-sync]
+ *          [--p1-team a,b,c] [--press F:BUTTON[:LEN]] [--srand-sync]
+ *          (team entries ID or ID:T, T = assist type 0..2, as the port)
  * The Play! data directory (memory cards, config) is $MVC2_ORACLE_HOME
  * (default ./oracle_home); delete it for a fresh card.
  */
@@ -461,6 +462,9 @@ static void force_rec(uint32 rec, int id, const char* who, int t, int set_assist
 	if(set_assist) wr8(rec + 0x4DD, rd8(0x004405A0 + id));
 	fprintf(stderr, "[oracle] %s pick %d: character %#x (forced)\n", who, t, id);
 }
+#define BIND_PAK 0x0016F2D0
+#define CURSOR_RET 0x0032B190 /* func_0032B000, after jal func_00137F90 */
+static void force_assist(uint32 p);
 static int team_hook(CMIPS* ctx)
 {
 	uint32 pc = ctx->m_State.nPC;
@@ -478,6 +482,28 @@ static int team_hook(CMIPS* ctx)
 				if(g_cpu_team[t] >= 0) force_rec(0x004F20B0 + (g_pick_side + t * 2) * 0x5B8, g_cpu_team[t], "CPU", t, 1);
 			return 1;
 		}
+	if(pc == CURSOR_RET)
+	{
+		/* --p1-team as a genuine pick: the cursor lookup's result
+		 * (func_00137F90, $v0) is the forced id of the pick being made, as
+		 * the port's func_00137F90 override (port/host/arcade.c) */
+		uint32 p = rd32(0x004C2904);
+		if(p >= 0x004F20B0 && p < 0x004F20B0 + 6 * 0x5B8 && (p - 0x004F20B0) % 0x5B8 == 0)
+		{
+			int i = (p - 0x004F20B0) / 0x5B8;
+			if(!(i & 1) && g_p1_team[i / 2] >= 0)
+			{
+				ctx->m_State.nGPR[CMIPS::V0].nV0 = (uint32)g_p1_team[i / 2];
+				ctx->m_State.nGPR[CMIPS::V0].nV1 = 0;
+			}
+		}
+		return 1;
+	}
+	if(pc == BIND_PAK)
+	{
+		force_assist(ctx->m_State.nGPR[CMIPS::A0].nV0);
+		return 1;
+	}
 	if(pc == 0x0012EF50 || pc == 0x0012EF80)
 	{
 		uint32 p = ctx->m_State.nGPR[CMIPS::A0].nV0;
@@ -491,15 +517,38 @@ static int team_hook(CMIPS* ctx)
 	}
 	return 0;
 }
-static void parse_team(const char* s, int* t)
+/* "a,b,c", each entry optionally ID:T (assist type T = 0, 1, 2), as the port */
+static int g_cpu_assist[3] = {-1, -1, -1}, g_p1_assist[3] = {-1, -1, -1};
+static void parse_team(const char* s, int* t, int* assist)
 {
 	for(int k = 0; k < 3 && s && *s; k++)
 	{
 		char* e;
 		long v = strtol(s, &e, 0);
 		if(e != s) t[k] = (int)v;
+		if(e != s && *e == ':')
+		{
+			long a = strtol(e + 1, nullptr, 0);
+			assist[k] = a >= 0 && a <= 2 ? (int)a : -1;
+		}
 		s = strchr(s, ',');
 		if(s) s++;
+	}
+}
+
+/* func_0016F2D0 entry (the fight binds a player's PAK): the assist type of a
+ * --cpu-team / --p1-team entry given as ID:T, as port/host/arcade.c
+ * force_assist() */
+static void force_assist(uint32 p)
+{
+	if(p < 0x004F20B0 || p >= 0x004F20B0 + 6 * 0x5B8 || (p - 0x004F20B0) % 0x5B8) return;
+	int i = (p - 0x004F20B0) / 0x5B8;
+	int id = (i & 1) ? g_cpu_team[i / 2] : g_p1_team[i / 2];
+	int a = (i & 1) ? g_cpu_assist[i / 2] : g_p1_assist[i / 2];
+	if(id >= 0 && a >= 0 && (int8)rd8(p + 0x540) == id && rd8(p + 0x4DD) != a)
+	{
+		wr8(p + 0x4DD, (uint8)a);
+		fprintf(stderr, "[oracle] %s %d: assist type %d (forced)\n", (i & 1) ? "CPU" : "P1", i / 2, a);
 	}
 }
 
@@ -566,8 +615,8 @@ int main(int argc, char** argv)
 		else if(!strcmp(a, "--resync") && n) { O.resync = n; i++; }
 		else if(!strcmp(a, "--cpu-hp") && n) { O.cpu_hp = atoi(n); i++; }
 		else if(!strcmp(a, "--p1-hp") && n) { O.p1_hp = atoi(n); i++; }
-		else if(!strcmp(a, "--cpu-team") && n) { parse_team(n, g_cpu_team); i++; }
-		else if(!strcmp(a, "--p1-team") && n) { parse_team(n, g_p1_team); i++; }
+		else if(!strcmp(a, "--cpu-team") && n) { parse_team(n, g_cpu_team, g_cpu_assist); i++; }
+		else if(!strcmp(a, "--p1-team") && n) { parse_team(n, g_p1_team, g_p1_assist); i++; }
 		else if(!strcmp(a, "--snap-at") && n)
 		{
 			SnapAt sa;
@@ -629,9 +678,12 @@ int main(int argc, char** argv)
 	}
 	if(g_p1_team[0] >= 0 || g_p1_team[1] >= 0 || g_p1_team[2] >= 0)
 	{
+		vm.m_ee->m_EE.m_breakpoints.insert(CURSOR_RET);
 		vm.m_ee->m_EE.m_breakpoints.insert(0x0012EF50);
 		vm.m_ee->m_EE.m_breakpoints.insert(0x0012EF80);
 	}
+	for(int k = 0; k < 3; k++)
+		if(g_cpu_assist[k] >= 0 || g_p1_assist[k] >= 0) vm.m_ee->m_EE.m_breakpoints.insert(BIND_PAK);
 	for(uint32 a : g_trace) vm.m_ee->m_EE.m_breakpoints.insert(a);
 	for(auto& sa : g_snapat) vm.m_ee->m_EE.m_breakpoints.insert(sa.addr);
 	g_oracleBreakHook = &hook;
