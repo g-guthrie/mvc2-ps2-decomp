@@ -229,6 +229,7 @@ int func_003F0500(int h)
         fl_set_render_state(0x17, (uintptr_t)EE_BSS_PTR(0x0061C6E0));
         fl_set_render_state(0x19, (uintptr_t)EE_BSS_PTR(0x0061BEE0));
         fl_set_render_state(0x1A, (uintptr_t)EE_BSS_PTR(0x0061BF20));
+        fl_set_clip_matrix((const float *)EE_BSS_PTR(0x0061BDE0));
         fl_set_render_state(0x59, (uintptr_t)EE_BSS_PTR(0x0061B2F0));
         fl_set_render_state(0x5A, (uintptr_t)EE_BSS_PTR(0x0061B354));
         fl_set_render_state(0x5B, (uintptr_t)EE_BSS_PTR(0x0061B3B8));
