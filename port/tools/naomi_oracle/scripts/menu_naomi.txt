@@ -1,0 +1,8 @@
+# NAOMI: from the attract, START (free play) to the character select,
+# picks with LK until the versus screen; the teams are forced (--p1-team,
+# --cpu-team), so the picks do not matter
+state 1/1/1
+wait 30
+until 2/ start 40
+wait 120
+until 2/1/2 cross 50

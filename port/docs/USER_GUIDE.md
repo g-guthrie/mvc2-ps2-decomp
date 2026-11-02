@@ -202,18 +202,31 @@ unbound. Removing the line restores the default.
 | Unlock everything | `game.unlock_all` | On | Every character, stage and extra is available from the start. Turning it back off takes effect on the next start, because unlocked items stay unlocked until you restart. In the browser, `?nounlock` starts once with the game's own unlock state without changing the setting. |
 
 ### Arcade accuracy
-Optional, all off by default. Each toggle swaps one group of the PS2 game's
-per-character tables for the arcade's (NAOMI `mvsc2`, Export/Korea Rev A),
-read from **your own** MAME `mvsc2.zip` when the game starts. Nothing from
-the arcade ROM is in the port. Changes take effect on the next start.
+Optional, all off by default.
+
+**What plays like the arcade:** the arcade program (NAOMI `mvsc2`,
+Export/Korea Rev A, run frame by frame in the arcade oracle,
+`port/tools/naomi_oracle`) uses exactly the PS2's per-character tables:
+frames, boxes, damage and CPU AI are already the arcade's with every toggle
+off (ARCADE_DIFF.md section 11). The arcade differences are in the code
+and the timing: turn on `arcade.fs_edge`, `arcade.servbot_hitstop`,
+`arcade.freeze_order` and set `arcade.timing` to Arcade (desktop:
+`--arcade all --set arcade.timing=arcade`; `all` = d, e, f).
+
+The first three toggles read the per-character table *files* of your own
+MAME `mvsc2.zip` mask ROMs. The Rev A program never loads those files (it
+unpacks its own tables, which are the PS2's), so they are not what the
+arcade plays; they remain for study of the ROM files. Nothing from the
+arcade ROM is in the port. Changes take effect on the next start.
 
 | Option | Key | Default | |
 |---|---|---|---|
-| NAOMI frame data + hitboxes | `arcade.frame_data` | Off | Animation timing (for example Cyclops' 09/02 is 17 frames / 51 ticks instead of 12 / 37) and hit, hurt and body boxes, including the startup invulnerability that comes from them. |
-| NAOMI damage + hit data | `arcade.damage` | Off | Base damage and the other hit properties (Ryu's attack 0x30: 28 instead of 14). |
-| NAOMI CPU AI | `arcade.cpu_ai` | Off | The CPU opponents' decision tables. |
+| NAOMI ROM files: frames + boxes | `arcade.frame_data` | Off | Animation timing and hit, hurt and body boxes from the mask-ROM table files (for example Cyclops' 09/02 is 17 frames / 51 ticks there instead of 12 / 37). Not used by the Rev A arcade program. |
+| NAOMI ROM files: damage | `arcade.damage` | Off | Base damage and the other hit properties from the mask-ROM files (Ryu's attack 0x30: 28 instead of 14). Not used by the Rev A arcade program, whose damage is the PS2's. |
+| NAOMI ROM files: CPU AI | `arcade.cpu_ai` | Off | The CPU decision tables from the mask-ROM files. Not used by the Rev A arcade program. |
 | Arcade flying-screen edge | `arcade.fs_edge` | Off | While the opponent is the flying-screen character, you stop 35 units from the stage edge as on the arcade (the PS2 stops 16 units further in). No zip needed; takes effect at once. |
 | Arcade Servbot hit-stop inputs | `arcade.servbot_hitstop` | Off | Servbot keeps the buttons you press during hit stop while his armor flag is set, as on the arcade (the PS2 clears them). No zip needed. |
+| Arcade super-freeze timing | `arcade.freeze_order` | Off | The super-freeze countdown is ticked at the start of the frame, as on the arcade; the PS2 ticks it at the end, so its freezes end one frame sooner (found with the arcade oracle). No zip needed. |
 | Logic rate + input pipeline | `arcade.timing` | Port | **Port:** 60 Hz, a press counts in the next step. **Arcade:** 59.94 Hz and one frame of input delay, as the NAOMI (it reads the controls in V-blank from the previous transfer). **PS2:** 59.94 Hz and two frames, as the retail disc. Menus are never delayed. On a 60 Hz screen, 59.94 Hz repeats one frame about every 17 s. |
 | NAOMI float rounding | `arcade.float_round` | Off | The PS2's EE rounds every float result toward zero, and the port does the same by default (positions, velocities: the PS2 game frame for frame). The arcade's SH-4 rounds to nearest; this switches to that. Applies at once, needs no zip. |
 
@@ -237,6 +250,13 @@ more toggles. For one run in the browser:
 takes only a, b, c); desktop `--arcade de` (d = flying-screen edge,
 e = Servbot) and `--set arcade.timing=arcade` (or `MVC2_ARCADE_DELAY=1`, the
 input delay alone).
+The last four are code differences found by comparing the two programs
+(ARCADE_DIFF.md sections 10, 11); they need no zip. For one run in the browser:
+`?arcade.fs_edge=1&arcade.servbot_hitstop=1&arcade.freeze_order=1&arcade.timing=arcade`
+(`?arcade=` takes only a, b, c); desktop `--arcade def` (d = flying-screen
+edge, e = Servbot, f = super-freeze order; `--arcade all` = d, e, f) and
+`--set arcade.timing=arcade` (or `MVC2_ARCADE_DELAY=1`, the input delay
+alone).
 
 The set is checked by CRC-32 (every member present must match Rev A). If it
 is missing or wrong, the log says so and the PS2 tables are used. Both
