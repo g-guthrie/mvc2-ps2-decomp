@@ -257,6 +257,7 @@ static struct
 	long dump_from = 0;
 	int cpu_team[3] = {-1, -1, -1};
 	int p1_team = -1;
+	int cpu_hp = -1, p1_hp = -1;
 	struct
 	{
 		long frame;
@@ -315,6 +316,20 @@ static void on_frame(CMIPS* ctx)
 		}
 	}
 	if(O.unlock) unlock_everything();
+	/* --cpu-hp N / --p1-hp N: port/host/game_loop.c cpu_hp_cap() (the port
+	 * applies it later in the frame, after code that does not touch health) */
+	for(int i = 0; O.p1_hp > 0 && i < 6; i += 2)
+	{
+		uint32 a = 0x004F20B0 + i * 0x5B8 + 0x434;
+		int16 hp = (int16)(rd8(a) | rd8(a + 1) << 8);
+		if(hp > 0 && hp < O.p1_hp) { wr8(a, (uint8)O.p1_hp); wr8(a + 1, (uint8)(O.p1_hp >> 8)); }
+	}
+	for(int i = 1; O.cpu_hp >= 0 && i < 6; i += 2)
+	{
+		uint32 a = 0x004F20B0 + i * 0x5B8 + 0x434;
+		int16 hp = (int16)(rd8(a) | rd8(a + 1) << 8);
+		if(hp > O.cpu_hp) { wr8(a, (uint8)O.cpu_hp); wr8(a + 1, (uint8)(O.cpu_hp >> 8)); }
+	}
 	uint16 b0 = 0, b1 = 0;
 	for(int i = 0; i < O.npress; i++)
 		if(g_frame >= O.press[i].frame && g_frame < O.press[i].frame + O.press[i].len) b0 |= O.press[i].bits;
@@ -549,6 +564,8 @@ int main(int argc, char** argv)
 		else if(!strcmp(a, "--dump-from") && n) { O.dump_from = atol(n); i++; }
 		else if(!strcmp(a, "--no-unlock")) O.unlock = 0;
 		else if(!strcmp(a, "--resync") && n) { O.resync = n; i++; }
+		else if(!strcmp(a, "--cpu-hp") && n) { O.cpu_hp = atoi(n); i++; }
+		else if(!strcmp(a, "--p1-hp") && n) { O.p1_hp = atoi(n); i++; }
 		else if(!strcmp(a, "--cpu-team") && n) { parse_team(n, g_cpu_team); i++; }
 		else if(!strcmp(a, "--p1-team") && n) { parse_team(n, g_p1_team); i++; }
 		else if(!strcmp(a, "--snap-at") && n)

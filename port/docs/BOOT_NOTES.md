@@ -700,3 +700,74 @@ frames identical** (about 5000 frames of fight).
   `MVC2_PS2_FLOAT` were not done.
 - Play! models the EE FPU as IEEE round-toward-zero + flush-to-zero; real
   hardware differs from that in rare subtraction cases.
+
+### Oracle pass, part 2 (2026-11-02, branch port-oracle)
+
+**Using the oracle (for the next agents).**
+- Build: `port/tools/oracle/build.sh` (Play! pinned + `play.patch`), binary
+  `/tmp/oracle_src/build/mvc2_oracle`.  Port side: the native i386 build
+  (`-DMVC2_PS2_FLOAT=ON`, now the default).
+- One comparison: `run_pair.sh OUT FRAMES 1/1/0 SCRIPT -- [compare.py
+  options]`; `PORT_ARGS` / `ORACLE_ARGS` carry `--p1-team`, `--cpu-team`,
+  `--cpu-hp`, `--p1-hp` (the oracle implements all four as the port does).
+  Scripts must start with `state 1/1/1` (both sides then run the script
+  from the same frame; loads before the logo take 12 more frames on the
+  oracle).  `--resync 1/1/0` is what every scenario below used.
+- Speed: the oracle runs about 100 game frames/s alone (25-40 when the
+  machine is busy); the native port several hundred.  A dump costs about
+  25 KB per frame per side (`DUMP_FROM` to skip the boot); a snapshot
+  (`--snap`, `--snap-at`, `MVC2_STATE_SNAP`) is 27 MB.
+- Determinism: both sides repeat exactly run to run.  Inputs: the oracle
+  writes the pad bits into libpad's buffer at scePadRead's entry and into
+  the game's copy at its return site (0x003EDE5C), so the game reads them
+  in the frame they are set, as the port does.  Without that, Play!'s pad
+  pipeline delivers them 1-2 frames late depending on when the IOP's DMA
+  lands (the retail game on hardware also sees a press a frame or two
+  late; that is the PS2's pad pipeline, not game logic, and the comparison
+  removes it on purpose).  Do not compare with `MVC2_PAD_DELAY`.
+- Known false differences (masked or to be ignored): the BSS blocks of
+  libpad/IOP/sound/GS state (35 blocks differ from the start), the pad
+  mode byte (0x79 vs 0x73), render-only matrices in the actor area
+  (VU0 macro code, 1-2 ulp), the heap layout above ~0x0163xxxx (CRI host
+  buffers; pointers shifted), and words that happen to equal a host
+  address (compare.py and snapdiff.py accept a word whose raw value
+  equals the oracle's).
+
+**Results** (native, MVC2_PS2_FLOAT on, resync 1/1/0):
+
+| Scenario | Teams | Frames identical |
+|---|---|---|
+| attract cycle | demo | 4835 / 4835 |
+| `fight_mix.txt` (ARCADE, normals, specials, supers, assists, throws, past the 99 timer) | default vs CPU pick | 7762 / 7762 |
+| `fight_proj.txt` (projectiles, uppercuts, hypers, assists) | Thanos/Sentinel/Ryu vs Ken/Akuma/Sentinel | 9035 / 9035 |
+| `training_start.txt` (TRAINING, START every ~140 frames from VERSUS on) | default vs Cable dummy | 2389 / 2389 (from charsel) |
+
+**Training "first START after FIGHT! does not pause": the PS2 does the
+same.**  START during READY / FIGHT! is ignored; the first press after the
+banner pauses (port shots: press at frame 2458 during FIGHT! no menu,
+press at 2540 "1P PAUSE"); the oracle run is identical for every press, so
+this is the game's behaviour, not a port bug.
+
+**Fixes in part 2**
+| What | Cause | Fix |
+|---|---|---|
+| fight_mix +6034 (an input a frame late on the oracle) | oracle side: the IOP's SIF DMA could land between the entry hook and libpad's copy | oracle injects at the copy as well |
+| Thanos run +1646: a Thanos effect at x = 13839, CPU AI reacting to it | `jtbl_00475ABC` catalogued as a jump table; its first word (0x00400020 = the s16 pair 32, 64 of `D_00475AB0`) became a host code address | R10: the literal word |
+| first BSS difference at 2092 in the same run | `(f32)` of a double is the soft-float dptofp, which truncates | rewrite: `fptrunc` -> `ps2_d2f` |
+| heap floats +inf vs 7F7FFFFF | x / 0 is +-FLT_MAX on the EE | `ps2_fdiv` |
+| wasm link failure with the rewrite | two K&R calls with a missing argument (R12 class) | R10 with the asm's registers |
+| (setting) NAOMI rounds to nearest | - | `arcade.float_round` |
+
+MVC2_PS2_FLOAT is on by default: browser run title -> fight clean, game
+logic 13% slower in wasm (794 vs 911 frames/s headless).
+
+**Open**
+- `--p1-team 0x00,0x27,0x1E --cpu-team 0x34,0x2C,0x2A` (Ryu/Ken/Akuma vs
+  Sentinel/Magneto/Storm): the port SIGSEGVs at the fight load in
+  `func_0016FAA0` (`func_004161D0(&buf, NULL)`: the assist-type resource
+  of a forced character is missing), the oracle loads the fight.  The
+  attract/fight runs above match before that; likely the port's
+  `--p1-team` test forcing (assist type kept from the menu), not yet
+  checked against a real character-select pick.
+- hostify R14 class (48 + 60 sites, `$v0` of the last callee) is with the
+  r12 work; `func_00185010` is the one fixed here.
