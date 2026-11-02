@@ -612,6 +612,15 @@ static void on_frame(CMIPS* ctx)
  * block starts at ADDR (a function entry) in frames [--trace-from, --trace-to] */
 static std::vector<uint32> g_trace;
 static long g_trace_from = 0, g_trace_to = 1L << 30;
+/* --mem-trace ADDR:EEADDR:N: at each block start ADDR (in the --trace-from/to
+ * frames) print N floats at EEADDR and $a0 */
+struct MemTrace
+{
+	uint32 addr, ee, n;
+};
+static std::vector<MemTrace> g_memtrace;
+static void trace(CMIPS* ctx);
+static void mem_trace(CMIPS* ctx, const MemTrace& m);
 static void trace(CMIPS* ctx)
 {
 	auto& r = ctx->m_State.nGPR;
@@ -619,6 +628,20 @@ static void trace(CMIPS* ctx)
 	fprintf(stderr, "[trace] f%ld %08X(a0=%08X a1=%08X a2=%08X a3=%08X t0=%08X) ra=%08X f12=%08X f13=%08X f14=%08X\n",
 	        g_frame, ctx->m_State.nPC, r[CMIPS::A0].nV0, r[CMIPS::A1].nV0, r[CMIPS::A2].nV0, r[CMIPS::A3].nV0,
 	        r[CMIPS::T0].nV0, r[CMIPS::RA].nV0, ctx->m_State.nCOP1[12], ctx->m_State.nCOP1[13], ctx->m_State.nCOP1[14]);
+}
+
+static void mem_trace(CMIPS* ctx, const MemTrace& m)
+{
+	if(g_frame < g_trace_from || g_frame > g_trace_to) return;
+	fprintf(stderr, "[mem] f%ld %08X a0=%08X", g_frame, m.addr, ctx->m_State.nGPR[CMIPS::A0].nV0);
+	for(uint32 i = 0; i < m.n; i++)
+	{
+		uint32 w = rd32(m.ee + 4 * i);
+		float f;
+		memcpy(&f, &w, 4);
+		fprintf(stderr, " %.9g", f);
+	}
+	fprintf(stderr, "\n");
 }
 
 /* --snap-at ADDR:FRAME:FILE: snapshot when a block starts at ADDR in FRAME */
@@ -772,6 +795,8 @@ static void hook(CMIPS* ctx)
 	}
 	if(ctx->m_State.nPC != O.hook)
 	{
+		for(auto& m : g_memtrace)
+			if(m.addr == ctx->m_State.nPC) mem_trace(ctx, m);
 		for(auto& s : g_snapat)
 			if(s.addr == ctx->m_State.nPC && s.frame == g_frame && !s.done)
 			{
@@ -819,6 +844,13 @@ int main(int argc, char** argv)
 			sa.path = path;
 			sa.done = 0;
 			g_snapat.push_back(sa);
+			i++;
+		}
+		else if(!strcmp(a, "--mem-trace") && n)
+		{
+			MemTrace m;
+			if(sscanf(n, "%x:%x:%u", &m.addr, &m.ee, &m.n) != 3) return 2;
+			g_memtrace.push_back(m);
 			i++;
 		}
 		else if(!strcmp(a, "--trace") && n) { g_trace.push_back(strtoul(n, 0, 0)); i++; }
@@ -892,6 +924,7 @@ int main(int argc, char** argv)
 	if(AV.snd)
 		for(uint32 a : k_snd_hooks) vm.m_ee->m_EE.m_breakpoints.insert(a);
 	for(auto& sa : g_snapat) vm.m_ee->m_EE.m_breakpoints.insert(sa.addr);
+	for(auto& m : g_memtrace) vm.m_ee->m_EE.m_breakpoints.insert(m.addr);
 	g_oracleBreakHook = &hook;
 	auto t0 = std::chrono::steady_clock::now();
 	vm.Resume();
