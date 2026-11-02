@@ -778,7 +778,9 @@ from the callers); gen_link_glue does not emit a callers-only prototype for
 a host-implemented function with no C definition (`func_003DE160` is now
 credited to vu0_macro_math.S; the guess `(int, int, int)` clashed with
 vu0_host.c).  Verified: clean `-DMVC2_PS2_FLOAT=ON` web build, browser
-title -> fight with assist (`web/r12_6`).
+title -> fight with assist (`web/r12_6`); native i386 with the same fresh
+signatures and `MVC2_PS2_FLOAT=ON`: `arcade_ending_rank` from an empty card
+to the SCORE RANKING (frame 27355, `native/r12m/arc`).
 
 ### Renderer pass (2026-10-31, branch port-render)
 
