@@ -150,6 +150,9 @@ int fl_model_draw(FlModel *m, int root, const float objm[16], uint32_t obj_flags
 /* func_003F0500: one mesh with matrix slot 0x19 as its world matrix and the
  * current view (0x16), projection (0x17), viewport (0x18), 0x66, 0x1A, fog, blend. */
 int fl_mesh_draw(FlModel *m, int mesh);
+/* the game's VU1 clip matrix (D_0061BDE0): triangles with a vertex outside
+ * it are not drawn (the programs' ADC trivial reject); NULL: no reject */
+void fl_set_clip_matrix(const float m[16]);
 /* Port J: one GL mesh per game clay handle (func_003EE6F0 / func_003F0500).
  * chunk = the POL mesh chunk the game built the clay from (func_003F2B70). */
 int fl_clay_build(int handle, const uint8_t *chunk, size_t avail, uint32_t draw_flags);

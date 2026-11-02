@@ -160,7 +160,9 @@ struct FlModel {
 static struct {
     GLuint prog;
     GLint u_mvp, u_vp, u_vpz, u_flags, u_cscale, u_lclamp, u_mod, u_matcol, u_uv0, u_uv1, u_uv3, u_fog,
-        u_fogcol, u_ldir, u_lcol, u_lamb, u_mode, u_linear, u_clamp, u_tex, u_pal, u_palrow;
+        u_fogcol, u_ldir, u_lcol, u_lamb, u_mode, u_linear, u_clamp, u_tex, u_pal, u_palrow, u_clipm, u_adc;
+    float clipm[16]; /* D_0061BDE0: the VU1 programs' clip matrix (projection with the guard band) */
+    int have_clipm;
     int ok;
 } M;
 
@@ -184,12 +186,17 @@ static const char *k_mvs =
     "uniform vec3 u_ldir[3];  /* model-space directions to the lights */\n"
     "uniform vec4 u_lcol[3];  /* min(128, 128 * diffuse * light colour) */\n"
     "uniform vec4 u_lamb;     /* min(128, (ambient + 0xE) * c0); w = alpha */\n"
+    "uniform mat4 u_clipm;    /* world * view * D_0061BDE0 (VU1 vf5..vf8) */\n"
+    "uniform int u_adc;       /* 1: the program's CLIPw/FCAND trivial reject */\n"
+    "out float v_adc;   /* > 0 inside a triangle with a vertex outside the clip box */\n"
     "out vec2 v_uv;\n"
     "out vec4 v_colw;   /* colour * w and fog * w: the GS interpolates RGBA and F linearly in */\n"
     "out float v_fogw;  /* screen space (only STQ is perspective-correct); GLSL ES 3.00 has */\n"
     "out float v_w;     /* no noperspective, so divide by the perspective-interpolated w */\n"
     "void main() {\n"
     "  vec4 c = u_mvp * vec4(a_pos, 1.0);\n"
+    "  vec4 k = u_clipm * vec4(a_pos, 1.0);\n"
+    "  v_adc = (u_adc != 0 && any(greaterThan(abs(k.xyz), vec3(abs(k.w))))) ? 1.0 : 0.0;\n"
     "  gl_Position = vec4(c.x * u_vp.x + c.w * u_vp.y, c.y * u_vp.z + c.w * u_vp.w, c.z * u_vpz, c.w);\n"
     "  vec4 col;\n"
     "  if ((u_flags & 4) != 0) {\n"
@@ -220,6 +227,7 @@ static const char *k_mfs =
     "in vec4 v_colw;\n"
     "in float v_fogw;\n"
     "in float v_w;\n"
+    "in float v_adc;\n"
     "out vec4 o_col;\n"
     "vec4 lut(ivec2 t, ivec2 sz) {\n"
     "  if (u_clamp == 1) t = clamp(t, ivec2(0), sz - 1);\n"
@@ -228,6 +236,7 @@ static const char *k_mfs =
     "  return texelFetch(u_pal, ivec2(i, int(u_palrow)), 0);\n"
     "}\n"
     "void main() {\n"
+    "  if (v_adc > 0.0) discard;  /* ADC: the GS does not draw this triangle */\n"
     "  vec4 v_col = v_colw / v_w;\n"
     "  float v_fog = v_fogw / v_w;\n"
     "  vec4 c;\n"
@@ -299,7 +308,7 @@ int r_mesh_init(void)
 #define U(n) M.n = glGetUniformLocation(M.prog, #n)
     U(u_mvp); U(u_vp); U(u_vpz); U(u_flags); U(u_cscale); U(u_lclamp); U(u_mod); U(u_matcol); U(u_uv0); U(u_uv1);
     U(u_uv3); U(u_fog); U(u_fogcol); U(u_ldir); U(u_lcol); U(u_lamb); U(u_mode); U(u_linear);
-    U(u_clamp); U(u_tex); U(u_pal); U(u_palrow);
+    U(u_clamp); U(u_tex); U(u_pal); U(u_palrow); U(u_clipm); U(u_adc);
 #undef U
     glUseProgram(M.prog);
     glUniform1i(M.u_tex, 0);
@@ -798,6 +807,12 @@ int fl_model_root_bounds(const FlModel *mdl, int root, float bmin[3], float bmax
 /* ---------------- func_003F0500 ---------------- */
 static float gsf(uint32_t c, int sh) { return (float)((c >> sh) & 0xFF); }
 
+void fl_set_clip_matrix(const float m[16])
+{
+    if (m) memcpy(M.clipm, m, sizeof M.clipm);
+    M.have_clipm = m != NULL;
+}
+
 int fl_mesh_debug;
 int fl_mesh_draw(FlModel *mdl, int i)
 {
@@ -835,6 +850,22 @@ int fl_mesh_draw(FlModel *mdl, int i)
     float ay = hh / (FL_SCREEN_H / 2.f), by = 1.f - ((float)vi[1] + hh) / (FL_SCREEN_H / 2.f);
     glUseProgram(M.prog);
     glUniformMatrix4fv(M.u_mvp, 1, GL_FALSE, mvp);
+    {
+        /* Trivial reject (every VU1 program but the clipping ones, 19 and
+         * 44-46, and the special 47/48): each vertex is transformed by the
+         * clip matrix vf5..vf8 = world * view * D_0061BDE0 (func_003DD440:
+         * the projection widened to the 2048-pixel guard band), CLIPw.xyz
+         * flags it outside |w|, and FCAND 0x3FFFF over the last three
+         * vertices sets ADC on the strip's next vertex: the GS does not draw
+         * a triangle with any vertex outside.  GL would clip and draw it. */
+        static int off = -1;
+        if (off < 0) off = getenv("MVC2_NO_ADC") != NULL; /* A/B testing */
+        int adc = !off && M.have_clipm && !(me->desc == 19 || (me->desc >= 44 && me->desc <= 48));
+        float cm[16];
+        if (adc) fl_mat_mul(cm, wv, M.clipm);
+        glUniformMatrix4fv(M.u_clipm, 1, GL_FALSE, adc ? cm : mvp);
+        glUniform1i(M.u_adc, adc);
+    }
     {
         float vp[4] = { ax, bx, ay, by };
         glUniform4fv(M.u_vp, 1, vp);
