@@ -45,6 +45,8 @@ SEEDS = [
     (0x0C0BB598, 0x0027FBB0),
     # per-frame team routine and its draw-priority sort (10.5)
     (0x0C0362F4, 0x00326700), (0x0C041B8A, 0x001817E0), (0x0C039580, 0x001710C0),
+    # throw attempt (10.5)
+    (0x0C043C66, 0x00184B30),
 ]
 TABLE_SEEDS = [(0x0C23BCD8, 0x00448D00, 59)]
 

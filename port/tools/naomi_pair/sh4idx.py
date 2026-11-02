@@ -193,6 +193,7 @@ def analyse(im, a, nxt, code, cstarts, incode):
             pcs.extend(range(s, e, 2))
         i += 1
     regs = {}
+    offr = {}
     for pc in pcs:
         w = im.u16(pc)
         f['n'] += 1
@@ -258,19 +259,48 @@ def analyse(im, a, nxt, code, cstarts, incode):
         if w & 0xFF00 in (0x8900, 0x8B00, 0x8D00, 0x8F00) or hi == 0xA:
             f['branches'] += 1
             continue
-        # field accesses
+        # field accesses (offr: registers holding base + a known offset)
         if w & 0xFF00 in (0x8400, 0x8000):
-            f['offs'].append(('b', w & 15))
+            f['offs'].append(('b', (w & 15) + offr.get(m, 0)))
         elif w & 0xFF00 in (0x8500, 0x8100):
-            f['offs'].append(('w', (w & 15) * 2))
-        elif hi in (0x5, 0x1):
-            f['offs'].append(('l', lo * 4))
+            f['offs'].append(('w', (w & 15) * 2 + offr.get(m, 0)))
+        elif hi == 0x5:
+            f['offs'].append(('l', lo * 4 + offr.get(m, 0)))
+        elif hi == 0x1:
+            f['offs'].append(('l', lo * 4 + offr.get(n, 0)))
+        elif (hi == 0x6 and lo in (0, 1, 2)) and m in offr:
+            f['offs'].append(('bwl'[lo], offr[m]))
+        elif (hi == 0x2 and lo in (0, 1, 2)) and n in offr:
+            f['offs'].append(('bwl'[lo], offr[n]))
+        elif hi == 0xF and lo in (8, 9) and m in offr:
+            f['offs'].append(('f', offr[m]))
+        elif hi == 0xF and lo in (0xA, 0xB) and n in offr:
+            f['offs'].append(('f', offr[n]))
         elif hi == 0 and lo in (0xC, 0xD, 0xE, 0x4, 0x5, 0x6) and 0 in regs and isinstance(regs[0], int) and 0 <= regs[0] < 0x2000:
             f['offs'].append(('bwl'[(lo - 4) % 4 if lo < 8 else (lo - 0xC)], regs[0]))
         elif hi == 0xF and lo in (6, 7) and 0 in regs and 0 <= regs[0] < 0x2000:
             f['offs'].append(('f', regs[0]))
         elif hi == 0x7:
             f['adds'].append(s8(w & 255))
+            if n in regs and isinstance(regs[n], int):
+                regs[n] += s8(w & 255)
+                continue
+            if n in offr:
+                offr[n] += s8(w & 255)
+                continue
+        if w & 0xF00F == 0x300C:   # add Rm,Rn: base + known offset
+            k = regs.get(n) if 0 <= (regs.get(n) or -1) < 0x2000 else regs.get(m) if 0 <= (regs.get(m) or -1) < 0x2000 else None
+            regs.pop(n, None)
+            offr.pop(n, None)
+            if k is not None:
+                offr[n] = k
+            continue
+        if w & 0xF00F == 0x6003 and m in offr:
+            offr[n] = offr[m]
+            regs.pop(n, None)
+            continue
+        if (hi in (0x6, 0x5, 0x3, 0xE, 0x9, 0xD) or (hi == 0 and lo in (0xC, 0xD, 0xE))) and n in offr:
+            offr.pop(n)
         if w & 0xF00F == 0x6003:   # mov Rm,Rn copies a known value
             if m in regs:
                 regs[n] = regs[m]

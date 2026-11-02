@@ -74,6 +74,15 @@ def compare(fa, fb, pair, elf):
     na, nb = fset(fa['floats']), fset(fb_vals)
     only_n = sorted(x for x in na if not near(x, fset(fb_loose)))
     only_p = sorted(x for x in nb if not near(x, na))
+    # EE soft-double constants: a lui/ori pair builds the high word of an
+    # f64 (the EE build evaluates some expressions in double precision)
+    def dhi(v):
+        return struct.unpack('<d', struct.pack('<Q', (v & 0xFFFFFFFF) << 32))[0]
+    dh = [x for x in only_p if any(abs(dhi(x) - f32(y)) <= 1e-4 * max(1.0, abs(f32(y))) for y in na)]
+    if dh:
+        out['f64'] = len(dh)
+        only_p = [x for x in only_p if x not in dh]
+        only_n = [y for y in only_n if not any(abs(dhi(x) - f32(y)) <= 1e-4 * max(1.0, abs(f32(y))) for x in dh)]
     # the PS2's 448-line vertical scale: NAOMI k*15/7 where the PS2 has k*2
     yn = [x for x in only_n if near(x, only_p, YS)]
     if yn:
@@ -109,6 +118,13 @@ def compare(fa, fb, pair, elf):
         out['consts'] = (sorted(ka - kb), sorted(kb - ka))
     # shape
     out['shape'] = (fa['branches'], fb['branches'], fa['size'], fb['n'] * 4)
+    # similarity of the two token sets: a low value means a doubtful pair
+    # rather than a code difference
+    A = {('o', o + next((d for d in shifts(o) if o + d in pb), shifts(o)[0])) for k, o in fa['offs'] if o >= 8}
+    B = {('o', o) for k, o in fb['offs'] if o >= 8}
+    A |= {('c', k) for k in cnt_a} | {('f', x) for x in na} | {('k', v) for v in ka}
+    B |= {('c', k) for k in cnt_b} | {('f', x) for x in nb if any(near(y, [x]) for y in na) or True} | {('k', v) for v in kb}
+    out['sim'] = round(len(A & B) / max(1, len(A | B)), 2)
     return out
 
 
