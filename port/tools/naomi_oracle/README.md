@@ -22,7 +22,7 @@ directory or in anything it writes to git.
 port/tools/naomi_oracle/build.sh                 # ~12 min, ~250 MB in /tmp/naomi_oracle_src
 export NAOMI_ZIP=/path/to/mvsc2.zip NAOMI_BIOS=/path/to/naomi.zip
 TEAMS="--p1-team 0:0:1,0x17:0:0,0x2c:0:2 --cpu-team 6:0:0,0x2a:0:0,0x34:0:0" \
-NAOMI_ARGS="--poke 2/1/2/0@0C2D703A:1:7" ARCADE=de \
+NAOMI_ARGS="--poke 2/1/2/0@0C2D703A:1:7" ARCADE=defg \
 port/tools/naomi_oracle/run_pair.sh OUT 7000 2/1/2/3 \
     port/tools/naomi_oracle/scripts/naomi_fight.txt port/tools/naomi_oracle/scripts/port_fight.txt
 ```

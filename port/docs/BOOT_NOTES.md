@@ -735,7 +735,7 @@ alpha assists, the stage forced to the port's pick (NAOMI
 | `--arcade abcde` (ROM-file tables + code toggles) | +330 | CPU Cyclops' special 15/00: the port runs the ROM file's script (2,2,2,2,4.. ticks, sprites 0x17D..), the arcade program 6,3,3,2,2 (0x179..) = the PS2's: the Rev A program does not use the ROM table files (ARCADE_DIFF 11.1) |
 | `--arcade de` (PS2 tables + code toggles d, e) | +503 | super-freeze countdown `+0x25D` one tick ahead on the PS2: the tick order (ARCADE_DIFF 11.2) |
 | `--arcade def` | +546 (core fields: +591) | hit pushback velocity `+0x22C/+0x230` a few ulps apart: the PS2's sine table against the NAOMI's computed sine (`func_0018F1A0`) |
-| `--arcade defg` | see the end of this section | |
+| `--arcade defg` | +546 (core fields: +591) | the pushback floats now match (g); left: during Cyclops' super beam on Ryu, player 0's `+0x1B2` (3 against 2) and its hit stop `+0x1B4` (9 against 8), then x positions 1 ulp apart (61.2593: 0x4275098C against 0x4275098D) from another float operation; not resolved |
 
 The intro (both teams' entrances, 140 frames) and the first exchanges
 (Ryu's walk, fireball, Cyclops' special and super, hits, damage, hit stop,

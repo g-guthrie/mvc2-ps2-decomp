@@ -10,8 +10,8 @@
 #   /tmp/naomi_oracle_src/build/flycast), ISO (private/disc/mvc2.iso),
 #   NAOMI_ZIP (the user's mvsc2.zip, MAME set), NAOMI_BIOS (the user's naomi.zip),
 #   TEAMS ("--p1-team a,b,c --cpu-team d,e,f", given to both sides),
-#   ARCADE (port --arcade letters, default abcde: frames+boxes, damage, CPU
-#   AI, flying-screen edge, Servbot hit stop), PAD_DELAY (default 2: the
+#   ARCADE (port --arcade letters, default defg: the code toggles; a, b, c
+#   are the ROM-file tables the Rev A program does not use), PAD_DELAY (default 2: the
 #   oracle's JVS-to-logic pipeline, see README), PORT_ARGS / NAOMI_ARGS.
 set -e
 ROOT=$(cd "$(dirname "$0")/../../.." && pwd)
@@ -22,7 +22,7 @@ FLYCAST=${FLYCAST:-/tmp/naomi_oracle_src/build/flycast}
 ISO=${ISO:-$ROOT/private/disc/mvc2.iso}
 NAOMI_ZIP=${NAOMI_ZIP:?set NAOMI_ZIP to your mvsc2.zip}
 NAOMI_BIOS=${NAOMI_BIOS:?set NAOMI_BIOS to your naomi.zip}
-ARCADE=${ARCADE:-abcde}
+ARCADE=${ARCADE:-defg}
 mkdir -p "$OUT"
 # a fresh NAOMI home per run: EEPROM / NVRAM start from the game's defaults
 rm -rf "$OUT/naomi_home" "$OUT/mc"; mkdir -p "$OUT/naomi_home" "$OUT/mc"
