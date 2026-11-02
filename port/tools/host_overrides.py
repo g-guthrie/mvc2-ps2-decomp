@@ -182,14 +182,14 @@ _ARC = {
     "src/lookup_runtime_sine_00417440.c": [
         ("f32 func_00417440(u32 angle)\n{\n",
          "extern int mvc2_arc_code __attribute__((weak)); /* host: arcade.trig (arcade_code.c) */\n"
-         "extern f32 mvc2_naomi_sin(u32) __attribute__((weak)); /* host: arcade_code.c */\n"
-         "f32 func_00417440(u32 angle)\n{\n    if (mvc2_arc_code & 8) /* host: arcade.trig */\n        return mvc2_naomi_sin(angle);\n"),
+         "extern f32 mvc2_naomi_sin(int) __attribute__((weak)); /* host: arcade_code.c */\n"
+         "f32 func_00417440(u32 angle)\n{\n    if (mvc2_arc_code & 8) /* host: arcade.trig */\n        return mvc2_naomi_sin((int)angle);\n"),
     ],
     "src/w184_c.c": [
         ("f32 func_00417500(u32 a)\n{\n",
          "extern int mvc2_arc_code __attribute__((weak)); /* host: arcade.trig (arcade_code.c) */\n"
-         "extern f32 mvc2_naomi_cos(u32) __attribute__((weak)); /* host: arcade_code.c */\n"
-         "f32 func_00417500(u32 a)\n{\n    if (mvc2_arc_code & 8) /* host: arcade.trig */\n        return mvc2_naomi_cos(a);\n"),
+         "extern f32 mvc2_naomi_cos(int) __attribute__((weak)); /* host: arcade_code.c */\n"
+         "f32 func_00417500(u32 a)\n{\n    if (mvc2_arc_code & 8) /* host: arcade.trig */\n        return mvc2_naomi_cos((int)a);\n"),
     ],
 }
 for _k, _v in _ARC.items():

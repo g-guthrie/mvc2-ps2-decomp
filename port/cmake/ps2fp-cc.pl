@@ -19,7 +19,7 @@ for my $i (0 .. $#cmd) {
     $obj = $cmd[$i + 1] if $cmd[$i] eq '-o' && $i < $#cmd;
     $src = $cmd[$i] if $cmd[$i] =~ /\.c$/;
 }
-if ($ENV{MVC2_NO_PS2FP} || !$obj || !$src || $src =~ /ps2_float\.c$/) {
+if ($ENV{MVC2_NO_PS2FP} || !$obj || !$src || $src =~ /(ps2_float|arcade_code)\.c$/) {  # arcade_code.c models the NAOMI SH-4 (round to nearest, fused FMAC)
     exec @cmd or die "ps2fp-cc: exec $cmd[0]: $!";
 }
 my ($ir1, $ir2) = ("$obj.ps2fp.ll", "$obj.ps2fp.r.ll");

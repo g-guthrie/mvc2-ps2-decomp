@@ -110,8 +110,9 @@ void arcade_pad_filter(int port, PadRaw *p)
  * h -= k * pi/2; f = h*h / (3 - h*h / (5 - ... / (11 - 0))); t = h / (1 - f)
  * (= tan h); s = 2t / (1 + t*t) (the 1 + t*t by FMAC, fused); -s if k is
  * odd.  Each statement is one SH-4 float operation, so no contraction. */
-float mvc2_naomi_sin(u32 a)
+float mvc2_naomi_sin(int ai)
 {
+    u32 a = (u32)ai;
     float x, h, q, kf, h2, f, d, t, t2, den, r;
     int k, n;
     x = (float)(a & 0xFFFF);
@@ -141,8 +142,9 @@ float mvc2_naomi_sin(u32 a)
 
 /* 0x0C1EBD40: a' = a & 0xFFFF, folded to 0x10000 - a' above 0x8000; then
  * the sine of (0x4000 - a') as a 16-bit angle */
-float mvc2_naomi_cos(u32 a)
+float mvc2_naomi_cos(int ai)
 {
+    u32 a = (u32)ai;
     u32 m = a & 0xFFFF;
     if (m > 0x8000)
         m = 0x10000 - m;
