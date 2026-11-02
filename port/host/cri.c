@@ -236,6 +236,7 @@ static int adxt_tracing(void)
     }
     return adxt_trace;
 }
+void host_snd_log(const char *fmt, ...);
 #define ADXT_TRACE(...) do { if (adxt_tracing()) host_log(__VA_ARGS__); } while (0)
 static struct {
     int created, stat, paused, vol, mono, ptid, fid, ticks;
@@ -259,6 +260,7 @@ void func_00402C20(void *a, int ptid, int fid) /* ADXT_StartAfs */
     adxt.fid = fid;
     adxt.ticks = 0;
     ADXT_TRACE("ADXT_StartAfs(%d, %d) frame %ld", ptid, fid, mvc2_host_frame);
+    host_snd_log("A start %d %d", ptid, fid);
     if (host_adxt_ops && host_adxt_ops->start_afs) {
         host_adxt_ops->start_afs(ptid, fid);
         return;
@@ -270,6 +272,7 @@ void func_00401868(void *a) /* ADXT_Stop */
 {
     (void)a;
     ADXT_TRACE("ADXT_Stop frame %ld", mvc2_host_frame);
+    host_snd_log("A stop");
     if (host_adxt_ops && host_adxt_ops->stop)
         host_adxt_ops->stop();
     adxt.stat = 0;
@@ -288,6 +291,7 @@ void func_004020D8(void *a, int vol) /* ADXT_SetOutVol */
     (void)a;
     adxt.vol = vol;
     ADXT_TRACE("ADXT_SetOutVol(%d) frame %ld", vol, mvc2_host_frame);
+    host_snd_log("A vol %d", vol);
     if (host_adxt_ops && host_adxt_ops->set_out_vol)
         host_adxt_ops->set_out_vol(vol);
 }
@@ -297,6 +301,7 @@ void func_004026B0(void *a, int sw) /* ADXT_Pause */
     (void)a;
     adxt.paused = sw;
     ADXT_TRACE("ADXT_Pause(%d) frame %ld", sw, mvc2_host_frame);
+    host_snd_log("A pause %d", sw);
     if (host_adxt_ops && host_adxt_ops->pause)
         host_adxt_ops->pause(sw);
 }
@@ -304,6 +309,7 @@ void func_004026B0(void *a, int sw) /* ADXT_Pause */
 void func_00402BC0(int mono) /* ADXT_SetOutputMono */
 {
     adxt.mono = mono;
+    host_snd_log("A mono %d", mono);
     if (host_adxt_ops && host_adxt_ops->set_mono)
         host_adxt_ops->set_mono(mono);
 }

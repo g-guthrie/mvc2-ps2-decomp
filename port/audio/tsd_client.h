@@ -36,6 +36,9 @@ typedef struct TsdcSink {
 } TsdcSink;
 
 void tsdc_set_sink(const TsdcSink *sink);
+/* testing: called with the serialized stream at each flush / each status query */
+extern void (*tsdc_tap_rpc)(const uint8_t *buf, size_t n);
+extern void (*tsdc_tap_status)(int fno, uint32_t arg);
 void tsdc_reset(void);
 int tsdc_init(void);
 int tsdc_play(uint32_t id, int a1, int a2, int a3);

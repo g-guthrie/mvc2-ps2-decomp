@@ -149,6 +149,10 @@ void mvc2_frame(void)
         extern unsigned host_pad_buttons(int port);
         host_state_dump_frame(mvc2_host_frame, host_pad_buttons(0), host_pad_buttons(1));
     }
+    {
+        extern void host_snd_log_frame(void); /* MVC2_SND_LOG (tsd_host.c) */
+        host_snd_log_frame();
+    }
     STEP("func_0012F460 frame counters / CRI tick / pad", func_0012F460());
     STEP("func_0016ECC0 network stubs", func_0016ECC0());
     STEP("func_0012F3E0 auto-repeat P1", func_0012F3E0((u16 *)EE_BSS_PTR(0x004F4480)));

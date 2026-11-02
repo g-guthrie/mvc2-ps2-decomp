@@ -1,0 +1,26 @@
+diff --git a/Source/gs/GSH_OpenGL/GSH_OpenGL.cpp b/Source/gs/GSH_OpenGL/GSH_OpenGL.cpp
+index 7eb9460..bbd3e33 100644
+--- a/Source/gs/GSH_OpenGL/GSH_OpenGL.cpp
++++ b/Source/gs/GSH_OpenGL/GSH_OpenGL.cpp
+@@ -51,6 +51,8 @@ const unsigned int CGSH_OpenGL::g_alphaTestInverse[CGSHandler::ALPHA_TEST_MAX] =
+ };
+ // clang-format on
+ 
++void (*g_oracleFlipHook)(unsigned, unsigned, unsigned, unsigned) = nullptr;
++
+ static uint32 MakeColor(uint8 r, uint8 g, uint8 b, uint8 a)
+ {
+ 	return (a << 24) | (b << 16) | (g << 8) | (r);
+@@ -175,6 +177,12 @@ void CGSH_OpenGL::FlipImpl(const DISPLAY_INFO& dispInfo)
+ 		}
+ 	}
+ 
++	//mvc2 oracle (port/tools/oracle_av): the displayed buffer, before presentation
++	if(g_oracleFlipHook)
++	{
++		g_oracleFlipHook(framebuffer ? (unsigned)framebuffer->m_framebuffer : 0u, dispLayer.width, dispLayer.height, m_fbScale);
++	}
++
+ 	//Clear all of our output framebuffer
+ 	{
+ 		glBindFramebuffer(GL_FRAMEBUFFER, m_presentFramebuffer);
