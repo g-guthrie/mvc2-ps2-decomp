@@ -75,6 +75,17 @@ OVERRIDES = {
         ("if (p[3] == 0 && func_00405968() == -1)",
          "if (p[3] == 0 && func_00405968(p) == -1) /* host R10: $a0 = p */"),
     ],
+    # jtbl_00475ABC is not a jump table: its first word 0x00400020 is the
+    # s16 pair (32, 64), the fourth entry of the effect offset table
+    # D_00475AB0 (x, y pairs read by func_003BDE30, src/fb43_a.c: a Thanos
+    # effect follows its owner by these offsets).  Credited as the address of
+    # func_00400020, the host stored a host code address there, so the effect
+    # flew off to x = 13839 and the CPU's threat check (func_00169470) saw a
+    # different scene (oracle: Thanos vs Ken, +1646 frames).  Host form: the
+    # literal word, as the second entry already is.
+    "src/data/jtbl_00475ABC.c": [
+        ("    func_00400020,\n", "    (Mvc2Address)0x00400020u, /* host R10: data, the s16 pair (32, 64) */\n"),
+    ],
     "src/wave32.c": [
         ("if (func_00100240(*(f32 *)(p + 0x5C) * v, 0)) {",
          "if ((double)(*(f32 *)(p + 0x5C) * v) < 0.0) { /* host R10: _dpflt */"),
