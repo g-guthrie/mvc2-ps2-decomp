@@ -128,6 +128,10 @@ void fe_audio_frame(void)
         }
         memcpy(rec + rec_frames * 2, buf, (size_t)(AUDIO_RATE / 60) * 2 * sizeof(float));
         rec_frames += AUDIO_RATE / 60;
+        {
+            extern void host_av_log_samples(long n);
+            host_av_log_samples(AUDIO_RATE / 60);
+        }
     }
 }
 

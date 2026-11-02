@@ -11,6 +11,9 @@ static int head;          /* D_00633E28: next to send */
 static uint8_t buf[0x200];/* D_00634100 */
 static int cursor;        /* D_00633E18 */
 static TsdcSink S;
+/* testing taps (port/tools/oracle_av): the stream as sent, the status queries */
+void (*tsdc_tap_rpc)(const uint8_t *buf, size_t n);
+void (*tsdc_tap_status)(int fno, uint32_t arg);
 static int ready;         /* D_004C2BB4 */
 static int quiet;         /* tsdc_set_quiet: packets are built but not sent */
 
@@ -216,6 +219,7 @@ int tsdc_flush(int wait)                                 /* 0x423750 */
     if (cursor) {
         int n = (cursor + 16) & -16;
         if (n > (int)sizeof buf) n = sizeof buf;
+        if (tsdc_tap_rpc && !quiet) tsdc_tap_rpc(buf, (size_t)cursor);
         if (S.rpc && !quiet) S.rpc(S.ctx, buf, (size_t)n);
         cursor = 0;
     }
@@ -224,6 +228,7 @@ int tsdc_flush(int wait)                                 /* 0x423750 */
 
 int tsdc_status(int fno, int arg)                        /* 0x423990 */
 {
+    if (tsdc_tap_status) tsdc_tap_status(fno, (uint32_t)arg);
     return S.status ? S.status(S.ctx, fno, (uint32_t)arg) : 0;
 }
 
