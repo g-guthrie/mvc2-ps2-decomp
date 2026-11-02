@@ -7,6 +7,8 @@
  *   arcade.frame_data  (a) NAOMI TBL / HIT / HIT_FM: frame timing and boxes
  *   arcade.damage      (b) NAOMI HIT_DT: damage and hit properties
  *   arcade.cpu_ai      (c) NAOMI CPU AI tables
+ *   arcade.float_round NAOMI float rounding (round to nearest) instead of the
+ *                      EE's round toward zero (port/host/ps2_float.c); live
  *   arcade.naomi       raw string: path of the user's mvsc2.zip (desktop;
  *                      the web page writes /mvsc2.zip itself)
  *
@@ -29,6 +31,8 @@ static void set_bit(int bit, int on)
 static void on_frames(int v) { set_bit(1, v); }
 static void on_damage(int v) { set_bit(2, v); }
 static void on_ai(int v) { set_bit(4, v); }
+extern void ps2_float_set_nearest(int on);
+static void on_float(int v) { ps2_float_set_nearest(v); }
 
 static const SetDesc k_frames = {
     "arcade.frame_data", "NAOMI frame data + hitboxes", SET_SECTION_ARCADE, SET_BOOL, 0, 0, 1, NULL, NULL,
@@ -41,12 +45,18 @@ static const SetDesc k_ai = {
     "arcade.cpu_ai", "NAOMI CPU AI", SET_SECTION_ARCADE, SET_BOOL, 0, 0, 1, NULL, NULL,
     on_ai, SET_RESTART, "The CPU opponents' decision tables from the arcade.", 0};
 
+static const SetDesc k_float = {
+    "arcade.float_round", "NAOMI float rounding", SET_SECTION_ARCADE, SET_BOOL, 0, 0, 1, NULL, NULL,
+    on_float, 0,
+    "Round float results to nearest, as the arcade's SH-4 does. Off: toward zero, as the PS2's EE does.", 0};
+
 void fe_arcade_register(void)
 {
     const char *p = settings_get("arcade.naomi");
     settings_register(&k_frames);
     settings_register(&k_damage);
     settings_register(&k_ai);
+    settings_register(&k_float);
     if (p && *p && !getenv("MVC2_NAOMI"))
         setenv("MVC2_NAOMI", p, 1);
 }

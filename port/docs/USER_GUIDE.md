@@ -212,6 +212,7 @@ the arcade ROM is in the port. Changes take effect on the next start.
 | NAOMI frame data + hitboxes | `arcade.frame_data` | Off | Animation timing (for example Cyclops' 09/02 is 17 frames / 51 ticks instead of 12 / 37) and hit, hurt and body boxes, including the startup invulnerability that comes from them. |
 | NAOMI damage + hit data | `arcade.damage` | Off | Base damage and the other hit properties (Ryu's attack 0x30: 28 instead of 14). |
 | NAOMI CPU AI | `arcade.cpu_ai` | Off | The CPU opponents' decision tables. |
+| NAOMI float rounding | `arcade.float_round` | Off | The PS2's EE rounds every float result toward zero, and the port does the same by default (positions, velocities: the PS2 game frame for frame). The arcade's SH-4 rounds to nearest; this switches to that. Applies at once, needs no zip. |
 
 Where the zip comes from:
 - **Browser:** when a toggle is on, the page asks for `mvsc2.zip` before the
