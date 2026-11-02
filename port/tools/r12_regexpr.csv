@@ -32,3 +32,19 @@ src/w197_q.c,func_003D7B50,func_003D7D50,2,b,
 # $a1 = v (lw $a1, 0x18($a0) in the first branch's delay slot)
 src/wave4.c,func_0039F020,func_0039F080,1,v,
 src/wave4.c,func_0039F020,func_0039F190,1,v,
+# r12 pass (2026-11-01): expr `$aN` = the caller's own incoming register
+# (gen_regpass.py turns these into r12_regpass.csv rows and widens the caller).
+# Path-dependent sites: the register is the entry value unless an earlier call
+# took a path that overwrote it.
+# func_00145160 (dispatch head, p[5]) reads $a1 only in state 0 with p[6] not
+# 0/1 (func_00145180); the path through func_001E3CE0 sets p[6] = 0, so where
+# $a1 is read it is always func_00145FB0's entry $a1
+src/w9m2c.c,func_00145FB0,func_00145160,1,$a1,
+# func_00397580 stores $a2 in the new object's byte +0x21 (no load of +0x21 in
+# the object's update tree, func_00397610..func_003981C0 and their callees).
+# $a2 is the entry $a2 unless func_00175700 ran an animation event
+# (func_001E3370 -> func_001E24E0 / func_001E3710); retail-exact on every
+# frame without an event
+src/grok_r2_0028.c,func_002B4DE0,func_00397580,2,$a2,
+src/grok_w3_002a.c,func_002B5A00,func_00397580,2,$a2,
+src/w174_a.c,func_002B71E0,func_00397580,2,$a2,

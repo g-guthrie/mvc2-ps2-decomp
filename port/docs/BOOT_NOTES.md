@@ -566,14 +566,202 @@ modes are ARCADE, VS, TRAINING, OPTION, SCORE RANKING, SCORE ATTACK, SECRET
 FACTOR and SAVE/LOAD.
 
 **Open:**
-- 750+ padded arguments are still unresolved where the register held a
-  caller local (gen_regpass `--unresolved`).
-- The other `T[i]()` table calls (gen_indirect.py lists 15 skipped) were
-  not traced. Each of the bugs above was found by playing, so more of
-  these classes may remain on paths not yet played.
+- (closed by the "R12 completion pass" below) 750+ padded arguments
+  unresolved (`--unresolved` lists every padded argument no caller
+  *parameter* explains; most of them were already classified in
+  `r12_sites.csv`), and the 15 skipped `T[i]()` table calls.
 - Training's first START right after "FIGHT!" does not pause. A later one
   does. Not compared with the PS2.
 
+
+### R12 completion pass (2026-11-01, branch port-r12)
+
+Goal: every register-passed argument the host does not take from the C is
+accounted for.  The "750+" of the play-through was the `--unresolved` list,
+which counts every padded argument no caller *parameter* explains (before
+the local/harmless classification); `r12_sites.csv` already classified
+those.  This pass made that classification sound, closed the 6 left sites,
+and added the missing class: calls through function tables that pass fewer
+arguments than the table entries read.
+
+Pipeline (order matters; outputs in `port/tools/`):
+```
+python3 port/tools/gen_regpass.py --sigs host_sigs.json --sites port/tools   # ~8 min
+python3 port/tools/gen_indirect.py --sigs host_sigs.json --report /tmp/ind.csv  # ~2.5 min
+```
+
+**Analysis fixes (soundness and precision of "callee never reads").**
+- *mustdef* (what a call surely overwrites) treated a tail jump through a
+  dispatch table as "writes every register", so liveness dropped reads
+  after calls of dispatch heads.  Now: a dispatch table returns through its
+  entries (intersection of what they write), an unknown jump writes nothing
+  more.  No earlier "harmless" verdict flipped.
+- Jump-table labels that run on into data (`jtbl_0044B860`: three functions,
+  then 0, 1, 2...; `D_00446BB0` ... `0x00100010`) counted as "unknown
+  targets, read everything".  An entry must now be a function/glabel/alabel
+  start (`text_entry`); any other word would crash the EE if dispatched.
+- `.word 0x46008024 # cvt.w.s $f0, $f16` (37 COP1 words the disassembler
+  left undecoded) made libm opaque (`sinf` "read every register"); they are
+  decoded from the comment now.
+- `D_` tables of functions (not named `jtbl_`) are recognized for `jr` and
+  `jalr` (`func_001237A0` through `D_004BF318`); a `jalr` through such a
+  table reads what its entries read instead of everything.
+- `VALUE_FREE_READS`: libgcc pack_d (`func_00119118`) reads `$a2` only to
+  mask all of its bits away.
+- Of the 893 harmless sites, 869 are now proved on the asm and
+  24 by host usage only (was 788 and 89).
+
+**Path-dependent sites (the 6 "left"), hand rows with expr `$aN`** (new
+`r12_regexpr.csv` form = the caller's own incoming register; gen_regpass
+turns it into a passthrough row and widens the caller, hostify skips it):
+- `func_00145FB0` -> `func_00145160` arg 1: the state-0 entry reads `$a1`
+  only when `p[6]` is not 0/1; the path through `func_001E3CE0` sets
+  `p[6] = 0`, so where it is read it is always the entry `$a1` (exact).
+- `func_002B4DE0`, `func_002B5A00`, `func_002B71E0` -> `func_00397580` arg
+  2: entry `$a2` unless `func_00175700` ran an animation event; the value
+  goes to the new object's byte `+0x21`, which no function of that object's
+  update tree loads (exact on every frame without an event).
+- `func_001AC860` -> `func_001ACA00` args 2/3: proven harmless after the
+  table fix (the head's three entries never read `$a2`/`$a3`).
+
+**R23 table-call forwarding** (`r12_tblfwd.csv`, `gen_indirect.py`).  A
+call through a table of functions (jalr, or a jr after the entry block,
+which R22 does not cover) whose entries read `$a0..$a3` the caller still
+holds from its own entry: the caller is widened to those registers (R20)
+and `r12_indirect.csv` passes them (`__rpN`), including on calls that
+already pass some arguments (`D_00464A10[p[5]](p)` -> `p, *(p + 24)`).
+gen_indirect now uses the value dataflow with callee summaries, skips
+stores between the table base and the jump, and `--report` lists every
+table call whose entries read more than the C passes: 370, of which 311
+are R22 heads (hostify forwards) and 59 get an `r12_indirect.csv` row (16
+before); in 9 of those a register an entry reads has no known value and
+is passed as 0 (below).  335 functions are R23-widened (36 new
+widenings); host code that called one changed with it
+(`func_003D6FF0(0, 0, 0, 0)` in game_loop.c: retail passes what the sound
+tick left).
+
+**Final table** (padded direct-call arguments without a caller parameter,
+`r12_sites.csv`, plus table calls):
+
+| | count |
+|---|---|
+| fixed automatically: regpass rows (caller parameter, incl. R20/R22/R23) | 1,035 rows (was 1,019) |
+| fixed automatically: `r12_regauto.csv` / `r12_regsym.csv` | 9 / 75 |
+| fixed by hand row (`r12_regexpr.csv`) | 22 C-expression rows + 4 `$aN` rows |
+| proven harmless (asm liveness / host never uses) | 869 / 24 |
+| table calls: R22 forwarded / `r12_indirect.csv` rows | 311 / 59 |
+| remaining direct-call sites | 26 |
+| remaining table calls (row passes 0 for the unknown register) | 9 |
+
+After the code-disassembled table fix (below) the regenerated counts are:
+971 padded arguments (auto 9, hand 22, harmless 917, left 23), 1,063
+passthrough rows, 2,571 dispatch heads, 340 R23 functions, 57
+`r12_indirect.csv` rows.
+
+The 35 remaining are all created by the R23 widening (before it, these
+registers were silently 0 at the indirect call and not counted); the host
+still passes 0, as before.  Each holds a path-dependent leftover in retail
+too (a phi of the entry value and an earlier call's leftover, or what the
+previous call left: `rr0_b.c` calls `func_001793B0` five times in a row),
+and for each, every read the asm liveness finds is one of:
+- only through an unknown indirect call (per-character method tables at
+  `+0x43C`, function-pointer fields): `func_001793B0` (10 sites),
+  `func_0036B3D0` (3), `func_0017D390` (3), `func_003D7030` (1); tables
+  `D_00448A00`, `D_00448A10`, `D_00448E50`, `D_0045E0F0`;
+- library register spills (`func_0040D5A0` save area, syscall stubs) or
+  may-paths through credited calls that pass an explicit value in that
+  register (e.g. `func_001415B0` -> `func_00141540`): `func_003D69A0` (3),
+  `func_00129080` (2), `func_003D6FF0` (2), `func_0032C880` (1),
+  `func_003D6340` (1); tables `D_004C21D0`, `D_00446290`, `D_0043CCB8`
+  (`func_00128A30`: the asm's table base is not found).
+No read of one of them by a credited instruction on a feasible path was
+found; a differential run against retail (oracle) is the check left.
+
+Verification: native i386 and web single-file builds; native scripts
+`arcade_fight`, `long_fight` (`--cpu-team 0x25,0x0C,0x09`, frame 3792),
+`vs_stage2`, `gallery`, `button_config`, `charsel`, `training_pause`,
+`vs_two_pads`, `score_attack` (same state timeline frame for frame as the
+play-through's `sa4`), `shop_buy_save`, `arcade_ending_rank` (under gdb: the
+whole run to the ending, staff roll and ranking), `assist_sweep`
+(`private/converted/boot/native/r12b/`); browser title -> menu ->
+character select -> VERSUS -> fight with attacks and assist, default team
+and `--cpu-team 54,12,13` (`private/converted/boot/web/r12_1`, `r12_2`).
+**Native crash in arcade from an empty card: cause and fix.**
+`arcade_ending_rank.txt` from an empty card crashed natively (SIGSEGV in
+the first fight, `func_001754A0 <- func_001A79B0 <- func_001A7990 <-
+func_003DA6F0`), only with address randomization on, so never under plain
+gdb.  A core dump (`r12k/core`) showed the effect object's owner (+0x18)
+was `_GLOBAL_OFFSET_TABLE_`: the saved `%ebx` an i386 callee reads when
+its caller passes fewer arguments.  The object (mode 5) is made by
+`func_001A8020(p, q)` with `q` = the parent's owner.  `func_001A8020` is an
+entry of `jtbl_004BF7A0`, dispatched by `func_001A8000(p) {
+jtbl_004BF7A0[p[5]](p); }`, which on the EE tail-jumps with `$a1` = the
+owner still in place (`func_001A7B50` passes it).  But main.s disassembles
+`jtbl_004BF7A0` as code (`glabel` + `add $s0, $zero, $k0` = 0x001A8020),
+so the table was empty to every tool: no R22 forwarding (and the liveness
+saw an empty dispatch).  On wasm `q` was 0; on i386 stack garbage, which
+in this branch's stack layout was the GOT (main's happened to survive).
+Fix: `parse_jtbls`, `load_dtables` and `gen_indirect.tables` read the raw
+word of tables disassembled as code (115 `glabel jtbl_` in main.s);
+dispatch heads 2,462 -> 2,571, widened functions +121, regpass rows
+1,035 -> 1,063.  Earlier in this hunt: R23 widened `func_003D2B30` while
+its caller's table call got no row (i386 garbage there too); gen_indirect
+now pads every table call to its entries' widened arity (0 for unknown
+registers), and R23 skips functions stored as callbacks (`%lo(F)`).
+
+### R24 return values (2026-11-02, branch port-r12)
+
+The oracle pass found that hostify R14 (`return 0;` where a non-void
+function falls off the end, 48 sites, plus 16 `return;`) and the R12
+`(f(), 0)` wrap of void functions whose value a caller uses (123 function /
+TU pairs) drop a value the EE returns: at most of them `$v0` holds the last
+callee's result (a tail call, or a jal / jalr then `jr $ra`).
+`func_00185010` made the port deal damage the PS2 never deals (R10
+override, oracle pass).
+
+`port/tools/gen_returns.py` (~30 s; run after gen_regpass) writes
+`port/tools/r12_returns.csv`: for each such function, the reaching
+definitions of `$v0` at every return (a call counts as a definition; a
+syscall too), whether any caller uses the value (asm: `$v0` read after
+the call before it is redefined, or returned on to a caller that uses it,
+through tail calls and dispatch tables, contiguous `D_` tables chained:
+`D_00448E30` runs on into `D_00448E50`), and closes over the void callees
+and void table entries whose value then matters.  Actions:
+
+| action | meaning | host | count |
+|---|---|---|---|
+| return-last | every reaching definition is a call (direct or through a table) or the caller's own `$v0` | hostify R24: `int __v0 = 0;` in the function, every call statement whose callee returns a value records it (`__v0 = (int)(f(...));`, table calls through an `int (*)()` cast), and the function returns `__v0` where it fell off the end / said `return;`; a void definition becomes int (prototype and the `(f(), 0)` wraps follow) | 78 |
+| const:N | a function that never sets `$v0` and is entered only through `jalr $v0` / `jr $v0`: it returns its own address (7, all `D_00448E30` / `func_001BB0D0` handlers) | `__v0` starts at N | 7 |
+| transparent | never sets `$v0` (directly or through callees that do not): returns the caller's earlier `$v0` | callers' `__v0` is left alone at the call; elsewhere 0, as before | 43 (41 used) |
+| harmless | no caller uses the value | unchanged | 72 |
+| host | the port implements it (syscall stubs, host_impl.csv `ret`) | unchanged | 27 |
+| left | constants mixed with calls on different paths, an alias name with no credited definition, or a callee with no host value | unchanged | 11 |
+
+Left (value used): `func_00185010` (keeps its R10 override; its handlers
+now return their values), `func_00164C50`, `func_003B8170` (a call or 0),
+`func_003EAB40` (2, 4 or the caller's `$v0`), `func_00183d50` (alias of
+`func_00183D50`) and `func_00187840` through it, `func_001BB0D0`,
+`func_00174A40` / `func_003FB128` / `func_004112D8` / `func_003FE040`
+(SDK code whose callee returns through a load).
+
+**Verification (merge of main e693d9cfe + the above, native i386).**
+`arcade_ending_rank.txt` from an empty card twice, both to the SCORE
+RANKING (frame 28147, `private/converted/boot/native/r12l/arc1`, `arc2`);
+`long_fight` (`--cpu-team 0x25,0x0C,0x09`, frame 3792), `assist_sweep`,
+`score_attack` (frame 20487, same as before); browser title -> fight with
+assist (`web/r12_5`).  Oracle (`-DMVC2_PS2_FLOAT=ON` build, `run_pair.sh`,
+`--no-blocks`): attract cycle 4835 frames, 4370 compared after the 1/1/0
+resync, all identical; `fight_mix` 7000 frames, 6535 compared, all
+identical (`private/converted/boot/oracle_r12/`).
+
+**Kept from the oracle branch:** the R10 overrides for
+`func_002BCE90(p, q)` (w20a0_j.c) and `func_00405968(p)` (w193_b.c).  They
+are a class the R12 tables do not see: calls through a K&R declaration in
+the TU that also defines or fully declares the callee, which hostify R12
+leaves alone (no pad log entry).  A source scan finds 52 such calls with
+fewer arguments than the callee's canonical prototype (most in
+`tail_leaves.c`, `func_X(p)` to a `(s32 a0, ..., s32 a3)` leaf that only
+uses `a0`); not classified yet.
 
 ### Renderer pass (2026-10-31, branch port-render)
 

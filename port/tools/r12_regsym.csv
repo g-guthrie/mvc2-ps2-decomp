@@ -6,6 +6,7 @@ src/fb23_d.c,func_00379FA0,func_0037A800,1,lw(P0@24)
 src/fb26_b.c,func_00328560,func_00199460,0,lw(P0@24)
 src/fb26_b.c,func_00328560,func_001C5390,0,lw(P0@24)
 src/g5.c,func_00369730,func_0036A620,1,lw(P0@24)
+src/glyph_and_owner_gate.c,func_00136390,func_001363D0,1,lbu(P0@4)@1
 src/grok_ab_282970.c,func_00282970,func_00282A60,1,lbu(P0@508)
 src/grok_ao_28beb0.c,func_0028BEB0,func_0028C050,1,P0@696
 src/grok_ao_28beb0.c,func_0028BEB0,func_0028C1C0,1,P0@696
