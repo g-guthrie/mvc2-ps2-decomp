@@ -25,6 +25,14 @@
 /* MVC2_PS2FP_OFF=1 (testing, A/B): the helpers round to nearest like the
  * host, i.e. the game runs as it did before this file */
 static int fp_off = -1;
+/* arcade.float_round (port/host/fe/fe_arcade.c): the NAOMI's SH-4 runs the
+ * game with round-to-nearest (fpscr RM = 0), so the arcade setting gives the
+ * helpers the host's own rounding */
+void ps2_float_set_nearest(int on)
+{
+    const char *e = getenv("MVC2_PS2FP_OFF");
+    fp_off = on || (e && *e && *e != '0');
+}
 static inline int off(void)
 {
     if (__builtin_expect(fp_off < 0, 0)) {
@@ -116,8 +124,14 @@ f32 ps2_fdiv(f32 a, f32 b)
     f32 f;
     a = daz(a);
     b = daz(b);
+    if (b == 0) {
+        /* the EE gives the largest float with the quotient's sign (the
+         * oracle: 7F7FFFFF where the host had +inf, Thanos run) */
+        uint32_t s = (fbits(a) ^ fbits(b)) & 0x80000000u;
+        return bitsf(s | 0x7F7FFFFFu);
+    }
     q = (double)a / (double)b;
-    if (q - q != 0 || b == 0)
+    if (q - q != 0)
         return (f32)q;
     f = (f32)q;
     if ((double)f == q) {
@@ -170,4 +184,15 @@ f32 ps2_ul2f(uint64_t i)
 {
     double d = (double)i;
     return rz(d, i > (uint64_t)d ? 1 : i < (uint64_t)d ? -1 : 0);
+}
+
+/* double -> float: the game's conversion is the soft-float dptofp (the EE
+ * toolchain's fp-bit __truncdfsf2), which the oracle shows truncating too
+ * (func_00161240: -(f32)(1.0 - 0.0125 * x) is 0xBF7CCCCC on the PS2,
+ * 0xBF7CCCCD rounded to nearest). */
+f32 ps2_d2f(double d)
+{
+    if (off())
+        return (f32)d;
+    return rz(d, 0);
 }

@@ -1,7 +1,7 @@
 # oracle scenario: TRAINING, START pressed from the moment the fight starts
 # (BOOT_NOTES: "the first START right after FIGHT! does not pause"); compare
-# with --resync 1/1/0.  Each START is held 2 frames, then 60 frames pass, then
-# START again (closes the pause menu if one opened).
+# with --resync 1/1/0.  Each START is a 6-frame press (as training_pause.txt), then 60 frames
+# pass, then START again (closes the pause menu if one opened).
 state 1/1/1
 wait 30
 until 1/7 start 40
@@ -15,85 +15,130 @@ wait 20
 press cross
 wait 120
 until 2/1/2 cross 50
-wait 300
-hold start 2
-wait 60
-hold start 2
-wait 60
+wait 200
+press start
+wait 50
+press start
+wait 50
 wait 20
-hold start 2
-wait 60
-hold start 2
-wait 60
+press start
+wait 50
+press start
+wait 50
 wait 20
-hold start 2
-wait 60
-hold start 2
-wait 60
+press start
+wait 50
+press start
+wait 50
 wait 20
-hold start 2
-wait 60
-hold start 2
-wait 60
+press start
+wait 50
+press start
+wait 50
 wait 20
-hold start 2
-wait 60
-hold start 2
-wait 60
+press start
+wait 50
+press start
+wait 50
 wait 20
-hold start 2
-wait 60
-hold start 2
-wait 60
+press start
+wait 50
+press start
+wait 50
 wait 20
-hold start 2
-wait 60
-hold start 2
-wait 60
+press start
+wait 50
+press start
+wait 50
 wait 20
-hold start 2
-wait 60
-hold start 2
-wait 60
+press start
+wait 50
+press start
+wait 50
 wait 20
-hold start 2
-wait 60
-hold start 2
-wait 60
+press start
+wait 50
+press start
+wait 50
 wait 20
-hold start 2
-wait 60
-hold start 2
-wait 60
+press start
+wait 50
+press start
+wait 50
 wait 20
-hold start 2
-wait 60
-hold start 2
-wait 60
+press start
+wait 50
+press start
+wait 50
 wait 20
-hold start 2
-wait 60
-hold start 2
-wait 60
+press start
+wait 50
+press start
+wait 50
 wait 20
-hold start 2
-wait 60
-hold start 2
-wait 60
+press start
+wait 50
+press start
+wait 50
 wait 20
-hold start 2
-wait 60
-hold start 2
-wait 60
+press start
+wait 50
+press start
+wait 50
 wait 20
-hold start 2
-wait 60
-hold start 2
-wait 60
+press start
+wait 50
+press start
+wait 50
 wait 20
-hold start 2
-wait 60
-hold start 2
-wait 60
+press start
+wait 50
+press start
+wait 50
+wait 20
+press start
+wait 50
+press start
+wait 50
+wait 20
+press start
+wait 50
+press start
+wait 50
+wait 20
+press start
+wait 50
+press start
+wait 50
+wait 20
+press start
+wait 50
+press start
+wait 50
+wait 20
+press start
+wait 50
+press start
+wait 50
+wait 20
+press start
+wait 50
+press start
+wait 50
+wait 20
+press start
+wait 50
+press start
+wait 50
+wait 20
+press start
+wait 50
+press start
+wait 50
+wait 20
+press start
+wait 50
+press start
+wait 50
 wait 300
 quit

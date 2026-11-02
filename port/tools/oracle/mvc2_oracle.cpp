@@ -257,6 +257,7 @@ static struct
 	long dump_from = 0;
 	int cpu_team[3] = {-1, -1, -1};
 	int p1_team = -1;
+	int cpu_hp = -1, p1_hp = -1;
 	struct
 	{
 		long frame;
@@ -315,6 +316,20 @@ static void on_frame(CMIPS* ctx)
 		}
 	}
 	if(O.unlock) unlock_everything();
+	/* --cpu-hp N / --p1-hp N: port/host/game_loop.c cpu_hp_cap() (the port
+	 * applies it later in the frame, after code that does not touch health) */
+	for(int i = 0; O.p1_hp > 0 && i < 6; i += 2)
+	{
+		uint32 a = 0x004F20B0 + i * 0x5B8 + 0x434;
+		int16 hp = (int16)(rd8(a) | rd8(a + 1) << 8);
+		if(hp > 0 && hp < O.p1_hp) { wr8(a, (uint8)O.p1_hp); wr8(a + 1, (uint8)(O.p1_hp >> 8)); }
+	}
+	for(int i = 1; O.cpu_hp >= 0 && i < 6; i += 2)
+	{
+		uint32 a = 0x004F20B0 + i * 0x5B8 + 0x434;
+		int16 hp = (int16)(rd8(a) | rd8(a + 1) << 8);
+		if(hp > O.cpu_hp) { wr8(a, (uint8)O.cpu_hp); wr8(a + 1, (uint8)(O.cpu_hp >> 8)); }
+	}
 	uint16 b0 = 0, b1 = 0;
 	for(int i = 0; i < O.npress; i++)
 		if(g_frame >= O.press[i].frame && g_frame < O.press[i].frame + O.press[i].len) b0 |= O.press[i].bits;
@@ -381,6 +396,12 @@ static std::vector<SnapAt> g_snapat;
  * host_pad_set()'s buttons.  (Through the IOP pad module alone they arrive
  * one or two frames later, depending on when its DMA lands.) */
 #define SCE_PAD_READ 0x0010D910
+/* the return site of func_003EDA60's scePadRead call: the copy the game made
+ * is overwritten with the frame's buttons there too, because the IOP's SIF
+ * DMA can land in libpad's buffer between the entry hook and the copy (Play!
+ * interleaves the EE and the IOP in time slices) */
+#define SCE_PAD_READ_RET 0x003EDE5C
+static uint32 g_pad_dst[2], g_pad_last = 0;
 static void pad_inject(uint32 p)
 {
 	uint32 buf = rd32(0x004C83D0 + p * 0x70);
@@ -407,6 +428,8 @@ static void pad_inject(uint32 p)
 static void pad_read_hook(CMIPS* ctx)
 {
 	uint32 p = ctx->m_State.nGPR[CMIPS::A0].nV0 & 1;
+	g_pad_dst[p] = ctx->m_State.nGPR[CMIPS::A2].nV0;
+	g_pad_last = p;
 	if(g_frame >= g_trace_from && g_frame <= g_trace_to && getenv("MVC2_ORACLE_PADDBG"))
 	{
 		uint32 b = rd32(0x004C83D0 + p * 0x70);
@@ -423,9 +446,80 @@ static void pad_read_hook(CMIPS* ctx)
 	}
 }
 
+/* --cpu-team a,b,c / --p1-team a,b,c: as the port's (port/host/arcade.c):
+ * the game's own CPU pick (func_0032DF90) runs, then the ids replace its
+ * choices at its two return sites; side 0's picks are forced as the game
+ * queues their PAKs (func_0012EF50 / func_0012EF80 entry). */
+static int g_cpu_team[3] = {-1, -1, -1}, g_p1_team[3] = {-1, -1, -1};
+static int g_pick_side;
+#define CPU_PICK 0x0032DF90
+static const uint32 k_cpu_pick_ret[] = {0x0032A298, 0x0032CBD0};
+static void force_rec(uint32 rec, int id, const char* who, int t, int set_assist)
+{
+	wr8(rec + 0x540, (uint8)id);
+	wr8(rec + 1, (uint8)id);
+	if(set_assist) wr8(rec + 0x4DD, rd8(0x004405A0 + id));
+	fprintf(stderr, "[oracle] %s pick %d: character %#x (forced)\n", who, t, id);
+}
+static int team_hook(CMIPS* ctx)
+{
+	uint32 pc = ctx->m_State.nPC;
+	if(pc == CPU_PICK)
+	{
+		g_pick_side = (int8)ctx->m_State.nGPR[CMIPS::A0].nV0;
+		return 1;
+	}
+	for(uint32 r : k_cpu_pick_ret)
+		if(pc == r)
+		{
+			uint32 g = rd32(0x004C2840);
+			if((int8)rd8(g + 0x85) == 7) return 1;
+			for(int t = 0; t < 3; t++)
+				if(g_cpu_team[t] >= 0) force_rec(0x004F20B0 + (g_pick_side + t * 2) * 0x5B8, g_cpu_team[t], "CPU", t, 1);
+			return 1;
+		}
+	if(pc == 0x0012EF50 || pc == 0x0012EF80)
+	{
+		uint32 p = ctx->m_State.nGPR[CMIPS::A0].nV0;
+		if(p >= 0x004F20B0 && p < 0x004F20B0 + 6 * 0x5B8 && (p - 0x004F20B0) % 0x5B8 == 0)
+		{
+			int i = (p - 0x004F20B0) / 0x5B8;
+			if(!(i & 1) && g_p1_team[i / 2] >= 0 && (int8)rd8(p + 0x540) != g_p1_team[i / 2])
+				force_rec(p, g_p1_team[i / 2], "P1", i / 2, 0);
+		}
+		return 1;
+	}
+	return 0;
+}
+static void parse_team(const char* s, int* t)
+{
+	for(int k = 0; k < 3 && s && *s; k++)
+	{
+		char* e;
+		long v = strtol(s, &e, 0);
+		if(e != s) t[k] = (int)v;
+		s = strchr(s, ',');
+		if(s) s++;
+	}
+}
+
 static void hook(CMIPS* ctx)
 {
 	if(g_quit) return;
+	if(team_hook(ctx)) return;
+	if(ctx->m_State.nPC == SCE_PAD_READ_RET)
+	{
+		uint32 p = g_pad_last, d = g_pad_dst[p];
+		uint16 inv = (uint16)~g_buttons[p];
+		if(d && rd8(d) != 0xFF)
+		{
+			wr8(d + 2, (uint8)inv);
+			wr8(d + 3, (uint8)(inv >> 8));
+		}
+		for(uint32 a : g_trace)
+			if(a == ctx->m_State.nPC) trace(ctx);
+		return;
+	}
 	if(ctx->m_State.nPC == SCE_PAD_READ)
 	{
 		pad_read_hook(ctx);
@@ -470,6 +564,10 @@ int main(int argc, char** argv)
 		else if(!strcmp(a, "--dump-from") && n) { O.dump_from = atol(n); i++; }
 		else if(!strcmp(a, "--no-unlock")) O.unlock = 0;
 		else if(!strcmp(a, "--resync") && n) { O.resync = n; i++; }
+		else if(!strcmp(a, "--cpu-hp") && n) { O.cpu_hp = atoi(n); i++; }
+		else if(!strcmp(a, "--p1-hp") && n) { O.p1_hp = atoi(n); i++; }
+		else if(!strcmp(a, "--cpu-team") && n) { parse_team(n, g_cpu_team); i++; }
+		else if(!strcmp(a, "--p1-team") && n) { parse_team(n, g_p1_team); i++; }
 		else if(!strcmp(a, "--snap-at") && n)
 		{
 			SnapAt sa;
@@ -523,6 +621,17 @@ int main(int argc, char** argv)
 	vm.m_ee->m_os->BootFromCDROM();
 	vm.m_ee->m_EE.m_breakpoints.insert(O.hook);
 	vm.m_ee->m_EE.m_breakpoints.insert(SCE_PAD_READ);
+	vm.m_ee->m_EE.m_breakpoints.insert(SCE_PAD_READ_RET);
+	if(g_cpu_team[0] >= 0 || g_cpu_team[1] >= 0 || g_cpu_team[2] >= 0)
+	{
+		vm.m_ee->m_EE.m_breakpoints.insert(CPU_PICK);
+		for(uint32 r : k_cpu_pick_ret) vm.m_ee->m_EE.m_breakpoints.insert(r);
+	}
+	if(g_p1_team[0] >= 0 || g_p1_team[1] >= 0 || g_p1_team[2] >= 0)
+	{
+		vm.m_ee->m_EE.m_breakpoints.insert(0x0012EF50);
+		vm.m_ee->m_EE.m_breakpoints.insert(0x0012EF80);
+	}
 	for(uint32 a : g_trace) vm.m_ee->m_EE.m_breakpoints.insert(a);
 	for(auto& sa : g_snapat) vm.m_ee->m_EE.m_breakpoints.insert(sa.addr);
 	g_oracleBreakHook = &hook;

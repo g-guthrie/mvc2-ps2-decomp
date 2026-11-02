@@ -7,6 +7,8 @@
  *   arcade.frame_data  (a) NAOMI TBL / HIT / HIT_FM: frame timing and boxes
  *   arcade.damage      (b) NAOMI HIT_DT: damage and hit properties
  *   arcade.cpu_ai      (c) NAOMI CPU AI tables
+ *   arcade.float_round NAOMI float rounding (round to nearest) instead of the
+ *                      EE's round toward zero (port/host/ps2_float.c); live
  *   arcade.naomi       raw string: path of the user's mvsc2.zip (desktop;
  *                      the web page writes /mvsc2.zip itself)
  *
@@ -37,6 +39,8 @@ static void set_bit(int bit, int on)
 static void on_frames(int v) { set_bit(1, v); }
 static void on_damage(int v) { set_bit(2, v); }
 static void on_ai(int v) { set_bit(4, v); }
+extern void ps2_float_set_nearest(int on);
+static void on_float(int v) { ps2_float_set_nearest(v); }
 
 extern int mvc2_arc_code, mvc2_arc_input_delay;
 static void code_bit(int bit, int on)
@@ -83,6 +87,10 @@ static const SetDesc k_timing_d = {
     on_timing, 0,
     "Port: 60 Hz, a press counts in the next step. Arcade: 59.94 Hz and one frame of input delay (NAOMI reads "
     "the controls in V-blank from the previous Maple transfer). PS2: 59.94 Hz, two frames.", 0};
+static const SetDesc k_float = {
+    "arcade.float_round", "NAOMI float rounding", SET_SECTION_ARCADE, SET_BOOL, 0, 0, 1, NULL, NULL,
+    on_float, 0,
+    "Round float results to nearest, as the arcade's SH-4 does. Off: toward zero, as the PS2's EE does.", 0};
 
 void fe_arcade_register(void)
 {
@@ -93,6 +101,7 @@ void fe_arcade_register(void)
     settings_register(&k_fs_edge);
     settings_register(&k_servbot);
     settings_register(&k_timing_d);
+    settings_register(&k_float);
     if (p && *p && !getenv("MVC2_NAOMI"))
         setenv("MVC2_NAOMI", p, 1);
 }

@@ -61,6 +61,31 @@ OVERRIDES = {
         ("typedef struct { s32 f0, f4, f8, fC, f10, f14; } Obj;",
          "typedef struct { s32 f0, f4, f8, fC, f10, f14, f18; } Obj; /* host R10: func_004161D0 writes +0x18 */"),
     ],
+    # Two calls the R12 pass left unprototyped (the TU's declarations are
+    # K&R and the raw build saw no mismatch).  Under MVC2_PS2_FLOAT the
+    # wasm backend sees both arities in one module and wasm-ld rejects the
+    # link ("function signature mismatch").  The arguments are what the asm
+    # passes: func_002BCBE0's $a1 is still q at `jal func_002BCE90`
+    # (0x002BCC18); func_00405CC0's $a0 is still p at the first
+    # `jal func_00405968` (0x00405D04).  (R12 class, for the r12 work.)
+    "src/w20a0_j.c": [
+        ("        func_002BCE90(p);\n", "        func_002BCE90(p, q); /* host R10: $a1 = q */\n"),
+    ],
+    "src/w193_b.c": [
+        ("if (p[3] == 0 && func_00405968() == -1)",
+         "if (p[3] == 0 && func_00405968(p) == -1) /* host R10: $a0 = p */"),
+    ],
+    # jtbl_00475ABC is not a jump table: its first word 0x00400020 is the
+    # s16 pair (32, 64), the fourth entry of the effect offset table
+    # D_00475AB0 (x, y pairs read by func_003BDE30, src/fb43_a.c: a Thanos
+    # effect follows its owner by these offsets).  Credited as the address of
+    # func_00400020, the host stored a host code address there, so the effect
+    # flew off to x = 13839 and the CPU's threat check (func_00169470) saw a
+    # different scene (oracle: Thanos vs Ken, +1646 frames).  Host form: the
+    # literal word, as the second entry already is.
+    "src/data/jtbl_00475ABC.c": [
+        ("    func_00400020,\n", "    (Mvc2Address)0x00400020u, /* host R10: data, the s16 pair (32, 64) */\n"),
+    ],
     "src/wave32.c": [
         ("if (func_00100240(*(f32 *)(p + 0x5C) * v, 0)) {",
          "if ((double)(*(f32 *)(p + 0x5C) * v) < 0.0) { /* host R10: _dpflt */"),

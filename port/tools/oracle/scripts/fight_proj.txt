@@ -1,0 +1,496 @@
+# oracle scenario: ARCADE with forced teams (--p1-team / --cpu-team on both
+# sides), projectile, uppercut, hyper and assist heavy (compare with --resync 1/1/0:
+# the script waits for the logo, so both sides start it at the same frame)
+state 1/1/1
+wait 30
+until 1/7 start 40
+wait 30
+until 3/1/1 start 30
+wait 40
+press cross
+state 2/1/1
+wait 120
+until 2/1/2 cross 50
+wait 420
+hold down 3
+hold down+right 3
+hold right+square 3
+wait 30
+hold right 3
+hold down 3
+hold down+right 3
+hold down+right+triangle 3
+wait 50
+hold down 3
+hold down+left 3
+hold left+circle 3
+wait 50
+hold down 3
+hold down+right 3
+hold right+square+triangle 3
+wait 150
+press l1
+wait 20
+press r1
+wait 60
+hold down 3
+hold down+right 3
+hold right+cross+circle 3
+wait 150
+press right 30
+press right+triangle 4
+wait 40
+press square
+press triangle
+wait 30
+press down 10
+press down+circle
+wait 40
+press l1+r1
+wait 120
+press up 4
+wait 12
+press down+triangle
+wait 60
+hold down 3
+hold down+right 3
+hold right+square 3
+wait 30
+hold right 3
+hold down 3
+hold down+right 3
+hold down+right+triangle 3
+wait 50
+hold down 3
+hold down+left 3
+hold left+circle 3
+wait 50
+hold down 3
+hold down+right 3
+hold right+square+triangle 3
+wait 150
+press l1
+wait 20
+press r1
+wait 60
+hold down 3
+hold down+right 3
+hold right+cross+circle 3
+wait 150
+press right 30
+press right+triangle 4
+wait 40
+press square
+press triangle
+wait 30
+press down 10
+press down+circle
+wait 40
+press l1+r1
+wait 120
+press up 4
+wait 12
+press down+triangle
+wait 60
+hold down 3
+hold down+right 3
+hold right+square 3
+wait 30
+hold right 3
+hold down 3
+hold down+right 3
+hold down+right+triangle 3
+wait 50
+hold down 3
+hold down+left 3
+hold left+circle 3
+wait 50
+hold down 3
+hold down+right 3
+hold right+square+triangle 3
+wait 150
+press l1
+wait 20
+press r1
+wait 60
+hold down 3
+hold down+right 3
+hold right+cross+circle 3
+wait 150
+press right 30
+press right+triangle 4
+wait 40
+press square
+press triangle
+wait 30
+press down 10
+press down+circle
+wait 40
+press l1+r1
+wait 120
+press up 4
+wait 12
+press down+triangle
+wait 60
+hold down 3
+hold down+right 3
+hold right+square 3
+wait 30
+hold right 3
+hold down 3
+hold down+right 3
+hold down+right+triangle 3
+wait 50
+hold down 3
+hold down+left 3
+hold left+circle 3
+wait 50
+hold down 3
+hold down+right 3
+hold right+square+triangle 3
+wait 150
+press l1
+wait 20
+press r1
+wait 60
+hold down 3
+hold down+right 3
+hold right+cross+circle 3
+wait 150
+press right 30
+press right+triangle 4
+wait 40
+press square
+press triangle
+wait 30
+press down 10
+press down+circle
+wait 40
+press l1+r1
+wait 120
+press up 4
+wait 12
+press down+triangle
+wait 60
+hold down 3
+hold down+right 3
+hold right+square 3
+wait 30
+hold right 3
+hold down 3
+hold down+right 3
+hold down+right+triangle 3
+wait 50
+hold down 3
+hold down+left 3
+hold left+circle 3
+wait 50
+hold down 3
+hold down+right 3
+hold right+square+triangle 3
+wait 150
+press l1
+wait 20
+press r1
+wait 60
+hold down 3
+hold down+right 3
+hold right+cross+circle 3
+wait 150
+press right 30
+press right+triangle 4
+wait 40
+press square
+press triangle
+wait 30
+press down 10
+press down+circle
+wait 40
+press l1+r1
+wait 120
+press up 4
+wait 12
+press down+triangle
+wait 60
+hold down 3
+hold down+right 3
+hold right+square 3
+wait 30
+hold right 3
+hold down 3
+hold down+right 3
+hold down+right+triangle 3
+wait 50
+hold down 3
+hold down+left 3
+hold left+circle 3
+wait 50
+hold down 3
+hold down+right 3
+hold right+square+triangle 3
+wait 150
+press l1
+wait 20
+press r1
+wait 60
+hold down 3
+hold down+right 3
+hold right+cross+circle 3
+wait 150
+press right 30
+press right+triangle 4
+wait 40
+press square
+press triangle
+wait 30
+press down 10
+press down+circle
+wait 40
+press l1+r1
+wait 120
+press up 4
+wait 12
+press down+triangle
+wait 60
+hold down 3
+hold down+right 3
+hold right+square 3
+wait 30
+hold right 3
+hold down 3
+hold down+right 3
+hold down+right+triangle 3
+wait 50
+hold down 3
+hold down+left 3
+hold left+circle 3
+wait 50
+hold down 3
+hold down+right 3
+hold right+square+triangle 3
+wait 150
+press l1
+wait 20
+press r1
+wait 60
+hold down 3
+hold down+right 3
+hold right+cross+circle 3
+wait 150
+press right 30
+press right+triangle 4
+wait 40
+press square
+press triangle
+wait 30
+press down 10
+press down+circle
+wait 40
+press l1+r1
+wait 120
+press up 4
+wait 12
+press down+triangle
+wait 60
+hold down 3
+hold down+right 3
+hold right+square 3
+wait 30
+hold right 3
+hold down 3
+hold down+right 3
+hold down+right+triangle 3
+wait 50
+hold down 3
+hold down+left 3
+hold left+circle 3
+wait 50
+hold down 3
+hold down+right 3
+hold right+square+triangle 3
+wait 150
+press l1
+wait 20
+press r1
+wait 60
+hold down 3
+hold down+right 3
+hold right+cross+circle 3
+wait 150
+press right 30
+press right+triangle 4
+wait 40
+press square
+press triangle
+wait 30
+press down 10
+press down+circle
+wait 40
+press l1+r1
+wait 120
+press up 4
+wait 12
+press down+triangle
+wait 60
+hold down 3
+hold down+right 3
+hold right+square 3
+wait 30
+hold right 3
+hold down 3
+hold down+right 3
+hold down+right+triangle 3
+wait 50
+hold down 3
+hold down+left 3
+hold left+circle 3
+wait 50
+hold down 3
+hold down+right 3
+hold right+square+triangle 3
+wait 150
+press l1
+wait 20
+press r1
+wait 60
+hold down 3
+hold down+right 3
+hold right+cross+circle 3
+wait 150
+press right 30
+press right+triangle 4
+wait 40
+press square
+press triangle
+wait 30
+press down 10
+press down+circle
+wait 40
+press l1+r1
+wait 120
+press up 4
+wait 12
+press down+triangle
+wait 60
+hold down 3
+hold down+right 3
+hold right+square 3
+wait 30
+hold right 3
+hold down 3
+hold down+right 3
+hold down+right+triangle 3
+wait 50
+hold down 3
+hold down+left 3
+hold left+circle 3
+wait 50
+hold down 3
+hold down+right 3
+hold right+square+triangle 3
+wait 150
+press l1
+wait 20
+press r1
+wait 60
+hold down 3
+hold down+right 3
+hold right+cross+circle 3
+wait 150
+press right 30
+press right+triangle 4
+wait 40
+press square
+press triangle
+wait 30
+press down 10
+press down+circle
+wait 40
+press l1+r1
+wait 120
+press up 4
+wait 12
+press down+triangle
+wait 60
+hold down 3
+hold down+right 3
+hold right+square 3
+wait 30
+hold right 3
+hold down 3
+hold down+right 3
+hold down+right+triangle 3
+wait 50
+hold down 3
+hold down+left 3
+hold left+circle 3
+wait 50
+hold down 3
+hold down+right 3
+hold right+square+triangle 3
+wait 150
+press l1
+wait 20
+press r1
+wait 60
+hold down 3
+hold down+right 3
+hold right+cross+circle 3
+wait 150
+press right 30
+press right+triangle 4
+wait 40
+press square
+press triangle
+wait 30
+press down 10
+press down+circle
+wait 40
+press l1+r1
+wait 120
+press up 4
+wait 12
+press down+triangle
+wait 60
+hold down 3
+hold down+right 3
+hold right+square 3
+wait 30
+hold right 3
+hold down 3
+hold down+right 3
+hold down+right+triangle 3
+wait 50
+hold down 3
+hold down+left 3
+hold left+circle 3
+wait 50
+hold down 3
+hold down+right 3
+hold right+square+triangle 3
+wait 150
+press l1
+wait 20
+press r1
+wait 60
+hold down 3
+hold down+right 3
+hold right+cross+circle 3
+wait 150
+press right 30
+press right+triangle 4
+wait 40
+press square
+press triangle
+wait 30
+press down 10
+press down+circle
+wait 40
+press l1+r1
+wait 120
+press up 4
+wait 12
+press down+triangle
+wait 60
+wait 900
+quit

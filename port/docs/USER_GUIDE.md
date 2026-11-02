@@ -215,6 +215,7 @@ the arcade ROM is in the port. Changes take effect on the next start.
 | Arcade flying-screen edge | `arcade.fs_edge` | Off | While the opponent is the flying-screen character, you stop 35 units from the stage edge as on the arcade (the PS2 stops 16 units further in). No zip needed; takes effect at once. |
 | Arcade Servbot hit-stop inputs | `arcade.servbot_hitstop` | Off | Servbot keeps the buttons you press during hit stop while his armor flag is set, as on the arcade (the PS2 clears them). No zip needed. |
 | Logic rate + input pipeline | `arcade.timing` | Port | **Port:** 60 Hz, a press counts in the next step. **Arcade:** 59.94 Hz and one frame of input delay, as the NAOMI (it reads the controls in V-blank from the previous transfer). **PS2:** 59.94 Hz and two frames, as the retail disc. Menus are never delayed. On a 60 Hz screen, 59.94 Hz repeats one frame about every 17 s. |
+| NAOMI float rounding | `arcade.float_round` | Off | The PS2's EE rounds every float result toward zero, and the port does the same by default (positions, velocities: the PS2 game frame for frame). The arcade's SH-4 rounds to nearest; this switches to that. Applies at once, needs no zip. |
 
 Where the zip comes from:
 - **Browser:** when a toggle is on, the page asks for `mvsc2.zip` before the

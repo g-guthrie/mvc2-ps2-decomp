@@ -156,9 +156,9 @@ mvc2_object_lib(mvc2_game_code ${MVC2_GAME_HSRC})
 mvc2_object_lib(mvc2_game_data "${MVC2_DATA_START}" ${MVC2_DATA_HSRC})
 # EE float semantics (round toward zero, no denormals) for the game's code
 # and the host code that stands in for it: port/host/ps2_float.c.
-# Default OFF until verified in the browser build; the oracle comparisons
-# (port/tools/oracle) configure with -DMVC2_PS2_FLOAT=ON.
-option(MVC2_PS2_FLOAT "EE single-precision rounding for the game code" OFF)
+# Verified against the oracle (native) and in the browser build; game logic
+# about 13% slower on wasm (794 vs 911 frames/s headless).
+option(MVC2_PS2_FLOAT "EE single-precision rounding for the game code" ON)
 set(MVC2_FP_LAUNCHER "")
 if(MVC2_PS2_FLOAT)
   set(MVC2_FP_LAUNCHER "${CMAKE_CURRENT_SOURCE_DIR}/cmake/ps2fp-cc.pl;")
@@ -172,6 +172,11 @@ if(EMSCRIPTEN)
     C_COMPILER_LAUNCHER "${MVC2_FP_LAUNCHER}${CMAKE_CURRENT_SOURCE_DIR}/cmake/emcc-direct.sh")
 elseif(MVC2_PS2_FLOAT)
   set_target_properties(mvc2_game_code PROPERTIES C_COMPILER_LAUNCHER "${CMAKE_CURRENT_SOURCE_DIR}/cmake/ps2fp-cc.pl")
+endif()
+if(MVC2_PS2_FLOAT)
+  # a change of the rewrite recompiles what it rewrote
+  set_source_files_properties(${MVC2_GAME_HSRC} PROPERTIES OBJECT_DEPENDS
+    "${CMAKE_CURRENT_SOURCE_DIR}/tools/ps2_fp_rewrite.pl;${CMAKE_CURRENT_SOURCE_DIR}/cmake/ps2fp-cc.pl")
 endif()
 
 add_library(mvc2_game STATIC
