@@ -41,7 +41,16 @@ SDL2 headers (`libsdl2-dev`), and the 32-bit runtime libraries:
 ```sh
 sudo dpkg --add-architecture i386 && sudo apt-get update
 sudo apt-get install libsdl2-2.0-0:i386 libgl1-mesa-dri:i386 libegl1:i386 libgles2:i386
+# the link catalog reads the 32-bit glibc/libgcc (/usr/lib32, gcc's 32/ dir)
+sudo apt-get install gcc-multilib
+# without emsdk: the signature scan compiles port/stubs with clang for wasm32-wasi
+sudo apt-get install wasi-libc
 ```
+
+Without `gcc-multilib` the glue step stops with `unresolved: 1 memmove`.
+Without emsdk or `wasi-libc` the hand-written stubs' signatures come from
+their callers, and every TU with inline asm fails on a `ps2_asm_stmt`
+prototype that conflicts with `ps2_compat.h`.
 
 No 32-bit libc headers are needed: the build uses the x86-64 SDL2 headers
 through a small shim it writes into the build directory.
