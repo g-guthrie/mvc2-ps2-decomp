@@ -313,6 +313,8 @@ number is the display rate in that test environment, not the port.
 - `--draw-every N` draws one game frame in N (fast headless runs).
 - `--speed N` runs the game N times faster than real time (browser:
   `?args=--speed%204`).
+- `?discmem` (browser): copy the whole disc image into memory, as older
+  builds did, instead of reading it from the file on demand.
 - Script command `hold B[+B..] [LEN]`: hold buttons LEN frames with no
   release after (motion inputs: `hold down 3`, `hold down+right 3`,
   `hold right+square 3`).

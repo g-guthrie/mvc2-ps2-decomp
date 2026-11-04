@@ -187,7 +187,50 @@ async function prepareNaomi() {
   catch (e) { console.warn('IndexedDB unavailable', e); }
 }
 
+/* The disc is read on demand: each read the game makes is a synchronous XHR of
+   that byte range of the File (a blob: URL of a slice), written straight into
+   wasm memory.  The game's loaders need a read to have completed when it
+   returns (they spin on its status within one frame), so it has to be
+   synchronous; a File from the picker or IndexedDB stays on disk, so the
+   image is never held in memory (it was 208 MB of JS memory, too much for
+   iPhones).  A full arcade run reads about 91 MB in under 400 reads. */
+function discReader(blob) {
+  return (off, n, dst) => {
+    const url = URL.createObjectURL(blob.slice(off, off + n));
+    try {
+      const x = new XMLHttpRequest();
+      x.open('GET', url, false);
+      x.overrideMimeType('text/plain; charset=x-user-defined');
+      x.send();
+      const s = x.responseText, m = s.length, h = HEAPU8;
+      for (let i = 0; i < m; i++) h[dst + i] = s.charCodeAt(i) & 0xff;
+      return m;
+    } catch (e) {
+      console.warn('disc read failed at', off, n, e);
+      return 0;
+    } finally {
+      URL.revokeObjectURL(url);
+    }
+  };
+}
+function discReadWorks(blob) {
+  try {
+    const p = Module._malloc(2048), n = discReader(blob)(16 * 2048, 2048, p);
+    const ok = n === 2048 && String.fromCharCode(...HEAPU8.subarray(p + 1, p + 6)) === 'CD001';
+    Module._free(p);
+    return ok;
+  } catch (e) { return false; }
+}
+
 async function openDisc(blob, label) {
+  if (!query.has('discmem') && discReadWorks(blob)) {
+    Module.discReadSync = discReader(blob);
+    const r = Module.ccall('viewer_open_page_js', 'number', ['number'], [blob.size]);
+    if (r === 0) { booted = true; showUi(false); $('canvas').focus(); hint(); wake(); return true; }
+    status('That file is not a usable MvC2 disc image.');
+    return false;
+  }
+  /* fallback (?discmem, or no synchronous blob reads): the whole image in MEMFS */
   status('Reading ' + label + ' (' + (blob.size / 1048576).toFixed(0) + ' MB)...');
   $('progress').hidden = false;
   const buf = new Uint8Array(await blob.arrayBuffer());
