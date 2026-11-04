@@ -111,6 +111,29 @@ OVERRIDES = {
     # and the entries (func_001A2050 ...) read $a1 (oracle fuzz seed 39:
     # SIGSEGV in func_00185960 through func_001A2200 with q = garbage).
     # R12 class: gen_indirect.py only matches `D_x[i]()` calls.
+    # func_0018A990(p, q) reads *(u16 *)(q + 6) (the input word of an actor
+    # record at its other callers); here q = &v, a u16 at sp+0x2E, so the EE
+    # reads sp+0x34 = the caller's (func_002D8F30) sp+4: bits 32-47 of the $s0
+    # it saved with sq, a sign-extended positive address, so 0.  The host
+    # read stack garbage and set p[0x1B7]/p[0x212] (oracle fuzz seeds 5, 53:
+    # Storm, player[0]+0x210 and +0x1B4).
+    "src/hy1_k.c": [
+        ("    func_0018A990(p, &v);\n",
+         "    { u16 w[4] = { v, 0, 0, 0 }; func_0018A990(p, w); } /* host R10: q + 6 is 0 on the EE */\n"),
+    ],
+    # Same class, found by scanning the cast-pointer table calls against the
+    # retail table entries: func_00351210 jumps through D_00462500 with $a0
+    # still a0 (0x00351250), the entries take it; the C passes nothing.
+    "src/wave1x.c": [
+        ("        (*(void (**)(void))(D_00462500 + *(u8 *)(a0 + 5) * 4))();\n",
+         "        (*(void (**)(u8 *))(D_00462500 + *(u8 *)(a0 + 5) * 4))(a0); /* host R12: $a0 */\n"),
+    ],
+    # func_003AE590 (R20-widened to p, __rp1..3) jumps through D_00473B90
+    # with $a0..$a3 = its own arguments (0x003AE5D4); the C passes nothing.
+    "src/wave7.c": [
+        ("        (*(void (**)(void))(D_00473B90 + p[4] * 4))();\n",
+         "        (*(void (**)())(D_00473B90 + p[4] * 4))(p, __rp1, __rp2, __rp3); /* host R12: $a0..$a3 */\n"),
+    ],
     "src/n6.c": [
         ("        (*(void (**)(u8 *))(D_0044AFF0 + U8(a0, 4) * 4))(a0);\n",
          "        (*(void (**)(u8 *, u8 *, u8 *))(D_0044AFF0 + U8(a0, 4) * 4))(a0, a1, a2); /* host R12: $a1, $a2 */\n"),
