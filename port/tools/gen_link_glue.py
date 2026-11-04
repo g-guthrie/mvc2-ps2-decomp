@@ -471,7 +471,8 @@ def raw_build(d):
         for c in sorted(STUBS_DIR.glob("*.c")):
             o = so / (c.stem + ".o")
             subprocess.run(["clang", "--target=wasm32-wasi", "-O1", "-w",
-                            "-Wno-error=implicit-function-declaration", f"-I{STUBS_DIR}",
+                            "-Wno-implicit-function-declaration", "-D_WASI_EMULATED_SIGNAL",
+                            f"-I{STUBS_DIR}",
                             f"-I{STUBS_DIR.parent / 'include'}", "-c", str(c), "-o", str(o)],
                            check=True)
     else:
