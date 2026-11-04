@@ -570,8 +570,8 @@ FACTOR and SAVE/LOAD.
   unresolved (`--unresolved` lists every padded argument no caller
   *parameter* explains; most of them were already classified in
   `r12_sites.csv`), and the 15 skipped `T[i]()` table calls.
-- Training's first START right after "FIGHT!" does not pause. A later one
-  does. Not compared with the PS2.
+- (closed: the retail game does the same, see "Oracle pass, part 2")
+  Training's first START right after "FIGHT!" does not pause.
 
 
 ### R12 completion pass (2026-11-01, branch port-r12)
