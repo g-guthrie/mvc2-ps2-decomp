@@ -148,6 +148,9 @@ void mvc2_frame(void)
     }
     if (mvc2_unlock_all)
         unlock_everything();
+    /* at the top of the frame, before the state dump, as mvc2_oracle does
+     * (the code up to the game update does not touch health) */
+    cpu_hp_cap();
     {
         extern void host_state_dump_frame(long frame, unsigned b0, unsigned b1);
         extern unsigned host_pad_buttons(int port);
@@ -168,7 +171,6 @@ void mvc2_frame(void)
     STEP("func_001E42A0 sound tick", func_001E42A0());
     EE_BSS(s32, 0x004C2848) = 0;
     EE_BSS(s32, 0x004C284C) = 0;
-    cpu_hp_cap();
     STEP("func_003D6FF0 game update", func_003D6FF0(0, 0, 0, 0));
     STEP("func_00170D30 begin scene", func_00170D30());
     STEP("func_003D7400 render pass 1", func_003D7400());
