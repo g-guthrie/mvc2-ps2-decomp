@@ -462,8 +462,21 @@ def raw_build(d):
             if not o.exists() or o.stat().st_mtime < max(c.stat().st_mtime,
                                                          (STUBS_DIR / "mvc2_stubs.h").stat().st_mtime):
                 subprocess.run([emcc, "-O1", f"-I{STUBS_DIR}", "-c", str(c), "-o", str(o)], check=True)
+    elif shutil.which("clang") and Path("/usr/include/wasm32-wasi/stdio.h").exists():
+        # no emsdk: the system clang with the wasi-libc headers (Debian/Ubuntu
+        # package wasi-libc).  Only the stubs' wasm signatures are read, and
+        # those are the same under any wasm32 libc.  Without this they come
+        # from their callers, which gets e.g. ps2_asm_stmt(int, int, int)
+        # (string literals pass as i32) and clashes with ps2_compat.h.
+        for c in sorted(STUBS_DIR.glob("*.c")):
+            o = so / (c.stem + ".o")
+            subprocess.run(["clang", "--target=wasm32-wasi", "-O1", "-w",
+                            "-Wno-error=implicit-function-declaration", f"-I{STUBS_DIR}",
+                            f"-I{STUBS_DIR.parent / 'include'}", "-c", str(c), "-o", str(o)],
+                           check=True)
     else:
-        print("gen_link_glue.py: no emcc; hand-written stub signatures come from their callers")
+        print("gen_link_glue.py: no emcc and no wasi-libc headers; "
+              "hand-written stub signatures come from their callers")
 
 
 if __name__ == "__main__":
