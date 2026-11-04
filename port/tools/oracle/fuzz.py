@@ -449,8 +449,9 @@ def run_pair(scn, work, port, oracle, iso, snaps=None, frames=None, keep_div=Non
         res['compared'] = n
         res['fight_frames'] = fight
         res['last_state'] = C.st_str(o[2])
-        res['new_blocks'] = sorted(('0x%08X' % (C.HASH_LO + k * C.BLOCK), v[0], v[1], v[2])
-                                   for k, v in newly.items())[:40]
+        # earliest first (a cap by address dropped the blocks above ~0x004EA000)
+        res['new_blocks'] = sorted((('0x%08X' % (C.HASH_LO + k * C.BLOCK), v[0], v[1], v[2])
+                                    for k, v in newly.items()), key=lambda t: (t[1], t[0]))[:80]
         return finish(res, pp, po, P, O, kill, timer, t0, work)
     except Exception as e:  # noqa: BLE001
         res['status'] = 'error'
