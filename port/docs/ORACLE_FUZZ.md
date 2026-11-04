@@ -112,4 +112,21 @@ By design, masked or recorded without stopping (see also BOOT_NOTES):
 Not false differences: anything in the header or the player/game region.
 Every such difference in this pass was a port bug.
 
+### BSS blocks
+
+Over the matched runs every fight makes the same blocks newly differ; the
+ones outside the actor area were followed down to the word with `scan`
+(seed 40, all frames to the end of the run) and `watch`:
+
+| Block (first word) | When | What | Verdict |
+|---|---|---|---|
+| `0x004CA980` (`D_004CAB44..D_004CAB60`), `0x004CA580` (`D_004CA610`, `D_004CAB20`) | 1/1/1 from the first frame; fight loads | DMA / packet bookkeeping: buffer addresses, a host pointer, a counter one apart.  The port's GS/VIF path is the host renderer | by design (hardware layer) |
+| `0x004CB180` (`D_004CB1D8+4` etc.) | fight, ~+1300..1700 | the text renderer's scratch quad (`func_0016D4B0`, `src/chA_a.c`): UVs of the last glyph drawn.  The text list it draws (`D_0058CC40`) is identical on both sides; the oracle's copy holds the glyph the port drew one call earlier | render scratch, by design |
+| `0x0058C580` (`D_0058C7A0`) | fight | the draw list's heap pointers, shifted by the heap layout | by design (heap) |
+| `0x004F1980` (`D_004F1CC8`, `D_004F1D28`) | 1/1/1+7, fight | colour words (0xE1FFFFFF, 0xE0FFFF00): the port writes the oracle's value, but the dump's host-pointer translation (`state_dump.c` `fix()`) takes them for addresses in the host EE heap (mapped near 0xE0000000 on i386) and writes 0x0218533F / 0x01185240.  The player/game region compares the untranslated word too; the hash blocks and `scan`'s extra range do not | dump artifact |
+| `0x004D3980..0x004E9D80` (`D_004D3800+…`) | 2/1/1 (stage load) and the fight | actor area, VU0 render matrices 1-2 ulp | known (BOOT_NOTES) |
+
+`fuzz.py` kept the first 40 blocks by address in `new_blocks`, which hid
+everything above ~0x004EA000; it now keeps the first 80 by frame.
+
 RESULTS_PLACEHOLDER
