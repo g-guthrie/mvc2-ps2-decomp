@@ -1352,6 +1352,34 @@ def tailfwd_calls(toks, path):
     return out
 
 
+def unshadow_args(toks):
+    """R12 passes `v__arg` (the entry value) for a parameter the C reuses as
+    a local; where R19 did not rename that parameter (it is not written in
+    R19's sense, so its value is still the entry value) use `v` again."""
+    if not any("__arg" in t[1] for t in toks):
+        return toks
+    pat = re.compile(r"\b(\w+)__arg\b")
+    out, depth, head = [], 0, set()
+    pending = []
+    for t in toks:
+        if depth == 0:
+            if t[0] == "ident":
+                pending.append(t[1])
+            elif t[1] == ";":
+                pending = []
+        if t[1] == "{":
+            if depth == 0:
+                head = set(pending)
+                pending = []
+            depth += 1
+        elif t[1] == "}":
+            depth -= 1
+        if depth > 0 and "__arg" in t[1]:
+            t = (t[0], pat.sub(lambda m: m.group(0) if m.group(0) in head else m.group(1), t[1]))
+        out.append(t)
+    return out
+
+
 def copy_written_params(toks):
     """R19 (i386 cdecl): a function that writes one of its parameters (the
     decomp idiom of parameters used as locals) writes into the caller's
@@ -1838,6 +1866,7 @@ class SigRewriter:
         if ex is not None:
             ct = self.canon[name]["params"][k]
             return f"PS2_TO_PTR({ex})" if ct.endswith("*") else f"(({ct})({ex}))"
+        entry = cp is not None  # asm dataflow: the register still holds the entry value
         if cp is None:
             # the decomp idiom `f(a0, a1, a2) { ... a2 = buf; ... g(x, y); }`: the C
             # assigns the caller's parameter that lives in the register the callee
@@ -1853,9 +1882,16 @@ class SigRewriter:
         if cp is None or cp >= len(params) or not params[cp]:
             return "0"
         ct = self.canon[name]["params"][k]
+        v = params[cp]
+        if entry and v in getattr(self, "cur_modified", ()):
+            # the C reuses the parameter as a local before this call, the EE
+            # register still holds the value the caller passed: R19 keeps
+            # that as v__arg (oracle fuzz seed 24: func_002F6760 sets p to a
+            # byte, then calls func_00178F20 with $a1 = the entry p)
+            v = v + "__arg"
         if ct.endswith("*"):
-            return f"PS2_TO_PTR({params[cp]})"
-        return f"(({ct})({params[cp]}))"
+            return f"PS2_TO_PTR({v})"
+        return f"(({ct})({v}))"
 
     # -- calls and data-declared code addresses
     def rewrite_uses(self, toks, in_pp=False):
@@ -2402,6 +2438,7 @@ def transform(text, path="?"):
                 for t in toks]
     toks = [("pp", rewrite_pp(t[1], statics)) if t[0] == "pp" else t for t in toks]
     toks = copy_written_params(toks)  # R19
+    toks = unshadow_args(toks)
     head = [f'extern void ps2_alias_{n}(void) __asm__("{n}");' for n in sorted(aliases)]
     if sr is not None:
         head = sr.prelude(toks) + head

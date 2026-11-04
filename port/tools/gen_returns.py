@@ -54,6 +54,30 @@ def fn_at_lines(text):
     return out
 
 
+def explicit_returns(src, name):
+    """the integer literals of `return N;` statements in name's C body (src
+    relative to the repository), or None when the body is not found"""
+    try:
+        text = (ROOT / src).read_text(encoding="latin-1")
+    except OSError:
+        return None
+    for m in FDEF.finditer(text):
+        if m.group(1) != name:
+            continue
+        i = text.index("{", m.end() - 1)
+        d, k = 0, i
+        while k < len(text):
+            if text[k] == "{":
+                d += 1
+            elif text[k] == "}":
+                d -= 1
+                if d == 0:
+                    break
+            k += 1
+        return {int(x, 0) for x in re.findall(r"\breturn\s+\(?\s*(-?(?:0x[0-9A-Fa-f]+|\d+))\s*\)?\s*;", text[i:k])}
+    return None
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--sigs", default=str(ROOT / "build/port-i386/host_sigs.json"))
@@ -317,6 +341,13 @@ def main():
             act = "harmless"
         elif kinds and kinds <= {"call", "garbage"} and "call" in kinds:
             act = "return-last"     # a garbage path (caller's $v0) returns 0, as before
+        elif kinds and kinds <= {"call", "garbage", "const"} and "call" in kinds and \
+                {int(t.split()[1]) for t in toks if t.startswith("const ")} <= (explicit_returns(src, F) or set()):
+            # every constant is an explicit `return N;` in the C (kept as it
+            # is); where the C falls off the end, $v0 is the last call's
+            # (oracle fuzz seed 8: func_00164C50, script opcode 38, returns
+            # func_00164E90's 1 and func_00169600 steps again that frame)
+            act = "return-last"
         elif kinds == {"const"} and len(set(toks)) == 1:
             act = "const:" + toks[0].split()[1]
         else:

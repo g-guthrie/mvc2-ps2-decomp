@@ -41,7 +41,7 @@ func_00154390,src/entry_group_updates.c,void callee of func_00183d50,call func_0
 func_00156B50,src/h8h.c,r14,caller's $v0 (through call func_003DAA40;caller's $v0),callback,transparent
 func_00157330,src/w21b2_a.c,r14,call func_003DA750,yes,return-last
 func_0015CF60,src/q1_f.c,r14,caller's $v0 (through call func_003DAA40;caller's $v0),callback,transparent
-func_00164C50,src/t11_a.c,r14,call func_00164E90;const 0,yes,left
+func_00164C50,src/t11_a.c,r14,call func_00164E90;const 0,yes,return-last
 func_00169E50,src/gr10_a.c,wrap,call func_00169C90,no,harmless
 func_0016B0C0,src/sa37_c.c,wrap,call func_0016B0B0;caller's $v0,no,harmless
 func_00174A40,src/z0_d.c,wrap,call func_00417440; no host value from func_00417440,yes,left
@@ -210,7 +210,7 @@ func_003B3700,src/t10_e.c,r14,call func_00174470;call func_003B3870,yes,return-l
 func_003B3870,src/tail_leaves.c,void callee of func_003B3700;wrap,caller's $v0 (through call func_003DAA40),yes,transparent
 func_003B3ED0,src/sb18_a.c,r14,call func_00174470;call func_00175700;call func_001E7F60;call func_003B4030,yes,return-last
 func_003B4030,src/tail_leaves.c,void callee of func_003B3ED0;wrap,caller's $v0 (through call func_003DAA40),yes,transparent
-func_003B8170,src/m8p.c,r14,call func_003DA750;const 0,yes,left
+func_003B8170,src/m8p.c,r14,call func_003DA750;const 0,yes,return-last
 func_003BD4A0,src/struct_field_leaves.c,wrap,caller's $v0,yes,transparent
 func_003BEF10,src/w193_c.c,void callee of func_001DCC80,call func_003DA750,yes,return-last
 func_003D44E0,src/w1911_t.c,wrap,call func_003D7310,no,harmless

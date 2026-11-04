@@ -86,6 +86,35 @@ OVERRIDES = {
     "src/data/jtbl_00475ABC.c": [
         ("    func_00400020,\n", "    (Mvc2Address)0x00400020u, /* host R10: data, the s16 pair (32, 64) */\n"),
     ],
+    # The same for the last entry of jtbl_004BFBB8 (0x004BFC18 = D_004BFC18):
+    # 0x00300020 is the s16 pair (0x20, 0x30), a hit-stun/timer table that
+    # func_001F1F60 (src/sa12_j.c) reads as D_004BFC18[p[0x1B7]] into
+    # p+0x1C.  The dispatch through this table (func_001F0E80, jtbl_004BFC10
+    # = entries 22..23) never reaches entry 24.  As a host code address the
+    # timer started at 0xB740 instead of 0x20 (oracle fuzz seed 5, +2115).
+    "src/data/jtbl_004BFBB8.c": [
+        ("    func_00300020,\n",
+         "    (Mvc2StateCallback)0x00300020u, /* host R10: data D_004BFC18, the s16 pair (0x20, 0x30) */\n"),
+    ],
+    # And jtbl_004C1BF0 (2 entries for its dispatcher func_00360A00): its
+    # "entries" 6 and 7, 0x00400050 and 0x00200030, are D_004C1C08[4] =
+    # {0x50, 0x40, 0x30, 0x20}, the s16 speeds residual_00361A00 (src/a1c_c.c)
+    # reads as D_004C1C08[p[0x21] & 3] (found by scanning the tables for
+    # entries that a TU declares as sub-word data; same class as above).
+    "src/data/jtbl_004C1BF0.c": [
+        ("    func_00400050,\n    func_00200030,\n",
+         "    (Mvc2OwnerStateCallback)0x00400050u, /* host R10: data D_004C1C08, s16 (0x50, 0x40) */\n"
+         "    (Mvc2OwnerStateCallback)0x00200030u, /* host R10: data D_004C1C08 + 4, s16 (0x30, 0x20) */\n"),
+    ],
+    # func_001A1FC0 calls through D_0044AFF0 with only a0; at the jalr
+    # (0x001A2034) $a1 = *(a0 + 0x18) and $a2 = $a1 + 0x2B8, the C's a1/a2,
+    # and the entries (func_001A2050 ...) read $a1 (oracle fuzz seed 39:
+    # SIGSEGV in func_00185960 through func_001A2200 with q = garbage).
+    # R12 class: gen_indirect.py only matches `D_x[i]()` calls.
+    "src/n6.c": [
+        ("        (*(void (**)(u8 *))(D_0044AFF0 + U8(a0, 4) * 4))(a0);\n",
+         "        (*(void (**)(u8 *, u8 *, u8 *))(D_0044AFF0 + U8(a0, 4) * 4))(a0, a1, a2); /* host R12: $a1, $a2 */\n"),
+    ],
     "src/wave32.c": [
         ("if (func_00100240(*(f32 *)(p + 0x5C) * v, 0)) {",
          "if ((double)(*(f32 *)(p + 0x5C) * v) < 0.0) { /* host R10: _dpflt */"),

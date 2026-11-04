@@ -497,7 +497,9 @@ def job(seed, out, port, oracle, iso, fight_override=None):
         scn['frames'] = fight_override
     work = tempfile.mkdtemp(prefix=f'fz{seed}_', dir=out)
     keep = os.path.join(out, str(seed))
+    port = os.path.realpath(port)  # a symlink can be repointed between seeds
     res = run_pair(scn, work, port, oracle, iso, keep_div=keep)
+    res['port'] = port
     if res.get('status') != 'match':
         os.makedirs(keep, exist_ok=True)
         open(os.path.join(keep, 'script.txt'), 'w').write(scn['script'])

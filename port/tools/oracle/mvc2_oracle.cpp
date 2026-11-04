@@ -368,16 +368,18 @@ static void on_frame(CMIPS* ctx)
 }
 
 /* --trace ADDR (several allowed): print the argument registers each time a
- * block starts at ADDR (a function entry) in frames [--trace-from, --trace-to] */
+ * block starts at ADDR (a function entry) in frames [--trace-from, --trace-to].
+ * v0/v1 are printed too: traced at a call's return address they are the
+ * callee's return value. */
 static std::vector<uint32> g_trace;
 static long g_trace_from = 0, g_trace_to = 1L << 30;
 static void trace(CMIPS* ctx)
 {
 	auto& r = ctx->m_State.nGPR;
 	if(g_frame < g_trace_from || g_frame > g_trace_to) return;
-	fprintf(stderr, "[trace] f%ld %08X(a0=%08X a1=%08X a2=%08X a3=%08X t0=%08X) ra=%08X f12=%08X f13=%08X f14=%08X\n",
+	fprintf(stderr, "[trace] f%ld %08X(a0=%08X a1=%08X a2=%08X a3=%08X t0=%08X) ra=%08X v0=%08X v1=%08X f12=%08X f13=%08X f14=%08X\n",
 	        g_frame, ctx->m_State.nPC, r[CMIPS::A0].nV0, r[CMIPS::A1].nV0, r[CMIPS::A2].nV0, r[CMIPS::A3].nV0,
-	        r[CMIPS::T0].nV0, r[CMIPS::RA].nV0, ctx->m_State.nCOP1[12], ctx->m_State.nCOP1[13], ctx->m_State.nCOP1[14]);
+	        r[CMIPS::T0].nV0, r[CMIPS::RA].nV0, r[CMIPS::V0].nV0, r[CMIPS::V1].nV0, ctx->m_State.nCOP1[12], ctx->m_State.nCOP1[13], ctx->m_State.nCOP1[14]);
 }
 
 /* --snap-at ADDR:FRAME:FILE: snapshot when a block starts at ADDR in FRAME */
