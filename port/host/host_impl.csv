@@ -79,6 +79,8 @@ func_00100E68,core,boot.c,sceGsSyncV: host vsync + field
 func_004148C0,core,game_fix.c,camera compare: the credited C reads literal EE BSS addresses
 func_003A5930,core,game_fix.c,effect position copy: a NULL owner (EE reads low memory) reads zeros instead of faulting natively
 func_003D6530,core,pause_menu.c,pause menu COMMAND LIST page: no credited C (was an empty generated stub); the retail code in C
+func_003F5630,core,game_copy.c,forward byte copy: no credited C (was an empty generated stub); the retail code in C
+func_003F5710,core,game_copy.c,memmove: no credited C (was an empty generated stub); the retail code in C
 func_003DF7B0,core,render_core.c,end of scene: T0 sample from the host frame count
 func_003DBBF0,core,render_core.c,immediate GIF send: nothing (no GS)
 func_003DF490,core,render_core.c,textured sprite: original texture check + frontend draw
