@@ -196,13 +196,16 @@ status queries", with sound comparison on.
 | `fight_mix.txt` | 7,535 | 11,576 | 0 | match |
 | Attract cycle (63 `ADXT_SetOutVol` fades) | 4,835 | 1,790 | 0 | match |
 | `training_start.txt` (48 pause-menu `ADXT_Pause`) | 4,535 | 279 | 0 | match |
-| **Total** | **379,628** | **393,679** | **15** | **all match** |
+| Arcade seed 1000100 (22 stage blocks, stage byte 8), after the merge of port-fuzz-run | 36,109 | 16,529 | 0 | match |
+| **Total** | **415,737** | **410,208** | **15** | **all match** |
 
 Before the race rule, the first pass on the same binary stopped 5 of the
 first 32 seeds (15, 17, 23, 29, 31) at a status-gated stop. No
 other kind of sound difference was seen. The port's sound-command layer
 needed no fix: every command, argument and bank pointer, and its frame,
-matches the retail game.
+matches the retail game.  After the merge of port-fuzz-run (its port fixes
+included), seeds 1-60 gave the same totals again: 60 / 60, 282,768 frames,
+305,784 commands, 11 races.
 
 ## Results (2026-11-04/05, branch port-fuzz-run)
 
