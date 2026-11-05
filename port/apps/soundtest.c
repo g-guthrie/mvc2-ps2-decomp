@@ -4,6 +4,8 @@
  *             [--render OUT.wav --seconds T] [--no-loop] [--mono]
  *             [--decode-adx N OUT.wav] [--verify PYDIR] [--loop-check OUT.txt]
  *             [--frames N]   (interactive: quit after N frames)
+ *             [--dc-disc DC.gdi|track.bin|track.iso]   Dreamcast common effects
+ *             [--dc-check]   load AFS01 #59 / #60 and report the swapped samples
  *
  * Interactive (window; keyboard, controller or the touch pad):
  *   UP/DOWN      AFS00 track -/+          LP (A key / Square)  play track
@@ -22,6 +24,7 @@
  */
 #include "../audio/adx.h"
 #include "../audio/audio.h"
+#include "../audio/dcse.h"
 #include "../audio/hdbank.h"
 #include "../audio/tsd.h"
 #include "../audio/tsd_client.h"
@@ -478,7 +481,8 @@ static void on_pause(void *u, int paused) { (void)u; audio_set_paused(paused); }
 int main(int argc, char **argv)
 {
     const char *iso = NULL, *render_out = NULL, *decode_out = NULL, *verify_dir = NULL, *loop_out = NULL;
-    int decode_idx = -1, do_loop_check = 0, track = -1, bank = -1, sound = -1;
+    const char *dc_disc = getenv("MVC2_DC_DISC");
+    int decode_idx = -1, do_loop_check = 0, track = -1, bank = -1, sound = -1, dc_check = 0;
     double seconds = 10;
     T.loop = 1;
     T.slot = -1;
@@ -497,6 +501,8 @@ int main(int argc, char **argv)
         else if (!strcmp(a, "--decode-adx") && i + 2 < argc) { decode_idx = atoi(argv[i + 1]); decode_out = argv[i + 2]; i += 2; }
         else if (!strcmp(a, "--verify") && n) { verify_dir = n; i++; }
         else if (!strcmp(a, "--loop-check")) { do_loop_check = 1; if (n && n[0] != '-') { loop_out = n; i++; } }
+        else if (!strcmp(a, "--dc-disc") && n) { dc_disc = n; i++; }
+        else if (!strcmp(a, "--dc-check")) dc_check = 1;
         else if (a[0] != '-') iso = a;
         else { fprintf(stderr, "unknown option %s\n", a); return 2; }
     }
@@ -504,7 +510,15 @@ int main(int argc, char **argv)
         FILE *p = fopen("private/disc/mvc2.iso", "rb");
         if (p) { fclose(p); iso = "private/disc/mvc2.iso"; }
     }
-    int headless = render_out || decode_out || verify_dir || do_loop_check;
+    if (dc_disc) {
+        size_t n = 0;
+        uint8_t *d = dcse_read_disc(dc_disc, &n);
+        int k = d ? dcse_load(d, n) : -1;
+        free(d);
+        fprintf(stderr, "soundtest: Dreamcast effects: %s\n", k > 0 ? "loaded" : d ? "SE_COMN.BIN is not the known version" : "no SE_COMN.BIN on that disc");
+        if (k > 0) fprintf(stderr, "soundtest: %d PS2 samples have a Dreamcast version\n", k);
+    }
+    int headless = render_out || decode_out || verify_dir || do_loop_check || dc_check;
     if (headless) {
         if (!iso || open_disc(iso)) { fprintf(stderr, "soundtest: need --iso\n"); return 1; }
         audio_init(0);
@@ -516,6 +530,19 @@ int main(int argc, char **argv)
         if (verify_dir) r |= verify(verify_dir);
         if (do_loop_check) r |= loop_check(loop_out);
         if (render_out) r |= render(render_out, seconds, track, bank, sound);
+        if (dc_check)
+            for (int b = 59; b <= 60; b++) {
+                size_t sz = 0;
+                uint8_t *e = disc_load(&T.disc, 1, b, &sz);
+                HdBank hb;
+                memset(&hb, 0, sizeof hb);
+                int ok = e && !hd_bank_load_afs01(&hb, e, sz);
+                printf("AFS01 #%d: %s, %d samples, %d Dreamcast\n", b, ok ? "loaded" : "failed", hb.nvag,
+                       ok ? dcse_last_applied() : 0);
+                if (ok) hd_bank_free(&hb);
+                free(e);
+                r |= !ok;
+            }
         audio_shutdown();
         return r ? 1 : 0;
     }

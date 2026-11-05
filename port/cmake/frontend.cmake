@@ -27,7 +27,8 @@ set_property(TARGET port_platform port_render PROPERTY C_STANDARD 11)
 add_library(port_audio STATIC
   ${PORT_ROOT}/audio/adx.c ${PORT_ROOT}/audio/vag.c ${PORT_ROOT}/audio/hdbank.c
   ${PORT_ROOT}/audio/resample.c ${PORT_ROOT}/audio/synth.c ${PORT_ROOT}/audio/tsd.c
-  ${PORT_ROOT}/audio/tsd_client.c ${PORT_ROOT}/audio/audio.c ${PORT_ROOT}/audio/wav.c)
+  ${PORT_ROOT}/audio/tsd_client.c ${PORT_ROOT}/audio/audio.c ${PORT_ROOT}/audio/wav.c
+  ${PORT_ROOT}/audio/dcse.c)
 set_property(TARGET port_audio PROPERTY C_STANDARD 11)
 add_executable(soundtest ${PORT_ROOT}/apps/soundtest.c)
 set_property(TARGET soundtest PROPERTY C_STANDARD 11)

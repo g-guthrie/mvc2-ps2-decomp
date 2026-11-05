@@ -1,4 +1,5 @@
 #include "hdbank.h"
+#include "dcse.h"
 #include <stdlib.h>
 #include <string.h>
 
@@ -132,6 +133,7 @@ int hd_bank_load(HdBank *b, const void *hd, uint32_t hd_size, const void *bd, ui
         int num = le16(b->tq + 0xE);
         if (0x10 + 4u * num <= b->tq_size) b->tq_num = num;
     }
+    dcse_apply(b); /* the Dreamcast versions of the common effects, if the player supplied them */
     return 0;
 }
 
