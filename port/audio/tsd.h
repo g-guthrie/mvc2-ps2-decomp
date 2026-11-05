@@ -40,7 +40,6 @@ typedef struct TqSlot {
     uint8_t prio;
     uint16_t wait;
     uint8_t sound, handle;
-    uint8_t delay;           /* ticks before the first run (IOP command latency) */
     uint8_t rvol, rpan;      /* request values (EE) */
     uint16_t rpitch;
     uint8_t svol, span;      /* sequence values (TQ byte code) */

@@ -1,18 +1,4 @@
 #include "tsd.h"
-#include <stdlib.h>
-
-/* ticks between a play request and the slot's first run (see tsd_tick);
- * MVC2_TSD_DELAY overrides it for the oracle comparison */
-static int tsd_start_delay(void)
-{
-    static int d = -1;
-    if (d < 0) {
-        const char *e = getenv("MVC2_TSD_DELAY");
-        d = e ? atoi(e) : 1;
-        if (d < 0 || d > 8) d = 1;
-    }
-    return d;
-}
 #include <string.h>
 
 void tsd_init(Tsd *t)
@@ -89,7 +75,6 @@ void tsd_req(Tsd *t, int bank, int sound, int handle, int vol, int pan, int pitc
         TQF_VOL | TQF_PAN | TQF_PITCH;
     q->prio = (uint8_t)prio;
     q->wait = 0;
-    q->delay = (uint8_t)tsd_start_delay();
     if (!(f & TQF_ACTIVE)) P->active++;
     q->flags = (f & ~(uint32_t)TQF_STOP) | TQF_ACTIVE;
 }
@@ -341,17 +326,8 @@ void tsd_tick(Tsd *t)
     for (int p = 0; p < TSD_PORTS; p++) {
         TsdPort *P = &t->port[p];
         if (!P->loaded || !P->active) continue;
-        for (int ch = 0; ch < TSD_SLOTS; ch++) {
-            TqSlot *q = &P->slot[ch];
-            if (!(q->flags & TQF_ACTIVE)) continue;
-            /* the IRX gets a play request over SIF between two timer ticks
-             * and runs the slot from the next one; the EE game logic that
-             * queries it N frames later runs before that frame's flush, so
-             * the PS2 has done 4N - 1 ticks there, not 4N (oracle sound
-             * comparison: status(4) of a sound with exactly 4N ticks) */
-            if (q->delay) { q->delay--; continue; }
-            run_slot(t, P, p, ch);
-        }
+        for (int ch = 0; ch < TSD_SLOTS; ch++)
+            if (P->slot[ch].flags & TQF_ACTIVE) run_slot(t, P, p, ch);
     }
 }
 

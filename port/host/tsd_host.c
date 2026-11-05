@@ -32,5 +32,5 @@ int func_004235D0(int slot) { SND(0x004235D0, slot, 0, 0, 0); return tsdc_unload
 int func_00423650(void) { SND(0x00423650, 0, 0, 0, 0); return tsdc_stop_all(); }
 int func_004236C0(int en) { SND(0x004236C0, en, 0, 0, 0); return tsdc_set_stereo(en); }
 int func_00423750(int wait) { return tsdc_flush(wait); }
-int func_00423990(int fno, int arg) { int r = tsdc_status(fno, arg); SND(0x00423990, fno, arg, r, 0); return r; }
+int func_00423990(int fno, int arg) { return tsdc_status(fno, arg); }
 int func_004238A0(int a0, int a1) { (void)a0; (void)a1; return 0; } /* driver thread priority */
