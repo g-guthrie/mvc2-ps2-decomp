@@ -285,6 +285,27 @@ async function startDisc() {
     singleFile = true;
     if (await openDisc(iso, 'embedded game data')) return;
   }
+  /* ?disc=URL (a disc image the page's server can hand out, e.g. a local
+     server on your own machine) and ?dcse=URL (the Dreamcast SE_COMN.BIN):
+     fetched once and cached like a picked file, so the plain page address
+     opens straight into the game afterwards. */
+  if (query.get('dcse')) {
+    try {
+      const r = await fetch(query.get('dcse'));
+      if (r.ok) { const b = await r.blob(); if (await putDcEffects(b)) await idbPut(b, DC_KEY); }
+    } catch (e) { console.warn('?dcse fetch failed', e); }
+  }
+  if (query.get('disc')) {
+    try {
+      status('Loading disc image...');
+      const r = await fetch(query.get('disc'));
+      if (r.ok) {
+        const b = await r.blob();
+        try { await idbPut(b); forget.hidden = false; } catch (e) { console.warn('could not cache disc image', e); }
+        if (await openDisc(b, 'disc image')) return;
+      }
+    } catch (e) { console.warn('?disc fetch failed', e); }
+  }
   let cached = null;
   try { cached = await idbGet(); } catch (e) { console.warn('IndexedDB unavailable', e); }
   if (cached && await openDisc(cached, 'cached disc image')) return;
