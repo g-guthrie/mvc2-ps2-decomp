@@ -109,6 +109,14 @@
       <input type="file" id="arcfile" accept=".zip,application/zip" hidden></label>
     <button id="arcforget" class="btn grey" hidden>Forget</button>
   </div>
+  <div id="dcbox" class="note">
+    Optional: your own Dreamcast disc gives the common sound effects (hits, blocks, menus) their full
+    Dreamcast quality. Choose its data track (<code>track03.bin</code> / <code>.iso</code>);
+    only the 1 MB sound bank is kept. <span id="dcstate"></span><br>
+    <label id="dcpick" class="btn grey" tabindex="0">Choose Dreamcast disc
+      <input type="file" id="dcfile" accept=".bin,.iso,application/octet-stream" hidden></label>
+    <button id="dcforget" class="btn grey" hidden>Forget</button>
+  </div>
   <div class="note">Your own PS2 disc image (SLUS_204.86). It stays on this device (IndexedDB); nothing is uploaded.</div>
 </div>
 
@@ -187,7 +195,99 @@ async function prepareNaomi() {
   catch (e) { console.warn('IndexedDB unavailable', e); }
 }
 
+/* Dreamcast common sound effects (port/audio/dcse.h): SE_COMN.BIN from the
+   user's own Dreamcast disc, a GD-ROM data track (2048- or 2352-byte sectors;
+   directory LBAs start at 45000).  Only that 1 MB file is kept (IndexedDB),
+   written to /dc_se_comn.bin for the game. */
+const DC_KEY = 'dc_se_comn';
+async function dcFindSeComn(blob) {
+  const rd = async (off, n) => new Uint8Array(await blob.slice(off, off + n).arrayBuffer());
+  let ss = 0, hdr = 0;
+  for (const [a, b] of [[2048, 0], [2352, 16], [2352, 24]]) {
+    const v = await rd(16 * a + b + 1, 5);
+    if (String.fromCharCode(...v) === 'CD001') { ss = a; hdr = b; break; }
+  }
+  if (!ss) return null;
+  const le = (u, o) => (u[o] | u[o + 1] << 8 | u[o + 2] << 16 | u[o + 3] << 24) >>> 0;
+  const pvd = await rd(16 * ss + hdr, 2048);
+  const base = le(pvd, 158) >= 45000 ? 45000 : 0;
+  const sectors = async (lba, n) => {
+    const out = new Uint8Array(n * 2048), rel = base && lba >= base ? lba - base : lba;
+    if (ss === 2048) return rd(rel * 2048, n * 2048);
+    for (let i = 0; i < n; i++) out.set(await rd((rel + i) * ss + hdr, 2048), i * 2048);
+    return out;
+  };
+  const root = await sectors(le(pvd, 158), Math.ceil(le(pvd, 166) / 2048));
+  for (let p = 0; p < root.length;) {
+    const ln = root[p];
+    if (!ln) { p = (Math.floor(p / 2048) + 1) * 2048; continue; }
+    const nm = String.fromCharCode(...root.subarray(p + 33, p + 33 + root[p + 32])).split(';')[0];
+    if (nm === 'SE_COMN.BIN') {
+      const ext = le(root, p + 2), size = le(root, p + 10);
+      return new Blob([(await sectors(ext, Math.ceil(size / 2048))).subarray(0, size)]);
+    }
+    p += ln;
+  }
+  return null;
+}
+async function putDcEffects(blob) {
+  const buf = new Uint8Array(await blob.arrayBuffer());
+  try { Module.FS.unlink('/dc_se_comn.bin'); } catch (e) {}
+  Module.FS.writeFile('/dc_se_comn.bin', buf);
+  const k = Module.ccall('fe_dc_effects_js', 'number', [], []);
+  $('dcstate').textContent = k > 0 ? '- in use (' + k + ' effects)' : '- not the known disc version; PS2 effects kept';
+  $('dcforget').hidden = false;
+  return k > 0;
+}
+async function prepareDcEffects() {
+  try { const c = await idbGet(DC_KEY); if (c) await putDcEffects(c); }
+  catch (e) { console.warn('Dreamcast effects unavailable', e); }
+}
+
+/* The disc is read on demand: each read the game makes is a synchronous XHR of
+   that byte range of the File (a blob: URL of a slice), written straight into
+   wasm memory.  The game's loaders need a read to have completed when it
+   returns (they spin on its status within one frame), so it has to be
+   synchronous; a File from the picker or IndexedDB stays on disk, so the
+   image is never held in memory (it was 208 MB of JS memory, too much for
+   iPhones).  A full arcade run reads about 91 MB in under 400 reads. */
+function discReader(blob) {
+  return (off, n, dst) => {
+    const url = URL.createObjectURL(blob.slice(off, off + n));
+    try {
+      const x = new XMLHttpRequest();
+      x.open('GET', url, false);
+      x.overrideMimeType('text/plain; charset=x-user-defined');
+      x.send();
+      const s = x.responseText, m = s.length, h = HEAPU8;
+      for (let i = 0; i < m; i++) h[dst + i] = s.charCodeAt(i) & 0xff;
+      return m;
+    } catch (e) {
+      console.warn('disc read failed at', off, n, e);
+      return 0;
+    } finally {
+      URL.revokeObjectURL(url);
+    }
+  };
+}
+function discReadWorks(blob) {
+  try {
+    const p = Module._malloc(2048), n = discReader(blob)(16 * 2048, 2048, p);
+    const ok = n === 2048 && String.fromCharCode(...HEAPU8.subarray(p + 1, p + 6)) === 'CD001';
+    Module._free(p);
+    return ok;
+  } catch (e) { return false; }
+}
+
 async function openDisc(blob, label) {
+  if (!query.has('discmem') && discReadWorks(blob)) {
+    Module.discReadSync = discReader(blob);
+    const r = Module.ccall('viewer_open_page_js', 'number', ['number'], [blob.size]);
+    if (r === 0) { booted = true; showUi(false); $('canvas').focus(); hint(); wake(); return true; }
+    status('That file is not a usable MvC2 disc image.');
+    return false;
+  }
+  /* fallback (?discmem, or no synchronous blob reads): the whole image in MEMFS */
   status('Reading ' + label + ' (' + (blob.size / 1048576).toFixed(0) + ' MB)...');
   $('progress').hidden = false;
   const buf = new Uint8Array(await blob.arrayBuffer());
@@ -202,6 +302,7 @@ async function openDisc(blob, label) {
 
 async function startDisc() {
   await prepareNaomi();
+  await prepareDcEffects();
   if (arcadeFlags && !naomiReady) {
     status('Arcade accuracy (?arcade=' + arcadeFlags + ') reads your own NAOMI mvsc2.zip (MAME set, Rev A).\n' +
            'Choose it below; it stays on this device. Open the page without ?arcade for the PS2 data.');
@@ -241,6 +342,19 @@ fileEl.addEventListener('change', async () => {
   try { status('Caching disc image on this device...'); await idbPut(f); forget.hidden = false; }
   catch (e) { console.warn('could not cache disc image', e); }
   if (!await openDisc(f, f.name)) pick.hidden = false;
+});
+$('dcfile').addEventListener('change', async ev => {
+  const f = ev.target.files[0];
+  if (!f) return;
+  $('dcstate').textContent = '- reading...';
+  const se = await dcFindSeComn(f).catch(e => (console.warn(e), null));
+  if (!se) { $('dcstate').textContent = '- no Dreamcast MvC2 sound bank in that file (choose the data track)'; return; }
+  if (await putDcEffects(se)) { try { await idbPut(se, DC_KEY); } catch (e) { console.warn(e); } }
+  if (!panel.hidden) renderBody();
+});
+$('dcforget').addEventListener('click', async () => {
+  await idbDel(DC_KEY); $('dcforget').hidden = true;
+  $('dcstate').textContent = '- removed (takes effect on the next start)';
 });
 document.getElementById('arcfile').addEventListener('change', async ev => {
   const f = ev.target.files[0];
@@ -373,6 +487,13 @@ function renderBody() {
     if (!opts.length) bodyEl.append(el('div', { class: 'empty' }, tab === 'Arcade accuracy'
       ? 'No arcade-accuracy options in this build yet. They appear here once the arcade data mode registers them.'
       : 'Nothing here.'));
+    if (tab === 'Audio')                     /* the Dreamcast effects picker, also reachable after boot */
+      bodyEl.append(el('div', { class: 'row' }, el('label', {}, 'Dreamcast sound effects'),
+        el('button', { class: 'btn grey', onclick: () => $('dcfile').click() },
+           $('dcforget').hidden ? 'Choose disc' : 'Change disc')),
+        el('div', { class: 'help' }, ($('dcforget').hidden ? 'Off: needs your own Dreamcast disc (data track). '
+           : 'In use ' + $('dcstate').textContent.replace(/^- in use /, '') + '. ') +
+           'The common effects then play at their Dreamcast sample rates; the PS2 cut them to 8 kHz.'));
     if (tab === 'Game') bodyEl.append(el('div', { class: 'help', style: 'margin-top:10px' },
       'Add ?nounlock to the page address to start once with the game\'s own unlock state without changing this setting.'));
   }

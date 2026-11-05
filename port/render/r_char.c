@@ -67,6 +67,7 @@ void fl_char_bank_destroy(FlCharBank *b)
 {
     if (!b) return;
     for (int i = 0; i < b->n_pages; i++) fl_tex_release(b->pages[i]);
+    if (b->pal_row > 0) r_pal_free_rows(b->pal_row, 16);
     free(b->tiles);
     free(b->scratch);
     free(b);

@@ -1,0 +1,263 @@
+# fight: wait for the round (sub-state 2/1/2/3 = the fight's first frame,
+# also the resync point), then the fight_mix moves to KO or the timer
+state 2/1/2/3
+press right 30
+press square
+press triangle
+press cross
+press circle
+hold down 3
+hold down+right 3
+hold right+square 3
+wait 40
+press l1
+wait 60
+press up 4
+wait 10
+press circle
+wait 50
+hold down 3
+hold down+right 3
+hold right+square+triangle 3
+wait 120
+press right 40
+press right+triangle 4
+wait 40
+press r1
+wait 60
+press left 20
+press down+square
+press down+cross
+press down+circle
+hold right 3
+hold down 3
+hold down+right 3
+hold right+cross 3
+wait 60
+press square
+press square
+press triangle
+wait 30
+press up+right 4
+wait 8
+press triangle
+wait 40
+press l1+r1
+wait 90
+press right 30
+press square
+press triangle
+press cross
+press circle
+hold down 3
+hold down+right 3
+hold right+square 3
+wait 40
+press l1
+wait 60
+press up 4
+wait 10
+press circle
+wait 50
+hold down 3
+hold down+right 3
+hold right+square+triangle 3
+wait 120
+press right 40
+press right+triangle 4
+wait 40
+press r1
+wait 60
+press left 20
+press down+square
+press down+cross
+press down+circle
+hold right 3
+hold down 3
+hold down+right 3
+hold right+cross 3
+wait 60
+press square
+press square
+press triangle
+wait 30
+press up+right 4
+wait 8
+press triangle
+wait 40
+press l1+r1
+wait 90
+press right 30
+press square
+press triangle
+press cross
+press circle
+hold down 3
+hold down+right 3
+hold right+square 3
+wait 40
+press l1
+wait 60
+press up 4
+wait 10
+press circle
+wait 50
+hold down 3
+hold down+right 3
+hold right+square+triangle 3
+wait 120
+press right 40
+press right+triangle 4
+wait 40
+press r1
+wait 60
+press left 20
+press down+square
+press down+cross
+press down+circle
+hold right 3
+hold down 3
+hold down+right 3
+hold right+cross 3
+wait 60
+press square
+press square
+press triangle
+wait 30
+press up+right 4
+wait 8
+press triangle
+wait 40
+press l1+r1
+wait 90
+press right 30
+press square
+press triangle
+press cross
+press circle
+hold down 3
+hold down+right 3
+hold right+square 3
+wait 40
+press l1
+wait 60
+press up 4
+wait 10
+press circle
+wait 50
+hold down 3
+hold down+right 3
+hold right+square+triangle 3
+wait 120
+press right 40
+press right+triangle 4
+wait 40
+press r1
+wait 60
+press left 20
+press down+square
+press down+cross
+press down+circle
+hold right 3
+hold down 3
+hold down+right 3
+hold right+cross 3
+wait 60
+press square
+press square
+press triangle
+wait 30
+press up+right 4
+wait 8
+press triangle
+wait 40
+press l1+r1
+wait 90
+press right 30
+press square
+press triangle
+press cross
+press circle
+hold down 3
+hold down+right 3
+hold right+square 3
+wait 40
+press l1
+wait 60
+press up 4
+wait 10
+press circle
+wait 50
+hold down 3
+hold down+right 3
+hold right+square+triangle 3
+wait 120
+press right 40
+press right+triangle 4
+wait 40
+press r1
+wait 60
+press left 20
+press down+square
+press down+cross
+press down+circle
+hold right 3
+hold down 3
+hold down+right 3
+hold right+cross 3
+wait 60
+press square
+press square
+press triangle
+wait 30
+press up+right 4
+wait 8
+press triangle
+wait 40
+press l1+r1
+wait 90
+press right 30
+press square
+press triangle
+press cross
+press circle
+hold down 3
+hold down+right 3
+hold right+square 3
+wait 40
+press l1
+wait 60
+press up 4
+wait 10
+press circle
+wait 50
+hold down 3
+hold down+right 3
+hold right+square+triangle 3
+wait 120
+press right 40
+press right+triangle 4
+wait 40
+press r1
+wait 60
+press left 20
+press down+square
+press down+cross
+press down+circle
+hold right 3
+hold down 3
+hold down+right 3
+hold right+cross 3
+wait 60
+press square
+press square
+press triangle
+wait 30
+press up+right 4
+wait 8
+press triangle
+wait 40
+press l1+r1
+wait 90
+wait 600
+quit

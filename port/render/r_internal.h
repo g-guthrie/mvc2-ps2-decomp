@@ -25,6 +25,7 @@ void r_color_tex(uint32_t argb, uint8_t out[4]);
 void r_color_flat(uint32_t argb, uint8_t out[4]);
 /* Palette atlas row allocation. */
 int r_pal_alloc_rows(int nrows);
+void r_pal_free_rows(int row, int nrows);
 void r_pal_write(int row, int first, int n, const uint8_t *rgba);
 GLuint r_tex_gl(uint32_t handle, int *mode, int *pal_row);
 int r_texture_filter_linear(void);

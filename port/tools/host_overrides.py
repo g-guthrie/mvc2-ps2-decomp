@@ -278,6 +278,33 @@ _ARC = {
          "            if ((p[0x216] & 0x80) != 0) {"),
         ("typedef unsigned char u8;\n", "typedef unsigned char u8;\nextern int mvc2_arc_code __attribute__((weak)); /* host: arcade.servbot_hitstop (arcade_code.c) */\n"),
     ],
+    # func_001E8CD0 (NAOMI 0x0C0382A4, found with the arcade oracle): the
+    # NAOMI ticks the super-freeze countdown (0x0C0383A4 = func_001E8EB0) and
+    # stores the freeze flag FIRST, before the actor lists run; the PS2 at the
+    # end.  A freeze that starts in frame N is ticked in N on the PS2 and in
+    # N+1 on the NAOMI, so the PS2's freeze ends a frame sooner.
+    "src/stage_update_001E8CD0.c": [
+        ("void func_001E8CD0(void)\n{\n    func_00326700();",
+         "extern int mvc2_arc_code __attribute__((weak)); /* host: arcade.freeze_order (arcade_code.c) */\n"
+         "void func_001E8CD0(void)\n{\n    if (mvc2_arc_code & 4) /* host: arcade.freeze_order: the NAOMI's order */\n"
+         "        D_004D18A6 = (u8)func_001E8EB0();\n    func_00326700();"),
+        ("    D_004D18A6 = (u8)func_001E8EB0();\n    func_003DA6F0(13);",
+         "    if (!(mvc2_arc_code & 4)) /* host: arcade.freeze_order */\n        D_004D18A6 = (u8)func_001E8EB0();\n    func_003DA6F0(13);"),
+    ],
+    # func_00417440 / func_00417500 (NAOMI 0x0C1EC2C0 / 0x0C1EBD40): the PS2
+    # reads a sine table, the NAOMI computes (arcade_code.c mvc2_naomi_sin).
+    "src/lookup_runtime_sine_00417440.c": [
+        ("f32 func_00417440(u32 angle)\n{\n",
+         "extern int mvc2_arc_code __attribute__((weak)); /* host: arcade.trig (arcade_code.c) */\n"
+         "extern f32 mvc2_naomi_sin(int) __attribute__((weak)); /* host: arcade_code.c */\n"
+         "f32 func_00417440(u32 angle)\n{\n    if (mvc2_arc_code & 8) /* host: arcade.trig */\n        return mvc2_naomi_sin((int)angle);\n"),
+    ],
+    "src/w184_c.c": [
+        ("f32 func_00417500(u32 a)\n{\n",
+         "extern int mvc2_arc_code __attribute__((weak)); /* host: arcade.trig (arcade_code.c) */\n"
+         "extern f32 mvc2_naomi_cos(int) __attribute__((weak)); /* host: arcade_code.c */\n"
+         "f32 func_00417500(u32 a)\n{\n    if (mvc2_arc_code & 8) /* host: arcade.trig */\n        return mvc2_naomi_cos((int)a);\n"),
+    ],
 }
 for _k, _v in _ARC.items():
     OVERRIDES.setdefault(_k, []).extend(_v)

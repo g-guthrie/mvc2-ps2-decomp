@@ -223,7 +223,9 @@ static void resync_check(void)
     size_t n;
     if (done || !want || !*want)
         return;
-    snprintf(cur, sizeof cur, "%d/%d/%d", g[0], g[1], g[2]);
+    /* five levels (g[0..4]), so a resync can name a sub-state ("2/1/2/3" =
+     * a fight's first playable frame); a shorter STATE matches as a prefix */
+    snprintf(cur, sizeof cur, "%d/%d/%d/%d/%d", g[0], g[1], g[2], g[3], g[4]);
     n = strlen(want);
     if (strncmp(cur, want, n) != 0 || !(cur[n] == 0 || cur[n] == '/' || want[n - 1] == '/'))
         return;

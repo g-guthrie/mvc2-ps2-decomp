@@ -68,5 +68,8 @@ uint32_t padx_get_time(void);            /* samples played (ADXT_GetTime numerat
  * audio_init(). These expose it for tools. */
 struct Tsd;
 struct Tsd *audio_tsd(void);
+/* Swap the Dreamcast common effects (dcse.h) into banks already loaded,
+ * after a late dcse_load(); returns the samples replaced. */
+int audio_dcse_refresh(void);
 
 #endif

@@ -18,7 +18,7 @@ static struct {
     GLuint prog, vao, vbo;
     GLint u_view, u_mode, u_linear, u_clamp, u_tex, u_pal;
     GLuint pal_tex;
-    int pal_next_row;
+    uint8_t pal_row_used[R_PAL_ROWS]; /* palette atlas rows in use (row 0 reserved) */
     GLuint canvas_fbo, canvas_tex, canvas_depth;
     GLuint sharp_fbo, sharp_tex; int sharp_w, sharp_h;
     GLuint white_tex;
@@ -218,7 +218,8 @@ int r_init(void)
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
     glActiveTexture(GL_TEXTURE0);
-    R.pal_next_row = 1; /* row 0 stays black/transparent */
+    memset(R.pal_row_used, 0, sizeof R.pal_row_used);
+    R.pal_row_used[0] = 1; /* row 0 stays black/transparent */
     {
         static const uint8_t white[4] = { 255, 255, 255, 255 };
         glGenTextures(1, &R.white_tex);
@@ -933,12 +934,27 @@ int r_read_canvas(uint8_t *rgba)
 }
 
 /* ---------------- palettes ---------------- */
+/* First fit over the row map, so rows released by fl_tex_release and
+ * fl_char_bank_destroy (characters are swapped every fight) are reused.
+ * A reused row is safe for draws already batched: r_pal_write flushes first. */
 int r_pal_alloc_rows(int n)
 {
-    if (R.pal_next_row + n > R_PAL_ROWS) return -1;
-    int r = R.pal_next_row;
-    R.pal_next_row += n;
-    return r;
+    if (n <= 0 || n > R_PAL_ROWS) return -1;
+    for (int r = 1, run = 0; r < R_PAL_ROWS; r++) {
+        run = R.pal_row_used[r] ? 0 : run + 1;
+        if (run == n) {
+            int first = r - n + 1;
+            memset(R.pal_row_used + first, 1, (size_t)n);
+            return first;
+        }
+    }
+    return -1;
+}
+
+void r_pal_free_rows(int row, int n)
+{
+    if (row < 1 || n <= 0 || row + n > R_PAL_ROWS) return;
+    memset(R.pal_row_used + row, 0, (size_t)n);
 }
 
 void r_pal_write(int row, int first, int n, const uint8_t *rgba)
@@ -1085,7 +1101,10 @@ void fl_tex_release(uint32_t handle)
         glDeleteTextures(1, &R.tex[i].gl);
         R.tex[i].used = 0;
     }
-    if (p >= 0 && p < MAX_PAL) R.pal[p].used = 0; /* atlas row is not reclaimed (TODO) */
+    if (p >= 0 && p < MAX_PAL && R.pal[p].used) {
+        R.pal[p].used = 0;
+        r_pal_free_rows(R.pal[p].row, 1);
+    }
 }
 
 int fl_tex_info(uint32_t handle, int *w, int *h, int *fmt)
