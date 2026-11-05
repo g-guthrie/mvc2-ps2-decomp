@@ -168,6 +168,20 @@ OVERRIDES = {
         ("            (*(void (**)(u8 *))(*(u8 **)(p + 0x43C) + 0x64))(p);\n",
          "            (*(void (**)(u8 *, u8 *))(*(u8 **)(p + 0x43C) + 0x64))(p, ps2_a1); /* host R12: $a1 */\n"),
     ],
+    # jtbl_004C1D18 (func_0037E080: jtbl_004C1D18[a1](p, a1)) starts inside
+    # data_u32_004C1D10, credited as 16 bytes: its entries 0 and 1 are the
+    # word 0x0037E0A0 (func_0037E0A0) and 0, so on the host entry 0 was the
+    # raw EE address and the call jumped there (oracle fuzz arcade seed
+    # 1000100: SIGSEGV at 0x0037E0A0, stage 7).  Entries 2.. are
+    # jtbl_004C1D20, already a host table.  The first 8 bytes stay the u8
+    # table D_004C1D10 (w1710_k.c).
+    "src/data/data_u32_004C1D10.c": [
+        ("u8 data_u32_004C1D10[16] = {\n    16, 17, 16, 16, 16, 16, 0, 0,\n    160, 224, 55, 0, 0, 0, 0, 0,\n};",
+         "typedef void (*Fn_004C1D18)();\nextern void func_0037E0A0();\n"
+         "typedef struct { u8 a_00[8]; Fn_004C1D18 p_08[2]; } Mv_004C1D10;\n"
+         "Mv_004C1D10 data_u32_004C1D10 = {\n    { 16, 17, 16, 16, 16, 16, 0, 0 },\n"
+         "    { func_0037E0A0, 0 }, /* host R10: jtbl_004C1D18[0..1] */\n};"),
+    ],
     "src/n6.c": [
         ("        (*(void (**)(u8 *))(D_0044AFF0 + U8(a0, 4) * 4))(a0);\n",
          "        (*(void (**)(u8 *, u8 *, u8 *))(D_0044AFF0 + U8(a0, 4) * 4))(a0, a1, a2); /* host R12: $a1, $a2 */\n"),

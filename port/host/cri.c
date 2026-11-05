@@ -19,6 +19,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "host.h"
+void host_sound_event(u32 addr, int a0, int a1, int a2, int a3); /* sound_trace.c */
 #include "fs.h"
 #include "host_cri.h"
 #include "host_loop.h"
@@ -254,6 +255,7 @@ void func_00402458(void *a, int mode) { (void)a; (void)mode; } /* stall-recovery
 
 void func_00402C20(void *a, int ptid, int fid) /* ADXT_StartAfs */
 {
+    host_sound_event(0x00402C20, 0, ptid, fid, 0);
     (void)a;
     adxt.ptid = ptid;
     adxt.fid = fid;
@@ -269,6 +271,7 @@ void func_00402C20(void *a, int ptid, int fid) /* ADXT_StartAfs */
 
 void func_00401868(void *a) /* ADXT_Stop */
 {
+    host_sound_event(0x00401868, 0, 0, 0, 0);
     (void)a;
     ADXT_TRACE("ADXT_Stop frame %ld", mvc2_host_frame);
     HOST_SND(0x00401868u, 0, 0, 0, 0);
@@ -287,6 +290,7 @@ int func_00401920(void *a) /* ADXT_GetStat */
 
 void func_004020D8(void *a, int vol) /* ADXT_SetOutVol */
 {
+    host_sound_event(0x004020D8, 0, vol, 0, 0);
     (void)a;
     adxt.vol = vol;
     ADXT_TRACE("ADXT_SetOutVol(%d) frame %ld", vol, mvc2_host_frame);
@@ -297,6 +301,7 @@ void func_004020D8(void *a, int vol) /* ADXT_SetOutVol */
 
 void func_004026B0(void *a, int sw) /* ADXT_Pause */
 {
+    host_sound_event(0x004026B0, 0, sw, 0, 0);
     (void)a;
     adxt.paused = sw;
     ADXT_TRACE("ADXT_Pause(%d) frame %ld", sw, mvc2_host_frame);
@@ -307,6 +312,7 @@ void func_004026B0(void *a, int sw) /* ADXT_Pause */
 
 void func_00402BC0(int mono) /* ADXT_SetOutputMono */
 {
+    host_sound_event(0x00402BC0, mono, 0, 0, 0);
     adxt.mono = mono;
     HOST_SND(0x00402BC0u, mono, 0, 0, 0);
     if (host_adxt_ops && host_adxt_ops->set_mono)
