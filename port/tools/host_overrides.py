@@ -153,6 +153,21 @@ OVERRIDES = {
         ("    (*(void (**)(u8 *))(*(u8 **)(a + 0x43C) + 0x28))(a);\n",
          "    (*(void (**)(u8 *, u8 *))(*(u8 **)(a + 0x43C) + 0x28))(a, b); /* host R12: $a1 = b */\n"),
     ],
+    # func_00187160 calls the character handler +0x64 with one argument; at
+    # the jalr (0x001871C8) $a1 is what func_0015F8D0 -> func_0015F840 ->
+    # func_003DA750 -> func_003DA780 left there: the object it allocated (the
+    # free-list head D_004C27AC; the spawn handler func_003DA8C0 keeps $a1),
+    # or 8 (func_0015F840's own argument) when the pool is empty.  Captain
+    # America's entry func_002330F0(p, q) reads q.  For the empty pool the EE
+    # reads low kernel memory at 8 + 0x1B0; the host passes a zeroed block.
+    "src/n5.c": [
+        ("        func_0015F8D0(p);\n",
+         "        extern s16 D_004C27A4, D_004C27A0; extern u8 *D_004C27AC; static u8 ps2_n5_lowmem[0x400];\n"
+         "        u8 *ps2_a1 = (D_004C27A4 > 0 && D_004C27A0 != 0) ? D_004C27AC : ps2_n5_lowmem; /* host R12: $a1 below */\n"
+         "        func_0015F8D0(p);\n"),
+        ("            (*(void (**)(u8 *))(*(u8 **)(p + 0x43C) + 0x64))(p);\n",
+         "            (*(void (**)(u8 *, u8 *))(*(u8 **)(p + 0x43C) + 0x64))(p, ps2_a1); /* host R12: $a1 */\n"),
+    ],
     "src/n6.c": [
         ("        (*(void (**)(u8 *))(D_0044AFF0 + U8(a0, 4) * 4))(a0);\n",
          "        (*(void (**)(u8 *, u8 *, u8 *))(D_0044AFF0 + U8(a0, 4) * 4))(a0, a1, a2); /* host R12: $a1, $a2 */\n"),
