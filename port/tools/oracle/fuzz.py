@@ -206,7 +206,8 @@ def scenario_arcade(seed):
         S += ['press cross', 'wait 100']
     S += ['until 2/1/2 cross 50']
     n = 0
-    for _ in range(12):         # 6 stages, Abyss (three forms) and the ending, with room to spare
+    # 12 stage blocks below seed 1000100 (they reach the 7th-8th fight), 22 from there on (to Abyss)
+    for _ in range(12 if seed < ARCADE_SEED + 100 else 22):
         F = []
         while lines_frames(F) < r.randint(150, 600):
             F += action(r)
@@ -753,13 +754,13 @@ def cmd_watch(a):
     mc = os.path.join(work, 'mc')
     os.makedirs(mc)
     g = [f'set pagination off', 'set confirm off',
-         f'break *host_state_dump_frame if *(long *)($esp + 4) == {a.at - 1}', 'run', 'delete 1']
+         f'break host_state_dump_frame if frame == {a.at - 1}', 'run', 'delete 1']
     for w in a.addr:
         addr = int(w, 0)
         g.append(f'watch *(unsigned int *)((char *)&mvc2_ee_bss + {addr - 0x004C2580})')
         g.append('commands\nsilent\nprintf "=== write 0x%08X: %08X frame %ld\\n", ' +
                  f'{addr}, *(unsigned int *)((char *)&mvc2_ee_bss + {addr - 0x004C2580}), *(long *)&mvc2_host_frame\nbt {a.depth}\ncont\nend')
-    g.append(f'break *host_state_dump_frame if *(long *)($esp + 4) >= {a.at + a.span}')
+    g.append(f'break host_state_dump_frame if frame >= {a.at + a.span}')
     g.append('cont')
     g.append('kill')
     gf = os.path.join(work, 'gdb.txt')
