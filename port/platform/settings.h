@@ -47,6 +47,8 @@ enum {
     SET_NATIVE_ONLY = 2, /* hidden on the web */
     SET_WEB_ONLY = 4,    /* hidden natively */
     SET_HIDDEN = 8,      /* stored, not shown */
+    SET_FIXED = 16,      /* not shown, and the stored value is ignored: always the default (the best
+                          * choice) unless overridden for this run (--set KEY=VALUE, ?KEY=VALUE) */
 };
 
 typedef struct SetDesc {

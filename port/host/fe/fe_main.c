@@ -42,6 +42,7 @@
 #include <emscripten.h>
 #endif
 #include "../host.h"
+#include "../runahead.h"
 #include "../host_loop.h"
 #include "../host_cri.h"
 #include "../../platform/platform.h"
@@ -288,6 +289,99 @@ static void write_shot(const char *path)
     }
 }
 
+/* ---- run-ahead (port/host/runahead.h) ----------------------------------
+ * The real step runs without drawing; then the state is saved, the next
+ * step is run with the same input (muted) and drawn, and the state is
+ * restored.  The picture is one frame ahead of the game, so a press shows a
+ * frame sooner.  Not while a test is scripted or dumping state, and only
+ * after 30 quiet steps (no loads, saves or bank changes); it switches
+ * itself off if it costs more than half a frame on this device. */
+int fe_runahead_frames = 1;   /* video.runahead (fixed; --set for testing) */
+int fe_state_hash_every;      /* debug.state_hash N (testing): log the state hash every N steps */
+static void fe_state_hash_check(void)
+{
+    extern void ra_log_regions(long frame), ra_log_bss_pages(long frame);
+    if (fe_state_hash_every > 0 && mvc2_host_frame % fe_state_hash_every == 0) {
+        host_log("state hash frame %ld: %016llx", mvc2_host_frame, ra_state_hash());
+        ra_log_regions(mvc2_host_frame);
+        if (getenv("MVC2_RA_PAGES")) ra_log_bss_pages(mvc2_host_frame);
+        if (getenv("MVC2_RA_WORDS")) { extern void ra_log_bss_words(long, unsigned); ra_log_bss_words(mvc2_host_frame, (unsigned)strtoul(getenv("MVC2_RA_WORDS"), 0, 16)); }
+    }
+}
+static struct {
+    unsigned long seen;
+    long quiet;
+    double cost;              /* ms per speculated step, smoothed */
+    int slow, logged;
+} RA;
+
+static int runahead_ok(void)
+{
+    static int env = -1;
+    unsigned long ev = ra_unsafe_events();
+    if (env < 0)
+        env = !getenv("MVC2_STATE_DUMP") && !getenv("MVC2_SOUND_TRACE") && !getenv("MVC2_PS2_EXACT");
+    if (ev != RA.seen) {
+        RA.seen = ev;
+        RA.quiet = 0;
+    } else {
+        RA.quiet++;
+    }
+    return env && fe_runahead_frames > 0 && !RA.slow && RA.quiet >= 30 && mvc2_host_frame > 0 &&
+           A.nshot == 0 && A.shot_every == 0 && A.draw_every <= 1 && !A.force_draw && plat_step_is_last();
+}
+
+static void runahead_step(void)
+{
+    extern void fe_render_ra_resync(void);
+    extern void tsdc_set_quiet(int on);
+    Uint64 t0;
+    int k;
+    r_set_discard(1);
+    mvc2_frame(); /* the real step */
+    r_set_discard(0);
+    fe_state_hash_check();
+    t0 = SDL_GetPerformanceCounter();
+    if (ra_save() != 0) {
+        host_log("run-ahead: off (no memory for the snapshot)");
+        fe_runahead_frames = 0;
+        return;
+    }
+    unsigned long long saved_hash = fe_state_hash_every > 0 ? ra_state_hash() : 0;
+    mvc2_speculating = 1;
+    tsdc_set_quiet(1);
+    Uint64 t1 = SDL_GetPerformanceCounter();
+    for (k = 0; k < fe_runahead_frames; k++) {
+        r_set_discard(k + 1 < fe_runahead_frames);
+        mvc2_frame();
+    }
+    r_set_discard(0);
+    tsdc_set_quiet(0);
+    mvc2_speculating = 0;
+    Uint64 t2 = SDL_GetPerformanceCounter();
+    ra_restore();
+    if (fe_state_hash_every > 0 && saved_hash != ra_state_hash()) /* testing */
+        host_log("run-ahead: restore at frame %ld did not give back the saved state", mvc2_host_frame);
+    fe_render_ra_resync();
+    {
+        double f = 1000.0 / (double)SDL_GetPerformanceFrequency();
+        double ms = (double)(SDL_GetPerformanceCounter() - t0) * f;
+        if (fe_state_hash_every > 0 && mvc2_host_frame % fe_state_hash_every == 0)
+            host_log("run-ahead cost frame %ld: save %.2f ms, step %.2f ms, restore %.2f ms", mvc2_host_frame,
+                     (double)(t1 - t0) * f, (double)(t2 - t1) * f, (double)(SDL_GetPerformanceCounter() - t2) * f);
+        RA.cost = RA.cost ? RA.cost * 0.97 + ms * 0.03 : ms;
+        if (!RA.logged) {
+            host_log("run-ahead: %d frame(s), state %.1f MB, %.2f ms per step", fe_runahead_frames,
+                     ra_state_bytes() / 1048576.0, ms);
+            RA.logged = 1;
+        }
+        if (RA.cost > 8.0 && RA.quiet > 600 && !fe_state_hash_every) { /* not while testing */
+            host_log("run-ahead: off (%.1f ms per step on this device, budget 8 ms)", RA.cost);
+            RA.slow = 1;
+        }
+    }
+}
+
 static void update(void *u)
 {
     PadRaw p0, p1;
@@ -320,11 +414,16 @@ static void update(void *u)
     /* frame skip: when several steps run in one display frame only the last is drawn */
     /* (scripts see every step unless --draw-every N asks otherwise: the
      * oracle comparisons and the fuzz harness need no pictures) */
-    r_set_discard(!A.force_draw &&
-                  ((!S.n && !plat_step_is_last() && A.nshot == 0 && A.shot_every == 0) ||
-                   (A.draw_every > 1 && (mvc2_host_frame + 1) % A.draw_every != 0)));
-    mvc2_frame();
-    r_set_discard(0);
+    if (runahead_ok()) {
+        runahead_step();
+    } else {
+        r_set_discard(!A.force_draw &&
+                      ((!S.n && !plat_step_is_last() && A.nshot == 0 && A.shot_every == 0) ||
+                       (A.draw_every > 1 && (mvc2_host_frame + 1) % A.draw_every != 0)));
+        mvc2_frame();
+        r_set_discard(0);
+        fe_state_hash_check();
+    }
     fe_audio_frame();
     for (i = 0; i < A.nshot; i++)
         if (A.shot[i].frame == mvc2_host_frame)

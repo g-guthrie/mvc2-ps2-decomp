@@ -23,6 +23,7 @@
 #include <stdlib.h>
 #include "host.h"
 #include "host_render.h"
+#include "runahead.h"
 #include "../../render/render.h"
 
 extern int func_003E0DB0(unsigned int, void *, void *, unsigned int);
@@ -37,6 +38,11 @@ int fe_cnt[8]; /* tri_tex, tri, sprite, quad, fill, tri_tex rejected, sprite rej
 #define NPAL 0x101
 typedef struct { u32 sig; int used; } Sync;
 static Sync tsync[NTEX], psync[NPAL];
+/* run-ahead: what a speculative frame uploaded, re-synced from the restored
+ * game memory afterwards (fe_render_ra_resync), so GL never shows a texture
+ * or palette from a frame that was thrown away */
+static unsigned char spec_tex[NTEX], spec_pal[NPAL];
+static int spec_any;
 
 static u32 sample_sig(const u8 *p, u32 n, u32 seed)
 {
@@ -89,6 +95,7 @@ static void sync_pal(u32 pi)
         }
     }
     fl_pal_define(pi << 16, n, rgba);
+    if (mvc2_speculating) spec_pal[pi] = 1, spec_any = 1;
     psync[pi].sig = sig;
     psync[pi].used = 1;
 }
@@ -165,6 +172,7 @@ static void sync_tex(u32 ti)
     free(pix);
     if (fe_log_tex)
         host_log("texture %u: %dx%d psm %#x", ti, w, h, psm);
+    if (mvc2_speculating) spec_tex[ti] = 1, spec_any = 1;
     tsync[ti].sig = sig;
     tsync[ti].used = 1;
 }
@@ -301,6 +309,16 @@ void func_003EA660(int n, void *list)
     func_003EA660__game(n, list);
     for (i = 0; i < n; i++)
         fe_sync_handle(l[i]);
+}
+
+void fe_render_ra_resync(void)
+{
+    if (!spec_any) return;
+    spec_any = 0;
+    for (u32 i = 1; i < NTEX; i++)
+        if (spec_tex[i]) { spec_tex[i] = 0; tsync[i].used = 0; sync_tex(i); }
+    for (u32 i = 1; i < NPAL; i++)
+        if (spec_pal[i]) { spec_pal[i] = 0; psync[i].used = 0; sync_pal(i); }
 }
 
 int func_003EA070(int tex) /* texture unlock: the pixels changed */

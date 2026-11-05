@@ -235,9 +235,13 @@ frame count of, for example, Cyclops script 09/02.
 
 Code: `port/host/arcade.c` (loader, splice, hooks), `port/host/inflate.c`
 (raw DEFLATE + CRC-32, so neither build needs zlib), `port/host/fe/fe_arcade.c`
-(settings), `port/web/shell.html` (zip intake), `port/tools/pack_personal.py
---naomi`. All toggles are off by default; with all off the game runs the PS2
-tables untouched.
+(settings), `port/tools/pack_personal.py --naomi`. The ROM-file toggles a-c
+are off and are not player options (section 11: the arcade program does not
+use these files); the desktop app keeps `--arcade abc --naomi PATH` for
+study, and the browser no longer asks for the zip. The confirmed code
+differences (d-g, section 10) and the arcade's float rounding are on by
+default (USER_GUIDE "What the port always does"); `MVC2_PS2_EXACT=1` and the
+PS2 oracle tools run the PS2's rules.
 
 | Toggle | Setting / option | What is repointed after `func_0016F2D0` binds the PS2 PAK |
 |---|---|---|
