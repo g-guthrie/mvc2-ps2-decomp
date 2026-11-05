@@ -161,6 +161,23 @@ real time:
 | Effects and voices | `audio.sfx` | 0-100 % | 100 | Sound effects and voices. |
 | Audio buffer | `audio.latency` (browser) | Auto / Low / Normal / High | Auto | How far ahead sound is mixed: Low 40 ms, Normal 80 ms, High 150 ms. Auto uses 2.5 display frames, at least 50 ms. Raise it if you hear crackles. |
 
+**Dreamcast sound effects.** The PS2 disc stores most of the common sound
+effects (hits, blocks, menu and round sounds) at 8 kHz, which cuts everything
+above 4 kHz. The Dreamcast disc has the same recordings at 11-16 kHz. If you
+have your own Dreamcast MvC2 disc, the port plays those versions instead,
+with nothing else changed. There is no on/off option: they are used whenever
+the disc is available.
+- **Browser:** "Choose Dreamcast disc" on the start screen, or Settings >
+  Audio. Choose the disc's data track (`track03.bin`, or an `.iso` of it).
+  Only the 1 MB sound bank (`SE_COMN.BIN`) is kept on the device.
+- **Desktop app:** `--dc-disc PATH` once (a `.gdi`, the data track as `.bin`
+  or `.iso`, or `SE_COMN.BIN` itself); it is remembered as `audio.dc_disc`.
+  `MVC2_DC_DISC=PATH` overrides it for one run.
+- A `.chd` has to be converted first: `chdman extractcd -i mvc2.chd -o mvc2.gdi`.
+- Only the USA disc's `SE_COMN.BIN` is known; another version is ignored and
+  the PS2 effects stay. Voices and music are the same on both discs, so only
+  the common effects change. Details: `port/docs/AUDIO.md` section 9.
+
 In the browser, sound plays through an AudioWorklet at 48 kHz. Older browsers
 fall back to a ScriptProcessorNode. Settings > About shows which one is in use
 and counts any underruns.
