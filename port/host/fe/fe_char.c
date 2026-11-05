@@ -13,6 +13,7 @@
  */
 #include <string.h>
 #include "../host.h"
+#include "../runahead.h"
 #include "../../render/render.h"
 
 extern int func_003DD030(int);
@@ -35,6 +36,7 @@ static void slot_free(int i)
 
 int func_00411C10(void *a, int mode)
 {
+    ra_unsafe("character bank load");
     int n = func_00411C10__game(a, mode);
     if (n >= 1 && n <= 16) {
         slot_free(n - 1);
@@ -49,6 +51,7 @@ int func_00411C10(void *a, int mode)
 
 int func_004120A0(int n)
 {
+    ra_unsafe("character bank release");
     if (n >= 1 && n <= 16)
         slot_free(n - 1);
     return func_004120A0__game(n);

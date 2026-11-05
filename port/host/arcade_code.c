@@ -53,6 +53,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "host.h"
+#include "runahead.h"
 #include "../platform/pad.h"
 
 int mvc2_arc_code;          /* ARC_* bits, read by the overridden game C */
@@ -150,3 +151,5 @@ float mvc2_naomi_cos(int ai)
         m = 0x10000 - m;
     return mvc2_naomi_sin((0x4000 - m) & 0xFFFF);
 }
+
+RA_REGISTER(arcade_code_ra_state) { RA_STATE(q); }

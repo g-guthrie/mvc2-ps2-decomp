@@ -10,6 +10,7 @@
  * listed in host_impl.csv with ret=int.  Semaphores stay in port/stubs/ps2_kernel.c.
  */
 #include "host.h"
+#include "runahead.h"
 
 extern int func_00103E20(int);
 static int thread_ids = 1;
@@ -67,3 +68,5 @@ int func_00103E30(int id) { return func_00103E20(id); } /* 69: PollSema */
 int func_00104180(int a0) { (void)a0; return -1; } /* 118: SifDmaStat */
 int func_001041A0(void *a0, int a1) { (void)a0; (void)a1; return 1; } /* 119: SifSetDma */
 int func_001041B0(void *a0, int a1) { (void)a0; (void)a1; return 1; } /* -119: iSifSetDma */
+
+RA_REGISTER(kernel_ra_state) { RA_STATE(thread_ids); }

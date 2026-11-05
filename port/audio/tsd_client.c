@@ -12,6 +12,7 @@ static uint8_t buf[0x200];/* D_00634100 */
 static int cursor;        /* D_00633E18 */
 static TsdcSink S;
 static int ready;         /* D_004C2BB4 */
+static int quiet;         /* tsdc_set_quiet: packets are built but not sent */
 
 static uint8_t b4(const Entry *e) { return (uint8_t)e->w1; }
 static uint8_t b5(const Entry *e) { return (uint8_t)(e->w1 >> 8); }
@@ -215,7 +216,7 @@ int tsdc_flush(int wait)                                 /* 0x423750 */
     if (cursor) {
         int n = (cursor + 16) & -16;
         if (n > (int)sizeof buf) n = sizeof buf;
-        if (S.rpc) S.rpc(S.ctx, buf, (size_t)n);
+        if (S.rpc && !quiet) S.rpc(S.ctx, buf, (size_t)n);
         cursor = 0;
     }
     return 0;
@@ -266,4 +267,21 @@ int tsdc_load_bank_ptr(uint32_t slot, const void *hd, int32_t hd_size, const voi
      * Buffers must stay valid until the next tsdc_flush() (the "DMA"). */
     return tsdc_load_bank(slot, tsdc_addr(hd, (uint32_t)hd_size), hd_size, tsdc_addr(bd, (uint32_t)bd_size), bd_size,
                           tsdc_addr(tq, (uint32_t)tq_size), tq_size);
+}
+
+/* run-ahead (port/host/runahead.h): a speculative frame builds its packets
+ * as usual but does not send them, and the client's state is part of the
+ * snapshot */
+void tsdc_set_quiet(int on) { quiet = on != 0; }
+void tsdc_state_blocks(void (*reg)(void *p, size_t n, const char *name))
+{
+    reg(Q, sizeof Q, "tsdc Q");
+    reg(&tail, sizeof tail, "tsdc tail");
+    reg(&head, sizeof head, "tsdc head");
+    reg(buf, sizeof buf, "tsdc buf");
+    reg(&cursor, sizeof cursor, "tsdc cursor");
+    reg(&ready, sizeof ready, "tsdc ready");
+    reg(tok, sizeof tok, "tsdc tok");
+    reg(tok_size, sizeof tok_size, "tsdc tok_size");
+    reg(&tok_next, sizeof tok_next, "tsdc tok_next");
 }

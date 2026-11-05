@@ -51,6 +51,9 @@ int tsdc_stop_all(void);
 int tsdc_set_stereo(int enabled);
 int tsdc_flush(int wait);
 int tsdc_status(int fno, int arg);
+/* run-ahead: drop the packets of a speculative frame; the client state blocks */
+void tsdc_set_quiet(int on);
+void tsdc_state_blocks(void (*reg)(void *p, size_t n, const char *name));
 
 /* Host convenience: pass real pointers (64-bit safe; registers address tokens
  * that the driver resolves with tsdc_resolve). */

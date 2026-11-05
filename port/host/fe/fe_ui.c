@@ -71,6 +71,8 @@ static void ap_touch_size(int v)
 }
 static void ap_touch_alpha(int v) { O.touch_alpha = v * 255 / 100; plat_request_render(); }
 static void ap_unlock(int v) { mvc2_unlock_all = v; }
+static void ap_runahead(int v) { extern int fe_runahead_frames; fe_runahead_frames = v; }
+static void ap_state_hash(int v) { extern int fe_state_hash_every; fe_state_hash_every = v; }
 
 #ifdef __EMSCRIPTEN__
 EM_JS(void, web_toggle_fullscreen, (void), {
@@ -125,6 +127,10 @@ static const SetDesc k_opts[] = {
       NULL, 10 },
     { "touch.opacity", "Touch control opacity", SET_SECTION_INPUT, SET_INT, 60, 10, 100, NULL, NULL, ap_touch_alpha,
       SET_FIXED, NULL, 10 },
+    { "video.runahead", "Run-ahead", SET_SECTION_VIDEO, SET_INT, 1, 0, 2, NULL, NULL, ap_runahead, SET_FIXED,
+      "Show the frame the next step will produce, so presses appear a frame sooner (0 = off).", 0 },
+    { "debug.state_hash", "State hash log", SET_SECTION_VIDEO, SET_INT, 0, 0, 100000, NULL, NULL, ap_state_hash,
+      SET_FIXED, "Testing: log the game state hash every N steps.", 0 },
     { "game.unlock_all", "Unlock everything", SET_SECTION_GAME, SET_BOOL, 1, 0, 1, NULL, NULL, ap_unlock, SET_RESTART | SET_FIXED,
       "Every character, stage and extra from the start. Turning it off takes effect on the next start.", 0 },
 };
