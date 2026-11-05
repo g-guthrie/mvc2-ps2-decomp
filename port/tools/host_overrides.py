@@ -145,6 +145,14 @@ OVERRIDES = {
         ("        d = D_004517C0[(s32)v];\n",
          "        d = ((s32)v >= 8 && (s32)v < 64) ? 0.0f : D_004517C0[(s32)v]; /* host R10: jtbl_004517E0 words are EE denormals */\n"),
     ],
+    # func_00185640(a, b) calls the character handler *(a + 0x43C) + 0x28
+    # with $a1 still b (0x00185670); the Storm handler func_002E3920(p, q)
+    # writes q's direction fields (oracle fuzz seed 240: q was garbage, a
+    # record half-way, and player[4]+0x04 / +0xA8 changed).
+    "src/q6_x.c": [
+        ("    (*(void (**)(u8 *))(*(u8 **)(a + 0x43C) + 0x28))(a);\n",
+         "    (*(void (**)(u8 *, u8 *))(*(u8 **)(a + 0x43C) + 0x28))(a, b); /* host R12: $a1 = b */\n"),
+    ],
     "src/n6.c": [
         ("        (*(void (**)(u8 *))(D_0044AFF0 + U8(a0, 4) * 4))(a0);\n",
          "        (*(void (**)(u8 *, u8 *, u8 *))(D_0044AFF0 + U8(a0, 4) * 4))(a0, a1, a2); /* host R12: $a1, $a2 */\n"),
