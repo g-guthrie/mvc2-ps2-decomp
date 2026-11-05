@@ -26,7 +26,7 @@ HASH_LO, HASH_HI, BLOCK = 0x004C2580, 0x00634380, 0x400
 NBLOCKS = (HASH_HI - HASH_LO + BLOCK - 1) // BLOCK
 RL = REGION_HI - REGION_LO
 SND_OFF = 12 + 4 + 8 + 4 + 2 * RL + 4 * NBLOCKS
-SND_MAX, SND_WORDS = 32, 8
+SND_MAX, SND_WORDS = 96, 8
 REC = SND_OFF + 4 + 4 * SND_MAX * SND_WORDS
 PL, STRIDE = 0x004F20B0, 0x5B8
 
@@ -35,7 +35,7 @@ SND_DEFS = {
     0x00422EA0: ('tsd_play', 4), 0x00422FB0: ('tsd_stop', 1), 0x004230B0: ('tsd_change', 4),
     0x004231D0: ('tsd_stop_all_tq', 0), 0x00423240: ('tsd_master_volume', 1), 0x004232C0: ('tsd_cmd77', 3),
     0x00423480: ('tsd_load_bank', 7), 0x004235D0: ('tsd_unload_bank', 1), 0x00423650: ('tsd_stop_all', 0),
-    0x004236C0: ('tsd_stereo', 1),
+    0x004236C0: ('tsd_stereo', 1), 0x00423990: ('tsd_status', 2),
     0x00402C20: ('ADXT_StartAfs', 3), 0x00401868: ('ADXT_Stop', 1), 0x004020D8: ('ADXT_SetOutVol', 2),
     0x004026B0: ('ADXT_Pause', 2), 0x00402BC0: ('ADXT_SetOutputMono', 1),
 }
@@ -69,11 +69,49 @@ def snd_list(s):
     return '[' + ', '.join(snd_str(e) for e in es) + (f', ... {n} in all' if n > len(es) else '') + ']'
 
 
+TSD_STATUS, TSD_STOP = 0x00423990, 0x00422FB0
+
+
+def _gated_stop(es, i):
+    """es[i] is a tsd_stop(X) right after a tsd_status(4, X) query: the game
+    stops X only if the driver says X is still active (func_001E59E0)"""
+    e = es[i]
+    if e[0] != TSD_STOP or i == 0:
+        return False
+    q = es[i - 1]
+    return q[0] == TSD_STATUS and (q[1] & 0xFF) == 4 and q[2] == e[1]
+
+
+def snd_match(p, o):
+    """compare two frames' lists (count, entries): (message or None, races).
+    A status-gated stop present on one side only is a race (the end of a TSD
+    slot against the frame, ORACLE_FUZZ.md "Sound commands"), not a
+    difference; races is the list of ('port'|'oracle', id) excused."""
+    if p == o:
+        return None, []
+    (pn, pe), (on, oe) = p, o
+    i = j = 0
+    races = []
+    while i < len(pe) or j < len(oe):
+        if i < len(pe) and j < len(oe) and pe[i] == oe[j]:
+            i += 1
+            j += 1
+        elif i < len(pe) and _gated_stop(pe, i) and not (j < len(oe) and oe[j] == pe[i]):
+            races.append(('port', pe[i][1]))
+            i += 1
+        elif j < len(oe) and _gated_stop(oe, j):
+            races.append(('oracle', oe[j][1]))
+            j += 1
+        else:
+            return f'sound commands port {snd_list(p)} oracle {snd_list(o)}', races
+    if pn - len(pe) != on - len(oe):  # entries past SND_MAX: only the counts are known
+        return f'sound commands port {snd_list(p)} oracle {snd_list(o)}', races
+    return None, races
+
+
 def snd_diff(p, o):
     """None, or a message with both frames' lists"""
-    if p == o:
-        return None
-    return f'sound commands port {snd_list(p)} oracle {snd_list(o)}'
+    return snd_match(p, o)[0]
 
 
 def load(path):
@@ -207,7 +245,7 @@ def main():
     shown = 0
     first = None
     newly = {}
-    nsnd = 0
+    nsnd = nrace = 0
     for k in range(n):
         p, o = P[ps + k], O[os_ + k]
         msgs = []
@@ -219,9 +257,10 @@ def main():
             msgs.append(f'rand seed port {p[3]:016X} oracle {o[3]:016X}')
         if p[6] != o[6]:
             msgs.append(f'game RNG (D_004C26AC/B0) port {p[6]:04X} oracle {o[6]:04X}')
-        sd = None if a.no_sound else snd_diff(p[8], o[8])
+        sd, r = (None, []) if a.no_sound else snd_match(p[8], o[8])
         if sd:
             msgs.append(sd)
+        nrace += len(r)
         nsnd += o[8][0]
         d = diff_region(p[4], o[4], ign, p[7])
         for off in d[:a.max_fields]:
@@ -249,7 +288,7 @@ def main():
         for blk, k in sorted(newly.items(), key=lambda t: t[1])[:a.max_fields]:
             print(f'    0x{HASH_LO + blk * BLOCK:08X}: +{k} (port frame {P[ps + k][0]})')
     if first is None:
-        print(f'MATCH: {n} frames identical, {nsnd} sound commands')
+        print(f'MATCH: {n} frames identical, {nsnd} sound commands ({nrace} status-gated stop races)')
     else:
         print(f'FIRST DIVERGENCE at +{first} (port frame {P[ps + first][0]}, oracle frame {O[os_ + first][0]}); matched {first} frames')
     return 0 if first is None else 1

@@ -326,12 +326,16 @@ def parse(rec):
     return frame, pads, st, seed, reg, hashes, grng, raw, rec[C.REC:], C.parse_snd(rec, C.SND_OFF)
 
 
-def frame_diffs(p, o, ign=(), sound=True):
+def frame_diffs(p, o, ign=(), sound=True, races=None):
+    """races: a list that collects the status-gated stops excused this frame
+    (compare.snd_match)"""
     msgs = []
     if sound:
-        sd = C.snd_diff(p[9], o[9])
+        sd, r = C.snd_match(p[9], o[9])
         if sd:
             msgs.append(sd)
+        if races is not None:
+            races += r
     if p[1] != o[1]:
         msgs.append(f'pads port {p[1]:08X} oracle {o[1]:08X}')
     if p[2] != o[2]:
@@ -468,10 +472,13 @@ def run_pair(scn, work, port, oracle, iso, snaps=None, frames=None, keep_div=Non
         newly = {}
         n = fight = 0
         nsnd = sframes = 0
+        races = []
         prev = None
         stages, seen = 0, set()
         while True:
-            msgs, fields = frame_diffs(p, o, sound=sound)
+            fr = []
+            msgs, fields = frame_diffs(p, o, sound=sound, races=fr)
+            races += [(n, p[0], side, '%#x' % x) for side, x in fr]
             if visit is not None:
                 if visit(n, p, o, msgs):
                     res['status'] = 'visited'
@@ -516,6 +523,8 @@ def run_pair(scn, work, port, oracle, iso, snaps=None, frames=None, keep_div=Non
         res['sound'] = sound
         res['sound_cmds'] = nsnd
         res['sound_frames'] = sframes
+        res['sound_races'] = races[:200]
+        res['n_sound_races'] = len(races)
         res['stages'] = stages
         res['states'] = sorted(C.st_str(x) for x in seen)
         res['last_state'] = C.st_str(o[2])
@@ -607,7 +616,8 @@ def done_seeds(out):
 def summary_line(res):
     st = res.get('status')
     s = f"seed {res['seed']:6d} {st:11s} {res.get('compared', 0):6d} fr ({res.get('fight_frames', 0):5d} fight) " \
-        f"{res.get('sound_cmds', 0):5d} snd {res.get('wall', 0):6.0f}s  {res['desc']}"
+        f"{res.get('sound_cmds', 0):5d} snd {res.get('n_sound_races', 0):3d} races " \
+        f"{res.get('wall', 0):6.0f}s  {res['desc']}"
     if st == 'diverge':
         d = res['div']
         s += f"\n      +{d['k']} port {d['port_frame']} oracle {d['oracle_frame']} state {d['state']}: " + \
@@ -838,6 +848,7 @@ def cmd_report(a):
         by.setdefault(r.get('status'), []).append(r)
     tot = sum(r.get('compared', 0) for r in rs)
     snd = sum(r.get('sound_cmds', 0) for r in rs if r.get('sound'))
+    nrace = sum(r.get('n_sound_races', 0) for r in rs if r.get('sound'))
     fight = sum(r.get('fight_frames', 0) for r in rs)
     chars = set()
     pairs = set()
@@ -850,7 +861,7 @@ def cmd_report(a):
                 pairs.add((c, e))
     print(f'{len(rs)} scenarios, {tot} frames compared ({fight} fight frames), '
           f'{len(chars)} characters, {len(pairs)} P1/CPU character pairs, '
-          f'{snd} sound commands compared')
+          f'{snd} sound commands compared ({nrace} status-gated stop races excused)')
     for k, v in sorted(by.items(), key=lambda t: str(t[0])):
         print(f'  {k}: {len(v)}')
     sig = {}

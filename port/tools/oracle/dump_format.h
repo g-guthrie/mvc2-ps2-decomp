@@ -65,11 +65,15 @@ static void oracle_extra_parse(void)
  * the arguments the entry takes, in EE argument-register order ($a0..$a3,
  * $t0..$t2), the low 32 bits.  Arguments past the entry's count and the ADXT
  * handle (a CRI object on the PS2, a host struct on the port) are written as
- * 0; pointer arguments as EE addresses (the port's fix()).
+ * 0; pointer arguments as EE addresses (the port's fix()).  Status queries
+ * (TSD\1, func_00423990) are entries too, without their answer: whether a
+ * slot is still active depends on the IOP driver's 240 Hz timer against the
+ * EE's frame, so compare.py lets a stop that a status query gates differ
+ * (ORACLE_FUZZ.md "Sound commands").
  * The oracle logs only calls whose return address lies outside the two
  * libraries (calls between library functions are not the game's).  The
  * buffer is per record: the commands issued since the previous record. */
-#define ORACLE_SND_MAX 32
+#define ORACLE_SND_MAX 96
 #define ORACLE_SND_WORDS 8
 typedef struct
 {
@@ -88,6 +92,7 @@ static const oracle_snd_def oracle_snd_defs[] = {
     {0x004235D0u, 1, 0, 0, "tsd_unload_bank"},
     {0x00423650u, 0, 0, 0, "tsd_stop_all"},
     {0x004236C0u, 1, 0, 0, "tsd_stereo"},
+    {0x00423990u, 2, 0, 0, "tsd_status"}, /* fno, arg: the query, not its answer */
     {0x00402C20u, 3, 1, 0, "ADXT_StartAfs"}, /* adxt, ptid, fid */
     {0x00401868u, 1, 1, 0, "ADXT_Stop"},
     {0x004020D8u, 2, 1, 0, "ADXT_SetOutVol"},
@@ -118,6 +123,10 @@ static void oracle_snd_log(uint32_t fn, const uint32_t *args, oracle_fix_fn fix)
     uint32_t *e;
     unsigned k;
     if (!d)
+        return;
+    /* status: only fno 4 (is a slot active); fno 0xC (bank DMAs pending) is
+     * polled in a wait loop (func_001E5870) as often as the load takes */
+    if (fn == 0x00423990u && (args[0] & 0xFF) != 4)
         return;
     if (oracle_snd_n < ORACLE_SND_MAX) {
         e = oracle_snd_buf[oracle_snd_n];

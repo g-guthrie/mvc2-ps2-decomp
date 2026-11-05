@@ -68,5 +68,9 @@ int func_004236C0(int en)
     return tsdc_set_stereo(en);
 }
 int func_00423750(int wait) { return tsdc_flush(wait); }
-int func_00423990(int fno, int arg) { return tsdc_status(fno, arg); }
+int func_00423990(int fno, int arg)
+{
+    HOST_SND(0x00423990u, fno, arg, 0, 0);
+    return tsdc_status(fno, arg);
+}
 int func_004238A0(int a0, int a1) { (void)a0; (void)a1; return 0; } /* driver thread priority */
