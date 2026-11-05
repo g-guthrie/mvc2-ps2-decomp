@@ -245,7 +245,17 @@ inside the CRI (`0x003F5F88..0x00411C10`) or Tamsoft
 the result (`sound`: counts, first differing frame) and does not stop the
 run.  The status queries (`func_00423990`) are logged on the port as well.
 
-(Sound results: delay sweep in progress; see the next commit.)
+Seed 3: 1652 / 1652 requests, identical in every frame; arcade seed
+1000100: 10,057 / 10,057 over 36,109 frames.  Seeds 15, 17 and 23 show the
+known status race: the game stops a sound before replaying it on one side
+only, because its is-active query (`func_00423990`, fno 4) is answered on
+the PS2 by the IOP driver on its own free-running 240 Hz timer, about one
+tick off from the port's frame-driven driver, near the end of a sound's
+silent release tail.  How the comparison treats that (and the
+pending-loads query, fno 0xC) is settled on the separate branch
+"Oracle fuzz: compare sound commands with retail"; this branch keeps the
+plain request comparison so the two can be reconciled at merge, and makes
+no change to the port's sound driver.
 
 ### Fixes in the second pass
 
@@ -256,5 +266,4 @@ run.  The status queries (`func_00423990`) are logged on the port as well.
 | arcade 1000100 (SIGSEGV at 0x0037E0A0, stage 7) | `jtbl_004C1D18` starts inside `data_u32_004C1D10`, credited as 16 bytes: entry 0 stayed the raw EE address | override: 8 bytes + two function pointers; every `jtbl_` alias inside a non-table object checked |
 | `n5.c:304` (open item) | handler +0x64 gets $a1 = the object func_0015F8D0 just allocated (or 8 when the pool is empty) | override passes the free-list head read before the call |
 | regenerated R12 tables | `wave1b.c` indirect call, `func_00197560` pass-through | table rows |
-| sound comparison (seeds 15, 17, 23) | a play request takes effect on the port's driver at once, so a sound of exactly 4N ticks is over when the game asks N frames later; the PS2's IOP gets it over SIF between timer ticks and the game's query runs early in the frame | new TQ slots start `MVC2_TSD_DELAY` ticks late (port/audio/tsd.c; value fitted against the oracle, see Sound requests) |
 
