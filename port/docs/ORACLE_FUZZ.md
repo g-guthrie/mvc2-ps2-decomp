@@ -175,7 +175,7 @@ and seed 17 (4521 frames, 4262 commands, status queries included).
 
 | | |
 |---|---|
-| Seen | Seeds 15, 17, 23, 29 in the first pass (5 of the first 32 seeds), always as an extra `tsd_stop(X)` on the oracle just before `tsd_play(X)` |
+| Seen | Seeds 15, 17, 23, 29, 31 in the first pass (5 of the first 32 seeds), always as an extra `tsd_stop(X)` on the oracle just before `tsd_play(X)` |
 | Code | `func_001E59E0` (`src/fb64_a.c`, `AUDIO.md` 4.1). Before a sound plays, it stops X itself (slot >= 0x1E) or the player's other voice lines (ids 0-5, 10-0x1D), each only if TSD status fno 4 says the slot is still active. |
 | Port side | The slot had always just ended. The data's sounds are `E0 E1 E2 note-on, wait, note-off, FF`. `FF` ends the slot once the channel is silent, and release rate 0 makes that one tick after the note-off. The port's lifetime is a fixed number of 240 Hz ticks. The port driver runs exactly 4 ticks per frame (headless: 800 samples a frame). Play! also gives exactly 4 per frame (IOP at EE/8 = 36.864 MHz, timer `0x25800`, 60 Hz frames). |
 | Retail side | Calibrated over seven seeds (retail stop or no stop, against the port's lifetime L of the same bank/sound/handle): still active at L+0, L+1 and L+2 ticks, finished at L+2, L+3, L+5 and L+7. The PS2 slot ends about 2-3 ticks later, with about ±1 tick of jitter: the same +2 offset is active in seed 23 and finished in seed 1. |
@@ -184,9 +184,25 @@ and seed 17 (4521 frames, 4262 commands, status queries included).
 | Verdict | **By design** (host timing model). The port driver is unchanged. Retuning its lifetime to Play!'s +2-3 ticks would not remove the jitter, and Play!'s IOP thread and SIF timing is not hardware. |
 | Comparison | `compare.snd_match` excuses a `tsd_stop(X)` present on one side only directly after `tsd_status(4, X)`, the status-gated stop. Anything else still stops the run. Results count the excused races (`n_sound_races`, and `sound_races` with frame, side and id). |
 
-### Sweep
+### Results, sound commands (2026-11-05)
 
-(see "Results, sound commands" below)
+Native i386 port, `MVC2_PS2_FLOAT` on, the binary at "oracle: record TSD
+status queries", with sound comparison on.
+
+| Run | Frames compared | Sound commands | Status-gated races | Result |
+|---|---|---|---|---|
+| `fuzz.py run` seeds 1-60 (56 characters, 474 P1/CPU pairs) | 282,768 (199,028 fight) | 305,784 | 11 (9 seeds, at most 2 each, all on the oracle side) | 60 / 60 match |
+| Arcade seeds 1000001-1000004 (whole runs, stages 4, 6, 6, 6) | 79,955 | 74,250 | 4 | 4 / 4 match |
+| `fight_mix.txt` | 7,535 | 11,576 | 0 | match |
+| Attract cycle (63 `ADXT_SetOutVol` fades) | 4,835 | 1,790 | 0 | match |
+| `training_start.txt` (48 pause-menu `ADXT_Pause`) | 4,535 | 279 | 0 | match |
+| **Total** | **379,628** | **393,679** | **15** | **all match** |
+
+Before the race rule, the first pass on the same binary stopped 5 of the
+first 32 seeds (15, 17, 23, 29, 31) at a status-gated stop. No
+other kind of sound difference was seen. The port's sound-command layer
+needed no fix: every command, argument and bank pointer, and its frame,
+matches the retail game.
 
 ## Results (2026-11-04/05, branch port-fuzz-run)
 
