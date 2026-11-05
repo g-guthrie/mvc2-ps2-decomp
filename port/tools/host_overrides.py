@@ -182,6 +182,20 @@ OVERRIDES = {
          "Mv_004C1D10 data_u32_004C1D10 = {\n    { 16, 17, 16, 16, 16, 16, 0, 0 },\n"
          "    { func_0037E0A0, 0 }, /* host R10: jtbl_004C1D18[0..1] */\n};"),
     ],
+    # Wrapped-cast table calls without their register arguments (found after
+    # arcade seed 1000112, SIGSEGV in func_0035D2A0(p = NULL), by scanning
+    # every `((T (*)(..))TABLE[i])(..)` call against the retail entries):
+    # func_0035D240 jumps through D_004C1B60 with $a0 = a, $a1 = b
+    # (0x0035D284); func_0019A560 through D_0044A7B0 with $a1 = q, loaded
+    # from p + 0x18 at 0x0019A584 and not changed before the jalr.
+    "src/wave13b.c": [
+        ("    else ((void (*)(void))D_004C1B60[a[5]])();\n",
+         "    else ((void (*)(u8 *, u8 *))D_004C1B60[a[5]])(a, b); /* host R12: $a0, $a1 */\n"),
+    ],
+    "src/owner_state_copy_setup_0019a560.c": [
+        ("    ((void (*)(u8 *))D_0044A7B0[p[0x20]])(p);\n",
+         "    ((void (*)(u8 *, u8 *))D_0044A7B0[p[0x20]])(p, q); /* host R12: $a1 = q */\n"),
+    ],
     "src/n6.c": [
         ("        (*(void (**)(u8 *))(D_0044AFF0 + U8(a0, 4) * 4))(a0);\n",
          "        (*(void (**)(u8 *, u8 *, u8 *))(D_0044AFF0 + U8(a0, 4) * 4))(a0, a1, a2); /* host R12: $a1, $a2 */\n"),
