@@ -57,6 +57,34 @@ void fs_source_memory(FsSource *src, const void *data, size_t size)
     src->size = size;
 }
 
+#ifdef __EMSCRIPTEN__
+#include <emscripten.h>
+/* port/web/shell.html: a synchronous read of [off, off + n) of the disc File
+ * straight into wasm memory at dst; returns the bytes read.  Synchronous on
+ * purpose: the game's loaders spin on ADXF_GetStat inside one frame
+ * (func_0012DA40), so a read must have completed when it returns. */
+EM_JS(int, page_disc_read, (double off, int n, void *dst), {
+    return Module.discReadSync ? Module.discReadSync(off, n, dst) : 0;
+});
+static size_t page_read_at(void *ctx, uint64_t off, void *dst, size_t n)
+{
+    (void)ctx;
+    if (!n) return 0;
+    int r = page_disc_read((double)off, (int)n, dst);
+    return r > 0 ? (size_t)r : 0;
+}
+static void page_close(void *ctx) { (void)ctx; }
+
+int fs_source_open_page(FsSource *src, uint64_t size)
+{
+    src->ctx = NULL;
+    src->read_at = page_read_at;
+    src->close = page_close;
+    src->size = size;
+    return 0;
+}
+#endif
+
 void fs_source_close(FsSource *src)
 {
     if (src->close) src->close(src->ctx);

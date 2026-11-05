@@ -285,8 +285,8 @@ if(MVC2_APP)
     set_target_properties(mvc2 PROPERTIES SUFFIX ".html")
     target_link_options(mvc2 PRIVATE -Wl,--fatal-warnings -Wl,--no-gc-sections
       -sUSE_SDL=2 -sMAX_WEBGL_VERSION=2 -sMIN_WEBGL_VERSION=2 -sFULL_ES3
-      -sALLOW_MEMORY_GROWTH=1 -sINITIAL_MEMORY=268435456 -sMAXIMUM_MEMORY=2GB -sSTACK_SIZE=1048576
-      -sFORCE_FILESYSTEM=1 -sEXPORTED_FUNCTIONS=_main,_viewer_open_js
+      -sALLOW_MEMORY_GROWTH=1 -sINITIAL_MEMORY=67108864 -sMAXIMUM_MEMORY=2GB -sSTACK_SIZE=1048576
+      -sFORCE_FILESYSTEM=1 -sEXPORTED_FUNCTIONS=_main,_viewer_open_js,_viewer_open_page_js,_malloc,_free
       -sEXPORTED_RUNTIME_METHODS=ccall,cwrap,FS,IDBFS,addRunDependency,removeRunDependency,UTF8ToString,stringToUTF8,lengthBytesUTF8 -lidbfs.js --profiling-funcs
       --shell-file ${PORT_DIR}/web/shell.html)
     if(MVC2_EMULATE_FPCASTS)

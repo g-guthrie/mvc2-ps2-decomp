@@ -325,11 +325,18 @@ Remaining / next steps:
    viewer.
 7. Touch overlay labels: done (LP/HP/A1/LK/HK/A2/ST, `fe_ui.c`). The pad's
    buttons map to PS2 buttons, so the game's BUTTON CONFIG remaps them.
-8. The web build holds the full ISO in MEMFS (about 208 MB of JS memory). If iOS
-   memory becomes a problem, read byte ranges from the `File` in a worker
-   (WORKERFS or FileReaderSync), or extract only the AFS entries needed into
-   IndexedDB.
-9. `-sMAXIMUM_MEMORY=2GB` and SDL2 2.32.10 from emsdk. The PWA service worker
+8. Web memory: done. The disc is no longer copied into MEMFS (it was 208 MB
+   of JS memory). Each read is a synchronous XHR of that byte range of the
+   user's `File` (a `blob:` URL of a slice, `discReader` in
+   `port/web/shell.html`, `fs_source_open_page` in `port/platform/fs.c`).
+   It has to be synchronous: `func_0012DA40` spins on `ADXF_GetStat` within
+   one frame. A full arcade run is under 400 reads (91 MB, 3-6 ms each), and
+   it ends on the same frame as the in-memory build. Wasm memory starts at
+   64 MB (it was 256 MB; a full arcade run never grows past 64 MB). A page
+   is now about 70 MB (wasm and JS heap). Verified in Chrome and iOS Safari
+   26.4 (simulator). `?discmem` forces the old in-memory path, and it is
+   also used when a browser cannot read blob slices synchronously.
+9. `-sINITIAL_MEMORY=64MB`, `-sMAXIMUM_MEMORY=2GB` and SDL2 2.32.10 from emsdk. The PWA service worker
    is network-first and caches the shell for offline start.
 
 ## Debugging aids (game frontend)

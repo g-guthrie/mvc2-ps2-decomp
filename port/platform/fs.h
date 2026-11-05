@@ -23,6 +23,12 @@ typedef struct FsSource {
 int fs_source_open_file(FsSource *src, const char *path); /* 0 = ok */
 void fs_source_memory(FsSource *src, const void *data, size_t size);
 void fs_source_close(FsSource *src);
+#ifdef __EMSCRIPTEN__
+/* Web: reads go to the page's Module.discReadSync(offset, length, dst), which
+ * reads that byte range of the user's disc File synchronously; the image is
+ * never held in memory. 0 = ok. */
+int fs_source_open_page(FsSource *src, uint64_t size);
+#endif
 
 /* ---- ISO9660 ---- */
 typedef struct IsoFile {

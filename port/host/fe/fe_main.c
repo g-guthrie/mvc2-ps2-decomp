@@ -38,6 +38,7 @@
 #endif
 #include "../host.h"
 #include "../host_loop.h"
+#include "../host_cri.h"
 #include "../../platform/platform.h"
 #include "../../platform/png_write.h"
 #include "../../render/render.h"
@@ -241,6 +242,27 @@ int viewer_open_js(const char *path)
         return 0;
     return boot_game(path);
 }
+
+#ifdef __EMSCRIPTEN__
+/* web: the disc is read on demand from the user's File (Module.discReadSync
+ * in port/web/shell.html) instead of a 208 MB copy in memory */
+EMSCRIPTEN_KEEPALIVE
+int viewer_open_page_js(double size)
+{
+    FsSource src;
+    GameDisc *d;
+    if (A.booted)
+        return 0;
+    fs_source_open_page(&src, (uint64_t)size);
+    if (host_disc_open_source(src) != 0 || !(d = host_disc()))
+        return -1;
+    host_log("disc: read on demand from the page (%d files, AFS02 %d entries)", d->iso.n_files,
+             d->afs[2].count);
+    mvc2_boot(1);
+    A.booted = 1;
+    return 0;
+}
+#endif
 
 extern int fe_cnt[8];
 static void write_shot(const char *path)
