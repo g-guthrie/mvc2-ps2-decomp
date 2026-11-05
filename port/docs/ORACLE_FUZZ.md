@@ -129,4 +129,74 @@ ones outside the actor area were followed down to the word with `scan`
 `fuzz.py` kept the first 40 blocks by address in `new_blocks`, which hid
 everything above ~0x004EA000; it now keeps the first 80 by frame.
 
-RESULTS_PLACEHOLDER
+## Results (2026-11-04/05, branch port-fuzz-run)
+
+Native i386 port, `MVC2_PS2_FLOAT` on, Linux x86-64 (4 cores, `--jobs 3`),
+oracle at the pinned Play! commit.  The port was rebuilt after each fix;
+`results.jsonl` records the binary each seed ran on (v0 = the branch as
+started, v9 = the final one).
+
+| | |
+|---|---|
+| seeds run | 416 (1-416) |
+| frames compared | 1,943,285 (1,361,541 in fights) |
+| characters / P1-CPU pairs | 56 / 2,098 |
+| `--cpu-hp` none / 40 / 1 | 222 / 97 / 97 |
+| matched to the end | 406 |
+| diverged | 7 (seeds 5, 8, 40, 53, 79, 83, 240) |
+| port crashed (SIGSEGV) | 3 (seeds 19, 24, 39) |
+| oracle failures, no-sync | 0 |
+| v8/v9 (the last ~314 seeds) | 1 divergence (240), fixed |
+
+REGRESSION_PLACEHOLDER
+
+### Divergences
+
+| Seed (binary) | First difference | Cause | Fix | Re-run |
+|---|---|---|---|---|
+| 5 (v0) | player[5]+0x1C: 0xB73F vs 0x1F, +2115 | `jtbl_004BFBB8` entry 24 (0x004BFC18) is `D_004BFC18`, the s16 pair (0x20, 0x30) that `func_001F1F60` (`sa12_j.c`) loads as a timer; credited as `func_00300020`, the host stored a host code address (low half 0xB740) | R10 override: the literal word | v2: next divergence (53's) |
+| 8 (v0) | player[1]+0x460: 0x0F vs 0x0E, +3412 | `func_00164C50` (script opcode 38) falls off the end after `func_00164E90`; the EE returns that call's 1, so `func_00169600` steps again in the frame; R14 returned 0.  `gen_returns.py` left it because of the explicit early `return 0` | R24: call + explicit `return N;` constants is return-last (`gen_returns.py`; also `func_003B8170`) | v2: match |
+| 19 (v1) | SIGSEGV at +3080 in `func_003BC870(p = 0xA)` | `D_004C20B8[p[4]]()` in `func_003BC820`: $a0..$a3 still hold the caller's arguments at the jalr; the C passes none | `r12_indirect.csv` row | v2: match |
+| 24 (v1) | SIGSEGV at +3067 in `func_00178F20(owner = 0x2)` | `func_002F6760` reuses its parameter `p` as a byte; R12 passed `p` for `$a1`, which the asm says is the entry value | R12: pass `v__arg` (R19's copy of the entry value) when the C writes the parameter (16 sites changed) | v4: match |
+| 39 (v2) | SIGSEGV at +2899 via `func_001A2050(p, q = garbage)` | `(*(void (**)(u8 *))(D_0044AFF0 + …))(a0)` in `func_001A1FC0`: $a1/$a2 are the C's locals a1/a2 at the jalr | override; then all five cast-form table calls checked against the retail table entries (`wave7.c`, `wave1x.c` also fixed) | v4: match |
+| 40 (v2) | player[1] hit state (+0x164 …), +2467 | not separate: fixed by the v3-v4 changes | - | v4: match |
+| 53 (v3), 5 (v2) | player[0]+0x1B4 / +0x210 (bytes 0x1B7, 0x211), Storm | `func_002D92E0` passes `&v` (a u16 local) to `func_0018A990`, which reads `*(u16 *)(q + 6)`: on the EE the caller's saved `$s0` upper half (0); on the host stack garbage | override: a 4-halfword buffer with 0 at +6 | v5: match (both) |
+| 79 (v6) | player[4]+0x34: 0xC41D9EEE vs 0xC41D9EEF (1 ulp), +4428 | `func_002271E0` reads `D_004517C0[p[0x151]]` (8 floats) at index 16; words 8..63 are jump-table code addresses = denormals on the EE, flushed to 0; on the host a host code address is a normal ~1e-34 and the round-toward-zero add moved x | override: indices 8..63 read 0.0 | v8: match |
+| 83 (v6) | player[1]+0xF8: 1 ulp, +2511 | projected screen depth, VU0 macro matrices (`vu0_macro_math.S`) through the render path; Play!'s VU0 vs the port's | by design: compare.py tolerates 2 ulp at player +0xF0/F4/F8 (`RENDER_WORDS`) | v7: match |
+| 240 (v8) | player[4]+0x04 / +0xA8, CPU Storm, +3899 | `func_00185640(a, b)` calls the character handler `*(a + 0x43C) + 0x28` with $a1 = b; Storm's `func_002E3920(p, q)` writes q | override; then every `+0x43C` handler call checked against the 53 per-character tables | v9: match |
+
+Found by scanning, not (yet) by a seed: `jtbl_004C1BF0` entries 6-7 are
+`D_004C1C08[4]` (s16 speeds, `residual_00361A00`); `wave7.c` and
+`wave1x.c` cast-form table calls without their register arguments.
+
+### Classes
+
+- **Data credited as code** (seeds 5, 79; `jtbl_00475ABC` in the oracle
+  pass): a word in a jump table that is really data, or a data table read
+  past its end into one.  The host keeps host code addresses there.  Scan
+  used: entries of `src/data/*` tables that a TU also declares as sub-word
+  data (`s16`/`u8`/`f32` …); 15 candidates, 2 real.
+- **Register arguments the C does not pass** (19, 24, 39, 240): indirect
+  calls with fewer arguments than the entries read, and the C reusing a
+  parameter as a local.  Scans used: the five cast-form table calls and the
+  ~30 character-handler calls, against the retail tables.
+- **Return values** (8): R24 now covers call + explicit-constant returns.
+- **EE stack contents** (5, 53): a read past a local into the caller's
+  frame.
+
+### Open
+
+- `n5.c:304` calls handler slot 0x64 with one argument; for Captain
+  America (0x0B) the entry `func_002330F0` reads q, which is whatever the
+  previous callee left in $a1 on the EE (undefined there too).  Not seen in
+  a run.
+- The slot-0x60 handlers of Sakura (0x22) and Colossus (0x32) read q; every
+  call site that can reach them passes it.  Sites passing a small integer in
+  $a1 are guarded for other characters.
+- `r12_returns.csv` and `r12_indirect.csv` were edited by hand to what the
+  patched generators give: their regeneration needs `asm/main.s` (the
+  matching build's split), which this environment did not have.
+- Coverage beyond stage fights: every scenario ends in the arcade fight
+  state (2/1/2); stage numbers, the Abyss fight and the ending were not
+  tracked, and menus other than the arcade path (training, shop, options)
+  are not in the scenario model.

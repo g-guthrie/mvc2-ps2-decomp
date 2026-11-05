@@ -980,3 +980,34 @@ logic 13% slower in wasm (794 vs 911 frames/s headless).
   different lines, so they had also diverged); not analysed.
 - hostify R14 class (48 + 60 sites, `$v0` of the last callee) is with the
   r12 work; `func_00185010` is the one fixed here.
+
+### Oracle fuzz pass (2026-11-04/05, branch port-fuzz-run)
+
+`port/tools/oracle/fuzz.py` (see `port/docs/ORACLE_FUZZ.md` for how to run
+it, the scenario model and the false differences): random ARCADE fights
+from a seed (any of the 56 characters for P1 and the CPU, assist types,
+`--cpu-hp` / `--p1-hp`, random motions, specials, supers, assists, tags,
+throws), port and oracle in parallel, compared frame by frame.
+
+**416 seeds, 1,943,285 frames compared (1.36 M in fights), 56 characters,
+2,098 P1/CPU pairs.**  10 seeds did not match; all fixed or explained:
+
+| Seed | Cause | Fix |
+|---|---|---|
+| 5 | `jtbl_004BFBB8` entry 24 is the s16 pair `D_004BFC18` (a timer) | R10 literal |
+| 8 | `func_00164C50` returns its last callee's $v0 past an explicit `return 0` | R24 rule in gen_returns.py |
+| 19 | `D_004C20B8[p[4]]()` without $a0..$a3 | r12_indirect row |
+| 24 | R12 passed a parameter the C had reused as a local | R12 passes `v__arg` (16 sites) |
+| 39 | cast-form table call without $a1/$a2 | override (+2 found by scan) |
+| 40 | (cascade, fixed by the above) | - |
+| 53 (and 5) | `&v + 6` read into the caller's frame (EE: 0) | override |
+| 79 | float table read past its end into code addresses (EE denormals = 0) | override |
+| 83 | VU0 render projection, 1 ulp (by design) | compare.py tolerance, 2 ulp at +0xF0/F4/F8 |
+| 240 | character handler call without $a1 (Storm) | override (+ all handler calls checked) |
+
+Also: `jtbl_004C1BF0` entries 6-7 are data (`D_004C1C08`), found by scan.
+The new false differences (dump translation of colour words near the host
+heap, the text renderer's scratch quad, DMA bookkeeping) are in
+ORACLE_FUZZ.md "BSS blocks".  Build: without emsdk the signature scan now
+compiles the stubs with clang + wasi-libc; the Linux build needs
+`gcc-multilib` (USER_GUIDE).
