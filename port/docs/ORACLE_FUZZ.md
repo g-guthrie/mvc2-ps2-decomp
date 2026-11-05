@@ -129,6 +129,65 @@ ones outside the actor area were followed down to the word with `scan`
 `fuzz.py` kept the first 40 blocks by address in `new_blocks`, which hid
 everything above ~0x004EA000; it now keeps the first 80 by frame.
 
+## Sound commands
+
+The comparison above masks the sound and IOP BSS from the first frame, so it
+says nothing about audio. Since the "Sound commands" change to
+`dump_format.h`, every record also carries the ordered list of calls the game
+made since the previous record into its two sound layers. Every frame's list
+must match. A difference stops the run like a region difference, and the
+report shows both lists:
+
+```
++2392 port 2846 oracle 2858 state 2/1/2: sound commands port [tsd_status(4, 0x12101), tsd_play(0x12101, -1, 64, -1)]
+                                         oracle [tsd_status(4, 0x12101), tsd_stop(0x12101), tsd_play(0x12101, -1, 64, -1)]
+```
+
+`fuzz.py --no-sound` and `compare.py --no-sound` turn the check off.
+`fuzz.py sanity --seed S --count N` runs the oracle against itself on each
+scenario.
+
+**Layers.** Two layers exist at the same EE address on both sides, with the
+same arguments. The port replaces them there (`host/tsd_host.c`,
+`host/cri.c`). Waveforms are out of scope: Play!'s SPU2 output is not
+bit-exact, and the decoders are checked in `AUDIO.md`.
+
+| Layer | Entries (EE) | Recorded arguments |
+|---|---|---|
+| Tamsoft client (effects, voices) | `422EA0` play, `422FB0` stop, `4230B0` change, `4231D0` stop all TQ, `423240` master volume, `4232C0` cmd77, `423480` load bank, `4235D0` unload bank, `423650` stop all, `4236C0` stereo, `423990` status (fno 4 only) | `$a0..$a3`, `$t0..$t2` up to the entry's count. The bank pointers of load bank are EE addresses (the port's dump `fix()`). |
+| CRI ADXT (music) | `402C20` StartAfs, `401868` Stop, `4020D8` SetOutVol, `4026B0` Pause, `402BC0` SetOutputMono | The same, without the ADXT handle: a CRI object on the PS2, a host struct on the port. |
+
+**Oracle hooks.** The oracle records a call only when its `$ra` lies outside
+the two libraries (`0x3F5F88..0x411C10`, `0x422BE0..0x423E30`): a call
+between library functions is not the game's. The port's replacements are
+leaves. The EE leaves garbage in argument registers past an entry's count
+(`ADXT_Pause` arrives with `$a2 = FFFFFFFF` or a stale pointer), so those
+slots are written as 0. Up to 96 entries per frame are kept, and the count is
+compared beyond that. Status fno `0xC` (bank DMAs pending) is not recorded:
+`func_001E5870` polls it for as long as a DMA takes, which is many calls on
+the PS2 and one on the port.
+
+**Sanity pair.** The oracle against itself gives identical lists, with no
+noise to mask before comparing the port: seed 1 (5446 frames, 6781 commands)
+and seed 17 (4521 frames, 4262 commands, status queries included).
+
+### Status-gated stops: driver timing, by design
+
+| | |
+|---|---|
+| Seen | Seeds 15, 17, 23, 29 in the first pass (5 of the first 32 seeds), always as an extra `tsd_stop(X)` on the oracle just before `tsd_play(X)` |
+| Code | `func_001E59E0` (`src/fb64_a.c`, `AUDIO.md` 4.1). Before a sound plays, it stops X itself (slot >= 0x1E) or the player's other voice lines (ids 0-5, 10-0x1D), each only if TSD status fno 4 says the slot is still active. |
+| Port side | The slot had always just ended. The data's sounds are `E0 E1 E2 note-on, wait, note-off, FF`. `FF` ends the slot once the channel is silent, and release rate 0 makes that one tick after the note-off. The port's lifetime is a fixed number of 240 Hz ticks. The port driver runs exactly 4 ticks per frame (headless: 800 samples a frame). Play! also gives exactly 4 per frame (IOP at EE/8 = 36.864 MHz, timer `0x25800`, 60 Hz frames). |
+| Retail side | Calibrated over seven seeds (retail stop or no stop, against the port's lifetime L of the same bank/sound/handle): still active at L+0, L+1 and L+2 ticks, finished at L+2, L+3, L+5 and L+7. The PS2 slot ends about 2-3 ticks later, with about ±1 tick of jitter: the same +2 offset is active in seed 23 and finished in seed 1. |
+| Cause | The IOP's timer and the driver threads run free of the EE frame. How many ticks fall between two EE calls in different frames depends on where in each frame the EE reaches the call, which depends on the frame's workload. MODHSYN, stripped and untraced beyond key-on and pitch (`AUDIO.md` 4.4), adds its own delay before it reports a keyed-off channel silent. The port has no cycle timing. |
+| Effect | None audible. The stop arrives after the note-off, when the voice is already silent. Slot occupancy differs by a few ticks, which matters only when all 16 slots of a bank are busy (stealing). |
+| Verdict | **By design** (host timing model). The port driver is unchanged. Retuning its lifetime to Play!'s +2-3 ticks would not remove the jitter, and Play!'s IOP thread and SIF timing is not hardware. |
+| Comparison | `compare.snd_match` excuses a `tsd_stop(X)` present on one side only directly after `tsd_status(4, X)`, the status-gated stop. Anything else still stops the run. Results count the excused races (`n_sound_races`, and `sound_races` with frame, side and id). |
+
+### Sweep
+
+(see "Results, sound commands" below)
+
 ## Results (2026-11-04/05, branch port-fuzz-run)
 
 Native i386 port, `MVC2_PS2_FLOAT` on, Linux x86-64 (4 cores, `--jobs 3`),
