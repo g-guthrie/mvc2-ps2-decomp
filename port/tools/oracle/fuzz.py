@@ -51,6 +51,24 @@ sys.path.insert(0, HERE)
 import compare as C  # noqa: E402
 
 SYNC = '1/1/0'
+
+# Sound requests compared between the port and the oracle: the game's calls
+# into the Tamsoft driver and the ADX streamer (EE side; the PCM is not
+# comparable).  address -> (name, argument registers compared; pointer
+# arguments - bank addresses, the ADXT handle - are left out)
+SOUND = {
+    0x00422CC0: ('tsd_reset', ()), 0x00422DB0: ('tsd_bind', ()), 0x00422EA0: ('tsd_play', (0, 1, 2, 3)),
+    0x00422FB0: ('tsd_stop', (0,)), 0x004230B0: ('tsd_change', (0, 1, 2, 3)), 0x004231D0: ('tsd_stop_all_tq', ()),
+    0x00423240: ('tsd_master_volume', (0,)), 0x004232C0: ('tsd_cmd77', (0, 1, 2)),
+    0x00423480: ('tsd_load_bank', (0, 2)), 0x004235D0: ('tsd_unload_bank', (0,)), 0x00423650: ('tsd_stop_all', ()),
+    0x004236C0: ('tsd_stereo', (0,)), 0x00402C20: ('adxt_start_afs', (1, 2)), 0x00401868: ('adxt_stop', ()),
+    0x004020D8: ('adxt_set_out_vol', (1,)), 0x004026B0: ('adxt_pause', (1,)), 0x00402BC0: ('adxt_set_mono', (0,)),
+}
+# the oracle traces every entry, the libraries' own calls too (ADXT_StartAfs
+# calls ADXT_Stop); the port's host versions make none, so only calls from
+# game code count: return addresses inside these ranges are left out
+SOUND_LIBS = ((0x003F5F88, 0x00411C10),   # CRI middleware (PLATFORM_SURFACE.md)
+              (0x00422BE0, 0x00423E30))   # Tamsoft client (tsd_host.c)
 DUMP_FROM = 400
 
 CHARS = {
@@ -393,12 +411,14 @@ def run_pair(scn, work, port, oracle, iso, snaps=None, frames=None, keep_div=Non
     opts = options(scn)
     oargs = [oracle, '--iso', iso, '--frames', str(nfr), '--resync', SYNC, '--dump', of,
              '--dump-from', str(DUMP_FROM), '--script', script] + opts
+    for addr in SOUND:
+        oargs += ['--trace', '0x%08X' % addr]
     pargs = [port, '--hidden', '--frames', str(nfr), '--draw-every', '1000000', '--script', script] + opts + \
         ['--iso', iso]
     env_o = dict(os.environ, MVC2_ORACLE_HOME=oh)
     env_p = dict(os.environ, MVC2_PAD_DELAY='0', MVC2_RESYNC=SYNC, MVC2_STATE_DUMP=pf,
                  MVC2_STATE_DUMP_FROM=str(DUMP_FROM), MVC2_MEMCARD=mc, SDL_VIDEODRIVER='offscreen',
-                 SDL_AUDIODRIVER='dummy')
+                 SDL_AUDIODRIVER='dummy', MVC2_SOUND_TRACE=os.path.join(work, 'port_sound.txt'))
     rsize = C.REC
     if extra:
         env_o['MVC2_DUMP_EXTRA'] = env_p['MVC2_DUMP_EXTRA'] = '0x%08X:0x%08X' % extra
@@ -495,6 +515,7 @@ def run_pair(scn, work, port, oracle, iso, snaps=None, frames=None, keep_div=Non
             praw, oraw = a, b
             p, o = parse(a), parse(b)
         res['compared'] = n
+        res['last_port_frame'] = p[0]
         res['fight_frames'] = fight
         res['stages'] = stages
         res['states'] = sorted(C.st_str(x) for x in seen)
@@ -524,6 +545,8 @@ def finish(res, pp, po, P, O, kill, timer, t0, work):
     P.close()
     O.close()
     res['wall'] = round(time.time() - t0, 1)
+    if 'port_sync' in res and 'last_port_frame' in res:
+        res['sound'] = compare_sound(work, res)
     if pp.returncode not in (0, None, -9) and res.get('status') in ('match', 'diverge'):
         res['port_rc'] = pp.returncode
     # port crash signature from its log
@@ -540,6 +563,57 @@ def finish(res, pp, po, P, O, kill, timer, t0, work):
     shutil.rmtree(os.path.join(work, 'oracle_home'), ignore_errors=True)
     shutil.rmtree(os.path.join(work, 'mc'), ignore_errors=True)
     return res
+
+
+_TRACE = None
+
+
+def sound_events(path, prefix):
+    """{frame: [(addr, (a0, a1, a2, a3))]} from `f<frame> ADDR(a0=.. a1=.. a2=.. a3=..)` lines"""
+    import re
+    global _TRACE
+    if _TRACE is None:
+        _TRACE = re.compile(r'f(\d+) ([0-9A-F]{8})\(a0=([0-9A-F]{8}) a1=([0-9A-F]{8}) a2=([0-9A-F]{8}) a3=([0-9A-F]{8})')
+    ev = {}
+    try:
+        f = open(path, errors='replace')
+    except OSError:
+        return ev
+    for ln in f:
+        if prefix and not ln.startswith(prefix):
+            continue
+        m = _TRACE.search(ln)
+        if not m:
+            continue
+        addr = int(m.group(2), 16)
+        if addr not in SOUND:
+            continue
+        ra = ln.find(' ra=')
+        if ra >= 0:
+            r = int(ln[ra + 4:ra + 12], 16)
+            if any(lo <= r < hi for lo, hi in SOUND_LIBS):
+                continue
+        a = tuple(int(m.group(k), 16) for k in range(3, 7))
+        ev.setdefault(int(m.group(1)), []).append((addr, tuple(a[i] for i in SOUND[addr][1])))
+    return ev
+
+
+def compare_sound(work, res):
+    """the sound requests of both sides over the compared frames: counts and
+    the first frame whose list (in call order) differs"""
+    pe = sound_events(os.path.join(work, 'port_sound.txt'), None)
+    oe = sound_events(os.path.join(work, 'oracle.log'), '[trace]')
+    ps, os_, last = res['port_sync'], res['oracle_sync'], res['last_port_frame']
+    d = os_ - ps
+    out = {'port': 0, 'oracle': 0, 'first_diff': None}
+    for fr in range(ps, last):
+        a, b = pe.get(fr, []), oe.get(fr + d, [])
+        out['port'] += len(a)
+        out['oracle'] += len(b)
+        if a != b and out['first_diff'] is None:
+            nm = lambda L: ['%s%s' % (SOUND[x][0], tuple('%X' % v for v in y)) for x, y in L]
+            out['first_diff'] = {'port_frame': fr, 'oracle_frame': fr + d, 'port': nm(a)[:8], 'oracle': nm(b)[:8]}
+    return out
 
 
 def job(seed, out, port, oracle, iso, fight_override=None):
@@ -593,6 +667,12 @@ def summary_line(res):
             '; '.join(d['msgs'][:3])
     elif st not in ('match',):
         s += '\n      ' + str(res.get('detail', '')) + ' ' + ' | '.join(res.get('port_log_tail', [])[-2:])
+    snd = res.get('sound')
+    if snd:
+        s += f"  sound {snd['port']}/{snd['oracle']}"
+        if snd['first_diff']:
+            fd = snd['first_diff']
+            s += f"\n      SOUND differs at port {fd['port_frame']}: port {fd['port']} oracle {fd['oracle']}"
     return s
 
 
@@ -824,6 +904,14 @@ def cmd_report(a):
     for r in rs:
         for b in r.get('new_blocks', []):
             blk.setdefault(b[0], []).append(r['seed'])
+    snd = [r for r in rs if r.get('sound')]
+    if snd:
+        bad = [r for r in snd if r['sound']['first_diff']]
+        print(f"sound requests compared in {len(snd)} runs: {sum(r['sound']['port'] for r in snd)} port / "
+              f"{sum(r['sound']['oracle'] for r in snd)} oracle events; runs that differ: {len(bad)}")
+        for r in bad[:20]:
+            fd = r['sound']['first_diff']
+            print(f"  seed {r['seed']} port frame {fd['port_frame']}: port {fd['port'][:3]} oracle {fd['oracle'][:3]}")
     if blk:
         print('BSS blocks newly differing (block: runs):')
         for k, v in sorted(blk.items(), key=lambda t: -len(t[1]))[:30]:
