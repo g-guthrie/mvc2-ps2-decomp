@@ -125,22 +125,29 @@ never reach the game.
 
 ## Settings
 
-Every option is in the browser's settings panel and in the in-game menu. Both
-menus are built from the same option list. Changes apply immediately unless
-marked "next start".
+There are few options on purpose: everything that has one best choice just
+uses it. The settings panel (and the in-game menu, F1) has only volumes,
+touch controls, the gamepad-to-player choice and the button bindings.
 
-### Video
-| Option | Key | Values | Default | What it does |
-|---|---|---|---|---|
-| Fullscreen | `video.fullscreen` (desktop app) | Off / On | Off | Desktop fullscreen. In the browser use the fullscreen button or the menu's "Toggle fullscreen" (browsers only allow it after a click or key press). |
-| Scaling | `video.scale` | Fit / Integer / Stretch | Fit | The picture is the 640x448 area the PS2 shows on the TV (the game draws in 640x480, the PS2's display shows the top 448 lines). Fit is the largest such picture. Integer uses only whole multiples of 640x448, so every pixel is the same size, and falls back to Fit when the window is smaller. Stretch fills the window. |
-| Upscaling filter | `video.filter` | Nearest / Sharp / Smooth | Sharp | Nearest gives hard pixels, which can have uneven widths at non-integer sizes. Sharp gives crisp pixels with even widths (sharp bilinear). Smooth is bilinear. |
-| Sprite filtering | `video.sprite_filter` | As the game / Nearest / Smooth | As the game | How 2D sprites are sampled: as the game asks, always nearest (crisp), or always smooth (the PS2's soft look). |
-| CRT effect | `video.crt` | Off / Scanlines / CRT | Off | Scanlines draws 240 lines, like the 15 kHz picture the game was made for. CRT adds a shadow mask, slight curvature and a vignette. Both fade out on small windows, where they would cause moiré. |
-| CRT strength | `video.crt_strength` | 0-100 % | 60 % | Strength of the scanlines and the mask. |
-| V-sync | `video.vsync` (desktop app) | Off / On | On | Waits for the display refresh. In the browser the page always follows the display. |
-| Drop frames when slow | `video.frame_skip` | Off / On | On | On a slow device the game keeps full speed by skipping the drawing of some frames, never the game logic. |
-| Show FPS and latency | `video.fps` | Off / On | Off | Shows, in the corner: display frames per second, game-logic rate and the cost of one step, display refresh, and input latency (average and worst, in ms and frames). |
+### What the port always does
+| | |
+|---|---|
+| Picture | The PS2's 640x448 picture, as large as fits, with sharp pixel scaling (crisp, even pixel widths); sprites sampled as the game asks; no CRT effect; v-sync on. |
+| Speed | Game logic at a fixed 60 Hz. On a slow device some frames are not drawn, but no game step is skipped. |
+| Input | Zero frames of delay: a press counts in the next game step (the retail PS2 adds 2 frames, the arcade about 1; ARCADE_DIFF.md 10.3). |
+| Rules | The arcade's (NAOMI Rev A) wherever the arcade oracle confirmed a difference: the flying-screen edge, Servbot's hit-stop inputs, the super-freeze tick order, the arcade's sine/cosine and its float rounding. Characters' frames, boxes, damage and CPU AI are the same on both machines (ARCADE_DIFF.md sections 10-11). |
+| Unlocks | Every character, stage and extra from the start. |
+| Sound | The Dreamcast versions of the common effects when you add your Dreamcast disc (below). |
+
+For testing, any of these can still be changed for one run with
+`--set KEY=VALUE` (desktop) or `?KEY=VALUE` (browser), for example
+`?video.fps=1` (frame rate and latency overlay), `video.crt=crt`,
+`video.scale=integer`, `arcade.timing=ps2`, `arcade.fs_edge=0`,
+`game.unlock_all=0` (or `--no-unlock`). Values saved by older versions are
+ignored. `MVC2_PS2_EXACT=1` runs the PS2's rules; the PS2 oracle tools do
+that automatically (a state-dump run without `--arcade`). The NAOMI ROM-file
+tables (`--arcade abc --naomi mvsc2.zip`, desktop only) are not what the
+arcade plays and stay a study tool (ARCADE_DIFF.md section 11).
 
 **Frame pacing.** The game logic always runs at a fixed 60 Hz, sampled from
 real time:
@@ -159,7 +166,6 @@ real time:
 | Master volume | `audio.volume` | 0-100 % | 100 | |
 | Music volume | `audio.music` | 0-100 % | 100 | The game's ADX music. |
 | Effects and voices | `audio.sfx` | 0-100 % | 100 | Sound effects and voices. |
-| Audio buffer | `audio.latency` (browser) | Auto / Low / Normal / High | Auto | How far ahead sound is mixed: Low 40 ms, Normal 80 ms, High 150 ms. Auto uses 2.5 display frames, at least 50 ms. Raise it if you hear crackles. |
 
 **Dreamcast sound effects.** The PS2 disc stores most of the common sound
 effects (hits, blocks, menu and round sounds) at 8 kHz, which cuts everything
@@ -186,12 +192,11 @@ and counts any underruns.
 | Option | Key | Values | Default | |
 |---|---|---|---|---|
 | First gamepad plays | `input.pad1_player` | Player 1 / Player 2 | Player 1 | The second gamepad plays the other player. |
-| Left stick moves | `input.stick_dpad` | Off / On | On | The left stick also works as a d-pad. |
-| Stick dead zone | `input.deadzone` | 20-90 % | 50 % | How far the stick must be pushed to count as a direction. |
-| Macro 1 presses / Macro 2 presses | `input.macro1` / `input.macro2` | LP+HP, LK+HK, LP+LK, HP+HK, A1+A2, LP+HP+LK+HK, LP+HP+HK | LP+HP / LK+HK | Buttons pressed together by the Macro 1 and Macro 2 bindings. Bind a key or button to the macro under Controls. |
 | Touch controls | `touch.show` | Auto / Always / Never | Auto | Auto shows the pad after the first touch. |
 | Touch control size | `touch.size` | 50-160 % | 100 % | |
-| Touch control opacity | `touch.opacity` | 10-100 % | 60 % | |
+
+The left stick also works as a d-pad. Bind a key or button to Macro 1
+(LP+HP) or Macro 2 (LK+HK) under Controls.
 
 ### Controls (remapping)
 Settings > Controls (in the in-game menu: Controls: player 1 / player 2)
@@ -213,73 +218,6 @@ south, east, west, north, lb, rb, lt, rt, back, start, ls, rs, up, down, left,
 right, lx-, lx+, ly-, ly+, rx-, rx+, ry- and ry+. An empty value means
 unbound. Removing the line restores the default.
 
-### Game
-| Option | Key | Default | |
-|---|---|---|---|
-| Unlock everything | `game.unlock_all` | On | Every character, stage and extra is available from the start. Turning it back off takes effect on the next start, because unlocked items stay unlocked until you restart. In the browser, `?nounlock` starts once with the game's own unlock state without changing the setting. |
-
-### Arcade accuracy
-Optional, all off by default.
-
-**What plays like the arcade:** the arcade program (NAOMI `mvsc2`,
-Export/Korea Rev A, run frame by frame in the arcade oracle,
-`port/tools/naomi_oracle`) uses exactly the PS2's per-character tables:
-frames, boxes, damage and CPU AI are already the arcade's with every toggle
-off (ARCADE_DIFF.md section 11). The arcade differences are in the code
-and the timing: turn on `arcade.fs_edge`, `arcade.servbot_hitstop`,
-`arcade.freeze_order` and set `arcade.timing` to Arcade (desktop:
-`--arcade all --set arcade.timing=arcade`; `all` = d, e, f).
-
-The first three toggles read the per-character table *files* of your own
-MAME `mvsc2.zip` mask ROMs. The Rev A program never loads those files (it
-unpacks its own tables, which are the PS2's), so they are not what the
-arcade plays; they remain for study of the ROM files. Nothing from the
-arcade ROM is in the port. Changes take effect on the next start.
-
-| Option | Key | Default | |
-|---|---|---|---|
-| NAOMI ROM files: frames + boxes | `arcade.frame_data` | Off | Animation timing and hit, hurt and body boxes from the mask-ROM table files (for example Cyclops' 09/02 is 17 frames / 51 ticks there instead of 12 / 37). Not used by the Rev A arcade program. |
-| NAOMI ROM files: damage | `arcade.damage` | Off | Base damage and the other hit properties from the mask-ROM files (Ryu's attack 0x30: 28 instead of 14). Not used by the Rev A arcade program, whose damage is the PS2's. |
-| NAOMI ROM files: CPU AI | `arcade.cpu_ai` | Off | The CPU decision tables from the mask-ROM files. Not used by the Rev A arcade program. |
-| Arcade flying-screen edge | `arcade.fs_edge` | Off | While the opponent is the flying-screen character, you stop 35 units from the stage edge as on the arcade (the PS2 stops 16 units further in). No zip needed; takes effect at once. |
-| Arcade Servbot hit-stop inputs | `arcade.servbot_hitstop` | Off | Servbot keeps the buttons you press during hit stop while his armor flag is set, as on the arcade (the PS2 clears them). No zip needed. |
-| Arcade super-freeze timing | `arcade.freeze_order` | Off | The super-freeze countdown is ticked at the start of the frame, as on the arcade; the PS2 ticks it at the end, so its freezes end one frame sooner (found with the arcade oracle). No zip needed. |
-| Logic rate + input pipeline | `arcade.timing` | Port | **Port:** 60 Hz, a press counts in the next step. **Arcade:** 59.94 Hz and one frame of input delay, as the NAOMI (it reads the controls in V-blank from the previous transfer). **PS2:** 59.94 Hz and two frames, as the retail disc. Menus are never delayed. On a 60 Hz screen, 59.94 Hz repeats one frame about every 17 s. |
-| NAOMI float rounding | `arcade.float_round` | Off | The PS2's EE rounds every float result toward zero, and the port does the same by default (positions, velocities: the PS2 game frame for frame). The arcade's SH-4 rounds to nearest; this switches to that. Applies at once, needs no zip. |
-
-Where the zip comes from:
-- **Browser:** when a toggle is on, the page asks for `mvsc2.zip` before the
-  disc boots and keeps it in IndexedDB (a "Forget" button removes it). For one
-  run, `?arcade=abc` (a = frames, b = damage, c = AI) or `?arcade.damage=1`.
-- **Personal single-file build:** `pack_personal.py ... --naomi mvsc2.zip`
-  embeds the two ROM members the port reads (about 6 MB). Keep it private.
-- **Desktop app:** `--naomi PATH` (or the raw setting `arcade.naomi = PATH` in
-  settings.ini), with `--arcade abc` or the settings above.
-
-The last three are code differences found by comparing the two programs
-(ARCADE_DIFF.md section 10); they need no zip. A second comparison
-(ARCADE_DIFF.md 10.5: the CPU AI driver, Abyss' update, the throw, guard,
-counter and team code, and an automatic screen of the per-character code)
-found no further gameplay differences in Arcade or VS mode; the other
-PS2-only code belongs to its training and network modes, so there are no
-more toggles. For one run in the browser:
-`?arcade.fs_edge=1&arcade.servbot_hitstop=1&arcade.timing=arcade` (`?arcade=`
-takes only a, b, c); desktop `--arcade de` (d = flying-screen edge,
-e = Servbot) and `--set arcade.timing=arcade` (or `MVC2_ARCADE_DELAY=1`, the
-input delay alone).
-The last four are code differences found by comparing the two programs
-(ARCADE_DIFF.md sections 10, 11); they need no zip. For one run in the browser:
-`?arcade.fs_edge=1&arcade.servbot_hitstop=1&arcade.freeze_order=1&arcade.timing=arcade`
-(`?arcade=` takes only a, b, c); desktop `--arcade def` (d = flying-screen
-edge, e = Servbot, f = super-freeze order; `--arcade all` = d, e, f) and
-`--set arcade.timing=arcade` (or `MVC2_ARCADE_DELAY=1`, the input delay
-alone).
-
-The set is checked by CRC-32 (every member present must match Rev A). If it
-is missing or wrong, the log says so and the PS2 tables are used. Both
-netplay peers will need the same toggles; the log prints a session hash of
-the loaded tables for that. Details: ARCADE_DIFF.md section 5.
-
 ## Input latency
 The FPS overlay and Settings > About report the time from each key press,
 touch or gamepad button to the 60 Hz game step that reads it:
@@ -291,9 +229,9 @@ touch or gamepad button to the 60 Hz game step that reads it:
 
 The arcade machine reads the controls one frame before its logic step
 and the retail PS2 two frames before (ARCADE_DIFF.md 10.3), so the port
-answers one frame sooner than the arcade. Settings > Arcade accuracy >
-Logic rate + input pipeline adds that delay back (Arcade or PS2); the
-latency overlay does not include it.
+answers one frame sooner than the arcade and two sooner than the PS2.
+For comparison, `--set arcade.timing=arcade` (or `ps2`) adds that delay
+back for one run; the latency overlay does not include it.
 
 In headless Chromium with SwiftShader (a software GPU on a loaded machine)
 the display ran at 5-9 fps and the measured latency was about 6 frames. That

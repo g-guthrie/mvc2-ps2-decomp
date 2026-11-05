@@ -180,14 +180,14 @@ static const SetDesc k_desc[] = {
     { "input.pad1_player", "First gamepad plays", SET_SECTION_INPUT, SET_ENUM, 0, 0, 1, k_players, k_players_v,
       NULL, 0, "The first connected gamepad controls this player; the second gamepad the other. "
       "Keyboard set 1 is always player 1, keyboard set 2 player 2.", 0 },
-    { "input.stick_dpad", "Left stick moves", SET_SECTION_INPUT, SET_BOOL, 1, 0, 1, NULL, NULL, NULL, 0,
+    { "input.stick_dpad", "Left stick moves", SET_SECTION_INPUT, SET_BOOL, 1, 0, 1, NULL, NULL, NULL, SET_FIXED,
       "The left analog stick works as a d-pad as well as the bound directions.", 0 },
-    { "input.deadzone", "Stick dead zone", SET_SECTION_INPUT, SET_INT, 50, 20, 90, NULL, NULL, NULL, 0,
+    { "input.deadzone", "Stick dead zone", SET_SECTION_INPUT, SET_INT, 50, 20, 90, NULL, NULL, NULL, SET_FIXED,
       "How far the stick must be pushed to register a direction (percent).", 5 },
     { "input.macro1", "Macro 1 presses", SET_SECTION_INPUT, SET_ENUM, 0, 0, 6, k_combo_label, k_combo_value,
-      NULL, 0, "Buttons pressed together by the Macro 1 binding (unbound by default).", 0 },
+      NULL, SET_FIXED, "Buttons pressed together by the Macro 1 binding (unbound by default).", 0 },
     { "input.macro2", "Macro 2 presses", SET_SECTION_INPUT, SET_ENUM, 1, 0, 6, k_combo_label, k_combo_value,
-      NULL, 0, "Buttons pressed together by the Macro 2 binding (unbound by default).", 0 },
+      NULL, SET_FIXED, "Buttons pressed together by the Macro 2 binding (unbound by default).", 0 },
 };
 
 void input_init(void)

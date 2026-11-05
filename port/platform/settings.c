@@ -132,6 +132,10 @@ int settings_get_int(const char *key)
     const char *s = settings_get(key);
     int v;
     if (!d) return s ? atoi(s) : 0;
+    if (d->flags & SET_FIXED) {             /* only a session override changes it */
+        int i = find_entry(key);
+        if (i < 0 || !S.e[i].ov) return d->def;
+    }
     if (parse_typed(d, s, &v)) return v;
     return d->def;
 }

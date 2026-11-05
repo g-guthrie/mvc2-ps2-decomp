@@ -98,21 +98,13 @@
   <h1>Marvel vs. Capcom 2</h1>
   <div id="status">Loading...</div>
   <div id="progress"><i></i></div>
-  <label id="pick" class="btn" hidden tabindex="0">Choose disc image (.iso)
+  <label id="pick" class="btn" hidden tabindex="0">Choose your PS2 disc (.iso)
     <input type="file" id="file" accept=".iso,.bin,application/octet-stream,application/x-iso9660-image" hidden>
   </label>
   <button id="forget" class="btn grey" hidden>Forget cached disc</button>
-  <div id="arcbox" class="note" hidden>
-    Arcade accuracy (<span id="arcflags"></span>): your own NAOMI <code>mvsc2.zip</code> (MAME set, Rev A)
-    <span id="arcstate"></span><br>
-    <label id="arcpick" class="btn grey" tabindex="0">Choose mvsc2.zip
-      <input type="file" id="arcfile" accept=".zip,application/zip" hidden></label>
-    <button id="arcforget" class="btn grey" hidden>Forget</button>
-  </div>
   <div id="dcbox" class="note">
-    Optional: your own Dreamcast disc gives the common sound effects (hits, blocks, menus) their full
-    Dreamcast quality. Choose its data track (<code>track03.bin</code> / <code>.iso</code>);
-    only the 1 MB sound bank is kept. <span id="dcstate"></span><br>
+    Also have the Dreamcast disc? Add its data track (<code>track03.bin</code>) for clearer sound effects.
+    <span id="dcstate"></span><br>
     <label id="dcpick" class="btn grey" tabindex="0">Choose Dreamcast disc
       <input type="file" id="dcfile" accept=".bin,.iso,application/octet-stream" hidden></label>
     <button id="dcforget" class="btn grey" hidden>Forget</button>
@@ -168,32 +160,6 @@ async function idbOp(mode, fn) {
 const idbGet = (k = KEY) => idbOp('readonly', s => s.get(k));
 const idbPut = (v, k = KEY) => idbOp('readwrite', s => s.put(v, k));
 const idbDel = (k = KEY) => idbOp('readwrite', s => s.delete(k));
-
-/* Arcade accuracy (?arcade=abc; port/docs/ARCADE_DIFF.md section 5): the
-   user's own NAOMI set is written to /mvsc2.zip before the game boots, from
-   the personal build's embedded copy, the IndexedDB cache, or the picker. */
-const NAOMI_KEY = 'naomi';
-let naomiReady = false;
-const naomiWaiters = [];
-async function putNaomi(blob) {
-  const buf = new Uint8Array(await blob.arrayBuffer());
-  try { Module.FS.unlink('/mvsc2.zip'); } catch (e) {}
-  Module.FS.writeFile('/mvsc2.zip', buf, { canOwn: true });
-  naomiReady = true;
-  document.getElementById('arcstate').textContent = ' - loaded (' + (blob.size / 1048576).toFixed(1) + ' MB)';
-  naomiWaiters.splice(0).forEach(r => r());
-}
-async function prepareNaomi() {
-  if (!arcadeFlags) return;
-  const emb = document.getElementById('embedded-naomi');
-  if (emb) {
-    await putNaomi(await (await fetch('data:application/zip;base64,' + emb.textContent.trim())).blob());
-    emb.remove();
-    return;
-  }
-  try { const c = await idbGet(NAOMI_KEY); if (c) { await putNaomi(c); document.getElementById('arcforget').hidden = false; } }
-  catch (e) { console.warn('IndexedDB unavailable', e); }
-}
 
 /* Dreamcast common sound effects (port/audio/dcse.h): SE_COMN.BIN from the
    user's own Dreamcast disc, a GD-ROM data track (2048- or 2352-byte sectors;
@@ -301,14 +267,7 @@ async function openDisc(blob, label) {
 }
 
 async function startDisc() {
-  await prepareNaomi();
   await prepareDcEffects();
-  if (arcadeFlags && !naomiReady) {
-    status('Arcade accuracy (?arcade=' + arcadeFlags + ') reads your own NAOMI mvsc2.zip (MAME set, Rev A).\n' +
-           'Choose it below; it stays on this device. Open the page without ?arcade for the PS2 data.');
-    showUi(true);
-    await new Promise(r => naomiWaiters.push(r));
-  }
   try {
     if (Module.FS.analyzePath('/disc.iso').exists) {        /* --preload-file (local testing) */
       Module.ccall('viewer_open_js', 'number', ['string'], ['/disc.iso']);
@@ -356,16 +315,6 @@ $('dcforget').addEventListener('click', async () => {
   await idbDel(DC_KEY); $('dcforget').hidden = true;
   $('dcstate').textContent = '- removed (takes effect on the next start)';
 });
-document.getElementById('arcfile').addEventListener('change', async ev => {
-  const f = ev.target.files[0];
-  if (!f) return;
-  try { await idbPut(f, NAOMI_KEY); document.getElementById('arcforget').hidden = false; } catch (e) { console.warn(e); }
-  await putNaomi(f);
-});
-document.getElementById('arcforget').addEventListener('click', async () => {
-  await idbDel(NAOMI_KEY); document.getElementById('arcforget').hidden = true;
-  document.getElementById('arcstate').textContent = ' - removed';
-});
 forget.addEventListener('click', async () => { await idbDel(); forget.hidden = true; status('Cached image removed.'); });
 
 function hint() {
@@ -402,10 +351,10 @@ const C = {
   set: (k, v) => Module.ccall('mvc2_setting_set', null, ['string', 'string'], [k, String(v)]),
   call: (fn, ...a) => Module.ccall(fn, null, a.map(() => 'number'), a),
 };
-const SECTIONS = ['Video', 'Audio', 'Input', 'Controls', 'Game', 'Arcade accuracy', 'About'];
-let tab = 'Video', ctlPlayer = 0, capPoll = 0;
+const SECTIONS = ['Audio', 'Input', 'Controls', 'About'];
+let tab = 'Audio', ctlPlayer = 0, capPoll = 0;
 try { tab = localStorage.getItem('mvc2-tab') || tab; } catch (e) {}
-if (!SECTIONS.includes(tab)) tab = 'Video';
+if (!SECTIONS.includes(tab)) tab = 'Audio';
 
 function openPanel(on) {
   if (!booted && on) return;
@@ -477,16 +426,10 @@ function renderBody() {
   if (tab === 'Controls') renderControls();
   else if (tab === 'About') renderAbout();
   else {
-    /* flags: 2 native only, 8 hidden */
-    const opts = C.json('mvc2_settings_json').options.filter(o => o.section === tab && !(o.flags & (2 | 8)));
-    if (tab === 'Video' && !$('fsbtn').hidden)
-      bodyEl.append(el('div', { class: 'row' }, el('label', {}, 'Fullscreen'),
-        el('button', { class: 'btn grey', onclick: () => { toggleFullscreen(); setTimeout(renderBody, 300); } },
-           document.fullscreenElement ? 'Leave fullscreen' : 'Enter fullscreen')));
+    /* flags: 2 native only, 8 hidden, 16 fixed (not an option) */
+    const opts = C.json('mvc2_settings_json').options.filter(o => o.section === tab && !(o.flags & (2 | 8 | 16)));
     for (const o of opts) bodyEl.append(optionRow(o));
-    if (!opts.length) bodyEl.append(el('div', { class: 'empty' }, tab === 'Arcade accuracy'
-      ? 'No arcade-accuracy options in this build yet. They appear here once the arcade data mode registers them.'
-      : 'Nothing here.'));
+    if (!opts.length && tab !== 'Audio') bodyEl.append(el('div', { class: 'empty' }, 'Nothing here.'));
     if (tab === 'Audio')                     /* the Dreamcast effects picker, also reachable after boot */
       bodyEl.append(el('div', { class: 'row' }, el('label', {}, 'Dreamcast sound effects'),
         el('button', { class: 'btn grey', onclick: () => $('dcfile').click() },
@@ -494,8 +437,6 @@ function renderBody() {
         el('div', { class: 'help' }, ($('dcforget').hidden ? 'Off: needs your own Dreamcast disc (data track). '
            : 'In use ' + $('dcstate').textContent.replace(/^- in use /, '') + '. ') +
            'The common effects then play at their Dreamcast sample rates; the PS2 cut them to 8 kHz.'));
-    if (tab === 'Game') bodyEl.append(el('div', { class: 'help', style: 'margin-top:10px' },
-      'Add ?nounlock to the page address to start once with the game\'s own unlock state without changing this setting.'));
   }
   bodyEl.scrollTop = keep;
 }
@@ -573,36 +514,12 @@ window.addEventListener('gamepadconnected', e => { if (booted) toast('Gamepad: '
 let installEvt = null;
 window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); installEvt = e; });
 
-/* ?nounlock (or ?unlock=0): the game's own unlock state for this run;
-   ?KEY=VALUE for any dotted setting key overrides it for this run (?video.crt=crt);
-   ?args=... passes further command-line options to main(). */
+/* ?KEY=VALUE for any dotted setting key overrides it for this run (testing:
+   ?video.fps=1); ?args=... passes further command-line options to main(). */
 const query = new URLSearchParams(location.search);
 const mainArgs = [];
-if (query.has('nounlock') || query.get('unlock') === '0') mainArgs.push('--no-unlock');
 for (const [k, v] of query) if (/^[a-z0-9_]+\.[a-z0-9_.]+$/.test(k)) mainArgs.push('--set', k + '=' + v);
 if (query.get('args')) mainArgs.push(...query.get('args').split(/\s+/).filter(Boolean));
-/* Arcade accuracy (port/docs/ARCADE_DIFF.md section 5; all off by default):
-   the settings arcade.frame_data / arcade.damage / arcade.cpu_ai (Settings >
-   Arcade accuracy, saved in localStorage, or ?arcade.damage=1 for one run),
-   or ?arcade=abc for one run (a = frames + boxes, b = damage, c = CPU AI).
-   The page only needs to know whether to fetch the user's mvsc2.zip first. */
-function arcadeFromSettings() {
-  const st = {};
-  try { for (const l of (localStorage.getItem('mvc2-settings') || '').split('\n')) {
-    const m = /^\s*(arcade\.[a-z_]+)\s*=\s*(.*?)\s*$/.exec(l); if (m) st[m[1]] = m[2]; } } catch (e) {}
-  for (const [k, v] of query) if (k.startsWith('arcade.')) st[k] = v;
-  const on = k => /^(1|on|true|yes)$/i.test(st[k] || '');
-  return (on('arcade.frame_data') ? 'a' : '') + (on('arcade.damage') ? 'b' : '') + (on('arcade.cpu_ai') ? 'c' : '');
-}
-const arcadeQuery = (query.get('arcade') || '').replace(/[^abc]/g, '');
-const arcadeFlags = arcadeQuery || arcadeFromSettings();
-if (arcadeQuery) mainArgs.push('--arcade', arcadeQuery);
-if (arcadeFlags) {
-  mainArgs.push('--naomi', '/mvsc2.zip');
-  document.getElementById('arcbox').hidden = false;
-  document.getElementById('arcflags').textContent = arcadeFlags;
-}
-if (query.has('arcadetrace')) mainArgs.push('--arcade-trace');
 /* ?script=TEXT (testing): the app's --script input (port/host/fe/fe_main.c),
    lines separated by ';'.  Shots go to /shots in the page's file system. */
 const scriptText = query.get('script');
