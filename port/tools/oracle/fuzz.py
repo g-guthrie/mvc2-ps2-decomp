@@ -184,14 +184,16 @@ def lines_frames(L):
 
 
 ARCADE_SEED = 1000000   # seeds from here on are whole arcade runs (scenario_arcade)
+STAGE_BYTE = 0x004F4385  # arcade stage counter in the game block (0..6, 6 = Abyss)
 
 
 def scenario_arcade(seed):
     """a whole ARCADE run: the fight scenario's team pick, then per stage a
-    burst of random input, an attack mash until the stage ends (2/1/4) and
-    presses through the intermission to the next fight (2/1/2).  The CPU has
-    1 HP and P1 144, so the run goes stage to stage towards Abyss and the
-    ending; `stages` in the result counts the stage loads (2/1/1)."""
+    burst of random input and a ~1200-frame attack mash (with start/cross
+    presses that also get through the win screens).  The CPU has 1 HP and
+    P1 144, so the run goes stage to stage; the game stays in 2/1/2 across
+    stages, `stages` in the result is the arcade stage counter (STAGE_BYTE:
+    6 = Abyss)."""
     r = random.Random(seed)
     p1 = [(r.choice(IDS), r.randint(0, 2)) for _ in range(3)]
     cpu = [(r.choice(IDS), r.randint(0, 2)) for _ in range(3)]
@@ -204,15 +206,18 @@ def scenario_arcade(seed):
         S += ['press cross', 'wait 100']
     S += ['until 2/1/2 cross 50']
     n = 0
-    for _ in range(10):         # 5 stages and Abyss (three forms), with room to spare
+    for _ in range(12):         # 6 stages, Abyss (three forms) and the ending, with room to spare
         F = []
         while lines_frames(F) < r.randint(150, 600):
             F += action(r)
-        S += F
         mash = r.choice(['right+square', 'left+triangle', 'down+square+triangle', 'right+cross+circle',
                          'square+triangle'])
-        S += ['until 2/1/4 %s 8' % mash, 'until 2/1/2 %s 10' % r.choice(['cross', 'start', 'square'])]
-        n += lines_frames(F) + 1200
+        for k in range(150):
+            F += [f'hold {mash} 4', 'wait 4']
+            if k % 25 == 24:
+                F += [f'press {r.choice(["cross", "start"])} 3']
+        S += F
+        n += lines_frames(F)
     return {
         'seed': seed,
         'p1': p1, 'cpu': cpu, 'cpu_hp': 1, 'p1_hp': 144, 'frames': 2200 + n,
@@ -448,7 +453,7 @@ def run_pair(scn, work, port, oracle, iso, snaps=None, frames=None, keep_div=Non
         newly = {}
         n = fight = 0
         prev = None
-        stages, seen, last_st = 0, set(), None
+        stages, seen = 0, set()
         while True:
             msgs, fields = frame_diffs(p, o)
             if visit is not None:
@@ -474,9 +479,7 @@ def run_pair(scn, work, port, oracle, iso, snaps=None, frames=None, keep_div=Non
             if is_fight(o[2]):
                 fight += 1
             seen.add(o[2])
-            if (o[2] >> 8) == 0x0201 and (o[2] & 0xFF) == 1 and last_st != o[2]:
-                stages += 1     # a stage load (battle setup, 2/1/1)
-            last_st = o[2]
+            stages = max(stages, o[4][STAGE_BYTE - C.REGION_LO])
             prev = (praw, oraw)
             a, b = P.raw(), O.raw()
             if a is None or b is None:
