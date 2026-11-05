@@ -184,7 +184,7 @@ def lines_frames(L):
 
 
 ARCADE_SEED = 1000000   # seeds from here on are whole arcade runs (scenario_arcade)
-STAGE_BYTE = 0x004F4385  # arcade stage counter in the game block (0..6, 6 = Abyss)
+STAGE_BYTE = 0x004F4385  # arcade stage counter in the game block (0 = first fight)
 
 
 def scenario_arcade(seed):
@@ -192,8 +192,8 @@ def scenario_arcade(seed):
     burst of random input and a ~1200-frame attack mash (with start/cross
     presses that also get through the win screens).  The CPU has 1 HP and
     P1 144, so the run goes stage to stage; the game stays in 2/1/2 across
-    stages, `stages` in the result is the arcade stage counter (STAGE_BYTE:
-    6 = Abyss)."""
+    stages, `stages` in the result is the arcade stage counter (STAGE_BYTE,
+    0 for the first fight)."""
     r = random.Random(seed)
     p1 = [(r.choice(IDS), r.randint(0, 2)) for _ in range(3)]
     cpu = [(r.choice(IDS), r.randint(0, 2)) for _ in range(3)]
