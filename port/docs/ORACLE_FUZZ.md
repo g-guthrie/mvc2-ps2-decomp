@@ -187,19 +187,74 @@ Found by scanning, not (yet) by a seed: `jtbl_004C1BF0` entries 6-7 are
 - **EE stack contents** (5, 53): a read past a local into the caller's
   frame.
 
-### Open
+### Open (after the first pass; see "Second pass" for what was closed)
 
-- `n5.c:304` calls handler slot 0x64 with one argument; for Captain
-  America (0x0B) the entry `func_002330F0` reads q, which is whatever the
-  previous callee left in $a1 on the EE (undefined there too).  Not seen in
-  a run.
-- The slot-0x60 handlers of Sakura (0x22) and Colossus (0x32) read q; every
-  call site that can reach them passes it.  Sites passing a small integer in
-  $a1 are guarded for other characters.
-- `r12_returns.csv` and `r12_indirect.csv` were edited by hand to what the
-  patched generators give: their regeneration needs `asm/main.s` (the
-  matching build's split), which this environment did not have.
-- Coverage beyond stage fights: every scenario ends in the arcade fight
-  state (2/1/2); stage numbers, the Abyss fight and the ending were not
-  tracked, and menus other than the arcade path (training, shop, options)
-  are not in the scenario model.
+- `n5.c:304`: closed in the second pass (the EE's $a1 is the object just
+  allocated).
+- `r12_returns.csv` / `r12_indirect.csv` hand edits: closed (regenerated
+  against the retail asm, identical rows).
+- Coverage beyond stage fights: closed for the arcade path (arcade
+  scenarios reach Abyss and the end of the run); menus other than the
+  arcade path (training, shop, options, versus) are still not in the
+  scenario model.
+
+## Second pass (2026-11-05)
+
+### Build and tables
+
+- **emsdk 6.0.13** (`/home/user/emsdk`) for the signature scan, as the
+  earlier passes had: the stubs' signatures come from emcc and the C
+  library gets real prototypes (21 functions).  `build/port-i386-em`.
+- **Retail asm.** `asm/main.s` split from the private inputs' ELF (identical
+  to the disc's `SLUS_204.86`) with splat 0.50 and a de-duplicated copy of
+  `config/symbol_addrs.txt`: 236 addresses there carry two names and splat
+  rejects that, on `main` too.  The R12 generators then reproduce the
+  first pass's hand-edited rows exactly and add: `D_004C20C0[..]()` in
+  `func_003BCAE0` (`wave1b.c`, the twin of seed 19's call) and the
+  `func_00197560` register pass-through for four callers.  Not applied: a
+  `(float, float)` widening of the soft-float compare wrappers
+  `func_00100240..` (they take doubles) and the differences that only come
+  from the de-duplicated names.
+- Seeds 1-45 on the emsdk build: 45 / 45 match, 210,805 frames.
+
+### Arcade scenarios
+
+Seeds from 1,000,000 are whole ARCADE runs (`scenario_arcade`: the team
+pick, then per stage random input and a ~1200-frame attack mash with
+start/cross presses; CPU 1 HP, P1 144).  The game stays in 2/1/2 across
+stages, so `stages` in a result is the stage counter `0x004F4385`; seeds
+from 1,000,100 run 22 stage blocks (~36,500 frames), enough for Abyss and
+the end of the run (2/1/4 Abyss beaten, 2/1/5, 2/1/6, then the title).
+
+| Seeds | Frames compared | Result |
+|---|---|---|
+| 1000001-1000009 (12 blocks) | ~20,000 each | 8 match, 1000005 diverged (pause menu, below) and matches after the fix |
+| 1000100-1000108 (22 blocks) | ~35,000 each | 8 match; 6 reach Abyss and the end of the run; 1000100 crashed at stage 7 (below) and matches after the fix (36,109 frames) |
+
+### Sound requests
+
+The PCM is not comparable (the port replaces the IOP sound driver and the
+ADX player), but what the game asks for is.  Every call from game code into
+the Tamsoft driver (play, stop, change, master volume, banks, stereo, queue
+reset) and the ADX streamer (StartAfs, Stop, SetOutVol, Pause, mono) is
+compared frame by frame with its non-pointer arguments:
+`MVC2_SOUND_TRACE=FILE` on the port (`port/host/sound_trace.c`), `--trace`
+on the same entry points on the oracle, minus calls whose return address is
+inside the CRI (`0x003F5F88..0x00411C10`) or Tamsoft
+(`0x00422BE0..0x00423E30`) libraries.  A sound difference is recorded in
+the result (`sound`: counts, first differing frame) and does not stop the
+run.  The status queries (`func_00423990`) are logged on the port as well.
+
+(Sound results: delay sweep in progress; see the next commit.)
+
+### Fixes in the second pass
+
+| Found by | Cause | Fix |
+|---|---|---|
+| arcade 1000005 (g+0x5C / g+0x91 after the pause menu) | `func_003D6530`, the pause menu's COMMAND LIST page, has no credited C: the port linked an empty generated stub | `port/host/pause_menu.c`: the retail code in C |
+| (same check) | `func_003F5630` (byte copy) and `func_003F5710` (memmove) were empty generated stubs too: the last three code-less functions | `port/host/game_copy.c` |
+| arcade 1000100 (SIGSEGV at 0x0037E0A0, stage 7) | `jtbl_004C1D18` starts inside `data_u32_004C1D10`, credited as 16 bytes: entry 0 stayed the raw EE address | override: 8 bytes + two function pointers; every `jtbl_` alias inside a non-table object checked |
+| `n5.c:304` (open item) | handler +0x64 gets $a1 = the object func_0015F8D0 just allocated (or 8 when the pool is empty) | override passes the free-list head read before the call |
+| regenerated R12 tables | `wave1b.c` indirect call, `func_00197560` pass-through | table rows |
+| sound comparison (seeds 15, 17, 23) | a play request takes effect on the port's driver at once, so a sound of exactly 4N ticks is over when the game asks N frames later; the PS2's IOP gets it over SIF between timer ticks and the game's query runs early in the frame | new TQ slots start `MVC2_TSD_DELAY` ticks late (port/audio/tsd.c; value fitted against the oracle, see Sound requests) |
+
