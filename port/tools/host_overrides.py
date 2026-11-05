@@ -135,14 +135,15 @@ OVERRIDES = {
          "        (*(void (**)())(D_00473B90 + p[4] * 4))(p, __rp1, __rp2, __rp3); /* host R12: $a0..$a3 */\n"),
     ],
     # func_002271E0 reads D_004517C0[p[0x151]] (8 floats) with indices past
-    # the end: 8..14 land in jtbl_004517E0, code addresses 0x002xxxxx that are
-    # denormals as floats, and the EE FPU treats denormal operands as 0, so
-    # x += d leaves x alone.  On the host those words are host code addresses
+    # the end: 8..63 land in jtbl_004517E0, jtbl_00451800 ... (code
+    # addresses 0x002xxxxx, and zero padding; the retail words from 64 on are
+    # float data again), denormals as floats, and the EE FPU treats denormal
+    # operands as 0, so x += d leaves x alone (seed 79 reads index 16).  On the host those words are host code addresses
     # (0x08xxxxxx, a normal ~1e-34) and the round-toward-zero add moved x by
     # an ulp (oracle fuzz seed 79, player[4]+0x34 C41D9EEE vs C41D9EEF).
     "src/dp7_b.c": [
         ("        d = D_004517C0[(s32)v];\n",
-         "        d = ((s32)v >= 8 && (s32)v < 15) ? 0.0f : D_004517C0[(s32)v]; /* host R10: jtbl_004517E0 words are EE denormals */\n"),
+         "        d = ((s32)v >= 8 && (s32)v < 64) ? 0.0f : D_004517C0[(s32)v]; /* host R10: jtbl_004517E0 words are EE denormals */\n"),
     ],
     "src/n6.c": [
         ("        (*(void (**)(u8 *))(D_0044AFF0 + U8(a0, 4) * 4))(a0);\n",
