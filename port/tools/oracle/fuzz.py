@@ -183,7 +183,46 @@ def lines_frames(L):
     return n
 
 
+ARCADE_SEED = 1000000   # seeds from here on are whole arcade runs (scenario_arcade)
+
+
+def scenario_arcade(seed):
+    """a whole ARCADE run: the fight scenario's team pick, then per stage a
+    burst of random input, an attack mash until the stage ends (2/1/4) and
+    presses through the intermission to the next fight (2/1/2).  The CPU has
+    1 HP and P1 144, so the run goes stage to stage towards Abyss and the
+    ending; `stages` in the result counts the stage loads (2/1/1)."""
+    r = random.Random(seed)
+    p1 = [(r.choice(IDS), r.randint(0, 2)) for _ in range(3)]
+    cpu = [(r.choice(IDS), r.randint(0, 2)) for _ in range(3)]
+    S = ['# fuzz.py arcade scenario %d' % seed,
+         'state 1/1/1', 'wait 30', 'until 1/7 start 40', 'wait 30', 'until 3/1/1 start 30', 'wait 40',
+         'press cross', 'state 2/1/1', 'wait 240']
+    for cid, a in p1:
+        S += ['press right 4', 'wait 10', 'press left 4', 'wait 10', 'press cross', 'wait 100']
+        S += ['press down 4', 'wait 10'] * a
+        S += ['press cross', 'wait 100']
+    S += ['until 2/1/2 cross 50']
+    n = 0
+    for _ in range(10):         # 5 stages and Abyss (three forms), with room to spare
+        F = []
+        while lines_frames(F) < r.randint(150, 600):
+            F += action(r)
+        S += F
+        mash = r.choice(['right+square', 'left+triangle', 'down+square+triangle', 'right+cross+circle',
+                         'square+triangle'])
+        S += ['until 2/1/4 %s 8' % mash, 'until 2/1/2 %s 10' % r.choice(['cross', 'start', 'square'])]
+        n += lines_frames(F) + 1200
+    return {
+        'seed': seed,
+        'p1': p1, 'cpu': cpu, 'cpu_hp': 1, 'p1_hp': 144, 'frames': 2200 + n,
+        'script': '\n'.join(S) + '\n',
+    }
+
+
 def scenario(seed):
+    if seed >= ARCADE_SEED:
+        return scenario_arcade(seed)
     r = random.Random(seed)
     p1 = [(r.choice(IDS), r.randint(0, 2)) for _ in range(3)]
     cpu = [(r.choice(IDS), r.randint(0, 2)) for _ in range(3)]
@@ -409,6 +448,7 @@ def run_pair(scn, work, port, oracle, iso, snaps=None, frames=None, keep_div=Non
         newly = {}
         n = fight = 0
         prev = None
+        stages, seen, last_st = 0, set(), None
         while True:
             msgs, fields = frame_diffs(p, o)
             if visit is not None:
@@ -433,6 +473,10 @@ def run_pair(scn, work, port, oracle, iso, snaps=None, frames=None, keep_div=Non
             n += 1
             if is_fight(o[2]):
                 fight += 1
+            seen.add(o[2])
+            if (o[2] >> 8) == 0x0201 and (o[2] & 0xFF) == 1 and last_st != o[2]:
+                stages += 1     # a stage load (battle setup, 2/1/1)
+            last_st = o[2]
             prev = (praw, oraw)
             a, b = P.raw(), O.raw()
             if a is None or b is None:
@@ -448,6 +492,8 @@ def run_pair(scn, work, port, oracle, iso, snaps=None, frames=None, keep_div=Non
             p, o = parse(a), parse(b)
         res['compared'] = n
         res['fight_frames'] = fight
+        res['stages'] = stages
+        res['states'] = sorted(C.st_str(x) for x in seen)
         res['last_state'] = C.st_str(o[2])
         # earliest first (a cap by address dropped the blocks above ~0x004EA000)
         res['new_blocks'] = sorted((('0x%08X' % (C.HASH_LO + k * C.BLOCK), v[0], v[1], v[2])

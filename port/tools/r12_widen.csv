@@ -187,13 +187,16 @@ func_00194440,void *;int;int;int
 func_00194940,void *;int;int;int
 func_00194AA0,void *;int;int;int
 func_00194D10,void *;int
+func_00194D50,void *;void *;int;int
 func_00194E20,void *;int;int;int
 func_00194FF0,void *;void *;int;int
 func_00195230,void *;void *;int;int
 func_00195470,void *;int;int;int
 func_00195990,void *;void *;int;int
 func_001959B0,void *;int
+func_001959F0,void *;void *;int;int
 func_00195AC0,void *;int;int;int
+func_00195B40,void *;void *;int;int
 func_00195D10,void *;int;int;int
 func_00195F40,void *;void *;int;int
 func_00196E30,void *;void *;int;int
