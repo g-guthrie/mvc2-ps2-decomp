@@ -148,7 +148,10 @@ started, v9 = the final one).
 | oracle failures, no-sync | 0 |
 | v8/v9 (the last ~314 seeds) | 1 divergence (240), fixed |
 
-REGRESSION_PLACEHOLDER
+Regression check on the final binary (v9): seeds 1-45 again (they ran on
+v0-v6 the first time and include 5, 8, 19, 24, 39, 40), 45 / 45 match,
+210,805 frames; seeds 53, 79, 83, 240 match; `fight_mix.txt` 7535 / 7535
+and the attract cycle 4835 / 4835 frames identical.
 
 ### Divergences
 
