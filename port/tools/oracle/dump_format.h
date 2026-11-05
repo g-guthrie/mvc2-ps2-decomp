@@ -14,7 +14,10 @@
  *     the comparison accepts a word whose raw value equals the oracle's,
  *     since an integer can look like a host address),
  *   u32 BSS block hashes, one per ORACLE_HASH_BLOCK bytes of
- *     [ORACLE_HASH_LO, ORACLE_HASH_HI) (FNV-1a over the words).
+ *     [ORACLE_HASH_LO, ORACLE_HASH_HI) (FNV-1a over the words),
+ *   the sound commands the game issued since the previous record (see
+ *   "Sound commands" below): u32 count, then ORACLE_SND_MAX entries of
+ *   ORACLE_SND_WORDS u32 (the first min(count, MAX) used, the rest 0).
  * Words are given to the dump in EE terms: the port translates its host
  * pointers into EE addresses first (fix callback); the oracle passes them as
  * they are.
@@ -26,7 +29,7 @@
 #include <stdint.h>
 #include <stdlib.h>
 
-#define ORACLE_MAGIC 0x3446564Du /* "MVF4" */
+#define ORACLE_MAGIC 0x3546564Du /* "MVF5" */
 #define ORACLE_REGION_LO 0x004F20B0u
 #define ORACLE_REGION_HI 0x004F4500u
 #define ORACLE_HASH_LO 0x004C2580u
@@ -54,9 +57,96 @@ static void oracle_extra_parse(void)
     }
 }
 
+/* ---- Sound commands ------------------------------------------------------
+ * The calls the game makes into the sound layers, at their EE entry points,
+ * which the port replaces at the same addresses (port/host/tsd_host.c,
+ * port/host/cri.c): the Tamsoft sound driver client (effects, voices) and
+ * the CRI ADXT player (music).  Each entry is {EE entry address, arg[0..6]}:
+ * the arguments the entry takes, in EE argument-register order ($a0..$a3,
+ * $t0..$t2), the low 32 bits.  Arguments past the entry's count and the ADXT
+ * handle (a CRI object on the PS2, a host struct on the port) are written as
+ * 0; pointer arguments as EE addresses (the port's fix()).
+ * The oracle logs only calls whose return address lies outside the two
+ * libraries (calls between library functions are not the game's).  The
+ * buffer is per record: the commands issued since the previous record. */
+#define ORACLE_SND_MAX 32
+#define ORACLE_SND_WORDS 8
+typedef struct
+{
+    uint32_t fn;
+    uint8_t nargs, skip_mask, ptr_mask;
+    const char *name;
+} oracle_snd_def;
+static const oracle_snd_def oracle_snd_defs[] = {
+    {0x00422EA0u, 4, 0, 0, "tsd_play"},
+    {0x00422FB0u, 1, 0, 0, "tsd_stop"},
+    {0x004230B0u, 4, 0, 0, "tsd_change"},
+    {0x004231D0u, 0, 0, 0, "tsd_stop_all_tq"},
+    {0x00423240u, 1, 0, 0, "tsd_master_volume"},
+    {0x004232C0u, 3, 0, 0, "tsd_cmd77"},
+    {0x00423480u, 7, 0, 0x2A, "tsd_load_bank"}, /* slot, hd, hd_size, bd, bd_size, tq, tq_size */
+    {0x004235D0u, 1, 0, 0, "tsd_unload_bank"},
+    {0x00423650u, 0, 0, 0, "tsd_stop_all"},
+    {0x004236C0u, 1, 0, 0, "tsd_stereo"},
+    {0x00402C20u, 3, 1, 0, "ADXT_StartAfs"}, /* adxt, ptid, fid */
+    {0x00401868u, 1, 1, 0, "ADXT_Stop"},
+    {0x004020D8u, 2, 1, 0, "ADXT_SetOutVol"},
+    {0x004026B0u, 2, 1, 0, "ADXT_Pause"},
+    {0x00402BC0u, 1, 0, 0, "ADXT_SetOutputMono"},
+};
+#define ORACLE_SND_NDEFS (sizeof oracle_snd_defs / sizeof oracle_snd_defs[0])
+/* the libraries whose internal calls are not logged (oracle side) */
+#define ORACLE_SND_LIB_IN(ra) (((ra) >= 0x003F5F88u && (ra) < 0x00411C10u) || ((ra) >= 0x00422BE0u && (ra) < 0x00423E30u))
+
+static uint32_t oracle_snd_buf[ORACLE_SND_MAX][ORACLE_SND_WORDS];
+static uint32_t oracle_snd_n;
+
+static const oracle_snd_def *oracle_snd_find(uint32_t fn)
+{
+    unsigned i;
+    for (i = 0; i < ORACLE_SND_NDEFS; i++)
+        if (oracle_snd_defs[i].fn == fn)
+            return &oracle_snd_defs[i];
+    return NULL;
+}
+
+/* args[0..6] as the entry received them; fix (port) translates pointers */
+typedef uint32_t (*oracle_fix_fn)(uint32_t w);
+static void oracle_snd_log(uint32_t fn, const uint32_t *args, oracle_fix_fn fix)
+{
+    const oracle_snd_def *d = oracle_snd_find(fn);
+    uint32_t *e;
+    unsigned k;
+    if (!d)
+        return;
+    if (oracle_snd_n < ORACLE_SND_MAX) {
+        e = oracle_snd_buf[oracle_snd_n];
+        e[0] = fn;
+        for (k = 0; k < 7; k++) {
+            uint32_t v = k < d->nargs && !(d->skip_mask >> k & 1) ? args[k] : 0;
+            if (fix && (d->ptr_mask >> k & 1))
+                v = fix(v);
+            e[1 + k] = v;
+        }
+    }
+    oracle_snd_n++;
+}
+
+static void oracle_snd_write(FILE *f)
+{
+    uint32_t n = oracle_snd_n;
+    fwrite(&n, 4, 1, f);
+    if (n < ORACLE_SND_MAX)
+        memset(oracle_snd_buf[n], 0, (ORACLE_SND_MAX - n) * sizeof oracle_snd_buf[0]);
+    fwrite(oracle_snd_buf, 4, ORACLE_SND_MAX * ORACLE_SND_WORDS, f);
+    oracle_snd_n = 0;
+}
+
+/* a frame whose record is not written: its commands are dropped too */
+static void oracle_snd_reset(void) { oracle_snd_n = 0; }
+
 /* rd(ee, dst, n): copy n bytes of EE address ee; fix(w): EE value of a word */
 typedef void (*oracle_rd_fn)(uint32_t ee, void *dst, uint32_t n);
-typedef uint32_t (*oracle_fix_fn)(uint32_t w);
 
 static uint8_t oracle_ram_buf[ORACLE_HASH_HI - ORACLE_HASH_LO];
 
@@ -100,6 +190,7 @@ static void oracle_dump_record(FILE *f, uint32_t frame, uint16_t b0, uint16_t b1
         hashes[i] = h;
     }
     fwrite(hashes, 4, ORACLE_NBLOCKS, f);
+    oracle_snd_write(f);
     if (!oracle_extra_init)
         oracle_extra_parse();
     if (oracle_extra_hi > oracle_extra_lo)

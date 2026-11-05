@@ -7,6 +7,10 @@ the retail executable in Play!, mvc2_oracle).  See port/docs/ORACLE_FUZZ.md.
   fuzz.py show SEED [--seed-only]               print a scenario (script + options)
   fuzz.py minimise DIR/SEED [opts]              snapshots around a divergence + snapdiff
   fuzz.py report --out DIR                      summary of DIR/results.jsonl
+  fuzz.py sanity --out DIR [--seed S --count N] the oracle against itself (noise check)
+
+Sound commands (dump_format.h): every frame's ordered list of calls into the
+TSD client and CRI ADXT entry points must match too (--no-sound: not compared).
 
 A scenario (from its seed alone): ARCADE, a random P1 team (any of the 56
 selectable characters, a random assist type each, picked through the
@@ -318,12 +322,16 @@ def parse(rec):
     seed, grng = struct.unpack_from('<QI', rec, 16)
     reg = rec[28:28 + C.RL]
     raw = rec[28 + C.RL:28 + 2 * C.RL]
-    hashes = rec[28 + 2 * C.RL:C.REC]
-    return frame, pads, st, seed, reg, hashes, grng, raw, rec[C.REC:]
+    hashes = rec[28 + 2 * C.RL:C.SND_OFF]
+    return frame, pads, st, seed, reg, hashes, grng, raw, rec[C.REC:], C.parse_snd(rec, C.SND_OFF)
 
 
-def frame_diffs(p, o, ign=()):
+def frame_diffs(p, o, ign=(), sound=True):
     msgs = []
+    if sound:
+        sd = C.snd_diff(p[9], o[9])
+        if sd:
+            msgs.append(sd)
     if p[1] != o[1]:
         msgs.append(f'pads port {p[1]:08X} oracle {o[1]:08X}')
     if p[2] != o[2]:
@@ -373,7 +381,8 @@ def _child_init():
     _die_with_parent()
 
 
-def run_pair(scn, work, port, oracle, iso, snaps=None, frames=None, keep_div=None, extra=None, visit=None):
+def run_pair(scn, work, port, oracle, iso, snaps=None, frames=None, keep_div=None, extra=None, visit=None,
+             sound=True, oracle_only=False):
     """run port and oracle on a scenario, compare as they go.
     snaps: {'port': [(frame, file)], 'oracle': [(frame, file)]}"""
     os.makedirs(work, exist_ok=True)
@@ -398,6 +407,12 @@ def run_pair(scn, work, port, oracle, iso, snaps=None, frames=None, keep_div=Non
     env_p = dict(os.environ, MVC2_PAD_DELAY='0', MVC2_RESYNC=SYNC, MVC2_STATE_DUMP=pf,
                  MVC2_STATE_DUMP_FROM=str(DUMP_FROM), MVC2_MEMCARD=mc, SDL_VIDEODRIVER='offscreen',
                  SDL_AUDIODRIVER='dummy')
+    if oracle_only:
+        # the sanity pair: the oracle twice on the scenario ("port" = a second oracle)
+        oh2 = oh + '2'
+        shutil.rmtree(oh2, ignore_errors=True)
+        pargs = [oracle if a == port else (pf if a == of else a) for a in oargs]
+        env_p = dict(env_o, MVC2_ORACLE_HOME=oh2)
     rsize = C.REC
     if extra:
         env_o['MVC2_DUMP_EXTRA'] = env_p['MVC2_DUMP_EXTRA'] = '0x%08X:0x%08X' % extra
@@ -452,10 +467,11 @@ def run_pair(scn, work, port, oracle, iso, snaps=None, frames=None, keep_div=Non
         res['base_blocks'] = len(base)
         newly = {}
         n = fight = 0
+        nsnd = sframes = 0
         prev = None
         stages, seen = 0, set()
         while True:
-            msgs, fields = frame_diffs(p, o)
+            msgs, fields = frame_diffs(p, o, sound=sound)
             if visit is not None:
                 if visit(n, p, o, msgs):
                     res['status'] = 'visited'
@@ -476,6 +492,8 @@ def run_pair(scn, work, port, oracle, iso, snaps=None, frames=None, keep_div=Non
                         fo.write((prev[1] if prev else b'') + oraw)
                 break
             n += 1
+            nsnd += o[9][0]
+            sframes += o[9][0] > 0
             if is_fight(o[2]):
                 fight += 1
             seen.add(o[2])
@@ -495,6 +513,9 @@ def run_pair(scn, work, port, oracle, iso, snaps=None, frames=None, keep_div=Non
             p, o = parse(a), parse(b)
         res['compared'] = n
         res['fight_frames'] = fight
+        res['sound'] = sound
+        res['sound_cmds'] = nsnd
+        res['sound_frames'] = sframes
         res['stages'] = stages
         res['states'] = sorted(C.st_str(x) for x in seen)
         res['last_state'] = C.st_str(o[2])
@@ -537,18 +558,19 @@ def finish(res, pp, po, P, O, kill, timer, t0, work):
         except OSError:
             pass
     shutil.rmtree(os.path.join(work, 'oracle_home'), ignore_errors=True)
+    shutil.rmtree(os.path.join(work, 'oracle_home2'), ignore_errors=True)
     shutil.rmtree(os.path.join(work, 'mc'), ignore_errors=True)
     return res
 
 
-def job(seed, out, port, oracle, iso, fight_override=None):
+def job(seed, out, port, oracle, iso, fight_override=None, sound=True):
     scn = scenario(seed)
     if fight_override:
         scn['frames'] = fight_override
     work = tempfile.mkdtemp(prefix=f'fz{seed}_', dir=out)
     keep = os.path.join(out, str(seed))
     port = os.path.realpath(port)  # a symlink can be repointed between seeds
-    res = run_pair(scn, work, port, oracle, iso, keep_div=keep)
+    res = run_pair(scn, work, port, oracle, iso, keep_div=keep, sound=sound)
     res['port'] = port
     if res.get('status') != 'match':
         os.makedirs(keep, exist_ok=True)
@@ -585,7 +607,7 @@ def done_seeds(out):
 def summary_line(res):
     st = res.get('status')
     s = f"seed {res['seed']:6d} {st:11s} {res.get('compared', 0):6d} fr ({res.get('fight_frames', 0):5d} fight) " \
-        f"{res.get('wall', 0):6.0f}s  {res['desc']}"
+        f"{res.get('sound_cmds', 0):5d} snd {res.get('wall', 0):6.0f}s  {res['desc']}"
     if st == 'diverge':
         d = res['div']
         s += f"\n      +{d['k']} port {d['port_frame']} oracle {d['oracle_frame']} state {d['state']}: " + \
@@ -608,7 +630,7 @@ def cmd_run(a):
         for _ in range(a.jobs):
             s = next(it, None)
             if s is not None:
-                fut[ex.submit(job, s, a.out, a.port, a.oracle, a.iso, a.frames)] = s
+                fut[ex.submit(job, s, a.out, a.port, a.oracle, a.iso, a.frames, not a.no_sound)] = s
         while fut:
             for f in as_completed(list(fut)):
                 s = fut.pop(f)
@@ -622,15 +644,34 @@ def cmd_run(a):
                 if stop is None or time.time() < stop:
                     n = next(it, None)
                     if n is not None:
-                        fut[ex.submit(job, n, a.out, a.port, a.oracle, a.iso, a.frames)] = n
+                        fut[ex.submit(job, n, a.out, a.port, a.oracle, a.iso, a.frames, not a.no_sound)] = n
                 break
 
 
 def cmd_one(a):
     os.makedirs(a.out, exist_ok=True)
-    res = job(a.seed, a.out, a.port, a.oracle, a.iso, a.frames)
+    res = job(a.seed, a.out, a.port, a.oracle, a.iso, a.frames, not a.no_sound)
     print(summary_line(res))
     print(json.dumps(res, indent=1))
+
+
+def cmd_sanity(a):
+    """the oracle against itself on each seed's scenario: the per-frame
+    records (sound commands included) must be identical; anything that is
+    not is emulator noise the port comparison has to allow for"""
+    os.makedirs(a.out, exist_ok=True)
+    resf = open(os.path.join(a.out, 'sanity.jsonl'), 'a')
+    for seed in range(a.seed, a.seed + a.count):
+        scn = scenario(seed)
+        if a.frames:
+            scn['frames'] = a.frames
+        work = tempfile.mkdtemp(prefix=f'san{seed}_', dir=a.out)
+        res = run_pair(scn, work, a.oracle, a.oracle, a.iso, keep_div=os.path.join(a.out, 'sanity_%d' % seed),
+                       sound=not a.no_sound, oracle_only=True)
+        shutil.rmtree(work, ignore_errors=True)
+        resf.write(json.dumps(res) + '\n')
+        resf.flush()
+        print(summary_line(res), flush=True)
 
 
 def cmd_show(a):
@@ -796,6 +837,7 @@ def cmd_report(a):
     for r in rs:
         by.setdefault(r.get('status'), []).append(r)
     tot = sum(r.get('compared', 0) for r in rs)
+    snd = sum(r.get('sound_cmds', 0) for r in rs if r.get('sound'))
     fight = sum(r.get('fight_frames', 0) for r in rs)
     chars = set()
     pairs = set()
@@ -807,7 +849,8 @@ def cmd_report(a):
             for e, _ in scn['cpu']:
                 pairs.add((c, e))
     print(f'{len(rs)} scenarios, {tot} frames compared ({fight} fight frames), '
-          f'{len(chars)} characters, {len(pairs)} P1/CPU character pairs')
+          f'{len(chars)} characters, {len(pairs)} P1/CPU character pairs, '
+          f'{snd} sound commands compared')
     for k, v in sorted(by.items(), key=lambda t: str(t[0])):
         print(f'  {k}: {len(v)}')
     sig = {}
@@ -841,6 +884,7 @@ def main():
         p.add_argument('--oracle', default=os.environ.get('ORACLE', '/tmp/oracle_src/build/mvc2_oracle'))
         p.add_argument('--iso', default=os.environ.get('ISO', os.path.join(ROOT, 'private/disc/mvc2.iso')))
         p.add_argument('--frames', type=int, help='override the scenario length (frames from boot)')
+        p.add_argument('--no-sound', action='store_true', help='do not compare the sound commands')
     p = sub.add_parser('run')
     common(p)
     p.add_argument('--out', required=True)
@@ -854,6 +898,12 @@ def main():
     p.add_argument('--out', required=True)
     p.add_argument('--seed', type=int, required=True)
     p.set_defaults(fn=cmd_one)
+    p = sub.add_parser('sanity')
+    common(p)
+    p.add_argument('--out', required=True)
+    p.add_argument('--seed', type=int, default=1)
+    p.add_argument('--count', type=int, default=1)
+    p.set_defaults(fn=cmd_sanity)
     p = sub.add_parser('show')
     p.add_argument('seed', type=int)
     p.add_argument('--brief', action='store_true')

@@ -8,7 +8,8 @@ Alignment: --sync STATE pairs the first frame at which each side's game state
 (g[0..2], "a/b/c" or a prefix) matches STATE, then frame by frame from there.
 Without it, frame numbers are paired as they are.
 
-Reported per frame: the header (pads, game state, rand seed), the bytes of the
+Reported per frame: the header (pads, game state, rand seed), the sound
+commands issued since the previous frame (in order, --no-sound to skip), the bytes of the
 six player records (stride 0x5B8 from 0x004F20B0) and of the game block
 (0x004F4300..0x004F4500), and the 1 KB hash blocks of the EE BSS that newly
 differ (blocks already different at the first compared frame are listed once
@@ -19,13 +20,60 @@ import argparse
 import struct
 import sys
 
-MAGIC = 0x3446564D
+MAGIC = 0x3546564D
 REGION_LO, REGION_HI = 0x004F20B0, 0x004F4500
 HASH_LO, HASH_HI, BLOCK = 0x004C2580, 0x00634380, 0x400
 NBLOCKS = (HASH_HI - HASH_LO + BLOCK - 1) // BLOCK
 RL = REGION_HI - REGION_LO
-REC = 12 + 4 + 8 + 4 + 2 * RL + 4 * NBLOCKS
+SND_OFF = 12 + 4 + 8 + 4 + 2 * RL + 4 * NBLOCKS
+SND_MAX, SND_WORDS = 32, 8
+REC = SND_OFF + 4 + 4 * SND_MAX * SND_WORDS
 PL, STRIDE = 0x004F20B0, 0x5B8
+
+# dump_format.h oracle_snd_defs: EE entry -> (name, argument count)
+SND_DEFS = {
+    0x00422EA0: ('tsd_play', 4), 0x00422FB0: ('tsd_stop', 1), 0x004230B0: ('tsd_change', 4),
+    0x004231D0: ('tsd_stop_all_tq', 0), 0x00423240: ('tsd_master_volume', 1), 0x004232C0: ('tsd_cmd77', 3),
+    0x00423480: ('tsd_load_bank', 7), 0x004235D0: ('tsd_unload_bank', 1), 0x00423650: ('tsd_stop_all', 0),
+    0x004236C0: ('tsd_stereo', 1),
+    0x00402C20: ('ADXT_StartAfs', 3), 0x00401868: ('ADXT_Stop', 1), 0x004020D8: ('ADXT_SetOutVol', 2),
+    0x004026B0: ('ADXT_Pause', 2), 0x00402BC0: ('ADXT_SetOutputMono', 1),
+}
+
+
+def parse_snd(d, o):
+    """the record's sound commands: (count, ((fn, a0..a6), ...)); count can
+    exceed the entries kept (SND_MAX)"""
+    n, = struct.unpack_from('<I', d, o)
+    w = struct.unpack_from(f'<{SND_MAX * SND_WORDS}I', d, o + 4)
+    return n, tuple(w[i * SND_WORDS:(i + 1) * SND_WORDS] for i in range(min(n, SND_MAX)))
+
+
+def snd_str(e):
+    name, na = SND_DEFS.get(e[0], ('0x%08X' % e[0], 7))
+    args = e[1:1 + na]
+    # the ADXT handle (first argument) is not recorded
+    if name.startswith('ADXT_') and name != 'ADXT_SetOutputMono':
+        args = args[1:]
+    return name + '(' + ', '.join(_arg(x) for x in args) + ')'
+
+
+def _arg(x):
+    if x >= 0xFFFF0000:
+        return str(x - (1 << 32))
+    return str(x) if x < 0x10000 else '0x%X' % x
+
+
+def snd_list(s):
+    n, es = s
+    return '[' + ', '.join(snd_str(e) for e in es) + (f', ... {n} in all' if n > len(es) else '') + ']'
+
+
+def snd_diff(p, o):
+    """None, or a message with both frames' lists"""
+    if p == o:
+        return None
+    return f'sound commands port {snd_list(p)} oracle {snd_list(o)}'
 
 
 def load(path):
@@ -41,7 +89,7 @@ def load(path):
         reg = d[o + 28:o + 28 + RL]
         raw = d[o + 28 + RL:o + 28 + 2 * RL]
         hashes = struct.unpack_from(f'<{NBLOCKS}I', d, o + 28 + 2 * RL)
-        frames.append((frame, pads, st, seed, reg, hashes, grng, raw))
+        frames.append((frame, pads, st, seed, reg, hashes, grng, raw, parse_snd(d, o + SND_OFF)))
     return frames
 
 
@@ -137,6 +185,7 @@ def main():
     ap.add_argument('--no-pads', action='store_true', help='do not require equal pad bits')
     ap.add_argument('--quiet-blocks', action='store_true', help='blocks only in the summary, not as divergences')
     ap.add_argument('--no-blocks', action='store_true', help='compare the header and the player/game region only')
+    ap.add_argument('--no-sound', action='store_true', help='do not compare the sound commands')
     a = ap.parse_args()
     P = load(a.port)
     O = load(a.oracle)
@@ -158,6 +207,7 @@ def main():
     shown = 0
     first = None
     newly = {}
+    nsnd = 0
     for k in range(n):
         p, o = P[ps + k], O[os_ + k]
         msgs = []
@@ -169,6 +219,10 @@ def main():
             msgs.append(f'rand seed port {p[3]:016X} oracle {o[3]:016X}')
         if p[6] != o[6]:
             msgs.append(f'game RNG (D_004C26AC/B0) port {p[6]:04X} oracle {o[6]:04X}')
+        sd = None if a.no_sound else snd_diff(p[8], o[8])
+        if sd:
+            msgs.append(sd)
+        nsnd += o[8][0]
         d = diff_region(p[4], o[4], ign, p[7])
         for off in d[:a.max_fields]:
             pv, = struct.unpack_from('<I', p[4], off)
@@ -195,7 +249,7 @@ def main():
         for blk, k in sorted(newly.items(), key=lambda t: t[1])[:a.max_fields]:
             print(f'    0x{HASH_LO + blk * BLOCK:08X}: +{k} (port frame {P[ps + k][0]})')
     if first is None:
-        print(f'MATCH: {n} frames identical')
+        print(f'MATCH: {n} frames identical, {nsnd} sound commands')
     else:
         print(f'FIRST DIVERGENCE at +{first} (port frame {P[ps + first][0]}, oracle frame {O[os_ + first][0]}); matched {first} frames')
     return 0 if first is None else 1
