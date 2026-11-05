@@ -317,12 +317,14 @@ Remaining / next steps:
    to `func_00412260`; the port treats it as ARGB with `(c+1)>>1`.
 4. The third cache path in `func_00412260` (tiles larger than 0x400 px) was
    assumed to match the others; the pixel-exact checks above cover 64x64 tiles.
-5. Palette atlas rows are not reclaimed on release. Add a free list when
-   characters are swapped often.
-6. `func_00418410`, `func_00418570` and `func_00415B00` resource kinds are not
-   implemented (only TIM2, kind 1).
-7. Touch overlay labels: buttons are only colour-coded; draw LP/HP/... with the
-   debug font. Make the button mapping configurable.
+5. Palette atlas rows: done. `r_pal_alloc_rows` is first fit over a row map;
+   `fl_char_bank_destroy` frees its 16 rows and `fl_tex_release` its palette
+   row. Before this, every character bank load leaked 16 of the 1,024 rows.
+6. `func_00418410`, `func_00418570` and `func_00415B00`: no port code needed.
+   They are credited game C and run as is; this item dates from the standalone
+   viewer.
+7. Touch overlay labels: done (LP/HP/A1/LK/HK/A2/ST, `fe_ui.c`). The pad's
+   buttons map to PS2 buttons, so the game's BUTTON CONFIG remaps them.
 8. The web build holds the full ISO in MEMFS (about 208 MB of JS memory). If iOS
    memory becomes a problem, read byte ranges from the `File` in a worker
    (WORKERFS or FileReaderSync), or extract only the AFS entries needed into

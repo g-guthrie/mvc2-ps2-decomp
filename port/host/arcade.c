@@ -768,6 +768,28 @@ static void force_p1(u8 *p)
         force_rec(p, id, "P1", i / 2, 0);
 }
 
+/* --p1-team, as a genuine pick: the character select's cursor lookup
+ * (func_00137F90, src/wave0.c; its one caller, func_0032B000 in
+ * src/xm19_b.c, runs it each time side 0's cursor moves) returns the forced
+ * id of the pick being made, so the menu takes the cursor as being on that
+ * character: it loads its portrait and preview data (func_001E60B0 /
+ * func_001E6490), which the VERSUS screen's name textures come from
+ * (func_0016FAA0).  Forcing only at the PAK queue (force_p1 above) left those
+ * from the menu's own pick: with a forced Akuma, Tron, Mega Man, BB Hood,
+ * Charlie, M. Bison or Servbot (English name texture, entry 4) over another
+ * menu character the lookup found no entry and func_004161D0 read EE address
+ * 0 (harmless on the PS2, a SIGSEGV on the host).  The script moves the
+ * cursor once before each pick (port/tools/oracle/fuzz.py); the oracle does
+ * the same at the call's return site (0x0032B190). */
+int func_00137F90(int i)
+{
+    s32 r = func_00137F90__game(i);
+    int k = player_index(EE_BSS(u8 *, 0x004C2904)), id;
+    if (k >= 0 && !(k & 1) && (id = forced_id("MVC2_P1_TEAM", k / 2)) >= 0)
+        r = id;
+    return r;
+}
+
 /* the assist types of --cpu-team / --p1-team entries given as ID:T */
 static void force_assist(u8 *p)
 {

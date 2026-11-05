@@ -24,6 +24,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdint.h>
+#include <stdlib.h>
 
 #define ORACLE_MAGIC 0x3446564Du /* "MVF4" */
 #define ORACLE_REGION_LO 0x004F20B0u
@@ -32,6 +33,26 @@
 #define ORACLE_HASH_HI 0x00634380u
 #define ORACLE_HASH_BLOCK 0x400u
 #define ORACLE_NBLOCKS ((ORACLE_HASH_HI - ORACLE_HASH_LO + ORACLE_HASH_BLOCK - 1) / ORACLE_HASH_BLOCK)
+
+/* MVC2_DUMP_EXTRA=LO:HI (both sides, testing; port/tools/oracle/fuzz.py
+ * scan): every record also carries the bytes of [LO, HI) inside the hashed
+ * BSS range, as given to the dump (after fix), after the block hashes, so a
+ * comparison can see the words of an area the hashes only flag. */
+static uint32_t oracle_extra_lo, oracle_extra_hi;
+static int oracle_extra_init;
+static void oracle_extra_parse(void)
+{
+    const char *e = getenv("MVC2_DUMP_EXTRA");
+    oracle_extra_init = 1;
+    if (e) {
+        char *c;
+        unsigned long lo = strtoul(e, &c, 0), hi = *c == ':' ? strtoul(c + 1, NULL, 0) : 0;
+        if (lo >= ORACLE_HASH_LO && hi > lo && hi <= ORACLE_HASH_HI) {
+            oracle_extra_lo = (uint32_t)lo & ~3u;
+            oracle_extra_hi = (uint32_t)hi & ~3u;
+        }
+    }
+}
 
 /* rd(ee, dst, n): copy n bytes of EE address ee; fix(w): EE value of a word */
 typedef void (*oracle_rd_fn)(uint32_t ee, void *dst, uint32_t n);
@@ -79,6 +100,10 @@ static void oracle_dump_record(FILE *f, uint32_t frame, uint16_t b0, uint16_t b1
         hashes[i] = h;
     }
     fwrite(hashes, 4, ORACLE_NBLOCKS, f);
+    if (!oracle_extra_init)
+        oracle_extra_parse();
+    if (oracle_extra_hi > oracle_extra_lo)
+        fwrite(oracle_ram_buf + (oracle_extra_lo - ORACLE_HASH_LO), 1, oracle_extra_hi - oracle_extra_lo, f);
     fflush(f);
 }
 
