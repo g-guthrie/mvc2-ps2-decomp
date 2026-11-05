@@ -82,6 +82,9 @@ void *func_001044E0(int increment)
     return old;
 }
 
+/* the current break (run-ahead snapshots the heap up to it) */
+u8 *host_ee_heap_top(void) { return ee_brk; }
+
 /* the first break (EE 0x00634380, the end of the BSS): state_dump.c */
 u8 *host_ee_heap_base(void)
 {

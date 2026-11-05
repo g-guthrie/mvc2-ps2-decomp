@@ -134,7 +134,8 @@ touch controls, the gamepad-to-player choice and the button bindings.
 |---|---|
 | Picture | The PS2's 640x448 picture, as large as fits, with sharp pixel scaling (crisp, even pixel widths); sprites sampled as the game asks; no CRT effect; v-sync on. |
 | Speed | Game logic at a fixed 60 Hz. On a slow device some frames are not drawn, but no game step is skipped. |
-| Input | Zero frames of delay: a press counts in the next game step (the retail PS2 adds 2 frames, the arcade about 1; ARCADE_DIFF.md 10.3). |
+| Input | Zero frames of delay: a press counts in the next game step (the retail PS2 adds 2 frames, the arcade about 1; ARCADE_DIFF.md 10.3). On top of that, **run-ahead** shows the frame the next step will produce, so a press appears on screen one frame sooner still (below). |
+| Display | Desktop: the driver may not queue frames ahead of the screen (a GPU wait after each swap). Browser: a low-latency (desynchronized) canvas where the browser supports it, and the fast GPU on dual-GPU laptops. |
 | Rules | The arcade's (NAOMI Rev A) wherever the arcade oracle confirmed a difference: the flying-screen edge, Servbot's hit-stop inputs, the super-freeze tick order, the arcade's sine/cosine and its float rounding. Characters' frames, boxes, damage and CPU AI are the same on both machines (ARCADE_DIFF.md sections 10-11). |
 | Unlocks | Every character, stage and extra from the start. |
 | Sound | The Dreamcast versions of the common effects when you add your Dreamcast disc (below). |
@@ -232,6 +233,24 @@ and the retail PS2 two frames before (ARCADE_DIFF.md 10.3), so the port
 answers one frame sooner than the arcade and two sooner than the PS2.
 For comparison, `--set arcade.timing=arcade` (or `ps2`) adds that delay
 back for one run; the latency overlay does not include it.
+
+**Run-ahead.** Each displayed frame the port runs the real game step
+without drawing it, saves the game state (about 24 MB: the game's memory and
+the host's per-frame state), runs one more step with the same input, draws
+that one and restores the state. The game itself is never changed: with
+deterministic input the full game state is bit-identical with run-ahead off,
+1 frame and 2 frames (checked every 60 frames through boot, character select
+and a 6,000-frame scripted fight). Sound and music requests from the
+speculative step are dropped, so nothing plays twice, and textures or
+palettes it uploaded are re-synced from the restored state.
+- It runs only after 30 quiet steps, so not during loads, saves or bank
+  changes, and it backs off when a speculative step does such work.
+- It switches itself off on a device where it costs more than half a frame
+  (8 ms per step, averaged).
+- Testing: `--set video.runahead=0` (or 2), `?video.runahead=0`;
+  `debug.state_hash=N` logs a hash of the whole state every N steps
+  (with `MVC2_FIXED_CLOCK=1` and `MVC2_NO_AUDIO=1`, or `?env.NAME=1` in the
+  browser, two runs of a script give the same hashes).
 
 In headless Chromium with SwiftShader (a software GPU on a loaded machine)
 the display ran at 5-9 fps and the measured latency was about 6 frames. That

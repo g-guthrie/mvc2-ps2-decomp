@@ -525,6 +525,15 @@ if (query.get('args')) mainArgs.push(...query.get('args').split(/\s+/).filter(Bo
 const scriptText = query.get('script');
 if (scriptText) mainArgs.push('--script', '/script.txt', '--shot-dir', '/shots');
 
+/* Low latency: ask for a desynchronized WebGL canvas (the browser may then
+   show a frame without waiting for its compositor; Chrome on Windows,
+   ChromeOS and Android honours it) and the fast GPU on dual-GPU laptops. */
+{
+  const cv = $('canvas'), get = cv.getContext.bind(cv);
+  cv.getContext = (type, attrs) => get(type, /^(webgl2?|experimental-webgl)$/.test(type)
+    ? Object.assign({}, attrs, { desynchronized: true, powerPreference: 'high-performance' }) : attrs);
+}
+
 var Module = {
   arguments: mainArgs,
   canvas: $('canvas'),
@@ -533,6 +542,8 @@ var Module = {
   setStatus: t => { if (t && !booted) status(t); },
   onSettingChanged,
   preRun: [mountMemcard, () => {
+    /* ?env.NAME=VALUE (testing): environment variables for the game */
+    for (const [k, v] of query) if (k.startsWith('env.')) ENV[k.slice(4)] = v;
     if (!scriptText) return;
     Module.FS.writeFile('/script.txt', scriptText.split(';').join('\n'));
     Module.FS.mkdir('/shots');

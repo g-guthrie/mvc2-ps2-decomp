@@ -17,6 +17,7 @@
 #include <string.h>
 #include <time.h>
 #include "host.h"
+#include "runahead.h"
 #include "pad.h"
 
 /* ---- SIF RPC (libkernl) -------------------------------------------------
@@ -175,11 +176,18 @@ int func_0010D910(int port, int slot, void *buf)
 /* ---- RTC: sceCdReadClock ------------------------------------------------ */
 static u8 bcd(int v) { return (u8)(((v / 10) << 4) | (v % 10)); }
 
+extern volatile long mvc2_host_frame;
 int func_0010FC98(void *clock)
 {
     u8 *c = (u8 *)clock;
-    time_t t = time(0);
-    struct tm *tm = localtime(&t);
+    /* MVC2_FIXED_CLOCK=1 (testing): a clock that advances with the game's
+     * frames from 2000-01-01, so two runs of a script are identical */
+    static int fixed = -1;
+    time_t t;
+    struct tm *tm;
+    if (fixed < 0) fixed = getenv("MVC2_FIXED_CLOCK") != NULL;
+    t = fixed ? (time_t)(946684800L + (mvc2_host_frame > 0 ? mvc2_host_frame / 60 : 0)) : time(0);
+    tm = fixed ? gmtime(&t) : localtime(&t);
     c[0] = 0;
     c[1] = bcd(tm->tm_sec);
     c[2] = bcd(tm->tm_min);
@@ -199,4 +207,12 @@ int func_0010BB98(void *path, int arg_len, void *args)
     if (host_verbose)
         host_log("sceSifLoadModule(%s): no IOP, reported loaded", (const char *)path);
     return 1;
+}
+
+/* run-ahead: the pads the game reads and the delay queue */
+RA_REGISTER(iop_ra_state)
+{
+    RA_STATE(host_pads);
+    RA_STATE(host_pads_set);
+    RA_STATE(host_pads_q);
 }
