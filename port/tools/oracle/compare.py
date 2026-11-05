@@ -82,16 +82,40 @@ def load_ignore(path):
     return ign
 
 
+# player-record words the render path writes (func_00152D20: the projected
+# screen x, y and depth through the VU0 macro matrix code, vu0_macro_math.S):
+# Play!'s VU0 and the port's differ by an ulp or two there (BOOT_NOTES "known
+# false differences"), so up to RENDER_ULP is not a difference
+RENDER_WORDS = (0xF0, 0xF4, 0xF8)
+RENDER_ULP = 2
+
+
+def _ulps(x, y):
+    """distance in units in the last place of two float words of one sign"""
+    if (x ^ y) & 0x80000000:
+        return 1 << 31
+    return abs((x & 0x7FFFFFFF) - (y & 0x7FFFFFFF))
+
+
+def render_noise(off, a, b):
+    if off >= 6 * STRIDE or (off % STRIDE) not in RENDER_WORDS:
+        return False
+    x, = struct.unpack_from('<I', a, off)
+    y, = struct.unpack_from('<I', b, off)
+    return _ulps(x, y) <= RENDER_ULP
+
+
 def diff_region(a, b, ign, araw=None):
     """word offsets where a (port, EE terms) and b (oracle) differ; a word
-    whose untranslated port value equals the oracle's is not a difference"""
+    whose untranslated port value equals the oracle's is not a difference,
+    nor render noise (render_noise)"""
     out = []
     i = 0
     n = len(a)
     while i < n:
         if a[i] != b[i] and (REGION_LO + i) not in ign:
             j = i & ~3
-            if araw is None or araw[j:j + 4] != b[j:j + 4]:
+            if (araw is None or araw[j:j + 4] != b[j:j + 4]) and not render_noise(j, a, b):
                 out.append(j)
             i = j + 4
         else:
