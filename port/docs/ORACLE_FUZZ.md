@@ -194,9 +194,15 @@ Found by scanning, not (yet) by a seed: `jtbl_004C1BF0` entries 6-7 are
 - `r12_returns.csv` / `r12_indirect.csv` hand edits: closed (regenerated
   against the retail asm, identical rows).
 - Coverage beyond stage fights: closed for the arcade path (arcade
-  scenarios reach Abyss and the end of the run); menus other than the
-  arcade path (training, shop, options, versus) are still not in the
+  scenarios reach Abyss and the end of the run, and walk into the pause
+  menu's pages); training, shop, options and versus are still not in the
   scenario model.
+- `func_00391990` (`h12.c`) calls `D_00471BF0[p[5]]` with $a1 = a stale
+  stack address left by `func_00174470` (its `projected[]` buffer); four of
+  the entries read it.  The EE value is a dead frame's contents: not
+  reproducible, not seen in a run.
+- Sound: the status-gated stop race (seeds 15, 17, 23, 1000111) is handled
+  on the "Oracle fuzz: compare sound commands with retail" branch.
 
 ## Second pass (2026-11-05)
 
@@ -230,6 +236,16 @@ the end of the run (2/1/4 Abyss beaten, 2/1/5, 2/1/6, then the title).
 |---|---|---|
 | 1000001-1000009 (12 blocks) | ~20,000 each | 8 match, 1000005 diverged (pause menu, below) and matches after the fix |
 | 1000100-1000108 (22 blocks) | ~35,000 each | 8 match; 6 reach Abyss and the end of the run; 1000100 crashed at stage 7 (below) and matches after the fix (36,109 frames) |
+| 1000110-1000127 (22 blocks) | 635,662 in all | 18 / 18 match (final fixes); 12 reach Abyss and the end of the run; 1000112 crashed at stage 6 on the earlier binary (below) |
+
+The arcade scripts' `start` presses sometimes open the pause menu and the
+mash then walks it: COMMAND LIST (seed 1000005), BUTTON CONFIG with the
+buttons remapped (1000108, which then never leaves the first fight).  Those
+runs match too, so the pause menu and its pages are covered as well.
+
+Final branch head (`491a7cf5`, with run-ahead and the streamlined options
+merged from main; run-ahead is off under `MVC2_STATE_DUMP`): seeds 1-6 and
+arcade 1000005 match, sound requests identical.
 
 ### Sound requests
 
@@ -266,4 +282,5 @@ no change to the port's sound driver.
 | arcade 1000100 (SIGSEGV at 0x0037E0A0, stage 7) | `jtbl_004C1D18` starts inside `data_u32_004C1D10`, credited as 16 bytes: entry 0 stayed the raw EE address | override: 8 bytes + two function pointers; every `jtbl_` alias inside a non-table object checked |
 | `n5.c:304` (open item) | handler +0x64 gets $a1 = the object func_0015F8D0 just allocated (or 8 when the pool is empty) | override passes the free-list head read before the call |
 | regenerated R12 tables | `wave1b.c` indirect call, `func_00197560` pass-through | table rows |
+| arcade 1000112 (SIGSEGV in func_0035D2A0, p = NULL) | `((void (*)(void))D_004C1B60[a[5]])()` in `func_0035D240`: the wrapped-cast form of the missing-argument class, which the first pass's scan did not match | override passes $a0/$a1; scan of every `((T (*)(..))TABLE[i])(..)` call: `func_0019A560` (D_0044A7B0, $a1 = q) fixed too |
 

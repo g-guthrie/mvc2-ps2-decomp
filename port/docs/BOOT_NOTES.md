@@ -1095,3 +1095,15 @@ heap, the text renderer's scratch quad, DMA bookkeeping) are in
 ORACLE_FUZZ.md "BSS blocks".  Build: without emsdk the signature scan now
 compiles the stubs with clang + wasi-libc; the Linux build needs
 `gcc-multilib` (USER_GUIDE).
+
+**Second fuzz pass (2026-11-05).**  emsdk 6.0.13 for the signature scan;
+the R12 tables regenerated against the retail asm (the hand edits came out
+identical; two new rows).  Arcade scenarios (seeds from 1,000,000): 36 whole
+ARCADE runs, ~1.3 M frames, all matching after the fixes, 18 of them
+through Abyss to the end of the run.  The game's sound requests (Tamsoft
+and ADX calls) are compared too.  Fixed: the pause menu's COMMAND LIST page
+and the game's byte copy / memmove had no C (empty stubs: now
+`port/host/pause_menu.c`, `game_copy.c`); `jtbl_004C1D18` entries were
+bytes; wrapped-cast table calls without their register arguments
+(`wave13b.c`, `owner_state_copy_setup_0019a560.c`); `n5.c`'s handler call
+gets the object just allocated.  Details: ORACLE_FUZZ.md "Second pass".
