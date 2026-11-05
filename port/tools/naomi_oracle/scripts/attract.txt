@@ -1,0 +1,2 @@
+# the attract cycle, no input (resync at 1/1/0 on both sides)
+wait 5000

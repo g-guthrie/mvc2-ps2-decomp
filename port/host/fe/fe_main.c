@@ -10,6 +10,7 @@
  *        [--press F:BUTTON[:LEN] ...] [--script FILE] [--hidden] [--size WxH] [--desktop-gl] [-v]
  *        [--config FILE] [--set KEY=VALUE ...] [--fullscreen] [--no-unlock]
  *        [--wshot F:FILE.png ...] [--key F:KEYNAME[:LEN] ...]
+ *        [--dc-disc DREAMCAST.gdi]
  *        [--arcade abc --naomi mvsc2.zip] [--arcade-trace] [--cpu-team a,b,c] [--cpu-hp N] [--p1-hp N] [--draw-every N] [--speed N]
  *
  * --frames N quits after N game frames.  --shot F:path writes the 640x480
@@ -27,6 +28,10 @@
  * splices the user's own NAOMI tables from --naomi PATH (mvsc2.zip, MAME
  * Rev A set; web: /mvsc2.zip, written by the page) into each character
  * (port/host/arcade.c, port/docs/ARCADE_DIFF.md section 5).  Off by default.
+ * --dc-disc PATH: the user's own Dreamcast MvC2 disc (.gdi, or its data track
+ * as .bin / .iso, or SE_COMN.BIN itself); remembered as audio.dc_disc.  The
+ * common sound effects then play from it at their Dreamcast sample rates
+ * (port/audio/dcse.h, port/docs/AUDIO.md section 9).
  * --arcade-trace logs every player script run and hit (for checking it).
  */
 #include <SDL.h>
@@ -38,6 +43,7 @@
 #endif
 #include "../host.h"
 #include "../host_loop.h"
+#include "../host_cri.h"
 #include "../../platform/platform.h"
 #include "../../platform/png_write.h"
 #include "../../render/render.h"
@@ -103,7 +109,10 @@ static int state_match(const char *want)
 {
     char cur[32];
     int st = mvc2_game_state();
-    snprintf(cur, sizeof cur, "%d/%d/%d", st >> 16, (st >> 8) & 0xFF, st & 0xFF);
+    const u8 *g = (const u8 *)EE_BSS_PTR(0x004F4300);
+    /* g[3], g[4] too: "2/1/2/3" names a sub-state; shorter names match as
+     * prefixes, as before */
+    snprintf(cur, sizeof cur, "%d/%d/%d/%d/%d", st >> 16, (st >> 8) & 0xFF, st & 0xFF, g[3], g[4]);
     return strncmp(cur, want, strlen(want)) == 0 &&
            (cur[strlen(want)] == 0 || cur[strlen(want)] == '/' || want[strlen(want) - 1] == '/');
 }
@@ -156,6 +165,9 @@ static void script_step(u16 *b0, u16 *b1)
     if (!shot_dir)
         shot_dir = A.shot_dir ? A.shot_dir : ".";
     while (S.pc < S.n) {
+        /* clear the words a shorter line does not set (a "state" after an
+         * "until" took the until's button name as its frame limit, 0) */
+        cmd[0] = a1[0] = a2[0] = a3[0] = 0;
         sscanf(S.line[S.pc], "%31s %159s %63s %31s", cmd, a1, a2, a3);
         if (!strcmp(cmd, "state")) {
             int max = a2[0] ? atoi(a2) : 7200;
@@ -235,6 +247,27 @@ int viewer_open_js(const char *path)
         return 0;
     return boot_game(path);
 }
+
+#ifdef __EMSCRIPTEN__
+/* web: the disc is read on demand from the user's File (Module.discReadSync
+ * in port/web/shell.html) instead of a 208 MB copy in memory */
+EMSCRIPTEN_KEEPALIVE
+int viewer_open_page_js(double size)
+{
+    FsSource src;
+    GameDisc *d;
+    if (A.booted)
+        return 0;
+    fs_source_open_page(&src, (uint64_t)size);
+    if (host_disc_open_source(src) != 0 || !(d = host_disc()))
+        return -1;
+    host_log("disc: read on demand from the page (%d files, AFS02 %d entries)", d->iso.n_files,
+             d->afs[2].count);
+    mvc2_boot(1);
+    A.booted = 1;
+    return 0;
+}
+#endif
 
 extern int fe_cnt[8];
 static void write_shot(const char *path)
@@ -359,6 +392,7 @@ int main(int argc, char **argv)
     const char *config = NULL;
     const char *sets[64];
     int nsets = 0, no_unlock = 0, speed = 1;
+    const char *dc_disc = NULL;
     static PlatApp app = { NULL, update, render, on_pause };
     for (i = 1; i < argc; i++) {
         const char *a = argv[i], *n = i + 1 < argc ? argv[i + 1] : NULL;
@@ -422,6 +456,7 @@ int main(int argc, char **argv)
         else if (!strcmp(a, "--p1-team") && n) { setenv("MVC2_P1_TEAM", n, 1); i++; }   /* testing */
         else if (!strcmp(a, "--arcade") && n) { setenv("MVC2_ARCADE", n, 1); i++; }      /* ARCADE_DIFF.md 5 */
         else if (!strcmp(a, "--naomi") && n) { setenv("MVC2_NAOMI", n, 1); i++; }
+        else if (!strcmp(a, "--dc-disc") && n) { dc_disc = n; i++; }
         else if (!strcmp(a, "--arcade-trace")) setenv("MVC2_ARCADE_TRACE", "1", 1);
         else if (!strcmp(a, "--arcade-play") && n) { setenv("MVC2_ARCADE_PLAY", n, 1); i++; } /* testing */
         else if (a[0] != '-') iso = a;
@@ -457,6 +492,8 @@ int main(int argc, char **argv)
         settings_override("game.unlock_all", "0");
     if (fullscreen >= 0)
         settings_override("video.fullscreen", "1");
+    if (dc_disc)
+        settings_set("audio.dc_disc", dc_disc); /* remembered: the next start finds it again */
     {
         PlatConfig cfg = { "Marvel vs. Capcom 2", w, h, hidden, !hidden && settings_get_int("video.vsync"),
                            desktop_gl, !hidden && settings_get_int("video.fullscreen") };

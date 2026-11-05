@@ -317,17 +317,26 @@ Remaining / next steps:
    to `func_00412260`; the port treats it as ARGB with `(c+1)>>1`.
 4. The third cache path in `func_00412260` (tiles larger than 0x400 px) was
    assumed to match the others; the pixel-exact checks above cover 64x64 tiles.
-5. Palette atlas rows are not reclaimed on release. Add a free list when
-   characters are swapped often.
-6. `func_00418410`, `func_00418570` and `func_00415B00` resource kinds are not
-   implemented (only TIM2, kind 1).
-7. Touch overlay labels: buttons are only colour-coded; draw LP/HP/... with the
-   debug font. Make the button mapping configurable.
-8. The web build holds the full ISO in MEMFS (about 208 MB of JS memory). If iOS
-   memory becomes a problem, read byte ranges from the `File` in a worker
-   (WORKERFS or FileReaderSync), or extract only the AFS entries needed into
-   IndexedDB.
-9. `-sMAXIMUM_MEMORY=2GB` and SDL2 2.32.10 from emsdk. The PWA service worker
+5. Palette atlas rows: done. `r_pal_alloc_rows` is first fit over a row map;
+   `fl_char_bank_destroy` frees its 16 rows and `fl_tex_release` its palette
+   row. Before this, every character bank load leaked 16 of the 1,024 rows.
+6. `func_00418410`, `func_00418570` and `func_00415B00`: no port code needed.
+   They are credited game C and run as is; this item dates from the standalone
+   viewer.
+7. Touch overlay labels: done (LP/HP/A1/LK/HK/A2/ST, `fe_ui.c`). The pad's
+   buttons map to PS2 buttons, so the game's BUTTON CONFIG remaps them.
+8. Web memory: done. The disc is no longer copied into MEMFS (it was 208 MB
+   of JS memory). Each read is a synchronous XHR of that byte range of the
+   user's `File` (a `blob:` URL of a slice, `discReader` in
+   `port/web/shell.html`, `fs_source_open_page` in `port/platform/fs.c`).
+   It has to be synchronous: `func_0012DA40` spins on `ADXF_GetStat` within
+   one frame. A full arcade run is under 400 reads (91 MB, 3-6 ms each), and
+   it ends on the same frame as the in-memory build. Wasm memory starts at
+   64 MB (it was 256 MB; a full arcade run never grows past 64 MB). A page
+   is now about 70 MB (wasm and JS heap). Verified in Chrome and iOS Safari
+   26.4 (simulator). `?discmem` forces the old in-memory path, and it is
+   also used when a browser cannot read blob slices synchronously.
+9. `-sINITIAL_MEMORY=64MB`, `-sMAXIMUM_MEMORY=2GB` and SDL2 2.32.10 from emsdk. The PWA service worker
    is network-first and caches the shell for offline start.
 
 ## Debugging aids (game frontend)

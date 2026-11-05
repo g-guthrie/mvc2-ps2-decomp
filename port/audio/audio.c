@@ -1,5 +1,6 @@
 #include "audio.h"
 #include "adx.h"
+#include "dcse.h"
 #include "resample.h"
 #include "tsd.h"
 #include "tsd_client.h"
@@ -68,6 +69,20 @@ static int sink_status(void *ctx, int fno, uint32_t arg)
 }
 
 struct Tsd *audio_tsd(void) { return &A.tsd; }
+
+int audio_dcse_refresh(void)
+{
+    int n = 0;
+    audio_lock();
+    for (int p = 0; p < TSD_PORTS; p++) {
+        if (!A.tsd.port[p].loaded) continue;
+        for (int i = 0; i < SY_VOICES; i++) /* a voice may point at a sample being replaced */
+            if (A.tsd.synth.v[i].active && A.tsd.synth.v[i].port == p) A.tsd.synth.v[i].active = 0;
+        n += dcse_apply(&A.tsd.port[p].bank);
+    }
+    audio_unlock();
+    return n;
+}
 
 /* ---- BGM ---- */
 static float db10_to_gain(int v) { return v <= -999 ? 0.0f : powf(10.0f, v / 200.0f); }

@@ -831,3 +831,59 @@ are clean and none of the hand-read leads was a gameplay change.
 - NAOMI 0x0C18D000..0x0C1E9000 is only 10 % paired by this pass (the
   first pass paired 1,373 there by address order; its tables were not
   kept).
+## 11. The arcade oracle: what the Rev A program actually runs
+
+`port/tools/naomi_oracle/` (BOOT_NOTES "Arcade oracle") runs the NAOMI
+program itself (the user's `mvsc2.zip` + NAOMI BIOS, Flycast core,
+headless) and dumps its player records every frame. Reading the program's
+RAM in a fight overturns the data findings of sections 4 to 7.
+
+### 11.1 The Rev A program does not use the per-character table files
+- **Where its tables come from:** the PAK loader 0x0C02764C (twin of PS2
+  `func_0012EF50`) loads the PAK (file `0x0C22A0FC[c]` = 197+c), then
+  (0x0C027702) unpacks the character's gameplay tables from a packed block
+  in RAM at 0x0DD00000 (`*(0x0DD00000 + 4c)` + 0x0DD00000) with the 16-bit
+  LZ routine 0x0C02A762 (flag words, word back-references, zero runs) into
+  PAK + 0x130000, and points +0x168 TBL, +0x16C HIT, +0x170 HIT_FM,
+  +0x174 HIT_DT and the AI tables there.  The table files 256+c ... 728+c
+  that section 1 lists (and that `arcade_diff.py` and the port's
+  `arcade.frame_data` / `damage` / `cpu_ai` read) are not what ends up
+  in the player's table pointers (no literal-pool reference to the u16
+  index tables at 0x0C22A264.. was found; they hold 256+c ... as section 1
+  says).
+- **What the unpacked tables are:** for every character loaded so far
+  (RAM snapshots in a fight, 6 per run, `--p1-team`/`--cpu-team` forcing),
+  TBL, HIT and HIT_FM equal the PS2's byte for byte over the PS2 file's
+  length, HIT_DT equals the PS2's non-zero records, and the PS2's TAIKI,
+  ATCK, WARI, YOK and LIB files are found verbatim in RAM while the ROM
+  files are not.
+- **Characters checked:** see BOOT_NOTES "Arcade oracle" for the list (the
+  sweep covered 0x00..0x0B, 0x12..0x17, 0x2A..0x35 and more; a few
+  combinations hung the arcade program at the first fight frame when the
+  oracle forced them, see there).
+- **Consequence:** the PS2 (SLUS_204.86) gameplay data *is* the Rev A
+  arcade's.  The table files in the mask ROMs (which are shared by the
+  original release and Rev A; Rev A changed only the program EPROM
+  `epr-23085a`) are older data: the "71 % higher arcade damage", the
+  retimed scripts and the changed boxes of sections 4 and 7 describe those
+  files, not the arcade as it plays.  Whether the original (non-A) program
+  used the files was not checked (no non-A EPROM here).
+- **Seen in the oracle:** with `arcade.frame_data` on, Cyclops' (CPU) first
+  special 15/00 runs N `2,2,2,2,4,...` (sprites 0x17D..) in the port and
+  `6,3,3,2,2` (sprites 0x179..) in the arcade program (= the PS2's, which
+  `arcade_diff.py` labels P): the fight diverged at +330.  With the
+  toggles off the same fight matched until +503 (11.2).
+
+**Port:** `arcade.frame_data`, `arcade.damage`, `arcade.cpu_ai` are kept
+(they read the ROM files, for study) but are relabelled "NAOMI ROM files"
+and documented as not arcade-accurate; `MVC2_ARCADE=all` / `--arcade all`
+no longer turns them on (only the code toggles d, e, f); the log says so
+when one is on.
+
+### 11.2 Code: the super-freeze tick order (new toggle f)
+| | Where | PS2 | NAOMI | Effect | Toggle |
+|---|---|---|---|---|---|
+| f | stage/actor update `func_001E8CD0` (src/stage_update_001E8CD0.c) / 0x0C0382A4 | ticks the super-freeze countdown (`func_001E8EB0`, NAOMI 0x0C0383A4: `p[0x25D]--`, players' freeze bits `p[0x25C]`) and stores the flag `D_004D18A6` at the **end** of the frame, after the actor lists | at the **start** (`bsr 0x0C0383A4` first, flag stored to 0x0C2F833E) | a freeze started in frame N is ticked in N on the PS2 and in N+1 on the NAOMI: the PS2's countdown is one ahead (oracle: `+0x25D` FF/FD/FC against 00/FE/FD) and the freeze ends one frame sooner, shifting the following hits by a frame | `arcade.freeze_order` (bit 4, letter f) |
+
+The rest of 11 (the oracle's match lengths and what still diverges) is in
+BOOT_NOTES "Arcade oracle".
