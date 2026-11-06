@@ -23,9 +23,9 @@ extern u16 D_004F4484[], D_004F4490[];   /* per-side pad words, stride 20 bytes 
 extern PauseRow D_004B91D0[4];           /* CONTINUE, BUTTON CONFIG, COMMAND LIST, MODE MENU */
 extern PauseRow data_button_config_render_004B9208[37];
 extern void func_003D7310(void *);
-extern void func_003D7350(unsigned char, unsigned char, unsigned char, void *);
+extern void func_003D7350(unsigned char, unsigned char, unsigned char, const char *, ...); /* variadic: wasm passes a varargs pointer */
 extern void func_001E3CE0(int);
-extern int func_001315E0();
+extern int func_001315E0(void); /* src/simple_leaves.c: returns 64 */
 extern int func_00119098(float);         /* fptoui */
 extern void func_003D3750(void);
 extern void func_003D4630(void);
@@ -69,7 +69,7 @@ void func_003D6530(int a0, int a1)
     if (old != *(s8 *)(p + 0x2E))
         func_001E3CE0(1);
 
-    m = (u32)func_001315E0(side) & 0xFFFF;
+    m = (u32)func_001315E0() & 0xFFFF; /* takes no arguments */
     if (m & PAD(D_004F4484, side)) {
         if (*(s8 *)(p + 0x2E) == 0) {
             *(s16 *)(p + 0x2C) = (s16)(side + 1);

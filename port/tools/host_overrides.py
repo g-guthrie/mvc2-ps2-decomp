@@ -182,6 +182,20 @@ OVERRIDES = {
          "Mv_004C1D10 data_u32_004C1D10 = {\n    { 16, 17, 16, 16, 16, 16, 0, 0 },\n"
          "    { func_0037E0A0, 0 }, /* host R10: jtbl_004C1D18[0..1] */\n};"),
     ],
+    # Wrapped-cast table calls without their register arguments (found after
+    # arcade seed 1000112, SIGSEGV in func_0035D2A0(p = NULL), by scanning
+    # every `((T (*)(..))TABLE[i])(..)` call against the retail entries):
+    # func_0035D240 jumps through D_004C1B60 with $a0 = a, $a1 = b
+    # (0x0035D284); func_0019A560 through D_0044A7B0 with $a1 = q, loaded
+    # from p + 0x18 at 0x0019A584 and not changed before the jalr.
+    "src/wave13b.c": [
+        ("    else ((void (*)(void))D_004C1B60[a[5]])();\n",
+         "    else ((void (*)(u8 *, u8 *))D_004C1B60[a[5]])(a, b); /* host R12: $a0, $a1 */\n"),
+    ],
+    "src/owner_state_copy_setup_0019a560.c": [
+        ("    ((void (*)(u8 *))D_0044A7B0[p[0x20]])(p);\n",
+         "    ((void (*)(u8 *, u8 *))D_0044A7B0[p[0x20]])(p, q); /* host R12: $a1 = q */\n"),
+    ],
     "src/n6.c": [
         ("        (*(void (**)(u8 *))(D_0044AFF0 + U8(a0, 4) * 4))(a0);\n",
          "        (*(void (**)(u8 *, u8 *, u8 *))(D_0044AFF0 + U8(a0, 4) * 4))(a0, a1, a2); /* host R12: $a1, $a2 */\n"),
@@ -263,6 +277,33 @@ _ARC = {
          "        if (p[1] == 0x3A && !(mvc2_arc_code & 2)) { /* host: arcade.servbot_hitstop */\n"
          "            if ((p[0x216] & 0x80) != 0) {"),
         ("typedef unsigned char u8;\n", "typedef unsigned char u8;\nextern int mvc2_arc_code __attribute__((weak)); /* host: arcade.servbot_hitstop (arcade_code.c) */\n"),
+    ],
+    # func_001E8CD0 (NAOMI 0x0C0382A4, found with the arcade oracle): the
+    # NAOMI ticks the super-freeze countdown (0x0C0383A4 = func_001E8EB0) and
+    # stores the freeze flag FIRST, before the actor lists run; the PS2 at the
+    # end.  A freeze that starts in frame N is ticked in N on the PS2 and in
+    # N+1 on the NAOMI, so the PS2's freeze ends a frame sooner.
+    "src/stage_update_001E8CD0.c": [
+        ("void func_001E8CD0(void)\n{\n    func_00326700();",
+         "extern int mvc2_arc_code __attribute__((weak)); /* host: arcade.freeze_order (arcade_code.c) */\n"
+         "void func_001E8CD0(void)\n{\n    if (mvc2_arc_code & 4) /* host: arcade.freeze_order: the NAOMI's order */\n"
+         "        D_004D18A6 = (u8)func_001E8EB0();\n    func_00326700();"),
+        ("    D_004D18A6 = (u8)func_001E8EB0();\n    func_003DA6F0(13);",
+         "    if (!(mvc2_arc_code & 4)) /* host: arcade.freeze_order */\n        D_004D18A6 = (u8)func_001E8EB0();\n    func_003DA6F0(13);"),
+    ],
+    # func_00417440 / func_00417500 (NAOMI 0x0C1EC2C0 / 0x0C1EBD40): the PS2
+    # reads a sine table, the NAOMI computes (arcade_code.c mvc2_naomi_sin).
+    "src/lookup_runtime_sine_00417440.c": [
+        ("f32 func_00417440(u32 angle)\n{\n",
+         "extern int mvc2_arc_code __attribute__((weak)); /* host: arcade.trig (arcade_code.c) */\n"
+         "extern f32 mvc2_naomi_sin(int) __attribute__((weak)); /* host: arcade_code.c */\n"
+         "f32 func_00417440(u32 angle)\n{\n    if (mvc2_arc_code & 8) /* host: arcade.trig */\n        return mvc2_naomi_sin((int)angle);\n"),
+    ],
+    "src/w184_c.c": [
+        ("f32 func_00417500(u32 a)\n{\n",
+         "extern int mvc2_arc_code __attribute__((weak)); /* host: arcade.trig (arcade_code.c) */\n"
+         "extern f32 mvc2_naomi_cos(int) __attribute__((weak)); /* host: arcade_code.c */\n"
+         "f32 func_00417500(u32 a)\n{\n    if (mvc2_arc_code & 8) /* host: arcade.trig */\n        return mvc2_naomi_cos((int)a);\n"),
     ],
 }
 for _k, _v in _ARC.items():

@@ -25,6 +25,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../host.h"
+#include "../runahead.h"
 #include "../../render/render.h"
 
 void fe_sync_state(void);
@@ -181,6 +182,7 @@ int func_003F2B70(void *clay, void *chunk)
 
 int func_003EE6F0(void *clay, unsigned int flags)
 {
+    ra_unsafe("mesh build");
     int h = func_003EE6F0__game(clay, flags);
     if (h > 0 && h < MAX_CLAY) {
         fe_sync_state();

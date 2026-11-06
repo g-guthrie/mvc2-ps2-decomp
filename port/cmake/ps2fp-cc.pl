@@ -19,7 +19,7 @@ for my $i (0 .. $#cmd) {
     $obj = $cmd[$i + 1] if $cmd[$i] eq '-o' && $i < $#cmd;
     $src = $cmd[$i] if $cmd[$i] =~ /\.c$/;
 }
-if ($ENV{MVC2_NO_PS2FP} || !$obj || !$src || $src =~ /ps2_float\.c$/) {
+if ($ENV{MVC2_NO_PS2FP} || !$obj || !$src || $src =~ /(ps2_float|arcade_code)\.c$/) {  # arcade_code.c models the NAOMI SH-4 (round to nearest, fused FMAC)
     exec @cmd or die "ps2fp-cc: exec $cmd[0]: $!";
 }
 my ($ir1, $ir2) = ("$obj.ps2fp.ll", "$obj.ps2fp.r.ll");
@@ -38,7 +38,17 @@ my @c2;
 # emcc itself does not take IR input with -x ir: use its clang (as emcc-direct.sh)
 if ($cmd[0] =~ m{(^|/)emcc$}) {
     (my $dir = $cmd[0]) =~ s{/?emcc$}{};
-    @cmd = ("$dir/../bin/clang", '--target=wasm32-unknown-emscripten', @cmd[1 .. $#cmd]);
+    my $clang = "$dir/../bin/clang";
+    unless (-x $clang) {   # not an emsdk layout (Homebrew): emscripten's LLVM_ROOT
+        my $cache = ($ENV{TMPDIR} || '/tmp') . "/mvc2-emcc-llvm-root.$<";
+        unless (-s $cache) { system(qq{"$dir/em-config" LLVM_ROOT > "$cache"}); }
+        open(my $fh, '<', $cache) or exit 1;
+        my $root = <$fh>;
+        close $fh;
+        chomp $root;
+        $clang = "$root/clang";
+    }
+    @cmd = ($clang, '--target=wasm32-unknown-emscripten', @cmd[1 .. $#cmd]);
 }
 for (my $i = 0; $i <= $#cmd; $i++) {
     my $a = $cmd[$i];

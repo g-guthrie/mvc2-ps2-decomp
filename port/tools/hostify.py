@@ -2440,6 +2440,13 @@ def transform(text, path="?"):
     toks = copy_written_params(toks)  # R19
     toks = unshadow_args(toks)
     head = [f'extern void ps2_alias_{n}(void) __asm__("{n}");' for n in sorted(aliases)]
+    if sr is None and any("__rp" in t[1] for t in toks):
+        # the raw build (no sigs) has no R20 widening, so the __rp1..3
+        # parameters an override passes on (host_overrides.py, src/wave7.c)
+        # do not exist; the raw build is only read for signatures, so 0 will
+        # do.  Without this the file fails there and its functions are
+        # missing from host_sigs.json (wasm-ld: symbol type mismatch).
+        head = ["#define __rp1 0", "#define __rp2 0", "#define __rp3 0"] + head
     if sr is not None:
         head = sr.prelude(toks) + head
         if not sr.is_header:

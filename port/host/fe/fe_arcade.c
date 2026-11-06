@@ -1,14 +1,24 @@
 /*
  * Arcade-accuracy toggles in the settings registry (port/platform/settings.h,
- * section "Arcade accuracy"), so they show in the in-game menu and the web
- * settings panel and are saved per device.  The work is in port/host/arcade.c
- * (port/docs/ARCADE_DIFF.md section 5); all three are off by default.
+ * section "Arcade accuracy").  None is a player option any more (SET_FIXED:
+ * not shown, stored values ignored, --set / ?KEY= still override one run):
+ * the port plays by the arcade's rules where the NAOMI oracle confirmed them
+ * (d, e, f, g, float rounding: on), with the port's zero-delay input
+ * (timing: Port), and the ROM-file tables a-c (not what the arcade plays)
+ * off.  ps2_exact() turns d-g and the rounding back to the PS2's for the
+ * PS2 oracle.  The work is in port/host/arcade.c and arcade_code.c
+ * (port/docs/ARCADE_DIFF.md sections 5, 10, 11).
  *
  *   arcade.frame_data  (a) NAOMI TBL / HIT / HIT_FM: frame timing and boxes
  *   arcade.damage      (b) NAOMI HIT_DT: damage and hit properties
  *   arcade.cpu_ai      (c) NAOMI CPU AI tables
  *   arcade.float_round NAOMI float rounding (round to nearest) instead of the
  *                      EE's round toward zero (port/host/ps2_float.c); live
+ *     (a)-(c) read the per-character table FILES of the mask ROMs.  The
+ *     Rev A program never loads them: it unpacks its own tables (packed
+ *     block at RAM 0x0DD00000, 16-bit LZ 0x0C02A762), and those equal the
+ *     PS2's byte for byte (naomi_oracle, ARCADE_DIFF.md 11).  So for arcade
+ *     accuracy (a)-(c) stay off; they remain for study of the ROM files.
  *   arcade.naomi       raw string: path of the user's mvsc2.zip (desktop;
  *                      the web page writes /mvsc2.zip itself)
  *
@@ -16,6 +26,8 @@
  * needed, they take effect at once):
  *   arcade.fs_edge          (d) flying-screen edge clamp at the arcade's 35 units
  *   arcade.servbot_hitstop  (e) no PS2-only input clear for Servbot in hit stop
+ *   arcade.freeze_order     (f) super-freeze countdown ticked first in the frame
+ *   arcade.trig             (g) the NAOMI's computed sine / cosine
  *   arcade.timing           logic rate and input pipeline: Port (60 Hz, same
  *                           step) / Arcade (59.94 Hz, 1 frame) / PS2 (59.94 Hz, 2)
  *
@@ -52,6 +64,8 @@ static void code_bit(int bit, int on)
 }
 static void on_fs_edge(int v) { code_bit(1, v); }
 static void on_servbot(int v) { code_bit(2, v); }
+static void on_freeze(int v) { code_bit(4, v); }
+static void on_trig(int v) { code_bit(8, v); }
 static void on_timing(int v)
 {
     mvc2_arc_input_delay = v;   /* 0 port, 1 arcade (Maple, previous V-blank), 2 PS2 retail */
@@ -62,35 +76,59 @@ static const char *const k_timing[] = {"Port (60 Hz, read this step)", "Arcade (
 static const char *const k_timing_v[] = {"port", "arcade", "ps2", NULL};
 
 static const SetDesc k_frames = {
-    "arcade.frame_data", "NAOMI frame data + hitboxes", SET_SECTION_ARCADE, SET_BOOL, 0, 0, 1, NULL, NULL,
-    on_frames, SET_RESTART,
-    "Animation timing and hit/hurt boxes from your own NAOMI mvsc2.zip (Rev A). Needs the zip.", 0};
+    "arcade.frame_data", "NAOMI ROM files: frames + boxes", SET_SECTION_ARCADE, SET_BOOL, 0, 0, 1, NULL, NULL,
+    on_frames, SET_RESTART | SET_FIXED,
+    "Animation timing and boxes from the table files in your mvsc2.zip's mask ROMs. The Rev A arcade "
+    "program does not use these files: its own tables equal the PS2's, so leave this off for arcade "
+    "accuracy (ARCADE_DIFF 11). Needs the zip.", 0};
 static const SetDesc k_damage = {
-    "arcade.damage", "NAOMI damage + hit data", SET_SECTION_ARCADE, SET_BOOL, 0, 0, 1, NULL, NULL,
-    on_damage, SET_RESTART, "Base damage, hitstun and other hit properties from the arcade tables.", 0};
+    "arcade.damage", "NAOMI ROM files: damage", SET_SECTION_ARCADE, SET_BOOL, 0, 0, 1, NULL, NULL,
+    on_damage, SET_RESTART | SET_FIXED, "Damage and hit properties from the mask-ROM table files, which the Rev A "
+    "arcade program does not use (its damage equals the PS2's). Leave off for arcade accuracy.", 0};
 static const SetDesc k_ai = {
-    "arcade.cpu_ai", "NAOMI CPU AI", SET_SECTION_ARCADE, SET_BOOL, 0, 0, 1, NULL, NULL,
-    on_ai, SET_RESTART, "The CPU opponents' decision tables from the arcade.", 0};
+    "arcade.cpu_ai", "NAOMI ROM files: CPU AI", SET_SECTION_ARCADE, SET_BOOL, 0, 0, 1, NULL, NULL,
+    on_ai, SET_RESTART | SET_FIXED, "CPU decision tables from the mask-ROM table files, which the Rev A arcade "
+    "program does not use (its tables equal the PS2's). Leave off for arcade accuracy.", 0};
 
 static const SetDesc k_fs_edge = {
-    "arcade.fs_edge", "Arcade flying-screen edge", SET_SECTION_ARCADE, SET_BOOL, 0, 0, 1, NULL, NULL,
-    on_fs_edge, 0,
+    "arcade.fs_edge", "Arcade flying-screen edge", SET_SECTION_ARCADE, SET_BOOL, 1, 0, 1, NULL, NULL,
+    on_fs_edge, SET_FIXED,
     "While the opponent is in flying screen, stop at 35 units from the stage edge as the arcade does "
     "(the PS2 stops 16 units further in).", 0};
 static const SetDesc k_servbot = {
-    "arcade.servbot_hitstop", "Arcade Servbot hit-stop inputs", SET_SECTION_ARCADE, SET_BOOL, 0, 0, 1, NULL, NULL,
-    on_servbot, 0,
+    "arcade.servbot_hitstop", "Arcade Servbot hit-stop inputs", SET_SECTION_ARCADE, SET_BOOL, 1, 0, 1, NULL, NULL,
+    on_servbot, SET_FIXED,
     "Keep Servbot's buttons during hit stop while his +0x216 flag is set (the PS2 clears them; the arcade does not).",
     0};
+static const SetDesc k_freeze = {
+    "arcade.freeze_order", "Arcade super-freeze timing", SET_SECTION_ARCADE, SET_BOOL, 1, 0, 1, NULL, NULL,
+    on_freeze, SET_FIXED,
+    "Tick the super-freeze countdown at the start of the frame as the arcade does; the PS2 ticks it at the end, "
+    "so its freezes end one frame sooner.", 0};
+static const SetDesc k_trig = {
+    "arcade.trig", "Arcade sine / cosine", SET_SECTION_ARCADE, SET_BOOL, 1, 0, 1, NULL, NULL,
+    on_trig, SET_FIXED,
+    "Compute sine and cosine as the arcade program does; the PS2 reads a table whose values differ in the last "
+    "bits, which can change hit pushback and positions.", 0};
 static const SetDesc k_timing_d = {
     "arcade.timing", "Logic rate + input pipeline", SET_SECTION_ARCADE, SET_ENUM, 0, 0, 2, k_timing, k_timing_v,
-    on_timing, 0,
+    on_timing, SET_FIXED,
     "Port: 60 Hz, a press counts in the next step. Arcade: 59.94 Hz and one frame of input delay (NAOMI reads "
     "the controls in V-blank from the previous Maple transfer). PS2: 59.94 Hz, two frames.", 0};
 static const SetDesc k_float = {
-    "arcade.float_round", "NAOMI float rounding", SET_SECTION_ARCADE, SET_BOOL, 0, 0, 1, NULL, NULL,
-    on_float, 0,
+    "arcade.float_round", "NAOMI float rounding", SET_SECTION_ARCADE, SET_BOOL, 1, 0, 1, NULL, NULL,
+    on_float, SET_FIXED,
     "Round float results to nearest, as the arcade's SH-4 does. Off: toward zero, as the PS2's EE does.", 0};
+
+/* The PS2 oracle harness (port/tools/oracle: a state dump, no --arcade)
+ * compares against the retail PS2 game, so it gets the PS2's rules; so does
+ * MVC2_PS2_EXACT=1 (=0 forces the arcade's). */
+static int ps2_exact(void)
+{
+    const char *e = getenv("MVC2_PS2_EXACT");
+    if (e && *e) return *e != '0';
+    return getenv("MVC2_STATE_DUMP") && !getenv("MVC2_ARCADE");
+}
 
 void fe_arcade_register(void)
 {
@@ -100,8 +138,16 @@ void fe_arcade_register(void)
     settings_register(&k_ai);
     settings_register(&k_fs_edge);
     settings_register(&k_servbot);
+    settings_register(&k_freeze);
+    settings_register(&k_trig);
     settings_register(&k_timing_d);
     settings_register(&k_float);
+    if (ps2_exact()) {
+        static const char *const k[] = { "arcade.fs_edge", "arcade.servbot_hitstop", "arcade.freeze_order",
+                                         "arcade.trig", "arcade.float_round" };
+        for (unsigned i = 0; i < sizeof k / sizeof k[0]; i++) settings_override(k[i], "0");
+        host_log("arcade: PS2-exact rules (oracle run / MVC2_PS2_EXACT)");
+    }
     if (p && *p && !getenv("MVC2_NAOMI"))
         setenv("MVC2_NAOMI", p, 1);
 }

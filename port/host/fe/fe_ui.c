@@ -71,6 +71,8 @@ static void ap_touch_size(int v)
 }
 static void ap_touch_alpha(int v) { O.touch_alpha = v * 255 / 100; plat_request_render(); }
 static void ap_unlock(int v) { mvc2_unlock_all = v; }
+static void ap_runahead(int v) { extern int fe_runahead_frames; fe_runahead_frames = v; }
+static void ap_state_hash(int v) { extern int fe_state_hash_every; fe_state_hash_every = v; }
 
 #ifdef __EMSCRIPTEN__
 EM_JS(void, web_toggle_fullscreen, (void), {
@@ -92,40 +94,44 @@ static const char *const k_lat[] = { "Auto", "Low", "Normal", "High", NULL };
 static const char *const k_touch[] = { "Auto", "Always", "Never", NULL };
 
 static const SetDesc k_opts[] = {
-    { "video.scale", "Scaling", SET_SECTION_VIDEO, SET_ENUM, 0, 0, 2, k_scale, NULL, ap_scale, 0,
+    { "video.scale", "Scaling", SET_SECTION_VIDEO, SET_ENUM, 0, 0, 2, k_scale, NULL, ap_scale, SET_FIXED,
       "Fit: largest picture at the game's shape (640x448 shown, as on the PS2). Integer: whole multiples of 640x448 only. Stretch: fill the window.", 0 },
-    { "video.filter", "Upscaling filter", SET_SECTION_VIDEO, SET_ENUM, 1, 0, 2, k_filter, NULL, ap_filter, 0,
+    { "video.filter", "Upscaling filter", SET_SECTION_VIDEO, SET_ENUM, 1, 0, 2, k_filter, NULL, ap_filter, SET_FIXED,
       "Nearest: hard pixels. Sharp: crisp pixels without uneven widths. Smooth: bilinear.", 0 },
     { "video.sprite_filter", "Sprite filtering", SET_SECTION_VIDEO, SET_ENUM, 0, 0, 2, k_sprite, k_sprite_v,
-      ap_sprite, 0, "Texture sampling for 2D sprites: as the game asks, always nearest, or always smooth.", 0 },
-    { "video.crt", "CRT effect", SET_SECTION_VIDEO, SET_ENUM, 0, 0, 2, k_crt, NULL, ap_crt, 0,
+      ap_sprite, SET_FIXED, "Texture sampling for 2D sprites: as the game asks, always nearest, or always smooth.", 0 },
+    { "video.crt", "CRT effect", SET_SECTION_VIDEO, SET_ENUM, 0, 0, 2, k_crt, NULL, ap_crt, SET_FIXED,
       "Scanlines, or scanlines with a shadow mask and slight curvature.", 0 },
     { "video.crt_strength", "CRT strength", SET_SECTION_VIDEO, SET_INT, 60, 0, 100, NULL, NULL, ap_crt_strength,
-      0, "How strong the scanlines and mask are.", 10 },
+      SET_FIXED, "How strong the scanlines and mask are.", 10 },
     { "video.fullscreen", "Fullscreen", SET_SECTION_VIDEO, SET_BOOL, 0, 0, 1, NULL, NULL, ap_fullscreen,
       SET_NATIVE_ONLY, "Desktop fullscreen (also Alt+Enter / F11).", 0 },
 #ifdef __EMSCRIPTEN__
     { "video.fullscreen_toggle", "Toggle fullscreen", SET_SECTION_VIDEO, SET_ACTION, 0, 0, 1, NULL, NULL,
       ap_fs_toggle, SET_WEB_ONLY | SET_HIDDEN, "Enter or leave fullscreen.", 0 },
 #endif
-    { "video.vsync", "V-sync", SET_SECTION_VIDEO, SET_BOOL, 1, 0, 1, NULL, NULL, ap_vsync, SET_NATIVE_ONLY,
+    { "video.vsync", "V-sync", SET_SECTION_VIDEO, SET_BOOL, 1, 0, 1, NULL, NULL, ap_vsync, SET_NATIVE_ONLY | SET_FIXED,
       "Wait for the display refresh. The game logic always runs at 60 Hz either way.", 0 },
     { "video.frame_skip", "Drop frames when slow", SET_SECTION_VIDEO, SET_BOOL, 1, 0, 1, NULL, NULL, ap_frameskip,
-      0, "On a slow device skip drawing, never game logic, so the game keeps full speed.", 0 },
-    { "video.fps", "Show FPS and latency", SET_SECTION_VIDEO, SET_BOOL, 0, 0, 1, NULL, NULL, ap_fps, 0,
+      SET_FIXED, "On a slow device skip drawing, never game logic, so the game keeps full speed.", 0 },
+    { "video.fps", "Show FPS and latency", SET_SECTION_VIDEO, SET_BOOL, 0, 0, 1, NULL, NULL, ap_fps, SET_FIXED,
       "Display rate, logic rate and input-to-logic latency in the corner.", 0 },
     { "audio.volume", "Master volume", SET_SECTION_AUDIO, SET_INT, 100, 0, 100, NULL, NULL, ap_vol, 0, NULL, 5 },
     { "audio.music", "Music volume", SET_SECTION_AUDIO, SET_INT, 100, 0, 100, NULL, NULL, ap_music, 0, NULL, 5 },
     { "audio.sfx", "Effects and voices", SET_SECTION_AUDIO, SET_INT, 100, 0, 100, NULL, NULL, ap_sfx, 0, NULL, 5 },
-    { "audio.latency", "Audio buffer", SET_SECTION_AUDIO, SET_ENUM, 0, 0, 3, k_lat, NULL, ap_latency, SET_WEB_ONLY,
+    { "audio.latency", "Audio buffer", SET_SECTION_AUDIO, SET_ENUM, 0, 0, 3, k_lat, NULL, ap_latency, SET_WEB_ONLY | SET_FIXED,
       "How far ahead sound is mixed. Raise it if you hear crackles.", 0 },
     { "touch.show", "Touch controls", SET_SECTION_INPUT, SET_ENUM, 0, 0, 2, k_touch, NULL, ap_touch_show, 0,
       "Auto: shown after the first touch.", 0 },
     { "touch.size", "Touch control size", SET_SECTION_INPUT, SET_INT, 100, 50, 160, NULL, NULL, ap_touch_size, 0,
       NULL, 10 },
     { "touch.opacity", "Touch control opacity", SET_SECTION_INPUT, SET_INT, 60, 10, 100, NULL, NULL, ap_touch_alpha,
-      0, NULL, 10 },
-    { "game.unlock_all", "Unlock everything", SET_SECTION_GAME, SET_BOOL, 1, 0, 1, NULL, NULL, ap_unlock, SET_RESTART,
+      SET_FIXED, NULL, 10 },
+    { "video.runahead", "Run-ahead", SET_SECTION_VIDEO, SET_INT, 1, 0, 2, NULL, NULL, ap_runahead, SET_FIXED,
+      "Show the frame the next step will produce, so presses appear a frame sooner (0 = off).", 0 },
+    { "debug.state_hash", "State hash log", SET_SECTION_VIDEO, SET_INT, 0, 0, 100000, NULL, NULL, ap_state_hash,
+      SET_FIXED, "Testing: log the game state hash every N steps.", 0 },
+    { "game.unlock_all", "Unlock everything", SET_SECTION_GAME, SET_BOOL, 1, 0, 1, NULL, NULL, ap_unlock, SET_RESTART | SET_FIXED,
       "Every character, stage and extra from the start. Turning it off takes effect on the next start.", 0 },
 };
 
@@ -143,7 +149,7 @@ void fe_ui_register(void)
 
 static int visible_here(const SetDesc *d)
 {
-    if (d->flags & SET_HIDDEN) return 0;
+    if (d->flags & (SET_HIDDEN | SET_FIXED)) return 0;
 #ifdef __EMSCRIPTEN__
     if (d->flags & SET_NATIVE_ONLY) return 0;
 #else
@@ -173,7 +179,12 @@ static int build_rows(Row *r, int max)
 {
     int n = 0;
     if (M.page == PG_ROOT) {
-        for (int s = 0; s < NSECT && n < max; s++) r[n++] = (Row){ R_SECTION, s, k_sections[s] };
+        for (int s = 0; s < NSECT && n < max; s++) {
+            int any = 0; /* sections whose options are all hidden are not listed */
+            for (int i = 0; i < settings_count() && !any; i++)
+                any = !strcmp(settings_desc(i)->section, k_sections[s]) && visible_here(settings_desc(i));
+            if (any) r[n++] = (Row){ R_SECTION, s, k_sections[s] };
+        }
         r[n++] = (Row){ R_PLAYER, 0, "Controls: player 1" };
         r[n++] = (Row){ R_PLAYER, 1, "Controls: player 2" };
 #ifdef __EMSCRIPTEN__

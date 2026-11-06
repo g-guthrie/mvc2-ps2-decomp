@@ -22,7 +22,17 @@ typedef struct FsSource {
 
 int fs_source_open_file(FsSource *src, const char *path); /* 0 = ok */
 void fs_source_memory(FsSource *src, const void *data, size_t size);
+/* A Dreamcast GD-ROM data track as an ISO9660 source: a .gdi (its first data
+ * track at LBA >= 45000), or that track as .bin (2352-byte sectors) or .iso
+ * (2048).  Directory LBAs are rebased, so iso_open() / iso_load() work. */
+int fs_source_open_gd(FsSource *src, const char *path); /* 0 = ok */
 void fs_source_close(FsSource *src);
+#ifdef __EMSCRIPTEN__
+/* Web: reads go to the page's Module.discReadSync(offset, length, dst), which
+ * reads that byte range of the user's disc File synchronously; the image is
+ * never held in memory. 0 = ok. */
+int fs_source_open_page(FsSource *src, uint64_t size);
+#endif
 
 /* ---- ISO9660 ---- */
 typedef struct IsoFile {

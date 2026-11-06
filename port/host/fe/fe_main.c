@@ -10,6 +10,7 @@
  *        [--press F:BUTTON[:LEN] ...] [--script FILE] [--hidden] [--size WxH] [--desktop-gl] [-v]
  *        [--config FILE] [--set KEY=VALUE ...] [--fullscreen] [--no-unlock]
  *        [--wshot F:FILE.png ...] [--key F:KEYNAME[:LEN] ...]
+ *        [--dc-disc DREAMCAST.gdi]
  *        [--arcade abc --naomi mvsc2.zip] [--arcade-trace] [--cpu-team a,b,c] [--cpu-hp N] [--p1-hp N] [--draw-every N] [--speed N]
  *
  * --frames N quits after N game frames.  --shot F:path writes the 640x480
@@ -27,6 +28,10 @@
  * splices the user's own NAOMI tables from --naomi PATH (mvsc2.zip, MAME
  * Rev A set; web: /mvsc2.zip, written by the page) into each character
  * (port/host/arcade.c, port/docs/ARCADE_DIFF.md section 5).  Off by default.
+ * --dc-disc PATH: the user's own Dreamcast MvC2 disc (.gdi, or its data track
+ * as .bin / .iso, or SE_COMN.BIN itself); remembered as audio.dc_disc.  The
+ * common sound effects then play from it at their Dreamcast sample rates
+ * (port/audio/dcse.h, port/docs/AUDIO.md section 9).
  * --arcade-trace logs every player script run and hit (for checking it).
  */
 #include <SDL.h>
@@ -37,7 +42,9 @@
 #include <emscripten.h>
 #endif
 #include "../host.h"
+#include "../runahead.h"
 #include "../host_loop.h"
+#include "../host_cri.h"
 #include "../../platform/platform.h"
 #include "../../platform/png_write.h"
 #include "../../render/render.h"
@@ -103,7 +110,10 @@ static int state_match(const char *want)
 {
     char cur[32];
     int st = mvc2_game_state();
-    snprintf(cur, sizeof cur, "%d/%d/%d", st >> 16, (st >> 8) & 0xFF, st & 0xFF);
+    const u8 *g = (const u8 *)EE_BSS_PTR(0x004F4300);
+    /* g[3], g[4] too: "2/1/2/3" names a sub-state; shorter names match as
+     * prefixes, as before */
+    snprintf(cur, sizeof cur, "%d/%d/%d/%d/%d", st >> 16, (st >> 8) & 0xFF, st & 0xFF, g[3], g[4]);
     return strncmp(cur, want, strlen(want)) == 0 &&
            (cur[strlen(want)] == 0 || cur[strlen(want)] == '/' || want[strlen(want) - 1] == '/');
 }
@@ -156,6 +166,9 @@ static void script_step(u16 *b0, u16 *b1)
     if (!shot_dir)
         shot_dir = A.shot_dir ? A.shot_dir : ".";
     while (S.pc < S.n) {
+        /* clear the words a shorter line does not set (a "state" after an
+         * "until" took the until's button name as its frame limit, 0) */
+        cmd[0] = a1[0] = a2[0] = a3[0] = 0;
         sscanf(S.line[S.pc], "%31s %159s %63s %31s", cmd, a1, a2, a3);
         if (!strcmp(cmd, "state")) {
             int max = a2[0] ? atoi(a2) : 7200;
@@ -236,6 +249,27 @@ int viewer_open_js(const char *path)
     return boot_game(path);
 }
 
+#ifdef __EMSCRIPTEN__
+/* web: the disc is read on demand from the user's File (Module.discReadSync
+ * in port/web/shell.html) instead of a 208 MB copy in memory */
+EMSCRIPTEN_KEEPALIVE
+int viewer_open_page_js(double size)
+{
+    FsSource src;
+    GameDisc *d;
+    if (A.booted)
+        return 0;
+    fs_source_open_page(&src, (uint64_t)size);
+    if (host_disc_open_source(src) != 0 || !(d = host_disc()))
+        return -1;
+    host_log("disc: read on demand from the page (%d files, AFS02 %d entries)", d->iso.n_files,
+             d->afs[2].count);
+    mvc2_boot(1);
+    A.booted = 1;
+    return 0;
+}
+#endif
+
 extern int fe_cnt[8];
 static void write_shot(const char *path)
 {
@@ -252,6 +286,99 @@ static void write_shot(const char *path)
         r_stats(&d, &v);
         host_log("  draws: tri_tex %d tri %d sprite %d quad %d fill %d; rejected tri %d sprite %d quad %d; GL %d calls %d verts",
                  fe_cnt[0], fe_cnt[1], fe_cnt[2], fe_cnt[3], fe_cnt[4], fe_cnt[5], fe_cnt[6], fe_cnt[7], d, v);
+    }
+}
+
+/* ---- run-ahead (port/host/runahead.h) ----------------------------------
+ * The real step runs without drawing; then the state is saved, the next
+ * step is run with the same input (muted) and drawn, and the state is
+ * restored.  The picture is one frame ahead of the game, so a press shows a
+ * frame sooner.  Not while a test is scripted or dumping state, and only
+ * after 30 quiet steps (no loads, saves or bank changes); it switches
+ * itself off if it costs more than half a frame on this device. */
+int fe_runahead_frames = 1;   /* video.runahead (fixed; --set for testing) */
+int fe_state_hash_every;      /* debug.state_hash N (testing): log the state hash every N steps */
+static void fe_state_hash_check(void)
+{
+    extern void ra_log_regions(long frame), ra_log_bss_pages(long frame);
+    if (fe_state_hash_every > 0 && mvc2_host_frame % fe_state_hash_every == 0) {
+        host_log("state hash frame %ld: %016llx", mvc2_host_frame, ra_state_hash());
+        ra_log_regions(mvc2_host_frame);
+        if (getenv("MVC2_RA_PAGES")) ra_log_bss_pages(mvc2_host_frame);
+        if (getenv("MVC2_RA_WORDS")) { extern void ra_log_bss_words(long, unsigned); ra_log_bss_words(mvc2_host_frame, (unsigned)strtoul(getenv("MVC2_RA_WORDS"), 0, 16)); }
+    }
+}
+static struct {
+    unsigned long seen;
+    long quiet;
+    double cost;              /* ms per speculated step, smoothed */
+    int slow, logged;
+} RA;
+
+static int runahead_ok(void)
+{
+    static int env = -1;
+    unsigned long ev = ra_unsafe_events();
+    if (env < 0)
+        env = !getenv("MVC2_STATE_DUMP") && !getenv("MVC2_SOUND_TRACE") && !getenv("MVC2_PS2_EXACT");
+    if (ev != RA.seen) {
+        RA.seen = ev;
+        RA.quiet = 0;
+    } else {
+        RA.quiet++;
+    }
+    return env && fe_runahead_frames > 0 && !RA.slow && RA.quiet >= 30 && mvc2_host_frame > 0 &&
+           A.nshot == 0 && A.shot_every == 0 && A.draw_every <= 1 && !A.force_draw && plat_step_is_last();
+}
+
+static void runahead_step(void)
+{
+    extern void fe_render_ra_resync(void);
+    extern void tsdc_set_quiet(int on);
+    Uint64 t0;
+    int k;
+    r_set_discard(1);
+    mvc2_frame(); /* the real step */
+    r_set_discard(0);
+    fe_state_hash_check();
+    t0 = SDL_GetPerformanceCounter();
+    if (ra_save() != 0) {
+        host_log("run-ahead: off (no memory for the snapshot)");
+        fe_runahead_frames = 0;
+        return;
+    }
+    unsigned long long saved_hash = fe_state_hash_every > 0 ? ra_state_hash() : 0;
+    mvc2_speculating = 1;
+    tsdc_set_quiet(1);
+    Uint64 t1 = SDL_GetPerformanceCounter();
+    for (k = 0; k < fe_runahead_frames; k++) {
+        r_set_discard(k + 1 < fe_runahead_frames);
+        mvc2_frame();
+    }
+    r_set_discard(0);
+    tsdc_set_quiet(0);
+    mvc2_speculating = 0;
+    Uint64 t2 = SDL_GetPerformanceCounter();
+    ra_restore();
+    if (fe_state_hash_every > 0 && saved_hash != ra_state_hash()) /* testing */
+        host_log("run-ahead: restore at frame %ld did not give back the saved state", mvc2_host_frame);
+    fe_render_ra_resync();
+    {
+        double f = 1000.0 / (double)SDL_GetPerformanceFrequency();
+        double ms = (double)(SDL_GetPerformanceCounter() - t0) * f;
+        if (fe_state_hash_every > 0 && mvc2_host_frame % fe_state_hash_every == 0)
+            host_log("run-ahead cost frame %ld: save %.2f ms, step %.2f ms, restore %.2f ms", mvc2_host_frame,
+                     (double)(t1 - t0) * f, (double)(t2 - t1) * f, (double)(SDL_GetPerformanceCounter() - t2) * f);
+        RA.cost = RA.cost ? RA.cost * 0.97 + ms * 0.03 : ms;
+        if (!RA.logged) {
+            host_log("run-ahead: %d frame(s), state %.1f MB, %.2f ms per step", fe_runahead_frames,
+                     ra_state_bytes() / 1048576.0, ms);
+            RA.logged = 1;
+        }
+        if (RA.cost > 8.0 && RA.quiet > 600 && !fe_state_hash_every) { /* not while testing */
+            host_log("run-ahead: off (%.1f ms per step on this device, budget 8 ms)", RA.cost);
+            RA.slow = 1;
+        }
     }
 }
 
@@ -287,11 +414,16 @@ static void update(void *u)
     /* frame skip: when several steps run in one display frame only the last is drawn */
     /* (scripts see every step unless --draw-every N asks otherwise: the
      * oracle comparisons and the fuzz harness need no pictures) */
-    r_set_discard(!A.force_draw &&
-                  ((!S.n && !plat_step_is_last() && A.nshot == 0 && A.shot_every == 0) ||
-                   (A.draw_every > 1 && (mvc2_host_frame + 1) % A.draw_every != 0)));
-    mvc2_frame();
-    r_set_discard(0);
+    if (runahead_ok()) {
+        runahead_step();
+    } else {
+        r_set_discard(!A.force_draw &&
+                      ((!S.n && !plat_step_is_last() && A.nshot == 0 && A.shot_every == 0) ||
+                       (A.draw_every > 1 && (mvc2_host_frame + 1) % A.draw_every != 0)));
+        mvc2_frame();
+        r_set_discard(0);
+        fe_state_hash_check();
+    }
     fe_audio_frame();
     for (i = 0; i < A.nshot; i++)
         if (A.shot[i].frame == mvc2_host_frame)
@@ -359,6 +491,7 @@ int main(int argc, char **argv)
     const char *config = NULL;
     const char *sets[64];
     int nsets = 0, no_unlock = 0, speed = 1;
+    const char *dc_disc = NULL;
     static PlatApp app = { NULL, update, render, on_pause };
     for (i = 1; i < argc; i++) {
         const char *a = argv[i], *n = i + 1 < argc ? argv[i + 1] : NULL;
@@ -422,6 +555,7 @@ int main(int argc, char **argv)
         else if (!strcmp(a, "--p1-team") && n) { setenv("MVC2_P1_TEAM", n, 1); i++; }   /* testing */
         else if (!strcmp(a, "--arcade") && n) { setenv("MVC2_ARCADE", n, 1); i++; }      /* ARCADE_DIFF.md 5 */
         else if (!strcmp(a, "--naomi") && n) { setenv("MVC2_NAOMI", n, 1); i++; }
+        else if (!strcmp(a, "--dc-disc") && n) { dc_disc = n; i++; }
         else if (!strcmp(a, "--arcade-trace")) setenv("MVC2_ARCADE_TRACE", "1", 1);
         else if (!strcmp(a, "--arcade-play") && n) { setenv("MVC2_ARCADE_PLAY", n, 1); i++; } /* testing */
         else if (a[0] != '-') iso = a;
@@ -457,6 +591,8 @@ int main(int argc, char **argv)
         settings_override("game.unlock_all", "0");
     if (fullscreen >= 0)
         settings_override("video.fullscreen", "1");
+    if (dc_disc)
+        settings_set("audio.dc_disc", dc_disc); /* remembered: the next start finds it again */
     {
         PlatConfig cfg = { "Marvel vs. Capcom 2", w, h, hidden, !hidden && settings_get_int("video.vsync"),
                            desktop_gl, !hidden && settings_get_int("video.fullscreen") };

@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include "host.h"
 #include "host_loop.h"
+#include "runahead.h"
 
 extern void func_0012F4C0(void);
 extern void func_00170BF0(void);
@@ -142,7 +143,7 @@ void mvc2_frame(void)
 {
     u8 *g = (u8 *)EE_BSS_PTR(0x004F4300);
     int st = g[0] << 16 | g[1] << 8 | g[2];
-    if (mvc2_trace_state && st != last_state) {
+    if (mvc2_trace_state && st != last_state && !mvc2_speculating) {
         host_log("frame %ld: game state g[0..2] = %d %d %d", mvc2_host_frame, g[0], g[1], g[2]);
         last_state = st;
     }
@@ -185,4 +186,10 @@ int mvc2_game_state(void)
 {
     u8 *g = (u8 *)EE_BSS_PTR(0x004F4300);
     return g[0] << 16 | g[1] << 8 | g[2];
+}
+
+RA_REGISTER(game_loop_ra_state)
+{
+    ra_register((void *)&mvc2_host_frame, sizeof mvc2_host_frame, "mvc2_host_frame");
+    RA_STATE(last_state);
 }

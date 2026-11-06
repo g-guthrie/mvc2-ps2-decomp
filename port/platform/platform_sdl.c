@@ -188,7 +188,19 @@ void plat_shutdown(void)
 }
 
 void plat_drawable_size(int *w, int *h) { SDL_GL_GetDrawableSize(P.win, w, h); }
-void plat_swap(void) { SDL_GL_SwapWindow(P.win); }
+/* Low latency on the desktop: with v-sync on, wait for the GPU after each
+ * swap so the driver cannot queue further frames ahead of the display (each
+ * queued frame is a frame of input lag; RetroArch's "hard GPU sync").  The
+ * browser composites the canvas itself; there the page asks for a
+ * desynchronized (low-latency) context instead (port/web/shell.html). */
+static int vsync_on;
+void plat_swap(void)
+{
+    SDL_GL_SwapWindow(P.win);
+#ifndef __EMSCRIPTEN__
+    if (vsync_on) glFinish();
+#endif
+}
 const char *plat_gl_description(void) { return P.gl_desc; }
 void plat_request_quit(void) { P.quit = 1; }
 int plat_quit_requested(void) { return P.quit; }
@@ -237,6 +249,7 @@ void plat_set_vsync(int on)
 {
 #ifndef __EMSCRIPTEN__
     if (P.win) SDL_GL_SetSwapInterval(on ? 1 : 0);
+    vsync_on = on != 0;
 #else
     (void)on;
 #endif

@@ -18,6 +18,7 @@
 #include <sys/types.h>
 #include <dirent.h>
 #include "host.h"
+#include "runahead.h"
 #ifdef __EMSCRIPTEN__
 #include <emscripten.h>
 #endif
@@ -118,6 +119,7 @@ int func_001108F0(int port, int slot, void *type, void *free_, void *format)
 
 int func_00110CB0(int port, int slot, void *newdir, void *curdir) /* sceMcChdir */
 {
+    ra_unsafe("memory card chdir");
     char hp[300];
     struct stat st;
     (void)slot;
@@ -143,6 +145,7 @@ int func_00110CB0(int port, int slot, void *newdir, void *curdir) /* sceMcChdir 
 
 int func_00110260(int port, int slot, int name) /* sceMcMkdir */
 {
+    ra_unsafe("memory card mkdir");
     char hp[300];
     (void)slot;
     mc_path(hp, sizeof hp, (const char *)(uintptr_t)name);
@@ -162,6 +165,7 @@ int func_00110260(int port, int slot, int name) /* sceMcMkdir */
 
 int func_00110138(int port, int slot, void *name, int mode) /* sceMcOpen */
 {
+    ra_unsafe("memory card open");
     char hp[300];
     const char *m;
     int i;
@@ -195,6 +199,7 @@ int func_00110138(int port, int slot, void *name, int mode) /* sceMcOpen */
 
 int func_00110298(int fd) /* sceMcClose */
 {
+    ra_unsafe("memory card close");
     if (fd >= 0 && fd < MC_FD_MAX && mc_fd[fd].used) {
         fclose(mc_fd[fd].f);
         mc_fd[fd].used = 0;
@@ -208,6 +213,7 @@ int func_00110298(int fd) /* sceMcClose */
 
 int func_00110350(int fd, int off, int origin) /* sceMcSeek */
 {
+    ra_unsafe("memory card seek");
     if (fd < 0 || fd >= MC_FD_MAX || !mc_fd[fd].used) {
         mc_done(4, -4);
         return 0;
@@ -219,6 +225,7 @@ int func_00110350(int fd, int off, int origin) /* sceMcSeek */
 
 int func_001104B8(int fd, void *buf, int size) /* sceMcRead */
 {
+    ra_unsafe("memory card read");
     if (fd < 0 || fd >= MC_FD_MAX || !mc_fd[fd].used) {
         mc_done(5, -4);
         return 0;
@@ -229,6 +236,7 @@ int func_001104B8(int fd, void *buf, int size) /* sceMcRead */
 
 int func_001105D0(int fd, void *buf, int size) /* sceMcWrite */
 {
+    ra_unsafe("memory card write");
     if (fd < 0 || fd >= MC_FD_MAX || !mc_fd[fd].used) {
         mc_done(6, -4);
         return 0;
@@ -239,6 +247,7 @@ int func_001105D0(int fd, void *buf, int size) /* sceMcWrite */
 
 int func_00110FD8(int fd) /* sceMcFlush */
 {
+    ra_unsafe("memory card flush");
     if (fd >= 0 && fd < MC_FD_MAX && mc_fd[fd].used)
         fflush(mc_fd[fd].f);
     mc_done(10, 0);
@@ -247,6 +256,7 @@ int func_00110FD8(int fd) /* sceMcFlush */
 
 int func_00110DF0(int port, int slot) /* sceMcFormat */
 {
+    ra_unsafe("memory card format");
     (void)slot;
     mc_mkroot();
     mc_done(16, port == 0 ? 0 : -10);
@@ -255,6 +265,7 @@ int func_00110DF0(int port, int slot) /* sceMcFormat */
 
 int func_00110EC0(int port, int slot, void *name) /* sceMcDelete */
 {
+    ra_unsafe("memory card delete");
     char hp[300];
     (void)slot;
     mc_path(hp, sizeof hp, (const char *)name);
@@ -286,6 +297,7 @@ static int wild(const char *p, const char *s)
  * entries; result = number of entries. */
 int func_00110AE0(int port, int slot, void *name, unsigned int mode, int maxent, void *table)
 {
+    ra_unsafe("memory card dir");
     char hp[300], dirp[300], pat[64];
     const char *nm = (const char *)name, *slash;
     DIR *d;
@@ -343,4 +355,13 @@ int func_00110AE0(int port, int slot, void *name, unsigned int mode, int maxent,
     }
     mc_done(13, n);
     return 0;
+}
+
+RA_REGISTER(mc_ra_state)
+{
+    RA_STATE(pend_cmd);
+    RA_STATE(pend_res);
+    RA_STATE(pend_valid);
+    RA_STATE(info_calls);
+    RA_STATE(mc_cwd);
 }

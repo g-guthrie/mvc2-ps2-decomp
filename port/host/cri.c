@@ -19,6 +19,7 @@
 #include <string.h>
 #include <ctype.h>
 #include "host.h"
+#include "runahead.h"
 void host_sound_event(u32 addr, int a0, int a1, int a2, int a3); /* sound_trace.c */
 #include "fs.h"
 #include "host_cri.h"
@@ -263,7 +264,7 @@ void func_00402C20(void *a, int ptid, int fid) /* ADXT_StartAfs */
     ADXT_TRACE("ADXT_StartAfs(%d, %d) frame %ld", ptid, fid, mvc2_host_frame);
     HOST_SND(0x00402C20u, 0, ptid, fid, 0);
     if (host_adxt_ops && host_adxt_ops->start_afs) {
-        host_adxt_ops->start_afs(ptid, fid);
+        if (!mvc2_speculating) host_adxt_ops->start_afs(ptid, fid);
         return;
     }
     adxt.stat = 2;
@@ -275,7 +276,7 @@ void func_00401868(void *a) /* ADXT_Stop */
     (void)a;
     ADXT_TRACE("ADXT_Stop frame %ld", mvc2_host_frame);
     HOST_SND(0x00401868u, 0, 0, 0, 0);
-    if (host_adxt_ops && host_adxt_ops->stop)
+    if (host_adxt_ops && host_adxt_ops->stop && !mvc2_speculating)
         host_adxt_ops->stop();
     adxt.stat = 0;
 }
@@ -295,7 +296,7 @@ void func_004020D8(void *a, int vol) /* ADXT_SetOutVol */
     adxt.vol = vol;
     ADXT_TRACE("ADXT_SetOutVol(%d) frame %ld", vol, mvc2_host_frame);
     HOST_SND(0x004020D8u, 0, vol, 0, 0);
-    if (host_adxt_ops && host_adxt_ops->set_out_vol)
+    if (host_adxt_ops && host_adxt_ops->set_out_vol && !mvc2_speculating)
         host_adxt_ops->set_out_vol(vol);
 }
 
@@ -306,7 +307,7 @@ void func_004026B0(void *a, int sw) /* ADXT_Pause */
     adxt.paused = sw;
     ADXT_TRACE("ADXT_Pause(%d) frame %ld", sw, mvc2_host_frame);
     HOST_SND(0x004026B0u, 0, sw, 0, 0);
-    if (host_adxt_ops && host_adxt_ops->pause)
+    if (host_adxt_ops && host_adxt_ops->pause && !mvc2_speculating)
         host_adxt_ops->pause(sw);
 }
 
@@ -315,7 +316,7 @@ void func_00402BC0(int mono) /* ADXT_SetOutputMono */
     host_sound_event(0x00402BC0, mono, 0, 0, 0);
     adxt.mono = mono;
     HOST_SND(0x00402BC0u, mono, 0, 0, 0);
-    if (host_adxt_ops && host_adxt_ops->set_mono)
+    if (host_adxt_ops && host_adxt_ops->set_mono && !mvc2_speculating)
         host_adxt_ops->set_mono(mono);
 }
 
@@ -349,4 +350,12 @@ int func_003FEAD0(void)
 int func_003FEBD8(void)
 {
     return 0;
+}
+
+/* run-ahead: the file streams and the music player's view of itself */
+RA_REGISTER(cri_ra_state)
+{
+    RA_STATE(adxf);
+    RA_STATE(pt_stat);
+    RA_STATE(adxt);
 }

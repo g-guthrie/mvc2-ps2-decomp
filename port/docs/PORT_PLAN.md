@@ -34,7 +34,7 @@ Status: ✅ done · 🔄 in progress · ⬜ not started
 | ✅ PS2 vs NAOMI data diff | `ARCADE_DIFF.md`, `port/tools/arcade_diff.py` |
 | ✅ All 16,477 TUs compile for wasm32 (Emscripten), i386 and bare wasm32 | `port/CMakeLists.txt`, `HOST_BUILD_ISSUES.md` |
 
-### Phase 1: link and boot 🔄
+### Phase 1: link and boot ✅
 Goal: one executable that links with zero undefined symbols, then runs the
 game's init path and N frames headless (under node and natively).
 1. Generated glue: data aliases into data units, BSS definitions, text
@@ -47,7 +47,7 @@ game's init path and N frames headless (under node and natively).
 4. Headless frame loop driven by the host, with each frame's logic state
    hashed. This is the regression oracle for everything after it.
 
-### Phase 2: platform layer 🔄
+### Phase 2: platform layer ✅
 1. App shell: SDL2 on native; on the web, a canvas with Gamepad API, keyboard
    and a touch overlay; a visibility pause.
 2. Disc intake: a file picker for the user's ISO, with the AFS tables cached
@@ -63,7 +63,11 @@ game's init path and N frames headless (under node and natively).
    still need tracing.
 6. Saves go to `localStorage`/IndexedDB on the web and to a file natively.
 
-### Phase 3: playable and correct ⬜
+### Phase 3: playable and correct 🔄
+Playable end to end in the browser (README). Correctness is checked against
+the retail executable in a headless emulator (the oracle, BOOT_NOTES.md
+"Oracle pass"); scripted runs match frame for frame. Open: the randomised
+oracle fuzz pass (`port/tools/oracle/fuzz.py`).
 1. Boot through title, character select and a versus fight against the CPU.
 2. Compare frames against PCSX2 at fixed inputs (the logic-state hash plus
    screenshots).
