@@ -275,6 +275,9 @@ void host_state_dump_frame(long frame, unsigned b0, unsigned b1)
 void host_snd_log(u32 fn, u32 a0, u32 a1, u32 a2, u32 a3, u32 t0, u32 t1, u32 t2)
 {
     uint32_t a[7];
+    extern int mvc2_speculating; /* runahead.c: a speculated step is not the game's frame */
+    if (mvc2_speculating)
+        return;
     if (!dump_init)
         host_state_dump_open(NULL);
     if (!dump_f)

@@ -49,7 +49,10 @@ static u32 sample_sig(const u8 *p, u32 n, u32 seed)
     u32 h = 2166136261u ^ seed, i, step;
     if (!p || !n)
         return h;
-    step = n > 256 ? n / 256 : 1;
+    /* an odd stride, so every byte lane (R, G, B, A of 32-bit texels) is
+     * sampled: with n / 256 = 4 a 256-colour CT32 palette only had its red
+     * bytes checked and a G/B/A-only change (HUD colour cycling) was missed */
+    step = n > 1024 ? (n / 1024) | 1 : 1;
     for (i = 0; i < n; i += step)
         h = (h ^ p[i]) * 16777619u;
     h = (h ^ p[n - 1]) * 16777619u;
