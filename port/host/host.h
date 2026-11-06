@@ -43,4 +43,9 @@ extern unsigned long host_frame_count;
 
 /* port/host/cri.c: disc access (set by the host main before platform init) */
 int host_disc_open(const char *iso_path);
+
+/* port/host/state_dump.c: a sound command for the oracle comparison
+ * (tools/oracle/dump_format.h "Sound commands"); EE entry, $a0..$a3, $t0..$t2 */
+void host_snd_log(u32 fn, u32 a0, u32 a1, u32 a2, u32 a3, u32 t0, u32 t1, u32 t2);
+#define HOST_SND(fn, a0, a1, a2, a3) host_snd_log(fn, (u32)(a0), (u32)(a1), (u32)(a2), (u32)(a3), 0, 0, 0)
 #endif

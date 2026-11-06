@@ -262,6 +262,7 @@ void func_00402C20(void *a, int ptid, int fid) /* ADXT_StartAfs */
     adxt.fid = fid;
     adxt.ticks = 0;
     ADXT_TRACE("ADXT_StartAfs(%d, %d) frame %ld", ptid, fid, mvc2_host_frame);
+    HOST_SND(0x00402C20u, 0, ptid, fid, 0);
     if (host_adxt_ops && host_adxt_ops->start_afs) {
         if (!mvc2_speculating) host_adxt_ops->start_afs(ptid, fid);
         return;
@@ -274,6 +275,7 @@ void func_00401868(void *a) /* ADXT_Stop */
     host_sound_event(0x00401868, 0, 0, 0, 0);
     (void)a;
     ADXT_TRACE("ADXT_Stop frame %ld", mvc2_host_frame);
+    HOST_SND(0x00401868u, 0, 0, 0, 0);
     if (host_adxt_ops && host_adxt_ops->stop && !mvc2_speculating)
         host_adxt_ops->stop();
     adxt.stat = 0;
@@ -293,6 +295,7 @@ void func_004020D8(void *a, int vol) /* ADXT_SetOutVol */
     (void)a;
     adxt.vol = vol;
     ADXT_TRACE("ADXT_SetOutVol(%d) frame %ld", vol, mvc2_host_frame);
+    HOST_SND(0x004020D8u, 0, vol, 0, 0);
     if (host_adxt_ops && host_adxt_ops->set_out_vol && !mvc2_speculating)
         host_adxt_ops->set_out_vol(vol);
 }
@@ -303,6 +306,7 @@ void func_004026B0(void *a, int sw) /* ADXT_Pause */
     (void)a;
     adxt.paused = sw;
     ADXT_TRACE("ADXT_Pause(%d) frame %ld", sw, mvc2_host_frame);
+    HOST_SND(0x004026B0u, 0, sw, 0, 0);
     if (host_adxt_ops && host_adxt_ops->pause && !mvc2_speculating)
         host_adxt_ops->pause(sw);
 }
@@ -311,6 +315,7 @@ void func_00402BC0(int mono) /* ADXT_SetOutputMono */
 {
     host_sound_event(0x00402BC0, mono, 0, 0, 0);
     adxt.mono = mono;
+    HOST_SND(0x00402BC0u, mono, 0, 0, 0);
     if (host_adxt_ops && host_adxt_ops->set_mono && !mvc2_speculating)
         host_adxt_ops->set_mono(mono);
 }

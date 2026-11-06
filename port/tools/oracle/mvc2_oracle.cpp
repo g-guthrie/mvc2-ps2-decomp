@@ -12,7 +12,7 @@
  *
  * Usage: mvc2_oracle --iso DISC.iso [--script FILE] [--frames N]
  *          [--dump FILE] [--dump-from N] [--no-unlock] [--cpu-team a,b,c]
- *          [--p1-team a,b,c] [--press F:BUTTON[:LEN]] [--srand-sync]
+ *          [--p1-team a,b,c] [--press F:BUTTON[:LEN]] [--srand-sync] [--no-sound]
  *          (team entries ID or ID:T, T = assist type 0..2, as the port)
  * The Play! data directory (memory cards, config) is $MVC2_ORACLE_HOME
  * (default ./oracle_home); delete it for a fresh card.
@@ -362,6 +362,8 @@ static void on_frame(CMIPS* ctx)
 		uint64 seed = (uint64)rd32(r + 0xA8) | (uint64)rd32(r + 0xAC) << 32;
 		oracle_dump_record(O.dump, (uint32)g_frame, b0, b1, &ee_rd, nullptr, seed);
 	}
+	else
+		oracle_snd_reset();
 	for(int i = 0; i < O.nsnap; i++)
 		if(O.snap[i].frame == g_frame) oracle_snap(O.snap[i].path.c_str(), &ee_rd, nullptr);
 	if(O.frames > 0 && g_frame >= O.frames) g_quit = true;
@@ -554,9 +556,33 @@ static void force_assist(uint32 p)
 	}
 }
 
+/* the sound entry points (dump_format.h "Sound commands"): $a0..$a3,
+ * $t0..$t2 of a call the game makes (not one between the library's own
+ * functions, by $ra) go into the next record; --no-sound leaves them out */
+static int g_sound = 1;
+static int sound_hook(CMIPS* ctx)
+{
+	uint32 pc = ctx->m_State.nPC;
+	if(!oracle_snd_find(pc)) return 0;
+	auto& r = ctx->m_State.nGPR;
+	uint32 ra = r[CMIPS::RA].nV0;
+	if(!ORACLE_SND_LIB_IN(ra))
+	{
+		uint32_t a[7] = {r[CMIPS::A0].nV0, r[CMIPS::A1].nV0, r[CMIPS::A2].nV0, r[CMIPS::A3].nV0,
+		                 r[CMIPS::T0].nV0, r[CMIPS::T1].nV0, r[CMIPS::T2].nV0};
+		oracle_snd_log(pc, a, nullptr);
+		if(getenv("MVC2_ORACLE_SNDDBG"))
+			fprintf(stderr, "[snd] f%ld %08X(%08X %08X %08X %08X) ra=%08X\n", g_frame, pc, a[0], a[1], a[2], a[3], ra);
+	}
+	for(uint32 t : g_trace)
+		if(t == pc) trace(ctx);
+	return 1;
+}
+
 static void hook(CMIPS* ctx)
 {
 	if(g_quit) return;
+	if(sound_hook(ctx)) return;
 	if(team_hook(ctx)) return;
 	if(ctx->m_State.nPC == SCE_PAD_READ_RET)
 	{
@@ -633,6 +659,7 @@ int main(int argc, char** argv)
 		else if(!strcmp(a, "--trace-from") && n) { g_trace_from = atol(n); i++; }
 		else if(!strcmp(a, "--trace-to") && n) { g_trace_to = atol(n); i++; }
 		else if(!strcmp(a, "-v")) O.verbose = 1;
+		else if(!strcmp(a, "--no-sound")) g_sound = 0;
 		else if(!strcmp(a, "--snap") && n)
 		{
 			/* --snap F:FILE: the raw EE BSS at frame F */
@@ -687,6 +714,7 @@ int main(int argc, char** argv)
 	for(int k = 0; k < 3; k++)
 		if(g_cpu_assist[k] >= 0 || g_p1_assist[k] >= 0) vm.m_ee->m_EE.m_breakpoints.insert(BIND_PAK);
 	for(uint32 a : g_trace) vm.m_ee->m_EE.m_breakpoints.insert(a);
+	for(unsigned k = 0; g_sound && k < ORACLE_SND_NDEFS; k++) vm.m_ee->m_EE.m_breakpoints.insert(oracle_snd_defs[k].fn);
 	for(auto& sa : g_snapat) vm.m_ee->m_EE.m_breakpoints.insert(sa.addr);
 	g_oracleBreakHook = &hook;
 	auto t0 = std::chrono::steady_clock::now();

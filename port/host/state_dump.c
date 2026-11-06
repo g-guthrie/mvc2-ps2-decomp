@@ -250,8 +250,10 @@ void host_state_dump_frame(long frame, unsigned b0, unsigned b1)
     if (!dump_init)
         host_state_dump_open(NULL);
     resync_check();
-    if (!dump_f || frame < dump_from)
+    if (!dump_f || frame < dump_from) {
+        oracle_snd_reset();
         return;
+    }
     memcpy(&reent, D_0043B6F8, sizeof reent);
     if (reent)
         memcpy(&seed, reent + 0xA8, 8);
@@ -266,6 +268,19 @@ void host_state_dump_frame(long frame, unsigned b0, unsigned b1)
             }
     }
     oracle_dump_record(dump_f, (uint32_t)frame, (uint16_t)b0, (uint16_t)b1, rd, fix, seed);
+}
+
+/* a sound command the game issued (an entry of dump_format.h
+ * oracle_snd_defs: tsd_host.c, cri.c); goes into the next record */
+void host_snd_log(u32 fn, u32 a0, u32 a1, u32 a2, u32 a3, u32 t0, u32 t1, u32 t2)
+{
+    uint32_t a[7];
+    if (!dump_init)
+        host_state_dump_open(NULL);
+    if (!dump_f)
+        return;
+    a[0] = a0; a[1] = a1; a[2] = a2; a[3] = a3; a[4] = t0; a[5] = t1; a[6] = t2;
+    oracle_snd_log(fn, a, fix);
 }
 
 /* for gdb: `call host_state_snap_now("file")` at any point (the oracle's

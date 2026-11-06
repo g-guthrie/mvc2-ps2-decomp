@@ -129,6 +129,84 @@ ones outside the actor area were followed down to the word with `scan`
 `fuzz.py` kept the first 40 blocks by address in `new_blocks`, which hid
 everything above ~0x004EA000; it now keeps the first 80 by frame.
 
+## Sound commands
+
+The comparison above masks the sound and IOP BSS from the first frame, so it
+says nothing about audio. Since the "Sound commands" change to
+`dump_format.h`, every record also carries the ordered list of calls the game
+made since the previous record into its two sound layers. Every frame's list
+must match. A difference stops the run like a region difference, and the
+report shows both lists:
+
+```
++2392 port 2846 oracle 2858 state 2/1/2: sound commands port [tsd_status(4, 0x12101), tsd_play(0x12101, -1, 64, -1)]
+                                         oracle [tsd_status(4, 0x12101), tsd_stop(0x12101), tsd_play(0x12101, -1, 64, -1)]
+```
+
+`fuzz.py --no-sound` and `compare.py --no-sound` turn the check off.
+`fuzz.py sanity --seed S --count N` runs the oracle against itself on each
+scenario.
+
+**Layers.** Two layers exist at the same EE address on both sides, with the
+same arguments. The port replaces them there (`host/tsd_host.c`,
+`host/cri.c`). Waveforms are out of scope: Play!'s SPU2 output is not
+bit-exact, and the decoders are checked in `AUDIO.md`.
+
+| Layer | Entries (EE) | Recorded arguments |
+|---|---|---|
+| Tamsoft client (effects, voices) | `422EA0` play, `422FB0` stop, `4230B0` change, `4231D0` stop all TQ, `423240` master volume, `4232C0` cmd77, `423480` load bank, `4235D0` unload bank, `423650` stop all, `4236C0` stereo, `423990` status (fno 4 only) | `$a0..$a3`, `$t0..$t2` up to the entry's count. The bank pointers of load bank are EE addresses (the port's dump `fix()`). |
+| CRI ADXT (music) | `402C20` StartAfs, `401868` Stop, `4020D8` SetOutVol, `4026B0` Pause, `402BC0` SetOutputMono | The same, without the ADXT handle: a CRI object on the PS2, a host struct on the port. |
+
+**Oracle hooks.** The oracle records a call only when its `$ra` lies outside
+the two libraries (`0x3F5F88..0x411C10`, `0x422BE0..0x423E30`): a call
+between library functions is not the game's. The port's replacements are
+leaves. The EE leaves garbage in argument registers past an entry's count
+(`ADXT_Pause` arrives with `$a2 = FFFFFFFF` or a stale pointer), so those
+slots are written as 0. Up to 96 entries per frame are kept, and the count is
+compared beyond that. Status fno `0xC` (bank DMAs pending) is not recorded:
+`func_001E5870` polls it for as long as a DMA takes, which is many calls on
+the PS2 and one on the port.
+
+**Sanity pair.** The oracle against itself gives identical lists, with no
+noise to mask before comparing the port: seed 1 (5446 frames, 6781 commands)
+and seed 17 (4521 frames, 4262 commands, status queries included).
+
+### Status-gated stops: driver timing, by design
+
+| | |
+|---|---|
+| Seen | Seeds 15, 17, 23, 29, 31 in the first pass (5 of the first 32 seeds), always as an extra `tsd_stop(X)` on the oracle just before `tsd_play(X)` |
+| Code | `func_001E59E0` (`src/fb64_a.c`, `AUDIO.md` 4.1). Before a sound plays, it stops X itself (slot >= 0x1E) or the player's other voice lines (ids 0-5, 10-0x1D), each only if TSD status fno 4 says the slot is still active. |
+| Port side | The slot had always just ended. The data's sounds are `E0 E1 E2 note-on, wait, note-off, FF`. `FF` ends the slot once the channel is silent, and release rate 0 makes that one tick after the note-off. The port's lifetime is a fixed number of 240 Hz ticks. The port driver runs exactly 4 ticks per frame (headless: 800 samples a frame). Play! also gives exactly 4 per frame (IOP at EE/8 = 36.864 MHz, timer `0x25800`, 60 Hz frames). |
+| Retail side | Calibrated over seven seeds (retail stop or no stop, against the port's lifetime L of the same bank/sound/handle): still active at L+0, L+1 and L+2 ticks, finished at L+2, L+3, L+5 and L+7. The PS2 slot ends about 2-3 ticks later, with about ±1 tick of jitter: the same +2 offset is active in seed 23 and finished in seed 1. |
+| Cause | The IOP's timer and the driver threads run free of the EE frame. How many ticks fall between two EE calls in different frames depends on where in each frame the EE reaches the call, which depends on the frame's workload. MODHSYN, stripped and untraced beyond key-on and pitch (`AUDIO.md` 4.4), adds its own delay before it reports a keyed-off channel silent. The port has no cycle timing. |
+| Effect | None audible. The stop arrives after the note-off, when the voice is already silent. Slot occupancy differs by a few ticks, which matters only when all 16 slots of a bank are busy (stealing). |
+| Verdict | **By design** (host timing model). The port driver is unchanged. Retuning its lifetime to Play!'s +2-3 ticks would not remove the jitter, and Play!'s IOP thread and SIF timing is not hardware. |
+| Comparison | `compare.snd_match` excuses a `tsd_stop(X)` present on one side only directly after `tsd_status(4, X)`, the status-gated stop. Anything else still stops the run. Results count the excused races (`n_sound_races`, and `sound_races` with frame, side and id). |
+
+### Results, sound commands (2026-11-05)
+
+Native i386 port, `MVC2_PS2_FLOAT` on, the binary at "oracle: record TSD
+status queries", with sound comparison on.
+
+| Run | Frames compared | Sound commands | Status-gated races | Result |
+|---|---|---|---|---|
+| `fuzz.py run` seeds 1-60 (56 characters, 474 P1/CPU pairs) | 282,768 (199,028 fight) | 305,784 | 11 (9 seeds, at most 2 each, all on the oracle side) | 60 / 60 match |
+| Arcade seeds 1000001-1000004 (whole runs, stages 4, 6, 6, 6) | 79,955 | 74,250 | 4 | 4 / 4 match |
+| `fight_mix.txt` | 7,535 | 11,576 | 0 | match |
+| Attract cycle (63 `ADXT_SetOutVol` fades) | 4,835 | 1,790 | 0 | match |
+| `training_start.txt` (48 pause-menu `ADXT_Pause`) | 4,535 | 279 | 0 | match |
+| Arcade seed 1000100 (22 stage blocks, stage byte 8), after the merge of port-fuzz-run | 36,109 | 16,529 | 0 | match |
+| **Total** | **415,737** | **410,208** | **15** | **all match** |
+
+Before the race rule, the first pass on the same binary stopped 5 of the
+first 32 seeds (15, 17, 23, 29, 31) at a status-gated stop. No
+other kind of sound difference was seen. The port's sound-command layer
+needed no fix: every command, argument and bank pointer, and its frame,
+matches the retail game.  After the merge of port-fuzz-run (its port fixes
+included), seeds 1-60 gave the same totals again: 60 / 60, 282,768 frames,
+305,784 commands, 11 races.
+
 ## Results (2026-11-04/05, branch port-fuzz-run)
 
 Native i386 port, `MVC2_PS2_FLOAT` on, Linux x86-64 (4 cores, `--jobs 3`),
@@ -249,29 +327,17 @@ arcade 1000005 match, sound requests identical.
 
 ### Sound requests
 
-The PCM is not comparable (the port replaces the IOP sound driver and the
-ADX player), but what the game asks for is.  Every call from game code into
-the Tamsoft driver (play, stop, change, master volume, banks, stereo, queue
-reset) and the ADX streamer (StartAfs, Stop, SetOutVol, Pause, mono) is
-compared frame by frame with its non-pointer arguments:
-`MVC2_SOUND_TRACE=FILE` on the port (`port/host/sound_trace.c`), `--trace`
-on the same entry points on the oracle, minus calls whose return address is
-inside the CRI (`0x003F5F88..0x00411C10`) or Tamsoft
-(`0x00422BE0..0x00423E30`) libraries.  A sound difference is recorded in
-the result (`sound`: counts, first differing frame) and does not stop the
-run.  The status queries (`func_00423990`) are logged on the port as well.
-
-Seed 3: 1652 / 1652 requests, identical in every frame; arcade seed
-1000100: 10,057 / 10,057 over 36,109 frames.  Seeds 15, 17 and 23 show the
-known status race: the game stops a sound before replaying it on one side
-only, because its is-active query (`func_00423990`, fno 4) is answered on
-the PS2 by the IOP driver on its own free-running 240 Hz timer, about one
-tick off from the port's frame-driven driver, near the end of a sound's
-silent release tail.  How the comparison treats that (and the
-pending-loads query, fno 0xC) is settled on the separate branch
-"Oracle fuzz: compare sound commands with retail"; this branch keeps the
-plain request comparison so the two can be reconciled at merge, and makes
-no change to the port's sound driver.
+The second pass first compared sound with a text trace: `MVC2_SOUND_TRACE=FILE`
+on the port (`port/host/sound_trace.c`) and the oracle's `--trace` on the same
+entry points, recorded in the result without stopping the run.  Seed 3
+matched (1652 / 1652 requests), and so did arcade seed 1000100 (10,057 / 10,057 over
+36,109 frames).  Seeds 15, 17 and 23 showed the status race.  That
+comparison is replaced by the per-frame records of "Sound commands" above,
+which stop the run on a difference and excuse only the status-gated stop.
+The port's `MVC2_SOUND_TRACE` is kept as a debugging aid; `fuzz.py` no
+longer traces the oracle's sound entries.  A one-tick start delay for new TQ
+slots (`MVC2_TSD_DELAY`) was tried and reverted: the port's sound driver is
+unchanged.
 
 ### Fixes in the second pass
 
