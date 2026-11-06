@@ -56,13 +56,13 @@ paths for the current executor. A local copy can also be selected explicitly:
 . private/build.env
 ```
 
-For a checkout at `/workspace/mvc2-ps2-decomp`, the generated values are:
+For a checkout at `/workspace/mvc2-port-and-decomp`, the generated values are:
 
 ```text
-WIBO=/workspace/mvc2-ps2-decomp/private/toolchain/wibo-x86_64
-MWCCPS2=/workspace/mvc2-ps2-decomp/private/toolchain/compilers/mwcps2-3.0.3-020716/mwccps2.exe
-MWCCPS2_30=/workspace/mvc2-ps2-decomp/private/toolchain/compilers/mwcps2-3.0-011126/mwccps2.exe
-PYTHON=/workspace/mvc2-ps2-decomp/.venv/bin/python
+WIBO=/workspace/mvc2-port-and-decomp/private/toolchain/wibo-x86_64
+MWCCPS2=/workspace/mvc2-port-and-decomp/private/toolchain/compilers/mwcps2-3.0.3-020716/mwccps2.exe
+MWCCPS2_30=/workspace/mvc2-port-and-decomp/private/toolchain/compilers/mwcps2-3.0-011126/mwccps2.exe
+PYTHON=/workspace/mvc2-port-and-decomp/.venv/bin/python
 ```
 
 ## Verification and continuation

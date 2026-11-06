@@ -1,0 +1,28 @@
+{
+  "description": "Hitachi SHC 5.1 Release 8 (compiler passes; assembler and linker from 5.0 Release 31). 'game' is the option set Sega's Katana tool manual (read_1st.txt, 1998) requires of every application, plus -optimize=1 and -fpu=single, which supersedes the manual's -double=float; -extra=a=400 is the undocumented SH7091 workaround that puts a nop after every mov Rm,r0. 'library' is the same without that workaround: Sega's own libraries, above 0x0c1e9000 in the image, were built without it. A unit names its set with \"options\"; the default is game.",
+  "sets": {
+    "game": [
+      "-cpu=sh4",
+      "-endian=little",
+      "-optimize=1",
+      "-division=cpu",
+      "-fpu=single",
+      "-pic=0",
+      "-macsave=0",
+      "-string=const",
+      "-comment=nonest",
+      "-extra=a=400"
+    ],
+    "library": [
+      "-cpu=sh4",
+      "-endian=little",
+      "-optimize=1",
+      "-division=cpu",
+      "-fpu=single",
+      "-pic=0",
+      "-macsave=0",
+      "-string=const",
+      "-comment=nonest"
+    ]
+  }
+}

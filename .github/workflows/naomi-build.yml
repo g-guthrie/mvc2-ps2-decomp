@@ -1,0 +1,78 @@
+name: NAOMI build
+on:
+  push:
+    branches: [main]
+    paths: ['naomi/**', '.github/workflows/naomi-build.yml']
+  pull_request:
+    paths: ['naomi/**', '.github/workflows/naomi-build.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: naomi-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: naomi
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Check for build inputs
+        id: inputs
+        # The ROM, the Hitachi compiler and the Sega SDK are not redistributable
+        # and are not in this repository (see naomi/docs/BUILD_INPUTS.md). Without
+        # them there is nothing to build, so skip rather than fail.
+        run: |
+          if [ -f orig/mvsc2.zip ] && [ -d toolchain/hitachi-shc-5.1r08 ] \
+             && [ -d toolchain/naomi-sdk/lib ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "Build inputs absent; skipping build and evidence steps."
+          fi
+      - name: Verify ROMs and build with bundled Hitachi
+        if: steps.inputs.outputs.present == 'true'
+        run: python3 tools/build.py check --clean --jobs 2
+      - name: Generate evidence-backed recovery plan
+        if: steps.inputs.outputs.present == 'true'
+        run: python3 tools/recovery.py plan
+      - uses: actions/upload-artifact@v6
+        if: always() && steps.inputs.outputs.present == 'true'
+        with:
+          name: naomi-evidence
+          retention-days: 14
+          path: |
+            naomi/build/proof.json
+            naomi/build/mapping.json
+            naomi/build/work/**/*.elf
+            naomi/build/work/**/*.map
+            naomi/build/work/**/*.src
+            naomi/build/work/**/*.log
+            naomi/build/work/**/*.lnk
+            naomi/build/progress.json
+            naomi/build/work_queue.json
+            naomi/build/recovery_plan.json
+            naomi/build/progress.svg
+            naomi/build/active.svg
+            naomi/build/index.html
+      - name: Publish canonical README bars
+        if: steps.inputs.outputs.present == 'true' && github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+        run: |
+          git fetch origin main
+          if [ "$(git rev-parse HEAD)" != "$(git rev-parse origin/main)" ]; then
+            echo 'A newer main commit exists; its workflow will publish the bars.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'naomi: update canonical progress bars [skip ci]'
+            git push origin HEAD:main
+          fi

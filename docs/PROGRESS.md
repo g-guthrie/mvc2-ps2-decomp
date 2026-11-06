@@ -4279,7 +4279,7 @@ bytes of data credit. Raw fallback ranges continue to earn no source credit.
 
 A read-only snapshot of newer Grok work supplied 92 independently replayed
 functions / 26,152 bytes. Their per-source compilers, flags, and source audits
-are recorded in [the replay manifest](grok-new-primary-20261019-replay.csv).
+are recorded in [the replay manifest](recovery/grok-new-primary-20261019-replay.csv).
 Thirty-five use MWCCPS2 3.0-011126 with genuine `#pragma padloop on`; the
 compiler emits the native loop padding without inline NOPs or opcode patching.
 Other recoveries include callback bodies and dispatch heads, with native
@@ -4315,8 +4315,8 @@ Code is now 1,907,432 / 3,293,696 bytes (57.9116%), adding 37 complete
 functions / 8,668 bytes since the previous public checkpoint. Reconstructed
 initialized data is 175,425 / 648,064 bytes (27.0691%), adding 1,016 bytes of
 bounded offset, motion, and selector records. The per-function recipes and
-native entry witnesses are in `window-clone-frontier-20261019-replay.csv` and
-`grok-asm-source-candidates-20261019-replay.csv`. Leading alignment words remain
+native entry witnesses are in `recovery/window-clone-frontier-20261019-replay.csv` and
+`recovery/grok-asm-source-candidates-20261019-replay.csv`. Leading alignment words remain
 uncredited; input-gate return types preserve the selected-target pointers.
 
 The compile script had a verification stanza with its command head missing:
@@ -4548,7 +4548,7 @@ previously reconstructed byte once. Four actor-table owners add another 82:
 a three-float spawn vector, four ten-byte launch records, six float heights and
 six signed animation codes. Their 118 opaque adjacent bytes remain placeholders.
 The actual float/signed-byte providers unlock the exact 304-byte rise callback.
-See `SCENE_TABLES_AND_CALLBACKS_RECOVERY_20261021.md` for native roles, valid-input
+See `recovery/SCENE_TABLES_AND_CALLBACKS_RECOVERY_20261021.md` for native roles, valid-input
 contracts and ownership boundaries.
 
 The complete 50,968-byte `mvsc2.ico` owner contains a standard PS2 icon header,
@@ -4556,7 +4556,7 @@ The complete 50,968-byte `mvsc2.ico` owner contains a standard PS2 icon header,
 Its native memory-card write path fixes the file length. The file replaces 377
 raw placeholder units and covers 1,328 previously unowned internal bytes; none
 of those units had reconstructed credit. Net new DATA is 51,210 bytes including
-the actor/scene tables. `MEMORY_CARD_ICON_RECOVERY_20261021.md` records the parse,
+the actor/scene tables. `recovery/MEMORY_CARD_ICON_RECOVERY_20261021.md` records the parse,
 file selection and standard format references.
 
 All changed/new compilation units verify exactly. The aggregate gate runs all
@@ -4588,7 +4588,7 @@ preserve their whole object bytes while using compatible client and completion
 types. The existing Sony RPC header is reused unchanged. Its other 4,264 bytes
 remain raw placeholders. A separate 32-byte velocity table replaces the middle
 of a 196-byte raw owner; its 164 surrounding bytes remain uncredited. Total new
-DATA is 244 bytes. See `CDVD_READ_STORAGE_RECOVERY_20261021.md` for owners,
+DATA is 244 bytes. See `recovery/CDVD_READ_STORAGE_RECOVERY_20261021.md` for owners,
 preconditions and source-level type corrections.
 
 The aggregate verification covers all changed/new complete objects, unchanged
@@ -4608,7 +4608,7 @@ checkpoint does not reset that grid. Full source decompilation remains unfinishe
 
 Three whole-function compiler matches add 1,024 CODE bytes; the typed motion
 bank adds 4,804 DATA bytes. Its three eight-byte raw regions remain uncredited.
-See `MOTION_BANK_RECOVERY_20261021.md` for ownership and array-bound limits.
+See `recovery/MOTION_BANK_RECOVERY_20261021.md` for ownership and array-bound limits.
 Three existing compilation units preserve whole object identity; two more
 preserve every exported function after relocation while adopting coherent
 packed-record symbols. No existing CODE credit is added for these corrections.
@@ -4630,7 +4630,7 @@ Two formerly raw owners now provide 1,044 reconstructed DATA bytes. Six groups
 of ten typed spawn points, five integer angles, five rotation pairs and two
 acceleration vectors follow native producer and consumer contracts. One vector
 crosses the old catalog boundary at 0x00460CB0. Three gaps totaling 28 bytes
-remain raw and uncredited. See `EFFECT_SPAWN_DATA_RECOVERY_20261021.md`.
+remain raw and uncredited. See `recovery/EFFECT_SPAWN_DATA_RECOVERY_20261021.md`.
 
 All eight new whole data objects compile exact and have independent review.
 The aggregate verification checks 14,577 unchanged source/object pairs and all
@@ -4648,7 +4648,7 @@ decompilation remains unfinished.
 Five complete actor callbacks add 1,604 CODE bytes. Typed relative-pose records
 add 1,416 DATA bytes; three phased velocity profiles and their three-pointer
 directory add another 2,412. Twelve unresolved bytes remain raw and uncredited.
-See `POSE_AND_VELOCITY_DATA_RECOVERY_20261021.md` for the signed-selector and
+See `recovery/POSE_AND_VELOCITY_DATA_RECOVERY_20261021.md` for the signed-selector and
 physical-profile preconditions, native float behavior and excluded tails.
 
 Two existing CUs are recompiled: the constructor now uses its actual profile
@@ -4674,7 +4674,7 @@ Net CODE gain is 2,068 bytes. The native fallback preserves their original spans
 Action records add 2,152 DATA bytes, phase durations add 32, and independently
 reviewed motion resources and seven-float rows add 2,795. Total new reconstructed
 DATA is 4,979 bytes. Raw gaps and tails remain excluded. See
-`ACTION_MOTION_DATA_AND_ABI_REPAIR_20261021.md` for field roles, local resource
+`recovery/ACTION_MOTION_DATA_AND_ABI_REPAIR_20261021.md` for field roles, local resource
 preconditions, mixed-use neighboring anchors, and the source interface repairs.
 
 The bank checks 14,558 unchanged source/object pairs and all 52 old headers,
@@ -4701,7 +4701,7 @@ the text denominator is unchanged.
 Fixed-point motion and attachment poses add 600 DATA bytes, twelve interpolation
 paths with their pointer/count directories add 1,500, and three coordinate-pair
 banks add 1,440. Total new reconstructed DATA is 3,540 bytes. Raw gaps and opaque
-neighbors stay excluded. See `PATH_RESOURCES_AND_CLONE_CALLBACKS_20261021.md`
+neighbors stay excluded. See `recovery/PATH_RESOURCES_AND_CLONE_CALLBACKS_20261021.md`
 for fields, actual source interfaces, resource preconditions and native selector
 limits. Two existing shared vector types are reused without changing headers.
 
@@ -4724,7 +4724,7 @@ Eighteen complete functions add 8,652 CODE bytes. Character motion variants,
 scale blocks and their pointer directory, GS address/data commands, and EE TLB,
 syscall-hook and semaphore records add 7,312 reconstructed DATA bytes. Opaque
 gaps and the copied executable payload remain uncredited. See
-`MOTION_TABLES_AND_CONTEXT_CALLBACKS_20261021.md` for layouts, actual callback
+`recovery/MOTION_TABLES_AND_CONTEXT_CALLBACKS_20261021.md` for layouts, actual callback
 and math-helper interfaces, local resource preconditions and exact accounting.
 
 The bank checks 14,614 unchanged source/object pairs and all 53 old headers,

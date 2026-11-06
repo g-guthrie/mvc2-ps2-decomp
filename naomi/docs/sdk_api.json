@@ -1,0 +1,1514 @@
+[
+ {
+  "address": "0xc1e9160",
+  "refs": 2,
+  "unit": null,
+  "name": "nlInitCommonTexture",
+  "evidence": "similar to libnaomik2.lib:nlcmntex (0.699)",
+  "confidence": "medium"
+ },
+ {
+  "address": "0xc1e9200",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "closest nlaInitSystemNoBoot (0.414)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1e9260",
+  "refs": 45,
+  "unit": null,
+  "name": null,
+  "evidence": "closest buSetPrintFunc (0.667)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1e9270",
+  "refs": 11,
+  "unit": null,
+  "name": "nlCommonTextureReloadA",
+  "evidence": "similar to libnaomik2.lib:nlcmntex (0.843)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1e97d0",
+  "name": "nlInitPalette",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlcmnpal",
+  "refs": 2
+ },
+ {
+  "address": "0xc1e9810",
+  "name": "nlFreePaletteAll",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlcmnpal",
+  "refs": 2
+ },
+ {
+  "address": "0xc1e9a20",
+  "name": "nlLoadCorePaletteData",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlcmnpal",
+  "refs": 2
+ },
+ {
+  "address": "0xc1e9a50",
+  "name": "nlSetPaletteMode",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlcmnpal",
+  "refs": 2
+ },
+ {
+  "address": "0xc1e9a70",
+  "name": "nlPaletteDirectMode",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlcmnpal",
+  "refs": 2
+ },
+ {
+  "address": "0xc1e9b20",
+  "refs": 10,
+  "unit": null,
+  "name": "nlWaitVSync",
+  "evidence": "similar to libnaomik2.lib:nlsystem (0.715)",
+  "confidence": "medium"
+ },
+ {
+  "address": "0xc1e9bd0",
+  "refs": 7,
+  "unit": null,
+  "name": "nlSetVertexMode",
+  "evidence": "similar to libnaomik2.lib:nlsystem (0.951)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1e9e80",
+  "refs": 8,
+  "unit": null,
+  "name": null,
+  "evidence": "one of module nlsystem: nlSetShadingMode, nlSetUseSpecular, nlSetUseAlpha, nlSetFilterMode, nlSetBackColor, nlCreateVertexBuffer_clx16, nlInitLibrary0, nlInitLibrary, nlInitLibraryDC, nlSetVsyncCount, nlSetFogColor, nlSetFogVertexColor, nlSetFogTable, nlSetCullingMode, nlSetCullingVal",
+  "confidence": "candidates"
+ },
+ {
+  "address": "0xc1ea060",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "one of module nlsystem: nlSetShadingMode, nlSetUseSpecular, nlSetUseAlpha, nlSetFilterMode, nlSetBackColor, nlCreateVertexBuffer_clx16, nlInitLibrary0, nlInitLibrary, nlInitLibraryDC, nlSetVsyncCount, nlSetFogColor, nlSetFogVertexColor, nlSetFogTable, nlSetCullingMode, nlSetCullingVal",
+  "confidence": "candidates"
+ },
+ {
+  "address": "0xc1ea180",
+  "refs": 7,
+  "unit": null,
+  "name": "nlSetBorderColor",
+  "evidence": "similar to libnaomik2.lib:nlsystem (0.897)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1ea460",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "one of module nlsystem: nlVtxBufScanInit, nlVtxBufScan, nlSetUserTileClip, nlSetUserTileClipMode, nlFlushTileClip, nlChangeDisplayFilterMode, nlGetCurrentScanLine, nlSetEORFunction, nlSetEOVFunction, nlSetVSyncFunction, nlSetHSyncFunction, nlSetHsyncLine, nlSetTextureOverFunction, nlSetStripOverFunction, nl_system_config_init, nlSysSetTextureSize, nlSysUseLatency2V, nlSysUseLatency3V, nlSysSetDirectListTypeLatency2V, nlSysUseStripBuffer, nlSysCancelStripBuffer, nlSysNoWaitRenderingOver, nlSysWaitRenderingOver, nlSysCreatePunchBuffer, nlSysSetVertexBufferBaseAddress, nlCreateVertexBuffer_clx22, nlCreateVertexBuffer, nlSysTextureWaitDMA, nlSysTextureNoWaitDMA",
+  "confidence": "candidates"
+ },
+ {
+  "address": "0xc1ea470",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "one of module nlsystem: nlVtxBufScanInit, nlVtxBufScan, nlSetUserTileClip, nlSetUserTileClipMode, nlFlushTileClip, nlChangeDisplayFilterMode, nlGetCurrentScanLine, nlSetEORFunction, nlSetEOVFunction, nlSetVSyncFunction, nlSetHSyncFunction, nlSetHsyncLine, nlSetTextureOverFunction, nlSetStripOverFunction, nl_system_config_init, nlSysSetTextureSize, nlSysUseLatency2V, nlSysUseLatency3V, nlSysSetDirectListTypeLatency2V, nlSysUseStripBuffer, nlSysCancelStripBuffer, nlSysNoWaitRenderingOver, nlSysWaitRenderingOver, nlSysCreatePunchBuffer, nlSysSetVertexBufferBaseAddress, nlCreateVertexBuffer_clx22, nlCreateVertexBuffer, nlSysTextureWaitDMA, nlSysTextureNoWaitDMA",
+  "confidence": "candidates"
+ },
+ {
+  "address": "0xc1ea530",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "one of module nlsystem: nlVtxBufScanInit, nlVtxBufScan, nlSetUserTileClip, nlSetUserTileClipMode, nlFlushTileClip, nlChangeDisplayFilterMode, nlGetCurrentScanLine, nlSetEORFunction, nlSetEOVFunction, nlSetVSyncFunction, nlSetHSyncFunction, nlSetHsyncLine, nlSetTextureOverFunction, nlSetStripOverFunction, nl_system_config_init, nlSysSetTextureSize, nlSysUseLatency2V, nlSysUseLatency3V, nlSysSetDirectListTypeLatency2V, nlSysUseStripBuffer, nlSysCancelStripBuffer, nlSysNoWaitRenderingOver, nlSysWaitRenderingOver, nlSysCreatePunchBuffer, nlSysSetVertexBufferBaseAddress, nlCreateVertexBuffer_clx22, nlCreateVertexBuffer, nlSysTextureWaitDMA, nlSysTextureNoWaitDMA",
+  "confidence": "candidates"
+ },
+ {
+  "address": "0xc1ea5e0",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "one of module nlsystem: nlVtxBufScanInit, nlVtxBufScan, nlSetUserTileClip, nlSetUserTileClipMode, nlFlushTileClip, nlChangeDisplayFilterMode, nlGetCurrentScanLine, nlSetEORFunction, nlSetEOVFunction, nlSetVSyncFunction, nlSetHSyncFunction, nlSetHsyncLine, nlSetTextureOverFunction, nlSetStripOverFunction, nl_system_config_init, nlSysSetTextureSize, nlSysUseLatency2V, nlSysUseLatency3V, nlSysSetDirectListTypeLatency2V, nlSysUseStripBuffer, nlSysCancelStripBuffer, nlSysNoWaitRenderingOver, nlSysWaitRenderingOver, nlSysCreatePunchBuffer, nlSysSetVertexBufferBaseAddress, nlCreateVertexBuffer_clx22, nlCreateVertexBuffer, nlSysTextureWaitDMA, nlSysTextureNoWaitDMA",
+  "confidence": "candidates"
+ },
+ {
+  "address": "0xc1ea5f0",
+  "refs": 2,
+  "unit": null,
+  "name": "nlSysSetVertexBufferBaseAddress",
+  "evidence": "similar to libnaomik2.lib:nlsystem (0.769)",
+  "confidence": "medium"
+ },
+ {
+  "address": "0xc1eaa20",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "one of module nlsystem: nlVtxBufScanInit, nlVtxBufScan, nlSetUserTileClip, nlSetUserTileClipMode, nlFlushTileClip, nlChangeDisplayFilterMode, nlGetCurrentScanLine, nlSetEORFunction, nlSetEOVFunction, nlSetVSyncFunction, nlSetHSyncFunction, nlSetHsyncLine, nlSetTextureOverFunction, nlSetStripOverFunction, nl_system_config_init, nlSysSetTextureSize, nlSysUseLatency2V, nlSysUseLatency3V, nlSysSetDirectListTypeLatency2V, nlSysUseStripBuffer, nlSysCancelStripBuffer, nlSysNoWaitRenderingOver, nlSysWaitRenderingOver, nlSysCreatePunchBuffer, nlSysSetVertexBufferBaseAddress, nlCreateVertexBuffer_clx22, nlCreateVertexBuffer, nlSysTextureWaitDMA, nlSysTextureNoWaitDMA",
+  "confidence": "candidates"
+ },
+ {
+  "address": "0xc1eaba0",
+  "refs": 2,
+  "unit": null,
+  "name": "nlSysMetricsInit",
+  "evidence": "similar to libnaomik2.lib:nlsystem (0.947)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1eae80",
+  "refs": 2,
+  "unit": null,
+  "name": "nlSysMetricsCpuPowerStart",
+  "evidence": "similar to libnaomik2.lib:nlsystem (0.933)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1eae90",
+  "refs": 5,
+  "unit": null,
+  "name": "nlSysMetricsCpuPowerGet",
+  "evidence": "similar to libnaomik2.lib:nlsystem (0.769)",
+  "confidence": "medium"
+ },
+ {
+  "address": "0xc1eb070",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "closest buRemount (1.0)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1eb090",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "closest ovMdlEntryTbl (0.2)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1ebbd0",
+  "refs": 16,
+  "unit": null,
+  "name": "nlArcTan",
+  "evidence": "similar to libnaomik2.lib:nlmath (0.779)",
+  "confidence": "medium"
+ },
+ {
+  "address": "0xc1ebc70",
+  "refs": 20,
+  "unit": null,
+  "name": null,
+  "evidence": "closest fhFmReadExec (0.273)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1ebd40",
+  "refs": 138,
+  "unit": null,
+  "name": "nlCos",
+  "evidence": "similar to libnaomik2.lib:nlmath (0.857)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1ebec0",
+  "refs": 4,
+  "unit": null,
+  "name": "nlFloor",
+  "evidence": "similar to libnaomik2.lib:nlmath (0.73)",
+  "confidence": "medium"
+ },
+ {
+  "address": "0xc1ec0e0",
+  "refs": 9,
+  "unit": null,
+  "name": null,
+  "evidence": "one of module nlmath: nlCosec, nlCosf, nlCosh, nlCot, nlExp, nlFloor, nlFraction, nlInvertAbsSqrt, nlInvertSqrt, nlLdexpf, nlLog, nlLog10, nlLog2, nlPow",
+  "confidence": "candidates"
+ },
+ {
+  "address": "0xc1ec190",
+  "refs": 152,
+  "unit": null,
+  "name": "nlRand",
+  "evidence": "similar to libnaomik2.lib:nlmath (0.968)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1ec1b0",
+  "refs": 11,
+  "unit": null,
+  "name": "nlRandom",
+  "evidence": "similar to libnaomik2.lib:nlmath (0.815)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1ec2c0",
+  "refs": 212,
+  "unit": null,
+  "name": "nlSin",
+  "evidence": "similar to libnaomik2.lib:nlmath (0.806)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1ec580",
+  "refs": 4,
+  "unit": null,
+  "name": null,
+  "evidence": "closest nlCosh (0.305)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1ec6f0",
+  "name": "nlInitPrint",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlprint",
+  "refs": 2
+ },
+ {
+  "address": "0xc1eca00",
+  "name": "nlPrnIndentOn",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlprint",
+  "refs": 2
+ },
+ {
+  "address": "0xc1eca20",
+  "name": "nlSetFontSize",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlprint",
+  "refs": 17
+ },
+ {
+  "address": "0xc1eca30",
+  "name": "nlPuts",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlprint",
+  "refs": 2
+ },
+ {
+  "address": "0xc1ecb90",
+  "name": "nlLocate",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlprint",
+  "refs": 11
+ },
+ {
+  "address": "0xc1ecc20",
+  "name": "nlPrintColor",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlprint",
+  "refs": 14
+ },
+ {
+  "address": "0xc1ecc30",
+  "name": "nlPrintf",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlprint",
+  "refs": 8
+ },
+ {
+  "address": "0xc1eccb0",
+  "refs": 2,
+  "unit": null,
+  "name": "nlFogTableOff",
+  "evidence": "similar to libnaomik2.lib:nlfog (0.909)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1ecce0",
+  "refs": 4,
+  "unit": null,
+  "name": "nlFogVertexColor",
+  "evidence": "similar to libnaomik2.lib:nlfog (0.951)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1ecd20",
+  "refs": 2,
+  "unit": null,
+  "name": "nlFogDensity",
+  "evidence": "position inside module nlfog",
+  "confidence": "medium"
+ },
+ {
+  "address": "0xc1ecd30",
+  "refs": 2,
+  "unit": null,
+  "name": "nlFogTableSet",
+  "evidence": "position inside module nlfog",
+  "confidence": "medium"
+ },
+ {
+  "address": "0xc1ecd40",
+  "refs": 2,
+  "unit": null,
+  "name": "nlFogDensityF",
+  "evidence": "similar to libnaomik2.lib:nlfog (0.815)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1ecda0",
+  "name": "nlLightInit",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nllight",
+  "refs": 4
+ },
+ {
+  "address": "0xc1ed250",
+  "refs": 2,
+  "unit": null,
+  "name": "nlSetPaletteData",
+  "evidence": "similar to libnaomik2.lib:nlcmnPalette (0.679)",
+  "confidence": "medium"
+ },
+ {
+  "address": "0xc1ed310",
+  "name": "nlCalcPoint",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlxmtr",
+  "refs": 2
+ },
+ {
+  "address": "0xc1ed370",
+  "name": "nlCalcVector",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlxmtr",
+  "refs": 2
+ },
+ {
+  "address": "0xc1ed4e0",
+  "name": "nlGetMatrix",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlxmtr",
+  "refs": 11
+ },
+ {
+  "address": "0xc1ed730",
+  "name": "nlInitMatrix",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlxmtr",
+  "refs": 6
+ },
+ {
+  "address": "0xc1ed9f0",
+  "name": "nlLookAt",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlxmtr",
+  "refs": 7
+ },
+ {
+  "address": "0xc1edc40",
+  "name": "nlLoadMatrix",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlxmtr",
+  "refs": 14
+ },
+ {
+  "address": "0xc1edf50",
+  "name": "nlMatrixMode",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlxmtr",
+  "refs": 20
+ },
+ {
+  "address": "0xc1edfa0",
+  "name": "nlMultiMatrix",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlxmtr",
+  "refs": 2
+ },
+ {
+  "address": "0xc1ee360",
+  "name": "nlPopMatrix",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlxmtr",
+  "refs": 24
+ },
+ {
+  "address": "0xc1ee3b0",
+  "name": "nlPushMatrix",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlxmtr",
+  "refs": 23
+ },
+ {
+  "address": "0xc1ee580",
+  "name": "nlRotateAX",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlxmtr",
+  "refs": 9
+ },
+ {
+  "address": "0xc1ee730",
+  "name": "nlRotateAY",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlxmtr",
+  "refs": 11
+ },
+ {
+  "address": "0xc1ee7f0",
+  "name": "nlRotateAZ",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlxmtr",
+  "refs": 10
+ },
+ {
+  "address": "0xc1eea50",
+  "name": "nlScaleV",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlxmtr",
+  "refs": 6
+ },
+ {
+  "address": "0xc1eeb10",
+  "name": "nlTranslate",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlxmtr",
+  "refs": 6
+ },
+ {
+  "address": "0xc1eeb40",
+  "name": "nlTranslateV",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlxmtr",
+  "refs": 10
+ },
+ {
+  "address": "0xc1eeb60",
+  "name": "nlUnitMatrix",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlxmtr",
+  "refs": 35
+ },
+ {
+  "address": "0xc1eeef0",
+  "name": "nlUnitVector",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlvect",
+  "refs": 2
+ },
+ {
+  "address": "0xc1ef120",
+  "refs": 6,
+  "unit": null,
+  "name": "nlMakeModelViewProjectMatrix",
+  "evidence": "similar to libnaomik2.lib:nlproj (0.909)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1ef170",
+  "refs": 6,
+  "unit": null,
+  "name": "nlShiftPerspective",
+  "evidence": "similar to libnaomik2.lib:nlproj (0.815)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1ef190",
+  "refs": 8,
+  "unit": null,
+  "name": null,
+  "evidence": "one of module nlproj: nlPerspective, nlPerspectiveX, nlPerspective_L, nlPerspectiveX_L",
+  "confidence": "candidates"
+ },
+ {
+  "address": "0xc1ef410",
+  "refs": 6,
+  "unit": null,
+  "name": null,
+  "evidence": "one of module nlproj: nlPerspective, nlPerspectiveX, nlPerspective_L, nlPerspectiveX_L",
+  "confidence": "candidates"
+ },
+ {
+  "address": "0xc1efa40",
+  "refs": 4,
+  "unit": null,
+  "name": "nlProjectScreen",
+  "evidence": "similar to libnaomik2.lib:nlproj (0.992)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1effc0",
+  "refs": 6,
+  "unit": null,
+  "name": "nlScreenPoint",
+  "evidence": "similar to libnaomik2.lib:nlproj (0.959)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1f0084",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "closest wsBufGetWrPos (0.353)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f0170",
+  "refs": 6,
+  "unit": null,
+  "name": null,
+  "evidence": "closest buSetPrintFunc (0.667)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f0410",
+  "refs": 4,
+  "unit": null,
+  "name": null,
+  "evidence": "closest vmsfs_c_fiber1 (1.0)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f0500",
+  "refs": 5,
+  "unit": null,
+  "name": null,
+  "evidence": "closest buDisableServer (0.509)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f0750",
+  "refs": 2,
+  "unit": null,
+  "name": "nlDispStripInit",
+  "evidence": "similar to libstripk2.lib:nlstrip (0.857)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1f0a30",
+  "refs": 21,
+  "unit": null,
+  "name": "nlObjPutLoadTexture",
+  "evidence": "similar to libnlobj.lib:nlobjtex (0.915)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1f0db0",
+  "name": "nlObjPutMvInit",
+  "evidence": "linked",
+  "unit": "lib_nlobj_nlobjmv",
+  "refs": 2
+ },
+ {
+  "address": "0xc1f0dd0",
+  "name": "nlObjPutMvSetIntensity",
+  "evidence": "linked",
+  "unit": "lib_nlobj_nlobjmv",
+  "refs": 2
+ },
+ {
+  "address": "0xc1f0de0",
+  "name": "nlObjPutMvSetMode",
+  "evidence": "linked",
+  "unit": "lib_nlobj_nlobjmv",
+  "refs": 2
+ },
+ {
+  "address": "0xc1f0e70",
+  "refs": 2,
+  "unit": null,
+  "name": "nlObjPutMvClosedVolume",
+  "evidence": "similar to libnlobj.lib:nlobjmv (0.72)",
+  "confidence": "medium"
+ },
+ {
+  "address": "0xc1f0f50",
+  "name": "nlObjPutInit",
+  "evidence": "linked",
+  "unit": "lib_nlobj_nlobjput",
+  "refs": 6
+ },
+ {
+  "address": "0xc1f1010",
+  "name": "nlObjPut",
+  "evidence": "linked",
+  "unit": "lib_nlobj_nlobjput",
+  "refs": 7
+ },
+ {
+  "address": "0xc1f1040",
+  "name": "nlObjPutUseViewMatrix",
+  "evidence": "linked",
+  "unit": "lib_nlobj_nlobjput",
+  "refs": 6
+ },
+ {
+  "address": "0xc1f1070",
+  "name": "nlObjPutTrnsl",
+  "evidence": "linked",
+  "unit": "lib_nlobj_nlobjput",
+  "refs": 2
+ },
+ {
+  "address": "0xc1f10b0",
+  "name": "nlObjPutUseViewMatrixTrnsl",
+  "evidence": "linked",
+  "unit": "lib_nlobj_nlobjput",
+  "refs": 2
+ },
+ {
+  "address": "0xc1f10e0",
+  "name": "nlObjPutSetGlobalAmbience",
+  "evidence": "linked",
+  "unit": "lib_nlobj_nlobjput",
+  "refs": 2
+ },
+ {
+  "address": "0xc1f1140",
+  "name": "nlObjPutSetLightDirectionV",
+  "evidence": "linked",
+  "unit": "lib_nlobj_nlobjput",
+  "refs": 2
+ },
+ {
+  "address": "0xc1f11e0",
+  "name": "nlObjPutSetFadeColor",
+  "evidence": "linked",
+  "unit": "lib_nlobj_nlobjput",
+  "refs": 8
+ },
+ {
+  "address": "0xc1f17b0",
+  "name": "nlInitSprite",
+  "evidence": "linked",
+  "unit": "lib_spr_nlsprite",
+  "refs": 2
+ },
+ {
+  "address": "0xc1f1ae0",
+  "name": "nlSpriteLoadTextureOnce",
+  "evidence": "linked",
+  "unit": "lib_spr_nlsprite",
+  "refs": 2
+ },
+ {
+  "address": "0xc1f1b00",
+  "name": "nlSpriteLoadTexture",
+  "evidence": "linked",
+  "unit": "lib_spr_nlsprite",
+  "refs": 12
+ },
+ {
+  "address": "0xc1f1ee0",
+  "name": "nlSpriteSetImaginaryScreenSize",
+  "evidence": "linked",
+  "unit": "lib_spr_nlsprite",
+  "refs": 2
+ },
+ {
+  "address": "0xc1f1f10",
+  "name": "nlSprPut",
+  "evidence": "linked",
+  "unit": "lib_spr_nlsprite",
+  "refs": 16
+ },
+ {
+  "address": "0xc1f2370",
+  "name": "nlSpriteChangePalette",
+  "evidence": "linked",
+  "unit": "lib_spr_nlsprite",
+  "refs": 2
+ },
+ {
+  "address": "0xc1f2b20",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "closest cmd_seeksec (0.258)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f2cb0",
+  "refs": 9,
+  "unit": null,
+  "name": null,
+  "evidence": "closest gdFsSearchName (0.308)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f2df0",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "closest nlDispStripTrnslX (0.387)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f2f50",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "closest wsSetSubcommand (0.459)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f30c0",
+  "refs": 6,
+  "unit": null,
+  "name": null,
+  "evidence": "closest buFbrExit (0.3)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f31c0",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "closest ufGetFreeBlock (0.333)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f3240",
+  "refs": 11,
+  "unit": null,
+  "name": null,
+  "evidence": "closest mpdrv_swapmode (0.374)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f3340",
+  "refs": 12,
+  "unit": null,
+  "name": null,
+  "evidence": "closest pdTmrSetTimeCallback (0.282)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f35d0",
+  "refs": 3,
+  "unit": null,
+  "name": null,
+  "evidence": "closest gdFsExecServerG (0.293)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f3860",
+  "refs": 9,
+  "unit": null,
+  "name": "syMmuInit",
+  "evidence": "similar to shinobi.lib:syMmu_ (0.6)",
+  "confidence": "medium"
+ },
+ {
+  "address": "0xc1f3870",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "closest vmsio_exit (0.8)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f4570",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "closest syTmrInt1Set (1.0)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f45f0",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "closest buSetPrintFunc (0.667)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f52a0",
+  "refs": 2,
+  "unit": null,
+  "name": "nlDispStripInit",
+  "evidence": "similar to libstripk2.lib:nlstrip (0.857)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1f52b0",
+  "refs": 4,
+  "unit": null,
+  "name": "nlDispStripCoordMode",
+  "evidence": "position inside module nlstrip",
+  "confidence": "medium"
+ },
+ {
+  "address": "0xc1f52c0",
+  "refs": 2,
+  "unit": null,
+  "name": "nlDispStripLoadTexture",
+  "evidence": "similar to libstripk2.lib:nlstrip (0.857)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1f5550",
+  "refs": 4,
+  "unit": null,
+  "name": "nlDispStripTrnsl",
+  "evidence": "similar to libstripk2.lib:nlstrip (0.857)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1f55c0",
+  "refs": 2,
+  "unit": null,
+  "name": "nlDispStripTexTrnsl",
+  "evidence": "similar to libstripk2.lib:nlstrip (0.909)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1f7430",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "closest syBtFntGetAddr (0.375)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f74f0",
+  "refs": 11,
+  "unit": null,
+  "name": "nlaReadROMDMA",
+  "evidence": "similar to libam.lib:nlam (0.951)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1f7570",
+  "refs": 11,
+  "unit": null,
+  "name": "kmSetStripLength",
+  "evidence": "similar to libkamui.lib:kmvertex_kamui_lib_ (0.6)",
+  "confidence": "medium"
+ },
+ {
+  "address": "0xc1f7fa0",
+  "refs": 2,
+  "unit": null,
+  "name": "nlaLoadProgramMultiSlave",
+  "evidence": "similar to libam.lib:nlam (0.667)",
+  "confidence": "medium"
+ },
+ {
+  "address": "0xc1f8390",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "one of module nlam: nlaCheckWaitROMDMA, nlaGetROMCRC, nlaLoadBootService, nlaLoadBootServiceDebug, nlaInitCreditData, nlaCredirServiceModeChange, nlaCreditProcess, nlaGetTestModeCount, nlaSetTestModeCount, nlaJumpGameMode, nlaJumpTestMode, nlaJumpGameTestMode, nlaGetBootFuncitonAddress, nlaJumpMultiGame, nlaLoadProgramMultiSlave, nlaGetSerialID, nlaGetMemoryDeviceInfo, nlaVersionInfo, nlaCreditConfForce, nlaSetSystemFlagForce, nlaGetSystemFlag, nlaCheckReleaseBootROM, nlaGetTotalTime, nlaInitSystemBoot, nlaInitSystemSimpleBoot",
+  "confidence": "candidates"
+ },
+ {
+  "address": "0xc1f8980",
+  "refs": 2,
+  "unit": null,
+  "name": "nlaInitSystem",
+  "evidence": "similar to libam.lib:nlam (0.933)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1f89d0",
+  "refs": 2,
+  "unit": null,
+  "name": "nlaGetBootFlag",
+  "evidence": "similar to libam.lib:nlam (0.815)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1f89f0",
+  "refs": 2,
+  "unit": null,
+  "name": "nlaPutLED",
+  "evidence": "similar to libam.lib:nlam (0.933)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1f8a00",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "one of module nlam: nlaGetCreditConf, nlaGetCreditData",
+  "confidence": "candidates"
+ },
+ {
+  "address": "0xc1f8a90",
+  "refs": 4,
+  "unit": null,
+  "name": "nlaGetCreditDataP",
+  "evidence": "similar to libam.lib:nlam (0.953)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1f8bb0",
+  "refs": 3,
+  "unit": null,
+  "name": null,
+  "evidence": "one of module nlam: nlaGetCreditSound, nlaChangeCreditSequence, nlaCheckCreditEnough, nlaUpdateEEPROM, nlaUpdateEEPROMBootDefault, nlaGetBootID, nlaGetBackupData, nlaBackupSystemDataClear, nlaBackupClear, nlaInitUserBackup, nlaInitUserEEPROM",
+  "confidence": "candidates"
+ },
+ {
+  "address": "0xc1f8bd0",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "one of module nlam: nlaGetCreditSound, nlaChangeCreditSequence, nlaCheckCreditEnough, nlaUpdateEEPROM, nlaUpdateEEPROMBootDefault, nlaGetBootID, nlaGetBackupData, nlaBackupSystemDataClear, nlaBackupClear, nlaInitUserBackup, nlaInitUserEEPROM",
+  "confidence": "candidates"
+ },
+ {
+  "address": "0xc1f8e10",
+  "refs": 4,
+  "unit": null,
+  "name": null,
+  "evidence": "one of module nlam: nlaGetCreditSound, nlaChangeCreditSequence, nlaCheckCreditEnough, nlaUpdateEEPROM, nlaUpdateEEPROMBootDefault, nlaGetBootID, nlaGetBackupData, nlaBackupSystemDataClear, nlaBackupClear, nlaInitUserBackup, nlaInitUserEEPROM",
+  "confidence": "candidates"
+ },
+ {
+  "address": "0xc1f8ea0",
+  "refs": 2,
+  "unit": null,
+  "name": "nlaInitUserBackup",
+  "evidence": "similar to libam.lib:nlam (0.769)",
+  "confidence": "medium"
+ },
+ {
+  "address": "0xc1f8ec0",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "one of module nlam: nlaGetCreditSound, nlaChangeCreditSequence, nlaCheckCreditEnough, nlaUpdateEEPROM, nlaUpdateEEPROMBootDefault, nlaGetBootID, nlaGetBackupData, nlaBackupSystemDataClear, nlaBackupClear, nlaInitUserBackup, nlaInitUserEEPROM",
+  "confidence": "candidates"
+ },
+ {
+  "address": "0xc1f8ed0",
+  "refs": 4,
+  "unit": null,
+  "name": "nlaUpdateUserBackup",
+  "evidence": "similar to libam.lib:nlam (0.933)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1f8ee0",
+  "refs": 2,
+  "unit": null,
+  "name": "nlaUpdateUserEEPROM",
+  "evidence": "similar to libam.lib:nlam (0.933)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc1f8f60",
+  "refs": 6,
+  "unit": null,
+  "name": null,
+  "evidence": "closest nlBlurInit (0.237)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f9170",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "closest vmsio_init (0.75)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f92e0",
+  "refs": 2,
+  "unit": null,
+  "name": null,
+  "evidence": "closest nlaJAMMACreditInit (0.581)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1f949c",
+  "refs": 2,
+  "unit": "tu_0c1f949c",
+  "name": "nlaUpdateSystemBackup",
+  "evidence": "similar to libjamma.lib:nlacred (0.74)",
+  "confidence": "medium"
+ },
+ {
+  "address": "0xc1fa370",
+  "name": "nlaNRSDecodeRead",
+  "evidence": "linked",
+  "unit": "lib_nlasec_nlasec",
+  "refs": 3
+ },
+ {
+  "address": "0xc1fa450",
+  "name": "s3lInit",
+  "evidence": "linked",
+  "unit": "lib_s3lib_s3lib",
+  "refs": 2
+ },
+ {
+  "address": "0xc1fa6a0",
+  "name": "s3lSetStereoPort",
+  "evidence": "linked",
+  "unit": "lib_s3lib_s3lib",
+  "refs": 2
+ },
+ {
+  "address": "0xc1fa8b0",
+  "name": "s3lSetVolume",
+  "evidence": "linked",
+  "unit": "lib_s3lib_s3lib",
+  "refs": 2
+ },
+ {
+  "address": "0xc1faec0",
+  "name": "s3lStartPort",
+  "evidence": "linked",
+  "unit": "lib_s3lib_s3lib",
+  "refs": 2
+ },
+ {
+  "address": "0xc1faf10",
+  "name": "s3lStopPort",
+  "evidence": "linked",
+  "unit": "lib_s3lib_s3lib",
+  "refs": 2
+ },
+ {
+  "address": "0xc1faf80",
+  "name": "s3lIntr",
+  "evidence": "linked",
+  "unit": "lib_s3lib_s3lib",
+  "refs": 2
+ },
+ {
+  "address": "0xc1fb400",
+  "name": "divls",
+  "evidence": "linked",
+  "unit": "lib_sh4nlfzn___divls",
+  "refs": 100
+ },
+ {
+  "address": "0xc1fb4b4",
+  "name": "divlu",
+  "evidence": "linked",
+  "unit": "lib_sh4nlfzn___divlu",
+  "refs": 17
+ },
+ {
+  "address": "0xc1fb55c",
+  "name": "divws",
+  "evidence": "linked",
+  "unit": "lib_sh4nlfzn___divws",
+  "refs": 2
+ },
+ {
+  "address": "0xc1fb5ac",
+  "name": "modls",
+  "evidence": "linked",
+  "unit": "lib_sh4nlfzn___modls",
+  "refs": 281
+ },
+ {
+  "address": "0xc1fb674",
+  "name": "modlu",
+  "evidence": "linked",
+  "unit": "lib_sh4nlfzn___modlu",
+  "refs": 69
+ },
+ {
+  "address": "0xc1fb72c",
+  "name": "modws",
+  "evidence": "linked",
+  "unit": "lib_sh4nlfzn___modws",
+  "refs": 2
+ },
+ {
+  "address": "0xc1fb794",
+  "name": "quick_evn_mvn",
+  "evidence": "linked",
+  "unit": "lib_sh4nlfzn___q_fmvn",
+  "refs": 49
+ },
+ {
+  "address": "0xc1fb7a0",
+  "name": "quick_odd_mvn",
+  "evidence": "linked",
+  "unit": "lib_sh4nlfzn___q_fmvn",
+  "refs": 1393
+ },
+ {
+  "address": "0xc1fb838",
+  "name": "quick_mvn",
+  "evidence": "linked",
+  "unit": "lib_sh4nlfzn___q_mvn",
+  "refs": 1288
+ },
+ {
+  "address": "0xc1fb8f8",
+  "name": "slow_mvn",
+  "evidence": "linked",
+  "unit": "lib_sh4nlfzn___s_mvn",
+  "refs": 23
+ },
+ {
+  "address": "0xc1fb930",
+  "refs": 2,
+  "unit": "decomp_02_lib",
+  "name": null,
+  "evidence": "closest syFbrSetIntStack (0.5)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1fb940",
+  "refs": 4,
+  "unit": null,
+  "name": null,
+  "evidence": "closest vmsfs_fread (0.197)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc1fba00",
+  "name": "memset",
+  "evidence": "linked",
+  "unit": "lib_sh4nlfzn_memset",
+  "refs": 127
+ },
+ {
+  "address": "0xc1fba18",
+  "name": "sprintf",
+  "evidence": "linked",
+  "unit": "lib_sh4nlfzn_sprintf",
+  "refs": 12
+ },
+ {
+  "address": "0xc1fba54",
+  "name": "strcpy",
+  "evidence": "linked",
+  "unit": "lib_sh4nlfzn_strcpy",
+  "refs": 2
+ },
+ {
+  "address": "0xc1fba68",
+  "name": "strlen",
+  "evidence": "linked",
+  "unit": "lib_sh4nlfzn_strlen",
+  "refs": 2
+ },
+ {
+  "address": "0xc1fba78",
+  "name": "vsprintf",
+  "evidence": "linked",
+  "unit": "lib_sh4nlfzn_vsprintf",
+  "refs": 1
+ },
+ {
+  "address": "0xc204820",
+  "name": "nlAtan256",
+  "evidence": "linked",
+  "unit": "lib_naomik2_nlmatha",
+  "refs": 2
+ },
+ {
+  "address": "0xc204920",
+  "name": "nlObjPutCheapEnvMap",
+  "evidence": "linked",
+  "unit": "lib_nlobj_nlobjcem",
+  "refs": 2
+ },
+ {
+  "address": "0xc204a74",
+  "name": "pdLcdGetDirection",
+  "evidence": "linked",
+  "unit": "lib_shinobi_lcd_",
+  "refs": 2
+ },
+ {
+  "address": "0xc204ae0",
+  "name": "pdVmsLcdWrite",
+  "evidence": "linked",
+  "unit": "lib_shinobi_lcdvms_",
+  "refs": 2
+ },
+ {
+  "address": "0xc204b90",
+  "name": "pdVmsLcdIsReady",
+  "evidence": "linked",
+  "unit": "lib_shinobi_lcdvms_",
+  "refs": 2
+ },
+ {
+  "address": "0xc204c40",
+  "name": "pdInitPeripheral",
+  "evidence": "linked",
+  "unit": "lib_shinobi_pdmain_",
+  "refs": 2
+ },
+ {
+  "address": "0xc205036",
+  "name": "pdExecPeripheralServer",
+  "evidence": "linked",
+  "unit": "lib_shinobi_pdmain_",
+  "refs": 1
+ },
+ {
+  "address": "0xc20513c",
+  "name": "pdGetPeripheral",
+  "evidence": "linked",
+  "unit": "lib_shinobi_pdmain_",
+  "refs": 2
+ },
+ {
+  "address": "0xc2051b2",
+  "name": "pdGetPeripheralInfo",
+  "evidence": "linked",
+  "unit": "lib_shinobi_pdmain_",
+  "refs": 3
+ },
+ {
+  "address": "0xc205304",
+  "name": "pdVibMxIsReady",
+  "evidence": "linked",
+  "unit": "lib_shinobi_pdvibmx_",
+  "refs": 3
+ },
+ {
+  "address": "0xc20536e",
+  "name": "pdVibMxStart",
+  "evidence": "linked",
+  "unit": "lib_shinobi_pdvibmx_",
+  "refs": 2
+ },
+ {
+  "address": "0xc20539c",
+  "name": "pdVibMxStop",
+  "evidence": "linked",
+  "unit": "lib_shinobi_pdvibmx_",
+  "refs": 2
+ },
+ {
+  "address": "0xc2053dc",
+  "name": "buInit",
+  "evidence": "linked",
+  "unit": "lib_shinobi_vmsapi_",
+  "refs": 2
+ },
+ {
+  "address": "0xc205664",
+  "name": "buSetCompleteCallback",
+  "evidence": "linked",
+  "unit": "lib_shinobi_vmsapi_",
+  "refs": 2
+ },
+ {
+  "address": "0xc2056fe",
+  "name": "buUnmount",
+  "evidence": "linked",
+  "unit": "lib_shinobi_vmsapi_",
+  "refs": 8
+ },
+ {
+  "address": "0xc20581a",
+  "name": "buGetDiskFree",
+  "evidence": "linked",
+  "unit": "lib_shinobi_vmsapi_",
+  "refs": 11
+ },
+ {
+  "address": "0xc205908",
+  "name": "buFindExecFile",
+  "evidence": "linked",
+  "unit": "lib_shinobi_vmsapi_",
+  "refs": 4
+ },
+ {
+  "address": "0xc205c14",
+  "name": "buIsExistFile",
+  "evidence": "linked",
+  "unit": "lib_shinobi_vmsapi_",
+  "refs": 14
+ },
+ {
+  "address": "0xc205c42",
+  "name": "buGetFileInfo",
+  "evidence": "linked",
+  "unit": "lib_shinobi_vmsapi_",
+  "refs": 3
+ },
+ {
+  "address": "0xc205d04",
+  "name": "buGetFileSize",
+  "evidence": "linked",
+  "unit": "lib_shinobi_vmsapi_",
+  "refs": 2
+ },
+ {
+  "address": "0xc205d32",
+  "name": "buDefragDisk",
+  "evidence": "linked",
+  "unit": "lib_shinobi_vmsapi_",
+  "refs": 2
+ },
+ {
+  "address": "0xc205d98",
+  "name": "buLoadFile",
+  "evidence": "linked",
+  "unit": "lib_shinobi_vmsapi_",
+  "refs": 2
+ },
+ {
+  "address": "0xc205df0",
+  "name": "buSaveFile",
+  "evidence": "linked",
+  "unit": "lib_shinobi_vmsapi_",
+  "refs": 2
+ },
+ {
+  "address": "0xc205e4e",
+  "name": "buSaveExecFile",
+  "evidence": "linked",
+  "unit": "lib_shinobi_vmsapi_",
+  "refs": 2
+ },
+ {
+  "address": "0xc205eac",
+  "name": "buLoadFileEx",
+  "evidence": "linked",
+  "unit": "lib_shinobi_vmsapi_",
+  "refs": 2
+ },
+ {
+  "address": "0xc205f02",
+  "name": "buRewriteExecFile",
+  "evidence": "linked",
+  "unit": "lib_shinobi_vmsapi_",
+  "refs": 2
+ },
+ {
+  "address": "0xc205fec",
+  "name": "buMountDisk",
+  "evidence": "linked",
+  "unit": "lib_shinobi_vmsapi_",
+  "refs": 8
+ },
+ {
+  "address": "0xc206030",
+  "name": "buMakeBackupFileImage",
+  "evidence": "linked",
+  "unit": "lib_shinobi_vmsutil_",
+  "refs": 2
+ },
+ {
+  "address": "0xc20627c",
+  "name": "buAnalyzeBackupFileImage",
+  "evidence": "linked",
+  "unit": "lib_shinobi_vmsutil_",
+  "refs": 2
+ },
+ {
+  "address": "0xc20643e",
+  "refs": 2,
+  "unit": "tu_0c206414",
+  "name": "buExitForce",
+  "evidence": "similar to shinobi.lib:vmsapi_ (0.606)",
+  "confidence": "medium"
+ },
+ {
+  "address": "0xc206452",
+  "refs": 1,
+  "unit": "tu_0c206414",
+  "name": "nlaUpdateUserEEPROM",
+  "evidence": "similar to libam.lib:nlam (0.875)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc206566",
+  "refs": 2,
+  "unit": "tu_0c206540",
+  "name": null,
+  "evidence": "closest syTmrGetCount (1.0)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc206570",
+  "refs": 2,
+  "unit": "tu_0c206540",
+  "name": null,
+  "evidence": "closest syTmrDiffCount (1.0)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc206576",
+  "refs": 2,
+  "unit": "tu_0c206540",
+  "name": "syTmrCountToMicro",
+  "evidence": "similar to shinobi.lib:sh4tmr_ (1.0)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc2066f4",
+  "refs": 2,
+  "unit": "tu_0c206540",
+  "name": "syTmrGenStart",
+  "evidence": "similar to shinobi.lib:sh4tmr_ (1.0)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc2067c4",
+  "refs": 2,
+  "unit": "tu_0c206540",
+  "name": "syTmrGenSetClock",
+  "evidence": "similar to shinobi.lib:sh4tmr_ (0.763)",
+  "confidence": "medium"
+ },
+ {
+  "address": "0xc2067fe",
+  "refs": 1,
+  "unit": "tu_0c206540",
+  "name": "syTmrGenSetCount",
+  "evidence": "similar to shinobi.lib:sh4tmr_ (0.839)",
+  "confidence": "high"
+ },
+ {
+  "address": "0xc206818",
+  "refs": 1,
+  "unit": "tu_0c206540",
+  "name": null,
+  "evidence": "closest syTmrGetCount (1.0)",
+  "confidence": "unknown"
+ },
+ {
+  "address": "0xc2081e0",
+  "name": "kmSetVertex",
+  "evidence": "linked",
+  "unit": "lib_kamui2_kmSetVertex_km2vtxlst_lib_",
+  "refs": 7
+ },
+ {
+  "address": "0xc208260",
+  "name": "kmStartVertexStrip",
+  "evidence": "linked",
+  "unit": "lib_kamui2_kmStartVertexStrip_km2vtxlst_lib_",
+  "refs": 10
+ },
+ {
+  "address": "0xc2082e0",
+  "name": "kmProcessVertexRenderState",
+  "evidence": "linked",
+  "unit": "lib_kamui2_kmProcessVertexRenderState_km2vtxprm_lib_",
+  "refs": 6
+ },
+ {
+  "address": "0xc2089a0",
+  "name": "kmSetModifierRenderState",
+  "evidence": "linked",
+  "unit": "lib_kamui2_kmSetModifierRenderState_km2vtxprm_lib_",
+  "refs": 3
+ },
+ {
+  "address": "0xc208a20",
+  "name": "kmSetVertexRenderState",
+  "evidence": "linked",
+  "unit": "lib_kamui2_kmSetVertexRenderState_km2vtxprm_lib_",
+  "refs": 15
+ }
+]

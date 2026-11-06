@@ -63,37 +63,41 @@ game's init path and N frames headless (under node and natively).
    still need tracing.
 6. Saves go to `localStorage`/IndexedDB on the web and to a file natively.
 
-### Phase 3: playable and correct 🔄
+### Phase 3: playable and correct ✅
 Playable end to end in the browser (README). Correctness is checked against
 the retail executable in a headless emulator (the oracle, BOOT_NOTES.md
-"Oracle pass"); scripted runs match frame for frame. Open: the randomised
-oracle fuzz pass (`port/tools/oracle/fuzz.py`).
+"Oracle pass"). The randomised fuzz pass (`port/tools/oracle/fuzz.py`,
+ORACLE_FUZZ.md) matched 416 fight seeds and 36 whole arcade runs (about 1.1
+million frames, through Abyss) frame for frame, and every sound command.
+Not yet in the fuzz scenarios: training, the shop, options and versus.
 1. Boot through title, character select and a versus fight against the CPU.
 2. Compare frames against PCSX2 at fixed inputs (the logic-state hash plus
    screenshots).
 3. Use the C-less functions and the remaining placeholders (C_COVERAGE.md)
    to set the order of matching work that matters for gameplay.
 
-### Phase 4: fixes for PS2 gripes (platform side done; game-side items open)
+### Phase 4: fixes for PS2 gripes ✅
 See PS2_GRIPES.md. In order:
 | Fix | Cost | Status |
 |---|---|---|
 | Progressive 60 fps output, clean scaling | falls out of phase 2 | done: fit / integer / stretch, nearest / sharp / smooth, sprite filtering, scanline / CRT shader (USER_GUIDE.md, Video) |
-| Low-latency input (poll right before the logic step), full remapping | small | done: input is latched and polled before every step, latency is measured and shown, keyboard and gamepad remapping for 2 players, touch pad (USER_GUIDE.md, Controls) |
+| Low-latency input (poll right before the logic step), full remapping | small | done: input is latched and polled before every step, keyboard and gamepad remapping for 2 players, touch pad (USER_GUIDE.md, Controls) |
+| Run-ahead: show each press one frame sooner | medium | done: `port/host/runahead.c`, always on; state-hash identical with it on and off (USER_GUIDE.md, Input latency) |
+| Low-latency display | small | done: `glFinish` after the swap with v-sync (native), a desynchronized WebGL context (web) |
 | Frame pacing: fixed 60 Hz logic on any display | small | done: refresh snapping, a draw only when a step ran, frame skip (draws only), pause when hidden |
 | No load times | falls out of phase 2 | |
 | Clean audio resampling; check whether the music cut-out still happens with the port's own ADX player | small | output: 48 kHz AudioWorklet on the web, music and effects volumes (AUDIO.md section 5) |
-| "Unlock everything" option | small | done (`game.unlock_all`, `?nounlock`) |
-| **Arcade accuracy** toggles: frame data and boxes, damage and hit data, CPU AI, loaded from the user's own `mvsc2.zip` (ARCADE_DIFF.md §5) | medium | done: `arcade.frame_data` / `arcade.damage` / `arcade.cpu_ai` (port/host/arcade.c, fe_arcade.c; ARCADE_DIFF.md §5-6) |
+| Dreamcast sound effects: the common effects at 11-16 kHz instead of the PS2's 8 kHz | medium | done: from the player's own Dreamcast disc when given (`port/audio/dcse.c`, AUDIO.md) |
+| Unlock everything | small | done: always on (`game.unlock_all`) |
+| Arcade rules | medium | done: the code differences (d-g) and the arcade's float rounding are always on; the ROM-table toggles (a-c) are off, because the arcade program does not use those tables (ARCADE_DIFF.md §5, §10-11) |
 | Assist invulnerability and the counter glitch: locate both in code and diff against the NAOMI decomp | medium | done: the PS2 code matches the NAOMI code in both paths; the differences are in the data, which `arcade.frame_data` restores (ARCADE_DIFF.md §7) |
-| Optional "arcade slowdown" toggle | small | not done: NAOMI slowdown is not a code feature, it is CPU overrun of the 60 Hz frame (ARCADE_DIFF.md §8) |
+| Optional "arcade slowdown" toggle | small | not applicable: NAOMI slowdown is not a code feature, it is CPU overrun of the 60 Hz frame (ARCADE_DIFF.md §8) |
 | PWA: installable, offline after the first load | small | done (manifest, icons, service worker for `mvc2.*`) |
 
 ### Phase 5: online ⬜
 Rollback netcode over WebRTC on the web and UDP natively. It relies on the
 deterministic logic step and on save/restore of the game state, which is a
-plain memory region on wasm32. Both peers must use the same arcade toggles,
-so their hash goes into the handshake.
+plain memory region on wasm32. Run-ahead's snapshot (`ra_save` / `ra_restore`) is that save/restore.
 
 ### Later
 - A 64-bit native build: a 32-bit pointer arena, or `u32` handle fields

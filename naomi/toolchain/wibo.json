@@ -1,0 +1,18 @@
+{
+  "version": "1.2.0",
+  "source": "https://github.com/decompals/wibo",
+  "assets": {
+    "Linux-x86_64": {
+      "name": "wibo-x86_64",
+      "sha256": "13f86a2d618f0dbe67179d349625345eabf9b46450295cb4c904e49f6aff85af",
+      "path": "toolchain/wibo/wibo-x86_64"
+    },
+    "Darwin": {
+      "name": "wibo-macos",
+      "sha256": "2b3000ef6a7a490c24ccd71967735ae0005e218922e51806cca1b8d77fd3cf7c",
+      "path": "toolchain/wibo/wibo-macos"
+    }
+  },
+  "bundled": true,
+  "wine_crt_source": "https://github.com/encounter/winedll/tree/2026-07-10"
+}

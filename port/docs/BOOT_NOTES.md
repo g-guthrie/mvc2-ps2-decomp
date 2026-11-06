@@ -146,8 +146,8 @@ the save loader `func_0038B8C0` (src/r3_30_d.c):
 | `D_004D179A` | shop level counter (0..7; saved at save +0x24) | at least 7 |
 
 The save block itself is `D_0058C020` (loader copies: +0x14..+0x20 → g+0x30..0x3C,
-+0x44/+0x48 → `D_004F7FB4/B8`, +0x24 → `D_004D179A`).  Off: `--no-unlock` (native,
-mvc2 and mvc2_host), `?nounlock` or `?unlock=0` on the web page;
++0x44/+0x48 → `D_004F7FB4/B8`, +0x24 → `D_004D179A`).  Always on for players; `--no-unlock` (native,
+mvc2 and mvc2_host) turns it off for testing;
 `MVC2_UNLOCK_PARTS` (bitmask 1 chars, 2 colours, 4 shop items, 8 level)
 for debugging.  Proof: `private/converted/boot/unlock/charsel_front.png`
 (all 56 portraits, no "?").

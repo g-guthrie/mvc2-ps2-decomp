@@ -1,6 +1,19 @@
 # Working on this repository
 
-Rules for any agent (or person) adding matches. CI cannot compile, so the
+The repository holds three projects. Each has its own rules:
+
+- **PS2 decompilation** (`src/`, `config/`, `tools/`): this file, and
+  [DECOMP.md](DECOMP.md).
+- **Port** (`port/`): [port/docs/BOOT_NOTES.md](port/docs/BOOT_NOTES.md) for how
+  it runs the game's code, and the rule that player-facing behaviour follows
+  the arcade. PS2 behaviour is only for the oracle comparison
+  (`MVC2_PS2_EXACT`). Never add an option that makes the game worse.
+- **NAOMI decompilation** (`naomi/`): [naomi/AGENTS.md](naomi/AGENTS.md).
+
+Nothing copyrighted is committed anywhere: no disc images, ROMs, extracted
+assets, compilers or SDK files.
+
+The rest of this file is for adding PS2 matches. CI cannot compile, so the
 checks here are what keep `main` building.
 
 ## Before starting

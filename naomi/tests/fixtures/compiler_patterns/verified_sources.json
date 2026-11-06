@@ -1,0 +1,42 @@
+[
+  {
+    "id": "conditional_compound_pointer",
+    "source": "src/verified/uc1_04.c",
+    "symbol": "_func_0c0a3ee8",
+    "observation": "Inline conditional compound assignment reproduces the complete motion unit; separate branches change generated code.",
+    "replace": "a->f104 += a->b1d2 ? -0.3125f : 0.3125f;",
+    "with": "if (a->b1d2) a->f104 += -0.3125f; else a->f104 += 0.3125f;",
+    "family_query": "f104\\s*=\\s*-?0\\.3125f|f104\\s*\\+=",
+    "family_scope": "Motion acceleration source leads, not a claim that each mismatch has the same cause."
+  },
+  {
+    "id": "structured_else_epilogue",
+    "source": "src/verified/ud1_01.c",
+    "symbol": "_func_0c05f128",
+    "observation": "Structured else after the animation-result branch matches; equivalent early return changes generated code.",
+    "replace": "    } else if(a->b141) {a->b141=0;}",
+    "with": "        return;\n    }\n    if(a->b141) {a->b141=0;}",
+    "family_query": "else\\s+if\\s*\\(\\s*a->b141\\s*\\)",
+    "family_scope": "Sibling actor state-handler source leads; inspect each control-flow graph before applying."
+  },
+  {
+    "id": "motion_compound_lvalues",
+    "source": "src/verified/ud1_01.c",
+    "symbol": "_func_0c05f0ba",
+    "observation": "Four compound motion updates match; expanded read/assign forms change generated code.",
+    "replace": "    a->f52 += a->f92;\n    a->f92 += a->f104;\n    a->f56 += a->f96;\n    a->f96 += a->f108;",
+    "with": "    a->f52 = a->f52 + a->f92;\n    a->f92 = a->f92 + a->f104;\n    a->f56 = a->f56 + a->f96;\n    a->f96 = a->f96 + a->f108;",
+    "family_query": "f52\\s*=\\s*a->f52\\s*\\+\\s*a->f92|f52\\s*\\+=\\s*a->f92",
+    "family_scope": "Shared four-axis motion family; source leads include already exact functions within candidate units."
+  },
+  {
+    "id": "rotation_union_view",
+    "source": "src/verified/tu_0c1d99ec.c",
+    "symbol": "_func_0c1d9a56",
+    "observation": "Existing scalar/array union views reproduce separate switch stores; scalar-only spelling changes the shared tail.",
+    "replace": "case 1:a->angles.array[2]+=256;break;",
+    "with": "case 1:a->angles.scalar.l48+=256;break;",
+    "family_query": "angles\\.(?:scalar\\.l48|array\\[2\\])",
+    "family_scope": "Related rotation lvalue source leads; this does not imply a shared-tail mismatch in every hit."
+  }
+]

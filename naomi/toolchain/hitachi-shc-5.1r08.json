@@ -1,0 +1,148 @@
+{
+  "compiler_id": "shc-v5.1r08",
+  "version": "SH SERIES C/C++ Compiler Ver. 5.1 Release 8 (shc*.exe from NaomiSDK pcv51r08.zip, 1999-07-15); assembler, linker and utilities from 5.0 Release 31",
+  "origin": "Compiler executables (shc*.exe, *.msg, *.off) from NaomiSDK archive.org item, archive/hitachi/pcv51r08.zip (sha256 67092f9b6c750813...); remaining tools from the owner-provided 5.0 Release 31 directory.",
+  "host_format": "Windows PE32 i386",
+  "files": [
+    {
+      "name": "NMAKE.EXE",
+      "size": 68608,
+      "sha256": "9fe0f66ae6840bae179b914cc97b16d74b0c204ab93e09ef956304e2098fc2b8"
+    },
+    {
+      "name": "asmsh.exe",
+      "size": 464384,
+      "sha256": "ae815f0db91c18004fbac68e7ee4bef77c9bcc33ccacbed02a53477b8dd9cbb2"
+    },
+    {
+      "name": "binadj.exe",
+      "size": 7918,
+      "sha256": "f4d16576253599fc9a5179c929e696e3826163709d79687f12c4271466b82ee4"
+    },
+    {
+      "name": "cnvs.exe",
+      "size": 45568,
+      "sha256": "01a7c1d86f5679ef05ebafaebee352593e018208ba4b95f255135f2cad3b549f"
+    },
+    {
+      "name": "dwfcnv.exe",
+      "size": 138752,
+      "sha256": "2f921bc967bb9193f91aa07a4ff817d16c331798495f7a6b06f00a09af3a4a5a"
+    },
+    {
+      "name": "elf2bin.exe",
+      "size": 30720,
+      "sha256": "665f309de1b221ff4b51218b92368b92d5730ed8f8c014b84be1e859ec3f2f51"
+    },
+    {
+      "name": "elfcnv.exe",
+      "size": 83968,
+      "sha256": "76b4f0bc2a2a3a3bf278fff181e3adb09ffec50188f6ed1f5a0312a641a6ab7b"
+    },
+    {
+      "name": "lbr.exe",
+      "size": 102400,
+      "sha256": "06a86aa5e3a8f6708fb5405431677c8bd5e77279f4bef0c5daa3934b55929ea2"
+    },
+    {
+      "name": "lnk.exe",
+      "size": 228864,
+      "sha256": "82660342b4c91437ac278940110a08b96c659a8dd18c0c237dc2c7bdbb21848f"
+    },
+    {
+      "name": "rof2bin.exe",
+      "size": 54784,
+      "sha256": "ba23a8d1bd0a9fa9ba9d81b49319ef28a7ba54f77c465e47b76c9746d0b04a23"
+    },
+    {
+      "name": "s2bin.exe",
+      "size": 13069,
+      "sha256": "255f8e15b68835cd58c1d1af8c728bbac8fbd1511e1d6edaf48884de3c33b8ce"
+    },
+    {
+      "name": "shc.exe",
+      "size": 69632,
+      "sha256": "707dd917024423deceba1028b40e547f8eebad7026489cf452ef5a11a00170cc"
+    },
+    {
+      "name": "shcasm.exe",
+      "size": 233472,
+      "sha256": "abfe28ca481d6490f1b60d00539345df239ad480b966c770dc82989f4e4274cc"
+    },
+    {
+      "name": "shcerr.msg",
+      "size": 10463,
+      "sha256": "24c662f6c9c0443659f8059468c6b43d972340b0e9ee975bb8794a93ced2d644"
+    },
+    {
+      "name": "shcerr.off",
+      "size": 2052,
+      "sha256": "8a45f26d2562fadca71494aca516effeb8c1053313974a3cb2d3fc165cd3dd49"
+    },
+    {
+      "name": "shcfrt.exe",
+      "size": 282624,
+      "sha256": "5c893d8b94b526dbfac51c87e5da5a7e60a948d92739b916289ef14a3a6f2b91"
+    },
+    {
+      "name": "shcgen.exe",
+      "size": 393216,
+      "sha256": "e06255ba7cc7cba08affb969221ecea0e6b890f8d5617cca3f1ef148262840c2"
+    },
+    {
+      "name": "shchlp.msg",
+      "size": 3828,
+      "sha256": "ea482824f22725e4b054d10ad0e0d4aa384f40220a3223b0c9d288b0d3ca3b22"
+    },
+    {
+      "name": "shcmdl.exe",
+      "size": 217088,
+      "sha256": "179c1b18755e378ede7a077cf6c6d6f2313bac57fb1dd0100a5567b943b2efb8"
+    },
+    {
+      "name": "shcpep.exe",
+      "size": 167936,
+      "sha256": "ef82ccced094c0f50cb4d3b126554236614154dab1968c13e29cdb957a349382"
+    },
+    {
+      "name": "shcpp.exe",
+      "size": 69632,
+      "sha256": "67e5c9abfe179757bb98363d66e1383e2ab56f9372c24bcd9831232d448c0467"
+    },
+    {
+      "name": "shcpperr.msg",
+      "size": 9520,
+      "sha256": "4505b1ac1e1793c44f11d18752d0c4f412a0fcb0cfd96494fa866cf87f36a5dd"
+    },
+    {
+      "name": "shcpperr.off",
+      "size": 1268,
+      "sha256": "8b34615a12f5984ce0e6cce70ad8a9a7b322e7e110873ddc40864c30a590f3bc"
+    },
+    {
+      "name": "shcppfrt.exe",
+      "size": 1425408,
+      "sha256": "2fdd99819987b5ea08b8800ae88ffb0422410d832228c7e277305eb6b9923e6f"
+    },
+    {
+      "name": "shcpphlp.msg",
+      "size": 3324,
+      "sha256": "937d9db3c253637a9d56b9e54d6c01476eac7be10eeb53eff6dff5373adceb65"
+    },
+    {
+      "name": "shcprep.exe",
+      "size": 155648,
+      "sha256": "c3879d3785f06f9bba4b8afced4458c8c7f0e370b62482ef2edd8e49de18a578"
+    },
+    {
+      "name": "shcprm.exe",
+      "size": 86016,
+      "sha256": "e3e3ecaa73a32f81b292573617609c85d486169e1fec45b491c45d238897f05c"
+    },
+    {
+      "name": "shctil.exe",
+      "size": 77824,
+      "sha256": "8c3d24c2fedcb041fffe2a32af9860176ef4edfdfc4651348f5360fcacddef6b"
+    }
+  ]
+}

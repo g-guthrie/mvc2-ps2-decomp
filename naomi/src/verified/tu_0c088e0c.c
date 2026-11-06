@@ -1,0 +1,9 @@
+#include "objects.h"
+extern char func_0c02a026(struct Actor *);
+extern void func_0c025900(struct Actor *,char,char),func_0c0442fa(struct Actor *),func_0c0432ca(struct Actor *),func_0c02a0c4(struct Actor *,int,int),func_0c0438de(struct Actor *);
+extern struct Tbl_ub3_01 *dat_0c2f83f8;
+extern struct MotionGlobal_0c2d9260 dat_0c2d9260;
+extern void (*table_0c2424f0[])(struct Actor *,struct ActorSubLaunchState36 *);
+void func_0c088e0c(struct Actor *a,struct ActorSubLaunchState36 *s){table_0c2424f0[a->b7](a,s);}
+void func_0c088e1e(struct Actor *a,struct ActorSubLaunchState36 *s){int zero;if(a->b255==6){a->b3f0=255;a->b3f1=16;}a->b7++;a->b1d4=1;a->s28=40;zero=0;s->b22=10;s->b24=4;s->b23=5;s->target32=a->p20c;s->b25=zero;s->b26=zero;s->b27=zero;s->b29=zero;s->b28=zero;s->b30=zero;a->f92=0;a->f96=0;a->f104=0;a->f108=0;func_0c025900(a,1,a->b2?4:3);a->b1a1=69;a->w1ac=zero;a->b19e=zero;*(unsigned int*)&a->p1c4=zero;dat_0c2f83f8->arr[a->b2]++;func_0c0442fa(a);s->b31=*(unsigned char*)&a->w130;a->b32=1;if(a->b1f9!=2){func_0c0432ca(a);a->b32=zero;a->b1fc=zero;a->f56=a->f41c;}func_0c02a0c4(a,22,(char)a->b32);}
+void func_0c088f14(struct Actor *a,struct ActorSubLaunchState36 *s){unsigned short two=2;float stopped;a->b3f8=two;a->b328=5;a->b3f1=a->b255==6?2:0;func_0c02a026(a);stopped=0;if(a->b14b){float target,velocity;a->b14b=0;a->b1f9=two;target=dat_0c2d9260.f88+13.33333302f;if(!a->b1d2)target=dat_0c2d9260.f8c-13.33333302f;a->f92=(target-a->f52)/32.0f;a->f104=stopped;velocity=12.85714245f;if(a->b32)velocity=8.5714283f;a->f96=velocity;a->f108=-0.5357143f;}a->f52+=a->f92;a->f92+=a->f104;a->f56+=a->f96;a->f96+=a->f108;if(a->f96<0){a->f96=stopped;a->f108=stopped;}if(!--a->s28){int one=1,flags=*(char*)&a->b1fd;if(!flags){flags=one;if(a->f92<0)flags=two;}if(flags&(one<<a->b1d2)){a->b7++;s->b27=flags;s->b29=flags;a->f92=stopped;a->f96=stopped;a->f104=stopped;a->f108=stopped;func_0c02a0c4(a,22,10);}else func_0c0438de(a);}}

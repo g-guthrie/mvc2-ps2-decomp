@@ -1,4 +1,133 @@
-# Decompilation rules
+# PS2 decompilation
+
+How to set up, build and verify the PS2 decompilation, and the rules a match
+must meet. [AGENTS.md](AGENTS.md) is the checklist for adding a function.
+
+## Target
+
+| Item | Value |
+| --- | --- |
+| Serial | `SLUS-20486` |
+| ELF entry point | `0x00100008` |
+| ELF SHA-1 | `dd8558a04891b0b1472ea1d8ae2bb84947ae8937` |
+| ELF SHA-256 | `48ebf907d8149122ca9bd622ed11c290d5f93173078ea5bd570e1ac5566f13d7` |
+| Loaded image | `0x00100000..0x004c2580` (`3,941,760` bytes) |
+| Loaded-image SHA-1 | `a425c36425bbc1072114ea091ac4577c98c59a6a` |
+| Conservative text | `0x00100000..0x00424200` (`3,293,696` bytes) |
+| Initialized data | `0x00424200..0x004c2580` (`648,064` bytes) |
+| BSS | `0x004c2580..0x00634380` (`0x171e00` bytes) |
+| Global pointer | `0x004c7270` |
+
+The [progress graphic](assets/progress.svg) shows the current catalog's matching code coverage.
+[decomp.dev](https://decomp.dev/g-guthrie/mvc2-ps2-decomp) publishes current
+function counts and reconstructed-data coverage. Whole-object compiler
+verification and full-image linkage are separate private build checks.
+Assembly placeholders never count as decompiled source. The current inventory
+contains **20,474 cataloged text spans** after boundary corrections and splitting
+oversized dispatcher entries. Retained assembly residuals, text gaps and
+initialized data remain separately visible in the progress report.
+
+Compiler-in-the-loop evidence currently identifies
+`mwcps2-3.0.3-020716` as the strongest product-build candidate with an `-O3`
+baseline. See [docs/COMPILER.md](docs/COMPILER.md); the exact getter matches do
+not yet discriminate `-O3` from `-O4,p` or prove the retail small-data threshold.
+
+## Setup
+
+Use your own legally obtained NTSC-U PS2 disc dump. For a single-track
+`MODE2/2352` BIN/CUE pair:
+
+```sh
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+make setup BIN="/path/to/game.bin" CUE="/path/to/game.cue"
+make split
+```
+
+`bchunk` and `7z` must be installed for `make setup`. All extracted game data,
+generated assembly, and build output remain ignored.
+
+## Cloud executors
+
+Supply your own build-inputs bundle using the layout in
+[build-inputs/README.md](build-inputs/README.md).
+See [docs/CLOUD_BUILD.md](docs/CLOUD_BUILD.md) for Linux dependencies.
+After creating `.venv` and installing `requirements.txt`, prepare the Mac EE GCC
+runner or Linux dependencies described in [docs/CLOUD_BUILD.md](docs/CLOUD_BUILD.md):
+
+```sh
+.venv/bin/python tools/bootstrap_private_inputs.py --archive /path/to/mvc2-ps2-build-inputs.tar.gz
+. private/build.env
+"$PYTHON" tools/setup_sony29.py
+. private/sony29.env
+make split hybrid test report PYTHON="$PYTHON"
+```
+
+The bootstrap verifies the supplied retail image, both Metrowerks compilers, SN GCC 2.95.2, and EE GCC 2.96,
+selects a host-compatible Wibo, smoke-tests compilation, and supplies the tool
+paths. No private repository access or GitHub authentication is required.
+
+## Exact hybrid relink baseline
+
+The stripped retail image mixes instructions and initialized data inside one
+RWX segment. Until every code/data boundary is represented semantically, the
+baseline rawifies Splat's reviewed per-word payload comments before assembling.
+This prevents GNU assembler pseudo-op expansion from changing retail bytes.
+
+```sh
+make split
+make relink
+```
+
+`make relink` reconstructs all 3,941,760 loaded bytes, links BSS at
+`0x004c2580`, and requires both SHA-1 and SHA-256 plus a byte-for-byte `cmp`.
+`make hybrid` also deterministically reconstructs the full retail ELF
+container—headers, program headers, section headers, `.comment`, `.reginfo`,
+and padding—and requires it to match `SLUS_204.86` byte-for-byte.
+
+## Matching-C verification
+
+After placing private `wibo` and `mwcps2.exe` binaries outside Git:
+
+```sh
+WIBO=/private/path/wibo-macos \
+MWCCPS2=/private/path/mwccps2.exe \
+MWCCPS2_30=/private/path/mwcps2-3.0-011126/mwccps2.exe \
+make match PYTHON=.venv/bin/python
+```
+
+The verifier applies MIPS HI16/LO16/26/32 relocations using the reviewed target
+symbols before comparing every function directly with the retail loaded image.
+Most units use MWCCPS2 3.0.3; the explicitly documented `state_return_family`
+unit is compiled with 3.0-011126 because that compiler is the only tested one
+that reproduces its target scheduling exactly.
+
+`make match` runs `tools/run_matching.py`, which reads
+`tools/compile_matching.sh` and runs its independent units in parallel (one
+worker per CPU; set `MATCH_JOBS` to change it) with verification in-process.
+Compiled objects are cached under `build/cache/` by the content of everything
+each command reads, so a rebuild recompiles only what changed; verification
+always reruns. `--no-cache` forces a cold build, and `make match-serial` runs
+the script top to bottom with `sh` as before. Every unit runs even after a
+failure, and all failures are listed at the end. A cold `make hybrid` takes
+about 3.5 minutes on 4 cores and an unchanged rebuild about one minute,
+against roughly 16 minutes serially.
+
+`make hybrid` then replaces all matched retail windows with the actual compiled
+Metrowerks function sections and requires exact symbol placement plus the full
+loaded-image hashes and byte comparison.
+
+## Progress reporting
+
+```sh
+make test
+make report
+```
+
+The GitHub Actions workflow uploads a valid objdiff-v2 report as `ps2_report`,
+which is the artifact consumed by decomp.dev.
+
+## Rules
 
 - Target only the NTSC-U PS2 executable `SLUS_204.86` documented in the README.
 - At the owner's explicit request, the checksum-pinned executable/compiler

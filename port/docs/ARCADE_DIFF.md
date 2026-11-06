@@ -4,12 +4,13 @@ This note checks the community claims that the PS2 build differs from the arcade
 in gameplay data. Those claims are missing animation frames, altered hitboxes,
 anti-air assists that lose startup invincibility, a counter glitch, and one
 stage's music cutting out. It records where the data lives on each side, the
-formats as the code reads them, what actually differs, and a plan for an
-optional "arcade accuracy" mode.
+formats as the code reads them, what actually differs, and how the port
+follows the arcade (sections 5 and 10: the code differences and the arcade's
+float rounding are always on).
 
 - **Compared builds:** PS2 SLUS_204.86 (`private/disc/mvc2.iso`) against the
   NAOMI `mvsc2` set (Export/Korea **Rev A**, `epr-23085a`) from
-  `/home/user/mvc2-naomi-decomp/orig/mvsc2.zip`.
+  `naomi/orig/mvsc2.zip` (supplied locally, see `naomi/docs/BUILD_INPUTS.md`).
 - **Tool:** `port/tools/arcade_diff.py`. It contains no asset bytes. It reads
   both images at run time and prints only derived numbers.
 - **Extracted copies:** these were placed under `/tmp/arcdiff/` and

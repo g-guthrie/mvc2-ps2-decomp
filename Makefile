@@ -3,7 +3,7 @@ BIN ?=
 CUE ?=
 CONFIG := config/SLUS_204.86.yaml
 
-.PHONY: setup split relink match match-serial hybrid pack-elf progress-check report test clean
+.PHONY: setup split relink match match-serial hybrid pack-elf progress-check report test naomi clean
 
 setup:
 	@test -n "$(BIN)" || { echo "BIN is required" >&2; exit 2; }
@@ -40,6 +40,10 @@ report: progress-check
 test:
 	PYTHONPATH=. $(PYTHON) -m unittest tools.test_project tools.test_progress_catalog tools.test_hybrid_relink tools.test_pack_retail_elf tools.test_verify_object tools.test_compiled_switch_data tools.test_embedded_compiler_switch tools.test_sony29_tools tools.test_run_matching
 	PYTHONPATH=. $(PYTHON) -m unittest discover -s tests
+
+# the NAOMI decompilation (needs its build inputs: naomi/docs/BUILD_INPUTS.md)
+naomi:
+	cd naomi && $(PYTHON) tools/build.py check
 
 clean:
 	rm -rf asm build build-report

@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "description": "Prebuilt Sega NAOMI SDK libraries (Hitachi library format). The retail ROM links these objects unchanged; library units link a module from here at its retail address.",
+  "origin": {
+    "libwin.zip": "archive.org item NaomiSDK, libwin.zip (SDK libraries dated Aug 2000); every file except sh4nlfzn.lib",
+    "sh4nlfzn.lib": "archive.org item NaomiSDK, pcv5r32.zip lib/ (Hitachi SHC 5.0 Release 32 runtime: SH-4, no PIC, little endian, single-precision FPU)"
+  },
+  "files": [
+    {
+      "name": "libam.lib",
+      "size": 38403,
+      "sha256": "31e2ae5cd5738df2b1e5152df590a833cc9f2f1f7d927128312ab522fb318139"
+    },
+    {
+      "name": "libintr.lib",
+      "size": 4611,
+      "sha256": "f99ecb09169723febaaa02421a132df4820571dd32a97b0dbb2849adcce1659d"
+    },
+    {
+      "name": "libjamma.lib",
+      "size": 15107,
+      "sha256": "074e3ec948539920143c80d47cf3d20b612053c788c2c860c3afa61e505448cb"
+    },
+    {
+      "name": "libkamui.lib",
+      "size": 129027,
+      "sha256": "b253b7aee1a5fc3334ff272ae8a8f542b7ce4b1cb8038939e40ad1d4f9176fa2"
+    },
+    {
+      "name": "libkamui2.lib",
+      "size": 292611,
+      "sha256": "17f2706f26573048a2933e8554fc491c1c70bd7086e720124e22eb032451339d"
+    },
+    {
+      "name": "libline.lib",
+      "size": 7171,
+      "sha256": "0f8605a4a10675bd1fd00b2aadf68fe675373bc2099dee7ec53008c3924b401b"
+    },
+    {
+      "name": "libnaomi.lib",
+      "size": 109571,
+      "sha256": "fcb6e68138d6940e6b156bfcc1578cecf4d39ac6a8793676f8153ed091070560"
+    },
+    {
+      "name": "libnaomik2.lib",
+      "size": 124675,
+      "sha256": "f904d4fa4fb08d9cd39b6b3ddeee4a2e2abb60067f7d719a0fbf103d57e7f201"
+    },
+    {
+      "name": "libnlobj.lib",
+      "size": 90627,
+      "sha256": "c5c9efb5a0f2610c1a0cdb5bf52f98bbaa8f017eff68c5d1d2a08b41e3e27a85"
+    },
+    {
+      "name": "libspr.lib",
+      "size": 9731,
+      "sha256": "dee36e7c73538e6edc727b55a3ca42941c81187c810e341e367956feb23d1aca"
+    },
+    {
+      "name": "libstrip.lib",
+      "size": 6659,
+      "sha256": "2f78eb61727228babd5da8819c57bed34c8f7c133ad81a8ce94a52bfa69fce6a"
+    },
+    {
+      "name": "libstripk2.lib",
+      "size": 6659,
+      "sha256": "767a0b58098fa22bb12e1025a000dd706cec2737dde4ad9be4a3c1d4de92c515"
+    },
+    {
+      "name": "nlasec.lib",
+      "size": 2307,
+      "sha256": "d634165310df54c3c8be800b8584827c12470334a2254dfacd0baa5dd0e357fd"
+    },
+    {
+      "name": "s3lib.lib",
+      "size": 7683,
+      "sha256": "867e2a3c7bb88696910153e8aef94315c68d24ea0b4a0706edc3d010e3d72367"
+    },
+    {
+      "name": "sh4nlfzn.lib",
+      "size": 163331,
+      "sha256": "d4933921c9e017f1a6e1355c89bf74e13b2c460037474bd9516a7237bf4aa5ec"
+    },
+    {
+      "name": "shinobi.lib",
+      "size": 237059,
+      "sha256": "548ab8a6055a2ca3f6cf023730243e5be6b070d2d779c657da69a53b98b7fa4e"
+    }
+  ]
+}

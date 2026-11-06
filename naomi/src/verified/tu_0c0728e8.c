@@ -1,0 +1,51 @@
+#include "objects.h"
+extern char func_0c02a026(struct Actor *);
+extern void func_0c0437b8(struct Actor *);
+extern void (*table_0c241108[])(struct Actor *),(*table_0c241114[])(struct Actor *),(*table_0c241120[])(struct Actor *);
+extern unsigned char dat_0c2f8338;
+void func_0c072930(struct Actor *);
+void func_0c072aec(struct Actor *);
+void func_0c072b4c(struct Actor *);
+void func_0c0728e8(struct Actor *a)
+{
+ a->b6++;a->b32=a->b200;a->s28=24;
+ a->f92=-16.666666031f;a->f104=0;a->f96=0;a->f108=0;
+ if(a->b32)a->f92=-26.666666031f;
+ if(a->b1d2)a->f92=-a->f92;
+ func_0c072930(a);
+}
+void func_0c072930(struct Actor *a)
+{
+ func_0c02a026(a);
+ if(a->b141)return;
+ if(a->b32 && !a->b200){a->b32=0;a->f92=-16.666666031f;if(a->b1d2)a->f92=-a->f92;}
+ a->f52+=a->f92;a->f92+=a->f104;a->f56+=a->f96;a->f96+=a->f108;
+ if(--a->s28<=0)func_0c0437b8(a);
+}
+void func_0c0729c4(struct Actor *a){table_0c241108[a->b6](a);}
+void func_0c0729d6(struct Actor *a)
+{
+ func_0c02a026(a);
+ if(a->b141)return;
+ a->b6++;
+ if(!a->b200){a->f92=20.0f;a->f104=-0.80357140303f;a->f96=5.0f;a->f108=-0.5357143f;}
+ else{a->f92=25.0f;a->f104=-0.80357140303f;a->f96=6.66666651f;a->f108=-0.80357140303f;}
+ if(a->w130){a->f92=-a->f92;a->f104=-a->f104;}
+}
+void func_0c072a7a(struct Actor *a)
+{
+ a->f52+=a->f92;a->f92+=a->f104;a->f56+=a->f96;a->f96+=a->f108;
+ func_0c02a026(a);
+ if(!(a->f56>a->f41c)){a->b6++;a->f56=a->f41c;a->b1f9=0;func_0c072aec(a);}
+}
+void func_0c072aec(struct Actor *a)
+{
+ if(func_0c02a026(a)<0)func_0c0437b8(a);
+}
+void func_0c072b0e(struct Actor *a){table_0c241114[a->b6](a);}
+void func_0c072b20(struct Actor *a)
+{
+ if(dat_0c2f8338<2){a->b12c=0;}
+ else{a->b6++;a->b12c=1;func_0c072b4c(a);return;}
+}
+void func_0c072b4c(struct Actor *a){table_0c241120[a->b7](a);}

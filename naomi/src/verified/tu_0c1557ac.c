@@ -1,0 +1,51 @@
+#include "objects.h"
+extern struct Tbl_ub3_01 *dat_0c2f83f8;
+extern float dat_0c22f684[];
+extern struct ActorMotionFloat2 dat_0c22f664[];
+extern short dat_0c22f694[];
+extern void func_0c02a0c4(struct LinkedActor *, int, int);
+extern void func_0c037d0c(struct LinkedActor *);
+void func_0c1557ac(struct LinkedActor *a, struct LinkedActor *b)
+{
+    float x;
+    a->b4 = 1;
+    a->sdc = b->sdc;
+    a->sdc.b12c = 1;
+    a->b2 = b->b2;
+    a->b1 = b->b1;
+    a->v80.x = b->v80.x;
+    a->v80.y = b->v80.y;
+    a->b1a3 = b->b1a3;
+    a->b1a4 = b->b1a4;
+    a->b48 = b->b48;
+    a->v80 = b->v80;
+    a->b36 = b->b36;
+    a->sdc.b12c = 1;
+    a->b36 = 7;
+    ((struct Actor *)a)->f92 = 0.0f;
+    ((struct Actor *)a)->f96 = 0.0f;
+    ((struct Actor *)a)->f104 = 0.0f;
+    ((struct Actor *)a)->f108 = 0.0f;
+    ((unsigned char *)a)[0x19c] = 68;
+    ((struct Actor *)a)->b19d = 68;
+    ((struct Actor *)a)->b1a1 = 49;
+    ((struct Actor *)a)->w1ac = 0;
+    ((struct Actor *)a)->b19e = 0;
+    ((struct Actor *)a)->p1c4 = 0;
+    dat_0c2f83f8->arr[a->b2]++;
+    ((struct Actor *)a)->w1ac |= 0x200;
+    *(struct LinkedActorVec3 *)&a->f52 = *(struct LinkedActorVec3 *)&b->f52;
+    x = dat_0c22f684[((struct Actor *)a)->b32];
+    if (((struct Actor *)a)->w130 == 0) x = -x;
+    ((struct Actor *)a)->f52 += x;
+    ((struct Actor *)a)->f56 += *(&dat_0c22f684[a->b32] + 1);
+    x = dat_0c22f664[((struct Actor *)a)->b32 + (unsigned char)((struct Actor *)b)->b1a3].x;
+    if (!((struct Actor *)a)->w130) x = -x;
+    ((struct Actor *)a)->f92 = x;
+    ((struct Actor *)a)->f96 = dat_0c22f664[((struct Actor *)a)->b32 + (unsigned char)((struct Actor *)b)->b1a3].y;
+    ((struct Actor *)a)->f104 = 0.0f;
+    ((struct Actor *)a)->f108 = 1.0f; ((struct Actor *)a)->f108 = -((struct Actor *)a)->f108;
+    ((struct Actor *)a)->s28 = dat_0c22f694[(unsigned int)((struct Actor *)a)->b32 / 2];
+    func_0c02a0c4(a, 23, 13);
+    func_0c037d0c(a);
+}

@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "name": "Marvel vs. Capcom 2: New Age of Heroes",
+  "platform": "Sega NAOMI",
+  "set": "mvsc2",
+  "revision": "Export/Korea, Rev A",
+  "archive": "orig/mvsc2.zip",
+  "archive_sha256": "84c948228093554d3589ce5b028472c95c8af6353bf6e5de9ddb7aebf2a124c9",
+  "reference": "https://github.com/mamedev/mame/blob/40eaa49ab942573f9f4133bd12fcba82b5dd953e/src/mame/sega/naomi.cpp",
+  "program_rom": "epr-23085a.ic11",
+  "program_rom_sha256": "9a25fe94f28b8937d9a764d2fbfb9283c85aefe9c816ce147a73a2ae590285b2",
+  "main": {
+    "address": 201461760,
+    "rom_offset": 4096,
+    "size": 2424832,
+    "header_offset": 864,
+    "entrypoint": 201461760,
+    "sha256": "b443b12af140ea0b3fae95e8795fe6f7673ae8ac00d886062f78766d1ac8070c"
+  },
+  "test": {
+    "address": 201457664,
+    "rom_offset": 3932160,
+    "size": 262144,
+    "header_offset": 960,
+    "entrypoint": 201457664,
+    "sha256": "1fc59a11a6799fb96752483a5e3553931585216365b39922a6eefb640a0fdb11"
+  },
+  "roms": [
+    {
+      "name": "epr-23085a.ic11",
+      "size": 4194304,
+      "crc32": "5d5b7ad1",
+      "sha1": "f58c31b245fc33fa541f9f074548402a63f7c3d3"
+    },
+    {
+      "name": "mpr-23048.ic17s",
+      "size": 8388608,
+      "crc32": "93d7a63a",
+      "sha1": "c50d10b4a3f9db51eae5749f5b665d7c8ab6c898"
+    },
+    {
+      "name": "mpr-23049.ic18",
+      "size": 8388608,
+      "crc32": "003dcce0",
+      "sha1": "fb71c8ca9271d2155878c72d8fe2df3031e6c014"
+    },
+    {
+      "name": "mpr-23050.ic19s",
+      "size": 8388608,
+      "crc32": "1d6b88a7",
+      "sha1": "ba42e9d1d912d88a7ad839b878975ba590634320"
+    },
+    {
+      "name": "mpr-23051.ic20",
+      "size": 8388608,
+      "crc32": "01226aaa",
+      "sha1": "a4c6a0eda05e53d0e51b92a4317a86a708a7efdb"
+    },
+    {
+      "name": "mpr-23052.ic21s",
+      "size": 8388608,
+      "crc32": "74bee120",
+      "sha1": "5a0fb48fa758a2be2e08e3b1298103c5aa748835"
+    },
+    {
+      "name": "mpr-23053.ic22",
+      "size": 8388608,
+      "crc32": "d92d4401",
+      "sha1": "a868780f8d2e176ff10781e1c08bf932f34ac504"
+    },
+    {
+      "name": "mpr-23054.ic23s",
+      "size": 8388608,
+      "crc32": "78ba02e8",
+      "sha1": "0f696a33e1e6671001efc309ed62f084a246ad24"
+    },
+    {
+      "name": "mpr-23055.ic24",
+      "size": 8388608,
+      "crc32": "84319604",
+      "sha1": "c3dde162e043a54e1325202b46191b32e8784a1c"
+    },
+    {
+      "name": "mpr-23056.ic25s",
+      "size": 8388608,
+      "crc32": "d7386034",
+      "sha1": "be1f3ca5f283e428dc59dc072de3e7d36e122d53"
+    },
+    {
+      "name": "mpr-23057.ic26",
+      "size": 8388608,
+      "crc32": "a3f087db",
+      "sha1": "b52d7c072cb5c2fdd10d0ac0b62cebe48b229ae3"
+    },
+    {
+      "name": "mpr-23058.ic27s",
+      "size": 8388608,
+      "crc32": "61a6cc5d",
+      "sha1": "34e52cb076888313a80f2b87876b8d37b91d85a0"
+    },
+    {
+      "name": "mpr-23059.ic28",
+      "size": 8388608,
+      "crc32": "64808024",
+      "sha1": "1a6c60c330642b273978d3dd02d95d17d36ee3f2"
+    },
+    {
+      "name": "mpr-23060.ic29",
+      "size": 8388608,
+      "crc32": "67519942",
+      "sha1": "fc758d9075625f8140d5d828c8f6b7a91bcc9119"
+    },
+    {
+      "name": "mpr-23061.ic30s",
+      "size": 8388608,
+      "crc32": "fb1844c4",
+      "sha1": "1d1571516a6dbed0c4ded3b80efde9cc9281f66f"
+    },
+    {
+      "name": "mpr-23083.ic31",
+      "size": 4194304,
+      "crc32": "c61d2dfe",
+      "sha1": "a05fb979ed7c8040de91716fc8814e6bd995efa2"
+    },
+    {
+      "name": "mpr-23084.ic32s",
+      "size": 4194304,
+      "crc32": "4ebbbdd9",
+      "sha1": "9ad8c1a644850de6e35705318cd1991e1d6e60a8"
+    },
+    {
+      "name": "25lc040.ic13s",
+      "size": 512,
+      "crc32": "dc449637",
+      "sha1": "6cab09f61be1498271a36bff6a114a4eeeb00e1a"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+/build/
+/orig/unpacked/
+__pycache__/
+*.pyc
+.DS_Store
+.scratch/
+
+# Not ours to redistribute. Supply these locally; see docs/BUILD_INPUTS.md
+/orig/mvsc2.zip
+/toolchain/hitachi-shc-5.1r08/
+/toolchain/naomi-sdk/lib/

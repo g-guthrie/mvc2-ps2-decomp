@@ -1,0 +1,548 @@
+{
+  "schema_version": 1,
+  "scope": "Evidence-backed assertions only; unlisted layouts/signatures are not established by this file.",
+  "contracts": [
+    {
+      "source": "src/verified/ud2_12.c",
+      "members": [
+        {
+          "type": "struct S_ud2_12",
+          "member": "b141",
+          "offset": "0x141",
+          "evidence": "0c0d6ae8 literal at 0c0d6bc2"
+        },
+        {
+          "type": "struct S_ud2_12",
+          "member": "b1a3",
+          "offset": "0x1a3",
+          "evidence": "0c0d6b76 literal at 0c0d6bc8"
+        },
+        {
+          "type": "struct S_ud2_12",
+          "member": "b1e9",
+          "offset": "0x1e9",
+          "evidence": "0c0d6b14 literal at 0c0d6bc6"
+        },
+        {
+          "type": "struct S_ud2_12",
+          "member": "b4c9",
+          "offset": "0x4c9",
+          "evidence": "0c0d6b02 literal at 0c0d6bc4"
+        }
+      ],
+      "prototypes": [
+        {
+          "address": "0x0c044e52",
+          "declaration": "extern unsigned char func_0c044e52(struct S_ud2_12 *);",
+          "evidence": "JSR 0c0d6a66 then EXTU.B R0,R0 at 0c0d6a6a; complete calling function now 110/110 bytes."
+        }
+      ]
+    },
+    {
+      "source": "src/include/objects.h",
+      "members": [
+        {
+          "type": "struct MaskObject",
+          "member": "w340",
+          "offset": "0x340",
+          "evidence": "Exact source src/verified/tu_0c03a810.c uses the mask word at actor+0x340."
+        },
+        {
+          "type": "struct Actor",
+          "member": "b6",
+          "offset": "0x6",
+          "size": 1,
+          "evidence": "Exact C src/verified/tu_0c09328c.c, func_0c09328c: native float motion loads/stores and landing-state byte; compare complete registered unit with diff_unit.py. Native: 0c0932da/0c0932e6 MOV.B at +6."
+        },
+        {
+          "type": "struct Actor",
+          "member": "f52",
+          "offset": "0x34",
+          "size": 4,
+          "evidence": "Exact C src/verified/tu_0c09328c.c, func_0c09328c: native float motion loads/stores and landing-state byte; compare complete registered unit with diff_unit.py. Native: 0c09329a MOV #52; 0c09329e/0c0932a6 FMOV."
+        },
+        {
+          "type": "struct Actor",
+          "member": "f56",
+          "offset": "0x38",
+          "size": 4,
+          "evidence": "Exact C src/verified/tu_0c09328c.c, func_0c09328c: native float motion loads/stores and landing-state byte; compare complete registered unit with diff_unit.py. Native: 0c0932b6 MOV #56; 0c0932b8/0c0932c2 FMOV."
+        },
+        {
+          "type": "struct Actor",
+          "member": "f92",
+          "offset": "0x5c",
+          "size": 4,
+          "evidence": "Exact C src/verified/tu_0c09328c.c, func_0c09328c: native float motion loads/stores and landing-state byte; compare complete registered unit with diff_unit.py. Native: 0c093296 MOV #92; 0c09329c FMOV."
+        },
+        {
+          "type": "struct Actor",
+          "member": "f96",
+          "offset": "0x60",
+          "size": 4,
+          "evidence": "Exact C src/verified/tu_0c09328c.c, func_0c09328c: native float motion loads/stores and landing-state byte; compare complete registered unit with diff_unit.py. Native: 0c0932ae MOV #96; 0c0932ba FMOV."
+        },
+        {
+          "type": "struct Actor",
+          "member": "f104",
+          "offset": "0x68",
+          "size": 4,
+          "evidence": "Exact C src/verified/tu_0c09328c.c, func_0c09328c: native float motion loads/stores and landing-state byte; compare complete registered unit with diff_unit.py. Native: 0c0932a0 MOV #104; 0c0932ac FMOV."
+        },
+        {
+          "type": "struct Actor",
+          "member": "f108",
+          "offset": "0x6c",
+          "size": 4,
+          "evidence": "Exact C src/verified/tu_0c09328c.c, func_0c09328c: native float motion loads/stores and landing-state byte; compare complete registered unit with diff_unit.py. Native: 0c0932bc MOV #108; 0c0932c8 FMOV."
+        },
+        {
+          "type": "struct Actor",
+          "member": "f41c",
+          "offset": "0x41c",
+          "size": 4,
+          "evidence": "Exact C src/verified/tu_0c09328c.c, func_0c09328c: native float motion loads/stores and landing-state byte; compare complete registered unit with diff_unit.py. Native: 0c0932d2 literal 0c0933de = 0x041c; 0c0932d4 FMOV."
+        },
+        {
+          "type": "struct ActorVec2",
+          "member": "x",
+          "offset": 0,
+          "size": 4,
+          "evidence": "Exact C src/verified/tu_0c17d79c.c, func_0c17d79c: float pair at dat_0c253dac indexed by owner->b1a3; x/y occupy consecutive four-byte words. Native: 0c17d7dc/0c17d7de multiply index by 8; 0c17d7d8/0c17d7e2 load y at +4, 0c17d800 loads x at +0."
+        },
+        {
+          "type": "struct ActorVec2",
+          "member": "y",
+          "offset": 4,
+          "size": 4,
+          "evidence": "Exact C src/verified/tu_0c17d79c.c, func_0c17d79c: float pair at dat_0c253dac indexed by owner->b1a3; x/y occupy consecutive four-byte words. Native: 0c17d7dc/0c17d7de multiply index by 8; 0c17d7d8/0c17d7e2 load y at +4, 0c17d800 loads x at +0."
+        },
+        {
+          "type": "struct ActorInputRecord20",
+          "member": "buttons",
+          "offset": 0,
+          "size": 2,
+          "evidence": "Exact C src/verified/tu_0c09328c.c, func_0c093406: halfword button read from dat_0c2d6f24 plus actor index times 20. Native: 0c093432/0c093434/0c093438 multiply index by 20; 0c09343c MOV.W then 0c09343e EXTU.W."
+        },
+        {
+          "type": "struct Actor",
+          "member": "b495",
+          "offset": "0x495",
+          "evidence": "Native signed byte loads at 0c04e7ee and 0c04e82e; literal 0c04e878 contains 0x0495. Sign test and bit 1/4 tests in 0c04e78e..0c04e874."
+        },
+        {
+          "type": "struct Actor",
+          "member": "b440",
+          "offset": "0x440",
+          "evidence": "0c04e6a8 loads byte at literal0x440, increments offset and stores at0x441; decoder0c04e6ea writes current byte at0x440."
+        },
+        {
+          "type": "struct Actor",
+          "member": "b441",
+          "offset": "0x441",
+          "evidence": "0c04e6a8 loads byte at literal0x440, increments offset and stores at0x441; decoder0c04e6ea writes current byte at0x440."
+        },
+        {
+          "type": "struct EffectFramePlacement20",
+          "member": "enabled",
+          "offset": 0,
+          "evidence": "0c1b63ae byte load from table 0c25b134.",
+          "size": 1
+        },
+        {
+          "type": "struct EffectFramePlacement20",
+          "member": "frame",
+          "offset": 2,
+          "evidence": "0c1b63b6 halfword load from table 0c25b134.",
+          "size": 2
+        },
+        {
+          "type": "struct EffectFramePlacement20",
+          "member": "scale_x",
+          "offset": 4,
+          "evidence": "0c1b63c4/0c1b63c6 float load from table 0c25b134.",
+          "size": 4
+        },
+        {
+          "type": "struct EffectFramePlacement20",
+          "member": "scale_y",
+          "offset": 8,
+          "evidence": "0c1b63cc/0c1b63ce float load from table 0c25b134.",
+          "size": 4
+        },
+        {
+          "type": "struct EffectFramePlacement20",
+          "member": "offset_x",
+          "offset": 12,
+          "evidence": "0c1b63d4/0c1b63d6 float load from table 0c25b134.",
+          "size": 4
+        },
+        {
+          "type": "struct EffectFramePlacement20",
+          "member": "offset_y",
+          "offset": 16,
+          "evidence": "0c1b63d8/0c1b63da float load from table 0c25b134.",
+          "size": 4
+        },
+        {
+          "type": "struct Actor",
+          "member": "p154",
+          "offset": "0x154",
+          "size": 4,
+          "evidence": "Verified func_0c029e70 assigns and advances the animation-frame pointer at actor+0x154."
+        },
+        {
+          "type": "struct LinkedActor",
+          "member": "sdc",
+          "offset": "0xdc",
+          "evidence": "Native 192-byte actor animation-block copies start at actor+0xdc, including verified tu_0c1b605c and tu_0c19dd70."
+        },
+        {
+          "type": "struct LinkedActorBlock",
+          "member": "p154",
+          "offset": "0x78",
+          "size": 4,
+          "evidence": "Same animation pointer as Actor.p154: 0x154 minus block base0xdc equals0x78. A real pointer field gives the block the alignment used by native word copies."
+        },
+        {
+          "type": "struct ActorSubControlBytes",
+          "member": "b12",
+          "offset": 12,
+          "size": 1,
+          "evidence": "Native 0c12dc88/0c12dca8 read signed byte12 for negative/positive phase checks; 0c12dcd6 writes -1."
+        },
+        {
+          "type": "struct ActorSubControlBytes",
+          "member": "b13",
+          "offset": 13,
+          "size": 1,
+          "evidence": "Native 0c12dc66 tests byte13 and 0c12dc7c clears it before animation advancement."
+        },
+        {
+          "type": "struct Actor",
+          "member": "b527",
+          "offset": "0x527",
+          "size": 1,
+          "evidence": "Native033770..033774 copies player byte527 into ranking row byte8."
+        },
+        {
+          "type": "struct Actor",
+          "member": "score534",
+          "offset": "0x534",
+          "size": 4,
+          "evidence": "Native0337c2..0337ca copies the word at534 to the primary unsigned ranking key."
+        },
+        {
+          "type": "struct Actor",
+          "member": "score538",
+          "offset": "0x538",
+          "size": 4,
+          "evidence": "Native0337be..0337c4 copies the word at538 to the secondary unsigned ranking key."
+        },
+        {
+          "type": "struct Actor",
+          "member": "rank53d",
+          "offset": "0x53d",
+          "size": 1,
+          "evidence": "Native0336d6..0336e4 reads an unsigned ranking index;03387a..03387c stores the final index."
+        },
+        {
+          "type": "struct PlayerSlotScore",
+          "member": "ticks",
+          "offset": "0x558",
+          "size": 4,
+          "evidence": "Native033776..0337ac uses unsigned division/modulo on the frame clock at558."
+        },
+        {
+          "type": "struct RankingRecord24",
+          "member": "secondary",
+          "offset": "0x10",
+          "size": 4,
+          "evidence": "Native033834/033836 compares unsigned words at row+16 after equal primary keys."
+        },
+        {
+          "type": "struct RankingRecord24",
+          "member": "primary",
+          "offset": "0x14",
+          "size": 4,
+          "evidence": "Native033824/033826 compares unsigned primary words at row+20."
+        },
+        {
+          "type": "struct SelectionFlags59e8",
+          "member": "combined_mask",
+          "offset": "0x33",
+          "size": 1,
+          "evidence": "Native1c8210..1c8218 and1c8230..1c8238 read/OR/store one byte at2fb158+0x33;1c8270..1c8276 repeats the same update. Initializer1c81b6 addresses the same byte directly at2fb18b."
+        },
+        {
+          "type": "struct Actor",
+          "member": "l44c",
+          "offset": "0x44c",
+          "size": 4,
+          "evidence": "Native051114 stores the evaluated operand as a long at44c;0512b4..0512bc decrements/tests/stores this countdown as a long."
+        },
+        {
+          "type": "struct Actor",
+          "member": "l450",
+          "offset": "0x450",
+          "size": 4,
+          "evidence": "Native051198 stores a long directional-control word at450;05119a reads its low halfword.0512de..051306 clear/set bit1000 with long loads/stores."
+        },
+        {
+          "type": "struct Actor",
+          "member": "b4a7",
+          "offset": "0x4a7",
+          "size": 1,
+          "evidence": "Native05124c compares the signed byte at4a7 with1;051294 clears the same byte after the subrecord gate."
+        },
+        {
+          "type": "struct MotionGlobal_0c2d9260",
+          "member": "f16",
+          "offset": "0x10",
+          "size": 4,
+          "evidence": "Whole-exact u_0c025a9c camera bounds update reads vertical origin at global+16."
+        },
+        {
+          "type": "struct MotionGlobal_0c2d9260",
+          "member": "fa8",
+          "offset": "0xa8",
+          "size": 4,
+          "evidence": "Whole-exact u_0c025a9c writes camera vertical center at global+0xa8."
+        },
+        {
+          "type": "struct Host_0c1abc64",
+          "member": "sub",
+          "offset": "0xcc",
+          "size": 8,
+          "evidence": "Whole-exact tu_0c1abc64 and tu_0c1aebb8 timed record readers."
+        },
+        {
+          "type": "struct Item_0c1abc64",
+          "member": "n",
+          "offset": "0x4",
+          "size": 4,
+          "evidence": "Whole-exact timed readers advance by signed four-byte item stride."
+        },
+        {
+          "type": "struct Obj_u06808c",
+          "member": "s3bc",
+          "offset": "0x3bc",
+          "size": 8,
+          "evidence": "Whole-exact u06808c passes consecutive input records at 3bc/3c4/3cc."
+        }
+      ],
+      "sizes": [
+        {
+          "type": "struct ActorVec2",
+          "size": 8,
+          "evidence": "Exact C src/verified/tu_0c17d79c.c, func_0c17d79c: indexed pair stride 8. Native 0c17d7dc SHLL2 then 0c17d7de SHLL."
+        },
+        {
+          "type": "struct ActorInputRecord20",
+          "size": 20,
+          "evidence": "Exact C src/verified/tu_0c09328c.c, func_0c093406: indexed controller stride 20. Native 0c093432 SHLL2, 0c093434 ADD original index, 0c093438 SHLL2."
+        },
+        {
+          "type": "struct EffectFramePlacement20",
+          "size": 20,
+          "evidence": "0c1b639c..0c1b63aa multiplies frame index by20; variant stride180 at0c1b639a holds nine rows."
+        },
+        {
+          "type": "struct LinkedActorBlock",
+          "size": "0xc0",
+          "evidence": "Native actor animation-block assignments copy0xc0 bytes; the recovered pointer replaces padding without changing the block extent."
+        },
+        {
+          "type": "struct PlayerSlotScore",
+          "size": "0x5a4",
+          "evidence": "Native0336f6..03370e and0337c8..0337d4 use a5a4-byte player-slot stride."
+        },
+        {
+          "type": "struct RankingRecord24",
+          "size": 24,
+          "evidence": "Native033808..033822 uses24-byte row strides;03384a..033864 copies24 bytes three times for the swap."
+        },
+        {
+          "type": "struct SelectionFlags59e8",
+          "size": 76,
+          "evidence": "Preserve the existing prefix and two2-word mask rows at offset60; recovered byte0x33 replaces padding without changing established allocation or offsets."
+        }
+      ]
+    },
+    {
+      "source": "src/candidates/ud2_04.c",
+      "members": [
+        {
+          "type": "struct Actor",
+          "member": "sub2a4",
+          "offset": "0x2a4",
+          "evidence": "0c12f9ae loads 0x2a4; 0c12f9b4 adds actor base and 0c12f9b6 adds 32 for timer reference."
+        },
+        {
+          "type": "struct Dat_13bb5c",
+          "member": "pad[3]",
+          "offset": "0x3",
+          "evidence": "0c12f9e2 loads the address 0c2f8338; 0c12f9e6 reads byte 3 directly."
+        }
+      ],
+      "prototypes": [
+        {
+          "declaration": "extern struct Dat_13bb5c dat_0c2f8338;",
+          "evidence": "Native 0c12f9e2/0c12f9e6 accesses inline data without an intervening pointer dereference."
+        }
+      ]
+    },
+    {
+      "source": "src/verified/tu_0c03a810.c",
+      "prototypes": [
+        {
+          "address": "0x0c043a10",
+          "declaration": "extern unsigned char func_0c043a10(struct Actor *);",
+          "evidence": "Native call 0c03a820 with actor in R4 at delay slot 0c03a822, followed by EXTU.B R0,R0 at 0c03a824. Target literal at 0c03a8c4. Exact caller src/verified/tu_0c03a810.c."
+        }
+      ]
+    },
+    {
+      "source": "src/verified/tu_0c07c648.c",
+      "prototypes": [
+        {
+          "address": "0x0c241754",
+          "declaration": "extern struct Actor *(*table_0c241754[])(struct Actor *);",
+          "evidence": "Native table entries are 0c07c6c6 (returns allocated actor or null) and 0c07c73e (returns zero). Dispatcher 0c07c6ae supplies the actor in R4 and forwards R0; corrected pointer-return wrapper and null callback retain complete exact bytes."
+        }
+      ]
+    },
+    {
+      "source": "src/verified/tu_0c06c938.c",
+      "members": [
+        {
+          "type": "struct ActorSub2a4",
+          "member": "b6",
+          "offset": "0x6",
+          "size": 1,
+          "evidence": "0c06c9ba decrements the byte at subrecord+6 and tests its signed byte result; explicit signed conversion preserves the complete native body without changing shared unsigned storage."
+        }
+      ],
+      "prototypes": [
+        {
+          "address": "0x0c240974",
+          "declaration": "extern struct Actor *(*table_0c240974[])(struct Actor *);",
+          "evidence": "Native table entries are 0c06c9f2 (returns allocated actor or null) and 0c06ca98 (returns zero). Dispatcher 0c06c9da supplies actor in R4 and forwards R0. Pointer callback signatures preserve complete exact section bytes."
+        }
+      ]
+    },
+    {
+      "source": "src/verified/tu_0c05429c.c",
+      "members": [
+        {
+          "type": "struct Actor",
+          "member": "b3f0",
+          "offset": "0x3f0",
+          "size": 1,
+          "evidence": "0542be..0542c8 writes adjacent byte controls at 3f0 and 3f1."
+        },
+        {
+          "type": "struct Actor",
+          "member": "b328",
+          "offset": "0x328",
+          "size": 1,
+          "evidence": "054348 and corresponding middle handlers load literal 0328 then store one byte."
+        }
+      ],
+      "prototypes": [
+        {
+          "address": "0x0c23f424",
+          "declaration": "extern struct Actor *(*table_0c23f424[])(struct Actor *);",
+          "evidence": "Native entries are 05482a (allocated actor or null) and 0548a2 (zero). Dispatcher 054812 passes actor in R4 and forwards nullable actor in R0; pointer signatures preserve complete exact section."
+        }
+      ]
+    },
+    {
+      "source": "src/candidates/tu_0c1da38c.c",
+      "members": [
+        {
+          "type": "struct Keyframe_0c261d94",
+          "member": "time",
+          "offset": 0,
+          "size": 4,
+          "evidence": "0c1da3d8/0c1da3da load time at current row+28 and current row+0; their difference normalizes the frame timer."
+        },
+        {
+          "type": "struct Keyframe_0c261d94",
+          "member": "position",
+          "offset": 4,
+          "size": 12,
+          "evidence": "0c1da400..0c1da458 read position components at row+4,+8,+12."
+        },
+        {
+          "type": "struct Keyframe_0c261d94",
+          "member": "angles",
+          "offset": 16,
+          "size": 12,
+          "evidence": "0c1da474..0c1da4de read degree-angle components at row+16,+20,+24 before fixed-angle conversion."
+        }
+      ],
+      "sizes": [
+        {
+          "type": "struct Keyframe_0c261d94",
+          "size": 28,
+          "evidence": "Native 0c1da3ba/0c1da3c6 and0c1da3e6/0c1da3ec scale row indices by28 bytes."
+        }
+      ],
+      "prototypes": [
+        {
+          "declaration": "extern int func_0c1d8ff8(int,int);",
+          "evidence": "0c1d8ff8 consumes two address words in R4/R5; 0c1d9014 clears R4 and 0c1d901c returns that zero in R0."
+        },
+        {
+          "declaration": "extern int func_0c1d9100(struct Vec3_tu5_03 *);",
+          "evidence": "0c1d9100 copies twelve bytes to its R4 output pointer; 0c1d9112 explicitly returns zero in R0."
+        },
+        {
+          "declaration": "extern int func_0c1d914c(struct Vec3_tu5_03 *);",
+          "evidence": "0c1d914c copies twelve bytes from its R4 input pointer and marks the resource; 0c1d9166 explicitly returns zero in R0."
+        }
+      ]
+    },
+    {
+      "source": "src/verified/tu_0c0757fc.c",
+      "prototypes": [
+        {
+          "address": "0x0c03edcc",
+          "declaration": "extern void func_0c03edcc(struct Actor *, struct Actor *);",
+          "evidence": "Native 0c03edce captures incoming R5 in R14, then 0c03edda reads target byte1; R4 is separately captured at0c03edd2."
+        },
+        {
+          "address": "0x0c03f004",
+          "declaration": "extern void func_0c03f004(struct Actor *, struct Actor *);",
+          "evidence": "Native 0c03f008 captures incoming R5 in R14, then 0c03f014 reads target byte1; the 075930 wrapper must forward both actors."
+        }
+      ]
+    },
+    {
+      "source": "src/verified/ub5_02.c",
+      "prototypes": [
+        {
+          "address": "0x0c03edcc",
+          "declaration": "extern void func_0c03edcc(struct Actor *, struct Actor *);",
+          "evidence": "Native 0c03edce captures incoming R5 in R14, then 0c03edda reads target byte1; R4 is separately captured at0c03edd2."
+        },
+        {
+          "address": "0x0c03f004",
+          "declaration": "extern void func_0c03f004(struct Actor *, struct Actor *);",
+          "evidence": "Native 0c03f008 captures incoming R5 in R14, then 0c03f014 reads target byte1; the 075930 wrapper must forward both actors."
+        }
+      ]
+    },
+    {
+      "source": "src/verified/ud1_02.c",
+      "prototypes": [
+        {
+          "address": "0x0c0374da",
+          "declaration": "extern struct LinkedActor *func_0c0374da(int, int, int);",
+          "evidence": "Constructor 0c1aa31a sets R6=0; 0c1aa320 sets R5=3; delay slot 0c1aa324 copies R6 to R4 before the allocator. Preserve all three arguments."
+        }
+      ]
+    }
+  ]
+}

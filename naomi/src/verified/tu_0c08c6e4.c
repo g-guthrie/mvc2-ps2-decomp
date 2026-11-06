@@ -1,0 +1,66 @@
+#include "objects.h"
+
+typedef void (*ActorHandler)(struct Actor *);
+extern ActorHandler table_0c2427a4[];
+extern struct Tbl_ub3_01 *dat_0c2f83f8;
+extern char func_0c02a026(struct Actor *);
+extern void func_0c02a0c4(struct Actor *, int, int);
+extern int func_0c03916c(struct Actor *);
+extern void func_0c0437b8(struct Actor *);
+
+void func_0c08c6e4(struct Actor *a)
+{
+    if (a->b6 == 0) {
+        a->b6++;
+        func_0c02a0c4(a, 19, 2);
+    } else {
+        func_0c02a026(a);
+    }
+}
+
+void func_0c08c6fe(struct Actor *a)
+{
+    if (a->b6 == 0) {
+        a->b6++;
+        func_0c02a0c4(a, 19, 0);
+    } else {
+        func_0c02a026(a);
+    }
+}
+
+void func_0c08c718(struct Actor *a)
+{
+    if (a->b6 == 0) {
+        a->b6++;
+        func_0c02a0c4(a, 19, 2);
+    } else {
+        func_0c02a026(a);
+    }
+}
+
+void func_0c08c732(struct Actor *a)
+{
+    if (func_0c03916c(a)) {
+        func_0c0437b8(a);
+    } else {
+        table_0c2427a4[a->b32](a);
+    }
+}
+
+void func_0c08c75e(struct Actor *a)
+{
+    a->b6++;
+    a->b1f9 = 2;
+    a->f92 = -30.0f;
+    if (a->b1d2)
+        a->f92 = -a->f92;
+    a->f104 = 0.0f;
+    a->f96 = -0.2678571343422f;
+    a->f108 = -0.80357140303f;
+    a->b1a1 = 60;
+    a->w1ac = 0;
+    a->b19e = 0;
+    *(unsigned int *)&a->p1c4 = 0;
+    dat_0c2f83f8->arr[a->b2]++;
+    func_0c02a0c4(a, 20, 0);
+}

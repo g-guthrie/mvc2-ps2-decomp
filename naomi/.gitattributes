@@ -1,0 +1,2 @@
+# Preserve compiler binaries and byte-indexed CRLF message files exactly.
+toolchain/hitachi-shc-5.1r08/* binary

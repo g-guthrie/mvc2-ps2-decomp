@@ -1,0 +1,8 @@
+#include "objects.h"
+extern char func_0c02a026(struct Actor *);
+extern void func_0c02a0c4(struct Actor *,int,int),func_0c0437b8(struct Actor *);
+extern void (*table_0c246844[])(struct Actor *);
+void func_0c0c0f70(struct Actor *a){table_0c246844[a->b6](a);}
+void func_0c0c0f82(struct Actor *a){func_0c02a026(a);if(a->b141){a->b6++;if(!a->b1d2){a->f92=-13.33333302f;a->f104=0.26041666f;}else {a->f92=13.33333302f;a->f104=-0.26041666f;}a->f96=6.428571224213f;a->f108=-0.5357143f;}}
+void func_0c0c0fd6(struct Actor *a){func_0c02a026(a);a->f52+=a->f92;a->f92+=a->f104;a->f56+=a->f96;a->f96+=a->f108;if(!(a->f41c<a->f56)){a->b6++;a->f56=a->f41c;a->f96=0;a->f108=0;a->b1f9=0;func_0c02a0c4(a,2,2);}}
+void func_0c0c1056(struct Actor *a){a->f52+=a->f92;a->f92+=a->f104;a->f56+=a->f96;a->f96+=a->f108;if(func_0c02a026(a)<0)func_0c0437b8(a);if(a->b141){a->b141=0;a->f92=0;a->f104=0;}}
